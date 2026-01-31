@@ -27,7 +27,7 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 mongo = MongoClient(MONGODB_URI)
 db = mongo["elimfilters_db"]
 col_unified = db["master_unified_v5"]
-col_catalogs = db["catalogs"]
+col_catalogs = db["elimfilters_catalogo"]
 col_kits = db["service_kits"]
 
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -632,3 +632,4 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
