@@ -1,0 +1,156 @@
+﻿const { MongoClient } = require('mongodb');
+const Agents = require('./agents');
+
+async function execute(config, logger) {
+  logger.info('═══════════════════════════════════════════');
+  logger.info('FASE 4: CONSOLIDAR FILTROS');
+  logger.info('═══════════════════════════════════════════\n');
+
+  const client = new MongoClient(config.MONGO_URI);
+  await client.connect();
+  const db = client.db(config.DB_NAME);
+
+  // Inicializar agentes
+  const agents = {
+    limpiador: new Agents.Agente1_Limpiador(),
+    consultor: new Agents.Agente2_ConsultorMaster(db),
+    promptEngineer: new Agents.Agente3_PromptEngineer(),
+    bifurcador: new Agents.Agente4_Bifurcador(),
+    donaldson: new Agents.Agente5_Donaldson(),
+    fram: new Agents.Agente6_FRAM(),
+    normalizador: new Agents.Agente7_Normalizador(),
+    arquitectoSKU: new Agents.Agente8_ArquitectoSKU(),
+    inyectorADN: new Agents.Agente9_InyectorADN(),
+    matcherKits: new Agents.Agente10_MatcherKits(db),
+    escritorMongo: new Agents.Agente11_EscritorMongo(db),
+    sincronizadorSheets: new Agents.Agente12_SincronizadorSheets()
+  };
+
+  const stats = {
+    processed: 0,
+    created: 0,
+    cached: 0,
+    errors: 0
+  };
+
+  try {
+    // Obtener códigos de cross-reference
+    const crossRefCollection = db.collection(config.COLLECTIONS.CROSS_REF);
+    const totalCodes = await crossRefCollection.countDocuments();
+
+    logger.info(`Total códigos en cross-reference: ${allCodes.length}`);
+    logger.info(Procesando en modo piloto:  registros\n);
+
+    const codes = await crossRefCollection
+      .find()
+      .limit(config.PILOT_SIZE)
+      .toArray();
+
+    for (let i = 0; i < codes.length; i++) {
+      const record = codes[i];
+      const inputCode = record.filter_code;
+
+      try {
+        // AGENTE 1: Limpiar código
+        const cleanCode = agents.limpiador.clean(inputCode);
+
+        // AGENTE 2: Consultar cache
+        const cached = await agents.consultor.findByCode(cleanCode);
+        if (cached.hit) {
+          stats.cached++;
+          if ((i + 1) % 100 === 0) {
+            logger.info([/]  → CACHED);
+            logger.updateProgress('phase4', i + 1, codes.length);
+          }
+          continue;
+        }
+
+        // AGENTE 3: Clasificar Duty
+        const duty = await agents.promptEngineer.classifyDuty(cleanCode);
+
+        // AGENTE 4: Bifurcar
+        const route = agents.bifurcador.route(duty);
+
+        // AGENTE 5 o 6: Scraper
+        let scraperData;
+        if (route === 'DONALDSON') {
+          scraperData = await agents.donaldson.scrape(cleanCode);
+        } else {
+          scraperData = await agents.fram.scrape(cleanCode);
+        }
+
+        // AGENTE 7: Normalizar
+        scraperData = agents.normalizador.normalize(scraperData);
+
+        // AGENTE 8: Generar SKU
+        const sku = agents.arquitectoSKU.generate(
+          scraperData.partNumber,
+          scraperData.category
+        );
+
+        // AGENTE 9: Inyectar ADN
+        const adnInfo = agents.inyectorADN.inject(scraperData.category);
+
+        // Construir registro completo con 39 columnas
+        const filterData = {
+          // SECCIÓN 1: IDENTIFICACIÓN Y CLASIFICACIÓN
+          'Input Code': inputCode,
+          'ELIMFILTERS SKU': sku,
+          'Description': adnInfo.description,
+          'Filter Type': scraperData.category,
+          'Subtype': scraperData.subtype || null,
+          'Installation Type': scraperData.installationType || null,
+          'Prefix': sku.substring(0, 3),
+          'ELIMFILTERS Technology': adnInfo.technology,
+          'Duty': duty,
+
+          // SECCIÓN 2: ESPECIFICACIONES DIMENSIONALES Y RENDIMIENTO
+          ...scraperData.specs,
+
+          // SECCIÓN 3: CÓDIGOS DE REFERENCIA
+          'OEM Codes': scraperData.oemCodes || [],
+          'Cross Reference Codes': scraperData.crossReferences || [],
+          'Alternative Products': scraperData.alternatives || [],
+
+          // SECCIÓN 4: APLICACIONES
+          'Equipment Applications': scraperData.equipmentApplications || [],
+          'Engine Applications': scraperData.engineApplications || [],
+          'Equipment Year': scraperData.equipmentYear || null
+        };
+
+        // AGENTE 11: Guardar en MongoDB
+        await agents.escritorMongo.save(filterData);
+
+        // AGENTE 12: Sincronizar Sheets (placeholder)
+        await agents.sincronizadorSheets.sync(filterData);
+
+        stats.created++;
+
+        if ((i + 1) % 100 === 0) {
+          logger.success([/]  CREADO ());
+          logger.updateProgress('phase4', i + 1, codes.length);
+        }
+
+      } catch (error) {
+        logger.error(Error procesando : );
+        stats.errors++;
+      }
+
+      stats.processed++;
+    }
+
+    logger.info('\n───────────────────────────────────────────');
+    logger.success('✅ FASE 4 COMPLETADA');
+    logger.info(Procesados: );
+    logger.info(Creados: );
+    logger.info(Cacheados: );
+    logger.info(Errores: );
+
+    return stats;
+
+  } finally {
+    await client.close();
+  }
+}
+
+module.exports = { execute };

@@ -1,0 +1,1 @@
+exports.getDuty = async (query) => (query.match(/R|P|C/i) ? 'HD' : 'LD');

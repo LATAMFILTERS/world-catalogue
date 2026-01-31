@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-01-28T17:03:56.119Z",
+  "mode": "PILOTO",
+  "pilot_size": 1000,
+  "resumen": {
+    "total_filtros": 1000,
+    "total_kits": 0,
+    "ratio_kit_filtro": "0.00%"
+  },
+  "filtros": {
+    "total": 1000,
+    "por_duty": [
+      {
+        "_id": "HD",
+        "count": 1000
+      }
+    ],
+    "por_tipo": [
+      {
+        "_id": "Lube",
+        "count": 1000
+      }
+    ],
+    "por_prefijo": [
+      {
+        "_id": "EL8",
+        "count": 1000
+      }
+    ],
+    "muestra": [
+      {
+        "sku": "EL80000",
+        "master": "50000",
+        "duty": "HD",
+        "tipo": "Lube",
+        "kits": []
+      },
+      {
+        "sku": "EL80001",
+        "master": "50001",
+        "duty": "HD",
+        "tipo": "Lube",
+        "kits": []
+      },
+      {
+        "sku": "EL80002",
+        "master": "50002",
+        "duty": "HD",
+        "tipo": "Lube",
+        "kits": []
+      },
+      {
+        "sku": "EL80003",
+        "master": "50003",
+        "duty": "HD",
+        "tipo": "Lube",
+        "kits": []
+      },
+      {
+        "sku": "EL80004",
+        "master": "50004",
+        "duty": "HD",
+        "tipo": "Lube",
+        "kits": []
+      }
+    ]
+  },
+  "kits": {
+    "total": 0,
+    "por_serie": [],
+    "por_industria": [],
+    "muestra": []
+  },
+  "checkpoints": {
+    "phase1": {
+      "phase": "phase1",
+      "timestamp": "2026-01-28T16:56:23.108Z",
+      "elapsed_seconds": 3.964,
+      "data": {
+        "total_imported": 2000,
+        "files_processed": 3,
+        "errors": []
+      }
+    },
+    "phase2": {
+      "phase": "phase2",
+      "timestamp": "2026-01-28T16:56:27.107Z",
+      "elapsed_seconds": 7.963,
+      "data": {
+        "total_relationships": 2000,
+        "unique_codes": 2000
+      }
+    },
+    "phase3": {
+      "phase": "phase3",
+      "timestamp": "2026-01-28T16:56:27.710Z",
+      "elapsed_seconds": 8.566,
+      "data": {
+        "agents_initialized": 12,
+        "test_passed": true
+      }
+    },
+    "phase4": {
+      "phase": "phase4",
+      "timestamp": "2026-01-28T17:03:51.621Z",
+      "elapsed_seconds": 55.69,
+      "data": {
+        "processed": 0,
+        "created": 0,
+        "cached": 1000,
+        "errors": 0
+      }
+    },
+    "phase5": {
+      "phase": "phase5",
+      "timestamp": "2026-01-28T17:03:55.034Z",
+      "elapsed_seconds": 59.103,
+      "data": {
+        "kits_created": 0,
+        "kits_skipped": 2,
+        "filters_updated": 0
+      }
+    },
+    "progress": {
+      "phase": "phase4",
+      "current": 1000,
+      "total": 1000,
+      "percentage": "100.00",
+      "details": "",
+      "timestamp": "2026-01-28T17:03:51.601Z"
+    }
+  }
+}
