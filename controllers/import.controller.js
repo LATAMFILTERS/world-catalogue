@@ -3,14 +3,10 @@ const { MongoClient } = require('mongodb');
 const MONGODB_URI = process.env.MONGODB_URI;
 
 async function importCrossReferences(req, res) {
-  let csvData;
+  const lines = req.body.lines;
   
-  if (req.body.csvData) {
-    csvData = typeof req.body.csvData === 'string' 
-      ? req.body.csvData 
-      : JSON.stringify(req.body.csvData);
-  } else {
-    return res.status(400).json({ error: 'No CSV data provided' });
+  if (!lines || !Array.isArray(lines)) {
+    return res.status(400).json({ error: 'No lines array provided' });
   }
 
   let client;
@@ -24,15 +20,14 @@ async function importCrossReferences(req, res) {
     const db = client.db('ELIMFILTERS_DB');
     const collection = db.collection('unified_filters');
 
-    const lines = csvData.split('\n');
-    console.log(`📊 Total lines in CSV: ${lines.length}`);
+    console.log(`📊 Total lines received: ${lines.length}`);
     
     // Skip headers (first 2 lines)
     for (let i = 2; i < lines.length; i++) {
       const line = lines[i];
       if (!line || !line.trim()) continue;
 
-      // FIXED REGEX: Match pattern like "00642050......... M065030 ..... FWD"
+      // Pattern: "00642050......... M065030 ..... FWD"
       const regex = /(\d+)[\.\s]+([A-Z0-9]+)\s+[\.\s]+([A-Z]+)/gi;
       let match;
       
@@ -47,18 +42,17 @@ async function importCrossReferences(req, res) {
       }
     }
 
-    console.log(`✅ Extracted ${crossRefs.length} cross-references from ${lines.length} lines`);
+    console.log(`✅ Extracted ${crossRefs.length} cross-references`);
 
     if (crossRefs.length === 0) {
       return res.json({
         success: false,
         error: 'No cross-references extracted',
-        linesProcessed: lines.length,
-        message: 'Check CSV format'
+        linesProcessed: lines.length
       });
     }
 
-    // Update existing records in MongoDB
+    // Update MongoDB
     for (const ref of crossRefs) {
       processed++;
       
@@ -83,10 +77,12 @@ async function importCrossReferences(req, res) {
         notFound++;
       }
       
-      if (processed % 100 === 0) {
-        console.log(`Progress: ${processed}/${crossRefs.length}`);
+      if (processed % 500 === 0) {
+        console.log(`Progress: ${processed}/${crossRefs.length} - Updated: ${updated}`);
       }
     }
+
+    console.log(`✅ COMPLETE: ${updated} updated, ${notFound} not found`);
 
     res.json({
       success: true,
