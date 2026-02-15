@@ -10,59 +10,70 @@ async function importCrossReferences(req, res) {
   }
 
   let client;
-  const results = [];
-  const errors = [];
+  const crossRefs = [];
+  let processed = 0;
+  let updated = 0;
 
   try {
-    // Connect to MongoDB
     client = await MongoClient.connect(MONGODB_URI);
     const db = client.db('ELIMFILTERS_DB');
-    const collection = db.collection('crossreferences');
+    const collection = db.collection('unified_filters');
 
-    // Parse CSV
-    const stream = Readable.from([req.body.csvData]);
+    const lines = req.body.csvData.split('\n');
+    
+    // Skip headers (first 2 lines)
+    for (let i = 2; i < lines.length; i++) {
+      const line = lines[i];
+      if (!line.trim()) continue;
 
-    await new Promise((resolve, reject) => {
-      stream
-        .pipe(csv())
-        .on('data', (row) => {
-          try {
-            const crossRefs = [];
-            const keys = Object.keys(row);
-            
-            for (let i = 0; i < keys.length; i += 2) {
-              const brand = row[keys[i]]?.trim();
-              const sku = row[keys[i + 1]]?.trim();
-              
-              if (brand && sku) {
-                crossRefs.push({ brand, sku });
-              }
-            }
-
-            if (crossRefs.length > 0) {
-              results.push({ crossRefs, rawData: row });
-            }
-          } catch (err) {
-            errors.push({ row, error: err.message });
-          }
-        })
-        .on('end', resolve)
-        .on('error', reject);
-    });
-
-    // Insert into MongoDB
-    if (results.length > 0) {
-      const insertResult = await collection.insertMany(results);
+      // Extract all cross-references from line
+      // Pattern: PartNumber......... CrossRef ..... BRAND
+      const regex = /(\d+[\.\s]+)([A-Z0-9]+)\s+[\.\s]+([A-Z]+)/g;
+      let match;
       
-      res.json({
-        success: true,
-        inserted: insertResult.insertedCount,
-        total: results.length,
-        errors: errors.length
-      });
-    } else {
-      res.status(400).json({ error: 'No valid data to import' });
+      while ((match = regex.exec(line)) !== null) {
+        const donaldsonPart = match[1].replace(/[\.\s]/g, '');
+        const crossRef = match[2].trim();
+        const brand = match[3].trim();
+        
+        if (donaldsonPart && crossRef && brand) {
+          crossRefs.push({ donaldsonPart, crossRef, brand });
+        }
+      }
     }
+
+    // Update existing records in MongoDB
+    for (const ref of crossRefs) {
+      processed++;
+      
+      // Find by Donaldson part number
+      const filter = {
+        $or: [
+          { elimfiltersSKU: ref.donaldsonPart },
+          { baseCode: ref.donaldsonPart },
+          { oemCodes: ref.donaldsonPart }
+        ]
+      };
+
+      const update = {
+        $addToSet: {
+          crossReferenceCodes: `${ref.brand}:${ref.crossRef}`
+        }
+      };
+
+      const result = await collection.updateOne(filter, update);
+      if (result.modifiedCount > 0) {
+        updated++;
+      }
+    }
+
+    res.json({
+      success: true,
+      totalCrossRefs: crossRefs.length,
+      processed,
+      updated,
+      message: `Updated ${updated} filters with cross-references`
+    });
 
   } catch (error) {
     console.error('Import error:', error);
