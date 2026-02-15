@@ -5,7 +5,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 async function importCrossReferences(req, res) {
   let csvData;
   
-  // Handle different input formats
   if (req.body.csvData) {
     csvData = typeof req.body.csvData === 'string' 
       ? req.body.csvData 
@@ -26,21 +25,21 @@ async function importCrossReferences(req, res) {
     const collection = db.collection('unified_filters');
 
     const lines = csvData.split('\n');
+    console.log(`📊 Total lines in CSV: ${lines.length}`);
     
     // Skip headers (first 2 lines)
     for (let i = 2; i < lines.length; i++) {
       const line = lines[i];
-      if (!line.trim()) continue;
+      if (!line || !line.trim()) continue;
 
-      // Extract all cross-references from line
-      // Pattern: PartNumber......... CrossRef ..... BRAND
-      const regex = /(\d+)[\.\s]+([A-Z0-9]+)\s+[\.\s]+([A-Z]+)/g;
+      // FIXED REGEX: Match pattern like "00642050......... M065030 ..... FWD"
+      const regex = /(\d+)[\.\s]+([A-Z0-9]+)\s+[\.\s]+([A-Z]+)/gi;
       let match;
       
       while ((match = regex.exec(line)) !== null) {
-        const donaldsonPart = match[1].trim();
-        const crossRef = match[2].trim();
-        const brand = match[3].trim();
+        const donaldsonPart = match[1];
+        const crossRef = match[2];
+        const brand = match[3];
         
         if (donaldsonPart && crossRef && brand) {
           crossRefs.push({ donaldsonPart, crossRef, brand });
@@ -48,19 +47,26 @@ async function importCrossReferences(req, res) {
       }
     }
 
-    console.log(`📊 Extracted ${crossRefs.length} cross-references from CSV`);
+    console.log(`✅ Extracted ${crossRefs.length} cross-references from ${lines.length} lines`);
+
+    if (crossRefs.length === 0) {
+      return res.json({
+        success: false,
+        error: 'No cross-references extracted',
+        linesProcessed: lines.length,
+        message: 'Check CSV format'
+      });
+    }
 
     // Update existing records in MongoDB
     for (const ref of crossRefs) {
       processed++;
       
-      // Find by Donaldson part number in various fields
       const filter = {
         $or: [
           { elimfiltersSKU: ref.donaldsonPart },
           { baseCode: ref.donaldsonPart },
-          { oemCodes: ref.donaldsonPart },
-          { crossReferenceCodes: { $regex: ref.donaldsonPart, $options: 'i' } }
+          { oemCodes: ref.donaldsonPart }
         ]
       };
 
@@ -71,15 +77,14 @@ async function importCrossReferences(req, res) {
       };
 
       const result = await collection.updateOne(filter, update);
-      if (result.modifiedCount > 0) {
+      if (result.modifiedCount > 0 || result.matchedCount > 0) {
         updated++;
       } else {
         notFound++;
       }
       
-      // Log progress every 100 items
       if (processed % 100 === 0) {
-        console.log(`Progress: ${processed}/${crossRefs.length} processed, ${updated} updated`);
+        console.log(`Progress: ${processed}/${crossRefs.length}`);
       }
     }
 
@@ -89,7 +94,7 @@ async function importCrossReferences(req, res) {
       processed,
       updated,
       notFound,
-      message: `Successfully updated ${updated} filters with cross-references`
+      message: `Updated ${updated} filters, ${notFound} not found in catalog`
     });
 
   } catch (error) {
