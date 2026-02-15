@@ -16,5 +16,6 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log('📋 Available endpoints:');
     console.log('   GET  /api/scraper/donaldson/:sku');
     console.log('   GET  /api/scraper/fram/:sku');
-    console.log('   POST /api/import/crossref [NEW]');
+    console.log('   POST /api/import/crossref');
+    console.log('   POST /api/pdf/process [NEW]');
 });
