@@ -4,7 +4,14 @@ const mongoose = require('mongoose');
 const apiRoutes = require('./routes/api.routes');
 
 const app = express();
-app.use(cors());
+
+// CORS explícito para WordPress
+app.use(cors({
+  origin: ['https://elimfilters.com', 'https://www.elimfilters.com'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json({ limit: '50mb' }));
 app.use('/api', apiRoutes);
 
