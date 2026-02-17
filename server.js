@@ -1,15 +1,20 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const apiRoutes = require('./routes/api.routes');
 
 const app = express();
-
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use('/api', apiRoutes);
 
-const PORT = process.env.PORT || 8080;
+// Conectar MongoDB
+const MONGO_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('✅ MongoDB conectado'))
+  .catch(err => console.error('❌ MongoDB error:', err.message));
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
     console.log('🚀 ELIMFILTERS Backend API');
     console.log(`📍 Server running on port ${PORT}`);
@@ -17,5 +22,5 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log('   GET  /api/scraper/donaldson/:sku');
     console.log('   GET  /api/scraper/fram/:sku');
     console.log('   POST /api/import/crossref');
-    console.log('   POST /api/pdf/process [NEW]');
+    console.log('   GET  /api/search?q=:code');
 });
