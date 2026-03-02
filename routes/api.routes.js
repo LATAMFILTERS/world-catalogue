@@ -40,7 +40,7 @@ router.get("/alternatives", async (req, res) => {
   const { sku } = req.query;
   if (!sku) return res.status(400).json({ success: false, message: "Falta parametro sku" });
   try {
-    const db  = mongoose.connection.db;
+    const db = mongoose.connection.db;
     const col = db.collection("unified_filters");
     const source = await col.findOne({
       $or: [{ elimfiltersSKU: sku.toUpperCase() }, { "ELIMFILTERS SKU": sku.toUpperCase() }]
@@ -51,10 +51,12 @@ router.get("/alternatives", async (req, res) => {
     const height = source["height_mm_numeric"]         || source["Height (mm)"];
     const ftype  = source["filterType"];
     if (!thread || !od || !height) return res.json({ success: true, data: [] });
+    const odVal = parseFloat(od);
+    const htVal = parseFloat(height);
     const alternatives = await col.find({
       "Thread Size": thread,
-      outer_diameter_mm_numeric: parseFloat(od),
-      height_mm_numeric: parseFloat(height),
+      outer_diameter_mm_numeric: { $gte: odVal - 2, $lte: odVal + 2 },
+      height_mm_numeric:         { $gte: htVal - 2, $lte: htVal + 2 },
       filterType: ftype,
       elimfiltersSKU: { $ne: sku.toUpperCase() },
       apiReady: true,
