@@ -36,6 +36,43 @@ router.get("/search", async (req, res) => {
   }
 });
 
+router.get("/alternatives", async (req, res) => {
+  const { sku } = req.query;
+  if (!sku) return res.status(400).json({ success: false, message: "Falta parametro sku" });
+  try {
+    const db  = mongoose.connection.db;
+    const col = db.collection("unified_filters");
+    const source = await col.findOne({
+      $or: [{ elimfiltersSKU: sku.toUpperCase() }, { "ELIMFILTERS SKU": sku.toUpperCase() }]
+    });
+    if (!source) return res.status(404).json({ success: false, message: "SKU no encontrado" });
+    const thread = source["Thread Size"];
+    const od     = source["outer_diameter_mm_numeric"] || source["Outer Diameter (mm)"];
+    const height = source["height_mm_numeric"]         || source["Height (mm)"];
+    const ftype  = source["filterType"];
+    if (!thread || !od || !height) return res.json({ success: true, data: [] });
+    const alternatives = await col.find({
+      "Thread Size": thread,
+      outer_diameter_mm_numeric: parseFloat(od),
+      height_mm_numeric: parseFloat(height),
+      filterType: ftype,
+      elimfiltersSKU: { $ne: sku.toUpperCase() },
+      apiReady: true,
+    }, {
+      projection: {
+        elimfiltersSKU: 1, "ELIMFILTERS SKU": 1,
+        filterType: 1, images: 1,
+        "Height (mm)": 1, "Height (inch)": 1,
+        "Outer Diameter (mm)": 1, "Outer Diameter (inch)": 1,
+        "Thread Size": 1,
+      }
+    }).limit(10).toArray();
+    res.json({ success: true, data: alternatives });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 router.get("/scraper/donaldson/:code", donaldsonHDController);
 router.get("/scraper/fram/:code", framLDController);
 router.use(importRoutes);
