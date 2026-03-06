@@ -1,0 +1,15 @@
+﻿{
+    "SKU":  "EL82100",
+    "Config":  {
+                   "LogoColor":  "Silver",
+                   "Hex":  "#121212",
+                   "Roughness":  0.9,
+                   "Finish":  "Matte Charcoal"
+               },
+    "Specs":  {
+                  "diametro":  93,
+                  "altura":  130
+              },
+    "Timestamp":  "2026-02-22 15:23:11",
+    "Producer":  "Gemini-Automation-Engine"
+}
