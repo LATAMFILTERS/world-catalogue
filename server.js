@@ -15,6 +15,16 @@ mongoose.connect(mongoUri)
 const filterSchema = new mongoose.Schema({}, { collection: "unified_filters", strict: false });
 const Filter = mongoose.model("Filter", filterSchema);
 
+app.get("/", (req, res) => {
+  res.json({
+    api: "ELIMFILTERS API",
+    version: "1.0.0",
+    status: "running",
+    endpoint: "/api/filters/search/homologous?code=XXXXX",
+    example: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL82051"
+  });
+});
+
 app.get("/api/filters/search/homologous", async (req, res) => {
   try {
     const { code } = req.query;
