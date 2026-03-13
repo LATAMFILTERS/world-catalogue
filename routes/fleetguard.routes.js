@@ -165,6 +165,94 @@ router.get('/filter-types', async (req, res) => {
 });
 
 /**
+ * GET /api/fleetguard/cross-reference/:oem_code
+ * Busca productos por código OEM
+ * Ejemplo: /api/fleetguard/cross-reference/1R1808
+ */
+router.get('/cross-reference/:oem_code', async (req, res) => {
+  try {
+    const { oem_code } = req.params;
+    const collection = require('../config/mongo.config').get().collection('fleetguard_products');
+
+    const products = await collection.find({
+      'oem_cross_reference.oem_code': { $regex: oem_code, $options: 'i' }
+    }).toArray();
+
+    res.json({
+      success: true,
+      search_code: oem_code,
+      results_count: products.length,
+      data: products,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
+/**
+ * GET /api/fleetguard/equipment/:equipment_name
+ * Busca productos por compatibilidad de equipos
+ * Ejemplo: /api/fleetguard/equipment/Freightliner
+ */
+router.get('/equipment/:equipment_name', async (req, res) => {
+  try {
+    const { equipment_name } = req.params;
+    const collection = require('../config/mongo.config').get().collection('fleetguard_products');
+
+    const products = await collection.find({
+      'equipment_compatibility.equipment': { $regex: equipment_name, $options: 'i' }
+    }).toArray();
+
+    res.json({
+      success: true,
+      search_equipment: equipment_name,
+      results_count: products.length,
+      data: products,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
+/**
+ * GET /api/fleetguard/maintenance-kit/:kit_sku
+ * Busca componentes de un kit de mantenimiento
+ * Ejemplo: /api/fleetguard/maintenance-kit/MK11015
+ */
+router.get('/maintenance-kit/:kit_sku', async (req, res) => {
+  try {
+    const { kit_sku } = req.params;
+    const collection = require('../config/mongo.config').get().collection('fleetguard_products');
+
+    const products = await collection.find({
+      'maintenance_kits.maintenance_kit': { $regex: kit_sku, $options: 'i' }
+    }).toArray();
+
+    res.json({
+      success: true,
+      search_kit: kit_sku,
+      results_count: products.length,
+      data: products.map(p => ({
+        sku: p.sku,
+        name: p.name,
+        maintenance_kits: p.maintenance_kits.filter(k => k.maintenance_kit.includes(kit_sku))
+      })),
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
+/**
  * POST /api/fleetguard/batch-import
  * Importa un lote de productos (para testing)
  * Body: { products: [...] }

@@ -14,9 +14,12 @@ Sistema completo para scraping del catálogo de Fleetguard (500 páginas) y alma
 - SKU del producto
 - Nombre y descripción
 - Especificaciones técnicas completas
-- Partes relacionadas (replaces, upgrades)
+- **Partes relacionadas** (Replaces, For Upgrade Use, Upgrade Of)
+- **Cross-references OEM** (códigos homólogos por fabricante)
+- **Compatibilidad de equipos** (Equipment, Engine, Year, Qty)
+- **Kits de mantenimiento** (con componentes incluidos)
 - URLs de imágenes
-- Kits de mantenimiento
+- URLs de productos
 
 ✅ **Almacenamiento**
 - MongoDB nativo
@@ -94,13 +97,49 @@ Ejemplo de estructura:
     "Media Type": "NanoNet",
     "Gasket OD": "4.68 inch / 118.88 mm",
     "Length": "11.60 inch / 294.69 mm",
-    "Pressure Valve Opening Pressure": "1.00 kPa"
+    "Pressure Valve Opening Pressure": "1.00 kPa",
+    "Test Specification": "ISO 4548-12",
+    "Rated Flow": "27.74 gpm / 105.00 L/min"
   },
   "related_parts": {
     "Replaces": ["LF9080"],
     "For Upgrade, Use": ["LF14001NN"],
     "Upgrade Of": ["LF9080"]
   },
+  "oem_cross_reference": [
+    {
+      "oem_code": "CAT 1R1808",
+      "manufacturer": "Caterpillar",
+      "description": "Spin-On Oil Filter"
+    },
+    {
+      "oem_code": "VOLVO 20430585",
+      "manufacturer": "Volvo",
+      "description": "Oil Filter"
+    }
+  ],
+  "equipment_compatibility": [
+    {
+      "equipment": "Freightliner - XC Raised Rail",
+      "engine": "X12",
+      "year": "2021",
+      "qty_req": "1"
+    }
+  ],
+  "maintenance_kits": [
+    {
+      "maintenance_kit": "MK11015",
+      "part_number": "LF14000NN",
+      "quantity": "1",
+      "product_family": "Lube"
+    },
+    {
+      "maintenance_kit": "MK11016",
+      "part_number": "LF14000NN",
+      "quantity": "1",
+      "product_family": "Lube"
+    }
+  ],
   "image_url": "https://...",
   "product_url": "https://www.fleetguard.com/product/...",
   "scraped_at": "2024-01-15T10:30:00.000Z"

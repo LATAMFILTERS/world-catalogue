@@ -88,38 +88,134 @@ class FleetguardCatalogScraper {
         });
         data.description = data.description.trim();
 
-        // Especificaciones
+        // Especificaciones - Tabla de especificaciones técnicas
         data.specifications = {};
-        const specTables = document.querySelectorAll('table');
-        specTables.forEach(table => {
-          const rows = table.querySelectorAll('tr');
+        const tables = document.querySelectorAll('table');
+        tables.forEach((table, idx) => {
+          // Saltar si es tabla de related parts, equipment o kits
+          const tableText = table.innerText;
+          if (!tableText.includes('Related') && !tableText.includes('Equipment') &&
+              !tableText.includes('Maintenance') && !tableText.includes('Part Number')) {
+            const rows = table.querySelectorAll('tr');
+            rows.forEach(row => {
+              const cells = row.querySelectorAll('td, th');
+              if (cells.length >= 2) {
+                const key = cells[0].innerText.trim();
+                const value = cells[1].innerText.trim();
+                if (key && value && key.length < 50) {
+                  data.specifications[key] = value;
+                }
+              }
+            });
+          }
+        });
+
+        // ===== PARTES RELACIONADAS (Related Parts section) =====
+        data.related_parts = {};
+        const relatedPartsSection = Array.from(document.querySelectorAll('*'))
+          .find(el => el.innerText.includes('Related Parts'));
+
+        if (relatedPartsSection) {
+          // Buscar estructura de filas con labels
+          const rows = relatedPartsSection.querySelectorAll('[class*="row"], tr, .flex');
           rows.forEach(row => {
-            const cells = row.querySelectorAll('td, th');
-            if (cells.length >= 2) {
-              const key = cells[0].innerText.trim();
-              const value = cells[1].innerText.trim();
-              if (key && value) {
-                data.specifications[key] = value;
+            const text = row.innerText;
+            if (text.includes('Replaces') || text.includes('For Upgrade') || text.includes('Upgrade Of')) {
+              const parts = row.querySelectorAll('a[href*="/product/"]');
+              const label = text.split('\n')[0].trim();
+              if (label && parts.length > 0) {
+                data.related_parts[label] = Array.from(parts).map(p => p.innerText.trim());
               }
             }
           });
-        });
+        }
 
-        // Partes relacionadas
-        data.relatedParts = {};
-        const relatedSection = Array.from(document.querySelectorAll('*'))
-          .find(el => el.innerText.includes('Related Parts'));
+        // ===== CROSS-REFERENCES OEM (OEM Cross Reference section) =====
+        data.oem_cross_reference = [];
+        const tabs = document.querySelectorAll('[role="tab"], button');
+        let oemTabFound = false;
 
-        if (relatedSection) {
-          const links = relatedSection.querySelectorAll('a[href*="/product/"]');
-          links.forEach(link => {
-            const type = link.parentElement?.parentElement?.innerText.split('\n')[0];
-            const sku = link.innerText.trim();
-            if (type && sku) {
-              data.relatedParts[type] = (data.relatedParts[type] || []);
-              data.relatedParts[type].push(sku);
-            }
-          });
+        // Buscar y hacer click en tab OEM Cross Reference
+        for (const tab of tabs) {
+          if (tab.innerText.includes('OEM Cross Reference')) {
+            tab.click?.();
+            oemTabFound = true;
+            break;
+          }
+        }
+
+        // Extraer tabla OEM si existe
+        const oemSection = Array.from(document.querySelectorAll('*'))
+          .find(el => el.innerText.includes('OEM Cross Reference'));
+
+        if (oemSection) {
+          const oemTable = oemSection.querySelector('table');
+          if (oemTable) {
+            const oemRows = oemTable.querySelectorAll('tbody tr');
+            oemRows.forEach(row => {
+              const cells = row.querySelectorAll('td');
+              if (cells.length >= 2) {
+                data.oem_cross_reference.push({
+                  oem_code: cells[0].innerText.trim(),
+                  manufacturer: cells[1]?.innerText.trim() || '',
+                  description: cells[2]?.innerText.trim() || '',
+                });
+              }
+            });
+          }
+        }
+
+        // ===== EQUIPMENT COMPATIBILITY (Equipment section) =====
+        data.equipment_compatibility = [];
+        const equipmentSection = Array.from(document.querySelectorAll('*'))
+          .find(el => el.innerText.includes('Equipment'));
+
+        if (equipmentSection) {
+          const equipTable = equipmentSection.querySelector('table');
+          if (equipTable) {
+            const equipRows = equipTable.querySelectorAll('tbody tr');
+            equipRows.forEach(row => {
+              const cells = row.querySelectorAll('td');
+              if (cells.length >= 3) {
+                data.equipment_compatibility.push({
+                  equipment: cells[0].innerText.trim(),
+                  engine: cells[1]?.innerText.trim() || '',
+                  year: cells[2]?.innerText.trim() || '',
+                  qty_req: cells[3]?.innerText.trim() || '1',
+                });
+              }
+            });
+          }
+        }
+
+        // ===== MAINTENANCE KITS (Maintenance Kits section) =====
+        data.maintenance_kits = [];
+        const kitsSection = Array.from(document.querySelectorAll('*'))
+          .find(el => el.innerText.includes('Maintenance Kit'));
+
+        if (kitsSection) {
+          const kitsTable = kitsSection.querySelector('table');
+          if (kitsTable) {
+            const kitRows = kitsTable.querySelectorAll('tbody tr');
+            kitRows.forEach(row => {
+              const cells = row.querySelectorAll('td');
+              if (cells.length >= 2) {
+                const kitSku = cells[0].querySelector('a')?.innerText.trim() || cells[0].innerText.trim();
+                const partNumber = cells[1]?.querySelector('a')?.innerText.trim() || cells[1].innerText.trim();
+                const qty = cells[2]?.innerText.trim() || '1';
+                const family = cells[3]?.innerText.trim() || '';
+
+                if (kitSku && partNumber) {
+                  data.maintenance_kits.push({
+                    maintenance_kit: kitSku,
+                    part_number: partNumber,
+                    quantity: qty,
+                    product_family: family,
+                  });
+                }
+              }
+            });
+          }
         }
 
         // Imagen
