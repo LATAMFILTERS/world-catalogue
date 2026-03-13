@@ -73,6 +73,9 @@ class FleetguardScraper {
       await page.goto(url, { waitUntil: 'networkidle2' });
       await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar carga de JS
 
+      // Esperar más tiempo para que cargue todo el contenido dinámico
+      await new Promise(resolve => setTimeout(resolve, 5000));
+
       // Extraer datos completos de la página
       const data = await page.evaluate(() => {
         const result = {
@@ -83,86 +86,84 @@ class FleetguardScraper {
           relatedProducts: {},
           equipmentInfo: {},
           media: null,
-          images: []
+          images: [],
+          allText: ''
         };
 
-        // SKU desde el título o atributo
-        const titleEl = document.querySelector('h1, [data-product-title]');
-        if (titleEl) {
-          const text = titleEl.textContent;
-          const match = text.match(/([A-Z]{2}\d{4,6}[A-Z]{0,2})/);
-          result.sku = match ? match[1] : text.trim();
-          result.name = text.trim();
+        // Obtener todo el texto visible de la página
+        const allText = document.body.innerText || '';
+        result.allText = allText;
+
+        // SKU - buscar patrón en página
+        const skuMatch = allText.match(/([A-Z]{2}\d{4,6}[A-Z]{0,2})/);
+        if (skuMatch) {
+          result.sku = skuMatch[1];
         }
 
-        // Descripción
-        const descEl = document.querySelector('[data-description], .description, .product-description');
-        if (descEl) {
-          result.description = descEl.textContent.trim().substring(0, 300);
+        // Nombre - primero h1, después primer título
+        const h1 = document.querySelector('h1');
+        if (h1) {
+          result.name = h1.textContent.trim();
         }
 
-        // Especificaciones técnicas
-        const specElements = document.querySelectorAll(
-          '[data-spec], .specification, .spec-item, dl dt, .property'
-        );
-        specElements.forEach(el => {
-          const label = el.textContent.trim();
-          const nextEl = el.nextElementSibling;
-          const value = nextEl ? nextEl.textContent.trim() : '';
-          if (label && value && label.length < 50) {
-            result.specifications[label] = value;
+        // Descripción - párrafo principal
+        const firstP = document.querySelector('p');
+        if (firstP) {
+          result.description = firstP.textContent.trim().substring(0, 300);
+        }
+
+        // Buscar especificaciones en labels y valores
+        const labels = allText.match(/([A-Z][a-zA-Z\s]+)[\s]*[:]*[\s]*([^\n]+)/g) || [];
+        labels.slice(0, 20).forEach(line => {
+          const parts = line.split(':');
+          if (parts.length === 2) {
+            const key = parts[0].trim();
+            const val = parts[1].trim();
+            if (key.length > 2 && key.length < 50 && val.length > 1 && val.length < 100) {
+              result.specifications[key] = val;
+            }
           }
         });
 
-        // Tabla de especificaciones
-        const specTable = document.querySelector('table');
-        if (specTable) {
-          const rows = specTable.querySelectorAll('tr');
+        // Tablas de especificaciones
+        const tables = document.querySelectorAll('table');
+        tables.forEach(table => {
+          const rows = table.querySelectorAll('tr');
           rows.forEach(row => {
             const cells = row.querySelectorAll('td, th');
             if (cells.length >= 2) {
               const key = cells[0].textContent.trim();
               const val = cells[1].textContent.trim();
-              if (key && val) {
+              if (key && val && key.length < 50) {
                 result.specifications[key] = val;
               }
             }
           });
-        }
+        });
 
-        // Related Products
-        const relatedSection = document.querySelector('[data-related], .related-products');
-        if (relatedSection) {
-          const links = relatedSection.querySelectorAll('a');
-          links.forEach(link => {
-            const text = link.textContent.trim();
-            const href = link.getAttribute('href');
-            if (text && text.length < 50) {
-              result.relatedProducts[text] = href || '';
-            }
-          });
-        }
-
-        // Imágenes
-        const imgElements = document.querySelectorAll('img[src*="fleetguard"], img[data-product]');
-        imgElements.forEach(img => {
-          const src = img.getAttribute('src') || img.getAttribute('data-src');
-          if (src && !result.images.includes(src)) {
-            result.images.push(src);
+        // Relacionados: buscar palabras clave comunes
+        const relatedKeywords = ['Replaces', 'For Upgrade', 'Related Products', 'Equipment', 'Cross Reference'];
+        relatedKeywords.forEach(keyword => {
+          const index = allText.indexOf(keyword);
+          if (index !== -1) {
+            const section = allText.substring(index, index + 500);
+            const skus = section.match(/([A-Z]{2}\d{4,6}[A-Z]{0,2})/g) || [];
+            skus.forEach(sku => {
+              if (sku !== result.sku) {
+                result.relatedProducts[sku] = `https://www.fleetguard.com/product/${sku}`;
+              }
+            });
           }
         });
 
-        // Media type (para filtros)
-        const mediaEl = document.querySelector('[data-media], .media-type');
-        if (mediaEl) {
-          result.media = mediaEl.textContent.trim();
-        }
-
-        // Equipment compatibility
-        const equipEl = document.querySelector('[data-equipment], .equipment-list');
-        if (equipEl) {
-          result.equipmentInfo.raw = equipEl.textContent.trim().substring(0, 200);
-        }
+        // Imágenes
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(img => {
+          const src = img.getAttribute('src') || img.getAttribute('data-src');
+          if (src && src.length > 10 && !result.images.includes(src)) {
+            result.images.push(src);
+          }
+        });
 
         return result;
       });
