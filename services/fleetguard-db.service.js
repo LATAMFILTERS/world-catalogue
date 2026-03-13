@@ -1,12 +1,19 @@
 const db = require('../config/mongo.config');
+const { OEMClassifier } = require('./oem-classifier.service');
 
 /**
  * Servicio para guardar datos de Fleetguard en MongoDB
+ * Con reclasificación automática de OEM Codes vs Cross Reference Codes
  */
+
+const oemClassifier = new OEMClassifier();
 
 async function saveFleetguardProduct(productData) {
   try {
     const collection = db.get().collection('fleetguard_products');
+
+    // Reclasificar OEM codes automáticamente
+    const classified = oemClassifier.organizeByType(productData.oem_cross_reference || []);
 
     const document = {
       sku: productData.sku?.toUpperCase(),
@@ -14,7 +21,8 @@ async function saveFleetguardProduct(productData) {
       description: productData.description,
       specifications: productData.specifications || {},
       related_parts: productData.related_parts || {},
-      oem_cross_reference: productData.oem_cross_reference || [],
+      oem_codes: classified.oem_codes,
+      cross_reference_codes: classified.cross_reference_codes,
       equipment_compatibility: productData.equipment_compatibility || [],
       maintenance_kits: productData.maintenance_kits || [],
       image_url: productData.imageUrl,

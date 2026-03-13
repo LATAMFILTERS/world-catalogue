@@ -1,0 +1,181 @@
+{
+  "oem_equipment_manufacturers": {
+    "Caterpillar": {
+      "aliases": ["CAT", "CATERPILLAR", "Cat", "Caterpillar Inc."],
+      "prefix": "CAT",
+      "type": "equipment"
+    },
+    "Komatsu": {
+      "aliases": ["KOMATSU", "Komatsu", "Komatsu Ltd."],
+      "prefix": "KOMATSU",
+      "type": "equipment"
+    },
+    "Volvo": {
+      "aliases": ["VOLVO", "Volvo", "Volvo Trucks", "Volvo Penta"],
+      "prefix": "VOLVO",
+      "type": "equipment"
+    },
+    "Mack": {
+      "aliases": ["MACK", "Mack", "Mack Trucks"],
+      "prefix": "MACK",
+      "type": "equipment"
+    },
+    "Ford": {
+      "aliases": ["FORD", "Ford", "Ford Motor"],
+      "prefix": "FORD",
+      "type": "equipment"
+    },
+    "Toyota": {
+      "aliases": ["TOYOTA", "Toyota", "Toyota Motor"],
+      "prefix": "TOYOTA",
+      "type": "equipment"
+    },
+    "Nissan": {
+      "aliases": ["NISSAN", "Nissan", "Nissan Motor"],
+      "prefix": "NISSAN",
+      "type": "equipment"
+    },
+    "John Deere": {
+      "aliases": ["JOHN DEERE", "John Deere", "Deere", "JD"],
+      "prefix": "JD",
+      "type": "equipment"
+    },
+    "Onan": {
+      "aliases": ["ONAN", "Onan", "Cummins Onan"],
+      "prefix": "ONAN",
+      "type": "equipment"
+    },
+    "Cummins": {
+      "aliases": ["CUMMINS", "Cummins", "Cummins Inc."],
+      "prefix": "CUMMINS",
+      "type": "equipment"
+    },
+    "Duramax": {
+      "aliases": ["DURAMAX", "Duramax", "GM Duramax"],
+      "prefix": "DURAMAX",
+      "type": "equipment"
+    },
+    "Powerstroke": {
+      "aliases": ["POWERSTROKE", "Power Stroke", "Ford Powerstroke"],
+      "prefix": "POWERSTROKE",
+      "type": "equipment"
+    },
+    "Detroit Diesel": {
+      "aliases": ["DETROIT DIESEL", "Detroit Diesel", "Detroit"],
+      "prefix": "DD",
+      "type": "equipment"
+    },
+    "Mercedes": {
+      "aliases": ["MERCEDES", "Mercedes", "Mercedes-Benz"],
+      "prefix": "MERCEDES",
+      "type": "equipment"
+    },
+    "BMW": {
+      "aliases": ["BMW", "B.M.W", "Bayerische Motoren Werke"],
+      "prefix": "BMW",
+      "type": "equipment"
+    },
+    "Daimler": {
+      "aliases": ["DAIMLER", "Daimler", "Daimler AG"],
+      "prefix": "DAIMLER",
+      "type": "equipment"
+    },
+    "Scania": {
+      "aliases": ["SCANIA", "Scania", "Scania AB"],
+      "prefix": "SCANIA",
+      "type": "equipment"
+    },
+    "Man": {
+      "aliases": ["MAN", "Man", "MAN SE"],
+      "prefix": "MAN",
+      "type": "equipment"
+    },
+    "Iveco": {
+      "aliases": ["IVECO", "Iveco", "Iveco S.p.A"],
+      "prefix": "IVECO",
+      "type": "equipment"
+    },
+    "Renault": {
+      "aliases": ["RENAULT", "Renault", "Renault Trucks"],
+      "prefix": "RENAULT",
+      "type": "equipment"
+    }
+  },
+  "cross_reference_filter_manufacturers": {
+    "Donaldson": {
+      "aliases": ["DONALDSON", "Donaldson", "Donaldson Company"],
+      "prefix": "DONALDSON",
+      "type": "filter"
+    },
+    "Fleetguard": {
+      "aliases": ["FLEETGUARD", "Fleetguard", "Cummins Fleetguard"],
+      "prefix": "FG",
+      "type": "filter"
+    },
+    "Baldwin": {
+      "aliases": ["BALDWIN", "Baldwin", "Baldwin Filters"],
+      "prefix": "BALDWIN",
+      "type": "filter"
+    },
+    "Wix": {
+      "aliases": ["WIX", "Wix", "Wix Filters"],
+      "prefix": "WIX",
+      "type": "filter"
+    },
+    "Mann Filters": {
+      "aliases": ["MANN FILTERS", "Mann Filters", "Mann", "MANN"],
+      "prefix": "MANN",
+      "type": "filter"
+    },
+    "Fram": {
+      "aliases": ["FRAM", "Fram", "Fram Filters"],
+      "prefix": "FRAM",
+      "type": "filter"
+    },
+    "Bosch": {
+      "aliases": ["BOSCH", "Bosch", "Robert Bosch"],
+      "prefix": "BOSCH",
+      "type": "filter"
+    },
+    "Mahle": {
+      "aliases": ["MAHLE", "Mahle", "Mahle Filters"],
+      "prefix": "MAHLE",
+      "type": "filter"
+    },
+    "Hydac": {
+      "aliases": ["HYDAC", "Hydac", "Hydac Filters"],
+      "prefix": "HYDAC",
+      "type": "filter"
+    },
+    "Parker": {
+      "aliases": ["PARKER", "Parker", "Parker Hannifin"],
+      "prefix": "PARKER",
+      "type": "filter"
+    },
+    "Hastings": {
+      "aliases": ["HASTINGS", "Hastings", "Hastings Filters"],
+      "prefix": "HASTINGS",
+      "type": "filter"
+    },
+    "ACDelco": {
+      "aliases": ["ACDELCO", "ACDelco", "AC Delco"],
+      "prefix": "ACDELCO",
+      "type": "filter"
+    },
+    "Motorcraft": {
+      "aliases": ["MOTORCRAFT", "Motorcraft", "Ford Motorcraft"],
+      "prefix": "MOTORCRAFT",
+      "type": "filter"
+    },
+    "Mopar": {
+      "aliases": ["MOPAR", "Mopar", "Chrysler Mopar"],
+      "prefix": "MOPAR",
+      "type": "filter"
+    },
+    "Toyota OEM": {
+      "aliases": ["TOYOTA OEM", "Toyota OEM", "Toyota Genuine"],
+      "prefix": "TOYOTA",
+      "type": "filter"
+    }
+  }
+}

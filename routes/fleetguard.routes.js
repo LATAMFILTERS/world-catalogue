@@ -165,22 +165,83 @@ router.get('/filter-types', async (req, res) => {
 });
 
 /**
- * GET /api/fleetguard/cross-reference/:oem_code
- * Busca productos por código OEM
- * Ejemplo: /api/fleetguard/cross-reference/1R1808
+ * GET /api/fleetguard/manufacturers
+ * Obtiene lista de fabricantes de OEM y Cross Reference
  */
-router.get('/cross-reference/:oem_code', async (req, res) => {
+router.get('/manufacturers', async (req, res) => {
   try {
-    const { oem_code } = req.params;
+    const { OEMClassifier } = require('../services/oem-classifier.service');
+    const classifier = new OEMClassifier();
+    const manufacturers = classifier.getKnownManufacturers();
+
+    res.json({
+      success: true,
+      data: {
+        equipment_manufacturers: {
+          count: manufacturers.equipment_manufacturers.length,
+          list: manufacturers.equipment_manufacturers
+        },
+        filter_manufacturers: {
+          count: manufacturers.filter_manufacturers.length,
+          list: manufacturers.filter_manufacturers
+        }
+      },
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
+/**
+ * GET /api/fleetguard/oem-code/:code
+ * Busca productos por código OEM (equipos)
+ * Ejemplo: /api/fleetguard/oem-code/CAT1R1808
+ */
+router.get('/oem-code/:code', async (req, res) => {
+  try {
+    const { code } = req.params;
     const collection = require('../config/mongo.config').get().collection('fleetguard_products');
 
     const products = await collection.find({
-      'oem_cross_reference.oem_code': { $regex: oem_code, $options: 'i' }
+      'oem_codes.code': { $regex: code, $options: 'i' }
     }).toArray();
 
     res.json({
       success: true,
-      search_code: oem_code,
+      code_type: 'OEM Code (Equipment Manufacturer)',
+      search_code: code,
+      results_count: products.length,
+      data: products,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
+/**
+ * GET /api/fleetguard/cross-reference/:code
+ * Busca productos por código Cross Reference (filtros)
+ * Ejemplo: /api/fleetguard/cross-reference/Donaldson
+ */
+router.get('/cross-reference/:code', async (req, res) => {
+  try {
+    const { code } = req.params;
+    const collection = require('../config/mongo.config').get().collection('fleetguard_products');
+
+    const products = await collection.find({
+      'cross_reference_codes.code': { $regex: code, $options: 'i' }
+    }).toArray();
+
+    res.json({
+      success: true,
+      code_type: 'Cross Reference Code (Filter Manufacturer)',
+      search_code: code,
       results_count: products.length,
       data: products,
     });
