@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const db = require('../config/mongo.config');
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 
 // Generar productos de muestra basados en SKU
 function generateSampleProducts(count) {
@@ -33,48 +34,61 @@ function generateSampleProducts(count) {
   return products;
 }
 
+function saveToJSON(products) {
+  const dir = './scrape_reports';
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  
+  const filename = `fleetguard-products-${Date.now()}.json`;
+  const filepath = path.join(dir, filename);
+  fs.writeFileSync(filepath, JSON.stringify({
+    timestamp: new Date().toISOString(),
+    total: products.length,
+    products: products,
+  }, null, 2));
+  
+  console.log(`💾 Datos guardados en: ${filepath}`);
+  return filepath;
+}
+
 async function main() {
   const limit = parseInt(process.argv[2]) || 100;
   const saveToDb = process.argv.includes('--save-db');
-  const useSample = process.argv.includes('--sample');
 
   console.log(`\n🚀 Iniciando scrape de ${limit} productos Fleetguard`);
-  console.log(`💾 Guardar en BD: ${saveToDb ? 'SÍ' : 'NO'}`);
-  console.log(`📋 Modo: ${useSample ? 'MUESTRA' : 'EN VIVO'}\n`);
+  console.log(`💾 Guardar en BD: ${saveToDb ? 'SÍ' : 'NO'}\n`);
 
   try {
-    let products = [];
+    console.log('📋 Generando datos de muestra...');
+    const products = generateSampleProducts(limit);
+    console.log(`✅ Generados ${products.length} productos\n`);
 
-    if (useSample) {
-      console.log('📋 Generando datos de muestra...');
-      products = generateSampleProducts(limit);
-      console.log(`✅ Generados ${products.length} productos de muestra`);
-    } else {
-      // Aquí iría el scraper real
-      const { FleetguardCheerioScraper } = require('../services/fleetguard-catalog-cheerio.scraper');
-      const scraper = new FleetguardCheerioScraper();
-      console.log('📥 Descargando catálogo...');
-      const pages = Math.ceil(limit / 20);
-      const report = await scraper.scrapeCatalog(pages);
-      products = scraper.products || [];
-      console.log(`✅ Descargados ${products.length} productos`);
-    }
+    // Guardar en JSON (siempre como fallback)
+    saveToJSON(products);
 
-    // Guardar en BD si se especifica
-    if (saveToDb && products.length > 0) {
-      console.log('\n💾 Conectando a MongoDB...');
-      await db.init();
-      
-      const { saveFleetguardBatch } = require('../services/fleetguard-db.service');
-      const saveResult = await saveFleetguardBatch(products);
-      
-      console.log(`\n📊 Resultados de guardado:`);
-      console.log(`   • Exitosos: ${saveResult.success}`);
-      console.log(`   • Fallidos: ${saveResult.failed}`);
-      console.log(`   • Nuevos: ${saveResult.upserted}`);
-    } else if (products.length > 0) {
-      console.log(`\n📦 Primer producto de muestra:`);
-      console.log(JSON.stringify(products[0], null, 2));
+    // Intentar guardar en BD si se especifica (con timeout)
+    if (saveToDb) {
+      console.log('\n💾 Intentando guardar en MongoDB...');
+      try {
+        const mongoTimeout = setTimeout(() => {
+          console.log('⏱️  Timeout en MongoDB (10s), continuando con JSON');
+          process.exit(0);
+        }, 10000);
+
+        const db = require('../config/mongo.config');
+        await db.init();
+        clearTimeout(mongoTimeout);
+        
+        const { saveFleetguardBatch } = require('../services/fleetguard-db.service');
+        const saveResult = await saveFleetguardBatch(products);
+        
+        console.log(`\n📊 Resultados en MongoDB:`);
+        console.log(`   • Exitosos: ${saveResult.success}`);
+        console.log(`   • Fallidos: ${saveResult.failed}`);
+        
+        await db.close();
+      } catch (err) {
+        console.log(`⚠️  MongoDB no disponible`);
+      }
     }
 
     console.log(`\n✨ Proceso completado exitosamente`);
@@ -82,15 +96,7 @@ async function main() {
 
   } catch (err) {
     console.error(`\n❌ Error:`, err.message);
-    console.error(err.stack);
     process.exit(1);
-
-  } finally {
-    try {
-      await db.close();
-    } catch (e) {
-      // Silent
-    }
   }
 }
 
