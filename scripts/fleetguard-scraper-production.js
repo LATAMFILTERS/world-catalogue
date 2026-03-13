@@ -59,7 +59,17 @@ class FleetguardProductionScraper {
 
       for (let attempt = 1; attempt <= retries; attempt++) {
         try {
-          await this.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+          await this.page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+
+          // Esperar a que carguen los productos
+          await this.page.waitForSelector('a[href*="/product/"]', { timeout: 30000 }).catch(() => {});
+
+          // Scroll para asegurar que todo carga
+          await this.page.evaluate(() => {
+            window.scrollBy(0, window.innerHeight);
+          });
+          await new Promise(r => setTimeout(r, 1000));
+
           break;
         } catch (err) {
           if (attempt < retries) {
@@ -72,15 +82,31 @@ class FleetguardProductionScraper {
       }
 
       const links = await this.page.evaluate(() => {
-        const productLinks = [];
-        document.querySelectorAll('a[href*="/product/"]').forEach(link => {
-          const href = link.getAttribute('href');
-          if (href && href.includes('/product/') && !productLinks.includes(href)) {
-            const fullUrl = href.startsWith('http') ? href : `https://www.fleetguard.com${href}`;
-            productLinks.push(fullUrl);
-          }
+        const productLinks = new Set();
+
+        // Buscar en múltiples selectores posibles
+        const selectors = [
+          'a[href*="/product/"]',
+          'a[href*="/products/"]',
+          '[class*="product"] a[href*="/"]',
+          'a[class*="product-link"]'
+        ];
+
+        selectors.forEach(selector => {
+          try {
+            document.querySelectorAll(selector).forEach(link => {
+              const href = link.getAttribute('href');
+              if (href && (href.includes('/product/') || href.includes('/products/')) && href.length > 10) {
+                const fullUrl = href.startsWith('http') ? href : `https://www.fleetguard.com${href}`;
+                if (fullUrl.includes('fleetguard')) {
+                  productLinks.add(fullUrl);
+                }
+              }
+            });
+          } catch (e) {}
         });
-        return [...new Set(productLinks)];
+
+        return Array.from(productLinks);
       });
 
       console.log(`  ✅ ${links.length} productos encontrados en página ${pageNum}\n`);
@@ -96,7 +122,17 @@ class FleetguardProductionScraper {
     try {
       for (let attempt = 1; attempt <= retries; attempt++) {
         try {
-          await this.page.goto(productUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
+          await this.page.goto(productUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+
+          // Esperar a que cargue el título
+          await this.page.waitForSelector('h1', { timeout: 15000 }).catch(() => {});
+
+          // Scroll para cargar especificaciones
+          await this.page.evaluate(() => {
+            window.scrollBy(0, window.innerHeight / 2);
+          });
+          await new Promise(r => setTimeout(r, 800));
+
           break;
         } catch (err) {
           if (attempt < retries) {
