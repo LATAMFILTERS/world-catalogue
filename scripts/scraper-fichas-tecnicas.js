@@ -25,7 +25,7 @@ const SKUS = [
   'FF2200', 'LF667', 'CC36057', 'LF16015', 'FS1098'
 ];
 
-const BASE_URL = 'https://www.fleetguard.com/product';
+const BASE_URL = 'https://www.fleetguard.com/en-US/product';
 
 class FichasTecnicasScraper {
   constructor() {
@@ -77,19 +77,29 @@ class FichasTecnicasScraper {
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
       );
 
-      // Headers realistas
+      // Headers realistas - FORZAR INGLÉS
       await page.setExtraHTTPHeaders({
         'Accept-Language': 'en-US,en;q=0.9',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Referer': 'https://www.fleetguard.com/'
+        'Referer': 'https://www.fleetguard.com/en-US/',
+        'Cookie': 'language=en; locale=en_US'
       });
 
       // Navegar a la página del producto
       console.log('   ⏳ Navegando...');
-      await page.goto(url, {
-        waitUntil: 'networkidle2',
-        timeout: 45000
-      });
+      try {
+        await page.goto(url, {
+          waitUntil: 'networkidle2',
+          timeout: 45000
+        });
+      } catch (navError) {
+        // Si falla networkidle2, intentar con domcontentloaded
+        console.log('   ⚠️  networkidle2 timeout, intentando domcontentloaded...');
+        await page.goto(url, {
+          waitUntil: 'domcontentloaded',
+          timeout: 45000
+        });
+      }
 
       // Esperar y hacer scroll para cargar contenido dinámico
       console.log('   ⏳ Esperando carga de contenido dinámico...');
@@ -126,23 +136,41 @@ class FichasTecnicasScraper {
         const allText = document.body.innerText || '';
         result.pageText = allText;
 
-        // NOMBRE: buscar h1 o título principal
-        const h1 = document.querySelector('h1');
-        if (h1) {
-          result.name = h1.textContent.trim();
+        // NOMBRE: buscar h1, h2 o título principal
+        const titleElements = [
+          document.querySelector('h1[class*="product-name"]'),
+          document.querySelector('h1[class*="title"]'),
+          document.querySelector('h1'),
+          document.querySelector('h2')
+        ];
+
+        for (const el of titleElements) {
+          if (el && el.textContent.trim().length > 3 && !el.textContent.includes('Login')) {
+            result.name = el.textContent.trim();
+            break;
+          }
         }
 
-        // DESCRIPCIÓN: primer párrafo o elemento con clase descripción
+        // DESCRIPCIÓN: párrafo principal, no navegación
         const descElements = [
+          document.querySelector('[class*="product-description"]'),
           document.querySelector('[class*="description"]'),
           document.querySelector('[class*="details"]'),
+          document.querySelector('[class*="product-info"] p'),
           document.querySelector('p')
         ];
 
         for (const el of descElements) {
-          if (el && el.textContent.trim().length > 10) {
-            result.description = el.textContent.trim().substring(0, 500);
-            break;
+          if (el) {
+            const text = el.textContent.trim();
+            if (text.length > 20 &&
+                !text.includes('Login') &&
+                !text.includes('Cookie') &&
+                !text.includes('facebook') &&
+                !text.includes('Skip to')) {
+              result.description = text.substring(0, 500);
+              break;
+            }
           }
         }
 
@@ -155,26 +183,41 @@ class FichasTecnicasScraper {
           }
         });
 
-        // ESPECIFICACIONES TÉCNICAS: desde tablas
-        const tables = document.querySelectorAll('table');
-        tables.forEach((table, tableIndex) => {
-          const rows = table.querySelectorAll('tr');
-          rows.forEach((row, rowIndex) => {
-            const cells = row.querySelectorAll('td, th');
-            if (cells.length >= 2) {
-              const key = cells[0].textContent.trim();
-              const value = cells[1].textContent.trim();
+        // ESPECIFICACIONES TÉCNICAS: desde tablas y elementos específicos
+        // Buscar tablas de especificaciones
+        const specTables = document.querySelectorAll('[class*="spec"], [class*="technical"], table');
+        specTables.forEach((table, tableIndex) => {
+          if (table.tagName === 'TABLE') {
+            const rows = table.querySelectorAll('tr');
+            rows.forEach((row, rowIndex) => {
+              const cells = row.querySelectorAll('td, th');
+              if (cells.length >= 2) {
+                const key = cells[0].textContent.trim();
+                const value = cells[1].textContent.trim();
 
-              if (key && value && key.length > 2 && key.length < 100) {
-                const cleanKey = key.replace(/[:\*]/g, '').trim();
-                result.specifications[cleanKey] = value;
-                result.technicalData[`table${tableIndex}_${rowIndex}`] = {
-                  key: cleanKey,
-                  value: value
-                };
+                // Filtrar navegación y contenido basura
+                if (key && value &&
+                    key.length > 2 && key.length < 100 &&
+                    value.length > 1 && value.length < 500 &&
+                    !key.match(/^(Home|Facebook|LinkedIn|YouTube|Instagram|Cookie|Accept|Privacy|Carrito|Saltar|Skip)/) &&
+                    !key.includes('©') &&
+                    !key.includes('Nashville') &&
+                    !value.includes('facebook.com')) {
+                  const cleanKey = key.replace(/[:\*]/g, '').trim();
+                  result.specifications[cleanKey] = value;
+                }
               }
-            }
-          });
+            });
+          }
+        });
+
+        // Buscar datos técnicos en divs específicos
+        const techDivs = document.querySelectorAll('[class*="specification"], [class*="detail"], [data-spec], [data-technical]');
+        techDivs.forEach((div, idx) => {
+          const text = div.textContent.trim();
+          if (text.length > 5 && text.length < 300 && !text.includes('facebook') && !text.includes('cookie')) {
+            result.specifications[`tech_${idx}`] = text;
+          }
         });
 
         // DATOS TÉCNICOS: desde divs con clases específicas
