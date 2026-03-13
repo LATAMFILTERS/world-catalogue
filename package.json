@@ -19,6 +19,7 @@
     "google-spreadsheet": "^5.0.2",
     "googleapis": "^169.0.0",
     "groq-sdk": "^0.37.0",
+    "jsdom": "^28.1.0",
     "mongodb": "^7.0.0",
     "mongoose": "^8.21.0",
     "multer": "^2.0.2",
