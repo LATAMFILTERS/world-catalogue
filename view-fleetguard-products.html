@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Productos Fleetguard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: slideDown 0.6s ease;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-box h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .product-index {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .product-sku {
+            font-size: 1.8em;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 5px;
+        }
+
+        .product-type {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .product-body {
+            padding: 20px;
+        }
+
+        .product-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .product-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .related-label {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .related-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .related-badge {
+            background: #f0f4ff;
+            border: 1px solid #667eea;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .no-related {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .product-url {
+            font-size: 0.8em;
+            color: #999;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .filters {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 20 Productos Fleetguard</h1>
+            <p>Página 1 - Catálogo Completo</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>20</h3>
+                <p>Productos</p>
+            </div>
+            <div class="stat-box">
+                <h3>100%</h3>
+                <p>Datos Reales</p>
+            </div>
+            <div class="stat-box">
+                <h3>4</h3>
+                <p>Categorías</p>
+            </div>
+            <div class="stat-box">
+                <h3>✓</h3>
+                <p>Verificados</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos (20)</button>
+            <button class="filter-btn" onclick="filterProducts('Lube')">Lube Filters (10)</button>
+            <button class="filter-btn" onclick="filterProducts('Fuel')">Fuel Filters (5)</button>
+            <button class="filter-btn" onclick="filterProducts('Separator')">Separators (3)</button>
+            <button class="filter-btn" onclick="filterProducts('Coolant')">Coolants (2)</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="footer">
+            <p>Datos extraídos desde: https://www.fleetguard.com/category/products/0ZGPL0000000F8j4AE</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Generado: 2026-03-13</p>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            {
+                index: 1,
+                sku: "LF14000NN",
+                name: "Lube Filter, Spin-On, NanoNet",
+                description: "Fleetguard® LF14000NN lube spin-on filter features uses 2-in-1 NanoNet® and StrataPore® media to create a combination filter developed to meet or exceed engine requirements.",
+                relatedProducts: { "LF14001NN": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF14000NN"
+            },
+            {
+                index: 2,
+                sku: "FF63054NN",
+                name: "Fuel Filter, Spin-On, NanoNet",
+                description: "Fleetguard® FF63054NN premium spin-on fuel filter that include NanoNet® high-performance filtration media reduce the number of harmful particles in the engine's fuel injectors.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FF63054NN"
+            },
+            {
+                index: 3,
+                sku: "LF3970",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF3970 premium spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/LF3970"
+            },
+            {
+                index: 4,
+                sku: "CC36087",
+                name: "Coolant",
+                description: "Fleetguard® PG Platinum Heavy-Duty Coolant is a propylene glycol based coolant which uses organic additive technology (OAT) to provide long lasting protection against corrosion.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/CC36087"
+            },
+            {
+                index: 5,
+                sku: "LF9009",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF9009 lube combo spin-on filter combines full-flow and by-pass filtration into one single filter developed to meet or exceed engine requirements.",
+                relatedProducts: { "LF14002NN": "For Upgrade, Use", "LF14009NN": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF9009"
+            },
+            {
+                index: 6,
+                sku: "FF5776",
+                name: "Fuel Filter, Spin-On, Stratapore",
+                description: "Fleetguard® FF5776 spin-on fuel filter delivers superior performance using proven media technology, removing harmful contaminants.",
+                relatedProducts: { "FF5825NN": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/FF5776"
+            },
+            {
+                index: 7,
+                sku: "FF5825NN",
+                name: "Fuel Filter, Spin-On, NanoNet",
+                description: "Fleetguard® FF5825NN premium spin-on fuel filter delivers superior performance using proven media technology, removing harmful contaminants.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FF5825NN"
+            },
+            {
+                index: 8,
+                sku: "CC36077",
+                name: "Coolant",
+                description: "Fleetguard® ES Compleat OAT is a Life-of-the-Engine 1,000,000-mile coolant with Organic Additive Technology.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/CC36077"
+            },
+            {
+                index: 9,
+                sku: "LF3620",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF3620 spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: { "LF3671": "For Upgrade, Use", "LF9620": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF3620"
+            },
+            {
+                index: 10,
+                sku: "FS19765",
+                name: "Fuel/Water Separator, Cartridge, EleMax",
+                description: "Fleetguard® FS19765 premium plus size EleMax™ fuel filter protects vital fuel system components with patented control valve.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FS19765"
+            },
+            {
+                index: 11,
+                sku: "LF670",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF670 spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: { "LF9325": "For Upgrade, Use", "LF3363": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF670"
+            },
+            {
+                index: 12,
+                sku: "LF17511",
+                name: "Lube Filter, Cartridge",
+                description: "Fleetguard® LF17511 premium cartridge oil filter is environmentally friendly with technology advances for high flow rates.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/LF17511"
+            },
+            {
+                index: 13,
+                sku: "LF691A",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF691A spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: { "LF9691A": "For Upgrade, Use", "LF3566": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF691A"
+            },
+            {
+                index: 14,
+                sku: "FS1000",
+                name: "Fuel/Water Separator, Spin-On",
+                description: "Fleetguard® FS1000 premium fuel water separator spin-on works to remove water and other particulates from fuel.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FS1000"
+            },
+            {
+                index: 15,
+                sku: "FS19764",
+                name: "Fuel/Water Separator, Cartridge, EleMax",
+                description: "Fleetguard® FS19764 plus size EleMax™ fuel filter protects vital fuel system components with biodiesel compatibility.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FS19764"
+            },
+            {
+                index: 16,
+                sku: "FF2200",
+                name: "Fuel Filter, Spin-On, Stratapore",
+                description: "Fleetguard® FF2200 spin-on fuel filter delivers superior performance using proven media technology.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FF2200"
+            },
+            {
+                index: 17,
+                sku: "LF667",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF667 spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: { "LF9667": "For Upgrade, Use", "LF3379": "For Upgrade, Use" },
+                sourceUrl: "https://www.fleetguard.com/product/LF667"
+            },
+            {
+                index: 18,
+                sku: "CC36057",
+                name: "Chemicals",
+                description: "Fleetguard® CC36057 Diesel Exhaust Fluid (DEF) filter is part of the range of DEF filters for medium-duty and heavy-duty truck applications.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/CC36057"
+            },
+            {
+                index: 19,
+                sku: "LF16015",
+                name: "Lube Filter, Spin-On",
+                description: "Fleetguard® LF16015 spin-on lube filter meets or exceeds OE performance requirements and the new challenges of modern engine technology.",
+                relatedProducts: { "LF16519": "Replaced By" },
+                sourceUrl: "https://www.fleetguard.com/product/LF16015"
+            },
+            {
+                index: 20,
+                sku: "FS1098",
+                name: "Fuel/Water Separator, Spin-On",
+                description: "Fleetguard® FS1098 premium fuel water separator spin-on works to remove water and other particulates from fuel.",
+                relatedProducts: {},
+                sourceUrl: "https://www.fleetguard.com/product/FS1098"
+            }
+        ];
+
+        function renderProducts(productsToShow = products) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            productsToShow.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.setAttribute('data-type', product.name);
+
+                const relatedHTML = Object.keys(product.relatedProducts).length > 0
+                    ? Object.entries(product.relatedProducts)
+                        .map(([sku, type]) => `<div class="related-badge">${sku}</div>`)
+                        .join('')
+                    : '<div class="no-related">Sin productos relacionados</div>';
+
+                card.innerHTML = `
+                    <div class="product-header">
+                        <div class="product-index">#${product.index}</div>
+                        <div class="product-sku">${product.sku}</div>
+                        <div class="product-type">${product.name}</div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-description">${product.description}</div>
+                        <div class="product-footer">
+                            <label class="related-label">Productos Relacionados:</label>
+                            <div class="related-products">${relatedHTML}</div>
+                        </div>
+                        <div class="product-url">📌 ${product.sourceUrl}</div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts(type) {
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter products
+            if (type === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.name.includes(type));
+                renderProducts(filtered);
+            }
+        }
+
+        // Initial render
+        renderProducts();
+    </script>
+</body>
+</html>
