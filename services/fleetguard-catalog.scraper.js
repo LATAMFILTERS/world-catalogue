@@ -89,12 +89,16 @@ class FleetguardCatalogScraper {
         });
         data.description = data.description.trim();
 
-        // Especificaciones - Tabla de especificaciones técnicas
+        // Especificaciones - Extrae TODOS los campos técnicos disponibles
+        // Campos como: Make, Model, Engine, Year, OD, ID, Length, Media Type, etc
         data.specifications = {};
+        const specFields = {};
+
+        // 1. Extraer de tablas visibles de especificaciones
         const tables = document.querySelectorAll('table');
         tables.forEach((table, idx) => {
-          // Saltar si es tabla de related parts, equipment o kits
           const tableText = table.innerText;
+          // Saltar tablas de related parts, equipment, kits
           if (!tableText.includes('Related') && !tableText.includes('Equipment') &&
               !tableText.includes('Maintenance') && !tableText.includes('Part Number')) {
             const rows = table.querySelectorAll('tr');
@@ -103,11 +107,75 @@ class FleetguardCatalogScraper {
               if (cells.length >= 2) {
                 const key = cells[0].innerText.trim();
                 const value = cells[1].innerText.trim();
-                if (key && value && key.length < 50) {
-                  data.specifications[key] = value;
+                if (key && value && key.length > 0 && key.length < 100) {
+                  specFields[key] = value;
                 }
               }
             });
+          }
+        });
+
+        // 2. Extraer de divs/spans de especificaciones (campos técnicos)
+        // Buscar patrones comunes de especificación
+        document.querySelectorAll('div[data-spec], span[data-spec], div[class*="spec"], li[class*="spec"]').forEach(el => {
+          const key = el.getAttribute('data-spec-key') || el.getAttribute('data-label') || el.getAttribute('aria-label');
+          const value = el.innerText.trim();
+          if (key && value && value.length < 200) {
+            specFields[key] = value;
+          }
+        });
+
+        // 3. Buscar en contenedores de especificaciones por texto
+        // Patrones como "Make: Toyota" o "Engine: X12"
+        const commonSpecKeys = [
+          'Make', 'Model', 'Engine', 'Year', 'End 2 OD', 'Length', 'Largest OD', 'Height',
+          'Largest ID', 'Overall Width', 'End 1 ID', 'Media Type', 'Gasket Inside Diameter',
+          'Test Specification', 'Hydrostatic Burst Minimum', 'Primary Particle Efficiency',
+          'Gasket OD', 'Additive Base', 'Thread Size', 'End 2 ID', 'BPV OPENING DP',
+          'COOLANT ADDITIVE FORM', 'Thread Form', 'Thread Pitch', 'Heater Voltage (AC)',
+          'Heater Voltage (DC)', 'Anti Drain Back Valve', 'Largest End ID', 'Pressure Valve',
+          'Thread Diameter', 'Width', 'Fin Diameter', 'Outside Seal Diameter',
+          'Overall Height w/o Wing Nut', 'Rated Flow', 'Pressure Valve Opening Pressure'
+        ];
+
+        // Buscar cada campo en el DOM
+        commonSpecKeys.forEach(specKey => {
+          // Buscar patrón: "Key: Value"
+          const regex = new RegExp(`${specKey}\\s*:\\s*([^\\n]+)`, 'i');
+          const match = document.body.innerText.match(regex);
+          if (match && match[1]) {
+            const value = match[1].trim().split('\n')[0];
+            if (value && value.length < 200) {
+              specFields[specKey] = value;
+            }
+          }
+        });
+
+        // 4. Extraer de JSON embebido en la página (si existe)
+        const jsonScripts = document.querySelectorAll('script[type="application/json"]');
+        jsonScripts.forEach(script => {
+          try {
+            const json = JSON.parse(script.textContent);
+            if (json.specifications) {
+              Object.assign(specFields, json.specifications);
+            }
+            if (json.product && json.product.specifications) {
+              Object.assign(specFields, json.product.specifications);
+            }
+          } catch (e) {
+            // Ignorar JSON inválido
+          }
+        });
+
+        // 5. Limpiar y normalizar claves
+        Object.keys(specFields).forEach(key => {
+          const cleanKey = key
+            .replace(/^data-spec-/i, '')
+            .replace(/^data-/i, '')
+            .trim();
+
+          if (cleanKey && cleanKey.length > 0 && cleanKey.length < 100) {
+            data.specifications[cleanKey] = specFields[key];
           }
         });
 
