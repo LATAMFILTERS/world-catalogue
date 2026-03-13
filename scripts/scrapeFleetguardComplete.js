@@ -71,7 +71,7 @@ class FleetguardScraper {
       console.log(`[${index}/20] 📄 Scrapeando ${sku}...`);
 
       await page.goto(url, { waitUntil: 'networkidle2' });
-      await page.waitForTimeout(2000); // Esperar carga de JS
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar carga de JS
 
       // Extraer datos completos de la página
       const data = await page.evaluate(() => {
