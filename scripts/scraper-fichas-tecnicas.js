@@ -461,37 +461,31 @@ class FichasTecnicasScraper {
   }
 
   async collectAllSkus() {
-    console.log('📋 FASE 1: Recopilando todos los SKUs con scroll infinito...\n');
-
-    const page = await this.browser.newPage();
-    page.setDefaultNavigationTimeout(60000);
-
-    // Headers para obtener inglés
-    await page.setUserAgent(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    );
-
-    await page.setExtraHTTPHeaders({
-      'Accept-Language': 'en-US,en;q=0.9',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Referer': 'https://www.fleetguard.com/en-US/',
-      'Cookie': 'language=en; locale=en_US'
-    });
+    console.log('📋 FASE 1: Cargando SKUs desde reporte existente...\n');
 
     try {
-      const pageSkus = await this.extractSkusFromPage(page, 1);
+      // Leer el archivo de productos más reciente
+      const reportsDir = path.join(__dirname, '../scrape_reports');
+      const files = fs.readdirSync(reportsDir)
+        .filter(f => f.startsWith('fleetguard-products-') && f.endsWith('.json'))
+        .sort()
+        .reverse();
 
-      // Agregar todos los productos encontrados
-      pageSkus.forEach(sku => {
-        if (!this.filteredSkus.includes(sku)) {
-          this.filteredSkus.push(sku);
-        }
-      });
+      if (files.length === 0) {
+        console.error('❌ No se encontraron reportes de productos');
+        process.exit(1);
+      }
 
-      console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}\n`);
+      const latestFile = path.join(reportsDir, files[0]);
+      console.log(`📂 Leyendo SKUs desde: ${files[0]}`);
 
-    } finally {
-      await page.close();
+      const data = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
+      this.filteredSkus = data.products.map(p => p.sku);
+
+      console.log(`\n✅ Total de SKUs cargados: ${this.filteredSkus.length}\n`);
+    } catch (error) {
+      console.error('❌ Error al cargar SKUs:', error.message);
+      process.exit(1);
     }
   }
 
