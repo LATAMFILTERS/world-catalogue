@@ -173,14 +173,14 @@ GET /api/fleetguard/product/LF14000NN
 }
 ```
 
-### 2. Buscar Productos
+### 2. Buscar Productos (Nombre/Descripción/SKU)
 ```bash
 GET /api/fleetguard/search?q=lube&type=filter&limit=20
 
 # Query params:
 # q - término de búsqueda
-# type - tipo de filtro
-# limit - máximo 100
+# type - tipo de filtro (opcional)
+# limit - máximo 100 (default: 20)
 ```
 
 ### 3. Obtener Catálogo Completo (Paginado)
@@ -188,12 +188,76 @@ GET /api/fleetguard/search?q=lube&type=filter&limit=20
 GET /api/fleetguard/catalog?skip=0&limit=50&sort=sku
 
 # Query params:
-# skip - offset para paginación
-# limit - máximo 500
-# sort - campo para ordenar
+# skip - offset para paginación (default: 0)
+# limit - máximo 500 (default: 50)
+# sort - campo para ordenar (default: sku)
 ```
 
-### 4. Estadísticas
+### 4. Buscar por Código OEM (Fabricante de Equipos)
+```bash
+GET /api/fleetguard/oem-code/CAT1R1808
+
+# Busca códigos equivalentes de fabricantes como:
+# Caterpillar, Komatsu, Volvo, Mack, Ford, Toyota, Nissan, John Deere, etc.
+```
+
+### 5. Buscar por Código de Referencia Cruzada (Fabricante de Filtros)
+```bash
+GET /api/fleetguard/cross-reference/DONALDSON
+
+# Busca códigos equivalentes de fabricantes como:
+# Donaldson, Fleetguard, Baldwin, Wix, Mann Filters, Fram, Bosch, Mahle, etc.
+```
+
+### 6. Buscar por Compatibilidad de Equipo
+```bash
+GET /api/fleetguard/equipment/Freightliner
+
+# Busca todos los productos compatibles con un equipo específico
+```
+
+### 7. Buscar Componentes de Kit de Mantenimiento
+```bash
+GET /api/fleetguard/maintenance-kit/MK11015
+
+# Busca todos los componentes incluidos en un kit de mantenimiento
+```
+
+### 8. Obtener Fabricantes Disponibles
+```bash
+GET /api/fleetguard/manufacturers
+
+# Response
+{
+  "success": true,
+  "data": {
+    "equipment_manufacturers": {
+      "count": 20,
+      "list": ["Caterpillar", "Komatsu", "Volvo", ...]
+    },
+    "filter_manufacturers": {
+      "count": 15,
+      "list": ["Donaldson", "Fleetguard", "Baldwin", ...]
+    }
+  }
+}
+```
+
+### 9. Obtener Tipos de Filtros
+```bash
+GET /api/fleetguard/filter-types
+
+# Response
+{
+  "success": true,
+  "data": {
+    "filter_types": ["NanoNet", "Standard", "Elite", ...],
+    "total_types": 15
+  }
+}
+```
+
+### 10. Obtener Estadísticas
 ```bash
 GET /api/fleetguard/stats
 
@@ -208,21 +272,7 @@ GET /api/fleetguard/stats
 }
 ```
 
-### 5. Tipos de Filtros
-```bash
-GET /api/fleetguard/filter-types
-
-# Response
-{
-  "success": true,
-  "data": {
-    "filter_types": ["NanoNet", "Standard", "Elite", ...],
-    "total_types": 15
-  }
-}
-```
-
-### 6. Importar Lote (Testing)
+### 11. Importar Lote (Testing)
 ```bash
 POST /api/fleetguard/batch-import
 
@@ -257,6 +307,24 @@ DELAY_BETWEEN_PAGES = 3000ms     // 3 segundos
 - Almacenamiento: ~50-100MB en MongoDB
 
 ## 🔧 Configuración Avanzada
+
+### Reclasificación Automática de OEM Codes
+
+El sistema automáticamente clasifica los códigos OEM en dos categorías:
+
+**OEM Codes** (Códigos de Equipos):
+- Cat, Komatsu, Volvo, Mack, Ford, Toyota, Nissan, John Deere, Onan, Cummins, Duramax, Powerstroke, Detroit Diesel, Mercedes, BMW, Daimler, Scania, Man, Iveco, Renault
+
+**Cross Reference Codes** (Códigos de Filtros):
+- Donaldson, Fleetguard, Baldwin, Wix, Mann Filters, Fram, Bosch, Mahle, Hydac, Parker, Hastings, ACDelco, Motorcraft, Mopar, Toyota OEM
+
+La reclasificación usa:
+1. Búsqueda de fabricante por nombre/alias
+2. Matching de prefijo de código
+3. Patrones de código
+4. Clasificación por defecto
+
+Ver: `services/oem-classifier.service.js`
 
 ### Ajustar Rate Limiting
 En `services/fleetguard-catalog.scraper.js`:
@@ -329,12 +397,23 @@ db.fleetguard_products.countDocuments()
 db.fleetguard_products.findOne()
 ```
 
-## 🚀 Integración con API Existente
+## 🚀 Integración con API
 
-En `server.js`:
+✅ **La API Fleetguard está integrada en el servidor principal**
+
+El servidor Express (server.js) ahora incluye las rutas Fleetguard automáticamente:
 ```javascript
 const fleetguardRoutes = require('./routes/fleetguard.routes');
 app.use('/api/fleetguard', fleetguardRoutes);
+```
+
+Todos los endpoints están disponibles en: `http://localhost:8080/api/fleetguard/*`
+
+Para iniciar el servidor:
+```bash
+npm start
+# o
+node server.js
 ```
 
 ## 📄 Archivos Generados
