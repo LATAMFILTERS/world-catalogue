@@ -31,7 +31,8 @@ class FleetguardCatalogScraper {
     console.log('🔧 Inicializando Puppeteer...');
     this.browser = await puppeteer.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: '/usr/bin/chromium-browser',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
     });
     this.page = await this.browser.newPage();
     await this.page.setViewport({ width: 1920, height: 1080 });
