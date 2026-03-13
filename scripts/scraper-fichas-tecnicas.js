@@ -162,6 +162,12 @@ class FichasTecnicasScraper {
           technicalData: {},
           equipment: [],
           relatedProducts: [],
+          replaces: [],
+          replacedBy: [],
+          forUpgradeUse: [],
+          upgradeOf: [],
+          oemCrossReference: [],
+          maintenanceKits: [],
           images: [],
           pageText: ''
         };
@@ -290,6 +296,67 @@ class FichasTecnicasScraper {
           }
         });
         result.relatedProducts = [...new Map(result.relatedProducts.map(p => [p.sku, p])).values()].slice(0, 10);
+
+        // REPLACES / REPLACED BY
+        const allText = document.body.innerText || '';
+        const replacesSectionMatch = allText.match(/Replaces\s*:?\s*([A-Z0-9\s,]+?)(?=\n|For Upgrade|Equipment|OEM|Maintenance|$)/i);
+        if (replacesSectionMatch) {
+          result.replaces = replacesSectionMatch[1]
+            .split(/[\s,]+/)
+            .filter(s => s && s.match(/^[A-Z0-9]+$/))
+            .slice(0, 10);
+        }
+
+        // FOR UPGRADE, USE
+        const upgradeMatch = allText.match(/For Upgrade,?\s*Use\s*:?\s*([A-Z0-9\s,]+?)(?=\n|Upgrade Of|Equipment|OEM|Maintenance|$)/i);
+        if (upgradeMatch) {
+          result.forUpgradeUse = upgradeMatch[1]
+            .split(/[\s,]+/)
+            .filter(s => s && s.match(/^[A-Z0-9]+$/))
+            .slice(0, 10);
+        }
+
+        // UPGRADE OF
+        const upgradeOfMatch = allText.match(/Upgrade\s*Of\s*:?\s*([A-Z0-9\s,]+?)(?=\n|Equipment|OEM|Maintenance|$)/i);
+        if (upgradeOfMatch) {
+          result.upgradeOf = upgradeOfMatch[1]
+            .split(/[\s,]+/)
+            .filter(s => s && s.match(/^[A-Z0-9]+$/))
+            .slice(0, 10);
+        }
+
+        // OEM CROSS REFERENCE
+        const oemSection = document.querySelector('[class*="oem"], [class*="cross"], [class*="reference"]');
+        if (oemSection) {
+          const oemText = oemSection.textContent;
+          const oemMatches = oemText.match(/[A-Z0-9]{4,}/g) || [];
+          result.oemCrossReference = [...new Set(oemMatches)].slice(0, 10);
+        }
+
+        // MAINTENANCE KITS
+        const kitsMatch = allText.match(/Maintenance\s*Kits?\s*:?\s*([A-Z0-9\s,\-]+?)(?=\n|Equipment|OEM|$)/i);
+        if (kitsMatch) {
+          result.maintenanceKits = kitsMatch[1]
+            .split(/[\s,]+/)
+            .filter(s => s && s.match(/^[A-Z0-9\-]+$/))
+            .slice(0, 10);
+        }
+
+        // RELATED PARTS (buscar en secciones específicas)
+        const partsSection = document.querySelector('[class*="related"], [class*="parts"], [class*="accessories"]');
+        if (partsSection) {
+          const partLinks = partsSection.querySelectorAll('a[href*="/product/"]');
+          partLinks.forEach(link => {
+            const match = link.href.match(/\/product\/([A-Z0-9]+)/);
+            if (match && match[1] !== SKU && !result.relatedProducts.some(p => p.sku === match[1])) {
+              result.relatedProducts.push({
+                sku: match[1],
+                name: link.textContent.trim(),
+                url: link.href
+              });
+            }
+          });
+        }
 
         // IMÁGENES
         const imgs = document.querySelectorAll('img[src*="fleetguard"], img[src*="widen"]');
