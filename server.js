@@ -2,26 +2,40 @@
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+const dbConfig = require('./config/mongo.config');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoUri = process.env.MONGODB_URI || "mongodb+srv://elimfilters_db_admin:Elim2026@cluster0.dll4jew.mongodb.net/ELIMFILTERS_DB?appName=Cluster0&retryWrites=true&w=majority";
-
-mongoose.connect(mongoUri)
+// Initialize MongoDB connection
+dbConfig.init()
   .then(() => console.log("✅ MongoDB conectado"))
-  .catch(err => console.error("❌ MongoDB error:", err.message));
+  .catch(err => {
+    console.error("❌ MongoDB error:", err.message);
+    process.exit(1);
+  });
+
+// Import Fleetguard routes
+const fleetguardRoutes = require('./routes/fleetguard.routes');
+app.use('/api/fleetguard', fleetguardRoutes);
 
 const filterSchema = new mongoose.Schema({}, { collection: "unified_filters", strict: false });
 const Filter = mongoose.model("Filter", filterSchema);
 
 app.get("/", (req, res) => {
   res.json({
-    api: "ELIMFILTERS API",
+    api: "World Catalogue API",
     version: "1.0.0",
     status: "running",
-    endpoint: "/api/filters/search/homologous?code=XXXXX",
-    example: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL82051"
+    endpoints: {
+      elimfilters: "/api/filters/search/homologous?code=XXXXX",
+      fleetguard: "/api/fleetguard/catalog"
+    },
+    examples: {
+      elimfilters: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL82051",
+      fleetguard: "https://world-catalogue-production.up.railway.app/api/fleetguard/product/LF14000NN"
+    }
   });
 });
 
