@@ -66,7 +66,6 @@ class FichasTecnicasScraper {
   async scrapeProducto(sku, index) {
     const page = await this.browser.newPage();
     page.setDefaultNavigationTimeout(45000);
-    page.setDefaultWaitTimeout(30000);
 
     try {
       const url = `${BASE_URL}/${sku}`;
