@@ -22,10 +22,29 @@ class FleetguardProductionScraper {
     try {
       this.browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-gpu',
+          '--disable-web-resources',
+          '--disable-component-extensions-with-background-pages'
+        ]
       });
       this.page = await this.browser.newPage();
-      this.page.setDefaultNavigationTimeout(45000);
+
+      // Configurar headers para parecer un navegador real
+      await this.page.setExtraHTTPHeaders({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Accept-Encoding': 'gzip, deflate',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
+      });
+
+      this.page.setDefaultNavigationTimeout(60000);
+      this.page.setDefaultTimeout(60000);
       console.log('✅ Puppeteer iniciado correctamente\n');
     } catch (err) {
       console.error('❌ Error al iniciar Puppeteer:', err.message);
@@ -33,12 +52,24 @@ class FleetguardProductionScraper {
     }
   }
 
-  async getProductLinks(pageNum) {
+  async getProductLinks(pageNum, retries = 3) {
     try {
       const url = `${CATALOG_URL}?page=${pageNum}`;
       console.log(`📄 Extrayendo enlaces de página ${pageNum}...`);
 
-      await this.page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+      for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+          await this.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+          break;
+        } catch (err) {
+          if (attempt < retries) {
+            console.log(`  ⚠️  Intento ${attempt} falló, reintentando...`);
+            await new Promise(r => setTimeout(r, 2000));
+          } else {
+            throw err;
+          }
+        }
+      }
 
       const links = await this.page.evaluate(() => {
         const productLinks = [];
@@ -61,9 +92,21 @@ class FleetguardProductionScraper {
     }
   }
 
-  async extractProductData(productUrl) {
+  async extractProductData(productUrl, retries = 3) {
     try {
-      await this.page.goto(productUrl, { waitUntil: 'networkidle2', timeout: 45000 });
+      for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+          await this.page.goto(productUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
+          break;
+        } catch (err) {
+          if (attempt < retries) {
+            console.log(`     ⚠️  Intento ${attempt} falló, reintentando...`);
+            await new Promise(r => setTimeout(r, 1500));
+          } else {
+            throw err;
+          }
+        }
+      }
 
       const data = await this.page.evaluate(() => {
         const product = {};
