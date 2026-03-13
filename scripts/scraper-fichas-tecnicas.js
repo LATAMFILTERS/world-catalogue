@@ -17,25 +17,83 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-// 20 SKUs REALES de página 1
-const SKUS = [
-  'LF14000NN', 'FF63054NN', 'LF3970', 'CC36087', 'LF9009',
-  'FF5776', 'FF5825NN', 'CC36077', 'LF3620', 'FS19765',
-  'LF670', 'LF17511', 'LF691A', 'FS1000', 'FS19764',
-  'FF2200', 'LF667', 'CC36057', 'LF16015', 'FS1098'
+// CATEGORÍAS PERMITIDAS (prefijos) - 15 CATEGORÍAS
+const ALLOWED_PREFIXES = [
+  'EA1', // Aire (Motor)
+  'EA2', // Carcasas e Intakes
+  'EF9', // Combustible (Fuel)
+  'ES9', // Separador de Agua
+  'EL8', // Aceite (Lube)
+  'EH6', // Hidráulico
+  'ET9', // Turbinas (Serie FH)
+  'EW7', // Refrigerante (Coolant)
+  'EC1', // Cabina (Aire Acond.)
+  'ED4', // Secador de Aire (Dryer)
+  'ED3', // DEF / AdBlue
+  'EG3', // Gas (LPG / GNC)
+  'EK5', // Kits de Servicio (HD)
+  'EK3', // Kits de Servicio (LD)
+  'EM9'  // Marinos (In/Outboard)
 ];
 
 const BASE_URL = 'https://www.fleetguard.com/en-US/product';
+const SEARCH_URL = 'https://www.fleetguard.com/en-US/products';
 
 class FichasTecnicasScraper {
   constructor() {
     this.browser = null;
     this.products = [];
+    this.filteredSkus = [];
+  }
+
+  // Función para validar prefijo
+  isAllowedProduct(sku) {
+    const prefix = sku.substring(0, 3).toUpperCase();
+    return ALLOWED_PREFIXES.includes(prefix);
+  }
+
+  // Extraer SKUs de una página de listado
+  async extractSkusFromPage(page, pageNumber) {
+    try {
+      const url = `${SEARCH_URL}?page=${pageNumber}`;
+      console.log(`\n[Página ${pageNumber}] Navegando a ${url}`);
+
+      await page.goto(url, {
+        waitUntil: 'networkidle2',
+        timeout: 45000
+      });
+
+      // Esperar carga de contenido
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      const skus = await page.evaluate(() => {
+        const productLinks = document.querySelectorAll('a[href*="/product/"]');
+        const extractedSkus = [];
+
+        productLinks.forEach(link => {
+          const match = link.href.match(/\/product\/([A-Z0-9]+)/);
+          if (match && match[1]) {
+            extractedSkus.push(match[1]);
+          }
+        });
+
+        return [...new Set(extractedSkus)]; // Eliminar duplicados
+      });
+
+      console.log(`   ✓ Encontrados ${skus.length} productos en página ${pageNumber}`);
+      return skus;
+
+    } catch (error) {
+      console.error(`   ✗ Error extrayendo SKUs de página ${pageNumber}: ${error.message}`);
+      return [];
+    }
   }
 
   async init() {
     console.log('\n╔═══════════════════════════════════════════════════════════╗');
-    console.log('║  🔍 SCRAPER FICHAS TÉCNICAS - FLEETGUARD 20 PRODUCTOS    ║');
+    console.log('║  🔍 SCRAPER FICHAS TÉCNICAS - FLEETGUARD 500 PÁGINAS     ║');
+    console.log('║  📂 15 CATEGORÍAS FILTRADAS                              ║');
+    console.log('║  ' + ALLOWED_PREFIXES.join(', '));
     console.log('╚═══════════════════════════════════════════════════════════╝\n');
 
     try {
@@ -69,7 +127,7 @@ class FichasTecnicasScraper {
 
     try {
       const url = `${BASE_URL}/${sku}`;
-      console.log(`\n[${index}/20] 📄 SCRAPEANDO: ${sku}`);
+      console.log(`\n[${index}/${this.filteredSkus.length}] 📄 SCRAPEANDO: ${sku}`);
       console.log(`   URL: ${url}`);
 
       // User-Agent realista
@@ -332,14 +390,73 @@ class FichasTecnicasScraper {
     }
   }
 
+  async collectAllSkus() {
+    console.log('📋 FASE 1: Recopilando SKUs de 500 páginas...\n');
+
+    const page = await this.browser.newPage();
+    page.setDefaultNavigationTimeout(45000);
+
+    // Headers para obtener inglés
+    await page.setUserAgent(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    );
+
+    await page.setExtraHTTPHeaders({
+      'Accept-Language': 'en-US,en;q=0.9',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Referer': 'https://www.fleetguard.com/en-US/',
+      'Cookie': 'language=en; locale=en_US'
+    });
+
+    try {
+      for (let pageNum = 1; pageNum <= 500; pageNum++) {
+        const pageSkus = await this.extractSkusFromPage(page, pageNum);
+
+        // Filtrar solo productos permitidos
+        pageSkus.forEach(sku => {
+          if (this.isAllowedProduct(sku) && !this.filteredSkus.includes(sku)) {
+            this.filteredSkus.push(sku);
+          }
+        });
+
+        // Si no encuentra SKUs, probablemente no hay más páginas
+        if (pageSkus.length === 0) {
+          console.log(`\n⚠️  No se encontraron productos en página ${pageNum}. Deteniendo búsqueda.`);
+          break;
+        }
+
+        // Delay para no sobrecargar
+        if (pageNum % 10 === 0) {
+          console.log(`   ⏸️  Pausa de 5 segundos...`);
+          await new Promise(resolve => setTimeout(resolve, 5000));
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+      }
+    } finally {
+      await page.close();
+    }
+
+    console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}`);
+    console.log(`   Categorías: ${ALLOWED_PREFIXES.join(', ')}\n`);
+  }
+
   async scrapeAll() {
-    for (let i = 0; i < SKUS.length; i++) {
-      const product = await this.scrapeProducto(SKUS[i], i + 1);
+    console.log('\n📋 FASE 2: Scrapeando fichas técnicas...\n');
+
+    for (let i = 0; i < this.filteredSkus.length; i++) {
+      const product = await this.scrapeProducto(this.filteredSkus[i], i + 1);
       this.products.push(product);
 
       // Delay para no sobrecargar servidor
-      if (i < SKUS.length - 1) {
+      if (i < this.filteredSkus.length - 1) {
         await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+
+      // Cada 50 productos, pausa más larga
+      if ((i + 1) % 50 === 0) {
+        console.log(`\n⏸️  Pausa de 10 segundos después de ${i + 1} productos...\n`);
+        await new Promise(resolve => setTimeout(resolve, 10000));
       }
     }
   }
