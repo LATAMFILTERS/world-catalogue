@@ -29,39 +29,67 @@ class FichasTecnicasScraper {
     this.filteredSkus = [];
   }
 
-  // Extraer SKUs de una página de listado
+  // Extraer SKUs con scroll infinito
   async extractSkusFromPage(page, pageNumber) {
     try {
-      const url = `${SEARCH_URL}?page=${pageNumber}`;
-      console.log(`\n[Página ${pageNumber}] Navegando a ${url}`);
-
-      await page.goto(url, {
-        waitUntil: 'networkidle2',
-        timeout: 45000
-      });
-
-      // Esperar carga de contenido
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      const skus = await page.evaluate(() => {
-        const productLinks = document.querySelectorAll('a[href*="/product/"]');
-        const extractedSkus = [];
-
-        productLinks.forEach(link => {
-          const match = link.href.match(/\/product\/([A-Z0-9]+)/);
-          if (match && match[1]) {
-            extractedSkus.push(match[1]);
-          }
+      // Primera vez: navegar a la URL base
+      if (pageNumber === 1) {
+        console.log(`\n[Página 1] Navegando a ${SEARCH_URL}`);
+        await page.goto(SEARCH_URL, {
+          waitUntil: 'domcontentloaded',
+          timeout: 45000
         });
+      }
 
-        return [...new Set(extractedSkus)]; // Eliminar duplicados
+      // Scroll para cargar más productos
+      const skus = await page.evaluate(async () => {
+        return new Promise((resolve) => {
+          const extractedSkus = new Set();
+          let previousHeight = 0;
+
+          const scrollInterval = setInterval(() => {
+            // Extraer SKUs actuales
+            const productLinks = document.querySelectorAll('a[href*="/product/"]');
+            productLinks.forEach(link => {
+              const match = link.href.match(/\/product\/([A-Z0-9]+)/);
+              if (match && match[1]) {
+                extractedSkus.add(match[1]);
+              }
+            });
+
+            // Scroll
+            window.scrollBy(0, window.innerHeight);
+
+            // Verificar si llegamos al final
+            const newHeight = document.documentElement.scrollHeight;
+            if (newHeight === previousHeight) {
+              clearInterval(scrollInterval);
+              resolve(Array.from(extractedSkus));
+            }
+            previousHeight = newHeight;
+          }, 500);
+
+          // Timeout: si se demora mucho, parar
+          setTimeout(() => {
+            clearInterval(scrollInterval);
+            const productLinks = document.querySelectorAll('a[href*="/product/"]');
+            const finalSkus = new Set();
+            productLinks.forEach(link => {
+              const match = link.href.match(/\/product\/([A-Z0-9]+)/);
+              if (match && match[1]) {
+                finalSkus.add(match[1]);
+              }
+            });
+            resolve(Array.from(finalSkus));
+          }, 30000);
+        });
       });
 
-      console.log(`   ✓ Encontrados ${skus.length} productos en página ${pageNumber}`);
+      console.log(`   ✓ Encontrados ${skus.length} productos (scroll)`);
       return skus;
 
     } catch (error) {
-      console.error(`   ✗ Error extrayendo SKUs de página ${pageNumber}: ${error.message}`);
+      console.error(`   ✗ Error extrayendo SKUs: ${error.message}`);
       return [];
     }
   }
@@ -434,10 +462,10 @@ class FichasTecnicasScraper {
   }
 
   async collectAllSkus() {
-    console.log('📋 FASE 1: Recopilando SKUs de 500 páginas...\n');
+    console.log('📋 FASE 1: Recopilando todos los SKUs con scroll infinito...\n');
 
     const page = await this.browser.newPage();
-    page.setDefaultNavigationTimeout(45000);
+    page.setDefaultNavigationTimeout(60000);
 
     // Headers para obtener inglés
     await page.setUserAgent(
@@ -452,35 +480,20 @@ class FichasTecnicasScraper {
     });
 
     try {
-      for (let pageNum = 1; pageNum <= 500; pageNum++) {
-        const pageSkus = await this.extractSkusFromPage(page, pageNum);
+      const pageSkus = await this.extractSkusFromPage(page, 1);
 
-        // Agregar todos los productos encontrados
-        pageSkus.forEach(sku => {
-          if (!this.filteredSkus.includes(sku)) {
-            this.filteredSkus.push(sku);
-          }
-        });
-
-        // Si no encuentra SKUs, probablemente no hay más páginas
-        if (pageSkus.length === 0) {
-          console.log(`\n⚠️  No se encontraron productos en página ${pageNum}. Deteniendo búsqueda.`);
-          break;
+      // Agregar todos los productos encontrados
+      pageSkus.forEach(sku => {
+        if (!this.filteredSkus.includes(sku)) {
+          this.filteredSkus.push(sku);
         }
+      });
 
-        // Delay para no sobrecargar
-        if (pageNum % 10 === 0) {
-          console.log(`   ⏸️  Pausa de 5 segundos...`);
-          await new Promise(resolve => setTimeout(resolve, 5000));
-        } else {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-      }
+      console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}\n`);
+
     } finally {
       await page.close();
     }
-
-    console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}\n`);
   }
 
   async scrapeAll() {
