@@ -560,6 +560,7 @@ class FichasTecnicasScraper {
   async run() {
     try {
       await this.init();
+      await this.collectAllSkus();
       await this.scrapeAll();
       await this.save();
       await this.browser.close();
