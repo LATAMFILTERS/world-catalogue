@@ -166,7 +166,13 @@ router.get('/filter-types', async (req, res) => {
 
 /**
  * GET /api/fleetguard/manufacturers
- * Obtiene lista de fabricantes de OEM y Cross Reference
+ * Obtiene lista de fabricantes cuyos códigos aparecen en "OEM Cross Reference"
+ *
+ * equipment_manufacturers: Fabricantes de equipos cuyo código equivalente aparece
+ *   Ej: Cat, Volvo, Mack, etc -> Códigos como "CAT 1R1808"
+ *
+ * filter_manufacturers: Fabricantes de filtros cuyo código equivalente aparece
+ *   Ej: Donaldson, Baldwin, Wix, etc -> Códigos como "DONALDSON P181046"
  */
 router.get('/manufacturers', async (req, res) => {
   try {
@@ -197,8 +203,10 @@ router.get('/manufacturers', async (req, res) => {
 
 /**
  * GET /api/fleetguard/oem-code/:code
- * Busca productos por código OEM (equipos)
- * Ejemplo: /api/fleetguard/oem-code/CAT1R1808
+ * Busca productos por CÓDIGO OEM equivalente (de fabricantes de equipos)
+ * Ejemplo: /api/fleetguard/oem-code/CAT1R1808 (Caterpillar)
+ * Los OEM Codes son códigos equivalentes de fabricantes como:
+ * Cat, Komatsu, Volvo, Mack, Ford, Toyota, Nissan, John Deere, Onan, etc
  */
 router.get('/oem-code/:code', async (req, res) => {
   try {
@@ -226,8 +234,10 @@ router.get('/oem-code/:code', async (req, res) => {
 
 /**
  * GET /api/fleetguard/cross-reference/:code
- * Busca productos por código Cross Reference (filtros)
- * Ejemplo: /api/fleetguard/cross-reference/Donaldson
+ * Busca productos por CÓDIGO Cross Reference (de otros fabricantes de filtros)
+ * Ejemplo: /api/fleetguard/cross-reference/DONALDSON
+ * Los Cross Reference Codes son códigos equivalentes de fabricantes como:
+ * Donaldson, Fleetguard, Baldwin, Wix, Mann Filters, Fram, Bosch, Mahle, etc
  */
 router.get('/cross-reference/:code', async (req, res) => {
   try {

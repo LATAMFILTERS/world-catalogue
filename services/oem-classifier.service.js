@@ -2,7 +2,10 @@ const oemManufacturers = require('../config/oem-manufacturers.json');
 
 /**
  * Servicio para clasificar OEM Codes vs Cross Reference Codes
- * Categoriza automáticamente los códigos de fabricantes
+ *
+ * Ambos son códigos equivalentes del producto en "OEM Cross Reference"
+ * OEM Codes: Códigos de equipos (Cat, Komatsu, Volvo, Mack, etc)
+ * Cross Reference Codes: Códigos de filtros de otros fabricantes (Donaldson, Baldwin, Wix, etc)
  */
 
 class OEMClassifier {
@@ -43,8 +46,15 @@ class OEMClassifier {
   }
 
   /**
-   * Clasifica un código OEM basado en el fabricante
-   * Retorna: { type: 'oem_code' | 'cross_reference_code', manufacturer, canonical_name }
+   * Clasifica un CÓDIGO basado en su fabricante
+   *
+   * Un mismo producto puede tener múltiples códigos equivalentes:
+   * - OEM Codes: De fabricantes de equipos (Cat, Volvo, etc)
+   *   Ej: "CAT 1R1808" = Código equivalente de Caterpillar
+   * - Cross Reference Codes: De otros fabricantes de filtros (Donaldson, Baldwin, etc)
+   *   Ej: "DONALDSON P181046" = Código equivalente de Donaldson
+   *
+   * Retorna: { type, manufacturer, code, prefix, full_name }
    */
   classifyCode(oemCode, manufacturerHint = null) {
     if (!oemCode) return null;
