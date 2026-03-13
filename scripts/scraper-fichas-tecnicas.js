@@ -17,24 +17,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-// CATEGORÍAS PERMITIDAS (prefijos) - 15 CATEGORÍAS
-const ALLOWED_PREFIXES = [
-  'EA1', // Aire (Motor)
-  'EA2', // Carcasas e Intakes
-  'EF9', // Combustible (Fuel)
-  'ES9', // Separador de Agua
-  'EL8', // Aceite (Lube)
-  'EH6', // Hidráulico
-  'ET9', // Turbinas (Serie FH)
-  'EW7', // Refrigerante (Coolant)
-  'EC1', // Cabina (Aire Acond.)
-  'ED4', // Secador de Aire (Dryer)
-  'ED3', // DEF / AdBlue
-  'EG3', // Gas (LPG / GNC)
-  'EK5', // Kits de Servicio (HD)
-  'EK3', // Kits de Servicio (LD)
-  'EM9'  // Marinos (In/Outboard)
-];
+// Sin filtros de prefijo - scrapear todos los SKUs de Fleetguard
 
 const BASE_URL = 'https://www.fleetguard.com/en-US/product';
 const SEARCH_URL = 'https://www.fleetguard.com/en-US/products';
@@ -44,12 +27,6 @@ class FichasTecnicasScraper {
     this.browser = null;
     this.products = [];
     this.filteredSkus = [];
-  }
-
-  // Función para validar prefijo
-  isAllowedProduct(sku) {
-    const prefix = sku.substring(0, 3).toUpperCase();
-    return ALLOWED_PREFIXES.includes(prefix);
   }
 
   // Extraer SKUs de una página de listado
@@ -92,8 +69,7 @@ class FichasTecnicasScraper {
   async init() {
     console.log('\n╔═══════════════════════════════════════════════════════════╗');
     console.log('║  🔍 SCRAPER FICHAS TÉCNICAS - FLEETGUARD 500 PÁGINAS     ║');
-    console.log('║  📂 15 CATEGORÍAS FILTRADAS                              ║');
-    console.log('║  ' + ALLOWED_PREFIXES.join(', '));
+    console.log('║  📂 TODOS LOS PRODUCTOS                                  ║');
     console.log('╚═══════════════════════════════════════════════════════════╝\n');
 
     try {
@@ -412,9 +388,9 @@ class FichasTecnicasScraper {
       for (let pageNum = 1; pageNum <= 500; pageNum++) {
         const pageSkus = await this.extractSkusFromPage(page, pageNum);
 
-        // Filtrar solo productos permitidos
+        // Agregar todos los productos encontrados
         pageSkus.forEach(sku => {
-          if (this.isAllowedProduct(sku) && !this.filteredSkus.includes(sku)) {
+          if (!this.filteredSkus.includes(sku)) {
             this.filteredSkus.push(sku);
           }
         });
@@ -437,8 +413,7 @@ class FichasTecnicasScraper {
       await page.close();
     }
 
-    console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}`);
-    console.log(`   Categorías: ${ALLOWED_PREFIXES.join(', ')}\n`);
+    console.log(`\n✅ Total de SKUs recopilados: ${this.filteredSkus.length}\n`);
   }
 
   async scrapeAll() {
