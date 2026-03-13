@@ -326,7 +326,6 @@ class FichasTecnicasScraper {
         result.relatedProducts = [...new Map(result.relatedProducts.map(p => [p.sku, p])).values()].slice(0, 10);
 
         // REPLACES / REPLACED BY
-        const allText = document.body.innerText || '';
         const replacesSectionMatch = allText.match(/Replaces\s*:?\s*([A-Z0-9\s,]+?)(?=\n|For Upgrade|Equipment|OEM|Maintenance|$)/i);
         if (replacesSectionMatch) {
           result.replaces = replacesSectionMatch[1]
