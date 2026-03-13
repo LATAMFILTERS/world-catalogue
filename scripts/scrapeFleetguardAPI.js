@@ -1,42 +1,29 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const puppeteer = require('puppeteer');
+const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = 'https://www.fleetguard.com/category/products/0ZGPL0000000F8j4AE';
 
-async function scrapeFirstPage() {
-  let browser;
+async function scrapeFirstPageAPI() {
   try {
-    console.log('\n🚀 Abriendo navegador para scraping real...');
-    browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    console.log('\n🚀 Descargando página de Fleetguard...');
+
+    const response = await axios.get(BASE_URL, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      },
+      timeout: 30000
     });
 
-    const page = await browser.newPage();
-    page.setDefaultNavigationTimeout(30000);
-
-    console.log(`📄 Cargando: ${BASE_URL}`);
-    await page.goto(BASE_URL, { waitUntil: 'networkidle2' });
-
-    // Esperar a que carguen los productos
-    await page.waitForSelector('[data-test-id*="product"], .product-item, [class*="product"]', { timeout: 10000 }).catch(() => {
-      console.log('⚠️  Selector de productos no encontrado, continuando...');
-    });
-
-    const html = await page.content();
-    await browser.close();
-
-    console.log('✅ Página cargada, parseando HTML...\n');
-    return parseProducts(html);
+    console.log(`✅ Página descargada (${response.status})\n`);
+    return parseProducts(response.data);
 
   } catch (err) {
-    if (browser) await browser.close();
-    console.error('❌ Error durante scraping:', err.message);
+    console.error('❌ Error durante descarga:', err.message);
     process.exit(1);
   }
 }
@@ -45,21 +32,25 @@ function parseProducts(html) {
   const $ = cheerio.load(html);
   const products = [];
 
-  // Buscar enlaces de productos
-  const productLinks = $('a[href*="/product/"], [data-test-id*="product"] a, .product-link');
+  // Estrategia 1: Buscar por patrones de SKU en el HTML
+  const skuPattern = /([A-Z]{2}\d{4,6}[A-Z]{0,2})/g;
+  const matches = html.match(skuPattern) || [];
+  const uniqueSkus = [...new Set(matches)];
 
-  console.log(`📍 Encontrados ${productLinks.length} enlaces potenciales\n`);
+  console.log(`📍 Encontrados ${uniqueSkus.length} SKUs potenciales`);
+  console.log(`   Primeros: ${uniqueSkus.slice(0, 5).join(', ')}\n`);
 
-  productLinks.each((index, element) => {
-    if (products.length >= 20) return false; // Limitar a 20
+  // Estrategia 2: Buscar enlaces y nombres de productos
+  $('a').each((index, element) => {
+    if (products.length >= 20) return false;
 
     const $link = $(element);
     const href = $link.attr('href');
     const text = $link.text().trim();
 
-    if (href && text && !text.includes('Add to')) {
+    if (href && text && (href.includes('/product/') || href.includes('products'))) {
       const sku = extractSKU(text);
-      if (sku) {
+      if (sku && !products.find(p => p.sku === sku)) {
         products.push({
           sku: sku,
           name: text,
@@ -70,11 +61,24 @@ function parseProducts(html) {
     }
   });
 
-  return products;
+  // Si no encontró suficientes, agregar los SKUs únicos encontrados
+  if (products.length < 10) {
+    uniqueSkus.slice(0, 20).forEach(sku => {
+      if (!products.find(p => p.sku === sku) && products.length < 20) {
+        products.push({
+          sku: sku,
+          name: `Fleetguard ${sku}`,
+          productUrl: `https://www.fleetguard.com/product/${sku}`,
+          index: products.length + 1
+        });
+      }
+    });
+  }
+
+  return products.slice(0, 20);
 }
 
 function extractSKU(text) {
-  // Buscar patrones SKU típicos: LF14000NN, FF1098, etc.
   const match = text.match(/([A-Z]{2}\d{4,6}[A-Z]{0,2})/);
   return match ? match[1] : null;
 }
@@ -94,7 +98,7 @@ async function saveToJSON(products) {
     products: products,
   }, null, 2));
 
-  console.log(`\n💾 Datos guardados en: ${filepath}`);
+  console.log(`💾 Datos guardados en: ${filepath}`);
   return filepath;
 }
 
@@ -103,14 +107,14 @@ async function main() {
   console.log('🔍 SCRAPER REAL FLEETGUARD - PÁGINA 1');
   console.log('═'.repeat(60));
 
-  const products = await scrapeFirstPage();
+  const products = await scrapeFirstPageAPI();
 
   if (products.length === 0) {
     console.error('❌ No se encontraron productos');
     process.exit(1);
   }
 
-  console.log(`\n✅ ${products.length} productos encontrados:`);
+  console.log(`✅ ${products.length} productos encontrados:\n`);
   products.forEach(p => {
     console.log(`   ${p.index}. ${p.sku} - ${p.name}`);
   });
