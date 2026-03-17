@@ -160,6 +160,12 @@ async function paginateQuery(page, categoryId, searchQ = '') {
     const products = pageData.products || [];
     const total = pageData.total || 0;
 
+    // Diagnóstico en página 0 si no hay productos
+    if (pageNum === 0 && products.length === 0 && !searchQ) {
+      log(`  🔎 Diagnóstico API (pág 0): total=${total}, keys=[${Object.keys(pageData).join(', ')}]`, 'WARN');
+      log(`  🔎 Raw snippet: ${JSON.stringify(data).slice(0, 300)}`, 'WARN');
+    }
+
     if (products.length === 0) break;
 
     products.forEach(p => {
@@ -426,8 +432,20 @@ async function scrapeCategory(page, category) {
 
   const categoryId = category.url.split('/').pop();
   log(`  🆔 Category ID: ${categoryId}`);
+
+  // Navegar a la página de la categoría para refrescar la sesión Salesforce
+  // y asegurar que las cookies/tokens estén activos antes de llamar la API
+  log(`  🌐 Navegando a categoría para refrescar sesión...`);
+  await navigateTo(page, category.url);
+  await sleep(3000);
+
   const productList = await getCategoryProductIds(page, categoryId);
   log(`  📦 ${productList.length} productos en "${category.name}"`);
+
+  if (productList.length === 0) {
+    log(`  ⚠️  Categoría vacía — verifica que el ID "${categoryId}" sea correcto`, 'WARN');
+  }
+
   return productList;
 }
 
