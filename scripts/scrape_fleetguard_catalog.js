@@ -34,14 +34,15 @@ const CONFIG = {
 };
 
 // Categorías principales del catálogo Fleetguard
+// Los IDs se descubren automáticamente en runtime via API; estas son URLs de navegación
 const CATEGORY_URLS = [
   { name: 'Lube Filter',           url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8j4AE' },
-  { name: 'Fuel Filter',           url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8k4AE' },
-  { name: 'Air Filter',            url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8l4AE' },
-  { name: 'Water Filter',          url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8m4AE' },
-  { name: 'Fuel Water Separator',  url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8n4AE' },
-  { name: 'Hydraulic Filter',      url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8o4AE' },
-  { name: 'Breather',              url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8p4AE' },
+  { name: 'Fuel Filter',           url: null },
+  { name: 'Air Filter',            url: null },
+  { name: 'Water Filter',          url: null },
+  { name: 'Fuel Water Separator',  url: null },
+  { name: 'Hydraulic Filter',      url: null },
+  { name: 'Breather',              url: null },
 ];
 
 // ─── UTILIDADES ──────────────────────────────────────────────────────────────
@@ -130,26 +131,40 @@ async function apiGet(page, path) {
   }, path);
 }
 
+// Salesforce B2B Commerce Cloud tiene un límite de ~5000 productos por query (≈250 páginas × 20).
+// Para categorías grandes, usamos chunking alfabético: buscamos q=A*, q=B*, etc.
+// Esto divide el catálogo en trozos manejables y permite superar el límite.
+const SF_MAX_PAGES = 240; // Margen de seguridad antes del límite de 250 páginas
+
 /**
- * Obtener todos los IDs/nombres de productos de una categoría via API (con paginación)
+ * Paginar un query (categoryId + q opcional) hasta SF_MAX_PAGES o hasta agotar resultados.
+ * Retorna { items, hitLimit } donde hitLimit=true indica que se cortó antes de terminar.
  */
-async function getCategoryProductIds(page, categoryId) {
+async function paginateQuery(page, categoryId, searchQ = '') {
   const allItems = [];
   let pageNum = 0;
   const pageSize = 20;
+  let hitLimit = false;
 
   while (true) {
-    const path = `${SF_API_BASE}/search/products?categoryId=${categoryId}&page=${pageNum}&pageSize=${pageSize}&includeQuantityRule=false&skipDecoration=true&language=es&asGuest=true&htmlEncode=false`;
+    const qParam = searchQ ? `&q=${encodeURIComponent(searchQ)}` : '';
+    const path = `${SF_API_BASE}/search/products?categoryId=${categoryId}${qParam}&page=${pageNum}&pageSize=${pageSize}&includeQuantityRule=false&skipDecoration=true&language=es&asGuest=true&htmlEncode=false`;
     const data = await apiGet(page, path);
 
     if (data.__error__) {
-      log(`  ⚠️  API error (página ${pageNum}): ${data.__msg__}`, 'WARN');
+      log(`  ⚠️  API error (pág ${pageNum}${searchQ ? ` q="${searchQ}"` : ''}): ${data.__msg__}`, 'WARN');
       break;
     }
 
     const pageData = data.productsPage || data;
     const products = pageData.products || [];
     const total = pageData.total || 0;
+
+    // Diagnóstico en página 0 si no hay productos
+    if (pageNum === 0 && products.length === 0 && !searchQ) {
+      log(`  🔎 Diagnóstico API (pág 0): total=${total}, keys=[${Object.keys(pageData).join(', ')}]`, 'WARN');
+      log(`  🔎 Raw snippet: ${JSON.stringify(data).slice(0, 300)}`, 'WARN');
+    }
 
     if (products.length === 0) break;
 
@@ -161,13 +176,99 @@ async function getCategoryProductIds(page, categoryId) {
       });
     });
 
-    log(`  📄 Página ${pageNum + 1}: ${products.length} productos (acumulado: ${allItems.length}/${total})`);
-
     if (allItems.length >= total || products.length < pageSize) break;
+
     pageNum++;
-    await sleep(500);
+    if (pageNum >= SF_MAX_PAGES) {
+      log(`  ⚠️  Límite de ${SF_MAX_PAGES} páginas alcanzado (${allItems.length}/${total} productos${searchQ ? ` con q="${searchQ}"` : ''})`, 'WARN');
+      hitLimit = true;
+      break;
+    }
+    await sleep(300);
   }
 
+  return { items: allItems, hitLimit };
+}
+
+// Caracteres usados para generar sub-prefijos en el chunking
+const CHUNK_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
+/**
+ * Obtener todos los IDs de productos de una categoría.
+ * Usa chunking alfabético recursivo para superar el límite de ~5000 productos por query.
+ *
+ * Estrategia:
+ *   1. Query global sin filtro → captura hasta 4800 productos
+ *   2. Si se alcanza el límite, genera prefijos de 1 carácter (A-Z, 0-9)
+ *   3. Si un prefijo de 1 carácter también alcanza el límite, expande a 2 caracteres (AA, AB, ...)
+ *   4. Continúa recursivamente hasta que todos los chunks quepan en el límite
+ *   5. Deduplicación por ID en todo momento
+ */
+async function getCategoryProductIds(page, categoryId) {
+  const seen = new Set();
+  const allItems = [];
+
+  const addItems = (items) => {
+    items.forEach(p => {
+      if (p.id && !seen.has(p.id)) {
+        seen.add(p.id);
+        allItems.push(p);
+      }
+    });
+  };
+
+  /**
+   * Scrapea un prefijo dado. Si ese prefijo supera SF_MAX_PAGES,
+   * lo expande automáticamente a sub-prefijos (recursivo hasta maxDepth).
+   */
+  async function scrapePrefix(prefix, depth = 0, maxDepth = 3) {
+    const label = prefix ? `q="${prefix}"` : 'global';
+    const { items, hitLimit } = await paginateQuery(page, categoryId, prefix);
+    addItems(items);
+
+    if (hitLimit) {
+      if (depth >= maxDepth) {
+        log(`  ⚠️  ${label}: límite alcanzado en profundidad máxima (${depth}), algunos productos pueden faltar`, 'WARN');
+        return;
+      }
+      log(`  ⚠️  ${label}: límite alcanzado — expandiendo a sub-prefijos (nivel ${depth + 1})...`);
+      for (const ch of CHUNK_CHARS) {
+        const subPrefix = prefix + ch;
+        await scrapePrefix(subPrefix, depth + 1, maxDepth);
+        await sleep(150);
+      }
+    } else {
+      const count = items.filter(p => seen.has(p.id)).length; // los que ya estaban
+      const newCount = items.length - (items.filter(p => !seen.has(p.id)).length);
+      void count; void newCount;
+      // Solo loguear si hay progreso real
+      const beforeSize = seen.size - items.filter(p => seen.has(p.id)).length;
+      void beforeSize;
+    }
+  }
+
+  // Intento 1: query global sin filtro
+  log(`  🔍 Query global...`);
+  const { items: globalItems, hitLimit } = await paginateQuery(page, categoryId);
+  addItems(globalItems);
+  log(`  📦 Sin filtro: ${globalItems.length} productos (${hitLimit ? '⚠️ límite alcanzado' : '✅ completo'})`);
+
+  if (!hitLimit) return allItems;
+
+  // Categoría grande: chunking recursivo por prefijo
+  log(`  🔄 Activando chunking recursivo para capturar productos faltantes...`);
+
+  for (const ch of CHUNK_CHARS) {
+    const beforeCount = seen.size;
+    await scrapePrefix(ch);
+    const newCount = seen.size - beforeCount;
+    if (newCount > 0) {
+      log(`  📄 Prefijo "${ch}": +${newCount} nuevos → total: ${allItems.length}`);
+    }
+    await sleep(150);
+  }
+
+  log(`  ✅ Chunking completo: ${allItems.length} productos únicos`);
   return allItems;
 }
 
@@ -226,7 +327,7 @@ function buildProduct(apiProduct, meta) {
   }
 
   const defaultImage = apiProduct.defaultImage || {};
-  const name = apiProduct.name || meta.name || '';
+  const name = String(apiProduct.name || meta.name || '');
 
   return {
     id: apiProduct.id,
@@ -246,15 +347,105 @@ function buildProduct(apiProduct, meta) {
 }
 
 /**
+ * Descubrir categorías reales desde la API de Salesforce
+ */
+async function discoverCategories(page) {
+  log('🔍 Descubriendo categorías desde la API...');
+  const apiPath = `${SF_API_BASE}/product-categories?page=0&pageSize=100&language=es&asGuest=true`;
+  const data = await apiGet(page, apiPath);
+
+  if (data.__error__) {
+    log(`  ⚠️  API de categorías: ${data.__error__} ${data.__msg__}`, 'WARN');
+  } else {
+    log(`  📋 Respuesta API categorías (keys): ${Object.keys(data).join(', ')}`);
+    const items = data.productCategories || data.categories || data.items || data.data || [];
+    if (items.length > 0) {
+      const categories = items.map(c => ({
+        name: c.name || c.label || c.id,
+        url: `https://www.fleetguard.com/category/products/${c.id}`,
+      }));
+      log(`  ✅ ${categories.length} categorías desde API:`);
+      categories.forEach(c => log(`     - ${c.name}: ${c.url.split('/').pop()}`));
+      return categories;
+    }
+    log(`  ⚠️  API de categorías vacía (keys disponibles: ${JSON.stringify(data).slice(0, 200)})`, 'WARN');
+  }
+
+  // Fallback: extraer links de categorías desde la navegación del sitio
+  return await discoverCategoriesFromNav(page);
+}
+
+/**
+ * Descubrir categorías reales navegando al sitio y extrayendo links de /category/products/
+ */
+async function discoverCategoriesFromNav(page) {
+  log('🔍 Descubriendo categorías desde links de navegación...');
+
+  // Intentar también la URL en inglés
+  for (const homeUrl of [CONFIG.BASE_URL + '/es/', CONFIG.BASE_URL + '/en/']) {
+    try {
+      await navigateTo(page, homeUrl);
+      await sleep(3000);
+
+      const categories = await page.evaluate(() => {
+        const links = Array.from(document.querySelectorAll('a[href*="/category/products/"]'));
+        const seen = new Set();
+        return links
+          .map(a => ({
+            name: (a.textContent || a.innerText || '').trim(),
+            url: a.href,
+          }))
+          .filter(c => {
+            const id = c.url.split('/').pop();
+            if (!id || seen.has(id)) return false;
+            seen.add(id);
+            return c.name.length > 0;
+          });
+      });
+
+      if (categories.length > 0) {
+        log(`  ✅ ${categories.length} categorías desde navegación (${homeUrl}):`);
+        categories.forEach(c => log(`     - "${c.name}": ${c.url.split('/').pop()}`));
+        return categories;
+      }
+      log(`  ⚠️  No se encontraron links de categorías en ${homeUrl}`, 'WARN');
+    } catch (err) {
+      log(`  ⚠️  Error en ${homeUrl}: ${err.message}`, 'WARN');
+    }
+  }
+
+  log('  ⚠️  No se pudieron descubrir categorías — solo se usará Lube Filter', 'WARN');
+  return null;
+}
+
+/**
  * Scraping de una categoría completa via API
  */
 async function scrapeCategory(page, category) {
   log(`\n${'='.repeat(60)}`);
   log(`📂 Categoría: ${category.name}`);
 
+  if (!category.url) {
+    log(`  ⚠️  URL no disponible para "${category.name}" — categoría omitida`, 'WARN');
+    return [];
+  }
+
   const categoryId = category.url.split('/').pop();
+  log(`  🆔 Category ID: ${categoryId}`);
+
+  // Navegar a la página de la categoría para refrescar la sesión Salesforce
+  // y asegurar que las cookies/tokens estén activos antes de llamar la API
+  log(`  🌐 Navegando a categoría para refrescar sesión...`);
+  await navigateTo(page, category.url);
+  await sleep(3000);
+
   const productList = await getCategoryProductIds(page, categoryId);
   log(`  📦 ${productList.length} productos en "${category.name}"`);
+
+  if (productList.length === 0) {
+    log(`  ⚠️  Categoría vacía — verifica que el ID "${categoryId}" sea correcto`, 'WARN');
+  }
+
   return productList;
 }
 
@@ -271,6 +462,10 @@ async function scrapeAllProducts(page, categoryUrls, progress) {
 
   // ── FASE 1: Recopilar todos los IDs de productos via API ─────────────────
   log('\n🔍 FASE 1: Recopilando productos via API...');
+
+  // Intentar auto-descubrir categorías desde la API
+  const discovered = await discoverCategories(page);
+  if (discovered) categoryUrls = discovered;
 
   const allProductList = [];
   for (const category of categoryUrls) {
