@@ -184,9 +184,19 @@ async function paginateQuery(page, categoryId, searchQ = '') {
   return { items: allItems, hitLimit };
 }
 
+// Caracteres usados para generar sub-prefijos en el chunking
+const CHUNK_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
 /**
  * Obtener todos los IDs de productos de una categoría.
- * Si la categoría supera el límite de paginación, usa chunking alfabético (q=A*, B*, ...).
+ * Usa chunking alfabético recursivo para superar el límite de ~5000 productos por query.
+ *
+ * Estrategia:
+ *   1. Query global sin filtro → captura hasta 4800 productos
+ *   2. Si se alcanza el límite, genera prefijos de 1 carácter (A-Z, 0-9)
+ *   3. Si un prefijo de 1 carácter también alcanza el límite, expande a 2 caracteres (AA, AB, ...)
+ *   4. Continúa recursivamente hasta que todos los chunks quepan en el límite
+ *   5. Deduplicación por ID en todo momento
  */
 async function getCategoryProductIds(page, categoryId) {
   const seen = new Set();
@@ -201,39 +211,58 @@ async function getCategoryProductIds(page, categoryId) {
     });
   };
 
-  // Intento 1: query sin filtro
+  /**
+   * Scrapea un prefijo dado. Si ese prefijo supera SF_MAX_PAGES,
+   * lo expande automáticamente a sub-prefijos (recursivo hasta maxDepth).
+   */
+  async function scrapePrefix(prefix, depth = 0, maxDepth = 3) {
+    const label = prefix ? `q="${prefix}"` : 'global';
+    const { items, hitLimit } = await paginateQuery(page, categoryId, prefix);
+    addItems(items);
+
+    if (hitLimit) {
+      if (depth >= maxDepth) {
+        log(`  ⚠️  ${label}: límite alcanzado en profundidad máxima (${depth}), algunos productos pueden faltar`, 'WARN');
+        return;
+      }
+      log(`  ⚠️  ${label}: límite alcanzado — expandiendo a sub-prefijos (nivel ${depth + 1})...`);
+      for (const ch of CHUNK_CHARS) {
+        const subPrefix = prefix + ch;
+        await scrapePrefix(subPrefix, depth + 1, maxDepth);
+        await sleep(150);
+      }
+    } else {
+      const count = items.filter(p => seen.has(p.id)).length; // los que ya estaban
+      const newCount = items.length - (items.filter(p => !seen.has(p.id)).length);
+      void count; void newCount;
+      // Solo loguear si hay progreso real
+      const beforeSize = seen.size - items.filter(p => seen.has(p.id)).length;
+      void beforeSize;
+    }
+  }
+
+  // Intento 1: query global sin filtro
   log(`  🔍 Query global...`);
   const { items: globalItems, hitLimit } = await paginateQuery(page, categoryId);
   addItems(globalItems);
-  log(`  📦 Sin filtro: ${globalItems.length} productos`);
+  log(`  📦 Sin filtro: ${globalItems.length} productos (${hitLimit ? '⚠️ límite alcanzado' : '✅ completo'})`);
 
-  if (!hitLimit) return allItems; // Entraron todos sin límite
+  if (!hitLimit) return allItems;
 
-  // Si se alcanzó el límite, usar chunking alfabético para el resto
-  log(`  ⚠️  Categoría grande — activando chunking alfabético para capturar productos faltantes`);
+  // Categoría grande: chunking recursivo por prefijo
+  log(`  🔄 Activando chunking recursivo para capturar productos faltantes...`);
 
-  // Prefijos de SKU conocidos de Fleetguard + letras del alfabeto como fallback
-  const CHUNKS = [
-    'LF', 'AF', 'FF', 'WF', 'FS', 'HF', 'BV', // prefijos SKU
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-  ];
-
-  for (const prefix of CHUNKS) {
+  for (const ch of CHUNK_CHARS) {
     const beforeCount = seen.size;
-    const { items: chunkItems, hitLimit: subLimit } = await paginateQuery(page, categoryId, prefix);
-    addItems(chunkItems);
+    await scrapePrefix(ch);
     const newCount = seen.size - beforeCount;
     if (newCount > 0) {
-      log(`  📄 q="${prefix}": +${newCount} nuevos (total: ${allItems.length})`);
+      log(`  📄 Prefijo "${ch}": +${newCount} nuevos → total: ${allItems.length}`);
     }
-    if (subLimit) {
-      log(`  ⚠️  Chunk "${prefix}" también excede el límite — considera sub-chunks más específicos`, 'WARN');
-    }
-    await sleep(200);
+    await sleep(150);
   }
 
+  log(`  ✅ Chunking completo: ${allItems.length} productos únicos`);
   return allItems;
 }
 
