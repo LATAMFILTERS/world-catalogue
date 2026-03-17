@@ -34,14 +34,15 @@ const CONFIG = {
 };
 
 // Categorías principales del catálogo Fleetguard
+// Los IDs se descubren automáticamente en runtime via API; estas son URLs de navegación
 const CATEGORY_URLS = [
   { name: 'Lube Filter',           url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8j4AE' },
-  { name: 'Fuel Filter',           url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8k4AE' },
-  { name: 'Air Filter',            url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8l4AE' },
-  { name: 'Water Filter',          url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8m4AE' },
-  { name: 'Fuel Water Separator',  url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8n4AE' },
-  { name: 'Hydraulic Filter',      url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8o4AE' },
-  { name: 'Breather',              url: 'https://www.fleetguard.com/category/products/0ZGPL0000000F8p4AE' },
+  { name: 'Fuel Filter',           url: null },
+  { name: 'Air Filter',            url: null },
+  { name: 'Water Filter',          url: null },
+  { name: 'Fuel Water Separator',  url: null },
+  { name: 'Hydraulic Filter',      url: null },
+  { name: 'Breather',              url: null },
 ];
 
 // ─── UTILIDADES ──────────────────────────────────────────────────────────────
@@ -130,20 +131,28 @@ async function apiGet(page, path) {
   }, path);
 }
 
+// Salesforce B2B Commerce Cloud tiene un límite de ~5000 productos por query (≈250 páginas × 20).
+// Para categorías grandes, usamos chunking alfabético: buscamos q=A*, q=B*, etc.
+// Esto divide el catálogo en trozos manejables y permite superar el límite.
+const SF_MAX_PAGES = 240; // Margen de seguridad antes del límite de 250 páginas
+
 /**
- * Obtener todos los IDs/nombres de productos de una categoría via API (con paginación)
+ * Paginar un query (categoryId + q opcional) hasta SF_MAX_PAGES o hasta agotar resultados.
+ * Retorna { items, hitLimit } donde hitLimit=true indica que se cortó antes de terminar.
  */
-async function getCategoryProductIds(page, categoryId) {
+async function paginateQuery(page, categoryId, searchQ = '') {
   const allItems = [];
   let pageNum = 0;
   const pageSize = 20;
+  let hitLimit = false;
 
   while (true) {
-    const path = `${SF_API_BASE}/search/products?categoryId=${categoryId}&page=${pageNum}&pageSize=${pageSize}&includeQuantityRule=false&skipDecoration=true&language=es&asGuest=true&htmlEncode=false`;
+    const qParam = searchQ ? `&q=${encodeURIComponent(searchQ)}` : '';
+    const path = `${SF_API_BASE}/search/products?categoryId=${categoryId}${qParam}&page=${pageNum}&pageSize=${pageSize}&includeQuantityRule=false&skipDecoration=true&language=es&asGuest=true&htmlEncode=false`;
     const data = await apiGet(page, path);
 
     if (data.__error__) {
-      log(`  ⚠️  API error (página ${pageNum}): ${data.__msg__}`, 'WARN');
+      log(`  ⚠️  API error (pág ${pageNum}${searchQ ? ` q="${searchQ}"` : ''}): ${data.__msg__}`, 'WARN');
       break;
     }
 
@@ -161,11 +170,68 @@ async function getCategoryProductIds(page, categoryId) {
       });
     });
 
-    log(`  📄 Página ${pageNum + 1}: ${products.length} productos (acumulado: ${allItems.length}/${total})`);
-
     if (allItems.length >= total || products.length < pageSize) break;
+
     pageNum++;
-    await sleep(500);
+    if (pageNum >= SF_MAX_PAGES) {
+      log(`  ⚠️  Límite de ${SF_MAX_PAGES} páginas alcanzado (${allItems.length}/${total} productos${searchQ ? ` con q="${searchQ}"` : ''})`, 'WARN');
+      hitLimit = true;
+      break;
+    }
+    await sleep(300);
+  }
+
+  return { items: allItems, hitLimit };
+}
+
+/**
+ * Obtener todos los IDs de productos de una categoría.
+ * Si la categoría supera el límite de paginación, usa chunking alfabético (q=A*, B*, ...).
+ */
+async function getCategoryProductIds(page, categoryId) {
+  const seen = new Set();
+  const allItems = [];
+
+  const addItems = (items) => {
+    items.forEach(p => {
+      if (p.id && !seen.has(p.id)) {
+        seen.add(p.id);
+        allItems.push(p);
+      }
+    });
+  };
+
+  // Intento 1: query sin filtro
+  log(`  🔍 Query global...`);
+  const { items: globalItems, hitLimit } = await paginateQuery(page, categoryId);
+  addItems(globalItems);
+  log(`  📦 Sin filtro: ${globalItems.length} productos`);
+
+  if (!hitLimit) return allItems; // Entraron todos sin límite
+
+  // Si se alcanzó el límite, usar chunking alfabético para el resto
+  log(`  ⚠️  Categoría grande — activando chunking alfabético para capturar productos faltantes`);
+
+  // Prefijos de SKU conocidos de Fleetguard + letras del alfabeto como fallback
+  const CHUNKS = [
+    'LF', 'AF', 'FF', 'WF', 'FS', 'HF', 'BV', // prefijos SKU
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+  ];
+
+  for (const prefix of CHUNKS) {
+    const beforeCount = seen.size;
+    const { items: chunkItems, hitLimit: subLimit } = await paginateQuery(page, categoryId, prefix);
+    addItems(chunkItems);
+    const newCount = seen.size - beforeCount;
+    if (newCount > 0) {
+      log(`  📄 q="${prefix}": +${newCount} nuevos (total: ${allItems.length})`);
+    }
+    if (subLimit) {
+      log(`  ⚠️  Chunk "${prefix}" también excede el límite — considera sub-chunks más específicos`, 'WARN');
+    }
+    await sleep(200);
   }
 
   return allItems;
@@ -250,28 +316,71 @@ function buildProduct(apiProduct, meta) {
  */
 async function discoverCategories(page) {
   log('🔍 Descubriendo categorías desde la API...');
-  const path = `${SF_API_BASE}/product-categories?page=0&pageSize=100&language=es&asGuest=true`;
-  const data = await apiGet(page, path);
+  const apiPath = `${SF_API_BASE}/product-categories?page=0&pageSize=100&language=es&asGuest=true`;
+  const data = await apiGet(page, apiPath);
 
   if (data.__error__) {
-    log(`  ⚠️  No se pudo obtener categorías: ${data.__msg__} — usando lista hardcodeada`, 'WARN');
-    return null;
+    log(`  ⚠️  API de categorías: ${data.__error__} ${data.__msg__}`, 'WARN');
+  } else {
+    log(`  📋 Respuesta API categorías (keys): ${Object.keys(data).join(', ')}`);
+    const items = data.productCategories || data.categories || data.items || data.data || [];
+    if (items.length > 0) {
+      const categories = items.map(c => ({
+        name: c.name || c.label || c.id,
+        url: `https://www.fleetguard.com/category/products/${c.id}`,
+      }));
+      log(`  ✅ ${categories.length} categorías desde API:`);
+      categories.forEach(c => log(`     - ${c.name}: ${c.url.split('/').pop()}`));
+      return categories;
+    }
+    log(`  ⚠️  API de categorías vacía (keys disponibles: ${JSON.stringify(data).slice(0, 200)})`, 'WARN');
   }
 
-  const items = data.productCategories || data.categories || data.items || data.data || [];
-  if (!items.length) {
-    log(`  ⚠️  API de categorías vacía — usando lista hardcodeada`, 'WARN');
-    return null;
+  // Fallback: extraer links de categorías desde la navegación del sitio
+  return await discoverCategoriesFromNav(page);
+}
+
+/**
+ * Descubrir categorías reales navegando al sitio y extrayendo links de /category/products/
+ */
+async function discoverCategoriesFromNav(page) {
+  log('🔍 Descubriendo categorías desde links de navegación...');
+
+  // Intentar también la URL en inglés
+  for (const homeUrl of [CONFIG.BASE_URL + '/es/', CONFIG.BASE_URL + '/en/']) {
+    try {
+      await navigateTo(page, homeUrl);
+      await sleep(3000);
+
+      const categories = await page.evaluate(() => {
+        const links = Array.from(document.querySelectorAll('a[href*="/category/products/"]'));
+        const seen = new Set();
+        return links
+          .map(a => ({
+            name: (a.textContent || a.innerText || '').trim(),
+            url: a.href,
+          }))
+          .filter(c => {
+            const id = c.url.split('/').pop();
+            if (!id || seen.has(id)) return false;
+            seen.add(id);
+            return c.name.length > 0;
+          });
+      });
+
+      if (categories.length > 0) {
+        log(`  ✅ ${categories.length} categorías desde navegación (${homeUrl}):`);
+        categories.forEach(c => log(`     - "${c.name}": ${c.url.split('/').pop()}`));
+        return categories;
+      }
+      log(`  ⚠️  No se encontraron links de categorías en ${homeUrl}`, 'WARN');
+    } catch (err) {
+      log(`  ⚠️  Error en ${homeUrl}: ${err.message}`, 'WARN');
+    }
   }
 
-  const categories = items.map(c => ({
-    name: c.name || c.label || c.id,
-    url: `https://www.fleetguard.com/category/products/${c.id}`,
-  }));
-
-  log(`  ✅ ${categories.length} categorías encontradas:`);
-  categories.forEach(c => log(`     - ${c.name} (${c.url.split('/').pop()})`));
-  return categories;
+  log('  ⚠️  No se pudieron descubrir categorías — solo se usará Lube Filter', 'WARN');
+  return null;
 }
 
 /**
@@ -281,7 +390,13 @@ async function scrapeCategory(page, category) {
   log(`\n${'='.repeat(60)}`);
   log(`📂 Categoría: ${category.name}`);
 
+  if (!category.url) {
+    log(`  ⚠️  URL no disponible para "${category.name}" — categoría omitida`, 'WARN');
+    return [];
+  }
+
   const categoryId = category.url.split('/').pop();
+  log(`  🆔 Category ID: ${categoryId}`);
   const productList = await getCategoryProductIds(page, categoryId);
   log(`  📦 ${productList.length} productos en "${category.name}"`);
   return productList;
