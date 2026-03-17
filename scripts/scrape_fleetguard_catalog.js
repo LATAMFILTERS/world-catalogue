@@ -226,7 +226,7 @@ function buildProduct(apiProduct, meta) {
   }
 
   const defaultImage = apiProduct.defaultImage || {};
-  const name = apiProduct.name || meta.name || '';
+  const name = String(apiProduct.name || meta.name || '');
 
   return {
     id: apiProduct.id,
