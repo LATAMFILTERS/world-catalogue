@@ -145,6 +145,16 @@ async function extractProductUrls(page) {
       });
     }
 
+    // Diagnóstico: si aún no hay nada, retornar sample de links encontrados para debug
+    if (urls.length === 0) {
+      const allLinks = Array.from(document.querySelectorAll('a'))
+        .filter(a => a.href && a.hostname === 'www.fleetguard.com')
+        .map(a => a.href)
+        .filter((v, i, arr) => arr.indexOf(v) === i)
+        .slice(0, 30);
+      return { __debug__: true, links: allLinks };
+    }
+
     return urls;
   });
 }
@@ -458,6 +468,18 @@ async function scrapeCategory(page, category) {
 
     // Extraer URLs de productos en esta página
     const urls = await extractProductUrls(page);
+
+    // Diagnóstico: si no se encontraron productos, mostrar todos los links de fleetguard.com
+    if (urls && urls.__debug__) {
+      log(`  ⚠️  0 productos encontrados. Links en página (diagnóstico):`, 'WARN');
+      if (urls.links.length === 0) {
+        log(`     → NINGÚN link de fleetguard.com encontrado (posible Shadow DOM o JS pendiente)`, 'WARN');
+      } else {
+        urls.links.forEach(u => log(`     → ${u}`, 'WARN'));
+      }
+      break;
+    }
+
     log(`  ✅ Encontrados ${urls.length} productos en página ${pageNum}`);
 
     allProductUrls.push(...urls.filter(u => !allProductUrls.includes(u)));
