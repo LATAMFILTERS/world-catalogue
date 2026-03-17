@@ -69,13 +69,14 @@ function saveProducts(products) {
     ? JSON.parse(fs.readFileSync(CONFIG.PRODUCTS_FILE, 'utf8'))
     : [];
 
-  // Merge evitando duplicados por SKU
-  const skuMap = {};
+  // Merge evitando duplicados por id (fallback a sku)
+  const idMap = {};
   [...existing, ...products].forEach(p => {
-    if (p.sku) skuMap[p.sku] = p;
+    const key = p.id || p.sku;
+    if (key) idMap[key] = p;
   });
 
-  const merged = Object.values(skuMap);
+  const merged = Object.values(idMap);
   fs.writeFileSync(CONFIG.PRODUCTS_FILE, JSON.stringify(merged, null, 2));
   log(`💾 Guardados ${merged.length} productos totales`);
   return merged.length;
@@ -102,527 +103,222 @@ async function navigateTo(page, url, retries = CONFIG.RETRY_ATTEMPTS) {
   return false;
 }
 
+// ─── SALESFORCE B2B COMMERCE API ─────────────────────────────────────────────
+
+const WEBSTORE_ID = '0ZEPL0000001Jv34AE';
+const SF_API_BASE = `/es/webruntime/api/services/data/v66.0/commerce/webstores/${WEBSTORE_ID}`;
+
+function slugify(text) {
+  return (text || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 /**
- * Extraer URLs de productos desde una página de categoría
+ * Llamada GET a la API de Salesforce desde el contexto del browser (mismo origen, sin CORS)
  */
-async function extractProductUrls(page) {
-  return await page.evaluate(() => {
-    const urls = [];
-
-    // Selectores comunes en sitios de catálogo industrial
-    const selectors = [
-      'a[href*="/product/"]',
-      'a[href*="/products/"]',
-      '.product-card a',
-      '.product-item a',
-      '.product-tile a',
-      '[data-product-id] a',
-      '.product-name a',
-      'a.product-link',
-      '.catalog-product a',
-    ];
-
-    for (const sel of selectors) {
-      const links = document.querySelectorAll(sel);
-      const fleetguardLinks = Array.from(links).filter(a =>
-        a.href && a.hostname === 'www.fleetguard.com'
-      );
-      if (fleetguardLinks.length > 0) {
-        fleetguardLinks.forEach(a => {
-          if (!urls.includes(a.href)) urls.push(a.href);
-        });
-        break;
-      }
-    }
-
-    // Fallback: buscar cualquier link con patrón de SKU Fleetguard
-    if (urls.length === 0) {
-      document.querySelectorAll('a').forEach(a => {
-        if (a.href && a.hostname === 'www.fleetguard.com' &&
-            /\/(LF|FF|AF|WF|FS|HF|BV|CV)\d+/i.test(a.href)) {
-          if (!urls.includes(a.href)) urls.push(a.href);
-        }
+async function apiGet(page, path) {
+  return await page.evaluate(async (apiPath) => {
+    try {
+      const res = await fetch(apiPath, {
+        headers: { 'Accept': 'application/json' },
+        credentials: 'include',
       });
+      if (!res.ok) return { __error__: res.status, __msg__: res.statusText };
+      return await res.json();
+    } catch (e) {
+      return { __error__: 'fetch_failed', __msg__: e.message };
     }
-
-    // Diagnóstico: si aún no hay nada, retornar sample de links encontrados para debug
-    if (urls.length === 0) {
-      const allLinks = Array.from(document.querySelectorAll('a'))
-        .filter(a => a.href && a.hostname === 'www.fleetguard.com')
-        .map(a => a.href)
-        .filter((v, i, arr) => arr.indexOf(v) === i)
-        .slice(0, 30);
-      return { __debug__: true, links: allLinks };
-    }
-
-    return urls;
-  });
+  }, path);
 }
 
 /**
- * Obtener URL de la siguiente página (paginación)
+ * Obtener todos los IDs/nombres de productos de una categoría via API (con paginación)
  */
-async function getNextPageUrl(page) {
-  return await page.evaluate(() => {
-    // Selectores de paginación
-    const nextSelectors = [
-      'a[aria-label="Next"]',
-      'a.next-page',
-      'a[rel="next"]',
-      '.pagination .next a',
-      'button.next-page',
-      // 'a:contains("Next")',  // jQuery-only, not valid CSS
-      '[data-page-next] a',
-    ];
+async function getCategoryProductIds(page, categoryId) {
+  const allItems = [];
+  let pageNum = 0;
+  const pageSize = 20;
 
-    for (const sel of nextSelectors) {
-      const el = document.querySelector(sel);
-      if (el && el.href) return el.href;
-      if (el && !el.disabled) {
-        // Es un botón, retornar señal
-        return '__CLICK_NEXT__';
-      }
+  while (true) {
+    const path = `${SF_API_BASE}/search/products?categoryId=${categoryId}&page=${pageNum}&pageSize=${pageSize}&includeQuantityRule=false&skipDecoration=true&language=es&asGuest=true&htmlEncode=false`;
+    const data = await apiGet(page, path);
+
+    if (data.__error__) {
+      log(`  ⚠️  API error (página ${pageNum}): ${data.__msg__}`, 'WARN');
+      break;
     }
 
-    // Buscar link "Next" o ">" en paginación
-    const allLinks = document.querySelectorAll('.pagination a, nav a');
-    for (const link of allLinks) {
-      const text = link.textContent.trim();
-      if (text === 'Next' || text === '>' || text === '›' || text === '→') {
-        return link.href || '__CLICK__' + link.className;
-      }
-    }
+    const pageData = data.productsPage || data;
+    const products = pageData.products || [];
+    const total = pageData.total || 0;
 
-    return null;
-  });
-}
+    if (products.length === 0) break;
 
-/**
- * Extraer datos completos de una página de producto
- */
-async function extractProductData(page, url) {
-  return await page.evaluate((productUrl) => {
-    const getText = (selectors) => {
-      for (const sel of selectors) {
-        const el = document.querySelector(sel);
-        if (el && el.textContent.trim()) return el.textContent.trim();
-      }
-      return null;
-    };
-
-    const getAllText = (selectors) => {
-      for (const sel of selectors) {
-        const els = document.querySelectorAll(sel);
-        if (els.length > 0) return Array.from(els).map(e => e.textContent.trim()).filter(Boolean);
-      }
-      return [];
-    };
-
-    // ── NOMBRE Y SKU ──
-    const name = getText([
-      'h1.product-name',
-      'h1.product-title',
-      '.product-detail h1',
-      'h1',
-      '.pdp-title',
-      '[data-product-name]',
-    ]);
-
-    // Extraer SKU del título o de campos específicos
-    let sku = getText([
-      '.product-sku',
-      '[data-sku]',
-      '.sku-value',
-      '.part-number',
-      '[data-part-number]',
-      '.product-id',
-    ]);
-
-    // Si no hay SKU explícito, extraerlo del nombre o URL
-    if (!sku && name) {
-      const skuMatch = name.match(/\b(LF|FF|AF|WF|FS|HF|BV|CV|ES|RS|DF)\d{3,6}[A-Z]?\b/i);
-      if (skuMatch) sku = skuMatch[0].toUpperCase();
-    }
-    if (!sku) {
-      const urlMatch = productUrl.match(/(LF|FF|AF|WF|FS|HF|BV|CV)\d+[A-Z]?/i);
-      if (urlMatch) sku = urlMatch[0].toUpperCase();
-    }
-
-    // ── DESCRIPCIÓN ──
-    const description = getText([
-      '.product-description',
-      '.product-detail-description',
-      '.pdp-description',
-      '#description',
-      '[data-description]',
-      '.product-overview p',
-    ]);
-
-    // ── IMAGEN ──
-    let image = null;
-    const imgSelectors = [
-      '.product-image img',
-      '.pdp-image img',
-      '.product-photo img',
-      '#product-image img',
-      '.gallery-image img',
-    ];
-    for (const sel of imgSelectors) {
-      const img = document.querySelector(sel);
-      if (img) {
-        image = img.src || img.dataset.src || img.dataset.lazySrc;
-        if (image) break;
-      }
-    }
-
-    // ── ESPECIFICACIONES TÉCNICAS ──
-    const specs = {};
-
-    // Buscar tablas de specs
-    const specSelectors = [
-      '.product-specs table',
-      '.specifications table',
-      '.product-attributes table',
-      '.tech-specs table',
-      '#specifications table',
-      '.spec-table',
-    ];
-
-    for (const sel of specSelectors) {
-      const table = document.querySelector(sel);
-      if (table) {
-        const rows = table.querySelectorAll('tr');
-        rows.forEach(row => {
-          const cells = row.querySelectorAll('td, th');
-          if (cells.length >= 2) {
-            const key = cells[0].textContent.trim().replace(/:$/, '');
-            const val = cells[1].textContent.trim();
-            if (key && val) specs[key] = val;
-          }
-        });
-        break;
-      }
-    }
-
-    // Buscar specs en formato dl/dt/dd
-    const dlEls = document.querySelectorAll('.product-specs dl, .specifications dl, .product-attributes dl');
-    dlEls.forEach(dl => {
-      const dts = dl.querySelectorAll('dt');
-      const dds = dl.querySelectorAll('dd');
-      dts.forEach((dt, i) => {
-        if (dds[i]) specs[dt.textContent.trim()] = dds[i].textContent.trim();
+    products.forEach(p => {
+      allItems.push({
+        id: p.id,
+        name: p.name || '',
+        sku: (p.fields && p.fields.StockKeepingUnit) || p.sku || '',
       });
     });
 
-    // Buscar specs en pares de divs label/value
-    const specPairs = document.querySelectorAll(
-      '.spec-row, .attribute-row, .product-attribute, [class*="spec-item"], [class*="attribute-item"]'
-    );
-    specPairs.forEach(pair => {
-      const label = pair.querySelector('.spec-label, .attribute-label, .label, [class*="name"]');
-      const value = pair.querySelector('.spec-value, .attribute-value, .value, [class*="value"]');
-      if (label && value) {
-        specs[label.textContent.trim().replace(/:$/, '')] = value.textContent.trim();
-      }
-    });
+    log(`  📄 Página ${pageNum + 1}: ${products.length} productos (acumulado: ${allItems.length}/${total})`);
 
-    // ── CROSS REFERENCES ──
-    const crossReferences = [];
+    if (allItems.length >= total || products.length < pageSize) break;
+    pageNum++;
+    await sleep(500);
+  }
 
-    // Buscar tabla de cross references
-    const crossRefSelectors = [
-      '#cross-reference table',
-      '.cross-reference table',
-      '#crossRef table',
-      '.cross-ref table',
-      '[id*="cross"] table',
-      '[class*="cross-ref"] table',
-      '.interchange table',
-    ];
-
-    for (const sel of crossRefSelectors) {
-      const table = document.querySelector(sel);
-      if (table) {
-        const rows = table.querySelectorAll('tr');
-        let headers = [];
-        rows.forEach((row, i) => {
-          const cells = row.querySelectorAll('th, td');
-          if (i === 0) {
-            headers = Array.from(cells).map(c => c.textContent.trim());
-          } else {
-            const entry = {};
-            cells.forEach((cell, j) => {
-              entry[headers[j] || `col_${j}`] = cell.textContent.trim();
-            });
-            if (Object.values(entry).some(v => v)) crossReferences.push(entry);
-          }
-        });
-        if (crossReferences.length > 0) break;
-      }
-    }
-
-    // Si no hay tabla, buscar lista de cross refs
-    if (crossReferences.length === 0) {
-      const crossItems = document.querySelectorAll(
-        '.cross-reference-item, .interchange-item, [data-cross-ref], .alt-part-number'
-      );
-      crossItems.forEach(item => {
-        const brand = item.querySelector('.brand, .manufacturer') || item;
-        const partNum = item.querySelector('.part-number, .number') || item;
-        crossReferences.push({
-          brand: brand.textContent.trim(),
-          partNumber: partNum.textContent.trim(),
-        });
-      });
-    }
-
-    // ── APLICACIONES (FITMENT) ──
-    const applications = [];
-
-    // Buscar tabla de fitment/applications
-    const appSelectors = [
-      '#fitment table',
-      '.vehicle-fitment table',
-      '.applications table',
-      '#applications table',
-      '[class*="fitment"] table',
-      '.where-used table',
-    ];
-
-    for (const sel of appSelectors) {
-      const table = document.querySelector(sel);
-      if (table) {
-        const rows = table.querySelectorAll('tr');
-        let headers = [];
-        rows.forEach((row, i) => {
-          const cells = row.querySelectorAll('th, td');
-          if (i === 0) {
-            headers = Array.from(cells).map(c => c.textContent.trim());
-          } else {
-            const entry = {};
-            cells.forEach((cell, j) => {
-              entry[headers[j] || `col_${j}`] = cell.textContent.trim();
-            });
-            if (Object.values(entry).some(v => v)) applications.push(entry);
-          }
-        });
-        if (applications.length > 0) break;
-      }
-    }
-
-    // ── CATEGORÍA ──
-    const breadcrumbs = getAllText([
-      '.breadcrumb a',
-      'nav[aria-label="breadcrumb"] a',
-      '.breadcrumbs a',
-    ]);
-
-    // ── PRECIO (si visible) ──
-    const price = getText([
-      '.price',
-      '.product-price',
-      '[data-price]',
-      '.price-value',
-    ]);
-
-    return {
-      url: productUrl,
-      sku,
-      name,
-      description,
-      image,
-      price,
-      specs,
-      crossReferences,
-      applications,
-      breadcrumbs,
-      scrapedAt: new Date().toISOString(),
-    };
-  }, url);
+  return allItems;
 }
 
 /**
- * Scraping de una categoría completa con paginación
+ * Obtener detalles completos de productos via API (en lotes de 20)
+ */
+async function getProductDetails(page, ids) {
+  const results = [];
+  const batchSize = 20;
+
+  for (let i = 0; i < ids.length; i += batchSize) {
+    const batch = ids.slice(i, i + batchSize);
+    const idsParam = encodeURIComponent(batch.join(','));
+    const path = `${SF_API_BASE}/products?ids=${idsParam}&includeAttributeSetInfo=true&includeQuantityRule=true&includeProductSellingModels=true&includeGroupByAttributeVariationInfo=true&language=es&asGuest=true&htmlEncode=false`;
+
+    const data = await apiGet(page, path);
+
+    if (data.__error__) {
+      log(`  ⚠️  Error en lote de detalles: ${data.__msg__}`, 'WARN');
+      continue;
+    }
+
+    const products = data.products || [];
+    results.push(...products);
+    await sleep(400);
+  }
+
+  return results;
+}
+
+/**
+ * Construir objeto producto a partir de la respuesta de la API
+ */
+function buildProduct(apiProduct, meta) {
+  const fields = apiProduct.fields || {};
+
+  // Extraer specs de campos del producto
+  const specs = {};
+  const skipFields = new Set(['Id', 'CreatedDate', 'LastModifiedDate', 'IsActive', 'ProductCode',
+    'StockKeepingUnit', 'Name', 'Description', 'IsArchived', 'Type']);
+
+  Object.entries(fields).forEach(([key, val]) => {
+    if (val !== null && val !== undefined && !skipFields.has(key) && typeof val !== 'object') {
+      specs[key] = String(val);
+    }
+  });
+
+  // También extraer de attributeSetInfo si existe
+  const attrSetInfo = apiProduct.attributeSetInfo;
+  if (attrSetInfo && typeof attrSetInfo === 'object') {
+    Object.entries(attrSetInfo).forEach(([, val]) => {
+      if (val && typeof val === 'object' && val.label && val.value !== undefined) {
+        specs[val.label] = String(val.value || '');
+      }
+    });
+  }
+
+  const defaultImage = apiProduct.defaultImage || {};
+  const name = apiProduct.name || meta.name || '';
+
+  return {
+    id: apiProduct.id,
+    sku: fields.StockKeepingUnit || apiProduct.sku || meta.sku || '',
+    name,
+    description: apiProduct.description || fields.Description || '',
+    category: meta.category || '',
+    image: defaultImage.url || '',
+    price: '',
+    specs,
+    crossReferences: [],
+    applications: [],
+    breadcrumbs: [meta.category || ''],
+    url: `https://www.fleetguard.com/es/producto/${slugify(name)}/${apiProduct.id}`,
+    scrapedAt: new Date().toISOString(),
+  };
+}
+
+/**
+ * Scraping de una categoría completa via API
  */
 async function scrapeCategory(page, category) {
   log(`\n${'='.repeat(60)}`);
   log(`📂 Categoría: ${category.name}`);
-  log(`🔗 URL: ${category.url}`);
 
-  const allProductUrls = [];
-  let currentUrl = category.url;
-  let pageNum = 1;
-
-  // Iterar por todas las páginas de la categoría
-  while (currentUrl) {
-    log(`  📄 Página ${pageNum}...`);
-
-    const ok = await navigateTo(page, currentUrl);
-    if (!ok) {
-      log(`  ❌ No se pudo cargar la página ${pageNum}`, 'ERROR');
-      break;
-    }
-
-    // Esperar a que carguen los productos
-    await new Promise(r => setTimeout(r, 2000));
-
-    // Extraer URLs de productos en esta página
-    const urls = await extractProductUrls(page);
-
-    // Diagnóstico: si no se encontraron productos, mostrar todos los links de fleetguard.com
-    if (urls && urls.__debug__) {
-      log(`  ⚠️  0 productos encontrados. Links en página (diagnóstico):`, 'WARN');
-      if (urls.links.length === 0) {
-        log(`     → NINGÚN link de fleetguard.com encontrado (posible Shadow DOM o JS pendiente)`, 'WARN');
-      } else {
-        urls.links.forEach(u => log(`     → ${u}`, 'WARN'));
-      }
-      break;
-    }
-
-    log(`  ✅ Encontrados ${urls.length} productos en página ${pageNum}`);
-
-    allProductUrls.push(...urls.filter(u => !allProductUrls.includes(u)));
-
-    // Buscar siguiente página
-    const nextUrl = await getNextPageUrl(page);
-
-    if (nextUrl && nextUrl !== currentUrl) {
-      currentUrl = nextUrl;
-      pageNum++;
-      await randomDelay();
-    } else {
-      break;
-    }
-  }
-
-  log(`  📊 Total URLs de productos en "${category.name}": ${allProductUrls.length}`);
-  return allProductUrls;
+  const categoryId = category.url.split('/').pop();
+  const productList = await getCategoryProductIds(page, categoryId);
+  log(`  📦 ${productList.length} productos en "${category.name}"`);
+  return productList;
 }
 
 /**
- * Scraping de todas las categorías y luego de cada producto
+ * Scraping completo: todas las categorías + detalles de cada producto via API
  */
 async function scrapeAllProducts(page, categoryUrls, progress) {
-  const products = [];
-  const completedUrls = new Set(progress.completed);
+  const completedIds = new Set(progress.completed);
 
-  // Fase 1: Recopilar todas las URLs de productos
-  log('\n🔍 FASE 1: Recopilando URLs de productos...');
+  // Primero visitar homepage para obtener sesión Salesforce
+  log('🌐 Obteniendo sesión de Fleetguard...');
+  await navigateTo(page, CONFIG.BASE_URL + '/es/');
+  await sleep(4000);
 
-  let allProductUrls = [];
+  // ── FASE 1: Recopilar todos los IDs de productos via API ─────────────────
+  log('\n🔍 FASE 1: Recopilando productos via API...');
 
-  // Primero intentar descubrir categorías desde la página principal
-  log('🌐 Explorando categorías desde la página principal...');
-  const ok = await navigateTo(page, CONFIG.BASE_URL + '/category/products');
-  if (ok) {
-    await new Promise(r => setTimeout(r, 2000));
-    const discoveredCategories = await page.evaluate(() => {
-      const cats = [];
-      const catLinks = document.querySelectorAll(
-        'a[href*="category"], .category-tile a, .nav-category a, [class*="category"] a'
-      );
-      catLinks.forEach(a => {
-        if (a.href && a.href.includes('/category/')) {
-          cats.push({ name: a.textContent.trim(), url: a.href });
-        }
-      });
-      return cats;
-    });
-
-    if (discoveredCategories.length > 0) {
-      log(`✅ Descubiertas ${discoveredCategories.length} categorías desde navegación`);
-      categoryUrls = discoveredCategories;
-    }
-  }
-
-  // Scraping de cada categoría
+  const allProductList = [];
   for (const category of categoryUrls) {
-    const urls = await scrapeCategory(page, category);
-    urls.forEach(u => {
-      if (!allProductUrls.includes(u)) {
-        allProductUrls.push(u);
+    const productList = await scrapeCategory(page, category);
+    productList.forEach(p => {
+      if (!allProductList.find(x => x.id === p.id)) {
+        allProductList.push({ ...p, category: category.name });
       }
     });
-
-    // Guardar progreso
-    saveProgress({ ...progress, lastRun: new Date().toISOString() });
     await randomDelay();
   }
 
-  // Guardar lista de URLs para referencia
+  log(`\n📝 Total: ${allProductList.length} productos únicos`);
   fs.writeFileSync(
-    path.join(CONFIG.OUTPUT_DIR, 'product_urls.json'),
-    JSON.stringify(allProductUrls, null, 2)
+    path.join(CONFIG.OUTPUT_DIR, 'product_ids.json'),
+    JSON.stringify(allProductList, null, 2)
   );
-  log(`\n📝 Guardadas ${allProductUrls.length} URLs de productos`);
 
-  // Fase 2: Scraping de cada producto
-  log('\n🔍 FASE 2: Extrayendo datos de cada producto...');
+  // ── FASE 2: Obtener detalles completos via API ────────────────────────────
+  log('\n🔍 FASE 2: Obteniendo detalles de productos via API...');
 
-  let processed = 0;
-  const batchSize = 50; // Guardar cada N productos
-  let batch = [];
+  const toProcess = allProductList.filter(p => !completedIds.has(p.id));
+  log(`📊 ${toProcess.length} por procesar (${allProductList.length - toProcess.length} ya completados)`);
 
-  for (const url of allProductUrls) {
-    if (completedUrls.has(url)) {
-      log(`  ⏭️  Saltando (ya procesado): ${url}`);
-      processed++;
-      continue;
-    }
+  const allProcessed = [];
+  const batchSize = 20;
 
-    log(`  [${processed + 1}/${allProductUrls.length}] Scraping: ${url}`);
+  for (let i = 0; i < toProcess.length; i += batchSize) {
+    const batch = toProcess.slice(i, i + batchSize);
+    const ids = batch.map(p => p.id);
 
-    try {
-      const ok = await navigateTo(page, url);
-      if (!ok) throw new Error('No se pudo cargar la página');
+    log(`  [${i + 1}-${Math.min(i + batchSize, toProcess.length)}/${toProcess.length}] Obteniendo detalles...`);
 
-      await new Promise(r => setTimeout(r, 1500));
+    const details = await getProductDetails(page, ids);
+    details.forEach(detail => {
+      const meta = batch.find(p => p.id === detail.id) || {};
+      const product = buildProduct(detail, meta);
+      allProcessed.push(product);
+      progress.completed.push(detail.id);
+      log(`  ✅ ${product.sku || 'N/A'} - ${product.name || 'Sin nombre'}`);
+    });
 
-      // Esperar a que carguen los datos del producto
-      try {
-        await page.waitForSelector('h1, .product-name, .product-title', { timeout: 10000 });
-      } catch (e) {
-        // Continuar aunque no encuentre el selector exacto
-      }
-
-      const product = await extractProductData(page, url);
-
-      if (product.sku || product.name) {
-        batch.push(product);
-        progress.completed.push(url);
-        log(`  ✅ ${product.sku || 'N/A'} - ${product.name || 'Sin nombre'}`);
-        log(`     Specs: ${Object.keys(product.specs).length} | CrossRefs: ${product.crossReferences.length} | Apps: ${product.applications.length}`);
-      } else {
-        progress.failed.push({ url, reason: 'No SKU or name found' });
-        log(`  ⚠️  Sin datos encontrados en: ${url}`, 'WARN');
-      }
-
-    } catch (err) {
-      progress.failed.push({ url, reason: err.message });
-      log(`  ❌ Error: ${err.message}`, 'ERROR');
-    }
-
-    processed++;
-
-    // Guardar batch y progreso
-    if (batch.length >= batchSize) {
-      saveProducts(batch);
-      saveProgress(progress);
-      products.push(...batch);
-      batch = [];
-    }
-
+    saveProducts(allProcessed.slice(-batchSize));
+    saveProgress(progress);
     await randomDelay();
   }
 
-  // Guardar último batch
-  if (batch.length > 0) {
-    saveProducts(batch);
-    products.push(...batch);
-  }
-
-  return products;
+  return allProcessed;
 }
 
 // ─── EXPORTAR A CSV ──────────────────────────────────────────────────────────
