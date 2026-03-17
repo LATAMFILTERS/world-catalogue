@@ -246,6 +246,35 @@ function buildProduct(apiProduct, meta) {
 }
 
 /**
+ * Descubrir categorías reales desde la API de Salesforce
+ */
+async function discoverCategories(page) {
+  log('🔍 Descubriendo categorías desde la API...');
+  const path = `${SF_API_BASE}/product-categories?page=0&pageSize=100&language=es&asGuest=true`;
+  const data = await apiGet(page, path);
+
+  if (data.__error__) {
+    log(`  ⚠️  No se pudo obtener categorías: ${data.__msg__} — usando lista hardcodeada`, 'WARN');
+    return null;
+  }
+
+  const items = data.productCategories || data.categories || data.items || data.data || [];
+  if (!items.length) {
+    log(`  ⚠️  API de categorías vacía — usando lista hardcodeada`, 'WARN');
+    return null;
+  }
+
+  const categories = items.map(c => ({
+    name: c.name || c.label || c.id,
+    url: `https://www.fleetguard.com/category/products/${c.id}`,
+  }));
+
+  log(`  ✅ ${categories.length} categorías encontradas:`);
+  categories.forEach(c => log(`     - ${c.name} (${c.url.split('/').pop()})`));
+  return categories;
+}
+
+/**
  * Scraping de una categoría completa via API
  */
 async function scrapeCategory(page, category) {
@@ -271,6 +300,10 @@ async function scrapeAllProducts(page, categoryUrls, progress) {
 
   // ── FASE 1: Recopilar todos los IDs de productos via API ─────────────────
   log('\n🔍 FASE 1: Recopilando productos via API...');
+
+  // Intentar auto-descubrir categorías desde la API
+  const discovered = await discoverCategories(page);
+  if (discovered) categoryUrls = discovered;
 
   const allProductList = [];
   for (const category of categoryUrls) {
