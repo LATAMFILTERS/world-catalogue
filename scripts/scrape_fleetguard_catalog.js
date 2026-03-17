@@ -159,7 +159,7 @@ async function getNextPageUrl(page) {
       'a[rel="next"]',
       '.pagination .next a',
       'button.next-page',
-      'a:contains("Next")',
+      // 'a:contains("Next")',  // jQuery-only, not valid CSS
       '[data-page-next] a',
     ];
 
