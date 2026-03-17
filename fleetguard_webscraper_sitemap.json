@@ -1,0 +1,98 @@
+{
+  "_id": "fleetguard-catalog-completo",
+  "startUrl": [
+    "https://www.fleetguard.com/category/products/0ZGPL0000000F8j4AE"
+  ],
+  "selectors": [
+    {
+      "id": "product_link",
+      "parentSelectors": ["_root"],
+      "type": "SelectorLink",
+      "selector": "a[href*='/product/'], a[href*='/products/'], .product-card a, .product-tile a, .product-item__title a",
+      "multiple": true,
+      "delay": 2000
+    },
+    {
+      "id": "next_page",
+      "parentSelectors": ["_root"],
+      "type": "SelectorLink",
+      "selector": "a[aria-label='Next'], a.next-page, a[rel='next'], .pagination .next a, li.next a",
+      "multiple": false,
+      "delay": 2000
+    },
+    {
+      "id": "sku",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorText",
+      "selector": ".product-sku, [data-sku], .sku-value, .part-number, h1",
+      "multiple": false,
+      "delay": 2000,
+      "regex": "(LF|FF|AF|WF|FS|HF|BV|CV|ES|RS|DF)\\d{3,6}[A-Z]?"
+    },
+    {
+      "id": "product_name",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorText",
+      "selector": "h1.product-name, h1.product-title, .product-detail h1, h1",
+      "multiple": false,
+      "delay": 1000
+    },
+    {
+      "id": "description",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorText",
+      "selector": ".product-description, .product-detail-description, .pdp-description, #description",
+      "multiple": false,
+      "delay": 0
+    },
+    {
+      "id": "image",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorImage",
+      "selector": ".product-image img, .pdp-image img, .product-photo img, #product-image img",
+      "multiple": false,
+      "delay": 0
+    },
+    {
+      "id": "specs_table",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorTable",
+      "selector": ".product-specs table, .specifications table, .product-attributes table, .tech-specs table",
+      "multiple": false,
+      "delay": 0,
+      "tableDataRowSelector": "tr",
+      "tableHeaderRowSelector": "tr:first-child",
+      "tableAddColumnHeader": false
+    },
+    {
+      "id": "cross_ref_table",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorTable",
+      "selector": "#cross-reference table, .cross-reference table, #crossRef table, .cross-ref table, .interchange table",
+      "multiple": false,
+      "delay": 500,
+      "tableDataRowSelector": "tr",
+      "tableHeaderRowSelector": "tr:first-child",
+      "tableAddColumnHeader": false
+    },
+    {
+      "id": "applications_table",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorTable",
+      "selector": "#fitment table, .vehicle-fitment table, .applications table, #applications table",
+      "multiple": false,
+      "delay": 500,
+      "tableDataRowSelector": "tr",
+      "tableHeaderRowSelector": "tr:first-child",
+      "tableAddColumnHeader": false
+    },
+    {
+      "id": "breadcrumb",
+      "parentSelectors": ["product_link"],
+      "type": "SelectorText",
+      "selector": ".breadcrumb, nav[aria-label='breadcrumb'], .breadcrumbs",
+      "multiple": false,
+      "delay": 0
+    }
+  ]
+}
