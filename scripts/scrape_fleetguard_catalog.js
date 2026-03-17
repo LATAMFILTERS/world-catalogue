@@ -91,7 +91,7 @@ async function navigateTo(page, url, retries = CONFIG.RETRY_ATTEMPTS) {
   for (let i = 0; i < retries; i++) {
     try {
       await page.goto(url, {
-        waitUntil: 'networkidle2',
+        waitUntil: 'domcontentloaded',
         timeout: CONFIG.TIMEOUT
       });
       return true;
