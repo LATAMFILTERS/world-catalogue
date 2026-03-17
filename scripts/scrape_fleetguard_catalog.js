@@ -452,7 +452,7 @@ async function scrapeCategory(page, category) {
     }
 
     // Esperar a que carguen los productos
-    await page.waitForTimeout(2000);
+    await new Promise(r => setTimeout(r, 2000));
 
     // Extraer URLs de productos en esta página
     const urls = await extractProductUrls(page);
@@ -492,7 +492,7 @@ async function scrapeAllProducts(page, categoryUrls, progress) {
   log('🌐 Explorando categorías desde la página principal...');
   const ok = await navigateTo(page, CONFIG.BASE_URL + '/category/products');
   if (ok) {
-    await page.waitForTimeout(2000);
+    await new Promise(r => setTimeout(r, 2000));
     const discoveredCategories = await page.evaluate(() => {
       const cats = [];
       const catLinks = document.querySelectorAll(
@@ -553,7 +553,7 @@ async function scrapeAllProducts(page, categoryUrls, progress) {
       const ok = await navigateTo(page, url);
       if (!ok) throw new Error('No se pudo cargar la página');
 
-      await page.waitForTimeout(1500);
+      await new Promise(r => setTimeout(r, 1500));
 
       // Esperar a que carguen los datos del producto
       try {
