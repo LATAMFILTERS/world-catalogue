@@ -124,11 +124,12 @@ async function extractProductUrls(page) {
 
     for (const sel of selectors) {
       const links = document.querySelectorAll(sel);
-      if (links.length > 0) {
-        links.forEach(a => {
-          if (a.href && !urls.includes(a.href)) {
-            urls.push(a.href);
-          }
+      const fleetguardLinks = Array.from(links).filter(a =>
+        a.href && a.hostname === 'www.fleetguard.com'
+      );
+      if (fleetguardLinks.length > 0) {
+        fleetguardLinks.forEach(a => {
+          if (!urls.includes(a.href)) urls.push(a.href);
         });
         break;
       }
@@ -137,7 +138,8 @@ async function extractProductUrls(page) {
     // Fallback: buscar cualquier link con patrón de SKU Fleetguard
     if (urls.length === 0) {
       document.querySelectorAll('a').forEach(a => {
-        if (a.href && /\/(LF|FF|AF|WF|FS|HF|BV|CV)\d+/i.test(a.href)) {
+        if (a.href && a.hostname === 'www.fleetguard.com' &&
+            /\/(LF|FF|AF|WF|FS|HF|BV|CV)\d+/i.test(a.href)) {
           if (!urls.includes(a.href)) urls.push(a.href);
         }
       });
