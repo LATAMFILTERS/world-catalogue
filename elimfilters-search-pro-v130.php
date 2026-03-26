@@ -559,36 +559,40 @@ function ef_v130_render() {
         var body = document.getElementById('ef-body-v130');
 
         /* ── field mapping (real DB schema) ── */
-        var sku        = (d.elimfilters_sku || d.sku || '---').toString().toUpperCase();
-        var desc       = d.marketing_narrative || d.description || '';
-        var filterType = d.filter_type || '';
-        var duty       = d.duty || '';
-        var tech       = d.elimfilters_technology || '';
-        var instType   = d.installation_type || d.subtype || '';
-        var baseCode   = d.base_code || '';
+        var sku        = (d.elimfilters_sku || d['ELIMFILTERS SKU'] || d.sku || '---').toString().toUpperCase();
+        var desc       = d.marketing_narrative || d.description || d.Description || '';
+        var filterType = d.filter_type || d['Filter Type'] || d.filterType || '';
+        var tech       = d.elimfilters_technology || d['ELIMFILTERS Technology'] || '';
+        var instType   = d.installation_type || d.installationType || d.subtype || '';
         var oemCodes   = Array.isArray(d.oem_codes) ? d.oem_codes : [];
         var crossCodes = Array.isArray(d.competitor_codes) ? d.competitor_codes : [];
         var equipment  = Array.isArray(d.applications) ? d.applications : [];
         var imgSrc     = (d.images && d.images.catalog) ? d.images.catalog : '';
 
-        /* ── spec pairs (real dimension fields) ── */
+        /* ── spec pairs — ordered per ELIMFILTERS field spec ── */
         var specPairs = [];
-        if (filterType)                    specPairs.push(['Filter Type',        filterType]);
-        if (instType)                      specPairs.push(['Installation',       instType]);
-        if (duty)                          specPairs.push(['Duty',               duty]);
-        if (tech)                          specPairs.push(['Technology',         tech]);
-        if (baseCode)                      specPairs.push(['Base Code',          baseCode]);
-        if (d.outer_diameter_mm)           specPairs.push(['Outer Dia.',         d.outer_diameter_mm + ' mm / ' + (d.outer_diameter_inch || '--') + '"']);
-        if (d.inner_diameter_mm)           specPairs.push(['Inner Dia.',         d.inner_diameter_mm + ' mm / ' + (d.inner_diameter_inch || '--') + '"']);
-        if (d.height_mm)                   specPairs.push(['Height',             d.height_mm + ' mm / ' + (d.height_inch || '--') + '"']);
-        if (d.thread_size)                 specPairs.push(['Thread Size',        d.thread_size]);
-        if (d.micron_rating)               specPairs.push(['Micron Rating',      d.micron_rating]);
-        if (d.nominal_efficiency)          specPairs.push(['Efficiency',         d.nominal_efficiency]);
-        if (d.bypass_valve_pressure_psi)   specPairs.push(['Bypass Valve',       d.bypass_valve_pressure_psi + ' psi']);
-        if (d.burst_pressure_psi)          specPairs.push(['Burst Pressure',     d.burst_pressure_psi + ' psi']);
-        if (d.collapse_pressure_psi)       specPairs.push(['Collapse Pressure',  d.collapse_pressure_psi + ' psi']);
-        if (d.anti_drainback_valve)        specPairs.push(['Anti-Drainback',     d.anti_drainback_valve]);
-        if (d.iso_test_method)             specPairs.push(['ISO Test Method',    d.iso_test_method]);
+        if (filterType)                        specPairs.push(['Filter Type',       filterType]);
+        if (instType)                          specPairs.push(['Installation',      instType]);
+        if (tech)                              specPairs.push(['Technology',        tech]);
+        if (d.thread_size)                     specPairs.push(['Thread Size',       d.thread_size]);
+        if (d.height_mm)                       specPairs.push(['Height',            d.height_mm + ' mm / ' + (d.height_inch || '--') + '"']);
+        if (d.outer_diameter_mm)               specPairs.push(['Outer Dia.',        d.outer_diameter_mm + ' mm / ' + (d.outer_diameter_inch || '--') + '"']);
+        if (d.inner_diameter_mm)               specPairs.push(['Inner Dia.',        d.inner_diameter_mm + ' mm / ' + (d.inner_diameter_inch || '--') + '"']);
+        if (d.gasket_od_mm)                    specPairs.push(['Gasket OD',         d.gasket_od_mm + ' mm / ' + (d.gasket_od_inch || '--') + '"']);
+        if (d.gasket_id_mm)                    specPairs.push(['Gasket ID',         d.gasket_id_mm + ' mm / ' + (d.gasket_id_inch || '--') + '"']);
+        if (d.iso_test_method)                 specPairs.push(['ISO Test Method',   d.iso_test_method]);
+        if (d.micron_rating)                   specPairs.push(['Micron Rating',     d.micron_rating]);
+        if (d.beta_ratio)                      specPairs.push(['Beta Ratio',        d.beta_ratio]);
+        if (d.nominal_efficiency)              specPairs.push(['Efficiency',        d.nominal_efficiency + '%']);
+        if (d.max_pressure_psi)                specPairs.push(['Max Pressure',      d.max_pressure_psi + ' psi']);
+        if (d.rated_flow_lmin && d.rated_flow_gpm) specPairs.push(['Rated Flow', d.rated_flow_lmin + ' L/min / ' + d.rated_flow_gpm + ' GPM']);
+        else if (d.rated_flow_lmin)            specPairs.push(['Rated Flow',        d.rated_flow_lmin + ' L/min']);
+        if (d.rated_flow_cfm)                  specPairs.push(['Rated Flow (CFM)',  d.rated_flow_cfm + ' CFM']);
+        if (d.burst_pressure_psi)              specPairs.push(['Burst Pressure',    d.burst_pressure_psi + ' psi']);
+        if (d.collapse_pressure_psi)           specPairs.push(['Collapse Pressure', d.collapse_pressure_psi + ' psi']);
+        if (d.bypass_valve_pressure_psi)       specPairs.push(['Bypass Valve',      d.bypass_valve_pressure_psi + ' psi']);
+        if (d.pressure_valve)                  specPairs.push(['Pressure Valve',    d.pressure_valve]);
+        if (d.anti_drainback_valve)            specPairs.push(['Anti-Drainback',    d.anti_drainback_valve]);
 
         /* ── build specs table (2-column) ── */
         var specsRows = '';
@@ -635,7 +639,7 @@ function ef_v130_render() {
         /* ── badges ── */
         var badges = '';
         if (filterType) badges += '<span class="ef-badge-v130 ef-badge-type">' + escHtml(filterType) + '</span>';
-        if (duty)       badges += '<span class="ef-badge-v130 ef-badge-tier">' + escHtml(duty) + '</span>';
+        if (instType)   badges += '<span class="ef-badge-v130 ef-badge-tier">' + escHtml(instType) + '</span>';
         if (tech)       badges += '<span class="ef-badge-v130 ef-badge-tier" style="border-color:#2a4a2a;color:#5a9a5a;">' + escHtml(tech) + '</span>';
 
         /* ── image ── */
