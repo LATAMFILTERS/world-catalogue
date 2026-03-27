@@ -165,22 +165,51 @@ function ef_v130_render() {
 .ef-close-v130:hover { color: #FDB714 !important; }
 
 /* ── PRODUCT HEADER ── */
-.ef-product-header-v130 {
+.ef-header-v130 {
     display: flex;
+    align-items: flex-start;
     gap: 0;
     border-bottom: 1px solid #1a1a1a;
+    padding: 28px 32px 24px 32px;
 }
-.ef-img-col-v130 {
-    flex: 0 0 240px;
-    min-height: 280px;
-    background: #050505;
-    border-right: 1px solid #1a1a1a;
+.ef-sku-title-v130 {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 56px !important;
+    font-weight: 700 !important;
+    color: #FDB714 !important;
+    letter-spacing: 2px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+.ef-desc-v130 {
+    flex: 1;
+    color: #888;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+    margin: 6px 0 0 32px;
+    line-height: 1.65;
+    padding-top: 6px;
+}
+
+/* ── SPECS PANEL LAYOUT (image + specs side by side) ── */
+.ef-specs-body-v130 {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+}
+.ef-specs-img-col-v130 {
+    flex: 0 0 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    gap: 20px;
+    gap: 16px;
+    padding-right: 24px;
 }
 .ef-img-wrap-v130 {
     width: 180px;
@@ -221,60 +250,15 @@ function ef_v130_render() {
     position: absolute;
     bottom: 12px;
 }
-.ef-img-col-v130 img.ef-logo-img {
-    width: 110px;
+.ef-specs-img-col-v130 img.ef-logo-img {
+    width: 100px;
     height: auto;
     display: block;
-    opacity: 0.85;
+    opacity: 0.75;
 }
-.ef-info-col-v130 {
+.ef-specs-content-v130 {
     flex: 1;
-    padding: 28px 32px 24px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.ef-sku-title-v130 {
-    font-family: 'Oswald', sans-serif !important;
-    font-size: 48px !important;
-    font-weight: 700 !important;
-    color: #FDB714 !important;
-    letter-spacing: 2px !important;
-    line-height: 1 !important;
-    margin: 0 0 6px 0 !important;
-    padding: 0 !important;
-    border: none !important;
-}
-.ef-desc-v130 {
-    color: #888;
-    font-size: 14px;
-    font-weight: 300;
-    margin: 0 0 16px 0;
-    line-height: 1.5;
-}
-.ef-badges-v130 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
-}
-.ef-badge-v130 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border: 1px solid #333;
-    color: #aaa;
-    display: inline-block;
-}
-.ef-badge-v130.ef-badge-type {
-    border-color: #FDB714;
-    color: #FDB714;
-}
-.ef-badge-v130.ef-badge-tier {
-    border-color: #555;
-    color: #888;
+    min-width: 0;
 }
 
 /* ── SECTION TABS ── */
@@ -386,7 +370,7 @@ function ef_v130_render() {
     color: #888 !important;
     font-family: 'Roboto', sans-serif !important;
     font-size: 12px !important;
-    width: 35%;
+    width: 28%;
 }
 .ef-ref-code-v130 {
     color: #FDB714 !important;
@@ -394,6 +378,12 @@ function ef_v130_render() {
     font-weight: 500 !important;
     font-size: 13px !important;
     letter-spacing: 0.5px !important;
+    width: 20%;
+}
+.ef-ref-divider-v130 {
+    width: 1px !important;
+    background: #1a1a1a !important;
+    padding: 0 !important;
 }
 .ef-ref-empty-v130 {
     text-align: center;
@@ -475,26 +465,22 @@ function ef_v130_render() {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
-    .ef-product-header-v130 { flex-direction: column; }
-    .ef-img-col-v130 {
-        flex: none;
-        min-height: auto;
-        flex-direction: row;
-        border-right: none;
-        border-bottom: 1px solid #1a1a1a;
-        padding: 20px;
-        justify-content: space-between;
-    }
+    .ef-header-v130 { flex-direction: column; padding: 20px 16px 16px; gap: 8px; }
+    .ef-sku-title-v130 { font-size: 36px !important; min-width: unset; }
+    .ef-desc-v130 { margin: 4px 0 0 0; font-size: 12px; }
+    .ef-panel-v130 { padding: 20px 16px 24px 16px; }
+    .ef-specs-body-v130 { flex-direction: column; }
+    .ef-specs-img-col-v130 { flex: none; width: 100%; padding-right: 0; padding-bottom: 20px; flex-direction: row; gap: 16px; align-items: center; }
     .ef-img-wrap-v130 { width: 80px; height: 80px; }
     .ef-img-wrap-v130 img.ef-product-img { max-width: 70px; max-height: 70px; }
-    .ef-info-col-v130 { padding: 20px; }
-    .ef-sku-title-v130 { font-size: 32px !important; }
-    .ef-panel-v130 { padding: 20px 16px 24px 16px; }
     .ef-specs-grid-v130 tr { display: block; }
     .ef-specs-grid-v130 td { display: block; width: 100% !important; }
     .ef-spec-divider-v130 { display: none; }
     .ef-stab-v130 { padding: 12px 14px; font-size: 10px; }
     #ef-modal-v130 { padding: 10px; }
+    .ef-ref-divider-v130 { display: none; }
+    .ef-ref-table-v130 td.ef-ref-mfr-v130:nth-child(4),
+    .ef-ref-table-v130 td.ef-ref-code-v130:nth-child(5) { display: none; }
 }
 </style>
 
@@ -872,32 +858,35 @@ function ef_v130_render() {
             }
         }
 
+        /* ── helper: build 2-pair-per-row table rows ── */
+        function buildPairRows(arr, col1, col2, emptyMsg, col2Style) {
+            if (arr.length === 0) return '<tr><td colspan="5" class="ef-ref-empty-v130">' + emptyMsg + '</td></tr>';
+            var r = '';
+            for (var pi = 0; pi < arr.length; pi += 2) {
+                var pa = arr[pi], pb = arr[pi + 1];
+                r += '<tr>';
+                r += '<td class="ef-ref-mfr-v130">' + escHtml(pa[col1] || '') + '</td>';
+                r += '<td class="ef-ref-code-v130"' + (col2Style ? ' style="' + col2Style + '"' : '') + '>' + escHtml(pa[col2] || '') + '</td>';
+                r += '<td class="ef-ref-divider-v130"></td>';
+                if (pb) {
+                    r += '<td class="ef-ref-mfr-v130">' + escHtml(pb[col1] || '') + '</td>';
+                    r += '<td class="ef-ref-code-v130"' + (col2Style ? ' style="' + col2Style + '"' : '') + '>' + escHtml(pb[col2] || '') + '</td>';
+                } else {
+                    r += '<td class="ef-ref-mfr-v130"></td><td class="ef-ref-code-v130"></td>';
+                }
+                r += '</tr>';
+            }
+            return r;
+        }
+
         /* ── OEM codes table ── */
-        var oemRows = oemCodes.length === 0
-            ? '<tr><td colspan="2" class="ef-ref-empty-v130">No OEM codes available</td></tr>'
-            : oemCodes.map(function(i) {
-                return '<tr><td class="ef-ref-mfr-v130">' + escHtml(i.manufacturer || '') + '</td><td class="ef-ref-code-v130">' + escHtml(i.code || '') + '</td></tr>';
-              }).join('');
+        var oemRows = buildPairRows(oemCodes, 'manufacturer', 'code', 'No OEM codes available', '');
 
         /* ── Competitor / cross reference codes table ── */
-        var crossRows = crossCodes.length === 0
-            ? '<tr><td colspan="2" class="ef-ref-empty-v130">No cross reference codes available</td></tr>'
-            : crossCodes.map(function(i) {
-                return '<tr><td class="ef-ref-mfr-v130">' + escHtml(i.manufacturer || '') + '</td><td class="ef-ref-code-v130">' + escHtml(i.code || '') + '</td></tr>';
-              }).join('');
+        var crossRows = buildPairRows(crossCodes, 'manufacturer', 'code', 'No cross reference codes available', '');
 
         /* ── Equipment / applications table ── */
-        var equipRows = equipment.length === 0
-            ? '<tr><td colspan="2" class="ef-ref-empty-v130">No compatible equipment available</td></tr>'
-            : equipment.map(function(i) {
-                return '<tr><td class="ef-ref-mfr-v130">' + escHtml(i.machine || '') + '</td><td class="ef-ref-code-v130" style="color:#ccc!important;font-family:\'Roboto\',sans-serif!important;font-size:12px!important;">' + escHtml(i.engine || '') + '</td></tr>';
-              }).join('');
-
-        /* ── badges ── */
-        var badges = '';
-        if (filterType) badges += '<span class="ef-badge-v130 ef-badge-type">' + escHtml(filterType) + '</span>';
-        if (instType)   badges += '<span class="ef-badge-v130 ef-badge-tier">' + escHtml(instType) + '</span>';
-        if (tech)       badges += '<span class="ef-badge-v130 ef-badge-tier" style="border-color:#2a4a2a;color:#5a9a5a;">' + escHtml(tech) + '</span>';
+        var equipRows = buildPairRows(equipment, 'machine', 'engine', 'No compatible equipment available', 'color:#ccc!important;font-family:\'Roboto\',sans-serif!important;font-size:12px!important;');
 
         /* ── image — wrapper with CSS fallback, no external placeholder dependency ── */
         var imgTag = imgSrc
@@ -908,17 +897,10 @@ function ef_v130_render() {
         body.innerHTML =
             '<button class="ef-close-v130" onclick="efClose130()" title="Close">&times;</button>' +
 
-            /* PRODUCT HEADER */
-            '<div class="ef-product-header-v130">' +
-                '<div class="ef-img-col-v130">' +
-                    imgTag +
-                    '<img class="ef-logo-img" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="ELIMFILTERS">' +
-                '</div>' +
-                '<div class="ef-info-col-v130">' +
-                    '<h1 class="ef-sku-title-v130">' + escHtml(sku) + '</h1>' +
-                    (desc ? '<p class="ef-desc-v130">' + escHtml(desc) + '</p>' : '') +
-                    (badges ? '<div class="ef-badges-v130">' + badges + '</div>' : '') +
-                '</div>' +
+            /* PRODUCT HEADER — SKU left + italic description right, no image, no badges */
+            '<div class="ef-header-v130">' +
+                '<h1 class="ef-sku-title-v130">' + escHtml(sku) + '</h1>' +
+                (desc ? '<p class="ef-desc-v130"><em>' + escHtml(desc) + '</em></p>' : '') +
             '</div>' +
 
             /* SECTION TABS */
@@ -929,31 +911,39 @@ function ef_v130_render() {
                 '<div class="ef-stab-v130" data-stab="equip" onclick="efSTab130(\'equip\')">Compatible Equipment <span class="ef-stab-count-v130">' + equipment.length + '</span></div>' +
             '</div>' +
 
-            /* PANEL: SPECIFICATIONS */
+            /* PANEL: SPECIFICATIONS — image col (left) + specs table (right) */
             '<div class="ef-panel-v130 ef-panel-active" id="ef-panel-specs">' +
                 '<div class="ef-section-hdr-v130"><h3>Technical Specifications</h3></div>' +
-                '<table class="ef-specs-grid-v130"><tbody>' + specsRows + '</tbody></table>' +
+                '<div class="ef-specs-body-v130">' +
+                    '<div class="ef-specs-img-col-v130">' +
+                        imgTag +
+                        '<img class="ef-logo-img" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="ELIMFILTERS">' +
+                    '</div>' +
+                    '<div class="ef-specs-content-v130">' +
+                        '<table class="ef-specs-grid-v130"><tbody>' + specsRows + '</tbody></table>' +
+                    '</div>' +
+                '</div>' +
             '</div>' +
 
-            /* PANEL: OEM CODES */
+            /* PANEL: OEM CODES — 2 pairs per row */
             '<div class="ef-panel-v130" id="ef-panel-oem">' +
                 '<div class="ef-section-hdr-v130"><h3>OEM Codes</h3></div>' +
                 '<p style="color:#444;font-size:11px;font-family:Roboto,sans-serif;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px 0;">Original Equipment Manufacturer part numbers</p>' +
-                '<table class="ef-ref-table-v130"><thead><tr><th>Manufacturer</th><th>Part Number</th></tr></thead><tbody>' + oemRows + '</tbody></table>' +
+                '<table class="ef-ref-table-v130"><thead><tr><th>Manufacturer</th><th>Part Number</th><th style="width:1px;padding:0;"></th><th>Manufacturer</th><th>Part Number</th></tr></thead><tbody>' + oemRows + '</tbody></table>' +
             '</div>' +
 
-            /* PANEL: CROSS REFERENCE */
+            /* PANEL: CROSS REFERENCE — 2 pairs per row */
             '<div class="ef-panel-v130" id="ef-panel-cross">' +
                 '<div class="ef-section-hdr-v130"><h3>Cross Reference Codes</h3></div>' +
                 '<p style="color:#444;font-size:11px;font-family:Roboto,sans-serif;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px 0;">Equivalent part numbers from other filter brands</p>' +
-                '<table class="ef-ref-table-v130"><thead><tr><th>Brand</th><th>Part Number</th></tr></thead><tbody>' + crossRows + '</tbody></table>' +
+                '<table class="ef-ref-table-v130"><thead><tr><th>Brand</th><th>Part Number</th><th style="width:1px;padding:0;"></th><th>Brand</th><th>Part Number</th></tr></thead><tbody>' + crossRows + '</tbody></table>' +
             '</div>' +
 
-            /* PANEL: COMPATIBLE EQUIPMENT */
+            /* PANEL: COMPATIBLE EQUIPMENT — 2 pairs per row */
             '<div class="ef-panel-v130" id="ef-panel-equip">' +
                 '<div class="ef-section-hdr-v130"><h3>Compatible Equipment</h3></div>' +
                 '<p style="color:#444;font-size:11px;font-family:Roboto,sans-serif;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px 0;">Vehicles and machinery compatible with this filter</p>' +
-                '<table class="ef-ref-table-v130"><thead><tr><th>Machine</th><th>Engine</th></tr></thead><tbody>' + equipRows + '</tbody></table>' +
+                '<table class="ef-ref-table-v130"><thead><tr><th>Machine</th><th>Engine</th><th style="width:1px;padding:0;"></th><th>Machine</th><th>Engine</th></tr></thead><tbody>' + equipRows + '</tbody></table>' +
             '</div>';
     }
 
