@@ -172,6 +172,7 @@ function ef_v130_render() {
 }
 .ef-img-col-v130 {
     flex: 0 0 240px;
+    min-height: 280px;
     background: #050505;
     border-right: 1px solid #1a1a1a;
     display: flex;
@@ -181,11 +182,44 @@ function ef_v130_render() {
     padding: 30px 20px;
     gap: 20px;
 }
-.ef-img-col-v130 img.ef-product-img {
-    width: 100%;
-    max-width: 180px;
+.ef-img-wrap-v130 {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+.ef-img-wrap-v130 img.ef-product-img {
+    max-width: 160px;
+    max-height: 160px;
+    width: auto;
     height: auto;
     display: block;
+    object-fit: contain;
+}
+/* CSS placeholder shown when image fails */
+.ef-img-wrap-v130.ef-no-img::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    position: absolute;
+}
+.ef-img-wrap-v130.ef-no-img::after {
+    content: 'NO IMAGE';
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #2a2a2a;
+    position: absolute;
+    bottom: 12px;
 }
 .ef-img-col-v130 img.ef-logo-img {
     width: 110px;
@@ -444,13 +478,15 @@ function ef_v130_render() {
     .ef-product-header-v130 { flex-direction: column; }
     .ef-img-col-v130 {
         flex: none;
+        min-height: auto;
         flex-direction: row;
         border-right: none;
         border-bottom: 1px solid #1a1a1a;
         padding: 20px;
         justify-content: space-between;
     }
-    .ef-img-col-v130 img.ef-product-img { max-width: 80px; }
+    .ef-img-wrap-v130 { width: 80px; height: 80px; }
+    .ef-img-wrap-v130 img.ef-product-img { max-width: 70px; max-height: 70px; }
     .ef-info-col-v130 { padding: 20px; }
     .ef-sku-title-v130 { font-size: 32px !important; }
     .ef-panel-v130 { padding: 20px 16px 24px 16px; }
@@ -863,8 +899,10 @@ function ef_v130_render() {
         if (instType)   badges += '<span class="ef-badge-v130 ef-badge-tier">' + escHtml(instType) + '</span>';
         if (tech)       badges += '<span class="ef-badge-v130 ef-badge-tier" style="border-color:#2a4a2a;color:#5a9a5a;">' + escHtml(tech) + '</span>';
 
-        /* ── image ── */
-        var imgTag = '<img class="ef-product-img" src="' + (imgSrc ? escHtml(imgSrc) : 'https://elimfilters.com/wp-content/uploads/2025/11/placeholder.png') + '" alt="' + escHtml(sku) + '" onerror="this.src=\'https://elimfilters.com/wp-content/uploads/2025/11/placeholder.png\'">';
+        /* ── image — wrapper with CSS fallback, no external placeholder dependency ── */
+        var imgTag = imgSrc
+            ? '<div class="ef-img-wrap-v130"><img class="ef-product-img" src="' + escHtml(imgSrc) + '" alt="' + escHtml(sku) + '" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'ef-no-img\')"></div>'
+            : '<div class="ef-img-wrap-v130 ef-no-img"></div>';
 
         /* ── assemble HTML ── */
         body.innerHTML =
