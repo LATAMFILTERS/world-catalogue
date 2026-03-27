@@ -167,7 +167,7 @@ function ef_v130_render() {
 /* ── PRODUCT HEADER ── */
 .ef-header-v130 {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0;
     border-bottom: 1px solid #1a1a1a;
     padding: 28px 32px 24px 32px;
@@ -886,8 +886,25 @@ function ef_v130_render() {
         /* ── Competitor / cross reference codes table ── */
         var crossRows = buildPairRows(crossCodes, 'manufacturer', 'code', 'No cross reference codes available', '');
 
-        /* ── Equipment / applications table ── */
-        var equipRows = buildPairRows(equipment, 'machine', 'engine', 'No compatible equipment available', 'color:#ccc!important;font-family:\'Roboto\',sans-serif!important;font-size:12px!important;');
+        /* ── Equipment grouped by engine (same engine = one row, machines joined) ── */
+        var equipRows = (function() {
+            if (equipment.length === 0) return '<tr><td colspan="2" class="ef-ref-empty-v130">No compatible equipment available</td></tr>';
+            var groups = {}, order = [];
+            for (var ei = 0; ei < equipment.length; ei++) {
+                var eng = equipment[ei].engine || '', mac = equipment[ei].machine || '';
+                if (!groups[eng]) { groups[eng] = []; order.push(eng); }
+                groups[eng].push(mac);
+            }
+            var r = '';
+            for (var oi = 0; oi < order.length; oi++) {
+                var key = order[oi];
+                r += '<tr>';
+                r += '<td class="ef-ref-mfr-v130" style="color:#ccc!important;font-size:12px!important;">' + escHtml(groups[key].join(', ')) + '</td>';
+                r += '<td class="ef-ref-code-v130" style="color:#888!important;font-family:\'Roboto\',sans-serif!important;font-size:12px!important;font-weight:400!important;letter-spacing:0!important;">' + escHtml(key) + '</td>';
+                r += '</tr>';
+            }
+            return r;
+        })();
 
         /* ── image — wrapper with CSS fallback, no external placeholder dependency ── */
         var imgTag = imgSrc
@@ -944,7 +961,7 @@ function ef_v130_render() {
             '<div class="ef-panel-v130" id="ef-panel-equip">' +
                 '<div class="ef-section-hdr-v130"><h3>Compatible Equipment</h3></div>' +
                 '<p style="color:#444;font-size:11px;font-family:Roboto,sans-serif;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px 0;">Vehicles and machinery compatible with this filter</p>' +
-                '<table class="ef-ref-table-v130"><thead><tr><th>Machine</th><th>Engine</th><th style="width:1px;padding:0;"></th><th>Machine</th><th>Engine</th></tr></thead><tbody>' + equipRows + '</tbody></table>' +
+                '<table class="ef-ref-table-v130"><thead><tr><th style="width:55%;">Machine</th><th>Engine</th></tr></thead><tbody>' + equipRows + '</tbody></table>' +
             '</div>';
     }
 
