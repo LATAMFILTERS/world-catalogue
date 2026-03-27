@@ -210,6 +210,7 @@ function ef_v130_render() {
     align-items: center;
     gap: 16px;
     padding-right: 24px;
+    align-self: stretch;
 }
 .ef-img-wrap-v130 {
     width: 180px;
@@ -255,6 +256,7 @@ function ef_v130_render() {
     height: auto;
     display: block;
     opacity: 0.75;
+    margin-top: auto;
 }
 .ef-specs-content-v130 {
     flex: 1;
@@ -808,8 +810,8 @@ function ef_v130_render() {
                 s += ' Provides reliable contaminant removal to protect critical equipment components and extend service life under demanding operating conditions.';
             }
 
-            /* ── if MongoDB has a hand-written narrative, use it instead ── */
-            return d.marketing_narrative || d.Description || s;
+            /* ── MongoDB marketing_narrative overrides auto-generated text ── */
+            return d.marketing_narrative || s;
         })();
 
         /* ── spec pairs — ordered per ELIMFILTERS field spec ── */
