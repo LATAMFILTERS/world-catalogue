@@ -786,7 +786,8 @@ function ef_v130_render() {
                 s += ' Provides reliable contaminant removal to protect critical equipment components and extend service life under demanding operating conditions.';
             }
 
-            return s;
+            /* ── if MongoDB has a hand-written narrative, use it instead ── */
+            return d.marketing_narrative || d.Description || s;
         })();
 
         /* ── spec pairs — ordered per ELIMFILTERS field spec ── */
