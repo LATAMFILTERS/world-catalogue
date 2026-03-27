@@ -570,30 +570,50 @@ function ef_v130_render() {
 
         /* ── professional description (fully dynamic, all ELIMFILTERS prefixes) ── */
         var desc = (function() {
-            var ft  = filterType.toLowerCase();
-            var it  = instType.toLowerCase();
+            var ft    = filterType.toLowerCase();
+            var it    = instType.toLowerCase();
             var skuUp = sku.toUpperCase();
 
-            /* detect prefix from SKU as fallback */
-            var prefix = '';
-            var prefixMatch = skuUp.match(/^(EC|EA|EF|EH|EL|EM|ET|ES|EW|ED|EK)/);
-            if (prefixMatch) prefix = prefixMatch[1];
+            /* ── official technology fallback table by SKU prefix ── */
+            var TECH_BY_PREFIX = {
+                'EA1': 'MACROCORE',  'EA2': 'INTEKCORE',
+                'EF9': 'SYNTEPORE',  'ES9': 'AQUAGUARD',
+                'EL8': 'SINTRAX',    'EH6': 'NANOFORCE',
+                'ET9': 'AQUAGUARD',  'EW7': 'COOLTECH',
+                'EC1': 'MICROKAPPA', 'ED4': 'DRYCORE',
+                'ED3': 'BLUECLEAN',  'EG3': 'GASULTRA',
+                'EK5': 'DURATECH',   'EK3': 'DURATECH',
+                'EM9': 'MARINECLEAN'
+            };
 
-            /* resolve category — filter_type wins, then prefix fallback */
-            var cat = '';
-            if      (ft.indexOf('cabin') !== -1 || ft.indexOf('cabina') !== -1)                          cat = 'cabin';
-            else if (ft.indexOf('air dryer') !== -1 || ft.indexOf('secador') !== -1 || prefix === 'ED') cat = 'airdryer';
-            else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1 || prefix === 'EA')          cat = 'air';
-            else if (ft.indexOf('turbine') !== -1 || prefix === 'ET')                                   cat = 'turbine';
-            else if (ft.indexOf('separator') !== -1 || ft.indexOf('separador') !== -1 || prefix === 'ES') cat = 'separator';
-            else if (ft.indexOf('fuel') !== -1 || ft.indexOf('combustible') !== -1 || prefix === 'EF')  cat = 'fuel';
-            else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1 || prefix === 'EH')      cat = 'hydraulic';
-            else if (ft.indexOf('coolant') !== -1 || ft.indexOf('refriger') !== -1 || prefix === 'EW')  cat = 'coolant';
-            else if (ft.indexOf('marine') !== -1 || ft.indexOf('marin') !== -1 || prefix === 'EM')      cat = 'marine';
-            else if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1 || ft.indexOf('oil') !== -1 || prefix === 'EL') cat = 'lube';
-            else cat = 'general';
+            /* detect 3-char prefix first (ED3, ED4, EK5, EK3…), then 2-char */
+            var prefix3 = skuUp.substring(0, 3);
+            var prefix2 = skuUp.substring(0, 2);
+            var prefix  = TECH_BY_PREFIX[prefix3] ? prefix3 : prefix2;
 
-            /* attributes present on this specific filter */
+            /* tech: use DB field if populated, else look up official table */
+            var techName = tech ? tech.replace(/\u2122/g, '').trim() : '';
+            if (!techName && TECH_BY_PREFIX[prefix3]) techName = TECH_BY_PREFIX[prefix3];
+            else if (!techName && TECH_BY_PREFIX[prefix2 + '8']) techName = TECH_BY_PREFIX[prefix2 + '8']; /* e.g. EL8 */
+
+            /* ── resolve category ── filter_type wins, then prefix fallback ── */
+            var cat = 'general';
+            if      (ft.indexOf('cabin') !== -1 || ft.indexOf('cabina') !== -1 || prefix3 === 'EC1') cat = 'cabin';
+            else if (ft.indexOf('def') !== -1 || ft.indexOf('adblue') !== -1 || ft.indexOf('urea') !== -1 || prefix3 === 'ED3') cat = 'def';
+            else if (ft.indexOf('dryer') !== -1 || ft.indexOf('secador') !== -1 || prefix3 === 'ED4') cat = 'airdryer';
+            else if (ft.indexOf('gas') !== -1 || ft.indexOf('lpg') !== -1 || ft.indexOf('gnc') !== -1 || prefix3 === 'EG3') cat = 'gas';
+            else if (ft.indexOf('intake') !== -1 || ft.indexOf('carcasa') !== -1 || ft.indexOf('housing') !== -1 || prefix3 === 'EA2') cat = 'intake';
+            else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1 || prefix2 === 'EA') cat = 'air';
+            else if (ft.indexOf('turbine') !== -1 || prefix3 === 'ET9') cat = 'turbine';
+            else if (ft.indexOf('separator') !== -1 || ft.indexOf('separador') !== -1 || prefix3 === 'ES9') cat = 'separator';
+            else if (ft.indexOf('fuel') !== -1 || ft.indexOf('combustible') !== -1 || prefix3 === 'EF9') cat = 'fuel';
+            else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1 || prefix3 === 'EH6') cat = 'hydraulic';
+            else if (ft.indexOf('coolant') !== -1 || ft.indexOf('refriger') !== -1 || prefix3 === 'EW7') cat = 'coolant';
+            else if (ft.indexOf('marine') !== -1 || ft.indexOf('marin') !== -1 || prefix3 === 'EM9') cat = 'marine';
+            else if (ft.indexOf('kit') !== -1 || prefix3 === 'EK5' || prefix3 === 'EK3') cat = 'kit';
+            else if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1 || ft.indexOf('oil') !== -1 || prefix3 === 'EL8') cat = 'lube';
+
+            /* ── attributes present on this specific product ── */
             var hasBypass    = !!(d.bypass_valve_pressure_psi || d.pressure_valve);
             var hasAntiDrain = !!(d.anti_drainback_valve);
             var hasThread    = !!(d.thread_size);
@@ -605,134 +625,163 @@ function ef_v130_render() {
 
             var isSpinOn    = it.indexOf('spin') !== -1;
             var isCartridge = it.indexOf('cartridge') !== -1;
-            var techName    = tech ? tech.replace(/\u2122/g,'').trim() : '';  /* strip any existing ™ */
+            var T           = techName ? techName + '\u2122' : '';   /* e.g. "SINTRAX™" */
 
-            /* ── BUILD DESCRIPTION BY CATEGORY ── */
             var s = '';
 
-            /* ===== CABIN AIR ===== */
-            if (cat === 'cabin') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine cabin air filter';
-                if (techName) s += ' with ' + techName + '\u2122 multi-layer filtration technology';
-                s += ', engineered to protect occupant health and maintain a clean vehicle interior environment.';
-                s += ' Captures 99.5% of pollen, dust, bacteria and fine particulate matter';
-                if (techName === 'MICROKAPPA') s += ', featuring an activated carbon layer that absorbs gases, odors and harmful VOCs';
-                s += ', while safeguarding your HVAC system from dirt accumulation.';
-                s += ' Recommended replacement every 12\u201315 months or 15,000 km for optimal cabin air quality.';
-            }
-
-            /* ===== AIR DRYER ===== */
-            else if (cat === 'airdryer') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine air dryer cartridge';
-                if (techName) s += ' with ' + techName + '\u2122 desiccant technology';
-                s += ', designed to eliminate moisture from compressed air and pneumatic brake systems, developed to meet or exceed OEM requirements.';
-                s += ' Prevents corrosion in air lines, valves and brake components, and guards against system freeze-up in cold climates.';
-                s += ' Essential for maintaining safe and reliable air brake performance on heavy-duty trucks and buses.';
-            }
-
-            /* ===== ENGINE AIR ===== */
-            else if (cat === 'air') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isCartridge ? 'cartridge ' : '') + 'air filter';
-                if (techName) s += ' engineered with ' + techName + '\u2122 synthetic nanofiber media technology';
-                s += ', developed to meet or exceed OEM intake protection requirements.';
-                s += ' Captures dust, debris and airborne contaminants';
-                if (hasMicron) s += ' down to ' + d.micron_rating + ' microns';
-                s += ', ensuring optimal air-fuel ratio, combustion efficiency and engine longevity.';
-                if (hasEff) s += ' Delivers ' + d.nominal_efficiency + '% multi-pass filtration efficiency';
-                if (hasISO) s += ' validated under ' + d.iso_test_method + ' test standard';
-                if (hasEff || hasISO) s += '.';
-                if (techName) s += ' The ' + techName + '\u2122 nanofiber layer provides up to 2\xd7 longer service life versus conventional cellulose media.';
-            }
-
-            /* ===== TURBINE ===== */
-            else if (cat === 'turbine') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine turbine fuel/water separator';
-                if (techName) s += ' with ' + techName + '\u2122 Aquabloc\u00AE media';
-                s += ', developed to meet or exceed OEM requirements for industrial turbine and generator fuel systems.';
-                s += ' Achieves 99% water separation efficiency, protecting high-precision injection components from water contamination, corrosion and premature failure.';
-                if (hasFlow) {
-                    var fl = d.rated_flow_lmin ? d.rated_flow_lmin + ' L/min' : d.rated_flow_cfm + ' CFM';
-                    s += ' Rated for ' + fl + ' flow capacity.';
-                }
-                s += ' Available in multiple service intervals (1000FH, 900FH, 500FH) to match your maintenance schedule.';
-            }
-
-            /* ===== FUEL/WATER SEPARATOR ===== */
-            else if (cat === 'separator') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine fuel/water separator';
-                if (techName) s += ' with ' + techName + '\u2122 multi-stage separation technology';
-                s += ', developed to deliver critical protection for diesel injection systems, developed to meet or exceed OEM requirements.';
-                s += ' Achieves 99% water separation efficiency, eliminating free and emulsified water that causes injector corrosion, pump wear and costly downtime.';
-                s += ' Compatible with biodiesel B20, conventional diesel and ULSD fuel blends.';
-            }
-
-            /* ===== FUEL ===== */
-            else if (cat === 'fuel') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'fuel filter';
-                if (techName) s += ' engineered with ' + techName + '\u2122 high-capacity porous synthetic media';
-                s += ', developed to meet or exceed OEM requirements.';
-                s += ' Provides superior particle removal to protect Common Rail injectors, high-pressure pumps and fuel system components from contamination-induced wear.';
-                if (hasMicron) s += ' Captures particles as small as ' + d.micron_rating + ' microns';
-                if (hasEff)    s += (hasMicron ? ', achieving ' : ' Achieves ') + d.nominal_efficiency + '% filtration efficiency';
-                if (hasMicron || hasEff) s += '.';
-                s += ' Compatible with biodiesel B20, ULSD and Tier 4 Final / Euro VI engine requirements.';
-                if (hasAntiDrain) s += ' Anti-drainback valve prevents dry starts and maintains fuel system prime.';
-            }
-
-            /* ===== HYDRAULIC ===== */
-            else if (cat === 'hydraulic') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'hydraulic filter';
-                if (techName) s += ' engineered with ' + techName + '\u2122 high-capacity synthetic media';
-                s += ', developed to meet or exceed OEM requirements for high-pressure hydraulic systems.';
-                s += ' Delivers consistent protection by removing metallic particles and contaminants that cause valve spool sticking, pump erosion and actuator failure.';
-                if (hasEff) s += ' Achieves ' + d.nominal_efficiency + '% filtration efficiency';
-                if (hasISO) s += (hasEff ? ' per ' : ' Validated under ') + d.iso_test_method;
-                if (hasEff || hasISO) s += '.';
-                if (hasBeta) s += ' Beta ratio \u03b2 = ' + d.beta_ratio + ' for absolute precision filtration.';
-                if (d.max_pressure_psi) s += ' Rated to ' + d.max_pressure_psi + ' psi burst pressure for demanding industrial applications.';
-            }
-
-            /* ===== COOLANT ===== */
-            else if (cat === 'coolant') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine coolant filter';
-                if (techName) s += ' with ' + techName + '\u2122 reinforced synthetic media';
-                s += ', developed to protect heavy-duty cooling systems and meet or exceed OEM service requirements.';
-                s += ' Removes abrasive particles and contaminants from coolant circuits while delivering integrated corrosion inhibitor protection for radiators, water pumps and cylinder liners.';
-                s += ' Compatible with modern extended-life coolants (OAT, NOAT and conventional formulations).';
-            }
-
-            /* ===== MARINE ===== */
-            else if (cat === 'marine') {
-                s = 'Elimfilters\u00AE ' + skuUp + ' genuine marine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'filter';
-                if (techName) s += ' with ' + techName + '\u2122 marine-grade synthetic media';
-                s += ', engineered to withstand the extreme demands of saltwater and freshwater marine environments, meeting or exceeding OEM specifications.';
-                s += ' Features anti-corrosion construction and a robust seal designed to prevent leaks under intense marine vibration.';
-                s += ' Protects inboard, outboard and marine diesel engines from wear particles and water ingress.';
-                if (hasAntiDrain) s += ' Anti-drainback valve ensures immediate lubrication at every engine start.';
-            }
-
-            /* ===== LUBE / OIL ===== */
-            else if (cat === 'lube') {
+            /* ===== LUBE / OIL — EL8 / SINTRAX™ ===== */
+            if (cat === 'lube') {
                 s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'lube filter';
-                if (techName) s += ' engineered with ' + techName + '\u2122 filtration media technology';
-                if (hasBypass && techName) {
-                    s += ' that combines full-flow and by-pass filtration into one single unit';
-                } else if (hasBypass) {
-                    s += ' combines full-flow and by-pass filtration into one single unit';
-                }
+                if (T) s += ' engineered with ' + T + ' filtration media technology';
+                if (hasBypass) s += (T ? ' that combines' : ' combines') + ' full-flow and by-pass filtration into one single unit';
                 s += ', developed to meet or exceed OEM engine requirements.';
                 s += ' Protects your engine from wear particles, sludge and metallic debris that lead to premature bearing, ring and valve failure';
                 if (hasMicron) s += ', capturing contaminants as small as ' + d.micron_rating + ' microns';
                 s += ', ensuring maximum service life and unrestricted oil flow.';
                 if (hasAntiDrain) s += ' Built-in anti-drainback valve maintains oil pressure film at every cold start, eliminating dry-start wear.';
                 if (hasThread) s += ' Direct OEM fit with ' + d.thread_size + ' thread for tool-free installation.';
-                if (techName) s += ' The ' + techName + '\u2122 media delivers superior dirt-holding capacity and extended drain intervals beyond conventional cellulose filters.';
+                if (T) s += ' The ' + T + ' media delivers superior dirt-holding capacity and extended drain intervals beyond conventional cellulose filters.';
+            }
+
+            /* ===== ENGINE AIR — EA1 / MACROCORE™ ===== */
+            else if (cat === 'air') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isCartridge ? 'cartridge ' : '') + 'air filter';
+                if (T) s += ' engineered with ' + T + ' high-efficiency media technology';
+                s += ', developed to deliver 100% pure air to the engine and meet or exceed OEM intake protection requirements.';
+                s += ' Captures dust, debris and airborne contaminants';
+                if (hasMicron) s += ' down to ' + d.micron_rating + ' microns';
+                s += ', ensuring optimal air-fuel ratio, combustion efficiency and engine longevity.';
+                if (hasEff) s += ' Delivers ' + d.nominal_efficiency + '% multi-pass filtration efficiency';
+                if (hasISO) s += (hasEff ? ' per ' : ' Validated under ') + d.iso_test_method;
+                if (hasEff || hasISO) s += '.';
+                if (T) s += ' ' + T + ' extended media surface provides up to 2\xd7 longer service life versus conventional cellulose filters.';
+            }
+
+            /* ===== INTAKE HOUSING — EA2 / INTEKCORE™ ===== */
+            else if (cat === 'intake') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' heavy-duty air intake housing';
+                if (T) s += ' built with ' + T + ' optimized flow-path design';
+                s += ', engineered to maximize air throughput while maintaining structural integrity under extreme vibration and thermal cycling.';
+                s += ' Precision-formed body ensures a perfect seal with OEM air filter elements, preventing unfiltered air bypass.';
+                if (hasFlow) { var fl = d.rated_flow_cfm ? d.rated_flow_cfm + ' CFM' : d.rated_flow_lmin + ' L/min'; s += ' Rated for ' + fl + ' maximum flow.'; }
+            }
+
+            /* ===== FUEL — EF9 / SYNTEPORE™ ===== */
+            else if (cat === 'fuel') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'fuel filter';
+                if (T) s += ' with ' + T + ' synthetic armor media — delivering 100% pure fuel to the injection system';
+                s += ', developed to meet or exceed OEM requirements.';
+                s += ' Protects Common Rail injectors, high-pressure pumps and fuel system components from contamination-induced wear.';
+                if (hasMicron) s += ' Captures particles as small as ' + d.micron_rating + ' microns';
+                if (hasEff) s += (hasMicron ? ', achieving ' : ' Achieves ') + d.nominal_efficiency + '% filtration efficiency';
+                if (hasMicron || hasEff) s += '.';
+                s += ' Compatible with biodiesel B20, ULSD and Tier 4 Final / Euro VI engine requirements.';
+                if (hasAntiDrain) s += ' Anti-drainback valve prevents dry starts and maintains fuel prime.';
+            }
+
+            /* ===== FUEL/WATER SEPARATOR — ES9 / AQUAGUARD™ ===== */
+            else if (cat === 'separator') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine fuel/water separator';
+                if (T) s += ' with ' + T + ' total moisture protection technology';
+                s += ', providing complete defense against water and humidity in diesel fuel systems, meeting or exceeding OEM requirements.';
+                s += ' Achieves 99% water separation efficiency, eliminating free and emulsified water that causes injector corrosion, pump wear and costly downtime.';
+                if (hasFlow) { var fl2 = d.rated_flow_lmin ? d.rated_flow_lmin + ' L/min' : d.rated_flow_cfm + ' CFM'; s += ' Rated for ' + fl2 + '.'; }
+                s += ' Compatible with biodiesel B20, conventional diesel and ULSD blends.';
+            }
+
+            /* ===== HYDRAULIC — EH6 / NANOFORCE™ ===== */
+            else if (cat === 'hydraulic') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'hydraulic filter';
+                if (T) s += ' engineered with ' + T + ' precision nanofiber media for optimized high-pressure flow';
+                s += ', developed to meet or exceed OEM requirements for heavy-duty hydraulic systems.';
+                s += ' Removes metallic particles and contaminants that cause valve spool sticking, pump erosion and actuator failure.';
+                if (hasEff) s += ' Achieves ' + d.nominal_efficiency + '% filtration efficiency';
+                if (hasISO) s += (hasEff ? ' per ' : ' Validated under ') + d.iso_test_method;
+                if (hasEff || hasISO) s += '.';
+                if (hasBeta) s += ' Beta ratio \u03b2 = ' + d.beta_ratio + ' ensures absolute precision filtration.';
+                if (d.max_pressure_psi) s += ' Rated to ' + d.max_pressure_psi + ' psi for the most demanding industrial applications.';
+            }
+
+            /* ===== TURBINE — ET9 / AQUAGUARD™ ===== */
+            else if (cat === 'turbine') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine turbine fuel/water separator';
+                if (T) s += ' with ' + T + ' Aquabloc\u00AE media — maximum protection and smooth flow for turbine systems';
+                s += ', developed to meet or exceed OEM requirements for industrial turbines and generators.';
+                s += ' Achieves 99% water separation efficiency, protecting precision injection components from water contamination, corrosion and premature failure.';
+                if (hasFlow) { var fl3 = d.rated_flow_lmin ? d.rated_flow_lmin + ' L/min' : d.rated_flow_cfm + ' CFM'; s += ' Rated for ' + fl3 + ' flow capacity.'; }
+                s += ' Available in multiple service intervals (1000FH, 900FH, 500FH) to match your maintenance schedule.';
+            }
+
+            /* ===== COOLANT — EW7 / COOLTECH™ ===== */
+            else if (cat === 'coolant') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine coolant filter';
+                if (T) s += ' with ' + T + ' corrosion control and thermal balance technology';
+                s += ', developed to protect heavy-duty cooling systems and meet or exceed OEM service requirements.';
+                s += ' Removes abrasive particles from coolant circuits while delivering integrated corrosion inhibitor protection for radiators, water pumps and cylinder liners.';
+                s += ' Compatible with OAT, NOAT and conventional extended-life coolant formulations.';
+            }
+
+            /* ===== CABIN AIR — EC1 / MICROKAPPA™ ===== */
+            else if (cat === 'cabin') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine cabin air filter';
+                if (T) s += ' with ' + T + ' multi-layer allergen protection technology';
+                s += ', engineered to deliver pure air and protect occupant health inside the cab.';
+                s += ' Captures 99.5% of pollen, dust, bacteria and fine particulate matter';
+                s += ', with an activated carbon layer that absorbs harmful gases, odors and VOCs';
+                s += ', while safeguarding your HVAC system from dirt accumulation.';
+                s += ' Recommended replacement every 12\u201315 months or 15,000 km for optimal air quality.';
+            }
+
+            /* ===== AIR DRYER — ED4 / DRYCORE™ ===== */
+            else if (cat === 'airdryer') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine air dryer cartridge';
+                if (T) s += ' with ' + T + ' total moisture elimination technology';
+                s += ', designed for complete removal of humidity from compressed air and pneumatic brake systems, meeting or exceeding OEM requirements.';
+                s += ' Prevents corrosion in air lines, valves and brake components, and protects against system freeze-up in cold climates.';
+                s += ' Essential for maintaining safe, reliable air brake performance on heavy-duty trucks and buses.';
+            }
+
+            /* ===== DEF / ADBLUE — ED3 / BLUECLEAN™ ===== */
+            else if (cat === 'def') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine DEF/AdBlue filter';
+                if (T) s += ' with ' + T + ' maximum urea purity technology';
+                s += ', engineered to protect SCR (Selective Catalytic Reduction) systems in Tier 4 Final and Euro VI compliant engines.';
+                s += ' Removes crystalline deposits, particulates and contaminants from DEF/AdBlue fluid that degrade injector nozzles and dosing pumps.';
+                s += ' Ensures precise urea concentration for optimal NOx reduction and regulatory compliance.';
+            }
+
+            /* ===== GAS — EG3 / GASULTRA™ ===== */
+            else if (cat === 'gas') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine gas filter';
+                if (T) s += ' engineered with ' + T + ' precision gas filtration technology';
+                s += ', developed for LPG and CNG (GNC) engine fuel systems meeting or exceeding OEM requirements.';
+                s += ' Removes contaminants, moisture and particulates from gaseous fuel before combustion, protecting injectors, pressure regulators and combustion chamber components.';
+                s += ' Ensures clean, precise fuel delivery for maximum engine efficiency and reduced emissions.';
+            }
+
+            /* ===== MARINE — EM9 / MARINECLEAN™ ===== */
+            else if (cat === 'marine') {
+                s = 'Elimfilters\u00AE ' + skuUp + ' genuine marine ' + (isSpinOn ? 'spin-on ' : isCartridge ? 'cartridge ' : '') + 'filter';
+                if (T) s += ' with ' + T + ' anti-corrosion protection technology for open-water purity';
+                s += ', engineered to withstand the extreme demands of saltwater and freshwater marine environments, meeting or exceeding OEM specifications.';
+                s += ' Features a marine-grade corrosion-resistant body and robust seal that prevents leaks under intense vibration, pressure and temperature cycling.';
+                s += ' Protects inboard, outboard and marine diesel engines from wear particles and water ingress.';
+                if (hasAntiDrain) s += ' Anti-drainback valve ensures immediate lubrication at every engine start.';
+            }
+
+            /* ===== SERVICE KITS — EK5 / EK3 / DURATECH™ ===== */
+            else if (cat === 'kit') {
+                var isHD = prefix3 === 'EK5' || ft.indexOf('heavy') !== -1;
+                s = 'Elimfilters\u00AE ' + skuUp + ' complete ' + (isHD ? 'Heavy Duty' : 'Light Duty') + ' service kit';
+                if (T) s += ' with ' + T + ' components';
+                s += ' — everything you need in one box for a full ' + (isHD ? 'major heavy-duty' : 'light-duty vehicle') + ' service.';
+                s += ' Includes all filters required for a single scheduled maintenance event, saving time on ordering and ensuring every critical fluid is filtered with genuine ELIMFILTERS quality.';
             }
 
             /* ===== GENERAL ===== */
             else {
                 s = 'Elimfilters\u00AE ' + skuUp + ' genuine industrial filter';
-                if (techName) s += ' engineered with ' + techName + '\u2122 filtration technology';
+                if (T) s += ' engineered with ' + T + ' filtration technology';
                 s += ', developed to meet or exceed OEM filtration requirements.';
                 s += ' Provides reliable contaminant removal to protect critical equipment components and extend service life under demanding operating conditions.';
             }
