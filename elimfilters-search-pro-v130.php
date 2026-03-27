@@ -560,7 +560,6 @@ function ef_v130_render() {
 
         /* ── field mapping (real DB schema) ── */
         var sku        = (d.elimfilters_sku || d['ELIMFILTERS SKU'] || d.sku || '---').toString().toUpperCase();
-        var desc       = d.marketing_narrative || d.description || d.Description || '';
         var filterType = d.filter_type || d['Filter Type'] || d.filterType || '';
         var tech       = d.elimfilters_technology || d['ELIMFILTERS Technology'] || '';
         var instType   = d.installation_type || d.installationType || d.subtype || '';
@@ -568,6 +567,54 @@ function ef_v130_render() {
         var crossCodes = Array.isArray(d.competitor_codes) ? d.competitor_codes : [];
         var equipment  = Array.isArray(d.applications) ? d.applications : [];
         var imgSrc     = (d.images && d.images.catalog) ? d.images.catalog : '';
+
+        /* ── professional description (generated from product data) ── */
+        var desc = (function() {
+            var ft = filterType.toLowerCase();
+            var it = instType.toLowerCase();
+            var hasBypass     = !!(d.bypass_valve_pressure_psi || d.pressure_valve);
+            var hasAntiDrain  = !!(d.anti_drainback_valve);
+            var isSpinOn      = it.indexOf('spin') !== -1;
+            var isCartridge   = it.indexOf('cartridge') !== -1;
+
+            /* filter category label */
+            var catLabel = 'filtration';
+            if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1)       catLabel = 'lube filtration';
+            else if (ft.indexOf('fuel') !== -1 || ft.indexOf('combustible') !== -1) catLabel = 'fuel filtration';
+            else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1) catLabel = 'hydraulic filtration';
+            else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1)     catLabel = 'air filtration';
+            else if (ft.indexOf('turbine') !== -1)                              catLabel = 'turbine filtration';
+
+            /* format label */
+            var formatLabel = isSpinOn ? 'spin-on' : isCartridge ? 'cartridge' : '';
+
+            /* open sentence */
+            var sentence = 'Elimfilters\u00AE ' + sku + ' genuine ' + (formatLabel ? formatLabel + ' ' : '') + catLabel.replace(' filtration','') + ' filter';
+
+            /* bypass clause */
+            if (hasBypass) {
+                sentence += ' combines full-flow and by-pass filtration into one single unit';
+            }
+
+            sentence += ', developed to meet or exceed OEM requirements.';
+
+            /* second sentence based on category */
+            var s2 = '';
+            if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1) {
+                s2 = ' Engineered to protect your engine from wear particles that can lead to premature failure, ensuring maximum service life and oil flow efficiency.';
+                if (hasAntiDrain) s2 += ' Features anti-drainback valve to maintain oil pressure at startup.';
+            } else if (ft.indexOf('fuel') !== -1 || ft.indexOf('combustible') !== -1) {
+                s2 = ' Provides superior water separation and particle removal to protect fuel system components and injection equipment.';
+            } else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1) {
+                s2 = ' Delivers consistent hydraulic system protection by removing contaminants that cause valve and pump wear.';
+            } else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1) {
+                s2 = ' Protects engine intake from dust, debris and airborne contaminants, ensuring optimal air-fuel ratio and combustion efficiency.';
+            } else {
+                s2 = ' Provides reliable filtration performance engineered to meet stringent industrial standards.';
+            }
+
+            return sentence + s2;
+        })();
 
         /* ── spec pairs — ordered per ELIMFILTERS field spec ── */
         var specPairs = [];
