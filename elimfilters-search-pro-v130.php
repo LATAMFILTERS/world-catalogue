@@ -576,14 +576,15 @@ function ef_v130_render() {
             var hasAntiDrain  = !!(d.anti_drainback_valve);
             var isSpinOn      = it.indexOf('spin') !== -1;
             var isCartridge   = it.indexOf('cartridge') !== -1;
+            var techName      = tech ? tech.trim() : '';
 
             /* filter category label */
             var catLabel = 'filtration';
-            if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1)       catLabel = 'lube filtration';
+            if (ft.indexOf('lube') !== -1 || ft.indexOf('aceite') !== -1)           catLabel = 'lube filtration';
             else if (ft.indexOf('fuel') !== -1 || ft.indexOf('combustible') !== -1) catLabel = 'fuel filtration';
-            else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1) catLabel = 'hydraulic filtration';
-            else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1)     catLabel = 'air filtration';
-            else if (ft.indexOf('turbine') !== -1)                              catLabel = 'turbine filtration';
+            else if (ft.indexOf('hydraul') !== -1 || ft.indexOf('hidr') !== -1)     catLabel = 'hydraulic filtration';
+            else if (ft.indexOf('air') !== -1 || ft.indexOf('aire') !== -1)         catLabel = 'air filtration';
+            else if (ft.indexOf('turbine') !== -1)                                  catLabel = 'turbine filtration';
 
             /* format label */
             var formatLabel = isSpinOn ? 'spin-on' : isCartridge ? 'cartridge' : '';
@@ -591,8 +592,15 @@ function ef_v130_render() {
             /* open sentence */
             var sentence = 'Elimfilters\u00AE ' + sku + ' genuine ' + (formatLabel ? formatLabel + ' ' : '') + catLabel.replace(' filtration','') + ' filter';
 
+            /* technology clause — placed before bypass */
+            if (techName) {
+                sentence += ' engineered with ' + techName + '\u2122 filtration media technology';
+            }
+
             /* bypass clause */
-            if (hasBypass) {
+            if (hasBypass && techName) {
+                sentence += ' that combines full-flow and by-pass filtration into one single unit';
+            } else if (hasBypass) {
                 sentence += ' combines full-flow and by-pass filtration into one single unit';
             }
 
@@ -611,6 +619,11 @@ function ef_v130_render() {
                 s2 = ' Protects engine intake from dust, debris and airborne contaminants, ensuring optimal air-fuel ratio and combustion efficiency.';
             } else {
                 s2 = ' Provides reliable filtration performance engineered to meet stringent industrial standards.';
+            }
+
+            /* technology closing statement */
+            if (techName) {
+                s2 += ' The ' + techName + '\u2122 technology delivers superior dirt-holding capacity and extended service intervals beyond conventional filters.';
             }
 
             return sentence + s2;
