@@ -1,41 +1,54 @@
 ﻿const express = require("express");
-const mongoose = require("mongoose");
+const { Client } = require("pg");
 const cors = require("cors");
-require("dotenv").config();
-const dbConfig = require('./config/mongo.config');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Initialize MongoDB connection
-dbConfig.init()
-  .then(() => console.log("✅ MongoDB conectado"))
-  .catch(err => {
-    console.error("❌ MongoDB error:", err.message);
-    process.exit(1);
+const pgClient = new Client({
+  host: process.env.PGHOST || "ballast.proxy.rlwy.net",
+  port: process.env.PGPORT || 18263,
+  database: process.env.PGDATABASE || "railway",
+  user: process.env.PGUSER || "postgres",
+  password: process.env.PGPASSWORD || "qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm",
+  ssl: { rejectUnauthorized: false }
+});
+
+pgClient.connect()
+  .then(() => console.log("✅ PostgreSQL conectado"))
+  .catch(err => { console.error("❌ PG error:", err.message); process.exit(1); });
+
+function parseRefs(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr.map(item => {
+    if (typeof item === "string" && item.includes(" | ")) {
+      const parts = item.split(" | ");
+      return { manufacturer: parts[0].trim(), code: parts[1].trim() };
+    }
+    return item;
   });
+}
 
-// Import Fleetguard routes
-const fleetguardRoutes = require('./routes/fleetguard.routes');
-app.use('/api/fleetguard', fleetguardRoutes);
-
-const filterSchema = new mongoose.Schema({}, { collection: "unified_filters", strict: false });
-const Filter = mongoose.model("Filter", filterSchema);
+function parseEquipment(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr.map(item => {
+    if (typeof item === "string" && item.includes(" | ")) {
+      const parts = item.split(" | ");
+      return { machine: parts[0].trim(), year: parts[1]?.trim(), type: parts[2]?.trim(), engine: parts[4]?.trim() };
+    }
+    return item;
+  });
+}
 
 app.get("/", (req, res) => {
   res.json({
-    api: "World Catalogue API",
-    version: "1.0.0",
+    api: "ELIMFILTERS API",
+    version: "3.0.0",
+    database: "PostgreSQL",
     status: "running",
-    endpoints: {
-      elimfilters: "/api/filters/search/homologous?code=XXXXX",
-      fleetguard: "/api/fleetguard/catalog"
-    },
-    examples: {
-      elimfilters: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL82051",
-      fleetguard: "https://world-catalogue-production.up.railway.app/api/fleetguard/product/LF14000NN"
-    }
+    endpoint: "/api/filters/search/homologous?code=XXXXX",
+    example: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL81005"
   });
 });
 
@@ -43,26 +56,49 @@ app.get("/api/filters/search/homologous", async (req, res) => {
   try {
     const { code } = req.query;
     if (!code) return res.status(400).json({ success: false, error: "code required" });
-    
-    const searchCode = code.toUpperCase();
-    const filter = await Filter.findOne({
-      $or: [
-        { "ELIMFILTERS SKU": searchCode },
-        { "OEM Codes": { $regex: searchCode, $options: "i" } },
-        { "Cross Reference Codes": { $regex: searchCode, $options: "i" } }
-      ]
-    });
-    
-    if (!filter) return res.status(404).json({ success: false, error: "Not found" });
-    
-    res.json({
-      success: true,
-      matched_code: searchCode,
-      data: filter
-    });
+    const searchCode = code.trim().toUpperCase();
+
+    const sql = `
+      SELECT * FROM elimfilters_catalog
+      WHERE sku = $1
+         OR codigo_base = $1
+         OR oem_codes::text ILIKE $2
+         OR equipment_applications::text ILIKE $2
+      LIMIT 1
+    `;
+
+    const result = await pgClient.query(sql, [searchCode, "%" + searchCode + "%"]);
+
+    if (result.rows.length === 0)
+      return res.status(404).json({ success: false, error: "Not found" });
+
+    const row = result.rows[0];
+    const data = {
+      elimfilters_sku:    row.sku,
+      base_code:          row.codigo_base,
+      filter_type:        row.filter_type,
+      technology:         row.technology,
+      installation_type:  row.installation_type,
+      thread_size:        row.thread_size,
+      height_mm:          row.height_mm,
+      outer_diameter_mm:  row.outer_diameter_mm,
+      gasket_od_mm:       row.gasket_od_mm,
+      gasket_id_mm:       row.gasket_id_mm,
+      iso_test_method:    row.iso_test_method,
+      micron_rating:      row.micron_rating,
+      nominal_efficiency: row.nominal_efficiency,
+      burst_pressure_psi: row.burst_pressure_psi,
+      collapse_pressure_psi: row.collapse_pressure_psi,
+      duty:               row.duty,
+      oem_codes:          parseRefs(row.oem_codes),
+      competitor_codes:   parseRefs(row.oem_codes),
+      applications:       parseEquipment(row.equipment_applications)
+    };
+
+    res.json({ success: true, matched_code: searchCode, data });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
 });
 
-app.listen(8080, () => console.log("API running on port 8080"));
+app.listen(process.env.PORT || 8080, () => console.log("API running on port 8080"));
