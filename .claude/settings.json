@@ -1,8 +1,6 @@
 {
-  "model": "qwen/qwen-3.6-plus",
+  "model": "llama-3.1-70b-versatile",
   "env": {
-    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api/v1",
-    "ANTHROPIC_API_KEY": "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",
-    "ANTHROPIC_MODEL": "qwen/qwen-3.6-plus"
+    "ANTHROPIC_BASE_URL": "https://api.groq.com/openai/v1"
   }
 }
