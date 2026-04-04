@@ -16,8 +16,8 @@ const pgClient = new Client({
 });
 
 pgClient.connect()
-  .then(() => console.log("✅ PostgreSQL conectado"))
-  .catch(err => { console.error("❌ PG error:", err.message); process.exit(1); });
+  .then(() => console.log("PostgreSQL conectado"))
+  .catch(err => { console.error("PG error:", err.message); process.exit(1); });
 
 function parseRefs(arr) {
   if (!Array.isArray(arr)) return [];
@@ -42,14 +42,7 @@ function parseEquipment(arr) {
 }
 
 app.get("/", (req, res) => {
-  res.json({
-    api: "ELIMFILTERS API",
-    version: "3.0.0",
-    database: "PostgreSQL",
-    status: "running",
-    endpoint: "/api/filters/search/homologous?code=XXXXX",
-    example: "https://world-catalogue-production.up.railway.app/api/filters/search/homologous?code=EL81005"
-  });
+  res.json({ api: "ELIMFILTERS API", version: "3.1.0", database: "PostgreSQL", status: "running" });
 });
 
 app.get("/api/filters/search/homologous", async (req, res) => {
@@ -58,12 +51,14 @@ app.get("/api/filters/search/homologous", async (req, res) => {
     if (!code) return res.status(400).json({ success: false, error: "code required" });
     const searchCode = code.trim().toUpperCase();
 
+    // Busca primero por SKU y codigo_base exacto, luego por oem_codes
     const sql = `
       SELECT * FROM elimfilters_catalog
-      WHERE sku = $1
-         OR codigo_base = $1
-         OR oem_codes::text ILIKE $2
-         OR equipment_applications::text ILIKE $2
+      WHERE sku = $1 OR codigo_base = $1
+      UNION ALL
+      SELECT * FROM elimfilters_catalog
+      WHERE sku != $1 AND codigo_base != $1
+        AND oem_codes::text ILIKE $2
       LIMIT 1
     `;
 
@@ -74,25 +69,25 @@ app.get("/api/filters/search/homologous", async (req, res) => {
 
     const row = result.rows[0];
     const data = {
-      elimfilters_sku:    row.sku,
-      base_code:          row.codigo_base,
-      filter_type:        row.filter_type,
-      technology:         row.technology,
-      installation_type:  row.installation_type,
-      thread_size:        row.thread_size,
-      height_mm:          row.height_mm,
-      outer_diameter_mm:  row.outer_diameter_mm,
-      gasket_od_mm:       row.gasket_od_mm,
-      gasket_id_mm:       row.gasket_id_mm,
-      iso_test_method:    row.iso_test_method,
-      micron_rating:      row.micron_rating,
-      nominal_efficiency: row.nominal_efficiency,
-      burst_pressure_psi: row.burst_pressure_psi,
+      elimfilters_sku:      row.sku,
+      base_code:            row.codigo_base,
+      filter_type:          row.filter_type,
+      technology:           row.technology,
+      installation_type:    row.installation_type,
+      thread_size:          row.thread_size,
+      height_mm:            row.height_mm,
+      outer_diameter_mm:    row.outer_diameter_mm,
+      gasket_od_mm:         row.gasket_od_mm,
+      gasket_id_mm:         row.gasket_id_mm,
+      iso_test_method:      row.iso_test_method,
+      micron_rating:        row.micron_rating,
+      nominal_efficiency:   row.nominal_efficiency,
+      burst_pressure_psi:   row.burst_pressure_psi,
       collapse_pressure_psi: row.collapse_pressure_psi,
-      duty:               row.duty,
-      oem_codes:          parseRefs(row.oem_codes),
-      competitor_codes:   parseRefs(row.oem_codes),
-      applications:       parseEquipment(row.equipment_applications)
+      duty:                 row.duty,
+      oem_codes:            parseRefs(row.oem_codes),
+      competitor_codes:     parseRefs(row.oem_codes),
+      applications:         parseEquipment(row.equipment_applications)
     };
 
     res.json({ success: true, matched_code: searchCode, data });
