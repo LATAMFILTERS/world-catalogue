@@ -1,23 +1,19 @@
 /**
- * Donaldson Category Scraper — Puppeteer Optimizado
- * Extrae los 499 productos de la categoría N=626398726
+ * Donaldson Category Scraper
+ * Extracts all 499 products from category N=626398726
  * URL: https://shop.donaldson.com/store/es-us/search?N=626398726&catNav=true
  *
- * OPTIMIZACIONES VS PUPPETEER BÁSICO:
- *  - Un solo browser para las 25 páginas (no se abre/cierra en cada página)
- *  - Bloqueo de imágenes, CSS, fonts, analytics → ~70% menos tiempo de carga
- *  - Reutilización de la misma pestaña (navegación directa entre páginas)
- *  - Concurrencia configurable para páginas de detalle
- *  - Checkpoints para resumir en caso de fallo
- *
- * Uso:
+ * Usage:
  *   node scripts/donaldson-category-scraper.js
- *   node scripts/donaldson-category-scraper.js --details        (specs + cross-refs por producto)
- *   node scripts/donaldson-category-scraper.js --resume         (retoma desde checkpoint)
- *   node scripts/donaldson-category-scraper.js --details --resume
+ *   node scripts/donaldson-category-scraper.js --resume   (resume from checkpoint)
+ *
+ * Architecture:
+ *   Phase 1 - Listing: single browser, single tab reused across all 25 pages
+ *   Phase 2 - Details: pool of 3 concurrent tabs per product detail page
  */
 
-// Usa puppeteer-core (sin descargar Chromium) con Chrome/Edge del sistema
+// ─── Dependencies ─────────────────────────────────────────────────────────────
+// Use puppeteer-core (no bundled Chromium) with system Chrome; fall back to puppeteer
 let puppeteer;
 try {
   puppeteer = require("puppeteer-core");
@@ -27,7 +23,7 @@ try {
 const fs = require("fs");
 const path = require("path");
 
-// ─── Configuración ────────────────────────────────────────────────────────────
+// ─── Configuration ────────────────────────────────────────────────────────────
 const CONFIG = {
   categoryId: "626398726",
   locale: "es-us",
@@ -38,29 +34,27 @@ const CONFIG = {
     return Math.ceil(this.totalProducts / this.resultsPerPage); // 25
   },
 
-  // Velocidad
-  pageLoadTimeout: 30000,
-  navWaitUntil: "networkidle2", // esperar que JS renderice los productos
-  delayBetweenPages: 800,           // ms entre páginas de listado
-  delayBetweenDetails: 400,         // ms entre páginas de detalle
-  concurrentDetails: 3,             // pestañas paralelas para detalles
+  // Timing
+  pageLoadTimeout: 45000,
+  navWaitUntil: "networkidle2",
+  delayBetweenPages: 1000,    // ms between listing pages
+  delayBetweenDetails: 500,   // ms between detail page batches
+  concurrentDetails: 3,       // parallel tabs for detail pages
 
-  // Puppeteer
+  // Browser
   headless: true,
-  executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium-browser",
 
-  // Archivos
+  // Output
   outputDir: path.join(__dirname, "..", "scrape_reports"),
   get checkpointFile() {
     return path.join(this.outputDir, "donaldson-checkpoint.json");
   },
 };
 
-// Flags de línea de comandos
-const FETCH_DETAILS = process.argv.includes("--details");
+// ─── CLI flags ────────────────────────────────────────────────────────────────
 const RESUME = process.argv.includes("--resume");
 
-// ─── Tipos de recursos a BLOQUEAR (aceleran la carga enormemente) ─────────────
+// ─── Blocked resource types (performance — skip heavy assets on listing pages) ─
 const BLOCKED_RESOURCE_TYPES = new Set([
   "image",
   "stylesheet",
@@ -69,29 +63,41 @@ const BLOCKED_RESOURCE_TYPES = new Set([
   "other",
 ]);
 
-// Dominios de analytics/tracking a bloquear
+// Tracking/analytics domains to abort
 const BLOCKED_DOMAINS = [
   "google-analytics.com",
   "googletagmanager.com",
   "doubleclick.net",
   "facebook.net",
   "hotjar.com",
-  "heap.io",
-  "segment.io",
-  "amplitude.com",
   "tealiumiq.com",
   "ensighten.com",
   "bazaarvoice.com",
-  "livechatinc.com",
 ];
 
-// ─── Utilidades ───────────────────────────────────────────────────────────────
+// ─── Chrome/Edge executable paths (Windows + Linux) ──────────────────────────
+const CHROME_PATHS = [
+  "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+  `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+  "/usr/bin/chromium-browser",
+  "/usr/bin/chromium",
+  "/usr/bin/google-chrome",
+].filter(Boolean);
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-function saveCheckpoint(data) {
+function ensureOutputDir() {
   if (!fs.existsSync(CONFIG.outputDir)) {
     fs.mkdirSync(CONFIG.outputDir, { recursive: true });
   }
+}
+
+function saveCheckpoint(data) {
+  ensureOutputDir();
   fs.writeFileSync(CONFIG.checkpointFile, JSON.stringify(data, null, 2));
 }
 
@@ -102,27 +108,31 @@ function loadCheckpoint() {
   return null;
 }
 
-function savePartialResults(products, errors, suffix = "partial") {
-  const timestamp = Date.now();
-  const file = path.join(CONFIG.outputDir, `donaldson-${CONFIG.categoryId}-${suffix}-${timestamp}.json`);
-  fs.writeFileSync(file, JSON.stringify({ products, errors, timestamp: new Date().toISOString() }, null, 2));
-  return file;
+function deleteCheckpoint() {
+  if (fs.existsSync(CONFIG.checkpointFile)) {
+    fs.unlinkSync(CONFIG.checkpointFile);
+  }
 }
 
-// ─── Configurar intercepción de requests en una página ───────────────────────
+// Resolve a potentially-relative URL to an absolute one
+function absoluteUrl(href) {
+  if (!href) return "";
+  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+  return `${CONFIG.baseUrl}${href.startsWith("/") ? "" : "/"}${href}`;
+}
+
+// ─── Request interception (block heavy resources and trackers) ────────────────
 async function setupPageInterception(page) {
   await page.setRequestInterception(true);
   page.on("request", (req) => {
     const type = req.resourceType();
     const url = req.url();
 
-    // Bloquear recursos pesados
     if (BLOCKED_RESOURCE_TYPES.has(type)) {
       req.abort();
       return;
     }
 
-    // Bloquear dominios de tracking
     if (BLOCKED_DOMAINS.some((domain) => url.includes(domain))) {
       req.abort();
       return;
@@ -132,193 +142,277 @@ async function setupPageInterception(page) {
   });
 }
 
-// ─── Extraer productos de una página de listado ───────────────────────────────
-// Estructura real confirmada: los productos están en <a href="/store/product/{SKU}/{ID}">
+// ─── Phase 1: Extract product stubs from one listing page ────────────────────
+/**
+ * Confirmed page structure:
+ *   - Products are in <a href*="/store/product/"> links
+ *   - SKU is extracted from URL segment: /store/product/{SKU}/{ID}
+ *     or /store/es-us/product/{SKU}/{ID}
+ *   - Each product link appears TWICE in the HTML — deduplicate by SKU
+ *   - Product name is the link text (cleaned up)
+ */
 async function extractListingProducts(page, pageNum) {
-  return await page.evaluate((pageNum, resultsPerPage) => {
+  return await page.evaluate((pageNum, resultsPerPage, baseUrl) => {
     const seen = new Set();
     const products = [];
 
-    // Todos los links de productos — patrón confirmado: /store/product/{SKU}/{ID}
+    // Select all product links (both /store/product/ and /store/es-us/product/ patterns)
     const links = document.querySelectorAll('a[href*="/store/product/"]');
 
     links.forEach((link) => {
       const href = link.getAttribute("href") || "";
-      const productUrl = href.startsWith("http") ? href : `https://shop.donaldson.com${href}`;
 
-      // Extraer SKU desde la URL: /store/product/{SKU}/{ID}
-      const match = href.match(/\/store\/product\/([^/]+)\//);
-      const sku = match ? match[1] : "";
+      // Extract SKU: the first path segment after /product/
+      const skuMatch = href.match(/\/product\/([^/]+)\//);
+      if (!skuMatch) return;
+      const sku = skuMatch[1];
 
-      // Deduplicar por URL (cada producto aparece dos veces en el HTML)
-      if (!sku || seen.has(sku)) return;
+      // Deduplicate — each product appears twice in the DOM
+      if (seen.has(sku)) return;
       seen.add(sku);
 
-      // Nombre: buscar en el contenedor más cercano
-      const container = link.closest(".donaldson-product-details, [class*='product'], li, tr, div") || link.parentElement;
-      const nameEl = container
-        ? container.querySelector(".product-name, .product-title, h2, h3, h4, [class*='name'], [class*='description']")
-        : null;
-      const name = nameEl
-        ? nameEl.textContent.trim()
-        : link.textContent.replace(/#.*/, "").trim(); // fallback: texto del link sin el anchor
+      // Build absolute product URL
+      const productUrl = href.startsWith("http") ? href : `${baseUrl}${href}`;
 
-      // Descripción corta
-      const descEl = container
-        ? container.querySelector("[class*='desc'], .short-description, p")
-        : null;
-      const shortDescription = descEl ? descEl.textContent.trim() : "";
+      // Product name: clean up link text
+      const rawText = link.textContent || "";
+      const name = rawText.replace(/\s+/g, " ").trim();
 
       products.push({
         index: (pageNum - 1) * resultsPerPage + products.length + 1,
         sku,
         name: name || sku,
-        shortDescription,
         productUrl,
         page: pageNum,
       });
     });
 
     return products;
-  }, pageNum, CONFIG.resultsPerPage);
+  }, pageNum, CONFIG.resultsPerPage, CONFIG.baseUrl);
 }
 
-// ─── Extraer detalles de una página de producto ───────────────────────────────
+// ─── Phase 2: Extract full details from one product page ─────────────────────
+/**
+ * Confirmed detail page selectors (in priority order):
+ *
+ * Name:        h1.pdp-title > .donaldson-product-details h1 > .productDataDetails h1 > h1 > h2
+ * Image:       img.productMainImg | img[class*='product']
+ * Alternates:  #alternateBody .item[data-url]
+ * Related:     #relatedBody .item[data-url]
+ * Specs:       #attributesBody .productAttrSection table tr (skip hidden rows)
+ * Pkg dims:    #attributesBody .attributeValuesSection table tr
+ * Cross refs:  #crossreferenceBody .applicationPartTablePDP tbody tr
+ */
 async function extractProductDetails(page, product) {
-  if (!product.productUrl) return product;
+  const MAX_RETRIES = 3;
+  let lastError;
 
-  try {
-    await page.goto(product.productUrl, {
-      waitUntil: CONFIG.navWaitUntil,
-      timeout: CONFIG.pageLoadTimeout,
-    });
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      await page.goto(product.productUrl, {
+        waitUntil: CONFIG.navWaitUntil,
+        timeout: CONFIG.pageLoadTimeout,
+      });
 
-    const details = await page.evaluate(() => {
-      // Descripción completa
-      const descEl = document.querySelector(".product-description, .product-details-description");
-      const fullDescription = descEl
-        ? descEl.textContent.trim()
-        : document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
-
-      // Especificaciones técnicas
-      const specs = {};
-      document.querySelectorAll(".spec-table tr, .specifications tr, table.product-specs tr").forEach((row) => {
-        const cells = row.querySelectorAll("td");
-        if (cells.length >= 2) {
-          const key = cells[0].textContent.trim();
-          const val = cells[1].textContent.trim();
-          if (key && val) specs[key] = val;
+      const details = await page.evaluate((baseUrl) => {
+        // ── Main product name ──────────────────────────────────────────────────
+        const nameSelectors = [
+          "h1.pdp-title",
+          ".donaldson-product-details h1",
+          ".productDataDetails h1",
+          "h1",
+        ];
+        let nameEl = null;
+        for (const sel of nameSelectors) {
+          nameEl = document.querySelector(sel);
+          if (nameEl) break;
         }
-      });
-      document.querySelectorAll("dl dt").forEach((dt) => {
-        const key = dt.textContent.trim();
-        const dd = dt.nextElementSibling;
-        const val = dd ? dd.textContent.trim() : "";
-        if (key && val) specs[key] = val;
-      });
+        if (!nameEl) nameEl = document.querySelector("h2");
+        const name = nameEl ? nameEl.textContent.replace(/\s+/g, " ").trim() : "";
 
-      // Cross References
-      const crossRefs = [];
-      document
-        .querySelectorAll("#crossReferencesList tr, .cross-reference-table tr, .cross-references tr")
-        .forEach((row) => {
-          const cells = row.querySelectorAll("td");
-          if (cells.length >= 2) {
-            const manufacturer = cells[0].textContent.trim();
-            const partNumber = cells[1].textContent.trim();
-            if (manufacturer && partNumber) crossRefs.push({ manufacturer, partNumber });
+        // ── Main product image ─────────────────────────────────────────────────
+        const imgEl =
+          document.querySelector("img.productMainImg") ||
+          document.querySelector("img[class*='product']");
+        const imageUrl = imgEl ? imgEl.getAttribute("src") || "" : "";
+
+        // ── Alternate parts (#alternateBody) ───────────────────────────────────
+        const alternateParts = [];
+        document.querySelectorAll("#alternateBody .item[data-url]").forEach((item) => {
+          const skuEl = item.querySelector("pre.preAlternate h5");
+          const descEl = item.querySelector("h6.desLengthCheck");
+          const imgPartEl = item.querySelector("img");
+          const dataUrl = item.getAttribute("data-url") || "";
+
+          const sku = skuEl ? skuEl.textContent.replace(/\s+/g, " ").trim() : "";
+          // Description: prefer title attribute (contains full text), fall back to textContent
+          const description = descEl
+            ? (descEl.getAttribute("title") || descEl.textContent || "").replace(/\s+/g, " ").trim()
+            : "";
+          const imageUrl = imgPartEl ? imgPartEl.getAttribute("src") || "" : "";
+          const productUrl = dataUrl
+            ? dataUrl.startsWith("http")
+              ? dataUrl
+              : `${baseUrl}${dataUrl}`
+            : "";
+
+          if (sku) {
+            alternateParts.push({ sku, description, imageUrl, productUrl });
           }
         });
-      document.querySelectorAll(".cross-reference-number, [data-cross-ref]").forEach((el) => {
-        const val = el.textContent.trim();
-        if (val && !crossRefs.find((r) => r.partNumber === val)) {
-          crossRefs.push({ manufacturer: "", partNumber: val });
-        }
-      });
 
-      // Dimensiones
-      const dimensions = {};
-      document.querySelectorAll(".package-dimensions tr, #packageDimensions tr").forEach((row) => {
-        const cells = row.querySelectorAll("td");
-        if (cells.length >= 2) {
-          const key = cells[0].textContent.trim();
-          const val = cells[1].textContent.trim();
-          if (key && val) dimensions[key] = val;
-        }
-      });
+        // ── Related products (#relatedBody) ────────────────────────────────────
+        const relatedProducts = [];
+        document.querySelectorAll("#relatedBody .item[data-url]").forEach((item) => {
+          const skuEl = item.querySelector("pre.preHeading h5");
+          const descEl = item.querySelector(".desLengthCheck");
+          const imgRelEl = item.querySelector("img.carousalRelatedImg");
+          const dataUrl = item.getAttribute("data-url") || "";
 
-      // Imagen
-      const imgEl =
-        document.querySelector("img.product-image, .product-detail-image img");
-      const hiResImage =
-        imgEl?.getAttribute("src") ||
-        document.querySelector('meta[property="og:image"]')?.getAttribute("content") ||
-        "";
+          const sku = skuEl ? skuEl.textContent.replace(/\s+/g, " ").trim() : "";
+          const description = descEl
+            ? (descEl.getAttribute("title") || descEl.textContent || "").replace(/\s+/g, " ").trim()
+            : "";
+          const imageUrl = imgRelEl ? imgRelEl.getAttribute("src") || "" : "";
+          const productUrl = dataUrl
+            ? dataUrl.startsWith("http")
+              ? dataUrl
+              : `${baseUrl}${dataUrl}`
+            : "";
 
-      // Categoría (breadcrumbs)
-      const breadcrumbs = [];
-      document.querySelectorAll(".breadcrumb a, nav.breadcrumb a, .breadcrumbs a").forEach((el) => {
-        const text = el.textContent.trim();
-        if (text && !["Home", "Inicio", "Accueil"].includes(text)) breadcrumbs.push(text);
-      });
+          if (sku) {
+            relatedProducts.push({ sku, description, imageUrl, productUrl });
+          }
+        });
 
-      return { fullDescription, specs, crossRefs, dimensions, hiResImage, breadcrumbs };
-    });
+        // ── Attributes/Specs (#attributesBody .productAttrSection) ─────────────
+        const specs = {};
+        document
+          .querySelectorAll("#attributesBody .productAttrSection table tr")
+          .forEach((row) => {
+            // Skip rows hidden via inline style
+            if (row.getAttribute("style") && row.getAttribute("style").includes("display: none")) {
+              return;
+            }
+            const cells = row.querySelectorAll("td");
+            if (cells.length >= 2) {
+              const key = cells[0].textContent.replace(/\s+/g, " ").trim();
+              const val = cells[cells.length - 1].textContent.replace(/\s+/g, " ").trim();
+              if (key && val) specs[key] = val;
+            }
+          });
 
-    return {
-      ...product,
-      fullDescription: details.fullDescription,
-      imageUrl: details.hiResImage
-        ? details.hiResImage.startsWith("http")
-          ? details.hiResImage
-          : `https://shop.donaldson.com${details.hiResImage}`
-        : product.imageUrl || "",
-      category: details.breadcrumbs.join(" > "),
-      specs: details.specs,
-      crossRefs: details.crossRefs,
-      dimensions: details.dimensions,
-      detailsFetched: true,
-    };
-  } catch (err) {
-    return {
-      ...product,
-      detailsFetched: false,
-      detailsError: err.message,
-    };
+        // ── Package dimensions (#attributesBody .attributeValuesSection) ────────
+        const packageDimensions = {};
+        document
+          .querySelectorAll("#attributesBody .attributeValuesSection table tr")
+          .forEach((row) => {
+            const cells = row.querySelectorAll("td");
+            if (cells.length >= 2) {
+              const key = cells[0].textContent.replace(/\s+/g, " ").trim();
+              const val = cells[cells.length - 1].textContent.replace(/\s+/g, " ").trim();
+              if (key && val) packageDimensions[key] = val;
+            }
+          });
+
+        // ── Cross references (#crossreferenceBody) ─────────────────────────────
+        const crossRefs = [];
+        document
+          .querySelectorAll("#crossreferenceBody .applicationPartTablePDP tbody tr")
+          .forEach((row) => {
+            const manufacturerEl = row.querySelector("td[data-manufacturer]");
+            const partNumberEl = row.querySelector("td[data-manufacturepartnumber] span");
+            const notesEl = row.querySelector("td[data-crossreferencenotes] span");
+
+            const manufacturer = manufacturerEl
+              ? manufacturerEl.textContent.replace(/\s+/g, " ").trim()
+              : "";
+            const partNumber = partNumberEl
+              ? partNumberEl.textContent.replace(/\s+/g, " ").trim()
+              : "";
+            const notes = notesEl
+              ? notesEl.textContent.replace(/\s+/g, " ").trim()
+              : "";
+
+            if (manufacturer || partNumber) {
+              crossRefs.push({ manufacturer, partNumber, notes });
+            }
+          });
+
+        return {
+          name,
+          imageUrl,
+          alternateParts,
+          relatedProducts,
+          specs,
+          packageDimensions,
+          crossRefs,
+        };
+      }, CONFIG.baseUrl);
+
+      // Make image URL absolute
+      const imageUrl = details.imageUrl ? absoluteUrl(details.imageUrl) : "";
+
+      return {
+        ...product,
+        // Override name with the detailed page name if it's more descriptive
+        name: details.name || product.name,
+        imageUrl,
+        specs: details.specs,
+        packageDimensions: details.packageDimensions,
+        crossRefs: details.crossRefs,
+        alternateParts: details.alternateParts,
+        relatedProducts: details.relatedProducts,
+        detailsFetched: true,
+      };
+    } catch (err) {
+      lastError = err;
+      if (attempt < MAX_RETRIES) {
+        const backoff = 2000 * attempt; // 2s, 4s, 8s
+        await sleep(backoff);
+      }
+    }
   }
+
+  // All retries exhausted
+  return {
+    ...product,
+    detailsFetched: false,
+    detailsError: lastError ? lastError.message.split("\n")[0] : "Unknown error",
+  };
 }
 
-// ─── Obtener detalles en paralelo usando un pool de pestañas ─────────────────
-async function fetchDetailsPool(browser, products) {
+// ─── Phase 2: Pool of concurrent detail tabs ──────────────────────────────────
+async function fetchDetailsPool(browser, products, onBatchCheckpoint) {
   const results = new Array(products.length);
-  const batchSize = CONFIG.concurrentDetails;
+  const poolSize = CONFIG.concurrentDetails;
   const total = products.length;
 
-  // Crear pool de pestañas
+  // Create a fixed pool of reusable tabs
   const pages = await Promise.all(
-    Array.from({ length: batchSize }, async () => {
-      const page = await browser.newPage();
-      await setupPageInterception(page);
-      await page.setViewport({ width: 1280, height: 800 });
-      return page;
+    Array.from({ length: Math.min(poolSize, total) }, async () => {
+      const p = await browser.newPage();
+      await setupPageInterception(p);
+      await p.setViewport({ width: 1280, height: 800 });
+      await p.setUserAgent(
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+      );
+      return p;
     })
   );
 
-  let processedCount = 0;
-
-  // Procesar en lotes
-  for (let i = 0; i < total; i += batchSize) {
-    const batch = products.slice(i, i + batchSize);
-    const batchNum = Math.floor(i / batchSize) + 1;
-    const totalBatches = Math.ceil(total / batchSize);
+  for (let i = 0; i < total; i += poolSize) {
+    const batch = products.slice(i, i + poolSize);
+    const batchNum = Math.floor(i / poolSize) + 1;
+    const totalBatches = Math.ceil(total / poolSize);
 
     process.stdout.write(
-      `  🔍 Detalles lote ${batchNum}/${totalBatches} (productos ${i + 1}-${Math.min(i + batchSize, total)})... `
+      `  Batch ${batchNum}/${totalBatches} (products ${i + 1}-${Math.min(i + poolSize, total)})... `
     );
 
     const batchResults = await Promise.all(
       batch.map((product, batchIdx) =>
-        extractProductDetails(pages[batchIdx % batchSize], product)
+        extractProductDetails(pages[batchIdx % pages.length], product)
       )
     );
 
@@ -326,76 +420,61 @@ async function fetchDetailsPool(browser, products) {
       results[i + batchIdx] = result;
     });
 
-    processedCount += batch.length;
     const fetched = batchResults.filter((p) => p.detailsFetched).length;
-    process.stdout.write(`✅ ${fetched}/${batch.length}\n`);
+    const failed = batchResults.filter((p) => p.detailsFetched === false).length;
+    process.stdout.write(`OK ${fetched}/${batch.length}${failed > 0 ? ` (${failed} errors)` : ""}\n`);
 
-    if (i + batchSize < total) {
+    // Checkpoint every 25 products
+    if ((i + poolSize) % 25 === 0 || i + poolSize >= total) {
+      if (typeof onBatchCheckpoint === "function") {
+        onBatchCheckpoint(results.filter(Boolean));
+      }
+    }
+
+    if (i + poolSize < total) {
       await sleep(CONFIG.delayBetweenDetails);
     }
   }
 
-  // Cerrar pestañas del pool
+  // Close pool tabs
   await Promise.all(pages.map((p) => p.close()));
 
   return results;
 }
 
-// ─── MAIN ─────────────────────────────────────────────────────────────────────
+// ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log("\n╔══════════════════════════════════════════════════════════╗");
-  console.log("║   Donaldson Category Scraper — Puppeteer Optimizado      ║");
-  console.log("╚══════════════════════════════════════════════════════════╝\n");
-  console.log(`📦 Categoría  : N=${CONFIG.categoryId}`);
-  console.log(`🌐 Locale     : ${CONFIG.locale}`);
-  console.log(`📊 Esperados  : ${CONFIG.totalProducts} productos / ${CONFIG.totalPages} páginas`);
-  console.log(`⚡ Detalles   : ${FETCH_DETAILS ? "SÍ (specs + cross-refs)" : "NO (solo listado)"}`);
-  console.log(`🔄 Reanudar   : ${RESUME ? "SÍ" : "NO"}`);
-  console.log(`🪄 Optimiz.   : bloqueo de imágenes/CSS/fonts + browser único\n`);
+  console.log("\n=== Donaldson Category Scraper ===\n");
+  console.log(`Category  : N=${CONFIG.categoryId}`);
+  console.log(`Locale    : ${CONFIG.locale}`);
+  console.log(`Expected  : ${CONFIG.totalProducts} products / ${CONFIG.totalPages} pages`);
+  console.log(`Resume    : ${RESUME ? "YES" : "NO"}`);
+  console.log(`Output    : ${CONFIG.outputDir}\n`);
 
-  if (!fs.existsSync(CONFIG.outputDir)) {
-    fs.mkdirSync(CONFIG.outputDir, { recursive: true });
-  }
+  ensureOutputDir();
 
   let allProducts = [];
   let startPage = 1;
   let errors = [];
+  let detailsStartIndex = 0; // index into allProducts for resuming details
 
-  // ── Cargar checkpoint si se reanuda ──────────────────────────────────────
+  // ── Load checkpoint if resuming ──────────────────────────────────────────
   if (RESUME) {
     const checkpoint = loadCheckpoint();
-    if (checkpoint && checkpoint.products) {
-      allProducts = checkpoint.products;
-      startPage = (checkpoint.lastPageScraped || 0) + 1;
+    if (checkpoint) {
+      allProducts = checkpoint.products || [];
+      startPage = (checkpoint.lastListingPage || 0) + 1;
+      detailsStartIndex = checkpoint.detailsCompleted || 0;
       errors = checkpoint.errors || [];
       console.log(
-        `♻️  Reanudando desde página ${startPage} (${allProducts.length} productos ya extraídos)\n`
+        `Resuming from listing page ${startPage} (${allProducts.length} products already collected, ${detailsStartIndex} details done)\n`
       );
     }
   }
 
-  // ── Lanzar browser UNA sola vez ──────────────────────────────────────────
-  console.log("🚀 Lanzando Chromium...");
-
-  // Detectar Chrome/Edge/Chromium instalado en el sistema
-  const chromiumPaths = [
-    // Windows — Chrome
-    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-    `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
-    // Windows — Edge
-    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
-    // Linux
-    "/usr/bin/chromium-browser",
-    "/usr/bin/chromium",
-    "/usr/bin/google-chrome",
-    "/usr/bin/google-chrome-stable",
-    process.env.CHROMIUM_PATH,
-  ].filter(Boolean);
-
+  // ── Detect system Chrome/Edge/Chromium ───────────────────────────────────
   let executablePath;
-  for (const p of chromiumPaths) {
+  for (const p of CHROME_PATHS) {
     if (fs.existsSync(p)) {
       executablePath = p;
       break;
@@ -423,136 +502,160 @@ async function main() {
 
   if (executablePath) {
     browserOptions.executablePath = executablePath;
-    console.log(`   Usando: ${executablePath}`);
+    console.log(`Using browser: ${executablePath}`);
   } else {
-    console.log("   Usando Chromium incluido en puppeteer");
+    console.log("Using bundled Chromium (puppeteer fallback)");
   }
+  console.log();
 
   const browser = await puppeteer.launch(browserOptions);
 
   try {
-    // ── FASE 1: Extraer listado de las 25 páginas ───────────────────────────
+    // ════════════════════════════════════════════════════════════════════════
+    // PHASE 1: Collect product stubs from all listing pages
+    // Single browser, single tab reused across all 25 pages
+    // ════════════════════════════════════════════════════════════════════════
     if (startPage <= CONFIG.totalPages) {
-      console.log("\n── FASE 1: Extrayendo listado de productos ──────────────────\n");
+      console.log("--- Phase 1: Listing pages ---\n");
 
-      // Crear UNA sola página y reutilizarla
+      // Create ONE tab and reuse it for all listing pages
       const listPage = await browser.newPage();
       await setupPageInterception(listPage);
       await listPage.setViewport({ width: 1280, height: 900 });
-
-      // User-Agent realista
       await listPage.setUserAgent(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       );
 
-      // Navegar primero a la página base para establecer cookies/sesión
+      // Navigate to home first to establish a session/cookies
       if (startPage === 1) {
-        process.stdout.write("   Estableciendo sesión en Donaldson... ");
+        process.stdout.write("Establishing session... ");
         try {
           await listPage.goto(`${CONFIG.baseUrl}/store/${CONFIG.locale}/home`, {
             waitUntil: CONFIG.navWaitUntil,
             timeout: CONFIG.pageLoadTimeout,
           });
           await sleep(1500);
-          process.stdout.write("✅\n\n");
+          process.stdout.write("OK\n\n");
         } catch (err) {
-          process.stdout.write(`⚠️  (${err.message.split("\n")[0]})\n\n`);
+          process.stdout.write(`WARNING: ${err.message.split("\n")[0]}\n\n`);
         }
       }
 
-      for (let page = startPage; page <= CONFIG.totalPages; page++) {
-        const offset = (page - 1) * CONFIG.resultsPerPage;
+      for (let pageNum = startPage; pageNum <= CONFIG.totalPages; pageNum++) {
+        const offset = (pageNum - 1) * CONFIG.resultsPerPage;
         const url = `${CONFIG.baseUrl}/store/${CONFIG.locale}/search?N=${CONFIG.categoryId}&catNav=true&No=${offset}&Nrpp=${CONFIG.resultsPerPage}`;
 
-        process.stdout.write(`  📄 Página ${page}/${CONFIG.totalPages} (offset=${offset})... `);
+        process.stdout.write(`  Page ${pageNum}/${CONFIG.totalPages} (offset=${offset})... `);
 
-        let attempts = 0;
         let success = false;
-
-        while (attempts < 3 && !success) {
+        for (let attempt = 1; attempt <= 3; attempt++) {
           try {
             await listPage.goto(url, {
               waitUntil: CONFIG.navWaitUntil,
               timeout: CONFIG.pageLoadTimeout,
             });
 
-            // Esperar a que aparezcan los links de productos
+            // Wait for product links to appear (up to 15 s)
             try {
-              await listPage.waitForSelector(
-                'a[href*="/store/product/"]',
-                { timeout: 15000 }
-              );
+              await listPage.waitForSelector('a[href*="/store/product/"]', { timeout: 15000 });
             } catch {
-              // Si no aparecen en 15s continuar de todos modos
+              // Continue anyway if selector doesn't appear within timeout
             }
 
-            const products = await extractListingProducts(listPage, page);
+            const products = await extractListingProducts(listPage, pageNum);
             allProducts.push(...products);
 
-            process.stdout.write(`✅ ${products.length} productos (total: ${allProducts.length})\n`);
+            process.stdout.write(`OK ${products.length} products (total: ${allProducts.length})\n`);
             success = true;
-
-            // Checkpoint cada 5 páginas
-            if (page % 5 === 0 || page === CONFIG.totalPages) {
-              saveCheckpoint({
-                lastPageScraped: page,
-                products: allProducts,
-                errors,
-                timestamp: new Date().toISOString(),
-              });
-              process.stdout.write(`     💾 Checkpoint guardado (${allProducts.length} productos)\n`);
-            }
+            break;
           } catch (err) {
-            attempts++;
-            if (attempts < 3) {
-              process.stdout.write(`⚠️  Reintento ${attempts}/3... `);
-              await sleep(2000 * attempts);
+            if (attempt < 3) {
+              process.stdout.write(`RETRY ${attempt}/3... `);
+              await sleep(2000 * attempt);
             } else {
-              process.stdout.write(`❌ Error: ${err.message.split("\n")[0]}\n`);
-              errors.push({ phase: "listing", page, offset, url, error: err.message.split("\n")[0] });
+              process.stdout.write(`ERROR: ${err.message.split("\n")[0]}\n`);
+              errors.push({
+                phase: "listing",
+                page: pageNum,
+                offset,
+                url,
+                error: err.message.split("\n")[0],
+              });
             }
           }
         }
 
-        if (page < CONFIG.totalPages) {
+        // Checkpoint every 5 listing pages
+        if (success && (pageNum % 5 === 0 || pageNum === CONFIG.totalPages)) {
+          saveCheckpoint({
+            lastListingPage: pageNum,
+            detailsCompleted: detailsStartIndex,
+            products: allProducts,
+            errors,
+            timestamp: new Date().toISOString(),
+          });
+          console.log(`     Checkpoint saved (${allProducts.length} products)`);
+        }
+
+        if (pageNum < CONFIG.totalPages) {
           await sleep(CONFIG.delayBetweenPages);
         }
       }
 
       await listPage.close();
 
-      console.log(`\n✅ Fase 1 completa: ${allProducts.length}/${CONFIG.totalProducts} productos`);
+      console.log(`\nPhase 1 complete: ${allProducts.length}/${CONFIG.totalProducts} products`);
       if (errors.length > 0) {
-        console.log(`   ⚠️  ${errors.length} páginas con errores`);
+        console.log(`  WARNING: ${errors.length} pages had errors`);
       }
     }
 
-    // ── FASE 2: Detalles de cada producto (opcional) ────────────────────────
-    if (FETCH_DETAILS && allProducts.length > 0) {
-      const pendientes = allProducts.filter((p) => !p.detailsFetched);
-      console.log(`\n── FASE 2: Detalles de ${pendientes.length} productos ─────────────────\n`);
-      console.log(`   (${CONFIG.concurrentDetails} pestañas en paralelo)\n`);
+    // ════════════════════════════════════════════════════════════════════════
+    // PHASE 2: Fetch detail pages for every product
+    // Pool of 3 concurrent tabs
+    // ════════════════════════════════════════════════════════════════════════
+    {
+      // Determine which products still need details fetched
+      const pending = allProducts.filter((p) => !p.detailsFetched);
+      console.log(`\n--- Phase 2: Detail pages (${pending.length} products, ${CONFIG.concurrentDetails} concurrent tabs) ---\n`);
 
-      if (pendientes.length > 0) {
-        const detailResults = await fetchDetailsPool(browser, pendientes);
+      if (pending.length > 0) {
+        const detailResults = await fetchDetailsPool(browser, pending, (completedSoFar) => {
+          // Merge completed details back and save checkpoint
+          const completedSkus = new Set(completedSoFar.map((p) => p.sku));
+          const merged = allProducts.map((p) =>
+            completedSkus.has(p.sku) ? completedSoFar.find((d) => d.sku === p.sku) || p : p
+          );
+          saveCheckpoint({
+            lastListingPage: CONFIG.totalPages,
+            detailsCompleted: completedSoFar.length,
+            products: merged,
+            errors,
+            timestamp: new Date().toISOString(),
+          });
+        });
 
-        // Merge resultados
-        const conDetalles = allProducts.filter((p) => p.detailsFetched);
-        const allMerged = [...conDetalles, ...detailResults].sort((a, b) => a.index - b.index);
-        allProducts = allMerged;
+        // Merge detail results back into allProducts by SKU
+        const detailBySku = new Map(detailResults.filter(Boolean).map((p) => [p.sku, p]));
+        allProducts = allProducts.map((p) => detailBySku.get(p.sku) || p);
 
-        const exitosos = allProducts.filter((p) => p.detailsFetched).length;
-        const fallidos = allProducts.filter((p) => p.detailsFetched === false).length;
-        console.log(`\n✅ Fase 2 completa: ${exitosos} con detalles, ${fallidos} con error`);
+        const fetched = allProducts.filter((p) => p.detailsFetched === true).length;
+        const failed = allProducts.filter((p) => p.detailsFetched === false).length;
+        console.log(`\nPhase 2 complete: ${fetched} with details, ${failed} errors`);
       }
     }
   } finally {
     await browser.close();
-    console.log("\n🛑 Browser cerrado");
+    console.log("\nBrowser closed.");
   }
 
-  // ── Guardar resultado final ──────────────────────────────────────────────
-  const timestamp = Date.now();
+  // ── Write final output ────────────────────────────────────────────────────
+  const timestamp = new Date()
+    .toISOString()
+    .replace(/[:.]/g, "-")
+    .replace("T", "_")
+    .slice(0, 19);
+
   const outputFile = path.join(
     CONFIG.outputDir,
     `donaldson-categoria-${CONFIG.categoryId}-${timestamp}.json`
@@ -563,42 +666,36 @@ async function main() {
       timestamp: new Date().toISOString(),
       categoryId: CONFIG.categoryId,
       categoryUrl: `${CONFIG.baseUrl}/store/${CONFIG.locale}/search?N=${CONFIG.categoryId}&catNav=true`,
-      locale: CONFIG.locale,
       totalExtracted: allProducts.length,
       totalExpected: CONFIG.totalProducts,
-      pagesScraped: CONFIG.totalPages,
-      detailsFetched: FETCH_DETAILS,
       errors: errors.length,
     },
-    errorDetails: errors,
     products: allProducts,
   };
 
   fs.writeFileSync(outputFile, JSON.stringify(result, null, 2));
 
-  // Limpiar checkpoint si completamos exitosamente (>95% extraídos)
-  if (allProducts.length >= CONFIG.totalProducts * 0.95 && fs.existsSync(CONFIG.checkpointFile)) {
-    fs.unlinkSync(CONFIG.checkpointFile);
+  // Delete checkpoint if we extracted >=95% of expected products
+  if (allProducts.length >= CONFIG.totalProducts * 0.95) {
+    deleteCheckpoint();
   }
 
-  console.log("\n╔══════════════════════════════════════════════════════════╗");
-  console.log(`║  ✅ COMPLETADO                                            ║`);
-  console.log("╚══════════════════════════════════════════════════════════╝");
-  console.log(`\n📊 Productos extraídos : ${allProducts.length} / ${CONFIG.totalProducts}`);
-  console.log(`❌ Errores             : ${errors.length}`);
-  console.log(`💾 Archivo             : ${outputFile}\n`);
+  // ── Summary ───────────────────────────────────────────────────────────────
+  console.log("\n=== DONE ===\n");
+  console.log(`Products extracted : ${allProducts.length} / ${CONFIG.totalProducts}`);
+  console.log(`Errors             : ${errors.length}`);
+  console.log(`Output file        : ${outputFile}\n`);
 
-  // Muestra de los primeros 5
   if (allProducts.length > 0) {
-    console.log("📋 Muestra (primeros 5 productos):");
+    console.log("Sample (first 5 products):");
     allProducts.slice(0, 5).forEach((p) => {
-      console.log(`   [${p.index}] ${p.sku || "(sin SKU)"} — ${p.name || "(sin nombre)"}`);
+      console.log(`  [${p.index}] ${p.sku || "(no SKU)"} - ${p.name || "(no name)"}`);
     });
     console.log();
   }
 }
 
 main().catch((err) => {
-  console.error("\n💥 Error fatal:", err.message);
+  console.error("\nFATAL ERROR:", err.message);
   process.exit(1);
 });
