@@ -156,8 +156,10 @@ async function extractListingProducts(page, pageNum) {
     const seen = new Set();
     const products = [];
 
-    // Select all product links (both /store/product/ and /store/es-us/product/ patterns)
-    const links = document.querySelectorAll('a[href*="/store/product/"]');
+    // Select all product links — matches both:
+    //   /store/product/{SKU}/{ID}          (page 1 pattern)
+    //   /store/es-us/product/{SKU}/{ID}    (page 2+ pattern)
+    const links = document.querySelectorAll('a[href*="/product/"]');
 
     links.forEach((link) => {
       const href = link.getAttribute("href") || "";
@@ -541,7 +543,7 @@ async function main() {
             });
 
             // Wait for product links — up to 20s
-            await listPage.waitForSelector('a[href*="/store/product/"]', { timeout: 20000 });
+            await listPage.waitForSelector('a[href*="/product/"]', { timeout: 20000 });
 
             // On page 1, save a screenshot for debugging
             if (pageNum === 1 && attempt === 1) {
