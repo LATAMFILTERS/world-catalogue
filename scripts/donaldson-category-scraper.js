@@ -288,14 +288,12 @@ async function extractProductDetails(page, product) {
         });
 
         // ── Attributes/Specs (#attributesBody .productAttrSection) ─────────────
+        // Extract ALL rows including hidden ones (display:none) — they contain
+        // important fields like "Aplicación principal" (main equipment application)
         const specs = {};
         document
           .querySelectorAll("#attributesBody .productAttrSection table tr")
           .forEach((row) => {
-            // Skip rows hidden via inline style
-            if (row.getAttribute("style") && row.getAttribute("style").includes("display: none")) {
-              return;
-            }
             const cells = row.querySelectorAll("td");
             if (cells.length >= 2) {
               const key = cells[0].textContent.replace(/\s+/g, " ").trim();
@@ -303,6 +301,19 @@ async function extractProductDetails(page, product) {
               if (key && val) specs[key] = val;
             }
           });
+
+        // ── Equipment applications (dedicated section if present) ─────────────
+        const equipment = [];
+        // Try #equipmentBody or any section with equipment/application data
+        document.querySelectorAll(
+          "#equipmentBody tr, #applicationBody tr, [id*='equipment'] tr, [id*='application'] tr"
+        ).forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          if (cells.length >= 1) {
+            const val = Array.from(cells).map(c => c.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(" | ");
+            if (val) equipment.push(val);
+          }
+        });
 
         // ── Package dimensions (#attributesBody .attributeValuesSection) ────────
         const packageDimensions = {};
@@ -349,6 +360,7 @@ async function extractProductDetails(page, product) {
           specs,
           packageDimensions,
           crossRefs,
+          equipment,
         };
       }, CONFIG.baseUrl);
 
@@ -365,6 +377,7 @@ async function extractProductDetails(page, product) {
         crossRefs: details.crossRefs,
         alternateParts: details.alternateParts,
         relatedProducts: details.relatedProducts,
+        equipment: details.equipment,
         detailsFetched: true,
       };
     } catch (err) {

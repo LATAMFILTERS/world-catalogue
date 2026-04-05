@@ -96,6 +96,9 @@ function main() {
       crossRefs:         p.crossRefs         || [],
       alternateParts:    p.alternateParts    || [],
       relatedProducts:   p.relatedProducts   || [],
+      equipment:         p.equipment         || [],
+      // "Aplicación principal" pulled out of specs for quick access
+      mainApplication:   (p.specs || {})["Aplicación principal"] || (p.specs || {})["Main Application"] || "",
 
       // ─ References ─
       donaldsonUrl:     p.productUrl,
@@ -133,6 +136,10 @@ function main() {
       console.log(`    Cross-refs  : ${p.crossRefs.slice(0,3).map(r => `${r.manufacturer} ${r.partNumber}`).join(" | ")}`);
     if (p.specs && Object.keys(p.specs).length)
       console.log(`    Specs       : ${Object.entries(p.specs).slice(0,3).map(([k,v]) => `${k}: ${v}`).join(" | ")}`);
+    if (p.mainApplication)
+      console.log(`    Main App    : ${p.mainApplication}`);
+    if (p.equipment && p.equipment.length)
+      console.log(`    Equipment   : ${p.equipment.slice(0,3).join(" | ")}`);
     if (p.alternateParts.length)
       console.log(`    Alternates  : ${p.alternateParts.slice(0,3).map(a => a.sku).join(", ")}`);
     console.log();
