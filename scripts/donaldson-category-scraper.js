@@ -40,7 +40,7 @@ const CONFIG = {
 
   // Velocidad
   pageLoadTimeout: 30000,
-  navWaitUntil: "domcontentloaded", // más rápido que "networkidle2"
+  navWaitUntil: "networkidle2", // esperar que JS renderice los productos
   delayBetweenPages: 800,           // ms entre páginas de listado
   delayBetweenDetails: 400,         // ms entre páginas de detalle
   concurrentDetails: 3,             // pestañas paralelas para detalles
@@ -133,70 +133,50 @@ async function setupPageInterception(page) {
 }
 
 // ─── Extraer productos de una página de listado ───────────────────────────────
+// Estructura real confirmada: los productos están en <a href="/store/product/{SKU}/{ID}">
 async function extractListingProducts(page, pageNum) {
   return await page.evaluate((pageNum, resultsPerPage) => {
+    const seen = new Set();
     const products = [];
 
-    // Selectores para producto tiles (Oracle ATG Commerce)
-    const TILE_SELECTORS = [
-      ".product-tile",
-      ".product-item",
-      ".product-result",
-      "[data-product-id]",
-      ".result-item",
-      "li.product",
-    ];
+    // Todos los links de productos — patrón confirmado: /store/product/{SKU}/{ID}
+    const links = document.querySelectorAll('a[href*="/store/product/"]');
 
-    let tiles = null;
-    for (const sel of TILE_SELECTORS) {
-      const found = document.querySelectorAll(sel);
-      if (found.length > 0) {
-        tiles = found;
-        break;
-      }
-    }
+    links.forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      const productUrl = href.startsWith("http") ? href : `https://shop.donaldson.com${href}`;
 
-    if (!tiles || tiles.length === 0) {
-      // Fallback: buscar por patrones comunes
-      tiles = document.querySelectorAll('[class*="product"][class*="tile"], [class*="product"][class*="item"]');
-    }
+      // Extraer SKU desde la URL: /store/product/{SKU}/{ID}
+      const match = href.match(/\/store\/product\/([^/]+)\//);
+      const sku = match ? match[1] : "";
 
-    if (!tiles || tiles.length === 0) return [];
+      // Deduplicar por URL (cada producto aparece dos veces en el HTML)
+      if (!sku || seen.has(sku)) return;
+      seen.add(sku);
 
-    tiles.forEach((el, i) => {
-      // SKU
-      const skuEl = el.querySelector(".product-number, .part-number, .sku, [data-sku], [data-part-number]");
-      const sku = skuEl
-        ? skuEl.textContent.trim()
-        : el.getAttribute("data-product-id") || el.getAttribute("data-sku") || "";
-
-      // Nombre
-      const nameEl = el.querySelector(".product-name, .product-title, h2, h3, h4, [class*='name']");
-      const name = nameEl ? nameEl.textContent.trim() : "";
-
-      // URL del producto
-      const linkEl = el.querySelector('a[href*="/product/"]') || el.querySelector("a");
-      const productPath = linkEl ? linkEl.getAttribute("href") || "" : "";
-      const productUrl = productPath.startsWith("http")
-        ? productPath
-        : productPath
-        ? `https://shop.donaldson.com${productPath}`
-        : "";
+      // Nombre: buscar en el contenedor más cercano
+      const container = link.closest(".donaldson-product-details, [class*='product'], li, tr, div") || link.parentElement;
+      const nameEl = container
+        ? container.querySelector(".product-name, .product-title, h2, h3, h4, [class*='name'], [class*='description']")
+        : null;
+      const name = nameEl
+        ? nameEl.textContent.trim()
+        : link.textContent.replace(/#.*/, "").trim(); // fallback: texto del link sin el anchor
 
       // Descripción corta
-      const descEl = el.querySelector(".product-description, .short-description, [class*='desc']");
+      const descEl = container
+        ? container.querySelector("[class*='desc'], .short-description, p")
+        : null;
       const shortDescription = descEl ? descEl.textContent.trim() : "";
 
-      if (sku || name || productUrl) {
-        products.push({
-          index: (pageNum - 1) * resultsPerPage + i + 1,
-          sku,
-          name,
-          shortDescription,
-          productUrl,
-          page: pageNum,
-        });
-      }
+      products.push({
+        index: (pageNum - 1) * resultsPerPage + products.length + 1,
+        sku,
+        name: name || sku,
+        shortDescription,
+        productUrl,
+        page: pageNum,
+      });
     });
 
     return products;
@@ -496,14 +476,14 @@ async function main() {
               timeout: CONFIG.pageLoadTimeout,
             });
 
-            // Esperar a que aparezcan los productos
+            // Esperar a que aparezcan los links de productos
             try {
               await listPage.waitForSelector(
-                ".product-tile, .product-item, [data-product-id], .result-item",
-                { timeout: 10000 }
+                'a[href*="/store/product/"]',
+                { timeout: 15000 }
               );
             } catch {
-              // Si no aparecen en 10s continuar de todos modos
+              // Si no aparecen en 15s continuar de todos modos
             }
 
             const products = await extractListingProducts(listPage, page);
