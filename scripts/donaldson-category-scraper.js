@@ -516,18 +516,12 @@ async function main() {
       console.log("--- Phase 1: Listing pages ---\n");
 
       // Create ONE tab and reuse it for all listing pages
+      // NO request interception on listing pages — let everything load normally
       const listPage = await browser.newPage();
-      // Listing pages: only block trackers, NOT stylesheets (CSS required for product render)
-      await setupPageInterception(listPage, false);
       await listPage.setViewport({ width: 1920, height: 1080 });
       await listPage.setUserAgent(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       );
-      // Hide headless fingerprint
-      await listPage.evaluateOnNewDocument(() => {
-        Object.defineProperty(navigator, "webdriver", { get: () => undefined });
-        window.chrome = { runtime: {} };
-      });
 
       // Navigate to home first to establish a session/cookies
       if (startPage === 1) {
@@ -554,15 +548,18 @@ async function main() {
         for (let attempt = 1; attempt <= 3; attempt++) {
           try {
             await listPage.goto(url, {
-              waitUntil: CONFIG.navWaitUntil,
+              waitUntil: "networkidle2",
               timeout: CONFIG.pageLoadTimeout,
             });
 
-            // Wait for product links to appear (up to 15 s)
-            try {
-              await listPage.waitForSelector('a[href*="/store/product/"]', { timeout: 15000 });
-            } catch {
-              // Continue anyway if selector doesn't appear within timeout
+            // Wait for product links — up to 20s
+            await listPage.waitForSelector('a[href*="/store/product/"]', { timeout: 20000 });
+
+            // On page 1, save a screenshot for debugging
+            if (pageNum === 1 && attempt === 1) {
+              const shot = path.join(CONFIG.outputDir, "donaldson-listing-page1.png");
+              await listPage.screenshot({ path: shot, fullPage: false });
+              console.log(`     (screenshot saved: ${shot})`);
             }
 
             const products = await extractListingProducts(listPage, pageNum);
