@@ -37,9 +37,9 @@ const CONFIG = {
   // Timing
   pageLoadTimeout: 45000,
   navWaitUntil: "networkidle2",
-  delayBetweenPages: 4000,    // ms between listing pages (avoid rate limiting)
-  delayBetweenDetails: 500,   // ms between detail page batches
-  concurrentDetails: 3,       // parallel tabs for detail pages
+  delayBetweenPages: 5000,    // ms between listing pages
+  delayBetweenDetails: 2500,  // ms between detail page batches
+  concurrentDetails: 1,       // single tab for details — avoids bot detection
 
   // Browser
   headless: true,
@@ -85,6 +85,8 @@ const CHROME_PATHS = [
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Random delay: base ± 30% jitter — looks more human
+const sleepRandom = (ms) => sleep(ms * (0.7 + Math.random() * 0.6));
 
 function ensureOutputDir() {
   if (!fs.existsSync(CONFIG.outputDir)) {
@@ -452,7 +454,7 @@ async function fetchDetailsPool(browser, products, onBatchCheckpoint) {
     }
 
     if (i + poolSize < total) {
-      await sleep(CONFIG.delayBetweenDetails);
+      await sleepRandom(CONFIG.delayBetweenDetails);
     }
   }
 
@@ -609,7 +611,7 @@ async function main() {
         }
 
         if (pageNum < CONFIG.totalPages) {
-          await sleep(CONFIG.delayBetweenPages);
+          await sleepRandom(CONFIG.delayBetweenPages);
         }
       }
 
