@@ -17,7 +17,13 @@
  *   node scripts/donaldson-category-scraper.js --details --resume
  */
 
-const puppeteer = require("puppeteer");
+// Usa puppeteer-core (sin descargar Chromium) con Chrome/Edge del sistema
+let puppeteer;
+try {
+  puppeteer = require("puppeteer-core");
+} catch {
+  puppeteer = require("puppeteer");
+}
 const fs = require("fs");
 const path = require("path");
 
@@ -391,8 +397,16 @@ async function main() {
   // ── Lanzar browser UNA sola vez ──────────────────────────────────────────
   console.log("🚀 Lanzando Chromium...");
 
-  // Detectar ejecutable de Chromium
+  // Detectar Chrome/Edge/Chromium instalado en el sistema
   const chromiumPaths = [
+    // Windows — Chrome
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+    // Windows — Edge
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+    // Linux
     "/usr/bin/chromium-browser",
     "/usr/bin/chromium",
     "/usr/bin/google-chrome",
