@@ -513,7 +513,7 @@ async function main() {
     // Single browser, single tab reused across all 25 pages
     // ════════════════════════════════════════════════════════════════════════
     if (startPage <= CONFIG.totalPages) {
-      console.log("--- Phase 1: Listing pages ---\n");
+      console.log("--- Phase 1: Listing pages (direct navigation, no session pre-load) ---\n");
 
       // Create ONE tab and reuse it for all listing pages
       // NO request interception on listing pages — let everything load normally
@@ -523,20 +523,8 @@ async function main() {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       );
 
-      // Navigate to home first to establish a session/cookies
-      if (startPage === 1) {
-        process.stdout.write("Establishing session... ");
-        try {
-          await listPage.goto(`${CONFIG.baseUrl}/store/${CONFIG.locale}/home`, {
-            waitUntil: CONFIG.navWaitUntil,
-            timeout: CONFIG.pageLoadTimeout,
-          });
-          await sleep(1500);
-          process.stdout.write("OK\n\n");
-        } catch (err) {
-          process.stdout.write(`WARNING: ${err.message.split("\n")[0]}\n\n`);
-        }
-      }
+      // Go directly to the first category page — no home page visit
+      // (visiting home first was causing session issues)
 
       for (let pageNum = startPage; pageNum <= CONFIG.totalPages; pageNum++) {
         const offset = (pageNum - 1) * CONFIG.resultsPerPage;
