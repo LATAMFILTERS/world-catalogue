@@ -54,16 +54,12 @@ const CONFIG = {
 // ─── CLI flags ────────────────────────────────────────────────────────────────
 const RESUME = process.argv.includes("--resume");
 
-// ─── Blocked resource types (performance — skip heavy assets on listing pages) ─
-const BLOCKED_RESOURCE_TYPES = new Set([
-  "image",
-  "stylesheet",
-  "font",
-  "media",
-  "other",
-]);
+// ─── Blocked resource types (ONLY for detail pages — NOT for listing pages) ───
+// Blocking stylesheets on listing pages breaks the JS that renders products.
+// Only block heavy media on detail pages to speed up specs/crossref extraction.
+const BLOCKED_RESOURCE_TYPES_DETAIL = new Set(["image", "font", "media"]);
 
-// Tracking/analytics domains to abort
+// Tracking/analytics domains to abort (all pages)
 const BLOCKED_DOMAINS = [
   "google-analytics.com",
   "googletagmanager.com",
@@ -121,19 +117,23 @@ function absoluteUrl(href) {
   return `${CONFIG.baseUrl}${href.startsWith("/") ? "" : "/"}${href}`;
 }
 
-// ─── Request interception (block heavy resources and trackers) ────────────────
-async function setupPageInterception(page) {
+// ─── Request interception ─────────────────────────────────────────────────────
+// listingPage = false → only block trackers (let CSS/JS load for product render)
+// detailPage  = true  → also block images/fonts/media (we only need text data)
+async function setupPageInterception(page, isDetailPage = false) {
   await page.setRequestInterception(true);
   page.on("request", (req) => {
     const type = req.resourceType();
     const url = req.url();
 
-    if (BLOCKED_RESOURCE_TYPES.has(type)) {
+    // Block trackers on all pages
+    if (BLOCKED_DOMAINS.some((domain) => url.includes(domain))) {
       req.abort();
       return;
     }
 
-    if (BLOCKED_DOMAINS.some((domain) => url.includes(domain))) {
+    // On detail pages also block heavy media
+    if (isDetailPage && BLOCKED_RESOURCE_TYPES_DETAIL.has(type)) {
       req.abort();
       return;
     }
@@ -392,11 +392,16 @@ async function fetchDetailsPool(browser, products, onBatchCheckpoint) {
   const pages = await Promise.all(
     Array.from({ length: Math.min(poolSize, total) }, async () => {
       const p = await browser.newPage();
-      await setupPageInterception(p);
+      // Detail pages: block images/fonts/media but allow CSS/JS
+      await setupPageInterception(p, true);
       await p.setViewport({ width: 1280, height: 800 });
       await p.setUserAgent(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       );
+      await p.evaluateOnNewDocument(() => {
+        Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+        window.chrome = { runtime: {} };
+      });
       return p;
     })
   );
@@ -482,21 +487,12 @@ async function main() {
   }
 
   const browserOptions = {
-    headless: CONFIG.headless,
+    headless: "new",   // "new" headless is harder to detect than headless: true
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
-      "--disable-gpu",
-      "--no-first-run",
-      "--no-default-browser-check",
-      "--disable-extensions",
-      "--disable-background-networking",
-      "--disable-background-timer-throttling",
-      "--disable-backgrounding-occluded-windows",
-      "--disable-renderer-backgrounding",
-      "--disable-features=TranslateUI",
-      "--disable-ipc-flooding-protection",
+      "--window-size=1920,1080",
     ],
   };
 
@@ -520,11 +516,17 @@ async function main() {
 
       // Create ONE tab and reuse it for all listing pages
       const listPage = await browser.newPage();
-      await setupPageInterception(listPage);
-      await listPage.setViewport({ width: 1280, height: 900 });
+      // Listing pages: only block trackers, NOT stylesheets (CSS required for product render)
+      await setupPageInterception(listPage, false);
+      await listPage.setViewport({ width: 1920, height: 1080 });
       await listPage.setUserAgent(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
       );
+      // Hide headless fingerprint
+      await listPage.evaluateOnNewDocument(() => {
+        Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+        window.chrome = { runtime: {} };
+      });
 
       // Navigate to home first to establish a session/cookies
       if (startPage === 1) {
