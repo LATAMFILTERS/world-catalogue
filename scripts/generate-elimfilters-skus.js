@@ -37,104 +37,104 @@ function generateEF9Sku(donaldsonSku) {
 function getFilterType(name) {
   const upper = (name || "").toUpperCase();
 
-  if (upper.includes("SEPARADOR DE AGUA"))     return { tipo: "Combustible, Separador de Agua", estilo: "separador de agua" };
-  if (upper.includes("SECUNDARIO"))             return { tipo: "Combustible, Secundario",        estilo: "enroscable secundario" };
-  if (upper.includes("PRIMARIO"))               return { tipo: "Combustible, Primario",           estilo: "enroscable primario" };
-  if (upper.includes("CARTUCHO"))               return { tipo: "Combustible, Cartucho",           estilo: "cartucho" };
-  if (upper.includes("ENROSCABLE"))             return { tipo: "Combustible, Spin-On",            estilo: "enroscable" };
-  if (upper.includes("INLINE") || upper.includes("EN LÍNEA")) return { tipo: "Combustible, Inline", estilo: "inline" };
-  return { tipo: "Combustible",                                                                     estilo: "de combustible" };
+  if (upper.includes("SEPARADOR DE AGUA"))                      return { type: "Fuel, Water Separator", style: "water separator" };
+  if (upper.includes("SECUNDARIO"))                             return { type: "Fuel, Secondary",       style: "spin-on secondary" };
+  if (upper.includes("PRIMARIO"))                               return { type: "Fuel, Primary",         style: "spin-on primary" };
+  if (upper.includes("CARTUCHO"))                               return { type: "Fuel, Cartridge",       style: "cartridge" };
+  if (upper.includes("ENROSCABLE"))                             return { type: "Fuel, Spin-On",         style: "spin-on" };
+  if (upper.includes("INLINE") || upper.includes("EN LÍNEA"))  return { type: "Fuel, Inline",          style: "inline" };
+  return                                                               { type: "Fuel",                  style: "fuel" };
 }
 
 // ─── Generar descripción ELIMFILTERS ─────────────────────────────────────────
 function generateDescription(efSku, donaldsonSku, name) {
-  const { tipo, estilo } = getFilterType(name);
+  const { type, style } = getFilterType(name);
 
-  // Limpiar nombre: quitar "DONALDSON BLUE" y el SKU Donaldson del inicio
+  // Clean name: remove Donaldson SKU prefix and "DONALDSON BLUE"
   const cleanName = name
     .replace(new RegExp(donaldsonSku + "\\s*", "i"), "")
     .replace(/DONALDSON\s+BLUE[®]?/gi, "")
     .replace(/\s{2,}/g, " ")
-    .trim()
-    .toLowerCase()
-    .replace(/^\w/, c => c.toUpperCase());
+    .trim();
 
   return [
     efSku,
-    tipo,
-    `ELIMFILTERS® ${efSku} filtro de combustible ${estilo} ofrece rendimiento superior ` +
-    `utilizando tecnología de medios SYNTEPORE™, eliminando contaminantes dañinos del sistema de combustible. ` +
-    `Los filtros ELIMFILTERS garantizan protección óptima para cumplir o superar las especificaciones OEM. ` +
-    `Reemplaza directamente al ${donaldsonSku} (${cleanName}).`
+    type,
+    `ELIMFILTERS® ${efSku} ${style} fuel filter delivers superior performance using proven SYNTEPORE™ ` +
+    `media technology, removing harmful contaminants from the fuel system. ` +
+    `ELIMFILTERS fuel filters ensure optimal fuel system protection to meet or exceed OEM specifications. ` +
+    `Direct replacement for ${donaldsonSku} — ${cleanName}.`
   ].join("\n");
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 function main() {
   const inputFile = findLatestDonaldsonFile();
-  console.log(`\nLeyendo: ${inputFile}`);
+  console.log(`\nReading: ${inputFile}`);
 
   const raw     = JSON.parse(fs.readFileSync(inputFile, "utf8"));
   const products = raw.products || [];
-  console.log(`Productos encontrados: ${products.length}\n`);
+  console.log(`Products found: ${products.length}\n`);
 
   const elimfilters = products.map(p => {
-    const efSku       = generateEF9Sku(p.sku);
-    const { tipo }    = getFilterType(p.name);
-    const descripcion = generateDescription(efSku, p.sku, p.name);
+    const efSku          = generateEF9Sku(p.sku);
+    const { type }       = getFilterType(p.name);
+    const description    = generateDescription(efSku, p.sku, p.name);
 
     return {
-      // ─ Identidad ELIMFILTERS ─
-      skuEF:          efSku,
-      skuDonaldson:   p.sku,
-      nombre:         p.name.replace(p.sku, "").replace(/DONALDSON\s+BLUE[®]?/gi, "").trim(),
-      tipoFiltro:     tipo,
-      tecnologia:     "SYNTEPORE™",
-      descripcionEF:  descripcion,
+      // ─ ELIMFILTERS identity ─
+      skuEF:            efSku,
+      skuDonaldson:     p.sku,
+      name:             p.name.replace(p.sku, "").replace(/DONALDSON\s+BLUE[®]?/gi, "").trim(),
+      filterType:       type,
+      technology:       "SYNTEPORE™",
+      description,
 
-      // ─ Datos técnicos (de Donaldson) ─
-      especificaciones:   p.specs           || {},
-      dimensionesEmpaque: p.packageDimensions || {},
-      crossRefs:          p.crossRefs        || [],
-      partesAlternativas: p.alternateParts   || [],
-      productosRelacionados: p.relatedProducts || [],
+      // ─ Technical data (from Donaldson) ─
+      specs:             p.specs             || {},
+      packageDimensions: p.packageDimensions || {},
+      crossRefs:         p.crossRefs         || [],
+      alternateParts:    p.alternateParts    || [],
+      relatedProducts:   p.relatedProducts   || [],
 
-      // ─ Referencias ─
-      urlDonaldson:   p.productUrl,
-      imagenUrl:      p.imageUrl || "",
-      pagina:         p.page,
-      index:          p.index,
+      // ─ References ─
+      donaldsonUrl:     p.productUrl,
+      imageUrl:         p.imageUrl || "",
+      page:             p.page,
+      index:            p.index,
     };
   });
 
   // Guardar JSON completo
   const ts         = new Date().toISOString().replace(/[:.]/g, "-").replace("T","_").slice(0,19);
-  const outputFile = path.join(REPORTS_DIR, `elimfilters-catalogo-${ts}.json`);
+  const outputFile = path.join(REPORTS_DIR, `elimfilters-catalog-${ts}.json`);
   fs.writeFileSync(outputFile, JSON.stringify({
     metadata: {
-      timestamp:       new Date().toISOString(),
-      totalProductos:  elimfilters.length,
-      tecnologia:      "SYNTEPORE™",
-      fuenteDatos:     inputFile,
+      timestamp:      new Date().toISOString(),
+      totalProducts:  elimfilters.length,
+      technology:     "SYNTEPORE™",
+      sourceFile:     inputFile,
     },
-    productos: elimfilters
+    products: elimfilters
   }, null, 2));
 
-  console.log(`✅ Guardado: ${outputFile}`);
-  console.log(`   Total: ${elimfilters.length} productos\n`);
+  console.log(`✅ Saved: ${outputFile}`);
+  console.log(`   Total: ${elimfilters.length} products\n`);
 
-  // Mostrar 4 ejemplos
-  console.log("── Muestra (4 productos) ──────────────────────────────────────\n");
+  // Show 4 complete examples
+  console.log("── Sample (4 products) ─────────────────────────────────────────\n");
   elimfilters.slice(0, 4).forEach((p, i) => {
     console.log(`[${i+1}] Donaldson: ${p.skuDonaldson}  →  ELIMFILTERS: ${p.skuEF}`);
-    console.log(`    Tipo      : ${p.tipoFiltro}`);
-    console.log(`    Tecnología: ${p.tecnologia}`);
-    console.log(`    Descripción:`);
-    p.descripcionEF.split("\n").forEach(l => console.log(`      ${l}`));
+    console.log(`    Filter Type : ${p.filterType}`);
+    console.log(`    Technology  : ${p.technology}`);
+    console.log(`    Description :`);
+    p.description.split("\n").forEach(l => console.log(`      ${l}`));
     if (p.crossRefs.length)
-      console.log(`    Cross-refs: ${p.crossRefs.slice(0,3).map(r => `${r.manufacturer} ${r.partNumber}`).join(" | ")}...`);
-    if (p.especificaciones && Object.keys(p.especificaciones).length)
-      console.log(`    Specs     : ${Object.entries(p.especificaciones).slice(0,2).map(([k,v]) => `${k}: ${v}`).join(" | ")}`);
+      console.log(`    Cross-refs  : ${p.crossRefs.slice(0,3).map(r => `${r.manufacturer} ${r.partNumber}`).join(" | ")}`);
+    if (p.specs && Object.keys(p.specs).length)
+      console.log(`    Specs       : ${Object.entries(p.specs).slice(0,3).map(([k,v]) => `${k}: ${v}`).join(" | ")}`);
+    if (p.alternateParts.length)
+      console.log(`    Alternates  : ${p.alternateParts.slice(0,3).map(a => a.sku).join(", ")}`);
     console.log();
   });
 }
