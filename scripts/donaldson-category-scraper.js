@@ -37,7 +37,7 @@ const CONFIG = {
   // Timing
   pageLoadTimeout: 45000,
   navWaitUntil: "networkidle2",
-  delayBetweenPages: 1000,    // ms between listing pages
+  delayBetweenPages: 4000,    // ms between listing pages (avoid rate limiting)
   delayBetweenDetails: 500,   // ms between detail page batches
   concurrentDetails: 3,       // parallel tabs for detail pages
 
@@ -558,8 +558,16 @@ async function main() {
             break;
           } catch (err) {
             if (attempt < 3) {
-              process.stdout.write(`RETRY ${attempt}/3... `);
-              await sleep(2000 * attempt);
+              // Save screenshot to see what the page looks like when failing
+              if (attempt === 1) {
+                try {
+                  const errShot = path.join(CONFIG.outputDir, `donaldson-error-page${pageNum}.png`);
+                  await listPage.screenshot({ path: errShot, fullPage: false });
+                  process.stdout.write(`\n     (error screenshot: ${errShot})\n     `);
+                } catch {}
+              }
+              process.stdout.write(`RETRY ${attempt}/3 (wait ${attempt * 5}s)... `);
+              await sleep(attempt * 5000);
             } else {
               process.stdout.write(`ERROR: ${err.message.split("\n")[0]}\n`);
               errors.push({
