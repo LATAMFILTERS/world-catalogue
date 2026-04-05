@@ -487,12 +487,13 @@ async function main() {
   }
 
   const browserOptions = {
-    headless: "new",   // "new" headless is harder to detect than headless: true
+    headless: false,  // Site detects headless — run visible (minimized)
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
-      "--window-size=1920,1080",
+      "--window-size=1280,900",
+      "--start-minimized",  // Open minimized so it doesn't get in the way
     ],
   };
 
