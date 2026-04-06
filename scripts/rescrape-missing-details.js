@@ -45,12 +45,14 @@ async function getProductsToRescrape() {
   }
 
   let whereClause = `
-    WHERE (oem_codes IS NULL OR oem_codes::text = '[]')
-       OR (equipment_applications IS NULL OR equipment_applications::text = '[]')
-       OR (competitor_codes IS NULL OR competitor_codes::text = '[]')
+    WHERE (
+      (oem_codes IS NULL OR oem_codes::text = '[]' OR oem_codes::text = 'null')
+      OR (equipment_applications IS NULL OR equipment_applications::text = '[]' OR equipment_applications::text = 'null')
+      OR (competitor_codes IS NULL OR competitor_codes::text = '[]' OR competitor_codes::text = 'null')
+    )
   `;
   if (TARGET_TYPE !== "all") {
-    whereClause += ` AND filter_type = '${TARGET_TYPE}'`;
+    whereClause += ` AND filter_type = '${TARGET_TYPE.replace(/'/g, "''")}'`;
   }
 
   const res = await pgClient.query(`
@@ -172,9 +174,9 @@ async function main() {
 
   for (let i = 0; i < products.length; i++) {
     const p = products[i];
-    // Construir URL si no está guardada
+    // Construir URL directa al producto
     const url = p.donaldson_url ||
-      `${BASE_URL}/store/en-nl/search?N=4294967131&Nrpp=1&Nr=AND(product.language%3AEnglish%2Cproduct.siteId%3Aen-nl)&Ntt=${p.codigo_base}`;
+      `${BASE_URL}/store/en-nl/product/${encodeURIComponent(p.codigo_base)}/`;
 
     process.stdout.write(`  [${i+1}/${products.length}] ${p.sku} (${p.codigo_base})... `);
 
