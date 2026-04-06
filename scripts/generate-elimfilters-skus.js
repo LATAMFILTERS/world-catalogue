@@ -26,23 +26,28 @@ function findLatestDonaldsonFile() {
   return path.join(REPORTS_DIR, files[0].name);
 }
 
-// ─── Generar SKU EF9 ──────────────────────────────────────────────────────────
-function generateEF9Sku(donaldsonSku) {
-  // Últimos 4 caracteres del código Donaldson
-  const last4 = donaldsonSku.replace(/\s/g, "").slice(-4);
-  return "EF9" + last4;
+// ─── Generar SKU ──────────────────────────────────────────────────────────────
+// Water separators → ES9XXXX, everything else → EF9XXXX
+function generateSku(donaldsonSku, name) {
+  const last4  = donaldsonSku.replace(/\s/g, "").slice(-4);
+  const upper  = (name || "").toUpperCase();
+  const prefix = (upper.includes("WATER SEPARATOR") || upper.includes("SEPARADOR DE AGUA")) ? "ES9" : "EF9";
+  return prefix + last4;
 }
 
 // ─── Determinar tipo de filtro desde la descripción ──────────────────────────
 function getFilterType(name) {
   const upper = (name || "").toUpperCase();
 
-  if (upper.includes("SEPARADOR DE AGUA"))                      return { type: "Fuel, Water Separator", style: "water separator" };
-  if (upper.includes("SECUNDARIO"))                             return { type: "Fuel, Secondary",       style: "spin-on secondary" };
-  if (upper.includes("PRIMARIO"))                               return { type: "Fuel, Primary",         style: "spin-on primary" };
-  if (upper.includes("CARTUCHO"))                               return { type: "Fuel, Cartridge",       style: "cartridge" };
-  if (upper.includes("ENROSCABLE"))                             return { type: "Fuel, Spin-On",         style: "spin-on" };
-  if (upper.includes("INLINE") || upper.includes("EN LÍNEA"))  return { type: "Fuel, Inline",          style: "inline" };
+  // English keywords (Donaldson names are in English)
+  if (upper.includes("WATER SEPARATOR") || upper.includes("SEPARADOR DE AGUA"))
+                                                                return { type: "Fuel, Water Separator", style: "water separator" };
+  if (upper.includes("SECONDARY"))                              return { type: "Fuel, Secondary",       style: "spin-on secondary" };
+  if (upper.includes("PRIMARY"))                                return { type: "Fuel, Primary",         style: "spin-on primary" };
+  if (upper.includes("CARTRIDGE"))                              return { type: "Fuel, Cartridge",       style: "cartridge" };
+  if (upper.includes("SPIN-ON"))                                return { type: "Fuel, Spin-On",         style: "spin-on" };
+  if (upper.includes("INLINE") || upper.includes("IN-LINE") ||
+      upper.includes("EN LÍNEA"))                               return { type: "Fuel, Inline",          style: "inline" };
   return                                                               { type: "Fuel",                  style: "fuel" };
 }
 
@@ -77,7 +82,7 @@ function main() {
   console.log(`Products found: ${products.length}\n`);
 
   const elimfilters = products.map(p => {
-    const efSku          = generateEF9Sku(p.sku);
+    const efSku          = generateSku(p.sku, p.name);
     const { type }       = getFilterType(p.name);
     const description    = generateDescription(efSku, p.sku, p.name);
 
