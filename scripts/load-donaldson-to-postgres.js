@@ -59,7 +59,8 @@ function mapProduct(p) {
     sku:                    p.skuEF,
     codigo_base:            p.skuDonaldson,
     name:                   p.name || "",
-    filter_type:            p.filterType || "Fuel",
+    filter_type:            p.filterType || "Fuel Filter",
+    sub_type:               p.subType    || "",
     technology:             p.technology || "SYNTEPORE™",
     description:            descText,
     installation_type:      null,
@@ -94,12 +95,13 @@ async function main() {
   await pgClient.connect();
   console.log("PostgreSQL conectado\n");
 
-  // Agregar columnas nuevas si no existen (no rompe si ya existen)
+  // Agregar columnas nuevas si no existen
   await pgClient.query(`
     ALTER TABLE elimfilters_catalog
-      ADD COLUMN IF NOT EXISTS name         TEXT,
-      ADD COLUMN IF NOT EXISTS description  TEXT,
-      ADD COLUMN IF NOT EXISTS image_url    TEXT,
+      ADD COLUMN IF NOT EXISTS name          TEXT,
+      ADD COLUMN IF NOT EXISTS sub_type      TEXT,
+      ADD COLUMN IF NOT EXISTS description   TEXT,
+      ADD COLUMN IF NOT EXISTS image_url     TEXT,
       ADD COLUMN IF NOT EXISTS donaldson_url TEXT
   `);
 
@@ -111,24 +113,25 @@ async function main() {
     try {
       await pgClient.query(`
         INSERT INTO elimfilters_catalog (
-          sku, codigo_base, name, filter_type, technology, description,
+          sku, codigo_base, name, filter_type, sub_type, technology, description,
           installation_type, thread_size, height_mm, outer_diameter_mm,
           gasket_od_mm, gasket_id_mm, iso_test_method, micron_rating,
           nominal_efficiency, burst_pressure_psi, collapse_pressure_psi, duty,
           oem_codes, competitor_codes, equipment_applications,
           image_url, donaldson_url
         ) VALUES (
-          $1, $2, $3, $4, $5, $6,
-          $7, $8, $9, $10,
-          $11, $12, $13, $14,
-          $15, $16, $17, $18,
-          $19::jsonb, $20::jsonb, $21::jsonb,
-          $22, $23
+          $1, $2, $3, $4, $5, $6, $7,
+          $8, $9, $10, $11,
+          $12, $13, $14, $15,
+          $16, $17, $18, $19,
+          $20::jsonb, $21::jsonb, $22::jsonb,
+          $23, $24
         )
         ON CONFLICT (sku) DO UPDATE SET
           codigo_base            = EXCLUDED.codigo_base,
           name                   = EXCLUDED.name,
           filter_type            = EXCLUDED.filter_type,
+          sub_type               = EXCLUDED.sub_type,
           technology             = EXCLUDED.technology,
           description            = EXCLUDED.description,
           thread_size            = EXCLUDED.thread_size,
@@ -141,11 +144,11 @@ async function main() {
           image_url              = EXCLUDED.image_url,
           donaldson_url          = EXCLUDED.donaldson_url
       `, [
-        row.sku,            row.codigo_base,       row.name,          row.filter_type,
-        row.technology,     row.description,        row.installation_type, row.thread_size,
-        row.height_mm,      row.outer_diameter_mm,  row.gasket_od_mm,  row.gasket_id_mm,
-        row.iso_test_method, row.micron_rating,     row.nominal_efficiency, row.burst_pressure_psi,
-        row.collapse_pressure_psi, row.duty,
+        row.sku,            row.codigo_base,        row.name,           row.filter_type,
+        row.sub_type,       row.technology,          row.description,    row.installation_type,
+        row.thread_size,    row.height_mm,           row.outer_diameter_mm, row.gasket_od_mm,
+        row.gasket_id_mm,   row.iso_test_method,     row.micron_rating,  row.nominal_efficiency,
+        row.burst_pressure_psi, row.collapse_pressure_psi, row.duty,
         row.oem_codes, row.competitor_codes, row.equipment_applications,
         row.image_url, row.donaldson_url
       ]);

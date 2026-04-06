@@ -30,13 +30,13 @@ c.connect().then(async () => {
     console.log("\nDETALLE elimfilters_catalog:");
 
     const byType = await c.query(`
-      SELECT filter_type, technology, COUNT(*) as total
+      SELECT filter_type, COALESCE(sub_type,'') as sub_type, technology, COUNT(*) as total
       FROM elimfilters_catalog
-      GROUP BY filter_type, technology
-      ORDER BY total DESC
+      GROUP BY filter_type, sub_type, technology
+      ORDER BY filter_type, total DESC
     `);
     byType.rows.forEach(r =>
-      console.log(`  ${(r.filter_type||"(sin tipo)").padEnd(25)} | ${(r.technology||"").padEnd(12)} | ${r.total} productos`)
+      console.log(`  ${(r.filter_type||"").padEnd(16)} | ${(r.sub_type||"").padEnd(16)} | ${(r.technology||"").padEnd(12)} | ${r.total} productos`)
     );
 
     const byPrefix = await c.query(`

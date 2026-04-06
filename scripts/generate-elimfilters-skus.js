@@ -35,25 +35,34 @@ function generateSku(donaldsonSku, name) {
   return prefix + last4;
 }
 
-// ─── Determinar tipo de filtro desde la descripción ──────────────────────────
+// ─── Determinar tipo y subtipo de filtro ─────────────────────────────────────
+// mainType : "Fuel Separator" (ES9) | "Fuel Filter" (EF9)
+// subType  : "Water Separator" | "Secondary" | "Primary" | "Cartridge" | "Spin-On" | "Inline" | "Box" | ""
 function getFilterType(name) {
   const upper = (name || "").toUpperCase();
 
-  // English keywords (Donaldson names are in English)
   if (upper.includes("WATER SEPARATOR") || upper.includes("SEPARADOR DE AGUA"))
-                                                                return { type: "Fuel, Water Separator", style: "water separator" };
-  if (upper.includes("SECONDARY"))                              return { type: "Fuel, Secondary",       style: "spin-on secondary" };
-  if (upper.includes("PRIMARY"))                                return { type: "Fuel, Primary",         style: "spin-on primary" };
-  if (upper.includes("CARTRIDGE"))                              return { type: "Fuel, Cartridge",       style: "cartridge" };
-  if (upper.includes("SPIN-ON"))                                return { type: "Fuel, Spin-On",         style: "spin-on" };
-  if (upper.includes("INLINE") || upper.includes("IN-LINE") ||
-      upper.includes("EN LÍNEA"))                               return { type: "Fuel, Inline",          style: "inline" };
-  return                                                               { type: "Fuel",                  style: "fuel" };
+    return { mainType: "Fuel Separator", subType: "Water Separator", style: "water separator" };
+
+  if (upper.includes("SECONDARY"))
+    return { mainType: "Fuel Filter", subType: "Secondary",  style: "spin-on secondary" };
+  if (upper.includes("PRIMARY"))
+    return { mainType: "Fuel Filter", subType: "Primary",    style: "spin-on primary" };
+  if (upper.includes("CARTRIDGE"))
+    return { mainType: "Fuel Filter", subType: "Cartridge",  style: "cartridge" };
+  if (upper.includes("SPIN-ON"))
+    return { mainType: "Fuel Filter", subType: "Spin-On",    style: "spin-on" };
+  if (upper.includes("INLINE") || upper.includes("IN-LINE") || upper.includes("EN LÍNEA"))
+    return { mainType: "Fuel Filter", subType: "Inline",     style: "inline" };
+  if (upper.includes("BOX"))
+    return { mainType: "Fuel Filter", subType: "Box",        style: "box" };
+
+  return { mainType: "Fuel Filter", subType: "",             style: "fuel" };
 }
 
 // ─── Generar descripción ELIMFILTERS ─────────────────────────────────────────
 function generateDescription(efSku, donaldsonSku, name) {
-  const { type, style } = getFilterType(name);
+  const { mainType, subType, style } = getFilterType(name);
 
   // Avoid "fuel fuel filter" when style is already "fuel"
   const filterDesc = style === "fuel" ? "fuel filter" : `${style} fuel filter`;
@@ -71,7 +80,8 @@ function generateDescription(efSku, donaldsonSku, name) {
     ? `ELIMFILTERS fuel filters ensure optimal fuel system protection and water separation to meet or exceed OEM specifications.`
     : `ELIMFILTERS fuel filters guarantee optimal fuel system performance to meet or exceed OEM specifications.`;
 
-  return [efSku, type, `${line1} ${line2}`].join("\n");
+  const label = subType ? `${mainType}, ${subType}` : mainType;
+  return [efSku, label, `${line1} ${line2}`].join("\n");
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -84,17 +94,19 @@ function main() {
   console.log(`Products found: ${products.length}\n`);
 
   const elimfilters = products.map(p => {
-    const efSku          = generateSku(p.sku, p.name);
-    const { type }       = getFilterType(p.name);
-    const description    = generateDescription(efSku, p.sku, p.name);
+    const efSku                    = generateSku(p.sku, p.name);
+    const { mainType, subType }    = getFilterType(p.name);
+    const isWaterSep               = efSku.startsWith("ES9");
+    const description              = generateDescription(efSku, p.sku, p.name);
 
     return {
       // ─ ELIMFILTERS identity ─
       skuEF:            efSku,
       skuDonaldson:     p.sku,
       name:             p.name.replace(p.sku, "").replace(/DONALDSON\s+BLUE[®]?/gi, "").trim(),
-      filterType:       type,
-      technology:       efSku.startsWith("ES9") ? "AQUAGUARD™" : "SYNTEPORE™",
+      filterType:       mainType,
+      subType:          subType,
+      technology:       isWaterSep ? "AQUAGUARD™" : "SYNTEPORE™",
       description,
 
       // ─ Technical data (from Donaldson) ─
