@@ -24,8 +24,11 @@ const pgClient = new Client({
   ssl: { rejectUnauthorized: false }
 });
 
-// ─── Buscar el archivo de catálogo más reciente ───────────────────────────────
-function findLatestCatalogFile() {
+// ─── Buscar archivo de catálogo (--input o el más reciente) ──────────────────
+function findCatalogFile() {
+  const i = process.argv.indexOf("--input");
+  if (i !== -1 && process.argv[i + 1]) return process.argv[i + 1];
+
   const files = fs.readdirSync(REPORTS_DIR)
     .filter(f => f.startsWith("elimfilters-catalog-") && f.endsWith(".json"))
     .map(f => ({ name: f, mtime: fs.statSync(path.join(REPORTS_DIR, f)).mtimeMs }))
@@ -85,7 +88,7 @@ function mapProduct(p) {
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 async function main() {
-  const inputFile = findLatestCatalogFile();
+  const inputFile = findCatalogFile();
   console.log(`\nLeyendo: ${inputFile}`);
 
   const raw      = JSON.parse(fs.readFileSync(inputFile, "utf8"));
