@@ -80,9 +80,10 @@ function generateDescription(efSku, donaldsonSku, name) {
   let line1, line2;
 
   if (mainType === "Air Dryer") {
-    line1 = `ELIMFILTERS® ${efSku} ${style} achieves superior moisture removal using proven DRYCORE™ ` +
-            `technology, protecting air brake and pneumatic systems from water contamination.`;
-    line2 = `ELIMFILTERS air dryer elements guarantee optimal system performance to meet or exceed OEM specifications.`;
+    line1 = `ELIMFILTERS® ${efSku} premium air dryer provides complete protection using proven DRYCORE™ ` +
+            `technology, capturing water vapor, oil vapor, and other contaminants before they can reach ` +
+            `air tanks and valves, ensuring optimal uptime.`;
+    line2 = `Trust your air systems with superior DRYCORE™ protection.`;
   } else if (mainType === "Fuel Separator") {
     line1 = `ELIMFILTERS® ${efSku} ${style} fuel filter delivers superior performance using proven AQUAGUARD™ ` +
             `media technology, separating water and removing harmful contaminants from the fuel system.`;
