@@ -62,7 +62,7 @@ function generateDescription(efSku, donaldsonSku, name) {
   const isWaterSep = style === "water separator";
 
   const line1 = isWaterSep
-    ? `ELIMFILTERS® ${efSku} ${filterDesc} delivers superior performance using proven SYNTEPORE™ ` +
+    ? `ELIMFILTERS® ${efSku} ${filterDesc} delivers superior performance using proven AQUAGUARD™ ` +
       `media technology, separating water and removing harmful contaminants from the fuel system.`
     : `ELIMFILTERS® ${efSku} ${filterDesc} achieves superior protection using proven SYNTEPORE™ ` +
       `technology, eliminating harmful contaminants.`;
@@ -94,7 +94,7 @@ function main() {
       skuDonaldson:     p.sku,
       name:             p.name.replace(p.sku, "").replace(/DONALDSON\s+BLUE[®]?/gi, "").trim(),
       filterType:       type,
-      technology:       "SYNTEPORE™",
+      technology:       efSku.startsWith("ES9") ? "AQUAGUARD™" : "SYNTEPORE™",
       description,
 
       // ─ Technical data (from Donaldson) ─
