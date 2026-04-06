@@ -254,6 +254,26 @@ function mergeArrays(existing, incoming) {
   return result;
 }
 
+/**
+ * Extrae códigos Donaldson alternativos almacenados en competitor_codes / oem_codes.
+ * Son part numbers intercambiables (P-series, DBA, DBH, etc.) que podemos
+ * usar como fallback para buscar cross-refs cuando el código principal no aparece.
+ */
+function extractAlternateDonaldsonCodes(jsonStr) {
+  const DONALDSON_RE = /^(P\d{6}|DBA\d{4}|DBH\d{4}|DBL\d{4}|DBC\d{4}|R\d{6}|X\d{6}|E\d{6}|G\d{6}|A\d{6})$/i;
+  try {
+    const arr   = JSON.parse(jsonStr || "[]");
+    const codes = new Set();
+    arr.forEach(item => {
+      const tokens = typeof item === "string"
+        ? item.trim().split(/\s+/)
+        : [item.code || ""];
+      tokens.forEach(t => { if (DONALDSON_RE.test(t)) codes.add(t.toUpperCase()); });
+    });
+    return [...codes];
+  } catch { return []; }
+}
+
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 async function main() {
   console.log("\n=== AIRFILTER CROSS-REFERENCE SCRAPER ===");
@@ -348,14 +368,65 @@ async function main() {
     processed++;
     process.stdout.write(`  [${String(processed).padStart(5)}/${rows.length}] ${code.padEnd(12)} ... `);
 
-    const res = await scrapePage(page, code);
+    let res = await scrapePage(page, code);
 
     if (res.error) {
       console.log(`ERROR: ${res.error}`);
       errs++;
     } else if (res.notFound || res.total === 0) {
-      console.log("sin datos");
-      noData++;
+      // ── FALLBACK: buscar en los alternates Donaldson ──────────────────────
+      const altCodes = [
+        ...extractAlternateDonaldsonCodes(row.oem_raw),
+        ...extractAlternateDonaldsonCodes(row.comp_raw),
+      ].filter(c => c !== code.toUpperCase());
+
+      if (altCodes.length > 0) {
+        process.stdout.write(`sin datos → fallback (${altCodes.length} alts) ... `);
+
+        const fallbackOem  = [];
+        const fallbackXref = [];
+
+        for (const altCode of altCodes.slice(0, 3)) { // máx 3 alternates
+          await sleep(1000 + Math.random() * 800);
+          const altRes = await scrapePage(page, altCode);
+          if (!altRes.error && altRes.total > 0) {
+            fallbackOem.push(...altRes.oem);
+            fallbackXref.push(...altRes.aftermarket);
+          }
+        }
+
+        const mergedOem  = mergeArrays([], fallbackOem);
+        const mergedXref = mergeArrays([], fallbackXref);
+
+        if (mergedOem.length + mergedXref.length > 0) {
+          console.log(`OK (via alt)  OEM=${mergedOem.length}  xref=${mergedXref.length}`);
+          withData++;
+          res = { oem: mergedOem, aftermarket: mergedXref, total: mergedOem.length + mergedXref.length, viaAlternate: true };
+
+          if (!DRY_RUN) {
+            try {
+              const existOem  = JSON.parse(row.oem_raw  || "[]");
+              const existComp = JSON.parse(row.comp_raw || "[]");
+              await pgClient.query(`
+                UPDATE elimfilters_catalog
+                SET oem_codes        = $1::jsonb,
+                    competitor_codes = $2::jsonb
+                WHERE codigo_base = $3
+              `, [
+                JSON.stringify(mergeArrays(existOem,  mergedOem)),
+                JSON.stringify(mergeArrays(existComp, mergedXref)),
+                code
+              ]);
+            } catch (e) { console.error(`    DB error: ${e.message}`); }
+          }
+        } else {
+          console.log("sin datos (alts tampoco)");
+          noData++;
+        }
+      } else {
+        console.log("sin datos");
+        noData++;
+      }
     } else {
       console.log(`OK  OEM=${res.oem.length}  xref=${res.aftermarket.length}`);
       withData++;
