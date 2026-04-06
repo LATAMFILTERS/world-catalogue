@@ -115,6 +115,14 @@ function main() {
                      : mainType === "Fuel Separator" ? "AQUAGUARD™"
                      : "SYNTEPORE™";
 
+    // Alternate parts → también convertidos a SKU ELIMFILTERS con el mismo prefijo
+    const prefix = efSku.slice(0, 3); // "EF9", "ES9" o "ED4"
+    const alternatesEF = (p.alternateParts || []).map(a => {
+      const donaldsonAlt = typeof a === "string" ? a : (a.sku || a.partNumber || "");
+      const efAlt = donaldsonAlt ? prefix + donaldsonAlt.replace(/\s/g, "").slice(-4) : "";
+      return { skuEF: efAlt, skuDonaldson: donaldsonAlt };
+    }).filter(a => a.skuDonaldson);
+
     return {
       // ─ ELIMFILTERS identity ─
       skuEF:            efSku,
@@ -129,10 +137,9 @@ function main() {
       specs:             p.specs             || {},
       packageDimensions: p.packageDimensions || {},
       crossRefs:         p.crossRefs         || [],
-      alternateParts:    p.alternateParts    || [],
+      alternateParts:    alternatesEF,
       relatedProducts:   p.relatedProducts   || [],
       equipment:         p.equipment         || [],
-      // "Aplicación principal" pulled out of specs for quick access
       mainApplication:   (p.specs || {})["Aplicación principal"] || (p.specs || {})["Main Application"] || "",
 
       // ─ References ─
