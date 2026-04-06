@@ -218,6 +218,12 @@ async function extractProductDetails(page, product) {
         timeout: CONFIG.pageLoadTimeout,
       });
 
+      // Human-like scroll to trigger lazy sections (equipment, cross-refs)
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
+      await sleep(800 + Math.random() * 600);
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await sleep(600 + Math.random() * 400);
+
       const details = await page.evaluate((baseUrl) => {
         // ── Main product name ──────────────────────────────────────────────────
         const nameSelectors = [
@@ -304,17 +310,32 @@ async function extractProductDetails(page, product) {
             }
           });
 
-        // ── Equipment applications (dedicated section if present) ─────────────
+        // ── Equipment applications (#equiptmentBody — note Donaldson's typo) ──
+        // Click "Mostrar más" first to load all equipment rows
+        const showMoreBtn = document.querySelector("#showMorePdpListButton");
+        if (showMoreBtn && showMoreBtn.style.display !== "none") {
+          showMoreBtn.click();
+        }
+
         const equipment = [];
-        // Try #equipmentBody or any section with equipment/application data
-        document.querySelectorAll(
-          "#equipmentBody tr, #applicationBody tr, [id*='equipment'] tr, [id*='application'] tr"
-        ).forEach((row) => {
-          const cells = row.querySelectorAll("td");
-          if (cells.length >= 1) {
-            const val = Array.from(cells).map(c => c.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(" | ");
-            if (val) equipment.push(val);
-          }
+        document.querySelectorAll("#equiptmentBody .applicationPartTablePDP tbody tr").forEach((row) => {
+          const model      = (row.querySelector("td[data-equipment]")    || {}).textContent || "";
+          const year       = (row.querySelector("td[data-year]")         || {}).textContent || "";
+          const type       = (row.querySelector("td[data-type] span")    || {}).textContent || "";
+          const engine     = (row.querySelector("td[data-engine] span")  || {}).textContent || "";
+          const options    = (row.querySelector("td[data-options] span") || {}).textContent || "";
+          const engineOpt  = (row.querySelector("td[data-enginetypes] span") || {}).textContent || "";
+
+          const clean = s => s.replace(/\s+/g, " ").trim().replace(/^-\s*$/, "");
+          const entry = {
+            model:     clean(model),
+            year:      clean(year),
+            type:      clean(type),
+            engine:    clean(engine),
+            options:   clean(options),
+            engineOption: clean(engineOpt),
+          };
+          if (entry.model) equipment.push(entry);
         });
 
         // ── Package dimensions (#attributesBody .attributeValuesSection) ────────

@@ -138,8 +138,12 @@ function main() {
       console.log(`    Specs       : ${Object.entries(p.specs).slice(0,3).map(([k,v]) => `${k}: ${v}`).join(" | ")}`);
     if (p.mainApplication)
       console.log(`    Main App    : ${p.mainApplication}`);
-    if (p.equipment && p.equipment.length)
-      console.log(`    Equipment   : ${p.equipment.slice(0,3).join(" | ")}`);
+    if (p.equipment && p.equipment.length) {
+      console.log(`    Equipment   : ${p.equipment.length} entries`);
+      p.equipment.slice(0, 3).forEach(e =>
+        console.log(`      - ${e.model} | ${e.type} | Engine: ${e.engine}`)
+      );
+    }
     if (p.alternateParts.length)
       console.log(`    Alternates  : ${p.alternateParts.slice(0,3).map(a => a.sku).join(", ")}`);
     console.log();
