@@ -33,6 +33,19 @@ function getInputFile() {
 function getFilterType(name) {
   const upper = (name || "").toUpperCase();
 
+  // ── Air Filter (EA1) ─────────────────────────────────────────────────────
+  if (upper.includes("AIR FILTER") || upper.startsWith("DBA")) {
+    if (upper.includes("PRIMARY"))        return { mainType: "Air Filter", subType: "Primary",        style: "primary" };
+    if (upper.includes("SECONDARY"))      return { mainType: "Air Filter", subType: "Secondary",      style: "secondary" };
+    if (upper.includes("SAFETY"))         return { mainType: "Air Filter", subType: "Safety",         style: "safety" };
+    if (upper.includes("PANEL"))          return { mainType: "Air Filter", subType: "Panel",          style: "panel" };
+    if (upper.includes("ROUND"))          return { mainType: "Air Filter", subType: "Round",          style: "round" };
+    if (upper.includes("RADIAL SEAL"))    return { mainType: "Air Filter", subType: "Radial Seal",    style: "radial seal" };
+    if (upper.includes("AXIAL SEAL"))     return { mainType: "Air Filter", subType: "Axial Seal",     style: "axial seal" };
+    if (upper.includes("CARTRIDGE"))      return { mainType: "Air Filter", subType: "Cartridge",      style: "cartridge" };
+    return                                       { mainType: "Air Filter", subType: "",               style: "air" };
+  }
+
   // ── Air Dryer (ED4) ──────────────────────────────────────────────────────
   if (upper.includes("AIR DRYER") || upper.includes("DRYER ELEMENT") ||
       upper.includes("DESICCANT")  || upper.startsWith("ED4")) {
@@ -67,6 +80,7 @@ function getFilterType(name) {
 function generateSku(donaldsonSku, name) {
   const last4 = donaldsonSku.replace(/\s/g, "").slice(-4);
   const { mainType } = getFilterType(name);
+  if (mainType === "Air Filter")     return "EA1" + last4;
   if (mainType === "Air Dryer")      return "ED4" + last4;
   if (mainType === "Fuel Separator") return "ES9" + last4;
   return "EF9" + last4;
@@ -79,7 +93,12 @@ function generateDescription(efSku, donaldsonSku, name) {
   const label = subType ? `${mainType}, ${subType}` : mainType;
   let line1, line2;
 
-  if (mainType === "Air Dryer") {
+  if (mainType === "Air Filter") {
+    const airStyle = style === "air" ? "air filter" : `${style} air filter`;
+    line1 = `ELIMFILTERS® ${efSku} ${airStyle} provides a reliable seal using proven MACROCORE™ ` +
+            `technology, preventing leaks and blocking airborne contaminants from reaching the combustion chamber.`;
+    line2 = `ELIMFILTERS air filters ensure optimal engine protection to meet or exceed OEM specifications.`;
+  } else if (mainType === "Air Dryer") {
     line1 = `ELIMFILTERS® ${efSku} premium air dryer provides complete protection using proven DRYCORE™ ` +
             `technology, capturing water vapor, oil vapor, and other contaminants before they can reach ` +
             `air tanks and valves, ensuring optimal uptime.`;
@@ -111,7 +130,8 @@ function main() {
     const efSku                    = generateSku(p.sku, p.name);
     const { mainType, subType }    = getFilterType(p.name);
     const description              = generateDescription(efSku, p.sku, p.name);
-    const technology = mainType === "Air Dryer"      ? "DRYCORE™"
+    const technology = mainType === "Air Filter"     ? "MACROCORE™"
+                     : mainType === "Air Dryer"      ? "DRYCORE™"
                      : mainType === "Fuel Separator" ? "AQUAGUARD™"
                      : "SYNTEPORE™";
 
