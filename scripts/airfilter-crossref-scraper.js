@@ -292,6 +292,7 @@ async function main() {
     params.push(SKU_ARG);
   }
 
+  // Solo códigos con formato Donaldson válido
   const { rows } = await pgClient.query(`
     SELECT DISTINCT codigo_base, sku,
            COALESCE(oem_codes::text,  '[]') AS oem_raw,
@@ -299,6 +300,11 @@ async function main() {
     FROM elimfilters_catalog
     WHERE codigo_base IS NOT NULL
       AND filter_type IN ('Air Filter', 'Cabin Air', 'Air Housing', 'Air Dryer')
+      AND (
+        codigo_base ~ '^[PRXEG][0-9]{6}$'
+        OR codigo_base ~ '^A[0-9]{6}$'
+        OR codigo_base ~ '^DB[AHLC][0-9]{4}$'
+      )
       ${whereExtra}
     ORDER BY codigo_base
     LIMIT ${LIMIT}

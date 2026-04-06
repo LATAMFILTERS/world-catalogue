@@ -246,6 +246,9 @@ async function main() {
   let whereExtra = "";
   if (SKU_ARG) { whereExtra = " AND codigo_base = $1"; params.push(SKU_ARG); }
 
+  // Solo códigos con formato Donaldson válido:
+  // P/R/X/E/G/A + 6 dígitos  →  P550440, R000958, G100003...
+  // DBA/DBH/DBL/DBC + 4 dígitos  →  DBA5034, DBH0949, DBC4081...
   const { rows } = await pgClient.query(`
     SELECT DISTINCT codigo_base, sku,
            COALESCE(oem_codes::text,        '[]') AS oem_raw,
@@ -256,6 +259,11 @@ async function main() {
         'Fuel Filter', 'Fuel Separator', 'Fuel Housing',
         'Marine FUEL', 'Marine OIL', 'Marine WATER_SEP',
         'Coolant Filter', 'Coolant', 'Air Dryer'
+      )
+      AND (
+        codigo_base ~ '^[PRXEG][0-9]{6}$'
+        OR codigo_base ~ '^A[0-9]{6}$'
+        OR codigo_base ~ '^DB[AHLC][0-9]{4}$'
       )
       ${whereExtra}
     ORDER BY codigo_base
