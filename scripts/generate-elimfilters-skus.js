@@ -33,6 +33,15 @@ function getInputFile() {
 function getFilterType(name) {
   const upper = (name || "").toUpperCase();
 
+  // ── Coolant Water Filter (EW7) ───────────────────────────────────────────
+  if (upper.includes("COOLANT") || upper.includes("WATER FILTER") ||
+      upper.includes("CHEMICAL") || upper.startsWith("DBC")) {
+    if (upper.includes("SPIN-ON"))   return { mainType: "Coolant Filter", subType: "Spin-On",  style: "spin-on coolant" };
+    if (upper.includes("CARTRIDGE")) return { mainType: "Coolant Filter", subType: "Cartridge",style: "cartridge coolant" };
+    if (upper.includes("DCA"))       return { mainType: "Coolant Filter", subType: "DCA",      style: "chemical coolant" };
+    return                                  { mainType: "Coolant Filter", subType: "",         style: "chemical coolant" };
+  }
+
   // ── Air Filter (EA1) ─────────────────────────────────────────────────────
   if (upper.includes("AIR FILTER") || upper.startsWith("DBA")) {
     if (upper.includes("PRIMARY"))        return { mainType: "Air Filter", subType: "Primary",        style: "primary" };
@@ -80,6 +89,7 @@ function getFilterType(name) {
 function generateSku(donaldsonSku, name) {
   const last4 = donaldsonSku.replace(/\s/g, "").slice(-4);
   const { mainType } = getFilterType(name);
+  if (mainType === "Coolant Filter") return "EW7" + last4;
   if (mainType === "Air Filter")     return "EA1" + last4;
   if (mainType === "Air Dryer")      return "ED4" + last4;
   if (mainType === "Fuel Separator") return "ES9" + last4;
@@ -93,7 +103,11 @@ function generateDescription(efSku, donaldsonSku, name) {
   const label = subType ? `${mainType}, ${subType}` : mainType;
   let line1, line2;
 
-  if (mainType === "Air Filter") {
+  if (mainType === "Coolant Filter") {
+    line1 = `ELIMFILTERS® ${efSku} ${style} filter delivers supplemental coolant additives (SCAs) using proven COOLTECH™ ` +
+            `technology, keeping the cooling system fully protected while providing superior filtration.`;
+    line2 = `Designed for use with ES Compleat or similar coolant technologies to meet or exceed OEM specifications.`;
+  } else if (mainType === "Air Filter") {
     const airStyle = style === "air" ? "air filter" : `${style} air filter`;
     line1 = `ELIMFILTERS® ${efSku} ${airStyle} provides a reliable seal using proven MACROCORE™ ` +
             `technology, preventing leaks and blocking airborne contaminants from reaching the combustion chamber.`;
@@ -130,7 +144,8 @@ function main() {
     const efSku                    = generateSku(p.sku, p.name);
     const { mainType, subType }    = getFilterType(p.name);
     const description              = generateDescription(efSku, p.sku, p.name);
-    const technology = mainType === "Air Filter"     ? "MACROCORE™"
+    const technology = mainType === "Coolant Filter"  ? "COOLTECH™"
+                     : mainType === "Air Filter"     ? "MACROCORE™"
                      : mainType === "Air Dryer"      ? "DRYCORE™"
                      : mainType === "Fuel Separator" ? "AQUAGUARD™"
                      : "SYNTEPORE™";
