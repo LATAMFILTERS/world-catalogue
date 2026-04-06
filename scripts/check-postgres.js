@@ -50,15 +50,43 @@ c.connect().then(async () => {
       console.log(`  ${r.prefix} → ${r.total} productos`)
     );
 
+    // Productos con tecnología desconocida (no EF9/ES9/ED4 estándar)
+    const unknown = await c.query(`
+      SELECT sku, codigo_base, filter_type, sub_type, technology
+      FROM elimfilters_catalog
+      WHERE technology NOT IN ('SYNTEPORE™','AQUAGUARD™','DRYCORE™')
+         OR technology IS NULL
+      ORDER BY sku
+    `);
+    if (unknown.rows.length) {
+      console.log(`\n⚠️  TECNOLOGÍA INCORRECTA (${unknown.rows.length} productos):`);
+      unknown.rows.forEach(r =>
+        console.log(`  ${r.sku} | ${r.codigo_base} | ${r.filter_type} | ${r.technology || "NULL"}`)
+      );
+    }
+
+    // SKUs duplicados
+    const dupes = await c.query(`
+      SELECT sku, COUNT(*) as cnt
+      FROM elimfilters_catalog
+      GROUP BY sku
+      HAVING COUNT(*) > 1
+    `);
+    if (dupes.rows.length) {
+      console.log(`\n⚠️  SKUs DUPLICADOS (${dupes.rows.length}):`);
+      dupes.rows.forEach(r => console.log(`  ${r.sku} → ${r.cnt} veces`));
+    } else {
+      console.log("\n✅ Sin SKUs duplicados");
+    }
+
     const sample = await c.query(`
-      SELECT sku, codigo_base, filter_type, technology,
-             array_length(equipment_applications::jsonb::text::text[], 1) as equip_count
+      SELECT sku, codigo_base, filter_type, sub_type, technology
       FROM elimfilters_catalog
       LIMIT 3
     `);
     console.log("\nMUESTRA (3 productos):");
     sample.rows.forEach(r =>
-      console.log(`  ${r.sku} | ${r.codigo_base} | ${r.filter_type} | ${r.technology}`)
+      console.log(`  ${r.sku} | ${r.codigo_base} | ${r.filter_type} | ${r.sub_type || ""} | ${r.technology}`)
     );
   }
 
