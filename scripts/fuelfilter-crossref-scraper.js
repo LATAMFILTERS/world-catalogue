@@ -133,6 +133,8 @@ async function extractCrossRefs(page) {
       brand = (brand || "").trim();
       code  = (code  || "").trim().toUpperCase();
       if (!brand || !code || code.length < 3) return;
+      // Excluir códigos puramente numéricos (catálogos OEM como 15410, 02893, etc.)
+      if (/^\d+$/.test(code)) return;
       const key = `${brand.toUpperCase()}::${code}`;
       if (!seen.has(key)) { seen.add(key); results.push({ brand, code }); }
     }
