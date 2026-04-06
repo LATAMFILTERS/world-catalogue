@@ -286,16 +286,41 @@ async function main() {
 
   console.log(`Códigos a procesar: ${rows.length}\n`);
 
+  // ── Detectar Chrome/Edge en el sistema (Windows + Linux)
+  const CHROME_PATHS = [
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    `${process.env.LOCALAPPDATA || ""}\\Google\\Chrome\\Application\\chrome.exe`,
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+    "/usr/bin/chromium-browser",
+    "/usr/bin/chromium",
+    "/usr/bin/google-chrome",
+  ].filter(Boolean);
+
+  let executablePath = process.env.CHROME_PATH || undefined;
+  if (!executablePath) {
+    for (const p of CHROME_PATHS) {
+      if (fs.existsSync(p)) { executablePath = p; break; }
+    }
+  }
+
+  if (executablePath) console.log(`Browser: ${executablePath}`);
+  else console.log("Browser: Chromium bundled (puppeteer)");
+
   // ── Lanzar Puppeteer
-  const browser = await puppeteer.launch({
+  const browserOptions = {
     headless: true,
-    executablePath: process.env.CHROME_PATH || undefined,
     args: [
       "--no-sandbox", "--disable-setuid-sandbox",
       "--disable-blink-features=AutomationControlled",
+      "--disable-dev-shm-usage",
       "--lang=en-US,en",
     ]
-  });
+  };
+  if (executablePath) browserOptions.executablePath = executablePath;
+
+  const browser = await puppeteer.launch(browserOptions);
 
   const page = await browser.newPage();
   await page.setUserAgent(
