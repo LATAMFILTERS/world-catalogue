@@ -54,6 +54,16 @@ const CONFIG = {
 // ─── CLI flags ────────────────────────────────────────────────────────────────
 const RESUME = process.argv.includes("--resume");
 
+// Override CONFIG via CLI: --category 2748940002 --locale en-nl --total 12 --extra "Nr=...&st=parts"
+function getArg(flag) {
+  const i = process.argv.indexOf(flag);
+  return i !== -1 ? process.argv[i + 1] : null;
+}
+if (getArg("--category"))  CONFIG.categoryId    = getArg("--category");
+if (getArg("--locale"))    CONFIG.locale        = getArg("--locale");
+if (getArg("--total"))     CONFIG.totalProducts = parseInt(getArg("--total"), 10);
+if (getArg("--extra"))     CONFIG.extraParams   = getArg("--extra");  // e.g. "Nr=product.language%3AEnglish&st=parts"
+
 // ─── Blocked resource types (ONLY for detail pages — NOT for listing pages) ───
 // Blocking stylesheets on listing pages breaks the JS that renders products.
 // Only block heavy media on detail pages to speed up specs/crossref extraction.
@@ -566,7 +576,8 @@ async function main() {
 
       for (let pageNum = startPage; pageNum <= CONFIG.totalPages; pageNum++) {
         const offset = (pageNum - 1) * CONFIG.resultsPerPage;
-        const url = `${CONFIG.baseUrl}/store/${CONFIG.locale}/search?N=${CONFIG.categoryId}&catNav=true&No=${offset}&Nrpp=${CONFIG.resultsPerPage}`;
+        const extra = CONFIG.extraParams ? `&${CONFIG.extraParams}` : "";
+        const url = `${CONFIG.baseUrl}/store/${CONFIG.locale}/search?N=${CONFIG.categoryId}&catNav=true&No=${offset}&Nrpp=${CONFIG.resultsPerPage}${extra}`;
 
         process.stdout.write(`  Page ${pageNum}/${CONFIG.totalPages} (offset=${offset})... `);
 
