@@ -55,21 +55,23 @@ function getFilterType(name) {
 function generateDescription(efSku, donaldsonSku, name) {
   const { type, style } = getFilterType(name);
 
-  // Clean name: remove Donaldson SKU prefix and "DONALDSON BLUE"
-  const cleanName = name
-    .replace(new RegExp(donaldsonSku + "\\s*", "i"), "")
-    .replace(/DONALDSON\s+BLUE[®]?/gi, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
+  // Avoid "fuel fuel filter" when style is already "fuel"
+  const filterDesc = style === "fuel" ? "fuel filter" : `${style} fuel filter`;
 
-  return [
-    efSku,
-    type,
-    `ELIMFILTERS® ${efSku} ${style} fuel filter delivers superior performance using proven SYNTEPORE™ ` +
-    `media technology, removing harmful contaminants from the fuel system. ` +
-    `ELIMFILTERS fuel filters ensure optimal fuel system protection to meet or exceed OEM specifications. ` +
-    `Direct replacement for ${donaldsonSku} — ${cleanName}.`
-  ].join("\n");
+  // Water separators get a different sentence focused on water removal
+  const isWaterSep = style === "water separator";
+
+  const line1 = isWaterSep
+    ? `ELIMFILTERS® ${efSku} ${filterDesc} delivers superior performance using proven SYNTEPORE™ ` +
+      `media technology, separating water and removing harmful contaminants from the fuel system.`
+    : `ELIMFILTERS® ${efSku} ${filterDesc} achieves superior protection using proven SYNTEPORE™ ` +
+      `technology, eliminating harmful contaminants.`;
+
+  const line2 = isWaterSep
+    ? `ELIMFILTERS fuel filters ensure optimal fuel system protection and water separation to meet or exceed OEM specifications.`
+    : `ELIMFILTERS fuel filters guarantee optimal fuel system performance to meet or exceed OEM specifications.`;
+
+  return [efSku, type, `${line1} ${line2}`].join("\n");
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
