@@ -1,56 +1,57 @@
 /**
  * FRAM Product Scraper — LD Catalog Builder
  * ==========================================
- * Flow:
- *   1. Sitemap → todas las URLs de productos FRAM (filtros aceite/aire/cabina/combustible)
- *   2. Por cada URL: partNumber = url.split('-').pop()
- *   3. Extrae #applicationsTable → vehicle_applications[]
- *   4. Extrae #competitorTable   → competitor_codes[]
- *   5. SKU: 'EL8' + partNumber.toUpperCase()  (ej: PH8A → EL8PH8A)
- *   6. Upsert en PostgreSQL (elimfilters_catalog)
+ * Flow (API + Puppeteer):
+ *   1. API REST Magento → GET /rest/V1/products (paginado, sin auth)
+ *      Retorna: sku, name, custom_attributes (specs), url_key
+ *   2. Filtrar por prefijos relevantes: PH, XG, TG, HM, CA, CF, G
+ *   3. Por cada producto: partNumber = product.sku
+ *                         url = https://www.fram.com/{url_key}
+ *   4. Puppeteer → #applicationsTable (Year/Make/Model/Engine)
+ *   5. Puppeteer → #competitorTable   (cross-references)
+ *   6. SKU ELIMFILTERS = prefix + last4digits(partNumber)
+ *   7. Upsert en PostgreSQL
  *
  * Uso:
  *   node scripts/fram-catalog-scraper.js
  *   node scripts/fram-catalog-scraper.js --limit 50
- *   node scripts/fram-catalog-scraper.js --url https://www.fram.com/fram-extra-guard-oil-filter-spin-on-ph2
+ *   node scripts/fram-catalog-scraper.js --sku PH2
  *   node scripts/fram-catalog-scraper.js --dry-run
+ *   node scripts/fram-catalog-scraper.js --api-only   (solo descarga catálogo API, sin scrape)
  */
 
 let puppeteer;
 try { puppeteer = require("puppeteer-core"); }
 catch { puppeteer = require("puppeteer"); }
 
+const axios  = require("axios");
 const { Client } = require("pg");
 const fs   = require("fs");
 const path = require("path");
 
-// ─── Filtros de tipo de producto a incluir ────────────────────────────────────
-// Patrones en la URL que indican filtros relevantes
-const FILTER_URL_PATTERNS = [
-  "oil-filter", "air-filter", "cabin-air", "cabin-filter",
-  "fuel-filter", "transmission-filter"
-];
-
-// Prefijos de part numbers FRAM por categoría → SKU prefix ELIMFILTERS
-const FRAM_SKU_MAP = {
-  // Oil filters
-  PH: "EL8", XG: "EL8", TG: "EL8", HM: "EL8",
-  // Air filters
-  CA: "EA1", CF: "EC1",
-  // Fuel
-  G: "EF9",
-  // Default
-  DEFAULT: "EL8"
+// ─── Prefijos FRAM → categoría ELIMFILTERS ────────────────────────────────────
+const PREFIX_MAP = {
+  PH:  { skuPrefix: "EL8", filterType: "Lube",       tech: "SYNTEPORE™"  },
+  XG:  { skuPrefix: "EL8", filterType: "Lube",       tech: "ULTRAPORE™"  },
+  TG:  { skuPrefix: "EL8", filterType: "Lube",       tech: "SYNTEPORE™"  },
+  HM:  { skuPrefix: "EL8", filterType: "Lube",       tech: "SYNTEPORE™"  },
+  CA:  { skuPrefix: "EA1", filterType: "Air Filter",  tech: "DURAFLOW™"   },
+  CF:  { skuPrefix: "EC1", filterType: "Cabin Air",   tech: "FRESHFLOW™"  },
+  G:   { skuPrefix: "EF9", filterType: "Fuel Filter", tech: "SYNTEPORE™"  },
 };
+
+// Part number prefixes a incluir
+const INCLUDE_PREFIXES = Object.keys(PREFIX_MAP);
 
 // ─── CLI ──────────────────────────────────────────────────────────────────────
 function getArg(flag) {
   const i = process.argv.indexOf(flag);
   return i !== -1 ? process.argv[i + 1] : null;
 }
-const LIMIT   = parseInt(getArg("--limit") || "999999", 10);
-const URL_ARG = getArg("--url");
-const DRY_RUN = process.argv.includes("--dry-run");
+const LIMIT    = parseInt(getArg("--limit") || "999999", 10);
+const SKU_ARG  = getArg("--sku");
+const DRY_RUN  = process.argv.includes("--dry-run");
+const API_ONLY = process.argv.includes("--api-only");
 
 // ─── PostgreSQL ───────────────────────────────────────────────────────────────
 const pgClient = new Client({
@@ -64,125 +65,98 @@ const pgClient = new Client({
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-// ─── Determinar prefijo SKU desde part number ─────────────────────────────────
-function getSKUPrefix(partNumber) {
+// ─── SKU builder ─────────────────────────────────────────────────────────────
+function getMapping(partNumber) {
   const upper = (partNumber || "").toUpperCase();
-  for (const [prefix, sku] of Object.entries(FRAM_SKU_MAP)) {
-    if (prefix !== "DEFAULT" && upper.startsWith(prefix)) return sku;
+  for (const [prefix, map] of Object.entries(PREFIX_MAP)) {
+    if (upper.startsWith(prefix)) return map;
   }
-  return FRAM_SKU_MAP.DEFAULT;
-}
-
-// SKU = prefix + últimos 4 dígitos del part number, padded (EL8 + PH2→0002 = EL80002)
-function buildSKU(partNumber) {
-  const prefix  = getSKUPrefix(partNumber);
-  const digits  = (partNumber || "").replace(/\D/g, "");
-  const last4   = digits.slice(-4).padStart(4, "0");
-  return prefix + last4;
-}
-
-function getFilterType(partNumber) {
-  const upper = (partNumber || "").toUpperCase();
-  if (upper.startsWith("CA"))  return "Air Filter";
-  if (upper.startsWith("CF"))  return "Cabin Air";
-  if (upper.startsWith("G"))   return "Fuel Filter";
-  return "Lube";
-}
-
-// ─── Descubrir sitemap de FRAM ────────────────────────────────────────────────
-async function discoverSitemap(page) {
-  console.log("Buscando sitemap FRAM...");
-
-  // Paso 1: robots.txt
-  try {
-    await page.goto("https://www.fram.com/robots.txt",
-      { waitUntil: "domcontentloaded", timeout: 15000 });
-    const text = await page.evaluate(() => document.body.innerText || "");
-    const match = text.match(/Sitemap:\s*(https?:\/\/\S+)/i);
-    if (match) {
-      console.log(`  Sitemap encontrado en robots.txt: ${match[1]}`);
-      return match[1];
-    }
-  } catch (e) { /* continuar */ }
-
-  // Paso 2: rutas Magento comunes
-  const candidates = [
-    "https://www.fram.com/sitemap.xml",
-    "https://www.fram.com/pub/sitemap.xml",
-    "https://www.fram.com/media/sitemap.xml",
-    "https://www.fram.com/sitemap/sitemap.xml",
-    "https://www.fram.com/sitemap_index.xml",
-  ];
-
-  for (const url of candidates) {
-    try {
-      const res = await page.goto(url,
-        { waitUntil: "domcontentloaded", timeout: 10000 });
-      if (res && res.status() === 200) {
-        const ct = res.headers()["content-type"] || "";
-        if (ct.includes("xml") || ct.includes("text")) {
-          const text = await page.evaluate(() => document.body.innerText || "");
-          if (text.includes("<url>") || text.includes("<sitemap>")) {
-            console.log(`  Sitemap encontrado: ${url}`);
-            return url;
-          }
-        }
-      }
-    } catch (e) { /* continuar */ }
-  }
-
-  console.log("  No se encontró sitemap automáticamente.");
   return null;
 }
 
-// ─── Parsear sitemap y extraer URLs de productos ──────────────────────────────
-async function extractProductUrls(page, sitemapUrl) {
-  console.log(`Parseando sitemap: ${sitemapUrl}`);
-
-  await page.goto(sitemapUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
-
-  const urls = await page.evaluate((patterns) => {
-    const text = document.body.innerText || document.documentElement.innerText || "";
-
-    // Buscar sub-sitemaps (sitemap index)
-    const subsitemaps = [...text.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
-      .map(m => m[1])
-      .filter(u => u.includes("sitemap") && u.endsWith(".xml"));
-
-    if (subsitemaps.length > 0) return { type: "index", urls: subsitemaps };
-
-    // Extraer URLs de producto
-    const productUrls = [...text.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
-      .map(m => m[1])
-      .filter(u => patterns.some(p => u.includes(p)));
-
-    return { type: "products", urls: productUrls };
-  }, FILTER_URL_PATTERNS);
-
-  // Si es un sitemap index, procesar cada sub-sitemap
-  if (urls.type === "index") {
-    console.log(`  Es sitemap index con ${urls.urls.length} sub-sitemaps`);
-    const allProducts = [];
-    for (const sub of urls.urls) {
-      try {
-        await page.goto(sub, { waitUntil: "domcontentloaded", timeout: 20000 });
-        const subUrls = await page.evaluate((patterns) => {
-          const text = document.body.innerText || "";
-          return [...text.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
-            .map(m => m[1])
-            .filter(u => patterns.some(p => u.includes(p)));
-        }, FILTER_URL_PATTERNS);
-        allProducts.push(...subUrls);
-        await sleep(500);
-      } catch (e) { /* skip */ }
-    }
-    return allProducts;
-  }
-
-  return urls.urls;
+function buildSKU(partNumber) {
+  const map    = getMapping(partNumber) || { skuPrefix: "EL8" };
+  const digits = (partNumber || "").replace(/\D/g, "");
+  const last4  = digits.slice(-4).padStart(4, "0");
+  return map.skuPrefix + last4;
 }
 
-// ─── Scrape de una página de producto FRAM ───────────────────────────────────
+// ─── Extraer atributo de custom_attributes ────────────────────────────────────
+function getAttr(customAttributes, code) {
+  const item = (customAttributes || []).find(a => a.attribute_code === code);
+  return item ? item.value : null;
+}
+
+// ─── API REST: obtener catálogo completo FRAM ─────────────────────────────────
+async function fetchFRAMCatalog() {
+  console.log("Descargando catálogo FRAM via REST API...");
+
+  const allProducts = [];
+  let   currentPage = 1;
+  let   totalCount  = Infinity;
+  const pageSize    = 100;
+
+  while (allProducts.length < totalCount) {
+    const url = `https://www.fram.com/rest/V1/products` +
+      `?searchCriteria[pageSize]=${pageSize}` +
+      `&searchCriteria[currentPage]=${currentPage}` +
+      `&fields=items[id,sku,name,custom_attributes[attribute_code,value]]` +
+      `,total_count`;
+
+    try {
+      const res = await axios.get(url, {
+        headers: {
+          "Accept": "application/json",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0.0.0"
+        },
+        timeout: 30000
+      });
+
+      totalCount = res.data.total_count || 0;
+      const items = res.data.items || [];
+      allProducts.push(...items);
+
+      process.stdout.write(`\r  Página ${currentPage} — ${allProducts.length}/${totalCount} productos`);
+
+      if (items.length < pageSize) break;
+      currentPage++;
+      await sleep(500);
+
+    } catch (e) {
+      console.error(`\n  Error en página ${currentPage}: ${e.message}`);
+      break;
+    }
+  }
+
+  console.log(`\n  Total descargado: ${allProducts.length} productos`);
+  return allProducts;
+}
+
+// ─── Filtrar solo los productos relevantes ─────────────────────────────────────
+function filterRelevantProducts(products) {
+  return products.filter(p => {
+    const sku = (p.sku || "").toUpperCase();
+    return INCLUDE_PREFIXES.some(prefix => sku.startsWith(prefix));
+  });
+}
+
+// ─── Extraer specs desde custom_attributes ─────────────────────────────────────
+function extractSpecs(customAttributes) {
+  const specs = {};
+  const fields = [
+    "height", "outside_diameter", "inside_diameter", "inside_thread_diameter",
+    "anti_drain_back_valve", "bypass_relief_valve", "bypass_relief_valve_setting",
+    "filter_media_material", "attachment_type", "gasket_type",
+    "turning_specification", "burst_pressure"
+  ];
+  fields.forEach(f => {
+    const v = getAttr(customAttributes, f);
+    if (v) specs[f] = v;
+  });
+  return specs;
+}
+
+// ─── Scrape de la página de producto (applications + cross-refs) ──────────────
 async function scrapeProductPage(page, productUrl) {
   try {
     await page.goto(productUrl, { waitUntil: "networkidle2", timeout: 40000 });
@@ -191,25 +165,15 @@ async function scrapeProductPage(page, productUrl) {
     return { error: e.message };
   }
 
-  const status = await page.evaluate(() => {
-    // Verificar 404
-    if (document.title.includes("404") || document.title.includes("Not Found")) return 404;
-    // Verificar que cargaron las tablas
-    const appTable  = document.querySelector("#applicationsTable tbody");
-    const compTable = document.querySelector("#competitorTable tbody");
-    return { hasApp: !!appTable, hasComp: !!compTable };
+  const ok = await page.evaluate(() => {
+    if (document.title.includes("404")) return false;
+    return !!(document.querySelector("#applicationsTable") ||
+              document.querySelector("#competitorTable"));
   });
 
-  if (status === 404) return { notFound: true };
+  if (!ok) return { notFound: true };
 
-  const data = await page.evaluate(() => {
-    // ── Nombre del producto ────────────────────────────────────────────────
-    const name = (
-      document.querySelector("h1.page-title span") ||
-      document.querySelector("h1") ||
-      document.querySelector(".product-name")
-    )?.innerText?.trim() || "";
-
+  return page.evaluate(() => {
     // ── Aplicaciones vehiculares ───────────────────────────────────────────
     const applications = [];
     document.querySelectorAll("#applicationsTable tbody tr").forEach(tr => {
@@ -223,7 +187,7 @@ async function scrapeProductPage(page, productUrl) {
       }
     });
 
-    // ── Cross-references / Competidores ────────────────────────────────────
+    // ── Cross-references ───────────────────────────────────────────────────
     const competitors = [];
     document.querySelectorAll("#competitorTable tbody tr").forEach(tr => {
       const tds = tr.querySelectorAll("td");
@@ -236,64 +200,77 @@ async function scrapeProductPage(page, productUrl) {
       }
     });
 
-    // ── Especificaciones adicionales ───────────────────────────────────────
-    const specs = {};
-    document.querySelectorAll(".product-specs tr, .specs-table tr").forEach(tr => {
-      const tds = tr.querySelectorAll("td, th");
-      if (tds.length >= 2) {
-        const key = tds[0].innerText.trim().toLowerCase().replace(/\s+/g, "_");
-        const val = tds[1].innerText.trim();
-        if (key && val) specs[key] = val;
-      }
-    });
-
-    return { name, applications, competitors, specs };
+    return { applications, competitors };
   });
-
-  return data;
 }
 
 // ─── Upsert en PostgreSQL ─────────────────────────────────────────────────────
-async function upsertProduct(sku, codigoBase, filterType, name, data) {
+async function upsertProduct(sku, framSku, filterType, tech, name, specs, pageData) {
   await pgClient.query(`
     INSERT INTO elimfilters_catalog (
       sku, codigo_base, filter_type, technology, name,
-      competitor_codes, vehicle_applications
-    ) VALUES ($1, $2, $3, $4, $5, $6::jsonb, $7::jsonb)
+      competitor_codes, vehicle_applications, specs
+    ) VALUES ($1, $2, $3, $4, $5, $6::jsonb, $7::jsonb, $8::jsonb)
     ON CONFLICT (sku) DO UPDATE SET
       competitor_codes     = EXCLUDED.competitor_codes,
       vehicle_applications = EXCLUDED.vehicle_applications,
-      name = COALESCE(EXCLUDED.name, elimfilters_catalog.name)
+      name                 = COALESCE(EXCLUDED.name, elimfilters_catalog.name),
+      specs                = COALESCE(EXCLUDED.specs, elimfilters_catalog.specs)
   `, [
-    sku,
-    codigoBase,
-    filterType,
-    "FRAM LD",
-    name || null,
-    JSON.stringify(data.competitors || []),
-    JSON.stringify(data.applications || [])
+    sku, framSku, filterType, tech, name || null,
+    JSON.stringify(pageData?.competitors || []),
+    JSON.stringify(pageData?.applications || []),
+    JSON.stringify(specs || {})
   ]);
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log("\n=== FRAM CATALOG SCRAPER — LD ===");
-  console.log(`Modo     : ${DRY_RUN ? "DRY-RUN (sin escritura DB)" : "PRODUCCIÓN"}`);
-  if (URL_ARG)  console.log(`URL      : ${URL_ARG}`);
+  console.log("\n=== FRAM LD CATALOG SCRAPER ===");
+  console.log(`Modo     : ${DRY_RUN ? "DRY-RUN" : "PRODUCCIÓN"}${API_ONLY ? " + API_ONLY" : ""}`);
+  if (SKU_ARG) console.log(`SKU      : ${SKU_ARG}`);
   if (LIMIT < 999999) console.log(`Límite   : ${LIMIT}`);
 
+  // ── STEP 1: Obtener catálogo via API REST ──────────────────────────────────
+  let products = await fetchFRAMCatalog();
+
+  // Filtrar productos relevantes
+  products = filterRelevantProducts(products);
+  console.log(`Productos relevantes (${INCLUDE_PREFIXES.join(",")}): ${products.length}`);
+
+  // Filtrar por SKU específico si se indicó
+  if (SKU_ARG) {
+    products = products.filter(p => p.sku.toUpperCase() === SKU_ARG.toUpperCase());
+  }
+
+  products = products.slice(0, LIMIT);
+  console.log(`A procesar: ${products.length}\n`);
+
+  // Guardar catálogo API
+  const apiFile = path.join(__dirname, "..", "scrape_reports", "fram-api-catalog.json");
+  fs.mkdirSync(path.dirname(apiFile), { recursive: true });
+  fs.writeFileSync(apiFile, JSON.stringify(products, null, 2));
+  console.log(`Catálogo API guardado: ${apiFile}`);
+
+  if (API_ONLY) {
+    console.log("\nModo API_ONLY — terminando sin scrape de páginas.");
+    return;
+  }
+
+  // ── Preparar DB ────────────────────────────────────────────────────────────
   if (!DRY_RUN) {
     await pgClient.connect();
     console.log("PostgreSQL conectado");
-
-    // Crear columna vehicle_applications si no existe
-    await pgClient.query(`
-      ALTER TABLE elimfilters_catalog
-      ADD COLUMN IF NOT EXISTS vehicle_applications JSONB DEFAULT '[]'
-    `).catch(() => {});
+    // Añadir columnas nuevas si no existen
+    for (const col of [
+      "ADD COLUMN IF NOT EXISTS vehicle_applications JSONB DEFAULT '[]'",
+      "ADD COLUMN IF NOT EXISTS specs JSONB DEFAULT '{}'",
+    ]) {
+      await pgClient.query(`ALTER TABLE elimfilters_catalog ${col}`).catch(() => {});
+    }
   }
 
-  // ── Chrome
+  // ── STEP 2: Puppeteer para applications + cross-refs ──────────────────────
   const CHROME_PATHS = [
     "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
@@ -326,86 +303,76 @@ async function main() {
   );
   await page.setExtraHTTPHeaders({
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
     "Referer": "https://www.fram.com/"
   });
 
-  // Visitar home para cookies
   await page.goto("https://www.fram.com/",
     { waitUntil: "networkidle2", timeout: 30000 }).catch(() => {});
   await sleep(2000);
 
-  // ── Obtener lista de URLs
-  let productUrls = [];
-
-  if (URL_ARG) {
-    productUrls = [URL_ARG];
-  } else {
-    const sitemapUrl = await discoverSitemap(page);
-    if (sitemapUrl) {
-      productUrls = await extractProductUrls(page, sitemapUrl);
-      console.log(`URLs de producto encontradas: ${productUrls.length}`);
-    } else {
-      console.error("No se pudo obtener el sitemap. Usa --url para probar con una URL específica.");
-      await browser.close();
-      if (!DRY_RUN) await pgClient.end();
-      process.exit(1);
-    }
-  }
-
-  // Aplicar límite
-  productUrls = productUrls.slice(0, LIMIT);
-  console.log(`A procesar: ${productUrls.length}\n`);
-
   let processed = 0, saved = 0, noData = 0, errs = 0;
   const allResults = [];
 
-  for (const url of productUrls) {
-    // partNumber = último segmento del URL
-    const partNumber = url.split("-").pop().toUpperCase();
-    const sku        = buildSKU(partNumber);
-    const filterType = getFilterType(partNumber);
+  for (const product of products) {
+    const framSku  = product.sku.toUpperCase();
+    const sku      = buildSKU(framSku);
+    const map      = getMapping(framSku);
+    const urlKey   = getAttr(product.custom_attributes, "url_key") || "";
+    const prodUrl  = urlKey ? `https://www.fram.com/${urlKey}` : null;
+    const specs    = extractSpecs(product.custom_attributes);
 
     processed++;
     process.stdout.write(
-      `  [${String(processed).padStart(5)}/${productUrls.length}] ` +
-      `${partNumber.padEnd(10)} → ${sku.padEnd(14)} ... `
+      `  [${String(processed).padStart(5)}/${products.length}] ` +
+      `${framSku.padEnd(10)} → ${sku.padEnd(10)} ... `
     );
 
-    const data = await scrapeProductPage(page, url);
+    if (!prodUrl) {
+      console.log("sin URL (no url_key)");
+      noData++;
+      continue;
+    }
 
-    if (data.error) {
-      console.log(`ERROR: ${data.error}`);
+    const pageData = await scrapeProductPage(page, prodUrl);
+
+    if (pageData.error) {
+      console.log(`ERROR: ${pageData.error}`);
       errs++;
-    } else if (data.notFound) {
+    } else if (pageData.notFound) {
       console.log("404");
       noData++;
     } else {
-      const apps  = (data.applications  || []).length;
-      const xrefs = (data.competitors   || []).length;
-      console.log(`OK  apps=${apps}  xref=${xrefs}  "${(data.name||"").slice(0,40)}"`);
+      const apps  = (pageData.applications || []).length;
+      const xrefs = (pageData.competitors  || []).length;
+      console.log(`OK  apps=${String(apps).padStart(3)}  xref=${String(xrefs).padStart(3)}  "${(product.name||"").slice(0,35)}"`);
       saved++;
 
       if (!DRY_RUN) {
         try {
-          await upsertProduct(sku, partNumber, filterType, data.name, data);
+          await upsertProduct(
+            sku, framSku,
+            map?.filterType || "Lube",
+            map?.tech || "SYNTEPORE™",
+            product.name,
+            specs, pageData
+          );
         } catch (e) {
           console.error(`    DB error: ${e.message}`);
         }
       }
     }
 
-    allResults.push({ url, partNumber, sku, filterType, ...data });
-    await sleep(1500 + Math.random() * 1000);
+    allResults.push({ framSku, sku, url: prodUrl, specs, ...pageData });
+    await sleep(1500 + Math.random() * 800);
   }
 
   await browser.close();
   if (!DRY_RUN) await pgClient.end();
 
-  // ── Guardar JSON
+  // ── Guardar JSON ────────────────────────────────────────────────────────────
   const ts      = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
   const outFile = path.join(__dirname, "..", "scrape_reports", `fram-catalog-${ts}.json`);
-  fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, JSON.stringify({
     meta: { ts, processed, saved, noData, errors: errs },
     results: allResults
@@ -418,12 +385,11 @@ async function main() {
   console.log(`Errores    : ${errs}`);
   console.log(`Guardado   : ${outFile}`);
 
-  // Muestra
   const sample = allResults.filter(r => (r.applications||[]).length > 0).slice(0, 3);
   if (sample.length) {
     console.log("\n── Muestra ──");
     sample.forEach(r => {
-      console.log(`\n  ${r.sku} / ${r.partNumber}  apps=${r.applications?.length}  xref=${r.competitors?.length}`);
+      console.log(`\n  ${r.sku} / ${r.framSku}  apps=${r.applications?.length}  xref=${r.competitors?.length}`);
       r.applications?.slice(0, 3).forEach(a =>
         console.log(`    APP  : ${a.year} ${a.make} ${a.model} ${a.engine}`)
       );
