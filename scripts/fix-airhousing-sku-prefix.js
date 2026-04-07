@@ -29,12 +29,16 @@ async function main() {
   await pgClient.connect();
   console.log("PostgreSQL conectado\n");
 
-  // Buscar Air Housings con SKU que empiece en EA1
+  // Buscar productos EA1 que son carcasas (Air Housing) o cuyo código
+  // Donaldson empieza con A o G (series de housings en Donaldson)
   const { rows } = await pgClient.query(`
     SELECT sku, codigo_base, filter_type, technology
     FROM elimfilters_catalog
-    WHERE filter_type = 'Air Housing'
-      AND sku LIKE 'EA1%'
+    WHERE sku LIKE 'EA1%'
+      AND (
+        filter_type = 'Air Housing'
+        OR codigo_base ~ '^[AG][0-9]'
+      )
     ORDER BY sku
   `);
 
