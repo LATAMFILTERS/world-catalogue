@@ -73,6 +73,14 @@ function getSKUPrefix(partNumber) {
   return FRAM_SKU_MAP.DEFAULT;
 }
 
+// SKU = prefix + últimos 4 dígitos del part number, padded (EL8 + PH2→0002 = EL80002)
+function buildSKU(partNumber) {
+  const prefix  = getSKUPrefix(partNumber);
+  const digits  = (partNumber || "").replace(/\D/g, "");
+  const last4   = digits.slice(-4).padStart(4, "0");
+  return prefix + last4;
+}
+
 function getFilterType(partNumber) {
   const upper = (partNumber || "").toUpperCase();
   if (upper.startsWith("CA"))  return "Air Filter";
@@ -355,7 +363,7 @@ async function main() {
   for (const url of productUrls) {
     // partNumber = último segmento del URL
     const partNumber = url.split("-").pop().toUpperCase();
-    const sku        = getSKUPrefix(partNumber) + partNumber;
+    const sku        = buildSKU(partNumber);
     const filterType = getFilterType(partNumber);
 
     processed++;
