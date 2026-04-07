@@ -264,9 +264,6 @@ async function main() {
 
   products = products.slice(0, LIMIT);
   console.log(`A procesar: ${products.length}\n`);
-    console.log("\nModo API_ONLY — terminando sin scrape de páginas.");
-    return;
-  }
 
   // ── Preparar DB ────────────────────────────────────────────────────────────
   if (!DRY_RUN) {
