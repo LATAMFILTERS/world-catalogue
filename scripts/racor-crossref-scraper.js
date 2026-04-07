@@ -123,6 +123,21 @@ async function extractCrossRefs(page) {
   });
 }
 
+// Mapa de códigos V-series (DB) → nomenclatura estándar Racor (sitio cross-ref)
+const RACOR_ALIASES = {
+  "2010V30": ["2010PM","2010-30"],
+  "2010V10": ["2010TM","2010-10"],
+  "2010V2":  ["2010SM","2010-2"],
+  "2020V30": ["2020PM","2020-30"],
+  "2020V10": ["2020TM","2020-10"],
+  "2020V2":  ["2020SM","2020-2"],
+  "2040V30": ["2040PM","2040-30"],
+  "2040V10": ["2040TM","2040-10"],
+  "2040V2":  ["2040SM","2040-2"],
+  "900FH":   ["900FH","900FH-30"],
+  "500FG":   ["500FG","500FG-30"],
+};
+
 async function scrapePage(page, racorCode) {
   const url = `https://www.fuelfilter-crossreference.com/convert/RACOR/${racorCode}`;
   try {
@@ -236,7 +251,21 @@ async function main() {
       `  [${String(processed).padStart(2)}/${rows.length}] ${row.sku.padEnd(10)} (${row.codigo_base.padEnd(12)}) ... `
     );
 
-    const res = await scrapePage(page, row.codigo_base);
+    let res = await scrapePage(page, row.codigo_base);
+
+    // Si no hay datos, intentar aliases (V30→PM, V10→TM, V2→SM)
+    if (!res.error && res.total === 0) {
+      const aliases = RACOR_ALIASES[row.codigo_base] || [];
+      for (const alias of aliases) {
+        await sleep(1000);
+        const aliasRes = await scrapePage(page, alias);
+        if (!aliasRes.error && aliasRes.total > 0) {
+          process.stdout.write(`(via ${alias}) `);
+          res = aliasRes;
+          break;
+        }
+      }
+    }
 
     if (res.error) {
       console.log(`ERROR: ${res.error}`);
