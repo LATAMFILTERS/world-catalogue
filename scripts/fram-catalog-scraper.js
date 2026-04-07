@@ -327,12 +327,19 @@ async function main() {
     const sku      = buildSKU(framSku);
     const map      = getMapping(framSku);
     const urlKey   = getAttr(product.custom_attributes, "url_key") || "";
-    // Si el url_key no termina en el part number, añadirlo (CA/CF comparten url_key de familia)
-    const urlEndsWithSku = urlKey.toLowerCase().endsWith(framSku.toLowerCase());
-    const fullUrlKey = urlKey && !urlEndsWithSku
-      ? `${urlKey}-${framSku.toLowerCase()}`
-      : urlKey;
-    const prodUrl  = fullUrlKey ? `https://www.fram.com/${fullUrlKey}` : null;
+    // Construir URL del producto:
+    // - Si url_key ya incluye el SKU (ej: oil-filter-xg7317) → usarlo directo
+    // - Si url_key es de familia compartida (CA/CF) → usar patrón {filter-type}-{sku}
+    let prodUrl = null;
+    if (urlKey.toLowerCase().includes(framSku.toLowerCase())) {
+      prodUrl = `https://www.fram.com/${urlKey}`;
+    } else if (framSku.startsWith("CA") || framSku.startsWith("CAK")) {
+      prodUrl = `https://www.fram.com/air-filter-${framSku.toLowerCase()}`;
+    } else if (framSku.startsWith("CF")) {
+      prodUrl = `https://www.fram.com/cabin-air-filter-${framSku.toLowerCase()}`;
+    } else if (urlKey) {
+      prodUrl = `https://www.fram.com/${urlKey}`;
+    }
     const specs    = extractSpecs(product.custom_attributes);
 
     processed++;
