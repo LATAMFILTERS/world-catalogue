@@ -243,16 +243,27 @@ async function main() {
     products = products.filter(p => p.sku.toUpperCase() === SKU_ARG.toUpperCase());
   }
 
-  products = products.slice(0, LIMIT);
-  console.log(`A procesar: ${products.length}\n`);
-
-  // Guardar catálogo API
+  // Guardar catálogo API completo ANTES de aplicar limit
   const apiFile = path.join(__dirname, "..", "scrape_reports", "fram-api-catalog.json");
   fs.mkdirSync(path.dirname(apiFile), { recursive: true });
   fs.writeFileSync(apiFile, JSON.stringify(products, null, 2));
-  console.log(`Catálogo API guardado: ${apiFile}`);
+  console.log(`Catálogo API guardado: ${apiFile} (${products.length} productos)`);
 
   if (API_ONLY) {
+    // Mostrar breakdown por prefijo
+    const counts = {};
+    products.forEach(p => {
+      const prefix = p.sku.replace(/\d.*/, "").toUpperCase();
+      counts[prefix] = (counts[prefix] || 0) + 1;
+    });
+    console.log("\nBreakdown por prefijo:");
+    Object.entries(counts).sort((a,b) => b[1]-a[1])
+      .forEach(([k,v]) => console.log(`  ${k.padEnd(6)}: ${v}`));
+    return;
+  }
+
+  products = products.slice(0, LIMIT);
+  console.log(`A procesar: ${products.length}\n`);
     console.log("\nModo API_ONLY — terminando sin scrape de páginas.");
     return;
   }
@@ -319,7 +330,12 @@ async function main() {
     const sku      = buildSKU(framSku);
     const map      = getMapping(framSku);
     const urlKey   = getAttr(product.custom_attributes, "url_key") || "";
-    const prodUrl  = urlKey ? `https://www.fram.com/${urlKey}` : null;
+    // Si el url_key no termina en el part number, añadirlo (CA/CF comparten url_key de familia)
+    const urlEndsWithSku = urlKey.toLowerCase().endsWith(framSku.toLowerCase());
+    const fullUrlKey = urlKey && !urlEndsWithSku
+      ? `${urlKey}-${framSku.toLowerCase()}`
+      : urlKey;
+    const prodUrl  = fullUrlKey ? `https://www.fram.com/${fullUrlKey}` : null;
     const specs    = extractSpecs(product.custom_attributes);
 
     processed++;
