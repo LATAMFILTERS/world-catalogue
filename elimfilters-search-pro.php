@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V6.4
+ * Plugin Name: ELIMFILTERS Search Pro V6.5
  * Description: Barra fija 6.5%, asistente reactivo y card de resultados con tabs.
  * Version: 6.4
  */
@@ -13,7 +13,7 @@ add_shortcode('elimfilters_search', function() {
 
     ob_start(); ?>
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 #ef_root_v62 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,44 +69,58 @@ add_shortcode('elimfilters_search', function() {
 
 /* ===================== MODAL ===================== */
 #ef_modal_v62 {
-    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96);
-    z-index: 99999; overflow-y: auto; padding: 40px 20px;
-    font-family: 'Inter', sans-serif;
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97);
+    z-index: 99999; overflow-y: auto; padding: 32px 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 #ef_modal_v62.open { display: block; }
-.ef-modal-inner { max-width: 960px; margin: 0 auto; }
+.ef-modal-inner { max-width: 1280px; width: 100%; margin: 0 auto; }
 .ef-modal-close-row {
-    display: flex; justify-content: flex-end; margin-bottom: 24px;
+    display: flex; justify-content: flex-end; margin-bottom: 20px;
 }
 .ef-modal-close-btn {
-    background: none; border: 1px solid #333; color: #aaa;
-    padding: 8px 18px; cursor: pointer; font-size: 13px; letter-spacing: 1px;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-    text-transform: uppercase;
+    background: none; border: 1px solid #2a2a2a; color: #666;
+    padding: 8px 20px; cursor: pointer; font-size: 11px; letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif; font-weight: 600;
+    text-transform: uppercase; transition: all .2s;
 }
-.ef-modal-close-btn:hover { border-color: #666; color: #fff; }
+.ef-modal-close-btn:hover { border-color: #555; color: #ccc; }
 
 /* ===================== RESULT CARD ===================== */
 .ef-rc {
-    background: #0a0a0a; overflow: hidden;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.9);
+    background: #0a0a0a; overflow: hidden; width: 100%;
+    box-shadow: 0 16px 64px rgba(0,0,0,0.95);
 }
 
-/* --- Header --- */
+/* --- Header: SKU left | description + title right --- */
 .ef-rc-header {
-    padding: 28px 36px 22px;
-    display: flex; justify-content: space-between; align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    padding: 36px 44px 28px;
+    border-bottom: 1px solid #141414;
+    align-items: start;
 }
 .ef-rc-sku {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 4.2rem; font-weight: 900; color: #FFF12D;
-    line-height: 1; letter-spacing: 2px;
+    font-size: 5rem; font-weight: 900; color: #FFF12D;
+    line-height: 0.9; letter-spacing: 3px; white-space: nowrap;
 }
+.ef-rc-header-right {
+    display: flex; flex-direction: column;
+    justify-content: space-between; min-height: 80px;
+}
+.ef-rc-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12.5px; font-weight: 400; color: #888;
+    line-height: 1.75; max-width: 720px;
+}
+.ef-rc-desc strong { color: #bbb; font-weight: 600; }
 .ef-rc-tech-spec-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 700; letter-spacing: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 4px;
     color: #fff; text-transform: uppercase;
-    padding-top: 14px; white-space: nowrap;
+    text-align: right; margin-top: 14px;
 }
 
 /* --- Body --- */
@@ -114,22 +128,22 @@ add_shortcode('elimfilters_search', function() {
 
 /* --- Sidebar --- */
 .ef-rc-sidebar {
-    width: 110px; min-width: 110px; background: #080808;
-    border-right: 1px solid #161616;
+    width: 120px; min-width: 120px; background: #070707;
+    border-right: 1px solid #141414;
     display: flex; flex-direction: column;
-    align-items: center; padding: 30px 12px 24px; gap: 16px;
+    align-items: center; padding: 36px 14px 28px; gap: 18px;
 }
 .ef-rc-sidebar .ef-logo-mark {
-    width: 72px; height: auto; object-fit: contain;
+    width: 78px; height: auto; object-fit: contain;
 }
 .ef-rc-sidebar .ef-logo-full {
-    width: 80px; height: auto; object-fit: contain; filter: brightness(0.9);
+    width: 84px; height: auto; object-fit: contain; filter: brightness(0.85);
 }
 .ef-rc-sidebar .ef-gq {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 9px; letter-spacing: 2px; color: #3a3a3a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px; letter-spacing: 2.5px; color: #303030;
     text-transform: uppercase; text-align: center;
-    margin-top: -10px;
+    margin-top: -12px;
 }
 
 /* --- Content --- */
@@ -137,107 +151,101 @@ add_shortcode('elimfilters_search', function() {
 
 /* --- Tabs --- */
 .ef-rc-tabs {
-    display: flex; border-bottom: 1px solid #1a1a1a;
-    padding: 0 16px; overflow-x: auto; scrollbar-width: none;
+    display: flex; border-bottom: 1px solid #141414;
+    padding: 0 28px; overflow-x: auto; scrollbar-width: none;
 }
 .ef-rc-tabs::-webkit-scrollbar { display: none; }
 .ef-rc-tab {
-    padding: 14px 18px; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px; font-weight: 700; letter-spacing: 1.5px;
-    color: #3a3a3a; cursor: pointer; text-transform: uppercase;
+    padding: 15px 20px; font-family: 'Montserrat', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: #333; cursor: pointer; text-transform: uppercase;
     border-bottom: 3px solid transparent;
     transition: color .18s, border-color .18s;
-    white-space: nowrap; display: flex; align-items: center; gap: 8px;
+    white-space: nowrap; display: flex; align-items: center; gap: 9px;
 }
-.ef-rc-tab:hover { color: #777; }
+.ef-rc-tab:hover { color: #666; }
 .ef-rc-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
 .ef-rc-badge {
-    background: #1c1c1c; color: #555; border-radius: 12px;
-    padding: 2px 9px; font-size: 12px; font-weight: 700;
+    background: #181818; color: #444; border-radius: 12px;
+    padding: 2px 10px; font-size: 11px; font-weight: 700;
 }
-.ef-rc-tab.active .ef-rc-badge { background: rgba(255,241,45,0.1); color: #FFF12D; }
+.ef-rc-tab.active .ef-rc-badge { background: rgba(255,241,45,0.08); color: #FFF12D; }
 
 /* --- Panels --- */
 .ef-rc-panel {
-    display: none; height: 340px; overflow-y: auto;
-    padding: 0 28px 20px;
-    scrollbar-width: thin; scrollbar-color: #252525 #0a0a0a;
+    display: none; height: 360px; overflow-y: auto;
+    padding: 0 44px 24px;
+    scrollbar-width: thin; scrollbar-color: #222 #0a0a0a;
 }
 .ef-rc-panel::-webkit-scrollbar { width: 4px; }
-.ef-rc-panel::-webkit-scrollbar-thumb { background: #252525; border-radius: 2px; }
+.ef-rc-panel::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
 .ef-rc-panel.active { display: block; }
 
-/* --- Specs: 4-column grid (label | value | label | value) --- */
+/* --- Specs: 4-column grid (label | value | label | value) full width --- */
 .ef-specs-grid {
     display: grid;
-    grid-template-columns: minmax(100px,180px) 1fr minmax(100px,180px) 1fr;
-    gap: 0;
+    grid-template-columns: 160px 1fr 160px 1fr;
+    gap: 0; width: 100%;
 }
-/* vertical divider between left pair and right pair */
-.ef-specs-grid .ef-sg-label:nth-child(4n+3) {
-    border-left: 1px solid #1c1c1c;
-    padding-left: 24px;
-}
+.ef-specs-grid .ef-sg-label:nth-child(4n+3),
 .ef-specs-grid .ef-sg-value:nth-child(4n+4) {
-    /* right values - no extra style needed */
+    border-left: 1px solid #161616;
+    padding-left: 32px;
 }
 .ef-sg-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-    color: #444; text-transform: uppercase;
-    padding: 18px 12px 6px 0; border-bottom: 1px solid #141414;
-    align-self: end;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: #3a3a3a; text-transform: uppercase;
+    padding: 20px 16px 8px 0; border-bottom: 1px solid #121212;
 }
 .ef-sg-value {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px; font-weight: 600; color: #e8e8e8;
-    padding: 14px 0 6px 0; border-bottom: 1px solid #141414;
+    font-size: 24px; font-weight: 600; color: #e0e0e0;
+    padding: 16px 16px 8px 0; border-bottom: 1px solid #121212;
     line-height: 1.1;
 }
-.ef-sg-value.ef-hl {
-    color: #FFF12D; font-style: italic; font-size: 24px;
-}
-.ef-sg-value.ef-dash { color: #2a2a2a; font-size: 18px; letter-spacing: 3px; }
+.ef-sg-value.ef-hl { color: #FFF12D; font-style: italic; font-size: 26px; }
+.ef-sg-value.ef-dash { color: #222; font-size: 16px; letter-spacing: 4px; }
 
 /* --- Code grid --- */
 .ef-code-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 8px; padding-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; padding-top: 24px;
 }
 .ef-code-item {
-    background: #111; border: 1px solid #1c1c1c;
-    border-radius: 2px; padding: 10px 14px;
+    background: #0f0f0f; border: 1px solid #181818;
+    border-radius: 2px; padding: 12px 16px;
 }
 .ef-ci-mfr {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-    color: #444; text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    color: #383838; text-transform: uppercase;
 }
 .ef-ci-code {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 17px; font-weight: 600; color: #ddd; margin-top: 2px;
+    font-size: 18px; font-weight: 600; color: #d0d0d0; margin-top: 3px;
 }
 
 /* --- Equipment table --- */
-.ef-equip-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.ef-equip-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
 .ef-equip-table th {
-    text-align: left; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px; letter-spacing: 1.5px;
-    color: #444; text-transform: uppercase;
-    padding: 8px 12px; border-bottom: 1px solid #1a1a1a;
+    text-align: left; font-family: 'Montserrat', sans-serif;
+    font-size: 9px; letter-spacing: 2px;
+    color: #383838; text-transform: uppercase;
+    padding: 10px 14px; border-bottom: 1px solid #161616;
 }
 .ef-equip-table td {
-    padding: 10px 12px; color: #ccc; border-bottom: 1px solid #131313;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 16px;
+    padding: 12px 14px; color: #bbb; border-bottom: 1px solid #111;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 17px;
 }
-.ef-equip-table tr:hover td { background: #0f0f0f; }
+.ef-equip-table tr:hover td { background: #0c0c0c; }
 
 /* --- Empty state --- */
 .ef-empty {
-    color: #2a2a2a; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px; text-align: center;
-    padding: 60px 0; letter-spacing: 2px; text-transform: uppercase;
+    color: #222; font-family: 'Montserrat', sans-serif;
+    font-size: 11px; text-align: center;
+    padding: 70px 0; letter-spacing: 3px; text-transform: uppercase;
 }
 </style>
 
@@ -352,6 +360,29 @@ add_shortcode('elimfilters_search', function() {
     /* ---- Format mm value ---- */
     function mm(v) { return (v !== null && v !== undefined && v !== '') ? v + ' mm' : null; }
 
+    /* ---- Build product description from available data ---- */
+    function buildDesc(p) {
+        const sku     = p.elimfilters_sku || p.sku || '';
+        const type    = p.filter_type  || 'Filter';
+        const tech    = p.technology   || '';
+        const install = p.installation_type || '';
+        const duty    = p.duty || '';
+        const thread  = p.thread_size  || '';
+
+        let line1 = `<strong>${sku}</strong>`;
+        if (install) line1 += ` | ${install} ${type}`;
+        else         line1 += ` | ${type}`;
+
+        let line2 = `Engineered to exceed OEM performance in modern engines`;
+        if (tech)   line2 += `, the Elimfilters® <strong>${sku}</strong> features advanced <strong>${tech}™</strong> media technology for superior contaminant capture`;
+        line2 += `. Its robust construction ensures unrestricted flow and critical system protection`;
+        if (duty)   line2 += ` under ${duty.toLowerCase()} duty operating conditions`;
+        if (thread) line2 += `. Thread: <strong>${thread}</strong>`;
+        line2 += `.`;
+
+        return line1 + ' ' + line2;
+    }
+
     /* ---- Main render ---- */
     function renderCard(p) {
         const sku   = p.elimfilters_sku || p.sku || '—';
@@ -362,10 +393,13 @@ add_shortcode('elimfilters_search', function() {
         content.innerHTML = `
         <div class="ef-rc">
 
-          <!-- HEADER: SKU left, "TECHNICAL SPECIFICATIONS" right, nothing else -->
+          <!-- HEADER: SKU left | description + title right -->
           <div class="ef-rc-header">
             <div class="ef-rc-sku">${sku}</div>
-            <div class="ef-rc-tech-spec-title">Technical Specifications</div>
+            <div class="ef-rc-header-right">
+              <div class="ef-rc-desc">${buildDesc(p)}</div>
+              <div class="ef-rc-tech-spec-title">Technical Specifications</div>
+            </div>
           </div>
 
           <!-- BODY -->
