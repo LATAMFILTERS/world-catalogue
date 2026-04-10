@@ -1,488 +1,497 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V6.5
- * Description: Barra fija 6.5%, asistente reactivo y card de resultados con tabs.
- * Version: 6.4
+ * Plugin Name: ELIMFILTERS Search Pro V7.0
+ * Description: World Catalogue – Premium result card with stable 4-column specs table.
+ * Version: 7.0
  */
 
 if (!defined('ABSPATH')) exit;
 
 add_shortcode('elimfilters_search', function() {
-    $bg_url     = 'https://elimfilters.com/wp-content/uploads/2025/12/Imagen2.png';
+    $bg_url      = 'https://elimfilters.com/wp-content/uploads/2025/12/Imagen2.png';
     $railway_api = 'https://world-catalogue-production.up.railway.app/api/filters/search/homologous';
-
     ob_start(); ?>
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-#ef_root_v62 * { box-sizing: border-box; margin: 0; padding: 0; }
-#ef_hero_v62 {
+/* ── RESET ── */
+#ef_root_v7 *, #ef_modal_v7 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════════
+   HERO + SEARCH BAR  (no tocar)
+══════════════════════════════════════════ */
+#ef_hero_v7 {
     position: relative; width: 100vw; height: 100vh; min-height: 700px;
     margin-left: calc(-50vw + 50%);
     background: url('<?php echo esc_url($bg_url); ?>') no-repeat center center;
     background-size: cover; background-attachment: fixed; overflow: hidden;
 }
-/* BARRA PERFECTA AL 6.5% */
-.ef_search_stage {
+.ef7-stage {
     position: absolute; left: 50%; top: 6.5%; transform: translateX(-50%);
-    width: min(700px, 92vw); z-index: 1000;
+    width: min(700px, 92vw); z-index: 100;
 }
-.ef_nav_tabs {
+.ef7-nav {
     display: grid; grid-template-columns: 1.15fr 0.7fr 1.35fr;
-    align-items: center; width: 100%; height: 54px;
-    background: rgba(0, 0, 0, 0.95); padding: 0 18px; column-gap: 6px;
+    align-items: center; height: 54px;
+    background: rgba(0,0,0,0.95); padding: 0 18px; column-gap: 6px;
 }
-.ef_nav_tabs span {
-    display: flex; align-items: center; justify-content: center;
-    height: 100%; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px; font-weight: 700; color: #676767;
-    text-transform: uppercase; letter-spacing: 0.12em; cursor: pointer;
+.ef7-nav span {
+    display: flex; align-items: center; justify-content: center; height: 100%;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+    color: #676767; text-transform: uppercase; letter-spacing: .12em; cursor: pointer;
+    transition: color .2s;
 }
-.ef_nav_tabs span.active { color: #FFF12D; }
-.ef_nav_tabs span.active::after {
-    content: ''; position: absolute; bottom: 0; left: 16%; right: 16%; height: 2px; background: #FFF12D;
-}
-.ef_input_row {
-    display: flex; align-items: center; width: 100%; height: 62px;
+.ef7-nav span.active { color: #FFF12D; }
+.ef7-input-row {
+    display: flex; align-items: center; height: 62px;
     background: #fff; padding: 0 12px 0 24px; gap: 10px; position: relative;
 }
-.ef_input_row input {
+.ef7-input-row input {
     flex: 1; height: 100%; border: none; outline: none; background: transparent;
     font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 600;
     color: #111; text-transform: uppercase;
 }
-.ef_search_btn {
+.ef7-btn {
     width: 46px; height: 46px; flex-shrink: 0; background: #FFF12D; border: none;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.ef_suggestions {
+.ef7-suggest {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
-    background: #fff; border-top: 1px solid #ececec;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000;
+    background: #fff; border-top: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2); z-index: 200;
 }
-.ef_suggestions.open { display: block; }
-.ef_suggestion_item {
-    padding: 15px 24px; font-family: 'Barlow Condensed', sans-serif;
+.ef7-suggest.open { display: block; }
+.ef7-suggest-item {
+    padding: 14px 24px; font-family: 'Barlow Condensed', sans-serif;
     font-size: 17px; font-weight: 600; color: #111; text-transform: uppercase; cursor: pointer;
 }
+.ef7-suggest-item:hover { background: #f5f5f5; }
 
-/* ===================== MODAL ===================== */
-#ef_modal_v62 {
-    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97);
-    z-index: 99999; overflow-y: auto; padding: 32px 40px;
+/* ══════════════════════════════════════════
+   MODAL OVERLAY
+══════════════════════════════════════════ */
+#ef_modal_v7 {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.97); z-index: 99999;
+    overflow-y: auto; padding: 28px 32px;
     font-family: 'Montserrat', sans-serif;
 }
-#ef_modal_v62.open { display: block; }
-.ef-modal-inner { max-width: 1280px; width: 100%; margin: 0 auto; }
-.ef-modal-close-row {
-    display: flex; justify-content: flex-end; margin-bottom: 20px;
-}
-.ef-modal-close-btn {
-    background: none; border: 1px solid #2a2a2a; color: #666;
-    padding: 8px 20px; cursor: pointer; font-size: 11px; letter-spacing: 2px;
-    font-family: 'Montserrat', sans-serif; font-weight: 600;
-    text-transform: uppercase; transition: all .2s;
-}
-.ef-modal-close-btn:hover { border-color: #555; color: #ccc; }
+#ef_modal_v7.open { display: block; }
+.ef7-modal-wrap { max-width: 1320px; width: 100%; margin: 0 auto; }
 
-/* ===================== RESULT CARD ===================== */
-.ef-rc {
-    background: #0a0a0a; overflow: hidden; width: 100%;
-    box-shadow: 0 16px 64px rgba(0,0,0,0.95);
+/* close button */
+.ef7-close-row { display: flex; justify-content: flex-end; margin-bottom: 18px; }
+.ef7-close-btn {
+    background: none; border: 1px solid #252525; color: #555;
+    padding: 7px 20px; cursor: pointer;
+    font-family: 'Montserrat', sans-serif; font-size: 10px;
+    font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+    transition: border-color .2s, color .2s;
+}
+.ef7-close-btn:hover { border-color: #666; color: #ccc; }
+
+/* ══════════════════════════════════════════
+   RESULT CARD
+══════════════════════════════════════════ */
+.ef7-card {
+    background: #080808; width: 100%;
+    box-shadow: 0 24px 80px rgba(0,0,0,1);
 }
 
-/* --- Header: SKU left | description + title right --- */
-.ef-rc-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 48px;
-    padding: 36px 44px 28px;
-    border-bottom: 1px solid #141414;
-    align-items: start;
+/* ── HEADER ── */
+.ef7-header {
+    padding: 40px 48px 32px;
+    border-bottom: 1px solid #111;
 }
-.ef-rc-sku {
+.ef7-header-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 16px;
+}
+.ef7-sku {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 5rem; font-weight: 900; color: #FFF12D;
-    line-height: 0.9; letter-spacing: 3px; white-space: nowrap;
+    font-size: 5.5rem; font-weight: 900; color: #FFF12D;
+    line-height: .88; letter-spacing: 4px;
 }
-.ef-rc-header-right {
+.ef7-ts-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 5px;
+    color: #e8e8e8; text-transform: uppercase;
+    padding-top: 8px; text-align: right; white-space: nowrap;
+}
+.ef7-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; font-weight: 400; color: #666;
+    line-height: 1.8; max-width: 860px;
+}
+.ef7-desc b { color: #999; font-weight: 600; }
+
+/* ── BODY ── */
+.ef7-body { display: flex; }
+
+/* ── SIDEBAR ── */
+.ef7-sidebar {
+    width: 130px; min-width: 130px; background: #050505;
+    border-right: 1px solid #111;
     display: flex; flex-direction: column;
-    justify-content: space-between; min-height: 80px;
+    align-items: center; justify-content: flex-start;
+    padding: 40px 12px 32px; gap: 20px;
 }
-.ef-rc-desc {
+.ef7-sidebar img.ef7-logo-e {
+    width: 80px; height: auto; display: block;
+}
+.ef7-sidebar img.ef7-logo-full {
+    width: 88px; height: auto; display: block; filter: brightness(.8);
+}
+.ef7-sidebar .ef7-gq {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12.5px; font-weight: 400; color: #888;
-    line-height: 1.75; max-width: 720px;
-}
-.ef-rc-desc strong { color: #bbb; font-weight: 600; }
-.ef-rc-tech-spec-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px; font-weight: 700; letter-spacing: 4px;
-    color: #fff; text-transform: uppercase;
-    text-align: right; margin-top: 14px;
+    font-size: 7.5px; font-weight: 600; letter-spacing: 3px;
+    color: #282828; text-transform: uppercase; text-align: center;
+    margin-top: -14px;
 }
 
-/* --- Body --- */
-.ef-rc-body { display: flex; }
+/* ── CONTENT AREA ── */
+.ef7-content { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
-/* --- Sidebar --- */
-.ef-rc-sidebar {
-    width: 120px; min-width: 120px; background: #070707;
-    border-right: 1px solid #141414;
-    display: flex; flex-direction: column;
-    align-items: center; padding: 36px 14px 28px; gap: 18px;
+/* ── TABS ── */
+.ef7-tabs {
+    display: flex; border-bottom: 1px solid #111;
+    padding: 0 32px; overflow-x: auto;
+    scrollbar-width: none; flex-shrink: 0;
 }
-.ef-rc-sidebar .ef-logo-mark {
-    width: 78px; height: auto; object-fit: contain;
-}
-.ef-rc-sidebar .ef-logo-full {
-    width: 84px; height: auto; object-fit: contain; filter: brightness(0.85);
-}
-.ef-rc-sidebar .ef-gq {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 8px; letter-spacing: 2.5px; color: #303030;
-    text-transform: uppercase; text-align: center;
-    margin-top: -12px;
-}
-
-/* --- Content --- */
-.ef-rc-content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-
-/* --- Tabs --- */
-.ef-rc-tabs {
-    display: flex; border-bottom: 1px solid #141414;
-    padding: 0 28px; overflow-x: auto; scrollbar-width: none;
-}
-.ef-rc-tabs::-webkit-scrollbar { display: none; }
-.ef-rc-tab {
-    padding: 15px 20px; font-family: 'Montserrat', sans-serif;
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-    color: #333; cursor: pointer; text-transform: uppercase;
+.ef7-tabs::-webkit-scrollbar { display: none; }
+.ef7-tab {
+    padding: 16px 22px;
+    font-family: 'Montserrat', sans-serif; font-size: 10.5px;
+    font-weight: 700; letter-spacing: 2px; color: #2e2e2e;
+    text-transform: uppercase; cursor: pointer; white-space: nowrap;
     border-bottom: 3px solid transparent;
     transition: color .18s, border-color .18s;
-    white-space: nowrap; display: flex; align-items: center; gap: 9px;
+    display: flex; align-items: center; gap: 10px;
 }
-.ef-rc-tab:hover { color: #666; }
-.ef-rc-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
-.ef-rc-badge {
-    background: #181818; color: #444; border-radius: 12px;
-    padding: 2px 10px; font-size: 11px; font-weight: 700;
+.ef7-tab:hover { color: #555; }
+.ef7-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
+.ef7-badge {
+    background: #141414; color: #3a3a3a; border-radius: 20px;
+    padding: 2px 10px; font-size: 10px; font-weight: 700;
 }
-.ef-rc-tab.active .ef-rc-badge { background: rgba(255,241,45,0.08); color: #FFF12D; }
+.ef7-tab.active .ef7-badge { background: rgba(255,241,45,.1); color: #FFF12D; }
 
-/* --- Panels --- */
-.ef-rc-panel {
-    display: none; height: 360px; overflow-y: auto;
-    padding: 0 44px 24px;
-    scrollbar-width: thin; scrollbar-color: #222 #0a0a0a;
+/* ── PANELS ── */
+.ef7-panel {
+    display: none; overflow-y: auto; height: 380px;
+    padding: 0 32px 28px;
+    scrollbar-width: thin; scrollbar-color: #1c1c1c #080808;
 }
-.ef-rc-panel::-webkit-scrollbar { width: 4px; }
-.ef-rc-panel::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
-.ef-rc-panel.active { display: block; }
+.ef7-panel::-webkit-scrollbar { width: 3px; }
+.ef7-panel::-webkit-scrollbar-thumb { background: #1c1c1c; }
+.ef7-panel.active { display: block; }
 
-/* --- Specs: 4-column grid (label | value | label | value) full width --- */
-.ef-specs-grid {
-    display: grid;
-    grid-template-columns: 160px 1fr 160px 1fr;
-    gap: 0; width: 100%;
+/* ══════════════════════════════════════════
+   SPECS TABLE  – 4 stable columns
+   col1: label-L  col2: value-L  col3: label-R  col4: value-R
+══════════════════════════════════════════ */
+.ef7-specs-table {
+    width: 100%; border-collapse: collapse;
+    table-layout: fixed; margin-top: 4px;
 }
-.ef-specs-grid .ef-sg-label:nth-child(4n+3),
-.ef-specs-grid .ef-sg-value:nth-child(4n+4) {
-    border-left: 1px solid #161616;
-    padding-left: 32px;
+.ef7-specs-table colgroup col:nth-child(1) { width: 22%; }
+.ef7-specs-table colgroup col:nth-child(2) { width: 28%; }
+.ef7-specs-table colgroup col:nth-child(3) { width: 22%; }
+.ef7-specs-table colgroup col:nth-child(4) { width: 28%; }
+
+.ef7-specs-table td {
+    padding: 0; vertical-align: bottom;
+    border-bottom: 1px solid #111;
 }
-.ef-sg-label {
+.ef7-specs-table tr:first-child td { padding-top: 24px; }
+
+.ef7-lbl {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px; font-weight: 700; letter-spacing: 2px;
-    color: #3a3a3a; text-transform: uppercase;
-    padding: 20px 16px 8px 0; border-bottom: 1px solid #121212;
+    font-size: 9.5px; font-weight: 700; letter-spacing: 2px;
+    color: #333; text-transform: uppercase;
+    padding: 22px 16px 10px 0; display: block;
 }
-.ef-sg-value {
+.ef7-val {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 24px; font-weight: 600; color: #e0e0e0;
-    padding: 16px 16px 8px 0; border-bottom: 1px solid #121212;
-    line-height: 1.1;
+    font-size: 26px; font-weight: 600; color: #ddd;
+    padding: 0 16px 10px 0; display: block; line-height: 1.05;
 }
-.ef-sg-value.ef-hl { color: #FFF12D; font-style: italic; font-size: 26px; }
-.ef-sg-value.ef-dash { color: #222; font-size: 16px; letter-spacing: 4px; }
+.ef7-val.hl { color: #FFF12D; font-style: italic; font-size: 28px; }
+.ef7-val.empty { color: #1e1e1e; font-size: 18px; letter-spacing: 5px; }
 
-/* --- Code grid --- */
-.ef-code-grid {
+/* divider between left pair and right pair */
+.ef7-specs-table td.ef7-div-l {
+    border-left: 1px solid #111; padding-left: 28px;
+}
+.ef7-specs-table td.ef7-div-l .ef7-lbl { padding-left: 0; }
+.ef7-specs-table td.ef7-div-l .ef7-val { padding-left: 0; }
+
+/* ══════════════════════════════════════════
+   CODE GRID
+══════════════════════════════════════════ */
+.ef7-code-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px; padding-top: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 10px; padding-top: 28px;
 }
-.ef-code-item {
-    background: #0f0f0f; border: 1px solid #181818;
-    border-radius: 2px; padding: 12px 16px;
+.ef7-code-item {
+    background: #0c0c0c; border: 1px solid #161616;
+    padding: 12px 16px; border-radius: 2px;
 }
-.ef-ci-mfr {
+.ef7-code-mfr {
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px; font-weight: 700; letter-spacing: 2px;
-    color: #383838; text-transform: uppercase;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2px;
+    color: #303030; text-transform: uppercase; margin-bottom: 4px;
 }
-.ef-ci-code {
+.ef7-code-val {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px; font-weight: 600; color: #d0d0d0; margin-top: 3px;
+    font-size: 18px; font-weight: 600; color: #ccc;
 }
 
-/* --- Equipment table --- */
-.ef-equip-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
-.ef-equip-table th {
+/* ══════════════════════════════════════════
+   EQUIPMENT TABLE
+══════════════════════════════════════════ */
+.ef7-equip-table {
+    width: 100%; border-collapse: collapse; margin-top: 28px;
+}
+.ef7-equip-table th {
     text-align: left; font-family: 'Montserrat', sans-serif;
-    font-size: 9px; letter-spacing: 2px;
-    color: #383838; text-transform: uppercase;
-    padding: 10px 14px; border-bottom: 1px solid #161616;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
+    color: #303030; text-transform: uppercase;
+    padding: 10px 16px; border-bottom: 1px solid #131313;
 }
-.ef-equip-table td {
-    padding: 12px 14px; color: #bbb; border-bottom: 1px solid #111;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 17px;
+.ef7-equip-table td {
+    padding: 12px 16px; color: #aaa; border-bottom: 1px solid #0e0e0e;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 500;
 }
-.ef-equip-table tr:hover td { background: #0c0c0c; }
+.ef7-equip-table tr:hover td { background: #0a0a0a; }
 
-/* --- Empty state --- */
-.ef-empty {
-    color: #222; font-family: 'Montserrat', sans-serif;
-    font-size: 11px; text-align: center;
-    padding: 70px 0; letter-spacing: 3px; text-transform: uppercase;
+/* ══════════════════════════════════════════
+   EMPTY STATE
+══════════════════════════════════════════ */
+.ef7-empty {
+    font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 3px; color: #1e1e1e; text-transform: uppercase;
+    text-align: center; padding: 80px 0;
 }
 </style>
 
-<div id="ef_root_v62">
-    <div id="ef_hero_v62">
-        <div class="ef_search_stage">
-            <div class="ef_nav_tabs" id="ef_nav_tabs">
+<div id="ef_root_v7">
+    <div id="ef_hero_v7">
+        <div class="ef7-stage">
+            <div class="ef7-nav" id="ef7_nav">
                 <span class="active" data-type="part">PART NUMBER</span>
                 <span data-type="vin">VIN</span>
                 <span data-type="application">EQUIPMENT</span>
             </div>
-            <div class="ef_input_row">
-                <input type="text" id="ef_q_v62" placeholder="SEARCH BY CODE..." autocomplete="off">
-                <button class="ef_search_btn" id="ef_search_btn_v62">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <div class="ef7-input-row">
+                <input type="text" id="ef7_q" placeholder="SEARCH BY CODE..." autocomplete="off">
+                <button class="ef7-btn" id="ef7_btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
                 </button>
-                <div class="ef_suggestions" id="ef_suggestions_v62"></div>
+                <div class="ef7-suggest" id="ef7_suggest"></div>
             </div>
-        </div>
-    </div>
-
-    <div id="ef_modal_v62">
-        <div class="ef-modal-inner">
-            <div class="ef-modal-close-row">
-                <button class="ef-modal-close-btn" onclick="document.getElementById('ef_modal_v62').classList.remove('open')">✕ CLOSE</button>
-            </div>
-            <div id="ef_content_v62"></div>
         </div>
     </div>
 </div>
 
+<div id="ef_modal_v7">
+    <div class="ef7-modal-wrap">
+        <div class="ef7-close-row">
+            <button class="ef7-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">✕ &nbsp;CLOSE</button>
+        </div>
+        <div id="ef7_content"></div>
+    </div>
+</div>
+
 <script>
-(function() {
-    const input      = document.getElementById('ef_q_v62');
-    const suggestBox = document.getElementById('ef_suggestions_v62');
-    const modal      = document.getElementById('ef_modal_v62');
-    const content    = document.getElementById('ef_content_v62');
+(function(){
+    const input   = document.getElementById('ef7_q');
+    const suggest = document.getElementById('ef7_suggest');
+    const modal   = document.getElementById('ef_modal_v7');
+    const content = document.getElementById('ef7_content');
+    const API     = '<?php echo esc_url($railway_api); ?>';
     let mode = 'part';
 
-    /* ---- Nav tab switching ---- */
-    document.querySelectorAll('#ef_nav_tabs span').forEach(tab => {
-        tab.addEventListener('click', () => {
-            document.querySelectorAll('#ef_nav_tabs span').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            mode = tab.dataset.type;
+    /* nav tabs */
+    document.querySelectorAll('#ef7_nav span').forEach(t => {
+        t.addEventListener('click', () => {
+            document.querySelectorAll('#ef7_nav span').forEach(x => x.classList.remove('active'));
+            t.classList.add('active'); mode = t.dataset.type;
         });
     });
 
-    /* ---- Search ---- */
-    async function runSearch(val) {
+    /* search */
+    async function search(val) {
         if (!val) return;
-        suggestBox.classList.remove('open');
+        suggest.classList.remove('open');
         modal.classList.add('open');
-        content.innerHTML = '<h2 style="color:#FFF12D;font-family:\'Barlow Condensed\';font-size:2rem;letter-spacing:2px;">CONSULTING DATABASE...</h2>';
-
+        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\';font-size:1.8rem;letter-spacing:3px;padding:40px 0;">CONSULTING DATABASE...</p>';
         try {
-            const res = await fetch(`<?php echo esc_url($railway_api); ?>?code=${encodeURIComponent(val.trim().toUpperCase())}`);
-            const d   = await res.json();
-            const product = d.data || d.product || null;
-            if (d.success && product) {
-                renderCard(product);
-            } else {
-                content.innerHTML = '<h2 style="font-family:\'Barlow Condensed\';color:#fff;font-size:2rem;">SKU NOT FOUND</h2>';
-            }
-        } catch (e) {
-            content.innerHTML = '<h2 style="color:#ff4444;font-family:\'Barlow Condensed\'">CONNECTION ERROR</h2><p style="color:#555;font-size:12px;margin-top:8px;">Check Railway server status.</p>';
+            const r = await fetch(`${API}?code=${encodeURIComponent(val.trim().toUpperCase())}`);
+            const d = await r.json();
+            const p = d.data || d.product || null;
+            if (d.success && p) render(p);
+            else content.innerHTML = '<p style="color:#555;font-family:\'Montserrat\';font-size:13px;padding:60px 0 0;letter-spacing:2px;text-transform:uppercase;">No results for &ldquo;' + val + '&rdquo;</p>';
+        } catch(e) {
+            content.innerHTML = '<p style="color:#c0392b;font-family:\'Montserrat\';font-size:12px;padding:60px 0 0;">Connection error. Check server status.</p>';
         }
     }
 
-    /* ---- Tech badge ---- */
-    function getTech(p) {
-        if (p.technology) return p.technology.replace(/™/g,'') + '™';
-        const sku = (p.elimfilters_sku || p.sku || '');
-        if (sku.startsWith('EH'))  return 'SINTRAX™';
-        if (sku.startsWith('EF9')) return 'ET9™';
-        if (sku.startsWith('EA'))  return 'MacroCore™';
-        return 'NANOFORCE™';
+    /* helpers */
+    function v(val) { return (val !== null && val !== undefined && val !== '') ? val : null; }
+    function mm(val) { return v(val) ? val + ' mm' : null; }
+
+    function specRow(l1, v1, hl1, l2, v2, hl2) {
+        const d1 = v(v1), d2 = v(v2);
+        const cls1 = d1 ? (hl1 ? 'ef7-val hl' : 'ef7-val') : 'ef7-val empty';
+        const cls2 = d2 ? (hl2 ? 'ef7-val hl' : 'ef7-val') : 'ef7-val empty';
+        return `<tr>
+            <td><span class="ef7-lbl">${l1}</span></td>
+            <td><span class="${cls1}">${d1 || '———'}</span></td>
+            <td class="ef7-div-l"><span class="ef7-lbl">${l2}</span></td>
+            <td><span class="${cls2}">${d2 || '———'}</span></td>
+        </tr>`;
     }
 
-    /* ---- Single spec cell (label + value) ---- */
-    function sc(label, value, highlight) {
-        const empty = (value === null || value === undefined || value === '');
-        const cls   = empty ? 'ef-sg-value ef-dash' : (highlight ? 'ef-sg-value ef-hl' : 'ef-sg-value');
-        const v     = empty ? '———' : value;
-        return `<div class="ef-sg-label">${label}</div><div class="${cls}">${v}</div>`;
-    }
-
-    /* ---- Spec pair row: two cells side by side ---- */
-    function sr(l1, v1, h1, l2, v2, h2) {
-        return sc(l1, v1, h1) + sc(l2, v2, h2);
-    }
-
-    /* ---- Code cards ---- */
-    function codCards(arr) {
-        if (!arr || arr.length === 0) return '<div class="ef-empty">No codes available</div>';
-        return arr.map(c => {
+    function codes(arr) {
+        if (!arr || !arr.length) return '<div class="ef7-empty">No codes available</div>';
+        return '<div class="ef7-code-grid">' + arr.map(c => {
             const mfr  = typeof c === 'string' ? '' : (c.manufacturer || '');
             const code = typeof c === 'string' ? c  : (c.code || '');
-            return `<div class="ef-code-item">${mfr ? `<div class="ef-ci-mfr">${mfr}</div>` : ''}<div class="ef-ci-code">${code || '—'}</div></div>`;
-        }).join('');
+            return `<div class="ef7-code-item">${mfr ? `<div class="ef7-code-mfr">${mfr}</div>` : ''}<div class="ef7-code-val">${code || '—'}</div></div>`;
+        }).join('') + '</div>';
     }
 
-    /* ---- Equipment rows ---- */
-    function equipRows(arr) {
-        if (!arr || arr.length === 0) return '<tr><td colspan="4" class="ef-empty">No equipment data</td></tr>';
-        return arr.map(a => {
-            const m = a.machine || a.equipment || (typeof a === 'string' ? a : '—');
-            return `<tr><td>${m}</td><td>${a.engine||'—'}</td><td>${a.year||'—'}</td><td>${a.type||'—'}</td></tr>`;
-        }).join('');
+    function equip(arr) {
+        if (!arr || !arr.length) return '<div class="ef7-empty">No equipment data</div>';
+        return `<table class="ef7-equip-table">
+            <thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead>
+            <tbody>${arr.map(a => {
+                const m = a.machine || a.equipment || (typeof a === 'string' ? a : '—');
+                return `<tr><td>${m}</td><td>${a.engine||'—'}</td><td>${a.year||'—'}</td><td>${a.type||'—'}</td></tr>`;
+            }).join('')}</tbody>
+        </table>`;
     }
 
-    /* ---- Format mm value ---- */
-    function mm(v) { return (v !== null && v !== undefined && v !== '') ? v + ' mm' : null; }
-
-    /* ---- Build product description from available data ---- */
-    function buildDesc(p) {
-        const sku     = p.elimfilters_sku || p.sku || '';
-        const type    = p.filter_type  || 'Filter';
-        const tech    = p.technology   || '';
-        const install = p.installation_type || '';
-        const duty    = p.duty || '';
-        const thread  = p.thread_size  || '';
-
-        let line1 = `<strong>${sku}</strong>`;
-        if (install) line1 += ` | ${install} ${type}`;
-        else         line1 += ` | ${type}`;
-
-        let line2 = `Engineered to exceed OEM performance in modern engines`;
-        if (tech)   line2 += `, the Elimfilters® <strong>${sku}</strong> features advanced <strong>${tech}™</strong> media technology for superior contaminant capture`;
-        line2 += `. Its robust construction ensures unrestricted flow and critical system protection`;
-        if (duty)   line2 += ` under ${duty.toLowerCase()} duty operating conditions`;
-        if (thread) line2 += `. Thread: <strong>${thread}</strong>`;
-        line2 += `.`;
-
-        return line1 + ' ' + line2;
+    function desc(p) {
+        const sku  = p.elimfilters_sku || p.sku || '';
+        const type = p.filter_type || 'Filter';
+        const tech = p.technology || '';
+        const inst = p.installation_type || '';
+        const duty = p.duty || '';
+        const thr  = p.thread_size || '';
+        let s = `<b>${sku}</b> | ${inst ? inst + ' ' : ''}${type}. `;
+        s += `Engineered to exceed OEM performance in modern engines`;
+        if (tech) s += `, featuring advanced <b>${tech}™</b> media technology for superior contaminant capture and extended service life`;
+        s += `. Robust construction ensures unrestricted flow and critical system protection`;
+        if (duty) s += ` under ${duty.toLowerCase()} duty conditions`;
+        if (thr)  s += `. Thread: <b>${thr}</b>`;
+        return s + '.';
     }
 
-    /* ---- Main render ---- */
-    function renderCard(p) {
+    /* main render */
+    function render(p) {
         const sku   = p.elimfilters_sku || p.sku || '—';
-        const oem   = p.oem_codes        || [];
+        const oem   = p.oem_codes || [];
         const cross = p.competitor_codes || p.cross_references || [];
-        const apps  = p.applications     || p.equipment_applications || [];
+        const apps  = p.applications || p.equipment_applications || [];
 
         content.innerHTML = `
-        <div class="ef-rc">
+        <div class="ef7-card">
 
-          <!-- HEADER: SKU left | description + title right -->
-          <div class="ef-rc-header">
-            <div class="ef-rc-sku">${sku}</div>
-            <div class="ef-rc-header-right">
-              <div class="ef-rc-desc">${buildDesc(p)}</div>
-              <div class="ef-rc-tech-spec-title">Technical Specifications</div>
+          <!-- HEADER -->
+          <div class="ef7-header">
+            <div class="ef7-header-top">
+              <div class="ef7-sku">${sku}</div>
+              <div class="ef7-ts-label">Technical Specifications</div>
             </div>
+            <div class="ef7-desc">${desc(p)}</div>
           </div>
 
           <!-- BODY -->
-          <div class="ef-rc-body">
+          <div class="ef7-body">
 
             <!-- SIDEBAR -->
-            <div class="ef-rc-sidebar">
-              <img class="ef-logo-mark"
+            <div class="ef7-sidebar">
+              <img class="ef7-logo-e"
                 src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp"
                 alt="E">
-              <img class="ef-logo-full"
+              <img class="ef7-logo-full"
                 src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png"
                 alt="Elimfilters">
-              <div class="ef-gq">German Quality</div>
+              <div class="ef7-gq">German Quality</div>
             </div>
 
             <!-- CONTENT -->
-            <div class="ef-rc-content">
+            <div class="ef7-content">
 
               <!-- TABS -->
-              <div class="ef-rc-tabs">
-                <div class="ef-rc-tab active" data-tab="specs">Specifications</div>
-                <div class="ef-rc-tab" data-tab="oem">OEM Codes <span class="ef-rc-badge">${oem.length}</span></div>
-                <div class="ef-rc-tab" data-tab="cross">Cross Reference <span class="ef-rc-badge">${cross.length}</span></div>
-                <div class="ef-rc-tab" data-tab="equip">Equipment <span class="ef-rc-badge">${apps.length}</span></div>
+              <div class="ef7-tabs">
+                <div class="ef7-tab active" data-tab="specs">Specifications</div>
+                <div class="ef7-tab" data-tab="oem">OEM Codes <span class="ef7-badge">${oem.length}</span></div>
+                <div class="ef7-tab" data-tab="cross">Cross Reference <span class="ef7-badge">${cross.length}</span></div>
+                <div class="ef7-tab" data-tab="equip">Equipment <span class="ef7-badge">${apps.length}</span></div>
               </div>
 
-              <!-- PANEL: SPECIFICATIONS — 4 columns: label|value|label|value -->
-              <div class="ef-rc-panel active" id="efp-specs">
-                <div class="ef-specs-grid">
-                  ${sr('Filter Type',    p.filter_type,         false, 'Installation',      p.installation_type,    false)}
-                  ${sr('Technology',     p.technology,          true,  'Thread Size',        p.thread_size,          false)}
-                  ${sr('Outer Dia.',     mm(p.outer_diameter_mm),false,'Gasket OD',          mm(p.gasket_od_mm),     false)}
-                  ${sr('Gasket ID',      mm(p.gasket_id_mm),    false, 'ISO Test Method',    p.iso_test_method,      false)}
-                  ${sr('Micron Rating',  p.micron_rating,       false, 'Efficiency',         p.nominal_efficiency,   false)}
-                  ${sr('Burst Pressure', p.burst_pressure_psi,  false, 'Collapse Pressure',  p.collapse_pressure_psi,false)}
-                </div>
-              </div>
-
-              <!-- PANEL: OEM CODES -->
-              <div class="ef-rc-panel" id="efp-oem">
-                <div class="ef-code-grid">${codCards(oem)}</div>
-              </div>
-
-              <!-- PANEL: CROSS REFERENCE -->
-              <div class="ef-rc-panel" id="efp-cross">
-                <div class="ef-code-grid">${codCards(cross)}</div>
-              </div>
-
-              <!-- PANEL: EQUIPMENT -->
-              <div class="ef-rc-panel" id="efp-equip">
-                <table class="ef-equip-table">
-                  <thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead>
-                  <tbody>${equipRows(apps)}</tbody>
+              <!-- PANEL: SPECS -->
+              <div class="ef7-panel active" id="ef7p-specs">
+                <table class="ef7-specs-table">
+                  <colgroup>
+                    <col><col><col><col>
+                  </colgroup>
+                  <tbody>
+                    ${specRow('Filter Type',    v(p.filter_type),          false, 'Installation',      v(p.installation_type),    false)}
+                    ${specRow('Technology',     v(p.technology),           true,  'Thread Size',        v(p.thread_size),          false)}
+                    ${specRow('Outer Dia.',     mm(p.outer_diameter_mm),   false, 'Gasket OD',          mm(p.gasket_od_mm),        false)}
+                    ${specRow('Gasket ID',      mm(p.gasket_id_mm),        false, 'ISO Test Method',    v(p.iso_test_method),      false)}
+                    ${specRow('Micron Rating',  v(p.micron_rating),        false, 'Efficiency',         v(p.nominal_efficiency),   false)}
+                    ${specRow('Burst Pressure', v(p.burst_pressure_psi),   false, 'Collapse Pressure',  v(p.collapse_pressure_psi),false)}
+                  </tbody>
                 </table>
               </div>
+
+              <!-- PANEL: OEM -->
+              <div class="ef7-panel" id="ef7p-oem">${codes(oem)}</div>
+
+              <!-- PANEL: CROSS -->
+              <div class="ef7-panel" id="ef7p-cross">${codes(cross)}</div>
+
+              <!-- PANEL: EQUIP -->
+              <div class="ef7-panel" id="ef7p-equip">${equip(apps)}</div>
 
             </div><!-- /content -->
           </div><!-- /body -->
         </div><!-- /card -->`;
 
-        /* Tab switching scoped to this card */
-        content.querySelectorAll('.ef-rc-tab').forEach(tab => {
+        /* tab switching */
+        content.querySelectorAll('.ef7-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                content.querySelectorAll('.ef-rc-tab').forEach(t => t.classList.remove('active'));
-                content.querySelectorAll('.ef-rc-panel').forEach(p => p.classList.remove('active'));
+                content.querySelectorAll('.ef7-tab').forEach(t => t.classList.remove('active'));
+                content.querySelectorAll('.ef7-panel').forEach(p => p.classList.remove('active'));
                 tab.classList.add('active');
-                content.querySelector('#efp-' + tab.dataset.tab).classList.add('active');
+                content.querySelector('#ef7p-' + tab.dataset.tab).classList.add('active');
             });
         });
     }
 
-    /* ---- Suggestions ---- */
+    /* suggestions */
     input.addEventListener('input', function() {
         const val = this.value.toUpperCase().trim();
-        if (val.length < 2) { suggestBox.classList.remove('open'); return; }
-        suggestBox.innerHTML = `<div class="ef_suggestion_item" onclick="window.efRun('${val}')">${val}</div>`;
-        suggestBox.classList.add('open');
+        if (val.length < 2) { suggest.classList.remove('open'); return; }
+        suggest.innerHTML = `<div class="ef7-suggest-item" onclick="window._ef7run('${val}')">${val}</div>`;
+        suggest.classList.add('open');
     });
 
-    window.efRun = (v) => { input.value = v; runSearch(v); };
-    document.getElementById('ef_search_btn_v62').onclick = () => runSearch(input.value);
-    input.onkeypress = (e) => { if (e.which === 13) runSearch(input.value); };
+    window._ef7run = v => { input.value = v; search(v); };
+    document.getElementById('ef7_btn').onclick = () => search(input.value);
+    input.onkeypress = e => { if (e.which === 13) search(input.value); };
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') modal.classList.remove('open');
+    });
 })();
 </script>
 
