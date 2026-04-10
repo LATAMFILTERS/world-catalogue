@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V6.3
+ * Plugin Name: ELIMFILTERS Search Pro V6.4
  * Description: Barra fija 6.5%, asistente reactivo y card de resultados con tabs.
- * Version: 6.3
+ * Version: 6.4
  */
 
 if (!defined('ABSPATH')) exit;
@@ -88,37 +88,25 @@ add_shortcode('elimfilters_search', function() {
 
 /* ===================== RESULT CARD ===================== */
 .ef-rc {
-    background: #0d0d0d; border-radius: 4px; overflow: hidden;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.8);
+    background: #0a0a0a; overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.9);
 }
 
 /* --- Header --- */
 .ef-rc-header {
-    background: #111; padding: 24px 30px 20px;
+    padding: 28px 36px 22px;
     display: flex; justify-content: space-between; align-items: flex-start;
-    border-bottom: 1px solid #1e1e1e; gap: 20px;
 }
 .ef-rc-sku {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3rem; font-weight: 900; color: #FFF12D;
-    line-height: 1; letter-spacing: 1px;
+    font-size: 4.2rem; font-weight: 900; color: #FFF12D;
+    line-height: 1; letter-spacing: 2px;
 }
-.ef-rc-type-badge {
-    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
-    color: #888; text-transform: uppercase; margin-bottom: 6px;
-}
-.ef-rc-desc {
-    font-size: 0.78rem; color: #aaa; margin-top: 8px;
-    max-width: 560px; line-height: 1.55;
-}
-.ef-rc-tech-badge {
-    background: #FFF12D; color: #000;
-    padding: 7px 18px; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px; font-weight: 900; white-space: nowrap; flex-shrink: 0;
-}
-.ef-rc-spec-label {
-    font-size: 10px; font-weight: 700; letter-spacing: 2px;
-    color: #555; text-transform: uppercase; margin-top: 4px;
+.ef-rc-tech-spec-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 3px;
+    color: #fff; text-transform: uppercase;
+    padding-top: 14px; white-space: nowrap;
 }
 
 /* --- Body --- */
@@ -126,102 +114,130 @@ add_shortcode('elimfilters_search', function() {
 
 /* --- Sidebar --- */
 .ef-rc-sidebar {
-    width: 88px; min-width: 88px; background: #090909;
-    border-right: 1px solid #1a1a1a;
+    width: 110px; min-width: 110px; background: #080808;
+    border-right: 1px solid #161616;
     display: flex; flex-direction: column;
-    align-items: center; padding: 28px 10px; gap: 20px;
+    align-items: center; padding: 30px 12px 24px; gap: 16px;
 }
-.ef-rc-sidebar img { width: 60px; height: auto; object-fit: contain; }
-.ef-rc-sidebar img.ef-logo-full { width: 54px; filter: brightness(0.85); }
+.ef-rc-sidebar .ef-logo-mark {
+    width: 72px; height: auto; object-fit: contain;
+}
+.ef-rc-sidebar .ef-logo-full {
+    width: 80px; height: auto; object-fit: contain; filter: brightness(0.9);
+}
+.ef-rc-sidebar .ef-gq {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px; letter-spacing: 2px; color: #3a3a3a;
+    text-transform: uppercase; text-align: center;
+    margin-top: -10px;
+}
 
 /* --- Content --- */
-.ef-rc-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.ef-rc-content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 
 /* --- Tabs --- */
 .ef-rc-tabs {
-    display: flex; background: #111;
-    border-bottom: 1px solid #1e1e1e; padding: 0 12px; overflow-x: auto;
-    scrollbar-width: none;
+    display: flex; border-bottom: 1px solid #1a1a1a;
+    padding: 0 16px; overflow-x: auto; scrollbar-width: none;
 }
 .ef-rc-tabs::-webkit-scrollbar { display: none; }
 .ef-rc-tab {
-    padding: 13px 16px; font-size: 11px; font-weight: 700;
-    letter-spacing: 1.2px; color: #444; cursor: pointer;
-    text-transform: uppercase; border-bottom: 3px solid transparent;
+    padding: 14px 18px; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 1.5px;
+    color: #3a3a3a; cursor: pointer; text-transform: uppercase;
+    border-bottom: 3px solid transparent;
     transition: color .18s, border-color .18s;
-    white-space: nowrap; display: flex; align-items: center; gap: 7px;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+    white-space: nowrap; display: flex; align-items: center; gap: 8px;
 }
-.ef-rc-tab:hover { color: #888; }
+.ef-rc-tab:hover { color: #777; }
 .ef-rc-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
 .ef-rc-badge {
-    background: #1e1e1e; color: #666; border-radius: 10px;
-    padding: 1px 8px; font-size: 11px; font-weight: 600;
+    background: #1c1c1c; color: #555; border-radius: 12px;
+    padding: 2px 9px; font-size: 12px; font-weight: 700;
 }
-.ef-rc-tab.active .ef-rc-badge { background: rgba(255,241,45,0.12); color: #FFF12D; }
+.ef-rc-tab.active .ef-rc-badge { background: rgba(255,241,45,0.1); color: #FFF12D; }
 
 /* --- Panels --- */
 .ef-rc-panel {
-    display: none; height: 310px; overflow-y: auto;
-    padding: 20px 24px;
-    scrollbar-width: thin; scrollbar-color: #2a2a2a #0d0d0d;
+    display: none; height: 340px; overflow-y: auto;
+    padding: 0 28px 20px;
+    scrollbar-width: thin; scrollbar-color: #252525 #0a0a0a;
 }
 .ef-rc-panel::-webkit-scrollbar { width: 4px; }
-.ef-rc-panel::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+.ef-rc-panel::-webkit-scrollbar-thumb { background: #252525; border-radius: 2px; }
 .ef-rc-panel.active { display: block; }
 
-/* --- Specs grid --- */
+/* --- Specs: 4-column grid (label | value | label | value) --- */
 .ef-specs-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    display: grid;
+    grid-template-columns: minmax(100px,180px) 1fr minmax(100px,180px) 1fr;
+    gap: 0;
+}
+/* vertical divider between left pair and right pair */
+.ef-specs-grid .ef-sg-label:nth-child(4n+3) {
+    border-left: 1px solid #1c1c1c;
+    padding-left: 24px;
+}
+.ef-specs-grid .ef-sg-value:nth-child(4n+4) {
+    /* right values - no extra style needed */
 }
 .ef-sg-label {
-    font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
-    color: #555; text-transform: uppercase;
-    padding: 10px 0 4px; border-bottom: 1px solid #191919;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: #444; text-transform: uppercase;
+    padding: 18px 12px 6px 0; border-bottom: 1px solid #141414;
+    align-self: end;
 }
 .ef-sg-value {
-    font-size: 15px; font-weight: 600; color: #e0e0e0;
-    padding: 10px 0 4px 10px; border-bottom: 1px solid #191919;
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 600; color: #e8e8e8;
+    padding: 14px 0 6px 0; border-bottom: 1px solid #141414;
+    line-height: 1.1;
 }
-.ef-sg-value.ef-hl { color: #FFF12D; font-style: italic; font-size: 17px; }
+.ef-sg-value.ef-hl {
+    color: #FFF12D; font-style: italic; font-size: 24px;
+}
+.ef-sg-value.ef-dash { color: #2a2a2a; font-size: 18px; letter-spacing: 3px; }
 
 /* --- Code grid --- */
 .ef-code-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px; padding-top: 20px;
 }
 .ef-code-item {
-    background: #141414; border: 1px solid #1e1e1e;
-    border-radius: 3px; padding: 9px 12px;
+    background: #111; border: 1px solid #1c1c1c;
+    border-radius: 2px; padding: 10px 14px;
 }
 .ef-ci-mfr {
-    font-size: 10px; font-weight: 700; letter-spacing: 1px;
-    color: #555; text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    color: #444; text-transform: uppercase;
 }
 .ef-ci-code {
-    font-size: 15px; font-weight: 600; color: #ddd; margin-top: 3px;
     font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px; font-weight: 600; color: #ddd; margin-top: 2px;
 }
 
 /* --- Equipment table --- */
-.ef-equip-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ef-equip-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
 .ef-equip-table th {
-    text-align: left; font-size: 10px; letter-spacing: 1px;
-    color: #555; text-transform: uppercase;
-    padding: 6px 10px; border-bottom: 1px solid #1e1e1e;
-    font-family: 'Barlow Condensed', sans-serif;
+    text-align: left; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; letter-spacing: 1.5px;
+    color: #444; text-transform: uppercase;
+    padding: 8px 12px; border-bottom: 1px solid #1a1a1a;
 }
 .ef-equip-table td {
-    padding: 9px 10px; color: #ccc; border-bottom: 1px solid #161616;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 14px;
+    padding: 10px 12px; color: #ccc; border-bottom: 1px solid #131313;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 16px;
 }
-.ef-equip-table tr:hover td { background: #121212; }
+.ef-equip-table tr:hover td { background: #0f0f0f; }
 
 /* --- Empty state --- */
 .ef-empty {
-    color: #333; font-size: 13px; text-align: center;
-    padding: 50px 0; letter-spacing: 1px; text-transform: uppercase;
-    font-family: 'Barlow Condensed', sans-serif;
+    color: #2a2a2a; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; text-align: center;
+    padding: 60px 0; letter-spacing: 2px; text-transform: uppercase;
 }
 </style>
 
@@ -301,13 +317,20 @@ add_shortcode('elimfilters_search', function() {
         return 'NANOFORCE™';
     }
 
-    /* ---- Spec rows helper ---- */
-    function specRow(label, value, highlight) {
-        const v = (value !== null && value !== undefined && value !== '') ? value : '—';
-        return `<div class="ef-sg-label">${label}</div><div class="ef-sg-value${highlight ? ' ef-hl' : ''}">${v}</div>`;
+    /* ---- Single spec cell (label + value) ---- */
+    function sc(label, value, highlight) {
+        const empty = (value === null || value === undefined || value === '');
+        const cls   = empty ? 'ef-sg-value ef-dash' : (highlight ? 'ef-sg-value ef-hl' : 'ef-sg-value');
+        const v     = empty ? '———' : value;
+        return `<div class="ef-sg-label">${label}</div><div class="${cls}">${v}</div>`;
     }
 
-    /* ---- Code cards helper ---- */
+    /* ---- Spec pair row: two cells side by side ---- */
+    function sr(l1, v1, h1, l2, v2, h2) {
+        return sc(l1, v1, h1) + sc(l2, v2, h2);
+    }
+
+    /* ---- Code cards ---- */
     function codCards(arr) {
         if (!arr || arr.length === 0) return '<div class="ef-empty">No codes available</div>';
         return arr.map(c => {
@@ -317,7 +340,7 @@ add_shortcode('elimfilters_search', function() {
         }).join('');
     }
 
-    /* ---- Equipment rows helper ---- */
+    /* ---- Equipment rows ---- */
     function equipRows(arr) {
         if (!arr || arr.length === 0) return '<tr><td colspan="4" class="ef-empty">No equipment data</td></tr>';
         return arr.map(a => {
@@ -326,33 +349,23 @@ add_shortcode('elimfilters_search', function() {
         }).join('');
     }
 
+    /* ---- Format mm value ---- */
+    function mm(v) { return (v !== null && v !== undefined && v !== '') ? v + ' mm' : null; }
+
     /* ---- Main render ---- */
     function renderCard(p) {
-        const sku        = p.elimfilters_sku || p.sku || '—';
-        const filterType = p.filter_type || '';
-        const tech       = getTech(p);
-        const oem        = p.oem_codes        || [];
-        const cross      = p.competitor_codes || p.cross_references || [];
-        const apps       = p.applications     || p.equipment_applications || [];
-
-        const descParts = [
-            filterType,
-            p.installation_type ? `| ${p.installation_type}` : '',
-            p.thread_size       ? `| Thread: ${p.thread_size}` : '',
-            p.duty              ? `| ${p.duty}` : ''
-        ].filter(Boolean).join(' ');
+        const sku   = p.elimfilters_sku || p.sku || '—';
+        const oem   = p.oem_codes        || [];
+        const cross = p.competitor_codes || p.cross_references || [];
+        const apps  = p.applications     || p.equipment_applications || [];
 
         content.innerHTML = `
         <div class="ef-rc">
 
-          <!-- HEADER -->
+          <!-- HEADER: SKU left, "TECHNICAL SPECIFICATIONS" right, nothing else -->
           <div class="ef-rc-header">
-            <div>
-              <div class="ef-rc-type-badge">${filterType} | ELIMFILTERS®</div>
-              <div class="ef-rc-sku">${sku}</div>
-              <div class="ef-rc-desc">${descParts}</div>
-            </div>
-            <div class="ef-rc-tech-badge">${tech}</div>
+            <div class="ef-rc-sku">${sku}</div>
+            <div class="ef-rc-tech-spec-title">Technical Specifications</div>
           </div>
 
           <!-- BODY -->
@@ -360,8 +373,13 @@ add_shortcode('elimfilters_search', function() {
 
             <!-- SIDEBAR -->
             <div class="ef-rc-sidebar">
-              <img src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">
-              <img src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters" class="ef-logo-full">
+              <img class="ef-logo-mark"
+                src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp"
+                alt="E">
+              <img class="ef-logo-full"
+                src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png"
+                alt="Elimfilters">
+              <div class="ef-gq">German Quality</div>
             </div>
 
             <!-- CONTENT -->
@@ -375,23 +393,15 @@ add_shortcode('elimfilters_search', function() {
                 <div class="ef-rc-tab" data-tab="equip">Equipment <span class="ef-rc-badge">${apps.length}</span></div>
               </div>
 
-              <!-- PANEL: SPECIFICATIONS -->
+              <!-- PANEL: SPECIFICATIONS — 4 columns: label|value|label|value -->
               <div class="ef-rc-panel active" id="efp-specs">
                 <div class="ef-specs-grid">
-                  ${specRow('Filter Type',       filterType,            false)}
-                  ${specRow('Technology',        p.technology,          true)}
-                  ${specRow('Installation',      p.installation_type,   false)}
-                  ${specRow('Thread Size',       p.thread_size,         false)}
-                  ${specRow('Height (mm)',        p.height_mm,           false)}
-                  ${specRow('Outer Dia. (mm)',    p.outer_diameter_mm,   false)}
-                  ${specRow('Gasket OD',          p.gasket_od_mm,        false)}
-                  ${specRow('Gasket ID',          p.gasket_id_mm,        false)}
-                  ${specRow('ISO Test Method',    p.iso_test_method,     false)}
-                  ${specRow('Micron Rating',      p.micron_rating,       false)}
-                  ${specRow('Efficiency',         p.nominal_efficiency,  false)}
-                  ${specRow('Burst Pressure',     p.burst_pressure_psi,  false)}
-                  ${specRow('Collapse Pressure',  p.collapse_pressure_psi, false)}
-                  ${specRow('Duty',               p.duty,                false)}
+                  ${sr('Filter Type',    p.filter_type,         false, 'Installation',      p.installation_type,    false)}
+                  ${sr('Technology',     p.technology,          true,  'Thread Size',        p.thread_size,          false)}
+                  ${sr('Outer Dia.',     mm(p.outer_diameter_mm),false,'Gasket OD',          mm(p.gasket_od_mm),     false)}
+                  ${sr('Gasket ID',      mm(p.gasket_id_mm),    false, 'ISO Test Method',    p.iso_test_method,      false)}
+                  ${sr('Micron Rating',  p.micron_rating,       false, 'Efficiency',         p.nominal_efficiency,   false)}
+                  ${sr('Burst Pressure', p.burst_pressure_psi,  false, 'Collapse Pressure',  p.collapse_pressure_psi,false)}
                 </div>
               </div>
 
@@ -417,7 +427,7 @@ add_shortcode('elimfilters_search', function() {
           </div><!-- /body -->
         </div><!-- /card -->`;
 
-        /* Tab switching – scoped to this card */
+        /* Tab switching scoped to this card */
         content.querySelectorAll('.ef-rc-tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 content.querySelectorAll('.ef-rc-tab').forEach(t => t.classList.remove('active'));
