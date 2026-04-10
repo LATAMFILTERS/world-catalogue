@@ -1,23 +1,26 @@
-﻿const express = require("express");
-const { Client } = require("pg");
+const express = require("express");
+const { Pool } = require("pg");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const pgClient = new Client({
-  host: process.env.PGHOST || "ballast.proxy.rlwy.net",
-  port: process.env.PGPORT || 18263,
+const pool = new Pool({
+  host:     process.env.PGHOST     || "ballast.proxy.rlwy.net",
+  port:     process.env.PGPORT     || 18263,
   database: process.env.PGDATABASE || "railway",
-  user: process.env.PGUSER || "postgres",
+  user:     process.env.PGUSER     || "postgres",
   password: process.env.PGPASSWORD || "qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm",
-  ssl: { rejectUnauthorized: false }
+  ssl: { rejectUnauthorized: false },
+  max: 10,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 5000
 });
 
-pgClient.connect()
-  .then(() => console.log("PostgreSQL conectado"))
-  .catch(err => { console.error("PG error:", err.message); process.exit(1); });
+pool.connect()
+  .then(client => { client.release(); console.log("PostgreSQL conectado"); })
+  .catch(err => console.error("PG error al iniciar:", err.message));
 
 function parseRefs(arr) {
   if (!Array.isArray(arr)) return [];
@@ -42,7 +45,16 @@ function parseEquipment(arr) {
 }
 
 app.get("/", (req, res) => {
-  res.json({ api: "ELIMFILTERS API", version: "3.2.0", database: "PostgreSQL", status: "running" });
+  res.json({ api: "ELIMFILTERS API", version: "3.2.1", database: "PostgreSQL", status: "running" });
+});
+
+app.get("/health", async (req, res) => {
+  try {
+    await pool.query("SELECT 1");
+    res.json({ status: "ok", database: "connected" });
+  } catch (err) {
+    res.status(503).json({ status: "error", database: err.message });
+  }
 });
 
 app.get("/api/filters/search/homologous", async (req, res) => {
@@ -51,17 +63,23 @@ app.get("/api/filters/search/homologous", async (req, res) => {
     if (!code) return res.status(400).json({ success: false, error: "code required" });
     const searchCode = code.trim().toUpperCase();
 
-    const sql = `
+    // Primero busca por SKU o codigo_base exacto
+    const exactSql = `
       SELECT * FROM elimfilters_catalog
       WHERE sku = $1 OR codigo_base = $1
-      UNION ALL
-      SELECT * FROM elimfilters_catalog
-      WHERE sku != $1 AND (codigo_base IS NULL OR codigo_base != $1)
-        AND oem_codes::text ILIKE $2
       LIMIT 1
     `;
+    let result = await pool.query(exactSql, [searchCode]);
 
-    const result = await pgClient.query(sql, [searchCode, "%" + searchCode + "%"]);
+    // Si no hay resultado exacto, busca en oem_codes
+    if (result.rows.length === 0) {
+      const oemSql = `
+        SELECT * FROM elimfilters_catalog
+        WHERE oem_codes::text ILIKE $1
+        LIMIT 1
+      `;
+      result = await pool.query(oemSql, ["%" + searchCode + "%"]);
+    }
 
     if (result.rows.length === 0)
       return res.status(404).json({ success: false, error: "Not found" });
