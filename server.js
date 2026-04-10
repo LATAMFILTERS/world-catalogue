@@ -145,18 +145,26 @@ function buildResponse(row, searchCode) {
   };
 }
 
-app.get("/api/filters/search", async (req, res) => {
+// Acepta GET y POST
+app.all("/api/filters/search", async (req, res) => {
   try {
-    const { code, q } = req.query;
-    const raw = code || q;
+    const { code, q, search, sku, filter } = req.query || req.body || {};
+    const raw = code || q || search || sku || filter;
     if (!raw) return res.status(400).json({ success: false, error: "code required" });
-    const searchCode = raw.trim().toUpperCase();
+    const searchCode = (raw + "").trim().toUpperCase();
+
+    console.log(`[SEARCH] Input: ${raw} → Búsqueda: ${searchCode}`);
 
     const row = await searchByCode(searchCode);
-    if (!row) return res.status(404).json({ success: false, error: "Not found" });
+    if (!row) {
+      console.log(`[SEARCH] No encontrado: ${searchCode}`);
+      return res.status(404).json({ success: false, error: "Not found" });
+    }
 
+    console.log(`[SEARCH] Encontrado: ${row.sku}`);
     res.json({ success: true, matched_code: searchCode, data: buildResponse(row, searchCode) });
   } catch (error) {
+    console.error(`[SEARCH] Error:`, error.message);
     res.status(500).json({ success: false, error: error.message });
   }
 });
