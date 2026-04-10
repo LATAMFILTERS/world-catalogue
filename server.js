@@ -128,6 +128,7 @@ async function searchByCode(searchCode) {
 
 function buildResponse(row, searchCode) {
   return {
+    sku:                   row.sku,
     elimfilters_sku:       row.sku,
     base_code:             row.codigo_base,
     filter_type:           row.filter_type,
