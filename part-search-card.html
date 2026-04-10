@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part Search Card – ELIMFILTERS</title>
+<style>
+/* ===== RESULT CARD ===== */
+#ef-result-card {
+  display: none;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+}
+
+/* ---- HEADER ---- */
+.ef-header {
+  background: #111;
+  padding: 22px 28px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #222;
+}
+.ef-header-left .ef-sku {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #e8c94a;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.ef-header-left .ef-desc {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #bbb;
+  max-width: 620px;
+  line-height: 1.5;
+}
+.ef-header-right {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #888;
+  text-transform: uppercase;
+  padding-top: 6px;
+  white-space: nowrap;
+}
+
+/* ---- BODY ---- */
+.ef-body {
+  display: flex;
+}
+
+/* ---- SIDEBAR ---- */
+.ef-sidebar {
+  width: 90px;
+  min-width: 90px;
+  background: #0a0a0a;
+  border-right: 1px solid #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 10px;
+  gap: 18px;
+}
+.ef-sidebar img {
+  width: 62px;
+  height: auto;
+  object-fit: contain;
+}
+.ef-sidebar img.ef-logo-full {
+  width: 56px;
+  filter: brightness(0.9);
+}
+
+/* ---- CONTENT ---- */
+.ef-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- TABS ---- */
+.ef-tabs {
+  display: flex;
+  background: #111;
+  border-bottom: 1px solid #222;
+  padding: 0 14px;
+}
+.ef-tab {
+  padding: 12px 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #555;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  transition: color .2s, border-color .2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ef-tab:hover { color: #aaa; }
+.ef-tab.active {
+  color: #e8c94a;
+  border-bottom-color: #e8c94a;
+}
+.ef-tab-badge {
+  background: #2a2a2a;
+  color: #ccc;
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.ef-tab.active .ef-tab-badge {
+  background: #e8c94a22;
+  color: #e8c94a;
+}
+
+/* ---- PANELS ---- */
+.ef-panels { position: relative; }
+.ef-panel {
+  display: none;
+  height: 320px;
+  overflow-y: auto;
+  padding: 20px 22px;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
+.ef-panel::-webkit-scrollbar { width: 5px; }
+.ef-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+.ef-panel.active { display: block; }
+
+/* ---- SPECS GRID ---- */
+.ef-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.ef-spec-row {
+  display: contents;
+}
+.ef-spec-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #666;
+  text-transform: uppercase;
+  padding: 10px 0 2px;
+  border-bottom: 1px solid #1c1c1c;
+}
+.ef-spec-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #eee;
+  padding: 10px 0 2px;
+  border-bottom: 1px solid #1c1c1c;
+  padding-left: 8px;
+}
+.ef-spec-value.highlight {
+  color: #e8c94a;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* ---- OEM / CROSSREF LIST ---- */
+.ef-code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+.ef-code-item {
+  background: #171717;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+.ef-code-item .ef-ci-mfr {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #666;
+  text-transform: uppercase;
+}
+.ef-code-item .ef-ci-code {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-top: 2px;
+}
+
+/* ---- EQUIPMENT LIST ---- */
+.ef-equip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.ef-equip-table th {
+  text-align: left;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-bottom: 1px solid #1e1e1e;
+}
+.ef-equip-table td {
+  padding: 8px 10px;
+  color: #ccc;
+  border-bottom: 1px solid #181818;
+}
+.ef-equip-table tr:hover td { background: #141414; }
+
+/* ---- EMPTY ---- */
+.ef-empty {
+  color: #444;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 40px 0;
+}
+</style>
+</head>
+<body style="background:#1a1a1a; padding:30px;">
+
+<!-- ====== DEMO: paste from here into WP ====== -->
+<div id="ef-result-card">
+
+  <!-- HEADER -->
+  <div class="ef-header">
+    <div class="ef-header-left">
+      <div class="ef-sku" id="ef-sku-label">—</div>
+      <div class="ef-desc" id="ef-desc-label"></div>
+    </div>
+    <div class="ef-header-right">Technical Specifications</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="ef-body">
+
+    <!-- SIDEBAR -->
+    <div class="ef-sidebar">
+      <img src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">
+      <img src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters" class="ef-logo-full">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="ef-content">
+
+      <!-- TABS -->
+      <div class="ef-tabs">
+        <div class="ef-tab active" data-tab="specs">
+          Specifications
+        </div>
+        <div class="ef-tab" data-tab="oem">
+          OEM Codes <span class="ef-tab-badge" id="ef-oem-count">0</span>
+        </div>
+        <div class="ef-tab" data-tab="cross">
+          Cross Reference <span class="ef-tab-badge" id="ef-cross-count">0</span>
+        </div>
+        <div class="ef-tab" data-tab="equip">
+          Equipment <span class="ef-tab-badge" id="ef-equip-count">0</span>
+        </div>
+      </div>
+
+      <!-- PANELS -->
+      <div class="ef-panels">
+
+        <!-- SPECIFICATIONS -->
+        <div class="ef-panel active" id="ef-panel-specs">
+          <div class="ef-specs-grid" id="ef-specs-grid"></div>
+        </div>
+
+        <!-- OEM CODES -->
+        <div class="ef-panel" id="ef-panel-oem">
+          <div class="ef-code-grid" id="ef-oem-grid"></div>
+        </div>
+
+        <!-- CROSS REFERENCE -->
+        <div class="ef-panel" id="ef-panel-cross">
+          <div class="ef-code-grid" id="ef-cross-grid"></div>
+        </div>
+
+        <!-- EQUIPMENT -->
+        <div class="ef-panel" id="ef-panel-equip">
+          <table class="ef-equip-table">
+            <thead>
+              <tr>
+                <th>Machine / Model</th>
+                <th>Engine</th>
+                <th>Year</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody id="ef-equip-body"></tbody>
+          </table>
+        </div>
+
+      </div><!-- /panels -->
+    </div><!-- /content -->
+  </div><!-- /body -->
+</div><!-- /card -->
+<!-- ====== END paste ====== -->
+
+
+<script>
+/* ============================================================
+   ELIMFILTERS – Part Search Result Card  v2.0
+   Paste this <script> block into WordPress (Custom HTML / WP Code)
+   alongside the HTML+CSS above.
+   ============================================================ */
+
+const API_BASE = 'https://world-catalogue-production.up.railway.app';
+
+/* ---------- Tab switching ---------- */
+document.querySelectorAll('.ef-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ef-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.ef-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('ef-panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- Spec field map by filter_type ---------- */
+const SPEC_FIELDS = {
+  default: [
+    ['filter_type',           'Filter Type'],
+    ['technology',            'Technology'],
+    ['installation_type',     'Installation'],
+    ['thread_size',           'Thread Size'],
+    ['height_mm',             'Height (mm)'],
+    ['outer_diameter_mm',     'Outer Dia. (mm)'],
+    ['gasket_od_mm',          'Gasket OD (mm)'],
+    ['gasket_id_mm',          'Gasket ID (mm)'],
+    ['iso_test_method',       'ISO Test Method'],
+    ['micron_rating',         'Micron Rating'],
+    ['nominal_efficiency',    'Efficiency'],
+    ['burst_pressure_psi',    'Burst Pressure'],
+    ['collapse_pressure_psi', 'Collapse Pressure'],
+    ['duty',                  'Duty'],
+  ]
+};
+
+/* ---------- Render specs grid ---------- */
+function renderSpecs(data) {
+  const grid = document.getElementById('ef-specs-grid');
+  grid.innerHTML = '';
+  const fields = SPEC_FIELDS.default;
+  let hasAny = false;
+
+  fields.forEach(([key, label]) => {
+    const val = data[key];
+    const display = (val !== null && val !== undefined && val !== '') ? val : '—';
+    const lDiv = document.createElement('div');
+    lDiv.className = 'ef-spec-label';
+    lDiv.textContent = label;
+    const vDiv = document.createElement('div');
+    vDiv.className = 'ef-spec-value' + (key === 'technology' ? ' highlight' : '');
+    vDiv.textContent = display;
+    grid.appendChild(lDiv);
+    grid.appendChild(vDiv);
+    if (display !== '—') hasAny = true;
+  });
+
+  if (!hasAny) grid.innerHTML = '<div class="ef-empty" style="grid-column:1/-1">No specifications available</div>';
+}
+
+/* ---------- Render code grid (OEM / Cross) ---------- */
+function renderCodes(containerId, codes) {
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = '';
+  if (!codes || codes.length === 0) {
+    grid.innerHTML = '<div class="ef-empty">No codes available</div>';
+    return;
+  }
+  codes.forEach(c => {
+    const item = document.createElement('div');
+    item.className = 'ef-code-item';
+    const mfr = typeof c === 'string' ? '' : (c.manufacturer || '');
+    const code = typeof c === 'string' ? c : (c.code || '');
+    item.innerHTML = `${mfr ? `<div class="ef-ci-mfr">${mfr}</div>` : ''}<div class="ef-ci-code">${code || '—'}</div>`;
+    grid.appendChild(item);
+  });
+}
+
+/* ---------- Render equipment table ---------- */
+function renderEquipment(applications) {
+  const tbody = document.getElementById('ef-equip-body');
+  tbody.innerHTML = '';
+  if (!applications || applications.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" class="ef-empty">No equipment data available</td></tr>';
+    return;
+  }
+  applications.forEach(app => {
+    const machine = app.machine || app.equipment || (typeof app === 'string' ? app : '—');
+    const engine  = app.engine  || '—';
+    const year    = app.year    || '—';
+    const type    = app.type    || '—';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${machine}</td><td>${engine}</td><td>${year}</td><td>${type}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ---------- Build description from data ---------- */
+function buildDescription(data) {
+  const parts = [];
+  if (data.filter_type)       parts.push(data.filter_type);
+  if (data.technology)        parts.push(`– ${data.technology}™ technology`);
+  if (data.installation_type) parts.push(`| ${data.installation_type}`);
+  if (data.thread_size)       parts.push(`| Thread: ${data.thread_size}`);
+  if (data.duty)              parts.push(`| ${data.duty}`);
+  return parts.join(' ');
+}
+
+/* ---------- Main render function ---------- */
+function efRenderResult(apiResponse) {
+  const d = apiResponse.data || apiResponse;
+  const card = document.getElementById('ef-result-card');
+
+  // Reset tabs to first
+  document.querySelectorAll('.ef-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ef-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.ef-tab[data-tab="specs"]').classList.add('active');
+  document.getElementById('ef-panel-specs').classList.add('active');
+
+  // Header
+  document.getElementById('ef-sku-label').textContent  = d.elimfilters_sku || d.sku || '—';
+  document.getElementById('ef-desc-label').textContent = buildDescription(d);
+
+  // Specs
+  renderSpecs(d);
+
+  // OEM
+  const oemCodes = d.oem_codes || [];
+  renderCodes('ef-oem-grid', oemCodes);
+  document.getElementById('ef-oem-count').textContent = oemCodes.length;
+
+  // Cross Reference
+  const crossCodes = d.competitor_codes || [];
+  renderCodes('ef-cross-grid', crossCodes);
+  document.getElementById('ef-cross-count').textContent = crossCodes.length;
+
+  // Equipment
+  const apps = d.applications || d.equipment_applications || [];
+  renderEquipment(apps);
+  document.getElementById('ef-equip-count').textContent = apps.length;
+
+  card.style.display = 'block';
+}
+
+/* ---------- Hook into existing search ---------- */
+/* If your WP search calls a function like showResult(data), replace it:
+   window.showResult = efRenderResult;
+
+   OR if it posts to the API directly, intercept here.
+   Below is a standalone search hook — remove if WP already handles search. */
+
+window.efSearch = async function(code) {
+  if (!code || !code.trim()) return;
+  try {
+    const res = await fetch(`${API_BASE}/api/filters/search/homologous?code=${encodeURIComponent(code.trim())}`);
+    if (!res.ok) {
+      document.getElementById('ef-result-card').style.display = 'none';
+      alert('No se encontró el código: ' + code);
+      return;
+    }
+    const json = await res.json();
+    if (json.success) efRenderResult(json);
+  } catch (e) {
+    console.error('EF Search error:', e);
+  }
+};
+</script>
+
+<!-- DEMO ONLY: remove this test block in production -->
+<div style="margin-bottom:20px">
+  <input id="demo-input" placeholder="Ej: EL82100" style="padding:8px 14px;background:#222;color:#fff;border:1px solid #444;border-radius:4px;font-size:1rem;">
+  <button onclick="efSearch(document.getElementById('demo-input').value)"
+    style="padding:8px 18px;background:#e8c94a;color:#000;font-weight:700;border:none;border-radius:4px;cursor:pointer;margin-left:8px;">
+    Buscar
+  </button>
+</div>
+
+</body>
+</html>
