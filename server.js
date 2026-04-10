@@ -48,6 +48,16 @@ app.get("/", (req, res) => {
   res.json({ api: "ELIMFILTERS API", version: "3.2.1", database: "PostgreSQL", status: "running" });
 });
 
+app.get("/api/debug", async (req, res) => {
+  try {
+    const count = await pool.query("SELECT COUNT(*) FROM elimfilters_catalog");
+    const sample = await pool.query("SELECT sku, codigo_base, filter_type FROM elimfilters_catalog LIMIT 5");
+    res.json({ total_rows: parseInt(count.rows[0].count), sample: sample.rows });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get("/health", async (req, res) => {
   try {
     await pool.query("SELECT 1");
