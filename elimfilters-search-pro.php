@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V9.0
- * Description: World Catalogue – full-width, 4 columnas horizontales, alineado perfecto.
- * Version: 9.0
+ * Plugin Name: ELIMFILTERS Search Pro V10.0
+ * Description: World Catalogue – pixel-perfect match.
+ * Version: 10.0
  */
 
 if (!defined('ABSPATH')) exit;
@@ -15,12 +15,9 @@ add_shortcode('elimfilters_search', function() {
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ── RESET ── */
 #ef_root_v7 *, #ef_modal_v7 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══════════════════════════════════════════
-   HERO + SEARCH BAR  (no tocar)
-══════════════════════════════════════════ */
+/* ══ HERO + SEARCH BAR (no tocar) ══ */
 #ef_hero_v7 {
     position: relative; width: 100vw; height: 100vh; min-height: 700px;
     margin-left: calc(-50vw + 50%);
@@ -68,207 +65,200 @@ add_shortcode('elimfilters_search', function() {
 }
 .ef7-suggest-item:hover { background: #f5f5f5; }
 
-/* ══════════════════════════════════════════
-   MODAL – pantalla completa sin max-width
-══════════════════════════════════════════ */
+/* ══ MODAL – pantalla completa ══ */
 #ef_modal_v7 {
     display: none; position: fixed; inset: 0;
     background: rgba(0,0,0,0.98); z-index: 99999;
-    overflow-y: auto; padding: 20px 24px;
-    font-family: 'Montserrat', sans-serif;
+    overflow-y: auto;
 }
 #ef_modal_v7.open { display: block; }
-.ef9-wrap { width: 100%; }
+.ef10-wrap { width: 100%; }
 
 /* botón cerrar */
-.ef9-close-row { display: flex; justify-content: flex-end; margin-bottom: 10px; }
-.ef9-close-btn {
+.ef10-close-row {
+    display: flex; justify-content: flex-end;
+    padding: 14px 20px 0;
+}
+.ef10-close-btn {
     background: none; border: 1px solid #222; color: #444;
-    padding: 6px 18px; cursor: pointer;
+    padding: 5px 16px; cursor: pointer;
     font-family: 'Montserrat', sans-serif; font-size: 9px;
     font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
     transition: border-color .2s, color .2s;
 }
-.ef9-close-btn:hover { border-color: #555; color: #aaa; }
+.ef10-close-btn:hover { border-color: #555; color: #aaa; }
 
-/* ══════════════════════════════════════════
-   CARD – 100% de ancho
-══════════════════════════════════════════ */
-.ef9-card { background: #080808; width: 100%; }
+/* ══ CARD – 100% ancho ══ */
+.ef10-card { background: #0a0a0a; width: 100%; }
 
-/* ── HEADER ── */
-.ef9-header {
-    padding: 36px 48px 26px;
-    border-bottom: 1px solid #0f0f0f;
+/* ══ HEADER: [SKU] [descripción] [TECHNICAL SPECIFICATIONS] ══ */
+.ef10-header {
+    display: flex; align-items: flex-start; gap: 32px;
+    padding: 32px 44px 26px;
+    border-bottom: 1px solid #111;
 }
-.ef9-sku {
+.ef10-sku {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 4.8rem; font-weight: 900; color: #FFF12D;
-    line-height: .9; letter-spacing: 3px; margin-bottom: 10px;
+    font-size: 4.2rem; font-weight: 900; color: #FFF12D;
+    letter-spacing: 2px; line-height: .95;
+    flex-shrink: 0; white-space: nowrap;
 }
-.ef9-desc {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 600; color: #3a3a3a;
-    letter-spacing: 2px; text-transform: uppercase;
+.ef10-header-mid {
+    flex: 1; min-width: 0; padding-top: 3px;
 }
-
-/* ── BODY ── */
-.ef9-body { display: flex; }
-
-/* ── SIDEBAR ── */
-.ef9-sidebar {
-    width: 116px; min-width: 116px; background: #050505;
-    border-right: 1px solid #0f0f0f;
-    display: flex; flex-direction: column;
-    align-items: center; padding: 36px 10px 28px; gap: 16px;
-}
-.ef9-sidebar img.ef9-logo-e   { width: 68px; height: auto; display: block; }
-.ef9-sidebar img.ef9-logo-full { width: 82px; height: auto; display: block; filter: brightness(.75); }
-.ef9-sidebar .ef9-gq {
+.ef10-header-desc {
     font-family: 'Montserrat', sans-serif;
-    font-size: 7px; font-weight: 600; letter-spacing: 2.5px;
-    color: #333; text-transform: uppercase; text-align: center;
+    font-size: 10.5px; font-weight: 400; color: #727272;
+    line-height: 1.75;
+}
+.ef10-header-desc strong { color: #b0b0b0; font-weight: 600; }
+.ef10-ts-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    color: #e0e0e0; text-transform: uppercase;
+    white-space: nowrap; flex-shrink: 0; padding-top: 4px;
 }
 
-/* ── CONTENT ── */
-.ef9-content {
+/* ══ BODY ══ */
+.ef10-body { display: flex; }
+
+/* ══ SIDEBAR – 90px exacto ══ */
+.ef10-sidebar {
+    width: 90px; min-width: 90px; background: #060606;
+    border-right: 1px solid #111;
+    display: flex; flex-direction: column;
+    align-items: center; padding: 28px 8px 20px; gap: 14px;
+}
+.ef10-sidebar img.ef10-logo-e {
+    width: 58px; height: auto; display: block;
+}
+.ef10-sidebar img.ef10-logo-full {
+    width: 70px; height: auto; display: block; filter: brightness(.7);
+}
+.ef10-sidebar .ef10-gq {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.5px; font-weight: 600; letter-spacing: 2px;
+    color: #2e2e2e; text-transform: uppercase; text-align: center;
+    line-height: 1.6;
+}
+
+/* ══ CONTENT ══ */
+.ef10-content {
     flex: 1; min-width: 0; overflow: hidden;
     display: flex; flex-direction: column;
 }
 
-/* ── TABS ── */
-.ef9-tabs {
-    display: flex; border-bottom: 1px solid #0f0f0f;
+/* ══ TABS ══ */
+.ef10-tabs {
+    display: flex; border-bottom: 1px solid #111;
     padding: 0 28px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
 }
-.ef9-tabs::-webkit-scrollbar { display: none; }
-.ef9-tab {
-    padding: 15px 20px;
-    font-family: 'Montserrat', sans-serif; font-size: 10px;
-    font-weight: 700; letter-spacing: 2px; color: #282828;
+.ef10-tabs::-webkit-scrollbar { display: none; }
+.ef10-tab {
+    padding: 14px 20px;
+    font-family: 'Montserrat', sans-serif; font-size: 9.5px;
+    font-weight: 700; letter-spacing: 2px; color: #2a2a2a;
     text-transform: uppercase; cursor: pointer; white-space: nowrap;
     border-bottom: 2px solid transparent;
     display: flex; align-items: center; gap: 8px;
     transition: color .15s, border-color .15s;
 }
-.ef9-tab:hover { color: #505050; }
-.ef9-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
-.ef9-badge {
-    background: #111; color: #363636; border-radius: 20px;
-    padding: 2px 8px; font-size: 9px; font-weight: 700;
+.ef10-tab:hover { color: #505050; }
+.ef10-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
+.ef10-badge {
+    background: #111; color: #353535; border-radius: 20px;
+    padding: 2px 8px; font-size: 8.5px; font-weight: 700;
 }
-.ef9-tab.active .ef9-badge { background: rgba(255,241,45,.07); color: #FFF12D; }
+.ef10-tab.active .ef10-badge { background: rgba(255,241,45,.07); color: #FFF12D; }
 
-/* ── PANELS ── */
-.ef9-panel {
+/* ══ PANELS ══ */
+.ef10-panel {
     display: none; overflow-y: auto; overflow-x: hidden;
-    height: 400px; padding: 0 28px 24px;
-    scrollbar-width: thin; scrollbar-color: #181818 #080808;
+    height: 420px; padding: 0 24px 24px;
+    scrollbar-width: thin; scrollbar-color: #181818 #0a0a0a;
 }
-.ef9-panel::-webkit-scrollbar { width: 3px; }
-.ef9-panel::-webkit-scrollbar-thumb { background: #181818; }
-.ef9-panel.active { display: block; }
+.ef10-panel::-webkit-scrollbar { width: 3px; }
+.ef10-panel::-webkit-scrollbar-thumb { background: #181818; }
+.ef10-panel.active { display: block; }
 
-/* encabezado dentro del panel de specs */
-.ef9-specs-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px; font-weight: 700; letter-spacing: 3.5px;
-    color: #c0c0c0; text-transform: uppercase;
-    padding: 22px 0 18px 0;
-    border-bottom: 1px solid #111;
-}
-
-/* ══════════════════════════════════════════
+/* ══════════════════════════════════════════════════
    SPECS TABLE – 4 COLUMNAS HORIZONTALES
-   col1:etiqueta | col2:valor | col3:etiqueta | col4:valor
-   Anchos definidos con style inline en <col>
-══════════════════════════════════════════ */
-.ef9-specs-table {
+   ETIQUETA | VALOR  ║  ETIQUETA | VALOR
+   col widths: 18% | 30% | 18% | 34%
+══════════════════════════════════════════════════ */
+.ef10-specs-table {
     width: 100%; border-collapse: collapse; table-layout: fixed;
 }
-
-/* todas las celdas */
-.ef9-specs-table td {
+.ef10-specs-table td {
     vertical-align: middle;
-    border-bottom: 1px solid #0d0d0d;
+    border-bottom: 1px solid #0e0e0e;
+    padding: 0;
 }
 
-/* celda de etiqueta */
-.ef9-specs-table td.ef9-td-l {
-    padding: 15px 6px 15px 16px;
-}
-/* celda de valor */
-.ef9-specs-table td.ef9-td-v {
-    padding: 15px 40px 15px 2px; /* 40px derecha = espacio antes del separador */
-}
-/* separador entre par izquierdo y par derecho */
-.ef9-specs-table td.ef9-sep {
-    border-left: 1px solid #141414;
-    padding-left: 28px; /* espacio después del borde */
-}
-/* valor del par derecho */
-.ef9-specs-table td.ef9-td-v-r {
-    padding: 15px 16px 15px 2px;
-}
+/* col 1 – etiqueta izquierda */
+.ef10-td-la { padding: 15px 4px 15px 20px; }
+
+/* col 2 – valor izquierdo (gran padding derecha = espacio visual antes del divisor) */
+.ef10-td-va { padding: 15px 52px 15px 8px; }
+
+/* col 3 – etiqueta derecha (borde divisor + padding izquierda) */
+.ef10-td-lb { padding: 15px 4px 15px 36px; border-left: 1px solid #1c1c1c; }
+
+/* col 4 – valor derecho */
+.ef10-td-vb { padding: 15px 20px 15px 8px; }
 
 /* texto de etiqueta */
-.ef9-lbl {
+.ef10-lbl {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-    color: #515151; text-transform: uppercase;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 1.5px;
+    color: #484848; text-transform: uppercase;
 }
 
 /* texto de valor */
-.ef9-val {
+.ef10-val {
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px; font-weight: 600; color: #cacaca;
-    line-height: 1.25;
+    font-size: 17px; font-weight: 600; color: #c8c8c8;
+    line-height: 1.25; margin-top: 3px;
 }
-.ef9-val.hl  { color: #FFF12D; font-style: italic; font-size: 17px; }
-.ef9-val.mt  { color: #1c1c1c; font-size: 14px; letter-spacing: 4px; }
+.ef10-val.hl  { color: #FFF12D; font-style: italic; }
+.ef10-val.mt  { color: #272727; font-size: 15px; letter-spacing: 3px; margin-top: 3px; }
 
-/* ══════════════════════════════════════════
-   CÓDIGO GRID
-══════════════════════════════════════════ */
-.ef9-code-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+/* ══ CÓDIGO GRID ══ */
+.ef10-code-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
     gap: 8px; padding-top: 20px;
 }
-.ef9-code-item {
+.ef10-code-item {
     background: #0b0b0b; border: 1px solid #131313;
     padding: 10px 14px; border-radius: 2px;
 }
-.ef9-code-mfr {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px;
-    color: #2d2d2d; text-transform: uppercase; margin-bottom: 3px;
+.ef10-code-mfr {
+    font-family: 'Montserrat', sans-serif; font-size: 7.5px;
+    font-weight: 700; letter-spacing: 1.5px; color: #2d2d2d;
+    text-transform: uppercase; margin-bottom: 3px;
 }
-.ef9-code-val {
+.ef10-code-val {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 15px; font-weight: 600; color: #b8b8b8;
 }
 
-/* ══════════════════════════════════════════
-   TABLA EQUIPOS
-══════════════════════════════════════════ */
-.ef9-equip-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-.ef9-equip-table th {
+/* ══ TABLA EQUIPOS ══ */
+.ef10-equip-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+.ef10-equip-table th {
     text-align: left; font-family: 'Montserrat', sans-serif;
-    font-size: 8px; font-weight: 700; letter-spacing: 2px;
-    color: #2d2d2d; text-transform: uppercase;
-    padding: 10px 14px; border-bottom: 1px solid #111;
+    font-size: 8px; font-weight: 700; letter-spacing: 2px; color: #2d2d2d;
+    text-transform: uppercase; padding: 10px 14px; border-bottom: 1px solid #111;
 }
-.ef9-equip-table td {
+.ef10-equip-table td {
     padding: 11px 14px; color: #999; border-bottom: 1px solid #0d0d0d;
     font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 500;
 }
-.ef9-equip-table tr:hover td { background: #090909; }
+.ef10-equip-table tr:hover td { background: #090909; }
 
-/* ── EMPTY STATE ── */
-.ef9-empty {
+/* ══ EMPTY ══ */
+.ef10-empty {
     font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600;
     letter-spacing: 3px; color: #1a1a1a; text-transform: uppercase;
     text-align: center; padding: 60px 0;
@@ -297,11 +287,11 @@ add_shortcode('elimfilters_search', function() {
 </div>
 
 <div id="ef_modal_v7">
-    <div class="ef9-wrap">
-        <div class="ef9-close-row">
-            <button class="ef9-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">&#x2715; &nbsp;CLOSE</button>
+    <div class="ef10-wrap">
+        <div class="ef10-close-row">
+            <button class="ef10-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">&#x2715; CLOSE</button>
         </div>
-        <div id="ef9_content"></div>
+        <div id="ef10_content"></div>
     </div>
 </div>
 
@@ -310,191 +300,169 @@ add_shortcode('elimfilters_search', function() {
     var input   = document.getElementById('ef7_q');
     var suggest = document.getElementById('ef7_suggest');
     var modal   = document.getElementById('ef_modal_v7');
-    var content = document.getElementById('ef9_content');
+    var content = document.getElementById('ef10_content');
     var API     = '<?php echo esc_url($railway_api); ?>';
 
-    /* nav tabs */
-    document.querySelectorAll('#ef7_nav span').forEach(function(t) {
-        t.addEventListener('click', function() {
-            document.querySelectorAll('#ef7_nav span').forEach(function(x) { x.classList.remove('active'); });
+    document.querySelectorAll('#ef7_nav span').forEach(function(t){
+        t.addEventListener('click', function(){
+            document.querySelectorAll('#ef7_nav span').forEach(function(x){ x.classList.remove('active'); });
             t.classList.add('active');
         });
     });
 
-    /* búsqueda */
-    function search(val) {
-        if (!val) return;
+    function search(val){
+        if(!val) return;
         suggest.classList.remove('open');
         modal.classList.add('open');
-        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\',sans-serif;font-size:1.5rem;letter-spacing:3px;padding:40px 48px;">CONSULTING DATABASE...</p>';
-        fetch(API + '?code=' + encodeURIComponent(val.trim().toUpperCase()))
-            .then(function(r) { return r.json(); })
-            .then(function(d) {
-                var p = d.data || d.product || null;
-                if (d.success && p) render(p);
-                else content.innerHTML = '<p style="color:#383838;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 48px;letter-spacing:2px;text-transform:uppercase;">No results for \u201C' + val + '\u201D</p>';
+        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\',sans-serif;font-size:1.4rem;letter-spacing:3px;padding:40px 44px;">CONSULTING DATABASE...</p>';
+        fetch(API+'?code='+encodeURIComponent(val.trim().toUpperCase()))
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+                var p = d.data||d.product||null;
+                if(d.success && p) render(p);
+                else content.innerHTML='<p style="color:#333;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 44px;letter-spacing:2px;text-transform:uppercase;">No results for \u201C'+val+'\u201D</p>';
             })
-            .catch(function() {
-                content.innerHTML = '<p style="color:#922;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 48px;">Connection error.</p>';
+            .catch(function(){
+                content.innerHTML='<p style="color:#922;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 44px;">Connection error.</p>';
             });
     }
 
-    /* helpers */
-    function v(x) { return (x !== null && x !== undefined && x !== '') ? x : null; }
-    function mm(x) {
-        if (!v(x)) return null;
-        return x + ' mm\u00A0/\u00A0' + (parseFloat(x) / 25.4).toFixed(2) + '"';
-    }
-    function psi(x) { return v(x) ? x + ' psi' : null; }
+    function v(x){ return (x!==null&&x!==undefined&&x!=='') ? x : null; }
+    function mm(x){ return v(x) ? x+' mm\u00A0/\u00A0'+(parseFloat(x)/25.4).toFixed(2)+'"' : null; }
+    function psi(x){ return v(x) ? x+' psi' : null; }
 
-    /* ── fila de 4 columnas: etiqueta | valor | etiqueta | valor ── */
-    function row(l1, v1, hl1, l2, v2, hl2) {
-        var d1 = v(v1), d2 = v(v2);
-        var c1 = d1 ? (hl1 ? 'ef9-val hl' : 'ef9-val') : 'ef9-val mt';
-        var c2 = d2 ? (hl2 ? 'ef9-val hl' : 'ef9-val') : 'ef9-val mt';
+    /* descripción larga como en el mockup */
+    function buildDesc(p){
+        var sku  = p.elimfilters_sku||p.sku||'';
+        var inst = p.installation_type||'';
+        var type = p.filter_type||'Filter';
+        var tech = p.technology||'';
+        var s = '<strong>'+sku+'</strong>';
+        s += ' | '+(inst?inst+' ':'')+type+' Filter ';
+        s += 'Engineered to exceed OEM performance in modern engines';
+        if(tech) s += ', the Elimfilters\u00AE <strong>'+sku+'</strong> features advanced <strong>'+tech+'\u2122</strong> media technology for superior contaminant capture';
+        s += '. Its robust construction ensures unrestricted oil flow and critical wear protection, maximizing engine life under the most demanding operating conditions.';
+        return s;
+    }
+
+    /* fila 4 columnas: ETIQUETA | VALOR | ETIQUETA | VALOR */
+    function row(l1,v1,hl1,l2,v2,hl2){
+        var d1=v(v1), d2=v(v2);
+        var c1=d1?(hl1?'ef10-val hl':'ef10-val'):'ef10-val mt';
+        var c2=d2?(hl2?'ef10-val hl':'ef10-val'):'ef10-val mt';
         return '<tr>'
-            + '<td class="ef9-td-l"><span class="ef9-lbl">' + l1 + '</span></td>'
-            + '<td class="ef9-td-v"><span class="' + c1 + '">' + (d1 || '\u2014') + '</span></td>'
-            + '<td class="ef9-td-l ef9-sep"><span class="ef9-lbl">' + l2 + '</span></td>'
-            + '<td class="ef9-td-v-r"><span class="' + c2 + '">' + (d2 || '\u2014') + '</span></td>'
-            + '</tr>';
+            +'<td class="ef10-td-la"><span class="ef10-lbl">'+l1+'</span></td>'
+            +'<td class="ef10-td-va"><span class="'+c1+'">'+(d1||'&mdash;&mdash;&mdash;')+'</span></td>'
+            +'<td class="ef10-td-lb"><span class="ef10-lbl">'+l2+'</span></td>'
+            +'<td class="ef10-td-vb"><span class="'+c2+'">'+(d2||'&mdash;&mdash;&mdash;')+'</span></td>'
+            +'</tr>';
     }
 
-    /* ── códigos OEM / cross ── */
-    function codes(arr) {
-        if (!arr || !arr.length) return '<div class="ef9-empty">No codes available</div>';
-        return '<div class="ef9-code-grid">' + arr.map(function(c) {
-            var mfr  = typeof c === 'string' ? '' : (c.manufacturer || '');
-            var code = typeof c === 'string' ? c  : (c.code || '');
-            return '<div class="ef9-code-item">'
-                + (mfr ? '<div class="ef9-code-mfr">' + mfr + '</div>' : '')
-                + '<div class="ef9-code-val">' + (code || '\u2014') + '</div>'
-                + '</div>';
-        }).join('') + '</div>';
+    function codes(arr){
+        if(!arr||!arr.length) return '<div class="ef10-empty">No codes available</div>';
+        return '<div class="ef10-code-grid">'+arr.map(function(c){
+            var mfr=typeof c==='string'?'':(c.manufacturer||'');
+            var code=typeof c==='string'?c:(c.code||'');
+            return '<div class="ef10-code-item">'+(mfr?'<div class="ef10-code-mfr">'+mfr+'</div>':'')+'<div class="ef10-code-val">'+(code||'\u2014')+'</div></div>';
+        }).join('')+'</div>';
     }
 
-    /* ── tabla equipos ── */
-    function equip(arr) {
-        if (!arr || !arr.length) return '<div class="ef9-empty">No equipment data</div>';
-        return '<table class="ef9-equip-table">'
-            + '<thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead>'
-            + '<tbody>' + arr.map(function(a) {
-                var m = a.machine || a.equipment || (typeof a === 'string' ? a : '\u2014');
-                return '<tr><td>' + m + '</td><td>' + (a.engine||'\u2014') + '</td><td>' + (a.year||'\u2014') + '</td><td>' + (a.type||'\u2014') + '</td></tr>';
-            }).join('') + '</tbody></table>';
+    function equip(arr){
+        if(!arr||!arr.length) return '<div class="ef10-empty">No equipment data</div>';
+        return '<table class="ef10-equip-table"><thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead><tbody>'
+            +arr.map(function(a){
+                var m=a.machine||a.equipment||(typeof a==='string'?a:'\u2014');
+                return '<tr><td>'+m+'</td><td>'+(a.engine||'\u2014')+'</td><td>'+(a.year||'\u2014')+'</td><td>'+(a.type||'\u2014')+'</td></tr>';
+            }).join('')+'</tbody></table>';
     }
 
-    /* ── descripción corta ── */
-    function desc(p) {
-        var pts = [];
-        if (p.installation_type) pts.push(p.installation_type);
-        if (p.filter_type)       pts.push(p.filter_type);
-        if (p.technology)        pts.push('\u2014 ' + p.technology + '\u2122');
-        if (p.thread_size)       pts.push('| ' + p.thread_size);
-        return pts.join('  ');
-    }
+    function render(p){
+        var sku   = p.elimfilters_sku||p.sku||'\u2014';
+        var oem   = p.oem_codes||[];
+        var cross = p.competitor_codes||p.cross_references||[];
+        var apps  = p.applications||p.equipment_applications||[];
 
-    /* ── render principal ── */
-    function render(p) {
-        var sku   = p.elimfilters_sku || p.sku || '\u2014';
-        var oem   = p.oem_codes || [];
-        var cross = p.competitor_codes || p.cross_references || [];
-        var apps  = p.applications || p.equipment_applications || [];
-        var d     = desc(p);
-
-        /* tabla specs: 4 columnas horizontales */
+        /* tabla specs 4 col */
         var specs =
-            '<table class="ef9-specs-table">'
-          + '<colgroup>'
-          + '<col style="width:19%">'   /* etiqueta izq */
-          + '<col style="width:29%">'   /* valor izq */
-          + '<col style="width:19%">'   /* etiqueta der */
-          + '<col style="width:33%">'   /* valor der */
-          + '</colgroup>'
-          + '<tbody>'
-          + row('Filter Type',    v(p.filter_type),        false, 'Installation',     v(p.installation_type),    false)
-          + row('Technology',     v(p.technology),         true,  'Thread Size',       v(p.thread_size),          false)
-          + row('Outer Dia.',     mm(p.outer_diameter_mm), false, 'Gasket OD',         mm(p.gasket_od_mm),        false)
-          + row('Gasket ID',      mm(p.gasket_id_mm),      false, 'ISO Test Method',   v(p.iso_test_method),      false)
-          + row('Micron Rating',  v(p.micron_rating),      false, 'Efficiency',        v(p.nominal_efficiency),   false)
-          + row('Burst Pressure', psi(p.burst_pressure_psi), false, 'Collapse Pressure', psi(p.collapse_pressure_psi), false)
-          + (v(p.anti_drainback) ? row('Anti-Drainback', v(p.anti_drainback), false, 'Duty', v(p.duty), false) : '')
-          + '</tbody></table>';
+            '<table class="ef10-specs-table">'
+           +'<colgroup>'
+           +'<col style="width:18%">'
+           +'<col style="width:30%">'
+           +'<col style="width:18%">'
+           +'<col style="width:34%">'
+           +'</colgroup><tbody>'
+           +row('Filter Type',    v(p.filter_type),        false, 'Installation',     v(p.installation_type),    false)
+           +row('Technology',     v(p.technology),         true,  'Thread Size',       v(p.thread_size),          false)
+           +row('Outer Dia.',     mm(p.outer_diameter_mm), false, 'Gasket OD',         mm(p.gasket_od_mm),        false)
+           +row('Gasket ID',      mm(p.gasket_id_mm),      false, 'ISO Test Method',   v(p.iso_test_method),      false)
+           +row('Micron Rating',  v(p.micron_rating),      false, 'Efficiency',        v(p.nominal_efficiency),   false)
+           +row('Burst Pressure', psi(p.burst_pressure_psi), false, 'Collapse Pressure', psi(p.collapse_pressure_psi), false)
+           +(v(p.anti_drainback) ? row('Anti-Drainback', v(p.anti_drainback), false, 'Duty', v(p.duty), false) : '')
+           +'</tbody></table>';
 
         content.innerHTML =
-          '<div class="ef9-card">'
+            '<div class="ef10-card">'
 
-          /* HEADER */
-        + '<div class="ef9-header">'
-        +   '<div class="ef9-sku">' + sku + '</div>'
-        +   (d ? '<div class="ef9-desc">' + d + '</div>' : '')
-        + '</div>'
+            /* HEADER: SKU | descripción | TECHNICAL SPECIFICATIONS */
+           +'<div class="ef10-header">'
+           +  '<div class="ef10-sku">'+sku+'</div>'
+           +  '<div class="ef10-header-mid"><div class="ef10-header-desc">'+buildDesc(p)+'</div></div>'
+           +  '<div class="ef10-ts-label">Technical<br>Specifications</div>'
+           +'</div>'
 
-          /* BODY */
-        + '<div class="ef9-body">'
+            /* BODY */
+           +'<div class="ef10-body">'
 
-            /* SIDEBAR */
-        +   '<div class="ef9-sidebar">'
-        +     '<img class="ef9-logo-e"    src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
-        +     '<img class="ef9-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
-        +     '<div class="ef9-gq">German Quality</div>'
-        +   '</div>'
+              /* SIDEBAR */
+           +  '<div class="ef10-sidebar">'
+           +    '<img class="ef10-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
+           +    '<img class="ef10-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
+           +    '<div class="ef10-gq">German<br>Quality</div>'
+           +  '</div>'
 
-            /* CONTENT */
-        +   '<div class="ef9-content">'
+              /* CONTENT */
+           +  '<div class="ef10-content">'
 
-                /* TABS */
-        +     '<div class="ef9-tabs">'
-        +       '<div class="ef9-tab active" data-tab="specs">Specifications</div>'
-        +       '<div class="ef9-tab" data-tab="oem">OEM Codes <span class="ef9-badge">' + oem.length + '</span></div>'
-        +       '<div class="ef9-tab" data-tab="cross">Cross Reference <span class="ef9-badge">' + cross.length + '</span></div>'
-        +       '<div class="ef9-tab" data-tab="equip">Compatible Equipment <span class="ef9-badge">' + apps.length + '</span></div>'
-        +     '</div>'
+                 /* TABS */
+           +    '<div class="ef10-tabs">'
+           +      '<div class="ef10-tab active" data-tab="specs">Specifications</div>'
+           +      '<div class="ef10-tab" data-tab="oem">OEM Codes <span class="ef10-badge">'+oem.length+'</span></div>'
+           +      '<div class="ef10-tab" data-tab="cross">Cross Reference <span class="ef10-badge">'+cross.length+'</span></div>'
+           +      '<div class="ef10-tab" data-tab="equip">Equipment <span class="ef10-badge">'+apps.length+'</span></div>'
+           +    '</div>'
 
-                /* PANEL SPECS */
-        +     '<div class="ef9-panel active" id="ef9p-specs">'
-        +       '<div class="ef9-specs-heading">Technical Specifications</div>'
-        +       specs
-        +     '</div>'
+                 /* PANELS */
+           +    '<div class="ef10-panel active" id="ef10p-specs">'+specs+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-oem">'+codes(oem)+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-cross">'+codes(cross)+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-equip">'+equip(apps)+'</div>'
 
-                /* PANEL OEM */
-        +     '<div class="ef9-panel" id="ef9p-oem">' + codes(oem) + '</div>'
+           +  '</div>'  /* /content */
+           +'</div>'    /* /body */
+           +'</div>';   /* /card */
 
-                /* PANEL CROSS */
-        +     '<div class="ef9-panel" id="ef9p-cross">' + codes(cross) + '</div>'
-
-                /* PANEL EQUIP */
-        +     '<div class="ef9-panel" id="ef9p-equip">' + equip(apps) + '</div>'
-
-        +   '</div>'   /* /content */
-        + '</div>'     /* /body */
-        + '</div>';    /* /card */
-
-        /* cambio de tabs */
-        content.querySelectorAll('.ef9-tab').forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                content.querySelectorAll('.ef9-tab').forEach(function(t)   { t.classList.remove('active'); });
-                content.querySelectorAll('.ef9-panel').forEach(function(pn){ pn.classList.remove('active'); });
+        /* tab switching */
+        content.querySelectorAll('.ef10-tab').forEach(function(tab){
+            tab.addEventListener('click', function(){
+                content.querySelectorAll('.ef10-tab').forEach(function(t){ t.classList.remove('active'); });
+                content.querySelectorAll('.ef10-panel').forEach(function(pn){ pn.classList.remove('active'); });
                 tab.classList.add('active');
-                content.querySelector('#ef9p-' + tab.dataset.tab).classList.add('active');
+                content.querySelector('#ef10p-'+tab.dataset.tab).classList.add('active');
             });
         });
     }
 
-    /* sugerencias */
-    input.addEventListener('input', function() {
-        var val = this.value.toUpperCase().trim();
-        if (val.length < 2) { suggest.classList.remove('open'); return; }
-        suggest.innerHTML = '<div class="ef7-suggest-item" onclick="window._ef7run(\'' + val.replace(/'/g, "\\'") + '\')">' + val + '</div>';
+    input.addEventListener('input', function(){
+        var val=this.value.toUpperCase().trim();
+        if(val.length<2){ suggest.classList.remove('open'); return; }
+        suggest.innerHTML='<div class="ef7-suggest-item" onclick="window._ef7run(\''+val.replace(/'/g,"\\'")+'\')">'+val+'</div>';
         suggest.classList.add('open');
     });
 
-    window._ef7run = function(val) { input.value = val; search(val); };
-    document.getElementById('ef7_btn').onclick = function() { search(input.value); };
-    input.onkeypress = function(e) { if (e.which === 13) search(input.value); };
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') modal.classList.remove('open');
-    });
+    window._ef7run=function(val){ input.value=val; search(val); };
+    document.getElementById('ef7_btn').onclick=function(){ search(input.value); };
+    input.onkeypress=function(e){ if(e.which===13) search(input.value); };
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.classList.remove('open'); });
 })();
 </script>
 
