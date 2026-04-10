@@ -145,7 +145,7 @@ function buildResponse(row, searchCode) {
   };
 }
 
-// Acepta GET y POST
+// Acepta GET y POST - Compatible con plugin V6.2
 app.all("/api/filters/search", async (req, res) => {
   try {
     const { code, q, search, sku, filter } = req.query || req.body || {};
@@ -158,11 +158,16 @@ app.all("/api/filters/search", async (req, res) => {
     const row = await searchByCode(searchCode);
     if (!row) {
       console.log(`[SEARCH] No encontrado: ${searchCode}`);
-      return res.status(404).json({ success: false, error: "Not found" });
+      return res.status(404).json({ success: false, product: null });
     }
 
     console.log(`[SEARCH] Encontrado: ${row.sku}`);
-    res.json({ success: true, matched_code: searchCode, data: buildResponse(row, searchCode) });
+    const product = buildResponse(row, searchCode);
+
+    // Agregar cross_references para compatibilidad con plugin
+    product.cross_references = row.oem_codes || [];
+
+    res.json({ success: true, product });
   } catch (error) {
     console.error(`[SEARCH] Error:`, error.message);
     res.status(500).json({ success: false, error: error.message });
