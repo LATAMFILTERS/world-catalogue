@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V8.0
- * Description: World Catalogue – etiquetas visibles, columnas estables, sin recorte.
- * Version: 8.0
+ * Plugin Name: ELIMFILTERS Search Pro V9.0
+ * Description: World Catalogue – full-width, 4 columnas horizontales, alineado perfecto.
+ * Version: 9.0
  */
 
 if (!defined('ABSPATH')) exit;
@@ -69,188 +69,209 @@ add_shortcode('elimfilters_search', function() {
 .ef7-suggest-item:hover { background: #f5f5f5; }
 
 /* ══════════════════════════════════════════
-   MODAL OVERLAY
+   MODAL – pantalla completa sin max-width
 ══════════════════════════════════════════ */
 #ef_modal_v7 {
     display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.97); z-index: 99999;
-    overflow-y: auto; padding: 28px 32px;
+    background: rgba(0,0,0,0.98); z-index: 99999;
+    overflow-y: auto; padding: 20px 24px;
     font-family: 'Montserrat', sans-serif;
 }
 #ef_modal_v7.open { display: block; }
-.ef7-modal-wrap { max-width: 1320px; width: 100%; margin: 0 auto; }
+.ef9-wrap { width: 100%; }
 
-.ef7-close-row { display: flex; justify-content: flex-end; margin-bottom: 18px; }
-.ef7-close-btn {
-    background: none; border: 1px solid #252525; color: #555;
-    padding: 7px 20px; cursor: pointer;
-    font-family: 'Montserrat', sans-serif; font-size: 10px;
+/* botón cerrar */
+.ef9-close-row { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+.ef9-close-btn {
+    background: none; border: 1px solid #222; color: #444;
+    padding: 6px 18px; cursor: pointer;
+    font-family: 'Montserrat', sans-serif; font-size: 9px;
     font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
     transition: border-color .2s, color .2s;
 }
-.ef7-close-btn:hover { border-color: #666; color: #ccc; }
+.ef9-close-btn:hover { border-color: #555; color: #aaa; }
 
 /* ══════════════════════════════════════════
-   RESULT CARD
+   CARD – 100% de ancho
 ══════════════════════════════════════════ */
-.ef7-card { background: #080808; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,1); }
+.ef9-card { background: #080808; width: 100%; }
 
 /* ── HEADER ── */
-.ef7-header { padding: 40px 48px 32px; border-bottom: 1px solid #111; }
-.ef7-header-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 14px;
+.ef9-header {
+    padding: 36px 48px 26px;
+    border-bottom: 1px solid #0f0f0f;
 }
-.ef7-sku {
+.ef9-sku {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 5rem; font-weight: 900; color: #FFF12D;
-    line-height: .88; letter-spacing: 4px;
+    font-size: 4.8rem; font-weight: 900; color: #FFF12D;
+    line-height: .9; letter-spacing: 3px; margin-bottom: 10px;
 }
-.ef7-ts-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px; font-weight: 700; letter-spacing: 4px;
-    color: #e8e8e8; text-transform: uppercase;
-    padding-top: 8px; text-align: right; white-space: nowrap;
-}
-.ef7-desc {
+.ef9-desc {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px; font-weight: 600; color: #555;
-    letter-spacing: 2px; text-transform: uppercase; line-height: 1.5;
+    font-size: 13px; font-weight: 600; color: #3a3a3a;
+    letter-spacing: 2px; text-transform: uppercase;
 }
 
 /* ── BODY ── */
-.ef7-body { display: flex; }
+.ef9-body { display: flex; }
 
 /* ── SIDEBAR ── */
-.ef7-sidebar {
-    width: 130px; min-width: 130px; background: #050505;
-    border-right: 1px solid #111;
+.ef9-sidebar {
+    width: 116px; min-width: 116px; background: #050505;
+    border-right: 1px solid #0f0f0f;
     display: flex; flex-direction: column;
-    align-items: center; justify-content: flex-start;
-    padding: 40px 12px 32px; gap: 20px;
+    align-items: center; padding: 36px 10px 28px; gap: 16px;
 }
-.ef7-sidebar img.ef7-logo-e   { width: 80px; height: auto; display: block; }
-.ef7-sidebar img.ef7-logo-full { width: 88px; height: auto; display: block; filter: brightness(.8); }
-.ef7-sidebar .ef7-gq {
+.ef9-sidebar img.ef9-logo-e   { width: 68px; height: auto; display: block; }
+.ef9-sidebar img.ef9-logo-full { width: 82px; height: auto; display: block; filter: brightness(.75); }
+.ef9-sidebar .ef9-gq {
     font-family: 'Montserrat', sans-serif;
-    font-size: 7.5px; font-weight: 600; letter-spacing: 3px;
-    color: #3a3a3a; text-transform: uppercase; text-align: center;
+    font-size: 7px; font-weight: 600; letter-spacing: 2.5px;
+    color: #333; text-transform: uppercase; text-align: center;
 }
 
-/* ── CONTENT AREA ── */
-.ef7-content { flex: 1; min-width: 0; overflow: hidden; display: flex; flex-direction: column; }
+/* ── CONTENT ── */
+.ef9-content {
+    flex: 1; min-width: 0; overflow: hidden;
+    display: flex; flex-direction: column;
+}
 
 /* ── TABS ── */
-.ef7-tabs {
-    display: flex; border-bottom: 1px solid #111;
-    padding: 0 32px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
+.ef9-tabs {
+    display: flex; border-bottom: 1px solid #0f0f0f;
+    padding: 0 28px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
 }
-.ef7-tabs::-webkit-scrollbar { display: none; }
-.ef7-tab {
-    padding: 16px 22px;
-    font-family: 'Montserrat', sans-serif; font-size: 10.5px;
-    font-weight: 700; letter-spacing: 2px; color: #2e2e2e;
+.ef9-tabs::-webkit-scrollbar { display: none; }
+.ef9-tab {
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif; font-size: 10px;
+    font-weight: 700; letter-spacing: 2px; color: #282828;
     text-transform: uppercase; cursor: pointer; white-space: nowrap;
-    border-bottom: 3px solid transparent;
-    transition: color .18s, border-color .18s;
-    display: flex; align-items: center; gap: 10px;
+    border-bottom: 2px solid transparent;
+    display: flex; align-items: center; gap: 8px;
+    transition: color .15s, border-color .15s;
 }
-.ef7-tab:hover { color: #555; }
-.ef7-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
-.ef7-badge {
-    background: #141414; color: #3a3a3a; border-radius: 20px;
-    padding: 2px 10px; font-size: 10px; font-weight: 700;
+.ef9-tab:hover { color: #505050; }
+.ef9-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
+.ef9-badge {
+    background: #111; color: #363636; border-radius: 20px;
+    padding: 2px 8px; font-size: 9px; font-weight: 700;
 }
-.ef7-tab.active .ef7-badge { background: rgba(255,241,45,.1); color: #FFF12D; }
+.ef9-tab.active .ef9-badge { background: rgba(255,241,45,.07); color: #FFF12D; }
 
 /* ── PANELS ── */
-.ef7-panel {
-    display: none;
-    overflow-y: auto; overflow-x: hidden;
-    height: 380px;
-    padding: 0 32px 28px;
-    scrollbar-width: thin; scrollbar-color: #1c1c1c #080808;
+.ef9-panel {
+    display: none; overflow-y: auto; overflow-x: hidden;
+    height: 400px; padding: 0 28px 24px;
+    scrollbar-width: thin; scrollbar-color: #181818 #080808;
 }
-.ef7-panel::-webkit-scrollbar { width: 3px; }
-.ef7-panel::-webkit-scrollbar-thumb { background: #1c1c1c; }
-.ef7-panel.active { display: block; }
+.ef9-panel::-webkit-scrollbar { width: 3px; }
+.ef9-panel::-webkit-scrollbar-thumb { background: #181818; }
+.ef9-panel.active { display: block; }
+
+/* encabezado dentro del panel de specs */
+.ef9-specs-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3.5px;
+    color: #c0c0c0; text-transform: uppercase;
+    padding: 22px 0 18px 0;
+    border-bottom: 1px solid #111;
+}
 
 /* ══════════════════════════════════════════
-   SPECS TABLE  – 4 columnas estables
-   col1: label-izq  col2: valor-izq  col3: label-der  col4: valor-der
-   Anchos definidos con style inline en <col> para máxima compatibilidad
+   SPECS TABLE – 4 COLUMNAS HORIZONTALES
+   col1:etiqueta | col2:valor | col3:etiqueta | col4:valor
+   Anchos definidos con style inline en <col>
 ══════════════════════════════════════════ */
-.ef7-specs-table {
+.ef9-specs-table {
     width: 100%; border-collapse: collapse; table-layout: fixed;
 }
-.ef7-specs-table td {
-    padding: 0; vertical-align: top; border-bottom: 1px solid #0f0f0f;
+
+/* todas las celdas */
+.ef9-specs-table td {
+    vertical-align: middle;
+    border-bottom: 1px solid #0d0d0d;
 }
 
-/* etiquetas – padding-left: 12px para buffer contra recorte */
-.ef7-lbl {
+/* celda de etiqueta */
+.ef9-specs-table td.ef9-td-l {
+    padding: 15px 6px 15px 16px;
+}
+/* celda de valor */
+.ef9-specs-table td.ef9-td-v {
+    padding: 15px 40px 15px 2px; /* 40px derecha = espacio antes del separador */
+}
+/* separador entre par izquierdo y par derecho */
+.ef9-specs-table td.ef9-sep {
+    border-left: 1px solid #141414;
+    padding-left: 28px; /* espacio después del borde */
+}
+/* valor del par derecho */
+.ef9-specs-table td.ef9-td-v-r {
+    padding: 15px 16px 15px 2px;
+}
+
+/* texto de etiqueta */
+.ef9-lbl {
+    display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 9.5px; font-weight: 700; letter-spacing: 2px;
-    color: #505050; text-transform: uppercase;
-    padding: 24px 12px 8px 12px; display: block;
+    font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+    color: #515151; text-transform: uppercase;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-/* valores */
-.ef7-val {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px; font-weight: 600; color: #ddd;
-    padding: 0 12px 18px 12px; display: block; line-height: 1.1;
-    word-break: break-word;
-}
-.ef7-val.hl    { color: #FFF12D; font-style: italic; font-size: 24px; }
-.ef7-val.empty { color: #222; font-size: 16px; letter-spacing: 5px; }
 
-/* divisor vertical entre par izquierdo y par derecho */
-.ef7-specs-table td.ef7-div-l { border-left: 1px solid #111; }
-.ef7-specs-table td.ef7-div-l .ef7-lbl { padding-left: 24px; }
-.ef7-specs-table td.ef7-div-l .ef7-val { padding-left: 24px; }
+/* texto de valor */
+.ef9-val {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 600; color: #cacaca;
+    line-height: 1.25;
+}
+.ef9-val.hl  { color: #FFF12D; font-style: italic; font-size: 17px; }
+.ef9-val.mt  { color: #1c1c1c; font-size: 14px; letter-spacing: 4px; }
 
 /* ══════════════════════════════════════════
    CÓDIGO GRID
 ══════════════════════════════════════════ */
-.ef7-code-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-    gap: 10px; padding-top: 24px;
+.ef9-code-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px; padding-top: 20px;
 }
-.ef7-code-item {
-    background: #0c0c0c; border: 1px solid #161616; padding: 12px 16px; border-radius: 2px;
+.ef9-code-item {
+    background: #0b0b0b; border: 1px solid #131313;
+    padding: 10px 14px; border-radius: 2px;
 }
-.ef7-code-mfr {
+.ef9-code-mfr {
     font-family: 'Montserrat', sans-serif;
-    font-size: 8.5px; font-weight: 700; letter-spacing: 2px;
-    color: #303030; text-transform: uppercase; margin-bottom: 4px;
+    font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px;
+    color: #2d2d2d; text-transform: uppercase; margin-bottom: 3px;
 }
-.ef7-code-val {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 600; color: #ccc;
+.ef9-code-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px; font-weight: 600; color: #b8b8b8;
 }
 
 /* ══════════════════════════════════════════
    TABLA EQUIPOS
 ══════════════════════════════════════════ */
-.ef7-equip-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
-.ef7-equip-table th {
+.ef9-equip-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.ef9-equip-table th {
     text-align: left; font-family: 'Montserrat', sans-serif;
-    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
-    color: #303030; text-transform: uppercase;
-    padding: 10px 16px; border-bottom: 1px solid #131313;
+    font-size: 8px; font-weight: 700; letter-spacing: 2px;
+    color: #2d2d2d; text-transform: uppercase;
+    padding: 10px 14px; border-bottom: 1px solid #111;
 }
-.ef7-equip-table td {
-    padding: 12px 16px; color: #aaa; border-bottom: 1px solid #0e0e0e;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 500;
+.ef9-equip-table td {
+    padding: 11px 14px; color: #999; border-bottom: 1px solid #0d0d0d;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 500;
 }
-.ef7-equip-table tr:hover td { background: #0a0a0a; }
+.ef9-equip-table tr:hover td { background: #090909; }
 
-/* ══════════════════════════════════════════
-   EMPTY STATE
-══════════════════════════════════════════ */
-.ef7-empty {
-    font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
-    letter-spacing: 3px; color: #1e1e1e; text-transform: uppercase;
-    text-align: center; padding: 80px 0;
+/* ── EMPTY STATE ── */
+.ef9-empty {
+    font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; color: #1a1a1a; text-transform: uppercase;
+    text-align: center; padding: 60px 0;
 }
 </style>
 
@@ -276,80 +297,86 @@ add_shortcode('elimfilters_search', function() {
 </div>
 
 <div id="ef_modal_v7">
-    <div class="ef7-modal-wrap">
-        <div class="ef7-close-row">
-            <button class="ef7-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">&#x2715; &nbsp;CLOSE</button>
+    <div class="ef9-wrap">
+        <div class="ef9-close-row">
+            <button class="ef9-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">&#x2715; &nbsp;CLOSE</button>
         </div>
-        <div id="ef7_content"></div>
+        <div id="ef9_content"></div>
     </div>
 </div>
 
 <script>
 (function(){
-    const input   = document.getElementById('ef7_q');
-    const suggest = document.getElementById('ef7_suggest');
-    const modal   = document.getElementById('ef_modal_v7');
-    const content = document.getElementById('ef7_content');
-    const API     = '<?php echo esc_url($railway_api); ?>';
-    let mode = 'part';
+    var input   = document.getElementById('ef7_q');
+    var suggest = document.getElementById('ef7_suggest');
+    var modal   = document.getElementById('ef_modal_v7');
+    var content = document.getElementById('ef9_content');
+    var API     = '<?php echo esc_url($railway_api); ?>';
 
     /* nav tabs */
-    document.querySelectorAll('#ef7_nav span').forEach(t => {
-        t.addEventListener('click', () => {
-            document.querySelectorAll('#ef7_nav span').forEach(x => x.classList.remove('active'));
-            t.classList.add('active'); mode = t.dataset.type;
+    document.querySelectorAll('#ef7_nav span').forEach(function(t) {
+        t.addEventListener('click', function() {
+            document.querySelectorAll('#ef7_nav span').forEach(function(x) { x.classList.remove('active'); });
+            t.classList.add('active');
         });
     });
 
-    /* búsqueda principal */
-    async function search(val) {
+    /* búsqueda */
+    function search(val) {
         if (!val) return;
         suggest.classList.remove('open');
         modal.classList.add('open');
-        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\',sans-serif;font-size:1.8rem;letter-spacing:3px;padding:40px 0;">CONSULTING DATABASE...</p>';
-        try {
-            const r = await fetch(API + '?code=' + encodeURIComponent(val.trim().toUpperCase()));
-            const d = await r.json();
-            const p = d.data || d.product || null;
-            if (d.success && p) render(p);
-            else content.innerHTML = '<p style="color:#555;font-family:\'Montserrat\',sans-serif;font-size:13px;padding:60px 0 0;letter-spacing:2px;text-transform:uppercase;">No results for \u201C' + val + '\u201D</p>';
-        } catch(e) {
-            content.innerHTML = '<p style="color:#c0392b;font-family:\'Montserrat\',sans-serif;font-size:12px;padding:60px 0 0;">Connection error. Check server status.</p>';
-        }
+        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\',sans-serif;font-size:1.5rem;letter-spacing:3px;padding:40px 48px;">CONSULTING DATABASE...</p>';
+        fetch(API + '?code=' + encodeURIComponent(val.trim().toUpperCase()))
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                var p = d.data || d.product || null;
+                if (d.success && p) render(p);
+                else content.innerHTML = '<p style="color:#383838;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 48px;letter-spacing:2px;text-transform:uppercase;">No results for \u201C' + val + '\u201D</p>';
+            })
+            .catch(function() {
+                content.innerHTML = '<p style="color:#922;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 48px;">Connection error.</p>';
+            });
     }
 
     /* helpers */
-    function v(x)  { return (x !== null && x !== undefined && x !== '') ? x : null; }
-    function mm(x) { return v(x) ? x + ' mm' : null; }
+    function v(x) { return (x !== null && x !== undefined && x !== '') ? x : null; }
+    function mm(x) {
+        if (!v(x)) return null;
+        return x + ' mm\u00A0/\u00A0' + (parseFloat(x) / 25.4).toFixed(2) + '"';
+    }
+    function psi(x) { return v(x) ? x + ' psi' : null; }
 
-    /* fila de specs – 4 celdas: label-izq | valor-izq | label-der | valor-der */
-    function specRow(l1, v1, hl1, l2, v2, hl2) {
-        const d1   = v(v1), d2 = v(v2);
-        const cls1 = d1 ? (hl1 ? 'ef7-val hl' : 'ef7-val') : 'ef7-val empty';
-        const cls2 = d2 ? (hl2 ? 'ef7-val hl' : 'ef7-val') : 'ef7-val empty';
+    /* ── fila de 4 columnas: etiqueta | valor | etiqueta | valor ── */
+    function row(l1, v1, hl1, l2, v2, hl2) {
+        var d1 = v(v1), d2 = v(v2);
+        var c1 = d1 ? (hl1 ? 'ef9-val hl' : 'ef9-val') : 'ef9-val mt';
+        var c2 = d2 ? (hl2 ? 'ef9-val hl' : 'ef9-val') : 'ef9-val mt';
         return '<tr>'
-            + '<td><span class="ef7-lbl">'  + l1 + '</span><span class="' + cls1 + '">' + (d1 || '\u2014\u2014\u2014') + '</span></td>'
-            + '<td class="ef7-div-l"><span class="ef7-lbl">' + l2 + '</span><span class="' + cls2 + '">' + (d2 || '\u2014\u2014\u2014') + '</span></td>'
+            + '<td class="ef9-td-l"><span class="ef9-lbl">' + l1 + '</span></td>'
+            + '<td class="ef9-td-v"><span class="' + c1 + '">' + (d1 || '\u2014') + '</span></td>'
+            + '<td class="ef9-td-l ef9-sep"><span class="ef9-lbl">' + l2 + '</span></td>'
+            + '<td class="ef9-td-v-r"><span class="' + c2 + '">' + (d2 || '\u2014') + '</span></td>'
             + '</tr>';
     }
 
-    /* códigos OEM / cross reference */
+    /* ── códigos OEM / cross ── */
     function codes(arr) {
-        if (!arr || !arr.length) return '<div class="ef7-empty">No codes available</div>';
-        return '<div class="ef7-code-grid">' + arr.map(function(c) {
+        if (!arr || !arr.length) return '<div class="ef9-empty">No codes available</div>';
+        return '<div class="ef9-code-grid">' + arr.map(function(c) {
             var mfr  = typeof c === 'string' ? '' : (c.manufacturer || '');
             var code = typeof c === 'string' ? c  : (c.code || '');
-            return '<div class="ef7-code-item">'
-                + (mfr ? '<div class="ef7-code-mfr">' + mfr + '</div>' : '')
-                + '<div class="ef7-code-val">' + (code || '\u2014') + '</div>'
+            return '<div class="ef9-code-item">'
+                + (mfr ? '<div class="ef9-code-mfr">' + mfr + '</div>' : '')
+                + '<div class="ef9-code-val">' + (code || '\u2014') + '</div>'
                 + '</div>';
         }).join('') + '</div>';
     }
 
-    /* tabla de equipos */
+    /* ── tabla equipos ── */
     function equip(arr) {
-        if (!arr || !arr.length) return '<div class="ef7-empty">No equipment data</div>';
-        return '<table class="ef7-equip-table">'
+        if (!arr || !arr.length) return '<div class="ef9-empty">No equipment data</div>';
+        return '<table class="ef9-equip-table">'
             + '<thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead>'
             + '<tbody>' + arr.map(function(a) {
                 var m = a.machine || a.equipment || (typeof a === 'string' ? a : '\u2014');
@@ -357,89 +384,99 @@ add_shortcode('elimfilters_search', function() {
             }).join('') + '</tbody></table>';
     }
 
-    /* descripción corta de 1 línea */
+    /* ── descripción corta ── */
     function desc(p) {
-        var parts = [];
-        if (p.installation_type) parts.push(p.installation_type);
-        if (p.filter_type)       parts.push(p.filter_type);
-        if (p.technology)        parts.push('\u2014  ' + p.technology + '\u2122');
-        if (p.thread_size)       parts.push('|  ' + p.thread_size);
-        return parts.join('  ');
+        var pts = [];
+        if (p.installation_type) pts.push(p.installation_type);
+        if (p.filter_type)       pts.push(p.filter_type);
+        if (p.technology)        pts.push('\u2014 ' + p.technology + '\u2122');
+        if (p.thread_size)       pts.push('| ' + p.thread_size);
+        return pts.join('  ');
     }
 
-    /* render principal */
+    /* ── render principal ── */
     function render(p) {
         var sku   = p.elimfilters_sku || p.sku || '\u2014';
         var oem   = p.oem_codes || [];
         var cross = p.competitor_codes || p.cross_references || [];
         var apps  = p.applications || p.equipment_applications || [];
+        var d     = desc(p);
 
-        /* tabla de specs – 2 celdas por fila, cada celda contiene label+valor apilados */
-        var specsHTML =
-            '<table class="ef7-specs-table">'
+        /* tabla specs: 4 columnas horizontales */
+        var specs =
+            '<table class="ef9-specs-table">'
           + '<colgroup>'
-          + '<col style="width:50%">'
-          + '<col style="width:50%">'
+          + '<col style="width:19%">'   /* etiqueta izq */
+          + '<col style="width:29%">'   /* valor izq */
+          + '<col style="width:19%">'   /* etiqueta der */
+          + '<col style="width:33%">'   /* valor der */
           + '</colgroup>'
           + '<tbody>'
-          + specRow('Filter Type',    v(p.filter_type),         false, 'Installation',     v(p.installation_type),    false)
-          + specRow('Technology',     v(p.technology),          true,  'Thread Size',       v(p.thread_size),          false)
-          + specRow('Outer Dia.',     mm(p.outer_diameter_mm),  false, 'Gasket OD',         mm(p.gasket_od_mm),        false)
-          + specRow('Gasket ID',      mm(p.gasket_id_mm),       false, 'ISO Test Method',   v(p.iso_test_method),      false)
-          + specRow('Micron Rating',  v(p.micron_rating),       false, 'Efficiency',        v(p.nominal_efficiency),   false)
-          + specRow('Burst Pressure', v(p.burst_pressure_psi),  false, 'Collapse Pressure', v(p.collapse_pressure_psi),false)
+          + row('Filter Type',    v(p.filter_type),        false, 'Installation',     v(p.installation_type),    false)
+          + row('Technology',     v(p.technology),         true,  'Thread Size',       v(p.thread_size),          false)
+          + row('Outer Dia.',     mm(p.outer_diameter_mm), false, 'Gasket OD',         mm(p.gasket_od_mm),        false)
+          + row('Gasket ID',      mm(p.gasket_id_mm),      false, 'ISO Test Method',   v(p.iso_test_method),      false)
+          + row('Micron Rating',  v(p.micron_rating),      false, 'Efficiency',        v(p.nominal_efficiency),   false)
+          + row('Burst Pressure', psi(p.burst_pressure_psi), false, 'Collapse Pressure', psi(p.collapse_pressure_psi), false)
+          + (v(p.anti_drainback) ? row('Anti-Drainback', v(p.anti_drainback), false, 'Duty', v(p.duty), false) : '')
           + '</tbody></table>';
 
         content.innerHTML =
-          '<div class="ef7-card">'
+          '<div class="ef9-card">'
 
           /* HEADER */
-        + '<div class="ef7-header">'
-        +   '<div class="ef7-header-top">'
-        +     '<div class="ef7-sku">' + sku + '</div>'
-        +     '<div class="ef7-ts-label">Technical Specifications</div>'
-        +   '</div>'
-        +   '<div class="ef7-desc">' + desc(p) + '</div>'
+        + '<div class="ef9-header">'
+        +   '<div class="ef9-sku">' + sku + '</div>'
+        +   (d ? '<div class="ef9-desc">' + d + '</div>' : '')
         + '</div>'
 
           /* BODY */
-        + '<div class="ef7-body">'
+        + '<div class="ef9-body">'
 
             /* SIDEBAR */
-        +   '<div class="ef7-sidebar">'
-        +     '<img class="ef7-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
-        +     '<img class="ef7-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
-        +     '<div class="ef7-gq">German Quality</div>'
+        +   '<div class="ef9-sidebar">'
+        +     '<img class="ef9-logo-e"    src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
+        +     '<img class="ef9-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
+        +     '<div class="ef9-gq">German Quality</div>'
         +   '</div>'
 
             /* CONTENT */
-        +   '<div class="ef7-content">'
+        +   '<div class="ef9-content">'
 
                 /* TABS */
-        +     '<div class="ef7-tabs">'
-        +       '<div class="ef7-tab active" data-tab="specs">Specifications</div>'
-        +       '<div class="ef7-tab" data-tab="oem">OEM Codes <span class="ef7-badge">' + oem.length + '</span></div>'
-        +       '<div class="ef7-tab" data-tab="cross">Cross Reference <span class="ef7-badge">' + cross.length + '</span></div>'
-        +       '<div class="ef7-tab" data-tab="equip">Equipment <span class="ef7-badge">' + apps.length + '</span></div>'
+        +     '<div class="ef9-tabs">'
+        +       '<div class="ef9-tab active" data-tab="specs">Specifications</div>'
+        +       '<div class="ef9-tab" data-tab="oem">OEM Codes <span class="ef9-badge">' + oem.length + '</span></div>'
+        +       '<div class="ef9-tab" data-tab="cross">Cross Reference <span class="ef9-badge">' + cross.length + '</span></div>'
+        +       '<div class="ef9-tab" data-tab="equip">Compatible Equipment <span class="ef9-badge">' + apps.length + '</span></div>'
         +     '</div>'
 
-                /* PANELS */
-        +     '<div class="ef7-panel active" id="ef7p-specs">' + specsHTML + '</div>'
-        +     '<div class="ef7-panel" id="ef7p-oem">'   + codes(oem)   + '</div>'
-        +     '<div class="ef7-panel" id="ef7p-cross">' + codes(cross) + '</div>'
-        +     '<div class="ef7-panel" id="ef7p-equip">' + equip(apps)  + '</div>'
+                /* PANEL SPECS */
+        +     '<div class="ef9-panel active" id="ef9p-specs">'
+        +       '<div class="ef9-specs-heading">Technical Specifications</div>'
+        +       specs
+        +     '</div>'
 
-        +   '</div>'  /* /content */
-        + '</div>'    /* /body */
-        + '</div>';   /* /card */
+                /* PANEL OEM */
+        +     '<div class="ef9-panel" id="ef9p-oem">' + codes(oem) + '</div>'
 
-        /* tab switching */
-        content.querySelectorAll('.ef7-tab').forEach(function(tab) {
+                /* PANEL CROSS */
+        +     '<div class="ef9-panel" id="ef9p-cross">' + codes(cross) + '</div>'
+
+                /* PANEL EQUIP */
+        +     '<div class="ef9-panel" id="ef9p-equip">' + equip(apps) + '</div>'
+
+        +   '</div>'   /* /content */
+        + '</div>'     /* /body */
+        + '</div>';    /* /card */
+
+        /* cambio de tabs */
+        content.querySelectorAll('.ef9-tab').forEach(function(tab) {
             tab.addEventListener('click', function() {
-                content.querySelectorAll('.ef7-tab').forEach(function(t)  { t.classList.remove('active'); });
-                content.querySelectorAll('.ef7-panel').forEach(function(p) { p.classList.remove('active'); });
+                content.querySelectorAll('.ef9-tab').forEach(function(t)   { t.classList.remove('active'); });
+                content.querySelectorAll('.ef9-panel').forEach(function(pn){ pn.classList.remove('active'); });
                 tab.classList.add('active');
-                content.querySelector('#ef7p-' + tab.dataset.tab).classList.add('active');
+                content.querySelector('#ef9p-' + tab.dataset.tab).classList.add('active');
             });
         });
     }
