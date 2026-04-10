@@ -57,57 +57,76 @@ app.get("/health", async (req, res) => {
   }
 });
 
+async function searchByCode(searchCode) {
+  const exactSql = `
+    SELECT * FROM elimfilters_catalog
+    WHERE sku = $1 OR codigo_base = $1
+    LIMIT 1
+  `;
+  let result = await pool.query(exactSql, [searchCode]);
+
+  if (result.rows.length === 0) {
+    const oemSql = `
+      SELECT * FROM elimfilters_catalog
+      WHERE oem_codes::text ILIKE $1
+      LIMIT 1
+    `;
+    result = await pool.query(oemSql, ["%" + searchCode + "%"]);
+  }
+
+  return result.rows[0] || null;
+}
+
+function buildResponse(row, searchCode) {
+  return {
+    elimfilters_sku:       row.sku,
+    base_code:             row.codigo_base,
+    filter_type:           row.filter_type,
+    technology:            row.technology,
+    installation_type:     row.installation_type,
+    thread_size:           row.thread_size,
+    height_mm:             row.height_mm,
+    outer_diameter_mm:     row.outer_diameter_mm,
+    gasket_od_mm:          row.gasket_od_mm,
+    gasket_id_mm:          row.gasket_id_mm,
+    iso_test_method:       row.iso_test_method,
+    micron_rating:         row.micron_rating,
+    nominal_efficiency:    row.nominal_efficiency,
+    burst_pressure_psi:    row.burst_pressure_psi,
+    collapse_pressure_psi: row.collapse_pressure_psi,
+    duty:                  row.duty,
+    oem_codes:             parseRefs(row.oem_codes),
+    competitor_codes:      parseRefs(row.competitor_codes),
+    applications:          parseEquipment(row.equipment_applications)
+  };
+}
+
+app.get("/api/filters/search", async (req, res) => {
+  try {
+    const { code, q } = req.query;
+    const raw = code || q;
+    if (!raw) return res.status(400).json({ success: false, error: "code required" });
+    const searchCode = raw.trim().toUpperCase();
+
+    const row = await searchByCode(searchCode);
+    if (!row) return res.status(404).json({ success: false, error: "Not found" });
+
+    res.json({ success: true, matched_code: searchCode, data: buildResponse(row, searchCode) });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 app.get("/api/filters/search/homologous", async (req, res) => {
   try {
     const { code } = req.query;
     if (!code) return res.status(400).json({ success: false, error: "code required" });
     const searchCode = code.trim().toUpperCase();
 
-    // Primero busca por SKU o codigo_base exacto
-    const exactSql = `
-      SELECT * FROM elimfilters_catalog
-      WHERE sku = $1 OR codigo_base = $1
-      LIMIT 1
-    `;
-    let result = await pool.query(exactSql, [searchCode]);
+    const row = await searchByCode(searchCode);
+    if (!row) return res.status(404).json({ success: false, error: "Not found" });
 
-    // Si no hay resultado exacto, busca en oem_codes
-    if (result.rows.length === 0) {
-      const oemSql = `
-        SELECT * FROM elimfilters_catalog
-        WHERE oem_codes::text ILIKE $1
-        LIMIT 1
-      `;
-      result = await pool.query(oemSql, ["%" + searchCode + "%"]);
-    }
-
-    if (result.rows.length === 0)
-      return res.status(404).json({ success: false, error: "Not found" });
-
-    const row = result.rows[0];
-    const data = {
-      elimfilters_sku:       row.sku,
-      base_code:             row.codigo_base,
-      filter_type:           row.filter_type,
-      technology:            row.technology,
-      installation_type:     row.installation_type,
-      thread_size:           row.thread_size,
-      height_mm:             row.height_mm,
-      outer_diameter_mm:     row.outer_diameter_mm,
-      gasket_od_mm:          row.gasket_od_mm,
-      gasket_id_mm:          row.gasket_id_mm,
-      iso_test_method:       row.iso_test_method,
-      micron_rating:         row.micron_rating,
-      nominal_efficiency:    row.nominal_efficiency,
-      burst_pressure_psi:    row.burst_pressure_psi,
-      collapse_pressure_psi: row.collapse_pressure_psi,
-      duty:                  row.duty,
-      oem_codes:             parseRefs(row.oem_codes),
-      competitor_codes:      parseRefs(row.competitor_codes),
-      applications:          parseEquipment(row.equipment_applications)
-    };
-
-    res.json({ success: true, matched_code: searchCode, data });
+    res.json({ success: true, matched_code: searchCode, data: buildResponse(row, searchCode) });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
