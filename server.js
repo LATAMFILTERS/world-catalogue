@@ -18,9 +18,43 @@ const pool = new Pool({
   connectionTimeoutMillis: 5000
 });
 
-pool.connect()
-  .then(client => { client.release(); console.log("PostgreSQL conectado"); })
-  .catch(err => console.error("PG error al iniciar:", err.message));
+async function initDB() {
+  const client = await pool.connect();
+  try {
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS elimfilters_catalog (
+        id SERIAL PRIMARY KEY,
+        sku TEXT UNIQUE NOT NULL,
+        codigo_base TEXT,
+        filter_type TEXT,
+        technology TEXT,
+        installation_type TEXT,
+        thread_size TEXT,
+        height_mm NUMERIC,
+        outer_diameter_mm NUMERIC,
+        gasket_od_mm NUMERIC,
+        gasket_id_mm NUMERIC,
+        iso_test_method TEXT,
+        micron_rating NUMERIC,
+        nominal_efficiency NUMERIC,
+        burst_pressure_psi NUMERIC,
+        collapse_pressure_psi NUMERIC,
+        duty TEXT,
+        oem_codes JSONB DEFAULT '[]',
+        competitor_codes JSONB DEFAULT '[]',
+        equipment_applications JSONB DEFAULT '[]'
+      )
+    `);
+    const { rows } = await client.query("SELECT COUNT(*) FROM elimfilters_catalog");
+    console.log(`PostgreSQL conectado — filas en catalogo: ${rows[0].count}`);
+  } catch (err) {
+    console.error("Error inicializando DB:", err.message);
+  } finally {
+    client.release();
+  }
+}
+
+initDB();
 
 function parseRefs(arr) {
   if (!Array.isArray(arr)) return [];
