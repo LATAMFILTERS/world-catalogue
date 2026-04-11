@@ -10,14 +10,34 @@ const dbConfig = {
   ssl: { rejectUnauthorized: false }
 };
 
-function getScrapeUrl(sku, filterType) {
+// Extrae el código Donaldson de oem_codes (múltiples formatos)
+function getDonaldsonCode(oemCodes) {
+  if (!Array.isArray(oemCodes)) return null;
+  for (const item of oemCodes) {
+    if (typeof item === 'string') {
+      // Formato: "Donaldson | P544950"
+      const parts = item.split('|').map(s => s.trim());
+      if (parts.length >= 2 && parts[0].toUpperCase().includes('DONALDSON') && parts[1])
+        return parts[1];
+    } else if (item && typeof item === 'object') {
+      const mfr = (item.manufacturer || item.brand || '').toUpperCase();
+      if (mfr.includes('DONALDSON')) {
+        const code = item.code || item.partNumber;
+        if (code) return code;
+      }
+    }
+  }
+  return null;
+}
+
+function getScrapeUrl(donaldsonCode, filterType) {
   const t = (filterType || '').toLowerCase();
-  if (t.includes('air') || sku.startsWith('EA'))
-    return `https://www.airfilter-crossreference.com/convert/DONALDSON/${sku}`;
-  if (t.includes('fuel') || t.includes('sep') || sku.startsWith('EF') || sku.startsWith('ES'))
-    return `https://www.fuelfilter-crossreference.com/convert/DONALDSON/${sku}`;
-  if (t.includes('lube') || t.includes('oil') || t.includes('hydr') || sku.startsWith('EL') || sku.startsWith('EH'))
-    return `https://www.oilfilter-crossreference.com/convert/DONALDSON/${sku}`;
+  if (t.includes('air'))
+    return `https://www.airfilter-crossreference.com/convert/DONALDSON/${donaldsonCode}`;
+  if (t.includes('fuel') || t.includes('sep'))
+    return `https://www.fuelfilter-crossreference.com/convert/DONALDSON/${donaldsonCode}`;
+  if (t.includes('lube') || t.includes('oil') || t.includes('hydr'))
+    return `https://www.oilfilter-crossreference.com/convert/DONALDSON/${donaldsonCode}`;
   return null;
 }
 
@@ -77,19 +97,21 @@ async function main() {
     `);
 
     console.log(`${rows.length} filtros encontrados\n`);
-    let updated = 0;
+    let updated = 0, skipped = 0;
 
     for (const row of rows) {
       const oemCodes = Array.isArray(row.oem_codes) ? row.oem_codes : [];
-      const donaldsonCode = oemCodes.find(c =>
-        (c.manufacturer || '').toUpperCase().includes('DONALDSON')
-      );
-      const searchSku = donaldsonCode?.code || row.sku;
-      const url = getScrapeUrl(searchSku, row.filter_type);
+      const donaldsonCode = getDonaldsonCode(oemCodes);
 
-      if (!url) { console.log(`SKIP ${row.sku}`); continue; }
+      if (!donaldsonCode) {
+        skipped++;
+        continue; // Sin código Donaldson, no se puede buscar
+      }
 
-      process.stdout.write(`${row.sku} [${row.filter_type}] ${searchSku} ... `);
+      const url = getScrapeUrl(donaldsonCode, row.filter_type);
+      if (!url) { skipped++; continue; }
+
+      process.stdout.write(`${row.sku} [${donaldsonCode}] ... `);
 
       try {
         const { status, body } = await fetchPage(url);
@@ -116,7 +138,7 @@ async function main() {
       await sleep(800);
     }
 
-    console.log(`\nProceso completo. ${updated} filas actualizadas.`);
+    console.log(`\nProceso completo. ${updated} actualizados, ${skipped} sin código Donaldson.`);
   } finally {
     await client.end();
   }
