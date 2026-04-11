@@ -227,15 +227,23 @@ async function processCode(client, inputCode) {
   process.stdout.write(`→ scraping `);
   const scraped = await scrapeDonaldson(code);
 
-  // [3] Clasificación — busca primero en DB por oem_codes, fallback por patrón
+  // [3] Clasificación — busca primero en DB por oem_codes o sku derivado, fallback por patrón
   let { filter_type, prefix } = classifyCode(code);
+  const digits4 = getLast4Digits(code);
   const dbMatch = await client.query(
     `SELECT filter_type FROM elimfilters_catalog
-     WHERE EXISTS (
-       SELECT 1 FROM jsonb_array_elements(oem_codes) e
-       WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
-     ) LIMIT 1`,
-    [code]
+     WHERE oem_codes::text ILIKE $1
+        OR sku LIKE $2 OR sku LIKE $3 OR sku LIKE $4
+        OR sku LIKE $5 OR sku LIKE $6
+     LIMIT 1`,
+    [
+      `%${code}%`,           // oem_codes text search
+      `EL8${digits4}`,       // exact SKU variants
+      `EA1${digits4}`,
+      `EF9${digits4}`,
+      `EH6${digits4}`,
+      `ES9${digits4}`
+    ]
   );
   if (dbMatch.rows.length > 0 && dbMatch.rows[0].filter_type) {
     const dbType = dbMatch.rows[0].filter_type.toUpperCase();
