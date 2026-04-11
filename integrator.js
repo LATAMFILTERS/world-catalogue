@@ -227,8 +227,39 @@ async function processCode(client, inputCode) {
   process.stdout.write(`→ scraping `);
   const scraped = await scrapeDonaldson(code);
 
-  // [3] Clasificación
-  const { filter_type, prefix } = classifyCode(code);
+  // [3] Clasificación — busca primero en DB por oem_codes, fallback por patrón
+  let { filter_type, prefix } = classifyCode(code);
+  const dbMatch = await client.query(
+    `SELECT filter_type FROM elimfilters_catalog
+     WHERE EXISTS (
+       SELECT 1 FROM jsonb_array_elements(oem_codes) e
+       WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+     ) LIMIT 1`,
+    [code]
+  );
+  if (dbMatch.rows.length > 0 && dbMatch.rows[0].filter_type) {
+    const dbType = dbMatch.rows[0].filter_type.toUpperCase();
+    const remap = classifyCode(dbType + '0000'); // get prefix from db type
+    if (remap.prefix !== 'EL8' || dbType.includes('OIL') || dbType.includes('LUBE')) {
+      // Solo reasigna si el DB tiene algo más específico
+      const typeMap = {
+        'AIR': {filter_type:'AIR', prefix:'EA1'},
+        'AIRE': {filter_type:'AIR', prefix:'EA1'},
+        'FUEL': {filter_type:'FUEL', prefix:'EF9'},
+        'COMBUSTIBLE': {filter_type:'FUEL', prefix:'EF9'},
+        'HYDRAULIC': {filter_type:'HYDRAULIC', prefix:'EH6'},
+        'HIDRAULICO': {filter_type:'HYDRAULIC', prefix:'EH6'},
+        'LUBE': {filter_type:'OIL', prefix:'EL8'},
+        'OIL': {filter_type:'OIL', prefix:'EL8'},
+        'FUEL_SEPARATOR': {filter_type:'FUEL_SEPARATOR', prefix:'ES9'},
+        'SEPARATOR': {filter_type:'FUEL_SEPARATOR', prefix:'ES9'},
+        'CABIN': {filter_type:'CABIN', prefix:'EC1'},
+      };
+      for (const [key, val] of Object.entries(typeMap)) {
+        if (dbType.includes(key)) { ({ filter_type, prefix } = val); break; }
+      }
+    }
+  }
   process.stdout.write(`→ ${filter_type} `);
 
   // [4] SKU Trilogy
