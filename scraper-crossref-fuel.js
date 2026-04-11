@@ -120,6 +120,7 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error('Error:', err.message);
+  console.error('Error:', err.message || err);
+  console.error(err.stack || err);
   process.exit(1);
 });
