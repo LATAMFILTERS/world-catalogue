@@ -141,47 +141,27 @@ function classifyCode(code) {
 }
 
 // ─── NODO 4: SKU GENERATOR ────────────────────────────────────────────────────
-const TRILOGY_VARIANTS = ['STANDARD', 'PERFORMANCE', 'ELITE'];
-const TECHNOLOGIES = {
-  STANDARD:    'DURATEC',
-  PERFORMANCE: 'SYNTRAX',
-  ELITE:       'NANOFORCE'
-};
+// Formato: PREFIX + últimos 4 dígitos del código de origen
+// HD (Donaldson): P551808 → EL8 + "1808" = EL81808
+// LD (FRAM):      PH4967  → EL8 + "4967" = EL84967
 
-// Contador secuencial por prefix (en memoria durante la sesión)
-const _counters = {};
-
-async function getNextCorrelative(client, prefix) {
-  // Busca el mayor correlativo existente en DB para ese prefix
-  if (!_counters[prefix]) {
-    const { rows } = await client.query(
-      `SELECT sku FROM elimfilters_catalog WHERE sku LIKE $1 ORDER BY sku DESC LIMIT 1`,
-      [prefix + '%']
-    );
-    if (rows.length > 0) {
-      const last = rows[0].sku.replace(prefix, '');
-      _counters[prefix] = parseInt(last, 10) || 0;
-    } else {
-      _counters[prefix] = 0;
-    }
-  }
-  _counters[prefix]++;
-  return String(_counters[prefix]).padStart(5, '0');
+function getLast4Digits(code) {
+  const digits = code.replace(/\D/g, '');
+  return digits.slice(-4).padStart(4, '0');
 }
 
-async function generateTrilogy(client, inputCode, filterType, prefix) {
-  const trilogy = [];
-  for (const variant of TRILOGY_VARIANTS) {
-    const correlative = await getNextCorrelative(client, prefix);
-    trilogy.push({
-      sku: `${prefix}${correlative}`,
-      filter_type: filterType,
-      technology: TECHNOLOGIES[variant],
-      variant,
-      codigo_base: inputCode.toUpperCase()
-    });
-  }
-  return trilogy;
+async function generateSKU(client, inputCode, filterType, prefix) {
+  const correlative = getLast4Digits(inputCode);
+  const sku = `${prefix}${correlative}`;
+
+  // Si ya existe ese SKU, lo retorna igualmente (upsert lo actualizará)
+  return [{
+    sku,
+    filter_type: filterType,
+    technology: 'DURATEC',
+    variant: 'STANDARD',
+    codigo_base: inputCode.toUpperCase()
+  }];
 }
 
 // ─── NODO 5: EQUIPMENT APPLICATIONS ──────────────────────────────────────────
@@ -252,7 +232,7 @@ async function processCode(client, inputCode) {
   process.stdout.write(`→ ${filter_type} `);
 
   // [4] SKU Trilogy
-  const trilogy = await generateTrilogy(client, code, filter_type, prefix);
+  const trilogy = await generateSKU(client, code, filter_type, prefix);
   process.stdout.write(`→ SKUs: ${trilogy.map(t => t.sku).join(', ')} `);
 
   // [5] Equipment apps
