@@ -18,6 +18,7 @@ const dbConfig = {
   database: 'railway',
   user: 'postgres',
   password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+  client_encoding: 'UTF8',
   ssl: {rejectUnauthorized: false}
 };
 
@@ -54,7 +55,7 @@ function buildFilterData(row){
 }
 
 app.get('/', (req, res) => {
-  res.json({status: 'ok', version: '3.2.5'});
+  res.json({status: 'ok', version: '3.2.6'});
 });
 
 app.get('/api/filters/search/part', async (req, res) => {
@@ -64,6 +65,7 @@ app.get('/api/filters/search/part', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
     
     let result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE codigo_base = $1 LIMIT 1',
@@ -98,7 +100,6 @@ app.get('/api/filters/search/part', async (req, res) => {
 
 app.get('/api/filters/search/vin', async (req, res) => {
   const model = (req.query.model || '').trim().toUpperCase();
-  const year = req.query.year ? req.query.year.trim() : null;
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
@@ -106,6 +107,7 @@ app.get('/api/filters/search/vin', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
     
     let query = `SELECT * FROM elimfilters_catalog 
                  WHERE equipment_applications IS NOT NULL`;
@@ -141,6 +143,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
     
     let query = `SELECT * FROM elimfilters_catalog 
                  WHERE equipment_applications IS NOT NULL`;
@@ -178,6 +181,7 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
     const result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
       [code]
