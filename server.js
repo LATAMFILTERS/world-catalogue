@@ -4,6 +4,13 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
+app.use(express.json({charset: 'utf-8'}));
+
+// Middleware para encoding UTF-8 en respuestas
+app.use((req, res, next) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  next();
+});
 
 const dbConfig = {
   host: 'ballast.proxy.rlwy.net',
@@ -47,7 +54,7 @@ function buildFilterData(row){
 }
 
 app.get('/', (req, res) => {
-  res.json({status: 'ok', version: '3.2.4'});
+  res.json({status: 'ok', version: '3.2.5'});
 });
 
 app.get('/api/filters/search/part', async (req, res) => {
@@ -81,9 +88,9 @@ app.get('/api/filters/search/part', async (req, res) => {
     }
     
     const filters = result.rows.map(row => buildFilterData(row));
-    res.json({success: true, filters});
+    res.status(200).json({success: true, filters});
   } catch(e) {
-    res.json({success: false, error: e.message});
+    res.status(500).json({success: false, error: e.message});
   } finally {
     await client.end();
   }
@@ -116,9 +123,9 @@ app.get('/api/filters/search/vin', async (req, res) => {
     
     const result = await client.query(query, params);
     const filters = result.rows.map(row => buildFilterData(row));
-    res.json({success: true, filters});
+    res.status(200).json({success: true, filters});
   } catch(e) {
-    res.json({success: false, error: e.message});
+    res.status(500).json({success: false, error: e.message});
   } finally {
     await client.end();
   }
@@ -156,9 +163,9 @@ app.get('/api/filters/search/equipment', async (req, res) => {
     
     const result = await client.query(query, params);
     const filters = result.rows.map(row => buildFilterData(row));
-    res.json({success: true, filters});
+    res.status(200).json({success: true, filters});
   } catch(e) {
-    res.json({success: false, error: e.message});
+    res.status(500).json({success: false, error: e.message});
   } finally {
     await client.end();
   }
@@ -176,9 +183,9 @@ app.get('/api/filters/search/homologous', async (req, res) => {
       [code]
     );
     const filters = result.rows.map(row => buildFilterData(row));
-    res.json({success: true, filters});
+    res.status(200).json({success: true, filters});
   } catch(e) {
-    res.json({success: false, error: e.message});
+    res.status(500).json({success: false, error: e.message});
   } finally {
     await client.end();
   }
@@ -186,5 +193,5 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT} with UTF-8 encoding`);
 });
