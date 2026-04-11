@@ -233,17 +233,8 @@ async function processCode(client, inputCode) {
   const dbMatch = await client.query(
     `SELECT filter_type FROM elimfilters_catalog
      WHERE oem_codes::text ILIKE $1
-        OR sku LIKE $2 OR sku LIKE $3 OR sku LIKE $4
-        OR sku LIKE $5 OR sku LIKE $6
      LIMIT 1`,
-    [
-      `%${code}%`,           // oem_codes text search
-      `EL8${digits4}`,       // exact SKU variants
-      `EA1${digits4}`,
-      `EF9${digits4}`,
-      `EH6${digits4}`,
-      `ES9${digits4}`
-    ]
+    [`%${code}%`]
   );
   if (dbMatch.rows.length > 0 && dbMatch.rows[0].filter_type) {
     const dbType = dbMatch.rows[0].filter_type.toUpperCase();
