@@ -80,12 +80,21 @@ app.get('/api/filters/search/part', async (req, res) => {
     }
     
     if(result.rows.length === 0) {
+      // Búsqueda exacta en oem_codes y competitor_codes (formato {code/partNumber})
       result = await client.query(
-        `SELECT * FROM elimfilters_catalog WHERE 
-          sku ILIKE $1 OR codigo_base ILIKE $1 OR 
-          oem_codes::text ILIKE $1 OR competitor_codes::text ILIKE $1 
+        `SELECT * FROM elimfilters_catalog WHERE
+          EXISTS (
+            SELECT 1 FROM jsonb_array_elements(oem_codes) elem
+            WHERE UPPER(elem->>'code') = $1
+               OR UPPER(elem->>'partNumber') = $1
+               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+          )
+          OR EXISTS (
+            SELECT 1 FROM jsonb_array_elements(competitor_codes) elem
+            WHERE UPPER(elem->>'code') = $1
+          )
         LIMIT 10`,
-        ['%' + code + '%']
+        [code]
       );
     }
     
