@@ -247,25 +247,21 @@ async function processCode(client, inputCode) {
   );
   if (dbMatch.rows.length > 0 && dbMatch.rows[0].filter_type) {
     const dbType = dbMatch.rows[0].filter_type.toUpperCase();
-    const remap = classifyCode(dbType + '0000'); // get prefix from db type
-    if (remap.prefix !== 'EL8' || dbType.includes('OIL') || dbType.includes('LUBE')) {
-      // Solo reasigna si el DB tiene algo más específico
-      const typeMap = {
-        'AIR': {filter_type:'AIR', prefix:'EA1'},
-        'AIRE': {filter_type:'AIR', prefix:'EA1'},
-        'FUEL': {filter_type:'FUEL', prefix:'EF9'},
-        'COMBUSTIBLE': {filter_type:'FUEL', prefix:'EF9'},
-        'HYDRAULIC': {filter_type:'HYDRAULIC', prefix:'EH6'},
-        'HIDRAULICO': {filter_type:'HYDRAULIC', prefix:'EH6'},
-        'LUBE': {filter_type:'OIL', prefix:'EL8'},
-        'OIL': {filter_type:'OIL', prefix:'EL8'},
-        'FUEL_SEPARATOR': {filter_type:'FUEL_SEPARATOR', prefix:'ES9'},
-        'SEPARATOR': {filter_type:'FUEL_SEPARATOR', prefix:'ES9'},
-        'CABIN': {filter_type:'CABIN', prefix:'EC1'},
-      };
-      for (const [key, val] of Object.entries(typeMap)) {
-        if (dbType.includes(key)) { ({ filter_type, prefix } = val); break; }
-      }
+    const typeMap = [
+      ['AIR',            {filter_type:'AIR',            prefix:'EA1'}],
+      ['AIRE',           {filter_type:'AIR',            prefix:'EA1'}],
+      ['FUEL_SEP',       {filter_type:'FUEL_SEPARATOR', prefix:'ES9'}],
+      ['SEPARATOR',      {filter_type:'FUEL_SEPARATOR', prefix:'ES9'}],
+      ['FUEL',           {filter_type:'FUEL',           prefix:'EF9'}],
+      ['COMBUSTIBLE',    {filter_type:'FUEL',           prefix:'EF9'}],
+      ['HYDRAULIC',      {filter_type:'HYDRAULIC',      prefix:'EH6'}],
+      ['HIDRAUL',        {filter_type:'HYDRAULIC',      prefix:'EH6'}],
+      ['CABIN',          {filter_type:'CABIN',          prefix:'EC1'}],
+      ['LUBE',           {filter_type:'OIL',            prefix:'EL8'}],
+      ['OIL',            {filter_type:'OIL',            prefix:'EL8'}],
+    ];
+    for (const [key, val] of typeMap) {
+      if (dbType.includes(key)) { ({ filter_type, prefix } = val); break; }
     }
   }
   process.stdout.write(`→ ${filter_type} `);
