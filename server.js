@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
@@ -5,6 +6,10 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
+
+// Import new routes
+const chatRoutes = require('./routes/chat.routes');
+const whatsappRoutes = require('./routes/whatsapp.routes');
 
 // Middleware para encoding UTF-8 en respuestas
 app.use((req, res, next) => {
@@ -204,7 +209,13 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
+// Register new routes
+app.use('/api', chatRoutes);
+app.use('/webhook', whatsappRoutes);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
+  console.log(`✅ Chatbot service running`);
+  console.log(`✅ WhatsApp webhook listening on /webhook/whatsapp`);
 });
