@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
+app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
 
 // Import new routes
 const chatRoutes = require('./routes/chat.routes');
