@@ -42,10 +42,12 @@ class ChatbotService {
             SELECT 1 FROM jsonb_array_elements(oem_codes) e
             WHERE UPPER(e->>'code') = $1
                OR UPPER(e->>'partNumber') = $1
+               OR (jsonb_typeof(e) = 'string' AND UPPER(e#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
           )
           OR EXISTS (
             SELECT 1 FROM jsonb_array_elements(competitor_codes) e
             WHERE UPPER(e->>'code') = $1
+               OR UPPER(e->>'partNumber') = $1
           )
         LIMIT 3
       `, [code]);
