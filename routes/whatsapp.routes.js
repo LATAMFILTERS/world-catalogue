@@ -50,7 +50,7 @@ router.post('/whatsapp', async (req, res) => {
     }
 
     // Add support link
-    replyText += '\n\n📧 Más info: soporte@elimfilters.com';
+    replyText += '\n\n📧 Más info: support@elimfilters.com';
 
     // Send via Twilio (if configured)
     if (twilioClient) {

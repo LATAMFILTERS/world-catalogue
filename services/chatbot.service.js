@@ -156,7 +156,7 @@ CRITICAL RULES:
    - If filter found: "El equivalente ELIMFILTERS es [SKU]. Especificaciones: [specs from DB]"
    - If OEM/cross-ref requested: list them from DB only
    - If equipment requested: list from DB only
-   - If not found: "No encontramos equivalente para [code]. Contacte soporte@elimfilters.com"
+   - If not found: "No encontramos equivalente para [code]. Contacte support@elimfilters.com"
 6. Keep responses concise. Max 5 lines unless customer asks for full details.
 7. Never say "STANDARD", show it only if customer asks about variants.
 ${dbContext}`;
@@ -180,7 +180,7 @@ ${dbContext}`;
     } catch (error) {
       console.error('Groq error:', error.message);
       return {
-        message: '❌ Error procesando consulta. Intente nuevamente o contacte soporte@elimfilters.com',
+        message: '❌ Error procesando consulta. Intente nuevamente o contacte support@elimfilters.com',
         filters: [],
         error: true
       };
