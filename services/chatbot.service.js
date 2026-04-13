@@ -18,8 +18,9 @@ class ChatbotService {
 
   // Extract potential part codes from user message
   extractCodes(text) {
-    // Match alphanumeric codes: P552100, LF3620, EL82100, 1R1808, etc.
-    const matches = text.match(/\b([A-Z]{0,4}\d{3,8}[A-Z0-9]*)\b/gi) || [];
+    // Match codes: B76, P552100, LF3620, EL82100, 1R1808, etc.
+    // Min 1 letter + 2 digits, or 1+ digits + optional letters
+    const matches = text.match(/\b([A-Z]{1,4}\d{2,8}[A-Z0-9]*|[A-Z]{0,2}\d{4,8})\b/gi) || [];
     return [...new Set(matches.map(c => c.toUpperCase()))];
   }
 
@@ -144,7 +145,9 @@ class ChatbotService {
         dbContext += JSON.stringify(this.formatFilterData(f, requestType)) + '\n';
       });
     } else if (codes.length > 0) {
-      dbContext = `\n\nNo se encontró ningún filtro ELIMFILTERS para los códigos: ${codes.join(', ')}`;
+      dbContext = `\n\nNO DATA FOUND in database for codes: ${codes.join(', ')}. YOU MUST inform the user no equivalent was found. DO NOT invent or suggest any SKU.`;
+    } else {
+      dbContext = `\n\nNO PART CODE detected in user message. DO NOT suggest any ELIMFILTERS SKU. Answer general questions only.`;
     }
 
     const systemPrompt = `You are ELIMFILTERS technical support assistant. ELIMFILTERS is an industrial filter brand.
