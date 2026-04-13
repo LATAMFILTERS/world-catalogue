@@ -11,9 +11,11 @@ app.use(express.json({charset: 'utf-8'}));
 const chatRoutes = require('./routes/chat.routes');
 const whatsappRoutes = require('./routes/whatsapp.routes');
 
-// Middleware para encoding UTF-8 en respuestas
+// Middleware para encoding UTF-8 en respuestas JSON (excluye webhook WhatsApp que necesita XML)
 app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  if (!req.path.startsWith('/webhook')) {
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  }
   next();
 });
 
