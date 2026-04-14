@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const {Pool} = require('pg');
 const cors = require('cors');
@@ -14,11 +15,11 @@ app.use((req, res, next) => {
 
 // Connection pool — reutiliza conexiones en lugar de crear una por request
 const pool = new Pool({
-  host: 'ballast.proxy.rlwy.net',
-  port: 18263,
-  database: 'railway',
-  user: 'postgres',
-  password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT) || 5432,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   ssl: {rejectUnauthorized: false},
   max: 10,
   idleTimeoutMillis: 30000,
