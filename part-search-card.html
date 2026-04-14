@@ -4,7 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Part Search Card – ELIMFILTERS</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+
+/* ══ GLITCH REVEAL ══ */
+@keyframes ef-glitch {
+  0%   { clip-path: inset(0 0 95% 0); opacity: 0; transform: skewX(-4deg); color: #fff; }
+  15%  { clip-path: inset(60% 0 10% 0); opacity: 1; transform: skewX(3deg); color: #fff; }
+  30%  { clip-path: inset(20% 0 50% 0); transform: skewX(-2deg); color: #FFF12D; }
+  45%  { clip-path: inset(75% 0 0 0);   transform: skewX(2deg);  color: #fff; }
+  60%  { clip-path: inset(0 0 30% 0);   transform: skewX(-1deg); color: #FFF12D; }
+  75%  { clip-path: inset(0 0 0 0);     transform: skewX(1deg);  color: #fff; }
+  88%  { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; }
+  100% { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; opacity: 1; }
+}
+.ef-sku.ef-glitch-play {
+  animation: ef-glitch 0.45s steps(1) forwards;
+}
+
+/* ══ SKELETON SHIMMER ══ */
+@keyframes ef-shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+.ef-skeleton-line {
+  height: 14px; border-radius: 2px; margin-bottom: 10px;
+  background: linear-gradient(90deg, #111 25%, #1d1d1d 50%, #111 75%);
+  background-size: 1200px 100%;
+  animation: ef-shimmer 1.4s infinite linear;
+}
+.ef-skeleton-sku {
+  height: 42px; width: 160px; border-radius: 2px; margin-bottom: 12px;
+  background: linear-gradient(90deg, #161616 25%, #242008 50%, #161616 75%);
+  background-size: 1200px 100%;
+  animation: ef-shimmer 1.4s infinite linear;
+}
+#ef-skeleton-loader {
+  display: none;
+  background: #0d0d0d; border-radius: 6px; overflow: hidden;
+  margin-top: 20px; padding: 22px 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+}
+
+
 /* ===== RESULT CARD ===== */
 #ef-result-card {
   display: none;
@@ -226,9 +268,38 @@
   text-align: center;
   padding: 40px 0;
 }
+
+/* ══ ELECTRIC BORDER GLOW on hover ══ */
+.ef-code-item {
+  transition: border-color .2s, box-shadow .2s;
+}
+.ef-code-item:hover {
+  border-color: #FFF12D;
+  box-shadow: 0 0 0 1px #FFF12D44, 0 0 14px rgba(255,241,45,0.12);
+}
+.ef-equip-table tr:hover td {
+  background: #141414;
+  transition: background .15s;
+}
+.ef-tab:hover {
+  color: #aaa;
+  transition: color .2s;
+}
 </style>
 </head>
 <body style="background:#1a1a1a; padding:30px;">
+
+<!-- ====== SKELETON LOADER ====== -->
+<div id="ef-skeleton-loader">
+  <div class="ef-skeleton-sku"></div>
+  <div class="ef-skeleton-line" style="width:80%"></div>
+  <div class="ef-skeleton-line" style="width:60%"></div>
+  <div style="display:flex;gap:8px;margin-top:16px">
+    <div class="ef-skeleton-line" style="width:90px;height:10px;margin:0"></div>
+    <div class="ef-skeleton-line" style="width:90px;height:10px;margin:0"></div>
+    <div class="ef-skeleton-line" style="width:90px;height:10px;margin:0"></div>
+  </div>
+</div>
 
 <!-- ====== DEMO: paste from here into WP ====== -->
 <div id="ef-result-card">
@@ -432,8 +503,15 @@ function efRenderResult(apiResponse) {
   document.querySelector('.ef-tab[data-tab="specs"]').classList.add('active');
   document.getElementById('ef-panel-specs').classList.add('active');
 
-  // Header
-  document.getElementById('ef-sku-label').textContent  = d.elimfilters_sku || d.sku || '—';
+  // Ocultar skeleton
+  document.getElementById('ef-skeleton-loader').style.display = 'none';
+
+  // Header con glitch en SKU
+  const skuEl = document.getElementById('ef-sku-label');
+  skuEl.textContent = d.elimfilters_sku || d.sku || '—';
+  skuEl.classList.remove('ef-glitch-play');
+  void skuEl.offsetWidth; // reflow para reiniciar animación
+  skuEl.classList.add('ef-glitch-play');
   document.getElementById('ef-desc-label').textContent = buildDescription(d);
 
   // Specs
@@ -466,16 +544,22 @@ function efRenderResult(apiResponse) {
 
 window.efSearch = async function(code) {
   if (!code || !code.trim()) return;
+
+  // Mostrar skeleton, ocultar card
+  document.getElementById('ef-result-card').style.display = 'none';
+  document.getElementById('ef-skeleton-loader').style.display = 'block';
+
   try {
     const res = await fetch(`${API_BASE}/api/filters/search/homologous?code=${encodeURIComponent(code.trim())}`);
+    document.getElementById('ef-skeleton-loader').style.display = 'none';
     if (!res.ok) {
-      document.getElementById('ef-result-card').style.display = 'none';
       alert('No se encontró el código: ' + code);
       return;
     }
     const json = await res.json();
     if (json.success) efRenderResult(json);
   } catch (e) {
+    document.getElementById('ef-skeleton-loader').style.display = 'none';
     console.error('EF Search error:', e);
   }
 };

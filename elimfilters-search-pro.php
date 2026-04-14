@@ -263,6 +263,46 @@ add_shortcode('elimfilters_search', function() {
     letter-spacing: 3px; color: #1a1a1a; text-transform: uppercase;
     text-align: center; padding: 60px 0;
 }
+
+/* ══ GLITCH REVEAL ══ */
+@keyframes ef10-glitch {
+    0%   { clip-path: inset(0 0 95% 0); opacity: 0; transform: skewX(-4deg); color: #fff; }
+    15%  { clip-path: inset(60% 0 10% 0); opacity: 1; transform: skewX(3deg); color: #fff; }
+    30%  { clip-path: inset(20% 0 50% 0); transform: skewX(-2deg); color: #FFF12D; }
+    45%  { clip-path: inset(75% 0 0 0);   transform: skewX(2deg);  color: #fff; }
+    60%  { clip-path: inset(0 0 30% 0);   transform: skewX(-1deg); color: #FFF12D; }
+    75%  { clip-path: inset(0 0 0 0);     transform: skewX(1deg);  color: #fff; }
+    88%  { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; }
+    100% { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; opacity: 1; }
+}
+.ef10-sku.ef10-glitch-play {
+    animation: ef10-glitch 0.45s steps(1) forwards;
+}
+
+/* ══ SKELETON SHIMMER ══ */
+@keyframes ef10-shimmer {
+    0%   { background-position: -600px 0; }
+    100% { background-position: 600px 0; }
+}
+.ef10-sk-line {
+    border-radius: 2px;
+    background: linear-gradient(90deg, #0d0d0d 25%, #1a1a1a 50%, #0d0d0d 75%);
+    background-size: 1200px 100%;
+    animation: ef10-shimmer 1.4s infinite linear;
+}
+.ef10-sk-sku  { width: 180px; height: 58px; margin-bottom: 14px; }
+.ef10-sk-desc { height: 11px; margin-bottom: 8px; }
+.ef10-sk-tab  { height: 10px; width: 80px; display: inline-block; margin-right: 16px; }
+
+/* ══ ELECTRIC BORDER GLOW ══ */
+.ef10-code-item {
+    transition: border-color .2s, box-shadow .2s;
+}
+.ef10-code-item:hover {
+    border-color: #FFF12D;
+    box-shadow: 0 0 0 1px rgba(255,241,45,.27), 0 0 14px rgba(255,241,45,.1);
+}
+.ef10-equip-table tr:hover td { background: #090909; transition: background .15s; }
 </style>
 
 <div id="ef_root_v7">
@@ -314,7 +354,15 @@ add_shortcode('elimfilters_search', function() {
         if(!val) return;
         suggest.classList.remove('open');
         modal.classList.add('open');
-        content.innerHTML = '<p style="color:#FFF12D;font-family:\'Barlow Condensed\',sans-serif;font-size:1.4rem;letter-spacing:3px;padding:40px 44px;">CONSULTING DATABASE...</p>';
+        content.innerHTML = '<div style="padding:32px 44px 26px">'
+            +'<div class="ef10-sk-line ef10-sk-sku"></div>'
+            +'<div class="ef10-sk-line ef10-sk-desc" style="width:75%"></div>'
+            +'<div class="ef10-sk-line ef10-sk-desc" style="width:55%"></div>'
+            +'<div style="margin-top:20px">'
+            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+            +'</div></div>';
         fetch(API+'?code='+encodeURIComponent(val.trim().toUpperCase()))
             .then(function(r){ return r.json(); })
             .then(function(d){
@@ -405,7 +453,7 @@ add_shortcode('elimfilters_search', function() {
 
             /* HEADER: SKU | descripción | TECHNICAL SPECIFICATIONS */
            +'<div class="ef10-header">'
-           +  '<div class="ef10-sku">'+sku+'</div>'
+           +  '<div class="ef10-sku" id="ef10-sku-el">'+sku+'</div>'
            +  '<div class="ef10-header-mid"><div class="ef10-header-desc">'+buildDesc(p)+'</div></div>'
            +  '<div class="ef10-ts-label">Technical<br>Specifications</div>'
            +'</div>'
@@ -440,6 +488,14 @@ add_shortcode('elimfilters_search', function() {
            +  '</div>'  /* /content */
            +'</div>'    /* /body */
            +'</div>';   /* /card */
+
+        /* glitch reveal en SKU */
+        var skuEl = content.querySelector('#ef10-sku-el');
+        if(skuEl){
+            skuEl.classList.remove('ef10-glitch-play');
+            void skuEl.offsetWidth;
+            skuEl.classList.add('ef10-glitch-play');
+        }
 
         /* tab switching */
         content.querySelectorAll('.ef10-tab').forEach(function(tab){
