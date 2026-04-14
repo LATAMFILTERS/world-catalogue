@@ -12,7 +12,10 @@ class ChatbotService {
       user: 'postgres',
       password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
       client_encoding: 'UTF8',
-      ssl: { rejectUnauthorized: false }
+      ssl: { rejectUnauthorized: false },
+      connectionTimeoutMillis: 5000,
+      idleTimeoutMillis: 10000,
+      statement_timeout: 5000
     });
   }
 
@@ -125,17 +128,20 @@ class ChatbotService {
     const codes = this.extractCodes(userMessage);
     const requestType = this.detectRequestType(userMessage);
 
-    // Search DB for all detected codes
+    // Search DB with timeout — skip if too slow
     let filters = [];
-    for (const code of codes) {
-      const results = await this.searchByCode(code);
-      filters.push(...results);
+    try {
+      const dbTimeout = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('DB timeout')), 6000)
+      );
+      const dbSearch = Promise.all(codes.map(code => this.searchByCode(code)));
+      const results = await Promise.race([dbSearch, dbTimeout]);
+      filters = results.flat().filter((f, i, arr) =>
+        arr.findIndex(x => x.sku === f.sku) === i
+      );
+    } catch (e) {
+      console.error('[Chat] DB search skipped:', e.message);
     }
-
-    // Remove duplicates by SKU
-    filters = filters.filter((f, i, arr) =>
-      arr.findIndex(x => x.sku === f.sku) === i
-    );
 
     // Build DB context for Groq
     let dbContext = '';
