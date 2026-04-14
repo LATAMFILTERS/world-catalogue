@@ -172,9 +172,9 @@ ${dbContext}`;
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userMessage }
         ],
-        model: 'llama-3.3-70b-versatile',
+        model: 'llama-3.1-8b-instant',
         temperature: 0.2,
-        max_tokens: 400
+        max_tokens: 250
       });
 
       return {
