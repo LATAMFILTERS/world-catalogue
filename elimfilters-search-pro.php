@@ -226,7 +226,7 @@ add_shortcode('elimfilters_search', function() {
 /* ══ EMPTY ══ */
 .ef10-empty {
     font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600;
-    letter-spacing: 3px; color: #1a1a1a; text-transform: uppercase;
+    letter-spacing: 3px; color: #444; text-transform: uppercase;
     text-align: center; padding: 60px 0;
 }
 
@@ -379,7 +379,8 @@ add_shortcode('elimfilters_search', function() {
     }
 
     function showError(msg){
-        content.innerHTML = '<p style="color:#333;font-family:\'Montserrat\',sans-serif;font-size:10px;padding:60px 44px;letter-spacing:2px;text-transform:uppercase;">'+msg+'</p>';
+        console.warn('[ELIMFILTERS] Error:', msg);
+        content.innerHTML = '<p style="color:#666;font-family:\'Montserrat\',sans-serif;font-size:10px;padding:60px 44px;letter-spacing:2px;text-transform:uppercase;">'+msg+'</p>';
     }
 
     /* ── Main dispatcher ── */
@@ -395,13 +396,19 @@ add_shortcode('elimfilters_search', function() {
     /* ── Part Number ── */
     function searchPart(val){
         showSkeleton();
-        fetch(API+'/api/filters/search/part?code='+encodeURIComponent(val.toUpperCase()))
+        var url = API+'/api/filters/search/part?code='+encodeURIComponent(val.toUpperCase());
+        console.log('[ELIMFILTERS] Fetching:', url);
+        fetch(url)
             .then(function(r){ return r.json(); })
             .then(function(d){
+                console.log('[ELIMFILTERS] Response:', JSON.stringify(d));
                 if(d.success && d.filters && d.filters.length > 0) renderSingle(d.filters[0]);
                 else showError('No results found for "'+val+'"');
             })
-            .catch(function(){ showError('Connection error — please try again'); });
+            .catch(function(err){
+                console.error('[ELIMFILTERS] Fetch error:', err);
+                showError('Connection error — please try again');
+            });
     }
 
     /* ── VIN: decode → equipment search ── */
