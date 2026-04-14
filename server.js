@@ -7,14 +7,15 @@ const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
+app.use(express.static('.')); // Serve static files (index.html, assets/)
 
 // Import new routes
 const chatRoutes = require('./routes/chat.routes');
 const whatsappRoutes = require('./routes/whatsapp.routes');
 
-// Middleware para encoding UTF-8 en respuestas JSON (excluye webhook WhatsApp que necesita XML)
+// Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
-  if (!req.path.startsWith('/webhook')) {
+  if (req.path.startsWith('/api')) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
   }
   next();
