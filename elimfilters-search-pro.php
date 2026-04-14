@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name: ELIMFILTERS Search Pro V10.0
+ * Plugin Name: ELIMFILTERS Search Pro V11.0
  * Description: World Catalogue – pixel-perfect match.
- * Version: 10.0
+ * Version: 11.0
  */
 
 if (!defined('ABSPATH')) exit;
 
 add_shortcode('elimfilters_search', function() {
-    $bg_url      = 'https://elimfilters.com/wp-content/uploads/2025/12/Imagen2.png';
-    $railway_api = 'https://world-catalogue-production.up.railway.app/api/filters/search/homologous';
+    $bg_url  = 'https://elimfilters.com/wp-content/uploads/2025/12/Imagen2.png';
+    $api     = 'https://world-catalogue-production.up.railway.app';
     ob_start(); ?>
 
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@ add_shortcode('elimfilters_search', function() {
 <style>
 #ef_root_v7 *, #ef_modal_v7 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══ HERO + SEARCH BAR (no tocar) ══ */
+/* ══ HERO ══ */
 #ef_hero_v7 {
     position: relative; width: 100vw; height: 100vh; min-height: 700px;
     margin-left: calc(-50vw + 50%);
@@ -65,20 +65,13 @@ add_shortcode('elimfilters_search', function() {
 }
 .ef7-suggest-item:hover { background: #f5f5f5; }
 
-/* ══ MODAL – pantalla completa ══ */
+/* ══ MODAL ══ */
 #ef_modal_v7 {
     display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.98); z-index: 99999;
-    overflow-y: auto;
+    background: rgba(0,0,0,0.98); z-index: 99999; overflow-y: auto;
 }
 #ef_modal_v7.open { display: block; }
-.ef10-wrap { width: 100%; }
-
-/* botón cerrar */
-.ef10-close-row {
-    display: flex; justify-content: flex-end;
-    padding: 14px 20px 0;
-}
+.ef10-close-row { display: flex; justify-content: flex-end; padding: 14px 20px 0; }
 .ef10-close-btn {
     background: none; border: 1px solid #222; color: #444;
     padding: 5px 16px; cursor: pointer;
@@ -88,65 +81,46 @@ add_shortcode('elimfilters_search', function() {
 }
 .ef10-close-btn:hover { border-color: #555; color: #aaa; }
 
-/* ══ CARD – 100% ancho ══ */
+/* ══ SINGLE RESULT — CARD ══ */
 .ef10-card { background: #0a0a0a; width: 100%; }
 
-/* ══ HEADER: [SKU] [descripción] [TECHNICAL SPECIFICATIONS] ══ */
 .ef10-header {
     display: flex; align-items: flex-start; gap: 32px;
-    padding: 32px 44px 26px;
-    border-bottom: 1px solid #111;
+    padding: 32px 44px 26px; border-bottom: 1px solid #111;
 }
 .ef10-sku {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 4.2rem; font-weight: 900; color: #FFF12D;
-    letter-spacing: 2px; line-height: .95;
-    flex-shrink: 0; white-space: nowrap;
+    letter-spacing: 2px; line-height: .95; flex-shrink: 0; white-space: nowrap;
 }
-.ef10-header-mid {
-    flex: 1; min-width: 0; padding-top: 3px;
-}
+.ef10-header-mid { flex: 1; min-width: 0; padding-top: 6px; }
 .ef10-header-desc {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10.5px; font-weight: 400; color: #727272;
-    line-height: 1.75;
+    font-size: 10.5px; font-weight: 400; color: #727272; line-height: 1.75;
 }
 .ef10-header-desc strong { color: #b0b0b0; font-weight: 600; }
 .ef10-ts-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px; font-weight: 700; letter-spacing: 3px;
-    color: #e0e0e0; text-transform: uppercase;
-    white-space: nowrap; flex-shrink: 0; padding-top: 4px;
+    font-family: 'Montserrat', sans-serif; font-size: 10px;
+    font-weight: 700; letter-spacing: 3px; color: #e0e0e0;
+    text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+    padding-top: 4px; text-align: right;
 }
 
-/* ══ BODY ══ */
 .ef10-body { display: flex; }
 
-/* ══ SIDEBAR – 90px exacto ══ */
+/* ══ SIDEBAR ══ */
 .ef10-sidebar {
     width: 90px; min-width: 90px; background: #060606;
     border-right: 1px solid #111;
     display: flex; flex-direction: column;
-    align-items: center; padding: 28px 8px 20px; gap: 14px;
+    align-items: center; justify-content: center;
+    padding: 32px 8px; gap: 24px;
 }
-.ef10-sidebar img.ef10-logo-e {
-    width: 58px; height: auto; display: block;
-}
-.ef10-sidebar img.ef10-logo-full {
-    width: 70px; height: auto; display: block; filter: brightness(.7);
-}
-.ef10-sidebar .ef10-gq {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 6.5px; font-weight: 600; letter-spacing: 2px;
-    color: #2e2e2e; text-transform: uppercase; text-align: center;
-    line-height: 1.6;
-}
+.ef10-sidebar img.ef10-logo-e  { width: 62px; height: auto; display: block; }
+.ef10-sidebar img.ef10-logo-full { width: 68px; height: auto; display: block; filter: brightness(.75); }
 
 /* ══ CONTENT ══ */
-.ef10-content {
-    flex: 1; min-width: 0; overflow: hidden;
-    display: flex; flex-direction: column;
-}
+.ef10-content { flex: 1; min-width: 0; overflow: hidden; display: flex; flex-direction: column; }
 
 /* ══ TABS ══ */
 .ef10-tabs {
@@ -181,70 +155,62 @@ add_shortcode('elimfilters_search', function() {
 .ef10-panel::-webkit-scrollbar-thumb { background: #181818; }
 .ef10-panel.active { display: block; }
 
-/* ══════════════════════════════════════════════════
-   SPECS TABLE – 4 COLUMNAS HORIZONTALES
-   ETIQUETA | VALOR  ║  ETIQUETA | VALOR
-   col widths: 18% | 30% | 18% | 34%
-══════════════════════════════════════════════════ */
-.ef10-specs-table {
-    width: 100%; border-collapse: collapse; table-layout: fixed;
-}
-.ef10-specs-table td {
-    vertical-align: middle;
-    border-bottom: 1px solid #0e0e0e;
-    padding: 0;
-}
-
-/* col 1 – etiqueta izquierda */
+/* ══ SPECS TABLE — 4 cols ══ */
+.ef10-specs-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.ef10-specs-table td { vertical-align: middle; border-bottom: 1px solid #0e0e0e; padding: 0; }
 .ef10-td-la { padding: 15px 4px 15px 20px; }
-
-/* col 2 – valor izquierdo (gran padding derecha = espacio visual antes del divisor) */
 .ef10-td-va { padding: 15px 52px 15px 8px; }
-
-/* col 3 – etiqueta derecha (borde divisor + padding izquierda) */
 .ef10-td-lb { padding: 15px 4px 15px 36px; border-left: 1px solid #1c1c1c; }
-
-/* col 4 – valor derecho */
 .ef10-td-vb { padding: 15px 20px 15px 8px; }
-
-/* texto de etiqueta */
 .ef10-lbl {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
+    display: block; font-family: 'Montserrat', sans-serif;
     font-size: 8.5px; font-weight: 700; letter-spacing: 1.5px;
     color: #484848; text-transform: uppercase;
 }
-
-/* texto de valor */
 .ef10-val {
-    display: block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 17px; font-weight: 600; color: #c8c8c8;
-    line-height: 1.25; margin-top: 3px;
+    display: block; font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px; font-weight: 600; color: #c8c8c8; line-height: 1.25; margin-top: 3px;
 }
-.ef10-val.hl  { color: #FFF12D; font-style: italic; }
-.ef10-val.mt  { color: #272727; font-size: 15px; letter-spacing: 3px; margin-top: 3px; }
+.ef10-val.hl { color: #FFF12D; font-style: italic; }
+.ef10-val.mt { color: #272727; font-size: 15px; letter-spacing: 3px; margin-top: 3px; }
 
-/* ══ CÓDIGO GRID ══ */
-.ef10-code-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
-    gap: 8px; padding-top: 20px;
+/* ══ OEM / CROSSREF — 4-col table ══ */
+.ef10-codes-hdr { padding: 24px 0 12px; border-bottom: 1px solid #111; margin-bottom: 2px; }
+.ef10-codes-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.9rem; font-weight: 900; color: #e8e8e8; letter-spacing: 1px;
 }
-.ef10-code-item {
-    background: #0b0b0b; border: 1px solid #131313;
-    padding: 10px 14px; border-radius: 2px;
+.ef10-codes-sub {
+    font-family: 'Montserrat', sans-serif; font-size: 8px;
+    font-weight: 700; letter-spacing: 2.5px; color: #2e2e2e;
+    text-transform: uppercase; margin-top: 5px;
 }
-.ef10-code-mfr {
+.ef10-codes-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.ef10-codes-table thead th {
     font-family: 'Montserrat', sans-serif; font-size: 7.5px;
-    font-weight: 700; letter-spacing: 1.5px; color: #2d2d2d;
-    text-transform: uppercase; margin-bottom: 3px;
+    font-weight: 700; letter-spacing: 2px; color: #3a3a3a;
+    text-transform: uppercase; padding: 10px 12px 10px 0;
+    border-bottom: 1px solid #131313; text-align: left;
 }
-.ef10-code-val {
+.ef10-codes-table thead th.ef10-ct-div,
+.ef10-codes-table tbody td.ef10-ct-div {
+    width: 2px; padding: 0; background: #151515;
+}
+.ef10-codes-table tbody td {
+    padding: 9px 12px 9px 0; border-bottom: 1px solid #0d0d0d; vertical-align: middle;
+}
+.ef10-ct-mfr {
+    font-family: 'Montserrat', sans-serif; font-size: 9.5px;
+    font-weight: 600; color: #777; text-transform: uppercase;
+    letter-spacing: .4px;
+}
+.ef10-ct-code {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px; font-weight: 600; color: #b8b8b8;
+    font-size: 16px; font-weight: 700; color: #FFF12D; letter-spacing: .5px;
 }
+.ef10-codes-table tbody tr:hover td { background: #0e0e0e; transition: background .1s; }
 
-/* ══ TABLA EQUIPOS ══ */
+/* ══ EQUIPMENT TABLE (inside single result) ══ */
 .ef10-equip-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
 .ef10-equip-table th {
     text-align: left; font-family: 'Montserrat', sans-serif;
@@ -255,7 +221,7 @@ add_shortcode('elimfilters_search', function() {
     padding: 11px 14px; color: #999; border-bottom: 1px solid #0d0d0d;
     font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 500;
 }
-.ef10-equip-table tr:hover td { background: #090909; }
+.ef10-equip-table tr:hover td { background: #090909; transition: background .15s; }
 
 /* ══ EMPTY ══ */
 .ef10-empty {
@@ -264,25 +230,72 @@ add_shortcode('elimfilters_search', function() {
     text-align: center; padding: 60px 0;
 }
 
+/* ══ LIST RESULTS (Equipment / VIN) ══ */
+.ef-list-wrap { padding: 0 40px 40px; }
+.ef-list-header {
+    display: flex; align-items: baseline; gap: 20px;
+    padding: 28px 0 20px; border-bottom: 1px solid #111;
+}
+.ef-list-query {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem; font-weight: 900; color: #FFF12D;
+    letter-spacing: 2px; text-transform: uppercase; line-height: 1;
+}
+.ef-list-count {
+    font-family: 'Montserrat', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 3px; color: #333; text-transform: uppercase;
+}
+.ef-list-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px; padding-top: 20px;
+}
+.ef-list-card {
+    background: #0d0d0d; border: 1px solid #1a1a1a;
+    padding: 18px 20px; cursor: pointer;
+    transition: border-color .2s, box-shadow .2s;
+}
+.ef-list-card:hover {
+    border-color: #FFF12D;
+    box-shadow: 0 0 0 1px rgba(255,241,45,.2), 0 0 16px rgba(255,241,45,.08);
+}
+.ef-lc-sku {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem; font-weight: 900; color: #FFF12D;
+    letter-spacing: 1px; line-height: 1;
+}
+.ef-lc-type {
+    font-family: 'Montserrat', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 2px; color: #444;
+    text-transform: uppercase; margin-top: 7px;
+}
+.ef-lc-tech {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 600; color: #555; margin-top: 4px;
+}
+.ef-lc-btn {
+    font-family: 'Montserrat', sans-serif; font-size: 8px;
+    font-weight: 700; letter-spacing: 2px; color: #2a2a2a;
+    text-transform: uppercase; margin-top: 14px; transition: color .2s;
+}
+.ef-list-card:hover .ef-lc-btn { color: #FFF12D; }
+
 /* ══ GLITCH REVEAL ══ */
 @keyframes ef10-glitch {
     0%   { clip-path: inset(0 0 95% 0); opacity: 0; transform: skewX(-4deg); color: #fff; }
     15%  { clip-path: inset(60% 0 10% 0); opacity: 1; transform: skewX(3deg); color: #fff; }
     30%  { clip-path: inset(20% 0 50% 0); transform: skewX(-2deg); color: #FFF12D; }
-    45%  { clip-path: inset(75% 0 0 0);   transform: skewX(2deg);  color: #fff; }
-    60%  { clip-path: inset(0 0 30% 0);   transform: skewX(-1deg); color: #FFF12D; }
-    75%  { clip-path: inset(0 0 0 0);     transform: skewX(1deg);  color: #fff; }
-    88%  { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; }
-    100% { clip-path: inset(0 0 0 0);     transform: skewX(0);     color: #FFF12D; opacity: 1; }
+    45%  { clip-path: inset(75% 0 0 0); transform: skewX(2deg); color: #fff; }
+    60%  { clip-path: inset(0 0 30% 0); transform: skewX(-1deg); color: #FFF12D; }
+    75%  { clip-path: inset(0 0 0 0); transform: skewX(1deg); color: #fff; }
+    88%  { clip-path: inset(0 0 0 0); transform: skewX(0); color: #FFF12D; }
+    100% { clip-path: inset(0 0 0 0); transform: skewX(0); color: #FFF12D; opacity: 1; }
 }
-.ef10-sku.ef10-glitch-play {
-    animation: ef10-glitch 0.45s steps(1) forwards;
-}
+.ef10-sku.ef10-glitch-play { animation: ef10-glitch 0.45s steps(1) forwards; }
 
 /* ══ SKELETON SHIMMER ══ */
 @keyframes ef10-shimmer {
     0%   { background-position: -600px 0; }
-    100% { background-position: 600px 0; }
+    100% { background-position:  600px 0; }
 }
 .ef10-sk-line {
     border-radius: 2px;
@@ -295,14 +308,7 @@ add_shortcode('elimfilters_search', function() {
 .ef10-sk-tab  { height: 10px; width: 80px; display: inline-block; margin-right: 16px; }
 
 /* ══ ELECTRIC BORDER GLOW ══ */
-.ef10-code-item {
-    transition: border-color .2s, box-shadow .2s;
-}
-.ef10-code-item:hover {
-    border-color: #FFF12D;
-    box-shadow: 0 0 0 1px rgba(255,241,45,.27), 0 0 14px rgba(255,241,45,.1);
-}
-.ef10-equip-table tr:hover td { background: #090909; transition: background .15s; }
+.ef10-codes-table tbody tr { transition: background .1s; }
 </style>
 
 <div id="ef_root_v7">
@@ -314,7 +320,7 @@ add_shortcode('elimfilters_search', function() {
                 <span data-type="application">EQUIPMENT</span>
             </div>
             <div class="ef7-input-row">
-                <input type="text" id="ef7_q" placeholder="SEARCH BY CODE..." autocomplete="off">
+                <input type="text" id="ef7_q" placeholder="SEARCH BY PART NUMBER..." autocomplete="off">
                 <button class="ef7-btn" id="ef7_btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3">
                         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -327,7 +333,7 @@ add_shortcode('elimfilters_search', function() {
 </div>
 
 <div id="ef_modal_v7">
-    <div class="ef10-wrap">
+    <div>
         <div class="ef10-close-row">
             <button class="ef10-close-btn" onclick="document.getElementById('ef_modal_v7').classList.remove('open')">&#x2715; CLOSE</button>
         </div>
@@ -337,159 +343,244 @@ add_shortcode('elimfilters_search', function() {
 
 <script>
 (function(){
-    var input   = document.getElementById('ef7_q');
-    var suggest = document.getElementById('ef7_suggest');
-    var modal   = document.getElementById('ef_modal_v7');
-    var content = document.getElementById('ef10_content');
-    var API     = '<?php echo esc_url($railway_api); ?>';
+    var input      = document.getElementById('ef7_q');
+    var suggest    = document.getElementById('ef7_suggest');
+    var modal      = document.getElementById('ef_modal_v7');
+    var content    = document.getElementById('ef10_content');
+    var API        = '<?php echo esc_js($api); ?>';
+    var activeType = 'part';
 
+    /* ── Nav tab switching ── */
     document.querySelectorAll('#ef7_nav span').forEach(function(t){
         t.addEventListener('click', function(){
             document.querySelectorAll('#ef7_nav span').forEach(function(x){ x.classList.remove('active'); });
             t.classList.add('active');
+            activeType = t.dataset.type;
+            input.placeholder = activeType === 'part' ? 'SEARCH BY PART NUMBER...'
+                              : activeType === 'vin'  ? 'ENTER VIN NUMBER...'
+                              :                         'SEARCH BY EQUIPMENT / VEHICLE...';
+            input.value = '';
         });
     });
 
-    function search(val){
-        if(!val) return;
-        suggest.classList.remove('open');
+    /* ── Skeleton ── */
+    function showSkeleton(){
         modal.classList.add('open');
-        content.innerHTML = '<div style="padding:32px 44px 26px">'
-            +'<div class="ef10-sk-line ef10-sk-sku"></div>'
-            +'<div class="ef10-sk-line ef10-sk-desc" style="width:75%"></div>'
-            +'<div class="ef10-sk-line ef10-sk-desc" style="width:55%"></div>'
-            +'<div style="margin-top:20px">'
-            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
-            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
-            +'<span class="ef10-sk-line ef10-sk-tab"></span>'
-            +'</div></div>';
-        fetch(API+'?code='+encodeURIComponent(val.trim().toUpperCase()))
-            .then(function(r){ return r.json(); })
-            .then(function(d){
-                var p = d.data||d.product||null;
-                if(d.success && p) render(p);
-                else content.innerHTML='<p style="color:#333;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 44px;letter-spacing:2px;text-transform:uppercase;">No results for \u201C'+val+'\u201D</p>';
-            })
-            .catch(function(){
-                content.innerHTML='<p style="color:#922;font-family:\'Montserrat\',sans-serif;font-size:11px;padding:60px 44px;">Connection error.</p>';
-            });
+        content.innerHTML =
+            '<div style="padding:32px 44px 26px">'
+           +'<div class="ef10-sk-line ef10-sk-sku"></div>'
+           +'<div class="ef10-sk-line ef10-sk-desc" style="width:75%"></div>'
+           +'<div class="ef10-sk-line ef10-sk-desc" style="width:55%"></div>'
+           +'<div style="margin-top:20px">'
+           +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+           +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+           +'<span class="ef10-sk-line ef10-sk-tab"></span>'
+           +'</div></div>';
     }
 
-    function v(x){ return (x!==null&&x!==undefined&&x!=='') ? x : null; }
+    function showError(msg){
+        content.innerHTML = '<p style="color:#333;font-family:\'Montserrat\',sans-serif;font-size:10px;padding:60px 44px;letter-spacing:2px;text-transform:uppercase;">'+msg+'</p>';
+    }
+
+    /* ── Main dispatcher ── */
+    function search(val){
+        if(!val || !val.trim()) return;
+        suggest.classList.remove('open');
+        val = val.trim();
+        if(activeType === 'part')        searchPart(val);
+        else if(activeType === 'vin')    searchVin(val);
+        else                             searchEquipment(val, val);
+    }
+
+    /* ── Part Number ── */
+    function searchPart(val){
+        showSkeleton();
+        fetch(API+'/api/filters/search/part?code='+encodeURIComponent(val.toUpperCase()))
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+                if(d.success && d.filters && d.filters.length > 0) renderSingle(d.filters[0]);
+                else showError('No results found for "'+val+'"');
+            })
+            .catch(function(){ showError('Connection error — please try again'); });
+    }
+
+    /* ── VIN: decode → equipment search ── */
+    function searchVin(vin){
+        vin = vin.trim().toUpperCase();
+        if(vin.length < 11){ showSkeleton(); showError('Enter a valid VIN (minimum 11 characters)'); return; }
+        showSkeleton();
+        fetch('https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/'+encodeURIComponent(vin)+'?format=json')
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                var res   = data.Results || [];
+                var make  = '', model = '', year = '';
+                res.forEach(function(r){
+                    if(r.Variable === 'Make')       make  = r.Value && r.Value !== 'null' ? r.Value : '';
+                    if(r.Variable === 'Model')      model = r.Value && r.Value !== 'null' ? r.Value : '';
+                    if(r.Variable === 'Model Year') year  = r.Value && r.Value !== 'null' ? r.Value : '';
+                });
+                if(!make && !model){ showError('VIN not recognized: '+vin); return; }
+                var query = [year, make, model].filter(Boolean).join(' ');
+                fetchEquipment(query, 'VIN '+vin+' \u2192 '+query);
+            })
+            .catch(function(){ showError('Error decoding VIN — check your connection'); });
+    }
+
+    /* ── Equipment ── */
+    function searchEquipment(val, label){
+        showSkeleton();
+        fetchEquipment(val, label);
+    }
+
+    function fetchEquipment(query, label){
+        fetch(API+'/api/filters/search/equipment?model='+encodeURIComponent(query))
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+                if(d.success && d.filters && d.filters.length > 0) renderList(d.filters, label);
+                else showError('No compatible filters found for: '+label);
+            })
+            .catch(function(){ showError('Connection error — please try again'); });
+    }
+
+    /* ── Helpers ── */
+    function v(x){ return (x !== null && x !== undefined && x !== '') ? x : null; }
     function mm(x){ return v(x) ? x+' mm\u00A0/\u00A0'+(parseFloat(x)/25.4).toFixed(2)+'"' : null; }
     function psi(x){ return v(x) ? x+' psi' : null; }
 
-    /* descripción larga como en el mockup */
     function buildDesc(p){
-        var sku  = p.elimfilters_sku||p.sku||'';
-        var inst = p.installation_type||'';
-        var type = p.filter_type||'Filter';
-        var tech = p.technology||'';
+        var sku  = p.elimfilters_sku || p.sku || '';
+        var inst = p.installation_type || '';
+        var type = p.filter_type || 'Filter';
+        var tech = p.technology || '';
         var s = '<strong>'+sku+'</strong>';
-        s += ' | '+(inst?inst+' ':'')+type+' Filter ';
+        s += ' | '+(inst ? inst+' ' : '')+type+' Filter ';
         s += 'Engineered to exceed OEM performance in modern engines';
         if(tech) s += ', the Elimfilters\u00AE <strong>'+sku+'</strong> features advanced <strong>'+tech+'\u2122</strong> media technology for superior contaminant capture';
         s += '. Its robust construction ensures unrestricted oil flow and critical wear protection, maximizing engine life under the most demanding operating conditions.';
         return s;
     }
 
-    /* fila 4 columnas: ETIQUETA | VALOR | ETIQUETA | VALOR */
-    function row(l1,v1,hl1,l2,v2,hl2){
-        var d1=v(v1), d2=v(v2);
-        var c1=d1?(hl1?'ef10-val hl':'ef10-val'):'ef10-val mt';
-        var c2=d2?(hl2?'ef10-val hl':'ef10-val'):'ef10-val mt';
+    function specRow(l1, v1, hl1, l2, v2, hl2){
+        var d1 = v(v1), d2 = v(v2);
+        var c1 = d1 ? (hl1 ? 'ef10-val hl' : 'ef10-val') : 'ef10-val mt';
+        var c2 = d2 ? (hl2 ? 'ef10-val hl' : 'ef10-val') : 'ef10-val mt';
         return '<tr>'
             +'<td class="ef10-td-la"><span class="ef10-lbl">'+l1+'</span></td>'
-            +'<td class="ef10-td-va"><span class="'+c1+'">'+(d1||'&mdash;&mdash;&mdash;')+'</span></td>'
+            +'<td class="ef10-td-va"><span class="'+c1+'">'+(d1 || '&mdash;&mdash;&mdash;')+'</span></td>'
             +'<td class="ef10-td-lb"><span class="ef10-lbl">'+l2+'</span></td>'
-            +'<td class="ef10-td-vb"><span class="'+c2+'">'+(d2||'&mdash;&mdash;&mdash;')+'</span></td>'
+            +'<td class="ef10-td-vb"><span class="'+c2+'">'+(d2 || '&mdash;&mdash;&mdash;')+'</span></td>'
             +'</tr>';
     }
 
-    function codes(arr){
-        if(!arr||!arr.length) return '<div class="ef10-empty">No codes available</div>';
-        return '<div class="ef10-code-grid">'+arr.map(function(c){
-            var mfr=typeof c==='string'?'':(c.manufacturer||'');
-            var code=typeof c==='string'?c:(c.code||'');
-            return '<div class="ef10-code-item">'+(mfr?'<div class="ef10-code-mfr">'+mfr+'</div>':'')+'<div class="ef10-code-val">'+(code||'\u2014')+'</div></div>';
-        }).join('')+'</div>';
+    /* OEM / CrossRef: split in half → 4-col table */
+    function codesTable(arr, title, subtitle){
+        if(!arr || !arr.length) return '<div class="ef10-empty">No codes available</div>';
+        var half  = Math.ceil(arr.length / 2);
+        var left  = arr.slice(0, half);
+        var right = arr.slice(half);
+        var rows  = '';
+        for(var i = 0; i < left.length; i++){
+            var l  = left[i],  r  = right[i] || null;
+            var lm = typeof l === 'string' ? '' : (l.manufacturer || '');
+            var lc = typeof l === 'string' ? l  : (l.code || '');
+            var rm = r ? (typeof r === 'string' ? '' : (r.manufacturer || '')) : '';
+            var rc = r ? (typeof r === 'string' ? r  : (r.code || ''))        : '';
+            rows  += '<tr>'
+                +'<td class="ef10-ct-mfr">'+lm+'</td>'
+                +'<td class="ef10-ct-code">'+lc+'</td>'
+                +'<td class="ef10-ct-div"></td>'
+                +'<td class="ef10-ct-mfr">'+rm+'</td>'
+                +'<td class="ef10-ct-code">'+rc+'</td>'
+                +'</tr>';
+        }
+        return '<div class="ef10-codes-hdr">'
+            +'<div class="ef10-codes-title">'+title+'</div>'
+            +'<div class="ef10-codes-sub">'+subtitle+'</div>'
+            +'</div>'
+            +'<table class="ef10-codes-table">'
+            +'<colgroup>'
+            +'<col style="width:33%"><col style="width:17%">'
+            +'<col style="width:2px">'
+            +'<col style="width:33%"><col style="width:17%">'
+            +'</colgroup>'
+            +'<thead><tr>'
+            +'<th>MANUFACTURER</th><th>PART NUMBER</th>'
+            +'<th class="ef10-ct-div"></th>'
+            +'<th>MANUFACTURER</th><th>PART NUMBER</th>'
+            +'</tr></thead>'
+            +'<tbody>'+rows+'</tbody>'
+            +'</table>';
     }
 
-    function equip(arr){
-        if(!arr||!arr.length) return '<div class="ef10-empty">No equipment data</div>';
-        return '<table class="ef10-equip-table"><thead><tr><th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th></tr></thead><tbody>'
+    function equipTable(arr){
+        if(!arr || !arr.length) return '<div class="ef10-empty">No equipment data</div>';
+        return '<table class="ef10-equip-table"><thead><tr>'
+            +'<th>Machine / Model</th><th>Engine</th><th>Year</th><th>Type</th>'
+            +'</tr></thead><tbody>'
             +arr.map(function(a){
-                var m=a.machine||a.equipment||(typeof a==='string'?a:'\u2014');
-                return '<tr><td>'+m+'</td><td>'+(a.engine||'\u2014')+'</td><td>'+(a.year||'\u2014')+'</td><td>'+(a.type||'\u2014')+'</td></tr>';
-            }).join('')+'</tbody></table>';
+                var m = a.machine || a.equipment || (typeof a === 'string' ? a : '\u2014');
+                return '<tr>'
+                    +'<td>'+m+'</td>'
+                    +'<td>'+(a.engine || '\u2014')+'</td>'
+                    +'<td>'+(a.year   || '\u2014')+'</td>'
+                    +'<td>'+(a.type   || '\u2014')+'</td>'
+                    +'</tr>';
+            }).join('')
+            +'</tbody></table>';
     }
 
-    function render(p){
-        var sku   = p.elimfilters_sku||p.sku||'\u2014';
-        var oem   = p.oem_codes||[];
-        var cross = p.competitor_codes||p.cross_references||[];
-        var apps  = p.applications||p.equipment_applications||[];
+    /* ════════════════════════
+       RENDER — Single result
+    ════════════════════════ */
+    function renderSingle(p){
+        var sku   = p.elimfilters_sku || p.sku || '\u2014';
+        var oem   = p.oem_codes || [];
+        var cross = p.competitor_codes || p.cross_references || [];
+        var apps  = p.applications || p.equipment_applications || [];
 
-        /* tabla specs 4 col */
         var specs =
             '<table class="ef10-specs-table">'
            +'<colgroup>'
-           +'<col style="width:18%">'
-           +'<col style="width:30%">'
-           +'<col style="width:18%">'
-           +'<col style="width:34%">'
+           +'<col style="width:18%"><col style="width:30%">'
+           +'<col style="width:18%"><col style="width:34%">'
            +'</colgroup><tbody>'
-           +row('Filter Type',    v(p.filter_type),        false, 'Installation',     v(p.installation_type),    false)
-           +row('Technology',     v(p.technology),         true,  'Thread Size',       v(p.thread_size),          false)
-           +row('Outer Dia.',     mm(p.outer_diameter_mm), false, 'Gasket OD',         mm(p.gasket_od_mm),        false)
-           +row('Gasket ID',      mm(p.gasket_id_mm),      false, 'ISO Test Method',   v(p.iso_test_method),      false)
-           +row('Micron Rating',  v(p.micron_rating),      false, 'Efficiency',        v(p.nominal_efficiency),   false)
-           +row('Burst Pressure', psi(p.burst_pressure_psi), false, 'Collapse Pressure', psi(p.collapse_pressure_psi), false)
-           +(v(p.anti_drainback) ? row('Anti-Drainback', v(p.anti_drainback), false, 'Duty', v(p.duty), false) : '')
+           +specRow('Filter Type',    v(p.filter_type),            false, 'Installation',      v(p.installation_type),        false)
+           +specRow('Technology',     v(p.technology),             true,  'Thread Size',        v(p.thread_size),              false)
+           +specRow('Outer Dia.',     mm(p.outer_diameter_mm),     false, 'Gasket OD',          mm(p.gasket_od_mm),            false)
+           +specRow('Gasket ID',      mm(p.gasket_id_mm),          false, 'ISO Test Method',    v(p.iso_test_method),          false)
+           +specRow('Micron Rating',  v(p.micron_rating),          false, 'Efficiency',         v(p.nominal_efficiency),       false)
+           +specRow('Burst Pressure', psi(p.burst_pressure_psi),   false, 'Collapse Pressure',  psi(p.collapse_pressure_psi),  false)
+           +(v(p.anti_drainback) ? specRow('Anti-Drainback', v(p.anti_drainback), false, 'Duty', v(p.duty), false) : '')
            +'</tbody></table>';
 
         content.innerHTML =
             '<div class="ef10-card">'
-
-            /* HEADER: SKU | descripción | TECHNICAL SPECIFICATIONS */
            +'<div class="ef10-header">'
            +  '<div class="ef10-sku" id="ef10-sku-el">'+sku+'</div>'
            +  '<div class="ef10-header-mid"><div class="ef10-header-desc">'+buildDesc(p)+'</div></div>'
            +  '<div class="ef10-ts-label">Technical<br>Specifications</div>'
            +'</div>'
-
-            /* BODY */
            +'<div class="ef10-body">'
-
-              /* SIDEBAR */
            +  '<div class="ef10-sidebar">'
-           +    '<img class="ef10-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/cropped-AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
+           +    '<img class="ef10-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
            +    '<img class="ef10-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
-           +    '<div class="ef10-gq">German<br>Quality</div>'
            +  '</div>'
-
-              /* CONTENT */
            +  '<div class="ef10-content">'
-
-                 /* TABS */
            +    '<div class="ef10-tabs">'
            +      '<div class="ef10-tab active" data-tab="specs">Specifications</div>'
            +      '<div class="ef10-tab" data-tab="oem">OEM Codes <span class="ef10-badge">'+oem.length+'</span></div>'
            +      '<div class="ef10-tab" data-tab="cross">Cross Reference <span class="ef10-badge">'+cross.length+'</span></div>'
            +      '<div class="ef10-tab" data-tab="equip">Equipment <span class="ef10-badge">'+apps.length+'</span></div>'
            +    '</div>'
-
-                 /* PANELS */
            +    '<div class="ef10-panel active" id="ef10p-specs">'+specs+'</div>'
-           +    '<div class="ef10-panel" id="ef10p-oem">'+codes(oem)+'</div>'
-           +    '<div class="ef10-panel" id="ef10p-cross">'+codes(cross)+'</div>'
-           +    '<div class="ef10-panel" id="ef10p-equip">'+equip(apps)+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-oem">'+codesTable(oem, 'OEM CODES', 'ORIGINAL EQUIPMENT MANUFACTURER PART NUMBERS')+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-cross">'+codesTable(cross, 'CROSS REFERENCE CODES', 'COMPETITOR PART NUMBERS')+'</div>'
+           +    '<div class="ef10-panel" id="ef10p-equip">'+equipTable(apps)+'</div>'
+           +  '</div>'
+           +'</div>'
+           +'</div>';
 
-           +  '</div>'  /* /content */
-           +'</div>'    /* /body */
-           +'</div>';   /* /card */
-
-        /* glitch reveal en SKU */
+        /* Glitch reveal on SKU */
         var skuEl = content.querySelector('#ef10-sku-el');
         if(skuEl){
             skuEl.classList.remove('ef10-glitch-play');
@@ -497,7 +588,7 @@ add_shortcode('elimfilters_search', function() {
             skuEl.classList.add('ef10-glitch-play');
         }
 
-        /* tab switching */
+        /* Tab switching */
         content.querySelectorAll('.ef10-tab').forEach(function(tab){
             tab.addEventListener('click', function(){
                 content.querySelectorAll('.ef10-tab').forEach(function(t){ t.classList.remove('active'); });
@@ -508,17 +599,49 @@ add_shortcode('elimfilters_search', function() {
         });
     }
 
+    /* ════════════════════════
+       RENDER — List results
+    ════════════════════════ */
+    window.efOpenSingle = function(f){ renderSingle(f); };
+
+    function renderList(filters, label){
+        var cards = filters.map(function(f){
+            var sku  = f.elimfilters_sku || f.sku || '\u2014';
+            var type = f.filter_type || '';
+            var tech = f.technology ? f.technology+'\u2122' : '';
+            var duty = f.duty || '';
+            var sub  = [tech, duty].filter(Boolean).join(' \u00B7 ');
+            var enc  = btoa(unescape(encodeURIComponent(JSON.stringify(f))));
+            return '<div class="ef-list-card" onclick="efOpenSingle(JSON.parse(decodeURIComponent(escape(atob(\''+enc+'\')))))">'
+                +'<div class="ef-lc-sku">'+sku+'</div>'
+                +(type ? '<div class="ef-lc-type">'+type+'</div>' : '')
+                +(sub  ? '<div class="ef-lc-tech">'+sub+'</div>'  : '')
+                +'<div class="ef-lc-btn">VER FICHA \u2192</div>'
+                +'</div>';
+        }).join('');
+
+        content.innerHTML =
+            '<div class="ef-list-wrap">'
+           +'<div class="ef-list-header">'
+           +  '<div class="ef-list-query">'+label.toUpperCase()+'</div>'
+           +  '<div class="ef-list-count">'+filters.length+' COMPATIBLE FILTERS</div>'
+           +'</div>'
+           +'<div class="ef-list-grid">'+cards+'</div>'
+           +'</div>';
+    }
+
+    /* ── Input events ── */
     input.addEventListener('input', function(){
-        var val=this.value.toUpperCase().trim();
-        if(val.length<2){ suggest.classList.remove('open'); return; }
-        suggest.innerHTML='<div class="ef7-suggest-item" onclick="window._ef7run(\''+val.replace(/'/g,"\\'")+'\')">'+val+'</div>';
+        var val = this.value.toUpperCase().trim();
+        if(val.length < 2){ suggest.classList.remove('open'); return; }
+        suggest.innerHTML = '<div class="ef7-suggest-item" onclick="window._ef7run(\''+val.replace(/'/g,"\\'")+'\')">'+val+'</div>';
         suggest.classList.add('open');
     });
 
-    window._ef7run=function(val){ input.value=val; search(val); };
-    document.getElementById('ef7_btn').onclick=function(){ search(input.value); };
-    input.onkeypress=function(e){ if(e.which===13) search(input.value); };
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.classList.remove('open'); });
+    window._ef7run = function(val){ input.value = val; search(val); };
+    document.getElementById('ef7_btn').onclick = function(){ search(input.value); };
+    input.onkeypress = function(e){ if(e.which === 13) search(input.value); };
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') modal.classList.remove('open'); });
 })();
 </script>
 
