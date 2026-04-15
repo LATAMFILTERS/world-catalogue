@@ -68,9 +68,14 @@ add_shortcode('elimfilters_search', function() {
 /* ══ MODAL ══ */
 #ef_modal_v7 {
     display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.98); z-index: 99999; overflow-y: auto;
+    background: rgba(0,0,0,0.98); z-index: 99999;
+    flex-direction: column;
 }
-#ef_modal_v7.open { display: block; }
+#ef_modal_v7.open { display: flex; }
+#ef_modal_v7 > div {
+    flex: 1; display: flex; flex-direction: column; min-height: 0;
+}
+#ef10_content { flex: 1; display: flex; flex-direction: column; min-height: 0; }
 .ef10-close-row { display: flex; justify-content: flex-end; padding: 14px 20px 0; }
 .ef10-close-btn {
     background: none; border: 1px solid #222; color: #444;
@@ -82,7 +87,7 @@ add_shortcode('elimfilters_search', function() {
 .ef10-close-btn:hover { border-color: #555; color: #aaa; }
 
 /* ══ SINGLE RESULT — CARD ══ */
-.ef10-card { background: #0a0a0a; width: 100%; }
+.ef10-card { background: #0a0a0a; width: 100%; flex: 1; display: flex; flex-direction: column; min-height: 0; }
 
 .ef10-header {
     display: flex; align-items: flex-start; gap: 32px;
@@ -106,7 +111,7 @@ add_shortcode('elimfilters_search', function() {
     padding-top: 4px; text-align: right;
 }
 
-.ef10-body { display: flex; }
+.ef10-body { display: flex; flex: 1; min-height: 0; }
 
 /* ══ SIDEBAR ══ */
 .ef10-sidebar {
@@ -126,7 +131,7 @@ add_shortcode('elimfilters_search', function() {
 }
 
 /* ══ CONTENT ══ */
-.ef10-content { flex: 1; min-width: 0; overflow: hidden; display: flex; flex-direction: column; }
+.ef10-content { flex: 1; min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
 
 /* ══ TABS ══ */
 .ef10-tabs {
@@ -154,7 +159,7 @@ add_shortcode('elimfilters_search', function() {
 /* ══ PANELS ══ */
 .ef10-panel {
     display: none; overflow-y: auto; overflow-x: hidden;
-    height: 420px; padding: 0 24px 24px;
+    flex: 1; min-height: 0; padding: 0 24px 24px;
     scrollbar-width: thin; scrollbar-color: #181818 #0a0a0a;
 }
 .ef10-panel::-webkit-scrollbar { width: 3px; }
