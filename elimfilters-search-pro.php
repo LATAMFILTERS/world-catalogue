@@ -113,11 +113,17 @@ add_shortcode('elimfilters_search', function() {
     width: 90px; min-width: 90px; background: #060606;
     border-right: 1px solid #111;
     display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 32px 8px; gap: 24px;
+    align-items: center; justify-content: space-between;
+    padding: 28px 8px 20px;
 }
+.ef10-sb-logos { display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .ef10-sidebar img.ef10-logo-e  { width: 62px; height: auto; display: block; }
 .ef10-sidebar img.ef10-logo-full { width: 68px; height: auto; display: block; filter: brightness(.75); }
+.ef10-gq {
+    font-family: 'Montserrat', sans-serif; font-size: 6px; font-weight: 700;
+    letter-spacing: 2.5px; color: #242424; text-transform: uppercase;
+    text-align: center; line-height: 1.9;
+}
 
 /* ══ CONTENT ══ */
 .ef10-content { flex: 1; min-width: 0; overflow: hidden; display: flex; flex-direction: column; }
@@ -140,7 +146,7 @@ add_shortcode('elimfilters_search', function() {
 .ef10-tab:hover { color: #505050; }
 .ef10-tab.active { color: #FFF12D; border-bottom-color: #FFF12D; }
 .ef10-badge {
-    background: #111; color: #353535; border-radius: 20px;
+    background: #111; color: #555; border-radius: 20px;
     padding: 2px 8px; font-size: 8.5px; font-weight: 700;
 }
 .ef10-tab.active .ef10-badge { background: rgba(255,241,45,.07); color: #FFF12D; }
@@ -186,18 +192,19 @@ add_shortcode('elimfilters_search', function() {
     text-transform: uppercase; margin-top: 5px;
 }
 .ef10-codes-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.ef10-codes-table thead tr { background: rgba(255,255,255,.015); }
 .ef10-codes-table thead th {
     font-family: 'Montserrat', sans-serif; font-size: 7.5px;
-    font-weight: 700; letter-spacing: 2px; color: #3a3a3a;
-    text-transform: uppercase; padding: 10px 12px 10px 0;
-    border-bottom: 1px solid #131313; text-align: left;
+    font-weight: 700; letter-spacing: 2px; color: #666;
+    text-transform: uppercase; padding: 11px 14px 11px 0;
+    border-bottom: 1px solid #1a1a1a; text-align: left;
 }
 .ef10-codes-table thead th.ef10-ct-div,
 .ef10-codes-table tbody td.ef10-ct-div {
-    width: 2px; padding: 0; background: #151515;
+    width: 2px; padding: 0; background: #1e1e1e;
 }
 .ef10-codes-table tbody td {
-    padding: 9px 12px 9px 0; border-bottom: 1px solid #0d0d0d; vertical-align: middle;
+    padding: 11px 14px 11px 0; border-bottom: 1px solid #0e0e0e; vertical-align: middle;
 }
 .ef10-ct-mfr {
     font-family: 'Montserrat', sans-serif; font-size: 9.5px;
@@ -459,8 +466,9 @@ add_shortcode('elimfilters_search', function() {
         var inst = p.installation_type || '';
         var type = p.filter_type || 'Filter';
         var tech = p.technology || '';
+        var duty = p.duty || '';
         var s = '<strong>'+sku+'</strong>';
-        s += ' | '+(inst ? inst+' ' : '')+type+' Filter ';
+        s += ' | '+(duty ? duty+' ' : '')+(inst ? inst+' ' : '')+type+' Filter ';
         s += 'Engineered to exceed OEM performance in modern engines';
         if(tech) s += ', the Elimfilters\u00AE <strong>'+sku+'</strong> features advanced <strong>'+tech+'\u2122</strong> media technology for superior contaminant capture';
         s += '. Its robust construction ensures unrestricted oil flow and critical wear protection, maximizing engine life under the most demanding operating conditions.';
@@ -506,9 +514,9 @@ add_shortcode('elimfilters_search', function() {
             +'</div>'
             +'<table class="ef10-codes-table">'
             +'<colgroup>'
-            +'<col style="width:33%"><col style="width:17%">'
+            +'<col style="width:27%"><col style="width:23%">'
             +'<col style="width:2px">'
-            +'<col style="width:33%"><col style="width:17%">'
+            +'<col style="width:27%"><col style="width:23%">'
             +'</colgroup>'
             +'<thead><tr>'
             +'<th>MANUFACTURER</th><th>PART NUMBER</th>'
@@ -569,8 +577,11 @@ add_shortcode('elimfilters_search', function() {
            +'</div>'
            +'<div class="ef10-body">'
            +  '<div class="ef10-sidebar">'
-           +    '<img class="ef10-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
-           +    '<img class="ef10-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
+           +    '<div class="ef10-sb-logos">'
+           +      '<img class="ef10-logo-e" src="https://elimfilters.com/wp-content/uploads/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="E">'
+           +      '<img class="ef10-logo-full" src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="Elimfilters">'
+           +    '</div>'
+           +    '<div class="ef10-gq">GERMAN<br>QUALITY</div>'
            +  '</div>'
            +  '<div class="ef10-content">'
            +    '<div class="ef10-tabs">'
