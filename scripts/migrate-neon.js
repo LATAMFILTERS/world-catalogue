@@ -1,11 +1,21 @@
 const { Client } = require("pg");
 
 const RAILWAY = "postgresql://postgres:qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm@ballast.proxy.rlwy.net:18263/railway";
-const NEON = "postgresql://neondb_owner:npg_XyYhUb91caZT@ep-fancy-mode-annt6f3k.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require";
+const NEON = "postgresql://neondb_owner:npg_XyYhUb91caZT@ep-fancy-mode-annt6f3k.c-6.us-east-1.aws.neon.tech/neondb";
 
 async function migrate() {
-  const src = new Client({ connectionString: RAILWAY, ssl: { rejectUnauthorized: false } });
-  const dst = new Client({ connectionString: NEON, ssl: { rejectUnauthorized: true } });
+  const src = new Client({
+    connectionString: RAILWAY,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 30000,
+    query_timeout: 120000
+  });
+  const dst = new Client({
+    connectionString: NEON,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 30000,
+    query_timeout: 120000
+  });
 
   await src.connect();
   await dst.connect();
