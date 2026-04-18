@@ -21,15 +21,17 @@ app.use((req, res, next) => {
   next();
 });
 
-const dbConfig = {
-  host: 'ballast.proxy.rlwy.net',
-  port: 18263,
-  database: 'railway',
-  user: 'postgres',
-  password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-  client_encoding: 'UTF8',
-  ssl: {rejectUnauthorized: false}
-};
+const dbConfig = process.env.DATABASE_URL
+  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
+  : {
+      host: 'ballast.proxy.rlwy.net',
+      port: 18263,
+      database: 'railway',
+      user: 'postgres',
+      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+      client_encoding: 'UTF8',
+      ssl: { rejectUnauthorized: false }
+    };
 
 function parseRefs(arr){
   if(!arr) return [];
