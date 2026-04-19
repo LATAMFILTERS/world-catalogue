@@ -7,7 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
-app.use(express.static('.')); // Serve static files (index.html, assets/)
 
 // Import new routes
 const chatRoutes = require('./routes/chat.routes');
@@ -208,9 +207,12 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Register new routes
+// Register new routes (before static files)
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
+
+// Serve static files last (index.html, assets/)
+app.use(express.static('.'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
