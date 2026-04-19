@@ -22,13 +22,8 @@ app.use((req, res, next) => {
 });
 
 const dbConfig = {
-  host: 'ballast.proxy.rlwy.net',
-  port: 18263,
-  database: 'railway',
-  user: 'postgres',
-  password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-  client_encoding: 'UTF8',
-  ssl: {rejectUnauthorized: false}
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? {rejectUnauthorized: false} : false
 };
 
 function parseRefs(arr){
