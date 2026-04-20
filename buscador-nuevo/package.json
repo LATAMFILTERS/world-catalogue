@@ -3,19 +3,14 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
     "start": "node server.js"
-  },
-  "engines": {
-    "node": ">=20.0.0"
   },
   "dependencies": {
     "next": "15.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "dotenv": "^16.4.5",
-    "lucide-react": "^0.453.0",
-    "pg": "^8.11.0"
+    "pg": "^8.11.0",
+    "lucide-react": "^0.453.0"
   }
 }
