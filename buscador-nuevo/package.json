@@ -1,10 +1,10 @@
 {
   "name": "elimfilters-search-pro",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "start.js",
   "scripts": {
     "build": "next build",
-    "start": "node server.js"
+    "start": "node start.js"
   },
   "dependencies": {
     "next": "15.0.0",
