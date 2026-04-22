@@ -11,6 +11,14 @@
     html, body { width: 100%; height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
     /* ===== HERO / LANDING ===== */
+    #particleCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     #landing {
       min-height: 100vh;
       display: flex;
@@ -19,22 +27,25 @@
       justify-content: center;
       padding: 60px 40px;
       text-align: center;
-      background-image: url('/images/elimfilters_back2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       position: relative;
-    }
-
-    #landing::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(5,5,5,0.88) 0%, rgba(10,10,10,0.80) 100%);
-      z-index: 0;
+      z-index: 1;
     }
 
     #landing > * { position: relative; z-index: 1; }
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      background: #FFF12D;
+      margin-left: 2px;
+      animation: blink 0.7s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
 
     .headline {
       font-size: clamp(42px, 6vw, 72px);
@@ -464,14 +475,15 @@
 </head>
 <body>
 
+  <canvas id="particleCanvas"></canvas>
   <img id="germanQualityBadge" src="/images/german-quality.png" alt="German Quality">
 
   <footer>All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</footer>
 
   <!-- ===== LANDING ===== -->
   <div id="landing">
-    <h1 class="headline">Find the right <span class="highlight">filter</span>, fast.</h1>
-    <p class="subtitle">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.</p>
+    <h1 class="headline" id="typewriterHeadline"><span class="cursor" style="height:0.85em"></span></h1>
+    <p class="subtitle" id="subtitleEl" style="opacity:0;transition:opacity 0.8s">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.</p>
 
     <div class="search-tabs">
       <button class="search-tab active" onclick="setSearchMode(this,'part')">Part Number</button>
@@ -697,6 +709,86 @@
       document.getElementById('landing').style.display = 'flex';
       document.getElementById('searchInput').value = '';
     }
+
+    // ===== PARTICLE SWARM =====
+    (function() {
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const COUNT = 80;
+      const MAX_DIST = 140;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      for (let i = 0; i < COUNT; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          r: Math.random() * 2 + 1
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 241, 45, 0.5)';
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = `rgba(255,241,45,${0.12 * (1 - dist / MAX_DIST)})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ===== TYPEWRITER =====
+    (function() {
+      const el = document.getElementById('typewriterHeadline');
+      const sub = document.getElementById('subtitleEl');
+      const full = 'Find the right filter, fast.';
+      const highlight = 'filter';
+      let i = 0;
+
+      function type() {
+        if (i <= full.length) {
+          const text = full.substring(0, i);
+          const colored = text.replace(highlight, '<span class="highlight">' + highlight + '</span>');
+          el.innerHTML = colored + '<span class="cursor" style="height:0.85em"></span>';
+          i++;
+          setTimeout(type, i < 10 ? 60 : 55);
+        } else {
+          sub.style.opacity = '1';
+        }
+      }
+      setTimeout(type, 400);
+    })();
 
     // Animated counters
     function animateCounter(id, target, suffix, duration) {
