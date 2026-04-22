@@ -710,60 +710,95 @@
       document.getElementById('searchInput').value = '';
     }
 
-    // ===== PARTICLE SWARM (dashes) =====
+    // ===== PARTICLE SWARM (boids) =====
     (function() {
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
-      const COLORS = ['#FFF12D','#FF4D4D','#FF9900','#4D9FFF','#B06DFF','#FF6B6B','#50E3C2'];
-      const COUNT = 120;
-      let particles = [];
+      const COUNT = 160;
+      const COLORS = ['#FFF12D', '#FFF12D', '#ffffff', '#ffffff', '#FFF12D', '#ffffff'];
+      const MAX_SPEED = 1.4;
+      const SEP_DIST = 30;
+      const ALIGN_DIST = 80;
+      const COH_DIST = 120;
+      let W, H;
+      let boids = [];
 
       function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
       }
       resize();
       window.addEventListener('resize', resize);
 
       for (let i = 0; i < COUNT; i++) {
-        particles.push({
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          len: Math.random() * 10 + 6,
-          angle: Math.random() * Math.PI,
-          vAngle: (Math.random() - 0.5) * 0.008,
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * MAX_SPEED * 0.6 + 0.3;
+        boids.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          r: Math.random() * 1.8 + 1,
           color: COLORS[Math.floor(Math.random() * COLORS.length)],
-          alpha: Math.random() * 0.5 + 0.3,
-          width: Math.random() * 1.5 + 1
+          alpha: Math.random() * 0.5 + 0.4
         });
       }
 
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (const p of particles) {
-          p.x += p.vx;
-          p.y += p.vy;
-          p.angle += p.vAngle;
-          if (p.x < -20) p.x = canvas.width + 20;
-          if (p.x > canvas.width + 20) p.x = -20;
-          if (p.y < -20) p.y = canvas.height + 20;
-          if (p.y > canvas.height + 20) p.y = -20;
+      function limit(vx, vy, max) {
+        const spd = Math.sqrt(vx * vx + vy * vy);
+        if (spd > max) { return [vx / spd * max, vy / spd * max]; }
+        return [vx, vy];
+      }
 
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.rotate(p.angle);
-          ctx.beginPath();
-          ctx.moveTo(-p.len / 2, 0);
-          ctx.lineTo(p.len / 2, 0);
-          ctx.strokeStyle = p.color;
-          ctx.globalAlpha = p.alpha;
-          ctx.lineWidth = p.width;
-          ctx.lineCap = 'round';
-          ctx.stroke();
-          ctx.restore();
+      function update() {
+        for (let i = 0; i < COUNT; i++) {
+          const b = boids[i];
+          let sx = 0, sy = 0, ax = 0, ay = 0, cx = 0, cy = 0;
+          let sepN = 0, alignN = 0, cohN = 0;
+
+          for (let j = 0; j < COUNT; j++) {
+            if (i === j) continue;
+            const o = boids[j];
+            const dx = b.x - o.x, dy = b.y - o.y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+
+            if (d < SEP_DIST && d > 0) {
+              sx += dx / d; sy += dy / d; sepN++;
+            }
+            if (d < ALIGN_DIST) {
+              ax += o.vx; ay += o.vy; alignN++;
+            }
+            if (d < COH_DIST) {
+              cx += o.x; cy += o.y; cohN++;
+            }
+          }
+
+          if (sepN)   { b.vx += sx / sepN * 0.06; b.vy += sy / sepN * 0.06; }
+          if (alignN) { b.vx += (ax / alignN - b.vx) * 0.04; b.vy += (ay / alignN - b.vy) * 0.04; }
+          if (cohN)   { b.vx += (cx / cohN - b.x) * 0.003; b.vy += (cy / cohN - b.y) * 0.003; }
+
+          [b.vx, b.vy] = limit(b.vx, b.vy, MAX_SPEED);
+
+          b.x += b.vx;
+          b.y += b.vy;
+          if (b.x < 0) b.x = W;
+          if (b.x > W) b.x = 0;
+          if (b.y < 0) b.y = H;
+          if (b.y > H) b.y = 0;
         }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (const b of boids) {
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+          ctx.fillStyle = b.color;
+          ctx.globalAlpha = b.alpha;
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        update();
         requestAnimationFrame(draw);
       }
       draw();
