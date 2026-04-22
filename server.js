@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
-app.use(express.static('.')); // Serve static files (index.html, assets/)
+app.use(express.static('public')); // Serve static files from public/
 
 // Import new routes
 const chatRoutes = require('./routes/chat.routes');
@@ -65,7 +65,7 @@ function buildFilterData(row){
   };
 }
 
-app.get('/', (req, res) => {
+app.get('/api/status', (req, res) => {
   res.json({status: 'ok', version: '3.2.6'});
 });
 

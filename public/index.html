@@ -494,7 +494,7 @@
     <div class="search-box">
       <span class="search-icon">⌕</span>
       <input type="text" id="searchInput" placeholder="Part number, OEM code, competitor SKU..." onkeydown="if(event.key==='Enter') doSearch()">
-      <button class="search-btn" onclick="doSearch()">Search</button>
+      <button class="search-btn" id="searchBtn" onclick="doSearch()">Search</button>
     </div>
 
     <div class="stats">
@@ -582,6 +582,10 @@
 
       if (searchMode === 'vin') { await decodeVIN(q); return; }
 
+      const btn = document.getElementById('searchBtn');
+      btn.textContent = '...';
+      btn.disabled = true;
+
       try {
         const endpoint = searchMode === 'vehicle'
           ? `/api/filters/search/equipment?model=${encodeURIComponent(q)}`
@@ -590,26 +594,52 @@
         const res = await fetch(endpoint);
         const json = await res.json();
         const item = json.filters?.[0];
-        if (!item) { alert('No results found for: ' + q); return; }
-        showResults(item);
+        if (!item) {
+          showNoResults(q);
+        } else {
+          showResults(item);
+        }
       } catch (e) {
-        alert('Search error: ' + e.message);
+        showError(e.message);
+      } finally {
+        btn.textContent = 'Search';
+        btn.disabled = false;
       }
     }
 
+    function showNoResults(q) {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('resultsScreen').style.display = 'block';
+      document.getElementById('resultSKU').textContent = 'No results';
+      document.getElementById('resultDesc').textContent = `No filters found for "${q}". Try a different part number or OEM code.`;
+      document.getElementById('specsTable').querySelector('tbody').innerHTML = '<tr><td colspan="4" style="color:#666;padding:20px;text-align:center">No data available</td></tr>';
+      document.getElementById('oemGrid').innerHTML = '';
+      document.getElementById('crossGrid').innerHTML = '';
+      document.getElementById('equipmentGrid').innerHTML = '';
+      ['badgeOem','badgeCross','badgeEquip'].forEach(id => document.getElementById(id).textContent = '0');
+      document.getElementById('germanQualityBadge').style.display = 'block';
+    }
+
+    function showError(msg) {
+      const input = document.getElementById('searchInput');
+      input.style.border = '1.5px solid #ff4444';
+      input.placeholder = 'Error: ' + msg;
+      setTimeout(() => { input.style.border = ''; input.placeholder = 'Part number, OEM code, competitor SKU...'; }, 3000);
+    }
+
     async function decodeVIN(vin) {
-      if (vin.length !== 17) { alert('VIN must be 17 characters'); return; }
+      if (vin.length !== 17) { showError('VIN must be 17 characters'); return; }
       try {
         const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${vin}?format=json`);
         const data = await res.json();
         const R = data.Results || [];
         const make = R.find(r => r.Variable === 'Make')?.Value || '';
         const model = R.find(r => r.Variable === 'Model')?.Value || '';
-        if (!make || !model) { alert('Invalid VIN'); return; }
+        if (!make || !model) { showError('Invalid VIN'); return; }
         document.getElementById('searchInput').value = `${make} ${model}`;
         searchMode = 'vehicle';
         await doSearch();
-      } catch(e) { alert('VIN decode error'); }
+      } catch(e) { showError('VIN decode error'); }
     }
 
     function showResults(item) {
