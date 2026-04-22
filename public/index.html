@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS | Find the right filter, fast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* ===== HERO / LANDING ===== */
+    #landing {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .headline {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .headline .highlight { color: #EAA800; font-style: italic; }
+
+    .subtitle {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 48px;
+      font-weight: 400;
+    }
+
+    /* ===== SEARCH TABS ===== */
+    .search-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .search-tab {
+      background: #111;
+      color: #fff;
+      border: 1.5px solid #2a2a2a;
+      padding: 12px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.25s;
+    }
+
+    .search-tab:hover { border-color: #EAA800; }
+
+    .search-tab.active {
+      background: #EAA800;
+      color: #000;
+      border-color: #EAA800;
+      box-shadow: 0 4px 20px rgba(234,168,0,0.25);
+    }
+
+    /* ===== SEARCH BOX ===== */
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 6px 6px 6px 20px;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+
+    .search-icon { color: #444; margin-right: 12px; font-size: 16px; flex-shrink: 0; }
+
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .search-box input::placeholder { color: #444; }
+
+    .search-btn {
+      background: #EAA800;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+
+    .search-btn:hover { background: #fff; transform: scale(1.03); }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+
+    .stat-number {
+      font-size: 38px;
+      font-weight: 900;
+      color: #EAA800;
+      letter-spacing: -1px;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ===== RESULTS SCREEN ===== */
+    #resultsScreen {
+      display: none;
+      min-height: 100vh;
+      padding: 40px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid #222;
+      color: #888;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.25s;
+      margin-bottom: 40px;
+    }
+
+    .back-btn:hover { border-color: #EAA800; color: #EAA800; }
+
+    /* Result header */
+    .result-header {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 50px;
+    }
+
+    .result-logo-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: #0d0d0d;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      min-height: 240px;
+    }
+
+    .result-logo-side img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+    }
+
+    .result-logo-side .logo-placeholder {
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      font-weight: 900;
+      color: #EAA800;
+      opacity: 0.15;
+    }
+
+    .result-info-side { padding: 10px 0; }
+
+    .result-sku {
+      font-size: 64px;
+      font-weight: 900;
+      color: #EAA800;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .result-description {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.8;
+      font-style: italic;
+      font-weight: 400;
+      max-width: 700px;
+    }
+
+    /* ===== DATA TABS ===== */
+    .data-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #1a1a1a;
+      margin-bottom: 40px;
+    }
+
+    .data-tab {
+      padding: 16px 28px;
+      background: none;
+      border: none;
+      color: #444;
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.25s;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .data-tab:hover { color: #888; }
+
+    .data-tab.active {
+      color: #EAA800;
+    }
+
+    .data-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #EAA800;
+    }
+
+    .tab-badge {
+      background: #1a1a1a;
+      color: #666;
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .data-tab.active .tab-badge {
+      background: rgba(234,168,0,0.15);
+      color: #EAA800;
+    }
+
+    .data-content { display: none; }
+    .data-content.active { display: block; }
+
+    /* ===== SPECS TABLE ===== */
+    .specs-section-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid #111;
+      transition: background 0.2s;
+    }
+
+    .specs-table tr:hover { background: rgba(255,255,255,0.02); }
+
+    .specs-table td {
+      padding: 14px 0;
+      vertical-align: middle;
+    }
+
+    .spec-label {
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      width: 25%;
+      padding-right: 20px;
+    }
+
+    .spec-value {
+      font-size: 15px;
+      color: #fff;
+      font-weight: 600;
+      width: 25%;
+      padding-right: 40px;
+    }
+
+    /* ===== CODES GRID ===== */
+    .codes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+
+    .codes-grid::-webkit-scrollbar { width: 6px; }
+    .codes-grid::-webkit-scrollbar-thumb { background: #EAA800; border-radius: 3px; }
+    .codes-grid::-webkit-scrollbar-track { background: transparent; }
+
+    .code-box {
+      background: #0d0d0d;
+      border: 1px solid #1a1a1a;
+      border-left: 3px solid #EAA800;
+      padding: 14px 16px;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+
+    .code-box:hover { border-color: #EAA800; background: #111; }
+
+    .code-type {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .code-value {
+      font-size: 14px;
+      color: #EAA800;
+      font-weight: 700;
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      color: #2a2a2a;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    #germanQualityBadge {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      width: 70px;
+      height: 70px;
+      opacity: 0.5;
+      z-index: 100;
+      display: none;
+      transition: opacity 0.3s;
+    }
+
+    #germanQualityBadge:hover { opacity: 1; }
+
+    /* ===== LOADING ===== */
+    .loading {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      gap: 16px;
+      color: #444;
+    }
+
+    .loading.active { display: flex; }
+
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #222;
+      border-top-color: #EAA800;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== NO RESULTS ===== */
+    .no-results {
+      text-align: center;
+      padding: 80px 40px;
+      color: #333;
+    }
+
+    .no-results h3 { font-size: 20px; margin-bottom: 12px; color: #444; }
+    .no-results p { font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .result-header { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      #resultsScreen { padding: 30px 20px; }
+      .codes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <img id="germanQualityBadge" src="/images/german-quality.png" alt="German Quality">
+
+  <footer>All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</footer>
+
+  <!-- ===== LANDING ===== -->
+  <div id="landing">
+    <h1 class="headline">Find the right <span class="highlight">filter</span>, fast.</h1>
+    <p class="subtitle">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.</p>
+
+    <div class="search-tabs">
+      <button class="search-tab active" onclick="setSearchMode(this,'part')">Part Number</button>
+      <button class="search-tab" onclick="setSearchMode(this,'vehicle')">Equipment / Vehicles</button>
+      <button class="search-tab" onclick="setSearchMode(this,'vin')">VIN Number</button>
+    </div>
+
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" placeholder="Part number, OEM code, competitor SKU..." onkeydown="if(event.key==='Enter') doSearch()">
+      <button class="search-btn" onclick="doSearch()">Search</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number" id="stat1">0</div>
+        <div class="stat-label">Filters Catalogued</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat2">0</div>
+        <div class="stat-label">OEM Brands</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat3">0</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat4">0%</div>
+        <div class="stat-label">% Uptime</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS SCREEN ===== -->
+  <div id="resultsScreen">
+    <button class="back-btn" onclick="backToHome()">← Back to search</button>
+
+    <div class="result-header">
+      <div class="result-logo-side">
+        <img src="/images/logo-e.png" alt="Elimfilters" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="logo-placeholder" style="display:none">E</div>
+      </div>
+      <div class="result-info-side">
+        <div class="result-sku" id="resultSKU">EL82100</div>
+        <div class="result-description" id="resultDesc">Elimfilters genuine spin-on filter engineered with advanced filtration media technology.</div>
+      </div>
+    </div>
+
+    <div class="data-tabs">
+      <button class="data-tab active" onclick="switchTab(this,'specs')">Specifications</button>
+      <button class="data-tab" onclick="switchTab(this,'oem')">OEM Codes <span class="tab-badge" id="badgeOem">0</span></button>
+      <button class="data-tab" onclick="switchTab(this,'cross')">Cross Reference <span class="tab-badge" id="badgeCross">0</span></button>
+      <button class="data-tab" onclick="switchTab(this,'equipment')">Compatible Equipment <span class="tab-badge" id="badgeEquip">0</span></button>
+    </div>
+
+    <!-- Specs -->
+    <div class="data-content active" id="specs">
+      <div class="specs-section-title">Technical Specifications</div>
+      <table class="specs-table" id="specsTable">
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- OEM Codes -->
+    <div class="data-content" id="oem">
+      <div class="codes-grid" id="oemGrid"></div>
+    </div>
+
+    <!-- Cross Reference -->
+    <div class="data-content" id="cross">
+      <div class="codes-grid" id="crossGrid"></div>
+    </div>
+
+    <!-- Equipment -->
+    <div class="data-content" id="equipment">
+      <div class="codes-grid" id="equipmentGrid"></div>
+    </div>
+  </div>
+
+  <script>
+    let searchMode = 'part';
+
+    function setSearchMode(btn, mode) {
+      document.querySelectorAll('.search-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      searchMode = mode;
+      const input = document.getElementById('searchInput');
+      if (mode === 'part') input.placeholder = 'Part number, OEM code, competitor SKU...';
+      else if (mode === 'vehicle') input.placeholder = 'Vehicle brand, model or equipment type...';
+      else if (mode === 'vin') { input.placeholder = 'Enter 17-character VIN...'; input.maxLength = 17; }
+    }
+
+    async function doSearch() {
+      const q = document.getElementById('searchInput').value.trim().toUpperCase();
+      if (q.length < 2) return;
+
+      if (searchMode === 'vin') { await decodeVIN(q); return; }
+
+      try {
+        const endpoint = searchMode === 'vehicle'
+          ? `/api/filters/search/equipment?model=${encodeURIComponent(q)}`
+          : `/api/filters/search/part?code=${encodeURIComponent(q)}`;
+
+        const res = await fetch(endpoint);
+        const json = await res.json();
+        const item = json.filters?.[0];
+        if (!item) { alert('No results found for: ' + q); return; }
+        showResults(item);
+      } catch (e) {
+        alert('Search error: ' + e.message);
+      }
+    }
+
+    async function decodeVIN(vin) {
+      if (vin.length !== 17) { alert('VIN must be 17 characters'); return; }
+      try {
+        const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${vin}?format=json`);
+        const data = await res.json();
+        const R = data.Results || [];
+        const make = R.find(r => r.Variable === 'Make')?.Value || '';
+        const model = R.find(r => r.Variable === 'Model')?.Value || '';
+        if (!make || !model) { alert('Invalid VIN'); return; }
+        document.getElementById('searchInput').value = `${make} ${model}`;
+        searchMode = 'vehicle';
+        await doSearch();
+      } catch(e) { alert('VIN decode error'); }
+    }
+
+    function showResults(item) {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('resultsScreen').style.display = 'block';
+      document.getElementById('germanQualityBadge').style.display = 'block';
+
+      const sku = item.elimfilters_sku || item.sku || 'N/A';
+      document.getElementById('resultSKU').textContent = sku;
+
+      const descParts = [
+        item.filter_type ? `Elimfilters® ${sku} ${item.filter_type} filter` : '',
+        item.technology ? `engineered with ${item.technology}™ filtration technology` : '',
+        item.duty ? `${item.duty} duty` : '',
+        'developed to meet or exceed OEM requirements.'
+      ].filter(Boolean);
+      document.getElementById('resultDesc').textContent = descParts.join(', ');
+
+      // Build specs table (2 columns of pairs)
+      const specs = [
+        ['Filter Type', item.filter_type],
+        ['Installation', item.installation_type],
+        ['Technology', item.technology],
+        ['Thread Size', item.thread_size],
+        ['Outer Dia.', item.outer_diameter_mm ? `${item.outer_diameter_mm} mm` : null],
+        ['Gasket OD', item.gasket_od_mm ? `${item.gasket_od_mm} mm` : null],
+        ['Gasket ID', item.gasket_id_mm ? `${item.gasket_id_mm} mm` : null],
+        ['ISO Test Method', item.iso_test_method],
+        ['Micron Rating', item.micron_rating],
+        ['Efficiency', item.nominal_efficiency ? `${item.nominal_efficiency}%` : null],
+        ['Burst Pressure', item.burst_pressure_psi ? `${item.burst_pressure_psi} psi` : null],
+        ['Collapse Pressure', item.collapse_pressure_psi ? `${item.collapse_pressure_psi} psi` : null],
+        ['Duty', item.duty],
+      ].filter(([_, v]) => v);
+
+      const tbody = document.querySelector('#specsTable tbody');
+      tbody.innerHTML = '';
+      for (let i = 0; i < specs.length; i += 2) {
+        const [l1, v1] = specs[i];
+        const [l2, v2] = specs[i + 1] || ['', ''];
+        tbody.innerHTML += `
+          <tr>
+            <td class="spec-label">${l1}</td>
+            <td class="spec-value">${v1}</td>
+            <td class="spec-label">${l2}</td>
+            <td class="spec-value">${v2}</td>
+          </tr>`;
+      }
+
+      // OEM Codes
+      const oems = item.oem_codes || [];
+      document.getElementById('badgeOem').textContent = oems.length;
+      document.getElementById('oemGrid').innerHTML = oems.map(c =>
+        `<div class="code-box">
+          <div class="code-type">${c.manufacturer || 'OEM'}</div>
+          <div class="code-value">${c.code || c.partNumber || '—'}</div>
+        </div>`
+      ).join('') || '<p style="color:#444;padding:20px">No OEM codes available</p>';
+
+      // Cross Reference
+      const comps = item.competitor_codes || [];
+      document.getElementById('badgeCross').textContent = comps.length;
+      document.getElementById('crossGrid').innerHTML = comps.map(c =>
+        `<div class="code-box">
+          <div class="code-type">${c.manufacturer || 'ALT'}</div>
+          <div class="code-value">${c.code || '—'}</div>
+        </div>`
+      ).join('') || '<p style="color:#444;padding:20px">No cross references available</p>';
+
+      // Equipment
+      const equip = item.equipment_applications || [];
+      document.getElementById('badgeEquip').textContent = equip.length;
+      document.getElementById('equipmentGrid').innerHTML = equip.map(e =>
+        `<div class="code-box">
+          <div class="code-type">Equipment</div>
+          <div class="code-value" style="color:#fff;font-family:inherit;font-size:13px">${typeof e === 'string' ? e : JSON.stringify(e)}</div>
+        </div>`
+      ).join('') || '<p style="color:#444;padding:20px">No equipment data available</p>';
+
+      // Reset tabs
+      document.querySelectorAll('.data-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.data-content').forEach(c => c.classList.remove('active'));
+      document.querySelector('.data-tab').classList.add('active');
+      document.getElementById('specs').classList.add('active');
+    }
+
+    function switchTab(btn, tab) {
+      document.querySelectorAll('.data-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.data-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(tab).classList.add('active');
+    }
+
+    function backToHome() {
+      document.getElementById('resultsScreen').style.display = 'none';
+      document.getElementById('germanQualityBadge').style.display = 'none';
+      document.getElementById('landing').style.display = 'flex';
+      document.getElementById('searchInput').value = '';
+    }
+
+    // Animated counters
+    function animateCounter(id, target, suffix, duration) {
+      const el = document.getElementById(id);
+      const start = Date.now();
+      const tick = () => {
+        const p = Math.min((Date.now() - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        const val = Math.floor(ease * target);
+        el.textContent = val.toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString() + suffix;
+      };
+      tick();
+    }
+
+    window.addEventListener('load', () => {
+      animateCounter('stat1', 11000, '+', 2500);
+      animateCounter('stat2', 48, '+', 2000);
+      animateCounter('stat3', 120, '+', 2200);
+      animateCounter('stat4', 99, '%', 1800);
+    });
+  </script>
+</body>
+</html>
