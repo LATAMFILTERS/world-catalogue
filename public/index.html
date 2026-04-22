@@ -710,18 +710,11 @@
       document.getElementById('searchInput').value = '';
     }
 
-    // ===== PARTICLE SWARM (boids) =====
+    // ===== JELLYFISH SWARM =====
     (function() {
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
-      const COUNT = 160;
-      const COLORS = ['#FFF12D', '#FFF12D', '#ffffff', '#ffffff', '#FFF12D', '#ffffff'];
-      const MAX_SPEED = 1.4;
-      const SEP_DIST = 30;
-      const ALIGN_DIST = 80;
-      const COH_DIST = 120;
-      let W, H;
-      let boids = [];
+      let W, H, t = 0;
 
       function resize() {
         W = canvas.width = window.innerWidth;
@@ -730,75 +723,55 @@
       resize();
       window.addEventListener('resize', resize);
 
+      // Nucleus: moves in a slow Lissajous path across the whole screen
+      function nucleus(t) {
+        const cx = W * 0.5 + Math.sin(t * 0.00031) * W * 0.38 + Math.sin(t * 0.00019) * W * 0.12;
+        const cy = H * 0.5 + Math.cos(t * 0.00027) * H * 0.32 + Math.cos(t * 0.00041) * H * 0.10;
+        return { cx, cy };
+      }
+
+      // Build particles: rings + scattered cloud around center
+      const COUNT = 180;
+      const particles = [];
       for (let i = 0; i < COUNT; i++) {
-        const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * MAX_SPEED * 0.6 + 0.3;
-        boids.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed,
-          r: Math.random() * 1.8 + 1,
-          color: COLORS[Math.floor(Math.random() * COLORS.length)],
-          alpha: Math.random() * 0.5 + 0.4
+        const ring = Math.random();
+        // Distance from center: 3 layers (core, mid, tentacles)
+        let baseR;
+        if (ring < 0.25)      baseR = Math.random() * 18;          // core dense
+        else if (ring < 0.65) baseR = 18 + Math.random() * 55;     // mid cloud
+        else                  baseR = 73 + Math.random() * 90;      // tentacles
+
+        particles.push({
+          angle:  Math.random() * Math.PI * 2,
+          baseR,
+          angSpeed: (Math.random() - 0.5) * 0.006,       // slow orbit
+          pulseAmp: Math.random() * 14 + 2,               // radial pulse
+          pulseFreq: Math.random() * 0.003 + 0.001,
+          phaseOff: Math.random() * Math.PI * 2,
+          r: Math.random() * 1.6 + 0.8,
+          color: Math.random() < 0.55 ? '#FFF12D' : '#ffffff',
+          alpha: Math.random() * 0.55 + 0.35
         });
       }
 
-      function limit(vx, vy, max) {
-        const spd = Math.sqrt(vx * vx + vy * vy);
-        if (spd > max) { return [vx / spd * max, vy / spd * max]; }
-        return [vx, vy];
-      }
-
-      function update() {
-        for (let i = 0; i < COUNT; i++) {
-          const b = boids[i];
-          let sx = 0, sy = 0, ax = 0, ay = 0, cx = 0, cy = 0;
-          let sepN = 0, alignN = 0, cohN = 0;
-
-          for (let j = 0; j < COUNT; j++) {
-            if (i === j) continue;
-            const o = boids[j];
-            const dx = b.x - o.x, dy = b.y - o.y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-
-            if (d < SEP_DIST && d > 0) {
-              sx += dx / d; sy += dy / d; sepN++;
-            }
-            if (d < ALIGN_DIST) {
-              ax += o.vx; ay += o.vy; alignN++;
-            }
-            if (d < COH_DIST) {
-              cx += o.x; cy += o.y; cohN++;
-            }
-          }
-
-          if (sepN)   { b.vx += sx / sepN * 0.06; b.vy += sy / sepN * 0.06; }
-          if (alignN) { b.vx += (ax / alignN - b.vx) * 0.04; b.vy += (ay / alignN - b.vy) * 0.04; }
-          if (cohN)   { b.vx += (cx / cohN - b.x) * 0.003; b.vy += (cy / cohN - b.y) * 0.003; }
-
-          [b.vx, b.vy] = limit(b.vx, b.vy, MAX_SPEED);
-
-          b.x += b.vx;
-          b.y += b.vy;
-          if (b.x < 0) b.x = W;
-          if (b.x > W) b.x = 0;
-          if (b.y < 0) b.y = H;
-          if (b.y > H) b.y = 0;
-        }
-      }
-
       function draw() {
+        t++;
         ctx.clearRect(0, 0, W, H);
-        for (const b of boids) {
+        const { cx, cy } = nucleus(t);
+
+        for (const p of particles) {
+          p.angle += p.angSpeed;
+          const radius = p.baseR + Math.sin(t * p.pulseFreq + p.phaseOff) * p.pulseAmp;
+          const px = cx + Math.cos(p.angle) * radius;
+          const py = cy + Math.sin(p.angle) * radius * 0.7; // slight vertical squish
+
           ctx.beginPath();
-          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-          ctx.fillStyle = b.color;
-          ctx.globalAlpha = b.alpha;
+          ctx.arc(px, py, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.alpha * (1 - p.baseR / 220); // fade outer tentacles
           ctx.fill();
         }
         ctx.globalAlpha = 1;
-        update();
         requestAnimationFrame(draw);
       }
       draw();
