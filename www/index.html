@@ -652,7 +652,7 @@
       // Build specs table (2 columns of pairs)
       const specs = [
         ['Filter Type', item.filter_type],
-        ['Installation', item.installation_type],
+        ['Subtype', item.filter_subtype],
         ['Technology', item.technology],
         ['Thread Size', item.thread_size],
         ['Outer Dia.', item.outer_diameter_mm ? `${item.outer_diameter_mm} mm` : null],
@@ -664,6 +664,7 @@
         ['Burst Pressure', item.burst_pressure_psi ? `${item.burst_pressure_psi} psi` : null],
         ['Collapse Pressure', item.collapse_pressure_psi ? `${item.collapse_pressure_psi} psi` : null],
         ['Duty', item.duty],
+        ['Installation', item.installation_type],
       ].filter(([_, v]) => v);
 
       const tbody = document.querySelector('#specsTable tbody');

@@ -55,6 +55,7 @@ function buildFilterData(row){
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
     filter_type: extractText(row.filter_type),
+    filter_subtype: extractText(row.filter_subtype || row.subtype) || null,
     technology: row.technology || null,
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
