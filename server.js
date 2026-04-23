@@ -41,11 +41,20 @@ function parseRefs(arr){
   }));
 }
 
+function extractText(val) {
+  if (!val) return null;
+  if (typeof val === 'object') return val.en || val.es || Object.values(val)[0] || null;
+  if (typeof val === 'string') {
+    try { const p = JSON.parse(val); return p.en || p.es || Object.values(p)[0] || val; } catch { return val; }
+  }
+  return String(val);
+}
+
 function buildFilterData(row){
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
-    filter_type: row.filter_type || null,
+    filter_type: extractText(row.filter_type),
     technology: row.technology || null,
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
