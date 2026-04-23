@@ -225,29 +225,48 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: analyze donaldson_url patterns for sub_type inference
+// Temp: analyze hydraulic filter data to find sub_type clues
 app.get('/api/analyze/hydraulic-urls', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const result = await client.query(`
-      SELECT sku, donaldson_url, sub_type
-      FROM elimfilters_catalog
-      WHERE filter_type = 'Hydraulic Filter'
-        AND donaldson_url IS NOT NULL
-      LIMIT 200
+    // Get column names
+    const cols = await client.query(`
+      SELECT column_name FROM information_schema.columns
+      WHERE table_name = 'elimfilters_catalog' ORDER BY ordinal_position
     `);
-    const patterns = {};
-    result.rows.forEach(r => {
-      const url = (r.donaldson_url || '').toLowerCase();
-      const segments = url.split('/').filter(Boolean);
-      const key = segments.slice(-3).join('/');
-      patterns[key] = (patterns[key] || 0) + 1;
+    // Sample of hydraulic filters with all fields
+    const sample = await client.query(`
+      SELECT * FROM elimfilters_catalog
+      WHERE filter_type = 'Hydraulic Filter'
+      LIMIT 10
+    `);
+    // sub_type breakdown for hydraulic
+    const subtypes = await client.query(`
+      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Hydraulic Filter'
+      GROUP BY sub_type ORDER BY COUNT(*) DESC
+    `);
+    // installation_type breakdown
+    const install = await client.query(`
+      SELECT installation_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Hydraulic Filter'
+      GROUP BY installation_type ORDER BY COUNT(*) DESC
+    `);
+    // technology breakdown
+    const tech = await client.query(`
+      SELECT technology, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Hydraulic Filter'
+      GROUP BY technology ORDER BY COUNT(*) DESC LIMIT 20
+    `);
+    res.json({
+      columns: cols.rows.map(r=>r.column_name),
+      subtypes: subtypes.rows,
+      installation_types: install.rows,
+      technologies: tech.rows,
+      sample: sample.rows
     });
-    const sorted = Object.entries(patterns).sort((a,b)=>b[1]-a[1]).slice(0,40);
-    const sample = result.rows.slice(0,20).map(r=>({sku:r.sku, url:r.donaldson_url, sub_type:r.sub_type}));
-    res.json({total: result.rowCount, top_patterns: sorted, sample});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
