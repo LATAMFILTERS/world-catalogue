@@ -468,7 +468,7 @@
   <canvas id="particleCanvas"></canvas>
   <img id="germanQualityBadge" src="/images/german-quality.png" alt="German Quality">
 
-  <footer>All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</footer>
+  <footer id="footerEl">All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</footer>
 
   <!-- ===== LANDING ===== -->
   <div id="landing">
@@ -476,9 +476,9 @@
     <p class="subtitle" id="subtitleEl" style="opacity:0;transition:opacity 0.8s">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.</p>
 
     <div class="search-tabs">
-      <button class="search-tab active" onclick="setSearchMode(this,'part')">Part Number</button>
-      <button class="search-tab" onclick="setSearchMode(this,'vehicle')">Equipment / Vehicles</button>
-      <button class="search-tab" onclick="setSearchMode(this,'vin')">VIN Number</button>
+      <button id="tabPart" class="search-tab active" onclick="setSearchMode(this,'part')">Part Number</button>
+      <button id="tabVehicle" class="search-tab" onclick="setSearchMode(this,'vehicle')">Equipment / Vehicles</button>
+      <button id="tabVin" class="search-tab" onclick="setSearchMode(this,'vin')">VIN Number</button>
     </div>
 
     <div class="search-box">
@@ -490,26 +490,26 @@
     <div class="stats">
       <div class="stat">
         <div class="stat-number" id="stat1">0</div>
-        <div class="stat-label">Filters Catalogued</div>
+        <div class="stat-label" id="labelStat1">Filters Catalogued</div>
       </div>
       <div class="stat">
         <div class="stat-number" id="stat2">0</div>
-        <div class="stat-label">OEM Brands</div>
+        <div class="stat-label" id="labelStat2">OEM Brands</div>
       </div>
       <div class="stat">
         <div class="stat-number" id="stat3">0</div>
-        <div class="stat-label">Countries Served</div>
+        <div class="stat-label" id="labelStat3">Countries Served</div>
       </div>
       <div class="stat">
         <div class="stat-number" id="stat4">0%</div>
-        <div class="stat-label">% Uptime</div>
+        <div class="stat-label" id="labelStat4">% Uptime</div>
       </div>
     </div>
   </div>
 
   <!-- ===== RESULTS SCREEN ===== -->
   <div id="resultsScreen" style="position:relative;">
-    <button class="back-btn" onclick="backToHome()" style="position:absolute; top:20%; right:60px;">← Back to search</button>
+    <button id="backBtn" class="back-btn" onclick="backToHome()" style="position:absolute; top:20%; right:60px;">← Back to search</button>
     <div class="result-header">
       <div class="result-logo-side">
         <img src="/images/logo-e.png" alt="Elimfilters" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -522,15 +522,15 @@
     </div>
 
     <div class="data-tabs">
-      <button class="data-tab active" onclick="switchTab(this,'specs')">Specifications</button>
-      <button class="data-tab" onclick="switchTab(this,'oem')">OEM Codes <span class="tab-badge" id="badgeOem">0</span></button>
-      <button class="data-tab" onclick="switchTab(this,'cross')">Cross Reference <span class="tab-badge" id="badgeCross">0</span></button>
-      <button class="data-tab" onclick="switchTab(this,'equipment')">Compatible Equipment <span class="tab-badge" id="badgeEquip">0</span></button>
+      <button id="dtSpecs" class="data-tab active" onclick="switchTab(this,'specs')">Specifications</button>
+      <button id="dtOem" class="data-tab" onclick="switchTab(this,'oem')">OEM Codes <span class="tab-badge" id="badgeOem">0</span></button>
+      <button id="dtCross" class="data-tab" onclick="switchTab(this,'cross')">Cross Reference <span class="tab-badge" id="badgeCross">0</span></button>
+      <button id="dtEquip" class="data-tab" onclick="switchTab(this,'equipment')">Compatible Equipment <span class="tab-badge" id="badgeEquip">0</span></button>
     </div>
 
     <!-- Specs -->
     <div class="data-content active" id="specs">
-      <div class="specs-section-title">Technical Specifications</div>
+      <div class="specs-section-title" id="specsSectionTitle">Technical Specifications</div>
       <table class="specs-table" id="specsTable">
         <tbody></tbody>
       </table>
@@ -553,6 +553,66 @@
   </div>
 
   <script>
+    const LANG = (navigator.language || navigator.userLanguage || 'en').startsWith('es') ? 'es' : 'en';
+
+    const I18N = {
+      en: {
+        headline: 'Find the right filter, fast.',
+        highlightWord: 'filter',
+        subtitle: 'Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.',
+        tabPart: 'Part Number', tabVehicle: 'Equipment / Vehicles', tabVin: 'VIN Number',
+        searchBtn: 'Search',
+        phPart: 'Part number, OEM code, competitor SKU...', phVehicle: 'Vehicle brand, model or equipment type...', phVin: 'Enter 17-character VIN...',
+        labelStat1: 'Filters Catalogued', labelStat2: 'OEM Brands', labelStat3: 'Countries Served', labelStat4: '% Uptime',
+        backBtn: '← Back to search',
+        dtSpecs: 'Specifications', dtOem: 'OEM Codes', dtCross: 'Cross Reference', dtEquip: 'Compatible Equipment',
+        specsSectionTitle: 'Technical Specifications',
+        noResults: q => `No filters found for "${q}". Try a different part number or OEM code.`,
+        noData: 'No data available', noOem: 'No OEM codes available', noCross: 'No cross references available', noEquip: 'No equipment data available',
+        errVinLen: 'VIN must be 17 characters', errVinInvalid: 'Invalid VIN', errVinDecode: 'VIN decode error',
+        specLabels: ['Filter Type','Subtype','Technology','Thread Size','Outer Dia.','Gasket OD','Gasket ID','ISO Test Method','Micron Rating','Efficiency','Burst Pressure','Collapse Pressure','Duty','Installation'],
+        desc: (sku, type, tech, duty) => [type ? `Elimfilters® ${sku} ${type} filter` : '', tech ? `engineered with ${tech}™ technology` : '', duty ? `${duty} duty` : '', 'meets or exceeds OEM requirements.'].filter(Boolean).join(', '),
+        footer: 'All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.'
+      },
+      es: {
+        headline: 'Encuentra el filtro correcto, rápido.',
+        highlightWord: 'filtro',
+        subtitle: 'Referencias cruzadas con códigos OEM, SKUs de competidores y especificaciones técnicas en más de 11,000 filtros industriales. Multilingüe · Tiempo real · Preciso.',
+        tabPart: 'Número de Parte', tabVehicle: 'Equipos / Vehículos', tabVin: 'Número VIN',
+        searchBtn: 'Buscar',
+        phPart: 'Número de parte, código OEM, SKU competidor...', phVehicle: 'Marca, modelo o tipo de equipo...', phVin: 'Ingrese VIN de 17 caracteres...',
+        labelStat1: 'Filtros Catalogados', labelStat2: 'Marcas OEM', labelStat3: 'Países Atendidos', labelStat4: '% Disponibilidad',
+        backBtn: '← Volver a búsqueda',
+        dtSpecs: 'Especificaciones', dtOem: 'Códigos OEM', dtCross: 'Referencias Cruzadas', dtEquip: 'Equipos Compatibles',
+        specsSectionTitle: 'Especificaciones Técnicas',
+        noResults: q => `No se encontraron filtros para "${q}". Intente con otro número de parte o código OEM.`,
+        noData: 'Sin datos disponibles', noOem: 'Sin códigos OEM disponibles', noCross: 'Sin referencias cruzadas', noEquip: 'Sin datos de equipos',
+        errVinLen: 'El VIN debe tener 17 caracteres', errVinInvalid: 'VIN inválido', errVinDecode: 'Error al decodificar VIN',
+        specLabels: ['Tipo de Filtro','Subtipo','Tecnología','Rosca','Diám. Exterior','Junta OD','Junta ID','Método ISO','Clasificación Micrón','Eficiencia','Presión de Ruptura','Presión de Colapso','Servicio','Instalación'],
+        desc: (sku, type, tech, duty) => [type ? `Elimfilters® ${sku} filtro ${type}` : '', tech ? `fabricado con tecnología ${tech}™` : '', duty ? `servicio ${duty}` : '', 'cumple o supera los requisitos OEM.'].filter(Boolean).join(', '),
+        footer: 'Todos los nombres de productos, logotipos y marcas son propiedad de sus respectivos dueños. Este catálogo es solo para fines informativos. ELIMFILTERS no está afiliada con ningún fabricante OEM.'
+      }
+    };
+    const T = I18N[LANG];
+
+    function applyI18n() {
+      const ids = ['tabPart','tabVehicle','tabVin','backBtn','dtSpecs','specsSectionTitle','labelStat1','labelStat2','labelStat3','labelStat4','footerEl'];
+      ids.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = T[id]; });
+      // Tab badges need innerHTML to preserve badge spans
+      ['dtOem','dtCross','dtEquip'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const badge = el.querySelector('.tab-badge');
+        el.textContent = T[id] + ' ';
+        if (badge) el.appendChild(badge);
+      });
+      document.getElementById('searchBtn').textContent = T.searchBtn;
+      document.getElementById('searchInput').placeholder = T.phPart;
+      document.title = LANG === 'es' ? 'ELIMFILTERS | Encuentra el filtro correcto, rápido' : 'ELIMFILTERS | Find the right filter, fast';
+    }
+
+    document.addEventListener('DOMContentLoaded', applyI18n);
+
     let searchMode = 'part';
 
     function setSearchMode(btn, mode) {
@@ -560,9 +620,9 @@
       btn.classList.add('active');
       searchMode = mode;
       const input = document.getElementById('searchInput');
-      if (mode === 'part') input.placeholder = 'Part number, OEM code, competitor SKU...';
-      else if (mode === 'vehicle') input.placeholder = 'Vehicle brand, model or equipment type...';
-      else if (mode === 'vin') { input.placeholder = 'Enter 17-character VIN...'; input.maxLength = 17; }
+      if (mode === 'part') input.placeholder = T.phPart;
+      else if (mode === 'vehicle') input.placeholder = T.phVehicle;
+      else if (mode === 'vin') { input.placeholder = T.phVin; input.maxLength = 17; }
     }
 
     async function doSearch() {
@@ -591,7 +651,7 @@
       } catch (e) {
         showError(e.message);
       } finally {
-        btn.textContent = 'Search';
+        btn.textContent = T.searchBtn;
         btn.disabled = false;
       }
     }
@@ -600,9 +660,9 @@
       document.getElementById('landing').style.display = 'none';
       document.getElementById('particleCanvas').style.display = 'none';
       document.getElementById('resultsScreen').style.display = 'block';
-      document.getElementById('resultSKU').textContent = 'No results';
-      document.getElementById('resultDesc').textContent = `No filters found for "${q}". Try a different part number or OEM code.`;
-      document.getElementById('specsTable').querySelector('tbody').innerHTML = '<tr><td colspan="4" style="color:#666;padding:20px;text-align:center">No data available</td></tr>';
+      document.getElementById('resultSKU').textContent = LANG === 'es' ? 'Sin resultados' : 'No results';
+      document.getElementById('resultDesc').textContent = T.noResults(q);
+      document.getElementById('specsTable').querySelector('tbody').innerHTML = `<tr><td colspan="4" style="color:#666;padding:20px;text-align:center">${T.noData}</td></tr>`;
       document.getElementById('oemGrid').innerHTML = '';
       document.getElementById('crossGrid').innerHTML = '';
       document.getElementById('equipmentGrid').innerHTML = '';
@@ -614,22 +674,22 @@
       const input = document.getElementById('searchInput');
       input.style.border = '1.5px solid #ff4444';
       input.placeholder = 'Error: ' + msg;
-      setTimeout(() => { input.style.border = ''; input.placeholder = 'Part number, OEM code, competitor SKU...'; }, 3000);
+      setTimeout(() => { input.style.border = ''; input.placeholder = T.phPart; }, 3000);
     }
 
     async function decodeVIN(vin) {
-      if (vin.length !== 17) { showError('VIN must be 17 characters'); return; }
+      if (vin.length !== 17) { showError(T.errVinLen); return; }
       try {
         const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${vin}?format=json`);
         const data = await res.json();
         const R = data.Results || [];
         const make = R.find(r => r.Variable === 'Make')?.Value || '';
         const model = R.find(r => r.Variable === 'Model')?.Value || '';
-        if (!make || !model) { showError('Invalid VIN'); return; }
+        if (!make || !model) { showError(T.errVinInvalid); return; }
         document.getElementById('searchInput').value = `${make} ${model}`;
         searchMode = 'vehicle';
         await doSearch();
-      } catch(e) { showError('VIN decode error'); }
+      } catch(e) { showError(T.errVinDecode); }
     }
 
     function showResults(item) {
@@ -641,30 +701,25 @@
       const sku = item.elimfilters_sku || item.sku || 'N/A';
       document.getElementById('resultSKU').textContent = sku;
 
-      const descParts = [
-        item.filter_type ? `Elimfilters® ${sku} ${item.filter_type} filter` : '',
-        item.technology ? `engineered with ${item.technology}™ filtration technology` : '',
-        item.duty ? `${item.duty} duty` : '',
-        'developed to meet or exceed OEM requirements.'
-      ].filter(Boolean);
-      document.getElementById('resultDesc').textContent = descParts.join(', ');
+      document.getElementById('resultDesc').textContent = item.description || T.desc(sku, item.filter_type, item.technology, item.duty);
 
       // Build specs table (2 columns of pairs)
+      const L = T.specLabels;
       const specs = [
-        ['Filter Type', item.filter_type],
-        ['Subtype', item.filter_subtype],
-        ['Technology', item.technology],
-        ['Thread Size', item.thread_size],
-        ['Outer Dia.', item.outer_diameter_mm ? `${item.outer_diameter_mm} mm` : null],
-        ['Gasket OD', item.gasket_od_mm ? `${item.gasket_od_mm} mm` : null],
-        ['Gasket ID', item.gasket_id_mm ? `${item.gasket_id_mm} mm` : null],
-        ['ISO Test Method', item.iso_test_method],
-        ['Micron Rating', item.micron_rating],
-        ['Efficiency', item.nominal_efficiency ? `${item.nominal_efficiency}` : null],
-        ['Burst Pressure', item.burst_pressure_psi ? `${item.burst_pressure_psi} psi` : null],
-        ['Collapse Pressure', item.collapse_pressure_psi ? `${item.collapse_pressure_psi} psi` : null],
-        ['Duty', item.duty],
-        ['Installation', item.installation_type],
+        [L[0], item.filter_type],
+        [L[1], item.filter_subtype],
+        [L[2], item.technology],
+        [L[3], item.thread_size],
+        [L[4], item.outer_diameter_mm ? `${item.outer_diameter_mm} mm` : null],
+        [L[5], item.gasket_od_mm ? `${item.gasket_od_mm} mm` : null],
+        [L[6], item.gasket_id_mm ? `${item.gasket_id_mm} mm` : null],
+        [L[7], item.iso_test_method],
+        [L[8], item.micron_rating],
+        [L[9], item.nominal_efficiency ? `${item.nominal_efficiency}` : null],
+        [L[10], item.burst_pressure_psi ? `${item.burst_pressure_psi} psi` : null],
+        [L[11], item.collapse_pressure_psi ? `${item.collapse_pressure_psi} psi` : null],
+        [L[12], item.duty],
+        [L[13], item.installation_type],
       ].filter(([_, v]) => v);
 
       const tbody = document.querySelector('#specsTable tbody');
@@ -689,7 +744,7 @@
           <div class="code-type">${c.manufacturer || 'OEM'}</div>
           <div class="code-value">${c.code || c.partNumber || '—'}</div>
         </div>`
-      ).join('') || '<p style="color:#444;padding:20px">No OEM codes available</p>';
+      ).join('') || `<p style="color:#444;padding:20px">${T.noOem}</p>`;
 
       // Cross Reference
       const comps = item.competitor_codes || [];
@@ -699,17 +754,17 @@
           <div class="code-type">${c.manufacturer || 'ALT'}</div>
           <div class="code-value">${c.code || '—'}</div>
         </div>`
-      ).join('') || '<p style="color:#444;padding:20px">No cross references available</p>';
+      ).join('') || `<p style="color:#444;padding:20px">${T.noCross}</p>`;
 
       // Equipment
       const equip = item.equipment_applications || [];
       document.getElementById('badgeEquip').textContent = equip.length;
       document.getElementById('equipmentGrid').innerHTML = equip.map(e =>
         `<div class="code-box">
-          <div class="code-type">Equipment</div>
+          <div class="code-type">${LANG === 'es' ? 'Equipo' : 'Equipment'}</div>
           <div class="code-value">${typeof e === 'string' ? e : JSON.stringify(e)}</div>
         </div>`
-      ).join('') || '<p style="color:#444;padding:20px">No equipment data available</p>';
+      ).join('') || `<p style="color:#444;padding:20px">${T.noEquip}</p>`;
 
       // Reset tabs
       document.querySelectorAll('.data-tab').forEach(b => b.classList.remove('active'));
@@ -854,8 +909,9 @@
     (function() {
       const el = document.getElementById('typewriterHeadline');
       const sub = document.getElementById('subtitleEl');
-      const full = 'Find the right filter, fast.';
-      const highlight = 'filter';
+      sub.textContent = T.subtitle;
+      const full = T.headline;
+      const highlight = T.highlightWord;
       let i = 0;
 
       function type() {

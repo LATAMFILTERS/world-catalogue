@@ -41,21 +41,28 @@ function parseRefs(arr){
   }));
 }
 
-function extractText(val) {
+function detectLang(req) {
+  const langs = (req.headers['accept-language'] || '').toLowerCase()
+    .split(',').map(l => l.split(';')[0].trim());
+  return langs.some(l => l.startsWith('es')) ? 'es' : 'en';
+}
+
+function extractText(val, lang = 'en') {
   if (!val) return null;
-  if (typeof val === 'object') return val.en || val.es || Object.values(val)[0] || null;
+  if (typeof val === 'object') return val[lang] || val.en || val.es || Object.values(val)[0] || null;
   if (typeof val === 'string') {
-    try { const p = JSON.parse(val); return p.en || p.es || Object.values(p)[0] || val; } catch { return val; }
+    try { const p = JSON.parse(val); return p[lang] || p.en || p.es || Object.values(p)[0] || val; } catch { return val; }
   }
   return String(val);
 }
 
-function buildFilterData(row){
+function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
-    filter_type: extractText(row.filter_type),
-    filter_subtype: extractText(row.sub_type) || null,
+    description: extractText(row.description, lang),
+    filter_type: extractText(row.filter_type, lang),
+    filter_subtype: extractText(row.sub_type, lang) || null,
     technology: row.technology || null,
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
@@ -82,24 +89,25 @@ app.get('/api/status', (req, res) => {
 app.get('/api/filters/search/part', async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if(!code) return res.json({success: false, filters: []});
+  const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
-    
+
     let result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE codigo_base = $1 LIMIT 1',
       [code]
     );
-    
+
     if(result.rows.length === 0) {
       result = await client.query(
         'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
         [code]
       );
     }
-    
+
     if(result.rows.length === 0) {
       // Búsqueda exacta en oem_codes y competitor_codes (formato {code/partNumber})
       result = await client.query(
@@ -118,8 +126,8 @@ app.get('/api/filters/search/part', async (req, res) => {
         [code]
       );
     }
-    
-    const filters = result.rows.map(row => buildFilterData(row));
+
+    const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -133,28 +141,29 @@ app.get('/api/filters/search/vin', async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
-    
-    let query = `SELECT * FROM elimfilters_catalog 
+
+    let query = `SELECT * FROM elimfilters_catalog
                  WHERE equipment_applications IS NOT NULL`;
     const params = [];
-    
+
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
     params.push('%' + model + '%');
-    
+
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
     }
-    
+
     query += ' LIMIT 10';
-    
+
     const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row));
+    const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -169,33 +178,34 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
-    
-    let query = `SELECT * FROM elimfilters_catalog 
+
+    let query = `SELECT * FROM elimfilters_catalog
                  WHERE equipment_applications IS NOT NULL`;
     const params = [];
-    
+
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
     params.push('%' + model + '%');
-    
+
     if(type) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + type + '%');
     }
-    
+
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
     }
-    
+
     query += ' LIMIT 10';
-    
+
     const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row));
+    const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -207,6 +217,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
 app.get('/api/filters/search/homologous', async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if(!code) return res.json({success: false, filters: []});
+  const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
@@ -216,7 +227,7 @@ app.get('/api/filters/search/homologous', async (req, res) => {
       'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
       [code]
     );
-    const filters = result.rows.map(row => buildFilterData(row));
+    const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
