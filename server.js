@@ -225,6 +225,36 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
+// Temp: analyze donaldson_url patterns for sub_type inference
+app.get('/api/analyze/hydraulic-urls', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, donaldson_url, sub_type
+      FROM elimfilters_catalog
+      WHERE filter_type = 'Hydraulic Filter'
+        AND donaldson_url IS NOT NULL
+      LIMIT 200
+    `);
+    const patterns = {};
+    result.rows.forEach(r => {
+      const url = (r.donaldson_url || '').toLowerCase();
+      const segments = url.split('/').filter(Boolean);
+      const key = segments.slice(-3).join('/');
+      patterns[key] = (patterns[key] || 0) + 1;
+    });
+    const sorted = Object.entries(patterns).sort((a,b)=>b[1]-a[1]).slice(0,40);
+    const sample = result.rows.slice(0,20).map(r=>({sku:r.sku, url:r.donaldson_url, sub_type:r.sub_type}));
+    res.json({total: result.rowCount, top_patterns: sorted, sample});
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
