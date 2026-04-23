@@ -309,6 +309,40 @@ app.get('/api/migrate/fix-skus', async (req, res) => {
   }
 });
 
+// Temp: fix 8-char SKUs → 7-char format (prefix + last 4 numeric digits of codigo_base)
+app.get('/api/migrate/fix-8char-skus', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sku = CASE
+        WHEN filter_type = 'Air Filter'           THEN 'EA1'
+        WHEN filter_type = 'Air Dryer'            THEN 'ED4'
+        WHEN filter_type = 'Air Housing'          THEN 'EA2'
+        WHEN filter_type = 'Hydraulic Filter'     THEN 'EH6'
+        WHEN filter_type = 'Oil Filter'           THEN 'EL8'
+        WHEN filter_type = 'Cabin Air Filter'     THEN 'EC1'
+        WHEN filter_type = 'Coolant Filter'       THEN 'EW7'
+        WHEN filter_type = 'Fuel Filter'          THEN 'EF9'
+        WHEN filter_type = 'Fuel/Water Separator' THEN 'ES9'
+        WHEN filter_type = 'Turbina'              THEN 'ET9'
+        ELSE LEFT(sku, 3)
+      END || LPAD(RIGHT(REGEXP_REPLACE(codigo_base, '[^0-9]', '', 'g'), 4), 4, '0')
+      WHERE LENGTH(sku) = 8
+      RETURNING sku, filter_type, codigo_base
+    `);
+    const summary = {};
+    result.rows.forEach(r => { summary[r.filter_type] = (summary[r.filter_type]||0)+1; });
+    res.json({ updated: result.rowCount, summary, sample: result.rows.slice(0,10) });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: analyze SKU format compliance against new standard
 app.get('/api/analyze/sku-compliance', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
