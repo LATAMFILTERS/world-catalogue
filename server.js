@@ -236,6 +236,26 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
+// Temp: analyze + fix name field JSON fragments
+app.get('/api/analyze/name-field', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const hasJson = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name LIKE '%{"%'`);
+    const sample = await client.query(`
+      SELECT sku, filter_type, name FROM elimfilters_catalog
+      WHERE name LIKE '%{"%' LIMIT 10
+    `);
+    const clean = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name NOT LIKE '%{"%' OR name IS NULL`);
+    res.json({ with_json: parseInt(hasJson.rows[0].count), already_clean: parseInt(clean.rows[0].count), sample: sample.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
