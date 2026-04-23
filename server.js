@@ -297,38 +297,28 @@ app.get('/api/migrate/oil-subtype', async (req, res) => {
   }
 });
 
-// Temp: analyze Air Filter data for sub_type inference
-app.get('/api/analyze/air-subtype', async (req, res) => {
+// Temp: migrate Air Filter sub_types
+app.get('/api/migrate/air-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const subtypes = await client.query(`
-      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' GROUP BY sub_type ORDER BY COUNT(*) DESC
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN sub_type IN ('Safety', 'Seguridad', 'Primario', 'Panel') THEN sub_type
+        WHEN sub_type IN ('Primary', 'Engine') THEN 'Primario'
+        WHEN codigo_base LIKE 'P9%' THEN 'Seguridad'
+        ELSE 'Primario'
+      END
+      WHERE filter_type = 'Air Filter'
+        AND sub_type NOT IN ('Safety', 'Seguridad', 'Primario', 'Panel', 'Ventilación')
+        OR (filter_type = 'Air Filter' AND sub_type IS NULL)
+      RETURNING sub_type
     `);
-    const duty = await client.query(`
-      SELECT duty, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' GROUP BY duty ORDER BY COUNT(*) DESC
-    `);
-    const install = await client.query(`
-      SELECT installation_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' GROUP BY installation_type ORDER BY COUNT(*) DESC LIMIT 20
-    `);
-    const isPrimary = await client.query(`
-      SELECT is_primary, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' GROUP BY is_primary ORDER BY COUNT(*) DESC
-    `);
-    const tech = await client.query(`
-      SELECT technology, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' GROUP BY technology ORDER BY COUNT(*) DESC LIMIT 10
-    `);
-    const sample = await client.query(`
-      SELECT sku, codigo_base, duty, installation_type, is_primary, sub_type, technology
-      FROM elimfilters_catalog
-      WHERE filter_type = 'Air Filter' LIMIT 15
-    `);
-    res.json({ existing_subtypes: subtypes.rows, duty_dist: duty.rows, installation_types: install.rows, is_primary_dist: isPrimary.rows, technologies: tech.rows, sample: sample.rows });
+    const summary = {};
+    result.rows.forEach(r => { summary[r.sub_type] = (summary[r.sub_type]||0)+1; });
+    res.json({ updated: result.rowCount, summary });
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
