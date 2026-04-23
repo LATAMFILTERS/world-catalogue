@@ -1,0 +1,16 @@
+:{$PORT:8080} {
+    # Proxy all API requests to Express
+    handle /api/* {
+        reverse_proxy localhost:3000
+    }
+
+    handle /webhook/* {
+        reverse_proxy localhost:3000
+    }
+
+    # Serve static files for everything else
+    handle {
+        root * /app/public
+        file_server
+    }
+}
