@@ -250,38 +250,46 @@ app.get('/api/migrate/hydraulic-subtype', async (req, res) => {
   }
 });
 
-// Temp: analyze Oil Filter data for sub_type inference
-app.get('/api/analyze/oil-subtype', async (req, res) => {
+// Temp: migrate Oil Filter sub_type + fix misclassified filter_types
+app.get('/api/migrate/oil-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const thread = await client.query(`
-      SELECT
-        CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as thread,
-        COUNT(*) as count
-      FROM elimfilters_catalog
+
+    // Fix sub_type for all Oil Filters (overrides incorrect existing values)
+    const subtype = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN thread_size IS NOT NULL THEN 'Spin-On'
+        ELSE 'Cartridge'
+      END
       WHERE filter_type = 'Oil Filter'
-      GROUP BY 1
+      RETURNING sub_type
     `);
-    const subtypes = await client.query(`
-      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+    const subtypeSummary = {};
+    subtype.rows.forEach(r => { subtypeSummary[r.sub_type] = (subtypeSummary[r.sub_type]||0)+1; });
+
+    // Fix misclassified filter_type based on SKU prefix
+    const reclassify = await client.query(`
+      UPDATE elimfilters_catalog
+      SET filter_type = CASE
+        WHEN sku LIKE 'EH%' THEN 'Hydraulic Filter'
+        WHEN sku LIKE 'EF%' THEN 'Fuel Filter'
+        WHEN sku LIKE 'EA%' THEN 'Air Filter'
+        WHEN sku LIKE 'EC%' THEN 'Coolant Filter'
+      END
       WHERE filter_type = 'Oil Filter'
-      GROUP BY sub_type ORDER BY COUNT(*) DESC
+        AND (sku LIKE 'EH%' OR sku LIKE 'EF%' OR sku LIKE 'EA%' OR sku LIKE 'EC%')
+      RETURNING sku, filter_type
     `);
-    const withThread = await client.query(`
-      SELECT sku, codigo_base, thread_size, sub_type, installation_type
-      FROM elimfilters_catalog
-      WHERE filter_type = 'Oil Filter' AND thread_size IS NOT NULL
-      LIMIT 5
-    `);
-    const noThread = await client.query(`
-      SELECT sku, codigo_base, thread_size, sub_type, installation_type, height_mm, outer_diameter_mm
-      FROM elimfilters_catalog
-      WHERE filter_type = 'Oil Filter' AND thread_size IS NULL
-      LIMIT 10
-    `);
-    res.json({ thread_distribution: thread.rows, existing_subtypes: subtypes.rows, with_thread_sample: withThread.rows, no_thread_sample: noThread.rows });
+
+    res.json({
+      subtype_updated: subtype.rowCount,
+      subtype_summary: subtypeSummary,
+      reclassified: reclassify.rowCount,
+      reclassified_skus: reclassify.rows
+    });
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
