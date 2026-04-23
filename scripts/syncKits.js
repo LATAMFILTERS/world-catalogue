@@ -45,7 +45,7 @@ async function syncKits() {
         }
 
         if (kitEntries.length > 0) {
-            console.log('?? Limpiando colección de Kits...');
+            console.log('?? Limpiando colecciÃ³n de Kits...');
             await Kit.deleteMany({});
             await Kit.insertMany(kitEntries);
             console.log('?? SINCRO EXITOSA: ' + kitEntries.length + ' kits guardados.');

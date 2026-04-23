@@ -54,7 +54,7 @@ async function syncSheets() {
         
         await Filter.insertMany(filterData);
         
-        console.log('?? ¡SINCRO EXITOSA! ' + filterData.length + ' filtros únicos guardados.');
+        console.log('?? Â¡SINCRO EXITOSA! ' + filterData.length + ' filtros Ãºnicos guardados.');
         process.exit(0);
     } catch (error) {
         console.error('? ERROR:', error.message);

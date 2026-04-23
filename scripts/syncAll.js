@@ -13,13 +13,13 @@ const serviceAccountAuth = new JWT({
 
 async function syncAll() {
     try {
-        console.log('??? Iniciando sincronización segura...');
+        console.log('??? Iniciando sincronizaciÃ³n segura...');
         const doc = new GoogleSpreadsheet('1ZYI5c0enkuvWAveu8HMaCUk1cek_VDrX8GtgKW7VP6U', serviceAccountAuth);
         await doc.loadInfo();
-        console.log('? Conexión segura establecida con:', doc.title);
+        console.log('? ConexiÃ³n segura establecida con:', doc.title);
         
-        // Aquí sigue el resto de tu lógica de sincronización...
-        // El sistema ya no depende de archivos físicos.
+        // AquÃ­ sigue el resto de tu lÃ³gica de sincronizaciÃ³n...
+        // El sistema ya no depende de archivos fÃ­sicos.
     } catch (error) {
         console.error('? Error de seguridad:', error.message);
     }
