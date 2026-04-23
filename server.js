@@ -225,6 +225,37 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
+// One-time migration endpoint — fix filter_type JSON to plain text
+app.get('/api/migrate/fix-filter-type', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET filter_type = CASE
+        WHEN filter_type ILIKE '%Air Dryer%'    THEN 'Air Dryer'
+        WHEN filter_type ILIKE '%Cabin Air%'    THEN 'Cabin Air Filter'
+        WHEN filter_type ILIKE '%Air Filter%'   THEN 'Air Filter'
+        WHEN filter_type ILIKE '%Hydraulic%'    THEN 'Hydraulic Filter'
+        WHEN filter_type ILIKE '%Oil Filter%'   THEN 'Oil Filter'
+        WHEN filter_type ILIKE '%Fuel Filter%'  THEN 'Fuel Filter'
+        WHEN filter_type ILIKE '%Lube%'         THEN 'Oil Filter'
+        ELSE filter_type
+      END
+      WHERE filter_type IS NOT NULL
+      RETURNING sku, filter_type
+    `);
+    const summary = {};
+    result.rows.forEach(r => { summary[r.filter_type] = (summary[r.filter_type]||0)+1; });
+    res.json({success: true, updated: result.rowCount, summary});
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
