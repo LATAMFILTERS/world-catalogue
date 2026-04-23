@@ -297,28 +297,36 @@ app.get('/api/migrate/oil-subtype', async (req, res) => {
   }
 });
 
-// Temp: migrate Air Filter sub_types
-app.get('/api/migrate/air-subtype', async (req, res) => {
+// Temp: analyze Fuel Filter and Fuel/Water Separator for sub_type
+app.get('/api/analyze/fuel-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const result = await client.query(`
-      UPDATE elimfilters_catalog
-      SET sub_type = CASE
-        WHEN sub_type IN ('Safety', 'Seguridad', 'Primario', 'Panel') THEN sub_type
-        WHEN sub_type IN ('Primary', 'Engine') THEN 'Primario'
-        WHEN codigo_base LIKE 'P9%' THEN 'Seguridad'
-        ELSE 'Primario'
-      END
-      WHERE filter_type = 'Air Filter'
-        AND sub_type NOT IN ('Safety', 'Seguridad', 'Primario', 'Panel', 'Ventilación')
-        OR (filter_type = 'Air Filter' AND sub_type IS NULL)
-      RETURNING sub_type
+    const fuelSub = await client.query(`
+      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Fuel Filter' GROUP BY sub_type ORDER BY COUNT(*) DESC
     `);
-    const summary = {};
-    result.rows.forEach(r => { summary[r.sub_type] = (summary[r.sub_type]||0)+1; });
-    res.json({ updated: result.rowCount, summary });
+    const fuelThread = await client.query(`
+      SELECT CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as t, COUNT(*)
+      FROM elimfilters_catalog WHERE filter_type = 'Fuel Filter' GROUP BY 1
+    `);
+    const fwsSub = await client.query(`
+      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Fuel/Water Separator' GROUP BY sub_type ORDER BY COUNT(*) DESC
+    `);
+    const fwsThread = await client.query(`
+      SELECT CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as t, COUNT(*)
+      FROM elimfilters_catalog WHERE filter_type = 'Fuel/Water Separator' GROUP BY 1
+    `);
+    const fwsSample = await client.query(`
+      SELECT sku, codigo_base, thread_size, sub_type, installation_type, specs, technology
+      FROM elimfilters_catalog WHERE filter_type = 'Fuel/Water Separator' LIMIT 15
+    `);
+    res.json({
+      fuel_filter: { subtypes: fuelSub.rows, thread: fuelThread.rows },
+      fuel_water_separator: { subtypes: fwsSub.rows, thread: fwsThread.rows, sample: fwsSample.rows }
+    });
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
