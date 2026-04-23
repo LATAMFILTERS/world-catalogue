@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 
 class ChatbotService {
   constructor() {
-    this.groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+    this._groq = null;
 
     this.db = new Pool({
       host: 'ballast.proxy.rlwy.net',
@@ -17,6 +17,11 @@ class ChatbotService {
       idleTimeoutMillis: 10000,
       statement_timeout: 5000
     });
+  }
+
+  get groq() {
+    if (!this._groq) this._groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+    return this._groq;
   }
 
   // Extract potential part codes from user message
