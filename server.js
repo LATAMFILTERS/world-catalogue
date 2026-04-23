@@ -236,24 +236,52 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: analyze SKU prefixes per filter_type
-app.get('/api/analyze/sku-prefixes', async (req, res) => {
+// Temp: analyze SKU format compliance against new standard
+app.get('/api/analyze/sku-compliance', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const result = await client.query(`
-      SELECT filter_type, LEFT(sku, 2) as prefix, COUNT(*) as count
+
+    // Check SKU length
+    const lengthCheck = await client.query(`
+      SELECT LENGTH(sku) as len, COUNT(*) as count
       FROM elimfilters_catalog
-      GROUP BY filter_type, LEFT(sku, 2)
-      ORDER BY filter_type, count DESC
+      GROUP BY LENGTH(sku) ORDER BY count DESC
     `);
-    const grouped = {};
-    result.rows.forEach(r => {
-      if (!grouped[r.filter_type]) grouped[r.filter_type] = [];
-      grouped[r.filter_type].push({ prefix: r.prefix, count: parseInt(r.count) });
+
+    // Check prefix vs filter_type compliance
+    const prefixCheck = await client.query(`
+      SELECT filter_type, LEFT(sku,3) as prefix, COUNT(*) as count,
+        CASE
+          WHEN filter_type = 'Air Filter'           AND sku LIKE 'EA1%' THEN true
+          WHEN filter_type = 'Air Dryer'            AND sku LIKE 'ED4%' THEN true
+          WHEN filter_type = 'Air Housing'          AND sku LIKE 'EA2%' THEN true
+          WHEN filter_type = 'Hydraulic Filter'     AND sku LIKE 'EH6%' THEN true
+          WHEN filter_type = 'Oil Filter'           AND sku LIKE 'EL8%' THEN true
+          WHEN filter_type = 'Cabin Air Filter'     AND sku LIKE 'EC1%' THEN true
+          WHEN filter_type = 'Coolant Filter'       AND sku LIKE 'EW7%' THEN true
+          WHEN filter_type = 'Fuel Filter'          AND sku LIKE 'EF9%' THEN true
+          WHEN filter_type = 'Fuel/Water Separator' AND sku LIKE 'ES9%' THEN true
+          WHEN filter_type = 'Turbina'              AND sku LIKE 'ET9%' THEN true
+          WHEN filter_type = 'Marine Filter'        AND sku LIKE 'EM9%' THEN true
+          WHEN filter_type = 'Kit Filter'           AND sku LIKE 'EK5%' THEN true
+          WHEN filter_type = 'Kit Filter'           AND sku LIKE 'EK3%' THEN true
+          ELSE false
+        END as compliant
+      FROM elimfilters_catalog
+      GROUP BY filter_type, LEFT(sku,3), compliant
+      ORDER BY filter_type, compliant DESC, count DESC
+    `);
+
+    const compliant = prefixCheck.rows.filter(r => r.compliant).reduce((s,r) => s + parseInt(r.count), 0);
+    const nonCompliant = prefixCheck.rows.filter(r => !r.compliant).reduce((s,r) => s + parseInt(r.count), 0);
+
+    res.json({
+      sku_lengths: lengthCheck.rows,
+      prefix_compliance: prefixCheck.rows,
+      summary: { compliant, non_compliant: nonCompliant, total: compliant + nonCompliant }
     });
-    res.json(grouped);
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
