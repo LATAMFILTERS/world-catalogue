@@ -745,11 +745,11 @@
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
       let W, H, frame = 0;
-      const COUNT = 160;
+      const COUNT = 220;
       const particles = [];
 
-      const NEIGHBOR  = 85;   // radius for alignment + cohesion
-      const SEP_DIST  = 32;   // radius for separation
+      const NEIGHBOR  = 120;
+      const SEP_DIST  = 45;
       const MAX_SPEED = 2.2;
       const MAX_FORCE = 0.06;
 
@@ -760,7 +760,6 @@
       resize();
       window.addEventListener('resize', resize);
 
-      // Spread particles across whole screen at start
       for (let i = 0; i < COUNT; i++) {
         const a = Math.random() * Math.PI * 2;
         const spd = Math.random() * 1.4 + 0.5;
@@ -769,20 +768,18 @@
           y: Math.random() * H,
           vx: Math.cos(a) * spd,
           vy: Math.sin(a) * spd,
-          angle: a,
           color: Math.random() < 0.55 ? '#FFF12D' : '#ffffff',
           alpha: Math.random() * 0.4 + 0.3,
-          len: Math.random() * 8 + 3,
-          thick: Math.random() * 1.5 + 0.7
+          r: Math.random() * 2 + 1
         });
       }
 
-      // Slow attractor — jellyfish "swimming" path across full screen
+      // sin() for both axes so attractor starts at center (cos(0)=1 would start at edge)
       function attractor() {
         const f = frame;
         return {
-          x: W * 0.5 + Math.sin(f * 0.00028) * W * 0.40 + Math.sin(f * 0.00017) * W * 0.10,
-          y: H * 0.5 + Math.cos(f * 0.00022) * H * 0.35 + Math.cos(f * 0.00039) * H * 0.09
+          x: W * 0.5 + Math.sin(f * 0.00028) * W * 0.44 + Math.sin(f * 0.00017) * W * 0.10,
+          y: H * 0.5 + Math.sin(f * 0.00022) * H * 0.42 + Math.sin(f * 0.00039) * H * 0.09
         };
       }
 
@@ -816,18 +813,15 @@
 
           let fx = 0, fy = 0;
 
-          // Separation — strong, keeps swarm spread across screen
           if (sepN > 0) {
             let [sx, sy] = clamp(sepX / sepN, sepY / sepN, MAX_SPEED);
             fx += (sx - p.vx) * MAX_FORCE * 2.0;
             fy += (sy - p.vy) * MAX_FORCE * 2.0;
           }
-          // Alignment — moderate, all drift same general direction (flock feel)
           if (cohN > 0) {
             let [ax, ay] = clamp(aliX / cohN, aliY / cohN, MAX_SPEED);
             fx += (ax - p.vx) * MAX_FORCE * 1.0;
             fy += (ay - p.vy) * MAX_FORCE * 1.0;
-            // Cohesion — weak, loose togetherness
             const cvx = (cohX / cohN - p.x), cvy = (cohY / cohN - p.y);
             const cd = Math.sqrt(cvx * cvx + cvy * cvy) || 1;
             let [cx2, cy2] = clamp(cvx / cd, cvy / cd, MAX_SPEED);
@@ -835,36 +829,25 @@
             fy += (cy2 - p.vy) * MAX_FORCE * 0.4;
           }
 
-          // Gentle attractor pull — whole flock drifts toward swimming nucleus
           const adx = att.x - p.x, ady = att.y - p.y;
           const ad = Math.sqrt(adx * adx + ady * ady) || 1;
-          fx += (adx / ad * MAX_SPEED - p.vx) * MAX_FORCE * 0.018;
-          fy += (ady / ad * MAX_SPEED - p.vy) * MAX_FORCE * 0.018;
+          fx += (adx / ad * MAX_SPEED - p.vx) * MAX_FORCE * 0.03;
+          fy += (ady / ad * MAX_SPEED - p.vy) * MAX_FORCE * 0.03;
 
           p.vx += fx;  p.vy += fy;
           [p.vx, p.vy] = clamp(p.vx, p.vy, MAX_SPEED);
-          const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-          if (spd > 0.1) p.angle = Math.atan2(p.vy, p.vx);
 
           p.x += p.vx;  p.y += p.vy;
 
-          // Wrap edges
           if (p.x < -20) p.x = W + 20; else if (p.x > W + 20) p.x = -20;
           if (p.y < -20) p.y = H + 20; else if (p.y > H + 20) p.y = -20;
 
-          // Draw oriented dash
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.rotate(p.angle);
+          // Draw dot
           ctx.globalAlpha = p.alpha;
-          ctx.strokeStyle = p.color;
-          ctx.lineWidth = p.thick;
-          ctx.lineCap = 'round';
+          ctx.fillStyle = p.color;
           ctx.beginPath();
-          ctx.moveTo(-p.len / 2, 0);
-          ctx.lineTo(p.len / 2, 0);
-          ctx.stroke();
-          ctx.restore();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
         }
 
         ctx.globalAlpha = 1;
