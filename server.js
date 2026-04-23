@@ -225,48 +225,24 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: analyze hydraulic filter data to find sub_type clues
-app.get('/api/analyze/hydraulic-urls', async (req, res) => {
+// Temp: populate sub_type for Hydraulic Filters
+app.get('/api/migrate/hydraulic-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    // Get column names
-    const cols = await client.query(`
-      SELECT column_name FROM information_schema.columns
-      WHERE table_name = 'elimfilters_catalog' ORDER BY ordinal_position
-    `);
-    // Sample of hydraulic filters with all fields
-    const sample = await client.query(`
-      SELECT * FROM elimfilters_catalog
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN thread_size IS NOT NULL THEN 'Spin-On'
+        ELSE 'Cartridge'
+      END
       WHERE filter_type = 'Hydraulic Filter'
-      LIMIT 10
+      RETURNING sub_type
     `);
-    // sub_type breakdown for hydraulic
-    const subtypes = await client.query(`
-      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Hydraulic Filter'
-      GROUP BY sub_type ORDER BY COUNT(*) DESC
-    `);
-    // installation_type breakdown
-    const install = await client.query(`
-      SELECT installation_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Hydraulic Filter'
-      GROUP BY installation_type ORDER BY COUNT(*) DESC
-    `);
-    // technology breakdown
-    const tech = await client.query(`
-      SELECT technology, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Hydraulic Filter'
-      GROUP BY technology ORDER BY COUNT(*) DESC LIMIT 20
-    `);
-    res.json({
-      columns: cols.rows.map(r=>r.column_name),
-      subtypes: subtypes.rows,
-      installation_types: install.rows,
-      technologies: tech.rows,
-      sample: sample.rows
-    });
+    const summary = {};
+    result.rows.forEach(r => { summary[r.sub_type] = (summary[r.sub_type]||0)+1; });
+    res.json({success: true, updated: result.rowCount, summary});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
