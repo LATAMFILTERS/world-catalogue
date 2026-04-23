@@ -297,35 +297,55 @@ app.get('/api/migrate/oil-subtype', async (req, res) => {
   }
 });
 
-// Temp: analyze Fuel Filter and Fuel/Water Separator for sub_type
-app.get('/api/analyze/fuel-subtype', async (req, res) => {
+// Temp: migrate Fuel Filter + Fuel/Water Separator sub_types
+app.get('/api/migrate/fuel-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const fuelSub = await client.query(`
-      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Fuel Filter' GROUP BY sub_type ORDER BY COUNT(*) DESC
+
+    // Reclassify "Separador de agua" Fuel Filters → Fuel/Water Separator
+    const reclassify = await client.query(`
+      UPDATE elimfilters_catalog
+      SET filter_type = 'Fuel/Water Separator'
+      WHERE filter_type = 'Fuel Filter' AND sub_type = 'Separador de agua'
+      RETURNING sku
     `);
-    const fuelThread = await client.query(`
-      SELECT CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as t, COUNT(*)
-      FROM elimfilters_catalog WHERE filter_type = 'Fuel Filter' GROUP BY 1
+
+    // Fuel Filter: normalize + thread logic (skip Inline/Box/Full-Flow/Funda/Ventilación)
+    const fuel = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN sub_type = 'Secondary' THEN 'Secundario'
+        WHEN sub_type = 'Primary'   THEN 'Primario'
+        WHEN sub_type IS NULL OR sub_type = ''
+          THEN CASE WHEN thread_size IS NOT NULL THEN 'Spin-On' ELSE 'Cartridge' END
+        ELSE sub_type
+      END
+      WHERE filter_type = 'Fuel Filter'
+        AND (sub_type IS NULL OR sub_type = '' OR sub_type IN ('Secondary', 'Primary'))
+      RETURNING sub_type
     `);
-    const fwsSub = await client.query(`
-      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
-      WHERE filter_type = 'Fuel/Water Separator' GROUP BY sub_type ORDER BY COUNT(*) DESC
+    const fuelSummary = {};
+    fuel.rows.forEach(r => { fuelSummary[r.sub_type] = (fuelSummary[r.sub_type]||0)+1; });
+
+    // Fuel/Water Separator: Spin-On vs Cartridge (includes just-reclassified records)
+    const fws = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN thread_size IS NOT NULL THEN 'Spin-On'
+        ELSE 'Cartridge'
+      END
+      WHERE filter_type = 'Fuel/Water Separator'
+      RETURNING sub_type
     `);
-    const fwsThread = await client.query(`
-      SELECT CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as t, COUNT(*)
-      FROM elimfilters_catalog WHERE filter_type = 'Fuel/Water Separator' GROUP BY 1
-    `);
-    const fwsSample = await client.query(`
-      SELECT sku, codigo_base, thread_size, sub_type, installation_type, specs, technology
-      FROM elimfilters_catalog WHERE filter_type = 'Fuel/Water Separator' LIMIT 15
-    `);
+    const fwsSummary = {};
+    fws.rows.forEach(r => { fwsSummary[r.sub_type] = (fwsSummary[r.sub_type]||0)+1; });
+
     res.json({
-      fuel_filter: { subtypes: fuelSub.rows, thread: fuelThread.rows },
-      fuel_water_separator: { subtypes: fwsSub.rows, thread: fwsThread.rows, sample: fwsSample.rows }
+      reclassified_to_fws: reclassify.rowCount,
+      fuel_filter: { updated: fuel.rowCount, summary: fuelSummary },
+      fuel_water_separator: { updated: fws.rowCount, summary: fwsSummary }
     });
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
