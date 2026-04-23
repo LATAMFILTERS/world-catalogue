@@ -184,7 +184,6 @@
       cursor: pointer;
       font-family: 'Inter', sans-serif;
       transition: all 0.25s;
-      margin-bottom: 8px;
     }
 
     .back-btn:hover { border-color: #FFF12D; color: #FFF12D; }
@@ -508,16 +507,14 @@
   </div>
 
   <!-- ===== RESULTS SCREEN ===== -->
-  <div id="resultsScreen">
+  <div id="resultsScreen" style="position:relative;">
+    <button class="back-btn" onclick="backToHome()" style="position:absolute; top:16px; right:60px;">← Back to search</button>
     <div class="result-header">
       <div class="result-logo-side">
         <img src="/images/logo-e.png" alt="Elimfilters" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="logo-placeholder" style="display:none">E</div>
       </div>
       <div class="result-info-side">
-        <div style="display:flex; justify-content:flex-end; margin-bottom:12px;">
-          <button class="back-btn" onclick="backToHome()">← Back to search</button>
-        </div>
         <div class="result-sku" id="resultSKU">EL82100</div>
         <div class="result-description" id="resultDesc">Elimfilters genuine spin-on filter engineered with advanced filtration media technology.</div>
       </div>
