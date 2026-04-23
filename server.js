@@ -236,6 +236,31 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
+// Temp: analyze SKU prefixes per filter_type
+app.get('/api/analyze/sku-prefixes', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT filter_type, LEFT(sku, 2) as prefix, COUNT(*) as count
+      FROM elimfilters_catalog
+      GROUP BY filter_type, LEFT(sku, 2)
+      ORDER BY filter_type, count DESC
+    `);
+    const grouped = {};
+    result.rows.forEach(r => {
+      if (!grouped[r.filter_type]) grouped[r.filter_type] = [];
+      grouped[r.filter_type].push({ prefix: r.prefix, count: parseInt(r.count) });
+    });
+    res.json(grouped);
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
