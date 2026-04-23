@@ -599,6 +599,7 @@
 
     function showNoResults(q) {
       document.getElementById('landing').style.display = 'none';
+      document.getElementById('particleCanvas').style.display = 'none';
       document.getElementById('resultsScreen').style.display = 'block';
       document.getElementById('resultSKU').textContent = 'No results';
       document.getElementById('resultDesc').textContent = `No filters found for "${q}". Try a different part number or OEM code.`;
@@ -634,6 +635,7 @@
 
     function showResults(item) {
       document.getElementById('landing').style.display = 'none';
+      document.getElementById('particleCanvas').style.display = 'none';
       document.getElementById('resultsScreen').style.display = 'block';
       document.getElementById('germanQualityBadge').style.display = 'block';
 
@@ -726,6 +728,7 @@
     function backToHome() {
       document.getElementById('resultsScreen').style.display = 'none';
       document.getElementById('germanQualityBadge').style.display = 'none';
+      document.getElementById('particleCanvas').style.display = 'block';
       document.getElementById('landing').style.display = 'flex';
       document.getElementById('searchInput').value = '';
     }
