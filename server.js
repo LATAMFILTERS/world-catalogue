@@ -250,6 +250,45 @@ app.get('/api/migrate/hydraulic-subtype', async (req, res) => {
   }
 });
 
+// Temp: analyze Oil Filter data for sub_type inference
+app.get('/api/analyze/oil-subtype', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const thread = await client.query(`
+      SELECT
+        CASE WHEN thread_size IS NOT NULL THEN 'has_thread' ELSE 'no_thread' END as thread,
+        COUNT(*) as count
+      FROM elimfilters_catalog
+      WHERE filter_type = 'Oil Filter'
+      GROUP BY 1
+    `);
+    const subtypes = await client.query(`
+      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Oil Filter'
+      GROUP BY sub_type ORDER BY COUNT(*) DESC
+    `);
+    const withThread = await client.query(`
+      SELECT sku, codigo_base, thread_size, sub_type, installation_type
+      FROM elimfilters_catalog
+      WHERE filter_type = 'Oil Filter' AND thread_size IS NOT NULL
+      LIMIT 5
+    `);
+    const noThread = await client.query(`
+      SELECT sku, codigo_base, thread_size, sub_type, installation_type, height_mm, outer_diameter_mm
+      FROM elimfilters_catalog
+      WHERE filter_type = 'Oil Filter' AND thread_size IS NULL
+      LIMIT 10
+    `);
+    res.json({ thread_distribution: thread.rows, existing_subtypes: subtypes.rows, with_thread_sample: withThread.rows, no_thread_sample: noThread.rows });
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
