@@ -707,7 +707,7 @@
       document.getElementById('equipmentGrid').innerHTML = equip.map(e =>
         `<div class="code-box">
           <div class="code-type">Equipment</div>
-          <div class="code-value" style="color:#fff;font-family:inherit;font-size:13px">${typeof e === 'string' ? e : JSON.stringify(e)}</div>
+          <div class="code-value">${typeof e === 'string' ? e : JSON.stringify(e)}</div>
         </div>`
       ).join('') || '<p style="color:#444;padding:20px">No equipment data available</p>';
 
