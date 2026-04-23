@@ -236,51 +236,21 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: fix non-compliant SKU prefixes + add DB constraints
-app.get('/api/migrate/fix-skus', async (req, res) => {
+// Temp: finalize constraints — enforce LENGTH(sku)=7 and tighten prefix check
+app.get('/api/migrate/finalize-constraints', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const renamed = {};
-
-    const fixes = [
-      { filter_type: 'Air Dryer',            old_like: 'EA1%', new_prefix: 'ED4' },
-      { filter_type: 'Air Housing',           old_like: null,   new_prefix: 'EA2' },
-      { filter_type: 'Coolant Filter',        old_like: 'EC1%', new_prefix: 'EW7' },
-      { filter_type: 'Fuel Filter',           old_like: 'EL8%', new_prefix: 'EF9' },
-      { filter_type: 'Fuel/Water Separator',  old_like: 'EF9%', new_prefix: 'ES9' },
-      { filter_type: 'Oil Filter',            old_like: null,   new_prefix: 'EL8' },
-      { filter_type: 'Turbina',               old_like: 'EF9%', new_prefix: 'ET9' },
-    ];
-
-    for (const f of fixes) {
-      let where = `filter_type = $1 AND sku NOT LIKE '${f.new_prefix}%' AND LENGTH(sku) = 7`;
-      const params = [f.filter_type];
-      if (f.old_like) { where += ` AND sku LIKE $2`; params.push(f.old_like); }
-      const r = await client.query(
-        `UPDATE elimfilters_catalog SET sku = $${params.length + 1} || RIGHT(sku, 4) WHERE ${where} RETURNING sku`,
-        [...params, f.new_prefix]
-      );
-      renamed[f.filter_type] = r.rowCount;
-    }
-
-    // filter_type CHECK constraint
-    await client.query(`ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS chk_filter_type`);
-    await client.query(`
-      ALTER TABLE elimfilters_catalog ADD CONSTRAINT chk_filter_type
-      CHECK (filter_type IN (
-        'Air Dryer','Air Filter','Air Housing','Cabin Air Filter',
-        'Coolant Filter','Fuel Filter','Fuel/Water Separator',
-        'Hydraulic Filter','Kit Filter','Marine Filter','Oil Filter','Turbina'
-      ))
-    `);
-
-    // SKU prefix + filter_type constraint (only for 7-char SKUs)
+    const check = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE LENGTH(sku) != 7`);
+    if (parseInt(check.rows[0].count) > 0)
+      return res.json({ success: false, error: `${check.rows[0].count} SKUs with non-7 length still exist` });
+    await client.query(`ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS chk_sku_length`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD CONSTRAINT chk_sku_length CHECK (LENGTH(sku) = 7)`);
     await client.query(`ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS chk_sku_prefix`);
     await client.query(`
       ALTER TABLE elimfilters_catalog ADD CONSTRAINT chk_sku_prefix
-      CHECK (LENGTH(sku) != 7 OR (
+      CHECK (
         (filter_type = 'Air Filter'           AND sku LIKE 'EA1%') OR
         (filter_type = 'Air Dryer'            AND sku LIKE 'ED4%') OR
         (filter_type = 'Air Housing'          AND sku LIKE 'EA2%') OR
@@ -292,16 +262,10 @@ app.get('/api/migrate/fix-skus', async (req, res) => {
         (filter_type = 'Fuel/Water Separator' AND sku LIKE 'ES9%') OR
         (filter_type = 'Turbina'              AND sku LIKE 'ET9%') OR
         (filter_type = 'Marine Filter'        AND sku LIKE 'EM9%') OR
-        (filter_type = 'Kit Filter'           AND (sku LIKE 'EK5%' OR sku LIKE 'EK3%'))
-      ))
+        (filter_type = 'Kit Filter'           AND (sku LIKE 'EK3%' OR sku LIKE 'EK5%'))
+      )
     `);
-
-    // Show remaining 8-char SKUs for review
-    const eightChar = await client.query(
-      `SELECT sku, filter_type, codigo_base FROM elimfilters_catalog WHERE LENGTH(sku) = 8 LIMIT 20`
-    );
-
-    res.json({ success: true, renamed, constraints: 'added', eight_char_skus: eightChar.rows });
+    res.json({ success: true, constraints: ['chk_filter_type','chk_sku_length','chk_sku_prefix'] });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
@@ -309,92 +273,6 @@ app.get('/api/migrate/fix-skus', async (req, res) => {
   }
 });
 
-// Temp: fix 8-char SKUs → 7-char format (prefix + last 4 numeric digits of codigo_base)
-app.get('/api/migrate/fix-8char-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const result = await client.query(`
-      UPDATE elimfilters_catalog
-      SET sku = CASE
-        WHEN filter_type = 'Air Filter'           THEN 'EA1'
-        WHEN filter_type = 'Air Dryer'            THEN 'ED4'
-        WHEN filter_type = 'Air Housing'          THEN 'EA2'
-        WHEN filter_type = 'Hydraulic Filter'     THEN 'EH6'
-        WHEN filter_type = 'Oil Filter'           THEN 'EL8'
-        WHEN filter_type = 'Cabin Air Filter'     THEN 'EC1'
-        WHEN filter_type = 'Coolant Filter'       THEN 'EW7'
-        WHEN filter_type = 'Fuel Filter'          THEN 'EF9'
-        WHEN filter_type = 'Fuel/Water Separator' THEN 'ES9'
-        WHEN filter_type = 'Turbina'              THEN 'ET9'
-        ELSE LEFT(sku, 3)
-      END || LPAD(RIGHT(REGEXP_REPLACE(codigo_base, '[^0-9]', '', 'g'), 4), 4, '0')
-      WHERE LENGTH(sku) = 8
-      RETURNING sku, filter_type, codigo_base
-    `);
-    const summary = {};
-    result.rows.forEach(r => { summary[r.filter_type] = (summary[r.filter_type]||0)+1; });
-    res.json({ updated: result.rowCount, summary, sample: result.rows.slice(0,10) });
-  } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// Temp: analyze SKU format compliance against new standard
-app.get('/api/analyze/sku-compliance', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-
-    // Check SKU length
-    const lengthCheck = await client.query(`
-      SELECT LENGTH(sku) as len, COUNT(*) as count
-      FROM elimfilters_catalog
-      GROUP BY LENGTH(sku) ORDER BY count DESC
-    `);
-
-    // Check prefix vs filter_type compliance
-    const prefixCheck = await client.query(`
-      SELECT filter_type, LEFT(sku,3) as prefix, COUNT(*) as count,
-        CASE
-          WHEN filter_type = 'Air Filter'           AND sku LIKE 'EA1%' THEN true
-          WHEN filter_type = 'Air Dryer'            AND sku LIKE 'ED4%' THEN true
-          WHEN filter_type = 'Air Housing'          AND sku LIKE 'EA2%' THEN true
-          WHEN filter_type = 'Hydraulic Filter'     AND sku LIKE 'EH6%' THEN true
-          WHEN filter_type = 'Oil Filter'           AND sku LIKE 'EL8%' THEN true
-          WHEN filter_type = 'Cabin Air Filter'     AND sku LIKE 'EC1%' THEN true
-          WHEN filter_type = 'Coolant Filter'       AND sku LIKE 'EW7%' THEN true
-          WHEN filter_type = 'Fuel Filter'          AND sku LIKE 'EF9%' THEN true
-          WHEN filter_type = 'Fuel/Water Separator' AND sku LIKE 'ES9%' THEN true
-          WHEN filter_type = 'Turbina'              AND sku LIKE 'ET9%' THEN true
-          WHEN filter_type = 'Marine Filter'        AND sku LIKE 'EM9%' THEN true
-          WHEN filter_type = 'Kit Filter'           AND sku LIKE 'EK5%' THEN true
-          WHEN filter_type = 'Kit Filter'           AND sku LIKE 'EK3%' THEN true
-          ELSE false
-        END as compliant
-      FROM elimfilters_catalog
-      GROUP BY filter_type, LEFT(sku,3), compliant
-      ORDER BY filter_type, compliant DESC, count DESC
-    `);
-
-    const compliant = prefixCheck.rows.filter(r => r.compliant).reduce((s,r) => s + parseInt(r.count), 0);
-    const nonCompliant = prefixCheck.rows.filter(r => !r.compliant).reduce((s,r) => s + parseInt(r.count), 0);
-
-    res.json({
-      sku_lengths: lengthCheck.rows,
-      prefix_compliance: prefixCheck.rows,
-      summary: { compliant, non_compliant: nonCompliant, total: compliant + nonCompliant }
-    });
-  } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end();
-  }
-});
 
 // Register new routes
 app.use('/api', chatRoutes);
