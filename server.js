@@ -236,44 +236,6 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: finalize constraints — enforce LENGTH(sku)=7 and tighten prefix check
-app.get('/api/migrate/finalize-constraints', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const check = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE LENGTH(sku) != 7`);
-    if (parseInt(check.rows[0].count) > 0)
-      return res.json({ success: false, error: `${check.rows[0].count} SKUs with non-7 length still exist` });
-    await client.query(`ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS chk_sku_length`);
-    await client.query(`ALTER TABLE elimfilters_catalog ADD CONSTRAINT chk_sku_length CHECK (LENGTH(sku) = 7)`);
-    await client.query(`ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS chk_sku_prefix`);
-    await client.query(`
-      ALTER TABLE elimfilters_catalog ADD CONSTRAINT chk_sku_prefix
-      CHECK (
-        (filter_type = 'Air Filter'           AND sku LIKE 'EA1%') OR
-        (filter_type = 'Air Dryer'            AND sku LIKE 'ED4%') OR
-        (filter_type = 'Air Housing'          AND sku LIKE 'EA2%') OR
-        (filter_type = 'Hydraulic Filter'     AND sku LIKE 'EH6%') OR
-        (filter_type = 'Oil Filter'           AND sku LIKE 'EL8%') OR
-        (filter_type = 'Cabin Air Filter'     AND sku LIKE 'EC1%') OR
-        (filter_type = 'Coolant Filter'       AND sku LIKE 'EW7%') OR
-        (filter_type = 'Fuel Filter'          AND sku LIKE 'EF9%') OR
-        (filter_type = 'Fuel/Water Separator' AND sku LIKE 'ES9%') OR
-        (filter_type = 'Turbina'              AND sku LIKE 'ET9%') OR
-        (filter_type = 'Marine Filter'        AND sku LIKE 'EM9%') OR
-        (filter_type = 'Kit Filter'           AND (sku LIKE 'EK3%' OR sku LIKE 'EK5%'))
-      )
-    `);
-    res.json({ success: true, constraints: ['chk_filter_type','chk_sku_length','chk_sku_prefix'] });
-  } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end();
-  }
-});
-
-
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
