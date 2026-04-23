@@ -297,6 +297,34 @@ app.get('/api/migrate/oil-subtype', async (req, res) => {
   }
 });
 
+// Temp: migrate remaining filter_type sub_types
+app.get('/api/migrate/remaining-subtypes', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET sub_type = CASE
+        WHEN filter_type = 'Air Dryer'       THEN 'Spin-On'
+        WHEN filter_type = 'Coolant Filter'  THEN 'Spin-On'
+        WHEN filter_type = 'Cabin Air Filter' THEN 'Combinado'
+      END
+      WHERE filter_type IN ('Air Dryer', 'Coolant Filter', 'Cabin Air Filter')
+      RETURNING filter_type, sub_type
+    `);
+    const summary = {};
+    result.rows.forEach(r => {
+      summary[r.filter_type] = (summary[r.filter_type]||0)+1;
+    });
+    res.json({ updated: result.rowCount, summary });
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: migrate Fuel Filter + Fuel/Water Separator sub_types
 app.get('/api/migrate/fuel-subtype', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
