@@ -297,6 +297,45 @@ app.get('/api/migrate/oil-subtype', async (req, res) => {
   }
 });
 
+// Temp: analyze Air Filter data for sub_type inference
+app.get('/api/analyze/air-subtype', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const subtypes = await client.query(`
+      SELECT sub_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' GROUP BY sub_type ORDER BY COUNT(*) DESC
+    `);
+    const duty = await client.query(`
+      SELECT duty, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' GROUP BY duty ORDER BY COUNT(*) DESC
+    `);
+    const install = await client.query(`
+      SELECT installation_type, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' GROUP BY installation_type ORDER BY COUNT(*) DESC LIMIT 20
+    `);
+    const isPrimary = await client.query(`
+      SELECT is_primary, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' GROUP BY is_primary ORDER BY COUNT(*) DESC
+    `);
+    const tech = await client.query(`
+      SELECT technology, COUNT(*) FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' GROUP BY technology ORDER BY COUNT(*) DESC LIMIT 10
+    `);
+    const sample = await client.query(`
+      SELECT sku, codigo_base, duty, installation_type, is_primary, sub_type, technology
+      FROM elimfilters_catalog
+      WHERE filter_type = 'Air Filter' LIMIT 15
+    `);
+    res.json({ existing_subtypes: subtypes.rows, duty_dist: duty.rows, installation_types: install.rows, is_primary_dist: isPrimary.rows, technologies: tech.rows, sample: sample.rows });
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
