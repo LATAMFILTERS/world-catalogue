@@ -717,9 +717,29 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
   }
 });
 
-// Register new routes
-app.use('/api', chatRoutes);
-app.use('/webhook', whatsappRoutes);
+// Temp: debug EL82100 vs EL81016 comparison
+app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT id, sku, codigo_base, filter_type, sub_type, duty, technology,
+             thread_size, outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency, burst_pressure_psi,
+             collapse_pressure_psi, installation_type, oem_codes, competitor_codes,
+             name, description
+      FROM elimfilters_catalog
+      WHERE sku IN ('EL82100', 'EL81016')
+      ORDER BY sku
+    `);
+    res.json({ success: true, records: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
