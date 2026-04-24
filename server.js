@@ -151,6 +151,68 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
   }
 });
 
+// Temp: analyze duplicate SKUs + calculate correct SKU for each codigo_base
+app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const dupes = await client.query(`
+      SELECT
+        c.sku,
+        c.filter_type,
+        c.codigo_base,
+        c.duty,
+        COUNT(*) OVER (PARTITION BY c.sku) as dup_count,
+        CASE c.filter_type
+          WHEN 'Air Filter'            THEN 'EA1'
+          WHEN 'Air Housing'           THEN 'EA2'
+          WHEN 'Air Dryer'             THEN 'ED4'
+          WHEN 'Hydraulic Filter'      THEN 'EH6'
+          WHEN 'Oil Filter'            THEN 'EL8'
+          WHEN 'Marine Filter'         THEN 'EM9'
+          WHEN 'Fuel/Water Separator'  THEN 'ES9'
+          WHEN 'Turbine Filter'        THEN 'ET9'
+          WHEN 'Cabin Air Filter'      THEN 'EC1'
+          WHEN 'Fuel Filter'           THEN 'EF9'
+          WHEN 'Coolant Filter'        THEN 'EW7'
+          WHEN 'Kit Filter'            THEN CASE WHEN c.duty = 'HD' THEN 'EK3' ELSE 'EK5' END
+          ELSE NULL
+        END AS prefix,
+        CASE c.filter_type
+          WHEN 'Turbine Filter' THEN
+            'ET9' || LPAD(SUBSTRING(REGEXP_REPLACE(c.codigo_base, '[^0-9]', '', 'g'), 1, 4), 4, '0')
+          ELSE
+            (CASE c.filter_type
+              WHEN 'Air Filter'            THEN 'EA1'
+              WHEN 'Air Housing'           THEN 'EA2'
+              WHEN 'Air Dryer'             THEN 'ED4'
+              WHEN 'Hydraulic Filter'      THEN 'EH6'
+              WHEN 'Oil Filter'            THEN 'EL8'
+              WHEN 'Marine Filter'         THEN 'EM9'
+              WHEN 'Fuel/Water Separator'  THEN 'ES9'
+              WHEN 'Cabin Air Filter'      THEN 'EC1'
+              WHEN 'Fuel Filter'           THEN 'EF9'
+              WHEN 'Coolant Filter'        THEN 'EW7'
+              WHEN 'Kit Filter'            THEN CASE WHEN c.duty = 'HD' THEN 'EK3' ELSE 'EK5' END
+              ELSE NULL
+            END) || LPAD(RIGHT(REGEXP_REPLACE(c.codigo_base, '[^0-9]', '', 'g'), 4), 4, '0')
+        END AS correct_sku
+      FROM elimfilters_catalog c
+      WHERE c.sku IN (
+        SELECT sku FROM elimfilters_catalog GROUP BY sku HAVING COUNT(*) > 1
+      )
+      ORDER BY c.sku, c.codigo_base
+      LIMIT 100
+    `);
+    res.json({ success: true, total: dupes.rows.length, records: dupes.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
