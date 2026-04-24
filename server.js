@@ -411,23 +411,23 @@ app.get('/api/filters/kits', async (req, res) => {
   }
 });
 
-// Temp: find SKUs for RAV4 2022 kit components
+// Temp: find SKUs for RAV4 2022 kit components with duty
 app.get('/api/search/rav4-kit-skus', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
     const oil = await client.query(`
-      SELECT sku, name, thread_size FROM elimfilters_catalog
+      SELECT sku, name, thread_size, duty FROM elimfilters_catalog
       WHERE filter_type = 'Oil Filter' AND sub_type = 'Spin-On'
       AND thread_size LIKE '%3/4%' LIMIT 3
     `);
     const air = await client.query(`
-      SELECT sku, name, filter_type FROM elimfilters_catalog
+      SELECT sku, name, filter_type, duty FROM elimfilters_catalog
       WHERE filter_type = 'Air Filter' AND sub_type = 'Primario'
       LIMIT 3
     `);
     const cabin = await client.query(`
-      SELECT sku, name, filter_type FROM elimfilters_catalog
+      SELECT sku, name, filter_type, duty FROM elimfilters_catalog
       WHERE filter_type = 'Cabin Air Filter' LIMIT 3
     `);
     res.json({
