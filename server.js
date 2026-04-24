@@ -828,6 +828,7 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
     const newOem = [...mainOem, ...altOem.filter(c => !existingCodes.has(c.code || c.partNumber))];
 
     // Mover P551016 y DBL3998 a alternative_codes de EL82100
+    const altDonaldsonCodes = new Set(['P551016','DBL3998','P552100']);
     const existingAlt = main.alternative_codes || [];
     const newAlts = [
       ...existingAlt,
@@ -835,32 +836,34 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
       { code: 'DBL3998', manufacturer: 'Donaldson' }
     ].filter((a, i, arr) => arr.findIndex(x => x.code === a.code) === i);
 
-    // Armar SET dinámico
+    // Transferir competitor_codes de EL81016 → EL82100
+    // Excluir los que son alternative_codes de Donaldson o el propio codigo_base
+    const mainComp = main.competitor_codes || [];
+    const altComp  = alt.competitor_codes  || [];
+    const existingCompCodes = new Set(mainComp.map(c => c.code));
+    const newComp = [
+      ...mainComp,
+      ...altComp.filter(c => !existingCompCodes.has(c.code) && !altDonaldsonCodes.has(c.code))
+    ];
+
+    // Armar UPDATE
     const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
     const values = Object.values(updates);
-    const oemIdx   = values.length + 2;
-    const altIdx   = values.length + 3;
-    setClauses.push(`oem_codes = $${oemIdx}`);
-    setClauses.push(`alternative_codes = $${altIdx}`);
+    setClauses.push(`oem_codes = $${values.length + 2}`);
+    setClauses.push(`competitor_codes = $${values.length + 3}`);
+    setClauses.push(`alternative_codes = $${values.length + 4}`);
 
-    if (setClauses.length > 2) {
-      await client.query(
-        `UPDATE elimfilters_catalog SET ${setClauses.join(', ')} WHERE sku = $1`,
-        ['EL82100', ...values, JSON.stringify(newOem), JSON.stringify(newAlts)]
-      );
-    } else {
-      // Solo actualizar alternative_codes
-      await client.query(
-        `UPDATE elimfilters_catalog SET oem_codes=$2, alternative_codes=$3 WHERE sku=$1`,
-        ['EL82100', JSON.stringify(newOem), JSON.stringify(newAlts)]
-      );
-    }
+    await client.query(
+      `UPDATE elimfilters_catalog SET ${setClauses.join(', ')} WHERE sku = $1`,
+      ['EL82100', ...values, JSON.stringify(newOem), JSON.stringify(newComp), JSON.stringify(newAlts)]
+    );
 
     res.json({
       success: true,
       fields_copied: Object.keys(updates),
-      alternative_codes_added: ['P551016','DBL3998'],
-      oem_codes_merged: newOem.length
+      alternative_codes_added: ['P551016', 'DBL3998'],
+      oem_codes_merged: newOem.length,
+      competitor_codes_transferred: newComp.length
     });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
