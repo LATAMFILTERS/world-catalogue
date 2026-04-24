@@ -522,19 +522,35 @@
       .result-logo-side { padding: 12px; }
       .result-logo-side img { width: 100px; height: 100px; }
       .result-logo-side .logo-placeholder { width: 120px; height: 120px; font-size: 80px; }
-      .result-sku { font-size: 42px; }
+      .result-sku { font-size: 36px; }
       .result-description { font-size: 13px; max-width: 100%; }
       .alternatives-row { gap: 6px; }
       .alt-label { font-size: 9px; }
       .alt-chip { font-size: 11px; padding: 4px 10px; }
 
       .data-tabs { gap: 0; margin-bottom: 24px; overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; }
-      .data-tab { padding: 12px 16px; font-size: 10px; }
+      .data-tab { padding: 12px 16px; font-size: 10px; flex-shrink: 0; }
       .tab-badge { font-size: 9px; }
 
       .specs-section-title { font-size: 12px; margin-bottom: 20px; }
-      .spec-label { font-size: 10px; width: 50%; padding-right: 12px; }
-      .spec-value { font-size: 13px; width: 50%; padding-right: 0; }
+
+      /* Specs: 2 columnas, label arriba / valor abajo */
+      .specs-table, .specs-table tbody { display: block; }
+      .specs-table tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        border-bottom: 1px solid #111;
+        padding: 10px 0;
+      }
+      .specs-table tr:hover { background: none; }
+      .specs-table td { border: none; padding: 2px 8px 2px 0; }
+      .specs-table td:nth-child(1) { grid-column: 1; grid-row: 1; }
+      .specs-table td:nth-child(2) { grid-column: 1; grid-row: 2; }
+      .specs-table td:nth-child(3) { grid-column: 2; grid-row: 1; }
+      .specs-table td:nth-child(4) { grid-column: 2; grid-row: 2; }
+      .spec-label { font-size: 10px; width: auto; padding-right: 0; padding-bottom: 2px; }
+      .spec-value { font-size: 13px; width: auto; padding-right: 0; }
 
       .codes-grid { grid-template-columns: 1fr; gap: 10px; max-height: 300px; }
       .code-box { padding: 12px; }
@@ -561,35 +577,30 @@
       .stat-number { font-size: 24px; }
       .stat-label { font-size: 9px; }
 
-      #resultsScreen { padding: 12px 10px; }
-      .result-header { gap: 12px; }
+      #resultsScreen { padding: 12px 8px; }
+      .result-header { gap: 10px; }
       .result-info-side { margin-top: 0; }
       .result-logo-side { padding: 10px; }
       .result-logo-side img { width: 80px; height: 80px; }
       .result-logo-side .logo-placeholder { width: 100px; height: 100px; font-size: 60px; }
-      .result-sku { font-size: 32px; margin-bottom: 8px; }
+      .result-sku { font-size: 28px; margin-bottom: 6px; letter-spacing: -1px; }
       .result-description { font-size: 12px; line-height: 1.6; }
 
       .data-tab { padding: 10px 12px; font-size: 9px; }
-      .specs-section-title { font-size: 11px; margin-bottom: 16px; }
+      .specs-section-title { font-size: 11px; margin-bottom: 14px; }
 
-      /* Specs table: 2-column grid (label above value) */
-      .specs-table, .specs-table tbody { display: block; }
+      /* Specs: columna única en móvil pequeño */
       .specs-table tr {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        border-bottom: 1px solid #111;
-        padding: 10px 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        padding: 8px 0;
       }
-      .specs-table tr:hover { background: none; }
-      .specs-table td { border: none; padding: 2px 6px 2px 0; }
       .specs-table td:nth-child(1) { grid-column: 1; grid-row: 1; }
       .specs-table td:nth-child(2) { grid-column: 1; grid-row: 2; }
-      .specs-table td:nth-child(3) { grid-column: 2; grid-row: 1; }
-      .specs-table td:nth-child(4) { grid-column: 2; grid-row: 2; }
-      .spec-label { font-size: 9px; width: auto; padding-right: 0; padding-bottom: 2px; }
-      .spec-value { font-size: 12px; width: auto; padding-right: 0; }
+      .specs-table td:nth-child(3) { grid-column: 1; grid-row: 3; margin-top: 6px; }
+      .specs-table td:nth-child(4) { grid-column: 1; grid-row: 4; }
+      .spec-label { font-size: 9px; padding-bottom: 1px; }
+      .spec-value { font-size: 12px; }
 
       .codes-grid { grid-template-columns: 1fr; gap: 8px; max-height: 250px; }
       .code-box { padding: 10px; border-left-width: 2px; }
