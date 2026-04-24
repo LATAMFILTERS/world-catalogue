@@ -308,8 +308,8 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
           IF NEW.technology ILIKE '%SYNTRAX%' AND NEW.filter_type != 'Oil Filter' THEN
             RAISE EXCEPTION 'SYNTRAX™ is exclusive to Oil Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
-          IF NEW.technology ILIKE '%NANOFORCE%' AND NEW.filter_type NOT IN ('Fuel Filter','Fuel/Water Separator') THEN
-            RAISE EXCEPTION 'NANOFORCE™ is exclusive to Fuel Filter/Fuel Water Separator, but filter_type is "%"', NEW.filter_type;
+          IF NEW.technology ILIKE '%NANOFORCE%' AND NEW.filter_type != 'Fuel Filter' THEN
+            RAISE EXCEPTION 'NANOFORCE™ is exclusive to Fuel Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
           IF NEW.technology ILIKE '%SYNTEPORE%' AND NEW.filter_type != 'Hydraulic Filter' THEN
             RAISE EXCEPTION 'SYNTEPORE™ is exclusive to Hydraulic Filters, but filter_type is "%"', NEW.filter_type;
