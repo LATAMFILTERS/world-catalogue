@@ -236,55 +236,6 @@ app.get('/api/filters/search/homologous', async (req, res) => {
   }
 });
 
-// Temp: analyze + fix name field JSON fragments
-app.get('/api/analyze/name-field', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const hasJson = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name LIKE '%{"%'`);
-    const sample = await client.query(`
-      SELECT sku, filter_type, name FROM elimfilters_catalog
-      WHERE name LIKE '%{"%' LIMIT 10
-    `);
-    const clean = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name NOT LIKE '%{"%' OR name IS NULL`);
-    res.json({ with_json: parseInt(hasJson.rows[0].count), already_clean: parseInt(clean.rows[0].count), sample: sample.rows });
-  } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// Temp: fix name field — replace embedded JSON with English plain text
-app.get('/api/migrate/fix-name-field', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const preview = await client.query(`
-      SELECT sku, name,
-        REGEXP_REPLACE(name, '\\{"en":"([^"]+)"[^}]+\\}', '\\1', 'g') AS name_fixed
-      FROM elimfilters_catalog
-      WHERE name LIKE '%{"%'
-      LIMIT 5
-    `);
-    if (req.query.confirm !== 'yes') {
-      return res.json({ preview: preview.rows, message: 'Add &confirm=yes to apply' });
-    }
-    const result = await client.query(`
-      UPDATE elimfilters_catalog
-      SET name = REGEXP_REPLACE(name, '\\{"en":"([^"]+)"[^}]+\\}', '\\1', 'g')
-      WHERE name LIKE '%{"%'
-    `);
-    const remaining = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name LIKE '%{"%'`);
-    res.json({ updated: result.rowCount, remaining_with_json: parseInt(remaining.rows[0].count) });
-  } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end();
-  }
-});
 
 // Register new routes
 app.use('/api', chatRoutes);
