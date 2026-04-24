@@ -86,6 +86,71 @@ app.get('/api/status', (req, res) => {
   res.json({status: 'ok', version: '3.3.0'});
 });
 
+// Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
+app.get('/api/analyze/sku-correctness', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT
+        id, sku, filter_type, codigo_base, duty,
+        CASE filter_type
+          WHEN 'Air Filter'            THEN 'EA1'
+          WHEN 'Air Housing'           THEN 'EA2'
+          WHEN 'Air Dryer'             THEN 'ED4'
+          WHEN 'Hydraulic Filter'      THEN 'EH6'
+          WHEN 'Oil Filter'            THEN 'EL8'
+          WHEN 'Marine Filter'         THEN 'EM9'
+          WHEN 'Fuel/Water Separator'  THEN 'ES9'
+          WHEN 'Turbine Filter'        THEN 'ET9'
+          WHEN 'Cabin Air Filter'      THEN 'EC1'
+          WHEN 'Fuel Filter'           THEN 'EF9'
+          WHEN 'Coolant Filter'        THEN 'EW7'
+          WHEN 'Kit Filter'            THEN CASE WHEN duty = 'HD' THEN 'EK3' ELSE 'EK5' END
+          ELSE NULL
+        END AS expected_prefix,
+        CASE filter_type
+          -- Turbina FH: primeros 4 dígitos
+          WHEN 'Turbine Filter' THEN
+            (CASE WHEN codigo_base ILIKE '%FH%' THEN 'ET9' ELSE 'ET9' END) ||
+            LPAD(SUBSTRING(REGEXP_REPLACE(codigo_base, '[^0-9]', '', 'g'), 1, 4), 4, '0')
+          -- Otros: últimos 4 dígitos
+          ELSE
+            (CASE filter_type
+              WHEN 'Air Filter'            THEN 'EA1'
+              WHEN 'Air Housing'           THEN 'EA2'
+              WHEN 'Air Dryer'             THEN 'ED4'
+              WHEN 'Hydraulic Filter'      THEN 'EH6'
+              WHEN 'Oil Filter'            THEN 'EL8'
+              WHEN 'Marine Filter'         THEN 'EM9'
+              WHEN 'Fuel/Water Separator'  THEN 'ES9'
+              WHEN 'Cabin Air Filter'      THEN 'EC1'
+              WHEN 'Fuel Filter'           THEN 'EF9'
+              WHEN 'Coolant Filter'        THEN 'EW7'
+              WHEN 'Kit Filter'            THEN CASE WHEN duty = 'HD' THEN 'EK3' ELSE 'EK5' END
+              ELSE NULL
+            END) || LPAD(RIGHT(REGEXP_REPLACE(codigo_base, '[^0-9]', '', 'g'), 4), 4, '0')
+        END AS expected_sku
+      FROM elimfilters_catalog
+      WHERE filter_type IS NOT NULL AND codigo_base IS NOT NULL
+      ORDER BY expected_sku LIMIT 50
+    `);
+    // Count mismatches
+    const mismatches = result.rows.filter(r => r.sku !== r.expected_sku);
+    res.json({
+      success: true,
+      total_checked: result.rows.length,
+      mismatches_count: mismatches.length,
+      sample_mismatches: mismatches.slice(0, 15)
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
