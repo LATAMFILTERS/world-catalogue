@@ -300,17 +300,36 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
           RAISE EXCEPTION 'Air Housing (carcasa) should not have micron_rating or thread_size';
         END IF;
 
-        -- 3. Technology cross-check (secondary — flag if tech name contradicts filter_type)
+        -- 3. Technology cross-check (secondary — each tech is exclusive to its filter category)
         IF NEW.technology IS NOT NULL THEN
-          IF NEW.filter_type != 'Hydraulic Filter' AND NEW.technology ILIKE '%SYNTEPORE%' THEN
-            RAISE EXCEPTION 'Technology SYNTEPORE is exclusive to Hydraulic Filters, but filter_type is "%"', NEW.filter_type;
+          IF NEW.technology ILIKE '%MACROCORE%' AND NEW.filter_type != 'Air Filter' THEN
+            RAISE EXCEPTION 'MACROCORE™ is exclusive to Air Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
-          IF NEW.filter_type != 'Oil Filter' AND NEW.technology ILIKE '%SYNTRAX%' THEN
-            RAISE EXCEPTION 'Technology SYNTRAX is exclusive to Oil Filters, but filter_type is "%"', NEW.filter_type;
+          IF NEW.technology ILIKE '%SYNTRAX%' AND NEW.filter_type != 'Oil Filter' THEN
+            RAISE EXCEPTION 'SYNTRAX™ is exclusive to Oil Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
-          IF NEW.filter_type NOT IN ('Air Filter','Cabin Air Filter') AND NEW.technology ILIKE '%NANOFORCE%' THEN
-            RAISE EXCEPTION 'Technology NANOFORCE is exclusive to Air/Cabin Air Filters, but filter_type is "%"', NEW.filter_type;
+          IF NEW.technology ILIKE '%NANOFORCE%' AND NEW.filter_type NOT IN ('Fuel Filter','Fuel/Water Separator') THEN
+            RAISE EXCEPTION 'NANOFORCE™ is exclusive to Fuel Filter/Fuel Water Separator, but filter_type is "%"', NEW.filter_type;
           END IF;
+          IF NEW.technology ILIKE '%SYNTEPORE%' AND NEW.filter_type != 'Hydraulic Filter' THEN
+            RAISE EXCEPTION 'SYNTEPORE™ is exclusive to Hydraulic Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.technology ILIKE '%MICROKAPPA%' AND NEW.filter_type != 'Cabin Air Filter' THEN
+            RAISE EXCEPTION 'MICROKAPPA™ is exclusive to Cabin Air Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.technology ILIKE '%COOLTECH%' AND NEW.filter_type != 'Coolant Filter' THEN
+            RAISE EXCEPTION 'COOLTECH™ is exclusive to Coolant Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.technology ILIKE '%AQUAGUARD%' AND NEW.filter_type != 'Fuel/Water Separator' THEN
+            RAISE EXCEPTION 'AQUAGUARD™ is exclusive to Fuel/Water Separators, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.technology ILIKE '%DRYCORE%' AND NEW.filter_type != 'Air Dryer' THEN
+            RAISE EXCEPTION 'DRYCORE™ is exclusive to Air Dryers, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.technology ILIKE '%DURATECH%' AND NEW.filter_type != 'Kit Filter' THEN
+            RAISE EXCEPTION 'DURATECH™ is exclusive to Kit Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          -- INTEKCORE™ is a sealing technology applicable to multiple types — no restriction
         END IF;
 
         -- 4. SKU prefix as last resort
