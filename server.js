@@ -329,7 +329,9 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
           IF NEW.technology ILIKE '%DURATECH%' AND NEW.filter_type != 'Kit Filter' THEN
             RAISE EXCEPTION 'DURATECH™ is exclusive to Kit Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
-          -- INTEKCORE™ is a sealing technology applicable to multiple types — no restriction
+          IF NEW.technology ILIKE '%INTEKCORE%' AND NEW.filter_type != 'Air Housing' THEN
+            RAISE EXCEPTION 'INTEKCORE™ is exclusive to Air Housing (EA2), but filter_type is "%"', NEW.filter_type;
+          END IF;
         END IF;
 
         -- 4. SKU prefix as last resort
