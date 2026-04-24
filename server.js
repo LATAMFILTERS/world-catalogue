@@ -717,6 +717,32 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
   }
 });
 
+// Temp: analyze codigo_base prefixes (Donaldson identification)
+app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT
+        SUBSTRING(codigo_base, 1, 3) as prefix,
+        COUNT(*) as count,
+        ARRAY_AGG(DISTINCT duty ORDER BY duty) as duties,
+        ARRAY_AGG(DISTINCT SUBSTRING(codigo_base, 1, 1) ORDER BY SUBSTRING(codigo_base, 1, 1)) as first_char,
+        ARRAY_AGG(DISTINCT LEFT(codigo_base, LEAST(5, LENGTH(codigo_base))) ORDER BY LEFT(codigo_base, LEAST(5, LENGTH(codigo_base)))) as sample_codes
+      FROM elimfilters_catalog
+      WHERE codigo_base IS NOT NULL AND codigo_base != ''
+      GROUP BY prefix
+      ORDER BY count DESC
+    `);
+    res.json({ success: true, prefixes: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: add alternative_codes column
 app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
