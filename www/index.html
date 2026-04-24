@@ -344,7 +344,7 @@
     .data-content { display: none; }
     .data-content.active { display: block; }
 
-    /* ===== SPECS TABLE ===== */
+    /* ===== SPECS GRID ===== */
     .specs-section-title {
       font-size: 13px;
       font-weight: 800;
@@ -354,21 +354,15 @@
       color: #fff;
     }
 
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 40px;
     }
 
-    .specs-table tr {
+    .spec-pair {
       border-bottom: 1px solid #111;
-      transition: background 0.2s;
-    }
-
-    .specs-table tr:hover { background: rgba(255,255,255,0.02); }
-
-    .specs-table td {
       padding: 14px 0;
-      vertical-align: middle;
     }
 
     .spec-label {
@@ -377,16 +371,13 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       font-weight: 600;
-      width: 25%;
-      padding-right: 20px;
+      margin-bottom: 4px;
     }
 
     .spec-value {
       font-size: 15px;
       color: #fff;
       font-weight: 600;
-      width: 25%;
-      padding-right: 40px;
     }
 
     /* ===== CODES GRID ===== */
@@ -533,24 +524,9 @@
       .tab-badge { font-size: 9px; }
 
       .specs-section-title { font-size: 12px; margin-bottom: 20px; }
-
-      /* Specs: 2 columnas, label arriba / valor abajo */
-      .specs-table, .specs-table tbody { display: block; }
-      .specs-table tr {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        border-bottom: 1px solid #111;
-        padding: 10px 0;
-      }
-      .specs-table tr:hover { background: none; }
-      .specs-table td { border: none; padding: 2px 8px 2px 0; }
-      .specs-table td:nth-child(1) { grid-column: 1; grid-row: 1; }
-      .specs-table td:nth-child(2) { grid-column: 1; grid-row: 2; }
-      .specs-table td:nth-child(3) { grid-column: 2; grid-row: 1; }
-      .specs-table td:nth-child(4) { grid-column: 2; grid-row: 2; }
-      .spec-label { font-size: 10px; width: auto; padding-right: 0; padding-bottom: 2px; }
-      .spec-value { font-size: 13px; width: auto; padding-right: 0; }
+      .specs-grid { gap: 0 20px; }
+      .spec-label { font-size: 10px; }
+      .spec-value { font-size: 13px; }
 
       .codes-grid { grid-template-columns: 1fr; gap: 10px; max-height: 300px; }
       .code-box { padding: 12px; }
@@ -588,10 +564,9 @@
 
       .data-tab { padding: 10px 12px; font-size: 9px; }
       .specs-section-title { font-size: 11px; margin-bottom: 14px; }
-
-      /* Specs: 2 columnas también en móvil pequeño */
-      .specs-table tr { padding: 8px 0; }
-      .spec-label { font-size: 9px; padding-bottom: 1px; }
+      .specs-grid { gap: 0 12px; }
+      .spec-pair { padding: 10px 0; }
+      .spec-label { font-size: 9px; }
       .spec-value { font-size: 12px; }
 
       .codes-grid { grid-template-columns: 1fr; gap: 8px; max-height: 250px; }
@@ -675,9 +650,7 @@
     <!-- Specs -->
     <div class="data-content active" id="specs">
       <div class="specs-section-title" id="specsSectionTitle">Technical Specifications</div>
-      <table class="specs-table" id="specsTable">
-        <tbody></tbody>
-      </table>
+      <div class="specs-grid" id="specsTable"></div>
     </div>
 
     <!-- OEM Codes -->
@@ -815,7 +788,7 @@
       document.getElementById('resultsScreen').style.display = 'block';
       document.getElementById('resultSKU').textContent = LANG === 'es' ? 'Sin resultados' : 'No results';
       document.getElementById('resultDesc').textContent = T.noResults(q);
-      document.getElementById('specsTable').querySelector('tbody').innerHTML = `<tr><td colspan="4" style="color:#666;padding:20px;text-align:center">${T.noData}</td></tr>`;
+      document.getElementById('specsTable').innerHTML = `<div class="spec-pair" style="grid-column:1/-1;color:#666;padding:20px;text-align:center">${T.noData}</div>`;
       document.getElementById('oemGrid').innerHTML = '';
       document.getElementById('crossGrid').innerHTML = '';
       document.getElementById('equipmentGrid').innerHTML = '';
@@ -898,18 +871,14 @@
         [L[13], item.installation_type],
       ].filter(([_, v]) => v);
 
-      const tbody = document.querySelector('#specsTable tbody');
-      tbody.innerHTML = '';
-      for (let i = 0; i < specs.length; i += 2) {
-        const [l1, v1] = specs[i];
-        const [l2, v2] = specs[i + 1] || ['', ''];
-        tbody.innerHTML += `
-          <tr>
-            <td class="spec-label">${l1}</td>
-            <td class="spec-value">${v1}</td>
-            <td class="spec-label">${l2}</td>
-            <td class="spec-value">${v2}</td>
-          </tr>`;
+      const specsGrid = document.getElementById('specsTable');
+      specsGrid.innerHTML = '';
+      for (const [label, value] of specs) {
+        specsGrid.innerHTML += `
+          <div class="spec-pair">
+            <div class="spec-label">${label}</div>
+            <div class="spec-value">${value}</div>
+          </div>`;
       }
 
       // OEM Codes
