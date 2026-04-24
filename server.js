@@ -775,12 +775,93 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
              thread_size, outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
              iso_test_method, micron_rating, nominal_efficiency, burst_pressure_psi,
              collapse_pressure_psi, installation_type, oem_codes, competitor_codes,
-             name, description
+             alternative_codes, name, description
       FROM elimfilters_catalog
       WHERE sku IN ('EL82100', 'EL81016')
       ORDER BY sku
     `);
-    res.json({ success: true, records: result.rows });
+    const rows = result.rows;
+    const main = rows.find(r => r.sku === 'EL82100');
+    const alt  = rows.find(r => r.sku === 'EL81016');
+    const nullInMain = main ? Object.entries(main)
+      .filter(([k,v]) => v === null && alt && alt[k] !== null)
+      .map(([k]) => k) : [];
+    res.json({ success: true, records: rows, fields_missing_in_EL82100: nullInMain });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// Copia campos faltantes de EL81016 a EL82100 y registra alternativas
+app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (req.query.confirm !== 'yes') return res.json({ error: 'Agrega ?confirm=yes para ejecutar' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base, filter_type, sub_type, duty, technology,
+             thread_size, outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency, burst_pressure_psi,
+             collapse_pressure_psi, installation_type, oem_codes, competitor_codes,
+             alternative_codes, name, description
+      FROM elimfilters_catalog WHERE sku IN ('EL82100','EL81016')
+    `);
+    const main = rows.find(r => r.sku === 'EL82100');
+    const alt  = rows.find(r => r.sku === 'EL81016');
+    if (!main || !alt) return res.json({ error: 'No se encontró uno de los dos registros' });
+
+    // Campos copiables (no sobreescribir si EL82100 ya tiene valor)
+    const copyable = ['filter_type','sub_type','technology','thread_size','outer_diameter_mm',
+      'height_mm','gasket_od_mm','gasket_id_mm','iso_test_method','micron_rating',
+      'nominal_efficiency','burst_pressure_psi','collapse_pressure_psi','installation_type',
+      'name','description'];
+    const updates = {};
+    copyable.forEach(f => { if (main[f] === null && alt[f] !== null) updates[f] = alt[f]; });
+
+    // Consolidar OEM codes (union sin duplicados)
+    const mainOem = main.oem_codes || [];
+    const altOem  = alt.oem_codes  || [];
+    const existingCodes = new Set(mainOem.map(c => c.code || c.partNumber));
+    const newOem = [...mainOem, ...altOem.filter(c => !existingCodes.has(c.code || c.partNumber))];
+
+    // Mover P551016 y DBL3998 a alternative_codes de EL82100
+    const existingAlt = main.alternative_codes || [];
+    const newAlts = [
+      ...existingAlt,
+      { code: 'P551016', manufacturer: 'Donaldson' },
+      { code: 'DBL3998', manufacturer: 'Donaldson' }
+    ].filter((a, i, arr) => arr.findIndex(x => x.code === a.code) === i);
+
+    // Armar SET dinámico
+    const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
+    const values = Object.values(updates);
+    const oemIdx   = values.length + 2;
+    const altIdx   = values.length + 3;
+    setClauses.push(`oem_codes = $${oemIdx}`);
+    setClauses.push(`alternative_codes = $${altIdx}`);
+
+    if (setClauses.length > 2) {
+      await client.query(
+        `UPDATE elimfilters_catalog SET ${setClauses.join(', ')} WHERE sku = $1`,
+        ['EL82100', ...values, JSON.stringify(newOem), JSON.stringify(newAlts)]
+      );
+    } else {
+      // Solo actualizar alternative_codes
+      await client.query(
+        `UPDATE elimfilters_catalog SET oem_codes=$2, alternative_codes=$3 WHERE sku=$1`,
+        ['EL82100', JSON.stringify(newOem), JSON.stringify(newAlts)]
+      );
+    }
+
+    res.json({
+      success: true,
+      fields_copied: Object.keys(updates),
+      alternative_codes_added: ['P551016','DBL3998'],
+      oem_codes_merged: newOem.length
+    });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
