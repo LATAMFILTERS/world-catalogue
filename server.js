@@ -237,6 +237,70 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 });
 
 
+// Temp: create validation trigger for new INSERTs
+app.get('/api/migrate/add-insert-trigger', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Function: validates duty vs codigo_base format and sku prefix vs filter_type
+    await client.query(`
+      CREATE OR REPLACE FUNCTION validate_filter_insert()
+      RETURNS TRIGGER AS $$
+      DECLARE
+        expected_prefix TEXT;
+      BEGIN
+        -- Validate duty vs codigo_base: HD must use Donaldson P+digits, LD must not
+        IF NEW.duty = 'HD' AND NEW.codigo_base !~ '^P[0-9]+$' THEN
+          RAISE EXCEPTION 'HD filter requires Donaldson codigo_base (P followed by digits), got: %', NEW.codigo_base;
+        END IF;
+        IF NEW.duty = 'LD' AND NEW.codigo_base ~ '^P[0-9]+$' THEN
+          RAISE EXCEPTION 'LD filter cannot use Donaldson codigo_base format, got: %', NEW.codigo_base;
+        END IF;
+
+        -- Validate SKU prefix matches filter_type
+        expected_prefix := CASE NEW.filter_type
+          WHEN 'Air Filter'            THEN 'EA1'
+          WHEN 'Air Housing'           THEN 'EA2'
+          WHEN 'Air Dryer'             THEN 'ED4'
+          WHEN 'Hydraulic Filter'      THEN 'EH6'
+          WHEN 'Kit Filter'            THEN CASE WHEN NEW.duty = 'HD' THEN 'EK3' ELSE 'EK5' END
+          WHEN 'Oil Filter'            THEN 'EL8'
+          WHEN 'Marine Filter'         THEN 'EM9'
+          WHEN 'Fuel/Water Separator'  THEN 'ES9'
+          WHEN 'Turbine Filter'        THEN 'ET9'
+          WHEN 'Cabin Air Filter'      THEN 'EC1'
+          WHEN 'Fuel Filter'           THEN 'EF9'
+          WHEN 'Coolant Filter'        THEN 'EW7'
+          ELSE NULL
+        END;
+
+        IF expected_prefix IS NOT NULL AND LEFT(NEW.sku, 3) != expected_prefix THEN
+          RAISE EXCEPTION 'SKU prefix mismatch: filter_type "%" requires prefix "%" but got "%"',
+            NEW.filter_type, expected_prefix, LEFT(NEW.sku, 3);
+        END IF;
+
+        RETURN NEW;
+      END;
+      $$ LANGUAGE plpgsql;
+    `);
+
+    await client.query(`DROP TRIGGER IF EXISTS trg_validate_filter ON elimfilters_catalog`);
+    await client.query(`
+      CREATE TRIGGER trg_validate_filter
+      BEFORE INSERT ON elimfilters_catalog
+      FOR EACH ROW EXECUTE FUNCTION validate_filter_insert();
+    `);
+
+    res.json({ success: true, message: 'Trigger trg_validate_filter created' });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
