@@ -86,6 +86,27 @@ app.get('/api/status', (req, res) => {
   res.json({status: 'ok', version: '3.3.0'});
 });
 
+// Temp: add UNIQUE constraint to sku column
+app.get('/api/migrate/fix-sku-unique', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      ALTER TABLE elimfilters_catalog
+      ADD CONSTRAINT sku_unique UNIQUE (sku)
+    `);
+    res.json({ success: true, message: 'UNIQUE constraint added to sku' });
+  } catch(e) {
+    if (e.message.includes('already exists')) {
+      return res.json({ success: true, message: 'Constraint already exists' });
+    }
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: create maintenance_kits and kit_components tables
 app.get('/api/migrate/create-kit-tables', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
