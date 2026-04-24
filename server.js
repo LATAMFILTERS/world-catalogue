@@ -320,8 +320,8 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
           IF NEW.technology ILIKE '%COOLTECH%' AND NEW.filter_type != 'Coolant Filter' THEN
             RAISE EXCEPTION 'COOLTECH™ is exclusive to Coolant Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
-          IF NEW.technology ILIKE '%AQUAGUARD%' AND NEW.filter_type != 'Fuel/Water Separator' THEN
-            RAISE EXCEPTION 'AQUAGUARD™ is exclusive to Fuel/Water Separators, but filter_type is "%"', NEW.filter_type;
+          IF NEW.technology ILIKE '%AQUAGUARD%' AND NEW.filter_type NOT IN ('Fuel/Water Separator','Turbine Filter') THEN
+            RAISE EXCEPTION 'AQUAGUARD™ is exclusive to Fuel/Water Separators and Turbine Filters, but filter_type is "%"', NEW.filter_type;
           END IF;
           IF NEW.technology ILIKE '%DRYCORE%' AND NEW.filter_type != 'Air Dryer' THEN
             RAISE EXCEPTION 'DRYCORE™ is exclusive to Air Dryers, but filter_type is "%"', NEW.filter_type;
