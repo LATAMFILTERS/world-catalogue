@@ -795,71 +795,31 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
 });
 
 // Copia campos faltantes de EL81016 a EL82100 y registra alternativas
-app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
+app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  if (req.query.confirm !== 'yes') return res.json({ error: 'Agrega ?confirm=yes para ejecutar' });
+  if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const { rows } = await client.query(`
-      SELECT sku, codigo_base, filter_type, sub_type, duty, technology,
-             thread_size, outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
-             iso_test_method, micron_rating, nominal_efficiency, burst_pressure_psi,
-             collapse_pressure_psi, installation_type, oem_codes, competitor_codes,
-             alternative_codes, name, description
-      FROM elimfilters_catalog WHERE sku IN ('EL82100','EL81016')
+    await client.query(`
+      UPDATE elimfilters_catalog SET
+        iso_test_method = COALESCE(iso_test_method, (SELECT iso_test_method FROM elimfilters_catalog WHERE sku='EL81016')),
+        burst_pressure_psi = COALESCE(burst_pressure_psi, (SELECT burst_pressure_psi FROM elimfilters_catalog WHERE sku='EL81016')),
+        collapse_pressure_psi = COALESCE(collapse_pressure_psi, (SELECT collapse_pressure_psi FROM elimfilters_catalog WHERE sku='EL81016')),
+        installation_type = COALESCE(installation_type, (SELECT installation_type FROM elimfilters_catalog WHERE sku='EL81016')),
+        oem_codes = (
+          SELECT jsonb_agg(DISTINCT v)
+          FROM (
+            SELECT jsonb_array_elements(oem_codes) as v FROM elimfilters_catalog WHERE sku='EL82100'
+            UNION ALL
+            SELECT jsonb_array_elements(oem_codes) FROM elimfilters_catalog WHERE sku='EL81016'
+          ) t
+        ),
+        competitor_codes = COALESCE(competitor_codes, (SELECT competitor_codes FROM elimfilters_catalog WHERE sku='EL81016')),
+        alternative_codes = '["P551016", "DBL3998"]'::jsonb
+      WHERE sku='EL82100'
     `);
-    const main = rows.find(r => r.sku === 'EL82100');
-    const alt  = rows.find(r => r.sku === 'EL81016');
-    if (!main || !alt) return res.json({ error: 'No se encontró uno de los dos registros' });
-
-    const copyable = ['filter_type','sub_type','technology','thread_size','outer_diameter_mm',
-      'height_mm','gasket_od_mm','gasket_id_mm','iso_test_method','micron_rating',
-      'nominal_efficiency','burst_pressure_psi','collapse_pressure_psi','installation_type',
-      'name','description'];
-    const updates = {};
-    copyable.forEach(f => { if (main[f] === null && alt[f] !== null) updates[f] = alt[f]; });
-
-    const mainOem = main.oem_codes || [];
-    const altOem  = alt.oem_codes  || [];
-    const existingCodes = new Set(mainOem.map(c => c.code || c.partNumber));
-    const newOem = [...mainOem, ...altOem.filter(c => !existingCodes.has(c.code || c.partNumber))];
-
-    const altDonaldsonCodes = new Set(['P551016','DBL3998','P552100']);
-    const existingAlt = main.alternative_codes || [];
-    const newAlts = [
-      ...existingAlt,
-      { code: 'P551016', manufacturer: 'Donaldson' },
-      { code: 'DBL3998', manufacturer: 'Donaldson' }
-    ].filter((a, i, arr) => arr.findIndex(x => x.code === a.code) === i);
-
-    const mainComp = main.competitor_codes || [];
-    const altComp  = alt.competitor_codes  || [];
-    const existingCompCodes = new Set(mainComp.map(c => c.code));
-    const newComp = [
-      ...mainComp,
-      ...altComp.filter(c => !existingCompCodes.has(c.code) && !altDonaldsonCodes.has(c.code))
-    ];
-
-    const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
-    const values = Object.values(updates);
-    const base = values.length + 2;
-    setClauses.push(`oem_codes = $${base}::jsonb`);
-    setClauses.push(`competitor_codes = $${base+1}::jsonb`);
-    setClauses.push(`alternative_codes = $${base+2}::jsonb`);
-
-    await client.query(
-      `UPDATE elimfilters_catalog SET ${setClauses.join(', ')} WHERE sku = $1`,
-      ['EL82100', ...values, JSON.stringify(newOem), JSON.stringify(newComp), JSON.stringify(newAlts)]
-    );
-
-    res.json({
-      success: true,
-      fields_copied: Object.keys(updates),
-      alternative_codes_added: ['P551016', 'DBL3998'],
-      oem_codes_merged: newOem.length,
-      competitor_codes_transferred: newComp.length
-    });
+    res.json({ success: true, message: 'EL82100 merged successfully' });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
