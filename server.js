@@ -717,6 +717,27 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
   }
 });
 
+// Temp: add alternative_codes column
+app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      ALTER TABLE elimfilters_catalog
+      ADD COLUMN IF NOT EXISTS alternative_codes JSONB[] DEFAULT '{}'::jsonb[]
+    `);
+    res.json({ success: true, message: 'Column alternative_codes added' });
+  } catch(e) {
+    if (e.message.includes('already exists')) {
+      return res.json({ success: true, message: 'Column already exists' });
+    }
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: debug EL82100 vs EL81016 comparison
 app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
