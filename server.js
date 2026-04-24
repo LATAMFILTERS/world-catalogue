@@ -83,7 +83,153 @@ function buildFilterData(row, lang = 'en'){
 }
 
 app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.2.7'});
+  res.json({status: 'ok', version: '3.3.0'});
+});
+
+// Temp: create maintenance_kits and kit_components tables
+app.get('/api/migrate/create-kit-tables', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS maintenance_kits (
+        kit_sku    VARCHAR(7) PRIMARY KEY,
+        name       TEXT NOT NULL,
+        equipment_ref TEXT,
+        duty       VARCHAR(2) CHECK (duty IN ('HD','LD')),
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS kit_components (
+        kit_sku    VARCHAR(7) REFERENCES maintenance_kits(kit_sku) ON DELETE CASCADE,
+        filter_sku VARCHAR(7) REFERENCES elimfilters_catalog(sku),
+        PRIMARY KEY (kit_sku, filter_sku)
+      )
+    `);
+    await client.query(`
+      CREATE INDEX IF NOT EXISTS idx_kit_components_filter
+      ON kit_components(filter_sku)
+    `);
+    res.json({ success: true, message: 'Tables maintenance_kits and kit_components created' });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// POST /api/kits — create a kit from filter SKUs + equipment name
+app.post('/api/kits', async (req, res) => {
+  const { name, equipment_ref, filter_skus } = req.body;
+  if (!name || !Array.isArray(filter_skus) || filter_skus.length === 0)
+    return res.status(400).json({ success: false, error: 'name and filter_skus[] required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Determine duty from the first filter found
+    const sample = await client.query(
+      'SELECT duty FROM elimfilters_catalog WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
+      [filter_skus]
+    );
+    const duty = sample.rows[0]?.duty || 'LD';
+    const prefix = duty === 'HD' ? 'EK3' : 'EK5';
+
+    // Generate next kit SKU
+    const last = await client.query(
+      `SELECT kit_sku FROM maintenance_kits WHERE kit_sku LIKE $1 ORDER BY kit_sku DESC LIMIT 1`,
+      [prefix + '%']
+    );
+    const nextNum = last.rows.length
+      ? String(parseInt(last.rows[0].kit_sku.slice(3)) + 1).padStart(4, '0')
+      : '0001';
+    const kit_sku = prefix + nextNum;
+
+    await client.query('BEGIN');
+    await client.query(
+      'INSERT INTO maintenance_kits (kit_sku, name, equipment_ref, duty) VALUES ($1,$2,$3,$4)',
+      [kit_sku, name, equipment_ref || null, duty]
+    );
+    for (const fsku of filter_skus) {
+      await client.query(
+        'INSERT INTO kit_components (kit_sku, filter_sku) VALUES ($1,$2) ON CONFLICT DO NOTHING',
+        [kit_sku, fsku.toUpperCase()]
+      );
+    }
+    await client.query('COMMIT');
+
+    res.status(201).json({ success: true, kit_sku, duty, name, equipment_ref, filter_skus });
+  } catch(e) {
+    await client.query('ROLLBACK').catch(()=>{});
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/kits/:kit_sku — full kit details with all component filters
+app.get('/api/kits/:kit_sku', async (req, res) => {
+  const kit_sku = req.params.kit_sku.trim().toUpperCase();
+  const lang = detectLang(req);
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
+
+    const kit = await client.query(
+      'SELECT * FROM maintenance_kits WHERE kit_sku = $1',
+      [kit_sku]
+    );
+    if (!kit.rows.length) return res.status(404).json({ success: false, error: 'Kit not found' });
+
+    const components = await client.query(
+      `SELECT c.*, kc.kit_sku
+       FROM elimfilters_catalog c
+       JOIN kit_components kc ON kc.filter_sku = c.sku
+       WHERE kc.kit_sku = $1`,
+      [kit_sku]
+    );
+
+    res.json({
+      success: true,
+      kit: {
+        kit_sku: kit.rows[0].kit_sku,
+        name: kit.rows[0].name,
+        equipment_ref: kit.rows[0].equipment_ref,
+        duty: kit.rows[0].duty,
+        filters: components.rows.map(row => buildFilterData(row, lang))
+      }
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/filters/kits?sku=XXX — which kits contain this filter
+app.get('/api/filters/kits', async (req, res) => {
+  const sku = (req.query.sku || '').trim().toUpperCase();
+  if (!sku) return res.json({ success: false, kits: [] });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `SELECT mk.kit_sku, mk.name, mk.equipment_ref, mk.duty
+       FROM maintenance_kits mk
+       JOIN kit_components kc ON kc.kit_sku = mk.kit_sku
+       WHERE kc.filter_sku = $1`,
+      [sku]
+    );
+    res.json({ success: true, kits: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
 });
 
 app.get('/api/filters/alternatives', async (req, res) => {
