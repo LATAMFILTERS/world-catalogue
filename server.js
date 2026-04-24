@@ -846,7 +846,14 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
       ...altComp.filter(c => !existingCompCodes.has(c.code) && !altDonaldsonCodes.has(c.code))
     ];
 
-    // Armar UPDATE con cast ::jsonb explícito para los arrays
+    // Convertir alternative_codes de jsonb[] a jsonb (consistente con oem_codes/competitor_codes)
+    await client.query(`
+      ALTER TABLE elimfilters_catalog
+        ALTER COLUMN alternative_codes TYPE jsonb
+        USING COALESCE(to_json(alternative_codes)::jsonb, '[]'::jsonb)
+    `);
+
+    // Armar UPDATE con cast ::jsonb explícito
     const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
     const values = Object.values(updates);
     const base = values.length + 2;
