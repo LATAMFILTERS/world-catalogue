@@ -83,7 +83,46 @@ function buildFilterData(row, lang = 'en'){
 }
 
 app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.2.6'});
+  res.json({status: 'ok', version: '3.2.7'});
+});
+
+app.get('/api/filters/alternatives', async (req, res) => {
+  const sku = (req.query.sku || '').trim().toUpperCase();
+  if (!sku) return res.json({success: false, alternatives: []});
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query("SET client_encoding = 'UTF8'");
+
+    const src = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1', [sku]);
+    if (!src.rows.length) return res.json({success: true, alternatives: []});
+
+    const f = src.rows[0];
+    const params = [sku, f.filter_type, f.sub_type];
+    let conditions = `sku != $1 AND filter_type = $2 AND sub_type = $3`;
+
+    if (f.thread_size) {
+      conditions += ` AND thread_size = $4`;
+      params.push(f.thread_size);
+    } else if (f.outer_diameter_mm) {
+      conditions += ` AND ABS(COALESCE(outer_diameter_mm,0) - $4) <= 5`;
+      params.push(f.outer_diameter_mm);
+    } else if (f.height_mm) {
+      conditions += ` AND ABS(COALESCE(height_mm,0) - $4) <= 10`;
+      params.push(f.height_mm);
+    }
+
+    const result = await client.query(
+      `SELECT sku, name FROM elimfilters_catalog WHERE ${conditions} LIMIT 6`,
+      params
+    );
+    res.json({success: true, alternatives: result.rows});
+  } catch(e) {
+    res.status(500).json({success: false, error: e.message});
+  } finally {
+    await client.end();
+  }
 });
 
 app.get('/api/filters/search/part', async (req, res) => {

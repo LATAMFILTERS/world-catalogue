@@ -247,6 +247,42 @@
       max-width: 700px;
     }
 
+    .alternatives-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .alt-label {
+      font-size: 10px;
+      color: #333;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      align-self: center;
+      margin-right: 4px;
+    }
+
+    .alt-chip {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      color: #FFF12D;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: monospace;
+      padding: 5px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .alt-chip:hover {
+      background: #1a1a1a;
+      border-color: #FFF12D;
+    }
+
     /* ===== DATA TABS ===== */
     .data-tabs {
       display: flex;
@@ -518,6 +554,9 @@
       <div class="result-info-side">
         <div class="result-sku" id="resultSKU">EL82100</div>
         <div class="result-description" id="resultDesc">Elimfilters genuine spin-on filter engineered with advanced filtration media technology.</div>
+        <div class="alternatives-row" id="alternativesRow" style="display:none">
+          <span class="alt-label" id="altLabel">Also fits:</span>
+        </div>
       </div>
     </div>
 
@@ -567,6 +606,7 @@
         backBtn: '← Back to search',
         dtSpecs: 'Specifications', dtOem: 'OEM Codes', dtCross: 'Cross Reference', dtEquip: 'Compatible Equipment',
         specsSectionTitle: 'Technical Specifications',
+        altLabel: 'See also:',
         noResults: q => `No filters found for "${q}". Try a different part number or OEM code.`,
         noData: 'No data available', noOem: 'No OEM codes available', noCross: 'No cross references available', noEquip: 'No equipment data available',
         errVinLen: 'VIN must be 17 characters', errVinInvalid: 'Invalid VIN', errVinDecode: 'VIN decode error',
@@ -585,6 +625,7 @@
         backBtn: '← Volver a búsqueda',
         dtSpecs: 'Especificaciones', dtOem: 'Códigos OEM', dtCross: 'Referencias Cruzadas', dtEquip: 'Equipos Compatibles',
         specsSectionTitle: 'Especificaciones Técnicas',
+        altLabel: 'Ver también:',
         noResults: q => `No se encontraron filtros para "${q}". Intente con otro número de parte o código OEM.`,
         noData: 'Sin datos disponibles', noOem: 'Sin códigos OEM disponibles', noCross: 'Sin referencias cruzadas', noEquip: 'Sin datos de equipos',
         errVinLen: 'El VIN debe tener 17 caracteres', errVinInvalid: 'VIN inválido', errVinDecode: 'Error al decodificar VIN',
@@ -596,7 +637,7 @@
     const T = I18N[LANG];
 
     function applyI18n() {
-      const ids = ['tabPart','tabVehicle','tabVin','backBtn','dtSpecs','specsSectionTitle','labelStat1','labelStat2','labelStat3','labelStat4','footerEl'];
+      const ids = ['tabPart','tabVehicle','tabVin','backBtn','dtSpecs','specsSectionTitle','labelStat1','labelStat2','labelStat3','labelStat4','footerEl','altLabel'];
       ids.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = T[id]; });
       // Tab badges need innerHTML to preserve badge spans
       ['dtOem','dtCross','dtEquip'].forEach(id => {
@@ -611,7 +652,14 @@
       document.title = LANG === 'es' ? 'ELIMFILTERS | Encuentra el filtro correcto, rápido' : 'ELIMFILTERS | Find the right filter, fast';
     }
 
-    document.addEventListener('DOMContentLoaded', applyI18n);
+    document.addEventListener('DOMContentLoaded', () => {
+      applyI18n();
+      const skuParam = new URLSearchParams(window.location.search).get('sku');
+      if (skuParam) {
+        document.getElementById('searchInput').value = skuParam.toUpperCase();
+        doSearch();
+      }
+    });
 
     let searchMode = 'part';
 
@@ -702,6 +750,29 @@
       document.getElementById('resultSKU').textContent = sku;
 
       document.getElementById('resultDesc').textContent = item.description || T.desc(sku, item.filter_type, item.technology, item.duty);
+
+      // Load alternatives asynchronously
+      const altRow = document.getElementById('alternativesRow');
+      altRow.style.display = 'none';
+      // Remove old chips (keep the label span)
+      Array.from(altRow.querySelectorAll('.alt-chip')).forEach(c => c.remove());
+      fetch(`/api/filters/alternatives?sku=${encodeURIComponent(sku)}`)
+        .then(r => r.json())
+        .then(data => {
+          if (data.alternatives && data.alternatives.length) {
+            data.alternatives.forEach(a => {
+              const chip = document.createElement('a');
+              chip.className = 'alt-chip';
+              chip.textContent = a.sku;
+              chip.title = a.name || a.sku;
+              chip.href = `/?sku=${encodeURIComponent(a.sku)}`;
+              chip.target = '_blank';
+              altRow.appendChild(chip);
+            });
+            altRow.style.display = 'flex';
+          }
+        })
+        .catch(() => {});
 
       // Build specs table (2 columns of pairs)
       const L = T.specLabels;
