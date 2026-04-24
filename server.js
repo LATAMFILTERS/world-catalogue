@@ -632,6 +632,103 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 });
 
 
+// Temp: consolidate duplicate SKUs (preview consolidation plan)
+app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const dupes = await client.query(`
+      SELECT sku, ARRAY_AGG(id ORDER BY id) as ids, ARRAY_AGG(codigo_base ORDER BY codigo_base) as codigos,
+             ARRAY_AGG(duty ORDER BY duty) as duties
+      FROM elimfilters_catalog
+      WHERE sku IN (SELECT sku FROM elimfilters_catalog GROUP BY sku HAVING COUNT(*) > 1)
+      GROUP BY sku
+      ORDER BY sku
+      LIMIT 50
+    `);
+
+    const plan = dupes.rows.map(row => {
+      const donaldson = row.codigos.find(c => c && c.match(/^P[0-9]/));
+      const fram = row.codigos.find(c => c && !c.match(/^P[0-9]/));
+      const primary = donaldson || fram;
+      const alternates = row.codigos.filter(c => c !== primary);
+
+      return {
+        sku: row.sku,
+        keep_id: row.ids[0],
+        keep_codigo_base: primary,
+        keep_duty: donaldson ? 'HD' : 'LD',
+        delete_ids: row.ids.slice(1),
+        competitor_codes: alternates.map(c => ({ code: c, manufacturer: '...' }))
+      };
+    });
+
+    res.json({ success: true, consolidations_count: plan.length, preview: plan });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// Temp: apply consolidation (delete duplicates, merge competitor_codes)
+app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query('BEGIN');
+
+    // Get all groups of duplicates
+    const dupes = await client.query(`
+      SELECT sku, ARRAY_AGG(id ORDER BY id) as ids, ARRAY_AGG(codigo_base ORDER BY codigo_base) as codigos
+      FROM elimfilters_catalog
+      WHERE sku IN (SELECT sku FROM elimfilters_catalog GROUP BY sku HAVING COUNT(*) > 1)
+      GROUP BY sku
+    `);
+
+    let consolidated = 0;
+    for (const row of dupes.rows) {
+      const donaldson = row.codigos.find(c => c && c.match(/^P[0-9]/));
+      const fram = row.codigos.find(c => c && !c.match(/^P[0-9]/));
+      const primary = donaldson || fram;
+      const alternates = row.codigos.filter(c => c !== primary);
+
+      // Update the keeper record with primary codigo_base
+      await client.query(
+        'UPDATE elimfilters_catalog SET codigo_base = $1, duty = $2 WHERE id = $3',
+        [primary, donaldson ? 'HD' : 'LD', row.ids[0]]
+      );
+
+      // Merge alternates into competitor_codes
+      if (alternates.length > 0) {
+        const altCodes = alternates.map(c => ({ code: c, manufacturer: 'Alternative' }));
+        await client.query(
+          `UPDATE elimfilters_catalog
+           SET competitor_codes = COALESCE(competitor_codes, '[]'::jsonb) || $1::jsonb
+           WHERE id = $2`,
+          [JSON.stringify(altCodes), row.ids[0]]
+        );
+      }
+
+      // Delete the duplicate records
+      for (const del_id of row.ids.slice(1)) {
+        await client.query('DELETE FROM elimfilters_catalog WHERE id = $1', [del_id]);
+      }
+      consolidated++;
+    }
+
+    await client.query('COMMIT');
+    res.json({ success: true, consolidated_count: consolidated });
+  } catch(e) {
+    await client.query('ROLLBACK').catch(()=>{});
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
