@@ -86,17 +86,48 @@ app.get('/api/status', (req, res) => {
   res.json({status: 'ok', version: '3.3.0'});
 });
 
-// Temp: add UNIQUE constraint to sku column
+// Temp: find duplicate SKUs
+app.get('/api/analyze/duplicate-skus', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const dupes = await client.query(`
+      SELECT sku, COUNT(*) as count, ARRAY_AGG(codigo_base) as codigo_bases
+      FROM elimfilters_catalog
+      GROUP BY sku
+      HAVING COUNT(*) > 1
+      ORDER BY count DESC
+    `);
+    res.json({ success: true, duplicate_count: dupes.rows.length, duplicates: dupes.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// Temp: add UNIQUE constraint to sku column (after deduplicating)
 app.get('/api/migrate/fix-sku-unique', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
+
+    // First, delete duplicate rows (keep only the first occurrence of each SKU)
+    await client.query(`
+      DELETE FROM elimfilters_catalog
+      WHERE id NOT IN (
+        SELECT MIN(id) FROM elimfilters_catalog GROUP BY sku
+      )
+    `);
+
+    // Now add the UNIQUE constraint
     await client.query(`
       ALTER TABLE elimfilters_catalog
       ADD CONSTRAINT sku_unique UNIQUE (sku)
     `);
-    res.json({ success: true, message: 'UNIQUE constraint added to sku' });
+    res.json({ success: true, message: 'Duplicates removed and UNIQUE constraint added' });
   } catch(e) {
     if (e.message.includes('already exists')) {
       return res.json({ success: true, message: 'Constraint already exists' });
