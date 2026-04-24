@@ -256,6 +256,36 @@ app.get('/api/analyze/name-field', async (req, res) => {
   }
 });
 
+// Temp: fix name field — replace embedded JSON with English plain text
+app.get('/api/migrate/fix-name-field', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const preview = await client.query(`
+      SELECT sku, name,
+        REGEXP_REPLACE(name, '\\{"en":"([^"]+)"[^}]+\\}', '\\1', 'g') AS name_fixed
+      FROM elimfilters_catalog
+      WHERE name LIKE '%{"%'
+      LIMIT 5
+    `);
+    if (req.query.confirm !== 'yes') {
+      return res.json({ preview: preview.rows, message: 'Add &confirm=yes to apply' });
+    }
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET name = REGEXP_REPLACE(name, '\\{"en":"([^"]+)"[^}]+\\}', '\\1', 'g')
+      WHERE name LIKE '%{"%'
+    `);
+    const remaining = await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE name LIKE '%{"%'`);
+    res.json({ updated: result.rowCount, remaining_with_json: parseInt(remaining.rows[0].count) });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register new routes
 app.use('/api', chatRoutes);
 app.use('/webhook', whatsappRoutes);
