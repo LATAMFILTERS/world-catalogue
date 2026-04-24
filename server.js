@@ -813,7 +813,6 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
     const alt  = rows.find(r => r.sku === 'EL81016');
     if (!main || !alt) return res.json({ error: 'No se encontró uno de los dos registros' });
 
-    // Campos copiables (no sobreescribir si EL82100 ya tiene valor)
     const copyable = ['filter_type','sub_type','technology','thread_size','outer_diameter_mm',
       'height_mm','gasket_od_mm','gasket_id_mm','iso_test_method','micron_rating',
       'nominal_efficiency','burst_pressure_psi','collapse_pressure_psi','installation_type',
@@ -821,13 +820,11 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
     const updates = {};
     copyable.forEach(f => { if (main[f] === null && alt[f] !== null) updates[f] = alt[f]; });
 
-    // Consolidar OEM codes (union sin duplicados)
     const mainOem = main.oem_codes || [];
     const altOem  = alt.oem_codes  || [];
     const existingCodes = new Set(mainOem.map(c => c.code || c.partNumber));
     const newOem = [...mainOem, ...altOem.filter(c => !existingCodes.has(c.code || c.partNumber))];
 
-    // Mover P551016 y DBL3998 a alternative_codes de EL82100
     const altDonaldsonCodes = new Set(['P551016','DBL3998','P552100']);
     const existingAlt = main.alternative_codes || [];
     const newAlts = [
@@ -836,8 +833,6 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
       { code: 'DBL3998', manufacturer: 'Donaldson' }
     ].filter((a, i, arr) => arr.findIndex(x => x.code === a.code) === i);
 
-    // Transferir competitor_codes de EL81016 → EL82100
-    // Excluir los que son alternative_codes de Donaldson o el propio codigo_base
     const mainComp = main.competitor_codes || [];
     const altComp  = alt.competitor_codes  || [];
     const existingCompCodes = new Set(mainComp.map(c => c.code));
@@ -846,14 +841,6 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
       ...altComp.filter(c => !existingCompCodes.has(c.code) && !altDonaldsonCodes.has(c.code))
     ];
 
-    // Convertir alternative_codes de jsonb[] a jsonb (consistente con oem_codes/competitor_codes)
-    await client.query(`
-      ALTER TABLE elimfilters_catalog
-        ALTER COLUMN alternative_codes TYPE jsonb
-        USING COALESCE(to_json(alternative_codes)::jsonb, '[]'::jsonb)
-    `);
-
-    // Armar UPDATE con cast ::jsonb explícito
     const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
     const values = Object.values(updates);
     const base = values.length + 2;
