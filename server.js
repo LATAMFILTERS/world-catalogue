@@ -846,12 +846,13 @@ app.get('/api/migrate/merge-el82100-from-el81016', async (req, res) => {
       ...altComp.filter(c => !existingCompCodes.has(c.code) && !altDonaldsonCodes.has(c.code))
     ];
 
-    // Armar UPDATE
+    // Armar UPDATE con cast ::jsonb explícito para los arrays
     const setClauses = Object.entries(updates).map(([k], i) => `${k} = $${i+2}`);
     const values = Object.values(updates);
-    setClauses.push(`oem_codes = $${values.length + 2}`);
-    setClauses.push(`competitor_codes = $${values.length + 3}`);
-    setClauses.push(`alternative_codes = $${values.length + 4}`);
+    const base = values.length + 2;
+    setClauses.push(`oem_codes = $${base}::jsonb`);
+    setClauses.push(`competitor_codes = $${base+1}::jsonb`);
+    setClauses.push(`alternative_codes = $${base+2}::jsonb`);
 
     await client.query(
       `UPDATE elimfilters_catalog SET ${setClauses.join(', ')} WHERE sku = $1`,
