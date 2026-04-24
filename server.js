@@ -248,7 +248,6 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
       CREATE OR REPLACE FUNCTION validate_filter_insert()
       RETURNS TRIGGER AS $$
       DECLARE
-        inferred_type TEXT := NULL;
         expected_prefix TEXT;
       BEGIN
         -- 1. Duty vs codigo_base format
@@ -259,26 +258,59 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
           RAISE EXCEPTION 'LD filter cannot use Donaldson codigo_base format, got: %', NEW.codigo_base;
         END IF;
 
-        -- 2. Spec-based filter_type inference (primary validation)
-        IF NEW.micron_rating IS NOT NULL AND NEW.iso_test_method IS NOT NULL THEN
-          inferred_type := 'Hydraulic Filter';
-        ELSIF NEW.technology ILIKE '%SYNTRAX%' THEN
-          inferred_type := 'Oil Filter';
-        ELSIF NEW.technology ILIKE '%NANOFORCE%' OR NEW.technology ILIKE '%NANOTEK%' THEN
-          inferred_type := 'Air Filter';
+        -- 2. Spec-based validation (primary — no technology inference here)
+
+        -- Hydraulic Filter: micron_rating + iso_test_method are exclusive indicators
+        IF NEW.filter_type = 'Hydraulic Filter' THEN
+          IF NEW.micron_rating IS NULL THEN
+            RAISE EXCEPTION 'Hydraulic Filter requires micron_rating';
+          END IF;
+          IF NEW.iso_test_method IS NULL THEN
+            RAISE EXCEPTION 'Hydraulic Filter requires iso_test_method';
+          END IF;
         END IF;
 
-        IF inferred_type IS NOT NULL AND inferred_type != NEW.filter_type THEN
-          RAISE EXCEPTION 'Spec mismatch: technical specs indicate "%" but filter_type is "%"',
-            inferred_type, NEW.filter_type;
+        -- Non-hydraulic types must NOT have iso_test_method (hydraulic-only spec)
+        IF NEW.filter_type != 'Hydraulic Filter' AND NEW.iso_test_method IS NOT NULL THEN
+          RAISE EXCEPTION '% should not have iso_test_method — possible misclassification (expected: Hydraulic Filter)', NEW.filter_type;
         END IF;
 
-        -- 3. Required fields per filter_type
-        IF NEW.filter_type = 'Hydraulic Filter' AND NEW.micron_rating IS NULL THEN
-          RAISE EXCEPTION 'Hydraulic Filter requires micron_rating';
+        -- Non-hydraulic types must NOT have micron_rating
+        IF NEW.filter_type NOT IN ('Hydraulic Filter','Fuel Filter','Fuel/Water Separator') AND NEW.micron_rating IS NOT NULL THEN
+          RAISE EXCEPTION '% should not have micron_rating — possible misclassification', NEW.filter_type;
         END IF;
-        IF NEW.sub_type = 'Spin-On' AND NEW.filter_type IN ('Oil Filter','Fuel Filter','Coolant Filter','Air Dryer','Fuel/Water Separator') AND NEW.thread_size IS NULL THEN
+
+        -- Spin-On requires thread_size
+        IF NEW.sub_type = 'Spin-On' AND NEW.thread_size IS NULL THEN
           RAISE EXCEPTION '% Spin-On requires thread_size', NEW.filter_type;
+        END IF;
+
+        -- Coolant Filter and Air Dryer are always Spin-On → require thread_size
+        IF NEW.filter_type IN ('Coolant Filter', 'Air Dryer') AND NEW.thread_size IS NULL THEN
+          RAISE EXCEPTION '% is always Spin-On and requires thread_size', NEW.filter_type;
+        END IF;
+
+        -- Air Filter and Cabin Air Filter never have thread_size
+        IF NEW.filter_type IN ('Air Filter', 'Cabin Air Filter') AND NEW.thread_size IS NOT NULL THEN
+          RAISE EXCEPTION '% should not have thread_size', NEW.filter_type;
+        END IF;
+
+        -- Air Housing has no filtration specs
+        IF NEW.filter_type = 'Air Housing' AND (NEW.micron_rating IS NOT NULL OR NEW.thread_size IS NOT NULL) THEN
+          RAISE EXCEPTION 'Air Housing (carcasa) should not have micron_rating or thread_size';
+        END IF;
+
+        -- 3. Technology cross-check (secondary — flag if tech name contradicts filter_type)
+        IF NEW.technology IS NOT NULL THEN
+          IF NEW.filter_type != 'Hydraulic Filter' AND NEW.technology ILIKE '%SYNTEPORE%' THEN
+            RAISE EXCEPTION 'Technology SYNTEPORE is exclusive to Hydraulic Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.filter_type != 'Oil Filter' AND NEW.technology ILIKE '%SYNTRAX%' THEN
+            RAISE EXCEPTION 'Technology SYNTRAX is exclusive to Oil Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
+          IF NEW.filter_type NOT IN ('Air Filter','Cabin Air Filter') AND NEW.technology ILIKE '%NANOFORCE%' THEN
+            RAISE EXCEPTION 'Technology NANOFORCE is exclusive to Air/Cabin Air Filters, but filter_type is "%"', NEW.filter_type;
+          END IF;
         END IF;
 
         -- 4. SKU prefix as last resort
@@ -299,7 +331,7 @@ app.get('/api/migrate/add-insert-trigger', async (req, res) => {
         END;
 
         IF expected_prefix IS NOT NULL AND LEFT(NEW.sku, 3) != expected_prefix THEN
-          RAISE EXCEPTION 'SKU prefix mismatch: filter_type "%" requires prefix "%" but got "%" — check specs first',
+          RAISE EXCEPTION 'SKU prefix mismatch: filter_type "%" requires prefix "%" but got "%"',
             NEW.filter_type, expected_prefix, LEFT(NEW.sku, 3);
         END IF;
 
