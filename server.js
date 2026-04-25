@@ -119,15 +119,7 @@ app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
       `SELECT sku, oem_codes, competitor_codes, cross_reference_codes FROM elimfilters_catalog WHERE sku = $1`,
       [sku]
     );
-    if (result.rows.length === 0) {
-      return res.json({ error: 'SKU not found', sku });
-    }
-    res.json({
-      sku: result.rows[0].sku,
-      oem_codes: result.rows[0].oem_codes,
-      competitor_codes: result.rows[0].competitor_codes,
-      cross_reference_codes: result.rows[0].cross_reference_codes
-    });
+    res.json(result.rows.length > 0 ? result.rows[0] : {error: 'not found'});
   } catch(e) {
     res.json({ error: e.message });
   } finally {
