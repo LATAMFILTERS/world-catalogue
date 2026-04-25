@@ -2,8 +2,12 @@ require('dotenv').config();
 const { Client } = require('pg');
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+const fs = require('fs');
+const path = require('path');
 
 puppeteer.use(StealthPlugin());
+
+const PROGRESS_FILE = path.join(__dirname, 'scraper-progress.json');
 
 const dbConfig = process.env.DATABASE_URL
   ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
@@ -132,8 +136,35 @@ async function updateCompetitorCodes(client, sku, newCodes) {
   }
 }
 
+function loadProgress() {
+  try {
+    if (fs.existsSync(PROGRESS_FILE)) {
+      const data = fs.readFileSync(PROGRESS_FILE, 'utf8');
+      return JSON.parse(data);
+    }
+  } catch(e) {
+    console.log(`⚠️  Could not load progress: ${e.message}`);
+  }
+  return { lastProcessedSku: null, totalProcessed: 0, skipped: 0 };
+}
+
+function saveProgress(progress) {
+  try {
+    fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progress, null, 2));
+  } catch(e) {
+    console.log(`⚠️  Could not save progress: ${e.message}`);
+  }
+}
+
 async function main() {
-  console.log('🔍 Starting Cross Reference Scraper...\n');
+  const progress = loadProgress();
+
+  if (progress.lastProcessedSku) {
+    console.log(`🔍 Resuming scraper from ${progress.lastProcessedSku}...\n`);
+    console.log(`Progress: ${progress.totalProcessed} processed, ${progress.skipped} skipped\n`);
+  } else {
+    console.log('🔍 Starting Cross Reference Scraper...\n');
+  }
 
   const client = new Client(dbConfig);
   let browser;
@@ -142,17 +173,28 @@ async function main() {
     await client.connect();
     console.log('✅ Connected to database\n');
 
-    // Obtener productos
-    const result = await client.query(`
+    // Obtener productos - continuar desde donde se quedó o desde el inicio
+    let query = `
       SELECT sku, codigo_base, filter_type
       FROM elimfilters_catalog
       WHERE codigo_base IS NOT NULL
       AND filter_type IN ('Oil Filter', 'Hydraulic Filter', 'Air Filter', 'Cabin Air Filter', 'Air Housing', 'Air Dryer', 'Fuel Filter', 'Fuel/Water Separator')
       ORDER BY filter_type, sku
-      LIMIT 50
-    `);
+    `;
 
-    console.log(`📦 Found ${result.rows.length} products to scrape\n`);
+    const result = await client.query(query);
+
+    // Filtrar SKUs ya procesados
+    let skuList = result.rows;
+    if (progress.lastProcessedSku) {
+      const lastIdx = skuList.findIndex(r => r.sku === progress.lastProcessedSku);
+      if (lastIdx >= 0) {
+        skuList = skuList.slice(lastIdx + 1);
+        console.log(`📦 Resuming with ${skuList.length} remaining products\n`);
+      }
+    } else {
+      console.log(`📦 Found ${result.rows.length} products to scrape\n`);
+    }
 
     browser = await puppeteer.launch({
       headless: 'new',
@@ -162,7 +204,7 @@ async function main() {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
 
-    for (const row of result.rows) {
+    for (const row of skuList) {
       const { sku, codigo_base, filter_type } = row;
       console.log(`\n📌 ${sku} (${filter_type}) - Base: ${codigo_base}`);
 
@@ -179,18 +221,33 @@ async function main() {
 
         if (crossRefs.length > 0) {
           await updateCompetitorCodes(client, sku, crossRefs);
+          progress.totalProcessed++;
         } else {
           console.log(`  ⚠️  No cross references found`);
+          progress.skipped++;
         }
       } catch(e) {
         console.log(`  ❌ Error processing ${sku}: ${e.message}`);
+        progress.skipped++;
       }
+
+      // Guardar progreso después de cada SKU
+      progress.lastProcessedSku = sku;
+      progress.lastUpdateTime = new Date().toISOString();
+      saveProgress(progress);
 
       // Esperar entre requests para no sobrecargar
       await new Promise(r => setTimeout(r, 2000));
     }
 
     console.log('\n✅ Scraping complete!');
+    console.log(`Total processed: ${progress.totalProcessed}, Skipped: ${progress.skipped}`);
+
+    // Limpiar progreso cuando termina
+    if (skuList.length > 0) {
+      fs.unlinkSync(PROGRESS_FILE);
+      console.log('Progress file cleaned up.');
+    }
 
   } catch(e) {
     console.error('❌ Fatal error:', e.message);
