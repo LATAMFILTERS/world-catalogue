@@ -529,6 +529,9 @@ app.get('/api/filters/search/part', async (req, res) => {
           OR EXISTS (
             SELECT 1 FROM jsonb_array_elements(competitor_codes) elem
             WHERE UPPER(elem->>'code') = $1
+               OR UPPER(elem->>'partNumber') = $1
+               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') = $1)
           )
           OR EXISTS (
             SELECT 1 FROM jsonb_array_elements(cross_reference_codes) elem
