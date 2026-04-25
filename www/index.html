@@ -195,6 +195,37 @@
       gap: 30px;
       align-items: center;
       margin-bottom: 20px;
+      position: relative;
+    }
+
+    .tech-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255, 241, 45, 0.08);
+      border: 1px solid rgba(255, 241, 45, 0.3);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .tech-badge img {
+      height: 48px;
+      width: auto;
+      max-width: 80px;
+      object-fit: contain;
+    }
+
+    .tech-badge span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #FFF12D;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .result-logo-side {
@@ -638,6 +669,10 @@
           <span class="alt-label" id="altLabel">Also fits:</span>
         </div>
       </div>
+      <div class="tech-badge" id="techBadge" style="display:none">
+        <img id="techLogo" src="" alt="Technology">
+        <span id="techName"></span>
+      </div>
     </div>
 
     <div class="data-tabs">
@@ -828,6 +863,16 @@
       document.getElementById('resultSKU').textContent = sku;
 
       document.getElementById('resultDesc').textContent = item.description || T.desc(sku, item.filter_type, item.technology, item.duty);
+
+      // Show technology badge
+      const techBadge = document.getElementById('techBadge');
+      if (item.technology && item.technology_logo) {
+        document.getElementById('techLogo').src = item.technology_logo;
+        document.getElementById('techName').textContent = item.technology;
+        techBadge.style.display = 'flex';
+      } else {
+        techBadge.style.display = 'none';
+      }
 
       // Load alternatives asynchronously
       const altRow = document.getElementById('alternativesRow');
