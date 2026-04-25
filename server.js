@@ -903,6 +903,37 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
   }
 });
 
+// Audit: Find incomplete products
+app.get('/api/audit/incomplete-products', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT
+        sku, codigo_base,
+        CASE WHEN iso_test_method IS NULL THEN 1 ELSE 0 END +
+        CASE WHEN burst_pressure_psi IS NULL THEN 1 ELSE 0 END +
+        CASE WHEN collapse_pressure_psi IS NULL THEN 1 ELSE 0 END +
+        CASE WHEN installation_type IS NULL THEN 1 ELSE 0 END +
+        CASE WHEN thread_size IS NULL THEN 1 ELSE 0 END as null_count,
+        jsonb_array_length(COALESCE(oem_codes, '[]'::jsonb)) as oem_count,
+        jsonb_array_length(COALESCE(alternative_codes, '[]'::jsonb)) as alt_count
+      FROM elimfilters_catalog
+      WHERE sku LIKE 'EL%'
+        AND (iso_test_method IS NULL OR burst_pressure_psi IS NULL
+          OR collapse_pressure_psi IS NULL OR installation_type IS NULL)
+      ORDER BY null_count DESC, oem_count ASC
+      LIMIT 100
+    `);
+    res.json({ success: true, incomplete_count: result.rows.length, products: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
