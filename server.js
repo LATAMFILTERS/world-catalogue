@@ -826,7 +826,7 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
           ) t
         ),
         competitor_codes = COALESCE(competitor_codes, (SELECT competitor_codes FROM elimfilters_catalog WHERE sku='EL81016')),
-        alternative_codes = '["P551016", "DBL3998"]'::jsonb
+        alternative_codes = ARRAY['{"code": "P551016", "manufacturer": "DONALDSON"}'::jsonb, '{"code": "DBL3998", "manufacturer": "DONALDSON"}'::jsonb]
       WHERE sku='EL82100'
     `);
     res.json({ success: true, message: 'EL82100 merged successfully' });
