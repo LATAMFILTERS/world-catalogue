@@ -17,36 +17,24 @@ const dbConfig = process.env.DATABASE_URL
       ssl: { rejectUnauthorized: false }
     };
 
-const SITE_MAPPING = {
-  'Oil Filter': 'https://www.oilfilter-crossreference.com',
-  'Hydraulic Filter': 'https://www.oilfilter-crossreference.com',
-  'Air Filter': 'https://www.airfilter-crossreference.com',
-  'Cabin Air Filter': 'https://www.airfilter-crossreference.com',
-  'Air Housing': 'https://www.airfilter-crossreference.com',
-  'Air Dryer': 'https://www.airfilter-crossreference.com',
-  'Fuel Filter': 'https://www.fuelfilter-crossreference.com',
-  'Fuel/Water Separator': 'https://www.fuelfilter-crossreference.com'
-};
-
 async function scrapeOilFilterCrossReferences(page, codigoBase) {
   console.log(`  Scraping Oil Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.oilfilter-crossreference.com/cross-reference/${codigoBase}`, {
+    await page.goto(`https://www.oilfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
 
     const crossRefs = await page.evaluate(() => {
       const results = [];
-      // Ajustar selectores según estructura real del sitio
-      const rows = document.querySelectorAll('table tbody tr, .result-row, [data-result]');
+      const rows = document.querySelectorAll('table tbody tr');
       rows.forEach(row => {
-        const cells = row.querySelectorAll('td, .cell');
+        const cells = row.querySelectorAll('td');
         if (cells.length >= 2) {
-          const brand = cells[0]?.textContent?.trim();
+          const manufacturer = cells[0]?.textContent?.trim();
           const code = cells[1]?.textContent?.trim();
-          if (brand && code) {
-            results.push({ code, manufacturer: brand });
+          if (manufacturer && code && manufacturer.toUpperCase() !== 'DONALDSON') {
+            results.push({ code, manufacturer });
           }
         }
       });
@@ -63,21 +51,21 @@ async function scrapeOilFilterCrossReferences(page, codigoBase) {
 async function scrapeAirFilterCrossReferences(page, codigoBase) {
   console.log(`  Scraping Air Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.airfilter-crossreference.com/cross-reference/${codigoBase}`, {
+    await page.goto(`https://www.airfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
 
     const crossRefs = await page.evaluate(() => {
       const results = [];
-      const rows = document.querySelectorAll('table tbody tr, .result-row, [data-result]');
+      const rows = document.querySelectorAll('table tbody tr');
       rows.forEach(row => {
-        const cells = row.querySelectorAll('td, .cell');
+        const cells = row.querySelectorAll('td');
         if (cells.length >= 2) {
-          const brand = cells[0]?.textContent?.trim();
+          const manufacturer = cells[0]?.textContent?.trim();
           const code = cells[1]?.textContent?.trim();
-          if (brand && code) {
-            results.push({ code, manufacturer: brand });
+          if (manufacturer && code && manufacturer.toUpperCase() !== 'DONALDSON') {
+            results.push({ code, manufacturer });
           }
         }
       });
@@ -94,21 +82,21 @@ async function scrapeAirFilterCrossReferences(page, codigoBase) {
 async function scrapeFuelFilterCrossReferences(page, codigoBase) {
   console.log(`  Scraping Fuel Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.fuelfilter-crossreference.com/cross-reference/${codigoBase}`, {
+    await page.goto(`https://www.fuelfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
 
     const crossRefs = await page.evaluate(() => {
       const results = [];
-      const rows = document.querySelectorAll('table tbody tr, .result-row, [data-result]');
+      const rows = document.querySelectorAll('table tbody tr');
       rows.forEach(row => {
-        const cells = row.querySelectorAll('td, .cell');
+        const cells = row.querySelectorAll('td');
         if (cells.length >= 2) {
-          const brand = cells[0]?.textContent?.trim();
+          const manufacturer = cells[0]?.textContent?.trim();
           const code = cells[1]?.textContent?.trim();
-          if (brand && code) {
-            results.push({ code, manufacturer: brand });
+          if (manufacturer && code && manufacturer.toUpperCase() !== 'DONALDSON') {
+            results.push({ code, manufacturer });
           }
         }
       });
