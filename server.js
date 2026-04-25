@@ -827,6 +827,52 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
   }
 });
 
+app.get('/api/catalog/stats', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const [total, byType, completeness, recent] = await Promise.all([
+      client.query(`SELECT COUNT(*) as total FROM elimfilters_catalog`),
+      client.query(`
+        SELECT filter_type, duty, COUNT(*) as count
+        FROM elimfilters_catalog
+        GROUP BY filter_type, duty
+        ORDER BY count DESC
+      `),
+      client.query(`
+        SELECT
+          COUNT(*) as total,
+          COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) > 0) as with_oem,
+          COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb)) > 0) as with_competitor,
+          COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 0) as with_equipment,
+          COUNT(*) FILTER (WHERE iso_test_method IS NOT NULL) as with_iso,
+          COUNT(*) FILTER (WHERE burst_pressure_psi IS NOT NULL) as with_burst
+        FROM elimfilters_catalog
+      `),
+      client.query(`
+        SELECT sku, filter_type, duty,
+          jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) as oem_count,
+          jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb)) as comp_count,
+          jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) as equip_count
+        FROM elimfilters_catalog
+        ORDER BY id DESC LIMIT 10
+      `)
+    ]);
+    res.json({
+      success: true,
+      total_skus: parseInt(total.rows[0].total),
+      by_type: byType.rows,
+      completeness: completeness.rows[0],
+      last_10_inserted: recent.rows
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
