@@ -64,6 +64,7 @@ function buildFilterData(row, lang = 'en'){
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: extractText(row.sub_type, lang) || null,
     technology: row.technology || null,
+    technology_logo: row.technology ? `/assets/logo-${row.technology.toLowerCase().replace(/\s+/g, '')}.png` : null,
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
     height_mm: row.height_mm || null,
