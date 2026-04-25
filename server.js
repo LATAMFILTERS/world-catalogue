@@ -56,6 +56,29 @@ function extractText(val, lang = 'en') {
   return String(val);
 }
 
+const TECH_LOGO_MAP = {
+  'syntrax': 'sintrax', 'sintrax': 'sintrax',
+  'nanoforce': 'nanoforce',
+  'macrocore': 'macrocore',
+  'intekcore': 'intekcore',
+  'drycore': 'drycore',
+  'duratech': 'duratech',
+  'cooltech': 'cooltech',
+  'syntepore': 'syntepore',
+  'microkappa': 'microkappa',
+  'gasultra': 'gasultra',
+  'aquaguard': 'aquaguard',
+  'marineclean': 'marineclean',
+  'blueclean': 'blueclean',
+};
+
+function getTechLogo(tech) {
+  if (!tech) return null;
+  const key = tech.toLowerCase().replace(/[™®\s™]/g, '').trim();
+  const mapped = TECH_LOGO_MAP[key];
+  return mapped ? `/assets/logo-${mapped}.png` : null;
+}
+
 function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
@@ -64,7 +87,7 @@ function buildFilterData(row, lang = 'en'){
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: extractText(row.sub_type, lang) || null,
     technology: row.technology || null,
-    technology_logo: row.technology ? `/assets/logo-${row.technology.toLowerCase().replace(/\s+/g, '')}.png` : null,
+    technology_logo: getTechLogo(row.technology),
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
     height_mm: row.height_mm || null,
