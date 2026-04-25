@@ -107,7 +107,7 @@ function buildFilterData(row, lang = 'en'){
 }
 
 app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.3.0'});
+  res.json({status: 'ok', version: '3.4.0'});
 });
 
 app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
