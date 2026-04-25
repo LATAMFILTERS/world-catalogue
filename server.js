@@ -127,6 +127,29 @@ app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
   }
 });
 
+app.get('/api/debug/find-code/:code', async (req, res) => {
+  const code = req.params.code.toUpperCase();
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `SELECT sku, codigo_base,
+        oem_codes,
+        competitor_codes
+       FROM elimfilters_catalog
+       WHERE oem_codes::text ILIKE $1
+          OR competitor_codes::text ILIKE $1
+       LIMIT 10`,
+      [`%${code}%`]
+    );
+    res.json({ code, found: result.rows.length, results: result.rows });
+  } catch(e) {
+    res.json({ error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
