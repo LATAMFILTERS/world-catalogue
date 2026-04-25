@@ -110,6 +110,23 @@ app.get('/api/status', (req, res) => {
   res.json({status: 'ok', version: '3.3.0'});
 });
 
+app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
+  const sku = req.params.sku.toUpperCase();
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `SELECT sku, oem_codes, competitor_codes, cross_reference_codes FROM elimfilters_catalog WHERE sku = $1`,
+      [sku]
+    );
+    res.json(result.rows.length > 0 ? result.rows[0] : {error: 'not found'});
+  } catch(e) {
+    res.json({ error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
