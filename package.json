@@ -13,6 +13,8 @@
     "express": "^4.21.2",
     "groq-sdk": "^0.9.1",
     "pg": "^8.13.3",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "twilio": "^5.4.5"
   }
 }

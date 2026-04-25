@@ -998,6 +998,12 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
   }
 });
 
+app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+
+  res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
