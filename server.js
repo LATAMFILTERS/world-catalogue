@@ -531,14 +531,11 @@ app.get('/api/filters/search/part', async (req, res) => {
             WHERE UPPER(elem->>'code') = $1
           )
         ORDER BY
-          (CASE WHEN thread_size IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN outer_diameter_mm IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN height_mm IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN iso_test_method IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN burst_pressure_psi IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN collapse_pressure_psi IS NOT NULL THEN 0 ELSE 1 END) +
-          (CASE WHEN installation_type IS NOT NULL THEN 0 ELSE 1 END)
-        ASC, sku ASC
+          CASE WHEN jsonb_array_length(COALESCE(alternative_codes, '[]'::jsonb)) > 0
+               THEN 0
+               ELSE 1
+          END ASC,
+          sku ASC
         LIMIT 1`,
         [code]
       );
