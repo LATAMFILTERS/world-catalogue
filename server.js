@@ -493,6 +493,7 @@ app.get('/api/filters/search/part', async (req, res) => {
 
     if(result.rows.length === 0) {
       // Búsqueda exacta en oem_codes y competitor_codes (formato {code/partNumber})
+      // Prioriza productos con más datos completos (campos no nulos)
       result = await client.query(
         `SELECT * FROM elimfilters_catalog WHERE
           EXISTS (
@@ -505,7 +506,16 @@ app.get('/api/filters/search/part', async (req, res) => {
             SELECT 1 FROM jsonb_array_elements(competitor_codes) elem
             WHERE UPPER(elem->>'code') = $1
           )
-        LIMIT 10`,
+        ORDER BY
+          (CASE WHEN thread_size IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN outer_diameter_mm IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN height_mm IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN iso_test_method IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN burst_pressure_psi IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN collapse_pressure_psi IS NOT NULL THEN 0 ELSE 1 END) +
+          (CASE WHEN installation_type IS NOT NULL THEN 0 ELSE 1 END)
+        ASC, sku ASC
+        LIMIT 1`,
         [code]
       );
     }
