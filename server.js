@@ -883,6 +883,26 @@ app.get('/api/catalog/stats', async (req, res) => {
   }
 });
 
+// Merge OEM codes from EL81016 into EL82100
+app.get('/api/migrate/merge-oem-codes', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      UPDATE elimfilters_catalog SET
+        oem_codes = oem_codes || (SELECT oem_codes FROM elimfilters_catalog WHERE sku='EL81016')
+      WHERE sku='EL82100'
+    `);
+    res.json({ success: true, message: 'OEM codes merged successfully' });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
