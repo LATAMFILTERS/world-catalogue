@@ -531,7 +531,7 @@ app.get('/api/filters/search/part', async (req, res) => {
             WHERE UPPER(elem->>'code') = $1
           )
         ORDER BY
-          CASE WHEN jsonb_array_length(COALESCE(alternative_codes, '[]'::jsonb)) > 0
+          CASE WHEN array_length(COALESCE(alternative_codes, '{}'::jsonb[]), 1) > 0
                THEN 0
                ELSE 1
           END ASC,
