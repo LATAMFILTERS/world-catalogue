@@ -179,6 +179,7 @@ async function main() {
       FROM elimfilters_catalog
       WHERE codigo_base IS NOT NULL
       AND filter_type IN ('Oil Filter', 'Hydraulic Filter', 'Air Filter', 'Cabin Air Filter', 'Air Housing', 'Air Dryer', 'Fuel Filter', 'Fuel/Water Separator')
+      AND codigo_base ~ '^[PCB][0-9]+'
       ORDER BY filter_type, sku
     `;
 
