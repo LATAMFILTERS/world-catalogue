@@ -21,10 +21,10 @@ const dbConfig = process.env.DATABASE_URL
       ssl: { rejectUnauthorized: false }
     };
 
-async function scrapeOilFilterCrossReferences(page, codigoBase) {
+async function scrapeOilFilterCrossReferences(page, codigoBase, brand = 'DONALDSON') {
   console.log(`  Scraping Oil Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.oilfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
+    await page.goto(`https://www.oilfilter-crossreference.com/convert/${brand}/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
@@ -52,10 +52,10 @@ async function scrapeOilFilterCrossReferences(page, codigoBase) {
   }
 }
 
-async function scrapeAirFilterCrossReferences(page, codigoBase) {
+async function scrapeAirFilterCrossReferences(page, codigoBase, brand = 'DONALDSON') {
   console.log(`  Scraping Air Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.airfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
+    await page.goto(`https://www.airfilter-crossreference.com/convert/${brand}/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
@@ -83,10 +83,10 @@ async function scrapeAirFilterCrossReferences(page, codigoBase) {
   }
 }
 
-async function scrapeFuelFilterCrossReferences(page, codigoBase) {
+async function scrapeFuelFilterCrossReferences(page, codigoBase, brand = 'DONALDSON') {
   console.log(`  Scraping Fuel Filter Cross References for ${codigoBase}...`);
   try {
-    await page.goto(`https://www.fuelfilter-crossreference.com/convert/DONALDSON/${codigoBase}`, {
+    await page.goto(`https://www.fuelfilter-crossreference.com/convert/${brand}/${codigoBase}`, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
@@ -179,7 +179,7 @@ async function main() {
       FROM elimfilters_catalog
       WHERE codigo_base IS NOT NULL
       AND filter_type IN ('Oil Filter', 'Hydraulic Filter', 'Air Filter', 'Cabin Air Filter', 'Air Housing', 'Air Dryer', 'Fuel Filter', 'Fuel/Water Separator')
-      AND codigo_base ~ '^[PCB][0-9]+'
+      AND (codigo_base ~ '^[PCB][0-9]+' OR codigo_base ~ '^[0-9]+$')
       ORDER BY filter_type, sku
     `;
 
@@ -206,18 +206,22 @@ async function main() {
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
 
     for (const row of skuList) {
-      const { sku, codigo_base, filter_type } = row;
-      console.log(`\n📌 ${sku} (${filter_type}) - Base: ${codigo_base}`);
+      const { sku, filter_type } = row;
+      // Si es solo números = código FRAM LD, agregar prefijo CA
+      const isFram = /^[0-9]+$/.test(row.codigo_base);
+      const codigo_base = isFram ? `CA${row.codigo_base}` : row.codigo_base;
+      const brand = isFram ? 'FRAM' : 'DONALDSON';
+      console.log(`\n📌 ${sku} (${filter_type}) - Base: ${codigo_base} [${brand}]`);
 
       let crossRefs = [];
 
       try {
         if (filter_type === 'Oil Filter' || filter_type === 'Hydraulic Filter') {
-          crossRefs = await scrapeOilFilterCrossReferences(page, codigo_base);
+          crossRefs = await scrapeOilFilterCrossReferences(page, codigo_base, brand);
         } else if (['Air Filter', 'Cabin Air Filter', 'Air Housing', 'Air Dryer'].includes(filter_type)) {
-          crossRefs = await scrapeAirFilterCrossReferences(page, codigo_base);
+          crossRefs = await scrapeAirFilterCrossReferences(page, codigo_base, brand);
         } else if (filter_type === 'Fuel Filter' || filter_type === 'Fuel/Water Separator') {
-          crossRefs = await scrapeFuelFilterCrossReferences(page, codigo_base);
+          crossRefs = await scrapeFuelFilterCrossReferences(page, codigo_base, brand);
         }
 
         if (crossRefs.length > 0) {
