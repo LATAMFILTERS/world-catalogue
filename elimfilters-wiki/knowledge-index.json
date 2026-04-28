@@ -1,0 +1,482 @@
+{
+  "version": "2.0",
+  "last_updated": "2026-04-28",
+  "source": "ELIMFILTERS Technical Wiki",
+  "description": "Structured knowledge base for AI agents - indexed by technology, application, and concepts",
+  "total_documents": 16,
+  "technologies": [
+    {
+      "id": "DURATECH",
+      "name": "DURATECH™",
+      "category": "Oil Filter — STANDARD",
+      "prefix": "EL8",
+      "duty": ["HD", "LD"],
+      "type": "Celulosa técnica reforzada",
+      "micron_range": "30–40 µm",
+      "key_concepts": [
+        "tamizado directo",
+        "celulosa técnica",
+        "resina fenólica",
+        "protección OEM",
+        "relación costo-beneficio"
+      ],
+      "applications": [
+        "Vehículos de pasajeros",
+        "Transporte urbano",
+        "Equipos agrícolas pequeños"
+      ],
+      "service_interval": "5,000–10,000 km",
+      "max_temperature": "125 °C",
+      "pressure_rating": "150 PSI",
+      "competitors": ["FRAM Extra Guard", "Donaldson P55-Series", "Baldwin B-Series"],
+      "file": "DURATECH.md"
+    },
+    {
+      "id": "SINTRAX",
+      "name": "SINTRAX™",
+      "category": "Oil Filter — PERFORMANCE / Coolant",
+      "prefix": ["EL8", "EW7"],
+      "duty": ["HD", "LD"],
+      "type": "Celulosa sintética reforzada",
+      "micron_range": "15–25 µm",
+      "key_concepts": [
+        "celulosa sintética",
+        "intercepción directa",
+        "eficiencia mejorada 95-98%",
+        "compatibilidad sintética",
+        "vida útil extendida"
+      ],
+      "applications": [
+        "Trabajo intensivo",
+        "Condiciones severas",
+        "Aceites sintéticos y minerales",
+        "Sistemas de refrigeración"
+      ],
+      "service_interval": "10,000–15,000 km",
+      "max_temperature": "135 °C",
+      "pressure_rating": "150 PSI",
+      "competitors": ["FRAM Extra Guard Performance", "Donaldson P551xxx", "Baldwin Pro-Pak"],
+      "file": "SINTRAX.md"
+    },
+    {
+      "id": "NANOFORCE",
+      "name": "NANOFORCE™",
+      "category": "Oil Filter — ELITE / Air Filter",
+      "prefix": ["EL8", "EA1"],
+      "duty": ["HD", "LD"],
+      "type": "Nanofibra sintética 100%",
+      "micron_range_oil": "10–15 µm",
+      "micron_range_air": "0.3–10 µm",
+      "key_concepts": [
+        "nanofibras sintéticas",
+        "filtración superficial",
+        "eficiencia 99.9%",
+        "difusión browniana",
+        "efecto electrostático inicial",
+        "intervalos extendidos hasta 2×"
+      ],
+      "applications": [
+        "Motores de alta precisión",
+        "Maquinaria en ambientes polvorientos",
+        "Aceites sintéticos premium",
+        "Condiciones extremas"
+      ],
+      "service_interval_oil": "Hasta 2× vs. estándar",
+      "service_interval_air": "Según restricción",
+      "max_temperature": "150 °C (aceite), 130 °C (aire)",
+      "efficiency": "99.9% @ 10µm, 99.97% @ 0.3µm",
+      "competitors": ["Donaldson Ultra-Web", "Donaldson Blue", "FRAM Ultra Synthetic"],
+      "file": "NANOFORCE.md"
+    },
+    {
+      "id": "MACROCORE",
+      "name": "MACROCORE™",
+      "category": "Air Filter",
+      "prefix": "EA1",
+      "duty": ["HD", "LD"],
+      "type": "Celulosa técnica plegada + sello radial triple",
+      "micron_range": "5–20 µm",
+      "key_concepts": [
+        "núcleo macroporoso",
+        "sello radial doble labio",
+        "flujo sin restricción",
+        "presión máxima 25 kPa",
+        "antibypass completo"
+      ],
+      "applications": [
+        "Construcción",
+        "Minería",
+        "Agricultura",
+        "Maquinaria pesada en ambientes polvorientos"
+      ],
+      "service_interval": "250–1,000 horas o restricción visual",
+      "max_temperature": "130 °C",
+      "max_pressure_differential": "25 kPa",
+      "efficiency": "≥ 99.5% inicial",
+      "competitors": ["Donaldson PowerCore", "Baldwin RS-Series", "WIX AF-Series HD"],
+      "file": "MACROCORE.md"
+    },
+    {
+      "id": "SYNTEPORE",
+      "name": "SYNTEPORE™",
+      "category": "Fuel Filter / Hydraulic Filter",
+      "prefix": ["EF9", "EH6"],
+      "duty": ["HD", "LD (combustible)", "HD Industrial (hidráulico)"],
+      "type": "Fibra sintética melt-blown",
+      "micron_range": "2–10 µm (combustible), 3–25 µm (hidráulico)",
+      "key_concepts": [
+        "melt-blown controlado",
+        "distribución Gaussiana de poros",
+        "coalescencia",
+        "separación de agua",
+        "compatibilidad biodiesel B20",
+        "protección Common Rail"
+      ],
+      "applications": [
+        "Diésel ULSD",
+        "Biodiesel B5–B20",
+        "Motores Tier 4 Final",
+        "Sistemas Common Rail",
+        "Sistemas hidráulicos de alta presión"
+      ],
+      "service_interval_fuel": "300–500 horas o 15,000–25,000 km",
+      "service_interval_hydraulic": "1,000–2,000 horas",
+      "max_temperature": "80 °C (combustible), 120 °C (hidráulico)",
+      "efficiency_fuel": "≥ 98% @ 5µm",
+      "efficiency_hydraulic": "β₁₀ ≥ 200 (ISO 16889)",
+      "competitors": ["Donaldson Blue Fuel", "FRAM FP-Series", "Racor 500-Series"],
+      "file": "SYNTEPORE.md"
+    },
+    {
+      "id": "INTEKCORE",
+      "name": "INTEKCORE™",
+      "category": "Hydraulic Filter — High Pressure",
+      "prefix": "EH6",
+      "duty": ["HD Industrial"],
+      "type": "Fibra sintética multicapa + núcleo acero inoxidable",
+      "micron_range": "3–25 µm absoluto",
+      "key_concepts": [
+        "núcleo integrado",
+        "filtración absoluta ISO 16889",
+        "válvula de bypass calibrada",
+        "indicador magnético/eléctrico",
+        "resistencia 6,000 PSI colapsión"
+      ],
+      "applications": [
+        "Excavadoras pesadas",
+        "Grúas hidráulicas",
+        "Prensas industriales",
+        "Maquinaria CNC",
+        "Sistemas de dirección asistida"
+      ],
+      "service_interval": "500–2,000 horas",
+      "max_temperature": "120 °C",
+      "pressure_rating": "3,000 PSI operación, 4,500 PSI prueba",
+      "efficiency": "β₁₀ ≥ 200 (ISO 16889)",
+      "bypass_pressure": "3.5–6 bar",
+      "competitors": ["Donaldson HydroGuard", "Pall HC6-Series", "Parker Fulflo"],
+      "file": "INTEKCORE.md"
+    },
+    {
+      "id": "MICROKAPPA",
+      "name": "MICROKAPPA™",
+      "category": "Cabin Air Filter",
+      "prefix": "EC1",
+      "duty": ["HD", "LD"],
+      "type": "Microfibra PET electroestática + carbón activado",
+      "layers": 4,
+      "key_concepts": [
+        "microfibra electrostática",
+        "carga electroestática residual",
+        "carbón de coco 25–35 g",
+        "adsorción VOCs",
+        "capa antimicrobiana plata Ag⁺",
+        "HEPA-equivalent"
+      ],
+      "pollutants_captured": [
+        "Polen (≥99.5%)",
+        "Polvo fino PM10 (≥98%)",
+        "PM2.5 (≥90%)",
+        "Esporas de hongos (≥98%)",
+        "Bacterias (≥95%)",
+        "VOCs",
+        "NO₂ (gases diésel)",
+        "Ozono (O₃)"
+      ],
+      "applications": [
+        "Automóviles y SUVs",
+        "Camionetas",
+        "Autobuses urbanos",
+        "Camiones Clase 6–8",
+        "Maquinaria pesada con cabina"
+      ],
+      "service_interval": "12–15 meses o 15,000 km",
+      "max_temperature": "80 °C",
+      "efficiency_particles": "≥99.5% (>5 µm)",
+      "efficiency_pm25": "≥90%",
+      "efficiency_bacteria": "≥95%",
+      "competitors": ["FRAM Fresh Breeze", "Mann+Hummel FreciousPlus", "Bosch HEPA"],
+      "file": "MICROKAPPA.md"
+    },
+    {
+      "id": "MARINECLEAN",
+      "name": "MARINECLEAN™",
+      "category": "Marine Oil Filter",
+      "prefix": "EM9",
+      "duty": ["Marine"],
+      "type": "Celulosa sintética + epóxico marino ISO 12944 C5-M",
+      "micron_range": "15–25 µm",
+      "key_concepts": [
+        "recubrimiento anticorosión C5-M",
+        "sello EPDM triple labio",
+        "resistencia vibración marina",
+        "compatibilidad agua salada",
+        "válvula anti-retorno robusto"
+      ],
+      "applications": [
+        "Motores intraborda gasolina/diésel",
+        "Motores fueraborda 4T",
+        "Propulsión comercial",
+        "Generadores marinos"
+      ],
+      "service_interval": "100–200 horas o fin de temporada",
+      "max_temperature": "130 °C",
+      "pressure_rating": "150 PSI",
+      "corrosion_resistance": "≥500 horas ASTM B117 (niebla salina)",
+      "efficiency": "≥97%",
+      "competitors": ["Sierra Marine", "MerCruiser", "Volvo Penta", "Yamaha Marine"],
+      "file": "MARINECLEAN.md"
+    },
+    {
+      "id": "COOLTECH",
+      "name": "COOLTECH™",
+      "category": "Coolant Filter with SCA Dosing",
+      "prefix": "EW7",
+      "duty": ["HD"],
+      "type": "Celulosa sintética + pastilla SCA soluble",
+      "micron_range": "15–40 µm",
+      "key_concepts": [
+        "dosificación controlada de SCA",
+        "inhibidores de corrosión",
+        "agentes anticavitación",
+        "estabilización de pH",
+        "antiespumante integrado"
+      ],
+      "sca_delivery": "1.0–1.5 unidades SCA/galón",
+      "sca_duration": "300–600 horas",
+      "applications": [
+        "Camiones Clase 8",
+        "Autobuses HD",
+        "Tractores agrícolas",
+        "Excavadoras",
+        "Grupos electrógenos"
+      ],
+      "service_interval": "300 horas o 15,000 km",
+      "max_temperature": "120 °C",
+      "efficiency": "≥95%",
+      "coolant_compatibility": ["Verde convencional", "Amarillo HOAT", "Rojo OAT (revisar)"],
+      "competitors": ["Fleetguard WF-Series", "Donaldson P552100", "Baldwin BW-Series"],
+      "file": "COOLTECH.md"
+    },
+    {
+      "id": "AQUAGUARD",
+      "name": "AQUAGUARD™",
+      "category": "Turbine Filter / Water-Fuel Separator",
+      "prefix": ["ET9", "ES9"],
+      "duty": ["HD Industrial"],
+      "type": "Fibra vidrio submicrónica + tratamiento coalescente Aquabloc®",
+      "micron_range": "2–30 µm",
+      "key_concepts": [
+        "separación ciclónica",
+        "coalescencia de microgotitas",
+        "eficiencia agua 99%",
+        "tratamiento hidrofóbico",
+        "múltiples intervalos turbina"
+      ],
+      "water_separation_efficiency": "≥99% (ASTM D7576)",
+      "residual_water": "<100 ppm",
+      "applications": [
+        "Turbinas de gas",
+        "Turbinas de vapor",
+        "Motores marinos HD",
+        "Equipos comerciales",
+        "Maquinaria minería"
+      ],
+      "service_interval_turbine": "500–1,000 FH (según modelo)",
+      "service_interval_separator": "200–300 horas",
+      "max_temperature": "60 °C",
+      "max_pressure": "150 PSI",
+      "efficiency": "β₁₀ ≥ 200 (hidráulico)",
+      "turbine_models": ["2020PM (1,000 FH)", "2020TM (900 FH)", "2020SM (500 FH)"],
+      "competitors": ["Racor Turbine Series", "Donaldson Aquabloc", "Parker Racor R-Series"],
+      "file": "AQUAGUARD.md"
+    },
+    {
+      "id": "DRYCORE",
+      "name": "DRYCORE™",
+      "category": "Air Dryer — Pneumatic",
+      "prefix": "ED4",
+      "duty": ["HD"],
+      "type": "Sílice gel activado + prefiltro coalescencia",
+      "key_concepts": [
+        "adsorción de humedad",
+        "regeneración automática",
+        "prefiltro coalescencia integrado",
+        "punto de rocío ≤-40°C",
+        "ciclos de purga"
+      ],
+      "desiccant_capacity": "≥40 g agua/ciclo",
+      "desiccant_material": "Sílice gel + tamiz molecular 13X",
+      "dew_point_pressure": "≤-40 °C",
+      "applications": [
+        "Sistemas de frenos de aire camiones",
+        "Autobuses",
+        "Remolques neumáticos",
+        "Tractores agrícolas",
+        "Compresores estacionarios"
+      ],
+      "service_interval": "12–24 meses o 300,000 ciclos",
+      "max_temperature": "80 °C (aire entrante)",
+      "max_pressure": "13 bar",
+      "purge_frequency": "Automática o manual",
+      "competitors": ["Bendix DesiccantPak", "Wabco DryGuard", "Haldex Desiccant"],
+      "file": "DRYCORE.md"
+    },
+    {
+      "id": "GASULTRA",
+      "name": "GASULTRA™",
+      "category": "Gas Filtration — Ultra-High Purity",
+      "prefix": null,
+      "duty": ["Industrial"],
+      "type": "Fibra borosilicato submicrónica multicapa",
+      "micron_range": "0.01–1 µm",
+      "key_concepts": [
+        "separación ciclónica",
+        "filtración HEPA H14 (99.99%)",
+        "inercia química total",
+        "tolerancia térmica extrema",
+        "coalescencia de aerosoles"
+      ],
+      "efficiency": "≥99.99% @ 0.3 µm",
+      "hepa_equivalent": "H14",
+      "pressure_rating_gas": "250 bar (GNC)",
+      "temperature_range": "-60 °C a +200 °C",
+      "applications": [
+        "Vehículos GNC/CNG",
+        "Distribución GLP",
+        "Turbinas industriales",
+        "Gases de proceso químico",
+        "Gases medicinales"
+      ],
+      "service_interval": "6–12 meses",
+      "oil_removal_efficiency": "≥99.9% (<0.01 ppm)",
+      "material_compatibility": ["CH₄", "C₃H₈", "C₄H₁₀", "H₂", "N₂", "CO₂"],
+      "competitors": ["Parker Gas Filters", "Donaldson DF-Series", "Pall Gas Coalescer"],
+      "file": "GASULTRA.md"
+    },
+    {
+      "id": "BLUECLEAN",
+      "name": "BLUECLEAN™",
+      "category": "DEF / AdBlue® Filter — Emissions SCR",
+      "prefix": null,
+      "duty": ["HD", "LD (diésel)"],
+      "type": "Fibra polipropileno puro 100% (sin metales)",
+      "micron_range": "5–20 µm",
+      "key_concepts": [
+        "polipropileno inercia total",
+        "sin cobre/zinc/latón",
+        "prevención cristalización urea",
+        "protección inyector SCR",
+        "compatibilidad AdBlue/DEF"
+      ],
+      "fluid": "DEF (Diesel Exhaust Fluid) / AdBlue®",
+      "urea_concentration": "32.5%",
+      "applications": [
+        "Camiones Clase 8 Euro VI",
+        "Autobuses HD",
+        "Maquinaria de construcción Tier 4",
+        "Tractores agrícolas Stage V",
+        "Automóviles Euro 6"
+      ],
+      "service_interval": "500 horas o coincidiendo cambio aceite",
+      "max_temperature": "70 °C",
+      "max_pressure": "20 PSI",
+      "efficiency": "≥98% @ 10 µm",
+      "material_restrictions": ["No cobre", "No zinc", "No latón", "No acero sin recubrimiento"],
+      "competitors": ["Donaldson DEF Filter", "Parker DEF Filtration", "Cummins FS DEF"],
+      "file": "BLUECLEAN.md"
+    }
+  ],
+  "reference_documents": [
+    {
+      "id": "INDEX",
+      "title": "Technology Index",
+      "description": "Master index with technology categories, prefixes, and comparative tables",
+      "file": "INDEX.md"
+    },
+    {
+      "id": "TECHNICAL_FOUNDATIONS",
+      "title": "Technical Foundations",
+      "description": "Fluid dynamics, capture mechanisms, permeability, traceability, mathematical modeling",
+      "sections": [
+        "Dynamics of solids and liquids",
+        "Capture mechanisms (sieving, interception, inertial impact, brownian diffusion)",
+        "Permeability and pressure drop",
+        "Traceability systems",
+        "Filter life modeling"
+      ],
+      "file": "TECHNICAL_FOUNDATIONS.md"
+    },
+    {
+      "id": "MATERIALS_ENGINEERING",
+      "title": "Materials Engineering",
+      "description": "Material science, fiber properties, surface treatments, durability, chemical compatibility",
+      "sections": [
+        "Material families (cellulose, polymers, glass, activated carbon)",
+        "Chemical properties and mechanical resistance",
+        "Surface treatments (impregnation, electrostatic charge, coalescence)",
+        "Thermal stability and aging",
+        "QC testing of materials"
+      ],
+      "file": "MATERIALS_ENGINEERING.md"
+    }
+  ],
+  "knowledge_topics": {
+    "physics": [
+      "Adsorción (física y química)",
+      "Fuerzas de Van der Waals",
+      "Difusión Browniana",
+      "Dinámica de fluidos (Ecuación de Darcy, Reynolds)",
+      "Caída de presión progresiva",
+      "Fatiga hidráulica (ciclos de pulso)",
+      "Electrostática (carga de electretos)"
+    ],
+    "chemistry": [
+      "Compatibilidad de fluidos",
+      "Resistencia química (corrosión, hidrólisis)",
+      "Adsorción de VOCs",
+      "Separación agua-combustible",
+      "TBN vs. Desgarre corrosivo",
+      "Reología de lubricantes",
+      "Cizallamiento de polímeros viscosidad"
+    ],
+    "engineering": [
+      "Resistencia mecánica (esfuerzo, tensión)",
+      "Permeabilidad y porosidad",
+      "Distribución de tamaño de poro",
+      "Eficiencia de filtración (β-ratio, ISO 4548, ISO 5011)",
+      "Modelado de vida útil",
+      "Envejecimiento acelerado (ASTM D2570)",
+      "Trazabilidad y control de calidad"
+    ]
+  },
+  "api_endpoints": {
+    "get_all_technologies": "/api/elimfilters/technologies",
+    "get_technology": "/api/elimfilters/technologies/{id}",
+    "search_by_prefix": "/api/elimfilters/search?prefix=EL8",
+    "search_by_concept": "/api/elimfilters/search?concept=adsorcion",
+    "get_document": "/api/elimfilters/docs/{document_id}",
+    "get_competitors": "/api/elimfilters/competitors?technology=NANOFORCE",
+    "get_applications": "/api/elimfilters/applications?duty=HD"
+  }
+}

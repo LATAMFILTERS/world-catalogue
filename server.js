@@ -12,6 +12,7 @@ app.use(express.static('www')); // Serve static files from public/
 // Import new routes
 const chatRoutes = require('./routes/chat.routes');
 const whatsappRoutes = require('./routes/whatsapp.routes');
+const knowledgeRoutes = require('./routes/knowledge.routes');
 
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
@@ -1004,9 +1005,13 @@ app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
 
+// Register knowledge API for AI agents
+app.use('/api/knowledge', knowledgeRoutes);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
   console.log(`✅ Chatbot service running`);
   console.log(`✅ WhatsApp webhook listening on /webhook/whatsapp`);
+  console.log(`✅ ELIMFILTERS Knowledge API available at /api/knowledge`);
 });
