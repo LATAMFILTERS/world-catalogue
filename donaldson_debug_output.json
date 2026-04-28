@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-04-28T14:13:55.989Z",
+  "source": "Donaldson Shop (Debug)",
+  "products": [
+    {
+      "part": "P169071",
+      "dbl": "DBL0832",
+      "url": "https://shop.donaldson.com/store/product/P169071/",
+      "success": true,
+      "steps": [
+        "Navegando a: https://shop.donaldson.com/store/product/P169071/",
+        "✅ Página cargada",
+        "✅ Espera de 2s completada",
+        "Diagnostics: {\"showMoreButton\":{\"byId\":false,\"allButtons\":[]},\"specTable\":{\"productAttrSection\":false,\"specTable\":false,\"specTableRows\":0,\"allTableRows\":0},\"hiddenContent\":{\"hiddenByStyle\":0,\"collapsedSections\":0},\"hiddenTableRows\":0}",
+        "❌ Show More button NO encontrado por ID",
+        "✅ 1 specs extraídas"
+      ],
+      "specs": {
+        "_error": "No table found in .productAttrSection"
+      },
+      "error": null
+    },
+    {
+      "part": "P173489",
+      "dbl": "DBL3998",
+      "url": "https://shop.donaldson.com/store/product/P173489/",
+      "success": true,
+      "steps": [
+        "Navegando a: https://shop.donaldson.com/store/product/P173489/",
+        "✅ Página cargada",
+        "✅ Espera de 2s completada",
+        "Diagnostics: {\"showMoreButton\":{\"byId\":false,\"allButtons\":[]},\"specTable\":{\"productAttrSection\":false,\"specTable\":false,\"specTableRows\":0,\"allTableRows\":0},\"hiddenContent\":{\"hiddenByStyle\":0,\"collapsedSections\":0},\"hiddenTableRows\":0}",
+        "❌ Show More button NO encontrado por ID",
+        "✅ 1 specs extraídas"
+      ],
+      "specs": {
+        "_error": "No table found in .productAttrSection"
+      },
+      "error": null
+    },
+    {
+      "part": "P502007",
+      "dbl": "DBL4560",
+      "url": "https://shop.donaldson.com/store/product/P502007/",
+      "success": true,
+      "steps": [
+        "Navegando a: https://shop.donaldson.com/store/product/P502007/",
+        "✅ Página cargada",
+        "✅ Espera de 2s completada",
+        "Diagnostics: {\"showMoreButton\":{\"byId\":false,\"allButtons\":[]},\"specTable\":{\"productAttrSection\":false,\"specTable\":false,\"specTableRows\":0,\"allTableRows\":0},\"hiddenContent\":{\"hiddenByStyle\":0,\"collapsedSections\":0},\"hiddenTableRows\":0}",
+        "❌ Show More button NO encontrado por ID",
+        "✅ 1 specs extraídas"
+      ],
+      "specs": {
+        "_error": "No table found in .productAttrSection"
+      },
+      "error": null
+    },
+    {
+      "part": "P502008",
+      "dbl": "DBL7300",
+      "url": "https://shop.donaldson.com/store/product/P502008/",
+      "success": true,
+      "steps": [
+        "Navegando a: https://shop.donaldson.com/store/product/P502008/",
+        "✅ Página cargada",
+        "✅ Espera de 2s completada",
+        "Diagnostics: {\"showMoreButton\":{\"byId\":false,\"allButtons\":[]},\"specTable\":{\"productAttrSection\":false,\"specTable\":false,\"specTableRows\":0,\"allTableRows\":0},\"hiddenContent\":{\"hiddenByStyle\":0,\"collapsedSections\":0},\"hiddenTableRows\":0}",
+        "❌ Show More button NO encontrado por ID",
+        "✅ 1 specs extraídas"
+      ],
+      "specs": {
+        "_error": "No table found in .productAttrSection"
+      },
+      "error": null
+    }
+  ]
+}
