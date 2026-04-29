@@ -11,6 +11,7 @@ import csv
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
@@ -127,7 +128,7 @@ def extract_specifications(driver, code):
     """Extrae tabla de especificaciones de la página"""
     specs = {}
     try:
-        # Buscar todas las filas de la tabla principal
+        # Estrategia 1: Buscar todas las filas de tabla
         tables = driver.find_elements(By.TAG_NAME, "table")
         for table in tables:
             rows = table.find_elements(By.TAG_NAME, "tr")
@@ -139,7 +140,7 @@ def extract_specifications(driver, code):
                     if key and value:
                         specs[key] = value
 
-        # Extraer también desde divs de especificación
+        # Estrategia 2: Divs con clase spec-item
         spec_divs = driver.find_elements(By.CLASS_NAME, "spec-item")
         for div in spec_divs:
             try:
@@ -149,6 +150,29 @@ def extract_specifications(driver, code):
                     specs[label] = value
             except:
                 pass
+
+        # Estrategia 3: Divs con atributos data-*
+        all_divs = driver.find_elements(By.TAG_NAME, "div")
+        for div in all_divs:
+            try:
+                label = div.get_attribute("data-label") or div.get_attribute("data-spec")
+                value = div.get_attribute("data-value") or div.get_attribute("data-content")
+                if label and value:
+                    specs[label] = value
+            except:
+                pass
+
+        # Estrategia 4: Párrafos con contenido de especificación
+        paragraphs = driver.find_elements(By.TAG_NAME, "p")
+        for p in paragraphs:
+            text = p.text.strip()
+            if ":" in text and len(text) < 200:
+                parts = text.split(":", 1)
+                if len(parts) == 2:
+                    key = parts[0].strip()
+                    value = parts[1].strip()
+                    if key and value and len(key) < 50:
+                        specs[key] = value
     except Exception as e:
         pass
 
@@ -158,21 +182,40 @@ def extract_oem_codes(driver, code):
     """Extrae códigos OEM cross-reference"""
     oem_codes = {}
     try:
-        # Buscar tablas con cross-reference
+        # Estrategia 1: Buscar tablas con cross-reference
         tables = driver.find_elements(By.TAG_NAME, "table")
         for table in tables:
             try:
-                header = table.find_element(By.XPATH, ".//th[contains(text(), 'Manufacturer') or contains(text(), 'OEM')]")
-                rows = table.find_elements(By.TAG_NAME, "tr")[1:]  # Skip header
-                for row in rows:
-                    cells = row.find_elements(By.TAG_NAME, "td")
-                    if len(cells) >= 2:
-                        manufacturer = cells[0].text.strip()
-                        part_number = cells[1].text.strip()
-                        if manufacturer and part_number:
-                            if manufacturer not in oem_codes:
-                                oem_codes[manufacturer] = []
-                            oem_codes[manufacturer].append(part_number)
+                # Buscar header que contenga OEM o Manufacturer
+                header_text = table.text.lower()
+                if "manufacturer" in header_text or "oem" in header_text or "cross" in header_text:
+                    rows = table.find_elements(By.TAG_NAME, "tr")[1:]  # Skip header
+                    for row in rows:
+                        cells = row.find_elements(By.TAG_NAME, "td")
+                        if len(cells) >= 2:
+                            manufacturer = cells[0].text.strip()
+                            part_number = cells[1].text.strip()
+                            if manufacturer and part_number:
+                                if manufacturer not in oem_codes:
+                                    oem_codes[manufacturer] = []
+                                oem_codes[manufacturer].append(part_number)
+            except:
+                pass
+
+        # Estrategia 2: Buscar divs con clase oem o cross-reference
+        oem_divs = driver.find_elements(By.XPATH, "//*[contains(@class, 'oem') or contains(@class, 'cross')]")
+        for div in oem_divs:
+            try:
+                text = div.text.strip()
+                if ":" in text:
+                    parts = text.split(":", 1)
+                    if len(parts) == 2:
+                        mfr = parts[0].strip()
+                        code_num = parts[1].strip()
+                        if mfr and code_num and len(mfr) < 50 and len(code_num) < 50:
+                            if mfr not in oem_codes:
+                                oem_codes[mfr] = []
+                            oem_codes[mfr].append(code_num)
             except:
                 pass
     except Exception as e:
@@ -234,13 +277,50 @@ def scrape_donaldson_code(driver, code):
         driver.get(url)
         time.sleep(3)
 
-        # Buscar el primer resultado
-        products = driver.find_elements(By.CLASS_NAME, "product-item")
+        # Buscar el primer resultado - múltiples selectores
+        products = None
+        wait = WebDriverWait(driver, 10)
+
+        try:
+            # Intentar class="product-item"
+            products = driver.find_elements(By.CLASS_NAME, "product-item")
+        except:
+            pass
+
+        if not products:
+            try:
+                # Intentar class="product"
+                products = driver.find_elements(By.CLASS_NAME, "product")
+            except:
+                pass
+
+        if not products:
+            try:
+                # Intentar xpath universal para links de productos
+                products = driver.find_elements(By.XPATH, "//a[contains(@href, '/store/')]")
+            except:
+                pass
+
         if not products:
             return None
 
-        # Click en el primer producto
-        products[0].click()
+        # Click con múltiples estrategias
+        try:
+            # Estrategia 1: Click normal
+            wait.until(EC.element_to_be_clickable((By.XPATH, f"({products[0].get_attribute('xpath')})")))
+            products[0].click()
+        except:
+            try:
+                # Estrategia 2: JavaScript click
+                driver.execute_script("arguments[0].click();", products[0])
+            except:
+                try:
+                    # Estrategia 3: Acción alternativa
+                    from selenium.webdriver.common.action_chains import ActionChains
+                    ActionChains(driver).move_to_element(products[0]).click().perform()
+                except:
+                    return None
+
         time.sleep(3)
 
         data = {
