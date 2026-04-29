@@ -188,9 +188,12 @@ def run_donaldson_fuel_filters():
 
         page = context.pages[0]
         page.goto(FUEL_FILTERS_URL)
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(3000)
 
-        input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
+        try:
+            input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
+        except EOFError:
+            print("👉 Running in non-interactive mode, continuing automatically...")
 
         results_file = "fuel_filters_results.json"
         results = load_existing_results(results_file)
