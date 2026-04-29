@@ -1,0 +1,146 @@
+{
+  "timestamp": "2026-04-28T13:27:54.030Z",
+  "donaldson_products": 32,
+  "elimfilters_mapping": [
+    {
+      "index": 1,
+      "donaldson_part": "P167405",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P167405/"
+    },
+    {
+      "index": 2,
+      "donaldson_part": "P167670",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P167670/"
+    },
+    {
+      "index": 3,
+      "donaldson_part": "P167947",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P167947/"
+    },
+    {
+      "index": 4,
+      "donaldson_part": "P169071",
+      "filter_type": "LUBE FILTER",
+      "elimfilters_equivalent": "DURATECH™",
+      "url": "https://shop.donaldson.com/store/product/P169071/"
+    },
+    {
+      "index": 5,
+      "donaldson_part": "P173489",
+      "filter_type": "HYDRAULIC FILTER, CARTRIDGE",
+      "elimfilters_equivalent": "INTEKCORE™",
+      "url": "https://shop.donaldson.com/store/product/P173489/"
+    },
+    {
+      "index": 6,
+      "donaldson_part": "P173998",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P173998/"
+    },
+    {
+      "index": 7,
+      "donaldson_part": "P177300",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177300/"
+    },
+    {
+      "index": 8,
+      "donaldson_part": "P177345",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177345/"
+    },
+    {
+      "index": 9,
+      "donaldson_part": "P177349",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177349/"
+    },
+    {
+      "index": 10,
+      "donaldson_part": "P177367",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177367/"
+    },
+    {
+      "index": 11,
+      "donaldson_part": "P177483",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177483/"
+    },
+    {
+      "index": 12,
+      "donaldson_part": "P177739",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P177739/"
+    },
+    {
+      "index": 13,
+      "donaldson_part": "P179353",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P179353/"
+    },
+    {
+      "index": 14,
+      "donaldson_part": "P502007",
+      "filter_type": "LUBE FILTER",
+      "elimfilters_equivalent": "DURATECH™",
+      "url": "https://shop.donaldson.com/store/product/P502007/"
+    },
+    {
+      "index": 15,
+      "donaldson_part": "P502008",
+      "filter_type": "LUBE FILTER",
+      "elimfilters_equivalent": "DURATECH™",
+      "url": "https://shop.donaldson.com/store/product/P502008/"
+    },
+    {
+      "index": 16,
+      "donaldson_part": "P502009",
+      "filter_type": "LUBE FILTER",
+      "elimfilters_equivalent": "DURATECH™",
+      "url": "https://shop.donaldson.com/store/product/P502009/"
+    },
+    {
+      "index": 17,
+      "donaldson_part": "P502015",
+      "filter_type": "LUBE FILTER",
+      "elimfilters_equivalent": "DURATECH™",
+      "url": "https://shop.donaldson.com/store/product/P502015/"
+    },
+    {
+      "index": 18,
+      "donaldson_part": "P557505",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P557505/"
+    },
+    {
+      "index": 19,
+      "donaldson_part": "P581330",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P581330/"
+    },
+    {
+      "index": 20,
+      "donaldson_part": "P582090",
+      "filter_type": "UNKNOWN",
+      "elimfilters_equivalent": "REVIEW MANUAL",
+      "url": "https://shop.donaldson.com/store/product/P582090/"
+    }
+  ]
+}

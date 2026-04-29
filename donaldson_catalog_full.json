@@ -1,0 +1,268 @@
+{
+  "timestamp": "2026-04-28T13:34:15.819Z",
+  "source": "Donaldson Shop Catalog",
+  "catalog_url": "https://shop.donaldson.com/store/en-us/search?N=426772457&st=parts",
+  "total_products": 19,
+  "products": [
+    {
+      "partNumber": "P581330",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck0&dpn=P581330-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck0&dpn=P581330-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P173998",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck1&dpn=P173998-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck1&dpn=P173998-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P582090",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck2&dpn=P582090-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck2&dpn=P582090-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177300",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck3&dpn=P177300-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck3&dpn=P177300-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177345",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck4&dpn=P177345-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck4&dpn=P177345-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177349",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck5&dpn=P177349-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck5&dpn=P177349-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177367",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck6&dpn=P177367-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck6&dpn=P177367-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P167405",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck7&dpn=P167405-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck7&dpn=P167405-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177483",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck8&dpn=P177483-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck8&dpn=P177483-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P557505",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck9&dpn=P557505-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck9&dpn=P557505-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P167670",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck10&dpn=P167670-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck10&dpn=P167670-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P177739",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck11&dpn=P177739-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck11&dpn=P177739-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P179353",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck12&dpn=P179353-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck12&dpn=P179353-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      },
+      "filterType": "LUBE FILTER, SPIN-ON FULL FLOW DONALDSON BLUE"
+    },
+    {
+      "partNumber": "P167947",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck13&dpn=P167947-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck13&dpn=P167947-100-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    },
+    {
+      "partNumber": "P169071",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck14&dpn=P169071-001-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck14&dpn=P169071-001-541&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    },
+    {
+      "partNumber": "P173489",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck15&dpn=P173489    710&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck15&dpn=P173489    710&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    },
+    {
+      "partNumber": "P502007",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck16&dpn=P502007-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck16&dpn=P502007-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    },
+    {
+      "partNumber": "P502008",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck17&dpn=P502008-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck17&dpn=P502008-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    },
+    {
+      "partNumber": "P502009",
+      "name": "/store/service/getPrice.jsp?id=searchListPartCheck18&dpn=P502009-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true",
+      "context": "``` /store/service/getPrice.jsp?id=searchListPartCheck18&dpn=P502009-288-140&viewPriceInv=true&pricePermission=true&inventoryPermission=true&addToCartFlag=true ```  Add To Cart ",
+      "specs": {
+        "micron": null,
+        "efficiency": null,
+        "pressure": null,
+        "temperature": null,
+        "oem": [],
+        "duty": "UNKNOWN"
+      }
+    }
+  ]
+}

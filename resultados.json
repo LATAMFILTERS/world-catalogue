@@ -1,0 +1,751 @@
+[
+    {
+        "base_code": "P781466",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "AGRALE",
+                "code": "6008099011006"
+            },
+            {
+                "brand": "ALCO",
+                "code": "SP800"
+            },
+            {
+                "brand": "ASKAM KAMYON",
+                "code": "25242T"
+            },
+            {
+                "brand": "ASTRA",
+                "code": "107163"
+            },
+            {
+                "brand": "BELL",
+                "code": "220949"
+            }
+        ],
+        "apps": [
+            {
+                "make": "ASTRA 42.33",
+                "model": "2007",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2007",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2005",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.38",
+                "model": "1996",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P783753",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "ALCO",
+                "code": "SP8001"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "0986628252"
+            },
+            {
+                "brand": "CLEAN",
+                "code": "DE2203"
+            },
+            {
+                "brand": "FIAAM",
+                "code": "FT5651"
+            },
+            {
+                "brand": "FIAAM",
+                "code": "FTAQ5561"
+            },
+            {
+                "brand": "KNECHT",
+                "code": "AL14"
+            }
+        ],
+        "apps": [
+            {
+                "make": "RENAULT VI MIDLUM 135-07",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI MIDLUM 135-08",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI MIDLUM 135-09",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI MIDLUM 135-10",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI MIDLUM 150-08",
+                "model": "2000",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P951411",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "0986628259"
+            },
+            {
+                "brand": "DAF",
+                "code": "1891431"
+            },
+            {
+                "brand": "DAF",
+                "code": "1527755"
+            },
+            {
+                "brand": "DAF",
+                "code": "1681575"
+            },
+            {
+                "brand": "DAF",
+                "code": "1821580"
+            },
+            {
+                "brand": "DAF",
+                "code": "2124657"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K015857"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K039455"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K042777"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K039455X00"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K010732"
+            },
+            {
+                "brand": "LEKANG",
+                "code": "79955"
+            },
+            {
+                "brand": "TATRA",
+                "code": "1527755"
+            }
+        ],
+        "apps": [
+            {
+                "make": "BOVA DD130-430XE",
+                "model": "2005",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA DD130-480XE",
+                "model": "2005",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA DD138-430XE",
+                "model": "2005",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA DD138-480XE",
+                "model": "2005",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA FHD104-365",
+                "model": "2006",
+                "engine": "BUS"
+            }
+        ]
+    },
+    {
+        "base_code": "P951415",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "ALCO",
+                "code": "SP8007"
+            },
+            {
+                "brand": "DAF",
+                "code": "1527760"
+            },
+            {
+                "brand": "KNECHT",
+                "code": "AL26"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K005686"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K014712"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K0005686"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K039453"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K037065"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K053220"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K053221"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K010243"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K025912"
+            },
+            {
+                "brand": "LAUTRETTE",
+                "code": "ELD8104"
+            }
+        ],
+        "apps": [
+            {
+                "make": "RENAULT VI C250",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI C280",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI C320",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI C380",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "RENAULT VI C430",
+                "model": "2013",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P951417",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "ALCO",
+                "code": "SP8002"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "0986628253"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "0986628257"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "986628257"
+            },
+            {
+                "brand": "CATERPILLAR",
+                "code": "1101383"
+            },
+            {
+                "brand": "COOPERS",
+                "code": "EG1250"
+            },
+            {
+                "brand": "CROSLAND",
+                "code": "9386"
+            }
+        ],
+        "apps": [
+            {
+                "make": "BOVA HD120-340XE",
+                "model": "2001",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA HD120-380XE",
+                "model": "2001",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA HD122-340XE",
+                "model": "2001",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA HD122-380XE",
+                "model": "2001",
+                "engine": "BUS"
+            },
+            {
+                "make": "BOVA HD131-430XE",
+                "model": "2001",
+                "engine": "BUS"
+            }
+        ]
+    },
+    {
+        "base_code": "P951419",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "HINO",
+                "code": "S47ABEV060"
+            },
+            {
+                "brand": "HINO",
+                "code": "S47ABEV070"
+            },
+            {
+                "brand": "SCANIA",
+                "code": "2484686"
+            },
+            {
+                "brand": "SCANIA",
+                "code": "2081360"
+            },
+            {
+                "brand": "SCANIA",
+                "code": "1774598"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012262"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012261"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4324109282"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012282"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012281"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329112282"
+            }
+        ],
+        "apps": [
+            {
+                "make": "SCANIA - IRIZAR 11, 12 & 18",
+                "model": "-",
+                "engine": "BUS"
+            },
+            {
+                "make": "SCANIA - IRIZAR 11, 12 & 18",
+                "model": "-",
+                "engine": "BUS"
+            },
+            {
+                "make": "SCANIA - IRIZAR 11, 12 & 18",
+                "model": "-",
+                "engine": "BUS"
+            },
+            {
+                "make": "SCANIA - IRIZAR 11, 12 & 18",
+                "model": "-",
+                "engine": "BUS"
+            },
+            {
+                "make": "SCANIA - IRIZAR 11, 12 & 18",
+                "model": "-",
+                "engine": "BUS"
+            }
+        ]
+    },
+    {
+        "base_code": "P952185",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "FORD",
+                "code": "2C462B915AA"
+            },
+            {
+                "brand": "IVECO",
+                "code": "500055322"
+            },
+            {
+                "brand": "MAN",
+                "code": "81521550043"
+            },
+            {
+                "brand": "MAN",
+                "code": "81521550045"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "4324102442"
+            },
+            {
+                "brand": "RENAULT VI",
+                "code": "5001865037"
+            }
+        ],
+        "apps": [
+            {
+                "make": "ASTRA 42.33",
+                "model": "2007",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2000",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2007",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.36",
+                "model": "2005",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "ASTRA 42.38",
+                "model": "1996",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P953571",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "AGRALE",
+                "code": "6008099011006"
+            },
+            {
+                "brand": "ALCO",
+                "code": "SP800"
+            },
+            {
+                "brand": "ARVIN",
+                "code": "R950011"
+            },
+            {
+                "brand": "ASKAM KAMYON",
+                "code": "25242T"
+            },
+            {
+                "brand": "ASTRA",
+                "code": "107163"
+            }
+        ],
+        "apps": [
+            {
+                "make": "DENNIS 200EV Electric",
+                "model": "2017",
+                "engine": "BUS"
+            },
+            {
+                "make": "DENNIS 400EV",
+                "model": "2023",
+                "engine": "BUS"
+            },
+            {
+                "make": "DENNIS DART 300",
+                "model": "2017",
+                "engine": "BUS"
+            },
+            {
+                "make": "DENNIS DART 500",
+                "model": "2017",
+                "engine": "BUS"
+            },
+            {
+                "make": "FENDT 207 F/V VARIO",
+                "model": "2017",
+                "engine": "TRACTOR"
+            }
+        ]
+    },
+    {
+        "base_code": "P956986",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "DAIMLER",
+                "code": "A0004292697"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K163455"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K102196"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K102152"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "0004292097"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "4292097"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "A0004292097"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "0004292197"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "A0004293197"
+            },
+            {
+                "brand": "MERCEDES-BENZ",
+                "code": "A0004292197"
+            },
+            {
+                "brand": "MITSUBISHI FUSO",
+                "code": "MX937636"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012512"
+            }
+        ],
+        "apps": [
+            {
+                "make": "MERCEDES-BENZ ACTROS 1824",
+                "model": "2012",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ ACTROS 1827",
+                "model": "2012",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ ACTROS 1830",
+                "model": "2012",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ ACTROS 1832",
+                "model": "2012",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ ACTROS 1835",
+                "model": "2012",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P957032",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "ALCO",
+                "code": "SP8003"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "1487434011"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "1487434010"
+            },
+            {
+                "brand": "BOSCH-REXROTH",
+                "code": "1487434903"
+            },
+            {
+                "brand": "KNECHT",
+                "code": "AL23"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "II38789F"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "II38789F004"
+            },
+            {
+                "brand": "MAN",
+                "code": "81521020016"
+            }
+        ],
+        "apps": [
+            {
+                "make": "MERCEDES-BENZ U216",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ U219",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ U318",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ U319",
+                "model": "2013",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "MERCEDES-BENZ U323",
+                "model": "2013",
+                "engine": "TRUCK"
+            }
+        ]
+    },
+    {
+        "base_code": "P959971",
+        "od": null,
+        "len": null,
+        "t_desc": null,
+        "cross": [
+            {
+                "brand": "DAF",
+                "code": "1867000"
+            },
+            {
+                "brand": "DAF",
+                "code": "1943158"
+            },
+            {
+                "brand": "DAF",
+                "code": "1925363"
+            },
+            {
+                "brand": "KNORR-BREMSE",
+                "code": "K096383"
+            },
+            {
+                "brand": "WABCO",
+                "code": "4329012532"
+            }
+        ],
+        "apps": [
+            {
+                "make": "DAF CF ELECTRIC",
+                "model": "2019",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "DAF CF86 230",
+                "model": "2016",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "DAF CF86 260",
+                "model": "2016",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "DAF CF86 280",
+                "model": "2015",
+                "engine": "TRUCK"
+            },
+            {
+                "make": "DAF CF86 290",
+                "model": "2013",
+                "engine": "TRUCK"
+            }
+        ]
+    }
+]

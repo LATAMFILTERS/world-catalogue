@@ -1,34 +1,32 @@
 {
-  "timestamp": "2026-04-28T22:46:59.184801",
-  "source": "Donaldson 365 Lube Filters Complete",
-  "mode": "complete",
-  "total_codes": 348,
+  "timestamp": "2026-04-28T23:00:58.491777",
+  "source": "Merged from existing Donaldson JSONs + Playwright",
+  "total_codes": 196,
+  "filled_with_data": 3,
   "codes": [
     {
       "donaldson_code": "DBL0832",
       "elimfilters_sku": "EL80832",
       "duty": "HD",
       "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
+      "micron": 15,
+      "efficiency": "97.6%",
+      "media_type": "Synteq XP",
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL3998",
       "elimfilters_sku": "EL83998",
       "duty": "HD",
       "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
+      "micron": 15,
+      "efficiency": "99%",
+      "media_type": "Synteq",
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL4560",
@@ -40,21 +38,19 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7300",
       "elimfilters_sku": "EL87300",
       "duty": "HD",
       "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
+      "micron": 15,
+      "efficiency": "99%",
+      "media_type": "Synteq",
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7345",
@@ -66,8 +62,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7349",
@@ -79,8 +74,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7367",
@@ -92,8 +86,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7405",
@@ -105,8 +98,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7483",
@@ -118,8 +110,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7505",
@@ -131,8 +122,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7670",
@@ -144,8 +134,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7739",
@@ -157,8 +146,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7900",
@@ -170,8 +158,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "DBL7947",
@@ -183,8 +170,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502007",
@@ -196,8 +182,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502008",
@@ -209,8 +194,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502009",
@@ -222,8 +206,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502015",
@@ -235,8 +218,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502016",
@@ -248,8 +230,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502017",
@@ -261,8 +242,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502019",
@@ -274,8 +254,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502020",
@@ -287,8 +266,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502022",
@@ -300,8 +278,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502024",
@@ -313,8 +290,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502039",
@@ -326,8 +302,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502042",
@@ -339,8 +314,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502043",
@@ -352,8 +326,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502049",
@@ -365,8 +338,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502051",
@@ -378,8 +350,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502057",
@@ -391,8 +362,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502058",
@@ -404,8 +374,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502060",
@@ -417,8 +386,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502061",
@@ -430,8 +398,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502063",
@@ -443,8 +410,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502067",
@@ -456,8 +422,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502069",
@@ -469,8 +434,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502072",
@@ -482,8 +446,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502076",
@@ -495,8 +458,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502083",
@@ -508,8 +470,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502093",
@@ -521,8 +482,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502107",
@@ -534,8 +494,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502180",
@@ -547,8 +506,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502186",
@@ -560,8 +518,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P502191",
@@ -573,8 +530,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550006",
@@ -586,8 +542,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550008",
@@ -599,8 +554,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550010",
@@ -612,8 +566,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550015",
@@ -625,8 +578,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550018",
@@ -638,8 +590,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550020",
@@ -651,8 +602,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550021",
@@ -664,8 +614,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550024",
@@ -677,8 +626,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550025",
@@ -690,8 +638,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550034",
@@ -703,8 +650,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550035",
@@ -716,8 +662,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550041",
@@ -729,8 +674,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550047",
@@ -742,8 +686,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550050",
@@ -755,8 +698,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550051",
@@ -768,8 +710,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550052",
@@ -781,8 +722,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550058",
@@ -794,8 +734,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550059",
@@ -807,8 +746,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550062",
@@ -820,8 +758,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550066",
@@ -833,8 +770,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550067",
@@ -846,8 +782,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550068",
@@ -859,8 +794,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550073",
@@ -872,8 +806,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550077",
@@ -885,8 +818,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550078",
@@ -898,8 +830,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550080",
@@ -911,8 +842,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550086",
@@ -924,8 +854,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550087",
@@ -937,8 +866,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550092",
@@ -950,8 +878,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550117",
@@ -963,8 +890,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550132",
@@ -976,8 +902,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550141",
@@ -989,8 +914,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550147",
@@ -1002,8 +926,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550152",
@@ -1015,8 +938,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550154",
@@ -1028,8 +950,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550157",
@@ -1041,8 +962,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550162",
@@ -1054,8 +974,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550165",
@@ -1067,8 +986,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550166",
@@ -1080,8 +998,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550183",
@@ -1093,8 +1010,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550184",
@@ -1106,8 +1022,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550188",
@@ -1119,8 +1034,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550194",
@@ -1132,8 +1046,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550203",
@@ -1145,8 +1058,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550220",
@@ -1158,8 +1070,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550226",
@@ -1171,8 +1082,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550227",
@@ -1184,8 +1094,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550242",
@@ -1197,8 +1106,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550286",
@@ -1210,8 +1118,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550287",
@@ -1223,8 +1130,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550299",
@@ -1236,8 +1142,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550315",
@@ -1249,8 +1154,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550317",
@@ -1262,8 +1166,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550318",
@@ -1275,8 +1178,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550319",
@@ -1288,8 +1190,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550335",
@@ -1301,8 +1202,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550341",
@@ -1314,8 +1214,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550342",
@@ -1327,8 +1226,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550356",
@@ -1340,8 +1238,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550362",
@@ -1353,8 +1250,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550367",
@@ -1366,8 +1262,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550371",
@@ -1379,8 +1274,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550378",
@@ -1392,8 +1286,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550379",
@@ -1405,8 +1298,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550380",
@@ -1418,8 +1310,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550382",
@@ -1431,8 +1322,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550383",
@@ -1444,8 +1334,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550389",
@@ -1457,8 +1346,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550393",
@@ -1470,8 +1358,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550396",
@@ -1483,8 +1370,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550400",
@@ -1496,8 +1382,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550406",
@@ -1509,8 +1394,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550409",
@@ -1522,8 +1406,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550412",
@@ -1535,8 +1418,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550420",
@@ -1548,8 +1430,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550421",
@@ -1561,8 +1442,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550422",
@@ -1574,8 +1454,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550425",
@@ -1587,8 +1466,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550428",
@@ -1600,8 +1478,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550451",
@@ -1613,8 +1490,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550452",
@@ -1626,8 +1502,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550453",
@@ -1639,8 +1514,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550484",
@@ -1652,8 +1526,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550485",
@@ -1665,8 +1538,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550490",
@@ -1678,8 +1550,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550493",
@@ -1691,8 +1562,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550505",
@@ -1704,8 +1574,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550507",
@@ -1717,8 +1586,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550512",
@@ -1730,8 +1598,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550516",
@@ -1743,8 +1610,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550518",
@@ -1756,8 +1622,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550519",
@@ -1769,8 +1634,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550520",
@@ -1782,8 +1646,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550528",
@@ -1795,8 +1658,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550562",
@@ -1808,8 +1670,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550564",
@@ -1821,8 +1682,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550580",
@@ -1834,8 +1694,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550595",
@@ -1847,8 +1706,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550596",
@@ -1860,8 +1718,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550597",
@@ -1873,8 +1730,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550598",
@@ -1886,8 +1742,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550599",
@@ -1899,8 +1754,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550613",
@@ -1912,8 +1766,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550614",
@@ -1925,8 +1778,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550636",
@@ -1938,8 +1790,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550639",
@@ -1951,8 +1802,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550671",
@@ -1964,8 +1814,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550707",
@@ -1977,8 +1826,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550708",
@@ -1990,8 +1838,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550710",
@@ -2003,8 +1850,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550711",
@@ -2016,8 +1862,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550712",
@@ -2029,8 +1874,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550715",
@@ -2042,8 +1886,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550719",
@@ -2055,8 +1898,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550726",
@@ -2068,8 +1910,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550750",
@@ -2081,8 +1922,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550751",
@@ -2094,8 +1934,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550758",
@@ -2107,8 +1946,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550761",
@@ -2120,8 +1958,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550763",
@@ -2133,8 +1970,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550765",
@@ -2146,8 +1982,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550766",
@@ -2159,8 +1994,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550767",
@@ -2172,8 +2006,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550768",
@@ -2185,8 +2018,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550769",
@@ -2198,8 +2030,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550776",
@@ -2211,8 +2042,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550777",
@@ -2224,8 +2054,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550779",
@@ -2237,8 +2066,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550788",
@@ -2250,8 +2078,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550794",
@@ -2263,8 +2090,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550812",
@@ -2276,8 +2102,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550820",
@@ -2289,8 +2114,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550832",
@@ -2302,8 +2126,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550835",
@@ -2315,8 +2138,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550905",
@@ -2328,8 +2150,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550909",
@@ -2341,8 +2162,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550910",
@@ -2354,8 +2174,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550920",
@@ -2367,8 +2186,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550933",
@@ -2380,8 +2198,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550934",
@@ -2393,8 +2210,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550935",
@@ -2406,8 +2222,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550938",
@@ -2419,8 +2234,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550939",
@@ -2432,8 +2246,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550941",
@@ -2445,8 +2258,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550942",
@@ -2458,8 +2270,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550947",
@@ -2471,8 +2282,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550949",
@@ -2484,8 +2294,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550952",
@@ -2497,8 +2306,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550963",
@@ -2510,8 +2318,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550964",
@@ -2523,8 +2330,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550965",
@@ -2536,8 +2342,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     },
     {
       "donaldson_code": "P550973",
@@ -2549,1984 +2354,7 @@
       "media_type": null,
       "tecnologia": "SYNTRAX™",
       "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551005",
-      "elimfilters_sku": "EL81005",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551014",
-      "elimfilters_sku": "EL81014",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551015",
-      "elimfilters_sku": "EL81015",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551016",
-      "elimfilters_sku": "EL81016",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551017",
-      "elimfilters_sku": "EL81017",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551018",
-      "elimfilters_sku": "EL81018",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551019",
-      "elimfilters_sku": "EL81019",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551042",
-      "elimfilters_sku": "EL81042",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551088",
-      "elimfilters_sku": "EL81088",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551100",
-      "elimfilters_sku": "EL81100",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551102",
-      "elimfilters_sku": "EL81102",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551108",
-      "elimfilters_sku": "EL81108",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551132",
-      "elimfilters_sku": "EL81132",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551133",
-      "elimfilters_sku": "EL81133",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551145",
-      "elimfilters_sku": "EL81145",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551251",
-      "elimfilters_sku": "EL81251",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551257",
-      "elimfilters_sku": "EL81257",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551263",
-      "elimfilters_sku": "EL81263",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551264",
-      "elimfilters_sku": "EL81264",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551267",
-      "elimfilters_sku": "EL81267",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551285",
-      "elimfilters_sku": "EL81285",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551297",
-      "elimfilters_sku": "EL81297",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551336",
-      "elimfilters_sku": "EL81336",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551343",
-      "elimfilters_sku": "EL81343",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551352",
-      "elimfilters_sku": "EL81352",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551364",
-      "elimfilters_sku": "EL81364",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551381",
-      "elimfilters_sku": "EL81381",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551400",
-      "elimfilters_sku": "EL81400",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551402",
-      "elimfilters_sku": "EL81402",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551441",
-      "elimfilters_sku": "EL81441",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551603",
-      "elimfilters_sku": "EL81603",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551604",
-      "elimfilters_sku": "EL81604",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551670",
-      "elimfilters_sku": "EL81670",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551763",
-      "elimfilters_sku": "EL81763",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551783",
-      "elimfilters_sku": "EL81783",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551784",
-      "elimfilters_sku": "EL81784",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551807",
-      "elimfilters_sku": "EL81807",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551808",
-      "elimfilters_sku": "EL81808",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P551910",
-      "elimfilters_sku": "EL81910",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552025",
-      "elimfilters_sku": "EL82025",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552050",
-      "elimfilters_sku": "EL82050",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552100",
-      "elimfilters_sku": "EL82100",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552206",
-      "elimfilters_sku": "EL82206",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552231",
-      "elimfilters_sku": "EL82231",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552361",
-      "elimfilters_sku": "EL82361",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552363",
-      "elimfilters_sku": "EL82363",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552414",
-      "elimfilters_sku": "EL82414",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552421",
-      "elimfilters_sku": "EL82421",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552422",
-      "elimfilters_sku": "EL82422",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552451",
-      "elimfilters_sku": "EL82451",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552465",
-      "elimfilters_sku": "EL82465",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552518",
-      "elimfilters_sku": "EL82518",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552562",
-      "elimfilters_sku": "EL82562",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552819",
-      "elimfilters_sku": "EL82819",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P552849",
-      "elimfilters_sku": "EL82849",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553000",
-      "elimfilters_sku": "EL83000",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553161",
-      "elimfilters_sku": "EL83161",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553191",
-      "elimfilters_sku": "EL83191",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553315",
-      "elimfilters_sku": "EL83315",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553335",
-      "elimfilters_sku": "EL83335",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553400",
-      "elimfilters_sku": "EL83400",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553404",
-      "elimfilters_sku": "EL83404",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553411",
-      "elimfilters_sku": "EL83411",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553548",
-      "elimfilters_sku": "EL83548",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553634",
-      "elimfilters_sku": "EL83634",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553712",
-      "elimfilters_sku": "EL83712",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553746",
-      "elimfilters_sku": "EL83746",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553771",
-      "elimfilters_sku": "EL83771",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P553871",
-      "elimfilters_sku": "EL83871",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554004",
-      "elimfilters_sku": "EL84004",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554005",
-      "elimfilters_sku": "EL84005",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554105",
-      "elimfilters_sku": "EL84105",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554136",
-      "elimfilters_sku": "EL84136",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554206",
-      "elimfilters_sku": "EL84206",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554403",
-      "elimfilters_sku": "EL84403",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554407",
-      "elimfilters_sku": "EL84407",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554408",
-      "elimfilters_sku": "EL84408",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554560",
-      "elimfilters_sku": "EL84560",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554770",
-      "elimfilters_sku": "EL84770",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P554925",
-      "elimfilters_sku": "EL84925",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P555570",
-      "elimfilters_sku": "EL85570",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P555616",
-      "elimfilters_sku": "EL85616",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P555680",
-      "elimfilters_sku": "EL85680",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P556352",
-      "elimfilters_sku": "EL86352",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557207",
-      "elimfilters_sku": "EL87207",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557356",
-      "elimfilters_sku": "EL87356",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557382",
-      "elimfilters_sku": "EL87382",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557500",
-      "elimfilters_sku": "EL87500",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557505",
-      "elimfilters_sku": "EL87505",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P557780",
-      "elimfilters_sku": "EL87780",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558250",
-      "elimfilters_sku": "EL88250",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558329",
-      "elimfilters_sku": "EL88329",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558425",
-      "elimfilters_sku": "EL88425",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558462",
-      "elimfilters_sku": "EL88462",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558615",
-      "elimfilters_sku": "EL88615",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P558616",
-      "elimfilters_sku": "EL88616",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559000",
-      "elimfilters_sku": "EL89000",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559126",
-      "elimfilters_sku": "EL89126",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559127",
-      "elimfilters_sku": "EL89127",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559128",
-      "elimfilters_sku": "EL89128",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559129",
-      "elimfilters_sku": "EL89129",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559130",
-      "elimfilters_sku": "EL89130",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P559418",
-      "elimfilters_sku": "EL89418",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P574862",
-      "elimfilters_sku": "EL84862",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P574863",
-      "elimfilters_sku": "EL84863",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P577065",
-      "elimfilters_sku": "EL87065",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P577066",
-      "elimfilters_sku": "EL87066",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P577086",
-      "elimfilters_sku": "EL87086",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P579196",
-      "elimfilters_sku": "EL89196",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P579275",
-      "elimfilters_sku": "EL89275",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P579280",
-      "elimfilters_sku": "EL89280",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P579787",
-      "elimfilters_sku": "EL89787",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P580780",
-      "elimfilters_sku": "EL80780",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P580781",
-      "elimfilters_sku": "EL80781",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P580794",
-      "elimfilters_sku": "EL80794",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P581330",
-      "elimfilters_sku": "EL81330",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P582021",
-      "elimfilters_sku": "EL82021",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P582090",
-      "elimfilters_sku": "EL82090",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P582506",
-      "elimfilters_sku": "EL82506",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P583710",
-      "elimfilters_sku": "EL83710",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P583711",
-      "elimfilters_sku": "EL83711",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P583712",
-      "elimfilters_sku": "EL83712",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P583713",
-      "elimfilters_sku": "EL83713",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P583936",
-      "elimfilters_sku": "EL83936",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P584026",
-      "elimfilters_sku": "EL84026",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P584063",
-      "elimfilters_sku": "EL84063",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P584244",
-      "elimfilters_sku": "EL84244",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P584522",
-      "elimfilters_sku": "EL84522",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P584944",
-      "elimfilters_sku": "EL84944",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P585315",
-      "elimfilters_sku": "EL85315",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P764896",
-      "elimfilters_sku": "EL84896",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P953329",
-      "elimfilters_sku": "EL83329",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P956094",
-      "elimfilters_sku": "EL86094",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P957929",
-      "elimfilters_sku": "EL87929",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P959206",
-      "elimfilters_sku": "EL89206",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P959217",
-      "elimfilters_sku": "EL89217",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P959218",
-      "elimfilters_sku": "EL89218",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P959772",
-      "elimfilters_sku": "EL89772",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P959936",
-      "elimfilters_sku": "EL89936",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P167405",
-      "elimfilters_sku": "EL87405",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P167670",
-      "elimfilters_sku": "EL87670",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P167947",
-      "elimfilters_sku": "EL87947",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P169071",
-      "elimfilters_sku": "EL89071",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P173489",
-      "elimfilters_sku": "EL83489",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P173998",
-      "elimfilters_sku": "EL83998",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177300",
-      "elimfilters_sku": "EL87300",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177345",
-      "elimfilters_sku": "EL87345",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177349",
-      "elimfilters_sku": "EL87349",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177367",
-      "elimfilters_sku": "EL87367",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177483",
-      "elimfilters_sku": "EL87483",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P177739",
-      "elimfilters_sku": "EL87739",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
-    },
-    {
-      "donaldson_code": "P179353",
-      "elimfilters_sku": "EL89353",
-      "duty": "LD",
-      "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-      "micron": null,
-      "efficiency": null,
-      "media_type": null,
-      "tecnologia": "SYNTRAX™",
-      "oem_codes": {},
-      "equipment": [],
-      "alternative_products": []
+      "equipment": []
     }
   ]
 }
