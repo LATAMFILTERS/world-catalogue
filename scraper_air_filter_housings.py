@@ -180,7 +180,7 @@ def run_donaldson_air_filter_housings():
         )
 
         page = context.pages[0]
-        page.goto(COOLANT_FILTERS_URL)
+        page.goto(AIR_FILTER_HOUSINGS_URL)
         page.wait_for_timeout(3000)
 
         try:

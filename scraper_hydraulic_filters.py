@@ -180,7 +180,7 @@ def run_donaldson_hydraulic_filters():
         )
 
         page = context.pages[0]
-        page.goto(COOLANT_FILTERS_URL)
+        page.goto(HYDRAULIC_FILTERS_URL)
         page.wait_for_timeout(3000)
 
         try:

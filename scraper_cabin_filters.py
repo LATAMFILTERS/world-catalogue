@@ -180,7 +180,7 @@ def run_donaldson_cabin_filters():
         )
 
         page = context.pages[0]
-        page.goto(COOLANT_FILTERS_URL)
+        page.goto(CABIN_FILTERS_URL)
         page.wait_for_timeout(3000)
 
         try:
