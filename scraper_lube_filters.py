@@ -254,10 +254,13 @@ def run_donaldson_lube_filters():
 
             total_processed += len(links)
 
-            # Buscar botón "Next" y clickearlo
+            # Buscar botón "Next" y clickearlo (verificar visible Y no deshabilitado)
             has_next = page.evaluate("""() => {
                 const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
-                return nextBtn && nextBtn.style.display !== 'none';
+                if (!nextBtn) return false;
+                const isVisible = nextBtn.style.display !== 'none' && nextBtn.offsetParent !== null;
+                const isEnabled = !nextBtn.disabled && !nextBtn.hasAttribute('aria-disabled') && !nextBtn.classList.contains('disabled');
+                return isVisible && isEnabled;
             }""")
 
             if has_next:
