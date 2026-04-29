@@ -242,7 +242,7 @@ def run_donaldson_cabin_filters():
 
                 finally:
                     new_page.close()
-                    new_page.wait_for_timeout(2000)
+                    page.wait_for_timeout(2000)
 
             total_processed += len(links)
 
