@@ -97,7 +97,7 @@ ALL_DONALDSON_CODES = [
 ]
 
 # Usar TEST_CODES para prueba; cambiar a ALL_DONALDSON_CODES para ejecutar completo
-DONALDSON_CODES = TEST_CODES
+DONALDSON_CODES = ALL_DONALDSON_CODES
 
 # Diesel OEM para clasificar HD
 DIESEL_OEM = [
