@@ -206,6 +206,36 @@ def run_donaldson_lube_filters():
                     pid = new_page.locator("#productPageProductNumber").inner_text().strip()
                     print(f"           → Código: {pid}")
 
+                    # Click todas las tabs para asegurar que se cargan
+                    print(f"           → Cargando todas las tabs...")
+                    new_page.evaluate("""() => {
+                        // Click Attributes tab
+                        let tab = document.querySelector('[href="#attributesBody"], [id*="attr"]');
+                        if (tab) tab.click();
+                    }""")
+                    new_page.wait_for_timeout(1500)
+
+                    new_page.evaluate("""() => {
+                        // Click Cross Reference tab
+                        let tab = document.querySelector('[href="#crossreferenceBody"], [href*="cross"]');
+                        if (tab) tab.click();
+                    }""")
+                    new_page.wait_for_timeout(1500)
+
+                    new_page.evaluate("""() => {
+                        // Click Equipment tab
+                        let tab = document.querySelector('[href="#equiptmentBody"], [href*="equip"]');
+                        if (tab) tab.click();
+                    }""")
+                    new_page.wait_for_timeout(1500)
+
+                    new_page.evaluate("""() => {
+                        // Click Alternate Parts tab
+                        let tab = document.querySelector('[href="#alternateBody"], [href*="alternate"]');
+                        if (tab) tab.click();
+                    }""")
+                    new_page.wait_for_timeout(1500)
+
                     # 1. ATRIBUTOS
                     print(f"           → Extrayendo atributos...")
                     expandir_show_more_atributos(new_page)
@@ -222,7 +252,7 @@ def run_donaldson_lube_filters():
                     equipment = extraer_equipment(new_page)
 
                     # 4. ALTERNATE PRODUCTS (si existen)
-                    print(f"           → Buscando productos alternativos...")
+                    print(f"           → Extrayendo productos alternativos...")
                     alternates = extraer_alternates(new_page)
 
                     results.append({
