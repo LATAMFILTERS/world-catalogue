@@ -178,7 +178,7 @@ def run_donaldson_fuel_filters():
         user_data_dir = os.path.join(os.getcwd(), "sesion_fuel_filters")
         context = p.chromium.launch_persistent_context(
             user_data_dir,
-            headless=False,
+            headless=True,
             args=[
                 "--disable-blink-features=AutomationControlled",
                 "--disable-dev-shm-usage",

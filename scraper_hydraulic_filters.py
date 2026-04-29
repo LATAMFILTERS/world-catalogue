@@ -179,7 +179,7 @@ def run_donaldson_hydraulic_filters():
         user_data_dir = os.path.join(os.getcwd(), "sesion_hydraulic_filters")
         context = p.chromium.launch_persistent_context(
             user_data_dir,
-            headless=False,
+            headless=True,
             ignore_https_errors=True,
             args=[
                 "--disable-blink-features=AutomationControlled",

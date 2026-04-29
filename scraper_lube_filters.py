@@ -181,7 +181,7 @@ def run_donaldson_lube_filters():
         user_data_dir = os.path.join(os.getcwd(), "sesion_lube_filters")
         context = p.chromium.launch_persistent_context(
             user_data_dir,
-            headless=False,
+            headless=True,
             args=[
                 "--disable-blink-features=AutomationControlled",
                 "--disable-dev-shm-usage",
