@@ -3,6 +3,8 @@ import os
 from playwright.sync_api import sync_playwright
 
 AIR_FILTERS_URL = "https://shop.donaldson.com/store/en-us/search?N=2975800598&Nr=product.language%3AEnglish&catNav=true&st=parts"
+LAST_CODE = "R800103"
+TOTAL_EXPECTED = 1460
 
 def remover_popups(page):
     """Remove popups and chatbots"""
@@ -194,8 +196,9 @@ def run_donaldson_air_filters():
         results = load_existing_results(results_file)
         page_num = 1
         total_processed = len(results)
+        done = False
 
-        while True:
+        while not done:
             print(f"\n📄 Página {page_num}: Detectando y scrapeando productos...")
 
             links = page.evaluate("""() => {
@@ -248,6 +251,10 @@ def run_donaldson_air_filters():
                     alt_count = len(alternates) if alternates else 0
                     print(f"           ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip | {alt_count} Alternates\n")
 
+                    if pid == LAST_CODE:
+                        done = True
+                        print(f"🏁 Código terminal {LAST_CODE} alcanzado. Finalizando...")
+
                 except Exception as e:
                     print(f"           ❌ Error: {str(e)[:50]}\n")
                     results.append({"base_code": pid, "error": str(e)})
@@ -255,6 +262,9 @@ def run_donaldson_air_filters():
                 finally:
                     new_page.close()
                     page.wait_for_timeout(2000)
+
+                if done:
+                    break
 
             total_processed += len(links)
 

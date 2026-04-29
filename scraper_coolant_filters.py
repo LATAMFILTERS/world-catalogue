@@ -1,14 +1,12 @@
 import json
 import os
-import time
 from playwright.sync_api import sync_playwright
 
-HYDRAULIC_FILTERS_URL = "https://shop.donaldson.com/store/en-us/search?N=2076725065&Nr=product.language%3AEnglish&catNav=true&st=parts"
-LAST_CODE = "R010110"
-TOTAL_EXPECTED = 1720
+COOLANT_FILTERS_URL = "https://shop.donaldson.com/store/en-us/search?N=1476555406&Nr=product.language%3AEnglish&catNav=true&st=parts"
+LAST_CODE = "P960120"
+TOTAL_EXPECTED = 60
 
 def remover_popups(page):
-    """Remove popups and chatbots"""
     try:
         page.evaluate("""() => {
             const popups = ['#chat-button', '.LPMcontainer', '.optanon-alert-box-wrapper',
@@ -23,7 +21,6 @@ def remover_popups(page):
         pass
 
 def extraer_atributos(page):
-    """Extract attributes from #attributesBody table"""
     attrs = page.evaluate("""() => {
         let data = {};
         document.querySelectorAll('#attributesBody table tr').forEach(tr => {
@@ -41,7 +38,6 @@ def extraer_atributos(page):
     return attrs
 
 def expandir_show_more_atributos(page):
-    """Click Show More in attributes section until all expanded"""
     page.evaluate("""async () => {
         let expanded = true;
         while (expanded) {
@@ -57,7 +53,6 @@ def expandir_show_more_atributos(page):
     page.wait_for_timeout(1000)
 
 def extraer_cross_reference(page):
-    """Extract cross reference data"""
     cross = page.evaluate("""() => {
         let data = [];
         document.querySelectorAll('#crossreferenceBody table tbody tr').forEach(tr => {
@@ -78,7 +73,6 @@ def extraer_cross_reference(page):
     return cross
 
 def expandir_show_more_cross(page):
-    """Click Show More in cross reference"""
     page.evaluate("""async () => {
         let expanded = true;
         while (expanded) {
@@ -94,7 +88,6 @@ def expandir_show_more_cross(page):
     page.wait_for_timeout(1000)
 
 def extraer_equipment(page):
-    """Extract equipment data"""
     equip = page.evaluate("""() => {
         let data = [];
         document.querySelectorAll('#equiptmentBody table tbody tr').forEach(tr => {
@@ -119,7 +112,6 @@ def extraer_equipment(page):
     return equip
 
 def expandir_show_more_equipment(page):
-    """Click Show More in equipment"""
     page.evaluate("""async () => {
         let expanded = true;
         while (expanded) {
@@ -135,7 +127,6 @@ def expandir_show_more_equipment(page):
     page.wait_for_timeout(1000)
 
 def extraer_alternates(page):
-    """Extract alternate products (same geometry/thread, different media)"""
     alternates = page.evaluate("""() => {
         let data = [];
         const alternateBody = document.getElementById('alternateBody');
@@ -174,9 +165,9 @@ def save_results(results, filename):
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-def run_donaldson_hydraulic_filters():
+def run_donaldson_coolant_filters():
     with sync_playwright() as p:
-        user_data_dir = os.path.join(os.getcwd(), "sesion_hydraulic_filters")
+        user_data_dir = os.path.join(os.getcwd(), "sesion_coolant_filters")
         context = p.chromium.launch_persistent_context(
             user_data_dir,
             headless=False,
@@ -188,12 +179,12 @@ def run_donaldson_hydraulic_filters():
         )
 
         page = context.pages[0]
-        page.goto(HYDRAULIC_FILTERS_URL)
+        page.goto(COOLANT_FILTERS_URL)
         page.wait_for_timeout(2000)
 
         input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
 
-        results_file = "hydraulic_filters_results.json"
+        results_file = "coolant_filters_results.json"
         results = load_existing_results(results_file)
         page_num = 1
         total_processed = len(results)
@@ -298,7 +289,7 @@ def run_donaldson_hydraulic_filters():
 
         successful = len([r for r in results if "error" not in r])
         print(f"\n{'='*80}")
-        print(f"🏆 HYDRAULIC FILTERS SCRAPING COMPLETADO")
+        print(f"🏆 COOLANT FILTERS SCRAPING COMPLETADO")
         print(f"{'='*80}")
         print(f"Total procesados: {total_processed}")
         print(f"Exitosos: {successful}")
@@ -309,4 +300,4 @@ def run_donaldson_hydraulic_filters():
         context.close()
 
 if __name__ == "__main__":
-    run_donaldson_hydraulic_filters()
+    run_donaldson_coolant_filters()
