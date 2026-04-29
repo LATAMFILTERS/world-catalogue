@@ -13,15 +13,32 @@ def debug_p781466():
         page = browser.new_page()
 
         url = "https://shop.donaldson.com/store/en-us/product/P951413/67990"
-        page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        page.wait_for_timeout(3000)
+        page.goto(url, wait_until="networkidle", timeout=30000)
+        page.wait_for_timeout(4000)
 
-        # Remove popups
+        # Remove popups and chatbot
         page.evaluate("""() => {
             const popups = ['#chat-button', '.LPMcontainer', '.optanon-alert-box-wrapper',
-                           '.osano-cm-window', '.modal-backdrop', '.modal-open'];
-            popups.forEach(s => { const el = document.querySelector(s); if(el) el.remove(); });
+                           '.osano-cm-window', '.modal-backdrop', '.modal-open',
+                           '[id*="chat"]', '[class*="chat"]', '[class*="bot"]',
+                           'iframe[title*="chat"]', 'iframe[src*="chat"]',
+                           '.Iframe-Lightbox', '.chatbot-container', '#chatContainer'];
+            popups.forEach(s => {
+                const els = document.querySelectorAll(s);
+                els.forEach(el => {
+                    if(el) el.remove();
+                });
+            });
             document.body.style.overflow = 'auto';
+
+            // Also try to close any visible popups
+            const closeButtons = document.querySelectorAll('[aria-label*="close"], [class*="close"]');
+            closeButtons.forEach(btn => {
+                const text = btn.innerText.toLowerCase();
+                if (text.includes('close') || text.includes('✕') || text.includes('x')) {
+                    btn.click();
+                }
+            });
         }""")
 
         print("=" * 80)
