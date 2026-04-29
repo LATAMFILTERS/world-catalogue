@@ -160,29 +160,34 @@ def run_donaldson_lube_filters():
                 return [...new Set([...els].map(e => e.href))];
             }""")
 
-            print(f"   📦 {len(links)} productos en esta página")
+            print(f"   📦 {len(links)} productos en esta página\n")
 
-            # Scrapeara cada producto en esta página
+            # Scrapeara cada producto UNO POR UNO
             for i, link in enumerate(links):
                 pid = f"desconocido_{total_processed + i + 1}"
                 new_page = context.new_page()
 
                 try:
+                    print(f"   [{i+1}/{len(links)}] Abriendo {link[:60]}...")
                     new_page.goto(link, wait_until="networkidle", timeout=60000)
-                    page.wait_for_timeout(1500)
+                    page.wait_for_timeout(2000)
                     remover_popups(new_page)
 
                     pid = new_page.locator("#productPageProductNumber").inner_text().strip()
+                    print(f"           → Código: {pid}")
 
                     # 1. ATRIBUTOS
+                    print(f"           → Extrayendo atributos...")
                     expandir_show_more_atributos(new_page)
                     raw_attrs = extraer_atributos(new_page)
 
                     # 2. CROSS REFERENCE
+                    print(f"           → Extrayendo cross-references...")
                     expandir_show_more_cross(new_page)
                     cross = extraer_cross_reference(new_page)
 
                     # 3. EQUIPMENT
+                    print(f"           → Extrayendo equipment...")
                     expandir_show_more_equipment(new_page)
                     equipment = extraer_equipment(new_page)
 
@@ -196,14 +201,15 @@ def run_donaldson_lube_filters():
                         "equipment": equipment
                     })
 
-                    print(f"   [{i+1}/{len(links)}] {pid}: ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip")
+                    print(f"           ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip\n")
 
                 except Exception as e:
-                    print(f"   [{i+1}/{len(links)}] {pid}: ❌ {str(e)[:50]}")
+                    print(f"           ❌ Error: {str(e)[:50]}\n")
                     results.append({"base_code": pid, "error": str(e)})
 
                 finally:
                     new_page.close()
+                    page.wait_for_timeout(2000)  # Pausa entre productos
 
             total_processed += len(links)
 
@@ -214,12 +220,16 @@ def run_donaldson_lube_filters():
             }""")
 
             if has_next:
-                print(f"   → Yendo a página {page_num + 1}...")
+                print(f"\n{'='*80}")
+                print(f"📄 Página {page_num} completada. Total: {total_processed}/{360}")
+                print(f"{'='*80}\n")
+                input(f"👉 Pulsa ENTER para ir a página {page_num + 1}...")
+
                 page.evaluate("""() => {
                     const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
                     if (nextBtn) nextBtn.click();
                 }""")
-                page.wait_for_timeout(3000)
+                page.wait_for_timeout(4000)
                 page_num += 1
             else:
                 print(f"\n✅ Fin de páginas.")
