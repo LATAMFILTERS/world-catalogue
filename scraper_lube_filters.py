@@ -131,6 +131,36 @@ def expandir_show_more_equipment(page):
     }""")
     page.wait_for_timeout(1000)
 
+def extraer_alternates(page):
+    """Extract alternate products (same geometry/thread, different media)"""
+    alternates = page.evaluate("""() => {
+        let data = [];
+
+        // Buscar el div alternateBody con el carrusel
+        const alternateBody = document.getElementById('alternateBody');
+        if (!alternateBody) return data;
+
+        // Extraer cada producto del carrusel
+        document.querySelectorAll('#alternateBody .owl-item .item').forEach(item => {
+            const code = item.querySelector('pre.preAlternate h5')?.innerText?.trim();
+            const desc = item.querySelector('h6.desLengthCheck')?.innerText?.trim();
+            const notes = item.querySelector('.lengthCheck')?.innerText?.trim();
+            const url = item.querySelector('[data-url]')?.getAttribute('data-url');
+
+            if (code) {
+                data.push({
+                    code: code,
+                    description: desc,
+                    notes: notes,
+                    url: url
+                });
+            }
+        });
+
+        return data;
+    }""")
+    return alternates
+
 def run_donaldson_lube_filters():
     with sync_playwright() as p:
         user_data_dir = os.path.join(os.getcwd(), "sesion_lube_filters")
@@ -191,6 +221,10 @@ def run_donaldson_lube_filters():
                     expandir_show_more_equipment(new_page)
                     equipment = extraer_equipment(new_page)
 
+                    # 4. ALTERNATE PRODUCTS (si existen)
+                    print(f"           → Buscando productos alternativos...")
+                    alternates = extraer_alternates(new_page)
+
                     results.append({
                         "base_code": pid,
                         "od": raw_attrs.get("Outer Diameter"),
@@ -198,10 +232,12 @@ def run_donaldson_lube_filters():
                         "thread": raw_attrs.get("Thread Size"),
                         "attributes": raw_attrs,
                         "cross_reference": cross,
-                        "equipment": equipment
+                        "equipment": equipment,
+                        "alternative_products": alternates
                     })
 
-                    print(f"           ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip\n")
+                    alt_count = len(alternates) if alternates else 0
+                    print(f"           ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip | {alt_count} Alternates\n")
 
                 except Exception as e:
                     print(f"           ❌ Error: {str(e)[:50]}\n")
