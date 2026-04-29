@@ -85,54 +85,63 @@ def extract_json_data():
         for tab_id, tab_name in tabs:
             print(f"\n→ Trying tab: {tab_name} (ID: {tab_id})")
 
+            # Intentar todos los selectores posibles para esta tab
             page.evaluate(f"""() => {{
                 let tab = document.getElementById('{tab_id}');
-                if (!tab) tab = document.querySelector('a[href*="{tab_name.lower()}"]');
-                if (tab) tab.click();
+                if (!tab) {{
+                    // Buscar por texto del link
+                    tab = Array.from(document.querySelectorAll('a, button'))
+                              .find(el => el.innerText.toLowerCase().trim() === '{tab_name.lower()}');
+                }}
+                if (tab) {{ tab.click(); console.log('clicked:', tab.id, tab.innerText); }}
+                else {{ console.log('tab not found: {tab_id}'); }}
             }}""")
 
-            page.wait_for_timeout(2000)
+            page.wait_for_timeout(3000)
 
-            # Try to extract content
-            content = page.evaluate("""() => {
-                let data = [];
+            # Mostrar HTML completo de la sección activa
+            html_section = page.evaluate("""() => {
+                // Buscar el panel activo / visible
+                let active = document.querySelector('.tab-pane.active, .tab-content .active');
+                if (active) return active.outerHTML.substring(0, 3000);
 
-                // Try dl/dt/dd
-                document.querySelectorAll('dl dt, dl dd').forEach((el, i) => {
-                    if (el.tagName === 'DT') {
-                        const dd = el.nextElementSibling;
-                        if (dd && dd.tagName === 'DD') {
-                            data.push({
-                                label: el.innerText.trim().substring(0, 50),
-                                value: dd.innerText.trim().substring(0, 100)
-                            });
-                        }
-                    }
+                // Mostrar HTML de tables encontradas
+                let tables = [];
+                document.querySelectorAll('table').forEach(t => {
+                    tables.push(t.outerHTML.substring(0, 500));
                 });
-
-                // Try tables
-                document.querySelectorAll('table tr').forEach(tr => {
-                    const th = tr.querySelector('th');
-                    const td = tr.querySelector('td');
-                    if (th && td) {
-                        data.push({
-                            label: th.innerText.trim().substring(0, 50),
-                            value: td.innerText.trim().substring(0, 100)
-                        });
-                    }
-                });
-
-                return data;
+                return tables.join('\\n---\\n').substring(0, 3000);
             }""")
 
-            if content:
-                print(f"   Found {len(content)} items:")
-                for item in content[:3]:
-                    print(f"     {item['label']}: {item['value']}")
-            else:
-                print("   No structured data found")
+            print(f"   HTML de sección activa (primeros 2000 chars):")
+            print(html_section[:2000] if html_section else "   (vacío)")
 
-        # 3. Save full JSON for reference
+            # Contar filas de cualquier tabla visible
+            rows = page.evaluate("""() => {
+                let count = 0;
+                document.querySelectorAll('table tr').forEach(() => count++);
+                return count;
+            }""")
+            print(f"   Total filas en tablas: {rows}")
+
+        # 3. Mostrar todas las tablas de la página
+        print("\n" + "=" * 80)
+        print("📋 TODAS LAS TABLAS DE LA PÁGINA")
+        print("=" * 80)
+        all_tables = page.evaluate("""() => {
+            let result = [];
+            document.querySelectorAll('table').forEach((t, i) => {
+                const rows = t.querySelectorAll('tr').length;
+                const id = t.id || t.className.substring(0, 30) || 'sin-id';
+                result.push({index: i, id: id, rows: rows, html: t.outerHTML.substring(0, 300)});
+            });
+            return result;
+        }""")
+        for t in all_tables:
+            print(f"  Table[{t['index']}] ID:{t['id']} Rows:{t['rows']}")
+            print(f"    {t['html'][:200]}")
+
+        # 4. Save full JSON for reference
         with open("air_dryer_json_structure.json", "w", encoding="utf-8") as f:
             f.write(json_data if json_data else "{}")
 
