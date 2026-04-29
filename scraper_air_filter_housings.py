@@ -164,7 +164,11 @@ def run_donaldson_air_filter_housings():
         context = p.chromium.launch_persistent_context(
             user_data_dir,
             headless=False,
-            args=["--disable-blink-features=AutomationControlled"]
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-dev-shm-usage",
+                "--disable-gpu"
+            ]
         )
 
         page = context.pages[0]
