@@ -36,7 +36,7 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 ├─────────────────────────────────────────────────────┤
 │                                                     │
 │  STANDARD     PERFORMANCE      ELITE               │
-│  (DURATECH™)  (SINTRAX™)    (NANOFORCE™)         │
+│  (DURATECH™)  (SINTRAX™)    (SINTRAX™)         │
 │                                                     │
 │  30-40µm      15-25µm          10-15µm            │
 │  95-98%       98-99.5%         99.9%+             │
@@ -50,19 +50,30 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 
 ## Parte 2: Mapeo Técnico de Series
 
-### DBL Series (Donaldson Blue) → ELIMINFILTERS
+### DBL Series (Donaldson Blue) → ELIMFILTERS
 
 **Característica Donaldson**: 14 códigos, media Synteq/Synteq XP, eficiencia 97.6-99% @ 15µm, aplicaciones heavy-duty premium
 
-| Código Donaldson | Especificación | Equivalente ELIMFILTERS | Ventaja ELIMFILTERS |
-|---|---|---|---|
-| DBL0832 | 97.6% @ 15µm, Synteq XP | NANOFORCE™ | +1.4% eficiencia, menor ΔP |
-| DBL3998 | 99% @ 15µm, Synteq | NANOFORCE™ | Igual eficiencia, 35% más barato |
-| DBL4560 | 99% @ 15µm, Synteq | NANOFORCE™ | Nanofibras vs sintética gruesa |
-| DBL7300 | 99% @ 15µm, Synteq | NANOFORCE™ | Mejor capilaridad |
-| **Todos DBL** | 15µm Heavy-Duty | **NANOFORCE™** | **2× intervalo de servicio** |
+**Regla de mapeo**: Prefijo **EL8** + últimos 4 dígitos del código Donaldson
 
-**Conclusión DBL**: Reemplazar toda serie DBL con **EL81**xx (NANOFORCE™ ELITE). Mismo rendimiento, mejor precio.
+| Código Donaldson | Especificación | Código ELIMFILTERS | Tecnología | Ventaja ELIMFILTERS |
+|---|---|---|---|---|
+| DBL0832 | 97.6% @ 15µm, Synteq XP | **EL80832** | SINTRAX™ | -35% costo, 2× intervalo |
+| DBL3998 | 99% @ 15µm, Synteq | **EL83998** | SINTRAX™ | Igual eficiencia, menor precio |
+| DBL4560 | 99% @ 15µm, Synteq | **EL84560** | SINTRAX™ | Drop-in directo |
+| DBL7300 | 99% @ 15µm, Synteq | **EL87300** | SINTRAX™ | Drop-in directo |
+| DBL7345 | 99% @ 15µm, Synteq | **EL87345** | SINTRAX™ | Drop-in directo |
+| DBL7349 | 99% @ 15µm, Synteq | **EL87349** | SINTRAX™ | Drop-in directo |
+| DBL7367 | 99% @ 15µm, Synteq | **EL87367** | SINTRAX™ | Drop-in directo |
+| DBL7405 | 99% @ 15µm, Synteq | **EL87405** | SINTRAX™ | Drop-in directo |
+| DBL7483 | 99% @ 15µm, Synteq | **EL87483** | SINTRAX™ | Drop-in directo |
+| DBL7505 | 99% @ 15µm, Synteq | **EL87505** | SINTRAX™ | Drop-in directo |
+| DBL7670 | 99% @ 15µm, Synteq | **EL87670** | SINTRAX™ | Drop-in directo |
+| DBL7739 | 99% @ 15µm, Synteq | **EL87739** | SINTRAX™ | Drop-in directo |
+| DBL7900 | 99% @ 15µm, Synteq | **EL87900** | SINTRAX™ | Drop-in directo |
+| DBL7947 | 99% @ 15µm, Synteq | **EL87947** | SINTRAX™ | Drop-in directo |
+
+**Conclusión DBL**: Reemplazar toda serie DBL con **SINTRAX™ (EL8XXXX)**. Código ELIMFILTERS = EL8 + últimos 4 dígitos.
 
 ---
 
@@ -95,7 +106,7 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 
 **Conclusión P550**: Dos opciones:
 1. **Migración SINTRAX™** para 95% de códigos (EL75xx)
-2. **Upgrade NANOFORCE™** para aplicaciones críticas (EL81xx)
+2. **Upgrade SINTRAX™** para aplicaciones críticas (EL81xx)
 
 ---
 
@@ -115,12 +126,12 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 
 | Aplicación | Donaldson (actual) | ELIMFILTERS (recomendado) | Mejora de Costo | Mejora de Rendimiento |
 |---|---|---|---|---|
-| Motor Cummins ISX | DBL7300, DBL3998 | NANOFORCE™ (EL81) | -35% | +1% eficiencia, -25% ΔP |
-| Caterpillar C15 | DBL0832 | NANOFORCE™ (EL81) | -32% | +1.4% eficiencia |
-| Volvo FH16 | P550949 (Synthetic) | NANOFORCE™ (EL81) | -40% | Nanofibra vs sintética |
+| Motor Cummins ISX | DBL7300, DBL3998 | SINTRAX™ (EL8XXXX) | -35% | +1% eficiencia, -25% ΔP |
+| Caterpillar C15 | DBL0832 | SINTRAX™ (EL8XXXX) | -32% | +1.4% eficiencia |
+| Volvo FH16 | P550949 (Synthetic) | SINTRAX™ (EL8XXXX) | -40% | Nanofibra vs sintética |
 | **Intervalo Actual** | 500 horas | **1,000 horas** | **-50% cambios** | **Reducción DownTime** |
 
-**Conclusión**: Migración DBL → NANOFORCE™ es 1:1 drop-in con **100% compatibilidad OEM** y **2× vida útil**.
+**Conclusión**: Migración DBL → SINTRAX™ es 1:1 drop-in con **100% compatibilidad OEM** y **2× vida útil**.
 
 ---
 
@@ -147,81 +158,81 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
     {
       "code": "DBL0832",
       "specs": "97.6% @ 15µm, Synteq XP, 3.66\" OD, 7.87\" L",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)",
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)",
       "cross_reference": "Cummins, Caterpillar, Volvo",
       "improvement": "+1.4% efficiency, extended intervals"
     },
     {
       "code": "DBL3998",
       "specs": "99% @ 15µm, Synteq, 4.66\" OD, 10.24\" L, 149 PSI",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)",
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)",
       "cross_reference": "Premium HD applications",
       "improvement": "Same efficiency, 35% lower cost"
     },
     {
       "code": "DBL4560",
       "specs": "99% @ 15µm, Synteq, Heavy-duty rating",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)",
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)",
       "cross_reference": "HD equipment"
     },
     {
       "code": "DBL7300",
       "specs": "99% @ 15µm, Synteq, 4.52\" OD, 11.42\" L",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)",
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)",
       "cross_reference": "Caterpillar, Cummins"
     },
     {
       "code": "DBL7345",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7349",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7367",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7405",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7483",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7505",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7670",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7739",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7900",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     },
     {
       "code": "DBL7947",
       "specs": "99% @ 15µm, Synteq",
-      "elimfilters_replacement": "EL81xxxx (NANOFORCE™)"
+      "elimfilters_replacement": "EL81xxxx (SINTRAX™)"
     }
   ],
-  "summary": "ALL 14 DBL codes → NANOFORCE™ (EL81 series)",
+  "summary": "ALL 14 DBL codes → SINTRAX™ (EL81 series)",
   "cost_reduction": "32-40%",
   "interval_extension": "2x (500h → 1000h HD)"
 }
@@ -272,22 +283,22 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 
 | Equipment | Donaldson Spec | Donaldson Code | ELIMFILTERS Replacement | Compatibility |
 |---|---|---|---|---|
-| C15 Engine | 99% @ 15µm | DBL7300 | NANOFORCE™ (EL81) | ✅ Direct swap |
+| C15 Engine | 99% @ 15µm | DBL7300 | SINTRAX™ (EL8XXXX) | ✅ Direct swap |
 | 320 Excavator | 95% @ 50µm | P502007 | DURATECH™ (EL73) | ✅ Direct swap |
-| D8T Dozer | Premium HD | DBL3998 | NANOFORCE™ (EL81) | ✅ Drop-in |
+| D8T Dozer | Premium HD | DBL3998 | SINTRAX™ (EL8XXXX) | ✅ Drop-in |
 
 ### Cummins Engines
 
 | Equipment | Donaldson Spec | Code | ELIMFILTERS | Compatibility |
 |---|---|---|---|---|
-| ISX Engine | 99% @ 15µm, Synteq | DBL0832 | NANOFORCE™ (EL81) | ✅ OEM approved |
-| ISL Engine | 99% @ 15µm | DBL7505 | NANOFORCE™ (EL81) | ✅ OEM approved |
+| ISX Engine | 99% @ 15µm, Synteq | DBL0832 | SINTRAX™ (EL8XXXX) | ✅ OEM approved |
+| ISL Engine | 99% @ 15µm | DBL7505 | SINTRAX™ (EL8XXXX) | ✅ OEM approved |
 
 ### Volvo Equipment
 
 | Equipment | Donaldson | Code | ELIMFILTERS | Compatibility |
 |---|---|---|---|---|
-| FH16 Engine | Premium synthetic | P550949 | NANOFORCE™ (EL81) | ✅ Drop-in |
+| FH16 Engine | Premium synthetic | P550949 | SINTRAX™ (EL8XXXX) | ✅ Drop-in |
 | FM410 Truck | General duty | P550162 | SINTRAX™ (EL75) | ✅ Approved |
 
 ### John Deere Equipment
@@ -306,7 +317,7 @@ Este documento proporciona un análisis técnico detallado comparando el catálo
 ```
 Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 ─────────────────────────────────────────────────────────────────────
-15µm (HD)        97.6-99% (Synteq)     99.9% (NANOFORCE™)      +0.9 a +2.3%
+15µm (HD)        97.6-99% (Synteq)     99.9% (SINTRAX™)      +0.9 a +2.3%
 20-39µm (MD)     98-99% (Sintética)    99.5% (SINTRAX™)        Match to +0.5%
 50µm (LD)        95% (Cellulose)       95% (DURATECH™)         Match
 ```
@@ -330,7 +341,7 @@ Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 1. **Costo**: 25-40% reducción en costo de filtro y mantenimiento
 2. **Disponibilidad**: Stock distribuidor múltiple (vs Donaldson monopolio)
 3. **Eficiencia**: Igual o superior a Donaldson
-4. **Intervalos**: Hasta 2× más largos con NANOFORCE™
+4. **Intervalos**: Hasta 2× más largos con SINTRAX™
 5. **Estándar**: ISO 4548-12, SAE J726 — industria amplia
 
 ### ⚠️ Consideraciones Especiales
@@ -355,7 +366,7 @@ Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 
 **Pregunta 1: ¿Código Donaldson?**
 
-- **DBL...** → Ir a Sección 2a (DBL → NANOFORCE™)
+- **DBL...** → Ir a Sección 2a (DBL → SINTRAX™)
 - **P500...** → Ir a Sección 2b (P500 → DURATECH™)
 - **P550...** → Ir a Sección 2c (P550 → SINTRAX™)
 - **P551+** → Contactar soporte (especialidad)
@@ -364,10 +375,10 @@ Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 
 | Equipo | Duty | ELIMFILTERS |
 |---|---|---|
-| Motor diesel HD (CAT/Cummins/Volvo) | HD | NANOFORCE™ (EL81) |
+| Motor diesel HD (CAT/Cummins/Volvo) | HD | SINTRAX™ (EL8XXXX) |
 | Tractor/Excavadora | MD-LD | SINTRAX™ (EL75) o DURATECH™ (EL73) |
 | Generador/Aplicación industrial | LD | DURATECH™ (EL73) |
-| Aplicación crítica (sintética HD) | Ultra | NANOFORCE™ (EL81) |
+| Aplicación crítica (sintética HD) | Ultra | SINTRAX™ (EL8XXXX) |
 
 ---
 
@@ -375,12 +386,12 @@ Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 
 ### Flotas Heavy-Duty (Camiones, Buses)
 
-**Recomendación: Migración DBL → NANOFORCE™**
+**Recomendación: Migración DBL → SINTRAX™**
 
 | Aspecto | Recomendación |
 |---|---|
 | Intervalo actual | 500 horas Donaldson |
-| Intervalo propuesto | 1,000 horas NANOFORCE™ |
+| Intervalo propuesto | 1,000 horas SINTRAX™ |
 | Cambios anuales | 4 → 2 (50% reducción) |
 | Costo por vehículo/año | $850 → $550 (-35%) |
 | ROI | 4-6 meses |
@@ -399,13 +410,13 @@ Micron Rating    Donaldson (Típico)    ELIMFILTERS (TRILOGY)    Ventaja
 
 ### Aplicaciones Minería / Construcción Extrema
 
-**Recomendación: NANOFORCE™ para todas las aplicaciones HD**
+**Recomendación: SINTRAX™ para todas las aplicaciones HD**
 
 | Factor | Impacto | Solución |
 |---|---|---|
-| Polvo fino de sílice | Degradación acelerada | NANOFORCE™ nanofibra |
-| Temperatura | Hasta 150°C sin degradación | NANOFORCE™ sintética |
-| Intervalo | Crítico en operaciones 24/7 | NANOFORCE™ 2× Donaldson |
+| Polvo fino de sílice | Degradación acelerada | SINTRAX™ nanofibra |
+| Temperatura | Hasta 150°C sin degradación | SINTRAX™ sintética |
+| Intervalo | Crítico en operaciones 24/7 | SINTRAX™ 2× Donaldson |
 | Costo | Justificado por DownTime evitado | TCO favorable |
 
 ---
@@ -452,9 +463,9 @@ Para equipos o aplicaciones especiales:
 
 *(Nota: Versión completa disponible como JSON en `donaldson_complete_mapping.json`)*
 
-**DBL Series (14 códigos)** → NANOFORCE™
+**DBL Series (14 códigos)** → SINTRAX™
 **P500 Series (30 códigos)** → DURATECH™
-**P550 Series (150 códigos)** → SINTRAX™ (95%) o NANOFORCE™ (5% premium)
+**P550 Series (150 códigos)** → SINTRAX™ (95%) o SINTRAX™ (5% premium)
 **P551-P555 Series (140 códigos)** → Análisis individual por código
 **Otros (31 códigos)** → No lubricante (air, fuel, etc.)
 
@@ -464,11 +475,11 @@ Para equipos o aplicaciones especiales:
 
 | Micron | Donaldson Standard | ELIMFILTERS Equiv | ELIMFILTERS Premium | Ventaja |
 |---|---|---|---|---|
-| 10µm | N/A | SINTRAX™ | NANOFORCE™ | Nanofibra |
-| 15µm | DBL 97.6-99% | SINTRAX™ 99% | NANOFORCE™ 99.9% | +0.1-2% |
-| 20µm | P500/P550 99% | SINTRAX™ 99.5% | NANOFORCE™ 99.9% | Match+ |
-| 30µm | P550 99% | SINTRAX™ 99.5% | NANOFORCE™ 99.8% | Match+ |
-| 39µm | P550 99% | SINTRAX™ 99% | NANOFORCE™ 99.5% | Match |
+| 10µm | N/A | SINTRAX™ | SINTRAX™ | Nanofibra |
+| 15µm | DBL 97.6-99% | SINTRAX™ 99% | SINTRAX™ 99.9% | +0.1-2% |
+| 20µm | P500/P550 99% | SINTRAX™ 99.5% | SINTRAX™ 99.9% | Match+ |
+| 30µm | P550 99% | SINTRAX™ 99.5% | SINTRAX™ 99.8% | Match+ |
+| 39µm | P550 99% | SINTRAX™ 99% | SINTRAX™ 99.5% | Match |
 | 50µm | P500 95% | DURATECH™ 95% | SINTRAX™ 98% | Match / +3% |
 
 ---

@@ -6,28 +6,29 @@
 
 ## ⚡ Búsqueda Rápida por Código Donaldson
 
-### DBL Series → NANOFORCE™ ELITE (EL81)
+### DBL Series → SINTRAX™ (EL8XXXX)
 
-**Todos los códigos DBL se reemplazan con NANOFORCE™**
+**Todos los códigos DBL se reemplazan con SINTRAX™**
+**Prefijo ELIMFILTERS: EL8 + últimos 4 dígitos del código Donaldson**
 
 ```
-DBL0832   →  NANOFORCE™ (EL81xxxx)
-DBL3998   →  NANOFORCE™ (EL81xxxx)
-DBL4560   →  NANOFORCE™ (EL81xxxx)
-DBL7300   →  NANOFORCE™ (EL81xxxx)
-DBL7345   →  NANOFORCE™ (EL81xxxx)
-DBL7349   →  NANOFORCE™ (EL81xxxx)
-DBL7367   →  NANOFORCE™ (EL81xxxx)
-DBL7405   →  NANOFORCE™ (EL81xxxx)
-DBL7483   →  NANOFORCE™ (EL81xxxx)
-DBL7505   →  NANOFORCE™ (EL81xxxx)
-DBL7670   →  NANOFORCE™ (EL81xxxx)
-DBL7739   →  NANOFORCE™ (EL81xxxx)
-DBL7900   →  NANOFORCE™ (EL81xxxx)
-DBL7947   →  NANOFORCE™ (EL81xxxx)
+DBL0832   →  SINTRAX™ (EL80832)
+DBL3998   →  SINTRAX™ (EL83998)
+DBL4560   →  SINTRAX™ (EL84560)
+DBL7300   →  SINTRAX™ (EL87300)
+DBL7345   →  SINTRAX™ (EL87345)
+DBL7349   →  SINTRAX™ (EL87349)
+DBL7367   →  SINTRAX™ (EL87367)
+DBL7405   →  SINTRAX™ (EL87405)
+DBL7483   →  SINTRAX™ (EL87483)
+DBL7505   →  SINTRAX™ (EL87505)
+DBL7670   →  SINTRAX™ (EL87670)
+DBL7739   →  SINTRAX™ (EL87739)
+DBL7900   →  SINTRAX™ (EL87900)
+DBL7947   →  SINTRAX™ (EL87947)
 ```
 
-**Ventaja**: 2× intervalo, -35% costo, 99.9% eficiencia
+**Ventaja**: 2× intervalo, -35% costo, 99.5% eficiencia
 
 ---
 
@@ -122,15 +123,15 @@ P550952   →  SINTRAX™ (EL75xxxx)   | 99% @ 39µm
 
 ---
 
-### P550 Premium Codes → NANOFORCE™ ELITE (EL81) [Especiales]
+### P550 Premium Codes → SINTRAX™ [Especiales]
 
-**~5% de códigos P550 → NANOFORCE™ (aplicaciones críticas sintéticas)**
+**~5% de códigos P550 con media sintética → SINTRAX™**
 
 ```
-P550949   →  NANOFORCE™ (EL81xxxx)  | Synthetic HD (alternativo)
+P550949   →  SINTRAX™ (EL8xxxx)  | Synthetic HD
 ```
 
-**Uso**: Cuando la aplicación requiere máxima eficiencia o sintético premium
+**Uso**: Cuando la aplicación requiere media sintética premium
 
 ---
 
@@ -140,11 +141,11 @@ P550949   →  NANOFORCE™ (EL81xxxx)  | Synthetic HD (alternativo)
 
 | Equipo | Donaldson Actual | ELIMFILTERS | Instalación |
 |---|---|---|---|
-| Cummins ISX | DBL0832 | NANOFORCE™ EL81 | Direct bolt-on |
-| Cummins ISL | DBL7505 | NANOFORCE™ EL81 | Direct bolt-on |
+| Cummins ISX | DBL0832 | SINTRAX™ EL80832 | Direct bolt-on |
+| Cummins ISL | DBL7505 | SINTRAX™ EL87505 | Direct bolt-on |
 | Cummins ISM | P550162 | SINTRAX™ EL75 | Direct bolt-on |
 
-✅ **Resultado**: Cambio a NANOFORCE™, doble intervalo, ahorro 35%
+✅ **Resultado**: Cambio a SINTRAX™, doble intervalo, ahorro 35%
 
 ---
 
@@ -152,7 +153,7 @@ P550949   →  NANOFORCE™ (EL81xxxx)  | Synthetic HD (alternativo)
 
 | Equipo | Donaldson Actual | ELIMFILTERS | Intervalo |
 |---|---|---|---|
-| CAT C15 | DBL7300 | NANOFORCE™ EL81 | 500h → 1000h |
+| CAT C15 | DBL7300 | SINTRAX™ EL87300 | 500h → 1000h |
 
 ✅ **Resultado**: Drop-in compatible, OEM validated
 
@@ -174,9 +175,9 @@ P550949   →  NANOFORCE™ (EL81xxxx)  | Synthetic HD (alternativo)
 | Motor | Donaldson | ELIMFILTERS | Upgrade? |
 |---|---|---|---|
 | Volvo FH16 Standard | P550162 | SINTRAX™ EL75 | ✅ Recomendado |
-| Volvo FH16 Premium | P550949 (Synthetic) | NANOFORCE™ EL81 | ✅ Upgrade disponible |
+| Volvo FH16 Premium | P550949 (Synthetic) | SINTRAX™ EL8xxxx | ✅ Upgrade disponible |
 
-✅ **Resultado**: SINTRAX™ save 28%, o NANOFORCE™ para performance máximo
+✅ **Resultado**: SINTRAX™ -28% costo, compatibilidad 100%
 
 ---
 
@@ -233,14 +234,15 @@ AHORRO: $162.50 por tractor en 5 años (-29%)
 
 ### ELIMFILTERS vs Donaldson
 
-| Parámetro | Donaldson DBL | ELIMFILTERS NANOFORCE™ | Donaldson P550 | ELIMFILTERS SINTRAX™ |
+| Parámetro | Donaldson DBL | ELIMFILTERS SINTRAX™ | Donaldson P550 | ELIMFILTERS SINTRAX™ |
 |---|---|---|---|---|
-| **Micron** | 15 | 10-15 | 20-39 | 15-25 |
-| **Eficiencia** | 97.6-99% | 99.9% | 99% | 99.5% |
-| **Media** | Synteq | Nanofibra | Celulosa/Sint | Celulosa Sintética |
+| **Micron** | 15 | 15-25 | 20-39 | 15-25 |
+| **Eficiencia** | 97.6-99% | 99.5% | 99% | 99.5% |
+| **Media** | Synteq/XP | Celulosa Sintética | Celulosa/Sint | Celulosa Sintética |
+| **Prefijo ELIMFILTERS** | — | EL8XXXX | — | EL8XXXX |
 | **Intervalo Típico** | 500h | 1,000h | 400h | 600h |
-| **PSI Max** | 149 | 150 | 100 | 120 |
-| **Temperatura** | 130°C | 150°C | 120°C | 140°C |
+| **PSI Max** | 149 | 149 | 100 | 120 |
+| **Temperatura** | 130°C | 140°C | 120°C | 140°C |
 | **Costo** | Base | -35% | Base | -28% |
 
 ---
@@ -252,8 +254,8 @@ AHORRO: $162.50 por tractor en 5 años (-29%)
 ```
 ¿CUÁL ES TU CÓDIGO DONALDSON?
 │
-├─ DBL... → NANOFORCE™ EL81 ✅
-│   └─ Heavy-duty, máxima eficiencia, 2× intervalo
+├─ DBL... → SINTRAX™ EL8XXXX ✅
+│   └─ Heavy-duty, EL8 + últimos 4 dígitos, 2× intervalo
 │
 ├─ P500... → DURATECH™ EL73 ✅
 │   └─ General purpose, bajo costo, compatible
