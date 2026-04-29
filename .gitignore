@@ -7,3 +7,5 @@ config/google-credentials.json
 C:\\Users\\
 sesion_*/
 *_results.json
+debug*.py
+scraper_debug*.py
