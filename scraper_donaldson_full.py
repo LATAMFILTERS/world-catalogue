@@ -62,77 +62,112 @@ def get_duty(code):
 def get_elimfilters_sku(code):
     return f"EL8{code[-4:]}"
 
+def parse_specs(text, html):
+    """Extrae micron, efficiency, media y OEM del texto de la página"""
+    specs = {}
+
+    # Micron - varios formatos posibles
+    for pattern in [
+        r'(\d+)\s*[Mm]icron',
+        r'(\d+)\s*µm',
+        r'(\d+)\s*um\b',
+        r'@ (\d+)',
+    ]:
+        m = re.search(pattern, text)
+        if m:
+            specs["micron"] = m.group(1)
+            break
+
+    # Efficiency - varios formatos
+    for pattern in [
+        r'(\d+(?:\.\d+)?)\s*%\s*@\s*\d+',
+        r'(\d+(?:\.\d+)?)\s*%\s*(?:efficiency|Efficiency)',
+        r'[Ee]fficiency[:\s]+(\d+(?:\.\d+)?)\s*%',
+    ]:
+        m = re.search(pattern, text)
+        if m:
+            full = re.search(r'\d+(?:\.\d+)?\s*%[^.]{0,30}', text[m.start():m.start()+50])
+            specs["efficiency"] = full.group(0).strip() if full else m.group(0).strip()
+            break
+
+    # Media type
+    for pattern in [
+        r'[Mm]edia[:\s]+([A-Za-z\s\/]+?)(?:\n|,|\.)',
+        r'(Synteq XP|Synteq|Cellulose|Synthetic|Celulosa)',
+    ]:
+        m = re.search(pattern, text)
+        if m:
+            specs["media_type"] = m.group(1).strip()
+            break
+
+    # OEM codes - buscar pares Fabricante: NúmDeParte
+    oem_codes = {}
+    oem_pattern = r'(CUMMINS|CATERPILLAR|CAT|VOLVO|MACK|DETROIT|JOHN DEERE|KOMATSU|ISUZU|KUBOTA|PERKINS|HINO|FORD|TOYOTA|HONDA|FRAM|BALDWIN|FLEETGUARD)[:\s]+([A-Z0-9\-]{5,20})'
+    for mfr, part in re.findall(oem_pattern, text, re.IGNORECASE):
+        mfr = mfr.upper()
+        if mfr not in oem_codes:
+            oem_codes[mfr] = []
+        oem_codes[mfr].append(part.strip())
+    specs["oem_codes"] = oem_codes
+
+    return specs
+
 def scrape_code(page, code):
-    """Scrape un código específico"""
-    url = f"https://shop.donaldson.com/store/en-us/search?q={code}"
+    """Scrape un código específico - navega a producto y extrae specs"""
+    search_url = f"https://shop.donaldson.com/store/en-us/search?q={code}"
+
+    empty = {
+        "donaldson_code": code,
+        "elimfilters_sku": get_elimfilters_sku(code),
+        "duty": get_duty(code),
+        "type": "LUBE FILTER, SPIN-ON FULL FLOW",
+        "micron": None,
+        "efficiency": None,
+        "media_type": None,
+        "tecnologia": "SYNTRAX™",
+        "oem_codes": {},
+        "equipment": [],
+    }
 
     try:
-        page.goto(url, wait_until="networkidle", timeout=30000)
+        # Ir a búsqueda
+        page.goto(search_url, wait_until="networkidle", timeout=30000)
         page.wait_for_timeout(2000)
 
-        # Obtener contenido de página
-        html = page.content()
-        text = page.locator("body").inner_text()
+        # Buscar link del producto en resultados
+        product_url = None
 
-        data = {
-            "donaldson_code": code,
-            "elimfilters_sku": get_elimfilters_sku(code),
-            "duty": get_duty(code),
-            "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-            "micron": None,
-            "efficiency": None,
-            "media_type": None,
-            "tecnologia": "SYNTRAX™",
-            "oem_codes": {},
-            "equipment": [],
-        }
-
-        # Extraer micron
-        micron_match = re.search(r'(\d+)\s*(?:µm|micron|µ)', text, re.IGNORECASE)
-        if micron_match:
-            data["micron"] = micron_match.group(1)
-
-        # Extraer efficiency
-        eff_match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*@', text, re.IGNORECASE)
-        if eff_match:
-            data["efficiency"] = eff_match.group(0)
-
-        # Extraer media type
-        media_patterns = [
-            r'(?:media|Media):\s*([A-Za-z\s]+?)(?:\n|$)',
-            r'(?:Synteq|Cellulose|Synthetic)',
-        ]
-        for pattern in media_patterns:
-            media_match = re.search(pattern, text)
-            if media_match:
-                data["media_type"] = media_match.group(0).strip()
+        # Intentar encontrar link del producto específico
+        links = page.query_selector_all("a[href]")
+        for link in links:
+            href = link.get_attribute("href") or ""
+            # Buscar links que lleven al producto específico
+            if code in href and "/store/" in href and "/search" not in href:
+                product_url = href if href.startswith("http") else f"https://shop.donaldson.com{href}"
                 break
 
-        # Extraer OEM codes
-        oem_pattern = r'([A-Z][A-Z0-9\s]{2,}):\s*([0-9A-Z\-]+)'
-        oem_matches = re.findall(oem_pattern, text)
-        for mfr, part_num in oem_matches[:5]:
-            mfr = mfr.strip()
-            if len(mfr) > 2 and len(mfr) < 50:
-                if mfr not in data["oem_codes"]:
-                    data["oem_codes"][mfr] = []
-                data["oem_codes"][mfr].append(part_num.strip())
+        # Si encontramos URL de producto, navegar ahí
+        if product_url:
+            page.goto(product_url, wait_until="networkidle", timeout=30000)
+            page.wait_for_timeout(2000)
+
+        # Obtener texto y HTML de la página actual
+        text = page.locator("body").inner_text()
+        html = page.content()
+
+        # Parsear especificaciones
+        specs = parse_specs(text, html)
+
+        data = {**empty}
+        data["micron"] = specs.get("micron")
+        data["efficiency"] = specs.get("efficiency")
+        data["media_type"] = specs.get("media_type")
+        data["oem_codes"] = specs.get("oem_codes", {})
 
         return data, True
 
     except Exception as e:
-        return {
-            "donaldson_code": code,
-            "elimfilters_sku": get_elimfilters_sku(code),
-            "duty": get_duty(code),
-            "type": "LUBE FILTER, SPIN-ON FULL FLOW",
-            "micron": None,
-            "efficiency": None,
-            "media_type": None,
-            "tecnologia": "SYNTRAX™",
-            "oem_codes": {},
-            "equipment": [],
-        }, False
+        return empty, False
 
 def main():
     print(f"🔥 SCRAPING DONALDSON - {len(ALL_CODES)} CÓDIGOS")
