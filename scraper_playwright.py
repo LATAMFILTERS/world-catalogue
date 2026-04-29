@@ -48,12 +48,28 @@ def scrape_code(code):
                     print(f"  Elem {i+1}: {text[:100]}")
 
             # Intentar extraer datos visibles
-            print(f"\nContenido de texto en página:")
-            body_text = page.text_content()
+            print(f"\nExrayendo datos de elementos encontrados:")
 
-            # Buscar patrones
             import re
 
+            # Extraer texto de los elementos de especificación
+            all_specs_text = ""
+            for elem in specs:
+                try:
+                    text = elem.inner_text()
+                    all_specs_text += text + "\n"
+                except:
+                    pass
+
+            # Obtener texto de body
+            try:
+                body_text = page.locator("body").inner_text()
+            except:
+                body_text = all_specs_text
+
+            print(f"Texto capturado: {len(body_text)} caracteres")
+
+            # Buscar patrones
             if "micron" in body_text.lower():
                 print("✅ Encontrado: micron")
                 micron = re.search(r'(\d+)\s*(?:µm|micron)', body_text, re.IGNORECASE)
@@ -62,9 +78,16 @@ def scrape_code(code):
 
             if "efficiency" in body_text.lower():
                 print("✅ Encontrado: efficiency")
+                eff = re.search(r'(\d+(?:\.\d+)?)\s*%', body_text)
+                if eff:
+                    print(f"   Valor: {eff.group(0)}")
 
             if "OEM" in body_text or "oem" in body_text.lower():
                 print("✅ Encontrado: OEM")
+                # Buscar patrón OEM: palabra clave
+                oem = re.findall(r'OEM[:\s]+([A-Z0-9\-,\s]+)', body_text, re.IGNORECASE)
+                if oem:
+                    print(f"   Valores: {oem[:3]}")
 
         except Exception as e:
             print(f"⚠️  Error extrayendo: {e}")
