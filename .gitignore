@@ -5,3 +5,5 @@ fleetguard-catalog*.json
 
 config/google-credentials.json
 C:\\Users\\
+sesion_*/
+*_results.json
