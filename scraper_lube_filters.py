@@ -155,16 +155,44 @@ def run_donaldson_lube_filters():
 
         input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
 
-        # Detectar productos
-        links = page.evaluate("""() => {
-            const els = document.querySelectorAll('a.donaldson-part-details');
-            return [...new Set([...els].map(e => e.href))];
-        }""")
-
-        print(f"📦 Detectados {len(links)} Lube Filters.")
         results = []
+        page_num = 1
+        all_links = []
 
-        for i, link in enumerate(links):
+        # Colectar todos los links de todas las páginas
+        while True:
+            print(f"\n📄 Página {page_num}: Detectando productos...")
+
+            # Detectar productos en página actual
+            links = page.evaluate("""() => {
+                const els = document.querySelectorAll('a.donaldson-part-details');
+                return [...new Set([...els].map(e => e.href))];
+            }""")
+
+            print(f"   📦 {len(links)} productos en esta página")
+            all_links.extend(links)
+
+            # Buscar botón "Next"
+            has_next = page.evaluate("""() => {
+                const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
+                return nextBtn && nextBtn.style.display !== 'none';
+            }""")
+
+            if has_next:
+                print(f"   → Yendo a página {page_num + 1}...")
+                page.evaluate("""() => {
+                    const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
+                    if (nextBtn) nextBtn.click();
+                }""")
+                page.wait_for_timeout(3000)
+                page_num += 1
+            else:
+                print(f"\n✅ Fin de páginas. Total productos detectados: {len(all_links)}")
+                break
+
+        print(f"\n🔍 Scrapeando {len(all_links)} Lube Filters...")
+
+        for i, link in enumerate(all_links):
             pid = f"desconocido_{i+1}"
             new_page = context.new_page()
 
@@ -210,10 +238,19 @@ def run_donaldson_lube_filters():
             finally:
                 new_page.close()
 
+        # Resumen
+        successful = len([r for r in results if "error" not in r])
+        print(f"\n{'='*80}")
+        print(f"🏆 SCRAPING COMPLETADO")
+        print(f"{'='*80}")
+        print(f"Total intentados: {len(all_links)}")
+        print(f"Exitosos: {successful}")
+        print(f"Errores: {len(results) - successful}")
+
         with open("lube_filters_results.json", "w", encoding="utf-8") as f:
             json.dump(results, f, indent=4, ensure_ascii=False)
 
-        print(f"\n🏆 SCRAPING COMPLETADO — {len(results)} Lube Filters guardados en lube_filters_results.json")
+        print(f"\n📁 Guardado en: lube_filters_results.json")
         context.close()
 
 if __name__ == "__main__":
