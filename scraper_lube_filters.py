@@ -2,7 +2,6 @@ import json
 import os
 from playwright.sync_api import sync_playwright
 
-# Donaldson Lube Filters categoria - cambiar N según necesites
 LUBE_FILTERS_URL = "https://shop.donaldson.com/store/en-us/search?N=426772457"
 
 def remover_popups(page):
@@ -24,8 +23,6 @@ def extraer_atributos(page):
     """Extract attributes from #attributesBody table"""
     attrs = page.evaluate("""() => {
         let data = {};
-
-        // Buscar todas las filas en #attributesBody
         document.querySelectorAll('#attributesBody table tr').forEach(tr => {
             const tds = tr.querySelectorAll('td');
             if (tds.length >= 2) {
@@ -36,7 +33,6 @@ def extraer_atributos(page):
                 }
             }
         });
-
         return data;
     }""")
     return attrs
@@ -61,7 +57,6 @@ def extraer_cross_reference(page):
     """Extract cross reference data"""
     cross = page.evaluate("""() => {
         let data = [];
-
         document.querySelectorAll('#crossreferenceBody table tbody tr').forEach(tr => {
             const tds = tr.querySelectorAll('td');
             if (tds.length >= 2) {
@@ -75,7 +70,6 @@ def extraer_cross_reference(page):
                 }
             }
         });
-
         return data;
     }""")
     return cross
@@ -100,7 +94,6 @@ def extraer_equipment(page):
     """Extract equipment data"""
     equip = page.evaluate("""() => {
         let data = [];
-
         document.querySelectorAll('#equiptmentBody table tbody tr').forEach(tr => {
             const tds = tr.querySelectorAll('td');
             if (tds.length >= 5) {
@@ -108,7 +101,6 @@ def extraer_equipment(page):
                 const year = tds[1].innerText.trim();
                 const type = tds[2].innerText.trim();
                 const engine = tds[4].innerText.trim();
-
                 if (equipment && equipment !== 'Equipment') {
                     data.push({
                         equipment: equipment,
@@ -119,7 +111,6 @@ def extraer_equipment(page):
                 }
             }
         });
-
         return data;
     }""")
     return equip
@@ -157,11 +148,11 @@ def run_donaldson_lube_filters():
 
         results = []
         page_num = 1
-        all_links = []
+        total_processed = 0
 
-        # Colectar todos los links de todas las páginas
+        # Procesar página por página
         while True:
-            print(f"\n📄 Página {page_num}: Detectando productos...")
+            print(f"\n📄 Página {page_num}: Detectando y scrapeando productos...")
 
             # Detectar productos en página actual
             links = page.evaluate("""() => {
@@ -170,9 +161,53 @@ def run_donaldson_lube_filters():
             }""")
 
             print(f"   📦 {len(links)} productos en esta página")
-            all_links.extend(links)
 
-            # Buscar botón "Next"
+            # Scrapeara cada producto en esta página
+            for i, link in enumerate(links):
+                pid = f"desconocido_{total_processed + i + 1}"
+                new_page = context.new_page()
+
+                try:
+                    new_page.goto(link, wait_until="networkidle", timeout=60000)
+                    page.wait_for_timeout(1500)
+                    remover_popups(new_page)
+
+                    pid = new_page.locator("#productPageProductNumber").inner_text().strip()
+
+                    # 1. ATRIBUTOS
+                    expandir_show_more_atributos(new_page)
+                    raw_attrs = extraer_atributos(new_page)
+
+                    # 2. CROSS REFERENCE
+                    expandir_show_more_cross(new_page)
+                    cross = extraer_cross_reference(new_page)
+
+                    # 3. EQUIPMENT
+                    expandir_show_more_equipment(new_page)
+                    equipment = extraer_equipment(new_page)
+
+                    results.append({
+                        "base_code": pid,
+                        "od": raw_attrs.get("Outer Diameter"),
+                        "len": raw_attrs.get("Length"),
+                        "thread": raw_attrs.get("Thread Size"),
+                        "attributes": raw_attrs,
+                        "cross_reference": cross,
+                        "equipment": equipment
+                    })
+
+                    print(f"   [{i+1}/{len(links)}] {pid}: ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip")
+
+                except Exception as e:
+                    print(f"   [{i+1}/{len(links)}] {pid}: ❌ {str(e)[:50]}")
+                    results.append({"base_code": pid, "error": str(e)})
+
+                finally:
+                    new_page.close()
+
+            total_processed += len(links)
+
+            # Buscar botón "Next" y clickearlo
             has_next = page.evaluate("""() => {
                 const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
                 return nextBtn && nextBtn.style.display !== 'none';
@@ -187,63 +222,15 @@ def run_donaldson_lube_filters():
                 page.wait_for_timeout(3000)
                 page_num += 1
             else:
-                print(f"\n✅ Fin de páginas. Total productos detectados: {len(all_links)}")
+                print(f"\n✅ Fin de páginas.")
                 break
-
-        print(f"\n🔍 Scrapeando {len(all_links)} Lube Filters...")
-
-        for i, link in enumerate(all_links):
-            pid = f"desconocido_{i+1}"
-            new_page = context.new_page()
-
-            try:
-                new_page.goto(link, wait_until="networkidle", timeout=60000)
-                page.wait_for_timeout(2000)
-                remover_popups(new_page)
-
-                pid = new_page.locator("#productPageProductNumber").inner_text().strip()
-                print(f"[{i+1}/{len(links)}] 📦 Procesando: {pid}")
-
-                # 1. ATRIBUTOS
-                expandir_show_more_atributos(new_page)
-                raw_attrs = extraer_atributos(new_page)
-
-                # 2. CROSS REFERENCE
-                expandir_show_more_cross(new_page)
-                cross = extraer_cross_reference(new_page)
-
-                # 3. EQUIPMENT
-                expandir_show_more_equipment(new_page)
-                equipment = extraer_equipment(new_page)
-
-                results.append({
-                    "base_code": pid,
-                    "od": raw_attrs.get("Outer Diameter"),
-                    "len": raw_attrs.get("Length"),
-                    "thread": raw_attrs.get("Thread Size"),
-                    "attributes": raw_attrs,
-                    "cross_reference": cross,
-                    "equipment": equipment
-                })
-
-                print(f"   ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip")
-
-            except Exception as e:
-                print(f"   ❌ Error en {pid}: {str(e)[:60]}")
-                results.append({
-                    "base_code": pid,
-                    "error": str(e)
-                })
-
-            finally:
-                new_page.close()
 
         # Resumen
         successful = len([r for r in results if "error" not in r])
         print(f"\n{'='*80}")
         print(f"🏆 SCRAPING COMPLETADO")
         print(f"{'='*80}")
-        print(f"Total intentados: {len(all_links)}")
+        print(f"Total procesados: {total_processed}")
         print(f"Exitosos: {successful}")
         print(f"Errores: {len(results) - successful}")
 
