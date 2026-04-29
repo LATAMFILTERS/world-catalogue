@@ -262,15 +262,15 @@ def run_donaldson_lube_filters():
 
             if has_next:
                 print(f"\n{'='*80}")
-                print(f"📄 Página {page_num} completada. Total: {total_processed}/{360}")
-                print(f"{'='*80}\n")
-                input(f"👉 Pulsa ENTER para ir a página {page_num + 1}...")
+                print(f"📄 Página {page_num} completada. Total: {total_processed}/360")
+                print(f"{'='*80}")
+                print(f"⏳ Continuando automáticamente a página {page_num + 1}...")
 
                 page.evaluate("""() => {
                     const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
                     if (nextBtn) nextBtn.click();
                 }""")
-                page.wait_for_timeout(4000)
+                page.wait_for_timeout(5000)
                 page_num += 1
             else:
                 print(f"\n✅ Fin de páginas.")
