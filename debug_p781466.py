@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Debug script: Inspect P781466 Air Dryer product page
+Debug script: Inspect Air Dryer product page (P951413/67990)
 Identifies correct tabs and attribute selectors for Air Dryer category
 """
 
@@ -12,7 +12,7 @@ def debug_p781466():
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
 
-        url = "https://shop.donaldson.com/store/en-us/product/P781466"
+        url = "https://shop.donaldson.com/store/en-us/product/P951413/67990"
         page.goto(url, wait_until="domcontentloaded", timeout=30000)
         page.wait_for_timeout(3000)
 
