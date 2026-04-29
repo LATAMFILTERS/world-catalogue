@@ -158,6 +158,19 @@ def extraer_alternates(page):
     }""")
     return alternates
 
+def load_existing_results(filename):
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except:
+            return []
+    return []
+
+def save_results(results, filename):
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=4, ensure_ascii=False)
+
 def run_donaldson_fuel_filters():
     with sync_playwright() as p:
         user_data_dir = os.path.join(os.getcwd(), "sesion_fuel_filters")
@@ -177,9 +190,10 @@ def run_donaldson_fuel_filters():
 
         input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
 
-        results = []
+        results_file = "fuel_filters_results.json"
+        results = load_existing_results(results_file)
         page_num = 1
-        total_processed = 0
+        total_processed = len(results)
 
         # Procesar página por página
         while True:
@@ -252,6 +266,10 @@ def run_donaldson_fuel_filters():
 
             total_processed += len(links)
 
+            # Guardar resultados después de cada página
+            save_results(results, results_file)
+            print(f"💾 Guardado automático: {len(results)} productos en {results_file}")
+
             # Buscar botón "Next" (verificar visible Y no deshabilitado)
             has_next = page.evaluate("""() => {
                 const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
@@ -286,10 +304,8 @@ def run_donaldson_fuel_filters():
         print(f"Exitosos: {successful}")
         print(f"Errores: {len(results) - successful}")
 
-        with open("fuel_filters_results.json", "w", encoding="utf-8") as f:
-            json.dump(results, f, indent=4, ensure_ascii=False)
-
-        print(f"\n📁 Guardado en: fuel_filters_results.json")
+        save_results(results, results_file)
+        print(f"\n📁 Guardado final en: {results_file}")
         context.close()
 
 if __name__ == "__main__":
