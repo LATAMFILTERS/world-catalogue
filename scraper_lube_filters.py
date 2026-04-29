@@ -198,43 +198,18 @@ def run_donaldson_lube_filters():
                 new_page = context.new_page()
 
                 try:
-                    print(f"   [{i+1}/{len(links)}] Abriendo {link[:60]}...")
-                    new_page.goto(link, wait_until="networkidle", timeout=60000)
-                    page.wait_for_timeout(2000)
+                    # Forzar URL en-us (la sesión guardada puede estar en en-nl)
+                    link_us = link.replace('/store/en-nl/', '/store/en-us/')
+                    print(f"   [{i+1}/{len(links)}] Abriendo {link_us[:60]}...")
+                    new_page.goto(link_us, wait_until="networkidle", timeout=60000)
+                    new_page.wait_for_timeout(2000)
                     remover_popups(new_page)
 
                     pid = new_page.locator("#productPageProductNumber").inner_text().strip()
                     print(f"           → Código: {pid}")
 
-                    # Click todas las tabs para asegurar que se cargan
-                    print(f"           → Cargando todas las tabs...")
-                    new_page.evaluate("""() => {
-                        // Click Attributes tab
-                        let tab = document.querySelector('[href="#attributesBody"], [id*="attr"]');
-                        if (tab) tab.click();
-                    }""")
-                    new_page.wait_for_timeout(1500)
-
-                    new_page.evaluate("""() => {
-                        // Click Cross Reference tab
-                        let tab = document.querySelector('[href="#crossreferenceBody"], [href*="cross"]');
-                        if (tab) tab.click();
-                    }""")
-                    new_page.wait_for_timeout(1500)
-
-                    new_page.evaluate("""() => {
-                        // Click Equipment tab
-                        let tab = document.querySelector('[href="#equiptmentBody"], [href*="equip"]');
-                        if (tab) tab.click();
-                    }""")
-                    new_page.wait_for_timeout(1500)
-
-                    new_page.evaluate("""() => {
-                        // Click Alternate Parts tab
-                        let tab = document.querySelector('[href="#alternateBody"], [href*="alternate"]');
-                        if (tab) tab.click();
-                    }""")
-                    new_page.wait_for_timeout(1500)
+                    # NO clickear tabs — ya están abiertas por defecto
+                    # Sólo expandir Show More en cada sección
 
                     # 1. ATRIBUTOS
                     print(f"           → Extrayendo atributos...")
