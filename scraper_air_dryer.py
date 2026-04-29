@@ -2,20 +2,144 @@ import json
 import os
 from playwright.sync_api import sync_playwright
 
-# ⚠️ Cambia esta URL por la categoría Air Dryer correcta de Donaldson
-# Ejemplo: https://shop.donaldson.com/store/en-us/search?N=XXXXXXXXX
 AIR_DRYER_URL = "https://shop.donaldson.com/store/en-us/search?N=2748940002"
 
-def destruir_estorbos(page):
+def remover_popups(page):
+    """Remove popups and chatbots"""
     try:
         page.evaluate("""() => {
-            const basura = ['#chat-button', '.LPMcontainer', '.optanon-alert-box-wrapper',
-                            '.osano-cm-window', '.modal-backdrop', '.modal-open'];
-            basura.forEach(s => { const el = document.querySelector(s); if(el) el.remove(); });
+            const popups = ['#chat-button', '.LPMcontainer', '.optanon-alert-box-wrapper',
+                           '.osano-cm-window', '.modal-backdrop', '.modal-open',
+                           '[id*="chat"]', '[class*="chat"]', 'iframe[title*="chat"]'];
+            popups.forEach(s => {
+                document.querySelectorAll(s).forEach(el => el.remove());
+            });
             document.body.style.overflow = 'auto';
         }""")
     except:
         pass
+
+def extraer_atributos(page):
+    """Extract attributes from #attributesBody table"""
+    attrs = page.evaluate("""() => {
+        let data = {};
+
+        // Buscar todas las filas en #attributesBody (incluyendo las ocultas)
+        document.querySelectorAll('#attributesBody table tr').forEach(tr => {
+            const tds = tr.querySelectorAll('td');
+            if (tds.length >= 2) {
+                const label = tds[0].innerText.trim();
+                const value = tds[1].innerText.trim();
+                if (label && value) {
+                    data[label] = value;
+                }
+            }
+        });
+
+        return data;
+    }""")
+    return attrs
+
+def expandir_show_more_atributos(page):
+    """Click Show More in attributes section until all expanded"""
+    page.evaluate("""async () => {
+        let expanded = true;
+        while (expanded) {
+            let btn = document.getElementById('showMoreProductSpecsButton');
+            if (!btn || btn.style.display === 'none') {
+                expanded = false;
+            } else {
+                btn.click();
+                await new Promise(r => setTimeout(r, 1500));
+            }
+        }
+    }""")
+    page.wait_for_timeout(1000)
+
+def extraer_cross_reference(page):
+    """Extract cross reference data from table"""
+    cross = page.evaluate("""() => {
+        let data = [];
+
+        // Seleccionar todas las filas (saltando header)
+        document.querySelectorAll('#crossreferenceBody table tbody tr').forEach(tr => {
+            const tds = tr.querySelectorAll('td');
+            if (tds.length >= 2) {
+                const mfr = tds[0].innerText.trim();
+                const part = tds[1].innerText.trim();
+                if (mfr && part && !mfr.includes('Manufacturer')) {
+                    data.push({
+                        manufacturer: mfr,
+                        part_number: part
+                    });
+                }
+            }
+        });
+
+        return data;
+    }""")
+    return cross
+
+def expandir_show_more_cross(page):
+    """Click Show More in cross reference until all expanded"""
+    page.evaluate("""async () => {
+        let expanded = true;
+        while (expanded) {
+            let btn = document.getElementById('showAllCrossReferenceListButton');
+            if (!btn || btn.style.display === 'none') {
+                expanded = false;
+            } else {
+                btn.click();
+                await new Promise(r => setTimeout(r, 1500));
+            }
+        }
+    }""")
+    page.wait_for_timeout(1000)
+
+def extraer_equipment(page):
+    """Extract equipment data from table"""
+    equip = page.evaluate("""() => {
+        let data = [];
+
+        // Seleccionar todas las filas (saltando header)
+        document.querySelectorAll('#equiptmentBody table tbody tr').forEach(tr => {
+            const tds = tr.querySelectorAll('td');
+            if (tds.length >= 5) {
+                const equipment = tds[0].innerText.trim();
+                const year = tds[1].innerText.trim();
+                const type = tds[2].innerText.trim();
+                const engine = tds[4].innerText.trim();
+
+                if (equipment && equipment !== 'Equipment') {
+                    data.push({
+                        equipment: equipment,
+                        year: year !== '-' ? year : null,
+                        type: type,
+                        engine: engine
+                    });
+                }
+            }
+        });
+
+        return data;
+    }""")
+    return equip
+
+def expandir_show_more_equipment(page):
+    """Click Show More in equipment until all expanded"""
+    page.evaluate("""async () => {
+        let expanded = true;
+        while (expanded) {
+            let btn = document.getElementById('showMorePdpListButton');
+            if (!btn || btn.style.display === 'none') {
+                expanded = false;
+            } else {
+                btn.click();
+                await new Promise(r => setTimeout(r, 1500));
+            }
+        }
+    }""")
+    page.wait_for_timeout(1000)
 
 def run_donaldson_air_dryer():
     with sync_playwright() as p:
@@ -28,144 +152,61 @@ def run_donaldson_air_dryer():
 
         page = context.pages[0]
         page.goto(AIR_DRYER_URL)
+        page.wait_for_timeout(2000)
 
         input("👉 Resuelve el acceso y pulsa ENTER cuando veas los filtros...")
 
-        # Fix: evaluate() no evaluate_all() para obtener array de hrefs
+        # Detectar productos
         links = page.evaluate("""() => {
             const els = document.querySelectorAll('a.donaldson-part-details');
             return [...new Set([...els].map(e => e.href))];
         }""")
 
         print(f"📦 Detectados {len(links)} productos.")
-
         results = []
 
         for i, link in enumerate(links):
-            pid = f"desconocido_{i+1}"  # Default por si falla antes de leer el pid
+            pid = f"desconocido_{i+1}"
             new_page = context.new_page()
 
             try:
-                new_page.goto(link, wait_until="domcontentloaded", timeout=60000)
-                destruir_estorbos(new_page)
+                new_page.goto(link, wait_until="networkidle", timeout=60000)
+                page.wait_for_timeout(2000)
+                remover_popups(new_page)
 
                 pid = new_page.locator("#productPageProductNumber").inner_text().strip()
                 print(f"[{i+1}/{len(links)}] 📦 Procesando: {pid}")
 
-                # 1. ATRIBUTOS — click tab + expandir Show More
-                # Intentar todos los selectores posibles para el tab de especificaciones
-                new_page.evaluate("""() => {
-                    const tabs = ['a[href="#specifications"]', 'a[href="#productSpecifications"]',
-                                  'a[href="#techSpecs"]', 'a[href="#attributes"]',
-                                  'button[data-tab="specifications"]'];
-                    for (const sel of tabs) {
-                        const el = document.querySelector(sel);
-                        if (el) { el.click(); break; }
-                    }
-                }""")
-                new_page.wait_for_timeout(2000)
+                # 1. ATRIBUTOS
+                expandir_show_more_atributos(new_page)
+                raw_attrs = extraer_atributos(new_page)
 
-                # Show More en atributos
-                new_page.evaluate("""async () => {
-                    while (true) {
-                        let btn = Array.from(document.querySelectorAll('button, a'))
-                                       .find(b => b.innerText.toLowerCase().includes('show more')
-                                               && !b.closest('#crossReference')
-                                               && !b.closest('#equiptment'));
-                        if (!btn) break;
-                        btn.click();
-                        await new Promise(r => setTimeout(r, 2000));
-                    }
-                }""")
+                # 2. CROSS REFERENCE
+                expandir_show_more_cross(new_page)
+                cross = extraer_cross_reference(new_page)
 
-                # Extraer atributos con múltiples selectores
-                raw_attrs = new_page.evaluate("""() => {
-                    let data = {};
-
-                    // Selector 1: dl dt/dd (el más común en Donaldson)
-                    document.querySelectorAll('dl dt, .product-specification-table dt').forEach(dt => {
-                        const dd = dt.nextElementSibling;
-                        if (dd) data[dt.innerText.trim()] = dd.innerText.trim();
-                    });
-
-                    // Selector 2: tabla con th/td
-                    if (Object.keys(data).length === 0) {
-                        document.querySelectorAll('.specifications-table tr, .spec-table tr').forEach(tr => {
-                            const th = tr.querySelector('th');
-                            const td = tr.querySelector('td');
-                            if (th && td) data[th.innerText.trim()] = td.innerText.trim();
-                        });
-                    }
-
-                    // Selector 3: divs con label/value
-                    if (Object.keys(data).length === 0) {
-                        document.querySelectorAll('[class*="spec"] [class*="label"], [class*="attr"] [class*="label"]').forEach(label => {
-                            const value = label.nextElementSibling;
-                            if (value) data[label.innerText.trim()] = value.innerText.trim();
-                        });
-                    }
-
-                    return data;
-                }""")
-
-                # 2. CROSS REFERENCE — expansión forzada
-                new_page.evaluate("() => document.querySelector('a[href=\"#crossReference\"]')?.click()")
-                new_page.wait_for_timeout(2000)
-
-                new_page.evaluate("""async () => {
-                    while (true) {
-                        let btn = Array.from(document.querySelectorAll('#crossReference button, #crossReference a'))
-                                       .find(b => b.innerText.toLowerCase().includes('show more'));
-                        if (!btn) break;
-                        btn.click();
-                        await new Promise(r => setTimeout(r, 2500));
-                    }
-                }""")
-
-                cross = new_page.evaluate("""() => {
-                    return Array.from(document.querySelectorAll('#crossreferenceBody tbody tr')).map(r => {
-                        const c = r.querySelectorAll('td');
-                        return c.length >= 2 ? { brand: c[0].innerText.trim(), code: c[1].innerText.trim() } : null;
-                    }).filter(x => x);
-                }""")
-
-                # 3. EQUIPMENT — expansión forzada
-                new_page.evaluate("() => document.querySelector('a[href=\"#equiptment\"]')?.click()")
-                new_page.wait_for_timeout(2000)
-
-                new_page.evaluate("""async () => {
-                    while (true) {
-                        let btn = Array.from(document.querySelectorAll('#equiptment button, #equiptment a'))
-                                       .find(b => b.innerText.toLowerCase().includes('show more'));
-                        if (!btn) break;
-                        btn.click();
-                        await new Promise(r => setTimeout(r, 2500));
-                    }
-                }""")
-
-                equipment = new_page.evaluate("""() => {
-                    return Array.from(document.querySelectorAll('#equiptmentBody tbody tr')).map(r => {
-                        const c = r.querySelectorAll('td');
-                        return c.length >= 3
-                            ? { make: c[0].innerText.trim(), model: c[1].innerText.trim(), engine: c[2].innerText.trim() }
-                            : null;
-                    }).filter(x => x);
-                }""")
+                # 3. EQUIPMENT
+                expandir_show_more_equipment(new_page)
+                equipment = extraer_equipment(new_page)
 
                 results.append({
                     "base_code": pid,
                     "od": raw_attrs.get("Outer Diameter"),
                     "len": raw_attrs.get("Length"),
-                    "t_desc": raw_attrs.get("Thread Size"),
-                    "attrs": raw_attrs,
-                    "cross": cross,
-                    "apps": equipment
+                    "thread": raw_attrs.get("Thread Size"),
+                    "attributes": raw_attrs,
+                    "cross_reference": cross,
+                    "equipment": equipment
                 })
 
                 print(f"   ✅ {len(raw_attrs)} Atrib | {len(cross)} Cross | {len(equipment)} Equip")
 
             except Exception as e:
-                print(f"   ❌ Error en {pid}: {e}")
+                print(f"   ❌ Error en {pid}: {str(e)[:60]}")
+                results.append({
+                    "base_code": pid,
+                    "error": str(e)
+                })
 
             finally:
                 new_page.close()
