@@ -171,6 +171,7 @@ def run_donaldson_coolant_filters():
         context = p.chromium.launch_persistent_context(
             user_data_dir,
             headless=False,
+            ignore_https_errors=True,
             args=[
                 "--disable-blink-features=AutomationControlled",
                 "--disable-dev-shm-usage",
