@@ -52,13 +52,59 @@ def run_donaldson_air_dryer():
                 pid = new_page.locator("#productPageProductNumber").inner_text().strip()
                 print(f"[{i+1}/{len(links)}] 📦 Procesando: {pid}")
 
-                # 1. ATRIBUTOS
+                # 1. ATRIBUTOS — click tab + expandir Show More
+                # Intentar todos los selectores posibles para el tab de especificaciones
+                new_page.evaluate("""() => {
+                    const tabs = ['a[href="#specifications"]', 'a[href="#productSpecifications"]',
+                                  'a[href="#techSpecs"]', 'a[href="#attributes"]',
+                                  'button[data-tab="specifications"]'];
+                    for (const sel of tabs) {
+                        const el = document.querySelector(sel);
+                        if (el) { el.click(); break; }
+                    }
+                }""")
+                new_page.wait_for_timeout(2000)
+
+                # Show More en atributos
+                new_page.evaluate("""async () => {
+                    while (true) {
+                        let btn = Array.from(document.querySelectorAll('button, a'))
+                                       .find(b => b.innerText.toLowerCase().includes('show more')
+                                               && !b.closest('#crossReference')
+                                               && !b.closest('#equiptment'));
+                        if (!btn) break;
+                        btn.click();
+                        await new Promise(r => setTimeout(r, 2000));
+                    }
+                }""")
+
+                # Extraer atributos con múltiples selectores
                 raw_attrs = new_page.evaluate("""() => {
                     let data = {};
-                    document.querySelectorAll('.product-specification-table dt').forEach(dt => {
+
+                    // Selector 1: dl dt/dd (el más común en Donaldson)
+                    document.querySelectorAll('dl dt, .product-specification-table dt').forEach(dt => {
                         const dd = dt.nextElementSibling;
-                        if(dd) data[dt.innerText.trim()] = dd.innerText.trim();
+                        if (dd) data[dt.innerText.trim()] = dd.innerText.trim();
                     });
+
+                    // Selector 2: tabla con th/td
+                    if (Object.keys(data).length === 0) {
+                        document.querySelectorAll('.specifications-table tr, .spec-table tr').forEach(tr => {
+                            const th = tr.querySelector('th');
+                            const td = tr.querySelector('td');
+                            if (th && td) data[th.innerText.trim()] = td.innerText.trim();
+                        });
+                    }
+
+                    // Selector 3: divs con label/value
+                    if (Object.keys(data).length === 0) {
+                        document.querySelectorAll('[class*="spec"] [class*="label"], [class*="attr"] [class*="label"]').forEach(label => {
+                            const value = label.nextElementSibling;
+                            if (value) data[label.innerText.trim()] = value.innerText.trim();
+                        });
+                    }
+
                     return data;
                 }""")
 
