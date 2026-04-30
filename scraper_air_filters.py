@@ -285,7 +285,11 @@ def run_donaldson_air_filters():
                     const nextBtn = document.querySelector('a[title="Next Page"], a[class*="next"]');
                     if (nextBtn) nextBtn.click();
                 }""")
-                page.wait_for_timeout(5000)
+                try:
+                    page.wait_for_load_state("networkidle", timeout=15000)
+                except:
+                    pass
+                page.wait_for_timeout(3000)
                 page_num += 1
             else:
                 print(f"\n✅ Fin de páginas.")
