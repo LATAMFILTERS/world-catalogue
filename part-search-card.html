@@ -445,7 +445,7 @@ function efRenderResult(apiResponse) {
   document.getElementById('ef-oem-count').textContent = oemCodes.length;
 
   // Cross Reference
-  const crossCodes = d.competitor_codes || [];
+  const crossCodes = d.cross_reference_codes || d.competitor_codes || [];
   renderCodes('ef-cross-grid', crossCodes);
   document.getElementById('ef-cross-count').textContent = crossCodes.length;
 
