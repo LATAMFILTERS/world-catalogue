@@ -1005,6 +1005,103 @@ app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
 
+// ─── POST /api/import/donaldson ──────────────────────────────────────────────
+// Accepts batch of pre-processed rows and upserts into elimfilters_catalog.
+// Body: { key: "elim2026", rows: [ { sku, codigo_base, filter_type, ... } ] }
+app.post('/api/import/donaldson', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    let inserted = 0, updated = 0, errors = 0;
+
+    for (const row of rows) {
+      if (!row.sku || !row.codigo_base) { errors++; continue; }
+      try {
+        const result = await client.query(`
+          INSERT INTO elimfilters_catalog (
+            sku, codigo_base, filter_type, sub_type,
+            installation_type, thread_size,
+            outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+            iso_test_method, micron_rating, nominal_efficiency,
+            burst_pressure_psi, collapse_pressure_psi,
+            duty,
+            oem_codes, competitor_codes, equipment_applications
+          ) VALUES (
+            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,
+            $17::jsonb,$18::jsonb,$19::jsonb
+          )
+          ON CONFLICT (sku) DO UPDATE SET
+            codigo_base           = COALESCE(EXCLUDED.codigo_base,           elimfilters_catalog.codigo_base),
+            filter_type           = COALESCE(EXCLUDED.filter_type,           elimfilters_catalog.filter_type),
+            sub_type              = COALESCE(EXCLUDED.sub_type,              elimfilters_catalog.sub_type),
+            installation_type     = COALESCE(EXCLUDED.installation_type,     elimfilters_catalog.installation_type),
+            thread_size           = COALESCE(EXCLUDED.thread_size,           elimfilters_catalog.thread_size),
+            outer_diameter_mm     = COALESCE(EXCLUDED.outer_diameter_mm,     elimfilters_catalog.outer_diameter_mm),
+            height_mm             = COALESCE(EXCLUDED.height_mm,             elimfilters_catalog.height_mm),
+            gasket_od_mm          = COALESCE(EXCLUDED.gasket_od_mm,          elimfilters_catalog.gasket_od_mm),
+            gasket_id_mm          = COALESCE(EXCLUDED.gasket_id_mm,          elimfilters_catalog.gasket_id_mm),
+            iso_test_method       = COALESCE(EXCLUDED.iso_test_method,       elimfilters_catalog.iso_test_method),
+            micron_rating         = COALESCE(EXCLUDED.micron_rating,         elimfilters_catalog.micron_rating),
+            nominal_efficiency    = COALESCE(EXCLUDED.nominal_efficiency,    elimfilters_catalog.nominal_efficiency),
+            burst_pressure_psi    = COALESCE(EXCLUDED.burst_pressure_psi,    elimfilters_catalog.burst_pressure_psi),
+            collapse_pressure_psi = COALESCE(EXCLUDED.collapse_pressure_psi, elimfilters_catalog.collapse_pressure_psi),
+            duty                  = COALESCE(EXCLUDED.duty,                  elimfilters_catalog.duty),
+            competitor_codes      = CASE
+              WHEN elimfilters_catalog.competitor_codes IS NULL OR elimfilters_catalog.competitor_codes = '[]'::jsonb
+              THEN EXCLUDED.competitor_codes ELSE elimfilters_catalog.competitor_codes END,
+            equipment_applications = CASE
+              WHEN elimfilters_catalog.equipment_applications IS NULL OR elimfilters_catalog.equipment_applications = '[]'::jsonb
+              THEN EXCLUDED.equipment_applications ELSE elimfilters_catalog.equipment_applications END
+        `, [
+          row.sku, row.codigo_base, row.filter_type || null, row.sub_type || null,
+          row.installation_type || null, row.thread_size || null,
+          row.outer_diameter_mm || null, row.height_mm || null,
+          row.gasket_od_mm || null, row.gasket_id_mm || null,
+          row.iso_test_method || null, row.micron_rating || null,
+          row.nominal_efficiency || null,
+          row.burst_pressure_psi || null, row.collapse_pressure_psi || null,
+          row.duty || 'HEAVY_DUTY',
+          JSON.stringify(row.oem_codes || []),
+          JSON.stringify(row.competitor_codes || []),
+          JSON.stringify(row.equipment_applications || [])
+        ]);
+        // xmax = 0 means insert, otherwise update
+        if (result.rows && result.rows[0] && result.rows[0].xmax === '0') inserted++;
+        else updated++;
+      } catch (rowErr) {
+        errors++;
+      }
+    }
+
+    res.json({ success: true, total: rows.length, inserted, updated, errors });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/import/existing-skus ───────────────────────────────────────────
+// Returns all existing SKUs so the client can avoid collisions.
+app.get('/api/import/existing-skus', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
+    res.json({ success: true, skus: result.rows.map(r => r.sku) });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Register knowledge API for AI agents
 app.use('/api/knowledge', knowledgeRoutes);
 
