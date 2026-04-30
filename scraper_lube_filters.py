@@ -227,7 +227,7 @@ def run_donaldson_lube_filters():
                 try:
                     # Forzar URL en-us (la sesión guardada puede estar en en-nl)
                     link_us = link.replace('/store/en-nl/', '/store/en-us/')
-                    url_code = link_us.rstrip('/').split('/')[-1].split('?')[0].upper()
+                    url_code = [s for s in link_us.rstrip('/').split('/') if s][-2].split('?')[0].upper() if '/product/' in link_us else link_us.rstrip('/').split('/')[-1].upper()
                     if url_code in already_processed:
                         print(f"   [{i+1}/{len(links)}] ⏭️  {url_code} ya procesado, saltando...")
                         new_page.close()
