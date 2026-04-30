@@ -1,0 +1,20 @@
+[
+  { "sku": "ET92010T", "codigo_base": "2010TM-OR", "serie": "2010", "variant": "TM" },
+  { "sku": "ET92010P", "codigo_base": "2010PM-OR", "serie": "2010", "variant": "PM" },
+  { "sku": "ET92010S", "codigo_base": "2010SM-OR", "serie": "2010", "variant": "SM" },
+  { "sku": "ET92020T", "codigo_base": "2020TM-OR", "serie": "2020", "variant": "TM" },
+  { "sku": "ET92020P", "codigo_base": "2020PM-OR", "serie": "2020", "variant": "PM" },
+  { "sku": "ET92020S", "codigo_base": "2020SM-OR", "serie": "2020", "variant": "SM" },
+  { "sku": "ET92040T", "codigo_base": "2040TM-OR", "serie": "2040", "variant": "TM" },
+  { "sku": "ET92040P", "codigo_base": "2040PM-OR", "serie": "2040", "variant": "PM" },
+  { "sku": "ET92040S", "codigo_base": "2040SM-OR", "serie": "2040", "variant": "SM" },
+  { "sku": "ET91000F", "codigo_base": "1000FH",    "serie": "1000", "variant": "FH" },
+  { "sku": "ET91000G", "codigo_base": "1000FG",    "serie": "1000", "variant": "FG" },
+  { "sku": "ET90500F", "codigo_base": "500FH",     "serie": "500",  "variant": "FH" },
+  { "sku": "ET90500G", "codigo_base": "500FG",     "serie": "500",  "variant": "FG" },
+  { "sku": "ET90900F", "codigo_base": "900FH",     "serie": "900",  "variant": "FH" },
+  { "sku": "ET90900G", "codigo_base": "900FG",     "serie": "900",  "variant": "FG" },
+  { "sku": "ET97590M", "codigo_base": "75900MAX",  "serie": "75900","variant": "MAX" },
+  { "sku": "ET91000M", "codigo_base": "1000MA",    "serie": "1000", "variant": "MA" },
+  { "sku": "ET90900M", "codigo_base": "900MA",     "serie": "900",  "variant": "MA" }
+]
