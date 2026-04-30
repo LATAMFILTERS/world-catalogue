@@ -1024,7 +1024,7 @@ app.post('/api/import/donaldson', async (req, res) => {
       try {
         const result = await client.query(`
           INSERT INTO elimfilters_catalog (
-            sku, codigo_base, filter_type, sub_type,
+            sku, codigo_base, filter_type, sub_type, technology,
             installation_type, thread_size,
             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
             iso_test_method, micron_rating, nominal_efficiency,
@@ -1032,13 +1032,14 @@ app.post('/api/import/donaldson', async (req, res) => {
             duty,
             oem_codes, competitor_codes, equipment_applications
           ) VALUES (
-            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,
-            $17::jsonb,$18::jsonb,$19::jsonb
+            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,
+            $18::jsonb,$19::jsonb,$20::jsonb
           )
           ON CONFLICT (sku) DO UPDATE SET
             codigo_base           = COALESCE(EXCLUDED.codigo_base,           elimfilters_catalog.codigo_base),
             filter_type           = COALESCE(EXCLUDED.filter_type,           elimfilters_catalog.filter_type),
             sub_type              = COALESCE(EXCLUDED.sub_type,              elimfilters_catalog.sub_type),
+            technology            = COALESCE(EXCLUDED.technology,            elimfilters_catalog.technology),
             installation_type     = COALESCE(EXCLUDED.installation_type,     elimfilters_catalog.installation_type),
             thread_size           = COALESCE(EXCLUDED.thread_size,           elimfilters_catalog.thread_size),
             outer_diameter_mm     = COALESCE(EXCLUDED.outer_diameter_mm,     elimfilters_catalog.outer_diameter_mm),
@@ -1059,6 +1060,7 @@ app.post('/api/import/donaldson', async (req, res) => {
               THEN EXCLUDED.equipment_applications ELSE elimfilters_catalog.equipment_applications END
         `, [
           row.sku, row.codigo_base, row.filter_type || null, row.sub_type || null,
+          row.technology || null,
           row.installation_type || null, row.thread_size || null,
           row.outer_diameter_mm || null, row.height_mm || null,
           row.gasket_od_mm || null, row.gasket_id_mm || null,

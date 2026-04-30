@@ -40,6 +40,20 @@ BATCH_SIZE = 50  # rows per POST request
 # Data dir: script dir by default, override with DATA_DIR env var
 DATA_DIR = os.environ.get("DATA_DIR", os.path.dirname(os.path.abspath(__file__)))
 
+# Technology assigned per prefix
+TECH_MAP = {
+    "EL8": "SYNTRAX™",
+    "EF9": "NANOFORCE™",
+    "ES9": "NANOFORCE™",
+    "ET9": "AQUAGUARD™",
+    "EA1": "MACROCORE™",
+    "EA2": None,
+    "EH6": "SYNTEPORE™",
+    "EW7": "COOLTECH™",
+    "EC1": "MICROKAPPA™",
+    "ED4": "DRYCORE™",
+}
+
 # (json_filename, filter_type, default_prefix, category_key)
 CATEGORIES = [
     ("lube_filters_results.json",        "Lube Filter",          "EL8", "lube"),
@@ -225,8 +239,9 @@ def build_rows(products: list, filter_type: str, prefix: str, is_fuel: bool,
             pfx, sub = classify_fuel(product)
             ft = "Fuel Filter"
 
-        sku    = make_sku(pfx, base_code, used_skus)
+        sku  = make_sku(pfx, base_code, used_skus)
         used_skus.add(sku)
+        tech = TECH_MAP.get(pfx)
 
         dims   = parse_attrs(product)
         comp_c = parse_cross_ref(product)
@@ -237,6 +252,7 @@ def build_rows(products: list, filter_type: str, prefix: str, is_fuel: bool,
             "codigo_base":            base_code,
             "filter_type":            ft,
             "sub_type":               sub,
+            "technology":             tech,
             **dims,
             "oem_codes":              [],
             "competitor_codes":       comp_c,
@@ -255,6 +271,7 @@ def build_rows(products: list, filter_type: str, prefix: str, is_fuel: bool,
                 "codigo_base":            alt_code,
                 "filter_type":            ft,
                 "sub_type":               sub,
+                "technology":             tech,
                 **dims,
                 "oem_codes":              [],
                 "competitor_codes":       comp_c,
