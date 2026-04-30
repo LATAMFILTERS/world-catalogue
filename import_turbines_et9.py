@@ -31,7 +31,7 @@ def run(dry_run):
             "sku":                    t["sku"],
             "codigo_base":            t["codigo_base"],
             "filter_type":            "Fuel Filter",
-            "sub_type":               "Fuel Filter - Coalescing",
+            "sub_type":               t.get("sub_type", "Fuel Filter - Coalescing"),
             "technology":             "AQUAGUARD/SERIES™",
             "installation_type":      t.get("installation_type"),
             "thread_size":            t.get("thread_size"),
