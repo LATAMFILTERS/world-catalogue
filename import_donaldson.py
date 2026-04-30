@@ -85,13 +85,22 @@ def classify_fuel(product: dict) -> tuple:
     type_v = (attrs.get("Type", "") + " " + attrs.get("Product Type", "")).upper()
     style  = attrs.get("Style", "").upper()
 
+    # Water Separator always → ES9 (even "Coalescing Fuel Water Separator")
+    if ("WATER SEP" in type_v or "SEPARATOR" in type_v or
+            "FUEL/WATER" in type_v):
+        inst = attrs.get("Style", "").upper()
+        sub = "Fuel Filter - Water Separator"
+        if "SPIN-ON" in inst or "SPIN ON" in inst:
+            sub += " Spin-On"
+        elif "CARTRIDGE" in inst:
+            sub += " Cartridge"
+        return "ES9", sub
+
+    # Turbine FH series / Coalescing → ET9
     if code.startswith("FH") or "COALESC" in type_v or "TURBINE" in type_v:
         return "ET9", "Fuel Filter - Coalescing"
 
-    if ("WATER SEP" in type_v or "SEPARATOR" in type_v or
-            "SEPARATOR" in style or "FUEL/WATER" in type_v):
-        return "ES9", "Fuel Filter - Water Separator"
-
+    # Generic fuel → EF9
     sub = "Fuel Filter"
     if "PRIMARY" in type_v:
         sub = "Fuel Filter - Primary"
@@ -101,6 +110,10 @@ def classify_fuel(product: dict) -> tuple:
         sub += " Spin-On"
     elif "CARTRIDGE" in style:
         sub += " Cartridge"
+    elif "IN-LINE" in style or "INLINE" in style:
+        sub += " In-Line"
+    elif "SOCK" in type_v:
+        sub += " Sock"
     return "EF9", sub
 
 # ─── Attribute parsing ───────────────────────────────────────────────────────
