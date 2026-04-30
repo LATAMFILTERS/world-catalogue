@@ -200,6 +200,9 @@ def run_donaldson_lube_filters():
 
         results_file = "lube_filters_results.json"
         results = load_existing_results(results_file)
+        already_processed = {r["base_code"].upper() for r in results if "base_code" in r}
+        if already_processed:
+            print(f"⏭️  Retomando: {len(already_processed)} productos ya procesados")
         page_num = 1
         total_processed = len(results)
         done = False
@@ -224,6 +227,13 @@ def run_donaldson_lube_filters():
                 try:
                     # Forzar URL en-us (la sesión guardada puede estar en en-nl)
                     link_us = link.replace('/store/en-nl/', '/store/en-us/')
+                    url_code = link_us.rstrip('/').split('/')[-1].split('?')[0].upper()
+                    if url_code in already_processed:
+                        print(f"   [{i+1}/{len(links)}] ⏭️  {url_code} ya procesado, saltando...")
+                        new_page.close()
+                        if url_code == LAST_CODE:
+                            done = True
+                        continue
                     print(f"   [{i+1}/{len(links)}] Abriendo {link_us[:60]}...")
                     new_page.goto(link_us, wait_until="networkidle", timeout=60000)
                     new_page.wait_for_timeout(2000)
