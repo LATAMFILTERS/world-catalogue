@@ -45,7 +45,7 @@ const CSS = `
   body{background:var(--b);color:var(--w);font-family:'Barlow',sans-serif;overflow-x:hidden;}
   .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;transition:all .3s;}
   .nav.sc{background:rgba(0,0,0,.96);border-bottom:1px solid var(--g7);backdrop-filter:blur(10px);}
-  .nav-logo{height:44px;width:auto;}
+  .nav-logo{height:70px;width:auto;}
   .nav-links{display:flex;gap:28px;align-items:center;list-style:none;}
   .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--y);}
