@@ -50,7 +50,7 @@ const CSS = `
   .nav-links a{font-family:'Bebas Neue',sans-serif;font-size:16px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--w);text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--y);}
   .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:10px 22px!important;font-weight:700!important;font-size:16px!important;}
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:160px 5% 80px;position:relative;overflow:hidden;}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:200px 5% 80px;position:relative;overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;}
   .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.97) 100%);}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,241,45,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,241,45,.03) 1px,transparent 1px);background-size:60px 60px;}
