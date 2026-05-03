@@ -47,9 +47,9 @@ const CSS = `
   .nav.sc{background:rgba(0,0,0,.96);border-bottom:1px solid var(--g7);backdrop-filter:blur(10px);}
   .nav-logo{height:70px;width:auto;}
   .nav-links{display:flex;gap:28px;align-items:center;list-style:none;}
-  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);text-decoration:none;transition:color .2s;}
+  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--w);text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--y);}
-  .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:8px 18px!important;font-weight:700!important;}
+  .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:10px 22px!important;font-weight:700!important;font-size:16px!important;}
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5% 80px;position:relative;overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;}
   .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.97) 100%);}
