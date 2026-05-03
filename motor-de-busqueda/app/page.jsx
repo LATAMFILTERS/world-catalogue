@@ -56,7 +56,7 @@ const CSS = `
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,241,45,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,241,45,.03) 1px,transparent 1px);background-size:60px 60px;}
   .hero-c{position:relative;z-index:3;max-width:1400px;margin:0 auto;width:100%;}
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--y);text-transform:uppercase;margin-bottom:20px;opacity:.9;}
-  .hero-title{font-family:'Russo One',sans-serif;font-weight:900;font-size:clamp(64px,11vw,150px);line-height:.88;text-transform:uppercase;color:var(--y);margin-bottom:8px;}
+  .hero-title{font-family:'Russo One',sans-serif;font-weight:900;font-size:clamp(48px,8vw,110px);line-height:.9;text-transform:uppercase;color:var(--y);margin-bottom:8px;}
   .hero-sub{font-family:'Russo One',sans-serif;font-weight:400;font-size:clamp(24px,4vw,52px);text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:44px;}
   .hero-bot{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;}
   .hero-tag{font-size:19px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.65;border-left:4px solid var(--y);padding-left:24px;text-align:justify;}
