@@ -50,7 +50,7 @@ const stats = [
   return (
     <>
       <style>{
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+        
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
         :root{--y:#FFF12D;--b:#000;--g9:#0a0a0a;--g8:#111;--g7:#1a1a1a;--g4:#666;--g3:#999;--w:#fff;}
         body{background:var(--b);color:var(--w);font-family:'Barlow',sans-serif;overflow-x:hidden;}
@@ -171,7 +171,7 @@ av + (scrollY>50?'sc':'')}>
           </div>
         </div>
       </section>
-      <div className="ticker"><div className="ticker-in">{[...industries,...industries].map((ind,i)=><span key={i} className="t-item">{ind.name} ◆</span>)}</div></div>
+      <div className="ticker"><div className="ticker-in">{[...industries,...industries].map((ind,i)=><span key={i} className="t-item">{ind.name} â—†</span>)}</div></div>
       <section className="stats"><div className="stats-grid">{stats.map((s,i)=><div key={i} className="stat"><div className="stat-n">{s.value}</div><div className="stat-l">{s.label}</div></div>)}</div></section>
       <section className="problem">
         <div className="prob-in">
@@ -194,7 +194,7 @@ av + (scrollY>50?'sc':'')}>
         <div className="tech-in">
           <div className="tech-hdr">
             <div><p className="s-label">// PROPRIETARY TECHNOLOGY PORTFOLIO</p><h2 className="s-title" style={{fontSize:'clamp(32px,4.5vw,56px)',marginBottom:0}}>15 TECHNOLOGIES.<br/><span>ONE MISSION.</span></h2></div>
-            <a href="/technologies" className="btn-s" style={{borderColor:'#333',color:'#777'}}>VIEW ALL →</a>
+            <a href="/technologies" className="btn-s" style={{borderColor:'#333',color:'#777'}}>VIEW ALL â†’</a>
           </div>
           <div className="tech-grid">
             {technologies.map((t,i)=>(
@@ -215,7 +215,7 @@ av + (scrollY>50?'sc':'')}>
             <div className="ind-list">
               {industries.map((ind,i)=>(
                 <div key={i} className={ind-item +(activeIndustry===i?'active':'')} onClick={()=>setActiveIndustry(i)}>
-                  <div><div>{ind.name}</div><div className="ind-sub">{ind.desc}</div></div><span>→</span>
+                  <div><div>{ind.name}</div><div className="ind-sub">{ind.desc}</div></div><span>â†’</span>
                 </div>
               ))}
             </div>
@@ -236,10 +236,10 @@ av + (scrollY>50?'sc':'')}>
             <div><div className="f-col-t">Products</div><a href="/search" className="f-link">Part Search</a><a href="/technologies" className="f-link">Technologies</a><a href="/systems" className="f-link">Systems</a><a href="/warranty" className="f-link">Warranty</a></div>
             <div><div className="f-col-t">Network</div><a href="/dealers" className="f-link">Become a Dealer</a><a href="https://linkedin.com/company/elimfilters" className="f-link">LinkedIn</a><a href="https://instagram.com/elimfilters.global" className="f-link">Instagram</a><a href="https://youtube.com/@elimfilters9112" className="f-link">YouTube</a></div>
           </div>
-          <div className="f-bot"><span className="f-copy">© 2015-2026 ELIMFILTERS LLC</span><span className="f-copy">FRISCO, TX | UNITED STATES</span></div>
+          <div className="f-bot"><span className="f-copy">Â© 2015-2026 ELIMFILTERS LLC</span><span className="f-copy">FRISCO, TX | UNITED STATES</span></div>
         </div>
       </footer>
-      <div className="kleo-w"><button className="kleo-btn" onClick={()=>window.open('https://wa.me/message/XXXXXXXXXX','_blank')}>💬</button></div>
+      <div className="kleo-w"><button className="kleo-btn" onClick={()=>window.open('https://wa.me/message/XXXXXXXXXX','_blank')}>ðŸ’¬</button></div>
     </>
   );
 }
