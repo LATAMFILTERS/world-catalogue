@@ -58,8 +58,8 @@ const CSS = `
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--y);text-transform:uppercase;margin-bottom:20px;opacity:.9;}
   .hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(64px,11vw,150px);line-height:.88;text-transform:uppercase;color:var(--y);margin-bottom:8px;}
   .hero-sub{font-family:'Barlow Condensed',sans-serif;font-weight:400;font-size:clamp(24px,4vw,52px);text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:44px;}
-  .hero-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;}
-  .hero-tag{max-width:700px;font-size:20px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.7;border-left:4px solid var(--y);padding-left:24px;}
+  .hero-bot{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;}
+  .hero-tag{font-size:19px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.65;border-left:4px solid var(--y);padding-left:24px;text-align:justify;}
   .hero-search{display:flex;flex:1;max-width:460px;}
   .hero-search input{flex:1;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);border-right:none;color:var(--w);padding:15px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;backdrop-filter:blur(12px);}
   .hero-search input:focus{border-color:var(--y);}
@@ -176,7 +176,7 @@ export default function Home() {
           <h1 className="hero-title">ASSET<br />PROTECTION</h1>
           <h2 className="hero-sub">Industrial Filtration Intelligence</h2>
           <div className="hero-bot">
-            <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p><a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
+            <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p><a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
           </div>
         </div>
       </section>
