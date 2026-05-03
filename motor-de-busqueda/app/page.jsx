@@ -176,7 +176,7 @@ export default function Home() {
           <h1 className="hero-title">ASSET<br />PROTECTION</h1>
           <h2 className="hero-sub">Industrial Filtration Intelligence</h2>
           <div className="hero-bot">
-            <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p><a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
+            <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination, extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p><a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
           </div>
         </div>
       </section>
