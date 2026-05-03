@@ -141,7 +141,7 @@ const stats = [
         .kleo-btn{background:var(--y);color:var(--b);width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 8px 28px rgba(255,241,45,.28);}
         @media(max-width:1024px){.stats-grid{grid-template-columns:repeat(2,1fr);}.tech-grid{grid-template-columns:repeat(2,1fr);}.prob-in,.ind-in{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.cta-in{flex-direction:column;align-items:flex-start;}.nav-links{display:none;}}
         @media(max-width:640px){.stats-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.hero-bot{flex-direction:column;}.hero-search{max-width:100%;width:100%;}}
-      }</style>
+      `}</style>
       <nav className={
 av + (scrollY>50?'sc':'')}>
         <a href="/"><img src={IMAGES.logo} alt="ELIMFILTERS" className="nav-logo"/></a>
@@ -171,7 +171,7 @@ av + (scrollY>50?'sc':'')}>
           </div>
         </div>
       </section>
-      <div className="ticker"><div className="ticker-in">{[...industries,...industries].map((ind,i)=><span key={i} className="t-item">{ind.name} Ã¢â€”â€ </span>)}</div></div>
+      <div className="ticker"><div className="ticker-in">{[...industries,...industries].map((ind,i)=><span key={i} className="t-item">{ind.name} ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â </span>)}</div></div>
       <section className="stats"><div className="stats-grid">{stats.map((s,i)=><div key={i} className="stat"><div className="stat-n">{s.value}</div><div className="stat-l">{s.label}</div></div>)}</div></section>
       <section className="problem">
         <div className="prob-in">
@@ -194,7 +194,7 @@ av + (scrollY>50?'sc':'')}>
         <div className="tech-in">
           <div className="tech-hdr">
             <div><p className="s-label">// PROPRIETARY TECHNOLOGY PORTFOLIO</p><h2 className="s-title" style={{fontSize:'clamp(32px,4.5vw,56px)',marginBottom:0}}>15 TECHNOLOGIES.<br/><span>ONE MISSION.</span></h2></div>
-            <a href="/technologies" className="btn-s" style={{borderColor:'#333',color:'#777'}}>VIEW ALL Ã¢â€ â€™</a>
+            <a href="/technologies" className="btn-s" style={{borderColor:'#333',color:'#777'}}>VIEW ALL ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
           </div>
           <div className="tech-grid">
             {technologies.map((t,i)=>(
@@ -215,7 +215,7 @@ av + (scrollY>50?'sc':'')}>
             <div className="ind-list">
               {industries.map((ind,i)=>(
                 <div key={i} className={ind-item +(activeIndustry===i?'active':'')} onClick={()=>setActiveIndustry(i)}>
-                  <div><div>{ind.name}</div><div className="ind-sub">{ind.desc}</div></div><span>Ã¢â€ â€™</span>
+                  <div><div>{ind.name}</div><div className="ind-sub">{ind.desc}</div></div><span>ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</span>
                 </div>
               ))}
             </div>
@@ -236,10 +236,10 @@ av + (scrollY>50?'sc':'')}>
             <div><div className="f-col-t">Products</div><a href="/search" className="f-link">Part Search</a><a href="/technologies" className="f-link">Technologies</a><a href="/systems" className="f-link">Systems</a><a href="/warranty" className="f-link">Warranty</a></div>
             <div><div className="f-col-t">Network</div><a href="/dealers" className="f-link">Become a Dealer</a><a href="https://linkedin.com/company/elimfilters" className="f-link">LinkedIn</a><a href="https://instagram.com/elimfilters.global" className="f-link">Instagram</a><a href="https://youtube.com/@elimfilters9112" className="f-link">YouTube</a></div>
           </div>
-          <div className="f-bot"><span className="f-copy">Ã‚Â© 2015-2026 ELIMFILTERS LLC</span><span className="f-copy">FRISCO, TX | UNITED STATES</span></div>
+          <div className="f-bot"><span className="f-copy">Ãƒâ€šÃ‚Â© 2015-2026 ELIMFILTERS LLC</span><span className="f-copy">FRISCO, TX | UNITED STATES</span></div>
         </div>
       </footer>
-      <div className="kleo-w"><button className="kleo-btn" onClick={()=>window.open('https://wa.me/message/XXXXXXXXXX','_blank')}>Ã°Å¸â€™Â¬</button></div>
+      <div className="kleo-w"><button className="kleo-btn" onClick={()=>window.open('https://wa.me/message/XXXXXXXXXX','_blank')}>ÃƒÂ°Ã…Â¸Ã¢â‚¬â„¢Ã‚Â¬</button></div>
     </>
   );
 }
