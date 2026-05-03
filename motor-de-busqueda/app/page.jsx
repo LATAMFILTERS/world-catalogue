@@ -59,11 +59,11 @@ const CSS = `
   .hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(64px,11vw,150px);line-height:.88;text-transform:uppercase;color:var(--y);margin-bottom:8px;}
   .hero-sub{font-family:'Barlow Condensed',sans-serif;font-weight:400;font-size:clamp(24px,4vw,52px);text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:44px;}
   .hero-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;}
-  .hero-tag{max-width:480px;font-size:17px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.65;border-left:3px solid var(--y);padding-left:18px;font-style:italic;}
+  .hero-tag{max-width:700px;font-size:20px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.7;border-left:4px solid var(--y);padding-left:24px;}
   .hero-search{display:flex;flex:1;max-width:460px;}
   .hero-search input{flex:1;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);border-right:none;color:var(--w);padding:15px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;backdrop-filter:blur(12px);}
   .hero-search input:focus{border-color:var(--y);}
-  .hero-search button{background:var(--y);color:var(--b);border:none;padding:15px 26px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;}
+  .hero-cta-btn{background:var(--y);color:var(--b);border:none;padding:20px 48px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;margin-top:32px;}
   .ticker{background:var(--y);padding:12px 0;overflow:hidden;white-space:nowrap;}
   .ticker-in{display:inline-flex;animation:tick 28s linear infinite;}
   .t-item{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--b);padding:0 32px;}
@@ -176,11 +176,7 @@ export default function Home() {
           <h1 className="hero-title">ASSET<br />PROTECTION</h1>
           <h2 className="hero-sub">Industrial Filtration Intelligence</h2>
           <div className="hero-bot">
-            <p className="hero-tag">Engineering filtration designed for those who cannot afford a stalled engine or a fleet out of action.</p>
-            <form className="hero-search" onSubmit={handleSearch}>
-              <input type="text" placeholder="SKU / OEM CODE / CROSS REF..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
-              <button type="submit">FIND PART</button>
-            </form>
+            <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p><a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
           </div>
         </div>
       </section>
