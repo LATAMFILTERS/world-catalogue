@@ -128,7 +128,7 @@ const CSS = `
   .footer{background:var(--g9);padding:0;} .footer-in-wrap{padding:72px 5% 0;max-width:1400px;margin:0 auto;}
   .footer-in{max-width:1400px;margin:0 auto;padding:72px 5% 0;}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--g7);}
-  .f-logo{height:auto;width:220px;object-fit:contain;margin-bottom:12px;display:block;} .f-tagline{font-family:'Barlow',sans-serif;font-size:11px;color:var(--y);text-transform:uppercase;letter-spacing:.15em;} .f-corp{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g4);letter-spacing:.15em;text-transform:uppercase;} .footer-top-bar{display:none;} .footer-brand{display:flex;flex-direction:column;gap:12px;padding-right:60px;} .f-social{display:flex;gap:10px;} .f-social-link{width:34px;height:34px;border:1px solid var(--g6);display:flex;align-items:center;justify-content:center;font-family:'Russo One',sans-serif;font-size:10px;color:var(--g3);text-decoration:none;text-transform:uppercase;transition:all .2s;} .f-social-link:hover{border-color:var(--y);color:var(--y);}
+  .f-logo{height:auto;width:220px;object-fit:contain;margin-bottom:12px;display:block;} .f-tagline{font-family:'Barlow',sans-serif;font-size:11px;color:var(--y);text-transform:uppercase;letter-spacing:.15em;} .f-corp{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g4);letter-spacing:.15em;text-transform:uppercase;} .footer-top-bar{display:none;} .footer-brand{display:flex;flex-direction:column;gap:12px;padding-right:60px;} .f-social{display:flex;gap:10px;} .f-social-link{width:34px;height:34px;border:1px solid var(--g6);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--g3);text-decoration:none;transition:all .2s;border-radius:4px;} .f-social-link:hover{border-color:var(--y);color:var(--y);}
   
   .f-seal{display:none;}
   .f-col-t{font-family:'Russo One',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);margin-bottom:18px;}
@@ -306,9 +306,7 @@ export default function Home() {
               <p className="f-corp">A FILTVEX TECHNOLOGY LLC BRAND</p>
               <img src={IMAGES.seal} alt="Authorized" className="f-seal" />
               <div className="f-social">
-                <a href="https://linkedin.com/company/elimfilters" className="f-social-link">in</a>
-                <a href="https://instagram.com/elimfilters.global" className="f-social-link">ig</a>
-                <a href="https://youtube.com/@elimfilters9112" className="f-social-link">yt</a>
+                <a href="https://instagram.com/elimfilters.global" className="f-social-link" title="Instagram">&#128247;</a><a href="https://youtube.com/@elimfilters9112" className="f-social-link" title="YouTube">&#9654;</a><a href="https://linkedin.com/company/elimfilters" className="f-social-link" title="LinkedIn">in</a><a href="https://facebook.com/elimfilters" className="f-social-link" title="Facebook">f</a><a href="https://x.com/elimfilters" className="f-social-link" title="X">X</a><a href="https://threads.net/@elimfilters.global" className="f-social-link" title="Threads">&#9675;</a>
               </div>
             </div>
             <div>
