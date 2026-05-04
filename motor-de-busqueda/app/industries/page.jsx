@@ -51,7 +51,7 @@ export default function Industries() {
   `;
 
   return (
-    <div className="ind-page"><a href="/?skip=1" className="ind-back">← HOME</a><a href="/" className="ind-back">← HOME</a>
+    <div className="ind-page"><a href="/?skip=1" className="ind-back">&larr; HOME</a><a href="/" className="ind-back">← HOME</a>
       <style>{css}</style>
       <section className="ind-hero">
         <div className="ind-hero-inner">
