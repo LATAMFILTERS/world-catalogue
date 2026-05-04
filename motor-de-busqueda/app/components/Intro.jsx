@@ -32,7 +32,7 @@ export default function Intro({ onComplete }) {
     .intro-logo-wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;transition:opacity 1.2s ease;}
     .intro-logo-wrap.visible{opacity:1;}
     .intro-logo{height:420px;width:auto;animation:iZoomIn 1.5s cubic-bezier(0.34,1.2,0.64,1) forwards;}
-    .intro-slogan{font-family:'Barlow',sans-serif;font-size:18px;font-weight:300;color:rgba(255,255,255,0.85);letter-spacing:0.15em;text-align:center;opacity:0;animation:iFadeIn 1s ease forwards 1.5s;}
+    .intro-slogan{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.85);letter-spacing:0.15em;text-align:center;opacity:0;animation:iFadeIn 1s ease forwards 1.5s;}
     .intro-fadeout{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;animation:iFadeOut 0.8s ease forwards 12s;}
     @keyframes iSlideRight{from{left:-20%;opacity:0;}to{left:2%;opacity:1;}}
     @keyframes iFadeIn{from{opacity:0;}to{opacity:1;}}
