@@ -16,8 +16,8 @@ export default function Intro({ onComplete }) {
 
   const css = `
     .intro-wrap{position:fixed;inset:0;z-index:9999;background:#000;overflow:hidden;}
-    .intro-mechanic{position:absolute;bottom:0;left:-10%;height:95%;width:auto;animation:iSlideRight 8s ease-out forwards;transform-origin:bottom left;}
-    .intro-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0) 30%,rgba(0,0,0,0.98) 75%);}
+    .intro-mechanic{position:absolute;bottom:0;height:95%;width:auto;mix-blend-mode:luminosity;filter:contrast(1.1) brightness(0.9);animation:iSlideRight 8s ease-out forwards;}
+    .intro-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.3) 30%,rgba(0,0,0,0.97) 70%);}
     .intro-content{position:absolute;bottom:10%;right:6%;text-align:right;}
     .intro-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#FFF12D;text-transform:uppercase;opacity:0;margin-bottom:20px;animation:iFadeIn 1s ease forwards 3s;}
     .intro-asset{font-family:'Russo One',sans-serif;font-size:clamp(56px,9vw,108px);color:#FFF12D;text-transform:uppercase;line-height:0.88;opacity:0;transform:translateY(40px);animation:iSlideUp 0.7s ease forwards 4s;}
@@ -25,7 +25,7 @@ export default function Intro({ onComplete }) {
     .intro-line-wrap{display:flex;justify-content:flex-end;}
     .intro-line{width:0;height:3px;background:#FFF12D;margin-top:24px;animation:iDrawLine 0.6s ease forwards 6s;}
     .intro-fadeout{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;animation:iFadeOut 1s ease forwards 7s;}
-    @keyframes iSlideRight{from{left:-20%;opacity:0;}to{left:5%;opacity:1;}}
+    @keyframes iSlideRight{from{left:-20%;opacity:0;}to{left:2%;opacity:1;}}
     @keyframes iFadeIn{from{opacity:0;}to{opacity:1;}}
     @keyframes iSlideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
     @keyframes iDrawLine{from{width:0;}to{width:100px;}}
