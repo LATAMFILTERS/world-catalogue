@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Intro from './components/Intro';
 import { useState, useEffect } from 'react';
 
@@ -387,3 +387,4 @@ export default function Home() {
     </>
   );
 }
+
