@@ -61,7 +61,7 @@ const CSS = `
   .nav-links a:hover{color:var(--y);}
   .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:6px 14px!important;font-weight:700!important;font-size:14px!important;}
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:80px 5% 120px;position:relative;overflow:hidden;}
-  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;}
+  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;animation:kenburns 10s ease-out forwards;}
   .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.97) 100%);}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,241,45,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,241,45,.03) 1px,transparent 1px);background-size:60px 60px;}
   .hero-c{position:relative;z-index:3;max-width:1400px;margin:0 auto;width:100%;}
@@ -77,7 +77,7 @@ const CSS = `
   .ticker{background:var(--y);padding:12px 0;overflow:hidden;white-space:nowrap;}
   .ticker-in{display:inline-flex;animation:tick 28s linear infinite;}
   .t-item{font-family:'Russo One',sans-serif;font-size:14px;font-weight:700;letter-spacing:.2em;color:var(--b);padding:0 32px;}
-  @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes kenburns{from{transform:scale(1.08) translateX(-3%);}to{transform:scale(1.0) translateX(0%);}} @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   .stats{padding:72px 5%;background:var(--g9);border-bottom:1px solid var(--g7);}
   .stats-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g7);}
   .stat{background:var(--g9);padding:44px 36px;text-align:center;}
