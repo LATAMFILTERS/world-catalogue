@@ -76,7 +76,7 @@ const CSS = `
   .problem{padding:100px 5%;background:var(--b);}
   .prob-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
   .s-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--y);text-transform:uppercase;margin-bottom:16px;opacity:.8;}
-  .s-title{font-family:'Russo One',sans-serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1;text-transform:uppercase;margin-bottom:36px;}
+  .s-title{font-family:'Russo One',sans-serif;font-weight:800;font-size:clamp(29px,4.25vw,51px);line-height:1;text-transform:uppercase;margin-bottom:36px;}
   .s-title span{color:var(--y);}
   .prob-list{display:flex;flex-direction:column;gap:28px;}
   .prob-item{display:flex;gap:16px;align-items:flex-start;}
