@@ -20,7 +20,7 @@ const industries = [
 
 export default function Industries() {
   const css = `
-    .ind-page{background:#000;color:#fff;min-height:100vh;}
+    .ind-page{background:#000;color:#fff;min-height:100vh;} .ind-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);} .ind-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
     .ind-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);} .ind-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;} .ind-hero{min-height:50vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.95) 30%,rgba(0,0,0,0.4) 100%),url('${WP}/2025/08/construction.jpg') center/cover no-repeat;padding:120px 6% 80px;}
     .ind-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ind-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
@@ -51,7 +51,7 @@ export default function Industries() {
   `;
 
   return (
-    <div className="ind-page"><a href="/" className="ind-back">← HOME</a>
+    <div className="ind-page"><a href="/?skip=1" className="ind-back">← HOME</a><a href="/" className="ind-back">← HOME</a>
       <style>{css}</style>
       <section className="ind-hero">
         <div className="ind-hero-inner">
