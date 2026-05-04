@@ -16,8 +16,8 @@ export default function Intro({ onComplete }) {
 
   const css = `
     .intro-wrap{position:fixed;inset:0;z-index:9999;background:#000;overflow:hidden;}
-    .intro-mechanic{position:absolute;bottom:0;height:95%;width:auto;mix-blend-mode:luminosity;filter:contrast(1.1) brightness(0.9);animation:iSlideRight 8s ease-out forwards;}
-    .intro-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.3) 30%,rgba(0,0,0,0.97) 70%);}
+    .intro-mechanic{position:absolute;bottom:0;left:-20%;height:95%;width:auto;animation:iSlideRight 8s ease-out forwards;}
+    .intro-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0) 30%,rgba(0,0,0,0.97) 65%);}
     .intro-content{position:absolute;bottom:10%;right:6%;text-align:right;}
     .intro-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3em;color:#FFF12D;text-transform:uppercase;opacity:0;margin-bottom:20px;animation:iFadeIn 1s ease forwards 3s;}
     .intro-asset{font-family:'Russo One',sans-serif;font-size:clamp(56px,9vw,108px);color:#FFF12D;text-transform:uppercase;line-height:0.88;opacity:0;transform:translateY(40px);animation:iSlideUp 0.7s ease forwards 4s;}
@@ -36,7 +36,7 @@ export default function Intro({ onComplete }) {
     <>
       <style>{css}</style>
       <div className="intro-wrap">
-        <img className="intro-mechanic" src="https://elimfilters.com/wp-content/uploads/2026/05/mecanico-sinfondo.png" alt="" />
+        <img className="intro-mechanic" src="https://elimfilters.com/wp-content/uploads/2026/05/Gemini_Generated_Image_rw850rw850rw850r.png" alt="" />
         <div className="intro-ov" />
         <div className="intro-content">
           <div className="intro-eyebrow">// ELIMFILTERS | ASSET PROTECTION SYSTEMS</div>
