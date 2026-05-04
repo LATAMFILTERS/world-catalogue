@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -158,19 +158,20 @@ export default function DealersApply() {
             <div className="da-h2">INTEGRATED <span>FILTRATION CORE.</span></div>
             <p className="da-info-p">Joining the ELIMFILTERS dealer network grants exclusive access to high-tier industrial filtration intellectual property and precision engineering standards across 12 industries worldwide.</p>
             <div className="da-pillars">
-              <div className="da-pillar">SINTRAX™ / LUBE</div>
-              <div className="da-pillar">MACROCORE™ / AIR</div>
-              <div className="da-pillar">NANOFORCE™ / HYD</div>
-              <div className="da-pillar">COOLTECH™ / COOLANT</div>
+              <div className="da-pillar">SINTRAXâ„¢ / LUBE</div>
+              <div className="da-pillar">MACROCOREâ„¢ / AIR</div>
+              <div className="da-pillar">NANOFORCEâ„¢ / HYD</div>
+              <div className="da-pillar">COOLTECHâ„¢ / COOLANT</div>
             </div>
             <div className="da-validation">
               <div className="da-validation-h">ENGINEERING VALIDATION</div>
               <p className="da-validation-p">All ELIMFILTERS systems are certified under ISO 16889 and ISO 19438 protocols to ensure 99.9% particulate retention in high-horsepower applications worldwide.</p>
             </div>
-            <div className="da-footer-note">© 2026 FILTVEX TECHNOLOGY LLC | ELIMFILTERS® SYSTEMS | TECHNICAL REPOSITORY SECURED</div>
+            <div className="da-footer-note">Â© 2026 FILTVEX TECHNOLOGY LLC | ELIMFILTERSÂ® SYSTEMS | TECHNICAL REPOSITORY SECURED</div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
