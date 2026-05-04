@@ -108,7 +108,7 @@ const CSS = `
   .tech-name-big{font-family:'Russo One',sans-serif;font-size:24px;color:var(--w);text-transform:uppercase;line-height:1;margin-bottom:8px;} .tech-desc{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--g3);text-transform:uppercase;}
   .tech-pfx{position:absolute;top:20px;right:20px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#333;}
   .ind-sec{padding:100px 5%;background:var(--b);border-top:1px solid var(--g7);}
-  .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
   .ind-preview{position:relative;overflow:hidden;height:320px;}
   .ind-preview img{width:100%;height:100%;object-fit:cover;}
   .ind-preview-ov{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);}
