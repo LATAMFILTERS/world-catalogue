@@ -90,7 +90,7 @@ export default function DealersApply() {
   return (
     <div className="da">
       <style>{css}</style>
-      <a href="/dealers" className="da-back">&larr; DEALERS</a>
+      <a href="/" className="da-back">&larr; DEALERS</a>
 
       <div className="da-page">
         <div className="da-topbar">
@@ -174,4 +174,5 @@ export default function DealersApply() {
     </div>
   );
 }
+
 
