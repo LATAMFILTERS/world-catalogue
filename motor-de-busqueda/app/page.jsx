@@ -124,16 +124,16 @@ const CSS = `
   .cta-btns{display:flex;gap:14px;}
   .btn-p{background:var(--b);color:var(--y);padding:16px 32px;font-family:'Russo One',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;}
   .btn-s{background:transparent;color:var(--b);padding:16px 32px;font-family:'Russo One',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--b);cursor:pointer;text-decoration:none;display:inline-block;}
-  .footer{background:var(--g9);padding:72px 5% 36px;border-top:1px solid var(--g7);}
+  .footer{background:var(--g9);padding:0;} .footer-in-wrap{padding:72px 5% 0;max-width:1400px;margin:0 auto;}
   .footer-in{max-width:1400px;margin:0 auto;}
-  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px;}
-  .f-logo{height:40px;width:auto;margin-bottom:18px;}
-  .f-tag{font-size:13px;color:var(--g4);line-height:1.7;max-width:260px;}
-  .f-seal{height:64px;width:auto;opacity:.7;margin-top:20px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--g7);}
+  .f-logo{height:40px;width:auto;} .f-tagline{font-family:'Barlow',sans-serif;font-size:11px;color:var(--y);text-transform:uppercase;letter-spacing:.15em;} .f-corp{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g4);letter-spacing:.15em;text-transform:uppercase;} .footer-top-bar{height:3px;background:var(--y);width:100%;} .footer-brand{display:flex;flex-direction:column;gap:12px;} .f-social{display:flex;gap:10px;} .f-social-link{width:34px;height:34px;border:1px solid var(--g6);display:flex;align-items:center;justify-content:center;font-family:'Russo One',sans-serif;font-size:10px;color:var(--g3);text-decoration:none;text-transform:uppercase;transition:all .2s;} .f-social-link:hover{border-color:var(--y);color:var(--y);}
+  
+  .f-seal{display:none;}
   .f-col-t{font-family:'Russo One',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);margin-bottom:18px;}
   .f-link{display:block;font-size:13px;color:var(--g4);text-decoration:none;margin-bottom:9px;}
   .f-link:hover{color:var(--y);}
-  .f-bot{border-top:1px solid var(--g7);padding-top:32px;display:flex;justify-content:space-between;}
+  .f-bot{padding:24px 0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
   .f-copy{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--g4);text-transform:uppercase;}
   .kleo-w{position:fixed;bottom:28px;right:28px;z-index:999;}
   .kleo-btn{background:var(--y);color:var(--b);width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 8px 28px rgba(255,241,45,.28);}
