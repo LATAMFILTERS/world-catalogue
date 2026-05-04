@@ -8,7 +8,7 @@ export default function Intro({ onComplete }) {
     const t = setTimeout(() => {
       setDone(true);
       onComplete();
-    }, 8000);
+    }, 12000);
     return () => clearTimeout(t);
   }, []);
 
@@ -24,7 +24,9 @@ export default function Intro({ onComplete }) {
     .intro-protection{font-family:'Russo One',sans-serif;font-size:clamp(56px,9vw,108px);color:#fff;text-transform:uppercase;line-height:0.88;opacity:0;transform:translateY(40px);animation:iSlideUp 0.7s ease forwards 5s;}
     .intro-line-wrap{display:flex;justify-content:flex-end;}
     .intro-line{width:0;height:3px;background:#FFF12D;margin-top:24px;animation:iDrawLine 0.6s ease forwards 6s;}
-    .intro-fadeout{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;animation:iFadeOut 1s ease forwards 7s;}
+    .intro-logo-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:iFadeIn 1.2s ease forwards 7.5s;}
+    .intro-logo{height:200px;width:auto;}
+    .intro-fadeout{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;animation:iFadeOut 1.5s ease forwards 10.5s;}
     @keyframes iSlideRight{from{left:-20%;opacity:0;}to{left:2%;opacity:1;}}
     @keyframes iFadeIn{from{opacity:0;}to{opacity:1;}}
     @keyframes iSlideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
@@ -43,6 +45,9 @@ export default function Intro({ onComplete }) {
           <div className="intro-asset">ASSET</div>
           <div className="intro-protection">PROTECTION</div>
           <div className="intro-line-wrap"><div className="intro-line" /></div>
+        </div>
+        <div className="intro-logo-wrap">
+          <img className="intro-logo" src="https://elimfilters.com/wp-content/uploads/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp" alt="ELIMFILTERS" />
         </div>
         <div className="intro-fadeout" />
       </div>
