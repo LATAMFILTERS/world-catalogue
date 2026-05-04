@@ -66,7 +66,7 @@ const CSS = `
   .hero-cta-btn{background:var(--y);color:var(--b);border:none;padding:13px 31px;font-family:'Russo One',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;margin-top:32px;}
   .ticker{background:var(--y);padding:12px 0;overflow:hidden;white-space:nowrap;}
   .ticker-in{display:inline-flex;animation:tick 28s linear infinite;}
-  .t-item{font-family:'Russo One',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--b);padding:0 32px;}
+  .t-item{font-family:'Russo One',sans-serif;font-size:14px;font-weight:700;letter-spacing:.2em;color:var(--b);padding:0 32px;}
   @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   .stats{padding:72px 5%;background:var(--g9);border-bottom:1px solid var(--g7);}
   .stats-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g7);}
