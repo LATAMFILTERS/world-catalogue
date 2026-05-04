@@ -144,7 +144,7 @@ const CSS = `
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(typeof window !== 'undefined' ? !new URLSearchParams(window.location.search).get('skip') : true);
   const [scrollY, setScrollY] = useState(0);
   const [activeIndustry, setActiveIndustry] = useState(0);
 

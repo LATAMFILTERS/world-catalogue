@@ -73,7 +73,7 @@ export default function Technologies() {
   `;
 
   return (
-    <div className="tp"><a href="/" className="tp-back">← HOME</a>
+    <div className="tp"><a href="/?skip=1" className="tp-back">← HOME</a>
       <style>{css}</style>
       <section className="tp-hero">
         <div className="tp-hero-img" />
