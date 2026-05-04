@@ -49,7 +49,7 @@ const CSS = `
   .nav-links{display:flex;gap:28px;align-items:center;list-style:none;}
   .nav-links a{font-family:'Russo One',sans-serif;font-size:16px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--w);text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--y);}
-  .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:10px 22px!important;font-weight:700!important;font-size:16px!important;}
+  .nav-cta{background:var(--y)!important;color:var(--b)!important;padding:6px 14px!important;font-weight:700!important;font-size:10px!important;}
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:200px 5% 80px;position:relative;overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;}
   .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.97) 100%);}
@@ -63,7 +63,7 @@ const CSS = `
   .hero-search{display:flex;flex:1;max-width:460px;}
   .hero-search input{flex:1;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);border-right:none;color:var(--w);padding:15px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;backdrop-filter:blur(12px);}
   .hero-search input:focus{border-color:var(--y);}
-  .hero-cta-btn{background:var(--y);color:var(--b);border:none;padding:20px 48px;font-family:'Russo One',sans-serif;font-size:20px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;margin-top:32px;}
+  .hero-cta-btn{background:var(--y);color:var(--b);border:none;padding:13px 31px;font-family:'Russo One',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;margin-top:32px;}
   .ticker{background:var(--y);padding:12px 0;overflow:hidden;white-space:nowrap;}
   .ticker-in{display:inline-flex;animation:tick 28s linear infinite;}
   .t-item{font-family:'Russo One',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--b);padding:0 32px;}
