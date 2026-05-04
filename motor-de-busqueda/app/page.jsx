@@ -246,9 +246,7 @@ export default function Home() {
           <div className="tech-grid">
             {technologies.map((t, i) => (
               <div key={i} className="tech-card">
-                <img src={t.logo} alt={t.name} className="tech-logo" />
-                <div className="tech-desc">{t.desc}</div>
-                <div className="tech-pfx">{t.prefix}</div>
+                <div className="tech-name-big">{t.name}</div><div className="tech-desc">{t.desc}</div>
               </div>
             ))}
           </div>
