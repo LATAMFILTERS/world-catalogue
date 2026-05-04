@@ -42,7 +42,7 @@ export default function Industries() {
     .ind-cta-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
     .ind-cta-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:12px;}
     .ind-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(28px,4vw,52px);color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
-    .ind-cta-p{color:rgba(0,0,0,0.8);font-size:16px;max-width:480px;}
+    .ind-cta-p{color:rgba(0,0,0,0.8);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;line-height:1.7;max-width:480px;}
     .ind-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:20px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:all 0.2s;white-space:nowrap;}
     .ind-cta-btn:hover{background:#111;}
     @media(max-width:1024px){.ind-grid{grid-template-columns:repeat(3,1fr);}}
