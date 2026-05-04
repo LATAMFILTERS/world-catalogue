@@ -6,7 +6,7 @@ export default function Intro({ onComplete }) {
   const [phase, setPhase] = useState('mechanic');
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase('logo'), 7500);
+    const t1 = setTimeout(() => setPhase('logo'), 9000);
     const t2 = setTimeout(() => {
       setDone(true);
       onComplete();
