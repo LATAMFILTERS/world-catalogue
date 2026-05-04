@@ -81,8 +81,8 @@ const CSS = `
   .prob-list{display:flex;flex-direction:column;gap:28px;}
   .prob-item{display:flex;gap:16px;align-items:flex-start;}
   .prob-num{font-family:'Russo One',sans-serif;font-size:12px;font-weight:700;color:#c33;background:rgba(204,51,51,.1);border:1px solid rgba(204,51,51,.3);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .prob-text h3{font-family:'Russo One',sans-serif;font-size:15px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;}
-  .prob-text p{font-size:13px;color:var(--g4);line-height:1.6;}
+  .prob-text h3{font-family:'Russo One',sans-serif;font-size:18px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;}
+  .prob-text p{font-size:16px;color:var(--g4);line-height:1.6;}
   .prob-img{position:relative;overflow:hidden;}
   .prob-img img{width:100%;height:520px;object-fit:cover;object-position:center top;display:block;}
   .prob-img-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.92),transparent);padding:36px 28px 28px;}
