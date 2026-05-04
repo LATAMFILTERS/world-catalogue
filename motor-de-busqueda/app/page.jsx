@@ -21,6 +21,10 @@ const industries = [
   { name: 'AGRICULTURE', desc: 'Harvesting & field equipment', img: WP + '/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg' },
   { name: 'TRUCKS & FLEETS', desc: 'Long-haul & urban logistics', img: WP + '/2026/02/pexels-cottonbro-7018493-scaled.jpg' },
   { name: 'MANUFACTURING', desc: 'Industrial process equipment', img: WP + '/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg' },
+  { name: 'BUS & COACH', desc: 'Mass transit & tourism fleets', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp' },
+  { name: 'RAILWAY', desc: 'Diesel-electric & compressed air', img: WP + '/2025/08/train-3895307_1920.jpg' },
+  { name: 'AUTOMOTIVE', desc: 'Light & commercial vehicles', img: WP + '/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg' },
+  { name: 'WASTE & MUNICIPAL', desc: 'Critical urban services', img: WP + '/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg' },
 ];
 
 const technologies = [
