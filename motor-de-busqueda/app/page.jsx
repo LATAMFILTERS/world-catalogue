@@ -72,7 +72,7 @@ const CSS = `
   .stats-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g7);}
   .stat{background:var(--g9);padding:44px 36px;text-align:center;}
   .stat-n{font-family:'Russo One',sans-serif;font-size:60px;font-weight:700;color:var(--y);line-height:1;margin-bottom:10px;}
-  .stat-l{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;color:var(--g4);text-transform:uppercase;}
+  .stat-l{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;color:var(--g4);text-transform:uppercase;}
   .problem{padding:100px 5%;background:var(--b);}
   .prob-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
   .s-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--y);text-transform:uppercase;margin-bottom:16px;opacity:.8;}
