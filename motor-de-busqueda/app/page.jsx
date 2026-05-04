@@ -87,7 +87,7 @@ const CSS = `
   .prob-img img{width:100%;height:520px;object-fit:cover;object-position:center top;display:block;}
   .prob-img-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.92),transparent);padding:36px 28px 28px;}
   .dmg-badge{display:inline-block;background:#c33;color:var(--w);font-family:'Russo One',sans-serif;font-size:44px;font-weight:900;padding:6px 16px;margin-bottom:8px;}
-  .dmg-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.65);text-transform:uppercase;}
+  .dmg-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.65);text-transform:uppercase;}
   .tech-sec{padding:100px 5%;background:var(--g9);border-top:1px solid var(--g7);}
   .tech-in{max-width:1400px;margin:0 auto;}
   .tech-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
