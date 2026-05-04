@@ -295,18 +295,18 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer-in">
+          <div className="footer-top-bar"></div>
           <div className="footer-grid">
-            <div>
+            <div className="footer-brand">
               <img src={IMAGES.logo} alt="ELIMFILTERS" className="f-logo" />
-              <p className="f-tag">Intelligence and Engineering in Filtration. Asset Protection Systems for Heavy Industry worldwide.</p>
+              <p className="f-tagline">Asset Protection Technology</p>
+              <p className="f-corp">A FILTVEX TECHNOLOGY LLC BRAND</p>
               <img src={IMAGES.seal} alt="Authorized" className="f-seal" />
-            </div>
-            <div>
-              <div className="f-col-t">Company</div>
-              <a href="/about" className="f-link">About Us</a>
-              <a href="/industries" className="f-link">Industries</a>
-              <a href="/knowledge" className="f-link">Knowledge Hub</a>
-              <a href="/contact" className="f-link">Contact</a>
+              <div className="f-social">
+                <a href="https://linkedin.com/company/elimfilters" className="f-social-link">in</a>
+                <a href="https://instagram.com/elimfilters.global" className="f-social-link">ig</a>
+                <a href="https://youtube.com/@elimfilters9112" className="f-social-link">yt</a>
+              </div>
             </div>
             <div>
               <div className="f-col-t">Products</div>
@@ -316,16 +316,32 @@ export default function Home() {
               <a href="/warranty" className="f-link">Warranty</a>
             </div>
             <div>
-              <div className="f-col-t">Network</div>
+              <div className="f-col-t">Industries</div>
+              <a href="/industries/mining" className="f-link">Mining</a>
+              <a href="/industries/construction" className="f-link">Construction</a>
+              <a href="/industries/oil-gas" className="f-link">Oil &amp; Gas</a>
+              <a href="/industries/marine" className="f-link">Marine</a>
+              <a href="/industries" className="f-link">View All 12 &#8594;</a>
+            </div>
+            <div>
+              <div className="f-col-t">Company</div>
+              <a href="/about" className="f-link">About FILTVEX</a>
+              <a href="/knowledge" className="f-link">Knowledge Hub</a>
               <a href="/dealers" className="f-link">Become a Dealer</a>
-              <a href="https://linkedin.com/company/elimfilters" className="f-link">LinkedIn</a>
-              <a href="https://instagram.com/elimfilters.global" className="f-link">Instagram</a>
-              <a href="https://youtube.com/@elimfilters9112" className="f-link">YouTube</a>
+              <a href="/contact" className="f-link">Contact</a>
+            </div>
+            <div>
+              <div className="f-col-t">Support</div>
+              <a href="/warranty" className="f-link">Warranty</a>
+              <a href="/contact" className="f-link">Technical Support</a>
+              <a href="/dealers" className="f-link">Dealer Portal</a>
+              <a href="/knowledge" className="f-link">Documentation</a>
             </div>
           </div>
           <div className="f-bot">
-            <span className="f-copy">&#169; 2015-2026 ELIMFILTERS LLC</span>
-            <span className="f-copy">FRISCO, TX | UNITED STATES</span>
+            <span className="f-copy">&#169; 2015&#8211;2026 FILTVEX TECHNOLOGY LLC</span>
+            <span className="f-copy">ELIMFILTERS&#174; is a registered trademark of FILTVEX TECHNOLOGY LLC</span>
+            <span className="f-copy"><strong>FRISCO, TX</strong> &#124; UNITED STATES</span>
           </div>
         </div>
       </footer>
