@@ -24,12 +24,18 @@ const industries = [
 ];
 
 const technologies = [
-  { name: 'MACROCORE', desc: 'Air Filtration', prefix: 'EA1', logo: '/assets/logo-macrocore.png' },
-  { name: 'NANOFORCE', desc: 'Hydraulic', prefix: 'EH6', logo: '/assets/logo-nanoforce.png' },
-  { name: 'SYNTEPORE', desc: 'Fuel', prefix: 'EF9', logo: '/assets/logo-syntepore.png' },
-  { name: 'SINTRAX', desc: 'Lubrication', prefix: 'EL8', logo: '/assets/logo-sintrax.png' },
-  { name: 'AQUAGUARD', desc: 'Water Separation', prefix: 'ES9', logo: '/assets/logo-aquaguard.png' },
-  { name: 'MICROKAPPA', desc: 'Cabin', prefix: 'EC1', logo: '/assets/logo-microkappa.png' },
+  { name: 'MACROCORE', desc: 'Air Filtration', logo: '/assets/logo-macrocore.png' },
+  { name: 'INTEKCORE', desc: 'Housing & Intake Systems', logo: '/assets/logo-intekcore.png' },
+  { name: 'SYNTEPORE', desc: 'Fuel Filtration', logo: '/assets/logo-syntepore.png' },
+  { name: 'AQUAGUARD', desc: 'Fuel Water Separator', logo: '/assets/logo-aquaguard.png' },
+  { name: 'SINTRAX', desc: 'Lube Filters', logo: '/assets/logo-sintrax.png' },
+  { name: 'NANOFORCE', desc: 'Hydraulic Filters', logo: '/assets/logo-nanoforce.png' },
+  { name: 'AQUAGUARD SERIES', desc: 'Turbine Serie FH', logo: '/assets/logo-aquaguard.png' },
+  { name: 'COOLTECH', desc: 'Coolant Filters', logo: '/assets/logo-cooltech.png' },
+  { name: 'MICROKAPPA', desc: 'Cabin Filters', logo: '/assets/logo-microkappa.png' },
+  { name: 'DRYCORE', desc: 'Air Dryer Filters', logo: '/assets/logo-drycore.png' },
+  { name: 'DURATECH', desc: 'Maintenance Filter Kits', logo: '/assets/logo-duratech.png' },
+  { name: 'MARINECLEAN', desc: 'Marine Filters', logo: '/assets/logo-marineclean.png' },
 ];
 
 const stats = [
@@ -91,11 +97,11 @@ const CSS = `
   .tech-sec{padding:100px 5%;background:var(--g9);border-top:1px solid var(--g7);}
   .tech-in{max-width:1400px;margin:0 auto;}
   .tech-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
-  .tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g7);}
-  .tech-card{background:var(--g9);padding:36px;position:relative;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;gap:14px;}
-  .tech-card:hover{background:var(--g8);}
-  .tech-logo{height:44px;width:auto;object-fit:contain;object-position:left;}
-  .tech-desc{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--g4);text-transform:uppercase;}
+  .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g7);}
+  .tech-card{background:var(--b);padding:40px;position:relative;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;gap:16px;border:1px solid var(--g7);}
+  .tech-card:hover{background:var(--g8);border-color:var(--y);}
+  .tech-logo{height:96px;width:auto;object-fit:contain;object-position:left;}
+  .tech-desc{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--w);text-transform:uppercase;}
   .tech-pfx{position:absolute;top:20px;right:20px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#333;}
   .ind-sec{padding:100px 5%;background:var(--b);border-top:1px solid var(--g7);}
   .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
