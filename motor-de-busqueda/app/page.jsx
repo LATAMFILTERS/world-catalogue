@@ -98,7 +98,7 @@ const CSS = `
   .tech-in{max-width:1400px;margin:0 auto;}
   .tech-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
   .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g7);}
-  .tech-card{background:var(--b);padding:40px;position:relative;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;gap:16px;border:1px solid var(--g7);}
+  .tech-card{background:var(--b);padding:40px 32px;position:relative;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;gap:12px;border:1px solid var(--g7);border-top:3px solid transparent;align-items:center;text-align:center;}
   .tech-card:hover{background:var(--g8);border-color:var(--y);}
   .tech-logo{height:96px;width:auto;object-fit:contain;object-position:left;}
   .tech-desc{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--w);text-transform:uppercase;}
