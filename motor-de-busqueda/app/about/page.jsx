@@ -19,12 +19,12 @@ export default function About() {
     .ab-phil-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
     .ab-h2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
     .ab-h2 span{color:#FFF12D;}
-    .ab-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
+    .ab-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;border-left:4px solid #FFF12D;padding-left:20px;}
     .ab-card{background:#0a0a0a;border:1px solid #1a1a1a;padding:36px;display:flex;flex-direction:column;gap:24px;}
     .ab-card-item{border-top:1px solid #1a1a1a;padding-top:24px;}
     .ab-card-item:first-child{border-top:none;padding-top:0;}
     .ab-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
-    .ab-card-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:#666;line-height:1.7;letter-spacing:0.03em;}
+    .ab-card-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;}
     .ab-btn{background:#FFF12D;color:#000;font-family:'Russo One',sans-serif;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;padding:18px 40px;display:inline-block;text-decoration:none;transition:background 0.25s;margin-top:16px;}
     .ab-btn:hover{background:#fff;}
     .ab-env{padding:80px 6%;border-bottom:1px solid rgba(255,255,255,0.04);}
@@ -35,7 +35,7 @@ export default function About() {
     .ab-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-4px);}
     .ab-feature-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
     .ab-feature-title{font-family:'Russo One',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .ab-feature-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:#555;line-height:1.7;letter-spacing:0.03em;}
+    .ab-feature-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;}
     .ab-human{padding:80px 6%;background:#030303;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ab-human-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
     .ab-human-card{background:linear-gradient(145deg,#030303,#000);border:1px solid #1a1a1a;padding:36px;}
