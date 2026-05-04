@@ -101,7 +101,7 @@ const CSS = `
   .tech-card{background:var(--b);padding:40px 32px;position:relative;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;gap:12px;border:1px solid var(--g7);border-top:3px solid transparent;align-items:center;text-align:center;}
   .tech-card:hover{background:var(--g8);border-color:var(--y);}
   .tech-logo{height:96px;width:auto;object-fit:contain;object-position:left;}
-  .tech-desc{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--w);text-transform:uppercase;}
+  .tech-name-big{font-family:'Russo One',sans-serif;font-size:24px;color:var(--w);text-transform:uppercase;line-height:1;margin-bottom:8px;} .tech-desc{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--g3);text-transform:uppercase;}
   .tech-pfx{position:absolute;top:20px;right:20px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#333;}
   .ind-sec{padding:100px 5%;background:var(--b);border-top:1px solid var(--g7);}
   .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
