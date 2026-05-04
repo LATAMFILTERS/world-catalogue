@@ -1,4 +1,5 @@
 'use client';
+import Intro from './components/Intro';
 export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
@@ -143,6 +144,7 @@ const CSS = `
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showIntro, setShowIntro] = useState(true);
   const [scrollY, setScrollY] = useState(0);
   const [activeIndustry, setActiveIndustry] = useState(0);
 
@@ -164,6 +166,7 @@ export default function Home() {
 
   return (
     <>
+      {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
       <style>{CSS}</style>
       <nav className={'nav ' + (scrollY > 50 ? 'sc' : '')}>
         <a href="/"><img src={IMAGES.logo} alt="ELIMFILTERS" className="nav-logo" /></a>
