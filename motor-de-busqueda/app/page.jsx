@@ -143,6 +143,7 @@ const CSS = `
 `;
 
 export default function Home() {
+  const [showIntro, setShowIntro] = useState(typeof window !== 'undefined' ? !new URLSearchParams(window.location.search).get('skip') : true);
   const [searchQuery, setSearchQuery] = useState('');
   const [showIntro, setShowIntro] = useState(typeof window !== 'undefined' ? !new URLSearchParams(window.location.search).get('skip') : true);
   const [scrollY, setScrollY] = useState(0);
@@ -151,12 +152,18 @@ export default function Home() {
   useEffect(() => {
     const h = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', h, { passive: true });
-    return () => window.removeEventListener('scroll', h);
+    return (
+    <>
+      {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
+    </>) => window.removeEventListener('scroll', h);
   }, []);
 
   useEffect(() => {
     const t = setInterval(() => setActiveIndustry(p => (p + 1) % industries.length), 3000);
-    return () => clearInterval(t);
+    return (
+    <>
+      {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
+    </>) => clearInterval(t);
   }, []);
 
   const handleSearch = (e) => {
@@ -165,6 +172,9 @@ export default function Home() {
   };
 
   return (
+    <>
+      {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
+    </>
     <>
       {showIntro && <Intro onComplete={() => setShowIntro(false)} />}
       <style>{CSS}</style>
