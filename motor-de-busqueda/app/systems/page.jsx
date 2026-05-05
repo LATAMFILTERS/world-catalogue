@@ -42,9 +42,9 @@ export default function Systems() {
     .sy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
     .sy-card{background:#0d0d0d;border:1px solid rgba(255,255,255,0.05);display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:all 0.5s cubic-bezier(0.16,1,0.3,1);}
     .sy-card:hover{border-color:#FFF12D;transform:translateY(-6px);background:#111;}
-    .sy-card-img{width:100%;height:220px;overflow:hidden;background:#050505;}
-    .sy-card-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.75) contrast(1.1);transition:transform 0.8s ease,filter 0.5s ease;}
-    .sy-card:hover .sy-card-img img{transform:scale(1.08);filter:brightness(1);}
+    .sy-card-img{width:100%;height:280px;overflow:hidden;background:#050505;display:flex;align-items:center;justify-content:center;}
+    .sy-card-img img{width:100%;height:100%;object-fit:contain;padding:16px;filter:brightness(0.85) contrast(1.05);transition:transform 0.8s ease,filter 0.5s ease;}
+    .sy-card:hover .sy-card-img img{transform:scale(1.05);filter:brightness(1.1);}
     .sy-card-body{padding:28px;}
     .sy-card-title{font-family:'Russo One',sans-serif;font-size:18px;color:#FFF12D;text-transform:uppercase;margin-bottom:10px;line-height:1;}
     .sy-card-desc{font-family:'JetBrains Mono',monospace;font-size:12px;color:#666;line-height:1.6;letter-spacing:0.03em;}
@@ -57,7 +57,7 @@ export default function Systems() {
     .sy-cta-btn{background:#FFF12D;color:#000;font-family:'Russo One',sans-serif;font-size:16px;padding:22px 52px;text-decoration:none;text-transform:uppercase;letter-spacing:0.15em;display:inline-block;transition:all 0.3s;}
     .sy-cta-btn:hover{background:#fff;transform:translateY(-2px);}
     @media(max-width:1024px){.sy-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:768px){.sy-grid{grid-template-columns:1fr;} .sy-hero{align-items:center;} .sy-card-img{height:180px;}}
+    @media(max-width:768px){.sy-grid{grid-template-columns:1fr;} .sy-hero{align-items:center;} .sy-card-img{height:240px;}}
   `;
 
   return (
