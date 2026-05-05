@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect, useRef, useState } from 'react';
 
 const VIDEOS = [
@@ -14,7 +14,6 @@ export default function Intro({ onComplete }) {
   const videoRefs = [useRef(null), useRef(null), useRef(null)];
   const [current, setCurrent] = useState(0);
   const [phase, setPhase] = useState('videos');
-  const [videoOpacity, setVideoOpacity] = useState(0);
   const [textVisible, setTextVisible] = useState(false);
   const [logoVisible, setLogoVisible] = useState(false);
   const [sloganVisible, setSloganVisible] = useState(false);
@@ -103,14 +102,7 @@ export default function Intro({ onComplete }) {
   const css = `
     .intro-wrap{position:fixed;inset:0;z-index:9999;background:#000;overflow:hidden;}
     .intro-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
-    
-    /* Mask overlay para reposicionar el filtro rotativo en video 3 */
-    .intro-video-mask{position:absolute;inset:0;z-index:4;pointer-events:none;}
-    .intro-video-mask-box{position:absolute;bottom:0;right:0;width:45%;height:55%;background:#000;z-index:4;}
-    
-    /* Scale down video 3 para que no se corte el filtro */
-    .intro-video-scaled{transform:scale(0.92) translateX(3%) translateY(2%);transform-origin:center center;}
-    
+    .intro-video-scaled{transform:scale(0.88) translateX(4%) translateY(3%);}
     .intro-text{position:absolute;bottom:15%;left:6%;z-index:6;transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
     .intro-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.35em;color:rgba(255,241,45,0.7);text-transform:uppercase;margin-bottom:16px;}
     .intro-title1{font-family:'Russo One',sans-serif;font-size:clamp(52px,8vw,100px);color:#fff;text-transform:uppercase;line-height:0.9;margin:0;}
@@ -154,13 +146,6 @@ export default function Intro({ onComplete }) {
           style={{ zIndex: 2 + i }}
         />
       ))}
-
-      {/* Mask overlay para ocultar y reposicionar filtro rotativo en video 3 */}
-      {current === 2 && phase === 'videos' && (
-        <div className="intro-video-mask">
-          <div className="intro-video-mask-box" />
-        </div>
-      )}
 
       {phase === 'videos' && (
         <div
