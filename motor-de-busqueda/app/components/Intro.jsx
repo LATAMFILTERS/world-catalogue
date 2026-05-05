@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect, useRef, useState } from 'react';
 
 const VIDEOS = [
@@ -28,10 +28,7 @@ export default function Intro({ onComplete }) {
     return t;
   };
 
-  // Smooth easing function for cinema-quality transitions
   const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-  const easeInQuart = (t) => t * t * t * t;
 
   const fadeVideo = (videoEl, from, to, duration, cb) => {
     if (!videoEl) return;
@@ -67,7 +64,6 @@ export default function Intro({ onComplete }) {
         playVideo(index + 1);
         if (index === 0) setTextVisible(true);
       } else {
-        // All videos done → logo phase (EXTENDED TIME: +2 seconds)
         setPhase('logo');
         setTextVisible(false);
         addTimeout(() => {
@@ -79,7 +75,7 @@ export default function Intro({ onComplete }) {
               addTimeout(() => {
                 if (onComplete) onComplete();
               }, 1200);
-            }, 2400); // EXTENDED: was 1800ms
+            }, 2400);
           }, 600);
         }, 200);
       }
@@ -87,12 +83,10 @@ export default function Intro({ onComplete }) {
   };
 
   useEffect(() => {
-    // Start first video with smooth entrance
     addTimeout(() => {
       playVideo(0);
     }, 100);
 
-    // Video timing: 4s each, 0.8s smooth fade
     addTimeout(() => fadeOutAndNext(0), 4000);
     addTimeout(() => fadeOutAndNext(1), 8800);
     addTimeout(() => fadeOutAndNext(2), 13600);
@@ -109,8 +103,6 @@ export default function Intro({ onComplete }) {
   const css = `
     .intro-wrap{position:fixed;inset:0;z-index:9999;background:#000;overflow:hidden;}
     .intro-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
-    .intro-filter-overlay{position:absolute;bottom:10%;right:8%;z-index:5;pointer-events:none;}
-    .intro-filter-img{width:clamp(80px,12vw,140px);height:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.6));opacity:0.9;}
     .intro-text{position:absolute;bottom:15%;left:6%;z-index:6;transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
     .intro-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.35em;color:rgba(255,241,45,0.7);text-transform:uppercase;margin-bottom:16px;}
     .intro-title1{font-family:'Russo One',sans-serif;font-size:clamp(52px,8vw,100px);color:#fff;text-transform:uppercase;line-height:0.9;margin:0;}
@@ -119,14 +111,13 @@ export default function Intro({ onComplete }) {
     .intro-sub{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:0.08em;max-width:400px;line-height:1.7;}
     .intro-logo-phase{position:absolute;inset:0;z-index:7;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1);}
     .intro-logo-e{width:clamp(120px,20vw,200px);height:auto;transition:opacity 1.2s cubic-bezier(0.25,0.46,0.45,0.94),transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94);}
-    .intro-slogan{font-family:'Russo One',sans-serif;font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.6);letter-spacing:0.15em;text-transform:uppercase;margin-top:32px;text-align:center;transition:opacity 1.2s cubic-bezier(0.25,0.46,0.45,0.94);max-width:500px;line-height:1.8;position:relative;}
+    .intro-slogan{font-family:'Russo One',sans-serif;font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.6);letter-spacing:0.15em;text-transform:uppercase;margin-top:32px;text-align:center;transition:opacity 1.2s cubic-bezier(0.25,0.46,0.45,0.94);max-width:500px;line-height:1.8;}
     .intro-skip{position:absolute;top:24px;right:24px;z-index:20;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.3);cursor:pointer;text-transform:uppercase;background:transparent;border:none;padding:8px 16px;transition:color 0.2s;}
     .intro-skip:hover{color:#FFF12D;}
     .intro-progress{position:absolute;bottom:0;left:0;height:2px;background:#FFF12D;z-index:20;opacity:0.5;transition:width 0.1s linear;}
     @media(max-width:768px){.intro-text{bottom:20%;left:5%;} .intro-title1,.intro-title2{font-size:clamp(40px,10vw,72px);}}
   `;
 
-  // EXTENDED total duration: +2000ms
   const totalDuration = 15600;
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -143,7 +134,6 @@ export default function Intro({ onComplete }) {
     <div className="intro-wrap">
       <style>{css}</style>
 
-      {/* Videos */}
       {VIDEOS.map((src, i) => (
         <video
           key={i}
@@ -157,18 +147,6 @@ export default function Intro({ onComplete }) {
         />
       ))}
 
-      {/* Filter EL84004 overlay – appears in video 3, smaller and repositioned right */}
-      {current === 2 && phase === 'videos' && (
-        <div className="intro-filter-overlay">
-          <img
-            className="intro-filter-img"
-            src={`${WP}/2026/04/Gemini_Generated_Image_2qivu62qi.png`}
-            alt="EL84004 Filter"
-          />
-        </div>
-      )}
-
-      {/* Text overlay – appears during video 2 */}
       {phase === 'videos' && (
         <div
           className="intro-text"
@@ -185,7 +163,6 @@ export default function Intro({ onComplete }) {
         </div>
       )}
 
-      {/* Logo phase – LOGO E with slogan below */}
       {phase === 'logo' && (
         <div
           className="intro-logo-phase"
@@ -212,10 +189,8 @@ export default function Intro({ onComplete }) {
         </div>
       )}
 
-      {/* Progress bar */}
       <div className="intro-progress" style={{ width: `${progress}%` }} />
 
-      {/* Skip */}
       <button
         className="intro-skip"
         onClick={() => { if (onComplete) onComplete(); }}
