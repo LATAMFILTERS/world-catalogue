@@ -7,10 +7,18 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  // Solo redirigir a raíz LATAM a español
-  if (pathname === '/' && request.headers.get('cf-ipcountry') === 'VE') {
-    const response = NextResponse.redirect('https://world-catalogue-production-a151.up.railway.app');
-    return response;
+  // Solo redirigir en la raíz
+  if (pathname === '/') {
+    const country = request.headers.get('cf-ipcountry') || '';
+
+    // Países LATAM que van a ESPAÑOL
+    const latinAmerica = ['MX', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 'BO', 'PY', 'UY', 'GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'CU', 'DO', 'PR', 'ES'];
+
+    if (latinAmerica.includes(country)) {
+      const response = NextResponse.redirect('https://world-catalogue-production-a151.up.railway.app');
+      response.cookies.set('lang', 'es', { maxAge: 31536000, path: '/' });
+      return response;
+    }
   }
 
   return NextResponse.next();
