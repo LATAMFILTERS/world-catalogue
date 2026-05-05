@@ -1,5 +1,6 @@
-﻿'use client';
+'use client';
 import Intro from './components/Intro';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -11,18 +12,18 @@ const IMAGES = {
 };
 
 const industries = [
-  { name: 'MINING', desc: 'Open-pit & underground operations', img: WP + '/2025/08/digger-1867268_1920.jpg' },
-  { name: 'CONSTRUCTION', desc: 'Heavy equipment & earthmoving', img: WP + '/2025/08/construction.jpg' },
-  { name: 'OIL & GAS', desc: 'Upstream & downstream protection', img: WP + '/2026/04/pexels-tomfisk-6767962-1-scaled.jpg' },
-  { name: 'MARINE', desc: 'Offshore & inland waterway', img: WP + '/2025/08/Screenshot-2025-08-07-075322.png' },
-  { name: 'POWER GENERATION', desc: 'Diesel & gas turbine systems', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-10_09_26-a.m.png' },
-  { name: 'AGRICULTURE', desc: 'Harvesting & field equipment', img: WP + '/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg' },
-  { name: 'TRUCKS & FLEETS', desc: 'Long-haul & urban logistics', img: WP + '/2026/02/pexels-cottonbro-7018493-scaled.jpg' },
-  { name: 'MANUFACTURING', desc: 'Industrial process equipment', img: WP + '/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg' },
-  { name: 'BUS & COACH', desc: 'Mass transit & tourism fleets', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp' },
-  { name: 'RAILWAY', desc: 'Diesel-electric & compressed air', img: WP + '/2025/08/train-3895307_1920.jpg' },
-  { name: 'AUTOMOTIVE', desc: 'Light & commercial vehicles', img: WP + '/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg' },
-  { name: 'WASTE & MUNICIPAL', desc: 'Critical urban services', img: WP + '/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg' },
+  { name: 'MINING', slug: 'mining', desc: 'Open-pit & underground operations', img: WP + '/2025/08/digger-1867268_1920.jpg' },
+  { name: 'CONSTRUCTION', slug: 'construction', desc: 'Heavy equipment & earthmoving', img: WP + '/2025/08/construction.jpg' },
+  { name: 'OIL & GAS', slug: 'oil-gas', desc: 'Upstream & downstream protection', img: WP + '/2026/04/pexels-tomfisk-6767962-1-scaled.jpg' },
+  { name: 'MARINE', slug: 'marine', desc: 'Offshore & inland waterway', img: WP + '/2025/08/Screenshot-2025-08-07-075322.png' },
+  { name: 'POWER GENERATION', slug: 'power-generation', desc: 'Diesel & gas turbine systems', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-10_09_26-a.m.png' },
+  { name: 'AGRICULTURE', slug: 'agriculture', desc: 'Harvesting & field equipment', img: WP + '/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg' },
+  { name: 'TRUCKS & FLEETS', slug: 'trucks-fleets', desc: 'Long-haul & urban logistics', img: WP + '/2026/02/pexels-cottonbro-7018493-scaled.jpg' },
+  { name: 'MANUFACTURING', slug: 'manufacturing', desc: 'Industrial process equipment', img: WP + '/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg' },
+  { name: 'BUS & COACH', slug: 'bus-coach', desc: 'Mass transit & tourism fleets', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp' },
+  { name: 'RAILWAY', slug: 'railway', desc: 'Diesel-electric & compressed air', img: WP + '/2025/08/train-3895307_1920.jpg' },
+  { name: 'AUTOMOTIVE', slug: 'automotive', desc: 'Light & commercial vehicles', img: WP + '/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg' },
+  { name: 'WASTE & MUNICIPAL', slug: 'waste-municipal', desc: 'Critical urban services', img: WP + '/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg' },
 ];
 
 const technologies = [
@@ -30,7 +31,7 @@ const technologies = [
   { name: 'INTEKCORE', desc: 'Housing & Intake Systems' },
   { name: 'SYNTEPORE', desc: 'Fuel Filtration' },
   { name: 'AQUAGUARD', desc: 'Fuel Water Separator' },
-  { name: 'SINTRAX', desc: 'Lube Filters' },
+  { name: 'SYNTRAX', desc: 'Lube Filters' },
   { name: 'NANOFORCE', desc: 'Hydraulic Filters' },
   { name: 'AQUAGUARD SERIES', desc: 'Turbine Serie FH' },
   { name: 'COOLTECH', desc: 'Coolant Filters' },
@@ -106,17 +107,22 @@ const CSS = `
   .tech-name-big{font-family:'Russo One',sans-serif;font-size:24px;color:var(--w);text-transform:uppercase;line-height:1;margin-bottom:8px;}
   .tech-desc{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--g3);text-transform:uppercase;}
   .ind-sec{padding:100px 5%;background:var(--b);}
-  .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .ind-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;}
   .ind-preview{position:relative;overflow:hidden;height:320px;}
   .ind-preview img{width:100%;height:100%;object-fit:cover;}
   .ind-preview-ov{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);}
   .ind-preview-name{font-family:'Russo One',sans-serif;font-size:28px;font-weight:800;text-transform:uppercase;color:var(--y);}
   .ind-list{display:flex;flex-direction:column;gap:4px;}
-  .ind-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--g7);cursor:pointer;transition:all .2s;}
-  .ind-item:hover,.ind-item.active{border-bottom-color:var(--y);}
+  .ind-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--g7);cursor:pointer;transition:all .2s;position:relative;}
+  .ind-item:hover{border-bottom-color:var(--y);}
+  .ind-item:hover .ind-arrow{color:var(--y);opacity:1;transform:translateX(4px);}
+  .ind-item:hover .ind-connector{opacity:1;}
   .ind-item.active .ind-name{color:var(--y);}
   .ind-name{font-family:'Russo One',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.1em;}
   .ind-sub{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:400;text-transform:none;color:var(--g4);margin-top:1px;}
+  .ind-arrow{color:var(--g4);font-size:18px;transition:all .2s;opacity:.6;text-decoration:none;cursor:pointer;}
+  .ind-arrow:hover{color:var(--y);}
+  .ind-connector{position:absolute;left:100%;top:50%;width:60px;height:2px;background:linear-gradient(to right,var(--y),transparent);pointer-events:none;opacity:0;transition:opacity .2s;}
   .cta{background:var(--y);padding:80px 5%;}
   .cta-in{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:40px;}
   .cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(36px,6vw,80px);color:var(--b);text-transform:uppercase;line-height:.95;}
@@ -153,6 +159,7 @@ const CSS = `
     .ind-in{grid-template-columns:1fr;}
     .ind-preview{order:2;height:240px;}
     .ind-list{order:1;}
+    .ind-connector{display:none;}
     .footer-grid{grid-template-columns:1fr;gap:32px;}
     .footer-brand{padding-right:0;}
     .nav-logo{border:none!important;background:transparent!important;}
@@ -171,6 +178,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [scrollY, setScrollY] = useState(0);
   const [activeIndustry, setActiveIndustry] = useState(0);
+  const [hoveredIndustry, setHoveredIndustry] = useState(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -291,9 +299,9 @@ export default function Home() {
       <section className="ind-sec">
         <div className="ind-in">
           <div className="ind-preview">
-            <img src={industries[activeIndustry].img} alt={industries[activeIndustry].name} />
+            <img src={industries[hoveredIndustry !== null ? hoveredIndustry : activeIndustry].img} alt={industries[hoveredIndustry !== null ? hoveredIndustry : activeIndustry].name} />
             <div className="ind-preview-ov">
-              <div className="ind-preview-name">{industries[activeIndustry].name}</div>
+              <div className="ind-preview-name">{industries[hoveredIndustry !== null ? hoveredIndustry : activeIndustry].name}</div>
             </div>
           </div>
           <div>
@@ -301,12 +309,19 @@ export default function Home() {
             <h2 className="sec-h2" style={{marginBottom:'32px'}}>WE UNDERSTAND<br /><span>YOUR OPERATION</span></h2>
             <div className="ind-list">
               {industries.map((ind, i) => (
-                <div key={i} className={'ind-item' + (i === activeIndustry ? ' active' : '')} onClick={() => setActiveIndustry(i)}>
+                <div 
+                  key={i} 
+                  className="ind-item"
+                  onMouseEnter={() => setHoveredIndustry(i)}
+                  onMouseLeave={() => setHoveredIndustry(null)}
+                  onClick={() => setActiveIndustry(i)}
+                >
                   <div>
                     <div className="ind-name">{ind.name}</div>
                     <div className="ind-sub">{ind.desc}</div>
                   </div>
-                  <span style={{color:'var(--g4)',fontSize:'18px'}}>&#8594;</span>
+                  <Link href={`/industries/${ind.slug}`} className="ind-arrow">→</Link>
+                  <div className="ind-connector" />
                 </div>
               ))}
             </div>
@@ -354,7 +369,7 @@ export default function Home() {
               <a href="/industries/construction" className="f-link">Construction</a>
               <a href="/industries/oil-gas" className="f-link">Oil &amp; Gas</a>
               <a href="/industries/marine" className="f-link">Marine</a>
-              <a href="/industries" className="f-link">View All 12 &#8594;</a>
+              <a href="/industries" className="f-link">View All 12 &rarr;</a>
             </div>
             <div>
               <div className="f-col-t">Company</div>
@@ -372,9 +387,9 @@ export default function Home() {
             </div>
           </div>
           <div className="f-bot">
-            <span className="f-copy">&#169; 2015&#8211;2026 FILTVEX TECHNOLOGY LLC</span>
-            <span className="f-copy">ELIMFILTERS&#174; is a registered trademark of FILTVEX TECHNOLOGY LLC</span>
-            <span className="f-copy"><strong>FRISCO, TX</strong> &#124; UNITED STATES</span>
+            <span className="f-copy">&copy; 2015&ndash;2026 FILTVEX TECHNOLOGY LLC</span>
+            <span className="f-copy">ELIMFILTERS&reg; is a registered trademark of FILTVEX TECHNOLOGY LLC</span>
+            <span className="f-copy"><strong>FRISCO, TX</strong> | UNITED STATES</span>
           </div>
         </div>
       </footer>
@@ -387,4 +402,3 @@ export default function Home() {
     </>
   );
 }
-
