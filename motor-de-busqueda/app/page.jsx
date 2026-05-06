@@ -1,4 +1,5 @@
-'use client';
+﻿'use client':
+import SearchButton from './components/SearchButton';
 import Intro from './components/Intro';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -215,7 +216,7 @@ export default function Home() {
           <li><a href="/systems">Systems</a></li>
           <li><a href="/knowledge">Knowledge Hub</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/search" className="nav-cta">Part Search</a></li>
+          <li><SearchButton text="Part Search" variant="primary" className="nav-cta" /></li>
         </ul>
       </nav>
 
@@ -229,7 +230,7 @@ export default function Home() {
           <h2 className="hero-sub">Industrial Filtration Intelligence</h2>
           <div className="hero-bot">
             <p className="hero-tag">Industrial asset protection systems engineered for fleets, mining operations, and critical diesel and gasoline-powered infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from contamination, extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
-            <a href="/search" className="hero-cta-btn">FIND MY FILTER</a>
+            <SearchButton text="FIND MY FILTER" variant="primary" className="hero-cta-btn" />
           </div>
         </div>
       </section>
@@ -320,7 +321,7 @@ export default function Home() {
                     <div className="ind-name">{ind.name}</div>
                     <div className="ind-sub">{ind.desc}</div>
                   </div>
-                  <Link href={`/industries/${ind.slug}`} className="ind-arrow">→</Link>
+                  <Link href={`/industries/${ind.slug}`} className="ind-arrow">â†’</Link>
                   <div className="ind-connector" />
                 </div>
               ))}
@@ -402,3 +403,6 @@ export default function Home() {
     </>
   );
 }
+
+
+
