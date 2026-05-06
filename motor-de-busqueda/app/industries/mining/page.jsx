@@ -89,7 +89,7 @@ export default function Mining() {
               <p className="mn-p">Our architectures maintain absolute fluid stability, shielding high-pressure injectors and hydrostatic pumps from catastrophic wear during continuous 24/7 extraction cycles in the harshest environments worldwide.</p>
             </div>
             <div className="mn-video-wrap">
-              <video src={`${WP}/2025/08/4203127-uhd_3840_2160_25fps.mp4`} autoPlay muted loop playsInline />
+              <video src="/videos/mineria.mp4" autoPlay muted loop playsInline />
             </div>
           </div>
         </div>
@@ -166,5 +166,6 @@ export default function Mining() {
     </div>
   );
 }
+
 
 

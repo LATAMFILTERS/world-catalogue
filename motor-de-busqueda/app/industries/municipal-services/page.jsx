@@ -63,7 +63,7 @@ export default function MunicipalServices() {
               <p className="ms-p">ELIMFILTERS delivers synchronized protection across fuel, lubrication, hydraulic, and air intake systems â€” ensuring every vehicle completes its route and every service is delivered on time worldwide.</p>
             </div>
             <div className="ms-video-wrap">
-              <video src={`${WP}/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg`} autoPlay muted loop playsInline />
+              <video src="/videos/servicios.mp4" autoPlay muted loop playsInline />
             </div>
           </div>
         </div>
@@ -108,6 +108,7 @@ export default function MunicipalServices() {
     </div>
   );
 }
+
 
 
 

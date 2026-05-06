@@ -84,7 +84,7 @@ export default function TrucksFleets() {
               <Link href="/technologies" className="tf-btn">VIEW TECHNOLOGY</Link>
             </div>
             <div className="tf-video-wrap">
-              <video src={`${WP}/2025/08/5309381-hd_1920_1080_25fps.mp4`} autoPlay muted loop playsInline />
+              <video src="/videos/trucks-highway-rear.mp4" autoPlay muted loop playsInline />
             </div>
           </div>
         </div>
@@ -155,5 +155,6 @@ export default function TrucksFleets() {
     </div>
   );
 }
+
 
 
