@@ -19,12 +19,12 @@ export default function SearchButton({
         const latinAmerica = ['MX', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 'BO', 'PY', 'UY', 'GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'CU', 'DO', 'PR', 'ES'];
 
         if (latinAmerica.includes(country)) {
-          setSearchUrl('https://world-catalogue-production-a151.up.railway.app');
+          setSearchUrl('https://elimfilters.com');
         } else {
-          setSearchUrl('https://part-search.elimfilters.com/search');
+          setSearchUrl('https://elimfilters.com');
         }
       } catch (err) {
-        setSearchUrl('https://part-search.elimfilters.com/search');
+        setSearchUrl('https://elimfilters.com');
       } finally {
         setLoading(false);
       }
@@ -54,3 +54,4 @@ export default function SearchButton({
     </a>
   );
 }
+
