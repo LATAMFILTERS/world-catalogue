@@ -1,4 +1,4 @@
-﻿'use client':
+﻿'use client';
 import SearchButton from './components/SearchButton';
 import Intro from './components/Intro';
 import Link from 'next/link';
@@ -403,6 +403,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
