@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Automotive() {
     .au{background:#000;color:#fff;min-height:100vh;}
     .au-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .au-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .au-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .au-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .au-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .au-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .au-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -61,7 +61,7 @@ export default function Automotive() {
         <div className="au-hero-inner">
           <div className="au-eyebrow">// LD AUTOMOTIVE SERIES</div>
           <h1 className="au-h1">INDUSTRIAL<br /><span>OVER-ENGINEERING.</span></h1>
-          <p className="au-hero-p">Industrial asset protection systems engineered for passenger vehicles, light commercial fleets, and critical gasoline-powered infrastructure. Our filtration technology shields air intake systems, fuel circuits, lubrication lines, and cabin environments from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="au-hero-p">Industrial asset protection systems engineered for passenger vehicles, light commercial fleets, and critical gasoline-powered infrastructure. Our filtration technology shields air intake systems, fuel circuits, lubrication lines, and cabin environments from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -72,12 +72,12 @@ export default function Automotive() {
               <div className="au-eyebrow">// URBAN PROTECTION PROTOCOL</div>
               <h2 className="au-h2">STABLE PERFORMANCE IN<br /><span>CRITICAL CONDITIONS</span></h2>
               <p className="au-p">Heavy traffic and frequent starts lead to accelerated engine degradation. Our filtration architecture neutralizes these risks using high-capacity synthetic media engineered for light and commercial vehicle applications worldwide.</p>
-              <p className="au-p">Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS heavy-duty machinery — protecting every start, every mile, across 5,000+ OEM cross-references.</p>
+              <p className="au-p">Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS heavy-duty machinery â€” protecting every start, every mile, across 5,000+ OEM cross-references.</p>
               <div className="au-tech-specs">
-                <div><div className="au-tech-spec-label">AIR INTAKE</div><div className="au-tech-spec-val">MACROCORE™</div></div>
-                <div><div className="au-tech-spec-label">LUBRICATION</div><div className="au-tech-spec-val">SINTRAX™</div></div>
-                <div><div className="au-tech-spec-label">FUEL SYSTEM</div><div className="au-tech-spec-val">NANOFORCE™</div></div>
-                <div><div className="au-tech-spec-label">CABIN AIR</div><div className="au-tech-spec-val">MICROKAPPA™</div></div>
+                <div><div className="au-tech-spec-label">AIR INTAKE</div><div className="au-tech-spec-val">MACROCOREâ„¢</div></div>
+                <div><div className="au-tech-spec-label">LUBRICATION</div><div className="au-tech-spec-val">SINTRAXâ„¢</div></div>
+                <div><div className="au-tech-spec-label">FUEL SYSTEM</div><div className="au-tech-spec-val">NANOFORCEâ„¢</div></div>
+                <div><div className="au-tech-spec-label">CABIN AIR</div><div className="au-tech-spec-val">MICROKAPPAâ„¢</div></div>
               </div>
               <Link href="/technologies" className="au-btn">VIEW TECHNOLOGY</Link>
             </div>
@@ -96,10 +96,10 @@ export default function Automotive() {
           </div>
           <div className="au-grid4">
             {[
-              {label:'Air Module', title:'MACROCORE™', desc:'Absolute capture of microscopic particles ensuring perfect stoichiometric combustion and maximum engine protection in urban environments.', featured:false},
-              {label:'Oil Module', title:'SINTRAX™', desc:'Maintains oil viscosity and cleanliness under severe thermal stress in city environments — extending engine life and reducing maintenance costs.', featured:false},
-              {label:'Fuel Module', title:'NANOFORCE™', desc:'Nanofiber technology designed to eliminate critical contaminants and water in injection systems — protecting Common Rail injectors from premature wear.', featured:true},
-              {label:'Environmental Health', title:'MICROKAPPA™', desc:'Biological and chemical barrier against allergens and pollutants from urban exhaust — safeguarding operator health in light and commercial vehicles.', featured:false},
+              {label:'Air Module', title:'MACROCOREâ„¢', desc:'Absolute capture of microscopic particles ensuring perfect stoichiometric combustion and maximum engine protection in urban environments.', featured:false},
+              {label:'Oil Module', title:'SINTRAXâ„¢', desc:'Maintains oil viscosity and cleanliness under severe thermal stress in city environments â€” extending engine life and reducing maintenance costs.', featured:false},
+              {label:'Fuel Module', title:'NANOFORCEâ„¢', desc:'Nanofiber technology designed to eliminate critical contaminants and water in injection systems â€” protecting Common Rail injectors from premature wear.', featured:true},
+              {label:'Environmental Health', title:'MICROKAPPAâ„¢', desc:'Biological and chemical barrier against allergens and pollutants from urban exhaust â€” safeguarding operator health in light and commercial vehicles.', featured:false},
             ].map((c, i) => (
               <div key={i} className={`au-card${c.featured ? ' featured' : ''}`}>
                 <div className="au-card-label">{c.label}</div>
@@ -119,9 +119,9 @@ export default function Automotive() {
           </div>
           <div className="au-protocol-grid">
             {[
-              {num:'01', title:'URBAN STRESS', desc:'Engineered for stop-and-go traffic cycles that accelerate contamination buildup — protecting engines in the most demanding city driving conditions worldwide.'},
-              {num:'02', title:'COLD START OPS', desc:'Optimized media performance from the first second of ignition — reducing cold-start wear that accounts for 80% of total engine wear in light vehicles.'},
-              {num:'03', title:'EXTENDED SERVICE', desc:'Advanced synthetic media extends service intervals versus conventional filters — reducing maintenance frequency and total cost of ownership significantly.'},
+              {num:'01', title:'URBAN STRESS', desc:'Engineered for stop-and-go traffic cycles that accelerate contamination buildup â€” protecting engines in the most demanding city driving conditions worldwide.'},
+              {num:'02', title:'COLD START OPS', desc:'Optimized media performance from the first second of ignition â€” reducing cold-start wear that accounts for 80% of total engine wear in light vehicles.'},
+              {num:'03', title:'EXTENDED SERVICE', desc:'Advanced synthetic media extends service intervals versus conventional filters â€” reducing maintenance frequency and total cost of ownership significantly.'},
             ].map((p, i) => (
               <div key={i} className="au-protocol-card">
                 <div className="au-protocol-num">{p.num}</div>
@@ -147,3 +147,4 @@ export default function Automotive() {
     </div>
   );
 }
+

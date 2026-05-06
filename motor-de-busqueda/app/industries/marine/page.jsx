@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function MarineIndustry() {
     .mi{background:#000;color:#fff;min-height:100vh;}
     .mi-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .mi-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .mi-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.9) 35%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/raphael-biscaldi-wT-fHwcHoIo-unsplash-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .mi-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.9) 35%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/raphael-biscaldi-wT-fHwcHoIo-unsplash-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .mi-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .mi-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .mi-h1{font-family:'Russo One',sans-serif;font-size:clamp(35px,5vw,75px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -51,10 +51,10 @@ export default function MarineIndustry() {
 
       <section className="mi-hero">
         <div className="mi-hero-inner">
-          <div className="mi-eyebrow">// OFFSHORE • COMMERCIAL • NAVAL</div>
+          <div className="mi-eyebrow">// OFFSHORE â€¢ COMMERCIAL â€¢ NAVAL</div>
           <h1 className="mi-h1">MARINE OPERATIONS</h1>
           <div className="mi-h2">ZERO-FAILURE RELIABILITY.</div>
-          <p className="mi-hero-p">Industrial asset protection systems engineered for offshore vessels, commercial maritime fleets, and critical naval propulsion infrastructure. Our filtration technology shields fuel systems, hydraulic controls, lubrication lines, and air intake systems from salt corrosion, humidity, and contamination — extending asset lifespan and ensuring uninterrupted maritime operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="mi-hero-p">Industrial asset protection systems engineered for offshore vessels, commercial maritime fleets, and critical naval propulsion infrastructure. Our filtration technology shields fuel systems, hydraulic controls, lubrication lines, and air intake systems from salt corrosion, humidity, and contamination â€” extending asset lifespan and ensuring uninterrupted maritime operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -64,7 +64,7 @@ export default function MarineIndustry() {
             <div>
               <div className="mi-eyebrow">// CONTINUOUS NAVIGATION</div>
               <h2 className="mi-sh2">CONTINUOUS SAILING<br /><span>UNDER EXTREME LOADS.</span></h2>
-              <p className="mi-p">Marine propulsion systems operate under constant vibration and saline atmospheres. A protection failure means critical downtime in the middle of the ocean — with consequences measured in cargo loss, vessel damage, and crew safety.</p>
+              <p className="mi-p">Marine propulsion systems operate under constant vibration and saline atmospheres. A protection failure means critical downtime in the middle of the ocean â€” with consequences measured in cargo loss, vessel damage, and crew safety.</p>
               <div className="mi-p-strong">We safeguard propulsion engines, fuel systems, and hydraulic controls across global maritime fleets.</div>
               <Link href="/technologies" className="mi-btn">VIEW TECHNOLOGY</Link>
             </div>
@@ -83,12 +83,12 @@ export default function MarineIndustry() {
           </div>
           <div className="mi-grid3">
             {[
-              {label:'TURBINE SERIES™', title:'FUEL PURITY', desc:'Eliminates free and emulsified water to protect injection systems and thermal efficiency — ensuring pure fuel delivery in offshore and coastal marine operations.'},
-              {label:'SINTRAX™', title:'LUBRICATION', desc:'High-capacity soot control for large displacement marine engines during long-haul voyages — maintaining oil cleanliness and protecting critical engine components.'},
-              {label:'NANOFORCE™', title:'HYDRAULIC CONTROL', desc:'Precision filtration for cranes, steering systems, and deck equipment exposed to high salinity environments — protecting hydraulic circuits from marine contamination.'},
-              {label:'MACROCORE™', title:'AIR INTAKE', desc:'Blocks salt particles and moisture before they reach the combustion chamber — protecting marine diesel engines from intake contamination in all sea conditions.'},
-              {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Chemical protection that prevents cavitation erosion in liners and heat exchangers — maintaining thermal stability in continuous-duty marine propulsion systems.'},
-              {label:'GEAR SHIELD', title:'TRANSMISSIONS', desc:'Protection for marine gears under extreme torque and continuous load cycles — ensuring reliable power transmission across all vessel types and operating conditions.'},
+              {label:'TURBINE SERIESâ„¢', title:'FUEL PURITY', desc:'Eliminates free and emulsified water to protect injection systems and thermal efficiency â€” ensuring pure fuel delivery in offshore and coastal marine operations.'},
+              {label:'SINTRAXâ„¢', title:'LUBRICATION', desc:'High-capacity soot control for large displacement marine engines during long-haul voyages â€” maintaining oil cleanliness and protecting critical engine components.'},
+              {label:'NANOFORCEâ„¢', title:'HYDRAULIC CONTROL', desc:'Precision filtration for cranes, steering systems, and deck equipment exposed to high salinity environments â€” protecting hydraulic circuits from marine contamination.'},
+              {label:'MACROCOREâ„¢', title:'AIR INTAKE', desc:'Blocks salt particles and moisture before they reach the combustion chamber â€” protecting marine diesel engines from intake contamination in all sea conditions.'},
+              {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Chemical protection that prevents cavitation erosion in liners and heat exchangers â€” maintaining thermal stability in continuous-duty marine propulsion systems.'},
+              {label:'GEAR SHIELD', title:'TRANSMISSIONS', desc:'Protection for marine gears under extreme torque and continuous load cycles â€” ensuring reliable power transmission across all vessel types and operating conditions.'},
             ].map((f, i) => (
               <div key={i} className="mi-feature">
                 <div className="mi-feature-label">{f.label}</div>
@@ -114,3 +114,4 @@ export default function MarineIndustry() {
     </div>
   );
 }
+

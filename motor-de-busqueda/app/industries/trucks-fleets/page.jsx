@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function TrucksFleets() {
     .tf{background:#000;color:#fff;min-height:100vh;}
     .tf-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .tf-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .tf-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/02/pexels-cottonbro-7018493-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .tf-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/02/pexels-cottonbro-7018493-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .tf-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .tf-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .tf-h1{font-family:'Russo One',sans-serif;font-size:clamp(38px,6vw,85px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -63,7 +63,7 @@ export default function TrucksFleets() {
         <div className="tf-hero-inner">
           <div className="tf-eyebrow">// LONG-HAUL & URBAN LOGISTICS</div>
           <h1 className="tf-h1">TRUCKS &amp;<br /><span>FLEETS</span></h1>
-          <p className="tf-hero-p">Industrial asset protection systems engineered for long-haul trucking, urban delivery fleets, and critical diesel-powered logistics infrastructure. Our filtration technology shields fuel systems, lubrication circuits, air intake systems, and pneumatic brakes from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across fleet operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="tf-hero-p">Industrial asset protection systems engineered for long-haul trucking, urban delivery fleets, and critical diesel-powered logistics infrastructure. Our filtration technology shields fuel systems, lubrication circuits, air intake systems, and pneumatic brakes from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across fleet operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,13 +73,13 @@ export default function TrucksFleets() {
             <div>
               <div className="tf-eyebrow">// FLEET PROTECTION PROTOCOL</div>
               <h2 className="tf-h2">EVERY MILE.<br /><span>EVERY LOAD.</span></h2>
-              <p className="tf-p">Long-haul and urban fleets face the dual challenge of extended highway operation and aggressive stop-and-go cycles — both accelerating contamination buildup in fuel, oil, and air systems at different rates requiring synchronized protection.</p>
+              <p className="tf-p">Long-haul and urban fleets face the dual challenge of extended highway operation and aggressive stop-and-go cycles â€” both accelerating contamination buildup in fuel, oil, and air systems at different rates requiring synchronized protection.</p>
               <p className="tf-p">ELIMFILTERS delivers complete fleet filtration architectures engineered for Cummins, Caterpillar, Detroit Diesel, MAN, Volvo, and all major truck platforms worldwide.</p>
               <div className="tf-tech-grid">
-                <div><div className="tf-tech-label">FUEL SYSTEM</div><div className="tf-tech-val">SYNTEPORE™</div></div>
-                <div><div className="tf-tech-label">LUBRICATION</div><div className="tf-tech-val">SYNTRAX™</div></div>
-                <div><div className="tf-tech-label">AIR INTAKE</div><div className="tf-tech-val">MACROCORE™</div></div>
-                <div><div className="tf-tech-label">AIR BRAKES</div><div className="tf-tech-val">DRYCORE™</div></div>
+                <div><div className="tf-tech-label">FUEL SYSTEM</div><div className="tf-tech-val">SYNTEPOREâ„¢</div></div>
+                <div><div className="tf-tech-label">LUBRICATION</div><div className="tf-tech-val">SYNTRAXâ„¢</div></div>
+                <div><div className="tf-tech-label">AIR INTAKE</div><div className="tf-tech-val">MACROCOREâ„¢</div></div>
+                <div><div className="tf-tech-label">AIR BRAKES</div><div className="tf-tech-val">DRYCOREâ„¢</div></div>
               </div>
               <Link href="/technologies" className="tf-btn">VIEW TECHNOLOGY</Link>
             </div>
@@ -98,12 +98,12 @@ export default function TrucksFleets() {
           </div>
           <div className="tf-grid3">
             {[
-              {label:'Fuel Module', title:'SYNTEPORE™', desc:'Clean combustion and maximum torque for long-haul diesel engines — protecting Common Rail injection systems from water and particle contamination across thousands of miles.'},
-              {label:'Lubrication Module', title:'SYNTRAX™', desc:'High-capacity soot control for heavy-duty truck engines during extended intervals — maintaining oil cleanliness and protecting engine internals under continuous highway loads.'},
-              {label:'Air Intake', title:'MACROCORE™', desc:'Zero-bypass radial seal protection against highway dust and industrial particulates — maintaining engine air quality across all road conditions and geographic regions.'},
-              {label:'Air Brake System', title:'DRYCORE™', desc:'Moisture elimination from pneumatic brake circuits — ensuring full braking reliability and regulatory compliance across all weather conditions and operating regions.'},
-              {label:'Cabin Air', title:'MICROKAPPA™', desc:'HEPA-grade cabin filtration protecting drivers on long-haul routes from highway pollutants, diesel exhaust, and allergens — maintaining driver health and alertness.'},
-              {label:'Coolant System', title:'COOLTECH™', desc:'Thermal protection for truck cooling circuits on extended highway runs — preventing cavitation and scale buildup in high-horsepower diesel engine cooling systems.'},
+              {label:'Fuel Module', title:'SYNTEPOREâ„¢', desc:'Clean combustion and maximum torque for long-haul diesel engines â€” protecting Common Rail injection systems from water and particle contamination across thousands of miles.'},
+              {label:'Lubrication Module', title:'SYNTRAXâ„¢', desc:'High-capacity soot control for heavy-duty truck engines during extended intervals â€” maintaining oil cleanliness and protecting engine internals under continuous highway loads.'},
+              {label:'Air Intake', title:'MACROCOREâ„¢', desc:'Zero-bypass radial seal protection against highway dust and industrial particulates â€” maintaining engine air quality across all road conditions and geographic regions.'},
+              {label:'Air Brake System', title:'DRYCOREâ„¢', desc:'Moisture elimination from pneumatic brake circuits â€” ensuring full braking reliability and regulatory compliance across all weather conditions and operating regions.'},
+              {label:'Cabin Air', title:'MICROKAPPAâ„¢', desc:'HEPA-grade cabin filtration protecting drivers on long-haul routes from highway pollutants, diesel exhaust, and allergens â€” maintaining driver health and alertness.'},
+              {label:'Coolant System', title:'COOLTECHâ„¢', desc:'Thermal protection for truck cooling circuits on extended highway runs â€” preventing cavitation and scale buildup in high-horsepower diesel engine cooling systems.'},
             ].map((c, i) => (
               <div key={i} className="tf-card">
                 <div className="tf-card-label">{c.label}</div>
@@ -155,3 +155,4 @@ export default function TrucksFleets() {
     </div>
   );
 }
+

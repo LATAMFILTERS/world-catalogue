@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Manufacturing() {
     .mf{background:#000;color:#fff;min-height:100vh;}
     .mf-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .mf-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .mf-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .mf-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .mf-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .mf-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .mf-h1{font-family:'Russo One',sans-serif;font-size:clamp(40px,6vw,75px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -57,7 +57,7 @@ export default function Manufacturing() {
           <div className="mf-eyebrow">// INDUSTRIAL PRODUCTIVITY / V-200</div>
           <h1 className="mf-h1">ALWAYS-ON PLANT</h1>
           <div className="mf-h2">ZERO CRITICAL DOWNTIME</div>
-          <p className="mf-hero-p">Industrial asset protection systems engineered for manufacturing plants, process equipment, and critical industrial infrastructure. Our filtration technology shields hydraulic circuits, compressed air systems, lubrication lines, and cooling circuits from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="mf-hero-p">Industrial asset protection systems engineered for manufacturing plants, process equipment, and critical industrial infrastructure. Our filtration technology shields hydraulic circuits, compressed air systems, lubrication lines, and cooling circuits from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -68,12 +68,12 @@ export default function Manufacturing() {
               <div className="mf-eyebrow">// CONTINUOUS PROCESS ENGINEERING</div>
               <h2 className="mf-sh2">RELIABILITY <span>BY DESIGN</span></h2>
               <p className="mf-p">Industrial contamination in hydraulic fluids, lubricants, and compressed air systems creates inefficiencies that translate directly into shutdowns and economic losses across manufacturing operations worldwide.</p>
-              <p className="mf-p">ELIMFILTERS delivers synchronized protection across all critical fluid systems — ensuring plant uptime, process consistency, and operator safety in every production environment.</p>
+              <p className="mf-p">ELIMFILTERS delivers synchronized protection across all critical fluid systems â€” ensuring plant uptime, process consistency, and operator safety in every production environment.</p>
               <div className="mf-tech-grid">
-                <div className="mf-tech"><span className="mf-tech-label">NANOFORCE™</span><span className="mf-tech-sub">Hydraulics</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">MACROCORE™</span><span className="mf-tech-sub">Compressed Air</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">SINTRAX™</span><span className="mf-tech-sub">Lubrication</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">COOLTECH™</span><span className="mf-tech-sub">Cooling Systems</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">NANOFORCEâ„¢</span><span className="mf-tech-sub">Hydraulics</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">MACROCOREâ„¢</span><span className="mf-tech-sub">Compressed Air</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">SINTRAXâ„¢</span><span className="mf-tech-sub">Lubrication</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">COOLTECHâ„¢</span><span className="mf-tech-sub">Cooling Systems</span></div>
               </div>
               <Link href="/technologies" className="mf-btn">EXPLORE TECHNOLOGY</Link>
             </div>
@@ -92,12 +92,12 @@ export default function Manufacturing() {
           </div>
           <div className="mf-grid3">
             {[
-              {label:'NANOFORCE™ / HYDRAULIC', title:'PRECISION CONTROL', desc:'Maintains ISO cleanliness codes for proportional valves and servo systems — protecting hydraulic actuators and precision control circuits from contamination-driven failure.'},
-              {label:'MACROCORE™ / AIR', title:'PNEUMATIC RELIABILITY', desc:'Eliminates oil mist and water vapor to protect pneumatic actuators and precision tools — ensuring consistent air quality across all manufacturing process systems.'},
-              {label:'SINTRAX™ / LUBE', title:'GEARBOX DEFENSE', desc:'Captures wear-inducing metal particles in heavy industrial drives and gearboxes — extending lubricant life and protecting critical rotating machinery components.'},
-              {label:'COOLTECH™ / COOLANT', title:'THERMAL STABILITY', desc:'Prevents scaling and corrosion to ensure thermal stability in critical cooling circuits — maintaining process temperatures and protecting heat exchanger integrity.'},
-              {label:'MACROCORE™ / EMISSIONS', title:'AIR QUALITY', desc:'High-efficiency dust collection and air filtration protects operational personnel and maintains workplace air quality standards in industrial manufacturing environments.'},
-              {label:'NANOFORCE™ / PROCESS', title:'MACHINING CONSISTENCY', desc:'Maintains coolant integrity and dimensional precision of manufactured parts — protecting CNC machining centers and precision manufacturing processes from fluid contamination.'},
+              {label:'NANOFORCEâ„¢ / HYDRAULIC', title:'PRECISION CONTROL', desc:'Maintains ISO cleanliness codes for proportional valves and servo systems â€” protecting hydraulic actuators and precision control circuits from contamination-driven failure.'},
+              {label:'MACROCOREâ„¢ / AIR', title:'PNEUMATIC RELIABILITY', desc:'Eliminates oil mist and water vapor to protect pneumatic actuators and precision tools â€” ensuring consistent air quality across all manufacturing process systems.'},
+              {label:'SINTRAXâ„¢ / LUBE', title:'GEARBOX DEFENSE', desc:'Captures wear-inducing metal particles in heavy industrial drives and gearboxes â€” extending lubricant life and protecting critical rotating machinery components.'},
+              {label:'COOLTECHâ„¢ / COOLANT', title:'THERMAL STABILITY', desc:'Prevents scaling and corrosion to ensure thermal stability in critical cooling circuits â€” maintaining process temperatures and protecting heat exchanger integrity.'},
+              {label:'MACROCOREâ„¢ / EMISSIONS', title:'AIR QUALITY', desc:'High-efficiency dust collection and air filtration protects operational personnel and maintains workplace air quality standards in industrial manufacturing environments.'},
+              {label:'NANOFORCEâ„¢ / PROCESS', title:'MACHINING CONSISTENCY', desc:'Maintains coolant integrity and dimensional precision of manufactured parts â€” protecting CNC machining centers and precision manufacturing processes from fluid contamination.'},
             ].map((f, i) => (
               <div key={i} className="mf-feature">
                 <div className="mf-feature-label">{f.label}</div>
@@ -117,8 +117,8 @@ export default function Manufacturing() {
             <p className="mf-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Industrial systems sustain supply chains. Our engineering protects equipment, operators, and the continuity of the production environment.</p>
           </div>
           <div className="mf-env">
-            <p className="mf-env-p">Cleaner fluids improve energy efficiency and reduce waste — contributing to a more sustainable and responsible manufacturing model that protects both operations and the environment.</p>
-            <div className="mf-env-strong">From machine precision to environmental responsibility — protection is non-negotiable.</div>
+            <p className="mf-env-p">Cleaner fluids improve energy efficiency and reduce waste â€” contributing to a more sustainable and responsible manufacturing model that protects both operations and the environment.</p>
+            <div className="mf-env-strong">From machine precision to environmental responsibility â€” protection is non-negotiable.</div>
           </div>
         </div>
       </section>
@@ -134,3 +134,4 @@ export default function Manufacturing() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Mining() {
     .mn{background:#000;color:#fff;min-height:100vh;}
     .mn-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .mn-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .mn-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 35%,transparent 100%),url('${WP}/2025/08/digger-1867268_1920.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .mn-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 35%,transparent 100%),url('${WP}/2025/08/digger-1867268_1920.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .mn-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .mn-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:16px;}
     .mn-eyebrow:before{content:'';display:block;width:48px;height:1px;background:#FFF12D;}
@@ -53,7 +53,7 @@ export default function Mining() {
     .mn-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
     .mn-cta-btn:hover{background:#111;}
     .mn-cta-footer{background:#000;padding:12px 6%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,241,45,0.4);text-transform:uppercase;}
-    @media(max-width:1024px){.mn-grid2{grid-template-columns:1fr;} .mn-grid3{grid-template-columns:repeat(2,1fr);} .mn-tco-grid{grid-template-columns:1fr;} .mn-hero{background:linear-gradient(0deg,rgba(0,0,0,0.8) 30%,transparent 100%),url('${WP}/2025/08/digger-1867268_1920.jpg') center/cover no-repeat;}}
+    @media(max-width:1024px){.mn-grid2{grid-template-columns:1fr;} .mn-grid3{grid-template-columns:repeat(2,1fr);} .mn-tco-grid{grid-template-columns:1fr;} .mn-hero{background:linear-gradient(0deg,rgba(0,0,0,0.8) 30%,transparent 100%),url('${WP}/2025/08/digger-1867268_1920.jpg') center/contain no-repeat;}}
     @media(max-width:768px){.mn-grid3{grid-template-columns:1fr;} .mn-hero-p{font-size:12px;} .mn-cta-inner{flex-direction:column;} .mn-stats{grid-template-columns:1fr;}}
   `;
 
@@ -66,14 +66,14 @@ export default function Mining() {
         <div className="mn-hero-inner">
           <div className="mn-eyebrow">// EXTREME EXTRACTION DEFENSE</div>
           <h1 className="mn-h1">PROTECTING CRITICAL<br /><span>MINING ASSETS.</span></h1>
-          <p className="mn-hero-p">Industrial asset protection systems engineered for open-pit and underground mining operations, heavy extraction equipment, and critical diesel-powered mining infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from abrasive mineral contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="mn-hero-p">Industrial asset protection systems engineered for open-pit and underground mining operations, heavy extraction equipment, and critical diesel-powered mining infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from abrasive mineral contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
       <section className="mn-sec">
         <div className="mn-sec-inner">
           <div className="mn-card">
-            <p className="mn-card-p">In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair — it is a massive disruption to the global supply chain, affecting production targets, contractor schedules, and commodity delivery commitments worldwide.</p>
+            <p className="mn-card-p">In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair â€” it is a massive disruption to the global supply chain, affecting production targets, contractor schedules, and commodity delivery commitments worldwide.</p>
             <div className="mn-card-strong">ELIMFILTERS engineering targets mechanical risk reduction and service life extension for massive assets in haulage, extraction, and crushing environments.</div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Mining() {
             <div>
               <div className="mn-eyebrow" style={{display:'flex',marginBottom:'20px'}}>// MISSION RELIABILITY</div>
               <h2 className="mn-h2">BUILT FOR <span>24/7 CYCLES.</span></h2>
-              <p className="mn-p">Mining exposes engines and hydraulics to extreme abrasive dust and thermal shocks that compromise critical internal tolerances — accelerating wear and triggering catastrophic failures in the most expensive machinery on earth.</p>
+              <p className="mn-p">Mining exposes engines and hydraulics to extreme abrasive dust and thermal shocks that compromise critical internal tolerances â€” accelerating wear and triggering catastrophic failures in the most expensive machinery on earth.</p>
               <p className="mn-p">Our architectures maintain absolute fluid stability, shielding high-pressure injectors and hydrostatic pumps from catastrophic wear during continuous 24/7 extraction cycles in the harshest environments worldwide.</p>
             </div>
             <div className="mn-video-wrap">
@@ -101,12 +101,12 @@ export default function Mining() {
           <h2 className="mn-h2">SOLUTIONS FOR <span>HIGH-LOAD SYSTEMS</span></h2>
           <div className="mn-grid3" style={{marginTop:'40px'}}>
             {[
-              {label:'AIR INTAKE / MACROCORE™', desc:'Superior dust control for massive diesel engines — ensuring maximum airflow with multi-stage particle capture in high-silica open-pit and underground mining environments.'},
-              {label:'FUEL / AQUAGUARD™', desc:'99.9% water separation and micro-particle removal for high-pressure Common Rail systems operating on remote mining sites with variable fuel quality.'},
-              {label:'HYDRAULIC / NANOFORCE™', desc:'Zero-leakage precision filtration protecting actuators and pumps from fine metallic particulate wear in excavators, haul trucks, and crushing equipment.'},
-              {label:'LUBE / SINTRAX™', desc:'High-capacity soot and metal particle capture in engine lubrication systems — extending oil service life and protecting engine internals during extended shift cycles.'},
-              {label:'CABIN / MICROKAPPA™', desc:'HEPA-grade operator cabin protection against mine dust, silica particles, and exhaust gases — protecting worker health in underground and surface mining operations.'},
-              {label:'AIR DRYER / DRYCORE™', desc:'Moisture elimination from pneumatic brake systems in haul trucks and mining equipment — ensuring full braking reliability in all weather and altitude conditions.'},
+              {label:'AIR INTAKE / MACROCOREâ„¢', desc:'Superior dust control for massive diesel engines â€” ensuring maximum airflow with multi-stage particle capture in high-silica open-pit and underground mining environments.'},
+              {label:'FUEL / AQUAGUARDâ„¢', desc:'99.9% water separation and micro-particle removal for high-pressure Common Rail systems operating on remote mining sites with variable fuel quality.'},
+              {label:'HYDRAULIC / NANOFORCEâ„¢', desc:'Zero-leakage precision filtration protecting actuators and pumps from fine metallic particulate wear in excavators, haul trucks, and crushing equipment.'},
+              {label:'LUBE / SINTRAXâ„¢', desc:'High-capacity soot and metal particle capture in engine lubrication systems â€” extending oil service life and protecting engine internals during extended shift cycles.'},
+              {label:'CABIN / MICROKAPPAâ„¢', desc:'HEPA-grade operator cabin protection against mine dust, silica particles, and exhaust gases â€” protecting worker health in underground and surface mining operations.'},
+              {label:'AIR DRYER / DRYCOREâ„¢', desc:'Moisture elimination from pneumatic brake systems in haul trucks and mining equipment â€” ensuring full braking reliability in all weather and altitude conditions.'},
             ].map((f, i) => (
               <div key={i} className="mn-feature">
                 <div className="mn-feature-label">{f.label}</div>
@@ -124,7 +124,7 @@ export default function Mining() {
               <div>
                 <div className="mn-eyebrow" style={{display:'flex',marginBottom:'16px'}}>// TCO ANALYSIS</div>
                 <h2 className="mn-h2">THE ECONOMICS OF<br /><span>MINING UPTIME.</span></h2>
-                <p className="mn-p">Protection is not a cost — it is a financial strategy. Every hour of unplanned downtime in a large open-pit operation can cost more than the entire annual filtration budget for that asset.</p>
+                <p className="mn-p">Protection is not a cost â€” it is a financial strategy. Every hour of unplanned downtime in a large open-pit operation can cost more than the entire annual filtration budget for that asset.</p>
                 <div className="mn-stats">
                   <div><div className="mn-stat-n">+35%</div><div className="mn-stat-l">COMPONENT LIFE</div></div>
                   <div><div className="mn-stat-n white">ZERO</div><div className="mn-stat-l">VALVE EROSION</div></div>
@@ -157,7 +157,7 @@ export default function Mining() {
           <div>
             <div className="mn-cta-label">// OPERATIONAL STABILITY PROTOCOL</div>
             <div className="mn-cta-h2">ELIMINATE THE REVENUE STOP.<br />SECURE YOUR MINING UPTIME.</div>
-            <p className="mn-cta-p">In mining, protection is not a choice — it is a financial strategy. Secure your productivity with ELIMFILTERS. Precision-matched to OEM specifications across 5,000+ cross-references.</p>
+            <p className="mn-cta-p">In mining, protection is not a choice â€” it is a financial strategy. Secure your productivity with ELIMFILTERS. Precision-matched to OEM specifications across 5,000+ cross-references.</p>
           </div>
           <Link href="/search" className="mn-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
@@ -166,3 +166,4 @@ export default function Mining() {
     </div>
   );
 }
+

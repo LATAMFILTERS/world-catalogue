@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Railway() {
     .ry{background:#000;color:#fff;min-height:100vh;}
     .ry-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ry-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ry-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/train-3895307_1920.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ry-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/train-3895307_1920.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ry-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ry-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ry-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -63,7 +63,7 @@ export default function Railway() {
         <div className="ry-hero-inner">
           <div className="ry-eyebrow">// STRATEGIC HEAVY MOBILITY</div>
           <h1 className="ry-h1">RAILWAY<br /><span>UNINTERRUPTED POWER</span></h1>
-          <p className="ry-hero-p">Industrial asset protection systems engineered for diesel-electric locomotives, rolling stock, and critical railway infrastructure. Our filtration technology shields fuel systems, lubrication circuits, air intake systems, and water separation units from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across freight and passenger rail operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ry-hero-p">Industrial asset protection systems engineered for diesel-electric locomotives, rolling stock, and critical railway infrastructure. Our filtration technology shields fuel systems, lubrication circuits, air intake systems, and water separation units from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across freight and passenger rail operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,13 +73,13 @@ export default function Railway() {
             <div>
               <div className="ry-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="ry-sh2">TRACKSIDE AVAILABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="ry-p">Railway systems operate under high vibration and heavy loads across extreme service cycles. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals — keeping locomotives on the track and cargo moving.</p>
+              <p className="ry-p">Railway systems operate under high vibration and heavy loads across extreme service cycles. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals â€” keeping locomotives on the track and cargo moving.</p>
               <p className="ry-p">Rail infrastructure connects economies. Reliability protects equipment, cargo, and the continuity of national supply chains across freight and passenger operations worldwide.</p>
               <div className="ry-tech-grid">
-                <div><div className="ry-tech-label">FUEL SYSTEMS</div><div className="ry-tech-val">SYNTEPORE™</div></div>
-                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAX™</div></div>
-                <div><div className="ry-tech-label">WATER SEPARATION</div><div className="ry-tech-val">AQUAGUARD™</div></div>
-                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCORE™</div></div>
+                <div><div className="ry-tech-label">FUEL SYSTEMS</div><div className="ry-tech-val">SYNTEPOREâ„¢</div></div>
+                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAXâ„¢</div></div>
+                <div><div className="ry-tech-label">WATER SEPARATION</div><div className="ry-tech-val">AQUAGUARDâ„¢</div></div>
+                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCOREâ„¢</div></div>
               </div>
               <Link href="/technologies" className="ry-btn">VIEW ENGINEERING</Link>
             </div>
@@ -100,12 +100,12 @@ export default function Railway() {
           </div>
           <div className="ry-grid3">
             {[
-              {label:'Fuel Module', title:'SYNTEPORE™', desc:'Clean combustion and torque stability for high-horsepower freight locomotives across extreme duty cycles — protecting Common Rail injection systems from fuel contamination.'},
-              {label:'Lubrication Module', title:'SINTRAX™', desc:'High-flow oil filtration designed for extended intervals and soot control in heavy-duty locomotive engines — maintaining oil cleanliness across long-haul operations.'},
-              {label:'Air Intake', title:'MACROCORE™', desc:'Protection against ballast dust and metallic particles with zero-bypass radial seal technology — maintaining engine air quality across all railway operating environments.'},
-              {label:'Water Separation', title:'AQUAGUARD™', desc:'Advanced hydrophobic separation eliminates water contamination from locomotive fuel systems — protecting injection components during all-weather railway operations.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Moisture elimination from air brake systems and pneumatic controls — ensuring full braking reliability and pneumatic safety across all locomotive and rolling stock platforms.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for locomotive cooling circuits — preventing cavitation and scale buildup in high-horsepower diesel-electric engine cooling systems worldwide.'},
+              {label:'Fuel Module', title:'SYNTEPOREâ„¢', desc:'Clean combustion and torque stability for high-horsepower freight locomotives across extreme duty cycles â€” protecting Common Rail injection systems from fuel contamination.'},
+              {label:'Lubrication Module', title:'SINTRAXâ„¢', desc:'High-flow oil filtration designed for extended intervals and soot control in heavy-duty locomotive engines â€” maintaining oil cleanliness across long-haul operations.'},
+              {label:'Air Intake', title:'MACROCOREâ„¢', desc:'Protection against ballast dust and metallic particles with zero-bypass radial seal technology â€” maintaining engine air quality across all railway operating environments.'},
+              {label:'Water Separation', title:'AQUAGUARDâ„¢', desc:'Advanced hydrophobic separation eliminates water contamination from locomotive fuel systems â€” protecting injection components during all-weather railway operations.'},
+              {label:'Pneumatic Systems', title:'DRYCOREâ„¢', desc:'Moisture elimination from air brake systems and pneumatic controls â€” ensuring full braking reliability and pneumatic safety across all locomotive and rolling stock platforms.'},
+              {label:'Cooling Systems', title:'COOLTECHâ„¢', desc:'Thermal protection for locomotive cooling circuits â€” preventing cavitation and scale buildup in high-horsepower diesel-electric engine cooling systems worldwide.'},
             ].map((c, i) => (
               <div key={i} className="ry-card">
                 <div className="ry-card-label">{c.label}</div>
@@ -125,7 +125,7 @@ export default function Railway() {
             <p className="ry-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Rail infrastructure connects economies. Reliability protects equipment, cargo, and the continuity of national supply chains worldwide.</p>
           </div>
           <div className="ry-env">
-            <p className="ry-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to sustainable transportation networks — protecting both the environment and operational economics.</p>
+            <p className="ry-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to sustainable transportation networks â€” protecting both the environment and operational economics.</p>
             <div className="ry-env-strong">From locomotives to logistics corridors: protection is mission-critical.</div>
           </div>
         </div>
@@ -145,3 +145,4 @@ export default function Railway() {
     </div>
   );
 }
+

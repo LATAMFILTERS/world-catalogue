@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function MunicipalServices() {
     .ms{background:#000;color:#fff;min-height:100vh;}
     .ms-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ms-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ms-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ms-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ms-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ms-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ms-h1{font-family:'Russo One',sans-serif;font-size:clamp(38px,6vw,80px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -49,7 +49,7 @@ export default function MunicipalServices() {
         <div className="ms-hero-inner">
           <div className="ms-eyebrow">// CRITICAL URBAN SERVICES</div>
           <h1 className="ms-h1">WASTE &amp; MUNICIPAL<br /><span>SERVICES</span></h1>
-          <p className="ms-hero-p">Industrial asset protection systems engineered for waste collection fleets, municipal vehicles, and critical urban service infrastructure. Our filtration technology shields diesel engines, hydraulic compaction systems, and lubrication circuits from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across municipal operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ms-hero-p">Industrial asset protection systems engineered for waste collection fleets, municipal vehicles, and critical urban service infrastructure. Our filtration technology shields diesel engines, hydraulic compaction systems, and lubrication circuits from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across municipal operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -59,8 +59,8 @@ export default function MunicipalServices() {
             <div>
               <div className="ms-eyebrow">// URBAN FLEET RELIABILITY</div>
               <h2 className="ms-h2">CRITICAL SERVICES<br /><span>CANNOT STOP.</span></h2>
-              <p className="ms-p">Municipal waste and service vehicles operate under the most demanding stop-and-go cycles — multiple daily starts, heavy hydraulic loads, and contaminated environments that accelerate engine wear far beyond standard fleet applications.</p>
-              <p className="ms-p">ELIMFILTERS delivers synchronized protection across fuel, lubrication, hydraulic, and air intake systems — ensuring every vehicle completes its route and every service is delivered on time worldwide.</p>
+              <p className="ms-p">Municipal waste and service vehicles operate under the most demanding stop-and-go cycles â€” multiple daily starts, heavy hydraulic loads, and contaminated environments that accelerate engine wear far beyond standard fleet applications.</p>
+              <p className="ms-p">ELIMFILTERS delivers synchronized protection across fuel, lubrication, hydraulic, and air intake systems â€” ensuring every vehicle completes its route and every service is delivered on time worldwide.</p>
             </div>
             <div className="ms-video-wrap">
               <video src={`${WP}/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg`} autoPlay muted loop playsInline />
@@ -77,12 +77,12 @@ export default function MunicipalServices() {
           </div>
           <div className="ms-grid3">
             {[
-              {label:'MACROCORE™ / AIR', title:'URBAN AIR INTAKE', desc:'High-capacity media for urban environments with elevated particulate concentrations — protecting engines from micro-particles, soot, and industrial pollutants in city operations.'},
-              {label:'SYNTRAX™ / OIL', title:'STOP-GO PROTECTION', desc:'High-capacity soot control for engines under continuous stop-and-go cycles — maintaining oil cleanliness and protecting bearings during the frequent cold starts of municipal routes.'},
-              {label:'NANOFORCE™ / HYD', title:'COMPACTION SYSTEM', desc:'Precision hydraulic filtration for waste compaction systems operating under continuous high-pressure cycles — protecting hydraulic valves and actuators from contamination.'},
-              {label:'AQUAGUARD™ / FUEL', title:'FUEL PURITY', desc:'Water separation and particle removal for fuel systems in vehicles operating in wet and contaminated environments — ensuring reliable diesel delivery in all weather conditions.'},
-              {label:'DRYCORE™ / AIR', title:'BRAKE RELIABILITY', desc:'Moisture elimination from pneumatic brake systems — ensuring full braking reliability and safety compliance in heavy municipal vehicles operating in all weather conditions.'},
-              {label:'MICROKAPPA™ / CABIN', title:'OPERATOR HEALTH', desc:'HEPA-grade cabin protection for operators exposed to waste collection environments — eliminating biological contaminants, odors, and harmful gases from the operator cabin.'},
+              {label:'MACROCOREâ„¢ / AIR', title:'URBAN AIR INTAKE', desc:'High-capacity media for urban environments with elevated particulate concentrations â€” protecting engines from micro-particles, soot, and industrial pollutants in city operations.'},
+              {label:'SYNTRAXâ„¢ / OIL', title:'STOP-GO PROTECTION', desc:'High-capacity soot control for engines under continuous stop-and-go cycles â€” maintaining oil cleanliness and protecting bearings during the frequent cold starts of municipal routes.'},
+              {label:'NANOFORCEâ„¢ / HYD', title:'COMPACTION SYSTEM', desc:'Precision hydraulic filtration for waste compaction systems operating under continuous high-pressure cycles â€” protecting hydraulic valves and actuators from contamination.'},
+              {label:'AQUAGUARDâ„¢ / FUEL', title:'FUEL PURITY', desc:'Water separation and particle removal for fuel systems in vehicles operating in wet and contaminated environments â€” ensuring reliable diesel delivery in all weather conditions.'},
+              {label:'DRYCOREâ„¢ / AIR', title:'BRAKE RELIABILITY', desc:'Moisture elimination from pneumatic brake systems â€” ensuring full braking reliability and safety compliance in heavy municipal vehicles operating in all weather conditions.'},
+              {label:'MICROKAPPAâ„¢ / CABIN', title:'OPERATOR HEALTH', desc:'HEPA-grade cabin protection for operators exposed to waste collection environments â€” eliminating biological contaminants, odors, and harmful gases from the operator cabin.'},
             ].map((f, i) => (
               <div key={i} className="ms-feature">
                 <div className="ms-feature-label">{f.label}</div>
@@ -108,3 +108,4 @@ export default function MunicipalServices() {
     </div>
   );
 }
+

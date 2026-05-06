@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Agriculture() {
     .ag{background:#000;color:#fff;min-height:100vh;}
     .ag-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ag-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ag-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.92) 15%,rgba(0,0,0,0.3) 100%),url('${WP}/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ag-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.92) 15%,rgba(0,0,0,0.3) 100%),url('${WP}/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ag-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ag-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ag-h1{font-family:'Russo One',sans-serif;font-size:clamp(42px,7vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -71,7 +71,7 @@ export default function Agriculture() {
         <div className="ag-hero-inner">
           <div className="ag-eyebrow">// AGRO OPERATIONAL CONTINUITY</div>
           <h1 className="ag-h1">MAXIMIZING AVAILABILITY<br /><span>DURING CRITICAL HARVEST.</span></h1>
-          <p className="ag-hero-p">Industrial asset protection systems engineered for agricultural fleets, harvesting equipment, and critical diesel-powered farm infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from organic contamination — extending asset lifespan, eliminating unplanned downtime during harvest windows, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ag-hero-p">Industrial asset protection systems engineered for agricultural fleets, harvesting equipment, and critical diesel-powered farm infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from organic contamination â€” extending asset lifespan, eliminating unplanned downtime during harvest windows, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -100,7 +100,7 @@ export default function Agriculture() {
                 <div className="ag-video-tag">LIVE TECH FEED // AG-77</div>
               </div>
               <div className="ag-quote">
-                <p>"Our engineering eliminates the financial risk associated with mechanical downtime during the critical harvest window — protecting yield, investment, and operational continuity."</p>
+                <p>"Our engineering eliminates the financial risk associated with mechanical downtime during the critical harvest window â€” protecting yield, investment, and operational continuity."</p>
               </div>
             </div>
           </div>
@@ -112,17 +112,17 @@ export default function Agriculture() {
           <div className="ag-eyebrow" style={{marginBottom:'40px',textAlign:'center'}}>// AGRICULTURE TECH DNA</div>
           <div className="ag-tech-grid">
             <div className="ag-tech-card">
-              <div className="ag-tech-label">SYNTEPORE™ / AIR INTAKE</div>
+              <div className="ag-tech-label">SYNTEPOREâ„¢ / AIR INTAKE</div>
               <div className="ag-tech-title">OPTIMIZED FLOW</div>
               <p className="ag-tech-p">Engineered to handle high concentrations of organic matter while maintaining maximum engine protection and air intake efficiency during harvest operations.</p>
             </div>
             <div className="ag-tech-card">
-              <div className="ag-tech-label">AQUAGUARD™ / FUEL</div>
+              <div className="ag-tech-label">AQUAGUARDâ„¢ / FUEL</div>
               <div className="ag-tech-title">TOTAL SEPARATION</div>
               <p className="ag-tech-p">99.9% water removal efficiency to protect Common Rail injectors from field-storage fuel contamination across all agricultural equipment.</p>
             </div>
             <div className="ag-tech-card">
-              <div className="ag-tech-label">NANOFORCE™ / HYDRAULIC</div>
+              <div className="ag-tech-label">NANOFORCEâ„¢ / HYDRAULIC</div>
               <div className="ag-tech-title">SYSTEM STABILITY</div>
               <p className="ag-tech-p">Critical protection for hydrostatic transmissions and harvest control actuators operating under continuous high-load conditions.</p>
             </div>
@@ -175,3 +175,4 @@ export default function Agriculture() {
     </div>
   );
 }
+

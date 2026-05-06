@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function Construction() {
     .cn{background:#000;color:#fff;min-height:100vh;}
     .cn-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .cn-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .cn-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2025/08/excavadora.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .cn-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2025/08/excavadora.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .cn-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .cn-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:16px;}
     .cn-eyebrow:before{content:'';display:block;width:40px;height:1px;background:#FFF12D;}
@@ -52,7 +52,7 @@ export default function Construction() {
     .cn-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
     .cn-cta-btn:hover{background:#111;}
     .cn-cta-footer{background:#000;padding:12px 6%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,241,45,0.4);text-transform:uppercase;}
-    @media(max-width:1024px){.cn-grid2{grid-template-columns:1fr;} .cn-grid3{grid-template-columns:repeat(2,1fr);} .cn-hero{min-height:60vh;background:linear-gradient(0deg,#000 40%,transparent 100%),url('${WP}/2025/08/excavadora.jpg') center/cover no-repeat;}}
+    @media(max-width:1024px){.cn-grid2{grid-template-columns:1fr;} .cn-grid3{grid-template-columns:repeat(2,1fr);} .cn-hero{min-height:60vh;background:linear-gradient(0deg,#000 40%,transparent 100%),url('${WP}/2025/08/excavadora.jpg') center/contain no-repeat;}}
     @media(max-width:768px){.cn-grid3{grid-template-columns:1fr;} .cn-hero-p{font-size:12px;} .cn-cta-inner{flex-direction:column;} .cn-stats{grid-template-columns:1fr;}}
   `;
 
@@ -65,7 +65,7 @@ export default function Construction() {
         <div className="cn-hero-inner">
           <div className="cn-eyebrow">// HEAVY DUTY DEFENSE</div>
           <h1 className="cn-h1">PROTECTING CRITICAL<br /><span>CONSTRUCTION ASSETS.</span></h1>
-          <p className="cn-hero-p">Industrial asset protection systems engineered for earthmoving equipment, heavy construction fleets, and critical diesel-powered machinery. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from abrasive contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across construction operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="cn-hero-p">Industrial asset protection systems engineered for earthmoving equipment, heavy construction fleets, and critical diesel-powered machinery. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from abrasive contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across construction operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -125,9 +125,9 @@ export default function Construction() {
           </div>
           <div className="cn-grid3">
             {[
-              {label:'MACROCORE™', cat:'Air Intake', title:'DUST CONTROL', desc:'Maximum particle retention in high-abrasion excavation zones where silica levels are extreme — protecting engine cylinders and turbochargers from premature wear.'},
-              {label:'NANOFORCE™', cat:'Hydraulic', title:'VALVE DEFENSE', desc:'Precision stability for hydraulic systems under extreme pressure spikes and high duty cycles — protecting control valves and hydraulic actuators from contamination damage.'},
-              {label:'AQUAGUARD™', cat:'Fuel Tech', title:'WATER SEPARATION', desc:'Hydrophobic protection against poor quality field fuel and injector corrosion in off-road sites — ensuring pure fuel delivery to Common Rail injection systems.'},
+              {label:'MACROCOREâ„¢', cat:'Air Intake', title:'DUST CONTROL', desc:'Maximum particle retention in high-abrasion excavation zones where silica levels are extreme â€” protecting engine cylinders and turbochargers from premature wear.'},
+              {label:'NANOFORCEâ„¢', cat:'Hydraulic', title:'VALVE DEFENSE', desc:'Precision stability for hydraulic systems under extreme pressure spikes and high duty cycles â€” protecting control valves and hydraulic actuators from contamination damage.'},
+              {label:'AQUAGUARDâ„¢', cat:'Fuel Tech', title:'WATER SEPARATION', desc:'Hydrophobic protection against poor quality field fuel and injector corrosion in off-road sites â€” ensuring pure fuel delivery to Common Rail injection systems.'},
             ].map((f, i) => (
               <div key={i} className="cn-feature">
                 <div className="cn-feature-top">
@@ -156,3 +156,4 @@ export default function Construction() {
     </div>
   );
 }
+

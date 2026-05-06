@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -23,7 +23,7 @@ export default function IndustriesIndex() {
     .ind{background:#000;color:#fff;min-height:100vh;}
     .ind-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ind-back:hover{background:#FFF12D;color:#000;}
-    .ind-hero{min-height:50vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.95) 30%,rgba(0,0,0,0.4) 100%),url('${WP}/2025/08/construction.jpg') center/cover no-repeat;padding:120px 6% 60px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ind-hero{min-height:50vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.95) 30%,rgba(0,0,0,0.4) 100%),url('${WP}/2025/08/construction.jpg') center/contain no-repeat;padding:120px 6% 60px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ind-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ind-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ind-h1{font-family:'Russo One',sans-serif;font-size:clamp(40px,8vw,100px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -104,3 +104,4 @@ export default function IndustriesIndex() {
     </div>
   );
 }
+

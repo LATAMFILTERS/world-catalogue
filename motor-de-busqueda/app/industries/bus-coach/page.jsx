@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function BusCoach() {
     .bc{background:#000;color:#fff;min-height:100vh;}
     .bc-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .bc-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .bc-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.92) 15%,rgba(0,0,0,0.3) 100%),url('${WP}/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .bc-hero{min-height:85vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.92) 15%,rgba(0,0,0,0.3) 100%),url('${WP}/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .bc-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .bc-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .bc-h1{font-family:'Russo One',sans-serif;font-size:clamp(42px,7vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -72,7 +72,7 @@ export default function BusCoach() {
         <div className="bc-hero-inner">
           <div className="bc-eyebrow">// TRANSIT OPERATIONAL CONTINUITY</div>
           <h1 className="bc-h1">MAXIMIZING UPTIME<br /><span>FOR URBAN MOBILITY.</span></h1>
-          <p className="bc-hero-p">Industrial asset protection systems engineered for mass transit fleets, bus operations, and critical diesel-powered urban infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, air intake systems, and pneumatic brake circuits from contamination — extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across urban transport operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="bc-hero-p">Industrial asset protection systems engineered for mass transit fleets, bus operations, and critical diesel-powered urban infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, air intake systems, and pneumatic brake circuits from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across urban transport operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default function BusCoach() {
               <div className="bc-eyebrow">// PASSENGER SAFETY PROTOCOL</div>
               <h2 className="bc-h2">STRATEGIC<br /><span>FLEET</span><br />AVAILABILITY.</h2>
               <div className="bc-line" />
-              <p className="bc-p">ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile — protecting mass transit reliability and passenger safety.</p>
+              <p className="bc-p">ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile â€” protecting mass transit reliability and passenger safety.</p>
               <div className="bc-specs">
                 <div>
                   <div className="bc-spec-label">01. ZERO DOWNTIME</div>
@@ -101,7 +101,7 @@ export default function BusCoach() {
                 <div className="bc-video-tag">LIVE TECH FEED // BUS-TRANSIT</div>
               </div>
               <div className="bc-quote">
-                <p>"Our technology doesn't just filter — it guarantees the operational flow of the city by keeping passenger units in motion and protecting every start, every mile."</p>
+                <p>"Our technology doesn't just filter â€” it guarantees the operational flow of the city by keeping passenger units in motion and protecting every start, every mile."</p>
               </div>
             </div>
           </div>
@@ -113,17 +113,17 @@ export default function BusCoach() {
           <div className="bc-eyebrow" style={{marginBottom:'40px',textAlign:'center'}}>// BUS ENGINEERING DNA</div>
           <div className="bc-tech-grid">
             <div className="bc-tech-card">
-              <div className="bc-tech-label">MACROCORE™ / AIR INTAKE</div>
+              <div className="bc-tech-label">MACROCOREâ„¢ / AIR INTAKE</div>
               <div className="bc-tech-title">CITY BREATHING</div>
-              <p className="bc-tech-p">Optimized for urban environments with high concentrations of micro-particulates and industrial pollutants — protecting engines in the most demanding city conditions.</p>
+              <p className="bc-tech-p">Optimized for urban environments with high concentrations of micro-particulates and industrial pollutants â€” protecting engines in the most demanding city conditions.</p>
             </div>
             <div className="bc-tech-card">
-              <div className="bc-tech-label">AQUAGUARD™ / BRAKES</div>
+              <div className="bc-tech-label">AQUAGUARDâ„¢ / BRAKES</div>
               <div className="bc-tech-title">PNEUMATIC SAFETY</div>
               <p className="bc-tech-p">Advanced air drying to prevent moisture corrosion in critical braking valves, ensuring constant safety and reliable pneumatic brake response across all operating conditions.</p>
             </div>
             <div className="bc-tech-card">
-              <div className="bc-tech-label">NANOFORCE™ / FUEL</div>
+              <div className="bc-tech-label">NANOFORCEâ„¢ / FUEL</div>
               <div className="bc-tech-title">INJECTION PRECISION</div>
               <p className="bc-tech-p">Maximum water separation and particulate removal to protect Common Rail injection systems during intensive daily operation across mass transit fleets worldwide.</p>
             </div>
@@ -137,7 +137,7 @@ export default function BusCoach() {
             <div>
               <div className="bc-eyebrow">// TCO ANALYSIS</div>
               <h2 className="bc-h2">THE ECONOMICS OF<br /><span>URBAN MOBILITY.</span></h2>
-              <p className="bc-p" style={{maxWidth:'480px'}}>Efficiency is measured in cost per mile. We reduce maintenance frequency, allowing fleets to operate longer without technical interruptions — protecting public transport investment and operational continuity.</p>
+              <p className="bc-p" style={{maxWidth:'480px'}}>Efficiency is measured in cost per mile. We reduce maintenance frequency, allowing fleets to operate longer without technical interruptions â€” protecting public transport investment and operational continuity.</p>
             </div>
             <table className="bc-table" style={{maxWidth:'520px',width:'100%'}}>
               <thead>
@@ -148,7 +148,7 @@ export default function BusCoach() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Stop-and-Go Wear</td><td>High Oil Stress</td><td>SINTRAX™ Stability</td></tr>
+                <tr><td>Stop-and-Go Wear</td><td>High Oil Stress</td><td>SINTRAXâ„¢ Stability</td></tr>
                 <tr><td>Service Intervals</td><td>Frequent Stops</td><td>Extended Coverage</td></tr>
                 <tr><td>Braking Reliability</td><td>Valve Corrosion</td><td>Dry-Air Purity</td></tr>
               </tbody>
@@ -177,3 +177,4 @@ export default function BusCoach() {
     </div>
   );
 }
+

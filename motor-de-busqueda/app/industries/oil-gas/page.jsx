@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function OilGas() {
     .og{background:#000;color:#fff;min-height:100vh;}
     .og-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .og-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .og-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/04/pexels-tomfisk-6767962-1-scaled.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .og-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/04/pexels-tomfisk-6767962-1-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .og-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .og-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .og-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,100px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -68,9 +68,9 @@ export default function OilGas() {
 
       <section className="og-hero">
         <div className="og-hero-inner">
-          <div className="og-eyebrow">// UPSTREAM • MIDSTREAM • DOWNSTREAM</div>
+          <div className="og-eyebrow">// UPSTREAM â€¢ MIDSTREAM â€¢ DOWNSTREAM</div>
           <h1 className="og-h1">OIL & GAS<br /><span>MISSION-CRITICAL.</span></h1>
-          <p className="og-hero-p">Industrial asset protection systems engineered for upstream drilling operations, midstream pipeline infrastructure, and downstream refinery equipment. Our filtration technology shields turbines, hydraulic BOP systems, fuel circuits, and air intake systems from H2S exposure, salt mist, and abrasive contamination — ensuring uninterrupted energy output across global oil and gas operations. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="og-hero-p">Industrial asset protection systems engineered for upstream drilling operations, midstream pipeline infrastructure, and downstream refinery equipment. Our filtration technology shields turbines, hydraulic BOP systems, fuel circuits, and air intake systems from H2S exposure, salt mist, and abrasive contamination â€” ensuring uninterrupted energy output across global oil and gas operations. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -81,7 +81,7 @@ export default function OilGas() {
               <div className="og-eyebrow">// ZERO FAILURE ENERGY CONTINUITY</div>
               <h2 className="og-h2">ENGINEERED FOR<br /><span>UNINTERRUPTED FLOW.</span></h2>
               <p className="og-p">Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure, salt mist, and abrasive mineral contamination across upstream, midstream, and downstream energy infrastructure worldwide.</p>
-              <p className="og-p">Energy infrastructure cannot stop. Filtration is not maintenance — it is operational survival for turbines, high-pressure injection systems, and hydraulic control circuits in the world's most critical energy operations.</p>
+              <p className="og-p">Energy infrastructure cannot stop. Filtration is not maintenance â€” it is operational survival for turbines, high-pressure injection systems, and hydraulic control circuits in the world's most critical energy operations.</p>
             </div>
             <div className="og-video-wrap">
               <video src={`${WP}/2025/08/5123350-uhd_3840_2160_30fps.mp4`} autoPlay muted loop playsInline />
@@ -96,12 +96,12 @@ export default function OilGas() {
           <h2 className="og-h2">CORE <span>SYSTEMS</span></h2>
           <div className="og-grid3" style={{marginTop:'40px'}}>
             {[
-              {label:'MACROCORE™', title:'AIR INTAKE', desc:'High-capacity media engineered for offshore platforms and abrasive dust environments — protecting gas turbines and diesel generators from intake contamination.'},
-              {label:'AQUAGUARD™', title:'FUEL PURITY', desc:'99.9% water separation protecting critical energy platforms — ensuring pure fuel delivery to injection systems in remote upstream and offshore operations.'},
-              {label:'NANOFORCE™', title:'HYDRAULIC', desc:'Precision filtration for BOP systems, subsea controls, and wellhead hydraulic circuits — maintaining cleanliness codes in safety-critical oil and gas applications.'},
-              {label:'SINTRAX™', title:'LUBRICATION', desc:'High-capacity oil filtration for compressors, pumps, and power generation equipment — extending lubricant service life in continuous-duty energy operations.'},
-              {label:'AQUAGUARD SERIES', title:'TURBINE SEPARATION', desc:'FH Series turbine separator technology eliminates water contamination from fuel systems — protecting diesel generators and gas-powered equipment on remote sites.'},
-              {label:'DRYCORE™', title:'PNEUMATIC SAFETY', desc:'Moisture elimination from instrument air and pneumatic control systems — protecting safety-critical valves and control actuators from corrosion in H2S environments.'},
+              {label:'MACROCOREâ„¢', title:'AIR INTAKE', desc:'High-capacity media engineered for offshore platforms and abrasive dust environments â€” protecting gas turbines and diesel generators from intake contamination.'},
+              {label:'AQUAGUARDâ„¢', title:'FUEL PURITY', desc:'99.9% water separation protecting critical energy platforms â€” ensuring pure fuel delivery to injection systems in remote upstream and offshore operations.'},
+              {label:'NANOFORCEâ„¢', title:'HYDRAULIC', desc:'Precision filtration for BOP systems, subsea controls, and wellhead hydraulic circuits â€” maintaining cleanliness codes in safety-critical oil and gas applications.'},
+              {label:'SINTRAXâ„¢', title:'LUBRICATION', desc:'High-capacity oil filtration for compressors, pumps, and power generation equipment â€” extending lubricant service life in continuous-duty energy operations.'},
+              {label:'AQUAGUARD SERIES', title:'TURBINE SEPARATION', desc:'FH Series turbine separator technology eliminates water contamination from fuel systems â€” protecting diesel generators and gas-powered equipment on remote sites.'},
+              {label:'DRYCOREâ„¢', title:'PNEUMATIC SAFETY', desc:'Moisture elimination from instrument air and pneumatic control systems â€” protecting safety-critical valves and control actuators from corrosion in H2S environments.'},
             ].map((f, i) => (
               <div key={i} className="og-feature">
                 <div className="og-feature-label">{f.label}</div>
@@ -156,9 +156,9 @@ export default function OilGas() {
           </div>
           <div className="og-protocol-grid">
             {[
-              {num:'01', title:'CORROSION DEFENSE', desc:'Engineered to withstand H2S exposure, salt mist, and corrosive atmospheres in offshore and sour gas environments — protecting critical energy infrastructure worldwide.'},
-              {num:'02', title:'REMOTE RELIABILITY', desc:'Extended service intervals designed for remote site operations — reducing maintenance logistics and ensuring continuous protection in locations far from supply chains.'},
-              {num:'03', title:'SAFETY COMPLIANCE', desc:'Filtration systems engineered to meet oil and gas industry safety standards — protecting BOP systems, subsea controls, and safety-critical hydraulic circuits from contamination.'},
+              {num:'01', title:'CORROSION DEFENSE', desc:'Engineered to withstand H2S exposure, salt mist, and corrosive atmospheres in offshore and sour gas environments â€” protecting critical energy infrastructure worldwide.'},
+              {num:'02', title:'REMOTE RELIABILITY', desc:'Extended service intervals designed for remote site operations â€” reducing maintenance logistics and ensuring continuous protection in locations far from supply chains.'},
+              {num:'03', title:'SAFETY COMPLIANCE', desc:'Filtration systems engineered to meet oil and gas industry safety standards â€” protecting BOP systems, subsea controls, and safety-critical hydraulic circuits from contamination.'},
             ].map((p, i) => (
               <div key={i} className="og-protocol-card">
                 <div className="og-protocol-num">{p.num}</div>
@@ -185,3 +185,4 @@ export default function OilGas() {
     </div>
   );
 }
+

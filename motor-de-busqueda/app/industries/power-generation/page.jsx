@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,7 +8,7 @@ export default function PowerGeneration() {
     .pg{background:#000;color:#fff;min-height:100vh;}
     .pg-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .pg-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .pg-hero{min-height:70vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.9) 35%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/ChatGPT-Image-7-ago-2025-10_09_26-a.m.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .pg-hero{min-height:70vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,0.9) 35%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/ChatGPT-Image-7-ago-2025-10_09_26-a.m.png') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .pg-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .pg-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .pg-h1{font-family:'Russo One',sans-serif;font-size:clamp(40px,6vw,85px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -61,7 +61,7 @@ export default function PowerGeneration() {
           <div className="pg-eyebrow">// CRITICAL ENERGY INFRASTRUCTURE</div>
           <h1 className="pg-h1">UNINTERRUPTED</h1>
           <div className="pg-h2">POWER SYSTEMS</div>
-          <p className="pg-hero-p">Industrial asset protection systems engineered for stationary diesel generators, gas turbines, and critical power generation infrastructure. Our filtration technology shields fuel systems, lubrication circuits, cooling systems, and air intake systems from contamination — ensuring uninterrupted power supply for hospitals, data centers, and industrial facilities worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="pg-hero-p">Industrial asset protection systems engineered for stationary diesel generators, gas turbines, and critical power generation infrastructure. Our filtration technology shields fuel systems, lubrication circuits, cooling systems, and air intake systems from contamination â€” ensuring uninterrupted power supply for hospitals, data centers, and industrial facilities worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -72,12 +72,12 @@ export default function PowerGeneration() {
               <div className="pg-eyebrow">// TOTAL CONTINUITY</div>
               <h2 className="pg-sh2">CRITICAL OPERATION<br /><span>ZERO FAILURE.</span></h2>
               <p className="pg-p">Stationary engines operate under constant load and standby periods that accelerate fuel and lubricant degradation. ELIMFILTERS engineers protection architectures that ensure the thermal and chemical stability of your power assets worldwide.</p>
-              <p className="pg-p">Hospitals, data centers, and industrial plants rely on filtration reliability to maintain continuous supply during any contingency — where failure is measured in lives, data loss, and production shutdown.</p>
+              <p className="pg-p">Hospitals, data centers, and industrial plants rely on filtration reliability to maintain continuous supply during any contingency â€” where failure is measured in lives, data loss, and production shutdown.</p>
               <div className="pg-tech-grid">
-                <div className="pg-tech"><span className="pg-tech-label">SYNTEPORE™</span><span className="pg-tech-sub">Fuel Integrity</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">SINTRAX™</span><span className="pg-tech-sub">Lubrication</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">MACROCORE™</span><span className="pg-tech-sub">Air Purity</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">NANOFORCE™</span><span className="pg-tech-sub">Control Systems</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">SYNTEPOREâ„¢</span><span className="pg-tech-sub">Fuel Integrity</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">SINTRAXâ„¢</span><span className="pg-tech-sub">Lubrication</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">MACROCOREâ„¢</span><span className="pg-tech-sub">Air Purity</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">NANOFORCEâ„¢</span><span className="pg-tech-sub">Control Systems</span></div>
               </div>
             </div>
             <div className="pg-video-wrap">
@@ -95,12 +95,12 @@ export default function PowerGeneration() {
           </div>
           <div className="pg-grid3">
             {[
-              {label:'SYNTEPORE™ / FUEL', title:'PURE DIESEL', desc:'Absolute removal of water and sediment to prevent corrosion in high-pressure injection systems — ensuring pure fuel delivery in stationary generators and gas turbines.'},
-              {label:'SINTRAX™ / OIL', title:'STABLE LUBRICATION', desc:'Full-flow filtration designed to withstand extended periods of continuous service and emergency starts — protecting engine internals during standby and peak load cycles.'},
-              {label:'MACROCORE™ / AIR', title:'AIR PURITY', desc:'Advanced protection against airborne contaminants in heavy industrial and urban environments — maintaining engine intake air quality in continuous power generation operations.'},
-              {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Active prevention of cavitation and mineral deposits in large-scale generator cooling systems — maintaining thermal stability under continuous full-load operation.'},
-              {label:'CRANKCASE PRO', title:'MIST CONTROL', desc:'Oil mist separation to protect alternators and sensitive electrical components from short circuits — maintaining electrical insulation integrity in power generation equipment.'},
-              {label:'NANOFORCE™ / HYD.', title:'CONTROL SYSTEMS', desc:'High-precision filtration for hydraulic governors and load control systems — ensuring energy stability and precise power output regulation in all operating conditions.'},
+              {label:'SYNTEPOREâ„¢ / FUEL', title:'PURE DIESEL', desc:'Absolute removal of water and sediment to prevent corrosion in high-pressure injection systems â€” ensuring pure fuel delivery in stationary generators and gas turbines.'},
+              {label:'SINTRAXâ„¢ / OIL', title:'STABLE LUBRICATION', desc:'Full-flow filtration designed to withstand extended periods of continuous service and emergency starts â€” protecting engine internals during standby and peak load cycles.'},
+              {label:'MACROCOREâ„¢ / AIR', title:'AIR PURITY', desc:'Advanced protection against airborne contaminants in heavy industrial and urban environments â€” maintaining engine intake air quality in continuous power generation operations.'},
+              {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Active prevention of cavitation and mineral deposits in large-scale generator cooling systems â€” maintaining thermal stability under continuous full-load operation.'},
+              {label:'CRANKCASE PRO', title:'MIST CONTROL', desc:'Oil mist separation to protect alternators and sensitive electrical components from short circuits â€” maintaining electrical insulation integrity in power generation equipment.'},
+              {label:'NANOFORCEâ„¢ / HYD.', title:'CONTROL SYSTEMS', desc:'High-precision filtration for hydraulic governors and load control systems â€” ensuring energy stability and precise power output regulation in all operating conditions.'},
             ].map((f, i) => (
               <div key={i} className="pg-feature">
                 <div className="pg-feature-label">{f.label}</div>
@@ -120,9 +120,9 @@ export default function PowerGeneration() {
           </div>
           <div className="pg-protocol-grid">
             {[
-              {num:'01', title:'STANDBY RELIABILITY', desc:'Engineered for extended standby periods and instant-start reliability — ensuring generators deliver full power output from the first second of emergency activation.'},
-              {num:'02', title:'CONTINUOUS LOAD', desc:'High-capacity filtration designed for 24/7 continuous operation under full load — protecting fuel, oil, and cooling systems during sustained power generation cycles.'},
-              {num:'03', title:'MISSION CRITICAL', desc:'Protection architectures certified for hospital, data center, and critical infrastructure applications — where power continuity is non-negotiable and failure is not an option.'},
+              {num:'01', title:'STANDBY RELIABILITY', desc:'Engineered for extended standby periods and instant-start reliability â€” ensuring generators deliver full power output from the first second of emergency activation.'},
+              {num:'02', title:'CONTINUOUS LOAD', desc:'High-capacity filtration designed for 24/7 continuous operation under full load â€” protecting fuel, oil, and cooling systems during sustained power generation cycles.'},
+              {num:'03', title:'MISSION CRITICAL', desc:'Protection architectures certified for hospital, data center, and critical infrastructure applications â€” where power continuity is non-negotiable and failure is not an option.'},
             ].map((p, i) => (
               <div key={i} className="pg-protocol-card">
                 <div className="pg-protocol-num">{p.num}</div>
@@ -149,3 +149,4 @@ export default function PowerGeneration() {
     </div>
   );
 }
+
