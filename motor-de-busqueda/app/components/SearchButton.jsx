@@ -43,9 +43,7 @@ export default function SearchButton({
     return <button disabled style={styles[variant]} className={className}>{text}</button>;
   }
 
-  return (
-    
-      href={searchUrl}
+  return (<a href={searchUrl}
       target={searchUrl.startsWith('http') ? '_self' : undefined}
       style={styles[variant]}
       className={className}
@@ -54,5 +52,6 @@ export default function SearchButton({
     </a>
   );
 }
+
 
 
