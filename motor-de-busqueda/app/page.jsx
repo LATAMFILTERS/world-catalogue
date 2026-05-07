@@ -221,7 +221,7 @@ export default function Home() {
       </nav>
 
       <section className="hero">
-        <div className="hero-bg" style={{backgroundImage: \url(\)\}} />
+        <div className="hero-bg" style={{backgroundImage: `url(${IMAGES.hero})`}} />
         <div className="hero-ov" />
         <div className="hero-grid" />
         <div className="hero-c">
