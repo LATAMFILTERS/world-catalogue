@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Elimfilters | World Catalogue</title>
+    <style>
+        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
+        .search-container { position: relative; z-index: 2; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .search-box { background: rgba(20,20,20,0.9); padding: 10px 30px; border-radius: 50px; border: 1px solid #333; display: flex; width: 500px; }
+        input { background: transparent; border: none; color: #fff; font-size: 1.2rem; width: 100%; outline: none; }
+        .btn-search { background: #FFD700; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        
+        #result-section { display: none; position: relative; z-index: 3; padding: 50px; }
+        .sku-header { font-size: 4rem; color: #FFD700; margin: 0; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+        .column { background: rgba(30,30,30,0.5); padding: 15px; border-top: 2px solid #FFD700; height: 60vh; overflow-y: auto; }
+        .column h3 { color: #FFD700; font-size: 0.8rem; text-transform: uppercase; }
+        .column p { font-size: 0.85rem; border-bottom: 1px solid #222; padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div id="search-section" class="search-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="INGRESE SKU O OEM...">
+            <button class="btn-search" onclick="executeSearch()">SEARCH</button>
+        </div>
+    </div>
+
+    <div id="result-section">
+        <h1 id="display-sku" class="sku-header"></h1>
+        <p id="display-desc" style="color:#888"></p>
+        <div class="grid">
+            <div class="column"><h3>Specifications</h3><div id="specs-list"></div></div>
+            <div class="column"><h3>OEM Codes</h3><div id="oem-list"></div></div>
+            <div class="column"><h3>Cross Ref</h3><div id="cross-list"></div></div>
+            <div class="column"><h3>Equipment</h3><div id="equip-list"></div></div>
+        </div>
+        <button onclick="location.reload()" style="margin-top:20px; background:none; border:1px solid #444; color:#666; cursor:pointer; padding:8px;">NUEVA BUSQUEDA</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', { "particles": { "number": { "value": 80 }, "color": { "value": "#FFD700" }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1 } } });
+
+        async function executeSearch() {
+            const query = document.getElementById('search-input').value.trim().toUpperCase();
+            if(!query) return;
+
+            const res = await fetch(/api/search?q=\);
+            const data = await res.json();
+
+            if(data && data.sku) {
+                document.getElementById('search-section').style.display = 'none';
+                document.getElementById('display-sku').innerText = data.sku;
+                document.getElementById('display-desc').innerText = data.description || '';
+                
+                const mapData = (arr, id) => {
+                    document.getElementById(id).innerHTML = (arr || []).map(i => <p>\</p>).join('');
+                };
+
+                mapData(data.specs, 'specs-list');
+                mapData(data.oem_codes, 'oem-list');
+                mapData(data.cross_references, 'cross-list');
+                mapData(data.equipment, 'equip-list');
+
+                document.getElementById('result-section').style.display = 'block';
+            } else {
+                alert("No encontrado");
+            }
+        }
+
+        document.getElementById('search-input').addEventListener('keypress', (e) => { if(e.key === 'Enter') executeSearch(); });
+    </script>
+</body>
+</html>
