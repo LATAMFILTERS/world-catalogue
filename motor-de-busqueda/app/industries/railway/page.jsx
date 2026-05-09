@@ -1,7 +1,5 @@
-﻿'use client';
+'use client';
 import Link from 'next/link';
-
-const WP = 'https://elimfilters.com/wp-content/uploads';
 
 export default function Railway() {
   const css = `
@@ -63,7 +61,7 @@ export default function Railway() {
         <div className="ry-hero-inner">
           <div className="ry-eyebrow">// STRATEGIC HEAVY MOBILITY</div>
           <h1 className="ry-h1">RAILWAY<br /><span>UNINTERRUPTED POWER</span></h1>
-          <p className=”ry-hero-p”>Precision filtration engineered for diesel-electric freight locomotives, diesel multiple units, push-pull passenger sets, and shunting locomotives. Rail operations run to published timetables and freight contracts where locomotive failures cause missed paths, network cascade delays, and passenger compensation claims. Ballast dust, tunnel particulates, and biodiesel-blend fuel contamination create filtration challenges specific to rail that standard on-highway filters cannot address. Our technology protects EMD, GE, Cummins, MTU, and Caterpillar rail engine platforms – covering fuel systems, turbocharged air intake, engine lubrication, air brake circuits, and coolant systems – keeping traction units available across freight and passenger operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ry-hero-p">Precision filtration engineered for diesel-electric freight locomotives, diesel multiple units, push-pull passenger sets, and shunting locomotives. Rail operations run to published timetables and freight contracts where locomotive failures cause missed paths, network cascade delays, and passenger compensation claims. Ballast dust, tunnel particulates, and biodiesel-blend fuel contamination create filtration challenges specific to rail that standard on-highway filters cannot address. Our technology protects EMD, GE, Cummins, MTU, and Caterpillar rail engine platforms - covering fuel systems, turbocharged air intake, engine lubrication, air brake circuits, and coolant systems - keeping traction units available across freight and passenger operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -72,14 +70,14 @@ export default function Railway() {
           <div className="ry-grid2">
             <div>
               <div className="ry-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
-              <h2 className="ry-sh2">TRACKSIDE AVAILABILITY<br /><span>ENGINEERED</span></h2>
-              <p className=”ry-p”>Heavy-haul diesel-electric locomotives operate at continuous rated output for thousands of kilometres between service depots, with diesel engines producing 3,000–4,400 kW under sustained load while air brake systems cycle at every grade, curve, and signal stop. Fuel contamination in locomotive engine fuel systems causes injector tip erosion and governor instability that reduces tractive effort and triggers fuel management faults that require shop visits outside the planned maintenance schedule – each one reducing fleet availability and disrupting the consists that freight operators have committed to customers.</p>
-              <p className=”ry-p”>Passenger rail operators under performance regime contracts face direct financial penalties for delays attributable to traction failure. Our filtration range covers the extended-interval requirements of Class 66, SD70, Tier 4 EMD, and MTU Series 4000 locomotive engine platforms, with validated filter elements for fuel systems, lube circuits, intercooler air intake, and air brake supply – providing the system-wide protection that keeps traction units on the network and out of the depot.</p>
+              <h2 className="ry-sh2">LOCOMOTIVE RELIABILITY<br /><span>ENGINEERED</span></h2>
+              <p className="ry-p">Rail traction units operate under extreme duty cycles - full-load haul gradients, dynamic braking heat, and idling in depots with recirculated exhaust - that rapidly degrade lubricant and saturate fuel and air filtration systems. EMD and GE diesel-electric platforms rely on clean fuel to maintain injection timing precision; contaminated fuel causes injector tip erosion and power loss that forces unplanned locomotive changes mid-consist.</p>
+              <p className="ry-p">Freight operators under take-or-pay haulage contracts cannot afford locomotive failures. Our extended-interval filtration technologies are validated for the duty cycles of Class I freight locomotives, regional passenger DMUs, and shunting fleets, protecting traction assets from first service through full overhaul cycles and reducing total fleet maintenance cost per kilometre.</p>
               <div className="ry-tech-grid">
-                <div><div className="ry-tech-label">FUEL SYSTEMS</div><div className="ry-tech-val">SYNTEPORE™</div></div>
-                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAX™</div></div>
-                <div><div className="ry-tech-label">WATER SEPARATION</div><div className="ry-tech-val">AQUAGUARD™</div></div>
-                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCORE™</div></div>
+                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCORE</div></div>
+                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAX</div></div>
+                <div><div className="ry-tech-label">FUEL SYSTEM</div><div className="ry-tech-val">NANOFORCE</div></div>
+                <div><div className="ry-tech-label">BRAKING AIR</div><div className="ry-tech-val">DRYCORE</div></div>
               </div>
               <Link href="/technologies" className="ry-btn">VIEW ENGINEERING</Link>
             </div>
@@ -95,17 +93,17 @@ export default function Railway() {
       <section className="ry-sec" style={{background:'#000'}}>
         <div className="ry-sec-inner">
           <div style={{textAlign:'center',marginBottom:'52px'}}>
-            <div className="ry-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// RAIL DEFENSE SYSTEMS</div>
+            <div className="ry-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// FLEET PROTECTION SYSTEMS</div>
             <h2 className="ry-sh2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
           </div>
           <div className="ry-grid3">
             {[
-              {label:'Fuel Module', title:'SYNTEPORE™', desc:'Locomotive diesel fuel sourced from rail depot storage tanks is subject to biodiesel blend variability, seasonal condensation ingress, and microbial growth that produces acidic by-products capable of damaging high-pressure fuel pump bores and Common Rail injector tip geometry. SYNTEPORE™ synthetic media fuel filter elements for locomotive platforms provide high-efficiency particulate capture and moisture absorption, protecting the fuel injection systems that deliver the precise fuel metering and combustion stability required for rated tractive effort and compliance with Tier 4 and Stage V locomotive emissions standards on freight and passenger operations.'},
-              {label:'Lubrication Module', title:'SINTRAX™', desc:'Diesel-electric locomotive engines producing over 3,000 kW operate at sustained high load for thousands of kilometres between depot visits, accumulating soot, metallic wear particles, and combustion by-products in oil that standard-grade filters cannot manage within OEM extended drain intervals. SINTRAX™ high-capacity locomotive oil filtration maintains ISO 4406 oil cleanliness in API CK-4 and JASO DH-2 lubricants, protecting turbocharger bearings, piston cooling jets, and valve train components on EMD, GE, and MTU Series 4000 locomotive engines operating across continental freight networks.'},
-              {label:'Air Intake', title:'MACROCORE™', desc:'Locomotive engines operating through tunnels, rail yards, and industrial sidings ingest high concentrations of ballast dust, exhaust soot, brake pad wear particles, and metallic dust from rail grinding operations that rapidly saturate standard air filter elements and increase intake restriction. MACROCORE™ radial-seal synthetic-blend air filter elements for locomotive air intake housings provide extended dust capacity and reliable zero-bypass sealing under the vibration loads characteristic of rail traction applications, maintaining turbocharger inlet conditions for sustained rated output across long inter-service periods.'},
-              {label:'Water Separation', title:'AQUAGUARD™', desc:'Biodiesel-blend and winter-grade diesel fuels used in locomotive operations are more susceptible to water entrainment and phase separation than standard diesel, particularly during the temperature swings between depot storage and operating conditions that accelerate condensation in fuel tanks. AQUAGUARD™ hydrophobic coalescence water separator modules remove free and emulsified water from locomotive fuel supply lines before it reaches high-pressure Common Rail injection pumps, protecting chrome-plated pump bores and precision injector nozzle assemblies that are irreversibly damaged by water-induced corrosion and cavitation at operating pressures above 1,600 bar.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Locomotive air brake systems and multiple-unit train pneumatic control circuits are safety systems regulated by national railway safety authorities with mandatory inspection and maintenance requirements. Moisture accumulation in brake reservoir tanks and distribution pipework causes corrosion that reduces reservoir capacity, diaphragm degradation in brake cylinders, and spring brake engagement failures on grades. DRYCORE™ desiccant air dryer elements for locomotive compressed air systems eliminate free water and moisture from the brake air supply, maintaining the dry air quality required for reliable full-service brake application and automatic brake release across the full operating temperature range of traction units in passenger and freight service.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'High-output locomotive diesel engines with wet-sleeve cylinder liners are particularly vulnerable to liner cavitation pitting caused by combustion pressure pulses in coolant that has lost its cavitation inhibitor concentration. Coolant system scale from hard water top-ups at depots and maintenance facilities reduces heat exchanger efficiency and elevates engine operating temperatures that increase thermal stress on cylinder heads and turbocharger housings. COOLTECH™ supplemental coolant filtration for locomotive cooling circuits removes scale deposits and corrosive particulates, maintaining coolant quality and heat transfer efficiency on high-output locomotive engines operating across extended service intervals between major maintenance events.'},
+              {label:'Air Module', title:'MACROCORE', desc:'Diesel-electric locomotives operating in tunnel bores, rail yards, and industrial corridors ingest silica dust, carbon soot, and metallic particulates that rapidly load air filter elements. MACROCORE synthetic-blend media delivers extended dust-holding capacity and stable airflow restriction across the full service interval, maintaining the air mass and boost pressure that turbocharged rail engines require for efficient combustion and reduced exhaust emissions across all traction duty profiles.'},
+              {label:'Lubrication Module', title:'SINTRAX', desc:'Rail traction engines subject to continuous full-load duty generate elevated soot loading, high thermal cycling, and acid accumulation in engine oil that degrade lubricant faster than highway applications. SINTRAX high-capacity oil filtration captures soot agglomerates and metallic wear particles, maintaining oil cleanliness across extended drain intervals specified by EMD and GE OEM maintenance programs for Class I freight and regional passenger locomotive fleets.'},
+              {label:'Fuel Module', title:'NANOFORCE', desc:'Rail fuelling operations at remote depots and line-side tankage are vulnerable to water ingress, microbial contamination, and particulate loading that degrade fuel quality over seasonal storage cycles. NANOFORCE nanofiber media combines high-efficiency particulate removal with coalescing water separation, protecting Common Rail and unit injector systems on modern rail engines where fuel cleanliness above ISO 12/9/6 causes injector tip erosion and power delivery inconsistency under full-load traction demand.'},
+              {label:'Pneumatic Systems', title:'DRYCORE', desc:'Compressed air brake systems on freight wagons and passenger coaches are safety-critical components subject to mandatory inspection intervals. Moisture accumulation in brake reservoirs causes diaphragm corrosion, triple valve malfunction, and sluggish brake cylinder response - failure modes that trigger train examination delays and service prohibition under rail safety authority requirements. DRYCORE desiccant air dryer cartridges eliminate free and condensed water from compressed air supplies.'},
+              {label:'Hydraulic Systems', title:'AQUAGUARD', desc:'Hydraulic systems on rail maintenance vehicles, track geometry cars, and on-track plant operate under continuous duty with fluid temperatures that promote oxidation and water ingress. AQUAGUARD protects these hydrostatic circuits by removing free water and maintaining ISO 16/14/11 cleanliness codes, preventing proportional valve spool wear and pump cavitation that cause positioning inaccuracy in track maintenance equipment and ballast tamping machines operating to tight tolerances.'},
+              {label:'Cooling Systems', title:'COOLTECH', desc:'Rail traction engines operating at sustained full load on mountain grades with minimal airflow through radiator cores are highly vulnerable to coolant system overtemperature and silicate gel deposition. COOLTECH supplemental coolant filtration removes particulates and neutralises acidic degradation products from the coolant circuit, preventing wet-sleeve liner pitting on high-output rail diesel engines and protecting the charge-air cooler cores critical to maintaining rated traction power on steep ruling grades.'},
             ].map((c, i) => (
               <div key={i} className="ry-card">
                 <div className="ry-card-label">{c.label}</div>
@@ -120,13 +118,13 @@ export default function Railway() {
       <section className="ry-human">
         <div className="ry-human-inner">
           <div>
-            <div className="ry-eyebrow">// HUMAN + ENVIRONMENT</div>
-            <h2 className="ry-sh2">PROTECTING <span>CRITICAL MOBILITY</span></h2>
-            <p className="ry-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>A locomotive failure mid-journey does not just inconvenience one driver – it delays every train behind it on the network. Traction availability is a system-level commitment, and the filter elements maintaining clean fuel and oil are the components that make it possible to keep that commitment.</p>
+            <div className="ry-eyebrow">// INFRASTRUCTURE + ENVIRONMENT</div>
+            <h2 className="ry-sh2">PROTECTING <span>RAIL NETWORKS</span></h2>
+            <p className="ry-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Every locomotive on a scheduled path carries freight or passengers who depend on its arrival. Clean fuel, clean air, and dry brake circuits are the engineering foundation of a railway that national supply chains trust.</p>
           </div>
           <div className="ry-env">
-            <p className="ry-env-p">Rail transport produces approximately 30 times less CO2 per tonne-kilometre than road freight – but only when diesel traction operates at rated efficiency. Tier 4 and Stage V locomotive engines with aftertreatment systems reduce NOx and particulate emissions by over 90% compared to earlier generations, enabling operators to access urban terminals and emission-controlled areas. SYNTEPORE™ and MACROCORE™ protect the fuel and air systems that keep locomotive emissions aftertreatment functioning at rated conversion efficiency, supporting the decarbonisation case for rail versus road modal shift and allowing operators to meet the air quality requirements of city-centre rail terminals across Europe and North America.</p>
-            <div className="ry-env-strong">From freight corridor to city terminal: clean traction moves nations.</div>
+            <p className="ry-env-p">Modern rail traction units equipped with selective catalytic reduction and closed-crankcase ventilation systems produce dramatically lower NOx and particulate emissions than previous generations - but only when fuel and lubricant systems are kept clean. Contaminated fuel degrades SCR dosing accuracy and causes unnecessary regeneration events that raise CO2 output per tonne-kilometre. NANOFORCE and MACROCORE protect the injection and air systems that keep emissions control systems functioning as designed, helping rail operators comply with environmental regulations across national and cross-border rail networks.</p>
+            <div className="ry-env-strong">From departure yard to destination terminal: every consist is protected.</div>
           </div>
         </div>
       </section>
@@ -135,8 +133,8 @@ export default function Railway() {
         <div className="ry-cta-inner">
           <div>
             <div className="ry-cta-label">// RAILWAY CROSS REFERENCE</div>
-            <div className="ry-cta-h2">FAILURE IS NOT AN OPTION.<br />FIND YOUR CROSS REFERENCE.</div>
-            <p className="ry-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for railway operations. Precision-matched across 5,000+ cross-references worldwide.</p>
+            <div className="ry-cta-h2">UPTIME IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
+            <p className="ry-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your fleet. Precision-matched across 5,000+ cross-references worldwide.</p>
           </div>
           <Link href="/search" className="ry-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
@@ -145,4 +143,3 @@ export default function Railway() {
     </div>
   );
 }
-
