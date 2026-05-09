@@ -122,11 +122,11 @@ export default function Mining() {
           <div>
             <div className="mn-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="mn-sh2">PROTECTING <span>MINING OPERATIONS</span></h2>
-            <p className="mn-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Mineral extraction depends on equipment reliability. Protection ensures operational continuity and the profitability of mining operations worldwide.</p>
+            <p className="mn-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>In mining, failures do not happen at convenient times. They happen mid-blast cycle, mid-haul, and mid-shift – when every idle machine multiplies into tonnes of unrecovered ore and lost revenue. Filtration that prevents failures is the lowest-cost investment in the mine plan.</p>
           </div>
           <div className="mn-env">
-            <p className="mn-env-p">Cleaner combustion and optimized fluid systems reduce emissions and environmental impact – contributing to sustainable mining practices that protect both operations and the environment.</p>
-            <div className="mn-env-strong">From underground to surface operations: protection is mission-critical.</div>
+            <p className="mn-env-p">Mining operations face increasing regulatory scrutiny of diesel particulate emissions in underground environments, where DPM concentrations directly affect worker health under mine safety legislation. Tier 4 Final and Stage V engines with DPF and SCR systems dramatically reduce underground DPM exposure – but only when fuel injection systems are kept clean and EGR systems receive clean oil. AQUAGUARD™ and SINTRAX™ protect the injection and lubrication systems that allow emissions aftertreatment to function as designed, supporting mine operators in maintaining compliance with underground diesel emissions standards and ESG reporting obligations to investors and regulators.</p>
+            <div className="mn-env-strong">From ore face to haul road: clean systems protect people and production.</div>
           </div>
         </div>
       </section>
