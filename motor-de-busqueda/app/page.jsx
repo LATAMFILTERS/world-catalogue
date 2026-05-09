@@ -12,19 +12,20 @@ const IMAGES = {
   seal: WP + '/2025/08/a2ec2ccf-d6ed-4acf-bcda-337b5669f007_removalai_preview.png',
 };
 
+const R2 = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev';
 const industries = [
-  { name: 'MINING', slug: 'mining', desc: 'Open-pit & underground operations', img: WP + '/2025/08/digger-1867268_1920.jpg' },
-  { name: 'CONSTRUCTION', slug: 'construction', desc: 'Heavy equipment & earthmoving', img: WP + '/2025/08/construction.jpg' },
-  { name: 'OIL & GAS', slug: 'oil-gas', desc: 'Upstream & downstream protection', img: WP + '/2026/04/pexels-tomfisk-6767962-1-scaled.jpg' },
-  { name: 'MARINE', slug: 'marine', desc: 'Offshore & inland waterway', img: WP + '/2025/08/Screenshot-2025-08-07-075322.png' },
-  { name: 'POWER GENERATION', slug: 'power-generation', desc: 'Diesel & gas turbine systems', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-10_09_26-a.m.png' },
-  { name: 'AGRICULTURE', slug: 'agriculture', desc: 'Harvesting & field equipment', img: WP + '/2025/08/darla-hueske-Uz8xk0S_35c-unsplash-1-scaled.jpg' },
+  { name: 'MINING', slug: 'mining', desc: 'Open-pit & underground operations', img: R2 + '/Mining.jpg' },
+  { name: 'CONSTRUCTION', slug: 'construction', desc: 'Heavy equipment & earthmoving', img: R2 + '/construction.jpg' },
+  { name: 'OIL & GAS', slug: 'oil-gas', desc: 'Upstream & downstream protection', img: R2 + '/oil-gas.jpg' },
+  { name: 'MARINE', slug: 'marine', desc: 'Offshore & inland waterway', img: R2 + '/marine.png' },
+  { name: 'POWER GENERATION', slug: 'power-generation', desc: 'Diesel & gas turbine systems', img: R2 + '/power-generator.png' },
+  { name: 'AGRICULTURE', slug: 'agriculture', desc: 'Harvesting & field equipment', img: R2 + '/agriculture.jpg' },
   { name: 'TRUCKS & FLEETS', slug: 'trucks-fleets', desc: 'Long-haul & urban logistics', img: 'https://cdn.elimfilters.com/tru.png' },
-  { name: 'MANUFACTURING', slug: 'manufacturing', desc: 'Industrial process equipment', img: WP + '/2026/04/pexels-bence-szemerey-337043-6804258-scaled.jpg' },
-  { name: 'BUS & COACH', slug: 'bus-coach', desc: 'Mass transit & tourism fleets', img: WP + '/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp' },
-  { name: 'RAILWAY', slug: 'railway', desc: 'Diesel-electric & compressed air', img: WP + '/2025/08/train-3895307_1920.jpg' },
-  { name: 'AUTOMOTIVE', slug: 'automotive', desc: 'Light & commercial vehicles', img: WP + '/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg' },
-  { name: 'WASTE & MUNICIPAL', slug: 'waste-municipal', desc: 'Critical urban services', img: WP + '/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg' },
+  { name: 'MANUFACTURING', slug: 'manufacturing', desc: 'Industrial process equipment', img: R2 + '/manufactura.jpg' },
+  { name: 'BUS & COACH', slug: 'bus-coach', desc: 'Mass transit & tourism fleets', img: R2 + '/buses.jpg' },
+  { name: 'RAILWAY', slug: 'railway', desc: 'Diesel-electric & compressed air', img: R2 + '/trenes.jpg' },
+  { name: 'AUTOMOTIVE', slug: 'automotive', desc: 'Light & commercial vehicles', img: R2 + '/autos.png' },
+  { name: 'WASTE & MUNICIPAL', slug: 'waste-municipal', desc: 'Critical urban services', img: R2 + '/wasted.png' },
 ];
 
 const technologies = [
