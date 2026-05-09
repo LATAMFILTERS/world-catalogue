@@ -7,3 +7,9 @@ config/google-credentials.json
 C:\\Users\\
 
 scripts/
+
+# Next.js build files
+motor-de-busqueda/.next/
+motor-de-busqueda/next-env.d.ts
+motor-de-busqueda/tsconfig.json
+motor-de-busqueda/package-lock.json
