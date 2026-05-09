@@ -122,11 +122,11 @@ export default function OilGas() {
           <div>
             <div className="og-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="og-sh2">PROTECTING <span>ENERGY OPERATIONS</span></h2>
-            <p className="og-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Energy production sustains economies. Protection ensures operational continuity and the reliability of global energy systems.</p>
+            <p className="og-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>In upstream oil and gas, there is no calling a service technician. Equipment must perform between planned maintenance windows that are set weeks or months apart. The filter element installed today will protect systems that cannot be accessed until the next rig move or platform maintenance turnaround.</p>
           </div>
           <div className="og-env">
-            <p className="og-env-p">Cleaner combustion and optimized fluid systems reduce emissions and environmental impact – contributing to responsible energy operations that protect both the environment and community health.</p>
-            <div className="og-env-strong">From exploration to production: protection is mission-critical.</div>
+            <p className="og-env-p">Flaring and fugitive emissions from oil and gas production are under increasing scrutiny from regulators, investors, and community stakeholders. Diesel engines and gas compressors operating at their designed thermal efficiency contribute less to site emissions intensity per unit of production. AQUAGUARD™ protects the fuel injection systems that maintain combustion efficiency in diesel prime movers, while SINTRAX™ preserves lube oil cleanliness in gas compressor frames that operate continuously for months. Together they support the emissions intensity reduction commitments that upstream operators must demonstrate to maintain operating licences and investor confidence in an energy transition environment.</p>
+            <div className="og-env-strong">From wellsite to processing facility: clean systems sustain production.</div>
           </div>
         </div>
       </section>
