@@ -24,7 +24,7 @@ app.use(cors({
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
-            return callback(null, false); // no rompe el server
+            callback(null, false);
         }
     },
     methods: ['GET'],
@@ -70,6 +70,11 @@ cross_references, applications
 // -------------------- HEALTH --------------------
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// -------------------- ROOT (FIX RAILWAY HEALTHCHECK) --------------------
+app.get('/', (req, res) => {
+    res.json({ status: 'ok' });
 });
 
 // -------------------- SEARCH --------------------
@@ -165,7 +170,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// -------------------- START SERVER (FIX RAILWAY) --------------------
+// -------------------- START SERVER --------------------
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, '0.0.0.0', () => {
