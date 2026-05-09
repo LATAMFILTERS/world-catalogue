@@ -63,7 +63,7 @@ export default function Mining() {
         <div className="mn-hero-inner">
           <div className="mn-eyebrow">// STRATEGIC MINING PROTECTION</div>
           <h1 className="mn-h1">MINING<br /><span>EXTRACTION CONTINUITY</span></h1>
-          <p className="mn-hero-p">Industrial asset protection systems engineered for mining equipment, extraction operations, and critical diesel-powered mineral processing infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from mineral dust and contamination – extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across mining operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="mn-hero-p">Precision filtration engineered for ultra-class haul trucks, rope shovels, hydraulic face shovels, underground LHD loaders, and rotary drill rigs. Mining represents the most severe filtration environment in any industry – ore dust concentrations above 1,000 mg/m³, fuel stored in remote bulk tanks exposed to condensation and microbial growth, hydraulic systems cycling under extreme shock loads, and machine values exceeding US$5 million where a single contamination failure triggers production losses that compound daily. Our technology protects every critical fluid circuit, extending component life and eliminating the unplanned downtime that directly reduces ore production and mine profitability. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,8 +73,8 @@ export default function Mining() {
             <div>
               <div className="mn-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="mn-sh2">MINE RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="mn-p">Mining operations face extreme challenges: abrasive mineral dust, continuous heavy loads, and harsh environmental conditions. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping extraction equipment running and productivity flowing.</p>
-              <p className="mn-p">Operational uptime protects ore recovery, schedules, and mining profitability across all extraction operations worldwide.</p>
+              <p className="mn-p">A Caterpillar 797 haul truck carries 363 tonnes of payload and burns over 300 litres of diesel per hour. Its hydraulic system operates at pressures above 350 bar through rock-impact load cycles that spike contamination ingression rates far beyond anything experienced in on-highway applications. Silica particles above ISO 19/17/14 in the hydraulic circuit cause rapid pump wear, hoist cylinder scoring, and steering accumulator failure – all of which halt production in a fleet where every unit going offline reduces mine throughput by hundreds of tonnes per hour.</p>
+              <p className="mn-p">Fuel cleanliness is equally critical. Remote mine sites store diesel in above-ground tanks exposed to temperature cycling and condensation, creating the ideal conditions for microbial growth and water accumulation that damages high-pressure injection pumps and requires costly injector replacement. Our extended-interval filtration technologies are validated for Caterpillar, Komatsu, Liebherr, and Hitachi mining platforms, protecting the most capital-intensive mobile equipment assets in any industry.</p>
               <div className="mn-tech-grid">
                 <div><div className="mn-tech-label">FUEL SYSTEMS</div><div className="mn-tech-val">AQUAGUARD™</div></div>
                 <div><div className="mn-tech-label">LUBRICATION</div><div className="mn-tech-val">SINTRAX™</div></div>
