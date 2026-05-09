@@ -47,7 +47,7 @@ export default function MarineIndustry() {
   return (
     <div className="mi">
       <style>{css}</style>
-      <a href="/?skip=1" className="mi-back">&larr; HOME</a>
+      <a href="/" className="mi-back">&larr; HOME</a>
 
       <section className="mi-hero">
         <div className="mi-hero-inner">
@@ -83,10 +83,10 @@ export default function MarineIndustry() {
           </div>
           <div className="mi-grid3">
             {[
-              {label:'TURBINE SERIESâ„¢', title:'FUEL PURITY', desc:'Eliminates free and emulsified water to protect injection systems and thermal efficiency â€” ensuring pure fuel delivery in offshore and coastal marine operations.'},
-              {label:'SINTRAXâ„¢', title:'LUBRICATION', desc:'High-capacity soot control for large displacement marine engines during long-haul voyages â€” maintaining oil cleanliness and protecting critical engine components.'},
-              {label:'NANOFORCEâ„¢', title:'HYDRAULIC CONTROL', desc:'Precision filtration for cranes, steering systems, and deck equipment exposed to high salinity environments â€” protecting hydraulic circuits from marine contamination.'},
-              {label:'MACROCOREâ„¢', title:'AIR INTAKE', desc:'Blocks salt particles and moisture before they reach the combustion chamber â€” protecting marine diesel engines from intake contamination in all sea conditions.'},
+              {label:'TURBINE SERIES™', title:'FUEL PURITY', desc:'Eliminates free and emulsified water to protect injection systems and thermal efficiency â€” ensuring pure fuel delivery in offshore and coastal marine operations.'},
+              {label:'SINTRAX™', title:'LUBRICATION', desc:'High-capacity soot control for large displacement marine engines during long-haul voyages â€” maintaining oil cleanliness and protecting critical engine components.'},
+              {label:'NANOFORCE™', title:'HYDRAULIC CONTROL', desc:'Precision filtration for cranes, steering systems, and deck equipment exposed to high salinity environments â€” protecting hydraulic circuits from marine contamination.'},
+              {label:'MACROCORE™', title:'AIR INTAKE', desc:'Blocks salt particles and moisture before they reach the combustion chamber â€” protecting marine diesel engines from intake contamination in all sea conditions.'},
               {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Chemical protection that prevents cavitation erosion in liners and heat exchangers â€” maintaining thermal stability in continuous-duty marine propulsion systems.'},
               {label:'GEAR SHIELD', title:'TRANSMISSIONS', desc:'Protection for marine gears under extreme torque and continuous load cycles â€” ensuring reliable power transmission across all vessel types and operating conditions.'},
             ].map((f, i) => (

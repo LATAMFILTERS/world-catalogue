@@ -59,7 +59,7 @@ export default function Construction() {
   return (
     <div className="cn">
       <style>{css}</style>
-      <a href="/?skip=1" className="cn-back">&larr; HOME</a>
+      <a href="/" className="cn-back">&larr; HOME</a>
 
       <section className="cn-hero">
         <div className="cn-hero-inner">
@@ -125,9 +125,9 @@ export default function Construction() {
           </div>
           <div className="cn-grid3">
             {[
-              {label:'MACROCOREâ„¢', cat:'Air Intake', title:'DUST CONTROL', desc:'Maximum particle retention in high-abrasion excavation zones where silica levels are extreme â€” protecting engine cylinders and turbochargers from premature wear.'},
-              {label:'NANOFORCEâ„¢', cat:'Hydraulic', title:'VALVE DEFENSE', desc:'Precision stability for hydraulic systems under extreme pressure spikes and high duty cycles â€” protecting control valves and hydraulic actuators from contamination damage.'},
-              {label:'AQUAGUARDâ„¢', cat:'Fuel Tech', title:'WATER SEPARATION', desc:'Hydrophobic protection against poor quality field fuel and injector corrosion in off-road sites â€” ensuring pure fuel delivery to Common Rail injection systems.'},
+              {label:'MACROCORE™', cat:'Air Intake', title:'DUST CONTROL', desc:'Maximum particle retention in high-abrasion excavation zones where silica levels are extreme â€” protecting engine cylinders and turbochargers from premature wear.'},
+              {label:'NANOFORCE™', cat:'Hydraulic', title:'VALVE DEFENSE', desc:'Precision stability for hydraulic systems under extreme pressure spikes and high duty cycles â€” protecting control valves and hydraulic actuators from contamination damage.'},
+              {label:'AQUAGUARD™', cat:'Fuel Tech', title:'WATER SEPARATION', desc:'Hydrophobic protection against poor quality field fuel and injector corrosion in off-road sites â€” ensuring pure fuel delivery to Common Rail injection systems.'},
             ].map((f, i) => (
               <div key={i} className="cn-feature">
                 <div className="cn-feature-top">

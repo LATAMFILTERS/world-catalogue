@@ -60,7 +60,7 @@ export default function Mining() {
   return (
     <div className="mn">
       <style>{css}</style>
-      <a href="/?skip=1" className="mn-back">&larr; HOME</a>
+      <a href="/" className="mn-back">&larr; HOME</a>
 
       <section className="mn-hero">
         <div className="mn-hero-inner">
@@ -101,12 +101,12 @@ export default function Mining() {
           <h2 className="mn-h2">SOLUTIONS FOR <span>HIGH-LOAD SYSTEMS</span></h2>
           <div className="mn-grid3" style={{marginTop:'40px'}}>
             {[
-              {label:'AIR INTAKE / MACROCOREâ„¢', desc:'Superior dust control for massive diesel engines â€” ensuring maximum airflow with multi-stage particle capture in high-silica open-pit and underground mining environments.'},
-              {label:'FUEL / AQUAGUARDâ„¢', desc:'99.9% water separation and micro-particle removal for high-pressure Common Rail systems operating on remote mining sites with variable fuel quality.'},
-              {label:'HYDRAULIC / NANOFORCEâ„¢', desc:'Zero-leakage precision filtration protecting actuators and pumps from fine metallic particulate wear in excavators, haul trucks, and crushing equipment.'},
-              {label:'LUBE / SINTRAXâ„¢', desc:'High-capacity soot and metal particle capture in engine lubrication systems â€” extending oil service life and protecting engine internals during extended shift cycles.'},
-              {label:'CABIN / MICROKAPPAâ„¢', desc:'HEPA-grade operator cabin protection against mine dust, silica particles, and exhaust gases â€” protecting worker health in underground and surface mining operations.'},
-              {label:'AIR DRYER / DRYCOREâ„¢', desc:'Moisture elimination from pneumatic brake systems in haul trucks and mining equipment â€” ensuring full braking reliability in all weather and altitude conditions.'},
+              {label:'AIR INTAKE / MACROCORE™', desc:'Superior dust control for massive diesel engines â€” ensuring maximum airflow with multi-stage particle capture in high-silica open-pit and underground mining environments.'},
+              {label:'FUEL / AQUAGUARD™', desc:'99.9% water separation and micro-particle removal for high-pressure Common Rail systems operating on remote mining sites with variable fuel quality.'},
+              {label:'HYDRAULIC / NANOFORCE™', desc:'Zero-leakage precision filtration protecting actuators and pumps from fine metallic particulate wear in excavators, haul trucks, and crushing equipment.'},
+              {label:'LUBE / SINTRAX™', desc:'High-capacity soot and metal particle capture in engine lubrication systems â€” extending oil service life and protecting engine internals during extended shift cycles.'},
+              {label:'CABIN / MICROKAPPA™', desc:'HEPA-grade operator cabin protection against mine dust, silica particles, and exhaust gases â€” protecting worker health in underground and surface mining operations.'},
+              {label:'AIR DRYER / DRYCORE™', desc:'Moisture elimination from pneumatic brake systems in haul trucks and mining equipment â€” ensuring full braking reliability in all weather and altitude conditions.'},
             ].map((f, i) => (
               <div key={i} className="mn-feature">
                 <div className="mn-feature-label">{f.label}</div>

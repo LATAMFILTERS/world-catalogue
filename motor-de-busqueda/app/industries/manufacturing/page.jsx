@@ -50,7 +50,7 @@ export default function Manufacturing() {
   return (
     <div className="mf">
       <style>{css}</style>
-      <a href="/?skip=1" className="mf-back">&larr; HOME</a>
+      <a href="/" className="mf-back">&larr; HOME</a>
 
       <section className="mf-hero">
         <div className="mf-hero-inner">
@@ -70,10 +70,10 @@ export default function Manufacturing() {
               <p className="mf-p">Industrial contamination in hydraulic fluids, lubricants, and compressed air systems creates inefficiencies that translate directly into shutdowns and economic losses across manufacturing operations worldwide.</p>
               <p className="mf-p">ELIMFILTERS delivers synchronized protection across all critical fluid systems â€” ensuring plant uptime, process consistency, and operator safety in every production environment.</p>
               <div className="mf-tech-grid">
-                <div className="mf-tech"><span className="mf-tech-label">NANOFORCEâ„¢</span><span className="mf-tech-sub">Hydraulics</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">MACROCOREâ„¢</span><span className="mf-tech-sub">Compressed Air</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">SINTRAXâ„¢</span><span className="mf-tech-sub">Lubrication</span></div>
-                <div className="mf-tech"><span className="mf-tech-label">COOLTECHâ„¢</span><span className="mf-tech-sub">Cooling Systems</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">NANOFORCE™</span><span className="mf-tech-sub">Hydraulics</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">MACROCORE™</span><span className="mf-tech-sub">Compressed Air</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">SINTRAX™</span><span className="mf-tech-sub">Lubrication</span></div>
+                <div className="mf-tech"><span className="mf-tech-label">COOLTECH™</span><span className="mf-tech-sub">Cooling Systems</span></div>
               </div>
               <Link href="/technologies" className="mf-btn">EXPLORE TECHNOLOGY</Link>
             </div>
@@ -92,12 +92,12 @@ export default function Manufacturing() {
           </div>
           <div className="mf-grid3">
             {[
-              {label:'NANOFORCEâ„¢ / HYDRAULIC', title:'PRECISION CONTROL', desc:'Maintains ISO cleanliness codes for proportional valves and servo systems â€” protecting hydraulic actuators and precision control circuits from contamination-driven failure.'},
-              {label:'MACROCOREâ„¢ / AIR', title:'PNEUMATIC RELIABILITY', desc:'Eliminates oil mist and water vapor to protect pneumatic actuators and precision tools â€” ensuring consistent air quality across all manufacturing process systems.'},
-              {label:'SINTRAXâ„¢ / LUBE', title:'GEARBOX DEFENSE', desc:'Captures wear-inducing metal particles in heavy industrial drives and gearboxes â€” extending lubricant life and protecting critical rotating machinery components.'},
-              {label:'COOLTECHâ„¢ / COOLANT', title:'THERMAL STABILITY', desc:'Prevents scaling and corrosion to ensure thermal stability in critical cooling circuits â€” maintaining process temperatures and protecting heat exchanger integrity.'},
-              {label:'MACROCOREâ„¢ / EMISSIONS', title:'AIR QUALITY', desc:'High-efficiency dust collection and air filtration protects operational personnel and maintains workplace air quality standards in industrial manufacturing environments.'},
-              {label:'NANOFORCEâ„¢ / PROCESS', title:'MACHINING CONSISTENCY', desc:'Maintains coolant integrity and dimensional precision of manufactured parts â€” protecting CNC machining centers and precision manufacturing processes from fluid contamination.'},
+              {label:'NANOFORCE™ / HYDRAULIC', title:'PRECISION CONTROL', desc:'Maintains ISO cleanliness codes for proportional valves and servo systems â€” protecting hydraulic actuators and precision control circuits from contamination-driven failure.'},
+              {label:'MACROCORE™ / AIR', title:'PNEUMATIC RELIABILITY', desc:'Eliminates oil mist and water vapor to protect pneumatic actuators and precision tools â€” ensuring consistent air quality across all manufacturing process systems.'},
+              {label:'SINTRAX™ / LUBE', title:'GEARBOX DEFENSE', desc:'Captures wear-inducing metal particles in heavy industrial drives and gearboxes â€” extending lubricant life and protecting critical rotating machinery components.'},
+              {label:'COOLTECH™ / COOLANT', title:'THERMAL STABILITY', desc:'Prevents scaling and corrosion to ensure thermal stability in critical cooling circuits â€” maintaining process temperatures and protecting heat exchanger integrity.'},
+              {label:'MACROCORE™ / EMISSIONS', title:'AIR QUALITY', desc:'High-efficiency dust collection and air filtration protects operational personnel and maintains workplace air quality standards in industrial manufacturing environments.'},
+              {label:'NANOFORCE™ / PROCESS', title:'MACHINING CONSISTENCY', desc:'Maintains coolant integrity and dimensional precision of manufactured parts â€” protecting CNC machining centers and precision manufacturing processes from fluid contamination.'},
             ].map((f, i) => (
               <div key={i} className="mf-feature">
                 <div className="mf-feature-label">{f.label}</div>

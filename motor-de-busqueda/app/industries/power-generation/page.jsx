@@ -54,7 +54,7 @@ export default function PowerGeneration() {
   return (
     <div className="pg">
       <style>{css}</style>
-      <a href="/?skip=1" className="pg-back">&larr; HOME</a>
+      <a href="/" className="pg-back">&larr; HOME</a>
 
       <section className="pg-hero">
         <div className="pg-hero-inner">
@@ -74,10 +74,10 @@ export default function PowerGeneration() {
               <p className="pg-p">Stationary engines operate under constant load and standby periods that accelerate fuel and lubricant degradation. ELIMFILTERS engineers protection architectures that ensure the thermal and chemical stability of your power assets worldwide.</p>
               <p className="pg-p">Hospitals, data centers, and industrial plants rely on filtration reliability to maintain continuous supply during any contingency â€” where failure is measured in lives, data loss, and production shutdown.</p>
               <div className="pg-tech-grid">
-                <div className="pg-tech"><span className="pg-tech-label">SYNTEPOREâ„¢</span><span className="pg-tech-sub">Fuel Integrity</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">SINTRAXâ„¢</span><span className="pg-tech-sub">Lubrication</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">MACROCOREâ„¢</span><span className="pg-tech-sub">Air Purity</span></div>
-                <div className="pg-tech"><span className="pg-tech-label">NANOFORCEâ„¢</span><span className="pg-tech-sub">Control Systems</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">SYNTEPORE™</span><span className="pg-tech-sub">Fuel Integrity</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">SINTRAX™</span><span className="pg-tech-sub">Lubrication</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">MACROCORE™</span><span className="pg-tech-sub">Air Purity</span></div>
+                <div className="pg-tech"><span className="pg-tech-label">NANOFORCE™</span><span className="pg-tech-sub">Control Systems</span></div>
               </div>
             </div>
             <div className="pg-video-wrap">
@@ -95,12 +95,12 @@ export default function PowerGeneration() {
           </div>
           <div className="pg-grid3">
             {[
-              {label:'SYNTEPOREâ„¢ / FUEL', title:'PURE DIESEL', desc:'Absolute removal of water and sediment to prevent corrosion in high-pressure injection systems â€” ensuring pure fuel delivery in stationary generators and gas turbines.'},
-              {label:'SINTRAXâ„¢ / OIL', title:'STABLE LUBRICATION', desc:'Full-flow filtration designed to withstand extended periods of continuous service and emergency starts â€” protecting engine internals during standby and peak load cycles.'},
-              {label:'MACROCOREâ„¢ / AIR', title:'AIR PURITY', desc:'Advanced protection against airborne contaminants in heavy industrial and urban environments â€” maintaining engine intake air quality in continuous power generation operations.'},
+              {label:'SYNTEPORE™ / FUEL', title:'PURE DIESEL', desc:'Absolute removal of water and sediment to prevent corrosion in high-pressure injection systems â€” ensuring pure fuel delivery in stationary generators and gas turbines.'},
+              {label:'SINTRAX™ / OIL', title:'STABLE LUBRICATION', desc:'Full-flow filtration designed to withstand extended periods of continuous service and emergency starts â€” protecting engine internals during standby and peak load cycles.'},
+              {label:'MACROCORE™ / AIR', title:'AIR PURITY', desc:'Advanced protection against airborne contaminants in heavy industrial and urban environments â€” maintaining engine intake air quality in continuous power generation operations.'},
               {label:'COOLANT GUARD', title:'THERMAL CONTROL', desc:'Active prevention of cavitation and mineral deposits in large-scale generator cooling systems â€” maintaining thermal stability under continuous full-load operation.'},
               {label:'CRANKCASE PRO', title:'MIST CONTROL', desc:'Oil mist separation to protect alternators and sensitive electrical components from short circuits â€” maintaining electrical insulation integrity in power generation equipment.'},
-              {label:'NANOFORCEâ„¢ / HYD.', title:'CONTROL SYSTEMS', desc:'High-precision filtration for hydraulic governors and load control systems â€” ensuring energy stability and precise power output regulation in all operating conditions.'},
+              {label:'NANOFORCE™ / HYD.', title:'CONTROL SYSTEMS', desc:'High-precision filtration for hydraulic governors and load control systems â€” ensuring energy stability and precise power output regulation in all operating conditions.'},
             ].map((f, i) => (
               <div key={i} className="pg-feature">
                 <div className="pg-feature-label">{f.label}</div>

@@ -65,7 +65,7 @@ export default function Agriculture() {
   return (
     <div className="ag">
       <style>{css}</style>
-      <a href="/?skip=1" className="ag-back">&larr; HOME</a>
+      <a href="/" className="ag-back">&larr; HOME</a>
 
       <section className="ag-hero">
         <div className="ag-hero-inner">
@@ -112,17 +112,17 @@ export default function Agriculture() {
           <div className="ag-eyebrow" style={{marginBottom:'40px',textAlign:'center'}}>// AGRICULTURE TECH DNA</div>
           <div className="ag-tech-grid">
             <div className="ag-tech-card">
-              <div className="ag-tech-label">SYNTEPOREâ„¢ / AIR INTAKE</div>
+              <div className="ag-tech-label">SYNTEPORE™ / AIR INTAKE</div>
               <div className="ag-tech-title">OPTIMIZED FLOW</div>
               <p className="ag-tech-p">Engineered to handle high concentrations of organic matter while maintaining maximum engine protection and air intake efficiency during harvest operations.</p>
             </div>
             <div className="ag-tech-card">
-              <div className="ag-tech-label">AQUAGUARDâ„¢ / FUEL</div>
+              <div className="ag-tech-label">AQUAGUARD™ / FUEL</div>
               <div className="ag-tech-title">TOTAL SEPARATION</div>
               <p className="ag-tech-p">99.9% water removal efficiency to protect Common Rail injectors from field-storage fuel contamination across all agricultural equipment.</p>
             </div>
             <div className="ag-tech-card">
-              <div className="ag-tech-label">NANOFORCEâ„¢ / HYDRAULIC</div>
+              <div className="ag-tech-label">NANOFORCE™ / HYDRAULIC</div>
               <div className="ag-tech-title">SYSTEM STABILITY</div>
               <p className="ag-tech-p">Critical protection for hydrostatic transmissions and harvest control actuators operating under continuous high-load conditions.</p>
             </div>

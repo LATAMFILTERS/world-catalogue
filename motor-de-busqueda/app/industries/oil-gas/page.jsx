@@ -64,7 +64,7 @@ export default function OilGas() {
   return (
     <div className="og">
       <style>{css}</style>
-      <a href="/?skip=1" className="og-back">&larr; HOME</a>
+      <a href="/" className="og-back">&larr; HOME</a>
 
       <section className="og-hero">
         <div className="og-hero-inner">
@@ -96,12 +96,12 @@ export default function OilGas() {
           <h2 className="og-h2">CORE <span>SYSTEMS</span></h2>
           <div className="og-grid3" style={{marginTop:'40px'}}>
             {[
-              {label:'MACROCOREâ„¢', title:'AIR INTAKE', desc:'High-capacity media engineered for offshore platforms and abrasive dust environments â€” protecting gas turbines and diesel generators from intake contamination.'},
-              {label:'AQUAGUARDâ„¢', title:'FUEL PURITY', desc:'99.9% water separation protecting critical energy platforms â€” ensuring pure fuel delivery to injection systems in remote upstream and offshore operations.'},
-              {label:'NANOFORCEâ„¢', title:'HYDRAULIC', desc:'Precision filtration for BOP systems, subsea controls, and wellhead hydraulic circuits â€” maintaining cleanliness codes in safety-critical oil and gas applications.'},
-              {label:'SINTRAXâ„¢', title:'LUBRICATION', desc:'High-capacity oil filtration for compressors, pumps, and power generation equipment â€” extending lubricant service life in continuous-duty energy operations.'},
+              {label:'MACROCORE™', title:'AIR INTAKE', desc:'High-capacity media engineered for offshore platforms and abrasive dust environments â€” protecting gas turbines and diesel generators from intake contamination.'},
+              {label:'AQUAGUARD™', title:'FUEL PURITY', desc:'99.9% water separation protecting critical energy platforms â€” ensuring pure fuel delivery to injection systems in remote upstream and offshore operations.'},
+              {label:'NANOFORCE™', title:'HYDRAULIC', desc:'Precision filtration for BOP systems, subsea controls, and wellhead hydraulic circuits â€” maintaining cleanliness codes in safety-critical oil and gas applications.'},
+              {label:'SINTRAX™', title:'LUBRICATION', desc:'High-capacity oil filtration for compressors, pumps, and power generation equipment â€” extending lubricant service life in continuous-duty energy operations.'},
               {label:'AQUAGUARD SERIES', title:'TURBINE SEPARATION', desc:'FH Series turbine separator technology eliminates water contamination from fuel systems â€” protecting diesel generators and gas-powered equipment on remote sites.'},
-              {label:'DRYCOREâ„¢', title:'PNEUMATIC SAFETY', desc:'Moisture elimination from instrument air and pneumatic control systems â€” protecting safety-critical valves and control actuators from corrosion in H2S environments.'},
+              {label:'DRYCORE™', title:'PNEUMATIC SAFETY', desc:'Moisture elimination from instrument air and pneumatic control systems â€” protecting safety-critical valves and control actuators from corrosion in H2S environments.'},
             ].map((f, i) => (
               <div key={i} className="og-feature">
                 <div className="og-feature-label">{f.label}</div>

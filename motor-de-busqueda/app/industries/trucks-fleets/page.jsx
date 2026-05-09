@@ -57,7 +57,7 @@ export default function TrucksFleets() {
   return (
     <div className="tf">
       <style>{css}</style>
-      <a href="/?skip=1" className="tf-back">&larr; HOME</a>
+      <a href="/" className="tf-back">&larr; HOME</a>
 
       <section className="tf-hero">
         <div className="tf-hero-inner">
@@ -76,10 +76,10 @@ export default function TrucksFleets() {
               <p className="tf-p">Long-haul and urban fleets face the dual challenge of extended highway operation and aggressive stop-and-go cycles â€” both accelerating contamination buildup in fuel, oil, and air systems at different rates requiring synchronized protection.</p>
               <p className="tf-p">ELIMFILTERS delivers complete fleet filtration architectures engineered for Cummins, Caterpillar, Detroit Diesel, MAN, Volvo, and all major truck platforms worldwide.</p>
               <div className="tf-tech-grid">
-                <div><div className="tf-tech-label">FUEL SYSTEM</div><div className="tf-tech-val">SYNTEPOREâ„¢</div></div>
-                <div><div className="tf-tech-label">LUBRICATION</div><div className="tf-tech-val">SYNTRAXâ„¢</div></div>
-                <div><div className="tf-tech-label">AIR INTAKE</div><div className="tf-tech-val">MACROCOREâ„¢</div></div>
-                <div><div className="tf-tech-label">AIR BRAKES</div><div className="tf-tech-val">DRYCOREâ„¢</div></div>
+                <div><div className="tf-tech-label">FUEL SYSTEM</div><div className="tf-tech-val">SYNTEPORE™</div></div>
+                <div><div className="tf-tech-label">LUBRICATION</div><div className="tf-tech-val">SYNTRAX™</div></div>
+                <div><div className="tf-tech-label">AIR INTAKE</div><div className="tf-tech-val">MACROCORE™</div></div>
+                <div><div className="tf-tech-label">AIR BRAKES</div><div className="tf-tech-val">DRYCORE™</div></div>
               </div>
               <Link href="/technologies" className="tf-btn">VIEW TECHNOLOGY</Link>
             </div>
@@ -98,12 +98,12 @@ export default function TrucksFleets() {
           </div>
           <div className="tf-grid3">
             {[
-              {label:'Fuel Module', title:'SYNTEPOREâ„¢', desc:'Clean combustion and maximum torque for long-haul diesel engines â€” protecting Common Rail injection systems from water and particle contamination across thousands of miles.'},
-              {label:'Lubrication Module', title:'SYNTRAXâ„¢', desc:'High-capacity soot control for heavy-duty truck engines during extended intervals â€” maintaining oil cleanliness and protecting engine internals under continuous highway loads.'},
-              {label:'Air Intake', title:'MACROCOREâ„¢', desc:'Zero-bypass radial seal protection against highway dust and industrial particulates â€” maintaining engine air quality across all road conditions and geographic regions.'},
-              {label:'Air Brake System', title:'DRYCOREâ„¢', desc:'Moisture elimination from pneumatic brake circuits â€” ensuring full braking reliability and regulatory compliance across all weather conditions and operating regions.'},
-              {label:'Cabin Air', title:'MICROKAPPAâ„¢', desc:'HEPA-grade cabin filtration protecting drivers on long-haul routes from highway pollutants, diesel exhaust, and allergens â€” maintaining driver health and alertness.'},
-              {label:'Coolant System', title:'COOLTECHâ„¢', desc:'Thermal protection for truck cooling circuits on extended highway runs â€” preventing cavitation and scale buildup in high-horsepower diesel engine cooling systems.'},
+              {label:'Fuel Module', title:'SYNTEPORE™', desc:'Clean combustion and maximum torque for long-haul diesel engines â€” protecting Common Rail injection systems from water and particle contamination across thousands of miles.'},
+              {label:'Lubrication Module', title:'SYNTRAX™', desc:'High-capacity soot control for heavy-duty truck engines during extended intervals â€” maintaining oil cleanliness and protecting engine internals under continuous highway loads.'},
+              {label:'Air Intake', title:'MACROCORE™', desc:'Zero-bypass radial seal protection against highway dust and industrial particulates â€” maintaining engine air quality across all road conditions and geographic regions.'},
+              {label:'Air Brake System', title:'DRYCORE™', desc:'Moisture elimination from pneumatic brake circuits â€” ensuring full braking reliability and regulatory compliance across all weather conditions and operating regions.'},
+              {label:'Cabin Air', title:'MICROKAPPA™', desc:'HEPA-grade cabin filtration protecting drivers on long-haul routes from highway pollutants, diesel exhaust, and allergens â€” maintaining driver health and alertness.'},
+              {label:'Coolant System', title:'COOLTECH™', desc:'Thermal protection for truck cooling circuits on extended highway runs â€” preventing cavitation and scale buildup in high-horsepower diesel engine cooling systems.'},
             ].map((c, i) => (
               <div key={i} className="tf-card">
                 <div className="tf-card-label">{c.label}</div>

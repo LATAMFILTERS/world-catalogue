@@ -43,7 +43,7 @@ export default function MunicipalServices() {
   return (
     <div className="ms">
       <style>{css}</style>
-      <a href="/?skip=1" className="ms-back">&larr; HOME</a>
+      <a href="/" className="ms-back">&larr; HOME</a>
 
       <section className="ms-hero">
         <div className="ms-hero-inner">
@@ -77,12 +77,12 @@ export default function MunicipalServices() {
           </div>
           <div className="ms-grid3">
             {[
-              {label:'MACROCOREâ„¢ / AIR', title:'URBAN AIR INTAKE', desc:'High-capacity media for urban environments with elevated particulate concentrations â€” protecting engines from micro-particles, soot, and industrial pollutants in city operations.'},
-              {label:'SYNTRAXâ„¢ / OIL', title:'STOP-GO PROTECTION', desc:'High-capacity soot control for engines under continuous stop-and-go cycles â€” maintaining oil cleanliness and protecting bearings during the frequent cold starts of municipal routes.'},
-              {label:'NANOFORCEâ„¢ / HYD', title:'COMPACTION SYSTEM', desc:'Precision hydraulic filtration for waste compaction systems operating under continuous high-pressure cycles â€” protecting hydraulic valves and actuators from contamination.'},
-              {label:'AQUAGUARDâ„¢ / FUEL', title:'FUEL PURITY', desc:'Water separation and particle removal for fuel systems in vehicles operating in wet and contaminated environments â€” ensuring reliable diesel delivery in all weather conditions.'},
-              {label:'DRYCOREâ„¢ / AIR', title:'BRAKE RELIABILITY', desc:'Moisture elimination from pneumatic brake systems â€” ensuring full braking reliability and safety compliance in heavy municipal vehicles operating in all weather conditions.'},
-              {label:'MICROKAPPAâ„¢ / CABIN', title:'OPERATOR HEALTH', desc:'HEPA-grade cabin protection for operators exposed to waste collection environments â€” eliminating biological contaminants, odors, and harmful gases from the operator cabin.'},
+              {label:'MACROCORE™ / AIR', title:'URBAN AIR INTAKE', desc:'High-capacity media for urban environments with elevated particulate concentrations â€” protecting engines from micro-particles, soot, and industrial pollutants in city operations.'},
+              {label:'SYNTRAX™ / OIL', title:'STOP-GO PROTECTION', desc:'High-capacity soot control for engines under continuous stop-and-go cycles â€” maintaining oil cleanliness and protecting bearings during the frequent cold starts of municipal routes.'},
+              {label:'NANOFORCE™ / HYD', title:'COMPACTION SYSTEM', desc:'Precision hydraulic filtration for waste compaction systems operating under continuous high-pressure cycles â€” protecting hydraulic valves and actuators from contamination.'},
+              {label:'AQUAGUARD™ / FUEL', title:'FUEL PURITY', desc:'Water separation and particle removal for fuel systems in vehicles operating in wet and contaminated environments â€” ensuring reliable diesel delivery in all weather conditions.'},
+              {label:'DRYCORE™ / AIR', title:'BRAKE RELIABILITY', desc:'Moisture elimination from pneumatic brake systems â€” ensuring full braking reliability and safety compliance in heavy municipal vehicles operating in all weather conditions.'},
+              {label:'MICROKAPPA™ / CABIN', title:'OPERATOR HEALTH', desc:'HEPA-grade cabin protection for operators exposed to waste collection environments â€” eliminating biological contaminants, odors, and harmful gases from the operator cabin.'},
             ].map((f, i) => (
               <div key={i} className="ms-feature">
                 <div className="ms-feature-label">{f.label}</div>
