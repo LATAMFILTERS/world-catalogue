@@ -1,5 +1,9 @@
-﻿[phases.setup]
+﻿# Nixpacks config for Next.js app in motor-de-busqueda/
+[variables]
+NIXPACKS_PROJECT_PATH = "motor-de-busqueda"
+
+[phases.setup]
 nixPkgs = ["nodejs"]
 
 [phases.build]
-cmds = ["npm install"]
+cmds = ["cd motor-de-busqueda && npm install && npm run build"]
