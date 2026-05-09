@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const { Pool } = require('pg');
 const path = require('path');
@@ -8,42 +9,50 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
+// -------------------- BASIC SAFETY --------------------
+app.disable('x-powered-by');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // -------------------- SECURITY --------------------
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(
+    helmet({
+        contentSecurityPolicy: false
+    })
+);
 
 const allowedOrigins = [
     'https://elimfilters.com',
     'https://www.elimfilters.com',
-    'https://world-catalogue-production.up.railway.app',
     'http://localhost:3000',
     'http://localhost:8080'
 ];
 
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(null, false);
-        }
-    },
-    methods: ['GET'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+            return callback(null, false);
+        },
+        methods: ['GET'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    })
+);
 
 // -------------------- RATE LIMIT --------------------
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
-    message: { error: 'Demasiadas solicitudes. Intenta en 15 minutos.' }
+    max: 200
 });
+
 app.use('/api/', limiter);
 
-app.use(express.json());
-
-// -------------------- DATABASE CHECK --------------------
+// -------------------- DATABASE --------------------
 if (!process.env.DATABASE_URL) {
-    console.error('❌ ERROR: DATABASE_URL no definida');
+    console.error('DATABASE_URL missing');
     process.exit(1);
 }
 
@@ -52,14 +61,14 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false },
     max: 10,
     idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 5000
+    connectionTimeoutMillis: 8000
 });
 
 pool.on('error', (err) => {
-    console.error('❌ Error PostgreSQL pool:', err.message);
+    console.error('DB Pool Error:', err.message);
 });
 
-// -------------------- SAFE SELECT --------------------
+// -------------------- SAFE FIELDS --------------------
 const SAFE_FIELDS = `
 sku, base_code, technology, category, description,
 media_type, outer_diameter, inner_diameter, length,
@@ -69,54 +78,50 @@ cross_references, applications
 
 // -------------------- HEALTH --------------------
 app.get('/health', (req, res) => {
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// -------------------- ROOT (FIX RAILWAY HEALTHCHECK) --------------------
-app.get('/', (req, res) => {
-    res.json({ status: 'ok' });
+    res.status(200).json({
+        status: 'ok',
+        time: new Date().toISOString()
+    });
 });
 
 // -------------------- SEARCH --------------------
 app.get('/api/search', async (req, res) => {
-    const q = (req.query.q || '').toUpperCase().trim();
-
-    if (!q || q.length < 2) {
-        return res.status(400).json({ error: 'Minimo 2 caracteres' });
-    }
-    if (q.length > 50) {
-        return res.status(400).json({ error: 'Busqueda demasiado larga' });
-    }
-
     try {
+        const q = (req.query.q || '').toString().trim().toUpperCase();
+
+        if (q.length < 2) {
+            return res.status(400).json({ error: 'min 2 chars' });
+        }
+
         const result = await pool.query(
             `SELECT ${SAFE_FIELDS}
              FROM filters
              WHERE UPPER(sku) LIKE $1
                 OR UPPER(base_code) LIKE $1
                 OR competitor_codes::text ILIKE $2
-             ORDER BY sku
              LIMIT 20`,
             [q + '%', '%' + q + '%']
         );
 
-        res.json({ results: result.rows, count: result.rows.length });
-
+        return res.json({
+            results: result.rows,
+            count: result.rows.length
+        });
     } catch (err) {
-        console.error('❌ /api/search:', err.message);
-        res.status(500).json({ error: 'Error interno del servidor' });
+        console.error('SEARCH ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
     }
 });
 
 // -------------------- FILTER BY SKU --------------------
 app.get('/api/filter/:sku', async (req, res) => {
-    const sku = (req.params.sku || '').toUpperCase().trim();
-
-    if (!sku || sku.length > 20) {
-        return res.status(400).json({ error: 'SKU invalido' });
-    }
-
     try {
+        const sku = (req.params.sku || '').toString().trim().toUpperCase();
+
+        if (!sku) {
+            return res.status(400).json({ error: 'invalid sku' });
+        }
+
         const result = await pool.query(
             `SELECT ${SAFE_FIELDS}
              FROM filters
@@ -126,54 +131,64 @@ app.get('/api/filter/:sku', async (req, res) => {
         );
 
         if (!result.rows.length) {
-            return res.status(404).json({ error: 'Producto no encontrado' });
+            return res.status(404).json({ error: 'not found' });
         }
 
-        res.json(result.rows[0]);
-
+        return res.json(result.rows[0]);
     } catch (err) {
-        console.error('❌ /api/filter:', err.message);
-        res.status(500).json({ error: 'Error interno del servidor' });
+        console.error('FILTER ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
     }
 });
 
-// -------------------- CROSS REF --------------------
+// -------------------- CROSS REFERENCE --------------------
 app.get('/api/cross-reference/:code', async (req, res) => {
-    const code = (req.params.code || '').toUpperCase().trim();
-
-    if (!code || code.length < 3 || code.length > 30) {
-        return res.status(400).json({ error: 'Codigo invalido' });
-    }
-
     try {
+        const code = (req.params.code || '').toString().trim().toUpperCase();
+
+        if (code.length < 2) {
+            return res.status(400).json({ error: 'invalid code' });
+        }
+
         const result = await pool.query(
             `SELECT ${SAFE_FIELDS}
              FROM filters
              WHERE competitor_codes::text ILIKE $1
                 OR oem_codes::text ILIKE $1
-             LIMIT 10`,
+             LIMIT 20`,
             ['%' + code + '%']
         );
 
-        res.json({ results: result.rows, count: result.rows.length });
-
+        return res.json({
+            results: result.rows,
+            count: result.rows.length
+        });
     } catch (err) {
-        console.error('❌ cross-reference:', err.message);
-        res.status(500).json({ error: 'Error interno del servidor' });
+        console.error('CROSS REF ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
     }
 });
 
-// -------------------- STATIC --------------------
+// -------------------- STATIC FILES --------------------
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('*', (req, res) => {
+// -------------------- ROOT --------------------
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// -------------------- START SERVER --------------------
+// -------------------- GLOBAL ERROR HANDLERS --------------------
+process.on('uncaughtException', (err) => {
+    console.error('UNCAUGHT:', err);
+});
+
+process.on('unhandledRejection', (err) => {
+    console.error('UNHANDLED:', err);
+});
+
+// -------------------- START --------------------
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 ELIMFILTERS API corriendo en puerto ${PORT}`);
-    console.log(`🌍 Ambiente: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`ELIMFILTERS API running on ${PORT}`);
 });
