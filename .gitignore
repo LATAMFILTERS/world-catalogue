@@ -5,3 +5,15 @@ fleetguard-catalog*.json
 
 config/google-credentials.json
 C:\\Users\\
+
+# Next.js build artifacts
+motor-de-busqueda/.next/
+motor-de-busqueda/next-env.d.ts
+motor-de-busqueda/tsconfig.json
+motor-de-busqueda/package-lock.json
+
+# General build outputs
+.next/
+next-env.d.ts
+tsconfig.json
+package-lock.json
