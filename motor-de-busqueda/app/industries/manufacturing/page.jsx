@@ -26,6 +26,7 @@ export default function Manufacturing() {
     .mf-tech-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:#555;text-transform:uppercase;letter-spacing:0.1em;}
     .mf-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
     .mf-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;}
+    .mf-video-wrap:hover video{filter:grayscale(0);opacity:1;}
     .mf-btn{background:#FFF12D;color:#000;font-family:'Russo One',sans-serif;font-size:13px;letter-spacing:0.15em;padding:20px 45px;display:inline-block;text-transform:uppercase;text-decoration:none;transition:all 0.25s;margin-top:24px;}
     .mf-btn:hover{background:#fff;}
     .mf-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}

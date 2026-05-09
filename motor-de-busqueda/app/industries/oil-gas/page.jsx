@@ -22,7 +22,7 @@ export default function OilGas() {
     .og-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
     .og-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
     .og-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:opacity 0.3s;}
-    .og-video-wrap:hover video{opacity:1;}
+    {filter:grayscale(0);opacity:1;}
     .og-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
     .og-feature{background:rgba(255,255,255,0.02);border-left:3px solid #FFF12D;padding:36px;transition:all 0.3s;}
     .og-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-4px);}

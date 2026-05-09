@@ -26,7 +26,7 @@ export default function Agriculture() {
     .ag-spec-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;}
     .ag-video{background:#000;border:1px solid rgba(255,255,255,0.05);position:relative;overflow:hidden;}
     .ag-video video{width:100%;filter:grayscale(1);opacity:0.6;transition:opacity 0.7s;}
-    .ag-video:hover video{opacity:0.9;}
+    {opacity:0.9;filter:grayscale(0);}
     .ag-video-tag{position:absolute;bottom:16px;right:16px;font-family:'JetBrains Mono',monospace;font-size:9px;background:rgba(0,0,0,0.8);padding:6px 12px;border:1px solid rgba(255,255,255,0.1);color:#FFF12D;letter-spacing:0.2em;}
     .ag-quote{background:#050505;border-left:4px solid #FFF12D;padding:24px;margin-top:24px;}
     .ag-quote p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;font-style:italic;letter-spacing:0.05em;}

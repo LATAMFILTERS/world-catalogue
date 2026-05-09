@@ -22,6 +22,7 @@ export default function MunicipalServices() {
     .ms-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
     .ms-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
     .ms-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;}
+    .ms-video-wrap:hover video{filter:grayscale(0);opacity:1;}
     .ms-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
     .ms-feature{background:rgba(255,255,255,0.02);border-left:4px solid #FFF12D;padding:32px;transition:all 0.3s;height:100%;}
     .ms-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-4px);}

@@ -26,6 +26,7 @@ export default function Mining() {
     .mn-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
     .mn-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
     .mn-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;}
+    .mn-video-wrap:hover video{filter:grayscale(0);opacity:1;}
     .mn-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
     .mn-feature{background:rgba(255,255,255,0.02);border-left:3px solid #FFF12D;padding:28px;transition:all 0.3s;min-height:140px;}
     .mn-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-3px);border-left-width:6px;}
