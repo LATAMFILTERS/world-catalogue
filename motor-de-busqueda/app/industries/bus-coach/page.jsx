@@ -63,7 +63,7 @@ export default function BusCoach() {
         <div className="bc-hero-inner">
           <div className="bc-eyebrow">// STRATEGIC FLEET PROTECTION</div>
           <h1 className="bc-h1">BUS & COACH<br /><span>OPERATIONAL CONTINUITY</span></h1>
-          <p className="bc-hero-p">Industrial asset protection systems engineered for mass transit fleets, bus operations, and critical diesel-powered urban infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, air intake systems, and pneumatic brake circuits from contamination – extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across urban transport operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="bc-hero-p">Precision filtration engineered for urban transit buses, intercity coaches, school buses, and articulated BRT vehicles. Public transport fleets operate on fixed schedules where an unscheduled breakdown strands passengers, disrupts service networks, and generates penalty costs under public service contracts. Our technology shields Euro VI diesel engines, pneumatic braking circuits, automatic transmissions, and air conditioning compressors from contamination – protecting safety-critical systems, extending service intervals, and ensuring route reliability across municipal and regional transport operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,8 +73,8 @@ export default function BusCoach() {
             <div>
               <div className="bc-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="bc-sh2">FLEET RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="bc-p">Mass transit systems operate under intense stop-and-go cycles and extended service hours. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping buses on schedule and protecting passenger safety.</p>
-              <p className="bc-p">Urban mobility depends on reliability. Engineered protection ensures equipment performance, route continuity, and operational economics across all transit operations worldwide.</p>
+              <p className="bc-p">Transit buses complete up to 400 brake-accelerate cycles per shift – a punishing load profile that degrades engine oil faster than highway applications, saturates air filters with urban PM2.5, and cycles pneumatic brake air supply systems continuously. Euro VI SCR and EGR systems require clean fuel to maintain NOx conversion efficiency; contaminated fuel causes DPF fouling and catalyst poisoning that triggers costly off-route regeneration events and warranty claims.</p>
+              <p className="bc-p">Operators under public service agreements cannot afford unscheduled downtime. Our extended-interval filtration technologies are validated for the duty cycles of Volvo, MAN, Mercedes-Benz, and Scania Euro VI bus platforms, protecting fleet assets from the day of first service through the full concession term and reducing total fleet maintenance cost per kilometre.</p>
               <div className="bc-tech-grid">
                 <div><div className="bc-tech-label">AIR INTAKE</div><div className="bc-tech-val">MACROCORE™</div></div>
                 <div><div className="bc-tech-label">LUBRICATION</div><div className="bc-tech-val">SINTRAX™</div></div>
@@ -100,12 +100,12 @@ export default function BusCoach() {
           </div>
           <div className="bc-grid3">
             {[
-              {label:'Air Module', title:'MACROCORE™', desc:'Optimized for urban environments with high concentrations of micro-particulates and industrial pollutants – protecting engines in the most demanding city driving conditions.'},
-              {label:'Lubrication Module', title:'SINTRAX™', desc:'Maintains oil viscosity and cleanliness under severe thermal stress in intensive stop-and-go transit operations – extending engine life and reducing maintenance costs.'},
-              {label:'Fuel Module', title:'NANOFORCE™', desc:'Maximum water separation and particulate removal to protect Common Rail injection systems during intensive daily operation across mass transit fleets worldwide.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Advanced air drying to prevent moisture corrosion in critical braking valves – ensuring constant safety and reliable pneumatic brake response in all conditions.'},
-              {label:'Hydraulic Systems', title:'AQUAGUARD™', desc:'Protection for hydrostatic transmissions and control systems operating under continuous high-load conditions in urban driving cycles.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for bus and coach cooling circuits – preventing cavitation and scale buildup in high-load diesel engine cooling systems worldwide.'},
+              {label:'Air Module', title:'MACROCORE™', desc:'Urban transit buses operate in corridors with nitrogen dioxide, brake dust, tyre particulates, and diesel soot concentrations that rapidly load standard air filter elements. MACROCORE™ synthetic-blend media delivers extended dust-holding capacity and stable restriction across the full service interval, maintaining the air mass flow and boost pressure that Euro VI SCR systems require to sustain NOx conversion rates above 95% across the full duty cycle in high-density bus routes.'},
+              {label:'Lubrication Module', title:'SINTRAX™', desc:'Stop-and-go transit duty generates elevated soot loading, high thermal cycling, and continuous cold-start acid accumulation in engine oil that degrade lubricant faster than highway applications. SINTRAX™ high-capacity oil filtration captures soot agglomerates and metallic wear particles under ACEA E6/E9 service requirements, maintaining oil cleanliness across extended drain intervals specified by Volvo, MAN, and Scania OEM maintenance programs for municipal bus fleets.'},
+              {label:'Fuel Module', title:'NANOFORCE™', desc:'Bus fleets sourcing fuel from municipal depots and third-party terminals are vulnerable to water ingress, microbial contamination, and particulate loading in bulk storage tanks. NANOFORCE™ nanofiber media combines high-efficiency particulate removal with coalescing water separation, protecting the high-pressure Common Rail injection systems on Euro VI engines where injector tip contamination above 4 microns causes increased fuel delivery variability and elevated NOx emissions during cold-start transient events.'},
+              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Air brake systems on full-size and articulated buses are safety-critical components subject to mandatory inspection intervals. Moisture accumulation in brake circuit reservoirs causes diaphragm corrosion, valve seat degradation, and sluggish pedal response – failure modes that trigger vehicle prohibition under transport authority inspections. DRYCORE™ desiccant air dryer cartridges eliminate free and condensed water from the compressed air supply, ensuring full brake chamber actuation force and reliable modulator response at all operating temperatures.'},
+              {label:'Hydraulic Systems', title:'AQUAGUARD™', desc:'Power steering circuits, retarder cooling systems, and automatic door actuators on urban coaches operate under continuous hydraulic duty with fluid temperatures that promote oxidation and water ingress. AQUAGUARD™ protects these hydrostatic circuits by removing free water and maintaining ISO 16/14/11 cleanliness codes, preventing proportional valve spool wear and pump cavitation that cause steering lag and transmission clutch engagement irregularities in high-mileage transit vehicle platforms.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'Transit bus engines idling in traffic with air conditioning compressors running at full load are highly vulnerable to coolant system overtemperature and silicate gel deposition that reduces radiator efficiency. COOLTECH™ supplemental coolant filtration removes particulates and neutralises acidic degradation products from the coolant circuit, preventing wet-sleeve liner pitting on high-output diesel engines and protecting the aluminium charge-air cooler cores that are critical to Euro VI emissions compliance in urban service.'},
             ].map((c, i) => (
               <div key={i} className="bc-card">
                 <div className="bc-card-label">{c.label}</div>
@@ -122,11 +122,11 @@ export default function BusCoach() {
           <div>
             <div className="bc-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="bc-sh2">PROTECTING <span>URBAN MOBILITY</span></h2>
-            <p className="bc-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Transit reliability protects passengers, routes, and the continuity of urban public transportation operations worldwide.</p>
+            <p className="bc-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Every bus on a scheduled route carries passengers who depend on its arrival. Clean air, clean fuel, and dry brake circuits are not optional accessories – they are the engineering foundation of a service that communities trust.</p>
           </div>
           <div className="bc-env">
-            <p className="bc-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to cleaner urban air quality – protecting both the environment and operational economics.</p>
-            <div className="bc-env-strong">From city routes to regional services: protection is mission-critical.</div>
+            <p className="bc-env-p">Euro VI bus engines equipped with SCR catalysts and closed-crankcase ventilation systems produce dramatically lower NOx and particulate emissions than previous generations – but only when fuel and lubricant systems are kept clean. Contaminated fuel degrades AdBlue dosing accuracy and triggers unnecessary DPF regeneration events that raise CO2 output per route kilometre. NANOFORCE™ and MACROCORE™ protect the injection and air systems that keep emissions control systems functioning as designed, helping municipal operators comply with low-emission zone designations and air quality improvement commitments in major urban centres.</p>
+            <div className="bc-env-strong">From first stop to final depot: every route is protected.</div>
           </div>
         </div>
       </section>

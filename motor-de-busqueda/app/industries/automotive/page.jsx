@@ -63,7 +63,7 @@ export default function Automotive() {
         <div className="au-hero-inner">
           <div className="au-eyebrow">// STRATEGIC VEHICLE PROTECTION</div>
           <h1 className="au-h1">AUTOMOTIVE<br /><span>PRECISION ENGINEERED</span></h1>
-          <p className="au-hero-p">Industrial asset protection systems engineered for passenger vehicles, light commercial fleets, and critical gasoline-powered infrastructure. Our filtration technology shields air intake systems, fuel circuits, lubrication lines, and cabin environments from contamination – extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="au-hero-p">Precision filtration engineered for passenger cars, SUVs, light commercial vans, and high-performance gasoline and diesel platforms. Modern direct-injection engines operate under tighter tolerances than ever before, where fuel contamination above 4 microns damages injector tips and valve deposits accumulate within thousands of kilometres. Our technology shields air intake, fuel circuits, engine lubrication, and cabin HVAC from urban particulates, combustion by-products, and seasonal fuel variability – protecting powertrain investment and occupant health across every driving cycle. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,8 +73,8 @@ export default function Automotive() {
             <div>
               <div className="au-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="au-sh2">URBAN RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="au-p">Passenger vehicles face unique challenges: frequent cold starts, heavy traffic cycles, and severe contamination in urban environments. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping vehicles on the road and performing optimally.</p>
-              <p className="au-p">Vehicle reliability protects investment, minimizes maintenance, and ensures operational continuity across all driving conditions worldwide.</p>
+              <p className="au-p">Passenger vehicles operate under demanding filtration cycles: frequent cold starts, stop-and-go traffic, and continuous exposure to urban PM2.5 particulates. Common Rail gasoline direct injection and turbocharged diesel engines share an intolerance for contaminated fuel and dirty oil – a single extended drain interval with degraded lubricant can cause accelerated camshaft lobe wear and increased blow-by emissions that void emissions warranties.</p>
+              <p className="au-p">Fleet total cost of ownership depends on extending drain intervals without sacrificing engine cleanliness. Our filtration range is validated across ACEA C5, API SP, and Euro 6d-temp service categories, protecting turbocharged TGDI and mild-hybrid powertrains from the particulate and thermal stresses of modern urban driving cycles.</p>
               <div className="au-tech-grid">
                 <div><div className="au-tech-label">AIR INTAKE</div><div className="au-tech-val">MACROCORE™</div></div>
                 <div><div className="au-tech-label">LUBRICATION</div><div className="au-tech-val">SINTRAX™</div></div>
@@ -100,12 +100,12 @@ export default function Automotive() {
           </div>
           <div className="au-grid3">
             {[
-              {label:'Air Module', title:'MACROCORE™', desc:'Absolute capture of microscopic particles ensuring perfect combustion and maximum engine protection across all urban driving conditions.'},
-              {label:'Oil Module', title:'SINTRAX™', desc:'Maintains oil viscosity and cleanliness under severe thermal stress in city environments – extending engine life and reducing maintenance costs.'},
-              {label:'Fuel Module', title:'NANOFORCE™', desc:'Nanofiber technology designed to eliminate critical contaminants and water in injection systems – protecting Common Rail injectors from premature wear.'},
-              {label:'Cabin Air', title:'MICROKAPPA™', desc:'Biological and chemical barrier against allergens and pollutants from urban exhaust – safeguarding occupant health in all weather conditions.'},
-              {label:'Water Separation', title:'AQUAGUARD™', desc:'Advanced hydrophobic separation eliminates water contamination from fuel systems – protecting injection components during all driving seasons.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for vehicle cooling circuits – preventing cavitation and scale buildup in high-performance engine cooling systems worldwide.'},
+              {label:'Air Module', title:'MACROCORE™', desc:'Turbocharged gasoline and diesel engines demand air that meets ISO 5011 cleanliness standards at every operating condition. MACROCORE™ synthetic-blend media delivers high dust-holding capacity and low restriction growth across the service interval, maintaining the airflow volume and charge air temperature that turbocharged direct-injection engines require for rated power output and emissions compliance in urban stop-and-go cycles.'},
+              {label:'Oil Module', title:'SINTRAX™', desc:'Modern passenger car lubricants carry high concentrations of soot, metallic wear particles, and oxidation products by mid-drain interval. SINTRAX™ high-efficiency filtration maintains ISO 4406 cleanliness codes in ACEA C-class low-SAPS oils used by Euro 6 engines with diesel particulate filters and gasoline particulate filters, preventing abrasive wear in variable valve timing actuators and turbocharger bearing journals across extended OEM service intervals.'},
+              {label:'Fuel Module', title:'NANOFORCE™', desc:'Gasoline direct injection injectors operate at pressures up to 350 bar and are critically sensitive to particulate contamination above 5 microns. NANOFORCE™ nanofiber media provides the high-efficiency filtration needed to protect GDI injector nozzles and high-pressure pump check valves from particles that accelerate tip erosion, calibration drift, and injector deposits in turbocharged TGDI engines operating on variable-quality retail fuel.'},
+              {label:'Cabin Air', title:'MICROKAPPA™', desc:'Urban air contains NO2, PM2.5, ozone, pollen, mold spores, and volatile organic compounds that penetrate standard HVAC filter media. MICROKAPPA™ activated-carbon combination filters capture sub-micron particulates and adsorb gaseous pollutants, protecting occupants with respiratory sensitivities and meeting the allergen-filtration standards required for vehicles equipped with recirculation auto-sensing systems in high-traffic urban corridors.'},
+              {label:'Water Separation', title:'AQUAGUARD™', desc:'Biodiesel blends and long-term fuel storage promote water ingress and microbial growth in fuel tanks that feed directly to high-pressure Common Rail injection pumps. AQUAGUARD™ hydrophobic coalescence technology separates free and emulsified water before it reaches injection system components, protecting chrome-plated pump barrels and piezoelectric injector assemblies that cannot tolerate the corrosion and cavitation damage caused by even trace moisture contamination.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'Aluminium cylinder heads, electric water pumps, and plastic cooling circuit components in modern passenger platforms are highly sensitive to coolant pH drift and silicate gel precipitation that clog thermostat housings and reduce radiator flow. COOLTECH™ supplemental coolant additive filtration removes abrasive particulates and deposits from the coolant circuit, maintaining heat transfer efficiency and protecting the aluminium casting surfaces of turbocharged engines against electrochemical corrosion.'},
             ].map((c, i) => (
               <div key={i} className="au-card">
                 <div className="au-card-label">{c.label}</div>
@@ -122,11 +122,11 @@ export default function Automotive() {
           <div>
             <div className="au-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="au-sh2">PROTECTING <span>VEHICLE PERFORMANCE</span></h2>
-            <p className="au-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Vehicle reliability depends on filtration. Protection ensures performance, safety, and operational continuity in all driving conditions worldwide.</p>
+            <p className="au-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Every kilometre begins with clean air, clean fuel, and clean oil. The quality of each directly determines engine longevity, cabin air quality, and the total maintenance cost paid over the vehicle's service life.</p>
           </div>
           <div className="au-env">
-            <p className="au-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to cleaner air quality – protecting both the environment and vehicle economics.</p>
-            <div className="au-env-strong">From daily commutes to commercial operations: protection is mission-critical.</div>
+            <p className="au-env-p">Euro 6d and CAFE-compliant engines depend on clean fuel reaching GDI injectors and clean oil protecting DPF-regeneration intervals. Contaminated fluids elevate particulate emissions, trigger catalyst damage events, and accelerate the wear that increases blow-by hydrocarbon output. NANOFORCE™ and MACROCORE™ keep the fuel and air systems clean, protecting the emissions equipment that keeps vehicles on the road and compliant with urban low-emission zone regulations in cities across Europe, Asia, and the Americas.</p>
+            <div className="au-env-strong">From daily commute to long-distance fleet: every filter protects the drive.</div>
           </div>
         </div>
       </section>

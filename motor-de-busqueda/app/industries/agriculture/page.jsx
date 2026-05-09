@@ -63,7 +63,7 @@ export default function Agriculture() {
         <div className="ag-hero-inner">
           <div className="ag-eyebrow">// STRATEGIC HARVEST PROTECTION</div>
           <h1 className="ag-h1">AGRICULTURE<br /><span>HARVEST SECURITY</span></h1>
-          <p className="ag-hero-p">Industrial asset protection systems engineered for agricultural equipment, harvesting operations, and critical diesel-powered farm infrastructure. Our filtration technology shields fuel systems, lubrication circuits, air intake systems, and hydraulic networks from organic contamination – extending asset lifespan, eliminating unplanned downtime during critical harvest windows, and reducing total cost of ownership across crop production operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ag-hero-p">Precision filtration engineered for combine harvesters, tractors, sprayers, and self-propelled agricultural machinery. Crop production runs on narrow seasonal windows where a single mechanical failure during planting or harvest translates directly into yield loss and revenue damage. Our technology shields fuel injection systems, hydraulic circuits, engine lubrication, and air intake from chaff, pollen, grain dust, and field-stored fuel contamination – extending service intervals, protecting high-value powertrain components, and eliminating unplanned downtime across grain, row crop, and specialty operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -73,8 +73,8 @@ export default function Agriculture() {
             <div>
               <div className="ag-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="ag-sh2">FIELD RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="ag-p">Agricultural systems operate under extreme dust, heat, and heavy loads across extended service cycles. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping equipment in the field and harvest moving.</p>
-              <p className="ag-p">Harvest timing is everything. Reliability protects equipment, yield, and operational profitability across crop production operations worldwide.</p>
+              <p className="ag-p">Agricultural equipment runs in some of the harshest filtration environments on earth. Combine harvesters generate dense chaff clouds, field-stored diesel accumulates microbial growth and water ingress, and hydraulic systems on planters and sprayers cycle continuously for 18-hour shifts. Standard-duty filters cannot maintain the ISO cleanliness codes required to protect high-pressure Common Rail injection and proportional hydraulic controls under these conditions.</p>
+              <p className="ag-p">Harvest timing is non-negotiable. Every hour of unplanned downtime during a critical window costs more than weeks of preventive maintenance. Our extended-interval filtration technologies are engineered specifically to match the load profiles of Tier 4-compliant farm engines, keeping equipment productive from pre-season preparation through post-harvest strip-down.</p>
               <div className="ag-tech-grid">
                 <div><div className="ag-tech-label">FUEL SYSTEMS</div><div className="ag-tech-val">AQUAGUARD™</div></div>
                 <div><div className="ag-tech-label">LUBRICATION</div><div className="ag-tech-val">MACROCORE™</div></div>
@@ -100,12 +100,12 @@ export default function Agriculture() {
           </div>
           <div className="ag-grid3">
             {[
-              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Water and contamination removal engineered for field-stored diesel fuel and Common Rail injection systems across all agricultural equipment platforms – ensuring fuel purity in harvest operations.'},
-              {label:'Lubrication Module', title:'MACROCORE™', desc:'High-flow oil filtration designed for extended intervals and soot control in heavy-duty farm engines – maintaining oil cleanliness across intensive harvest operations.'},
-              {label:'Air Intake', title:'SYNTEPORE™', desc:'Protection against dust, pollen, and organic particles with zero-bypass radial seal technology – maintaining engine air quality across all harvest environments.'},
-              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Advanced filtration eliminates water and particle contamination from agricultural hydraulic systems – protecting actuators and transmissions during all-season field operations.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for farm equipment cooling circuits – preventing cavitation and scale buildup in high-load diesel engine cooling systems worldwide.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Moisture elimination from air brake systems and pneumatic controls – ensuring reliability across all equipment platforms during extended harvest seasons.'},
+              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Field-stored diesel is among the most contaminated fuel in any industry – subject to microbial growth, free water, and particulate ingress from portable tanks and bulk storage. AQUAGUARD™ combines hydrophobic coalescence with high-efficiency particle capture to protect Common Rail injectors operating at pressures above 2,000 bar, where even 4-micron particles cause injector tip erosion and calibration drift in tractors and combines.'},
+              {label:'Lubrication Module', title:'MACROCORE™', desc:'Agricultural engines run at high soot loads during field operations, and extended oil drain intervals are standard practice to reduce downtime mid-season. MACROCORE™ high-capacity oil filtration maintains ISO cleanliness targets across 500+ hour service intervals, capturing metallic wear particles, carbon soot, and oxidation by-products that accelerate bearing and cam surface degradation in high-torque diesel engines powering harvesters and large tractors.'},
+              {label:'Air Intake', title:'SYNTEPORE™', desc:'Harvesting operations generate dense airborne loads of chaff, pollen, grain dust, and fine soil particulates that rapidly load standard paper elements. SYNTEPORE™ synthetic media delivers greater dust-holding capacity and lower restriction growth over the filter life compared to cellulose, maintaining the clean air delivery essential for turbocharger efficiency and combustion quality in engines powering combines operating through continuous 14-hour harvest shifts.'},
+              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Modern precision agriculture relies on closed-loop hydraulic systems controlling variable-rate seeders, auto-steer actuators, header lift circuits, and hydrostatic transmissions. Particle contamination above ISO 16/14/11 causes proportional valve spool stiction and accelerated pump wear. NANOFORCE™ nanofiber elements maintain target cleanliness codes even under high-cycle conditions, protecting the precision hydraulic architecture of current-generation planters and self-propelled sprayers.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'High-horsepower agricultural engines operating in ambient temperatures above 40°C and surrounded by crop residue that blocks radiator airflow are highly vulnerable to coolant system scale and cavitation erosion. COOLTECH™ coolant filtration removes silicate gel deposits, rust particles, and electrolytic contaminants from the cooling circuit, preventing liner pitting on wet-sleeve diesel engines and maintaining heat transfer efficiency in combine and tractor cooling systems across extended seasonal operation.'},
+              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Air brake systems on large articulated tractors and self-propelled harvesting equipment depend on dry, clean compressed air for reliable valve actuation and chamber response. Moisture in the air supply causes valve corrosion, diaphragm swelling, and sluggish pedal response – critical failures on equipment operating on slopes and in proximity to workers. DRYCORE™ desiccant elements eliminate free water from the brake circuit, ensuring consistent pneumatic performance across full seasonal operation.'},
             ].map((c, i) => (
               <div key={i} className="ag-card">
                 <div className="ag-card-label">{c.label}</div>
@@ -122,11 +122,11 @@ export default function Agriculture() {
           <div>
             <div className="ag-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="ag-sh2">PROTECTING <span>AGRICULTURAL CONTINUITY</span></h2>
-            <p className="ag-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Agricultural economics depend on timing. Reliability protects equipment, yield, and the continuity of food production operations worldwide.</p>
+            <p className="ag-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Harvest windows close in days, not weeks. Filtration that keeps equipment running through those windows is not a maintenance cost – it is an investment in yield security and farm profitability.</p>
           </div>
           <div className="ag-env">
-            <p className="ag-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to sustainable agricultural practices – protecting both the environment and operational economics.</p>
-            <div className="ag-env-strong">From fieldwork to food production: protection is mission-critical.</div>
+            <p className="ag-env-p">Optimized combustion and clean hydraulic fluids reduce diesel particulate emissions, extend lubricant drain intervals, and lower the volume of hazardous waste fluids generated per season. Tier 4 and Stage V engine compliance depends on clean fuel reaching the injectors – AQUAGUARD™ and MACROCORE™ protect the emissions control systems that enable agricultural operations to meet environmental permits and sustainability commitments across global growing regions.</p>
+            <div className="ag-env-strong">From seedbed to grain store: protection sustains the harvest.</div>
           </div>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function Agriculture() {
           <div>
             <div className="ag-cta-label">// AGRICULTURE CROSS REFERENCE</div>
             <div className="ag-cta-h2">HARVEST SECURITY IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
-            <p className="ag-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for agricultural operations. Precision-matched across 5,000+ cross-references worldwide.</p>
+            <p className="ag-cta-p">Access our global database. Search by OEM part number or equipment model to find the precision-matched replacement for your harvester, tractor, or sprayer. Covering John Deere, CNH, AGCO, Claas, and 200+ additional OEM platforms across 5,000+ cross-references worldwide.</p>
           </div>
           <Link href="/search" className="ag-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
