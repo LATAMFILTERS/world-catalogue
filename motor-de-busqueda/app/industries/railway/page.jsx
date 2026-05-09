@@ -29,7 +29,7 @@ export default function Railway() {
     .ry-video-inner{position:relative;background:#000;border:1px solid rgba(255,255,255,0.1);padding:4px;z-index:1;}
     .ry-video-inner video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:all 0.7s;}
     .ry-video-wrap:hover .ry-video-inner video{filter:grayscale(0);opacity:1;}
-    .ry-btn{font-family:'Russo One',sans-serif;background:#FFF12D;color:#000;padding:20px 40px;font-size:14px;tracking:0.15em;text-transform:uppercase;display:inline-block;text-decoration:none;transition:all 0.2s;margin-top:24px;}
+    .ry-btn{font-family:'Russo One',sans-serif;background:#FFF12D;color:#000;padding:20px 40px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;display:inline-block;text-decoration:none;transition:all 0.2s;margin-top:24px;}
     .ry-btn:hover{background:#fff;}
     .ry-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
     .ry-card{background:#080808;border:1px solid rgba(255,255,255,0.05);padding:36px;transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1);height:100%;}
@@ -57,7 +57,7 @@ export default function Railway() {
   return (
     <div className="ry">
       <style>{css}</style>
-      <a href="/?skip=1" className="ry-back">&larr; HOME</a>
+      <a href="/" className="ry-back">&larr; HOME</a>
 
       <section className="ry-hero">
         <div className="ry-hero-inner">
@@ -76,10 +76,10 @@ export default function Railway() {
               <p className="ry-p">Railway systems operate under high vibration and heavy loads across extreme service cycles. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals â€” keeping locomotives on the track and cargo moving.</p>
               <p className="ry-p">Rail infrastructure connects economies. Reliability protects equipment, cargo, and the continuity of national supply chains across freight and passenger operations worldwide.</p>
               <div className="ry-tech-grid">
-                <div><div className="ry-tech-label">FUEL SYSTEMS</div><div className="ry-tech-val">SYNTEPOREâ„¢</div></div>
-                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAXâ„¢</div></div>
-                <div><div className="ry-tech-label">WATER SEPARATION</div><div className="ry-tech-val">AQUAGUARDâ„¢</div></div>
-                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCOREâ„¢</div></div>
+                <div><div className="ry-tech-label">FUEL SYSTEMS</div><div className="ry-tech-val">SYNTEPORE™</div></div>
+                <div><div className="ry-tech-label">LUBRICATION</div><div className="ry-tech-val">SINTRAX™</div></div>
+                <div><div className="ry-tech-label">WATER SEPARATION</div><div className="ry-tech-val">AQUAGUARD™</div></div>
+                <div><div className="ry-tech-label">AIR INTAKE</div><div className="ry-tech-val">MACROCORE™</div></div>
               </div>
               <Link href="/technologies" className="ry-btn">VIEW ENGINEERING</Link>
             </div>
@@ -100,12 +100,12 @@ export default function Railway() {
           </div>
           <div className="ry-grid3">
             {[
-              {label:'Fuel Module', title:'SYNTEPOREâ„¢', desc:'Clean combustion and torque stability for high-horsepower freight locomotives across extreme duty cycles â€” protecting Common Rail injection systems from fuel contamination.'},
-              {label:'Lubrication Module', title:'SINTRAXâ„¢', desc:'High-flow oil filtration designed for extended intervals and soot control in heavy-duty locomotive engines â€” maintaining oil cleanliness across long-haul operations.'},
-              {label:'Air Intake', title:'MACROCOREâ„¢', desc:'Protection against ballast dust and metallic particles with zero-bypass radial seal technology â€” maintaining engine air quality across all railway operating environments.'},
-              {label:'Water Separation', title:'AQUAGUARDâ„¢', desc:'Advanced hydrophobic separation eliminates water contamination from locomotive fuel systems â€” protecting injection components during all-weather railway operations.'},
-              {label:'Pneumatic Systems', title:'DRYCOREâ„¢', desc:'Moisture elimination from air brake systems and pneumatic controls â€” ensuring full braking reliability and pneumatic safety across all locomotive and rolling stock platforms.'},
-              {label:'Cooling Systems', title:'COOLTECHâ„¢', desc:'Thermal protection for locomotive cooling circuits â€” preventing cavitation and scale buildup in high-horsepower diesel-electric engine cooling systems worldwide.'},
+              {label:'Fuel Module', title:'SYNTEPORE™', desc:'Clean combustion and torque stability for high-horsepower freight locomotives across extreme duty cycles â€” protecting Common Rail injection systems from fuel contamination.'},
+              {label:'Lubrication Module', title:'SINTRAX™', desc:'High-flow oil filtration designed for extended intervals and soot control in heavy-duty locomotive engines â€” maintaining oil cleanliness across long-haul operations.'},
+              {label:'Air Intake', title:'MACROCORE™', desc:'Protection against ballast dust and metallic particles with zero-bypass radial seal technology â€” maintaining engine air quality across all railway operating environments.'},
+              {label:'Water Separation', title:'AQUAGUARD™', desc:'Advanced hydrophobic separation eliminates water contamination from locomotive fuel systems â€” protecting injection components during all-weather railway operations.'},
+              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Moisture elimination from air brake systems and pneumatic controls â€” ensuring full braking reliability and pneumatic safety across all locomotive and rolling stock platforms.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for locomotive cooling circuits â€” preventing cavitation and scale buildup in high-horsepower diesel-electric engine cooling systems worldwide.'},
             ].map((c, i) => (
               <div key={i} className="ry-card">
                 <div className="ry-card-label">{c.label}</div>
@@ -141,7 +141,7 @@ export default function Railway() {
           <Link href="/search" className="ry-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
       </section>
-      <div className="ry-cta-footer">ELIMFILTERS GLOBAL // ENGINEERING PROTECTION STANDARDS 2026</div>
+      <div className="ry-cta-footer">RAILWAY PROTECTION STANDARD // ELIMFILTERS GLOBAL</div>
     </div>
   );
 }
