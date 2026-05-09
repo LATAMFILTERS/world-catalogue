@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,37 +8,50 @@ export default function MunicipalServices() {
     .ms{background:#000;color:#fff;min-height:100vh;}
     .ms-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ms-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ms-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/02/pexels-oscar-sanchez197-9535766-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ms-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/municipal-services.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ms-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ms-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
-    .ms-h1{font-family:'Russo One',sans-serif;font-size:clamp(38px,6vw,80px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
+    .ms-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
     .ms-h1 span{color:#FFF12D;}
     .ms-hero-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:640px;border-left:4px solid #FFF12D;padding-left:20px;letter-spacing:0.05em;margin-top:32px;}
     .ms-sec{padding:80px 6%;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ms-sec-inner{max-width:1400px;margin:0 auto;}
     .ms-grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-    .ms-h2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
-    .ms-h2 span{color:#FFF12D;}
+    .ms-sh2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
+    .ms-sh2 span{color:#FFF12D;}
     .ms-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
-    .ms-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
-    .ms-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;}
-    .ms-video-wrap:hover video{filter:grayscale(0);opacity:1;}
+    .ms-tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:24px;}
+    .ms-tech-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:6px;}
+    .ms-tech-val{font-family:'Russo One',sans-serif;font-size:16px;color:#fff;text-transform:uppercase;}
+    .ms-video-wrap{position:relative;}
+    .ms-video-wrap:before{content:'';position:absolute;inset:-4px;background:rgba(255,241,45,0.2);filter:blur(8px);opacity:0.25;transition:opacity 0.3s;}
+    .ms-video-wrap:hover:before{opacity:0.5;}
+    .ms-video-inner{position:relative;background:#000;border:1px solid rgba(255,255,255,0.1);padding:4px;z-index:1;}
+    .ms-video-inner video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:all 0.7s;}
+    .ms-video-wrap:hover .ms-video-inner video{filter:grayscale(0);opacity:1;}
+    .ms-btn{font-family:'Russo One',sans-serif;background:#FFF12D;color:#000;padding:20px 40px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;display:inline-block;text-decoration:none;transition:all 0.2s;margin-top:24px;}
+    .ms-btn:hover{background:#fff;}
     .ms-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .ms-feature{background:rgba(255,255,255,0.02);border-left:4px solid #FFF12D;padding:32px;transition:all 0.3s;height:100%;}
-    .ms-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-4px);}
-    .ms-feature-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
-    .ms-feature-title{font-family:'Russo One',sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .ms-feature-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
+    .ms-card{background:#080808;border:1px solid rgba(255,255,255,0.05);padding:36px;transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1);height:100%;}
+    .ms-card:hover{border-color:#FFF12D;transform:translateY(-5px);background:#0a0a0a;}
+    .ms-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
+    .ms-card-title{font-family:'Russo One',sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:16px;}
+    .ms-card-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
+    .ms-human{padding:80px 6%;background:#030303;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ms-human-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .ms-env{background:rgba(0,0,0,0.5);border:1px solid #1a1a1a;padding:40px;}
+    .ms-env-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
+    .ms-env-strong{font-family:'Russo One',sans-serif;font-size:16px;color:#fff;text-transform:uppercase;line-height:1.4;}
     .ms-cta{background:#FFF12D;padding:72px 6%;}
     .ms-cta-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
     .ms-cta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:12px;}
     .ms-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(28px,4vw,52px);color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
     .ms-cta-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(0,0,0,0.7);line-height:1.7;max-width:480px;letter-spacing:0.05em;}
-    .ms-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
-    .ms-btn:hover{background:#111;}
+    .ms-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
+    .ms-cta-btn:hover{background:#111;}
     .ms-cta-footer{background:#000;padding:12px 6%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,241,45,0.4);text-transform:uppercase;}
-    @media(max-width:1024px){.ms-grid2{grid-template-columns:1fr;} .ms-grid3{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:768px){.ms-grid3{grid-template-columns:1fr;} .ms-hero-p{font-size:12px;} .ms-cta-inner{flex-direction:column;}}
+    @media(max-width:1024px){.ms-grid2{grid-template-columns:1fr;} .ms-grid3{grid-template-columns:repeat(2,1fr);} .ms-human-inner{grid-template-columns:1fr;}}
+    @media(max-width:768px){.ms-grid3{grid-template-columns:1fr;} .ms-hero-p{font-size:12px;} .ms-cta-inner{flex-direction:column;} .ms-tech-grid{grid-template-columns:1fr;}}
   `;
 
   return (
@@ -48,9 +61,9 @@ export default function MunicipalServices() {
 
       <section className="ms-hero">
         <div className="ms-hero-inner">
-          <div className="ms-eyebrow">// CRITICAL URBAN SERVICES</div>
-          <h1 className="ms-h1">WASTE &amp; MUNICIPAL<br /><span>SERVICES</span></h1>
-          <p className="ms-hero-p">Industrial asset protection systems engineered for waste collection fleets, municipal vehicles, and critical urban service infrastructure. Our filtration technology shields diesel engines, hydraulic compaction systems, and lubrication circuits from contamination â€” extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across municipal operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <div className="ms-eyebrow">// STRATEGIC MUNICIPAL PROTECTION</div>
+          <h1 className="ms-h1">MUNICIPAL<br /><span>PUBLIC SERVICE CONTINUITY</span></h1>
+          <p className="ms-hero-p">Industrial asset protection systems engineered for municipal fleets, waste management operations, and critical public service infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from heavy-use contamination – extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across municipal operations worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -58,39 +71,62 @@ export default function MunicipalServices() {
         <div className="ms-sec-inner">
           <div className="ms-grid2">
             <div>
-              <div className="ms-eyebrow">// URBAN FLEET RELIABILITY</div>
-              <h2 className="ms-h2">CRITICAL SERVICES<br /><span>CANNOT STOP.</span></h2>
-              <p className="ms-p">Municipal waste and service vehicles operate under the most demanding stop-and-go cycles â€” multiple daily starts, heavy hydraulic loads, and contaminated environments that accelerate engine wear far beyond standard fleet applications.</p>
-              <p className="ms-p">ELIMFILTERS delivers synchronized protection across fuel, lubrication, hydraulic, and air intake systems â€” ensuring every vehicle completes its route and every service is delivered on time worldwide.</p>
+              <div className="ms-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
+              <h2 className="ms-sh2">MUNICIPAL RELIABILITY<br /><span>ENGINEERED</span></h2>
+              <p className="ms-p">Municipal fleets operate under intense conditions: continuous daily service, waste management cycles, and public infrastructure demands. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping public services running and communities served.</p>
+              <p className="ms-p">Service continuity protects public welfare, schedules, and municipal budgets across all public service operations worldwide.</p>
+              <div className="ms-tech-grid">
+                <div><div className="ms-tech-label">FUEL SYSTEMS</div><div className="ms-tech-val">AQUAGUARD™</div></div>
+                <div><div className="ms-tech-label">LUBRICATION</div><div className="ms-tech-val">SINTRAX™</div></div>
+                <div><div className="ms-tech-label">HYDRAULICS</div><div className="ms-tech-val">NANOFORCE™</div></div>
+                <div><div className="ms-tech-label">AIR INTAKE</div><div className="ms-tech-val">MACROCORE™</div></div>
+              </div>
+              <Link href="/technologies" className="ms-btn">VIEW ENGINEERING</Link>
             </div>
             <div className="ms-video-wrap">
-              <video src="/videos/servicios.mp4" autoPlay muted loop playsInline />
+              <div className="ms-video-inner">
+                <video src={`${WP}/2025/08/municipal-operations.mp4`} autoPlay muted loop playsInline />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="ms-sec">
+      <section className="ms-sec" style={{background:'#000'}}>
         <div className="ms-sec-inner">
           <div style={{textAlign:'center',marginBottom:'52px'}}>
-            <div className="ms-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// PROTECTION MATRIX</div>
-            <h2 className="ms-h2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>DEFENSE</span></h2>
+            <div className="ms-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// FLEET PROTECTION SYSTEMS</div>
+            <h2 className="ms-sh2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
           </div>
           <div className="ms-grid3">
             {[
-              {label:'MACROCORE™ / AIR', title:'URBAN AIR INTAKE', desc:'High-capacity media for urban environments with elevated particulate concentrations â€” protecting engines from micro-particles, soot, and industrial pollutants in city operations.'},
-              {label:'SYNTRAX™ / OIL', title:'STOP-GO PROTECTION', desc:'High-capacity soot control for engines under continuous stop-and-go cycles â€” maintaining oil cleanliness and protecting bearings during the frequent cold starts of municipal routes.'},
-              {label:'NANOFORCE™ / HYD', title:'COMPACTION SYSTEM', desc:'Precision hydraulic filtration for waste compaction systems operating under continuous high-pressure cycles â€” protecting hydraulic valves and actuators from contamination.'},
-              {label:'AQUAGUARD™ / FUEL', title:'FUEL PURITY', desc:'Water separation and particle removal for fuel systems in vehicles operating in wet and contaminated environments â€” ensuring reliable diesel delivery in all weather conditions.'},
-              {label:'DRYCORE™ / AIR', title:'BRAKE RELIABILITY', desc:'Moisture elimination from pneumatic brake systems â€” ensuring full braking reliability and safety compliance in heavy municipal vehicles operating in all weather conditions.'},
-              {label:'MICROKAPPA™ / CABIN', title:'OPERATOR HEALTH', desc:'HEPA-grade cabin protection for operators exposed to waste collection environments â€” eliminating biological contaminants, odors, and harmful gases from the operator cabin.'},
-            ].map((f, i) => (
-              <div key={i} className="ms-feature">
-                <div className="ms-feature-label">{f.label}</div>
-                <div className="ms-feature-title">{f.title}</div>
-                <p className="ms-feature-p">{f.desc}</p>
+              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Advanced water separation and contamination removal for municipal fuel systems – protecting Common Rail injection systems in heavy-use public service environments.'},
+              {label:'Lubrication Module', title:'SINTRAX™', desc:'Maintains oil viscosity and cleanliness under continuous municipal duty cycles – extending fleet vehicle life across public service operations.'},
+              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Precision stability for hydraulic systems operating under continuous public service duty – protecting control systems and waste equipment from contamination.'},
+              {label:'Air Intake', title:'MACROCORE™', desc:'Protection against urban dust and particulate contamination with zero-bypass technology – maintaining engine air quality in municipal environments.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for municipal vehicle cooling circuits – preventing scale buildup and corrosion in high-duty fleet cooling systems.'},
+              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Moisture elimination from pneumatic brakes and controls – ensuring safety and reliability across all municipal fleet operations.'},
+            ].map((c, i) => (
+              <div key={i} className="ms-card">
+                <div className="ms-card-label">{c.label}</div>
+                <div className="ms-card-title">{c.title}</div>
+                <p className="ms-card-p">{c.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ms-human">
+        <div className="ms-human-inner">
+          <div>
+            <div className="ms-eyebrow">// HUMAN + ENVIRONMENT</div>
+            <h2 className="ms-sh2">PROTECTING <span>PUBLIC SERVICES</span></h2>
+            <p className="ms-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Municipal services sustain communities. Protection ensures equipment performance and the continuity of public service operations worldwide.</p>
+          </div>
+          <div className="ms-env">
+            <p className="ms-env-p">Cleaner combustion and optimized fluid systems reduce emissions, improve fuel efficiency, and contribute to urban air quality – protecting both public health and municipal budgets.</p>
+            <div className="ms-env-strong">From waste collection to essential services: protection is mission-critical.</div>
           </div>
         </div>
       </section>
@@ -98,18 +134,14 @@ export default function MunicipalServices() {
       <section className="ms-cta">
         <div className="ms-cta-inner">
           <div>
-            <div className="ms-cta-label">// MUNICIPAL PROCUREMENT</div>
-            <div className="ms-cta-h2">KEEP CITIES RUNNING.<br />FIND YOUR FILTER.</div>
-            <p className="ms-cta-p">Municipal services depend on fleet reliability. Upgrade your waste and service vehicle protection with ELIMFILTERS. Precision-matched to OEM specifications across 5,000+ cross-references.</p>
+            <div className="ms-cta-label">// MUNICIPAL CROSS REFERENCE</div>
+            <div className="ms-cta-h2">FLEET UPTIME IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
+            <p className="ms-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your fleet. Precision-matched across 5,000+ cross-references worldwide.</p>
           </div>
-          <Link href="/search" className="ms-btn">FIND MY FILTER &rarr;</Link>
+          <Link href="/search" className="ms-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
       </section>
       <div className="ms-cta-footer">MUNICIPAL PROTECTION STANDARD // ELIMFILTERS GLOBAL</div>
     </div>
   );
 }
-
-
-
-

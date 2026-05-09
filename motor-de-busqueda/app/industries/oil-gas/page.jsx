@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import Link from 'next/link';
 
 const WP = 'https://elimfilters.com/wp-content/uploads';
@@ -8,57 +8,50 @@ export default function OilGas() {
     .og{background:#000;color:#fff;min-height:100vh;}
     .og-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .og-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .og-hero{min-height:75vh;display:flex;align-items:center;background:linear-gradient(90deg,#000 45%,transparent 100%),url('${WP}/2026/04/pexels-tomfisk-6767962-1-scaled.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .og-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/oil-gas-infrastructure.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .og-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .og-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
-    .og-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,100px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
+    .og-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
     .og-h1 span{color:#FFF12D;}
     .og-hero-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:640px;border-left:4px solid #FFF12D;padding-left:20px;letter-spacing:0.05em;margin-top:32px;}
     .og-sec{padding:80px 6%;border-bottom:1px solid rgba(255,255,255,0.04);}
     .og-sec-inner{max-width:1400px;margin:0 auto;}
     .og-grid2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-    .og-h2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,60px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
-    .og-h2 span{color:#FFF12D;}
+    .og-sh2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
+    .og-sh2 span{color:#FFF12D;}
     .og-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
-    .og-video-wrap{background:#000;border:1px solid #1a1a1a;padding:4px;overflow:hidden;}
-    .og-video-wrap video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:opacity 0.3s;}
-    {filter:grayscale(0);opacity:1;}
+    .og-tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:24px;}
+    .og-tech-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:6px;}
+    .og-tech-val{font-family:'Russo One',sans-serif;font-size:16px;color:#fff;text-transform:uppercase;}
+    .og-video-wrap{position:relative;}
+    .og-video-wrap:before{content:'';position:absolute;inset:-4px;background:rgba(255,241,45,0.2);filter:blur(8px);opacity:0.25;transition:opacity 0.3s;}
+    .og-video-wrap:hover:before{opacity:0.5;}
+    .og-video-inner{position:relative;background:#000;border:1px solid rgba(255,255,255,0.1);padding:4px;z-index:1;}
+    .og-video-inner video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:all 0.7s;}
+    .og-video-wrap:hover .og-video-inner video{filter:grayscale(0);opacity:1;}
+    .og-btn{font-family:'Russo One',sans-serif;background:#FFF12D;color:#000;padding:20px 40px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;display:inline-block;text-decoration:none;transition:all 0.2s;margin-top:24px;}
+    .og-btn:hover{background:#fff;}
     .og-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .og-feature{background:rgba(255,255,255,0.02);border-left:3px solid #FFF12D;padding:36px;transition:all 0.3s;}
-    .og-feature:hover{background:rgba(255,255,255,0.05);transform:translateY(-4px);}
-    .og-feature-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
-    .og-feature-title{font-family:'Russo One',sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .og-feature-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
-    .og-tco{background:#050505;border:1px solid rgba(255,241,45,0.2);padding:48px;}
-    .og-tco-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-    .og-table{width:100%;border-collapse:collapse;}
-    .og-table th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);}
-    .og-table th:nth-child(2){color:#ef4444;}
-    .og-table th:nth-child(3){color:#FFF12D;}
-    .og-table td{font-family:'JetBrains Mono',monospace;font-size:12px;padding:16px;border-bottom:1px solid rgba(255,255,255,0.05);}
-    .og-table tr:hover td{background:rgba(255,255,255,0.03);}
-    .og-table td:nth-child(2){color:#ef4444;}
-    .og-table td:nth-child(3){color:#FFF12D;}
-    .og-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px;}
-    .og-stat-n{font-family:'Russo One',sans-serif;font-size:40px;color:#FFF12D;margin-bottom:6px;}
-    .og-stat-n.white{color:#fff;}
-    .og-stat-l{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase;}
-    .og-protocol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .og-protocol-card{background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.05);padding:40px 30px;position:relative;overflow:hidden;}
-    .og-protocol-num{position:absolute;right:-5px;top:-5px;font-family:'Russo One',sans-serif;font-size:70px;color:rgba(255,241,45,0.03);}
-    .og-protocol-title{font-family:'Russo One',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .og-protocol-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
-    .og-protocol-line{margin-top:24px;height:2px;width:40px;background:#FFF12D;}
+    .og-card{background:#080808;border:1px solid rgba(255,255,255,0.05);padding:36px;transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1);height:100%;}
+    .og-card:hover{border-color:#FFF12D;transform:translateY(-5px);background:#0a0a0a;}
+    .og-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
+    .og-card-title{font-family:'Russo One',sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:16px;}
+    .og-card-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
+    .og-human{padding:80px 6%;background:#030303;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .og-human-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .og-env{background:rgba(0,0,0,0.5);border:1px solid #1a1a1a;padding:40px;}
+    .og-env-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
+    .og-env-strong{font-family:'Russo One',sans-serif;font-size:16px;color:#fff;text-transform:uppercase;line-height:1.4;}
     .og-cta{background:#FFF12D;padding:72px 6%;}
     .og-cta-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
     .og-cta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:12px;}
-    .og-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(32px,5vw,56px);color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
+    .og-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(28px,4vw,52px);color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
     .og-cta-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(0,0,0,0.7);line-height:1.7;max-width:480px;letter-spacing:0.05em;}
     .og-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
     .og-cta-btn:hover{background:#111;}
     .og-cta-footer{background:#000;padding:12px 6%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,241,45,0.4);text-transform:uppercase;}
-    @media(max-width:1024px){.og-grid2{grid-template-columns:1fr;} .og-grid3{grid-template-columns:repeat(2,1fr);} .og-tco-grid{grid-template-columns:1fr;} .og-protocol-grid{grid-template-columns:1fr;}}
-    @media(max-width:768px){.og-grid3{grid-template-columns:1fr;} .og-hero-p{font-size:12px;} .og-cta-inner{flex-direction:column;} .og-stats{grid-template-columns:1fr;}}
+    @media(max-width:1024px){.og-grid2{grid-template-columns:1fr;} .og-grid3{grid-template-columns:repeat(2,1fr);} .og-human-inner{grid-template-columns:1fr;}}
+    @media(max-width:768px){.og-grid3{grid-template-columns:1fr;} .og-hero-p{font-size:12px;} .og-cta-inner{flex-direction:column;} .og-tech-grid{grid-template-columns:1fr;}}
   `;
 
   return (
@@ -68,9 +61,9 @@ export default function OilGas() {
 
       <section className="og-hero">
         <div className="og-hero-inner">
-          <div className="og-eyebrow">// UPSTREAM â€¢ MIDSTREAM â€¢ DOWNSTREAM</div>
-          <h1 className="og-h1">OIL & GAS<br /><span>MISSION-CRITICAL.</span></h1>
-          <p className="og-hero-p">Industrial asset protection systems engineered for upstream drilling operations, midstream pipeline infrastructure, and downstream refinery equipment. Our filtration technology shields turbines, hydraulic BOP systems, fuel circuits, and air intake systems from H2S exposure, salt mist, and abrasive contamination â€” ensuring uninterrupted energy output across global oil and gas operations. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <div className="og-eyebrow">// STRATEGIC ENERGY PROTECTION</div>
+          <h1 className="og-h1">OIL & GAS<br /><span>OPERATIONAL CONTINUITY</span></h1>
+          <p className="og-hero-p">Industrial asset protection systems engineered for oil and gas operations, drilling equipment, and critical energy infrastructure. Our filtration technology shields hydraulic circuits, fuel systems, lubrication lines, and air intake systems from harsh-environment contamination – extending asset lifespan, eliminating unplanned downtime, and reducing total cost of ownership across global energy operations. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
 
@@ -78,71 +71,22 @@ export default function OilGas() {
         <div className="og-sec-inner">
           <div className="og-grid2">
             <div>
-              <div className="og-eyebrow">// ZERO FAILURE ENERGY CONTINUITY</div>
-              <h2 className="og-h2">ENGINEERED FOR<br /><span>UNINTERRUPTED FLOW.</span></h2>
-              <p className="og-p">Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure, salt mist, and abrasive mineral contamination across upstream, midstream, and downstream energy infrastructure worldwide.</p>
-              <p className="og-p">Energy infrastructure cannot stop. Filtration is not maintenance â€” it is operational survival for turbines, high-pressure injection systems, and hydraulic control circuits in the world's most critical energy operations.</p>
+              <div className="og-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
+              <h2 className="og-sh2">ENERGY RELIABILITY<br /><span>ENGINEERED</span></h2>
+              <p className="og-p">Oil and gas operations face extreme challenges: harsh environmental conditions, remote locations, and continuous duty cycles. Our high-capacity filtration technologies are engineered for durability, fuel cleanliness, and extended intervals – keeping energy operations running worldwide.</p>
+              <p className="og-p">Operational uptime protects energy production, revenue, and global energy continuity across all oil and gas operations.</p>
+              <div className="og-tech-grid">
+                <div><div className="og-tech-label">FUEL SYSTEMS</div><div className="og-tech-val">AQUAGUARD™</div></div>
+                <div><div className="og-tech-label">LUBRICATION</div><div className="og-tech-val">SINTRAX™</div></div>
+                <div><div className="og-tech-label">HYDRAULICS</div><div className="og-tech-val">NANOFORCE™</div></div>
+                <div><div className="og-tech-label">AIR INTAKE</div><div className="og-tech-val">MACROCORE™</div></div>
+              </div>
+              <Link href="/technologies" className="og-btn">VIEW ENGINEERING</Link>
             </div>
             <div className="og-video-wrap">
-              <video src={`${WP}/2025/08/5123350-uhd_3840_2160_30fps.mp4`} autoPlay muted loop playsInline />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="og-sec">
-        <div className="og-sec-inner">
-          <div className="og-eyebrow" style={{marginBottom:'20px'}}>// DNA TECHNOLOGY MATRIX</div>
-          <h2 className="og-h2">CORE <span>SYSTEMS</span></h2>
-          <div className="og-grid3" style={{marginTop:'40px'}}>
-            {[
-              {label:'MACROCORE™', title:'AIR INTAKE', desc:'High-capacity media engineered for offshore platforms and abrasive dust environments â€” protecting gas turbines and diesel generators from intake contamination.'},
-              {label:'AQUAGUARD™', title:'FUEL PURITY', desc:'99.9% water separation protecting critical energy platforms â€” ensuring pure fuel delivery to injection systems in remote upstream and offshore operations.'},
-              {label:'NANOFORCE™', title:'HYDRAULIC', desc:'Precision filtration for BOP systems, subsea controls, and wellhead hydraulic circuits â€” maintaining cleanliness codes in safety-critical oil and gas applications.'},
-              {label:'SINTRAX™', title:'LUBRICATION', desc:'High-capacity oil filtration for compressors, pumps, and power generation equipment â€” extending lubricant service life in continuous-duty energy operations.'},
-              {label:'AQUAGUARD SERIES', title:'TURBINE SEPARATION', desc:'FH Series turbine separator technology eliminates water contamination from fuel systems â€” protecting diesel generators and gas-powered equipment on remote sites.'},
-              {label:'DRYCORE™', title:'PNEUMATIC SAFETY', desc:'Moisture elimination from instrument air and pneumatic control systems â€” protecting safety-critical valves and control actuators from corrosion in H2S environments.'},
-            ].map((f, i) => (
-              <div key={i} className="og-feature">
-                <div className="og-feature-label">{f.label}</div>
-                <div className="og-feature-title">{f.title}</div>
-                <p className="og-feature-p">{f.desc}</p>
+              <div className="og-video-inner">
+                <video src={`${WP}/2025/08/energy-operations.mp4`} autoPlay muted loop playsInline />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="og-sec" style={{background:'#030303'}}>
-        <div className="og-sec-inner">
-          <div className="og-tco">
-            <div className="og-tco-grid">
-              <div>
-                <div className="og-eyebrow" style={{marginBottom:'16px'}}>// TCO ANALYSIS</div>
-                <h2 className="og-h2">THE ECONOMICS OF<br /><span>ENERGY UPTIME.</span></h2>
-                <p className="og-p">In oil and gas operations, every hour of unplanned downtime can cost hundreds of thousands of dollars in lost production, regulatory penalties, and emergency maintenance across upstream and midstream assets.</p>
-                <div className="og-stats">
-                  <div><div className="og-stat-n">99.9%</div><div className="og-stat-l">FUEL PURITY</div></div>
-                  <div><div className="og-stat-n white">ZERO</div><div className="og-stat-l">BYPASS TOLERANCE</div></div>
-                  <div><div className="og-stat-n">+35%</div><div className="og-stat-l">COMPONENT LIFE</div></div>
-                  <div><div className="og-stat-n white">ROI</div><div className="og-stat-l">ENERGY UPTIME</div></div>
-                </div>
-              </div>
-              <table className="og-table">
-                <thead>
-                  <tr>
-                    <th style={{textAlign:'left'}}>FIELD CHALLENGE</th>
-                    <th style={{textAlign:'left'}}>STANDARD</th>
-                    <th style={{textAlign:'left'}}>ELIMFILTERS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>H2S Corrosion</td><td>Component Failure</td><td>Full Neutralization</td></tr>
-                  <tr><td>Salt Mist Exposure</td><td>Rapid Degradation</td><td>Naval Grade Shield</td></tr>
-                  <tr><td>Water in Fuel</td><td>Injector Erosion</td><td>99.9% Separation</td></tr>
-                  <tr><td>Remote Site Ops</td><td>Frequent Stops</td><td>Extended Intervals</td></tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
@@ -150,23 +94,39 @@ export default function OilGas() {
 
       <section className="og-sec" style={{background:'#000'}}>
         <div className="og-sec-inner">
-          <div style={{marginBottom:'52px',borderLeft:'4px solid #FFF12D',paddingLeft:'20px'}}>
-            <div className="og-eyebrow">// SYSTEM VALIDATION</div>
-            <h2 className="og-h2" style={{marginTop:'8px'}}>PERFORMANCE PROTOCOL</h2>
+          <div style={{textAlign:'center',marginBottom:'52px'}}>
+            <div className="og-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// EQUIPMENT PROTECTION SYSTEMS</div>
+            <h2 className="og-sh2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
           </div>
-          <div className="og-protocol-grid">
+          <div className="og-grid3">
             {[
-              {num:'01', title:'CORROSION DEFENSE', desc:'Engineered to withstand H2S exposure, salt mist, and corrosive atmospheres in offshore and sour gas environments â€” protecting critical energy infrastructure worldwide.'},
-              {num:'02', title:'REMOTE RELIABILITY', desc:'Extended service intervals designed for remote site operations â€” reducing maintenance logistics and ensuring continuous protection in locations far from supply chains.'},
-              {num:'03', title:'SAFETY COMPLIANCE', desc:'Filtration systems engineered to meet oil and gas industry safety standards â€” protecting BOP systems, subsea controls, and safety-critical hydraulic circuits from contamination.'},
-            ].map((p, i) => (
-              <div key={i} className="og-protocol-card">
-                <div className="og-protocol-num">{p.num}</div>
-                <div className="og-protocol-title">{p.title}</div>
-                <p className="og-protocol-p">{p.desc}</p>
-                <div className="og-protocol-line" />
+              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Advanced water separation and contamination removal for remote oil and gas fuel systems – protecting Common Rail injection systems in harsh remote locations.'},
+              {label:'Lubrication Module', title:'SINTRAX™', desc:'Maintains oil viscosity and cleanliness under continuous high-load energy operations – extending equipment life across drilling and production facilities.'},
+              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Precision stability for hydraulic systems operating under extreme pressure and remote duty – protecting drilling controls and production equipment from contamination.'},
+              {label:'Air Intake', title:'MACROCORE™', desc:'Protection against desert dust and environmental particulate contamination – maintaining engine air quality in remote oil and gas operations.'},
+              {label:'Cooling Systems', title:'COOLTECH™', desc:'Thermal protection for energy equipment cooling circuits – preventing scale buildup and corrosion in extreme-duty cooling systems.'},
+              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Moisture elimination from pneumatic controls and safety systems – ensuring safety and reliability across all energy platform operations.'},
+            ].map((c, i) => (
+              <div key={i} className="og-card">
+                <div className="og-card-label">{c.label}</div>
+                <div className="og-card-title">{c.title}</div>
+                <p className="og-card-p">{c.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="og-human">
+        <div className="og-human-inner">
+          <div>
+            <div className="og-eyebrow">// HUMAN + ENVIRONMENT</div>
+            <h2 className="og-sh2">PROTECTING <span>ENERGY OPERATIONS</span></h2>
+            <p className="og-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Energy production sustains economies. Protection ensures operational continuity and the reliability of global energy systems.</p>
+          </div>
+          <div className="og-env">
+            <p className="og-env-p">Cleaner combustion and optimized fluid systems reduce emissions and environmental impact – contributing to responsible energy operations that protect both the environment and community health.</p>
+            <div className="og-env-strong">From exploration to production: protection is mission-critical.</div>
           </div>
         </div>
       </section>
@@ -174,15 +134,14 @@ export default function OilGas() {
       <section className="og-cta">
         <div className="og-cta-inner">
           <div>
-            <div className="og-cta-label">// STRATEGIC PROCUREMENT</div>
-            <div className="og-cta-h2">ELIMINATE FIELD DOWNTIME.<br />SECURE YOUR YIELD.</div>
-            <p className="og-cta-p">Do not allow inadequate filtration to compromise your energy output. Upgrade your oil and gas infrastructure defense today. Precision-matched to OEM specifications across 5,000+ cross-references.</p>
+            <div className="og-cta-label">// OIL & GAS CROSS REFERENCE</div>
+            <div className="og-cta-h2">OPERATIONAL UPTIME IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
+            <p className="og-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your operations. Precision-matched across 5,000+ cross-references worldwide.</p>
           </div>
           <Link href="/search" className="og-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
       </section>
-      <div className="og-cta-footer">ENERGY PROTECTION STANDARD // ELIMFILTERS GLOBAL</div>
+      <div className="og-cta-footer">OIL & GAS PROTECTION STANDARD // ELIMFILTERS GLOBAL</div>
     </div>
   );
 }
-
