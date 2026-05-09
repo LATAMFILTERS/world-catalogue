@@ -2,8 +2,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 const VIDEOS = [
+<<<<<<< HEAD:motor-de-busqueda/motor-de-busqueda/temp_folder/app/components/Intro.jsx
   'https://elimfilters.com/wp-content/uploads/2026/05/moleculas.mp4',
   'https://elimfilters.com/wp-content/uploads/2026/05/maquinaria-en-mina.mp4',
+=======
+  'https://cdn.elimfilters.com/Slow_macro_push-in_particles_202605060145.mp4',
+  'https://cdn.elimfilters.com/maquinaria.mp4',
+>>>>>>> claude/trucks-fleets-image-lNP9y:motor-de-busqueda/app/components/Intro.jsx
   'https://elimfilters.com/wp-content/uploads/2026/05/p554004.mp4',
 ];
 

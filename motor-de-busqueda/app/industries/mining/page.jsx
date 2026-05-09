@@ -8,7 +8,7 @@ export default function Mining() {
     .mn{background:#000;color:#fff;min-height:100vh;}
     .mn-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .mn-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .mn-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2025/08/mining-equipment.jpg') center/contain no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .mn-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/Mining.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .mn-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .mn-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .mn-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -85,7 +85,7 @@ export default function Mining() {
             </div>
             <div className="mn-video-wrap">
               <div className="mn-video-inner">
-                <video src={`${WP}/2025/08/mining-operations.mp4`} autoPlay muted loop playsInline />
+                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/mineria.mp4" autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
@@ -122,11 +122,11 @@ export default function Mining() {
           <div>
             <div className="mn-eyebrow">// HUMAN + ENVIRONMENT</div>
             <h2 className="mn-sh2">PROTECTING <span>MINING OPERATIONS</span></h2>
-            <p className="mn-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Mineral extraction depends on equipment reliability. Protection ensures operational continuity and the profitability of mining operations worldwide.</p>
+            <p className="mn-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>In mining, failures do not happen at convenient times. They happen mid-blast cycle, mid-haul, and mid-shift – when every idle machine multiplies into tonnes of unrecovered ore and lost revenue. Filtration that prevents failures is the lowest-cost investment in the mine plan.</p>
           </div>
           <div className="mn-env">
-            <p className="mn-env-p">Cleaner combustion and optimized fluid systems reduce emissions and environmental impact – contributing to sustainable mining practices that protect both operations and the environment.</p>
-            <div className="mn-env-strong">From underground to surface operations: protection is mission-critical.</div>
+            <p className="mn-env-p">Mining operations face increasing regulatory scrutiny of diesel particulate emissions in underground environments, where DPM concentrations directly affect worker health under mine safety legislation. Tier 4 Final and Stage V engines with DPF and SCR systems dramatically reduce underground DPM exposure – but only when fuel injection systems are kept clean and EGR systems receive clean oil. AQUAGUARD™ and SINTRAX™ protect the injection and lubrication systems that allow emissions aftertreatment to function as designed, supporting mine operators in maintaining compliance with underground diesel emissions standards and ESG reporting obligations to investors and regulators.</p>
+            <div className="mn-env-strong">From ore face to haul road: clean systems protect people and production.</div>
           </div>
         </div>
       </section>
