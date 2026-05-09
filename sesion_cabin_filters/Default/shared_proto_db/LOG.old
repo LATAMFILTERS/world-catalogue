@@ -1,0 +1,4 @@
+2026/04/29-10:22:41.629 850c Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\shared_proto_db since it was missing.
+2026/04/29-10:22:41.636 850c Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\shared_proto_db/MANIFEST-000001
+2026/04/29-10:22:41.647 850c Recovering log #3
+2026/04/29-10:22:41.647 850c Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\shared_proto_db/000003.log 

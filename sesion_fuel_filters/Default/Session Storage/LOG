@@ -1,0 +1,27 @@
+2026/04/29-19:40:44.193 4750 Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\Session Storage/MANIFEST-000001
+2026/04/29-19:40:44.211 4750 Recovering log #15
+2026/04/29-19:40:44.211 4750 Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\Session Storage/000015.log 
+2026/04/29-20:13:21.799 2d94 Level-0 table #19: started
+2026/04/29-20:13:21.815 2d94 Level-0 table #19: 12984 bytes OK
+2026/04/29-20:13:21.824 2d94 Delete type=0 #15
+2026/04/29-20:55:26.990 2d94 Level-0 table #21: started
+2026/04/29-20:55:27.069 2d94 Level-0 table #21: 12890 bytes OK
+2026/04/29-20:55:27.077 2d94 Delete type=0 #18
+2026/04/29-21:38:25.541 2d94 Level-0 table #23: started
+2026/04/29-21:38:25.545 2d94 Level-0 table #23: 12788 bytes OK
+2026/04/29-21:38:25.547 2d94 Delete type=0 #20
+2026/04/29-22:19:38.451 2d94 Level-0 table #25: started
+2026/04/29-22:19:38.457 2d94 Level-0 table #25: 12925 bytes OK
+2026/04/29-22:19:38.458 2d94 Delete type=0 #22
+2026/04/29-22:59:02.373 66c4 Level-0 table #27: started
+2026/04/29-22:59:02.379 66c4 Level-0 table #27: 12457 bytes OK
+2026/04/29-22:59:02.381 66c4 Delete type=0 #24
+2026/04/29-22:59:02.385 66c4 Compacting 4@0 + 1@1 files
+2026/04/29-22:59:02.389 66c4 Generated table #28@0: 1554 keys, 33189 bytes
+2026/04/29-22:59:02.389 66c4 Compacted 4@0 + 1@1 files => 33189 bytes
+2026/04/29-22:59:02.390 66c4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/29-22:59:02.392 66c4 Delete type=2 #19
+2026/04/29-22:59:02.392 66c4 Delete type=2 #21
+2026/04/29-22:59:02.394 66c4 Delete type=2 #23
+2026/04/29-22:59:02.395 66c4 Delete type=2 #25
+2026/04/29-22:59:02.395 66c4 Delete type=2 #27

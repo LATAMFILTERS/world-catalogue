@@ -1,0 +1,90 @@
+2026/04/29-19:40:41.761 66c4 Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\Local Storage\leveldb/MANIFEST-000001
+2026/04/29-19:40:41.779 66c4 Recovering log #47
+2026/04/29-19:40:41.780 66c4 Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\Local Storage\leveldb/000047.log 
+2026/04/29-19:51:44.196 2d94 Level-0 table #51: started
+2026/04/29-19:51:44.212 2d94 Level-0 table #51: 12070 bytes OK
+2026/04/29-19:51:44.214 2d94 Delete type=0 #47
+2026/04/29-20:04:44.190 2d94 Level-0 table #53: started
+2026/04/29-20:04:44.196 2d94 Level-0 table #53: 11222 bytes OK
+2026/04/29-20:04:44.197 2d94 Delete type=0 #50
+2026/04/29-20:17:44.200 2d94 Level-0 table #55: started
+2026/04/29-20:17:44.207 2d94 Level-0 table #55: 11391 bytes OK
+2026/04/29-20:17:44.209 2d94 Delete type=0 #52
+2026/04/29-20:30:44.199 2d94 Level-0 table #57: started
+2026/04/29-20:30:44.211 2d94 Level-0 table #57: 11157 bytes OK
+2026/04/29-20:30:44.226 2d94 Delete type=0 #54
+2026/04/29-20:30:44.230 2d94 Compacting 4@0 + 1@1 files
+2026/04/29-20:30:44.258 2d94 Generated table #58@0: 13 keys, 1473 bytes
+2026/04/29-20:30:44.258 2d94 Compacted 4@0 + 1@1 files => 1473 bytes
+2026/04/29-20:30:44.260 2d94 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/29-20:30:44.262 2d94 Delete type=2 #48
+2026/04/29-20:30:44.264 2d94 Delete type=2 #51
+2026/04/29-20:30:44.265 2d94 Delete type=2 #53
+2026/04/29-20:30:44.265 2d94 Delete type=2 #55
+2026/04/29-20:30:44.265 2d94 Delete type=2 #57
+2026/04/29-20:43:44.207 2d94 Level-0 table #60: started
+2026/04/29-20:43:44.216 2d94 Level-0 table #60: 10971 bytes OK
+2026/04/29-20:43:44.217 2d94 Delete type=0 #56
+2026/04/29-20:56:44.195 2d94 Level-0 table #62: started
+2026/04/29-20:56:44.208 2d94 Level-0 table #62: 11090 bytes OK
+2026/04/29-20:56:44.215 2d94 Delete type=0 #59
+2026/04/29-21:09:44.195 2d94 Level-0 table #64: started
+2026/04/29-21:09:44.202 2d94 Level-0 table #64: 11177 bytes OK
+2026/04/29-21:09:44.204 2d94 Delete type=0 #61
+2026/04/29-21:23:44.193 2d94 Level-0 table #66: started
+2026/04/29-21:23:44.199 2d94 Level-0 table #66: 12464 bytes OK
+2026/04/29-21:23:44.200 2d94 Delete type=0 #63
+2026/04/29-21:23:44.203 2d94 Compacting 4@0 + 1@1 files
+2026/04/29-21:23:44.231 2d94 Generated table #67@0: 14 keys, 1647 bytes
+2026/04/29-21:23:44.232 2d94 Compacted 4@0 + 1@1 files => 1647 bytes
+2026/04/29-21:23:44.232 2d94 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/29-21:23:44.233 2d94 Delete type=2 #58
+2026/04/29-21:23:44.233 2d94 Delete type=2 #60
+2026/04/29-21:23:44.233 2d94 Delete type=2 #62
+2026/04/29-21:23:44.234 2d94 Delete type=2 #64
+2026/04/29-21:23:44.234 2d94 Delete type=2 #66
+2026/04/29-21:36:44.188 2d94 Level-0 table #69: started
+2026/04/29-21:36:44.198 2d94 Level-0 table #69: 11205 bytes OK
+2026/04/29-21:36:44.200 2d94 Delete type=0 #65
+2026/04/29-21:49:44.202 2d94 Level-0 table #71: started
+2026/04/29-21:49:44.206 2d94 Level-0 table #71: 11120 bytes OK
+2026/04/29-21:49:44.207 2d94 Delete type=0 #68
+2026/04/29-22:02:44.194 2d94 Level-0 table #73: started
+2026/04/29-22:02:44.204 2d94 Level-0 table #73: 10996 bytes OK
+2026/04/29-22:02:44.211 2d94 Delete type=0 #70
+2026/04/29-22:15:44.197 2d94 Level-0 table #75: started
+2026/04/29-22:15:44.203 2d94 Level-0 table #75: 11120 bytes OK
+2026/04/29-22:15:44.205 2d94 Delete type=0 #72
+2026/04/29-22:15:44.206 2d94 Compacting 4@0 + 1@1 files
+2026/04/29-22:15:44.219 2d94 Generated table #76@0: 14 keys, 1621 bytes
+2026/04/29-22:15:44.219 2d94 Compacted 4@0 + 1@1 files => 1621 bytes
+2026/04/29-22:15:44.220 2d94 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/29-22:15:44.220 2d94 Delete type=2 #67
+2026/04/29-22:15:44.221 2d94 Delete type=2 #69
+2026/04/29-22:15:44.221 2d94 Delete type=2 #71
+2026/04/29-22:15:44.221 2d94 Delete type=2 #73
+2026/04/29-22:15:44.221 2d94 Delete type=2 #75
+2026/04/29-22:28:44.204 2d94 Level-0 table #78: started
+2026/04/29-22:28:44.213 2d94 Level-0 table #78: 11211 bytes OK
+2026/04/29-22:28:44.216 2d94 Delete type=0 #74
+2026/04/29-22:41:44.213 2d94 Level-0 table #80: started
+2026/04/29-22:41:44.222 2d94 Level-0 table #80: 11279 bytes OK
+2026/04/29-22:41:44.224 2d94 Delete type=0 #77
+2026/04/29-22:54:44.193 2d94 Level-0 table #82: started
+2026/04/29-22:54:44.201 2d94 Level-0 table #82: 11555 bytes OK
+2026/04/29-22:54:44.203 2d94 Delete type=0 #79
+2026/04/29-23:07:44.193 2d94 Level-0 table #84: started
+2026/04/29-23:07:44.197 2d94 Level-0 table #84: 11763 bytes OK
+2026/04/29-23:07:44.200 2d94 Delete type=0 #81
+2026/04/29-23:07:44.201 2d94 Compacting 4@0 + 1@1 files
+2026/04/29-23:07:44.215 2d94 Generated table #85@0: 14 keys, 1681 bytes
+2026/04/29-23:07:44.215 2d94 Compacted 4@0 + 1@1 files => 1681 bytes
+2026/04/29-23:07:44.216 2d94 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/29-23:07:44.216 2d94 Delete type=2 #76
+2026/04/29-23:07:44.217 2d94 Delete type=2 #78
+2026/04/29-23:07:44.218 2d94 Delete type=2 #80
+2026/04/29-23:07:44.218 2d94 Delete type=2 #82
+2026/04/29-23:07:44.219 2d94 Delete type=2 #84
+2026/04/29-23:20:44.194 2d94 Level-0 table #87: started
+2026/04/29-23:20:44.203 2d94 Level-0 table #87: 11830 bytes OK
+2026/04/29-23:20:44.205 2d94 Delete type=0 #83

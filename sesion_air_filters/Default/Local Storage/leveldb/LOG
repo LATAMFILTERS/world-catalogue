@@ -1,0 +1,27 @@
+2026/04/30-03:23:58.226 4f4c Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filters\Default\Local Storage\leveldb/MANIFEST-000001
+2026/04/30-03:23:58.244 4f4c Recovering log #132
+2026/04/30-03:23:58.246 4f4c Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filters\Default\Local Storage\leveldb/000132.log 
+2026/04/30-03:30:00.605 5244 Level-0 table #136: started
+2026/04/30-03:30:00.612 5244 Level-0 table #136: 11378 bytes OK
+2026/04/30-03:30:00.614 5244 Delete type=0 #132
+2026/04/30-03:43:00.595 5244 Level-0 table #138: started
+2026/04/30-03:43:00.608 5244 Level-0 table #138: 11054 bytes OK
+2026/04/30-03:43:00.609 5244 Delete type=0 #135
+2026/04/30-03:56:00.597 5244 Level-0 table #140: started
+2026/04/30-03:56:00.614 5244 Level-0 table #140: 11437 bytes OK
+2026/04/30-03:56:00.615 5244 Delete type=0 #137
+2026/04/30-03:56:00.617 5244 Compacting 4@0 + 1@1 files
+2026/04/30-03:56:00.627 5244 Generated table #141@0: 14 keys, 1686 bytes
+2026/04/30-03:56:00.627 5244 Compacted 4@0 + 1@1 files => 1686 bytes
+2026/04/30-03:56:00.628 5244 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/04/30-03:56:00.628 5244 Delete type=2 #131
+2026/04/30-03:56:00.628 5244 Delete type=2 #133
+2026/04/30-03:56:00.628 5244 Delete type=2 #136
+2026/04/30-03:56:00.628 5244 Delete type=2 #138
+2026/04/30-03:56:00.628 5244 Delete type=2 #140
+2026/04/30-04:09:00.600 5244 Level-0 table #143: started
+2026/04/30-04:09:00.613 5244 Level-0 table #143: 11222 bytes OK
+2026/04/30-04:09:00.614 5244 Delete type=0 #139
+2026/04/30-04:23:00.603 5244 Level-0 table #145: started
+2026/04/30-04:23:00.609 5244 Level-0 table #145: 11403 bytes OK
+2026/04/30-04:23:00.610 5244 Delete type=0 #142

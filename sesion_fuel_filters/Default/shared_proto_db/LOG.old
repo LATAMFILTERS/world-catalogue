@@ -1,0 +1,4 @@
+2026/04/29-09:59:37.229 3e6c Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\shared_proto_db since it was missing.
+2026/04/29-09:59:37.234 3e6c Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\shared_proto_db/MANIFEST-000001
+2026/04/29-09:59:37.243 3e6c Recovering log #3
+2026/04/29-09:59:37.243 3e6c Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_fuel_filters\Default\shared_proto_db/000003.log 

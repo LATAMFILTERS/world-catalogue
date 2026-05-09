@@ -1,0 +1,5 @@
+2026/04/29-10:22:44.565 51c Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Session Storage since it was missing.
+2026/04/29-10:22:44.571 51c Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Session Storage/MANIFEST-000001
+2026/04/29-10:22:44.571 51c Recovering log #4
+2026/04/29-10:22:44.572 51c Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Session Storage/000004.log 
+2026/04/29-10:22:44.573 51c Delete type=2 #5
