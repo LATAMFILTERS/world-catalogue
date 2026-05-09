@@ -1,0 +1,6 @@
+Trigger deployment: 2026-05-09T08:30:00Z
+All configuration files corrected:
+- motor-de-busqueda/railway.json: No BOM
+- motor-de-busqueda/package.json: Next.js scripts
+- nixpacks.toml: Subdirectory build config
+- railway.json: Correct startCommand
