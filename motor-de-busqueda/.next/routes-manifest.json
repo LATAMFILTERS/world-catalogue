@@ -1,0 +1,307 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/contact/corporate",
+      "regex": "^/contact/corporate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact/corporate(?:/)?$"
+    },
+    {
+      "page": "/dealers",
+      "regex": "^/dealers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dealers(?:/)?$"
+    },
+    {
+      "page": "/dealers/apply",
+      "regex": "^/dealers/apply(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dealers/apply(?:/)?$"
+    },
+    {
+      "page": "/industries",
+      "regex": "^/industries(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries(?:/)?$"
+    },
+    {
+      "page": "/industries/agriculture",
+      "regex": "^/industries/agriculture(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/agriculture(?:/)?$"
+    },
+    {
+      "page": "/industries/automotive",
+      "regex": "^/industries/automotive(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/automotive(?:/)?$"
+    },
+    {
+      "page": "/industries/bus-coach",
+      "regex": "^/industries/bus\\-coach(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/bus\\-coach(?:/)?$"
+    },
+    {
+      "page": "/industries/construction",
+      "regex": "^/industries/construction(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/construction(?:/)?$"
+    },
+    {
+      "page": "/industries/manufacturing",
+      "regex": "^/industries/manufacturing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/manufacturing(?:/)?$"
+    },
+    {
+      "page": "/industries/marine",
+      "regex": "^/industries/marine(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/marine(?:/)?$"
+    },
+    {
+      "page": "/industries/mining",
+      "regex": "^/industries/mining(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/mining(?:/)?$"
+    },
+    {
+      "page": "/industries/municipal-services",
+      "regex": "^/industries/municipal\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/municipal\\-services(?:/)?$"
+    },
+    {
+      "page": "/industries/oil-gas",
+      "regex": "^/industries/oil\\-gas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/oil\\-gas(?:/)?$"
+    },
+    {
+      "page": "/industries/power-generation",
+      "regex": "^/industries/power\\-generation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/power\\-generation(?:/)?$"
+    },
+    {
+      "page": "/industries/railway",
+      "regex": "^/industries/railway(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/railway(?:/)?$"
+    },
+    {
+      "page": "/industries/trucks-fleets",
+      "regex": "^/industries/trucks\\-fleets(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/trucks\\-fleets(?:/)?$"
+    },
+    {
+      "page": "/systems",
+      "regex": "^/systems(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems(?:/)?$"
+    },
+    {
+      "page": "/systems/air",
+      "regex": "^/systems/air(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/air(?:/)?$"
+    },
+    {
+      "page": "/systems/air-dryers",
+      "regex": "^/systems/air\\-dryers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/air\\-dryers(?:/)?$"
+    },
+    {
+      "page": "/systems/cabin",
+      "regex": "^/systems/cabin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/cabin(?:/)?$"
+    },
+    {
+      "page": "/systems/coolant",
+      "regex": "^/systems/coolant(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/coolant(?:/)?$"
+    },
+    {
+      "page": "/systems/fuel",
+      "regex": "^/systems/fuel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/fuel(?:/)?$"
+    },
+    {
+      "page": "/systems/gas",
+      "regex": "^/systems/gas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/gas(?:/)?$"
+    },
+    {
+      "page": "/systems/housings",
+      "regex": "^/systems/housings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/housings(?:/)?$"
+    },
+    {
+      "page": "/systems/hydraulic",
+      "regex": "^/systems/hydraulic(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/hydraulic(?:/)?$"
+    },
+    {
+      "page": "/systems/marine",
+      "regex": "^/systems/marine(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/systems/marine(?:/)?$"
+    },
+    {
+      "page": "/technologies",
+      "regex": "^/technologies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies(?:/)?$"
+    },
+    {
+      "page": "/technologies/aquaguard",
+      "regex": "^/technologies/aquaguard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/aquaguard(?:/)?$"
+    },
+    {
+      "page": "/technologies/aquaguard-series",
+      "regex": "^/technologies/aquaguard\\-series(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/aquaguard\\-series(?:/)?$"
+    },
+    {
+      "page": "/technologies/cooltech",
+      "regex": "^/technologies/cooltech(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/cooltech(?:/)?$"
+    },
+    {
+      "page": "/technologies/drycore",
+      "regex": "^/technologies/drycore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/drycore(?:/)?$"
+    },
+    {
+      "page": "/technologies/duratech",
+      "regex": "^/technologies/duratech(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/duratech(?:/)?$"
+    },
+    {
+      "page": "/technologies/fh-series",
+      "regex": "^/technologies/fh\\-series(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/fh\\-series(?:/)?$"
+    },
+    {
+      "page": "/technologies/intekcore",
+      "regex": "^/technologies/intekcore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/intekcore(?:/)?$"
+    },
+    {
+      "page": "/technologies/macrocore",
+      "regex": "^/technologies/macrocore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/macrocore(?:/)?$"
+    },
+    {
+      "page": "/technologies/marineclean",
+      "regex": "^/technologies/marineclean(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/marineclean(?:/)?$"
+    },
+    {
+      "page": "/technologies/microkappa",
+      "regex": "^/technologies/microkappa(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/microkappa(?:/)?$"
+    },
+    {
+      "page": "/technologies/nanoforce",
+      "regex": "^/technologies/nanoforce(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/nanoforce(?:/)?$"
+    },
+    {
+      "page": "/technologies/syntepore",
+      "regex": "^/technologies/syntepore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/syntepore(?:/)?$"
+    },
+    {
+      "page": "/technologies/syntrax",
+      "regex": "^/technologies/syntrax(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/technologies/syntrax(?:/)?$"
+    },
+    {
+      "page": "/warranty",
+      "regex": "^/warranty(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/warranty(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}
