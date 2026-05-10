@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+const WP = 'https://media.elimfilters.com/wp-content/uploads';
 
 export default function CorporateContact() {
   const [form, setForm] = useState({ Nombre:'', Email:'', Asunto:'', Mensaje:'' });
