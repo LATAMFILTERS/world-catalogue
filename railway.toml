@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "bash start.sh"
+restartPolicyCondition = "never"
+port = 3000

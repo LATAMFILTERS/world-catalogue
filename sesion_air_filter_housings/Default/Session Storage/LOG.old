@@ -1,7 +1,0 @@
-2026/04/29-10:30:45.123 6128 Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filter_housings\Default\Session Storage since it was missing.
-2026/04/29-10:30:45.128 6128 Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filter_housings\Default\Session Storage/MANIFEST-000001
-2026/04/29-10:30:45.128 6128 Recovering log #3
-2026/04/29-10:30:45.137 6128 Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filter_housings\Default\Session Storage/000003.log 
-2026/04/29-10:43:48.747 57cc Level-0 table #5: started
-2026/04/29-10:43:48.753 57cc Level-0 table #5: 12860 bytes OK
-2026/04/29-10:43:48.755 57cc Delete type=0 #3
