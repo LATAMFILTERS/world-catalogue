@@ -172,10 +172,28 @@ app.get('/api/cross-reference/:code', async (req, res) => {
 // -------------------- STATIC FILES --------------------
 app.use(express.static(path.join(__dirname, 'public')));
 
-// -------------------- ROOT --------------------
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// -------------------- NEXT.JS HANDLER --------------------
+const nextApp = require('next');
+const nextHandler = nextApp({ dev: false, dir: './motor-de-busqueda' });
+const handle = nextHandler.getRequestHandler();
+
+nextHandler.prepare()
+    .then(() => {
+        // All routes to Next.js
+        app.all('*', (req, res) => {
+            return handle(req, res);
+        });
+
+        // -------------------- START --------------------
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`✓ ELIMFILTERS running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Error:', err);
+        process.exit(1);
+    });
 
 // -------------------- GLOBAL ERROR HANDLERS --------------------
 process.on('uncaughtException', (err) => {
@@ -184,11 +202,4 @@ process.on('uncaughtException', (err) => {
 
 process.on('unhandledRejection', (err) => {
     console.error('UNHANDLED:', err);
-});
-
-// -------------------- START --------------------
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`ELIMFILTERS API running on ${PORT}`);
 });
