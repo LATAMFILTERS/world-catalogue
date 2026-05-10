@@ -20,3 +20,7 @@ cleanup.ps1
 dist
 build
 coverage
+sesion_*
+world-catalogue
+DEPLOY_TRIGGER
+force-redeploy.txt
