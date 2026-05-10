@@ -85,7 +85,7 @@ export default function Agriculture() {
             </div>
             <div className="ag-video-wrap">
               <div className="ag-video-inner">
-                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/Agriculture-1.mp4" autoPlay muted loop playsInline />
+                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/Agriculture-4.mp4" autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
