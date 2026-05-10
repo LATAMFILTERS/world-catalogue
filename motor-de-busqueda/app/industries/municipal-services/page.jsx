@@ -1,14 +1,14 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
+const WP = 'https://cdn.elimfilters.com';
 
 export default function MunicipalServices() {
   const css = `
     .ms{background:#000;color:#fff;min-height:100vh;}
     .ms-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ms-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ms-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/wasted.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ms-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://cdn.elimfilters.com/wasted.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ms-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ms-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ms-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -85,7 +85,7 @@ export default function MunicipalServices() {
             </div>
             <div className="ms-video-wrap">
               <div className="ms-video-inner">
-                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/servicios.mp4" autoPlay muted loop playsInline />
+                <video src="https://cdn.elimfilters.com/servicios.mp4" autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
