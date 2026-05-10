@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = '/uploads';
+const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
 
 const systems = [
   { name: 'Air Systems', desc: 'Advanced defense against abrasive particles and premature wear in extreme environments.', img: WP + '/2025/08/Imagen1.png', href: '/systems/air' },
