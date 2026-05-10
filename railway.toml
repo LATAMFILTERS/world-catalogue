@@ -4,3 +4,4 @@ builder = "dockerfile"
 [deploy]
 startCommand = "node server.js"
 restartPolicyCondition = "never"
+port = 3000
