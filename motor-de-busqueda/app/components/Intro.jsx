@@ -7,7 +7,7 @@ const VIDEOS = [
   'https://elimfilters.com/wp-content/uploads/2026/05/p554004.mp4',
 ];
 
-const WP = 'https://media.elimfilters.com/wp-content/uploads';
+const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
 const LOGO_E = `${WP}/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp`;
 
 export default function Intro({ onComplete }) {
