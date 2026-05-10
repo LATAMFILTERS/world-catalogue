@@ -1,7 +1,7 @@
 [build]
-builder = "dockerfile"
+builder = "nixpacks"
 
 [deploy]
-startCommand = "node server.js"
+startCommand = "bash start.sh"
 restartPolicyCondition = "never"
 port = 3000
