@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
+const WP = '/uploads';
 
 export default function Contact() {
   const [form, setForm] = useState({ Name:'', Email:'', Product_Code:'', Subject:'', Message:'' });

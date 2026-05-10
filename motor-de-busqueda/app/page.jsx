@@ -4,7 +4,7 @@ import Intro from './components/Intro';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
+const WP = '/uploads';
 const IMAGES = {
   hero: WP + '/2026/02/pexels-cottonbro-7018493-scaled.jpg',
   mechanic: WP + '/2026/02/Gemini_Generated_Image_8slfcz8slfcz8slf.png',
