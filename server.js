@@ -173,7 +173,7 @@ app.get('/api/cross-reference/:code', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // -------------------- NEXT.JS HANDLER --------------------
-const nextApp = require('next');
+const nextApp = require('./motor-de-busqueda/node_modules/next');
 const nextHandler = nextApp({ dev: false, dir: './motor-de-busqueda' });
 const handle = nextHandler.getRequestHandler();
 
