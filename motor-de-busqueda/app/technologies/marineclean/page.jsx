@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://media.elimfilters.com/wp-content/uploads';
+const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
 
 export default function Marineclean() {
   const css = `
