@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://media.elimfilters.com/wp-content/uploads';
+const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
 
 const INDUSTRIES = [
   { id:'bus-coach',          name:'Bus & Coach',       desc:'Mechanical reliability for mass transit and tourism fleets.',           img:`${WP}/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp` },

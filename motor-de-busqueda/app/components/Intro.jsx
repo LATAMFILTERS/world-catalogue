@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 const VIDEOS = [
   'https://cdn.elimfilters.com/Slow_macro_push-in_particles_202605060145.mp4',
   'https://cdn.elimfilters.com/maquinaria.mp4',
-  'https://elimfilters.com/wp-content/uploads/2026/05/p554004.mp4',
+  'https://elimfilters.com/wp-contenthttps://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders/2026/05/p554004.mp4',
 ];
 
-const WP = 'https://media.elimfilters.com/wp-content/uploads';
+const WP = 'https://6b5071d61650157117074aefcbb8bf5b.r2.cloudflarestorage.com/elimfilters-renders';
 const LOGO_E = `${WP}/2025/11/AE6A9C09-F12F-4AA4-8021-EAF6F448860E.webp`;
 
 export default function Intro({ onComplete }) {
