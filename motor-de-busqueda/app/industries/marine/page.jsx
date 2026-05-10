@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+const WP = 'https://media.elimfilters.com/wp-content/uploads';
 
 export default function MarineIndustry() {
   const css = `

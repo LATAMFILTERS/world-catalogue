@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+const WP = 'https://media.elimfilters.com/wp-content/uploads';
 
 const systems = [
   { name: 'Air Systems', desc: 'Advanced defense against abrasive particles and premature wear in extreme environments.', img: WP + '/2025/08/Imagen1.png', href: '/systems/air' },
