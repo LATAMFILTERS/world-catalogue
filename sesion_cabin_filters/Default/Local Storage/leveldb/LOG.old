@@ -1,9 +1,0 @@
-2026/04/29-10:22:41.572 e2c Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Local Storage\leveldb since it was missing.
-2026/04/29-10:22:41.593 e2c Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Local Storage\leveldb/MANIFEST-000001
-2026/04/29-10:22:41.594 e2c Recovering log #8
-2026/04/29-10:22:41.595 e2c Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_cabin_filters\Default\Local Storage\leveldb/000008.log 
-2026/04/29-10:22:41.596 e2c Delete type=2 #6
-2026/04/29-10:22:41.596 e2c Delete type=2 #9
-2026/04/29-10:29:44.590 e2c Level-0 table #10: started
-2026/04/29-10:29:44.597 e2c Level-0 table #10: 12512 bytes OK
-2026/04/29-10:29:44.599 e2c Delete type=0 #8
