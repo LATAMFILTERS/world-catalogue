@@ -4,3 +4,16 @@ import Link from 'next/link';
 import { WP } from '../../constants';
 
 export default function HousingSystems() {
+  const css = `
+    .hs{background:#000;color:#fff;min-height:100vh;}
+    .hs-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
+    .hs-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
+  `;
+  return (
+    <div className="hs">
+      <style>{css}</style>
+      <a href="/" className="hs-back">&larr; HOME</a>
+      <section>Housing Systems Protection</section>
+    </div>
+  );
+}
