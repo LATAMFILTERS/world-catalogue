@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://cdn.elimfilters.com';
 const MEDIA = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev';
 
 export default function Construction() {

@@ -1,0 +1,4 @@
+name = "search"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+account_id = "6b5071d61650157117074aefcbb8bf5b"
