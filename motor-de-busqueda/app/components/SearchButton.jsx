@@ -12,7 +12,11 @@ export default function SearchButton({
   useEffect(() => {
     const detectCountry = async () => {
       try {
-        const response = await fetch('/api/get-country');
+        const apiUrl = typeof window !== 'undefined'
+          ? `${window.location.protocol}//${window.location.hostname === 'localhost' ? 'localhost:5000' : 'api.elimfilters.com'}`
+          : 'https://api.elimfilters.com';
+
+        const response = await fetch(`${apiUrl}/api/get-country`);
         const data = await response.json();
         const country = data.country || '';
         const latinAmerica = ['MX', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 'BO', 'PY', 'UY', 'GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'CU', 'DO', 'PR', 'ES'];

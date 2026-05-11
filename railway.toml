@@ -5,3 +5,8 @@ builder = "DOCKERFILE"
 startCommand = "sh start.sh"
 restartPolicyCondition = "on-failure"
 port = 3000
+
+[[services]]
+name = "api-server"
+builder = "DOCKERFILE"
+port = 5000
