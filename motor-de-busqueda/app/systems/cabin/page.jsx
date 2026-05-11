@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../../constants';
 
 export default function CabinSystems() {
   const css = `
@@ -19,41 +19,43 @@ export default function CabinSystems() {
     .cb-grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
     .cb-h2{font-family:'Russo One',sans-serif;font-size:clamp(32px,4vw,56px);text-transform:uppercase;line-height:0.95;margin-bottom:24px;}
     .cb-h2 span{color:#FFF12D;}
-    .cb-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:20px;}
-    .cb-img-wrap{background:#000;padding:10px;border:1px solid #1a1a1a;}
-    .cb-img-wrap img{width:100%;height:auto;display:block;filter:grayscale(0.2) contrast(1.1);}
-    .cb-btn{background:#FFF12D;color:#000;font-family:'Russo One',sans-serif;font-size:14px;letter-spacing:0.1em;padding:20px 45px;display:inline-block;text-transform:uppercase;text-decoration:none;transition:all 0.25s;border:2px solid #FFF12D;margin-top:24px;}
-    .cb-btn:hover{background:transparent;color:#FFF12D;}
+    .cb-p{font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;letter-spacing:0.05em;margin-bottom:16px;}
+    .cb-video-wrap{position:relative;}
+    .cb-video-wrap:before{content:'';position:absolute;inset:-4px;background:rgba(255,241,45,0.2);filter:blur(8px);opacity:0.25;transition:opacity 0.3s;}
+    .cb-video-wrap:hover:before{opacity:0.5;}
+    .cb-video-inner{position:relative;background:#000;border:1px solid rgba(255,255,255,0.1);padding:4px;z-index:1;}
+    .cb-video-inner video{width:100%;filter:grayscale(1);opacity:0.7;display:block;transition:all 0.7s;}
+    .cb-video-wrap:hover .cb-video-inner video{filter:grayscale(0);opacity:1;}
+    .cb-btn{font-family:'Russo One',sans-serif;background:#FFF12D;color:#000;padding:20px 40px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;display:inline-block;text-decoration:none;transition:all 0.2s;margin-top:24px;}
+    .cb-btn:hover{background:#fff;}
     .cb-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .cb-feature{background:rgba(255,255,255,0.02);border-left:4px solid #FFF12D;padding:36px 28px;transition:all 0.3s;height:100%;box-sizing:border-box;}
-    .cb-feature:hover{transform:translateY(-5px);background:rgba(255,255,255,0.06);}
-    .cb-feature-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
-    .cb-feature-title{font-family:'Russo One',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .cb-feature-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
-    .cb-protocol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .cb-protocol-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:40px 30px;position:relative;overflow:hidden;}
-    .cb-protocol-num{position:absolute;right:-10px;top:-10px;font-family:'Russo One',sans-serif;font-size:80px;color:rgba(255,241,45,0.03);line-height:1;}
-    .cb-protocol-title{font-family:'Russo One',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
-    .cb-protocol-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
-    .cb-protocol-line{margin-top:24px;height:2px;width:40px;background:#FFF12D;}
-    .cb-cta{padding:100px 6%;background:radial-gradient(circle at center,#111 0%,#000 100%);text-align:center;}
-    .cb-cta-inner{max-width:900px;margin:0 auto;}
-    .cb-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(40px,7vw,90px);text-transform:uppercase;line-height:0.9;margin-bottom:40px;}
-    .cb-cta-h2 span{color:#FFF12D;}
-    @media(max-width:1024px){.cb-grid2{grid-template-columns:1fr;} .cb-grid3{grid-template-columns:repeat(2,1fr);} .cb-protocol-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:768px){.cb-grid3{grid-template-columns:1fr;} .cb-protocol-grid{grid-template-columns:1fr;} .cb-hero-p{font-size:12px;} .cb-hero{background:linear-gradient(0deg,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/2026/02/Gemini_Generated_Image_w9i6zgw9i6zgw9i6-e1772079558684.png') 85% center/cover no-repeat;}}
+    .cb-card{background:#080808;border:1px solid rgba(255,255,255,0.05);padding:36px;transition:all 0.4s cubic-bezier(0.165,0.84,0.44,1);height:100%;}
+    .cb-card:hover{border-color:#FFF12D;transform:translateY(-5px);background:#0a0a0a;}
+    .cb-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:12px;}
+    .cb-card-title{font-family:'Russo One',sans-serif;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:16px;}
+    .cb-card-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;letter-spacing:0.03em;}
+    .cb-cta{background:#FFF12D;padding:72px 6%;}
+    .cb-cta-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cb-cta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:12px;}
+    .cb-cta-h2{font-family:'Russo One',sans-serif;font-size:clamp(28px,4vw,52px);color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
+    .cb-cta-p{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(0,0,0,0.7);line-height:1.7;max-width:480px;letter-spacing:0.05em;}
+    .cb-cta-btn{background:#000;color:#fff;font-family:'Russo One',sans-serif;font-size:18px;padding:24px 48px;text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;transition:background 0.2s;white-space:nowrap;}
+    .cb-cta-btn:hover{background:#111;}
+    .cb-cta-footer{background:#000;padding:12px 6%;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(255,241,45,0.4);text-transform:uppercase;}
+    @media(max-width:1024px){.cb-grid2{grid-template-columns:1fr;} .cb-grid3{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.cb-grid3{grid-template-columns:1fr;} .cb-hero-p{font-size:12px;} .cb-cta-inner{flex-direction:column;}}
   `;
 
   return (
     <div className="cb">
       <style>{css}</style>
-      <a href="/?skip=1" className="cb-back">&larr; HOME</a>
+      <a href="/" className="cb-back">&larr; HOME</a>
 
       <section className="cb-hero">
         <div className="cb-hero-inner">
-          <div className="cb-eyebrow">// CABIN FILTRATION / SYS-02</div>
-          <h1 className="cb-h1">CABIN<br /><span>FILTERS.</span></h1>
-          <p className="cb-hero-p">Industrial asset protection systems engineered for operator cabin environments in mining, construction, agriculture, and heavy fleet operations. MICROKAPPA™ technology shields cabin air from allergens, soot, harmful gases, and fine particulates — protecting operator health, extending HVAC lifespan, and ensuring zero-compromise air quality across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <div className="cb-eyebrow">// CABIN SYSTEMS PROTECTION</div>
+          <h1 className="cb-h1">CABIN AIR & CLIMATE<br /><span>OPERATIONAL QUALITY.</span></h1>
+          <p className="cb-hero-p">Cabin air filtration and climate control protection engineered for commercial vehicles, buses, and fleet operations — maintaining operator comfort and equipment reliability across continuous duty cycles. ISO 16889 certified filtration protecting occupant air quality and vehicle environmental systems.</p>
         </div>
       </section>
 
@@ -61,61 +63,35 @@ export default function CabinSystems() {
         <div className="cb-sec-inner">
           <div className="cb-grid2">
             <div>
-              <div className="cb-eyebrow">// MICROKAPPA™ TECHNOLOGY</div>
-              <h2 className="cb-h2">100% PURE AIR.<br /><span>PROTECTED OPERATOR.</span></h2>
-              <p className="cb-p">Operators are exposed to allergens, soot, and harmful gases every shift. MICROKAPPA™ utilizes multi-stage filtration to guarantee a neutral and safe atmosphere, ensuring productivity and long-term health across all industrial environments.</p>
-              <p className="cb-p">Engineered for mining, construction, agriculture, and urban fleet operations — protecting every operator, every shift, across 5,000+ OEM cross-references worldwide.</p>
-              <Link href="/technologies/microkappa" className="cb-btn">VIEW MICROKAPPA™ TECHNOLOGY</Link>
+              <div className="cb-eyebrow">// CLIMATE SYSTEM ENGINEERING</div>
+              <h2 className="cb-h2">CABIN PROTECTION<br /><span>INTEGRATED</span></h2>
+              <p className="cb-p">Cabin air quality and vehicle climate systems operate under continuous stress in commercial fleet environments. Contaminated cabin air impacts operator health and equipment efficiency. Cabin filters protect air intake, HVAC systems, and recirculation paths from road dust, pollen, and particulate loading — maintaining clean air and optimal climate control performance across all duty cycles.</p>
+              <p className="cb-p">MICROKAPPA cabin filtration technology maintains occupant comfort and protects critical climate control electronics from contamination-induced failure.</p>
+              <Link href="/technologies" className="cb-btn">VIEW CABIN TECHNOLOGIES</Link>
             </div>
-            <div className="cb-img-wrap">
-              <img src={`${WP}/2025/08/Screenshot-2025-08-20-203624.webp`} alt="ELIMFILTERS MICROKAPPA Cabin Filter System" loading="lazy" />
+            <div className="cb-video-wrap">
+              <div className="cb-video-inner">
+                <video src={`${WP}/2025/08/Limpiad-orio-de-la-gota-2024-10-01-at-11.41.24-PM-ezgif.com-video-to-gif-converter.mp4`} autoPlay muted loop playsInline />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="cb-sec">
+      <section className="cb-sec" style={{background:'#000'}}>
         <div className="cb-sec-inner">
           <div style={{textAlign:'center',marginBottom:'52px'}}>
-            <div className="cb-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// LAYER BY LAYER PROTECTION</div>
-            <h2 className="cb-h2" style={{textAlign:'center'}}>TOTAL <span>DEFENSE</span></h2>
+            <div className="cb-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// CABIN CLIMATE PROTECTION</div>
+            <h2 className="cb-h2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
           </div>
           <div className="cb-grid3">
             {[
-              {label:'PRIMARY LAYER', title:'COARSE CAPTURE', desc:'Intercepts dust, pollen, and large debris before they reach the high-efficiency core media — extending filter service life and maintaining peak performance.'},
-              {label:'MAIN MEDIA', title:'SUB-MICRON CORE', desc:'MICROKAPPA™ fibers retain fine soot and allergens with 99.9% efficiency in every cycle — protecting operator health in the most demanding industrial environments.'},
-              {label:'ACTIVATED CARBON', title:'CHEMICAL BARRIER', desc:'Neutralizes harmful NOx gases and persistent external odors — creating a safe and productive cabin environment across mining, construction, and agricultural operations.'},
-              {label:'SEALING TECH', title:'ZERO BYPASS', desc:'Precision-engineered OEM geometry ensures a hermetic seal, leaving no room for unfiltered air to enter the cabin under any operating condition.'},
-              {label:'STRUCTURE', title:'REINFORCED FRAME', desc:'Maintains structural integrity under high HVAC flow and extreme vibrations typical of industrial sites — ensuring consistent filtration performance throughout service life.'},
-              {label:'HVAC CARE', title:'BLOWER DEFENSE', desc:'Optimized airflow resistance prevents blower motor overload, extending HVAC system service life and reducing maintenance costs across fleet operations.'},
-            ].map((f, i) => (
-              <div key={i} className="cb-feature">
-                <div className="cb-feature-label">{f.label}</div>
-                <div className="cb-feature-title">{f.title}</div>
-                <p className="cb-feature-p">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="cb-sec" style={{background:'#030303'}}>
-        <div className="cb-sec-inner">
-          <div style={{marginBottom:'52px',borderLeft:'4px solid #FFF12D',paddingLeft:'20px'}}>
-            <div className="cb-eyebrow">// SYSTEM VALIDATION</div>
-            <h2 className="cb-h2" style={{marginTop:'8px'}}>PERFORMANCE PROTOCOL</h2>
-          </div>
-          <div className="cb-protocol-grid">
-            {[
-              {num:'01', title:'AIRFLOW OPTIMIZATION', desc:'Maximum permeability with minimum pressure drop — maintaining full climate control performance and operator comfort in all industrial operating conditions.'},
-              {num:'02', title:'BIOPROTECTION', desc:'Physical barrier against organic micro-particles, allergens, and biological contaminants — drastically improving occupational health and operator wellbeing.'},
-              {num:'03', title:'CERTIFIED FIT', desc:'Validated for Mining, Construction, and Agriculture operations across global fleets — precision-matched to OEM specifications across 5,000+ cross-references.'},
-            ].map((p, i) => (
-              <div key={i} className="cb-protocol-card">
-                <div className="cb-protocol-num">{p.num}</div>
-                <div className="cb-protocol-title">{p.title}</div>
-                <p className="cb-protocol-p">{p.desc}</p>
-                <div className="cb-protocol-line" />
+              {label:'Cabin Air', title:'MICROKAPPA', desc:'Advanced multi-layer HEPA and activated carbon filtration protecting cabin air intake and climate recirculation systems from particulate contamination and odor sources.'},
+            ].map((c, i) => (
+              <div key={i} className="cb-card">
+                <div className="cb-card-label">{c.label}</div>
+                <div className="cb-card-title">{c.title}</div>
+                <p className="cb-card-p">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -124,11 +100,15 @@ export default function CabinSystems() {
 
       <section className="cb-cta">
         <div className="cb-cta-inner">
-          <div className="cb-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'24px'}}>// OPERATOR PROTECTION MANDATE</div>
-          <div className="cb-cta-h2">EVERY CABIN.<br /><span>EVERY BREATH.</span></div>
-          <Link href="/search" className="cb-btn" style={{display:'inline-block'}}>FIND MY CABIN FILTER &rarr;</Link>
+          <div>
+            <div className="cb-cta-label">// CABIN SYSTEMS CROSS REFERENCE</div>
+            <div className="cb-cta-h2">CABIN QUALITY IS OCCUPANT HEALTH.<br />FIND YOUR FILTER.</div>
+            <p className="cb-cta-p">Access our global database. Search by OEM or part number to find precision cabin filtration for your fleet. Certified to ISO 16889 standards.</p>
+          </div>
+          <Link href="/search" className="cb-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
       </section>
+      <div className="cb-cta-footer">CABIN SYSTEMS PROTECTION STANDARD // ELIMFILTERS GLOBAL</div>
     </div>
   );
 }
