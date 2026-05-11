@@ -2,13 +2,14 @@
 import Link from 'next/link';
 
 const WP = 'https://cdn.elimfilters.com';
+const MEDIA = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev';
 
 export default function Construction() {
   const css = `
     .cn{background:#000;color:#fff;min-height:100vh;}
     .cn-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .cn-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .cn-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/construction.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .cn-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.85) 25%,rgba(0,0,0,0.1) 100%),url('${MEDIA}/construction.avif') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .cn-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .cn-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .cn-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -85,7 +86,7 @@ export default function Construction() {
             </div>
             <div className="cn-video-wrap">
               <div className="cn-video-inner">
-                <video src={`${WP}/construction.mp4`} autoPlay muted loop playsInline />
+                <video src={`${MEDIA}/construction-2.mp4`} autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
