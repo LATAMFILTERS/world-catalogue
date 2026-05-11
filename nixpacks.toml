@@ -5,4 +5,4 @@ only = ["node"]
 cmds = ["npm install"]
 
 [start]
-cmd = "node server.js"
+cmd = "sh start.sh"
