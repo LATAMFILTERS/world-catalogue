@@ -8,7 +8,7 @@ export default function OilGas() {
     .og{background:#000;color:#fff;min-height:100vh;}
     .og-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .og-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .og-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://cdn.elimfilters.com/oil-gas.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .og-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/oil-gas.jpg') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .og-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .og-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .og-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -85,7 +85,7 @@ export default function OilGas() {
             </div>
             <div className="og-video-wrap">
               <div className="og-video-inner">
-                <video src="https://cdn.elimfilters.com/gas%26oil%20(1).mp4" autoPlay muted loop playsInline />
+                <video src={`${WP}/gas%26oil%20(1).mp4`} autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
