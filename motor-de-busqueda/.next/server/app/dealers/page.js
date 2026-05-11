@@ -2,7 +2,7 @@
     .da{background:#000;color:#fff;min-height:100vh;}
     .da-back{position:fixed;top:24px;left:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .da-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .da-page{min-height:100vh;padding:40px 5%;background:radial-gradient(circle at 10% 10%,rgba(255,241,45,0.05) 0%,transparent 50%),linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.95)),url('https://elimfilters.com/wp-content/uploads/2025/08/ChatGPT-Image-1-ago-2025-01_36_10-p.m.png') center/cover no-repeat fixed;}
+    .da-page{min-height:100vh;padding:40px 5%;background:radial-gradient(circle at 10% 10%,rgba(255,241,45,0.05) 0%,transparent 50%),linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.95)),url('https://cdn.elimfilters.com/2025/08/ChatGPT-Image-1-ago-2025-01_36_10-p.m.png') center/cover no-repeat fixed;}
     .da-topbar{max-width:1400px;margin:0 auto 50px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:20px;}
     .da-h1{font-family:'Russo One',sans-serif;font-size:clamp(32px,6vw,64px);text-transform:uppercase;color:#fff;margin:0;}
     .da-h1 span{color:#FFF12D;}

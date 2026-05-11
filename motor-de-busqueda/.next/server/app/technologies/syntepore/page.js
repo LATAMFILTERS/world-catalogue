@@ -1,4 +1,4 @@
-(()=>{var e={};e.id=5895,e.ids=[5895],e.modules={3295:e=>{"use strict";e.exports=require("next/dist/server/app-render/after-task-async-storage.external.js")},10424:(e,s,r)=>{"use strict";r.r(s),r.d(s,{default:()=>o});var t=r(60687),i=r(85814),n=r.n(i);let a="https://elimfilters.com/wp-content/uploads";function o(){let e=`
+(()=>{var e={};e.id=5895,e.ids=[5895],e.modules={3295:e=>{"use strict";e.exports=require("next/dist/server/app-render/after-task-async-storage.external.js")},10424:(e,s,r)=>{"use strict";r.r(s),r.d(s,{default:()=>o});var t=r(60687),i=r(85814),n=r.n(i);let a="https://cdn.elimfilters.com";function o(){let e=`
     .sy{background:#000;color:#fff;min-height:100vh;}
     .sy-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .sy-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
