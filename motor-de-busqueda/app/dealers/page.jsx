@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-const WP = 'https://cdn.elimfilters.com';
+import { WP } from '../constants';
 export default function DealersApply() {
   const [form, setForm] = useState({
     Company:'', Country:'', Website:'', Executive:'', Position:'', Email:'',

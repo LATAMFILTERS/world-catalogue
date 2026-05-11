@@ -3,8 +3,8 @@ import SearchButton from './components/SearchButton';
 import Intro from './components/Intro';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { WP } from './constants';
 
-const WP = 'https://cdn.elimfilters.com';
 const IMAGES = {
   hero: WP + '/2026/02/pexels-cottonbro-7018493-scaled.jpg',
   mechanic: WP + '/2026/02/Gemini_Generated_Image_8slfcz8slfcz8slf.png',
@@ -12,7 +12,7 @@ const IMAGES = {
   seal: WP + '/2025/08/a2ec2ccf-d6ed-4acf-bcda-337b5669f007_removalai_preview.png',
 };
 
-const R2 = 'https://cdn.elimfilters.com';
+const R2 = WP;
 const industries = [
   { name: 'MINING', slug: 'mining', desc: 'Open-pit & underground operations', img: R2 + '/Mining.jpg' },
   { name: 'CONSTRUCTION', slug: 'construction', desc: 'Heavy equipment & earthmoving', img: R2 + '/construction.jpg' },

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://cdn.elimfilters.com';
+import { WP } from '../../constants';
 
 export default function Drycore() {
   const css = `

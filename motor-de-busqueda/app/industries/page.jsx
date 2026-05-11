@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
-
-const WP = 'https://cdn.elimfilters.com';
+import { WP } from '../constants';
 
 const INDUSTRIES = [
   { id:'bus-coach',          name:'Bus & Coach',       desc:'Mechanical reliability for mass transit and tourism fleets.',           img:`${WP}/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp` },
