@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../constants';
 
 export default function Syntepore() {
   const css = `
@@ -64,8 +64,8 @@ export default function Syntepore() {
         <div className="sy-hero-ov" />
         <div className="sy-hero-c">
           <div className="sy-eyebrow">// HYDRAULIC HIGH PRESSURE / MOD-04</div>
-          <h1 className="sy-h1">PRECISION<br /><span>SYNTEPORE™</span></h1>
-          <p className="sy-hero-p">Industrial asset protection systems engineered for high-pressure hydraulic circuits, fuel filtration systems, and critical fluid power infrastructure. SYNTEPORE™ advanced synthetic fiber technology delivers absolute flow stability and zero component wear — protecting proportional valves, actuators, and precision hydraulic components across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <h1 className="sy-h1">PRECISION<br /><span>SYNTEPORE&#x2122;</span></h1>
+          <p className="sy-hero-p">Industrial asset protection systems engineered for high-pressure hydraulic circuits, fuel filtration systems, and critical fluid power infrastructure. SYNTEPORE&#x2122; advanced synthetic fiber technology delivers absolute flow stability and zero component wear &mdash; protecting proportional valves, actuators, and precision hydraulic components across 12 industries worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
           <div className="sy-hero-stat">
             <Link href="/search" className="sy-btn">SEARCH MY SKU</Link>
             <div>
@@ -82,10 +82,10 @@ export default function Syntepore() {
             <div>
               <div className="sy-eyebrow">// FLOW OPTIMIZATION</div>
               <h2 className="sy-h2">ELIMINATE<br /><span>CONTAMINATION</span></h2>
-              <p className="sy-p">The SYNTEPORE™ matrix provides superior dirt-holding capacity while maintaining extremely low pressure drops. This ensures that hydraulic pumps and valves operate under peak performance without the risk of cavitation or internal erosion in high-pressure applications.</p>
+              <p className="sy-p">The SYNTEPORE&#x2122; matrix provides superior dirt-holding capacity while maintaining extremely low pressure drops. This ensures that hydraulic pumps and valves operate under peak performance without the risk of cavitation or internal erosion in high-pressure applications.</p>
               <p className="sy-p">Engineered for construction, mining, agriculture, and industrial hydraulic systems operating under extreme pressure cycles and continuous high-load conditions worldwide.</p>
               <div className="sy-specs">
-                <div className="sy-spec"><span className="sy-spec-label">BETA RATIO</span><span className="sy-spec-sub">β(c) &gt; 1000</span></div>
+                <div className="sy-spec"><span className="sy-spec-label">BETA RATIO</span><span className="sy-spec-sub">&beta;(c) &gt; 1000</span></div>
                 <div className="sy-spec"><span className="sy-spec-label">PRESSURE RATING</span><span className="sy-spec-sub">High-Differential Ready</span></div>
                 <div className="sy-spec"><span className="sy-spec-label">THERMAL RANGE</span><span className="sy-spec-sub">Extreme Temp Stable</span></div>
                 <div className="sy-spec"><span className="sy-spec-label">OEM MATCHED</span><span className="sy-spec-sub">5,000+ Cross-References</span></div>
@@ -106,12 +106,12 @@ export default function Syntepore() {
           </div>
           <div className="sy-grid3">
             {[
-              {title:'THERMAL STABILITY', desc:'Resistant to high operating temperatures without structural breakdown — maintaining fiber integrity and filtration efficiency across extreme thermal cycles in industrial applications.'},
-              {title:'AI-VALIDATED MATRIX', desc:'Fiber distribution optimized to prevent premature clogging — maximizing dirt-holding capacity and extending service life in high-pressure hydraulic and fuel systems worldwide.'},
-              {title:'ACTUATOR SAFETY', desc:'Critical protection for proportional valves and precision hydraulic components — eliminating contamination-driven erosion in servo systems and high-precision actuation circuits.'},
-              {title:'FLOW STABILITY', desc:'Extremely low pressure drop design maintains consistent hydraulic flow — protecting pumps from cavitation and ensuring stable performance under variable load conditions.'},
-              {title:'ZERO MIGRATION', desc:'Synthetic fiber structure prevents media migration under high pressure peaks — maintaining absolute particle capture throughout the full service interval in demanding applications.'},
-              {title:'ISO COMPLIANCE', desc:'Beta ratio exceeding β(c) > 1000 — certified to ISO 16889 standards for absolute contamination control in high-pressure hydraulic and fuel system applications worldwide.'},
+              {title:'THERMAL STABILITY', desc:'Resistant to high operating temperatures without structural breakdown &mdash; maintaining fiber integrity and filtration efficiency across extreme thermal cycles in industrial applications.'},
+              {title:'AI-VALIDATED MATRIX', desc:'Fiber distribution optimized to prevent premature clogging &mdash; maximizing dirt-holding capacity and extending service life in high-pressure hydraulic and fuel systems worldwide.'},
+              {title:'ACTUATOR SAFETY', desc:'Critical protection for proportional valves and precision hydraulic components &mdash; eliminating contamination-driven erosion in servo systems and high-precision actuation circuits.'},
+              {title:'FLOW STABILITY', desc:'Extremely low pressure drop design maintains consistent hydraulic flow &mdash; protecting pumps from cavitation and ensuring stable performance under variable load conditions.'},
+              {title:'ZERO MIGRATION', desc:'Synthetic fiber structure prevents media migration under high pressure peaks &mdash; maintaining absolute particle capture throughout the full service interval in demanding applications.'},
+              {title:'ISO COMPLIANCE', desc:'Beta ratio exceeding &beta;(c) &gt; 1000 &mdash; certified to ISO 16889 standards for absolute contamination control in high-pressure hydraulic and fuel system applications worldwide.'},
             ].map((c, i) => (
               <div key={i} className="sy-card">
                 <div className="sy-card-title">{c.title}</div>
@@ -130,9 +130,9 @@ export default function Syntepore() {
           </div>
           <div className="sy-protocol-grid">
             {[
-              {num:'01', title:'HIGH PRESSURE INTEGRITY', desc:'Beta ratio exceeding β(c) > 1000 ensures absolute particle capture in high-pressure hydraulic systems — protecting precision components from contamination-driven wear and failure.'},
-              {num:'02', title:'FLOW OPTIMIZATION', desc:'Low pressure drop matrix design maintains consistent hydraulic flow rates throughout service life — protecting pumps from cavitation and preserving system efficiency under full load.'},
-              {num:'03', title:'THERMAL RESISTANCE', desc:'Synthetic fiber structure maintains performance across extreme temperature cycles — ensuring consistent filtration in high-temperature hydraulic systems in industrial and mobile applications.'},
+              {num:'01', title:'HIGH PRESSURE INTEGRITY', desc:'Beta ratio exceeding &beta;(c) &gt; 1000 ensures absolute particle capture in high-pressure hydraulic systems &mdash; protecting precision components from contamination-driven wear and failure.'},
+              {num:'02', title:'FLOW OPTIMIZATION', desc:'Low pressure drop matrix design maintains consistent hydraulic flow rates throughout service life &mdash; protecting pumps from cavitation and preserving system efficiency under full load.'},
+              {num:'03', title:'THERMAL RESISTANCE', desc:'Synthetic fiber structure maintains performance across extreme temperature cycles &mdash; ensuring consistent filtration in high-temperature hydraulic systems in industrial and mobile applications.'},
             ].map((p, i) => (
               <div key={i} className="sy-protocol-card">
                 <div className="sy-protocol-num">{p.num}</div>
@@ -148,8 +148,8 @@ export default function Syntepore() {
       <section className="sy-cta">
         <div className="sy-cta-inner">
           <div className="sy-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'24px'}}>// ELIMFILTERS GLOBAL HEAVY DUTY ENGINEERING</div>
-          <div className="sy-cta-h2">MAXIMIZE UPTIME<br /><span>USE SYNTEPORE™</span></div>
-          <p className="sy-cta-p">Do not allow hydraulic contamination to compromise your system performance. Upgrade to SYNTEPORE™ advanced synthetic fiber technology today. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <div className="sy-cta-h2">MAXIMIZE UPTIME<br /><span>USE SYNTEPORE&#x2122;</span></div>
+          <p className="sy-cta-p">Do not allow hydraulic contamination to compromise your system performance. Upgrade to SYNTEPORE&#x2122; advanced synthetic fiber technology today. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
           <Link href="/search" className="sy-btn">SEARCH MY SKU &rarr;</Link>
           <p className="sy-cta-footer">// ELIMFILTERS GLOBAL HEAVY DUTY ENGINEERING</p>
         </div>

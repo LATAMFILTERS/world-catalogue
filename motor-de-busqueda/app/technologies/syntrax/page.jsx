@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../constants';
 
 export default function Syntrax() {
   const css = `
@@ -49,7 +49,7 @@ export default function Syntrax() {
         <div className="sx-hero-ov" />
         <div className="sx-hero-c">
           <p className="sx-tech" style={{marginBottom:'24px'}}>// 02 / LUBRICATION TECHNOLOGY</p>
-          <h1 className="sx-impact sx-h1">SYNTRAX™</h1>
+          <h1 className="sx-impact sx-h1">SYNTRAX&#x2122;</h1>
           <h1 className="sx-impact sx-h1"><span className="sx-h1-volt">HYBRID MEDIA</span></h1>
           <div style={{marginTop:'40px',maxWidth:'640px',borderLeft:'4px solid var(--volt)',paddingLeft:'40px'}}>
             <p className="sx-p" style={{fontSize:'22px',fontStyle:'italic',fontWeight:'300'}}><strong>IA Core</strong> Architecture. Exclusive filter media that fuses synthetic fibers and cellulose for a perfect balance between flow and particle retention.</p>
@@ -70,7 +70,7 @@ export default function Syntrax() {
             <div>
               <p className="sx-tech" style={{marginBottom:'24px'}}>// ADVANCED STRUCTURE</p>
               <h2 className="sx-impact sx-h2">HYBRID<br /><span style={{color:'var(--volt)'}}>IA ENGINEERING</span></h2>
-              <p className="sx-p"><strong>SYNTRAX™</strong> is an exclusive filtration media developed through artificial intelligence. It is not just a simple medium: it is a <strong>molecular fusion</strong> that intertwines the absorption capacity of cellulose with the structural strength of synthetic fibers. This combination achieves constant sub-micron cleanliness, protecting critical components under extreme pressure conditions.</p>
+              <p className="sx-p"><strong>SYNTRAX&#x2122;</strong> is an exclusive filtration media developed through artificial intelligence. It is not just a simple medium: it is a <strong>molecular fusion</strong> that intertwines the absorption capacity of cellulose with the structural strength of synthetic fibers. This combination achieves constant sub-micron cleanliness, protecting critical components under extreme pressure conditions.</p>
               <div className="sx-specs">
                 <div className="sx-spec">
                   <span className="sx-spec-label">MEDIA TYPE</span>
@@ -113,7 +113,7 @@ export default function Syntrax() {
       <section className="sx-cta">
         <div className="sx-cta-inner">
           <h2 className="sx-impact sx-cta-h2">HYBRID SCIENCE</h2>
-          <h2 className="sx-impact sx-cta-h2"><span style={{color:'var(--volt)'}}>USE SYNTRAX™</span></h2>
+          <h2 className="sx-impact sx-cta-h2"><span style={{color:'var(--volt)'}}>USE SYNTRAX&#x2122;</span></h2>
           <Link href="/search" className="sx-btn">FIND MY SKU</Link>
           <p className="sx-tech" style={{fontSize:'9px',opacity:0.3,marginTop:'48px',letterSpacing:'0.5em'}}>// EXCLUSIVE IA CORE TECHNOLOGY BY ELIMFILTERS</p>
         </div>

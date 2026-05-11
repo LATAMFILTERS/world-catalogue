@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../constants';
 
 export default function Macrocore() {
   const css = `
@@ -50,9 +50,9 @@ export default function Macrocore() {
         <div className="mc-hero-c">
           <p className="mc-tech" style={{marginBottom:'24px'}}>// HEAVY_DUTY_AIR_SYSTEMS / SYS-01</p>
           <h1 className="mc-impact mc-h1">STRUCTURE</h1>
-          <h1 className="mc-impact mc-h1"><span className="mc-h1-volt">MACROCORE™.</span></h1>
+          <h1 className="mc-impact mc-h1"><span className="mc-h1-volt">MACROCORE&#x2122;.</span></h1>
           <div style={{marginTop:'40px',maxWidth:'640px',borderLeft:'4px solid var(--volt)',paddingLeft:'40px'}}>
-            <p className="mc-p" style={{fontSize:'22px',fontStyle:'italic',fontWeight:'300'}}><strong>Structural Reinforcement</strong> Technology — Engineering of Certainty. Absolute shield against collapse and media migration in high-displacement engines.</p>
+            <p className="mc-p" style={{fontSize:'22px',fontStyle:'italic',fontWeight:'300'}}><strong>Structural Reinforcement</strong> Technology &mdash; Engineering of Certainty. Absolute shield against collapse and media migration in high-displacement engines.</p>
           </div>
           <div style={{marginTop:'48px',display:'flex',alignItems:'center',gap:'32px',flexWrap:'wrap'}}>
             <Link href="/search" className="mc-btn">SEARCH MY SKU</Link>
@@ -70,7 +70,7 @@ export default function Macrocore() {
             <div>
               <p className="mc-tech" style={{marginBottom:'24px'}}>// ANTI-COLLAPSE TECHNOLOGY</p>
               <h2 className="mc-impact mc-h2">HD ENGINEERING<br /><span style={{color:'var(--volt)'}}>VALIDATION.</span></h2>
-              <p className="mc-p">The <strong>MACROCORE™</strong> architecture redefines mechanical stability. The radial support mesh system ensures the filter geometry remains unalterable, even under the extreme suction demands of heavy machinery.</p>
+              <p className="mc-p">The <strong>MACROCORE&#x2122;</strong> architecture redefines mechanical stability. The radial support mesh system ensures the filter geometry remains unalterable, even under the extreme suction demands of heavy machinery.</p>
               <div className="mc-specs">
                 <div className="mc-spec">
                   <span className="mc-spec-label">CRUSH RESISTANCE</span>
@@ -98,7 +98,7 @@ export default function Macrocore() {
           <div className="mc-grid3">
             {[
               {title:'REINFORCED CORE',desc:'Optimized central structure to nullify the risk of deformation in critical mining and construction operations.'},
-              {title:'RADIAL SEALING',desc:'INTEKCORE™ technology ensuring a hermetic seal against contaminants in high-vibration environments.'},
+              {title:'RADIAL SEALING',desc:'INTEKCORE&#x2122; technology ensuring a hermetic seal against contaminants in high-vibration environments.'},
               {title:'CYCLIC STABILITY',desc:'Maintains filter media integrity against constant motor pulsations under full load.'},
             ].map((c,i) => (
               <div key={i} className="mc-card">
