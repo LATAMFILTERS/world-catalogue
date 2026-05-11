@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
-
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../constants';
 
 export default function About() {
   const css = `
@@ -138,4 +137,3 @@ export default function About() {
       </section>
     </div>
   );
-}
