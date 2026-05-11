@@ -1,14 +1,13 @@
 'use client';
 import Link from 'next/link';
-
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../../constants';
 
 export default function MunicipalServices() {
   const css = `
     .ms{background:#000;color:#fff;min-height:100vh;}
     .ms-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .ms-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .ms-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/wasted.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .ms-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/wasted.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .ms-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .ms-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .ms-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -58,23 +57,20 @@ export default function MunicipalServices() {
     <div className="ms">
       <style>{css}</style>
       <a href="/" className="ms-back">&larr; HOME</a>
-
       <section className="ms-hero">
         <div className="ms-hero-inner">
           <div className="ms-eyebrow">// STRATEGIC MUNICIPAL PROTECTION</div>
           <h1 className="ms-h1">MUNICIPAL<br /><span>PUBLIC SERVICE CONTINUITY</span></h1>
-          <p className="ms-hero-p">Precision filtration engineered for refuse collection vehicles, road sweepers, gritters, street washers, sewer tankers, and municipal utility trucks. Public service fleets operate on mandatory daily schedules under fixed budgets where unplanned breakdowns disrupt collection routes, delay road maintenance, and generate recovery costs that come directly from constrained operational budgets. Heavy-duty hydraulic compaction systems, pneumatic braking circuits, and high-load diesel engines operate in some of the most contamination-intensive duty cycles in commercial transport. Our technology protects every critical fluid system, extending service intervals and keeping essential services running reliably for the communities that depend on them. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="ms-hero-p">Precision filtration engineered for refuse collection vehicles, road sweepers, gritters, street washers, sewer tankers, and municipal utility trucks. Our technology protects every critical fluid system, extending service intervals and keeping essential services running reliably. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
-
       <section className="ms-sec" style={{background:'#050505'}}>
         <div className="ms-sec-inner">
           <div className="ms-grid2">
             <div>
               <div className="ms-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="ms-sh2">MUNICIPAL RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="ms-p">Refuse collection vehicles complete up to 500 compaction cycles per shift – more hydraulic cycles than most construction equipment achieves in days. Hydraulic oil contamination in compaction systems causes proportional valve hunting, cylinder seal failure, and pump cavitation that leave vehicles grounded during collection rounds. Pneumatic brake circuits on heavy municipal vehicles operating at maximum GVW across urban stop-start cycles are critically dependent on dry, contaminant-free compressed air for consistent braking performance.</p>
-              <p className="ms-p">Municipal fleet managers operate within tight budget frameworks that make reactive maintenance cost increases politically difficult. Our extended-interval filtration technologies reduce emergency repair callouts, lower parts costs through component protection, and support predictive maintenance programmes by extending the time between drain intervals – directly reducing the maintenance expenditure per vehicle in local authority and contracted fleet operations covering Volvo, Mercedes-Benz, MAN, and DAF platform vehicles.</p>
+              <p className="ms-p">Our extended-interval filtration technologies reduce emergency repair callouts and support predictive maintenance programmes across Volvo, Mercedes-Benz, MAN, and DAF platform vehicles.</p>
               <div className="ms-tech-grid">
                 <div><div className="ms-tech-label">FUEL SYSTEMS</div><div className="ms-tech-val">AQUAGUARD™</div></div>
                 <div><div className="ms-tech-label">LUBRICATION</div><div className="ms-tech-val">SINTRAX™</div></div>
@@ -85,58 +81,18 @@ export default function MunicipalServices() {
             </div>
             <div className="ms-video-wrap">
               <div className="ms-video-inner">
-                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/servicios.mp4" autoPlay muted loop playsInline />
+                <video src={`${WP}/servicios.mp4`} autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="ms-sec" style={{background:'#000'}}>
-        <div className="ms-sec-inner">
-          <div style={{textAlign:'center',marginBottom:'52px'}}>
-            <div className="ms-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// FLEET PROTECTION SYSTEMS</div>
-            <h2 className="ms-sh2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
-          </div>
-          <div className="ms-grid3">
-            {[
-              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Municipal vehicles fuel from depot storage tanks that see seasonal temperature cycling, prolonged standstill periods, and occasional contamination from shared fuelling infrastructure. Water accumulation and microbial growth in depot tanks produce fuel contamination that reaches Common Rail injection systems with pressures above 1,800 bar on Euro VI refuse collection vehicles and street sweepers. AQUAGUARD™ hydrophobic coalescence modules remove free water and particulates from the fuel supply, protecting injection pump bores and piezoelectric injector assemblies on high-duty municipal diesel engines operating across multi-shift weekly schedules.'},
-              {label:'Lubrication Module', title:'SINTRAX™', desc:'Refuse collection vehicles operating at maximum GVW with frequent cold starts in the early morning generate elevated oil contamination rates that degrade lubricant alkalinity and viscosity index faster than standard-duty filters can manage. SINTRAX™ high-capacity oil filtration maintains ISO 4406 cleanliness in ACEA E6-compliant oils used by Euro VI municipal engines with closed-circuit crankcase ventilation, capturing soot agglomerates and metallic wear particles that cause turbocharger bearing wear and DPF overloading events in vehicles completing 10-12 hour daily collection rounds.'},
-              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Hydraulic refuse compaction systems on rear-loading and side-loading collection vehicles complete thousands of compression cycles daily, generating continuous wear particle ingression that degrades hydraulic oil cleanliness from the moment of service. Control valve spool wear in compaction circuits causes slow ejection cycles that delay tipping operations and increase fuel consumption per route. NANOFORCE™ nanofiber return line elements maintain the ISO 16/14/11 cleanliness codes required to protect directional control valves and compaction pump barrels on high-cycle municipal hydraulic systems through the full service interval.'},
-              {label:'Air Intake', title:'MACROCORE™', desc:'Street sweepers and road vacuum trucks operate in the highest particulate-load environments of any urban vehicle, ingesting kerb dust, fine gravel, and combustion particulates at concentrations that rapidly load standard air filter elements and increase engine intake restriction. MACROCORE™ synthetic-blend air filter elements deliver triple the dust capacity of standard cellulose filters, maintaining low restriction growth across the service interval and protecting turbocharger compressors and engine cylinders on high-duty street sweeping and vacuum excavation vehicles that operate continuously in environments with extreme ambient particulate levels.'},
-              {label:'Cooling Systems', title:'COOLTECH™', desc:'Refuse collection vehicles and gritters operating at reduced road speeds with PTO-driven hydraulic systems place heavy thermal loads on cooling systems not designed for continuous low-speed high-torque operation. Coolant scale from municipal water top-ups and liner cavitation pitting on wet-sleeve engines are common failure modes in heavy municipal vehicles. COOLTECH™ supplemental coolant filtration removes scale deposits and corrosive particulates from the cooling circuit, maintaining heat transfer efficiency and protecting engine cylinder liners on high-output diesel municipal vehicles operating across extended daily shifts in urban environments.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Heavy municipal vehicles – including gritters, tippers, and large refuse trucks – rely on multi-circuit air brake systems that must perform reliably in sub-zero winter conditions where moisture in the brake air supply freezes at chamber inlet ports and diaphragm springs, causing brake drag, partial application, and driver-reported pedal inconsistency. DRYCORE™ desiccant air dryer cartridges eliminate free and condensed water from the air brake supply, ensuring full brake chamber actuation force across the operating temperature range and maintaining the vehicle roadworthiness required for daily service on public roads.'},
-            ].map((c, i) => (
-              <div key={i} className="ms-card">
-                <div className="ms-card-label">{c.label}</div>
-                <div className="ms-card-title">{c.title}</div>
-                <p className="ms-card-p">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ms-human">
-        <div className="ms-human-inner">
-          <div>
-            <div className="ms-eyebrow">// HUMAN + ENVIRONMENT</div>
-            <h2 className="ms-sh2">PROTECTING <span>PUBLIC SERVICES</span></h2>
-            <p className="ms-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>Municipal services run on fixed schedules that citizens and council leadership alike measure. Refuse not collected on bin day, roads not gritted before a frost, and sweepers not deployed before a public event each generate public complaints and political accountability. Filtration that keeps vehicles running is governance infrastructure.</p>
-          </div>
-          <div className="ms-env">
-            <p className="ms-env-p">Municipal fleets are among the largest direct contributors to urban diesel particulate emissions because they operate in the same dense residential and commercial corridors where the populations they serve live and work. Euro VI engines on refuse collection vehicles and sweepers emit 95% less particulate matter than Euro III predecessors – but only when fuel systems deliver clean fuel to SCR and DPF aftertreatment. AQUAGUARD™ ensures the injection system cleanliness that keeps emissions control systems functioning, supporting local authority sustainability commitments, Clean Air Zone access requirements, and the health outcomes of the communities these vehicles serve every day.</p>
-            <div className="ms-env-strong">From collection round to road maintenance: every vehicle serves a community.</div>
-          </div>
-        </div>
-      </section>
-
       <section className="ms-cta">
         <div className="ms-cta-inner">
           <div>
             <div className="ms-cta-label">// MUNICIPAL CROSS REFERENCE</div>
             <div className="ms-cta-h2">FLEET UPTIME IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
-            <p className="ms-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your fleet. Precision-matched across 5,000+ cross-references worldwide.</p>
+            <p className="ms-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your fleet.</p>
           </div>
           <Link href="/search" className="ms-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>

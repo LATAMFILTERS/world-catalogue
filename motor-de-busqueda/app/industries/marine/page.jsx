@@ -1,14 +1,13 @@
 'use client';
 import Link from 'next/link';
-
-const WP = 'https://elimfilters.com/wp-content/uploads';
+import { WP } from '../../constants';
 
 export default function MarineIndustry() {
   const css = `
     .mi{background:#000;color:#fff;min-height:100vh;}
     .mi-back{position:fixed;top:24px;right:24px;z-index:999;background:rgba(0,0,0,0.8);border:1px solid rgba(255,241,45,0.4);padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-decoration:none;text-transform:uppercase;transition:all 0.2s;backdrop-filter:blur(8px);}
     .mi-back:hover{background:#FFF12D;color:#000;border-color:#FFF12D;}
-    .mi-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/marine.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .mi-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(to right,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.2) 100%),url('${WP}/marine.png') center/cover no-repeat;padding:120px 6% 80px;border-bottom:1px solid rgba(255,255,255,0.04);}
     .mi-hero-inner{max-width:1400px;margin:0 auto;width:100%;}
     .mi-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#FFF12D;text-transform:uppercase;margin-bottom:24px;}
     .mi-h1{font-family:'Russo One',sans-serif;font-size:clamp(45px,8vw,90px);text-transform:uppercase;line-height:0.95;color:#fff;margin:0;}
@@ -58,23 +57,20 @@ export default function MarineIndustry() {
     <div className="mi">
       <style>{css}</style>
       <a href="/" className="mi-back">&larr; HOME</a>
-
       <section className="mi-hero">
         <div className="mi-hero-inner">
           <div className="mi-eyebrow">// STRATEGIC MARINE PROTECTION</div>
           <h1 className="mi-h1">MARINE<br /><span>VESSEL CONTINUITY</span></h1>
-          <p className="mi-hero-p">Precision filtration engineered for container ships, bulk carriers, offshore supply vessels, ferries, tugboats, and superyachts. Marine diesel engines operate continuously for weeks without the option of roadside assistance – a fuel system failure 400 nautical miles offshore means emergency tow, cargo delay, and charterer claims that dwarf any maintenance budget. Salt spray, high humidity, vibration, and biofouled bunker fuel create contamination conditions found in no other industry. Our technology protects main engines, auxiliary generators, hydraulic deck machinery, and seawater cooling circuits, keeping vessels on schedule and seaworthy across all ocean conditions worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
+          <p className="mi-hero-p">Precision filtration engineered for container ships, bulk carriers, offshore supply vessels, ferries, tugboats, and superyachts. Marine diesel engines operate continuously for weeks without the option of roadside assistance. Our technology protects main engines, auxiliary generators, hydraulic deck machinery, and seawater cooling circuits, keeping vessels on schedule and seaworthy across all ocean conditions worldwide. Precision-matched to OEM specifications across 5,000+ cross-references. Certified to ISO 16889 standards.</p>
         </div>
       </section>
-
       <section className="mi-sec" style={{background:'#050505'}}>
         <div className="mi-sec-inner">
           <div className="mi-grid2">
             <div>
               <div className="mi-eyebrow">// EXTENDED SERVICE ENGINEERING</div>
               <h2 className="mi-sh2">MARITIME RELIABILITY<br /><span>ENGINEERED</span></h2>
-              <p className="mi-p">Bunker fuel quality is among the most variable in any industry – HFO and VLSFO blends sourced from multiple ports carry varying levels of catalytic fines, water, and microbial contamination that reach main engine injection systems if fuel treatment trains are inadequate. Catfines above 15 mg/kg in engine fuel cause rapid piston ring and cylinder liner wear on two-stroke crosshead engines. Modern Tier III engines with SCR systems require clean fuel for accurate NOx reduction; any fuel contamination disrupts catalyst dosing and threatens port state control compliance.</p>
-              <p className="mi-p">Planned maintenance intervals on deep-sea vessels are set to coincide with port calls weeks apart. Extended-duty filtration that maintains cleanliness targets throughout the passage reduces the risk of in-voyage failures that require deviation to a repair port. Our marine filtration range covers MAN, Wärtsilä, Caterpillar Marine, and Cummins engine platforms, providing the fuel, lube, and seawater cooling protection required for IMO-compliant deep-sea and coastal operations.</p>
+              <p className="mi-p">Bunker fuel quality is among the most variable in any industry. Our marine filtration range covers MAN, Wärtsilä, Caterpillar Marine, and Cummins engine platforms.</p>
               <div className="mi-tech-grid">
                 <div><div className="mi-tech-label">FUEL SYSTEMS</div><div className="mi-tech-val">AQUAGUARD™</div></div>
                 <div><div className="mi-tech-label">LUBRICATION</div><div className="mi-tech-val">SINTRAX™</div></div>
@@ -85,58 +81,18 @@ export default function MarineIndustry() {
             </div>
             <div className="mi-video-wrap">
               <div className="mi-video-inner">
-                <video src="https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/boat.mp4" autoPlay muted loop playsInline />
+                <video src={`${WP}/boat.mp4`} autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="mi-sec" style={{background:'#000'}}>
-        <div className="mi-sec-inner">
-          <div style={{textAlign:'center',marginBottom:'52px'}}>
-            <div className="mi-eyebrow" style={{display:'flex',justifyContent:'center',marginBottom:'16px'}}>// VESSEL PROTECTION SYSTEMS</div>
-            <h2 className="mi-sh2" style={{textAlign:'center'}}>SYSTEM-BY-SYSTEM <span>PROTECTION</span></h2>
-          </div>
-          <div className="mi-grid3">
-            {[
-              {label:'Fuel Module', title:'AQUAGUARD™', desc:'Bunker fuel delivered at ports routinely contains free water, sludge, and catfine concentrations that threaten main engine injection systems on bulk carriers and tankers. AQUAGUARD™ fuel treatment modules with hydrophobic coalescence and high-efficiency particle capture protect Common Rail and jerk pump injection systems on both two-stroke and four-stroke marine diesel engines, removing water and particles before they reach the precision fuel pump barrel and plunger assemblies that cannot tolerate contaminated fuel under continuous high-load passage conditions.'},
-              {label:'Lubrication Module', title:'SINTRAX™', desc:'Crosshead and trunk-piston marine engines operate at continuous rated load for weeks between ports, generating high soot and thermal oxidation products in system and cylinder oils. SINTRAX™ high-efficiency oil filtration maintains ISO 4406 cleanliness standards in large-bore MAN and Wärtsilä engine lubrication systems, capturing metallic wear debris from crosshead bearings, crankpins, and camshaft assemblies before it recirculates and causes accelerated surface fatigue in the bearing shells that support main engine crankshafts during transoceanic passages.'},
-              {label:'Seawater Cooling', title:'COOLTECH™', desc:'Seawater cooling circuits on vessels operating across tropical and temperate zones are highly susceptible to biofouling, biological scale, and galvanic corrosion between copper alloy heat exchanger tubes and aluminium or steel hull structures. COOLTECH™ supplemental cooling circuit filtration removes particulate scale, organic deposits, and corrosion products from central cooling water systems, maintaining heat exchanger efficiency and preventing the tube fouling that increases sea water pump back-pressure and reduces thermal transfer in main engine jacket and charge air cooler circuits.'},
-              {label:'Hydraulic Systems', title:'NANOFORCE™', desc:'Hydraulic deck cranes, hatch cover actuators, bow thrusters, and steering gear systems operate in the most corrosive environment of any hydraulic application – salt spray, condensation, and seawater splash combined with continuous duty cycles and high system pressures. NANOFORCE™ nanofiber elements maintain the ISO 16/14/11 hydraulic cleanliness required by proportional steering valves and variable-speed thruster drives, protecting the deck machinery systems that must perform reliably during port manoeuvring and cargo handling operations in all weather conditions.'},
-              {label:'Air Intake', title:'SYNTEPORE™', desc:'Marine diesel generators and main engine turbochargers operating on vessels in heavy sea states ingest salt spray, humidity, and sea mist that accelerates compressor wheel corrosion and deposits salt crystals on turbine blades. SYNTEPORE™ synthetic media air intake elements provide efficient moisture-resistant filtration for marine auxiliary engine air intakes, maintaining the air quality and turbocharger efficiency needed to sustain rated generator output during heavy weather operations where main engines demand maximum auxiliary power support.'},
-              {label:'Pneumatic Systems', title:'DRYCORE™', desc:'Pneumatic control systems on offshore supply vessels, bulk carriers, and tankers operate hatch covers, cargo valves, and safety shutdown actuators using compressed air that passes through unheated void spaces and exterior deck piping where condensation and freeze events are common. DRYCORE™ desiccant air dryer elements eliminate moisture from compressed air distribution systems, preventing corrosion in stainless and carbon steel valve bodies, ensuring reliable actuation of cargo and ballast control systems, and protecting the pneumatic safety circuits required by class society and flag state regulations.'},
-            ].map((c, i) => (
-              <div key={i} className="mi-card">
-                <div className="mi-card-label">{c.label}</div>
-                <div className="mi-card-title">{c.title}</div>
-                <p className="mi-card-p">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mi-human">
-        <div className="mi-human-inner">
-          <div>
-            <div className="mi-eyebrow">// HUMAN + ENVIRONMENT</div>
-            <h2 className="mi-sh2">PROTECTING <span>MARITIME OPERATIONS</span></h2>
-            <p className="mi-p" style={{fontStyle:'italic',fontSize:'18px',color:'rgba(255,255,255,0.8)'}}>The ocean offers no margin for mechanical failure. Clean fuel, clean oil, and dry pneumatic circuits are not service items – they are the engineering discipline that separates vessels that arrive on schedule from those that divert to emergency repair ports.</p>
-          </div>
-          <div className="mi-env">
-            <p className="mi-env-p">IMO 2020 VLSFO compliance and the approaching IMO 2030 carbon intensity targets require marine engines to operate at their designed efficiency – which depends entirely on clean fuel delivery, effective seawater cooling, and low-friction lubrication. Fuel contamination that causes injector wear raises specific fuel oil consumption and elevates CO2 emissions per tonne-mile, directly impacting CII rating compliance. AQUAGUARD™ and COOLTECH™ protect the fuel and cooling systems that allow modern marine engines to maintain rated thermal efficiency throughout the passage, supporting both IMO compliance and the commercial fuel economy that determines voyage profitability.</p>
-            <div className="mi-env-strong">From departure port to destination: clean systems complete the voyage.</div>
-          </div>
-        </div>
-      </section>
-
       <section className="mi-cta">
         <div className="mi-cta-inner">
           <div>
             <div className="mi-cta-label">// MARINE CROSS REFERENCE</div>
             <div className="mi-cta-h2">VESSEL RELIABILITY IS EVERYTHING.<br />FIND YOUR CROSS REFERENCE.</div>
-            <p className="mi-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your vessel. Precision-matched across 5,000+ cross-references worldwide.</p>
+            <p className="mi-cta-p">Access our global database. Search by OEM or part number to find the industrial-grade match for your vessel.</p>
           </div>
           <Link href="/search" className="mi-cta-btn">FIND MY FILTER &rarr;</Link>
         </div>
