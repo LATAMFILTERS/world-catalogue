@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: elimfilters_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: elimfilters
+      POSTGRES_PASSWORD: dev_password
+      POSTGRES_DB: filters
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elimfilters"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # API Server
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elimfilters_api
+    ports:
+      - "5000:5000"
+    environment:
+      API_PORT: 5000
+      NODE_ENV: development
+      DATABASE_URL: postgresql://elimfilters:dev_password@postgres:5432/filters
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: node api-server.js
+
+  # Frontend Server
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elimfilters_web
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+    depends_on:
+      - api
+    command: node server.js
+
+volumes:
+  postgres_data:
+    driver: local

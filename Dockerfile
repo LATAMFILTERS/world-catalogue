@@ -15,4 +15,8 @@ COPY . .
 # Build Next.js
 RUN cd motor-de-busqueda && npm run build
 
-CMD ["node", "server.js"]
+# Ensure start.sh is executable
+RUN chmod +x start.sh
+
+# Start both servers
+CMD ["sh", "start.sh"]
