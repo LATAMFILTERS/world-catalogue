@@ -3,198 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — AIR FILTRATION SYSTEMS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — AIRFILTER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-airfilter-wrapper">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-airfilter-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            background-color: var(--bg);
-            color: rgba(255,255,255,0.9);
-            font-family: 'Barlow', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        #elim-airfilter-wrapper .font-impact {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 1.0;
-            letter-spacing: 0.01em;
-        }
-
-        #elim-airfilter-wrapper .font-tech {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-            opacity: 0.9;
-        }
-
-        #elim-airfilter-wrapper .section {
-            padding: 80px 8%;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-
-        #elim-airfilter-wrapper .hero-air {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(to right, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.3) 100%),
-                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_18sjp118sjp118sj.png')
-                center/cover no-repeat;
-        }
-
-        #elim-airfilter-wrapper .card {
-            background: #050505;
-            border: 1px solid #111;
-            padding: 50px;
-            border-radius: 4px;
-        }
-
-        #elim-airfilter-wrapper .tech-pill {
-            border-left: 2px solid rgba(255,255,255,0.1);
-            padding-left: 1.5rem;
-        }
-
-        /* Mobile & Tablet Fixes */
-        @media (max-width: 1024px) {
-            #elim-airfilter-wrapper .section { padding: 60px 6%; }
-            #elim-airfilter-wrapper .hero-air {
-                min-height: 60vh;
-                background: linear-gradient(180deg, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 100%),
-                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_18sjp118sjp118sj.png') center/cover no-repeat;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #elim-airfilter-wrapper .card { padding: 30px 20px; }
-            #elim-airfilter-wrapper .tech-pill { border-left-color: var(--volt); }
-            #elim-airfilter-wrapper .hero-air { text-align: center; justify-content: center; }
-            #elim-airfilter-wrapper .hero-air .border-l-2 { border-left: none !important; border-top: 2px solid var(--volt); padding-left: 0 !important; padding-top: 20px; margin: 40px auto 0; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <section class="hero-air section">
-            <div class="container mx-auto">
-                <div class="font-tech mb-6">// AIR FILTRATION SYSTEMS / SYS-01</div>
-                <h1 class="font-impact text-[clamp(42px,7vw,90px)] mb-2 text-white">100% PURE AIR.</h1>
-                <h1 class="font-impact text-[var(--volt)] text-[clamp(38px,6vw,80px)]">PROTECTED ENGINE.</h1>
-                <div class="mt-10 max-w-2xl border-l-2 border-[var(--volt)] pl-8 text-white/70 text-lg md:text-xl font-light italic">
-                    MACROCORE™ Technology: Absolute defense for high-displacement engines against abrasive contaminants.
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container mx-auto">
-                <div class="card">
-                    <div class="font-tech mb-5">// MACROCORE™ ARCHITECTURE</div>
-                    <h2 class="font-impact text-[clamp(32px,4vw,52px)] mb-8">
-                        INTAKE IS NO LONGER <span class="text-[var(--volt)]">A WEAK POINT.</span>
-                    </h2>
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
-                        <div class="space-y-6 text-white/60 text-lg font-light">
-                            <p>MACROCORE™ neutralizes abrasive risks before they ever touch the cylinders.</p>
-                            <p class="text-white/90 font-medium text-xl">Eliminating wear-by-suction.</p>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div class="tech-pill">
-                                <span class="font-tech block mb-2">ISO 5011</span>
-                                <span class="text-sm opacity-50">Global efficiency certification</span>
-                            </div>
-                            <div class="tech-pill">
-                                <span class="font-tech block mb-2">ZERO BYPASS</span>
-                                <span class="text-sm opacity-50">Structural integrity sealing</span>
-                            </div>
-                        </div>
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// AIR FILTRATION SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">AIRFILTER</h1>
+                    <h1 class="font-impact h1-secondary mb-8">SILICA DEFENSE</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>99.9% silica retention technology</strong> delivering absolute zero bypass for heavy-duty intake system protection.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section class="section">
-            <div class="container mx-auto">
-                <div class="card border-[var(--volt)]/20">
-                    <div class="flex flex-col xl:flex-row justify-between items-center gap-12">
-                        <div class="w-full xl:max-w-xl">
-                            <div class="font-tech mb-4">// LIFESPAN IMPACT</div>
-                            <h2 class="font-impact text-[clamp(34px,5vw,60px)] mb-6">
-                                MACROCORE™ <span class="text-[var(--volt)]">PROTECTION.</span>
-                            </h2>
-                            <p class="text-white/60 text-lg font-light">
-                                High-efficiency retention vs. standard reactive parts.
-                            </p>
-                        </div>
+        <article class="section section-dark">
+            <div class="grid-2">
+                <div>
+                    <p class="font-tech mb-6">// INTAKE RETENTION</p>
+                    <h2 class="font-impact h2-main mb-8">SILICA<br><span class="yellow">CAPTURE DEFENSE</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        AIRFILTER technology achieves 99.9% silica retention with zero bypass capability ensuring absolute protection. Heavy-duty intake systems receive ISO 5011 certified performance through precision structural sealing. The advanced media construction intercepts abrasive contaminants before engine contact, eliminating cylinder wall damage and extending engine life in demanding industrial applications.
+                    </p>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
+                </div>
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_18sjp118sjp118sj.png" alt="AIRFILTER Technology">
+                </div>
+            </div>
+        </article>
 
-                        <div class="w-full xl:max-w-xl bg-black/50 border border-white/10 rounded-sm overflow-hidden">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[400px]">
-                                    <thead>
-                                        <tr class="border-b border-white/10 bg-white/5">
-                                            <th class="p-4 font-tech text-[10px]">INTAKE SCENARIO</th>
-                                            <th class="p-4 font-tech text-[10px] text-red-500">STANDARD</th>
-                                            <th class="p-4 font-tech text-[10px] text-[var(--volt)]">MACROCORE™</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-sm font-light">
-                                        <tr class="border-b border-white/5">
-                                            <td class="p-4 text-white/80">Silica Retention</td>
-                                            <td class="p-4 text-red-400">Inconsistent</td>
-                                            <td class="p-4 text-[var(--volt)]">99.9% Absolute</td>
-                                        </tr>
-                                        <tr class="border-b border-white/5">
-                                            <td class="p-4 text-white/80">Operating Cost</td>
-                                            <td class="p-4 text-red-400">Reactive Expense</td>
-                                            <td class="p-4 text-[var(--volt)]">Life Investment</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">RETENTION <span class="yellow">EXCELLENCE</span></h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// SILICA CAPTURE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">99.9% RETENTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Absolute silica particle retention prevents abrasive damage to engine cylinders and precision components.</p>
+                    </div>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// BYPASS SEAL</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ZERO BYPASS</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Structural integrity sealing ensures complete media contact preventing unfiltered air pathways.</p>
+                    </div>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// ISO CERTIFIED</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">5011 RATED</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Global efficiency certification validates heavy-duty intake system performance compliance.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-[var(--volt)]">
-            <div class="container mx-auto px-[8%]">
-                <div class="flex flex-col lg:flex-row items-stretch">
-                    <div class="py-16 lg:py-24 flex-1">
-                        <div class="font-tech text-black/60 mb-4 border-b border-black/10 pb-2 inline-block">
-                            // FINAL ENGINEERING DECISION
-                        </div>
-                        <h2 class="font-impact text-[clamp(36px,5vw,64px)] text-black leading-[0.9] mb-6">
-                            SECURE EVERY <br>
-                            <span>BREATH.</span>
-                        </h2>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SILICA EXTRACTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">ABSOLUTE CAPTURE</h3>
+                        <p class="text-body text-sm light">Intercepts silica particles at intake preventing cylinder wall abrasion throughout full filter service life.</p>
                     </div>
-
-                    <div class="flex items-start lg:items-center justify-center lg:justify-end py-10 lg:py-0">
-                        <a href="https://elimfilters-search-pro.vercel.app/"
-                           target="_blank"
-                           class="group relative inline-flex items-center gap-6 bg-black text-white font-impact text-xl md:text-3xl px-8 md:px-12 py-8 md:py-10 transition-all hover:bg-zinc-900 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                            <span>FIND MY FILTER</span>
-                            <i class="fa-solid fa-chevron-right text-[var(--volt)] group-hover:translate-x-2 transition-transform"></i>
-                        </a>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// BYPASS PREVENTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">SEALED INTEGRITY</h3>
+                        <p class="text-body text-sm light">Zero bypass structural sealing eliminates unfiltered air pathways protecting engine precision components.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// INTAKE DEFENSE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">HEAVY-DUTY RATED</h3>
+                        <p class="text-body text-sm light">Heavy-duty intake optimization delivers extended service intervals with consistent performance.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">PROTECT YOUR ENGINE</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH AIRFILTER</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

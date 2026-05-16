@@ -3,182 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — FUEL FILTER SYSTEMS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — FUEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-fuelfilter-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-fuelfilter-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            --text-body: #d1d1d6;
-            --text-muted: #a1a1aa;
-            --text-dim: #8e8e93;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        #elim-fuelfilter-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-        }
-        #elim-fuelfilter-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--volt);
-            font-size: 11px;
-        }
-
-        #elim-fuelfilter-wrapper .section { padding: 80px 6%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        #elim-fuelfilter-wrapper .container { max-width: 1400px; margin: auto; }
-
-        #elim-fuelfilter-wrapper .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(90deg, #000 40%, transparent 100%),
-                        url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_e9qpvne9qpvne9qp.png') center/cover no-repeat;
-        }
-
-        #elim-fuelfilter-wrapper .feature {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid var(--volt);
-            padding: 40px 32px;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        #elim-fuelfilter-wrapper .feature:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
-
-        #elim-fuelfilter-wrapper .grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        #elim-fuelfilter-wrapper .grid-2-col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-
-        #elim-fuelfilter-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            padding: 20px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            text-decoration: none;
-            transition: 0.25s ease;
-        }
-        #elim-fuelfilter-wrapper .cta-pill:hover { background: #ffffff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,241,45,0.15); }
-
-        @media (max-width: 1024px) {
-            #elim-fuelfilter-wrapper .grid-3-col { grid-template-columns: repeat(2, 1fr); }
-            #elim-fuelfilter-wrapper .grid-2-col { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            #elim-fuelfilter-wrapper .grid-3-col { grid-template-columns: 1fr; }
-            #elim-fuelfilter-wrapper .hero { background-position: center; text-align: center; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero section">
-            <div class="container">
-                <p class="font-tech-clean">// FUEL FILTRATION SYSTEMS / SYS-02</p>
-                <h1 class="font-impact-master" style="font-size:clamp(45px, 8vw, 90px); color:#fff;">
-                    FUEL FILTER<br>
-                    <span style="color:var(--volt);">SYSTEMS</span>
-                </h1>
-                <div style="margin-top:30px; max-width:650px; border-left:4px solid var(--volt); padding-left:25px; color:var(--text-body); font-size:clamp(16px, 2vw, 18px); line-height:1.6; font-style:italic;">
-                    <strong>SYNTEPORE™ Technology</strong> — Synthetic armor for 100% pure fuel. Engineered protection for heavy-duty performance.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// FUEL FILTRATION SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">FUEL</h1>
+                    <h1 class="font-impact h1-secondary mb-8">SYNTHETIC ARMOR</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>Synthetic armor media</strong> with high dirt capacity rated ISO 16332 for diesel, biodiesel, and gasoline applications.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <article class="section" style="background:#050505;">
-            <div class="container grid-2-col">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="font-tech-clean">// SYNTEPORE™ ARMOR</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(30px, 4vw, 55px); margin: 20px 0;">
-                        SYNTHETIC BARRIER.<br><span style="color:var(--volt);">ABSOLUTE PURITY.</span>
-                    </h2>
-                    <p style="color:var(--text-body); font-size:17px; line-height:1.7; margin-bottom:25px; font-weight:300;">
-                        Fuel cleanliness is critical. ELIMFILTERS' <strong>SYNTEPORE™</strong> delivers a synthetic armor layer that guarantees consistent fuel purity, preventing unplanned downtime.
+                    <p class="font-tech mb-6">// FUEL DEFENSE</p>
+                    <h2 class="font-impact h2-main mb-8">SYNTHETIC<br><span class="yellow">ARMOR CUSTODY</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        FUEL filters feature synthetic armor media designed for maximum dirt capacity protecting injection systems across multiple fuel types. ISO 16332 certification validates diesel, biodiesel, and gasoline compatibility ensuring universal fleet compatibility. High-capacity media structure extends service intervals while maintaining injector precision and fuel pump reliability in demanding commercial applications.
                     </p>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom:40px;">
-                        <div style="border-left:2px solid #333; padding-left:15px;">
-                            <span class="font-tech-clean" style="font-size:10px;">ISO 16332</span>
-                            <p style="font-size:11px; color:var(--text-dim); text-transform:uppercase;">Certified Standard</p>
-                        </div>
-                        <div style="border-left:2px solid #333; padding-left:15px;">
-                            <span class="font-tech-clean" style="font-size:10px;">SYNTEPORE™</span>
-                            <p style="font-size:11px; color:var(--text-dim); text-transform:uppercase;">Synthetic Media</p>
-                        </div>
-                    </div>
-                    <a href="https://elimfilters.com/technology/" class="cta-pill">EXPLORE TECHNOLOGY</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-                <div>
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Screenshot-2026-02-08-023100.png"
-                         alt="ELIMFILTERS Fuel Filter Unit"
-                         width="600" height="450"
-                         loading="lazy" decoding="async"
-                         style="width:100%; height:auto; border: 1px solid #1a1a1a; box-shadow: 0 20px 50px rgba(0,0,0,0.5); filter: brightness(0.9);">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="FUEL Technology">
                 </div>
             </div>
         </article>
 
-        <section class="section">
-            <div class="container">
-                <div style="text-align:center; margin-bottom:60px;">
-                    <p class="font-tech-clean">// ENGINE PROTECTION PROTOCOL</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(32px, 5vw, 60px);">MISSION CRITICAL <span style="color:var(--volt);">FEATURES</span></h2>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">FUEL <span class="yellow">PROTECTION</span></h2>
                 </div>
-                <div class="grid-3-col">
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">PARTICLE CAPTURE</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">Synthetic media traps solid particles and rust before they reach the engine injectors.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// SYNTHETIC MEDIA</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ARMOR CONSTRUCTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Advanced synthetic media provides superior dirt holding capacity and extended service life performance.</p>
                     </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">MEDIA ARMOR</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">Reinforced filtration that maintains high efficiency under extreme industrial vibration.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// FUEL COMPATIBILITY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">MULTI-FUEL RATED</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">ISO 16332 certification ensures compatibility with diesel, biodiesel, and gasoline fuels.</p>
                     </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">EXTENDED LIFE</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">High dirt-holding capacity engineered to reduce operational costs and service intervals.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">ZERO BYPASS</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">Precision sealing surfaces ensure 100% of the fuel passes through the media.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">HD HOUSING</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">Structural integrity designed to survive thermal cycles and mechanical stress in the field.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin-bottom:15px;">COMPATIBILITY</h3>
-                        <p style="color:var(--text-muted); font-size:15px; font-weight:300;">Certified for Diesel, Biodiesel, and Gasoline in Commercial and Marine applications.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// INJECTOR DEFENSE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">PRECISION GUARD</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Protects fuel injector precision preventing contamination damage and maintaining engine performance.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background: radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
-            <div class="container">
-                <h2 class="font-impact-master" style="font-size:clamp(40px, 8vw, 100px); color:#fff; line-height:0.8;">EVERY ENGINE.</h2>
-                <h2 class="font-impact-master" style="font-size:clamp(40px, 8vw, 100px); color:var(--volt); margin-bottom:40px;">EVERY DROP.</h2>
-                <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta-pill" aria-label="Search fuel filters on Vercel">FIND MY FUEL FILTER</a>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SYNTHETIC FILTRATION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">ARMOR CAPACITY</h3>
+                        <p class="text-body text-sm light">Synthetic fibers trap contaminants achieving maximum dirt holding capacity for extended intervals.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// FUEL COMPATIBILITY</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">UNIVERSAL CUSTODY</h3>
+                        <p class="text-body text-sm light">ISO 16332 rating ensures reliable performance across diesel, biodiesel, and gasoline fuels.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// INJECTOR PROTECTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">FUEL PRECISION</h3>
+                        <p class="text-body text-sm light">Maintains fuel system reliability protecting injectors and pumps from particle-induced damage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">PROTECT YOUR FUEL</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH FUEL FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

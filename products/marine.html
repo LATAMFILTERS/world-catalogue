@@ -3,232 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — MARINE FILTRATION</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — MARINE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="en">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #en {
-            --volt: #FFF12D;
-            --bg: #000;
-            background-color: var(--bg);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        #en .fim {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-        }
-
-        #en .ftc {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-        }
-
-        #en .sec { padding: 90px 6%; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
-        #en .con { max-width: 1400px; margin: auto; }
-
-        /* HERO - OPTIMIZED FOR RIGHT SIDE VISIBILITY */
-        #en .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 35%, rgba(0, 0, 0, 0) 100%),
-                        url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-asadphoto-29318858-scaled.jpg') center/cover no-repeat;
-        }
-
-        #en .product-card {
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
-            border: 1px solid #1a1a1a;
-            padding: 15px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-        }
-
-        #en .tspec {
-            border-left: 3px solid var(--volt);
-            padding: 15px 0 15px 25px;
-            margin-bottom: 20px;
-            background: rgba(255, 241, 45, 0.02);
-        }
-
-        #en .pcard {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            transition: 0.4s ease;
-        }
-
-        #en .pnum {
-            position: absolute;
-            right: -10px; top: -10px;
-            font-family: 'Montserrat';
-            font-weight: 900; font-size: 80px;
-            color: rgba(255, 241, 45, 0.03);
-            pointer-events: none;
-        }
-
-        #en .cta {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            padding: 22px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        #en .cta:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 241, 45, 0.2); }
-
-        /* MOBILE AND TABLET ADJUSTMENTS */
-        @media (max-width: 1024px) {
-            #en .hero {
-                background: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.9) 100%),
-                            url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-asadphoto-29318858-scaled.jpg') 75% center/cover no-repeat;
-                text-align: center;
-                align-items: flex-start;
-                padding-top: 80px;
-            }
-            #en .hero .con div[style*="border-left"] {
-                border-left: none !important;
-                border-top: 4px solid var(--volt);
-                padding: 30px 0 0 0 !important;
-                margin: 40px auto 0 !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #en .sec { padding: 60px 6%; }
-            #en .hero { background-position: 82% center; }
-            #en .ig { grid-template-columns: 1fr !important; gap: 40px; }
-            #en .pg { grid-template-columns: 1fr !important; }
-            #en .cta { width: 100%; box-sizing: border-box; }
-            #en .p-order { order: -1; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero sec">
-            <div class="con">
-                <p class="ftc" style="margin-bottom:24px;">// NAVAL_SYSTEMS / SYS-13</p>
-                <h1 class="fim" style="font-size:clamp(40px,9vw,85px); color:#fff; margin:0;">MARINE</h1>
-                <h2 class="fim" style="font-size:clamp(40px,9vw,85px); color:var(--volt); margin:0;">FILTRATION.</h2>
-                <div style="margin-top:35px; max-width:580px; border-left:4px solid var(--volt); padding-left:28px; color:#e4e4e7; font-size:18px; font-style:italic; line-height:1.6; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);">
-                    <strong>MARINECLEAN™</strong> Technology: Advanced anti-corrosion shielding designed for maximum operational continuity in offshore environments.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// MARINE FILTRATION</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">MARINE</h1>
+                    <h1 class="font-impact h1-secondary mb-8">NAVAL GRADE DEFENSE</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>Naval-grade alloy construction</strong> removing 99.9% water and sediment in extreme salt environments.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <section class="sec" style="background:#050505;">
-            <div class="con ig" style="display:grid; grid-template-columns:1fr 1.1fr; gap:70px; align-items:center;">
-                <div class="product-card p-order">
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/Gemini_Generated_Image_wg6rfqwg6rfqwg6r.png"
-                         alt="ELIMFILTERS MARINECLEAN fuel filter for marine engines"
-                         style="width:100%; height:auto; display:block;" loading="lazy">
-                </div>
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="ftc" style="margin-bottom:20px;">// ANTI-CORROSION ENGINEERING</p>
-                    <h2 class="fim" style="font-size:clamp(32px,4vw,56px); color:#fff; margin-bottom:24px;">SALT SPRAY<br><span style="color:var(--volt);">RESISTANCE.</span></h2>
-                    <p style="color:#a1a1aa; font-size:17px; line-height:1.75; margin-bottom:32px; font-weight:300;">
-                        ELIMFILTERS systems are engineered to neutralize the impact of galvanic corrosion, protecting critical engine components in high-salinity environments.
+                    <p class="font-tech mb-6">// CORROSION RESISTANCE</p>
+                    <h2 class="font-impact h2-main mb-8">NAVAL-GRADE<br><span class="yellow">OCEAN CUSTODY</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        MARINE filters feature naval-grade alloy construction withstanding extreme pressure fluctuations and salt environment corrosion. Advanced media achieves 99.9% water and sediment removal protecting engine fuel systems and hydraulic components. Specialized engineering ensures reliability in offshore and coastal applications where contamination resistance and material durability determine operational safety and equipment longevity.
                     </p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:40px;">
-                        <div style="border-top:1px solid #27272a; padding-top:15px;">
-                            <span class="ftc" style="display:block; margin-bottom:4px;">PURIFICATION</span>
-                            <span style="color:#71717a; font-size:12px;">99.9% Water/Sediment</span>
-                        </div>
-                        <div style="border-top:1px solid #27272a; padding-top:15px;">
-                            <span class="ftc" style="display:block; margin-bottom:4px;">PROTECTION</span>
-                            <span style="color:#71717a; font-size:12px;">Naval Grade Alloy</span>
-                        </div>
-                    </div>
-                    <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta">ACCESS SEARCH ENGINE</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
+                </div>
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="MARINE Technology">
                 </div>
             </div>
-        </section>
+        </article>
 
-        <section class="sec" style="background:#000;">
-            <div class="con ig" style="display:grid; grid-template-columns:1.2fr 1fr; gap:60px; align-items:center;">
-                <div>
-                    <p class="ftc" style="margin-bottom:20px;">// CRITICAL SPECIFICATIONS</p>
-                    <h2 class="fim" style="font-size:clamp(28px,4vw,52px); color:#fff; margin-bottom:40px;">SAFETY IN<br><span style="color:var(--volt);">OPEN WATERS.</span></h2>
-                    <div class="tspec">
-                        <h4 class="fim" style="font-size:1.1rem; color:#fff; margin-bottom:8px;">HYDROPHOBIC SEPARATION</h4>
-                        <p style="color:#a1a1aa; font-size:14px; line-height:1.6;">Eliminates water carryover that causes catastrophic injector failure.</p>
-                    </div>
-                    <div class="tspec">
-                        <h4 class="fim" style="font-size:1.1rem; color:#fff; margin-bottom:8px;">HIGH-IMPACT HOUSING</h4>
-                        <p style="color:#a1a1aa; font-size:14px; line-height:1.6;">Superior structural integrity against constant hull vibrations.</p>
-                    </div>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">MARINE <span class="yellow">EXCELLENCE</span></h2>
                 </div>
-                <div style="background:linear-gradient(145deg, #080808, #000); border:1px solid #1a1a1a; padding:50px;">
-                    <i class="fas fa-shield-halved" style="color:var(--volt); font-size:40px; margin-bottom:25px;"></i>
-                    <p style="color:#d4d4d8; font-size:18px; font-style:italic; line-height:1.8;">
-                        "Marine reliability requires components that do not yield to the environment. MARINECLEAN is our technical response to the oceanic challenge."
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="sec" style="background:#050505;">
-            <div class="con">
-                <div style="margin-bottom:60px; border-left:4px solid var(--volt); padding-left:20px;">
-                    <span class="ftc">// NAVAL VALIDATION</span>
-                    <h2 class="fim" style="font-size:clamp(30px,4vw,48px); color:#fff;">PROVEN PERFORMANCE</h2>
-                </div>
-                <div class="pg" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-                    <div class="pcard">
-                        <div class="pnum">01</div>
-                        <i class="fas fa-anchor" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="fim" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">STABILITY</h3>
-                        <p style="color:#a1a1aa; font-size:13px;">Maintains efficiency under extreme pressure fluctuations.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// ALLOY CONSTRUCTION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">NAVAL GRADE</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Military-specification alloys withstand extreme corrosion in salt environments and pressure cycling.</p>
                     </div>
-                    <div class="pcard">
-                        <div class="pnum">02</div>
-                        <i class="fas fa-water" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="fim" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">COALESCENCE</h3>
-                        <p style="color:#a1a1aa; font-size:13px;">Molecular water separation for both diesel and gasoline fuels.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// REMOVAL EFFICIENCY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">99.9% PROTECTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Advanced media removes water and sediment contamination protecting engine reliability.</p>
                     </div>
-                    <div class="pcard">
-                        <div class="pnum">03</div>
-                        <i class="fas fa-microchip" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="fim" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">PRECISION</h3>
-                        <p style="color:#a1a1aa; font-size:13px;">Perfect fitment under international OEM standards.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// PRESSURE RANGE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">EXTREME DUTY</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Rated for extreme pressure fluctuations common in offshore and coastal marine operations.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="sec" style="background:#000; text-align:center; padding:120px 6%;">
-            <div class="con">
-                <h2 class="fim" style="font-size:clamp(42px,8vw,90px); color:#fff; margin:0;">EVERY VESSEL.</h2>
-                <h2 class="fim" style="font-size:clamp(42px,8vw,90px); color:var(--volt); margin-bottom:45px;">EVERY VOYAGE.</h2>
-                <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta">SEARCH MY FILTER ON SEARCH PRO</a>
-                <p class="ftc" style="margin-top:40px; opacity:0.3; font-size:9px;">// ELIMFILTERS GLOBAL MANUFACTURING STANDARDS 2026</p>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// CORROSION IMMUNITY</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">ALLOY DEFENSE</h3>
+                        <p class="text-body text-sm light">Naval-grade materials resist salt water corrosion extending component life in marine environments.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// CONTAMINATION REMOVAL</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">WATER SEDIMENT CUSTODY</h3>
+                        <p class="text-body text-sm light">99.9% removal protects fuel systems and hydraulics from salt-induced corrosion damage.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PRESSURE WITHSTAND</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">EXTREME CONDITIONS</h3>
+                        <p class="text-body text-sm light">Heavy-duty rating maintains integrity during extreme pressure cycling at sea.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">GUARD YOUR VESSEL</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH MARINE FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

@@ -3,254 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — AIR DRYER SYSTEMS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — DRYER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-dryer-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-dryer-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        #elim-dryer-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-        }
-
-        #elim-dryer-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-        }
-
-        #elim-dryer-wrapper .section {
-            padding: 90px 6%;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            box-sizing: border-box;
-        }
-
-        #elim-dryer-wrapper .container {
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        #elim-dryer-wrapper .hero {
-            min-height: 72vh;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(90deg, #000 45%, transparent 100%),
-                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_7eigh77eigh77eig.png')
-                center/cover no-repeat;
-        }
-
-        #elim-dryer-wrapper .feature {
-            background: transparent;
-            border-left: 1px solid rgba(255, 241, 45, 0.2);
-            padding: 32px;
-            transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        #elim-dryer-wrapper .feature:hover {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid var(--volt);
-            transform: translateX(8px);
-        }
-
-        #elim-dryer-wrapper .protocol-card {
-            background: rgba(255,255,255,0.01);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #elim-dryer-wrapper .protocol-num {
-            position: absolute;
-            right: -5px; top: -5px;
-            font-family: 'Montserrat';
-            font-weight: 900;
-            font-size: 70px;
-            color: rgba(255,241,45,0.03);
-            pointer-events: none;
-        }
-
-        #elim-dryer-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.15em;
-            padding: 18px 40px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 12px;
-            text-decoration: none;
-            transition: all .25s;
-        }
-        #elim-dryer-wrapper .cta-pill:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-
-        @media (max-width: 900px) {
-            #elim-dryer-wrapper .section { padding: 60px 5%; }
-            #elim-dryer-wrapper .info-grid,
-            #elim-dryer-wrapper .systems-grid,
-            #elim-dryer-wrapper .protocol-grid {
-                grid-template-columns: 1fr !important; gap: 30px; display: grid;
-            }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <section class="hero section">
-            <div class="container">
-                <div class="font-tech-clean" style="margin-bottom:24px;">// PNEUMATIC SAFETY SYSTEMS / SYS-09</div>
-                <h1 class="font-impact-master" style="font-size:clamp(48px,8vw,95px); color:#fff; margin: 0;">AIR DRYER</h1>
-                <h1 class="font-impact-master" style="font-size:clamp(42px,7vw,80px); color:var(--volt); margin: 0;">SYSTEMS</h1>
-                <div style="margin-top:32px; max-width:600px; border-left:3px solid var(--volt); padding-left:28px; color:#a1a1aa; font-size:18px; font-weight:300; line-height:1.7; font-style:italic;">
-                    DRYCORE™ Technology — Engineered to neutralize oil aerosols and moisture, preventing catastrophic corrosion in safety-critical pneumatic circuits.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// AIR DRYING SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">DRYER</h1>
+                    <h1 class="font-impact h1-secondary mb-8">DEW POINT CONTROL</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>Molecular-level desiccant technology</strong> achieving zero-dew point with coalescing for 45% life extension.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section class="section" style="background:#050505;">
-            <div class="container info-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:60px; align-items:center;">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <div class="font-tech-clean" style="margin-bottom:20px;">// DRYCORE™ ARCHITECTURE</div>
-                    <h2 class="font-impact-master" style="font-size:clamp(32px,4vw,56px); color:#fff; margin-bottom:24px;">
-                        ELIMINATING<br><span style="color:var(--volt);">VARIABLES.</span>
-                    </h2>
-                    <p style="color:#71717a; font-size:16px; line-height:1.8; margin-bottom:20px; font-weight:300;">
-                        Moisture is responsible for over 60% of pneumatic component failures. Contaminated air triggers valve sticking, freezes lines, and destroys brake actuators far ahead of their service life.
+                    <p class="font-tech mb-6">// DESICCANT PROTECTION</p>
+                    <h2 class="font-impact h2-main mb-8">MOLECULAR<br><span class="yellow">DEW MANAGEMENT</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        DRYER filters utilize molecular-level desiccant media achieving zero-dew point moisture removal in pneumatic systems. Integrated coalescing technology removes water droplets preventing corrosion and contamination throughout compressed air networks. Extended service life provides 45% longer operating intervals reducing maintenance costs while protecting air tool components and precision equipment from moisture-induced degradation.
                     </p>
-                    <p style="color:#71717a; font-size:16px; line-height:1.8; margin-bottom:32px; font-weight:300;">
-                        ELIMFILTERS air dryers with DRYCORE™ technology trap contaminants at the molecular level, ensuring zero-dew point performance and protecting sensitive ABS control units.
-                    </p>
-
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:32px;">
-                        <div style="border-left:1px solid #27272a; padding-left:16px;">
-                            <span class="font-tech-clean" style="display:block; margin-bottom:4px;">DRYCORE™</span>
-                            <span style="color:#52525b; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Molecular Absorption</span>
-                        </div>
-                        <div style="border-left:1px solid #27272a; padding-left:16px;">
-                            <span class="font-tech-clean" style="display:block; margin-bottom:4px;">COALESCING</span>
-                            <span style="color:#52525b; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Aerosol Separation</span>
-                        </div>
-                    </div>
-
-                    <a href="https://elimfilters.com/en/technology/" class="cta-pill">VIEW DRYCORE™ TECHNOLOGY</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-
-                <div style="background:#000; border:1px solid #1a1a1a; padding:15px; box-shadow:0 30px 60px rgba(0,0,0,0.6); text-align: center;">
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_mvib88mvib88mvib.png"
-                         style="width:100%; max-width: 450px; height: auto; filter: contrast(1.05) brightness(1.05); display: inline-block;"
-                         alt="ELIMFILTERS Air Dryer - Drycore Technology">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="DRYER Technology">
                 </div>
             </div>
-        </section>
+        </article>
 
-        <section class="section">
-            <div class="container">
-                <div style="text-align:center; margin-bottom:60px;">
-                    <div class="font-tech-clean" style="margin-bottom:16px;">// PNEUMATIC SYSTEMS</div>
-                    <h2 class="font-impact-master" style="font-size:clamp(32px,5vw,64px); color:#fff; text-align: center;">
-                        PURITY FOR <span style="color:var(--volt);">SAFETY-CRITICAL</span> AIR
-                    </h2>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">MOISTURE <span class="yellow">ELIMINATION</span></h2>
                 </div>
-                <div class="systems-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / ABSORPTION</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">DESICCANT MEDIA</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">High-capacity desiccant beds that maintain optimal dew point performance under extreme thermal loads.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// DESICCANT MEDIA</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ZERO-DEW POINT</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Molecular-level desiccant removes moisture achieving absolute zero dew point in compressed air.</p>
                     </div>
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / REGEN</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">AUTO-PURGE</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Integrated purge cycles that expel accumulated water, ensuring continuous moisture-free air delivery.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// COALESCENCE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">WATER CAPTURE</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Coalescing technology combines dispersed droplets enabling efficient water removal from pneumatic systems.</p>
                     </div>
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / OIL</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">OIL COALESCING</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Neutralizes compressor oil carryover, protecting sensitive control units from internal degradation.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / FITMENT</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">OEM INTEGRITY</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Precision thread geometry for leak-free integration across all major heavy-duty platforms.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / VALVES</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">VALVE PROTECTION</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Prevents valve sticking and corrosion in the air brake system, ensuring rapid response times.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="font-tech-clean" style="margin-bottom:12px;">DRYCORE™ / UPTIME</div>
-                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">SYSTEM UPTIME</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Reduces maintenance downtime by extending the service life of pneumatic actuators by up to 45%.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// LIFE EXTENSION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">45% LONGER</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Extended service intervals reduce maintenance frequency and operating costs substantially.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:#000;">
-            <div class="container">
-                <div style="margin-bottom:60px; border-left:3px solid var(--volt); padding-left:20px;">
-                    <span class="font-tech-clean">// SYSTEM VALIDATION</span>
-                    <h2 class="font-impact-master" style="font-size:clamp(28px,4vw,48px); color:#fff; margin-top:8px;">PERFORMANCE PROTOCOL</h2>
-                </div>
-                <div class="protocol-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-                    <div class="protocol-card">
-                        <div class="protocol-num">01</div>
-                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">MOISTURE CONTROL</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Absolute moisture removal regardless of ambient humidity or compressor duty cycle.</p>
-                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// MOLECULAR ADSORPTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">DESICCANT ACTION</h3>
+                        <p class="text-body text-sm light">Molecular-level desiccant media absorbs water vapor achieving zero dew point moisture control.</p>
                     </div>
-                    <div class="protocol-card">
-                        <div class="protocol-num">02</div>
-                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">OIL FILTRATION</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Coalescing technology removes oil mist that standard filters cannot capture.</p>
-                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// DROPLET COALESCENCE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">LIQUID CAPTURE</h3>
+                        <p class="text-body text-sm light">Combines dispersed water droplets enabling gravity drainage protecting downstream equipment.</p>
                     </div>
-                    <div class="protocol-card">
-                        <div class="protocol-num">03</div>
-                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">COLD WEATHER OPS</h3>
-                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Prevents air line freezing in sub-zero environments, maintaining full braking capability.</p>
-                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// EXTENDED SERVICE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">LIFECYCLE VALUE</h3>
+                        <p class="text-body text-sm light">45% longer service life reduces replacement frequency and total cost of ownership.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:#030303; text-align:center; border-bottom:none;">
-            <div class="container">
-                <div class="font-tech-clean" style="margin-bottom:20px;">// OPERATIONAL CONTINUITY</div>
-                <h2 class="font-impact-master" style="font-size:clamp(40px,7vw,90px); color:#fff; margin: 0; text-align: center;">EVERY STOP.</h2>
-                <h2 class="font-impact-master" style="font-size:clamp(40px,7vw,90px); color:var(--volt); margin-bottom:32px; margin-top: 10px; text-align: center;">EVERY VEHICLE.</h2>
-                <p style="color:#71717a; max-width:700px; margin:0 auto 48px; font-size:18px; line-height:1.75; font-style:italic; font-weight:300;">
-                    Built to protect your pneumatic circuit and ensure safety-critical response wherever your fleet operates.
-                </p>
-                <a href="https://elimfilters-search-pro.vercel.app/" class="cta-pill">FIND MY DRYER FILTER</a>
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">DRY YOUR AIR</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH DRYER FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

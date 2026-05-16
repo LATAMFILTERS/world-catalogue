@@ -3,231 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — LUBRICATION & OIL FILTERS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — OIL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-oil-en-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-oil-en-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            --text-body: #d1d1d6;
-            --text-muted: #a1a1aa;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            width: 100%;
-        }
-
-        #elim-oil-en-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-            text-align: left;
-        }
-
-        #elim-oil-en-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-            text-align: left;
-        }
-
-        #elim-oil-en-wrapper .section { padding: 90px 6%; border-bottom: 1px solid rgba(255,255,255,0.04); }
-        #elim-oil-en-wrapper .container { max-width: 1400px; margin: auto; }
-
-        #elim-oil-en-wrapper .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background: linear-gradient(90deg, #000 35%, rgba(0,0,0,0.4) 100%),
-                        url('https://elimfilters.com/wp-content/uploads/2025/08/automobiles-1.jpg') center/cover no-repeat;
-        }
-
-        #elim-oil-en-wrapper .feature {
-            background: rgba(255,255,255,0.02);
-            border-left: 2px solid var(--volt);
-            padding: 35px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            height: auto;
-            word-wrap: break-word;
-        }
-
-        #elim-oil-en-wrapper .env {
-            background: linear-gradient(145deg, #050505, #000);
-            border: 1px solid #1a1a1a;
-            padding: 50px;
-            position: relative;
-        }
-
-        #elim-oil-en-wrapper .protocol-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 45px 35px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #elim-oil-en-wrapper .protocol-num {
-            position: absolute;
-            right: -10px; top: -10px;
-            font-family: 'Montserrat';
-            font-weight: 900;
-            font-size: 90px;
-            color: rgba(255,241,45,0.03);
-            pointer-events: none;
-            line-height: 1;
-        }
-
-        #elim-oil-en-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.15em;
-            padding: 20px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            text-decoration: none;
-            transition: 0.3s;
-            border: 2px solid var(--volt);
-            text-align: center;
-        }
-
-        @media (max-width: 1024px) {
-            #elim-oil-en-wrapper .section { padding: 60px 5%; }
-            #elim-oil-en-wrapper .responsive-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-            #elim-oil-en-wrapper .systems-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px; }
-        }
-
-        @media (max-width: 768px) {
-            #elim-oil-en-wrapper .systems-grid { grid-template-columns: 1fr !important; }
-            #elim-oil-en-wrapper .feature { padding: 25px; }
-            #elim-oil-en-wrapper .feature h3 { font-size: 1.1rem !important; }
-            #elim-oil-en-wrapper .env { padding: 30px 20px; }
-            #elim-oil-en-wrapper .font-impact-master { line-height: 1.1; }
-            #elim-oil-en-wrapper .protocol-num { font-size: 60px; }
-            #elim-oil-en-wrapper .cta-pill { width: 100%; box-sizing: border-box; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero section">
-            <div class="container">
-                <p class="font-tech-clean" style="margin-bottom:24px;">// LUBRICATION_SYSTEMS / MOD-SINTRAX</p>
-                <h1 class="font-impact-master" style="font-size:clamp(40px,10vw,90px); color:#fff; margin:0;">LUBRICATION</h1>
-                <h1 class="font-impact-master" style="font-size:clamp(40px,10vw,90px); color:var(--volt); margin:0;">ENGINEERING.</h1>
-                <div style="margin-top:35px; max-width:600px; border-left:4px solid var(--volt); padding-left:25px; color:#e4e4e7; font-size:clamp(16px,4.5vw,20px); font-weight:300; line-height:1.6; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);">
-                    <strong>SINTRAX™ Technology</strong> — Engineered to shield internal engine components through high-density synthetic media.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// ENGINE OIL SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">OIL</h1>
+                    <h1 class="font-impact h1-secondary mb-8">SYNTHETIC CAPACITY</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>High-density synthetic media</strong> with quadruple capacity, bypass valve, and ISO 16889/19438 certification.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <article class="section" style="background:#050505;">
-            <div class="container responsive-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:center;">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="font-tech-clean" style="margin-bottom:20px;">// ELIMFILTERS_CORE_TECH</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(32px,5vw,55px); color:#fff; margin-bottom:30px;">
-                        TOTAL INTEGRITY<br><span style="color:var(--volt);">ZERO COMPROMISE.</span>
-                    </h2>
-                    <p style="color:var(--text-body); font-size:17px; line-height:1.8; margin-bottom:25px; font-weight:300;">
-                        Friction is the silent enemy. ELIMFILTERS with <strong>SINTRAX™</strong> captures metallic particles, maintaining critical viscosity.
+                    <p class="font-tech mb-6">// ENGINE PROTECTION</p>
+                    <h2 class="font-impact h2-main mb-8">SYNTHETIC<br><span class="yellow">CAPACITY CUSTODY</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        OIL filters utilize high-density synthetic media achieving quadruple dirt capacity extending service intervals substantially. Integrated bypass valve provides cold-start protection ensuring oil circulation during engine startup in low-temperature conditions. ISO 16889 and ISO 19438 certification validates filtration performance protecting engine bearings and precision components throughout extended service life.
                     </p>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:20px; margin-bottom:40px;">
-                        <div style="border-bottom:1px solid #27272a; padding-bottom:15px;">
-                            <span class="font-tech-clean" style="display:block; margin-bottom:5px;">SINTRAX™ MATRIX</span>
-                            <span style="color:#71717a; font-size:11px; text-transform:uppercase;">Precision Filtration</span>
-                        </div>
-                        <div style="border-bottom:1px solid #27272a; padding-bottom:15px;">
-                            <span class="font-tech-clean" style="display:block; margin-bottom:5px;">FLOW-OPTIMIZED</span>
-                            <span style="color:#71717a; font-size:11px; text-transform:uppercase;">Minimal Pressure Drop</span>
-                        </div>
-                    </div>
-                    <a href="https://elimfilters.com/technology/" class="cta-pill">EXPLORE SINTRAX™</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-                <div style="position:relative;">
-                    <div style="position:absolute; top:-10px; left:-10px; width:50px; height:50px; border-top:2px solid var(--volt); border-left:2px solid var(--volt);"></div>
-                    <img src="https://elimfilters.com/wp-content/uploads/2025/08/Screenshot-2025-08-20-203844-1.webp"
-                         alt="Filter Technical View"
-                         style="width:100%; height:auto; display: block; box-shadow:0 20px 50px rgba(0,0,0,0.9);">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="OIL Technology">
                 </div>
             </div>
         </article>
 
-        <section class="section">
-            <div class="container">
-                <div style="text-align:center; margin-bottom:60px;">
-                    <p class="font-tech-clean" style="text-align:center;">// PERFORMANCE_MATRIX</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(30px,6vw,65px); color:#fff; margin:0; text-align: center;">
-                        <span style="color:var(--volt);">ULTRA-DUTY</span> PROTECTION
-                    </h2>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">SYNTHETIC <span class="yellow">EXCELLENCE</span></h2>
                 </div>
-                <div class="systems-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:25px;">
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="font-size:1.3rem; color:#fff; margin-bottom:15px;">SYNTHETIC MEDIA</h3>
-                        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">High-density glass fiber structure that quadruples capacity.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// MEDIA CAPACITY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">4X DIRT LOAD</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">High-density synthetic media achieves quadruple capacity extending service intervals significantly.</p>
                     </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="font-size:1.3rem; color:#fff; margin-bottom:15px;">BYPASS VALVE</h3>
-                        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">Ensures lubricant flow during extreme cold starts.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// COLD START</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">BYPASS PROTECTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Bypass valve ensures oil circulation during cold start preventing bearing starvation damage.</p>
                     </div>
-                    <div class="feature">
-                        <h3 class="font-impact-master" style="font-size:1.3rem; color:#fff; margin-bottom:15px;">HD CANISTER</h3>
-                        <p style="color:var(--text-muted); font-size:14px; line-height:1.7;">Heavy-gauge steel housing built to withstand pressure spikes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="background:#000;">
-            <div class="container responsive-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
-                <div class="env">
-                    <p class="font-tech-clean" style="margin-bottom:20px;">// FIELD_VALIDATION</p>
-                    <p style="color:#fff; font-size:clamp(18px,4vw,22px); font-weight:700; line-height:1.4; margin-bottom:25px; font-style:italic;">
-                        "SINTRAX™ is an insurance policy for high-horsepower engines."
-                    </p>
-                    <div style="color:var(--volt); font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em;">
-                        ISO 16889 / ISO 19438 CERTIFIED
-                    </div>
-                </div>
-                <div style="display:grid; grid-template-columns:1fr; gap:20px;">
-                    <div class="protocol-card">
-                        <div class="protocol-num">01</div>
-                        <h3 class="font-impact-master" style="font-size:1.2rem; color:var(--volt); margin-bottom:10px;">PARTICULATE CAPTURE</h3>
-                        <p style="color:#a1a1aa; font-size:13px; line-height:1.6;">Neutralizes soot before it reaches the valve train.</p>
-                    </div>
-                    <div class="protocol-card">
-                        <div class="protocol-num">02</div>
-                        <h3 class="font-impact-master" style="font-size:1.2rem; color:var(--volt); margin-bottom:10px;">THERMAL STABILITY</h3>
-                        <p style="color:#a1a1aa; font-size:13px; line-height:1.6;">Low-restriction design optimizes pump consumption.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// CERTIFICATION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ISO STANDARDS</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">ISO 16889 and 19438 rating guarantees engine protection and component longevity.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
-            <div class="container">
-                <h2 class="font-impact-master" style="font-size:clamp(35px,8vw,80px); color:#fff; margin-bottom:10px; text-align: center;">PRECISION IN</h2>
-                <h2 class="font-impact-master" style="font-size:clamp(35px,8vw,80px); color:var(--volt); margin-bottom:40px; text-align: center;">EVERY TURN.</h2>
-                <a href="https://elim-busqueda-pwa.vercel.app/part-search" target="_blank" class="cta-pill">FIND MY OIL FILTER</a>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SYNTHETIC FILTRATION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">CAPACITY CUSTODY</h3>
+                        <p class="text-body text-sm light">High-density media traps contaminants achieving four times standard dirt holding capacity.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PRESSURE RELIEF</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">BYPASS ACTION</h3>
+                        <p class="text-body text-sm light">Bypass valve opens at low pressure ensuring oil delivery during cold starts.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PERFORMANCE STANDARDS</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">CERTIFICATION COMPLIANCE</h3>
+                        <p class="text-body text-sm light">ISO standards ensure filtration efficiency protecting engine bearings throughout service life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">EXTEND YOUR INTERVALS</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH OIL FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

@@ -3,193 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — WATER SEPARATORS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — WATER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-water-en-wrapper">
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-water-en-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        #elim-water-en-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-        }
-        #elim-water-en-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-        }
-        #elim-water-en-wrapper .section {
-            padding: 90px 6%;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        #elim-water-en-wrapper .container {
-            max-width: 1400px;
-            margin: auto;
-        }
-        #elim-water-en-wrapper .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(90deg, #000 45%, transparent 100%),
-                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_gxn7azgxn7azgxn7.png')
-                right center/contain no-repeat;
-            background-color: #000;
-        }
-        /* 6-Card Technical Grid */
-        #elim-water-en-wrapper .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-top: 50px;
-        }
-        #elim-water-en-wrapper .tech-card {
-            background: #000;
-            padding: 40px;
-            transition: 0.3s;
-        }
-        #elim-water-en-wrapper .tech-card:hover {
-            background: #050505;
-        }
-        #elim-water-en-wrapper .tech-card h4 {
-            color: var(--volt);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        #elim-water-en-wrapper .tech-card p {
-            color: #a1a1aa;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 300;
-        }
-        #elim-water-en-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.15em;
-            padding: 20px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            text-decoration: none;
-            transition: 0.3s;
-            border: 2px solid var(--volt);
-        }
-        #elim-water-en-wrapper .cta-pill:hover {
-            background: transparent;
-            color: var(--volt);
-            transform: translateY(-3px);
-        }
-        @media (max-width: 1024px) {
-            #elim-water-en-wrapper .section { padding: 60px 5%; }
-            #elim-water-en-wrapper .info-grid { grid-template-columns: 1fr !important; }
-            #elim-water-en-wrapper .tech-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 768px) {
-            #elim-water-en-wrapper .tech-grid { grid-template-columns: 1fr; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <section class="hero section">
-            <div class="container">
-                <div class="font-tech-clean" style="margin-bottom:24px;">// SEPARATION SYSTEMS / AQUAGUARD-PRO</div>
-                <h1 class="font-impact-master" style="font-size:clamp(45px,7vw,90px); color:#fff; margin:0;">WATER</h1>
-                <h1 class="font-impact-master" style="font-size:clamp(45px,7vw,90px); color:var(--volt); margin:0;">SEPARATORS.</h1>
-                <div style="margin-top:35px; max-width:650px; border-left:4px solid var(--volt); padding-left:30px; color:#e4e4e7; font-size:20px; font-weight:300; line-height:1.6;">
-                    <strong>AQUAGUARD™</strong> Technology — High-performance hydrophobic engineering designed to eliminate moisture contamination and prevent catastrophic failures.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// FLUID SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">WATER</h1>
+                    <h1 class="font-impact h1-secondary mb-8">COALESCENCE DEFENSE</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>Advanced multi-stage coalescence</strong> removing free, emulsified, and dissolved water with anti-corrosion and ISO 16332 rating.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section class="section" style="background:#050505;">
-            <div class="container info-grid" style="display:grid; grid-template-columns:1.3fr 1fr; gap:80px; align-items:center;">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <div class="font-tech-clean" style="margin-bottom:20px;">// HYDROPHOBIC_BARRIER</div>
-                    <h2 class="font-impact-master" style="font-size:clamp(35px,4.5vw,60px); color:#fff; margin-bottom:30px;">
-                        TOTAL MOISTURE<br><span style="color:var(--volt);">ELIMINATION.</span>
-                    </h2>
-                    <p style="color:#a1a1aa; font-size:18px; line-height:1.8; margin-bottom:40px; font-weight:300;">
-                        ELIMFILTERS with <strong>AQUAGUARD™</strong> technology remove free, emulsified, and dissolved water through multi-stage coalescing media, ensuring your systems operate with total chemical integrity and superior corrosion protection.
+                    <p class="font-tech mb-6">// FLUID INTEGRITY</p>
+                    <h2 class="font-impact h2-main mb-8">ADVANCED<br><span class="yellow">COALESCENCE CUSTODY</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        WATER filters employ multi-stage hydrophobic coalescence removing free water, emulsified droplets, and dissolved moisture from fluid systems. Anti-corrosion chemistry protects equipment components preventing water-induced degradation. ISO 16332 certification validates performance across compressed air and fuel applications ensuring reliability in demanding industrial fluid management requiring absolute water separation and chemical protection.
                     </p>
-                    <a href="https://elimfilters.com/technology/" class="cta-pill">DISCOVER AQUAGUARD™</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-                <div style="position:relative;">
-                    <div style="position:absolute; top:-20px; left:-20px; width:100px; height:100px; border-top:2px solid var(--volt); border-left:2px solid var(--volt);"></div>
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_kwyjs1kwyjs1kwyj.png"
-                         style="width:100%; filter:grayscale(0.2) contrast(1.1); box-shadow:0 30px 60px rgba(0,0,0,0.8);"
-                         alt="AQUAGUARD™ Water Separator">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="WATER Technology">
                 </div>
             </div>
-        </section>
+        </article>
 
-        <section class="section" style="background:#000;">
-            <div class="container">
-                <div class="font-tech-clean" style="margin-bottom:20px;">// TECHNICAL_SPECIFICATIONS</div>
-                <h2 class="font-impact-master" style="font-size:clamp(30px,4vw,55px); color:#fff; margin-bottom:10px;">
-                    ENGINEERED FOR <span style="color:var(--volt);">ZERO TOLERANCE.</span>
-                </h2>
-
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ SYSTEM_TYPE ]</div>
-                        <h4 class="font-impact-master">AQUAGUARD™ TECHNOLOGY</h4>
-                        <p>Fuel Filter Separator: Multi-stage hydrophobic media designed to strip free, emulsified, and dissolved water from the fuel stream.</p>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">WATER <span class="yellow">SEPARATION</span></h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// COALESCENCE STAGES</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">MULTI-STAGE</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Advanced stages remove free water, emulsified droplets, and dissolved moisture effectively.</p>
                     </div>
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ MECHANISM ]</div>
-                        <h4 class="font-impact-master">ADVANCED COALESCENCE</h4>
-                        <p>Combines microscopic water droplets into larger masses for efficient physical separation through gravity and inertia.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// PROTECTION CHEMISTRY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ANTI-CORROSION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Chemical formulation protects equipment from water-induced corrosion and oxidation damage.</p>
                     </div>
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ PROTECTION ]</div>
-                        <h4 class="font-impact-master">ANTI-CORROSION</h4>
-                        <p>Maintains the integrity of high-pressure injectors and pumps, preventing rust formation and pitting in critical engine components.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ FLUIDS ]</div>
-                        <h4 class="font-impact-master">CHEMICAL INTEGRITY</h4>
-                        <p>Ensures that fuel viscosity and lubricating properties are not compromised by aqueous contamination.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ STANDARD ]</div>
-                        <h4 class="font-impact-master">ISO 16332 VALIDATED</h4>
-                        <p>Tested under the industry's strictest water separation standards, guaranteeing superior performance in extreme environments.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="font-tech-clean" style="font-size:10px; margin-bottom:10px;">[ APPLICATION ]</div>
-                        <h4 class="font-impact-master">HD SYSTEMS</h4>
-                        <p>Optimized for Heavy-Duty engines in mining, marine, and power generation where fuel purity is a mission-critical requirement.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// CERTIFICATION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">ISO 16332</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">International rating ensures performance in compressed air and fuel system applications.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
-            <div class="container">
-                <h2 class="font-impact-master" style="font-size:clamp(40px,8vw,100px); color:#fff; margin-bottom:10px;">ZERO WATER.</h2>
-                <h2 class="font-impact-master" style="font-size:clamp(40px,8vw,100px); color:var(--volt); margin-bottom:40px;">PURE POWER.</h2>
-                <a href="https://elimfilters.com/parts-search/" class="cta-pill">FIND MY SEPARATOR</a>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PROGRESSIVE COALESCENCE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">STAGE CUSTODY</h3>
+                        <p class="text-body text-sm light">Multi-stage hydrophobic media progressively removes water forms achieving comprehensive separation.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// CHEMICAL DEFENSE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">CORROSION BARRIER</h3>
+                        <p class="text-body text-sm light">Anti-corrosion chemistry forms protective barrier preventing water damage to components.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SYSTEM PROTECTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">PERFORMANCE INTEGRITY</h3>
+                        <p class="text-body text-sm light">ISO 16332 compliance ensures reliable protection across diverse fluid system applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">REMOVE THE MOISTURE</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH WATER FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

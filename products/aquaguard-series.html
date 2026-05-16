@@ -3,268 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — TURBINE FUEL SEPARATORS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — AQUAGUARD SERIES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-aquaguard-series-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-aquaguard-series-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            --text-body: #d1d1d6;
-            --text-muted: #a1a1aa;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            width: 100%;
-        }
-
-        #elim-aquaguard-series-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-            text-align: left;
-        }
-
-        #elim-aquaguard-series-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-            text-align: left;
-        }
-
-        #elim-aquaguard-series-wrapper .section { padding: 80px 6%; border-bottom: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; }
-        #elim-aquaguard-series-wrapper .container { max-width: 1400px; margin: auto; width: 100%; box-sizing: border-box; }
-
-        #elim-aquaguard-series-wrapper .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(90deg, #000 45%, transparent 100%),
-                        url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_gxn7azgxn7azgxn7.png') center/cover no-repeat;
-        }
-
-        #elim-aquaguard-series-wrapper .feature {
-            background: rgba(255,255,255,0.02);
-            border-left: 4px solid var(--volt);
-            padding: 40px 32px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            box-sizing: border-box;
-        }
-        #elim-aquaguard-series-wrapper .feature:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
-        #elim-aquaguard-series-wrapper .feature p { color: var(--text-muted); font-size: 14px; line-height: 1.6; font-weight: 300; }
-
-        #elim-aquaguard-series-wrapper .protocol-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 30px;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        #elim-aquaguard-series-wrapper .protocol-num {
-            position: absolute;
-            right: -10px; top: -10px;
-            font-family: 'Montserrat';
-            font-weight: 900;
-            font-size: 80px;
-            color: rgba(255,241,45,0.03);
-            line-height: 1;
-        }
-
-        #elim-aquaguard-series-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            padding: 20px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            transition: 0.25s ease;
-            text-decoration: none;
-            border: 2px solid var(--volt);
-        }
-        #elim-aquaguard-series-wrapper .cta-pill:hover { background: transparent; color: var(--volt); transform: translateY(-3px); }
-
-        @media (max-width: 1024px) {
-            #elim-aquaguard-series-wrapper .grid-responsive { grid-template-columns: 1fr !important; gap: 40px !important; }
-            #elim-aquaguard-series-wrapper .grid-3-col { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-
-        @media (max-width: 768px) {
-            #elim-aquaguard-series-wrapper .grid-3-col { grid-template-columns: 1fr !important; }
-            #elim-aquaguard-series-wrapper .section { padding: 60px 5%; }
-            #elim-aquaguard-series-wrapper .hero { min-height: 60vh; }
-            #elim-aquaguard-series-wrapper .cta-pill { width: 100%; text-align: center; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero section">
-            <div class="container">
-                <p class="font-tech-clean">// TURBINE SERIES / AQUAGUARD-PRO</p>
-                <h1 class="font-impact-master" style="font-size:clamp(40px, 8vw, 95px); color:#fff; margin-top: 20px; margin-bottom: 0;">
-                    TURBINE FUEL<br>
-                    <span style="color:var(--volt);">SEPARATORS.</span>
-                </h1>
-                <div style="margin-top:30px; max-width:650px; border-left:4px solid var(--volt); padding-left:25px; color:var(--text-body); font-size:clamp(17px, 2vw, 19px); line-height:1.6; font-style: italic;">
-                    <strong>AQUAGUARD/SERIES™</strong> — Centrifugal water separation for 900FH and 1000FH turbine engines. Three-stage protection against water, algae, and asphaltines.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// HYDRAULIC SEPARATION</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">AQUAGUARD</h1>
+                    <h1 class="font-impact h1-secondary mb-8">SERIES TURBINES</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>900FH/1000FH turbine technology</strong> with 3-stage separation and AQUABLOC®II coating for advanced fluid control.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <article class="section" style="background:#050505;">
-            <div class="container grid-responsive" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="font-tech-clean">// THREE-STAGE SEPARATION SYSTEM</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(30px, 4vw, 55px); margin: 20px 0;">
-                        CENTRIFUGAL<br><span style="color:var(--volt);">WATER REMOVAL.</span>
-                    </h2>
-                    <p style="color:var(--text-body); font-size:17px; line-height:1.7; margin-bottom:25px; font-weight: 300;">
-                        AQUAGUARD/SERIES™ protects precision turbine fuel systems from dirt, rust, algae, asphaltines, and especially water. The legendary three-stage process ensures fuel purity down to 2 microns.
+                    <p class="font-tech mb-6">// SEPARATION EXCELLENCE</p>
+                    <h2 class="font-impact h2-main mb-8">THREE-STAGE<br><span class="yellow">TURBINE CONTROL</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        AQUAGUARD SERIES integrates 900FH and 1000FH turbines with proprietary 3-stage separation architecture. AQUABLOC®II coating enhances fluid dynamics while maintaining 2/10/30 micron rating specifications across all configurations. Advanced centrifugal technology removes particulates and water contamination with precision engineering designed for industrial hydraulic systems requiring zero tolerance contamination control.
                     </p>
-                    <a href="https://elimfilters.com/technology/" class="cta-pill">EXPLORE SEPARATION TECHNOLOGY</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-                <div style="background:#000; padding:10px; border:1px solid #1a1a1a; position: relative;">
-                    <div style="position:absolute; top:-10px; right:-10px; width:50px; height:50px; border-top:2px solid var(--volt); border-right:2px solid var(--volt);"></div>
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_kwyjs1kwyjs1kwyj.png"
-                         alt="ELIMFILTERS AQUAGUARD/SERIES™ Turbine Fuel Separator"
-                         width="600" height="500"
-                         loading="lazy" decoding="async"
-                         style="width:100%; height:auto; filter: grayscale(0.15) contrast(1.1); display: block;">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="AQUAGUARD Series Technology">
                 </div>
             </div>
         </article>
 
-        <section class="section">
-            <div class="container">
-                <div style="text-align:center; margin-bottom:60px;">
-                    <p class="font-tech-clean" style="text-align:center;">// SEPARATION PROTOCOL</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(32px, 5vw, 60px); margin: 10px 0; text-align:center;">THE <span style="color:var(--volt);">THREE-STAGE</span> PROCESS</h2>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">TURBINE <span class="yellow">SEPARATION</span></h2>
                 </div>
-                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div class="feature">
-                        <span class="font-tech-clean">STAGE 1 / CENTRIFUGE</span>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">SEPARATION</h3>
-                        <p>Fuel spins through centrifuge. Large solids and water droplets—heavier than fuel—fall to collection bowl.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// TURBINE POWER</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">900FH/1000FH</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Advanced turbine centrifugal force separates contaminants from hydraulic fluids with superior efficiency.</p>
                     </div>
-                    <div class="feature">
-                        <span class="font-tech-clean">STAGE 2 / COALESCENCE</span>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">BEAD-UP</h3>
-                        <p>Small water droplets coalesce on conical baffle and cartridge filter surface, then fall to collection bowl.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// STAGE SEPARATION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">3-STAGE DESIGN</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Multi-stage architecture ensures progressive fluid purification removing particles and dissolved water.</p>
                     </div>
-                    <div class="feature">
-                        <span class="font-tech-clean">STAGE 3 / FILTRATION</span>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">AQUABLOC®II CARTRIDGE</h3>
-                        <p>Proprietary waterproof filters remove contaminants down to 2 microns nominal, repelling water effectively.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="background:#030303;">
-            <div class="container">
-                <div style="margin-bottom:60px; border-left:4px solid var(--volt); padding-left:20px;">
-                    <p class="font-tech-clean">// SYSTEM SPECIFICATIONS</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(28px, 4vw, 48px); color:#fff; margin-top:8px;">TURBINE SERIES MODELS</h2>
-                </div>
-                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div class="protocol-card">
-                        <div class="protocol-num">900</div>
-                        <i class="fas fa-wind" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">900FH MODEL</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">90 GPH (340 LPH) flow rating. Heavy-duty construction with clear collection bowl and self-venting water drain.</p>
-                    </div>
-                    <div class="protocol-card">
-                        <div class="protocol-num">1000</div>
-                        <i class="fas fa-droplet" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">1000FH MODEL</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">180 GPH (681 LPH) flow rating. Accommodates higher-capacity fuel systems with same three-stage protection.</p>
-                    </div>
-                    <div class="protocol-card">
-                        <div class="protocol-num">OPT</div>
-                        <i class="fas fa-thermometer-half" style="color:var(--volt); font-size:24px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact-master" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">OPTIONAL FEATURES</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Water Sensor modules. 12/24 VDC fuel heater. Electronic water detection. Available in 2, 10, or 30 micron ratings.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// COATING TECHNOLOGY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">AQUABLOC®II</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Proprietary coating maintains 2/10/30 micron ratings protecting hydraulic system precision components.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div style="margin-bottom:60px; border-left:4px solid var(--volt); padding-left:20px;">
-                    <p class="font-tech-clean">// REPLACEMENT FILTER ELEMENTS</p>
-                    <h2 class="font-impact-master" style="font-size:clamp(28px, 4vw, 48px); color:#fff; margin-top:8px;">AQUABLOC®II CARTRIDGES</h2>
-                </div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
-                    <div>
-                        <h3 class="font-impact-master" style="font-size:1.3rem; color:var(--volt); margin-bottom:30px;">900FH SERIES</h3>
-                        <div style="display:grid; grid-template-columns:1fr; gap:20px;">
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2040SM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">2 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Ultra-fine filtration for premium fuel quality and extended component life.</p>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2040TM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">10 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Standard-duty filtration for normal operating conditions and fuel maintenance.</p>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2040PM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">30 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Heavy-duty protection for severely contaminated fuel environments.</p>
-                            </div>
-                        </div>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// CENTRIFUGAL FORCE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">TURBINE ROTATION</h3>
+                        <p class="text-body text-sm light">900FH/1000FH turbines generate centrifugal separation force removing contaminants and water from hydraulic fluids.</p>
                     </div>
-                    <div>
-                        <h3 class="font-impact-master" style="font-size:1.3rem; color:var(--volt); margin-bottom:30px;">1000FH SERIES</h3>
-                        <div style="display:grid; grid-template-columns:1fr; gap:20px;">
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2020SM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">2 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Ultra-fine filtration for premium fuel quality and extended component life.</p>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2020TM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">10 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Standard-duty filtration for normal operating conditions and fuel maintenance.</p>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.02); border-left:3px solid var(--volt); padding:20px; border-radius:2px;">
-                                <p class="font-tech-clean" style="margin-bottom:8px;">2020PM-OR</p>
-                                <h4 class="font-impact-master" style="color:#fff; font-size:1rem; margin-bottom:8px;">30 Micron Element</h4>
-                                <p style="color:var(--text-muted); font-size:13px;">Heavy-duty protection for severely contaminated fuel environments.</p>
-                            </div>
-                        </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PROGRESSIVE FILTERING</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">STAGE CUSTODY</h3>
+                        <p class="text-body text-sm light">Three-stage separation architecture progressively purifies fluid achieving consistent 2/10/30 micron compliance.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SURFACE PROTECTION</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">AQUABLOC®II COATING</h3>
+                        <p class="text-body text-sm light">Proprietary surface coating enhances separation efficiency protecting pump seals and precision hydraulic components.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
-            <div class="container">
-                <h2 class="font-impact-master" style="font-size:clamp(35px, 7vw, 85px); color:#fff; line-height:0.9; margin: 0; text-align: center;">PURE FUEL.</h2>
-                <h2 class="font-impact-master" style="font-size:clamp(35px, 7vw, 85px); color:var(--volt); margin-bottom:40px; margin-top: 10px; text-align: center;">RELIABLE TURBINES.</h2>
-                <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta-pill" aria-label="Search turbine fuel separators on Vercel">FIND MY TURBINE SEPARATOR</a>
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">PURIFY YOUR SYSTEM</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH AQUAGUARD</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>

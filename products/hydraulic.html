@@ -3,211 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — HYDRAULIC FILTRATION</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — HYDRAULIC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-hyd-en-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="product-wrapper">
     <style>
-        #elim-hyd-en-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            --text-body: #d1d1d6;
-            --text-muted: #a1a1aa;
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            width: 100%;
-        }
-
-        /* TYPOGRAPHY */
-        #elim-hyd-en-wrapper .font-impact {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.95;
-            text-align: left;
-        }
-        #elim-hyd-en-wrapper .font-tech {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-            text-align: left;
-        }
-
-        /* SECTIONS */
-        #elim-hyd-en-wrapper .section { padding: 80px 6%; border-bottom: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; }
-        #elim-hyd-en-wrapper .container { max-width: 1400px; margin: auto; width: 100%; box-sizing: border-box; }
-
-        /* HERO */
-        #elim-hyd-en-wrapper .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background: linear-gradient(90deg, #000 45%, transparent 100%),
-                        url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-yury-kim-181374-585419-scaled.jpg') center/cover no-repeat;
-        }
-
-        /* FEATURE CARDS */
-        #elim-hyd-en-wrapper .feature {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid var(--volt);
-            padding: 40px 32px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            box-sizing: border-box;
-        }
-        #elim-hyd-en-wrapper .feature:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
-        #elim-hyd-en-wrapper .feature p { color: var(--text-muted); font-size: 14px; line-height: 1.6; font-weight: 300; }
-
-        /* PROTOCOL CARDS */
-        #elim-hyd-en-wrapper .protocol-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 30px;
-            position: relative;
-            box-sizing: border-box;
-        }
-
-        /* CTA BUTTON */
-        #elim-hyd-en-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            padding: 20px 45px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            transition: 0.25s ease;
-            text-decoration: none;
-            border: 2px solid var(--volt);
-        }
-        #elim-hyd-en-wrapper .cta-pill:hover { background: transparent; color: var(--volt); transform: translateY(-3px); }
-
-        /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            #elim-hyd-en-wrapper .grid-responsive { grid-template-columns: 1fr !important; gap: 40px !important; }
-            #elim-hyd-en-wrapper .grid-3-col { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-
-        @media (max-width: 768px) {
-            #elim-hyd-en-wrapper .grid-3-col { grid-template-columns: 1fr !important; }
-            #elim-hyd-en-wrapper .section { padding: 60px 5%; }
-            #elim-hyd-en-wrapper .hero { min-height: 60vh; background-position: 75% center; }
-            #elim-hyd-en-wrapper .cta-pill { width: 100%; text-align: center; }
-        }
+        #product-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero section">
-            <div class="container">
-                <p class="font-tech">// HYDRAULIC_SYSTEMS / MOD-NANOFORCE</p>
-                <h1 class="font-impact" style="font-size:clamp(40px, 8vw, 95px); color:#fff; margin-top: 20px; margin-bottom: 0;">
-                    HYDRAULIC<br>
-                    <span style="color:var(--volt);">FILTRATION.</span>
-                </h1>
-                <div style="margin-top:30px; max-width:650px; border-left:4px solid var(--volt); padding-left:25px; color:var(--text-body); font-size:clamp(17px, 2vw, 19px); line-height:1.6; font-style: italic;">
-                    <strong>NANOFORCE™ Technology</strong> — Optimized flow engineering for extreme duty cycles, protecting hydraulic circuits from high-pressure contamination.
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// HYDRAULIC SYSTEMS</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">HYDRAULIC</h1>
+                    <h1 class="font-impact h1-secondary mb-8">PRECISION DEFENSE</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>99.99% efficiency filtration</strong> with HYDROGUARD water separation and 450 PSI rated protection.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <article class="section" style="background:#050505;">
-            <div class="container grid-responsive" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="font-tech">// NANOFORCE™ TECHNOLOGY</p>
-                    <h2 class="font-impact" style="font-size:clamp(30px, 4vw, 55px); margin: 20px 0;">
-                        TOTAL HYDRAULIC<br><span style="color:var(--volt);">INTEGRITY.</span>
-                    </h2>
-                    <p style="color:var(--text-body); font-size:17px; line-height:1.7; margin-bottom:25px; font-weight: 300;">
-                        Precision valve control and pump efficiency rely on absolute fluid purity. NANOFORCE™ achieves 99.99% efficiency to capture contaminants before they compromise actuator response.
+                    <p class="font-tech mb-6">// SYSTEM PROTECTION</p>
+                    <h2 class="font-impact h2-main mb-8">99.99%<br><span class="yellow">FILTRATION CUSTODY</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        HYDRAULIC filters achieve 99.99% efficiency eliminating particulates protecting pump seals and precision cylinders. HYDROGUARD water separation technology removes contamination preventing cavitation and component degradation. 450 PSI rated construction maintains system reliability under extreme pressure fluctuations common in industrial hydraulic applications requiring zero tolerance contamination control.
                     </p>
-                    <a href="https://elimfilters.com/technology/" class="cta-pill">VIEW TECHNOLOGY</a>
+                    <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">LEARN MORE</a>
                 </div>
-                <div style="background:#000; padding:10px; border:1px solid #1a1a1a; position: relative;">
-                    <div style="position:absolute; top:-10px; right:-10px; width:50px; height:50px; border-top:2px solid var(--volt); border-right:2px solid var(--volt);"></div>
-                    <img src="https://elimfilters.com/wp-content/uploads/2025/08/ChatGPT-Image-20-ago-2025-10_40_35-p.m.png"
-                         alt="ELIMFILTERS NANOFORCE Hydraulic Filter"
-                         width="600" height="500"
-                         loading="lazy" decoding="async"
-                         style="width:100%; height:auto; filter: grayscale(0.1) contrast(1.1); display: block;">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_water.png" alt="HYDRAULIC Technology">
                 </div>
             </div>
         </article>
 
-        <section class="section">
-            <div class="container">
-                <div style="text-align:center; margin-bottom:60px;">
-                    <p class="font-tech" style="text-align:center;">// PROTECTION STROKE BY STROKE</p>
-                    <h2 class="font-impact" style="font-size:clamp(32px, 5vw, 60px); margin: 10px 0; text-align:center;">STRUCTURAL <span style="color:var(--volt);">DEFENSE</span></h2>
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
+                <div class="text-center mb-16">
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">HYDRAULIC <span class="yellow">EXCELLENCE</span></h2>
                 </div>
-                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div class="feature">
-                        <span class="font-tech">SYNTHETIC MEDIA</span>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">99.99% EFFICIENCY</h3>
-                        <p>Traps abrasive micro-particles before they reach precision pumps and servo valves.</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// FILTRATION RATE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">99.99% EFFICIENCY</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Superior efficiency removes particulates protecting pump displacement and precision seals.</p>
                     </div>
-                    <div class="feature">
-                        <span class="font-tech">ZERO CAVITATION</span>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">FLOW STABILITY</h3>
-                        <p>Maintains maximum flow rates under high viscosity and cold starts, protecting the pump.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// WATER SEPARATION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">HYDROGUARD TECH</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Advanced water separation prevents cavitation damage protecting cylinder bore integrity.</p>
                     </div>
-                    <div class="feature">
-                        <span class="font-tech">HYDROGUARD</span>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">WATER SEPARATION</h3>
-                        <p>Superior separation that prevents fluid oxidation and moisture-driven degradation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="background:#030303;">
-            <div class="container">
-                <div style="margin-bottom:60px; border-left:4px solid var(--volt); padding-left:20px;">
-                    <p class="font-tech">// SYSTEM VALIDATION</p>
-                    <h2 class="font-impact" style="font-size:clamp(28px, 4vw, 48px); color:#fff; margin-top:8px;">PERFORMANCE PROTOCOL</h2>
-                </div>
-                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div class="protocol-card">
-                        <i class="fas fa-compress-arrows-alt" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">ISO COMPLIANCE</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Certified contamination control that eliminates high-velocity particles in field operations.</p>
-                    </div>
-                    <div class="protocol-card">
-                        <i class="fas fa-tachometer-alt" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">PRESSURE RATING</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Steel-reinforced canisters designed to withstand spikes up to 450 PSI in extreme duty cycles.</p>
-                    </div>
-                    <div class="protocol-card">
-                        <i class="fas fa-shield-halved" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
-                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">TCO OPTIMIZATION</h3>
-                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">High holding capacity extends change intervals, reducing downtime and operational costs.</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// PRESSURE RATING</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">450 PSI RATED</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Heavy-duty construction withstands extreme system pressures and pressure cycling.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
-            <div class="container">
-                <h2 class="font-impact" style="font-size:clamp(35px, 7vw, 85px); color:#fff; line-height:0.9; margin: 0; text-align: center;">EVERY SYSTEM.</h2>
-                <h2 class="font-impact" style="font-size:clamp(35px, 7vw, 85px); color:var(--volt); margin-bottom:40px; margin-top: 10px; text-align: center;">EVERY STROKE.</h2>
-                <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta-pill" aria-label="Search hydraulic filters on Vercel">FIND MY HYDRAULIC FILTER</a>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PARTICLE CAPTURE</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">FILTRATION CUSTODY</h3>
+                        <p class="text-body text-sm light">99.99% efficiency removes contaminants protecting pump and cylinder components from wear.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// WATER REMOVAL</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">CAVITATION PREVENTION</h3>
+                        <p class="text-body text-sm light">HYDROGUARD separation eliminates water preventing bubble-induced erosion of cylinders.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// PRESSURE WITHSTAND</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">HIGH-LOAD DEFENSE</h3>
+                        <p class="text-body text-sm light">450 PSI rating maintains integrity under extreme pressure cycling in industrial systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">PROTECT YOUR SYSTEM</h2>
+                <h2 class="font-impact h2-final yellow mb-12">WITH HYDRAULIC FILTERS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>
