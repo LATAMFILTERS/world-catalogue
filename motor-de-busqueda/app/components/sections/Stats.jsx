@@ -1,18 +1,12 @@
-import { homeData } from "@/app/data";
-
-export default function Stats() {
-  const { stats } = homeData;
-
+﻿export default function Stats({ items = [] }) {
   return (
-    <section className="stats">
-      <div className="stats-grid">
-        {stats.map((item, i) => (
-          <div className="stat" key={i}>
-            <div className="stat-n">{item.value}</div>
-            <div className="stat-l">{item.label}</div>
-          </div>
-        ))}
-      </div>
+    <section>
+      {items.map((s, i) => (
+        <div key={i}>
+          <h3>{s.value}</h3>
+          <p>{s.label}</p>
+        </div>
+      ))}
     </section>
   );
 }
