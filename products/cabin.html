@@ -1,0 +1,239 @@
+<div id="elim-cabin-en-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <style>
+        #elim-cabin-en-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            --text-body: #d1d1d6;
+            --text-muted: #a1a1aa;
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            width: 100%;
+        }
+
+        /* TYPOGRAPHY */
+        #elim-cabin-en-wrapper .font-impact {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            text-align: left;
+        }
+
+        #elim-cabin-en-wrapper .font-tech {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+            text-align: left;
+        }
+
+        /* SECTIONS */
+        #elim-cabin-en-wrapper .section { padding: 80px 6%; border-bottom: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; }
+        #elim-cabin-en-wrapper .container { max-width: 1400px; margin: auto; width: 100%; box-sizing: border-box; }
+
+        /* HERO - Desktop */
+        #elim-cabin-en-wrapper .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #000 45%, transparent 100%),
+                        url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_w9i6zgw9i6zgw9i6-e1772079558684.png') center/cover no-repeat;
+        }
+
+        /* FEATURE CARDS */
+        #elim-cabin-en-wrapper .feature {
+            background: rgba(255,255,255,0.02);
+            border-left: 4px solid var(--volt);
+            padding: 40px 32px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            box-sizing: border-box;
+        }
+        #elim-cabin-en-wrapper .feature:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
+        #elim-cabin-en-wrapper .feature p { color: var(--text-muted); font-size: 14px; line-height: 1.6; font-weight: 300; }
+
+        /* PROTOCOL CARDS */
+        #elim-cabin-en-wrapper .protocol-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        #elim-cabin-en-wrapper .protocol-num {
+            position: absolute;
+            right: -10px; top: -10px;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 80px;
+            color: rgba(255,241,45,0.03);
+            line-height: 1;
+        }
+
+        /* CTA BUTTON */
+        #elim-cabin-en-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            padding: 20px 45px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            transition: 0.25s ease;
+            text-decoration: none;
+            border: 2px solid var(--volt);
+        }
+        #elim-cabin-en-wrapper .cta-pill:hover { background: transparent; color: var(--volt); transform: translateY(-3px); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            #elim-cabin-en-wrapper .grid-3-col { grid-template-columns: repeat(2, 1fr) !important; display: grid; gap: 24px; }
+        }
+
+        @media (max-width: 768px) {
+            #elim-cabin-en-wrapper .grid-3-col { grid-template-columns: 1fr !important; display: grid; }
+            #elim-cabin-en-wrapper .section { padding: 60px 5%; }
+            #elim-cabin-en-wrapper .container[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 40px !important; display: grid; }
+            #elim-cabin-en-wrapper .cta-pill { width: 100%; text-align: center; box-sizing: border-box; }
+
+            /* CORRECCIÓN CRÍTICA PARA ELIMFILTERS: Encuadre del operador en móvil */
+            #elim-cabin-en-wrapper .hero {
+                background: linear-gradient(0deg, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.2) 100%),
+                            url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_w9i6zgw9i6zgw9i6-e1772079558684.png');
+                background-position: 85% center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
+
+    <main>
+        <header class="hero section">
+            <div class="container">
+                <p class="font-tech">// CABIN_FILTRATION / SYS-02</p>
+                <h1 class="font-impact" style="font-size:clamp(48px, 8vw, 95px); color:#fff; margin-top: 20px; margin-bottom: 0;">
+                    CABIN<br>
+                    <span style="color:var(--volt);">FILTERS.</span>
+                </h1>
+                <div style="margin-top:30px; max-width:650px; border-left:4px solid var(--volt); padding-left:25px; color:var(--text-body); font-size:clamp(17px, 2vw, 19px); line-height:1.6; font-style: italic;">
+                    <strong>MICROKAPPA™ Technology</strong> — 100% pure cabin air. Operator protection engineered for the most demanding industrial, agricultural, and urban environments.
+                </div>
+            </div>
+        </header>
+
+        <article class="section" style="background:#050505;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <p class="font-tech">// MICROKAPPA™ TECHNOLOGY</p>
+                    <h2 class="font-impact" style="font-size:clamp(32px, 4vw, 56px); margin: 20px 0;">
+                        100% PURE AIR.<br><span style="color:var(--volt);">PROTECTED OPERATOR.</span>
+                    </h2>
+                    <p style="color:var(--text-body); font-size:17px; line-height:1.7; margin-bottom:25px; font-weight: 300;">
+                        Operators are exposed to allergens, soot, and harmful gases every shift. MICROKAPPA™ utilizes multi-stage filtration to guarantee a neutral and safe atmosphere, ensuring productivity and long-term health.
+                    </p>
+                    <a href="https://elimfilters.com/technology/" class="cta-pill">VIEW TECHNOLOGY</a>
+                </div>
+                <div style="background:#000; padding:10px; border:1px solid #1a1a1a; box-shadow: 0 20px 60px rgba(0,0,0,0.8);">
+                    <img src="https://elimfilters.com/wp-content/uploads/2025/08/Screenshot-2025-08-20-203624.webp"
+                         alt="ELIMFILTERS MICROKAPPA Cabin Filter"
+                         width="600" height="450"
+                         loading="lazy" decoding="async"
+                         style="width:100%; height:auto; filter: grayscale(0.2) contrast(1.1); display: block;">
+                </div>
+            </div>
+        </article>
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:60px;">
+                    <p class="font-tech" style="text-align:center;">// LAYER BY LAYER PROTECTION</p>
+                    <h2 class="font-impact" style="font-size:clamp(32px, 5vw, 64px); margin: 10px 0; text-align:center;">TOTAL <span style="color:var(--volt);">DEFENSE</span></h2>
+                </div>
+                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <div class="feature">
+                        <span class="font-tech">PRIMARY LAYER</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">COARSE CAPTURE</h3>
+                        <p>Intercepts dust, pollen, and large debris before they reach the high-efficiency core media.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="font-tech">MAIN MEDIA</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">SUB-MICRON CORE</h3>
+                        <p>MICROKAPPA™ fibers retain fine soot and allergens with 99.9% efficiency in every cycle.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="font-tech">ACTIVATED CARBON</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">CHEMICAL BARRIER</h3>
+                        <p>Neutralizes harmful NOx gases and persistent external odors for a safer cabin environment.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="font-tech">SEALING TECH</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">ZERO BYPASS</h3>
+                        <p>Precision-engineered OEM geometry ensures a hermetic seal, leaving no room for unfiltered air.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="font-tech">STRUCTURE</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">REINFORCED FRAME</h3>
+                        <p>Maintains integrity under high HVAC flow and extreme vibrations typical of industrial sites.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="font-tech">HVAC CARE</span>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.3rem; margin: 15px 0 10px;">BLOWER DEFENSE</h3>
+                        <p>Optimized airflow resistance prevents blower motor overload, extending HVAC service life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#030303;">
+            <div class="container">
+                <div style="margin-bottom:60px; border-left:4px solid var(--volt); padding-left:20px;">
+                    <p class="font-tech">// SYSTEM VALIDATION</p>
+                    <h2 class="font-impact" style="font-size:clamp(28px, 4vw, 48px); color:#fff; margin-top:8px;">PERFORMANCE PROTOCOL</h2>
+                </div>
+                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <div class="protocol-card">
+                        <div class="protocol-num">01</div>
+                        <i class="fas fa-wind" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">AIRFLOW OPTIMIZATION</h3>
+                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Maximum permeability with minimum pressure drop, maintaining full climate performance.</p>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">02</div>
+                        <i class="fas fa-shield-virus" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">BIOPROTECTION</h3>
+                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Physical barrier against organic micro-particles, drastically improving occupational health.</p>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">03</div>
+                        <i class="fas fa-check-double" style="color:var(--volt); font-size:22px; margin-bottom:20px; display:block;"></i>
+                        <h3 class="font-impact" style="color:#fff; font-size:1.1rem; margin-bottom:12px;">CERTIFIED FIT</h3>
+                        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">Validated for Mining, Construction, and Agriculture operations across global fleets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
+            <div class="container">
+                <h2 class="font-impact" style="font-size:clamp(40px, 7vw, 90px); color:#fff; line-height:0.9; margin: 0; text-align: center;">EVERY CABIN.</h2>
+                <h2 class="font-impact" style="font-size:clamp(40px, 7vw, 90px); color:var(--volt); margin-bottom:40px; margin-top: 10px; text-align: center;">EVERY BREATH.</h2>
+                <a href="https://elimfilters-search-pro.vercel.app/" target="_blank" class="cta-pill" aria-label="Search cabin filters on Vercel">FIND MY CABIN FILTER</a>
+            </div>
+        </section>
+    </main>
+</div>
