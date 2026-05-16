@@ -1,35 +1,35 @@
 [
   {
     "sku": "ET92010T", "codigo_base": "2010TM-OR", "serie": "2010", "variant": "TM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
     "micron_rating": "10 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Primary/Secondary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
     ]
   },
   {
     "sku": "ET92010P", "codigo_base": "2010PM-OR", "serie": "2010", "variant": "PM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
     "micron_rating": "30 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Primary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
     ]
   },
   {
     "sku": "ET92010S", "codigo_base": "2010SM-OR", "serie": "2010", "variant": "SM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
     "micron_rating": "2 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Secondary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
     ]
   },
   {
@@ -67,35 +67,35 @@
   },
   {
     "sku": "ET92040T", "codigo_base": "2040TM-OR", "serie": "2040", "variant": "TM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
     "micron_rating": "10 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Primary/Secondary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
     ]
   },
   {
     "sku": "ET92040P", "codigo_base": "2040PM-OR", "serie": "2040", "variant": "PM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
     "micron_rating": "30 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Primary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
     ]
   },
   {
     "sku": "ET92040S", "codigo_base": "2040SM-OR", "serie": "2040", "variant": "SM",
-    "outer_diameter_mm": null, "height_mm": null, "thread_size": null,
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
     "micron_rating": "2 Micron", "installation_type": "Cartridge",
     "sub_type": "Fuel Filter - Coalescing Secondary",
     "equipment_applications": [
-      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
-      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
-      {"machine": "Transporte Pesado", "type": "TRUCK"}
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
     ]
   },
   {
