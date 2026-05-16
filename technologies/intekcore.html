@@ -1,0 +1,212 @@
+<div id="elim-intekcore-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #elim-intekcore-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            --text-body: #a1a1aa;
+            --border-soft: rgba(255,255,255,0.08);
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #elim-intekcore-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            margin: 0;
+        }
+        #elim-intekcore-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+
+        #elim-intekcore-wrapper .hero-intekcore {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #elim-intekcore-wrapper .hero-bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://elimfilters.com/wp-content/uploads/2026/04/pelon-air.png') center 40%/cover no-repeat;
+            mask-image: linear-gradient(to right, transparent 0%, black 60%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%);
+            z-index: 1;
+        }
+
+        #elim-intekcore-wrapper .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            z-index: 2;
+        }
+
+        #elim-intekcore-wrapper .hero-content-inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        #elim-intekcore-wrapper .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); }
+        #elim-intekcore-wrapper .container-max { max-width: 1400px; margin: auto; }
+        #elim-intekcore-wrapper .info-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+
+        #elim-intekcore-wrapper .feature-card {
+            background: linear-gradient(145deg, #080808, #000);
+            border: 1px solid var(--border-soft);
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #elim-intekcore-wrapper .feature-card:hover {
+            border-color: var(--volt);
+            transform: translateY(-5px);
+        }
+
+        #elim-intekcore-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            padding: 22px 50px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--volt);
+        }
+        #elim-intekcore-wrapper .cta-pill:hover {
+            background: transparent;
+            color: var(--volt);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            #elim-intekcore-wrapper .info-grid { grid-template-columns: 1fr; }
+            #elim-intekcore-wrapper .hero-bg-image { opacity: 0.9; mask-image: none; -webkit-mask-image: none; background-position: center !important; }
+        }
+    </style>
+
+    <main>
+        <header class="hero-intekcore">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container-max hero-content-inner section">
+                <div class="max-w-3xl">
+                    <p class="font-tech-clean tracking-[0.4em] mb-4">// LIGHT DUTY / MOD-06</p>
+                    <h1 class="font-impact-master text-[clamp(50px,10vw,110px)] text-white">INDUCTION</h1>
+                    <h1 class="font-impact-master text-[clamp(45px,9vw,100px)] text-[var(--volt)]">INTEKCORE™</h1>
+
+                    <div class="hero-description mt-10 max-w-xl border-l-4 border-[var(--volt)] pl-10">
+                        <p class="text-zinc-200 text-2xl font-light leading-snug italic">
+                            Power and <strong>Flow Efficiency</strong>. Hybrid media engineering designed for automotive and light commercial housings.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">IDENTIFY SKU</a>
+                        <div class="hidden md:block">
+                            <span class="font-tech-clean text-[9px] block opacity-40 mb-1">HIGH PERFORMANCE</span>
+                            <span class="text-white text-xs tracking-widest font-bold">OPTIMIZED AIRFLOW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="section bg-[#050505]">
+            <div class="container-max info-grid">
+                <div>
+                    <p class="font-tech-clean mb-6">// SEALING INTEGRITY</p>
+                    <h2 class="font-impact-master text-[clamp(32px,4.5vw,58px)] mb-8 leading-tight">
+                        ZERO LEAK<br><span class="text-[var(--volt)]">INTEGRITY</span>
+                    </h2>
+                    <p class="text-[var(--text-body)] text-lg mb-8 leading-relaxed font-light">
+                        <strong>INTEKCORE™</strong> features high-density polyurethane radial seal engineering to ensure 100% leak-proof integrity under extreme vibration. This precision fit prevents unfiltered air from bypassing the media, protecting sensitive sensors and internal engine components.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">SEAL MATERIAL</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">High-Density Polyurethane</p>
+                        </div>
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">APPLICATION</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">Light Engines / Automotive</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 p-1 shadow-2xl rounded-sm">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/mecanica-air.png"
+                         alt="INTEKCORE Technical Analysis"
+                         class="w-full h-auto block filter brightness-[1.1] contrast-[1.1]">
+                </div>
+            </div>
+        </article>
+
+        <section class="section">
+            <div class="container-max">
+                <div class="text-center mb-16">
+                    <p class="font-tech-clean mb-4">// PERFORMANCE ENGINEERING</p>
+                    <h2 class="font-impact-master text-[clamp(30px,5vw,60px)]">INTAKE <span class="text-[var(--volt)]">OPTIMIZATION</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">MAXIMUM FLOW</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Deep-pleat structure designed to increase surface area without obstructing induction.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">RADIAL SEAL</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Engineered to fit with absolute precision in both composite and metallic housings.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">ENGINE RESPONSE</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Optimized air supply for improved throttle response and fuel economy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-center bg-radial-gradient from-zinc-900 to-black border-none py-28">
+            <div class="container-max">
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-white leading-none">PEAK RESPONSE</h2>
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-[var(--volt)] leading-none">RUN INTEKCORE™</h2>
+
+                <div class="mt-14">
+                    <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">SEARCH MY SKU</a>
+                </div>
+
+                <p class="font-tech-clean mt-16 opacity-30 text-[9px] tracking-[0.5em]">// GLOBAL LIGHT-DUTY ENGINEERING BY ELIMFILTERS</p>
+            </div>
+        </section>
+    </main>
+</div>
