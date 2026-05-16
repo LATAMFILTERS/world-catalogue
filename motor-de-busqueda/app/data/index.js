@@ -1,9 +1,3 @@
-import industries from "./industries";
-import stats from "./stats";
-import technologies from "./technologies";
-
-export const homeData = {
-  industries,
-  stats,
-  technologies,
-};
+﻿export { default as industries } from "./industries";
+export { default as stats } from "./stats";
+export { default as technologies } from "./technologies";
