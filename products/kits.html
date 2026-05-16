@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELIMFILTERS — INTEGRATED FILTER KITS (SERIE-K)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="margin:0;padding:0;">
+
+<div id="elim-kits-en-wrapper">
+    <style>
+        #elim-kits-en-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            width: 100%;
+        }
+        #elim-kits-en-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+        }
+        #elim-kits-en-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+        #elim-kits-en-wrapper .section {
+            padding: 90px 6%;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        #elim-kits-en-wrapper .container {
+            max-width: 1400px;
+            margin: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #elim-kits-en-wrapper .hero {
+            min-height: 120vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, #000 40%, transparent 100%),
+                url('https://elimfilters.com/wp-content/uploads/2026/04/kit-npr-.png')
+                center/cover no-repeat;
+        }
+        #elim-kits-en-wrapper .feature {
+            background: rgba(255,255,255,0.02);
+            border-left: 2px solid var(--volt);
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+        }
+        #elim-kits-en-wrapper .feature:hover {
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-5px);
+            border-left-width: 6px;
+        }
+        #elim-kits-en-wrapper .env {
+            background: linear-gradient(145deg, #050505, #000);
+            border: 1px solid #1a1a1a;
+            padding: 50px;
+            position: relative;
+        }
+        #elim-kits-en-wrapper .protocol-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 45px 35px;
+            position: relative;
+            overflow: hidden;
+        }
+        #elim-kits-en-wrapper .protocol-num {
+            position: absolute;
+            right: -10px; top: -10px;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 90px;
+            color: rgba(255,241,45,0.03);
+            pointer-events: none;
+            line-height: 1;
+        }
+        #elim-kits-en-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            padding: 20px 45px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: 2px solid var(--volt);
+        }
+        #elim-kits-en-wrapper .cta-pill:hover {
+            background: transparent;
+            color: var(--volt);
+            transform: translateY(-3px);
+        }
+
+        /* iPad & Tablets */
+        @media (max-width: 1024px) {
+            #elim-kits-en-wrapper .section { padding: 70px 5%; }
+            #elim-kits-en-wrapper .hero {
+                min-height: 70vh;
+                background: linear-gradient(0deg, #000 40%, rgba(0,0,0,0.3) 100%),
+                url('https://elimfilters.com/wp-content/uploads/2026/04/kit-npr-.png') center/cover no-repeat;
+                align-items: flex-end;
+                padding-bottom: 60px;
+            }
+            #elim-kits-en-wrapper .info-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+            #elim-kits-en-wrapper .systems-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            #elim-kits-en-wrapper .info-grid-inner { grid-template-columns: 1fr !important; }
+        }
+
+        /* iPhone & Mobile */
+        @media (max-width: 768px) {
+            #elim-kits-en-wrapper .section { padding: 50px 6%; }
+            #elim-kits-en-wrapper .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            #elim-kits-en-wrapper .hero div[style*="border-left"] {
+                border-left: none !important;
+                border-top: 3px solid var(--volt);
+                padding-left: 0 !important;
+                padding-top: 20px;
+                margin: 30px auto 0 !important;
+            }
+            #elim-kits-en-wrapper .systems-grid { grid-template-columns: 1fr !important; }
+            #elim-kits-en-wrapper .info-grid-inner { grid-template-columns: 1fr !important; }
+            #elim-kits-en-wrapper .env { padding: 30px; }
+            #elim-kits-en-wrapper .protocol-card { padding: 30px 20px; }
+            #elim-kits-en-wrapper .protocol-num { font-size: 60px; }
+            #elim-kits-en-wrapper .cta-pill { width: 100%; box-sizing: border-box; text-align: center; padding: 18px 20px; }
+        }
+    </style>
+
+    <main>
+        <section class="hero section">
+            <div class="container">
+                <div class="font-tech-clean" style="margin-bottom:24px;">// MAINTENANCE_SERIES / SERIE-K</div>
+                <h1 class="font-impact-master" style="font-size:clamp(40px,8vw,90px); color:#fff; margin:0;">INTEGRATED</h1>
+                <h1 class="font-impact-master" style="font-size:clamp(40px,8vw,90px); color:var(--volt); margin:0;">FILTER KITS.</h1>
+                <div style="margin-top:35px; max-width:650px; border-left:4px solid var(--volt); padding-left:30px; color:#e4e4e7; font-size:18px; font-weight:300; line-height:1.6;">
+                    <strong>Maximum Efficiency:</strong> Air, Oil, Fuel, and Separators integrated into a single high-performance unit tailored to your specific truck model.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#050505;">
+            <div class="container info-grid" style="display:grid; grid-template-columns:1.3fr 1fr; gap:80px; align-items:center;">
+                <div>
+                    <div class="font-tech-clean" style="margin-bottom:20px;">// SYSTEM_SPECIFICATIONS</div>
+                    <h2 class="font-impact-master" style="font-size:clamp(30px,4.5vw,60px); color:#fff; margin-bottom:30px;">TOTAL<br><span style="color:var(--volt);">ADAPTABILITY.</span></h2>
+                    <p style="color:#a1a1aa; font-size:17px; line-height:1.8; margin-bottom:25px; font-weight:300;">
+                        Every machine has unique requirements. Our kits vary dynamically depending on the truck or machine model, ensuring that every filter matches the manufacturer's technical specifications.
+                    </p>
+                    <div class="info-grid-inner" style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-bottom:45px;">
+                        <div style="border-bottom:1px solid #27272a; padding-bottom:15px;">
+                            <span class="font-tech-clean" style="display:block; margin-bottom:5px;">MODEL-SPECIFIC</span>
+                            <span style="color:#71717a; font-size:12px; text-transform:uppercase;">Customized Config</span>
+                        </div>
+                        <div style="border-bottom:1px solid #27272a; padding-bottom:15px;">
+                            <span class="font-tech-clean" style="display:block; margin-bottom:5px;">SYNCHRONIZED</span>
+                            <span style="color:#71717a; font-size:12px; text-transform:uppercase;">Full Cycle Protection</span>
+                        </div>
+                    </div>
+                    <a href="https://elimfilters-search-pro.vercel.app/" class="cta-pill">FIND YOUR MODEL</a>
+                </div>
+                <div style="position:relative; width: 100%;">
+                    <div style="position:absolute; top:-20px; left:-20px; width:100px; height:100px; border-top:2px solid var(--volt); border-left:2px solid var(--volt);"></div>
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/kit-npr-.png"
+                         style="width:100%; display: block; filter:contrast(1.1); box-shadow:0 30px 60px rgba(0,0,0,0.8);"
+                         alt="NPR Filter Kit Configuration">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:60px;">
+                    <div class="font-tech-clean" style="margin-bottom:16px;">// PERFORMANCE_MATRIX</div>
+                    <h2 class="font-impact-master" style="font-size:clamp(32px,5.5vw,70px); color:#fff; margin:0;">ELITE <span style="color:var(--volt);">FLOTILLA</span> SUPPORT</h2>
+                </div>
+                <div class="systems-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:25px;">
+                    <div class="feature">
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:15px;">HEAVY-DUTY</h3>
+                        <p style="color:#a1a1aa; font-size:14px; line-height:1.7; font-weight:300;">Advanced filtration for long-haul Mack, Freightliner, and International engines.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:15px;">CONSTRUCTION</h3>
+                        <p style="color:#a1a1aa; font-size:14px; line-height:1.7; font-weight:300;">Extreme environment kits designed for heavy machinery and off-road applications.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:15px;">LIGHT-DUTY</h3>
+                        <p style="color:#a1a1aa; font-size:14px; line-height:1.7; font-weight:300;">Specialized delivery fleet solutions for Isuzu NPR and Mitsubishi Fuso series.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#000;">
+            <div class="container">
+                <div class="info-grid-inner" style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+                   <div class="env">
+                        <div class="font-tech-clean" style="margin-bottom:20px;">// FIELD_VALIDATION</div>
+                        <p style="color:#fff; font-size:20px; font-weight:700; line-height:1.4; margin-bottom:25px;">
+                            "The SERIE-K methodology ensures that no critical component is overlooked during high-pressure maintenance cycles."
+                        </p>
+                        <div style="color:var(--volt); font-family:var(--font-tech-clean); font-size:11px;">ISO CERTIFIED MANUFACTURING PROCESS</div>
+                   </div>
+                   <div class="protocol-grid" style="display:grid; grid-template-columns:1fr; gap:20px;">
+                        <div class="protocol-card">
+                            <div class="protocol-num">01</div>
+                            <h3 class="font-impact-master" style="font-size:1.2rem; color:var(--volt); margin-bottom:10px;">COMPONENT SYNC</h3>
+                            <p style="color:#71717a; font-size:13px; line-height:1.6;">Perfect match between fuel separators and primary air filters for your specific machine model.</p>
+                        </div>
+                        <div class="protocol-card">
+                            <div class="protocol-num">02</div>
+                            <h3 class="font-impact-master" style="font-size:1.2rem; color:var(--volt); margin-bottom:10px;">LOGISTICS EFFICIENCY</h3>
+                            <p style="color:#71717a; font-size:13px; line-height:1.6;">Reduce part-number management and TCO by using one box per service interval.</p>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:radial-gradient(circle at center, #111 0%, #000 100%); text-align:center;">
+            <div class="container">
+                <h2 class="font-impact-master" style="font-size:clamp(38px,8vw,100px); color:#fff; margin-bottom:10px;">PRECISE</h2>
+                <h2 class="font-impact-master" style="font-size:clamp(38px,8vw,100px); color:var(--volt); margin-bottom:40px;">PROTECTION.</h2>
+                <p style="color:#a1a1aa; max-width:800px; margin:0 auto 40px; font-size:18px; line-height:1.7; font-weight:300;">
+                    Maximize your uptime. Search the exact kit for your truck or machine using our Vercel-powered engine.
+                </p>
+                <a href="https://elimfilters-search-pro.vercel.app/" class="cta-pill">SEARCH BY MODEL</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
