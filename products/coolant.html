@@ -1,0 +1,258 @@
+<div id="elim-coolant-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        #elim-coolant-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #elim-coolant-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+        }
+
+        #elim-coolant-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+
+        #elim-coolant-wrapper .section {
+            padding: 90px 6%;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            box-sizing: border-box;
+        }
+
+        #elim-coolant-wrapper .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        #elim-coolant-wrapper .hero {
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, #000 45%, transparent 100%),
+                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_ouz5l5ouz5l5ouz5.png')
+                center/cover no-repeat;
+        }
+
+        #elim-coolant-wrapper .feature {
+            background: transparent;
+            border-left: 1px solid rgba(255, 241, 45, 0.2);
+            padding: 32px;
+            transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #elim-coolant-wrapper .feature:hover {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid var(--volt);
+            transform: translateX(8px);
+        }
+
+        #elim-coolant-wrapper .env {
+            background: linear-gradient(145deg, #050505, #000);
+            border: 1px solid #1a1a1a;
+            padding: 45px;
+        }
+
+        #elim-coolant-wrapper .tech-spec {
+            border-left: 2px solid var(--volt);
+            padding: 10px 0 10px 30px;
+            margin-bottom: 35px;
+        }
+
+        #elim-coolant-wrapper .protocol-card {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #elim-coolant-wrapper .protocol-num {
+            position: absolute;
+            right: -5px; top: -5px;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 70px;
+            color: rgba(255,241,45,0.03);
+            pointer-events: none;
+        }
+
+        #elim-coolant-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            padding: 18px 40px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-decoration: none;
+            transition: all .25s;
+        }
+        #elim-coolant-wrapper .cta-pill:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 900px) {
+            #elim-coolant-wrapper .section { padding: 60px 5%; }
+            #elim-coolant-wrapper .info-grid,
+            #elim-coolant-wrapper .systems-grid,
+            #elim-coolant-wrapper .protocol-grid {
+                grid-template-columns: 1fr !important; gap: 30px; display: grid;
+            }
+        }
+    </style>
+
+    <main>
+        <section class="hero section">
+            <div class="container">
+                <div class="font-tech-clean" style="margin-bottom:24px;">// COOLANT FILTRATION SYSTEMS / SYS-03</div>
+                <h1 class="font-impact-master" style="font-size:clamp(48px,8vw,95px); color:#fff; margin: 0;">COOLANT FILTER</h1>
+                <h1 class="font-impact-master" style="font-size:clamp(42px,7vw,80px); color:var(--volt); margin: 0;">SYSTEMS</h1>
+                <div style="margin-top:32px; max-width:600px; border-left:3px solid var(--volt); padding-left:28px; color:#a1a1aa; font-size:18px; font-weight:300; line-height:1.7; font-style:italic;">
+                    COOLTECH™ Technology — Corrosion control and thermal balance. Advanced engineering to eliminate thermal degradation in high-horsepower engines.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#050505;">
+            <div class="container info-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:60px; align-items:center;">
+                <div>
+                    <div class="font-tech-clean" style="margin-bottom:20px;">// COOLTECH™ TECHNOLOGY</div>
+                    <h2 class="font-impact-master" style="font-size:clamp(32px,4vw,56px); color:#fff; margin-bottom:24px;">
+                        TOTAL THERMAL<br><span style="color:var(--volt);">BALANCE.</span>
+                    </h2>
+                    <p style="color:#71717a; font-size:16px; line-height:1.8; margin-bottom:20px; font-weight:300;">
+                        Every combustion cycle generates extreme thermal loads. Contaminated coolant accelerates corrosion, triggers liner cavitation, and destroys water pumps and radiators far ahead of their designed service life.
+                    </p>
+                    <p style="color:#71717a; font-size:16px; line-height:1.8; margin-bottom:32px; font-weight:300;">
+                        ELIMFILTERS coolant filters with COOLTECH™ technology ensure efficient heat transfer while capturing rust, scale, and abrasive particles — delivering total thermal protection under the most demanding industrial conditions.
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:32px;">
+                        <div style="border-left:1px solid #27272a; padding-left:16px;">
+                            <span class="font-tech-clean" style="display:block; margin-bottom:4px;">COOLTECH™</span>
+                            <span style="color:#52525b; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Thermal Management</span>
+                        </div>
+                        <div style="border-left:1px solid #27272a; padding-left:16px;">
+                            <span class="font-tech-clean" style="display:block; margin-bottom:4px;">CORROSION CONTROL</span>
+                            <span style="color:#52525b; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Active Inhibitor Tech</span>
+                        </div>
+                    </div>
+
+                    <a href="https://elimfilters.com/en/technology/" class="cta-pill">VIEW COOLTECH™ TECHNOLOGY</a>
+                </div>
+
+                <div style="background:#000; border:1px solid #1a1a1a; padding:15px; box-shadow:0 30px 60px rgba(0,0,0,0.6); text-align: center;">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/IMG_0221.png"
+                         style="width:100%; max-width: 450px; height: auto; filter: contrast(1.08) brightness(1.02); display: inline-block;"
+                         alt="ELIMFILTERS Coolant Filter - Cooltech Technology">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:60px;">
+                    <div class="font-tech-clean" style="margin-bottom:16px;">// THERMAL SYSTEMS</div>
+                    <h2 class="font-impact-master" style="font-size:clamp(32px,5vw,64px); color:#fff; text-align: center;">
+                        CYCLE BY CYCLE, <span style="color:var(--volt);">TOTAL PROTECTION</span>
+                    </h2>
+                </div>
+                <div class="systems-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / CORROSION</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">CORROSION CONTROL</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Active prevention against liner cavitation and scale buildup, extending the life of the entire cooling circuit.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / THERMAL</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">THERMAL STABILITY</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Maintains consistent temperatures across all load conditions, preventing failure from extreme thermal cycling.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / FLOW</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">OPTIMIZED FLOW</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Protects the water pump by continuously removing abrasive particles before they cause mechanical damage.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / INHIBITORS</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">ACTIVE RELEASE</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Controlled release of inhibitors restores fluid protection throughout the full service interval.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / RADIATOR</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">RADIATOR GUARD</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Eliminates scale deposits that reduce heat exchange efficiency, preventing overheating under peak load.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="font-tech-clean" style="margin-bottom:12px;">COOLTECH™ / DURABILITY</div>
+                        <h3 class="font-impact-master" style="font-size:1.4rem; color:#fff; margin-bottom:12px;">EXTENDED LIFE</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">High contaminant-holding capacity reduces maintenance downtime and total cost of operation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#000;">
+            <div class="container">
+                <div style="margin-bottom:60px; border-left:3px solid var(--volt); padding-left:20px;">
+                    <span class="font-tech-clean">// SYSTEM VALIDATION</span>
+                    <h2 class="font-impact-master" style="font-size:clamp(28px,4vw,48px); color:#fff; margin-top:8px;">PERFORMANCE PROTOCOL</h2>
+                </div>
+                <div class="protocol-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+                    <div class="protocol-card">
+                        <div class="protocol-num">01</div>
+                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">THERMAL STABILITY</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Maintains consistent temperatures across all load cycles, preventing overheating damage.</p>
+                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">02</div>
+                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">CORROSION SHIELD</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Active inhibitor technology neutralizes corrosive agents and prevents cavitation erosion.</p>
+                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">03</div>
+                        <h3 class="font-impact-master" style="font-size:1.1rem; color:#fff; margin-bottom:12px;">CIRCUIT PURITY</h3>
+                        <p style="color:#71717a; font-size:13px; line-height:1.65; font-weight:300;">Continuous removal of rust and scale protects all downstream components effectively.</p>
+                        <div style="margin-top:25px; height:2px; width:40px; background:var(--volt);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background:#030303; text-align:center; border-bottom:none;">
+            <div class="container">
+                <div class="font-tech-clean" style="margin-bottom:20px;">// THERMAL CONTINUITY</div>
+                <h2 class="font-impact-master" style="font-size:clamp(40px,7vw,90px); color:#fff; margin: 0; text-align: center;">EVERY ENGINE.</h2>
+                <h2 class="font-impact-master" style="font-size:clamp(40px,7vw,90px); color:var(--volt); margin-bottom:32px; margin-top: 10px; text-align: center;">EVERY DEGREE.</h2>
+                <p style="color:#71717a; max-width:700px; margin:0 auto 48px; font-size:18px; line-height:1.75; font-style:italic; font-weight:300;">
+                    Built to protect your cooling circuit investment and ensure thermal stability wherever your machinery runs.
+                </p>
+                <a href="https://elimfilters-search-pro.vercel.app/" class="cta-pill">FIND MY COOLANT FILTER</a>
+            </div>
+        </section>
+    </main>
+</div>
