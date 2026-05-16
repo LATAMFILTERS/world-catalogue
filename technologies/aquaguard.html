@@ -1,0 +1,208 @@
+<div id="elim-aquaguard-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #elim-aquaguard-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            --text-body: #a1a1aa;
+            --border-soft: rgba(255,255,255,0.08);
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #elim-aquaguard-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            margin: 0;
+        }
+        #elim-aquaguard-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+
+        #elim-aquaguard-wrapper .hero-aquaguard {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #elim-aquaguard-wrapper .hero-bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_1av7l01av7l01av7.png') center center/cover no-repeat;
+            mask-image: linear-gradient(to right, transparent 0%, black 85%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 85%);
+            z-index: 1;
+        }
+
+        #elim-aquaguard-wrapper .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #000 35%, rgba(0,0,0,0.5) 70%, transparent 100%);
+            z-index: 2;
+        }
+
+        #elim-aquaguard-wrapper .hero-content-inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        #elim-aquaguard-wrapper .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); }
+        #elim-aquaguard-wrapper .container-max { max-width: 1400px; margin: auto; }
+        #elim-aquaguard-wrapper .info-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+
+        #elim-aquaguard-wrapper .feature-card {
+            background: linear-gradient(145deg, #080808, #000);
+            border: 1px solid var(--border-soft);
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #elim-aquaguard-wrapper .feature-card:hover {
+            border-color: var(--volt);
+            transform: translateY(-5px);
+        }
+
+        #elim-aquaguard-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            padding: 22px 50px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--volt);
+        }
+        #elim-aquaguard-wrapper .cta-pill:hover {
+            background: transparent;
+            color: var(--volt);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            #elim-aquaguard-wrapper .info-grid { grid-template-columns: 1fr; }
+            #elim-aquaguard-wrapper .hero-bg-image { opacity: 0.6; mask-image: none; -webkit-mask-image: none; }
+        }
+    </style>
+
+    <main>
+        <header class="hero-aquaguard">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container-max hero-content-inner section">
+                <div class="max-w-3xl">
+                    <p class="font-tech-clean tracking-[0.4em] mb-4">// FH_TURBINE_SEPARATION / S_SERIES</p>
+                    <h1 class="font-impact-master text-[clamp(50px,10vw,110px)] text-white">HYDROPHOBIC</h1>
+                    <h1 class="font-impact-master text-[clamp(45px,9vw,100px)] text-[var(--volt)]">AQUAGUARD™</h1>
+
+                    <div class="hero-description mt-10 max-w-xl border-l-4 border-[var(--volt)] pl-10">
+                        <p class="text-zinc-200 text-2xl font-light leading-snug italic">
+                            Advanced shielding for <strong>FH Series</strong> Turbine Separators. Extreme coalescence engineering for total water elimination in fuel
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">IDENTIFY SKU</a>
+                        <div class="hidden md:block">
+                            <span class="font-tech-clean text-[9px] block opacity-40 mb-1">CRITICAL PROTECTION</span>
+                            <span class="text-white text-xs tracking-widest font-bold">99.8% H2O SEPARATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="section bg-[#050505]">
+            <div class="container-max info-grid">
+                <div>
+                    <p class="font-tech-clean mb-6">// COALESCENCE DYNAMICS</p>
+                    <h2 class="font-impact-master text-[clamp(32px,4.5vw,58px)] mb-8 leading-tight">
+                        ACTIVE MOLECULAR<br><span class="text-[var(--volt)]">REPELLENCY</span>
+                    </h2>
+                    <p class="text-[var(--text-body)] text-lg mb-8 leading-relaxed font-light">
+                        <strong>AQUAGUARD™</strong> technology utilizes a filter media with high-density hydrophobic coating. This process forces the merging of emulsified water micro-particles, causing them to settle instantly before compromising injector integrity
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">SEPARATION EFFICIENCY</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">Superior Industrial Grade</p>
+                        </div>
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">COMPATIBILITY</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">FH Series Turbine Systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 p-1 shadow-2xl rounded-sm">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/Gemini_Generated_Image_i2rhli2rhli2rhli.png"
+                         alt="AQUAGUARD Technical Validation"
+                         class="w-full h-auto block filter contrast-[1.05]">
+                </div>
+            </div>
+        </article>
+
+        <section class="section">
+            <div class="container-max">
+                <div class="text-center mb-16">
+                    <p class="font-tech-clean mb-4">// WATER & PARTICLE CONTROL</p>
+                    <h2 class="font-impact-master text-[clamp(30px,5vw,60px)]">ENGINEERING FOR <span class="text-[var(--volt)]">DIESEL SYSTEMS</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">HYDROPHOBIC MEDIA</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Treated fibers designed to actively repel water under high-velocity flow conditions</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">OPTIMIZED FLOW</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Design that minimizes restriction, extending the service life of the transfer pump</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">TOTAL PROTECTION</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Eliminates risk of corrosion and pitting in Common Rail injection systems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-center bg-radial-gradient from-zinc-900 to-black border-none py-28">
+            <div class="container-max">
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-white leading-none">SECURE YOUR FUEL</h2>
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-[var(--volt)] mb-12 leading-none">USE AQUAGUARD™</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">FIND MY SKU</a>
+                <p class="font-tech-clean mt-16 opacity-30 text-[9px] tracking-[0.5em]">// GLOBAL HEAVY DUTY ENGINEERING ELIMFILTERS</p>
+            </div>
+        </section>
+    </main>
+</div>
