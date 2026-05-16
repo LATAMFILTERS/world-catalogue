@@ -3,216 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS — DRYCORE™ PNEUMATIC AIR DRYER</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>ELIMFILTERS — DRYCORE™ PNEUMATIC DRYER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="margin:0;padding:0;">
-<div id="elim-drycore-wrapper">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
+<body style="margin:0;padding:0;background:#000;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden;">
+<div id="tech-wrapper">
     <style>
-        #elim-drycore-wrapper {
-            --volt: #FFF12D;
-            --bg: #000000;
-            --text-body: #a1a1aa;
-            --border-soft: rgba(255,255,255,0.08);
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        #elim-drycore-wrapper .font-impact-master {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.04em;
-            line-height: 0.9;
-            margin: 0;
-        }
-        #elim-drycore-wrapper .font-tech-clean {
-            font-family: 'JetBrains Mono', monospace !important;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--volt);
-            font-size: 11px;
-        }
-
-        #elim-drycore-wrapper .hero-drycore {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        #elim-drycore-wrapper .hero-bg-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_8slfcz8slfcz8slf.png') center top/cover no-repeat;
-            mask-image: linear-gradient(to right, transparent 0%, black 85%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 85%);
-            z-index: 1;
-        }
-
-        #elim-drycore-wrapper .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #000 35%, rgba(0,0,0,0.5) 70%, transparent 100%);
-            z-index: 2;
-        }
-
-        #elim-drycore-wrapper .hero-content-inner {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-        }
-
-        #elim-drycore-wrapper .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); }
-        #elim-drycore-wrapper .container-max { max-width: 1400px; margin: auto; }
-        #elim-drycore-wrapper .info-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
-
-        #elim-drycore-wrapper .feature-card {
-            background: linear-gradient(145deg, #080808, #000);
-            border: 1px solid var(--border-soft);
-            padding: 45px 35px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        #elim-drycore-wrapper .feature-card:hover {
-            border-color: var(--volt);
-            transform: translateY(-5px);
-        }
-
-        #elim-drycore-wrapper .cta-pill {
-            background: var(--volt);
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            padding: 22px 50px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 13px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid var(--volt);
-        }
-        #elim-drycore-wrapper .cta-pill:hover {
-            background: transparent;
-            color: var(--volt);
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 1024px) {
-            #elim-drycore-wrapper .info-grid { grid-template-columns: 1fr; }
-            #elim-drycore-wrapper .hero-bg-image { opacity: 0.6; mask-image: none; -webkit-mask-image: none; background-position: center top !important; }
-        }
+        #tech-wrapper { --volt: #FFF12D; --bg: #000000; --text-body: #a1a1aa; --border-soft: rgba(255,255,255,0.08); }
+        .font-impact { font-family: Montserrat, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; margin: 0; }
+        .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+        .hero-bg { position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: url('https://elimfilters.com/wp-content/uploads/2026/02/pexels-pixabay-163739-scaled.jpg') center 40%/cover no-repeat; mask-image: linear-gradient(to right, transparent 0%, black 60%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%); z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0.3) 60%, transparent 100%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+        .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); max-width: 1400px; margin: auto; }
+        .section-white { background: #fff; color: #000; }
+        .section-dark { background: #050505; }
+        .section-proto { background: #030503; color: #fff; }
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .card { background: linear-gradient(145deg, #080808, #000); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.4s ease; }
+        .card:hover { border-color: var(--volt); transform: translateY(-5px); }
+        .card-white { background: #f5f5f5; border: 1px solid #e0e0e0; color: #000; }
+        .img-box { background: #000; border: 1px solid #222; padding: 8px; border-radius: 2px; }
+        .img-box img { width: 100%; height: auto; display: block; }
+        .cta-btn { background: var(--volt); color: #000; font-family: Montserrat, sans-serif; font-weight: 900; letter-spacing: 0.12em; padding: 18px 45px; display: inline-block; text-transform: uppercase; font-size: 12px; text-decoration: none; transition: all 0.3s ease; border: 2px solid var(--volt); }
+        .cta-btn:hover { background: transparent; color: var(--volt); }
+        h1 { margin: 0; padding: 0; }
+        h2 { margin: 0 0 24px 0; padding: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+        .mt-8 { margin-top: 32px; }
+        .mt-16 { margin-top: 64px; }
+        .italic { font-style: italic; }
+        .light { font-weight: 300; }
+        .max-w-xl { max-width: 32rem; }
+        .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+        .h1-main { font-size: clamp(50px, 10vw, 110px); }
+        .h1-secondary { font-size: clamp(45px, 9vw, 100px); color: var(--volt); }
+        .h2-main { font-size: clamp(32px, 4.5vw, 58px); }
+        .h2-mid { font-size: clamp(30px, 5vw, 60px); }
+        .h2-final { font-size: clamp(40px, 8vw, 100px); }
+        .text-large { font-size: 18px; }
+        .text-sm { font-size: 14px; }
+        .text-body { color: var(--text-body); }
+        .yellow { color: var(--volt); }
+        .opacity-30 { opacity: 0.3; }
+        .flex { display: flex; }
+        .gap-8 { gap: 32px; }
+        .items-center { align-items: center; }
+        @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr; } }
     </style>
 
     <main>
-        <header class="hero-drycore">
-            <div class="hero-bg-image"></div>
+        <header class="hero">
+            <div class="hero-bg"></div>
             <div class="hero-overlay"></div>
-
-            <div class="container-max hero-content-inner section">
-                <div class="max-w-3xl">
-                    <p class="font-tech-clean tracking-[0.4em] mb-4">// PNEUMATICS / MOD-08</p>
-                    <h1 class="font-impact-master text-[clamp(50px,10vw,110px)] text-white">ADVANCED</h1>
-                    <h1 class="font-impact-master text-[clamp(45px,9vw,100px)] text-[var(--volt)]">DRYCORE™</h1>
-
-                    <div class="hero-description mt-10 max-w-xl border-l-4 border-[var(--volt)] pl-10">
-                        <p class="text-zinc-200 text-2xl font-light leading-snug italic">
-                            Absolute <strong>Moisture Extraction</strong>. Molecular sieve technology designed to protect valves and air brake circuits from corrosion
+            <div class="hero-content">
+                <div class="max-w-xl">
+                    <p class="font-tech mb-4">// PNEUMATIC DRYING TECHNOLOGY</p>
+                    <h1 class="font-impact h1-main" style="color:#fff;">DRYCORE™</h1>
+                    <h1 class="font-impact h1-secondary mb-8">DESICCANT DRYER</h1>
+                    <div class="border-l max-w-xl mb-12">
+                        <p class="text-large italic light" style="color:#e4e4e7;">
+                            <strong>Molecular sieve desiccant</strong> technology removing moisture from pneumatic systems with efficient water separation.
                         </p>
                     </div>
-
-                    <div class="mt-12 flex items-center gap-8">
-                        <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">IDENTIFY SKU</a>
-                        <div class="hidden md:block">
-                            <span class="font-tech-clean text-[9px] block opacity-40 mb-1">BRAKE PROTECTION</span>
-                            <span class="text-white text-xs tracking-widest font-bold">TOTAL PNEUMATIC SECURITY</span>
-                        </div>
+                    <div class="flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">IDENTIFY SKU</a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <article class="section bg-[#050505]">
-            <div class="container-max info-grid">
+        <article class="section section-dark">
+            <div class="grid-2">
                 <div>
-                    <p class="font-tech-clean mb-6">// CONDENSATION CONTROL</p>
-                    <h2 class="font-impact-master text-[clamp(32px,4.5vw,58px)] mb-8 leading-tight">
-                        ANTI-FREEZE<br><span class="text-[var(--volt)]">PROTECTION</span>
-                    </h2>
-                    <p class="text-[var(--text-body)] text-lg mb-8 leading-relaxed font-light">
-                        <strong>DRYCORE™</strong> technology utilizes high-adsorption desiccant beads that remove water vapor from compressed air before it enters the system. By preventing condensation, it eliminates the risk of valve freezing in cold climates and premature degradation of pneumatic components through internal oxidation
+                    <p class="font-tech mb-6">// ADVANCED STRUCTURE</p>
+                    <h2 class="font-impact h2-main mb-8">MOISTURE<br><span class="yellow">REMOVAL SYSTEMS</span></h2>
+                    <p class="text-body text-large light mb-8">
+                        DRYCORE™ utilizes molecular sieve desiccant technology to effectively remove water vapor from compressed air. The high-capacity absorbent material maintains low dew points throughout service intervals. Efficient water separation prevents corrosion and component damage in pneumatic systems and tools.
                     </p>
-
-                    <div class="grid grid-cols-2 gap-5">
-                        <div class="border-l border-zinc-800 pl-4">
-                            <span class="font-tech-clean text-[10px]">DESICCANT TYPE</span>
-                            <p class="text-xs text-zinc-500 uppercase mt-1">Premium Molecular Sieve</p>
-                        </div>
-                        <div class="border-l border-zinc-800 pl-4">
-                            <span class="font-tech-clean text-[10px]">DESIGN</span>
-                            <p class="text-xs text-zinc-500 uppercase mt-1">High-Pressure Spin-on</p>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="bg-black border border-zinc-900 p-1 shadow-2xl rounded-sm">
-                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/secante-de-frenos.png"
-                         alt="DRYCORE M-08 Engineering"
-                         class="w-full h-auto block filter brightness-[1.1] contrast-[1.1]">
+                <div class="img-box">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_dryer.png" alt="DRYCORE Technology">
                 </div>
             </div>
         </article>
 
-        <section class="section">
-            <div class="container-max">
+        <section class="section section-white">
+            <div style="max-width:1400px;margin:auto;">
                 <div class="text-center mb-16">
-                    <p class="font-tech-clean mb-4">// PNEUMATIC ARMOR</p>
-                    <h2 class="font-impact-master text-[clamp(30px,5vw,60px)]">DRYING <span class="text-[var(--volt)]">ENGINEERING</span></h2>
+                    <p class="font-tech mb-4" style="color:#000;">// PERFORMANCE ATTRIBUTES</p>
+                    <h2 class="font-impact h2-mid" style="color:#000;">DESICCANT <span class="yellow">PERFORMANCE</span></h2>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="feature-card">
-                        <h3 class="font-impact-master text-xl text-white mb-4">ACTIVE ADSORPTION</h3>
-                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Capturing water molecules at a microscopic level for ultra-dry air delivery</p>
+                <div class="grid-3">
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// MOLECULAR SIEVE</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">WATER ABSORPTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Molecular sieve media actively absorbs moisture maintaining low dew points in compressed air systems preventing corrosion.</p>
                     </div>
-                    <div class="feature-card">
-                        <h3 class="font-impact-master text-xl text-white mb-4">COALESCENCE</h3>
-                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Optional internal stage to separate oil aerosols from the airflow</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// HIGH CAPACITY</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">EXTENDED LIFE</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">High-capacity desiccant material extends service intervals reducing maintenance frequency for pneumatic systems.</p>
                     </div>
-                    <div class="feature-card">
-                        <h3 class="font-impact-master text-xl text-white mb-4">EXTENDED LIFESPAN</h3>
-                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Reinforced structure to withstand constant discharge and regeneration cycles</p>
+                    <div class="card card-white">
+                        <p class="font-tech" style="color:#000;">// SYSTEM PROTECTION</p>
+                        <h3 class="font-impact" style="color:#000;font-size:16px;margin:12px 0;">CORROSION PREVENTION</h3>
+                        <p style="color:#333;font-size:13px;line-height:1.5;">Effective moisture removal prevents corrosion, oxidation and component damage protecting pneumatic tools and equipment.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section text-center bg-radial-gradient from-zinc-900 to-black border-none py-28">
-            <div class="container-max">
-                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-white leading-none">KEEP THE SYSTEM DRY</h2>
-                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-[var(--volt)] mb-12 leading-none">USE DRYCORE™</h2>
-                <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">FIND MY SKU</a>
-                <p class="font-tech-clean mt-16 opacity-30 text-[9px] tracking-[0.5em]">// GLOBAL HEAVY DUTY ENGINEERING BY ELIMFILTERS</p>
+        <section class="section section-proto text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <p class="font-tech mb-8">// OPERATIONAL PROTOCOLS</p>
+                <h2 class="font-impact h2-mid mb-16" style="color:#fff;">THREE <span class="yellow">KEY PROTOCOLS</span></h2>
+                <div class="grid-3">
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// DESICCANT MECHANISM</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">MOISTURE CUSTODY</h3>
+                        <p class="text-body text-sm light">Molecular sieve material continuously removes water vapor maintaining optimal dew points throughout compressed air network.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// CAPACITY MANAGEMENT</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">LONG-LIFE OPERATION</h3>
+                        <p class="text-body text-sm light">High-capacity construction extends service intervals between desiccant regeneration reducing downtime and maintenance costs.</p>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+                        <p class="font-tech mb-4">// SYSTEM INTEGRITY</p>
+                        <h3 class="font-impact" style="font-size:15px;margin-bottom:12px;">PROTECTION CUSTODY</h3>
+                        <p class="text-body text-sm light">Effective drying prevents moisture-related failures ensuring reliable pneumatic system operation and component longevity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white text-center">
+            <div style="max-width:1400px;margin:auto;">
+                <h2 class="font-impact h2-final" style="color:#000;margin-bottom:0;">TRUST DRYCORE™</h2>
+                <h2 class="font-impact h2-final yellow mb-12">FOR YOUR PNEUMATICS</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" class="cta-btn">FIND MY SKU</a>
             </div>
         </section>
     </main>
