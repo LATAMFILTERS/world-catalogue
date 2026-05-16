@@ -1,0 +1,208 @@
+<div id="elim-microkappa-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #elim-microkappa-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            --text-body: #a1a1aa;
+            --border-soft: rgba(255,255,255,0.08);
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #elim-microkappa-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            margin: 0;
+        }
+        #elim-microkappa-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+
+        #elim-microkappa-wrapper .hero-microkappa {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #elim-microkappa-wrapper .hero-bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_7csfs87csfs87csf.png') center top/cover no-repeat;
+            mask-image: linear-gradient(to right, transparent 0%, black 85%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 85%);
+            z-index: 1;
+        }
+
+        #elim-microkappa-wrapper .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #000 35%, rgba(0,0,0,0.5) 70%, transparent 100%);
+            z-index: 2;
+        }
+
+        #elim-microkappa-wrapper .hero-content-inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        #elim-microkappa-wrapper .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); }
+        #elim-microkappa-wrapper .container-max { max-width: 1400px; margin: auto; }
+        #elim-microkappa-wrapper .info-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+
+        #elim-microkappa-wrapper .feature-card {
+            background: linear-gradient(145deg, #080808, #000);
+            border: 1px solid var(--border-soft);
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #elim-microkappa-wrapper .feature-card:hover {
+            border-color: var(--volt);
+            transform: translateY(-5px);
+        }
+
+        #elim-microkappa-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            padding: 22px 50px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--volt);
+        }
+        #elim-microkappa-wrapper .cta-pill:hover {
+            background: transparent;
+            color: var(--volt);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            #elim-microkappa-wrapper .info-grid { grid-template-columns: 1fr; }
+            #elim-microkappa-wrapper .hero-bg-image { opacity: 0.6; mask-image: none; -webkit-mask-image: none; background-position: center top !important; }
+        }
+    </style>
+
+    <main>
+        <header class="hero-microkappa">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container-max hero-content-inner section">
+                <div class="max-w-3xl">
+                    <p class="font-tech-clean tracking-[0.4em] mb-4">// AIRE_CABINA / MOD-05</p>
+                    <h1 class="font-impact-master text-[clamp(50px,10vw,110px)] text-white">PURIFICACIÓN</h1>
+                    <h1 class="font-impact-master text-[clamp(45px,9vw,100px)] text-[var(--volt)]">MICROKAPPA™</h1>
+
+                    <div class="hero-description mt-10 max-w-xl border-l-4 border-[var(--volt)] pl-10">
+                        <p class="text-zinc-200 text-2xl font-light leading-snug italic">
+                            Sistema <strong>Electrostático Dual</strong>. Ingeniería de carbón activado para la neutralización de gases y captura de partículas sub-micrónicas
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">IDENTIFICAR SKU</a>
+                        <div class="hidden md:block">
+                            <span class="font-tech-clean text-[9px] block opacity-40 mb-1">PROTECCIÓN HEPA</span>
+                            <span class="text-white text-xs tracking-widest font-bold">ATMÓSFERA CONTROLADA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="section bg-[#050505]">
+            <div class="container-max info-grid">
+                <div>
+                    <p class="font-tech-clean mb-6">// BARRERA MULTICAPA</p>
+                    <h2 class="font-impact-master text-[clamp(32px,4.5vw,58px)] mb-8 leading-tight">
+                        NEUTRALIZACIÓN DE<br><span class="text-[var(--volt)]">GASES NOCIVOS</span>
+                    </h2>
+                    <p class="text-[var(--text-body)] text-lg mb-8 leading-relaxed font-light">
+                        La tecnología <strong>MICROKAPPA™</strong> combina fibras sintéticas de carga electrostática con un núcleo de carbón activado de alta porosidad. Esta estructura no solo retiene polvo y polen, sino que absorbe olores, gases de escape y compuestos orgánicos volátiles, garantizando un ambiente saludable para el operador en las condiciones más severas
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">EFICIENCIA DE FILTRADO</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">Estándar HEPA</p>
+                        </div>
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">DISEÑO</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">Ajuste de Precisión</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 p-1 shadow-2xl rounded-sm">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/filtro-de-cabina.png"
+                         alt="Ingeniería M-05 MICROKAPPA"
+                         class="w-full h-auto block filter brightness-[1.1] contrast-[1.1]">
+                </div>
+            </div>
+        </article>
+
+        <section class="section">
+            <div class="container-max">
+                <div class="text-center mb-16">
+                    <p class="font-tech-clean mb-4">// RENDIMIENTO AMBIENTAL</p>
+                    <h2 class="font-impact-master text-[clamp(30px,5vw,60px)]">INGENIERÍA DE <span class="text-[var(--volt)]">HABITÁCULO</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">CARBÓN ACTIVO</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Capa especializada para la absorción de gases ácidos y vapores de combustible</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">CAPTURA 0.3µ</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Eliminación de alérgenos y partículas ultra-finas que los filtros estándar omiten</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">FLUJO OPTIMIZADO</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Baja restricción de aire para proteger el motor del sistema de aire acondicionado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-center bg-radial-gradient from-zinc-900 to-black border-none py-28">
+            <div class="container-max">
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-white leading-none">AIRE PURO SIEMPRE</h2>
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-[var(--volt)] mb-12 leading-none">USA MICROKAPPA™</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">BUSCAR MI SKU</a>
+                <p class="font-tech-clean mt-16 opacity-30 text-[9px] tracking-[0.5em]">// INGENIERÍA GLOBAL HEAVY DUTY ELIMFILTERS</p>
+            </div>
+        </section>
+    </main>
+</div>
