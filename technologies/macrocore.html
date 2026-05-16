@@ -1,0 +1,271 @@
+<div id="elim-macrocore-wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #elim-macrocore-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            --text-body: #a1a1aa;
+            --border-soft: rgba(255,255,255,0.08);
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* MASTER TYPOGRAPHY */
+        #elim-macrocore-wrapper .font-impact-master {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            margin: 0;
+        }
+        #elim-macrocore-wrapper .font-tech-clean {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+        }
+
+        /* HERO FULL-WIDTH CANVAS */
+        #elim-macrocore-wrapper .hero-macrocore {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        #elim-macrocore-wrapper .hero-bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://elimfilters.com/wp-content/uploads/2025/08/Imagen1.png') right center/contain no-repeat;
+            mask-image: linear-gradient(to right, transparent 0%, black 65%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 65%);
+            z-index: 1;
+        }
+
+        #elim-macrocore-wrapper .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #000 25%, rgba(0,0,0,0.7) 55%, transparent 100%);
+            z-index: 2;
+        }
+
+        #elim-macrocore-wrapper .hero-content-inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        /* STRUCTURE & SECTIONS */
+        #elim-macrocore-wrapper .section { padding: 90px 8%; border-bottom: 1px solid var(--border-soft); }
+        #elim-macrocore-wrapper .container-max { max-width: 1400px; margin: auto; }
+
+        /* TECH GRID */
+        #elim-macrocore-wrapper .info-grid { display: grid; grid-template-columns: 1.1fr 1.1fr; gap: 60px; align-items: center; }
+
+        /* FEATURES */
+        #elim-macrocore-wrapper .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        #elim-macrocore-wrapper .feature-card {
+            background: linear-gradient(145deg, #080808, #000);
+            border: 1px solid var(--border-soft);
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #elim-macrocore-wrapper .feature-card:hover {
+            border-color: var(--volt);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        /* PROTOCOLS */
+        #elim-macrocore-wrapper .protocol-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-soft);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        #elim-macrocore-wrapper .protocol-num {
+            position: absolute;
+            right: -5px; top: -5px;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 90px;
+            color: rgba(255,241,45,0.06);
+            line-height: 1;
+        }
+
+        /* BUTTONS */
+        #elim-macrocore-wrapper .cta-pill {
+            background: var(--volt);
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            padding: 22px 50px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--volt);
+        }
+        #elim-macrocore-wrapper .cta-pill:hover {
+            background: transparent;
+            color: var(--volt);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            #elim-macrocore-wrapper .info-grid { grid-template-columns: 1fr; }
+            #elim-macrocore-wrapper .systems-grid { grid-template-columns: repeat(2, 1fr); }
+            #elim-macrocore-wrapper .hero-bg-image { background-size: cover; opacity: 0.4; mask-image: none; }
+            #elim-macrocore-wrapper .hero-overlay { background: rgba(0,0,0,0.85); }
+        }
+    </style>
+
+    <main>
+        <header class="hero-macrocore">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container-max hero-content-inner section">
+                <div class="max-w-4xl">
+                    <p class="font-tech-clean tracking-[0.4em] mb-4">// HEAVY_DUTY_AIR_SYSTEMS / SYS-01</p>
+                    <h1 class="font-impact-master text-[clamp(50px,10vw,110px)] text-white">STRUCTURE</h1>
+                    <h1 class="font-impact-master text-[clamp(45px,9vw,100px)] text-[var(--volt)]">MACROCORE™.</h1>
+
+                    <div class="hero-description mt-10 max-w-xl border-l-4 border-[var(--volt)] pl-10">
+                        <p class="text-zinc-200 text-2xl font-light leading-snug italic">
+                            <strong>Structural Reinforcement</strong> Technology — Engineering of Certainty. Absolute shield against collapse and media migration in high-displacement engines.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-8">
+                        <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">SEARCH MY SKU</a>
+                        <div class="hidden md:block">
+                            <span class="font-tech-clean text-[9px] block opacity-40 mb-1">GLOBAL PROTECTION</span>
+                            <span class="text-white text-xs tracking-widest font-bold">100% SEALED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <article class="section bg-[#050505]">
+            <div class="container-max info-grid">
+                <div>
+                    <p class="font-tech-clean mb-6">// ANTI-COLLAPSE TECHNOLOGY</p>
+                    <h2 class="font-impact-master text-[clamp(32px,4.5vw,58px)] mb-8 leading-tight">
+                        HD ENGINEERING<br><span class="text-[var(--volt)]">VALIDATION.</span>
+                    </h2>
+                    <p class="text-[var(--text-body)] text-lg mb-8 leading-relaxed font-light">
+                        The <strong>MACROCORE™</strong> architecture redefines mechanical stability. The radial support mesh system ensures the filter geometry remains unalterable, even under the extreme suction demands of heavy machinery.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">CRUSH RESISTANCE</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">Exceeds 62 PSI</p>
+                        </div>
+                        <div class="border-l border-zinc-800 pl-4">
+                            <span class="font-tech-clean text-[10px]">STRUCTURAL GAIN</span>
+                            <p class="text-xs text-zinc-500 uppercase mt-1">+35% vs OEM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 p-1 shadow-2xl rounded-sm">
+                    <img src="https://elimfilters.com/wp-content/uploads/2026/04/Gemini_Generated_Image_pmclxypmclxypmcl.png"
+                         alt="MACROCORE Engineering Validation"
+                         class="w-full h-auto block filter contrast-[1.05]">
+                </div>
+            </div>
+        </article>
+
+        <section class="section">
+            <div class="container-max">
+                <div class="text-center mb-16">
+                    <p class="font-tech-clean mb-4">// INDUSTRIAL SHIELDING</p>
+                    <h2 class="font-impact-master text-[clamp(30px,5vw,60px)]">ENGINEERING FOR <span class="text-[var(--volt)]">EXTREME CYCLES.</span></h2>
+                </div>
+
+                <div class="systems-grid">
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">REINFORCED CORE</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Optimized central structure to nullify the risk of deformation in critical mining and construction operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">RADIAL SEALING</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">NTEKCORE™ technology ensuring a hermetic seal against contaminants in high-vibration environments.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-impact-master text-xl text-white mb-4">CYCLIC STABILITY</h3>
+                        <p class="text-[var(--text-body)] text-sm leading-relaxed font-light">Maintains filter media integrity against constant motor pulsations under full load.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-[#030303]">
+            <div class="container-max">
+                <div class="mb-14 border-l-4 border-[var(--volt)] pl-6">
+                    <p class="font-tech-clean mb-2">// METRICS OF CERTAINTY</p>
+                    <h2 class="font-impact-master text-[clamp(28px,4vw,48px)]">SAFETY PROTOCOLS</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="protocol-card">
+                        <div class="protocol-num">01</div>
+                        <i class="fas fa-microchip text-[var(--volt)] text-2xl mb-5 block"></i>
+                        <h3 class="font-impact-master text-white text-lg mb-3">MECHANICAL DESIGN</h3>
+                        <p class="text-[var(--text-body)] text-[13px] font-light">Laminar flow optimization to maximize equipment power and fuel efficiency.</p>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">02</div>
+                        <i class="fas fa-vial text-[var(--volt)] text-2xl mb-5 block"></i>
+                        <h3 class="font-impact-master text-white text-lg mb-3">ISO 5011 STANDARD</h3>
+                        <p class="text-[var(--text-body)] text-[13px] font-light">Certification under international standards for air filtration in global heavy machinery.</p>
+                    </div>
+                    <div class="protocol-card">
+                        <div class="protocol-num">03</div>
+                        <i class="fas fa-cogs text-[var(--volt)] text-2xl mb-5 block"></i>
+                        <h3 class="font-impact-master text-white text-lg mb-3">COMPATIBILITY</h3>
+                        <p class="text-[var(--text-body)] text-[13px] font-light">Developed for the total protection of relevant assets and heavy fleets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-center bg-radial-gradient from-zinc-900 to-black border-none py-28">
+            <div class="container-max">
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-white leading-none">ELIMINATE THE RISK.</h2>
+                <h2 class="font-impact-master text-[clamp(40px,8vw,100px)] text-[var(--volt)] mb-12 leading-none">SECURE THE ASSET.</h2>
+                <a href="https://world-catalogue-production.up.railway.app/" target="_blank" class="cta-pill">SEARCH MY SKU</a>
+                <p class="font-tech-clean mt-16 opacity-30 text-[9px] tracking-[0.5em]">// ELIMFILTERS GLOBAL HEAVY DUTY ENGINEERING</p>
+            </div>
+        </section>
+    </main>
+</div>
