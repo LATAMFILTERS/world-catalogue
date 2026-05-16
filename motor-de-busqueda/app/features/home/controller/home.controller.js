@@ -1,18 +1,19 @@
-import { homeData } from "@/app/data";
+import { homeData } from "../data";
 
-/**
- * HOME CONTROLLER (Application Layer)
- * Orquesta datos para la vista Home
- */
-export function getHomeProps() {
+import Hero from "../components/Hero";
+import Stats from "../components/Stats";
+import Industries from "../components/Industries";
+import Technologies from "../components/Technologies";
+
+export function getHomeModel() {
   return {
-    hero: {
-      title: "Industrial Filtration Solutions",
-      subtitle: "Global Performance Systems",
-    },
-
-    stats: homeData.stats,
-    industries: homeData.industries,
-    technologies: homeData.technologies,
+    view: (
+      <>
+        <Hero />
+        <Stats items={homeData.stats} />
+        <Industries items={homeData.industries} />
+        <Technologies items={homeData.technologies} />
+      </>
+    ),
   };
 }

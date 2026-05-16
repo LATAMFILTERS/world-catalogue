@@ -1,17 +1,6 @@
-﻿import { homeController } from "@/features/home";
+﻿import { getHomeModel } from "@/app/features/home";
 
 export default function Home() {
-  const { view, industries, stats, technologies } = homeController;
-
-  return (
-    <>
-      <view.Hero />
-
-      <view.Stats items={stats} />
-
-      <view.Industries items={industries} />
-
-      <view.Technologies items={technologies} />
-    </>
-  );
+  const model = getHomeModel();
+  return model.view;
 }
