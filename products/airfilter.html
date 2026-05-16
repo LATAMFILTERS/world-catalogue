@@ -1,0 +1,190 @@
+<div id="elim-airfilter-wrapper">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #elim-airfilter-wrapper {
+            --volt: #FFF12D;
+            --bg: #000000;
+            background-color: var(--bg);
+            color: rgba(255,255,255,0.9);
+            font-family: 'Barlow', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        #elim-airfilter-wrapper .font-impact {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.0;
+            letter-spacing: 0.01em;
+        }
+
+        #elim-airfilter-wrapper .font-tech {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--volt);
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        #elim-airfilter-wrapper .section {
+            padding: 80px 8%;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        #elim-airfilter-wrapper .hero-air {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(to right, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.3) 100%),
+                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_18sjp118sjp118sj.png')
+                center/cover no-repeat;
+        }
+
+        #elim-airfilter-wrapper .card {
+            background: #050505;
+            border: 1px solid #111;
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        #elim-airfilter-wrapper .tech-pill {
+            border-left: 2px solid rgba(255,255,255,0.1);
+            padding-left: 1.5rem;
+        }
+
+        /* Mobile & Tablet Fixes */
+        @media (max-width: 1024px) {
+            #elim-airfilter-wrapper .section { padding: 60px 6%; }
+            #elim-airfilter-wrapper .hero-air {
+                min-height: 60vh;
+                background: linear-gradient(180deg, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.5) 100%),
+                url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_18sjp118sjp118sj.png') center/cover no-repeat;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #elim-airfilter-wrapper .card { padding: 30px 20px; }
+            #elim-airfilter-wrapper .tech-pill { border-left-color: var(--volt); }
+            #elim-airfilter-wrapper .hero-air { text-align: center; justify-content: center; }
+            #elim-airfilter-wrapper .hero-air .border-l-2 { border-left: none !important; border-top: 2px solid var(--volt); padding-left: 0 !important; padding-top: 20px; margin: 40px auto 0; }
+        }
+    </style>
+
+    <main>
+        <section class="hero-air section">
+            <div class="container mx-auto">
+                <div class="font-tech mb-6">// AIR FILTRATION SYSTEMS / SYS-01</div>
+                <h1 class="font-impact text-[clamp(42px,7vw,90px)] mb-2 text-white">100% PURE AIR.</h1>
+                <h1 class="font-impact text-[var(--volt)] text-[clamp(38px,6vw,80px)]">PROTECTED ENGINE.</h1>
+                <div class="mt-10 max-w-2xl border-l-2 border-[var(--volt)] pl-8 text-white/70 text-lg md:text-xl font-light italic">
+                    MACROCORE™ Technology: Absolute defense for high-displacement engines against abrasive contaminants.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container mx-auto">
+                <div class="card">
+                    <div class="font-tech mb-5">// MACROCORE™ ARCHITECTURE</div>
+                    <h2 class="font-impact text-[clamp(32px,4vw,52px)] mb-8">
+                        INTAKE IS NO LONGER <span class="text-[var(--volt)]">A WEAK POINT.</span>
+                    </h2>
+                    <div class="grid lg:grid-cols-2 gap-12 items-start">
+                        <div class="space-y-6 text-white/60 text-lg font-light">
+                            <p>MACROCORE™ neutralizes abrasive risks before they ever touch the cylinders.</p>
+                            <p class="text-white/90 font-medium text-xl">Eliminating wear-by-suction.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="tech-pill">
+                                <span class="font-tech block mb-2">ISO 5011</span>
+                                <span class="text-sm opacity-50">Global efficiency certification</span>
+                            </div>
+                            <div class="tech-pill">
+                                <span class="font-tech block mb-2">ZERO BYPASS</span>
+                                <span class="text-sm opacity-50">Structural integrity sealing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container mx-auto">
+                <div class="card border-[var(--volt)]/20">
+                    <div class="flex flex-col xl:flex-row justify-between items-center gap-12">
+                        <div class="w-full xl:max-w-xl">
+                            <div class="font-tech mb-4">// LIFESPAN IMPACT</div>
+                            <h2 class="font-impact text-[clamp(34px,5vw,60px)] mb-6">
+                                MACROCORE™ <span class="text-[var(--volt)]">PROTECTION.</span>
+                            </h2>
+                            <p class="text-white/60 text-lg font-light">
+                                High-efficiency retention vs. standard reactive parts.
+                            </p>
+                        </div>
+
+                        <div class="w-full xl:max-w-xl bg-black/50 border border-white/10 rounded-sm overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[400px]">
+                                    <thead>
+                                        <tr class="border-b border-white/10 bg-white/5">
+                                            <th class="p-4 font-tech text-[10px]">INTAKE SCENARIO</th>
+                                            <th class="p-4 font-tech text-[10px] text-red-500">STANDARD</th>
+                                            <th class="p-4 font-tech text-[10px] text-[var(--volt)]">MACROCORE™</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm font-light">
+                                        <tr class="border-b border-white/5">
+                                            <td class="p-4 text-white/80">Silica Retention</td>
+                                            <td class="p-4 text-red-400">Inconsistent</td>
+                                            <td class="p-4 text-[var(--volt)]">99.9% Absolute</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="p-4 text-white/80">Operating Cost</td>
+                                            <td class="p-4 text-red-400">Reactive Expense</td>
+                                            <td class="p-4 text-[var(--volt)]">Life Investment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[var(--volt)]">
+            <div class="container mx-auto px-[8%]">
+                <div class="flex flex-col lg:flex-row items-stretch">
+                    <div class="py-16 lg:py-24 flex-1">
+                        <div class="font-tech text-black/60 mb-4 border-b border-black/10 pb-2 inline-block">
+                            // FINAL ENGINEERING DECISION
+                        </div>
+                        <h2 class="font-impact text-[clamp(36px,5vw,64px)] text-black leading-[0.9] mb-6">
+                            SECURE EVERY <br>
+                            <span>BREATH.</span>
+                        </h2>
+                    </div>
+
+                    <div class="flex items-start lg:items-center justify-center lg:justify-end py-10 lg:py-0">
+                        <a href="https://elimfilters-search-pro.vercel.app/"
+                           target="_blank"
+                           class="group relative inline-flex items-center gap-6 bg-black text-white font-impact text-xl md:text-3xl px-8 md:px-12 py-8 md:py-10 transition-all hover:bg-zinc-900 shadow-[10px_10px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                            <span>FIND MY FILTER</span>
+                            <i class="fa-solid fa-chevron-right text-[var(--volt)] group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
