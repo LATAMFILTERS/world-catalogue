@@ -1,20 +1,17 @@
-﻿import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
-import Industries from "@/components/sections/Industries";
-import Technologies from "@/components/sections/Technologies";
-
-import { homeData } from "@/app/data";
+﻿import { homeController } from "@/features/home";
 
 export default function Home() {
+  const { view, industries, stats, technologies } = homeController;
+
   return (
     <>
-      <Hero />
+      <view.Hero />
 
-      <Stats items={homeData.stats} />
+      <view.Stats items={stats} />
 
-      <Industries items={homeData.industries} />
+      <view.Industries items={industries} />
 
-      <Technologies items={homeData.technologies} />
+      <view.Technologies items={technologies} />
     </>
   );
 }
