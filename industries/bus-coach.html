@@ -1,296 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bus & Coach | ELIMFILTERS Engineering Protection</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXIMIZING UPTIME | ELIMFILTERS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-<link rel="preload" as="image" href="https://elimfilters.com/wp-content/uploads/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp">
+    :root { --volt: #FFF12D; --bg: #000; --border: rgba(255,255,255,0.08); }
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
+    .font-impact { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; }
+    .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
 
-<style>
-    :root { --yellow: #FFF12D; }
+    .hero { position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+    .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
 
-    body {
-        background: #000;
-        color: rgba(255,255,255,0.9);
-        font-family: 'Barlow', sans-serif;
-        margin: 0;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.6;
+    .section { padding: 80px 8%; max-width: 1400px; margin: auto; border-bottom: 1px solid var(--border); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin: 40px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+
+    @media (max-width: 1024px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .section { padding: 60px 6%; }
     }
 
-    #masthead, .site-header, .elementor-location-header { display: none !important; }
+    .card { background: #050505; border: 1px solid var(--border); padding: 40px; border-radius: 4px; transition: border-color 0.3s ease; }
+    .card:hover { border-color: var(--volt); }
 
-    .font-impact {
-        font-family: 'Barlow Condensed', sans-serif;
-        font-weight: 800;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        line-height: 1.0;
-    }
+    h1 { font-size: clamp(50px, 10vw, 90px); margin: 20px 0; }
+    h2 { font-size: clamp(32px, 5vw, 58px); margin: 40px 0 30px 0; }
+    h3 { font-size: 20px; font-weight: 700; margin: 20px 0 15px 0; }
 
-    .font-tech {
-        font-family: 'JetBrains Mono', monospace;
-        letter-spacing: 0.25em;
-        color: var(--yellow);
-        font-size: 11px;
-        text-transform: uppercase;
-        opacity: 0.9;
-    }
+    .subtitle { font-size: clamp(28px, 5vw, 55px); color: var(--volt); margin: 10px 0 30px 0; }
+    .tagline { font-size: 18px; color: #aaa; font-weight: 300; font-style: italic; margin: 20px 0 40px 0; line-height: 1.7; }
 
-    .section {
-        padding: 80px 8%;
-        border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
+    .feature-list { list-style: none; margin: 20px 0; }
+    .feature-list li { padding: 12px 0 12px 30px; position: relative; color: #ddd; }
+    .feature-list li:before { content: "✓"; position: absolute; left: 0; color: var(--volt); font-weight: bold; }
 
-    .container {
-        max-width: 1400px;
-        margin: auto;
-    }
+    .stat-box { background: #1a1a1a; padding: 30px; border-left: 4px solid var(--volt); margin: 20px 0; }
+    .stat-box .number { font-size: 42px; color: var(--volt); font-weight: 900; }
+    .stat-box .label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; }
 
-    .hero {
-        min-height: 85vh;
-        background-color: #0a0a0a;
-        background:
-            linear-gradient(to right, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.3) 100%),
-            url('https://elimfilters.com/wp-content/uploads/2025/08/ChatGPT-Image-7-ago-2025-05_57_57-p.m.webp')
-            center/cover no-repeat;
-        display: flex;
-        align-items: center;
-    }
+    .cta-btn { background: var(--volt); color: #000; padding: 16px 40px; font-weight: 900; text-transform: uppercase; font-size: 12px; border: none; cursor: pointer; transition: all 0.3s ease; display: inline-block; text-decoration: none; }
+    .cta-btn:hover { background: #fff; }
 
-    .card {
-        background: #050505;
-        border: 1px solid #111;
-        padding: 50px;
-        border-radius: 4px;
-        transition: border-color 0.4s ease;
-    }
+    .tech-tag { display: inline-block; background: #1a1a1a; padding: 8px 16px; border: 1px solid var(--border); border-radius: 3px; font-size: 11px; margin: 5px 5px 5px 0; color: #aaa; }
 
-    .tech-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
+    .yellow { color: var(--volt); }
+    .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
 
-    .video-container {
-        background: #000;
-        border: 1px solid rgba(255,255,255,0.05);
-        position: relative;
-        overflow: hidden;
-    }
-
-    @media (max-width: 900px) {
-        .section { padding: 60px 6%; }
-        .card { padding: 35px; }
-    }
-</style>
+    footer { text-align: center; padding: 40px 8%; border-top: 1px solid var(--border); color: #666; font-size: 12px; }
+  </style>
 </head>
-
 <body>
-
-<section class="hero section">
-<div class="container">
-    <div class="font-tech mb-6">// TRANSIT_OPERATIONAL_CONTINUITY</div>
-    <h1 class="font-impact text-[clamp(42px,7vw,90px)] mb-2">
-        MAXIMIZING UPTIME
-    </h1>
-    <h1 class="font-impact text-[#FFF12D] text-[clamp(38px,6vw,80px)]">
-        FOR URBAN MOBILITY.
-    </h1>
-    <div class="mt-10 max-w-2xl border-l-2 border-[#FFF12D] pl-8 text-white/70 text-lg md:text-xl font-light italic">
-        Mass transit reliability is non-negotiable. Our engineering protects public transport fleets against the extreme thermal stress of constant stop-and-go cycles.
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="font-tech">// INDUSTRIE_ENGINEERING</p>
+      <h1 class="font-impact">MAXIMIZING UPTIME</h1>
+      <h1 class="font-impact subtitle">FOR URBAN MOBILITY.</h1>
+      <p class="tagline">ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile. Engineered to eliminate unplanned stops, maximizing the return on investment per mile.</p>
+      <a href="#features" class="cta-btn">Explore Features</a>
     </div>
-</div>
-</section>
+  </section>
 
-<section class="section bg-black">
-<div class="container">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <!-- FEATURES SECTION -->
+  <section id="features" class="section">
+    <h2 class="font-impact">Key Advantages</h2>
+    <ul class="feature-list">
+      <li>01. ZERO DOWNTIME</li>
+      <li>02. SYSTEM PURITY</li>
+      <li>CITY BREATHING</li>
+      <li>PNEUMATIC SAFETY</li>
+    </ul>
+  </section>
 
-        <div class="lg:col-span-5">
-            <div class="font-tech mb-6">// PASSENGER_SAFETY_PROTOCOL</div>
-            <h2 class="font-impact text-[clamp(38px,5vw,56px)] leading-none mb-8">
-                STRATEGIC <br>
-                <span class="text-[#FFF12D]">FLEET</span> <br>
-                AVAILABILITY.
-            </h2>
-            <div class="h-1 w-20 bg-[#FFF12D] mb-8"></div>
-
-            <p class="text-white/90 text-xl font-medium leading-snug mb-8">
-                ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-8 pt-6 border-t border-white/10">
-                <div>
-                    <h4 class="font-tech text-[#FFF12D] mb-3">01. ZERO DOWNTIME</h4>
-                    <p class="text-white/50 text-sm font-light">
-                        Engineered to eliminate unplanned stops, maximizing the return on investment per mile.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-tech text-[#FFF12D] mb-3">02. SYSTEM PURITY</h4>
-                    <p class="text-white/50 text-sm font-light">
-                        Protection for advanced injection systems and automatic transmissions under high load.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="lg:col-span-7">
-            <div class="video-container p-2 shadow-2xl">
-                <video src="https://elimfilters.com/wp-content/uploads/2025/08/29507-375947255_medium.mp4"
-                       autoplay muted loop playsinline
-                       class="w-full grayscale opacity-60 hover:opacity-90 transition-opacity duration-700"></video>
-                <div class="absolute bottom-6 right-6 font-tech text-[9px] bg-black/80 px-3 py-1 border border-white/10">
-                    LIVE_TECH_FEED // BUS-TRANSIT
-                </div>
-            </div>
-            <div class="bg-[#050505] border-l-4 border-[#FFF12D] p-6 mt-8">
-                <p class="text-white/70 italic font-light text-lg">
-                    "Our technology doesn't just filter; it guarantees the operational flow of the city by keeping passenger units in motion."
-                </p>
-            </div>
-        </div>
+  <!-- DETAILED OVERVIEW -->
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <h2 class="font-impact">Engineering Excellence</h2>
+        <p>ELIMFILTERS provides engineered filtration solutions optimized for Bus Coach operations. Our systems deliver maximum asset protection with extended service intervals and reduced total cost of ownership.</p>
+      </div>
+      <div class="card border-[var(--volt)]">
+        <h3>System Specifications</h3>
+        <p>Engineered for Bus Coach environments with precision filtration, water separation, and thermal stability. Every system designed for 24/7 reliability.</p>
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-<section class="section bg-[#030303]">
-<div class="container">
-    <div class="font-tech mb-10 text-center">// BUS_ENGINEERING_DNA</div>
-    <div class="tech-grid">
-
-        <div class="card border-white/5 hover:border-[#FFF12D]/30 transition duration-500">
-            <div class="font-tech mb-3">MACROCORE™ / AIR INTAKE</div>
-            <h3 class="font-impact text-2xl mb-4">CITY BREATHING</h3>
-            <p class="text-white/50 font-light">Optimized for urban environments with high concentrations of micro-particulates and industrial pollutants.</p>
+  <!-- STATISTICS SECTION -->
+  <section class="section bg-[#050505]">
+    <h2 class="font-impact text-center mb-12">Performance Metrics</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">100%</div>
+          <div class="label">Performance</div>
         </div>
-
-        <div class="card border-white/5 hover:border-[#FFF12D]/30 transition duration-500">
-            <div class="font-tech mb-3">AQUAGUARD™ / BRAKES</div>
-            <h3 class="font-impact text-2xl mb-4">PNEUMATIC SAFETY</h3>
-            <p class="text-white/50 font-light">Advanced air drying to prevent moisture corrosion in critical braking valves, ensuring constant safety.</p>
+      </div>
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">25%</div>
+          <div class="label">Separation</div>
         </div>
-
-        <div class="card border-white/5 hover:border-[#FFF12D]/30 transition duration-500">
-            <div class="font-tech mb-3">NANOFORCE™ / FUEL</div>
-            <h3 class="font-impact text-2xl mb-4">INJECTION PRECISION</h3>
-            <p class="text-white/50 font-light">Maximum water separation and particulate removal to protect engines during intensive daily operation.</p>
+      </div>
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">99.9%</div>
+          <div class="label">Protection</div>
         </div>
-
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-<section class="section">
-<div class="container">
-    <div class="card border-[#FFF12D]/20">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-10">
-            <div class="max-w-xl">
-                <div class="font-tech mb-4">// TCO_ANALYSIS</div>
-                <h2 class="font-impact text-[clamp(34px,5vw,60px)] mb-6">
-                    THE ECONOMICS OF <br>
-                    <span class="text-[#FFF12D]">URBAN MOBILITY.</span>
-                </h2>
-                <p class="text-white/60 text-lg mb-8 font-light">
-                    Efficiency is measured in cost per mile. We reduce maintenance frequency, allowing fleets to operate longer without technical interruptions.
-                </p>
-            </div>
-
-            <div class="w-full lg:max-w-xl bg-black/50 border border-white/10 rounded-sm overflow-hidden">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="border-b border-white/10 bg-white/5">
-                            <th class="p-4 font-tech text-[10px]">FLEET CHALLENGE</th>
-                            <th class="p-4 font-tech text-[10px] text-red-500">STANDARD</th>
-                            <th class="p-4 font-tech text-[10px] text-[#FFF12D]">ELIMFILTERS</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm font-light">
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                            <td class="p-4 text-white/80">Stop-and-Go Wear</td>
-                            <td class="p-4 text-red-400">High Oil Stress</td>
-                            <td class="p-4 text-[#FFF12D]">SINTRAX™ Stability</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                            <td class="p-4 text-white/80">Service Intervals</td>
-                            <td class="p-4 text-red-400">Frequent Stops</td>
-                            <td class="p-4 text-[#FFF12D]">Extended Coverage</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                            <td class="p-4 text-white/80">Braking Reliability</td>
-                            <td class="p-4 text-red-400">Valve Corrosion</td>
-                            <td class="p-4 text-[#FFF12D]">Dry-Air Purity</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <!-- APPLICATIONS SECTION -->
+  <section class="section">
+    <h2 class="font-impact">Recommended Applications</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Primary Use Cases</h3>
+        <ul class="feature-list">
+          <li>Bus Coach equipment</li><li>Heavy-duty operations</li><li>Extended service cycles</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Technologies Included</h3>
+        <div style="margin-top: 20px;">
+          <span class="tech-tag">ELIMFILTERS™ Standard Protection</span>
         </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-12 border-t border-white/5 text-center">
-            <div>
-                <div class="font-impact text-4xl text-[#FFF12D] mb-1">100%</div>
-                <div class="font-tech text-[9px] opacity-50">BRAKE PROTECTION</div>
-            </div>
-            <div>
-                <div class="font-impact text-4xl text-white mb-1">+25%</div>
-                <div class="font-tech text-[9px] opacity-50">SERVICE LIFE</div>
-            </div>
-            <div>
-                <div class="font-impact text-4xl text-[#FFF12D] mb-1">99.9%</div>
-                <div class="font-tech text-[9px] opacity-50">FUEL PURITY</div>
-            </div>
-            <div>
-                <div class="font-impact text-4xl text-white mb-1">ZERO</div>
-                <div class="font-tech text-[9px] opacity-50">SYSTEM BYPASS</div>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-<section class="bg-[#FFF12D]">
-    <div class="container mx-auto px-[8%]">
-        <div class="flex flex-col lg:flex-row items-stretch">
-            <div class="py-16 lg:py-24 flex-1">
-                <div class="font-tech text-black/60 mb-4 border-b border-black/10 pb-2 inline-block">
-                    // FLEET_PROCUREMENT
-                </div>
-                <h2 class="font-impact text-[clamp(36px,5vw,64px)] text-black leading-[0.9] mb-6">
-                    REDUCE <br>
-                    <span class="opacity-70">FLEET OVERHEAD.</span> <br>
-                    MAXIMIZE <br>
-                    <span>UPTIME.</span>
-                </h2>
-                <p class="text-black/80 text-lg font-medium max-w-lg">
-                    Don't let inadequate filtration stall your fleet. Optimize your operation with ELIMFILTERS engineering today.
-                </p>
-            </div>
-
-            <div class="flex items-start lg:items-center justify-center lg:justify-end py-8 lg:py-0">
-                <a href="https://elimfilters-search-pro.vercel.app/"
-                   class="group relative inline-flex items-center gap-6 bg-black text-white font-impact text-2xl md:text-3xl px-12 py-10 transition-all hover:bg-zinc-900 shadow-[15px_15px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                    <span>FIND MY FILTER</span>
-                    <i class="fa-solid fa-chevron-right text-[#FFF12D] group-hover:translate-x-2 transition-transform"></i>
-                </a>
-            </div>
-        </div>
+  <!-- CTA SECTION -->
+  <section style="background: var(--volt); color: #000; padding: 60px 8%;">
+    <div style="max-width: 1400px; margin: auto;">
+      <h2 class="font-impact" style="color: #000;">Ready to Upgrade?</h2>
+      <p style="font-size: 18px; margin: 20px 0 30px 0; color: #333;">Find the perfect filtration system for your industrie operations.</p>
+      <a href="https://part-search.elimfilters.com/" class="cta-btn" style="background: #000; color: var(--volt); border: 2px solid #000;">Find My Filter</a>
     </div>
+  </section>
 
-    <div class="bg-black py-4">
-        <div class="container mx-auto px-[8%] text-center lg:text-left">
-            <span class="font-tech text-[10px] text-[#FFF12D]/50 italic">
-                BUS & COACH PROTECTION STANDARD // ELIMFILTERS GLOBAL
-            </span>
-        </div>
-    </div>
-</section>
-
+  <footer>
+    <p><strong>ELIMFILTERS™</strong> | Engineering Protection for Mission-Critical Operations</p>
+    <p style="margin-top: 10px; color: #555;">© 2026 All Rights Reserved. industrie Filtration Solutions.</p>
+  </footer>
 </body>
 </html>

@@ -1,233 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Automotive LD Series | ELIMFILTERS Engineering Protection</title>
-    <meta name="description" content="Industrial-grade engineering protection for passenger vehicles. Featuring MACROCORE™, SINTRAX™, NANOFORCE™, and MICROKAPPA™ technologies for urban stress.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDUSTRIAL OVER-ENGINEERING | ELIMFILTERS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    :root { --volt: #FFF12D; --bg: #000; --border: rgba(255,255,255,0.08); }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    .font-impact { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; }
+    .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    .hero { position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+    .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
 
-    <style>
-        :root { --yellow: #FFF12D; }
+    .section { padding: 80px 8%; max-width: 1400px; margin: auto; border-bottom: 1px solid var(--border); }
 
-        body {
-            background: #000;
-            color: rgba(255,255,255,0.9);
-            font-family: 'Barlow', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin: 40px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
 
-        .font-impact {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 0.95;
-            letter-spacing: -0.01em;
-        }
+    @media (max-width: 1024px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .section { padding: 60px 6%; }
+    }
 
-        .font-tech {
-            font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 0.2em;
-            color: var(--yellow);
-            font-size: 11px;
-            text-transform: uppercase;
-        }
+    .card { background: #050505; border: 1px solid var(--border); padding: 40px; border-radius: 4px; transition: border-color 0.3s ease; }
+    .card:hover { border-color: var(--volt); }
 
-        .section {
-            padding: 80px 8%;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+    h1 { font-size: clamp(50px, 10vw, 90px); margin: 20px 0; }
+    h2 { font-size: clamp(32px, 5vw, 58px); margin: 40px 0 30px 0; }
+    h3 { font-size: 20px; font-weight: 700; margin: 20px 0 15px 0; }
 
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.2) 100%),
-                url('https://elimfilters.com/wp-content/uploads/2026/04/pexels-mohit-hambiria-92377455-31396372-scaled.jpg') center/cover no-repeat;
-        }
+    .subtitle { font-size: clamp(28px, 5vw, 55px); color: var(--volt); margin: 10px 0 30px 0; }
+    .tagline { font-size: 18px; color: #aaa; font-weight: 300; font-style: italic; margin: 20px 0 40px 0; line-height: 1.7; }
 
-        .card-tech {
-            background: #080808;
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            height: 100%;
-        }
+    .feature-list { list-style: none; margin: 20px 0; }
+    .feature-list li { padding: 12px 0 12px 30px; position: relative; color: #ddd; }
+    .feature-list li:before { content: "✓"; position: absolute; left: 0; color: var(--volt); font-weight: bold; }
 
-        .card-tech:hover {
-            border-color: var(--yellow);
-            transform: translateY(-5px);
-            background: #0a0a0a;
-        }
+    .stat-box { background: #1a1a1a; padding: 30px; border-left: 4px solid var(--volt); margin: 20px 0; }
+    .stat-box .number { font-size: 42px; color: var(--volt); font-weight: 900; }
+    .stat-box .label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; }
 
-        .text-zinc-sub { color: #a1a1aa; }
+    .cta-btn { background: var(--volt); color: #000; padding: 16px 40px; font-weight: 900; text-transform: uppercase; font-size: 12px; border: none; cursor: pointer; transition: all 0.3s ease; display: inline-block; text-decoration: none; }
+    .cta-btn:hover { background: #fff; }
 
-        @media (max-width: 768px) {
-            .section { padding: 60px 5%; }
-            .hero { min-height: 60vh; text-align: center; }
-            .hero { background-position: 70% center; }
-        }
-    </style>
+    .tech-tag { display: inline-block; background: #1a1a1a; padding: 8px 16px; border: 1px solid var(--border); border-radius: 3px; font-size: 11px; margin: 5px 5px 5px 0; color: #aaa; }
+
+    .yellow { color: var(--volt); }
+    .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+
+    footer { text-align: center; padding: 40px 8%; border-top: 1px solid var(--border); color: #666; font-size: 12px; }
+  </style>
 </head>
 <body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="font-tech">// INDUSTRIE_ENGINEERING</p>
+      <h1 class="font-impact">INDUSTRIAL OVER-ENGINEERING</h1>
+      <h1 class="font-impact subtitle"></h1>
+      <p class="tagline">// LD AUTOMOTIVE SERIES Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS' heavy-duty machinery.</p>
+      <a href="#features" class="cta-btn">Explore Features</a>
+    </div>
+  </section>
 
-    <main>
-        <section class="hero section" aria-labelledby="hero-title">
-            <div class="max-w-7xl">
-                <p class="font-tech mb-6">// LD AUTOMOTIVE SERIES</p>
-                <h1 id="hero-title" class="font-impact text-[clamp(45px,8vw,90px)] mb-4">
-                    INDUSTRIAL <br>
-                    <span class="text-[#FFF12D]">OVER-ENGINEERING</span>
-                </h1>
-                <div class="max-w-2xl border-l-2 border-[#FFF12D] pl-8 mt-12">
-                    <p class="text-zinc-sub text-xl md:text-2xl font-light italic leading-relaxed">
-                        Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS' heavy-duty machinery.
-                    </p>
-                </div>
-            </div>
-        </section>
+  <!-- FEATURES SECTION -->
+  <section id="features" class="section">
+    <h2 class="font-impact">Key Advantages</h2>
+    <ul class="feature-list">
+      <li>AIR INTAKE</li>
+      <li>LUBRICATION</li>
+      <li>FUEL SYSTEM</li>
+      <li>CABIN AIR</li>
+    </ul>
+  </section>
 
-        <section class="section bg-[#050505]">
-            <div class="container mx-auto">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <p class="font-tech mb-4">// URBAN PROTECTION PROTOCOL</p>
-                        <h2 class="font-impact text-5xl mb-8 leading-none">
-                            STABLE PERFORMANCE IN <br>
-                            <span class="text-[#FFF12D]">CRITICAL CONDITIONS</span>
-                        </h2>
-                        <p class="text-zinc-sub text-lg mb-10 leading-relaxed">
-                            Heavy traffic and frequent starts lead to accelerated engine degradation. Our filtration architecture neutralizes these risks using high-capacity synthetic media.
-                        </p>
+  <!-- DETAILED OVERVIEW -->
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <h2 class="font-impact">Engineering Excellence</h2>
+        <p>ELIMFILTERS provides engineered filtration solutions optimized for Automotive operations. Our systems deliver maximum asset protection with extended service intervals and reduced total cost of ownership.</p>
+      </div>
+      <div class="card border-[var(--volt)]">
+        <h3>System Specifications</h3>
+        <p>Engineered for Automotive environments with precision filtration, water separation, and thermal stability. Every system designed for 24/7 reliability.</p>
+      </div>
+    </div>
+  </section>
 
-                        <div class="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
-                            <div>
-                                <h3 class="font-tech text-white text-xs mb-2">AIR INTAKE</h3>
-                                <p class="text-white font-bold">MACROCORE™</p>
-                            </div>
-                            <div>
-                                <h3 class="font-tech text-white text-xs mb-2">LUBRICATION</h3>
-                                <p class="text-white font-bold">SINTRAX™</p>
-                            </div>
-                            <div>
-                                <h3 class="font-tech text-white text-xs mb-2">FUEL SYSTEM</h3>
-                                <p class="text-white font-bold">NANOFORCE™</p>
-                            </div>
-                            <div>
-                                <h3 class="font-tech text-white text-xs mb-2">CABIN AIR</h3>
-                                <p class="text-white font-bold">MICROKAPPA™</p>
-                            </div>
-                        </div>
-                        <div class="mt-10">
-                            <a href="https://elimfilters.com/technology/" class="font-impact bg-[#FFF12D] text-black px-10 py-5 text-sm tracking-widest hover:bg-white transition-all inline-block">VIEW TECHNOLOGY</a>
-                        </div>
-                    </div>
+  <!-- STATISTICS SECTION -->
+  <section class="section bg-[#050505]">
+    <h2 class="font-impact text-center mb-12">Performance Metrics</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">100%</div>
+          <div class="label">Reliability</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">99.9%</div>
+          <div class="label">Efficiency</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">0%</div>
+          <div class="label">Downtime Tolerance</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-[#FFF12D]/20 blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                        <div class="relative bg-black border border-white/10 p-2">
-                            <video
-                                src="https://elimfilters.com/wp-content/uploads/2025/08/5309381-hd_1920_1080_25fps.mp4"
-                                autoplay muted loop playsinline webkit-playsinline preload="auto"
-                                class="w-full grayscale opacity-70 group-hover:grayscale-0 transition-all duration-700"
-                                aria-label="Demonstration of urban filtration protection protocol">
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- APPLICATIONS SECTION -->
+  <section class="section">
+    <h2 class="font-impact">Recommended Applications</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Primary Use Cases</h3>
+        <ul class="feature-list">
+          <li>Automotive equipment</li><li>Heavy-duty operations</li><li>Extended service cycles</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Technologies Included</h3>
+        <div style="margin-top: 20px;">
+          <span class="tech-tag">SYNTEPORE™</span>
+          <span class="tech-tag">SYNTRAX™</span>
+          <span class="tech-tag">AQUAGUARD™</span>
+          <span class="tech-tag">SYNTEPORE™</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="section bg-black">
-            <div class="container mx-auto">
-                <div class="text-center mb-16">
-                    <p class="font-tech mb-4">// GLOBAL TECHNOLOGY MATRIX</p>
-                    <h2 class="font-impact text-5xl">SYSTEM-BY-SYSTEM ENGINEERING</h2>
-                </div>
+  <!-- CTA SECTION -->
+  <section style="background: var(--volt); color: #000; padding: 60px 8%;">
+    <div style="max-width: 1400px; margin: auto;">
+      <h2 class="font-impact" style="color: #000;">Ready to Upgrade?</h2>
+      <p style="font-size: 18px; margin: 20px 0 30px 0; color: #333;">Find the perfect filtration system for your industrie operations.</p>
+      <a href="https://part-search.elimfilters.com/" class="cta-btn" style="background: #000; color: var(--volt); border: 2px solid #000;">Find My Filter</a>
+    </div>
+  </section>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <article class="card-tech">
-                        <p class="font-tech text-[#FFF12D] mb-4">Air Module</p>
-                        <h3 class="font-impact text-2xl mb-4 text-white">MACROCORE™</h3>
-                        <p class="text-zinc-sub font-light italic text-sm">
-                            Absolute capture of microscopic particles ensuring perfect stoichiometric combustion.
-                        </p>
-                    </article>
-
-                    <article class="card-tech">
-                        <p class="font-tech text-[#FFF12D] mb-4">Oil Module</p>
-                        <h3 class="font-impact text-2xl mb-4 text-white">SINTRAX™</h3>
-                        <p class="text-zinc-sub font-light italic text-sm">
-                            Maintains oil viscosity and cleanliness under severe thermal stress in city environments.
-                        </p>
-                    </article>
-
-                    <article class="card-tech" style="border-top: 2px solid var(--yellow);">
-                        <p class="font-tech text-[#FFF12D] mb-4">Fuel Module</p>
-                        <h3 class="font-impact text-2xl mb-4 text-white">NANOFORCE™</h3>
-                        <p class="text-zinc-sub font-light italic text-sm">
-                            Nanofiber technology designed to eliminate critical contaminants and water in injection systems.
-                        </p>
-                    </article>
-
-                    <article class="card-tech">
-                        <p class="font-tech text-[#FFF12D] mb-4">Environmental Health</p>
-                        <h3 class="font-impact text-2xl mb-4 text-white">MICROKAPPA™</h3>
-                        <p class="text-zinc-sub font-light italic text-sm">
-                            Biological and chemical barrier against allergens and pollutants from urban exhaust.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#FFF12D]">
-            <div class="container mx-auto px-[6%]">
-                <div class="flex flex-col lg:flex-row items-stretch">
-                    <div class="py-16 lg:py-24 flex-1">
-                        <div class="font-tech text-black/60 mb-4 border-b border-black/10 pb-2 inline-block">
-                            // AUTOMOTIVE_CROSS_REFERENCE
-                        </div>
-                        <h2 class="font-impact text-[clamp(36px,5vw,64px)] text-black leading-[0.9] mb-6">
-                            FAILURE IS NOT AN OPTION. <br>
-                            <span class="opacity-70">EVERY START. EVERY MILE.</span> <br>
-                            FIND YOUR <br>
-                            <span>CROSS REFERENCE.</span>
-                        </h2>
-                        <p class="text-black/80 text-lg font-medium max-w-lg">
-                            Access our LD Series database. Search by OEM or part number to find the industrial-grade match for your vehicle.
-                        </p>
-                    </div>
-
-                    <div class="flex items-start lg:items-center justify-center lg:justify-end py-8 lg:py-0">
-                        <a href="https://elimfilters-search-pro.vercel.app/"
-                           class="group relative inline-flex items-center gap-6 bg-black text-white font-impact text-2xl md:text-3xl px-12 py-10 transition-all hover:bg-zinc-900 shadow-[15px_15px_0px_0px_rgba(0,0,0,0.15)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
-                            <span>FIND MY FILTER</span>
-                            <i class="fa-solid fa-chevron-right text-[#FFF12D] group-hover:translate-x-2 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-black py-4">
-                <div class="container mx-auto px-[6%] text-center lg:text-left">
-                    <span class="font-tech text-[10px] text-[#FFF12D]/50 italic">
-                        ELIMFILTERS Global // Engineering Protection Standards 2026
-                    </span>
-                </div>
-            </div>
-        </section>
-    </main>
-
+  <footer>
+    <p><strong>ELIMFILTERS™</strong> | Engineering Protection for Mission-Critical Operations</p>
+    <p style="margin-top: 10px; color: #555;">© 2026 All Rights Reserved. industrie Filtration Solutions.</p>
+  </footer>
 </body>
 </html>
