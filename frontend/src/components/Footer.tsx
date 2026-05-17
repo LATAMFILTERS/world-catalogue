@@ -50,10 +50,7 @@ export function Footer() {
           {/* Company */}
           <div>
             <div className="footer-col-title">Company</div>
-            <a
-              href="https://elimfilters.com/about-elimfilters/"
-              className="footer-link"
-            >
+            <a href="/about" className="footer-link">
               About Us
             </a>
             <a
@@ -62,7 +59,7 @@ export function Footer() {
             >
               Industries
             </a>
-            <a href="https://elimfilters.com/contact-info/" className="footer-link">
+            <a href="/contact" className="footer-link">
               Contact
             </a>
           </div>
@@ -90,16 +87,13 @@ export function Footer() {
           {/* Support */}
           <div>
             <div className="footer-col-title">Support</div>
-            <a
-              href="https://elimfilters.com/contact-info/"
-              className="footer-link"
-            >
+            <a href="/contact" className="footer-link">
               Technical Support
             </a>
-            <a href="/distributor-application.html" className="footer-link">
+            <a href="/distributor-application" className="footer-link">
               Become a Dealer
             </a>
-            <a href="/warranty.html" className="footer-link">
+            <a href="/warranty" className="footer-link">
               Warranty
             </a>
           </div>
