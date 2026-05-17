@@ -13,7 +13,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
   },
   'Waste Municipal': {
     image: '/images/wasted.avif',
-    video: '/images/bomberos.mp4',
+    video: '/images/wasted-2.mp4',
   },
   // Add more industries as images/videos are provided
 };
