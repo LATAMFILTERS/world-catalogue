@@ -131,7 +131,7 @@ export default function About() {
                     fontSize: '3.5rem',
                     fontWeight: 900,
                     color: '#FFF12D',
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.5rem',
                   }}
                 >
@@ -244,7 +244,7 @@ export default function About() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '1rem',
                     color: '#FFF12D',
                   }}
@@ -280,7 +280,7 @@ export default function About() {
             style={{
               fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
               fontWeight: 900,
-              fontFamily: 'DM Sans, sans-serif',
+              fontFamily: 'Space Grotesk, sans-serif',
               marginBottom: '1.5rem',
               color: '#000',
               lineHeight: 1.2,

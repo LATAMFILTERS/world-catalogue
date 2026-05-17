@@ -143,7 +143,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
                     color: '#fff',
                   }}
@@ -167,7 +167,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
                     color: '#fff',
                   }}
@@ -191,7 +191,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
                     color: '#fff',
                   }}
@@ -215,7 +215,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
                     color: '#fff',
                   }}
@@ -255,7 +255,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.5rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '2rem',
                     color: '#fff',
                   }}

@@ -28,7 +28,7 @@ export default function Warranty() {
                 fontFamily: 'Montserrat, sans-serif',
               }}
             >
-              // WARRANTY & SUPPORT
+              // WARRANTY AND SUPPORT
             </span>
           </div>
           <h1
@@ -94,7 +94,7 @@ export default function Warranty() {
                     fontSize: '2.5rem',
                     fontWeight: 900,
                     color: '#FFF12D',
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
                   }}
                 >
@@ -188,7 +188,7 @@ export default function Warranty() {
                   style={{
                     fontSize: '1.3rem',
                     fontWeight: 700,
-                    fontFamily: 'DM Sans, sans-serif',
+                    fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '1rem',
                     color: '#FFF12D',
                   }}
@@ -300,7 +300,7 @@ export default function Warranty() {
             style={{
               fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
               fontWeight: 900,
-              fontFamily: 'DM Sans, sans-serif',
+              fontFamily: 'Space Grotesk, sans-serif',
               marginBottom: '1.5rem',
               color: '#000',
               lineHeight: 1.2,

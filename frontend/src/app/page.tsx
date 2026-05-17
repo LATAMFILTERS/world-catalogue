@@ -142,7 +142,7 @@ export default function Home() {
                 marginBottom: '2.5rem',
               }}
             >
-              HEAVY-DUTY & LIGHT-DUTY
+              HEAVY-DUTY AND LIGHT-DUTY
             </h2>
             <div
               className="hero-bottom"
