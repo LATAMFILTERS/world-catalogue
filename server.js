@@ -7,7 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
-app.use(express.static('www')); // Serve static files from www/
+app.use(express.static('frontend/out')); // Serve Next.js static export (primary)
+app.use(express.static('www')); // Serve static files from www/ (legacy)
 app.use(express.static('.')); // Serve static files from root (industries/, products/, technologies/)
 
 // Import new routes

@@ -2,7 +2,10 @@
 only = ["node"]
 
 [phases.install]
-cmds = ["npm install"]
+cmds = ["npm install", "cd frontend && npm install"]
+
+[phases.build]
+cmds = ["cd frontend && npm run build"]
 
 [start]
 cmd = "node server.js"
