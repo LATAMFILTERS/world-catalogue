@@ -649,8 +649,8 @@ export default function Home() {
             >
               {[
                 {
-                  title: 'Medios Sintéticos de Alta Densidad',
-                  desc: 'Capturan contaminantes microscópicos (hasta 1 micrón) sin restringir flujo. Retienen 3x más suciedad que filtros convencionales.',
+                  title: 'Media Filtrante Híbrida Formulada con IA',
+                  desc: 'Desarrollo único basado en algoritmos matemáticos y escenarios probados en laboratorio. Resultado: una media filtrante de altísimo rendimiento imposible de replicar. Captura contaminantes microscópicos manteniendo eficiencia máxima.',
                 },
                 {
                   title: 'Sistemas de Separación Hidrofóbica',
