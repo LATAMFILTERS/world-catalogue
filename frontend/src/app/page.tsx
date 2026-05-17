@@ -441,8 +441,8 @@ export default function Home() {
                 marginBottom: '3rem',
               }}
             >
-              POR QUÉ{' '}
-              <span style={{ color: '#FFF12D' }}>ELEGIR ELIMFILTERS</span>
+              WHY CHOOSE{' '}
+              <span style={{ color: '#FFF12D' }}>ELIMFILTERS</span>
             </h2>
 
             <div
@@ -461,12 +461,13 @@ export default function Home() {
                     lineHeight: 1.8,
                     color: 'rgba(255,255,255,0.85)',
                     marginBottom: '2rem',
+                    textAlign: 'justify',
                   }}
                 >
-                  ELIMFILTERS es más que un fabricante de filtros. Somos una empresa especializada en{' '}
-                  <strong style={{ color: '#FFF12D' }}>Tecnología en Protección de Activos</strong>, diseñando
-                  soluciones que preservan el valor y la operatividad de tus equipos en los ambientes
-                  más exigentes.
+                  ELIMFILTERS is more than a filter manufacturer. We are a company specialized in{' '}
+                  <strong style={{ color: '#FFF12D' }}>Asset Protection Technology</strong>, designing
+                  solutions that preserve the value and operability of your equipment in the most
+                  demanding environments.
                 </p>
 
                 <p
@@ -476,19 +477,20 @@ export default function Home() {
                     lineHeight: 1.8,
                     color: 'rgba(255,255,255,0.75)',
                     marginBottom: '2rem',
+                    textAlign: 'justify',
                   }}
                 >
-                  Cada producto que desarrollamos responde a una realidad: los equipos que detienen tu
-                  operación cuestan cientos de miles en reparaciones. Un filtro es el guardián de esa
-                  inversión.
+                  Every product we develop responds to one reality: the equipment that stops your
+                  operation costs hundreds of thousands to repair. A filter is the guardian of that
+                  investment.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
-                    'Ingeniería Alemana en filtración industrial',
-                    '25+ años protegiendo flotas y equipos críticos',
-                    'Cumplimiento de estándares ISO internacionales',
-                    'Respaldo técnico en más de 12 industrias',
+                    'German engineering in industrial filtration',
+                    '25+ years protecting fleets and critical equipment',
+                    'Compliance with international ISO standards',
+                    'Technical support across 12+ industries',
                   ].map((item) => (
                     <div key={item} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                       <span
@@ -534,7 +536,7 @@ export default function Home() {
                       marginBottom: '1.5rem',
                     }}
                   >
-                    // NUESTRA DIFERENCIA
+                    // OUR DIFFERENCE
                   </p>
 
                   <h3
@@ -547,7 +549,7 @@ export default function Home() {
                       lineHeight: 1.3,
                     }}
                   >
-                    No vendemos filtros. Protegemos patrimonio.
+                    We don't sell filters. We protect assets.
                   </h3>
 
                   <p
@@ -557,10 +559,11 @@ export default function Home() {
                       lineHeight: 1.7,
                       color: 'rgba(255,255,255,0.7)',
                       marginBottom: '2rem',
+                      textAlign: 'justify',
                     }}
                   >
-                    Mientras otros compiten en precio, nosotros competimos en confiabilidad. Cada
-                    especificación de nuestros productos está diseñada para:
+                    While others compete on price, we compete on reliability. Every specification
+                    of our products is designed to:
                   </p>
 
                   <ul
@@ -574,10 +577,10 @@ export default function Home() {
                     }}
                   >
                     {[
-                      'Maximizar la vida útil de tus equipos',
-                      'Minimizar el costo total de operación',
-                      'Garantizar cero tiempo muerto por filtración',
-                      'Cumplir con estándares ambientales',
+                      'Maximize the lifespan of your equipment',
+                      'Minimize total cost of operation',
+                      'Guarantee zero downtime from filtration',
+                      'Meet environmental standards',
                     ].map((item) => (
                       <li
                         key={item}
@@ -622,7 +625,7 @@ export default function Home() {
                 marginBottom: '1rem',
               }}
             >
-              // TECNOLOGÍA PROBADA
+              // PROVEN TECHNOLOGY
             </p>
             <h2
               style={{
@@ -636,8 +639,8 @@ export default function Home() {
                 marginBottom: '3rem',
               }}
             >
-              Tecnología en{' '}
-              <span style={{ color: '#FFF12D' }}>Protección de Activos</span>
+              Asset Protection{' '}
+              <span style={{ color: '#FFF12D' }}>Technology</span>
             </h2>
 
             <div
@@ -649,16 +652,16 @@ export default function Home() {
             >
               {[
                 {
-                  title: 'Media Filtrante Híbrida Formulada con IA',
-                  desc: 'Desarrollo único basado en algoritmos matemáticos y escenarios probados en laboratorio. Resultado: una media filtrante de altísimo rendimiento imposible de replicar. Captura contaminantes microscópicos manteniendo eficiencia máxima.',
+                  title: 'AI-Formulated Hybrid Media',
+                  desc: 'Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated. Captures microscopic contaminants while maintaining optimal flow efficiency.',
                 },
                 {
-                  title: 'Sistemas de Separación Hidrofóbica',
-                  desc: 'Eliminan agua y humedad en combustibles y lubricantes. Previene corrosión, oxidación y pérdida de viscosidad.',
+                  title: 'Hydrophobic Separation Systems',
+                  desc: 'Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation. Extends equipment lifespan and reduces maintenance costs while ensuring reliable operation.',
                 },
                 {
-                  title: 'Estructuras Anti-Bypass',
-                  desc: '100% de garantía: si hay un bypass, el filtro falla de forma segura. Cero riesgo de contaminación súbita.',
+                  title: 'Anti-Bypass Structures',
+                  desc: '100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Ensures absolute protection of critical equipment from particulate and water contamination.',
                 },
               ].map((tech) => (
                 <div
@@ -689,6 +692,7 @@ export default function Home() {
                       fontSize: '0.9rem',
                       lineHeight: 1.7,
                       color: 'rgba(255,255,255,0.7)',
+                      textAlign: 'justify',
                     }}
                   >
                     {tech.desc}

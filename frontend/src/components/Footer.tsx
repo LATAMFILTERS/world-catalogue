@@ -137,48 +137,64 @@ export function Footer() {
         {/* Bottom section */}
         <div
           style={{
-            textAlign: 'center',
             borderTop: '1px solid #1a1a1a',
             paddingTop: '50px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
           }}
         >
-          <div
-            style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontSize: '14px',
-              color: '#666',
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              marginBottom: '25px',
-            }}
-          >
-            <strong style={{ color: '#fff' }}>FRISCO, TX</strong> | UNITED STATES
+          {/* Left: Location info and image */}
+          <div style={{ textAlign: 'left', flex: 1 }}>
+            <div
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontSize: '14px',
+                color: '#666',
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
+                marginBottom: '25px',
+              }}
+            >
+              <strong style={{ color: '#fff' }}>FRISCO, TX</strong> | UNITED STATES
+            </div>
+            <img
+              src="/images/e.png"
+              alt="ELIMFILTERS Badge"
+              style={{
+                height: '60px',
+                opacity: 0.8,
+              }}
+            />
           </div>
 
-          <img
-            src="/assets/latam-filters-logo.png"
-            alt="LATAMFILTERS"
-            style={{
-              height: '80px',
-              opacity: 0.9,
-              margin: '0 auto',
-              display: 'block',
-            }}
-          />
+          {/* Center: Logo */}
+          <div style={{ textAlign: 'center', flex: 1 }}>
+            <img
+              src="/assets/latam-filters-logo.png"
+              alt="LATAMFILTERS"
+              style={{
+                height: '80px',
+                opacity: 0.9,
+              }}
+            />
+          </div>
 
-          <p
-            style={{
-              fontSize: '10px',
-              color: '#444',
-              textTransform: 'uppercase',
-              letterSpacing: '4px',
-              marginTop: '40px',
-              fontFamily: "'Barlow Condensed', sans-serif",
-            }}
-          >
-            © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in
-            Filtration
-          </p>
+          {/* Right: Copyright */}
+          <div style={{ textAlign: 'right', flex: 1 }}>
+            <p
+              style={{
+                fontSize: '10px',
+                color: '#444',
+                textTransform: 'uppercase',
+                letterSpacing: '4px',
+                fontFamily: "'Barlow Condensed', sans-serif",
+              }}
+            >
+              © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in
+              Filtration
+            </p>
+          </div>
         </div>
       </div>
     </footer>
