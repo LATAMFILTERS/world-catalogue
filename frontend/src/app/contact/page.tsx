@@ -75,7 +75,7 @@ export default function Contact() {
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: 900,
-              fontFamily: 'DM Sans, Gotham, sans-serif',
+              fontFamily: 'Space Grotesk, sans-serif',
               marginBottom: '1rem',
               lineHeight: 1.1,
             }}
@@ -113,7 +113,7 @@ export default function Contact() {
                 style={{
                   fontSize: '1.8rem',
                   fontWeight: 900,
-                  fontFamily: 'DM Sans, Gotham, sans-serif',
+                  fontFamily: 'Space Grotesk, sans-serif',
                   marginBottom: '2rem',
                   color: '#FFF12D',
                 }}
