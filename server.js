@@ -14,8 +14,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('frontend/out'));
 app.use(express.static('www'));
 
-// Import routes
-const knowledgeRoutes = require('./routes/knowledge.routes');
+// Import routes (with fallback if file is missing)
+let knowledgeRoutes;
+try {
+  knowledgeRoutes = require('./routes/knowledge.routes');
+  console.log('[routes] Knowledge routes loaded ✅');
+} catch (err) {
+  console.error('[routes] Failed to load knowledge routes:', err.message);
+  // Create dummy router if knowledge routes fail
+  const express = require('express');
+  knowledgeRoutes = express.Router();
+  knowledgeRoutes.get('/', (req, res) => res.json({ status: 'knowledge-api-unavailable' }));
+}
 
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
@@ -1108,8 +1118,14 @@ app.get('/api/import/existing-skus', async (req, res) => {
 });
 
 // Register knowledge API for AI agents
-app.use('/api/knowledge', knowledgeRoutes);
+try {
+  app.use('/api/knowledge', knowledgeRoutes);
+  console.log('[middleware] Knowledge API registered ✅');
+} catch (err) {
+  console.error('[middleware] Failed to register knowledge API:', err.message);
+}
 
+console.log('[server] About to listen on port 8080...');
 const PORT = 8080; // Railway target port
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
