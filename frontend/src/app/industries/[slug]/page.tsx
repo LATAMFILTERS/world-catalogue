@@ -10,6 +10,7 @@ interface Props {
 const industryMedia: Record<string, { image?: string; video?: string }> = {
   'Agriculture': {
     image: '/images/agriculture.avif',
+    video: '/images/Agriculture-2.mp4',
   },
   'Waste Municipal': {
     image: '/images/wasted.avif',
