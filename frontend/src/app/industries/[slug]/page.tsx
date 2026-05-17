@@ -46,7 +46,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
   },
   'Railway': {
     image: '/images/trenes.avif',
-    video: '/images/train-2.mp4',
+    video: '/images/Train.mp4',
   },
   'Trucks Fleets': {
     image: '/images/trucks-1.avif',
