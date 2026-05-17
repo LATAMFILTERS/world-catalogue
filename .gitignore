@@ -11,8 +11,10 @@ debug*.py
 scraper_debug*.py
 __pycache__/
 
-# Media files (large assets)
+# Media files (large assets — exclude by default)
 *.mp4
 *.webm
 *.mov
-frontend/public/images/*.mp4
+# But allow production videos in frontend
+!frontend/public/images/*.mp4
+!frontend/out/images/*.mp4
