@@ -46,8 +46,8 @@ export function Navigation() {
           <Image
             src="/assets/logo-elimfilters.png"
             alt="ELIMFILTERS"
-            width={140}
-            height={140}
+            width={220}
+            height={220}
             style={{ objectFit: 'contain' }}
           />
         </Link>
