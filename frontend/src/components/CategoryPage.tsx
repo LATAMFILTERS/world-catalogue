@@ -427,35 +427,6 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
               alignItems: 'start',
             }}
           >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                <span
-                  style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.2em',
-                    color: '#FFF12D',
-                  }}
-                >
-                  RECOMMENDED APPLICATIONS
-                </span>
-              </div>
-              <h2
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 900,
-                  fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
-                  color: '#fff',
-                  letterSpacing: '-0.01em',
-                  lineHeight: 1.1,
-                  marginBottom: '2rem',
-                }}
-              >
-                PRIMARY USE CASES
-              </h2>
-              <FeatureList features={item.features} />
-            </div>
 
             {/* Technologies card */}
             <div
