@@ -12,6 +12,10 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
     image: '/images/agriculture.avif',
     video: '/images/Agriculture-2.mp4',
   },
+  'Automotive': {
+    image: '/images/autos-02.avif',
+    video: '/images/Autos-Vin4.mp4',
+  },
   'Waste Municipal': {
     image: '/images/wasted.avif',
     video: '/images/wasted-2.mp4',

@@ -8,6 +8,7 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 // Map industry names to image paths
 const industryImages: Record<string, string> = {
   'Agriculture': '/images/agriculture-2_converted.avif',
+  'Automotive': '/images/autos-02.avif',
   'Waste Municipal': '/images/wasted.avif',
   // Add more images as provided
 };
