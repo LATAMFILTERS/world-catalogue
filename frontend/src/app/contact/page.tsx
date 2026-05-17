@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -520,8 +519,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 
 export default function DistributorApplication() {
   const [formData, setFormData] = useState({
@@ -723,8 +722,6 @@ export default function DistributorApplication() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
