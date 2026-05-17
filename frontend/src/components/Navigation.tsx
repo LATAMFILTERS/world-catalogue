@@ -41,26 +41,15 @@ export function Navigation() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+        {/* Logo — solo icono, sin texto */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <Image
             src="/assets/logo-elimfilters.png"
             alt="ELIMFILTERS"
-            width={36}
-            height={36}
+            width={44}
+            height={44}
             style={{ objectFit: 'contain' }}
           />
-          <span
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontWeight: 900,
-              fontSize: '1.1rem',
-              letterSpacing: '0.12em',
-              color: '#ffffff',
-            }}
-          >
-            ELIMFILTERS
-          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -68,6 +57,7 @@ export function Navigation() {
           <NavLink href="/#industries">Industries</NavLink>
           <NavLink href="/#products">Products</NavLink>
           <NavLink href="/#technologies">Technologies</NavLink>
+          <NavLink href="/contacto">Contacto</NavLink>
           <a
             href="https://part-search.elimfilters.com"
             target="_blank"
@@ -154,6 +144,9 @@ export function Navigation() {
           </Link>
           <Link href="/#technologies" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
             Technologies
+          </Link>
+          <Link href="/contacto" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
+            Contacto
           </Link>
           <a
             href="https://part-search.elimfilters.com"
