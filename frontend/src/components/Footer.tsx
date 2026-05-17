@@ -102,17 +102,17 @@ export function Footer() {
           <div>
             <div className="footer-col-title">Follow Us</div>
             <a
-              href="https://www.linkedin.com/company/elimfilters/"
+              href="https://www.linkedin.com/company/elimfilters/?viewAsMember=false"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="external noopener noreferrer"
               className="footer-link"
             >
               LinkedIn
             </a>
             <a
-              href="https://www.instagram.com/elimfilters.global"
+              href="https://www.instagram.com/elimfilters.global/?hl=en"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="external noopener noreferrer"
               className="footer-link"
             >
               Instagram
@@ -120,7 +120,7 @@ export function Footer() {
             <a
               href="https://www.youtube.com/@elimfilters9112"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="external noopener noreferrer"
               className="footer-link"
             >
               YouTube
