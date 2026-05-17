@@ -10,3 +10,9 @@ sesion_*/
 debug*.py
 scraper_debug*.py
 __pycache__/
+
+# Media files (large assets)
+*.mp4
+*.webm
+*.mov
+frontend/public/images/*.mp4
