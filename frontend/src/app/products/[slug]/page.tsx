@@ -6,6 +6,15 @@ interface Props {
   params: { slug: string };
 }
 
+// Map product names to image paths
+const productMedia: Record<string, { image?: string; heroImage?: string }> = {
+  'Airfilter': {
+    image: '/images/air-filter1.avif',
+    heroImage: '/images/air-filters-lab.avif',
+  },
+  // Add more products as images are provided
+};
+
 export function generateStaticParams() {
   return catalogue.products.map((item) => ({
     slug: getSlug(item.name),
@@ -24,5 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ProductPage({ params }: Props) {
   const item = getItemBySlug('products', params.slug);
   if (!item) return null;
-  return <CategoryPage item={item} category="products" />;
+
+  const media = productMedia[item.name] || {};
+
+  return <CategoryPage item={item} category="products" industryImage={media.heroImage} />;
 }
