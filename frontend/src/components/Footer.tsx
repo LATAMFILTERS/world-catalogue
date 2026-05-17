@@ -141,43 +141,34 @@ export function Footer() {
             paddingTop: '50px',
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'flex-start',
+            alignItems: 'center',
           }}
         >
-          {/* Left: Location info and image */}
+          {/* Left: Large E image */}
           <div style={{ textAlign: 'left', flex: 1 }}>
-            <div
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontSize: '14px',
-                color: '#666',
-                letterSpacing: '3px',
-                textTransform: 'uppercase',
-                marginBottom: '25px',
-              }}
-            >
-              <strong style={{ color: '#fff' }}>FRISCO, TX</strong> | UNITED STATES
-            </div>
             <img
               src="/images/e.png"
-              alt="ELIMFILTERS Badge"
+              alt="ELIMFILTERS"
               style={{
-                height: '60px',
+                height: '120px',
                 opacity: 0.8,
               }}
             />
           </div>
 
-          {/* Center: Logo */}
+          {/* Center: FRISCO TEXAS */}
           <div style={{ textAlign: 'center', flex: 1 }}>
-            <img
-              src="/assets/latam-filters-logo.png"
-              alt="LATAMFILTERS"
+            <div
               style={{
-                height: '80px',
-                opacity: 0.9,
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontSize: '18px',
+                color: '#666',
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
               }}
-            />
+            >
+              <strong style={{ color: '#fff' }}>FRISCO TEXAS</strong>
+            </div>
           </div>
 
           {/* Right: Copyright */}
