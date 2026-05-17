@@ -1110,7 +1110,7 @@ app.get('/api/import/existing-skus', async (req, res) => {
 // Register knowledge API for AI agents
 app.use('/api/knowledge', knowledgeRoutes);
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080; // Railway target port
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
   console.log(`✅ Chatbot service running`);
