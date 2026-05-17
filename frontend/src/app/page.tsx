@@ -426,6 +426,279 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── WHY ELIMFILTERS ── */}
+        <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.03em',
+                lineHeight: 1.1,
+                color: '#fff',
+                marginBottom: '3rem',
+              }}
+            >
+              POR QUÉ{' '}
+              <span style={{ color: '#FFF12D' }}>ELEGIR ELIMFILTERS</span>
+            </h2>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '4rem',
+                alignItems: 'center',
+              }}
+            >
+              <div>
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '1.1rem',
+                    lineHeight: 1.8,
+                    color: 'rgba(255,255,255,0.85)',
+                    marginBottom: '2rem',
+                  }}
+                >
+                  ELIMFILTERS es más que un fabricante de filtros. Somos una empresa especializada en{' '}
+                  <strong style={{ color: '#FFF12D' }}>Tecnología en Protección de Activos</strong>, diseñando
+                  soluciones que preservan el valor y la operatividad de tus equipos en los ambientes
+                  más exigentes.
+                </p>
+
+                <p
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '1rem',
+                    lineHeight: 1.8,
+                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '2rem',
+                  }}
+                >
+                  Cada producto que desarrollamos responde a una realidad: los equipos que detienen tu
+                  operación cuestan cientos de miles en reparaciones. Un filtro es el guardián de esa
+                  inversión.
+                </p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    'Ingeniería Alemana en filtración industrial',
+                    '25+ años protegiendo flotas y equipos críticos',
+                    'Cumplimiento de estándares ISO internacionales',
+                    'Respaldo técnico en más de 12 industrias',
+                  ].map((item) => (
+                    <div key={item} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                      <span
+                        style={{
+                          color: '#FFF12D',
+                          fontWeight: 700,
+                          fontSize: '1.2rem',
+                          marginTop: '-2px',
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          color: 'rgba(255,255,255,0.8)',
+                          fontSize: '0.95rem',
+                        }}
+                      >
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div
+                  style={{
+                    background: '#050505',
+                    padding: '2.5rem',
+                    border: '1px solid #1a1a1a',
+                    borderRadius: '8px',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.25em',
+                      color: '#FFF12D',
+                      textTransform: 'uppercase',
+                      marginBottom: '1.5rem',
+                    }}
+                  >
+                    // NUESTRA DIFERENCIA
+                  </p>
+
+                  <h3
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontWeight: 700,
+                      fontSize: '1.3rem',
+                      color: '#fff',
+                      marginBottom: '1.5rem',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    No vendemos filtros. Protegemos patrimonio.
+                  </h3>
+
+                  <p
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.7,
+                      color: 'rgba(255,255,255,0.7)',
+                      marginBottom: '2rem',
+                    }}
+                  >
+                    Mientras otros compiten en precio, nosotros competimos en confiabilidad. Cada
+                    especificación de nuestros productos está diseñada para:
+                  </p>
+
+                  <ul
+                    style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                    }}
+                  >
+                    {[
+                      'Maximizar la vida útil de tus equipos',
+                      'Minimizar el costo total de operación',
+                      'Garantizar cero tiempo muerto por filtración',
+                      'Cumplir con estándares ambientales',
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.9rem',
+                          color: 'rgba(255,255,255,0.75)',
+                          paddingLeft: '1.5rem',
+                          position: 'relative',
+                        }}
+                      >
+                        <span
+                          style={{
+                            position: 'absolute',
+                            left: 0,
+                            color: '#FFF12D',
+                            fontWeight: 700,
+                          }}
+                        >
+                          ◆
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TECHNOLOGY ADVANTAGE ── */}
+        <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.65rem',
+                letterSpacing: '0.25em',
+                color: '#FFF12D',
+                textTransform: 'uppercase',
+                marginBottom: '1rem',
+              }}
+            >
+              // TECNOLOGÍA PROBADA
+            </p>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.03em',
+                lineHeight: 1.1,
+                color: '#fff',
+                marginBottom: '3rem',
+              }}
+            >
+              Tecnología en{' '}
+              <span style={{ color: '#FFF12D' }}>Protección de Activos</span>
+            </h2>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '2rem',
+              }}
+            >
+              {[
+                {
+                  title: 'Medios Sintéticos de Alta Densidad',
+                  desc: 'Capturan contaminantes microscópicos (hasta 1 micrón) sin restringir flujo. Retienen 3x más suciedad que filtros convencionales.',
+                },
+                {
+                  title: 'Sistemas de Separación Hidrofóbica',
+                  desc: 'Eliminan agua y humedad en combustibles y lubricantes. Previene corrosión, oxidación y pérdida de viscosidad.',
+                },
+                {
+                  title: 'Estructuras Anti-Bypass',
+                  desc: '100% de garantía: si hay un bypass, el filtro falla de forma segura. Cero riesgo de contaminación súbita.',
+                },
+              ].map((tech) => (
+                <div
+                  key={tech.title}
+                  style={{
+                    background: '#050505',
+                    padding: '2rem',
+                    border: '1px solid #1a1a1a',
+                    borderRadius: '8px',
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontWeight: 700,
+                      fontSize: '1.05rem',
+                      color: '#FFF12D',
+                      marginBottom: '1rem',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    {tech.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.9rem',
+                      lineHeight: 1.7,
+                      color: 'rgba(255,255,255,0.7)',
+                    }}
+                  >
+                    {tech.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 {/* ── CTA SLIDES ── */}
         <div
           style={{
