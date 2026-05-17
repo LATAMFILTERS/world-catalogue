@@ -13,6 +13,7 @@ interface CategoryPageProps {
   category: 'industries' | 'products' | 'technologies';
   industryImage?: string;
   industryVideo?: string;
+  technologyLogo?: string;
 }
 
 const CATEGORY_BG: Record<string, string> = {
@@ -21,7 +22,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category, industryImage, industryVideo }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo }: CategoryPageProps) {
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -208,6 +209,33 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
                   </video>
                 </div>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Technology Logo Section */}
+        {technologyLogo && (
+          <section
+            style={{
+              padding: '6rem 2rem',
+              background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.5) 100%)',
+              borderTop: '1px solid rgba(255,255,255,0.06)',
+              borderBottom: '1px solid rgba(255,255,255,0.06)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ maxWidth: '400px' }}>
+              <img
+                src={technologyLogo}
+                alt={`${item.name} Logo`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+              />
             </div>
           </section>
         )}

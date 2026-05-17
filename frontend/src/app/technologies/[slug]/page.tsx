@@ -6,6 +6,12 @@ interface Props {
   params: { slug: string };
 }
 
+// Map technology names to logos
+const technologyLogos: Record<string, string> = {
+  'Macrocore': '/assets/macrocore.avif',
+  // Add more technology logos as provided
+};
+
 export function generateStaticParams() {
   return catalogue.technologies.map((item) => ({
     slug: getSlug(item.name),
@@ -24,5 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function TechnologyPage({ params }: Props) {
   const item = getItemBySlug('technologies', params.slug);
   if (!item) return null;
-  return <CategoryPage item={item} category="technologies" />;
+
+  const logo = technologyLogos[item.name];
+
+  return <CategoryPage item={item} category="technologies" technologyLogo={logo} />;
 }
