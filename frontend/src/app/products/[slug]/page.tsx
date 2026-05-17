@@ -1,5 +1,6 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
+import { AirfilterPage } from '@/components/AirfilterPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -33,6 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ProductPage({ params }: Props) {
   const item = getItemBySlug('products', params.slug);
   if (!item) return null;
+
+  // Use custom AirfilterPage for Airfilter product
+  if (item.name === 'Airfilter') {
+    return <AirfilterPage />;
+  }
 
   const media = productMedia[item.name] || {};
 
