@@ -157,25 +157,49 @@ export function AirfilterPage() {
               </div>
               <div
                 style={{
-                  position: 'relative',
-                  background: 'linear-gradient(135deg, rgba(255,241,45,0.1) 0%, rgba(0,0,0,0.3) 100%)',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  borderRadius: '12px',
-                  padding: '2.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '500px',
-                  overflow: 'hidden',
+                  display: 'grid',
+                  gridTemplateRows: '1fr 1fr',
+                  gap: '2rem',
                 }}
               >
-                {/* Specs overlay on image */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', zIndex: 2, position: 'relative' }}>
+                {/* Product Image */}
+                <div
+                  style={{
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,241,45,0.2)',
+                    height: '320px',
+                  }}
+                >
+                  <img
+                    src="/images/air-filter1.avif"
+                    alt="AIRFILTER Product"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
+                </div>
+
+                {/* Specifications */}
+                <div
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255,241,45,0.1) 0%, rgba(0,0,0,0.3) 100%)',
+                    border: '1px solid rgba(255,241,45,0.2)',
+                    borderRadius: '12px',
+                    padding: '2rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.5rem',
+                  }}
+                >
                   <div>
                     <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
                       CONSTRUCCIÓN
                     </p>
-                    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
                       Celulosa de Alta Pureza
                     </p>
                   </div>
@@ -183,7 +207,7 @@ export function AirfilterPage() {
                     <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
                       REFUERZO
                     </p>
-                    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
                       Resinas Sintéticas Estructurales
                     </p>
                   </div>
@@ -191,35 +215,11 @@ export function AirfilterPage() {
                     <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
                       MATRIZ
                     </p>
-                    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
                       Gradiente de Densidad Progresiva
                     </p>
                   </div>
                 </div>
-
-                {/* Background image */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundImage: 'url(/images/air-filter1.avif)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center bottom',
-                    backgroundRepeat: 'no-repeat',
-                    opacity: 0.3,
-                    zIndex: 1,
-                  }}
-                />
-
-                {/* Gradient overlay for readability */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)',
-                    zIndex: 1,
-                  }}
-                />
               </div>
             </div>
           </div>
