@@ -119,7 +119,7 @@ export default function Home() {
             </p>
             <h1
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
                 fontSize: 'clamp(3rem, 9vw, 7rem)',
                 lineHeight: 1.0,
@@ -163,7 +163,7 @@ export default function Home() {
                   paddingLeft: '1.5rem',
                   fontSize: '1.1rem',
                   lineHeight: 1.65,
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                 }}
               >
                 Engineering filtration designed for those who cannot afford a stalled engine or a
@@ -177,7 +177,7 @@ export default function Home() {
                   display: 'inline-block',
                   background: '#FFF12D',
                   color: '#000',
-                  fontFamily: 'Montserrat, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.75rem',
                   letterSpacing: '0.15em',
@@ -221,7 +221,7 @@ export default function Home() {
               <div key={s.value} style={{ textAlign: 'center' }}>
                 <div
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontWeight: 700,
                     fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                     color: '#FFF12D',
@@ -305,7 +305,7 @@ export default function Home() {
                     fontSize: '1.05rem',
                     marginBottom: '2rem',
                     lineHeight: 1.7,
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                   }}
                 >
                   A low-quality filter is an economic decision that ends up costing thousands at
@@ -333,7 +333,7 @@ export default function Home() {
                             color: '#f87171',
                             fontWeight: 700,
                             fontSize: '0.8rem',
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Outfit, sans-serif',
                           }}
                         >
                           {item.num}
@@ -348,7 +348,7 @@ export default function Home() {
                             letterSpacing: '0.1em',
                             fontSize: '0.82rem',
                             marginBottom: '0.3rem',
-                            fontFamily: 'Montserrat, sans-serif',
+                            fontFamily: 'Outfit, sans-serif',
                           }}
                         >
                           {item.title}
@@ -358,7 +358,7 @@ export default function Home() {
                             color: 'rgba(255,255,255,0.45)',
                             fontSize: '0.875rem',
                             lineHeight: 1.6,
-                            fontFamily: 'Inter, sans-serif',
+                            fontFamily: 'Outfit, sans-serif',
                           }}
                         >
                           {item.desc}
@@ -403,7 +403,7 @@ export default function Home() {
                       fontSize: '1.75rem',
                       fontWeight: 900,
                       lineHeight: 1,
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                     }}
                   >
                     80%
@@ -415,7 +415,7 @@ export default function Home() {
                       textTransform: 'uppercase',
                       marginTop: '0.5rem',
                       lineHeight: 1.4,
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                     }}
                   >
                     Of premature failures are caused by contamination.
@@ -456,7 +456,7 @@ export default function Home() {
               <div>
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: '1.1rem',
                     lineHeight: 1.8,
                     color: 'rgba(255,255,255,0.85)',
@@ -472,7 +472,7 @@ export default function Home() {
 
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: '1rem',
                     lineHeight: 1.8,
                     color: 'rgba(255,255,255,0.75)',
@@ -505,7 +505,7 @@ export default function Home() {
                       </span>
                       <span
                         style={{
-                          fontFamily: 'Inter, sans-serif',
+                          fontFamily: 'Outfit, sans-serif',
                           color: 'rgba(255,255,255,0.8)',
                           fontSize: '0.95rem',
                         }}
@@ -554,7 +554,7 @@ export default function Home() {
 
                   <p
                     style={{
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontSize: '0.95rem',
                       lineHeight: 1.7,
                       color: 'rgba(255,255,255,0.7)',
@@ -585,7 +585,7 @@ export default function Home() {
                       <li
                         key={item}
                         style={{
-                          fontFamily: 'Inter, sans-serif',
+                          fontFamily: 'Outfit, sans-serif',
                           fontSize: '0.9rem',
                           color: 'rgba(255,255,255,0.75)',
                           paddingLeft: '1.5rem',
@@ -688,7 +688,7 @@ export default function Home() {
                   </h3>
                   <p
                     style={{
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontSize: '0.9rem',
                       lineHeight: 1.7,
                       color: 'rgba(255,255,255,0.7)',
@@ -741,7 +741,7 @@ export default function Home() {
                 </p>
                 <h2
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontWeight: 700,
                     fontSize: 'clamp(2.25rem, 4.5vw, 4rem)',
                     textTransform: 'uppercase',
@@ -763,7 +763,7 @@ export default function Home() {
                     display: 'inline-block',
                     background: '#FFF12D',
                     color: '#000',
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontWeight: 700,
                     fontSize: '0.75rem',
                     letterSpacing: '0.15em',

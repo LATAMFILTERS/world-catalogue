@@ -25,7 +25,7 @@ export default function About() {
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Outfit, sans-serif',
               }}
             >
               // ABOUT ELIMFILTERS
@@ -46,7 +46,7 @@ export default function About() {
             style={{
               fontSize: '1.25rem',
               fontWeight: 400,
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               color: '#FFF12D',
               marginBottom: '2rem',
               maxWidth: '600px',
@@ -59,7 +59,7 @@ export default function About() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
           >
@@ -98,7 +98,7 @@ export default function About() {
                   fontSize: '1rem',
                   lineHeight: 1.7,
                   color: 'rgba(255,255,255,0.8)',
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   marginBottom: '1.5rem',
                 }}
               >
@@ -109,7 +109,7 @@ export default function About() {
                   fontSize: '1rem',
                   lineHeight: 1.7,
                   color: 'rgba(255,255,255,0.8)',
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                 }}
               >
                 Our Asset Protection Technology combines AI-formulated hybrid media, hydrophobic separation systems, and anti-bypass structures to eliminate contamination events before they happen.
@@ -141,7 +141,7 @@ export default function About() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                   }}
                 >
                   Media Efficiency Rating
@@ -159,7 +159,7 @@ export default function About() {
                   style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.7)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -256,7 +256,7 @@ export default function About() {
                     fontSize: '0.95rem',
                     lineHeight: 1.6,
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                   }}
                 >
                   {item.description}
@@ -293,7 +293,7 @@ export default function About() {
               fontSize: '1.05rem',
               marginBottom: '2rem',
               color: '#000',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               lineHeight: 1.6,
             }}
           >
@@ -306,7 +306,7 @@ export default function About() {
               background: '#000',
               color: '#FFF12D',
               padding: '0.875rem 2rem',
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               fontWeight: 700,
               fontSize: '0.85rem',
               letterSpacing: '0.1em',

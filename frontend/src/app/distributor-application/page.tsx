@@ -82,7 +82,7 @@ export default function DistributorApplication() {
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Outfit, sans-serif',
               }}
             >
               // BECOME A PARTNER
@@ -104,7 +104,7 @@ export default function DistributorApplication() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
           >
@@ -154,7 +154,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -178,7 +178,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -202,7 +202,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -226,7 +226,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.7,
                     paddingLeft: '1.5rem',
                   }}
@@ -273,7 +273,7 @@ export default function DistributorApplication() {
                       marginBottom: '1.5rem',
                       fontSize: '0.95rem',
                       color: '#90ee90',
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                     }}
                   >
                     ✓ Application submitted! Our team will review and contact you soon.
@@ -289,7 +289,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Company Legal Name *
@@ -307,7 +307,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -330,7 +330,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Contact Name *
@@ -348,7 +348,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -371,7 +371,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Email *
@@ -389,7 +389,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -412,7 +412,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Phone *
@@ -430,7 +430,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -453,7 +453,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Country *
@@ -471,7 +471,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -494,7 +494,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       State / Province
@@ -511,7 +511,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -534,7 +534,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Years in Business
@@ -551,7 +551,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -574,7 +574,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Current Product Lines
@@ -591,7 +591,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -615,7 +615,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Service Area / Markets
@@ -632,7 +632,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -656,7 +656,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Additional Information
@@ -673,7 +673,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -696,7 +696,7 @@ export default function DistributorApplication() {
                       padding: '0.875rem',
                       background: '#FFF12D',
                       color: '#000',
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       letterSpacing: '0.1em',

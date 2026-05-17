@@ -65,7 +65,7 @@ export default function Contact() {
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Outfit, sans-serif',
               }}
             >
               // GET IN TOUCH
@@ -87,7 +87,7 @@ export default function Contact() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
           >
@@ -137,7 +137,7 @@ export default function Contact() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -165,7 +165,7 @@ export default function Contact() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -195,7 +195,7 @@ export default function Contact() {
                     fontSize: '0.95rem',
                     color: '#FFF12D',
                     textDecoration: 'none',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     transition: 'opacity 0.3s',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
@@ -229,7 +229,7 @@ export default function Contact() {
                   style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -274,7 +274,7 @@ export default function Contact() {
                       marginBottom: '1.5rem',
                       fontSize: '0.95rem',
                       color: '#90ee90',
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                     }}
                   >
                     ✓ Message sent successfully! We'll be in touch soon.
@@ -290,7 +290,7 @@ export default function Contact() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Full Name
@@ -308,7 +308,7 @@ export default function Contact() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -331,7 +331,7 @@ export default function Contact() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Email Address
@@ -349,7 +349,7 @@ export default function Contact() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -372,7 +372,7 @@ export default function Contact() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Phone Number (Optional)
@@ -389,7 +389,7 @@ export default function Contact() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -412,7 +412,7 @@ export default function Contact() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Company Name (Optional)
@@ -429,7 +429,7 @@ export default function Contact() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -452,7 +452,7 @@ export default function Contact() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                       }}
                     >
                       Message
@@ -470,7 +470,7 @@ export default function Contact() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: '#fff',
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -493,7 +493,7 @@ export default function Contact() {
                       padding: '0.875rem',
                       background: '#FFF12D',
                       color: '#000',
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       letterSpacing: '0.1em',

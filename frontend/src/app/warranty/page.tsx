@@ -25,7 +25,7 @@ export default function Warranty() {
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'Outfit, sans-serif',
               }}
             >
               // WARRANTY AND SUPPORT
@@ -47,7 +47,7 @@ export default function Warranty() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
           >
@@ -104,7 +104,7 @@ export default function Warranty() {
                   style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                   }}
                 >
                   {stat.label}
@@ -200,7 +200,7 @@ export default function Warranty() {
                     fontSize: '0.95rem',
                     lineHeight: 1.7,
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     textAlign: 'justify',
                   }}
                 >
@@ -276,7 +276,7 @@ export default function Warranty() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.8)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                   }}
                 >
                   {item}
@@ -313,7 +313,7 @@ export default function Warranty() {
               fontSize: '1.05rem',
               marginBottom: '2rem',
               color: '#000',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               lineHeight: 1.6,
             }}
           >
@@ -326,7 +326,7 @@ export default function Warranty() {
               background: '#000',
               color: '#FFF12D',
               padding: '0.875rem 2rem',
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               fontWeight: 700,
               fontSize: '0.85rem',
               letterSpacing: '0.1em',
