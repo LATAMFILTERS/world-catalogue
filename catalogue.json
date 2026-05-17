@@ -544,22 +544,25 @@
     {
       "name": "Macrocore",
       "file": "macrocore.html",
-      "title": "MACROCORE™",
-      "subtitle": "ANTI-COLLAPSE DESIGN",
-      "description": "// HEAVY-DUTY AIR FILTRATION Anti-collapse 62 PSI rated construction for heavy-duty air filtration meeting ISO 5011 industrial standards.",
+      "title": "MACROCORE™ GRADIENT FILTRATION",
+      "subtitle": "PROGRESSIVE DENSITY ENGINEERING",
+      "description": "// FILTRACIÓN DE AIRE INDUSTRIAL MACROCORE™ is a Progressive Density Gradient (PDG) engineered system combining high-purity cellulose fibers with synthetic resins. 99.9%-99.98% efficiency. ISO 5011 rated. Captures macro-contaminants on external layers while sub-micron particles are detained in the internal matrix. Designed for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.",
       "features": [
-        "62 PSI RATED",
-        "INDUSTRIAL STANDARD",
-        "EXTENDED LIFE",
-        "STRUCTURAL GEOMETRY"
+        "99.9% - 99.98% EFFICIENCY",
+        "GRADIENT DENSITY MATRIX",
+        "62 PSI ANTI-COLLAPSE",
+        "ISO 5011 / SAE J726",
+        "CONTINUOUS 120°C RATED",
+        "INERTIAL IMPACT + DIFFUSION"
       ],
       "stats": {
-        "ratings": [
-          "62 PSI",
-          "62 PSI"
+        "percentages": [
+          "99.9%",
+          "99.98%",
+          "120°C"
         ]
       },
-      "cta": "IDENTIFY SKU"
+      "cta": "TECHNICAL SPECIFICATIONS"
     },
     {
       "name": "Marineclean",
