@@ -135,91 +135,67 @@ export function AirfilterPage() {
                     fontSize: '1rem',
                     lineHeight: 1.7,
                     color: 'rgba(255,255,255,0.8)',
-                    marginBottom: '1.5rem',
+                    marginBottom: '2.5rem',
                   }}
                 >
                   AIRFILTER es una media filtrante de alto rendimiento desarrollada bajo los principios de gradiente de densidad progresiva. Utiliza fibras de celulosa de alta pureza reforzadas con resinas sintéticas para garantizar:
                 </p>
-                <ul
-                  style={{
-                    fontSize: '0.95rem',
-                    lineHeight: 1.8,
-                    color: 'rgba(255,255,255,0.8)',
-                    listStyle: 'none',
-                    padding: 0,
-                  }}
-                >
-                  <li style={{ marginBottom: '1rem' }}>✓ <strong>99.9% - 99.98% eficiencia</strong> en retención de partículas</li>
-                  <li style={{ marginBottom: '1rem' }}>✓ <strong>Captura multi-modo:</strong> intercepción, impacto inercial y difusión</li>
-                  <li style={{ marginBottom: '1rem' }}>✓ <strong>Geometría anti-colapso</strong> bajo presiones extremas</li>
-                  <li style={{ marginBottom: '1rem' }}>✓ <strong>Operación continua:</strong> hasta 120°C</li>
-                </ul>
-              </div>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateRows: '1fr 1fr',
-                  gap: '2rem',
-                }}
-              >
-                {/* Product Image */}
-                <div
-                  style={{
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    height: '320px',
-                  }}
-                >
-                  <img
-                    src="/images/air-filter1.avif"
-                    alt="AIRFILTER Product"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center',
-                    }}
-                  />
-                </div>
 
-                {/* Specifications */}
+                {/* Horizontal Specifications */}
                 <div
                   style={{
-                    background: 'linear-gradient(135deg, rgba(255,241,45,0.1) 0%, rgba(0,0,0,0.3) 100%)',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    borderRadius: '12px',
-                    padding: '2rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1.5rem',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '2rem',
+                    marginBottom: '2rem',
                   }}
                 >
                   <div>
-                    <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
+                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
                       CONSTRUCCIÓN
                     </p>
-                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                       Celulosa de Alta Pureza
                     </p>
                   </div>
                   <div>
-                    <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
+                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
                       REFUERZO
                     </p>
-                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                       Resinas Sintéticas Estructurales
                     </p>
                   </div>
                   <div>
-                    <p style={{ fontSize: '0.85rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0 }}>
+                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
                       MATRIZ
                     </p>
-                    <p style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem' }}>
+                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                       Gradiente de Densidad Progresiva
                     </p>
                   </div>
                 </div>
+              </div>
+              {/* Product Image */}
+              <div
+                style={{
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  height: '100%',
+                  minHeight: '400px',
+                }}
+              >
+                <img
+                  src="/images/air-filter1.avif"
+                  alt="AIRFILTER Product"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
+                />
               </div>
             </div>
           </div>
