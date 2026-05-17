@@ -133,7 +133,7 @@ export default function Home() {
             </h1>
             <h2
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'DM Sans, Gotham, sans-serif',
                 fontWeight: 400,
                 fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
                 lineHeight: 1.1,
@@ -269,7 +269,7 @@ export default function Home() {
             </p>
             <h2
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'DM Sans, Gotham, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(2rem, 5vw, 3.75rem)',
                 textTransform: 'uppercase',
@@ -431,7 +431,7 @@ export default function Home() {
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <h2
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'DM Sans, Gotham, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 textTransform: 'uppercase',
@@ -541,7 +541,7 @@ export default function Home() {
 
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'DM Sans, Gotham, sans-serif',
                       fontWeight: 700,
                       fontSize: '1.3rem',
                       color: '#fff',
@@ -629,7 +629,7 @@ export default function Home() {
             </p>
             <h2
               style={{
-                fontFamily: 'Montserrat, sans-serif',
+                fontFamily: 'DM Sans, Gotham, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 textTransform: 'uppercase',
@@ -675,7 +675,7 @@ export default function Home() {
                 >
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: 'DM Sans, Gotham, sans-serif',
                       fontWeight: 700,
                       fontSize: '1.05rem',
                       color: '#FFF12D',
