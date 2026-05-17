@@ -7,15 +7,13 @@ interface Props {
 }
 
 // Map industry names to image and video paths
-const industryMedia: Record<string, { image?: string; secondImage?: string; videos?: string[] }> = {
+const industryMedia: Record<string, { image?: string; video?: string }> = {
   'Agriculture': {
     image: '/images/agriculture.avif',
-    secondImage: '/images/agriculture-2_converted.avif',
   },
   'Waste Municipal': {
     image: '/images/wasted.avif',
-    secondImage: '/images/camion-bomberos.avif',
-    videos: ['/images/wasted-2.mp4', '/images/bomberos.mp4'],
+    video: '/images/bomberos.mp4',
   },
   // Add more industries as images/videos are provided
 };
@@ -46,7 +44,7 @@ export default function IndustryPage({ params }: Props) {
       item={item}
       category="industries"
       industryImage={media.image}
-      industryVideos={media.videos}
+      industryVideo={media.video}
     />
   );
 }
