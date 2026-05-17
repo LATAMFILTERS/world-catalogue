@@ -58,7 +58,7 @@ export default function About() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
@@ -97,7 +97,7 @@ export default function About() {
                 style={{
                   fontSize: '1rem',
                   lineHeight: 1.7,
-                  color: 'rgba(255,255,255,0.8)',
+                  color: 'rgba(255,255,255,0.75)',
                   fontFamily: 'Outfit, sans-serif',
                   marginBottom: '1.5rem',
                 }}
@@ -108,7 +108,7 @@ export default function About() {
                 style={{
                   fontSize: '1rem',
                   lineHeight: 1.7,
-                  color: 'rgba(255,255,255,0.8)',
+                  color: 'rgba(255,255,255,0.75)',
                   fontFamily: 'Outfit, sans-serif',
                 }}
               >
@@ -140,7 +140,7 @@ export default function About() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                   }}
                 >
@@ -158,7 +158,7 @@ export default function About() {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: 'rgba(255,255,255,0.7)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}

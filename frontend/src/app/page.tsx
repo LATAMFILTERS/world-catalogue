@@ -157,7 +157,7 @@ export default function Home() {
               <p
                 style={{
                   maxWidth: '560px',
-                  color: 'rgba(255,255,255,0.7)',
+                  color: 'rgba(255,255,255,0.75)',
                   fontStyle: 'italic',
                   borderLeft: '4px solid #FFF12D',
                   paddingLeft: '1.5rem',
@@ -275,7 +275,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.03em',
                 lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.95)',
+                color: 'rgba(255,255,255,0.75)',
                 marginBottom: '3rem',
               }}
             >
@@ -342,7 +342,7 @@ export default function Home() {
                       <div>
                         <h3
                           style={{
-                            color: '#fff',
+                            color: 'rgba(255,255,255,0.75)',
                             fontWeight: 700,
                             textTransform: 'uppercase',
                             letterSpacing: '0.1em',
@@ -355,7 +355,7 @@ export default function Home() {
                         </h3>
                         <p
                           style={{
-                            color: 'rgba(255,255,255,0.45)',
+                            color: 'rgba(255,255,255,0.75)',
                             fontSize: '0.875rem',
                             lineHeight: 1.6,
                             fontFamily: 'Outfit, sans-serif',
@@ -437,7 +437,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.03em',
                 lineHeight: 1.1,
-                color: '#fff',
+                color: 'rgba(255,255,255,0.75)',
                 marginBottom: '3rem',
               }}
             >
@@ -459,7 +459,7 @@ export default function Home() {
                     fontFamily: 'Outfit, sans-serif',
                     fontSize: '1.1rem',
                     lineHeight: 1.8,
-                    color: 'rgba(255,255,255,0.85)',
+                    color: 'rgba(255,255,255,0.75)',
                     marginBottom: '2rem',
                     textAlign: 'justify',
                   }}
@@ -506,7 +506,7 @@ export default function Home() {
                       <span
                         style={{
                           fontFamily: 'Outfit, sans-serif',
-                          color: 'rgba(255,255,255,0.8)',
+                          color: 'rgba(255,255,255,0.75)',
                           fontSize: '0.95rem',
                         }}
                       >
@@ -544,7 +544,7 @@ export default function Home() {
                       fontFamily: 'Space Grotesk, sans-serif',
                       fontWeight: 700,
                       fontSize: '1.3rem',
-                      color: '#fff',
+                      color: 'rgba(255,255,255,0.75)',
                       marginBottom: '1.5rem',
                       lineHeight: 1.3,
                     }}
@@ -557,7 +557,7 @@ export default function Home() {
                       fontFamily: 'Outfit, sans-serif',
                       fontSize: '0.95rem',
                       lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.7)',
+                      color: 'rgba(255,255,255,0.75)',
                       marginBottom: '2rem',
                       textAlign: 'justify',
                     }}
@@ -635,7 +635,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.03em',
                 lineHeight: 1.1,
-                color: '#fff',
+                color: 'rgba(255,255,255,0.75)',
                 marginBottom: '3rem',
               }}
             >
@@ -691,7 +691,7 @@ export default function Home() {
                       fontFamily: 'Outfit, sans-serif',
                       fontSize: '0.9rem',
                       lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.7)',
+                      color: 'rgba(255,255,255,0.75)',
                       textAlign: 'justify',
                     }}
                   >
@@ -747,7 +747,7 @@ export default function Home() {
                     textTransform: 'uppercase',
                     letterSpacing: '0.03em',
                     lineHeight: 1.1,
-                    color: 'rgba(255,255,255,0.95)',
+                    color: 'rgba(255,255,255,0.75)',
                     marginBottom: '1.5rem',
                   }}
                 >

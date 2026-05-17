@@ -103,7 +103,7 @@ export default function DistributorApplication() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
@@ -145,7 +145,7 @@ export default function DistributorApplication() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   Market-Leading Technology
@@ -153,7 +153,7 @@ export default function DistributorApplication() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -169,7 +169,7 @@ export default function DistributorApplication() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   Global Support Infrastructure
@@ -177,7 +177,7 @@ export default function DistributorApplication() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -193,7 +193,7 @@ export default function DistributorApplication() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   Comprehensive Warranty
@@ -201,7 +201,7 @@ export default function DistributorApplication() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -217,7 +217,7 @@ export default function DistributorApplication() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   Distributor Benefits
@@ -225,7 +225,7 @@ export default function DistributorApplication() {
                 <ul
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.7,
                     paddingLeft: '1.5rem',
@@ -257,7 +257,7 @@ export default function DistributorApplication() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '2rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   APPLICATION FORM
@@ -288,7 +288,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -306,7 +306,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -329,7 +329,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -347,7 +347,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -370,7 +370,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -388,7 +388,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -411,7 +411,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -429,7 +429,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -452,7 +452,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -470,7 +470,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -493,7 +493,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -510,7 +510,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -533,7 +533,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -550,7 +550,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -573,7 +573,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -590,7 +590,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -614,7 +614,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -631,7 +631,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -655,7 +655,7 @@ export default function DistributorApplication() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -672,7 +672,7 @@ export default function DistributorApplication() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',

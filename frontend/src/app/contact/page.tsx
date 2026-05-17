@@ -86,7 +86,7 @@ export default function Contact() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
@@ -128,7 +128,7 @@ export default function Contact() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   GLOBAL HEADQUARTERS
@@ -136,7 +136,7 @@ export default function Contact() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -156,7 +156,7 @@ export default function Contact() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   LATIN AMERICAN OPERATIONS
@@ -164,7 +164,7 @@ export default function Contact() {
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -184,7 +184,7 @@ export default function Contact() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '0.75rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   EMAIL
@@ -228,7 +228,7 @@ export default function Contact() {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
@@ -258,7 +258,7 @@ export default function Contact() {
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
                     marginBottom: '2rem',
-                    color: '#fff',
+                    color: 'rgba(255,255,255,0.75)',
                   }}
                 >
                   SEND A MESSAGE
@@ -289,7 +289,7 @@ export default function Contact() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -307,7 +307,7 @@ export default function Contact() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -330,7 +330,7 @@ export default function Contact() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -348,7 +348,7 @@ export default function Contact() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -371,7 +371,7 @@ export default function Contact() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -388,7 +388,7 @@ export default function Contact() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -411,7 +411,7 @@ export default function Contact() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -428,7 +428,7 @@ export default function Contact() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
@@ -451,7 +451,7 @@ export default function Contact() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         marginBottom: '0.5rem',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                       }}
                     >
@@ -469,7 +469,7 @@ export default function Contact() {
                         background: 'rgba(255,255,255,0.05)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
-                        color: '#fff',
+                        color: 'rgba(255,255,255,0.75)',
                         fontFamily: 'Outfit, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',

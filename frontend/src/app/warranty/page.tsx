@@ -46,7 +46,7 @@ export default function Warranty() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
             }}
@@ -103,7 +103,7 @@ export default function Warranty() {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                   }}
                 >
@@ -199,7 +199,7 @@ export default function Warranty() {
                   style={{
                     fontSize: '0.95rem',
                     lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                     textAlign: 'justify',
                   }}
@@ -227,7 +227,7 @@ export default function Warranty() {
               fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif',
               marginBottom: '2.5rem',
-              color: '#fff',
+              color: 'rgba(255,255,255,0.75)',
               lineHeight: 1.2,
             }}
           >
@@ -275,7 +275,7 @@ export default function Warranty() {
                 <span
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.8)',
+                    color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                   }}
                 >
