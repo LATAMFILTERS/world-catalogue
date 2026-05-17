@@ -3,17 +3,18 @@ const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
 
+// Prevent unhandled errors from crashing the process
+process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
+process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
+
 const app = express();
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
-app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
-app.use(express.static('frontend/out')); // Serve Next.js static export (primary)
-app.use(express.static('www')); // Serve static files from www/ (legacy)
-app.use(express.static('.')); // Serve static files from root (industries/, products/, technologies/)
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('frontend/out'));
+app.use(express.static('www'));
 
-// Import new routes
-const chatRoutes = require('./routes/chat.routes');
-const whatsappRoutes = require('./routes/whatsapp.routes');
+// Import routes
 const knowledgeRoutes = require('./routes/knowledge.routes');
 
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
