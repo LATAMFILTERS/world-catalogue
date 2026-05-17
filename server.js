@@ -1134,6 +1134,6 @@ const PORT = 8080; // Railway target port
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
   console.log(`✅ Chatbot service running`);
-  console.log(`✅ WhatsApp webhook listening on /webhook/whatsapp`);
+  // WhatsApp webhook disabled (twilio removed)
   console.log(`✅ ELIMFILTERS Knowledge API available at /api/knowledge`);
 });
