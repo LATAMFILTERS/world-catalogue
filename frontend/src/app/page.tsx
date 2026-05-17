@@ -378,8 +378,6 @@ export default function Home() {
                     minHeight: '500px',
                     overflow: 'hidden',
                     background: '#000',
-                    border: '1px solid #222',
-                    borderRadius: '8px',
                     backgroundImage: `url(${PROBLEM_IMAGE})`,
                     backgroundSize: 'contain',
                     backgroundPosition: 'center',
