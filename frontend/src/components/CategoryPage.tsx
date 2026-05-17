@@ -12,7 +12,7 @@ interface CategoryPageProps {
   item: CatalogueItem;
   category: 'industries' | 'products' | 'technologies';
   industryImage?: string;
-  industryVideo?: string;
+  industryVideos?: string[];
 }
 
 const CATEGORY_BG: Record<string, string> = {
@@ -21,7 +21,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category, industryImage, industryVideo }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideos }: CategoryPageProps) {
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -111,7 +111,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
         />
 
         {/* Video Section */}
-        {industryVideo && (
+        {industryVideos && industryVideos.length > 0 && (
           <section
             style={{
               padding: '6rem 2rem',
@@ -120,86 +120,78 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
             }}
           >
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'center' }}>
-                {/* Left: Description */}
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                    <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                    <span
-                      style={{
-                        fontFamily: 'JetBrains Mono, monospace',
-                        fontSize: '0.6rem',
-                        letterSpacing: '0.2em',
-                        color: '#FFF12D',
-                      }}
-                    >
-                      FILTRATION MEDIA IMPORTANCE
-                    </span>
-                  </div>
-                  <h3
+              {/* Label + Heading */}
+              <div style={{ marginBottom: '3rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                  <span
                     style={{
-                      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                      fontWeight: 700,
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      color: 'rgba(255,255,255,0.75)',
-                      marginBottom: '1.5rem',
-                      lineHeight: 1.2,
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.6rem',
+                      letterSpacing: '0.2em',
+                      color: '#FFF12D',
                     }}
                   >
-                    ENGINEERED PROTECTION
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '1rem',
-                      lineHeight: 1.8,
-                      color: 'rgba(255,255,255,0.8)',
-                      fontFamily: 'Outfit, sans-serif',
-                      marginBottom: '1rem',
-                    }}
-                  >
-                    The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, specialized media must handle extreme conditions: constant stop-and-go cycles, urban pollution, soot accumulation, and thermal stress. Our proprietary hybrid media formulation combines synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection.
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.95rem',
-                      lineHeight: 1.8,
-                      color: 'rgba(255,255,255,0.7)',
-                      fontFamily: 'Outfit, sans-serif',
-                    }}
-                  >
-                    Every micron matters. Our media technology ensures {item.name} fleets stay operational 24/7 with extended service intervals, reduced maintenance costs, and guaranteed engine protection against contamination failure.
-                  </p>
+                    FILTRATION IN ACTION
+                  </span>
                 </div>
-
-                {/* Right: Video */}
-                <div
+                <h3
                   style={{
-                    position: 'relative',
-                    width: '100%',
-                    paddingBottom: '56.25%',
-                    height: 0,
-                    overflow: 'hidden',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(255,241,45,0.2)',
+                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                    fontWeight: 700,
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '1rem',
+                    lineHeight: 1.2,
                   }}
                 >
-                  <video
+                  ENGINEERED PROTECTION
+                </h3>
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    lineHeight: 1.8,
+                    color: 'rgba(255,255,255,0.8)',
+                    fontFamily: 'Outfit, sans-serif',
+                    maxWidth: '700px',
+                  }}
+                >
+                  The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, specialized media handles extreme conditions — stop-and-go cycles, urban pollution, soot accumulation, and thermal stress — delivering maximum dirt capacity with zero bypass protection.
+                </p>
+              </div>
+
+              {/* Videos grid: single or side-by-side */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: industryVideos.length > 1 ? 'repeat(2, 1fr)' : '1fr',
+                  gap: '1.5rem',
+                }}
+              >
+                {industryVideos.map((videoSrc, idx) => (
+                  <div
+                    key={idx}
                     style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
                       width: '100%',
-                      height: '100%',
+                      aspectRatio: '16/9',
+                      borderRadius: '12px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255,241,45,0.2)',
+                      background: '#111',
                     }}
-                    controls
-                    autoPlay
-                    muted
-                    loop
                   >
-                    <source src={industryVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                    <video
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                    </video>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

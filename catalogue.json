@@ -4,13 +4,15 @@
       "name": "Agriculture",
       "file": "agriculture.html",
       "title": "MAXIMIZING AVAILABILITY",
-      "subtitle": "DURING CRITICAL HARVEST.",
-      "description": "ELIMFILTERS implements filtration architectures engineered to neutralize organic contaminants and maintain performance under heavy duty cycles. Specialized media for fine dust and crop residue, preventing airflow restriction.",
+      "subtitle": "DURING CRITICAL HARVEST",
+      "description": "Harvest windows don't wait. ELIMFILTERS delivers filtration architectures engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
       "features": [
-        "01. DEBRIS CONTROL",
-        "02. THERMAL STABILITY",
-        "OPTIMIZED FLOW",
-        "TOTAL SEPARATION"
+        "CROP RESIDUE DEBRIS CONTROL",
+        "THERMAL STABILITY UNDER LOAD",
+        "OPTIMIZED AIRFLOW RESTRICTION",
+        "TOTAL HYDRAULIC SEPARATION",
+        "FINE DUST PARTICLE CAPTURE",
+        "EXTENDED FIELD SERVICE INTERVALS"
       ],
       "stats": {
         "percentages": [
@@ -190,18 +192,22 @@
     {
       "name": "Waste Municipal",
       "file": "waste-municipal.html",
-      "title": "MUNICIPAL FLEETS:",
-      "subtitle": "",
-      "description": "Constant stop-and-go cycles and urban routes demand immediate response. ELIMFILTERS designs specific filtration systems for every municipal platform, ensuring maximum uptime and extended maintenance intervals. Retention of soot and asphalt particles in high-pollution urban cycles.",
+      "title": "MUNICIPAL FLEET PROTECTION",
+      "subtitle": "CRITICAL URBAN OPERATIONS",
+      "description": "From garbage collection trucks to fire engines, municipal fleets operate in the most demanding urban conditions. ELIMFILTERS delivers specialized filtration for every critical service vehicle: waste trucks, emergency response units, transit buses, and street maintenance equipment — ensuring zero downtime when cities depend on you.",
       "features": [
-        "100% PURE AIR",
-        "OPERATOR SAFETY",
-        "EXTREME LUBRICATION",
-        "LOADING SYSTEMS"
+        "WASTE COLLECTION VEHICLES",
+        "FIRE AND EMERGENCY RESPONSE",
+        "PUBLIC TRANSIT BUSES",
+        "STREET MAINTENANCE EQUIPMENT",
+        "URBAN AIR QUALITY PROTECTION",
+        "24/7 FLEET AVAILABILITY"
       ],
       "stats": {
         "percentages": [
-          "100%"
+          "99.9%",
+          "100%",
+          "40%"
         ]
       },
       "cta": "FIND MY FILTER"
