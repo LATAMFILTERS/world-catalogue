@@ -156,11 +156,11 @@ export function Footer() {
           </div>
 
           <img
-            src="https://elimfilters.com/wp-content/uploads/2025/08/a2ec2ccf-d6ed-4acf-bcda-337b5669f007_removalai_preview.png"
-            alt="Authorized Seal"
+            src="/assets/latam-filters-logo.png"
+            alt="LATAMFILTERS"
             style={{
               height: '80px',
-              opacity: 0.8,
+              opacity: 0.9,
               margin: '0 auto',
               display: 'block',
             }}
