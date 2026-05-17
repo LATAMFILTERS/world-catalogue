@@ -1,11 +1,8 @@
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
-import { CategoryGrid } from '@/components/CategoryGrid';
-import { TechShowcase } from '@/components/TechCard';
 import { StatCounter } from '@/components/StatCounter';
 import { CTASection } from '@/components/CTASection';
 import { Footer } from '@/components/Footer';
-import { catalogue } from '@/lib/catalogue';
 
 const HOME_STATS = [
   { value: '99.9%', label: 'Filtration Efficiency' },
@@ -20,11 +17,19 @@ const PERF_STATS = [
   { value: '0%', label: 'Downtime Tolerance' },
 ];
 
+const ISO_CERTS = [
+  { label: 'ISO 5011', desc: 'Air Filtration' },
+  { label: 'ISO 16332', desc: 'Fuel Systems' },
+  { label: 'ISO 16889', desc: 'Hydraulic Systems' },
+  { label: 'ISO 19438', desc: 'Oil Systems' },
+];
+
 export default function Home() {
   return (
     <>
       <Navigation />
       <main>
+
         {/* Hero */}
         <Hero
           title="TOTAL ENGINE"
@@ -36,32 +41,13 @@ export default function Home() {
           stats={HOME_STATS}
         />
 
-        {/* Industries Grid */}
-        <CategoryGrid
-          items={catalogue.industries}
-          category="industries"
-          title="12 INDUSTRY VERTICALS"
-          description="Specialized filtration architectures engineered for every sector — from agriculture to offshore oil & gas."
-        />
-
-        {/* Stats Section */}
+        {/* Performance Stats */}
         <StatCounter
           stats={PERF_STATS}
           title="PERFORMANCE BY THE NUMBERS"
         />
 
-        {/* Products Grid */}
-        <CategoryGrid
-          items={catalogue.products}
-          category="products"
-          title="12 PRODUCT SYSTEMS"
-          description="Complete filtration product lines covering air, fuel, hydraulic, cabin, coolant, oil and more."
-        />
-
-        {/* Technology Showcase */}
-        <TechShowcase technologies={catalogue.technologies} />
-
-        {/* Brand Statement */}
+        {/* Philosophy */}
         <section
           style={{
             padding: '8rem 2rem',
@@ -105,41 +91,39 @@ export default function Home() {
                 color: 'rgba(255,255,255,0.4)',
                 lineHeight: 1.7,
                 maxWidth: '560px',
-                margin: '0 auto 3rem',
+                margin: '0 auto 4rem',
               }}
             >
-              Every ELIMFILTERS product is engineered with the assumption that failure is not an option. German engineering discipline meets industrial necessity.
+              Every ELIMFILTERS product is engineered with the assumption that failure is not an option.
+              German engineering discipline meets industrial necessity.
             </p>
+
+            {/* ISO Certifications */}
             <div
               style={{
                 display: 'flex',
-                gap: '2rem',
+                gap: '1.5rem',
                 justifyContent: 'center',
                 flexWrap: 'wrap',
               }}
             >
-              {[
-                { label: 'ISO 5011', desc: 'Air Filtration' },
-                { label: 'ISO 16332', desc: 'Fuel Systems' },
-                { label: 'ISO 16889', desc: 'Hydraulic Systems' },
-                { label: 'ISO 19438', desc: 'Oil Systems' },
-              ].map((cert) => (
+              {ISO_CERTS.map((cert) => (
                 <div
                   key={cert.label}
                   style={{
-                    padding: '1rem 1.5rem',
+                    padding: '1.25rem 2rem',
                     border: '1px solid rgba(255,255,255,0.08)',
                     textAlign: 'center',
-                    minWidth: '120px',
+                    minWidth: '130px',
                   }}
                 >
                   <div
                     style={{
                       fontFamily: 'Montserrat, sans-serif',
                       fontWeight: 700,
-                      fontSize: '0.85rem',
+                      fontSize: '0.9rem',
                       color: '#FFF12D',
-                      marginBottom: '0.25rem',
+                      marginBottom: '0.4rem',
                       letterSpacing: '0.05em',
                     }}
                   >
@@ -167,6 +151,7 @@ export default function Home() {
           description="Cross-reference 500,000+ parts across every major OEM. Find the exact filter for your application in seconds."
           buttonText="FIND MY FILTER"
         />
+
       </main>
       <Footer />
     </>
