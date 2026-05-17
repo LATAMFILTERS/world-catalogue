@@ -1,208 +1,186 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { catalogue, getSlug } from '@/lib/catalogue';
-
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer
       style={{
-        background: '#000',
-        borderTop: '1px solid rgba(255,255,255,0.07)',
-        padding: '4rem 2rem 2rem',
+        background: '#0a0a0a',
+        borderTop: '1px solid rgba(255,255,255,0.02)',
+        padding: '4rem 0 2rem',
       }}
     >
       <style>{`
-        .footer-link {
-          font-family: Inter, sans-serif;
-          font-size: 0.82rem;
-          color: rgba(255,255,255,0.4);
-          text-decoration: none;
-          transition: color 0.2s ease;
-        }
-        .footer-link:hover { color: #FFF12D; }
-        .footer-cta {
-          display: inline-block;
-          background: #FFF12D;
-          color: #000;
-          font-family: Montserrat, sans-serif;
+        .footer-col-title {
+          font-family: 'Barlow Condensed', sans-serif;
           font-weight: 700;
-          font-size: 0.72rem;
-          letter-spacing: 0.1em;
-          padding: 0.75rem 1.5rem;
-          text-decoration: none;
-          transition: all 0.2s ease;
-          margin-bottom: 1rem;
+          font-size: 13px;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin-bottom: 25px;
         }
-        .footer-cta:hover {
-          box-shadow: 0 0 20px rgba(255,241,45,0.4);
-          transform: translateY(-1px);
+        .footer-link {
+          font-size: 14px;
+          margin-bottom: 12px !important;
+          text-decoration: none !important;
+          color: #888 !important;
+          display: block;
+          transition: color 0.3s;
+          font-family: Barlow, sans-serif;
         }
+        .footer-link:hover { color: #FFF12D !important; }
       `}</style>
-      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        {/* Top grid */}
+
+      <div
+        style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 20px',
+        }}
+      >
+        {/* Grid columnas */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '3rem',
-            marginBottom: '4rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '40px',
+            marginBottom: '60px',
           }}
         >
-          {/* Brand */}
+          {/* Company */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <Image
-                src="/assets/logo-elimfilters.png"
-                alt="ELIMFILTERS"
-                width={32}
-                height={32}
-                style={{ objectFit: 'contain' }}
-              />
-              <span
-                style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 900,
-                  fontSize: '1rem',
-                  letterSpacing: '0.12em',
-                  color: '#fff',
-                }}
-              >
-                ELIMFILTERS
-              </span>
-            </div>
-            <p
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.82rem',
-                color: 'rgba(255,255,255,0.35)',
-                lineHeight: 1.7,
-                maxWidth: '240px',
-              }}
-            >
-              Industrial-grade filtration systems engineered for maximum performance across every sector.
-            </p>
-            <div style={{ marginTop: '1.5rem' }}>
-              <span
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.15em',
-                  color: '#FFF12D',
-                  opacity: 0.6,
-                }}
-              >
-                GERMAN ENGINEERING
-              </span>
-            </div>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <h4 style={sectionHeadingStyle}>Industries</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {catalogue.industries.slice(0, 6).map((item) => (
-                <li key={item.name}>
-                  <Link href={`/industries/${getSlug(item.name)}/`} className="footer-link">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h4 style={sectionHeadingStyle}>Products</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {catalogue.products.slice(0, 6).map((item) => (
-                <li key={item.name}>
-                  <Link href={`/products/${getSlug(item.name)}/`} className="footer-link">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Technologies */}
-          <div>
-            <h4 style={sectionHeadingStyle}>Technologies</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              {catalogue.technologies.slice(0, 6).map((item) => (
-                <li key={item.name}>
-                  <Link href={`/technologies/${getSlug(item.name)}/`} className="footer-link">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <div>
-            <h4 style={sectionHeadingStyle}>Part Search</h4>
+            <div className="footer-col-title">Company</div>
             <a
-              href="https://part-search.elimfilters.com"
+              href="https://elimfilters.com/about-elimfilters/"
+              className="footer-link"
+            >
+              About Us
+            </a>
+            <a
+              href="https://elimfilters.com/industries-we-service/"
+              className="footer-link"
+            >
+              Industries
+            </a>
+            <a href="https://elimfilters.com/contact-info/" className="footer-link">
+              Contact
+            </a>
+          </div>
+
+          {/* Systems */}
+          <div>
+            <div className="footer-col-title">Systems</div>
+            <a
+              href="https://part-search.elimfilters.com/"
+              className="footer-link"
+            >
+              Part Search
+            </a>
+            <a
+              href="https://elimfilters.com/technology/"
+              className="footer-link"
+            >
+              Technology
+            </a>
+            <a href="https://elimfilters.com/products/" className="footer-link">
+              Systems
+            </a>
+          </div>
+
+          {/* Support */}
+          <div>
+            <div className="footer-col-title">Support</div>
+            <a
+              href="https://elimfilters.com/contact-info/"
+              className="footer-link"
+            >
+              Technical Support
+            </a>
+            <a href="/distributor-application.html" className="footer-link">
+              Become a Dealer
+            </a>
+            <a href="/warranty.html" className="footer-link">
+              Warranty
+            </a>
+          </div>
+
+          {/* Follow Us */}
+          <div>
+            <div className="footer-col-title">Follow Us</div>
+            <a
+              href="https://www.linkedin.com/company/elimfilters/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-cta"
+              className="footer-link"
             >
-              FIND MY FILTER
+              LinkedIn
             </a>
-            <p
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.75rem',
-                color: 'rgba(255,255,255,0.25)',
-                lineHeight: 1.6,
-              }}
+            <a
+              href="https://www.instagram.com/elimfilters.global"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
             >
-              Cross-reference 500K+ parts across all major OEMs
-            </p>
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@elimfilters9112"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              YouTube
+            </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.5rem' }}>
+        {/* Bottom section */}
+        <div
+          style={{
+            textAlign: 'center',
+            borderTop: '1px solid #1a1a1a',
+            paddingTop: '50px',
+          }}
+        >
           <div
             style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: '1rem',
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontSize: '14px',
+              color: '#666',
+              letterSpacing: '3px',
+              textTransform: 'uppercase',
+              marginBottom: '25px',
             }}
           >
-            <p style={monoSmallStyle}>
-              © {year} ELIMFILTERS. ALL RIGHTS RESERVED.
-            </p>
-            <p style={monoSmallStyle}>
-              INDUSTRIAL FILTRATION · WORLD CATALOGUE
-            </p>
+            <strong style={{ color: '#fff' }}>FRISCO, TX</strong> | UNITED STATES
           </div>
+
+          <img
+            src="https://elimfilters.com/wp-content/uploads/2025/08/a2ec2ccf-d6ed-4acf-bcda-337b5669f007_removalai_preview.png"
+            alt="Authorized Seal"
+            style={{
+              height: '80px',
+              opacity: 0.8,
+              margin: '0 auto',
+              display: 'block',
+            }}
+          />
+
+          <p
+            style={{
+              fontSize: '10px',
+              color: '#444',
+              textTransform: 'uppercase',
+              letterSpacing: '4px',
+              marginTop: '40px',
+              fontFamily: "'Barlow Condensed', sans-serif",
+            }}
+          >
+            © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in
+            Filtration
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-const sectionHeadingStyle: React.CSSProperties = {
-  fontFamily: 'Montserrat, sans-serif',
-  fontWeight: 700,
-  fontSize: '0.72rem',
-  letterSpacing: '0.15em',
-  color: 'rgba(255,255,255,0.4)',
-  textTransform: 'uppercase',
-  marginBottom: '1.25rem',
-};
-
-const monoSmallStyle: React.CSSProperties = {
-  fontFamily: 'JetBrains Mono, monospace',
-  fontSize: '0.62rem',
-  letterSpacing: '0.1em',
-  color: 'rgba(255,255,255,0.2)',
-};
