@@ -9,6 +9,7 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 const industryImages: Record<string, string> = {
   'Agriculture': '/images/agriculture-2_converted.avif',
   'Automotive': '/images/autos-02.avif',
+  'Bus Coach': '/images/bus-hero.avif',
   'Waste Municipal': '/images/wasted.avif',
   // Add more images as provided
 };

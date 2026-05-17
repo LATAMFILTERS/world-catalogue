@@ -16,6 +16,10 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
     image: '/images/autos-02.avif',
     video: '/images/Autos-Vin4.mp4',
   },
+  'Bus Coach': {
+    image: '/images/bus-hero.avif',
+    video: '/images/buses-2.mp4',
+  },
   'Waste Municipal': {
     image: '/images/wasted.avif',
     video: '/images/wasted-2.mp4',
