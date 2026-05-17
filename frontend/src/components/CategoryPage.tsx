@@ -42,6 +42,62 @@ export function CategoryPage({ item, category }: CategoryPageProps) {
     <>
       <Navigation />
       <main>
+        {/* Breadcrumb */}
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 20,
+            background: 'rgba(0,0,0,0.6)',
+            borderBottom: '1px solid rgba(255,255,255,0.05)',
+            padding: '0.75rem 2rem',
+          }}
+        >
+          <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <a
+              href="/"
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.1em',
+                color: 'rgba(255,255,255,0.4)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+            >
+              HOME
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+            <a
+              href={`/#${category}`}
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.1em',
+                color: 'rgba(255,255,255,0.4)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+            >
+              {categoryLabel.toUpperCase()}
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+            <span
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.1em',
+                color: '#FFF12D',
+              }}
+            >
+              {item.title}
+            </span>
+          </div>
+        </div>
+
         {/* Hero */}
         <Hero
           title={item.title}
