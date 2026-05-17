@@ -1,8 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/Navigation';
-import { catalogue, getSlug, CATEGORY_ICONS } from '@/lib/catalogue';
+import { catalogue, getSlug } from '@/lib/catalogue';
+
+// Map industry names to image paths
+const industryImages: Record<string, string> = {
+  'Waste Municipal': '/images/wasted.avif',
+  // Add more images as provided
+};
 
 export default function IndustriesPage() {
   return (
@@ -71,7 +78,7 @@ export default function IndustriesPage() {
           >
             {catalogue.industries.map((industry) => {
               const slug = getSlug(industry.name);
-              const icon = CATEGORY_ICONS[industry.name]?.[0] || '🏭';
+              const hasImage = industryImages[industry.name];
               return (
                 <Link
                   key={industry.name}
@@ -83,86 +90,87 @@ export default function IndustriesPage() {
                 >
                   <div
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
-                      border: '1px solid rgba(255,241,45,0.2)',
+                      position: 'relative',
                       borderRadius: '12px',
-                      padding: '2.5rem 2rem',
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '1rem',
+                      overflow: 'hidden',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
-                      textAlign: 'center',
+                      height: '300px',
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
+                      border: '1px solid rgba(255,241,45,0.2)',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = 'rgba(255,241,45,0.5)';
-                      e.currentTarget.style.background =
-                        'linear-gradient(135deg, rgba(255,241,45,0.15) 0%, rgba(255,241,45,0.05) 100%)';
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,241,45,0.15)';
+                      e.currentTarget.style.transform = 'scale(1.02)';
+                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,241,45,0.2)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.borderColor = 'rgba(255,241,45,0.2)';
-                      e.currentTarget.style.background =
-                        'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)';
-                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.transform = 'scale(1)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: '3rem',
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      {icon}
-                    </div>
-                    <h3
-                      style={{
-                        fontSize: '1.3rem',
-                        fontWeight: 700,
-                        fontFamily: 'Space Grotesk, sans-serif',
-                        color: 'rgba(255,255,255,0.75)',
-                        margin: '0.5rem 0 0',
-                      }}
-                    >
-                      {industry.name.toUpperCase()}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: '0.9rem',
-                        color: 'rgba(255,255,255,0.7)',
-                        fontFamily: 'Outfit, sans-serif',
-                        lineHeight: 1.5,
-                        margin: '1rem 0 0',
-                        minHeight: '60px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      {industry.description}
-                    </p>
-                    <div
-                      style={{
-                        marginTop: 'auto',
-                        paddingTop: '1rem',
-                        borderTop: '1px solid rgba(255,241,45,0.1)',
-                      }}
-                    >
-                      <span
+                    {hasImage ? (
+                      <Image
+                        src={hasImage}
+                        alt={industry.name}
+                        fill
                         style={{
-                          display: 'inline-block',
-                          color: '#FFF12D',
-                          fontSize: '0.85rem',
-                          fontWeight: 600,
-                          fontFamily: 'Outfit, sans-serif',
+                          objectFit: 'cover',
+                          zIndex: 0,
+                        }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          width: '100%',
+                          height: '100%',
+                          background: 'linear-gradient(135deg, rgba(255,241,45,0.1) 0%, rgba(0,0,0,0.5) 100%)',
+                          zIndex: 0,
+                        }}
+                      />
+                    )}
+
+                    {/* Gradient overlay */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background:
+                          'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%)',
+                        zIndex: 1,
+                      }}
+                    />
+
+                    {/* Content */}
+                    <div
+                      style={{
+                        position: 'relative',
+                        zIndex: 2,
+                        width: '100%',
+                        padding: '2rem',
+                        textAlign: 'center',
+                      }}
+                    >
+                      <h3
+                        style={{
+                          fontSize: '1.5rem',
+                          fontWeight: 700,
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          color: 'rgba(255,255,255,0.75)',
+                          margin: '0',
+                          textTransform: 'uppercase',
                           letterSpacing: '0.05em',
                         }}
                       >
-                        EXPLORE →
-                      </span>
+                        {industry.name}
+                      </h3>
                     </div>
                   </div>
                 </Link>

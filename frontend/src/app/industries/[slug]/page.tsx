@@ -6,6 +6,15 @@ interface Props {
   params: { slug: string };
 }
 
+// Map industry names to image and video paths
+const industryMedia: Record<string, { image?: string; video?: string }> = {
+  'Waste Municipal': {
+    image: '/images/wasted.avif',
+    video: '/images/wasted-2.mp4',
+  },
+  // Add more industries as images/videos are provided
+};
+
 export function generateStaticParams() {
   return catalogue.industries.map((item) => ({
     slug: getSlug(item.name),
@@ -24,5 +33,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function IndustryPage({ params }: Props) {
   const item = getItemBySlug('industries', params.slug);
   if (!item) return null;
-  return <CategoryPage item={item} category="industries" />;
+
+  const media = industryMedia[item.name] || {};
+
+  return (
+    <CategoryPage
+      item={item}
+      category="industries"
+      industryImage={media.image}
+      industryVideo={media.video}
+    />
+  );
 }

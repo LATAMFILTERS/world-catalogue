@@ -11,6 +11,8 @@ import { Footer } from './Footer';
 interface CategoryPageProps {
   item: CatalogueItem;
   category: 'industries' | 'products' | 'technologies';
+  industryImage?: string;
+  industryVideo?: string;
 }
 
 const CATEGORY_BG: Record<string, string> = {
@@ -19,7 +21,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideo }: CategoryPageProps) {
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -104,9 +106,66 @@ export function CategoryPage({ item, category }: CategoryPageProps) {
           subtitle={item.subtitle || undefined}
           tagline={item.description}
           ctaText={item.cta}
-          backgroundImage={bgImage}
+          backgroundImage={industryImage || bgImage}
           category={`// ${categoryLabel}_ENGINEERING`}
         />
+
+        {/* Video Section */}
+        {industryVideo && (
+          <section
+            style={{
+              padding: '6rem 2rem',
+              background: '#000',
+              borderTop: '1px solid rgba(255,255,255,0.06)',
+            }}
+          >
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <div style={{ marginBottom: '3rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                  <span
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.6rem',
+                      letterSpacing: '0.2em',
+                      color: '#FFF12D',
+                    }}
+                  >
+                    VISUAL OVERVIEW
+                  </span>
+                </div>
+              </div>
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(255,241,45,0.2)',
+                }}
+              >
+                <video
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <source src={industryVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Key Advantages */}
         <section
