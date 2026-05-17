@@ -1,97 +1,96 @@
-﻿# 🔧 ELIMFILTERS Backend API
+# ELIMFILTERS World Catalogue
 
-Sistema inteligente de generación automática de SKUs para filtros industriales, automotrices y marinos.
+Professional filtration solutions documentation and product catalogue for industrial, commercial, and municipal applications.
 
-## 🎯 Características Principales
+## Overview
 
-### ✅ Búsqueda Inteligente
-1. Google Sheets (MASTER_UNIFIED_V5 + MASTER_KITS_V1)
-2. MongoDB
-3. Cross-Reference automático (Donaldson HD / FRAM LD)
+ELIMFILTERS is a comprehensive filtration engineering platform serving heavy-duty, mission-critical operations across:
+- **12 Industry Verticals** (Agriculture, Automotive, Mining, Marine, Oil & Gas, Power Generation, etc.)
+- **12 Product Systems** (Air, Fuel, Hydraulic, Cabin, Coolant, Lube filters and more)
+- **12 Core Technologies** (SYNTRAX™, AQUAGUARD™, NANOFORCE™, SYNTEPORE™, etc.)
 
-### 🧠 Detección Automática de DUTY
-- Heavy Duty (Caterpillar, John Deere, Mack, etc.)
-- Light Duty (Ford, Toyota, BMW, etc.)
-- Marine (Sierra, Mercury, Yamaha, etc.)
+## Project Structure
 
-### 🎭 Sistema TRILOGY
-Cada filtro físico = 3 variantes de medio filtrante:
-- **STANDARD** - Celulosa estándar
-- **PERFORMANCE** - Celulosa mejorada
-- **ELITE** - Sintético premium
-
-### 🔢 Generación SKU
 ```
-Formato: [PREFIJO][4_DÍGITOS]
-Ejemplo: EL81808 (sin guión)
-
-Prefijos:
-EL8=Oil, EA1=Air, EF9=Fuel, EH6=Hydraulic, EC1=Cabin
-EM9=Marine, ET9=Turbine, ES9=Separator, EW7=Coolant
-ED4=Dryer, EK5=Kits HD, EK3=Kits LD
+world-catalogue/
+├── www/                          # Static website files
+│   └── index.html               # Landing page
+├── industries/                  # 12 industry vertical pages
+│   ├── agriculture.html
+│   ├── automotive.html
+│   ├── mining.html
+│   └── ... (12 total)
+├── products/                    # 12 product system pages
+│   ├── airfilter.html
+│   ├── fuel.html
+│   ├── hydraulic.html
+│   └── ... (12 total)
+├── technologies/                # 12 technology pages
+│   ├── syntrax.html
+│   ├── aquaguard.html
+│   ├── nanoforce.html
+│   └── ... (12 total)
+├── server.js                    # Express.js backend
+├── routes/                      # API routes (chat, knowledge, webhooks)
+├── services/                    # Business logic
+├── template-unified.html        # Master template for all pages
+├── catalogue.json              # Content database (extracted from HTML)
+├── generate_pages.py           # Script to regenerate pages
+├── README.md                   # This file
+└── CLAUDE.md                   # Claude Code instructions
 ```
 
-## 🚀 Instalación
+## Technology Stack
+
+- **Frontend**: Vanilla HTML/CSS (no frameworks, light-weight)
+- **Backend**: Node.js + Express.js
+- **Database**: PostgreSQL (Railway deployment)
+- **Styling**: Custom CSS with responsive grid layouts
+- **Fonts**: Montserrat (impact/headings), Inter (body), JetBrains Mono (code/tech)
+- **Color Scheme**: Dark theme (#000) with yellow accent (#FFF12D)
+
+## Page Architecture
+
+All pages follow a **unified template** with consistent structure:
+
+1. **Hero Section** — Title, subtitle, tagline, CTA
+2. **Key Advantages** — Feature list (4-6 items)
+3. **Engineering Excellence** — Overview paragraph + specs card
+4. **Performance Metrics** — 3 stat boxes with key numbers
+5. **Recommended Applications** — Use cases + technologies
+6. **Call-to-Action** — "Find My Filter" button linking to SKU search
+7. **Footer** — Copyright and branding
+
+## Local Development
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Python 3.8+ (for page generation)
+
+### Installation
+
 ```bash
 npm install
 npm start
 ```
 
-## 📡 API Usage
+Server runs on `http://localhost:3000`
 
-### Buscar código individual
-```bash
-GET /api/scrape/1R1808?manufacturer=Caterpillar
-```
+## Deployment
 
-### Procesar múltiples códigos
-```bash
-POST /api/scrape/multiple
-{
-  "codes": ["1R1808", "AT365870"],
-  "manufacturer": "Caterpillar"
-}
-```
+Configured for Railway with:
+- `railway.toml` — Build and start commands
+- `nixpacks.toml` — Environment setup
+- `.env` — Database and API credentials
 
-## 🧪 Testing
-```bash
-# Test sistema completo
-node test-sku-system.js
+## Git Workflow
 
-# Test GROQ
-node test-groq.js
-```
+All development on feature branches: `claude/[feature-description]-[ID]`
 
-## 📁 Estructura
-```
-elimfilters-backend/
-├── services/
-│   ├── cross-reference/
-│   │   ├── donaldson.cross.js
-│   │   └── fram.cross.js
-│   ├── sku.generator.js
-│   ├── duty.detector.js
-│   ├── filter.orchestrator.js (CEREBRO)
-│   ├── googlesheets.service.js
-│   └── mongodb.service.js
-├── config/
-│   ├── elimfilters.prefixes.json
-│   └── manufacturers.duty.json
-└── docs/
-    └── SKU_SYSTEM.md
-```
-
-## 🔒 Status
-
-- ✅ Sistema SKU completo
-- ✅ Cross-reference (Donaldson/FRAM)
-- ✅ TRILOGY generation
-- ✅ DUTY detection
-- ✅ GROQ AI integration
-- 🚧 Google Sheets integration (pendiente)
-- 🚧 MongoDB integration (pendiente)
+See **CLAUDE.md** for detailed workflow.
 
 ---
-**Versión:** 11.0.6  
-**Fecha:** 2026-01-06  
-**ELIMFILTERS Engineering Team**
+
+**Last Updated**: May 2026
+**Pages**: 43 (12 industries + 12 products + 12 technologies + 7 main pages)
