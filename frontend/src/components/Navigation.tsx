@@ -54,10 +54,10 @@ export function Navigation() {
 
         {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
-          <NavLink href="/#industries">Industries</NavLink>
-          <NavLink href="/#products">Products</NavLink>
-          <NavLink href="/#technologies">Technologies</NavLink>
-          <NavLink href="/contacto">Contacto</NavLink>
+          <NavLink href="/industries">Industries</NavLink>
+          <NavLink href="/systems">Systems</NavLink>
+          <NavLink href="/technologies">Technologies</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
           <a
             href="https://part-search.elimfilters.com"
             target="_blank"
@@ -136,17 +136,17 @@ export function Navigation() {
             gap: '1.25rem',
           }}
         >
-          <Link href="/#industries" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
+          <Link href="/industries" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
             Industries
           </Link>
-          <Link href="/#products" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
-            Products
+          <Link href="/systems" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
+            Systems
           </Link>
-          <Link href="/#technologies" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
+          <Link href="/technologies" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
             Technologies
           </Link>
-          <Link href="/contacto" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
-            Contacto
+          <Link href="/contact" style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
+            Contact
           </Link>
           <a
             href="https://part-search.elimfilters.com"
