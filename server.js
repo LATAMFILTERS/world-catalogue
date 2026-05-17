@@ -8,6 +8,10 @@ process.on('uncaughtException', (err) => console.error('[uncaughtException]', er
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
+
+// Healthcheck FIRST — must respond before anything else can fail
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }));
+
 app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false }));
@@ -1127,7 +1131,7 @@ try {
 
 console.log('[server] About to listen on port 8080...');
 const PORT = 8080; // Railway target port
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
   console.log(`✅ Chatbot service running`);
   console.log(`✅ WhatsApp webhook listening on /webhook/whatsapp`);
