@@ -4,10 +4,7 @@ import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
-const PROBLEM_IMAGES = [
-  'https://elimfilters.com/wp-content/uploads/2026/01/Gemini_Generated_Image_ovvxrdovvxrdovvx.png',
-  'https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_knn8znknn8znknn8.png',
-];
+const PROBLEM_IMAGE = '/images/mecanico-fn.avif';
 
 const FAILURE_MODES = [
   {
@@ -47,16 +44,8 @@ const CTA_SLIDES = [
 const SLIDE_DURATION = 5000;
 
 export default function Home() {
-  const [activeImg, setActiveImg] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      setActiveImg((p) => (p + 1) % PROBLEM_IMAGES.length);
-    }, 4000);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     setProgress(0);
@@ -380,7 +369,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right: rotating image + 80% badge */}
+              {/* Right: image + 80% badge */}
               <div style={{ position: 'relative' }}>
                 <div
                   style={{
@@ -391,23 +380,11 @@ export default function Home() {
                     background: '#000',
                     border: '1px solid #222',
                     borderRadius: '8px',
+                    backgroundImage: `url(${PROBLEM_IMAGE})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
-                >
-                  {PROBLEM_IMAGES.map((src, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        backgroundImage: `url(${src})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        opacity: i === activeImg ? 1 : 0,
-                        transition: 'opacity 1s ease',
-                      }}
-                    />
-                  ))}
-                </div>
+                />
                 <div
                   className="problem-badge"
                   style={{
