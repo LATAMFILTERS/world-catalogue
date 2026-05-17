@@ -375,14 +375,15 @@ export default function Home() {
                   style={{
                     position: 'relative',
                     height: '100%',
-                    minHeight: '400px',
+                    minHeight: '500px',
                     overflow: 'hidden',
                     background: '#000',
                     border: '1px solid #222',
                     borderRadius: '8px',
                     backgroundImage: `url(${PROBLEM_IMAGE})`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                     backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
                   }}
                 />
                 <div
