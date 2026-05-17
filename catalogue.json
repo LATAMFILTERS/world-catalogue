@@ -217,14 +217,15 @@
     {
       "name": "Airfilter",
       "file": "airfilter.html",
-      "title": "AIRFILTER",
-      "subtitle": "SILICA DEFENSE",
-      "description": "// AIR FILTRATION SYSTEMS 99.9% silica retention technology delivering absolute zero bypass for heavy-duty intake system protection.",
+      "title": "AIR INTAKE DOMINATION",
+      "subtitle": "MACROCORE™ DEFENSE SYSTEM",
+      "description": "ELIMFILTERS AIR INTAKE FILTRATION CRUSHES DUST. 99.9% silica retention. ZERO bypass. MACROCORE™ technology engineering delivers absolute capture in the most hostile dust environments on the planet. Agriculture. Mining. Construction. Oil & Gas. No exceptions. No compromises.",
       "features": [
-        "99.9% RETENTION",
-        "ZERO BYPASS",
-        "5011 RATED",
-        "ABSOLUTE CAPTURE"
+        "MACROCORE™ TECHNOLOGY",
+        "99.9% SILICA CAPTURE",
+        "ABSOLUTE ZERO BYPASS",
+        "5011 RATED DEFENSE",
+        "HOSTILE ENVIRONMENT RATED"
       ],
       "stats": {
         "percentages": [
@@ -233,7 +234,7 @@
           "99.9%"
         ]
       },
-      "cta": "IDENTIFY SKU"
+      "cta": "EXPLORE MACROCORE"
     },
     {
       "name": "Aquaguard Series",

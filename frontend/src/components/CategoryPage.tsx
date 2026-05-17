@@ -25,6 +25,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
+  // Determine button href based on CTA text
+  let buttonHref = 'https://part-search.elimfilters.com';
+  if (item.cta?.includes('MACROCORE')) {
+    buttonHref = '/technologies/macrocore';
+  } else if (item.cta?.includes('TECHNOLOGY')) {
+    buttonHref = '/technologies';
+  }
+
   // Build stats from item.stats
   const stats: { value: string; label: string }[] = [];
   if (item.stats.percentages) {
@@ -551,6 +559,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
           title="Ready to Upgrade?"
           description={`Find the exact ${categoryLabel.toLowerCase()} filter for your application. Cross-reference 500,000+ parts.`}
           buttonText={item.cta}
+          buttonHref={buttonHref}
         />
       </main>
       <Footer />
