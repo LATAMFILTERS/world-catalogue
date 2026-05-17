@@ -427,6 +427,66 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
               alignItems: 'start',
             }}
           >
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <span
+                  style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.6rem',
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                  }}
+                >
+                  OPERATIONAL ADVANTAGES
+                </span>
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 900,
+                  fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
+                  color: '#fff',
+                  letterSpacing: '-0.01em',
+                  lineHeight: 1.1,
+                  marginBottom: '2rem',
+                }}
+              >
+                WHY ELIMFILTERS
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {[
+                  'Extended service intervals reduce downtime',
+                  'Superior contamination retention extends asset life',
+                  'German engineering precision and reliability',
+                  'Cost-effective protection across all duty cycles',
+                  'Proven performance in extreme environments',
+                  'Industry-leading filtration efficiency',
+                ].map((benefit, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span
+                      style={{
+                        color: '#FFF12D',
+                        fontWeight: 'bold',
+                        marginTop: '0.2rem',
+                      }}
+                    >
+                      ✓
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '0.9rem',
+                        color: 'rgba(255,255,255,0.8)',
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {benefit}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Technologies card */}
             <div
