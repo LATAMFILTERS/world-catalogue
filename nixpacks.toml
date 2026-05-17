@@ -1,11 +1,11 @@
 [providers]
 only = ["node"]
 
-[phases.install]
-cmds = ["npm install", "cd frontend && npm install"]
+[phases.setup]
+nixPkgs = ["nodejs_20"]
 
-[phases.build]
-cmds = ["cd frontend && npm run build"]
+[phases.install]
+cmds = ["PUPPETEER_SKIP_DOWNLOAD=true npm install"]
 
 [start]
 cmd = "node server.js"
