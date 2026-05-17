@@ -11,6 +11,8 @@ const industryImages: Record<string, string> = {
   'Automotive': '/images/autos-02.avif',
   'Bus Coach': '/images/bus-hero.avif',
   'Construction': '/images/construccion.avif',
+  'Manufacturing': '/images/manufacture.avif',
+  'Marine': '/images/marine-2_converted.avif',
   'Waste Municipal': '/images/wasted.avif',
   // Add more images as provided
 };
