@@ -120,48 +120,86 @@ export function CategoryPage({ item, category, industryImage, industryVideo }: C
             }}
           >
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <div style={{ marginBottom: '3rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                  <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                  <span
+              <div style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'start' }}>
+                {/* Left: Description */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                    <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                    <span
+                      style={{
+                        fontFamily: 'JetBrains Mono, monospace',
+                        fontSize: '0.6rem',
+                        letterSpacing: '0.2em',
+                        color: '#FFF12D',
+                      }}
+                    >
+                      FILTRATION MEDIA IMPORTANCE
+                    </span>
+                  </div>
+                  <h3
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.6rem',
-                      letterSpacing: '0.2em',
-                      color: '#FFF12D',
+                      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                      fontWeight: 700,
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      color: 'rgba(255,255,255,0.75)',
+                      marginBottom: '1.5rem',
+                      lineHeight: 1.2,
                     }}
                   >
-                    VISUAL OVERVIEW
-                  </span>
+                    ENGINEERED PROTECTION
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: '1rem',
+                      lineHeight: 1.8,
+                      color: 'rgba(255,255,255,0.8)',
+                      fontFamily: 'Outfit, sans-serif',
+                      marginBottom: '1rem',
+                    }}
+                  >
+                    The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, specialized media must handle extreme conditions: constant stop-and-go cycles, urban pollution, soot accumulation, and thermal stress. Our proprietary hybrid media formulation combines synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection.
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '0.95rem',
+                      lineHeight: 1.8,
+                      color: 'rgba(255,255,255,0.7)',
+                      fontFamily: 'Outfit, sans-serif',
+                    }}
+                  >
+                    Every micron matters. Our media technology ensures {item.name} fleets stay operational 24/7 with extended service intervals, reduced maintenance costs, and guaranteed engine protection against contamination failure.
+                  </p>
                 </div>
-              </div>
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                  overflow: 'hidden',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                }}
-              >
-                <video
+
+                {/* Right: Video */}
+                <div
                   style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
+                    position: 'relative',
                     width: '100%',
-                    height: '100%',
+                    paddingBottom: '56.25%',
+                    height: 0,
+                    overflow: 'hidden',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255,241,45,0.2)',
                   }}
-                  controls
-                  autoPlay
-                  muted
-                  loop
                 >
-                  <source src={industryVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  <video
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                    }}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                  >
+                    <source src={industryVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
           </section>
