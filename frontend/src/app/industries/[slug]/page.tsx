@@ -32,6 +32,26 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
     image: '/images/marine-2_converted.avif',
     video: '/images/Marino-1.mp4',
   },
+  'Mining': {
+    image: '/images/mineria.avif',
+    video: '/images/Mina-Video-1.mp4',
+  },
+  'Oil Gas': {
+    image: '/images/oil&gas.avif',
+    video: '/images/Petro&Gas-1.mp4',
+  },
+  'Power Generation': {
+    image: '/images/power-generator.avif',
+    video: '/images/powergenerator-Video-1.mp4',
+  },
+  'Railway': {
+    image: '/images/trenes.avif',
+    video: '/images/train-2.mp4',
+  },
+  'Trucks Fleets': {
+    image: '/images/trucks-1.avif',
+    video: '/images/Trucks&Feel-1.mp4',
+  },
   'Waste Municipal': {
     image: '/images/wasted.avif',
     video: '/images/wasted-2.mp4',
