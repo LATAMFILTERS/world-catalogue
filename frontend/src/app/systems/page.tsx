@@ -1,8 +1,39 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/Navigation';
 import { catalogue, getSlug } from '@/lib/catalogue';
+
+const displayNames: Record<string, string> = {
+  'Airfilter': 'Air Filter',
+  'Aquaguard Series': 'Aquaguard Filter',
+  'Cabin': 'Cabin Filter',
+  'Coolant': 'Coolant Filter',
+  'Dryer': 'Air Dryer',
+  'Fuel': 'Fuel Filter',
+  'Housing': 'Housing Filter',
+  'Hydraulic': 'Hydraulic Filter',
+  'Kits': 'Filter Kits',
+  'Marine': 'Marine Filter',
+  'Oil': 'Oil Filter',
+  'Water': 'Fuel Separator',
+};
+
+const productImages: Record<string, string> = {
+  'Airfilter': '/images/air-filter1.avif',
+  'Aquaguard Series': '/images/turbine-1.avif',
+  'Cabin': '/images/filtro-de-cabina.avif',
+  'Coolant': '/images/coolant-mesa.avif',
+  'Dryer': '/images/airdryer.avif',
+  'Fuel': '/images/fuel-filter.avif',
+  'Housing': '/images/mecanica-air.avif',
+  'Hydraulic': '/images/hidraulic.avif',
+  'Kits': '/images/kit-mesa.avif',
+  'Marine': '/images/marino-taller.avif',
+  'Oil': '/images/oil-instalado.avif',
+  'Water': '/images/fuelseparator.avif',
+};
 
 export default function SystemsPage() {
   return (
@@ -17,7 +48,7 @@ export default function SystemsPage() {
           paddingBottom: '4rem',
           backgroundImage: 'url(/images/system-hero.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: '50% 30%',
           backgroundAttachment: 'fixed',
           position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
@@ -102,11 +133,10 @@ export default function SystemsPage() {
                       background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
                       border: '1px solid rgba(255,241,45,0.2)',
                       borderRadius: '12px',
-                      padding: '2.5rem 2rem',
+                      overflow: 'hidden',
                       height: '100%',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '1rem',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                     }}
@@ -125,87 +155,57 @@ export default function SystemsPage() {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div
-                      style={{
-                        paddingBottom: '1rem',
-                        borderBottom: '1px solid rgba(255,241,45,0.1)',
-                      }}
-                    >
-                      <h3
-                        style={{
-                          fontSize: '1.4rem',
-                          fontWeight: 700,
-                          fontFamily: 'Space Grotesk, sans-serif',
-                          color: 'rgba(255,255,255,0.75)',
-                          margin: '0 0 0.5rem',
-                        }}
-                      >
-                        {product.name}
-                      </h3>
-                      <p
-                        style={{
-                          fontSize: '0.9rem',
-                          color: '#FFF12D',
-                          fontFamily: 'Outfit, sans-serif',
-                          fontWeight: 600,
-                          margin: '0',
-                        }}
-                      >
-                        {product.subtitle}
-                      </p>
+                    {/* Product image */}
+                    <div style={{ position: 'relative', width: '100%', height: '200px', flexShrink: 0 }}>
+                      {productImages[product.name] ? (
+                        <Image
+                          src={productImages[product.name]}
+                          alt={displayNames[product.name] || product.name}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <div style={{ width: '100%', height: '100%', background: 'rgba(255,241,45,0.05)' }} />
+                      )}
                     </div>
 
-                    <p
-                      style={{
-                        fontSize: '0.95rem',
-                        color: 'rgba(255,255,255,0.7)',
-                        fontFamily: 'Outfit, sans-serif',
-                        lineHeight: 1.6,
-                        margin: '0',
-                        minHeight: '60px',
-                        display: 'flex',
-                        alignItems: 'center',
-                      }}
-                    >
-                      {product.description}
-                    </p>
-
-                    <div style={{ marginTop: 'auto' }}>
-                      {product.features.length > 0 && (
-                        <div
+                    {/* Title + CTA */}
+                    <div style={{ padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', flexGrow: 1 }}>
+                      <h3
+                        style={{
+                          fontSize: '1.25rem',
+                          fontWeight: 700,
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          color: 'rgba(255,255,255,0.9)',
+                          margin: '0 0 0.35rem',
+                        }}
+                      >
+                        {displayNames[product.name] || product.name}
+                      </h3>
+                      {product.subtitle && (
+                        <p
                           style={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: '0.5rem',
-                            marginBottom: '1rem',
+                            fontSize: '0.8rem',
+                            color: '#FFF12D',
+                            fontFamily: 'Outfit, sans-serif',
+                            fontWeight: 600,
+                            margin: '0',
                           }}
                         >
-                          {product.features.slice(0, 3).map((feature, idx) => (
-                            <span
-                              key={idx}
-                              style={{
-                                fontSize: '0.75rem',
-                                background: 'rgba(255,241,45,0.1)',
-                                color: '#FFF12D',
-                                padding: '0.4rem 0.8rem',
-                                borderRadius: '4px',
-                                fontFamily: 'Outfit, sans-serif',
-                                fontWeight: 600,
-                              }}
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                        </div>
+                          {product.subtitle}
+                        </p>
                       )}
                       <span
                         style={{
                           display: 'inline-block',
                           color: '#FFF12D',
-                          fontSize: '0.85rem',
+                          fontSize: '0.8rem',
                           fontWeight: 600,
                           fontFamily: 'Outfit, sans-serif',
                           letterSpacing: '0.05em',
+                          marginTop: 'auto',
+                          paddingTop: '0.5rem',
                         }}
                       >
                         LEARN MORE →
