@@ -26,83 +26,83 @@ export function AquaguardPage() {
       </div>
       <main style={{ background: '#000', color: '#fff' }}>
         {/* Hero Section */}
-        <section style={{ marginTop: 0, position: 'relative', width: '100%' }}>
-          <img
-            src="/images/turbinas-hero.avif"
-            alt=""
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
+        <section
+          style={{
+            marginTop: 0,
+            minHeight: '70vh',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundImage: 'url(/images/turbinas-hero.avif)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'relative',
+          }}
+        >
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%)',
+              background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
+              zIndex: 1,
             }}
           />
           <div
             style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
+              position: 'relative',
+              zIndex: 2,
+              maxWidth: '1200px',
+              margin: '0 auto',
+              padding: '0 2rem',
+              width: '100%',
             }}
           >
-            <div
+            <div style={{ marginBottom: '2rem' }}>
+              <span
+                style={{
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.2em',
+                  color: '#FFF12D',
+                  fontFamily: 'JetBrains Mono, monospace',
+                }}
+              >
+                // FUEL FILTRATION & WATER SEPARATION
+              </span>
+            </div>
+            <h1
               style={{
-                maxWidth: '1200px',
-                margin: '0 auto',
-                padding: '0 2rem',
-                width: '100%',
+                fontSize: 'clamp(2.5rem, 7vw, 5rem)',
+                fontWeight: 900,
+                fontFamily: 'Montserrat, sans-serif',
+                marginBottom: '1rem',
+                lineHeight: 1.1,
               }}
             >
-              <div style={{ marginBottom: '2rem' }}>
-                <span
-                  style={{
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
-                    color: '#FFF12D',
-                    fontFamily: 'JetBrains Mono, monospace',
-                  }}
-                >
-                  // FUEL FILTRATION & WATER SEPARATION
-                </span>
-              </div>
-              <h1
-                style={{
-                  fontSize: 'clamp(2.5rem, 7vw, 5rem)',
-                  fontWeight: 900,
-                  fontFamily: 'Montserrat, sans-serif',
-                  marginBottom: '1rem',
-                  lineHeight: 1.1,
-                }}
-              >
-                AQUAGUARD/SERIES
-              </h1>
-              <h2
-                style={{
-                  fontSize: 'clamp(1.5rem, 4vw, 3rem)',
-                  fontWeight: 700,
-                  fontFamily: 'Montserrat, sans-serif',
-                  color: '#FFF12D',
-                  marginBottom: '2rem',
-                }}
-              >
-                TURBINE TECHNOLOGY
-              </h2>
-              <p
-                style={{
-                  fontSize: '1.1rem',
-                  maxWidth: '600px',
-                  lineHeight: 1.65,
-                  color: 'rgba(255,255,255,0.65)',
-                  fontFamily: 'Inter, sans-serif',
-                  fontStyle: 'italic',
-                }}
-              >
-                900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system protection. Three-stage centrifuge separation eliminates water, sediment and contaminants down to 2 micron before they reach your injectors.
-              </p>
-            </div>
+              AQUAGUARD/SERIES
+            </h1>
+            <h2
+              style={{
+                fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+                fontWeight: 700,
+                fontFamily: 'Montserrat, sans-serif',
+                color: '#FFF12D',
+                marginBottom: '2rem',
+              }}
+            >
+              TURBINE TECHNOLOGY
+            </h2>
+            <p
+              style={{
+                fontSize: '1.1rem',
+                maxWidth: '600px',
+                lineHeight: 1.65,
+                color: 'rgba(255,255,255,0.65)',
+                fontFamily: 'Inter, sans-serif',
+                fontStyle: 'italic',
+              }}
+            >
+              900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system protection. Three-stage centrifuge separation eliminates water, sediment and contaminants down to 2 micron before they reach your injectors.
+            </p>
           </div>
         </section>
 
