@@ -48,7 +48,7 @@ export default function SystemsPage() {
           paddingBottom: '4rem',
           backgroundImage: 'url(/images/system-hero.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: '50% 10%',
+          backgroundPosition: 'center top',
           backgroundAttachment: 'fixed',
           position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
