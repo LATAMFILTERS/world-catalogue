@@ -184,7 +184,8 @@ export function AirfilterPage() {
                   border: '1px solid rgba(255,241,45,0.2)',
                   width: '250px',
                   height: '250px',
-                  alignSelf: 'start',
+                  marginTop: '10%',
+                  marginLeft: '35%',
                 }}
               >
                 <img
