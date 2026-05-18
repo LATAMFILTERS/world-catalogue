@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, animate } from 'motion/react';
+import { motion, useInView, useScroll, useTransform, useSpring, animate } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
-const PROBLEM_IMAGE = '/images/mecanico-fn.avif';
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FAILURE_MODES = [
   {
@@ -26,9 +26,9 @@ const FAILURE_MODES = [
 ];
 
 const STATS = [
-  { value: 99.9, suffix: '%', label: 'Media Efficiency' },
+  { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency' },
   { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
-  { value: 20, suffix: 'k+', label: 'OEM Cross-Refs' },
+  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs' },
   { value: null, display: 'GLOBAL', label: 'Texas, USA' },
 ];
 
@@ -51,34 +51,31 @@ const CTA_SLIDES = [
 
 const SLIDE_DURATION = 5000;
 
-// ─── Animation variants ───────────────────────────────────────────────────────
+// ─── SplitText ────────────────────────────────────────────────────────────────
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0 },
-};
+function SplitText({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
+  return (
+    <>
+      {text.split('').map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 48, rotateX: -30 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{
+            duration: 0.55,
+            delay: startDelay + i * 0.028,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          style={{ display: 'inline-block', whiteSpace: char === ' ' ? 'pre' : undefined }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </>
+  );
+}
 
-const fadeLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const fadeRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-
-const staggerFast = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
-// ─── Animated counter ─────────────────────────────────────────────────────────
+// ─── Counter ─────────────────────────────────────────────────────────────────
 
 function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -86,23 +83,54 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
 
   useEffect(() => {
     if (!inView || !ref.current) return;
-    const controls = animate(0, to, {
-      duration: 1.8,
+    const ctrl = animate(0, to, {
+      duration: 2,
       ease: [0.16, 1, 0.3, 1],
       onUpdate(v) {
-        if (ref.current) {
-          ref.current.textContent =
-            prefix + (Number.isInteger(to) ? Math.round(v).toString() : v.toFixed(1)) + suffix;
-        }
+        if (ref.current)
+          ref.current.textContent = prefix + (Number.isInteger(to) ? Math.round(v).toString() : v.toFixed(1)) + suffix;
       },
     });
-    return () => controls.stop();
+    return () => ctrl.stop();
   }, [inView, to, prefix, suffix]);
 
+  return <span ref={ref}>{prefix}0{suffix}</span>;
+}
+
+// ─── Spotlight card ───────────────────────────────────────────────────────────
+
+function SpotlightCard({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setSpot({ x, y, opacity: 1 });
+  };
+
   return (
-    <span ref={ref} style={{ display: 'inline' }}>
-      {prefix}0{suffix}
-    </span>
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={() => setSpot(s => ({ ...s, opacity: 0 }))}
+      style={{ position: 'relative', overflow: 'hidden', ...style }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: `radial-gradient(300px circle at ${spot.x}% ${spot.y}%, rgba(255,241,45,0.07), transparent 70%)`,
+          opacity: spot.opacity,
+          transition: 'opacity 0.3s ease',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      />
+      <div style={{ position: 'relative', zIndex: 2 }}>{children}</div>
+    </div>
   );
 }
 
@@ -111,6 +139,12 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  // Parallax
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollY } = useScroll();
+  const rawBgY = useTransform(scrollY, [0, 700], [0, 180]);
+  const bgY = useSpring(rawBgY, { stiffness: 80, damping: 20 });
 
   useEffect(() => {
     setProgress(0);
@@ -123,7 +157,7 @@ export default function Home() {
       if (elapsed < SLIDE_DURATION) {
         raf.id = requestAnimationFrame(tick);
       } else {
-        setActiveSlide((p) => (p + 1) % CTA_SLIDES.length);
+        setActiveSlide(p => (p + 1) % CTA_SLIDES.length);
       }
     };
     raf.id = requestAnimationFrame(tick);
@@ -143,25 +177,34 @@ export default function Home() {
             .why-grid { grid-template-columns: 1fr !important; }
             .tech-grid { grid-template-columns: 1fr !important; }
           }
-          @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr 1fr !important; }
-          }
         `}</style>
 
         {/* ── HERO ── */}
         <section
+          ref={heroRef}
           style={{
             position: 'relative',
             minHeight: '90vh',
             display: 'flex',
             alignItems: 'flex-end',
             padding: '0 5% 60px',
-            backgroundImage:
-              'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 100%), url(/images/hero-bg.jpg)',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
+            overflow: 'hidden',
           }}
         >
+          {/* Parallax background */}
+          <motion.div
+            style={{
+              position: 'absolute',
+              inset: '-25%',
+              backgroundImage:
+                'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.9) 100%), url(/images/hero-bg.jpg)',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              y: bgY,
+              zIndex: 0,
+            }}
+          />
+
           <div
             style={{
               maxWidth: '1400px',
@@ -171,128 +214,123 @@ export default function Home() {
               zIndex: 10,
             }}
           >
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              animate="visible"
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.7rem',
+                letterSpacing: '0.25em',
+                color: '#FFF12D',
+                textTransform: 'uppercase',
+                marginBottom: '1.25rem',
+              }}
             >
-              <motion.p
-                variants={fadeUp}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.7rem',
-                  letterSpacing: '0.25em',
-                  color: '#FFF12D',
-                  opacity: 0.9,
-                  textTransform: 'uppercase',
-                  marginBottom: '1rem',
-                }}
-              >
-                ELIMFILTERS | TOTAL PROTECTION SYSTEMS
-              </motion.p>
+              ELIMFILTERS | TOTAL PROTECTION SYSTEMS
+            </motion.p>
 
-              <motion.h1
-                variants={fadeUp}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 900,
-                  fontSize: 'clamp(3rem, 9vw, 7rem)',
-                  lineHeight: 1.0,
-                  letterSpacing: '0.01em',
-                  color: '#FFF12D',
-                  textTransform: 'uppercase',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                ENGINE FILTRATION
-              </motion.h1>
+            {/* Split text H1 */}
+            <h1
+              style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontWeight: 900,
+                fontSize: 'clamp(3rem, 9vw, 7rem)',
+                lineHeight: 1.0,
+                letterSpacing: '0.01em',
+                color: '#FFF12D',
+                textTransform: 'uppercase',
+                marginBottom: '0.5rem',
+                perspective: '600px',
+              }}
+            >
+              <SplitText text="ENGINE FILTRATION" startDelay={0.35} />
+            </h1>
 
-              <motion.h2
-                variants={fadeUp}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontWeight: 400,
-                  fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
-                  lineHeight: 1.1,
-                  color: 'rgba(255,255,255,0.75)',
-                  textTransform: 'uppercase',
-                  marginBottom: '2.5rem',
-                }}
+            <h2
+              style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontWeight: 400,
+                fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
+                lineHeight: 1.1,
+                color: 'rgba(255,255,255,0.75)',
+                textTransform: 'uppercase',
+                marginBottom: '2.5rem',
+                overflow: 'hidden',
+              }}
+            >
+              <motion.span
+                initial={{ y: '110%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'block' }}
               >
                 HEAVY-DUTY AND LIGHT-DUTY
-              </motion.h2>
+              </motion.span>
+            </h2>
 
-              <motion.div
-                variants={fadeUp}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="hero-bottom"
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-bottom"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                gap: '2rem',
+              }}
+            >
+              <p
                 style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-end',
-                  gap: '2rem',
+                  maxWidth: '560px',
+                  color: 'rgba(255,255,255,0.75)',
+                  fontStyle: 'italic',
+                  borderLeft: '3px solid #FFF12D',
+                  paddingLeft: '1.5rem',
+                  fontSize: '1.1rem',
+                  lineHeight: 1.65,
+                  fontFamily: 'Outfit, sans-serif',
                 }}
               >
-                <p
-                  style={{
-                    maxWidth: '560px',
-                    color: 'rgba(255,255,255,0.75)',
-                    fontStyle: 'italic',
-                    borderLeft: '4px solid #FFF12D',
-                    paddingLeft: '1.5rem',
-                    fontSize: '1.1rem',
-                    lineHeight: 1.65,
-                    fontFamily: 'Outfit, sans-serif',
-                  }}
-                >
-                  Engineering filtration designed for those who cannot afford a stalled engine or a
-                  fleet out of action.
-                </p>
-                <motion.a
-                  href="https://part-search.elimfilters.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.5)' }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    display: 'inline-block',
-                    background: '#FFF12D',
-                    color: '#000',
-                    fontFamily: 'Outfit, sans-serif',
-                    fontWeight: 700,
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.15em',
-                    padding: '1rem 2.5rem',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  FIND MY FILTER
-                </motion.a>
-              </motion.div>
+                Engineering filtration designed for those who cannot afford a stalled engine or a
+                fleet out of action.
+              </p>
+              <motion.a
+                href="https://part-search.elimfilters.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(255,241,45,0.55)' }}
+                whileTap={{ scale: 0.96 }}
+                style={{
+                  display: 'inline-block',
+                  background: '#FFF12D',
+                  color: '#000',
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.75rem',
+                  letterSpacing: '0.15em',
+                  padding: '1rem 2.5rem',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                FIND MY FILTER
+              </motion.a>
             </motion.div>
           </div>
         </section>
 
         {/* ── STATS ── */}
-        <section
-          style={{
-            background: '#000',
-            padding: '5rem 8%',
-            borderBottom: '1px solid #111',
-          }}
-        >
+        <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid #111' }}>
           <motion.div
             className="stats-grid"
-            variants={staggerFast}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
             style={{
               maxWidth: '1400px',
               margin: '0 auto',
@@ -301,10 +339,10 @@ export default function Home() {
               gap: '2.5rem',
             }}
           >
-            {STATS.map((s) => (
+            {STATS.map((s, i) => (
               <motion.div
-                key={s.label}
-                variants={fadeUp}
+                key={i}
+                variants={{ hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{ textAlign: 'center' }}
               >
@@ -329,8 +367,8 @@ export default function Home() {
                     fontFamily: 'JetBrains Mono, monospace',
                     textTransform: 'uppercase',
                     letterSpacing: '0.15em',
-                    color: '#888',
-                    fontSize: '0.7rem',
+                    color: '#666',
+                    fontSize: '0.68rem',
                   }}
                 >
                   {s.label}
@@ -341,36 +379,31 @@ export default function Home() {
         </section>
 
         {/* ── PROBLEM SECTION ── */}
-        <section
-          style={{
-            padding: '5rem 8%',
-            borderBottom: '1px solid rgba(255,255,255,0.03)',
-          }}
-        >
+        <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div
-              variants={stagger}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
             >
               <motion.p
-                variants={fadeUp}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.5 }}
                 style={{
                   fontFamily: 'JetBrains Mono, monospace',
                   fontSize: '0.65rem',
                   letterSpacing: '0.25em',
                   color: '#FFF12D',
                   textTransform: 'uppercase',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.75rem',
                 }}
               >
                 // OPERATIONAL RISK DIAGNOSIS
               </motion.p>
               <motion.h2
-                variants={fadeUp}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 style={{
                   fontFamily: 'Space Grotesk, sans-serif',
                   fontWeight: 700,
@@ -378,8 +411,8 @@ export default function Home() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.03em',
                   lineHeight: 1.1,
-                  color: 'rgba(255,255,255,0.75)',
-                  marginBottom: '3rem',
+                  color: 'rgba(255,255,255,0.85)',
+                  marginBottom: '3.5rem',
                 }}
               >
                 WHAT YOU CAN&apos;T SEE,
@@ -388,8 +421,7 @@ export default function Home() {
               </motion.h2>
             </motion.div>
 
-            <div
-              className="problem-grid"
+            <SpotlightCard
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
@@ -397,26 +429,25 @@ export default function Home() {
                 background: '#050505',
                 padding: '3.5rem',
                 border: '1px solid #1a1a1a',
-                borderRadius: '12px',
-                position: 'relative',
+                borderRadius: '16px',
               }}
             >
-              {/* Left: failure modes */}
+              {/* Left */}
               <motion.div
-                variants={stagger}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-80px' }}
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
               >
                 <motion.p
-                  variants={fadeLeft}
+                  variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{
-                    color: 'rgba(255,255,255,0.75)',
+                    color: 'rgba(255,255,255,0.7)',
                     fontSize: '1.05rem',
-                    marginBottom: '2rem',
-                    lineHeight: 1.7,
+                    marginBottom: '2.5rem',
+                    lineHeight: 1.75,
                     fontFamily: 'Outfit, sans-serif',
                   }}
                 >
@@ -425,18 +456,17 @@ export default function Home() {
                   sandpaper inside critical components.
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                  {FAILURE_MODES.map((item) => (
+                  {FAILURE_MODES.map(item => (
                     <motion.div
                       key={item.num}
-                      variants={fadeLeft}
-                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+                      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                       style={{ display: 'flex', gap: '1.25rem' }}
                     >
                       <div
                         style={{
                           flexShrink: 0,
-                          width: '48px',
-                          height: '48px',
+                          width: 48, height: 48,
                           borderRadius: '50%',
                           border: '1px solid rgba(180,0,0,0.35)',
                           background: 'rgba(100,0,0,0.12)',
@@ -445,39 +475,15 @@ export default function Home() {
                           justifyContent: 'center',
                         }}
                       >
-                        <span
-                          style={{
-                            color: '#f87171',
-                            fontWeight: 700,
-                            fontSize: '0.8rem',
-                            fontFamily: 'Outfit, sans-serif',
-                          }}
-                        >
+                        <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', fontFamily: 'Outfit, sans-serif' }}>
                           {item.num}
                         </span>
                       </div>
                       <div>
-                        <h3
-                          style={{
-                            color: 'rgba(255,255,255,0.75)',
-                            fontWeight: 700,
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.1em',
-                            fontSize: '0.82rem',
-                            marginBottom: '0.3rem',
-                            fontFamily: 'Outfit, sans-serif',
-                          }}
-                        >
+                        <h3 style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Outfit, sans-serif' }}>
                           {item.title}
                         </h3>
-                        <p
-                          style={{
-                            color: 'rgba(255,255,255,0.75)',
-                            fontSize: '0.875rem',
-                            lineHeight: 1.6,
-                            fontFamily: 'Outfit, sans-serif',
-                          }}
-                        >
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Outfit, sans-serif' }}>
                           {item.desc}
                         </p>
                       </div>
@@ -486,7 +492,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Right: image */}
+              {/* Right */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -496,12 +502,9 @@ export default function Home() {
               >
                 <div
                   style={{
-                    position: 'relative',
                     height: '100%',
-                    minHeight: '500px',
-                    overflow: 'hidden',
-                    background: '#000',
-                    backgroundImage: `url(${PROBLEM_IMAGE})`,
+                    minHeight: '480px',
+                    backgroundImage: 'url(/images/mecanico-fn.avif)',
                     backgroundSize: 'contain',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -509,58 +512,38 @@ export default function Home() {
                 />
                 <motion.div
                   className="problem-badge"
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.75 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     position: 'absolute',
-                    bottom: '-20px',
-                    right: '-20px',
+                    bottom: -20, right: -20,
                     background: '#FFF12D',
                     color: '#000',
                     padding: '1.5rem',
                     borderRadius: '8px',
                     maxWidth: '180px',
-                    boxShadow: '0 8px 32px rgba(255,241,45,0.3)',
+                    boxShadow: '0 8px 40px rgba(255,241,45,0.35)',
                   }}
                 >
-                  <p
-                    style={{
-                      fontSize: '1.75rem',
-                      fontWeight: 900,
-                      lineHeight: 1,
-                      fontFamily: 'Outfit, sans-serif',
-                    }}
-                  >
-                    80%
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.6rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      marginTop: '0.5rem',
-                      lineHeight: 1.4,
-                      fontFamily: 'Outfit, sans-serif',
-                    }}
-                  >
+                  <p style={{ fontSize: '1.75rem', fontWeight: 900, lineHeight: 1, fontFamily: 'Outfit, sans-serif' }}>80%</p>
+                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Outfit, sans-serif' }}>
                     Of premature failures are caused by contamination.
                   </p>
                 </motion.div>
               </motion.div>
-            </div>
+            </SpotlightCard>
           </div>
         </section>
 
         {/* ── WHY ELIMFILTERS ── */}
-        <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              variants={fadeUp}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
@@ -569,63 +552,42 @@ export default function Home() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.03em',
                 lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
-                marginBottom: '3rem',
+                color: 'rgba(255,255,255,0.85)',
+                marginBottom: '3.5rem',
               }}
             >
-              WHY CHOOSE{' '}
-              <span style={{ color: '#FFF12D' }}>ELIMFILTERS</span>
+              WHY CHOOSE <span style={{ color: '#FFF12D' }}>ELIMFILTERS</span>
             </motion.h2>
 
             <div
               className="why-grid"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '4rem',
-                alignItems: 'center',
-              }}
+              style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}
             >
               <motion.div
-                variants={stagger}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-60px' }}
+                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
               >
-                <motion.p
-                  variants={fadeLeft}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '1.1rem',
-                    lineHeight: 1.8,
-                    color: 'rgba(255,255,255,0.75)',
-                    marginBottom: '2rem',
-                    textAlign: 'justify',
-                  }}
-                >
-                  ELIMFILTERS is more than a filter manufacturer. We are a company specialized in{' '}
-                  <strong style={{ color: '#FFF12D' }}>Asset Protection Technology</strong>, designing
-                  solutions that preserve the value and operability of your equipment in the most
-                  demanding environments.
-                </motion.p>
-
-                <motion.p
-                  variants={fadeLeft}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '1rem',
-                    lineHeight: 1.8,
-                    color: 'rgba(255,255,255,0.75)',
-                    marginBottom: '2rem',
-                    textAlign: 'justify',
-                  }}
-                >
-                  Every product we develop responds to one reality: the equipment that stops your
-                  operation costs hundreds of thousands to repair. A filter is the guardian of that
-                  investment.
-                </motion.p>
+                {[
+                  {
+                    text: 'ELIMFILTERS is more than a filter manufacturer. We are a company specialized in ',
+                    highlight: 'Asset Protection Technology',
+                    after: ', designing solutions that preserve the value and operability of your equipment in the most demanding environments.',
+                  },
+                  {
+                    text: 'Every product we develop responds to one reality: the equipment that stops your operation costs hundreds of thousands to repair. A filter is the guardian of that investment.',
+                  },
+                ].map((p, i) => (
+                  <motion.p
+                    key={i}
+                    variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }}
+                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}
+                  >
+                    {p.text}{p.highlight && <strong style={{ color: '#FFF12D' }}>{p.highlight}</strong>}{p.after}
+                  </motion.p>
+                ))}
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
@@ -636,253 +598,134 @@ export default function Home() {
                   ].map((item, i) => (
                     <motion.div
                       key={item}
-                      variants={fadeLeft}
+                      variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0 } }}
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                       style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}
                     >
-                      <span
-                        style={{
-                          color: '#FFF12D',
-                          fontWeight: 700,
-                          fontSize: '1.2rem',
-                          marginTop: '-2px',
-                        }}
-                      >
-                        ✓
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: 'Outfit, sans-serif',
-                          color: 'rgba(255,255,255,0.75)',
-                          fontSize: '0.95rem',
-                        }}
-                      >
-                        {item}
-                      </span>
+                      <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>✓</span>
+                      <span style={{ fontFamily: 'Outfit, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
 
               <motion.div
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                variants={fadeRight}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div
+                <SpotlightCard
                   style={{
                     background: '#050505',
                     padding: '2.5rem',
                     border: '1px solid #1a1a1a',
-                    borderRadius: '8px',
+                    borderRadius: '12px',
                   }}
                 >
-                  <p
-                    style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.65rem',
-                      letterSpacing: '0.25em',
-                      color: '#FFF12D',
-                      textTransform: 'uppercase',
-                      marginBottom: '1.5rem',
-                    }}
-                  >
+                  <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                     // OUR DIFFERENCE
                   </p>
-                  <h3
-                    style={{
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      fontWeight: 700,
-                      fontSize: '1.3rem',
-                      color: 'rgba(255,255,255,0.75)',
-                      marginBottom: '1.5rem',
-                      lineHeight: 1.3,
-                    }}
-                  >
+                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
                     We don&apos;t sell filters. We protect assets.
                   </h3>
-                  <p
-                    style={{
-                      fontFamily: 'Outfit, sans-serif',
-                      fontSize: '0.95rem',
-                      lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.75)',
-                      marginBottom: '2rem',
-                      textAlign: 'justify',
-                    }}
-                  >
-                    While others compete on price, we compete on reliability. Every specification
-                    of our products is designed to:
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
+                    While others compete on price, we compete on reliability. Every specification of our products is designed to:
                   </p>
-                  <ul
-                    style={{
-                      listStyle: 'none',
-                      padding: 0,
-                      margin: 0,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '1rem',
-                    }}
-                  >
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[
                       'Maximize the lifespan of your equipment',
                       'Minimize total cost of operation',
                       'Guarantee zero downtime from filtration',
                       'Meet environmental standards',
-                    ].map((item) => (
-                      <li
-                        key={item}
-                        style={{
-                          fontFamily: 'Outfit, sans-serif',
-                          fontSize: '0.9rem',
-                          color: 'rgba(255,255,255,0.75)',
-                          paddingLeft: '1.5rem',
-                          position: 'relative',
-                        }}
-                      >
-                        <span
-                          style={{
-                            position: 'absolute',
-                            left: 0,
-                            color: '#FFF12D',
-                            fontWeight: 700,
-                          }}
-                        >
-                          ◆
-                        </span>
+                    ].map(item => (
+                      <li key={item} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>◆</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </SpotlightCard>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ── TECHNOLOGY ADVANTAGE ── */}
-        <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        {/* ── TECHNOLOGY ── */}
+        <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div
-              variants={stagger}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
             >
               <motion.p
-                variants={fadeUp}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.25em',
-                  color: '#FFF12D',
-                  textTransform: 'uppercase',
-                  marginBottom: '1rem',
-                }}
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.5 }}
+                style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem' }}
               >
                 // PROVEN TECHNOLOGY
               </motion.p>
               <motion.h2
-                variants={fadeUp}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontWeight: 700,
-                  fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.03em',
-                  lineHeight: 1.1,
-                  color: 'rgba(255,255,255,0.75)',
-                  marginBottom: '3rem',
-                }}
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}
               >
-                Asset Protection{' '}
-                <span style={{ color: '#FFF12D' }}>Technology</span>
+                Asset Protection <span style={{ color: '#FFF12D' }}>Technology</span>
               </motion.h2>
 
-              <motion.div
+              <div
                 className="tech-grid"
-                variants={stagger}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '2rem',
-                }}
+                style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}
               >
                 {[
                   {
                     title: 'AI-Formulated Hybrid Media',
-                    desc: 'Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated. Captures microscopic contaminants while maintaining optimal flow efficiency.',
+                    desc: 'Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated.',
                   },
                   {
                     title: 'Hydrophobic Separation Systems',
-                    desc: 'Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation. Extends equipment lifespan and reduces maintenance costs while ensuring reliable operation.',
+                    desc: 'Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation while ensuring reliable long-term operation.',
                   },
                   {
                     title: 'Anti-Bypass Structures',
-                    desc: '100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Ensures absolute protection of critical equipment from particulate and water contamination.',
+                    desc: '100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Absolute protection of critical equipment.',
                   },
                 ].map((tech, i) => (
                   <motion.div
                     key={tech.title}
-                    variants={fadeUp}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-                    whileHover={{
-                      borderColor: 'rgba(255,241,45,0.4)',
-                      background: '#0a0a0a',
-                      y: -4,
-                    }}
-                    style={{
-                      background: '#050505',
-                      padding: '2rem',
-                      border: '1px solid #1a1a1a',
-                      borderRadius: '8px',
-                      transition: 'border-color 0.3s, background 0.3s',
-                    }}
+                    variants={{ hidden: { opacity: 0, y: 36 }, visible: { opacity: 1, y: 0 } }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
                   >
-                    <h3
+                    <SpotlightCard
                       style={{
-                        fontFamily: 'Space Grotesk, sans-serif',
-                        fontWeight: 700,
-                        fontSize: '1.05rem',
-                        color: '#FFF12D',
-                        marginBottom: '1rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
+                        background: '#050505',
+                        padding: '2rem',
+                        border: '1px solid #1a1a1a',
+                        borderRadius: '12px',
+                        height: '100%',
                       }}
                     >
-                      {tech.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.9rem',
-                        lineHeight: 1.7,
-                        color: 'rgba(255,255,255,0.75)',
-                        textAlign: 'justify',
-                      }}
-                    >
-                      {tech.desc}
-                    </p>
+                      <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
+                        <div style={{ width: 32, height: 2, background: '#FFF12D', marginBottom: '1.5rem' }} />
+                        <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#FFF12D', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          {tech.title}
+                        </h3>
+                        <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)' }}>
+                          {tech.desc}
+                        </p>
+                      </motion.div>
+                    </SpotlightCard>
                   </motion.div>
                 ))}
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* ── CTA SLIDES ── */}
-        <div
-          style={{
-            position: 'relative',
-            background: '#000',
-            borderTop: '1px solid #111',
-            overflow: 'hidden',
-          }}
-        >
+        <div style={{ position: 'relative', background: '#000', borderTop: '1px solid #111', overflow: 'hidden' }}>
           {CTA_SLIDES.map((slide, i) => (
             <div
               key={i}
@@ -898,52 +741,20 @@ export default function Home() {
               }}
             >
               <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-                <p
-                  style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.25em',
-                    color: '#FFF12D',
-                    textTransform: 'uppercase',
-                    marginBottom: '1.25rem',
-                  }}
-                >
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                   {slide.tag}
                 </p>
-                <h2
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontWeight: 700,
-                    fontSize: 'clamp(2.25rem, 4.5vw, 4rem)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.03em',
-                    lineHeight: 1.1,
-                    color: 'rgba(255,255,255,0.75)',
-                    marginBottom: '1.5rem',
-                  }}
-                >
-                  {slide.title}
-                  <br />
+                <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
+                  {slide.title}<br />
                   <span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
                 </h2>
                 <motion.a
                   href={slide.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.5)' }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    display: 'inline-block',
-                    background: '#FFF12D',
-                    color: '#000',
-                    fontFamily: 'Outfit, sans-serif',
-                    fontWeight: 700,
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.15em',
-                    padding: '1rem 2.5rem',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
-                  }}
+                  whileHover={{ scale: 1.04, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
+                  whileTap={{ scale: 0.96 }}
+                  style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}
                 >
                   {slide.buttonText}
                 </motion.a>
@@ -951,45 +762,17 @@ export default function Home() {
             </div>
           ))}
 
-          {/* dots */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '0.625rem',
-              padding: '1rem 0 2.5rem',
-              position: 'relative',
-              zIndex: 10,
-            }}
-          >
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.625rem', padding: '1rem 0 2.5rem', position: 'relative', zIndex: 10 }}>
             {CTA_SLIDES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveSlide(i)}
-                style={{
-                  width: '28px',
-                  height: '3px',
-                  background: i === activeSlide ? '#FFF12D' : '#333',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: 0,
-                  transition: 'background 0.3s ease',
-                }}
+                style={{ width: '28px', height: '3px', background: i === activeSlide ? '#FFF12D' : '#333', border: 'none', cursor: 'pointer', padding: 0, transition: 'background 0.3s ease' }}
               />
             ))}
           </div>
 
-          {/* progress bar */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              height: '2px',
-              background: '#FFF12D',
-              width: `${progress}%`,
-            }}
-          />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
       </main>
       <Footer />
