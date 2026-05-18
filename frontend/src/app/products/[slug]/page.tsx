@@ -5,6 +5,7 @@ import { AquaguardPage } from '@/components/AquaguardPage';
 import { CabinPage } from '@/components/CabinPage';
 import { CoolantPage } from '@/components/CoolantPage';
 import { DryerPage } from '@/components/DryerPage';
+import { FuelPage } from '@/components/FuelPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -44,6 +45,7 @@ export default function ProductPage({ params }: Props) {
   if (item.name === 'Cabin') return <CabinPage />;
   if (item.name === 'Coolant') return <CoolantPage />;
   if (item.name === 'Dryer') return <DryerPage />;
+  if (item.name === 'Fuel') return <FuelPage />;
 
   const media = productMedia[item.name] || {};
 
