@@ -34,7 +34,7 @@ export function KitsPage() {
             alignItems: 'center',
             backgroundImage: 'url(/images/npr-01_converted.avif)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: '50% 35%',
             position: 'relative',
           }}
         >
@@ -42,7 +42,7 @@ export function KitsPage() {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
+              background: 'linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 100%)',
               zIndex: 1,
             }}
           />
