@@ -1,5 +1,14 @@
 'use client';
 
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
+
+const colVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
+
 export function Footer() {
   return (
     <footer
@@ -9,28 +18,6 @@ export function Footer() {
         padding: '4rem 0 2rem',
       }}
     >
-      <style>{`
-        .footer-col-title {
-          font-family: 'Barlow Condensed', sans-serif;
-          font-weight: 700;
-          font-size: 13px;
-          color: #fff;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          margin-bottom: 25px;
-        }
-        .footer-link {
-          font-size: 14px;
-          margin-bottom: 12px !important;
-          text-decoration: none !important;
-          color: #888 !important;
-          display: block;
-          transition: color 0.3s;
-          font-family: Barlow, sans-serif;
-        }
-        .footer-link:hover { color: #FFF12D !important; }
-      `}</style>
-
       <div
         style={{
           maxWidth: '1400px',
@@ -38,8 +25,9 @@ export function Footer() {
           padding: '0 20px',
         }}
       >
-        {/* Grid columnas */}
-        <div
+        {/* Grid columns */}
+        <StaggerContainer
+          staggerDelay={0.1}
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
@@ -48,134 +36,158 @@ export function Footer() {
           }}
         >
           {/* Company */}
-          <div>
-            <div className="footer-col-title">Company</div>
-            <a href="/about" className="footer-link">
-              About Us
-            </a>
-            <a href="/industries" className="footer-link">
-              Industries
-            </a>
-            <a href="/contact" className="footer-link">
-              Contact
-            </a>
-          </div>
+          <motion.div variants={colVariants}>
+            <div style={colTitleStyle}>Company</div>
+            <FooterLink href="/about">About Us</FooterLink>
+            <FooterLink href="/industries">Industries</FooterLink>
+            <FooterLink href="/contact">Contact</FooterLink>
+          </motion.div>
 
           {/* Systems */}
-          <div>
-            <div className="footer-col-title">Systems</div>
-            <a
-              href="https://part-search.elimfilters.com/"
-              className="footer-link"
-            >
-              Part Search
-            </a>
-            <a href="/technologies" className="footer-link">
-              Technologies
-            </a>
-            <a href="/systems" className="footer-link">
-              Systems
-            </a>
-          </div>
+          <motion.div variants={colVariants}>
+            <div style={colTitleStyle}>Systems</div>
+            <FooterLinkExternal href="https://part-search.elimfilters.com/">Part Search</FooterLinkExternal>
+            <FooterLink href="/technologies">Technologies</FooterLink>
+            <FooterLink href="/systems">Systems</FooterLink>
+          </motion.div>
 
           {/* Support */}
-          <div>
-            <div className="footer-col-title">Support</div>
-            <a href="/contact" className="footer-link">
-              Technical Support
-            </a>
-            <a href="/distributor-application" className="footer-link">
-              Become a Dealer
-            </a>
-            <a href="/warranty" className="footer-link">
-              Warranty
-            </a>
-          </div>
+          <motion.div variants={colVariants}>
+            <div style={colTitleStyle}>Support</div>
+            <FooterLink href="/contact">Technical Support</FooterLink>
+            <FooterLink href="/distributor-application">Become a Dealer</FooterLink>
+            <FooterLink href="/warranty">Warranty</FooterLink>
+          </motion.div>
 
           {/* Follow Us */}
-          <div>
-            <div className="footer-col-title">Follow Us</div>
-            <a
-              href="https://www.linkedin.com/company/elimfilters/?viewAsMember=false"
-              target="_blank"
-              rel="external noopener noreferrer"
-              className="footer-link"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://www.instagram.com/elimfilters.global/?hl=en"
-              target="_blank"
-              rel="external noopener noreferrer"
-              className="footer-link"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.youtube.com/@elimfilters9112"
-              target="_blank"
-              rel="external noopener noreferrer"
-              className="footer-link"
-            >
-              YouTube
-            </a>
-          </div>
-        </div>
+          <motion.div variants={colVariants}>
+            <div style={colTitleStyle}>Follow Us</div>
+            <FooterLinkExternal href="https://www.linkedin.com/company/elimfilters/?viewAsMember=false">LinkedIn</FooterLinkExternal>
+            <FooterLinkExternal href="https://www.instagram.com/elimfilters.global/?hl=en">Instagram</FooterLinkExternal>
+            <FooterLinkExternal href="https://www.youtube.com/@elimfilters9112">YouTube</FooterLinkExternal>
+          </motion.div>
+        </StaggerContainer>
 
         {/* Bottom section */}
-        <div
-          style={{
-            borderTop: '1px solid #1a1a1a',
-            paddingTop: '50px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          {/* Left: Large E image */}
-          <div style={{ textAlign: 'left', flex: 1 }}>
-            <img
-              src="/images/e.png"
-              alt="ELIMFILTERS"
-              style={{
-                height: '120px',
-                opacity: 0.8,
-              }}
-            />
-          </div>
-
-          {/* Center: FRISCO TEXAS */}
-          <div style={{ textAlign: 'center', flex: 1 }}>
-            <div
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontSize: '18px',
-                color: '#666',
-                letterSpacing: '3px',
-                textTransform: 'uppercase',
-              }}
+        <AnimateIn direction="up" delay={0.1}>
+          <div
+            style={{
+              borderTop: '1px solid #1a1a1a',
+              paddingTop: '50px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            {/* Left: Large E image */}
+            <motion.div
+              whileHover={{ opacity: 1, scale: 1.04 }}
+              transition={{ duration: 0.3 }}
+              style={{ textAlign: 'left', flex: 1, opacity: 0.8 }}
             >
-              <strong style={{ color: '#fff' }}>FRISCO TEXAS</strong>
+              <img
+                src="/images/e.png"
+                alt="ELIMFILTERS"
+                style={{ height: '120px' }}
+              />
+            </motion.div>
+
+            {/* Center: FRISCO TEXAS */}
+            <div style={{ textAlign: 'center', flex: 1 }}>
+              <div
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontSize: '18px',
+                  color: '#666',
+                  letterSpacing: '3px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                <strong style={{ color: '#fff' }}>FRISCO TEXAS</strong>
+              </div>
+            </div>
+
+            {/* Right: Copyright */}
+            <div style={{ textAlign: 'right', flex: 1 }}>
+              <p
+                style={{
+                  fontSize: '10px',
+                  color: '#444',
+                  textTransform: 'uppercase',
+                  letterSpacing: '4px',
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                }}
+              >
+                © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration
+              </p>
             </div>
           </div>
-
-          {/* Right: Copyright */}
-          <div style={{ textAlign: 'right', flex: 1 }}>
-            <p
-              style={{
-                fontSize: '10px',
-                color: '#444',
-                textTransform: 'uppercase',
-                letterSpacing: '4px',
-                fontFamily: "'Barlow Condensed', sans-serif",
-              }}
-            >
-              © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in
-              Filtration
-            </p>
-          </div>
-        </div>
+        </AnimateIn>
       </div>
     </footer>
   );
 }
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <motion.div
+      whileHover={{ x: 4 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      style={{ marginBottom: '12px' }}
+    >
+      <Link
+        href={href}
+        style={{
+          fontSize: '14px',
+          textDecoration: 'none',
+          color: '#888',
+          display: 'block',
+          fontFamily: 'Barlow, sans-serif',
+          transition: 'color 0.25s ease',
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+      >
+        {children}
+      </Link>
+    </motion.div>
+  );
+}
+
+function FooterLinkExternal({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <motion.div
+      whileHover={{ x: 4 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      style={{ marginBottom: '12px' }}
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          fontSize: '14px',
+          textDecoration: 'none',
+          color: '#888',
+          display: 'block',
+          fontFamily: 'Barlow, sans-serif',
+          transition: 'color 0.25s ease',
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+      >
+        {children}
+      </a>
+    </motion.div>
+  );
+}
+
+const colTitleStyle: React.CSSProperties = {
+  fontFamily: "'Barlow Condensed', sans-serif",
+  fontWeight: 700,
+  fontSize: '13px',
+  color: '#fff',
+  textTransform: 'uppercase',
+  letterSpacing: '3px',
+  marginBottom: '25px',
+};
