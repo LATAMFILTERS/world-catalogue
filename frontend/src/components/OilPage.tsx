@@ -33,9 +33,8 @@ export function OilPage() {
             display: 'flex',
             alignItems: 'center',
             backgroundImage: 'url(/images/oil-hand.avif)',
-            backgroundSize: '80%',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: '50% 60%',
             position: 'relative',
           }}
         >
