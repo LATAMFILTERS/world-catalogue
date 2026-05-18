@@ -197,8 +197,8 @@ export function AirfilterPage() {
                   borderRadius: '12px',
                   overflow: 'hidden',
                   border: '1px solid rgba(255,241,45,0.2)',
-                  width: '288px',
-                  height: '288px',
+                  width: '340px',
+                  height: '340px',
                   marginTop: '10%',
                   marginLeft: '35%',
                 }}
@@ -487,86 +487,6 @@ export function AirfilterPage() {
           </div>
         </section>
 
-        {/* Especificaciones Técnicas */}
-        <section
-          style={{
-            padding: '6rem 2rem',
-            background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.3) 100%)',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                ESPECIFICACIONES TÉCNICAS
-              </h2>
-            </div>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '2rem',
-              }}
-            >
-              {[
-                { label: 'EFICIENCIA', value: '99.9% - 99.98%', norm: 'ISO 5011' },
-                { label: 'PRESIÓN NOMINAL', value: '62 PSI', norm: 'Anti-collapse Rated' },
-                { label: 'TEMPERATURA', value: '120°C Continuo', norm: 'ASTM D202' },
-                { label: 'CAPACIDAD DHC', value: 'Optimizada', norm: 'SAE J726' },
-                { label: 'DELTA P INICIAL', value: 'Minimizado', norm: 'Flujo Laminar' },
-                { label: 'MECANISMO', value: 'Intercepción + Impacto + Difusión', norm: 'Multi-modo' },
-              ].map((spec, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    borderRadius: '8px',
-                    padding: '2rem',
-                    background: '#000',
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.15em',
-                      color: '#FFF12D',
-                      marginBottom: '1rem',
-                      fontFamily: 'JetBrains Mono, monospace',
-                    }}
-                  >
-                    {spec.label}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '1.3rem',
-                      fontWeight: 700,
-                      color: 'rgba(255,255,255,0.9)',
-                      marginBottom: '0.5rem',
-                      fontFamily: 'Space Grotesk, sans-serif',
-                    }}
-                  >
-                    {spec.value}
-                  </p>
-                  <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)' }}>
-                    {spec.norm}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA */}
         <section
