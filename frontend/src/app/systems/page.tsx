@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { catalogue, getSlug } from '@/lib/catalogue';
@@ -21,39 +21,191 @@ const displayNames: Record<string, string> = {
   'Water': 'Fuel Separator',
 };
 
-const productImages: Record<string, string> = {
-  'Airfilter': '/images/air-filterld.avif',
-  'Aquaguard Series': '/images/turbinas-hero.avif',
-  'Cabin': '/images/filtro-de-cabina.avif',
-  'Coolant': '/images/coolant-hero.avif',
-  'Dryer': '/images/airdryer-hero.avif',
-  'Fuel': '/images/fuel-filter.avif',
-  'Housing': '/images/pelon-air_converted.avif',
-  'Hydraulic': '/images/hidraulic.avif',
-  'Kits': '/images/npr-01_converted.avif',
-  'Marine': '/images/marino-taller.avif',
-  'Oil': '/images/oil-instalado.avif',
-  'Water': '/images/fuelseparator.avif',
-};
-
 const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0 },
 };
 
 const gridVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.1 },
-  },
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
 };
+
+function SystemCard({
+  product,
+  index,
+}: {
+  product: (typeof catalogue.products)[number];
+  index: number;
+}) {
+  const slug = getSlug(product.name);
+  const name = displayNames[product.name] || product.name;
+  const ref = useRef<HTMLDivElement>(null);
+  const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
+  const [hovered, setHovered] = useState(false);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setSpot({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100, opacity: 1 });
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -5 }}
+    >
+      <Link href={`/products/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+        <div
+          ref={ref}
+          onMouseMove={onMove}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setSpot(s => ({ ...s, opacity: 0 })); setHovered(false); }}
+          style={{
+            position: 'relative',
+            background: '#050505',
+            border: `1px solid ${hovered ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.07)'}`,
+            borderRadius: '2px',
+            padding: '2.25rem',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0',
+            overflow: 'hidden',
+            transition: 'border-color 0.3s ease',
+          }}
+        >
+          {/* Spotlight glow */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `radial-gradient(280px circle at ${spot.x}% ${spot.y}%, rgba(255,241,45,0.06), transparent 70%)`,
+              opacity: spot.opacity,
+              transition: 'opacity 0.3s ease',
+              pointerEvents: 'none',
+            }}
+          />
+
+          {/* Animated yellow top bar */}
+          <motion.div
+            animate={{ scaleX: hovered ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2px',
+              background: '#FFF12D',
+              transformOrigin: 'left',
+            }}
+          />
+
+          {/* Index number */}
+          <span
+            style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              fontWeight: 500,
+              color: hovered ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.15)',
+              letterSpacing: '0.1em',
+              marginBottom: '1.75rem',
+              transition: 'color 0.3s ease',
+            }}
+          >
+            {String(index + 1).padStart(2, '0')}
+          </span>
+
+          {/* Subtitle tag */}
+          {product.subtitle && (
+            <p
+              style={{
+                fontSize: '0.65rem',
+                color: '#FFF12D',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontWeight: 500,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                margin: '0 0 0.6rem',
+              }}
+            >
+              {product.subtitle}
+            </p>
+          )}
+
+          {/* Product name */}
+          <h3
+            style={{
+              fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+              fontWeight: 700,
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: hovered ? '#fff' : 'rgba(255,255,255,0.85)',
+              margin: '0 0 1.25rem',
+              lineHeight: 1.2,
+              transition: 'color 0.3s ease',
+            }}
+          >
+            {name}
+          </h3>
+
+          {/* Description excerpt */}
+          <p
+            style={{
+              fontSize: '0.82rem',
+              lineHeight: 1.65,
+              color: 'rgba(255,255,255,0.45)',
+              fontFamily: 'Outfit, sans-serif',
+              margin: 0,
+              flexGrow: 1,
+              display: '-webkit-box',
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {product.description}
+          </p>
+
+          {/* CTA */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              marginTop: '1.75rem',
+              paddingTop: '1.25rem',
+              borderTop: '1px solid rgba(255,255,255,0.06)',
+            }}
+          >
+            <motion.span
+              animate={{ x: hovered ? 4 : 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontSize: '0.7rem',
+                fontWeight: 700,
+                fontFamily: 'Outfit, sans-serif',
+                letterSpacing: '0.12em',
+                color: '#FFF12D',
+                textTransform: 'uppercase',
+              }}
+            >
+              LEARN MORE →
+            </motion.span>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
 
 export default function SystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section
         style={{
           marginTop: '72px',
@@ -143,115 +295,15 @@ export default function SystemsPage() {
             viewport={{ once: true, margin: '-60px' }}
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.75rem',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '1px',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.05)',
             }}
           >
-            {catalogue.products.map((product) => {
-              const slug = getSlug(product.name);
-              return (
-                <motion.div
-                  key={product.name}
-                  variants={cardVariants}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  whileHover={{ y: -6, boxShadow: '0 16px 48px rgba(255,241,45,0.12)' }}
-                >
-                  <Link
-                    href={`/products/${slug}`}
-                    style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
-                  >
-                    <div
-                      style={{
-                        background: 'linear-gradient(160deg, rgba(255,241,45,0.06) 0%, rgba(0,0,0,0.2) 100%)',
-                        border: '1px solid rgba(255,241,45,0.18)',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        transition: 'border-color 0.3s ease',
-                      }}
-                    >
-                      {/* Product image */}
-                      <div
-                        style={{
-                          position: 'relative',
-                          width: '100%',
-                          height: '210px',
-                          flexShrink: 0,
-                          background: '#0a0a0a',
-                          borderBottom: '1px solid rgba(255,241,45,0.08)',
-                        }}
-                      >
-                        {productImages[product.name] ? (
-                          <Image
-                            src={productImages[product.name]}
-                            alt={displayNames[product.name] || product.name}
-                            fill
-                            style={{ objectFit: 'contain', padding: '0.75rem' }}
-                            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          />
-                        ) : (
-                          <div style={{ width: '100%', height: '100%', background: 'rgba(255,241,45,0.03)' }} />
-                        )}
-                      </div>
-
-                      {/* Title + subtitle + CTA */}
-                      <div
-                        style={{
-                          padding: '1.5rem 1.75rem',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '0.5rem',
-                          flexGrow: 1,
-                        }}
-                      >
-                        {product.subtitle && (
-                          <p
-                            style={{
-                              fontSize: '0.7rem',
-                              color: '#FFF12D',
-                              fontFamily: 'JetBrains Mono, monospace',
-                              fontWeight: 500,
-                              letterSpacing: '0.1em',
-                              textTransform: 'uppercase',
-                              margin: 0,
-                            }}
-                          >
-                            {product.subtitle}
-                          </p>
-                        )}
-                        <h3
-                          style={{
-                            fontSize: '1.15rem',
-                            fontWeight: 700,
-                            fontFamily: 'Space Grotesk, sans-serif',
-                            color: 'rgba(255,255,255,0.92)',
-                            margin: 0,
-                          }}
-                        >
-                          {displayNames[product.name] || product.name}
-                        </h3>
-                        <span
-                          style={{
-                            display: 'inline-block',
-                            color: '#FFF12D',
-                            fontSize: '0.75rem',
-                            fontWeight: 700,
-                            fontFamily: 'Outfit, sans-serif',
-                            letterSpacing: '0.1em',
-                            marginTop: 'auto',
-                            paddingTop: '0.75rem',
-                          }}
-                        >
-                          LEARN MORE →
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+            {catalogue.products.map((product, i) => (
+              <SystemCard key={product.name} product={product} index={i} />
+            ))}
           </motion.div>
         </div>
       </section>
