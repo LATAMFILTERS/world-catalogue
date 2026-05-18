@@ -4,6 +4,7 @@ const { EmbeddingService } = require('../embeddings/embedding.service');
 const { VectorSearchService } = require('../vector-search/vector-search.service');
 const { IntentClassifierAgent } = require('../agents/intent-classifier.agent');
 const { ToolsRegistry } = require('../tools/tools.registry');
+const { Logger } = require('../utils/logger');
 
 class RAGService {
     static client = null;
@@ -19,18 +20,26 @@ class RAGService {
 
     static async fullRAGQuery(userQuery) {
         try {
+            Logger.info('RAG query started', { query: userQuery.substring(0, 50) });
+
             // Step 1: Intent Classification
             const intentResult = await IntentClassifierAgent.classify(userQuery);
             const entities = await IntentClassifierAgent.extractEntities(userQuery);
+            Logger.debug('Intent classified', { intent: intentResult.intent, confidence: intentResult.confidence });
 
             // Step 2: Retrieve Context (RAG)
             const context = await this.retrieveContext(userQuery, intentResult.intent, entities);
+            Logger.debug('Context retrieved', {
+                semanticCount: context.semanticResults.length,
+                keywordCount: context.keywordResults.length
+            });
 
             // Step 3: Build System Prompt with Context
             const systemPrompt = this.buildSystemPrompt(context, intentResult.intent);
 
             // Step 4: Process with Tool Calling
             const toolDefinitions = ToolsRegistry.getDefinitions();
+            Logger.debug('Tool calling setup', { toolCount: toolDefinitions.length });
 
             const response = await this.client.chat.completions.create({
                 model: 'mixtral-8x7b-32768',
@@ -46,21 +55,32 @@ class RAGService {
 
             // Step 5: Handle Tool Calls
             let toolResults = null;
+            const toolCalls = [];
             if (response.choices[0].message.tool_calls) {
                 toolResults = {};
                 for (const toolCall of response.choices[0].message.tool_calls) {
                     try {
+                        Logger.debug('Executing tool', { tool: toolCall.function.name });
                         const result = await ToolsRegistry.executeTool(
                             toolCall.function.name,
                             JSON.parse(toolCall.function.arguments)
                         );
                         toolResults[toolCall.function.name] = result;
+                        toolCalls.push(toolCall.function.name);
+                        Logger.debug('Tool executed successfully', { tool: toolCall.function.name });
                     } catch (err) {
-                        console.error(`Tool ${toolCall.function.name} failed:`, err.message);
+                        Logger.error(`Tool execution failed: ${toolCall.function.name}`, { error: err.message });
                         toolResults[toolCall.function.name] = { error: err.message };
                     }
                 }
             }
+
+            const products = toolResults ? this.extractProducts(toolResults) : [];
+            Logger.info('RAG query completed', {
+                intent: intentResult.intent,
+                toolCount: toolCalls.length,
+                productCount: products.length
+            });
 
             return {
                 query: userQuery,
@@ -69,13 +89,13 @@ class RAGService {
                 entities,
                 retrievedContext: context,
                 llmResponse: response.choices[0].message.content,
-                toolCalls: toolResults ? Object.keys(toolResults) : [],
+                toolCalls: toolCalls,
                 toolResults: toolResults,
-                products: toolResults ? this.extractProducts(toolResults) : [],
+                products: products,
                 timestamp: new Date().toISOString()
             };
         } catch (err) {
-            console.error('RAG query error:', err.message);
+            Logger.error('RAG query failed', { query: userQuery.substring(0, 50), error: err.message });
             throw err;
         }
     }
@@ -91,9 +111,11 @@ class RAGService {
             // Semantic search
             const semanticResults = await VectorSearchService.searchBySemanticSimilarity(query, 3);
             context.semanticResults = semanticResults;
+            Logger.debug('Semantic search completed', { resultCount: semanticResults.length });
 
             // Keyword search based on entities
             if (entities.codes && entities.codes.length > 0) {
+                Logger.debug('Searching for cross-references', { codeCount: entities.codes.length });
                 for (const code of entities.codes) {
                     const results = await DatabaseService.findCrossReferences(code, 3);
                     context.keywordResults.push(...results);
@@ -101,6 +123,7 @@ class RAGService {
             }
 
             if (entities.machines && entities.machines.length > 0) {
+                Logger.debug('Searching by machine compatibility', { machineCount: entities.machines.length });
                 for (const machine of entities.machines) {
                     const results = await DatabaseService.getProductsByApplication(machine, 3);
                     context.keywordResults.push(...results);
@@ -112,9 +135,14 @@ class RAGService {
             context.semanticResults.forEach(p => seenSkus.add(p.sku));
             context.keywordResults = context.keywordResults.filter(p => !seenSkus.has(p.sku));
 
+            Logger.debug('Context retrieval complete', {
+                semanticCount: context.semanticResults.length,
+                keywordCount: context.keywordResults.length
+            });
+
             return context;
         } catch (err) {
-            console.warn('Context retrieval error:', err.message);
+            Logger.warn('Context retrieval error (continuing with available data)', { error: err.message });
             return context;
         }
     }
