@@ -10,6 +10,7 @@ import { HousingPage } from '@/components/HousingPage';
 import { HydraulicPage } from '@/components/HydraulicPage';
 import { KitsPage } from '@/components/KitsPage';
 import { MarinePage } from '@/components/MarinePage';
+import { OilPage } from '@/components/OilPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -54,6 +55,7 @@ export default function ProductPage({ params }: Props) {
   if (item.name === 'Hydraulic') return <HydraulicPage />;
   if (item.name === 'Kits') return <KitsPage />;
   if (item.name === 'Marine') return <MarinePage />;
+  if (item.name === 'Oil') return <OilPage />;
 
   const media = productMedia[item.name] || {};
 
