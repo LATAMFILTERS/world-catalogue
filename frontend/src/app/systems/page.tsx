@@ -30,9 +30,9 @@ const productImages: Record<string, string> = {
   'Housing': '/images/pelon-air_converted.avif',
   'Hydraulic': '/images/hidraulico-trabajador.jpg',
   'Kits': '/images/npr-01_converted.avif',
-  'Marine': '/images/marine-hero.avif',
-  'Oil': '/images/oil-hand.avif',
-  'Water': '/images/fuellseparator-hero.avif',
+  'Marine': '/images/marino-taller.avif',
+  'Oil': '/images/oil-instalado.avif',
+  'Water': '/images/fuelseparator.avif',
 };
 
 export default function SystemsPage() {
