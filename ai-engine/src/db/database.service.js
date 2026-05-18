@@ -166,6 +166,7 @@ class DatabaseService {
     static async getProductsByVector(embedding, limit = 5, threshold = 0.7) {
         const pool = await this.initialize();
         try {
+            const vectorStr = `[${embedding.join(',')}]`;
             const result = await pool.query(
                 `SELECT sku, base_code, description, technology, category,
                         1 - (embedding <=> $1::vector) as similarity
@@ -174,7 +175,7 @@ class DatabaseService {
                  AND (1 - (embedding <=> $1::vector)) > $2
                  ORDER BY similarity DESC
                  LIMIT $3`,
-                [JSON.stringify(embedding), threshold, limit]
+                [vectorStr, threshold, limit]
             );
             return result.rows;
         } catch (err) {
@@ -186,11 +187,12 @@ class DatabaseService {
     static async storeEmbedding(sku, embedding) {
         const pool = await this.initialize();
         try {
+            const vectorStr = `[${embedding.join(',')}]`;
             await pool.query(
                 `UPDATE filters
                  SET embedding = $1::vector
                  WHERE UPPER(sku) = $2`,
-                [JSON.stringify(embedding), sku.toUpperCase()]
+                [vectorStr, sku.toUpperCase()]
             );
             return true;
         } catch (err) {

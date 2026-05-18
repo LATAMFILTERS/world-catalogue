@@ -54,14 +54,25 @@ app.use('/ai/', limiter);
 // ════════════════════════════ INITIALIZATION ════════════════════════════
 const { DatabaseService } = require('./src/db/database.service');
 const { EmbeddingService } = require('./src/embeddings/embedding.service');
+const { MigrationService } = require('./src/services/migration.service');
+const { BatchEmbeddingService } = require('./src/services/batch-embedding.service');
 
 (async () => {
     try {
         await DatabaseService.initialize();
         console.log('✓ Database connected');
 
+        // Run database migrations
+        await MigrationService.runStartupMigrations();
+
         await EmbeddingService.initialize();
         console.log('✓ Embeddings initialized');
+
+        // Batch embed all products (happens in background)
+        BatchEmbeddingService.embedAllProducts().catch(err => {
+            console.error('Background batch embedding error:', err.message);
+        });
+
     } catch (err) {
         console.error('❌ Initialization failed:', err.message);
         process.exit(1);
