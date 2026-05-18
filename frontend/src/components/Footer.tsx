@@ -53,10 +53,7 @@ export function Footer() {
             <a href="/about" className="footer-link">
               About Us
             </a>
-            <a
-              href="https://elimfilters.com/industries-we-service/"
-              className="footer-link"
-            >
+            <a href="/industries" className="footer-link">
               Industries
             </a>
             <a href="/contact" className="footer-link">
@@ -73,13 +70,10 @@ export function Footer() {
             >
               Part Search
             </a>
-            <a
-              href="https://elimfilters.com/technology/"
-              className="footer-link"
-            >
-              Technology
+            <a href="/technologies" className="footer-link">
+              Technologies
             </a>
-            <a href="https://elimfilters.com/products/" className="footer-link">
+            <a href="/systems" className="footer-link">
               Systems
             </a>
           </div>
