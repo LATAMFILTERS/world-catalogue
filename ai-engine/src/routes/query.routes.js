@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { RAGService } = require('../services/rag.service');
+const { RAGService } = require('../rag/rag.service');
 
 router.post('/', async (req, res) => {
     try {
         const { query } = req.body;
 
         if (!query || query.trim().length === 0) {
-            return res.status(400).json({ error: 'Query is required' });
+            return res.status(400).json({
+                success: false,
+                error: 'Query is required'
+            });
         }
 
-        const result = await RAGService.queryWithRAG(query);
+        const result = await RAGService.fullRAGQuery(query);
 
         res.json({
             success: true,
@@ -19,7 +22,8 @@ router.post('/', async (req, res) => {
     } catch (err) {
         console.error('Query error:', err.message);
         res.status(500).json({
-            error: 'Failed to process query',
+            success: false,
+            error: 'Query processing failed',
             message: err.message
         });
     }

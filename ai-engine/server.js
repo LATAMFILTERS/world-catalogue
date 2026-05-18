@@ -7,7 +7,16 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-// ────────────────────── SECURITY ──────────────────────
+// ════════════════════════════ VALIDATION ════════════════════════════
+const requiredVars = ['DATABASE_URL', 'GROQ_API_KEY', 'OPENAI_API_KEY'];
+requiredVars.forEach(v => {
+    if (!process.env[v]) {
+        console.error(`❌ Missing required env: ${v}`);
+        process.exit(1);
+    }
+});
+
+// ════════════════════════════ SECURITY ════════════════════════════
 app.disable('x-powered-by');
 app.use(helmet({ contentSecurityPolicy: false }));
 
@@ -30,31 +39,36 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// ────────────────────── MIDDLEWARE ──────────────────────
+// ════════════════════════════ MIDDLEWARE ════════════════════════════
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100
+    max: 100,
+    message: 'Too many requests'
 });
 
 app.use('/ai/', limiter);
 
-// ────────────────────── CONFIG VALIDATION ──────────────────────
-const requiredEnvVars = [
-    'OPENAI_API_KEY',
-    'DATABASE_URL'
-];
+// ════════════════════════════ INITIALIZATION ════════════════════════════
+const { DatabaseService } = require('./src/db/database.service');
+const { EmbeddingService } = require('./src/embeddings/embedding.service');
 
-requiredEnvVars.forEach(envVar => {
-    if (!process.env[envVar]) {
-        console.error(`❌ Missing required env var: ${envVar}`);
+(async () => {
+    try {
+        await DatabaseService.initialize();
+        console.log('✓ Database connected');
+
+        await EmbeddingService.initialize();
+        console.log('✓ Embeddings initialized');
+    } catch (err) {
+        console.error('❌ Initialization failed:', err.message);
         process.exit(1);
     }
-});
+})();
 
-// ────────────────────── ROUTES ──────────────────────
+// ════════════════════════════ ROUTES ════════════════════════════
 const queryRoutes = require('./src/routes/query.routes');
 const intentRoutes = require('./src/routes/intent.routes');
 const searchRoutes = require('./src/routes/search.routes');
@@ -65,12 +79,10 @@ app.use('/ai/intent', intentRoutes);
 app.use('/ai/search', searchRoutes);
 app.use('/ai/cross-reference', crossRefRoutes);
 
-// ────────────────────── HEALTH CHECK ──────────────────────
+// ════════════════════════════ HEALTH CHECK ════════════════════════════
 app.get('/health', async (req, res) => {
     try {
-        const { DatabaseService } = require('./src/services/database.service');
         await DatabaseService.checkConnection();
-
         res.status(200).json({
             status: 'healthy',
             service: 'ai-engine',
@@ -85,22 +97,30 @@ app.get('/health', async (req, res) => {
     }
 });
 
-// ────────────────────── ROOT ──────────────────────
+// ════════════════════════════ INFO ════════════════════════════
 app.get('/', (req, res) => {
     res.json({
         service: 'ELIMFILTERS AI Engine',
         version: '1.0.0',
+        type: 'Industrial Intelligence - RAG + Tool Calling',
         endpoints: {
-            health: '/health',
+            health: 'GET /health',
             query: 'POST /ai/query',
             intent: 'POST /ai/intent',
             search: 'POST /ai/search',
             crossReference: 'POST /ai/cross-reference'
-        }
+        },
+        features: [
+            'Tool-based architecture',
+            'RAG pipeline with embeddings',
+            'Intent classification',
+            'Vector semantic search',
+            'pgvector integration'
+        ]
     });
 });
 
-// ────────────────────── ERROR HANDLERS ──────────────────────
+// ════════════════════════════ ERROR HANDLING ════════════════════════════
 app.use((err, req, res, next) => {
     console.error('ERROR:', err.message);
     res.status(err.status || 500).json({
@@ -118,13 +138,19 @@ process.on('unhandledRejection', (err) => {
     console.error('UNHANDLED REJECTION:', err);
 });
 
-// ────────────────────── START ──────────────────────
+// ════════════════════════════ START ════════════════════════════
 const PORT = process.env.AI_ENGINE_PORT || 3001;
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`✓ AI Engine running on port ${PORT}`);
-    console.log(`✓ OpenAI API: ${process.env.OPENAI_API_KEY ? 'configured' : 'missing'}`);
-    console.log(`✓ Database: ${process.env.DATABASE_URL ? 'configured' : 'missing'}`);
+    console.log(`\n╔════════════════════════════════════════════╗`);
+    console.log(`║  ELIMFILTERS AI Engine - Production Ready  ║`);
+    console.log(`╚════════════════════════════════════════════╝\n`);
+    console.log(`✓ Server running on port ${PORT}`);
+    console.log(`✓ GROQ LLM: ${process.env.GROQ_MODEL}`);
+    console.log(`✓ OpenAI Embeddings: ${process.env.OPENAI_EMBEDDING_MODEL}`);
+    console.log(`✓ Vector Search: pgvector (cosine similarity)`);
+    console.log(`✓ RAG Pipeline: Active`);
+    console.log(`✓ Tool Calling: Enabled\n`);
 });
 
 module.exports = app;
