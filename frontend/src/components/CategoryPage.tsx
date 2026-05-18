@@ -133,7 +133,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             }}
           >
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'center' }}>
+              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'center' }}>
                 {/* Left: Description */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>

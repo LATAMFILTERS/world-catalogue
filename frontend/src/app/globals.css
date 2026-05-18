@@ -201,3 +201,35 @@ body {
 .industry-grid > * {
   background: var(--bg);
 }
+
+/* ── Responsive grid overrides ──────────────────────────────────────── */
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .product-desc-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .product-compare-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .spotlight-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .why-grid { grid-template-columns: 1fr !important; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .product-desc-grid { gap: 2rem !important; }
+  .product-specs-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .product-compare-grid { gap: 1.5rem !important; }
+  .spotlight-grid { padding: 1.5rem !important; }
+  .tech-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .problem-grid { grid-template-columns: 1fr !important; }
+  .hero-bottom { flex-direction: column !important; gap: 1rem !important; }
+  .footer-bottom { flex-direction: column !important; gap: 2rem !important; text-align: center !important; }
+  .footer-bottom > div { text-align: center !important; }
+  .home-hero-section { padding: 0 5% 80px !important; padding-top: 100px !important; }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .product-specs-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+}
+/* ─────────────────────────────────────────────────────────────────── */

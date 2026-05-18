@@ -33,7 +33,7 @@ export default function About() {
             'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,1) 100%), url(/images/grupo-filters.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
+          backgroundAttachment: 'scroll',
           position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}

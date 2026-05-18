@@ -71,6 +71,7 @@ export function Footer() {
         {/* Bottom section */}
         <AnimateIn direction="up" delay={0.1}>
           <div
+            className="footer-bottom"
             style={{
               borderTop: '1px solid #1a1a1a',
               paddingTop: '50px',

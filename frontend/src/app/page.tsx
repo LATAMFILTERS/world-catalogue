@@ -99,10 +99,11 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
 
 // ─── Spotlight card ───────────────────────────────────────────────────────────
 
-function SpotlightCard({ children, style, contentStyle }: {
+function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   children: React.ReactNode;
   style?: React.CSSProperties;
   contentStyle?: React.CSSProperties;
+  contentClassName?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
@@ -133,7 +134,7 @@ function SpotlightCard({ children, style, contentStyle }: {
           zIndex: 1,
         }}
       />
-      <div style={{ position: 'relative', zIndex: 2, ...contentStyle }}>{children}</div>
+      <div className={contentClassName} style={{ position: 'relative', zIndex: 2, ...contentStyle }}>{children}</div>
     </div>
   );
 }
@@ -186,12 +187,13 @@ export default function Home() {
         {/* ── HERO ── */}
         <section
           ref={heroRef}
+          className="home-hero-section"
           style={{
             position: 'relative',
             minHeight: '90vh',
             display: 'flex',
             alignItems: 'flex-end',
-            padding: '0 5% 60px',
+            padding: '72px 5% 60px',
             overflow: 'hidden',
           }}
         >
@@ -432,6 +434,7 @@ export default function Home() {
                 border: '1px solid #1a1a1a',
                 borderRadius: '16px',
               }}
+              contentClassName="spotlight-grid"
               contentStyle={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
