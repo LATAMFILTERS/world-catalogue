@@ -2,4 +2,3 @@ node_modules/
 .next/
 *.log
 npm-debug.log*
-out/
