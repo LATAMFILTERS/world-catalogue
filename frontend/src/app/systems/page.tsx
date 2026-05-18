@@ -21,18 +21,18 @@ const displayNames: Record<string, string> = {
 };
 
 const productImages: Record<string, string> = {
-  'Airfilter': '/images/air-filter1.avif',
-  'Aquaguard Series': '/images/turbine-1.avif',
-  'Cabin': '/images/filtro-de-cabina.avif',
-  'Coolant': '/images/coolant-mesa.avif',
-  'Dryer': '/images/airdryer.avif',
-  'Fuel': '/images/fuel-filter.avif',
-  'Housing': '/images/mecanica-air.avif',
-  'Hydraulic': '/images/hidraulic.avif',
-  'Kits': '/images/kit-mesa.avif',
-  'Marine': '/images/marino-taller.avif',
-  'Oil': '/images/oil-instalado.avif',
-  'Water': '/images/fuelseparator.avif',
+  'Airfilter': '/images/air-filterld.avif',
+  'Aquaguard Series': '/images/turbinas-hero.avif',
+  'Cabin': '/images/cabin-hero.avif',
+  'Coolant': '/images/coolant-hero.avif',
+  'Dryer': '/images/airdryer-hero.avif',
+  'Fuel': '/images/fuelfilter-hero.avif',
+  'Housing': '/images/pelon-air_converted.avif',
+  'Hydraulic': '/images/hidraulico-trabajador.jpg',
+  'Kits': '/images/npr-01_converted.avif',
+  'Marine': '/images/marine-hero.avif',
+  'Oil': '/images/oil-hand.avif',
+  'Water': '/images/fuellseparator-hero.avif',
 };
 
 export default function SystemsPage() {
