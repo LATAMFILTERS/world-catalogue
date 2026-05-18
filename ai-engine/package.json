@@ -1,13 +1,12 @@
 {
   "name": "elimfilters-ai-engine",
-  "version": "1.0.0",
-  "description": "Enterprise-grade Industrial Intelligence Engine - RAG + Tool Calling + Embeddings",
+  "version": "2.0.0",
+  "description": "Enterprise-grade Industrial Intelligence Engine - RAG + Tool Calling + Anti-Hallucination",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "migrate:init": "node migrations/init.js",
-    "migrate:embeddings": "node migrations/add-embeddings.js"
+    "migrate": "node migrations/run-migration.js"
   },
   "keywords": [
     "ai",
@@ -16,7 +15,8 @@
     "tool-calling",
     "groq",
     "pgvector",
-    "microservice"
+    "microservice",
+    "anti-hallucination"
   ],
   "dependencies": {
     "cors": "^2.8.5",

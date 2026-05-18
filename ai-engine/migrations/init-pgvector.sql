@@ -9,34 +9,28 @@ CREATE EXTENSION IF NOT EXISTS vector;
 -- Dimensions: 1536 for text-embedding-3-small (OpenAI)
 ALTER TABLE filters ADD COLUMN IF NOT EXISTS embedding vector(1536);
 
--- Create index for faster vector searches (using HNSW)
--- This uses cosine similarity distance (OPERATOR <=>)
-CREATE INDEX IF NOT EXISTS idx_filters_embedding ON filters
+-- HNSW index for vector similarity search (cosine distance)
+-- pgvector HNSW indexes only support single vector columns
+CREATE INDEX IF NOT EXISTS idx_filters_embedding
+ON filters
 USING hnsw (embedding vector_cosine_ops);
 
--- Create index for semantic search by technology
-CREATE INDEX IF NOT EXISTS idx_filters_technology_embedding
-ON filters (technology, embedding vector_cosine_ops);
+-- Regular B-tree indexes for filtering by category/technology
+-- PostgreSQL will use both indexes together for filtered vector searches
+CREATE INDEX IF NOT EXISTS idx_filters_technology
+ON filters (technology);
 
--- Create index for category + embedding
-CREATE INDEX IF NOT EXISTS idx_filters_category_embedding
-ON filters (category, embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_filters_category
+ON filters (category);
 
--- Grant necessary permissions
--- ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO app_user;
-
-COMMENT ON COLUMN filters.embedding IS 'OpenAI text-embedding-3-small vector representation of product metadata';
-COMMENT ON INDEX idx_filters_embedding IS 'HNSW index for fast cosine similarity search on product embeddings';
+COMMENT ON COLUMN filters.embedding IS 'OpenAI text-embedding-3-small (1536 dims) vector for semantic search';
+COMMENT ON INDEX idx_filters_embedding IS 'HNSW index for cosine similarity search - pgvector';
 
 -- ═══════════════════════════════════════════════════════════════════════════
--- Verification queries
+-- Verification queries (run manually to check setup)
 -- ═══════════════════════════════════════════════════════════════════════════
 
--- Check if pgvector is available:
 -- SELECT * FROM pg_extension WHERE extname = 'vector';
-
--- Check embedding column:
 -- SELECT column_name, data_type FROM information_schema.columns WHERE table_name='filters' AND column_name='embedding';
-
--- Check indexes:
--- SELECT indexname FROM pg_indexes WHERE tablename = 'filters' AND indexname LIKE '%embedding%';
+-- SELECT indexname, indexdef FROM pg_indexes WHERE tablename = 'filters' AND indexname LIKE '%embedding%';
+-- SELECT COUNT(*), COUNT(embedding) FROM filters;
