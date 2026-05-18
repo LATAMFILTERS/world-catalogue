@@ -23,7 +23,7 @@ const displayNames: Record<string, string> = {
 const productImages: Record<string, string> = {
   'Airfilter': '/images/air-filterld.avif',
   'Aquaguard Series': '/images/turbinas-hero.avif',
-  'Cabin': '/images/cabin-hero.avif',
+  'Cabin': '/images/filtro-de-cabina.avif',
   'Coolant': '/images/coolant-hero.avif',
   'Dryer': '/images/airdryer-hero.avif',
   'Fuel': '/images/fuel-filter.avif',
@@ -48,7 +48,7 @@ export default function SystemsPage() {
           paddingBottom: '4rem',
           backgroundImage: 'url(/images/system-hero.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: '50% 30%',
+          backgroundPosition: '50% 10%',
           backgroundAttachment: 'fixed',
           position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
