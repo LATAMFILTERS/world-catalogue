@@ -32,7 +32,7 @@ export function AquaguardPage() {
             minHeight: '70vh',
             display: 'flex',
             alignItems: 'center',
-            backgroundImage: 'url(/images/fuel-filters.avif)',
+            backgroundImage: 'url(/images/turbinas-hero.avif)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             position: 'relative',
@@ -101,7 +101,7 @@ export function AquaguardPage() {
                 fontStyle: 'italic',
               }}
             >
-              900FH and 1000FH turbine fuel filter/water separators engineered for absolute fuel system protection. Three-stage separation eliminates water, sediment and contaminants before they reach your injectors.
+              900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system protection. Three-stage centrifuge separation eliminates water, sediment and contaminants down to 2 micron before they reach your injectors.
             </p>
           </div>
         </section>
@@ -153,7 +153,7 @@ export function AquaguardPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  AQUAGUARD/SERIES turbine filters are professional-grade fuel filtration and water removal systems. The 900FH and 1000FH platforms deploy AQUABLOC®II hydrophobic media with turbine rotation technology to protect high-pressure injection systems from water ingress, microbial contamination and particulate damage.
+                  AQUAGUARD/SERIES turbine filters are professional-grade fuel filtration and water removal systems. The 900FH (90 GPH / 340 LPH) and 1000FH (180 GPH / 681 LPH) deploy AQUABLOC®II hydrophobic media — rated down to 2 micron nominal — with centrifuge rotation technology to protect high-pressure injection systems from water ingress, microbial contamination and particulate damage. Self-venting water drain with clear collection bowl for visual monitoring.
                 </p>
 
                 <div
@@ -169,7 +169,7 @@ export function AquaguardPage() {
                       STAGE 1
                     </p>
                     <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      Water Separation
+                      Centrifuge Separation
                     </p>
                   </div>
                   <div>
@@ -177,7 +177,7 @@ export function AquaguardPage() {
                       STAGE 2
                     </p>
                     <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      Coalescing
+                      Conical Coalescing
                     </p>
                   </div>
                   <div>
@@ -185,7 +185,7 @@ export function AquaguardPage() {
                       STAGE 3
                     </p>
                     <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      Final Filtration
+                      AQUABLOC®II 2µm
                     </p>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export function AquaguardPage() {
                 }}
               >
                 <img
-                  src="/images/turbinefh-foto.avif"
+                  src="/images/turbine-1.avif"
                   alt="AQUAGUARD Turbine Filter"
                   style={{
                     width: '100%',
@@ -264,25 +264,25 @@ export function AquaguardPage() {
 
               <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  30µm
+                  2µm
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  PARTICLE RETENTION RATING
+                  AQUABLOC®II FILTRATION RATING
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Precision filtration protecting high-pressure injection components
+                  Nominal rating — available in 2, 10 or 30 micron versions
                 </p>
               </div>
 
               <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  3X
+                  180 GPH
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  INJECTOR LIFESPAN EXTENSION
+                  PEAK FLOW RATE (1000FH)
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Verified results in heavy-duty diesel and marine applications
+                  681 LPH — 900FH rated at 90 GPH (340 LPH) for lighter duty
                 </p>
               </div>
             </div>
