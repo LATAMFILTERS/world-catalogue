@@ -1,0 +1,30 @@
+{
+  "name": "elimfilters-ai-engine",
+  "version": "1.0.0",
+  "description": "Industrial AI Intelligence Layer for Elimfilters - RAG + Tool Calling",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "ai",
+    "rag",
+    "embeddings",
+    "openai",
+    "microservice"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.4.1",
+    "groq-sdk": "^0.5.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.11.3",
+    "pgvector": "^0.1.15"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
