@@ -61,8 +61,8 @@ export default function SystemsPage() {
           paddingBottom: '5rem',
           backgroundImage: 'url(/images/system-hero.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center 40%',
+          backgroundAttachment: 'scroll',
           position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}
@@ -71,7 +71,7 @@ export default function SystemsPage() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.5) 100%)',
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.35) 100%)',
             zIndex: 1,
           }}
         />
