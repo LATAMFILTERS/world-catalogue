@@ -182,9 +182,8 @@ export function AirfilterPage() {
                   borderRadius: '12px',
                   overflow: 'hidden',
                   border: '1px solid rgba(255,241,45,0.2)',
-                  height: '50%',
-                  minHeight: '200px',
-                  maxHeight: '250px',
+                  width: '250px',
+                  height: '250px',
                   alignSelf: 'start',
                 }}
               >
