@@ -33,9 +33,8 @@ export function FuelSeparatorPage() {
             display: 'flex',
             alignItems: 'center',
             backgroundImage: 'url(/images/fuellseparator-hero.avif)',
-            backgroundSize: '80%',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: '50% 60%',
             position: 'relative',
           }}
         >
