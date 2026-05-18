@@ -203,7 +203,7 @@ export function FuelSeparatorPage() {
                 }}
               >
                 <img
-                  src="/images/fuel-filter.avif"
+                  src="/images/fuelseparator.avif"
                   alt="Fuel Water Separator"
                   style={{
                     width: '100%',
