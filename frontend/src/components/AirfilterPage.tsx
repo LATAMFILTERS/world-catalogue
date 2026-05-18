@@ -66,7 +66,7 @@ export function AirfilterPage() {
                 lineHeight: 1.1,
               }}
             >
-              AIRFILTER
+              FILTROS DE AIRE
             </h1>
             <h2
               style={{
@@ -77,7 +77,7 @@ export function AirfilterPage() {
                 marginBottom: '2rem',
               }}
             >
-              MACROCORE™ DEFENSE
+              TECNOLOGÍA MACROCORE™
             </h2>
             <p
               style={{
@@ -88,7 +88,7 @@ export function AirfilterPage() {
                 fontFamily: 'Outfit, sans-serif',
               }}
             >
-              Advanced gradient density engineering for absolute air intake protection across all industrial sectors.
+              Protección absoluta del sistema de admisión en motores de combustión interna y maquinaria rotativa. Ingeniería de gradiente de densidad progresiva para todos los sectores industriales.
             </p>
           </div>
         </section>
@@ -116,7 +116,7 @@ export function AirfilterPage() {
                       margin: 0,
                     }}
                   >
-                    MEDIA FILTRANTE AIRFILTER
+                    FILTROS DE AIRE — AIR FILTERS
                   </h2>
                 </div>
                 <h3
@@ -128,7 +128,7 @@ export function AirfilterPage() {
                     color: 'rgba(255,255,255,0.9)',
                   }}
                 >
-                  Ingeniería de Filtración Avanzada
+                  Protección Total del Sistema de Admisión
                 </h3>
                 <p
                   style={{
@@ -138,7 +138,7 @@ export function AirfilterPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  AIRFILTER es una media filtrante de alto rendimiento desarrollada bajo los principios de gradiente de densidad progresiva. Utiliza fibras de celulosa de alta pureza reforzadas con resinas sintéticas para garantizar:
+                  Los filtros de aire ELIMFILTERS son medias filtrantes de alto rendimiento desarrolladas bajo los principios de gradiente de densidad progresiva. Utilizan fibras de celulosa de alta pureza reforzadas con resinas sintéticas para garantizar protección absoluta del sistema de admisión en motores de combustión interna y maquinaria rotativa.
                 </p>
 
                 {/* Horizontal Specifications */}
@@ -182,8 +182,8 @@ export function AirfilterPage() {
                   borderRadius: '12px',
                   overflow: 'hidden',
                   border: '1px solid rgba(255,241,45,0.2)',
-                  width: '250px',
-                  height: '250px',
+                  width: '288px',
+                  height: '288px',
                   marginTop: '10%',
                   marginLeft: '35%',
                 }}
