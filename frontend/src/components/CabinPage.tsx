@@ -34,7 +34,7 @@ export function CabinPage() {
             alignItems: 'center',
             backgroundImage: 'url(/images/cabin-hero.avif)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'top center',
             position: 'relative',
           }}
         >
