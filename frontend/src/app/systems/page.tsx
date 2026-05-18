@@ -206,6 +206,21 @@ export default function SystemsPage() {
                           flexGrow: 1,
                         }}
                       >
+                        {product.subtitle && (
+                          <p
+                            style={{
+                              fontSize: '0.7rem',
+                              color: '#FFF12D',
+                              fontFamily: 'JetBrains Mono, monospace',
+                              fontWeight: 500,
+                              letterSpacing: '0.1em',
+                              textTransform: 'uppercase',
+                              margin: 0,
+                            }}
+                          >
+                            {product.subtitle}
+                          </p>
+                        )}
                         <h3
                           style={{
                             fontSize: '1.15rem',
@@ -217,20 +232,6 @@ export default function SystemsPage() {
                         >
                           {displayNames[product.name] || product.name}
                         </h3>
-                        {product.subtitle && (
-                          <p
-                            style={{
-                              fontSize: '0.75rem',
-                              color: '#FFF12D',
-                              fontFamily: 'JetBrains Mono, monospace',
-                              fontWeight: 500,
-                              letterSpacing: '0.05em',
-                              margin: 0,
-                            }}
-                          >
-                            {product.subtitle}
-                          </p>
-                        )}
                         <span
                           style={{
                             display: 'inline-block',
