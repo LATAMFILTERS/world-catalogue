@@ -95,9 +95,10 @@ export function AirfilterPage() {
               style={{
                 fontSize: '1.1rem',
                 maxWidth: '600px',
-                lineHeight: 1.6,
-                color: 'rgba(255,255,255,0.85)',
-                fontFamily: 'Outfit, sans-serif',
+                lineHeight: 1.65,
+                color: 'rgba(255,255,255,0.65)',
+                fontFamily: 'Inter, sans-serif',
+                fontStyle: 'italic',
               }}
             >
               Absolute protection for intake systems in internal combustion engines and rotating machinery. Progressive density gradient engineering for every industrial sector.
@@ -145,8 +146,10 @@ export function AirfilterPage() {
                 <p
                   style={{
                     fontSize: '1rem',
-                    lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.8)',
+                    lineHeight: 1.65,
+                    color: 'rgba(255,255,255,0.65)',
+                    fontFamily: 'Inter, sans-serif',
+                    fontStyle: 'italic',
                     marginBottom: '2.5rem',
                   }}
                 >
@@ -254,7 +257,7 @@ export function AirfilterPage() {
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                   SERVICE INTERVAL EXTENSION
                 </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Extended service periods compared to industry standards
                 </p>
               </div>
@@ -266,7 +269,7 @@ export function AirfilterPage() {
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                   DOWNTIME REDUCTION
                 </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Fewer unplanned stops in critical operations
                 </p>
               </div>
@@ -278,14 +281,14 @@ export function AirfilterPage() {
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
                   CAPTURE EFFICIENCY
                 </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Proven protection under extreme operating conditions
                 </p>
               </div>
             </div>
 
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, maxWidth: '800px', margin: '0 auto 2rem auto' }}>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto 2rem auto' }}>
                 Results verified in transportation, mining, construction and power generation operations.
               </p>
               <Link
@@ -355,7 +358,7 @@ export function AirfilterPage() {
                   <h3 style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>
                     {app.title}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic' }}>
                     {app.desc}
                   </p>
                 </div>
