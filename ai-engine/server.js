@@ -116,6 +116,7 @@ app.get('/', (req, res) => {
         type: 'Industrial Intelligence - RAG + Tool Calling',
         endpoints: {
             health: 'GET /health',
+            stats: 'GET /stats',
             query: 'POST /ai/query',
             intent: 'POST /ai/intent',
             search: 'POST /ai/search',
@@ -126,9 +127,39 @@ app.get('/', (req, res) => {
             'RAG pipeline with embeddings',
             'Intent classification',
             'Vector semantic search',
-            'pgvector integration'
+            'pgvector integration',
+            'Embedding caching'
         ]
     });
+});
+
+// ════════════════════════════ STATS ════════════════════════════
+app.get('/stats', async (req, res) => {
+    try {
+        const embeddingStats = EmbeddingService.getCacheStats();
+        const embeddingCounts = await DatabaseService.pool
+            ? await (async () => {
+                const result = await DatabaseService.pool.query(
+                    `SELECT COUNT(*) as total, COUNT(CASE WHEN embedding IS NOT NULL THEN 1 END) as embedded FROM filters`
+                );
+                return result.rows[0];
+            })()
+            : { total: 0, embedded: 0 };
+
+        res.status(200).json({
+            service: 'ai-engine',
+            timestamp: new Date().toISOString(),
+            embedding: {
+                cache: embeddingStats,
+                database: embeddingCounts
+            }
+        });
+    } catch (err) {
+        res.status(500).json({
+            error: err.message,
+            timestamp: new Date().toISOString()
+        });
+    }
 });
 
 // ════════════════════════════ ERROR HANDLING ════════════════════════════
