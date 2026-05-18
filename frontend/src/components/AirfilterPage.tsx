@@ -1,19 +1,34 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { Navigation } from './Navigation';
-import { Footer } from './Footer';
 
 export function AirfilterPage() {
   return (
     <>
-      <Navigation />
+      {/* HOME Button */}
+      <div style={{ position: 'fixed', top: '1.5rem', right: '2rem', zIndex: 100 }}>
+        <Link
+          href="/"
+          style={{
+            background: '#FFF12D',
+            color: '#000',
+            fontFamily: 'Montserrat, sans-serif',
+            fontWeight: 700,
+            fontSize: '0.75rem',
+            letterSpacing: '0.12em',
+            padding: '0.6rem 1.5rem',
+            textDecoration: 'none',
+            borderRadius: '4px',
+          }}
+        >
+          HOME
+        </Link>
+      </div>
       <main style={{ background: '#000', color: '#fff' }}>
         {/* Hero Section */}
         <section
           style={{
-            marginTop: '72px',
+            marginTop: 0,
             minHeight: '70vh',
             display: 'flex',
             alignItems: 'center',
@@ -614,7 +629,6 @@ export function AirfilterPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
