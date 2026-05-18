@@ -203,7 +203,7 @@ export function AirfilterPage() {
           </div>
         </section>
 
-        {/* Tecnología MACROCORE™ */}
+        {/* Rendimiento Comprobado en Campo */}
         <section
           style={{
             padding: '6rem 2rem',
@@ -224,127 +224,162 @@ export function AirfilterPage() {
                   margin: 0,
                 }}
               >
-                TECNOLOGÍA INTEGRADA
+                RENDIMIENTO COMPROBADO EN CAMPO
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-              <div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '2rem',
+                marginBottom: '3rem',
+              }}
+            >
+              <div
+                style={{
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  borderRadius: '12px',
+                  padding: '2.5rem',
+                  background: '#000',
+                }}
+              >
                 <h3
                   style={{
                     fontSize: '2.5rem',
                     fontWeight: 900,
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    marginBottom: '2rem',
                     color: '#FFF12D',
+                    margin: '0 0 1rem 0',
+                    fontFamily: 'Space Grotesk, sans-serif',
                   }}
                 >
-                  MACROCORE™
+                  +45%
                 </h3>
                 <p
                   style={{
-                    fontSize: '1rem',
-                    lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.85)',
-                    marginBottom: '2rem',
-                  }}
-                >
-                  AIRFILTER implementa el sistema Progressive Density Gradient (PDG) patentado por ELIMFILTERS, conocido como MACROCORE™.
-                </p>
-                <p
-                  style={{
-                    fontSize: '0.95rem',
-                    lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.75)',
-                    marginBottom: '2rem',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  "MACROCORE™ no es una media filtrante estática; es un sistema de ingeniería de materiales que adapta la densidad de fibras para optimizar la captura de contaminantes de diferentes tamaños."
-                </p>
-                <Link
-                  href="/technologies/macrocore"
-                  style={{
-                    display: 'inline-block',
-                    background: '#FFF12D',
-                    color: '#000',
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '0.9rem',
                     fontWeight: 700,
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.1em',
-                    padding: '1rem 2.5rem',
-                    textDecoration: 'none',
-                    borderRadius: '4px',
-                    transition: 'all 0.25s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#E6DB1F';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#FFF12D';
-                    e.currentTarget.style.transform = 'none';
+                    letterSpacing: '0.05em',
+                    color: 'rgba(255,255,255,0.9)',
+                    margin: 0,
                   }}
                 >
-                  EXPLORAR MACROCORE™ →
-                </Link>
+                  EXTENSIÓN DE INTERVALOS
+                </p>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                  Períodos de servicio ampliados comparado con estándares industriales
+                </p>
               </div>
 
               <div
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255,241,45,0.15) 0%, rgba(0,0,0,0.5) 100%)',
-                  border: '2px solid rgba(255,241,45,0.3)',
+                  border: '1px solid rgba(255,241,45,0.2)',
                   borderRadius: '12px',
-                  padding: '3rem',
-                  textAlign: 'center',
+                  padding: '2.5rem',
+                  background: '#000',
                 }}
               >
-                <h4
+                <h3
                   style={{
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
+                    fontSize: '2.5rem',
+                    fontWeight: 900,
                     color: '#FFF12D',
-                    fontFamily: 'JetBrains Mono, monospace',
-                    marginBottom: '2rem',
+                    margin: '0 0 1rem 0',
+                    fontFamily: 'Space Grotesk, sans-serif',
                   }}
                 >
-                  MECANISMO DE CAPTURA
-                </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
-                  <div>
-                    <p
-                      style={{
-                        fontSize: '0.9rem',
-                        color: '#FFF12D',
-                        fontWeight: 700,
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      CAPA EXTERNA
-                    </p>
-                    <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.8)' }}>
-                      Retención de macro-contaminantes
-                    </p>
-                  </div>
-                  <div style={{ height: '1px', background: 'rgba(255,241,45,0.2)' }} />
-                  <div>
-                    <p
-                      style={{
-                        fontSize: '0.9rem',
-                        color: '#FFF12D',
-                        fontWeight: 700,
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      MATRIZ INTERNA
-                    </p>
-                    <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.8)' }}>
-                      Captura de sub-micrónicos
-                    </p>
-                  </div>
-                </div>
+                  -60%
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.05em',
+                    color: 'rgba(255,255,255,0.9)',
+                    margin: 0,
+                  }}
+                >
+                  REDUCCIÓN DE DOWNTIME
+                </p>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                  Menos paradas no programadas en operaciones críticas
+                </p>
               </div>
+
+              <div
+                style={{
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  borderRadius: '12px',
+                  padding: '2.5rem',
+                  background: '#000',
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 900,
+                    color: '#FFF12D',
+                    margin: '0 0 1rem 0',
+                    fontFamily: 'Space Grotesk, sans-serif',
+                  }}
+                >
+                  99.9%
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.05em',
+                    color: 'rgba(255,255,255,0.9)',
+                    margin: 0,
+                  }}
+                >
+                  EFICIENCIA DE CAPTURA
+                </p>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', marginTop: '0.5rem' }}>
+                  Protección probada en condiciones extremas de operación
+                </p>
+              </div>
+            </div>
+
+            <div style={{ textAlign: 'center' }}>
+              <p
+                style={{
+                  fontSize: '0.95rem',
+                  color: 'rgba(255,255,255,0.8)',
+                  lineHeight: 1.7,
+                  maxWidth: '800px',
+                  margin: '0 auto 2rem auto',
+                }}
+              >
+                Resultados verificados en operaciones de transporte, minería, construcción y generación de energía.
+              </p>
+              <Link
+                href="/technologies/macrocore"
+                style={{
+                  display: 'inline-block',
+                  background: '#FFF12D',
+                  color: '#000',
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.1em',
+                  padding: '1rem 2.5rem',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                  transition: 'all 0.25s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#E6DB1F';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#FFF12D';
+                  e.currentTarget.style.transform = 'none';
+                }}
+              >
+                EXPLORAR MACROCORE™ →
+              </Link>
             </div>
           </div>
         </section>
