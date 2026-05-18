@@ -1,21 +1,14 @@
-const { Groq } = require('groq-sdk');
 const { DatabaseService } = require('../db/database.service');
 const { EmbeddingService } = require('../embeddings/embedding.service');
 const { VectorSearchService } = require('../vector-search/vector-search.service');
 const { IntentClassifierAgent } = require('../agents/intent-classifier.agent');
 const { ToolsRegistry } = require('../tools/tools.registry');
 const { Logger } = require('../utils/logger');
+const { LLMService } = require('../services/llm.service');
 
 class RAGService {
-    static client = null;
-
     static async initialize() {
-        if (!this.client) {
-            this.client = new Groq({
-                apiKey: process.env.GROQ_API_KEY
-            });
-        }
-        return this.client;
+        await LLMService.initialize();
     }
 
     static async fullRAGQuery(userQuery) {
@@ -34,31 +27,29 @@ class RAGService {
                 keywordCount: context.keywordResults.length
             });
 
-            // Step 3: Build System Prompt with Context
-            const systemPrompt = this.buildSystemPrompt(context, intentResult.intent);
+            // Step 3: Build RAG Context Section
+            const contextSection = LLMService.buildContextSection(
+                context.semanticResults,
+                context.keywordResults,
+                'RAG (Vector + SQL Search)'
+            );
 
-            // Step 4: Process with Tool Calling
+            // Step 4: Process with Tool Calling using LLMService
             const toolDefinitions = ToolsRegistry.getDefinitions();
             Logger.debug('Tool calling setup', { toolCount: toolDefinitions.length });
 
-            const response = await this.client.chat.completions.create({
-                model: 'mixtral-8x7b-32768',
-                messages: [
-                    { role: 'system', content: systemPrompt },
-                    { role: 'user', content: userQuery }
-                ],
-                tools: toolDefinitions.length > 0 ? toolDefinitions : undefined,
-                tool_choice: toolDefinitions.length > 0 ? 'auto' : undefined,
-                temperature: 0.3,
-                max_tokens: 1024
-            });
+            const llmResponse = await LLMService.executeWithGrounding(
+                userQuery,
+                contextSection,
+                toolDefinitions.length > 0 ? toolDefinitions : null
+            );
 
             // Step 5: Handle Tool Calls
             let toolResults = null;
             const toolCalls = [];
-            if (response.choices[0].message.tool_calls) {
+            if (llmResponse.toolCalls) {
                 toolResults = {};
-                for (const toolCall of response.choices[0].message.tool_calls) {
+                for (const toolCall of llmResponse.toolCalls) {
                     try {
                         Logger.debug('Executing tool', { tool: toolCall.function.name });
                         const result = await ToolsRegistry.executeTool(
@@ -75,11 +66,25 @@ class RAGService {
                 }
             }
 
+            // Step 6: Validate response for hallucinations
+            const validation = LLMService.validateResponse(llmResponse.message, {
+                semantic: context.semanticResults,
+                keyword: context.keywordResults
+            });
+
+            if (!validation.valid && validation.errors.length > 0) {
+                Logger.warn('Response validation detected issues', { errors: validation.errors });
+            }
+
             const products = toolResults ? this.extractProducts(toolResults) : [];
+            const retrievedCount = context.semanticResults.length + context.keywordResults.length;
+
             Logger.info('RAG query completed', {
                 intent: intentResult.intent,
                 toolCount: toolCalls.length,
-                productCount: products.length
+                productCount: products.length,
+                retrievedContext: retrievedCount,
+                validation: validation.type
             });
 
             return {
@@ -88,10 +93,12 @@ class RAGService {
                 confidence: intentResult.confidence,
                 entities,
                 retrievedContext: context,
-                llmResponse: response.choices[0].message.content,
+                llmResponse: llmResponse.message,
                 toolCalls: toolCalls,
                 toolResults: toolResults,
                 products: products,
+                dataSource: 'RAG with Anti-Hallucination Enforcement',
+                validation: validation,
                 timestamp: new Date().toISOString()
             };
         } catch (err) {
@@ -147,41 +154,6 @@ class RAGService {
         }
     }
 
-    static buildSystemPrompt(context, intent) {
-        const basePrompt = `You are an industrial filter specialist AI for Elimfilters.
-
-Your role is to help users find the right filters for their industrial needs using ONLY the retrieved context data.
-
-IMPORTANT RULES:
-1. Answer ONLY using the retrieved product data below
-2. DO NOT hallucinate or invent products
-3. Provide specific product SKUs when available
-4. Be concise and technical
-5. If information is not in the context, say "I don't have that information"
-
-RETRIEVED CONTEXT:
-`;
-
-        let contextData = basePrompt;
-
-        if (context.semanticResults && context.semanticResults.length > 0) {
-            contextData += `\nSEMANTIC MATCHES:\n`;
-            context.semanticResults.forEach(p => {
-                contextData += `- SKU: ${p.sku}, Code: ${p.base_code}, Type: ${p.type}, Desc: ${p.description}\n`;
-            });
-        }
-
-        if (context.keywordResults && context.keywordResults.length > 0) {
-            contextData += `\nKEYWORD MATCHES:\n`;
-            context.keywordResults.slice(0, 5).forEach(p => {
-                contextData += `- SKU: ${p.sku}, Code: ${p.base_code}, Tech: ${p.technology}\n`;
-            });
-        }
-
-        contextData += `\nINTENT: ${intent}`;
-
-        return contextData;
-    }
 
     static extractProducts(toolResults) {
         const products = [];
