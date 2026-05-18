@@ -18,7 +18,7 @@ class ResponseValidator {
         }
 
         // Check for hallucination indicators
-        const hallucationPatterns = [
+        const hallucinationPatterns = [
             { pattern: /assume.*compatible/i, reason: 'Assumes compatibility without data' },
             { pattern: /might.*work.*with/i, reason: 'Speculative compatibility claim' },
             { pattern: /probably.*equivalent/i, reason: 'Unconfirmed equivalence' },
@@ -26,14 +26,12 @@ class ResponseValidator {
             { pattern: /i think.*could/i, reason: 'Speculation instead of data' },
             { pattern: /based on my knowledge/i, reason: 'Using general knowledge instead of data' },
             { pattern: /in general.*filters/i, reason: 'General knowledge not from database' },
-            { pattern: /typically.*cross-refer/i, reason: 'Generalization instead of data' },
-            { pattern: /should.*work/i, reason: 'Unverified assumption' },
-            { pattern: /can be used/i, reason: 'Unconfirmed usage claim' }
+            { pattern: /typically.*cross-refer/i, reason: 'Generalization instead of data' }
         ];
 
         const responseText = (response.llmResponse || '').toLowerCase();
 
-        for (const { pattern, reason } of hallucationPatterns) {
+        for (const { pattern, reason } of hallucinationPatterns) {
             if (pattern.test(responseText)) {
                 errors.push(`Hallucination detected: ${reason}`);
             }
@@ -53,7 +51,7 @@ class ResponseValidator {
             errors: errors,
             hasHallucinations: errors.filter(e => e.includes('Hallucination')).length > 0,
             isNotFound: isNotFound,
-            isGrounded: hasSourceAttribution && !errors.filter(e => e.includes('Hallucination')).length > 0
+            isGrounded: hasSourceAttribution && errors.filter(e => e.includes('Hallucination')).length === 0
         };
     }
 

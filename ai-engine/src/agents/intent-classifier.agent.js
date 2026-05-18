@@ -1,7 +1,9 @@
 const { Groq } = require('groq-sdk');
+const { Logger } = require('../utils/logger');
 
 class IntentClassifierAgent {
     static client = null;
+    static model = process.env.GROQ_MODEL || 'mixtral-8x7b-32768';
 
     static async initialize() {
         if (!this.client) {
@@ -22,7 +24,7 @@ class IntentClassifierAgent {
 
     static async classify(query) {
         try {
-            const client = await this.initialize();
+            await this.initialize();
 
             const systemPrompt = `You are an industrial filter query classifier for Elimfilters.
 
@@ -51,7 +53,7 @@ Respond ONLY with valid JSON:
 }`;
 
             const response = await this.client.chat.completions.create({
-                model: 'mixtral-8x7b-32768',
+                model: this.model,
                 messages: [
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: query }
@@ -65,6 +67,9 @@ Respond ONLY with valid JSON:
 
                 const isValid = Object.keys(this.SUPPORTED_INTENTS).includes(result.intent);
                 if (!isValid) {
+                    Logger.warn('Unrecognized intent returned, defaulting to PRODUCT_SEARCH', {
+                        returned: result.intent
+                    });
                     result.intent = 'PRODUCT_SEARCH';
                     result.confidence = 0.5;
                     result.reasoning = 'Defaulted to PRODUCT_SEARCH for unrecognized intent';
@@ -78,7 +83,9 @@ Respond ONLY with valid JSON:
                     timestamp: new Date().toISOString()
                 };
             } catch (parseErr) {
-                console.warn('Intent classification parse error:', parseErr.message);
+                Logger.warn('Intent classification parse error, defaulting to PRODUCT_SEARCH', {
+                    error: parseErr.message
+                });
                 return {
                     query,
                     intent: 'PRODUCT_SEARCH',
@@ -88,7 +95,7 @@ Respond ONLY with valid JSON:
                 };
             }
         } catch (err) {
-            console.error('Intent classification error:', err.message);
+            Logger.error('Intent classification failed', { error: err.message });
             return {
                 query,
                 intent: 'PRODUCT_SEARCH',
@@ -101,7 +108,7 @@ Respond ONLY with valid JSON:
 
     static async extractEntities(query) {
         try {
-            const client = await this.initialize();
+            await this.initialize();
 
             const systemPrompt = `Extract technical entities from the industrial filter query.
 
@@ -115,7 +122,7 @@ Return ONLY valid JSON:
 }`;
 
             const response = await this.client.chat.completions.create({
-                model: 'mixtral-8x7b-32768',
+                model: this.model,
                 messages: [
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: query }
@@ -127,6 +134,7 @@ Return ONLY valid JSON:
             try {
                 return JSON.parse(response.choices[0].message.content);
             } catch {
+                Logger.warn('Entity extraction parse error, returning empty entities');
                 return {
                     codes: [],
                     machines: [],
@@ -136,7 +144,7 @@ Return ONLY valid JSON:
                 };
             }
         } catch (err) {
-            console.error('Entity extraction error:', err.message);
+            Logger.error('Entity extraction failed', { error: err.message });
             return {
                 codes: [],
                 machines: [],

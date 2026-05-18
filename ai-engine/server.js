@@ -54,6 +54,7 @@ app.use('/ai/', limiter);
 // ════════════════════════════ INITIALIZATION ════════════════════════════
 const { DatabaseService } = require('./src/db/database.service');
 const { EmbeddingService } = require('./src/embeddings/embedding.service');
+const { LLMService } = require('./src/services/llm.service');
 const { MigrationService } = require('./src/services/migration.service');
 const { BatchEmbeddingService } = require('./src/services/batch-embedding.service');
 
@@ -62,13 +63,17 @@ const { BatchEmbeddingService } = require('./src/services/batch-embedding.servic
         await DatabaseService.initialize();
         console.log('✓ Database connected');
 
-        // Run database migrations
+        // Run database migrations (idempotent)
         await MigrationService.runStartupMigrations();
 
         await EmbeddingService.initialize();
         console.log('✓ Embeddings initialized');
 
-        // Batch embed all products (happens in background)
+        // Initialize LLM service with anti-hallucination enforcement
+        await LLMService.initialize();
+        console.log('✓ LLM service initialized (Anti-Hallucination: ACTIVE)');
+
+        // Batch embed all products in background
         BatchEmbeddingService.embedAllProducts().catch(err => {
             console.error('Background batch embedding error:', err.message);
         });

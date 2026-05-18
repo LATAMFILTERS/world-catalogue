@@ -1,4 +1,5 @@
 const { Pool } = require('pg');
+const { Logger } = require('../utils/logger');
 
 class DatabaseService {
     static pool = null;
@@ -14,7 +15,7 @@ class DatabaseService {
             });
 
             this.pool.on('error', (err) => {
-                console.error('DB Pool Error:', err.message);
+                Logger.error('DB Pool Error', { error: err.message });
             });
 
             await this.checkConnection();
@@ -155,10 +156,10 @@ class DatabaseService {
         const pool = await this.initialize();
         try {
             await pool.query('CREATE EXTENSION IF NOT EXISTS vector');
-            console.log('✓ pgvector extension enabled');
+            Logger.info('pgvector extension enabled');
             return true;
         } catch (err) {
-            console.warn('⚠ pgvector extension setup:', err.message);
+            Logger.warn('pgvector extension setup failed', { error: err.message });
             return false;
         }
     }
@@ -179,7 +180,7 @@ class DatabaseService {
             );
             return result.rows;
         } catch (err) {
-            console.warn('Vector search failed:', err.message);
+            Logger.warn('Vector search failed', { error: err.message });
             return [];
         }
     }
@@ -196,7 +197,7 @@ class DatabaseService {
             );
             return true;
         } catch (err) {
-            console.warn(`Could not store embedding for ${sku}:`, err.message);
+            Logger.warn(`Could not store embedding for ${sku}`, { error: err.message });
             return false;
         }
     }

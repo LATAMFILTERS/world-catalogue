@@ -163,7 +163,7 @@ If in doubt: "NOT FOUND IN DATABASE"`;
         }
 
         // Check for hallucination indicators
-        const hallucationPatterns = [
+        const hallucinationPatterns = [
             /assume.*compatible/i,
             /might.*work.*with/i,
             /probably.*equivalent/i,
@@ -174,7 +174,7 @@ If in doubt: "NOT FOUND IN DATABASE"`;
             /typically.*cross-refer/i
         ];
 
-        for (const pattern of hallacationPatterns) {
+        for (const pattern of hallucinationPatterns) {
             if (pattern.test(response)) {
                 errors.push(`Potential hallucination detected: ${pattern.source}`);
             }

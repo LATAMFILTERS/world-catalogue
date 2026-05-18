@@ -1,12 +1,12 @@
 const { DatabaseService } = require('../db/database.service');
 const { EmbeddingService } = require('../embeddings/embedding.service');
+const { Logger } = require('../utils/logger');
 
 class BatchEmbeddingService {
     static async embedAllProducts() {
         try {
-            console.log('\n⏳ Starting batch embedding of all products...');
+            Logger.info('Starting batch embedding of all products');
 
-            // Get all products without embeddings
             const pool = await DatabaseService.initialize();
             const result = await pool.query(
                 `SELECT sku, base_code, description, category, technology, type, applications
@@ -17,13 +17,12 @@ class BatchEmbeddingService {
 
             const products = result.rows;
             if (products.length === 0) {
-                console.log('✓ All products already embedded');
+                Logger.info('All products already embedded');
                 return true;
             }
 
-            console.log(`  Found ${products.length} products to embed`);
+            Logger.info('Products to embed found', { count: products.length });
 
-            // Embed in batches (5 at a time to respect rate limits)
             const batchSize = 5;
             let embedded = 0;
             let failed = 0;
@@ -31,46 +30,37 @@ class BatchEmbeddingService {
             for (let i = 0; i < products.length; i += batchSize) {
                 const batch = products.slice(i, i + batchSize);
 
-                // Process batch in parallel
-                const results = await Promise.all(
+                await Promise.all(
                     batch.map(async (product) => {
                         try {
-                            // Generate embedding for product metadata
                             const text = `${product.sku} ${product.base_code} ${product.description} ${product.category} ${product.technology}`;
                             const embedding = await EmbeddingService.generateEmbedding(text);
-
-                            // Store in database
                             const stored = await DatabaseService.storeEmbedding(product.sku, embedding);
 
                             if (stored) {
                                 embedded++;
-                                return { success: true, sku: product.sku };
                             } else {
                                 failed++;
-                                return { success: false, sku: product.sku };
                             }
                         } catch (err) {
                             failed++;
-                            console.warn(`  ⚠ Failed to embed ${product.sku}: ${err.message}`);
-                            return { success: false, sku: product.sku };
+                            Logger.warn('Failed to embed product', { sku: product.sku, error: err.message });
                         }
                     })
                 );
 
-                // Log progress
                 const progress = Math.min(i + batchSize, products.length);
-                console.log(`  ✓ Embedded ${progress}/${products.length} products`);
+                Logger.debug('Batch embedding progress', { done: progress, total: products.length });
 
-                // Rate limiting delay (1 second between batches)
                 if (i + batchSize < products.length) {
                     await new Promise(resolve => setTimeout(resolve, 1000));
                 }
             }
 
-            console.log(`\n✓ Batch embedding complete: ${embedded} embedded, ${failed} failed`);
+            Logger.info('Batch embedding complete', { embedded, failed });
             return true;
         } catch (err) {
-            console.error('❌ Batch embedding failed:', err.message);
+            Logger.error('Batch embedding failed', { error: err.message });
             return false;
         }
     }
@@ -87,7 +77,7 @@ class BatchEmbeddingService {
             );
             return result.rows[0];
         } catch (err) {
-            console.error('Failed to get embedding stats:', err.message);
+            Logger.error('Failed to get embedding stats', { error: err.message });
             return null;
         }
     }

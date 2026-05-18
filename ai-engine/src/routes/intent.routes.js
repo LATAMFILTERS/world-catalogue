@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { IntentClassifierAgent } = require('../agents/intent-classifier.agent');
+const { Logger } = require('../utils/logger');
 
 router.post('/', async (req, res) => {
     try {
@@ -13,8 +14,12 @@ router.post('/', async (req, res) => {
             });
         }
 
+        Logger.info('Intent classification requested', { queryLength: query.length });
+
         const intent = await IntentClassifierAgent.classify(query);
         const entities = await IntentClassifierAgent.extractEntities(query);
+
+        Logger.info('Intent classified', { intent: intent.intent, confidence: intent.confidence });
 
         res.json({
             success: true,
@@ -24,7 +29,7 @@ router.post('/', async (req, res) => {
             }
         });
     } catch (err) {
-        console.error('Intent classification error:', err.message);
+        Logger.error('Intent classification error', { error: err.message });
         res.status(500).json({
             success: false,
             error: 'Intent classification failed',
