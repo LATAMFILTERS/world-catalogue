@@ -8,6 +8,7 @@ import { DryerPage } from '@/components/DryerPage';
 import { FuelPage } from '@/components/FuelPage';
 import { HousingPage } from '@/components/HousingPage';
 import { HydraulicPage } from '@/components/HydraulicPage';
+import { KitsPage } from '@/components/KitsPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -50,6 +51,7 @@ export default function ProductPage({ params }: Props) {
   if (item.name === 'Fuel') return <FuelPage />;
   if (item.name === 'Housing') return <HousingPage />;
   if (item.name === 'Hydraulic') return <HydraulicPage />;
+  if (item.name === 'Kits') return <KitsPage />;
 
   const media = productMedia[item.name] || {};
 
