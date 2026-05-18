@@ -1,6 +1,7 @@
 const { SearchAgent } = require('./search.agent');
 const { CrossReferenceAgent } = require('./cross-reference.agent');
 const { TechnicalAgent } = require('./technical.agent');
+const { MachineLookupAgent } = require('./machine-lookup.agent');
 const { Logger } = require('../utils/logger');
 
 class AgentRouter {
@@ -8,7 +9,7 @@ class AgentRouter {
         PRODUCT_SEARCH: new SearchAgent(),
         CROSS_REFERENCE_SEARCH: new CrossReferenceAgent(),
         TECHNICAL_SPEC_REQUEST: new TechnicalAgent(),
-        MACHINE_LOOKUP: new SearchAgent(),
+        MACHINE_LOOKUP: new MachineLookupAgent(),
         INVENTORY_REQUEST: new SearchAgent()
     };
 

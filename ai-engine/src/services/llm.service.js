@@ -164,19 +164,19 @@ If in doubt: "NOT FOUND IN DATABASE"`;
 
         // Check for hallucination indicators
         const hallucinationPatterns = [
-            /assume.*compatible/i,
-            /might.*work.*with/i,
-            /probably.*equivalent/i,
-            /likely.*compatible/i,
-            /i think.*could/i,
-            /based on my knowledge/i,
-            /in general.*filters/i,
-            /typically.*cross-refer/i
+            { pattern: /assume.*compatible/i,    reason: 'Assumes compatibility without data' },
+            { pattern: /might.*work.*with/i,     reason: 'Speculative compatibility claim' },
+            { pattern: /probably.*equivalent/i,  reason: 'Unconfirmed equivalence' },
+            { pattern: /likely.*compatible/i,    reason: 'Speculative compatibility' },
+            { pattern: /i think.*could/i,        reason: 'Speculation instead of data' },
+            { pattern: /based on my knowledge/i, reason: 'Using general knowledge instead of database' },
+            { pattern: /in general.*filters/i,   reason: 'Generalization from training, not database' },
+            { pattern: /typically.*cross-refer/i,reason: 'Assumed cross-reference, not retrieved' }
         ];
 
-        for (const pattern of hallucinationPatterns) {
+        for (const { pattern, reason } of hallucinationPatterns) {
             if (pattern.test(response)) {
-                errors.push(`Potential hallucination detected: ${pattern.source}`);
+                errors.push(`Potential hallucination detected: ${reason}`);
             }
         }
 
