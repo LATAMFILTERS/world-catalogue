@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { useRef, useEffect } from 'react';
+import { motion, useInView } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS } from '@/lib/catalogue';
 import { Navigation } from './Navigation';
 import { Hero } from './Hero';
@@ -16,6 +17,52 @@ interface CategoryPageProps {
   industryImage?: string;
   industryVideo?: string;
   technologyLogo?: string;
+}
+
+function InlineVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const inView = useInView(ref, { once: false, margin: '-10%' });
+
+  useEffect(() => {
+    if (!ref.current) return;
+    if (inView) {
+      ref.current.play().catch(() => {});
+    } else {
+      ref.current.pause();
+    }
+  }, [inView]);
+
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        paddingBottom: '56.25%',
+        height: 0,
+        overflow: 'hidden',
+        borderRadius: '12px',
+        border: '1px solid rgba(255,241,45,0.2)',
+      }}
+    >
+      <video
+        ref={ref}
+        playsInline
+        muted
+        loop
+        preload="metadata"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
 }
 
 const CATEGORY_BG: Record<string, string> = {
@@ -185,33 +232,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 </div>
 
                 {/* Right: Video */}
-                <div
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    paddingBottom: '56.25%',
-                    height: 0,
-                    overflow: 'hidden',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                  }}
-                >
-                  <video
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                    }}
-                    autoPlay
-                    muted
-                    loop
-                  >
-                    <source src={industryVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <InlineVideo src={industryVideo} />
               </div>
             </div>
           </section>
