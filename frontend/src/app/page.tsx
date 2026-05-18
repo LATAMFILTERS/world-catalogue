@@ -99,7 +99,11 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
 
 // ─── Spotlight card ───────────────────────────────────────────────────────────
 
-function SpotlightCard({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+function SpotlightCard({ children, style, contentStyle }: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  contentStyle?: React.CSSProperties;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
 
@@ -129,7 +133,7 @@ function SpotlightCard({ children, style }: { children: React.ReactNode; style?:
           zIndex: 1,
         }}
       />
-      <div style={{ position: 'relative', zIndex: 2 }}>{children}</div>
+      <div style={{ position: 'relative', zIndex: 2, ...contentStyle }}>{children}</div>
     </div>
   );
 }
@@ -423,13 +427,15 @@ export default function Home() {
 
             <SpotlightCard
               style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '4rem',
                 background: '#050505',
                 padding: '3.5rem',
                 border: '1px solid #1a1a1a',
                 borderRadius: '16px',
+              }}
+              contentStyle={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '4rem',
               }}
             >
               {/* Left */}
