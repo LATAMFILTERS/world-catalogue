@@ -1,6 +1,7 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
 import { AirfilterPage } from '@/components/AirfilterPage';
+import { AquaguardPage } from '@/components/AquaguardPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -35,10 +36,8 @@ export default function ProductPage({ params }: Props) {
   const item = getItemBySlug('products', params.slug);
   if (!item) return null;
 
-  // Use custom AirfilterPage for Airfilter product
-  if (item.name === 'Airfilter') {
-    return <AirfilterPage />;
-  }
+  if (item.name === 'Airfilter') return <AirfilterPage />;
+  if (item.name === 'Aquaguard Series') return <AquaguardPage />;
 
   const media = productMedia[item.name] || {};
 
