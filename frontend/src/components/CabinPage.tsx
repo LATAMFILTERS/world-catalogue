@@ -33,8 +33,9 @@ export function CabinPage() {
             display: 'flex',
             alignItems: 'center',
             backgroundImage: 'url(/images/cabin-hero.avif)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
             position: 'relative',
           }}
         >

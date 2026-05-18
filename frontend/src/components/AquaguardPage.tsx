@@ -33,7 +33,8 @@ export function AquaguardPage() {
             display: 'flex',
             alignItems: 'center',
             backgroundImage: 'url(/images/turbinas-hero.avif)',
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             position: 'relative',
           }}
