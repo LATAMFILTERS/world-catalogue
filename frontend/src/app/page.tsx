@@ -54,23 +54,37 @@ const SLIDE_DURATION = 5000;
 // ─── SplitText ────────────────────────────────────────────────────────────────
 
 function SplitText({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
+  const words = text.split(' ');
+  let charCount = 0;
+
   return (
     <>
-      {text.split('').map((char, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, y: 48, rotateX: -30 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          transition={{
-            duration: 0.55,
-            delay: startDelay + i * 0.028,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          style={{ display: 'inline-block', whiteSpace: char === ' ' ? 'pre' : undefined }}
-        >
-          {char}
-        </motion.span>
-      ))}
+      {words.map((word, wi) => {
+        const startIdx = charCount;
+        charCount += word.length + 1;
+        return (
+          <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+            {word.split('').map((char, ci) => (
+              <motion.span
+                key={ci}
+                initial={{ opacity: 0, y: 48, rotateX: -30 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{
+                  duration: 0.55,
+                  delay: startDelay + (startIdx + ci) * 0.028,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                style={{ display: 'inline-block' }}
+              >
+                {char}
+              </motion.span>
+            ))}
+            {wi < words.length - 1 && (
+              <span style={{ display: 'inline-block', width: '0.3em' }} />
+            )}
+          </span>
+        );
+      })}
     </>
   );
 }
@@ -241,8 +255,8 @@ export default function Home() {
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
-                fontSize: 'clamp(3rem, 9vw, 7rem)',
-                lineHeight: 1.0,
+                fontSize: 'clamp(2.5rem, 9vw, 7rem)',
+                lineHeight: 1.05,
                 letterSpacing: '0.01em',
                 color: '#FFF12D',
                 textTransform: 'uppercase',
@@ -257,7 +271,7 @@ export default function Home() {
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
+                fontSize: 'clamp(1.1rem, 4vw, 3.5rem)',
                 lineHeight: 1.1,
                 color: 'rgba(255,255,255,0.75)',
                 textTransform: 'uppercase',
