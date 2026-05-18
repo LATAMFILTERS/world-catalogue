@@ -11,6 +11,7 @@ import { HydraulicPage } from '@/components/HydraulicPage';
 import { KitsPage } from '@/components/KitsPage';
 import { MarinePage } from '@/components/MarinePage';
 import { OilPage } from '@/components/OilPage';
+import { FuelSeparatorPage } from '@/components/FuelSeparatorPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -56,6 +57,7 @@ export default function ProductPage({ params }: Props) {
   if (item.name === 'Kits') return <KitsPage />;
   if (item.name === 'Marine') return <MarinePage />;
   if (item.name === 'Oil') return <OilPage />;
+  if (item.name === 'Water') return <FuelSeparatorPage />;
 
   const media = productMedia[item.name] || {};
 
