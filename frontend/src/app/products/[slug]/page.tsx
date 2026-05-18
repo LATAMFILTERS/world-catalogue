@@ -3,6 +3,7 @@ import { CategoryPage } from '@/components/CategoryPage';
 import { AirfilterPage } from '@/components/AirfilterPage';
 import { AquaguardPage } from '@/components/AquaguardPage';
 import { CabinPage } from '@/components/CabinPage';
+import { CoolantPage } from '@/components/CoolantPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -40,6 +41,7 @@ export default function ProductPage({ params }: Props) {
   if (item.name === 'Airfilter') return <AirfilterPage />;
   if (item.name === 'Aquaguard Series') return <AquaguardPage />;
   if (item.name === 'Cabin') return <CabinPage />;
+  if (item.name === 'Coolant') return <CoolantPage />;
 
   const media = productMedia[item.name] || {};
 
