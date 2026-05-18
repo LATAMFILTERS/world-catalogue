@@ -163,7 +163,7 @@
             document.getElementById('resultDesc').textContent = descText;
             const specsGrid = document.getElementById('specsGrid');
             specsGrid.innerHTML = '';
-            const specs = [{label: 'Micron Rating', value: product.micron_rating},{label: 'Efficiency', value: product.nominal_efficiency},{label: 'Thread Size', value: product.thread_size},{label: 'Height', value: (product.height_mm || 'N/A') + ' mm'},{label: 'Technology', value: product.technology},{label: 'Duty', value: product.duty},{label: 'Base Code', value: product.codigo_base},{label: 'Filter Type', value: product.product_name || 'N/A'}];
+            const specs = [{label: 'Outer Diameter', value: product.outer_diameter || 'N/A'},{label: 'Efficiency', value: product.efficiency || 'N/A'},{label: 'Inner Diameter', value: product.inner_diameter || 'N/A'},{label: 'Length', value: product.length || 'N/A'},{label: 'Technology', value: product.technology || 'N/A'},{label: 'Media Type', value: product.media_type || 'N/A'},{label: 'Base Code', value: product.base_code || 'N/A'},{label: 'Filter Type', value: product.type || product.category || 'N/A'}];
             specs.forEach(spec => {
                 const item = document.createElement('div');
                 item.className = 'spec-item';
@@ -192,13 +192,17 @@
             }
             const equipmentGrid = document.getElementById('equipmentGrid');
             equipmentGrid.innerHTML = '';
-            if (product.oem_manufacturers && product.oem_manufacturers.length > 0) {
-                product.oem_manufacturers.slice(0, 8).forEach(mfr => {
+            const applications = product.applications;
+            const appList = Array.isArray(applications) ? applications : (typeof applications === 'string' ? applications.split(',').map(s => s.trim()).filter(Boolean) : []);
+            if (appList.length > 0) {
+                appList.slice(0, 8).forEach(app => {
                     const box = document.createElement('div');
                     box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">MFR</div><div class="code-value">${mfr}</div>`;
+                    box.innerHTML = `<div class="code-type">APP</div><div class="code-value">${app}</div>`;
                     equipmentGrid.appendChild(box);
                 });
+            } else {
+                equipmentGrid.innerHTML = '<p style="color:#555;font-size:12px;">No equipment data available</p>';
             }
         }
         window.addEventListener('load', () => {

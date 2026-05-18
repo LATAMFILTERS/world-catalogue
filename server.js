@@ -77,11 +77,21 @@ cross_references, applications
 `;
 
 // -------------------- HEALTH --------------------
-app.get('/health', (req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        time: new Date().toISOString()
-    });
+app.get('/health', async (req, res) => {
+    try {
+        await pool.query('SELECT 1');
+        res.status(200).json({
+            status: 'ok',
+            db: 'connected',
+            time: new Date().toISOString()
+        });
+    } catch (err) {
+        res.status(503).json({
+            status: 'degraded',
+            db: 'disconnected',
+            time: new Date().toISOString()
+        });
+    }
 });
 
 // -------------------- SEARCH --------------------
@@ -99,12 +109,14 @@ app.get('/api/search', async (req, res) => {
              WHERE UPPER(sku) LIKE $1
                 OR UPPER(base_code) LIKE $1
                 OR competitor_codes::text ILIKE $2
+                OR oem_codes::text ILIKE $2
+                OR cross_references::text ILIKE $2
              LIMIT 20`,
             [q + '%', '%' + q + '%']
         );
 
         return res.json({
-            results: result.rows,
+            products: result.rows,
             count: result.rows.length
         });
     } catch (err) {
