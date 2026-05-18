@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView, animate } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
@@ -24,6 +25,13 @@ const FAILURE_MODES = [
   },
 ];
 
+const STATS = [
+  { value: 99.9, suffix: '%', label: 'Media Efficiency' },
+  { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
+  { value: 20, suffix: 'k+', label: 'OEM Cross-Refs' },
+  { value: null, display: 'GLOBAL', label: 'Texas, USA' },
+];
+
 const CTA_SLIDES = [
   {
     tag: '// DEALER NETWORK',
@@ -42,6 +50,63 @@ const CTA_SLIDES = [
 ];
 
 const SLIDE_DURATION = 5000;
+
+// ─── Animation variants ───────────────────────────────────────────────────────
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const staggerFast = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+};
+
+// ─── Animated counter ─────────────────────────────────────────────────────────
+
+function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  useEffect(() => {
+    if (!inView || !ref.current) return;
+    const controls = animate(0, to, {
+      duration: 1.8,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate(v) {
+        if (ref.current) {
+          ref.current.textContent =
+            prefix + (Number.isInteger(to) ? Math.round(v).toString() : v.toFixed(1)) + suffix;
+        }
+      },
+    });
+    return () => controls.stop();
+  }, [inView, to, prefix, suffix]);
+
+  return (
+    <span ref={ref} style={{ display: 'inline' }}>
+      {prefix}0{suffix}
+    </span>
+  );
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -75,6 +140,8 @@ export default function Home() {
             .problem-grid { grid-template-columns: 1fr !important; }
             .problem-badge { display: none !important; }
             .hero-bottom { flex-direction: column !important; }
+            .why-grid { grid-template-columns: 1fr !important; }
+            .tech-grid { grid-template-columns: 1fr !important; }
           }
           @media (max-width: 480px) {
             .stats-grid { grid-template-columns: 1fr 1fr !important; }
@@ -104,93 +171,111 @@ export default function Home() {
               zIndex: 10,
             }}
           >
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                opacity: 0.9,
-                textTransform: 'uppercase',
-                marginBottom: '1rem',
-              }}
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              animate="visible"
             >
-              ELIMFILTERS | TOTAL PROTECTION SYSTEMS
-            </p>
-            <h1
-              style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontWeight: 900,
-                fontSize: 'clamp(3rem, 9vw, 7rem)',
-                lineHeight: 1.0,
-                letterSpacing: '0.01em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '0.5rem',
-              }}
-            >
-              ENGINE FILTRATION
-            </h1>
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 400,
-                fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
-                lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
-                textTransform: 'uppercase',
-                marginBottom: '2.5rem',
-              }}
-            >
-              HEAVY-DUTY AND LIGHT-DUTY
-            </h2>
-            <div
-              className="hero-bottom"
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                gap: '2rem',
-              }}
-            >
-              <p
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  maxWidth: '560px',
-                  color: 'rgba(255,255,255,0.75)',
-                  fontStyle: 'italic',
-                  borderLeft: '4px solid #FFF12D',
-                  paddingLeft: '1.5rem',
-                  fontSize: '1.1rem',
-                  lineHeight: 1.65,
-                  fontFamily: 'Outfit, sans-serif',
-                }}
-              >
-                Engineering filtration designed for those who cannot afford a stalled engine or a
-                fleet out of action.
-              </p>
-              <a
-                href="https://part-search.elimfilters.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-block',
-                  background: '#FFF12D',
-                  color: '#000',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.75rem',
-                  letterSpacing: '0.15em',
-                  padding: '1rem 2.5rem',
-                  textDecoration: 'none',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.7rem',
+                  letterSpacing: '0.25em',
+                  color: '#FFF12D',
+                  opacity: 0.9,
                   textTransform: 'uppercase',
-                  whiteSpace: 'nowrap',
-                  transition: 'background 0.2s ease',
+                  marginBottom: '1rem',
                 }}
               >
-                FIND MY FILTER
-              </a>
-            </div>
+                ELIMFILTERS | TOTAL PROTECTION SYSTEMS
+              </motion.p>
+
+              <motion.h1
+                variants={fadeUp}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: 900,
+                  fontSize: 'clamp(3rem, 9vw, 7rem)',
+                  lineHeight: 1.0,
+                  letterSpacing: '0.01em',
+                  color: '#FFF12D',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                ENGINE FILTRATION
+              </motion.h1>
+
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 400,
+                  fontSize: 'clamp(1.5rem, 4vw, 3.5rem)',
+                  lineHeight: 1.1,
+                  color: 'rgba(255,255,255,0.75)',
+                  textTransform: 'uppercase',
+                  marginBottom: '2.5rem',
+                }}
+              >
+                HEAVY-DUTY AND LIGHT-DUTY
+              </motion.h2>
+
+              <motion.div
+                variants={fadeUp}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="hero-bottom"
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  gap: '2rem',
+                }}
+              >
+                <p
+                  style={{
+                    maxWidth: '560px',
+                    color: 'rgba(255,255,255,0.75)',
+                    fontStyle: 'italic',
+                    borderLeft: '4px solid #FFF12D',
+                    paddingLeft: '1.5rem',
+                    fontSize: '1.1rem',
+                    lineHeight: 1.65,
+                    fontFamily: 'Outfit, sans-serif',
+                  }}
+                >
+                  Engineering filtration designed for those who cannot afford a stalled engine or a
+                  fleet out of action.
+                </p>
+                <motion.a
+                  href="https://part-search.elimfilters.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.5)' }}
+                  whileTap={{ scale: 0.97 }}
+                  style={{
+                    display: 'inline-block',
+                    background: '#FFF12D',
+                    color: '#000',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontWeight: 700,
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.15em',
+                    padding: '1rem 2.5rem',
+                    textDecoration: 'none',
+                    textTransform: 'uppercase',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  FIND MY FILTER
+                </motion.a>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -202,8 +287,12 @@ export default function Home() {
             borderBottom: '1px solid #111',
           }}
         >
-          <div
+          <motion.div
             className="stats-grid"
+            variants={staggerFast}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
             style={{
               maxWidth: '1400px',
               margin: '0 auto',
@@ -212,13 +301,13 @@ export default function Home() {
               gap: '2.5rem',
             }}
           >
-            {[
-              { value: '99.9%', label: 'Media Efficiency' },
-              { value: '+45%', label: 'Engine Life Span' },
-              { value: '20k+', label: 'OEM Cross-Refs' },
-              { value: 'GLOBAL', label: 'Texas, USA' },
-            ].map((s) => (
-              <div key={s.value} style={{ textAlign: 'center' }}>
+            {STATS.map((s) => (
+              <motion.div
+                key={s.label}
+                variants={fadeUp}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                style={{ textAlign: 'center' }}
+              >
                 <div
                   style={{
                     fontFamily: 'Outfit, sans-serif',
@@ -229,7 +318,11 @@ export default function Home() {
                     marginBottom: '0.6rem',
                   }}
                 >
-                  {s.value}
+                  {s.value !== null ? (
+                    <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} />
+                  ) : (
+                    s.display
+                  )}
                 </div>
                 <p
                   style={{
@@ -242,9 +335,9 @@ export default function Home() {
                 >
                   {s.label}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* ── PROBLEM SECTION ── */}
@@ -255,34 +348,45 @@ export default function Home() {
           }}
         >
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '0.5rem',
-              }}
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
             >
-              // OPERATIONAL RISK DIAGNOSIS
-            </p>
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.03em',
-                lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
-                marginBottom: '3rem',
-              }}
-            >
-              WHAT YOU CAN&apos;T SEE,
-              <br />
-              <span style={{ color: '#FFF12D' }}>IS STOPPING YOUR FLEET.</span>
-            </h2>
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.25em',
+                  color: '#FFF12D',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                // OPERATIONAL RISK DIAGNOSIS
+              </motion.p>
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
+                  fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.03em',
+                  lineHeight: 1.1,
+                  color: 'rgba(255,255,255,0.75)',
+                  marginBottom: '3rem',
+                }}
+              >
+                WHAT YOU CAN&apos;T SEE,
+                <br />
+                <span style={{ color: '#FFF12D' }}>IS STOPPING YOUR FLEET.</span>
+              </motion.h2>
+            </motion.div>
 
             <div
               className="problem-grid"
@@ -297,9 +401,17 @@ export default function Home() {
                 position: 'relative',
               }}
             >
-              {/* Left: text */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <p
+              {/* Left: failure modes */}
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+              >
+                <motion.p
+                  variants={fadeLeft}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     color: 'rgba(255,255,255,0.75)',
                     fontSize: '1.05rem',
@@ -311,10 +423,15 @@ export default function Home() {
                   A low-quality filter is an economic decision that ends up costing thousands at
                   the shop. Inefficient filtration allows invisible contaminants to act like
                   sandpaper inside critical components.
-                </p>
+                </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {FAILURE_MODES.map((item) => (
-                    <div key={item.num} style={{ display: 'flex', gap: '1.25rem' }}>
+                    <motion.div
+                      key={item.num}
+                      variants={fadeLeft}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ display: 'flex', gap: '1.25rem' }}
+                    >
                       <div
                         style={{
                           flexShrink: 0,
@@ -364,13 +481,19 @@ export default function Home() {
                           {item.desc}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Right: image + 80% badge */}
-              <div style={{ position: 'relative' }}>
+              {/* Right: image */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                style={{ position: 'relative' }}
+              >
                 <div
                   style={{
                     position: 'relative',
@@ -384,8 +507,12 @@ export default function Home() {
                     backgroundRepeat: 'no-repeat',
                   }}
                 />
-                <div
+                <motion.div
                   className="problem-badge"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     position: 'absolute',
                     bottom: '-20px',
@@ -420,8 +547,8 @@ export default function Home() {
                   >
                     Of premature failures are caused by contamination.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -429,7 +556,12 @@ export default function Home() {
         {/* ── WHY ELIMFILTERS ── */}
         <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <h2
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              variants={fadeUp}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 700,
@@ -443,9 +575,10 @@ export default function Home() {
             >
               WHY CHOOSE{' '}
               <span style={{ color: '#FFF12D' }}>ELIMFILTERS</span>
-            </h2>
+            </motion.h2>
 
             <div
+              className="why-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
@@ -453,8 +586,15 @@ export default function Home() {
                 alignItems: 'center',
               }}
             >
-              <div>
-                <p
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+              >
+                <motion.p
+                  variants={fadeLeft}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: 'Outfit, sans-serif',
                     fontSize: '1.1rem',
@@ -468,9 +608,11 @@ export default function Home() {
                   <strong style={{ color: '#FFF12D' }}>Asset Protection Technology</strong>, designing
                   solutions that preserve the value and operability of your equipment in the most
                   demanding environments.
-                </p>
+                </motion.p>
 
-                <p
+                <motion.p
+                  variants={fadeLeft}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{
                     fontFamily: 'Outfit, sans-serif',
                     fontSize: '1rem',
@@ -483,7 +625,7 @@ export default function Home() {
                   Every product we develop responds to one reality: the equipment that stops your
                   operation costs hundreds of thousands to repair. A filter is the guardian of that
                   investment.
-                </p>
+                </motion.p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
@@ -491,8 +633,13 @@ export default function Home() {
                     '25+ years protecting fleets and critical equipment',
                     'Compliance with international ISO standards',
                     'Technical support across 12+ industries',
-                  ].map((item) => (
-                    <div key={item} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item}
+                      variants={fadeLeft}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
+                      style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}
+                    >
                       <span
                         style={{
                           color: '#FFF12D',
@@ -512,12 +659,18 @@ export default function Home() {
                       >
                         {item}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+                variants={fadeRight}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
                 <div
                   style={{
                     background: '#050505',
@@ -538,7 +691,6 @@ export default function Home() {
                   >
                     // OUR DIFFERENCE
                   </p>
-
                   <h3
                     style={{
                       fontFamily: 'Space Grotesk, sans-serif',
@@ -549,9 +701,8 @@ export default function Home() {
                       lineHeight: 1.3,
                     }}
                   >
-                    We don't sell filters. We protect assets.
+                    We don&apos;t sell filters. We protect assets.
                   </h3>
-
                   <p
                     style={{
                       fontFamily: 'Outfit, sans-serif',
@@ -565,7 +716,6 @@ export default function Home() {
                     While others compete on price, we compete on reliability. Every specification
                     of our products is designed to:
                   </p>
-
                   <ul
                     style={{
                       listStyle: 'none',
@@ -607,7 +757,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -615,95 +765,116 @@ export default function Home() {
         {/* ── TECHNOLOGY ADVANTAGE ── */}
         <section style={{ padding: '5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '1rem',
-              }}
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
             >
-              // PROVEN TECHNOLOGY
-            </p>
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.03em',
-                lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
-                marginBottom: '3rem',
-              }}
-            >
-              Asset Protection{' '}
-              <span style={{ color: '#FFF12D' }}>Technology</span>
-            </h2>
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.25em',
+                  color: '#FFF12D',
+                  textTransform: 'uppercase',
+                  marginBottom: '1rem',
+                }}
+              >
+                // PROVEN TECHNOLOGY
+              </motion.p>
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
+                  fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.03em',
+                  lineHeight: 1.1,
+                  color: 'rgba(255,255,255,0.75)',
+                  marginBottom: '3rem',
+                }}
+              >
+                Asset Protection{' '}
+                <span style={{ color: '#FFF12D' }}>Technology</span>
+              </motion.h2>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '2rem',
-              }}
-            >
-              {[
-                {
-                  title: 'AI-Formulated Hybrid Media',
-                  desc: 'Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated. Captures microscopic contaminants while maintaining optimal flow efficiency.',
-                },
-                {
-                  title: 'Hydrophobic Separation Systems',
-                  desc: 'Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation. Extends equipment lifespan and reduces maintenance costs while ensuring reliable operation.',
-                },
-                {
-                  title: 'Anti-Bypass Structures',
-                  desc: '100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Ensures absolute protection of critical equipment from particulate and water contamination.',
-                },
-              ].map((tech) => (
-                <div
-                  key={tech.title}
-                  style={{
-                    background: '#050505',
-                    padding: '2rem',
-                    border: '1px solid #1a1a1a',
-                    borderRadius: '8px',
-                  }}
-                >
-                  <h3
+              <motion.div
+                className="tech-grid"
+                variants={stagger}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '2rem',
+                }}
+              >
+                {[
+                  {
+                    title: 'AI-Formulated Hybrid Media',
+                    desc: 'Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated. Captures microscopic contaminants while maintaining optimal flow efficiency.',
+                  },
+                  {
+                    title: 'Hydrophobic Separation Systems',
+                    desc: 'Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation. Extends equipment lifespan and reduces maintenance costs while ensuring reliable operation.',
+                  },
+                  {
+                    title: 'Anti-Bypass Structures',
+                    desc: '100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Ensures absolute protection of critical equipment from particulate and water contamination.',
+                  },
+                ].map((tech, i) => (
+                  <motion.div
+                    key={tech.title}
+                    variants={fadeUp}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+                    whileHover={{
+                      borderColor: 'rgba(255,241,45,0.4)',
+                      background: '#0a0a0a',
+                      y: -4,
+                    }}
                     style={{
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      fontWeight: 700,
-                      fontSize: '1.05rem',
-                      color: '#FFF12D',
-                      marginBottom: '1rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      background: '#050505',
+                      padding: '2rem',
+                      border: '1px solid #1a1a1a',
+                      borderRadius: '8px',
+                      transition: 'border-color 0.3s, background 0.3s',
                     }}
                   >
-                    {tech.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: 'Outfit, sans-serif',
-                      fontSize: '0.9rem',
-                      lineHeight: 1.7,
-                      color: 'rgba(255,255,255,0.75)',
-                      textAlign: 'justify',
-                    }}
-                  >
-                    {tech.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+                    <h3
+                      style={{
+                        fontFamily: 'Space Grotesk, sans-serif',
+                        fontWeight: 700,
+                        fontSize: '1.05rem',
+                        color: '#FFF12D',
+                        marginBottom: '1rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                      }}
+                    >
+                      {tech.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '0.9rem',
+                        lineHeight: 1.7,
+                        color: 'rgba(255,255,255,0.75)',
+                        textAlign: 'justify',
+                      }}
+                    >
+                      {tech.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
-{/* ── CTA SLIDES ── */}
+        {/* ── CTA SLIDES ── */}
         <div
           style={{
             position: 'relative',
@@ -755,10 +926,12 @@ export default function Home() {
                   <br />
                   <span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
                 </h2>
-                <a
+                <motion.a
                   href={slide.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.5)' }}
+                  whileTap={{ scale: 0.97 }}
                   style={{
                     display: 'inline-block',
                     background: '#FFF12D',
@@ -770,11 +943,10 @@ export default function Home() {
                     padding: '1rem 2.5rem',
                     textDecoration: 'none',
                     textTransform: 'uppercase',
-                    transition: 'background 0.2s ease',
                   }}
                 >
                   {slide.buttonText}
-                </a>
+                </motion.a>
               </div>
             </div>
           ))}
