@@ -32,7 +32,7 @@ export function KitsPage() {
             minHeight: '70vh',
             display: 'flex',
             alignItems: 'center',
-            backgroundImage: 'url(/images/taller-npr-300x225_converted.avif)',
+            backgroundImage: 'url(/images/npr-01_converted.avif)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             position: 'relative',
@@ -203,7 +203,7 @@ export function KitsPage() {
                 }}
               >
                 <img
-                  src="/images/npr-01_converted.avif"
+                  src="/images/kit-mesa.avif"
                   alt="Filter Maintenance Kit"
                   style={{
                     width: '100%',
