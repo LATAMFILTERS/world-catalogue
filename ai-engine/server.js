@@ -117,8 +117,8 @@ app.get('/health', async (req, res) => {
 app.get('/', (req, res) => {
     res.json({
         service: 'ELIMFILTERS AI Engine',
-        version: '1.0.0',
-        type: 'Industrial Intelligence - RAG + Tool Calling',
+        version: '2.0.0',
+        type: 'Industrial Intelligence - RAG + Tool Calling + Anti-Hallucination',
         endpoints: {
             health: 'GET /health',
             stats: 'GET /stats',
@@ -128,12 +128,15 @@ app.get('/', (req, res) => {
             crossReference: 'POST /ai/cross-reference'
         },
         features: [
-            'Tool-based architecture',
-            'RAG pipeline with embeddings',
-            'Intent classification',
-            'Vector semantic search',
-            'pgvector integration',
-            'Embedding caching'
+            'Anti-hallucination system (zero tolerance)',
+            'Tool-based architecture (5 tools)',
+            'RAG pipeline with vector embeddings',
+            'Multi-agent architecture (SearchAgent, CrossReferenceAgent, TechnicalAgent)',
+            'Intent classification (5 industrial intents)',
+            'Hybrid vector + SQL search',
+            'pgvector + HNSW indexing',
+            'Embedding caching (24h TTL)',
+            'Response validation with hallucination detection'
         ]
     });
 });
