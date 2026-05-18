@@ -156,13 +156,13 @@ export default function SystemsPage() {
                     }}
                   >
                     {/* Product image */}
-                    <div style={{ position: 'relative', width: '100%', height: '200px', flexShrink: 0 }}>
+                    <div style={{ position: 'relative', width: '100%', height: '200px', flexShrink: 0, background: '#0a0a0a' }}>
                       {productImages[product.name] ? (
                         <Image
                           src={productImages[product.name]}
                           alt={displayNames[product.name] || product.name}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'contain', padding: '0.5rem' }}
                           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
                       ) : (
