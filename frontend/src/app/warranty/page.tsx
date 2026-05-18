@@ -1,6 +1,8 @@
 'use client';
 
+import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
+import { AnimateIn, StaggerContainer, itemVariants } from '@/components/AnimateIn';
 
 export default function Warranty() {
   return (
@@ -19,19 +21,26 @@ export default function Warranty() {
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '3rem' }}>
-            <span
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: '0.75rem',
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
                 fontFamily: 'Outfit, sans-serif',
+                display: 'inline-block',
               }}
             >
               // WARRANTY AND SUPPORT
-            </span>
+            </motion.span>
           </div>
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: 900,
@@ -41,8 +50,11 @@ export default function Warranty() {
             }}
           >
             PROTECTION ENGINEERING WITH ABSOLUTE SUPPORT
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
@@ -52,7 +64,7 @@ export default function Warranty() {
             }}
           >
             ELIMFILTERS warranty covers equipment protection. We stand behind our engineering with comprehensive support and immediate replacement guarantee.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -66,7 +78,7 @@ export default function Warranty() {
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div
+          <StaggerContainer
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -79,8 +91,9 @@ export default function Warranty() {
               { value: '100%', label: 'Non-Prorated' },
               { value: '24H', label: 'Response Time' },
             ].map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                variants={itemVariants}
                 style={{
                   textAlign: 'center',
                   padding: '2rem',
@@ -109,9 +122,9 @@ export default function Warranty() {
                 >
                   {stat.label}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -131,7 +144,7 @@ export default function Warranty() {
             THREE PILLARS OF PROTECTION
           </h2>
 
-          <div
+          <StaggerContainer
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -158,22 +171,18 @@ export default function Warranty() {
                 icon: '✓',
               },
             ].map((pillar, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                variants={itemVariants}
+                whileHover={{
+                  borderColor: 'rgba(255,241,45,0.4)',
+                  boxShadow: '0 12px 40px rgba(255,241,45,0.1)',
+                }}
                 style={{
                   background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
                   border: '1px solid rgba(255,241,45,0.2)',
                   borderRadius: '12px',
                   padding: '2.5rem',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
-                  e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,241,45,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,241,45,0.2)';
-                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <div
@@ -206,9 +215,9 @@ export default function Warranty() {
                 >
                   {pillar.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -234,7 +243,7 @@ export default function Warranty() {
             WHAT'S COVERED
           </h2>
 
-          <div
+          <StaggerContainer
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
@@ -251,8 +260,9 @@ export default function Warranty() {
               'Manufacturing defects',
               'Premature media saturation',
             ].map((item, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                variants={itemVariants}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -281,74 +291,68 @@ export default function Warranty() {
                 >
                   {item}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section
-        style={{
-          padding: '4rem 2rem',
-          background: '#FFF12D',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2
-            style={{
-              fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-              fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
-              marginBottom: '1.5rem',
-              color: '#000',
-              lineHeight: 1.2,
-            }}
-          >
-            REQUEST TECHNICAL VALIDATION
-          </h2>
-          <p
-            style={{
-              fontSize: '1.05rem',
-              marginBottom: '2rem',
-              color: '#000',
-              fontFamily: 'Outfit, sans-serif',
-              lineHeight: 1.6,
-            }}
-          >
-            Need to validate your equipment against our warranty coverage? Our technical team is ready to help.
-          </p>
-          <a
-            href="/contact"
-            style={{
-              display: 'inline-block',
-              background: '#000',
-              color: '#FFF12D',
-              padding: '0.875rem 2rem',
-              fontFamily: 'Outfit, sans-serif',
-              fontWeight: 700,
-              fontSize: '0.85rem',
-              letterSpacing: '0.1em',
-              textDecoration: 'none',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            CONTACT SUPPORT
-          </a>
-        </div>
-      </section>
+      <AnimateIn direction="up">
+        <section
+          style={{
+            padding: '4rem 2rem',
+            background: '#FFF12D',
+            textAlign: 'center',
+          }}
+        >
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <h2
+              style={{
+                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                fontWeight: 900,
+                fontFamily: 'Space Grotesk, sans-serif',
+                marginBottom: '1.5rem',
+                color: '#000',
+                lineHeight: 1.2,
+              }}
+            >
+              REQUEST TECHNICAL VALIDATION
+            </h2>
+            <p
+              style={{
+                fontSize: '1.05rem',
+                marginBottom: '2rem',
+                color: '#000',
+                fontFamily: 'Outfit, sans-serif',
+                lineHeight: 1.6,
+              }}
+            >
+              Need to validate your equipment against our warranty coverage? Our technical team is ready to help.
+            </p>
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.4)' }}
+              style={{
+                display: 'inline-block',
+                background: '#000',
+                color: '#FFF12D',
+                padding: '0.875rem 2rem',
+                fontFamily: 'Outfit, sans-serif',
+                fontWeight: 700,
+                fontSize: '0.85rem',
+                letterSpacing: '0.1em',
+                textDecoration: 'none',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+              }}
+            >
+              CONTACT SUPPORT
+            </motion.a>
+          </div>
+        </section>
+      </AnimateIn>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS } from '@/lib/catalogue';
 import { Navigation } from './Navigation';
 import { Hero } from './Hero';
@@ -7,6 +8,7 @@ import { FeatureList } from './FeatureList';
 import { StatCounter } from './StatCounter';
 import { CTASection } from './CTASection';
 import { Footer } from './Footer';
+import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
 interface CategoryPageProps {
   item: CatalogueItem;
@@ -262,7 +264,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               alignItems: 'start',
             }}
           >
-            <div>
+            <AnimateIn direction="up">
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
@@ -302,11 +304,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               >
                 {item.description}
               </p>
-            </div>
+            </AnimateIn>
 
-            <div>
+            <AnimateIn direction="up" delay={0.15}>
               <FeatureList features={item.features} title="Core Capabilities" />
-            </div>
+            </AnimateIn>
           </div>
         </section>
 
@@ -329,7 +331,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               alignItems: 'start',
             }}
           >
-            <div>
+            <AnimateIn direction="up">
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
@@ -368,73 +370,76 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               >
                 ELIMFILTERS engineering applies German-grade quality standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.
               </p>
-            </div>
+            </AnimateIn>
 
             {/* Specs Card */}
-            <div
-              style={{
-                background: '#000',
-                border: '1px solid rgba(255,255,255,0.08)',
-                padding: '2rem',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <div
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    background: '#FFF12D',
-                    boxShadow: '0 0 8px rgba(255,241,45,0.6)',
-                  }}
-                />
-                <span
-                  style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.15em',
-                    color: 'rgba(255,255,255,0.5)',
-                  }}
-                >
-                  SYSTEM SPECIFICATIONS
-                </span>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {item.features.map((feature, i) => (
+            <AnimateIn direction="up" delay={0.15}>
+              <div
+                style={{
+                  background: '#000',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  padding: '2rem',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                   <div
-                    key={i}
                     style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      padding: '0.75rem 0',
-                      borderBottom: '1px solid rgba(255,255,255,0.06)',
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      background: '#FFF12D',
+                      boxShadow: '0 0 8px rgba(255,241,45,0.6)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.15em',
+                      color: 'rgba(255,255,255,0.5)',
                     }}
                   >
-                    <span
+                    SYSTEM SPECIFICATIONS
+                  </span>
+                </div>
+
+                <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {item.features.map((feature, i) => (
+                    <motion.div
+                      key={i}
+                      variants={itemVariants}
                       style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.82rem',
-                        color: 'rgba(255,255,255,0.5)',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '0.75rem 0',
+                        borderBottom: '1px solid rgba(255,255,255,0.06)',
                       }}
                     >
-                      {feature}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'JetBrains Mono, monospace',
-                        fontSize: '0.7rem',
-                        color: '#FFF12D',
-                        letterSpacing: '0.05em',
-                      }}
-                    >
-                      ✓ ACTIVE
-                    </span>
-                  </div>
-                ))}
+                      <span
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.82rem',
+                          color: 'rgba(255,255,255,0.5)',
+                        }}
+                      >
+                        {feature}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'JetBrains Mono, monospace',
+                          fontSize: '0.7rem',
+                          color: '#FFF12D',
+                          letterSpacing: '0.05em',
+                        }}
+                      >
+                        ✓ ACTIVE
+                      </span>
+                    </motion.div>
+                  ))}
+                </StaggerContainer>
               </div>
-            </div>
+            </AnimateIn>
           </div>
         </section>
 
@@ -465,7 +470,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               alignItems: 'start',
             }}
           >
-            <div>
+            <AnimateIn direction="up">
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
@@ -492,7 +497,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               >
                 WHY ELIMFILTERS
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
                   'Extended service intervals reduce downtime',
                   'Superior contamination retention extends asset life',
@@ -501,7 +506,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   'Proven performance in extreme environments',
                   'Industry-leading filtration efficiency',
                 ].map((benefit, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <motion.div key={i} variants={itemVariants} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <span
                       style={{
                         color: '#FFF12D',
@@ -521,12 +526,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     >
                       {benefit}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </StaggerContainer>
+            </AnimateIn>
 
             {/* Technologies card */}
+            <AnimateIn direction="up" delay={0.15}>
             <div
               style={{
                 background: '#050505',
@@ -581,6 +587,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 </p>
               </div>
             </div>
+            </AnimateIn>
           </div>
         </section>
 

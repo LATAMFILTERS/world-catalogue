@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
 export function DryerPage() {
   return (
@@ -56,7 +58,12 @@ export function DryerPage() {
               width: '100%',
             }}
           >
-            <div style={{ marginBottom: '2rem' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              style={{ marginBottom: '2rem' }}
+            >
               <span
                 style={{
                   fontSize: '0.7rem',
@@ -68,8 +75,11 @@ export function DryerPage() {
               >
                 // AIR DRYING SYSTEMS
               </span>
-            </div>
-            <h1
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(2.5rem, 7vw, 5rem)',
                 fontWeight: 900,
@@ -79,8 +89,11 @@ export function DryerPage() {
               }}
             >
               AIR DRYERS
-            </h1>
-            <h2
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 fontWeight: 700,
@@ -90,8 +103,11 @@ export function DryerPage() {
               }}
             >
               DEW POINT CONTROL
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: '1.1rem',
                 maxWidth: '600px',
@@ -102,7 +118,7 @@ export function DryerPage() {
               }}
             >
               Molecular-level desiccant technology achieving zero dew point in compressed air and pneumatic brake systems. Coalescing pre-filtration and desiccant action combined for 45% service life extension over standard cartridges.
-            </p>
+            </motion.p>
           </div>
         </section>
 
@@ -116,7 +132,7 @@ export function DryerPage() {
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-              <div>
+              <AnimateIn direction="left">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                   <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                   <h2
@@ -189,30 +205,32 @@ export function DryerPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
               {/* Product Image */}
-              <div
-                style={{
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  width: '340px',
-                  height: '340px',
-                  marginTop: '10%',
-                  marginLeft: '35%',
-                }}
-              >
-                <img
-                  src="/images/airdryer.avif"
-                  alt="Air Dryer Cartridge"
+              <AnimateIn direction="right">
+                <div
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,241,45,0.2)',
+                    width: '340px',
+                    height: '340px',
+                    marginTop: '10%',
+                    marginLeft: '35%',
                   }}
-                />
-              </div>
+                >
+                  <img
+                    src="/images/airdryer.avif"
+                    alt="Air Dryer Cartridge"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
+                </div>
+              </AnimateIn>
             </div>
           </div>
         </section>
@@ -242,7 +260,7 @@ export function DryerPage() {
               </h2>
             </div>
 
-            <div
+            <StaggerContainer
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -250,7 +268,7 @@ export function DryerPage() {
                 marginBottom: '3rem',
               }}
             >
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   +45%
                 </h3>
@@ -260,9 +278,9 @@ export function DryerPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Coalescing pre-stage removes oil and liquid water before they saturate the desiccant bed
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   0°
                 </h3>
@@ -272,9 +290,9 @@ export function DryerPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Molecular desiccant action eliminates moisture from compressed air circuits completely
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   100%
                 </h3>
@@ -284,8 +302,8 @@ export function DryerPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Coalescing media intercepts compressor oil carryover before it poisons the desiccant
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerContainer>
 
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto' }}>
@@ -320,7 +338,7 @@ export function DryerPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               {[
                 { title: 'HEAVY TRANSPORT', desc: 'Trucks and buses with air brake systems. Prevents moisture freeze-up in brake chambers, ABS modulators and pneumatic suspensions in cold climates.' },
                 { title: 'RAILWAY', desc: 'Locomotive and wagon brake circuits. Guarantees dry air supply for reliable brake actuation and pneumatic control systems under all weather conditions.' },
@@ -329,8 +347,10 @@ export function DryerPage() {
                 { title: 'POWER GENERATION', desc: 'Instrument air systems in power plants. Delivers consistent dry air to control valves, positioners and pneumatic actuators.' },
                 { title: 'MANUFACTURING', desc: 'Paint booths, pneumatic assembly lines and packaging equipment. Prevents moisture contamination in process air and product quality defects.' },
               ].map((app, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  variants={itemVariants}
+                  whileHover={{ borderColor: 'rgba(255,241,45,0.5)', background: 'linear-gradient(135deg, rgba(255,241,45,0.14) 0%, rgba(0,0,0,0.2) 100%)' }}
                   style={{
                     background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.2) 100%)',
                     border: '1px solid rgba(255,241,45,0.2)',
@@ -344,41 +364,44 @@ export function DryerPage() {
                   <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic' }}>
                     {app.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
 
         {/* CTA */}
         <section style={{ padding: '6rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
-              Ready to Deploy?
-            </h2>
-            <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-              Identify your SKU. Cross-reference 500,000+ parts. Find your air dryer cartridge now.
-            </p>
-            <a
-              href="https://part-search.elimfilters.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: '#000',
-                color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                letterSpacing: '0.12em',
-                padding: '1.2rem 3rem',
-                textDecoration: 'none',
-                borderRadius: '4px',
-              }}
-            >
-              IDENTIFY SKU →
-            </a>
-          </div>
+          <AnimateIn direction="up">
+            <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
+                Ready to Deploy?
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
+                Identify your SKU. Cross-reference 500,000+ parts. Find your air dryer cartridge now.
+              </p>
+              <motion.a
+                href="https://part-search.elimfilters.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
+                style={{
+                  display: 'inline-block',
+                  background: '#000',
+                  color: '#FFF12D',
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
+                  letterSpacing: '0.12em',
+                  padding: '1.2rem 3rem',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                }}
+              >
+                IDENTIFY SKU →
+              </motion.a>
+            </div>
+          </AnimateIn>
         </section>
       </main>
     </>

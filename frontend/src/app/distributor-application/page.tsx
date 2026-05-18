@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
+import { AnimateIn } from '@/components/AnimateIn';
 
 export default function DistributorApplication() {
   const [formData, setFormData] = useState({
@@ -76,19 +78,26 @@ export default function DistributorApplication() {
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '3rem' }}>
-            <span
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: '0.75rem',
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
                 fontFamily: 'Outfit, sans-serif',
+                display: 'inline-block',
               }}
             >
               // BECOME A PARTNER
-            </span>
+            </motion.span>
           </div>
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: 900,
@@ -98,8 +107,11 @@ export default function DistributorApplication() {
             }}
           >
             AUTHORIZED DISTRIBUTOR APPLICATION
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
@@ -109,7 +121,7 @@ export default function DistributorApplication() {
             }}
           >
             Join the ELIMFILTERS network. We're seeking qualified distributors to expand our industrial filtration reach.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -125,6 +137,7 @@ export default function DistributorApplication() {
             }}
           >
             {/* Left: Why Partner */}
+            <AnimateIn direction="left">
             <div>
               <h2
                 style={{
@@ -240,8 +253,10 @@ export default function DistributorApplication() {
                 </ul>
               </div>
             </div>
+            </AnimateIn>
 
             {/* Right: Application Form */}
+            <AnimateIn direction="right">
             <div>
               <div
                 style={{
@@ -689,8 +704,9 @@ export default function DistributorApplication() {
                     />
                   </div>
 
-                  <button
+                  <motion.button
                     type="submit"
+                    whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.4)' }}
                     style={{
                       width: '100%',
                       padding: '0.875rem',
@@ -703,22 +719,14 @@ export default function DistributorApplication() {
                       border: 'none',
                       borderRadius: '4px',
                       cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,241,45,0.3)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = 'none';
-                      e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >
                     SUBMIT APPLICATION
-                  </button>
+                  </motion.button>
                 </form>
               </div>
             </div>
+            </AnimateIn>
           </div>
         </div>
       </section>

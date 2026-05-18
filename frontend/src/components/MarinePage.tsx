@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
 export function MarinePage() {
   return (
@@ -56,7 +58,12 @@ export function MarinePage() {
               width: '100%',
             }}
           >
-            <div style={{ marginBottom: '2rem' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              style={{ marginBottom: '2rem' }}
+            >
               <span
                 style={{
                   fontSize: '0.7rem',
@@ -68,8 +75,11 @@ export function MarinePage() {
               >
                 // OFFSHORE · COMMERCIAL · NAVAL
               </span>
-            </div>
-            <h1
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(2.5rem, 7vw, 5rem)',
                 fontWeight: 900,
@@ -79,8 +89,11 @@ export function MarinePage() {
               }}
             >
               MARINE FILTERS
-            </h1>
-            <h2
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 fontWeight: 700,
@@ -90,8 +103,11 @@ export function MarinePage() {
               }}
             >
               NAVAL-GRADE DEFENSE
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: '1.1rem',
                 maxWidth: '600px',
@@ -102,7 +118,7 @@ export function MarinePage() {
               }}
             >
               Filtration systems engineered for the harshest environment on earth. Saltwater corrosion, fuel contamination, hydraulic failures and air intake fouling are the leading causes of marine engine loss — ELIMFILTERS addresses all four simultaneously.
-            </p>
+            </motion.p>
           </div>
         </section>
 
@@ -116,7 +132,7 @@ export function MarinePage() {
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-              <div>
+              <AnimateIn direction="left">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                   <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                   <h2
@@ -197,30 +213,32 @@ export function MarinePage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
               {/* Product Image */}
-              <div
-                style={{
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  width: '340px',
-                  height: '340px',
-                  marginTop: '10%',
-                  marginLeft: '35%',
-                }}
-              >
-                <img
-                  src="/images/marino-taller.avif"
-                  alt="Marine Filter Service"
+              <AnimateIn direction="right">
+                <div
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,241,45,0.2)',
+                    width: '340px',
+                    height: '340px',
+                    marginTop: '10%',
+                    marginLeft: '35%',
                   }}
-                />
-              </div>
+                >
+                  <img
+                    src="/images/marino-taller.avif"
+                    alt="Marine Filter Service"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
+                </div>
+              </AnimateIn>
             </div>
           </div>
         </section>
@@ -234,23 +252,25 @@ export function MarinePage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                THE FOUR CRITICAL CIRCUITS
-              </h2>
-            </div>
+            <AnimateIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <h2
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    margin: 0,
+                  }}
+                >
+                  THE FOUR CRITICAL CIRCUITS
+                </h2>
+              </div>
+            </AnimateIn>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
               {[
                 {
                   circuit: 'FUEL SYSTEM',
@@ -273,8 +293,10 @@ export function MarinePage() {
                   solution: 'Marine air filters use hydrophobic outer layers to repel salt spray before it reaches the media bed, preventing salt crystal buildup that blocks airflow and causes turbocharger surging on high-output marine diesels.',
                 },
               ].map((item, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, borderColor: 'rgba(255,241,45,0.45)' }}
                   style={{
                     border: '1px solid rgba(255,241,45,0.2)',
                     borderRadius: '8px',
@@ -291,9 +313,9 @@ export function MarinePage() {
                   <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', margin: 0 }}>
                     {item.solution}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
 
@@ -306,23 +328,25 @@ export function MarinePage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                FIELD-PROVEN PERFORMANCE
-              </h2>
-            </div>
+            <AnimateIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <h2
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    margin: 0,
+                  }}
+                >
+                  FIELD-PROVEN PERFORMANCE
+                </h2>
+              </div>
+            </AnimateIn>
 
-            <div
+            <StaggerContainer
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -330,7 +354,7 @@ export function MarinePage() {
                 marginBottom: '3rem',
               }}
             >
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   99.9%
                 </h3>
@@ -340,9 +364,9 @@ export function MarinePage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Free and emulsified water removed from fuel circuits before reaching injection systems
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   4
                 </h3>
@@ -352,9 +376,9 @@ export function MarinePage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Fuel, lube, hydraulic and air intake — complete vessel protection from a single supplier
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   24/7
                 </h3>
@@ -364,14 +388,16 @@ export function MarinePage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Extended service intervals designed for long-passage operations without port access
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerContainer>
 
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto' }}>
-                Verified across commercial fishing fleets, offshore supply vessels, passenger ferries and naval auxiliary craft operating in Atlantic, Pacific and Caribbean waters.
-              </p>
-            </div>
+            <AnimateIn>
+              <div style={{ textAlign: 'center' }}>
+                <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto' }}>
+                  Verified across commercial fishing fleets, offshore supply vessels, passenger ferries and naval auxiliary craft operating in Atlantic, Pacific and Caribbean waters.
+                </p>
+              </div>
+            </AnimateIn>
           </div>
         </section>
 
@@ -384,23 +410,25 @@ export function MarinePage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                VESSEL TYPE APPLICATIONS
-              </h2>
-            </div>
+            <AnimateIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <h2
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    margin: 0,
+                  }}
+                >
+                  VESSEL TYPE APPLICATIONS
+                </h2>
+              </div>
+            </AnimateIn>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               {[
                 { title: 'COMMERCIAL FISHING', desc: 'Trawlers and processing vessels. Prevents fuel system failures during extended offshore campaigns where port access can be weeks away.' },
                 { title: 'OFFSHORE SUPPLY', desc: 'Platform supply vessels and AHTS. Protects main propulsion and DP thrusters from fuel and hydraulic contamination during critical station-keeping operations.' },
@@ -409,8 +437,10 @@ export function MarinePage() {
                 { title: 'NAVAL AUXILIARY', desc: 'Support and logistics vessels. Meets the extended service interval and reliability demands of naval operations far from maintenance facilities.' },
                 { title: 'RECREATIONAL & CHARTER', desc: 'Sportfishing and dive charter vessels. Prevents injector failure and hydraulic system breakdown on vessels where mechanical reliability directly impacts passenger safety.' },
               ].map((app, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, borderColor: 'rgba(255,241,45,0.45)' }}
                   style={{
                     background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.2) 100%)',
                     border: '1px solid rgba(255,241,45,0.2)',
@@ -424,41 +454,44 @@ export function MarinePage() {
                   <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic' }}>
                     {app.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
 
         {/* CTA */}
         <section style={{ padding: '6rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
-              Ready to Deploy?
-            </h2>
-            <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-              Identify your vessel SKU. Cross-reference 500,000+ parts. Find your marine filtration solution now.
-            </p>
-            <a
-              href="https://part-search.elimfilters.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: '#000',
-                color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                letterSpacing: '0.12em',
-                padding: '1.2rem 3rem',
-                textDecoration: 'none',
-                borderRadius: '4px',
-              }}
-            >
-              IDENTIFY SKU →
-            </a>
-          </div>
+          <AnimateIn direction="up">
+            <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
+                Ready to Deploy?
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
+                Identify your vessel SKU. Cross-reference 500,000+ parts. Find your marine filtration solution now.
+              </p>
+              <motion.a
+                href="https://part-search.elimfilters.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
+                style={{
+                  display: 'inline-block',
+                  background: '#000',
+                  color: '#FFF12D',
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
+                  letterSpacing: '0.12em',
+                  padding: '1.2rem 3rem',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                }}
+              >
+                IDENTIFY SKU →
+              </motion.a>
+            </div>
+          </AnimateIn>
         </section>
       </main>
     </>

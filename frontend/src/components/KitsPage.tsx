@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
 export function KitsPage() {
   return (
@@ -56,7 +58,12 @@ export function KitsPage() {
               width: '100%',
             }}
           >
-            <div style={{ marginBottom: '2rem' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              style={{ marginBottom: '2rem' }}
+            >
               <span
                 style={{
                   fontSize: '0.7rem',
@@ -68,8 +75,11 @@ export function KitsPage() {
               >
                 // MAINTENANCE BUNDLES
               </span>
-            </div>
-            <h1
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(2.5rem, 7vw, 5rem)',
                 fontWeight: 900,
@@ -79,8 +89,11 @@ export function KitsPage() {
               }}
             >
               FILTER KITS
-            </h1>
-            <h2
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 fontWeight: 700,
@@ -90,8 +103,11 @@ export function KitsPage() {
               }}
             >
               MODEL-SPECIFIC BUNDLES
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontSize: '1.1rem',
                 maxWidth: '600px',
@@ -102,7 +118,7 @@ export function KitsPage() {
               }}
             >
               Synchronized lifecycle maintenance bundles engineered for Mack, Freightliner, International, Isuzu and Mitsubishi platforms. Every element in a kit shares the same service interval — one stop, one order, zero missed filters.
-            </p>
+            </motion.p>
           </div>
         </section>
 
@@ -116,7 +132,7 @@ export function KitsPage() {
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-              <div>
+              <AnimateIn direction="left">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                   <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                   <h2
@@ -189,30 +205,32 @@ export function KitsPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
               {/* Product Image */}
-              <div
-                style={{
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  width: '340px',
-                  height: '340px',
-                  marginTop: '10%',
-                  marginLeft: '35%',
-                }}
-              >
-                <img
-                  src="/images/kit-mesa.avif"
-                  alt="Filter Maintenance Kit"
+              <AnimateIn direction="right">
+                <div
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255,241,45,0.2)',
+                    width: '340px',
+                    height: '340px',
+                    marginTop: '10%',
+                    marginLeft: '35%',
                   }}
-                />
-              </div>
+                >
+                  <img
+                    src="/images/kit-mesa.avif"
+                    alt="Filter Maintenance Kit"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
+                </div>
+              </AnimateIn>
             </div>
           </div>
         </section>
@@ -226,23 +244,25 @@ export function KitsPage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                OEM PLATFORM COVERAGE
-              </h2>
-            </div>
+            <AnimateIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <h2
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    margin: 0,
+                  }}
+                >
+                  OEM PLATFORM COVERAGE
+                </h2>
+              </div>
+            </AnimateIn>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
               {[
                 { brand: 'MACK', models: 'MP7, MP8, MP10 — heavy-duty long-haul and vocational trucks' },
                 { brand: 'FREIGHTLINER', models: 'Cascadia, Columbia, Classic — Class 8 fleet and long-haul platforms' },
@@ -250,8 +270,10 @@ export function KitsPage() {
                 { brand: 'ISUZU', models: 'NPR, NQR, NRR, FRR — medium-duty cab-over fleet vehicles' },
                 { brand: 'MITSUBISHI', models: 'Fuso Canter, Fighter, Super Great — medium and heavy commercial vehicles' },
               ].map((oem, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, borderColor: 'rgba(255,241,45,0.45)' }}
                   style={{
                     border: '1px solid rgba(255,241,45,0.3)',
                     borderRadius: '8px',
@@ -265,44 +287,52 @@ export function KitsPage() {
                   <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.6, margin: 0 }}>
                     {oem.models}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerContainer>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                  What Each Kit Contains
-                </h3>
-                {[
-                  'Oil filter — matched to OEM specification and bypass valve setting',
-                  'Fuel primary filter — pre-filter stage for water and coarse particulate separation',
-                  'Fuel secondary filter — final stage protection rated to OEM injection pressure',
-                  'Air filter — progressive density media sized to OEM housing geometry',
-                  'Cabin air filter (where applicable) — OEM profile for zero-bypass fit',
-                ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#FFF12D', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>✓</span>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.6, margin: 0 }}>{item}</p>
-                  </div>
-                ))}
+                <AnimateIn direction="left" delay={0.05}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
+                    What Each Kit Contains
+                  </h3>
+                </AnimateIn>
+                <StaggerContainer>
+                  {[
+                    'Oil filter — matched to OEM specification and bypass valve setting',
+                    'Fuel primary filter — pre-filter stage for water and coarse particulate separation',
+                    'Fuel secondary filter — final stage protection rated to OEM injection pressure',
+                    'Air filter — progressive density media sized to OEM housing geometry',
+                    'Cabin air filter (where applicable) — OEM profile for zero-bypass fit',
+                  ].map((item, idx) => (
+                    <motion.div key={idx} variants={itemVariants} style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: '#FFF12D', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>✓</span>
+                      <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.6, margin: 0 }}>{item}</p>
+                    </motion.div>
+                  ))}
+                </StaggerContainer>
               </div>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                  Fleet Management Advantages
-                </h3>
-                {[
-                  'Single part number per vehicle model — eliminates ordering errors across large fleets',
-                  'Synchronized intervals eliminate contamination windows between individual filter changes',
-                  'Reduced workshop time — technician opens one box, replaces all filters in a single service event',
-                  'ISO-certified elements in every kit — no unknown-origin components in the critical protection chain',
-                  'Inventory simplification — one SKU per platform replaces five individual filter part numbers',
-                ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#FFF12D', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>✓</span>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.6, margin: 0 }}>{item}</p>
-                  </div>
-                ))}
+                <AnimateIn direction="right" delay={0.05}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
+                    Fleet Management Advantages
+                  </h3>
+                </AnimateIn>
+                <StaggerContainer>
+                  {[
+                    'Single part number per vehicle model — eliminates ordering errors across large fleets',
+                    'Synchronized intervals eliminate contamination windows between individual filter changes',
+                    'Reduced workshop time — technician opens one box, replaces all filters in a single service event',
+                    'ISO-certified elements in every kit — no unknown-origin components in the critical protection chain',
+                    'Inventory simplification — one SKU per platform replaces five individual filter part numbers',
+                  ].map((item, idx) => (
+                    <motion.div key={idx} variants={itemVariants} style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: '#FFF12D', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>✓</span>
+                      <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.6, margin: 0 }}>{item}</p>
+                    </motion.div>
+                  ))}
+                </StaggerContainer>
               </div>
             </div>
           </div>
@@ -317,23 +347,25 @@ export function KitsPage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                FLEET PERFORMANCE RESULTS
-              </h2>
-            </div>
+            <AnimateIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
+                <h2
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    margin: 0,
+                  }}
+                >
+                  FLEET PERFORMANCE RESULTS
+                </h2>
+              </div>
+            </AnimateIn>
 
-            <div
+            <StaggerContainer
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -341,7 +373,7 @@ export function KitsPage() {
                 marginBottom: '3rem',
               }}
             >
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   1 SKU
                 </h3>
@@ -351,9 +383,9 @@ export function KitsPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Replaces up to five individual filter part numbers — one order covers the full service event
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   -30%
                 </h3>
@@ -363,9 +395,9 @@ export function KitsPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Synchronized bundle eliminates split services and repeated vehicle bay occupancy
                 </p>
-              </div>
+              </motion.div>
 
-              <div style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
+              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
                   ISO
                 </h3>
@@ -375,40 +407,43 @@ export function KitsPage() {
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Every filter in every kit meets ISO standards — no aftermarket uncertainty in the protection chain
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerContainer>
           </div>
         </section>
 
         {/* CTA */}
         <section style={{ padding: '6rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
-              Ready to Deploy?
-            </h2>
-            <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-              Identify your vehicle model. Find your synchronized maintenance kit now.
-            </p>
-            <a
-              href="https://part-search.elimfilters.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: '#000',
-                color: '#FFF12D',
-                fontFamily: 'Montserrat, sans-serif',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                letterSpacing: '0.12em',
-                padding: '1.2rem 3rem',
-                textDecoration: 'none',
-                borderRadius: '4px',
-              }}
-            >
-              IDENTIFY SKU →
-            </a>
-          </div>
+          <AnimateIn direction="up">
+            <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
+                Ready to Deploy?
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
+                Identify your vehicle model. Find your synchronized maintenance kit now.
+              </p>
+              <motion.a
+                href="https://part-search.elimfilters.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
+                style={{
+                  display: 'inline-block',
+                  background: '#000',
+                  color: '#FFF12D',
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.85rem',
+                  letterSpacing: '0.12em',
+                  padding: '1.2rem 3rem',
+                  textDecoration: 'none',
+                  borderRadius: '4px',
+                }}
+              >
+                IDENTIFY SKU →
+              </motion.a>
+            </div>
+          </AnimateIn>
         </section>
       </main>
     </>
