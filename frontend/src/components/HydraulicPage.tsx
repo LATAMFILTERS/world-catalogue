@@ -101,7 +101,7 @@ export function HydraulicPage() {
                 fontStyle: 'italic',
               }}
             >
-              99.99% filtration efficiency with HYDROGUARD™ integrated water separation technology. Rated to 450 PSI for high-pressure circuits — protecting pumps, valves, actuators and servo components from particulate abrasion, water ingress and fluid degradation.
+              99.99% filtration efficiency with integrated water separation. Rated to 450 PSI for high-pressure circuits — protecting pumps, valves, actuators and servo components from particulate abrasion, water ingress and fluid degradation.
             </p>
           </div>
         </section>
@@ -129,7 +129,7 @@ export function HydraulicPage() {
                       margin: 0,
                     }}
                   >
-                    HYDRAULIC FILTERS — HYDROGUARD™ TECHNOLOGY
+                    HYDRAULIC FILTERS — HIGH-COLLAPSE GLASS FIBER MEDIA
                   </h2>
                 </div>
                 <h3
@@ -153,7 +153,7 @@ export function HydraulicPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS hydraulic filters are engineered for the most demanding fluid power circuits. The high-collapse glass fiber media achieves 99.99% single-pass efficiency, capturing particles down to 3 microns absolute before they reach precision-clearance components. The integrated HYDROGUARD™ coalescing stage removes free and emulsified water from the fluid stream — the primary cause of hydraulic pump cavitation, valve spool corrosion and fluid oxidation acceleration. Rated to 450 PSI collapse pressure, these elements hold structural integrity under the full shock-load range of mobile and industrial hydraulic systems.
+                  ELIMFILTERS hydraulic filters are engineered for the most demanding fluid power circuits. The high-collapse glass fiber media achieves 99.99% single-pass efficiency, capturing particles down to 3 microns absolute before they reach precision-clearance components. A coalescing water separation stage removes free and emulsified water from the fluid stream — the primary cause of hydraulic pump cavitation, valve spool corrosion and fluid oxidation acceleration. Rated to 450 PSI collapse pressure, these elements hold structural integrity under the full shock-load range of mobile and industrial hydraulic systems.
                 </p>
 
                 <div
@@ -182,10 +182,10 @@ export function HydraulicPage() {
                   </div>
                   <div>
                     <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
-                      WATER GUARD
+                      WATER
                     </p>
                     <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      HYDROGUARD™
+                      Coalescing Stage
                     </p>
                   </div>
                 </div>
