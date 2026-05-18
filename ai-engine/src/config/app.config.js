@@ -59,7 +59,22 @@ module.exports = {
 
     // Rate Limiting
     rateLimit: {
-        windowMs: 15 * 60 * 1000, // 15 minutes
-        max: 100 // max 100 requests per window
+        windowMs: 15 * 60 * 1000,
+        max: 100
+    },
+
+    // Embedding Cache
+    embeddingCache: {
+        enabled: process.env.EMBEDDING_CACHE_ENABLED !== 'false',
+        maxSize: 1000,
+        ttlMs: 24 * 60 * 60 * 1000 // 24 hours
+    },
+
+    // Anti-Hallucination
+    antiHallucination: {
+        enabled: true,
+        blockOnDetection: true,
+        similarityThreshold: 0.75,
+        requireSourceAttribution: true
     }
 };
