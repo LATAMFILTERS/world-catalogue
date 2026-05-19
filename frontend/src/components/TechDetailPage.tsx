@@ -131,26 +131,27 @@ export function TechDetailPage({ data }: Props) {
             >
               <div style={{
                 display: 'inline-block',
-                padding: '3rem 4rem',
-                background: '#030303',
-                border: '1px solid rgba(255,241,45,0.15)',
+                padding: '3.5rem 5rem',
+                background: '#000',
+                border: '1px solid rgba(255,241,45,0.2)',
                 borderRadius: '6px',
-                boxShadow: '0 0 80px rgba(255,241,45,0.06), inset 0 0 60px rgba(0,0,0,0.6)',
+                boxShadow: '0 0 120px rgba(255,241,45,0.08)',
                 position: 'relative',
               }}>
                 {/* Corner accents */}
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '20px', height: '20px', borderTop: '2px solid rgba(255,241,45,0.5)', borderLeft: '2px solid rgba(255,241,45,0.5)', borderRadius: '2px 0 0 0' }} />
-                <div style={{ position: 'absolute', top: 0, right: 0, width: '20px', height: '20px', borderTop: '2px solid rgba(255,241,45,0.5)', borderRight: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 2px 0 0' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '20px', height: '20px', borderBottom: '2px solid rgba(255,241,45,0.5)', borderLeft: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 0 0 2px' }} />
-                <div style={{ position: 'absolute', bottom: 0, right: 0, width: '20px', height: '20px', borderBottom: '2px solid rgba(255,241,45,0.5)', borderRight: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 0 2px 0' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '24px', height: '24px', borderTop: '2px solid rgba(255,241,45,0.6)', borderLeft: '2px solid rgba(255,241,45,0.6)', borderRadius: '2px 0 0 0' }} />
+                <div style={{ position: 'absolute', top: 0, right: 0, width: '24px', height: '24px', borderTop: '2px solid rgba(255,241,45,0.6)', borderRight: '2px solid rgba(255,241,45,0.6)', borderRadius: '0 2px 0 0' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '24px', height: '24px', borderBottom: '2px solid rgba(255,241,45,0.6)', borderLeft: '2px solid rgba(255,241,45,0.6)', borderRadius: '0 0 0 2px' }} />
+                <div style={{ position: 'absolute', bottom: 0, right: 0, width: '24px', height: '24px', borderBottom: '2px solid rgba(255,241,45,0.6)', borderRight: '2px solid rgba(255,241,45,0.6)', borderRadius: '0 0 2px 0' }} />
                 <img
                   src={data.logoSrc}
                   alt={data.heroTitle}
                   style={{
                     display: 'block',
-                    width: 'clamp(260px, 32vw, 480px)',
+                    width: 'clamp(280px, 35vw, 520px)',
                     height: 'auto',
-                    filter: 'brightness(1.05) contrast(1.05)',
+                    mixBlendMode: 'screen',
+                    filter: 'brightness(1.15) contrast(1.1) saturate(1.1)',
                   }}
                 />
               </div>
