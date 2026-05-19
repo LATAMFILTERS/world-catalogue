@@ -4,383 +4,241 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
+const STAGES = [
+  {
+    number: '01',
+    tag: 'STAGE 1',
+    title: 'INERTIAL INTERCEPTION',
+    body: 'AQUAGUARD™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force alone. No moving parts. Zero mechanical dependency. The intercepted mass accumulates in the sealed base chamber — permanently separated from the fuel path before the protection sequence even begins.',
+    stat: '100%',
+    statLabel: 'Macro-particle removal at entry',
+  },
+  {
+    number: '02',
+    tag: 'STAGE 2',
+    title: 'GRADUATED COALESCENCE',
+    body: 'Fuel transitions through a staggered graduated contact zone where microscopic water droplets — too small to separate by inertia alone — are forced into repeated surface contact. Each contact cycle causes droplets to merge, grow, and fall by gravity into the sealed collection chamber below. The graduated layer architecture ensures no water molecule bypasses this stage regardless of fuel pressure or flow rate.',
+    stat: '99%',
+    statLabel: 'Emulsified water eliminated',
+  },
+  {
+    number: '03',
+    tag: 'STAGE 3',
+    title: 'AQUAGUARD™ PRECISION BARRIER',
+    body: 'The final AQUAGUARD™ hydrophobic protection barrier intercepts sub-micron contamination and dissolved water before the fuel enters the high-pressure injection circuit. The barrier architecture repels water molecules at contact — they cannot pass through regardless of differential pressure. Available in 2, 10 and 30 micron defense ratings to match your injection system\'s exact protection requirement.',
+    stat: '2µm',
+    statLabel: 'Minimum precision barrier rating',
+  },
+];
+
+const SPECS = [
+  { label: 'MODEL 900FH', value: '90 GPH', sub: '340 LPH — Light to medium duty' },
+  { label: 'MODEL 1000FH', value: '180 GPH', sub: '681 LPH — Heavy duty operations' },
+  { label: 'PROTECTION RATING', value: '99%', sub: 'Water separation efficiency' },
+  { label: 'BARRIER OPTIONS', value: '3', sub: '2µm · 10µm · 30µm' },
+  { label: 'CERTIFICATION', value: 'ISO', sub: '16332 — Fuel/water separation standard' },
+  { label: 'DRAIN SYSTEM', value: 'AUTO', sub: 'Integrated visual monitoring port' },
+];
+
+const APPLICATIONS = [
+  { sector: 'HEAVY TRANSPORT', detail: 'Long-haul diesel fleets and common rail injection systems operating at high continuous duty cycles. The 1000FH is the designated asset protection solution for premium-class trucks with HPCR fuel systems.' },
+  { sector: 'POWER GENERATION', detail: 'Stationary diesel gensets and backup power units where fuel quality directly determines operational continuity. A single contamination event can force extended maintenance shutdowns during peak demand.' },
+  { sector: 'AGRICULTURE', detail: 'Tractors, combines and harvesting equipment operating in dusty, humid conditions where fuel storage tanks are exposed to condensation cycles. The 900FH extends injection system service life through each critical season.' },
+  { sector: 'MINING', detail: 'Off-highway extraction equipment running 24/7 in environments where water ingress from condensation, rain and contaminated bulk fuel deliveries is a constant operational threat.' },
+  { sector: 'CONSTRUCTION', detail: 'Excavators, graders and heavy machinery on demanding site cycles where fuel systems absorb contamination from multiple sources simultaneously.' },
+  { sector: 'RAILWAY', detail: 'Diesel locomotives and rolling stock requiring absolute fuel circuit integrity across extreme temperature and humidity ranges over extended service intervals.' },
+];
+
 export function AquaguardPage() {
   return (
     <>
-      {/* HOME Button */}
-      <div style={{ position: 'fixed', top: '1.5rem', right: '2rem', zIndex: 100 }}>
-        <Link
-          href="/"
-          style={{
-            background: '#FFF12D',
-            color: '#000',
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: 700,
-            fontSize: '0.75rem',
-            letterSpacing: '0.12em',
-            padding: '0.6rem 1.5rem',
-            textDecoration: 'none',
-            borderRadius: '4px',
-          }}
-        >
-          HOME
-        </Link>
-      </div>
+      <Link href="/" style={{
+        position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
+        display: 'flex', alignItems: 'center', gap: '0.4rem',
+        background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
+        borderRadius: '4px', padding: '0.45rem 1rem',
+        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
+        backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+      }}>← HOME</Link>
+
       <main style={{ background: '#000', color: '#fff' }}>
-        {/* Hero Section */}
-        <section
-          style={{
-            marginTop: 0,
-            minHeight: '70vh',
-            display: 'flex',
-            alignItems: 'center',
-            backgroundImage: 'url(/images/turbinas-hero.avif)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            position: 'relative',
-          }}
-        >
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
-              zIndex: 1,
-            }}
-          />
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              maxWidth: '1200px',
-              margin: '0 auto',
-              padding: '0 2rem',
-              width: '100%',
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              style={{ marginBottom: '2rem' }}
-            >
-              <span
-                style={{
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                }}
-              >
-                // FUEL FILTRATION & WATER SEPARATION
+
+        {/* ── HERO ── */}
+        <section style={{
+          minHeight: '60vh',
+          display: 'flex',
+          alignItems: 'center',
+          backgroundImage: 'url(/images/turbinas-hero.avif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'scroll',
+          position: 'relative',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+        }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(120deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 100%)', zIndex: 1 }} />
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', padding: '5rem 2rem 4rem' }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
+              <span style={{ display: 'block', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.28em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
+                // FUEL ASSET PROTECTION · SERIES FH
               </span>
             </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontSize: 'clamp(2.5rem, 7vw, 5rem)',
-                fontWeight: 900,
-                fontFamily: 'Montserrat, sans-serif',
-                marginBottom: '1rem',
-                lineHeight: 1.1,
-              }}
-            >
-              AQUAGUARD/SERIES
+            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+              style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.0, marginBottom: '0.5rem' }}>
+              AQUAGUARD
             </motion.h1>
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontSize: 'clamp(1.5rem, 4vw, 3rem)',
-                fontWeight: 700,
-                fontFamily: 'Montserrat, sans-serif',
-                color: '#FFF12D',
-                marginBottom: '2rem',
-              }}
-            >
-              TURBINE TECHNOLOGY
+            <motion.h2 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              style={{ fontSize: 'clamp(1.4rem, 4vw, 2.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '2rem' }}>
+              /SERIES™
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.46, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontSize: '1.1rem',
-                maxWidth: '600px',
-                lineHeight: 1.65,
-                color: 'rgba(255,255,255,0.65)',
-                fontFamily: 'Inter, sans-serif',
-                fontStyle: 'italic',
-              }}
-            >
-              900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system asset protection. Three-stage AQUAGUARD™ defense system eliminates water, sediment and contaminants before they reach your injectors.
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
+              style={{ fontSize: '1rem', maxWidth: '560px', lineHeight: 1.75, color: 'rgba(255,255,255,0.7)', fontFamily: 'Outfit, sans-serif', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem' }}>
+              Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.
             </motion.p>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.55 }}
+              style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
+              {[['900FH', '90 GPH'], ['1000FH', '180 GPH'], ['ISO 16332', 'CERTIFIED']].map(([k, v]) => (
+                <div key={k}>
+                  <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.4)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.25rem' }}>{k}</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif' }}>{v}</div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
-        {/* Product Description */}
-        <section
-          style={{
-            padding: '6rem 2rem',
-            background: '#000',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
+        {/* ── SYSTEM OVERVIEW ── */}
+        <section style={{ padding: '6rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+            <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
               <AnimateIn direction="left">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                  <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                  <h2
-                    style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.2em',
-                      color: '#FFF12D',
-                      fontFamily: 'JetBrains Mono, monospace',
-                      margin: 0,
-                    }}
-                  >
-                    AQUAGUARD/SERIES — TURBINE FUEL FILTERS
-                  </h2>
-                </div>
-                <h3
-                  style={{
-                    fontSize: '2rem',
-                    fontWeight: 700,
-                    fontFamily: 'Montserrat, sans-serif',
-                    marginBottom: '1.5rem',
-                    color: 'rgba(255,255,255,0.9)',
-                  }}
-                >
-                  Total Fuel System Asset Protection
-                </h3>
-                <p
-                  style={{
-                    fontSize: '1rem',
-                    lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.65)',
-                    fontFamily: 'Inter, sans-serif',
-                    fontStyle: 'italic',
-                    marginBottom: '2.5rem',
-                  }}
-                >
-                  AQUAGUARD/SERIES turbine filters are ELIMFILTERS' professional-grade fuel system asset protection against water ingress, microbial contamination and particulate damage. The 900FH (90 GPH / 340 LPH) and 1000FH (180 GPH / 681 LPH) deploy AQUAGUARD™ hydrophobic protection barriers — available in 2, 10 and 30 micron ratings — powered by ELIMFILTERS turbine rotation system defending high-pressure injection systems. Integrated auto-drain with visual monitoring port.
+                <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
+                  // SYSTEM OVERVIEW
+                </span>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, marginBottom: '1.5rem' }}>
+                  NOT A FILTER.<br />AN ASSET PROTECTION SYSTEM.
+                </h2>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
+                  Conventional fuel filters intercept particles. AQUAGUARD/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
                 </p>
-
-                <div
-                  className="product-specs-grid"
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '2rem',
-                    marginBottom: '2rem',
-                  }}
-                >
-                  <div>
-                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
-                      STAGE 1
-                    </p>
-                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      Centrifuge Separation
-                    </p>
-                  </div>
-                  <div>
-                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
-                      STAGE 2
-                    </p>
-                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      Conical Coalescing
-                    </p>
-                  </div>
-                  <div>
-                    <p style={{ fontSize: '0.75rem', color: '#FFF12D', fontWeight: 700, letterSpacing: '0.1em', margin: 0, marginBottom: '0.5rem' }}>
-                      STAGE 3
-                    </p>
-                    <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      AQUAGUARD™ 2µm BARRIER
-                    </p>
-                  </div>
-                </div>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
+                  The 900FH and 1000FH models deploy AQUAGUARD™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
+                </p>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif' }}>
+                  The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.
+                </p>
               </AnimateIn>
-              {/* Product Image */}
+
               <AnimateIn direction="right">
-                <div
-                  style={{
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    width: '340px',
-                    height: '340px',
-                    marginTop: '10%',
-                    marginLeft: '35%',
-                  }}
-                >
+                <div style={{ position: 'sticky', top: '6rem' }}>
                   <img
-                    src="/images/turbine-1.avif"
-                    alt="AQUAGUARD Turbine Filter"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center',
-                    }}
+                    src="/images/aquaguardseries(fn).avif"
+                    alt="AQUAGUARD/SERIES™ 900FH · 1000FH"
+                    style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.15)', display: 'block' }}
                   />
+                  <p style={{ fontSize: '0.65rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em', marginTop: '1rem', textAlign: 'center' }}>
+                    AQUAGUARD/SERIES™ · 900FH / 1000FH
+                  </p>
                 </div>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* Field-Proven Performance */}
-        <section
-          style={{
-            padding: '6rem 2rem',
-            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.4) 100%)',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
+        {/* ── 3-STAGE BREAKDOWN ── */}
+        <section style={{ padding: '6rem 2rem', background: 'rgba(255,241,45,0.02)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                FIELD-PROVEN PERFORMANCE
+            <AnimateIn direction="up">
+              <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
+                // THREE-STAGE PROTECTION ARCHITECTURE
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '4rem', lineHeight: 1.15 }}>
+                EACH STAGE ELIMINATES<br />WHAT THE PREVIOUS ONE CANNOT.
               </h2>
-            </div>
+            </AnimateIn>
 
-            <StaggerContainer
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '2rem',
-                marginBottom: '3rem',
-              }}
-            >
-              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  99%
-                </h3>
-                <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  WATER SEPARATION EFFICIENCY
-                </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Free and emulsified water removed before reaching the injection system
-                </p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  2µm
-                </h3>
-                <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  AQUAGUARD™ PROTECTION RATING
-                </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Nominal rating — available in 2, 10 or 30 micron versions
-                </p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  180 GPH
-                </h3>
-                <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  PEAK FLOW RATE (1000FH)
-                </p>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  681 LPH — 900FH rated at 90 GPH (340 LPH) for lighter duty
-                </p>
-              </motion.div>
-            </StaggerContainer>
-
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto 2rem auto' }}>
-                Results verified in heavy transport, power generation, agriculture and off-highway equipment operations.
-              </p>
-              <Link
-                href="/technologies/aquaguard-series"
-                style={{
-                  display: 'inline-block',
-                  background: '#FFF12D',
-                  color: '#000',
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.1em',
-                  padding: '1rem 2.5rem',
-                  textDecoration: 'none',
-                  borderRadius: '4px',
-                }}
-              >
-                EXPLORE AQUAGUARD™ →
-              </Link>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              {STAGES.map((stage, idx) => (
+                <AnimateIn key={idx} direction="up">
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: '80px 1fr auto',
+                    gap: '3rem',
+                    alignItems: 'start',
+                    padding: '3rem 2.5rem',
+                    background: '#050505',
+                    border: '1px solid rgba(255,255,255,0.06)',
+                    borderRadius: '2px',
+                  }}>
+                    <div>
+                      <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{stage.tag}</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,255,255,0.08)', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.number}</div>
+                    </div>
+                    <div>
+                      <h3 style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '1rem', letterSpacing: '0.02em' }}>
+                        {stage.title}
+                      </h3>
+                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0, maxWidth: '600px' }}>
+                        {stage.body}
+                      </p>
+                    </div>
+                    <div style={{ textAlign: 'right', minWidth: '100px' }}>
+                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'Outfit, sans-serif', marginTop: '0.4rem', maxWidth: '110px', textAlign: 'right' }}>{stage.statLabel}</div>
+                    </div>
+                  </div>
+                </AnimateIn>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Industrial Applications */}
-        <section
-          style={{
-            padding: '6rem 2rem',
-            background: '#000',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
+        {/* ── SPECS ── */}
+        <section style={{ padding: '5rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-              <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-              <h2
-                style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.2em',
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  margin: 0,
-                }}
-              >
-                INDUSTRIAL APPLICATIONS
+            <AnimateIn direction="up">
+              <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
+                // PROTECTION PARAMETERS
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '3rem' }}>
+                FIELD SPECIFICATIONS
               </h2>
-            </div>
+            </AnimateIn>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
+              {SPECS.map((spec, idx) => (
+                <motion.div key={idx} variants={itemVariants} style={{ background: '#000', padding: '2rem 1.75rem' }}>
+                  <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>{spec.label}</div>
+                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1, marginBottom: '0.5rem' }}>{spec.value}</div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'Outfit, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
+                </motion.div>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
 
-            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-              {[
-                { title: 'HEAVY TRANSPORT', desc: 'Long-haul trucks and fleet vehicles. Defends high-pressure common rail systems from water and sediment.' },
-                { title: 'POWER GENERATION', desc: 'Diesel generator sets and stationary engines. Ensures fuel purity for uninterrupted power output.' },
-                { title: 'AGRICULTURE', desc: 'Tractors and harvesting equipment. Prevents fuel system failures during critical seasonal operations.' },
-                { title: 'MINING', desc: 'Off-highway machinery in harsh environments. Eliminates water ingress from condensation and contaminated fuel sources.' },
-                { title: 'CONSTRUCTION', desc: 'Excavators and heavy equipment. Guards injection systems against particulate damage on 24/7 duty cycles.' },
-                { title: 'RAILWAY', desc: 'Locomotives and rolling stock. Protects injection systems and fuel circuits across extreme service cycles.' },
-              ].map((app, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  whileHover={{ borderColor: 'rgba(255,241,45,0.5)', background: 'linear-gradient(135deg, rgba(255,241,45,0.14) 0%, rgba(0,0,0,0.2) 100%)' }}
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.2) 100%)',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    borderRadius: '8px',
-                    padding: '2rem',
-                  }}
-                >
-                  <h3 style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>
-                    {app.title}
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic' }}>
-                    {app.desc}
+        {/* ── APPLICATIONS ── */}
+        <section style={{ padding: '6rem 2rem', background: 'rgba(255,241,45,0.02)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <AnimateIn direction="up">
+              <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
+                // ASSET APPLICATIONS
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '0.75rem' }}>
+                WHERE AQUAGUARD/SERIES™ PROTECTS
+              </h2>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', marginBottom: '3rem', maxWidth: '580px', lineHeight: 1.7 }}>
+                FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.
+              </p>
+            </AnimateIn>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
+              {APPLICATIONS.map((app, idx) => (
+                <motion.div key={idx} variants={itemVariants}
+                  style={{ background: '#000', padding: '2.5rem 2rem', borderBottom: 'none' }}>
+                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
+                    {app.sector}
+                  </div>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                    {app.detail}
                   </p>
                 </motion.div>
               ))}
@@ -388,39 +246,31 @@ export function AquaguardPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section style={{ padding: '6rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
+        {/* ── CTA ── */}
+        <section style={{ padding: '5rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
           <AnimateIn direction="up">
             <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>
-                Ready to Deploy?
+              <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.5)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
+                // IDENTIFY YOUR AQUAGUARD/SERIES™ SKU
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
+                FIND YOUR PROTECTION SYSTEM
               </h2>
-              <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-                Identify your SKU. Cross-reference 500,000+ parts. Find your AQUAGUARD/SERIES filter now.
+              <p style={{ fontSize: '1rem', color: 'rgba(0,0,0,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
+                Cross-reference 500,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
-                style={{
-                  display: 'inline-block',
-                  background: '#000',
-                  color: '#FFF12D',
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.85rem',
-                  letterSpacing: '0.12em',
-                  padding: '1.2rem 3rem',
-                  textDecoration: 'none',
-                  borderRadius: '4px',
-                }}
-              >
+                whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(0,0,0,0.3)' }}
+                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
                 IDENTIFY SKU →
               </motion.a>
             </div>
           </AnimateIn>
         </section>
+
       </main>
     </>
   );
