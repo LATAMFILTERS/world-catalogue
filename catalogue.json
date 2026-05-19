@@ -27,7 +27,7 @@
       "name": "Automotive",
       "file": "automotive.html",
       "title": "INDUSTRIAL OVER-ENGINEERING",
-      "subtitle": "",
+      "subtitle": "LIGHT & HEAVY VEHICLES",
       "description": "// LD AUTOMOTIVE SERIES Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS' heavy-duty machinery.",
       "features": [
         "AIR INTAKE",
@@ -81,7 +81,7 @@
       "name": "Manufacturing",
       "file": "manufacturing.html",
       "title": "ALWAYS-ON PLANT",
-      "subtitle": "",
+      "subtitle": "PLANT OPERATIONS",
       "description": "// INDUSTRIAL PRODUCTIVITY / V-200 // CONTINUOUS PROCESS ENGINEERING",
       "features": [
         "PRECISION CONTROL",
@@ -96,7 +96,7 @@
       "name": "Marine",
       "file": "marine.html",
       "title": "MARINE OPERATIONS",
-      "subtitle": "",
+      "subtitle": "MARITIME & OFFSHORE",
       "description": "// OFFSHORE • COMMERCIAL • NAVAL // CONTINUOUS NAVIGATION",
       "features": [
         "FUEL PURITY",
@@ -148,7 +148,7 @@
       "name": "Power Generation",
       "file": "power-generation.html",
       "title": "UNINTERRUPTED",
-      "subtitle": "",
+      "subtitle": "CONTINUOUS UPTIME",
       "description": "Stationary engines operate under constant load and standby periods that accelerate fuel and lubricant degradation. ELIMFILTERS engineers protection architectures that ensure the thermal and chemical stability of your power assets. Absolute removal of water and sediment to prevent corrosion in high-p",
       "features": [
         "PURE DIESEL",
@@ -163,7 +163,7 @@
       "name": "Railway",
       "file": "railway.html",
       "title": "RAILWAY UNINTERRUPTED POWER",
-      "subtitle": "",
+      "subtitle": "LOCOMOTIVE SYSTEMS",
       "description": "// STRATEGIC HEAVY MOBILITY Locomotives and rolling stock require absolute reliability across extreme service cycles to ensure operational continuity.",
       "features": [
         "FUEL SYSTEMS",
@@ -178,7 +178,7 @@
       "name": "Trucks Fleets",
       "file": "trucks-fleets.html",
       "title": "TRUCKS & FLEETS",
-      "subtitle": "",
+      "subtitle": "LONG-HAUL PROTECTION",
       "description": "Optimized systems for commercial fleets. Lower restriction and higher retention allow for extended service intervals and significant reduction in operational costs (TCO). Optimizes fuel economy by protecting high-pressure common rail (HPCR) injection systems against micro-particulates.",
       "features": [
         "INJECTION DEFENSE",
