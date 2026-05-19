@@ -5,13 +5,13 @@
       "file": "agriculture.html",
       "title": "MAXIMIZING AVAILABILITY",
       "subtitle": "DURING CRITICAL HARVEST",
-      "description": "Harvest windows don't wait. ELIMFILTERS delivers filtration architectures engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
+      "description": "Harvest windows don't wait. ELIMFILTERS delivers asset protection systems engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
       "features": [
         "CROP RESIDUE DEBRIS CONTROL",
         "THERMAL STABILITY UNDER LOAD",
-        "OPTIMIZED AIRFLOW RESTRICTION",
-        "TOTAL HYDRAULIC SEPARATION",
-        "FINE DUST PARTICLE CAPTURE",
+        "INTAKE FLOW INTEGRITY",
+        "HYDRAULIC ASSET DEFENSE",
+        "PARTICLE INGRESSION DEFENSE",
         "EXTENDED FIELD SERVICE INTERVALS"
       ],
       "stats": {
@@ -64,7 +64,7 @@
       "file": "construction.html",
       "title": "PROTECTING CRITICAL",
       "subtitle": "CONSTRUCTION ASSETS.",
-      "description": "In heavy construction, the most expensive filter is the one that causes a machine to stop. We reduce maintenance frequency and eliminate component wear costs. Our specialized media handles abrasive mineral dust, sudden hydraulic pressure peaks, and fuel contamination during 24/7 duty cycles.",
+      "description": "In heavy construction, the most expensive filter is the one that causes a machine to stop. We reduce maintenance frequency and eliminate component wear costs. Our protection system neutralizes abrasive mineral dust, sudden hydraulic pressure peaks, and fuel contamination during 24/7 duty cycles.",
       "features": [
         "DUST CONTROL",
         "VALVE DEFENSE",
@@ -130,7 +130,7 @@
       "file": "oil-gas.html",
       "title": "OIL & GAS",
       "subtitle": "MISSION-CRITICAL.",
-      "description": "Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure and salt mist. High-capacity media for offshore and abrasive dust environments.",
+      "description": "Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure and salt mist. High-capacity protection for offshore and abrasive dust environments.",
       "features": [
         "MACROCORE™",
         "AIR INTAKE",
@@ -241,7 +241,7 @@
       "file": "aquaguard-series.html",
       "title": "AQUAGUARD",
       "subtitle": "SERIES FH",
-      "description": "// HYDRAULIC SEPARATION 900FH/1000FH turbine technology with 3-stage separation and AQUABLOC®II coating for advanced fluid control.",
+      "description": "// HYDRAULIC SEPARATION 900FH/1000FH turbine technology with 3-stage asset protection and AQUABLOC®II coating for advanced fuel system integrity.",
       "features": [
         "900FH/1000FH",
         "3-STAGE DESIGN",
@@ -261,7 +261,7 @@
       "file": "cabin.html",
       "title": "CABIN",
       "subtitle": "OCCUPATIONAL HEALTH",
-      "description": "Multi-stage 6-layer filtration removing 99.9% soot and allergens with OEM geometry for precision protection.",
+      "description": "6 protection layers eliminating 99.9% soot and allergens with OEM geometry for precision occupant asset defense.",
       "features": [
         "6-LAYER DESIGN",
         "99.9% REMOVAL",
@@ -317,8 +317,8 @@
       "name": "Fuel",
       "file": "fuel.html",
       "title": "FUEL",
-      "subtitle": "SYNTHETIC ARMOR",
-      "description": "// FUEL FILTRATION SYSTEMS Synthetic armor media with high dirt capacity rated ISO 16332 for diesel, biodiesel, and gasoline applications.",
+      "subtitle": "MULTI-ARMOR DEFENSE",
+      "description": "// FUEL ASSET PROTECTION Multi-armor protection with high dirt capacity rated ISO 16332 for diesel, biodiesel, and gasoline systems. Zero contamination events.",
       "features": [
         "ARMOR CONSTRUCTION",
         "MULTI-FUEL RATED",
@@ -408,8 +408,8 @@
       "name": "Oil",
       "file": "oil.html",
       "title": "OIL",
-      "subtitle": "SYNTHETIC CAPACITY",
-      "description": "// ENGINE OIL SYSTEMS High-density synthetic media with quadruple capacity, bypass valve, and ISO 16889/19438 certification.",
+      "subtitle": "ENGINE ASSET DEFENSE",
+      "description": "// ENGINE OIL SYSTEMS High-capacity quadruple protection with bypass valve and ISO 16889/19438 certification for complete engine asset defense.",
       "features": [
         "4X DIRT LOAD",
         "BYPASS PROTECTION",
@@ -443,10 +443,10 @@
       "subtitle": "",
       "description": "900FH and 1000FH Turbine Fuel Filter/Water Separators Professional-Grade Fuel Filtration & Water Removal",
       "features": [
-        "Three-Stage Filtration Process",
-        "Stage 1 — Separation",
-        "Stage 2 — Coalescing",
-        "Stage 3 — Filtration"
+        "Three-Stage Asset Protection",
+        "Stage 1 — Particle Interception",
+        "Stage 2 — Water Coalescing",
+        "Stage 3 — Precision Defense"
       ],
       "stats": {
         "percentages": [
@@ -465,7 +465,7 @@
       "file": "aquaguard.html",
       "title": "AQUAGUARD™",
       "subtitle": "WATER SEPARATOR",
-      "description": "// FUEL SEPARATOR TECHNOLOGY Hydrophobic fiber technology achieving 99.8% water separation from fuel systems protecting injector precision.",
+      "description": "// FUEL SEPARATOR TECHNOLOGY Hydrophobic protection technology achieving 99.8% water separation from fuel systems defending injector precision assets.",
       "features": [
         "99.8% EFFICIENCY",
         "COLLECTION CHAMBER",
@@ -530,8 +530,8 @@
       "name": "Intekcore",
       "file": "intekcore.html",
       "title": "INTEKCORE™",
-      "subtitle": "DEEP-PLEAT MEDIA",
-      "description": "// LIGHT-DUTY AIR FILTRATION Deep-pleat with polyurethane seal engineered for light-duty air filtration with maximum surface area and flow efficiency.",
+      "subtitle": "MULTI-LAYER DEFENSE",
+      "description": "// LIGHT-DUTY AIR PROTECTION Multi-layer defense architecture with precision sealing engineered for light-duty asset protection with maximum interception surface and unrestricted airflow.",
       "features": [
         "EXTENDED SURFACE",
         "BYPASS PREVENTION",
@@ -546,7 +546,7 @@
       "file": "macrocore.html",
       "title": "MACROCORE™ GRADIENT FILTRATION",
       "subtitle": "PROGRESSIVE DENSITY ENGINEERING",
-      "description": "// FILTRACIÓN DE AIRE INDUSTRIAL MACROCORE™ is a Progressive Density Gradient (PDG) engineered system combining high-purity cellulose fibers with synthetic resins. 99.9%-99.98% efficiency. ISO 5011 rated. Captures macro-contaminants on external layers while sub-micron particles are detained in the internal matrix. Designed for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.",
+      "description": "// AIR ASSET PROTECTION MACROCORE™ is a Progressive Density Gradient (PDG) multi-layer defense system. 99.9%-99.98% interception efficiency. ISO 5011 rated. Outer protection layers capture macro-contaminants while inner defense zones neutralize sub-micron threats. Engineered for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.",
       "features": [
         "99.9% - 99.98% EFFICIENCY",
         "GRADIENT DENSITY MATRIX",
@@ -598,10 +598,10 @@
       "name": "Nanoforce",
       "file": "nanoforce.html",
       "title": "NANOFORCE™",
-      "subtitle": "DEPTH FILTRATION",
-      "description": "// FUEL FILTRATION SYSTEM Depth filtration technology with density gradient architecture protecting Common Rail injectors from sub-micron contaminants.",
+      "subtitle": "PRECISION INJECTOR GUARD",
+      "description": "// FUEL ASSET PROTECTION Progressive multi-layer protection architecture defending Common Rail injectors from sub-micron contamination events before damage occurs.",
       "features": [
-        "4-MICRON ABSOLUTE",
+        "4-MICRON BARRIER",
         "ZERO MIGRATION",
         "INJECTOR DEFENSE",
         "PROGRESSIVE LAYERS"
@@ -613,13 +613,13 @@
       "name": "Syntepore",
       "file": "syntepore.html",
       "title": "SYNTEPORE™",
-      "subtitle": "SYNTHETIC FIBER",
-      "description": "// HYDRAULIC TECHNOLOGY 100% synthetic fiber media engineered for high-pressure hydraulic systems with cavitation prevention technology.",
+      "subtitle": "HYDRAULIC ASSET DEFENSE",
+      "description": "// HYDRAULIC PROTECTION Multi-layer protection architecture engineered for high-pressure hydraulic asset defense with cavitation prevention and full system integrity.",
       "features": [
-        "100% PURE FIBER",
+        "MULTI-LAYER GUARD",
         "RATED STRENGTH",
         "VAPOR CONTROL",
-        "FIBER STABILITY"
+        "STRUCTURAL INTEGRITY"
       ],
       "stats": {
         "percentages": [
@@ -634,13 +634,13 @@
       "name": "Syntrax",
       "file": "syntrax.html",
       "title": "SYNTRAX™",
-      "subtitle": "HYBRID MEDIA",
-      "description": "// LUBRICATION TECHNOLOGY AI-engineered hybrid media protecting turbocharged engines with sub-micron filtration through synthetic and cellulose fusion.",
+      "subtitle": "AI-ENGINEERED PROTECTION",
+      "description": "// LUBRICATION TECHNOLOGY AI-engineered multi-layer protection system defending turbocharged engines from sub-micron contamination through a precision-formulated protection matrix.",
       "features": [
-        "SYNTHETIC FUSION",
+        "PROTECTION MATRIX",
         "ENGINEERED PRECISION",
         "TURBO CUSTODY",
-        "HYBRID BINDING"
+        "LAYER BONDING"
       ],
       "stats": {},
       "cta": "IDENTIFY SKU"
