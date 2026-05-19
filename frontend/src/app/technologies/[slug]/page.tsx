@@ -1,16 +1,12 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
+import { TechDetailPage } from '@/components/TechDetailPage';
+import { TECH_PAGES } from './techPagesData';
 import type { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
 }
-
-// Map technology names to logos
-const technologyLogos: Record<string, string> = {
-  'Macrocore': '/assets/macrocore.avif',
-  // Add more technology logos as provided
-};
 
 export function generateStaticParams() {
   return catalogue.technologies.map((item) => ({
@@ -22,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getItemBySlug('technologies', params.slug);
   if (!item) return { title: 'Not Found' };
   return {
-    title: `${item.title} Technology | ELIMFILTERS World Catalogue`,
+    title: `${item.title} | ELIMFILTERS Technology`,
     description: item.description,
   };
 }
@@ -31,7 +27,15 @@ export default function TechnologyPage({ params }: Props) {
   const item = getItemBySlug('technologies', params.slug);
   if (!item) return null;
 
-  const logo = technologyLogos[item.name];
+  const slug = params.slug;
 
-  return <CategoryPage item={item} category="technologies" technologyLogo={logo} />;
+  // Aquaguard Series has its own dedicated product page
+  // All other technologies use TechDetailPage if data exists, else CategoryPage fallback
+  const techData = TECH_PAGES[slug];
+  if (techData) {
+    return <TechDetailPage data={techData} />;
+  }
+
+  // Fallback for any technology without a dedicated page
+  return <CategoryPage item={item} category="technologies" />;
 }
