@@ -121,10 +121,10 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       {
         number: '04',
         tag: 'LAYER 4',
-        title: 'LAYER BONDING SEAL',
-        body: 'The innermost seal is a thermally bonded structural interface that locks all four protection layers in fixed position throughout the service interval. No layer compression, no migration, no gap formation under thermal cycling between cold-start and full operating temperature. The bonding seal maintains the integrity of every protection layer regardless of oil viscosity or system pressure excursions.',
+        title: 'THERMAL BONDING ANCHOR',
+        body: 'A multi-layer element has a structural problem that no filter manufacturer talks about: under sustained high oil temperature and flow pulsation from combustion cycles, the layers compress and shift relative to each other. When that happens, gaps form between layers — bypass paths that didn\'t exist in the new element. By 5,000 km you no longer have 4 discrete protection layers working as designed. You have a compressed mass with voids. SYNTRAX™ thermal bonding anchors every layer to fixed position at manufacture. The protection geometry on day 1 is identical on the day of change. No progressive degradation. No gap formation. The filter you install is the filter that comes out.',
         stat: '100%',
-        statLabel: 'Layer position stability across service interval',
+        statLabel: 'Layer position integrity across full service interval',
       },
     ],
     specs: [
