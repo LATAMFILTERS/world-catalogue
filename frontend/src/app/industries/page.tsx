@@ -1,198 +1,244 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { catalogue, getSlug } from '@/lib/catalogue';
-import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 
-// Map industry names to image paths
-const industryImages: Record<string, string> = {
-  'Agriculture': '/images/agriculture-2_converted.avif',
-  'Automotive': '/images/autos-02.avif',
-  'Bus Coach': '/images/bus-hero.avif',
-  'Construction': '/images/construccion.avif',
-  'Manufacturing': '/images/manufacture.avif',
-  'Marine': '/images/marine-2_converted.avif',
-  'Mining': '/images/mineria.avif',
-  'Oil Gas': '/images/oil&gas.avif',
-  'Power Generation': '/images/power-generator.avif',
-  'Railway': '/images/trenes.avif',
-  'Trucks Fleets': '/images/trucks-1.avif',
-  'Waste Municipal': '/images/wasted.avif',
-  // Add more images as provided
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0 },
 };
+
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
+};
+
+function IndustryCard({
+  industry,
+  index,
+}: {
+  industry: (typeof catalogue.industries)[number];
+  index: number;
+}) {
+  const slug = getSlug(industry.name);
+  const ref = useRef<HTMLDivElement>(null);
+  const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
+  const [hovered, setHovered] = useState(false);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    setSpot({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100, opacity: 1 });
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -5 }}
+    >
+      <Link href={`/industries/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+        <div
+          ref={ref}
+          onMouseMove={onMove}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => { setSpot(s => ({ ...s, opacity: 0 })); setHovered(false); }}
+          style={{
+            position: 'relative',
+            background: '#050505',
+            border: `1px solid ${hovered ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.07)'}`,
+            borderRadius: '2px',
+            padding: '2.25rem',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+            transition: 'border-color 0.3s ease',
+          }}
+        >
+          {/* Spotlight glow */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `radial-gradient(280px circle at ${spot.x}% ${spot.y}%, rgba(255,241,45,0.06), transparent 70%)`,
+              opacity: spot.opacity,
+              transition: 'opacity 0.3s ease',
+              pointerEvents: 'none',
+            }}
+          />
+
+          {/* Animated yellow top bar */}
+          <motion.div
+            animate={{ scaleX: hovered ? 1 : 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0,
+              height: '2px',
+              background: '#FFF12D',
+              transformOrigin: 'left',
+            }}
+          />
+
+          {/* Index */}
+          <span
+            style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              color: hovered ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.15)',
+              letterSpacing: '0.1em',
+              marginBottom: '1.75rem',
+              transition: 'color 0.3s ease',
+            }}
+          >
+            {String(index + 1).padStart(2, '0')}
+          </span>
+
+          {/* Subtitle tag */}
+          {industry.subtitle && (
+            <p
+              style={{
+                fontSize: '0.65rem',
+                color: '#FFF12D',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontWeight: 500,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                margin: '0 0 0.6rem',
+              }}
+            >
+              {industry.subtitle}
+            </p>
+          )}
+
+          {/* Industry name */}
+          <h3
+            style={{
+              fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+              fontWeight: 700,
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: hovered ? '#fff' : 'rgba(255,255,255,0.85)',
+              margin: '0 0 1.25rem',
+              lineHeight: 1.2,
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
+              transition: 'color 0.3s ease',
+            }}
+          >
+            {industry.name}
+          </h3>
+
+          {/* Description excerpt */}
+          <p
+            style={{
+              fontSize: '0.82rem',
+              lineHeight: 1.65,
+              color: 'rgba(255,255,255,0.45)',
+              fontFamily: 'Outfit, sans-serif',
+              margin: 0,
+              flexGrow: 1,
+              display: '-webkit-box',
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {industry.description}
+          </p>
+
+          {/* CTA */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginTop: '1.75rem',
+              paddingTop: '1.25rem',
+              borderTop: '1px solid rgba(255,255,255,0.06)',
+            }}
+          >
+            <motion.span
+              animate={{ x: hovered ? 4 : 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontSize: '0.7rem',
+                fontWeight: 700,
+                fontFamily: 'Outfit, sans-serif',
+                letterSpacing: '0.12em',
+                color: '#FFF12D',
+                textTransform: 'uppercase',
+              }}
+            >
+              LEARN MORE →
+            </motion.span>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
 
 export default function IndustriesPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Navigation />
 
-      {/* Hero Section */}
-      <section
-        style={{
-          marginTop: '72px',
-          paddingTop: '4rem',
-          paddingBottom: '4rem',
-          background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.8) 100%)',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '3rem' }}
+      <section style={{ paddingTop: '72px', background: '#000' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem' }}>
+          <motion.p
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              letterSpacing: '0.25em',
+              color: '#FFF12D',
+              textTransform: 'uppercase',
+              marginBottom: '0.75rem',
+            }}
           >
-            <span
-              style={{
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                fontFamily: 'Outfit, sans-serif',
-              }}
-            >
-              // INDUSTRIES
-            </span>
-          </motion.div>
+            // INDUSTRIES
+          </motion.p>
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif',
-              marginBottom: '1.5rem',
+              fontWeight: 900,
+              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+              color: 'rgba(255,255,255,0.85)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
               lineHeight: 1.1,
-              color: 'rgba(255,255,255,0.75)',
+              marginBottom: '3rem',
             }}
           >
-            PROTECTION FOR 12 CRITICAL INDUSTRIES
+            12 CRITICAL INDUSTRIES
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontSize: 'clamp(1rem, 2vw, 1.1rem)',
-              lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Outfit, sans-serif',
-              maxWidth: '700px',
-            }}
-          >
-            ELIMFILTERS engineers filtration solutions for Agriculture, Automotive, Marine, Mining, Energy, and more. Each industry demands precision engineering tailored to its unique contamination challenges.
-          </motion.p>
         </div>
-      </section>
 
-      {/* Industries Grid */}
-      <section style={{ padding: '5rem 2rem', background: '#000' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <StaggerContainer
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 5rem' }}>
+          <motion.div
+            variants={gridVariants}
+            initial="hidden"
+            animate="visible"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '1px',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.05)',
             }}
           >
-            {catalogue.industries.map((industry) => {
-              const slug = getSlug(industry.name);
-              const hasImage = industryImages[industry.name];
-              return (
-                <motion.div key={industry.name} variants={itemVariants}>
-                  <Link
-                    href={`/industries/${slug}`}
-                    style={{
-                      textDecoration: 'none',
-                      color: 'inherit',
-                    }}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.03, borderColor: 'rgba(255,241,45,0.5)' }}
-                      transition={{ duration: 0.25, ease: 'easeOut' }}
-                      style={{
-                        position: 'relative',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        cursor: 'pointer',
-                        height: '300px',
-                        display: 'flex',
-                        alignItems: 'flex-end',
-                        background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
-                        border: '1px solid rgba(255,241,45,0.2)',
-                      }}
-                    >
-                      {hasImage ? (
-                        <Image
-                          src={hasImage}
-                          alt={industry.name}
-                          fill
-                          style={{
-                            objectFit: 'cover',
-                            zIndex: 0,
-                          }}
-                        />
-                      ) : (
-                        <div
-                          style={{
-                            position: 'absolute',
-                            width: '100%',
-                            height: '100%',
-                            background: 'linear-gradient(135deg, rgba(255,241,45,0.1) 0%, rgba(0,0,0,0.5) 100%)',
-                            zIndex: 0,
-                          }}
-                        />
-                      )}
-
-                      {/* Gradient overlay */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background:
-                            'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%)',
-                          zIndex: 1,
-                        }}
-                      />
-
-                      {/* Content */}
-                      <div
-                        style={{
-                          position: 'relative',
-                          zIndex: 2,
-                          width: '100%',
-                          padding: '2rem',
-                          textAlign: 'center',
-                        }}
-                      >
-                        <h3
-                          style={{
-                            fontSize: '1.5rem',
-                            fontWeight: 700,
-                            fontFamily: 'Space Grotesk, sans-serif',
-                            color: 'rgba(255,255,255,0.75)',
-                            margin: '0',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.05em',
-                          }}
-                        >
-                          {industry.name}
-                        </h3>
-                      </div>
-                    </motion.div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </StaggerContainer>
+            {catalogue.industries.map((industry, i) => (
+              <IndustryCard key={industry.name} industry={industry} index={i} />
+            ))}
+          </motion.div>
         </div>
       </section>
     </main>
