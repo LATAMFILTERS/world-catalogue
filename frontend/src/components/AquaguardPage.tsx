@@ -308,7 +308,7 @@ export function AquaguardPage() {
 
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto 2rem auto' }}>
-                Results verified in marine, heavy transport, power generation and off-highway equipment operations.
+                Results verified in heavy transport, power generation, agriculture and off-highway equipment operations.
               </p>
               <Link
                 href="/technologies/aquaguard-series"
@@ -358,12 +358,12 @@ export function AquaguardPage() {
 
             <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               {[
-                { title: 'MARINE', desc: 'Commercial and naval vessels. Protects marine diesel engines from saltwater contamination and fuel degradation.' },
                 { title: 'HEAVY TRANSPORT', desc: 'Long-haul trucks and fleet vehicles. Defends high-pressure common rail systems from water and sediment.' },
                 { title: 'POWER GENERATION', desc: 'Diesel generator sets and stationary engines. Ensures fuel purity for uninterrupted power output.' },
                 { title: 'AGRICULTURE', desc: 'Tractors and harvesting equipment. Prevents fuel system failures during critical seasonal operations.' },
                 { title: 'MINING', desc: 'Off-highway machinery in harsh environments. Eliminates water ingress from condensation and contaminated fuel sources.' },
                 { title: 'CONSTRUCTION', desc: 'Excavators and heavy equipment. Guards injection systems against particulate damage on 24/7 duty cycles.' },
+                { title: 'RAILWAY', desc: 'Locomotives and rolling stock. Protects injection systems and fuel circuits across extreme service cycles.' },
               ].map((app, idx) => (
                 <motion.div
                   key={idx}
