@@ -38,7 +38,7 @@ const CTA_SLIDES = [
     title: 'ONLY THE BEST',
     highlight: 'SELL ELIMFILTERS.',
     buttonText: 'BECOME A DEALER',
-    href: 'https://elimfilters.com/app-dealer-01/',
+    href: '/distributor-application',
   },
   {
     tag: '// TECHNICAL SEARCH',
