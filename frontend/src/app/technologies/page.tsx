@@ -23,59 +23,71 @@ export default function TechnologiesPage() {
       <section
         style={{
           marginTop: 0,
-          paddingTop: '4rem',
-          paddingBottom: '4rem',
-          background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.8) 100%)',
+          paddingTop: '5rem',
+          paddingBottom: '5rem',
+          backgroundImage: 'url(/images/sistems-hero.avif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 40%',
+          backgroundAttachment: 'scroll',
+          position: 'relative',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%)',
+          zIndex: 1,
+        }} />
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 2 }}>
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '3rem' }}
+            style={{ marginBottom: '1.5rem' }}
           >
             <span
               style={{
-                fontSize: '0.75rem',
+                display: 'block',
+                fontSize: '0.7rem',
                 fontWeight: 700,
-                letterSpacing: '0.2em',
+                letterSpacing: '0.25em',
                 color: '#FFF12D',
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'JetBrains Mono, monospace',
               }}
             >
               // TECHNOLOGIES
             </span>
           </motion.div>
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
-              color: 'rgba(255,255,255,0.75)',
+              color: 'rgba(255,255,255,0.9)',
             }}
           >
             12 PROPRIETARY TECHNOLOGIES
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
-              lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.8)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px',
+              borderLeft: '3px solid #FFF12D',
+              paddingLeft: '1.25rem',
             }}
           >
-            SYNTRAX™, AQUAGUARD™, NANOFORCE™, and 9 more proprietary filtration technologies engineered for maximum performance, efficiency, and asset protection across critical industries.
+            SYNTRAX™, AQUAGUARD™, NANOFORCE™ and 9 more proprietary asset protection technologies engineered for maximum performance across critical industries.
           </motion.p>
         </div>
       </section>
