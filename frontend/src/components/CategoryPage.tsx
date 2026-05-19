@@ -3,12 +3,10 @@
 import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS } from '@/lib/catalogue';
-import { Navigation } from './Navigation';
 import { Hero } from './Hero';
 import { FeatureList } from './FeatureList';
 import { StatCounter } from './StatCounter';
 import { CTASection } from './CTASection';
-import { Footer } from './Footer';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
 interface CategoryPageProps {
@@ -102,7 +100,6 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
   return (
     <>
-      <Navigation />
       <main>
         {/* Breadcrumb */}
         <div
@@ -718,7 +715,6 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           buttonHref={buttonHref}
         />
       </main>
-      <Footer />
     </>
   );
 }

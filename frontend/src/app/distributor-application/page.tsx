@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { AnimateIn } from '@/components/AnimateIn';
 
 export default function DistributorApplication() {
@@ -64,7 +63,7 @@ export default function DistributorApplication() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
+
 
       {/* Hero Section */}
       <section

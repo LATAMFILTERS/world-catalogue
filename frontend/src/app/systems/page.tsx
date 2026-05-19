@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { catalogue, getSlug } from '@/lib/catalogue';
 
 const displayNames: Record<string, string> = {
@@ -203,12 +202,12 @@ function SystemCard({
 export default function SystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
+
 
       {/* Hero */}
       <section
         style={{
-          marginTop: '72px',
+          marginTop: 0,
           paddingTop: '5rem',
           paddingBottom: '5rem',
           backgroundImage: 'url(/images/system-hero.avif)',

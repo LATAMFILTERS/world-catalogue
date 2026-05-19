@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { catalogue, getSlug } from '@/lib/catalogue';
 
 const cardVariants = {
@@ -184,9 +183,9 @@ function IndustryCard({
 export default function IndustriesPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
 
-      <section style={{ paddingTop: '72px', background: '#000' }}>
+
+      <section style={{ paddingTop: '4rem', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem' }}>
           <motion.p
             initial={{ opacity: 0, x: -16 }}

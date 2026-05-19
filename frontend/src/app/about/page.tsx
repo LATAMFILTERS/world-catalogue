@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -21,12 +20,12 @@ const staggerCards = {
 export default function About() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
+
 
       {/* ── HERO ── */}
       <section
         style={{
-          marginTop: '72px',
+          marginTop: 0,
           paddingTop: '6rem',
           paddingBottom: '6rem',
           backgroundImage:
