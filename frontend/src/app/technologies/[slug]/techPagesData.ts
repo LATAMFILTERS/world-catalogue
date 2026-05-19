@@ -2,6 +2,76 @@ import { TechDetailData } from '@/components/TechDetailPage';
 
 export const TECH_PAGES: Record<string, TechDetailData> = {
 
+  'aquaguard-series': {
+    categoryTag: '// FUEL ASSET PROTECTION · SERIES FH',
+    heroTitle: 'AQUAGUARD',
+    heroSubtitle: '/SERIES™',
+    heroTagline: 'Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.',
+    heroImage: '/images/turbinas-hero.avif',
+    heroStats: [
+      { key: '900FH', value: '90 GPH' },
+      { key: '1000FH', value: '180 GPH' },
+      { key: 'ISO 16332', value: 'CERTIFIED' },
+    ],
+    logoSrc: '/assets/logo-aquaguard.png',
+    systemHeadline: 'NOT A FILTER.\nAN ASSET PROTECTION SYSTEM.',
+    systemParagraphs: [
+      'Conventional fuel filters intercept particles. AQUAGUARD/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
+      'The 900FH and 1000FH models deploy AQUAGUARD™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.',
+      'The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.',
+    ],
+    productImageSrc: '/images/turbinefh-foto.avif',
+    productImageCaption: 'AQUAGUARD/SERIES™ · 900FH / 1000FH',
+    stagesHeading: 'EACH STAGE ELIMINATES WHAT THE PREVIOUS ONE CANNOT.',
+    stages: [
+      {
+        number: '01',
+        tag: 'STAGE 1',
+        title: 'INERTIAL INTERCEPTION',
+        body: 'AQUAGUARD™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force alone. No moving parts. Zero mechanical dependency. The intercepted mass accumulates in the sealed base chamber — permanently separated from the fuel path before the protection sequence even begins.',
+        stat: '100%',
+        statLabel: 'Macro-particle removal at entry',
+      },
+      {
+        number: '02',
+        tag: 'STAGE 2',
+        title: 'GRADUATED COALESCENCE',
+        body: 'Fuel transitions through a staggered graduated contact zone where microscopic water droplets — too small to separate by inertia alone — are forced into repeated surface contact. Each contact cycle causes droplets to merge, grow, and fall by gravity into the sealed collection chamber below. The graduated layer architecture ensures no water molecule bypasses this stage regardless of fuel pressure or flow rate.',
+        stat: '99%',
+        statLabel: 'Emulsified water eliminated',
+      },
+      {
+        number: '03',
+        tag: 'STAGE 3',
+        title: 'AQUAGUARD™ PRECISION BARRIER',
+        body: 'The final AQUAGUARD™ hydrophobic protection barrier intercepts sub-micron contamination and dissolved water before the fuel enters the high-pressure injection circuit. The barrier architecture repels water molecules at contact — they cannot pass through regardless of differential pressure. Available in 2, 10 and 30 micron defense ratings to match your injection system\'s exact protection requirement.',
+        stat: '2µm',
+        statLabel: 'Minimum precision barrier rating',
+      },
+    ],
+    specs: [
+      { label: 'MODEL 900FH', value: '90 GPH', sub: '340 LPH — Light to medium duty' },
+      { label: 'MODEL 1000FH', value: '180 GPH', sub: '681 LPH — Heavy duty operations' },
+      { label: 'PROTECTION RATING', value: '99%', sub: 'Water separation efficiency' },
+      { label: 'BARRIER OPTIONS', value: '3', sub: '2µm · 10µm · 30µm' },
+      { label: 'CERTIFICATION', value: 'ISO', sub: '16332 — Fuel/water separation standard' },
+      { label: 'DRAIN SYSTEM', value: 'AUTO', sub: 'Integrated visual monitoring port' },
+    ],
+    applicationsHeading: 'WHERE AQUAGUARD/SERIES™ PROTECTS',
+    applicationsSubtext: 'FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.',
+    applications: [
+      { sector: 'HEAVY TRANSPORT', detail: 'Long-haul diesel fleets and common rail injection systems operating at high continuous duty cycles. The 1000FH is the designated asset protection solution for premium-class trucks with HPCR fuel systems.' },
+      { sector: 'POWER GENERATION', detail: 'Stationary diesel gensets and backup power units where fuel quality directly determines operational continuity. A single contamination event can force extended maintenance shutdowns during peak demand.' },
+      { sector: 'AGRICULTURE', detail: 'Tractors, combines and harvesting equipment operating in dusty, humid conditions where fuel storage tanks are exposed to condensation cycles. The 900FH extends injection system service life through each critical season.' },
+      { sector: 'MINING', detail: 'Off-highway extraction equipment running 24/7 in environments where water ingress from condensation, rain and contaminated bulk fuel deliveries is a constant operational threat.' },
+      { sector: 'CONSTRUCTION', detail: 'Excavators, graders and heavy machinery on demanding site cycles where fuel systems absorb contamination from multiple sources simultaneously.' },
+      { sector: 'RAILWAY', detail: 'Diesel locomotives and rolling stock requiring absolute fuel circuit integrity across extreme temperature and humidity ranges over extended service intervals.' },
+    ],
+    ctaTag: '// IDENTIFY YOUR AQUAGUARD/SERIES™ SKU',
+    ctaHeading: 'FIND YOUR PROTECTION SYSTEM',
+    ctaBody: 'Cross-reference 500,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.',
+  },
+
   syntrax: {
     categoryTag: '// LUBRICATION ASSET PROTECTION · SYNTRAX™',
     heroTitle: 'SYNTRAX™',
