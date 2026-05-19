@@ -141,6 +141,9 @@ export default function TechnologiesPage() {
                             fontFamily: 'Space Grotesk, sans-serif',
                             color: 'rgba(255,255,255,0.75)',
                             margin: '0 0 0.5rem',
+                            minHeight: '3.5rem',
+                            display: 'flex',
+                            alignItems: 'center',
                           }}
                         >
                           {tech.title}
@@ -162,14 +165,16 @@ export default function TechnologiesPage() {
 
                       <p
                         style={{
-                          fontSize: '0.95rem',
-                          color: 'rgba(255,255,255,0.7)',
+                          fontSize: '0.85rem',
+                          color: 'rgba(255,255,255,0.55)',
                           fontFamily: 'Outfit, sans-serif',
                           lineHeight: 1.6,
                           margin: '0',
-                          minHeight: '60px',
-                          display: 'flex',
-                          alignItems: 'center',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                          minHeight: '4rem',
                         }}
                       >
                         {tech.description}
