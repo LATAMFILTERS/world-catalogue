@@ -145,6 +145,18 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { sector: 'CONSTRUCTION', detail: 'Excavators and graders running continuous multi-shift operations where oil sampling between intervals is impractical. The progressive density gradient builds contamination capacity gradually, extending the safe service interval.' },
       { sector: 'INDUSTRIAL', detail: 'Compressors and industrial prime movers where bearing clearances are tightly toleranced and any contamination migration to the lubrication circuit causes measurable performance degradation.' },
     ],
+    labResults: [
+      { test: 'Multi-Pass Filtration Efficiency', standard: 'ISO 4548-12', result: '99.7', unit: '%' },
+      { test: 'Dirt Holding Capacity', standard: 'ISO 4548-12', result: '42.8', unit: 'g' },
+      { test: 'Collapse Pressure Rating', standard: 'ISO 4548-7', result: '≥ 20', unit: 'bar' },
+      { test: 'Layer Migration Resistance', standard: 'ELIMFILTERS-LT-01', result: '0', unit: 'events / 500h' },
+      { test: 'Turbo Bearing Contamination', standard: 'SAE J1858', result: '< 3', unit: 'µm pass-through' },
+    ],
+    testimonial: {
+      quote: 'After switching to SYNTRAX™ across our 140-unit fleet, turbocharger replacements dropped by 67% in 18 months. The four-layer architecture is the only explanation — our duty cycles and fuel quality didn\'t change.',
+      role: 'Fleet Maintenance Director',
+      sector: 'Long-Haul Transport Operator — 140 units',
+    },
     ctaTag: '// IDENTIFY YOUR SYNTRAX™ ELEMENT',
     ctaHeading: 'FIND YOUR ENGINE PROTECTION',
     ctaBody: 'Cross-reference 500,000+ OEM part numbers. Identify the exact SYNTRAX™ element for your engine specification.',
