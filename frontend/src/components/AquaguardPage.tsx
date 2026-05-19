@@ -132,7 +132,7 @@ export function AquaguardPage() {
               <AnimateIn direction="right">
                 <div style={{ position: 'sticky', top: '6rem' }}>
                   <img
-                    src="/images/aquaguardseries(fn).avif"
+                    src="/images/turbinefh-foto.avif"
                     alt="AQUAGUARD/SERIES™ 900FH · 1000FH"
                     style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.15)', display: 'block' }}
                   />
