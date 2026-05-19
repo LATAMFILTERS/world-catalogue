@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { AnimateIn } from '@/components/AnimateIn';
 
 export default function Contact() {
@@ -47,12 +46,12 @@ export default function Contact() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
+
 
       {/* Hero Section */}
       <section
         style={{
-          marginTop: '72px',
+          marginTop: 0,
           paddingTop: '4rem',
           paddingBottom: '4rem',
           background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.8) 100%)',
