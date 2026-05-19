@@ -1130,6 +1130,66 @@ try {
   console.error('[middleware] Failed to register knowledge API:', err.message);
 }
 
+// ── UNIFIED SEARCH (used by public/index.html) ──────────────────────────────
+// Pool for high-frequency queries (avoids per-request connect/disconnect)
+const { Pool } = require('pg');
+const searchPool = new Pool({ ...dbConfig, max: 5, idleTimeoutMillis: 30000 });
+
+app.get('/api/search', async (req, res) => {
+  const q = (req.query.q || '').trim().toUpperCase();
+  if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
+  const lang = detectLang(req);
+  try {
+    // Exact match first
+    let result = await searchPool.query(
+      `SELECT * FROM elimfilters_catalog
+       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
+       LIMIT 5`,
+      [q]
+    );
+    // Fallback: prefix + partial across codes
+    if (result.rows.length === 0) {
+      result = await searchPool.query(
+        `SELECT * FROM elimfilters_catalog
+         WHERE UPPER(sku) LIKE $1
+            OR UPPER(codigo_base) LIKE $1
+            OR UPPER(sku) ILIKE $2
+            OR UPPER(codigo_base) ILIKE $2
+            OR oem_codes::text ILIKE $2
+            OR competitor_codes::text ILIKE $2
+         ORDER BY CASE WHEN UPPER(sku) LIKE $1 THEN 0 ELSE 1 END, sku
+         LIMIT 20`,
+        [q + '%', '%' + q + '%']
+      );
+    }
+    const products = result.rows.map(row => ({
+      ...buildFilterData(row, lang),
+      sku: row.sku  // buildFilterData uses 'elimfilters_sku'; alias for frontend
+    }));
+    res.json({ products, count: products.length });
+  } catch (e) {
+    console.error('[api/search]', e.message);
+    res.status(500).json({ error: e.message, products: [] });
+  }
+});
+
+app.get('/api/stats', async (req, res) => {
+  try {
+    const r = await searchPool.query(
+      `SELECT COUNT(*) AS total, COUNT(DISTINCT technology) AS technologies
+       FROM elimfilters_catalog`
+    );
+    res.json({
+      total: parseInt(r.rows[0].total) || 0,
+      technologies: parseInt(r.rows[0].technologies) || 0,
+      timestamp: new Date().toISOString()
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+// ────────────────────────────────────────────────────────────────────────────
+
 console.log('[server] About to listen on port 8080...');
 const PORT = 8080; // Railway target port
 app.listen(PORT, '0.0.0.0', () => {

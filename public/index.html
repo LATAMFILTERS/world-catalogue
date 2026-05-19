@@ -156,54 +156,68 @@
             btn.classList.add('active');
             document.getElementById(tab).classList.add('active');
         }
+        function esc(s) { return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+        function codeLabel(c) {
+            // oem_codes / competitor_codes come as {manufacturer, code} objects or plain strings
+            if (typeof c === 'object' && c !== null) {
+                return (c.manufacturer ? c.manufacturer + ' — ' : '') + (c.code || c.partNumber || JSON.stringify(c));
+            }
+            return String(c);
+        }
+        function buildCodesGrid(gridId, arr, type) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            if (!arr || arr.length === 0) {
+                grid.innerHTML = `<p style="color:#333;font-size:13px;padding:20px 0">No ${type} codes available</p>`;
+                return;
+            }
+            arr.slice(0, 12).forEach(c => {
+                const box = document.createElement('div');
+                box.className = 'code-box';
+                box.innerHTML = `<div class="code-type">${esc(type)}</div><div class="code-value">${esc(codeLabel(c))}</div>`;
+                grid.appendChild(box);
+            });
+        }
         function displayResult(product) {
             document.getElementById('resultSKU').textContent = product.sku;
             const desc = product.description;
-            const descText = typeof desc === 'string' ? desc : (desc.en || desc.es || '');
-            document.getElementById('resultDesc').textContent = descText;
+            document.getElementById('resultDesc').textContent = typeof desc === 'string' ? desc : (desc?.en || desc?.es || '');
+            // Specs
             const specsGrid = document.getElementById('specsGrid');
             specsGrid.innerHTML = '';
-            const specs = [{label: 'Micron Rating', value: product.micron_rating},{label: 'Efficiency', value: product.nominal_efficiency},{label: 'Thread Size', value: product.thread_size},{label: 'Height', value: (product.height_mm || 'N/A') + ' mm'},{label: 'Technology', value: product.technology},{label: 'Duty', value: product.duty},{label: 'Base Code', value: product.codigo_base},{label: 'Filter Type', value: product.product_name || 'N/A'}];
-            specs.forEach(spec => {
+            const specs = [
+                {label: 'Base Code',      value: product.codigo_base},
+                {label: 'Technology',     value: product.technology},
+                {label: 'Filter Type',    value: product.filter_type},
+                {label: 'Duty',           value: product.duty},
+                {label: 'Micron Rating',  value: product.micron_rating},
+                {label: 'Efficiency',     value: product.nominal_efficiency},
+                {label: 'Thread Size',    value: product.thread_size},
+                {label: 'Height (mm)',    value: product.height_mm},
+                {label: 'Outer ⌀ (mm)',  value: product.outer_diameter_mm},
+                {label: 'Burst Pressure', value: product.burst_pressure_psi ? product.burst_pressure_psi + ' psi' : null}
+            ];
+            specs.forEach(s => {
                 const item = document.createElement('div');
                 item.className = 'spec-item';
-                item.innerHTML = `<div class="spec-label">${spec.label}</div><div class="spec-value">${spec.value}</div>`;
+                item.innerHTML = `<div class="spec-label">${esc(s.label)}</div><div class="spec-value" style="${!s.value ? 'color:#333' : ''}">${esc(s.value || 'N/A')}</div>`;
                 specsGrid.appendChild(item);
             });
-            const oemGrid = document.getElementById('oemGrid');
-            oemGrid.innerHTML = '';
-            if (product.oem_codes && product.oem_codes.length > 0) {
-                product.oem_codes.slice(0, 8).forEach(code => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">OEM</div><div class="code-value">${code}</div>`;
-                    oemGrid.appendChild(box);
-                });
-            }
-            const crossGrid = document.getElementById('crossGrid');
-            crossGrid.innerHTML = '';
-            if (product.competitor_codes && product.competitor_codes.length > 0) {
-                product.competitor_codes.slice(0, 8).forEach(code => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">ALT</div><div class="code-value">${code}</div>`;
-                    crossGrid.appendChild(box);
-                });
-            }
-            const equipmentGrid = document.getElementById('equipmentGrid');
-            equipmentGrid.innerHTML = '';
-            if (product.oem_manufacturers && product.oem_manufacturers.length > 0) {
-                product.oem_manufacturers.slice(0, 8).forEach(mfr => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">MFR</div><div class="code-value">${mfr}</div>`;
-                    equipmentGrid.appendChild(box);
-                });
-            }
+            // Codes
+            buildCodesGrid('oemGrid',       product.oem_codes,              'OEM');
+            buildCodesGrid('crossGrid',     product.competitor_codes,       'ALT');
+            buildCodesGrid('equipmentGrid', product.equipment_applications, 'APP');
         }
-        window.addEventListener('load', () => {
-            animateCounter('stat1', '11,000+', 2500);
-            animateCounter('stat2', '48+', 2000);
+        window.addEventListener('load', async () => {
+            // Load real stats
+            try {
+                const r = await fetch('/api/stats');
+                if (r.ok) {
+                    const s = await r.json();
+                    if (s.total > 0) animateCounter('stat1', s.total.toLocaleString() + '+', 2500);
+                    if (s.technologies > 0) animateCounter('stat2', s.technologies + '+', 2000);
+                }
+            } catch(_) {}
             animateCounter('stat3', '120+', 2200);
             animateCounter('stat4', '99%', 2000);
         });
