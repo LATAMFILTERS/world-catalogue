@@ -1,216 +1,416 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELIMFILTERS | Find the right filter, fast</title>
+    <title>ELIMFILTERS | Part Search</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        .headline { font-size: 56px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; color: #ffffff; }
-        .headline .highlight { color: #FFF12D; }
-        .subtitle { color: #555555; font-size: 14px; line-height: 1.6; margin-bottom: 50px; max-width: 600px; font-weight: 400; margin-left: auto; margin-right: auto; }
-        .search-tabs { display: flex; gap: 20px; margin-bottom: 30px; justify-content: center; flex-wrap: wrap; }
-        .search-tab { background: #111; color: #fff; border: 2px solid #333; padding: 14px 28px; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; cursor: pointer; border-radius: 8px; font-family: 'Inter', sans-serif; transition: all 0.3s ease; }
-        .search-tab:hover { border-color: #FFF12D; background: #1a1a1a; transform: translateY(-2px); }
-        .search-tab.active { background: #FFF12D; color: #000; border-color: #FFF12D; box-shadow: 0 4px 12px rgba(255, 241, 45, 0.3); }
-        .search-tab.active:hover { background: #fff; color: #000; }
-        .search-box { display: flex; gap: 10px; margin-bottom: 60px; background: #111; padding: 15px; border-radius: 4px; border: 1px solid #222; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .search-box input { flex: 1; background: transparent; border: none; color: white; font-size: 16px; outline: none; font-family: 'Inter', sans-serif; font-weight: 400; }
-        .search-box input::placeholder { color: #555555; }
-        .search-btn { background: #FFF12D; color: #000; border: none; padding: 12px 30px; font-weight: 600; cursor: pointer; border-radius: 4px; font-size: 14px; font-family: 'Inter', sans-serif; transition: all 0.3s; }
-        .search-btn:hover { background: #fff; transform: scale(1.05); }
-        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 40px; }
-        .stat { text-align: center; }
-        .stat-number { font-size: 36px; font-weight: 900; color: #FFF12D; margin-bottom: 8px; font-family: 'Inter', sans-serif; letter-spacing: -1px; min-height: 45px; display: flex; align-items: center; justify-content: center; }
-        .stat-label { font-size: 12px; color: #555555; letter-spacing: 0.5px; font-weight: 400; }
-        .results-section { display: none; }
-        .results-section.active { display: block; }
-        .result-sku { font-size: 48px; font-weight: 900; color: #FFF12D; letter-spacing: -1px; }
-        .result-desc { color: #cccccc; font-size: 14px; line-height: 1.6; font-weight: 400; }
-        .data-tabs { display: flex; gap: 30px; border-bottom: 1px solid #222; margin-bottom: 40px; justify-content: center; }
-        .data-tab { padding: 15px 0; background: none; border: none; color: #555555; cursor: pointer; font-size: 12px; letter-spacing: 0.5px; transition: color 0.3s; position: relative; font-weight: 600; }
-        .data-tab.active { color: #FFF12D; }
-        .data-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: #FFF12D; }
-        .data-content { display: none; }
-        .data-content.active { display: block; }
-        .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 60px; }
-        .spec-item { text-align: left; border-bottom: 1px solid #222; padding-bottom: 15px; }
-        .spec-label { font-size: 11px; color: #555555; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 500; }
-        .spec-value { font-size: 16px; color: white; font-weight: 600; }
-        .codes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .code-box { background: #111; padding: 15px; border: 1px solid #222; border-left: 3px solid #FFF12D; text-align: left; border-radius: 4px; }
-        .code-type { font-size: 10px; color: #555555; margin-bottom: 5px; font-weight: 500; letter-spacing: 0.5px; }
-        .code-value { font-size: 14px; color: #FFF12D; font-weight: 600; font-family: monospace; }
-        footer { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); text-align: center; font-size: 7px; color: #555; max-width: 800px; padding: 0 20px; line-height: 1.3; z-index: 50; }
-        #germanQualityLogo { position: fixed; bottom: 20px; right: 5%; width: 72px; height: 72px; opacity: 0.6; z-index: 100; }
+        html, body { width: 100%; min-height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; }
+
+        /* ── LANDING ── */
+        .landing { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 24px; text-align: center; }
+        .headline { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px; }
+        .headline .hl { color: #FFF12D; }
+        .subtitle { color: #555; font-size: 14px; line-height: 1.7; margin-bottom: 44px; max-width: 560px; }
+
+        /* ── TABS ── */
+        .tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center; }
+        .tab { background: #111; color: #fff; border: 2px solid #2a2a2a; padding: 12px 24px; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; cursor: pointer; border-radius: 8px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+        .tab:hover { border-color: #FFF12D; }
+        .tab.active { background: #FFF12D; color: #000; border-color: #FFF12D; }
+
+        /* ── SEARCH BOX ── */
+        .search-wrap { width: 100%; max-width: 600px; margin-bottom: 56px; }
+        .search-box { display: flex; gap: 10px; background: #111; padding: 12px; border-radius: 8px; border: 1px solid #222; }
+        .search-box input { flex: 1; background: transparent; border: none; color: #fff; font-size: 16px; outline: none; font-family: 'Inter', sans-serif; }
+        .search-box input::placeholder { color: #444; }
+        .search-btn { background: #FFF12D; color: #000; border: none; padding: 12px 28px; font-weight: 700; cursor: pointer; border-radius: 6px; font-size: 14px; font-family: 'Inter', sans-serif; white-space: nowrap; transition: background 0.2s; }
+        .search-btn:hover { background: #fff; }
+        .search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* ── STATS ── */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; width: 100%; max-width: 700px; }
+        .stat-num { font-size: 34px; font-weight: 900; color: #FFF12D; letter-spacing: -1px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+        .stat-lbl { font-size: 11px; color: #444; letter-spacing: 0.5px; margin-top: 4px; }
+        @media (max-width: 520px) { .stats { grid-template-columns: repeat(2,1fr); } }
+
+        /* ── SPINNER ── */
+        .spinner { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; gap: 16px; }
+        .spinner.show { display: flex; }
+        .spin { width: 40px; height: 40px; border: 3px solid #222; border-top-color: #FFF12D; border-radius: 50%; animation: spin 0.7s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spin-label { color: #444; font-size: 13px; }
+
+        /* ── NOT FOUND ── */
+        .not-found { display: none; text-align: center; padding: 80px 24px; }
+        .not-found.show { display: block; }
+        .not-found-code { font-size: 64px; font-weight: 900; color: #1a1a1a; letter-spacing: -2px; margin-bottom: 12px; }
+        .not-found-msg { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .not-found-sub { font-size: 13px; color: #444; margin-bottom: 32px; }
+
+        /* ── RESULTS LIST ── */
+        .results-list { display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+        .results-list.show { display: block; }
+        .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .results-count { font-size: 12px; color: #555; letter-spacing: 0.5px; }
+        .results-count span { color: #FFF12D; font-weight: 700; }
+        .back-btn { background: none; border: 1px solid #2a2a2a; color: #888; padding: 8px 18px; font-size: 12px; font-family: 'Inter', sans-serif; cursor: pointer; border-radius: 6px; transition: all 0.2s; letter-spacing: 0.3px; }
+        .back-btn:hover { border-color: #FFF12D; color: #fff; }
+        .result-card { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 8px; padding: 20px 24px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s; display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; }
+        .result-card:hover { border-color: #FFF12D; background: #111; }
+        .card-sku { font-size: 22px; font-weight: 900; color: #FFF12D; letter-spacing: -0.5px; min-width: 120px; }
+        .card-info { text-align: left; }
+        .card-base { font-size: 12px; color: #555; margin-bottom: 4px; }
+        .card-desc { font-size: 13px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
+        .card-tech { font-size: 11px; color: #333; background: #1a1a1a; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+        @media (max-width: 600px) { .result-card { grid-template-columns: 1fr; } .card-desc { max-width: 100%; white-space: normal; } }
+
+        /* ── DETAIL ── */
+        .detail-view { display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+        .detail-view.show { display: block; }
+        .detail-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+        .detail-sku { font-size: 48px; font-weight: 900; color: #FFF12D; letter-spacing: -2px; line-height: 1; }
+        .detail-sub { font-size: 13px; color: #555; margin-top: 6px; }
+        .detail-desc { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 40px; padding: 20px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #FFF12D; }
+        .detail-desc:empty { display: none; }
+
+        /* detail tabs */
+        .dtabs { display: flex; gap: 0; border-bottom: 1px solid #1a1a1a; margin-bottom: 32px; overflow-x: auto; }
+        .dtab { padding: 14px 20px; background: none; border: none; color: #444; cursor: pointer; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; font-family: 'Inter', sans-serif; position: relative; white-space: nowrap; transition: color 0.2s; }
+        .dtab.active { color: #FFF12D; }
+        .dtab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: #FFF12D; }
+        .dpanel { display: none; }
+        .dpanel.active { display: block; }
+
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px 48px; }
+        .spec-item { border-bottom: 1px solid #1a1a1a; padding-bottom: 14px; }
+        .spec-lbl { font-size: 11px; color: #444; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 500; }
+        .spec-val { font-size: 16px; color: #fff; font-weight: 600; }
+        .spec-val.na { color: #333; font-size: 14px; }
+
+        .codes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+        .code-box { background: #0d0d0d; padding: 14px 16px; border: 1px solid #1a1a1a; border-left: 3px solid #FFF12D; border-radius: 6px; }
+        .code-type { font-size: 10px; color: #444; margin-bottom: 4px; font-weight: 500; letter-spacing: 0.5px; }
+        .code-val { font-size: 13px; color: #FFF12D; font-weight: 700; font-family: monospace; word-break: break-all; }
+        .empty-tab { color: #333; font-size: 13px; padding: 40px 0; text-align: center; }
+
+        /* ── FOOTER ── */
+        footer { text-align: center; padding: 24px; font-size: 10px; color: #2a2a2a; line-height: 1.5; }
+
+        /* ── LOGO ── */
+        #eLogo { position: fixed; bottom: 20px; right: 20px; width: 56px; opacity: 0.5; z-index: 100; display: none; }
     </style>
 </head>
 <body>
-    <footer>
-        <p>All product names, logos, and brands are the property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</p>
-    </footer>
 
-    <div id="germanQualityLogo" style="display: none;">
-        <img src="/assets/german-quality.png" alt="German Quality" style="width: 100%; height: 100%;">
+<!-- LANDING -->
+<div id="landing" class="landing">
+    <h1 class="headline">Find the right <span class="hl">filter</span>, fast.</h1>
+    <p class="subtitle">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Real-time · Precise.</p>
+
+    <div class="tabs">
+        <button class="tab active" onclick="setMode(this,'part')">Part Number</button>
+        <button class="tab" onclick="setMode(this,'equipment')">Equipment / Vehicle</button>
     </div>
 
-    <div class="container">
-        <div id="landing">
-            <h1 class="headline">Find the right <span class="highlight">filter</span>, fast.</h1>
-            <p class="subtitle">Cross-reference OEM codes, competitor SKUs, and technical specs across 11,000+ industrial filters. Multilingual · Real-time · Precise.</p>
-            <div class="search-tabs">
-                <button class="search-tab active" onclick="setSearchMode(this, 'part')">Part Number</button>
-                <button class="search-tab" onclick="setSearchMode(this, 'vehicle')">Equipment/Vehicles</button>
-                <button class="search-tab" onclick="setSearchMode(this, 'vin')">VIN Number</button>
-            </div>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Enter part number, SKU or OEM code..." onkeypress="handleSearch(event)">
-                <button type="button" class="search-btn" onclick="handleSearch({key: 'Enter'})">Search</button>
-            </div>
-            <div class="stats">
-                <div class="stat"><div class="stat-number" id="stat1">0</div><div class="stat-label">Filters Catalogued</div></div>
-                <div class="stat"><div class="stat-number" id="stat2">0</div><div class="stat-label">OEM Brands</div></div>
-                <div class="stat"><div class="stat-number" id="stat3">0</div><div class="stat-label">Countries Served</div></div>
-                <div class="stat"><div class="stat-number" id="stat4">0%</div><div class="stat-label">% Uptime</div></div>
-            </div>
-        </div>
-
-        <div class="results-section" id="resultsSection">
-            <div style="display: grid; grid-template-columns: 150px 1fr; gap: 60px; align-items: center; margin-bottom: 60px;">
-                <div style="display: flex; justify-content: center;">
-                    <img src="/assets/elimfilters-e.png" alt="E" style="width: 150px; height: 150px; object-fit: contain;">
-                </div>
-                <div>
-                    <div class="result-sku" id="resultSKU">EL82100</div>
-                    <div class="result-desc" id="resultDesc" style="margin-top: 15px;">Advanced SYNTRAX™ synthetic media delivers superior engine protection with thermal stability to 260°C and sub-micron cleanliness. Extended drain intervals and exceptional dirt capacity for heavy-duty applications.</div>
-                </div>
-            </div>
-
-            <div class="data-tabs">
-                <button class="data-tab active" onclick="switchTab(this, 'specs')">Specifications</button>
-                <button class="data-tab" onclick="switchTab(this, 'oem')">OEM Codes</button>
-                <button class="data-tab" onclick="switchTab(this, 'cross')">Cross Reference</button>
-                <button class="data-tab" onclick="switchTab(this, 'equipment')">Equipment</button>
-            </div>
-
-            <div class="data-content active" id="specs"><div class="specs-grid" id="specsGrid"></div></div>
-            <div class="data-content" id="oem"><div class="codes-grid" id="oemGrid"></div></div>
-            <div class="data-content" id="cross"><div class="codes-grid" id="crossGrid"></div></div>
-            <div class="data-content" id="equipment"><div class="codes-grid" id="equipmentGrid"></div></div>
+    <div class="search-wrap">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter part number, SKU or OEM code…" autocomplete="off" autocorrect="off" spellcheck="false">
+            <button class="search-btn" id="searchBtn" onclick="doSearch()">Search</button>
         </div>
     </div>
 
-    <script>
-        function animateCounter(elementId, finalValue, duration = 2000) {
-            const element = document.getElementById(elementId);
-            const isPercentage = finalValue.includes('%');
-            const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
-            let currentValue = 0;
-            const startTime = Date.now();
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeProgress = 1 - Math.pow(1 - progress, 3);
-                currentValue = Math.floor(easeProgress * numericValue);
-                if (isPercentage) element.textContent = currentValue + '%';
-                else if (finalValue.includes('+')) element.textContent = currentValue.toLocaleString() + '+';
-                else element.textContent = currentValue.toLocaleString();
-                if (progress < 1) requestAnimationFrame(update);
-                else element.textContent = finalValue;
-            }
-            update();
-        }
-        function setSearchMode(btn, mode) {
-            document.querySelectorAll('.search-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const input = document.getElementById('searchInput');
-            if (mode === 'part') input.placeholder = 'Enter part number, SKU or OEM code...';
-            else if (mode === 'vehicle') input.placeholder = 'Enter vehicle model, brand or equipment type...';
-            else if (mode === 'vin') { input.placeholder = 'Enter 17-character VIN number...'; input.maxLength = 17; }
-        }
-        async function handleSearch(e) {
-            if (e.key === 'Enter' || e.key === undefined) {
-                const query = document.getElementById('searchInput').value.trim();
-                if (query.length >= 2) {
-                    try {
-                        const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-                        const data = await response.json();
-                        if (data.products && data.products.length > 0) {
-                            displayResult(data.products[0]);
-                            document.getElementById('landing').style.display = 'none';
-                            document.getElementById('resultsSection').classList.add('active');
-                            document.getElementById('germanQualityLogo').style.display = 'block';
-                        }
-                    } catch (error) { console.error('Error:', error); }
-                }
-            }
-        }
-        function switchTab(btn, tab) {
-            document.querySelectorAll('.data-tab').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.data-content').forEach(c => c.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById(tab).classList.add('active');
-        }
-        function displayResult(product) {
-            document.getElementById('resultSKU').textContent = product.sku;
-            const desc = product.description;
-            const descText = typeof desc === 'string' ? desc : (desc.en || desc.es || '');
-            document.getElementById('resultDesc').textContent = descText;
-            const specsGrid = document.getElementById('specsGrid');
-            specsGrid.innerHTML = '';
-            const specs = [{label: 'Outer Diameter', value: product.outer_diameter || 'N/A'},{label: 'Efficiency', value: product.efficiency || 'N/A'},{label: 'Inner Diameter', value: product.inner_diameter || 'N/A'},{label: 'Length', value: product.length || 'N/A'},{label: 'Technology', value: product.technology || 'N/A'},{label: 'Media Type', value: product.media_type || 'N/A'},{label: 'Base Code', value: product.base_code || 'N/A'},{label: 'Filter Type', value: product.type || product.category || 'N/A'}];
-            specs.forEach(spec => {
-                const item = document.createElement('div');
-                item.className = 'spec-item';
-                item.innerHTML = `<div class="spec-label">${spec.label}</div><div class="spec-value">${spec.value}</div>`;
-                specsGrid.appendChild(item);
-            });
-            const oemGrid = document.getElementById('oemGrid');
-            oemGrid.innerHTML = '';
-            if (product.oem_codes && product.oem_codes.length > 0) {
-                product.oem_codes.slice(0, 8).forEach(code => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">OEM</div><div class="code-value">${code}</div>`;
-                    oemGrid.appendChild(box);
-                });
-            }
-            const crossGrid = document.getElementById('crossGrid');
-            crossGrid.innerHTML = '';
-            if (product.competitor_codes && product.competitor_codes.length > 0) {
-                product.competitor_codes.slice(0, 8).forEach(code => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">ALT</div><div class="code-value">${code}</div>`;
-                    crossGrid.appendChild(box);
-                });
-            }
-            const equipmentGrid = document.getElementById('equipmentGrid');
-            equipmentGrid.innerHTML = '';
-            const applications = product.applications;
-            const appList = Array.isArray(applications) ? applications : (typeof applications === 'string' ? applications.split(',').map(s => s.trim()).filter(Boolean) : []);
-            if (appList.length > 0) {
-                appList.slice(0, 8).forEach(app => {
-                    const box = document.createElement('div');
-                    box.className = 'code-box';
-                    box.innerHTML = `<div class="code-type">APP</div><div class="code-value">${app}</div>`;
-                    equipmentGrid.appendChild(box);
-                });
+    <div class="stats">
+        <div><div class="stat-num" id="s1">0</div><div class="stat-lbl">Filters Catalogued</div></div>
+        <div><div class="stat-num" id="s2">0</div><div class="stat-lbl">OEM Brands</div></div>
+        <div><div class="stat-num" id="s3">0</div><div class="stat-lbl">Countries Served</div></div>
+        <div><div class="stat-num" id="s4">0%</div><div class="stat-lbl">Uptime</div></div>
+    </div>
+</div>
+
+<!-- SPINNER -->
+<div id="spinner" class="spinner">
+    <div class="spin"></div>
+    <div class="spin-label">Searching database…</div>
+</div>
+
+<!-- NOT FOUND -->
+<div id="notFound" class="not-found">
+    <div class="not-found-code">404</div>
+    <div class="not-found-msg">No filters found</div>
+    <div class="not-found-sub" id="notFoundQuery"></div>
+    <button class="back-btn" onclick="reset()">← New Search</button>
+</div>
+
+<!-- RESULTS LIST -->
+<div id="resultsList" class="results-list">
+    <div class="results-header">
+        <div class="results-count">Found <span id="resultCount">0</span> results</div>
+        <button class="back-btn" onclick="reset()">← New Search</button>
+    </div>
+    <div id="cardsContainer"></div>
+</div>
+
+<!-- DETAIL VIEW -->
+<div id="detailView" class="detail-view">
+    <div class="detail-header">
+        <div>
+            <div class="detail-sku" id="dSKU"></div>
+            <div class="detail-sub" id="dSub"></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="back-btn" id="backToList" onclick="showList()">← Results</button>
+            <button class="back-btn" onclick="reset()">New Search</button>
+        </div>
+    </div>
+    <div class="detail-desc" id="dDesc"></div>
+
+    <div class="dtabs">
+        <button class="dtab active" onclick="switchDTab(this,'dSpecs')">Specifications</button>
+        <button class="dtab" onclick="switchDTab(this,'dOEM')">OEM Codes</button>
+        <button class="dtab" onclick="switchDTab(this,'dCross')">Cross Reference</button>
+        <button class="dtab" onclick="switchDTab(this,'dEquip')">Equipment</button>
+    </div>
+    <div class="dpanel active" id="dSpecs"><div class="specs-grid" id="specsGrid"></div></div>
+    <div class="dpanel" id="dOEM"><div class="codes-grid" id="oemGrid"></div></div>
+    <div class="dpanel" id="dCross"><div class="codes-grid" id="crossGrid"></div></div>
+    <div class="dpanel" id="dEquip"><div class="codes-grid" id="equipGrid"></div></div>
+</div>
+
+<img id="eLogo" src="/assets/elimfilters-e.png" alt="">
+<footer>All product names and brands are property of their respective owners. This catalog is for informational purposes only. ELIMFILTERS is not affiliated with any OEM manufacturer.</footer>
+
+<script>
+    let searchMode = 'part';
+    let lastResults = [];
+
+    // ── MODE ──
+    function setMode(btn, mode) {
+        searchMode = mode;
+        document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const input = document.getElementById('searchInput');
+        input.placeholder = mode === 'part'
+            ? 'Enter part number, SKU or OEM code…'
+            : 'Enter equipment model, brand or vehicle type…';
+        input.focus();
+    }
+
+    // ── ENTER KEY ──
+    document.getElementById('searchInput').addEventListener('keydown', e => {
+        if (e.key === 'Enter') doSearch();
+    });
+
+    // ── SEARCH ──
+    async function doSearch() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query.length < 2) return;
+
+        showSpinner();
+        try {
+            const endpoint = searchMode === 'equipment'
+                ? `/api/search-by-application?q=${encodeURIComponent(query)}`
+                : `/api/search?q=${encodeURIComponent(query)}`;
+
+            const res = await fetch(endpoint);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+
+            lastResults = data.products || [];
+
+            if (lastResults.length === 0) {
+                showNotFound(query);
+            } else if (lastResults.length === 1) {
+                showDetail(lastResults[0], false);
             } else {
-                equipmentGrid.innerHTML = '<p style="color:#555;font-size:12px;">No equipment data available</p>';
+                showResultsList(lastResults);
             }
+        } catch (err) {
+            showNotFound(query);
+            console.error('Search error:', err);
         }
-        window.addEventListener('load', () => {
-            animateCounter('stat1', '11,000+', 2500);
-            animateCounter('stat2', '48+', 2000);
-            animateCounter('stat3', '120+', 2200);
-            animateCounter('stat4', '99%', 2000);
+    }
+
+    // ── VIEWS ──
+    function hideAll() {
+        ['landing','spinner','notFound','resultsList','detailView'].forEach(id => {
+            const el = document.getElementById(id);
+            el.style.display = 'none';
+            el.classList.remove('show');
         });
-    </script>
+        document.getElementById('eLogo').style.display = 'none';
+    }
+
+    function showSpinner() {
+        hideAll();
+        document.getElementById('spinner').classList.add('show');
+        document.getElementById('spinner').style.display = 'flex';
+    }
+
+    function showNotFound(query) {
+        hideAll();
+        document.getElementById('notFoundQuery').textContent = `"${query}" was not found in our database.`;
+        document.getElementById('notFound').classList.add('show');
+        document.getElementById('notFound').style.display = 'block';
+    }
+
+    function showResultsList(products) {
+        hideAll();
+        document.getElementById('resultCount').textContent = products.length;
+        const container = document.getElementById('cardsContainer');
+        container.innerHTML = '';
+        products.forEach((p, i) => {
+            const desc = strDesc(p.description);
+            const card = document.createElement('div');
+            card.className = 'result-card';
+            card.onclick = () => showDetail(p, true);
+            card.innerHTML = `
+                <div class="card-sku">${esc(p.sku)}</div>
+                <div class="card-info">
+                    <div class="card-base">Base: ${esc(p.base_code || '—')}</div>
+                    <div class="card-desc">${esc(desc || '—')}</div>
+                </div>
+                <div class="card-tech">${esc(p.technology || p.category || '—')}</div>`;
+            container.appendChild(card);
+        });
+        document.getElementById('resultsList').classList.add('show');
+        document.getElementById('resultsList').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function showDetail(product, fromList) {
+        hideAll();
+        document.getElementById('eLogo').style.display = 'block';
+        document.getElementById('backToList').style.display = fromList ? 'inline-block' : 'none';
+
+        document.getElementById('dSKU').textContent = product.sku;
+        document.getElementById('dSub').textContent = [product.base_code, product.technology, product.category].filter(Boolean).join(' · ');
+
+        const desc = strDesc(product.description);
+        const dDesc = document.getElementById('dDesc');
+        dDesc.textContent = desc || '';
+        dDesc.style.display = desc ? 'block' : 'none';
+
+        // Specs
+        const specsGrid = document.getElementById('specsGrid');
+        specsGrid.innerHTML = '';
+        const specs = [
+            { label: 'Base Code',      value: product.base_code },
+            { label: 'Technology',     value: product.technology },
+            { label: 'Category',       value: product.category },
+            { label: 'Filter Type',    value: product.type },
+            { label: 'Media Type',     value: product.media_type },
+            { label: 'Outer Diameter', value: product.outer_diameter },
+            { label: 'Inner Diameter', value: product.inner_diameter },
+            { label: 'Length',         value: product.length },
+            { label: 'Efficiency',     value: product.efficiency },
+            { label: 'Style',          value: product.style }
+        ];
+        specs.forEach(s => {
+            const val = s.value;
+            const el = document.createElement('div');
+            el.className = 'spec-item';
+            el.innerHTML = `<div class="spec-lbl">${s.label}</div><div class="spec-val ${val ? '' : 'na'}">${esc(val || 'N/A')}</div>`;
+            specsGrid.appendChild(el);
+        });
+
+        // OEM codes
+        buildCodesGrid('oemGrid', toArray(product.oem_codes), 'OEM');
+        // Cross refs
+        buildCodesGrid('crossGrid', toArray(product.competitor_codes), 'ALT');
+        // Equipment
+        buildCodesGrid('equipGrid', toArray(product.applications), 'APP');
+
+        // Reset tabs
+        document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.dpanel').forEach(p => p.classList.remove('active'));
+        document.querySelector('.dtab').classList.add('active');
+        document.getElementById('dSpecs').classList.add('active');
+
+        document.getElementById('detailView').classList.add('show');
+        document.getElementById('detailView').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function showList() {
+        if (lastResults.length > 1) showResultsList(lastResults);
+        else reset();
+    }
+
+    function reset() {
+        hideAll();
+        document.getElementById('landing').style.display = 'flex';
+        document.getElementById('searchInput').value = '';
+        document.getElementById('searchInput').focus();
+    }
+
+    // ── TAB ──
+    function switchDTab(btn, panelId) {
+        document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.dpanel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(panelId).classList.add('active');
+    }
+
+    // ── HELPERS ──
+    function esc(str) {
+        return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+    function strDesc(d) {
+        if (!d) return '';
+        if (typeof d === 'string') return d;
+        return d.en || d.es || Object.values(d)[0] || '';
+    }
+    function toArray(val) {
+        if (!val) return [];
+        if (Array.isArray(val)) return val.filter(Boolean);
+        if (typeof val === 'string') return val.split(',').map(s => s.trim()).filter(Boolean);
+        return [];
+    }
+    function buildCodesGrid(id, arr, type) {
+        const grid = document.getElementById(id);
+        grid.innerHTML = '';
+        if (!arr.length) {
+            grid.innerHTML = `<p class="empty-tab">No ${type} codes available</p>`;
+            return;
+        }
+        arr.slice(0, 16).forEach(code => {
+            const box = document.createElement('div');
+            box.className = 'code-box';
+            box.innerHTML = `<div class="code-type">${type}</div><div class="code-val">${esc(code)}</div>`;
+            grid.appendChild(box);
+        });
+    }
+
+    // ── COUNTERS ──
+    function counter(id, target, suffix, duration) {
+        const el = document.getElementById(id);
+        const start = Date.now();
+        (function tick() {
+            const p = Math.min((Date.now() - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(ease * target).toLocaleString() + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+        })();
+    }
+
+    // ── INIT ──
+    window.addEventListener('load', () => {
+        // Initial state
+        document.getElementById('landing').style.display = 'flex';
+
+        // Animate stats
+        counter('s1', 11000, '+', 2400);
+        counter('s2', 48,    '+', 1800);
+        counter('s3', 120,   '+', 2100);
+        counter('s4', 99,    '%', 1900);
+
+        document.getElementById('searchInput').focus();
+    });
+</script>
 </body>
 </html>

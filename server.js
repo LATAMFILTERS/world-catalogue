@@ -181,6 +181,58 @@ app.get('/api/cross-reference/:code', async (req, res) => {
     }
 });
 
+// -------------------- SEARCH BY APPLICATION --------------------
+app.get('/api/search-by-application', async (req, res) => {
+    try {
+        const q = (req.query.q || '').toString().trim();
+
+        if (q.length < 2) {
+            return res.status(400).json({ error: 'min 2 chars' });
+        }
+
+        const result = await pool.query(
+            `SELECT ${SAFE_FIELDS}
+             FROM filters
+             WHERE applications::text ILIKE $1
+                OR description ILIKE $1
+             ORDER BY sku
+             LIMIT 20`,
+            ['%' + q + '%']
+        );
+
+        return res.json({
+            products: result.rows,
+            count: result.rows.length
+        });
+    } catch (err) {
+        console.error('APPLICATION SEARCH ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- STATS --------------------
+app.get('/api/stats', async (req, res) => {
+    try {
+        const result = await pool.query(
+            `SELECT
+                COUNT(*) AS total,
+                COUNT(DISTINCT technology) AS technologies,
+                COUNT(DISTINCT category) AS categories
+             FROM filters`
+        );
+
+        return res.json({
+            total: parseInt(result.rows[0].total) || 0,
+            technologies: parseInt(result.rows[0].technologies) || 0,
+            categories: parseInt(result.rows[0].categories) || 0,
+            timestamp: new Date().toISOString()
+        });
+    } catch (err) {
+        console.error('STATS ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
 // -------------------- STATIC FILES --------------------
 app.use(express.static(path.join(__dirname, 'public')));
 
