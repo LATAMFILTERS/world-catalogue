@@ -117,7 +117,7 @@ export function AquaguardPage() {
                 fontStyle: 'italic',
               }}
             >
-              900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system protection. Three-stage centrifuge separation eliminates water, sediment and contaminants down to 2 micron before they reach your injectors.
+              900FH (90 GPH) and 1000FH (180 GPH) turbine fuel filter/water separators engineered for absolute fuel system asset protection. Three-stage AQUAGUARD™ defense system eliminates water, sediment and contaminants before they reach your injectors.
             </motion.p>
           </div>
         </section>
@@ -169,7 +169,7 @@ export function AquaguardPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  AQUAGUARD/SERIES turbine filters are professional-grade fuel filtration and water removal systems. The 900FH (90 GPH / 340 LPH) and 1000FH (180 GPH / 681 LPH) deploy AQUABLOC®II hydrophobic media — rated down to 2 micron nominal — with centrifuge rotation technology to protect high-pressure injection systems from water ingress, microbial contamination and particulate damage. Self-venting water drain with clear collection bowl for visual monitoring.
+                  AQUAGUARD/SERIES turbine filters are ELIMFILTERS' professional-grade fuel system asset protection against water ingress, microbial contamination and particulate damage. The 900FH (90 GPH / 340 LPH) and 1000FH (180 GPH / 681 LPH) deploy AQUAGUARD™ hydrophobic protection barriers — available in 2, 10 and 30 micron ratings — powered by ELIMFILTERS turbine rotation system defending high-pressure injection systems. Integrated auto-drain with visual monitoring port.
                 </p>
 
                 <div
@@ -202,7 +202,7 @@ export function AquaguardPage() {
                       STAGE 3
                     </p>
                     <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                      AQUABLOC®II 2µm
+                      AQUAGUARD™ 2µm BARRIER
                     </p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export function AquaguardPage() {
                   2µm
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  AQUABLOC®II FILTRATION RATING
+                  AQUAGUARD™ PROTECTION RATING
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
                   Nominal rating — available in 2, 10 or 30 micron versions
