@@ -598,12 +598,12 @@
       "name": "Nanoforce",
       "file": "nanoforce.html",
       "title": "NANOFORCE™",
-      "subtitle": "PRECISION INJECTOR GUARD",
-      "description": "// FUEL ASSET PROTECTION Progressive multi-layer protection architecture defending Common Rail injectors from sub-micron contamination events before damage occurs.",
+      "subtitle": "HYDRAULIC PRECISION GUARD",
+      "description": "// HYDRAULIC ASSET PROTECTION Multi-layer protection architecture engineered for high-pressure hydraulic circuits with vapor control and structural integrity systems.",
       "features": [
-        "4-MICRON BARRIER",
-        "ZERO MIGRATION",
-        "INJECTOR DEFENSE",
+        "MULTI-LAYER GUARD",
+        "VAPOR CONTROL",
+        "STRUCTURAL INTEGRITY",
         "PROGRESSIVE LAYERS"
       ],
       "stats": {},
@@ -613,13 +613,13 @@
       "name": "Syntepore",
       "file": "syntepore.html",
       "title": "SYNTEPORE™",
-      "subtitle": "HYDRAULIC ASSET DEFENSE",
-      "description": "// HYDRAULIC PROTECTION Multi-layer protection architecture engineered for high-pressure hydraulic asset defense with cavitation prevention and full system integrity.",
+      "subtitle": "PRECISION INJECTOR GUARD",
+      "description": "// FUEL ASSET PROTECTION Progressive multi-layer protection architecture defending Common Rail injectors from sub-micron contamination events before damage occurs.",
       "features": [
-        "MULTI-LAYER GUARD",
-        "RATED STRENGTH",
-        "VAPOR CONTROL",
-        "STRUCTURAL INTEGRITY"
+        "4-MICRON BARRIER",
+        "ZERO MIGRATION",
+        "INJECTOR DEFENSE",
+        "PROGRESSIVE LAYERS"
       ],
       "stats": {
         "percentages": [
