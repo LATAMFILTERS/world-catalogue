@@ -13,7 +13,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: '1000FH', value: '180 GPH' },
       { key: 'ISO 16332', value: 'CERTIFIED' },
     ],
-    logoSrc: '/assets/logo-aquaguard.png',
+    logoSrc: '/images/aquaguardseries(fn).avif',
     systemHeadline: 'NOT A FILTER.\nAN ASSET PROTECTION SYSTEM.',
     systemParagraphs: [
       'Conventional fuel filters intercept particles. AQUAGUARD/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
@@ -83,7 +83,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'TECHNOLOGY', value: 'AI-CALIBRATED' },
       { key: 'TARGET', value: 'TURBO CUSTODY' },
     ],
-    logoSrc: '/assets/logo-sintrax.png',
+    logoSrc: '/images/sintrax(fn).avif',
     systemHeadline: 'NOT JUST A FILTER.\nAN OIL CIRCUIT GUARDIAN.',
     systemParagraphs: [
       'Conventional oil filters rely on a single-density barrier to intercept contaminants. SYNTRAX™ deploys a four-layer protection matrix where each layer is calibrated to a specific contamination size class — from coarse metallic debris at the outer zone to sub-micron carbonaceous particles at the core barrier.',
@@ -173,7 +173,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'VAPOR CONTROL', value: 'ACTIVE' },
       { key: 'STRUCTURAL', value: 'HIGH-PRESSURE' },
     ],
-    logoSrc: '/assets/logo-nanoforce.png',
+    logoSrc: '/images/nanoforce(fn).avif',
     systemHeadline: 'HIGH-PRESSURE HYDRAULIC\nCIRCUIT PROTECTION.',
     systemParagraphs: [
       'Hydraulic systems are the most contamination-sensitive circuits in any mobile or stationary machine. Hydraulic control valves, pumps and actuators operate on tolerances measured in single-digit microns — any contamination that bypasses filtration accelerates wear exponentially, not linearly.',
@@ -243,7 +243,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'ANTI-COLLAPSE', value: '62 PSI' },
       { key: 'CERTIFICATION', value: 'ISO 5011' },
     ],
-    logoSrc: '/assets/logo-macrocore.png',
+    logoSrc: '/images/macrocore(fn).avif',
     systemHeadline: 'PROGRESSIVE DENSITY GRADIENT.\nNOT A SINGLE-LAYER BARRIER.',
     systemParagraphs: [
       'Single-density air filter elements reach their capacity limit at the surface — restricting airflow long before the interior protection capacity is utilized. MACROCORE™ Progressive Density Gradient (PDG) distributes contamination load across the full depth of the protection matrix, utilizing every layer from entry surface to core barrier.',
@@ -313,7 +313,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'DESIGN', value: 'BYPASS-FREE' },
       { key: 'SURFACE', value: 'EXPANDED' },
     ],
-    logoSrc: '/assets/logo-intekcore.png',
+    logoSrc: '/images/intekcore(fn).avif',
     systemHeadline: 'LIGHT-DUTY PRECISION.\nHEAVY-DUTY PROTECTION STANDARD.',
     systemParagraphs: [
       'Light-duty engines operate across the widest environmental range of any engine category — urban traffic, highway cruising, stop-and-go duty cycles, varying ambient temperatures and seasonal contamination profiles. INTEKCORE™ is engineered to handle this variability without protection compromise.',
@@ -383,7 +383,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'PROTECTION', value: 'ZERO MIGRATION' },
       { key: 'TARGET', value: 'INJECTOR DEFENSE' },
     ],
-    logoSrc: '/assets/logo-syntepore.png',
+    logoSrc: '/images/syntapore(fn).avif',
     systemHeadline: 'THE INJECTOR\'S\nFINAL GUARDIAN.',
     systemParagraphs: [
       'Common Rail injection systems operate at pressures exceeding 2,000 bar. At this pressure, a contamination particle as small as 4 microns can score injector needle seats and destroy the precision tolerances that control injection timing and fuel atomization quality.',
@@ -447,13 +447,14 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'AQUAGUARD™',
     heroSubtitle: 'WATER SEPARATOR',
     heroTagline: 'Hydrophobic protection technology achieving 99.8% water separation efficiency from fuel systems. Three-phase water interception — free, emulsified and dissolved — before contamination reaches the injection circuit.',
+
     heroImage: '/images/turbine-1.avif',
     heroStats: [
       { key: 'EFFICIENCY', value: '99.8%' },
       { key: 'BARRIER TYPE', value: 'HYDROPHOBIC' },
       { key: 'PROTECTION', value: 'WATER REPULSION' },
     ],
-    logoSrc: '/assets/logo-aquaguard.png',
+    logoSrc: '/images/aquaguard(fn).avif',
     systemHeadline: 'HYDROPHOBIC DEFENSE.\nWATER CANNOT PASS.',
     systemParagraphs: [
       'Water contamination in fuel systems operates across three phases: free water that settles and can be drained, emulsified water suspended in micro-droplets that conventional filters cannot intercept, and dissolved water that forms free phase when temperature changes. Each phase causes a different failure mode — microbial growth, injector corrosion, and cavitation erosion respectively.',
@@ -523,7 +524,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FUNCTION', value: 'VAPOR PREVENTION' },
       { key: 'DOSING', value: 'GRADUAL' },
     ],
-    logoSrc: '/assets/logo-cooltech.png',
+    logoSrc: '/images/cooltech(fn).avif',
     systemHeadline: 'CHEMICAL ASSET PROTECTION\nFOR THE COOLING CIRCUIT.',
     systemParagraphs: [
       'Diesel engine cooling systems face two simultaneous corrosion threats: electrochemical attack on aluminum, copper and steel surfaces, and cavitation erosion on cylinder liner external surfaces driven by pressure waves from piston firing events. Both failure modes are prevented by maintaining SCA (Supplemental Coolant Additive) chemistry within a tight concentration corridor.',
@@ -593,7 +594,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FUNCTION', value: 'WATER ABSORPTION' },
       { key: 'PROTECTION', value: 'CORROSION PREVENTION' },
     ],
-    logoSrc: '/assets/logo-drycore.png',
+    logoSrc: '/images/drycore(fn).avif',
     systemHeadline: 'MOLECULAR-LEVEL\nMOISTURE CUSTODY.',
     systemParagraphs: [
       'Compressed air systems for braking, suspension and pneumatic control contain moisture drawn in during compression from ambient air. At system operating temperature, this moisture remains vapor-phase. When air cools in downstream circuits, valves and actuators, vapor transitions to liquid — causing valve corrosion, seal swelling and control system failures.',
@@ -663,7 +664,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FITMENT', value: 'OEM INTERCHANGE' },
       { key: 'COVERAGE', value: 'MULTI-SYSTEM' },
     ],
-    logoSrc: '/assets/logo-duratech.png',
+    logoSrc: '/images/duratech(fn).avif',
     systemHeadline: 'ONE SOURCE.\nEVERY SYSTEM. EVERY VEHICLE.',
     systemParagraphs: [
       'Fleet maintenance operations managing mixed-model vehicle populations face a consistent challenge: sourcing compatible filter elements from multiple suppliers for each vehicle variant, managing separate inventory lines, and coordinating service timing across different replacement intervals.',
@@ -727,13 +728,13 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'MARINECLEAN™',
     heroSubtitle: 'SALT-RESISTANT',
     heroTagline: 'Salt-resistant epoxy coating with brine rejection technology meeting IMO certification for commercial marine filtration. Corrosion shield defense for diesel fuel and hydraulic systems operating in saltwater environments.',
-    heroImage: '/images/marine-hero.avif',
+    heroImage: '/images/marino-taller.avif',
     heroStats: [
       { key: 'CERTIFICATION', value: 'IMO' },
       { key: 'PROTECTION', value: 'SALT-RESISTANT' },
       { key: 'SYSTEM', value: 'CORROSION SHIELD' },
     ],
-    logoSrc: '/assets/logo-marineclean.png',
+    logoSrc: '/images/marineclean(fn).avif',
     systemHeadline: 'MARINE-GRADE DEFENSE\nAGAINST SALT CORROSION.',
     systemParagraphs: [
       'Marine diesel systems operate in the most corrosive environment accessible to filtration technology. Salt spray, salt aerosol and seawater ingress attack filter housings, sealing interfaces and bypass valve components continuously — not just in rough conditions, but as a constant ambient environment.',
@@ -803,7 +804,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'ODOR CONTROL', value: 'ACTIVATED CARBON' },
       { key: 'STANDARD', value: 'HEPA CLASS' },
     ],
-    logoSrc: '/assets/logo-microkappa.png',
+    logoSrc: '/images/microkappa(fn).avif',
     systemHeadline: 'THREE MECHANISMS.\nZERO CONTAMINATION REACHES THE OCCUPANT.',
     systemParagraphs: [
       'Vehicle cabin air filtration is not an engine protection system — it is an occupant health protection system. The contamination targets are different: PM2.5 and PM10 particles, pollen, bacteria, diesel exhaust gases, NOx compounds, and volatile organic compounds from road and industrial sources.',
