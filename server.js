@@ -108,11 +108,17 @@ app.get('/api/search', async (req, res) => {
              FROM filters
              WHERE UPPER(sku) LIKE $1
                 OR UPPER(base_code) LIKE $1
+                OR UPPER(sku) ILIKE $2
+                OR UPPER(base_code) ILIKE $2
                 OR competitor_codes::text ILIKE $2
                 OR oem_codes::text ILIKE $2
                 OR cross_references::text ILIKE $2
+             ORDER BY
+                CASE WHEN UPPER(sku) = $3 THEN 0
+                     WHEN UPPER(sku) LIKE $1 THEN 1
+                     ELSE 2 END
              LIMIT 20`,
-            [q + '%', '%' + q + '%']
+            [q + '%', '%' + q + '%', q]
         );
 
         return res.json({

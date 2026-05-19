@@ -125,8 +125,8 @@
     </div>
 
     <div class="stats">
-        <div><div class="stat-num" id="s1">0</div><div class="stat-lbl">Filters Catalogued</div></div>
-        <div><div class="stat-num" id="s2">0</div><div class="stat-lbl">OEM Brands</div></div>
+        <div><div class="stat-num" id="s1">—</div><div class="stat-lbl">Filters Catalogued</div></div>
+        <div><div class="stat-num" id="s2">—</div><div class="stat-lbl">Filter Technologies</div></div>
         <div><div class="stat-num" id="s3">0</div><div class="stat-lbl">Countries Served</div></div>
         <div><div class="stat-num" id="s4">0%</div><div class="stat-lbl">Uptime</div></div>
     </div>
@@ -320,8 +320,9 @@
 
         // OEM codes
         buildCodesGrid('oemGrid', toArray(product.oem_codes), 'OEM');
-        // Cross refs
-        buildCodesGrid('crossGrid', toArray(product.competitor_codes), 'ALT');
+        // Cross refs: competitor codes + cross_references field
+        const crossCodes = [...toArray(product.competitor_codes), ...toArray(product.cross_references)];
+        buildCodesGrid('crossGrid', [...new Set(crossCodes)], 'ALT');
         // Equipment
         buildCodesGrid('equipGrid', toArray(product.applications), 'APP');
 
@@ -399,17 +400,24 @@
     }
 
     // ── INIT ──
-    window.addEventListener('load', () => {
+    window.addEventListener('load', async () => {
         // Initial state
         document.getElementById('landing').style.display = 'flex';
-
-        // Animate stats
-        counter('s1', 11000, '+', 2400);
-        counter('s2', 48,    '+', 1800);
-        counter('s3', 120,   '+', 2100);
-        counter('s4', 99,    '%', 1900);
-
         document.getElementById('searchInput').focus();
+
+        // Load real stats from API
+        try {
+            const r = await fetch('/api/stats');
+            if (r.ok) {
+                const s = await r.json();
+                if (s.total > 0)        counter('s1', s.total,        '+', 2400);
+                if (s.technologies > 0) counter('s2', s.technologies, '+', 1800);
+            }
+        } catch (_) {}
+
+        // Animate static stats
+        counter('s3', 120, '+', 2100);
+        counter('s4', 99,  '%', 1900);
     });
 </script>
 </body>
