@@ -7,7 +7,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'AQUAGUARD',
     heroSubtitle: '/SERIES™',
     heroTagline: 'Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.',
-    heroImage: '/images/turbinas-hero.avif',
+    heroImage: '/images/turbine-plant.avif',
     heroStats: [
       { key: '900FH', value: '90 GPH' },
       { key: '1000FH', value: '180 GPH' },
