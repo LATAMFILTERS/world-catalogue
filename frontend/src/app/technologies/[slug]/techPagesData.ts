@@ -167,7 +167,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'NANOFORCE™',
     heroSubtitle: 'HYDRAULIC PRECISION GUARD',
     heroTagline: 'Multi-layer protection architecture engineered for high-pressure hydraulic asset defense. Vapor control and structural integrity systems that maintain protection performance under sustained high-pressure pulsation cycles.',
-    heroImage: '/images/syntrapore-hero.avif',
+    heroImage: '/images/hidraulic.avif',
     heroStats: [
       { key: 'ARCHITECTURE', value: 'MULTI-LAYER' },
       { key: 'VAPOR CONTROL', value: 'ACTIVE' },
