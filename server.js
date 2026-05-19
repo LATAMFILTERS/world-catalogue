@@ -1191,7 +1191,7 @@ app.get('/api/stats', async (req, res) => {
 // ────────────────────────────────────────────────────────────────────────────
 
 console.log('[server] About to listen on port 8080...');
-const PORT = 8080; // Railway target port
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
   console.log(`✅ Chatbot service running`);
