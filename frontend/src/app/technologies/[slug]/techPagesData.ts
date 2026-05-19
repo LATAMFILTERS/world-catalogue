@@ -237,7 +237,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'MACROCORE™',
     heroSubtitle: 'PROGRESSIVE DENSITY ENGINEERING',
     heroTagline: 'Progressive Density Gradient multi-layer defense system achieving 99.9%–99.98% interception efficiency for industrial air intake asset protection. ISO 5011 certified. 62 PSI anti-collapse rated.',
-    heroImage: '/images/airdryer-hero.avif',
+    heroImage: '/images/mecanica-air.avif',
     heroStats: [
       { key: 'EFFICIENCY', value: '99.98%' },
       { key: 'ANTI-COLLAPSE', value: '62 PSI' },
