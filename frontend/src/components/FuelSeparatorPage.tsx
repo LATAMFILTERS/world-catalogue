@@ -169,7 +169,7 @@ export function FuelSeparatorPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS fuel separators deploy a three-stage coalescence process: a pre-filter captures sediment and large particulate, the coalescing media forces microscopic water droplets to merge into larger drops that fall by gravity into a collection bowl, and a hydrophobic final stage blocks any residual water molecules from passing into the injection circuit. ISO 16332 certified — the international standard for diesel fuel filter and water separator performance.
+                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS fuel separators deploy a three-stage AQUAGUARD™ asset protection system: the first defense layer captures sediment and large contaminants, the second protection stage forces microscopic water droplets to merge and fall into the collection chamber, and the AQUAGUARD™ hydrophobic final barrier blocks any residual water from reaching the injection circuit. ISO 16332 certified — the international standard for diesel fuel water separation performance.
                 </p>
 
                 <div
