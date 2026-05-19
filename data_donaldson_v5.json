@@ -1,0 +1,466 @@
+[
+    {
+        "id": "P781466",
+        "cross": [
+            {
+                "marca": "AGRALE",
+                "codigo": "6008099011006"
+            },
+            {
+                "marca": "ALCO",
+                "codigo": "SP800"
+            },
+            {
+                "marca": "ASKAM KAMYON",
+                "codigo": "25242T"
+            },
+            {
+                "marca": "ASTRA",
+                "codigo": "107163"
+            },
+            {
+                "marca": "BELL",
+                "codigo": "220949"
+            }
+        ]
+    },
+    {
+        "id": "P783753",
+        "cross": [
+            {
+                "marca": "ALCO",
+                "codigo": "SP8001"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "0986628252"
+            },
+            {
+                "marca": "CLEAN",
+                "codigo": "DE2203"
+            },
+            {
+                "marca": "FIAAM",
+                "codigo": "FT5651"
+            },
+            {
+                "marca": "FIAAM",
+                "codigo": "FTAQ5561"
+            },
+            {
+                "marca": "KNECHT",
+                "codigo": "AL14"
+            }
+        ]
+    },
+    {
+        "id": "P951411",
+        "cross": [
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "0986628259"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1891431"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1527755"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1681575"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1821580"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "2124657"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K015857"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K039455"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K042777"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K039455X00"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K010732"
+            },
+            {
+                "marca": "LEKANG",
+                "codigo": "79955"
+            },
+            {
+                "marca": "TATRA",
+                "codigo": "1527755"
+            }
+        ]
+    },
+    {
+        "id": "P951413",
+        "cross": [
+            {
+                "marca": "AGCO",
+                "codigo": "72631214"
+            },
+            {
+                "marca": "ALCO",
+                "codigo": "SP8005"
+            },
+            {
+                "marca": "BELL",
+                "codigo": "226000"
+            },
+            {
+                "marca": "BENDIX",
+                "codigo": "5004814PG"
+            },
+            {
+                "marca": "BENDIX",
+                "codigo": "K020366"
+            },
+            {
+                "marca": "BENDIX",
+                "codigo": "KO20366"
+            },
+            {
+                "marca": "BENDIX",
+                "codigo": "5008414PGBXW"
+            },
+            {
+                "marca": "BENDIX",
+                "codigo": "5008414PG"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "986628254"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "Z8254"
+            }
+        ]
+    },
+    {
+        "id": "P951415",
+        "cross": [
+            {
+                "marca": "ALCO",
+                "codigo": "SP8007"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1527760"
+            },
+            {
+                "marca": "KNECHT",
+                "codigo": "AL26"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K005686"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K014712"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K0005686"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K039453"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K037065"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K053220"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K053221"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K010243"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K025912"
+            },
+            {
+                "marca": "LAUTRETTE",
+                "codigo": "ELD8104"
+            }
+        ]
+    },
+    {
+        "id": "P951417",
+        "cross": [
+            {
+                "marca": "ALCO",
+                "codigo": "SP8002"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "0986628253"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "0986628257"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "986628257"
+            },
+            {
+                "marca": "CATERPILLAR",
+                "codigo": "1101383"
+            },
+            {
+                "marca": "COOPERS",
+                "codigo": "EG1250"
+            },
+            {
+                "marca": "CROSLAND",
+                "codigo": "9386"
+            }
+        ]
+    },
+    {
+        "id": "P951419",
+        "cross": [
+            {
+                "marca": "HINO",
+                "codigo": "S47ABEV060"
+            },
+            {
+                "marca": "HINO",
+                "codigo": "S47ABEV070"
+            },
+            {
+                "marca": "SCANIA",
+                "codigo": "2484686"
+            },
+            {
+                "marca": "SCANIA",
+                "codigo": "2081360"
+            },
+            {
+                "marca": "SCANIA",
+                "codigo": "1774598"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012262"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012261"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4324109282"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012282"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012281"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329112282"
+            }
+        ]
+    },
+    {
+        "id": "P952185",
+        "cross": [
+            {
+                "marca": "FORD",
+                "codigo": "2C462B915AA"
+            },
+            {
+                "marca": "IVECO",
+                "codigo": "500055322"
+            },
+            {
+                "marca": "MAN",
+                "codigo": "81521550043"
+            },
+            {
+                "marca": "MAN",
+                "codigo": "81521550045"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "4324102442"
+            },
+            {
+                "marca": "RENAULT VI",
+                "codigo": "5001865037"
+            }
+        ]
+    },
+    {
+        "id": "P953571",
+        "cross": [
+            {
+                "marca": "AGRALE",
+                "codigo": "6008099011006"
+            },
+            {
+                "marca": "ALCO",
+                "codigo": "SP800"
+            },
+            {
+                "marca": "ARVIN",
+                "codigo": "R950011"
+            },
+            {
+                "marca": "ASKAM KAMYON",
+                "codigo": "25242T"
+            },
+            {
+                "marca": "ASTRA",
+                "codigo": "107163"
+            }
+        ]
+    },
+    {
+        "id": "P956986",
+        "cross": [
+            {
+                "marca": "DAIMLER",
+                "codigo": "A0004292697"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K163455"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K102196"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K102152"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "0004292097"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "4292097"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "A0004292097"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "0004292197"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "A0004293197"
+            },
+            {
+                "marca": "MERCEDES-BENZ",
+                "codigo": "A0004292197"
+            },
+            {
+                "marca": "MITSUBISHI FUSO",
+                "codigo": "MX937636"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012512"
+            }
+        ]
+    },
+    {
+        "id": "P957032",
+        "cross": [
+            {
+                "marca": "ALCO",
+                "codigo": "SP8003"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "1487434011"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "1487434010"
+            },
+            {
+                "marca": "BOSCH-REXROTH",
+                "codigo": "1487434903"
+            },
+            {
+                "marca": "KNECHT",
+                "codigo": "AL23"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "II38789F"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "II38789F004"
+            },
+            {
+                "marca": "MAN",
+                "codigo": "81521020016"
+            }
+        ]
+    },
+    {
+        "id": "P959971",
+        "cross": [
+            {
+                "marca": "DAF",
+                "codigo": "1867000"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1943158"
+            },
+            {
+                "marca": "DAF",
+                "codigo": "1925363"
+            },
+            {
+                "marca": "KNORR-BREMSE",
+                "codigo": "K096383"
+            },
+            {
+                "marca": "WABCO",
+                "codigo": "4329012532"
+            }
+        ]
+    }
+]

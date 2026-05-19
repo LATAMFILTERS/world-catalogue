@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUNICIPAL FLEETS: | ELIMFILTERS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+    :root { --volt: #FFF12D; --bg: #000; --border: rgba(255,255,255,0.08); }
+
+    .font-impact { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.9; }
+    .font-tech { font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--volt); font-size: 11px; }
+
+    .hero { position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden; background: #000; }
+    .hero-content { position: relative; z-index: 3; max-width: 1400px; margin: auto; padding: 90px 8%; width: 100%; }
+
+    .section { padding: 80px 8%; max-width: 1400px; margin: auto; border-bottom: 1px solid var(--border); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin: 40px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+
+    @media (max-width: 1024px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .section { padding: 60px 6%; }
+    }
+
+    .card { background: #050505; border: 1px solid var(--border); padding: 40px; border-radius: 4px; transition: border-color 0.3s ease; }
+    .card:hover { border-color: var(--volt); }
+
+    h1 { font-size: clamp(50px, 10vw, 90px); margin: 20px 0; }
+    h2 { font-size: clamp(32px, 5vw, 58px); margin: 40px 0 30px 0; }
+    h3 { font-size: 20px; font-weight: 700; margin: 20px 0 15px 0; }
+
+    .subtitle { font-size: clamp(28px, 5vw, 55px); color: var(--volt); margin: 10px 0 30px 0; }
+    .tagline { font-size: 18px; color: #aaa; font-weight: 300; font-style: italic; margin: 20px 0 40px 0; line-height: 1.7; }
+
+    .feature-list { list-style: none; margin: 20px 0; }
+    .feature-list li { padding: 12px 0 12px 30px; position: relative; color: #ddd; }
+    .feature-list li:before { content: "✓"; position: absolute; left: 0; color: var(--volt); font-weight: bold; }
+
+    .stat-box { background: #1a1a1a; padding: 30px; border-left: 4px solid var(--volt); margin: 20px 0; }
+    .stat-box .number { font-size: 42px; color: var(--volt); font-weight: 900; }
+    .stat-box .label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px; }
+
+    .cta-btn { background: var(--volt); color: #000; padding: 16px 40px; font-weight: 900; text-transform: uppercase; font-size: 12px; border: none; cursor: pointer; transition: all 0.3s ease; display: inline-block; text-decoration: none; }
+    .cta-btn:hover { background: #fff; }
+
+    .tech-tag { display: inline-block; background: #1a1a1a; padding: 8px 16px; border: 1px solid var(--border); border-radius: 3px; font-size: 11px; margin: 5px 5px 5px 0; color: #aaa; }
+
+    .yellow { color: var(--volt); }
+    .border-l { border-left: 4px solid var(--volt); padding-left: 24px; }
+
+    footer { text-align: center; padding: 40px 8%; border-top: 1px solid var(--border); color: #666; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="font-tech">// INDUSTRIE_ENGINEERING</p>
+      <h1 class="font-impact">MUNICIPAL FLEETS:</h1>
+      <h1 class="font-impact subtitle"></h1>
+      <p class="tagline">Constant stop-and-go cycles and urban routes demand immediate response. ELIMFILTERS designs specific filtration systems for every municipal platform, ensuring maximum uptime and extended maintenance intervals. Retention of soot and asphalt particles ...</p>
+      <a href="#features" class="cta-btn">Explore Features</a>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" class="section">
+    <h2 class="font-impact">Key Advantages</h2>
+    <ul class="feature-list">
+      <li>100% PURE AIR</li>
+      <li>OPERATOR SAFETY</li>
+      <li>EXTREME LUBRICATION</li>
+      <li>LOADING SYSTEMS</li>
+    </ul>
+  </section>
+
+  <!-- DETAILED OVERVIEW -->
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <h2 class="font-impact">Engineering Excellence</h2>
+        <p>ELIMFILTERS provides engineered filtration solutions optimized for Waste Municipal operations. Our systems deliver maximum asset protection with extended service intervals and reduced total cost of ownership.</p>
+      </div>
+      <div class="card border-[var(--volt)]">
+        <h3>System Specifications</h3>
+        <p>Engineered for Waste Municipal environments with precision filtration, water separation, and thermal stability. Every system designed for 24/7 reliability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS SECTION -->
+  <section class="section bg-[#050505]">
+    <h2 class="font-impact text-center mb-12">Performance Metrics</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="stat-box">
+          <div class="number">100%</div>
+          <div class="label">Performance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS SECTION -->
+  <section class="section">
+    <h2 class="font-impact">Recommended Applications</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Primary Use Cases</h3>
+        <ul class="feature-list">
+          <li>Waste Municipal equipment</li><li>Heavy-duty operations</li><li>Extended service cycles</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Technologies Included</h3>
+        <div style="margin-top: 20px;">
+          <span class="tech-tag">SYNTEPORE™</span>
+          <span class="tech-tag">SYNTRAX™</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="background: var(--volt); color: #000; padding: 60px 8%;">
+    <div style="max-width: 1400px; margin: auto;">
+      <h2 class="font-impact" style="color: #000;">Ready to Upgrade?</h2>
+      <p style="font-size: 18px; margin: 20px 0 30px 0; color: #333;">Find the perfect filtration system for your industrie operations.</p>
+      <a href="https://part-search.elimfilters.com/" class="cta-btn" style="background: #000; color: var(--volt); border: 2px solid #000;">Find My Filter</a>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>ELIMFILTERS™</strong> | Engineering Protection for Mission-Critical Operations</p>
+    <p style="margin-top: 10px; color: #555;">© 2026 All Rights Reserved. industrie Filtration Solutions.</p>
+  </footer>
+</body>
+</html>

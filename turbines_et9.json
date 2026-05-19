@@ -1,0 +1,190 @@
+[
+  {
+    "sku": "ET92010T", "codigo_base": "2010TM-OR", "serie": "2010", "variant": "TM",
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
+    "micron_rating": "10 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary/Secondary",
+    "equipment_applications": [
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET92010P", "codigo_base": "2010PM-OR", "serie": "2010", "variant": "PM",
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
+    "micron_rating": "30 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary",
+    "equipment_applications": [
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET92010S", "codigo_base": "2010SM-OR", "serie": "2010", "variant": "SM",
+    "outer_diameter_mm": 78.7, "height_mm": 68.6, "thread_size": null,
+    "micron_rating": "2 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Secondary",
+    "equipment_applications": [
+      {"machine": "Maquinaria Agrícola Pequeña", "type": "AGRICULTURAL"},
+      {"machine": "Botes de Recreo", "type": "MARINE"},
+      {"machine": "Motores Diesel Bajo Flujo", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET92020T", "codigo_base": "2020TM-OR", "serie": "2020", "variant": "TM",
+    "outer_diameter_mm": 119.4, "height_mm": 243.8, "thread_size": null,
+    "micron_rating": "10 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary/Secondary",
+    "equipment_applications": [
+      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
+      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
+      {"machine": "Transporte Pesado", "type": "TRUCK"}
+    ]
+  },
+  {
+    "sku": "ET92020P", "codigo_base": "2020PM-OR", "serie": "2020", "variant": "PM",
+    "outer_diameter_mm": 119.4, "height_mm": 243.8, "thread_size": null,
+    "micron_rating": "30 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary",
+    "equipment_applications": [
+      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
+      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
+      {"machine": "Transporte Pesado", "type": "TRUCK"}
+    ]
+  },
+  {
+    "sku": "ET92020S", "codigo_base": "2020SM-OR", "serie": "2020", "variant": "SM",
+    "outer_diameter_mm": 119.4, "height_mm": 243.8, "thread_size": null,
+    "micron_rating": "2 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Secondary",
+    "equipment_applications": [
+      {"machine": "Motores Diesel Marinos", "type": "MARINE"},
+      {"machine": "Generación de Energía", "type": "INDUSTRIAL"},
+      {"machine": "Transporte Pesado", "type": "TRUCK"}
+    ]
+  },
+  {
+    "sku": "ET92040T", "codigo_base": "2040TM-OR", "serie": "2040", "variant": "TM",
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
+    "micron_rating": "10 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary/Secondary",
+    "equipment_applications": [
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET92040P", "codigo_base": "2040PM-OR", "serie": "2040", "variant": "PM",
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
+    "micron_rating": "30 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Primary",
+    "equipment_applications": [
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET92040S", "codigo_base": "2040SM-OR", "serie": "2040", "variant": "SM",
+    "outer_diameter_mm": 109.2, "height_mm": 119.4, "thread_size": null,
+    "micron_rating": "2 Micron", "installation_type": "Cartridge",
+    "sub_type": "Fuel Filter - Coalescing Secondary",
+    "equipment_applications": [
+      {"machine": "Maquinaria de Construcción Media", "type": "CONSTRUCTION"},
+      {"machine": "Motores Marinos Comerciales", "type": "MARINE"},
+      {"machine": "Grupos Electrógenos Medianos", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET91000F", "codigo_base": "1000FH", "serie": "1000", "variant": "FH",
+    "outer_diameter_mm": 151.0, "height_mm": 554.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Motores Diesel HD", "type": "INDUSTRIAL"},
+      {"machine": "Generadores Grandes", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET91000G", "codigo_base": "1000FG", "serie": "1000", "variant": "FG",
+    "outer_diameter_mm": 151.0, "height_mm": 554.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Motores Diesel HD", "type": "INDUSTRIAL"},
+      {"machine": "Generadores Grandes", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET90500F", "codigo_base": "500FH", "serie": "500", "variant": "FH",
+    "outer_diameter_mm": 147.0, "height_mm": 292.0, "thread_size": "3/4\"-16 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Camiones Ligeros", "type": "TRUCK"},
+      {"machine": "Botes Pequeños", "type": "MARINE"},
+      {"machine": "Equipos Agrícolas", "type": "AGRICULTURAL"}
+    ]
+  },
+  {
+    "sku": "ET90500G", "codigo_base": "500FG", "serie": "500", "variant": "FG",
+    "outer_diameter_mm": 147.0, "height_mm": 292.0, "thread_size": "3/4\"-16 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Camiones Ligeros", "type": "TRUCK"},
+      {"machine": "Botes Pequeños", "type": "MARINE"},
+      {"machine": "Equipos Agrícolas", "type": "AGRICULTURAL"}
+    ]
+  },
+  {
+    "sku": "ET90900F", "codigo_base": "900FH", "serie": "900", "variant": "FH",
+    "outer_diameter_mm": 151.0, "height_mm": 419.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Maquinaria Industrial", "type": "INDUSTRIAL"},
+      {"machine": "Motores 90 GPH", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET90900G", "codigo_base": "900FG", "serie": "900", "variant": "FG",
+    "outer_diameter_mm": 151.0, "height_mm": 419.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Maquinaria Industrial", "type": "INDUSTRIAL"},
+      {"machine": "Motores 90 GPH", "type": "INDUSTRIAL"}
+    ]
+  },
+  {
+    "sku": "ET97590M", "codigo_base": "75900MAX", "serie": "75900", "variant": "MAX",
+    "outer_diameter_mm": 476.0, "height_mm": 432.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On Dual",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Unidades Duales Marinas (Dos filtros 900)", "type": "MARINE"}
+    ]
+  },
+  {
+    "sku": "ET91000M", "codigo_base": "1000MA", "serie": "1000", "variant": "MA",
+    "outer_diameter_mm": 151.0, "height_mm": 559.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Aplicación Marina (Certificación UL)", "type": "MARINE"}
+    ]
+  },
+  {
+    "sku": "ET90900M", "codigo_base": "900MA", "serie": "900", "variant": "MA",
+    "outer_diameter_mm": 152.0, "height_mm": 432.0, "thread_size": "7/8\"-14 UNF",
+    "micron_rating": null, "installation_type": "Spin-On",
+    "sub_type": "Fuel Filter - Coalescing",
+    "equipment_applications": [
+      {"machine": "Aplicación Marina (Certificación UL)", "type": "MARINE"}
+    ]
+  }
+]

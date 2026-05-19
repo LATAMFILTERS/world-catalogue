@@ -1,0 +1,649 @@
+{
+  "industries": [
+    {
+      "name": "Agriculture",
+      "file": "agriculture.html",
+      "title": "MAXIMIZING AVAILABILITY",
+      "subtitle": "DURING CRITICAL HARVEST",
+      "description": "Harvest windows don't wait. ELIMFILTERS delivers filtration architectures engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
+      "features": [
+        "CROP RESIDUE DEBRIS CONTROL",
+        "THERMAL STABILITY UNDER LOAD",
+        "OPTIMIZED AIRFLOW RESTRICTION",
+        "TOTAL HYDRAULIC SEPARATION",
+        "FINE DUST PARTICLE CAPTURE",
+        "EXTENDED FIELD SERVICE INTERVALS"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "100%",
+          "0%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Automotive",
+      "file": "automotive.html",
+      "title": "INDUSTRIAL OVER-ENGINEERING",
+      "subtitle": "",
+      "description": "// LD AUTOMOTIVE SERIES Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS' heavy-duty machinery.",
+      "features": [
+        "AIR INTAKE",
+        "LUBRICATION",
+        "FUEL SYSTEM",
+        "CABIN AIR"
+      ],
+      "stats": {},
+      "cta": "VIEW TECHNOLOGY"
+    },
+    {
+      "name": "Bus Coach",
+      "file": "bus-coach.html",
+      "title": "MAXIMIZING UPTIME",
+      "subtitle": "FOR URBAN MOBILITY.",
+      "description": "ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile. Engineered to eliminate unplanned stops, maximizing the return on investment per mile.",
+      "features": [
+        "01. ZERO DOWNTIME",
+        "02. SYSTEM PURITY",
+        "CITY BREATHING",
+        "PNEUMATIC SAFETY"
+      ],
+      "stats": {
+        "percentages": [
+          "100%",
+          "25%",
+          "99.9%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Construction",
+      "file": "construction.html",
+      "title": "PROTECTING CRITICAL",
+      "subtitle": "CONSTRUCTION ASSETS.",
+      "description": "In heavy construction, the most expensive filter is the one that causes a machine to stop. We reduce maintenance frequency and eliminate component wear costs. Our specialized media handles abrasive mineral dust, sudden hydraulic pressure peaks, and fuel contamination during 24/7 duty cycles.",
+      "features": [
+        "DUST CONTROL",
+        "VALVE DEFENSE",
+        "WATER SEPARATION"
+      ],
+      "stats": {
+        "percentages": [
+          "35%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Manufacturing",
+      "file": "manufacturing.html",
+      "title": "ALWAYS-ON PLANT",
+      "subtitle": "",
+      "description": "// INDUSTRIAL PRODUCTIVITY / V-200 // CONTINUOUS PROCESS ENGINEERING",
+      "features": [
+        "PRECISION CONTROL",
+        "PNEUMATIC RELIABILITY",
+        "GEARBOX DEFENSE",
+        "THERMAL STABILITY"
+      ],
+      "stats": {},
+      "cta": "EXPLORE TECHNOLOGY"
+    },
+    {
+      "name": "Marine",
+      "file": "marine.html",
+      "title": "MARINE OPERATIONS",
+      "subtitle": "",
+      "description": "// OFFSHORE • COMMERCIAL • NAVAL // CONTINUOUS NAVIGATION",
+      "features": [
+        "FUEL PURITY",
+        "LUBRICATION",
+        "HYDRAULIC CONTROL",
+        "AIR INTAKE"
+      ],
+      "stats": {},
+      "cta": "VIEW TECHNOLOGY"
+    },
+    {
+      "name": "Mining",
+      "file": "mining.html",
+      "title": "PROTECTING CRITICAL",
+      "subtitle": "MINING ASSETS.",
+      "description": "In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair—it's a massive disruption to the global supply chain. ELIMFILTERS engineering targets mechanical risk reduction and service life extension for massive assets in haulage, extraction, and cr",
+      "features": [
+        "AIR INTAKE / SYNTEPORE™",
+        "FUEL / AQUAGUARD™",
+        "HYDRAULIC / NANOFORCE™"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Oil Gas",
+      "file": "oil-gas.html",
+      "title": "OIL & GAS",
+      "subtitle": "MISSION-CRITICAL.",
+      "description": "Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure and salt mist. High-capacity media for offshore and abrasive dust environments.",
+      "features": [
+        "MACROCORE™",
+        "AIR INTAKE",
+        "AQUAGUARD™",
+        "FUEL PURITY"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Power Generation",
+      "file": "power-generation.html",
+      "title": "UNINTERRUPTED",
+      "subtitle": "",
+      "description": "Stationary engines operate under constant load and standby periods that accelerate fuel and lubricant degradation. ELIMFILTERS engineers protection architectures that ensure the thermal and chemical stability of your power assets. Absolute removal of water and sediment to prevent corrosion in high-p",
+      "features": [
+        "PURE DIESEL",
+        "STABLE LUBRICATION",
+        "AIR PURITY",
+        "THERMAL CONTROL"
+      ],
+      "stats": {},
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Railway",
+      "file": "railway.html",
+      "title": "RAILWAY UNINTERRUPTED POWER",
+      "subtitle": "",
+      "description": "// STRATEGIC HEAVY MOBILITY Locomotives and rolling stock require absolute reliability across extreme service cycles to ensure operational continuity.",
+      "features": [
+        "FUEL SYSTEMS",
+        "LUBRICATION",
+        "WATER SEPARATION",
+        "AIR INTAKE"
+      ],
+      "stats": {},
+      "cta": "VIEW ENGINEERING"
+    },
+    {
+      "name": "Trucks Fleets",
+      "file": "trucks-fleets.html",
+      "title": "TRUCKS & FLEETS",
+      "subtitle": "",
+      "description": "Optimized systems for commercial fleets. Lower restriction and higher retention allow for extended service intervals and significant reduction in operational costs (TCO). Optimizes fuel economy by protecting high-pressure common rail (HPCR) injection systems against micro-particulates.",
+      "features": [
+        "INJECTION DEFENSE",
+        "TURBO PROTECTION",
+        "BRAKE INTEGRITY",
+        "OIL STABILITY"
+      ],
+      "stats": {},
+      "cta": "FIND MY FILTER"
+    },
+    {
+      "name": "Waste Municipal",
+      "file": "waste-municipal.html",
+      "title": "MUNICIPAL FLEET PROTECTION",
+      "subtitle": "CRITICAL URBAN OPERATIONS",
+      "description": "From garbage collection trucks to fire engines, municipal fleets operate in the most demanding urban conditions. ELIMFILTERS delivers specialized filtration for every critical service vehicle: waste trucks, emergency response units, transit buses, and street maintenance equipment — ensuring zero downtime when cities depend on you.",
+      "features": [
+        "WASTE COLLECTION VEHICLES",
+        "FIRE AND EMERGENCY RESPONSE",
+        "PUBLIC TRANSIT BUSES",
+        "STREET MAINTENANCE EQUIPMENT",
+        "URBAN AIR QUALITY PROTECTION",
+        "24/7 FLEET AVAILABILITY"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "100%",
+          "40%"
+        ]
+      },
+      "cta": "FIND MY FILTER"
+    }
+  ],
+  "products": [
+    {
+      "name": "Airfilter",
+      "file": "airfilter.html",
+      "title": "AIR INTAKE DOMINATION",
+      "subtitle": "MACROCORE™ DEFENSE SYSTEM",
+      "description": "ELIMFILTERS AIR INTAKE FILTRATION CRUSHES DUST. 99.9% silica retention. ZERO bypass. MACROCORE™ technology engineering delivers absolute capture in the most hostile dust environments on the planet. Agriculture. Mining. Construction. Oil & Gas. No exceptions. No compromises.",
+      "features": [
+        "MACROCORE™ TECHNOLOGY",
+        "99.9% SILICA CAPTURE",
+        "ABSOLUTE ZERO BYPASS",
+        "5011 RATED DEFENSE",
+        "HOSTILE ENVIRONMENT RATED"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
+      },
+      "cta": "EXPLORE MACROCORE"
+    },
+    {
+      "name": "Aquaguard Series",
+      "file": "aquaguard-series.html",
+      "title": "AQUAGUARD",
+      "subtitle": "SERIES TURBINES",
+      "description": "// HYDRAULIC SEPARATION 900FH/1000FH turbine technology with 3-stage separation and AQUABLOC®II coating for advanced fluid control.",
+      "features": [
+        "900FH/1000FH",
+        "3-STAGE DESIGN",
+        "AQUABLOC®II",
+        "TURBINE ROTATION"
+      ],
+      "stats": {
+        "ratings": [
+          "30 micron",
+          "30 micron"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Cabin",
+      "file": "cabin.html",
+      "title": "CABIN",
+      "subtitle": "OCCUPATIONAL HEALTH",
+      "description": "Multi-stage 6-layer filtration removing 99.9% soot and allergens with OEM geometry for precision protection.",
+      "features": [
+        "6-LAYER DESIGN",
+        "99.9% REMOVAL",
+        "GEOMETRY MATCHED",
+        "STAGE PROGRESSION"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Coolant",
+      "file": "coolant.html",
+      "title": "COOLANT",
+      "subtitle": "THERMAL CUSTODY",
+      "description": "Active inhibitor technology with thermal stability and cavitation prevention for sustained engine protection.",
+      "features": [
+        "ACTIVE PROTECTION",
+        "THERMAL STABILITY",
+        "LINER DEFENSE",
+        "CORROSION BARRIER"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Dryer",
+      "file": "dryer.html",
+      "title": "DRYER",
+      "subtitle": "DEW POINT CONTROL",
+      "description": "// AIR DRYING SYSTEMS Molecular-level desiccant technology achieving zero-dew point with coalescing for 45% life extension.",
+      "features": [
+        "ZERO-DEW POINT",
+        "WATER CAPTURE",
+        "45% LONGER",
+        "DESICCANT ACTION"
+      ],
+      "stats": {
+        "percentages": [
+          "45%",
+          "45%",
+          "45%"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Fuel",
+      "file": "fuel.html",
+      "title": "FUEL",
+      "subtitle": "SYNTHETIC ARMOR",
+      "description": "// FUEL FILTRATION SYSTEMS Synthetic armor media with high dirt capacity rated ISO 16332 for diesel, biodiesel, and gasoline applications.",
+      "features": [
+        "ARMOR CONSTRUCTION",
+        "MULTI-FUEL RATED",
+        "PRECISION GUARD",
+        "ARMOR CAPACITY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Housing",
+      "file": "housing.html",
+      "title": "HOUSING",
+      "subtitle": "ZERO-BYPASS SEALING",
+      "description": "Radial seal technology with hi-flow unrestricted design and precision OEM fit for intake systems.",
+      "features": [
+        "ZERO-BYPASS",
+        "HI-FLOW DESIGN",
+        "OEM GEOMETRY",
+        "SEAL CONTACT"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Hydraulic",
+      "file": "hydraulic.html",
+      "title": "HYDRAULIC",
+      "subtitle": "PRECISION DEFENSE",
+      "description": "99.99% efficiency filtration with HYDROGUARD water separation and 450 PSI rated protection.",
+      "features": [
+        "99.99% EFFICIENCY",
+        "HYDROGUARD TECH",
+        "450 PSI RATED",
+        "FILTRATION CUSTODY"
+      ],
+      "stats": {
+        "percentages": [
+          "99.99%",
+          "99.99%",
+          "99.99%"
+        ],
+        "ratings": [
+          "450 PSI",
+          "450 PSI"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Kits",
+      "file": "kits.html",
+      "title": "KITS",
+      "subtitle": "MODEL SPECIFIC",
+      "description": "// MAINTENANCE BUNDLES Synchronized lifecycle bundles for Mack, Freightliner, International, Isuzu, and Mitsubishi with ISO certification.",
+      "features": [
+        "MULTI-OEM",
+        "COORDINATED INTERVALS",
+        "ISO CERTIFIED",
+        "MODEL-SPECIFIC ASSEMBLY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Marine",
+      "file": "marine.html",
+      "title": "MARINE",
+      "subtitle": "NAVAL GRADE DEFENSE",
+      "description": "Naval-grade alloy construction removing 99.9% water and sediment in extreme salt environments.",
+      "features": [
+        "NAVAL GRADE",
+        "99.9% PROTECTION",
+        "EXTREME DUTY",
+        "ALLOY DEFENSE"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Oil",
+      "file": "oil.html",
+      "title": "OIL",
+      "subtitle": "SYNTHETIC CAPACITY",
+      "description": "// ENGINE OIL SYSTEMS High-density synthetic media with quadruple capacity, bypass valve, and ISO 16889/19438 certification.",
+      "features": [
+        "4X DIRT LOAD",
+        "BYPASS PROTECTION",
+        "ISO STANDARDS",
+        "CAPACITY CUSTODY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Water",
+      "file": "water.html",
+      "title": "WATER",
+      "subtitle": "COALESCENCE DEFENSE",
+      "description": "Advanced multi-stage coalescence removing free, emulsified, and dissolved water with anti-corrosion and ISO 16332 rating.",
+      "features": [
+        "MULTI-STAGE",
+        "ANTI-CORROSION",
+        "ISO 16332",
+        "STAGE CUSTODY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    }
+  ],
+  "technologies": [
+    {
+      "name": "Aquaguard Series",
+      "file": "aquaguard-series.html",
+      "title": "AQUAGUARD/SERIES™",
+      "subtitle": "",
+      "description": "900FH and 1000FH Turbine Fuel Filter/Water Separators Professional-Grade Fuel Filtration & Water Removal",
+      "features": [
+        "Three-Stage Filtration Process",
+        "Stage 1 — Separation",
+        "Stage 2 — Coalescing",
+        "Stage 3 — Filtration"
+      ],
+      "stats": {
+        "percentages": [
+          "99%",
+          "99%"
+        ],
+        "ratings": [
+          "2 micron",
+          "30 PSI"
+        ]
+      },
+      "cta": "Find My Filter"
+    },
+    {
+      "name": "Aquaguard",
+      "file": "aquaguard.html",
+      "title": "AQUAGUARD™",
+      "subtitle": "WATER SEPARATOR",
+      "description": "// FUEL SEPARATOR TECHNOLOGY Hydrophobic fiber technology achieving 99.8% water separation from fuel systems protecting injector precision.",
+      "features": [
+        "99.8% EFFICIENCY",
+        "COLLECTION CHAMBER",
+        "PRECISION DEFENSE",
+        "WATER REPULSION"
+      ],
+      "stats": {
+        "percentages": [
+          "99.8%",
+          "99.8%",
+          "99.8%"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Cooltech",
+      "file": "cooltech.html",
+      "title": "COOLTECH™",
+      "subtitle": "SCA ADDITIVE",
+      "description": "// THERMAL SYSTEMS TECHNOLOGY SCA additive release technology for thermal systems with cavitation prevention and extended coolant protection.",
+      "features": [
+        "ADDITIVE RELEASE",
+        "VAPOR PREVENTION",
+        "HEAT MANAGEMENT",
+        "GRADUAL DOSING"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Drycore",
+      "file": "drycore.html",
+      "title": "DRYCORE™",
+      "subtitle": "DESICCANT DRYER",
+      "description": "// PNEUMATIC DRYING TECHNOLOGY Molecular sieve desiccant technology removing moisture from pneumatic systems with efficient water separation.",
+      "features": [
+        "WATER ABSORPTION",
+        "EXTENDED LIFE",
+        "CORROSION PREVENTION",
+        "MOISTURE CUSTODY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Duratech",
+      "file": "duratech.html",
+      "title": "DURATECH™",
+      "subtitle": "MASTER KIT",
+      "description": "// FLEET MAINTENANCE KITS Master kit consolidation with OEM interchangeability delivering fleet-ready solutions for standardized maintenance.",
+      "features": [
+        "CONSOLIDATION",
+        "INTERCHANGEABLE",
+        "STANDARDIZED",
+        "SIMPLIFIED INVENTORY"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Intekcore",
+      "file": "intekcore.html",
+      "title": "INTEKCORE™",
+      "subtitle": "DEEP-PLEAT MEDIA",
+      "description": "// LIGHT-DUTY AIR FILTRATION Deep-pleat with polyurethane seal engineered for light-duty air filtration with maximum surface area and flow efficiency.",
+      "features": [
+        "EXTENDED SURFACE",
+        "BYPASS PREVENTION",
+        "OPTIMIZED AIRFLOW",
+        "SURFACE EXPANSION"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Macrocore",
+      "file": "macrocore.html",
+      "title": "MACROCORE™ GRADIENT FILTRATION",
+      "subtitle": "PROGRESSIVE DENSITY ENGINEERING",
+      "description": "// FILTRACIÓN DE AIRE INDUSTRIAL MACROCORE™ is a Progressive Density Gradient (PDG) engineered system combining high-purity cellulose fibers with synthetic resins. 99.9%-99.98% efficiency. ISO 5011 rated. Captures macro-contaminants on external layers while sub-micron particles are detained in the internal matrix. Designed for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.",
+      "features": [
+        "99.9% - 99.98% EFFICIENCY",
+        "GRADIENT DENSITY MATRIX",
+        "62 PSI ANTI-COLLAPSE",
+        "ISO 5011 / SAE J726",
+        "CONTINUOUS 120°C RATED",
+        "INERTIAL IMPACT + DIFFUSION"
+      ],
+      "stats": {
+        "percentages": [
+          "99.9%",
+          "99.98%",
+          "120°C"
+        ]
+      },
+      "cta": "TECHNICAL SPECIFICATIONS"
+    },
+    {
+      "name": "Marineclean",
+      "file": "marineclean.html",
+      "title": "MARINECLEAN™",
+      "subtitle": "SALT-RESISTANT",
+      "description": "// MARINE FILTRATION SYSTEMS Salt-resistant epoxy coating with brine rejection technology meeting IMO certification for marine environments.",
+      "features": [
+        "SALT RESISTANCE",
+        "SALT SEPARATION",
+        "CERTIFIED STANDARD",
+        "CORROSION SHIELD"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Microkappa",
+      "file": "microkappa.html",
+      "title": "MICROKAPPA™",
+      "subtitle": "ELECTROSTATIC HEPA",
+      "description": "// CABIN AIR FILTRATION Electrostatic plus activated carbon with HEPA filtration capturing allergens, odors and particulate matter from vehicle cabins.",
+      "features": [
+        "PARTICLE ATTRACTION",
+        "ODOR CONTROL",
+        "ALLERGEN CUSTODY",
+        "ACTIVE ATTRACTION"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Nanoforce",
+      "file": "nanoforce.html",
+      "title": "NANOFORCE™",
+      "subtitle": "DEPTH FILTRATION",
+      "description": "// FUEL FILTRATION SYSTEM Depth filtration technology with density gradient architecture protecting Common Rail injectors from sub-micron contaminants.",
+      "features": [
+        "4-MICRON ABSOLUTE",
+        "ZERO MIGRATION",
+        "INJECTOR DEFENSE",
+        "PROGRESSIVE LAYERS"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Syntepore",
+      "file": "syntepore.html",
+      "title": "SYNTEPORE™",
+      "subtitle": "SYNTHETIC FIBER",
+      "description": "// HYDRAULIC TECHNOLOGY 100% synthetic fiber media engineered for high-pressure hydraulic systems with cavitation prevention technology.",
+      "features": [
+        "100% PURE FIBER",
+        "RATED STRENGTH",
+        "VAPOR CONTROL",
+        "FIBER STABILITY"
+      ],
+      "stats": {
+        "percentages": [
+          "100%",
+          "100%",
+          "100%"
+        ]
+      },
+      "cta": "IDENTIFY SKU"
+    },
+    {
+      "name": "Syntrax",
+      "file": "syntrax.html",
+      "title": "SYNTRAX™",
+      "subtitle": "HYBRID MEDIA",
+      "description": "// LUBRICATION TECHNOLOGY AI-engineered hybrid media protecting turbocharged engines with sub-micron filtration through synthetic and cellulose fusion.",
+      "features": [
+        "SYNTHETIC FUSION",
+        "ENGINEERED PRECISION",
+        "TURBO CUSTODY",
+        "HYBRID BINDING"
+      ],
+      "stats": {},
+      "cta": "IDENTIFY SKU"
+    }
+  ]
+}

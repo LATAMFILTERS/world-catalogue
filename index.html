@@ -1,78 +1,314 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Elimfilters | World Catalogue</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ELIMFILTERS | Engine Filtration & Total Protection Systems</title>
+    <meta name="description" content="High-performance filtration for Heavy-Duty and Light-Duty engines. Compatible with Cummins, Caterpillar, Ford Powerstroke and leading diesel systems.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
-        .search-container { position: relative; z-index: 2; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .search-box { background: rgba(20,20,20,0.9); padding: 10px 30px; border-radius: 50px; border: 1px solid #333; display: flex; width: 500px; }
-        input { background: transparent; border: none; color: #fff; font-size: 1.2rem; width: 100%; outline: none; }
-        .btn-search { background: #FFD700; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; }
-        
-        #result-section { display: none; position: relative; z-index: 3; padding: 50px; }
-        .sku-header { font-size: 4rem; color: #FFD700; margin: 0; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
-        .column { background: rgba(30,30,30,0.5); padding: 15px; border-top: 2px solid #FFD700; height: 60vh; overflow-y: auto; }
-        .column h3 { color: #FFD700; font-size: 0.8rem; text-transform: uppercase; }
-        .column p { font-size: 0.85rem; border-bottom: 1px solid #222; padding: 5px 0; }
+        /* HEADER HIDE PATCHES */
+        #masthead, .site-header, .elementor-location-header, header:not(.header-simple) { display: none !important; }
+        body .elementor { margin-top: -140px !important; padding-top: 140px !important; position: relative; z-index: 10; }
+
+        :root { --yellow: #FFF12D; }
+
+        body {
+            background-color: #000; color: #fff; font-family: 'Barlow', sans-serif;
+            margin: 0; padding: 0; overflow-x: hidden; font-size: 17px; line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .title-hero { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.0; }
+        .title-section { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.1; color: rgba(255,255,255,0.95); }
+        .font-tech-clean { font-family: 'JetBrains Mono', monospace !important; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: var(--yellow); font-size: 11px; opacity: 0.9; }
+
+        .header-simple { background: rgba(0,0,0,.96); border-bottom: 1px solid #111; padding: 12px 5%; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(8px); }
+        .header-inner { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+        .header-simple img { width: 238px; height: auto; }
+        .nav-simple { display: flex; gap: 26px; align-items: center; }
+        .nav-simple a { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; color: #aaa; text-decoration: none; white-space: nowrap; letter-spacing: .1em; transition: .25s; }
+        .nav-simple a:hover { color: var(--yellow); }
+
+        .lang-switch { display: flex; align-items: center; background: #111; padding: 4px; border-radius: 99px; border: 1px solid #333; margin-left: 15px; }
+        .lang-link { padding: 4px 12px; font-size: 11px; font-weight: 700; border-radius: 99px; text-decoration: none !important; transition: 0.3s; }
+        .lang-link.active { background: var(--yellow); color: #000; }
+        .lang-link.inactive { color: #666; }
+
+        .menu-toggle { display: none; font-size: 24px; color: #fff; cursor: pointer; }
+        #menu-checkbox { display: none; }
+
+        .hero {
+            position: relative; min-height: 90vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,1) 100%), url('https://elimfilters.com/wp-content/uploads/2026/02/Image_202602151408.jpeg');
+            background-position: center; background-size: cover; display: flex; align-items: flex-end; padding: 0 5% 60px;
+        }
+
+        .stats-section { background-color: #000; padding: 80px 8%; border-bottom: 1px solid #111; }
+        .stat-number { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 54px; color: var(--yellow); line-height: 1; margin-bottom: 10px; }
+        .stat-desc { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.15em; color: #888; font-size: 11px; }
+
+        .section-airy { padding: 80px 8%; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .problem-images { position: relative; height: 450px; overflow: hidden; background: #000; border: 1px solid #222; border-radius: 8px; }
+        .problem-images img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s; }
+        .problem-images img.active { opacity: 1; }
+
+        .tech-feature-block {
+            background-color: #000; background-size: contain;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0) 70%), url('https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_8slfcz8slfcz8slf.png');
+            background-position: center; background-repeat: no-repeat; min-height: 650px; display: flex; align-items: center;
+        }
+
+        .cta-wrapper { position: relative; background: #000; border-top: 1px solid #111; overflow: hidden; }
+        .cta-slide { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transition: 0.8s; pointer-events: none; padding: 80px 8%; }
+        .cta-slide.active { opacity: 1; pointer-events: all; position: relative; }
+        .slide-dots { display: flex; justify-content: center; gap: 10px; padding-bottom: 40px; }
+        .slide-dot { width: 28px; height: 3px; background: #333; border: none; cursor: pointer; }
+        .slide-dot.active { background: var(--yellow); }
+        .progress-bar { position: absolute; bottom: 0; left: 0; height: 2px; background: var(--yellow); width: 0%; }
+
+        .ef-footer-master { background-color: #0a0a0a; padding: 100px 0 40px; border-top: 1px solid rgba(255,255,255,0.02); }
+        .footer-container { max-width: 1400px; margin: auto; padding: 0 20px; }
+        .footer-col-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; color: #fff; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; }
+        .footer-link { font-size: 14px; margin-bottom: 12px !important; text-decoration: none !important; color: #888 !important; display: block; transition: color 0.3s; }
+        .footer-link:hover { color: var(--yellow) !important; }
+
+        @media (max-width: 1024px) {
+            .menu-toggle { display: block; }
+            .nav-simple { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #000; flex-direction: column; padding: 30px; border-bottom: 2px solid var(--yellow); }
+            #menu-checkbox:checked ~ .nav-simple { display: flex; }
+        }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <div id="search-section" class="search-container">
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="INGRESE SKU O OEM...">
-            <button class="btn-search" onclick="executeSearch()">SEARCH</button>
+<div class="header-simple">
+    <div class="header-inner">
+        <a href="https://elimfilters.com/"><img src="https://elimfilters.com/wp-content/uploads/2025/11/logo-sin-fondo.png" alt="ELIMFILTERS" width="238" height="50"></a>
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle"><i class="fas fa-bars"></i></label>
+        <nav class="nav-simple">
+            <a href="https://elimfilters.com/industries-we-service/">Industries</a>
+            <a href="https://part-search.elimfilters.com/">Part Search</a>
+            <a href="https://elimfilters.com/technology/">Technology</a>
+            <a href="https://elimfilters.com/products/">Systems</a>
+            <a href="https://elimfilters.com/about-elimfilters/">About Us</a>
+            <a href="https://elimfilters.com/contact-info/">Contact</a>
+            <div class="lang-switch">
+                <a href="https://elimfilters.com/language/es/inicio-2/" class="lang-link inactive">ES</a>
+                <a href="javascript:void(0);" class="lang-link active">EN</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<main>
+    <section class="hero">
+        <div class="max-w-[1400px] mx-auto w-full relative z-10">
+            <p class="font-tech-clean mb-4">ELIMFILTERS | TOTAL PROTECTION SYSTEMS</p>
+            <h1 class="title-hero text-[clamp(48px,9vw,110px)] text-[#FFF12D] mb-2">ENGINE FILTRATION</h1>
+            <h2 class="title-hero text-[clamp(24px,4vw,54px)] text-white/75 font-normal mb-10">HEAVY-DUTY & LIGHT-DUTY</h2>
+            <div class="flex flex-wrap justify-between items-end gap-8">
+                <p class="max-w-[560px] text-white/70 italic border-l-4 border-[#FFF12D] pl-6 text-lg">
+                    Engineering filtration designed for those who cannot afford a stalled engine or a fleet out of action.
+                </p>
+                <a href="https://part-search.elimfilters.com/" class="bg-[#FFF12D] text-black px-10 py-4 font-bold text-xs tracking-widest uppercase hover:bg-white transition-all">
+                    FIND MY FILTER
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="grid md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+            <div class="text-center">
+                <div class="stat-number">99.9%</div>
+                <p class="stat-desc">Media Efficiency</p>
+            </div>
+            <div class="text-center">
+                <div class="stat-number">+45%</div>
+                <p class="stat-desc">Engine Life Span</p>
+            </div>
+            <div class="text-center">
+                <div class="stat-number">20k+</div>
+                <p class="stat-desc">OEM Cross-Refs</p>
+            </div>
+            <div class="text-center">
+                <div class="stat-number">GLOBAL</div>
+                <p class="stat-desc">Texas, USA</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-airy">
+        <div class="max-w-7xl mx-auto">
+            <span class="font-tech-clean">// OPERATIONAL RISK DIAGNOSIS</span>
+            <h2 class="title-section text-[clamp(32px,5vw,58px)] mb-12 mt-2">WHAT YOU CAN'T SEE, <br><span class="text-[#FFF12D]">IS STOPPING YOUR FLEET.</span></h2>
+
+            <div class="grid lg:grid-cols-2 gap-16 bg-[#050505] p-8 md:p-14 border border-[#1a1a1a] rounded-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#FFF12D] opacity-[0.02] blur-[100px] pointer-events-none"></div>
+
+                <div class="flex flex-col justify-center">
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        A low-quality filter is an economic decision that ends up costing thousands at the shop. Inefficient filtration allows invisible contaminants to act like sandpaper inside critical components.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-red-900/50 bg-red-950/20 flex items-center justify-center">
+                                <span class="text-red-500 font-bold">01</span>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Injector Erosion</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Micronic particles deform spray orifices, causing immediate power loss and poor combustion.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-red-900/50 bg-red-950/20 flex items-center justify-center">
+                                <span class="text-red-500 font-bold">02</span>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Critical Bearing Friction</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">Contaminated oil accelerates metal wear, reducing engine block life by up to 40%.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full border border-red-900/50 bg-red-950/20 flex items-center justify-center">
+                                <span class="text-red-500 font-bold">03</span>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Fuel Drainage</h3>
+                                <p class="text-gray-500 text-sm leading-relaxed">A restricted engine consumes up to 8% more diesel just to maintain the same torque levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="problem-images">
+                        <img src="https://elimfilters.com/wp-content/uploads/2026/01/Gemini_Generated_Image_ovvxrdovvxrdovvx.png" class="active" alt="Engine Damage">
+                        <img src="https://elimfilters.com/wp-content/uploads/2026/02/Gemini_Generated_Image_knn8znknn8znknn8.png" alt="Maintenance">
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 bg-[#FFF12D] text-black p-6 rounded-lg hidden md:block max-w-[200px] shadow-xl">
+                        <p class="text-2xl font-black leading-none">80%</p>
+                        <p class="text-[10px] uppercase font-bold mt-2 leading-tight">Of premature failures are caused by contamination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-feature-block">
+        <div class="max-w-7xl mx-auto px-10 w-full">
+            <div class="max-w-xl">
+                <span class="font-tech-clean">// ADVANCED ENGINEERING</span>
+                <h2 class="title-section text-[clamp(32px,5vw,54px)] mt-4 mb-6">TECHNOLOGY THAT<br><span class="text-[#FFF12D]">EXCEEDS THE STANDARD.</span></h2>
+                <p class="text-gray-300 mb-8 font-medium">From high-density synthetic media to hydrophobic separation systems designed for extreme conditions.</p>
+                <a href="https://elimfilters.com/technology/" class="inline-block bg-[#FFF12D] text-black px-8 py-3 font-bold text-xs tracking-widest uppercase hover:bg-white transition-all">EXPLORE TECHNOLOGY</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-wrapper">
+        <div class="cta-slide active">
+            <div class="max-w-7xl mx-auto">
+                <span class="font-tech-clean">// DEALER NETWORK</span>
+                <h2 class="title-section text-[clamp(36px,4.5vw,64px)] my-5">ONLY THE BEST<br><span class="text-[#FFF12D]">SELL ELIMFILTERS.</span></h2>
+                <a href="https://elimfilters.com/app-dealer-01/" class="inline-block bg-[#FFF12D] text-black px-10 py-4 font-bold text-xs tracking-widest uppercase hover:bg-white transition-all">BECOME A DEALER</a>
+            </div>
+        </div>
+        <div class="cta-slide">
+            <div class="max-w-7xl mx-auto">
+                <span class="font-tech-clean">// TECHNICAL SEARCH</span>
+                <h2 class="title-section text-[clamp(36px,4.5vw,64px)] my-5">THE RIGHT FILTER.<br><span class="text-[#FFF12D]">SEARCH LIKE A PRO.</span></h2>
+                <a href="https://part-search.elimfilters.com/" class="inline-block bg-[#FFF12D] text-black px-10 py-4 font-bold text-xs tracking-widest uppercase hover:bg-white transition-all">FIND MY PART</a>
+            </div>
+        </div>
+        <div class="slide-dots">
+            <button class="slide-dot active" onclick="goToSlide(0)"></button>
+            <button class="slide-dot" onclick="goToSlide(1)"></button>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+</main>
+
+<footer class="ef-footer-master">
+    <div class="footer-container">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:40px;">
+            <div>
+                <div class="footer-col-title">Company</div>
+                <a href="https://elimfilters.com/about-elimfilters/" class="footer-link">About Us</a>
+                <a href="https://elimfilters.com/industries-we-service/" class="footer-link">Industries</a>
+                <a href="https://elimfilters.com/contact-info/" class="footer-link">Contact</a>
+            </div>
+            <div>
+                <div class="footer-col-title">Systems</div>
+                <a href="https://part-search.elimfilters.com/" class="footer-link">Part Search</a>
+                <a href="https://elimfilters.com/technology/" class="footer-link">Technology</a>
+                <a href="https://elimfilters.com/products/" class="footer-link">Systems</a>
+            </div>
+            <div>
+                <div class="footer-col-title">Support</div>
+                <a href="https://elimfilters.com/contact-info/" class="footer-link">Technical Support</a>
+                <a href="/distributor-application.html" class="footer-link">Become a Dealer</a>
+                <a href="/warranty.html" class="footer-link">Warranty</a>
+            </div>
+            <div>
+                <div class="footer-col-title">Follow Us</div>
+                <a href="https://www.linkedin.com/company/elimfilters/" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-linkedin-in mr-2"></i> LinkedIn</a>
+                <a href="https://www.instagram.com/elimfilters.global" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-instagram mr-2"></i> Instagram</a>
+                <a href="https://www.youtube.com/@elimfilters9112" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-youtube mr-2"></i> YouTube</a>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:60px; border-top:1px solid #1a1a1a; padding-top:50px;">
+            <div style="font-family:'Barlow Condensed'; font-size:14px; color:#666; letter-spacing:3px; text-transform:uppercase; margin-bottom: 25px;">
+                <strong style="color:#fff;">FRISCO, TX</strong> | UNITED STATES
+            </div>
+            <img src="https://elimfilters.com/wp-content/uploads/2025/08/a2ec2ccf-d6ed-4acf-bcda-337b5669f007_removalai_preview.png" alt="Authorized Seal" style="height:80px; opacity:0.8; margin: 0 auto;">
+            <p style="font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: 4px; margin-top: 40px;">
+                © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration
+            </p>
         </div>
     </div>
+</footer>
 
-    <div id="result-section">
-        <h1 id="display-sku" class="sku-header"></h1>
-        <p id="display-desc" style="color:#888"></p>
-        <div class="grid">
-            <div class="column"><h3>Specifications</h3><div id="specs-list"></div></div>
-            <div class="column"><h3>OEM Codes</h3><div id="oem-list"></div></div>
-            <div class="column"><h3>Cross Ref</h3><div id="cross-list"></div></div>
-            <div class="column"><h3>Equipment</h3><div id="equip-list"></div></div>
-        </div>
-        <button onclick="location.reload()" style="margin-top:20px; background:none; border:1px solid #444; color:#666; cursor:pointer; padding:8px;">NUEVA BUSQUEDA</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', { "particles": { "number": { "value": 80 }, "color": { "value": "#FFD700" }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1 } } });
-
-        async function executeSearch() {
-            const query = document.getElementById('search-input').value.trim().toUpperCase();
-            if(!query) return;
-
-            const res = await fetch(/api/search?q=\);
-            const data = await res.json();
-
-            if(data && data.sku) {
-                document.getElementById('search-section').style.display = 'none';
-                document.getElementById('display-sku').innerText = data.sku;
-                document.getElementById('display-desc').innerText = data.description || '';
-                
-                const mapData = (arr, id) => {
-                    document.getElementById(id).innerHTML = (arr || []).map(i => <p>\</p>).join('');
-                };
-
-                mapData(data.specs, 'specs-list');
-                mapData(data.oem_codes, 'oem-list');
-                mapData(data.cross_references, 'cross-list');
-                mapData(data.equipment, 'equip-list');
-
-                document.getElementById('result-section').style.display = 'block';
-            } else {
-                alert("No encontrado");
-            }
+<script>
+    const problemImg = document.querySelectorAll('.problem-images img');
+    let pIdx = 0;
+    setInterval(() => {
+        if(problemImg.length > 0) {
+            problemImg[pIdx].classList.remove('active');
+            pIdx = (pIdx + 1) % problemImg.length;
+            problemImg[pIdx].classList.add('active');
         }
+    }, 4000);
 
-        document.getElementById('search-input').addEventListener('keypress', (e) => { if(e.key === 'Enter') executeSearch(); });
-    </script>
+    let cSlide = 0;
+    const slides = document.querySelectorAll('.cta-slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    const pBar = document.getElementById('progress-bar');
+    function goToSlide(n) {
+        if(slides.length > 0) {
+            slides[cSlide].classList.remove('active');
+            dots[cSlide].classList.remove('active');
+            cSlide = n;
+            slides[cSlide].classList.add('active');
+            dots[cSlide].classList.add('active');
+            pBar.style.transition = 'none'; pBar.style.width = '0%';
+            setTimeout(() => { pBar.style.transition = 'width 5000ms linear'; pBar.style.width = '100%'; }, 50);
+        }
+    }
+    if(slides.length > 0) {
+        setInterval(() => goToSlide((cSlide + 1) % slides.length), 5000);
+        goToSlide(0);
+    }
+</script>
 </body>
 </html>

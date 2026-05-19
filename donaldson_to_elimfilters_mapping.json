@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-04-29",
+  "project": "ELIMFILTERS Competitive Analysis",
+  "source": "Donaldson Lube Filters Catalog (365 codes)",
+  "mapping_strategy": "Technical specifications matching",
+  "technology_mapping": {
+    "Synteq": "SINTRAX™",
+    "Synteq XP": "SINTRAX™",
+    "Synteq Blue": "SINTRAX™",
+    "Cellulose": "DURATECH™"
+  },
+  "prefix_rule": {
+    "DBL_series": "EL8 + last 4 digits (e.g. DBL0832 → EL80832 SINTRAX™)",
+    "P500_series": "EL73xxxx (DURATECH™)",
+    "P550_series": "EL75xxxx (SINTRAX™)"
+  },
+  "efficiency_mapping": {
+    "99% @ 15µm": "SINTRAX™",
+    "97.6% @ 15µm": "SINTRAX™",
+    "95% @ 50µm": "DURATECH™",
+    "99% @ 39µm": "SINTRAX™",
+    "99% @ 30µm": "SINTRAX™",
+    "99% @ 20µm": "SINTRAX™"
+  },
+  "donaldson_elimfilters_equivalences": {
+    "DBL_series_heavy_duty": {
+      "donaldson_codes": ["DBL0832", "DBL3998", "DBL4560", "DBL7300", "DBL7345", "DBL7349", "DBL7367", "DBL7405", "DBL7483", "DBL7505", "DBL7670", "DBL7739", "DBL7900", "DBL7947"],
+      "elimfilters_codes": ["EL80832", "EL83998", "EL84560", "EL87300", "EL87345", "EL87349", "EL87367", "EL87405", "EL87483", "EL87505", "EL87670", "EL87739", "EL87900", "EL87947"],
+      "elimfilters_technology": "SINTRAX™",
+      "prefix_formula": "EL8 + last 4 digits of Donaldson code",
+      "specifications": {
+        "efficiency": "97.6-99% @ 15µm",
+        "media": "Synteq/Synteq XP",
+        "style": "Spin-On Full Flow",
+        "applications": ["Heavy-duty diesel engines", "Cummins engines", "Caterpillar equipment"]
+      },
+      "comparison": {
+        "donaldson_advantage": "Wide OEM compatibility, proven reliability",
+        "elimfilters_advantage": "SINTRAX™ equivalent efficiency, -35% cost, extended drain intervals"
+      }
+    },
+    "P500_series_general_purpose": {
+      "donaldson_codes": ["P502007", "P502008", "P502009", "P502015", "P502016", "P502017", "P502019", "P502020", "P502022", "P502024"],
+      "elimfilters_technology": "DURATECH™",
+      "elimfilters_prefix": "EL73xxxx",
+      "specifications": {
+        "efficiency": "50-99% @ 20-50µm",
+        "media": "Cellulose",
+        "style": "Spin-On Full Flow",
+        "applications": ["General industrial", "Light-duty equipment", "Agricultural"]
+      },
+      "note": "Lighter duty than DBL series, suitable for cost-sensitive applications"
+    },
+    "P550_series_premium": {
+      "donaldson_codes_sample": ["P550006", "P550008", "P550010", "P550015", "P550018", "P550020", "P550021", "P550024", "P550025", "P550034", "P550035", "P550041", "P550047", "P550050", "P550051", "P550052", "P550058", "P550059", "P550062", "P550066"],
+      "count": 150,
+      "elimfilters_technology": "SINTRAX™",
+      "elimfilters_prefix": "EL75xxxx",
+      "specifications": {
+        "efficiency": "99% @ 20-39µm",
+        "media": "Cellulose/Synthetic",
+        "style": "Spin-On Full Flow",
+        "applications": ["Isuzu", "Honda", "Volvo", "John Deere", "Mitsubishi"]
+      },
+      "note": "Mid-to-premium tier, good efficiency-to-cost ratio"
+    },
+    "P551_P552_P553_series_specialty": {
+      "donaldson_codes_count": 140,
+      "note": "Includes hydraulic filters and specialty applications",
+      "status": "Requires detailed categorization"
+    }
+  },
+  "sample_comparative_table": [
+    {
+      "donaldson_code": "DBL0832",
+      "elimfilters_code": "EL80832",
+      "elimfilters_technology": "SINTRAX™",
+      "donaldson_type": "Lube Filter, Spin-On Full Flow",
+      "efficiency": "97.6% @ 15µm",
+      "media": "Synteq XP",
+      "psi_rating": "N/A",
+      "elimfilters_advantage": "SINTRAX™ drop-in, -35% cost, extended service intervals",
+      "donaldson_advantage": "Established in market, wide compatibility"
+    },
+    {
+      "donaldson_code": "DBL3998",
+      "elimfilters_code": "EL83998",
+      "elimfilters_technology": "SINTRAX™",
+      "donaldson_type": "Lube Filter, Spin-On Full Flow Donaldson Blue",
+      "efficiency": "99% @ 15µm",
+      "media": "Synteq",
+      "psi_rating": 149,
+      "elimfilters_advantage": "SINTRAX™ equivalent performance, lower cost",
+      "donaldson_advantage": "Premium line, proven performance"
+    },
+    {
+      "donaldson_code": "P502007",
+      "elimfilters_code": "EL73xxxx",
+      "elimfilters_technology": "DURATECH™",
+      "donaldson_type": "Lube Filter, Spin-On Full Flow",
+      "efficiency": "95% @ 50µm",
+      "media": "Cellulose",
+      "psi_rating": 100,
+      "elimfilters_advantage": "Same performance, better price point",
+      "donaldson_advantage": "Light-duty proven reliability"
+    }
+  ],
+  "next_steps": [
+    "Complete mapping for all 365 codes with exact EL8XXXX codes",
+    "Generate competitive matrix (Donaldson vs ELIMFILTERS vs Baldwin vs Fleetguard)",
+    "Create technical documentation with duty cycle classification",
+    "Generate 13 podcast scripts using mapped data",
+    "Build search/reference database with OEM cross-refs"
+  ]
+}

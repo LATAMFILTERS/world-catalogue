@@ -1,0 +1,634 @@
+[
+    {
+        "id": "P781466",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "AGRALE",
+                "col2": "6008099011006"
+            },
+            {
+                "col1": "ALCO",
+                "col2": "SP800"
+            },
+            {
+                "col1": "ASKAM KAMYON",
+                "col2": "25242T"
+            },
+            {
+                "col1": "ASTRA",
+                "col2": "107163"
+            },
+            {
+                "col1": "BELL",
+                "col2": "220949"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "ASTRA 42.33",
+                "col2": "2007"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2000"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2007"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2005"
+            },
+            {
+                "col1": "ASTRA 42.38",
+                "col2": "1996"
+            }
+        ]
+    },
+    {
+        "id": "P783753",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "ALCO",
+                "col2": "SP8001"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "0986628252"
+            },
+            {
+                "col1": "CLEAN",
+                "col2": "DE2203"
+            },
+            {
+                "col1": "FIAAM",
+                "col2": "FT5651"
+            },
+            {
+                "col1": "FIAAM",
+                "col2": "FTAQ5561"
+            },
+            {
+                "col1": "KNECHT",
+                "col2": "AL14"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "RENAULT VI MIDLUM 135-07",
+                "col2": "2000"
+            },
+            {
+                "col1": "RENAULT VI MIDLUM 135-08",
+                "col2": "2000"
+            },
+            {
+                "col1": "RENAULT VI MIDLUM 135-09",
+                "col2": "2000"
+            },
+            {
+                "col1": "RENAULT VI MIDLUM 135-10",
+                "col2": "2000"
+            },
+            {
+                "col1": "RENAULT VI MIDLUM 150-08",
+                "col2": "2000"
+            }
+        ]
+    },
+    {
+        "id": "P951411",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "0986628259"
+            },
+            {
+                "col1": "DAF",
+                "col2": "1891431"
+            },
+            {
+                "col1": "DAF",
+                "col2": "1527755"
+            },
+            {
+                "col1": "DAF",
+                "col2": "1681575"
+            },
+            {
+                "col1": "DAF",
+                "col2": "1821580"
+            },
+            {
+                "col1": "DAF",
+                "col2": "2124657"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K015857"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K039455"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K042777"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K039455X00"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K010732"
+            },
+            {
+                "col1": "LEKANG",
+                "col2": "79955"
+            },
+            {
+                "col1": "TATRA",
+                "col2": "1527755"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "BOVA DD130-430XE",
+                "col2": "2005"
+            },
+            {
+                "col1": "BOVA DD130-480XE",
+                "col2": "2005"
+            },
+            {
+                "col1": "BOVA DD138-430XE",
+                "col2": "2005"
+            },
+            {
+                "col1": "BOVA DD138-480XE",
+                "col2": "2005"
+            },
+            {
+                "col1": "BOVA FHD104-365",
+                "col2": "2006"
+            }
+        ]
+    },
+    {
+        "id": "P951413",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "AGCO",
+                "col2": "72631214"
+            },
+            {
+                "col1": "ALCO",
+                "col2": "SP8005"
+            },
+            {
+                "col1": "BELL",
+                "col2": "226000"
+            },
+            {
+                "col1": "BENDIX",
+                "col2": "5004814PG"
+            },
+            {
+                "col1": "BENDIX",
+                "col2": "K020366"
+            },
+            {
+                "col1": "BENDIX",
+                "col2": "KO20366"
+            },
+            {
+                "col1": "BENDIX",
+                "col2": "5008414PGBXW"
+            },
+            {
+                "col1": "BENDIX",
+                "col2": "5008414PG"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "986628254"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "Z8254"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "ASTRA 42.38",
+                "col2": "1996"
+            },
+            {
+                "col1": "ASTRA 42.42",
+                "col2": "1996"
+            },
+            {
+                "col1": "ASTRA 44.34",
+                "col2": "1996"
+            },
+            {
+                "col1": "ASTRA 44.38",
+                "col2": "1996"
+            },
+            {
+                "col1": "ASTRA 44.42",
+                "col2": "1996"
+            }
+        ]
+    },
+    {
+        "id": "P951415",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "ALCO",
+                "col2": "SP8007"
+            },
+            {
+                "col1": "DAF",
+                "col2": "1527760"
+            },
+            {
+                "col1": "KNECHT",
+                "col2": "AL26"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K005686"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K014712"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K0005686"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K039453"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K037065"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K053220"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K053221"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K010243"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K025912"
+            },
+            {
+                "col1": "LAUTRETTE",
+                "col2": "ELD8104"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "RENAULT VI C250",
+                "col2": "2013"
+            },
+            {
+                "col1": "RENAULT VI C280",
+                "col2": "2013"
+            },
+            {
+                "col1": "RENAULT VI C320",
+                "col2": "2013"
+            },
+            {
+                "col1": "RENAULT VI C380",
+                "col2": "2013"
+            },
+            {
+                "col1": "RENAULT VI C430",
+                "col2": "2013"
+            }
+        ]
+    },
+    {
+        "id": "P951417",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "ALCO",
+                "col2": "SP8002"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "0986628253"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "0986628257"
+            },
+            {
+                "col1": "BOSCH-REXROTH",
+                "col2": "986628257"
+            },
+            {
+                "col1": "CATERPILLAR",
+                "col2": "1101383"
+            },
+            {
+                "col1": "COOPERS",
+                "col2": "EG1250"
+            },
+            {
+                "col1": "CROSLAND",
+                "col2": "9386"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "BOVA HD120-340XE",
+                "col2": "2001"
+            },
+            {
+                "col1": "BOVA HD120-380XE",
+                "col2": "2001"
+            },
+            {
+                "col1": "BOVA HD122-340XE",
+                "col2": "2001"
+            },
+            {
+                "col1": "BOVA HD122-380XE",
+                "col2": "2001"
+            },
+            {
+                "col1": "BOVA HD131-430XE",
+                "col2": "2001"
+            }
+        ]
+    },
+    {
+        "id": "P951419",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "HINO",
+                "col2": "S47ABEV060"
+            },
+            {
+                "col1": "HINO",
+                "col2": "S47ABEV070"
+            },
+            {
+                "col1": "SCANIA",
+                "col2": "2484686"
+            },
+            {
+                "col1": "SCANIA",
+                "col2": "2081360"
+            },
+            {
+                "col1": "SCANIA",
+                "col2": "1774598"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329012262"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329012261"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4324109282"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329012282"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329012281"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329112282"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "SCANIA - IRIZAR 11, 12 & 18",
+                "col2": "-"
+            },
+            {
+                "col1": "SCANIA - IRIZAR 11, 12 & 18",
+                "col2": "-"
+            },
+            {
+                "col1": "SCANIA - IRIZAR 11, 12 & 18",
+                "col2": "-"
+            },
+            {
+                "col1": "SCANIA - IRIZAR 11, 12 & 18",
+                "col2": "-"
+            },
+            {
+                "col1": "SCANIA - IRIZAR 11, 12 & 18",
+                "col2": "-"
+            }
+        ]
+    },
+    {
+        "id": "P952185",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "FORD",
+                "col2": "2C462B915AA"
+            },
+            {
+                "col1": "IVECO",
+                "col2": "500055322"
+            },
+            {
+                "col1": "MAN",
+                "col2": "81521550043"
+            },
+            {
+                "col1": "MAN",
+                "col2": "81521550045"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "4324102442"
+            },
+            {
+                "col1": "RENAULT VI",
+                "col2": "5001865037"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "ASTRA 42.33",
+                "col2": "2007"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2000"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2007"
+            },
+            {
+                "col1": "ASTRA 42.36",
+                "col2": "2005"
+            },
+            {
+                "col1": "ASTRA 42.38",
+                "col2": "1996"
+            }
+        ]
+    },
+    {
+        "id": "P953571",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "AGRALE",
+                "col2": "6008099011006"
+            },
+            {
+                "col1": "ALCO",
+                "col2": "SP800"
+            },
+            {
+                "col1": "ARVIN",
+                "col2": "R950011"
+            },
+            {
+                "col1": "ASKAM KAMYON",
+                "col2": "25242T"
+            },
+            {
+                "col1": "ASTRA",
+                "col2": "107163"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "DENNIS 200EV Electric",
+                "col2": "2017"
+            },
+            {
+                "col1": "DENNIS 400EV",
+                "col2": "2023"
+            },
+            {
+                "col1": "DENNIS DART 300",
+                "col2": "2017"
+            },
+            {
+                "col1": "DENNIS DART 500",
+                "col2": "2017"
+            },
+            {
+                "col1": "FENDT 207 F/V VARIO",
+                "col2": "2017"
+            }
+        ]
+    },
+    {
+        "id": "P956986",
+        "attributes": [],
+        "cross": [
+            {
+                "col1": "DAIMLER",
+                "col2": "A0004292697"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K163455"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K102196"
+            },
+            {
+                "col1": "KNORR-BREMSE",
+                "col2": "K102152"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "0004292097"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "4292097"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "A0004292097"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "0004292197"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "A0004293197"
+            },
+            {
+                "col1": "MERCEDES-BENZ",
+                "col2": "A0004292197"
+            },
+            {
+                "col1": "MITSUBISHI FUSO",
+                "col2": "MX937636"
+            },
+            {
+                "col1": "WABCO",
+                "col2": "4329012512"
+            }
+        ],
+        "equipment": [
+            {
+                "col1": "MERCEDES-BENZ ACTROS 1824",
+                "col2": "2012"
+            },
+            {
+                "col1": "MERCEDES-BENZ ACTROS 1827",
+                "col2": "2012"
+            },
+            {
+                "col1": "MERCEDES-BENZ ACTROS 1830",
+                "col2": "2012"
+            },
+            {
+                "col1": "MERCEDES-BENZ ACTROS 1832",
+                "col2": "2012"
+            },
+            {
+                "col1": "MERCEDES-BENZ ACTROS 1835",
+                "col2": "2012"
+            }
+        ]
+    }
+]
