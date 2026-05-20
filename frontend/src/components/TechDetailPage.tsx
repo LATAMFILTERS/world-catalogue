@@ -127,33 +127,20 @@ export function TechDetailPage({ data }: Props) {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '3.5rem' }}
+              style={{ marginBottom: '2rem' }}
             >
-              <div style={{
-                display: 'inline-block',
-                padding: '3rem 4rem',
-                background: '#030303',
-                border: '1px solid rgba(255,241,45,0.15)',
-                borderRadius: '6px',
-                boxShadow: '0 0 80px rgba(255,241,45,0.06), inset 0 0 60px rgba(0,0,0,0.6)',
-                position: 'relative',
-              }}>
-                {/* Corner accents */}
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '20px', height: '20px', borderTop: '2px solid rgba(255,241,45,0.5)', borderLeft: '2px solid rgba(255,241,45,0.5)', borderRadius: '2px 0 0 0' }} />
-                <div style={{ position: 'absolute', top: 0, right: 0, width: '20px', height: '20px', borderTop: '2px solid rgba(255,241,45,0.5)', borderRight: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 2px 0 0' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '20px', height: '20px', borderBottom: '2px solid rgba(255,241,45,0.5)', borderLeft: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 0 0 2px' }} />
-                <div style={{ position: 'absolute', bottom: 0, right: 0, width: '20px', height: '20px', borderBottom: '2px solid rgba(255,241,45,0.5)', borderRight: '2px solid rgba(255,241,45,0.5)', borderRadius: '0 0 2px 0' }} />
-                <img
-                  src={data.logoSrc}
-                  alt={data.heroTitle}
-                  style={{
-                    display: 'block',
-                    width: 'clamp(260px, 32vw, 480px)',
-                    height: 'auto',
-                    filter: 'brightness(1.05) contrast(1.05)',
-                  }}
-                />
-              </div>
+              <img
+                src={data.logoSrc}
+                alt={data.heroTitle}
+                style={{
+                  display: 'block',
+                  margin: '0 auto',
+                  width: 'clamp(300px, 38vw, 560px)',
+                  height: 'auto',
+                  mixBlendMode: 'screen',
+                  filter: 'brightness(1.15) contrast(1.1)',
+                }}
+              />
             </motion.div>
 
             {/* Technology name */}

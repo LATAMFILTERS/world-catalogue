@@ -1,4 +1,4 @@
-import catalogueData from '../../../catalogue.json';
+import catalogueData from '../../catalogue.json';
 
 export interface CatalogueItem {
   name: string;
