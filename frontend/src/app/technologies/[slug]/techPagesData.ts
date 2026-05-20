@@ -90,7 +90,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'The AI-engineered gradient was developed by analyzing contamination profiles across 48 engine types under heavy-duty field conditions. The result is a protection matrix that matches real-world contamination distribution, not laboratory averages.',
       'Every SYNTRAX™ element is bonded through a proprietary thermal process that eliminates layer migration under thermal cycling and high oil-flow pulsation — zero barrier displacement, zero protection gap.',
     ],
-    productImageSrc: '/images/oil-hand.avif',
+    productImageSrc: '/images/syntrax.avif',
     productImageCaption: 'SYNTRAX™ · AI-ENGINEERED LUBRICATION PROTECTION',
     stagesHeading: 'FOUR LAYERS. ZERO BYPASS.',
     stages: [
@@ -180,7 +180,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'NANOFORCE™ multi-layer protection architecture is engineered specifically for the hydraulic circuit operating environment: high and variable pressure, temperature cycling from ambient to 85°C operating, and continuous flow pulsation from pump cycles that mechanically stress filter elements in ways that static test conditions do not capture.',
       'Vapor control technology embedded in the NANOFORCE™ protection matrix addresses the hydraulic contamination source that conventional filters ignore — the vapor phase water and dissolved gas that forms free-phase contamination when hydraulic fluid temperature changes under load.',
     ],
-    productImageSrc: '/images/separator-elimf.avif',
+    productImageSrc: '/images/hidraulic.avif',
     productImageCaption: 'NANOFORCE™ · HYDRAULIC PRECISION GUARD ELEMENT',
     stagesHeading: 'THREE LAYERS FOR HIGH-PRESSURE HYDRAULIC INTEGRITY.',
     stages: [
