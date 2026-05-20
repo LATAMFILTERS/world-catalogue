@@ -1130,6 +1130,79 @@ try {
   console.error('[middleware] Failed to register knowledge API:', err.message);
 }
 
+
+// ─── GET /api/migrate/init-db ────────────────────────────────────────────────
+// Initializes database schema (tables, views, constraints)
+app.get('/api/migrate/init-db', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    
+    // 1. Table schema
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS elimfilters_catalog (
+        id SERIAL PRIMARY KEY,
+        sku VARCHAR(100) UNIQUE NOT NULL,
+        codigo_base VARCHAR(100),
+        filter_type VARCHAR(100),
+        sub_type VARCHAR(100),
+        technology VARCHAR(100),
+        installation_type VARCHAR(100),
+        thread_size VARCHAR(100),
+        outer_diameter_mm NUMERIC,
+        height_mm NUMERIC,
+        gasket_od_mm NUMERIC,
+        gasket_id_mm NUMERIC,
+        iso_test_method VARCHAR(100),
+        micron_rating NUMERIC,
+        nominal_efficiency VARCHAR(100),
+        burst_pressure_psi NUMERIC,
+        collapse_pressure_psi NUMERIC,
+        duty VARCHAR(50),
+        oem_codes JSONB,
+        competitor_codes JSONB,
+        equipment_applications JSONB
+      );
+    `);
+
+    // 2. Constraints
+    await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
+    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]?[0-9]{4}[A-Z]?$');");
+
+    // 3. View
+    await client.query(`
+      CREATE OR REPLACE VIEW filters AS 
+      SELECT 
+        sku, codigo_base as base_code, filter_type as category, 
+        technology, installation_type as style, thread_size as thread,
+        outer_diameter_mm as outer_diameter, height_mm as length,
+        iso_test_method as type, 
+        oem_codes, competitor_codes, equipment_applications as applications,
+        sub_type as description, gasket_od_mm as inner_diameter, nominal_efficiency as efficiency, filter_type as media_type
+      FROM elimfilters_catalog;
+    `);
+
+    console.log('[migrations] DB initialized successfully!');
+    return res.json({ success: true, message: 'Database initialized successfully (tables, views, constraints)' });
+  } catch (err) {
+    console.error('[migrations] DB INIT ERROR:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/status ─────────────────────────────────────────────────────────
+// Health and version status for deployment verification
+app.get('/api/status', (req, res) => {
+  res.json({
+    status: 'ok',
+    version: '3.4.0',
+    time: new Date().toISOString()
+  });
+});
+
 // ── UNIFIED SEARCH (used by public/index.html) ──────────────────────────────
 // Pool for high-frequency queries (avoids per-request connect/disconnect)
 const { Pool } = require('pg');
