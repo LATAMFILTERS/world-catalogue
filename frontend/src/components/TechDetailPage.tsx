@@ -127,7 +127,7 @@ export function TechDetailPage({ data }: Props) {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '2rem' }}
+              style={{ marginBottom: '1rem' }}
             >
               <img
                 src={data.logoSrc}
@@ -141,32 +141,6 @@ export function TechDetailPage({ data }: Props) {
                   filter: 'brightness(1.15) contrast(1.1)',
                 }}
               />
-            </motion.div>
-
-            {/* Technology name */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.25 }}>
-              <h1 style={{
-                fontSize: 'clamp(2.6rem, 6vw, 4.8rem)',
-                fontWeight: 900,
-                fontFamily: 'Space Grotesk, sans-serif',
-                lineHeight: 1.0,
-                letterSpacing: '-0.02em',
-                marginBottom: data.heroSubtitle ? '0.35rem' : '1.25rem',
-              }}>
-                {data.heroTitle}
-              </h1>
-              {data.heroSubtitle && (
-                <h2 style={{
-                  fontSize: 'clamp(1rem, 2.5vw, 1.6rem)',
-                  fontWeight: 700,
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  color: '#FFF12D',
-                  marginBottom: '1.25rem',
-                  letterSpacing: '0.06em',
-                }}>
-                  {data.heroSubtitle}
-                </h2>
-              )}
             </motion.div>
 
             {/* Tagline */}
