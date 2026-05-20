@@ -1,2 +1,0 @@
-﻿// Homologation config
-module.exports = {};

@@ -1,4 +1,0 @@
-2026/04/29-05:01:11.309 59a0 Creating DB C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filters\Default\Sync Data\LevelDB since it was missing.
-2026/04/29-05:01:11.324 59a0 Reusing MANIFEST C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filters\Default\Sync Data\LevelDB/MANIFEST-000001
-2026/04/29-05:01:11.325 59a0 Recovering log #3
-2026/04/29-05:01:11.325 59a0 Reusing old log C:\Users\VICTOR ABREU\firecrawl\world-catalogue\sesion_air_filters\Default\Sync Data\LevelDB/000003.log 
