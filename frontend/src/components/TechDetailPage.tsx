@@ -107,7 +107,7 @@ export function TechDetailPage({ data }: Props) {
         <section style={{
           background: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
-          padding: '5rem 2rem 0',
+          padding: '2.5rem 2rem 0',
           position: 'relative',
           overflow: 'hidden',
         }}>
@@ -143,7 +143,7 @@ export function TechDetailPage({ data }: Props) {
                 display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
                 letterSpacing: '0.28em', color: '#FFF12D',
                 fontFamily: 'JetBrains Mono, monospace',
-                marginBottom: '3rem',
+                marginBottom: '1.5rem',
                 padding: '0.35rem 0.85rem',
                 border: '1px solid rgba(255,241,45,0.25)',
                 borderRadius: '2px',
