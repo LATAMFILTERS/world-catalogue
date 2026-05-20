@@ -111,13 +111,25 @@ export function TechDetailPage({ data }: Props) {
           position: 'relative',
           overflow: 'hidden',
         }}>
-          {/* Subtle dot matrix — different from Systems grid lines */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 0,
-            backgroundImage: 'radial-gradient(rgba(255,241,45,0.07) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
-          }} />
-          {/* Radial fade so dots disappear toward edges */}
+          {/* Hero background image (if provided) */}
+          {data.heroImage && (
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 0,
+              backgroundImage: `url(${data.heroImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.18,
+            }} />
+          )}
+          {/* Dot matrix — shown when no heroImage */}
+          {!data.heroImage && (
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 0,
+              backgroundImage: 'radial-gradient(rgba(255,241,45,0.07) 1px, transparent 1px)',
+              backgroundSize: '28px 28px',
+            }} />
+          )}
+          {/* Radial fade so content stays readable */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
             background: 'radial-gradient(ellipse 80% 70% at 50% 40%, transparent 30%, #000 100%)',
