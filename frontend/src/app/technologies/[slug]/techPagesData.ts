@@ -20,7 +20,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'The 900FH and 1000FH models deploy AQUAGUARD™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.',
       'The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.',
     ],
-    productImageSrc: '/images/turbinefh-foto.avif',
+    productImageSrc: '/images/turbine-plant.avif',
     productImageCaption: 'AQUAGUARD/SERIES™ · 900FH / 1000FH',
     stagesHeading: 'EACH STAGE ELIMINATES WHAT THE PREVIOUS ONE CANNOT.',
     stages: [
