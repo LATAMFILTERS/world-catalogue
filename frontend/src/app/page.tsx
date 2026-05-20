@@ -29,7 +29,7 @@ const STATS = [
   { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency' },
   { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
   { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs' },
-  { value: null, display: 'GLOBAL', label: 'Texas, USA' },
+  { value: null, display: 'GLOBAL', label: 'Distribution' },
 ];
 
 const CTA_SLIDES = [

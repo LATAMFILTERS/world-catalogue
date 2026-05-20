@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, useInView } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
@@ -112,7 +113,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           }}
         >
           <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <a
+            <Link
               href="/"
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -126,9 +127,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
             >
               HOME
-            </a>
+            </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
-            <a
+            <Link
               href={CATEGORY_URLS[category]}
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -142,7 +143,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
             >
               {categoryLabel.toUpperCase()}
-            </a>
+            </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
             <span
               style={{
@@ -190,7 +191,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         color: '#FFF12D',
                       }}
                     >
-                      FILTRATION MEDIA IMPORTANCE
+                      {item.name.toUpperCase()} FILTRATION SYSTEM
                     </span>
                   </div>
                   <h3
@@ -203,7 +204,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       lineHeight: 1.2,
                     }}
                   >
-                    ENGINEERED PROTECTION
+                    ENGINEERED FOR {item.name.toUpperCase()}
                   </h3>
                   <p
                     style={{
@@ -214,7 +215,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       marginBottom: '1rem',
                     }}
                   >
-                    The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, specialized media must handle extreme conditions: constant stop-and-go cycles, urban pollution, soot accumulation, and thermal stress. Our proprietary hybrid media formulation combines synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection.
+                    The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, protection media must perform under extreme field conditions — abrasive particle loads, thermal cycling, and contamination events that occur far from a maintenance facility. Our proprietary hybrid media formulation combines synthetic and cellulose fibers engineered through AI algorithms to achieve maximum contamination capacity while maintaining zero bypass integrity.
                   </p>
                   <p
                     style={{
@@ -224,7 +225,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       fontFamily: 'Outfit, sans-serif',
                     }}
                   >
-                    Every micron matters. Our media technology ensures {item.name} fleets stay operational 24/7 with extended service intervals, reduced maintenance costs, and guaranteed engine protection against contamination failure.
+                    Every micron matters. Our media technology ensures {item.name} operations stay productive with extended service intervals, reduced maintenance costs, and guaranteed asset protection against contamination failure.
                   </p>
                 </div>
 
@@ -516,14 +517,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 WHY ELIMFILTERS
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {[
+                {(item.benefits || [
                   'Extended service intervals reduce downtime',
                   'Superior contamination retention extends asset life',
                   'German engineering precision and reliability',
                   'Cost-effective protection across all duty cycles',
                   'Proven performance in extreme environments',
                   'Industry-leading filtration efficiency',
-                ].map((benefit, i) => (
+                ]).map((benefit, i) => (
                   <motion.div key={i} variants={itemVariants} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <span
                       style={{
@@ -572,7 +573,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 Technologies Included
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'].map((tech) => (
+                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
                   <span
                     key={tech}
                     style={{
@@ -589,123 +590,10 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   </span>
                 ))}
               </div>
-
-              {/* Quote */}
-              <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                <p
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.4)',
-                    lineHeight: 1.7,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  &ldquo;The most expensive filter is the one that fails — ELIMFILTERS engineering ensures it never does.&rdquo;
-                </p>
-              </div>
             </div>
             </AnimateIn>
           </div>
         </section>
-
-        {/* Technical Specifications - Macrocore */}
-        {item.name === 'Macrocore' && (
-          <section
-            id="technical-specs"
-            style={{
-              padding: '6rem 2rem',
-              background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.3) 100%)',
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-            }}
-          >
-            <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-              <div style={{ marginBottom: '3rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                <h2
-                  style={{
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
-                    color: '#FFF12D',
-                    fontFamily: 'JetBrains Mono, monospace',
-                    margin: 0,
-                  }}
-                >
-                  TECHNICAL SPECIFICATIONS
-                </h2>
-              </div>
-
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                  gap: '2rem',
-                }}
-              >
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    FILTRATION EFFICIENCY
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    99.9% - 99.98% efficiency per ISO 5011 industrial standards. Progressive Density Gradient matrix
-                    captures macro-contaminants on external layers while sub-micron particles are detained internally.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    PRESSURE RATING & STABILITY
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    62 PSI anti-collapse rated construction. Prevents blind pleating and structural degradation under
-                    flow pulsations. Engineered equidistant pleating geometry maintains effective filtration area.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    THERMAL PERFORMANCE
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Continuous operation rated to 120°C. High-purity cellulose fibers reinforced with synthetic resins
-                    guarantee structural stability under humidity and thermal cycling in heavy-duty applications.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    CAPTURE MECHANISM
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Multi-mode capture: interception, inertial impact, and diffusion. Macro-contaminants lodge in
-                    external layers; sub-micron contaminants trapped in internal matrix. Zero bypass technology.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    INDUSTRIAL APPLICATIONS
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    On-road vehicles, mining equipment, agricultural machinery, stationary power generation, industrial
-                    compressors, and heavy construction equipment. Optimized for every motor type.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    REGULATORY COMPLIANCE
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    ISO 5011 (Filtration Efficiency), SAE J726 (DHC - Dust Holding Capacity), ASTM D202 (Thermal
-                    Resistance). Meets international standards for heavy-duty industrial filtration.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* CTA */}
         <CTASection
