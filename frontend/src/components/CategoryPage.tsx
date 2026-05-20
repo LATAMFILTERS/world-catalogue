@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'motion/react';
-import { CatalogueItem, CATEGORY_LABELS } from '@/lib/catalogue';
+import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
 import { FeatureList } from './FeatureList';
 import { StatCounter } from './StatCounter';
@@ -129,7 +129,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             </a>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
             <a
-              href={`/#${category}`}
+              href={CATEGORY_URLS[category]}
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: '0.62rem',

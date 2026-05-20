@@ -70,15 +70,33 @@ interface Props {
 export function TechDetailPage({ data }: Props) {
   return (
     <>
-      <Link href="/" style={{
-        position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
-        display: 'flex', alignItems: 'center', gap: '0.4rem',
-        background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
-        borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
-        letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
-        backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
-      }}>← HOME</Link>
+      {/* Breadcrumb — HOME → TECHNOLOGY → [name] */}
+      <div style={{
+        position: 'relative', zIndex: 20,
+        background: 'rgba(0,0,0,0.6)',
+        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        padding: '0.75rem 2rem',
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Link
+            href="/"
+            style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+          >HOME</Link>
+          <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+          <Link
+            href="/technologies"
+            style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+          >TECHNOLOGY</Link>
+          <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+          <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.1em', color: '#FFF12D' }}>
+            {data.heroTitle}
+          </span>
+        </div>
+      </div>
 
       <main style={{ background: '#000', color: '#fff' }}>
 
