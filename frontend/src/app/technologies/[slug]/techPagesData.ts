@@ -250,7 +250,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'The PDG architecture captures coarse particles at the outer zone, progressively smaller particles in the mid-layers, and sub-micron contamination at the core barrier — matching real-world air contamination distribution and eliminating premature restriction events.',
       'Anti-collapse geometry engineered for 62 PSI differential pressure and continuous 120°C thermal rated operation ensures MACROCORE™ maintains full structural integrity and protection geometry under the most demanding industrial duty cycles.',
     ],
-    productImageSrc: '/assets/macrocore.avif',
+    productImageSrc: '/images/mecanico-jd.avif',
     productImageCaption: 'MACROCORE™ · PROGRESSIVE DENSITY GRADIENT AIR PROTECTION',
     stagesHeading: 'THREE DENSITY ZONES. FULL SPECTRUM PROTECTION.',
     stages: [
@@ -741,7 +741,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'MARINECLEAN™ salt-resistant architecture addresses this environment through a defense-in-depth approach: protective epoxy coating on all external surfaces, brine rejection geometry at critical water ingress points, and corrosion-resistant internal components throughout the protection circuit.',
       'IMO certification for commercial marine application confirms MARINECLEAN™ compliance with international maritime standards for fuel and hydraulic filtration in commercial shipping, offshore platform and harbor operations.',
     ],
-    productImageSrc: '/images/marine-filter.avif',
+    productImageSrc: '/images/marino-taller.avif',
     productImageCaption: 'MARINECLEAN™ · SALT-RESISTANT MARINE FILTRATION SYSTEM',
     stagesHeading: 'THREE LAYERS OF MARINE CORROSION DEFENSE.',
     stages: [
