@@ -671,7 +671,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'DURATECH™ master kit architecture consolidates all service-interval filter elements for a defined vehicle platform into a single sourcing event. Oil, fuel, air and cabin filters — all OEM-interchangeable, all coordinated to a unified service interval — in one kit.',
       'Inventory standardization across a mixed-model fleet is the long-term operational benefit. DURATECH™ kit design philosophy reduces per-vehicle part number count, eliminates cross-contamination errors between similar-looking elements, and simplifies technician training for multi-make service operations.',
     ],
-    productImageSrc: '/images/dossier-filters.avif',
+    productImageSrc: '/images/npr-01_converted.avif',
     productImageCaption: 'DURATECH™ · MASTER KIT FLEET MAINTENANCE SYSTEM',
     stagesHeading: 'THREE CONSOLIDATION PRINCIPLES FOR FLEET EFFICIENCY.',
     stages: [
