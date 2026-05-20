@@ -528,8 +528,8 @@ export default function Home() {
                     height: '100%',
                     minHeight: '480px',
                     backgroundImage: 'url(/images/mecanico-fn.avif)',
-                    backgroundSize: 'contain',
-                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
                     backgroundRepeat: 'no-repeat',
                   }}
                 />
