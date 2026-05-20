@@ -647,20 +647,20 @@ export default function Home() {
                   }}
                 >
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                    // OUR DIFFERENCE
+                    // ENGINEERING STANDARD
                   </p>
                   <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-                    We don&apos;t sell filters. We protect assets.
+                    Certified Performance.<br />Zero Tolerance for Failure.
                   </h3>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
-                    While others compete on price, we compete on reliability. Every specification of our products is designed to:
+                    Every ELIMFILTERS element is engineered to exceed OEM specifications and certified to international standards:
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[
-                      'Maximize the lifespan of your equipment',
-                      'Minimize total cost of operation',
-                      'Guarantee zero downtime from filtration',
-                      'Meet environmental standards',
+                      'ISO 5011 · ISO 16332 · ISO 16889 · ISO 19438',
+                      'AI-calibrated multi-layer protection matrix',
+                      '20,000+ OEM cross-references covered',
+                      '+45% service interval extension vs standard',
                     ].map(item => (
                       <li key={item} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>◆</span>
