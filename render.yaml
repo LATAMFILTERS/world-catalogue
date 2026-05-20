@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: elimfilters-frontend
+    runtime: static
+    buildCommand: echo "pre-built static export"
+    staticPublishPath: ./frontend/out
+    pullRequestPreviewsEnabled: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /_next/static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=86400
