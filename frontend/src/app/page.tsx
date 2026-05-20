@@ -647,20 +647,20 @@ export default function Home() {
                   }}
                 >
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                    // ENGINEERING STANDARD
+                    // ASSET PROTECTION TECHNOLOGY
                   </p>
                   <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-                    Certified Performance.<br />Zero Tolerance for Failure.
+                    We design protection systems.<br />Not replacement filters.
                   </h3>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
-                    Every ELIMFILTERS element is engineered to exceed OEM specifications and certified to international standards:
+                    ELIMFILTERS engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[
-                      'ISO 5011 · ISO 16332 · ISO 16889 · ISO 19438',
-                      'AI-calibrated multi-layer protection matrix',
-                      '20,000+ OEM cross-references covered',
-                      '+45% service interval extension vs standard',
+                      'AI-formulated multi-layer protection matrix',
+                      'Zero bypass architecture on every system',
+                      'ISO 5011 · 16332 · 16889 · 19438 certified',
+                      '20,000+ OEM asset cross-references',
                     ].map(item => (
                       <li key={item} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>◆</span>
