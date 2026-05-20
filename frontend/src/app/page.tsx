@@ -650,7 +650,7 @@ export default function Home() {
                     // ASSET PROTECTION TECHNOLOGY
                   </p>
                   <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-                    We design protection systems.<br />Not replacement filters.
+                    We design protection systems.<br />Not off-the-shelf components.
                   </h3>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
                     ELIMFILTERS engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.
