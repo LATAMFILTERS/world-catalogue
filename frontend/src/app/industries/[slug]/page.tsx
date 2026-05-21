@@ -65,12 +65,33 @@ export function generateStaticParams() {
   }));
 }
 
+const BASE_URL = 'https://elimfilters.com';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getItemBySlug('industries', params.slug);
   if (!item) return { title: 'Not Found' };
+  const url = `${BASE_URL}/industries/${params.slug}`;
+  const title = `${item.name} Filtration Systems | ELIMFILTERS`;
   return {
-    title: `${item.name} Filtration | ELIMFILTERS World Catalogue`,
+    title,
     description: item.description,
+    keywords: [
+      `${item.name.toLowerCase()} filtration`, `${item.name.toLowerCase()} filters`,
+      `industrial filters ${item.name.toLowerCase()}`, 'ELIMFILTERS', 'asset protection filtration',
+    ],
+    alternates: {
+      canonical: url,
+      languages: { en: url, es: url, fr: url, it: url, nl: url, ru: url, zh: url, ja: url, ar: url, fa: url, pt: url },
+    },
+    openGraph: {
+      title,
+      description: item.description,
+      url,
+      type: 'website',
+      siteName: 'ELIMFILTERS World Catalogue',
+      images: [{ url: '/assets/logo-elimfilters.png', width: 800, height: 400, alt: `${item.name} Filtration — ELIMFILTERS` }],
+    },
+    twitter: { card: 'summary_large_image', title, description: item.description },
   };
 }
 
