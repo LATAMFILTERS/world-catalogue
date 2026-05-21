@@ -28,10 +28,19 @@ export default function Contact() {
     setSending(true);
     setError('');
     try {
-      const res = await fetch('/api/contact', {
+      const form = new FormData();
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('phone', formData.phone || '—');
+      form.append('company', formData.company || '—');
+      form.append('message', formData.message);
+      form.append('_subject', `[elimfilters.com] New contact from ${formData.name}`);
+      form.append('_captcha', 'false');
+      form.append('_template', 'table');
+
+      const res = await fetch('https://formsubmit.co/info@elimfilters.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: form,
       });
       if (!res.ok) throw new Error('Server error');
       setSubmitted(true);
