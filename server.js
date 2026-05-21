@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -18,6 +19,46 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('frontend/out'));
 app.use(express.static('public'));
 app.use(express.static('www'));
+
+// Contact form endpoint
+app.post('/api/contact', async (req, res) => {
+  const { name, email, phone, company, message } = req.body;
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@elimfilters.com',
+        pass: process.env.GODADDY_MAIL_PASS,
+      },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
+      to: 'info@elimfilters.com',
+      replyTo: email,
+      subject: `[Web Contact] ${name} — ${company || 'No company'}`,
+      html: `
+        <h2 style="color:#000">New contact from elimfilters.com</h2>
+        <table cellpadding="8" style="border-collapse:collapse;width:100%">
+          <tr><td><b>Name</b></td><td>${name}</td></tr>
+          <tr><td><b>Email</b></td><td>${email}</td></tr>
+          <tr><td><b>Phone</b></td><td>${phone || '—'}</td></tr>
+          <tr><td><b>Company</b></td><td>${company || '—'}</td></tr>
+        </table>
+        <h3>Message</h3>
+        <p style="background:#f5f5f5;padding:1rem">${message.replace(/\n/g, '<br>')}</p>
+      `,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[contact]', err.message);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
 
 // Import routes (with fallback if file is missing)
 let knowledgeRoutes;

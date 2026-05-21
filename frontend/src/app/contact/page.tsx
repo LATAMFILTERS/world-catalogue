@@ -15,34 +15,33 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit to FormSubmit endpoint
-    const form = new FormData();
-    form.append('name', formData.name);
-    form.append('email', formData.email);
-    form.append('phone', formData.phone);
-    form.append('company', formData.company);
-    form.append('message', formData.message);
-
-    fetch('https://formspree.io/f/mbjekqwb', {
-      method: 'POST',
-      body: form,
-    })
-      .then(() => {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
-      })
-      .catch(() => {
-        alert('Error sending message. Please try again.');
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
+      if (!res.ok) throw new Error('Server error');
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch {
+      setError('Error sending message. Please try again or email us directly at info@elimfilters.com');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -290,19 +289,13 @@ export default function Contact() {
                   </h2>
 
                   {submitted && (
-                    <div
-                      style={{
-                        background: 'rgba(100, 200, 100, 0.2)',
-                        border: '1px solid rgba(100, 200, 100, 0.4)',
-                        borderRadius: '8px',
-                        padding: '1rem',
-                        marginBottom: '1.5rem',
-                        fontSize: '0.95rem',
-                        color: '#90ee90',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
+                    <div style={{ background: 'rgba(100,200,100,0.15)', border: '1px solid rgba(100,200,100,0.4)', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem', fontSize: '0.95rem', color: '#90ee90', fontFamily: 'Outfit, sans-serif' }}>
                       ✓ Message sent successfully! We'll be in touch soon.
+                    </div>
+                  )}
+                  {error && (
+                    <div style={{ background: 'rgba(255,80,80,0.15)', border: '1px solid rgba(255,80,80,0.4)', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#ff9090', fontFamily: 'Outfit, sans-serif' }}>
+                      {error}
                     </div>
                   )}
 
@@ -513,11 +506,12 @@ export default function Contact() {
 
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(255,241,45,0.4)' }}
+                      disabled={sending}
+                      whileHover={{ scale: sending ? 1 : 1.03, boxShadow: sending ? 'none' : '0 0 32px rgba(255,241,45,0.4)' }}
                       style={{
                         width: '100%',
                         padding: '0.875rem',
-                        background: '#FFF12D',
+                        background: sending ? 'rgba(255,241,45,0.5)' : '#FFF12D',
                         color: '#000',
                         fontFamily: 'Outfit, sans-serif',
                         fontWeight: 700,
@@ -525,10 +519,10 @@ export default function Contact() {
                         letterSpacing: '0.1em',
                         border: 'none',
                         borderRadius: '4px',
-                        cursor: 'pointer',
+                        cursor: sending ? 'not-allowed' : 'pointer',
                       }}
                     >
-                      SEND MESSAGE
+                      {sending ? 'SENDING...' : 'SEND MESSAGE'}
                     </motion.button>
                   </form>
                 </div>
