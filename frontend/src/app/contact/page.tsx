@@ -71,41 +71,41 @@ export default function Contact() {
       <section
         style={{
           marginTop: 0,
-          paddingTop: '4rem',
-          paddingBottom: '4rem',
-          background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.8) 100%)',
+          minHeight: '520px',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'flex-end',
+          overflow: 'hidden',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ marginBottom: '3rem' }}>
-            <motion.span
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                fontFamily: 'Outfit, sans-serif',
-                display: 'inline-block',
-              }}
-            >
-              // GET IN TOUCH
-            </motion.span>
-          </div>
+        {/* Background photo */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'url(/images/contacto-papa.avif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        }} />
+        {/* Gradient overlay */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)',
+        }} />
+        {/* Content */}
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 2rem 4rem', width: '100%' }}>
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', display: 'inline-block', marginBottom: '1rem' }}
+          >
+            // GET IN TOUCH
+          </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-              fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
-              marginBottom: '1rem',
-              lineHeight: 1.1,
-            }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
             ELIMFILTERS GLOBAL CONTACT
           </motion.h1>
@@ -113,13 +113,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontSize: 'clamp(1rem, 2vw, 1.1rem)',
-              lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
-              maxWidth: '700px',
-            }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '700px' }}
           >
             Have questions about our filtration systems? Need technical support? Contact our global team.
           </motion.p>
@@ -236,41 +230,6 @@ export default function Contact() {
                   </a>
                 </div>
 
-                <div
-                  style={{
-                    background: 'rgba(255,241,45,0.08)',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    borderRadius: '8px',
-                    padding: '1.5rem',
-                    marginTop: '2rem',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: '0.9rem',
-                      fontWeight: 700,
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      marginBottom: '0.75rem',
-                      color: '#FFF12D',
-                    }}
-                  >
-                    HOURS OF OPERATION
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '0.9rem',
-                      color: 'rgba(255,255,255,0.75)',
-                      fontFamily: 'Outfit, sans-serif',
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    Monday - Friday: 8:00 AM - 6:00 PM CST
-                    <br />
-                    Saturday: 9:00 AM - 2:00 PM CST
-                    <br />
-                    Sunday: Closed
-                  </p>
-                </div>
               </div>
             </AnimateIn>
 
