@@ -1,14 +1,28 @@
 'use client';
 
+import { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
 import { CustomCursor } from './CustomCursor';
 import { ScrollProgress } from './ScrollProgress';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // Update html lang attribute when language changes
+    const updateLang = (lng: string) => {
+      document.documentElement.lang = lng;
+      document.documentElement.dir = ['ar', 'fa', 'he'].includes(lng) ? 'rtl' : 'ltr';
+    };
+    i18n.on('languageChanged', updateLang);
+    if (i18n.language) updateLang(i18n.language);
+    return () => i18n.off('languageChanged', updateLang);
+  }, []);
+
   return (
-    <>
+    <I18nextProvider i18n={i18n}>
       <CustomCursor />
       <ScrollProgress />
       {children}
-    </>
+    </I18nextProvider>
   );
 }

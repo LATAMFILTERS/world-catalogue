@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const isEnglish = i18n.language?.startsWith('en');
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -55,10 +59,33 @@ export function Navigation() {
 
         {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
-          <NavLink href="/industries">Industries</NavLink>
-          <NavLink href="/systems">Systems</NavLink>
-          <NavLink href="/technologies">Technologies</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink href="/industries">{t('nav.industries')}</NavLink>
+          <NavLink href="/systems">{t('nav.systems')}</NavLink>
+          <NavLink href="/technologies">{t('nav.technologies')}</NavLink>
+          <NavLink href="/contact">{t('nav.contact')}</NavLink>
+
+          {/* EN toggle — only show when not in English */}
+          {!isEnglish && (
+            <motion.button
+              onClick={() => i18n.changeLanguage('en')}
+              whileHover={{ borderColor: '#FFF12D', color: '#FFF12D' }}
+              transition={{ duration: 0.18 }}
+              style={{
+                background: 'none',
+                border: '1px solid rgba(255,255,255,0.3)',
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontWeight: 600,
+                fontSize: '0.7rem',
+                letterSpacing: '0.12em',
+                padding: '0.35rem 0.75rem',
+                cursor: 'pointer',
+              }}
+            >
+              EN
+            </motion.button>
+          )}
+
           <motion.a
             href="https://part-search.elimfilters.com"
             target="_blank"
@@ -78,7 +105,7 @@ export function Navigation() {
               display: 'inline-block',
             }}
           >
-            FIND MY FILTER
+            {t('nav.findMyFilter')}
           </motion.a>
         </div>
 
@@ -127,10 +154,10 @@ export function Navigation() {
               style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
             >
               {[
-                { href: '/industries', label: 'Industries' },
-                { href: '/systems', label: 'Systems' },
-                { href: '/technologies', label: 'Technologies' },
-                { href: '/contact', label: 'Contact' },
+                { href: '/industries', label: t('nav.industries') },
+                { href: '/systems', label: t('nav.systems') },
+                { href: '/technologies', label: t('nav.technologies') },
+                { href: '/contact', label: t('nav.contact') },
               ].map((item) => (
                 <motion.div
                   key={item.href}
@@ -152,8 +179,16 @@ export function Navigation() {
                   rel="noopener noreferrer"
                   style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
                 >
-                  FIND MY FILTER →
+                  {t('nav.findMyFilter')} →
                 </a>
+                {!isEnglish && (
+                  <button
+                    onClick={() => { i18n.changeLanguage('en'); setMenuOpen(false); }}
+                    style={{ ...mobileLinkStyle, background: 'none', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.5)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', cursor: 'pointer', padding: '0.5rem 1rem', textAlign: 'left' }}
+                  >
+                    EN — Switch to English
+                  </button>
+                )}
               </motion.div>
             </motion.div>
           </motion.div>
