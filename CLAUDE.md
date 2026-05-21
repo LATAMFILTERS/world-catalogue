@@ -141,6 +141,86 @@ All pages follow this exact structure:
 
 **Do not deviate from this structure** — all 43 pages must be identical except for content.
 
+## Working with New Features
+
+### Internationalization (i18n)
+
+Pages automatically detect user language via `navigator.language`. To add new UI strings:
+
+1. **Add string to translation files** (11 languages):
+   ```json
+   // frontend/public/locales/en/translation.json
+   {
+     "newString": "English text here"
+   }
+   // frontend/public/locales/es/translation.json
+   {
+     "newString": "Texto en español aquí"
+   }
+   ```
+
+2. **Use in React components**:
+   ```tsx
+   import { useTranslation } from 'react-i18next';
+   
+   export default function MyComponent() {
+     const { t } = useTranslation();
+     return <p>{t('newString')}</p>;
+   }
+   ```
+
+3. **Commit both JSON files**:
+   ```bash
+   git add frontend/public/locales/
+   git commit -m "i18n: Add new strings for [feature]"
+   ```
+
+### Search Functionality
+
+The `/api/search` endpoint searches products by:
+- Part number (SKU)
+- OEM code
+- Product name or description
+
+**Query example**:
+```bash
+GET /api/search?q=air+filter
+```
+
+The part-search frontend (`part-search.elimfilters.com`) displays results from this endpoint.
+
+### Analytics Events
+
+Google Analytics 4 automatically tracks:
+- Page views
+- Scroll depth
+- User interactions
+- Custom events via gtag
+
+**Add custom event**:
+```tsx
+import { useEffect } from 'react';
+
+useEffect(() => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'search', { search_term: 'air filter' });
+  }
+}, []);
+```
+
+### Contact Form
+
+The contact form at `/contact` sends emails via GoDaddy SMTP:
+1. Form data is POSTed to `/api/contact`
+2. Server validates required fields (name, email, message)
+3. Email sent to `info@elimfilters.com`
+4. User receives confirmation
+
+**Troubleshooting**:
+- Check `GODADDY_MAIL_PASS` environment variable is set
+- Verify `info@elimfilters.com` domain is active
+- Review `server.js` for SMTP configuration
+
 ## Code Conventions
 
 ### JSON (catalogue.json)
@@ -270,14 +350,25 @@ npm install
 npm start
 ```
 
-## What's Next
+## Complete Feature List (May 2026)
 
-After content is locked:
-1. Configure server routes to serve pages correctly
-2. Set up proper 404 handling
-3. Add SEO meta tags (Open Graph, schema.org)
-4. Deploy to Railway
-5. Monitor performance and uptime
+### ✅ Completed
+- [x] Internationalization (11 languages with auto-detection)
+- [x] SEO/GEO optimization (canonical URLs, hreflang, sitemap, schema.org)
+- [x] Google Analytics 4 integration
+- [x] Email infrastructure (5 Microsoft 365 accounts, FormSubmit contact form)
+- [x] Google Safe Browsing review (submitted for phishing false positive)
+- [x] Dynamic anti-gravity particle effect (golden molecules)
+- [x] Product search integration endpoint
+- [x] Contact form with SMTP backend
+- [x] Page structure and content finalization
+
+### 📋 Next Phase
+1. Monitor Google indexing progress (44 pages, expect 24-72 hour full indexing)
+2. Verify Google Safe Browsing manual review completion
+3. Full multilingual content translation (catalogue.json + tech pages) - optional Phase 2
+4. Advanced analytics dashboard integration
+5. Performance optimization and Core Web Vitals monitoring
 
 ---
 

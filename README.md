@@ -66,6 +66,47 @@ All pages follow a **unified template** with consistent structure:
 - Tablet: 1 column, adjusted padding
 - Mobile: Single column, optimized typography
 
+## Recent Features (2026)
+
+### 🌍 Internationalization (i18n)
+- **11 languages supported**: English, Spanish, French, Italian, Dutch, Russian, Chinese, Japanese, Arabic, Farsi, Portuguese
+- **Auto-detection**: Browser language automatically detected via `navigator.language`
+- **Persistence**: Language preference saved in localStorage
+- **RTL Support**: Arabic and Farsi pages render right-to-left
+- **Implementation**: react-i18next with HttpBackend loader
+
+**Files**: `/frontend/src/i18n.ts`, `/frontend/src/components/ClientProviders.tsx`, `/frontend/public/locales/{lng}/translation.json`
+
+### 🔍 SEO & GEO Optimization
+- **Canonical URLs**: Set for each page to prevent duplicate content
+- **Hreflang tags**: Alternate language versions linked in sitemap and metadata
+- **Sitemap**: 44 URLs with language alternates at `/sitemap.xml`
+- **robots.txt**: Configured with sitemap link
+- **JSON-LD Schema**: Organization, WebSite, Product, and FAQPage schemas
+
+**Google Search Console**: 44 pages discovered and indexed
+
+### 📊 Analytics
+- **Google Analytics 4**: ID `G-T7STY4TY9C`
+- **Tracking**: Page views, user engagement, conversion tracking
+- **Implementation**: gtag.js loaded via Next.js Script component
+
+### 📧 Email Integration
+- **Contact Form**: Integrated with FormSubmit.co for email delivery
+- **SMTP Backend**: GoDaddy SMTP (info@elimfilters.com)
+- **Endpoint**: `POST /api/contact` with name, email, company, message
+- **Email Setup**: 5 Microsoft 365 accounts active for ELIMFILTERS brand
+
+### ✨ Dynamic Effects
+- **Anti-Gravity Particles**: Golden molecule effect on part-search.elimfilters.com
+- **Canvas Animation**: 80 particles with physics, repulsion on mouse, connection lines
+- **Responsive**: Scales to any container size
+
+### 🔗 Product Search Integration
+- **Search Endpoint**: `GET /api/search?q=QUERY` searches across products and OEM codes
+- **Part-Search Frontend**: dedicated search interface at `part-search.elimfilters.com`
+- **Cross-Reference Support**: 20,000+ OEM part number lookups
+
 ## Content Management
 
 ### Updating Page Content
@@ -110,6 +151,8 @@ Server runs on `http://localhost:3000`
 ### API Endpoints
 
 - `GET /api/status` — Health check
+- `GET /api/search?q=QUERY` — Search catalog by part, industry, product, or technology
+- `POST /api/contact` — Contact form (sends via GoDaddy SMTP to info@elimfilters.com)
 - `POST /api/chat` — Chatbot interface
 - `POST /api/groq-chat` — AI-powered responses
 - `POST /api/leads` — Lead capture
