@@ -211,19 +211,22 @@ export default function Home() {
             overflow: 'hidden',
           }}
         >
-          {/* Parallax background */}
-          <motion.div
-            style={{
-              position: 'absolute',
-              inset: '-25%',
-              backgroundImage:
-                'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.9) 100%), url(/images/hero-bg.jpg)',
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              y: bgY,
-              zIndex: 0,
-            }}
-          />
+          {/* Parallax background — molecules video */}
+          <motion.div style={{ position: 'absolute', inset: '-25%', zIndex: 0, y: bgY, overflow: 'hidden' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            >
+              <source src="/images/moleculas.mp4" type="video/mp4" />
+            </video>
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.92) 100%)',
+            }} />
+          </motion.div>
 
           <div
             style={{
