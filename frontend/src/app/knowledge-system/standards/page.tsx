@@ -127,7 +127,7 @@ export default function StandardsHubPage() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
           }}>
-            Each domain integrates applicable measurement standards as tools for assessing contamination, not as isolated specifications. <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Oil cleanliness standards</Link> such as <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link> define the particle cleanliness codes that determine whether engine oil is within safe operating limits—and what filtration action is required when it is not.
+            Each domain integrates applicable measurement standards as tools for assessing contamination, not as isolated specifications. <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Oil cleanliness standards</Link> such as <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link> define the particle cleanliness codes that determine whether engine oil is within safe operating limits—and what filtration action is required when it is not.
           </p>
         </motion.div>
       </section>
