@@ -16,11 +16,64 @@
  * 4. Educational pathway mapping
  */
 
+// Type definitions for proper TypeScript indexing
+type TechnologyRecord = Record<string, {
+  id: string;
+  name: string;
+  category: string;
+  tagline: string;
+  slug: string;
+  relatedStandards: string[];
+  addressesContamination: string[];
+  applicableIndustries: string[];
+  comparisonTopics: string[];
+  keyMetrics: Record<string, string>;
+  description: string;
+}>;
+
+type StandardRecord = Record<string, {
+  id: string;
+  name: string;
+  code: string;
+  type?: string;
+  slug: string;
+  description: string;
+  applicableTo: string[];
+  relevantIndustries: string[];
+  relatedContamination: string[];
+  criticality: string;
+}>;
+
+type ContaminationRecord = Record<string, {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  rootCauses: string[];
+  failureModes: string[];
+  impacts: Record<string, string>;
+  resolvedBy: string[];
+  relatedStandards: string[];
+  applicableIndustries: string[];
+}>;
+
+type IndustryRecord = Record<string, {
+  id: string;
+  name: string;
+  slug: string;
+  contaminationExposure: string;
+  primaryEquipment: string[];
+  relevantContamination: string[];
+  applicableTechnologies: string[];
+  applicableStandards: string[];
+  operatingConditions: Record<string, string>;
+}>;
+
 // ============================================================================
 // TECHNOLOGY SYSTEMS
 // ============================================================================
 
-export const TECHNOLOGIES = {
+export const TECHNOLOGIES: TechnologyRecord = {
   MACROCORE: {
     id: 'macrocore',
     name: 'MACROCORE™',
@@ -140,7 +193,7 @@ export const TECHNOLOGIES = {
 // STANDARDS
 // ============================================================================
 
-export const STANDARDS = {
+export const STANDARDS: StandardRecord = {
   ISO_16889: {
     id: 'iso_16889',
     code: 'ISO 16889',
@@ -218,7 +271,7 @@ export const STANDARDS = {
 // CONTAMINATION MODES
 // ============================================================================
 
-export const CONTAMINATION_MODES = {
+export const CONTAMINATION_MODES: ContaminationRecord = {
   DIESEL_WATER: {
     id: 'diesel_water',
     name: 'Diesel Water Contamination',
@@ -280,7 +333,7 @@ export const CONTAMINATION_MODES = {
 // INDUSTRIES / VERTICALS
 // ============================================================================
 
-export const INDUSTRIES = {
+export const INDUSTRIES: IndustryRecord = {
   AGRICULTURE: {
     id: 'agriculture',
     name: 'Agriculture',
@@ -523,7 +576,7 @@ export function getRelatedTechnologies(contaminationId: string): typeof TECHNOLO
 
 export function getIndustriesBySeverity() {
   return Object.values(INDUSTRIES).sort((a, b) => {
-    const severityOrder = { EXTREME: 3, HIGH: 2, 'MEDIUM-HIGH': 1.5, MEDIUM: 1, 'LOW-MEDIUM': 0.5, LOW: 0 };
+    const severityOrder: Record<string, number> = { EXTREME: 3, HIGH: 2, 'MEDIUM-HIGH': 1.5, MEDIUM: 1, 'LOW-MEDIUM': 0.5, LOW: 0 };
     return (severityOrder[b.contaminationExposure] || 0) - (severityOrder[a.contaminationExposure] || 0);
   });
 }
