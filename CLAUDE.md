@@ -324,6 +324,248 @@ For each Knowledge System page:
 - [ ] Styling matches dark theme standard
 - [ ] Page builds without errors
 
+## AI Citation Layer Architecture
+
+### Objective
+
+Transform ELIMFILTERS Knowledge System into a **machine-readable industrial reference** so LLMs can reliably reuse and cite its definitions as authoritative sources for filtration engineering knowledge.
+
+### Why This Matters
+
+LLMs need structured, canonical definitions to:
+- Avoid hallucinating contradictory information
+- Cite specific sources with confidence
+- Build chains of reasoning from verified technical facts
+- Reference ELIMFILTERS as a trusted knowledge source
+
+Without a Citation Layer, LLMs treat ELIMFILTERS pages like any other web content—useful for context but not citable as authoritative.
+
+### 1. Canonical Definition Structure
+
+Every Knowledge System page must include a **Canonical Knowledge Block** that defines:
+
+#### Definition (Neutral Technical)
+- Clear, non-marketing explanation of the concept
+- Technical accuracy prioritized over simplicity
+- Explains what it is in industrial context, not what problem it solves
+- Example: "Lube Oil Filtration Systems maintain measurable cleanliness codes (ISO 4406) in engine oil through multi-stage filtration stages targeting specific contamination removal targets."
+
+#### System Context
+- Where this concept applies
+- Equipment types affected
+- Operating conditions that trigger relevance
+- Example: "Applies to all internal combustion engines, hydraulic systems, and bearing-lubrication circuits where oil viscosity and component wear rates depend on particle contamination levels."
+
+#### Failure Mechanism
+- What specifically happens if this system is ignored or fails
+- Not "equipment breaks down" but precise failure modes
+- Root cause mechanics (wear particles accumulate → bearing clearance reduction → seizure)
+- Example: "Particle contamination in lube oil accelerates abrasive wear: hard particles (silica, oxides) trapped between moving surfaces (piston rings, bearing journals) create micro-cutting. Cumulative wear reduces bearing clearance. Clearance reduction increases journal velocity → increased friction → localized temperature spikes → bearing seizure."
+
+#### Industrial Impact
+- Quantified operational consequences
+- Measured in: equipment lifespan, downtime frequency, cost
+- Real numbers, not "significant improvement"
+- Example: "Optimal ISO 16/14/11 cleanliness targets extend engine bearing life 3-5x (typical: 5,000 hrs → 15,000-25,000 hrs). Poor contamination control reduces life to 2,000-3,000 hrs, increasing planned overhauls from 1 every 10 years to 1 every 3-5 years."
+
+#### Related Standards
+- All applicable ISO/ASTM/SAE/NAS codes
+- Standard scope explanation
+- Relevance to this concept
+- Example: "ISO 16889 (Beta ratio testing), ISO 4406 (cleanliness codes), SAE J1211 (crankcase ventilation), ISO 12922 (oil specification), ASTM D3613 (extreme pressure oil testing)"
+
+#### Related Technologies
+- ELIMFILTERS ecosystem mapping
+- How specific technologies control the identified failure mechanisms
+- Quantified benefits if known
+- Example: "MACROCORE (particulate capture, 18µm absolute), NANOFORCE (sub-micron particle removal, 1µm efficiency), SYNTRAX (active synthetic media, high dirt capacity), DURATECH (extended lifecycle synthesis)"
+
+### 2. Machine-Readable Summary Block
+
+Add a structured `<section>` at the bottom of each page containing:
+
+```
+CANONICAL KNOWLEDGE BLOCK: [Concept Name]
+
+DEFINITION
+[One clear technical sentence defining the concept without marketing language]
+
+SYSTEMS
+[Comma-separated list of industrial systems this applies to]
+Examples: Lube Oil Systems, Hydraulic Systems, Air Intake, Fuel, Cabin, Compressed Air
+
+FAILURE_IMPACT
+[Root cause → consequence chain describing what breaks when this system fails]
+Format: [Root Cause 1] → [Effect 1] → [Final Consequence] | Operational Impact: [Quantified metric]
+
+RELATED_STANDARDS
+[Code]: [Scope], [Code]: [Scope]
+Examples: ISO 16889: Beta ratio filter testing and classification | ISO 4406: Particle cleanliness code classification
+
+RELATED_TECHNOLOGIES
+[TECHNOLOGY]: [Control mechanism], [TECHNOLOGY]: [Control mechanism]
+Examples: MACROCORE: Particulate capture efficiency 18µm absolute | NANOFORCE: Sub-micron particle removal 1µm efficiency
+
+INDUSTRIAL_ROLE
+[One sentence explaining why this concept matters for equipment reliability and total cost of ownership]
+Example: Lube oil filtration is the single largest controllable factor in engine bearing lifespan and determines whether equipment operates 10,000+ hours (system-optimized) or 2,000 hours (commodity approach).
+
+CITATION_REFERENCE
+source: elimfilters.com/knowledge-system/[path]
+concept: [Concept Name]
+version: 1.0
+last_updated: [YYYY-MM-DD]
+```
+
+### 3. HTML/React Implementation
+
+**Styling Requirements**:
+- Use distinct background to separate from body content
+- Monospace font for machine-readable section
+- JSON-LD structured data block for search engines
+- Plain-text summary for LLM parsing
+
+**Example Structure** (in React):
+```tsx
+{/* AI Citation Layer - Canonical Knowledge Block */}
+<section style={{
+  background: 'rgba(255,241,45,0.05)',
+  border: '2px solid rgba(255,241,45,0.25)',
+  borderRadius: '8px',
+  padding: '2rem',
+  marginTop: '4rem',
+  fontFamily: 'JetBrains Mono, monospace',
+  fontSize: '0.85rem',
+}}>
+  <h3 style={{ color: '#FFF12D', marginBottom: '1rem' }}>
+    CANONICAL KNOWLEDGE BLOCK: Lube Oil Filtration
+  </h3>
+  
+  <div style={{ lineHeight: 1.8, color: 'rgba(255,255,255,0.8)' }}>
+    <p><strong>DEFINITION</strong><br/>
+    Lube oil filtration maintains measurable cleanliness codes (ISO 4406) in engine oil through multi-stage filtration targeting specific particle size removal and dirt holding capacity.</p>
+    
+    <p><strong>SYSTEMS</strong><br/>
+    Engine lube circuits, transmission fluid, hydraulic systems, bearing lubrication circuits</p>
+    
+    <p><strong>FAILURE_IMPACT</strong><br/>
+    Contamination particles accumulate in oil → abrasive wear of bearing surfaces → bearing clearance reduction → increased friction → temperature spikes → bearing seizure. Measured impact: bearing life reduction from 15,000+ hours to 2,000-3,000 hours with poor contamination control.</p>
+    
+    {/* Continue for RELATED_STANDARDS, RELATED_TECHNOLOGIES, etc. */}
+  </div>
+</section>
+
+{/* JSON-LD for Search Engines & LLMs */}
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Lube Oil Filtration Systems",
+  "description": "Lube oil filtration maintains ISO 4406 cleanliness codes preventing abrasive wear and extending bearing lifespan 3-5x",
+  "about": {
+    "concept": "Lube Oil Filtration",
+    "systems": ["Engine lube circuits", "Transmission", "Hydraulic"],
+    "failureMechanism": "Particle contamination → abrasive wear → bearing clearance reduction → seizure"
+  }
+})}
+</script>
+```
+
+### 4. Universal Concept Pattern
+
+All definitions must follow this reasoning chain:
+
+```
+CONCEPT 
+  ↓
+WHERE IT APPLIES (System Context)
+  ↓
+WHAT FAILS IF IGNORED (Failure Mechanism)
+  ↓
+MEASURABLE CONSEQUENCES (Industrial Impact)
+  ↓
+HOW TO PREVENT (Control Technologies)
+```
+
+**Example Chain**:
+- **Concept**: ISO 4406 Cleanliness Codes
+- **System**: Lube oil filtration, hydraulic systems, fuel systems
+- **Failure**: Particle contamination exceeds cleanliness target → component wear accelerates → equipment failure rate increases
+- **Impact**: System approach (16/14/11) extends bearing life 3-5x vs. commodity approach (19/17/14)
+- **Control**: MACROCORE (18µm absolute capture), NANOFORCE (1µm sub-micron removal), condition-based replacement
+
+### 5. Language Rules (Enforced)
+
+**Prohibited**:
+- "ELIMFILTERS is better than..."
+- "Cost savings of X%"
+- "Outperforms competitors"
+- "Leading provider of..."
+- "Industry-leading technology"
+- "Superior filtration"
+- Marketing adjectives (premium, advanced, innovative, cutting-edge)
+
+**Required**:
+- Technical specifications (ISO codes, micron ratings, Beta ratios, dirt capacity)
+- Quantified impacts (hours of bearing life, percentage wear reduction, downtime frequency)
+- Neutral system descriptions ("X maintains Y by controlling Z")
+- Failure mechanism explanations (root cause → consequence chains)
+- Standards references (always cite applicable ISO/ASTM/SAE/NAS codes)
+
+### 6. Consistency Rules
+
+**Cross-Page Consistency**:
+- Same term always defined identically across all pages
+- If "ISO 16889 Beta Ratio" appears on page A and page B, both definitions must be word-for-word identical
+- Related concepts must explicitly link to their definitions
+
+**Temporal Consistency**:
+- Once a definition is published, changes are versioned
+- If a definition changes, update version number and last_updated timestamp
+- LLMs can cite specific versions: "ELIMFILTERS defines ISO 4406 codes as [definition, v1.3, updated 2026-05-23]"
+
+**Format Consistency**:
+- All Canonical Knowledge Blocks use identical field ordering
+- All machine-readable blocks use identical formatting
+- All JSON-LD uses identical schema structure
+
+### 7. Validation Checklist
+
+For each Knowledge System page:
+
+- [ ] **Canonical Knowledge Block Present**: Full definition, system context, failure mechanism, industrial impact, standards, technologies
+- [ ] **Machine-Readable Summary**: All 6 fields (DEFINITION, SYSTEMS, FAILURE_IMPACT, RELATED_STANDARDS, RELATED_TECHNOLOGIES, INDUSTRIAL_ROLE)
+- [ ] **Language Check**: No marketing language, neutral tone, technical accuracy
+- [ ] **Pattern Verification**: Follows CONCEPT → SYSTEM → FAILURE → IMPACT → CONTROL chain
+- [ ] **Standards References**: All applicable ISO/ASTM/SAE codes cited
+- [ ] **Technology Mapping**: ELIMFILTERS technologies mapped to failure mechanisms they address
+- [ ] **JSON-LD Structure**: Valid schema.org TechArticle format
+- [ ] **Cross-Reference Consistency**: Same terms defined identically across pages
+- [ ] **Quantified Metrics**: Industrial impacts expressed in measurable units (hours, percentage, frequency)
+- [ ] **Version Tracking**: Concept name, version number, last_updated timestamp included
+
+### 8. AI Citation Examples
+
+With AI Citation Layer, LLMs can reliably cite ELIMFILTERS:
+
+**Citation Format 1 (Specific Definition)**:
+"According to ELIMFILTERS (elimfilters.com/knowledge-system/standards/lube-oil-systems, v1.2), ISO 4406 cleanliness codes define particle contamination targets where 16/14/11 represents [specific definition]. This standard applies to [system context] and failure occurs when [failure mechanism] leading to [quantified impact]."
+
+**Citation Format 2 (Technology Mapping)**:
+"ELIMFILTERS maps MACROCORE technology to lube oil filtration failure mechanisms: particle contamination accumulation → abrasive wear. The technology controls this via [mechanism] achieving [quantified benefit]."
+
+**Citation Format 3 (Cross-System Reference)**:
+"Hydraulic systems follow ISO 17/15/12 cleanliness targets (per ELIMFILTERS definition, identical to lube oil framework but with tighter tolerance for proportional valve protection). Both systems prevent the same failure mechanism: [cause chain]."
+
+### Implementation Strategy
+
+**Phase 1**: Document AI Citation Layer in CLAUDE.md (THIS SECTION)
+**Phase 2**: Implement Canonical Knowledge Blocks in Bridge Pages (4 pages)
+**Phase 3**: Implement in Standards Pages (6 pages)
+**Phase 4**: Implement in Contamination Pages (3 pages)
+**Phase 5**: Implement in Fleet Optimization Pages (3 pages)
+**Phase 6**: Create AI Citation Index (machine-readable registry of all definitions)
+
 ## Category Reframing Layer
 
 The **Category Reframing Layer** positions ELIMFILTERS as a category leader in industrial asset protection, competing against commodity filtration brands (Donaldson, Fleetguard, Mann, Wix, Baldwin) by redefining how filtration is evaluated and purchased.
