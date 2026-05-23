@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function HydraulicSystemContaminationPage() {
   const sections = [
     {
-      title: 'Short Definition',
-      content: 'Hydraulic system contamination refers to the presence of unwanted particles, water, air, and degradation products in pressurized hydraulic fluid. Hydraulic systems operate at pressures ranging from 70-350 bar (1000-5000 psi), where component tolerances are measured in micrometers and flow velocities reach 4-6 meters per second. Contamination causes failure through three distinct pathways: mechanical blockage (particles jam valve spools or orifices), chemical degradation (water initiates corrosion and viscosity loss), and mechanical wear (particles embed in seals and precision surfaces). Hydraulic system failures progress rapidly - contamination that would cause slow degradation in low-pressure systems triggers catastrophic failure in hydraulic applications within weeks. This operational environment requires contamination control orders of magnitude more stringent than other fluid systems: maximum tolerable particle concentration is ISO 16889 16/14/11 (320 particles >4µm per milliliter).'
-    },
-    {
       title: 'How Contamination Happens',
       content: 'Contamination enters hydraulic systems through multiple pathways: (1) Component manufacturing residue - metal particles, sand, machining chips remain inside pumps, motors, actuators after manufacturing; flush-out procedures remove 70-80% but 5-20% remain, releasing slowly during operation; (2) Seal degradation - elastomer seals (polyurethane, nitrile) degrade from fluid oxidation, excessive temperature (>60°C), or mechanical wear; breakdown products are 2-50 microns and circulate freely throughout the system; (3) External ingestion - contamination enters through damaged hoses, loose filler caps, worn rod wipers on cylinder actuators; atmospheric dust concentrations of 10-500 mg/m³ introduce 5-100 particles/mL with each atmospheric exposure; (4) Internal generation - ferrous components corrode from water presence, generating 50-200 ppm iron contamination within 200 hours; fluid oxidation produces organic polymers (gum, varnish) that agglomerate into 10-100 micron particles; (5) Pump wear particles - during normal operation, pump wear rings and slipper surfaces generate 10-50 mg of wear debris per 100 hours, releasing into circulation. Hydraulic systems are particularly vulnerable because fluid circulates continuously through precision components, and the high-pressure environment prevents particle settling that would allow physical separation in lower-pressure systems.'
     },
@@ -19,7 +15,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Operational Impact',
-      content: 'Contamination-induced failures in hydraulic systems produce immediate operational impact: Equipment control becomes erratic - actuators move slowly or incompletely; proportional valves (used in load-sensing systems) develop hunting behavior (oscillation ±10-30% of commanded position) as servo valve response time increases; Material handling equipment loses smooth motion control, increasing cycle time 20-40% and safety risk. System pressure increases 10-30% as contaminated components create resistance, elevating pump load and fuel consumption 15-25%; Heat generation increases from baseline 5-10 kW to 15-25 kW in a 50 kW hydraulic system, overwhelming cooler capacity; Fluid temperature runaway occurs within 100-200 operating hours, triggering automatic shutdown or fluid vaporization in high-pressure actuators. Unplanned maintenance escalates to 1-2 events per 500 operating hours; average diagnostic and repair time is 6-12 hours due to difficulty identifying contamination as root cause (technicians often replace components without addressing contamination source). Equipment availability drops 15-30% in mobile equipment (excavators, loaders) and manufacturing machinery (presses, injection molding) that depend on hydraulic proportional control. Cost impact includes: fluid replacement (every 500-1000 hours instead of 2000-4000 hours), component replacement, extended downtime, and potential production losses ($1000-5000 per hour in manufacturing applications).'
+      content: '__LINKED_HYDRAULIC_IMPACT__',
     },
     {
       title: 'Prevention Methods',
@@ -27,7 +23,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Related Standards',
-      content: 'Hydraulic fluid cleanliness and contamination thresholds are defined by: ISO 16889 (Hydraulic fluid power systems - Fluids - Method for coding the degree of contamination by solid particles, maximum ISO 16/14/11 for most systems, 15/13/10 for proportional control); ISO 4406 (legacy cleanliness code, equivalent ISO 16889 16/14/11 ≈ ISO 4406 18/16); ASTM D7368 (methods for testing hydraulic fluid for particulate contaminants); ISO 4572 (hydraulic fluids - ISO classification by viscosity); SAE J1487 (hydraulic fluid recommended practice for color and appearance, cleanliness); ISO 11158 (industrial hydraulic oils, specifies ISO 4406 cleanliness requirements); DIN 51524 (German standard for hydraulic fluids, specifies ISO 4406 cleanliness levels); NFPA (National Fluid Power Association) T2.14 (machine tool hydraulic fluid minimum cleanliness ISO 16889 18/16/13 for standard systems, 17/15/12 for proportional control); ISO 11171 (calibration of automatic particle counters used to verify system cleanliness).'
+      content: '__LINKED_HYDRAULIC_STANDARDS__',
     },
     {
       title: 'Related Technologies',
@@ -124,12 +120,45 @@ export default function HydraulicSystemContaminationPage() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Short Definition — with internal links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            Short Definition
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            Hydraulic system contamination refers to the presence of unwanted particles, water, air, and degradation products in pressurized hydraulic fluid. The engineering principles governing this domain are defined in the{' '}
+            <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic systems standards</Link>{' '}
+            domain. Hydraulic systems operate at pressures ranging from 70-350 bar (1000-5000 psi), where component tolerances are measured in micrometers and flow velocities reach 4-6 meters per second. Contamination causes failure through three distinct pathways: mechanical blockage (particles jam valve spools or orifices), chemical degradation (water initiates corrosion and viscosity loss), and mechanical wear (particles embed in seals and precision surfaces). Hydraulic system failures progress rapidly — contamination that would cause slow degradation in low-pressure systems triggers catastrophic failure in hydraulic applications within weeks. This operational environment requires contamination control orders of magnitude more stringent than other fluid systems: maximum tolerable particle concentration is ISO 16889 16/14/11 (320 particles &gt;4µm per milliliter).
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',
@@ -146,14 +175,27 @@ export default function HydraulicSystemContaminationPage() {
             }}>
               {section.title}
             </h2>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
-              color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
-            }}>
-              {section.content}
-            </p>
+            {section.content === '__LINKED_HYDRAULIC_IMPACT__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Contamination-induced failures in hydraulic systems produce immediate operational impact: Equipment control becomes erratic — actuators move slowly or incompletely; proportional valves (used in load-sensing systems) develop hunting behavior (oscillation ±10-30% of commanded position) as servo valve response time increases; Material handling equipment loses smooth motion control, increasing cycle time 20-40% and safety risk. System pressure increases 10-30% as contaminated components create resistance, elevating pump load and fuel consumption 15-25%; Heat generation increases from baseline 5-10 kW to 15-25 kW in a 50 kW hydraulic system, overwhelming cooler capacity; Fluid temperature runaway occurs within 100-200 operating hours, triggering automatic shutdown or fluid vaporization in high-pressure actuators. Unplanned maintenance escalates to 1-2 events per 500 operating hours; average diagnostic and repair time is 6-12 hours due to difficulty identifying contamination as root cause (technicians often replace components without addressing contamination source). Equipment availability drops 15-30% in mobile equipment (excavators, loaders) and manufacturing machinery (presses, injection molding) that depend on hydraulic proportional control. Cost impact includes: fluid replacement (every 500-1000 hours instead of 2000-4000 hours), component replacement, extended downtime, and potential production losses ($1000-5000 per hour in manufacturing applications). For a full analysis of ownership costs,{' '}
+                <Link href="/knowledge-system/fleet/total-cost-ownership" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the total cost of ownership guide</Link>.
+              </p>
+            ) : section.content === '__LINKED_HYDRAULIC_STANDARDS__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Hydraulic fluid cleanliness and contamination thresholds are defined by:{' '}
+                <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
+                (Hydraulic fluid power systems — Fluids — Method for coding the degree of contamination by solid particles, maximum ISO 16/14/11 for most systems, 15/13/10 for proportional control); ISO 4406 (legacy cleanliness code, equivalent ISO 16889 16/14/11 ≈ ISO 4406 18/16); ASTM D7368 (methods for testing hydraulic fluid for particulate contaminants); ISO 4572 (hydraulic fluids — ISO classification by viscosity); SAE J1487 (hydraulic fluid recommended practice for color and appearance, cleanliness); ISO 11158 (industrial hydraulic oils, specifies ISO 4406 cleanliness requirements); DIN 51524 (German standard for hydraulic fluids, specifies ISO 4406 cleanliness levels); NFPA (National Fluid Power Association) T2.14 (machine tool hydraulic fluid minimum cleanliness ISO 16889 18/16/13 for standard systems, 17/15/12 for proportional control); ISO 11171 (calibration of automatic particle counters used to verify system cleanliness).
+              </p>
+            ) : (
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.95rem',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.8,
+              }}>
+                {section.content}
+              </p>
+            )}
           </motion.div>
         ))}
       </section>
