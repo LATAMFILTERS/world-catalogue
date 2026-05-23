@@ -331,7 +331,7 @@ export default function IndustrialFiltrationPage() {
               margin: '0 0 1rem 0',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. Measure Contamination Targets</strong><br/>
-              Define the specific ISO 4406 cleanliness code required for each system type (engine lube: 16/14/11, hydraulic: 17/15/12, fuel: 15/13/10). This becomes the measurable objective, not OEM spec compliance.
+              Define the specific ISO 4406 cleanliness code required for each system type: <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>engine lube (16/14/11)</Link>, <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic (17/15/12)</Link>, <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel (15/13/10)</Link>. This becomes the measurable objective, not OEM spec compliance.
             </p>
             <p style={{
               fontSize: '0.95rem',
@@ -596,13 +596,17 @@ export default function IndustrialFiltrationPage() {
             marginBottom: '1.5rem',
           }}>
             <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>ISO 4406:</strong> Cleanliness codes (16/14/11, 17/15/12, etc.) define target contamination levels for different equipment types. These become measurable objectives.
+              <Link href="/knowledge-system/standards/iso-4406" style={{ textDecoration: 'none' }}>
+                <strong style={{ color: '#FFF12D', cursor: 'pointer' }}>ISO 4406:</strong>
+              </Link> Cleanliness codes (16/14/11, 17/15/12, etc.) define target contamination levels for different equipment types. These become measurable objectives.
             </li>
             <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>ISO 16889:</strong> Beta ratio testing quantifies filter capture efficiency. Critical for filter selection based on contamination control, not just micron rating.
+              <Link href="/knowledge-system/standards/iso-16889" style={{ textDecoration: 'none' }}>
+                <strong style={{ color: '#FFF12D', cursor: 'pointer' }}>ISO 16889:</strong>
+              </Link> Beta ratio testing quantifies filter capture efficiency. Critical for filter selection based on contamination control, not just micron rating.
             </li>
             <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>Equipment-Specific Standards:</strong> SAE J1539 (air intake), ASTM D6304 (fuel), ISO 11155 (cabin), NFPA T2.14 (hydraulic), ISO 8573-1 (compressed air).
+              <strong style={{ color: '#FFF12D' }}>Equipment-Specific Standards:</strong> <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>SAE J1539 (air intake)</Link>, <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ASTM D6304 (fuel)</Link>, <Link href="/knowledge-system/standards/cabin-safety-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 11155 (cabin)</Link>, <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>NFPA T2.14 (hydraulic)</Link>, <Link href="/knowledge-system/standards/compressed-air-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 8573-1 (compressed air)</Link>.
             </li>
           </ul>
           <div style={{
@@ -1185,6 +1189,11 @@ export default function IndustrialFiltrationPage() {
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>INDUSTRIAL_ROLE</p>
               <p style={{ margin: '0' }}>Industrial filtration selection is the single most impactful lever for equipment reliability: system-level contamination control extends equipment lifespan 3-5x (from 5,000 hours to 15,000-25,000 hours), reduces emergency downtime 60-80%, and improves 10-year total cost of ownership by 89% compared to commodity product selection. Equipment reliability is determined almost entirely by how effectively filtration controls contamination across all six critical domains.</p>
+            </div>
+
+            <div>
+              <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
+              <p style={{ margin: '0' }}>Primary: Contamination Control Systems | Secondary: Asset Protection Systems</p>
             </div>
 
             <div style={{

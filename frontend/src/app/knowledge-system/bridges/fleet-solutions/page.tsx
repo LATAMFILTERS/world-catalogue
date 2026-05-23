@@ -296,7 +296,7 @@ export default function FleetSolutionsPage() {
               <strong style={{ color: '#FFF12D' }}>Phase 1 – Assessment:</strong> Baseline contamination condition across fleet. Particle count each equipment type in each environment. Document existing filter brands, intervals, costs.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
-              <strong style={{ color: '#FFF12D' }}>Phase 2 – Standardization:</strong> Qualify 2-3 aftermarket suppliers. Standardize on 1-2 filter options per fluid domain. Reduce SKU count by 40-60%.
+              <strong style={{ color: '#FFF12D' }}>Phase 2 – Standardization:</strong> <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Qualify 2-3 aftermarket suppliers based on contamination control metrics</Link>. Standardize on 1-2 filter options per fluid domain. Reduce SKU count by 40-60%.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
               <strong style={{ color: '#FFF12D' }}>Phase 3 – Deployment:</strong> Roll out condition-based replacement protocols. Train technicians on particle counting. Integrate replacement scheduling into maintenance management system.
@@ -330,7 +330,7 @@ export default function FleetSolutionsPage() {
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
-                30-40% average downtime reduction, 25-35% maintenance cost savings, 40-50% SKU reduction, unified contamination visibility
+                <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>30-40% average downtime reduction</Link>, 25-35% maintenance cost savings, 40-50% SKU reduction, unified contamination visibility
               </p>
             </div>
             <div style={{
@@ -492,6 +492,11 @@ export default function FleetSolutionsPage() {
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>INDUSTRIAL_ROLE</p>
               <p style={{ margin: '0' }}>Fleet-level filtration standardization reduces total operational cost 25-35% through supply chain simplification (40-50% SKU reduction), unified maintenance training, predictable downtime patterns, and economies of scale in supplier qualification. Enables fleet-wide contamination visibility for proactive maintenance.</p>
+            </div>
+
+            <div>
+              <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
+              <p style={{ margin: '0' }}>Primary: Asset Protection Systems | Secondary: Contamination Control Systems</p>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,241,45,0.15)', padding: '1rem', borderRadius: '4px', marginTop: '1rem' }}>

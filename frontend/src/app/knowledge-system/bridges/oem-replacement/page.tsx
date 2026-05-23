@@ -515,13 +515,13 @@ export default function OEMReplacementPage() {
               marginBottom: '0',
             }}>
               <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>Maintenance Interval Optimization:</strong> While using OEM filters, replace based on contamination condition (particle counting), not calendar schedule. Reduces unplanned downtime and extends component life.
+                <strong style={{ color: '#FFF12D' }}>Maintenance Interval Optimization:</strong> While using OEM filters, replace based on contamination condition (particle counting), not calendar schedule. <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Condition-based replacement reduces unplanned downtime</Link> and extends component life.
               </li>
               <li style={{ marginBottom: '1rem' }}>
                 <strong style={{ color: '#FFF12D' }}>Preventive Contamination Control:</strong> Address contamination pathways outside the filter system (air intake design, crankcase ventilation, fuel water removal, seal integrity). OEM filter effectiveness improves when contamination sources are managed.
               </li>
               <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>System-Level Integration:</strong> While respecting OEM filter requirements for warranty, integrate all six system domains (air, fuel, lube, hydraulic, cabin, compressed air) into a unified contamination control strategy.
+                <strong style={{ color: '#FFF12D' }}>System-Level Integration:</strong> While respecting OEM filter requirements for warranty, integrate all six system domains (<Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>air</Link>, <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel</Link>, <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>lube</Link>, <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic</Link>, <Link href="/knowledge-system/standards/cabin-safety-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>cabin</Link>, <Link href="/knowledge-system/standards/compressed-air-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>compressed air</Link>) into a unified contamination control strategy.
               </li>
               <li>
                 <strong style={{ color: '#FFF12D' }}>Measurement and Verification:</strong> Track particle counts and cleanliness codes to verify OEM filters are maintaining target contamination levels. If not, escalate to equipment maintenance (bypass valve check, seal inspection, air intake seal verification).
@@ -715,6 +715,11 @@ export default function OEMReplacementPage() {
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>INDUSTRIAL_ROLE</p>
               <p style={{ margin: '0' }}>OEM filter requirements define baseline equipment protection. During warranty: OEM compliance is mandatory (warranty protection). Post-warranty: specification-equivalent aftermarket filters provide identical protection at 30-50% lower cost. Performance-enhanced aftermarket (higher Beta ratio, greater dirt capacity) extends intervals and improves system performance while maintaining specification compatibility.</p>
+            </div>
+
+            <div>
+              <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
+              <p style={{ margin: '0' }}>Primary: Asset Protection Systems | Secondary: Contamination Control Systems</p>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,241,45,0.15)', padding: '1rem', borderRadius: '4px', marginTop: '1rem' }}>

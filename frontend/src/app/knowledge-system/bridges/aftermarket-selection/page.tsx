@@ -287,7 +287,7 @@ export default function AftermarketSelectionPage() {
               margin: '0 0 1rem 0',
             }}>
               <strong style={{ color: '#FFF12D' }}>3. Material Quality</strong><br/>
-              Synthetic media lasts longer in extreme temperatures. Verify media type and construction quality. Low-cost filters use cheap fiberglass media with short lifespan.
+              <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Synthetic media lasts longer in extreme temperatures</Link>. Verify media type and construction quality. Low-cost filters use cheap fiberglass media with short lifespan.
             </p>
             <p style={{
               fontSize: '0.95rem',
@@ -383,7 +383,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
             }}>
-              Quality aftermarket filters extending service intervals by 30-50% reduce emergency repairs and planned downtime by 40-60% over equipment lifetime.
+              Quality aftermarket filters extending service intervals by 30-50% <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>reduce emergency repairs and planned downtime by 40-60%</Link> over equipment lifetime.
             </p>
           </div>
         </motion.section>
@@ -521,6 +521,11 @@ export default function AftermarketSelectionPage() {
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>INDUSTRIAL_ROLE</p>
               <p style={{ margin: '0' }}>Post-warranty filtration optimization: quality aftermarket filters meeting ISO 16889 certification reduce total cost of ownership by selecting based on contamination control metrics. 30-50% cost savings vs. OEM while maintaining or exceeding equipment protection.</p>
+            </div>
+
+            <div>
+              <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
+              <p style={{ margin: '0' }}>Primary: Asset Protection Systems | Secondary: Contamination Control Systems</p>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,241,45,0.15)', padding: '1rem', borderRadius: '4px', marginTop: '1rem' }}>
