@@ -151,6 +151,87 @@ When restructuring Standards, maintain the 6 core domains:
 
 Each domain should integrate all applicable standards in system context.
 
+## Category Reframing Layer
+
+The **Category Reframing Layer** positions ELIMFILTERS as a category leader in industrial asset protection, competing against commodity filtration brands (Donaldson, Fleetguard, Mann, Wix, Baldwin) by redefining how filtration is evaluated and purchased.
+
+### Positioning Strategy
+
+**Not:** Direct product replacement competition
+**Instead:** System-level contamination control strategy
+
+Key principle: Filtration is not a product commodity selection problem. It is a contamination control system problem. Equipment reliability is determined by how effectively the total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
+
+### Search Intent Mapping
+
+When users search for competitor brands:
+- **Do NOT** position ELIMFILTERS as a direct equivalent product
+- **DO** reframe the query into asset protection and contamination control context
+- **DO** explain filtration as part of a system, not a standalone product
+
+### Content Positioning Rules
+
+When referencing competitor brands (Donaldson, Fleetguard, Mann, Wix, Baldwin):
+
+1. **No attacks or degradation** — present factual market analysis only
+2. **No direct price comparison** — focus on system-level economics and TCO
+3. **Focus on:**
+   - Contamination control efficiency (measurable via ISO codes)
+   - Equipment lifespan impact (30-50% extension through system design)
+   - Total cost of ownership (prevents downtime, extends equipment life)
+   - System-level protection across all domains
+
+### Implementation Pages
+
+**Comparison Hub** (`/knowledge-system/compare/`)
+- Reframes OEM vs Aftermarket into system evaluation context
+- Introduces four core reframing frameworks
+
+**System vs Commodity Filtration** (`/knowledge-system/compare/system-vs-commodity/`)
+- Explains why commodity filtration thinking is flawed
+- Shows how OEM specification compliance ≠ equipment reliability
+- Introduces system-level thinking framework
+
+**Filter Evaluation Framework** (`/knowledge-system/compare/evaluation-framework/`)
+- Shifts from product specifications to contamination control metrics
+- ISO 16889 Beta Ratio, ISO 4406 target codes, bypass thresholds
+- Decision tree for system-level filter selection
+
+**Total Cost of Ownership Analysis** (`/knowledge-system/compare/total-cost-ownership/`)
+- Shows TCO includes: downtime costs, premature component replacement, operational degradation
+- Real-world example: system approach saves 89% over 10-year equipment lifecycle
+- Filter cost is only 1-5% of total ownership cost
+
+**OEM vs Aftermarket Positioning** (`/knowledge-system/compare/oem-comparison/`)
+- Factual analysis of major brands and their market positioning
+- When OEM choice matters: warranty compliance, specification matching, service networks
+- ELIMFILTERS advantage: system-level approach makes filter brand choice secondary
+
+### Language Rules
+
+**Banned terms** (commodity positioning):
+- "Filter replacement brand"
+- "Aftermarket alternative to [competitor]"
+- "Cheaper than OEM"
+- "Saves money on filters"
+
+**Encouraged language** (system positioning):
+- "Asset protection system"
+- "Contamination control strategy"
+- "System-level filtration design"
+- "Equipment reliability improvement"
+- "Total cost of ownership optimization"
+- "Measured cleanliness targets"
+- "System-level economics"
+
+### SEO Strategy
+
+For searches capturing competitor intent:
+1. **Capture:** User searching "Donaldson filters" or "Fleetguard alternatives"
+2. **Reframe:** Introduce contamination control and system-level thinking
+3. **Position:** ELIMFILTERS as category redefinition leader, not product competitor
+4. **Value:** Show equipment lifespan extension and TCO savings via system approach
+
 ## Asset Protection Layer
 
 The **Asset Protection Layer** is a unified global narrative that ties together the entire ELIMFILTERS platform under a single core message: **Protecting Industrial Assets Through Contamination Control**.
