@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function ISO16889Page() {
   const sections = [
     {
-      title: '¿Qué es ISO 16889?',
-      content: 'ISO 16889 es el estándar internacional que define el método de codificación de la limpieza de fluidos hidráulicos según el grado de contaminación por partículas sólidas. Establece un sistema estandarizado de clasificación de 4 dígitos que identifica el número de partículas mayores a 4 µm, 6 µm y 14 µm por cada mililitro de fluido. Este estándar reemplazó a ISO 4406 como el código de limpieza preferido en la industria moderna, ofreciendo una metodología más precisa y confiable para la evaluación de la calidad del fluido.'
-    },
-    {
       title: '¿Para qué sirve ISO 16889?',
       content: 'ISO 16889 sirve como herramienta de comunicación universal entre proveedores de fluidos, fabricantes de equipos y operadores de máquinas. Su propósito es establecer un lenguaje común para especificar, verificar y documentar la limpieza de fluidos hidráulicos. Permite a las organizaciones definir requisitos precisos de calidad del fluido, monitorear la contaminación durante la operación, y garantizar que el fluido cumple con las especificaciones necesarias para proteger los componentes del sistema hidráulico de la degradación y el desgaste prematuro.'
     },
@@ -104,12 +100,48 @@ export default function ISO16889Page() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Section: Definition (with internal links) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            ¿Qué es ISO 16889?
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            ISO 16889 es el estándar internacional que define el método de codificación de la limpieza de fluidos hidráulicos según el grado de contaminación por partículas sólidas. Es la herramienta de medición central dentro de cualquier{' '}
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>estrategia de filtración industrial</Link>.{' '}
+            Establece un sistema estandarizado de clasificación de 4 dígitos que identifica el número de partículas mayores a 4 µm, 6 µm y 14 µm por cada mililitro de fluido. Este estándar reemplazó a{' '}
+            <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
+            como el código de limpieza preferido en la industria moderna, ofreciendo una metodología más precisa y confiable para la evaluación de la calidad del fluido. La contaminación que ISO 16889 cuantifica es la misma que impulsa el{' '}
+            <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>deterioro acelerado en sistemas hidráulicos de alta presión</Link>.
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',

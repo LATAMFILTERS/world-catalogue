@@ -154,7 +154,7 @@ export default function ReducingDowntimePage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Without systematic contamination monitoring, failure arrives without warning. An operator may observe no performance change until a threshold is crossed and a component fails completely. This is the fundamental operational challenge: contamination-induced failure is predictable in mechanism but difficult to detect without dedicated measurement programs.
+            Without systematic contamination monitoring, failure arrives without warning. An operator may observe no performance change until a threshold is crossed and a component fails completely. <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Particle wear in engines and hydraulics</Link> is the most common root mechanism linking contamination accumulation to unplanned mechanical failure. This is the fundamental operational challenge: contamination-induced failure is predictable in mechanism but difficult to detect without dedicated measurement programs.
           </p>
         </motion.section>
 
@@ -201,7 +201,7 @@ export default function ReducingDowntimePage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Beyond direct repair costs, downtime cascades into secondary losses: missed production targets, contractual penalties for delayed deliveries, emergency logistics for parts procurement, and technician overtime. In remote operations such as mining or offshore, these secondary costs often exceed the primary repair expense by a factor of two or more.
+            Beyond direct repair costs, downtime cascades into secondary losses: missed production targets, contractual penalties for delayed deliveries, emergency logistics for parts procurement, and technician overtime. Fluid cleanliness verification against <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889 Beta Ratio standards</Link> is the primary measurement tool used to establish and maintain contamination control thresholds that prevent these costs. In remote operations such as mining or offshore, secondary costs often exceed the primary repair expense by a factor of two or more.
           </p>
         </motion.section>
 

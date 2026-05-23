@@ -131,7 +131,7 @@ export default function EvaluationFrameworkPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
           }}>
-            All OEM-compliant filters meet these specifications. Yet equipment failure rates vary dramatically. Why? Because specifications define minimum requirements, not system-level performance.
+            All OEM-compliant filters meet these specifications. Yet equipment failure rates vary dramatically. Why? Because specifications define minimum requirements, not system-level performance. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design framework</Link> provides the foundation for understanding what measurable contamination control actually requires.
           </p>
         </motion.section>
 
@@ -168,7 +168,7 @@ export default function EvaluationFrameworkPage() {
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
           }}>
-            System-level filter evaluation focuses on measurable contamination control:
+            System-level filter evaluation focuses on measurable contamination control. The <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 particle cleanliness code</Link> is the primary classification tool that quantifies whether a filter system is actually achieving its target in operating equipment:
           </p>
           <div style={{
             display: 'grid',
@@ -495,7 +495,7 @@ export default function EvaluationFrameworkPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
-              This framework shifts decision-making from brand recognition and price competition to measurable contamination control:
+              This framework shifts decision-making from brand recognition and price competition to measurable contamination control. Applying these metrics produces direct improvements in <Link href="/knowledge-system/fleet/total-cost-ownership" style={{ color: '#FFF12D', textDecoration: 'underline' }}>total cost of ownership</Link>, since service intervals driven by measured contamination loads replace fixed calendar schedules that may be too early or dangerously late:
             </p>
             <ul style={{
               fontSize: '1rem',

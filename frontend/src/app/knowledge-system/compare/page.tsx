@@ -113,7 +113,7 @@ export default function ComparisonHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            Industrial filtration has been marketed as a commodity product category. Purchase decisions are driven by brand name recognition, OEM specification alignment, and price competition between Donaldson, Fleetguard, Mann, Wix, Baldwin, and aftermarket suppliers.
+            Industrial filtration has been marketed as a commodity product category. Purchase decisions are driven by brand name recognition, OEM specification alignment, and price competition between Donaldson, Fleetguard, Mann, Wix, Baldwin, and aftermarket suppliers. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration selection</Link> framework explains why this product-first approach systematically underperforms a system-level contamination control strategy.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -130,7 +130,7 @@ export default function ComparisonHubPage() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
           }}>
-            This framework explains why system-level thinking changes equipment reliability, extends asset lifespan, and reduces total cost of ownership—regardless of which physical filter products are installed.
+            This framework explains why <Link href="/knowledge-system/compare/system-vs-commodity" style={{ color: '#FFF12D', textDecoration: 'underline' }}>system vs commodity thinking</Link> changes equipment reliability, extends asset lifespan, and reduces total cost of ownership—regardless of which physical filter products are installed.
           </p>
         </motion.div>
       </section>

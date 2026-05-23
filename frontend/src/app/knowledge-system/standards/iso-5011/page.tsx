@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function ISO5011Page() {
   const sections = [
     {
-      title: '¿Qué es ISO 5011?',
-      content: 'ISO 5011 es el estándar internacional que define el procedimiento de prueba para la verificación de la integridad y el colapso del medio filtrante en filtros hidráulicos. Este estándar especifica métodos precisos para probar que un elemento de filtro puede retener partículas de un tamaño específico sin permitir que el fluido pase alrededor de los lados del elemento (bypass) bajo condiciones de presión diferencial extrema. ISO 5011 es crucial porque garantiza que los elementos de filtro cumplan con sus especificaciones de retención de partículas y no fallarán catastróficamente cuando se exponen a presiones diferenciales elevadas que pueden ocurrir durante la operación normal o en situaciones de emergencia.'
-    },
-    {
       title: '¿Para qué sirve ISO 5011?',
       content: 'ISO 5011 sirve como el estándar de prueba que garantiza la calidad y la confiabilidad de los elementos de filtro hidráulico. Su propósito es proporcionar un método reproducible y estandarizado para verificar que un elemento de filtro puede retener adecuadamente las partículas bajo presiones diferenciales extremas sin colapsar o desarrollar fugas. Los fabricantes de filtros utilizan ISO 5011 para certificar que sus productos cumplen con las especificaciones de retención, y los compradores utilizan este estándar para validar que los filtros que adquieren proporcionarán la protección esperada. Los procedimientos de prueba ISO 5011 incluyen la "prueba de integridad", donde se aplica aire comprimido para detectar puntos de fuga, y la "prueba de colapso", donde se incrementa gradualmente la presión diferencial hasta que el elemento falla.'
     },
@@ -104,12 +100,48 @@ export default function ISO5011Page() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Section: Definition (with internal links) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            ¿Qué es ISO 5011?
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            ISO 5011 es el estándar internacional que define el procedimiento de prueba para la verificación de la integridad y el colapso del medio filtrante en filtros de aire industriales, complementando los requisitos del dominio de{' '}
+            <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de admisión de aire</Link>.{' '}
+            Este estándar especifica métodos precisos para probar que un elemento de filtro puede retener partículas de un tamaño específico sin permitir que el fluido pase alrededor de los lados del elemento (bypass) bajo condiciones de presión diferencial extrema. ISO 5011 es crucial porque garantiza que los elementos de filtro cumplan con sus especificaciones de retención de partículas y no fallarán catastróficamente cuando se exponen a presiones diferenciales elevadas que pueden ocurrir durante la operación normal o en situaciones de emergencia. La clasificación de tamaño de partículas retenidas sigue el marco de{' '}
+            <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
+            para asegurar coherencia entre los distintos dominios de filtración. Los filtros que no superan las pruebas ISO 5011 permiten el paso de partículas abrasivas que causan{' '}
+            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>desgaste acelerado en componentes internos de motores</Link>.
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',

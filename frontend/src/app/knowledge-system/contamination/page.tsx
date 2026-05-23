@@ -88,6 +88,29 @@ export default function ContaminationHubPage() {
         </motion.div>
       </section>
 
+      {/* Intro Context */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ maxWidth: '900px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            Contamination is the primary driver of industrial equipment failure. Understanding how specific contaminants enter systems and degrade components is the foundation of effective asset protection. Case studies such as <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>particle wear in engines</Link> document the abrasive wear progression that reduces bearing life from 15,000+ hours to under 3,000 hours when contamination control fails. These failure mechanisms are governed by measurement standards outlined in the <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>lube oil filtration systems</Link> domain.
+          </p>
+        </motion.div>
+      </section>
+
       {/* Contamination Types List */}
       <section style={{
         maxWidth: '1100px',

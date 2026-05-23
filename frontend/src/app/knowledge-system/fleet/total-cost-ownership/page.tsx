@@ -137,13 +137,13 @@ export default function TotalCostOwnershipPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
           }}>
-            Total Cost of Ownership (TCO) in filtration is the complete economic accounting of a filtration program across its full lifecycle - from filter element procurement through fluid disposal, including all associated labor, the downstream effects on component longevity, and the economic value of avoided failures.
+            Total Cost of Ownership (TCO) in filtration is the complete economic accounting of a filtration program across its full lifecycle - from filter element procurement through fluid disposal, including all associated labor, the downstream effects on component longevity, and the economic value of avoided failures. Establishing cleanliness targets through <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link> is the foundation of any defensible TCO model.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Purchase price is the most visible filtration cost but rarely the most significant one. In most industrial applications, the ratio of filter element cost to total filtration program cost is between 1:4 and 1:8. Labor for service events, oil analysis programs, fluid costs, and avoided component replacement represent the dominant cost categories that TCO modeling must capture to support sound procurement decisions.
+            Purchase price is the most visible filtration cost but rarely the most significant one. In most industrial applications, the ratio of filter element cost to total filtration program cost is between 1:4 and 1:8. Labor for service events, oil analysis programs, fluid costs, and avoided component replacement represent the dominant cost categories that TCO modeling must capture to support sound procurement decisions. The financial case is developed further in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, where unplanned failure costs are quantified.
           </p>
         </motion.section>
 
@@ -173,7 +173,7 @@ export default function TotalCostOwnershipPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
           }}>
-            A filter element specification change that reduces unit cost by 25% but decreases service interval from 500 hours to 350 hours increases annual element consumption by 43% - erasing the unit price saving before accounting for additional service labor. If the lower-efficiency element also allows ISO cleanliness levels to rise by one code, the resulting 2x increase in particle concentration accelerates bearing wear rates and potentially reduces component service life, shifting major overhaul costs forward by months or years.
+            A filter element specification change that reduces unit cost by 25% but decreases service interval from 500 hours to 350 hours increases annual element consumption by 43% - erasing the unit price saving before accounting for additional service labor. If the lower-efficiency element also allows <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO cleanliness levels</Link> to rise by one code, the resulting 2x increase in particle concentration accelerates bearing wear rates and potentially reduces component service life, shifting major overhaul costs forward by months or years.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',

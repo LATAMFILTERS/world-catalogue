@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const STANDARDS = [
-  { code: 'ISO 16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
+  { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
   { code: 'NFPA T2.14', desc: 'Machine tool hydraulic fluids standard specifying ISO 18/16/13 minimum cleanliness for proportional control valve systems.' },
   { code: 'DIN 51524', desc: 'Hydraulic fluid specification defining viscosity grades, oxidation stability, and contamination tolerance limits for industrial systems.' },
   { code: 'ISO 4406', desc: 'Legacy particle count code applicable to older hydraulic equipment and for historical data compatibility.' },
@@ -78,7 +78,7 @@ export default function HydraulicSystemsPage() {
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>01 / SYSTEM OVERVIEW</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Hydraulic System Filtration Domain</h2>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Hydraulic systems operate at pressures of 70 to 350 bar with component tolerances measured in microns. Unlike oil circulation systems where wear debris recirculates, hydraulic systems cannot tolerate any contamination without risking precision control valve damage. Proportional valves - common in construction, manufacturing, and mobile equipment - require ISO 16/14/11 cleanliness (or tighter) to maintain accuracy within required dead-band tolerances.
+            Hydraulic systems operate at pressures of 70 to 350 bar with component tolerances measured in microns. Unlike oil circulation systems where wear debris recirculates, hydraulic systems cannot tolerate any contamination without risking precision control valve damage. Proportional valves - common in construction, manufacturing, and mobile equipment - require ISO 16/14/11 cleanliness (or tighter) to maintain accuracy within required dead-band tolerances. Hydraulic system contamination control is one of the six critical domains within the <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems framework</Link>.
           </p>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
             A typical construction excavator hydraulic system circulates 40 to 100 liters per minute through proportional spools with 5-20 micron clearances. Any particle contamination above ISO 16/14/11 causes speed instability, reduced boom control precision, and eventual valve stiction where the spool locks in position.
@@ -103,6 +103,9 @@ export default function HydraulicSystemsPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginTop: '1.5rem' }}>
+            Valve stiction, orifice blockage, and pump wear resulting from these contamination sources are examined in detail in the <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic system contamination analysis</Link>, including swashplate binding and seal extrusion failure modes.
+          </p>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
@@ -113,7 +116,13 @@ export default function HydraulicSystemsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {STANDARDS.map((std) => (
               <div key={std.code} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '1.25rem', padding: '1rem 1.25rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                {std.href ? (
+                  <Link href={std.href} style={{ textDecoration: 'none' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D', textDecoration: 'underline' }}>{std.code}</span>
+                  </Link>
+                ) : (
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                )}
                 <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.55 }}>{std.desc}</span>
               </div>
             ))}

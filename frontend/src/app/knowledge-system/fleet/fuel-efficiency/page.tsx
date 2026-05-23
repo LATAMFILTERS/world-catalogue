@@ -118,7 +118,7 @@ export default function FuelEfficiencyPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Contamination in fuel, air intake, and engine oil systems is a direct and quantifiable driver of SFC increase. Each system contributes independently: fuel contamination degrades injection precision, restricted air intake reduces volumetric efficiency, contaminated oil increases internal friction losses. A fleet operating all three systems with degraded filtration compounds these losses, producing total fuel consumption increases of 8 to 18% relative to clean-system baselines.
+            Contamination in fuel, air intake, and engine oil systems is a direct and quantifiable driver of SFC increase. Each system contributes independently: fuel contamination degrades injection precision, restricted air intake reduces volumetric efficiency, contaminated oil increases internal friction losses. Proper management of <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel filtration systems</Link> is the primary lever for preserving injection efficiency. A fleet operating all three systems with degraded filtration compounds these losses, producing total fuel consumption increases of 8 to 18% relative to clean-system baselines.
           </p>
         </motion.section>
 
@@ -148,13 +148,13 @@ export default function FuelEfficiencyPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
           }}>
-            Individual operators rarely observe this trend because it occurs below the threshold of perceptual detection. A 1% weekly consumption increase produces a 5% increase over a month - significant at fleet scale but invisible to an operator managing daily production targets. Only systematic fuel consumption tracking at the individual equipment level against historical baselines makes this degradation visible before it becomes severe.
+            Individual operators rarely observe this trend because it occurs below the threshold of perceptual detection. A 1% weekly consumption increase produces a 5% increase over a month - significant at fleet scale but invisible to an operator managing daily production targets. <Link href="/knowledge-system/contamination/diesel-water" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Diesel water contamination</Link> accelerates this efficiency loss by degrading injector spray geometry and triggering microbial growth that blocks fuel system passages. Only systematic fuel consumption tracking at the individual equipment level against historical baselines makes this degradation visible before it becomes severe.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Fleet managers face the additional challenge that equipment operating in different duty cycles and ambient conditions will show different consumption profiles, making normalized comparison between units difficult without telemetry systems that track load factor and ambient temperature alongside fuel quantity.
+            Fleet managers face the additional challenge that equipment operating in different duty cycles and ambient conditions will show different consumption profiles, making normalized comparison between units difficult without telemetry systems that track load factor and ambient temperature alongside fuel quantity. Particle cleanliness verification using <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 classification codes</Link> provides the objective baseline data required for meaningful fleet-level comparisons.
           </p>
         </motion.section>
 

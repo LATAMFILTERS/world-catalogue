@@ -122,7 +122,7 @@ export default function BridgesHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            These pages bridge that product-selection thinking into system-level design. They reframe the filtration decision from "which filter product" into "how do we achieve contamination control and equipment asset protection?"
+            These pages bridge that product-selection thinking into system-level design. They reframe the filtration decision from "which filter product" into "how do we achieve contamination control and equipment asset protection?" The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Industrial Filtration Selection</Link> framework provides the foundational model for evaluating filtration across all application domains.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -130,7 +130,7 @@ export default function BridgesHubPage() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
           }}>
-            Each page follows the same decision model: understand the traditional approach, identify its limitations, introduce system-level thinking, map technologies to application domains, and integrate relevant standards. The result is a framework for filtration decision-making that optimizes for equipment reliability and lifecycle cost, not product commodity selection.
+            Each page follows the same decision model: understand the traditional approach, identify its limitations, introduce system-level thinking, map technologies to application domains, and integrate relevant standards. The result is a framework for filtration decision-making that optimizes for equipment reliability and lifecycle cost, not product commodity selection. Fleet operations applying this approach can achieve measurable reductions in unplanned stoppages—see <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Reducing Fleet Downtime</Link> for operational impact analysis.
           </p>
         </motion.div>
       </section>

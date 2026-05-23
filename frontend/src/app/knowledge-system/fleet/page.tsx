@@ -88,6 +88,29 @@ export default function FleetHubPage() {
         </motion.div>
       </section>
 
+      {/* Intro Context */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ maxWidth: '900px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            Fleet reliability is a direct function of contamination control across all critical systems. Strategies for <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>reducing fleet downtime</Link> begin with understanding failure mechanisms documented in the <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration selection</Link> framework—where equipment protection requirements are defined before product decisions are made.
+          </p>
+        </motion.div>
+      </section>
+
       {/* Topics Grid */}
       <section style={{
         maxWidth: '1100px',

@@ -7,7 +7,7 @@ const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
   { code: 'ASTM D975', desc: 'Standard specification for diesel fuel, defining upper limits on water, sediment, and contamination levels acceptable for engine fuel systems.' },
   { code: 'ISO 12937', desc: 'Determination of water content in petroleum products by Karl Fischer method, complementing ASTM D6304 for international compliance.' },
-  { code: 'ISO 4406', desc: 'Particle count classification for fuel system cleanliness, providing legacy cleanliness codes applicable to diesel and biodiesel systems.' },
+  { code: 'ISO 4406', href: '/knowledge-system/standards/iso-4406', desc: 'Particle count classification for fuel system cleanliness, providing legacy cleanliness codes applicable to diesel and biodiesel systems.' },
 ];
 
 const TECHNOLOGIES = [
@@ -115,6 +115,9 @@ export default function FuelSystemsPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginTop: '1.5rem' }}>
+            Water contamination is the dominant fuel system failure pathway. The corrosion mechanisms, microbial proliferation chain, and injector damage progression are examined in detail in the <Link href="/knowledge-system/contamination/diesel-water" style={{ color: '#FFF12D', textDecoration: 'underline' }}>diesel water contamination case study</Link>.
+          </p>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
@@ -125,7 +128,13 @@ export default function FuelSystemsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {STANDARDS.map((std) => (
               <div key={std.code} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '1.25rem', padding: '1rem 1.25rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                {std.href ? (
+                  <Link href={std.href} style={{ textDecoration: 'none' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D', textDecoration: 'underline' }}>{std.code}</span>
+                  </Link>
+                ) : (
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                )}
                 <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.55 }}>{std.desc}</span>
               </div>
             ))}
@@ -145,6 +154,9 @@ export default function FuelSystemsPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+            Fuel system contamination directly reduces equipment availability and increases unplanned maintenance costs. Fleet operators managing contamination proactively through two-stage filtration and water separation can extend injector service intervals 3-5x. For fleet-level strategies on reducing fuel-related downtime, see the <Link href="/knowledge-system/fleet/fuel-efficiency" style={{ color: '#FFF12D', textDecoration: 'underline' }}>filtration and fuel efficiency optimization guide</Link>.
+          </p>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />

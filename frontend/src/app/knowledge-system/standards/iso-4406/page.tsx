@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function ISO4406Page() {
   const sections = [
     {
-      title: '¿Qué es ISO 4406?',
-      content: 'ISO 4406 es el estándar internacional que define el método para evaluar la limpieza de muestras líquidas en sistemas hidráulicos, desarrollado en la década de 1970. Utiliza un código de limpieza de 2-3 dígitos que clasifica la contaminación particularada en un fluido según el número de partículas mayores a 4 µm y 6 µm por cada mililitro. Aunque ha sido ampliamente reemplazado por ISO 16889 en aplicaciones modernas, ISO 4406 sigue siendo un estándar importante en la industria y es fundamental para comprender la historia de la clasificación de limpieza de fluidos hidráulicos. Muchos equipos más antiguos aún especifican sus requisitos de limpieza usando códigos ISO 4406.'
-    },
-    {
       title: '¿Para qué sirve ISO 4406?',
       content: 'ISO 4406 sirve como un sistema de clasificación simplificado para comunicar el estado de limpieza de un fluido hidráulico entre proveedores y usuarios. Su propósito es permitir que diferentes partes identifiquen rápidamente si un fluido cumple con los requisitos mínimos de limpieza para una aplicación específica. El estándar proporciona una metodología para el conteo de partículas y la clasificación de fluidos según dos categorías de tamaño de partículas, facilitando una comunicación consistente sobre la calidad del fluido. Aunque menos preciso que ISO 16889, ISO 4406 sigue siendo útil para propósitos generales de mantenimiento y comparación de fluidos.'
     },
@@ -104,12 +100,48 @@ export default function ISO4406Page() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Section: Definition (with internal links) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            ¿Qué es ISO 4406?
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            ISO 4406 es el estándar internacional que define el método para evaluar la limpieza de muestras líquidas en{' '}
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de filtración industrial</Link>,
+            desarrollado en la década de 1970. Utiliza un código de limpieza de 2-3 dígitos que clasifica la contaminación particularada en un fluido según el número de partículas mayores a 4 µm y 6 µm por cada mililitro. Aunque ha sido ampliamente reemplazado por{' '}
+            <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
+            en aplicaciones modernas, ISO 4406 sigue siendo un estándar importante en la industria y es fundamental para comprender la historia de la clasificación de limpieza de fluidos hidráulicos. Muchos equipos más antiguos aún especifican sus requisitos de limpieza usando códigos ISO 4406. La contaminación particularada que este estándar cuantifica es la causa primaria del{' '}
+            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>desgaste abrasivo en motores y componentes hidráulicos</Link>.
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',

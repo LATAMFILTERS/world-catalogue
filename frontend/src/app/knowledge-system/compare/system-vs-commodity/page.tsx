@@ -195,7 +195,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
           }}>
-            Equipment reliability is determined by the effectiveness of the total contamination control system, not by which branded filter element is installed.
+            Equipment reliability is determined by the effectiveness of the total contamination control system, not by which branded filter element is installed. Understanding <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration as an integrated system</Link> is the prerequisite for moving beyond commodity thinking.
           </p>
         </motion.section>
 
@@ -265,7 +265,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
           }}>
-            Each system is designed around specific contamination challenges and measurement standards. The filter product is an implementation detail, not the strategy.
+            Each system is designed around specific contamination challenges and measurement standards, with <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889 Beta Ratio testing</Link> providing the core measurement basis for evaluating how well any filter actually controls contamination. The filter product is an implementation detail, not the strategy.
           </p>
         </motion.section>
 
@@ -405,7 +405,7 @@ export default function SystemVsCommodityPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
-              When filtration is treated as a commodity, organizations accept preventable equipment failures:
+              When filtration is treated as a commodity, organizations accept preventable equipment failures. The <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction framework</Link> quantifies the operational and cost consequences of contamination-driven failures across industrial equipment types:
             </p>
             <ul style={{
               fontSize: '1rem',

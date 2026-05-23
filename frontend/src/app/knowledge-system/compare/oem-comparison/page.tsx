@@ -138,7 +138,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
           }}>
-            Many OEM-specified filters are high-quality products. But specification compliance and product quality are separate dimensions. A high-quality Donaldson filter installed with commodity maintenance practices will fail to maintain contamination control. An equivalent quality aftermarket filter installed as part of a system-level contamination control strategy will outperform commodity practice.
+            Many OEM-specified filters are high-quality products. But specification compliance and product quality are separate dimensions. A high-quality Donaldson filter installed with commodity maintenance practices will fail to maintain contamination control. Understanding the <Link href="/knowledge-system/bridges/oem-replacement" style={{ color: '#FFF12D', textDecoration: 'underline' }}>OEM replacement context</Link> clarifies when brand choice is a compliance issue versus when system design is the controlling variable. An equivalent quality aftermarket filter installed as part of a system-level contamination control strategy will outperform commodity practice.
           </p>
         </motion.section>
 
@@ -341,7 +341,7 @@ export default function OEMComparisonPage() {
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
           }}>
-            Outside these specific constraints, OEM brand choice has minimal impact on actual equipment performance when:
+            Outside these specific constraints, OEM brand choice has minimal impact on actual equipment performance. The operational consequences of this distinction are quantified in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, which shows how system design — not brand selection — drives availability outcomes. Performance is governed by:
           </p>
           <ul style={{
             fontSize: '1rem',
@@ -410,7 +410,7 @@ export default function OEMComparisonPage() {
                 <strong style={{ color: '#FFF12D' }}>Measurement-Based Service:</strong> Particle counting data replaces calendar-based intervals. Works with any OEM-compliant filter product, Donaldson or aftermarket.
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
-                <strong style={{ color: '#FFF12D' }}>Specification Optimization:</strong> Recommends filter specifications based on actual contamination loads, not OEM default. May recommend equivalent quality aftermarket filters if specifications are superior.
+                <strong style={{ color: '#FFF12D' }}>Specification Optimization:</strong> Recommends filter specifications based on actual contamination loads, not OEM default. The <Link href="/knowledge-system/bridges/aftermarket-selection" style={{ color: '#FFF12D', textDecoration: 'underline' }}>aftermarket selection framework</Link> provides the evaluation criteria for identifying when non-OEM elements meet or exceed specification requirements.
               </li>
               <li style={{ marginBottom: '0.75rem' }}>
                 <strong style={{ color: '#FFF12D' }}>Total Cost of Ownership Clarity:</strong> Shows how system investment reduces downtime, extends equipment life, and optimizes operational cost. Makes filter commodity choice irrelevant to business outcome.

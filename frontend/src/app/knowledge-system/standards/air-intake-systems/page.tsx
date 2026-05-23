@@ -111,6 +111,9 @@ export default function AirIntakeSystemsPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginTop: '1.5rem' }}>
+            Abrasive particle ingestion through air intake pathways is the primary driver of engine wear. The full failure mechanism — including three-body abrasion, bearing surface damage, and clearance reduction — is documented in the <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>particle wear in engines contamination analysis</Link>.
+          </p>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />

@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function ParticleWearPage() {
   const sections = [
     {
-      title: 'Short Definition',
-      content: 'Particle wear in engines is the accelerated material removal from bearing surfaces, piston rings, cylinder walls, and fuel injector components caused by the presence of hard abrasive particles in combustion byproducts, fuel, and engine oil. Particulate contamination originates from three sources: external ingestion (atmospheric dust, sand) that bypasses air filtration, internal generation (combustion carbon, metal oxidation debris, wear particles), and fuel-borne contaminants (industrial dust, storage tank corrosion products, sulfur oxides from combustion). Particle size ranges from 5-100 microns; those >10 microns initiate visible wear patterns, while <5 micron particles cause progressive surface degradation. The interaction between particles and metal surfaces operates through three distinct wear mechanisms that compound over equipment life.'
-    },
-    {
       title: 'How Contamination Happens',
       content: 'Particle contamination enters engines through: (1) Air intake - atmospheric dust concentrations vary from 10-500 mg/m³ depending on climate and operational environment; desert operations exceed 1000 mg/m³; conventional air filters (5-10 micron) capture 85-95%, allowing 5-50 mg/m³ penetration into engine; (2) Fuel system - diesel fuel delivery from storage and transfer systems introduces 50-500 particles/mL, with 30-40% in the 10-50 micron range; fuel quality degrades during storage through oxidation and tank corrosion; (3) Internal generation - combustion produces 200-500 mg of particulates per liter of fuel burned; normal combustion generates incomplete oxidation products, soot agglomerates, and organic polymers that settle in oil; (4) Oil circulation - oil collects contamination during operation and carries particles throughout bearing surfaces, piston rings, and valve trains; oil viscosity changes with temperature, altering particle suspension characteristics. In high-dust environments (agriculture, mining, construction), contamination rates can reach 1-5g per 100 operating hours without filtration.'
     },
@@ -19,7 +15,7 @@ export default function ParticleWearPage() {
     },
     {
       title: 'Operational Impact',
-      content: 'Particle-induced wear produces measurable operational degradation: Oil consumption increases 15-40% as wear widens ring clearances and increases blow-by; Engine blow-by increases from <1% to 5-10% of intake air volume, reducing combustion efficiency and elevating crankcase pressure; Fuel economy deteriorates 5-12% as increased friction losses and combustion inefficiency require higher fuel rates; Compression pressure drops 10-25%, reducing cold-start capability and full-load power output; Oil viscosity increases faster than normal (1.5-2× standard oxidation rate) due to contamination-induced viscosity shear; Wear debris concentration in oil reaches 100-500 mg/L within 250-500 hours (normal limit: 20-50 mg/L), triggering unplanned oil changes; Filter bypass events occur when particulate loading exceeds filter capacity within 50-75% of normal service interval; Engine noise increases 3-6 dB as bearing clearances widen and piston slap develops; Unplanned maintenance requirement rises to one event per 500-750 operating hours in contaminated environments. Equipment availability drops 15-25% in agricultural and construction applications operating in high-dust zones.'
+      content: '__LINKED_OPERATIONAL_IMPACT__',
     },
     {
       title: 'Prevention Methods',
@@ -27,7 +23,7 @@ export default function ParticleWearPage() {
     },
     {
       title: 'Related Standards',
-      content: 'Particle contamination thresholds and detection methods are defined by: ISO 4406 and ISO 16889 (particle cleanliness codes defining maximum allowable 4µm, 6µm, and 14µm particles in hydraulic/fuel systems); ASTM D7085 (wear metals content by inductively coupled plasma spectroscopy, quantifies Fe, Cu, Pb, Cr, Al, Ni, Sn from bearing alloys and steel); ASTM D7364 (particle count and distribution by laser particle counter); ISO 4572 (engine oil viscosity classification and particle size thresholds); SAE J1211 (engine oil analysis procedures); SAE J1539 (diesel engine air intake cleanliness classification, defines maximum inlet contamination for various application categories); ISO 11158 (diesel engine oil specification, includes particle content limits for ISO 4406 16/14/11 minimum); NFPA T2.14 (machine tool hydraulic fluid requirements, establishes ISO 16889 18/16/13 minimum cleanliness).'
+      content: '__LINKED_RELATED_STANDARDS__',
     },
     {
       title: 'Related Technologies',

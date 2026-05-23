@@ -119,7 +119,7 @@ export default function TCOPage() {
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
           }}>
-            But total cost of ownership includes hidden costs that commodity pricing completely ignores:
+            But total cost of ownership includes hidden costs that commodity pricing completely ignores. The foundations of a sound TCO model are explained through the lens of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link>, where contamination control is treated as an engineering measurable rather than a procurement variable:
           </p>
           <div style={{
             background: 'rgba(255,0,0,0.08)',
@@ -134,7 +134,7 @@ export default function TCOPage() {
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
-              <strong style={{ color: '#FF6B6B' }}>Unscheduled Downtime:</strong> When filter bypass occurs or contamination accelerates wear, equipment stops. Downtime costs are typically <strong>3-5x higher than filter replacement cost</strong>.
+              <strong style={{ color: '#FF6B6B' }}>Unscheduled Downtime:</strong> When filter bypass occurs or contamination accelerates wear, equipment stops. The mechanisms and cost multipliers are documented in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>. Downtime costs are typically <strong>3-5x higher than filter replacement cost</strong>.
             </p>
           </div>
           <div style={{
@@ -150,7 +150,7 @@ export default function TCOPage() {
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
-              <strong style={{ color: '#FF6B6B' }}>Accelerated Wear:</strong> Contamination bypass (as low as 10% bypass) increases engine wear 50-80%, hydraulic varnish causes 20-50% efficiency loss. Component replacement occurs <strong>30-50% earlier than design life</strong>.
+              <strong style={{ color: '#FF6B6B' }}>Accelerated Wear:</strong> Contamination bypass (as low as 10% bypass) increases engine wear 50-80%, hydraulic varnish causes 20-50% efficiency loss. The particle-level failure mechanisms are documented in the <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>particle wear contamination case study</Link>. Component replacement occurs <strong>30-50% earlier than design life</strong>.
             </p>
           </div>
           <div style={{
