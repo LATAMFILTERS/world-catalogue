@@ -15,7 +15,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Operational Impact',
-      content: 'Water-contaminated diesel causes immediate and measurable operational degradation: Hard starting increases by 5-15 seconds during cold ambient operation; Fuel consumption increases 3-8% as water-induced combustion inefficiency requires longer burn times; Injector cleaning intervals compress from 8,000 hours to 2,000-3,000 hours of operation, with each cleaning event adding 4-8 hours of downtime; Particulate emissions increase 40-60% as incomplete combustion produces excessive soot; Unplanned maintenance events average one per 500-1000 operating hours when water content exceeds 500 ppm; Equipment availability drops 12-18% due to intermittent fuel system faults; Fuel tank replacement becomes necessary after 18-24 months of chronic water exposure, representing 15-25% of annual fuel management budget in marine and outdoor equipment fleets.'
+      content: '__LINKED_DIESEL_IMPACT__',
     },
     {
       title: 'Prevention Methods',
