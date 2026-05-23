@@ -121,7 +121,7 @@ export default function KnowledgeSystemPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            The ELIMFILTERS Knowledge System explains how industrial assets fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection.
+            The ELIMFILTERS Knowledge System explains how <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems</Link> fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection. Operational strategies such as <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>reducing fleet downtime</Link> begin with understanding the contamination root causes that drive unplanned equipment failures.
           </p>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',

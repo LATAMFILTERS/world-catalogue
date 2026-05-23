@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const STANDARDS = [
-  { code: 'ISO 16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
-  { code: 'ISO 4406', desc: 'Legacy 2-3 digit code (19/17) providing historical continuity with automotive and pre-2000 industrial equipment.' },
+  { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
+  { code: 'ISO 4406', href: '/knowledge-system/standards/iso-4406', desc: 'Legacy 2-3 digit code (19/17) providing historical continuity with automotive and pre-2000 industrial equipment.' },
   { code: 'SAE J1211', desc: 'Engine oil filtration performance standard defining bypass valve pressure limits (typically 3-5 bar) and element collapse thresholds.' },
   { code: 'ASTM D7085', desc: 'Particle counting methodology for in-service oil analysis providing quantitative wear debris classification and trending.' },
 ];
@@ -118,7 +118,7 @@ export default function LubeOilSystemsPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
           }}>
-            Engine oil filtration systems protect internal combustion engines from wear particle accumulation. During combustion, abrasive particles from air intake, fuel injection, and internal wear processes enter the crankcase and circulate through engine oil. Bearing surfaces operating at pressures of 40 to 100 bar with clearances of 25 to 75 microns cannot tolerate particle contamination above critical thresholds without accelerated wear.
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Engine oil filtration systems protect internal combustion engines from wear particle accumulation</Link> by controlling contamination within measurable ISO cleanliness targets. During combustion, abrasive particles from air intake, fuel injection, and internal wear processes enter the crankcase and circulate through engine oil. Bearing surfaces operating at pressures of 40 to 100 bar with clearances of 25 to 75 microns cannot tolerate particle contamination above critical thresholds without accelerated wear.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
@@ -156,7 +156,7 @@ export default function LubeOilSystemsPage() {
               },
               {
                 title: 'Bearing and Ring Wear Debris',
-                desc: 'Early-stage abrasion from micro-contact between bearing surfaces and journals generates ferrous and non-ferrous wear particles. This initial wear increases surface roughness, which accelerates subsequent wear rates exponentially.',
+                desc: 'Early-stage abrasion from micro-contact between bearing surfaces and journals generates ferrous and non-ferrous wear particles. This initial wear increases surface roughness, which accelerates subsequent wear rates exponentially. See the detailed analysis of how particle contamination causes bearing failure.',
               },
               {
                 title: 'Water and Acid Accumulation',
@@ -205,10 +205,19 @@ export default function LubeOilSystemsPage() {
                 border: '1px solid rgba(255,255,255,0.06)',
                 alignItems: 'start',
               }}>
-                <span style={{
-                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem',
-                  fontWeight: 600, color: '#FFF12D',
-                }}>{std.code}</span>
+                {std.href ? (
+                  <Link href={std.href} style={{ textDecoration: 'none' }}>
+                    <span style={{
+                      fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem',
+                      fontWeight: 600, color: '#FFF12D', textDecoration: 'underline',
+                    }}>{std.code}</span>
+                  </Link>
+                ) : (
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem',
+                    fontWeight: 600, color: '#FFF12D',
+                  }}>{std.code}</span>
+                )}
                 <span style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.55,
@@ -256,7 +265,7 @@ export default function LubeOilSystemsPage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            Operating above ISO 18/16/13 oil cleanliness threshold for extended periods accelerates these degradation modes. An engine operating at ISO 19/17/14 (one code step higher) experiences roughly 2x the particle concentration at each size class, driving wear rates forward by 3 to 5 years in service life compression.
+            Operating above ISO 18/16/13 oil cleanliness threshold for extended periods accelerates these degradation modes. An engine operating at ISO 19/17/14 (one code step higher) experiences roughly 2x the particle concentration at each size class, driving wear rates forward by 3 to 5 years in service life compression. These cumulative effects directly drive unplanned downtime — see <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction strategies</Link> for operational response frameworks.
           </p>
         </motion.section>
 

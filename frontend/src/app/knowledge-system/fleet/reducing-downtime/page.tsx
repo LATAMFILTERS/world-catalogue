@@ -118,7 +118,7 @@ export default function ReducingDowntimePage() {
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
-            In contamination engineering, downtime is primarily driven by accelerated component degradation: bearing surfaces worn beyond tolerance, injectors losing calibration, hydraulic valves developing stiction from particulate accumulation. These failure pathways share a common origin - fluid contamination that exceeds the protection capacity of installed filtration systems.
+            In contamination engineering, downtime is primarily driven by accelerated component degradation: bearing surfaces worn beyond tolerance, injectors losing calibration, hydraulic valves developing stiction from particulate accumulation. These failure pathways share a common origin - fluid contamination that exceeds the protection capacity of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems</Link>.
           </p>
         </motion.section>
 

@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 const STANDARDS = [
   { code: 'SAE J1539', desc: 'Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air to preserve engine efficiency and bearing life.' },
-  { code: 'ISO 5011', desc: 'Filter element integrity testing covering element collapse and bypass verification procedures ensuring air filtration performance meets rated efficiency claims.' },
+  { code: 'ISO 5011', href: '/knowledge-system/standards/iso-5011', desc: 'Filter element integrity testing covering element collapse and bypass verification procedures ensuring air filtration performance meets rated efficiency claims.' },
   { code: 'ANSI B132.1', desc: 'Industrial air filter standard providing test methods for dust holding capacity and pressure drop characteristics of element media.' },
 ];
 
@@ -87,7 +87,7 @@ export default function AirIntakeSystemsPage() {
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>01 / SYSTEM OVERVIEW</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Engine Air Intake Filtration Domain</h2>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Air intake filters remove dust and particles from engine combustion air before the air reaches fuel injection and ignition. A diesel engine operating in agricultural harvest conditions may encounter dust concentrations exceeding 2,000 mg/m³ - requiring filtration to reduce inlet concentration to below 1 mg/m³ for acceptable combustion chamber cleanliness.
+            Air intake filters remove dust and particles from engine combustion air before the air reaches fuel injection and ignition. A diesel engine operating in agricultural harvest conditions may encounter dust concentrations exceeding 2,000 mg/m³ - requiring filtration to reduce inlet concentration to below 1 mg/m³ for acceptable combustion chamber cleanliness. Air intake filtration is one domain within the broader <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems framework</Link> that governs contamination control across all mobile equipment fluid circuits.
           </p>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
             Unlike oil and fuel filters that see continuous recirculation, air filters experience single-pass flow where contamination cannot be removed by return filtration. Filter efficiency must be maintained throughout the service interval, and bypass of unfiltered air directly contaminates combustion air and accelerates internal engine wear exponentially.
@@ -121,7 +121,13 @@ export default function AirIntakeSystemsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {STANDARDS.map((std) => (
               <div key={std.code} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '1.25rem', padding: '1rem 1.25rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                {std.href ? (
+                  <Link href={std.href} style={{ textDecoration: 'none' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D', textDecoration: 'underline' }}>{std.code}</span>
+                  </Link>
+                ) : (
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D' }}>{std.code}</span>
+                )}
                 <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.55 }}>{std.desc}</span>
               </div>
             ))}
