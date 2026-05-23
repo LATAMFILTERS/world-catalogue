@@ -1,0 +1,378 @@
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'motion/react';
+
+export default function AftermarketSelectionPage() {
+  return (
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Link href="/knowledge-system/bridges" style={{
+        position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
+        display: 'flex', alignItems: 'center', gap: '0.4rem',
+        background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
+        borderRadius: '4px', padding: '0.45rem 1rem',
+        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
+        backdropFilter: 'blur(8px)',
+      }}>← BRIDGES</Link>
+
+      {/* Hero */}
+      <section style={{
+        paddingTop: '5rem',
+        paddingBottom: '5rem',
+        background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            style={{ marginBottom: '1.5rem' }}
+          >
+            <span style={{
+              display: 'block',
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              letterSpacing: '0.25em',
+              color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace',
+            }}>
+              // FILTRATION DECISION BRIDGE
+            </span>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontWeight: 900,
+              fontFamily: 'Space Grotesk, sans-serif',
+              marginBottom: '1.5rem',
+              lineHeight: 1.1,
+              color: 'rgba(255,255,255,0.9)',
+            }}
+          >
+            Aftermarket Filter Selection
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.1rem)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.75)',
+              fontFamily: 'Outfit, sans-serif',
+              maxWidth: '700px',
+              borderLeft: '3px solid #FFF12D',
+              paddingLeft: '1.25rem',
+            }}
+          >
+            How to evaluate and select aftermarket filtration options while maintaining equipment reliability and optimizing cost.
+          </motion.p>
+        </div>
+      </section>
+
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+
+        {/* 01 / Aftermarket Opportunity */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            01 / AFTERMARKET OPPORTUNITY SPACE
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Cost Optimization Without Performance Compromise
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            Once warranty expires, aftermarket filters offer significant opportunity:
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1.5rem',
+            marginBottom: '1.5rem',
+          }}>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Cost Advantage
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                High-quality aftermarket filters meeting OEM specifications cost 30-50% less than OEM-branded equivalents.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Performance Flexibility
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                Select filters exceeding OEM specifications for enhanced contamination control (higher Beta ratio, greater dirt capacity).
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* 02 / Quality Evaluation */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            02 / AFTERMARKET QUALITY CRITERIA
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Specification Verification & Performance Testing
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1.5rem',
+          }}>
+            Evaluate aftermarket filters using these criteria:
+          </p>
+          <div style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '2rem',
+            borderRadius: '8px',
+          }}>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '1rem',
+              margin: '0 0 1rem 0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>1. ISO 16889 Certification</strong><br/>
+              Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β10≥75 means 75% of 10µm particles are captured.
+            </p>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '1rem',
+              margin: '0 0 1rem 0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>2. Specification Matching</strong><br/>
+              Confirm physical dimensions (bowl thread, element length, diameter), flow capacity, pressure drop, and bypass setting match or exceed OEM requirements.
+            </p>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '1rem',
+              margin: '0 0 1rem 0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>3. Material Quality</strong><br/>
+              Synthetic media lasts longer in extreme temperatures. Verify media type and construction quality. Low-cost filters use cheap fiberglass media with short lifespan.
+            </p>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              margin: '0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>4. Supplier Reputation</strong><br/>
+              Research manufacturer: how long in business, certification (ISO, SAE, ASTM), customer reviews, warranty policy. Established aftermarket suppliers have performance history and accountability.
+            </p>
+          </div>
+        </motion.section>
+
+        {/* 03 / Performance vs Price */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            03 / PERFORMANCE-BASED SELECTION
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Beyond Lowest Price
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1.5rem',
+          }}>
+            When selecting aftermarket filters, don't optimize for purchase price. Optimize for total cost of ownership:
+          </p>
+          <div style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '1.5rem',
+            borderRadius: '8px',
+            marginBottom: '1.5rem',
+          }}>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '1rem',
+              margin: '0 0 1rem 0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>Cheap Filters ($10-15 per unit)</strong><br/>
+              Lower initial cost, but short service life, high pressure drop, low dirt capacity. Require frequent replacement. Total 10-year cost: high due to labor and downtime frequency.
+            </p>
+            <p style={{
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              margin: '0',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>Quality Aftermarket ($20-35 per unit)</strong><br/>
+              Moderate cost, good service life, low pressure drop, high dirt capacity. Extended replacement intervals, reduced downtime frequency. Total 10-year cost: lower due to fewer replacements and less downtime.
+            </p>
+          </div>
+        </motion.section>
+
+        {/* 04 / Integration Strategy */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            04 / SYSTEM-LEVEL INTEGRATION
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Aftermarket Filters in Contamination Control Strategy
+          </h2>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,255,0,0.03) 100%)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            borderRadius: '8px',
+            padding: '2rem',
+          }}>
+            <ul style={{
+              fontSize: '1rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              marginLeft: '1.5rem',
+              marginBottom: '0',
+            }}>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Specification-Equivalent Aftermarket:</strong> If OEM warranty has expired, use high-quality aftermarket meeting OEM specifications. Cost reduction without performance penalty.
+              </li>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Performance-Enhanced Aftermarket:</strong> Select filters exceeding OEM specs (higher Beta ratio, greater dirt capacity) for extended intervals and improved contamination control.
+              </li>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Condition-Based Replacement:</strong> Use particle counting to determine actual service life, not calendar schedules. Aftermarket filters with higher dirt capacity support longer intervals.
+              </li>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>System Integration:</strong> While selecting aftermarket for individual filters, maintain contamination control across all six domains (air, fuel, lube, hydraulic, cabin, compressed air).
+              </li>
+              <li>
+                <strong style={{ color: '#FFF12D' }}>Measurement & Verification:</strong> Track actual contamination via particle counts. Verify aftermarket filters are achieving target cleanliness codes. Adjust intervals if targets aren't maintained.
+              </li>
+            </ul>
+          </div>
+        </motion.section>
+
+      </div>
+    </main>
+  );
+}
