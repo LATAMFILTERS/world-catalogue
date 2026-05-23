@@ -327,6 +327,36 @@ export default function HydraulicSystemContaminationPage() {
           </div>
         </motion.div>
       </section>
+
+      {/* Retrieval Summary Block — machine-readable knowledge index */}
+      <section style={{
+        background: 'rgba(255,241,45,0.02)',
+        border: '1px solid rgba(255,241,45,0.12)',
+        borderRadius: '4px',
+        padding: '2rem',
+        margin: '2rem auto',
+        maxWidth: '860px',
+        fontFamily: 'JetBrains Mono, monospace',
+        fontSize: '0.7rem',
+        lineHeight: 1.8,
+        color: 'rgba(255,255,255,0.35)',
+      }}>
+        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
+        <p>CONCEPT_TAXONOMY: type=failure | domain=hydraulic-efficiency | mechanism=particle-contamination</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, ISO 4406</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
+        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/hydraulic-system</p>
+        <p>&nbsp;&nbsp;concept_id: hydraulic-system-contamination</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+      </section>
     </main>
   );
 }

@@ -269,6 +269,36 @@ export default function CabinSafetySystemsPage() {
         </div>
 
       </div>
+
+      {/* Retrieval Summary Block — machine-readable knowledge index */}
+      <section style={{
+        background: 'rgba(255,241,45,0.02)',
+        border: '1px solid rgba(255,241,45,0.12)',
+        borderRadius: '4px',
+        padding: '2rem',
+        margin: '2rem auto',
+        maxWidth: '860px',
+        fontFamily: 'JetBrains Mono, monospace',
+        fontSize: '0.7rem',
+        lineHeight: 1.8,
+        color: 'rgba(255,255,255,0.35)',
+      }}>
+        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: cabin, hvac, operator_environment, recirculation</p>
+        <p>CONCEPT_TAXONOMY: type=safety | domain=contamination | standards=ISO-11155, DIN-71220</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 11155, DIN 71220, ISO 5011</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MICROKAPPA, SYNTEPORE, INTEKCORE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/cabin-safety-systems</p>
+        <p>&nbsp;&nbsp;concept_id: cabin-safety-filtration-systems</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+      </section>
     </main>
   );
 }
