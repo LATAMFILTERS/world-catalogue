@@ -151,6 +151,66 @@ When restructuring Standards, maintain the 6 core domains:
 
 Each domain should integrate all applicable standards in system context.
 
+## Asset Protection Layer
+
+The **Asset Protection Layer** is a unified global narrative that ties together the entire ELIMFILTERS platform under a single core message: **Protecting Industrial Assets Through Contamination Control**.
+
+### Information Architecture Hierarchy
+
+All content and messaging follows this mandatory hierarchy:
+
+```
+Contamination (Root Cause)
+    ↓
+Asset Degradation (Impact)
+    ↓
+Standards & Measurement (Assessment)
+    ↓
+Protection Technologies (Solution)
+    ↓
+Product Implementation (Deployment)
+    ↓
+Fleet Optimization (Operations)
+    ↓
+Sustainability Impact (Long-term)
+```
+
+### Implementation Requirements
+
+**CRITICAL**: The Asset Protection Layer is NOT a new standalone page. It's a global communication layer that appears on key hub pages as introductory narrative sections.
+
+**Pages updated with Asset Protection intro:**
+
+1. **Home Page** (`/frontend/src/app/page.tsx`)
+   - Two-column layout after stats section
+   - Left: Brand positioning message ("Protecting Industrial Assets Through Contamination Control")
+   - Right: Information Architecture hierarchy visualization
+   - Motion animations with whileInView trigger
+
+2. **Knowledge System Hub** (`/frontend/src/app/knowledge-system/page.tsx`)
+   - Introductory narrative section after hero
+   - Text: "The ELIMFILTERS Knowledge System explains how industrial assets fail, how contamination impacts performance, and how engineering standards define system reliability..."
+   - Includes Information Architecture hierarchy as code comment
+   - Technical tone emphasizing engineering principles
+
+3. **Technologies Hub** (`/frontend/src/app/technologies/page.tsx`)
+   - Introductory narrative section after hero
+   - Text: "ELIMFILTERS technologies are engineered to protect industrial assets by controlling contamination at the source..."
+   - Frames technologies as asset protection systems (not marketing claims)
+   - Technical implementation focus
+
+### Consistency Rules
+
+- ✅ **Tone**: Professional, technical, industrial documentation (never marketing)
+- ✅ **Positioning**: All content frames ELIMFILTERS solutions as asset protection systems
+- ✅ **Information Architecture**: All pages reinforce the contamination → degradation → standards → technologies hierarchy
+- ✅ **Technology Language**: Technologies are "engineered for asset protection" not "sold as products"
+- ✅ **Standards Integration**: Standards are tools for measurement and assessment, not isolated specifications
+- ✅ **Styling**: Dark theme (#000) with yellow accents (#FFF12D), motion animations
+- ❌ **No New Pages**: Asset Protection is NOT a standalone page or section
+- ❌ **No Marketing Tone**: Knowledge System maintains professional documentation voice
+- ❌ **No Deviations**: All hub pages must include consistent Asset Protection positioning
+
 ## How Content Works
 
 ### Frontend Architecture

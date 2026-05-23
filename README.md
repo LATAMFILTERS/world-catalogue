@@ -32,6 +32,25 @@ A comprehensive professional filtration documentation library with 3 sections:
    - Filtration and Fuel Efficiency
    - Total Cost of Ownership
 
+### Asset Protection Layer
+
+A unified global narrative framework that ties together all platform content under a single core message: **Protecting Industrial Assets Through Contamination Control**.
+
+**Information Architecture Hierarchy:**
+```
+Contamination (Root Cause) → Asset Degradation (Impact) → 
+Standards & Measurement (Assessment) → Protection Technologies (Solution) → 
+Product Implementation (Deployment) → Fleet Optimization (Operations) → 
+Sustainability Impact (Long-term)
+```
+
+**Key Implementation:**
+- Home page includes Asset Protection strategy section with Information Architecture visualization
+- Knowledge System hub introduces asset protection principles and how contamination impacts performance
+- Technologies hub frames all solutions as engineered asset protection systems
+- Consistency rules ensure professional tone and technical positioning across all pages
+- No marketing language in technical documentation
+
 ## Project Structure
 
 ```
