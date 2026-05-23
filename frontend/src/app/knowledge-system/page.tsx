@@ -102,6 +102,39 @@ export default function KnowledgeSystemPage() {
         </motion.div>
       </section>
 
+      {/* ── ASSET PROTECTION NARRATIVE ── */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ maxWidth: '900px', margin: '0 auto', padding: '0 0' }}
+        >
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+            marginBottom: '1.5rem',
+          }}>
+            The ELIMFILTERS Knowledge System explains how industrial assets fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection.
+          </p>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.75rem',
+            color: 'rgba(255,241,45,0.5)',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+          }}>
+            // Information Architecture: Contamination → Asset Degradation → Standards → Technologies → Products → Fleet Optimization → Sustainability
+          </p>
+        </motion.div>
+      </section>
+
       {/* Knowledge Sections */}
       <section style={{
         maxWidth: '1200px',

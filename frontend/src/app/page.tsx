@@ -398,6 +398,89 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* ── ASSET PROTECTION NARRATIVE ── */}
+        <section style={{
+          padding: '5rem 8%',
+          background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-80px' }}
+            style={{ maxWidth: '1200px', margin: '0 auto' }}
+          >
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+              <div>
+                <p style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.7rem',
+                  letterSpacing: '0.2em',
+                  color: '#FFF12D',
+                  opacity: 0.7,
+                  marginBottom: '1rem',
+                  textTransform: 'uppercase',
+                }}>
+                  // ASSET PROTECTION STRATEGY
+                </p>
+                <h2 style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontSize: 'clamp(1.8rem, 4vw, 2.4rem)',
+                  fontWeight: 700,
+                  lineHeight: 1.2,
+                  color: '#fff',
+                  marginBottom: '1.5rem',
+                }}>
+                  Protecting Industrial Assets Through Contamination Control
+                </h2>
+                <p style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.95rem',
+                  color: 'rgba(255,255,255,0.7)',
+                  lineHeight: 1.8,
+                  marginBottom: '1.5rem',
+                }}>
+                  ELIMFILTERS protects industrial assets by controlling contamination across critical mechanical and fluid systems. We extend equipment life, improve operational efficiency, and reduce total cost of ownership through advanced filtration technologies engineered for heavy-duty industrial applications.
+                </p>
+                <p style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.9rem',
+                  color: 'rgba(255,255,255,0.5)',
+                  lineHeight: 1.7,
+                  paddingLeft: '1.25rem',
+                  borderLeft: '3px solid #FFF12D',
+                }}>
+                  Our engineering approach starts with understanding contamination mechanisms, documenting failure modes, integrating international standards, and designing technologies that protect your most critical assets from degradation.
+                </p>
+              </div>
+              <div style={{
+                background: 'rgba(255,241,45,0.04)',
+                border: '1px solid rgba(255,241,45,0.15)',
+                padding: '2.5rem',
+              }}>
+                <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '1.75rem', opacity: 0.8 }}>INFORMATION ARCHITECTURE</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  {[
+                    'Contamination',
+                    'Asset Degradation',
+                    'Standards & Measurement',
+                    'Protection Technologies',
+                    'Product Implementation',
+                    'Fleet Optimization',
+                    'Sustainability Impact'
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                      <div style={{ width: '8px', height: '8px', background: '#FFF12D', flexShrink: 0 }} />
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', margin: 0 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* ── PROBLEM SECTION ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>

@@ -92,6 +92,29 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
+      {/* ── ASSET PROTECTION NARRATIVE ── */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '900px', margin: '0 auto', padding: '0 0' }}
+        >
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            ELIMFILTERS technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS' industrial asset protection strategy.
+          </p>
+        </motion.div>
+      </section>
+
       {/* Technologies Grid */}
       <section style={{ padding: '5rem 2rem', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
