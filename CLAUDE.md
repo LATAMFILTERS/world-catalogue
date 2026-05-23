@@ -2,13 +2,37 @@
 
 ## Project Context
 
-**ELIMFILTERS World Catalogue** is a 43-page professional filtration documentation platform:
-- 12 industry verticals (Agriculture, Mining, Marine, etc.)
-- 12 product systems (Air, Fuel, Hydraulic, Cabin, etc.)
-- 12 core technologies (SYNTRAX™, AQUAGUARD™, NANOFORCE™, etc.)
-- 7 main pages (home, about, contact, warranty, dealer, etc.)
+**ELIMFILTERS World Catalogue** is a Next.js 14 full-stack web application featuring:
 
-All pages use a **unified responsive HTML template** with dark theme and yellow accents (#FFF12D).
+### Main Application Structure
+- **Frontend**: Next.js 14 with React + TypeScript in `/frontend`
+- **Industries**: 12 verticals (Agriculture, Mining, Marine, etc.)
+- **Products**: 12 product systems (Air Filters, Fuel, Hydraulic, Cabin, etc.)
+- **Technologies**: 12 core proprietary filtration technologies
+- **Main Pages**: Home, About, Contact, Warranty, Dealer, Systems
+
+### Knowledge System
+A comprehensive professional filtration documentation library with 3 main sections:
+
+1. **Standards** — Industrial filtration system domains
+   - Lube / Oil Filtration Systems (ISO 16889, ISO 4406, SAE J1211)
+   - Air Intake Filtration Systems (SAE J1539, ISO 5011)
+   - Cabin / Human Safety Filtration Systems (ISO 11155, DIN 71220)
+   - Fuel Filtration Systems (ASTM D6304, ISO 12937)
+   - Hydraulic Systems (ISO 16889, NFPA T2.14, DIN 51524)
+   - Compressed Air Systems (ISO 8573-1, ISO 8573-2, ISO 8573-3)
+
+2. **Contamination** — Detailed technical case studies
+   - Diesel Water Contamination
+   - Particle Wear in Engines
+   - Hydraulic System Contamination
+
+3. **Fleet Optimization** — Industrial operational strategy
+   - Reducing Fleet Downtime
+   - Filtration and Fuel Efficiency
+   - Total Cost of Ownership
+
+All pages use **dark theme (#000) with yellow accent (#FFF12D)** and **responsive design** with Framer Motion animations.
 
 ## Development Branch
 
@@ -16,269 +40,604 @@ All pages use a **unified responsive HTML template** with dark theme and yellow 
 
 This is your persistent feature branch. All work commits to this branch.
 
+## Knowledge System Development
+
+### Architecture Overview
+
+The Knowledge System is built with:
+- **TypeScript**: Type-safe structure definitions in `lib/knowledge-architecture.ts`
+- **React Components**: Client-side rendered pages with Framer Motion animations
+- **i18n Support**: All pages translated to 11 languages (EN, ES, FR, IT, NL, RU, ZH, JA, AR, FA, PT)
+- **Internal Navigation**: Cross-linking between Standards, Contamination, Fleet, and Technologies
+
+### Creating New Pages
+
+#### Standards Domain Page
+
+```bash
+# 1. Create page directory
+mkdir -p frontend/src/app/knowledge-system/standards/[system-name]
+
+# 2. Create page.tsx with 8-section structure:
+# - Definition/System Overview
+# - Contamination Challenges / Health & Safety Impact
+# - Associated Standards
+# - Operational Impact & Cost / System Design Considerations
+# - Related Contamination Modes / Engineering Factors
+# - ELIMFILTERS Technologies / (omit for some systems)
+# - System Design Considerations / (system-specific)
+# - Frequently Asked Questions
+
+# 3. Use this template pattern:
+cat > frontend/src/app/knowledge-system/standards/[system-name]/page.tsx << 'EOF'
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'motion/react';
+
+const STANDARDS = [
+  { code: 'ISO XXXX', desc: 'Description of standard and scope.' },
+];
+
+const FAQS = [
+  { q: 'Technical question?', a: 'Technical answer with specifics and metrics.' },
+];
+
+const RELATED_SYSTEMS = [
+  { code: 'CODE', title: 'System Name', href: '/knowledge-system/standards/system-name' },
+];
+
+export default function SystemPage() {
+  return (
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      {/* Back Navigation */}
+      <Link href="/knowledge-system/standards" style={{...}}>← STANDARDS</Link>
+
+      {/* Hero Section */}
+      <section style={{...}}>
+        <motion.div>
+          <p style={{...}}>// INDUSTRIAL STANDARDS · [CATEGORY]</p>
+          <h1 style={{...}}>[System Title]</h1>
+          <p style={{...}}>[Description]</p>
+        </motion.div>
+      </section>
+
+      {/* Content Sections */}
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+        {/* Section 1 */}
+        <motion.section>
+          <p style={{...}}>01 / [SECTION NAME]</p>
+          <h2 style={{...}}>[Heading]</h2>
+          <p style={{...}}>[Content]</p>
+        </motion.section>
+
+        {/* Continue for 8 sections total */}
+      </div>
+    </main>
+  );
+}
+EOF
+
+# 4. Test build
+npm run build
+
+# 5. Test local
+npx serve@latest -l 3000 -s out
+
+# 6. Commit
+git add -A
+git commit -m "feat: Add [System] domain page to Knowledge System"
+git push -u origin claude/create-elimfilters-manuals-iFz1q
+```
+
+#### Content Guidelines
+
+- **Tone**: Professional, technical, industrial documentation (NOT marketing)
+- **Standards Integration**: Integrate ISO/ASTM/SAE codes within system context, not as isolated specs
+- **Metrics**: Include quantified operational impact (e.g., "+15-40% oil consumption increase")
+- **Technology Links**: Reference ELIMFILTERS technologies (MACROCORE, NANOFORCE, SYNTRAX, etc.)
+- **Navigation**: Each page links to related systems at bottom
+- **FAQs**: 4 detailed technical questions addressing real operational concerns
+
+### Standards Domain Requirements
+
+When restructuring Standards, maintain the 6 core domains:
+1. **Lube/Oil** — Engine oil cleanliness, wear particles, ISO 16889/4406
+2. **Air Intake** — Volumetric efficiency, bypass mechanisms, SAE J1539
+3. **Cabin/Safety** — Operator health, PM10 exposure, ISO 11155
+4. **Fuel** — Water contamination, injector stiction, ASTM D6304
+5. **Hydraulic** — Proportional valve cleanliness, NFPA T2.14
+6. **Compressed Air** — Purity classes, dew point, ISO 8573
+
+Each domain should integrate all applicable standards in system context.
+
 ## How Content Works
 
-### Content is in `catalogue.json`
+### Frontend Architecture
 
-All page content (titles, descriptions, features, stats) lives in **catalogue.json**, not in HTML files.
+The frontend is a **Next.js 14 application** (not a static site generator):
+- **Pages**: React components in `/frontend/src/app/`
+- **Styling**: Inline CSS with responsive design using clamp() and grid
+- **Animations**: Framer Motion (motion/react) for entrance and hover effects
+- **Static Export**: Build outputs to `/frontend/out/` for static hosting
+- **Languages**: i18n translations in `/frontend/public/locales/`
 
-### Pages are Generated
+### Building & Testing
 
-1. Update `catalogue.json` with new content
-2. Run `python3 generate_pages.py`
-3. Script regenerates all 43 HTML files from the template
-4. Commit both the JSON and regenerated HTML
+```bash
+# Install dependencies
+cd frontend && npm install
 
-**Never edit HTML files directly** — changes will be lost on regeneration.
+# Build production
+npm run build
+# Output: frontend/out/ directory (ready to deploy)
+
+# Test locally (static export mode)
+npx serve@latest -l 3000 -s out
+# Visit: http://localhost:3000
+
+# Format code
+npx prettier --write src/
+
+# Type check
+npm run type-check
+```
+
+### Never Edit HTML/JS Directly
+
+The `/out/` directory is auto-generated during build. Always edit:
+- `/src/app/` — Page components
+- `/src/components/` — Reusable React components
+- `/public/locales/` — i18n translations
 
 ## Making Changes
 
-### Edit Page Content
+### Typical Development Workflow
 
 ```bash
-# 1. Edit catalogue.json
-vim catalogue.json
+# 1. Check out correct branch
+git checkout claude/create-elimfilters-manuals-iFz1q
 
-# 2. Regenerate pages
-python3 generate_pages.py
+# 2. Create/edit React component
+vim frontend/src/app/knowledge-system/standards/[system]/page.tsx
 
-# 3. Test locally
-npm start
-# Visit http://localhost:3000
+# 3. Build & test locally
+cd frontend
+npm run build
+npx serve@latest -l 3000 -s out
 
-# 4. Commit
-git add -A
-git commit -m "content: Update [industry/product/technology] descriptions"
+# 4. Verify in browser
+# Visit: http://localhost:3000/knowledge-system/standards/[system]
+
+# 5. Stage & commit
+git add frontend/src/app/knowledge-system/
+git add frontend/out/  (includes generated files)
+git commit -m "feat: Add [feature description]"
 git push -u origin claude/create-elimfilters-manuals-iFz1q
 ```
 
-### Edit Page Design/Layout
+### Edit Component Content
 
 ```bash
-# 1. Edit template-unified.html
-vim template-unified.html
+# All page content is defined as React components
+vim frontend/src/app/page-name/page.tsx
 
-# 2. Regenerate pages
-python3 generate_pages.py
+# Inline CSS styling:
+<section style={{ background: '#000', color: '#fff' }}>
+  <h1 style={{ fontFamily: 'Outfit, sans-serif', ... }}>Title</h1>
+</section>
 
-# 3. Test all pages look correct
-npm start
-
-# 4. Commit
-git add template-unified.html
-git add industries/ products/ technologies/
-git commit -m "design: Update page layout/styling"
-git push -u origin claude/create-elimfilters-manuals-iFz1q
+# Motion animations:
+<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+  Content
+</motion.div>
 ```
 
-### Add New Industry/Product/Technology
+### Update Internationalization (i18n)
 
 ```bash
-# 1. Add to catalogue.json
-# Example for new industry:
-{
-  "name": "Rail Transit",
-  "file": "rail-transit.html",
-  "title": "RAIL TRANSIT PROTECTION",
-  "subtitle": "HIGH-CAPACITY OPERATIONS",
-  "description": "...",
-  "features": ["...", "..."],
-  "stats": {"percentages": ["99.9%", "100%"]},
-  "cta": "FIND MY FILTER"
-}
+# Add translation key
+vim frontend/public/locales/en/translation.json
+# Add: { "nav.knowledge": "Knowledge System" }
 
-# 2. Regenerate
-python3 generate_pages.py
-
-# 3. Test
-npm start
-
-# 4. Commit
-git add catalogue.json industries/rail-transit.html
-git commit -m "feat: Add Rail Transit industry page"
-git push -u origin claude/create-elimfilters-manuals-iFz1q
+# Update all language files
+for lang in es fr it nl ru zh ja ar fa pt; do
+  vim frontend/public/locales/$lang/translation.json
+done
 ```
 
-## Page Structure (Fixed)
+## Page Structures
 
-All pages follow this exact structure:
+### Knowledge System Pages (Standards, Contamination, Fleet)
 
+All Knowledge System pages follow a **consistent 8-section structure**:
+
+```typescript
+1. BACK NAVIGATION
+   - Fixed link to parent section (← STANDARDS, ← KNOWLEDGE)
+   
+2. HERO SECTION
+   - Comment tag: // INDUSTRIAL STANDARDS · [CATEGORY]
+   - Main h1 title with clamp() responsive sizing
+   - Description paragraph
+   - Dark gradient background with yellow border
+
+3. SYSTEM OVERVIEW (Section 01)
+   - Subsection heading with number
+   - 2-3 paragraphs explaining domain/system
+   - Introduction to core concepts
+
+4. CHALLENGES / IMPACT (Section 02)
+   - List of key problems or operational impacts
+   - Flex column layout with left border accent
+   - Quantified metrics where applicable
+
+5. ASSOCIATED STANDARDS (Section 03)
+   - Grid display of standards (code + description)
+   - Inline style background and borders
+   - Links to related specifications
+
+6. OPERATIONAL IMPACT (Section 04)
+   - Key design factors or cost implications
+   - Cards with titles and bodies
+   - Technical specifications
+
+7. RELATED SYSTEMS / TECHNOLOGIES (Section 05)
+   - Links to contamination modes or technologies
+   - Cards with hover effects (borderColor change)
+   - "EXPLORE →" navigation
+
+8. FAQ / TECHNICAL QUESTIONS (Section 05 or 06)
+   - 4 questions with detailed technical answers
+   - Q&A card layout
+   - Bold questions, regular answer text
+
+9. FOOTER / RELATED NAVIGATION
+   - Cross-links to other systems
+   - Auto-fit grid (minmax(240px, 1fr))
+   - Hover animation effects
 ```
-1. HERO SECTION
-   - Category tag (// INDUSTRY_ENGINEERING)
-   - Main title (MAXIMIZING AVAILABILITY)
-   - Yellow subtitle (DURING CRITICAL HARVEST)
-   - Tagline (italicized description)
-   - "Explore Features" button
 
-2. KEY ADVANTAGES
-   - h2 heading
-   - Bulleted feature list (4-6 items with ✓ checkmarks)
-
-3. ENGINEERING EXCELLENCE
-   - Two-column grid: text + card
-   - Left: h2 + paragraph
-   - Right: "System Specifications" card
-
-4. PERFORMANCE METRICS
-   - h2 centered
-   - 3-column grid of stat boxes
-   - Each: large number + label
-
-5. RECOMMENDED APPLICATIONS
-   - Two-column grid: text + card
-   - Left: "Primary Use Cases" list
-   - Right: "Technologies Included" (tags)
-
-6. CALL-TO-ACTION (yellow bg)
-   - h2 "Ready to Upgrade?"
-   - Paragraph
-   - "Find My Filter" button → part-search.elimfilters.com
-
-7. FOOTER
-   - Copyright + category info
-```
-
-**Do not deviate from this structure** — all 43 pages must be identical except for content.
+All pages use: **dark theme (#000), yellow accents (#FFF12D), Framer Motion animations**
 
 ## Code Conventions
 
-### JSON (catalogue.json)
-```json
-{
-  "name": "Page Name",
-  "file": "page-name.html",
-  "title": "MAIN TITLE IN CAPS",
-  "subtitle": "SECONDARY TITLE IN CAPS OR EMPTY STRING",
-  "description": "Regular sentence case. Keep under 250 characters.",
-  "features": ["Feature One", "Feature Two", "Feature Three"],
-  "stats": {
-    "percentages": ["99.9%", "100%", "0%"]
-  },
-  "cta": "BUTTON TEXT"
+### React Component Structure
+
+```typescript
+'use client'; // Enable client-side features like motion
+
+import Link from 'next/link';
+import { motion } from 'motion/react';
+
+// Data structures
+const STANDARDS = [
+  { code: 'ISO 16889', desc: 'Standard description.' },
+];
+
+const FAQS = [
+  { q: 'Question?', a: 'Answer with technical details and metrics.' },
+];
+
+const RELATED_SYSTEMS = [
+  { code: 'CODE', title: 'System Name', href: '/knowledge-system/...' },
+];
+
+export default function PageName() {
+  return (
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      {/* Content sections with inline styles */}
+    </main>
+  );
 }
 ```
 
-### HTML (template-unified.html)
-- CSS is **inline in `<style>` tags** (no external stylesheets)
-- Use CSS variables: `--volt` (#FFF12D), `--bg` (#000), `--border`
-- Responsive: `clamp()` for fluid typography
-- Mobile-first: breakpoint at 1024px
-- No JavaScript (static pages)
+### Styling Standards
 
-### Styling
-- Dark background: #000
-- Yellow accent: #FFF12D
-- Text color: #fff (white) / #aaa (muted)
-- Borders: rgba(255,255,255,0.08)
-- No shadows or animations (keep performance up)
+**Colors:**
+- Dark background: `#000` (black)
+- Yellow accent: `#FFF12D`
+- Text: `#fff` (white)
+- Muted text: `rgba(255,255,255,0.5)` to `rgba(255,255,255,0.65)`
+- Borders: `rgba(255,255,255,0.06)` to `rgba(255,255,255,0.08)`
+
+**Typography:**
+- Headlines: `fontFamily: 'Outfit, sans-serif'` + `fontWeight: 600-700`
+- Body: `fontFamily: 'Inter, sans-serif'` + `fontSize: 0.95rem`
+- Code/Labels: `fontFamily: 'JetBrains Mono, monospace'` + `fontSize: 0.7rem-0.8rem`
+- Use `clamp()` for responsive sizing: `fontSize: 'clamp(1.5rem, 3vw, 2.5rem)'`
+
+**Responsive Design:**
+- Mobile-first approach
+- Use `gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'` for flexible grids
+- Breakpoints: `@media (max-width: 1024px)` for mobile adaptations
+- Padding: `clamp(2rem, 5vw, 4rem)` for fluid spacing
+
+**Animations (Framer Motion):**
+```typescript
+<motion.div 
+  initial={{ opacity: 0, y: 20 }} 
+  animate={{ opacity: 1, y: 0 }} 
+  transition={{ duration: 0.5, delay: 0.1 }}
+>
+  Content
+</motion.div>
+
+<motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.35)' }}>
+  Hover effect
+</motion.div>
+```
+
+**Inline Styles (NOT external CSS):**
+- All styling via React `style` prop
+- No CSS modules or external stylesheets
+- Enables dynamic styling and component reusability
 
 ## Commit Message Format
 
-```
-[type]: Brief description
+### Convention
 
-[type] can be:
-- feat:     New page, feature, or functionality
-- fix:      Bug fixes
-- content:  Content updates (text, descriptions)
-- design:   Styling, layout, visual changes
-- docs:     Documentation (README, CLAUDE.md)
-- refactor: Code reorganization
 ```
+[type]: Brief description (50 chars max)
 
-**Example commits:**
-```
-feat: Add Rail Transit industry page
-content: Update Agriculture feature descriptions
-design: Adjust stat box spacing for mobile
-docs: Add section to CLAUDE.md
+Longer explanation if needed (wrap at 72 chars).
+- Bullet points for multiple changes
+- Reference specific files if changed
+
+https://claude.ai/code/session_[ID]
 ```
 
-**Always end with**:
+### Type Tags
+
+- **feat:** New page, feature, or functionality
+- **fix:** Bug fixes or error corrections
+- **content:** Text, descriptions, or data updates
+- **design:** Styling, layout, or animation changes
+- **build:** Build system or dependencies
+- **docs:** Documentation (CLAUDE.md, README)
+- **refactor:** Code reorganization without behavior change
+- **chore:** Maintenance tasks
+
+### Examples
+
 ```
+feat: Add Knowledge System Standards section with 6 domain pages
+- Created Lube/Oil, Air Intake, Cabin, Fuel, Hydraulic, Compressed Air systems
+- Each domain integrates applicable ISO/ASTM/SAE standards
+- Added internal cross-navigation and related systems links
+
 https://claude.ai/code/session_01GSv1REFxpV1kcSJiNszcAx
 ```
 
+```
+content: Update Hydraulic Systems contamination descriptions
+
+- Added varnish formation mechanisms (20-50% efficiency loss)
+- Clarified kidney-loop offline filtration advantages
+- Fixed accuracy of ISO 16/14/11 cleanliness code explanations
+
+https://claude.ai/code/session_01GSv1REFxpV1kcSJiNszcAx
+```
+
+**Always include the session URL at the end.**
+
 ## Git Workflow
 
-### Starting work:
+### Starting Work
+
 ```bash
 git checkout claude/create-elimfilters-manuals-iFz1q
 git pull origin claude/create-elimfilters-manuals-iFz1q
+cd frontend && npm install  # if needed
 ```
 
-### Making changes:
+### Making Changes
+
 ```bash
-# Edit files
-vim catalogue.json
-python3 generate_pages.py
-npm start  # test locally
+# 1. Create or edit React component
+vim frontend/src/app/knowledge-system/[section]/[page]/page.tsx
 
-# Stage changes
-git add -A
+# 2. Update translations if needed
+vim frontend/public/locales/en/translation.json
+# (Update all 11 language files)
 
-# Commit with proper message
-git commit -m "content: Update page descriptions"
+# 3. Build and test
+npm run build
+npx serve@latest -l 3000 -s out
+
+# 4. Verify in browser at http://localhost:3000
+
+# 5. Stage changes
+git add frontend/src/app/
+git add frontend/out/
+git add frontend/public/locales/
+
+# 6. Commit with proper message
+git commit -m "feat: Add [feature description]
+
+- Detailed bullet points about changes
+- Reference files or specific updates
+
+https://claude.ai/code/session_01GSv1REFxpV1kcSJiNszcAx"
+
+# 7. Push
 git push -u origin claude/create-elimfilters-manuals-iFz1q
 ```
 
-### Never:
-- ❌ Commit directly to `main` or `master`
-- ❌ Force push (`git push --force`)
-- ❌ Edit HTML files directly (regenerate instead)
-- ❌ Create random branches outside `claude/create-elimfilters-manuals-iFz1q`
-- ❌ Add new npm packages without approval
+### Troubleshooting
+
+```bash
+# Build fails with TypeScript errors
+npm run type-check  # Identify issues
+# Fix errors in src/ files
+
+# Port 3000 already in use
+pkill -f "serve@latest"
+npx serve@latest -l 3001 -s out  # Use different port
+
+# Changes not appearing
+npm run build  # Must rebuild after changes
+# Browser cache: Ctrl+Shift+R hard refresh
+```
+
+### Rules
+
+- ✅ Always develop on `claude/create-elimfilters-manuals-iFz1q`
+- ✅ Build before testing: `npm run build`
+- ✅ Test locally before pushing
+- ✅ Include session URL in all commits
+- ❌ Never commit to `main` or `master`
+- ❌ Never force push (`git push --force`)
+- ❌ Never edit `/out/` directly (regenerated on build)
+- ❌ Never add npm packages without approval
 
 ## Local Testing
 
 ```bash
-# Start server
-npm start
+cd frontend
 
-# Test pages
-http://localhost:3000/industries/agriculture.html
-http://localhost:3000/products/airfilter.html
-http://localhost:3000/technologies/syntrax.html
+# Build for testing
+npm run build
+
+# Start local server (static export mode)
+npx serve@latest -l 3000 -s out
+
+# Test pages at:
+# http://localhost:3000/
+# http://localhost:3000/knowledge-system/standards
+# http://localhost:3000/knowledge-system/standards/lube-oil-systems
+# http://localhost:3000/industries/agriculture
+# http://localhost:3000/technologies/macrocore
 
 # Check responsiveness
-- Desktop: Full page width
-- Tablet: Reduce browser width to 768px
-- Mobile: Reduce to 375px
+# Desktop: Full width
+# Tablet: Browser width 768px
+# Mobile: Browser width 375px
+```
+
+### Browser Checks
+
+- ✅ All links working (no 404s)
+- ✅ Framer Motion animations smooth (no console errors)
+- ✅ Images loading (check Network tab)
+- ✅ Typography readable on mobile
+- ✅ Dark theme renders correctly (#000 background)
+- ✅ Yellow accents visible (#FFF12D)
+- ✅ No layout shift when hovering elements
+
+## Knowledge Architecture System
+
+The Knowledge System uses a TypeScript data structure to map relationships:
+
+```typescript
+// frontend/src/lib/knowledge-architecture.ts
+
+// 1. TECHNOLOGIES object
+// Lists all proprietary technologies with:
+// - ISO standard references
+// - Contamination modes addressed
+// - Applicable industries
+// - Key performance metrics
+
+// 2. STANDARDS object
+// Defines all standards with applicability
+
+// 3. CONTAMINATION_MODES object
+// Maps root causes → failure modes → solutions
+
+// 4. INDUSTRIES object
+// Lists verticals with exposure levels
+
+// Query functions available:
+- getTechnologyByIndustry(industry)
+- getContaminationByTechnology(tech)
+- getStandardsByTechnology(tech)
+- getRelatedTechnologies(tech)
+- getIndustriesBySeverity(severity)
+- getAllTechnologiesByFeature(feature)
+- mapKnowledgeNetwork() // Complete graph
+```
+
+**Using the Architecture:**
+
+```typescript
+import { getTechnologyByIndustry } from '@/lib/knowledge-architecture';
+
+const techs = getTechnologyByIndustry('Agriculture');
+// Returns: [MACROCORE, NANOFORCE, DURATECH, ...]
+
+// Use in pages to dynamically link to related content
 ```
 
 ## Troubleshooting
 
-**Pages look broken after regeneration:**
-- Check `catalogue.json` syntax (missing commas, quotes)
-- Run `python3 generate_pages.py` again
-- Verify `template-unified.html` hasn't been corrupted
-
-**Content not updating:**
-- Edit `catalogue.json` (not HTML)
-- Run regeneration script
-- Check file was overwritten: `ls -la industries/agriculture.html`
-
-**Styling changes not showing:**
-- Edit `template-unified.html` (CSS in `<style>` tag)
-- Regenerate all pages
-- Hard refresh browser: Ctrl+Shift+R
-
-**Server won't start:**
+**TypeScript build errors:**
 ```bash
-npm install
-npm start
+npm run type-check  # Full type check
+npm run build -- --no-cache  # Force rebuild
 ```
 
-## What's Next
+**Motion animations not working:**
+- Ensure `'use client'` directive at top of component
+- Verify `motion` imported: `import { motion } from 'motion/react'`
+- Check browser console for JavaScript errors
 
-After content is locked:
-1. Configure server routes to serve pages correctly
-2. Set up proper 404 handling
-3. Add SEO meta tags (Open Graph, schema.org)
-4. Deploy to Railway
-5. Monitor performance and uptime
+**Styles not applying:**
+- Verify inline `style` prop syntax (camelCase properties)
+- Check color values: #000, #fff, #FFF12D
+- Use hex colors or rgba() (no CSS variables in inline styles)
+
+**Build output directory issues:**
+- Delete `frontend/out/` and rebuild: `rm -rf out && npm run build`
+- Verify HTML generated in `out/knowledge-system/standards/`
+
+**Port conflicts:**
+```bash
+# Check what's using port 3000
+lsof -i :3000
+# Kill it
+kill -9 <PID>
+# Or use different port
+npx serve@latest -l 3001 -s out
+```
+
+## Development Priorities
+
+### Current Status
+- ✅ Knowledge System HUB (Standards, Contamination, Fleet sections)
+- ✅ Standards restructured to 6 industrial domains
+- ✅ Full i18n support (11 languages)
+- ✅ Internal knowledge architecture mapping
+- ✅ Technology page integrations
+
+### Next Tasks
+1. **Expand Contamination Studies**
+   - Add 3-4 more detailed case studies
+   - Implement Failure Mode Analysis matrix
+   - Link to contamination prevention strategies
+
+2. **Build Fleet Optimization Library**
+   - Add ROI calculators
+   - Create maintenance interval guides
+   - Develop cost-benefit analysis tools
+
+3. **Create Comparison Tools**
+   - Filtration System comparisons
+   - Standard compatibility matrix
+   - Technology selection guides
+
+4. **Deployment & Performance**
+   - Configure CDN for static assets
+   - Optimize image sizes
+   - Set up analytics
+   - Deploy to production hosting
+
+### Performance Metrics to Monitor
+- Page load time (target: <1s)
+- Core Web Vitals (LCP, FID, CLS)
+- Mobile responsiveness
+- Navigation timing
 
 ---
 
-**Questions?** Check README.md for project overview or review existing pages in `/industries`, `/products`, `/technologies`.
+**Questions?** Check the specific section in CLAUDE.md or review the Git commit history for implementation examples.
