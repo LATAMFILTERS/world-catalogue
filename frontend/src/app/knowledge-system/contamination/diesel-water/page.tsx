@@ -70,7 +70,7 @@ export default function DieselWaterContaminationPage() {
 
       {/* Hero Section */}
       <section style={{
-        paddingTop: '8rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -282,7 +282,7 @@ export default function DieselWaterContaminationPage() {
           }}>
             Explore Other Contamination Types
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: '1rem' }}>
             <Link href="/knowledge-system/contamination/particle-wear" style={{ textDecoration: 'none' }}>
               <div style={{
                 background: 'rgba(255,255,255,0.02)',
@@ -329,20 +329,7 @@ export default function DieselWaterContaminationPage() {
         </motion.div>
       </section>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage</p>
         <p>CONCEPT_TAXONOMY: type=failure | domain=fuel-integrity | mechanism=water-ingress</p>
@@ -357,7 +344,7 @@ export default function DieselWaterContaminationPage() {
         <p>&nbsp;&nbsp;concept_id: diesel-water-contamination</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
     </main>
   );
 }

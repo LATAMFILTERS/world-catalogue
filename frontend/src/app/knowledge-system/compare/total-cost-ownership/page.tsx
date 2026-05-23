@@ -209,7 +209,7 @@ export default function TCOPage() {
           </p>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))',
             gap: '1.5rem',
             marginBottom: '2rem',
           }}>
@@ -572,20 +572,7 @@ export default function TCOPage() {
 
       </div>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
         <p>CONCEPT_TAXONOMY: type=analysis | domain=asset-protection | approach=tco-analysis</p>
@@ -600,7 +587,7 @@ export default function TCOPage() {
         <p>&nbsp;&nbsp;concept_id: filtration-tco-analysis</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
     </main>
   );
 }

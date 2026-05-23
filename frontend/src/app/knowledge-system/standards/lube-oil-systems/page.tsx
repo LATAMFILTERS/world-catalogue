@@ -337,7 +337,7 @@ export default function LubeOilSystemsPage() {
             fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Filtration Systems</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -444,7 +444,7 @@ export default function LubeOilSystemsPage() {
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
           }}>// EXPLORE OTHER FILTRATION SYSTEMS</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -476,19 +476,7 @@ export default function LubeOilSystemsPage() {
       </div>
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: lube, engine, hydraulic, transmission</p>
         <p>CONCEPT_TAXONOMY: type=control | domain=contamination | standards=ISO-16889, ISO-4406</p>
@@ -503,7 +491,7 @@ export default function LubeOilSystemsPage() {
         <p>&nbsp;&nbsp;concept_id: lube-oil-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
     </main>
   );
 }

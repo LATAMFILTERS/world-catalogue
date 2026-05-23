@@ -58,7 +58,7 @@ export default function FuelEfficiencyPage() {
 
       {/* Hero */}
       <section style={{
-        paddingTop: '8rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.04) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -175,7 +175,7 @@ export default function FuelEfficiencyPage() {
             fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Economic Scale of Efficiency Losses</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
             {[
               { metric: '+3 - 8%', label: 'Fuel consumption increase from contaminated injectors drifting from calibrated spray geometry' },
               { metric: '+6 - 10%', label: 'Consumption increase from operating with air filter restriction at or above service alarm threshold' },
@@ -312,7 +312,7 @@ export default function FuelEfficiencyPage() {
             fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Supporting Efficiency</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -417,7 +417,7 @@ export default function FuelEfficiencyPage() {
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
           }}>// CONTINUE IN FLEET OPTIMIZATION</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_PAGES.map((page) => (
               <Link key={page.code} href={page.href} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -448,20 +448,7 @@ export default function FuelEfficiencyPage() {
 
       </div>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, engine, injector, combustion</p>
         <p>CONCEPT_TAXONOMY: type=strategy | domain=fuel-efficiency | goal=consumption-reduction</p>
@@ -476,7 +463,7 @@ export default function FuelEfficiencyPage() {
         <p>&nbsp;&nbsp;concept_id: filtration-fuel-efficiency</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
     </main>
   );
 }

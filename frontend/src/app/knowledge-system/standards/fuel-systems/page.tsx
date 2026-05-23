@@ -179,7 +179,7 @@ export default function FuelSystemsPage() {
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', height: '100%' }}>
@@ -228,7 +228,7 @@ export default function FuelSystemsPage() {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>// EXPLORE OTHER FILTRATION SYSTEMS</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.35)' }} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -244,19 +244,7 @@ export default function FuelSystemsPage() {
       </div>
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage_tank</p>
         <p>CONCEPT_TAXONOMY: type=control | domain=fuel-integrity | standards=ASTM-D6304, ISO-12937</p>
@@ -271,7 +259,7 @@ export default function FuelSystemsPage() {
         <p>&nbsp;&nbsp;concept_id: diesel-fuel-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
     </main>
   );
 }

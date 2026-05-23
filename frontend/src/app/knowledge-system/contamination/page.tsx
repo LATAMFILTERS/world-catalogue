@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const CONTAMINATION_TYPES = [
   {
@@ -43,7 +44,7 @@ export default function ContaminationHubPage() {
 
       {/* Hero */}
       <section style={{
-        paddingTop: '8rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -119,7 +120,7 @@ export default function ContaminationHubPage() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
           gap: '1.75rem',
         }}>
           {CONTAMINATION_TYPES.map((contam, i) => (
@@ -210,19 +211,7 @@ export default function ContaminationHubPage() {
       </section>
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <section style={{
-        background: 'rgba(255,241,45,0.02)',
-        border: '1px solid rgba(255,241,45,0.12)',
-        borderRadius: '4px',
-        padding: '2rem',
-        margin: '2rem auto',
-        maxWidth: '860px',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.7rem',
-        lineHeight: 1.8,
-        color: 'rgba(255,255,255,0.35)',
-      }}>
-        <p style={{ color: 'rgba(255,241,45,0.6)', marginBottom: '1rem', fontSize: '0.65rem', letterSpacing: '0.15em' }}>// RETRIEVAL SUMMARY BLOCK</p>
+      <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
         <p>CONCEPT_TAXONOMY: type=hub | domain=contamination-failure | scope=particle-water-hydraulic</p>
@@ -237,7 +226,7 @@ export default function ContaminationHubPage() {
         <p>&nbsp;&nbsp;concept_id: contamination-failure-hub</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </section>
+      </RetrievalBlock>
 
     </main>
   );
