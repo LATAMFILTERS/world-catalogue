@@ -23,7 +23,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Standards',
-      content: 'Water contamination thresholds and testing methods are defined by: ASTM D6304 (Karl Fischer titration - quantifies free and total water in distillate fuels, maximum 200 ppm for on-road diesel, 500 ppm for marine applications); ISO 12937 (determination of water in crude oils by Karl Fischer titration); ISO 4406 and ISO 16889 (particle and water contamination classification in hydraulic fluids, applicable to fuel systems with hydraulic components); ASTM D975 (diesel fuel specification, includes water limits for different service categories); ISO 14540 (marine fuel water content classification); SAE J1488 (automotive fuel system corrosion testing procedures that verify compatibility with water-contaminated fuel); IMO 2020 regulations (marine fuel sulfur and contaminant limits affecting water solubility).'
+      content: '__LINKED_DIESEL_STANDARDS__',
     },
     {
       title: 'Related Technologies',
@@ -120,12 +120,45 @@ export default function DieselWaterContaminationPage() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Short Definition — with internal links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            Short Definition
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            Water contamination in diesel fuel systems exists in three physical states: free water (gravitational separation), emulsified water (suspended in fuel), and sedimentary water (integrated into fuel matrix via hygroscopic additives). This contamination mode falls under the broader framework defined in the{' '}
+            <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel filtration systems</Link>{' '}
+            domain. Water ingress occurs through fuel tank breathation, condensation from thermal cycling, fuel transfer contamination, and storage tank corrosion. Even small percentages of water (0.5-2% by volume) initiate chemical degradation chains that compromise fuel quality, accelerate microbial growth, and trigger corrosion in fuel delivery systems.
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',
@@ -142,14 +175,27 @@ export default function DieselWaterContaminationPage() {
             }}>
               {section.title}
             </h2>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
-              color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
-            }}>
-              {section.content}
-            </p>
+            {section.content === '__LINKED_DIESEL_IMPACT__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Water-contaminated diesel causes immediate and measurable operational degradation: Hard starting increases by 5-15 seconds during cold ambient operation; Fuel consumption increases 3-8% as water-induced combustion inefficiency requires longer burn times; Injector cleaning intervals compress from 8,000 hours to 2,000-3,000 hours of operation, with each cleaning event adding 4-8 hours of downtime; Particulate emissions increase 40-60% as incomplete combustion produces excessive soot; Unplanned maintenance events average one per 500-1000 operating hours when water content exceeds 500 ppm; Equipment availability drops 12-18% due to intermittent fuel system faults; Fuel tank replacement becomes necessary after 18-24 months of chronic water exposure, representing 15-25% of annual fuel management budget in marine and outdoor equipment fleets. For fleet-level analysis of how water contamination affects fuel economy,{' '}
+                <Link href="/knowledge-system/fleet/fuel-efficiency" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the filtration and fuel efficiency guide</Link>.
+              </p>
+            ) : section.content === '__LINKED_DIESEL_STANDARDS__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Water contamination thresholds and testing methods are defined by: ASTM D6304 (Karl Fischer titration - quantifies free and total water in distillate fuels, maximum 200 ppm for on-road diesel, 500 ppm for marine applications); ISO 12937 (determination of water in crude oils by Karl Fischer titration);{' '}
+                <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
+                and ISO 16889 (particle and water contamination classification in hydraulic fluids, applicable to fuel systems with hydraulic components); ASTM D975 (diesel fuel specification, includes water limits for different service categories); ISO 14540 (marine fuel water content classification); SAE J1488 (automotive fuel system corrosion testing procedures that verify compatibility with water-contaminated fuel); IMO 2020 regulations (marine fuel sulfur and contaminant limits affecting water solubility).
+              </p>
+            ) : (
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.95rem',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.8,
+              }}>
+                {section.content}
+              </p>
+            )}
           </motion.div>
         ))}
       </section>
