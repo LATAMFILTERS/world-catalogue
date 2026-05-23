@@ -167,7 +167,7 @@ export default function CompressedAirSystemsPage() {
             ))}
           </div>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
-            Proportional solenoid valves controlling process positioning and flow regulation are the highest-value components in compressed air distribution systems. A single proportional valve operating with Class 6-7 air when Class 3-4 is specified will experience oil deposit accumulation within 200-500 operating hours, causing positioning drift and eventually complete spool seizure. In continuous process facilities, a single stuck proportional valve triggers unplanned production shutdown with costs that exceed an entire facility's annual compressed air filtration maintenance budget.
+            Proportional solenoid valves controlling process positioning and flow regulation are the highest-value components in compressed air distribution systems. A single proportional valve operating with Class 6-7 air when Class 3-4 is specified will experience oil deposit accumulation within 200-500 operating hours, causing positioning drift and eventually complete spool seizure. In continuous process facilities, a single stuck proportional valve triggers unplanned production shutdown with costs that exceed an entire facility's annual compressed air filtration maintenance budget. Quantifying this cost differential — filter maintenance investment versus unplanned downtime cost — is the foundation of the <Link href="/knowledge-system/fleet/total-cost-ownership" style={{ color: '#FFF12D', textDecoration: 'underline' }}>total cost of ownership analysis</Link> for industrial filtration systems.
           </p>
         </motion.section>
 

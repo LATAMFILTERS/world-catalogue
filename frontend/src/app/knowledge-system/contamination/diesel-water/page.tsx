@@ -6,10 +6,6 @@ import { motion } from 'motion/react';
 export default function DieselWaterContaminationPage() {
   const sections = [
     {
-      title: 'Short Definition',
-      content: 'Water contamination in diesel fuel systems exists in three physical states: free water (gravitational separation), emulsified water (suspended in fuel), and sedimentary water (integrated into fuel matrix via hygroscopic additives). Water ingress occurs through fuel tank breathation, condensation from thermal cycling, fuel transfer contamination, and storage tank corrosion. Even small percentages of water (0.5-2% by volume) initiate chemical degradation chains that compromise fuel quality, accelerate microbial growth, and trigger corrosion in fuel delivery systems.'
-    },
-    {
       title: 'How Contamination Happens',
       content: 'Water enters diesel systems through multiple mechanisms: atmospheric moisture enters fuel tanks during thermal breathing cycles (fuel contracts during cool nights, draws in humid air), condensation forms on tank interior surfaces during temperature cycling in outdoor storage, fuel transfer equipment introduces water during delivery and handling, damaged or missing tank caps allow direct water ingress, and water migration occurs across tank seals in systems exposed to high-humidity environments or prolonged rainfall. Hygroscopic fuel additives (lubricity improvers, biocides, corrosion inhibitors) absorb atmospheric moisture, creating a continuous pathway for water uptake. In marine and cold-climate applications, water accumulation accelerates due to extended outdoor exposure and greater thermal cycling extremes.'
     },

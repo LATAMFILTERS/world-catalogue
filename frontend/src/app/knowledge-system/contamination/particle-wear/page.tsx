@@ -120,12 +120,45 @@ export default function ParticleWearPage() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
+        {/* Short Definition — with internal links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          style={{
+            marginBottom: '3rem',
+            paddingBottom: '2rem',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: '#FFF12D',
+            marginBottom: '1rem',
+            letterSpacing: '-0.01em',
+          }}>
+            Short Definition
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+          }}>
+            Particle wear in engines is the accelerated material removal from bearing surfaces, piston rings, cylinder walls, and fuel injector components caused by the presence of hard abrasive particles in combustion byproducts, fuel, and engine oil. This failure mode is directly connected to contamination management practices documented in the{' '}
+            <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>lube oil filtration systems</Link>{' '}
+            domain. Particulate contamination originates from three sources: external ingestion (atmospheric dust, sand) that bypasses air filtration, internal generation (combustion carbon, metal oxidation debris, wear particles), and fuel-borne contaminants (industrial dust, storage tank corrosion products, sulfur oxides from combustion). Particle size ranges from 5-100 microns; those &gt;10 microns initiate visible wear patterns, while &lt;5 micron particles cause progressive surface degradation. The interaction between particles and metal surfaces operates through three distinct wear mechanisms that compound over equipment life.
+          </p>
+        </motion.div>
+
         {sections.map((section, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
             style={{
               marginBottom: '3rem',
               paddingBottom: '2rem',
@@ -142,14 +175,29 @@ export default function ParticleWearPage() {
             }}>
               {section.title}
             </h2>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
-              color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
-            }}>
-              {section.content}
-            </p>
+            {section.content === '__LINKED_OPERATIONAL_IMPACT__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Particle-induced wear produces measurable operational degradation: Oil consumption increases 15-40% as wear widens ring clearances and increases blow-by; Engine blow-by increases from &lt;1% to 5-10% of intake air volume, reducing combustion efficiency and elevating crankcase pressure; Fuel economy deteriorates 5-12% as increased friction losses and combustion inefficiency require higher fuel rates; Compression pressure drops 10-25%, reducing cold-start capability and full-load power output; Oil viscosity increases faster than normal (1.5-2× standard oxidation rate) due to contamination-induced viscosity shear; Wear debris concentration in oil reaches 100-500 mg/L within 250-500 hours (normal limit: 20-50 mg/L), triggering unplanned oil changes; Filter bypass events occur when particulate loading exceeds filter capacity within 50-75% of normal service interval; Engine noise increases 3-6 dB as bearing clearances widen and piston slap develops; Unplanned maintenance requirement rises to one event per 500-750 operating hours in contaminated environments. Equipment availability drops 15-25% in agricultural and construction applications operating in high-dust zones. For fleet-level strategies to reduce this downtime,{' '}
+                <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the fleet downtime reduction guide</Link>.
+              </p>
+            ) : section.content === '__LINKED_RELATED_STANDARDS__' ? (
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+                Particle contamination thresholds and detection methods are defined by:{' '}
+                <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
+                and{' '}
+                <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
+                (particle cleanliness codes defining maximum allowable 4µm, 6µm, and 14µm particles in hydraulic/fuel systems); ASTM D7085 (wear metals content by inductively coupled plasma spectroscopy, quantifies Fe, Cu, Pb, Cr, Al, Ni, Sn from bearing alloys and steel); ASTM D7364 (particle count and distribution by laser particle counter); ISO 4572 (engine oil viscosity classification and particle size thresholds); SAE J1211 (engine oil analysis procedures); SAE J1539 (diesel engine air intake cleanliness classification, defines maximum inlet contamination for various application categories); ISO 11158 (diesel engine oil specification, includes particle content limits for ISO 4406 16/14/11 minimum); NFPA T2.14 (machine tool hydraulic fluid requirements, establishes ISO 16889 18/16/13 minimum cleanliness).
+              </p>
+            ) : (
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.95rem',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.8,
+              }}>
+                {section.content}
+              </p>
+            )}
           </motion.div>
         ))}
       </section>
