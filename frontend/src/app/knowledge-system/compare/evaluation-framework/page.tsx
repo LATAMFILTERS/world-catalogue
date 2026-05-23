@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function EvaluationFrameworkPage() {
   return (

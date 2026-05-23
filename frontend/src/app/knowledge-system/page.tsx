@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const SECTIONS = [
   {
@@ -57,7 +58,7 @@ export default function KnowledgeSystemPage() {
 
       {/* Hero */}
       <section style={{
-        paddingTop: '8rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -143,7 +144,7 @@ export default function KnowledgeSystemPage() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
           gap: '1.75rem',
         }}>
           {SECTIONS.map((section, i) => (

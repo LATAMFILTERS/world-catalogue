@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'SAE J1539', desc: 'Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air to preserve engine efficiency and bearing life.' },
@@ -58,7 +59,7 @@ export default function AirIntakeSystemsPage() {
       }}>← STANDARDS</Link>
 
       <section style={{
-        paddingTop: '8rem', paddingBottom: '4rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)', paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.04) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)', textAlign: 'center',
       }}>

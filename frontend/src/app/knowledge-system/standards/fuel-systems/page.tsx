@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
@@ -61,7 +62,7 @@ export default function FuelSystemsPage() {
       }}>← STANDARDS</Link>
 
       <section style={{
-        paddingTop: '8rem', paddingBottom: '4rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)', paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.04) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)', textAlign: 'center',
       }}>

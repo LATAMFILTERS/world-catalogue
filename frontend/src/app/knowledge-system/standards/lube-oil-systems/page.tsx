@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
@@ -63,7 +64,7 @@ export default function LubeOilSystemsPage() {
 
       {/* Hero */}
       <section style={{
-        paddingTop: '8rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.04) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const RELATED_PAGES = [
   { code: 'DOWNTIME', title: 'Reducing Fleet Downtime', href: '/knowledge-system/fleet/reducing-downtime' },

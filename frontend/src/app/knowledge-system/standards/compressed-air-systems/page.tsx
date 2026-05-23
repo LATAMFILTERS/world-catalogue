@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ISO 8573-1', desc: 'Compressed air purity classification system (Classes 0-9) defining maximum particle concentration, water content (dew point), and oil content for different industrial applications.' },
@@ -69,7 +70,7 @@ export default function CompressedAirSystemsPage() {
       }}>← STANDARDS</Link>
 
       <section style={{
-        paddingTop: '8rem', paddingBottom: '4rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)', paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.04) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)', textAlign: 'center',
       }}>
