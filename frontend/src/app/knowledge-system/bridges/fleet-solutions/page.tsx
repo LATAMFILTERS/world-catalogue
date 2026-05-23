@@ -16,7 +16,7 @@ export default function FleetSolutionsPage() {
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
 
-      {/* Hero */}
+      {/* Hero - POINT 1: Search Intent Title */}
       <section style={{
         paddingTop: '5rem',
         paddingBottom: '5rem',
@@ -54,7 +54,7 @@ export default function FleetSolutionsPage() {
               color: 'rgba(255,255,255,0.9)',
             }}
           >
-            Fleet Filtration Solutions
+            Fleet Filtration Solutions Framework
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -75,9 +75,59 @@ export default function FleetSolutionsPage() {
         </div>
       </section>
 
+      {/* POINT 2: Industrial Context Introduction */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '860px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            CONTEXT
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Why Fleet Filtration Strategy Matters
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            Fleet operations manage dozens or hundreds of diverse equipment types operating across varied environments. Individual filter selection decisions compound into massive operational and cost impacts across the fleet.
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+          }}>
+            This page guides fleet-level filtration strategy—standardizing contamination control across diverse equipment types while optimizing supply chain, maintenance coordination, and total cost of ownership.
+          </p>
+        </motion.div>
+      </section>
+
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / Fleet Complexity */}
+        {/* POINT 3: Fleet Complexity */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +143,7 @@ export default function FleetSolutionsPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            01 / FLEET FILTRATION COMPLEXITY
+            03 / FLEET FILTRATION COMPLEXITY
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -102,42 +152,41 @@ export default function FleetSolutionsPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Managing Multiple Equipment Types
+            Managing Diversity at Scale
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
-            marginBottom: '1rem',
+            marginBottom: '1.5rem',
           }}>
-            Fleet operators face unique filtration challenges:
+            Fleet operations face unique challenges:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
-            marginBottom: '1rem',
           }}>
-            <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>Multiple Equipment Types:</strong> Trucks, excavators, loaders, compressors, hydraulic systems. Each has different filtration requirements and operating conditions.
+            <li style={{ marginBottom: '1rem' }}>
+              <strong style={{ color: '#FFF12D' }}>Equipment Diversity:</strong> Multiple brands and models (tractors, loaders, trucks, compressors) operating simultaneously
             </li>
-            <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>Diverse Operating Conditions:</strong> Urban, rural, dusty construction sites, wet environments, extreme temperatures. Contamination loads vary dramatically across fleet.
+            <li style={{ marginBottom: '1rem' }}>
+              <strong style={{ color: '#FFF12D' }}>Environmental Variation:</strong> Equipment operates in dusty fields, wet marine environments, extreme heat/cold—each changing contamination profiles
             </li>
-            <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>Supply Chain Complexity:</strong> Managing inventory of dozens of filter part numbers across multiple suppliers. Risk of obsolescence, overstocking, and supply disruption.
+            <li style={{ marginBottom: '1rem' }}>
+              <strong style={{ color: '#FFF12D' }}>Supply Chain Complexity:</strong> Managing 5-50+ different filter types, maintaining stock, coordinating procurement
             </li>
-            <li style={{ marginBottom: '0.75rem' }}>
-              <strong style={{ color: '#FFF12D' }}>Maintenance Coordination:</strong> Technicians across multiple locations. Inconsistent filter selection, replacement intervals, and maintenance practices.
+            <li style={{ marginBottom: '1rem' }}>
+              <strong style={{ color: '#FFF12D' }}>Maintenance Coordination:</strong> Scheduling filter replacement across dozens of units without creating bottlenecks
             </li>
             <li>
-              <strong style={{ color: '#FFF12D' }}>Cost Visibility Gap:</strong> Filter purchases scattered across maintenance budgets, OEM dealers, and aftermarket suppliers. No unified cost tracking or TCO optimization.
+              <strong style={{ color: '#FFF12D' }}>Cost Visibility Gap:</strong> Individual equipment filters seem cheap; fleet-level TCO impact is invisible until breakdowns occur
             </li>
           </ul>
         </motion.section>
 
-        {/* 02 / Fleet Strategy */}
+        {/* POINT 4-6: System Approach + Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,7 +202,7 @@ export default function FleetSolutionsPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            02 / STANDARDIZED CONTAMINATION CONTROL STRATEGY
+            04-06 / STANDARDIZED CONTAMINATION CONTROL STRATEGY
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -162,7 +211,7 @@ export default function FleetSolutionsPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Unified Approach Across Equipment Diversity
+            From Equipment Diversity to System Standardization
           </h2>
           <p style={{
             fontSize: '1rem',
@@ -170,57 +219,38 @@ export default function FleetSolutionsPage() {
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
           }}>
-            Fleet-wide contamination control requires standardization without sacrificing equipment-specific optimization:
+            Fleet-level strategy standardizes contamination control across diverse equipment by applying universal contamination targets and measurable filtration frameworks:
           </p>
           <div style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: 'rgba(255,241,45,0.06)',
+            border: '1px solid rgba(255,241,45,0.15)',
             padding: '2rem',
             borderRadius: '8px',
           }}>
-            <p style={{
-              fontSize: '0.95rem',
+            <ul style={{
+              fontSize: '1rem',
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
-              marginBottom: '1rem',
-              margin: '0 0 1rem 0',
+              marginLeft: '1.5rem',
+              marginBottom: '0',
             }}>
-              <strong style={{ color: '#FFF12D' }}>1. Define Fleet Equipment Categories</strong><br/>
-              Group equipment by type and operating environment (e.g., on-highway trucks, construction equipment, stationary compressors). Each category has similar contamination exposure and filtration requirements.
-            </p>
-            <p style={{
-              fontSize: '0.95rem',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.7)',
-              marginBottom: '1rem',
-              margin: '0 0 1rem 0',
-            }}>
-              <strong style={{ color: '#FFF12D' }}>2. Establish Contamination Targets</strong><br/>
-              Set ISO 4406 cleanliness codes for each category (engine lube, hydraulic, fuel, etc.). These targets apply across all equipment in the category regardless of brand or model variation.
-            </p>
-            <p style={{
-              fontSize: '0.95rem',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.7)',
-              marginBottom: '1rem',
-              margin: '0 0 1rem 0',
-            }}>
-              <strong style={{ color: '#FFF12D' }}>3. Select Standard Filters</strong><br/>
-              Choose 1-2 high-quality filters per equipment type that meet or exceed OEM specs for that category. Minimize supplier count. Negotiate volume pricing. Establish predictable inventory.
-            </p>
-            <p style={{
-              fontSize: '0.95rem',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.7)',
-              margin: '0',
-            }}>
-              <strong style={{ color: '#FFF12D' }}>4. Deploy Condition-Based Intervals</strong><br/>
-              Replace filters when particle counts indicate contamination approaching targets, not on fixed schedules. Intervals vary by operating environment but are data-driven, not arbitrary.
-            </p>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Contamination Target Framework:</strong> Define target ISO 4406 cleanliness codes for each fluid type (lube: 16/14/11, hydraulic: 17/15/12, fuel: 15/13/10) regardless of equipment model.
+              </li>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Standardized Supplier Selection:</strong> Qualify 2-3 aftermarket suppliers across all fluid domains. Reduces SKU complexity while maintaining quality consistency across fleet.
+              </li>
+              <li style={{ marginBottom: '1rem' }}>
+                <strong style={{ color: '#FFF12D' }}>Condition-Based Intervals:</strong> Replace filters based on contamination measurement, not calendar/usage schedules. Flexible intervals adapt to actual operating conditions.
+              </li>
+              <li>
+                <strong style={{ color: '#FFF12D' }}>System-Wide Measurement:</strong> Track contamination across all six domains (air, fuel, lube, hydraulic, cabin, compressed air) through particle counting. Unified contamination visibility.
+              </li>
+            </ul>
           </div>
         </motion.section>
 
-        {/* 03 / Supply Chain Optimization */}
+        {/* POINT 7-8: Implementation + Impact */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -236,7 +266,7 @@ export default function FleetSolutionsPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            03 / FLEET SUPPLY CHAIN OPTIMIZATION
+            07-08 / FLEET IMPLEMENTATION ROADMAP & OPERATIONAL IMPACT
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -245,17 +275,44 @@ export default function FleetSolutionsPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Cost Efficiency & Inventory Control
+            Phased Rollout for Fleet-Level Contamination Control
           </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1.5rem',
+          }}>
+            Implementation across fleet equipment:
+          </p>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,255,0,0.03) 100%)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            borderRadius: '8px',
+            padding: '2rem',
+            marginBottom: '1.5rem',
+          }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+              <strong style={{ color: '#FFF12D' }}>Phase 1 – Assessment:</strong> Baseline contamination condition across fleet. Particle count each equipment type in each environment. Document existing filter brands, intervals, costs.
+            </p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+              <strong style={{ color: '#FFF12D' }}>Phase 2 – Standardization:</strong> Qualify 2-3 aftermarket suppliers. Standardize on 1-2 filter options per fluid domain. Reduce SKU count by 40-60%.
+            </p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+              <strong style={{ color: '#FFF12D' }}>Phase 3 – Deployment:</strong> Roll out condition-based replacement protocols. Train technicians on particle counting. Integrate replacement scheduling into maintenance management system.
+            </p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
+              <strong style={{ color: '#FFF12D' }}>Phase 4 – Optimization:</strong> Monitor contamination trends. Adjust supplier selection based on field performance. Extend replacement intervals based on actual condition data. Continuous cost reduction.
+            </p>
+          </div>
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gap: '1.5rem',
-            marginBottom: '1.5rem',
+            gap: '1rem',
           }}>
             <div style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
               padding: '1.5rem',
               borderRadius: '8px',
             }}>
@@ -265,7 +322,7 @@ export default function FleetSolutionsPage() {
                 color: '#FFF12D',
                 marginBottom: '0.75rem',
               }}>
-                Supplier Consolidation
+                Fleet-Wide Benefits
               </p>
               <p style={{
                 fontSize: '0.85rem',
@@ -273,12 +330,12 @@ export default function FleetSolutionsPage() {
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
-                Reduce from 5-10 suppliers to 2-3. Larger volumes enable better pricing. Simplified ordering and logistics.
+                30-40% average downtime reduction, 25-35% maintenance cost savings, 40-50% SKU reduction, unified contamination visibility
               </p>
             </div>
             <div style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
               padding: '1.5rem',
               borderRadius: '8px',
             }}>
@@ -288,7 +345,7 @@ export default function FleetSolutionsPage() {
                 color: '#FFF12D',
                 marginBottom: '0.75rem',
               }}>
-                Inventory Reduction
+                Supply Chain Simplification
               </p>
               <p style={{
                 fontSize: '0.85rem',
@@ -296,63 +353,18 @@ export default function FleetSolutionsPage() {
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
-                Standard filters across equipment categories reduce SKUs. Faster turnover. Lower carrying costs.
-              </p>
-            </div>
-            <div style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              padding: '1.5rem',
-              borderRadius: '8px',
-            }}>
-              <p style={{
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}>
-                Maintenance Consistency
-              </p>
-              <p style={{
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-                color: 'rgba(255,255,255,0.7)',
-                margin: '0',
-              }}>
-                Standardized filters simplify technician training. Reduced error. Consistent performance across fleet.
-              </p>
-            </div>
-            <div style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              padding: '1.5rem',
-              borderRadius: '8px',
-            }}>
-              <p style={{
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}>
-                Price Transparency
-              </p>
-              <p style={{
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-                color: 'rgba(255,255,255,0.7)',
-                margin: '0',
-              }}>
-                Centralized purchasing. Unified cost tracking. TCO visibility across fleet operations.
+                Fewer suppliers, larger order volumes, better pricing, simplified maintenance inventory, easier technician training
               </p>
             </div>
           </div>
         </motion.section>
 
-        {/* 04 / Implementation */}
+        {/* POINT 9: Related Pages */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
+          style={{ marginBottom: '4rem' }}
         >
           <p style={{
             fontSize: '0.85rem',
@@ -363,77 +375,70 @@ export default function FleetSolutionsPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / FLEET IMPLEMENTATION ROADMAP
+            09 / RELATED KNOWLEDGE PAGES
           </p>
-          <h2 style={{
-            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-            fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
-            marginBottom: '1.5rem',
-            lineHeight: 1.2,
-          }}>
-            Transitioning to System-Level Fleet Filtration
-          </h2>
           <div style={{
-            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,255,0,0.03) 100%)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            borderRadius: '8px',
-            padding: '2rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1rem',
           }}>
-            <div style={{
-              borderLeft: '3px solid #FFF12D',
-              paddingLeft: '1.5rem',
-              marginLeft: '0',
-            }}>
-              <p style={{
-                fontSize: '0.95rem',
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.7)',
-                marginBottom: '1rem',
-                margin: '0 0 1rem 0',
-              }}>
-                <strong style={{ color: '#FFF12D' }}>Phase 1: Inventory & Baseline</strong><br/>
-                Document all equipment types, current filters, replacement frequencies. Establish baseline particle count data. Identify current TCO drivers.
-              </p>
-              <p style={{
-                fontSize: '0.95rem',
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.7)',
-                marginBottom: '1rem',
-                margin: '0 0 1rem 0',
-              }}>
-                <strong style={{ color: '#FFF12D' }}>Phase 2: Contamination Target Definition</strong><br/>
-                Define ISO 4406 cleanliness targets for each equipment category. Establish measurement protocols (particle counting, interval frequency).
-              </p>
-              <p style={{
-                fontSize: '0.95rem',
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.7)',
-                marginBottom: '1rem',
-                margin: '0 0 1rem 0',
-              }}>
-                <strong style={{ color: '#FFF12D' }}>Phase 3: Standard Filter Selection</strong><br/>
-                Select 1-2 high-quality filters per equipment category. Negotiate volume contracts. Phase out non-standard filters.
-              </p>
-              <p style={{
-                fontSize: '0.95rem',
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.7)',
-                margin: '0',
-              }}>
-                <strong style={{ color: '#FFF12D' }}>Phase 4: Condition-Based Maintenance</strong><br/>
-                Deploy particle counting. Replace filters based on contamination condition, not schedule. Train technicians. Establish feedback loops for continuous improvement.
-              </p>
-            </div>
+            <Link href="/knowledge-system/fleet/reducing-downtime" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Reducing Downtime</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Fleet maintenance strategies</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/compare/total-cost-ownership" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>TCO Analysis</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Financial impact analysis</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/standards/iso-4406" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>ISO 4406</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Cleanliness code standards</p>
+              </div>
+            </Link>
           </div>
+        </motion.section>
+
+        {/* POINT 10: Canonical Block */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '2rem',
+            borderRadius: '8px',
+          }}
+        >
           <p style={{
-            fontSize: '1rem',
-            lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
-            marginTop: '1.5rem',
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
           }}>
-            Expected outcomes: 15-25% reduction in filter costs, 30-50% improvement in equipment reliability, 20-30% reduction in unplanned downtime, measurable extension of equipment life.
+            10 / CANONICAL SUMMARY
           </p>
+          <div style={{
+            background: 'rgba(255,241,45,0.05)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '1.5rem',
+            borderRadius: '4px',
+          }}>
+            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
+              Technical Summary
+            </p>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
+              <strong>Domain:</strong> Fleet-Level Filtration Strategy | <strong>Challenge:</strong> Managing diverse equipment in varied environments with unified contamination control | <strong>Framework:</strong> Standardized contamination targets (ISO 4406 codes) across all equipment types | <strong>Implementation:</strong> Supplier standardization (2-3 options per domain), condition-based replacement, particle counting across fleet | <strong>Optimization Phases:</strong> Assess → Standardize → Deploy → Optimize | <strong>Fleet Benefits:</strong> 30-40% downtime reduction, 25-35% maintenance cost savings, 40-50% SKU reduction, unified visibility | <strong>Impact:</strong> Simplified supply chain, easier maintenance, measurable contamination control across entire fleet
+            </p>
+          </div>
         </motion.section>
 
       </div>

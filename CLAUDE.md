@@ -151,6 +151,179 @@ When restructuring Standards, maintain the 6 core domains:
 
 Each domain should integrate all applicable standards in system context.
 
+## Knowledge System 10-Point Template Architecture (PHASE 1)
+
+### Global Standard for All Knowledge System Pages
+
+All Knowledge System pages (Bridge, Standards, Contamination, Fleet, Compare, etc.) must follow this unified 10-point architecture to create a machine-readable industrial knowledge system optimized for both human technical users and AI systems.
+
+### The 10 Required Points
+
+#### 1. **Search Intent Title (SEO Optimized)**
+- Page `<h1>` title optimized for actual user search intent
+- Example search intents: "industrial filtration selection," "OEM filter requirements," "aftermarket filter evaluation," "fleet filtration strategy"
+- Title should answer the implied question a user is searching for
+- Keep titles specific and descriptive (40-65 characters)
+
+#### 2. **Industrial Context Introduction**
+- **Location**: After hero section, before main content
+- **Purpose**: Establish the industrial problem and why this topic matters
+- **Content**: 2-3 paragraphs explaining:
+  - The industrial scenario or operation being addressed
+  - Why filtration decisions matter for equipment reliability
+  - The stakes if decisions are made incorrectly
+  - No marketing language; focus on operational reality
+
+#### 3. **Traditional Product-Based Approach (Neutral)**
+- **Location**: First main content section
+- **Purpose**: Explain how the industry traditionally approaches this decision
+- **Content**: 
+  - How purchasers typically evaluate and select filtration
+  - Traditional decision criteria (brand, price, OEM spec compliance)
+  - Why this approach exists (legacy processes, familiarity)
+  - What this approach assumes about filtration
+  - No attacks; present neutrally as "the established approach"
+
+#### 4. **Limitations of Product-Based Thinking**
+- **Location**: Second main content section
+- **Purpose**: Identify where product-based thinking breaks down
+- **Content**:
+  - Specific failure modes of product-only evaluation
+  - Examples of where commodity selection fails operationally
+  - Quantified operational impacts (downtime, component wear, TCO)
+  - Why OEM specification compliance ≠ equipment reliability
+  - Standards and measurement gaps in traditional approach
+
+#### 5. **Industrial Asset Protection Model (ELIMFILTERS Framework)**
+- **Location**: Third main content section
+- **Purpose**: Introduce the system-level approach
+- **Content**:
+  - Shift from "which product" to "what contamination target"
+  - Explain the Information Architecture hierarchy: Contamination → Asset Degradation → Standards & Measurement → Protection Technologies → Product Implementation → Fleet Optimization → Sustainability
+  - Define what "asset protection" means in this domain
+  - Show how system design prevents equipment failure
+  - Link to ELIMFILTERS positioning as asset protection provider
+
+#### 6. **Contamination → Standards → Technology Framework**
+- **Location**: Fourth main content section
+- **Purpose**: Teach the decision hierarchy
+- **Content**:
+  - Step 1: Understand contamination sources and targets (what contaminants threaten equipment)
+  - Step 2: Apply relevant standards as measurement tools (ISO 4406, ISO 16889, etc.)
+  - Step 3: Select technologies that control measured contamination
+  - Step 4: Implement via specific filtration products
+  - Show decision tree or flow diagram
+  - Emphasize that product selection is the LAST step, not the first
+
+#### 7. **Technology Mapping (ELIMFILTERS Ecosystem)**
+- **Location**: Fifth main content section
+- **Purpose**: Map ELIMFILTERS technologies to this specific domain
+- **Content**:
+  - Which ELIMFILTERS technologies apply to this contamination challenge
+  - How each technology controls contamination in this domain
+  - ISO standards each technology addresses
+  - Operational benefits (equipment life extension, cost savings, downtime reduction)
+  - Links to technology pages for deeper detail
+
+#### 8. **Operational and Fleet Impact**
+- **Location**: Sixth main content section
+- **Purpose**: Show real-world operational consequences
+- **Content**:
+  - Equipment lifespan impact (30-50% extension through system approach)
+  - Downtime reduction (specific to this domain)
+  - Maintenance interval optimization
+  - Total cost of ownership comparison (system vs commodity)
+  - Fleet-level economics and standardization benefits
+
+#### 9. **Internal Knowledge Links**
+- **Location**: Footer/navigation section before canonical block
+- **Purpose**: Create interconnected knowledge network
+- **Content**:
+  - Links to related Standards pages (ISO codes mentioned)
+  - Links to related Contamination case studies
+  - Links to related Fleet optimization strategies
+  - Links to related Technologies
+  - Links to related Compare/Bridge pages
+  - Use consistent link patterns: `[Link text](/knowledge-system/[section]/[page])`
+
+#### 10. **Canonical Explanation Block (Machine-Readable Summary)**
+- **Location**: Final section, before closing `</main>`
+- **Purpose**: Provide structured data for AI systems and search engines
+- **Format**: JSON-LD structured data block
+- **Content**: 
+  ```json
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "[Page Title]",
+    "description": "[One-sentence industrial summary]",
+    "author": {
+      "@type": "Organization",
+      "name": "ELIMFILTERS"
+    },
+    "keywords": ["industrial filtration", "contamination control", "ISO standards", ...],
+    "about": {
+      "@type": "Thing",
+      "name": "[Domain Name]",
+      "description": "[Technical description]"
+    },
+    "mentions": {
+      "standards": ["ISO 16889", "ISO 4406", ...],
+      "technologies": ["MACROCORE", "NANOFORCE", ...],
+      "contaminationModes": ["particle wear", "water contamination", ...]
+    },
+    "relatedLink": [
+      { "url": "/knowledge-system/standards/[page]", "title": "[Title]" },
+      { "url": "/knowledge-system/technologies/[tech]", "title": "[Title]" }
+    ]
+  }
+  ```
+- **AI-Readable Summary** (alongside JSON-LD):
+  - Plain-text structured summary of the page's core technical points
+  - Format: Key concepts as labeled statements
+  - Example: "Domain: Hydraulic Systems | Primary Contamination: Particle wear | Target Standard: ISO 16889 | Key Technologies: NANOFORCE, SYNTRAX"
+
+### Implementation Guidelines
+
+**Mandatory Requirements**:
+- ✅ All 10 points present on every Knowledge System page
+- ✅ Points presented in order (1-10)
+- ✅ No content deletion, only reorganization
+- ✅ Section titles maintain consistent numbering (01/, 02/, etc.)
+- ✅ Maintain dark theme (#000) and yellow accents (#FFF12D)
+- ✅ Use Framer Motion animations for entrance effects
+- ✅ Inline CSS styling with responsive design
+- ✅ Point 10 (Canonical block) uses JSON-LD + plain-text structured data
+
+**Styling Standards**:
+- Hero section with gradient background
+- Numbered sections with monospace labels
+- Card layouts for technology/standard listings
+- Hover effects for internal links
+- Mobile-responsive grid layouts
+
+**Integration with i18n**:
+- All 10 points translated to 11 languages
+- Canonical block included in all translations
+- Links updated for language context
+
+### Verification Checklist
+
+For each Knowledge System page:
+- [ ] Point 1: SEO-optimized title present in `<h1>`
+- [ ] Point 2: Industrial context introduction after hero
+- [ ] Point 3: Traditional approach section clearly labeled
+- [ ] Point 4: Limitations section with quantified impacts
+- [ ] Point 5: Asset protection model introduction
+- [ ] Point 6: Contamination → Standards → Technology framework
+- [ ] Point 7: ELIMFILTERS technology mapping with ISO references
+- [ ] Point 8: Operational/fleet impact with metrics
+- [ ] Point 9: Internal knowledge links to related pages
+- [ ] Point 10: JSON-LD + plain-text canonical block
+- [ ] All content reorganized, not deleted
+- [ ] Styling matches dark theme standard
+- [ ] Page builds without errors
+
 ## Category Reframing Layer
 
 The **Category Reframing Layer** positions ELIMFILTERS as a category leader in industrial asset protection, competing against commodity filtration brands (Donaldson, Fleetguard, Mann, Wix, Baldwin) by redefining how filtration is evaluated and purchased.

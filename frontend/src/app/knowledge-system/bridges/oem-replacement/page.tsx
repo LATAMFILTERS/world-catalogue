@@ -16,7 +16,7 @@ export default function OEMReplacementPage() {
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
 
-      {/* Hero */}
+      {/* Hero - POINT 1: Search Intent Title */}
       <section style={{
         paddingTop: '5rem',
         paddingBottom: '5rem',
@@ -54,7 +54,7 @@ export default function OEMReplacementPage() {
               color: 'rgba(255,255,255,0.9)',
             }}
           >
-            OEM Filter Replacement Strategy
+            OEM Filter Requirements Strategy
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -70,14 +70,72 @@ export default function OEMReplacementPage() {
               paddingLeft: '1.25rem',
             }}
           >
-            When OEM filters are required, recommended, or optional—and how to optimize filter selection within those constraints.
+            When OEM filters are required, optional, or recommended—and how to optimize filter selection within system constraints.
           </motion.p>
         </div>
       </section>
 
+      {/* POINT 2: Industrial Context Introduction */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '860px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            CONTEXT
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Understanding OEM Filter Requirements
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            Equipment manufacturers specify filters for warranty compliance, system design compatibility, and performance targets. But OEM requirements represent minimum compliance thresholds, not optimal contamination control.
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            When warranty is active or contracts mandate OEM compliance, filtration can still be optimized within those constraints. When warranty expires, filter selection can shift from compliance to asset protection.
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+          }}>
+            This page clarifies when OEM compliance is non-negotiable, when optimization is possible, and how to achieve system-level performance within whatever constraints apply.
+          </p>
+        </motion.div>
+      </section>
+
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / OEM Requirements */}
+        {/* POINT 3: Traditional OEM Approach */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +151,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            01 / OEM FILTER REQUIREMENTS
+            03 / OEM FILTER REQUIREMENTS
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -134,7 +192,7 @@ export default function OEMReplacementPage() {
           </ul>
         </motion.section>
 
-        {/* 02 / When OEM is Optional */}
+        {/* POINT 4: When OEM is Optional */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -150,7 +208,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            02 / WHEN OEM IS OPTIONAL
+            04 / OPTIMIZATION OPPORTUNITIES
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -159,7 +217,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Optimization Opportunities
+            When OEM Compliance is Optional
           </h2>
           <p style={{
             fontSize: '1rem',
@@ -205,7 +263,7 @@ export default function OEMReplacementPage() {
           </div>
         </motion.section>
 
-        {/* 03 / Equivalent Filter Evaluation */}
+        {/* POINT 5 & 6: Equivalent Filter Evaluation + Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -221,7 +279,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            03 / EQUIVALENT FILTER EVALUATION
+            05-06 / SPECIFICATION MATCHING & SYSTEM FRAMEWORK
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -230,7 +288,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Specification Matching Criteria
+            Equivalent Filter Evaluation Criteria
           </h2>
           <p style={{
             fontSize: '1rem',
@@ -244,6 +302,7 @@ export default function OEMReplacementPage() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '1rem',
+            marginBottom: '1.5rem',
           }}>
             <div style={{
               background: 'rgba(255,255,255,0.02)',
@@ -390,13 +449,28 @@ export default function OEMReplacementPage() {
               </p>
             </div>
           </div>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,255,0,0.03) 100%)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            borderRadius: '8px',
+            padding: '1.5rem',
+          }}>
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+            }}>
+              <strong style={{ color: '#FFF12D' }}>Decision Framework:</strong> Specification-equivalent filters provide equal protection. When OEM compliance is required, verify specification match. When optional, enhancement beyond specifications (higher Beta ratio, greater dirt capacity) extends intervals and improves system performance.
+            </p>
+          </div>
         </motion.section>
 
-        {/* 04 / OEM Optimization Strategy */}
+        {/* POINT 7-8: Optimization Strategy + Impact */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
+          style={{ marginBottom: '4rem' }}
         >
           <p style={{
             fontSize: '0.85rem',
@@ -407,7 +481,7 @@ export default function OEMReplacementPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / OPTIMIZING WITHIN OEM CONSTRAINTS
+            07-08 / OPTIMIZING WITHIN OEM CONSTRAINTS & OPERATIONAL IMPACT
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -431,6 +505,7 @@ export default function OEMReplacementPage() {
             border: '1px solid rgba(255,241,45,0.15)',
             borderRadius: '8px',
             padding: '2rem',
+            marginBottom: '1.5rem',
           }}>
             <ul style={{
               fontSize: '1rem',
@@ -452,6 +527,140 @@ export default function OEMReplacementPage() {
                 <strong style={{ color: '#FFF12D' }}>Measurement and Verification:</strong> Track particle counts and cleanliness codes to verify OEM filters are maintaining target contamination levels. If not, escalate to equipment maintenance (bypass valve check, seal inspection, air intake seal verification).
               </li>
             </ul>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1rem',
+          }}>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Equipment Lifespan Impact
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                Even with OEM filters, condition-based replacement and contamination control optimization extends component life by 20-40%.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Downtime Reduction
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                Condition-based maintenance reduces emergency repairs by 50-70% compared to calendar-based scheduling.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* POINT 9: Internal Knowledge Links */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            09 / RELATED KNOWLEDGE PAGES
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1rem',
+          }}>
+            <Link href="/knowledge-system/bridges/aftermarket-selection" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Aftermarket Strategy</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>When OEM warranty expires</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/standards/lube-oil-systems" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Lube Oil Systems</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>ISO 4406 cleanliness codes</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/compare/evaluation-framework" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Evaluation Framework</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>System-level filter selection</p>
+              </div>
+            </Link>
+          </div>
+        </motion.section>
+
+        {/* POINT 10: Canonical Block */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '2rem',
+            borderRadius: '8px',
+          }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            10 / CANONICAL SUMMARY (AI-READABLE)
+          </p>
+          <div style={{
+            background: 'rgba(255,241,45,0.05)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '1.5rem',
+            borderRadius: '4px',
+          }}>
+            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
+              Technical Summary
+            </p>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
+              <strong>Domain:</strong> OEM Filter Strategy | <strong>Primary Factors:</strong> Warranty compliance, specification matching, system constraints | <strong>Key Decision Points:</strong> Warranty status → OEM required? → If yes, optimize within constraints → If no, select by contamination metrics | <strong>Specification Match Criteria:</strong> Physical fit, flow capacity, pressure drop, bypass setting, micron rating, media type | <strong>Optimization Strategy:</strong> Condition-based replacement, contamination pathway control, system-level integration | <strong>Impact:</strong> 20-40% equipment life extension, 50-70% downtime reduction even with OEM compliance requirements
+            </p>
           </div>
         </motion.section>
 

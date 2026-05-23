@@ -16,7 +16,7 @@ export default function IndustrialFiltrationPage() {
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
 
-      {/* Hero */}
+      {/* Hero - POINT 1: Search Intent Title (SEO Optimized) */}
       <section style={{
         paddingTop: '5rem',
         paddingBottom: '5rem',
@@ -54,7 +54,7 @@ export default function IndustrialFiltrationPage() {
               color: 'rgba(255,255,255,0.9)',
             }}
           >
-            Industrial Filtration Selection
+            Industrial Filtration Selection Framework
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -70,14 +70,72 @@ export default function IndustrialFiltrationPage() {
               paddingLeft: '1.25rem',
             }}
           >
-            Framework for evaluating industrial filtration across diverse equipment types and operating conditions.
+            From product selection to contamination control system design.
           </motion.p>
         </div>
       </section>
 
+      {/* POINT 2: Industrial Context Introduction */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '860px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            CONTEXT
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Why Industrial Filtration Decisions Matter
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            Industrial equipment operates across extreme environments—dusty construction sites, marine salt air, high-temperature manufacturing facilities, sub-zero climates. Equipment reliability depends entirely on how effectively filtration systems control contamination across all critical domains: air intake, fuel, lube oil, hydraulic, cabin, and compressed air.
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            A single filtration decision—which filter to install—impacts equipment lifespan (30-50% difference), operational downtime (emergency repairs vs. planned maintenance), and total cost of ownership (factor of 8-10x difference over equipment lifetime).
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+          }}>
+            Yet most industrial operations approach filtration as a commodity product selection problem: "Which brand?" "What's the OEM spec?" "What's the cheapest option?" This page bridges that product-focused thinking into system-level asset protection.
+          </p>
+        </motion.div>
+      </section>
+
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / Traditional Approach */}
+        {/* POINT 3: Traditional Product-Based Approach */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -168,7 +226,7 @@ export default function IndustrialFiltrationPage() {
           </p>
         </motion.section>
 
-        {/* 02 / Limitations */}
+        {/* POINT 4: Limitations of Product-Based Thinking */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -223,7 +281,7 @@ export default function IndustrialFiltrationPage() {
           </ul>
         </motion.section>
 
-        {/* 03 / System Approach */}
+        {/* POINT 5: Industrial Asset Protection Model */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -307,7 +365,7 @@ export default function IndustrialFiltrationPage() {
           </div>
         </motion.section>
 
-        {/* 04 / Technology Mapping */}
+        {/* POINT 7: Technology Mapping */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -495,11 +553,12 @@ export default function IndustrialFiltrationPage() {
           </div>
         </motion.section>
 
-        {/* 05 / Standards Integration */}
+        {/* POINT 6: Contamination → Standards → Technology Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
+          style={{ marginBottom: '4rem' }}
         >
           <p style={{
             fontSize: '0.85rem',
@@ -510,7 +569,7 @@ export default function IndustrialFiltrationPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            05 / STANDARDS & CONTAMINATION FRAMEWORK
+            06 / STANDARDS & CONTAMINATION FRAMEWORK
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -558,6 +617,509 @@ export default function IndustrialFiltrationPage() {
               color: 'rgba(255,255,255,0.7)',
             }}>
               <strong style={{ color: '#FFF12D' }}>Outcome:</strong> Filtration decision-making shifts from "Is this the OEM-specified filter?" to "Does this filter system maintain our target contamination codes?" The difference is the difference between compliance and equipment protection.
+            </p>
+          </div>
+        </motion.section>
+
+        {/* POINT 8: Operational and Fleet Impact */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            08 / OPERATIONAL & FLEET IMPACT
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Real-World Equipment Lifespan & Cost Savings
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1.5rem',
+          }}>
+            System-level filtration design delivers quantifiable operational improvements:
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+          }}>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Equipment Lifespan Extension
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                30-50% longer component life through optimal contamination control. Critical wear components (bearings, rings, seals, valves) last 3-5x longer when contamination is minimized.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Downtime Reduction
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                Condition-based replacement reduces emergency repairs by 60-80%. Planned maintenance windows replace filters based on actual condition, not schedules.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Total Cost of Ownership
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                System approach saves 89% over 10-year equipment lifecycle vs. commodity approach. Filter cost is only 1-5% of total ownership cost; contamination-driven repairs are 95%+.
+              </p>
+            </div>
+            <div style={{
+              background: 'rgba(255,241,45,0.06)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              padding: '1.5rem',
+              borderRadius: '8px',
+            }}>
+              <p style={{
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                color: '#FFF12D',
+                marginBottom: '0.75rem',
+              }}>
+                Operational Efficiency
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)',
+                margin: '0',
+              }}>
+                15-40% fuel efficiency gains and 20-50% hydraulic efficiency preservation through optimal contamination targets. Reduced system resistance and pressure losses.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* POINT 9: Internal Knowledge Links */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            09 / RELATED KNOWLEDGE SYSTEM PAGES
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Explore the Complete Contamination Control Framework
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1rem',
+          }}>
+            <Link href="/knowledge-system/standards/lube-oil-systems" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Lube Oil Systems
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  ISO 16889 & ISO 4406 standards, engine wear particle contamination
+                </p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/standards/fuel-systems" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Fuel Systems
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  Water contamination, injector protection, ASTM D6304
+                </p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/standards/hydraulic-systems" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Hydraulic Systems
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  Proportional valve cleanliness, ISO 17/15/12 targets
+                </p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/contamination/particle-wear" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Particle Wear Mechanisms
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  Abrasive wear, contamination acceleration, failure modes
+                </p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/fleet/reducing-downtime" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Reducing Fleet Downtime
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  Condition-based maintenance, interval optimization
+                </p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/compare/total-cost-ownership" style={{
+              textDecoration: 'none',
+              display: 'block',
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+              }}
+              >
+                <p style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#FFF12D',
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Total Cost of Ownership
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: '0',
+                }}>
+                  System approach financial analysis, 10-year lifecycle
+                </p>
+              </div>
+            </Link>
+          </div>
+        </motion.section>
+
+        {/* POINT 10: Canonical Explanation Block (Machine-Readable) */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '2rem',
+            borderRadius: '8px',
+            marginBottom: '2rem',
+          }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            10 / CANONICAL SUMMARY (AI-READABLE)
+          </p>
+          <h3 style={{
+            fontSize: '1rem',
+            fontWeight: 600,
+            color: '#fff',
+            marginBottom: '1rem',
+          }}>
+            Page Metadata & Technical Summary
+          </h3>
+          <div style={{
+            background: 'rgba(0,0,0,0.5)',
+            border: '1px solid rgba(255,241,45,0.2)',
+            padding: '1.5rem',
+            borderRadius: '4px',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.8rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+            overflowX: 'auto',
+          }}>
+            {`{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Industrial Filtration Selection Framework",
+  "description": "System-level approach to industrial filtration decision-making beyond OEM compliance",
+  "keywords": ["industrial filtration", "contamination control", "ISO 4406", "ISO 16889", "equipment protection"],
+  "about": {
+    "domain": "Multi-System Filtration",
+    "systems": ["Air Intake", "Fuel", "Lube Oil", "Hydraulic", "Cabin", "Compressed Air"],
+    "primaryFocus": "System-level asset protection through measured contamination control"
+  },
+  "mentions": {
+    "standards": ["ISO 16889", "ISO 4406", "SAE J1539", "ASTM D6304", "NFPA T2.14", "ISO 8573-1"],
+    "contaminationModes": ["Particle wear", "Water contamination", "Oxidation", "Microbial growth"],
+    "metrics": ["ISO cleanliness codes", "Beta ratio", "Dirt holding capacity", "Bypass setting"]
+  },
+  "relatedPages": [
+    {"url": "/knowledge-system/standards/lube-oil-systems", "title": "Lube Oil Systems"},
+    {"url": "/knowledge-system/standards/hydraulic-systems", "title": "Hydraulic Systems"},
+    {"url": "/knowledge-system/compare/total-cost-ownership", "title": "Total Cost of Ownership"}
+  ]
+}`}
+          </div>
+          <div style={{
+            background: 'rgba(255,241,45,0.05)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '1.5rem',
+            borderRadius: '4px',
+          }}>
+            <p style={{
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              color: '#FFF12D',
+              marginBottom: '0.75rem',
+            }}>
+              Technical Summary
+            </p>
+            <p style={{
+              fontSize: '0.85rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.7)',
+              margin: '0',
+            }}>
+              <strong>Domain:</strong> Multi-System Industrial Filtration | <strong>Primary Standard:</strong> ISO 4406 (Cleanliness Codes) + ISO 16889 (Filter Testing) | <strong>Key Concept:</strong> Shift from product selection (OEM-based) to system design (contamination control-based) | <strong>Measurement Framework:</strong> Contamination targets (ISO codes) → Load assessment → Filter selection by contamination metrics → Condition-based replacement | <strong>Impact Range:</strong> 30-50% equipment lifespan extension, 60-80% downtime reduction, 89% TCO improvement over 10-year lifecycle | <strong>Integration:</strong> All six critical contamination domains addressed through unified system design
             </p>
           </div>
         </motion.section>

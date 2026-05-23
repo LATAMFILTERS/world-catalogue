@@ -16,7 +16,7 @@ export default function AftermarketSelectionPage() {
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
 
-      {/* Hero */}
+      {/* Hero - POINT 1: Search Intent Title */}
       <section style={{
         paddingTop: '5rem',
         paddingBottom: '5rem',
@@ -54,7 +54,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.9)',
             }}
           >
-            Aftermarket Filter Selection
+            Aftermarket Filter Selection Strategy
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -70,14 +70,64 @@ export default function AftermarketSelectionPage() {
               paddingLeft: '1.25rem',
             }}
           >
-            How to evaluate and select aftermarket filtration options while maintaining equipment reliability and optimizing cost.
+            Evaluating aftermarket filtration options through a system-level lens when warranty has expired or OEM is optional.
           </motion.p>
         </div>
       </section>
 
+      {/* POINT 2: Industrial Context Introduction */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '860px', margin: '0 auto' }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            CONTEXT
+          </p>
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Space Grotesk, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Why Aftermarket Filter Decisions Matter
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1rem',
+          }}>
+            Once equipment warranty expires, filtration decisions shift from OEM compliance to asset protection optimization. This creates both risk and opportunity: choosing poorly compromises equipment reliability and TCO, but selecting strategically can extend equipment life 30-50% while reducing costs.
+          </p>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+          }}>
+            This page guides aftermarket filter selection through system-level contamination control, not price minimization or brand recognition.
+          </p>
+        </motion.div>
+      </section>
+
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / Aftermarket Opportunity */}
+        {/* POINT 3: Aftermarket Opportunity Space */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +143,7 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            01 / AFTERMARKET OPPORTUNITY SPACE
+            03 / AFTERMARKET OPPORTUNITY SPACE
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -167,7 +217,7 @@ export default function AftermarketSelectionPage() {
           </div>
         </motion.section>
 
-        {/* 02 / Quality Evaluation */}
+        {/* POINT 4-6: Quality Criteria + Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -183,7 +233,7 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            02 / AFTERMARKET QUALITY CRITERIA
+            04-06 / AFTERMARKET QUALITY CRITERIA & FRAMEWORK
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -207,6 +257,7 @@ export default function AftermarketSelectionPage() {
             border: '1px solid rgba(255,255,255,0.08)',
             padding: '2rem',
             borderRadius: '8px',
+            marginBottom: '1.5rem',
           }}>
             <p style={{
               fontSize: '0.95rem',
@@ -216,7 +267,7 @@ export default function AftermarketSelectionPage() {
               margin: '0 0 1rem 0',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. ISO 16889 Certification</strong><br/>
-              Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β10≥75 means 75% of 10µm particles are captured.
+              Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β₁₀≥75 means 75% of 10µm particles are captured.
             </p>
             <p style={{
               fontSize: '0.95rem',
@@ -250,7 +301,7 @@ export default function AftermarketSelectionPage() {
           </div>
         </motion.section>
 
-        {/* 03 / Performance vs Price */}
+        {/* POINT 7-8: Performance vs Price + Impact */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -266,7 +317,7 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            03 / PERFORMANCE-BASED SELECTION
+            07-08 / PERFORMANCE-BASED SELECTION & OPERATIONAL IMPACT
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -275,7 +326,7 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
-            Beyond Lowest Price
+            Total Cost of Ownership, Not Unit Price
           </h2>
           <p style={{
             fontSize: '1rem',
@@ -283,7 +334,7 @@ export default function AftermarketSelectionPage() {
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
           }}>
-            When selecting aftermarket filters, don't optimize for purchase price. Optimize for total cost of ownership:
+            When selecting aftermarket filters, optimize for total cost of ownership:
           </p>
           <div style={{
             background: 'rgba(255,255,255,0.02)',
@@ -312,13 +363,37 @@ export default function AftermarketSelectionPage() {
               Moderate cost, good service life, low pressure drop, high dirt capacity. Extended replacement intervals, reduced downtime frequency. Total 10-year cost: lower due to fewer replacements and less downtime.
             </p>
           </div>
+          <div style={{
+            background: 'rgba(255,241,45,0.06)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '1.5rem',
+            borderRadius: '8px',
+          }}>
+            <p style={{
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              color: '#FFF12D',
+              marginBottom: '0.75rem',
+            }}>
+              Equipment Lifespan & Downtime
+            </p>
+            <p style={{
+              fontSize: '0.85rem',
+              lineHeight: 1.6,
+              color: 'rgba(255,255,255,0.7)',
+              margin: '0',
+            }}>
+              Quality aftermarket filters extending service intervals by 30-50% reduce emergency repairs and planned downtime by 40-60% over equipment lifetime.
+            </p>
+          </div>
         </motion.section>
 
-        {/* 04 / Integration Strategy */}
+        {/* POINT 9: System-Level Integration */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
+          style={{ marginBottom: '4rem' }}
         >
           <p style={{
             fontSize: '0.85rem',
@@ -329,46 +404,69 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / SYSTEM-LEVEL INTEGRATION
+            09 / RELATED KNOWLEDGE PAGES
           </p>
-          <h2 style={{
-            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-            fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
-            marginBottom: '1.5rem',
-            lineHeight: 1.2,
-          }}>
-            Aftermarket Filters in Contamination Control Strategy
-          </h2>
           <div style={{
-            background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,255,0,0.03) 100%)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            borderRadius: '8px',
-            padding: '2rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1rem',
           }}>
-            <ul style={{
-              fontSize: '1rem',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.7)',
-              marginLeft: '1.5rem',
-              marginBottom: '0',
-            }}>
-              <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>Specification-Equivalent Aftermarket:</strong> If OEM warranty has expired, use high-quality aftermarket meeting OEM specifications. Cost reduction without performance penalty.
-              </li>
-              <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>Performance-Enhanced Aftermarket:</strong> Select filters exceeding OEM specs (higher Beta ratio, greater dirt capacity) for extended intervals and improved contamination control.
-              </li>
-              <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>Condition-Based Replacement:</strong> Use particle counting to determine actual service life, not calendar schedules. Aftermarket filters with higher dirt capacity support longer intervals.
-              </li>
-              <li style={{ marginBottom: '1rem' }}>
-                <strong style={{ color: '#FFF12D' }}>System Integration:</strong> While selecting aftermarket for individual filters, maintain contamination control across all six domains (air, fuel, lube, hydraulic, cabin, compressed air).
-              </li>
-              <li>
-                <strong style={{ color: '#FFF12D' }}>Measurement & Verification:</strong> Track actual contamination via particle counts. Verify aftermarket filters are achieving target cleanliness codes. Adjust intervals if targets aren't maintained.
-              </li>
-            </ul>
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Industrial Filtration</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>System-level design framework</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/compare/total-cost-ownership" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>TCO Analysis</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>10-year lifecycle economics</p>
+              </div>
+            </Link>
+            <Link href="/knowledge-system/standards/iso-16889" style={{ textDecoration: 'none', display: 'block' }}>
+              <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>ISO 16889</p>
+                <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Filter testing standard</p>
+              </div>
+            </Link>
+          </div>
+        </motion.section>
+
+        {/* POINT 10: Canonical Block */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            padding: '2rem',
+            borderRadius: '8px',
+          }}
+        >
+          <p style={{
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            marginBottom: '1rem',
+            textTransform: 'uppercase',
+          }}>
+            10 / CANONICAL SUMMARY
+          </p>
+          <div style={{
+            background: 'rgba(255,241,45,0.05)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '1.5rem',
+            borderRadius: '4px',
+          }}>
+            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
+              Technical Summary
+            </p>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
+              <strong>Domain:</strong> Aftermarket Filter Strategy | <strong>Primary Context:</strong> Warranty-expired equipment | <strong>Key Standards:</strong> ISO 16889 (testing), ISO 4406 (contamination targets) | <strong>Decision Factors:</strong> ISO certification, specification match, material quality, supplier reputation | <strong>Selection Approach:</strong> Evaluate by contamination control metrics (Beta ratio, dirt capacity) rather than price | <strong>Optimization:</strong> Condition-based replacement, extended intervals, 30-50% lifecycle cost reduction vs. commodity filters | <strong>Impact:</strong> 30-50% equipment life extension, 40-60% downtime reduction
+            </p>
           </div>
         </motion.section>
 
