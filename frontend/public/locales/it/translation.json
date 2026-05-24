@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "industries": "Industrie",
+    "systems": "Sistemi",
+    "technologies": "Tecnologie",
+    "contact": "Contatto",
+    "findMyFilter": "TROVA IL MIO FILTRO",
+    "knowledge": "Conoscenza"
+  },
+  "hero": {
+    "tag": "// TECNOLOGIA PER LA PROTEZIONE DEL PATRIMONIO",
+    "title": "FILTRAZIONE DEL MOTORE",
+    "subtitle": "PESANTE E LEGGERO",
+    "description": "Filtrazione ingegneristica progettata per coloro che non possono permettersi un motore in stallo o una flotta fuori servizio.",
+    "cta": "Esplora funzionalità"
+  },
+  "stats": {
+    "mediaEfficiency": "Efficienza dei media",
+    "engineLifeSpan": "Durata del motore",
+    "oemCrossRefs": "Riferimenti incrociati OEM",
+    "distribution": "Distribuzione"
+  },
+  "problem": {
+    "tag": "// REALTÀ DEL CAMPO",
+    "title": "Cosa succede quando la protezione fallisce?",
+    "badge": "L'80% dei guasti prematuri sono causati dalla contaminazione.",
+    "items": {
+      "injector": {
+        "title": "Erosione degli iniettori",
+        "desc": "Le particelle microniche deformano gli orifizi di spruzzo, causando un'immediata perdita di potenza e una cattiva combustione."
+      },
+      "bearing": {
+        "title": "Attrito critico del cuscinetto",
+        "desc": "L'olio contaminato accelera l'usura dei metalli, riducendo la durata del blocco motore fino al 40%."
+      },
+      "fuel": {
+        "title": "Drenaggio del carburante",
+        "desc": "Un motore limitato consuma fino all'8% in più di diesel solo per mantenere gli stessi livelli di coppia."
+      }
+    }
+  },
+  "why": {
+    "title": "PERCHÉ SCEGLIERE GLI ELIMFILTRI",
+    "p1": "ELIMFILTERS è più di un produttore di filtri. Siamo un'azienda specializzata in",
+    "p1highlight": "Tecnologia di protezione patrimoniale",
+    "p1after": ", progettando soluzioni che preservano il valore e l'operatività delle vostre apparecchiature negli ambienti più esigenti.",
+    "p2": "Ogni prodotto che sviluppiamo risponde a una realtà: la riparazione delle apparecchiature che bloccano le vostre attività costa centinaia di migliaia di dollari. Un filtro è il custode di tale investimento.",
+    "card": {
+      "tag": "// TECNOLOGIA PER LA PROTEZIONE DEL PATRIMONIO",
+      "title": "Progettiamo sistemi di protezione. Componenti non standardizzati.",
+      "desc": "ELIMFILTERS progetta tecnologie di protezione multistrato calibrate per difendere le risorse industriali critiche: ogni sistema è una soluzione appositamente creata, non un sostituto delle materie prime.",
+      "items": [
+        "Matrice di protezione multistrato formulata con AI",
+        "Architettura zero bypass su ogni sistema",
+        "Certificato ISO 5011 · 16332 · 16889 · 19438",
+        "Oltre 20.000 riferimenti incrociati di risorse OEM"
+      ]
+    }
+  },
+  "technology": {
+    "tag": "// TECNOLOGIA PROPRIETARIA ELIMFILTER",
+    "title": "INGEGNERIA",
+    "titleHighlight": "OLTRE LO STANDARD",
+    "items": {
+      "media": {
+        "title": "Supporti ibridi formulati con intelligenza artificiale",
+        "desc": "Fibre sintetiche e cellulosiche progettate tramite algoritmi AI per ottenere la massima capacità di sporco mantenendo una protezione bypass pari a zero."
+      },
+      "hydrophobic": {
+        "title": "Sistemi di separazione idrofobica",
+        "desc": "Tecnologia avanzata di separazione dell'acqua che rimuove l'acqua libera, emulsionata e disciolta prima che raggiunga i sistemi di iniezione critici."
+      },
+      "antibypass": {
+        "title": "Strutture anti-bypass",
+        "desc": "Geometrie di tenuta progettate che garantiscono un bypass a contaminazione zero nelle condizioni di pressione e temperatura più estreme."
+      }
+    }
+  },
+  "cta": {
+    "dealer": {
+      "tag": "// RETE RIVENDITORI",
+      "title": "SOLO IL MEGLIO",
+      "highlight": "VENDI ELIMFILTRI.",
+      "button": "DIVENTA RIVENDITORE"
+    },
+    "search": {
+      "tag": "// RICERCA TECNICA",
+      "title": "IL FILTRO GIUSTO.",
+      "highlight": "CERCA COME UN PROFESSIONISTA.",
+      "button": "TROVA LA MIA PARTE"
+    }
+  },
+  "footer": {
+    "company": "AZIENDA",
+    "about": "Chi siamo",
+    "industries": "Industrie",
+    "contact": "Contatto",
+    "solutions": "SOLUZIONI",
+    "partSearch": "Ricerca parti",
+    "technologies": "Tecnologie",
+    "systems": "Sistemi",
+    "support": "SUPPORTO",
+    "technical": "Supporto tecnico",
+    "dealer": "Diventa un rivenditore",
+    "warranty": "Garanzia",
+    "copyright": "© 2015-2026 ELIMFILTERS LLC | Intelligenza e ingegneria nella filtrazione",
+    "location": "FRISCO TEXAS"
+  },
+  "category": {
+    "keyAdvantages": "VANTAGGI CHIAVE",
+    "engineeredAdvantages": "VANTAGGI PROGETTATI",
+    "engineeringExcellence": "ECCELLENZA INGEGNERIA",
+    "precisionEngineering": "INGEGNERIA DI PRECISIONE",
+    "systemSpecs": "SPECIFICHE DEL SISTEMA",
+    "active": "✓ ATTIVO",
+    "operationalAdvantages": "VANTAGGI OPERATIVI",
+    "whyElimfilters": "PERCHÉ ELIMFILTER",
+    "technologiesIncluded": "Tecnologie incluse",
+    "performanceMetrics": "METRICHE DELLE PRESTAZIONI",
+    "readyToUpgrade": "Pronto per l'aggiornamento?",
+    "readyDesc": "Trova il filtro esatto per la tua applicazione. Riferimenti incrociati di oltre 500.000 parti.",
+    "engineeringDesc": "L'ingegneria ELIMFILTERS applica standard di precisione ad ogni componente. I nostri sistemi di filtrazione sono progettati per superare le specifiche OEM, garantendo la massima protezione e prestazioni durante cicli di lavoro impegnativi.",
+    "home": "CASA"
+  },
+  "language": {
+    "switchToEn": "IT"
+  }
+}

@@ -107,17 +107,17 @@ export function TechDetailPage({ data }: Props) {
         <section style={{
           background: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
-          padding: '5rem 2rem 0',
+          padding: '1.5rem 2rem 0',
           position: 'relative',
           overflow: 'hidden',
         }}>
-          {/* Subtle dot matrix — different from Systems grid lines */}
+          {/* Subtle dot matrix background */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 0,
             backgroundImage: 'radial-gradient(rgba(255,241,45,0.07) 1px, transparent 1px)',
             backgroundSize: '28px 28px',
           }} />
-          {/* Radial fade so dots disappear toward edges */}
+          {/* Radial fade so content stays readable */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
             background: 'radial-gradient(ellipse 80% 70% at 50% 40%, transparent 30%, #000 100%)',
@@ -131,7 +131,7 @@ export function TechDetailPage({ data }: Props) {
                 display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
                 letterSpacing: '0.28em', color: '#FFF12D',
                 fontFamily: 'JetBrains Mono, monospace',
-                marginBottom: '3rem',
+                marginBottom: '0.75rem',
                 padding: '0.35rem 0.85rem',
                 border: '1px solid rgba(255,241,45,0.25)',
                 borderRadius: '2px',
@@ -145,7 +145,7 @@ export function TechDetailPage({ data }: Props) {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '1rem' }}
+              style={{ marginBottom: '0.5rem' }}
             >
               <img
                 src={data.logoSrc}

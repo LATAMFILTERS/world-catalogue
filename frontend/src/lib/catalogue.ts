@@ -7,6 +7,8 @@ export interface CatalogueItem {
   subtitle: string;
   description: string;
   features: string[];
+  benefits?: string[];
+  techTags?: string[];
   stats: {
     percentages?: string[];
     ratings?: string[];

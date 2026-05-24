@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "industries": "Secteurs",
+    "systems": "Systèmes",
+    "technologies": "Technologies",
+    "contact": "Contact",
+    "findMyFilter": "TROUVER MON FILTRE",
+    "knowledge": "Connaissance"
+  },
+  "hero": {
+    "tag": "// TECHNOLOGIE DE PROTECTION DES ACTIFS",
+    "title": "FILTRATION MOTEUR",
+    "subtitle": "ROBUSTES ET LÉGÈRES",
+    "description": "Filtration technique conçue pour ceux qui ne peuvent pas se permettre un moteur en panne ou une flotte hors service.",
+    "cta": "Explorer les fonctionnalités"
+  },
+  "stats": {
+    "mediaEfficiency": "Efficacité des médias",
+    "engineLifeSpan": "Durée de vie du moteur",
+    "oemCrossRefs": "Références croisées OEM",
+    "distribution": "Distribution"
+  },
+  "problem": {
+    "tag": "// RÉALITÉ DE TERRAIN",
+    "title": "Que se passe-t-il lorsque la protection échoue ?",
+    "badge": "80 % des pannes prématurées sont causées par une contamination.",
+    "items": {
+      "injector": {
+        "title": "Érosion des injecteurs",
+        "desc": "Les particules microniques déforment les orifices de pulvérisation, provoquant une perte de puissance immédiate et une mauvaise combustion."
+      },
+      "bearing": {
+        "title": "Friction critique des roulements",
+        "desc": "L'huile contaminée accélère l'usure du métal, réduisant ainsi la durée de vie du bloc moteur jusqu'à 40 %."
+      },
+      "fuel": {
+        "title": "Drainage du carburant",
+        "desc": "Un moteur restreint consomme jusqu'à 8 % de diesel en plus simplement pour maintenir les mêmes niveaux de couple."
+      }
+    }
+  },
+  "why": {
+    "title": "POURQUOI CHOISIR LES ELIMFILTERS",
+    "p1": "ELIMFILTERS est plus qu'un fabricant de filtres. Nous sommes une entreprise spécialisée dans",
+    "p1highlight": "Technologie de protection des actifs",
+    "p1after": ", en concevant des solutions qui préservent la valeur et l'opérabilité de vos équipements dans les environnements les plus exigeants.",
+    "p2": "Chaque produit que nous développons répond à une réalité : l’équipement qui arrête votre activité coûte des centaines de milliers de dollars en réparation. Un filtre est le gardien de cet investissement.",
+    "card": {
+      "tag": "// TECHNOLOGIE DE PROTECTION DES ACTIFS",
+      "title": "Nous concevons des systèmes de protection. Il ne s'agit pas de composants disponibles dans le commerce.",
+      "desc": "ELIMFILTERS conçoit des technologies de protection multicouches calibrées pour défendre les actifs industriels critiques : chaque système est une solution spécialement conçue et non un remplacement de produit.",
+      "items": [
+        "Matrice de protection multicouche formulée par l'IA",
+        "Architecture zéro contournement sur chaque système",
+        "Certifié ISO 5011 · 16332 · 16889 · 19438",
+        "Plus de 20 000 références croisées d’actifs OEM"
+      ]
+    }
+  },
+  "technology": {
+    "tag": "// TECHNOLOGIE PROPRIETAIRE ELIMFILTERS",
+    "title": "INGÉNIERIE",
+    "titleHighlight": "AU-DELÀ DE LA NORME",
+    "items": {
+      "media": {
+        "title": "Médias hybrides formulés par l'IA",
+        "desc": "Fibres synthétiques et cellulosiques conçues grâce à des algorithmes d'IA pour atteindre une capacité maximale contre la saleté tout en maintenant une protection contre le contournement nul."
+      },
+      "hydrophobic": {
+        "title": "Systèmes de séparation hydrophobes",
+        "desc": "Technologie avancée de séparation de l’eau qui élimine l’eau libre, émulsionnée et dissoute avant qu’elle n’atteigne les systèmes d’injection critiques."
+      },
+      "antibypass": {
+        "title": "Structures anti-contournement",
+        "desc": "Géométries de joints conçues pour garantir un contournement zéro contamination dans les conditions de pression et de température les plus extrêmes."
+      }
+    }
+  },
+  "cta": {
+    "dealer": {
+      "tag": "// RÉSEAU DE REVENDEURS",
+      "title": "SEULEMENT LE MEILLEUR",
+      "highlight": "VENDRE DES ELIMFILTRES.",
+      "button": "DEVENEZ REVENDEUR"
+    },
+    "search": {
+      "tag": "// RECHERCHE TECHNIQUE",
+      "title": "LE BON FILTRE.",
+      "highlight": "RECHERCHEZ COMME UN PRO.",
+      "button": "TROUVER MA PIÈCE"
+    }
+  },
+  "footer": {
+    "company": "ENTREPRISE",
+    "about": "À propos de nous",
+    "industries": "Secteurs",
+    "contact": "Contact",
+    "solutions": "SOLUTIONS",
+    "partSearch": "Recherche de pièces",
+    "technologies": "Technologies",
+    "systems": "Systèmes",
+    "support": "SOUTIEN",
+    "technical": "Assistance technique",
+    "dealer": "Devenez revendeur",
+    "warranty": "Garantie",
+    "copyright": "© 2015-2026 ELIMFILTERS LLC | Intelligence et ingénierie en filtration",
+    "location": "FRISCO-TEXAS"
+  },
+  "category": {
+    "keyAdvantages": "AVANTAGES CLÉS",
+    "engineeredAdvantages": "AVANTAGES D'INGÉNIERIE",
+    "engineeringExcellence": "EXCELLENCE EN INGÉNIERIE",
+    "precisionEngineering": "INGÉNIERIE DE PRÉCISION",
+    "systemSpecs": "SPÉCIFICATIONS DU SYSTÈME",
+    "active": "✓ ACTIF",
+    "operationalAdvantages": "AVANTAGES OPÉRATIONNELS",
+    "whyElimfilters": "POURQUOI DES ÉLIMFILTRES",
+    "technologiesIncluded": "Technologies incluses",
+    "performanceMetrics": "MESURES DE PERFORMANCE",
+    "readyToUpgrade": "Prêt à mettre à niveau ?",
+    "readyDesc": "Trouvez le filtre exact pour votre application. Référencez plus de 500 000 pièces.",
+    "engineeringDesc": "L'ingénierie ELIMFILTERS applique des normes de précision à chaque composant. Nos systèmes de filtration sont conçus pour dépasser les spécifications OEM, garantissant une protection et des performances maximales tout au long des cycles de service exigeants.",
+    "home": "MAISON"
+  },
+  "language": {
+    "switchToEn": "FR"
+  }
+}

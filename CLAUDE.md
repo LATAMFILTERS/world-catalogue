@@ -856,6 +856,86 @@ All Knowledge System pages follow a **consistent 8-section structure**:
 
 All pages use: **dark theme (#000), yellow accents (#FFF12D), Framer Motion animations**
 
+## Working with New Features
+
+### Internationalization (i18n)
+
+Pages automatically detect user language via `navigator.language`. To add new UI strings:
+
+1. **Add string to translation files** (11 languages):
+   ```json
+   // frontend/public/locales/en/translation.json
+   {
+     "newString": "English text here"
+   }
+   // frontend/public/locales/es/translation.json
+   {
+     "newString": "Texto en español aquí"
+   }
+   ```
+
+2. **Use in React components**:
+   ```tsx
+   import { useTranslation } from 'react-i18next';
+   
+   export default function MyComponent() {
+     const { t } = useTranslation();
+     return <p>{t('newString')}</p>;
+   }
+   ```
+
+3. **Commit both JSON files**:
+   ```bash
+   git add frontend/public/locales/
+   git commit -m "i18n: Add new strings for [feature]"
+   ```
+
+### Search Functionality
+
+The `/api/search` endpoint searches products by:
+- Part number (SKU)
+- OEM code
+- Product name or description
+
+**Query example**:
+```bash
+GET /api/search?q=air+filter
+```
+
+The part-search frontend (`part-search.elimfilters.com`) displays results from this endpoint.
+
+### Analytics Events
+
+Google Analytics 4 automatically tracks:
+- Page views
+- Scroll depth
+- User interactions
+- Custom events via gtag
+
+**Add custom event**:
+```tsx
+import { useEffect } from 'react';
+
+useEffect(() => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'search', { search_term: 'air filter' });
+  }
+}, []);
+```
+
+### Contact Form
+
+The contact form at `/contact` sends emails via GoDaddy SMTP:
+1. Form data is POSTed to `/api/contact`
+2. Server validates required fields (name, email, message)
+3. Email sent to `info@elimfilters.com`
+4. User receives confirmation
+
+**Troubleshooting**:
+- Check `GODADDY_MAIL_PASS` environment variable is set
+- Verify `info@elimfilters.com` domain is active
+- Review `server.js` for SMTP configuration
+
 ## Code Conventions
 
 ### React Component Structure

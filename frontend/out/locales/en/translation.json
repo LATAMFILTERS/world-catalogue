@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "industries": "Industries",
+    "systems": "Systems",
+    "technologies": "Technologies",
+    "contact": "Contact",
+    "findMyFilter": "FIND MY FILTER",
+    "knowledge": "Knowledge"
+  },
+  "hero": {
+    "tag": "// ASSET PROTECTION TECHNOLOGY",
+    "title": "ENGINE FILTRATION",
+    "subtitle": "HEAVY-DUTY AND LIGHT-DUTY",
+    "description": "Engineering filtration designed for those who cannot afford a stalled engine or a fleet out of action.",
+    "cta": "Explore Features"
+  },
+  "stats": {
+    "mediaEfficiency": "Media Efficiency",
+    "engineLifeSpan": "Engine Life Span",
+    "oemCrossRefs": "OEM Cross-Refs",
+    "distribution": "Distribution"
+  },
+  "problem": {
+    "tag": "// FIELD REALITY",
+    "title": "What happens when protection fails?",
+    "badge": "80% of premature failures are caused by contamination.",
+    "items": {
+      "injector": {
+        "title": "Injector Erosion",
+        "desc": "Micronic particles deform spray orifices, causing immediate power loss and poor combustion."
+      },
+      "bearing": {
+        "title": "Critical Bearing Friction",
+        "desc": "Contaminated oil accelerates metal wear, reducing engine block life by up to 40%."
+      },
+      "fuel": {
+        "title": "Fuel Drainage",
+        "desc": "A restricted engine consumes up to 8% more diesel just to maintain the same torque levels."
+      }
+    }
+  },
+  "why": {
+    "title": "WHY CHOOSE ELIMFILTERS",
+    "p1": "ELIMFILTERS is more than a filter manufacturer. We are a company specialized in",
+    "p1highlight": "Asset Protection Technology",
+    "p1after": ", designing solutions that preserve the value and operability of your equipment in the most demanding environments.",
+    "p2": "Every product we develop responds to one reality: the equipment that stops your operation costs hundreds of thousands to repair. A filter is the guardian of that investment.",
+    "card": {
+      "tag": "// ASSET PROTECTION TECHNOLOGY",
+      "title": "We design protection systems. Not off-the-shelf components.",
+      "desc": "ELIMFILTERS engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.",
+      "items": [
+        "AI-formulated multi-layer protection matrix",
+        "Zero bypass architecture on every system",
+        "ISO 5011 · 16332 · 16889 · 19438 certified",
+        "20,000+ OEM asset cross-references"
+      ]
+    }
+  },
+  "technology": {
+    "tag": "// ELIMFILTERS PROPRIETARY TECHNOLOGY",
+    "title": "ENGINEERING",
+    "titleHighlight": "BEYOND THE STANDARD",
+    "items": {
+      "media": {
+        "title": "AI-Formulated Hybrid Media",
+        "desc": "Synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection."
+      },
+      "hydrophobic": {
+        "title": "Hydrophobic Separation Systems",
+        "desc": "Advanced water separation technology that removes free, emulsified and dissolved water before it reaches critical injection systems."
+      },
+      "antibypass": {
+        "title": "Anti-Bypass Structures",
+        "desc": "Engineered seal geometries that guarantee zero contamination bypass under the most extreme pressure and temperature conditions."
+      }
+    }
+  },
+  "cta": {
+    "dealer": {
+      "tag": "// DEALER NETWORK",
+      "title": "ONLY THE BEST",
+      "highlight": "SELL ELIMFILTERS.",
+      "button": "BECOME A DEALER"
+    },
+    "search": {
+      "tag": "// TECHNICAL SEARCH",
+      "title": "THE RIGHT FILTER.",
+      "highlight": "SEARCH LIKE A PRO.",
+      "button": "FIND MY PART"
+    }
+  },
+  "footer": {
+    "company": "COMPANY",
+    "about": "About Us",
+    "industries": "Industries",
+    "contact": "Contact",
+    "solutions": "SOLUTIONS",
+    "partSearch": "Part Search",
+    "technologies": "Technologies",
+    "systems": "Systems",
+    "support": "SUPPORT",
+    "technical": "Technical Support",
+    "dealer": "Become a Dealer",
+    "warranty": "Warranty",
+    "copyright": "© 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration",
+    "location": "FRISCO TEXAS"
+  },
+  "category": {
+    "keyAdvantages": "KEY ADVANTAGES",
+    "engineeredAdvantages": "ENGINEERED ADVANTAGES",
+    "engineeringExcellence": "ENGINEERING EXCELLENCE",
+    "precisionEngineering": "PRECISION ENGINEERING",
+    "systemSpecs": "SYSTEM SPECIFICATIONS",
+    "active": "✓ ACTIVE",
+    "operationalAdvantages": "OPERATIONAL ADVANTAGES",
+    "whyElimfilters": "WHY ELIMFILTERS",
+    "technologiesIncluded": "Technologies Included",
+    "performanceMetrics": "PERFORMANCE METRICS",
+    "readyToUpgrade": "Ready to Upgrade?",
+    "readyDesc": "Find the exact filter for your application. Cross-reference 500,000+ parts.",
+    "engineeringDesc": "ELIMFILTERS engineering applies precision standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.",
+    "home": "HOME"
+  },
+  "language": {
+    "switchToEn": "EN"
+  }
+}
