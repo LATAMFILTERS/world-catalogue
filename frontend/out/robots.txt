@@ -1,0 +1,30 @@
+# ELIMFILTERS World Catalogue — robots.txt
+# Optimized for: Googlebot, GPTBot, Claude-Web, Bingbot, Gemini, CCBot
+
+User-agent: *
+Allow: /
+
+# Allow all AI crawlers access to Knowledge System (semantic architecture optimized for AI retrieval)
+User-agent: GPTBot
+Allow: /knowledge-system/
+
+User-agent: Claude-Web
+Allow: /knowledge-system/
+
+User-agent: anthropic-ai
+Allow: /knowledge-system/
+
+User-agent: Google-Extended
+Allow: /knowledge-system/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /knowledge-system/
+
+User-agent: PerplexityBot
+Allow: /knowledge-system/
+
+# Sitemap
+Sitemap: https://elimfilters.com/sitemap.xml

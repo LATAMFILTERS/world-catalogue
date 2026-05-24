@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
+import { trackRetrievalBlock } from '@/lib/analytics';
 
 interface RetrievalBlockProps {
   children: React.ReactNode;
@@ -8,6 +10,13 @@ interface RetrievalBlockProps {
 
 export default function RetrievalBlock({ children }: RetrievalBlockProps) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleToggle = useCallback(() => {
+    const next = !open;
+    setOpen(next);
+    trackRetrievalBlock(next ? 'expand' : 'collapse', pathname);
+  }, [open, pathname]);
 
   return (
     <section
@@ -21,7 +30,9 @@ export default function RetrievalBlock({ children }: RetrievalBlockProps) {
       }}
     >
       <button
-        onClick={() => setOpen(!open)}
+        onClick={handleToggle}
+        aria-expanded={open}
+        aria-label="Toggle retrieval summary block"
         style={{
           background: 'none',
           border: 'none',

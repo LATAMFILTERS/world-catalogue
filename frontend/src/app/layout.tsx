@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
+import Analytics from '@/components/Analytics';
 
 export const metadata: Metadata = {
   title: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
@@ -30,6 +31,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Analytics />
         <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
