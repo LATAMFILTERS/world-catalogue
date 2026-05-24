@@ -8,6 +8,7 @@ const SECTIONS = [
   {
     title: 'International Standards',
     slug: 'standards',
+    domain: 'Standards Domain',
     description: 'ISO cleanliness codes, particle counting methodologies, and filter integrity testing standards.',
     icon: '⬡',
     href: '/knowledge-system/standards',
@@ -15,6 +16,7 @@ const SECTIONS = [
   {
     title: 'Contamination & Failure Modes',
     slug: 'contamination',
+    domain: 'Failure Analysis',
     description: 'Root causes of system failures, degradation mechanisms, and preventive maintenance strategies.',
     icon: '⚠',
     href: '/knowledge-system/contamination',
@@ -22,6 +24,7 @@ const SECTIONS = [
   {
     title: 'Filtration Science',
     slug: 'science',
+    domain: 'Technical Library',
     description: 'Particle physics, capture mechanisms, fluid dynamics, and protection architecture principles.',
     icon: '🔬',
     href: '/knowledge-system/science',
@@ -29,6 +32,7 @@ const SECTIONS = [
   {
     title: 'OEM vs Aftermarket',
     slug: 'compare',
+    domain: 'Evaluation Framework',
     description: 'Performance analysis, specification alignment, and compatibility considerations.',
     icon: '⚖',
     href: '/knowledge-system/compare',
@@ -36,6 +40,7 @@ const SECTIONS = [
   {
     title: 'Fleet Optimization',
     slug: 'fleet',
+    domain: 'Operational Strategy',
     description: 'Maintenance strategies, performance tracking, and operational efficiency optimization.',
     icon: '🚛',
     href: '/knowledge-system/fleet',
@@ -184,6 +189,17 @@ export default function KnowledgeSystemPage() {
                     {section.icon}
                   </div>
 
+                  {/* Domain label */}
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.13em',
+                    color: 'rgba(255,241,45,0.45)',
+                    textTransform: 'uppercase',
+                  }}>
+                    {section.domain}
+                  </span>
+
                   {/* Title */}
                   <h2 style={{
                     fontFamily: 'Outfit, sans-serif',
@@ -192,6 +208,7 @@ export default function KnowledgeSystemPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
+                    marginTop: '-0.5rem',
                   }}>
                     {section.title}
                   </h2>
