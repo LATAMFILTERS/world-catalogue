@@ -218,6 +218,7 @@ export function MarinePage() {
               {/* Product Image */}
               <AnimateIn direction="right">
                 <div
+                  className="marine-product-image"
                   style={{
                     borderRadius: '12px',
                     overflow: 'hidden',
@@ -495,6 +496,27 @@ export function MarinePage() {
           </AnimateIn>
         </section>
       </main>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .product-desc-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+          .marine-product-image {
+            width: 100% !important;
+            height: 260px !important;
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .product-specs-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

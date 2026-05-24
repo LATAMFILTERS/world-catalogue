@@ -195,6 +195,8 @@ export default function Home() {
             .hero-bottom { flex-direction: column !important; }
             .why-grid { grid-template-columns: 1fr !important; }
             .tech-grid { grid-template-columns: 1fr !important; }
+            .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            .spotlight-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
           }
         `}</style>
 
@@ -411,7 +413,7 @@ export default function Home() {
             viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '1200px', margin: '0 auto' }}
           >
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div>
                 <p style={{
                   fontFamily: 'JetBrains Mono, monospace',
