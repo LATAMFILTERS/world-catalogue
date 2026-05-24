@@ -210,6 +210,8 @@ body {
   .spotlight-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
   .why-grid { grid-template-columns: 1fr !important; }
   .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .marine-product-image { width: 100% !important; height: 280px !important; margin-left: 0 !important; margin-top: 0 !important; }
 }
 
 /* Mobile (≤768px) */

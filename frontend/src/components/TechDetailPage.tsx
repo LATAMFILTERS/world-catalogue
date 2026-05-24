@@ -127,7 +127,7 @@ export function TechDetailPage({ data }: Props) {
 
             {/* Category tag */}
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <span style={{
+              <span className="category-tag" style={{
                 display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
                 letterSpacing: '0.28em', color: '#FFF12D',
                 fontFamily: 'JetBrains Mono, monospace',
@@ -185,17 +185,20 @@ export function TechDetailPage({ data }: Props) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
+                className="hero-stats-strip"
                 style={{
                   display: 'flex',
                   justifyContent: 'center',
+                  flexWrap: 'wrap',
                   gap: '0',
                   marginTop: '4rem',
                   borderTop: '1px solid rgba(255,255,255,0.06)',
                 }}
               >
                 {data.heroStats.map(({ key, value }, i) => (
-                  <div key={key} style={{
+                  <div key={key} className="hero-stat-item" style={{
                     flex: '1',
+                    minWidth: '120px',
                     maxWidth: '220px',
                     padding: '1.75rem 1.5rem',
                     borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
@@ -661,6 +664,26 @@ export function TechDetailPage({ data }: Props) {
           .product-desc-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .category-tag {
+            letter-spacing: 0.1em !important;
+            font-size: 0.55rem !important;
+            padding: 0.3rem 0.65rem !important;
+            word-break: break-word !important;
+            white-space: normal !important;
+            max-width: 90vw !important;
+          }
+          .hero-stats-strip {
+            justify-content: flex-start !important;
+          }
+          .hero-stat-item {
+            flex: 1 1 45% !important;
+            max-width: 50% !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            padding: 1.25rem 1rem !important;
           }
         }
         @media (max-width: 600px) {
