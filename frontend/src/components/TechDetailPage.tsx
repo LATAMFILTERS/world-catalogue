@@ -294,7 +294,7 @@ export function TechDetailPage({ data }: Props) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
               {data.stages.map((stage, idx) => (
                 <AnimateIn key={idx} direction="up">
-                  <div style={{
+                  <div className="stage-row" style={{
                     display: 'grid',
                     gridTemplateColumns: '56px 1fr auto',
                     gap: '2rem',
@@ -316,7 +316,7 @@ export function TechDetailPage({ data }: Props) {
                         {stage.body}
                       </p>
                     </div>
-                    <div style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
+                    <div className="stage-stat" style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
                       <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
                       <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Outfit, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
                     </div>
@@ -661,6 +661,24 @@ export function TechDetailPage({ data }: Props) {
           .product-desc-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .stage-row {
+            grid-template-columns: 40px 1fr !important;
+            gap: 1rem 1.25rem !important;
+            padding: 1.5rem 1rem !important;
+          }
+          .stage-stat {
+            grid-column: 2 !important;
+            text-align: left !important;
+            min-width: unset !important;
+            padding-top: 0.75rem !important;
+            border-top: 1px solid rgba(255,255,255,0.05) !important;
+          }
+          .stage-stat div:last-child {
+            max-width: unset !important;
+            text-align: left !important;
           }
         }
       `}</style>
