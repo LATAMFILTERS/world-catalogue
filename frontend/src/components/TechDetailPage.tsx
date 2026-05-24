@@ -294,7 +294,7 @@ export function TechDetailPage({ data }: Props) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
               {data.stages.map((stage, idx) => (
                 <AnimateIn key={idx} direction="up">
-                  <div style={{
+                  <div className="stage-row" style={{
                     display: 'grid',
                     gridTemplateColumns: '56px 1fr auto',
                     gap: '2rem',
@@ -316,7 +316,7 @@ export function TechDetailPage({ data }: Props) {
                         {stage.body}
                       </p>
                     </div>
-                    <div style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
+                    <div className="stage-stat" style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
                       <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
                       <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Outfit, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
                     </div>
@@ -448,6 +448,212 @@ export function TechDetailPage({ data }: Props) {
           </AnimateIn>
         </section>
 
+        {/* ══════════════════════════════════════════════
+            SECTION 8 — RELATED KNOWLEDGE
+        ══════════════════════════════════════════════ */}
+        <section style={{ padding: '5rem 2rem', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <AnimateIn direction="up">
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+                Related Knowledge
+              </h2>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Inter, sans-serif', marginBottom: '3rem', maxWidth: '560px' }}>
+                Explore complementary resources from our engineering knowledge base.
+              </p>
+            </AnimateIn>
+            <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {/* Standards */}
+              <motion.div variants={itemVariants}>
+                <Link href="/knowledge-system/standards" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                    transition={{ duration: 0.2 }}
+                    style={{
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      padding: '2rem',
+                      cursor: 'pointer',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      border: '1px solid rgba(255,241,45,0.25)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFF12D',
+                      fontSize: '1rem',
+                    }}>
+                      ⬡
+                    </div>
+                    <div>
+                      <h3 style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        color: '#fff',
+                        marginBottom: '0.5rem',
+                      }}>
+                        International Standards
+                      </h3>
+                      <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '0.85rem',
+                        color: 'rgba(255,255,255,0.45)',
+                        lineHeight: 1.5,
+                        margin: 0,
+                      }}>
+                        ISO cleanliness codes, particle counting, and filter integrity testing.
+                      </p>
+                    </div>
+                    <div style={{
+                      fontSize: '0.7rem',
+                      color: 'rgba(255,241,45,0.4)',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      letterSpacing: '0.08em',
+                      marginTop: 'auto',
+                    }}>
+                      LEARN MORE →
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+
+              {/* Contamination & Failure Modes */}
+              <motion.div variants={itemVariants}>
+                <Link href="/knowledge-system/contamination" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                    transition={{ duration: 0.2 }}
+                    style={{
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      padding: '2rem',
+                      cursor: 'pointer',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      border: '1px solid rgba(255,241,45,0.25)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFF12D',
+                      fontSize: '1rem',
+                    }}>
+                      ⚠
+                    </div>
+                    <div>
+                      <h3 style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        color: '#fff',
+                        marginBottom: '0.5rem',
+                      }}>
+                        Contamination & Failure
+                      </h3>
+                      <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '0.85rem',
+                        color: 'rgba(255,255,255,0.45)',
+                        lineHeight: 1.5,
+                        margin: 0,
+                      }}>
+                        Root causes, degradation mechanisms, and failure prevention.
+                      </p>
+                    </div>
+                    <div style={{
+                      fontSize: '0.7rem',
+                      color: 'rgba(255,241,45,0.4)',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      letterSpacing: '0.08em',
+                      marginTop: 'auto',
+                    }}>
+                      LEARN MORE →
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+
+              {/* Fleet Optimization */}
+              <motion.div variants={itemVariants}>
+                <Link href="/knowledge-system/fleet" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                    transition={{ duration: 0.2 }}
+                    style={{
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      padding: '2rem',
+                      cursor: 'pointer',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      border: '1px solid rgba(255,241,45,0.25)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFF12D',
+                      fontSize: '1rem',
+                    }}>
+                      🚛
+                    </div>
+                    <div>
+                      <h3 style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        color: '#fff',
+                        marginBottom: '0.5rem',
+                      }}>
+                        Fleet Optimization
+                      </h3>
+                      <p style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '0.85rem',
+                        color: 'rgba(255,255,255,0.45)',
+                        lineHeight: 1.5,
+                        margin: 0,
+                      }}>
+                        Maintenance strategies, performance tracking, and operational efficiency.
+                      </p>
+                    </div>
+                    <div style={{
+                      fontSize: '0.7rem',
+                      color: 'rgba(255,241,45,0.4)',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      letterSpacing: '0.08em',
+                      marginTop: 'auto',
+                    }}>
+                      LEARN MORE →
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            </StaggerContainer>
+          </div>
+        </section>
+
       </main>
 
       <style>{`
@@ -455,6 +661,24 @@ export function TechDetailPage({ data }: Props) {
           .product-desc-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .stage-row {
+            grid-template-columns: 40px 1fr !important;
+            gap: 1rem 1.25rem !important;
+            padding: 1.5rem 1rem !important;
+          }
+          .stage-stat {
+            grid-column: 2 !important;
+            text-align: left !important;
+            min-width: unset !important;
+            padding-top: 0.75rem !important;
+            border-top: 1px solid rgba(255,255,255,0.05) !important;
+          }
+          .stage-stat div:last-child {
+            max-width: unset !important;
+            text-align: left !important;
           }
         }
       `}</style>

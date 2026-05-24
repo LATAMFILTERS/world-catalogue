@@ -2,55 +2,55 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const SECTIONS = [
   {
+    title: 'International Standards',
     slug: 'standards',
+    domain: 'Standards Domain',
+    description: 'ISO cleanliness codes, particle counting methodologies, and filter integrity testing standards.',
+    icon: '⬡',
     href: '/knowledge-system/standards',
-    title: 'Standards',
-    subtitle: 'ISO · SAE · DIN · NFPA',
-    icon: '⬡',
-    description: 'International filtration standards, certifications, and compliance frameworks.',
   },
   {
-    slug: 'contamination',
-    href: '/knowledge-system/contamination',
     title: 'Contamination & Failure Modes',
-    subtitle: 'Diagnosis · Prevention · Analysis',
-    icon: '◈',
-    description: 'Particle ingression, fluid degradation, and common filtration failure patterns.',
+    slug: 'contamination',
+    domain: 'Failure Analysis',
+    description: 'Root causes of system failures, degradation mechanisms, and preventive maintenance strategies.',
+    icon: '⚠',
+    href: '/knowledge-system/contamination',
   },
   {
-    slug: 'science',
-    href: '/knowledge-system/science',
     title: 'Filtration Science',
-    subtitle: 'Physics · Media · Efficiency',
-    icon: '◉',
-    description: 'Filtration mechanisms, media technology, beta ratios, and efficiency testing.',
+    slug: 'science',
+    domain: 'Technical Library',
+    description: 'Particle physics, capture mechanisms, fluid dynamics, and protection architecture principles.',
+    icon: '🔬',
+    href: '/knowledge-system/science',
   },
   {
+    title: 'OEM vs Aftermarket',
     slug: 'compare',
+    domain: 'Evaluation Framework',
+    description: 'Performance analysis, specification alignment, and compatibility considerations.',
+    icon: '⚖',
     href: '/knowledge-system/compare',
-    title: 'OEM vs Aftermarket Logic',
-    subtitle: 'Comparison · Value · Performance',
-    icon: '⬡',
-    description: 'Engineering criteria for evaluating OEM specifications against aftermarket solutions.',
   },
   {
-    slug: 'fleet',
-    href: '/knowledge-system/fleet',
     title: 'Fleet Optimization',
-    subtitle: 'Intervals · Scheduling · Cost',
-    icon: '◈',
-    description: 'Maintenance interval engineering, lifecycle cost analysis, and fleet-wide protection strategies.',
+    slug: 'fleet',
+    domain: 'Operational Strategy',
+    description: 'Maintenance strategies, performance tracking, and operational efficiency optimization.',
+    icon: '🚛',
+    href: '/knowledge-system/fleet',
   },
 ];
 
 export default function KnowledgeSystemPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
-      {/* Back to Home */}
+      {/* Back */}
       <Link href="/" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
@@ -63,8 +63,8 @@ export default function KnowledgeSystemPage() {
 
       {/* Hero */}
       <section style={{
-        paddingTop: '9rem',
-        paddingBottom: '5rem',
+        paddingTop: 'clamp(5rem, 10vw, 8rem)',
+        paddingBottom: '4rem',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         textAlign: 'center',
@@ -73,129 +73,145 @@ export default function KnowledgeSystemPage() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}
+          style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.72rem',
+            fontSize: '0.7rem',
             letterSpacing: '0.18em',
             color: '#FFF12D',
-            marginBottom: '1.25rem',
+            marginBottom: '1rem',
             opacity: 0.85,
           }}>
-            // ELIMFILTERS KNOWLEDGE SYSTEM
+            // KNOWLEDGE SYSTEM
           </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
-            fontSize: 'clamp(2.2rem, 6vw, 4rem)',
+            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.1,
-            marginBottom: '1.25rem',
+            letterSpacing: '-0.01em',
+            lineHeight: 1.15,
+            marginBottom: '1rem',
           }}>
-            ENGINEERING<br />
-            <span style={{ color: '#FFF12D' }}>KNOWLEDGE BASE</span>
+            Engineering Knowledge Base
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '1.05rem',
+            fontSize: '1rem',
             color: 'rgba(255,255,255,0.5)',
-            maxWidth: '520px',
+            maxWidth: '500px',
             margin: '0 auto',
             lineHeight: 1.65,
           }}>
-            Technical documentation, filtration science, and asset protection methodology.
+            Comprehensive technical resources for industrial filtration systems, contamination analysis, and operational optimization.
           </p>
         </motion.div>
       </section>
 
-      {/* Cards Grid */}
+      {/* ── ASSET PROTECTION NARRATIVE ── */}
+      <section style={{
+        padding: '4rem 2rem',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{ maxWidth: '900px', margin: '0 auto', padding: '0 0' }}
+        >
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.8,
+            marginBottom: '1.5rem',
+          }}>
+            The ELIMFILTERS Knowledge System explains how <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems</Link> fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection. Operational strategies such as <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>reducing fleet downtime</Link> begin with understanding the contamination root causes that drive unplanned equipment failures.
+          </p>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.75rem',
+            color: 'rgba(255,241,45,0.5)',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+          }}>
+            // Information Architecture: Contamination → Asset Degradation → Standards → Technologies → Products → Fleet Optimization → Sustainability
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Knowledge Sections */}
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '5rem 2rem',
+        padding: '4rem 2rem',
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+          gap: '1.75rem',
         }}>
           {SECTIONS.map((section, i) => (
             <motion.div
               key={section.slug}
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <Link href={section.href} style={{ textDecoration: 'none', display: 'block' }}>
                 <motion.div
-                  whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -4 }}
-                  transition={{ duration: 0.22 }}
+                  whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                  transition={{ duration: 0.2 }}
                   style={{
-                    background: 'rgba(255,255,255,0.03)',
+                    background: 'rgba(255,255,255,0.02)',
                     border: '1px solid rgba(255,255,255,0.08)',
                     padding: '2rem',
                     cursor: 'pointer',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '1rem',
-                    position: 'relative',
-                    overflow: 'hidden',
+                    gap: '1.2rem',
                   }}
                 >
-                  {/* Coming soon badge */}
-                  <span style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    right: '1rem',
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.15em',
-                    color: 'rgba(255,241,45,0.5)',
-                    border: '1px solid rgba(255,241,45,0.2)',
-                    padding: '0.2rem 0.5rem',
-                  }}>
-                    SOON
-                  </span>
-
                   {/* Icon */}
                   <div style={{
-                    width: '40px',
-                    height: '40px',
+                    width: '36px',
+                    height: '36px',
                     border: '1px solid rgba(255,241,45,0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#FFF12D',
-                    fontSize: '1.25rem',
+                    fontSize: '1rem',
                     flexShrink: 0,
                   }}>
                     {section.icon}
                   </div>
 
-                  {/* Title block */}
-                  <div>
-                    <p style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.65rem',
-                      letterSpacing: '0.15em',
-                      color: 'rgba(255,255,255,0.35)',
-                      marginBottom: '0.4rem',
-                    }}>
-                      {section.subtitle}
-                    </p>
-                    <h2 style={{
-                      fontFamily: 'Outfit, sans-serif',
-                      fontSize: '1.15rem',
-                      fontWeight: 600,
-                      color: '#fff',
-                      letterSpacing: '-0.01em',
-                      lineHeight: 1.25,
-                    }}>
-                      {section.title}
-                    </h2>
-                  </div>
+                  {/* Domain label */}
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.13em',
+                    color: 'rgba(255,241,45,0.45)',
+                    textTransform: 'uppercase',
+                  }}>
+                    {section.domain}
+                  </span>
+
+                  {/* Title */}
+                  <h2 style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 600,
+                    color: '#fff',
+                    letterSpacing: '-0.01em',
+                    lineHeight: 1.4,
+                    marginTop: '-0.5rem',
+                  }}>
+                    {section.title}
+                  </h2>
 
                   {/* Description */}
                   <p style={{
@@ -210,14 +226,10 @@ export default function KnowledgeSystemPage() {
 
                   {/* Arrow */}
                   <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    fontFamily: 'JetBrains Mono, monospace',
                     fontSize: '0.7rem',
-                    color: 'rgba(255,241,45,0.5)',
+                    color: 'rgba(255,241,45,0.4)',
+                    fontFamily: 'JetBrains Mono, monospace',
                     letterSpacing: '0.08em',
-                    marginTop: '0.5rem',
                   }}>
                     EXPLORE →
                   </div>
@@ -228,11 +240,23 @@ export default function KnowledgeSystemPage() {
         </div>
       </section>
 
-      <style>{`
-        @media (max-width: 768px) {
-          section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-        }
-      `}</style>
+      {/* Retrieval Summary Block — machine-readable knowledge index */}
+      <RetrievalBlock>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD, DRYCORE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system</p>
+        <p>&nbsp;&nbsp;concept_id: knowledge-system-hub</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+      </RetrievalBlock>
     </main>
   );
 }

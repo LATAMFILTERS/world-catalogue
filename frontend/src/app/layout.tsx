@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
+import Analytics from '@/components/Analytics';
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <Analytics />
         <ClientProviders>{children}</ClientProviders>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
