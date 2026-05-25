@@ -89,14 +89,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS World Catalogue',
-      images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.name} Filtration — ELIMFILTERS` }],
+      images: [{ 
+        url: industryMedia[item.name]?.image ? `https://elimfilters.com${industryMedia[item.name].image}` : 'https://elimfilters.com/assets/logo-elimfilters.png',
+        width: 1200, 
+        height: 630, 
+        alt: `${item.name} Filtration Systems — ELIMFILTERS` 
+      }],
       locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: item.description,
-      images: ['/assets/logo-elimfilters.png'],
+      images: [industryMedia[item.name]?.image ? `https://elimfilters.com${industryMedia[item.name].image}` : 'https://elimfilters.com/assets/logo-elimfilters.png'],
     },
   };
 }

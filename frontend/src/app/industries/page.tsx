@@ -219,6 +219,61 @@ export default function IndustriesPage() {
     },
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What industries require industrial filtration systems?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Every heavy-equipment and process industry requires filtration. Mining, agriculture, marine, oil & gas, power generation, construction, manufacturing, transportation, and waste management all depend on asset protection filtration to prevent contamination-related failures in engines, hydraulic systems, fuel circuits, and pneumatic systems.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is asset protection filtration?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Asset protection filtration is a system-level approach that targets contamination control via ISO and SAE standards, not product commodity selection. It maintains measurable cleanliness codes (ISO 4406, ISO 16889) across all fluid circuits—oil, fuel, hydraulic, coolant, and air—to extend equipment lifespan 30-50% and reduce unplanned downtime.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How does mining filtration differ from standard industrial filtration?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Mining environments expose equipment to dust concentrations exceeding 5,000 mg/m³—far above ISO 5011 test standards. Mining filtration systems must handle bypass-protected air intakes, fuel circuit water removal (H2O intrusion from rain and humidity), and hydraulic system contamination control for high-pressure hoist and crush systems.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What filtration standards does ELIMFILTERS comply with?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ELIMFILTERS systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does ELIMFILTERS serve offshore oil and gas platforms?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. ELIMFILTERS marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the typical equipment lifespan extension from system-level filtration?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'System-level filtration targeting ISO 16/14/11 cleanliness codes (vs. commodity approaches at 19/17/14) extends bearing and engine component life 3-5x. In mining equipment, this translates to 15,000-25,000 operational hours vs. 2,000-3,000 hours under poor contamination control.',
+        },
+      },
+    ],
+  };
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Link href="/" style={{
@@ -406,6 +461,7 @@ export default function IndustriesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </main>
   );
 }

@@ -34,7 +34,9 @@
           "0%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Dust concentrations exceed 1,500 mg/m³ during harvest (ISO 5011: 30-300 mg/m³)",
+      "statisticSource": "ISO 5011 Air Filter Testing Standard"
     },
     {
       "name": "Automotive",
@@ -62,7 +64,9 @@
         "MICROKAPPA™"
       ],
       "stats": {},
-      "cta": "VIEW TECHNOLOGY"
+      "cta": "VIEW TECHNOLOGY",
+      "statistic": "Engine air intake exposure: 150-300 mg/m³ urban, 5,000+ mg/m³ construction zones",
+      "statisticSource": "SAE J1539 Air Filter Performance"
     },
     {
       "name": "Bus Coach",
@@ -96,7 +100,9 @@
           "99.9%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Fleet downtime costs: $500-1,500/hour per vehicle across 40-60 vehicle fleets",
+      "statisticSource": "Fleet Management Operations Analysis"
     },
     {
       "name": "Construction",
@@ -127,7 +133,9 @@
           "35%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Dust concentrations on job sites exceed 3,000 mg/m³ (2,500+ mg/m³ in tunneling)",
+      "statisticSource": "OSHA Air Quality Standards"
     },
     {
       "name": "Manufacturing",
@@ -155,7 +163,9 @@
         "MACROCORE™"
       ],
       "stats": {},
-      "cta": "EXPLORE TECHNOLOGY"
+      "cta": "EXPLORE TECHNOLOGY",
+      "statistic": "Hydraulic system cleanliness target: ISO 18/16/13 prevents proportional valve stiction",
+      "statisticSource": "ISO 16889 Hydraulic Filter Testing"
     },
     {
       "name": "Marine",
@@ -183,7 +193,9 @@
         "NANOFORCE™"
       ],
       "stats": {},
-      "cta": "VIEW TECHNOLOGY"
+      "cta": "VIEW TECHNOLOGY",
+      "statistic": "Salt-mist corrosion ASTM B117: standard filters corrode within 2-3 months offshore",
+      "statisticSource": "ASTM B117 Salt Spray Testing"
     },
     {
       "name": "Mining",
@@ -215,7 +227,9 @@
           "99.9%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Sub-Saharan mine dust: 5,000-15,000 mg/m³; downtime: ~$180,000/hour per machine",
+      "statisticSource": "McKinsey Mining Operations Analysis"
     },
     {
       "name": "Oil Gas",
@@ -247,7 +261,9 @@
           "99.9%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "H2S contamination threshold: OSHA PEL 20 ppm; fuel water removal target: <30 ppm",
+      "statisticSource": "OSHA PEL Regulations; NFPA 110 Fuel Standards"
     },
     {
       "name": "Power Generation",
@@ -275,7 +291,9 @@
         "DRYCORE™"
       ],
       "stats": {},
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Backup diesel degradation: 6-12 months without fuel conditioning (NFPA 110)",
+      "statisticSource": "NFPA 110 Emergency Power Standard"
     },
     {
       "name": "Railway",
@@ -303,7 +321,9 @@
         "DRYCORE™"
       ],
       "stats": {},
-      "cta": "VIEW ENGINEERING"
+      "cta": "VIEW ENGINEERING",
+      "statistic": "Locomotive diesel filtration: ISO 19/17/14; particle wear reduces bearing life 50-70%",
+      "statisticSource": "ISO 4406 Railway Cleanliness Codes"
     },
     {
       "name": "Trucks Fleets",
@@ -331,7 +351,9 @@
         "DURATECH™"
       ],
       "stats": {},
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Fleet preventive maintenance: target 500 operational hours between service intervals",
+      "statisticSource": "Fleet Management Best Practices"
     },
     {
       "name": "Waste Municipal",
@@ -367,7 +389,9 @@
           "40%"
         ]
       },
-      "cta": "FIND MY FILTER"
+      "cta": "FIND MY FILTER",
+      "statistic": "Waste hauler equipment exposure: 2,000+ mg/m³ dust, high water vapor in compacted waste",
+      "statisticSource": "Municipal Waste Operations Data"
     }
   ],
   "products": [
