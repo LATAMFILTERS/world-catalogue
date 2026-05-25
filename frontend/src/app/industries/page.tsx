@@ -181,6 +181,29 @@ function IndustryCard({
 }
 
 export default function IndustriesPage() {
+  const industriesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Industrial Filtration Systems by Industry',
+    url: 'https://elimfilters.com/industries/',
+    itemListElement: catalogue.industries.map((industry, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: `${industry.name} Filtration Systems`,
+      url: `https://elimfilters.com/industries/${getSlug(industry.name)}`,
+      description: industry.description,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+    ],
+  };
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Link href="/" style={{
@@ -226,7 +249,7 @@ export default function IndustriesPage() {
               marginBottom: '3rem',
             }}
           >
-            12 CRITICAL INDUSTRIES
+            Industrial Filtration Systems by Industry
           </motion.h1>
         </div>
 
@@ -249,6 +272,9 @@ export default function IndustriesPage() {
           </motion.div>
         </div>
       </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </main>
   );
 }

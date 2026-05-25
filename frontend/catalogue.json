@@ -3,7 +3,7 @@
     {
       "name": "Agriculture",
       "file": "agriculture.html",
-      "title": "MAXIMIZING AVAILABILITY",
+      "title": "Agriculture Filtration Systems",
       "subtitle": "DURING CRITICAL HARVEST",
       "description": "Harvest windows don't wait. ELIMFILTERS delivers asset protection systems engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
       "features": [
@@ -21,16 +21,25 @@
         "Thermal stability under continuous full-load harvest conditions",
         "Zero bypass protection throughout every critical season window"
       ],
-      "techTags": ["MACROCORE™", "AQUAGUARD™", "SYNTRAX™", "NANOFORCE™"],
+      "techTags": [
+        "MACROCORE™",
+        "AQUAGUARD™",
+        "SYNTRAX™",
+        "NANOFORCE™"
+      ],
       "stats": {
-        "percentages": ["99.9%", "100%", "0%"]
+        "percentages": [
+          "99.9%",
+          "100%",
+          "0%"
+        ]
       },
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Automotive",
       "file": "automotive.html",
-      "title": "INDUSTRIAL OVER-ENGINEERING",
+      "title": "Automotive Filtration Systems",
       "subtitle": "LIGHT & HEAVY VEHICLES",
       "description": "Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS heavy-duty machinery. Multi-system coverage across air, oil, fuel, cabin and hydraulic circuits ensures that every drive cycle is protected from contamination failure.",
       "features": [
@@ -46,14 +55,19 @@
         "Urban and highway performance verified across mixed duty cycles",
         "German engineering discipline applied to every filtration stage"
       ],
-      "techTags": ["SYNTRAX™", "MACROCORE™", "SYNTEPORE™", "MICROKAPPA™"],
+      "techTags": [
+        "SYNTRAX™",
+        "MACROCORE™",
+        "SYNTEPORE™",
+        "MICROKAPPA™"
+      ],
       "stats": {},
       "cta": "VIEW TECHNOLOGY"
     },
     {
       "name": "Bus Coach",
       "file": "bus-coach.html",
-      "title": "MAXIMIZING UPTIME",
+      "title": "Bus & Coach Filtration Systems",
       "subtitle": "FOR URBAN MOBILITY.",
       "description": "ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile. Engineered to eliminate unplanned stops, maximizing the return on investment per mile.",
       "features": [
@@ -69,16 +83,25 @@
         "Scheduled maintenance interval compliance reduces fleet downtime",
         "Cabin air quality protection for driver and passenger occupational health"
       ],
-      "techTags": ["MACROCORE™", "SYNTRAX™", "DRYCORE™", "MICROKAPPA™"],
+      "techTags": [
+        "MACROCORE™",
+        "SYNTRAX™",
+        "DRYCORE™",
+        "MICROKAPPA™"
+      ],
       "stats": {
-        "percentages": ["100%", "25%", "99.9%"]
+        "percentages": [
+          "100%",
+          "25%",
+          "99.9%"
+        ]
       },
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Construction",
       "file": "construction.html",
-      "title": "PROTECTING CRITICAL",
+      "title": "Construction Equipment Filtration",
       "subtitle": "CONSTRUCTION ASSETS.",
       "description": "In heavy construction, the most expensive filter is the one that causes a machine to stop. We reduce maintenance frequency and eliminate component wear costs. Our protection system neutralizes abrasive mineral dust, sudden hydraulic pressure peaks, and fuel contamination during 24/7 duty cycles.",
       "features": [
@@ -93,16 +116,23 @@
         "24/7 heavy duty cycle operation without unplanned maintenance stops",
         "35% extended service intervals for multi-shift construction operations"
       ],
-      "techTags": ["MACROCORE™", "NANOFORCE™", "AQUAGUARD™", "SYNTRAX™"],
+      "techTags": [
+        "MACROCORE™",
+        "NANOFORCE™",
+        "AQUAGUARD™",
+        "SYNTRAX™"
+      ],
       "stats": {
-        "percentages": ["35%"]
+        "percentages": [
+          "35%"
+        ]
       },
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Manufacturing",
       "file": "manufacturing.html",
-      "title": "ALWAYS-ON PLANT",
+      "title": "Manufacturing Filtration Systems",
       "subtitle": "PLANT OPERATIONS",
       "description": "Continuous process engineering demands filtration that never interrupts production. ELIMFILTERS precision systems protect pneumatic lines, gearboxes, and hydraulic circuits operating under constant load in industrial manufacturing environments where unplanned downtime has immediate production cost implications.",
       "features": [
@@ -118,14 +148,19 @@
         "Planned maintenance intervals coordinated with production schedules",
         "Thermal stability under constant industrial load and stop cycles"
       ],
-      "techTags": ["NANOFORCE™", "DRYCORE™", "SYNTRAX™", "MACROCORE™"],
+      "techTags": [
+        "NANOFORCE™",
+        "DRYCORE™",
+        "SYNTRAX™",
+        "MACROCORE™"
+      ],
       "stats": {},
       "cta": "EXPLORE TECHNOLOGY"
     },
     {
       "name": "Marine",
       "file": "marine.html",
-      "title": "MARINE OPERATIONS",
+      "title": "Marine Filtration Systems",
       "subtitle": "MARITIME & OFFSHORE",
       "description": "Offshore, commercial, and naval vessels operate in permanently corrosive environments where standard filtration degrades within months. ELIMFILTERS marine-grade systems are engineered for continuous navigation with salt-resistant construction, brine rejection, and zero-bypass fuel and oil protection.",
       "features": [
@@ -141,14 +176,19 @@
         "Continuous navigation reliability for commercial and offshore vessels",
         "Hydraulic control system protection in marine operating environments"
       ],
-      "techTags": ["MARINECLEAN™", "AQUAGUARD™", "SYNTRAX™", "NANOFORCE™"],
+      "techTags": [
+        "MARINECLEAN™",
+        "AQUAGUARD™",
+        "SYNTRAX™",
+        "NANOFORCE™"
+      ],
       "stats": {},
       "cta": "VIEW TECHNOLOGY"
     },
     {
       "name": "Mining",
       "file": "mining.html",
-      "title": "PROTECTING CRITICAL",
+      "title": "Mining Filtration Systems",
       "subtitle": "MINING ASSETS.",
       "description": "In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair — it's a massive disruption to the global supply chain. ELIMFILTERS engineering targets mechanical risk reduction and service life extension for massive assets in haulage, extraction, and crushing operations.",
       "features": [
@@ -163,16 +203,24 @@
         "Continuous operation without unplanned filtration-related stops",
         "Dust ingestion prevention in high-exposure pit and crusher environments"
       ],
-      "techTags": ["MACROCORE™", "SYNTRAX™", "NANOFORCE™", "AQUAGUARD™", "SYNTEPORE™"],
+      "techTags": [
+        "MACROCORE™",
+        "SYNTRAX™",
+        "NANOFORCE™",
+        "AQUAGUARD™",
+        "SYNTEPORE™"
+      ],
       "stats": {
-        "percentages": ["99.9%"]
+        "percentages": [
+          "99.9%"
+        ]
       },
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Oil Gas",
       "file": "oil-gas.html",
-      "title": "OIL & GAS",
+      "title": "Oil & Gas Filtration Systems",
       "subtitle": "MISSION-CRITICAL.",
       "description": "Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure and salt mist. High-capacity protection for offshore and abrasive dust environments.",
       "features": [
@@ -188,16 +236,23 @@
         "Offshore and onshore compatibility across all production formats",
         "99.9% efficiency protection for mission-critical rotating equipment"
       ],
-      "techTags": ["MACROCORE™", "AQUAGUARD™", "SYNTRAX™", "DRYCORE™"],
+      "techTags": [
+        "MACROCORE™",
+        "AQUAGUARD™",
+        "SYNTRAX™",
+        "DRYCORE™"
+      ],
       "stats": {
-        "percentages": ["99.9%"]
+        "percentages": [
+          "99.9%"
+        ]
       },
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Power Generation",
       "file": "power-generation.html",
-      "title": "UNINTERRUPTED",
+      "title": "Power Generation Filtration Systems",
       "subtitle": "CONTINUOUS UPTIME",
       "description": "Stationary engines operate under constant load and standby periods that accelerate fuel and lubricant degradation. ELIMFILTERS engineers protection architectures that ensure the thermal and chemical stability of your power assets. Absolute removal of water and sediment to prevent corrosion in high-pressure common rail injection systems.",
       "features": [
@@ -213,14 +268,19 @@
         "Extended service intervals reducing scheduled downtime for generators",
         "Protection against fuel degradation during extended standby periods"
       ],
-      "techTags": ["SYNTEPORE™", "SYNTRAX™", "AQUAGUARD™", "DRYCORE™"],
+      "techTags": [
+        "SYNTEPORE™",
+        "SYNTRAX™",
+        "AQUAGUARD™",
+        "DRYCORE™"
+      ],
       "stats": {},
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Railway",
       "file": "railway.html",
-      "title": "RAILWAY UNINTERRUPTED POWER",
+      "title": "Railway Filtration Systems",
       "subtitle": "LOCOMOTIVE SYSTEMS",
       "description": "Locomotives and rolling stock require absolute reliability across extreme service cycles to ensure operational continuity. ELIMFILTERS engineers mission-critical protection for diesel-electric traction systems, fuel circuits, and pneumatic control networks across every route condition.",
       "features": [
@@ -236,14 +296,19 @@
         "Air system purity for braking and pneumatic control systems",
         "Long-haul service interval compliance for remote route operations"
       ],
-      "techTags": ["SYNTEPORE™", "SYNTRAX™", "MACROCORE™", "DRYCORE™"],
+      "techTags": [
+        "SYNTEPORE™",
+        "SYNTRAX™",
+        "MACROCORE™",
+        "DRYCORE™"
+      ],
       "stats": {},
       "cta": "VIEW ENGINEERING"
     },
     {
       "name": "Trucks Fleets",
       "file": "trucks-fleets.html",
-      "title": "TRUCKS & FLEETS",
+      "title": "Fleet Filtration Systems",
       "subtitle": "LONG-HAUL PROTECTION",
       "description": "Optimized systems for commercial fleets. Lower restriction and higher retention allow for extended service intervals and significant reduction in operational costs (TCO). Optimizes fuel economy by protecting high-pressure common rail (HPCR) injection systems against micro-particulates.",
       "features": [
@@ -259,14 +324,19 @@
         "Fleet standardization through OEM cross-reference compatibility",
         "Turbocharger custody protection on sustained highway duty cycles"
       ],
-      "techTags": ["SYNTRAX™", "SYNTEPORE™", "MACROCORE™", "DURATECH™"],
+      "techTags": [
+        "SYNTRAX™",
+        "SYNTEPORE™",
+        "MACROCORE™",
+        "DURATECH™"
+      ],
       "stats": {},
       "cta": "FIND MY FILTER"
     },
     {
       "name": "Waste Municipal",
       "file": "waste-municipal.html",
-      "title": "MUNICIPAL FLEET PROTECTION",
+      "title": "Municipal Waste Filtration Systems",
       "subtitle": "CRITICAL URBAN OPERATIONS",
       "description": "From garbage collection trucks to fire engines, municipal fleets operate in the most demanding urban conditions. ELIMFILTERS delivers specialized filtration for every critical service vehicle: waste trucks, emergency response units, transit buses, and street maintenance equipment — ensuring zero downtime when cities depend on you.",
       "features": [
@@ -284,9 +354,18 @@
         "Multi-vehicle coverage from refuse trucks to street maintenance equipment",
         "Urban air quality protection with 99.9% particulate capture efficiency"
       ],
-      "techTags": ["MACROCORE™", "SYNTRAX™", "SYNTEPORE™", "MICROKAPPA™"],
+      "techTags": [
+        "MACROCORE™",
+        "SYNTRAX™",
+        "SYNTEPORE™",
+        "MICROKAPPA™"
+      ],
       "stats": {
-        "percentages": ["99.9%", "100%", "40%"]
+        "percentages": [
+          "99.9%",
+          "100%",
+          "40%"
+        ]
       },
       "cta": "FIND MY FILTER"
     }
@@ -312,9 +391,15 @@
         "62 PSI anti-collapse rated for continuous high-restriction operation",
         "Extended service interval beyond standard OEM air filter replacement"
       ],
-      "techTags": ["MACROCORE™"],
+      "techTags": [
+        "MACROCORE™"
+      ],
       "stats": {
-        "percentages": ["99.9%", "99.9%", "99.9%"]
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
       },
       "cta": "EXPLORE MACROCORE"
     },
@@ -337,9 +422,15 @@
         "30-micron rated precision filtration for HPCR injection systems",
         "ISO 16332 certified — zero contamination events guaranteed"
       ],
-      "techTags": ["AQUAGUARD/SERIES™", "AQUAGUARD™"],
+      "techTags": [
+        "AQUAGUARD/SERIES™",
+        "AQUAGUARD™"
+      ],
       "stats": {
-        "ratings": ["30 micron", "30 micron"]
+        "ratings": [
+          "30 micron",
+          "30 micron"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -362,9 +453,15 @@
         "Activated carbon layer for volatile organic compound odor control",
         "Occupational health certified for professional driver cab environments"
       ],
-      "techTags": ["MICROKAPPA™"],
+      "techTags": [
+        "MICROKAPPA™"
+      ],
       "stats": {
-        "percentages": ["99.9%", "99.9%", "99.9%"]
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -387,7 +484,9 @@
         "Extended coolant service life beyond standard OEM intervals",
         "Corrosion barrier chemistry for aluminum and cast iron engine blocks"
       ],
-      "techTags": ["COOLTECH™"],
+      "techTags": [
+        "COOLTECH™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     },
@@ -410,9 +509,15 @@
         "Integrated coalescing pre-stage for bulk water and oil mist removal",
         "Brake and control air purity for safety-critical pneumatic systems"
       ],
-      "techTags": ["DRYCORE™"],
+      "techTags": [
+        "DRYCORE™"
+      ],
       "stats": {
-        "percentages": ["45%", "45%", "45%"]
+        "percentages": [
+          "45%",
+          "45%",
+          "45%"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -435,7 +540,10 @@
         "Precision injector guard against sub-micron particle contamination",
         "Zero contamination events across the full service interval"
       ],
-      "techTags": ["AQUAGUARD™", "SYNTEPORE™"],
+      "techTags": [
+        "AQUAGUARD™",
+        "SYNTEPORE™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     },
@@ -458,7 +566,10 @@
         "Structural integrity rated for continuous vibration and thermal cycling",
         "Compatible with MACROCORE™, INTEKCORE™ and SYNTEPORE™ elements"
       ],
-      "techTags": ["INTEKCORE™", "MACROCORE™"],
+      "techTags": [
+        "INTEKCORE™",
+        "MACROCORE™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     },
@@ -481,10 +592,19 @@
         "Progressive multi-layer architecture for full contamination spectrum defense",
         "Extended hydraulic fluid service life through contamination removal"
       ],
-      "techTags": ["NANOFORCE™"],
+      "techTags": [
+        "NANOFORCE™"
+      ],
       "stats": {
-        "percentages": ["99.99%", "99.99%", "99.99%"],
-        "ratings": ["450 PSI", "450 PSI"]
+        "percentages": [
+          "99.99%",
+          "99.99%",
+          "99.99%"
+        ],
+        "ratings": [
+          "450 PSI",
+          "450 PSI"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -507,7 +627,9 @@
         "ISO certified assembly for quality compliance documentation",
         "Simplified inventory management for fleet maintenance operations"
       ],
-      "techTags": ["DURATECH™"],
+      "techTags": [
+        "DURATECH™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     },
@@ -530,9 +652,15 @@
         "IMO-compliant filtration for commercial and offshore vessel certification",
         "Continuous navigation reliability through zero-bypass fuel protection"
       ],
-      "techTags": ["MARINECLEAN™"],
+      "techTags": [
+        "MARINECLEAN™"
+      ],
       "stats": {
-        "percentages": ["99.9%", "99.9%", "99.9%"]
+        "percentages": [
+          "99.9%",
+          "99.9%",
+          "99.9%"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -555,7 +683,9 @@
         "Sub-micron contamination defense for turbocharger bearing circuits",
         "Extended oil analysis intervals through superior contamination retention"
       ],
-      "techTags": ["SYNTRAX™"],
+      "techTags": [
+        "SYNTRAX™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     },
@@ -578,7 +708,9 @@
         "Progressive stage architecture for maximum separation efficiency",
         "Compatible with diesel, biodiesel and marine fuel system applications"
       ],
-      "techTags": ["AQUAGUARD™"],
+      "techTags": [
+        "AQUAGUARD™"
+      ],
       "stats": {},
       "cta": "IDENTIFY SKU"
     }
@@ -597,8 +729,14 @@
         "Stage 3 — Precision Defense"
       ],
       "stats": {
-        "percentages": ["99%", "99%"],
-        "ratings": ["2 micron", "30 PSI"]
+        "percentages": [
+          "99%",
+          "99%"
+        ],
+        "ratings": [
+          "2 micron",
+          "30 PSI"
+        ]
       },
       "cta": "Find My Filter"
     },
@@ -615,7 +753,11 @@
         "WATER REPULSION"
       ],
       "stats": {
-        "percentages": ["99.8%", "99.8%", "99.8%"]
+        "percentages": [
+          "99.8%",
+          "99.8%",
+          "99.8%"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },
@@ -694,7 +836,11 @@
         "INERTIAL IMPACT + DIFFUSION"
       ],
       "stats": {
-        "percentages": ["99.9%", "99.98%", "120°C"]
+        "percentages": [
+          "99.9%",
+          "99.98%",
+          "120°C"
+        ]
       },
       "cta": "TECHNICAL SPECIFICATIONS"
     },
@@ -756,7 +902,11 @@
         "PROGRESSIVE LAYERS"
       ],
       "stats": {
-        "percentages": ["100%", "100%", "100%"]
+        "percentages": [
+          "100%",
+          "100%",
+          "100%"
+        ]
       },
       "cta": "IDENTIFY SKU"
     },

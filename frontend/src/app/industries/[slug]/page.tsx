@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getItemBySlug('industries', params.slug);
   if (!item) return { title: 'Not Found' };
   const url = `${BASE_URL}/industries/${params.slug}`;
-  const title = `${item.name} Filtration Systems | ELIMFILTERS`;
+  const title = item.title;
   return {
     title,
     description: item.description,
@@ -89,9 +89,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS World Catalogue',
-      images: [{ url: '/assets/logo-elimfilters.png', width: 800, height: 400, alt: `${item.name} Filtration — ELIMFILTERS` }],
+      images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.name} Filtration — ELIMFILTERS` }],
+      locale: 'en_US',
     },
-    twitter: { card: 'summary_large_image', title, description: item.description },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: item.description,
+      images: ['/assets/logo-elimfilters.png'],
+    },
   };
 }
 
