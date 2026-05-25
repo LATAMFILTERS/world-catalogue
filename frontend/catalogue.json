@@ -244,21 +244,24 @@
     {
       "name": "Oil Gas",
       "file": "oil-gas.html",
-      "title": "Oil & Gas Filtration Systems",
-      "subtitle": "MISSION-CRITICAL.",
-      "description": "Remote assets and corrosive atmospheres demand protection that exceeds standard OEM specifications. We neutralize H2S exposure and salt mist. High-capacity protection for offshore and abrasive dust environments.",
+      "title": "Oil & Gas Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR OFFSHORE & ENERGY EQUIPMENT",
+      "description": "Oil & Gas equipment operates under corrosive atmospheres, remote maintenance conditions, continuous operating schedules, and contamination exposure that can reduce asset reliability and increase maintenance frequency. ELIMFILTERS® Oil & Gas asset protection systems are engineered to help reduce contamination-related wear, support rotating equipment reliability, protect fuel and hydraulic systems, and preserve operational continuity across offshore, onshore, upstream, and energy equipment applications.",
       "features": [
-        "MACROCORE™",
-        "AIR INTAKE",
-        "AQUAGUARD™",
-        "FUEL PURITY"
+        "AIR INTAKE PROTECTION",
+        "FUEL CLEANLINESS PROTECTION",
+        "HYDRAULIC SYSTEM PROTECTION",
+        "CORROSION EXPOSURE PROTECTION",
+        "ROTATING EQUIPMENT RELIABILITY",
+        "OFFSHORE OPERATION SUPPORT"
       ],
       "benefits": [
-        "H2S and corrosive atmosphere resistance for offshore and downhole assets",
-        "Remote asset reliability where maintenance access is limited or costly",
-        "High-capacity fuel purity in abrasive and contaminated fueling environments",
-        "Offshore and onshore compatibility across all production formats",
-        "99.9% efficiency protection for mission-critical rotating equipment"
+        "Corrosion exposure protection for offshore and coastal operating environments",
+        "Fuel cleanliness protection for generators, turbines, compressors, and engine-driven systems",
+        "Air intake contamination control for continuous Oil & Gas and energy operation",
+        "Hydraulic system protection across drilling and industrial equipment platforms",
+        "Lubrication cleanliness support for rotating equipment reliability",
+        "Extended service intervals engineered for remote and severe-duty Oil & Gas environments"
       ],
       "techTags": [
         "MACROCORE™",
@@ -266,14 +269,18 @@
         "SYNTRAX™",
         "DRYCORE™"
       ],
-      "stats": {
-        "percentages": [
-          "99.9%"
-        ]
-      },
+      "videoBody": [
+        "Oil & Gas operations expose equipment to corrosive atmospheres, airborne particulate contamination, salt-laden air, fuel impurities, thermal stress, and continuous operating conditions capable of accelerating component wear and reducing system reliability.",
+        "Offshore platforms, drilling systems, compression equipment, turbines, pumps, and engine-driven assets require contamination control systems capable of protecting air intake systems, lubrication circuits, fuel delivery systems, and hydraulic equipment throughout continuous energy operation.",
+        "H2S exposure, airborne salinity, fuel contamination, moisture accumulation, and particulate ingestion can reduce equipment reliability, damage rotating components, contaminate hydraulic systems, and increase maintenance frequency in upstream and offshore environments.",
+        "ELIMFILTERS® Oil & Gas asset protection systems are engineered to help preserve airflow integrity, fuel cleanliness, lubrication stability, and hydraulic reliability across severe-duty energy applications.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, fuel system protection, lubrication cleanliness, and hydraulic reliability throughout extended Oil & Gas service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our Oil & Gas asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across offshore platforms, drilling systems, compression equipment, turbines, pumps, and engine-driven energy assets.",
+      "stats": {},
       "cta": "FIND MY FILTER",
-      "statistic": "H2S contamination threshold: OSHA PEL 20 ppm; fuel water removal target: <30 ppm",
-      "statisticSource": "OSHA PEL Regulations; NFPA 110 Fuel Standards"
+      "statistic": "ISO 16889 hydraulic cleanliness target: 16/14/11 or tighter prevents proportional valve stiction in drilling and compression equipment",
+      "statisticSource": "ISO 16889 Hydraulic Filter Testing"
     },
     {
       "name": "Power Generation",

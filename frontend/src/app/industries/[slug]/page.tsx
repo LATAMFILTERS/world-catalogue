@@ -334,6 +334,59 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Oil Gas': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Energy Equipment?',
+    ctaDescription: 'Find the right Oil & Gas asset protection system for your offshore or energy equipment application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® Oil & Gas asset protection systems are engineered for offshore platforms, onshore facilities, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and continuous severe-duty energy cycles. Gas turbine air intake systems require contamination control matched to airborne salinity concentrations of 1–10 mg/m³ in offshore environments. Hydraulic systems in drilling and compression equipment require ISO 16/14/11 or tighter cleanliness to prevent proportional valve stiction under high-pressure continuous operation. ELIMFILTERS® systems maintain air intake efficiency, fuel cleanliness, lubrication stability, and hydraulic protection throughout extended Oil & Gas service schedules.',
+    faq: [
+      {
+        q: 'What asset protection systems do offshore platforms and drilling equipment require?',
+        a: 'Offshore platforms require air intake contamination control (MACROCORE™), fuel and water separation (AQUAGUARD™), lubrication cleanliness protection (SYNTRAX™), compressed air drying (DRYCORE™), and hydraulic system protection. Gas turbines and diesel generators require air intake protection matched to offshore salt-laden air at 1–10 mg/m³ sodium chloride concentration. Diesel fuel stored in offshore tanks accumulates water from condensation and humidity absorption, requiring AQUAGUARD™ turbine-stage water separation to maintain ASTM D6304 compliance. Hydraulic systems controlling drilling equipment, BOP stacks, and deck machinery require ISO 16/14/11 or tighter cleanliness to prevent valve stiction and actuator failure.',
+      },
+      {
+        q: 'How does H2S exposure affect equipment contamination in Oil & Gas environments?',
+        a: 'H2S gas present in sour crude production and refinery environments reacts with lubrication oil to form corrosive sulfur compounds that degrade bearing surfaces and attack seal materials. At concentrations above OSHA PEL of 20 ppm, H2S accelerates corrosion of copper alloy bearing cages and reduces lube oil alkalinity reserve. Engine oil contaminated with H2S-derived sulfur compounds shows accelerated viscosity degradation and increased total acid number (TAN) above acceptable limits. Lubrication protection systems engineered for sour service environments use synthetic media with enhanced chemical resistance to maintain contamination control despite H2S-laden crankcase environments.',
+      },
+      {
+        q: 'Why is fuel cleanliness protection critical for gas turbines and engine-driven compression equipment?',
+        a: 'Gas turbines operating on liquid fuel require fuel cleanliness to ISO 4406 targets of 15/13/10 or cleaner to prevent combustion nozzle erosion and fuel control valve stiction. Diesel generators on offshore platforms operate on stored fuel that accumulates water, microbial growth, and particulate contamination from tank corrosion. AQUAGUARD™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting high-pressure fuel pumps operating at 800–2,000 bar in common-rail diesel systems. Contaminated fuel in gas turbines causes hot section corrosion, nozzle blockage, and combustion instability that increases maintenance frequency and reduces turbine availability.',
+      },
+      {
+        q: 'What role does air intake protection play in offshore turbine and compressor reliability?',
+        a: 'Gas turbines and centrifugal compressors on offshore platforms draw air containing sodium chloride, sulfur compounds, and particulate contamination from the marine atmosphere. Salt deposition on compressor blades reduces stage efficiency by 2–5% per 1,000 operating hours without effective air intake protection. Particulate ingestion above 5 µm causes compressor blade erosion that permanently reduces adiabatic efficiency. MACROCORE™ offshore air intake systems use salt-coalescing media with hydrophobic treatment to capture saltwater aerosol and particulate simultaneously, maintaining compressor inlet air purity within ISO 8573-1 Class 2 standards across extended offshore service intervals.',
+      },
+      {
+        q: 'How do extended service intervals support Oil & Gas operational continuity in remote locations?',
+        a: 'Offshore platforms, subsea support vessels, and remote onshore facilities operate under logistical constraints that make frequent maintenance interventions costly. Helicopter or vessel logistics for offshore filter changes cost $3,000–15,000 per maintenance call when accounting for mobilization, personnel, and weather delays. Extended service intervals reduce the total number of logistics events per year per installation. ELIMFILTERS® Oil & Gas protection systems are engineered to maintain ISO 4406 hydraulic cleanliness, ASTM D6304 fuel purity, and ISO 5011 air intake performance throughout 500–1,500 hour intervals for appropriate applications, reducing offshore logistics frequency without exceeding contamination control limits.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related equipment failure in Oil & Gas operations?',
+        a: 'Equipment failure in Oil & Gas operations carries production loss costs that are an order of magnitude higher than maintenance intervention costs. An offshore generator failure from fuel water contamination causes platform power reduction affecting production at $50,000–500,000 per day depending on platform output. Hydraulic system failure in drilling equipment causes rig downtime at $150,000–500,000 per day for deepwater drilling rigs under day-rate contracts. Compressor failure from lubrication contamination in a gas processing facility can interrupt pipeline delivery obligations with contractual penalty exposure. Contamination control systems represent less than 1% of equipment replacement cost but prevent the primary failure modes that cause production interruption events.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Oil & Gas Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Oil & Gas asset protection systems engineered for offshore platforms, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and severe-duty energy cycles.',
+        areaServed: 'Global',
+        serviceType: 'Energy Equipment Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Oil & Gas Asset Protection Systems', item: 'https://elimfilters.com/industries/oil-gas' },
+        ],
+      },
+    ],
+  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
@@ -412,6 +465,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Industrial manufacturing asset protection systems for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment. Air intake, lubrication, fuel, and hydraulic contamination control engineered for continuous production line operation.'
     : item.name === 'Marine'
     ? 'Marine asset protection systems for commercial vessels, workboats, fishing fleets, and offshore support equipment. Fuel and water separation, salt-air contamination control, lubrication, and hydraulic protection engineered for continuous marine and offshore duty cycles.'
+    : item.name === 'Oil Gas'
+    ? 'Oil & Gas asset protection systems for offshore platforms, drilling systems, compression equipment, turbines, pumps, and engine-driven energy assets. Air intake, fuel cleanliness, hydraulic, and lubrication protection engineered for corrosive atmospheres, H2S exposure, and severe-duty energy operation.'
     : item.description;
   return {
     title,
