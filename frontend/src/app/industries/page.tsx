@@ -204,6 +204,21 @@ export default function IndustriesPage() {
     ],
   };
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Industrial Filtration Systems by Industry',
+    description: 'ELIMFILTERS serves 12 critical industries with engineered asset protection filtration systems engineered to ISO and SAE specification.',
+    url: 'https://elimfilters.com/industries/',
+    datePublished: '2026-01-15',
+    dateModified: '2026-05-25',
+    author: {
+      '@type': 'Organization',
+      name: 'ELIMFILTERS',
+      url: 'https://elimfilters.com',
+    },
+  };
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Link href="/" style={{
@@ -251,6 +266,31 @@ export default function IndustriesPage() {
           >
             Industrial Filtration Systems by Industry
           </motion.h1>
+
+          {/* Direct Answer Block — GEO Optimization */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              background: 'rgba(255,241,45,0.04)',
+              border: '1px solid rgba(255,241,45,0.15)',
+              borderRadius: '4px',
+              padding: '1.75rem',
+              marginBottom: '3rem',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.8)',
+              fontSize: '0.95rem',
+              fontFamily: 'Outfit, sans-serif',
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <strong>ELIMFILTERS serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
+            </p>
+            <p style={{ margin: '0.75rem 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)' }}>
+              Industries served include agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, trucks & fleets, and municipal waste management — across operations in over 50 countries.
+            </p>
+          </motion.div>
         </div>
 
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 5rem' }}>
@@ -273,8 +313,99 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* FAQ Section — GEO High-Impact */}
+      <section style={{ padding: '5rem 2rem', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: '-100px' }}
+            style={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+              color: '#fff',
+              marginBottom: '2.5rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.02em',
+            }}
+          >
+            Frequently Asked Questions
+          </motion.h2>
+
+          <div style={{ display: 'grid', gap: '1.5rem' }}>
+            {[
+              {
+                q: 'What industries require industrial filtration systems?',
+                a: 'Every heavy-equipment and process industry requires filtration. Mining, agriculture, marine, oil & gas, power generation, construction, manufacturing, transportation, and waste management all depend on asset protection filtration to prevent contamination-related failures in engines, hydraulic systems, fuel circuits, and pneumatic systems.',
+              },
+              {
+                q: 'What is asset protection filtration?',
+                a: 'Asset protection filtration is a system-level approach that targets contamination control via ISO and SAE standards, not product commodity selection. It maintains measurable cleanliness codes (ISO 4406, ISO 16889) across all fluid circuits—oil, fuel, hydraulic, coolant, and air—to extend equipment lifespan 30-50% and reduce unplanned downtime.',
+              },
+              {
+                q: 'How does mining filtration differ from standard industrial filtration?',
+                a: 'Mining environments expose equipment to dust concentrations exceeding 5,000 mg/m³—far above ISO 5011 test standards. Mining filtration systems must handle bypass-protected air intakes, fuel circuit water removal (H2O intrusion from rain and humidity), and hydraulic system contamination control for high-pressure hoist and crush systems.',
+              },
+              {
+                q: 'What filtration standards does ELIMFILTERS comply with?',
+                a: 'ELIMFILTERS systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
+              },
+              {
+                q: 'Does ELIMFILTERS serve offshore oil and gas platforms?',
+                a: 'Yes. ELIMFILTERS marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
+              },
+              {
+                q: 'What is the typical equipment lifespan extension from system-level filtration?',
+                a: 'System-level filtration targeting ISO 16/14/11 cleanliness codes (vs. commodity commodity approaches at 19/17/14) extends bearing and engine component life 3-5x. In mining equipment, this translates to 15,000-25,000 operational hours vs. 2,000-3,000 hours under poor contamination control.',
+              },
+            ].map((faq, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: '-50px' }}
+                style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  borderRadius: '4px',
+                  padding: '1.5rem',
+                  borderLeft: '3px solid #FFF12D',
+                }}
+              >
+                <p
+                  style={{
+                    margin: '0 0 0.75rem',
+                    fontWeight: 700,
+                    fontSize: '0.95rem',
+                    color: '#FFF12D',
+                    fontFamily: 'Outfit, sans-serif',
+                  }}
+                >
+                  {faq.q}
+                </p>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '0.9rem',
+                    lineHeight: 1.7,
+                    color: 'rgba(255,255,255,0.75)',
+                    fontFamily: 'Outfit, sans-serif',
+                  }}
+                >
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
     </main>
   );
 }
