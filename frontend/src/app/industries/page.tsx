@@ -363,8 +363,11 @@ export default function IndustriesPage() {
             </p>
           </motion.div>
         </div>
+      </section>
 
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 5rem', position: 'relative', zIndex: 1 }}>
+      {/* Industry Cards Grid */}
+      <section style={{ background: '#000', padding: '0 0 5rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <motion.div
             variants={gridVariants}
             initial="hidden"

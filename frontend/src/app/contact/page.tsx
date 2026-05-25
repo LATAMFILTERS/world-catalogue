@@ -152,7 +152,7 @@ export default function Contact() {
           position: 'absolute', inset: 0,
           backgroundImage: 'url(/images/contacto-papa.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          backgroundPosition: 'center 30%',
         }} />
         {/* Gradient overlay */}
         <div style={{
