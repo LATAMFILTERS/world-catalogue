@@ -3,23 +3,23 @@
     {
       "name": "Agriculture",
       "file": "agriculture.html",
-      "title": "Agriculture Filtration Systems",
-      "subtitle": "DURING CRITICAL HARVEST",
-      "description": "Harvest windows don't wait. ELIMFILTERS delivers asset protection systems engineered for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particle environments. Zero bypass protection keeps engines running through every critical season.",
+      "title": "Agricultural Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR HIGH-DUST HARVEST OPERATIONS",
+      "description": "Agricultural operations cannot tolerate unplanned downtime during harvest season. ELIMFILTERS provides asset protection systems for tractors, combines, and harvesters operating in extreme dust, crop residue, and fine particulate environments. Protection against bypass contamination helps preserve engine reliability, hydraulic performance, and fuel system integrity throughout critical seasonal operations.",
       "features": [
-        "CROP RESIDUE DEBRIS CONTROL",
+        "CROP RESIDUE CONTAMINATION CONTROL",
         "THERMAL STABILITY UNDER LOAD",
-        "INTAKE FLOW INTEGRITY",
-        "HYDRAULIC ASSET DEFENSE",
-        "PARTICLE INGRESSION DEFENSE",
+        "INTAKE AIRFLOW PROTECTION",
+        "HYDRAULIC SYSTEM PROTECTION",
+        "PARTICULATE CONTAMINATION CONTROL",
         "EXTENDED FIELD SERVICE INTERVALS"
       ],
       "benefits": [
-        "Engineered for extreme dust, crop residue and fine particle environments",
-        "Extended field service intervals reduce costly mid-season stops",
-        "Hydraulic system longevity protects precision steering and lift actuators",
-        "Thermal stability under continuous full-load harvest conditions",
-        "Zero bypass protection throughout every critical season window"
+        "Engineered for extreme dust, crop residue, and fine particulate environments",
+        "Extended service intervals reduce costly maintenance interruptions",
+        "Hydraulic system protection supports steering, lift, and actuator reliability",
+        "Thermal stability supports continuous full-load harvest operations",
+        "Protection against bypass contamination helps preserve equipment reliability"
       ],
       "techTags": [
         "MACROCORE™",
