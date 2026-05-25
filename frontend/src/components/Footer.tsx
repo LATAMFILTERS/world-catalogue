@@ -73,61 +73,91 @@ export function Footer() {
           <div
             className="footer-bottom"
             style={{
-              borderTop: '1px solid #1a1a1a',
-              paddingTop: '50px',
-              display: 'flex',
-              justifyContent: 'space-between',
+              borderTop: '1px solid rgba(255,255,255,0.04)',
+              marginTop: '60px',
+              paddingTop: '40px',
+              display: 'grid',
+              gridTemplateColumns: 'auto 1fr auto',
+              gap: '40px',
               alignItems: 'center',
             }}
           >
-            {/* Left: Large E image */}
+            {/* Left: E logo */}
             <motion.div
               whileHover={{ opacity: 1, scale: 1.04 }}
               transition={{ duration: 0.3 }}
-              style={{ textAlign: 'left', flex: 1, opacity: 0.8 }}
+              style={{ opacity: 0.7 }}
             >
               <img
                 src="/images/e.png"
                 alt="ELIMFILTERS"
-                style={{ height: '120px' }}
+                style={{ height: '80px', width: 'auto' }}
               />
             </motion.div>
 
-            {/* Center: Empty */}
-            <div style={{ textAlign: 'center', flex: 1 }} />
+            {/* Center: Company info */}
+            <div style={{ textAlign: 'center' }}>
+              <p style={{
+                margin: '0 0 8px 0',
+                fontSize: '12px',
+                color: '#888',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                fontFamily: "'Barlow Condensed', sans-serif",
+              }}>
+                © 2015-2026 ELIMFILTERS LLC
+              </p>
+              <p style={{
+                margin: '0',
+                fontSize: '11px',
+                color: '#666',
+                fontFamily: "'Barlow Condensed', sans-serif",
+                letterSpacing: '0.5px',
+              }}>
+                Intelligence and Engineering in Filtration
+              </p>
+            </div>
 
-            {/* Right: Kleo image + Frisco Texas */}
-            <div style={{ textAlign: 'right', flex: 1 }}>
+            {/* Right: Kleo + Address + Social */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '12px' }}>
+              {/* Kleo Logo */}
               <div style={{
                 background: '#000',
-                padding: '0.5rem 0',
-                marginBottom: '0.75rem',
+                padding: '0.25rem 0',
               }}>
                 <img
                   src="/images/kleo-tech-sf.avif"
                   alt="Kleo Tech"
                   style={{
-                    maxHeight: '60px',
-                    maxWidth: '100%',
+                    maxHeight: '45px',
+                    maxWidth: '140px',
                     objectFit: 'contain',
                     display: 'block',
-                    marginLeft: 'auto',
                     backgroundColor: '#000',
                     filter: 'brightness(0.95) contrast(1.1)',
                     mixBlendMode: 'multiply',
                   }}
                 />
               </div>
-              <div
-                style={{
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontSize: '13px',
-                  color: '#666',
-                  letterSpacing: '2px',
-                  textTransform: 'uppercase',
-                }}
-              >
+
+              {/* Address */}
+              <div style={{
+                fontSize: '11px',
+                color: '#666',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                fontFamily: "'Barlow Condensed', sans-serif",
+                textAlign: 'right',
+                lineHeight: '1.4',
+              }}>
                 Frisco, Texas
+              </div>
+
+              {/* Social Icons Row */}
+              <div style={{ display: 'flex', gap: '12px', marginTop: '4px' }}>
+                <SocialLink href="https://www.linkedin.com/company/elimfilters" label="LinkedIn" />
+                <SocialLink href="https://www.instagram.com/elimfilters.global" label="Instagram" />
+                <SocialLink href="https://www.youtube.com/@elimfilters9112" label="YouTube" />
               </div>
             </div>
           </div>
@@ -200,3 +230,40 @@ const colTitleStyle: React.CSSProperties = {
   letterSpacing: '3px',
   marginBottom: '25px',
 };
+
+function SocialLink({ href, label }: { href: string; label: string }) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={label}
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.2 }}
+      style={{
+        width: '24px',
+        height: '24px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        border: '1px solid rgba(255,241,45,0.3)',
+        color: '#888',
+        textDecoration: 'none',
+        fontSize: '12px',
+        fontWeight: 'bold',
+        transition: 'all 0.25s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = '#FFF12D';
+        e.currentTarget.style.color = '#FFF12D';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
+        e.currentTarget.style.color = '#888';
+      }}
+    >
+      {label.charAt(0).toUpperCase()}
+    </motion.a>
+  );
+}
