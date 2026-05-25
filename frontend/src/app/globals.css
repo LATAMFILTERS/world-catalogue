@@ -41,6 +41,10 @@ body {
   font-weight: 700;
 }
 
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
