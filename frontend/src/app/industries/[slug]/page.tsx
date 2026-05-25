@@ -387,6 +387,59 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Power Generation': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Power Systems?',
+    ctaDescription: 'Find the right power generation asset protection system for your generator or energy equipment platform. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® power generation asset protection systems are engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure. Standby diesel fuel stored beyond 6–12 months without treatment accumulates water through condensation, microbial growth, and oxidative degradation — all of which compromise common-rail injector systems operating at 800–2,000 bar fuel pressure. Generator air intake systems must maintain consistent airflow volume under variable ambient conditions to support stable combustion and rated power output. ELIMFILTERS® systems preserve fuel cleanliness to NFPA 110 standards, airflow stability, and lubrication reliability throughout continuous and intermittent power generation service intervals.',
+    faq: [
+      {
+        q: 'What protection systems do standby diesel generators require?',
+        a: 'Standby generators require fuel cleanliness protection (AQUAGUARD™), air intake protection (SYNTEPORE™), lubrication reliability protection (SYNTRAX™), and compressed air drying (DRYCORE™) for pneumatic controls. Standby generators face a contamination challenge distinct from continuous-run equipment: fuel stored in tanks during standby periods accumulates water from daily condensation cycles, microbial growth that generates acidic byproducts, and oxidative degradation that forms gum and varnish deposits. NFPA 110 defines fuel quality standards for emergency power systems — without active fuel treatment and filtration, standby fuel stored beyond 6 months frequently falls outside acceptable limits for injector-safe operation.',
+      },
+      {
+        q: 'How does fuel degradation during standby periods affect generator reliability?',
+        a: 'Diesel fuel in standby generator tanks undergoes progressive degradation when unused. Water accumulates from daily thermal cycling as humid air enters the fuel tank through the vent. Microbial organisms (bacteria, fungi) colonize the water-fuel interface and generate acidic metabolic byproducts that accelerate tank corrosion and produce biomass that blocks fuel filters. Oxidative instability causes fuel to polymerize into gum and varnish compounds that coat injector nozzles, reducing spray pattern quality and combustion efficiency. AQUAGUARD™ water separation systems maintain free and emulsified water below ASTM D6304 thresholds, preventing the primary biological and oxidative degradation pathways that compromise standby fuel quality.',
+      },
+      {
+        q: 'What air intake protection requirements apply to prime power and continuous-run generators?',
+        a: 'Prime power generators operating in industrial environments face air intake contamination from dust, exhaust particulate, and process byproducts present in the facility air. Intake air contamination above 5 µm particle size reaches combustion chambers and causes abrasive wear of piston ring and cylinder liner surfaces. For industrial generators rated at 500 kW–5 MW operating 6,000–8,760 hours per year, intake air quality directly affects ring and liner replacement intervals. SYNTEPORE™ air intake protection systems use synthetic media with higher dust capacity than standard cellulose elements, maintaining ISO 5011-compliant restriction levels through extended 500–1,000 hour service intervals without efficiency degradation.',
+      },
+      {
+        q: 'How does lubrication instability affect continuous-load generator engine reliability?',
+        a: 'Diesel engines in continuous power generation operate at consistent thermal load for thousands of hours without shutdown. Unlike vehicle engines with cold-start cycles, generator engines reach steady-state oil temperature and maintain it throughout operation. This creates a different contamination profile: combustion soot accumulates continuously in lube oil, metal wear particles from piston rings and bearings build up over time, and fuel dilution from injector spray-pattern drift can thin oil viscosity below SAE specification. SYNTRAX™ lubrication protection systems maintain ISO 4406 cleanliness codes throughout extended service intervals for Caterpillar, Cummins, MTU, and Wärtsilä generator engines, supporting manufacturer-specified overhaul intervals.',
+      },
+      {
+        q: 'Why do emergency backup power systems require contamination protection different from base-load generators?',
+        a: 'Emergency backup systems — hospital generators, data center UPS diesels, critical infrastructure standby units — face a fundamentally different operational pattern than base-load generators. Base-load systems generate contamination continuously through normal combustion. Emergency systems accumulate contamination through inactivity: fuel degradation, condensation, oxidation, and microbial growth occur during standby periods measured in months. When an emergency system starts under load conditions, it must perform immediately at full rated output. NFPA 110 requires weekly or monthly test runs to verify operational readiness — and these test cycles can flush degraded fuel through injection systems if fuel quality has not been maintained. AQUAGUARD™ and SYNTEPORE™ combined with periodic fuel conditioning maintain emergency system readiness between test cycles.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related generator failure during a power outage?',
+        a: 'Generator failure during a power outage carries financial consequences proportional to the criticality of the facility. A hospital data center losing backup power during a grid outage faces regulatory compliance exposure under Joint Commission and CMS standards in addition to equipment damage costs. A financial trading facility losing primary power generation faces revenue exposure of $1,000–10,000 per minute of downtime. An industrial plant losing prime power loses production output at $5,000–50,000 per hour depending on process type. The cost of contamination control systems for a 1 MW standby generator — approximately $2,000–5,000 per year in protection system service — is less than 0.1% of the financial exposure from a single contamination-related startup failure during a critical outage event.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Power Generation Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Power generation asset protection systems engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure.',
+        areaServed: 'Global',
+        serviceType: 'Power Generation Equipment Protection',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Power Generation Asset Protection Systems', item: 'https://elimfilters.com/industries/power-generation' },
+        ],
+      },
+    ],
+  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
@@ -467,6 +520,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Marine asset protection systems for commercial vessels, workboats, fishing fleets, and offshore support equipment. Fuel and water separation, salt-air contamination control, lubrication, and hydraulic protection engineered for continuous marine and offshore duty cycles.'
     : item.name === 'Oil Gas'
     ? 'Oil & Gas asset protection systems for offshore platforms, drilling systems, compression equipment, turbines, pumps, and engine-driven energy assets. Air intake, fuel cleanliness, hydraulic, and lubrication protection engineered for corrosive atmospheres, H2S exposure, and severe-duty energy operation.'
+    : item.name === 'Power Generation'
+    ? 'Power generation asset protection systems for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment. Fuel stability, airflow, and lubrication protection engineered for continuous base-load operation, standby cycling, and emergency power readiness.'
     : item.description;
   return {
     title,
