@@ -200,8 +200,56 @@ function SystemCard({
 }
 
 export default function SystemsPage() {
+  const systemsByCategory = {
+    'Engine & Air Intake': ['Airfilter', 'Housing'],
+    'Fuel & Water Separation': ['Aquaguard Series', 'Fuel', 'Water'],
+    'Hydraulic & Lube Oil': ['Hydraulic', 'Oil', 'Coolant'],
+    'Specialty Filtration': ['Cabin', 'Marine', 'Dryer', 'Kits'],
+  };
+
+  const itemListData = catalogue.products.map((product, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: displayNames[product.name] || product.name,
+    description: product.description,
+    url: `https://elimfilters.com/products/${getSlug(product.name)}`,
+  }));
+
+  const breadcrumbData = [
+    { position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { position: 2, name: 'Systems', item: 'https://elimfilters.com/systems' },
+  ];
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      {/* JSON-LD Schemas */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: itemListData,
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: breadcrumbData,
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Industrial Filtration Systems Catalogue',
+          description: 'Explore 12 ELIMFILTERS filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration.',
+          url: 'https://elimfilters.com/systems',
+          datePublished: '2026-01-15',
+          dateModified: '2026-05-25',
+          author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        })}
+      </script>
+
       <Link href="/" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
@@ -270,7 +318,7 @@ export default function SystemsPage() {
               color: 'rgba(255,255,255,0.9)',
             }}
           >
-            12 ENGINEERED FILTRATION SYSTEMS
+            12 Engineered Industrial Filtration Systems
           </motion.h1>
 
           <motion.p
@@ -293,26 +341,45 @@ export default function SystemsPage() {
         </div>
       </section>
 
-      {/* Systems Grid */}
+      {/* Systems Grid with H2 Groupings */}
       <section style={{ padding: '5rem 2rem', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <motion.div
-            variants={gridVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: '1px',
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.05)',
-            }}
-          >
-            {catalogue.products.map((product, i) => (
-              <SystemCard key={product.name} product={product} index={i} />
-            ))}
-          </motion.div>
+          {Object.entries(systemsByCategory).map(([category, productNames]) => (
+            <div key={category} style={{ marginBottom: '4rem' }}>
+              <h2 style={{
+                fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
+                fontWeight: 700,
+                fontFamily: 'Space Grotesk, sans-serif',
+                color: 'rgba(255,255,255,0.9)',
+                marginBottom: '2.5rem',
+                paddingBottom: '1rem',
+                borderBottom: '1px solid rgba(255,241,45,0.15)',
+              }}>
+                {category}
+              </h2>
+
+              <motion.div
+                variants={gridVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                  gap: '1px',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                }}
+              >
+                {catalogue.products
+                  .map((product, i) => ({ product, i }))
+                  .filter(({ product }) => productNames.includes(product.name))
+                  .map(({ product, i }) => (
+                    <SystemCard key={product.name} product={product} index={i} />
+                  ))}
+              </motion.div>
+            </div>
+          ))}
         </div>
       </section>
     </main>
