@@ -400,7 +400,7 @@
       "file": "airfilter.html",
       "title": "AIR INTAKE DOMINATION",
       "subtitle": "MACROCORE™ DEFENSE SYSTEM",
-      "description": "ELIMFILTERS AIR INTAKE FILTRATION CRUSHES DUST. 99.9% silica retention. ZERO bypass. MACROCORE™ technology engineering delivers absolute capture in the most hostile dust environments on the planet. Agriculture. Mining. Construction. Oil & Gas. No exceptions. No compromises.",
+      "description": "The ELIMFILTERS MACROCORE™ Air Intake System is an air filtration system achieving 99.9% silica particle retention with zero bypass leakage across the full service interval. Engineered for sustained performance in extreme dust environments — including open-cut mining sites, grain handling facilities, construction zones, and oil & gas extraction operations — MACROCORE™ exceeds ISO 5011 performance thresholds and is rated for continuous duty in conditions where standard OEM elements fail within 50–200 operating hours.",
       "features": [
         "MACROCORE™ TECHNOLOGY",
         "99.9% SILICA CAPTURE",
@@ -432,7 +432,7 @@
       "file": "aquaguard-series.html",
       "title": "AQUAGUARD",
       "subtitle": "SERIES FH",
-      "description": "900FH and 1000FH turbine fuel filter and water separator technology with 3-stage asset protection and AQUAGUARD™ hydrophobic coating for advanced fuel system integrity and injector circuit defense.",
+      "description": "The AQUAGUARD™ Turbine Fuel Separator Series (900FH and 1000FH) combines 3-stage filtration: particle interception, water coalescing, and precision defense. The system achieves 99.8% water removal and is rated ISO 16332 with 30-micron absolute filtration for high-pressure common rail (HPCR) injection systems. AQUAGUARD™ is designed for contaminated fuel environments in oil & gas, marine, and power generation applications where water ingress from fuel degradation or brine exposure is inevitable.",
       "features": [
         "900FH/1000FH",
         "3-STAGE DESIGN",
@@ -463,7 +463,7 @@
       "file": "cabin.html",
       "title": "CABIN",
       "subtitle": "OCCUPATIONAL HEALTH",
-      "description": "6 protection layers eliminating 99.9% soot and allergens with OEM geometry for precision occupant asset defense.",
+      "description": "The ELIMFILTERS MICROKAPPA™ Cabin Air Filter System achieves 99.9% removal of soot, allergen, and PM2.5 particulates using 6-layer electrostatic architecture with integrated activated carbon odor control. MICROKAPPA™ provides OEM geometry precision fit for occupational health compliance in automotive, bus, coach, and fleet applications where driver exposure to exhaust particulates and wildfire smoke is continuous.",
       "features": [
         "6-LAYER DESIGN",
         "99.9% REMOVAL",
@@ -494,7 +494,7 @@
       "file": "coolant.html",
       "title": "COOLANT",
       "subtitle": "THERMAL CUSTODY",
-      "description": "Active inhibitor technology with thermal stability and cavitation prevention for sustained engine protection.",
+      "description": "The ELIMFILTERS COOLTECH™ Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology to maintain corrosion protection and prevent cavitation-induced liner erosion in turbocharged diesel engines. COOLTECH™ maintains thermal stability across the full operating temperature range and extends coolant service intervals beyond OEM specifications in automotive, manufacturing, and power generation applications.",
       "features": [
         "ACTIVE PROTECTION",
         "THERMAL STABILITY",
@@ -519,7 +519,7 @@
       "file": "dryer.html",
       "title": "DRYER",
       "subtitle": "DEW POINT CONTROL",
-      "description": "Molecular-level desiccant technology achieving zero dew point with coalescing pre-stage for 45% service life extension versus standard air dryer elements.",
+      "description": "The ELIMFILTERS DRYCORE™ Desiccant Air Dryer System achieves zero dew-point performance through molecular sieve desiccant technology combined with an integrated coalescing pre-stage for bulk water and oil mist removal. DRYCORE™ extends service life 45% beyond standard desiccant air dryer elements and prevents pneumatic system corrosion in manufacturing, power generation, and railway applications where compressed air purity is critical for control valve and brake system operation.",
       "features": [
         "ZERO-DEW POINT",
         "WATER CAPTURE",
@@ -550,7 +550,7 @@
       "file": "fuel.html",
       "title": "FUEL",
       "subtitle": "MULTI-ARMOR DEFENSE",
-      "description": "Multi-armor protection with high dirt capacity rated ISO 16332 for diesel, biodiesel, and gasoline systems. Zero contamination events across the full service interval.",
+      "description": "The ELIMFILTERS SYNTEPORE™ Fuel Filter System combines multi-stage protection with high dirt capacity construction and is rated ISO 16332 for precision injector defense. SYNTEPORE™ provides multi-fuel compatibility across diesel, biodiesel, and gasoline systems with zero contamination bypass, preventing sub-micron particle ingestion in high-pressure common rail (HPCR) injection systems across trucks, automotive, and oil & gas applications.",
       "features": [
         "ARMOR CONSTRUCTION",
         "MULTI-FUEL RATED",
@@ -576,7 +576,7 @@
       "file": "housing.html",
       "title": "HOUSING",
       "subtitle": "ZERO-BYPASS SEALING",
-      "description": "Radial seal technology with hi-flow unrestricted design and precision OEM fit for intake systems.",
+      "description": "The ELIMFILTERS INTEKCORE™ Filter Housing System uses radial seal technology with zero-bypass construction and hi-flow unrestricted design for OEM-precision intake system fit. INTEKCORE™ is compatible with MACROCORE™, SYNTEPORE™, and other ELIMFILTERS filter elements and is rated for continuous vibration and thermal cycling in mining, agriculture, and construction applications.",
       "features": [
         "ZERO-BYPASS",
         "HI-FLOW DESIGN",
@@ -602,7 +602,7 @@
       "file": "hydraulic.html",
       "title": "HYDRAULIC",
       "subtitle": "PRECISION DEFENSE",
-      "description": "99.99% efficiency filtration with HYDROGUARD water separation and 450 PSI rated protection.",
+      "description": "The ELIMFILTERS NANOFORCE™ Hydraulic Filter System achieves 99.99% filtration efficiency and is rated to 450 PSI for high-pressure proportional valve protection. NANOFORCE™ includes HYDROGUARD vapor-phase water separation technology to prevent corrosion and component wear in proportional solenoid circuits. Rated to ISO 16889 with multi-layer progressive architecture for manufacturing, construction, and mining hydraulic systems.",
       "features": [
         "99.99% EFFICIENCY",
         "HYDROGUARD TECH",
@@ -637,7 +637,7 @@
       "file": "kits.html",
       "title": "KITS",
       "subtitle": "MODEL SPECIFIC",
-      "description": "Synchronized lifecycle bundles for Mack, Freightliner, International, Isuzu, and Mitsubishi with ISO certification. One kit, one schedule, zero sourcing errors.",
+      "description": "The ELIMFILTERS Filter Kit System provides model-specific synchronized bundles coordinating service intervals across all filtration circuits (air, fuel, oil, hydraulic, cabin) for Mack, Freightliner, International, Isuzu, and Mitsubishi platforms. DURATECH™ kit assembly is ISO certified and eliminates inventory confusion while ensuring OEM compatibility across complete medium and heavy-duty fleet maintenance.",
       "features": [
         "MULTI-OEM",
         "COORDINATED INTERVALS",
@@ -662,7 +662,7 @@
       "file": "marine.html",
       "title": "MARINE",
       "subtitle": "NAVAL GRADE DEFENSE",
-      "description": "Naval-grade alloy construction removing 99.9% water and sediment in extreme salt environments.",
+      "description": "The ELIMFILTERS MARINECLEAN™ Filter System is naval-grade alloy construction engineered for salt-resistant performance in permanent brine and H2S-contaminated atmospheres. MARINECLEAN™ removes 99.9% water and sediment from marine diesel fuel and is IMO-certified for commercial and offshore vessel operation. Where standard filters corrode within 2–3 months offshore, MARINECLEAN™ maintains integrity across continuous salt-mist and subsea hydrogen sulfide exposure.",
       "features": [
         "NAVAL GRADE",
         "99.9% PROTECTION",
@@ -693,7 +693,7 @@
       "file": "oil.html",
       "title": "OIL",
       "subtitle": "ENGINE ASSET DEFENSE",
-      "description": "High-capacity quadruple protection with bypass valve and ISO 16889/19438 certification for complete engine asset defense.",
+      "description": "The ELIMFILTERS SYNTRAX™ Lube Oil Filter System delivers high-capacity quadruple dirt load protection with integrated bypass valve for cold-start oil starvation prevention. Rated ISO 16889 and ISO 19438 with sub-micron contamination defense for turbocharger bearing circuits, SYNTRAX™ extends engine bearing lifespan 3–5x versus standard oil filters across trucks, automotive, power generation, and industrial applications.",
       "features": [
         "4X DIRT LOAD",
         "BYPASS PROTECTION",
@@ -718,7 +718,7 @@
       "file": "water.html",
       "title": "WATER",
       "subtitle": "COALESCENCE DEFENSE",
-      "description": "Advanced multi-stage coalescence removing free, emulsified, and dissolved water with anti-corrosion and ISO 16332 rating.",
+      "description": "The ELIMFILTERS Fuel Separator System (Water Filtration) uses advanced multi-stage coalescence to remove free, emulsified, and dissolved water from fuel systems. Rated ISO 16332 with anti-corrosion construction, the system is compatible with diesel, biodiesel, and marine fuel applications where water contamination from degradation or brine ingress is inevitable in long-haul, offshore, and power generation environments.",
       "features": [
         "MULTI-STAGE",
         "ANTI-CORROSION",
