@@ -93,18 +93,23 @@ export function Footer() {
               />
             </motion.div>
 
-            {/* Center: FRISCO TEXAS */}
+            {/* Center: Kleo image + Frisco Texas */}
             <div style={{ textAlign: 'center', flex: 1 }}>
+              <img
+                src="/images/kleo-tech-sf.avif"
+                alt="Kleo Tech — Frisco, Texas"
+                style={{ maxHeight: '80px', maxWidth: '100%', objectFit: 'contain', marginBottom: '0.5rem' }}
+              />
               <div
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontSize: '18px',
+                  fontSize: '13px',
                   color: '#666',
                   letterSpacing: '3px',
                   textTransform: 'uppercase',
                 }}
               >
-                <strong style={{ color: '#fff' }}>FRISCO TEXAS</strong>
+                Frisco, Texas
               </div>
             </div>
 
