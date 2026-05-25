@@ -54,9 +54,6 @@ export const metadata: Metadata = {
     description: 'Asset protection filtration for mining, agriculture, marine and heavy industry.',
     images: ['/assets/logo-elimfilters.png'],
   },
-  alternates: {
-    canonical: BASE_URL,
-  },
 };
 
 const organizationSchema = {

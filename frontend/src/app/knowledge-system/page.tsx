@@ -93,7 +93,7 @@ export default function KnowledgeSystemPage() {
             lineHeight: 1.15,
             marginBottom: '1rem',
           }}>
-            Engineering Knowledge Base
+            Industrial Filtration Knowledge Base
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',

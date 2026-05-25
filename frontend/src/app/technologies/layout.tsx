@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-  description: "ELIMFILTERS' 12 proprietary technologies — SYNTRAX™, NANOFORCE™, AQUAGUARD™, MACROCORE™ and more — engineered for asset protection in mining, agriculture, marine and heavy industry.",
+  title: {
+    absolute: 'ELIMFILTERS Proprietary Filtration Technologies — 12 Engineered Systems',
+  },
+  description: "ELIMFILTERS' 12 proprietary technologies achieve up to 99.98% contamination interception across fuel, air, hydraulic, coolant, and cabin systems for mining, marine, and heavy industry.",
   keywords: ['SYNTRAX filter technology', 'NANOFORCE filtration', 'AQUAGUARD fuel filter', 'MACROCORE air filter', 'proprietary filtration technology', 'ELIMFILTERS'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
   },
   openGraph: {
-    title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: "ELIMFILTERS' 12 proprietary technologies — SYNTRAX™, NANOFORCE™, AQUAGUARD™, MACROCORE™ and more — engineered for asset protection.",
+    title: 'ELIMFILTERS Proprietary Filtration Technologies — 12 Engineered Systems',
+    description: "12 engineered systems achieving up to 99.98% contamination interception across fuel, air, hydraulic, coolant, and cabin systems for mining, marine, and heavy industry.",
     url: 'https://elimfilters.com/technologies/',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
@@ -18,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: "ELIMFILTERS' 12 proprietary technologies engineered for asset protection in mining, agriculture, marine and heavy industry.",
+    title: 'ELIMFILTERS Proprietary Filtration Technologies — 12 Engineered Systems',
+    description: "12 engineered systems achieving up to 99.98% contamination interception across fuel, air, hydraulic, coolant, and cabin systems for mining, marine, and heavy industry.",
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
