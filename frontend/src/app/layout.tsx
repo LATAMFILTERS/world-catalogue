@@ -100,7 +100,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} ${jetBrainsMono.variable}`}>
       <head>
-        <meta charSet="utf-8" />
         <meta name="theme-color" content="#000000" />
         <script
           type="application/ld+json"
