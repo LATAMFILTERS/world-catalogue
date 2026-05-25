@@ -30,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ],
     alternates: {
       canonical: url,
-      languages: { en: url, es: url, fr: url, it: url, nl: url, ru: url, zh: url, ja: url, ar: url, fa: url, pt: url },
     },
     openGraph: {
       title,
@@ -38,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS World Catalogue',
-      images: [{ url: '/assets/logo-elimfilters.png', width: 800, height: 400, alt: `${item.title} — ELIMFILTERS Technology` }],
+      images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.title} — ELIMFILTERS Technology` }],
     },
     twitter: { card: 'summary_large_image', title, description: item.description },
   };
@@ -89,6 +88,19 @@ function faqSchema(item: ReturnType<typeof getItemBySlug>) {
   };
 }
 
+function breadcrumbSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
+  if (!item) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies` },
+      { '@type': 'ListItem', position: 3, name: item.title, item: `${BASE_URL}/technologies/${slug}` },
+    ],
+  };
+}
+
 export default function TechnologyPage({ params }: Props) {
   const item = getItemBySlug('technologies', params.slug);
   if (!item) return null;
@@ -96,11 +108,13 @@ export default function TechnologyPage({ params }: Props) {
   const slug = params.slug;
   const pSchema = productSchema(item, slug);
   const fSchema = faqSchema(item);
+  const bSchema = breadcrumbSchema(item, slug);
 
   const schemas = (
     <>
       {pSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pSchema) }} />}
       {fSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fSchema) }} />}
+      {bSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bSchema) }} />}
     </>
   );
 
