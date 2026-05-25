@@ -186,14 +186,12 @@ export function Footer() {
           >
             <img
               src="/images/Leo-fn.avif"
-              alt="Kleo Technology"
+              alt="Kleo Technologies"
               style={{
                 maxHeight: '55px',
                 maxWidth: '160px',
                 objectFit: 'contain',
                 display: 'block',
-                filter: 'brightness(0.92) contrast(1.1)',
-                mixBlendMode: 'multiply',
               }}
             />
           </motion.div>
@@ -225,7 +223,7 @@ export function Footer() {
                 marginTop: '4px',
               }}
             >
-              © 2015–2026 ELIMFILTERS LLC
+              © 2015–2026 Kleo Technologies
             </div>
           </div>
         </div>

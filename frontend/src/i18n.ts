@@ -21,7 +21,7 @@ if (!i18n.isInitialized) {
         loadPath: '/locales/{{lng}}/translation.json',
       },
       detection: {
-        order: ['localStorage', 'navigator'],
+        order: ['localStorage'],
         caches: ['localStorage'],
         lookupLocalStorage: 'elimfilters_lang',
       },

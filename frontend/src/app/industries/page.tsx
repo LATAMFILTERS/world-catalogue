@@ -287,8 +287,24 @@ export default function IndustriesPage() {
         transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
 
-      <section style={{ paddingTop: '4rem', background: '#000' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem' }}>
+      <section style={{
+        paddingTop: '4rem',
+        background: '#000',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Hero background image */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(/images/operador1_converted.avif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 30%',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.18,
+          zIndex: 0,
+        }} />
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem', position: 'relative', zIndex: 1 }}>
           <motion.p
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
@@ -348,7 +364,7 @@ export default function IndustriesPage() {
           </motion.div>
         </div>
 
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 5rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 5rem', position: 'relative', zIndex: 1 }}>
           <motion.div
             variants={gridVariants}
             initial="hidden"
