@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
 
-const SUPPORTED = ['en', 'es', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa'];
+const SUPPORTED = ['en', 'es', 'pt', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa'];
 
 if (!i18n.isInitialized) {
   i18n
