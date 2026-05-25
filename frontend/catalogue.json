@@ -170,32 +170,42 @@
     {
       "name": "Marine",
       "file": "marine.html",
-      "title": "Marine Filtration Systems",
-      "subtitle": "MARITIME & OFFSHORE",
-      "description": "Offshore, commercial, and naval vessels operate in permanently corrosive environments where standard filtration degrades within months. ELIMFILTERS® marine-grade systems are engineered for continuous navigation with salt-resistant construction, brine rejection, and zero-bypass fuel and oil protection.",
+      "title": "Marine Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR MARINE & OFFSHORE EQUIPMENT",
+      "description": "Marine operating environments require contamination control systems capable of protecting engines, fuel delivery systems, hydraulic circuits, and onboard airflow systems exposed to moisture, salinity, and continuous operational loading. ELIMFILTERS® marine asset protection systems are engineered to help reduce contamination-related wear, preserve marine engine reliability, and support operational continuity across commercial and offshore vessel applications.",
       "features": [
-        "FUEL PURITY",
-        "LUBRICATION",
-        "HYDRAULIC CONTROL",
-        "AIR INTAKE"
+        "MARINE DIESEL ENGINE PROTECTION",
+        "FUEL & WATER SEPARATION PROTECTION",
+        "SALT-AIR CONTAMINATION CONTROL",
+        "HYDRAULIC SYSTEM PROTECTION",
+        "LUBRICATION CLEANLINESS PROTECTION",
+        "CONTINUOUS MARINE OPERATION SUPPORT"
       ],
       "benefits": [
-        "Salt-resistant construction meeting IMO marine certification standards",
-        "Offshore corrosion protection against brine, H2S and salt mist environments",
-        "Zero-bypass fuel purity for marine diesel injection systems",
-        "Continuous navigation reliability for commercial and offshore vessels",
-        "Hydraulic control system protection in marine operating environments"
+        "Fuel and water separation protection for marine diesel engine systems",
+        "Salt-air contamination control for onboard air intake environments",
+        "Hydraulic system protection for marine equipment and vessel operations",
+        "Lubrication cleanliness support for continuous engine load conditions",
+        "Extended service intervals engineered for offshore and marine-duty operation"
       ],
       "techTags": [
-        "MARINECLEAN™",
+        "MACROCORE™",
         "AQUAGUARD™",
         "SYNTRAX™",
         "NANOFORCE™"
       ],
+      "videoBody": [
+        "Marine vessels operate under continuous exposure to salt-laden air, humidity saturation, fuel storage contamination, vibration loading, and long-duration engine operation that accelerate component wear and reduce system reliability.",
+        "Commercial vessels, workboats, fishing fleets, and offshore support equipment require contamination control systems capable of protecting marine diesel engines, hydraulic systems, fuel delivery systems, lubrication circuits, and onboard air intake environments.",
+        "Saltwater exposure, moisture accumulation, fuel contamination, airborne salinity, and particulate ingestion can reduce engine efficiency, damage fuel injection systems, contaminate hydraulic circuits, and increase maintenance frequency in marine applications.",
+        "ELIMFILTERS® marine asset protection systems are engineered to help preserve fuel cleanliness, airflow integrity, lubrication stability, and hydraulic reliability across continuous marine operating environments.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining fuel system protection, airflow stability, lubrication cleanliness, and hydraulic reliability throughout extended marine-duty service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our marine asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across marine diesel engines, onboard hydraulic systems, and offshore operating equipment.",
       "stats": {},
-      "cta": "VIEW TECHNOLOGY",
-      "statistic": "Salt-mist corrosion ASTM B117: standard filters corrode within 2-3 months offshore",
-      "statisticSource": "ASTM B117 Salt Spray Testing"
+      "cta": "FIND MY FILTER",
+      "statistic": "Marine fuel water content: ASTM D6304 water saturation threshold in stored marine diesel accelerates injector wear",
+      "statisticSource": "ASTM D6304 Fuel Water Content Testing"
     },
     {
       "name": "Mining",

@@ -281,6 +281,59 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Marine': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Marine Equipment?',
+    ctaDescription: 'Find the right marine asset protection system for your vessel or offshore equipment application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS® systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
+    faq: [
+      {
+        q: 'What asset protection systems do marine diesel engines require?',
+        a: 'Marine diesel engines require fuel and water separation protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and hydraulic system protection (NANOFORCE™). Fuel systems on commercial vessels are exposed to water contamination from tank condensation and bunkered fuel quality variation. AQUAGUARD™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail marine injectors from corrosion and stiction failure. Air intake systems must control airborne salinity that causes compressor blade corrosion and increases engine deposit formation rates.',
+      },
+      {
+        q: 'How does salt-air exposure affect onboard equipment contamination in marine applications?',
+        a: 'Salt-laden marine air contains sodium chloride particles at concentrations of 1–10 mg/m³ in near-surface offshore environments. These particles enter air intake systems and deposit on compressor blades, intercoolers, and intake valves. Salt deposition accelerates corrosion of aluminum alloy engine components and increases intake restriction over time. In engine oil, salinity entry through crankcase ventilation systems generates electrolytic corrosion of bearing surfaces. MACROCORE™ salt-air contamination control uses cellulose-synthetic composite media with a hydrophobic treatment that captures saltwater aerosol while maintaining intake airflow volume across extended marine service intervals.',
+      },
+      {
+        q: 'Why is fuel and water separation critical for marine diesel engine reliability?',
+        a: 'Marine diesel fuel stored in vessel tanks accumulates water through condensation, wave agitation mixing, and bunkered fuel quality variation. Water contamination in marine fuel causes injector corrosion, microbial growth that blocks fuel lines, and cavitation damage in high-pressure fuel pumps operating at 800–2,000 bar in modern common-rail marine engines. ASTM D6304 defines water content standards for diesel fuel — marine storage conditions frequently exceed these limits without active water separation. AQUAGUARD™ turbine-stage water separation removes free and emulsified water before fuel reaches injection components, preventing the corrosion and stiction failure modes that cause unscheduled engine downtime on commercial vessels.',
+      },
+      {
+        q: 'What is the role of hydraulic system protection on commercial vessels and offshore equipment?',
+        a: 'Marine hydraulic systems control steering gear, deck machinery, crane operations, hatch mechanisms, and anchor windlass systems. These systems operate at 200–350 bar under vibration loading from hull flexure and wave impact. Vibration accelerates hydraulic fluid aeration and particle generation from pump wear. Saltwater ingress through deck seals contaminates hydraulic reservoirs, causing valve corrosion and actuator seal failure. ISO 4406 hydraulic cleanliness targets for marine systems typically require 16/14/11 or cleaner. NANOFORCE™ sub-micron hydraulic filtration maintains ISO 4406 targets under continuous offshore operating conditions, preventing proportional valve stiction and actuator position drift.',
+      },
+      {
+        q: 'How do extended service intervals support offshore vessel operational continuity?',
+        a: 'Offshore vessels and commercial fishing fleets operate on schedules where maintenance port calls are costly and infrequent. A commercial fishing vessel that must return to port for an unscheduled filter change loses 24–72 hours of fishing operation plus fuel and crew costs of $5,000–25,000 per interrupted trip. Extended service intervals reduce the total number of scheduled maintenance events per deployment season. ELIMFILTERS® marine asset protection systems are engineered to maintain ISO 4406 hydraulic cleanliness and ASTM D6304 fuel protection standards throughout intervals of 500–1,000 hours for appropriate marine applications, reducing port call frequency without exceeding contamination limits.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related engine failure at sea?',
+        a: 'Marine engine failure from contamination has direct and indirect costs that exceed land-based equivalent failures. A commercial vessel with a failed fuel injection pump caused by water contamination faces emergency port diversion costs ($10,000–50,000 for towing and harbor fees), parts procurement at remote locations (2–5x standard pricing), and lost operational revenue of $3,000–15,000 per day depending on vessel type. Offshore support vessels under contract face additional penalty clauses for missed operational windows. Contamination control systems that prevent these failure modes — fuel water separation, lubrication cleanliness, hydraulic protection — deliver ROI through avoided emergency response costs, not through filter unit savings.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Marine Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Marine asset protection systems engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, fuel storage contamination, and long-duration marine duty cycles.',
+        areaServed: 'Global',
+        serviceType: 'Marine Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Marine Asset Protection Systems', item: 'https://elimfilters.com/industries/marine' },
+        ],
+      },
+    ],
+  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
@@ -357,6 +410,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Heavy construction equipment asset protection systems for excavators, loaders, bulldozers, and graders operating in silica dust concentrations of 3,000–10,000 mg/m³. Hydraulic, air intake, fuel, and lube oil contamination control for off-road multi-shift operations.'
     : item.name === 'Manufacturing'
     ? 'Industrial manufacturing asset protection systems for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment. Air intake, lubrication, fuel, and hydraulic contamination control engineered for continuous production line operation.'
+    : item.name === 'Marine'
+    ? 'Marine asset protection systems for commercial vessels, workboats, fishing fleets, and offshore support equipment. Fuel and water separation, salt-air contamination control, lubrication, and hydraulic protection engineered for continuous marine and offshore duty cycles.'
     : item.description;
   return {
     title,
