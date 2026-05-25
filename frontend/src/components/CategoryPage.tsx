@@ -16,6 +16,12 @@ interface CategoryPageProps {
   industryImage?: string;
   industryVideo?: string;
   technologyLogo?: string;
+  geoData?: {
+    directAnswer?: string;
+    faq?: { q: string; a: string }[];
+    lastUpdated?: string;
+    schemas?: object[];
+  };
 }
 
 function InlineVideo({ src }: { src: string }) {
@@ -70,7 +76,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -102,6 +108,15 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   return (
     <>
       <main>
+        {/* Additional GEO Schemas */}
+        {geoData?.schemas && geoData.schemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+
         {/* Breadcrumb */}
         <div
           style={{
@@ -167,6 +182,25 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           backgroundImage={industryImage || bgImage}
           category={`// ${categoryLabel}_ENGINEERING`}
         />
+
+        {/* Direct Answer / Industrial Context Block */}
+        {geoData?.directAnswer && (
+          <section style={{ padding: '3rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                // INDUSTRIAL CONTEXT
+              </p>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.8, color: 'rgba(255,255,255,0.8)', fontFamily: 'Outfit, sans-serif', maxWidth: '780px' }}>
+                {geoData.directAnswer}
+              </p>
+              {geoData.lastUpdated && (
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.25)', marginTop: '1.5rem', letterSpacing: '0.1em' }}>
+                  LAST UPDATED: {geoData.lastUpdated}
+                </p>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Video Section */}
         {industryVideo && (
@@ -602,6 +636,40 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           buttonText={item.cta}
           buttonHref={buttonHref}
         />
+
+        {/* FAQ Section */}
+        {geoData?.faq && geoData.faq.length > 0 && (
+          <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: geoData.faq.map(({ q, a }) => ({
+                  '@type': 'Question',
+                  name: q,
+                  acceptedAnswer: { '@type': 'Answer', text: a },
+                })),
+              })}}
+            />
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                // COMMON QUESTIONS
+              </p>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+                Frequently Asked Questions
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {geoData.faq.map(({ q, a }) => (
+                  <div key={q} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#000' }}>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </>
   );
