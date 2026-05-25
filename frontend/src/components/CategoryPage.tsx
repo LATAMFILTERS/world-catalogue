@@ -21,6 +21,8 @@ interface CategoryPageProps {
     faq?: { q: string; a: string }[];
     lastUpdated?: string;
     schemas?: object[];
+    ctaTitle?: string;
+    ctaDescription?: string;
   };
 }
 
@@ -631,8 +633,8 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
         {/* CTA */}
         <CTASection
-          title="Ready to Protect Your Equipment?"
-          description={`Find the right asset protection system for your ${item.name.toLowerCase()} application. Cross-reference 500,000+ parts.`}
+          title={geoData?.ctaTitle ?? 'Ready to Protect Your Equipment?'}
+          description={geoData?.ctaDescription ?? `Find the right asset protection system for your ${item.name.toLowerCase()} application. Cross-reference 500,000+ parts.`}
           buttonText={item.cta}
           buttonHref={buttonHref}
         />

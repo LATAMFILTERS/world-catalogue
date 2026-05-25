@@ -101,20 +101,20 @@
     {
       "name": "Construction",
       "file": "construction.html",
-      "title": "Construction Equipment Filtration",
-      "subtitle": "CONSTRUCTION ASSETS.",
-      "description": "In heavy construction, the most expensive filter is the one that causes a machine to stop. We reduce maintenance frequency and eliminate component wear costs. Our protection system neutralizes abrasive mineral dust, sudden hydraulic pressure peaks, and fuel contamination during 24/7 duty cycles.",
+      "title": "Construction Equipment Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR HEAVY CONSTRUCTION EQUIPMENT",
+      "description": "Heavy construction environments generate continuous particulate exposure capable of damaging hydraulic systems, reducing airflow efficiency, contaminating fuel delivery systems, and accelerating component wear. ELIMFILTERS® construction asset protection systems are engineered to control contamination across critical equipment systems operating under severe off-road duty cycles and extended operational schedules.",
       "features": [
-        "DUST CONTROL",
-        "VALVE DEFENSE",
-        "WATER SEPARATION"
+        "ABRASIVE PARTICULATE CONTAMINATION CONTROL",
+        "HYDRAULIC SYSTEM RELIABILITY PROTECTION",
+        "FUEL & WATER SEPARATION PROTECTION"
       ],
       "benefits": [
-        "Mineral dust neutralization for excavators, graders and bulldozers",
-        "Hydraulic peak pressure protection during attachment and lifting operations",
-        "Fuel contamination defense in off-road and multi-source fueling environments",
-        "24/7 heavy duty cycle operation without unplanned maintenance stops",
-        "35% extended service intervals for multi-shift construction operations"
+        "Abrasive silica dust contamination control for excavators, loaders, graders, and bulldozers",
+        "Hydraulic system protection during lifting, attachment, and high-pressure operating conditions",
+        "Fuel contamination and water separation protection in off-road fueling environments",
+        "Operational continuity support for continuous multi-shift construction activity",
+        "Extended service intervals engineered for severe-duty construction equipment applications"
       ],
       "techTags": [
         "MACROCORE™",
@@ -122,11 +122,7 @@
         "AQUAGUARD™",
         "SYNTRAX™"
       ],
-      "stats": {
-        "percentages": [
-          "35%"
-        ]
-      },
+      "stats": {},
       "cta": "FIND MY FILTER",
       "statistic": "Dust concentrations on job sites exceed 3,000 mg/m³ (2,500+ mg/m³ in tunneling)",
       "statisticSource": "OSHA Air Quality Standards"
