@@ -113,6 +113,8 @@ export function Footer() {
                     display: 'block',
                     marginLeft: 'auto',
                     backgroundColor: '#000',
+                    filter: 'brightness(0.95) contrast(1.1)',
+                    mixBlendMode: 'multiply',
                   }}
                 />
               </div>
