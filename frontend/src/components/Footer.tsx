@@ -93,39 +93,27 @@ export function Footer() {
               />
             </motion.div>
 
-            {/* Center: Kleo image + Frisco Texas */}
-            <div style={{ textAlign: 'center', flex: 1 }}>
+            {/* Center: Empty */}
+            <div style={{ textAlign: 'center', flex: 1 }} />
+
+            {/* Right: Kleo image + Frisco Texas */}
+            <div style={{ textAlign: 'right', flex: 1 }}>
               <img
                 src="/images/kleo-tech-sf.avif"
                 alt="Kleo Tech — Frisco, Texas"
-                style={{ maxHeight: '80px', maxWidth: '100%', objectFit: 'contain', marginBottom: '0.5rem' }}
+                style={{ maxHeight: '100px', maxWidth: '100%', objectFit: 'contain', marginBottom: '0.75rem', display: 'block', marginLeft: 'auto' }}
               />
               <div
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontSize: '13px',
+                  fontSize: '11px',
                   color: '#666',
-                  letterSpacing: '3px',
+                  letterSpacing: '2px',
                   textTransform: 'uppercase',
                 }}
               >
                 Frisco, Texas
               </div>
-            </div>
-
-            {/* Right: Copyright */}
-            <div style={{ textAlign: 'right', flex: 1 }}>
-              <p
-                style={{
-                  fontSize: '10px',
-                  color: '#444',
-                  textTransform: 'uppercase',
-                  letterSpacing: '4px',
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                }}
-              >
-                © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration
-              </p>
             </div>
           </div>
         </AnimateIn>
