@@ -67,21 +67,22 @@ export default function RetrievalBlock({ children }: RetrievalBlockProps) {
         </span>
       </button>
 
-      {open && (
-        <div
-          style={{
-            padding: '0 1.5rem 1.5rem',
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.35)',
-            overflowX: 'auto',
-            wordBreak: 'break-word',
-          }}
-        >
-          {children}
-        </div>
-      )}
+      {/* Always in DOM for AI crawlers — maxHeight controls visual display */}
+      <div
+        style={{
+          maxHeight: open ? '4000px' : '0',
+          overflow: 'hidden',
+          padding: open ? '0 1.5rem 1.5rem' : '0 1.5rem',
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: '0.7rem',
+          lineHeight: 1.8,
+          color: 'rgba(255,255,255,0.35)',
+          wordBreak: 'break-word',
+          transition: 'max-height 0.3s ease',
+        }}
+      >
+        {children}
+      </div>
     </section>
   );
 }
