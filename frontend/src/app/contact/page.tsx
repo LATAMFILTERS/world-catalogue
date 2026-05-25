@@ -11,6 +11,7 @@ const contactPageSchema = {
   name: 'Contact ELIMFILTERS',
   url: 'https://elimfilters.com/contact/',
   description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
+  dateModified: '2026-05-25',
   mainEntity: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
@@ -180,9 +181,10 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '700px' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '700px' }}
           >
-            Have questions about our filtration systems? Need technical support? Contact our global team.
+            ELIMFILTERS provides asset protection filtration systems engineered for 12 industrial sectors. Our technical team handles OEM cross-reference validation, filter specification matching to ISO 16889 and ISO 4406 standards, distributor partnership applications, and fleet filtration optimization. Email{' '}
+            <a href="mailto:info@elimfilters.com" style={{ color: '#FFF12D', textDecoration: 'none' }}>info@elimfilters.com</a>. We respond within 2 business days.
           </motion.p>
         </div>
       </section>
@@ -564,6 +566,57 @@ export default function Contact() {
               </div>
             </AnimateIn>
           </div>
+        </div>
+      </section>
+
+      {/* What We Handle — capability list */}
+      <section style={{ padding: '4rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <AnimateIn>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+              // WHAT WE HANDLE
+            </p>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2.5rem' }}>
+              Technical Support Scope
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+              {[
+                { title: 'OEM Cross-Reference Validation', body: 'Submit your OEM part number, equipment make, and model. Our team identifies the compatible ELIMFILTERS product and confirms specification compliance.' },
+                { title: 'ISO Standard Spec Matching', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration) for air, fuel, hydraulic, and lube oil systems.' },
+                { title: 'Distributor Applications', body: 'Distributor partnership applications reviewed for regional coverage fit. Include your company profile, service territory, and current product lines. Response within 5 business days.' },
+                { title: 'Fleet Filtration Optimization', body: 'Fleet-level filtration strategy including extended service interval planning, multi-system coverage across air, fuel, hydraulic, lube, cabin, and coolant domains.' },
+                { title: 'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™', body: 'Technical inquiries for proprietary ELIMFILTERS filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
+                { title: 'Response Times', body: 'Technical inquiries: within 2 business days. Distributor applications: within 5 business days. Provide equipment details and application context for faster response.' },
+              ].map(({ title, body }) => (
+                <div key={title} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>
+                  <h3 style={{ fontSize: '0.9rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '0.75rem' }}>{title}</h3>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{body}</p>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Visible FAQ Section */}
+      <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <AnimateIn>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+              // COMMON QUESTIONS
+            </p>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+              Frequently Asked Questions
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {faqSchema.mainEntity.map(({ name, acceptedAnswer }) => (
+                <div key={name} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#050505' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{name}</h3>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{acceptedAnswer.text}</p>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
     </main>

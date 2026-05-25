@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     absolute: 'Contact ELIMFILTERS | Industrial Filtration Support',
   },
   description:
-    'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support for your fleet or operation.',
+    'Contact ELIMFILTERS for filtration support across 12 industrial sectors — mining, agriculture, marine, and more. ISO-compliant OEM cross-references and technical support. We respond within 2 business days.',
   alternates: {
     canonical: CANONICAL,
     languages: {
