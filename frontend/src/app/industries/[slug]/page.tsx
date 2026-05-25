@@ -177,7 +177,9 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Bus Coach': {
     lastUpdated: 'May 2026',
-    directAnswer: 'ELIMFILTERS® bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles operating under continuous stop-and-go duty cycles. Urban bus engines complete 1,200–2,000 cold-start and partial-load cycles per week, generating combustion particulate and soot contamination at rates three to five times higher than steady-speed highway applications. Proprietary protection media maintains engine lube oil cleanliness, pneumatic brake system air purity, cabin air quality, and fuel system protection throughout extended urban transit service schedules.',
+    ctaTitle: 'Ready to Protect Your Transit Fleet?',
+    ctaDescription: 'Find the right transit asset protection system for your bus or coach fleet application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles. Urban transit engines complete 1,200–2,000 cold-start and partial-load cycles per week. Each cycle introduces combustion particulate and fuel dilution into engine oil. Soot contamination accumulates at three to five times the rate of highway applications. ELIMFILTERS® systems maintain engine lube oil cleanliness, pneumatic brake system air purity to ISO 8573-1 Class 2 standards, cabin airflow quality, and fuel system protection throughout extended transit service schedules.',
     faq: [
       {
         q: 'What asset protection systems do transit buses require?',
