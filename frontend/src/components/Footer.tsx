@@ -98,15 +98,28 @@ export function Footer() {
 
             {/* Right: Kleo image + Frisco Texas */}
             <div style={{ textAlign: 'right', flex: 1 }}>
-              <img
-                src="/images/kleo-tech-sf.avif"
-                alt="Kleo Tech — Frisco, Texas"
-                style={{ maxHeight: '100px', maxWidth: '100%', objectFit: 'contain', marginBottom: '0.75rem', display: 'block', marginLeft: 'auto' }}
-              />
+              <div style={{
+                background: '#000',
+                padding: '0.5rem 0',
+                marginBottom: '0.75rem',
+              }}>
+                <img
+                  src="/images/kleo-tech-sf.avif"
+                  alt="Kleo Tech"
+                  style={{
+                    maxHeight: '60px',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                    display: 'block',
+                    marginLeft: 'auto',
+                    backgroundColor: '#000',
+                  }}
+                />
+              </div>
               <div
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontSize: '11px',
+                  fontSize: '13px',
                   color: '#666',
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
