@@ -41,21 +41,21 @@
     {
       "name": "Automotive",
       "file": "automotive.html",
-      "title": "Automotive Filtration Systems",
-      "subtitle": "LIGHT & HEAVY VEHICLES",
-      "description": "Passenger vehicles deserve the same engineering discipline applied to ELIMFILTERS® heavy-duty machinery. Multi-system coverage across air, oil, fuel, cabin and hydraulic circuits ensures that every drive cycle is protected from contamination failure.",
+      "title": "Automotive Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR PASSENGER & COMMERCIAL VEHICLES",
+      "description": "Automotive systems require contamination control capable of maintaining airflow efficiency, lubrication cleanliness, fuel system protection, and cabin air quality across continuous urban, highway, fleet, and mixed-duty vehicle operation. ELIMFILTERS® automotive asset protection systems are engineered to help reduce contamination-related wear, preserve engine efficiency, and support long-term vehicle reliability under demanding operating conditions.",
       "features": [
-        "AIR INTAKE",
-        "LUBRICATION",
-        "FUEL SYSTEM",
-        "CABIN AIR"
+        "AIR INTAKE PROTECTION",
+        "LUBRICATION SYSTEM PROTECTION",
+        "FUEL SYSTEM PROTECTION",
+        "CABIN AIR QUALITY PROTECTION"
       ],
       "benefits": [
-        "OEM cross-reference compatibility across passenger and commercial vehicles",
-        "Multi-system coverage: air, oil, fuel, cabin and hydraulic circuits",
-        "Extended service life beyond standard OEM replacement intervals",
-        "Urban and highway performance verified across mixed duty cycles",
-        "German engineering discipline applied to every filtration stage"
+        "Airflow contamination control for passenger and commercial vehicle intake systems",
+        "Lubrication cleanliness protection supporting long-term engine reliability",
+        "Fuel system contamination protection for injectors and high-efficiency combustion systems",
+        "Cabin airflow protection supporting passenger and driver air quality environments",
+        "Extended service intervals engineered for urban, highway, fleet, and mixed-duty vehicle operation"
       ],
       "techTags": [
         "SYNTRAX™",

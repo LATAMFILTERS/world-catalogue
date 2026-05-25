@@ -251,7 +251,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       marginBottom: '1rem',
                     }}
                   >
-                    The protection media is the core of every ELIMFILTERS® system. In {item.name} operations, protection media must perform under abrasive particulate loads, thermal cycling, and contamination events that occur far from maintenance facilities. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity without compromising airflow stability, hydraulic cleanliness, or fuel system protection.
+                    The protection media is the core of every ELIMFILTERS® system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
                   </p>
                   <p
                     style={{

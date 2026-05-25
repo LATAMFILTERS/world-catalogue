@@ -69,6 +69,59 @@ interface GeoData {
 }
 
 const industryGeoData: Record<string, GeoData> = {
+  'Automotive': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Vehicle Systems?',
+    ctaDescription: 'Find the right automotive asset protection system for your vehicle platform. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® automotive asset protection systems are engineered for passenger vehicles and commercial vehicles operating under continuous thermal cycling, urban stop-and-go traffic, and highway airflow variation. Modern direct injection engines operate at fuel injection pressures of 150–350 bar — conditions where contamination accumulation in fuel delivery systems causes injector wear within 30,000–80,000 km of mixed-duty operation. Urban air intake environments expose vehicle engines to particulate concentrations of 150–300 µg/m³, while cold-start thermal cycling generates oil dilution and soot accumulation that degrades lubrication cleanliness across extended service intervals. Proprietary protection media maintains air intake efficiency, lubrication cleanliness, fuel system integrity, and cabin air quality throughout standard and extended automotive service schedules.',
+    faq: [
+      {
+        q: 'What asset protection systems do passenger and commercial vehicles require?',
+        a: 'Passenger and commercial vehicles require air intake protection (MACROCORE™ or SYNTEPORE™), lubrication system protection (SYNTRAX™), fuel system protection, and cabin air quality protection (MICROKAPPA™). Air intake systems must maintain consistent airflow volume across urban particulate exposure and highway speed variation. Lubrication systems must preserve ISO 4406 cleanliness targets through cold-start thermal cycling, short-trip operation, and extended highway intervals. Fuel systems in direct injection engines operating at 150–350 bar injection pressure require particulate and water contamination control to prevent injector erosion and stiction.',
+      },
+      {
+        q: 'How does thermal cycling affect engine lubrication system performance in passenger vehicles?',
+        a: 'Each cold-start cycle introduces fuel dilution and combustion byproducts into engine oil before operating temperature is reached. In urban driving patterns, vehicles completing multiple cold-start cycles per day — typical for fleet, commuter, and delivery vehicle applications — accumulate soot and fuel dilution in lubrication oil at significantly higher rates than steady-state highway operation. Soot concentrations above 2% by weight degrade oil film strength and increase bearing wear rates. SYNTRAX™ lubrication system protection maintains oil cleanliness within target parameters across short-trip urban, highway, and mixed-duty driving cycles, supporting consistent bearing and valve train protection between service intervals.',
+      },
+      {
+        q: 'Why do direct injection gasoline and diesel engines require higher-efficiency fuel system protection?',
+        a: 'Direct injection engines — including GDI, TFSI, and common-rail diesel systems — operate at fuel injection pressures between 150 and 2,500 bar depending on engine type. At these pressures, particulate contamination above 10 µm causes injector tip erosion, and free water above 200 ppm causes corrosion and stiction in injector needle components. Unlike port injection systems where fuel washes intake valves, direct injection bypasses this cleaning mechanism, making fuel system cleanliness critical for long-term combustion efficiency and emissions compliance. Fuel system protection maintains fuel cleanliness within ISO 12156 lubricity and contamination targets throughout the service interval.',
+      },
+      {
+        q: 'What does MICROKAPPA™ cabin air quality protection provide in passenger vehicle applications?',
+        a: 'MICROKAPPA™ provides multi-stage cabin air quality protection for passenger and commercial vehicles operating in urban traffic environments. Urban roadway environments generate PM2.5 concentrations of 20–80 µg/m³ at street level, along with nitrogen dioxide, ozone, and volatile organic compounds from surrounding traffic. MICROKAPPA™ combines mechanical HEPA-grade particle filtration with activated carbon adsorption media, reducing cabin PM2.5 concentration by up to 85% compared to standard single-layer cabin filters. In commercial vehicles, fleet vehicles, and passenger cars used in high-density urban operation, cabin air quality protection reduces occupant exposure to combustion particulate and traffic-generated pollutants throughout daily driving schedules.',
+      },
+      {
+        q: 'How do extended automotive service intervals affect engine reliability in mixed-duty vehicles?',
+        a: 'Extended service intervals in mixed-duty vehicles — combining urban stop-and-go, short-trip, and highway operation — must account for accelerated contamination accumulation during cold-start cycles and low-speed urban driving. Standard OEM service intervals are typically calibrated for average driving conditions. Vehicles completing predominantly urban short-trip cycles accumulate lubrication degradation at two to three times the rate of steady-state highway vehicles within the same calendar interval. ELIMFILTERS® automotive protection systems are engineered to maintain air intake restriction below OEM threshold limits and lubrication cleanliness within ISO 4406 targets across urban, highway, and mixed-duty service intervals.',
+      },
+      {
+        q: 'What is the long-term engine performance impact of contamination in automotive applications?',
+        a: 'Contamination accumulation in automotive engine systems produces measurable performance degradation over time. Air intake restriction of 5–10% above clean-element baseline increases fuel consumption by 1–3% and reduces power output in turbocharged engines. Lubrication degradation beyond ISO 4406 cleanliness targets accelerates cam lobe and bearing wear, increasing engine rebuild frequency in high-mileage vehicles. Injector contamination in direct injection engines reduces fuel atomization efficiency, increasing hydrocarbon emissions and reducing combustion efficiency by 2–5%. In fleet and commercial vehicles where fuel cost per kilometer is a primary operational metric, contamination control systems that preserve engine efficiency contribute directly to long-term operating cost reduction.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Automotive Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Automotive asset protection systems engineered for passenger and commercial vehicles operating under thermal cycling, urban stop-and-go traffic, and highway conditions. Air intake, lubrication, fuel system, and cabin air quality protection for mixed-duty vehicle operation.',
+        areaServed: 'Global',
+        serviceType: 'Automotive Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Automotive Asset Protection Systems', item: 'https://elimfilters.com/industries/automotive' },
+        ],
+      },
+    ],
+  },
   'Construction': {
     lastUpdated: 'May 2026',
     ctaTitle: 'Ready to Protect Your Construction Equipment?',
@@ -239,7 +292,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item) return { title: 'Not Found' };
   const url = `${BASE_URL}/industries/${params.slug}`;
   const title = item.title;
-  const description = item.name === 'Agriculture'
+  const description = item.name === 'Automotive'
+    ? 'Automotive asset protection systems for passenger and commercial vehicles operating under thermal cycling, urban stop-and-go traffic, and highway conditions. Air intake, lubrication, fuel system, and cabin air quality protection for mixed-duty vehicle operation.'
+    : item.name === 'Agriculture'
     ? 'Agricultural asset protection systems for tractors, combines, and harvesters operating in dust concentrations exceeding 1,500 mg/m³. Air intake, hydraulic, fuel, and lube oil protection engineered to ISO 5011 standards.'
     : item.name === 'Bus Coach'
     ? 'Transit fleet asset protection systems for diesel buses and coaches operating under continuous urban stop-and-go duty cycles. Engine, pneumatic, cabin air, and fuel system contamination control for passenger transport operations.'
@@ -267,7 +322,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: industryMedia[item.name]?.image ? `https://elimfilters.com${industryMedia[item.name].image}` : 'https://elimfilters.com/assets/logo-elimfilters.png',
         width: 1200,
         height: 630,
-        alt: `${item.name} Filtration Systems — ELIMFILTERS®`
+        alt: `${item.title} — ELIMFILTERS®`
       }],
       locale: 'en_US',
     },
