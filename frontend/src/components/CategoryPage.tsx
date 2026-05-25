@@ -249,7 +249,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       marginBottom: '1rem',
                     }}
                   >
-                    The protection media is the core of every ELIMFILTERS system. In {item.name} operations, protection media must perform under abrasive particulate loads, thermal cycling, and contamination events that occur far from maintenance facilities. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity without compromising airflow stability, hydraulic cleanliness, or fuel system protection.
+                    The protection media is the core of every ELIMFILTERS® system. In {item.name} operations, protection media must perform under abrasive particulate loads, thermal cycling, and contamination events that occur far from maintenance facilities. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity without compromising airflow stability, hydraulic cleanliness, or fuel system protection.
                   </p>
                   <p
                     style={{
@@ -259,7 +259,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       fontFamily: 'Outfit, sans-serif',
                     }}
                   >
-                    Every micron of contamination matters. ELIMFILTERS systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
+                    Every micron of contamination matters. ELIMFILTERS® systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
                   </p>
                 </div>
 
@@ -421,7 +421,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   lineHeight: 1.8,
                 }}
               >
-                ELIMFILTERS engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.
+                ELIMFILTERS® engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.
               </p>
             </AnimateIn>
 
@@ -548,7 +548,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                WHY ELIMFILTERS
+                WHY ELIMFILTERS®
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {(item.benefits || [

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   const displayName = displayNames[product.name] || product.name;
-  const title = `${displayName} Filtration System | ELIMFILTERS`;
+  const title = `${displayName} Filtration System | ELIMFILTERS®`;
   const description = product.description.substring(0, 160);
 
   return {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       `${displayName.toLowerCase()} filtration`,
       'industrial filtration',
       'filter systems',
-      'ELIMFILTERS',
+      'ELIMFILTERS®',
       ...(product.techTags || []).map(tag => tag.toLowerCase()),
     ],
     alternates: {
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description,
       url: `https://elimfilters.com/systems/${params.slug}`,
       type: 'website',
-      siteName: 'ELIMFILTERS World Catalogue',
+      siteName: 'ELIMFILTERS® World Catalogue',
       images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
       locale: 'en_US',
     },

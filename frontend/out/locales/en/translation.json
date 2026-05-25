@@ -40,15 +40,15 @@
     }
   },
   "why": {
-    "title": "WHY CHOOSE ELIMFILTERS",
-    "p1": "ELIMFILTERS is more than a filter manufacturer. We are a company specialized in",
+    "title": "WHY CHOOSE ELIMFILTERS®",
+    "p1": "ELIMFILTERS® is more than a filter manufacturer. We are a company specialized in",
     "p1highlight": "Asset Protection Technology",
     "p1after": ", designing solutions that preserve the value and operability of your equipment in the most demanding environments.",
     "p2": "Every product we develop responds to one reality: the equipment that stops your operation costs hundreds of thousands to repair. A filter is the guardian of that investment.",
     "card": {
       "tag": "// ASSET PROTECTION TECHNOLOGY",
       "title": "We design protection systems. Not off-the-shelf components.",
-      "desc": "ELIMFILTERS engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.",
+      "desc": "ELIMFILTERS® engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.",
       "items": [
         "AI-formulated multi-layer protection matrix",
         "Zero bypass architecture on every system",
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// ELIMFILTERS PROPRIETARY TECHNOLOGY",
+    "tag": "// ELIMFILTERS® PROPRIETARY TECHNOLOGY",
     "title": "ENGINEERING",
     "titleHighlight": "BEYOND THE STANDARD",
     "items": {
@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// DEALER NETWORK",
       "title": "ONLY THE BEST",
-      "highlight": "SELL ELIMFILTERS.",
+      "highlight": "SELL ELIMFILTERS®.",
       "button": "BECOME A DEALER"
     },
     "search": {
@@ -103,7 +103,7 @@
     "technical": "Technical Support",
     "dealer": "Become a Dealer",
     "warranty": "Warranty",
-    "copyright": "© 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | Intelligence and Engineering in Filtration",
     "location": "FRISCO TEXAS"
   },
   "category": {
@@ -114,12 +114,12 @@
     "systemSpecs": "SYSTEM SPECIFICATIONS",
     "active": "✓ ACTIVE",
     "operationalAdvantages": "OPERATIONAL ADVANTAGES",
-    "whyElimfilters": "WHY ELIMFILTERS",
+    "whyElimfilters": "WHY ELIMFILTERS®",
     "technologiesIncluded": "Technologies Included",
     "performanceMetrics": "PERFORMANCE METRICS",
     "readyToUpgrade": "Ready to Upgrade?",
     "readyDesc": "Find the exact filter for your application. Cross-reference 500,000+ parts.",
-    "engineeringDesc": "ELIMFILTERS engineering applies precision standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.",
+    "engineeringDesc": "ELIMFILTERS® engineering applies precision standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.",
     "home": "HOME"
   },
   "language": {

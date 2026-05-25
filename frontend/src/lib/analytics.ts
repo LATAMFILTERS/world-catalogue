@@ -1,5 +1,5 @@
 /**
- * ELIMFILTERS Analytics & Observability Library
+ * ELIMFILTERS® Analytics & Observability Library
  * Unified event tracking: GA4 + PostHog + Microsoft Clarity
  *
  * Usage: import { trackEvent, trackRetrievalBlock, ... } from '@/lib/analytics'

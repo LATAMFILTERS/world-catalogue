@@ -69,7 +69,7 @@ interface GeoData {
 const industryGeoData: Record<string, GeoData> = {
   'Bus Coach': {
     lastUpdated: 'May 2026',
-    directAnswer: 'ELIMFILTERS bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles operating under continuous stop-and-go duty cycles. Urban bus engines complete 1,200–2,000 cold-start and partial-load cycles per week, generating combustion particulate and soot contamination at rates three to five times higher than steady-speed highway applications. Proprietary protection media maintains engine lube oil cleanliness, pneumatic brake system air purity, cabin air quality, and fuel system protection throughout extended urban transit service schedules.',
+    directAnswer: 'ELIMFILTERS® bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles operating under continuous stop-and-go duty cycles. Urban bus engines complete 1,200–2,000 cold-start and partial-load cycles per week, generating combustion particulate and soot contamination at rates three to five times higher than steady-speed highway applications. Proprietary protection media maintains engine lube oil cleanliness, pneumatic brake system air purity, cabin air quality, and fuel system protection throughout extended urban transit service schedules.',
     faq: [
       {
         q: 'What asset protection systems do transit buses require?',
@@ -101,7 +101,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Bus & Coach Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
         description: 'Transit fleet asset protection systems engineered for diesel buses, intercity coaches, and articulated urban vehicles operating under continuous stop-and-go duty cycles with high-rate soot, combustion particulate, and pneumatic system contamination.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -120,7 +120,7 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Agriculture': {
     lastUpdated: 'May 2026',
-    directAnswer: 'ELIMFILTERS agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
+    directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
     faq: [
       {
         q: 'What asset protection systems do combine harvesters require?',
@@ -132,7 +132,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How often should the air intake protection system be serviced during harvest season?',
-        a: 'Air intake protection system service intervals depend on ambient dust concentration and daily operating hours. In standard conditions (under 500 mg/m³), ELIMFILTERS MACROCORE™ systems support 500–750 operating hour intervals. During heavy grain or cotton harvest (dust above 1,000 mg/m³), inspection at 250 hours and service at first restriction indicator activation is recommended. Service intervals should not be based on time alone — differential pressure monitoring is required to maintain sealing efficiency.'
+        a: 'Air intake protection system service intervals depend on ambient dust concentration and daily operating hours. In standard conditions (under 500 mg/m³), ELIMFILTERS® MACROCORE™ systems support 500–750 operating hour intervals. During heavy grain or cotton harvest (dust above 1,000 mg/m³), inspection at 250 hours and service at first restriction indicator activation is recommended. Service intervals should not be based on time alone — differential pressure monitoring is required to maintain sealing efficiency.'
       },
       {
         q: 'What does MACROCORE™ technology provide in agricultural asset protection applications?',
@@ -152,7 +152,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Agricultural Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
         description: 'Agricultural asset protection systems engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust harvest environments with ambient dust concentrations exceeding 1,500 mg/m³.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -194,7 +194,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: [
       `${item.name.toLowerCase()} filtration`, `${item.name.toLowerCase()} filters`,
-      `industrial filters ${item.name.toLowerCase()}`, 'ELIMFILTERS', 'asset protection filtration',
+      `industrial filters ${item.name.toLowerCase()}`, 'ELIMFILTERS®', 'asset protection filtration',
     ],
     alternates: {
       canonical: url,
@@ -205,12 +205,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS World Catalogue',
+      siteName: 'ELIMFILTERS® World Catalogue',
       images: [{
         url: industryMedia[item.name]?.image ? `https://elimfilters.com${industryMedia[item.name].image}` : 'https://elimfilters.com/assets/logo-elimfilters.png',
         width: 1200,
         height: 630,
-        alt: `${item.name} Filtration Systems — ELIMFILTERS`
+        alt: `${item.name} Filtration Systems — ELIMFILTERS®`
       }],
       locale: 'en_US',
     },

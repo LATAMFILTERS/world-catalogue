@@ -62,7 +62,7 @@ export default function Warranty() {
               maxWidth: '700px',
             }}
           >
-            ELIMFILTERS warranty covers equipment protection. We stand behind our engineering with comprehensive support and immediate replacement guarantee.
+            ELIMFILTERS® warranty covers equipment protection. We stand behind our engineering with comprehensive support and immediate replacement guarantee.
           </motion.p>
         </div>
       </section>

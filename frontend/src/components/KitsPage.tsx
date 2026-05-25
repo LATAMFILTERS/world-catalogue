@@ -169,7 +169,7 @@ export function KitsPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS maintenance kits eliminate the single most common cause of premature engine failure in fleets: asynchronous filter changes. When oil, fuel and air filters are replaced at different intervals, contamination windows open between services. Our model-specific bundles synchronize every element to the same change interval — oil filter, fuel primary, fuel secondary, air filter and cabin filter in one ISO-certified package, verified fit for the target OEM platform.
+                  ELIMFILTERS® maintenance kits eliminate the single most common cause of premature engine failure in fleets: asynchronous filter changes. When oil, fuel and air filters are replaced at different intervals, contamination windows open between services. Our model-specific bundles synchronize every element to the same change interval — oil filter, fuel primary, fuel secondary, air filter and cabin filter in one ISO-certified package, verified fit for the target OEM platform.
                 </p>
 
                 <div

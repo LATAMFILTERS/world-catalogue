@@ -41,14 +41,14 @@
   },
   "why": {
     "title": "为什么选择 ELIMILTERS",
-    "p1": "ELIMFILTERS 不仅仅是一家过滤器制造商。我们是一家专业从事",
+    "p1": "ELIMFILTERS® 不仅仅是一家过滤器制造商。我们是一家专业从事",
     "p1highlight": "资产保护技术",
     "p1after": "，设计可在最苛刻的环境中保持设备的价值和可操作性的解决方案。",
     "p2": "我们开发的每一款产品都响应一个现实：停止运行的设备需要花费数十万美元进行维修。过滤器是该投资的守护者。",
     "card": {
       "tag": "// 资产保护技术",
       "title": "我们设计保护系统。不是现成的组件。",
-      "desc": "ELIMFILTERS 设计了多层保护技术，旨在保护关键工业资产 - 每个系统都是专门构建的解决方案，而不是商品替代品。",
+      "desc": "ELIMFILTERS® 设计了多层保护技术，旨在保护关键工业资产 - 每个系统都是专门构建的解决方案，而不是商品替代品。",
       "items": [
         "AI制定的多层防护矩阵",
         "每个系统上的零旁路架构",
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// ELIMFILTERS 专有技术",
+    "tag": "// ELIMFILTERS® 专有技术",
     "title": "工程",
     "titleHighlight": "超越标准",
     "items": {
@@ -103,7 +103,7 @@
     "technical": "技术支援",
     "dealer": "成为经销商",
     "warranty": "保修单",
-    "copyright": "© 2015-2026 ELIMFILTERS LLC | 版权所有过滤领域的智能与工程",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | 版权所有过滤领域的智能与工程",
     "location": "弗里斯科 德克萨斯州"
   },
   "category": {
@@ -119,7 +119,7 @@
     "performanceMetrics": "绩效指标",
     "readyToUpgrade": "准备好升级了吗？",
     "readyDesc": "找到最适合您的应用的过滤器。交叉参考 500,000 多个零件。",
-    "engineeringDesc": "ELIMFILTERS 工程对每个组件都采用精度标准。我们的过滤系统的设计超出了 OEM 规格，确保在严苛的工作周期内提供最大程度的保护和性能。",
+    "engineeringDesc": "ELIMFILTERS® 工程对每个组件都采用精度标准。我们的过滤系统的设计超出了 OEM 规格，确保在严苛的工作周期内提供最大程度的保护和性能。",
     "home": "家"
   },
   "language": {

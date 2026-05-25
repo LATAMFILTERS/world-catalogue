@@ -6,7 +6,7 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 
 const GEO_DEFINITIONS: Record<string, string> = {
-  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS®' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   'aquaguard': 'AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
   'cooltech': 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
   'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
@@ -41,11 +41,11 @@ const FAQS = [
     a: 'MACROCORE™ uses Progressive Density Gradient (PDG) media — a fixed multi-layer structure where outer zones capture large particles and progressively denser inner zones intercept sub-micron threats, achieving 99.9%–99.98% efficiency (ISO 5011). SYNTRAX™ uses AI-engineered computational modelling to match the filter media matrix to the specific dust particle size distribution and airflow velocity of each engine application. MACROCORE™ is specified for known high-dust environments; SYNTRAX™ is applied where airflow and contamination profiles vary by engine and operating condition.',
   },
   {
-    q: 'Which ELIMFILTERS technology is best for protecting diesel fuel injectors?',
+    q: 'Which ELIMFILTERS® technology is best for protecting diesel fuel injectors?',
     a: 'SYNTEPORE™ is engineered specifically for Common Rail direct injection (CRDI) systems. It provides a 4-micron absolute barrier before the injector nozzles and uses zero-migration element construction to prevent filter fibre release — critical because CRDI injectors operate to tolerances below 1 micron. AQUAGUARD™ complements SYNTEPORE™ by removing free and emulsified water from fuel before it reaches the injection system, achieving 99.8% water separation efficiency.',
   },
   {
-    q: 'What certifications do ELIMFILTERS technologies hold?',
+    q: 'What certifications do ELIMFILTERS® technologies hold?',
     a: 'MACROCORE™ is rated to ISO 5011 (air filter test standard for internal combustion engines). MARINECLEAN™ meets IMO (International Maritime Organization) certification standards for marine applications. AQUAGUARD™ water separation is verified against EN 23015 and SAE J1488 coalescer test protocols. SYNTEPORE™ and NANOFORCE™ are validated against ISO 16889 Beta ratio testing for fuel and hydraulic filtration respectively.',
   },
   {
@@ -53,11 +53,11 @@ const FAQS = [
     a: 'AQUAGUARD™ uses hydrophobic (water-repelling) filter media that causes water droplets to coalesce — small droplets merge into larger drops that separate from the fuel stream by gravity. This coalescing mechanism targets both free water and emulsified water suspended as micro-droplets in diesel. The result prevents injector nozzle corrosion, microbial growth in fuel tanks, and cavitation damage to fuel pump components.',
   },
   {
-    q: 'What filtration technologies does ELIMFILTERS offer for marine applications?',
+    q: 'What filtration technologies does ELIMFILTERS® offer for marine applications?',
     a: 'MARINECLEAN™ is the primary marine-specific technology, applying epoxy brine-rejection coating to filter housings and elements to resist salt-accelerated corrosion — meeting IMO certification. AQUAGUARD™ and AQUAGUARD/SERIES™ remove water from marine diesel and turbine fuel systems where seawater ingress and condensation are constant operational risks. SYNTEPORE™ protects marine diesel injection systems from sub-micron particle contamination in harsh offshore environments.',
   },
   {
-    q: 'Can ELIMFILTERS technologies replace OEM filters on mining equipment?',
+    q: 'Can ELIMFILTERS® technologies replace OEM filters on mining equipment?',
     a: 'DURATECH™ master kits are engineered as OEM-interchangeable replacements for mixed mining fleets, consolidating multiple filter specifications across different makes and models. MACROCORE™, SYNTRAX™, and NANOFORCE™ meet or exceed OEM filtration specifications for air, fuel, and hydraulic systems respectively. All technologies are validated against ISO standards (ISO 5011, ISO 16889) that define OEM specification compliance, enabling direct replacement without voiding equipment warranties.',
   },
   {
@@ -65,7 +65,7 @@ const FAQS = [
     a: 'AQUAGUARD™ is the core hydrophobic water-separation technology — a coalescing filter that removes free and emulsified water from diesel fuel at 99.8% efficiency. AQUAGUARD/SERIES™ (FH 900FH / 1000FH) is the heavy-duty multi-stage implementation for high-flow applications: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, Stage 3 provides a final polishing barrier. Series models are sized for turbine fuel systems in large-scale power generation and mining operations where flow rates exceed standard AQUAGUARD™ capacity.',
   },
   {
-    q: 'Which ELIMFILTERS technology protects cabin air quality in mining and construction?',
+    q: 'Which ELIMFILTERS® technology protects cabin air quality in mining and construction?',
     a: 'MICROKAPPA™ is engineered for operator cabin protection in high-dust industrial environments. It combines electrostatic charge (which attracts sub-micron particles, allergens, and diesel particulate matter) with activated carbon filtration (which adsorbs odours from fuel vapours and exhaust gas intrusion). This delivers HEPA-grade particle capture combined with chemical filtration, protecting operators from PM2.5/PM10 exposure in mining cabs, agricultural machinery, and heavy-duty construction vehicles.',
   },
 ];
@@ -79,10 +79,10 @@ export default function TechnologiesPage() {
       item: {
         '@type': 'Product',
         name: tech.title,
-        brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
+        brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
         description: GEO_DEFINITIONS[slug] || tech.description,
         url: `https://elimfilters.com/technologies/${slug}`,
-        manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+        manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
       },
     };
   });
@@ -102,7 +102,7 @@ export default function TechnologiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'ELIMFILTERS Proprietary Filtration Technologies',
+        name: 'ELIMFILTERS® Proprietary Filtration Technologies',
         description: '12 proprietary filtration technologies for asset protection across industrial, marine, and agricultural applications.',
         url: 'https://elimfilters.com/technologies/',
         numberOfItems: 12,
@@ -202,7 +202,7 @@ export default function TechnologiesPage() {
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            ELIMFILTERS technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS&apos; industrial asset protection strategy.
+            ELIMFILTERS® technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS®&apos; industrial asset protection strategy.
           </p>
         </motion.div>
       </section>
@@ -315,7 +315,7 @@ export default function TechnologiesPage() {
               All 12 Technologies — Quick Reference
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System type, primary function, key efficiency metric, and applicable industries across the complete ELIMFILTERS technology portfolio.
+              System type, primary function, key efficiency metric, and applicable industries across the complete ELIMFILTERS® technology portfolio.
             </p>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>

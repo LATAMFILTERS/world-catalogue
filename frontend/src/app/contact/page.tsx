@@ -8,9 +8,9 @@ import { AnimateIn } from '@/components/AnimateIn';
 const contactPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'Contact ELIMFILTERS',
+  name: 'Contact ELIMFILTERS®',
   url: 'https://elimfilters.com/contact/',
-  description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
+  description: 'Contact ELIMFILTERS® for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
   dateModified: '2026-05-25',
   mainEntity: {
     '@type': 'ContactPoint',
@@ -36,34 +36,34 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What industries does ELIMFILTERS serve?',
+      name: 'What industries does ELIMFILTERS® serve?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ELIMFILTERS serves 12 industrial sectors: Agriculture, Mining, Marine, Construction, Automotive, Oil & Gas, Power Generation, Manufacturing, Transportation & Fleets, Bus & Coach, Railway, and Waste Management. Filtration solutions cover air, fuel, hydraulic, lube oil, cabin, coolant, and compressed air systems.',
+        text: 'ELIMFILTERS® serves 12 industrial sectors: Agriculture, Mining, Marine, Construction, Automotive, Oil & Gas, Power Generation, Manufacturing, Transportation & Fleets, Bus & Coach, Railway, and Waste Management. Filtration solutions cover air, fuel, hydraulic, lube oil, cabin, coolant, and compressed air systems.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How do I request an OEM cross-reference for ELIMFILTERS products?',
+      name: 'How do I request an OEM cross-reference for ELIMFILTERS® products?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Submit your OEM part number, equipment make and model, and application details via the contact form at elimfilters.com/contact or by email at info@elimfilters.com. The ELIMFILTERS technical team will identify the correct replacement and confirm specification compatibility.',
+        text: 'Submit your OEM part number, equipment make and model, and application details via the contact form at elimfilters.com/contact or by email at info@elimfilters.com. The ELIMFILTERS® technical team will identify the correct replacement and confirm specification compatibility.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How do I become an ELIMFILTERS distributor?',
+      name: 'How do I become an ELIMFILTERS® distributor?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Distributor applications are accepted via the Distributor Application form at elimfilters.com/distributor-application. Include your company profile, service territory, and current product lines. The ELIMFILTERS commercial team reviews applications for regional coverage fit and responds within 5 business days.',
+        text: 'Distributor applications are accepted via the Distributor Application form at elimfilters.com/distributor-application. Include your company profile, service territory, and current product lines. The ELIMFILTERS® commercial team reviews applications for regional coverage fit and responds within 5 business days.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What technical support does ELIMFILTERS provide?',
+      name: 'What technical support does ELIMFILTERS® provide?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ELIMFILTERS provides technical support for: OEM cross-reference validation, filter specification matching to ISO standards (ISO 16889, ISO 4406, ISO 5011), application engineering for air/fuel/hydraulic/lube systems, and fleet filtration optimization. Contact the technical team at info@elimfilters.com with equipment details and application context.',
+        text: 'ELIMFILTERS® provides technical support for: OEM cross-reference validation, filter specification matching to ISO standards (ISO 16889, ISO 4406, ISO 5011), application engineering for air/fuel/hydraulic/lube systems, and fleet filtration optimization. Contact the technical team at info@elimfilters.com with equipment details and application context.',
       },
     },
   ],
@@ -175,7 +175,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
-            Contact ELIMFILTERS — Industrial Filtration Support
+            Contact ELIMFILTERS® — Industrial Filtration Support
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +183,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '700px' }}
           >
-            ELIMFILTERS provides asset protection filtration systems engineered for 12 industrial sectors. Our technical team handles OEM cross-reference validation, filter specification matching to ISO 16889 and ISO 4406 standards, distributor partnership applications, and fleet filtration optimization. Email{' '}
+            ELIMFILTERS® provides asset protection filtration systems engineered for 12 industrial sectors. Our technical team handles OEM cross-reference validation, filter specification matching to ISO 16889 and ISO 4406 standards, distributor partnership applications, and fleet filtration optimization. Email{' '}
             <a href="mailto:info@elimfilters.com" style={{ color: '#FFF12D', textDecoration: 'none' }}>info@elimfilters.com</a>. We respond within 2 business days.
           </motion.p>
         </div>
@@ -235,7 +235,7 @@ export default function Contact() {
                       lineHeight: 1.6,
                     }}
                   >
-                    ELIMFILTERS LLC
+                    ELIMFILTERS® LLC
                     <br />
                     Frisco, Texas 75034
                     <br />
@@ -581,11 +581,11 @@ export default function Contact() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
               {[
-                { title: 'OEM Cross-Reference Validation', body: 'Submit your OEM part number, equipment make, and model. Our team identifies the compatible ELIMFILTERS product and confirms specification compliance.' },
+                { title: 'OEM Cross-Reference Validation', body: 'Submit your OEM part number, equipment make, and model. Our team identifies the compatible ELIMFILTERS® product and confirms specification compliance.' },
                 { title: 'ISO Standard Spec Matching', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration) for air, fuel, hydraulic, and lube oil systems.' },
                 { title: 'Distributor Applications', body: 'Distributor partnership applications reviewed for regional coverage fit. Include your company profile, service territory, and current product lines. Response within 5 business days.' },
                 { title: 'Fleet Filtration Optimization', body: 'Fleet-level filtration strategy including extended service interval planning, multi-system coverage across air, fuel, hydraulic, lube, cabin, and coolant domains.' },
-                { title: 'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™', body: 'Technical inquiries for proprietary ELIMFILTERS filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
+                { title: 'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™', body: 'Technical inquiries for proprietary ELIMFILTERS® filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
                 { title: 'Response Times', body: 'Technical inquiries: within 2 business days. Distributor applications: within 5 business days. Provide equipment details and application context for faster response.' },
               ].map(({ title, body }) => (
                 <div key={title} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>

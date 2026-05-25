@@ -1219,7 +1219,7 @@ export default function IndustrialFiltrationPage() {
             "url": "https://elimfilters.com/knowledge-system/bridges/industrial-filtration",
             "author": {
               "@type": "Organization",
-              "name": "ELIMFILTERS"
+              "name": "ELIMFILTERS®"
             },
             "about": {
               "@type": "Thing",

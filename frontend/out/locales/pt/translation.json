@@ -41,14 +41,14 @@
   },
   "why": {
     "title": "POR QUE ESCOLHER ELIMFILTROS",
-    "p1": "A ELIMFILTERS é mais do que um fabricante de filtros. Somos uma empresa especializada em",
+    "p1": "A ELIMFILTERS® é mais do que um fabricante de filtros. Somos uma empresa especializada em",
     "p1highlight": "Tecnologia de proteção de ativos",
     "p1after": ", projetando soluções que preservam o valor e a operabilidade do seu equipamento nos ambientes mais exigentes.",
     "p2": "Cada produto que desenvolvemos responde a uma realidade: o equipamento que interrompe a sua operação custa centenas de milhares de dólares para reparar. Um filtro é o guardião desse investimento.",
     "card": {
       "tag": "// TECNOLOGIA DE PROTEÇÃO DE ATIVOS",
       "title": "Projetamos sistemas de proteção. Não são componentes prontos para uso.",
-      "desc": "A ELIMFILTERS desenvolve tecnologias de proteção multicamadas calibradas para defender ativos industriais críticos – cada sistema é uma solução desenvolvida especificamente, não um substituto de mercadoria.",
+      "desc": "A ELIMFILTERS® desenvolve tecnologias de proteção multicamadas calibradas para defender ativos industriais críticos – cada sistema é uma solução desenvolvida especificamente, não um substituto de mercadoria.",
       "items": [
         "Matriz de proteção multicamadas formulada por IA",
         "Arquitetura de bypass zero em todos os sistemas",
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// TECNOLOGIA PROPRIETÁRIA DE ELIMFILTERS",
+    "tag": "// TECNOLOGIA PROPRIETÁRIA DE ELIMFILTERS®",
     "title": "ENGENHARIA",
     "titleHighlight": "ALÉM DO PADRÃO",
     "items": {
@@ -103,7 +103,7 @@
     "technical": "Suporte Técnico",
     "dealer": "Torne-se um revendedor",
     "warranty": "Garantia",
-    "copyright": "© 2015-2026 ELIMFILTERS LLC | Inteligência e Engenharia em Filtração",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | Inteligência e Engenharia em Filtração",
     "location": "FRISCO TEXAS"
   },
   "category": {
@@ -119,7 +119,7 @@
     "performanceMetrics": "MÉTRICAS DE DESEMPENHO",
     "readyToUpgrade": "Pronto para atualizar?",
     "readyDesc": "Encontre o filtro exato para sua aplicação. Referência cruzada de mais de 500.000 peças.",
-    "engineeringDesc": "A engenharia da ELIMFILTERS aplica padrões de precisão a todos os componentes. Nossos sistemas de filtragem são projetados para exceder as especificações do OEM, garantindo proteção e desempenho máximos em ciclos de trabalho exigentes.",
+    "engineeringDesc": "A engenharia da ELIMFILTERS® aplica padrões de precisão a todos os componentes. Nossos sistemas de filtragem são projetados para exceder as especificações do OEM, garantindo proteção e desempenho máximos em ciclos de trabalho exigentes.",
     "home": "LAR"
   },
   "language": {

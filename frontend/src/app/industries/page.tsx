@@ -208,13 +208,13 @@ export default function IndustriesPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Industrial Filtration Systems by Industry',
-    description: 'ELIMFILTERS serves 12 critical industries with engineered asset protection filtration systems engineered to ISO and SAE specification.',
+    description: 'ELIMFILTERS® serves 12 critical industries with engineered asset protection filtration systems engineered to ISO and SAE specification.',
     url: 'https://elimfilters.com/industries/',
     datePublished: '2026-01-15',
     dateModified: '2026-05-25',
     author: {
       '@type': 'Organization',
-      name: 'ELIMFILTERS',
+      name: 'ELIMFILTERS®',
       url: 'https://elimfilters.com',
     },
   };
@@ -249,18 +249,18 @@ export default function IndustriesPage() {
       },
       {
         '@type': 'Question',
-        name: 'What filtration standards does ELIMFILTERS comply with?',
+        name: 'What filtration standards does ELIMFILTERS® comply with?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'ELIMFILTERS systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
+          text: 'ELIMFILTERS® systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Does ELIMFILTERS serve offshore oil and gas platforms?',
+        name: 'Does ELIMFILTERS® serve offshore oil and gas platforms?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. ELIMFILTERS marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
+          text: 'Yes. ELIMFILTERS® marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
         },
       },
       {
@@ -356,7 +356,7 @@ export default function IndustriesPage() {
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>ELIMFILTERS serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
+              <strong>ELIMFILTERS® serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS® systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
             </p>
             <p style={{ margin: '0.75rem 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)' }}>
               Industries served include agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, trucks & fleets, and municipal waste management — across operations in over 50 countries.
@@ -423,12 +423,12 @@ export default function IndustriesPage() {
                 a: 'Mining environments expose equipment to dust concentrations exceeding 5,000 mg/m³—far above ISO 5011 test standards. Mining filtration systems must handle bypass-protected air intakes, fuel circuit water removal (H2O intrusion from rain and humidity), and hydraulic system contamination control for high-pressure hoist and crush systems.',
               },
               {
-                q: 'What filtration standards does ELIMFILTERS comply with?',
-                a: 'ELIMFILTERS systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
+                q: 'What filtration standards does ELIMFILTERS® comply with?',
+                a: 'ELIMFILTERS® systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
               },
               {
-                q: 'Does ELIMFILTERS serve offshore oil and gas platforms?',
-                a: 'Yes. ELIMFILTERS marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
+                q: 'Does ELIMFILTERS® serve offshore oil and gas platforms?',
+                a: 'Yes. ELIMFILTERS® marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
               },
               {
                 q: 'What is the typical equipment lifespan extension from system-level filtration?',

@@ -40,15 +40,15 @@
     }
   },
   "why": {
-    "title": "¿POR QUÉ ELEGIR ELIMFILTERS?",
-    "p1": "ELIMFILTERS es más que un fabricante de filtros. Somos una empresa especializada en",
+    "title": "¿POR QUÉ ELEGIR ELIMFILTERS®?",
+    "p1": "ELIMFILTERS® es más que un fabricante de filtros. Somos una empresa especializada en",
     "p1highlight": "Tecnología de Protección de Activos",
     "p1after": ", diseñando soluciones que preservan el valor y la operatividad de sus equipos en los entornos más exigentes.",
     "p2": "Cada producto que desarrollamos responde a una realidad: el equipo que detiene su operación cuesta cientos de miles en reparaciones. Un sistema de filtración es el guardián de esa inversión.",
     "card": {
       "tag": "// TECNOLOGÍA DE PROTECCIÓN DE ACTIVOS",
       "title": "Diseñamos sistemas de protección. No componentes de repuesto.",
-      "desc": "ELIMFILTERS desarrolla tecnologías de protección multicapa calibradas para defender activos industriales críticos — cada sistema es una solución de ingeniería específica, no un reemplazo genérico.",
+      "desc": "ELIMFILTERS® desarrolla tecnologías de protección multicapa calibradas para defender activos industriales críticos — cada sistema es una solución de ingeniería específica, no un reemplazo genérico.",
       "items": [
         "Matriz de protección multicapa formulada con IA",
         "Arquitectura de cero bypass en cada sistema",
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// TECNOLOGÍA PROPIETARIA ELIMFILTERS",
+    "tag": "// TECNOLOGÍA PROPIETARIA ELIMFILTERS®",
     "title": "INGENIERÍA",
     "titleHighlight": "MÁS ALLÁ DEL ESTÁNDAR",
     "items": {
@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// RED DE DISTRIBUIDORES",
       "title": "SOLO LOS MEJORES",
-      "highlight": "VENDEN ELIMFILTERS.",
+      "highlight": "VENDEN ELIMFILTERS®.",
       "button": "CONVIÉRTASE EN DISTRIBUIDOR"
     },
     "search": {
@@ -103,7 +103,7 @@
     "technical": "Soporte Técnico",
     "dealer": "Conviértase en Distribuidor",
     "warranty": "Garantía",
-    "copyright": "© 2015-2026 ELIMFILTERS LLC | Inteligencia e Ingeniería en Filtración",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | Inteligencia e Ingeniería en Filtración",
     "location": "FRISCO TEXAS"
   },
   "category": {
@@ -114,12 +114,12 @@
     "systemSpecs": "ESPECIFICACIONES DEL SISTEMA",
     "active": "✓ ACTIVO",
     "operationalAdvantages": "VENTAJAS OPERATIVAS",
-    "whyElimfilters": "POR QUÉ ELIMFILTERS",
+    "whyElimfilters": "POR QUÉ ELIMFILTERS®",
     "technologiesIncluded": "Tecnologías Incluidas",
     "performanceMetrics": "MÉTRICAS DE RENDIMIENTO",
     "readyToUpgrade": "¿Listo para Mejorar?",
     "readyDesc": "Encuentre el sistema exacto para su aplicación. Referencias cruzadas de más de 500,000 piezas.",
-    "engineeringDesc": "La ingeniería ELIMFILTERS aplica estándares de precisión a cada componente. Nuestros sistemas están diseñados para superar las especificaciones OEM, garantizando máxima protección y rendimiento en ciclos de trabajo exigentes.",
+    "engineeringDesc": "La ingeniería ELIMFILTERS® aplica estándares de precisión a cada componente. Nuestros sistemas están diseñados para superar las especificaciones OEM, garantizando máxima protección y rendimiento en ciclos de trabajo exigentes.",
     "home": "INICIO"
   },
   "language": {

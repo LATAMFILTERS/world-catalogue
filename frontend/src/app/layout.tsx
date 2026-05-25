@@ -17,20 +17,20 @@ const BASE_URL = 'https://elimfilters.com';
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
-    template: '%s | ELIMFILTERS',
+    default: 'ELIMFILTERS® — World Catalogue | Industrial Filtration Systems',
+    template: '%s | ELIMFILTERS®',
   },
   description:
-    'ELIMFILTERS World Catalogue: 12 industries, 12 products, 12 proprietary technologies. Asset protection filtration engineered for maximum performance in mining, agriculture, marine, and heavy industry.',
+    'ELIMFILTERS® World Catalogue: 12 industries, 12 products, 12 proprietary technologies. Asset protection filtration engineered for maximum performance in mining, agriculture, marine, and heavy industry.',
   keywords: [
     'industrial filtration', 'asset protection filters', 'air filters industrial',
     'fuel filters heavy duty', 'hydraulic filters', 'oil filters industrial',
     'mining filtration', 'agriculture filtration', 'marine filtration',
-    'SYNTRAX filter', 'NANOFORCE filter', 'AQUAGUARD filter', 'ELIMFILTERS',
+    'SYNTRAX filter', 'NANOFORCE filter', 'AQUAGUARD filter', 'ELIMFILTERS®',
   ],
-  authors: [{ name: 'ELIMFILTERS', url: BASE_URL }],
-  creator: 'ELIMFILTERS',
-  publisher: 'ELIMFILTERS',
+  authors: [{ name: 'ELIMFILTERS®', url: BASE_URL }],
+  creator: 'ELIMFILTERS®',
+  publisher: 'ELIMFILTERS®',
   robots: {
     index: true,
     follow: true,
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
-    title: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
+    siteName: 'ELIMFILTERS® World Catalogue',
+    title: 'ELIMFILTERS® — World Catalogue | Industrial Filtration Systems',
     description: 'Asset protection filtration for mining, agriculture, marine and heavy industry. 12 industries · 12 systems · 12 proprietary technologies.',
     url: BASE_URL,
-    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS World Catalogue' }],
+    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS® World Catalogue' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@elimfilters',
-    title: 'ELIMFILTERS — World Catalogue',
+    title: 'ELIMFILTERS® — World Catalogue',
     description: 'Asset protection filtration for mining, agriculture, marine and heavy industry.',
     images: ['/assets/logo-elimfilters.png'],
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'ELIMFILTERS',
+  name: 'ELIMFILTERS®',
   url: BASE_URL,
   logo: `${BASE_URL}/assets/logo-elimfilters.png`,
   description: 'Industrial asset protection filtration systems engineered for mining, agriculture, marine, power generation, and heavy industry.',
@@ -70,7 +70,7 @@ const organizationSchema = {
   sameAs: ['https://www.linkedin.com/company/elimfilters'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'ELIMFILTERS World Catalogue',
+    name: 'ELIMFILTERS® World Catalogue',
     itemListElement: [
       { '@type': 'OfferCatalog', name: 'Industrial Filtration by Industry', url: `${BASE_URL}/industries` },
       { '@type': 'OfferCatalog', name: 'Filtration Systems', url: `${BASE_URL}/systems` },
@@ -82,7 +82,7 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ELIMFILTERS World Catalogue',
+  name: 'ELIMFILTERS® World Catalogue',
   url: BASE_URL,
   potentialAction: {
     '@type': 'SearchAction',

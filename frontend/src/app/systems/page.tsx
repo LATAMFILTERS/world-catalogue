@@ -236,11 +236,11 @@ export default function SystemsPage() {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Industrial Filtration Systems Catalogue',
-          description: 'Explore 12 ELIMFILTERS filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration.',
+          description: 'Explore 12 ELIMFILTERS® filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration.',
           url: 'https://elimfilters.com/systems',
           datePublished: '2026-01-15',
           dateModified: '2026-05-25',
-          author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+          author: { '@type': 'Organization', name: 'ELIMFILTERS®' },
         })}
       </script>
 
@@ -339,7 +339,7 @@ export default function SystemsPage() {
       <section style={{ padding: '3rem 2rem', background: '#000', display: 'none', visibility: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', color: '#fff' }}>
           <p>
-            ELIMFILTERS manufactures 12 industrial filtration systems for air, fuel, hydraulic, oil, cabin, coolant, marine, and dryer applications. Each system is engineered with Asset Protection Technology — a multi-stage filtration approach designed for mining, agriculture, oil & gas, and heavy industry operating environments where standard OEM filters are insufficient. Products include MACROCORE™ air intake systems (99.9% silica retention), AQUAGUARD™ fuel separators (99.8% water removal), NANOFORCE™ hydraulic filters (99.99% efficiency at 450 PSI), and specialized marine-grade and desiccant dryer systems.
+            ELIMFILTERS® manufactures 12 industrial filtration systems for air, fuel, hydraulic, oil, cabin, coolant, marine, and dryer applications. Each system is engineered with Asset Protection Technology — a multi-stage filtration approach designed for mining, agriculture, oil & gas, and heavy industry operating environments where standard OEM filters are insufficient. Products include MACROCORE™ air intake systems (99.9% silica retention), AQUAGUARD™ fuel separators (99.8% water removal), NANOFORCE™ hydraulic filters (99.99% efficiency at 450 PSI), and specialized marine-grade and desiccant dryer systems.
           </p>
         </div>
       </section>
@@ -388,10 +388,10 @@ export default function SystemsPage() {
               mainEntity: [
                 {
                   '@type': 'Question',
-                  name: 'What types of industrial filtration systems does ELIMFILTERS manufacture?',
+                  name: 'What types of industrial filtration systems does ELIMFILTERS® manufacture?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'ELIMFILTERS manufactures 12 industrial filtration systems: air intake filters (MACROCORE™), fuel separators (AQUAGUARD™ Series), hydraulic filters (NANOFORCE™), lube oil filters (SYNTRAX™), cabin air filters (MICROKAPPA™), coolant filters (COOLTECH™), marine filters (MARINECLEAN™), air dryers (DRYCORE™), and filter housing systems. Each system carries ISO 16889, ISO 5011, or ISO 16332 certification depending on application.'
+                    text: 'ELIMFILTERS® manufactures 12 industrial filtration systems: air intake filters (MACROCORE™), fuel separators (AQUAGUARD™ Series), hydraulic filters (NANOFORCE™), lube oil filters (SYNTRAX™), cabin air filters (MICROKAPPA™), coolant filters (COOLTECH™), marine filters (MARINECLEAN™), air dryers (DRYCORE™), and filter housing systems. Each system carries ISO 16889, ISO 5011, or ISO 16332 certification depending on application.'
                   }
                 },
                 {
@@ -404,7 +404,7 @@ export default function SystemsPage() {
                 },
                 {
                   '@type': 'Question',
-                  name: 'Which ELIMFILTERS system is rated for hydraulic applications?',
+                  name: 'Which ELIMFILTERS® system is rated for hydraulic applications?',
                   acceptedAnswer: {
                     '@type': 'Answer',
                     text: 'The NANOFORCE™ Hydraulic Filter System achieves 99.99% filtration efficiency and is rated to 450 PSI for high-pressure hydraulic circuits. NANOFORCE™ includes HYDROGUARD water separation technology to prevent vapor-phase water contamination and is certified to ISO 16889 for proportional valve protection in construction, manufacturing, and mining applications.'
@@ -412,10 +412,10 @@ export default function SystemsPage() {
                 },
                 {
                   '@type': 'Question',
-                  name: 'What ISO certifications do ELIMFILTERS filtration systems carry?',
+                  name: 'What ISO certifications do ELIMFILTERS® filtration systems carry?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'ELIMFILTERS systems are certified to: ISO 5011 (air filter testing), ISO 16889 (hydraulic filter efficiency and Beta rating), ISO 16332 (fuel filter water separation), ISO 19438 (lube oil filter efficiency), and ISO 4406 (oil cleanliness codes). All certifications verify performance and dirt capacity under standardized industrial test conditions.'
+                    text: 'ELIMFILTERS® systems are certified to: ISO 5011 (air filter testing), ISO 16889 (hydraulic filter efficiency and Beta rating), ISO 16332 (fuel filter water separation), ISO 19438 (lube oil filter efficiency), and ISO 4406 (oil cleanliness codes). All certifications verify performance and dirt capacity under standardized industrial test conditions.'
                   }
                 },
                 {
@@ -428,23 +428,23 @@ export default function SystemsPage() {
                 },
                 {
                   '@type': 'Question',
-                  name: 'Are ELIMFILTERS filtration systems compatible with OEM equipment?',
+                  name: 'Are ELIMFILTERS® filtration systems compatible with OEM equipment?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Yes. ELIMFILTERS provides OEM cross-reference compatible products for all major OEM platforms including Mack, Freightliner, International, Isuzu, and Mitsubishi. ELIMFILTERS Filter Kits offer model-specific bundles with coordinated service intervals across all critical circuits (air, fuel, oil, hydraulic, cabin). Full OEM geometry fit compatibility is guaranteed for all air intake and cabin filter products.'
+                    text: 'Yes. ELIMFILTERS® provides OEM cross-reference compatible products for all major OEM platforms including Mack, Freightliner, International, Isuzu, and Mitsubishi. ELIMFILTERS® Filter Kits offer model-specific bundles with coordinated service intervals across all critical circuits (air, fuel, oil, hydraulic, cabin). Full OEM geometry fit compatibility is guaranteed for all air intake and cabin filter products.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'What is Asset Protection Technology in ELIMFILTERS products?',
+                  name: 'What is Asset Protection Technology in ELIMFILTERS® products?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Asset Protection Technology is ELIMFILTERS\' multi-stage filtration architecture that targets contamination prevention across all critical equipment circuits. Unlike commodity filters that prioritize cost, Asset Protection designs filter systems around measured contamination threats (particle size, water ingress, thermal stress). This system-level approach prevents the specific failure modes that cause equipment breakdown, extending asset lifespan 3–5x versus standard commodity filtration.'
+                    text: 'Asset Protection Technology is ELIMFILTERS®\' multi-stage filtration architecture that targets contamination prevention across all critical equipment circuits. Unlike commodity filters that prioritize cost, Asset Protection designs filter systems around measured contamination threats (particle size, water ingress, thermal stress). This system-level approach prevents the specific failure modes that cause equipment breakdown, extending asset lifespan 3–5x versus standard commodity filtration.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'Which ELIMFILTERS system is designed for marine environments?',
+                  name: 'Which ELIMFILTERS® system is designed for marine environments?',
                   acceptedAnswer: {
                     '@type': 'Answer',
                     text: 'The MARINECLEAN™ Filter System is naval-grade alloy construction removing 99.9% water and sediment from marine diesel fuel. MARINECLEAN™ is engineered for permanent salt, brine, and corrosive atmosphere exposure. IMO-compliant construction ensures certification for commercial and offshore vessel operations where standard filters corrode within 2–3 months of exposure.'
@@ -460,10 +460,10 @@ export default function SystemsPage() {
                 },
                 {
                   '@type': 'Question',
-                  name: 'Which industries does ELIMFILTERS serve?',
+                  name: 'Which industries does ELIMFILTERS® serve?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'ELIMFILTERS serves 12 major industries: mining (haul trucks, excavators, drills), agriculture (tractors, combines, harvesters), construction (excavators, graders, bulldozers), marine (offshore vessels, commercial shipping), oil & gas (onshore/offshore production equipment), power generation (stationary diesel engines, backup generators), trucks & fleets (heavy-duty commercial vehicles), manufacturing (pneumatic systems, hydraulic circuits), railway (locomotives, traction systems), bus & coach (urban transit fleets), automotive (passenger and light commercial), and waste & municipal (collection vehicles, emergency response).'
+                    text: 'ELIMFILTERS® serves 12 major industries: mining (haul trucks, excavators, drills), agriculture (tractors, combines, harvesters), construction (excavators, graders, bulldozers), marine (offshore vessels, commercial shipping), oil & gas (onshore/offshore production equipment), power generation (stationary diesel engines, backup generators), trucks & fleets (heavy-duty commercial vehicles), manufacturing (pneumatic systems, hydraulic circuits), railway (locomotives, traction systems), bus & coach (urban transit fleets), automotive (passenger and light commercial), and waste & municipal (collection vehicles, emergency response).'
                   }
                 }
               ]
@@ -473,27 +473,27 @@ export default function SystemsPage() {
           <div style={{ display: 'grid', gap: '2rem' }}>
             {[
               {
-                q: 'What types of industrial filtration systems does ELIMFILTERS manufacture?',
-                a: 'ELIMFILTERS manufactures 12 industrial filtration systems: air intake filters (MACROCORE™), fuel separators (AQUAGUARD™ Series), hydraulic filters (NANOFORCE™), lube oil filters (SYNTRAX™), cabin air filters (MICROKAPPA™), coolant filters (COOLTECH™), marine filters (MARINECLEAN™), air dryers (DRYCORE™), and filter housing systems. Each system carries ISO 16889, ISO 5011, or ISO 16332 certification depending on application.'
+                q: 'What types of industrial filtration systems does ELIMFILTERS® manufacture?',
+                a: 'ELIMFILTERS® manufactures 12 industrial filtration systems: air intake filters (MACROCORE™), fuel separators (AQUAGUARD™ Series), hydraulic filters (NANOFORCE™), lube oil filters (SYNTRAX™), cabin air filters (MICROKAPPA™), coolant filters (COOLTECH™), marine filters (MARINECLEAN™), air dryers (DRYCORE™), and filter housing systems. Each system carries ISO 16889, ISO 5011, or ISO 16332 certification depending on application.'
               },
               {
                 q: 'What is the MACROCORE™ Air Filter System used for?',
                 a: 'The MACROCORE™ Air Filter System is designed for extreme dust environments in mining, agriculture, construction, and oil & gas operations. It achieves 99.9% silica particle retention with zero bypass leakage and is rated to ISO 5011 performance standards. MACROCORE™ delivers sustained protection in conditions where standard OEM air filters fail within 50–200 operating hours.'
               },
               {
-                q: 'Which ELIMFILTERS system is rated for hydraulic applications?',
+                q: 'Which ELIMFILTERS® system is rated for hydraulic applications?',
                 a: 'The NANOFORCE™ Hydraulic Filter System achieves 99.99% filtration efficiency and is rated to 450 PSI for high-pressure hydraulic circuits. NANOFORCE™ includes HYDROGUARD water separation technology to prevent vapor-phase water contamination and is certified to ISO 16889 for proportional valve protection in construction, manufacturing, and mining applications.'
               },
               {
-                q: 'What ISO certifications do ELIMFILTERS filtration systems carry?',
-                a: 'ELIMFILTERS systems are certified to: ISO 5011 (air filter testing), ISO 16889 (hydraulic filter efficiency and Beta rating), ISO 16332 (fuel filter water separation), ISO 19438 (lube oil filter efficiency), and ISO 4406 (oil cleanliness codes). All certifications verify performance and dirt capacity under standardized industrial test conditions.'
+                q: 'What ISO certifications do ELIMFILTERS® filtration systems carry?',
+                a: 'ELIMFILTERS® systems are certified to: ISO 5011 (air filter testing), ISO 16889 (hydraulic filter efficiency and Beta rating), ISO 16332 (fuel filter water separation), ISO 19438 (lube oil filter efficiency), and ISO 4406 (oil cleanliness codes). All certifications verify performance and dirt capacity under standardized industrial test conditions.'
               },
               {
-                q: 'What is Asset Protection Technology in ELIMFILTERS products?',
-                a: 'Asset Protection Technology is ELIMFILTERS\' multi-stage filtration architecture that targets contamination prevention across all critical equipment circuits. Unlike commodity filters that prioritize cost, Asset Protection designs filter systems around measured contamination threats (particle size, water ingress, thermal stress). This system-level approach prevents the specific failure modes that cause equipment breakdown, extending asset lifespan 3–5x versus standard commodity filtration.'
+                q: 'What is Asset Protection Technology in ELIMFILTERS® products?',
+                a: 'Asset Protection Technology is ELIMFILTERS®\' multi-stage filtration architecture that targets contamination prevention across all critical equipment circuits. Unlike commodity filters that prioritize cost, Asset Protection designs filter systems around measured contamination threats (particle size, water ingress, thermal stress). This system-level approach prevents the specific failure modes that cause equipment breakdown, extending asset lifespan 3–5x versus standard commodity filtration.'
               },
               {
-                q: 'Which ELIMFILTERS system is designed for marine environments?',
+                q: 'Which ELIMFILTERS® system is designed for marine environments?',
                 a: 'The MARINECLEAN™ Filter System is naval-grade alloy construction removing 99.9% water and sediment from marine diesel fuel. MARINECLEAN™ is engineered for permanent salt, brine, and corrosive atmosphere exposure. IMO-compliant construction ensures certification for commercial and offshore vessel operations where standard filters corrode within 2–3 months of exposure.'
               }
             ].map((faq, i) => (

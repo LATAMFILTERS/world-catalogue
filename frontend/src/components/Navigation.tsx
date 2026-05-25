@@ -92,7 +92,7 @@ export function Navigation() {
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image
               src="/assets/logo-elimfilters.png"
-              alt="ELIMFILTERS"
+              alt="ELIMFILTERS®"
               width={220}
               height={220}
               style={{ objectFit: 'contain' }}
