@@ -1,26 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Filtration Systems | ELIMFILTERS World Catalogue',
-  description: 'Explore all 12 ELIMFILTERS filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration for industrial operations.',
+  title: 'Filtration Systems Catalogue | ELIMFILTERS',
+  description: 'Explore 12 ELIMFILTERS filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration for industrial operations.',
   keywords: ['air filter systems', 'fuel filter systems', 'hydraulic filter systems', 'industrial filtration systems', 'ELIMFILTERS systems catalogue'],
   alternates: {
-    canonical: 'https://elimfilters.com/systems',
-    languages: {
-      en: 'https://elimfilters.com/systems', es: 'https://elimfilters.com/systems',
-      fr: 'https://elimfilters.com/systems', it: 'https://elimfilters.com/systems',
-      nl: 'https://elimfilters.com/systems', ru: 'https://elimfilters.com/systems',
-      zh: 'https://elimfilters.com/systems', ja: 'https://elimfilters.com/systems',
-      ar: 'https://elimfilters.com/systems', fa: 'https://elimfilters.com/systems',
-      pt: 'https://elimfilters.com/systems',
-    },
+    canonical: 'https://elimfilters.com/systems/',
   },
   openGraph: {
-    title: 'Filtration Systems | ELIMFILTERS World Catalogue',
-    description: 'Explore all 12 ELIMFILTERS filtration systems for industrial operations.',
-    url: 'https://elimfilters.com/systems',
+    title: 'Filtration Systems Catalogue | ELIMFILTERS',
+    description: 'Explore 12 filtration systems for air, fuel, hydraulic, cabin, coolant, oil, marine, and dryer filtration.',
+    url: 'https://elimfilters.com/systems/',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
+    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
   },
 };
 
