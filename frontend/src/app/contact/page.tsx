@@ -5,6 +5,69 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact ELIMFILTERS',
+  url: 'https://elimfilters.com/contact/',
+  description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
+  mainEntity: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'info@elimfilters.com',
+    areaServed: 'Worldwide',
+    availableLanguage: ['English', 'Spanish'],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://elimfilters.com/contact/' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What industries does ELIMFILTERS serve?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ELIMFILTERS serves 12 industrial sectors: Agriculture, Mining, Marine, Construction, Automotive, Oil & Gas, Power Generation, Manufacturing, Transportation & Fleets, Bus & Coach, Railway, and Waste Management. Filtration solutions cover air, fuel, hydraulic, lube oil, cabin, coolant, and compressed air systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I request an OEM cross-reference for ELIMFILTERS products?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Submit your OEM part number, equipment make and model, and application details via the contact form at elimfilters.com/contact or by email at info@elimfilters.com. The ELIMFILTERS technical team will identify the correct replacement and confirm specification compatibility.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I become an ELIMFILTERS distributor?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Distributor applications are accepted via the Distributor Application form at elimfilters.com/distributor-application. Include your company profile, service territory, and current product lines. The ELIMFILTERS commercial team reviews applications for regional coverage fit and responds within 5 business days.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What technical support does ELIMFILTERS provide?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ELIMFILTERS provides technical support for: OEM cross-reference validation, filter specification matching to ISO standards (ISO 16889, ISO 4406, ISO 5011), application engineering for air/fuel/hydraulic/lube systems, and fleet filtration optimization. Contact the technical team at info@elimfilters.com with equipment details and application context.',
+      },
+    },
+  ],
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -55,6 +118,10 @@ export default function Contact() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <Link href="/" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
@@ -107,7 +174,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
-            ELIMFILTERS GLOBAL CONTACT
+            Contact ELIMFILTERS — Industrial Filtration Support
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

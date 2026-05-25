@@ -1,25 +1,43 @@
 import type { Metadata } from 'next';
 
+const CANONICAL = 'https://elimfilters.com/contact/';
+
 export const metadata: Metadata = {
-  title: 'Contact ELIMFILTERS | Industrial Filtration Experts',
-  description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support for your fleet or operation.',
+  title: {
+    absolute: 'Contact ELIMFILTERS | Industrial Filtration Support',
+  },
+  description:
+    'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support for your fleet or operation.',
   alternates: {
-    canonical: 'https://elimfilters.com/contact',
+    canonical: CANONICAL,
     languages: {
-      en: 'https://elimfilters.com/contact', es: 'https://elimfilters.com/contact',
-      fr: 'https://elimfilters.com/contact', it: 'https://elimfilters.com/contact',
-      nl: 'https://elimfilters.com/contact', ru: 'https://elimfilters.com/contact',
-      zh: 'https://elimfilters.com/contact', ja: 'https://elimfilters.com/contact',
-      ar: 'https://elimfilters.com/contact', fa: 'https://elimfilters.com/contact',
-      pt: 'https://elimfilters.com/contact',
+      'x-default': CANONICAL,
+      en: CANONICAL,
     },
   },
   openGraph: {
-    title: 'Contact ELIMFILTERS | Industrial Filtration Experts',
-    description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, and technical support.',
-    url: 'https://elimfilters.com/contact',
+    title: 'Contact ELIMFILTERS | Industrial Filtration Support',
+    description:
+      'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, and technical support.',
+    url: CANONICAL,
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
+    images: [
+      {
+        url: 'https://elimfilters.com/assets/logo-elimfilters.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact ELIMFILTERS — Industrial Filtration Support',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact ELIMFILTERS | Industrial Filtration Support',
+    description:
+      'Reach our global filtration team for technical support, OEM cross-references, and distributor inquiries.',
+    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
 
