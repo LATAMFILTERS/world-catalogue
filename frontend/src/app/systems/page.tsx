@@ -200,12 +200,6 @@ function SystemCard({
 }
 
 export default function SystemsPage() {
-  const systemsByCategory = {
-    'Engine & Air Intake': ['Airfilter', 'Housing'],
-    'Fuel & Water Separation': ['Aquaguard Series', 'Fuel', 'Water'],
-    'Hydraulic & Lube Oil': ['Hydraulic', 'Oil', 'Coolant'],
-    'Specialty Filtration': ['Cabin', 'Marine', 'Dryer', 'Kits'],
-  };
 
   const itemListData = catalogue.products.map((product, i) => ({
     '@type': 'ListItem',
@@ -350,45 +344,26 @@ export default function SystemsPage() {
         </div>
       </section>
 
-      {/* Systems Grid with H2 Groupings */}
+      {/* Systems Grid */}
       <section style={{ padding: '5rem 2rem', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          {Object.entries(systemsByCategory).map(([category, productNames]) => (
-            <div key={category} style={{ marginBottom: '4rem' }}>
-              <h2 style={{
-                fontSize: 'clamp(1.5rem, 3vw, 1.8rem)',
-                fontWeight: 700,
-                fontFamily: 'Space Grotesk, sans-serif',
-                color: 'rgba(255,255,255,0.9)',
-                marginBottom: '2.5rem',
-                paddingBottom: '1rem',
-                borderBottom: '1px solid rgba(255,241,45,0.15)',
-              }}>
-                {category}
-              </h2>
-
-              <motion.div
-                variants={gridVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-60px' }}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                  gap: '1px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
-              >
-                {catalogue.products
-                  .map((product, i) => ({ product, i }))
-                  .filter(({ product }) => productNames.includes(product.name))
-                  .map(({ product, i }) => (
-                    <SystemCard key={product.name} product={product} index={i} />
-                  ))}
-              </motion.div>
-            </div>
-          ))}
+          <motion.div
+            variants={gridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '1px',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.05)',
+            }}
+          >
+            {catalogue.products.map((product, i) => (
+              <SystemCard key={product.name} product={product} index={i} />
+            ))}
+          </motion.div>
         </div>
       </section>
 

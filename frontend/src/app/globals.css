@@ -234,4 +234,12 @@ body {
   .product-specs-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
 }
+/* Hero responsive height */
+.industry-hero-section { min-height: 100vh; }
+@media (max-width: 1024px) {
+  .industry-hero-section { min-height: 70vh !important; }
+}
+@media (max-width: 768px) {
+  .industry-hero-section { min-height: 60vh !important; }
+}
 /* ─────────────────────────────────────────────────────────────────── */

@@ -55,6 +55,7 @@ export function Hero({
 
   return (
     <section
+      className="industry-hero-section"
       style={{
         position: 'relative',
         minHeight: '100vh',
