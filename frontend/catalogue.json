@@ -130,31 +130,41 @@
     {
       "name": "Manufacturing",
       "file": "manufacturing.html",
-      "title": "Manufacturing Filtration Systems",
-      "subtitle": "PLANT OPERATIONS",
-      "description": "Continuous process engineering demands filtration that never interrupts production. ELIMFILTERS® precision systems protect pneumatic lines, gearboxes, and hydraulic circuits operating under constant load in industrial manufacturing environments where unplanned downtime has immediate production cost implications.",
+      "title": "Manufacturing Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR INDUSTRIAL PRODUCTION EQUIPMENT",
+      "description": "Production lines depend on the reliability of engines, pumps, compressors, hydraulic equipment, and rotating machinery operating under continuous industrial duty cycles. ELIMFILTERS® manufacturing asset protection systems help reduce contamination-related wear, support equipment reliability, and protect the systems that keep industrial production moving.",
       "features": [
-        "PRECISION CONTROL",
-        "PNEUMATIC RELIABILITY",
-        "GEARBOX DEFENSE",
-        "THERMAL STABILITY"
+        "INDUSTRIAL ENGINE PROTECTION",
+        "HYDRAULIC SYSTEM PROTECTION",
+        "LUBRICATION CLEANLINESS CONTROL",
+        "FUEL SYSTEM PROTECTION",
+        "AIR INTAKE PROTECTION",
+        "PRODUCTION EQUIPMENT RELIABILITY"
       ],
       "benefits": [
-        "Continuous process reliability through precision pneumatic air purity",
-        "Gearbox and gear oil defense in high-cycle production environments",
-        "Compressed air quality protection for pneumatic tooling and actuators",
-        "Planned maintenance intervals coordinated with production schedules",
-        "Thermal stability under constant industrial load and stop cycles"
+        "Protection for industrial engines, pumps, compressors, and production equipment",
+        "Hydraulic contamination control supporting equipment reliability in production environments",
+        "Lubrication cleanliness protection for rotating and process machinery",
+        "Fuel system protection for engine-driven industrial equipment",
+        "Air intake protection for equipment operating near production dust and airborne contaminants",
+        "Extended service intervals designed to reduce production-line maintenance interruptions"
       ],
       "techTags": [
-        "NANOFORCE™",
-        "DRYCORE™",
+        "MACROCORE™",
         "SYNTRAX™",
-        "MACROCORE™"
+        "AQUAGUARD™",
+        "NANOFORCE™"
       ],
+      "videoBody": [
+        "Manufacturing facilities depend on continuous operation of industrial engines, hydraulic systems, compressors, pumps, conveyors, and process equipment that support production lines and industrial processing operations.",
+        "These environments generate airborne particulate contamination, lubrication degradation, fuel contamination, and hydraulic impurities capable of reducing equipment reliability, increasing maintenance frequency, and interrupting continuous manufacturing production.",
+        "ELIMFILTERS® manufacturing asset protection systems are engineered to help preserve airflow integrity, lubrication cleanliness, fuel system reliability, and hydraulic protection across industrial production equipment operating under continuous manufacturing conditions.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, lubrication cleanliness, fuel system protection, and hydraulic system reliability throughout extended service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our manufacturing asset protection systems are designed to support reliable operation across industrial engines, hydraulic systems, compressors, pumps, and production equipment used in continuous manufacturing environments.",
       "stats": {},
       "cta": "EXPLORE TECHNOLOGY",
-      "statistic": "Hydraulic system cleanliness target: ISO 18/16/13 prevents proportional valve stiction",
+      "statistic": "Hydraulic system cleanliness target: ISO 16/14/11 or tighter prevents proportional valve stiction in production equipment",
       "statisticSource": "ISO 16889 Hydraulic Filter Testing"
     },
     {

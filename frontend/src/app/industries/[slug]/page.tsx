@@ -228,6 +228,59 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Manufacturing': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Production Equipment?',
+    ctaDescription: 'Find the right manufacturing asset protection system for your industrial equipment application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® manufacturing asset protection systems are engineered for industrial engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles. Manufacturing environments generate airborne particulate contamination at concentrations dependent on process type — metalworking and casting generate silica and metal particle loads, textile and packaging lines generate fiber and dust accumulation. Hydraulic systems in production equipment require cleanliness targets of ISO 16/14/11 or tighter to prevent proportional valve stiction and actuator degradation. ELIMFILTERS® systems maintain air intake efficiency, lubrication cleanliness, fuel system integrity, and hydraulic protection throughout extended manufacturing service schedules.',
+    faq: [
+      {
+        q: 'What asset protection systems do manufacturing facility equipment require?',
+        a: 'Industrial manufacturing equipment requires air intake protection (MACROCORE™), hydraulic system contamination control (NANOFORCE™), lubrication cleanliness protection (SYNTRAX™), and fuel system protection (AQUAGUARD™). Compressors and industrial engines require air intake protection matched to the particulate profile of the production environment. Hydraulic systems in presses, injection molding equipment, and CNC machinery require ISO 16/14/11 or tighter cleanliness to prevent proportional valve failure and actuator wear. Lubrication systems in pumps, gearboxes, and rotating production machinery require contamination control to maintain bearing film strength across extended operating hours.',
+      },
+      {
+        q: 'How does airborne particulate contamination affect industrial production equipment?',
+        a: 'Manufacturing environments generate continuous airborne particulate from machining operations, casting, grinding, packaging dust, and process byproducts. These particles enter air intake systems, contaminate lubrication circuits through shaft seals, and accumulate in hydraulic reservoirs. Particles above 10 µm cause abrasive wear in pump internals and bearing surfaces. Particles below 10 µm penetrate lubrication films and generate sub-surface fatigue in bearing races. ISO 16889 defines Beta ratio efficiency targets for hydraulic filtration — a Beta(10)≥200 filter captures 99.5% of particles at 10 µm, which is the threshold for proportional valve spool wear in production equipment.',
+      },
+      {
+        q: 'Why is hydraulic contamination control critical for production line reliability?',
+        a: 'Hydraulic systems in manufacturing equipment — presses, injection molding machines, automated conveyor drives, and robotic actuators — operate at pressures of 200–350 bar. At these pressures, particle contamination causes proportional valve spool wear, internal leakage, and actuator position drift. ISO 4406 cleanliness codes define acceptable contamination levels: most production hydraulic systems require 16/14/11 or cleaner. Degraded cleanliness to 18/16/14 reduces proportional valve service life by 40–60% and increases actuator seal replacement frequency. Continuous hydraulic filtration with NANOFORCE™ sub-micron media maintains ISO 4406 targets throughout extended production intervals.',
+      },
+      {
+        q: 'What is the role of lubrication cleanliness in manufacturing equipment reliability?',
+        a: 'Rotating production equipment — pumps, compressors, gearboxes, and spindle bearings — depends on oil film cleanliness to maintain bearing clearances and prevent abrasive wear. ISO 4406 lube oil cleanliness targets for industrial equipment typically range from 16/14/11 to 15/13/10 depending on bearing type and operating speed. Contaminated lube oil reduces bearing service life by 50–70% compared to target cleanliness. SYNTRAX™ lube oil protection systems maintain ISO 4406 targets by capturing combustion soot, metal wear particles, and process-environment contaminants that enter through shaft seals and vent points during continuous production operation.',
+      },
+      {
+        q: 'How do extended service intervals support manufacturing production continuity?',
+        a: 'Scheduled maintenance on production equipment creates planned downtime that can be coordinated with production schedules. However, shortened service intervals caused by accelerated contamination increase the frequency of production interruptions and maintenance labor costs. ELIMFILTERS® manufacturing asset protection systems are engineered to maintain ISO 4406 and ISO 5011 compliance throughout extended service intervals — typically 500–1,000 hours for air intake systems and 250–500 hours for lube and hydraulic systems in continuous production environments. Extended intervals reduce the total number of maintenance events per year per machine, supporting higher overall equipment effectiveness (OEE) targets.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related equipment failure in manufacturing?',
+        a: 'Contamination-related failure in production equipment carries direct repair costs and indirect production loss costs. A hydraulic proportional valve failure on a production press requires 4–8 hours of unplanned downtime plus parts costs of $800–3,000. On a production line generating $5,000–20,000 per hour of output, a single contamination-related failure costs $20,000–160,000 in lost production per incident. Compressor failure from lubrication contamination can shut down pneumatic production lines for 12–48 hours. Contamination control systems that prevent these failure modes deliver ROI through avoided downtime, not filter cost savings — filter cost represents less than 2% of the total cost of a contamination-related equipment failure.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Manufacturing Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Industrial manufacturing asset protection systems engineered for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles with airborne particulate, hydraulic impurity, and lubrication contamination challenges.',
+        areaServed: 'Global',
+        serviceType: 'Industrial Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Manufacturing Asset Protection Systems', item: 'https://elimfilters.com/industries/manufacturing' },
+        ],
+      },
+    ],
+  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
@@ -302,6 +355,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Transit fleet asset protection systems for diesel buses and coaches operating under continuous urban stop-and-go duty cycles. Engine, pneumatic, cabin air, and fuel system contamination control for passenger transport operations.'
     : item.name === 'Construction'
     ? 'Heavy construction equipment asset protection systems for excavators, loaders, bulldozers, and graders operating in silica dust concentrations of 3,000–10,000 mg/m³. Hydraulic, air intake, fuel, and lube oil contamination control for off-road multi-shift operations.'
+    : item.name === 'Manufacturing'
+    ? 'Industrial manufacturing asset protection systems for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment. Air intake, lubrication, fuel, and hydraulic contamination control engineered for continuous production line operation.'
     : item.description;
   return {
     title,

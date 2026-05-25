@@ -14,6 +14,8 @@ export interface CatalogueItem {
     ratings?: string[];
   };
   cta: string;
+  videoBody?: string[];
+  engineeringBody?: string;
 }
 
 export const catalogue = {
