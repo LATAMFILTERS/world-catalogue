@@ -71,21 +71,21 @@
     {
       "name": "Bus Coach",
       "file": "bus-coach.html",
-      "title": "Bus & Coach Filtration Systems",
-      "subtitle": "FOR URBAN MOBILITY.",
-      "description": "ELIMFILTERS develops filtration systems designed to extend service intervals and ensure that every unit stays on its route, mile after mile. Engineered to eliminate unplanned stops, maximizing the return on investment per mile.",
+      "title": "Bus & Coach Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR URBAN & COMMERCIAL TRANSIT FLEETS",
+      "description": "Urban transit fleets require contamination control systems capable of supporting continuous operation under high-cycle passenger transport conditions. ELIMFILTERS bus and coach asset protection systems are engineered to help preserve engine reliability, maintain pneumatic system cleanliness, protect cabin airflow environments, and reduce maintenance-related operational interruptions across transit fleets.",
       "features": [
-        "01. ZERO DOWNTIME",
-        "02. SYSTEM PURITY",
-        "CITY BREATHING",
-        "PNEUMATIC SAFETY"
+        "OPERATIONAL CONTINUITY PROTECTION",
+        "SYSTEM CLEANLINESS CONTROL",
+        "CABIN AIR QUALITY PROTECTION",
+        "PNEUMATIC SYSTEM PROTECTION"
       ],
       "benefits": [
-        "Route continuity protection engineered for 24/7 urban operation",
-        "Urban pollution and soot defense for high-cycle stop-and-go engines",
-        "Pneumatic brake system air purity for passenger safety compliance",
-        "Scheduled maintenance interval compliance reduces fleet downtime",
-        "Cabin air quality protection for driver and passenger occupational health"
+        "Operational continuity protection engineered for continuous urban transit operation",
+        "Contamination control for high-cycle stop-and-go diesel and commercial engines",
+        "Pneumatic system air cleanliness protection for braking system reliability",
+        "Extended service intervals designed to reduce fleet maintenance interruptions",
+        "Cabin airflow protection supporting passenger and driver air quality environments"
       ],
       "techTags": [
         "MACROCORE™",
@@ -93,13 +93,7 @@
         "DRYCORE™",
         "MICROKAPPA™"
       ],
-      "stats": {
-        "percentages": [
-          "100%",
-          "25%",
-          "99.9%"
-        ]
-      },
+      "stats": {},
       "cta": "FIND MY FILTER",
       "statistic": "Fleet downtime costs: $500-1,500/hour per vehicle across 40-60 vehicle fleets",
       "statisticSource": "Fleet Management Operations Analysis"
