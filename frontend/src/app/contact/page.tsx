@@ -139,7 +139,7 @@ export default function Contact() {
       <section
         style={{
           marginTop: 0,
-          minHeight: '520px',
+          minHeight: 'clamp(480px, 70vh, 680px)',
           position: 'relative',
           display: 'flex',
           alignItems: 'flex-end',
@@ -152,22 +152,22 @@ export default function Contact() {
           position: 'absolute', inset: 0,
           backgroundImage: 'url(/images/contacto-papa.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
+          backgroundPosition: 'center 50%',
         }} />
-        {/* Gradient overlay */}
+        {/* Gradient overlay — dark only at bottom for text, transparent in middle to show people */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.15) 58%, rgba(0,0,0,0.05) 100%)',
         }} />
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 2rem 4rem', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: 'clamp(1.5rem,4vw,2rem) clamp(1.25rem,5vw,2rem) clamp(2.5rem,5vw,4rem)', width: '100%' }}>
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', display: 'inline-block', marginBottom: '1rem' }}
           >
-            // GET IN TOUCH
+            // ENGINEERING SUPPORT
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -175,16 +175,16 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
-            Contact ELIMFILTERS® — Industrial Filtration Support
+            Talk to Our Engineering Team
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '700px' }}
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '620px' }}
           >
-            ELIMFILTERS® provides asset protection filtration systems engineered for 12 industrial sectors. Our technical team handles OEM cross-reference validation, filter specification matching to ISO 16889 and ISO 4406 standards, distributor partnership applications, and fleet filtration optimization. Email{' '}
-            <a href="mailto:info@elimfilters.com" style={{ color: '#FFF12D', textDecoration: 'none' }}>info@elimfilters.com</a>. We respond within 2 business days.
+            OEM cross-reference validation, ISO specification matching, distributor applications, and fleet protection strategy. Email{' '}
+            <a href="mailto:info@elimfilters.com" style={{ color: '#FFF12D', textDecoration: 'none' }}>info@elimfilters.com</a> — response within 2 business days.
           </motion.p>
         </div>
       </section>
