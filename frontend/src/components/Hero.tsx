@@ -67,6 +67,7 @@ export function Hero({
     >
       {/* Background image */}
       <div
+        className="industry-hero-bg"
         style={{
           position: 'absolute',
           inset: 0,
@@ -334,6 +335,14 @@ export function Hero({
         @keyframes bounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50% { transform: translateX(-50%) translateY(8px); }
+        }
+        @media (max-width: 768px) {
+          .industry-hero-section { min-height: 70vh !important; }
+          .industry-hero-bg {
+            background-position: center top !important;
+            background-size: cover !important;
+            transform: scale(1) !important;
+          }
         }
       `}</style>
     </section>
