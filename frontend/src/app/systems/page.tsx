@@ -504,7 +504,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',
             marginBottom: '2.5rem',
@@ -947,7 +947,7 @@ export default function SystemsPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '1px',
               background: 'rgba(255,255,255,0.05)',
             }}
