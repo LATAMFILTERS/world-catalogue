@@ -123,11 +123,11 @@ export default function TechnologiesPage() {
       {/* Hero Section */}
       <section style={{
         marginTop: 0,
-        paddingTop: '5rem',
-        paddingBottom: '5rem',
+        paddingTop: 'clamp(3.5rem,8vw,5rem)',
+        paddingBottom: 'clamp(3rem,7vw,5rem)',
         backgroundImage: 'url(/images/sistems-hero.avif)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
+        backgroundPosition: 'center 30%',
         backgroundAttachment: 'scroll',
         position: 'relative',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
@@ -180,7 +180,7 @@ export default function TechnologiesPage() {
 
       {/* Asset Protection Narrative */}
       <section style={{
-        padding: '4rem 2rem',
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
@@ -197,12 +197,12 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Technologies Grid */}
-      <section style={{ padding: '5rem 2rem', background: '#000' }}>
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <StaggerContainer style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem',
           }}>
             {catalogue.technologies.map((tech) => {
               const slug = getSlug(tech.name);
@@ -217,7 +217,7 @@ export default function TechnologiesPage() {
                         background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
                         border: '1px solid rgba(255,241,45,0.2)',
                         borderRadius: '12px',
-                        padding: '2.5rem 2rem',
+                        padding: 'clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem)',
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
@@ -288,7 +288,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Technology Comparison Table */}
-      <section style={{ padding: '5rem 2rem', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export default function TechnologiesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
