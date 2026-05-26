@@ -121,22 +121,6 @@ export default function TechnologiesPage() {
       }}>← HOME</Link>
 
       {/* Hero Section */}
-      <style>{`
-        .tech-hero-section {
-          background-position: center 30% !important;
-          min-height: 420px;
-        }
-        @media (max-width: 768px) {
-          .tech-hero-section {
-            background-position: 20% 55% !important;
-            padding-top: 4rem !important;
-            padding-bottom: 2.5rem !important;
-            min-height: 56vh;
-          }
-          .tech-hero-h1 { font-size: clamp(1.4rem, 5.5vw, 2rem) !important; margin-bottom: 0.75rem !important; }
-          .tech-hero-p  { font-size: 0.82rem !important; line-height: 1.6 !important; }
-        }
-      `}</style>
       <section className="tech-hero-section" style={{
         marginTop: 0,
         paddingTop: 'clamp(3.5rem,8vw,5rem)',

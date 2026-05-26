@@ -339,38 +339,6 @@ export function Hero({
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50% { transform: translateX(-50%) translateY(8px); }
         }
-        @media (max-width: 768px) {
-          .industry-hero-section {
-            min-height: 58vh !important;
-            justify-content: flex-end !important;
-          }
-          .industry-hero-content {
-            padding-top: 72px !important;
-            padding-bottom: 2.5rem !important;
-          }
-          .industry-hero-bg {
-            background-position: center 25% !important;
-            background-size: cover !important;
-            transform: scale(1) !important;
-          }
-          .industry-hero-title {
-            font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
-            margin-bottom: 0.25rem !important;
-          }
-          .industry-hero-subtitle {
-            font-size: clamp(1rem, 4.5vw, 1.5rem) !important;
-            margin-bottom: 0.75rem !important;
-            line-height: 1.2 !important;
-          }
-          .industry-hero-cta {
-            margin-top: 1rem !important;
-            gap: 0.625rem !important;
-          }
-          .industry-hero-cta a {
-            padding: 0.75rem 1.5rem !important;
-            font-size: 0.72rem !important;
-          }
-        }
       `}</style>
     </section>
   );
