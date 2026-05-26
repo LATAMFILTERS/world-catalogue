@@ -2,14 +2,21 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Industrial Asset Protection Systems — ELIMFILTERS®',
-  description: 'Five industrial asset protection systems engineered for contamination control in air intake, fuel cleanliness, lubrication, hydraulic, and cabin/compressed air domains across 12 heavy industry sectors.',
-  keywords: ['industrial asset protection', 'air intake protection system', 'fuel cleanliness protection', 'hydraulic contamination control', 'lubrication reliability', 'ELIMFILTERS®', 'contamination control systems'],
-  alternates: {
-    canonical: 'https://elimfilters.com/systems/',
-  },
+  description: 'Five industrial asset protection systems: Air Intake & Airflow, Fuel Cleanliness, Lubrication Reliability, Hydraulic Contamination Control, and Cooling & Environmental Protection. Nine proprietary architectures across 12 heavy industry sectors.',
+  keywords: [
+    'industrial asset protection systems',
+    'air intake contamination control',
+    'HPCR fuel system protection',
+    'hydraulic contamination control',
+    'lubrication reliability engineering',
+    'ELIMFILTERS®',
+    'industrial contamination control',
+    'contamination control engineering',
+  ],
+  alternates: { canonical: 'https://elimfilters.com/systems/' },
   openGraph: {
     title: 'Industrial Asset Protection Systems | ELIMFILTERS®',
-    description: 'Five protection systems — air intake, fuel cleanliness, lubrication, hydraulic, cabin and compressed air — each targeting a specific contamination pathway across heavy industry equipment.',
+    description: 'Five contamination control systems — air intake, fuel cleanliness, lubrication, hydraulic, cooling — each engineered around a specific failure mechanism across heavy industry equipment.',
     url: 'https://elimfilters.com/systems/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
@@ -18,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: 'Industrial Asset Protection Systems | ELIMFILTERS®',
-    description: 'Five protection systems — air intake, fuel cleanliness, lubrication, hydraulic, cabin and compressed air — each targeting a specific contamination pathway across heavy industry equipment.',
+    description: 'Five contamination control systems — air intake, fuel cleanliness, lubrication, hydraulic, cooling — each engineered around a specific failure mechanism across heavy industry equipment.',
     card: 'summary_large_image',
     images: ['https://elimfilters.com/images/system-hero.avif'],
   },
