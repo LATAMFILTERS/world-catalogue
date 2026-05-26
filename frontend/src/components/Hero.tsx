@@ -101,6 +101,7 @@ export function Hero({
 
       {/* Content */}
       <div
+        className="industry-hero-content"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -140,6 +141,7 @@ export function Hero({
 
         <h1
           ref={titleRef}
+          className="industry-hero-title"
           style={{
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: 900,
@@ -157,6 +159,7 @@ export function Hero({
         {subtitle && (
           <p
             ref={subtitleRef}
+            className="industry-hero-subtitle"
             style={{
               fontFamily: 'Montserrat, sans-serif',
               fontWeight: 900,
@@ -187,7 +190,7 @@ export function Hero({
           </p>
         )}
 
-        <div ref={ctaRef} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+        <div ref={ctaRef} className="industry-hero-cta" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
           <a
             href={ctaHref}
             target={ctaHref.startsWith('http') ? '_blank' : undefined}
@@ -337,11 +340,35 @@ export function Hero({
           50% { transform: translateX(-50%) translateY(8px); }
         }
         @media (max-width: 768px) {
-          .industry-hero-section { min-height: 70vh !important; }
+          .industry-hero-section {
+            min-height: 58vh !important;
+            justify-content: flex-end !important;
+          }
+          .industry-hero-content {
+            padding-top: 72px !important;
+            padding-bottom: 2.5rem !important;
+          }
           .industry-hero-bg {
-            background-position: center top !important;
+            background-position: center 25% !important;
             background-size: cover !important;
             transform: scale(1) !important;
+          }
+          .industry-hero-title {
+            font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
+            margin-bottom: 0.25rem !important;
+          }
+          .industry-hero-subtitle {
+            font-size: clamp(1rem, 4.5vw, 1.5rem) !important;
+            margin-bottom: 0.75rem !important;
+            line-height: 1.2 !important;
+          }
+          .industry-hero-cta {
+            margin-top: 1rem !important;
+            gap: 0.625rem !important;
+          }
+          .industry-hero-cta a {
+            padding: 0.75rem 1.5rem !important;
+            font-size: 0.72rem !important;
           }
         }
       `}</style>
