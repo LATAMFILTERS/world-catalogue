@@ -2,49 +2,39 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform, useSpring, animate } from 'motion/react';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FAILURE_MODES = [
-  {
-    num: '01',
-    title: 'Injector Erosion',
-    desc: 'Micronic particles deform spray orifices, causing immediate power loss and poor combustion.',
-  },
-  {
-    num: '02',
-    title: 'Critical Bearing Friction',
-    desc: 'Contaminated oil accelerates metal wear, reducing engine block life by up to 40%.',
-  },
-  {
-    num: '03',
-    title: 'Fuel Drainage',
-    desc: 'A restricted engine consumes up to 8% more diesel just to maintain the same torque levels.',
-  },
+  { num: '01', titleKey: 'problem.items.injector.title', descKey: 'problem.items.injector.desc' },
+  { num: '02', titleKey: 'problem.items.bearing.title', descKey: 'problem.items.bearing.desc' },
+  { num: '03', titleKey: 'problem.items.fuel.title', descKey: 'problem.items.fuel.desc' },
 ];
 
 const STATS = [
-  { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency' },
-  { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
-  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs' },
-  { value: null, display: 'GLOBAL', label: 'Distribution' },
+  { value: 99.9, prefix: '', suffix: '%', labelKey: 'stats.mediaEfficiency' },
+  { value: 45, prefix: '+', suffix: '%', labelKey: 'stats.engineLifeSpan' },
+  { value: 20, prefix: '', suffix: 'k+', labelKey: 'stats.oemCrossRefs' },
+  { value: null, display: 'GLOBAL', labelKey: 'stats.distribution' },
 ];
 
 const CTA_SLIDES = [
   {
-    tag: '// DEALER NETWORK',
-    title: 'ONLY THE BEST',
-    highlight: 'SELL ELIMFILTERS®.',
-    buttonText: 'BECOME A DEALER',
+    tagKey: 'cta.dealer.tag',
+    titleKey: 'cta.dealer.title',
+    highlightKey: 'cta.dealer.highlight',
+    buttonKey: 'cta.dealer.button',
     href: '/distributor-application',
   },
   {
-    tag: '// TECHNICAL SEARCH',
-    title: 'THE RIGHT FILTER.',
-    highlight: 'SEARCH LIKE A PRO.',
-    buttonText: 'FIND MY PART',
+    tagKey: 'cta.search.tag',
+    titleKey: 'cta.search.title',
+    highlightKey: 'cta.search.highlight',
+    buttonKey: 'cta.search.button',
     href: 'https://part-search.elimfilters.com',
   },
 ];
@@ -156,6 +146,7 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
+  const { t } = useTranslation();
   const [activeSlide, setActiveSlide] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -259,11 +250,12 @@ export default function Home() {
                 marginBottom: '1.25rem',
               }}
             >
-              ELIMFILTERS® | TOTAL PROTECTION SYSTEMS
+              {t('hero.tag')}
             </motion.p>
 
             {/* Split text H1 */}
             <h1
+              translate="no"
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
@@ -276,10 +268,11 @@ export default function Home() {
                 perspective: '600px',
               }}
             >
-              <SplitText text="ENGINE FILTRATION" startDelay={0.35} />
+              <SplitText text={t('hero.title')} startDelay={0.35} />
             </h1>
 
             <h2
+              translate="no"
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 400,
@@ -297,7 +290,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
                 style={{ display: 'block' }}
               >
-                HEAVY-DUTY AND LIGHT-DUTY
+                {t('hero.subtitle')}
               </motion.span>
             </h2>
 
@@ -326,8 +319,7 @@ export default function Home() {
                   fontFamily: 'Outfit, sans-serif',
                 }}
               >
-                Engineering filtration designed for those who cannot afford a stalled engine or a
-                fleet out of action.
+                {t('hero.description')}
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"
@@ -349,7 +341,7 @@ export default function Home() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                FIND MY FILTER
+                {t('nav.findMyFilter')}
               </motion.a>
             </motion.div>
           </div>
@@ -403,7 +395,7 @@ export default function Home() {
                     fontSize: '0.68rem',
                   }}
                 >
-                  {s.label}
+                  {t(s.labelKey)}
                 </p>
               </motion.div>
             ))}
@@ -599,10 +591,10 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Outfit, sans-serif' }}>
-                          {item.title}
+                          {t(item.titleKey)}
                         </h3>
                         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Outfit, sans-serif' }}>
-                          {item.desc}
+                          {t(item.descKey)}
                         </p>
                       </div>
                     </motion.div>
@@ -860,11 +852,11 @@ export default function Home() {
             >
               <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-                  {slide.tag}
+                  {t(slide.tagKey)}
                 </p>
                 <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
-                  {slide.title}<br />
-                  <span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
+                  {t(slide.titleKey)}<br />
+                  <span style={{ color: '#FFF12D' }}>{t(slide.highlightKey)}</span>
                 </h2>
                 <motion.a
                   href={slide.href}
@@ -874,7 +866,7 @@ export default function Home() {
                   whileTap={{ scale: 0.96 }}
                   style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}
                 >
-                  {slide.buttonText}
+                  {t(slide.buttonKey)}
                 </motion.a>
               </div>
             </div>
