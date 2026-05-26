@@ -121,20 +121,35 @@ export default function TechnologiesPage() {
       }}>← HOME</Link>
 
       {/* Hero Section */}
-      <section style={{
+      <style>{`
+        .tech-hero-section {
+          background-position: center 30% !important;
+          min-height: 420px;
+        }
+        @media (max-width: 768px) {
+          .tech-hero-section {
+            background-position: 20% 55% !important;
+            padding-top: 4rem !important;
+            padding-bottom: 2.5rem !important;
+            min-height: 56vh;
+          }
+          .tech-hero-h1 { font-size: clamp(1.4rem, 5.5vw, 2rem) !important; margin-bottom: 0.75rem !important; }
+          .tech-hero-p  { font-size: 0.82rem !important; line-height: 1.6 !important; }
+        }
+      `}</style>
+      <section className="tech-hero-section" style={{
         marginTop: 0,
         paddingTop: 'clamp(3.5rem,8vw,5rem)',
         paddingBottom: 'clamp(3rem,7vw,5rem)',
         backgroundImage: 'url(/images/sistems-hero.avif)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center 30%',
         backgroundAttachment: 'scroll',
         position: 'relative',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%)',
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.55) 100%)',
           zIndex: 1,
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 2 }}>
@@ -155,6 +170,7 @@ export default function TechnologiesPage() {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="tech-hero-h1"
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1.5rem',
@@ -167,6 +183,7 @@ export default function TechnologiesPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="tech-hero-p"
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif',
