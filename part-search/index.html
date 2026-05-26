@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ELIMFILTERS — Part Search</title>
-  <meta name="description" content="Find ELIMFILTERS part numbers, cross-references, and OEM equivalents. Search by SKU, competitor code, or OEM reference.">
+  <meta name="description" content="Find ELIMFILTERS filters by part number, VIN/vehicle model, or equipment reference. Cross-reference with OEM and competitor codes.">
   <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ELIMFILTERS Part Search">
+  <meta property="og:description" content="Industrial filtration cross-reference — Part number, VIN, and Equipment search.">
+  <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,62 +17,78 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --yellow: #FFF12D;
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --y3: rgba(255,241,45,0.06);
       --bg: #000;
+      --border: rgba(255,255,255,0.07);
+      --muted: rgba(255,255,255,0.35);
     }
 
     html, body {
-      width: 100%; height: 100%;
+      width: 100%; min-height: 100%;
       background: var(--bg);
       color: #fff;
       font-family: 'Outfit', sans-serif;
       overflow-x: hidden;
     }
 
-    /* ── Canvas ── */
+    /* ─── CANVAS ─── */
     #nanoflow {
       position: fixed;
       inset: 0;
       width: 100%; height: 100%;
       z-index: 0;
+      pointer-events: none;
     }
 
-    /* ── Logo ── */
+    /* ─── LOGO ─── */
     #logo {
       position: fixed;
       top: 1.5rem; left: 2rem;
-      z-index: 100;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.55);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       text-decoration: none;
     }
-    #logo span { color: var(--yellow); }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+    }
+    .logo-text span { color: var(--y); }
+    .logo-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      padding: 0.15rem 0.4rem;
+    }
 
-    /* ── Skip ── */
+    /* ─── SKIP ─── */
     #skip-btn {
       position: fixed;
       bottom: 2rem; right: 2rem;
-      z-index: 100;
+      z-index: 200;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.25);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.2);
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.07);
       border-radius: 2px;
       padding: 0.4rem 0.8rem;
       cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
+      transition: color 0.25s, border-color 0.25s;
     }
-    #skip-btn:hover {
-      color: rgba(255,255,255,0.6);
-      border-color: rgba(255,255,255,0.25);
-    }
+    #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
 
-    /* ── UI Layer ── */
+    /* ─── UI LAYER ─── */
     #ui {
       position: relative;
       z-index: 10;
@@ -78,207 +97,429 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: clamp(1.5rem, 4vw, 3rem);
+      padding: 6rem clamp(1rem, 4vw, 2rem) 4rem;
+      gap: 0;
     }
 
+    /* ─── INTRO LABEL ─── */
     .intro-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--yellow);
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      color: var(--y);
       opacity: 0;
       transform: translateY(6px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-      margin-bottom: 2rem;
+      transition: opacity 1s ease, transform 1s ease;
+      margin-bottom: 2.5rem;
       text-align: center;
     }
-    .intro-label.visible { opacity: 1; transform: translateY(0); }
+    .intro-label.vis { opacity: 1; transform: translateY(0); }
 
-    /* ── Search ── */
-    #search-container {
+    /* ─── SEARCH PANEL ─── */
+    #search-panel {
       width: 100%;
-      max-width: 660px;
+      max-width: 720px;
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
       pointer-events: none;
     }
-    #search-container.visible {
+    #search-panel.vis {
       opacity: 1;
       transform: translateY(0);
       pointer-events: all;
     }
 
-    .search-wrap {
-      position: relative;
+    /* ─── TAB SWITCHER ─── */
+    .mode-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      gap: 0;
+    }
+    .mode-tab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.65rem 1.2rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+      white-space: nowrap;
+    }
+    .mode-tab:hover { color: rgba(255,255,255,0.7); }
+    .mode-tab.active {
+      color: var(--y);
+      border-bottom-color: var(--y);
+    }
+
+    /* ─── FORMS ─── */
+    .search-form { display: none; flex-direction: column; gap: 0.85rem; }
+    .search-form.active { display: flex; }
+
+    .field-row {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: 1fr;
+    }
+    .field-row.cols-2 { grid-template-columns: 1fr 1fr; }
+    .field-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .field-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .input-wrap {
       display: flex;
       align-items: center;
-      border: 1px solid rgba(255,241,45,0.35);
+      border: 1px solid rgba(255,241,45,0.28);
       border-radius: 3px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(14px);
-      transition: border-color 0.2s;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(16px);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .search-wrap:focus-within { border-color: var(--yellow); }
+    .input-wrap:focus-within {
+      border-color: var(--y);
+      box-shadow: 0 0 0 3px rgba(255,241,45,0.06);
+    }
+    .input-wrap.primary { border-color: rgba(255,241,45,0.4); }
 
-    .search-icon {
-      padding: 0 1rem;
-      color: rgba(255,255,255,0.35);
-      font-size: 1.15rem;
+    .input-icon {
+      padding: 0 0.9rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 1rem;
       flex-shrink: 0;
-      line-height: 1;
     }
 
-    #search-input {
+    input[type="text"], input[type="search"], select {
       flex: 1;
       background: transparent;
       border: none;
       outline: none;
       color: #fff;
       font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      padding: 1.1rem 0;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      padding: 0.95rem 0;
       letter-spacing: 0.04em;
+      min-width: 0;
     }
-    #search-input::placeholder {
+    input::placeholder { color: rgba(255,255,255,0.2); }
+
+    select {
+      padding: 0.95rem 0.5rem 0.95rem 0;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    select option { background: #111; color: #fff; }
+
+    .select-arrow {
+      padding: 0 0.9rem;
       color: rgba(255,255,255,0.25);
+      font-size: 0.7rem;
+      pointer-events: none;
     }
 
-    .search-enter {
-      padding: 0 1rem;
+    /* ─── SEARCH BUTTON ─── */
+    .btn-search {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.2);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: #000;
+      background: var(--y);
+      border: none;
+      border-radius: 3px;
+      padding: 0.95rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      align-self: flex-end;
+      white-space: nowrap;
       flex-shrink: 0;
     }
+    .btn-search:hover { background: #ffe800; }
+    .btn-search:active { transform: scale(0.97); }
 
-    .search-hint {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.22);
-      margin-top: 0.8rem;
-      letter-spacing: 0.06em;
-      text-align: center;
+    .form-footer {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.65rem;
     }
 
-    /* ── Results ── */
+    /* ─── HINT PILLS ─── */
+    .hint-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .hint-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 100px;
+      padding: 0.22rem 0.6rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
+
+    /* ─── RESULTS ─── */
     #results {
       width: 100%;
-      max-width: 660px;
-      margin-top: 1.75rem;
+      max-width: 720px;
+      margin-top: 2.5rem;
     }
 
-    .result-count {
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .results-count {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.12em;
-      margin-bottom: 1rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    .results-mode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,241,45,0.5);
+      border: 1px solid rgba(255,241,45,0.15);
+      border-radius: 2px;
+      padding: 0.18rem 0.5rem;
     }
 
+    /* ─── RESULT CARD ─── */
     .result-card {
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 3px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 0.65rem;
-      background: rgba(255,255,255,0.015);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 0.7rem;
+      background: rgba(255,255,255,0.012);
       transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
     }
-    .result-card:hover {
-      border-color: rgba(255,241,45,0.18);
-      background: rgba(255,241,45,0.018);
+    .result-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--y3) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
+    .result-card:hover { border-color: rgba(255,241,45,0.22); }
+    .result-card:hover::before { opacity: 1; }
 
-    .card-header {
+    .card-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
+      position: relative;
     }
 
-    .result-sku {
+    .card-left { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .card-sku {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 500;
-      color: var(--yellow);
+      color: var(--y);
+      letter-spacing: 0.07em;
+    }
+    .card-base {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.3);
       letter-spacing: 0.06em;
     }
 
-    .result-tags {
+    .card-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+    .ctag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.1em;
+      padding: 0.18rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ctag.tech {
+      border-color: rgba(255,241,45,0.22);
+      color: rgba(255,241,45,0.7);
+      background: rgba(255,241,45,0.04);
+    }
+    .ctag.duty {
+      border-color: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.55);
     }
 
-    .tag {
+    .card-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      margin-top: 0.6rem;
+      position: relative;
+    }
+
+    /* ─── SPECS GRID ─── */
+    .card-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 0.75rem 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .spec-l {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.56rem;
-      letter-spacing: 0.1em;
-      padding: 0.2rem 0.5rem;
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 2px;
-      color: rgba(255,255,255,0.45);
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.25);
       text-transform: uppercase;
     }
-    .tag.tech {
-      border-color: rgba(255,241,45,0.2);
-      color: rgba(255,241,45,0.65);
+    .spec-v {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.82);
     }
 
-    .result-desc {
-      font-size: 0.855rem;
-      color: rgba(255,255,255,0.6);
-      margin-top: 0.4rem;
-      line-height: 1.5;
+    /* ─── REFS ─── */
+    .card-refs {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: relative;
+    }
+    .ref-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.28);
+      line-height: 1.7;
+    }
+    .ref-brand {
+      color: rgba(255,255,255,0.5);
+      margin-right: 0.4rem;
     }
 
-    .result-specs {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-      gap: 0.6rem;
+    /* ─── EQUIPMENT APPS ─── */
+    .card-equipment {
       margin-top: 0.85rem;
       padding-top: 0.85rem;
       border-top: 1px solid rgba(255,255,255,0.04);
+      position: relative;
     }
-
-    .spec-item { display: flex; flex-direction: column; gap: 0.2rem; }
-
-    .spec-label {
+    .equip-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.52rem;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.25);
       text-transform: uppercase;
+      margin-bottom: 0.4rem;
     }
-
-    .spec-value {
+    .equip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .equip-pill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.78);
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 2px;
+      padding: 0.18rem 0.5rem;
     }
 
-    .result-refs {
-      margin-top: 0.65rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.32);
-      line-height: 1.7;
-    }
-
+    /* ─── STATUS MESSAGES ─── */
     .status-msg {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
       text-align: center;
-      padding: 2.5rem 0;
-      letter-spacing: 0.06em;
+      padding: 3rem 0;
+      letter-spacing: 0.08em;
+    }
+    .status-msg em {
+      display: block;
+      font-style: normal;
+      margin-top: 0.5rem;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.15);
     }
 
-    @media (max-width: 480px) {
-      .result-specs { grid-template-columns: repeat(2, 1fr); }
-      #logo { font-size: 0.7rem; }
+    /* ─── LOADING DOTS ─── */
+    .loading-dots::after {
+      content: '...';
+      animation: dots 1.2s steps(3, end) infinite;
+    }
+    @keyframes dots {
+      0%   { content: '.'; }
+      33%  { content: '..'; }
+      66%  { content: '...'; }
+    }
+
+    /* ─── FOOTER ─── */
+    #footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.15);
+    }
+    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
+    .footer-line a:hover { color: var(--y); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .field-row.cols-2,
+      .field-row.cols-3 { grid-template-columns: 1fr; }
+      .mode-tab { padding: 0.55rem 0.75rem; font-size: 0.55rem; }
+      .card-specs { grid-template-columns: repeat(2, 1fr); }
+      #logo { top: 1rem; left: 1rem; }
     }
   </style>
 </head>
@@ -286,40 +527,188 @@
 
 <canvas id="nanoflow"></canvas>
 
-<a href="https://elimfilters.com" id="logo">ELIM<span>FILTERS</span>®</a>
+<a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
+  <span class="logo-text">ELIM<span>FILTERS</span>®</span>
+  <span class="logo-badge">PART SEARCH</span>
+</a>
 
-<button id="skip-btn" aria-label="Skip intro">SKIP ›</button>
+<button id="skip-btn">SKIP INTRO ›</button>
 
 <div id="ui">
   <p class="intro-label" id="intro-label">// NANOFLOW PART SEARCH — ELIMFILTERS®</p>
 
-  <div id="search-container">
-    <div class="search-wrap">
-      <span class="search-icon" aria-hidden="true">⌕</span>
-      <input
-        type="search"
-        id="search-input"
-        placeholder="Part number, OEM code, or competitor reference..."
-        autocomplete="off"
-        spellcheck="false"
-        aria-label="Search parts"
-      />
-      <span class="search-enter" aria-hidden="true">ENTER</span>
-    </div>
-    <p class="search-hint">EL82100 &nbsp;·&nbsp; P781466 &nbsp;·&nbsp; LF3874 &nbsp;·&nbsp; BT839 &nbsp;·&nbsp; 1R-0750</p>
-  </div>
+  <!-- ── SEARCH PANEL ── -->
+  <div id="search-panel">
 
+    <!-- Mode tabs -->
+    <nav class="mode-tabs" role="tablist" aria-label="Search modes">
+      <button class="mode-tab active" data-mode="part" role="tab" aria-selected="true">PART NUMBER</button>
+      <button class="mode-tab" data-mode="vin"  role="tab" aria-selected="false">VIN / MODEL</button>
+      <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false">EQUIPMENT</button>
+    </nav>
+
+    <!-- ── FORM: PART NUMBER ── -->
+    <form class="search-form active" data-form="part" autocomplete="off">
+      <div class="field-group">
+        <label class="field-label" for="inp-part">Part number, OEM code, or competitor reference</label>
+        <div class="input-wrap primary">
+          <span class="input-icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="inp-part"
+            name="code"
+            placeholder="EL82100, P781466, LF3874, BT839..."
+            spellcheck="false"
+            autocomplete="off"
+            aria-label="Part number"
+          />
+        </div>
+        <div class="hint-row" aria-label="Search examples">
+          <span class="hint-pill" data-fill="inp-part">EL82100</span>
+          <span class="hint-pill" data-fill="inp-part">P781466</span>
+          <span class="hint-pill" data-fill="inp-part">LF3874</span>
+          <span class="hint-pill" data-fill="inp-part">BT839</span>
+          <span class="hint-pill" data-fill="inp-part">1R-0750</span>
+        </div>
+      </div>
+      <div class="form-footer">
+        <div style="flex:1"></div>
+        <button type="submit" class="btn-search">SEARCH →</button>
+      </div>
+    </form>
+
+    <!-- ── FORM: VIN / MODEL ── -->
+    <form class="search-form" data-form="vin" autocomplete="off">
+      <div class="field-row cols-2">
+        <div class="field-group">
+          <label class="field-label" for="inp-vin-model">Vehicle / Model</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-vin-model"
+              name="model"
+              placeholder="Toyota Hilux, Ford F-250..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-vin-engine">Engine (optional)</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-vin-engine"
+              name="engine"
+              placeholder="2GD-FTV, 6.7L Cummins..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="hint-row">
+        <span class="hint-pill" data-fill="inp-vin-model">Hilux</span>
+        <span class="hint-pill" data-fill="inp-vin-model">Ranger</span>
+        <span class="hint-pill" data-fill="inp-vin-model">Land Cruiser</span>
+        <span class="hint-pill" data-fill="inp-vin-model">F-250</span>
+        <span class="hint-pill" data-fill="inp-vin-model">Sprinter</span>
+      </div>
+      <div class="form-footer">
+        <div style="flex:1"></div>
+        <button type="submit" class="btn-search">SEARCH →</button>
+      </div>
+    </form>
+
+    <!-- ── FORM: EQUIPMENT ── -->
+    <form class="search-form" data-form="equip" autocomplete="off">
+      <div class="field-row cols-3">
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-model">Equipment Model</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-equip-model"
+              name="model"
+              placeholder="CAT 390F, Komatsu PC360..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-type">Equipment Type</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">▾</span>
+            <select id="inp-equip-type" name="type">
+              <option value="">Any type</option>
+              <option value="EXCAVATOR">Excavator</option>
+              <option value="BULLDOZER">Bulldozer</option>
+              <option value="LOADER">Wheel Loader</option>
+              <option value="CRANE">Crane</option>
+              <option value="TRUCK">Mining Truck</option>
+              <option value="DRILL">Drill Rig</option>
+              <option value="COMPRESSOR">Compressor</option>
+              <option value="GENERATOR">Generator</option>
+              <option value="MARINE">Marine / Vessel</option>
+              <option value="AGRICULTURAL">Agricultural</option>
+              <option value="FORKLIFT">Forklift</option>
+            </select>
+            <span class="select-arrow" aria-hidden="true">▾</span>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-engine">Engine (optional)</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-equip-engine"
+              name="engine"
+              placeholder="C18, SAA6D125..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="hint-row">
+        <span class="hint-pill" data-fill="inp-equip-model">CAT 390F</span>
+        <span class="hint-pill" data-fill="inp-equip-model">Komatsu PC360</span>
+        <span class="hint-pill" data-fill="inp-equip-model">Liebherr R 936</span>
+        <span class="hint-pill" data-fill="inp-equip-model">Volvo EC380</span>
+      </div>
+      <div class="form-footer">
+        <div style="flex:1"></div>
+        <button type="submit" class="btn-search">SEARCH →</button>
+      </div>
+    </form>
+
+  </div><!-- /search-panel -->
+
+  <!-- ── RESULTS ── -->
   <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
-</div>
 
+</div><!-- /ui -->
+
+<footer id="footer">
+  <p class="footer-line">
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
 <script>
-// ─────────────────────────────────────────────────────────────────────────────
-// CONFIG — update API_BASE with your Render backend URL
-// ─────────────────────────────────────────────────────────────────────────────
-const API_BASE = 'https://elimfilters-api.onrender.com';
+'use strict';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CANVAS
+// CONFIG
+// ─────────────────────────────────────────────────────────────────────────────
+const API = 'https://elimfilters-api.onrender.com'; // ← set your Render backend URL
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CANVAS / FLOW FIELD
 // ─────────────────────────────────────────────────────────────────────────────
 const canvas = document.getElementById('nanoflow');
 const ctx = canvas.getContext('2d');
@@ -330,84 +719,76 @@ function resize() {
   H = canvas.height = window.innerHeight;
 }
 resize();
-window.addEventListener('resize', () => { resize(); });
+window.addEventListener('resize', resize);
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FLOW FIELD — sine-based turbulence
-// ─────────────────────────────────────────────────────────────────────────────
 function flowAngle(x, y, t) {
   const nx = x / W, ny = y / H;
   return (
     Math.sin(nx * 3.2 + t * 0.38) * Math.cos(ny * 2.1 + t * 0.29) +
-    Math.sin(nx * 1.4 - t * 0.22) * Math.sin(ny * 2.8 + t * 0.51)
+    Math.sin(nx * 1.4 - t * 0.21) * Math.sin(ny * 2.8 + t * 0.52)
   ) * Math.PI;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FILTER SILHOUETTE — spin-on oil filter drawn on offscreen canvas
+// FILTER SILHOUETTE — spin-on oil filter geometry
 // ─────────────────────────────────────────────────────────────────────────────
-function buildFilterSilhouette(cx, cy) {
+function buildFilterSilhouette(cx, cy, scale = 2.1) {
   const OW = 180, OH = 300;
   const off = document.createElement('canvas');
   off.width = OW; off.height = OH;
   const oc = off.getContext('2d');
 
-  const bx = 35, by = 28, bw = 110, bh = 200;
-  const midX = bx + bw / 2;
+  const bx = 36, by = 26, bw = 108, bh = 200;
+  const mx = bx + bw / 2;
 
   oc.fillStyle = '#fff';
 
-  // Body
+  // Main cylinder body
   oc.beginPath();
-  oc.moveTo(bx + 10, by);
-  oc.lineTo(bx + bw - 10, by);
-  oc.quadraticCurveTo(bx + bw, by, bx + bw, by + 10);
+  oc.moveTo(bx + 12, by);
+  oc.lineTo(bx + bw - 12, by);
+  oc.quadraticCurveTo(bx + bw, by, bx + bw, by + 12);
   oc.lineTo(bx + bw, by + bh);
   oc.lineTo(bx, by + bh);
-  oc.lineTo(bx, by + 10);
-  oc.quadraticCurveTo(bx, by, bx + 10, by);
+  oc.lineTo(bx, by + 12);
+  oc.quadraticCurveTo(bx, by, bx + 12, by);
   oc.closePath();
   oc.fill();
 
   // Top dome
   oc.beginPath();
-  oc.ellipse(midX, by + 6, bw / 2 - 1, 24, 0, Math.PI, 0, true);
+  oc.ellipse(mx, by + 5, bw / 2 - 1, 26, 0, Math.PI, 0, true);
   oc.fill();
 
   // Neck
-  oc.beginPath();
-  oc.rect(bx + 20, by + bh - 4, bw - 40, 20);
-  oc.fill();
+  oc.fillRect(bx + 22, by + bh - 2, bw - 44, 22);
 
   // Thread base
-  oc.beginPath();
-  oc.rect(bx + 26, by + bh + 14, bw - 52, 22);
-  oc.fill();
+  oc.fillRect(bx + 28, by + bh + 18, bw - 56, 22);
 
-  // Center bore (negative)
+  // Center bore (hole)
   oc.fillStyle = '#000';
   oc.beginPath();
-  oc.arc(midX, by + bh + 25, 9, 0, Math.PI * 2);
+  oc.arc(mx, by + bh + 29, 9, 0, Math.PI * 2);
   oc.fill();
 
-  // Bolt holes (negative)
+  // Bolt holes
   [-20, -12, 12, 20].forEach(dx => {
     oc.beginPath();
-    oc.arc(midX + dx, by + bh + 25, 3.5, 0, Math.PI * 2);
+    oc.arc(mx + dx, by + bh + 29, 3.5, 0, Math.PI * 2);
     oc.fill();
   });
 
-  // Sample white pixels → particle targets
+  // Sample points
   const img = oc.getImageData(0, 0, OW, OH).data;
   const pts = [];
-  const step = 3;
-  for (let y = 0; y < OH; y += step) {
-    for (let x = 0; x < OW; x += step) {
+  for (let y = 0; y < OH; y += 3) {
+    for (let x = 0; x < OW; x += 3) {
       const i = (y * OW + x) * 4;
       if (img[i] > 120 && img[i + 3] > 128) {
         pts.push({
-          x: cx + (x - OW / 2) * 2.1,
-          y: cy + (y - OH / 2) * 2.1,
+          x: cx + (x - OW / 2) * scale,
+          y: cy + (y - OH / 2) * scale,
         });
       }
     }
@@ -420,25 +801,22 @@ function buildFilterSilhouette(cx, cy) {
 // ─────────────────────────────────────────────────────────────────────────────
 class Particle {
   constructor() {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 1.8;
-    this.vy = (Math.random() - 0.5) * 1.8;
-    this.tx = this.x;
-    this.ty = this.y;
-    this.size   = Math.random() * 1.3 + 0.4;
-    this.alpha  = Math.random() * 0.5 + 0.2;
-    this.speed  = 0.022 + Math.random() * 0.018;
+    this.x  = Math.random() * (W || 800);
+    this.y  = Math.random() * (H || 600);
+    this.vx = (Math.random() - 0.5) * 2;
+    this.vy = (Math.random() - 0.5) * 2;
+    this.tx = this.x; this.ty = this.y;
+    this.size  = Math.random() * 1.4 + 0.35;
+    this.alpha = Math.random() * 0.5 + 0.18;
+    this.ls    = 0.02 + Math.random() * 0.02;
   }
 
   scatter(t) {
-    const a  = flowAngle(this.x, this.y, t);
+    const a = flowAngle(this.x, this.y, t);
     this.vx += Math.cos(a) * 0.13;
     this.vy += Math.sin(a) * 0.13;
-    this.vx *= 0.91;
-    this.vy *= 0.91;
-    this.x  += this.vx;
-    this.y  += this.vy;
+    this.vx *= 0.91; this.vy *= 0.91;
+    this.x += this.vx; this.y += this.vy;
     if (this.x < -8) this.x = W + 8;
     if (this.x > W + 8) this.x = -8;
     if (this.y < -8) this.y = H + 8;
@@ -446,37 +824,30 @@ class Particle {
   }
 
   converge() {
-    this.vx = this.vx * 0.78 + (this.tx - this.x) * this.speed;
-    this.vy = this.vy * 0.78 + (this.ty - this.y) * this.speed;
-    this.x += this.vx;
-    this.y += this.vy;
+    this.vx = this.vx * 0.77 + (this.tx - this.x) * this.ls;
+    this.vy = this.vy * 0.77 + (this.ty - this.y) * this.ls;
+    this.x += this.vx; this.y += this.vy;
   }
 
   draw(a) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${a !== undefined ? a : this.alpha})`;
+    ctx.fillStyle = `rgba(255,255,255,${a ?? this.alpha})`;
     ctx.fill();
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ANIMATION STATE MACHINE
+// ANIMATION SYSTEM
 // ─────────────────────────────────────────────────────────────────────────────
-const N = 2000;
-let particles  = [];
-let phase      = 'scatter';
+const N = 2200;
+let particles = [];
+let phase = 'scatter';
 let phaseStart = 0;
-let tick       = 0;
+let tick = 0;
 let rafId;
 
-// phase durations (ms)
-const DUR = {
-  scatter:         1300,
-  'converge-filter': 1700,
-  hold:            1100,
-  'converge-search': 1000,
-};
+const DUR = { scatter: 1300, 'cf': 1700, hold: 1100, 'cs': 1000 };
 
 function init() {
   particles = Array.from({ length: N }, () => new Particle());
@@ -484,17 +855,16 @@ function init() {
 
 function assignTargets(pts) {
   particles.forEach((p, i) => {
-    const fp = pts[i % pts.length];
-    p.tx = fp.x + (Math.random() - 0.5) * 1.5;
-    p.ty = fp.y + (Math.random() - 0.5) * 1.5;
+    const q = pts[i % pts.length];
+    p.tx = q.x + (Math.random() - 0.5) * 1.5;
+    p.ty = q.y + (Math.random() - 0.5) * 1.5;
   });
 }
 
 function searchBarTargets() {
-  const bw = Math.min(640, W * 0.85);
-  const bh = 56;
-  const bx = W / 2 - bw / 2;
-  const by = H / 2 - bh / 2;
+  const bw = Math.min(680, W * 0.87);
+  const bh = 54;
+  const bx = W / 2 - bw / 2, by = H / 2 - bh / 2;
   return particles.map(() => {
     const r = Math.random();
     if      (r < 0.32) return { x: bx + Math.random() * bw, y: by + Math.random() * 1.5 };
@@ -505,183 +875,309 @@ function searchBarTargets() {
 }
 
 function revealUI() {
-  document.getElementById('search-container').classList.add('visible');
+  document.getElementById('search-panel').classList.add('vis');
   document.getElementById('skip-btn').style.display = 'none';
-  setTimeout(() => document.getElementById('search-input').focus(), 350);
-  localStorage.setItem('ef-ps-seen', '1');
+  document.getElementById('inp-part').focus();
+  localStorage.setItem('ef-ps-v', '1');
 }
 
 function ambientLoop() {
-  const amb = Array.from({ length: 350 }, () => new Particle());
+  const amb = Array.from({ length: 300 }, () => new Particle());
   (function loop() {
-    ctx.fillStyle = 'rgba(0,0,0,0.2)';
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
     ctx.fillRect(0, 0, W, H);
     tick += 0.004;
-    amb.forEach(p => { p.scatter(tick); p.draw(p.alpha * 0.35); });
+    amb.forEach(p => { p.scatter(tick); p.draw(p.alpha * 0.3); });
     rafId = requestAnimationFrame(loop);
   })();
 }
 
 function mainLoop(now) {
   if (!phaseStart) phaseStart = now;
-  const elapsed = now - phaseStart;
+  const el = now - phaseStart;
 
-  // motion-blur trail
   ctx.fillStyle = 'rgba(0,0,0,0.13)';
   ctx.fillRect(0, 0, W, H);
   tick += 0.005;
 
-  switch (phase) {
-    case 'scatter':
-      particles.forEach(p => { p.scatter(tick); p.draw(); });
-      if (elapsed > DUR.scatter) {
-        phase = 'converge-filter';
-        phaseStart = now;
-        const fp = buildFilterSilhouette(W / 2, H / 2 - 20);
-        assignTargets(fp);
-      }
-      break;
+  if (phase === 'scatter') {
+    particles.forEach(p => { p.scatter(tick); p.draw(); });
+    if (el > DUR.scatter) {
+      phase = 'cf'; phaseStart = now;
+      assignTargets(buildFilterSilhouette(W / 2, H / 2 - 20));
+    }
 
-    case 'converge-filter':
-      particles.forEach(p => { p.converge(); p.draw(); });
-      if (elapsed > DUR['converge-filter']) {
-        phase = 'hold';
-        phaseStart = now;
-      }
-      break;
+  } else if (phase === 'cf') {
+    particles.forEach(p => { p.converge(); p.draw(); });
+    if (el > DUR.cf) { phase = 'hold'; phaseStart = now; }
 
-    case 'hold':
-      particles.forEach(p => {
-        p.tx += (Math.random() - 0.5) * 0.25;
-        p.ty += (Math.random() - 0.5) * 0.25;
-        p.converge();
-        p.draw();
-      });
-      if (elapsed > DUR.hold) {
-        phase = 'converge-search';
-        phaseStart = now;
-        const sp = searchBarTargets();
-        particles.forEach((p, i) => { p.tx = sp[i].x; p.ty = sp[i].y; });
-      }
-      break;
+  } else if (phase === 'hold') {
+    particles.forEach(p => {
+      p.tx += (Math.random() - 0.5) * 0.22;
+      p.ty += (Math.random() - 0.5) * 0.22;
+      p.converge(); p.draw();
+    });
+    if (el > DUR.hold) {
+      phase = 'cs'; phaseStart = now;
+      const sp = searchBarTargets();
+      particles.forEach((p, i) => { p.tx = sp[i].x; p.ty = sp[i].y; });
+    }
 
-    case 'converge-search':
-      particles.forEach(p => { p.converge(); p.draw(); });
-      if (elapsed > DUR['converge-search']) {
-        cancelAnimationFrame(rafId);
-        revealUI();
-        ambientLoop();
-        return;
-      }
-      break;
+  } else if (phase === 'cs') {
+    particles.forEach(p => { p.converge(); p.draw(); });
+    if (el > DUR.cs) {
+      cancelAnimationFrame(rafId);
+      revealUI();
+      ambientLoop();
+      return;
+    }
   }
 
   rafId = requestAnimationFrame(mainLoop);
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// BOOT
-// ─────────────────────────────────────────────────────────────────────────────
-if (localStorage.getItem('ef-ps-seen')) {
-  // Returning user — skip directly to search
-  document.getElementById('intro-label').classList.add('visible');
+// Boot
+if (localStorage.getItem('ef-ps-v')) {
+  document.getElementById('intro-label').classList.add('vis');
   document.getElementById('skip-btn').style.display = 'none';
   revealUI();
   ambientLoop();
 } else {
   init();
-  setTimeout(() => document.getElementById('intro-label').classList.add('visible'), 500);
+  setTimeout(() => document.getElementById('intro-label').classList.add('vis'), 500);
   requestAnimationFrame(mainLoop);
   document.getElementById('skip-btn').addEventListener('click', () => {
     cancelAnimationFrame(rafId);
     ctx.clearRect(0, 0, W, H);
-    document.getElementById('intro-label').classList.add('visible');
+    document.getElementById('intro-label').classList.add('vis');
     revealUI();
     ambientLoop();
   });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// SEARCH
+// MODE TABS
 // ─────────────────────────────────────────────────────────────────────────────
-const input     = document.getElementById('search-input');
+let currentMode = 'part';
+
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    currentMode = tab.dataset.mode;
+    document.querySelectorAll('.mode-tab').forEach(t => {
+      t.classList.toggle('active', t === tab);
+      t.setAttribute('aria-selected', t === tab);
+    });
+    document.querySelectorAll('.search-form').forEach(f => {
+      f.classList.toggle('active', f.dataset.form === currentMode);
+    });
+    clearResults();
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HINT PILLS
+// ─────────────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.hint-pill[data-fill]').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const inp = document.getElementById(pill.dataset.fill);
+    if (inp) {
+      inp.value = pill.textContent.trim();
+      inp.focus();
+      if (currentMode === 'part') debounceSearch();
+    }
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SEARCH LOGIC
+// ─────────────────────────────────────────────────────────────────────────────
 const resultsEl = document.getElementById('results');
 let debounce;
 
-function fmtRefs(arr, limit = 6) {
-  if (!arr || !arr.length) return null;
-  return arr.slice(0, limit).join(' · ');
+function clearResults() { resultsEl.innerHTML = ''; }
+
+function setLoading(query) {
+  resultsEl.innerHTML = `<p class="status-msg"><span class="loading-dots">// SEARCHING</span><em>${query.toUpperCase()}</em></p>`;
+}
+
+function setEmpty(query) {
+  resultsEl.innerHTML = `
+    <p class="status-msg">// NO RESULTS
+      <em>No filters found for "${query.toUpperCase()}" — try a different reference or check the spelling</em>
+    </p>`;
+}
+
+function setError() {
+  resultsEl.innerHTML = `<p class="status-msg">// CONNECTION ERROR<em>Cannot reach API — verify endpoint configuration</em></p>`;
+}
+
+// ─── PART NUMBER ────────────────────────────────────────────────────────────
+async function searchPart(code) {
+  if (code.length < 2) { clearResults(); return; }
+  setLoading(code);
+  try {
+    const r = await fetch(`${API}/api/search?q=${encodeURIComponent(code)}`);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.products?.length) { setEmpty(code); return; }
+    renderResults(data.products, data.count, 'PART', code);
+  } catch { setError(); }
+}
+
+// ─── VIN / MODEL ────────────────────────────────────────────────────────────
+async function searchVin(model, engine) {
+  if (!model) return;
+  setLoading(model + (engine ? ' / ' + engine : ''));
+  try {
+    let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(model)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.filters?.length) { setEmpty(model); return; }
+    renderResults(data.filters, data.filters.length, 'VIN / MODEL', model);
+  } catch { setError(); }
+}
+
+// ─── EQUIPMENT ──────────────────────────────────────────────────────────────
+async function searchEquip(model, type, engine) {
+  if (!model) return;
+  setLoading(model);
+  try {
+    let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}`;
+    if (type)   url += `&type=${encodeURIComponent(type)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.filters?.length) { setEmpty(model); return; }
+    renderResults(data.filters, data.filters.length, 'EQUIPMENT', model);
+  } catch { setError(); }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RENDER RESULTS
+// ─────────────────────────────────────────────────────────────────────────────
+function fmtRefs(arr, max = 8) {
+  if (!arr?.length) return null;
+  return arr.slice(0, max);
 }
 
 function renderCard(p) {
-  const sku   = p.elimfilters_sku || p.sku || '—';
-  const specs = [];
+  const sku  = p.elimfilters_sku || p.sku || '—';
+  const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
 
-  if (p.height_mm)          specs.push(['HEIGHT', p.height_mm + ' mm']);
-  if (p.outer_diameter_mm)  specs.push(['OD', p.outer_diameter_mm + ' mm']);
-  if (p.thread_size)        specs.push(['THREAD', p.thread_size]);
-  if (p.micron_rating)      specs.push(['MICRON', p.micron_rating + ' µm']);
-  if (p.burst_pressure_psi) specs.push(['BURST', p.burst_pressure_psi + ' psi']);
-  if (p.iso_test_method)    specs.push(['ISO METHOD', p.iso_test_method]);
-  if (p.nominal_efficiency) specs.push(['EFFICIENCY', p.nominal_efficiency + '%']);
+  const specs = [
+    p.height_mm          && ['HEIGHT',     p.height_mm + ' mm'],
+    p.outer_diameter_mm  && ['OD',          p.outer_diameter_mm + ' mm'],
+    p.gasket_od_mm       && ['GASKET OD',   p.gasket_od_mm + ' mm'],
+    p.thread_size        && ['THREAD',      p.thread_size],
+    p.micron_rating      && ['MICRON',      p.micron_rating + ' µm'],
+    p.nominal_efficiency && ['EFFICIENCY',  p.nominal_efficiency + '%'],
+    p.burst_pressure_psi && ['BURST',       p.burst_pressure_psi + ' psi'],
+    p.collapse_pressure_psi && ['COLLAPSE', p.collapse_pressure_psi + ' psi'],
+    p.iso_test_method    && ['ISO METHOD',  p.iso_test_method],
+  ].filter(Boolean);
 
   const oem  = fmtRefs(p.oem_codes);
   const comp = fmtRefs(p.competitor_codes);
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 8) : [];
 
   return `
     <div class="result-card">
-      <div class="card-header">
-        <span class="result-sku">${sku}</span>
-        <div class="result-tags">
-          ${p.filter_type    ? `<span class="tag">${p.filter_type}</span>`    : ''}
-          ${p.duty           ? `<span class="tag">${p.duty}</span>`           : ''}
-          ${p.technology     ? `<span class="tag tech">${p.technology}</span>`: ''}
-          ${p.installation_type ? `<span class="tag">${p.installation_type}</span>` : ''}
+      <div class="card-top">
+        <div class="card-left">
+          <span class="card-sku">${sku}</span>
+          ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
+        </div>
+        <div class="card-tags">
+          ${p.filter_type     ? `<span class="ctag">${p.filter_type}</span>`     : ''}
+          ${p.filter_subtype  ? `<span class="ctag">${p.filter_subtype}</span>`  : ''}
+          ${p.installation_type ? `<span class="ctag">${p.installation_type}</span>` : ''}
+          ${p.duty            ? `<span class="ctag duty">${p.duty.toUpperCase()}</span>` : ''}
+          ${p.technology      ? `<span class="ctag tech">${p.technology}</span>` : ''}
         </div>
       </div>
-      ${p.description ? `<p class="result-desc">${p.description}</p>` : ''}
+
+      ${p.description ? `<p class="card-desc">${p.description}</p>` : ''}
+
       ${specs.length ? `
-        <div class="result-specs">
+        <div class="card-specs">
           ${specs.map(([l, v]) => `
-            <div class="spec-item">
-              <span class="spec-label">${l}</span>
-              <span class="spec-value">${v}</span>
+            <div class="spec">
+              <span class="spec-l">${l}</span>
+              <span class="spec-v">${v}</span>
             </div>`).join('')}
         </div>` : ''}
-      ${oem  ? `<p class="result-refs">OEM — ${oem}</p>`  : ''}
-      ${comp ? `<p class="result-refs">CROSS — ${comp}</p>` : ''}
+
+      ${(oem?.length || comp?.length) ? `
+        <div class="card-refs">
+          ${oem?.length ? `
+            <p class="ref-line">
+              <span class="ref-brand">OEM —</span>
+              ${oem.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+            </p>` : ''}
+          ${comp?.length ? `
+            <p class="ref-line">
+              <span class="ref-brand">CROSS —</span>
+              ${comp.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+            </p>` : ''}
+        </div>` : ''}
+
+      ${apps.length ? `
+        <div class="card-equipment">
+          <p class="equip-label">Equipment Applications</p>
+          <div class="equip-list">
+            ${apps.map(a => `<span class="equip-pill">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+          </div>
+        </div>` : ''}
     </div>`;
 }
 
-async function runSearch(q) {
-  if (q.length < 2) { resultsEl.innerHTML = ''; return; }
-  resultsEl.innerHTML = '<p class="status-msg">// SEARCHING...</p>';
-  try {
-    const r = await fetch(`${API_BASE}/api/search?q=${encodeURIComponent(q)}`);
-    if (!r.ok) throw new Error('API error ' + r.status);
-    const data = await r.json();
-    if (!data.products?.length) {
-      resultsEl.innerHTML = '<p class="status-msg">// NO RESULTS — try a different reference</p>';
-      return;
-    }
-    resultsEl.innerHTML =
-      `<p class="result-count">// ${data.count} RESULT${data.count !== 1 ? 'S' : ''} — "${q.toUpperCase()}"</p>` +
-      data.products.map(renderCard).join('');
-  } catch (e) {
-    resultsEl.innerHTML = '<p class="status-msg">// CONNECTION ERROR — verify API endpoint</p>';
-  }
+function renderResults(items, count, mode, query) {
+  resultsEl.innerHTML = `
+    <div class="results-header">
+      <span class="results-count">// ${count} RESULT${count !== 1 ? 'S' : ''} — "${query.toUpperCase()}"</span>
+      <span class="results-mode">${mode}</span>
+    </div>
+    ${items.map(renderCard).join('')}`;
 }
 
-input.addEventListener('input', () => {
+// ─────────────────────────────────────────────────────────────────────────────
+// FORM SUBMIT HANDLERS
+// ─────────────────────────────────────────────────────────────────────────────
+document.querySelector('[data-form="part"]').addEventListener('submit', e => {
+  e.preventDefault();
   clearTimeout(debounce);
-  const q = input.value.trim();
-  if (q.length < 2) { resultsEl.innerHTML = ''; return; }
-  debounce = setTimeout(() => runSearch(q), 300);
+  searchPart(document.getElementById('inp-part').value.trim());
 });
 
-input.addEventListener('keydown', e => {
-  if (e.key === 'Enter') { clearTimeout(debounce); runSearch(input.value.trim()); }
+document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
+  e.preventDefault();
+  searchVin(
+    document.getElementById('inp-vin-model').value.trim(),
+    document.getElementById('inp-vin-engine').value.trim()
+  );
 });
+
+document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
+  e.preventDefault();
+  searchEquip(
+    document.getElementById('inp-equip-model').value.trim(),
+    document.getElementById('inp-equip-type').value,
+    document.getElementById('inp-equip-engine').value.trim()
+  );
+});
+
+// ─── Debounce for part number (live search) ──────────────────────────────────
+function debounceSearch() {
+  clearTimeout(debounce);
+  const q = document.getElementById('inp-part').value.trim();
+  if (q.length < 2) { clearResults(); return; }
+  debounce = setTimeout(() => searchPart(q), 320);
+}
+
+document.getElementById('inp-part').addEventListener('input', debounceSearch);
 </script>
 
 </body>
