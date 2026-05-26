@@ -167,7 +167,7 @@ export default function Contact() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', display: 'inline-block', marginBottom: '1rem' }}
           >
-            // ENGINEERING SUPPORT
+            // GLOBAL OPERATIONS CENTER
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -175,16 +175,15 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
-            Talk to Our Engineering Team
+            Engineering Consultation &amp; Industrial Partnerships
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif', maxWidth: '620px' }}
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)', fontFamily: 'Outfit, sans-serif', maxWidth: '640px' }}
           >
-            OEM cross-reference validation, ISO specification matching, distributor applications, and fleet protection strategy. Email{' '}
-            <a href="mailto:info@elimfilters.com" style={{ color: '#FFF12D', textDecoration: 'none' }}>info@elimfilters.com</a> — response within 2 business days.
+            ELIMFILTERS® supports industrial operators, equipment managers, and distribution partners with asset protection system specification, contamination control strategy, and OEM compatibility validation across mining, marine, oil &amp; gas, agriculture, power generation, and heavy industry sectors.
           </motion.p>
         </div>
       </section>
