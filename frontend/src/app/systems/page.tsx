@@ -947,9 +947,8 @@ export default function SystemsPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1px',
-              background: 'rgba(255,255,255,0.05)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+              gap: '1.5rem',
             }}
           >
             {TECH_MAP.map((t, i) => (
@@ -959,7 +958,11 @@ export default function SystemsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                style={{ background: 'rgba(3,3,3,1)', padding: '1.5rem' }}
+                style={{
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '3px',
+                  padding: '1.5rem',
+                }}
               >
                 <p
                   style={{
