@@ -433,7 +433,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
             fontSize: '0.92rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.65)',
-            maxWidth: '820px',
+            textAlign: 'justify',
             marginBottom: '2rem',
           }}
         >
@@ -947,7 +947,7 @@ export default function SystemsPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
               gap: '1.5rem',
             }}
           >
