@@ -1,26 +1,26 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Industrial Filtration Systems Catalogue',
-  description: 'Explore 12 ELIMFILTERS® filtration systems: air, fuel, hydraulic, cabin, coolant, oil, marine, dryer, housing, kits, and water filtration engineered for industry.',
-  keywords: ['air filter systems', 'fuel filter systems', 'hydraulic filter systems', 'industrial filtration systems', 'filtration systems catalogue', 'ELIMFILTERS®'],
+  title: 'Industrial Asset Protection Systems — ELIMFILTERS®',
+  description: 'Five industrial asset protection systems engineered for contamination control in air intake, fuel cleanliness, lubrication, hydraulic, and cabin/compressed air domains across 12 heavy industry sectors.',
+  keywords: ['industrial asset protection', 'air intake protection system', 'fuel cleanliness protection', 'hydraulic contamination control', 'lubrication reliability', 'ELIMFILTERS®', 'contamination control systems'],
   alternates: {
     canonical: 'https://elimfilters.com/systems/',
   },
   openGraph: {
-    title: 'Industrial Filtration Systems Catalogue | ELIMFILTERS®',
-    description: 'Explore 12 filtration systems for air, fuel, hydraulic, cabin, coolant, oil, marine, and dryer filtration engineered for critical asset protection.',
+    title: 'Industrial Asset Protection Systems | ELIMFILTERS®',
+    description: 'Five protection systems — air intake, fuel cleanliness, lubrication, hydraulic, cabin and compressed air — each targeting a specific contamination pathway across heavy industry equipment.',
     url: 'https://elimfilters.com/systems/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
-    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://elimfilters.com/images/system-hero.avif', width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
-    title: 'Industrial Filtration Systems Catalogue | ELIMFILTERS®',
-    description: 'Explore 12 filtration systems for air, fuel, hydraulic, cabin, coolant, oil, marine, and dryer filtration engineered for critical asset protection.',
+    title: 'Industrial Asset Protection Systems | ELIMFILTERS®',
+    description: 'Five protection systems — air intake, fuel cleanliness, lubrication, hydraulic, cabin and compressed air — each targeting a specific contamination pathway across heavy industry equipment.',
     card: 'summary_large_image',
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    images: ['https://elimfilters.com/images/system-hero.avif'],
   },
 };
 

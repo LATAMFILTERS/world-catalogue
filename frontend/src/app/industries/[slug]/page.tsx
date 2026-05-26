@@ -440,6 +440,165 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Railway': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Railway Equipment?',
+    ctaDescription: 'Find the right railway asset protection system for your locomotive or rolling stock application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® railway asset protection systems are engineered for diesel-electric locomotives, diesel multiple units (DMUs), shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles. Locomotive diesel engines accumulate fuel system contamination from bulk fuel storage condensation, ballast silica dust ingestion through air intake systems, and soot build-up in lube oil across extended haul cycles. Pneumatic braking systems require compressed air to ISO 8573-1 Class 1–2 standards to maintain brake actuation reliability across ambient temperature ranges of -30°C to +55°C. ELIMFILTERS® systems maintain fuel cleanliness, air intake performance, pneumatic air purity, and lubrication reliability throughout locomotive service intervals.',
+    faq: [
+      {
+        q: 'What asset protection systems do diesel-electric locomotives require?',
+        a: 'Diesel-electric locomotives require fuel and water separation protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and pneumatic system drying (DRYCORE™). Locomotive diesel engines operate at continuous high-load conditions for 12–24 hour haul cycles, accumulating soot in lube oil at rates significantly higher than intermittent-load applications. Fuel stored in locomotive tanks accumulates water through thermal cycling condensation, requiring AQUAGUARD™ water separation to maintain injection system cleanliness. Pneumatic braking systems require air dried to dew points below -20°C at system pressure to prevent moisture-related valve and actuator failure.',
+      },
+      {
+        q: 'How does track ballast dust affect locomotive air intake and engine systems?',
+        a: 'Track ballast consists of crushed granite and limestone aggregate with particle sizes of 1–100 mm, but abrasion from wheel-rail contact and ballast tamping operations generates fine silica dust at particle sizes of 2–50 µm that becomes airborne along the track corridor. Locomotives traveling at operational speeds entrain ballast dust into air intake systems at concentrations of 200–800 mg/m³ depending on track type and speed. Silica particles entering combustion chambers cause abrasive wear of piston rings and cylinder liners. MACROCORE™ air intake protection systems maintain ISO 5011 efficiency throughout extended locomotive service intervals in ballast dust environments, supporting manufacturer-specified ring and liner overhaul schedules.',
+      },
+      {
+        q: 'Why is pneumatic system air purity critical for railway braking reliability?',
+        a: 'Railway pneumatic braking systems operate at working pressures of 6–10 bar and control brake actuation for trains traveling at speeds up to 200 km/h. ISO 8573-1 Class 1–2 standards require compressed air with moisture dew points below -40°C at pressure and oil content below 0.1 mg/m³. Moisture in pneumatic brake lines causes ice formation at low ambient temperatures, valve seat corrosion at normal temperatures, and actuator seal degradation across thermal cycling. Brake valve failure from pneumatic contamination is a safety-critical event requiring immediate locomotive withdrawal from service. DRYCORE™ compressed air drying systems achieve ISO 8573-1 Class 2 dew point targets, maintaining brake system reliability across seasonal temperature ranges of -30°C to +55°C.',
+      },
+      {
+        q: 'What is the impact of fuel water contamination on locomotive diesel engine performance?',
+        a: 'Locomotive diesel engines in line-haul service use fuel stored in bulk depot tanks and transferred to locomotive fuel tanks during servicing. Bulk fuel storage accumulates water through tank breathing condensation, particularly in climates with significant day-night temperature differentials. Water contamination above ASTM D6304 thresholds causes fuel injector corrosion, microbial growth that generates acidic byproducts, and cavitation damage in high-pressure fuel pumps operating at 1,800–2,500 bar. Contamination-related injector failure in a locomotive diesel requires workshop removal and injector replacement at $800–2,500 per injector, with a typical 16-cylinder locomotive requiring 16 injectors. AQUAGUARD™ turbine-stage water separation removes free and emulsified water from locomotive fuel before it reaches high-pressure injection components.',
+      },
+      {
+        q: 'How do extended service intervals support railway fleet operational continuity?',
+        a: 'Railway fleets operate on tightly scheduled maintenance windows between haul cycles. Reducing unscheduled maintenance events and extending planned service intervals increases fleet availability and reduces maintenance labor costs per vehicle kilometer. ELIMFILTERS® locomotive protection systems are engineered to maintain ISO 4406 lube oil cleanliness, ASTM D6304 fuel purity, and ISO 8573-1 pneumatic air quality throughout extended service intervals appropriate for line-haul, commuter, and freight applications. Extended air intake service intervals — typically 500–1,000 hours for MACROCORE™ elements in controlled ballast dust environments — reduce the number of annual maintenance events per locomotive without exceeding system restriction thresholds.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related locomotive failure in railway operations?',
+        a: 'Locomotive failure in line-haul service generates direct repair costs and indirect network impact costs. A diesel-electric locomotive failure caused by fuel contamination requires in-field emergency repair or locomotive substitution, generating unplanned maintenance labor at $250–500 per hour plus parts costs. Delay to a freight train carries contractual penalty exposure of $500–3,000 per hour of delay depending on shipper agreement terms. Passenger train delays generate regulatory compliance exposure under national rail punctuality regimes. A single contamination-related locomotive failure that requires a traction unit change generates network knock-on delays affecting multiple subsequent services. Contamination control systems that prevent these failure modes represent a small fraction of the cost of a single operational delay event.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Railway Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Railway asset protection systems engineered for diesel-electric locomotives, DMUs, shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles.',
+        areaServed: 'Global',
+        serviceType: 'Railway Equipment Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Railway Asset Protection Systems', item: 'https://elimfilters.com/industries/railway' },
+        ],
+      },
+    ],
+  },
+  'Trucks Fleets': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Fleet Operations?',
+    ctaDescription: 'Find the right fleet asset protection system for your commercial vehicle application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® fleet asset protection systems are engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under continuous HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules. Modern common-rail diesel engines in heavy commercial vehicles operate at injection pressures of 1,800–2,500 bar — conditions where fuel contamination above ISO 4406 cleanliness targets causes injector wear and stiction within 150,000–250,000 km of mixed highway operation. Turbocharged diesel engines require consistent intake air volume to maintain combustion efficiency and turbocharger longevity across urban delivery, highway, and mountain gradient duty cycles. ELIMFILTERS® systems maintain HPCR fuel cleanliness, air intake performance, lubrication reliability, and extended service interval support throughout commercial fleet operating schedules.',
+    faq: [
+      {
+        q: 'What asset protection systems do heavy commercial trucks and fleet vehicles require?',
+        a: 'Heavy commercial trucks require HPCR fuel system protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and cabin air quality protection (MICROKAPPA™) for driver health compliance. Modern Euro VI and EPA 2024 compliant diesel engines operate at fuel injection pressures of 1,800–2,500 bar, where particle contamination above 10 µm causes injector needle wear and water contamination above 200 ppm causes corrosion and stiction. Air intake systems for turbocharged diesel engines must maintain consistent airflow volume across highway, urban, and mountain gradient operating conditions to support turbocharger efficiency and boost pressure stability.',
+      },
+      {
+        q: 'How does HPCR injection system contamination affect long-haul truck engine reliability?',
+        a: 'High-pressure common-rail injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, particle contamination above 10 µm causes injector tip erosion and internal leakage. Water contamination above 200 ppm causes hydrogen embrittlement of injector needle components and accelerates corrosion of high-pressure pump internals. Free water enters diesel fuel through bulk fuel storage condensation and fueling from contaminated road stop tanks. Injector replacement in a heavy commercial truck costs $800–2,500 per injector, with a six-cylinder engine requiring six injectors per service event. AQUAGUARD™ fuel system protection removes free and emulsified water to below ASTM D6304 thresholds and captures particulate above 3 µm before fuel reaches injection components.',
+      },
+      {
+        q: 'What air intake protection do turbocharged commercial diesel engines require?',
+        a: 'Turbocharged diesel engines in heavy commercial trucks require consistent intake air volume to maintain boost pressure within the 1.5–3.5 bar absolute range that supports rated torque at highway and mountain gradient loads. Air intake restriction above the OEM threshold limit — typically 3.75–6.25 kPa for heavy truck engines — reduces turbocharger efficiency and increases exhaust gas temperature, triggering derating modes that reduce power output. Road environments expose commercial truck air intake systems to particulate concentrations of 100–500 mg/m³ depending on terrain, season, and road surface. MACROCORE™ high-capacity air intake protection maintains ISO 5011 efficiency through extended 100,000–150,000 km service intervals without exceeding OEM restriction thresholds.',
+      },
+      {
+        q: 'How does lubrication cleanliness affect heavy truck engine bearing reliability across extended service intervals?',
+        a: 'Long-haul commercial trucks accumulate engine operating hours at 100,000–200,000 km per year. Extended oil drain intervals — common in fleet operations at 60,000–100,000 km with oil analysis programs — require lube oil protection systems that maintain ISO 4406 cleanliness targets throughout the full drain interval. Soot accumulation in diesel engine oil above 2% by weight degrades oil film strength, reducing main and connecting rod bearing protection. Carbon and combustion byproduct accumulation in lube oil above ISO 4406 code 17/15/12 accelerates abrasive wear of cam lobes, lifters, and valve train components. SYNTRAX™ lubrication protection maintains cleanliness within ISO 4406 targets throughout extended oil drain intervals for Volvo, Scania, MAN, Mercedes-Benz, and DAF commercial engines.',
+      },
+      {
+        q: 'Why is cabin air quality protection relevant for commercial truck driver health compliance?',
+        a: 'Long-haul truck drivers spend 9–11 hours per day in the vehicle cabin, accumulating sustained exposure to diesel exhaust particulate, road dust, and traffic-generated PM2.5 at concentrations of 30–80 µg/m³ in road environments. Extended occupational exposure to diesel exhaust particulate is classified as Group 1 carcinogen by IARC. EU Directive 2019/130 and national occupational health regulations impose PM2.5 exposure limits for professional drivers. MICROKAPPA™ multi-stage cabin air protection combines HEPA-grade mechanical filtration with activated carbon adsorption, reducing cabin PM2.5 concentration by up to 85% compared to single-layer OEM cabin filters and reducing VOC and NOx concentrations that accumulate during highway operation in heavy traffic.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related downtime for commercial fleet operators?',
+        a: 'Commercial fleet downtime carries direct vehicle repair costs and indirect revenue loss from routes not covered. A heavy truck with an HPCR fuel system failure from water contamination faces injector replacement at $4,800–15,000 for a six-cylinder engine, plus towing costs, workshop labor, and in-transit load handling. Revenue loss for a long-haul operator ranges from $1,500–4,000 per day per vehicle depending on freight rates and route commitments. Fleet operators with 50+ vehicles face aggregate downtime costs of $50,000–200,000 per year from contamination-related engine and fuel system failures preventable through systematic protection systems. Contamination control programs — air intake, fuel, lubrication, and cabin air protection — reduce the primary failure pathways that generate these unplanned maintenance events.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Commercial Fleet Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Commercial fleet asset protection systems engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules.',
+        areaServed: 'Global',
+        serviceType: 'Commercial Vehicle Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Commercial Fleet Asset Protection Systems', item: 'https://elimfilters.com/industries/trucks-fleets' },
+        ],
+      },
+    ],
+  },
+  'Waste Municipal': {
+    lastUpdated: 'May 2026',
+    ctaTitle: 'Ready to Protect Your Municipal Fleet?',
+    ctaDescription: 'Find the right municipal fleet asset protection system for your public service or emergency vehicle application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS® municipal fleet asset protection systems are engineered for refuse collection vehicles, emergency response vehicles (fire apparatus, ambulances, rescue units), public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments. Municipal diesel engines complete 300–600 engine starts per week in refuse and emergency service applications, accumulating soot at three to five times the rate of steady-state highway operation. Fire apparatus and ambulances must respond from cold-start to full rated power within 60–90 seconds, placing acute demands on lubrication systems immediately after engine startup. ELIMFILTERS® systems maintain urban air intake performance, lubrication reliability, fuel system integrity, and cabin air quality for personnel across extended municipal service schedules.',
+    faq: [
+      {
+        q: 'What asset protection systems do municipal refuse collection and emergency response vehicles require?',
+        a: 'Refuse collection vehicles require lubrication protection (SYNTRAX™), air intake contamination control (MACROCORE™), and fuel system protection (AQUAGUARD™). Emergency response vehicles — fire apparatus, ambulances, and rescue units — require the same base protection with particular emphasis on rapid cold-start lubrication performance. Fire apparatus complete 200–400 engine starts per month in short-duration emergency response cycles, with engines returning to cold-standby state between calls. This high cold-start frequency generates fuel dilution and soot accumulation in engine oil at accelerated rates. SYNTRAX™ lubrication protection maintains ISO 4406 cleanliness targets despite frequent cold-start cycling and the short-duration high-load combustion profiles of emergency response operation.',
+      },
+      {
+        q: 'How does stop-start urban operation accelerate contamination in refuse collection vehicles?',
+        a: 'Refuse collection vehicles complete 400–800 vehicle stops per collection shift, with the engine idling or operating at low load between stops while the body hydraulic system compacts waste. Each cold or partial-cold restart introduces fuel dilution into engine oil. Repeated short-distance driving between stops prevents engine oil from reaching full operating temperature in many urban collection routes, limiting natural fuel volatilization from the oil sump. Soot concentration in refuse vehicle engine oil accumulates at three to five times the rate of steady-state highway applications. ISO 4406 cleanliness codes for these vehicles degrade faster per calendar interval than standard OEM service interval assumptions account for. SYNTRAX™ high-capacity lube oil protection maintains cleanliness within target codes across collection vehicle duty cycles.',
+      },
+      {
+        q: 'What are the air intake contamination challenges for urban municipal vehicles?',
+        a: 'Urban municipal vehicles — refuse trucks, street sweepers, and maintenance equipment — operate in near-ground environments where road dust, tire wear particulate, and brake dust generate PM10 concentrations of 50–200 µg/m³ at street level. Refuse collection operations at waste loading sites expose air intake systems to organic decomposition particulate, plastic dust, and glass fiber from broken packaging. Street sweeper air intake systems are exposed to direct road surface debris ingestion at concentrations that can exceed ISO 5011 test limits during active sweeping passes. MACROCORE™ heavy-capacity air intake protection systems are matched to municipal vehicle intake geometries with high contaminant retention capacity to support 500–750 hour service intervals in urban municipal operating environments.',
+      },
+      {
+        q: 'Why does emergency response vehicle readiness require specialized lubrication protection?',
+        a: 'Emergency response vehicles — fire pumpers, aerial ladder trucks, heavy rescue units, and paramedic ambulances — are required to achieve full operational capability within 60–90 seconds of alarm receipt, typically from a cold-start or low-temperature standby state. Engine oil at cold-start temperatures of 5–20°C has three to five times the viscosity of fully warmed oil, reducing initial oil film formation on cam lobes, valve train components, and main bearings during the first 30–60 seconds of operation. High-load operation immediately after cold-start (pumping water, extending aerial ladders) accelerates wear during this low-lubrication window. SYNTRAX™ lubrication protection systems use synthetic-grade media to maintain ISO 4406 cleanliness and preserve base oil quality across repeated cold-start cycles, supporting consistent cold-start protection performance.',
+      },
+      {
+        q: 'What cabin air quality protection is required for municipal and emergency service personnel?',
+        a: 'Municipal and emergency service personnel spend extended daily hours in vehicle cabs operating in high-pollution urban environments. Refuse truck operators complete 6–10 hour collection shifts in close proximity to organic decomposition odors, diesel exhaust from surrounding traffic, and road-level dust. Emergency medical personnel in ambulance cabs face exposure to exhaust particulate during extended deployment periods. MICROKAPPA™ cabin air protection provides multi-stage filtration combining HEPA-grade mechanical particle capture with activated carbon adsorption media. This reduces cabin PM2.5 concentration by up to 85% compared to standard OEM cabin filters and reduces organic odor compounds and nitrogen dioxide concentrations. Municipal fleet operators in jurisdictions with occupational health exposure regulations for diesel particulate benefit from documented cabin air quality protection across their operator workforce.',
+      },
+      {
+        q: 'What are the financial consequences of contamination-related failures in municipal and emergency fleets?',
+        a: 'Municipal fleet downtime carries direct repair costs and indirect service delivery consequences. An ambulance removed from service for an unscheduled engine repair creates coverage gaps requiring neighboring unit deployment at additional overtime cost. A refuse collection vehicle with a hydraulic system failure from contaminated fluid requires emergency repair, alternative vehicle deployment, and route rescheduling. Municipal fleet operators typically face daily vehicle availability targets of 90–95% — contamination-related failures that exceed this threshold generate operational and contractual compliance exposure. Fire apparatus engine failure from lubrication contamination requires workshop removal from a safety-critical vehicle with replacement costs of $15,000–50,000 per engine event plus the operational cost of substituting apparatus coverage from neighboring stations.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Municipal Fleet Asset Protection Systems',
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        description: 'Municipal fleet asset protection systems engineered for refuse collection vehicles, emergency response vehicles, public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments.',
+        areaServed: 'Global',
+        serviceType: 'Municipal Fleet Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Municipal Fleet Asset Protection Systems', item: 'https://elimfilters.com/industries/waste-municipal' },
+        ],
+      },
+    ],
+  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
@@ -522,6 +681,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Oil & Gas asset protection systems for offshore platforms, drilling systems, compression equipment, turbines, pumps, and engine-driven energy assets. Air intake, fuel cleanliness, hydraulic, and lubrication protection engineered for corrosive atmospheres, H2S exposure, and severe-duty energy operation.'
     : item.name === 'Power Generation'
     ? 'Power generation asset protection systems for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment. Fuel stability, airflow, and lubrication protection engineered for continuous base-load operation, standby cycling, and emergency power readiness.'
+    : item.name === 'Railway'
+    ? 'Railway asset protection systems for diesel-electric locomotives, DMUs, and shunting locomotives operating under continuous traction loading and track ballast dust exposure. Fuel, pneumatic, air intake, and lubrication contamination control engineered for multi-day locomotive service cycles.'
+    : item.name === 'Trucks Fleets'
+    ? 'Commercial fleet asset protection systems for long-haul trucks and delivery vehicles operating under HPCR diesel fuel system demands. Air intake, fuel cleanliness, lubrication, and cabin air protection engineered for extended road service schedules and high-frequency urban delivery cycles.'
+    : item.name === 'Waste Municipal'
+    ? 'Municipal fleet asset protection systems for refuse collection vehicles, fire apparatus, ambulances, and public service equipment. Lubrication, air intake, fuel system, and cabin air protection engineered for 24/7 urban duty cycles, frequent stop-start loading, and emergency response readiness.'
     : item.description;
   return {
     title,

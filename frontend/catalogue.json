@@ -325,21 +325,23 @@
     {
       "name": "Railway",
       "file": "railway.html",
-      "title": "Railway Filtration Systems",
-      "subtitle": "LOCOMOTIVE SYSTEMS",
-      "description": "Locomotives and rolling stock require absolute reliability across extreme service cycles to ensure operational continuity. ELIMFILTERS® engineers mission-critical protection for diesel-electric traction systems, fuel circuits, and pneumatic control networks across every route condition.",
+      "title": "Railway Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR RAILWAY & LOCOMOTIVE EQUIPMENT",
+      "description": "Railway equipment operates under continuous route schedules, vibration exposure, thermal variation, and extended operating intervals capable of accelerating component wear and reducing operational reliability. ELIMFILTERS® railway asset protection systems are engineered to help reduce contamination-related failures, preserve locomotive reliability, protect pneumatic systems, and support operational continuity across passenger and freight rail applications.",
       "features": [
-        "FUEL SYSTEMS",
-        "LUBRICATION",
-        "WATER SEPARATION",
-        "AIR INTAKE"
+        "FUEL SYSTEM PROTECTION",
+        "LUBRICATION RELIABILITY PROTECTION",
+        "PNEUMATIC & MOISTURE CONTROL PROTECTION",
+        "LOCOMOTIVE AIR INTAKE PROTECTION",
+        "TRACTION SYSTEM RELIABILITY"
       ],
       "benefits": [
-        "Locomotive reliability across extreme service cycles and route lengths",
-        "Diesel-electric system protection for traction and auxiliary engines",
-        "Zero unscheduled stops that disrupt passenger and freight schedules",
-        "Air system purity for braking and pneumatic control systems",
-        "Long-haul service interval compliance for remote route operations"
+        "Fuel cleanliness protection for diesel-electric locomotives and auxiliary railway engines",
+        "Lubrication reliability support for continuous long-haul rail operation",
+        "Pneumatic airflow and moisture contamination protection for braking-related systems",
+        "Air intake contamination control for freight and passenger railway equipment",
+        "Extended service intervals engineered for remote and continuous railway operation",
+        "Operational continuity support across passenger, freight, and industrial rail networks"
       ],
       "techTags": [
         "SYNTEPORE™",
@@ -347,29 +349,39 @@
         "MACROCORE™",
         "DRYCORE™"
       ],
+      "videoBody": [
+        "Railway systems operate under continuous vibration loading, long-haul operating schedules, airborne particulate exposure, fuel contamination risks, and thermal cycling capable of reducing locomotive reliability and increasing maintenance frequency.",
+        "Diesel-electric locomotives, rolling stock, traction systems, auxiliary engines, and pneumatic railway systems require contamination control systems capable of protecting air intake systems, lubrication circuits, fuel delivery systems, and braking-related airflow environments throughout continuous rail operation.",
+        "Fuel impurities, lubrication degradation, airborne particulate accumulation, and moisture contamination can reduce traction system reliability, damage engine components, contaminate pneumatic systems, and interrupt passenger and freight rail continuity.",
+        "ELIMFILTERS® railway asset protection systems are engineered to help preserve airflow integrity, fuel cleanliness, lubrication stability, and pneumatic system reliability across freight, passenger, and industrial railway environments.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining airflow stability, lubrication cleanliness, fuel system protection, and pneumatic reliability throughout extended railway service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our railway asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across diesel-electric locomotives, rolling stock, pneumatic systems, and railway traction equipment.",
       "stats": {},
       "cta": "VIEW ENGINEERING",
-      "statistic": "Locomotive diesel filtration: ISO 19/17/14; particle wear reduces bearing life 50-70%",
+      "statistic": "ISO 4406 lube oil cleanliness target for locomotive diesel engines: 16/14/11 or tighter prevents bearing wear acceleration",
       "statisticSource": "ISO 4406 Railway Cleanliness Codes"
     },
     {
       "name": "Trucks Fleets",
       "file": "trucks-fleets.html",
-      "title": "Fleet Filtration Systems",
-      "subtitle": "LONG-HAUL PROTECTION",
-      "description": "Optimized systems for commercial fleets. Lower restriction and higher retention allow for extended service intervals and significant reduction in operational costs (TCO). Optimizes fuel economy by protecting high-pressure common rail (HPCR) injection systems against micro-particulates.",
+      "title": "Fleet Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR COMMERCIAL FLEET OPERATIONS",
+      "description": "Commercial transportation fleets require contamination control systems capable of supporting continuous highway operation, long-distance hauling, heavy-load transportation, and scheduled fleet maintenance intervals. ELIMFILTERS® fleet asset protection systems are engineered to help reduce contamination-related wear, preserve diesel engine reliability, protect HPCR fuel systems, and support operational continuity across owner-operator and commercial fleet applications.",
       "features": [
-        "INJECTION DEFENSE",
-        "TURBO PROTECTION",
-        "BRAKE INTEGRITY",
-        "OIL STABILITY"
+        "HPCR FUEL SYSTEM PROTECTION",
+        "TURBOCHARGED DIESEL AIRFLOW PROTECTION",
+        "COMMERCIAL VEHICLE SYSTEM RELIABILITY",
+        "LUBRICATION CLEANLINESS PROTECTION",
+        "LONG-HAUL OPERATIONAL SUPPORT"
       ],
       "benefits": [
-        "HPCR injection defense against sub-micron fuel contamination",
-        "TCO reduction through extended oil and fuel service intervals",
-        "Long-haul uptime maximization for owner-operators and fleet managers",
-        "Fleet standardization through OEM cross-reference compatibility",
-        "Turbocharger custody protection on sustained highway duty cycles"
+        "HPCR fuel system contamination protection for heavy-duty diesel engines",
+        "Airflow protection support for turbocharged commercial transportation systems",
+        "Lubrication cleanliness protection for extended long-haul engine operation",
+        "Operational continuity support for owner-operators and commercial fleet environments",
+        "Extended service intervals engineered for high-mileage transportation duty cycles",
+        "Fleet maintenance optimization supporting reduced downtime and lower total operating cost"
       ],
       "techTags": [
         "SYNTRAX™",
@@ -377,31 +389,40 @@
         "MACROCORE™",
         "DURATECH™"
       ],
+      "videoBody": [
+        "Commercial fleet operations depend on continuous long-haul transportation, diesel engine reliability, fuel system cleanliness, and stable operating performance across extended highway duty cycles.",
+        "Heavy-duty trucks, fleet vehicles, owner-operator equipment, and commercial transportation systems operate under continuous thermal loading, airborne particulate exposure, fuel contamination risks, and extended mileage intervals capable of increasing maintenance frequency and reducing operational uptime.",
+        "High-pressure common rail (HPCR) injection systems, turbocharged diesel engines, lubrication circuits, and air intake systems require contamination control capable of preserving combustion efficiency, protecting critical engine components, and supporting long-distance fleet operation.",
+        "ELIMFILTERS® fleet asset protection systems are engineered to help maintain airflow integrity, fuel cleanliness, lubrication stability, and heavy-duty diesel reliability across commercial transportation environments.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining stable airflow performance, fuel system protection, lubrication cleanliness, and extended fleet service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our fleet asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across heavy-duty diesel engines, commercial transportation equipment, and long-haul fleet operations.",
       "stats": {},
       "cta": "FIND MY FILTER",
-      "statistic": "Fleet preventive maintenance: target 500 operational hours between service intervals",
-      "statisticSource": "Fleet Management Best Practices"
+      "statistic": "HPCR injection pressure: 1,600–2,500 bar; fuel contamination above ISO 18/16/13 causes injector stiction within 50,000 km",
+      "statisticSource": "ISO 4406 Fuel System Cleanliness Standards"
     },
     {
       "name": "Waste Municipal",
       "file": "waste-municipal.html",
-      "title": "Municipal Waste Filtration Systems",
-      "subtitle": "CRITICAL URBAN OPERATIONS",
-      "description": "From garbage collection trucks to fire engines, municipal fleets operate in the most demanding urban conditions. ELIMFILTERS® delivers specialized filtration for every critical service vehicle: waste trucks, emergency response units, transit buses, and street maintenance equipment — ensuring zero downtime when cities depend on you.",
+      "title": "Municipal Fleet Asset Protection Systems",
+      "subtitle": "ENGINEERED PROTECTION FOR MUNICIPAL & EMERGENCY SERVICE FLEETS",
+      "description": "Municipal fleets require contamination control systems capable of supporting continuous urban operation, emergency response readiness, public service continuity, and scheduled maintenance efficiency across multiple vehicle platforms. ELIMFILTERS® municipal asset protection systems are engineered to help reduce contamination-related wear, preserve fleet reliability, protect critical service equipment, and support uninterrupted city operations.",
       "features": [
-        "WASTE COLLECTION VEHICLES",
-        "FIRE AND EMERGENCY RESPONSE",
-        "PUBLIC TRANSIT BUSES",
-        "STREET MAINTENANCE EQUIPMENT",
-        "URBAN AIR QUALITY PROTECTION",
-        "24/7 FLEET AVAILABILITY"
+        "WASTE COLLECTION VEHICLE PROTECTION",
+        "EMERGENCY RESPONSE FLEET PROTECTION",
+        "PUBLIC SERVICE VEHICLE RELIABILITY",
+        "URBAN AIRFLOW PROTECTION",
+        "FUEL SYSTEM PROTECTION",
+        "24/7 MUNICIPAL FLEET SUPPORT"
       ],
       "benefits": [
-        "24/7 urban fleet availability for waste collection and emergency response",
-        "Emergency response reliability — fire and rescue zero downtime engineering",
-        "High-cycle short-route protection for stop-and-go collection vehicles",
-        "Multi-vehicle coverage from refuse trucks to street maintenance equipment",
-        "Urban air quality protection with 99.9% particulate capture efficiency"
+        "Operational reliability support for waste collection and municipal service fleets",
+        "Emergency response equipment protection for fire, rescue, and ambulance operations",
+        "Airflow contamination control for high-cycle urban stop-and-go vehicle operation",
+        "Fuel cleanliness protection for municipal diesel fleet systems",
+        "Extended service intervals engineered for continuous urban fleet activity",
+        "Fleet operational continuity support across critical city infrastructure services"
       ],
       "techTags": [
         "MACROCORE™",
@@ -409,16 +430,18 @@
         "SYNTEPORE™",
         "MICROKAPPA™"
       ],
-      "stats": {
-        "percentages": [
-          "99.9%",
-          "100%",
-          "40%"
-        ]
-      },
+      "videoBody": [
+        "Municipal operations depend on continuous fleet availability across waste collection, emergency response, public transit support, street maintenance, and utility service operations that keep urban infrastructure functioning.",
+        "Waste collection vehicles, fire trucks, ambulances, public service fleets, street maintenance equipment, and municipal support vehicles operate under continuous stop-and-go duty cycles, airborne particulate exposure, thermal loading, fuel contamination risks, and extended urban operating schedules.",
+        "High-cycle municipal service environments increase exposure to soot accumulation, airflow contamination, lubrication degradation, and fuel system impurities capable of reducing fleet reliability and increasing maintenance interruptions.",
+        "ELIMFILTERS® municipal fleet asset protection systems are engineered to help preserve airflow integrity, fuel cleanliness, lubrication stability, and operational reliability across critical urban service vehicle platforms.",
+        "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining airflow stability, fuel system protection, lubrication cleanliness, and extended municipal fleet service intervals."
+      ],
+      "engineeringBody": "ELIMFILTERS® engineering applies German-grade quality standards to every protection system component. Our municipal fleet asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across waste collection vehicles, fire apparatus, ambulances, public service fleets, and municipal infrastructure equipment.",
+      "stats": {},
       "cta": "FIND MY FILTER",
-      "statistic": "Waste hauler equipment exposure: 2,000+ mg/m³ dust, high water vapor in compacted waste",
-      "statisticSource": "Municipal Waste Operations Data"
+      "statistic": "Urban stop-and-go duty cycles generate soot contamination 3–5x faster than highway operation in waste collection vehicles",
+      "statisticSource": "Municipal Fleet Operations Analysis"
     }
   ],
   "products": [
