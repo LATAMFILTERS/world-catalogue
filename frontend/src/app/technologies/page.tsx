@@ -16,57 +16,46 @@ const GEO_DEFINITIONS: Record<string, string> = {
   'marineclean': 'MARINECLEAN™ is a salt-resistant filtration technology that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.',
   'microkappa': 'MICROKAPPA™ is an electrostatic cabin air filtration system combining activated carbon and HEPA-grade particle capture. The electrostatic charge attracts sub-micron particles, allergens, and diesel particulate matter, while the activated carbon layer controls odours from fuel vapours and exhaust intrusion. Designed for mining cabs, agricultural machinery, and heavy-duty trucks operating in high-dust environments.',
   'nanoforce': 'NANOFORCE™ is a multi-layer hydraulic filtration architecture engineered for high-pressure hydraulic circuits in heavy industrial machinery. It combines structural integrity reinforcement with vapour control mechanisms to maintain filter element form under system pressure spikes, delivering consistent sub-micron contamination interception across variable duty cycles.',
-  'syntepore': 'SYNTEPORE™ is a progressive multi-layer fuel filtration system defending Common Rail direct injection systems from sub-micron contamination. A 4-micron absolute barrier intercepts particles before they reach injector nozzles, while a zero-migration element construction prevents filter fibre release into the fuel stream — protecting injectors rated to tolerances below 1 micron in on-road and agricultural diesel engines.',
-  'syntrax': 'SYNTRAX™ is an AI-engineered multi-layer air filtration system for turbocharged diesel and gas engines. The protection matrix is formulated through computational modelling to match the specific dust particle size distribution and airflow velocity of each engine application, delivering sub-micron contamination control at the turbocharger inlet and extending compressor wheel service life.',
+  'syntepore': 'SYNTEPORE™ is an all-synthetic air intake protection architecture for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure conditions that degrade cellulose-based constructions, delivering consistent ISO 5011-compliant airflow restriction across variable humidity operating environments aboard offshore platforms, marine vessels, and humid tropical agricultural operations.',
+  'syntrax': 'SYNTRAX™ is a synthetic lubrication protection architecture maintaining ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals for diesel, gas, and dual-fuel engines. It captures combustion soot above 2% by weight, metal wear particles, and fuel dilution byproducts — the primary degradation mechanisms that reduce oil film strength, accelerate bearing wear, and reduce engine service life in mobile and stationary applications.',
 };
 
 const TECH_COMPARISON = [
-  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake', func: 'Progressive density gradient filtration', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'On-road, Mining, Agriculture, Power Gen' },
-  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Air Intake', func: 'AI-engineered multi-layer filtration', metric: 'Sub-micron control at turbocharger inlet', industries: 'Diesel/gas engines, Mining, Construction' },
-  { name: 'AQUAGUARD™', slug: 'aquaguard', system: 'Fuel', func: 'Hydrophobic water separation', metric: '99.8% water separation efficiency', industries: 'Mining, Marine, Power Gen, Agriculture' },
-  { name: 'AQUAGUARD/SERIES™', slug: 'aquaguard-series', system: 'Fuel', func: '3-stage filter/water separator', metric: 'Particle + water + polishing stages', industries: 'Power Gen, Large-scale mining' },
-  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Fuel', func: 'CRDI injector protection', metric: '4-micron absolute · zero migration', industries: 'On-road diesel, Agriculture' },
-  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic', func: 'High-pressure hydraulic filtration', metric: 'Sub-micron interception under pressure spikes', industries: 'Heavy industrial, Mining, Construction' },
-  { name: 'COOLTECH™', slug: 'cooltech', system: 'Coolant', func: 'SCA additive release technology', metric: 'Liner pitting & cavitation prevention', industries: 'Heavy trucks, Power Gen' },
-  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Marine', func: 'Salt-resistant epoxy coating', metric: 'IMO certified · brine rejection', industries: 'Marine vessels, Offshore platforms' },
-  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin', func: 'Electrostatic HEPA cabin filtration', metric: 'HEPA-grade + activated carbon', industries: 'Mining cabs, Agriculture, Heavy trucks' },
-  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air', func: 'Molecular sieve desiccant dryer', metric: 'Moisture adsorption from compressed air', industries: 'Industrial equipment, Mobile' },
-  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Housing', func: 'High-pressure filter housing', metric: 'Zero-bypass under peak system pressure', industries: 'Heavy trucks, Industrial machinery' },
-  { name: 'DURATECH™', slug: 'duratech', system: 'Fleet', func: 'OEM-interchangeable master kits', metric: 'Multi-asset consolidated kits', industries: 'Mining, Construction, Agriculture' },
+  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
+  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
+  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
+  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
+  { name: 'AQUAGUARD™', slug: 'aquaguard', system: 'Fuel Cleanliness', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
+  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
+  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
+  { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
+  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Protection', func: 'PM2.5 capture + activated carbon adsorption', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
 const FAQS = [
   {
-    q: 'What is the difference between SYNTRAX™ and MACROCORE™ filtration?',
-    a: 'MACROCORE™ uses Progressive Density Gradient (PDG) media — a fixed multi-layer structure where outer zones capture large particles and progressively denser inner zones intercept sub-micron threats, achieving 99.9%–99.98% efficiency (ISO 5011). SYNTRAX™ uses AI-engineered computational modelling to match the filter media matrix to the specific dust particle size distribution and airflow velocity of each engine application. MACROCORE™ is specified for known high-dust environments; SYNTRAX™ is applied where airflow and contamination profiles vary by engine and operating condition.',
+    q: 'What is the difference between MACROCORE™ and SYNTEPORE™ air intake protection?',
+    a: 'Both are Air Intake architectures (System 01) but target different operating environments. MACROCORE™ uses Progressive Density Gradient (PDG) media — a multi-layer cellulose-synthetic composite achieving 99.9%–99.98% efficiency (ISO 5011) at dust concentrations up to 10,000 mg/m³ in mining, agriculture, and construction. SYNTEPORE™ is all-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure would degrade cellulose media — maintaining ISO 5011-compliant airflow restriction regardless of humidity conditions.',
   },
   {
-    q: 'Which ELIMFILTERS® technology is best for protecting diesel fuel injectors?',
-    a: 'SYNTEPORE™ is engineered specifically for Common Rail direct injection (CRDI) systems. It provides a 4-micron absolute barrier before the injector nozzles and uses zero-migration element construction to prevent filter fibre release — critical because CRDI injectors operate to tolerances below 1 micron. AQUAGUARD™ complements SYNTEPORE™ by removing free and emulsified water from fuel before it reaches the injection system, achieving 99.8% water separation efficiency.',
+    q: 'Which ELIMFILTERS® architecture protects HPCR diesel injection systems?',
+    a: 'AQUAGUARD™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
   },
   {
-    q: 'What certifications do ELIMFILTERS® technologies hold?',
-    a: 'MACROCORE™ is rated to ISO 5011 (air filter test standard for internal combustion engines). MARINECLEAN™ meets IMO (International Maritime Organization) certification standards for marine applications. AQUAGUARD™ water separation is verified against EN 23015 and SAE J1488 coalescer test protocols. SYNTEPORE™ and NANOFORCE™ are validated against ISO 16889 Beta ratio testing for fuel and hydraulic filtration respectively.',
+    q: 'What is SYNTRAX™ and which system does it protect?',
+    a: 'SYNTRAX™ is the lubrication reliability architecture for System 03 — engine oil protection. It maintains ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals (60,000–100,000 km programs) for diesel, gas, and dual-fuel engines. SYNTRAX™ captures combustion soot above 2% by weight, metal wear particles from ring/liner/bearing contact, and fuel dilution byproducts that reduce oil viscosity below SAE specification. Maintaining ISO 4406 code 16/14/11 extends bearing service life three to five times compared to uncontrolled contamination at 19/17/14.',
   },
   {
-    q: 'How does AQUAGUARD™ achieve 99.8% water separation from fuel?',
-    a: 'AQUAGUARD™ uses hydrophobic (water-repelling) filter media that causes water droplets to coalesce — small droplets merge into larger drops that separate from the fuel stream by gravity. This coalescing mechanism targets both free water and emulsified water suspended as micro-droplets in diesel. The result prevents injector nozzle corrosion, microbial growth in fuel tanks, and cavitation damage to fuel pump components.',
+    q: 'What ISO standards govern ELIMFILTERS® protection architectures?',
+    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). AQUAGUARD™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
   },
   {
-    q: 'What filtration technologies does ELIMFILTERS® offer for marine applications?',
-    a: 'MARINECLEAN™ is the primary marine-specific technology, applying epoxy brine-rejection coating to filter housings and elements to resist salt-accelerated corrosion — meeting IMO certification. AQUAGUARD™ and AQUAGUARD/SERIES™ remove water from marine diesel and turbine fuel systems where seawater ingress and condensation are constant operational risks. SYNTEPORE™ protects marine diesel injection systems from sub-micron particle contamination in harsh offshore environments.',
+    q: 'How does NANOFORCE™ prevent hydraulic proportional valve failure?',
+    a: 'NANOFORCE™ is the hydraulic contamination control architecture (System 04) maintaining ISO 4406 cleanliness codes of 16/14/11 or tighter at 200–450 bar. Proportional valve spool clearances measure 5–25 µm — where silica particles above 5 µm (Mohs hardness 7) cause permanent micro-abrasion on valve faces. At contamination levels above ISO 19/17/14, proportional valve failure rates increase three to five times. NANOFORCE™ captures sub-micron particles at 1–10 µm that bypass standard 25 µm return-line protection systems.',
   },
   {
-    q: 'Are ELIMFILTERS® protection architectures validated for OEM-specification mining equipment?',
-    a: 'DURATECH™ multi-circuit service packages are engineered for OEM-specification fitment across mixed mining fleets, consolidating protection coverage across different makes and equipment models into coordinated service intervals. MACROCORE™, SYNTRAX™, and NANOFORCE™ protection architectures are validated to ISO 5011, ISO 16889, and ISO 4406 standards — the same standards that define OEM performance specifications — enabling direct application on OEM equipment without affecting warranty compliance.',
-  },
-  {
-    q: 'What is the difference between AQUAGUARD™ and AQUAGUARD/SERIES™?',
-    a: 'AQUAGUARD™ is the core hydrophobic water-separation technology — a coalescing filter that removes free and emulsified water from diesel fuel at 99.8% efficiency. AQUAGUARD/SERIES™ (FH 900FH / 1000FH) is the heavy-duty multi-stage implementation for high-flow applications: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, Stage 3 provides a final polishing barrier. Series models are sized for turbine fuel systems in large-scale power generation and mining operations where flow rates exceed standard AQUAGUARD™ capacity.',
-  },
-  {
-    q: 'Which ELIMFILTERS® technology protects cabin air quality in mining and construction?',
-    a: 'MICROKAPPA™ is engineered for operator cabin protection in high-dust industrial environments. It combines electrostatic charge (which attracts sub-micron particles, allergens, and diesel particulate matter) with activated carbon filtration (which adsorbs odours from fuel vapours and exhaust gas intrusion). This delivers HEPA-grade particle capture combined with chemical filtration, protecting operators from PM2.5/PM10 exposure in mining cabs, agricultural machinery, and heavy-duty construction vehicles.',
+    q: 'What protection does MICROKAPPA™ provide for commercial vehicle operators?',
+    a: 'MICROKAPPA™ is the cabin environmental protection architecture (System 05) combining multi-stage PM2.5 particulate capture with activated carbon adsorption. It reduces cabin PM2.5 concentration by up to 85% versus standard OEM cabin elements. Professional drivers completing 9–11 hour daily schedules accumulate sustained occupational exposure to diesel exhaust particulate — classified as IARC Group 1 carcinogen. EU Directive 2019/130 and OSHA standards impose PM2.5 exposure limits for commercial vehicle operators, making documented cabin protection a compliance obligation for fleet operators in regulated jurisdictions.',
   },
 ];
 
@@ -102,10 +91,10 @@ export default function TechnologiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'ELIMFILTERS® Proprietary Filtration Technologies',
-        description: '12 proprietary filtration technologies for asset protection across industrial, marine, and agricultural applications.',
+        name: 'ELIMFILTERS® Proprietary Protection Architectures',
+        description: 'Nine proprietary protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
         url: 'https://elimfilters.com/technologies/',
-        numberOfItems: 12,
+        numberOfItems: 9,
         itemListElement: itemListData,
       }) }} />
 
@@ -172,7 +161,7 @@ export default function TechnologiesPage() {
               lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            12 PROPRIETARY TECHNOLOGIES
+            NINE PROPRIETARY PROTECTION ARCHITECTURES
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -184,7 +173,7 @@ export default function TechnologiesPage() {
               maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
             }}
           >
-            12 engineered systems achieving up to 99.98% contamination interception across fuel, air, hydraulic, coolant, and cabin filtration for mining, marine, and heavy industry.
+            Nine protection architectures organized by contamination domain — air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin — each defined by its contamination target, failure mechanism, and measurable engineering standard.
           </motion.p>
         </div>
       </section>
@@ -312,10 +301,10 @@ export default function TechnologiesPage() {
               // TECHNOLOGY COMPARISON
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 1rem' }}>
-              All 12 Technologies — Quick Reference
+              Nine Protection Architectures — Quick Reference
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System type, primary function, key efficiency metric, and applicable industries across the complete ELIMFILTERS® technology portfolio.
+              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
             </p>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>
