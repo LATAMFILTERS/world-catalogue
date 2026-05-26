@@ -176,7 +176,7 @@ export function FuelSeparatorPage() {
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}

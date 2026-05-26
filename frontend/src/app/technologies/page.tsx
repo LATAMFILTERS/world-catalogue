@@ -57,8 +57,8 @@ const FAQS = [
     a: 'MARINECLEAN™ is the primary marine-specific technology, applying epoxy brine-rejection coating to filter housings and elements to resist salt-accelerated corrosion — meeting IMO certification. AQUAGUARD™ and AQUAGUARD/SERIES™ remove water from marine diesel and turbine fuel systems where seawater ingress and condensation are constant operational risks. SYNTEPORE™ protects marine diesel injection systems from sub-micron particle contamination in harsh offshore environments.',
   },
   {
-    q: 'Can ELIMFILTERS® technologies replace OEM filters on mining equipment?',
-    a: 'DURATECH™ master kits are engineered as OEM-interchangeable replacements for mixed mining fleets, consolidating multiple filter specifications across different makes and models. MACROCORE™, SYNTRAX™, and NANOFORCE™ meet or exceed OEM filtration specifications for air, fuel, and hydraulic systems respectively. All technologies are validated against ISO standards (ISO 5011, ISO 16889) that define OEM specification compliance, enabling direct replacement without voiding equipment warranties.',
+    q: 'Are ELIMFILTERS® protection architectures validated for OEM-specification mining equipment?',
+    a: 'DURATECH™ multi-circuit service packages are engineered for OEM-specification fitment across mixed mining fleets, consolidating protection coverage across different makes and equipment models into coordinated service intervals. MACROCORE™, SYNTRAX™, and NANOFORCE™ protection architectures are validated to ISO 5011, ISO 16889, and ISO 4406 standards — the same standards that define OEM performance specifications — enabling direct application on OEM equipment without affecting warranty compliance.',
   },
   {
     q: 'What is the difference between AQUAGUARD™ and AQUAGUARD/SERIES™?',

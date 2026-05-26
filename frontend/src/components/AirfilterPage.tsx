@@ -169,14 +169,14 @@ export function AirfilterPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS® air filters are high-performance filtration media developed under progressive density gradient principles. They use high-purity cellulose fibers reinforced with structural synthetic resins to deliver absolute protection for intake systems in internal combustion engines and rotating machinery.
+                  ELIMFILTERS® air intake protection is engineered under progressive density gradient principles. High-purity cellulose fibers reinforced with structural synthetic resins deliver absolute contamination control for intake systems in internal combustion engines and rotating machinery.
                 </p>
 
                 <div
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}

@@ -78,10 +78,10 @@ function faqSchema(item: ReturnType<typeof getItemBySlug>) {
       },
       {
         '@type': 'Question',
-        name: `What makes ${item.title} different from standard filters?`,
+        name: `What is the engineering architecture behind ${item.title}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${item.title} is a proprietary ELIMFILTERS® technology engineered for zero-bypass asset protection. Unlike standard OEM filters, it uses multi-layer filtration media formulated for extreme operating conditions, certified to ISO industry standards.`,
+          text: `${item.title} is a proprietary ELIMFILTERS® protection architecture engineered for specific contamination control targets in industrial operating environments. It uses a multi-layer protection construction validated against ISO industry standards (ISO 5011, ISO 16889, ISO 4406) for the contamination particle size ranges, operating pressures, and service intervals characteristic of the applications it protects.`,
         },
       },
     ],
