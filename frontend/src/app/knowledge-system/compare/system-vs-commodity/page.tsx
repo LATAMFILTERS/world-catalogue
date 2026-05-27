@@ -347,7 +347,7 @@ export default function SystemVsCommodityPage() {
                 marginBottom: '0.75rem',
                 textTransform: 'uppercase',
               }}>
-                System Approach (ELIMFILTERS®)
+                System Approach (ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>)
               </p>
               <ul style={{
                 fontSize: '0.9rem',

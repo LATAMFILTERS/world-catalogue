@@ -184,7 +184,7 @@ export default function Home() {
           visibility: 'hidden',
         }}>
           <p>
-            ELIMFILTERS® is an industrial asset protection filtration manufacturer based in Frisco, Texas, engineering heavy-duty air, fuel, hydraulic, oil, and cabin filtration systems for 12 industries including mining, agriculture, marine, and power generation. ELIMFILTERS® products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
+            ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> is an industrial asset protection filtration manufacturer based in Frisco, Texas, engineering heavy-duty air, fuel, hydraulic, oil, and cabin filtration systems for 12 industries including mining, agriculture, marine, and power generation. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
           </p>
         </div>
 
@@ -445,7 +445,7 @@ export default function Home() {
                   lineHeight: 1.8,
                   marginBottom: '1.5rem',
                 }}>
-                  ELIMFILTERS® protects industrial assets by controlling contamination across critical mechanical and fluid systems. We extend equipment life, improve operational efficiency, and reduce total cost of ownership through advanced filtration technologies engineered for heavy-duty industrial applications.
+                  ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> protects industrial assets by controlling contamination across critical mechanical and fluid systems. We extend equipment life, improve operational efficiency, and reduce total cost of ownership through advanced filtration technologies engineered for heavy-duty industrial applications.
                 </p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
@@ -647,7 +647,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── WHY ELIMFILTERS® ── */}
+        {/* ── WHY ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2
@@ -666,7 +666,7 @@ export default function Home() {
                 marginBottom: '3.5rem',
               }}
             >
-              WHY CHOOSE <span style={{ color: '#FFF12D' }}>ELIMFILTERS®</span>
+              WHY CHOOSE <span style={{ color: '#FFF12D' }}>ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup></span>
             </motion.h2>
 
             <div
@@ -740,7 +740,7 @@ export default function Home() {
                     Your equipment is worth millions.<br />Protect it accordingly.
                   </h3>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
-                    ELIMFILTERS® engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.
+                    ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[

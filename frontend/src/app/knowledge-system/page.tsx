@@ -198,7 +198,7 @@ export default function KnowledgeSystemPage() {
             color: 'rgba(255,255,255,0.28)',
             letterSpacing: '0.08em',
           }}>
-            Technical content by the ELIMFILTERS® Engineering Team ·{' '}
+            Technical content by the ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> Engineering Team ·{' '}
             <time dateTime="2026-05-25">Updated May 2026</time>
           </p>
         </motion.div>
@@ -223,7 +223,7 @@ export default function KnowledgeSystemPage() {
             lineHeight: 1.8,
             marginBottom: '2.5rem',
           }}>
-            The ELIMFILTERS® Knowledge System explains how{' '}
+            The ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> Knowledge System explains how{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
               industrial filtration systems
             </Link>{' '}

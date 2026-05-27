@@ -268,7 +268,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           marginBottom: '1rem',
                         }}
                       >
-                        The protection media is the core of every ELIMFILTERS® system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
+                        The protection media is the core of every ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
                       </p>
                       <p
                         style={{
@@ -278,7 +278,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontFamily: 'Outfit, sans-serif',
                         }}
                       >
-                        Every micron of contamination matters. ELIMFILTERS® systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
+                        Every micron of contamination matters. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
                       </p>
                     </>
                   )}
@@ -569,7 +569,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                WHY ELIMFILTERS®
+                WHY ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {(item.benefits || [

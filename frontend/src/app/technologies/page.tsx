@@ -192,7 +192,7 @@ export default function TechnologiesPage() {
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            ELIMFILTERS® technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS®&apos; industrial asset protection strategy.
+            ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>&apos; industrial asset protection strategy.
           </p>
         </motion.div>
       </section>
@@ -305,7 +305,7 @@ export default function TechnologiesPage() {
               Nine Protection Architectures — Quick Reference
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
+              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> protection architectures.
             </p>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>

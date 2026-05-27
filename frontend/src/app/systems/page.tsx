@@ -812,7 +812,7 @@ export default function SystemsPage() {
             }}
           >
             Industrial equipment fails when contamination accumulates faster than the protection system
-            removes it. ELIMFILTERS® structures contamination control into five engineering domains —
+            removes it. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> structures contamination control into five engineering domains —
             each defined by its contamination target, failure mechanism, and the proprietary architecture
             that prevents it.
           </motion.p>

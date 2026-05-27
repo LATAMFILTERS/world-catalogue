@@ -332,7 +332,7 @@ export default function LubeOilSystemsPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
+          }}>06 / ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',

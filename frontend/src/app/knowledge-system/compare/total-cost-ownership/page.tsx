@@ -477,7 +477,7 @@ export default function TCOPage() {
                 color: '#FFF12D',
                 marginBottom: '1rem',
               }}>
-                SYSTEM APPROACH (ELIMFILTERS®)
+                SYSTEM APPROACH (ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>)
               </p>
               <ul style={{
                 fontSize: '0.85rem',
