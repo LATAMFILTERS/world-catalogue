@@ -256,44 +256,50 @@ def collect_product_links(page):
 
 
 def click_btn_by_id(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
-    """Pulsa un botón por su ID hasta que desaparece o no hay progreso."""
+    """Pulsa botón por ID usando Playwright locator — detecta visibilidad CSS correctamente."""
     clicks = 0
-    prev_count = -1
+    prev_rows = -1
+    loc = page.locator(f"#{btn_id}")
     while clicks < max_clicks:
-        js = f"""() => {{
-            const btn = document.getElementById('{btn_id}');
-            if (btn && btn.style.display !== 'none' && btn.offsetParent !== null) {{
-                btn.scrollIntoView({{behavior:'instant',block:'center'}});
-                btn.click();
-                return true;
-            }}
-            return false;
-        }}"""
-        if not page.evaluate(js):
+        try:
+            if not loc.is_visible(timeout=1500):
+                break
+            loc.scroll_into_view_if_needed(timeout=3000)
+            loc.click(timeout=4000)
+            clicks += 1
+            time.sleep(2)
+            cur_rows = page.locator("tr").count()
+            if cur_rows == prev_rows:
+                break
+            prev_rows = cur_rows
+        except Exception:
             break
-        clicks += 1
-        time.sleep(2)
-        cur = page.locator("tr").count()
-        if cur == prev_count:
-            break
-        prev_count = cur
     if clicks:
         logging.info(f"    [{btn_id}] pulsado {clicks}x")
     return clicks
 
 
 def expand_cross_ref_plus_icons(page):
-    """Expande todas las filas childRows pulsando iconos fa-plus en crossreferenceBody."""
-    n = page.evaluate("""() => {
-        let count = 0;
-        document.querySelectorAll('#crossreferenceBody .fa-plus').forEach(icon => {
-            icon.click();
-            count++;
-        });
-        return count;
-    }""")
-    if n:
-        logging.info(f"    fa-plus expandidos: {n}")
+    """Expande filas childRows: hace clic en cada fa-plus visible en crossreferenceBody."""
+    # Clic en todos los + visibles usando Playwright locator (más fiable)
+    icons = page.locator("#crossreferenceBody .fa-plus")
+    total = 0
+    try:
+        count = icons.count()
+        for i in range(count):
+            try:
+                ic = icons.nth(i)
+                if ic.is_visible(timeout=800):
+                    ic.scroll_into_view_if_needed(timeout=1000)
+                    ic.click(timeout=2000)
+                    total += 1
+                    time.sleep(0.4)
+            except Exception:
+                pass
+    except Exception:
+        pass
+    if total:
+        logging.info(f"    fa-plus expandidos: {total}")
         time.sleep(1)
 
 
@@ -328,12 +334,15 @@ def extract_cross_refs(page) -> list:
     if not body:
         return []
 
-    # Ciclo: Show More → expand fa-plus → repetir
+    # Expandir + icons de la carga inicial (ya visibles sin Show More)
+    expand_cross_ref_plus_icons(page)
+
+    # Ciclo Show More: cargar más fabricantes → expandir sus + icons
     for _ in range(60):
         showed = click_btn_by_id(page, "showAllCrossReferenceListButton", max_clicks=1)
-        expand_cross_ref_plus_icons(page)
         if not showed:
             break
+        expand_cross_ref_plus_icons(page)
 
     try:
         return page.evaluate("""() => {
