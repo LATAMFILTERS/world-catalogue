@@ -127,33 +127,53 @@ def click_tab_by_keywords(page, keywords: list) -> bool:
 
 
 def click_show_more_smart(page, max_clicks=SHOW_MORE_LIMIT):
-    """Expande 'Show More' / 'Mostrar más' detectando si hay progreso real."""
-    keywords = ["Show More", "Mostrar más", "Mostrar más resultados", "Ver más", "Load More"]
+    """Expande 'Show More', '+' y botones de expansión detectando progreso real."""
     clicks = 0
     prev_count = -1
 
     while clicks < max_clicks:
-        js = """(keywords) => {
-            const btns = Array.from(document.querySelectorAll('button, a'));
-            for (const kw of keywords) {
-                const b = btns.find(b =>
-                    b.offsetParent !== null &&
-                    b.textContent.trim().toLowerCase().includes(kw.toLowerCase())
+        # Busca botones de expandir: texto Show More / + / flechas / íconos expand
+        js = """() => {
+            const candidates = Array.from(document.querySelectorAll('button, a, span, div'));
+            const expandBtn = candidates.find(el => {
+                if (!el.offsetParent) return false;
+                const txt = el.textContent.trim().toLowerCase();
+                const cls = (el.className || '').toLowerCase();
+                const aria = (el.getAttribute('aria-label') || '').toLowerCase();
+                return (
+                    txt === 'show more' ||
+                    txt === 'mostrar más' ||
+                    txt === 'ver más' ||
+                    txt === 'load more' ||
+                    txt === '+' ||
+                    txt === 'more' ||
+                    txt === 'expand' ||
+                    cls.includes('show-more') ||
+                    cls.includes('load-more') ||
+                    cls.includes('expand') ||
+                    cls.includes('more-btn') ||
+                    aria.includes('show more') ||
+                    aria.includes('expand') ||
+                    (el.tagName === 'BUTTON' && /^\\+\\s*\\d+/.test(txt))
                 );
-                if (b) { b.scrollIntoView(); b.click(); return b.textContent.trim(); }
+            });
+            if (expandBtn) {
+                expandBtn.scrollIntoView({behavior:'instant', block:'center'});
+                expandBtn.click();
+                return expandBtn.textContent.trim().substring(0, 40);
             }
             return null;
         }"""
         try:
-            clicked = page.evaluate(js, keywords)
+            clicked = page.evaluate(js)
             if not clicked:
                 break
+            logging.info(f"    Expandido: {clicked!r}")
             clicks += 1
-            time.sleep(1.5)
-            # Verificar que el DOM creció
+            time.sleep(1.8)
             current = page.locator("tr, li").count()
             if current == prev_count:
-                logging.warning("    Show More: sin cambios — deteniendo")
+                logging.warning("    Sin cambios tras expandir — deteniendo")
                 break
             prev_count = current
         except Exception:
