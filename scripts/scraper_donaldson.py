@@ -26,22 +26,37 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
     handlers=[
-        logging.FileHandler("scraper_lube.log", encoding="utf-8"),
+        logging.FileHandler("scraper_donaldson.log", encoding="utf-8"),
         logging.StreamHandler(),
     ],
 )
 
-CATEGORY_URL  = (
-    "https://shop.donaldson.com/store/en-us/search"
-    "?N=426772457&Nr=product.language%3AEnglish&catNav=true&st=parts"
-)
+# Categorías conocidas: nombre → URL de búsqueda (N = id de categoría Donaldson)
+CATEGORIES = {
+    "lube": "https://shop.donaldson.com/store/en-us/search"
+            "?N=426772457&Nr=product.language%3AEnglish&catNav=true&st=parts",
+    "air":  "https://shop.donaldson.com/store/en-us/search"
+            "?N=2975800598&Nr=product.language%3AEnglish&catNav=true&st=parts",
+}
+
 PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
+PROFILE_DIR   = os.path.join(os.path.expanduser("~"), ".donaldson_profile")
+
+# Config activa (se fija en runtime vía configure()). Default: lube.
+CATEGORY_URL  = CATEGORIES["lube"]
 OUTPUT_FILE   = "donaldson_lube_results.json"
 PROGRESS_FILE = "donaldson_lube_progress.json"
-PROFILE_DIR   = os.path.join(os.path.expanduser("~"), ".donaldson_profile")
 
 SHOW_MORE_LIMIT = 80
 PAUSE_BETWEEN   = (5, 10)
+
+
+def configure(name: str, url: str):
+    """Fija la categoría activa y los archivos de salida por nombre."""
+    global CATEGORY_URL, OUTPUT_FILE, PROGRESS_FILE
+    CATEGORY_URL  = url
+    OUTPUT_FILE   = f"donaldson_{name}_results.json"
+    PROGRESS_FILE = f"donaldson_{name}_progress.json"
 
 
 # ── helpers ────────────────────────────────────────────────────────────────
@@ -646,9 +661,31 @@ def test_one(target: str):
     print(json.dumps(data, ensure_ascii=False, indent=2))
 
 
+def _usage():
+    print("Uso:")
+    print("  python scraper_donaldson.py <categoria> [url]   # scrapea categoría")
+    print("  python scraper_donaldson.py --test <url>        # prueba 1 producto")
+    print(f"\nCategorías conocidas: {', '.join(CATEGORIES)}")
+    print("Para una nueva categoría pasa su URL de búsqueda:")
+    print('  python scraper_donaldson.py fuel "https://shop.donaldson.com/.../search?N=...&..."')
+
+
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 1:
-        test_one(sys.argv[1])
+    argv = sys.argv[1:]
+
+    if argv and argv[0] == "--test":
+        if len(argv) < 2:
+            _usage()
+        else:
+            test_one(argv[1])
     else:
+        name = (argv[0] if argv else "lube").lower()
+        url  = argv[1] if len(argv) > 1 else CATEGORIES.get(name)
+        if not url:
+            print(f"Categoría '{name}' desconocida y sin URL.\n")
+            _usage()
+            sys.exit(1)
+        configure(name, url)
+        logging.info(f"Categoría: {name}  →  {OUTPUT_FILE}")
         main()
