@@ -256,18 +256,23 @@ def collect_product_links(page):
 
 
 def click_btn_by_id(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
-    """Pulsa botón por ID usando Playwright locator — detecta visibilidad CSS correctamente."""
+    """Pulsa botón por ID. Espera hasta 5s para que el AJAX lo haga visible."""
     clicks = 0
     prev_rows = -1
     loc = page.locator(f"#{btn_id}")
     while clicks < max_clicks:
         try:
-            if not loc.is_visible(timeout=1500):
+            # 5s de espera: el AJAX puede tardar más que 1.5s
+            if not loc.is_visible(timeout=5000):
                 break
             loc.scroll_into_view_if_needed(timeout=3000)
-            loc.click(timeout=4000)
+            loc.click(timeout=5000)
             clicks += 1
-            time.sleep(2)
+            # Esperar a que el contenido nuevo cargue
+            try:
+                page.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                time.sleep(3)
             cur_rows = page.locator("tr").count()
             if cur_rows == prev_rows:
                 break
@@ -334,15 +339,29 @@ def extract_attributes(page) -> dict:
             const attrs = {};
             // Primary ID
             let body = document.getElementById('attributesBody');
-            // Fallback: find via tab href
+            // Fallback 1: via tab href
             if (!body || body.querySelectorAll('td').length === 0) {
                 const tabs = Array.from(document.querySelectorAll(
-                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
+                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"], a'
                 ));
                 const tab = tabs.find(t => t.textContent.trim() === 'Attributes');
                 if (tab) {
                     const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
                     if (href) body = document.getElementById(href);
+                }
+            }
+            // Fallback 2: por heading H2/H3 "Attributes" → tabla hermana
+            if (!body || body.querySelectorAll('td').length === 0) {
+                const hdgs = Array.from(document.querySelectorAll('h2, h3, h4'));
+                const h = hdgs.find(el => el.textContent.trim() === 'Attributes');
+                if (h) {
+                    let node = h.nextElementSibling;
+                    for (let i = 0; i < 8 && node; i++) {
+                        if (node.querySelectorAll('table tr td').length > 0) { body = node; break; }
+                        node = node.nextElementSibling;
+                    }
+                    if (!body || body.querySelectorAll('td').length === 0)
+                        body = h.parentElement;
                 }
             }
             if (!body) return attrs;
@@ -525,9 +544,24 @@ def click_tab(page, section_id: str) -> bool:
             if method:
                 break
 
+    # ── Método 3: cualquier <a> o <li>/<button> visible con texto exacto ────
+    if not method:
+        for label in _TAB_LABELS.get(section_id, []):
+            method = page.evaluate(f"""() => {{
+                const all = Array.from(document.querySelectorAll('a, button, li'));
+                const t = all.find(el =>
+                    el.offsetParent !== null &&
+                    el.textContent.trim() === '{label}'
+                );
+                if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'any'; }}
+                return null;
+            }}""")
+            if method:
+                break
+
     if method:
         logging.info(f"    Tab #{section_id} activado ({method})")
-        time.sleep(2.5)
+        time.sleep(3)   # más pausa para AJAX tras clic de tab
     else:
         logging.warning(f"    Tab #{section_id} NO encontrado — sección puede estar ausente")
     return bool(method)
