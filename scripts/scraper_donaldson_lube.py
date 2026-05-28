@@ -103,15 +103,42 @@ def dismiss_popups(page):
 
 
 def click_tab_by_keywords(page, keywords: list) -> bool:
-    """Clic en tab buscando texto en inglés o español. Usa JS para máxima compatibilidad."""
+    """Clic en tab del producto — busca SOLO dentro de contenedores de tabs, no en nav."""
     js = """(keywords) => {
-        const els = Array.from(document.querySelectorAll('a, button, li'));
-        for (const kw of keywords) {
-            const match = els.find(e =>
-                e.offsetParent !== null &&
-                e.textContent.trim().toLowerCase().includes(kw.toLowerCase())
-            );
-            if (match) { match.click(); return match.textContent.trim(); }
+        // Buscar solo dentro de contenedores de tabs del producto (no nav global)
+        const tabContainers = Array.from(document.querySelectorAll(
+            '[class*="tab-nav"], [class*="tabNav"], [role="tablist"], ' +
+            'ul.tabs, [class*="product-tabs"], [class*="productTabs"], ' +
+            '[class*="detail-tabs"], [class*="detailTabs"]'
+        ));
+
+        // Si no encontramos contenedor específico, buscar en el área de producto
+        const searchRoot = tabContainers.length > 0
+            ? tabContainers
+            : Array.from(document.querySelectorAll(
+                '[class*="product-detail"], [class*="productDetail"], ' +
+                '[class*="part-detail"], [class*="partDetail"], main, #content'
+              ));
+
+        for (const container of searchRoot) {
+            const links = Array.from(container.querySelectorAll('a, button, li > a'));
+            for (const kw of keywords) {
+                const match = links.find(el => {
+                    if (!el.offsetParent) return false;
+                    // Texto exacto del elemento (no de sus hijos profundos)
+                    const ownText = Array.from(el.childNodes)
+                        .filter(n => n.nodeType === 3)
+                        .map(n => n.textContent.trim())
+                        .join(' ').trim() || el.textContent.trim();
+                    return ownText.toLowerCase().includes(kw.toLowerCase()) &&
+                           ownText.length < 60; // evitar elementos con texto largo
+                });
+                if (match) {
+                    match.scrollIntoView({behavior:'instant', block:'center'});
+                    match.click();
+                    return match.textContent.trim().substring(0,50);
+                }
+            }
         }
         return null;
     }"""
@@ -119,10 +146,12 @@ def click_tab_by_keywords(page, keywords: list) -> bool:
         result = page.evaluate(js, keywords)
         if result:
             logging.info(f"    Tab clickeado: {result!r}")
-            time.sleep(2)
+            time.sleep(2.5)
             return True
-    except Exception:
-        pass
+        else:
+            logging.info(f"    Tab NO encontrado para: {keywords[0]!r}")
+    except Exception as e:
+        logging.warning(f"    Tab error: {e}")
     return False
 
 
