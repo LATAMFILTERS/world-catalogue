@@ -68,21 +68,35 @@ def dismiss_popups(page):
 
 
 def click_show_more(page, section_sel, max_clicks=SHOW_MORE_LIMIT):
+    """Expande 'Show More' detectando cuando no hay progreso para evitar loops."""
     clicks = 0
+    prev_html = ""
+    stuck = 0
     while clicks < max_clicks:
         try:
+            # Buscar botón Show More EN TODA LA PÁGINA (no solo en section_sel)
+            # porque los selectores de sección a veces no coinciden
             btn = page.locator(
-                f"{section_sel} button:has-text('Show More'), "
-                f"{section_sel} a:has-text('Show More'), "
-                f"{section_sel} [class*='show-more']:visible"
+                "button:has-text('Show More'):visible, "
+                "a:has-text('Show More'):visible, "
+                "button:has-text('show more'):visible"
             ).first
-            if btn.is_visible(timeout=1500):
-                btn.scroll_into_view_if_needed()
-                btn.click()
-                clicks += 1
-                time.sleep(1.2)
-            else:
+            if not btn.is_visible(timeout=1000):
                 break
+            # Verificar que el contenido cambia tras cada clic (anti-loop)
+            current_html = page.content()[:2000]
+            if current_html == prev_html:
+                stuck += 1
+                if stuck >= 2:
+                    logging.warning("  Show More sin cambios — saliendo del loop")
+                    break
+            else:
+                stuck = 0
+            prev_html = current_html
+            btn.scroll_into_view_if_needed()
+            btn.click()
+            clicks += 1
+            time.sleep(1.5)
         except Exception:
             break
     return clicks
@@ -111,8 +125,8 @@ def collect_product_links(page):
         added = 0
         for lnk in links:
             href = lnk.get_attribute("href") or ""
-            pn = href.split("/product/")[-1].split("?")[0].strip().upper()
-            if pn and pn not in part_numbers and len(pn) >= 4:
+            pn = href.split("/product/")[-1].split("?")[0].split("/")[0].strip().upper()
+            if pn and pn not in part_numbers and len(pn) >= 3 and " " not in pn:
                 part_numbers.append(pn)
                 added += 1
 
