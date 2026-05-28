@@ -192,12 +192,13 @@ def expand_plus_buttons(page):
 # ── colección de links de categoría ────────────────────────────────────────
 
 def collect_product_links(page):
-    """Navega la categoría Lube y devuelve todos los part numbers."""
+    """Navega la categoría Lube y devuelve paths completos (PART/SKUID)."""
     page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
     time.sleep(4)
     dismiss_popups(page)
 
-    part_numbers = []
+    seen_parts = set()
+    product_paths = []   # "DBL7900/11907" — path completo para URL correcta
     page_num = 1
 
     while True:
@@ -207,23 +208,26 @@ def collect_product_links(page):
         except Exception:
             pass
 
-        # Extraer part numbers vía JS — más robusto que selectores CSS
-        pns = page.evaluate("""() => {
+        # Guardar path completo (PART/SKUID) para evitar redireccionamiento incorrecto
+        paths = page.evaluate("""() => {
             const anchors = Array.from(document.querySelectorAll('a[href*="/product/"]'));
             return anchors.map(a => {
                 const href = a.getAttribute('href') || '';
-                const part = href.split('/product/').pop().split('?')[0].split('/')[0].trim().toUpperCase();
-                return part;
-            }).filter(p => p.length >= 4 && !p.includes(' '));
+                // Extrae todo después de /product/ (ej. "DBL7900/11907")
+                const path = href.split('/product/').pop().split('?')[0].trim().toUpperCase();
+                return path;
+            }).filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
         }""")
 
         added = 0
-        for pn in pns:
-            if pn not in part_numbers:
-                part_numbers.append(pn)
+        for path in paths:
+            part = path.split('/')[0]  # "DBL7900" — solo para deduplicar
+            if part not in seen_parts:
+                seen_parts.add(part)
+                product_paths.append(path)
                 added += 1
 
-        logging.info(f"    +{added} nuevos (total {len(part_numbers)})")
+        logging.info(f"    +{added} nuevos (total {len(product_paths)})")
 
         # Siguiente página — buscar en inglés y español
         next_clicked = page.evaluate("""() => {
@@ -247,8 +251,8 @@ def collect_product_links(page):
         page_num += 1
         rand_sleep(2, 5)
 
-    logging.info(f"Total part numbers: {len(part_numbers)}")
-    return part_numbers
+    logging.info(f"Total productos: {len(product_paths)}")
+    return product_paths
 
 
 def click_btn_by_id(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
@@ -354,16 +358,24 @@ def extract_cross_refs(page) -> list:
 
 
 def extract_alternatives(page) -> list:
-    """#alternateBody — carousel de partes alternativas Donaldson."""
+    """#alternateBody — carousel partes alternativas. Lee data-partnumber (más fiable)."""
     try:
         return page.evaluate("""() => {
             const results = [];
             const body = document.getElementById('alternateBody');
             if (!body) return results;
-            body.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
-                const pn = el.textContent.trim();
+            // data-partnumber en botones/imágenes del carrusel
+            body.querySelectorAll('[data-partnumber]').forEach(el => {
+                const pn = el.getAttribute('data-partnumber').trim().toUpperCase();
                 if (pn && !results.includes(pn)) results.push(pn);
             });
+            // Fallback: <h5> dentro de .preAlternate
+            if (results.length === 0) {
+                body.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
+                    const pn = el.textContent.trim().toUpperCase();
+                    if (pn && !results.includes(pn)) results.push(pn);
+                });
+            }
             return results;
         }""")
     except Exception:
@@ -410,8 +422,33 @@ def extract_equipment(page) -> list:
 
 # ── scrape por producto ─────────────────────────────────────────────────────
 
-def scrape_product(page, part_number: str) -> dict:
-    url = f"{PRODUCT_BASE}{part_number}"
+def click_tab(page, section_id: str) -> bool:
+    """Activa el tab que apunta a section_id — carga contenido por AJAX si es lazy."""
+    js = f"""() => {{
+        // Bootstrap usa href="#id" o data-target="#id"
+        const tab = document.querySelector(
+            'a[href="#{section_id}"], a[data-target="#{section_id}"], [data-target="#{section_id}"]'
+        );
+        if (tab) {{
+            tab.scrollIntoView({{behavior:'instant', block:'center'}});
+            tab.click();
+            return true;
+        }}
+        return false;
+    }}"""
+    clicked = page.evaluate(js)
+    if clicked:
+        time.sleep(2.5)  # esperar carga AJAX
+    return clicked
+
+
+def scrape_product(page, product_path: str) -> dict:
+    """
+    product_path: "DBL7900/11907" — path completo con SKU para URL exacta.
+    Si se pasa solo "DBL7900" (progreso antiguo) también funciona vía redirect.
+    """
+    part_number = product_path.split('/')[0].upper()
+    url = f"{PRODUCT_BASE}{product_path}"
     result = {
         "part_number": part_number,
         "url": url,
@@ -424,28 +461,35 @@ def scrape_product(page, part_number: str) -> dict:
         "error": None,
     }
     try:
-        # networkidle espera a que JavaScript termine de renderizar las secciones
-        page.goto(url, timeout=60000, wait_until="networkidle")
+        page.goto(url, timeout=90000, wait_until="networkidle")
         time.sleep(2)
         dismiss_popups(page)
 
-        # Esperar explícitamente a que #attributesBody aparezca en el DOM
-        try:
-            page.wait_for_selector("#attributesBody", timeout=10000)
-        except Exception:
-            logging.warning(f"  #attributesBody no apareció en {part_number}")
-
-        # Descripción desde el subtítulo real del producto
+        # Descripción del producto (siempre visible en header)
         desc = page.evaluate("""() => {
-            const sub = document.querySelector('.prodSubTitleMob, .prodSubTitle, h1');
-            return sub ? sub.textContent.trim() : '';
+            for (const sel of ['.prodSubTitleMob', '.prodSubTitle', 'h6.product-description',
+                               '.product-title h6', 'h6']) {
+                const el = document.querySelector(sel);
+                if (el && el.textContent.trim()) return el.textContent.trim();
+            }
+            return '';
         }""")
         result["description"] = desc
 
-        result["attributes"]       = extract_attributes(page)
+        # ── ALTERNATE PARTS (tab activo por defecto, ya cargado) ──────────
+        result["alternatives"] = extract_alternatives(page)
+
+        # ── ATTRIBUTES (clic tab → carga AJAX → extraer) ──────────────────
+        click_tab(page, "attributesBody")
+        result["attributes"] = extract_attributes(page)
+
+        # ── CROSS REFERENCE ───────────────────────────────────────────────
+        click_tab(page, "crossreferenceBody")
         result["cross_references"] = extract_cross_refs(page)
-        result["alternatives"]     = extract_alternatives(page)
-        result["equipment"]        = extract_equipment(page)
+
+        # ── EQUIPMENT ─────────────────────────────────────────────────────
+        click_tab(page, "equiptmentBody")   # typo intencional de Donaldson
+        result["equipment"] = extract_equipment(page)
 
     except PlaywrightTimeout:
         result["error"] = "timeout"
@@ -504,36 +548,38 @@ def main():
         if STEALTH:
             stealth_sync(page)
 
-        # 1. Recolectar part numbers
+        # 1. Recolectar product paths (PART/SKUID)
         if not progress["part_numbers"]:
-            logging.info("=== Recolectando 440 part numbers ===")
-            pns = collect_product_links(page)
-            progress["part_numbers"] = pns
+            logging.info("=== Recolectando product paths ===")
+            paths = collect_product_links(page)
+            progress["part_numbers"] = paths
             save_progress(progress)
         else:
-            pns = progress["part_numbers"]
-            logging.info(f"=== {len(pns)} part numbers en progreso ===")
+            paths = progress["part_numbers"]
+            logging.info(f"=== {len(paths)} paths en progreso ===")
 
-        total = len(pns)
+        total = len(paths)
 
         # 2. Scrape por producto
-        for idx, pn in enumerate(pns, 1):
-            if pn in done_set:
-                logging.info(f"[{idx}/{total}] {pn} ya procesado")
+        for idx, product_path in enumerate(paths, 1):
+            part = product_path.split('/')[0].upper()
+
+            if part in done_set:
+                logging.info(f"[{idx}/{total}] {part} ya procesado")
                 continue
 
-            logging.info(f"[{idx}/{total}] {pn} …")
-            data = scrape_product(page, pn)
+            logging.info(f"[{idx}/{total}] {part} …")
+            data = scrape_product(page, product_path)
 
             na = len(data["attributes"])
             nc = len(data["cross_references"])
             nl = len(data["alternatives"])
             ne = len(data["equipment"])
             st = "✅" if not data["error"] else "❌"
-            logging.info(f"  {st} {pn} → {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
+            logging.info(f"  {st} {part} → {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
 
             results.append(data)
-            done_set.add(pn)
+            done_set.add(part)
             progress["done"]    = list(done_set)
             progress["results"] = results
 
