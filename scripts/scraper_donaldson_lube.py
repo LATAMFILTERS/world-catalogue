@@ -422,24 +422,45 @@ def extract_equipment(page) -> list:
 
 # ── scrape por producto ─────────────────────────────────────────────────────
 
+_TAB_LABELS = {
+    "attributesBody":     ["Attributes"],
+    "crossreferenceBody": ["Cross Reference"],
+    "equiptmentBody":     ["Equipment"],
+    "alternateBody":      ["Alternate Parts"],
+}
+
+
 def click_tab(page, section_id: str) -> bool:
-    """Activa el tab que apunta a section_id — carga contenido por AJAX si es lazy."""
-    js = f"""() => {{
-        // Bootstrap usa href="#id" o data-target="#id"
-        const tab = document.querySelector(
+    """Activa tab por href/data-target; fallback por texto exacto en nav."""
+    # ── Método 1: selector por atributo ──────────────────────────────────
+    method = page.evaluate(f"""() => {{
+        const t = document.querySelector(
             'a[href="#{section_id}"], a[data-target="#{section_id}"], [data-target="#{section_id}"]'
         );
-        if (tab) {{
-            tab.scrollIntoView({{behavior:'instant', block:'center'}});
-            tab.click();
-            return true;
-        }}
-        return false;
-    }}"""
-    clicked = page.evaluate(js)
-    if clicked:
-        time.sleep(2.5)  # esperar carga AJAX
-    return clicked
+        if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'href'; }}
+        return null;
+    }}""")
+
+    # ── Método 2: texto exacto en nav-tabs / role=tab ─────────────────────
+    if not method:
+        for label in _TAB_LABELS.get(section_id, []):
+            method = page.evaluate(f"""() => {{
+                const tabs = Array.from(document.querySelectorAll(
+                    '.nav-tabs a, .nav a, [role="tab"], ul.tabs li a'
+                ));
+                const t = tabs.find(el => el.textContent.trim() === '{label}');
+                if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'text'; }}
+                return null;
+            }}""")
+            if method:
+                break
+
+    if method:
+        logging.info(f"    Tab #{section_id} activado ({method})")
+        time.sleep(2.5)
+    else:
+        logging.warning(f"    Tab #{section_id} NO encontrado — sección puede estar ausente")
+    return bool(method)
 
 
 def scrape_product(page, product_path: str) -> dict:
