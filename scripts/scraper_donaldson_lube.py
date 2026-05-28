@@ -60,21 +60,46 @@ def rand_sleep(lo=None, hi=None):
 
 
 def dismiss_popups(page):
+    # Cerrar modal de región/idioma de Donaldson (aparece en primera visita)
+    # Primero intentar la X del modal
+    try:
+        page.keyboard.press("Escape")
+        time.sleep(0.5)
+    except Exception:
+        pass
+
     for sel in [
+        # Modal región Donaldson — botón X
+        "button.modal__close",
+        "button[class*='close'][class*='modal']",
+        "[class*='region'] button[class*='close']",
+        "[class*='region-selector'] button",
+        "button[aria-label='Close']",
+        "[data-dismiss='modal']",
+        # Cookies
         "button#onetrust-accept-btn-handler",
-        "button.cookie-accept",
+        "button:has-text('Accept All')",
         "button:has-text('Accept')",
         "button:has-text('Aceptar')",
-        "[aria-label='Close']",
         "button.close",
+        ".modal-close",
     ]:
         try:
             btn = page.locator(sel).first
-            if btn.is_visible(timeout=1000):
+            if btn.is_visible(timeout=800):
                 btn.click()
                 time.sleep(0.6)
         except Exception:
             pass
+
+    # Si aún hay overlay, hacer clic fuera del modal
+    try:
+        overlay = page.locator("[class*='overlay']:visible, [class*='backdrop']:visible").first
+        if overlay.is_visible(timeout=500):
+            page.mouse.click(10, 10)
+            time.sleep(0.5)
+    except Exception:
+        pass
 
 
 def click_tab_by_keywords(page, keywords: list) -> bool:
