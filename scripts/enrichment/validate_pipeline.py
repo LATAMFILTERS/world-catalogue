@@ -424,7 +424,7 @@ def main() -> None:
     input_path = Path(args.input)
     if not input_path.exists():
         sys.exit(f"ERROR: {input_path} not found")
-    with open(input_path, encoding="utf-8") as f:
+    with open(input_path, encoding="utf-8-sig") as f:
         products = json.load(f)
     if not isinstance(products, list):
         products = [products]
