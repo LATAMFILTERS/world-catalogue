@@ -424,14 +424,21 @@ def scrape_product(page, part_number: str) -> dict:
         "error": None,
     }
     try:
-        page.goto(url, timeout=50000, wait_until="domcontentloaded")
-        time.sleep(3)
+        # networkidle espera a que JavaScript termine de renderizar las secciones
+        page.goto(url, timeout=60000, wait_until="networkidle")
+        time.sleep(2)
         dismiss_popups(page)
 
-        # Descripción
+        # Esperar explícitamente a que #attributesBody aparezca en el DOM
+        try:
+            page.wait_for_selector("#attributesBody", timeout=10000)
+        except Exception:
+            logging.warning(f"  #attributesBody no apareció en {part_number}")
+
+        # Descripción desde el subtítulo real del producto
         desc = page.evaluate("""() => {
-            const h = document.querySelector('h1');
-            return h ? h.textContent.trim() : '';
+            const sub = document.querySelector('.prodSubTitleMob, .prodSubTitle, h1');
+            return sub ? sub.textContent.trim() : '';
         }""")
         result["description"] = desc
 
