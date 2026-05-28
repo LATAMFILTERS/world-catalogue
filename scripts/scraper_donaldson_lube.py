@@ -30,17 +30,26 @@ logging.basicConfig(
     ],
 )
 
+# Forzar inglés en la URL para evitar redirección a es-us
 CATEGORY_URL = (
     "https://shop.donaldson.com/store/en-us/search"
     "?N=426772457&Nr=product.language%3AEnglish&catNav=true&st=parts"
 )
-PRODUCT_BASE = "https://shop.donaldson.com/store/en-us/product/"
+PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
 OUTPUT_FILE   = "donaldson_lube_results.json"
 PROGRESS_FILE = "donaldson_lube_progress.json"
 PROFILE_DIR   = os.path.join(os.path.expanduser("~"), ".donaldson_profile")
 
-SHOW_MORE_LIMIT  = 60
-PAUSE_BETWEEN    = (5, 10)
+SHOW_MORE_LIMIT = 80
+PAUSE_BETWEEN   = (5, 10)
+
+# Palabras clave de tabs en inglés Y español
+TAB_KEYWORDS = {
+    "cross":  ["Cross Reference", "Interchange", "Referencias cruzadas", "Referencia cruzada", "Intercambio"],
+    "alt":    ["Alternatives", "Replacement", "Alternativas", "Alternativo", "Reemplazos"],
+    "equip":  ["Applications", "Equipment", "Aplicaciones", "Equipos", "Aplicación"],
+    "specs":  ["Specifications", "Tech Specs", "Especificaciones", "Especificación", "Attributes"],
+}
 
 
 # ── utilidades ─────────────────────────────────────────────────────────────
@@ -54,57 +63,84 @@ def dismiss_popups(page):
     for sel in [
         "button#onetrust-accept-btn-handler",
         "button.cookie-accept",
+        "button:has-text('Accept')",
+        "button:has-text('Aceptar')",
         "[aria-label='Close']",
         "button.close",
-        ".modal-close",
     ]:
         try:
             btn = page.locator(sel).first
-            if btn.is_visible(timeout=1500):
+            if btn.is_visible(timeout=1000):
                 btn.click()
-                time.sleep(0.8)
+                time.sleep(0.6)
         except Exception:
             pass
 
 
-def click_show_more(page, section_sel, max_clicks=SHOW_MORE_LIMIT):
-    """Expande 'Show More' detectando cuando no hay progreso para evitar loops."""
+def click_tab_by_keywords(page, keywords: list) -> bool:
+    """Clic en tab buscando texto en inglés o español. Usa JS para máxima compatibilidad."""
+    js = """(keywords) => {
+        const els = Array.from(document.querySelectorAll('a, button, li'));
+        for (const kw of keywords) {
+            const match = els.find(e =>
+                e.offsetParent !== null &&
+                e.textContent.trim().toLowerCase().includes(kw.toLowerCase())
+            );
+            if (match) { match.click(); return match.textContent.trim(); }
+        }
+        return null;
+    }"""
+    try:
+        result = page.evaluate(js, keywords)
+        if result:
+            logging.info(f"    Tab clickeado: {result!r}")
+            time.sleep(2)
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def click_show_more_smart(page, max_clicks=SHOW_MORE_LIMIT):
+    """Expande 'Show More' / 'Mostrar más' detectando si hay progreso real."""
+    keywords = ["Show More", "Mostrar más", "Mostrar más resultados", "Ver más", "Load More"]
     clicks = 0
-    prev_html = ""
-    stuck = 0
+    prev_count = -1
+
     while clicks < max_clicks:
+        js = """(keywords) => {
+            const btns = Array.from(document.querySelectorAll('button, a'));
+            for (const kw of keywords) {
+                const b = btns.find(b =>
+                    b.offsetParent !== null &&
+                    b.textContent.trim().toLowerCase().includes(kw.toLowerCase())
+                );
+                if (b) { b.scrollIntoView(); b.click(); return b.textContent.trim(); }
+            }
+            return null;
+        }"""
         try:
-            # Buscar botón Show More EN TODA LA PÁGINA (no solo en section_sel)
-            # porque los selectores de sección a veces no coinciden
-            btn = page.locator(
-                "button:has-text('Show More'):visible, "
-                "a:has-text('Show More'):visible, "
-                "button:has-text('show more'):visible"
-            ).first
-            if not btn.is_visible(timeout=1000):
+            clicked = page.evaluate(js, keywords)
+            if not clicked:
                 break
-            # Verificar que el contenido cambia tras cada clic (anti-loop)
-            current_html = page.content()[:2000]
-            if current_html == prev_html:
-                stuck += 1
-                if stuck >= 2:
-                    logging.warning("  Show More sin cambios — saliendo del loop")
-                    break
-            else:
-                stuck = 0
-            prev_html = current_html
-            btn.scroll_into_view_if_needed()
-            btn.click()
             clicks += 1
             time.sleep(1.5)
+            # Verificar que el DOM creció
+            current = page.locator("tr, li").count()
+            if current == prev_count:
+                logging.warning("    Show More: sin cambios — deteniendo")
+                break
+            prev_count = current
         except Exception:
             break
+
     return clicks
 
 
-# ── colección de links ──────────────────────────────────────────────────────
+# ── colección de links de categoría ────────────────────────────────────────
 
 def collect_product_links(page):
+    """Navega la categoría Lube y devuelve todos los part numbers."""
     page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
     time.sleep(4)
     dismiss_popups(page)
@@ -113,161 +149,157 @@ def collect_product_links(page):
     page_num = 1
 
     while True:
-        logging.info(f"  Página categoría {page_num} …")
-        page.wait_for_load_state("networkidle", timeout=25000)
+        logging.info(f"  Página {page_num} …")
+        try:
+            page.wait_for_load_state("networkidle", timeout=20000)
+        except Exception:
+            pass
 
-        links = page.locator(
-            "a.donaldson-part-details, a[href*='/product/'], a[data-partnumber]"
-        ).all()
-        if not links:
-            links = page.locator("a[href*='/store/en-us/product/']").all()
+        # Extraer part numbers vía JS — más robusto que selectores CSS
+        pns = page.evaluate("""() => {
+            const anchors = Array.from(document.querySelectorAll('a[href*="/product/"]'));
+            return anchors.map(a => {
+                const href = a.getAttribute('href') || '';
+                const part = href.split('/product/').pop().split('?')[0].split('/')[0].trim().toUpperCase();
+                return part;
+            }).filter(p => p.length >= 4 && !p.includes(' '));
+        }""")
 
         added = 0
-        for lnk in links:
-            href = lnk.get_attribute("href") or ""
-            pn = href.split("/product/")[-1].split("?")[0].split("/")[0].strip().upper()
-            if pn and pn not in part_numbers and len(pn) >= 3 and " " not in pn:
+        for pn in pns:
+            if pn not in part_numbers:
                 part_numbers.append(pn)
                 added += 1
 
-        logging.info(f"    +{added} (total {len(part_numbers)})")
+        logging.info(f"    +{added} nuevos (total {len(part_numbers)})")
 
-        try:
-            nxt = page.locator(
-                "a[aria-label='Next page'], a.next-page, "
-                "li.next a, a:has-text('Next'), button:has-text('Next')"
-            ).first
-            if nxt.is_visible(timeout=2000):
-                nxt.click()
-                page_num += 1
-                rand_sleep(2, 5)
-            else:
-                break
-        except Exception:
+        # Siguiente página — buscar en inglés y español
+        next_clicked = page.evaluate("""() => {
+            const btns = Array.from(document.querySelectorAll('a, button'));
+            const nxt = btns.find(b =>
+                b.offsetParent !== null && (
+                    b.getAttribute('aria-label') === 'Next page' ||
+                    b.textContent.trim() === 'Next' ||
+                    b.textContent.trim() === 'Siguiente' ||
+                    b.classList.contains('next-page') ||
+                    (b.parentElement && b.parentElement.classList.contains('next'))
+                )
+            );
+            if (nxt) { nxt.click(); return true; }
+            return false;
+        }""")
+
+        if not next_clicked:
+            logging.info("  No hay más páginas")
             break
+        page_num += 1
+        rand_sleep(2, 5)
 
-    logging.info(f"Total: {len(part_numbers)}")
+    logging.info(f"Total part numbers: {len(part_numbers)}")
     return part_numbers
 
 
-# ── extracción por producto ─────────────────────────────────────────────────
+# ── extracción genérica de tablas ───────────────────────────────────────────
 
-def click_tab(page, selectors):
-    for sel in selectors:
-        try:
-            t = page.locator(sel).first
-            if t.is_visible(timeout=1200):
-                t.click()
-                time.sleep(1.8)
-                return True
-        except Exception:
-            pass
-    return False
+def extract_all_tables(page) -> list:
+    """Extrae TODAS las filas de TODAS las tablas visibles en la página."""
+    return page.evaluate("""() => {
+        const rows = [];
+        document.querySelectorAll('table tr').forEach(tr => {
+            const cells = Array.from(tr.querySelectorAll('td, th'))
+                              .map(c => c.textContent.trim())
+                              .filter(t => t.length > 0);
+            if (cells.length >= 1) rows.push(cells);
+        });
+        return rows;
+    }""")
 
 
-def extract_attributes(page):
-    click_tab(page, [
-        "a[href='#specifications']", "a[href='#productSpecifications']",
-        "a[href='#techSpecs']", "a[href='#attributes']",
-        "li a:has-text('Specifications')", "li a:has-text('Tech Specs')",
-        "button:has-text('Specifications')",
-    ])
+def extract_attributes(page) -> dict:
+    click_tab_by_keywords(page, TAB_KEYWORDS["specs"])
+    time.sleep(1)
     attrs = {}
+    # dl dt/dd
     try:
-        dts = page.locator("dl dt").all()
-        dds = page.locator("dl dd").all()
-        for dt, dd in zip(dts, dds):
-            k = dt.inner_text().strip()
-            v = dd.inner_text().strip()
-            if k:
-                attrs[k] = v
+        data = page.evaluate("""() => {
+            const result = {};
+            document.querySelectorAll('dl').forEach(dl => {
+                const dts = Array.from(dl.querySelectorAll('dt'));
+                const dds = Array.from(dl.querySelectorAll('dd'));
+                dts.forEach((dt, i) => {
+                    const k = dt.textContent.trim();
+                    const v = dds[i] ? dds[i].textContent.trim() : '';
+                    if (k) result[k] = v;
+                });
+            });
+            return result;
+        }""")
+        attrs.update(data)
     except Exception:
         pass
+    # table rows (key=col1, value=col2)
     if not attrs:
         try:
-            for row in page.locator("table tr").all():
-                cells = row.locator("th, td").all()
-                if len(cells) >= 2:
-                    k = cells[0].inner_text().strip()
-                    v = cells[1].inner_text().strip()
-                    if k:
-                        attrs[k] = v
+            rows = extract_all_tables(page)
+            for row in rows:
+                if len(row) >= 2:
+                    attrs[row[0]] = row[1]
         except Exception:
             pass
     return attrs
 
 
-def extract_list(page, tab_selectors, section_sel, item_sel):
-    click_tab(page, tab_selectors)
-    click_show_more(page, section_sel)
-    items = []
+def extract_cross_refs(page) -> list:
+    click_tab_by_keywords(page, TAB_KEYWORDS["cross"])
+    click_show_more_smart(page)
     try:
-        for el in page.locator(item_sel).all():
-            t = el.inner_text().strip()
-            if t and len(t) >= 2 and t not in items:
-                items.append(t)
+        rows = extract_all_tables(page)
+        # Los cross-refs suelen tener columnas: BrandCode | BrandName | Type
+        codes = []
+        for row in rows:
+            for cell in row:
+                # Código válido: 3-20 chars, no es solo números, no es URL
+                if 3 <= len(cell) <= 25 and not cell.startswith("http") and cell not in codes:
+                    codes.append(cell)
+        return codes[:500]
     except Exception:
-        pass
-    return items
+        return []
 
 
-def extract_cross_refs(page):
-    return extract_list(
-        page,
-        tab_selectors=[
-            "a[href='#crossReference']", "a[href='#cross-reference']",
-            "a[href='#interchanges']", "li a:has-text('Cross Reference')",
-            "li a:has-text('Interchange')", "button:has-text('Cross Reference')",
-        ],
-        section_sel="[id*='cross'], [class*='cross'], [id*='interchange']",
-        item_sel=(
-            "[class*='cross'] [class*='part'], "
-            "[class*='interchange'] td:first-child, "
-            "[id*='cross'] td, table[class*='cross'] td"
-        ),
-    )
-
-
-def extract_alternatives(page):
-    return extract_list(
-        page,
-        tab_selectors=[
-            "a[href='#alternatives']", "a[href='#replacements']",
-            "a[href='#relatedProducts']", "li a:has-text('Alternatives')",
-            "li a:has-text('Replacement')", "button:has-text('Alternatives')",
-        ],
-        section_sel="[id*='alternative'], [class*='alternative'], [id*='replacement']",
-        item_sel=(
-            "[class*='alternative'] [class*='part'], "
-            "[class*='replacement'] [class*='part'], "
-            "[id*='alternative'] td, [id*='replacement'] td"
-        ),
-    )
-
-
-def extract_equipment(page):
-    click_tab(page, [
-        "a[href='#applications']", "a[href='#equipment']",
-        "li a:has-text('Applications')", "li a:has-text('Equipment')",
-        "button:has-text('Applications')",
-    ])
-    click_show_more(page, "[id*='application'], [class*='application'], [id*='equipment']")
-    equipment = []
+def extract_alternatives(page) -> list:
+    click_tab_by_keywords(page, TAB_KEYWORDS["alt"])
+    click_show_more_smart(page)
     try:
-        for row in page.locator(
-            "[class*='application'] tr, [id*='application'] tr, [class*='equipment'] tr"
-        ).all():
-            cells = row.locator("td").all()
-            if cells:
-                parts = [c.inner_text().strip() for c in cells if c.inner_text().strip()]
-                if parts:
-                    equipment.append(" | ".join(parts))
+        rows = extract_all_tables(page)
+        alts = []
+        for row in rows:
+            line = " | ".join(row)
+            if line and line not in alts:
+                alts.append(line)
+        return alts[:200]
     except Exception:
-        pass
-    return equipment
+        return []
 
 
-def scrape_product(page, part_number):
+def extract_equipment(page) -> list:
+    click_tab_by_keywords(page, TAB_KEYWORDS["equip"])
+    click_show_more_smart(page)
+    try:
+        rows = extract_all_tables(page)
+        equip = []
+        for row in rows:
+            if len(row) >= 2:
+                line = " | ".join(row)
+                if line and line not in equip:
+                    equip.append(line)
+        return equip[:5000]
+    except Exception:
+        return []
+
+
+# ── scrape por producto ─────────────────────────────────────────────────────
+
+def scrape_product(page, part_number: str) -> dict:
     url = f"{PRODUCT_BASE}{part_number}"
     result = {
         "part_number": part_number,
@@ -277,35 +309,37 @@ def scrape_product(page, part_number):
         "cross_references": [],
         "alternatives": [],
         "equipment": [],
-        "scraped_at": datetime.utcnow().isoformat(),
+        "scraped_at": datetime.now().isoformat(),
         "error": None,
     }
     try:
-        page.goto(url, timeout=45000, wait_until="domcontentloaded")
+        page.goto(url, timeout=50000, wait_until="domcontentloaded")
         time.sleep(3)
         dismiss_popups(page)
-        for sel in ["h1.product-title", "h1[class*='name']", "h1", ".product-name"]:
-            try:
-                el = page.locator(sel).first
-                if el.is_visible(timeout=800):
-                    result["description"] = el.inner_text().strip()
-                    break
-            except Exception:
-                pass
-        result["attributes"]      = extract_attributes(page)
+
+        # Descripción
+        desc = page.evaluate("""() => {
+            const h = document.querySelector('h1');
+            return h ? h.textContent.trim() : '';
+        }""")
+        result["description"] = desc
+
+        result["attributes"]       = extract_attributes(page)
         result["cross_references"] = extract_cross_refs(page)
-        result["alternatives"]    = extract_alternatives(page)
-        result["equipment"]       = extract_equipment(page)
+        result["alternatives"]     = extract_alternatives(page)
+        result["equipment"]        = extract_equipment(page)
+
     except PlaywrightTimeout:
         result["error"] = "timeout"
         logging.warning(f"  TIMEOUT: {part_number}")
     except Exception as e:
         result["error"] = str(e)
         logging.warning(f"  ERROR {part_number}: {e}")
+
     return result
 
 
-# ── progreso ───────────────────────────────────────────────────────────────
+# ── progreso ────────────────────────────────────────────────────────────────
 
 def load_progress():
     try:
@@ -320,28 +354,30 @@ def save_progress(p):
         json.dump(p, f, ensure_ascii=False, indent=2)
 
 
-# ── main ───────────────────────────────────────────────────────────────────
+# ── main ────────────────────────────────────────────────────────────────────
 
 def main():
-    progress  = load_progress()
-    done_set  = set(progress["done"])
-    results   = progress["results"]
+    progress = load_progress()
+    done_set = set(progress["done"])
+    results  = progress["results"]
 
     with sync_playwright() as pw:
-        logging.info(f"Stealth: {'SI' if STEALTH else 'NO (pip install playwright-stealth)'}")
-        logging.info(f"Perfil Chrome: {PROFILE_DIR}")
+        logging.info(f"Stealth: {'SI' if STEALTH else 'NO'}")
+        logging.info(f"Perfil: {PROFILE_DIR}")
 
         context = pw.chromium.launch_persistent_context(
             user_data_dir=PROFILE_DIR,
             channel="chrome",
             headless=False,
-            slow_mo=80,
+            slow_mo=60,
+            locale="en-US",
             viewport={"width": 1366, "height": 768},
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/124.0.0.0 Safari/537.36"
             ),
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
             args=["--disable-blink-features=AutomationControlled"],
             ignore_default_args=["--enable-automation"],
         )
@@ -350,9 +386,9 @@ def main():
         if STEALTH:
             stealth_sync(page)
 
-        # ── 1. Recolectar part numbers ─────────────────────────────────
+        # 1. Recolectar part numbers
         if not progress["part_numbers"]:
-            logging.info("=== Recolectando links categoría Lube (440) ===")
+            logging.info("=== Recolectando 440 part numbers ===")
             pns = collect_product_links(page)
             progress["part_numbers"] = pns
             save_progress(progress)
@@ -362,7 +398,7 @@ def main():
 
         total = len(pns)
 
-        # ── 2. Scrape por producto ─────────────────────────────────────
+        # 2. Scrape por producto
         for idx, pn in enumerate(pns, 1):
             if pn in done_set:
                 logging.info(f"[{idx}/{total}] {pn} ya procesado")
