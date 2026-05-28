@@ -66,7 +66,18 @@ PRODUCT_TYPE_KEYWORDS: Dict[str, List[str]] = {
     "FILTER":    ["filter", "filtro", "spin-on"],
 }
 
-DONALDSON_BASE_URL = "https://shop.donaldson.com/store/en-us/product/"
+DONALDSON_BASE_URL   = "https://shop.donaldson.com/store/en-us/product/"
+DONALDSON_SEARCH_URL = "https://shop.donaldson.com/store/en-us/search?q="
+
+# ELIMFILTERS SKU prefix → Donaldson filter category hint
+ELIM_PREFIX_MAP = {
+    "EL": "lube oil filter",
+    "EF": "fuel filter",
+    "EA": "air filter",
+    "ED": "air dryer",
+    "EH": "hydraulic filter",
+    "EC": "cabin air filter",
+}
 
 HEADERS = {
     "User-Agent": (
@@ -126,6 +137,55 @@ def ddg_search(query: str) -> List[Dict]:
     except Exception as e:
         logging.warning(f"DDG '{query}' → {e}")
         return []
+
+
+def decode_elim_sku(sku: str) -> Dict:
+    """
+    Decode ELIMFILTERS SKU to extract filter type and last 4 Donaldson digits.
+    Pattern: E[type_letter][digit][4_donaldson_suffix]
+    Examples: EL82100 → type=lube, suffix=2100 → Donaldson P??2100
+              EF90529 → type=fuel, suffix=0529 → Donaldson P??0529
+              EA10695 → type=air,  suffix=0695 → Donaldson P??0695
+              ED41466 → type=dryer,suffix=1466 → Donaldson P??1466
+    """
+    m = re.match(r'^E([A-Z])(\d)(\d{4})$', sku.upper())
+    if not m:
+        return {}
+    prefix = "E" + m.group(1)
+    suffix4 = m.group(3)   # last 4 digits shared with Donaldson
+    return {
+        "elim_prefix": prefix,
+        "filter_type_hint": ELIM_PREFIX_MAP.get(prefix, "filter"),
+        "donaldson_suffix4": suffix4,
+    }
+
+
+def find_donaldson_code(suffix4: str, filter_type_hint: str) -> Optional[str]:
+    """
+    Search Donaldson for a P-number ending in suffix4.
+    Uses Donaldson's search endpoint.
+    """
+    url = f"{DONALDSON_SEARCH_URL}{suffix4}"
+    resp = safe_get(url)
+    if not resp:
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    # Find product links like /product/P552100
+    for a in soup.find_all("a", href=re.compile(r"/product/P\d{6}", re.I)):
+        href = a.get("href", "")
+        m = re.search(r"P(\d{6})", href, re.I)
+        if m:
+            code = f"P{m.group(1)}"
+            if code.endswith(suffix4):
+                logging.info(f"  Found Donaldson code: {code} (suffix={suffix4})")
+                return code
+    # Fallback: search page text for P######
+    page_text = soup.get_text()
+    for m in re.finditer(r"\bP(\d{6})\b", page_text):
+        code = f"P{m.group(1)}"
+        if code.endswith(suffix4):
+            return code
+    return None
 
 
 def detect_brand(sku: str) -> str:
@@ -302,6 +362,20 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
                 base_code = str(code).strip()
                 logging.info(f"  Using cross-ref as Donaldson code: {base_code}")
                 break
+
+    # Decode ELIMFILTERS SKU pattern to derive Donaldson code
+    elim_info = decode_elim_sku(sku)
+    if not base_code and elim_info:
+        suffix4 = elim_info["donaldson_suffix4"]
+        type_hint = elim_info["filter_type_hint"]
+        logging.info(f"  ELIM SKU decoded: type={type_hint}, suffix={suffix4} → searching Donaldson")
+        found = find_donaldson_code(suffix4, type_hint)
+        time.sleep(REQUEST_DELAY)
+        if found:
+            base_code = found
+            logging.info(f"  Resolved Donaldson code: {base_code}")
+        else:
+            logging.info(f"  Donaldson code not found for suffix {suffix4}")
 
     # Best codes to search with (use recognizable cross-ref codes, not EL-prefix)
     searchable_codes = [c for c in known_crossrefs if not c.upper().startswith("EL")][:5]
