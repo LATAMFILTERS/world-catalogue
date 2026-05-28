@@ -400,6 +400,8 @@ def generate_report(results: List[ValidationResult], path: Path) -> None:
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
+    global REQUEST_DELAY
+
     ap = argparse.ArgumentParser(description="ELIMFILTERS Web Validation Pipeline")
     ap.add_argument("--input",      default=DEFAULT_INPUT,      help="Input JSON path")
     ap.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, help="Output directory")
@@ -416,7 +418,6 @@ def main() -> None:
         datefmt="%H:%M:%S",
     )
 
-    global REQUEST_DELAY
     REQUEST_DELAY = args.delay
 
     # Load input
