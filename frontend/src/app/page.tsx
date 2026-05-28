@@ -190,7 +190,7 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              ELIMFILTERS
+              ELIMFILTERS®
             </motion.h1>
           </div>
 
