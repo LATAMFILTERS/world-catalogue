@@ -251,148 +251,159 @@ def collect_product_links(page):
     return part_numbers
 
 
-# ── extracción genérica de tablas ───────────────────────────────────────────
+def click_btn_by_id(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
+    """Pulsa un botón por su ID hasta que desaparece o no hay progreso."""
+    clicks = 0
+    prev_count = -1
+    while clicks < max_clicks:
+        js = f"""() => {{
+            const btn = document.getElementById('{btn_id}');
+            if (btn && btn.style.display !== 'none' && btn.offsetParent !== null) {{
+                btn.scrollIntoView({{behavior:'instant',block:'center'}});
+                btn.click();
+                return true;
+            }}
+            return false;
+        }}"""
+        if not page.evaluate(js):
+            break
+        clicks += 1
+        time.sleep(2)
+        cur = page.locator("tr").count()
+        if cur == prev_count:
+            break
+        prev_count = cur
+    if clicks:
+        logging.info(f"    [{btn_id}] pulsado {clicks}x")
+    return clicks
 
-def extract_all_tables(page) -> list:
-    """Extrae TODAS las filas de TODAS las tablas visibles en la página."""
-    return page.evaluate("""() => {
-        const rows = [];
-        document.querySelectorAll('table tr').forEach(tr => {
-            const cells = Array.from(tr.querySelectorAll('td, th'))
-                              .map(c => c.textContent.trim())
-                              .filter(t => t.length > 0);
-            if (cells.length >= 1) rows.push(cells);
+
+def expand_cross_ref_plus_icons(page):
+    """Expande todas las filas childRows pulsando iconos fa-plus en crossreferenceBody."""
+    n = page.evaluate("""() => {
+        let count = 0;
+        document.querySelectorAll('#crossreferenceBody .fa-plus').forEach(icon => {
+            icon.click();
+            count++;
         });
-        return rows;
+        return count;
     }""")
+    if n:
+        logging.info(f"    fa-plus expandidos: {n}")
+        time.sleep(1)
 
+
+# ── extracción por sección ──────────────────────────────────────────────────
 
 def extract_attributes(page) -> dict:
-    """Especificaciones técnicas — tab 'Attributes' con Show More."""
-    click_tab_by_keywords(page, TAB_KEYWORDS["specs"])
-    click_show_more_in_section(page)
-    attrs = {}
+    """#attributesBody — tabla de specs, Show More revela filas ocultas."""
+    click_btn_by_id(page, "showMoreProductSpecsButton", max_clicks=5)
     try:
-        data = page.evaluate("""() => {
-            const result = {};
-            // dl dt/dd (patrón más común en Donaldson)
-            document.querySelectorAll('dl').forEach(dl => {
-                const dts = Array.from(dl.querySelectorAll('dt'));
-                const dds = Array.from(dl.querySelectorAll('dd'));
-                dts.forEach((dt, i) => {
-                    const k = dt.textContent.trim();
-                    const v = dds[i] ? dds[i].textContent.trim() : '';
-                    if (k && k !== 'Recently Viewed') result[k] = v;
-                });
+        return page.evaluate("""() => {
+            const attrs = {};
+            const body = document.getElementById('attributesBody');
+            if (!body) return attrs;
+            body.querySelectorAll('table tr').forEach(tr => {
+                const cells = tr.querySelectorAll('td');
+                if (cells.length >= 2) {
+                    const k = cells[0].textContent.trim();
+                    const v = cells[1].textContent.trim();
+                    if (k && !k.includes('Proposition 65') && !k.includes('WARNING'))
+                        attrs[k] = v;
+                }
             });
-            // table rows key=col1 val=col2
-            if (Object.keys(result).length === 0) {
-                document.querySelectorAll('table tr').forEach(tr => {
-                    const cells = tr.querySelectorAll('td, th');
-                    if (cells.length >= 2) {
-                        const k = cells[0].textContent.trim();
-                        const v = cells[1].textContent.trim();
-                        if (k) result[k] = v;
-                    }
-                });
-            }
-            return result;
+            return attrs;
         }""")
-        attrs.update(data)
     except Exception:
-        pass
-    return attrs
+        return {}
 
 
 def extract_cross_refs(page) -> list:
-    """OEM codes (Cross Reference) — Show More + expansión de botones '+'."""
-    exists = click_tab_by_keywords(page, TAB_KEYWORDS["cross"])
-    if not exists:
+    """#crossreferenceBody — OEM codes: Show More + expand fa-plus child rows."""
+    body = page.evaluate("() => !!document.getElementById('crossreferenceBody')")
+    if not body:
         return []
 
-    # Ciclo: Show More → expandir '+' → repetir
-    for _ in range(10):
-        showed = click_show_more_in_section(page)
-        expand_plus_buttons(page)
+    # Ciclo: Show More → expand fa-plus → repetir
+    for _ in range(60):
+        showed = click_btn_by_id(page, "showAllCrossReferenceListButton", max_clicks=1)
+        expand_cross_ref_plus_icons(page)
         if not showed:
             break
 
     try:
-        codes = page.evaluate("""() => {
+        return page.evaluate("""() => {
             const results = [];
-            // Intentar extraer de tabla: columna 'Competitor Part' o similar
-            document.querySelectorAll('table tr').forEach(tr => {
-                const cells = Array.from(tr.querySelectorAll('td, th'))
-                                   .map(c => c.textContent.trim())
-                                   .filter(t => t.length > 0);
-                if (cells.length >= 1) {
-                    // Buscar celda que parezca un código (no solo números, no muy larga)
-                    cells.forEach(c => {
-                        if (c.length >= 2 && c.length <= 30 &&
-                            !c.startsWith('http') &&
-                            !/^\\d+$/.test(c) &&
-                            !results.includes(c)) {
-                            results.push(c);
-                        }
-                    });
+            const body = document.getElementById('crossreferenceBody');
+            if (!body) return results;
+            body.querySelectorAll('tr').forEach(tr => {
+                const mfr_td = tr.querySelector('td[data-manufacturer]');
+                const pn_td  = tr.querySelector('td[data-manufacturepartnumber] span');
+                if (!mfr_td || !pn_td) return;
+                const mfr = mfr_td.textContent.replace(/[\\n\\t]/g,'').trim()
+                                  .replace(/^[\\s\\u00a0]+/,'');
+                const pn  = pn_td.textContent.trim();
+                if (mfr && pn && pn !== '-') {
+                    results.push({ manufacturer: mfr, part_number: pn });
                 }
-            });
-            // También buscar en listas
-            document.querySelectorAll('[class*="cross"] li, [class*="interchange"] li').forEach(li => {
-                const t = li.textContent.trim();
-                if (t.length >= 2 && t.length <= 30 && !results.includes(t)) results.push(t);
             });
             return results;
         }""")
-        return codes[:1000]
     except Exception:
         return []
 
 
 def extract_alternatives(page) -> list:
-    """Alternate Parts — partes alternativas de Donaldson."""
-    click_tab_by_keywords(page, TAB_KEYWORDS["alt"])
-    click_show_more_in_section(page)
+    """#alternateBody — carousel de partes alternativas Donaldson."""
     try:
-        rows = page.evaluate("""() => {
+        return page.evaluate("""() => {
             const results = [];
-            document.querySelectorAll('table tr').forEach(tr => {
-                const cells = Array.from(tr.querySelectorAll('td, th'))
-                                   .map(c => c.textContent.trim())
-                                   .filter(t => t);
-                if (cells.length > 0) results.push(cells.join(' | '));
+            const body = document.getElementById('alternateBody');
+            if (!body) return results;
+            body.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
+                const pn = el.textContent.trim();
+                if (pn && !results.includes(pn)) results.push(pn);
             });
             return results;
         }""")
-        return rows[:200]
     except Exception:
         return []
 
 
 def extract_equipment(page) -> list:
-    """Equipment applications — Show More para cargar todos."""
-    exists = click_tab_by_keywords(page, TAB_KEYWORDS["equip"])
-    if not exists:
+    """#equiptmentBody — equipment applications. Show More hasta agotar."""
+    body = page.evaluate("() => !!document.getElementById('equiptmentBody')")
+    if not body:
         return []
 
-    # Click Show More hasta agotar
-    for _ in range(20):
-        showed = click_show_more_in_section(page)
-        if not showed:
+    for _ in range(200):
+        if not click_btn_by_id(page, "showMorePdpListButton", max_clicks=1):
             break
 
     try:
-        rows = page.evaluate("""() => {
+        return page.evaluate("""() => {
             const results = [];
-            document.querySelectorAll('table tr').forEach(tr => {
-                const cells = Array.from(tr.querySelectorAll('td, th'))
-                                   .map(c => c.textContent.trim())
-                                   .filter(t => t);
-                if (cells.length >= 2) results.push(cells.join(' | '));
+            const body = document.getElementById('equiptmentBody');
+            if (!body) return results;
+            body.querySelectorAll('tr').forEach(tr => {
+                const eq  = tr.querySelector('td[data-equipment]');
+                if (!eq) return;
+                const yr  = tr.querySelector('td[data-year]');
+                const typ = tr.querySelector('td[data-type] span');
+                const opt = tr.querySelector('td[data-options] span');
+                const eng = tr.querySelector('td[data-engine] span');
+                const eo  = tr.querySelector('td[data-enginetypes] span');
+                results.push({
+                    equipment:     eq.textContent.trim(),
+                    year:          yr  ? yr.textContent.trim()  : '',
+                    type:          typ ? typ.textContent.trim() : '',
+                    options:       opt ? opt.textContent.trim() : '',
+                    engine:        eng ? eng.textContent.trim() : '',
+                    engine_option: eo  ? eo.textContent.trim()  : '',
+                });
             });
             return results;
         }""")
-        return rows[:5000]
     except Exception:
         return []
 
