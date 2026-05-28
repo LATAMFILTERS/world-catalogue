@@ -291,13 +291,20 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
         except Exception:
             pass
 
-    # Use first Donaldson P-number from known crossrefs as base_code if missing
+    # If codigo_base == sku, it's not a real Donaldson code — ignore it
+    if base_code and base_code.upper() == sku.upper():
+        base_code = ""
+
+    # Find Donaldson P-number from known crossrefs
     if not base_code:
         for code in known_crossrefs:
-            if re.match(r"P\d{6}", str(code), re.IGNORECASE):
-                base_code = str(code)
-                logging.info(f"  Using cross-ref as base_code: {base_code}")
+            if re.match(r"^P\d{6}$", str(code).strip(), re.IGNORECASE):
+                base_code = str(code).strip()
+                logging.info(f"  Using cross-ref as Donaldson code: {base_code}")
                 break
+
+    # Best codes to search with (use recognizable cross-ref codes, not EL-prefix)
+    searchable_codes = [c for c in known_crossrefs if not c.upper().startswith("EL")][:5]
 
     r = ValidationResult(sku=sku, original_data=data, brand=detect_brand(sku))
     if r.brand == "Unknown" and known_crossrefs:
@@ -318,27 +325,34 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
             r.product_type = don["product_type"]
             page_text = don["raw_text"]
 
-    # ── Step 2: DuckDuckGo search ─────────────────────────────────────────────
-    # Build best search query: prefer known Donaldson/Fleetguard codes
-    search_code = base_code or (known_crossrefs[0] if known_crossrefs else sku)
-    type_hint   = filter_type.replace(" FILTRATION", "").lower() if filter_type else "filter"
-    query = f'"{search_code}" {type_hint} filter cross reference OEM equipment applications'
-    logging.info(f"  DDG: {query}")
-    hits = ddg_search(query)
-    time.sleep(REQUEST_DELAY)
+    # ── Step 2: DuckDuckGo — search by best available codes ──────────────────
+    type_hint = filter_type.replace(" FILTRATION", "").lower() if filter_type else "filter"
 
-    for hit in hits:
-        snippet = hit.get("body", "")
-        url     = hit.get("href", "")
-        snippets.append(f"[{url}]\n{snippet}")
-        if url:
-            r.source_urls.append(url)
-        # Heuristic: pull codes from snippet text
-        codes_by_brand = extract_codes_from_text(snippet)
-        for codes in codes_by_brand.values():
-            for code in codes:
-                if code != sku:
-                    r.cross_reference_codes.append(code)
+    # Run up to 2 searches: first with base_code or best crossref, second with another
+    queries: List[str] = []
+    if base_code:
+        queries.append(f'"{base_code}" {type_hint} filter equipment applications')
+    if searchable_codes:
+        codes_str = " OR ".join(f'"{c}"' for c in searchable_codes[:3])
+        queries.append(f'({codes_str}) {type_hint} filter equipment applications OEM')
+    if not queries:
+        queries.append(f'"{sku}" {type_hint} filter cross reference equipment')
+
+    for query in queries[:2]:
+        logging.info(f"  DDG: {query}")
+        hits = ddg_search(query)
+        time.sleep(REQUEST_DELAY)
+        for hit in hits:
+            snippet = hit.get("body", "")
+            url     = hit.get("href", "")
+            snippets.append(f"[{url}]\n{snippet}")
+            if url:
+                r.source_urls.append(url)
+            codes_by_brand = extract_codes_from_text(snippet)
+            for codes in codes_by_brand.values():
+                for code in codes:
+                    if code != sku:
+                        r.cross_reference_codes.append(code)
 
     # ── Step 3: OpenAI structured extraction ──────────────────────────────────
     if openai_client and (page_text or snippets):
