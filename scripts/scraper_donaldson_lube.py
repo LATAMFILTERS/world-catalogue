@@ -1,6 +1,7 @@
 """
-scraper_donaldson_lube.py
-Extrae los 440 filtros Lube de Donaldson: specs, cross-refs, alternativas, equipment.
+scraper_donaldson_lube.py  —  v4 (nuclear tab-click + verified DOM selectors)
+Extrae los 351 filtros Lube de Donaldson: specs, cross-refs, alternativas, equipment.
+
 Ejecutar:
     pip install playwright playwright-stealth
     playwright install chrome
@@ -30,8 +31,7 @@ logging.basicConfig(
     ],
 )
 
-# Forzar inglés en la URL para evitar redirección a es-us
-CATEGORY_URL = (
+CATEGORY_URL  = (
     "https://shop.donaldson.com/store/en-us/search"
     "?N=426772457&Nr=product.language%3AEnglish&catNav=true&st=parts"
 )
@@ -43,16 +43,8 @@ PROFILE_DIR   = os.path.join(os.path.expanduser("~"), ".donaldson_profile")
 SHOW_MORE_LIMIT = 80
 PAUSE_BETWEEN   = (5, 10)
 
-# Nombres EXACTOS de tabs en Donaldson (verificados en producto real)
-TAB_KEYWORDS = {
-    "specs":  ["Attributes"],
-    "alt":    ["Alternate Parts"],
-    "cross":  ["Cross Reference"],
-    "equip":  ["Equipment"],
-}
 
-
-# ── utilidades ─────────────────────────────────────────────────────────────
+# ── helpers ────────────────────────────────────────────────────────────────
 
 def rand_sleep(lo=None, hi=None):
     lo, hi = (lo, hi) if lo else PAUSE_BETWEEN
@@ -60,242 +52,161 @@ def rand_sleep(lo=None, hi=None):
 
 
 def dismiss_popups(page):
-    # Cerrar modal de región/idioma de Donaldson (aparece en primera visita)
-    # Primero intentar la X del modal
     try:
         page.keyboard.press("Escape")
-        time.sleep(0.5)
+        time.sleep(0.4)
     except Exception:
         pass
-
     for sel in [
-        # Modal región Donaldson — botón X
-        "button.modal__close",
-        "button[class*='close'][class*='modal']",
-        "[class*='region'] button[class*='close']",
-        "[class*='region-selector'] button",
-        "button[aria-label='Close']",
-        "[data-dismiss='modal']",
-        # Cookies
+        "button.modal__close", "button[class*='close'][class*='modal']",
+        "[data-dismiss='modal']", "button[aria-label='Close']",
         "button#onetrust-accept-btn-handler",
-        "button:has-text('Accept All')",
-        "button:has-text('Accept')",
-        "button:has-text('Aceptar')",
-        "button.close",
-        ".modal-close",
+        "button:has-text('Accept All')", "button:has-text('Accept')",
+        "button:has-text('Aceptar')", "button.close",
     ]:
         try:
             btn = page.locator(sel).first
-            if btn.is_visible(timeout=800):
+            if btn.is_visible(timeout=600):
                 btn.click()
-                time.sleep(0.6)
+                time.sleep(0.5)
         except Exception:
             pass
-
-    # Si aún hay overlay, hacer clic fuera del modal
     try:
-        overlay = page.locator("[class*='overlay']:visible, [class*='backdrop']:visible").first
-        if overlay.is_visible(timeout=500):
+        ov = page.locator("[class*='overlay']:visible,[class*='backdrop']:visible").first
+        if ov.is_visible(timeout=400):
             page.mouse.click(10, 10)
-            time.sleep(0.5)
+            time.sleep(0.4)
     except Exception:
         pass
 
 
-def click_tab_by_keywords(page, keywords: list) -> bool:
-    """Clic en tab con texto EXACTO — evita matches en nav global."""
-    js = """(keywords) => {
-        // Buscar todos los <a> y <button> visibles
-        const candidates = Array.from(document.querySelectorAll('a, button, li > a'));
-        for (const kw of keywords) {
-            const match = candidates.find(el => {
-                if (!el.offsetParent) return false;
-                // Texto limpio del elemento (colapsando espacios)
-                const txt = el.textContent.trim().replace(/\\s+/g, ' ');
-                // Match EXACTO (no contains) para evitar "Attribute Search" etc.
-                return txt === kw;
-            });
-            if (match) {
-                match.scrollIntoView({behavior:'instant', block:'center'});
-                match.click();
-                return match.textContent.trim().replace(/\\s+/g,' ');
-            }
-        }
+# ── tab activation ─────────────────────────────────────────────────────────
+
+# Map section-ID → visible tab label text
+_SECTION_TO_LABEL = {
+    "attributesBody":     "Attributes",
+    "crossreferenceBody": "Cross Reference",
+    "equiptmentBody":     "Equipment",        # typo intencional Donaldson
+    "alternateBody":      "Alternate Parts",
+}
+
+def activate_tab(page, section_id: str) -> bool:
+    """
+    Activa el tab que controla `section_id`.
+    Tres métodos en orden de especificidad:
+      1. href/data-target apuntando al ID exacto
+      2. data-toggle="tab" + data-target (sin href)
+      3. Nuclear: cualquier elemento visible cuyo texto sea el label exacto,
+         excluyendo los propios contenidos de sección
+    Después de clic espera hasta 5 s a que el ID tenga contenido (td / img / tr).
+    """
+    label = _SECTION_TO_LABEL.get(section_id, "")
+
+    # ── Método 1: atributos que apuntan directamente al ID ─────────────────
+    clicked = page.evaluate(f"""() => {{
+        const t = document.querySelector(
+            'a[href="#{section_id}"], a[data-target="#{section_id}"], [data-target="#{section_id}"]'
+        );
+        if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'm1'; }}
         return null;
-    }"""
-    try:
-        result = page.evaluate(js, keywords)
-        if result:
-            logging.info(f"    Tab '{result}' clickeado")
-            time.sleep(2.5)
-            return True
-        else:
-            logging.info(f"    Tab '{keywords[0]}' no existe en este producto")
-    except Exception as e:
-        logging.warning(f"    Tab error: {e}")
-    return False
+    }}""")
 
+    # ── Método 2: data-toggle="tab" con texto exacto ───────────────────────
+    if not clicked and label:
+        clicked = page.evaluate(f"""() => {{
+            const tabs = Array.from(document.querySelectorAll('[data-toggle="tab"]'));
+            const t = tabs.find(el => el.textContent.trim() === '{label}');
+            if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'm2'; }}
+            return null;
+        }}""")
 
-def click_show_more_in_section(page, max_clicks=SHOW_MORE_LIMIT):
-    """Pulsa 'Show More' repetidamente hasta agotar. Detecta loop por conteo de filas."""
-    clicks = 0
-    prev_count = -1
-    while clicks < max_clicks:
-        js = """() => {
-            const all = Array.from(document.querySelectorAll('button, a'));
-            const btn = all.find(el => {
-                if (!el.offsetParent) return false;
-                const t = el.textContent.trim().replace(/\\s+/g,' ');
-                return t === 'Show More' || t === 'Mostrar más' || t === 'Ver más' || t === 'Load More';
-            });
-            if (btn) { btn.scrollIntoView({behavior:'instant',block:'center'}); btn.click(); return true; }
-            return false;
-        }"""
-        try:
-            clicked = page.evaluate(js)
-            if not clicked:
-                break
-            clicks += 1
-            time.sleep(2)
-            current = page.locator("tr, li, [class*='row']").count()
-            if current == prev_count:
-                break
-            prev_count = current
-        except Exception:
-            break
-    if clicks:
-        logging.info(f"    Show More: {clicks} clic(s)")
-    return clicks
-
-
-def expand_plus_buttons(page):
-    """Pulsa TODOS los botones '+' visibles en la sección activa (Cross Reference)."""
-    expanded = page.evaluate("""() => {
-        let count = 0;
-        const btns = Array.from(document.querySelectorAll('button, a, span'));
-        btns.forEach(el => {
-            if (!el.offsetParent) return;
-            const t = el.textContent.trim();
-            // "+" solo, o "+ 5" (número de sub-items ocultos)
-            if (t === '+' || /^\\+\\s*\\d+$/.test(t)) {
+    # ── Método 3: nuclear — cualquier elemento visible con ese texto exacto,
+    #    excluyendo los contenedores de sección conocidos ──────────────────
+    if not clicked and label:
+        # Secciones a excluir para no clickar headings internos
+        excl = "#attributesBody,#crossreferenceBody,#equiptmentBody,#alternateBody,.productSpecsSection"
+        clicked = page.evaluate(f"""() => {{
+            const excl = '{excl}';
+            // Recorre TODOS los elementos; encuentra el primero visible con texto exacto
+            // que NO esté dentro de una sección de contenido
+            for (const el of document.querySelectorAll('*')) {{
+                if (!el.offsetParent) continue;                  // oculto
+                if (el.children.length > 2) continue;            // contenedor grande
+                if (el.textContent.trim() !== '{label}') continue;
+                if (el.closest(excl)) continue;                  // dentro de sección
+                el.scrollIntoView({{behavior:'instant',block:'center'}});
                 el.click();
-                count++;
-            }
-        });
-        return count;
-    }""")
-    if expanded:
-        logging.info(f"    '+' botones expandidos: {expanded}")
-        time.sleep(1.5)
+                return 'm3:' + el.tagName;
+            }}
+            return null;
+        }}""")
 
-
-# ── colección de links de categoría ────────────────────────────────────────
-
-def collect_product_links(page):
-    """Navega la categoría Lube y devuelve paths completos (PART/SKUID)."""
-    page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
-    time.sleep(4)
-    dismiss_popups(page)
-
-    seen_parts = set()
-    product_paths = []   # "DBL7900/11907" — path completo para URL correcta
-    page_num = 1
-
-    while True:
-        logging.info(f"  Página {page_num} …")
+    if clicked:
+        logging.info(f"    Tab #{section_id} → {clicked}")
+        # Esperar hasta 5 s a que la sección tenga contenido real
         try:
-            page.wait_for_load_state("networkidle", timeout=20000)
+            page.wait_for_function(
+                f"""() => {{
+                    const b = document.getElementById('{section_id}');
+                    return b && (b.querySelectorAll('td,tr,img').length > 0);
+                }}""",
+                timeout=5000
+            )
         except Exception:
-            pass
+            time.sleep(2)   # fallback si wait_for_function falla
+    else:
+        logging.warning(f"    Tab #{section_id} NO encontrado")
 
-        # Guardar path completo (PART/SKUID) para evitar redireccionamiento incorrecto
-        paths = page.evaluate("""() => {
-            const anchors = Array.from(document.querySelectorAll('a[href*="/product/"]'));
-            return anchors.map(a => {
-                const href = a.getAttribute('href') || '';
-                // Extrae todo después de /product/ (ej. "DBL7900/11907")
-                const path = href.split('/product/').pop().split('?')[0].trim().toUpperCase();
-                return path;
-            }).filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
-        }""")
-
-        added = 0
-        for path in paths:
-            part = path.split('/')[0]  # "DBL7900" — solo para deduplicar
-            if part not in seen_parts:
-                seen_parts.add(part)
-                product_paths.append(path)
-                added += 1
-
-        logging.info(f"    +{added} nuevos (total {len(product_paths)})")
-
-        # Siguiente página — buscar en inglés y español
-        next_clicked = page.evaluate("""() => {
-            const btns = Array.from(document.querySelectorAll('a, button'));
-            const nxt = btns.find(b =>
-                b.offsetParent !== null && (
-                    b.getAttribute('aria-label') === 'Next page' ||
-                    b.textContent.trim() === 'Next' ||
-                    b.textContent.trim() === 'Siguiente' ||
-                    b.classList.contains('next-page') ||
-                    (b.parentElement && b.parentElement.classList.contains('next'))
-                )
-            );
-            if (nxt) { nxt.click(); return true; }
-            return false;
-        }""")
-
-        if not next_clicked:
-            logging.info("  No hay más páginas")
-            break
-        page_num += 1
-        rand_sleep(2, 5)
-
-    logging.info(f"Total productos: {len(product_paths)}")
-    return product_paths
+    return bool(clicked)
 
 
-def click_btn_by_id(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
-    """Pulsa botón por ID. Espera hasta 5s para que el AJAX lo haga visible."""
+# ── Show More button ────────────────────────────────────────────────────────
+
+def click_show_more(page, btn_id: str, max_clicks: int = SHOW_MORE_LIMIT) -> int:
+    """
+    Hace clic en un botón por su ID usando Playwright locator.
+    Espera hasta 4 s a que sea visible (el AJAX puede tardar).
+    Tras cada clic espera networkidle o 3 s.
+    Para si el número de filas no cambia (progreso nulo).
+    """
     clicks = 0
     prev_rows = -1
     loc = page.locator(f"#{btn_id}")
     while clicks < max_clicks:
         try:
-            # 5s de espera: el AJAX puede tardar más que 1.5s
-            if not loc.is_visible(timeout=5000):
+            if not loc.is_visible(timeout=4000):
                 break
             loc.scroll_into_view_if_needed(timeout=3000)
             loc.click(timeout=5000)
             clicks += 1
-            # Esperar a que el contenido nuevo cargue
             try:
-                page.wait_for_load_state("networkidle", timeout=8000)
+                page.wait_for_load_state("networkidle", timeout=7000)
             except Exception:
                 time.sleep(3)
-            cur_rows = page.locator("tr").count()
-            if cur_rows == prev_rows:
+            cur = page.locator("tr").count()
+            if cur == prev_rows:
                 break
-            prev_rows = cur_rows
+            prev_rows = cur
         except Exception:
             break
     if clicks:
-        logging.info(f"    [{btn_id}] pulsado {clicks}x")
+        logging.info(f"    [{btn_id}] × {clicks}")
     return clicks
 
 
-def expand_cross_ref_plus_icons(page):
-    """Expande filas childRows: hace clic en cada fa-plus visible en crossreferenceBody."""
-    # Clic en todos los + visibles usando Playwright locator (más fiable)
-    icons = page.locator("#crossreferenceBody .fa-plus")
+# ── Cross Reference: expandir filas "+" ────────────────────────────────────
+
+def expand_cross_plus(page, body_id: str):
+    """Expande todos los fa-plus visibles dentro de `body_id`."""
+    icons = page.locator(f"#{body_id} .fa-plus")
     total = 0
     try:
-        count = icons.count()
-        for i in range(count):
+        n = icons.count()
+        for i in range(n):
             try:
                 ic = icons.nth(i)
-                if ic.is_visible(timeout=800):
-                    ic.scroll_into_view_if_needed(timeout=1000)
+                if ic.is_visible(timeout=600):
+                    ic.scroll_into_view_if_needed(timeout=800)
                     ic.click(timeout=2000)
                     total += 1
                     time.sleep(0.4)
@@ -304,324 +215,290 @@ def expand_cross_ref_plus_icons(page):
     except Exception:
         pass
     if total:
-        logging.info(f"    fa-plus expandidos: {total}")
-        time.sleep(1)
+        logging.info(f"    fa-plus × {total}")
+        time.sleep(0.8)
+
+
+# ── colección de links de categoría ────────────────────────────────────────
+
+def collect_product_links(page):
+    """Devuelve lista de paths completos 'PART/SKUID' de la categoría Lube."""
+    page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
+    time.sleep(4)
+    dismiss_popups(page)
+
+    seen  = set()
+    paths = []
+    pg    = 1
+
+    while True:
+        logging.info(f"  Página {pg} …")
+        try:
+            page.wait_for_load_state("networkidle", timeout=20000)
+        except Exception:
+            pass
+
+        raw = page.evaluate("""() => {
+            return Array.from(document.querySelectorAll('a[href*="/product/"]'))
+                .map(a => {
+                    const href = a.getAttribute('href') || '';
+                    return href.split('/product/').pop().split('?')[0].trim().toUpperCase();
+                })
+                .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
+        }""")
+
+        added = 0
+        for p in raw:
+            part = p.split('/')[0]
+            if part not in seen:
+                seen.add(part)
+                paths.append(p)
+                added += 1
+        logging.info(f"    +{added} (total {len(paths)})")
+
+        nxt = page.evaluate("""() => {
+            const b = Array.from(document.querySelectorAll('a, button')).find(b =>
+                b.offsetParent &&
+                (b.getAttribute('aria-label') === 'Next page' ||
+                 b.textContent.trim() === 'Next' ||
+                 b.textContent.trim() === 'Siguiente' ||
+                 b.classList.contains('next-page') ||
+                 (b.parentElement && b.parentElement.classList.contains('next')))
+            );
+            if (b) { b.click(); return true; }
+            return false;
+        }""")
+
+        if not nxt:
+            logging.info("  No hay más páginas")
+            break
+        pg += 1
+        rand_sleep(2, 5)
+
+    logging.info(f"Total productos: {len(paths)}")
+    return paths
 
 
 # ── extracción por sección ──────────────────────────────────────────────────
 
-def _find_section_body(page, primary_id: str, tab_label: str):
-    """Devuelve el elemento contenedor: primero por ID estándar, luego por href del tab."""
+def _real_body_id(page, primary_id: str, label: str) -> str:
+    """
+    Devuelve el ID real del contenedor de una sección.
+    Usa el ID estándar si existe, si no busca vía href del tab.
+    """
     return page.evaluate(f"""() => {{
-        // 1. ID estándar
-        let el = document.getElementById('{primary_id}');
-        if (el && el.querySelectorAll('td, li, img').length > 0) return el;
-
-        // 2. Buscar tab por texto → leer su href → obtener contenedor real
-        const tabs = Array.from(document.querySelectorAll(
-            '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
-        ));
-        const tab = tabs.find(t => t.textContent.trim() === '{tab_label}');
-        if (tab) {{
-            const href = tab.getAttribute('href') || tab.getAttribute('data-target') || '';
-            const id   = href.replace('#', '');
-            if (id) el = document.getElementById(id);
-        }}
-        return el || null;
-    }}""")
-
-
-def extract_attributes(page) -> dict:
-    """Attributes table — Show More para filas ocultas."""
-    click_btn_by_id(page, "showMoreProductSpecsButton", max_clicks=5)
-    try:
-        return page.evaluate("""() => {
-            const attrs = {};
-            // Primary ID
-            let body = document.getElementById('attributesBody');
-            // Fallback 1: via tab href
-            if (!body || body.querySelectorAll('td').length === 0) {
-                const tabs = Array.from(document.querySelectorAll(
-                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"], a'
-                ));
-                const tab = tabs.find(t => t.textContent.trim() === 'Attributes');
-                if (tab) {
-                    const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
-                    if (href) body = document.getElementById(href);
-                }
-            }
-            // Fallback 2: por heading H2/H3 "Attributes" → tabla hermana
-            if (!body || body.querySelectorAll('td').length === 0) {
-                const hdgs = Array.from(document.querySelectorAll('h2, h3, h4'));
-                const h = hdgs.find(el => el.textContent.trim() === 'Attributes');
-                if (h) {
-                    let node = h.nextElementSibling;
-                    for (let i = 0; i < 8 && node; i++) {
-                        if (node.querySelectorAll('table tr td').length > 0) { body = node; break; }
-                        node = node.nextElementSibling;
-                    }
-                    if (!body || body.querySelectorAll('td').length === 0)
-                        body = h.parentElement;
-                }
-            }
-            if (!body) return attrs;
-            body.querySelectorAll('table tr').forEach(tr => {
-                const cells = tr.querySelectorAll('td');
-                if (cells.length >= 2) {
-                    const k = cells[0].textContent.trim();
-                    const v = cells[1].textContent.trim();
-                    if (k && !k.includes('Proposition 65') && !k.includes('WARNING'))
-                        attrs[k] = v;
-                }
-            });
-            return attrs;
-        }""")
-    except Exception:
-        return {}
-
-
-def _get_body_id(page, primary_id: str, tab_label: str) -> str:
-    """Devuelve el ID real del contenedor: primero primary_id, luego el href del tab."""
-    return page.evaluate(f"""() => {{
-        const el = document.getElementById('{primary_id}');
-        if (el) return '{primary_id}';
-        const tabs = Array.from(document.querySelectorAll(
-            '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
-        ));
-        const tab = tabs.find(t => t.textContent.trim() === '{tab_label}');
-        if (tab) {{
-            const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
+        if (document.getElementById('{primary_id}')) return '{primary_id}';
+        // Buscar tab link por texto → leer su href
+        const tabs = Array.from(document.querySelectorAll('[data-toggle="tab"], .nav-tabs a, .nav a'));
+        const t = tabs.find(el => el.textContent.trim() === '{label}');
+        if (t) {{
+            const href = (t.getAttribute('href') || t.getAttribute('data-target') || '').replace('#','');
             if (href && document.getElementById(href)) return href;
         }}
         return '';
     }}""")
 
 
-def extract_cross_refs(page) -> list:
-    """Cross Reference — OEM codes: Show More + expand fa-plus child rows."""
-    body_id = _get_body_id(page, 'crossreferenceBody', 'Cross Reference')
-    if not body_id:
-        return []
+def extract_attributes(page) -> dict:
+    """
+    Extrae specs de #attributesBody.
+    - showMoreProductSpecsButton: ya expandido (display:none) si Show Less visible
+    - Lee TODAS las tablas dentro del contenedor
+    """
+    # Solo pulsar si el botón está visible (no si ya muestra "Show Less")
+    click_show_more(page, "showMoreProductSpecsButton", max_clicks=5)
 
-    # Expandir + icons de la carga inicial (ya visibles sin Show More)
-    expand_cross_ref_plus_icons(page)
+    body_id = _real_body_id(page, 'attributesBody', 'Attributes') or 'attributesBody'
 
-    # Ciclo Show More: cargar más fabricantes → expandir sus + icons
-    for _ in range(60):
-        showed = click_btn_by_id(page, "showAllCrossReferenceListButton", max_clicks=1)
-        if not showed:
-            break
-        expand_cross_ref_plus_icons(page)
+    raw = page.evaluate(f"""() => {{
+        const attrs = {{}};
+        const body  = document.getElementById('{body_id}');
+        if (!body) return attrs;
+        const tds = body.querySelectorAll('td');
+        // Diagnóstico interno: número de td
+        const _n = tds.length;
+        body.querySelectorAll('table tr').forEach(tr => {{
+            const cells = tr.querySelectorAll('td');
+            if (cells.length < 2) return;
+            const k = cells[0].textContent.trim();
+            const v = cells[1].textContent.trim();
+            if (k && !k.includes('Proposition 65') && !k.includes('WARNING'))
+                attrs[k] = v;
+        }});
+        return attrs;
+    }}""")
 
-    try:
-        return page.evaluate(f"""() => {{
-            const results = [];
-            const body = document.getElementById('{body_id}');
-            if (!body) return results;
-            body.querySelectorAll('tr').forEach(tr => {{
-                const mfr_td = tr.querySelector('td[data-manufacturer]');
-                const pn_td  = tr.querySelector('td[data-manufacturepartnumber] span');
-                if (!mfr_td || !pn_td) return;
-                const mfr = mfr_td.textContent.replace(/[\\n\\t]/g,'').trim()
-                                  .replace(/^[\\s\\u00a0]+/,'');
-                const pn  = pn_td.textContent.trim();
-                if (mfr && pn && pn !== '-') {{
-                    results.push({{ manufacturer: mfr, part_number: pn }});
-                }}
-            }});
-            return results;
-        }}""")
-    except Exception:
-        return []
+    logging.info(f"    attrs: {len(raw)}")
+    return raw
 
 
 def extract_alternatives(page) -> list:
-    """Carousel partes alternativas. data-partnumber es el selector más fiable."""
-    try:
-        return page.evaluate("""() => {
-            const results = [];
-
-            // Buscar contenedor: ID estándar o via tab href
-            let body = document.getElementById('alternateBody');
-            if (!body || body.querySelectorAll('[data-partnumber]').length === 0) {
-                const tabs = Array.from(document.querySelectorAll(
-                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
-                ));
-                const tab = tabs.find(t => t.textContent.trim() === 'Alternate Parts');
-                if (tab) {
-                    const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
-                    if (href) body = document.getElementById(href);
-                }
-            }
-
-            const scope = body || document;
-            scope.querySelectorAll('[data-partnumber]').forEach(el => {
-                const pn = el.getAttribute('data-partnumber').trim().toUpperCase();
+    """
+    Carousel de partes alternativas.
+    Selector primario: data-partnumber en imágenes de botones.
+    Alcance: SÓLO #alternateBody — nunca document para evitar Recently Viewed.
+    """
+    raw = page.evaluate("""() => {
+        const results = [];
+        const scope = document.getElementById('alternateBody');
+        if (!scope) return results;
+        scope.querySelectorAll('[data-partnumber]').forEach(el => {
+            const pn = (el.getAttribute('data-partnumber') || '').trim().toUpperCase();
+            if (pn && !results.includes(pn)) results.push(pn);
+        });
+        // Fallback: .preAlternate h5 dentro de #alternateBody
+        if (results.length === 0) {
+            scope.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
+                const pn = el.textContent.trim().toUpperCase();
                 if (pn && !results.includes(pn)) results.push(pn);
             });
-            if (results.length === 0) {
-                scope.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
-                    const pn = el.textContent.trim().toUpperCase();
-                    if (pn && !results.includes(pn)) results.push(pn);
-                });
-            }
-            return results;
-        }""")
-    except Exception:
+        }
+        return results;
+    }""")
+    logging.info(f"    alt: {len(raw)}")
+    return raw
+
+
+def extract_cross_refs(page) -> list:
+    """
+    Cross Reference OEM codes.
+    1. Expande fa-plus iniciales
+    2. Cicla Show More → expande fa-plus → repite
+    3. Lee td[data-manufacturer] + td[data-manufacturepartnumber] span
+    """
+    body_id = _real_body_id(page, 'crossreferenceBody', 'Cross Reference')
+    if not body_id:
         return []
+
+    expand_cross_plus(page, body_id)
+
+    for _ in range(60):
+        showed = click_show_more(page, "showAllCrossReferenceListButton", max_clicks=1)
+        if not showed:
+            break
+        expand_cross_plus(page, body_id)
+
+    raw = page.evaluate(f"""() => {{
+        const results = [];
+        const body = document.getElementById('{body_id}');
+        if (!body) return results;
+        body.querySelectorAll('tr').forEach(tr => {{
+            const mfr_td = tr.querySelector('td[data-manufacturer]');
+            const pn_td  = tr.querySelector('td[data-manufacturepartnumber] span');
+            if (!mfr_td || !pn_td) return;
+            const mfr = mfr_td.textContent.replace(/[\\n\\t]/g,'').trim().replace(/^[\\s\\u00a0]+/,'');
+            const pn  = pn_td.textContent.trim();
+            if (mfr && pn && pn !== '-') results.push({{ manufacturer: mfr, part_number: pn }});
+        }});
+        return results;
+    }}""")
+
+    logging.info(f"    cross: {len(raw)}")
+    return raw
 
 
 def extract_equipment(page) -> list:
-    """Equipment applications. Show More hasta agotar."""
-    body_id = _get_body_id(page, 'equiptmentBody', 'Equipment')
+    """
+    Equipment applications.
+    Show More hasta agotar, luego lee td[data-equipment] y sus columnas.
+    """
+    body_id = _real_body_id(page, 'equiptmentBody', 'Equipment')
     if not body_id:
         return []
 
     for _ in range(200):
-        if not click_btn_by_id(page, "showMorePdpListButton", max_clicks=1):
+        if not click_show_more(page, "showMorePdpListButton", max_clicks=1):
             break
 
-    try:
-        return page.evaluate(f"""() => {{
-            const results = [];
-            const body = document.getElementById('{body_id}');
-            if (!body) return results;
-            body.querySelectorAll('tr').forEach(tr => {{
-                const eq  = tr.querySelector('td[data-equipment]');
-                if (!eq) return;
-                const yr  = tr.querySelector('td[data-year]');
-                const typ = tr.querySelector('td[data-type] span');
-                const opt = tr.querySelector('td[data-options] span');
-                const eng = tr.querySelector('td[data-engine] span');
-                const eo  = tr.querySelector('td[data-enginetypes] span');
-                results.push({{
-                    equipment:     eq.textContent.trim(),
-                    year:          yr  ? yr.textContent.trim()  : '',
-                    type:          typ ? typ.textContent.trim() : '',
-                    options:       opt ? opt.textContent.trim() : '',
-                    engine:        eng ? eng.textContent.trim() : '',
-                    engine_option: eo  ? eo.textContent.trim()  : '',
-                }});
+    raw = page.evaluate(f"""() => {{
+        const results = [];
+        const body = document.getElementById('{body_id}');
+        if (!body) return results;
+        body.querySelectorAll('tr').forEach(tr => {{
+            const eq = tr.querySelector('td[data-equipment]');
+            if (!eq) return;
+            results.push({{
+                equipment:     eq.textContent.trim(),
+                year:          (tr.querySelector('td[data-year]')?.textContent || '').trim(),
+                type:          (tr.querySelector('td[data-type] span')?.textContent || '').trim(),
+                options:       (tr.querySelector('td[data-options] span')?.textContent || '').trim(),
+                engine:        (tr.querySelector('td[data-engine] span')?.textContent || '').trim(),
+                engine_option: (tr.querySelector('td[data-enginetypes] span')?.textContent || '').trim(),
             }});
-            return results;
-        }}""")
-    except Exception:
-        return []
+        }});
+        return results;
+    }}""")
+
+    logging.info(f"    equip: {len(raw)}")
+    return raw
 
 
 # ── scrape por producto ─────────────────────────────────────────────────────
 
-_TAB_LABELS = {
-    "attributesBody":     ["Attributes"],
-    "crossreferenceBody": ["Cross Reference"],
-    "equiptmentBody":     ["Equipment"],
-    "alternateBody":      ["Alternate Parts"],
-}
-
-
-def click_tab(page, section_id: str) -> bool:
-    """Activa tab por href/data-target; fallback por texto exacto en nav."""
-    # ── Método 1: selector por atributo ──────────────────────────────────
-    method = page.evaluate(f"""() => {{
-        const t = document.querySelector(
-            'a[href="#{section_id}"], a[data-target="#{section_id}"], [data-target="#{section_id}"]'
-        );
-        if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'href'; }}
-        return null;
-    }}""")
-
-    # ── Método 2: data-toggle="tab" con texto exacto (Bootstrap cualquier clase) ──
-    if not method:
-        for label in _TAB_LABELS.get(section_id, []):
-            method = page.evaluate(f"""() => {{
-                const tabs = Array.from(document.querySelectorAll(
-                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
-                ));
-                const t = tabs.find(el => el.textContent.trim() === '{label}');
-                if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'text'; }}
-                return null;
-            }}""")
-            if method:
-                break
-
-    # ── Método 3: cualquier <a> o <li>/<button> visible con texto exacto ────
-    if not method:
-        for label in _TAB_LABELS.get(section_id, []):
-            method = page.evaluate(f"""() => {{
-                const all = Array.from(document.querySelectorAll('a, button, li'));
-                const t = all.find(el =>
-                    el.offsetParent !== null &&
-                    el.textContent.trim() === '{label}'
-                );
-                if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'any'; }}
-                return null;
-            }}""")
-            if method:
-                break
-
-    if method:
-        logging.info(f"    Tab #{section_id} activado ({method})")
-        time.sleep(3)   # más pausa para AJAX tras clic de tab
-    else:
-        logging.warning(f"    Tab #{section_id} NO encontrado — sección puede estar ausente")
-    return bool(method)
-
-
 def scrape_product(page, product_path: str) -> dict:
     """
-    product_path: "DBL7900/11907" — path completo con SKU para URL exacta.
-    Si se pasa solo "DBL7900" (progreso antiguo) también funciona vía redirect.
+    product_path: "DBL7900/11907"
+    Orden de extracción:
+      1. Alternate Parts  (tab activo por defecto → ya en DOM)
+      2. Attributes       (activate_tab → AJAX → extract)
+      3. Cross Reference  (activate_tab → AJAX → extract)
+      4. Equipment        (activate_tab → AJAX → extract)
     """
-    part_number = product_path.split('/')[0].upper()
-    url = f"{PRODUCT_BASE}{product_path}"
+    part = product_path.split('/')[0].upper()
+    url  = f"{PRODUCT_BASE}{product_path}"
+
     result = {
-        "part_number": part_number,
-        "url": url,
-        "description": "",
-        "attributes": {},
+        "part_number":    part,
+        "url":            url,
+        "description":    "",
+        "attributes":     {},
         "cross_references": [],
-        "alternatives": [],
-        "equipment": [],
-        "scraped_at": datetime.now().isoformat(),
-        "error": None,
+        "alternatives":   [],
+        "equipment":      [],
+        "scraped_at":     datetime.now().isoformat(),
+        "error":          None,
     }
+
     try:
         page.goto(url, timeout=90000, wait_until="networkidle")
         time.sleep(2)
         dismiss_popups(page)
 
-        # Descripción del producto (siempre visible en header)
-        desc = page.evaluate("""() => {
-            for (const sel of ['.prodSubTitleMob', '.prodSubTitle', 'h6.product-description',
-                               '.product-title h6', 'h6']) {
+        # Verificar URL real (para detectar redirects inesperados)
+        real_url = page.url
+        if real_url != url:
+            logging.info(f"    redirect → {real_url}")
+
+        # Descripción
+        result["description"] = page.evaluate("""() => {
+            for (const sel of ['.prodSubTitleMob','.prodSubTitle','h6.desLengthCheck','h6','h1']) {
                 const el = document.querySelector(sel);
                 if (el && el.textContent.trim()) return el.textContent.trim();
             }
             return '';
         }""")
-        result["description"] = desc
 
-        # ── ALTERNATE PARTS (tab activo por defecto, ya cargado) ──────────
+        # ── 1. Alternate Parts (tab activo por defecto, ya cargado) ──────
         result["alternatives"] = extract_alternatives(page)
 
-        # ── ATTRIBUTES (clic tab → carga AJAX → extraer) ──────────────────
-        click_tab(page, "attributesBody")
+        # ── 2. Attributes ────────────────────────────────────────────────
+        activate_tab(page, "attributesBody")
         result["attributes"] = extract_attributes(page)
 
-        # ── CROSS REFERENCE ───────────────────────────────────────────────
-        click_tab(page, "crossreferenceBody")
+        # ── 3. Cross Reference ───────────────────────────────────────────
+        activate_tab(page, "crossreferenceBody")
         result["cross_references"] = extract_cross_refs(page)
 
-        # ── EQUIPMENT ─────────────────────────────────────────────────────
-        click_tab(page, "equiptmentBody")   # typo intencional de Donaldson
+        # ── 4. Equipment ─────────────────────────────────────────────────
+        activate_tab(page, "equiptmentBody")
         result["equipment"] = extract_equipment(page)
 
     except PlaywrightTimeout:
         result["error"] = "timeout"
-        logging.warning(f"  TIMEOUT: {part_number}")
+        logging.warning(f"  TIMEOUT: {part}")
     except Exception as e:
         result["error"] = str(e)
-        logging.warning(f"  ERROR {part_number}: {e}")
+        logging.warning(f"  ERROR {part}: {e}")
 
     return result
 
@@ -650,7 +527,7 @@ def main():
 
     with sync_playwright() as pw:
         logging.info(f"Stealth: {'SI' if STEALTH else 'NO'}")
-        logging.info(f"Perfil: {PROFILE_DIR}")
+        logging.info(f"Perfil : {PROFILE_DIR}")
 
         context = pw.chromium.launch_persistent_context(
             user_data_dir=PROFILE_DIR,
@@ -673,24 +550,23 @@ def main():
         if STEALTH:
             stealth_sync(page)
 
-        # 1. Recolectar product paths (PART/SKUID)
+        # Recolectar paths
         if not progress["part_numbers"]:
             logging.info("=== Recolectando product paths ===")
-            paths = collect_product_links(page)
-            progress["part_numbers"] = paths
+            pns = collect_product_links(page)
+            progress["part_numbers"] = pns
             save_progress(progress)
         else:
-            paths = progress["part_numbers"]
-            logging.info(f"=== {len(paths)} paths en progreso ===")
+            pns = progress["part_numbers"]
+            logging.info(f"=== {len(pns)} paths en progreso ===")
 
-        total = len(paths)
+        total = len(pns)
 
-        # 2. Scrape por producto
-        for idx, product_path in enumerate(paths, 1):
+        for idx, product_path in enumerate(pns, 1):
             part = product_path.split('/')[0].upper()
 
             if part in done_set:
-                logging.info(f"[{idx}/{total}] {part} ya procesado")
+                logging.info(f"[{idx}/{total}] {part} — ya procesado")
                 continue
 
             logging.info(f"[{idx}/{total}] {part} …")
