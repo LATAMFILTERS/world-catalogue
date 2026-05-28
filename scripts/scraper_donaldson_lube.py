@@ -136,60 +136,57 @@ def click_tab_by_keywords(page, keywords: list) -> bool:
     return False
 
 
-def click_show_more_smart(page, max_clicks=SHOW_MORE_LIMIT):
-    """Expande 'Show More', '+' y botones de expansión detectando progreso real."""
+def click_show_more_in_section(page, max_clicks=SHOW_MORE_LIMIT):
+    """Pulsa 'Show More' repetidamente hasta agotar. Detecta loop por conteo de filas."""
     clicks = 0
     prev_count = -1
-
     while clicks < max_clicks:
-        # Busca botones de expandir: texto Show More / + / flechas / íconos expand
         js = """() => {
-            const candidates = Array.from(document.querySelectorAll('button, a, span, div'));
-            const expandBtn = candidates.find(el => {
+            const all = Array.from(document.querySelectorAll('button, a'));
+            const btn = all.find(el => {
                 if (!el.offsetParent) return false;
-                const txt = el.textContent.trim().toLowerCase();
-                const cls = (el.className || '').toLowerCase();
-                const aria = (el.getAttribute('aria-label') || '').toLowerCase();
-                return (
-                    txt === 'show more' ||
-                    txt === 'mostrar más' ||
-                    txt === 'ver más' ||
-                    txt === 'load more' ||
-                    txt === '+' ||
-                    txt === 'more' ||
-                    txt === 'expand' ||
-                    cls.includes('show-more') ||
-                    cls.includes('load-more') ||
-                    cls.includes('expand') ||
-                    cls.includes('more-btn') ||
-                    aria.includes('show more') ||
-                    aria.includes('expand') ||
-                    (el.tagName === 'BUTTON' && /^\\+\\s*\\d+/.test(txt))
-                );
+                const t = el.textContent.trim().replace(/\\s+/g,' ');
+                return t === 'Show More' || t === 'Mostrar más' || t === 'Ver más' || t === 'Load More';
             });
-            if (expandBtn) {
-                expandBtn.scrollIntoView({behavior:'instant', block:'center'});
-                expandBtn.click();
-                return expandBtn.textContent.trim().substring(0, 40);
-            }
-            return null;
+            if (btn) { btn.scrollIntoView({behavior:'instant',block:'center'}); btn.click(); return true; }
+            return false;
         }"""
         try:
             clicked = page.evaluate(js)
             if not clicked:
                 break
-            logging.info(f"    Expandido: {clicked!r}")
             clicks += 1
-            time.sleep(1.8)
-            current = page.locator("tr, li").count()
+            time.sleep(2)
+            current = page.locator("tr, li, [class*='row']").count()
             if current == prev_count:
-                logging.warning("    Sin cambios tras expandir — deteniendo")
                 break
             prev_count = current
         except Exception:
             break
-
+    if clicks:
+        logging.info(f"    Show More: {clicks} clic(s)")
     return clicks
+
+
+def expand_plus_buttons(page):
+    """Pulsa TODOS los botones '+' visibles en la sección activa (Cross Reference)."""
+    expanded = page.evaluate("""() => {
+        let count = 0;
+        const btns = Array.from(document.querySelectorAll('button, a, span'));
+        btns.forEach(el => {
+            if (!el.offsetParent) return;
+            const t = el.textContent.trim();
+            // "+" solo, o "+ 5" (número de sub-items ocultos)
+            if (t === '+' || /^\\+\\s*\\d+$/.test(t)) {
+                el.click();
+                count++;
+            }
+        });
+        return count;
+    }""")
+    if expanded:
+        logging.info(f"    '+' botones expandidos: {expanded}")
+        time.sleep(1.5)
 
 
 # ── colección de links de categoría ────────────────────────────────────────
@@ -271,83 +268,131 @@ def extract_all_tables(page) -> list:
 
 
 def extract_attributes(page) -> dict:
+    """Especificaciones técnicas — tab 'Attributes' con Show More."""
     click_tab_by_keywords(page, TAB_KEYWORDS["specs"])
-    time.sleep(1)
+    click_show_more_in_section(page)
     attrs = {}
-    # dl dt/dd
     try:
         data = page.evaluate("""() => {
             const result = {};
+            // dl dt/dd (patrón más común en Donaldson)
             document.querySelectorAll('dl').forEach(dl => {
                 const dts = Array.from(dl.querySelectorAll('dt'));
                 const dds = Array.from(dl.querySelectorAll('dd'));
                 dts.forEach((dt, i) => {
                     const k = dt.textContent.trim();
                     const v = dds[i] ? dds[i].textContent.trim() : '';
-                    if (k) result[k] = v;
+                    if (k && k !== 'Recently Viewed') result[k] = v;
                 });
             });
+            // table rows key=col1 val=col2
+            if (Object.keys(result).length === 0) {
+                document.querySelectorAll('table tr').forEach(tr => {
+                    const cells = tr.querySelectorAll('td, th');
+                    if (cells.length >= 2) {
+                        const k = cells[0].textContent.trim();
+                        const v = cells[1].textContent.trim();
+                        if (k) result[k] = v;
+                    }
+                });
+            }
             return result;
         }""")
         attrs.update(data)
     except Exception:
         pass
-    # table rows (key=col1, value=col2)
-    if not attrs:
-        try:
-            rows = extract_all_tables(page)
-            for row in rows:
-                if len(row) >= 2:
-                    attrs[row[0]] = row[1]
-        except Exception:
-            pass
     return attrs
 
 
 def extract_cross_refs(page) -> list:
-    click_tab_by_keywords(page, TAB_KEYWORDS["cross"])
-    click_show_more_smart(page)
+    """OEM codes (Cross Reference) — Show More + expansión de botones '+'."""
+    exists = click_tab_by_keywords(page, TAB_KEYWORDS["cross"])
+    if not exists:
+        return []
+
+    # Ciclo: Show More → expandir '+' → repetir
+    for _ in range(10):
+        showed = click_show_more_in_section(page)
+        expand_plus_buttons(page)
+        if not showed:
+            break
+
     try:
-        rows = extract_all_tables(page)
-        # Los cross-refs suelen tener columnas: BrandCode | BrandName | Type
-        codes = []
-        for row in rows:
-            for cell in row:
-                # Código válido: 3-20 chars, no es solo números, no es URL
-                if 3 <= len(cell) <= 25 and not cell.startswith("http") and cell not in codes:
-                    codes.append(cell)
-        return codes[:500]
+        codes = page.evaluate("""() => {
+            const results = [];
+            // Intentar extraer de tabla: columna 'Competitor Part' o similar
+            document.querySelectorAll('table tr').forEach(tr => {
+                const cells = Array.from(tr.querySelectorAll('td, th'))
+                                   .map(c => c.textContent.trim())
+                                   .filter(t => t.length > 0);
+                if (cells.length >= 1) {
+                    // Buscar celda que parezca un código (no solo números, no muy larga)
+                    cells.forEach(c => {
+                        if (c.length >= 2 && c.length <= 30 &&
+                            !c.startsWith('http') &&
+                            !/^\\d+$/.test(c) &&
+                            !results.includes(c)) {
+                            results.push(c);
+                        }
+                    });
+                }
+            });
+            // También buscar en listas
+            document.querySelectorAll('[class*="cross"] li, [class*="interchange"] li').forEach(li => {
+                const t = li.textContent.trim();
+                if (t.length >= 2 && t.length <= 30 && !results.includes(t)) results.push(t);
+            });
+            return results;
+        }""")
+        return codes[:1000]
     except Exception:
         return []
 
 
 def extract_alternatives(page) -> list:
+    """Alternate Parts — partes alternativas de Donaldson."""
     click_tab_by_keywords(page, TAB_KEYWORDS["alt"])
-    click_show_more_smart(page)
+    click_show_more_in_section(page)
     try:
-        rows = extract_all_tables(page)
-        alts = []
-        for row in rows:
-            line = " | ".join(row)
-            if line and line not in alts:
-                alts.append(line)
-        return alts[:200]
+        rows = page.evaluate("""() => {
+            const results = [];
+            document.querySelectorAll('table tr').forEach(tr => {
+                const cells = Array.from(tr.querySelectorAll('td, th'))
+                                   .map(c => c.textContent.trim())
+                                   .filter(t => t);
+                if (cells.length > 0) results.push(cells.join(' | '));
+            });
+            return results;
+        }""")
+        return rows[:200]
     except Exception:
         return []
 
 
 def extract_equipment(page) -> list:
-    click_tab_by_keywords(page, TAB_KEYWORDS["equip"])
-    click_show_more_smart(page)
+    """Equipment applications — Show More para cargar todos."""
+    exists = click_tab_by_keywords(page, TAB_KEYWORDS["equip"])
+    if not exists:
+        return []
+
+    # Click Show More hasta agotar
+    for _ in range(20):
+        showed = click_show_more_in_section(page)
+        if not showed:
+            break
+
     try:
-        rows = extract_all_tables(page)
-        equip = []
-        for row in rows:
-            if len(row) >= 2:
-                line = " | ".join(row)
-                if line and line not in equip:
-                    equip.append(line)
-        return equip[:5000]
+        rows = page.evaluate("""() => {
+            const results = [];
+            document.querySelectorAll('table tr').forEach(tr => {
+                const cells = Array.from(tr.querySelectorAll('td, th'))
+                                   .map(c => c.textContent.trim())
+                                   .filter(t => t);
+                if (cells.length >= 2) results.push(cells.join(' | '));
+            });
+            return results;
+        }""")
+        return rows[:5000]
     except Exception:
         return []
 
