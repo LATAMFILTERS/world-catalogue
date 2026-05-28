@@ -43,12 +43,12 @@ PROFILE_DIR   = os.path.join(os.path.expanduser("~"), ".donaldson_profile")
 SHOW_MORE_LIMIT = 80
 PAUSE_BETWEEN   = (5, 10)
 
-# Palabras clave de tabs en inglés Y español
+# Nombres EXACTOS de tabs en Donaldson (verificados en producto real)
 TAB_KEYWORDS = {
-    "cross":  ["Cross Reference", "Interchange", "Referencias cruzadas", "Referencia cruzada", "Intercambio"],
-    "alt":    ["Alternatives", "Replacement", "Alternativas", "Alternativo", "Reemplazos"],
-    "equip":  ["Applications", "Equipment", "Aplicaciones", "Equipos", "Aplicación"],
-    "specs":  ["Specifications", "Tech Specs", "Especificaciones", "Especificación", "Attributes"],
+    "specs":  ["Attributes"],
+    "alt":    ["Alternate Parts"],
+    "cross":  ["Cross Reference"],
+    "equip":  ["Equipment"],
 }
 
 
@@ -103,41 +103,22 @@ def dismiss_popups(page):
 
 
 def click_tab_by_keywords(page, keywords: list) -> bool:
-    """Clic en tab del producto — busca SOLO dentro de contenedores de tabs, no en nav."""
+    """Clic en tab con texto EXACTO — evita matches en nav global."""
     js = """(keywords) => {
-        // Buscar solo dentro de contenedores de tabs del producto (no nav global)
-        const tabContainers = Array.from(document.querySelectorAll(
-            '[class*="tab-nav"], [class*="tabNav"], [role="tablist"], ' +
-            'ul.tabs, [class*="product-tabs"], [class*="productTabs"], ' +
-            '[class*="detail-tabs"], [class*="detailTabs"]'
-        ));
-
-        // Si no encontramos contenedor específico, buscar en el área de producto
-        const searchRoot = tabContainers.length > 0
-            ? tabContainers
-            : Array.from(document.querySelectorAll(
-                '[class*="product-detail"], [class*="productDetail"], ' +
-                '[class*="part-detail"], [class*="partDetail"], main, #content'
-              ));
-
-        for (const container of searchRoot) {
-            const links = Array.from(container.querySelectorAll('a, button, li > a'));
-            for (const kw of keywords) {
-                const match = links.find(el => {
-                    if (!el.offsetParent) return false;
-                    // Texto exacto del elemento (no de sus hijos profundos)
-                    const ownText = Array.from(el.childNodes)
-                        .filter(n => n.nodeType === 3)
-                        .map(n => n.textContent.trim())
-                        .join(' ').trim() || el.textContent.trim();
-                    return ownText.toLowerCase().includes(kw.toLowerCase()) &&
-                           ownText.length < 60; // evitar elementos con texto largo
-                });
-                if (match) {
-                    match.scrollIntoView({behavior:'instant', block:'center'});
-                    match.click();
-                    return match.textContent.trim().substring(0,50);
-                }
+        // Buscar todos los <a> y <button> visibles
+        const candidates = Array.from(document.querySelectorAll('a, button, li > a'));
+        for (const kw of keywords) {
+            const match = candidates.find(el => {
+                if (!el.offsetParent) return false;
+                // Texto limpio del elemento (colapsando espacios)
+                const txt = el.textContent.trim().replace(/\\s+/g, ' ');
+                // Match EXACTO (no contains) para evitar "Attribute Search" etc.
+                return txt === kw;
+            });
+            if (match) {
+                match.scrollIntoView({behavior:'instant', block:'center'});
+                match.click();
+                return match.textContent.trim().replace(/\\s+/g,' ');
             }
         }
         return null;
@@ -145,11 +126,11 @@ def click_tab_by_keywords(page, keywords: list) -> bool:
     try:
         result = page.evaluate(js, keywords)
         if result:
-            logging.info(f"    Tab clickeado: {result!r}")
+            logging.info(f"    Tab '{result}' clickeado")
             time.sleep(2.5)
             return True
         else:
-            logging.info(f"    Tab NO encontrado para: {keywords[0]!r}")
+            logging.info(f"    Tab '{keywords[0]}' no existe en este producto")
     except Exception as e:
         logging.warning(f"    Tab error: {e}")
     return False
