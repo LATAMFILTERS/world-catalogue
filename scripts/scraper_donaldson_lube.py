@@ -339,24 +339,32 @@ def extract_attributes(page) -> dict:
 
 def extract_alternatives(page) -> list:
     """
-    Carousel de partes alternativas.
-    Selector primario: data-partnumber en imágenes de botones.
-    Alcance: SÓLO #alternateBody — nunca document para evitar Recently Viewed.
+    Partes alternativas. SOLO se LEE el código — nunca se pulsan las tarjetas.
+    Selector exclusivo: .compareListProdAlternate (clase única de alternativas),
+    código en .preAlternate h5 o en data-partnumber del botón SVG.
+    Esta clase NO aparece en Recently Viewed → evita el bug de 14 falsos.
     """
     raw = page.evaluate("""() => {
         const results = [];
-        const scope = document.getElementById('alternateBody');
-        if (!scope) return results;
-        scope.querySelectorAll('[data-partnumber]').forEach(el => {
-            const pn = (el.getAttribute('data-partnumber') || '').trim().toUpperCase();
+        const push = pn => {
+            pn = (pn || '').trim().toUpperCase();
             if (pn && !results.includes(pn)) results.push(pn);
+        };
+        // Tarjetas exclusivas de partes alternativas
+        const cards = document.querySelectorAll('.compareListProdAlternate');
+        cards.forEach(card => {
+            const h = card.querySelector('.preAlternate h5, .preAlternate h4');
+            if (h) { push(h.textContent); return; }
+            const el = card.querySelector('[data-partnumber]');
+            if (el) push(el.getAttribute('data-partnumber'));
         });
-        // Fallback: .preAlternate h5 dentro de #alternateBody
+        // Fallback: cualquier .preAlternate dentro de #alternateBody
         if (results.length === 0) {
-            scope.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
-                const pn = el.textContent.trim().toUpperCase();
-                if (pn && !results.includes(pn)) results.push(pn);
-            });
+            const scope = document.getElementById('alternateBody');
+            if (scope) {
+                scope.querySelectorAll('.preAlternate h5, .preAlternate h4')
+                     .forEach(el => push(el.textContent));
+            }
         }
         return results;
     }""")
@@ -483,7 +491,9 @@ def scrape_product(page, product_path: str) -> dict:
             return '';
         }""")
 
-        # ── 1. Alternate Parts (tab activo por defecto, ya cargado) ──────
+        # ── 1. Alternate Parts (activar tab → AJAX carga carrusel) ───────
+        #     Solo leemos data-partnumber; NO se pulsa cada tarjeta.
+        activate_tab(page, "alternateBody")
         result["alternatives"] = extract_alternatives(page)
 
         # ── 2. Attributes ────────────────────────────────────────────────
@@ -604,5 +614,41 @@ def main():
     logging.info(f"\n=== COMPLETADO: {ok} OK | {err} errores → {OUTPUT_FILE} ===")
 
 
+def test_one(target: str):
+    """
+    Prueba UN producto sin tocar el progreso.
+    Acepta: 'P502007/18796', un part suelto, o una URL completa.
+    Imprime el resultado para verificar el fix de alternativas.
+    """
+    if target.startswith("http"):
+        product_path = target.split("/product/").pop()
+    else:
+        product_path = target
+
+    with sync_playwright() as pw:
+        context = pw.chromium.launch_persistent_context(
+            user_data_dir=PROFILE_DIR, channel="chrome", headless=False,
+            slow_mo=60, locale="en-US", viewport={"width": 1366, "height": 768},
+            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/124.0.0.0 Safari/537.36"),
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+            args=["--disable-blink-features=AutomationControlled"],
+            ignore_default_args=["--enable-automation"],
+        )
+        page = context.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        data = scrape_product(page, product_path)
+        context.close()
+
+    print("\n=== RESULTADO PRUEBA ===")
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1:
+        test_one(sys.argv[1])
+    else:
+        main()
