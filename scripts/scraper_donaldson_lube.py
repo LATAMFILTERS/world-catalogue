@@ -305,13 +305,46 @@ def expand_cross_ref_plus_icons(page):
 
 # ── extracción por sección ──────────────────────────────────────────────────
 
+def _find_section_body(page, primary_id: str, tab_label: str):
+    """Devuelve el elemento contenedor: primero por ID estándar, luego por href del tab."""
+    return page.evaluate(f"""() => {{
+        // 1. ID estándar
+        let el = document.getElementById('{primary_id}');
+        if (el && el.querySelectorAll('td, li, img').length > 0) return el;
+
+        // 2. Buscar tab por texto → leer su href → obtener contenedor real
+        const tabs = Array.from(document.querySelectorAll(
+            '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
+        ));
+        const tab = tabs.find(t => t.textContent.trim() === '{tab_label}');
+        if (tab) {{
+            const href = tab.getAttribute('href') || tab.getAttribute('data-target') || '';
+            const id   = href.replace('#', '');
+            if (id) el = document.getElementById(id);
+        }}
+        return el || null;
+    }}""")
+
+
 def extract_attributes(page) -> dict:
-    """#attributesBody — tabla de specs, Show More revela filas ocultas."""
+    """Attributes table — Show More para filas ocultas."""
     click_btn_by_id(page, "showMoreProductSpecsButton", max_clicks=5)
     try:
         return page.evaluate("""() => {
             const attrs = {};
-            const body = document.getElementById('attributesBody');
+            // Primary ID
+            let body = document.getElementById('attributesBody');
+            // Fallback: find via tab href
+            if (!body || body.querySelectorAll('td').length === 0) {
+                const tabs = Array.from(document.querySelectorAll(
+                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
+                ));
+                const tab = tabs.find(t => t.textContent.trim() === 'Attributes');
+                if (tab) {
+                    const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
+                    if (href) body = document.getElementById(href);
+                }
+            }
             if (!body) return attrs;
             body.querySelectorAll('table tr').forEach(tr => {
                 const cells = tr.querySelectorAll('td');
@@ -328,10 +361,27 @@ def extract_attributes(page) -> dict:
         return {}
 
 
+def _get_body_id(page, primary_id: str, tab_label: str) -> str:
+    """Devuelve el ID real del contenedor: primero primary_id, luego el href del tab."""
+    return page.evaluate(f"""() => {{
+        const el = document.getElementById('{primary_id}');
+        if (el) return '{primary_id}';
+        const tabs = Array.from(document.querySelectorAll(
+            '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
+        ));
+        const tab = tabs.find(t => t.textContent.trim() === '{tab_label}');
+        if (tab) {{
+            const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
+            if (href && document.getElementById(href)) return href;
+        }}
+        return '';
+    }}""")
+
+
 def extract_cross_refs(page) -> list:
-    """#crossreferenceBody — OEM codes: Show More + expand fa-plus child rows."""
-    body = page.evaluate("() => !!document.getElementById('crossreferenceBody')")
-    if not body:
+    """Cross Reference — OEM codes: Show More + expand fa-plus child rows."""
+    body_id = _get_body_id(page, 'crossreferenceBody', 'Cross Reference')
+    if not body_id:
         return []
 
     # Expandir + icons de la carga inicial (ya visibles sin Show More)
@@ -345,42 +395,53 @@ def extract_cross_refs(page) -> list:
         expand_cross_ref_plus_icons(page)
 
     try:
-        return page.evaluate("""() => {
+        return page.evaluate(f"""() => {{
             const results = [];
-            const body = document.getElementById('crossreferenceBody');
+            const body = document.getElementById('{body_id}');
             if (!body) return results;
-            body.querySelectorAll('tr').forEach(tr => {
+            body.querySelectorAll('tr').forEach(tr => {{
                 const mfr_td = tr.querySelector('td[data-manufacturer]');
                 const pn_td  = tr.querySelector('td[data-manufacturepartnumber] span');
                 if (!mfr_td || !pn_td) return;
                 const mfr = mfr_td.textContent.replace(/[\\n\\t]/g,'').trim()
                                   .replace(/^[\\s\\u00a0]+/,'');
                 const pn  = pn_td.textContent.trim();
-                if (mfr && pn && pn !== '-') {
-                    results.push({ manufacturer: mfr, part_number: pn });
-                }
-            });
+                if (mfr && pn && pn !== '-') {{
+                    results.push({{ manufacturer: mfr, part_number: pn }});
+                }}
+            }});
             return results;
-        }""")
+        }}""")
     except Exception:
         return []
 
 
 def extract_alternatives(page) -> list:
-    """#alternateBody — carousel partes alternativas. Lee data-partnumber (más fiable)."""
+    """Carousel partes alternativas. data-partnumber es el selector más fiable."""
     try:
         return page.evaluate("""() => {
             const results = [];
-            const body = document.getElementById('alternateBody');
-            if (!body) return results;
-            // data-partnumber en botones/imágenes del carrusel
-            body.querySelectorAll('[data-partnumber]').forEach(el => {
+
+            // Buscar contenedor: ID estándar o via tab href
+            let body = document.getElementById('alternateBody');
+            if (!body || body.querySelectorAll('[data-partnumber]').length === 0) {
+                const tabs = Array.from(document.querySelectorAll(
+                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
+                ));
+                const tab = tabs.find(t => t.textContent.trim() === 'Alternate Parts');
+                if (tab) {
+                    const href = (tab.getAttribute('href') || tab.getAttribute('data-target') || '').replace('#','');
+                    if (href) body = document.getElementById(href);
+                }
+            }
+
+            const scope = body || document;
+            scope.querySelectorAll('[data-partnumber]').forEach(el => {
                 const pn = el.getAttribute('data-partnumber').trim().toUpperCase();
                 if (pn && !results.includes(pn)) results.push(pn);
             });
-            // Fallback: <h5> dentro de .preAlternate
             if (results.length === 0) {
-                body.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
+                scope.querySelectorAll('.preAlternate h5, .preAlternate h4').forEach(el => {
                     const pn = el.textContent.trim().toUpperCase();
                     if (pn && !results.includes(pn)) results.push(pn);
                 });
@@ -392,9 +453,9 @@ def extract_alternatives(page) -> list:
 
 
 def extract_equipment(page) -> list:
-    """#equiptmentBody — equipment applications. Show More hasta agotar."""
-    body = page.evaluate("() => !!document.getElementById('equiptmentBody')")
-    if not body:
+    """Equipment applications. Show More hasta agotar."""
+    body_id = _get_body_id(page, 'equiptmentBody', 'Equipment')
+    if not body_id:
         return []
 
     for _ in range(200):
@@ -402,11 +463,11 @@ def extract_equipment(page) -> list:
             break
 
     try:
-        return page.evaluate("""() => {
+        return page.evaluate(f"""() => {{
             const results = [];
-            const body = document.getElementById('equiptmentBody');
+            const body = document.getElementById('{body_id}');
             if (!body) return results;
-            body.querySelectorAll('tr').forEach(tr => {
+            body.querySelectorAll('tr').forEach(tr => {{
                 const eq  = tr.querySelector('td[data-equipment]');
                 if (!eq) return;
                 const yr  = tr.querySelector('td[data-year]');
@@ -414,17 +475,17 @@ def extract_equipment(page) -> list:
                 const opt = tr.querySelector('td[data-options] span');
                 const eng = tr.querySelector('td[data-engine] span');
                 const eo  = tr.querySelector('td[data-enginetypes] span');
-                results.push({
+                results.push({{
                     equipment:     eq.textContent.trim(),
                     year:          yr  ? yr.textContent.trim()  : '',
                     type:          typ ? typ.textContent.trim() : '',
                     options:       opt ? opt.textContent.trim() : '',
                     engine:        eng ? eng.textContent.trim() : '',
                     engine_option: eo  ? eo.textContent.trim()  : '',
-                });
-            });
+                }});
+            }});
             return results;
-        }""")
+        }}""")
     except Exception:
         return []
 
@@ -450,12 +511,12 @@ def click_tab(page, section_id: str) -> bool:
         return null;
     }}""")
 
-    # ── Método 2: texto exacto en nav-tabs / role=tab ─────────────────────
+    # ── Método 2: data-toggle="tab" con texto exacto (Bootstrap cualquier clase) ──
     if not method:
         for label in _TAB_LABELS.get(section_id, []):
             method = page.evaluate(f"""() => {{
                 const tabs = Array.from(document.querySelectorAll(
-                    '.nav-tabs a, .nav a, [role="tab"], ul.tabs li a'
+                    '[data-toggle="tab"], .nav-tabs a, .nav a, [role="tab"]'
                 ));
                 const t = tabs.find(el => el.textContent.trim() === '{label}');
                 if (t) {{ t.scrollIntoView({{behavior:'instant',block:'center'}}); t.click(); return 'text'; }}
