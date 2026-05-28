@@ -396,13 +396,28 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
         or "filter"
     )
 
+    # ── Fallback: derive Donaldson P-number from SKU suffix ───────────────────
+    # Input JSON may only have counts (not actual codes). Use the last-4-digit
+    # pattern (EL82072 → suffix=2072) to find the real Donaldson part number.
+    # We search Donaldson for "2072", NOT for the ELIMFILTERS SKU string.
+    if not base_code and not searchable_codes and elim_info:
+        suffix4 = elim_info["donaldson_suffix4"]
+        logging.info(f"  No cross-refs in input — searching Donaldson for suffix={suffix4}")
+        found = find_donaldson_code(suffix4, type_hint)
+        time.sleep(REQUEST_DELAY)
+        if found:
+            base_code = found
+            logging.info(f"  Donaldson code resolved: {base_code}")
+        else:
+            logging.info(f"  Donaldson code not found for suffix {suffix4}")
+
     r = ValidationResult(sku=sku, original_data=data, brand=detect_brand(sku))
     if r.brand == "Unknown" and searchable_codes:
         r.brand = detect_brand(searchable_codes[0])
     page_text: str = ""
     snippets: List[str] = []
 
-    # ── Step 1: Donaldson product page (only if real P-number available) ──────
+    # ── Step 1: Donaldson product page ────────────────────────────────────────
     if base_code:
         logging.info(f"  Scraping Donaldson/{base_code}")
         don = scrape_donaldson(base_code)
