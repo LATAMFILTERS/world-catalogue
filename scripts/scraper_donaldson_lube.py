@@ -242,7 +242,12 @@ def collect_product_links(page):
             return Array.from(document.querySelectorAll('a[href*="/product/"]'))
                 .map(a => {
                     const href = a.getAttribute('href') || '';
-                    return href.split('/product/').pop().split('?')[0].trim().toUpperCase();
+                    const path = href.split('/product/').pop().split('?')[0].trim();
+                    const i = path.indexOf('/');
+                    // Mayúsculas SOLO en el part number; el SKU (p.ej. prod340743)
+                    // es case-sensitive y debe quedar tal cual.
+                    if (i < 0) return path.toUpperCase();
+                    return path.slice(0, i).toUpperCase() + path.slice(i);
                 })
                 .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
         }""")
