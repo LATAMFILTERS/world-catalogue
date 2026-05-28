@@ -69,14 +69,27 @@ PRODUCT_TYPE_KEYWORDS: Dict[str, List[str]] = {
 DONALDSON_BASE_URL   = "https://shop.donaldson.com/store/en-us/product/"
 DONALDSON_SEARCH_URL = "https://shop.donaldson.com/store/en-us/search?q="
 
-# ELIMFILTERS SKU prefix → Donaldson filter category hint
+# ELIMFILTERS SKU 3-char prefix (E + letter + digit) → filter type hint
+# Pattern: E[type_letter][series_digit][4_donaldson_suffix]
+# Examples: EL82100→P552100, EF90529→P550529, EA10695→P150695, ED41466→P781466
 ELIM_PREFIX_MAP = {
-    "EL": "lube oil filter",
-    "EF": "fuel filter",
-    "EA": "air filter",
-    "ED": "air dryer",
-    "EH": "hydraulic filter",
-    "EC": "cabin air filter",
+    "EL8": "lube oil filter",
+    "EF9": "fuel filter",
+    "EA1": "air filter",
+    "ED4": "air dryer",
+    "EH6": "hydraulic filter",
+    "EC1": "cabin air filter",
+    "EW7": "coolant water filter",
+    "ES9": "fuel water separator",
+    # 2-char fallbacks
+    "EL":  "lube oil filter",
+    "EF":  "fuel filter",
+    "EA":  "air filter",
+    "ED":  "air dryer",
+    "EH":  "hydraulic filter",
+    "EC":  "cabin air filter",
+    "EW":  "coolant water filter",
+    "ES":  "fuel water separator",
 }
 
 HEADERS = {
@@ -142,20 +155,28 @@ def ddg_search(query: str) -> List[Dict]:
 def decode_elim_sku(sku: str) -> Dict:
     """
     Decode ELIMFILTERS SKU to extract filter type and last 4 Donaldson digits.
-    Pattern: E[type_letter][digit][4_donaldson_suffix]
-    Examples: EL82100 → type=lube, suffix=2100 → Donaldson P??2100
-              EF90529 → type=fuel, suffix=0529 → Donaldson P??0529
-              EA10695 → type=air,  suffix=0695 → Donaldson P??0695
-              ED41466 → type=dryer,suffix=1466 → Donaldson P??1466
+    Pattern: E[type_letter][series_digit][4_donaldson_suffix]
+    Examples:
+      EL82100 → type=lube,      suffix=2100 → Donaldson P??2100
+      EF90529 → type=fuel,      suffix=0529 → Donaldson P??0529
+      EA10695 → type=air,       suffix=0695 → Donaldson P??0695
+      ED41466 → type=dryer,     suffix=1466 → Donaldson P??1466
+      EH6xxxx → type=hydraulic, suffix=xxxx
+      EC1xxxx → type=cabin,     suffix=xxxx
+      EW7xxxx → type=coolant,   suffix=xxxx
+      ES9xxxx → type=separator, suffix=xxxx
     """
-    m = re.match(r'^E([A-Z])(\d)(\d{4})$', sku.upper())
+    m = re.match(r'^(E[A-Z])(\d)(\d{4})$', sku.upper())
     if not m:
         return {}
-    prefix = "E" + m.group(1)
-    suffix4 = m.group(3)   # last 4 digits shared with Donaldson
+    prefix2  = m.group(1)          # EL, EF, EA, etc.
+    series   = m.group(2)          # series digit
+    suffix4  = m.group(3)          # last 4 digits = Donaldson suffix
+    prefix3  = prefix2 + series    # EL8, EF9, EH6, etc.
+    type_hint = ELIM_PREFIX_MAP.get(prefix3) or ELIM_PREFIX_MAP.get(prefix2, "filter")
     return {
-        "elim_prefix": prefix,
-        "filter_type_hint": ELIM_PREFIX_MAP.get(prefix, "filter"),
+        "elim_prefix":      prefix3,
+        "filter_type_hint": type_hint,
         "donaldson_suffix4": suffix4,
     }
 
