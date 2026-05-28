@@ -271,8 +271,37 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
     sku         = data.get("ELIMFILTERS_SKU") or data.get("sku", "")
     base_code   = data.get("Donaldson_Base_Code") or data.get("codigo_base") or ""
     description = data.get("Description") or data.get("name") or ""
+    filter_type = data.get("filter_type") or data.get("Filter_Type") or ""
+
+    # Existing cross-refs from DB (if included in the export)
+    known_crossrefs: List[str] = []
+    raw_crossrefs = data.get("cross_reference_codes") or data.get("Cross_Reference_Codes") or []
+    if isinstance(raw_crossrefs, list):
+        for item in raw_crossrefs:
+            if isinstance(item, str):
+                known_crossrefs.append(item)
+            elif isinstance(item, dict):
+                code = item.get("code") or item.get("part_number") or item.get("raw") or ""
+                if code:
+                    known_crossrefs.append(str(code))
+    elif isinstance(raw_crossrefs, str):
+        try:
+            parsed = json.loads(raw_crossrefs)
+            known_crossrefs = [str(x) for x in parsed if x]
+        except Exception:
+            pass
+
+    # Use first Donaldson P-number from known crossrefs as base_code if missing
+    if not base_code:
+        for code in known_crossrefs:
+            if re.match(r"P\d{6}", str(code), re.IGNORECASE):
+                base_code = str(code)
+                logging.info(f"  Using cross-ref as base_code: {base_code}")
+                break
 
     r = ValidationResult(sku=sku, original_data=data, brand=detect_brand(sku))
+    if r.brand == "Unknown" and known_crossrefs:
+        r.brand = detect_brand(known_crossrefs[0])
     page_text: str = ""
     snippets: List[str] = []
 
@@ -290,9 +319,10 @@ def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENA
             page_text = don["raw_text"]
 
     # ── Step 2: DuckDuckGo search ─────────────────────────────────────────────
-    query = f'"{sku}" filter cross reference OEM applications'
-    if base_code and base_code != sku:
-        query = f'"{base_code}" filter cross reference interchange'
+    # Build best search query: prefer known Donaldson/Fleetguard codes
+    search_code = base_code or (known_crossrefs[0] if known_crossrefs else sku)
+    type_hint   = filter_type.replace(" FILTRATION", "").lower() if filter_type else "filter"
+    query = f'"{search_code}" {type_hint} filter cross reference OEM equipment applications'
     logging.info(f"  DDG: {query}")
     hits = ddg_search(query)
     time.sleep(REQUEST_DELAY)
