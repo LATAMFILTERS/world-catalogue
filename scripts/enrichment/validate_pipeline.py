@@ -8,7 +8,8 @@ Dependencies (pinned, no conflicts):
 
 Usage:
     python validate_pipeline.py
-    python validate_pipeline.py --openai-key sk-...
+    python validate_pipeline.py --groq-key gsk_...          # Groq (fast, free tier)
+    python validate_pipeline.py --openai-key sk-...         # OpenAI fallback
     python validate_pipeline.py --input path/to/file.json --limit 10 --verbose
 """
 
@@ -34,6 +35,10 @@ try:
     OPENAI_AVAILABLE = True
 except ImportError:
     OPENAI_AVAILABLE = False
+
+GROQ_BASE_URL = "https://api.groq.com/openai/v1"
+GROQ_MODEL    = "llama-3.1-70b-versatile"   # fast, capable, free tier
+OPENAI_MODEL  = "gpt-4o-mini"
 
 # ── Defaults ──────────────────────────────────────────────────────────────────
 
@@ -225,7 +230,7 @@ DOMAIN RULES (critical):
 
 Return ONLY valid JSON — no markdown, no explanation."""
 
-def extract_with_openai(client: "OpenAI", sku: str, page_text: str, snippets: List[str]) -> Dict:
+def extract_with_llm(client: "OpenAI", model: str, sku: str, page_text: str, snippets: List[str]) -> Dict:
     combined = (
         f"SKU: {sku}\n\n"
         f"PRODUCT PAGE TEXT:\n{page_text[:3000]}\n\n"
@@ -246,7 +251,7 @@ def extract_with_openai(client: "OpenAI", sku: str, page_text: str, snippets: Li
 
     try:
         resp = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=model,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": combined},
@@ -257,12 +262,12 @@ def extract_with_openai(client: "OpenAI", sku: str, page_text: str, snippets: Li
         )
         return json.loads(resp.choices[0].message.content)
     except Exception as e:
-        logging.error(f"OpenAI failed for {sku}: {e}")
+        logging.error(f"LLM extraction failed for {sku}: {e}")
         return schema
 
 # ── Per-SKU pipeline ──────────────────────────────────────────────────────────
 
-def process_sku(data: Dict, openai_client: Optional[Any]) -> ValidationResult:
+def process_sku(data: Dict, openai_client: Optional[Any], llm_model: str = OPENAI_MODEL) -> ValidationResult:
     sku         = data.get("ELIMFILTERS_SKU") or data.get("sku", "")
     base_code   = data.get("Donaldson_Base_Code") or data.get("codigo_base") or ""
     description = data.get("Description") or data.get("name") or ""
@@ -307,8 +312,8 @@ def process_sku(data: Dict, openai_client: Optional[Any]) -> ValidationResult:
 
     # ── Step 3: OpenAI structured extraction ──────────────────────────────────
     if openai_client and (page_text or snippets):
-        logging.info(f"  OpenAI extraction")
-        ai = extract_with_openai(openai_client, sku, page_text, snippets)
+        logging.info(f"  LLM extraction ({llm_model})")
+        ai = extract_with_llm(openai_client, llm_model, sku, page_text, snippets)
         if ai:
             r.oem_codes              = list(set(r.oem_codes + ai.get("oem_codes", [])))
             r.cross_reference_codes  = list(set(r.cross_reference_codes + ai.get("cross_reference_codes", [])))
@@ -398,7 +403,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="ELIMFILTERS Web Validation Pipeline")
     ap.add_argument("--input",      default=DEFAULT_INPUT,      help="Input JSON path")
     ap.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, help="Output directory")
-    ap.add_argument("--openai-key", default=os.environ.get("OPENAI_API_KEY"), help="OpenAI key")
+    ap.add_argument("--groq-key",   default=os.environ.get("GROQ_API_KEY"),   help="Groq API key (preferred)")
+    ap.add_argument("--openai-key", default=os.environ.get("OPENAI_API_KEY"), help="OpenAI key (fallback)")
     ap.add_argument("--limit",      type=int, default=None,     help="Max SKUs to process")
     ap.add_argument("--delay",      type=float, default=REQUEST_DELAY, help="Secs between requests")
     ap.add_argument("--verbose",    action="store_true")
@@ -425,13 +431,19 @@ def main() -> None:
         products = products[:args.limit]
     print(f"Loaded {len(products)} SKUs")
 
-    # OpenAI
+    # LLM client — Groq preferred, OpenAI fallback
     openai_client = None
-    if args.openai_key and OPENAI_AVAILABLE:
+    llm_model = OPENAI_MODEL
+    if args.groq_key and OPENAI_AVAILABLE:
+        openai_client = OpenAI(api_key=args.groq_key, base_url=GROQ_BASE_URL)
+        llm_model = GROQ_MODEL
+        print(f"LLM: Groq ENABLED ({GROQ_MODEL})")
+    elif args.openai_key and OPENAI_AVAILABLE:
         openai_client = OpenAI(api_key=args.openai_key)
-        print("OpenAI: ENABLED (gpt-4o-mini)")
+        llm_model = OPENAI_MODEL
+        print(f"LLM: OpenAI ENABLED ({OPENAI_MODEL})")
     else:
-        print("OpenAI: DISABLED — heuristic mode")
+        print("LLM: DISABLED — heuristic mode")
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -442,7 +454,7 @@ def main() -> None:
         sku = product.get("ELIMFILTERS_SKU") or product.get("sku") or f"row_{i}"
         print(f"[{i:>3}/{len(products)}] {sku}", end="  ", flush=True)
         try:
-            r = process_sku(product, openai_client)
+            r = process_sku(product, openai_client, llm_model)
             print(f"{r.status}  conf={r.confidence_score:.2f}  "
                   f"crossrefs={len(r.cross_reference_codes)}  equip={len(r.equipment_applications)}")
         except Exception as e:
