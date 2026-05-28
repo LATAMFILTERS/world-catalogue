@@ -122,13 +122,13 @@ export default function Home() {
       <Navigation />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <div ref={heroRef} style={{ position: 'relative', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
+      <div ref={heroRef} style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
 
         {/* Parallax background image */}
         <motion.div
           style={{
             position: 'absolute', top: '-20%', left: 0, right: 0, bottom: '-20%',
-            backgroundImage: 'url(/images/hero-engine.jpg)',
+            backgroundImage: 'url(/images/fondomotor.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             y: bgY,
@@ -149,22 +149,6 @@ export default function Home() {
           background: `radial-gradient(700px circle at ${cursor.x * 100}% ${cursor.y * 100}%, rgba(255,241,45,0.07) 0%, transparent 65%)`,
         }} />
 
-        {/* Custom cursor dot */}
-        {inHero && (
-          <motion.div
-            style={{
-              position: 'fixed',
-              left: 0, top: 0,
-              width: 10, height: 10,
-              borderRadius: '50%',
-              background: '#FFF12D',
-              pointerEvents: 'none',
-              zIndex: 9999,
-              x: cursor.x * (heroRef.current?.getBoundingClientRect().width ?? 0) + (heroRef.current?.getBoundingClientRect().left ?? 0) - 5,
-              y: cursor.y * (heroRef.current?.getBoundingClientRect().height ?? 0) + (heroRef.current?.getBoundingClientRect().top ?? 0) - 5,
-            }}
-          />
-        )}
 
         {/* Hero content */}
         <motion.div
@@ -199,7 +183,7 @@ export default function Home() {
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
-                fontSize: 'clamp(4.5rem, 13.5vw, 13rem)',
+                fontSize: 'clamp(3rem, 11vw, 11rem)',
                 lineHeight: 0.88,
                 letterSpacing: '-0.03em',
                 color: '#fff',
