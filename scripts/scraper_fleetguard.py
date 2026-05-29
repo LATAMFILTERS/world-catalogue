@@ -230,7 +230,11 @@ def save_progress(p):
 # ── API interceptor ───────────────────────────────────────────────────────────
 
 def make_api_listener():
-    """Retorna (captured_list, handler) para capturar respuestas JSON de interés."""
+    """
+    Retorna (captured_list, handler). Captura respuestas JSON de interés
+    junto con la petición que las originó (método + body + headers), necesario
+    para re-emitir la petición cambiando el número de página.
+    """
     captured = []
 
     def handler(response):
@@ -243,9 +247,25 @@ def make_api_listener():
             return
         try:
             data = response.json()
-            captured.append({"url": url, "status": response.status, "data": data})
+        except Exception:
+            return
+        # Capturar detalles de la petición (para replay paginado)
+        method, post_data, req_headers = "GET", None, {}
+        try:
+            req = response.request
+            method = req.method
+            post_data = req.post_data
+            req_headers = req.headers
         except Exception:
             pass
+        captured.append({
+            "url": url,
+            "status": response.status,
+            "data": data,
+            "method": method,
+            "post_data": post_data,
+            "req_headers": req_headers,
+        })
 
     return captured, handler
 
@@ -382,47 +402,117 @@ def inspect_page(url: str):
 
 # ── Category collector ────────────────────────────────────────────────────────
 
-def _api_page_url(base_url: str, page_param: str, page_num: int) -> str:
-    """Reemplaza o agrega el parámetro de página en una URL de API Salesforce."""
-    import urllib.parse
-    parsed = urllib.parse.urlparse(base_url)
-    params  = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
-    params[page_param] = [str(page_num)]
-    new_q = urllib.parse.urlencode({k: v[0] for k, v in params.items()})
-    return urllib.parse.urlunparse(parsed._replace(query=new_q))
+def _count_products(data) -> int:
+    """Cuenta productos en una respuesta API."""
+    if isinstance(data, dict):
+        for k in ("products", "items", "results", "productList", "records", "data"):
+            v = data.get(k)
+            if isinstance(v, list):
+                return len(v)
+    return 0
 
 
 def _find_product_api(captured: list):
     """
-    Busca en las respuestas API capturadas la que contiene productos.
-    Retorna (url, page_param, current_page) o (None, None, 1).
+    Busca la petición API capturada que devolvió productos.
+    Retorna el dict completo de captured (url/method/post_data/data) o None.
     """
-    import urllib.parse
+    best = None
     for c in reversed(captured):   # la más reciente primero
-        url  = c.get("url", "")
-        data = c.get("data", {})
-        # Verificar que contiene productos
-        count = 0
-        if isinstance(data, dict):
-            for k in ("products", "items", "results", "productList", "records", "data"):
-                v = data.get(k)
-                if isinstance(v, list) and len(v) > 0:
-                    count = len(v); break
-        if count == 0:
-            continue
-        # Detectar parámetro de paginación en la URL
+        if _count_products(c.get("data")) > 0:
+            best = c
+            break
+    return best
+
+
+def _replay_api_page(page, cap: dict, page_num: int):
+    """
+    Re-emite la petición API capturada pidiendo `page_num`. Maneja:
+      - GET: cambia el parámetro de página en la query (prueba variantes).
+      - POST: cambia el campo de página dentro del body JSON (prueba variantes).
+    Retorna (data|None, descripcion_intento).
+    """
+    import urllib.parse, json as _json
+
+    url     = cap["url"]
+    method  = (cap.get("method") or "GET").upper()
+    body    = cap.get("post_data")
+    headers = cap.get("req_headers") or {}
+    # Headers seguros para replay (sin los que rompen fetch como content-length)
+    safe_headers = {k: v for k, v in headers.items()
+                    if k.lower() in ("accept", "content-type", "authorization",
+                                     "x-csrf-token", "x-sfdc-page-cache",
+                                     "authorization-bearer")}
+    safe_headers.setdefault("accept", "application/json")
+
+    PAGE_KEYS = ("page", "pageNumber", "currentPage", "pageNo", "p")
+
+    if method == "GET":
         parsed = urllib.parse.urlparse(url)
-        params = urllib.parse.parse_qs(parsed.query)
-        for pp in ("pageNumber", "page", "currentPage", "offset", "start"):
-            if pp in params:
-                try:
-                    pg = int(params[pp][0])
-                    return url, pp, pg
-                except ValueError:
-                    pass
-        # URL sin parámetro de página — intentar agregar pageNumber=1
-        return url, "pageNumber", 1
-    return None, None, 1
+        params = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+        # ¿Ya hay un parámetro de página? cámbialo. Si no, prueba PAGE_KEYS.
+        existing = next((k for k in PAGE_KEYS if k in params), None)
+        keys_to_try = [existing] if existing else list(PAGE_KEYS)
+        for key in keys_to_try:
+            p2 = dict((k, v[0]) for k, v in params.items())
+            p2[key] = str(page_num)
+            new_url = urllib.parse.urlunparse(
+                parsed._replace(query=urllib.parse.urlencode(p2)))
+            data = page.evaluate("""async (args) => {
+                try {
+                    const r = await fetch(args.url, {credentials:'include', headers:args.h});
+                    if (!r.ok) return null;
+                    return await r.json();
+                } catch(e) { return null; }
+            }""", {"url": new_url, "h": safe_headers})
+            if data and _count_products(data) > 0:
+                return data, f"GET {key}={page_num}"
+        return None, "GET (sin variante válida)"
+
+    # POST: el body suele ser JSON con el número de página adentro
+    parsed_body = None
+    if body:
+        try:
+            parsed_body = _json.loads(body)
+        except Exception:
+            parsed_body = None
+
+    def set_page(obj, val):
+        """Busca recursivamente una clave de página y la fija. Retorna True si la halló."""
+        found = False
+        if isinstance(obj, dict):
+            for k in list(obj.keys()):
+                if k in PAGE_KEYS and isinstance(obj[k], (int, str)):
+                    obj[k] = val; found = True
+                elif isinstance(obj[k], (dict, list)):
+                    found = set_page(obj[k], val) or found
+        elif isinstance(obj, list):
+            for it in obj:
+                found = set_page(it, val) or found
+        return found
+
+    if isinstance(parsed_body, (dict, list)):
+        import copy
+        b2 = copy.deepcopy(parsed_body)
+        if not set_page(b2, page_num):
+            # No había clave de página → inyectar pageNumber en la raíz dict
+            if isinstance(b2, dict):
+                b2["pageNumber"] = page_num
+        new_body = _json.dumps(b2)
+        safe_headers.setdefault("content-type", "application/json")
+        data = page.evaluate("""async (args) => {
+            try {
+                const r = await fetch(args.url, {method:'POST', credentials:'include',
+                    headers: args.h, body: args.body});
+                if (!r.ok) return null;
+                return await r.json();
+            } catch(e) { return null; }
+        }""", {"url": url, "h": safe_headers, "body": new_body})
+        if data and _count_products(data) > 0:
+            return data, f"POST page={page_num}"
+        return None, "POST (sin variante válida)"
+
+    return None, f"{method} (body no JSON)"
 
 
 def collect_product_links(page, category_url: str) -> list:
@@ -430,8 +520,8 @@ def collect_product_links(page, category_url: str) -> list:
     Recolecta URLs de productos de una categoría Fleetguard.
 
     Estrategia en 3 capas (por orden de fiabilidad):
-    1. API directa: detecta la URL Salesforce que devuelve productos, itera
-       pageNumber=2..N via fetch() en el contexto del browser (usa cookies).
+    1. API directa: re-emite la petición Salesforce capturada (GET o POST)
+       variando el número de página. Itera hasta agotar productos.
     2. Scroll: hace scroll al fondo para activar lazy rendering y extrae links.
     3. Botón/paginación UI: fallback si capas 1-2 no avanzan.
     """
@@ -446,9 +536,8 @@ def collect_product_links(page, category_url: str) -> list:
     time.sleep(3)
 
     all_urls  = set()
-    api_mode  = False   # True cuando estamos iterando por API directa
-    api_base  = None
-    api_param = "pageNumber"
+    api_mode  = False
+    api_cap   = None
     pg        = 1
     stale     = 0
 
@@ -463,32 +552,47 @@ def collect_product_links(page, category_url: str) -> list:
     harvest()
     logging.info(f"  Carga inicial: {len(all_urls)} URLs")
 
+    # ── Diagnóstico: volcar TODAS las APIs capturadas (url + método + #prod) ───
+    try:
+        diag = [{
+            "url": c["url"], "method": c.get("method"),
+            "products": _count_products(c.get("data")),
+            "has_body": bool(c.get("post_data")),
+            "post_data": (c.get("post_data") or "")[:500],
+        } for c in captured]
+        diag_file = os.path.join(OUTPUT_DIR, f"fleetguard_{CATEGORY_NAME}_api_debug.json")
+        with open(diag_file, "w", encoding="utf-8") as f:
+            json.dump(diag, f, ensure_ascii=False, indent=2)
+        logging.info(f"  Diagnóstico API → {diag_file} ({len(diag)} llamadas)")
+    except Exception as e:
+        logging.debug(f"  No se pudo volcar diagnóstico: {e}")
+
     # ── Detectar si hay una API paginable ─────────────────────────────────────
-    api_base, api_param, _ = _find_product_api(captured)
-    if api_base:
-        logging.info(f"  API detectada: {api_base[:80]}… (param={api_param})")
+    api_cap = _find_product_api(captured)
+    if api_cap:
+        logging.info(f"  API detectada: {api_cap['method']} "
+                     f"{api_cap['url'][:70]}… ({_count_products(api_cap['data'])} prod)")
         api_mode = True
 
     while True:
         before = len(all_urls)
 
         if api_mode:
-            # ── Capa 1: API directa ──────────────────────────────────────────
-            next_url = _api_page_url(api_base, api_param, pg + 1)
+            # ── Capa 1: re-emitir petición API con la página siguiente ────────
             try:
-                result = page.evaluate("""async (url) => {
-                    try {
-                        const r = await fetch(url, {credentials: 'include',
-                            headers: {'Accept': 'application/json'}});
-                        if (!r.ok) return null;
-                        return await r.json();
-                    } catch(e) { return null; }
-                }""", next_url)
-                if result:
-                    _extract_urls_from_api(result, all_urls)
+                data, how = _replay_api_page(page, api_cap, pg + 1)
+                if data:
+                    _extract_urls_from_api(data, all_urls)
+                    if (len(all_urls) - before) == 0:
+                        # devolvió productos pero ninguno nuevo → fin real
+                        logging.info(f"  API {how}: sin URLs nuevas — fin de páginas")
+                        api_mode = False
+                else:
+                    logging.info(f"  API {how} — fin (sin más productos)")
+                    api_mode = False
             except Exception as e:
-                logging.debug(f"  API fetch error pág {pg+1}: {e}")
-                api_mode = False   # fallback a scroll/botones
+                logging.warning(f"  API replay error pág {pg+1}: {e}")
+                api_mode = False
 
         if not api_mode:
             # ── Capa 2: scroll al fondo (infinite scroll / lazy render) ───────
