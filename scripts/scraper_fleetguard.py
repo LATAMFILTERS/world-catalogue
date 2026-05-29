@@ -910,20 +910,46 @@ def _scrape_once(page, url: str, result: dict, settle: float):
     wait_net(page, 20000)
     time.sleep(settle)
 
-    # ── Part number + nombre ──────────────────────────────────────────
+    # ── Part number + nombre/tipo + descripción ──────────────────────
     info = page.evaluate(f"""() => {{
         {_SHADOW_WALK}
+        {_SHADOW_WALK_ALL}
+        const txt = el => el ? el.textContent.trim().replace(/\\s+/g,' ') : '';
+
         const pnEl   = sw(document, 'h2.product-name', 0) ||
                        sw(document, '.product-name', 0);
+        // Tipo/nombre: "Air Filter, Primary"
         const nameEl = sw(document, 'h1', 0) ||
-                       sw(document, '[class*="product-title"]', 0);
+                       sw(document, '[class*="product-title"]', 0) ||
+                       sw(document, '[class*="product-name-type"]', 0);
+
+        // Descripción larga: párrafo(s) que describen el producto.
+        let desc = '';
+        const cand = [];
+        swa(document, '[class*="product-description"], [class*="productDescription"], ' +
+                      '[class*="long-description"], [class*="overview"], ' +
+                      '[itemprop="description"]', 0, cand);
+        for (const c of cand) {{
+            const t = txt(c);
+            if (t.length > desc.length) desc = t;
+        }}
+        // Fallback: el <p> más largo de la página (la descripción suele serlo)
+        if (desc.length < 40) {{
+            const ps = [];
+            swa(document, 'p', 0, ps);
+            ps.forEach(p => {{ const t = txt(p); if (t.length > desc.length) desc = t; }});
+        }}
+
         return {{
-            pn:   pnEl   ? pnEl.textContent.trim().toUpperCase()   : '',
-            name: nameEl ? nameEl.textContent.trim()               : '',
+            pn:   pnEl   ? pnEl.textContent.trim().toUpperCase() : '',
+            name: txt(nameEl),
+            description: desc,
         }};
     }}""")
     result["part_number"] = info.get("pn") or result["part_number"]
     result["name"]        = info.get("name") or result["name"]
+    result["description"] = info.get("description") or result.get("description", "")
+    logging.info(f"    name: {result['name'][:40]!r} | desc: {len(result['description'])} ch")
 
     if not result["part_number"]:
         for seg in reversed(url.rstrip("/").split("/")):
@@ -963,6 +989,7 @@ def scrape_product(page, url: str) -> dict:
         "url": url,
         "part_number": "",
         "name": "",
+        "description": "",
         "attributes": {},
         "cross_references": [],
         "alternatives": [],
