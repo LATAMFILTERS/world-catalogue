@@ -73,8 +73,11 @@ PAUSE_BETWEEN = (4, 9)
 # desde fleetguard.com (debe incluir el ID Salesforce, ej. /0ZGPL...).
 # Estado: solo air-precleaners confirmada (37 códigos scrapeados).
 CATEGORIES = {
-    "air-precleaners":     "https://www.fleetguard.com/category/products/air-filtration/air-precleaners/0ZGPL0000000FSJ4A2",
+    "air-precleaners":       "https://www.fleetguard.com/category/products/air-filtration/air-precleaners/0ZGPL0000000FSJ4A2",
     "air-primary-secondary": "https://www.fleetguard.com/category/products/air-filtration/primary-and-secondary-air-filters/0ZGPL0000000FSF4A2",
+    "lube-cartridge":        "https://www.fleetguard.com/category/products/lube-filtration/cartridge-lube-filters/0ZGPL0000000FTB4A2",
+    "fuel-spin-on":          "https://www.fleetguard.com/category/products/fuel-filtration/spin-on-fuel-filters/0ZGPL0000000FTP4A2",
+    "hydraulic-spin-on":     "https://www.fleetguard.com/category/products/hydraulic-filtration/spinon-hydraulic-filters/0ZGPL0000000FSs4AM",
 }
 
 # JS que traversa Shadow DOM recursivamente
