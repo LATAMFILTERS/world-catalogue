@@ -544,8 +544,13 @@ def load_progress():
 
 
 def save_progress(p):
-    with open(PROGRESS_FILE, "w", encoding="utf-8") as f:
+    # Atomic write: temp file → rename, so a hard shutdown never corrupts the file
+    tmp = PROGRESS_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(p, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, PROGRESS_FILE)
 
 
 # ── main ────────────────────────────────────────────────────────────────────
@@ -614,8 +619,7 @@ def main():
             progress["done"]    = list(done_set)
             progress["results"] = results
 
-            if idx % 5 == 0:
-                save_progress(progress)
+            save_progress(progress)
 
             rand_sleep()
 
