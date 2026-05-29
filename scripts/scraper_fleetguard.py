@@ -444,6 +444,179 @@ def _extract_product_url(item: dict, url_set: set):
             url_set.add(f"https://www.fleetguard.com/product/{v}")
 
 
+# ── JS helpers (selectores confirmados por inspección DOM real) ──────────────
+#
+# Estructura confirmada de AP8404:
+#   <h2 class="product-name" data-id="01t...">AP8404</h2>
+#   Specs: tabla visible por defecto (dl o table)
+#   Related Parts: sección con "Uses Precleaner" / "Uses Service Part"
+#   Tabs: <button class="tablinks" data-name="Equipment|CrossRef">
+#
+
+_SHADOW_WALK = """
+function sw(root, sel, depth) {
+    if (depth > 10) return null;
+    const el = root.querySelector(sel);
+    if (el) return el;
+    for (const n of root.querySelectorAll('*'))
+        if (n.shadowRoot) { const r = sw(n.shadowRoot, sel, depth+1); if (r) return r; }
+    return null;
+}
+"""
+
+_SHADOW_WALK_ALL = """
+function swa(root, sel, depth, out) {
+    if (depth > 10) return;
+    root.querySelectorAll(sel).forEach(el => out.push(el));
+    root.querySelectorAll('*').forEach(n => {
+        if (n.shadowRoot) swa(n.shadowRoot, sel, depth+1, out);
+    });
+}
+"""
+
+
+def _click_tab(page, data_name: str) -> bool:
+    """Activa tab Fleetguard por data-name confirmado."""
+    clicked = page.evaluate(f"""() => {{
+        {_SHADOW_WALK}
+        const btn = sw(document, 'button.tablinks[data-name="{data_name}"]', 0);
+        if (btn) {{ btn.click(); return true; }}
+        return false;
+    }}""")
+    if clicked:
+        time.sleep(2)
+        try:
+            page.wait_for_load_state("networkidle", timeout=6000)
+        except Exception:
+            pass
+    return bool(clicked)
+
+
+def _extract_specs(page) -> dict:
+    """Lee la tabla de specs visible por defecto (sin activar tab)."""
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const specs = {{}};
+        const rows = [];
+        swa(document, 'dl dt, dl dd, tr td, tr th', 0, rows);
+        // dl pattern: dt → dd → dt → dd ...
+        let lastKey = null;
+        rows.forEach(el => {{
+            const tag = el.tagName.toLowerCase();
+            const t   = el.textContent.trim();
+            if (!t) return;
+            if (tag === 'dt') {{ lastKey = t.replace(/:$/, ''); }}
+            else if (tag === 'dd' && lastKey) {{ specs[lastKey] = t; lastKey = null; }}
+            else if (tag === 'td' || tag === 'th') {{
+                // table: collect pairs by row
+            }}
+        }});
+        // Also table rows (th/td pairs)
+        const tables = [];
+        swa(document, 'table tr', 0, tables);
+        tables.forEach(row => {{
+            const cells = Array.from(row.querySelectorAll('td, th'));
+            if (cells.length >= 2) {{
+                const k = cells[0].textContent.trim().replace(/:$/, '');
+                const v = cells[1].textContent.trim();
+                if (k && v && k.length < 80 && !specs[k]) specs[k] = v;
+            }}
+        }});
+        return specs;
+    }}""")
+
+
+def _extract_related_parts(page) -> list:
+    """
+    Extrae 'Related Parts' (Uses Precleaner / Uses Service Part).
+    Estructura confirmada: sección con h3/h4 como label y .product-name como part numbers.
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const parts = [];
+        const seen  = new Set();
+
+        function push(pn) {{
+            pn = (pn || '').trim().toUpperCase().replace(/^0+/, '');
+            if (pn && pn.length >= 3 && !seen.has(pn)) {{
+                seen.add(pn); parts.push(pn);
+            }}
+        }}
+
+        // Buscar el contenedor de related parts y extraer .product-name dentro
+        const containers = [];
+        swa(document, '[class*="related"], [class*="Related"]', 0, containers);
+        containers.forEach(c => {{
+            c.querySelectorAll('.product-name, [class*="part-number"], a').forEach(el => push(el.textContent));
+        }});
+
+        // Fallback: buscar todos .product-name que NO sean el producto principal
+        if (parts.length === 0) {{
+            const all = [];
+            swa(document, '.product-name', 0, all);
+            // El primero suele ser el producto principal, saltarlo
+            all.slice(1).forEach(el => push(el.textContent));
+        }}
+
+        return parts;
+    }}""")
+
+
+def _extract_equipment_tab(page) -> list:
+    """
+    Lee tabla Equipment (4 cols: Equipment make-model, Engine, Year, Qty).
+    Confirmado: tab data-name='Equipment', luego tabla con filas make-model + engine + year.
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const rows = [];
+        const seen = new Set();
+        const tableRows = [];
+        swa(document, 'table tr', 0, tableRows);
+        tableRows.forEach(tr => {{
+            const cells = Array.from(tr.querySelectorAll('td'));
+            if (cells.length < 2) return;
+            const make_model = cells[0].textContent.trim().replace(/\\s+/g, ' ');
+            const engine     = (cells[1] || {{}}).textContent?.trim() || '';
+            const year       = (cells[2] || {{}}).textContent?.trim() || '';
+            if (!make_model || make_model.length < 3) return;
+            const key = make_model + '|' + engine + '|' + year;
+            if (!seen.has(key)) {{
+                seen.add(key);
+                rows.push({{ equipment: make_model, engine, year }});
+            }}
+        }});
+        return rows;
+    }}""")
+
+
+def _extract_crossref_tab(page) -> list:
+    """
+    Lee tabla OEM Cross Reference (tab data-name='CrossRef').
+    Columnas: OEM Brand | Part Number (o similares).
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const refs = [];
+        const seen = new Set();
+        const tableRows = [];
+        swa(document, 'table tr', 0, tableRows);
+        tableRows.forEach(tr => {{
+            const cells = Array.from(tr.querySelectorAll('td'));
+            if (cells.length < 2) return;
+            const brand = cells[0].textContent.trim();
+            const pn    = cells[1].textContent.trim().toUpperCase();
+            const key   = brand + '|' + pn;
+            if (brand && pn && pn.length > 1 && !seen.has(key) &&
+                brand.toLowerCase() !== 'brand' && pn !== 'PART NUMBER') {{
+                seen.add(key);
+                refs.push({{ brand, part_number: pn }});
+            }}
+        }});
+        return refs;
+    }}""")
+
+
 # ── Product scraper ───────────────────────────────────────────────────────────
 
 def scrape_product(page, url: str) -> dict:
@@ -459,9 +632,6 @@ def scrape_product(page, url: str) -> dict:
         "scraped_at": str(datetime.now()),
     }
 
-    captured, handler = make_api_listener()
-    page.on("response", handler)
-
     try:
         page.goto(url, timeout=60000, wait_until="domcontentloaded")
         time.sleep(3)
@@ -469,63 +639,44 @@ def scrape_product(page, url: str) -> dict:
         wait_net(page, 15000)
         time.sleep(3)
 
-        # Intentar sacar datos de la API primero
-        for c in captured:
-            _extract_product_data(c["data"], result)
-            if result["part_number"] and result["attributes"]:
-                break
+        # ── Part number + nombre ──────────────────────────────────────────
+        info = page.evaluate(f"""() => {{
+            {_SHADOW_WALK}
+            const pnEl   = sw(document, 'h2.product-name', 0) ||
+                           sw(document, '.product-name', 0);
+            const nameEl = sw(document, 'h1', 0) ||
+                           sw(document, '[class*="product-title"]', 0);
+            return {{
+                pn:   pnEl   ? pnEl.textContent.trim().toUpperCase()   : '',
+                name: nameEl ? nameEl.textContent.trim()               : '',
+            }};
+        }}""")
+        result["part_number"] = info.get("pn") or ""
+        result["name"]        = info.get("name") or ""
 
-        # Fallback: Shadow DOM con selector confirmado (.product-name)
+        # Si no encontró, sacar de URL
         if not result["part_number"]:
-            data = page.evaluate("""() => {
-                function walkShadow(root, selector, depth=0) {
-                    if (depth > 10) return null;
-                    let el = root.querySelector(selector);
-                    if (el) return el.textContent.trim();
-                    for (const node of root.querySelectorAll('*')) {
-                        if (node.shadowRoot) {
-                            const t = walkShadow(node.shadowRoot, selector, depth+1);
-                            if (t) return t;
-                        }
-                    }
-                    return null;
-                }
-                return {
-                    // Selector confirmado por inspección DOM
-                    pn:   walkShadow(document, '.product-name') ||
-                          walkShadow(document, 'h2.product-name') ||
-                          walkShadow(document, '[class*="part-number"]') || '',
-                    name: walkShadow(document, 'h1') ||
-                          walkShadow(document, '[class*="product-title"]') || '',
-                };
-            }""")
-            result["part_number"] = (data.get("pn") or "").upper()
-            result["name"]        = data.get("name") or ""
+            for seg in reversed(url.rstrip("/").split("/")):
+                if len(seg) >= 3 and seg.replace("-", "").isalnum():
+                    result["part_number"] = seg.upper(); break
 
-        # Si aún no tiene part number, sacarlo de la URL
-        if not result["part_number"]:
-            segs = url.rstrip("/").split("/")
-            for seg in reversed(segs):
-                if len(seg) >= 4 and seg.replace("-", "").isalnum():
-                    result["part_number"] = seg.upper()
-                    break
+        # ── Specs (visibles por defecto, sin tab) ────────────────────────
+        result["attributes"] = _extract_specs(page)
+        logging.info(f"    attr: {len(result['attributes'])}")
 
-        # Activar tabs via Shadow DOM y leer contenido
-        _activate_shadow_tab(page, ["specification", "specs", "detail"])
-        if not result["attributes"]:
-            result["attributes"] = _shadow_extract_table(page)
+        # ── Related Parts / Alternativas ─────────────────────────────────
+        result["alternatives"] = _extract_related_parts(page)
+        logging.info(f"    alt: {len(result['alternatives'])}")
 
-        _activate_shadow_tab(page, ["cross", "interchange", "reference"])
-        if not result["cross_references"]:
-            result["cross_references"] = _shadow_extract_table_rows(page)
+        # ── Equipment (tab data-name="Equipment") ────────────────────────
+        _click_tab(page, "Equipment")
+        result["equipment"] = _extract_equipment_tab(page)
+        logging.info(f"    equip: {len(result['equipment'])}")
 
-        _activate_shadow_tab(page, ["alternate", "replace", "supersede"])
-        if not result["alternatives"]:
-            result["alternatives"] = _shadow_extract_part_numbers(page)
-
-        _activate_shadow_tab(page, ["application", "equipment", "vehicle", "fitment"])
-        if not result["equipment"]:
-            result["equipment"] = _shadow_extract_table_rows(page)
+        # ── Cross Reference (tab data-name="CrossRef") ───────────────────
+        _click_tab(page, "CrossRef")
+        result["cross_references"] = _extract_crossref_tab(page)
+        logging.info(f"    cross: {len(result['cross_references'])}")
 
     except PlaywrightTimeout:
         result["error"] = "timeout"
@@ -533,52 +684,8 @@ def scrape_product(page, url: str) -> dict:
     except Exception as e:
         result["error"] = str(e)
         logging.error(f"  ERROR: {url} — {e}")
-    finally:
-        try:
-            page.remove_listener("response", handler)
-        except Exception:
-            pass
 
     return result
-
-
-def _extract_product_data(data, result: dict):
-    """Extrae datos de producto desde respuesta API Salesforce."""
-    if not isinstance(data, dict):
-        return
-    # Campos comunes de Salesforce B2B Commerce producto
-    if not result["name"]:
-        result["name"] = data.get("name", data.get("Name", data.get("productName", "")))
-    if not result["part_number"]:
-        pn = data.get("productCode", data.get("sku", data.get("partNumber", data.get("ProductCode", ""))))
-        if pn:
-            result["part_number"] = str(pn).upper()
-    # Atributos / specs
-    if not result["attributes"]:
-        specs = data.get("specifications", data.get("attributes", data.get("productAttributes", {})))
-        if isinstance(specs, dict) and specs:
-            result["attributes"] = {str(k): str(v) for k, v in specs.items()}
-        elif isinstance(specs, list):
-            for s in specs:
-                if isinstance(s, dict):
-                    k = s.get("name", s.get("label", s.get("key", "")))
-                    v = s.get("value", s.get("val", ""))
-                    if k and v:
-                        result["attributes"][str(k)] = str(v)
-    # Cross-references
-    if not result["cross_references"]:
-        xrefs = data.get("crossReferences", data.get("interchanges", data.get("oemReferences", [])))
-        if isinstance(xrefs, list):
-            for x in xrefs:
-                if isinstance(x, dict):
-                    result["cross_references"].append({
-                        "brand": x.get("brand", x.get("make", "unknown")),
-                        "part_number": str(x.get("partNumber", x.get("number", x.get("PN", "")))).upper(),
-                    })
-    # Recurse into nested dicts/lists
-    for v in data.values():
-        if isinstance(v, (dict, list)):
-            _extract_product_data(v, result)
 
 
 def _activate_shadow_tab(page, keywords: list):
