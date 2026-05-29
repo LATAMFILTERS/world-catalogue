@@ -382,8 +382,59 @@ def inspect_page(url: str):
 
 # ── Category collector ────────────────────────────────────────────────────────
 
+def _api_page_url(base_url: str, page_param: str, page_num: int) -> str:
+    """Reemplaza o agrega el parámetro de página en una URL de API Salesforce."""
+    import urllib.parse
+    parsed = urllib.parse.urlparse(base_url)
+    params  = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+    params[page_param] = [str(page_num)]
+    new_q = urllib.parse.urlencode({k: v[0] for k, v in params.items()})
+    return urllib.parse.urlunparse(parsed._replace(query=new_q))
+
+
+def _find_product_api(captured: list):
+    """
+    Busca en las respuestas API capturadas la que contiene productos.
+    Retorna (url, page_param, current_page) o (None, None, 1).
+    """
+    import urllib.parse
+    for c in reversed(captured):   # la más reciente primero
+        url  = c.get("url", "")
+        data = c.get("data", {})
+        # Verificar que contiene productos
+        count = 0
+        if isinstance(data, dict):
+            for k in ("products", "items", "results", "productList", "records", "data"):
+                v = data.get(k)
+                if isinstance(v, list) and len(v) > 0:
+                    count = len(v); break
+        if count == 0:
+            continue
+        # Detectar parámetro de paginación en la URL
+        parsed = urllib.parse.urlparse(url)
+        params = urllib.parse.parse_qs(parsed.query)
+        for pp in ("pageNumber", "page", "currentPage", "offset", "start"):
+            if pp in params:
+                try:
+                    pg = int(params[pp][0])
+                    return url, pp, pg
+                except ValueError:
+                    pass
+        # URL sin parámetro de página — intentar agregar pageNumber=1
+        return url, "pageNumber", 1
+    return None, None, 1
+
+
 def collect_product_links(page, category_url: str) -> list:
-    """Recolecta URLs de productos usando APIs + Shadow DOM traversal."""
+    """
+    Recolecta URLs de productos de una categoría Fleetguard.
+
+    Estrategia en 3 capas (por orden de fiabilidad):
+    1. API directa: detecta la URL Salesforce que devuelve productos, itera
+       pageNumber=2..N via fetch() en el contexto del browser (usa cookies).
+    2. Scroll: hace scroll al fondo para activar lazy rendering y extrae links.
+    3. Botón/paginación UI: fallback si capas 1-2 no avanzan.
+    """
     captured, handler = make_api_listener()
     page.on("response", handler)
 
@@ -392,100 +443,127 @@ def collect_product_links(page, category_url: str) -> list:
     time.sleep(4)
     dismiss_popups(page)
     wait_net(page, 20000)
-    time.sleep(5)
+    time.sleep(3)
 
-    all_urls = set()
-    pg = 1
-    stale = 0  # páginas consecutivas sin URLs nuevas
+    all_urls  = set()
+    api_mode  = False   # True cuando estamos iterando por API directa
+    api_base  = None
+    api_param = "pageNumber"
+    pg        = 1
+    stale     = 0
 
-    while True:
-        wait_net(page)
-
-        before = len(all_urls)
-
-        # Capa 1: Shadow DOM traversal
-        s_links = shadow_links(page)
-        p_links = pierce_links(page)
-        for u in s_links + p_links:
+    def harvest():
+        """Extrae URLs del estado actual del DOM + respuestas capturadas."""
+        for u in shadow_links(page) + pierce_links(page):
             all_urls.add(u)
-
-        # Capa 2: Buscar URLs en respuestas API
         for c in captured:
             _extract_urls_from_api(c["data"], all_urls)
 
+    # ── Extracción inicial ────────────────────────────────────────────────────
+    harvest()
+    logging.info(f"  Carga inicial: {len(all_urls)} URLs")
+
+    # ── Detectar si hay una API paginable ─────────────────────────────────────
+    api_base, api_param, _ = _find_product_api(captured)
+    if api_base:
+        logging.info(f"  API detectada: {api_base[:80]}… (param={api_param})")
+        api_mode = True
+
+    while True:
+        before = len(all_urls)
+
+        if api_mode:
+            # ── Capa 1: API directa ──────────────────────────────────────────
+            next_url = _api_page_url(api_base, api_param, pg + 1)
+            try:
+                result = page.evaluate("""async (url) => {
+                    try {
+                        const r = await fetch(url, {credentials: 'include',
+                            headers: {'Accept': 'application/json'}});
+                        if (!r.ok) return null;
+                        return await r.json();
+                    } catch(e) { return null; }
+                }""", next_url)
+                if result:
+                    _extract_urls_from_api(result, all_urls)
+            except Exception as e:
+                logging.debug(f"  API fetch error pág {pg+1}: {e}")
+                api_mode = False   # fallback a scroll/botones
+
+        if not api_mode:
+            # ── Capa 2: scroll al fondo (infinite scroll / lazy render) ───────
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            time.sleep(2)
+            wait_net(page)
+            harvest()
+
+            # ── Capa 3: botón/paginación UI ───────────────────────────────────
+            went = page.evaluate(f"""(targetPage) => {{
+                function* allNodes(root, depth=0) {{
+                    if (depth > 12) return;
+                    for (const el of root.querySelectorAll('*')) {{
+                        yield el;
+                        if (el.shadowRoot) yield* allNodes(el.shadowRoot, depth+1);
+                    }}
+                }}
+                const label = el =>
+                    ((el.getAttribute && (el.getAttribute('aria-label') ||
+                      el.getAttribute('title'))) || '').trim().toLowerCase();
+                const text  = el => (el.textContent || '').trim().toLowerCase();
+                const ok    = el =>
+                    el.offsetParent !== null && !el.disabled &&
+                    el.getAttribute('aria-disabled') !== 'true';
+
+                const nodes = [...allNodes(document)];
+                const cands = nodes.filter(el =>
+                    el.tagName === 'BUTTON' || el.tagName === 'A' ||
+                    (el.getAttribute && el.getAttribute('role') === 'button'));
+
+                for (const el of cands) {{
+                    if (!ok(el)) continue;
+                    const l = label(el), t = text(el);
+                    if (/prev/.test(l) || /prev/.test(t)) continue;
+                    if (/\\bnext\\b/.test(l) || /\\bnext\\b/.test(t) ||
+                        /^[›»→⟩›]$/.test(t) ||
+                        l === 'next page' || l === 'go to next page') {{
+                        el.click(); return 'next';
+                    }}
+                }}
+                for (const el of cands) {{
+                    if (!ok(el)) continue;
+                    const cls = (el.className && el.className.toString
+                                  ? el.className.toString() : '').toLowerCase();
+                    if (/next/.test(cls) && !/prev/.test(cls)) {{
+                        el.click(); return 'next-class';
+                    }}
+                }}
+                for (const el of cands) {{
+                    if (!ok(el)) continue;
+                    if (/load more|show more|view more|see more/.test(text(el))) {{
+                        el.click(); return 'more';
+                    }}
+                }}
+                for (const el of cands) {{
+                    if (!ok(el)) continue;
+                    if (text(el) === String(targetPage)) {{
+                        el.click(); return 'num';
+                    }}
+                }}
+                return '';
+            }}""", pg + 1)
+
+            if not went:
+                logging.info(f"  Sin más páginas en pág {pg}")
+                break
+
+            time.sleep(4)
+            wait_net(page)
+            harvest()
+
         nuevos = len(all_urls) - before
-        logging.info(f"  Página {pg}: {len(all_urls)} productos acumulados (+{nuevos})")
+        pg    += 1
+        logging.info(f"  Página {pg}: {len(all_urls)} acumuladas (+{nuevos})")
 
-        # Avanzar a la siguiente página. Estrategias múltiples porque el
-        # componente Salesforce LWC no usa un botón "Next" estándar:
-        #   1. botón/enlace con aria-label/title/text que contenga "next" (no "previous")
-        #   2. símbolos de flecha › » →  ›
-        #   3. botón con clase *next* en componente de paginación
-        #   4. "Load More" / "Show More" (paginación incremental)
-        #   5. botón de número de página = pg+1 (paginación numerada 1..144)
-        went = page.evaluate(f"""(targetPage) => {{
-            function* allNodes(root, depth=0) {{
-                if (depth > 12) return;
-                const els = root.querySelectorAll('*');
-                for (const el of els) {{
-                    yield el;
-                    if (el.shadowRoot) yield* allNodes(el.shadowRoot, depth+1);
-                }}
-            }}
-            const label = el =>
-                ((el.getAttribute && (el.getAttribute('aria-label') || el.getAttribute('title'))) || '')
-                .trim().toLowerCase();
-            const text = el => (el.textContent || '').trim().toLowerCase();
-            const clickable = el =>
-                el.offsetParent !== null && !el.disabled &&
-                el.getAttribute('aria-disabled') !== 'true';
-
-            const nodes = [...allNodes(document)];
-            const cands = nodes.filter(el =>
-                el.tagName === 'BUTTON' || el.tagName === 'A' ||
-                (el.getAttribute && el.getAttribute('role') === 'button'));
-
-            // 1+2: aria-label/title/text "next" o flecha derecha, nunca "previous/prev"
-            for (const el of cands) {{
-                if (!clickable(el)) continue;
-                const l = label(el), t = text(el);
-                if (/prev/.test(l) || /prev/.test(t)) continue;
-                if (/\\bnext\\b/.test(l) || /\\bnext\\b/.test(t) ||
-                    /^[›»→⟩]$/.test(t) || l === 'next page' || l === 'go to next page') {{
-                    el.click(); return 'next';
-                }}
-            }}
-            // 3: clase *next* en paginación
-            for (const el of cands) {{
-                if (!clickable(el)) continue;
-                const cls = (el.className && el.className.toString ? el.className.toString() : '').toLowerCase();
-                if (/next/.test(cls) && !/prev/.test(cls)) {{ el.click(); return 'next-class'; }}
-            }}
-            // 4: Load More / Show More
-            for (const el of cands) {{
-                if (!clickable(el)) continue;
-                const t = text(el);
-                if (/load more|show more|view more|see more/.test(t)) {{ el.click(); return 'more'; }}
-            }}
-            // 5: número de página = targetPage
-            for (const el of cands) {{
-                if (!clickable(el)) continue;
-                const t = text(el);
-                if (t === String(targetPage)) {{ el.click(); return 'num'; }}
-            }}
-            return '';
-        }}""", pg + 1)
-
-        if not went:
-            logging.info(f"  No hay más páginas (sin control de avance en pág {pg})")
-            break
-
-        pg += 1
-        time.sleep(4)
-        wait_net(page)
-
-        # Anti-bucle: si la página no aportó URLs nuevas, contar como stale.
-        # 3 stale consecutivas → cortar (evita clicks infinitos sin avance).
         if nuevos == 0:
             stale += 1
             if stale >= 3:
@@ -494,9 +572,8 @@ def collect_product_links(page, category_url: str) -> list:
         else:
             stale = 0
 
-        # Tope de seguridad razonable (144 págs conocidas → 200 con margen).
         if pg > 250:
-            logging.warning("  Tope de 250 páginas alcanzado — deteniendo")
+            logging.warning("  Tope 250 páginas — deteniendo")
             break
 
     logging.info(f"Total URLs encontradas: {len(all_urls)}")
