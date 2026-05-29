@@ -63,11 +63,23 @@ CATEGORIES = {
 }
 
 # JS que traversa Shadow DOM recursivamente
+# Selector confirmado: <h2 class="product-name" data-id="01tXXX">AP8404</h2>
+PRODUCT_BASE_URL = "https://www.fleetguard.com/product/"
+
 SHADOW_LINKS_JS = """
 () => {
     const found = new Set();
     function walk(root) {
         try {
+            // Selector confirmado: h2.product-name con data-id (Salesforce Product2)
+            root.querySelectorAll('.product-name[data-id], h2.product-name, h3.product-name').forEach(el => {
+                const pn = (el.textContent || '').trim().toUpperCase();
+                const id = el.getAttribute('data-id') || '';
+                if (pn && pn.length >= 3) {
+                    found.add('https://www.fleetguard.com/product/' + pn);
+                }
+            });
+            // También buscar links directos a /product/
             root.querySelectorAll('a[href]').forEach(a => {
                 const h = (a.href || '').split('?')[0].split('#')[0];
                 if (h.includes('fleetguard.com') &&
@@ -221,20 +233,28 @@ def shadow_links(page) -> list:
 
 
 def pierce_links(page) -> list:
-    """Playwright pierce: selector para Shadow DOM."""
+    """Playwright pierce: selector — usa .product-name confirmado en Fleetguard."""
+    result = set()
     try:
-        els = page.locator("pierce:a[href]").all()
-        result = set()
+        # Selector confirmado: h2.product-name con el part number como texto
+        els = page.locator("pierce:.product-name").all()
+        for el in els:
+            pn = (el.text_content() or "").strip().upper()
+            if pn and len(pn) >= 3:
+                result.add(f"https://www.fleetguard.com/product/{pn}")
+    except Exception:
+        pass
+    try:
+        # Fallback: links directos
+        els = page.locator("pierce:a[href*='/product/']").all()
         for el in els:
             href = el.get_attribute("href") or ""
-            if "/product/" in href or (href and href[0] == "/"):
-                full = "https://www.fleetguard.com" + href if href.startswith("/") else href
-                full = full.split("?")[0].split("#")[0]
-                if "fleetguard.com" in full and "/category/" not in full:
-                    result.add(full)
-        return list(result)
+            full = ("https://www.fleetguard.com" + href if href.startswith("/") else href).split("?")[0]
+            if "fleetguard.com" in full and "/category/" not in full:
+                result.add(full)
     except Exception:
-        return []
+        pass
+    return list(result)
 
 
 # ── Inspect mode ──────────────────────────────────────────────────────────────
@@ -455,29 +475,32 @@ def scrape_product(page, url: str) -> dict:
             if result["part_number"] and result["attributes"]:
                 break
 
-        # Fallback: Shadow DOM
+        # Fallback: Shadow DOM con selector confirmado (.product-name)
         if not result["part_number"]:
             data = page.evaluate("""() => {
-                function textOf(root, selector) {
-                    try {
-                        let el = root.querySelector(selector);
-                        if (el) return el.textContent.trim();
-                        for (const node of root.querySelectorAll('*')) {
-                            if (node.shadowRoot) {
-                                const t = textOf(node.shadowRoot, selector);
-                                if (t) return t;
-                            }
+                function walkShadow(root, selector, depth=0) {
+                    if (depth > 10) return null;
+                    let el = root.querySelector(selector);
+                    if (el) return el.textContent.trim();
+                    for (const node of root.querySelectorAll('*')) {
+                        if (node.shadowRoot) {
+                            const t = walkShadow(node.shadowRoot, selector, depth+1);
+                            if (t) return t;
                         }
-                    } catch(e) {}
-                    return '';
+                    }
+                    return null;
                 }
                 return {
-                    h1: textOf(document, 'h1'),
-                    pn: textOf(document, '[class*="part-number"],[class*="partNumber"],[data-part-number]'),
+                    // Selector confirmado por inspección DOM
+                    pn:   walkShadow(document, '.product-name') ||
+                          walkShadow(document, 'h2.product-name') ||
+                          walkShadow(document, '[class*="part-number"]') || '',
+                    name: walkShadow(document, 'h1') ||
+                          walkShadow(document, '[class*="product-title"]') || '',
                 };
             }""")
-            result["name"] = data.get("h1", "")
-            result["part_number"] = data.get("pn", "").upper()
+            result["part_number"] = (data.get("pn") or "").upper()
+            result["name"]        = data.get("name") or ""
 
         # Si aún no tiene part number, sacarlo de la URL
         if not result["part_number"]:
