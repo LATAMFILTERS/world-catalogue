@@ -608,7 +608,13 @@ def _extract_maintenance_kits(page) -> list:
 
             const rowText = texts.join(' ');
             const parts = (rowText.toUpperCase().match(PN_RE) || []);
+            if (parts.length === 0) return;                 // sin part numbers → no es kit
             const kit_number = texts[0] || '';
+            // Aceptar solo: id de kit (MK####) o fila BOM con columna de sistema
+            const isKitId  = /^MK[0-9]/i.test(kit_number);
+            const hasSystem = texts.some(t =>
+                /^(air|fuel|lube|hydraulic|cabin|coolant|water)$/i.test(t));
+            if (!isKitId && !hasSystem) return;             // specs / alternativas → fuera
             const key = rowText;
             if (!seen.has(key)) {{
                 seen.add(key);
@@ -650,7 +656,12 @@ def _extract_specs(page) -> dict:
             if (cells.length >= 2) {{
                 const k = cells[0].textContent.trim().replace(/:$/, '');
                 const v = cells[1].textContent.trim();
-                if (k && v && k.length < 80 && !specs[k]) specs[k] = v;
+                if (!k || !v || k.length >= 80 || specs[k]) return;
+                // Excluir filas de equipment ("Make - Model") y part numbers
+                if (k.includes(' - ')) return;                 // equipment row
+                if (/^[A-Za-z]{{1,4}}[0-9]{{3,}}/.test(k)) return; // part number row
+                if (cells.length >= 3) return;                 // equipment/kit BOM (Eq|Engine|Year|Qty)
+                specs[k] = v;
             }}
         }});
         return specs;
@@ -883,17 +894,24 @@ def _extract_crossref_tab(page) -> list:
         const seen = new Set();
         const tableRows = [];
         swa(document, 'table tr', 0, tableRows);
+        const SPEC_LABELS = ['LARGEST OD','HEIGHT','FULL LIFE EFFICIENCY','LARGEST ID',
+            'RATED FLOW','APPLICABLE REGION','MEDIA TYPE','LENGTH','THREAD SIZE','WIDTH',
+            'WEIGHT','EFFICIENCY','MICRON','GASKET','OD','ID'];
         tableRows.forEach(tr => {{
             const cells = Array.from(tr.querySelectorAll('td'));
-            if (cells.length < 2) return;
+            if (cells.length < 2 || cells.length > 2) return;   // cross-ref es exactamente 2 col
             const brand = cells[0].textContent.trim();
             const pn    = cells[1].textContent.trim().toUpperCase();
             const key   = brand + '|' + pn;
-            if (brand && pn && pn.length > 1 && !seen.has(key) &&
-                brand.toLowerCase() !== 'brand' && pn !== 'PART NUMBER') {{
-                seen.add(key);
-                refs.push({{ brand, part_number: pn }});
-            }}
+            if (!brand || !pn || pn.length <= 1 || seen.has(key)) return;
+            if (brand.toLowerCase() === 'brand' || pn === 'PART NUMBER') return;
+            // Excluir filas de specs (no son cross-refs)
+            if (SPEC_LABELS.includes(brand.toUpperCase())) return;
+            if (/INCH|\\bMM\\b|\\//.test(pn)) return;     // valores con unidades/dimensiones
+            if (/^[0-9]+$/.test(pn)) return;              // valores numéricos puros (efficiency, etc)
+            if (pn.split(' ').length > 2) return;         // texto descriptivo
+            seen.add(key);
+            refs.push({{ brand, part_number: pn }});
         }});
         return refs;
     }}""")
