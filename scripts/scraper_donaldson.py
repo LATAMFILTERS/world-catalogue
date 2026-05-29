@@ -667,10 +667,50 @@ def test_one(target: str):
     print(json.dumps(data, ensure_ascii=False, indent=2))
 
 
+def login_session():
+    """
+    Abre shop.donaldson.com en el perfil persistente y espera login manual.
+    Guarda cookies en ~/.donaldson_profile para corridas futuras.
+    Necesario en Mac (perfil nuevo) antes de la primera corrida.
+    """
+    with sync_playwright() as pw:
+        context = pw.chromium.launch_persistent_context(
+            user_data_dir=PROFILE_DIR,
+            channel="chrome",
+            headless=False,
+            slow_mo=60,
+            locale="en-US",
+            viewport={"width": 1366, "height": 768},
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+            args=["--disable-blink-features=AutomationControlled"],
+            ignore_default_args=["--enable-automation"],
+        )
+        page = context.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        page.goto("https://shop.donaldson.com/store/en-us/", timeout=60000,
+                  wait_until="domcontentloaded")
+        print("\n" + "=" * 70)
+        print("  Navega el sitio de Donaldson unos segundos para establecer sesión.")
+        print("  No necesitas login — solo deja que cargue y ve algún producto.")
+        print("  Cuando veas productos cargados, vuelve aquí y presiona ENTER.")
+        print("=" * 70)
+        input("\n  ENTER cuando el sitio haya cargado bien... ")
+        print("  ✅ Sesión guardada. Ahora corre:")
+        print("     python3 scraper_donaldson.py hydraulic")
+        context.close()
+
+
 def _usage():
     print("Uso:")
     print("  python scraper_donaldson.py <categoria> [url]   # scrapea categoría")
     print("  python scraper_donaldson.py --test <url>        # prueba 1 producto")
+    print("  python scraper_donaldson.py --login             # guarda sesión (Mac/perfil nuevo)")
     print(f"\nCategorías conocidas: {', '.join(CATEGORIES)}")
     print("Para una nueva categoría pasa su URL de búsqueda:")
     print('  python scraper_donaldson.py fuel "https://shop.donaldson.com/.../search?N=...&..."')
@@ -680,7 +720,9 @@ if __name__ == "__main__":
     import sys
     argv = sys.argv[1:]
 
-    if argv and argv[0] == "--test":
+    if argv and argv[0] == "--login":
+        login_session()
+    elif argv and argv[0] == "--test":
         if len(argv) < 2:
             _usage()
         else:
