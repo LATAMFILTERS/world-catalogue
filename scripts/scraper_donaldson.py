@@ -53,6 +53,7 @@ PROGRESS_FILE = "donaldson_lube_progress.json"
 
 SHOW_MORE_LIMIT = 80
 PAUSE_BETWEEN   = (5, 10)
+RECOLLECT       = False   # --recollect: re-pagina y fusiona URLs sin borrar progreso
 
 
 def configure(name: str, url: str):
@@ -285,7 +286,12 @@ def collect_product_links(page):
     while True:
         url = base_url + f"&No={offset}"
         logging.info(f"  Página {pg} (No={offset}) …")
-        page.goto(url, timeout=60000, wait_until="networkidle")
+        try:
+            page.goto(url, timeout=60000, wait_until="domcontentloaded")
+        except Exception:
+            # Timeout en networkidle: la página cargó pero AJAX sigue activo.
+            # domcontentloaded ya garantiza el HTML base con los links de producto.
+            pass
         time.sleep(3)
         if pg == 1:
             dismiss_popups(page)
@@ -608,9 +614,19 @@ def main():
             stealth_sync(page)
 
         # Recolectar paths
-        if not progress["part_numbers"]:
-            logging.info("=== Recolectando product paths ===")
-            pns = collect_product_links(page)
+        if not progress["part_numbers"] or RECOLLECT:
+            if RECOLLECT and progress["part_numbers"]:
+                logging.info("=== Re-recolectando (--recollect): fusionando URLs nuevas ===")
+            else:
+                logging.info("=== Recolectando product paths ===")
+            fresh = collect_product_links(page)
+            if RECOLLECT:
+                prev = set(p.split('/')[0] for p in progress["part_numbers"])
+                added = [p for p in fresh if p.split('/')[0] not in prev]
+                pns = progress["part_numbers"] + added
+                logging.info(f"  +{len(added)} URLs nuevas (total {len(pns)})")
+            else:
+                pns = fresh
             progress["part_numbers"] = pns
             save_progress(progress)
         else:
@@ -748,6 +764,11 @@ if __name__ == "__main__":
         else:
             test_one(argv[1])
     else:
+        recollect = "--recollect" in argv
+        argv = [a for a in argv if a != "--recollect"]
+        if recollect:
+            globals()["RECOLLECT"] = True
+
         name = (argv[0] if argv else "lube").lower()
         url  = argv[1] if len(argv) > 1 else CATEGORIES.get(name)
         if not url:
