@@ -814,6 +814,59 @@ def _extract_crossref_tab(page) -> list:
 
 # ── Product scraper ───────────────────────────────────────────────────────────
 
+def _is_empty(result: dict) -> bool:
+    """True si no extrajo nada (0/0/0/0) — posible carga incompleta."""
+    return (not result["attributes"] and not result["cross_references"]
+            and not result["alternatives"] and not result["equipment"])
+
+
+def _scrape_once(page, url: str, result: dict, settle: float):
+    """Una pasada de extracción. settle = espera extra (s) tras cargar la página."""
+    page.goto(url, timeout=60000, wait_until="domcontentloaded")
+    time.sleep(settle)
+    dismiss_popups(page)
+    wait_net(page, 20000)
+    time.sleep(settle)
+
+    # ── Part number + nombre ──────────────────────────────────────────
+    info = page.evaluate(f"""() => {{
+        {_SHADOW_WALK}
+        const pnEl   = sw(document, 'h2.product-name', 0) ||
+                       sw(document, '.product-name', 0);
+        const nameEl = sw(document, 'h1', 0) ||
+                       sw(document, '[class*="product-title"]', 0);
+        return {{
+            pn:   pnEl   ? pnEl.textContent.trim().toUpperCase()   : '',
+            name: nameEl ? nameEl.textContent.trim()               : '',
+        }};
+    }}""")
+    result["part_number"] = info.get("pn") or result["part_number"]
+    result["name"]        = info.get("name") or result["name"]
+
+    if not result["part_number"]:
+        for seg in reversed(url.rstrip("/").split("/")):
+            if len(seg) >= 3 and seg.replace("-", "").isalnum():
+                result["part_number"] = seg.upper(); break
+
+    # ── Specs (visibles por defecto, sin tab) ────────────────────────
+    result["attributes"] = _extract_specs(page)
+    logging.info(f"    attr: {len(result['attributes'])}")
+
+    # ── Related Parts / Alternativas ─────────────────────────────────
+    result["alternatives"] = _extract_related_parts(page)
+    logging.info(f"    alt: {len(result['alternatives'])}")
+
+    # ── Equipment (tab data-name="Equipment") ────────────────────────
+    _click_tab(page, "Equipment")
+    result["equipment"] = _extract_equipment_tab(page)
+    logging.info(f"    equip: {len(result['equipment'])}")
+
+    # ── Cross Reference (tab data-name="CrossRef") ───────────────────
+    _click_tab(page, "CrossRef")
+    result["cross_references"] = _extract_crossref_tab(page)
+    logging.info(f"    cross: {len(result['cross_references'])}")
+
+
 def scrape_product(page, url: str) -> dict:
     result = {
         "url": url,
@@ -828,50 +881,16 @@ def scrape_product(page, url: str) -> dict:
     }
 
     try:
-        page.goto(url, timeout=60000, wait_until="domcontentloaded")
-        time.sleep(3)
-        dismiss_popups(page)
-        wait_net(page, 15000)
-        time.sleep(3)
+        _scrape_once(page, url, result, settle=3)
 
-        # ── Part number + nombre ──────────────────────────────────────────
-        info = page.evaluate(f"""() => {{
-            {_SHADOW_WALK}
-            const pnEl   = sw(document, 'h2.product-name', 0) ||
-                           sw(document, '.product-name', 0);
-            const nameEl = sw(document, 'h1', 0) ||
-                           sw(document, '[class*="product-title"]', 0);
-            return {{
-                pn:   pnEl   ? pnEl.textContent.trim().toUpperCase()   : '',
-                name: nameEl ? nameEl.textContent.trim()               : '',
-            }};
-        }}""")
-        result["part_number"] = info.get("pn") or ""
-        result["name"]        = info.get("name") or ""
-
-        # Si no encontró, sacar de URL
-        if not result["part_number"]:
-            for seg in reversed(url.rstrip("/").split("/")):
-                if len(seg) >= 3 and seg.replace("-", "").isalnum():
-                    result["part_number"] = seg.upper(); break
-
-        # ── Specs (visibles por defecto, sin tab) ────────────────────────
-        result["attributes"] = _extract_specs(page)
-        logging.info(f"    attr: {len(result['attributes'])}")
-
-        # ── Related Parts / Alternativas ─────────────────────────────────
-        result["alternatives"] = _extract_related_parts(page)
-        logging.info(f"    alt: {len(result['alternatives'])}")
-
-        # ── Equipment (tab data-name="Equipment") ────────────────────────
-        _click_tab(page, "Equipment")
-        result["equipment"] = _extract_equipment_tab(page)
-        logging.info(f"    equip: {len(result['equipment'])}")
-
-        # ── Cross Reference (tab data-name="CrossRef") ───────────────────
-        _click_tab(page, "CrossRef")
-        result["cross_references"] = _extract_crossref_tab(page)
-        logging.info(f"    cross: {len(result['cross_references'])}")
+        # Reintento si 0/0/0/0: muchas páginas (AP8404, AP8400...) cargan
+        # lento y la extracción corrió antes de tiempo. Recargar con más espera.
+        if _is_empty(result):
+            logging.info("    ⟳ 0/0/0/0 — reintentando con espera larga")
+            time.sleep(2)
+            _scrape_once(page, url, result, settle=7)
+            if _is_empty(result):
+                logging.info("    (vacío confirmado tras reintento)")
 
     except PlaywrightTimeout:
         result["error"] = "timeout"
@@ -1054,6 +1073,55 @@ def main():
     build_equipment_matrix(results)
 
 
+def retry_empty():
+    """
+    Re-scrapea solo los productos 0/0/0/0 (sin error) de una corrida previa.
+    Lee el progress, actualiza in-place los que ahora sí traigan datos.
+    """
+    progress = load_progress()
+    results = progress.get("results", [])
+    if not results:
+        logging.info("No hay resultados previos para reintentar.")
+        return
+
+    empties = [r for r in results
+               if not r.get("error")
+               and not r.get("attributes") and not r.get("cross_references")
+               and not r.get("alternatives") and not r.get("equipment")]
+    logging.info(f"Vacíos a reintentar: {len(empties)} / {len(results)}")
+    if not empties:
+        return
+
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+
+        for idx, old in enumerate(empties, 1):
+            url = old["url"]
+            logging.info(f"[retry {idx}/{len(empties)}] {url}")
+            fresh = scrape_product(page, url)
+            # Reemplazar in-place dentro de results
+            for i, r in enumerate(results):
+                if r["url"] == url:
+                    results[i] = fresh
+                    break
+            na, nc = len(fresh["attributes"]), len(fresh["cross_references"])
+            nl, ne = len(fresh["alternatives"]), len(fresh["equipment"])
+            logging.info(f"  → {fresh['part_number']}: {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
+            progress["results"] = results
+            save_progress(progress)
+            rand_sleep()
+
+        ctx.close()
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    logging.info(f"✅ Reintento completo — {OUTPUT_FILE}")
+    build_equipment_matrix(results)
+
+
 def build_equipment_matrix(results: list):
     """
     Construye matriz equipo→filtros deduplicada para búsqueda por equipo en
@@ -1123,6 +1191,17 @@ if __name__ == "__main__":
         url = argv[1] if len(argv) > 1 else ""
         if not url: print("ERROR: --test necesita URL de producto"); sys.exit(1)
         test_one(url); sys.exit(0)
+
+    if argv[0] == "--retry-empty":
+        # python scraper_fleetguard.py --retry-empty <categoria>
+        name = argv[1].lower() if len(argv) > 1 else ""
+        url  = CATEGORIES.get(name, "")
+        if not name:
+            print("ERROR: --retry-empty necesita la categoría (ej. air-precleaners)")
+            sys.exit(1)
+        configure(name, url)
+        logging.info(f"Reintentando vacíos: {name}")
+        retry_empty(); sys.exit(0)
 
     name = argv[0].lower()
     url  = argv[1] if len(argv) > 1 else CATEGORIES.get(name, "")
