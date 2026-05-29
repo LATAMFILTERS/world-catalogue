@@ -789,12 +789,18 @@ def _extract_equipment_tab(page) -> list:
                 const qty    = (cells[3] || {{}}).textContent?.trim() || '';
                 if (!full || full.length < 3) return;
                 if (/^equipment$/i.test(full)) return;  // encabezado
+                // SOLO filas de equipo ("Marca - Modelo" / "Marca -"): excluye
+                // specs (Length, Largest OD...) y cross-refs que no llevan " -".
+                if (!full.includes(' -')) return;
                 // "Volvo Construction Equipment - ECR50D" → make / model
                 let make = '', model = full;
                 if (full.includes(' - ')) {{
                     const i = full.indexOf(' - ');
                     make = full.slice(0, i).trim();
                     model = full.slice(i + 3).trim();
+                }} else if (full.endsWith(' -')) {{
+                    make = full.slice(0, -2).trim();   // "Ford -" → make=Ford, model=''
+                    model = '';
                 }}
                 const key = full + '|' + engine + '|' + year;
                 if (!seen.has(key)) {{
@@ -873,7 +879,8 @@ def _extract_crossref_tab(page) -> list:
         swa(document, 'table tr', 0, tableRows);
         const SPEC_LABELS = ['LARGEST OD','HEIGHT','FULL LIFE EFFICIENCY','LARGEST ID',
             'RATED FLOW','APPLICABLE REGION','MEDIA TYPE','LENGTH','THREAD SIZE','WIDTH',
-            'WEIGHT','EFFICIENCY','MICRON','GASKET','OD','ID'];
+            'WEIGHT','EFFICIENCY','MICRON','GASKET','OD','ID',
+            'EFFICIENCY TEST STD','TEST STANDARD','EFFICIENCY TEST STANDARD'];
         tableRows.forEach(tr => {{
             const cells = Array.from(tr.querySelectorAll('td'));
             if (cells.length < 2 || cells.length > 2) return;   // cross-ref es exactamente 2 col
@@ -884,6 +891,7 @@ def _extract_crossref_tab(page) -> list:
             if (brand.toLowerCase() === 'brand' || pn === 'PART NUMBER') return;
             // Excluir filas de specs (no son cross-refs)
             if (SPEC_LABELS.includes(brand.toUpperCase())) return;
+            if (/^(ISO|SAE|ASTM|DIN|NAS|JIS)\\s?[0-9]/.test(pn)) return;  // norma, no parte
             if (/INCH|\\bMM\\b|\\//.test(pn)) return;     // valores con unidades/dimensiones
             if (/^[0-9]+$/.test(pn)) return;              // valores numéricos puros (efficiency, etc)
             if (pn.split(' ').length > 2) return;         // texto descriptivo
@@ -918,10 +926,24 @@ def _scrape_once(page, url: str, result: dict, settle: float):
 
         const pnEl   = sw(document, 'h2.product-name', 0) ||
                        sw(document, '.product-name', 0);
-        // Tipo/nombre: "Air Filter, Primary"
-        const nameEl = sw(document, 'h1', 0) ||
-                       sw(document, '[class*="product-title"]', 0) ||
-                       sw(document, '[class*="product-name-type"]', 0);
+        const pn = pnEl ? pnEl.textContent.trim().toUpperCase() : '';
+
+        // Tipo/nombre: "Air Filter, Primary" — NO el part number, NO el párrafo.
+        // Buscar texto corto que parezca tipo de producto (lleva "Filter"/"Element"
+        // o una coma), distinto del código y fuera de tablas.
+        let name = '';
+        const titleEls = [];
+        swa(document, 'h1, h2, h3, [class*="product-title"], [class*="product-type"], ' +
+                      '[class*="product-name-type"], [class*="category"]', 0, titleEls);
+        for (const el of titleEls) {{
+            const t = txt(el);
+            if (!t || t.length > 60) continue;
+            if (t.toUpperCase() === pn) continue;            // es el código, saltar
+            if (el.closest && el.closest('table')) continue; // dentro de tabla, saltar
+            if (/filter|element|cartridge|breather|coolant|fuel|hydraulic|oil|cabin/i.test(t)) {{
+                name = t; break;
+            }}
+        }}
 
         // Descripción larga: párrafo(s) que describen el producto.
         let desc = '';
@@ -933,18 +955,18 @@ def _scrape_once(page, url: str, result: dict, settle: float):
             const t = txt(c);
             if (t.length > desc.length) desc = t;
         }}
-        // Fallback: el <p> más largo de la página (la descripción suele serlo)
+        // Fallback: el <p> más largo, excluyendo footer/legal/login.
         if (desc.length < 40) {{
             const ps = [];
             swa(document, 'p', 0, ps);
-            ps.forEach(p => {{ const t = txt(p); if (t.length > desc.length) desc = t; }});
+            ps.forEach(p => {{
+                const t = txt(p);
+                if (/log in|sign up|privacy|cookie|nashville|all rights/i.test(t)) return;
+                if (t.length > desc.length) desc = t;
+            }});
         }}
 
-        return {{
-            pn:   pnEl   ? pnEl.textContent.trim().toUpperCase() : '',
-            name: txt(nameEl),
-            description: desc,
-        }};
+        return {{ pn, name, description: desc }};
     }}""")
     result["part_number"] = info.get("pn") or result["part_number"]
     result["name"]        = info.get("name") or result["name"]
