@@ -305,6 +305,44 @@ def pierce_links(page) -> list:
     return list(result)
 
 
+# ── Login mode ────────────────────────────────────────────────────────────────
+
+def login_session():
+    """
+    Abre Fleetguard en el perfil persistente y espera a que inicies sesión
+    manualmente. Las cookies quedan guardadas en ~/.fleetguard_profile, así
+    las corridas siguientes usan tu sesión de dealer (asGuest=false) y ven el
+    catálogo completo en vez del reducido de invitado.
+    """
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        page.goto("https://www.fleetguard.com/", timeout=60000,
+                  wait_until="domcontentloaded")
+        print("\n" + "=" * 70)
+        print("  INICIA SESIÓN en la ventana del navegador (login de dealer).")
+        print("  Cuando veas tu cuenta logueada, vuelve aquí y presiona ENTER.")
+        print("  Las cookies se guardan en el perfil para las próximas corridas.")
+        print("=" * 70)
+        input("\n  ENTER cuando estés logueado... ")
+        # Verificar estado de sesión: ¿sigue como invitado?
+        try:
+            ctx_data = page.evaluate("""async () => {
+                try {
+                    const r = await fetch('/webruntime/api/services/data/v66.0/'
+                        + 'commerce/webstores', {credentials:'include'});
+                    return r.status;
+                } catch(e) { return -1; }
+            }""")
+            logging.info(f"  Sesión guardada (status webstores: {ctx_data})")
+        except Exception:
+            pass
+        print("  ✅ Sesión guardada. Ahora corre --codes-only para ver el total real.")
+        ctx.close()
+
+
 # ── Inspect mode ──────────────────────────────────────────────────────────────
 
 def inspect_page(url: str):
@@ -1744,6 +1782,9 @@ if __name__ == "__main__":
     argv = sys.argv[1:]
     if not argv or argv[0] in ("-h", "--help"):
         _usage(); sys.exit(0)
+
+    if argv[0] == "--login":
+        login_session(); sys.exit(0)
 
     if argv[0] == "--inspect":
         url = argv[1] if len(argv) > 1 else ""
