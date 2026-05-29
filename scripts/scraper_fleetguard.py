@@ -619,13 +619,19 @@ def _extract_related_parts(page) -> list:
 
 def _extract_equipment_tab(page) -> list:
     """
-    Equipment tab: clic en cada <a class="appDataDifferentp"> para cargar detalles
-    (año, qty) de cada modelo. Estructura confirmada:
+    Equipment tab: clic en cada <a class="appDataDifferentp"> abre la vista interna
+    del equipo con su BOM completo de filtros. Estructura confirmada:
       <a class="appDataDifferentp" data-id="102666-1-5-1"
          data-name="325C" data-product="AP8404" data-engine="3126">
         Caterpillar - 325C
       </a>
-    Al hacer clic en cada link se carga la tabla con año/qty para ese modelo.
+    La vista interna lista TODOS los filtros del equipo agrupados por sistema:
+      Air / Fuel / Hydraulic / Lube / Cabin → Fleetguard Part | OEM MFG |
+      OEM Part # | Description | Qty. Req.
+
+    Retorna: lista de equipos, cada uno con su BOM:
+      { make, model, engine, equipment, filters: [
+          { system, fleetguard_part, oem_mfg, oem_part, description, qty }, ... ] }
     """
     # Paso 1: recolectar todos los links de modelos de equipos
     model_links = page.evaluate(f"""() => {{
@@ -638,24 +644,30 @@ def _extract_equipment_tab(page) -> list:
                 data_id:     a.getAttribute('data-id') || '',
                 data_name:   a.getAttribute('data-name') || '',
                 data_engine: a.getAttribute('data-engine') || '',
-                text:        a.textContent.trim(),
+                text:        a.textContent.trim().replace(/\\s+/g, ' '),
             }});
         }});
         return links;
     }}""")
 
+    product_url = page.url
     results = []
     seen = set()
 
     for lnk in model_links:
-        make_model = lnk.get("text", "") or lnk.get("data_name", "")
+        full_text  = lnk.get("text", "") or lnk.get("data_name", "")
+        model      = lnk.get("data_name", "")
         engine     = lnk.get("data_engine", "")
         data_id    = lnk.get("data_id", "")
+        # "Caterpillar - 325C" → make=Caterpillar, model=325C
+        make = full_text.split("-")[0].strip() if "-" in full_text else ""
+        if not model and "-" in full_text:
+            model = full_text.split("-", 1)[1].strip()
 
-        if not make_model:
+        if not full_text:
             continue
 
-        # Paso 2: clic en el link para cargar detalles de ese modelo
+        # Paso 2: clic en el link → abre vista interna del equipo
         _did_click = page.evaluate(f"""() => {{
             {_SHADOW_WALK}
             const a = sw(document, 'a.appDataDifferentp[data-id="{data_id}"]', 0);
@@ -664,43 +676,38 @@ def _extract_equipment_tab(page) -> list:
         }}""")
 
         if _did_click:
-            time.sleep(1)
+            time.sleep(1.5)
             try:
-                page.wait_for_load_state("networkidle", timeout=4000)
+                page.wait_for_load_state("networkidle", timeout=5000)
             except Exception:
                 pass
 
-        # Paso 3: extraer tabla que apareció tras el clic (year, qty, etc.)
-        detail_rows = page.evaluate(f"""() => {{
-            {_SHADOW_WALK_ALL}
-            const rows = [];
-            const trs = [];
-            swa(document, 'table tr', 0, trs);
-            trs.forEach(tr => {{
-                const cells = Array.from(tr.querySelectorAll('td'));
-                if (cells.length < 1) return;
-                const vals = cells.map(c => c.textContent.trim()).filter(v => v);
-                if (vals.length > 0) rows.push(vals);
-            }});
-            return rows;
-        }}""")
+        navigated = page.url != product_url
 
-        if detail_rows:
-            for row in detail_rows:
-                year = row[0] if len(row) > 0 else ""
-                qty  = row[1] if len(row) > 1 else ""
-                key  = f"{make_model}|{engine}|{year}|{qty}"
-                if key not in seen:
-                    seen.add(key)
-                    results.append({"equipment": make_model, "engine": engine, "year": year, "qty": qty})
-        else:
-            # Sin tabla de detalle: guardar con datos de atributos del link
-            key = f"{make_model}|{engine}"
-            if key not in seen:
-                seen.add(key)
-                results.append({"equipment": make_model, "engine": engine, "year": "", "qty": ""})
+        # Paso 3: leer el BOM completo de la vista del equipo
+        bom = _read_equipment_bom(page)
 
-    # Fallback: si no se encontraron links appDataDifferentp, leer tabla directamente
+        key = f"{make}|{model}|{engine}"
+        if key not in seen:
+            seen.add(key)
+            results.append({
+                "equipment": full_text,
+                "make":      make,
+                "model":     model,
+                "engine":    engine,
+                "filters":   bom,
+            })
+
+        # Si navegó a otra URL, regresar al producto y reactivar tab Equipment
+        if navigated:
+            try:
+                page.goto(product_url, timeout=30000, wait_until="domcontentloaded")
+                time.sleep(2)
+                _click_tab(page, "Equipment")
+            except Exception:
+                pass
+
+    # Fallback: sin links appDataDifferentp → leer tabla genérica
     if not results:
         table_rows = page.evaluate(f"""() => {{
             {_SHADOW_WALK_ALL}
@@ -713,12 +720,11 @@ def _extract_equipment_tab(page) -> list:
                 if (cells.length < 2) return;
                 const make_model = cells[0].textContent.trim().replace(/\\s+/g, ' ');
                 const engine     = (cells[1] || {{}}).textContent?.trim() || '';
-                const year       = (cells[2] || {{}}).textContent?.trim() || '';
                 if (!make_model || make_model.length < 3) return;
-                const key = make_model + '|' + engine + '|' + year;
+                const key = make_model + '|' + engine;
                 if (!seen.has(key)) {{
                     seen.add(key);
-                    rows.push({{ equipment: make_model, engine, year, qty: '' }});
+                    rows.push({{ equipment: make_model, make: '', model: make_model, engine, filters: [] }});
                 }}
             }});
             return rows;
@@ -726,6 +732,57 @@ def _extract_equipment_tab(page) -> list:
         results = table_rows
 
     return results
+
+
+def _read_equipment_bom(page) -> list:
+    """
+    Lee la tabla BOM de la vista interna del equipo.
+    Filas con encabezado de sistema (Air/Fuel/Hydraulic/Lube/Cabin) cambian el
+    contexto; filas de datos tienen 4-5 celdas:
+      Fleetguard Part | OEM MFG | OEM Part # | Description | Qty. Req.
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const out  = [];
+        const seen = new Set();
+        const SYS  = ['Air','Fuel','Hydraulic','Lube','Cabin','Coolant','Transmission','Crankcase'];
+        let system = '';
+
+        const trs = [];
+        swa(document, 'table tr', 0, trs);
+        trs.forEach(tr => {{
+            const tds = Array.from(tr.querySelectorAll('td'));
+            const ths = Array.from(tr.querySelectorAll('th'));
+            const cells = tds.length ? tds : ths;
+            const texts = cells.map(c => c.textContent.trim().replace(/\\s+/g,' '));
+            const nonEmpty = texts.filter(t => t);
+
+            // Encabezado de sistema: una sola celda con nombre de sistema
+            if (nonEmpty.length === 1 && SYS.includes(nonEmpty[0])) {{
+                system = nonEmpty[0]; return;
+            }}
+            // Fila encabezado de columnas: saltar
+            if (/Fleetguard/i.test(texts[0] || '') && /OEM|Part|Description|Qty/i.test(texts.join(' '))) {{
+                return;
+            }}
+            // Fila de datos: necesita al menos parte Fleetguard + algo más
+            if (tds.length >= 2) {{
+                const fg   = texts[0] || '';
+                if (!fg || fg.length < 2) return;
+                const row = {{
+                    system,
+                    fleetguard_part: fg.toUpperCase(),
+                    oem_mfg:     texts[1] || '',
+                    oem_part:    texts[2] || '',
+                    description: texts[3] || '',
+                    qty:         texts[4] || '',
+                }};
+                const k = system + '|' + row.fleetguard_part + '|' + row.oem_part;
+                if (!seen.has(k)) {{ seen.add(k); out.push(row); }}
+            }}
+        }});
+        return out;
+    }}""")
 
 
 def _extract_crossref_tab(page) -> list:
@@ -993,6 +1050,58 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     logging.info(f"✅ Completo — {len(results)} productos en {OUTPUT_FILE}")
+
+    build_equipment_matrix(results)
+
+
+def build_equipment_matrix(results: list):
+    """
+    Construye matriz equipo→filtros deduplicada para búsqueda por equipo en
+    part-search. Cada equipo único agrega su BOM completo de filtros.
+    Archivo: fleetguard_{cat}_equipment_matrix.json
+    """
+    matrix = {}  # key: make|model|engine → {make, model, engine, filters, source_products}
+
+    for prod in results:
+        pn = prod.get("part_number", "")
+        for eq in prod.get("equipment", []):
+            if not isinstance(eq, dict):
+                continue
+            make   = eq.get("make", "")
+            model  = eq.get("model", "")
+            engine = eq.get("engine", "")
+            key = f"{make}|{model}|{engine}".strip("|")
+            if not key:
+                continue
+            if key not in matrix:
+                matrix[key] = {
+                    "make":   make,
+                    "model":  model,
+                    "engine": engine,
+                    "equipment": eq.get("equipment", ""),
+                    "filters": [],
+                    "source_products": [],
+                }
+            entry = matrix[key]
+            if pn and pn not in entry["source_products"]:
+                entry["source_products"].append(pn)
+            # Merge filtros del BOM (dedup por system+fleetguard_part+oem_part)
+            existing = {(f.get("system",""), f.get("fleetguard_part",""), f.get("oem_part",""))
+                        for f in entry["filters"]}
+            for filt in eq.get("filters", []):
+                if not isinstance(filt, dict):
+                    continue
+                fkey = (filt.get("system",""), filt.get("fleetguard_part",""), filt.get("oem_part",""))
+                if fkey not in existing:
+                    existing.add(fkey)
+                    entry["filters"].append(filt)
+
+    out_file = f"fleetguard_{CATEGORY_NAME}_equipment_matrix.json"
+    matrix_list = sorted(matrix.values(), key=lambda e: (e["make"], e["model"]))
+    with open(out_file, "w", encoding="utf-8") as f:
+        json.dump(matrix_list, f, ensure_ascii=False, indent=2)
+    total_filters = sum(len(e["filters"]) for e in matrix_list)
+    logging.info(f"✅ Matriz equipos — {len(matrix_list)} equipos, {total_filters} filtros en {out_file}")
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
