@@ -54,6 +54,10 @@ CATEGORY_URL  = ""
 OUTPUT_FILE   = "fleetguard_unknown_results.json"
 PROGRESS_FILE = "fleetguard_unknown_progress.json"
 
+# Si False, se omite la extracción de Equipment + Maintenance Kits (lo lento).
+# Se desactiva con --no-equipment. Default: True (detalle completo).
+SCRAPE_EQUIPMENT = True
+
 PAUSE_BETWEEN = (4, 9)
 
 # Solo URLs CONFIRMADAS reales. Para agregar otra categoría: copiar la URL real
@@ -961,22 +965,24 @@ def _scrape_once(page, url: str, result: dict, settle: float):
     result["alternatives"] = _extract_related_parts(page)
     logging.info(f"    alt: {len(result['alternatives'])}")
 
-    # ── Equipment (tab data-name="Equipment") ────────────────────────
-    _click_tab(page, "Equipment")
-    result["equipment"] = _extract_equipment_tab(page)
-    logging.info(f"    equip: {len(result['equipment'])}")
-
     # ── Cross Reference (tab data-name="CrossRef") ───────────────────
+    # Puente OEM para homologación — barato, siempre se extrae.
     _click_tab(page, "CrossRef")
     result["cross_references"] = _extract_crossref_tab(page)
     logging.info(f"    cross: {len(result['cross_references'])}")
 
-    # ── Maintenance Kits (tab nuevo; data-name no confirmado) ────────
-    if _click_tab_flexible(page,
-                           ["MaintenanceKits", "MaintKits", "Kits", "Maintenance"],
-                           ["maintenance kit", "maintenance", "kit"]):
-        result["maintenance_kits"] = _extract_maintenance_kits(page)
-    logging.info(f"    kits: {len(result['maintenance_kits'])}")
+    # ── Equipment + Kits (LENTO: cientos de filas/clicks por código) ──
+    # Se omite con --no-equipment / --codes-only. El BOM se decide después.
+    if SCRAPE_EQUIPMENT:
+        _click_tab(page, "Equipment")
+        result["equipment"] = _extract_equipment_tab(page)
+        logging.info(f"    equip: {len(result['equipment'])}")
+
+        if _click_tab_flexible(page,
+                               ["MaintenanceKits", "MaintKits", "Kits", "Maintenance"],
+                               ["maintenance kit", "maintenance", "kit"]):
+            result["maintenance_kits"] = _extract_maintenance_kits(page)
+        logging.info(f"    kits: {len(result['maintenance_kits'])}")
 
 
 def scrape_product(page, url: str) -> dict:
@@ -1135,6 +1141,41 @@ def test_one(url: str):
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
+
+def _code_from_url(url: str) -> str:
+    """AF25551 desde https://www.fleetguard.com/product/AF25551"""
+    seg = url.rstrip("/").split("/")[-1]
+    return seg.strip().upper()
+
+
+def collect_codes_only():
+    """
+    Modo rápido: solo recolecta los códigos base de la categoría (vía API +
+    Shadow DOM al paginar) y los guarda. NO visita cada producto, NO extrae
+    equipment/BOM. Minutos en vez de días.
+    Salida: fleetguard_{cat}_codes.json
+    """
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        urls = collect_product_links(page, CATEGORY_URL)
+        ctx.close()
+
+    codes = sorted({_code_from_url(u) for u in urls if _code_from_url(u)})
+    out = os.path.join(OUTPUT_DIR, f"fleetguard_{CATEGORY_NAME}_codes.json")
+    payload = {
+        "category":   CATEGORY_NAME,
+        "source_url": CATEGORY_URL,
+        "scraped_at": str(datetime.now()),
+        "total":      len(codes),
+        "codes":      codes,
+    }
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    logging.info(f"✅ Solo códigos — {len(codes)} códigos base en {out}")
+
 
 def main(start_from: str = ""):
     with sync_playwright() as pw:
@@ -1327,13 +1368,18 @@ if __name__ == "__main__":
         logging.info(f"Reintentando vacíos: {name}")
         retry_empty(); sys.exit(0)
 
-    # Parsear --start <PN> en cualquier posición
+    # Parsear flags en cualquier posición
     start_from = ""
+    codes_only = False
     rest = []
     i = 0
     while i < len(argv):
         if argv[i] == "--start" and i + 1 < len(argv):
             start_from = argv[i + 1]; i += 2; continue
+        if argv[i] == "--codes-only":
+            codes_only = True; i += 1; continue
+        if argv[i] == "--no-equipment":
+            SCRAPE_EQUIPMENT = False; i += 1; continue
         rest.append(argv[i]); i += 1
     argv = rest
 
@@ -1345,5 +1391,10 @@ if __name__ == "__main__":
         sys.exit(1)
 
     configure(name, url)
-    logging.info(f"Iniciando: {name} → {url}")
-    main(start_from=start_from)
+    if codes_only:
+        logging.info(f"SOLO CÓDIGOS: {name} → {url}")
+        collect_codes_only()
+    else:
+        modo = "detalle SIN equipment" if not SCRAPE_EQUIPMENT else "detalle completo"
+        logging.info(f"Iniciando ({modo}): {name} → {url}")
+        main(start_from=start_from)
