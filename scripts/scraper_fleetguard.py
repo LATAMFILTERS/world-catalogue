@@ -396,9 +396,12 @@ def collect_product_links(page, category_url: str) -> list:
 
     all_urls = set()
     pg = 1
+    stale = 0  # páginas consecutivas sin URLs nuevas
 
     while True:
         wait_net(page)
+
+        before = len(all_urls)
 
         # Capa 1: Shadow DOM traversal
         s_links = shadow_links(page)
@@ -410,35 +413,91 @@ def collect_product_links(page, category_url: str) -> list:
         for c in captured:
             _extract_urls_from_api(c["data"], all_urls)
 
-        logging.info(f"  Página {pg}: {len(all_urls)} productos acumulados")
+        nuevos = len(all_urls) - before
+        logging.info(f"  Página {pg}: {len(all_urls)} productos acumulados (+{nuevos})")
 
-        # Buscar paginación
-        went = page.evaluate("""() => {
-            function findInShadow(root, fn, depth=0) {
-                if (depth > 8) return false;
-                const result = fn(root);
-                if (result) return true;
-                for (const el of root.querySelectorAll('*')) {
-                    if (el.shadowRoot && findInShadow(el.shadowRoot, fn, depth+1)) return true;
-                }
-                return false;
-            }
-            return findInShadow(document, root => {
-                const btns = root.querySelectorAll('button, a');
-                for (const b of btns) {
-                    const t = (b.textContent || b.ariaLabel || '').trim().toLowerCase();
-                    if ((t === 'next' || t === 'next page' || b.getAttribute('aria-label') === 'Next page')
-                        && b.offsetParent && !b.disabled) {
-                        b.click(); return true;
-                    }
-                }
-                return false;
-            });
-        }""")
+        # Avanzar a la siguiente página. Estrategias múltiples porque el
+        # componente Salesforce LWC no usa un botón "Next" estándar:
+        #   1. botón/enlace con aria-label/title/text que contenga "next" (no "previous")
+        #   2. símbolos de flecha › » →  ›
+        #   3. botón con clase *next* en componente de paginación
+        #   4. "Load More" / "Show More" (paginación incremental)
+        #   5. botón de número de página = pg+1 (paginación numerada 1..144)
+        went = page.evaluate(f"""(targetPage) => {{
+            function* allNodes(root, depth=0) {{
+                if (depth > 12) return;
+                const els = root.querySelectorAll('*');
+                for (const el of els) {{
+                    yield el;
+                    if (el.shadowRoot) yield* allNodes(el.shadowRoot, depth+1);
+                }}
+            }}
+            const label = el =>
+                ((el.getAttribute && (el.getAttribute('aria-label') || el.getAttribute('title'))) || '')
+                .trim().toLowerCase();
+            const text = el => (el.textContent || '').trim().toLowerCase();
+            const clickable = el =>
+                el.offsetParent !== null && !el.disabled &&
+                el.getAttribute('aria-disabled') !== 'true';
+
+            const nodes = [...allNodes(document)];
+            const cands = nodes.filter(el =>
+                el.tagName === 'BUTTON' || el.tagName === 'A' ||
+                (el.getAttribute && el.getAttribute('role') === 'button'));
+
+            // 1+2: aria-label/title/text "next" o flecha derecha, nunca "previous/prev"
+            for (const el of cands) {{
+                if (!clickable(el)) continue;
+                const l = label(el), t = text(el);
+                if (/prev/.test(l) || /prev/.test(t)) continue;
+                if (/\\bnext\\b/.test(l) || /\\bnext\\b/.test(t) ||
+                    /^[›»→⟩]$/.test(t) || l === 'next page' || l === 'go to next page') {{
+                    el.click(); return 'next';
+                }}
+            }}
+            // 3: clase *next* en paginación
+            for (const el of cands) {{
+                if (!clickable(el)) continue;
+                const cls = (el.className && el.className.toString ? el.className.toString() : '').toLowerCase();
+                if (/next/.test(cls) && !/prev/.test(cls)) {{ el.click(); return 'next-class'; }}
+            }}
+            // 4: Load More / Show More
+            for (const el of cands) {{
+                if (!clickable(el)) continue;
+                const t = text(el);
+                if (/load more|show more|view more|see more/.test(t)) {{ el.click(); return 'more'; }}
+            }}
+            // 5: número de página = targetPage
+            for (const el of cands) {{
+                if (!clickable(el)) continue;
+                const t = text(el);
+                if (t === String(targetPage)) {{ el.click(); return 'num'; }}
+            }}
+            return '';
+        }}""", pg + 1)
+
         if not went:
+            logging.info(f"  No hay más páginas (sin control de avance en pág {pg})")
             break
+
         pg += 1
         time.sleep(4)
+        wait_net(page)
+
+        # Anti-bucle: si la página no aportó URLs nuevas, contar como stale.
+        # 3 stale consecutivas → cortar (evita clicks infinitos sin avance).
+        if nuevos == 0:
+            stale += 1
+            if stale >= 3:
+                logging.info(f"  3 páginas sin URLs nuevas — deteniendo en pág {pg}")
+                break
+        else:
+            stale = 0
+
+        # Tope de seguridad razonable (144 págs conocidas → 200 con margen).
+        if pg > 250:
+            logging.warning("  Tope de 250 páginas alcanzado — deteniendo")
+            break
 
     logging.info(f"Total URLs encontradas: {len(all_urls)}")
     return list(all_urls)
@@ -1212,7 +1271,7 @@ def collect_codes_only():
     logging.info(f"✅ Solo códigos — {len(codes)} códigos base en {out}")
 
 
-def main(start_from: str = ""):
+def main(start_from: str = "", recollect: bool = False):
     with sync_playwright() as pw:
         ctx = launch_context(pw)
         page = ctx.new_page()
@@ -1221,10 +1280,20 @@ def main(start_from: str = ""):
 
         progress = load_progress()
 
-        if not progress["part_numbers"]:
-            urls = collect_product_links(page, CATEGORY_URL)
-            progress["part_numbers"] = urls
+        if not progress["part_numbers"] or recollect:
+            # recollect=True: re-pagina la categoría y FUSIONA las URLs nuevas
+            # sin perder done/results (lo ya scrapeado se conserva).
+            fresh = collect_product_links(page, CATEGORY_URL)
+            if recollect:
+                prev = set(progress["part_numbers"])
+                merged = list(progress["part_numbers"]) + [u for u in fresh if u not in prev]
+                added = len(merged) - len(progress["part_numbers"])
+                progress["part_numbers"] = merged
+                logging.info(f"Re-recolectado — +{added} URLs nuevas (total {len(merged)})")
+            else:
+                progress["part_numbers"] = fresh
             save_progress(progress)
+            urls = progress["part_numbers"]
         else:
             urls = progress["part_numbers"]
             logging.info(f"Reanudando — {len(urls)} URLs totales")
@@ -1395,6 +1464,7 @@ if __name__ == "__main__":
     # Parsear flags en cualquier posición
     start_from = ""
     codes_only = False
+    recollect  = False
     rest = []
     i = 0
     while i < len(argv):
@@ -1402,6 +1472,10 @@ if __name__ == "__main__":
             start_from = argv[i + 1]; i += 2; continue
         if argv[i] == "--codes-only":
             codes_only = True; i += 1; continue
+        if argv[i] == "--recollect":
+            # Re-pagina la categoría y fusiona URLs nuevas al progress, sin
+            # perder lo ya scrapeado (done/results se conservan).
+            recollect = True; i += 1; continue
         if argv[i] == "--no-equipment":
             SCRAPE_EQUIPMENT = False; i += 1; continue
         if argv[i] == "--kits-only":
@@ -1431,4 +1505,4 @@ if __name__ == "__main__":
         else:
             modo = "detalle completo"
         logging.info(f"Iniciando ({modo}): {name} → {url}")
-        main(start_from=start_from)
+        main(start_from=start_from, recollect=recollect)
