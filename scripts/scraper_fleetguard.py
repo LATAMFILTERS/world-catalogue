@@ -741,76 +741,75 @@ def _extract_equipment_tab(page) -> list:
     Retorna lista de equipos: { equipment, make, model, engine, [year, qty] }.
     El BOM por modelo NO se extrae aquí (se decide después si hace falta).
     """
-    # Fuente 1: links de modelos — leer atributos, sin clickear
+    # Fuente 1 (principal): tabla plana Equipment | Engine | Year | Qty. Req.
+    # Trae las 4 columnas incluyendo year y qty.
     results = page.evaluate(f"""() => {{
         {_SHADOW_WALK_ALL}
-        const out  = [];
+        const rows = [];
         const seen = new Set();
-        const all  = [];
-        swa(document, 'a.appDataDifferentp', 0, all);
-        all.forEach(a => {{
-            const text   = a.textContent.trim().replace(/\\s+/g, ' ');
-            let   model  = a.getAttribute('data-name') || '';
-            const engine = a.getAttribute('data-engine') || '';
-            const full   = text || model;
-            if (!full) return;
-            let make = '';
+        const trs = [];
+        swa(document, 'table tr', 0, trs);
+        trs.forEach(tr => {{
+            const cells = Array.from(tr.querySelectorAll('td'));
+            if (cells.length < 2) return;
+            const full   = cells[0].textContent.trim().replace(/\\s+/g, ' ');
+            const engine = (cells[1] || {{}}).textContent?.trim().replace(/\\s+/g,' ') || '';
+            const year   = (cells[2] || {{}}).textContent?.trim() || '';
+            const qty    = (cells[3] || {{}}).textContent?.trim() || '';
+            if (!full || full.length < 3) return;
+            if (/^equipment$/i.test(full)) return;  // encabezado
+            // SOLO filas de equipo ("Marca - Modelo" / "Marca -"): excluye
+            // specs (Length, Largest OD...) y cross-refs que no llevan " -".
+            if (!full.includes(' -')) return;
+            let make = '', model = full;
             if (full.includes(' - ')) {{
                 const i = full.indexOf(' - ');
                 make = full.slice(0, i).trim();
-                if (!model) model = full.slice(i + 3).trim();
-            }} else if (full.includes('-') && !model) {{
-                make  = full.split('-')[0].trim();
-                model = full.split('-').slice(1).join('-').trim();
+                model = full.slice(i + 3).trim();
+            }} else if (full.endsWith(' -')) {{
+                make = full.slice(0, -2).trim();   // "Ford -" → make=Ford, model=''
+                model = '';
             }}
-            const key = make + '|' + model + '|' + engine;
+            const key = full + '|' + engine + '|' + year;
             if (!seen.has(key)) {{
                 seen.add(key);
-                out.push({{ equipment: full, make, model, engine, filters: [] }});
+                rows.push({{ equipment: full, make, model, engine, year, qty, filters: [] }});
             }}
         }});
-        return out;
+        return rows;
     }}""")
 
-    # Fuente 2 (fallback): tabla plana Equipment | Engine | Year | Qty
+    # Fuente 2 (fallback): links appDataDifferentp (sin year/qty)
     if not results:
-        table_rows = page.evaluate(f"""() => {{
+        results = page.evaluate(f"""() => {{
             {_SHADOW_WALK_ALL}
-            const rows = [];
+            const out  = [];
             const seen = new Set();
-            const trs = [];
-            swa(document, 'table tr', 0, trs);
-            trs.forEach(tr => {{
-                const cells = Array.from(tr.querySelectorAll('td'));
-                if (cells.length < 2) return;
-                const full   = cells[0].textContent.trim().replace(/\\s+/g, ' ');
-                const engine = (cells[1] || {{}}).textContent?.trim() || '';
-                const year   = (cells[2] || {{}}).textContent?.trim() || '';
-                const qty    = (cells[3] || {{}}).textContent?.trim() || '';
-                if (!full || full.length < 3) return;
-                if (/^equipment$/i.test(full)) return;  // encabezado
-                // SOLO filas de equipo ("Marca - Modelo" / "Marca -"): excluye
-                // specs (Length, Largest OD...) y cross-refs que no llevan " -".
-                if (!full.includes(' -')) return;
-                // "Volvo Construction Equipment - ECR50D" → make / model
-                let make = '', model = full;
+            const all  = [];
+            swa(document, 'a.appDataDifferentp', 0, all);
+            all.forEach(a => {{
+                const text   = a.textContent.trim().replace(/\\s+/g, ' ');
+                let   model  = a.getAttribute('data-name') || '';
+                const engine = a.getAttribute('data-engine') || '';
+                const full   = text || model;
+                if (!full) return;
+                let make = '';
                 if (full.includes(' - ')) {{
                     const i = full.indexOf(' - ');
                     make = full.slice(0, i).trim();
-                    model = full.slice(i + 3).trim();
-                }} else if (full.endsWith(' -')) {{
-                    make = full.slice(0, -2).trim();   // "Ford -" → make=Ford, model=''
-                    model = '';
+                    if (!model) model = full.slice(i + 3).trim();
+                }} else if (full.includes('-') && !model) {{
+                    make  = full.split('-')[0].trim();
+                    model = full.split('-').slice(1).join('-').trim();
                 }}
-                const key = full + '|' + engine + '|' + year;
+                const key = make + '|' + model + '|' + engine;
                 if (!seen.has(key)) {{
                     seen.add(key);
-                    rows.push({{ equipment: full, make, model, engine, year, qty, filters: [] }});
+                    out.push({{ equipment: full, make, model, engine, year: '', qty: '', filters: [] }});
                 }}
             }});
-            return rows;
+            return out;
         }}""")
-        results = table_rows
 
     return results
 
