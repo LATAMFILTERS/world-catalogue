@@ -69,23 +69,32 @@ PRODUCT_BASE_URL = "https://www.fleetguard.com/product/"
 SHADOW_LINKS_JS = """
 () => {
     const found = new Set();
+    const PN_RE = /^[A-Z]{1,4}[0-9]{3,}[A-Z0-9-]*$/;
     function walk(root) {
         try {
-            // Selector confirmado: h2.product-name con data-id (Salesforce Product2)
-            root.querySelectorAll('.product-name[data-id], h2.product-name, h3.product-name').forEach(el => {
-                const pn = (el.textContent || '').trim().toUpperCase();
-                const id = el.getAttribute('data-id') || '';
-                if (pn && pn.length >= 3) {
+            // Selector confirmado: h2/h3/.product-name con data-id (Salesforce Product2)
+            root.querySelectorAll('.product-name[data-id], h2.product-name, h3.product-name, .product-name').forEach(el => {
+                const pn = (el.textContent || '').trim().toUpperCase().replace(/\\s+/g,'');
+                if (pn && pn.length >= 3 && pn.length <= 20) {
                     found.add('https://www.fleetguard.com/product/' + pn);
                 }
             });
-            // También buscar links directos a /product/
+            // Links directos /product/
             root.querySelectorAll('a[href]').forEach(a => {
                 const h = (a.href || '').split('?')[0].split('#')[0];
                 if (h.includes('fleetguard.com') &&
                     (h.includes('/product/') || h.match(/\\/[A-Z]{2,}[0-9]{4,}/)) &&
                     !h.includes('/category/')) {
                     found.add(h);
+                }
+            });
+            // Fallback: cualquier texto que parezca part number en cards de producto
+            root.querySelectorAll('[class*="product-card"] *, [class*="product-tile"] *, [class*="product-item"] *').forEach(el => {
+                if (el.children.length === 0) {
+                    const t = (el.textContent || '').trim().toUpperCase();
+                    if (PN_RE.test(t)) {
+                        found.add('https://www.fleetguard.com/product/' + t);
+                    }
                 }
             });
             root.querySelectorAll('*').forEach(el => {
@@ -321,6 +330,14 @@ def inspect_page(url: str):
         with open("fleetguard_inspect.json", "w", encoding="utf-8") as f:
             json.dump(out, f, ensure_ascii=False, indent=2)
 
+        # Guardar respuesta API completa (sin truncar) para ver campos de producto
+        full_api = []
+        for c in captured:
+            full_api.append({"url": c["url"], "status": c["status"], "data": c["data"]})
+        with open("fleetguard_api_full.json", "w", encoding="utf-8") as f:
+            json.dump(full_api, f, ensure_ascii=False, indent=2)
+        logging.info("API completa guardada: fleetguard_api_full.json")
+
         # Imprimir resumen
         sep = "=" * 65
         print(f"\n{sep}")
@@ -426,22 +443,60 @@ def _extract_urls_from_api(data, url_set: set):
 
 
 def _extract_product_url(item: dict, url_set: set):
-    """Extrae URL de un item de producto Salesforce."""
+    """Extrae URL de un item de producto Salesforce B2B Commerce.
+
+    Salesforce puede devolver part numbers en distintos niveles:
+      - item["productCode"] = "AP8404"
+      - item["fields"]["ProductCode"] = "AP8404"
+      - item["fields"]["ProductCode"]["value"] = "AP8404"
+      - item["name"] o item["fields"]["Name"]
+    La URL final es siempre /product/{partNumber}.
+    """
     if not isinstance(item, dict):
         return
-    # Campos comunes de Salesforce B2B Commerce
+
+    # 1. URL directa si viene en el objeto
     for field in ("productUrl", "url", "pdpUrl", "slug", "productSlug", "pageUrl"):
         v = item.get(field, "")
-        if v and isinstance(v, str):
+        if v and isinstance(v, str) and len(v) > 3:
             if v.startswith("/"):
                 v = "https://www.fleetguard.com" + v
             if "fleetguard.com" in v and "/category/" not in v:
                 url_set.add(v.split("?")[0])
-    # Buscar ID para construir URL: /product/{id}
-    for id_field in ("id", "productId", "Id", "sku", "productCode"):
-        v = item.get(id_field, "")
-        if v and isinstance(v, str) and len(v) > 3:
-            url_set.add(f"https://www.fleetguard.com/product/{v}")
+                return  # URL directa encontrada
+
+    # 2. Part number plano en raíz
+    pn = ""
+    for field in ("productCode", "ProductCode", "sku", "SKU", "partNumber", "name", "Name"):
+        v = item.get(field, "")
+        if v and isinstance(v, str) and _looks_like_part_number(v):
+            pn = v.upper(); break
+
+    # 3. Salesforce nested fields: item["fields"]["ProductCode"] o item["fields"]["ProductCode"]["value"]
+    if not pn:
+        fields = item.get("fields", {})
+        if isinstance(fields, dict):
+            for fname in ("ProductCode", "productCode", "Name", "SKU", "PartNumber"):
+                fval = fields.get(fname, "")
+                if isinstance(fval, dict):
+                    fval = fval.get("value", "")
+                if fval and isinstance(fval, str) and _looks_like_part_number(fval):
+                    pn = fval.upper(); break
+
+    if pn:
+        url_set.add(f"https://www.fleetguard.com/product/{pn}")
+
+
+def _looks_like_part_number(s: str) -> bool:
+    """Heurística: parte alfanumérica corta en mayúsculas (AP8404, AF1735, etc.)."""
+    s = s.strip()
+    # 3-20 chars, alfanumérico + guiones, no un ID largo de Salesforce
+    if not (3 <= len(s) <= 20):
+        return False
+    if s.startswith("01t") or s.startswith("0ZG"):  # Salesforce internal IDs
+        return False
+    import re
+    return bool(re.match(r'^[A-Za-z]{1,4}[0-9]{3,}', s))
 
 
 # ── JS helpers (selectores confirmados por inspección DOM real) ──────────────
@@ -564,30 +619,113 @@ def _extract_related_parts(page) -> list:
 
 def _extract_equipment_tab(page) -> list:
     """
-    Lee tabla Equipment (4 cols: Equipment make-model, Engine, Year, Qty).
-    Confirmado: tab data-name='Equipment', luego tabla con filas make-model + engine + year.
+    Equipment tab: clic en cada <a class="appDataDifferentp"> para cargar detalles
+    (año, qty) de cada modelo. Estructura confirmada:
+      <a class="appDataDifferentp" data-id="102666-1-5-1"
+         data-name="325C" data-product="AP8404" data-engine="3126">
+        Caterpillar - 325C
+      </a>
+    Al hacer clic en cada link se carga la tabla con año/qty para ese modelo.
     """
-    return page.evaluate(f"""() => {{
+    # Paso 1: recolectar todos los links de modelos de equipos
+    model_links = page.evaluate(f"""() => {{
         {_SHADOW_WALK_ALL}
-        const rows = [];
-        const seen = new Set();
-        const tableRows = [];
-        swa(document, 'table tr', 0, tableRows);
-        tableRows.forEach(tr => {{
-            const cells = Array.from(tr.querySelectorAll('td'));
-            if (cells.length < 2) return;
-            const make_model = cells[0].textContent.trim().replace(/\\s+/g, ' ');
-            const engine     = (cells[1] || {{}}).textContent?.trim() || '';
-            const year       = (cells[2] || {{}}).textContent?.trim() || '';
-            if (!make_model || make_model.length < 3) return;
-            const key = make_model + '|' + engine + '|' + year;
-            if (!seen.has(key)) {{
-                seen.add(key);
-                rows.push({{ equipment: make_model, engine, year }});
-            }}
+        const links = [];
+        const all = [];
+        swa(document, 'a.appDataDifferentp', 0, all);
+        all.forEach(a => {{
+            links.push({{
+                data_id:     a.getAttribute('data-id') || '',
+                data_name:   a.getAttribute('data-name') || '',
+                data_engine: a.getAttribute('data-engine') || '',
+                text:        a.textContent.trim(),
+            }});
         }});
-        return rows;
+        return links;
     }}""")
+
+    results = []
+    seen = set()
+
+    for lnk in model_links:
+        make_model = lnk.get("text", "") or lnk.get("data_name", "")
+        engine     = lnk.get("data_engine", "")
+        data_id    = lnk.get("data_id", "")
+
+        if not make_model:
+            continue
+
+        # Paso 2: clic en el link para cargar detalles de ese modelo
+        _did_click = page.evaluate(f"""() => {{
+            {_SHADOW_WALK}
+            const a = sw(document, 'a.appDataDifferentp[data-id="{data_id}"]', 0);
+            if (a) {{ a.click(); return true; }}
+            return false;
+        }}""")
+
+        if _did_click:
+            time.sleep(1)
+            try:
+                page.wait_for_load_state("networkidle", timeout=4000)
+            except Exception:
+                pass
+
+        # Paso 3: extraer tabla que apareció tras el clic (year, qty, etc.)
+        detail_rows = page.evaluate(f"""() => {{
+            {_SHADOW_WALK_ALL}
+            const rows = [];
+            const trs = [];
+            swa(document, 'table tr', 0, trs);
+            trs.forEach(tr => {{
+                const cells = Array.from(tr.querySelectorAll('td'));
+                if (cells.length < 1) return;
+                const vals = cells.map(c => c.textContent.trim()).filter(v => v);
+                if (vals.length > 0) rows.push(vals);
+            }});
+            return rows;
+        }}""")
+
+        if detail_rows:
+            for row in detail_rows:
+                year = row[0] if len(row) > 0 else ""
+                qty  = row[1] if len(row) > 1 else ""
+                key  = f"{make_model}|{engine}|{year}|{qty}"
+                if key not in seen:
+                    seen.add(key)
+                    results.append({"equipment": make_model, "engine": engine, "year": year, "qty": qty})
+        else:
+            # Sin tabla de detalle: guardar con datos de atributos del link
+            key = f"{make_model}|{engine}"
+            if key not in seen:
+                seen.add(key)
+                results.append({"equipment": make_model, "engine": engine, "year": "", "qty": ""})
+
+    # Fallback: si no se encontraron links appDataDifferentp, leer tabla directamente
+    if not results:
+        table_rows = page.evaluate(f"""() => {{
+            {_SHADOW_WALK_ALL}
+            const rows = [];
+            const seen = new Set();
+            const trs = [];
+            swa(document, 'table tr', 0, trs);
+            trs.forEach(tr => {{
+                const cells = Array.from(tr.querySelectorAll('td'));
+                if (cells.length < 2) return;
+                const make_model = cells[0].textContent.trim().replace(/\\s+/g, ' ');
+                const engine     = (cells[1] || {{}}).textContent?.trim() || '';
+                const year       = (cells[2] || {{}}).textContent?.trim() || '';
+                if (!make_model || make_model.length < 3) return;
+                const key = make_model + '|' + engine + '|' + year;
+                if (!seen.has(key)) {{
+                    seen.add(key);
+                    rows.push({{ equipment: make_model, engine, year, qty: '' }});
+                }}
+            }});
+            return rows;
+        }}""")
+        results = table_rows
+
+    return results
 
 
 def _extract_crossref_tab(page) -> list:
