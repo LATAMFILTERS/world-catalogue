@@ -37,6 +37,8 @@ CATEGORIES = {
             "?N=426772457&Nr=product.language%3AEnglish&catNav=true&st=parts",
     "air":  "https://shop.donaldson.com/store/en-us/search"
             "?N=2975800598&Nr=product.language%3AEnglish&catNav=true&st=parts",
+    "hydraulic": "https://shop.donaldson.com/store/en-us/search"
+            "?N=2076725065&Nr=product.language%3AEnglish&catNav=true&st=parts",
 }
 
 PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
