@@ -550,6 +550,79 @@ def _click_tab(page, data_name: str) -> bool:
     return bool(clicked)
 
 
+def _click_tab_flexible(page, data_names: list, text_keywords: list) -> bool:
+    """
+    Activa un tab probando varios data-name, y si no, por texto del botón.
+    Útil cuando el data-name no está confirmado (ej. Maintenance Kits).
+    """
+    clicked = page.evaluate(f"""(args) => {{
+        {_SHADOW_WALK_ALL}
+        const [names, keywords] = args;
+        const btns = [];
+        swa(document, 'button.tablinks, [role="tab"], button', 0, btns);
+        // 1. por data-name exacto
+        for (const b of btns) {{
+            const dn = (b.getAttribute('data-name') || '');
+            if (names.includes(dn)) {{ b.click(); return true; }}
+        }}
+        // 2. por texto del botón
+        for (const b of btns) {{
+            const t = (b.textContent || '').trim().toLowerCase();
+            if (keywords.some(k => t.includes(k)) && b.offsetParent !== null) {{
+                b.click(); return true;
+            }}
+        }}
+        return false;
+    }}""", [data_names, text_keywords])
+    if clicked:
+        time.sleep(2)
+        try:
+            page.wait_for_load_state("networkidle", timeout=6000)
+        except Exception:
+            pass
+    return bool(clicked)
+
+
+def _extract_maintenance_kits(page) -> list:
+    """
+    Lee el tab 'Maintenance Kits'. Estructura no confirmada al 100%, así que
+    captura genéricamente: por cada fila de datos guarda el número de kit
+    (primera celda) + todas las celdas como detalle, y detecta part numbers.
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const out  = [];
+        const seen = new Set();
+        const PN_RE = /\\b[A-Z]{{1,4}}[0-9]{{3,}}[A-Z0-9-]*\\b/g;
+
+        const trs = [];
+        swa(document, 'table tr', 0, trs);
+        trs.forEach(tr => {{
+            const cells = Array.from(tr.querySelectorAll('td'));
+            if (cells.length < 1) return;
+            const texts = cells.map(c => c.textContent.trim().replace(/\\s+/g,' ')).filter(t => t);
+            if (texts.length === 0) return;
+            // saltar encabezados
+            if (/kit number|description|part|qty/i.test(texts[0]) && texts.length <= 2 &&
+                /kit|part|description/i.test(texts.join(' '))) return;
+
+            const rowText = texts.join(' ');
+            const parts = (rowText.toUpperCase().match(PN_RE) || []);
+            const kit_number = texts[0] || '';
+            const key = rowText;
+            if (!seen.has(key)) {{
+                seen.add(key);
+                out.push({{
+                    kit_number,
+                    cells: texts,
+                    parts: [...new Set(parts)],
+                }});
+            }}
+        }});
+        return out;
+    }}""")
+
+
 def _extract_specs(page) -> dict:
     """Lee la tabla de specs visible por defecto (sin activar tab)."""
     return page.evaluate(f"""() => {{
@@ -710,7 +783,8 @@ def _extract_equipment_tab(page) -> list:
             except Exception:
                 pass
 
-    # Fallback: sin links appDataDifferentp → leer tabla genérica
+    # Fallback: sin links appDataDifferentp → tabla plana
+    # (categorías como primary-and-secondary: Equipment | Engine | Year | Qty)
     if not results:
         table_rows = page.evaluate(f"""() => {{
             {_SHADOW_WALK_ALL}
@@ -721,13 +795,23 @@ def _extract_equipment_tab(page) -> list:
             trs.forEach(tr => {{
                 const cells = Array.from(tr.querySelectorAll('td'));
                 if (cells.length < 2) return;
-                const make_model = cells[0].textContent.trim().replace(/\\s+/g, ' ');
-                const engine     = (cells[1] || {{}}).textContent?.trim() || '';
-                if (!make_model || make_model.length < 3) return;
-                const key = make_model + '|' + engine;
+                const full   = cells[0].textContent.trim().replace(/\\s+/g, ' ');
+                const engine = (cells[1] || {{}}).textContent?.trim() || '';
+                const year   = (cells[2] || {{}}).textContent?.trim() || '';
+                const qty    = (cells[3] || {{}}).textContent?.trim() || '';
+                if (!full || full.length < 3) return;
+                if (/^equipment$/i.test(full)) return;  // encabezado
+                // "Volvo Construction Equipment - ECR50D" → make / model
+                let make = '', model = full;
+                if (full.includes(' - ')) {{
+                    const i = full.indexOf(' - ');
+                    make = full.slice(0, i).trim();
+                    model = full.slice(i + 3).trim();
+                }}
+                const key = full + '|' + engine + '|' + year;
                 if (!seen.has(key)) {{
                     seen.add(key);
-                    rows.push({{ equipment: make_model, make: '', model: make_model, engine, filters: [] }});
+                    rows.push({{ equipment: full, make, model, engine, year, qty, filters: [] }});
                 }}
             }});
             return rows;
@@ -869,6 +953,13 @@ def _scrape_once(page, url: str, result: dict, settle: float):
     result["cross_references"] = _extract_crossref_tab(page)
     logging.info(f"    cross: {len(result['cross_references'])}")
 
+    # ── Maintenance Kits (tab nuevo; data-name no confirmado) ────────
+    if _click_tab_flexible(page,
+                           ["MaintenanceKits", "MaintKits", "Kits", "Maintenance"],
+                           ["maintenance kit", "maintenance", "kit"]):
+        result["maintenance_kits"] = _extract_maintenance_kits(page)
+    logging.info(f"    kits: {len(result['maintenance_kits'])}")
+
 
 def scrape_product(page, url: str) -> dict:
     result = {
@@ -879,6 +970,7 @@ def scrape_product(page, url: str) -> dict:
         "cross_references": [],
         "alternatives": [],
         "equipment": [],
+        "maintenance_kits": [],
         "error": None,
         "scraped_at": str(datetime.now()),
     }
@@ -1056,8 +1148,9 @@ def main():
             nc = len(data["cross_references"])
             nl = len(data["alternatives"])
             ne = len(data["equipment"])
+            nk = len(data.get("maintenance_kits", []))
             st = "✅" if not data["error"] else "❌"
-            logging.info(f"  {st} {data['part_number']} → {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
+            logging.info(f"  {st} {data['part_number']} → {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip | {nk} Kits")
 
             results.append(data)
             done_set.add(url)
