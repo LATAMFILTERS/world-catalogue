@@ -150,9 +150,10 @@ def collect_product_links(page, category_url: str) -> list[str]:
     """Pagina la categoría y devuelve lista de URLs de producto únicas."""
     logging.info(f"Cargando categoría: {category_url}")
     page.goto(category_url, timeout=60000, wait_until="domcontentloaded")
-    time.sleep(4)
+    time.sleep(5)
     dismiss_popups(page)
-    wait_for_content(page)
+    wait_for_products(page, timeout=25000)
+    time.sleep(3)
 
     urls = set()
     pg = 1
@@ -160,18 +161,26 @@ def collect_product_links(page, category_url: str) -> list[str]:
     while True:
         wait_for_content(page)
 
-        # Extraer links de producto de la página actual
+        # Extraer links de producto — LWC puede usar custom elements o data-attrs
         new_links = page.evaluate("""() => {
             const links = new Set();
-            // Buscar links que parezcan páginas de producto
+            // Todos los anchors de la página
             document.querySelectorAll('a[href]').forEach(a => {
-                const href = a.href || '';
-                if (href.includes('/product/') || href.includes('/products/')) {
-                    // Filtrar links de categoría o navegación
-                    if (!href.includes('/category/') && href.match(/[A-Z0-9]{5,}/)) {
-                        links.add(href.split('?')[0]);
+                const href = (a.href || '').split('?')[0];
+                // Fleetguard product URLs: /product/XXXX o /[CODE]
+                if (href.includes('/product/') ||
+                    href.match(/fleetguard\\.com\/[A-Z]{2}[0-9]{4}/)) {
+                    if (!href.includes('/category/') && !href.includes('/search')) {
+                        links.add(href);
                     }
                 }
+            });
+            // Custom elements con data-product-url o similar
+            document.querySelectorAll('[data-product-url], [data-url], [data-href]').forEach(el => {
+                const u = el.getAttribute('data-product-url') ||
+                          el.getAttribute('data-url') ||
+                          el.getAttribute('data-href') || '';
+                if (u && u.includes('fleetguard')) links.add(u.split('?')[0]);
             });
             return Array.from(links);
         }""")
@@ -446,8 +455,37 @@ def scrape_product(page, url: str) -> dict:
 
 # ── Inspect mode ───────────────────────────────────────────────────────────
 
+def wait_for_products(page, timeout=30000):
+    """Espera a que los productos LWC carguen (results-container con hijos)."""
+    try:
+        page.wait_for_function(
+            """() => {
+                // Esperar cualquier contenedor con productos
+                const containers = [
+                    '.results-container', '[class*="results-container"]',
+                    '[class*="product-list"]', '[class*="productList"]',
+                    '[class*="product-grid"]', '[class*="productGrid"]',
+                    'ul.products', 'ol.products',
+                ];
+                for (const sel of containers) {
+                    const el = document.querySelector(sel);
+                    if (el && el.children.length > 0) return true;
+                }
+                // Custom elements LWC
+                const custom = document.querySelectorAll('commerce-product-card, c-product-card, [data-product-id]');
+                if (custom.length > 0) return true;
+                // Cualquier link de producto
+                const links = document.querySelectorAll('a[href*="/product"]');
+                return links.length > 1;
+            }""",
+            timeout=timeout,
+        )
+    except Exception:
+        logging.warning("wait_for_products: timeout — continuando igual")
+
+
 def inspect_page(url: str):
-    """Dumpa DOM, tabs, links de producto — para descubrir selectores."""
+    """Dumpa DOM completo de página LWC — para descubrir selectores."""
     with sync_playwright() as pw:
         ctx = launch_context(pw)
         page = ctx.new_page()
@@ -456,42 +494,55 @@ def inspect_page(url: str):
 
         logging.info(f"Inspeccionando: {url}")
         page.goto(url, timeout=60000, wait_until="domcontentloaded")
-        time.sleep(4)
+        time.sleep(6)
         dismiss_popups(page)
-        wait_for_content(page)
+        # Esperar contenido AJAX
+        wait_for_products(page, timeout=20000)
+        time.sleep(3)
+
+        # Screenshot para ver qué hay
+        page.screenshot(path="fleetguard_inspect.png", full_page=False)
+        logging.info("Screenshot guardado: fleetguard_inspect.png")
 
         info = page.evaluate("""() => {
-            // Tabs encontrados
-            const tabs = Array.from(document.querySelectorAll(
-                'a[role="tab"], button[role="tab"], [class*="tab"] a, [class*="tab"] button, nav a, ul a'
+            // TODOS los links de la página
+            const allLinks = Array.from(new Set(
+                Array.from(document.querySelectorAll('a[href]')).map(a => a.href)
+            )).filter(h => h.startsWith('http') && !h.includes('onetrust') && !h.includes('cdn'))
+             .slice(0, 40);
+
+            // Links que parecen productos (cualquier patrón)
+            const productLinks = allLinks.filter(h =>
+                h.includes('/product') || h.match(/\/[A-Z]{2,}[0-9]{4,}/)
+            ).slice(0, 20);
+
+            // Custom elements en la página (LWC)
+            const customEls = Array.from(new Set(
+                Array.from(document.querySelectorAll('*'))
+                    .map(el => el.tagName.toLowerCase())
+                    .filter(t => t.includes('-'))
+            )).slice(0, 30);
+
+            // Contenedores con contenido
+            const containers = Array.from(document.querySelectorAll(
+                'section, main > div, [class*="container"], [class*="results"], [class*="product"]'
             )).map(el => ({
                 tag: el.tagName,
-                text: el.textContent.trim().slice(0, 60),
-                class: el.className.slice(0, 60),
-                href: el.href || '',
-            })).filter(t => t.text).slice(0, 30);
-
-            // Links de producto en la página
-            const productLinks = Array.from(new Set(
-                Array.from(document.querySelectorAll('a[href]'))
-                    .map(a => a.href)
-                    .filter(h => h.includes('/product') && !h.includes('/category/'))
-            )).slice(0, 10);
-
-            // Secciones principales
-            const sections = Array.from(document.querySelectorAll('section, main > div')).map(el => ({
                 id: el.id,
-                class: el.className.slice(0, 60),
+                class: el.className.slice(0, 80),
                 children: el.children.length,
-            })).slice(0, 20);
+                textSample: el.textContent.trim().slice(0, 100),
+            })).filter(c => c.children > 0).slice(0, 25);
 
-            // Título y part number
-            const h1 = document.querySelector('h1');
-            const meta = document.querySelector('[class*="part-number"], [class*="partNumber"], [data-part]');
+            // Todos los textos visibles (para entender estructura)
+            const headings = Array.from(document.querySelectorAll('h1,h2,h3,h4'))
+                .map(h => h.textContent.trim()).filter(Boolean).slice(0, 15);
 
-            return { tabs, productLinks, sections,
-                     title: h1 ? h1.textContent.trim() : '',
-                     partNumber: meta ? meta.textContent.trim() : '' };
+            // innerHTML del results-container
+            const rc = document.querySelector('[class*="results-container"]');
+            const rcHtml = rc ? rc.innerHTML.slice(0, 3000) : '(vacío)';
+
+            return { allLinks, productLinks, customEls, containers, headings, rcHtml };
         }""")
 
         out_file = "fleetguard_inspect.json"
@@ -499,18 +550,24 @@ def inspect_page(url: str):
             json.dump(info, f, ensure_ascii=False, indent=2)
 
         print(f"\n{'='*60}")
-        print(f"Título       : {info.get('title')}")
-        print(f"Part Number  : {info.get('partNumber')}")
-        print(f"\nTabs ({len(info['tabs'])}):")
-        for t in info["tabs"]:
-            print(f"  [{t['tag']}] '{t['text']}' class='{t['class']}'")
+        print(f"Headings: {info.get('headings')}")
+        print(f"\nCustom elements LWC ({len(info['customEls'])}):")
+        for e in info["customEls"]:
+            print(f"  <{e}>")
         print(f"\nLinks de producto ({len(info['productLinks'])}):")
         for u in info["productLinks"]:
             print(f"  {u}")
-        print(f"\nSecciones ({len(info['sections'])}):")
-        for s in info["sections"]:
-            print(f"  id='{s['id']}' class='{s['class']}' children={s['children']}")
-        print(f"\nGuardado en: {out_file}")
+        print(f"\nTodos los links ({len(info['allLinks'])}):")
+        for u in info["allLinks"]:
+            print(f"  {u}")
+        print(f"\nContenedores con hijos ({len(info['containers'])}):")
+        for c in info["containers"]:
+            print(f"  <{c['tag']}> id='{c['id']}' class='{c['class']}' children={c['children']}")
+            if c["textSample"]:
+                print(f"    texto: {c['textSample'][:80]}")
+        print(f"\nresults-container HTML (primeros 1000 chars):")
+        print(info["rcHtml"][:1000])
+        print(f"\nGuardado en: {out_file} + fleetguard_inspect.png")
         print("="*60)
 
         input("\nPresiona ENTER para cerrar el navegador...")
