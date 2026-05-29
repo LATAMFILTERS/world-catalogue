@@ -710,96 +710,49 @@ def _extract_related_parts(page) -> list:
 
 def _extract_equipment_tab(page) -> list:
     """
-    Equipment tab: clic en cada <a class="appDataDifferentp"> abre la vista interna
-    del equipo con su BOM completo de filtros. Estructura confirmada:
-      <a class="appDataDifferentp" data-id="102666-1-5-1"
-         data-name="325C" data-product="AP8404" data-engine="3126">
-        Caterpillar - 325C
-      </a>
-    La vista interna lista TODOS los filtros del equipo agrupados por sistema:
-      Air / Fuel / Hydraulic / Lube / Cabin → Fleetguard Part | OEM MFG |
-      OEM Part # | Description | Qty. Req.
+    Equipment tab — LECTURA RÁPIDA (como Donaldson): lee la lista de equipos de
+    corrido, SIN clickear cada modelo para abrir su BOM interno (eso tomaba horas:
+    737 modelos × ~8s = 5h en AF25551).
 
-    Retorna: lista de equipos, cada uno con su BOM:
-      { make, model, engine, equipment, filters: [
-          { system, fleetguard_part, oem_mfg, oem_part, description, qty }, ... ] }
+    Fuente 1: links <a class="appDataDifferentp" data-name="325C" data-engine="3126">
+              Caterpillar - 325C</a>  → make/model/engine de los atributos.
+    Fuente 2: tabla plana (Equipment | Engine | Year | Qty).
+
+    Retorna lista de equipos: { equipment, make, model, engine, [year, qty] }.
+    El BOM por modelo NO se extrae aquí (se decide después si hace falta).
     """
-    # Paso 1: recolectar todos los links de modelos de equipos
-    model_links = page.evaluate(f"""() => {{
+    # Fuente 1: links de modelos — leer atributos, sin clickear
+    results = page.evaluate(f"""() => {{
         {_SHADOW_WALK_ALL}
-        const links = [];
-        const all = [];
+        const out  = [];
+        const seen = new Set();
+        const all  = [];
         swa(document, 'a.appDataDifferentp', 0, all);
         all.forEach(a => {{
-            links.push({{
-                data_id:     a.getAttribute('data-id') || '',
-                data_name:   a.getAttribute('data-name') || '',
-                data_engine: a.getAttribute('data-engine') || '',
-                text:        a.textContent.trim().replace(/\\s+/g, ' '),
-            }});
+            const text   = a.textContent.trim().replace(/\\s+/g, ' ');
+            let   model  = a.getAttribute('data-name') || '';
+            const engine = a.getAttribute('data-engine') || '';
+            const full   = text || model;
+            if (!full) return;
+            let make = '';
+            if (full.includes(' - ')) {{
+                const i = full.indexOf(' - ');
+                make = full.slice(0, i).trim();
+                if (!model) model = full.slice(i + 3).trim();
+            }} else if (full.includes('-') && !model) {{
+                make  = full.split('-')[0].trim();
+                model = full.split('-').slice(1).join('-').trim();
+            }}
+            const key = make + '|' + model + '|' + engine;
+            if (!seen.has(key)) {{
+                seen.add(key);
+                out.push({{ equipment: full, make, model, engine, filters: [] }});
+            }}
         }});
-        return links;
+        return out;
     }}""")
 
-    product_url = page.url
-    results = []
-    seen = set()
-
-    for lnk in model_links:
-        full_text  = lnk.get("text", "") or lnk.get("data_name", "")
-        model      = lnk.get("data_name", "")
-        engine     = lnk.get("data_engine", "")
-        data_id    = lnk.get("data_id", "")
-        # "Caterpillar - 325C" → make=Caterpillar, model=325C
-        make = full_text.split("-")[0].strip() if "-" in full_text else ""
-        if not model and "-" in full_text:
-            model = full_text.split("-", 1)[1].strip()
-
-        if not full_text:
-            continue
-
-        # Paso 2: clic en el link → abre vista interna del equipo
-        _did_click = page.evaluate(f"""() => {{
-            {_SHADOW_WALK}
-            const a = sw(document, 'a.appDataDifferentp[data-id="{data_id}"]', 0);
-            if (a) {{ a.click(); return true; }}
-            return false;
-        }}""")
-
-        if _did_click:
-            time.sleep(1.5)
-            try:
-                page.wait_for_load_state("networkidle", timeout=5000)
-            except Exception:
-                pass
-
-        navigated = page.url != product_url
-
-        # Paso 3: leer el BOM completo de la vista del equipo
-        bom = _read_equipment_bom(page)
-
-        key = f"{make}|{model}|{engine}"
-        if key not in seen:
-            seen.add(key)
-            results.append({
-                "equipment": full_text,
-                "make":      make,
-                "model":     model,
-                "engine":    engine,
-                "filters":   bom,
-            })
-
-        # Si navegó a otra URL, regresar al producto y reactivar tab Equipment
-        if navigated:
-            try:
-                page.goto(product_url, timeout=30000, wait_until="domcontentloaded")
-                time.sleep(2)
-                _click_tab(page, "Equipment")
-            except Exception:
-                pass
-
-    # Fallback: sin links appDataDifferentp → tabla plana
-    # (categorías como primary-and-secondary: Equipment | Engine | Year | Qty)
+    # Fuente 2 (fallback): tabla plana Equipment | Engine | Year | Qty
     if not results:
         table_rows = page.evaluate(f"""() => {{
             {_SHADOW_WALK_ALL}
