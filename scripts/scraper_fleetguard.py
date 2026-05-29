@@ -403,8 +403,12 @@ def inspect_page(url: str):
 # ── Category collector ────────────────────────────────────────────────────────
 
 def _count_products(data) -> int:
-    """Cuenta productos en una respuesta API."""
+    """Cuenta productos en una respuesta API (incluye Salesforce productsPage)."""
     if isinstance(data, dict):
+        # Salesforce B2B Commerce search/products → productsPage.products[]
+        pp = data.get("productsPage")
+        if isinstance(pp, dict) and isinstance(pp.get("products"), list):
+            return len(pp["products"])
         for k in ("products", "items", "results", "productList", "records", "data"):
             v = data.get(k)
             if isinstance(v, list):
@@ -423,6 +427,119 @@ def _find_product_api(captured: list):
             best = c
             break
     return best
+
+
+def _find_capture(captured: list, needle: str):
+    """Retorna la última captura cuya URL contiene `needle`, o None."""
+    for c in reversed(captured):
+        if needle in c.get("url", ""):
+            return c
+    return None
+
+
+def _set_query(url: str, **kv) -> str:
+    """Cambia/agrega parámetros de query en una URL."""
+    import urllib.parse
+    p = urllib.parse.urlparse(url)
+    q = dict((k, v[0]) for k, v in urllib.parse.parse_qs(p.query, keep_blank_values=True).items())
+    for k, v in kv.items():
+        q[k] = str(v)
+    return urllib.parse.urlunparse(p._replace(query=urllib.parse.urlencode(q)))
+
+
+def _fetch_json(page, url: str):
+    """fetch() GET JSON en el contexto del browser (usa cookies de sesión)."""
+    return page.evaluate("""async (url) => {
+        try {
+            const r = await fetch(url, {credentials:'include',
+                headers:{'Accept':'application/json'}});
+            if (!r.ok) return null;
+            return await r.json();
+        } catch(e) { return null; }
+    }""", url)
+
+
+def _salesforce_product_ids(data) -> list:
+    """Extrae IDs de producto (01t…) de una respuesta search/products."""
+    ids = []
+    pp = data.get("productsPage") if isinstance(data, dict) else None
+    prods = pp.get("products") if isinstance(pp, dict) else None
+    if isinstance(prods, list):
+        for it in prods:
+            if isinstance(it, dict):
+                pid = it.get("id") or it.get("productId")
+                if isinstance(pid, str) and pid.startswith("01t"):
+                    ids.append(pid)
+    return ids
+
+
+def collect_salesforce_search(page, captured) -> set:
+    """
+    Paginador específico Salesforce B2B Commerce.
+
+    Flujo real del sitio (descubierto vía api_debug):
+      1. search/products?categoryId=X&page=N  → IDs de producto (base 0).
+         Productos anidados en productsPage.products[]; total en productsPage.total.
+      2. products?ids=<20 ids>                 → datos completos con ProductCode.
+
+    Pagina (1), resuelve IDs→part numbers (2), arma URLs /product/{PN}.
+    Retorna set de URLs, o set vacío si no hay endpoint de búsqueda.
+    """
+    import math
+
+    search_cap = _find_capture(captured, "/search/products?")
+    ids_cap    = _find_capture(captured, "/products?ids=")
+    if not search_cap:
+        return set()
+
+    search_url = search_cap["url"]
+    # total / pageSize del primer response (productsPage)
+    data0 = search_cap.get("data") or {}
+    pp0   = data0.get("productsPage", {}) if isinstance(data0, dict) else {}
+    total = pp0.get("total") or data0.get("total") or 0
+    psize = pp0.get("pageSize") or 20
+    pages = math.ceil(total / psize) if total else 250
+    logging.info(f"  Salesforce search: total={total}, pageSize={psize}, páginas={pages}")
+
+    # ── Paso 1: recolectar todos los IDs paginando search/products (base 0) ──
+    all_ids = []
+    seen_id = set()
+    empty   = 0
+    for n in range(0, pages + 2):           # +2 margen por si total redondea
+        url  = _set_query(search_url, page=n)
+        data = _fetch_json(page, url)
+        pids = _salesforce_product_ids(data) if data else []
+        nuevos = 0
+        for pid in pids:
+            if pid not in seen_id:
+                seen_id.add(pid); all_ids.append(pid); nuevos += 1
+        if (n + 1) % 10 == 0 or nuevos == 0:
+            logging.info(f"    search page {n}: +{nuevos} IDs (total {len(all_ids)})")
+        if not pids:
+            empty += 1
+            if empty >= 2:
+                break
+        else:
+            empty = 0
+    logging.info(f"  IDs recolectados: {len(all_ids)}")
+
+    # ── Paso 2: resolver IDs → part numbers vía products?ids= (lotes de 20) ──
+    urls = set()
+    if not ids_cap:
+        logging.warning("  No se capturó endpoint products?ids= — no se pueden resolver part numbers")
+        return urls
+    ids_url = ids_cap["url"]
+    BATCH = 20
+    for i in range(0, len(all_ids), BATCH):
+        chunk = all_ids[i:i + BATCH]
+        url   = _set_query(ids_url, ids=",".join(chunk))
+        data  = _fetch_json(page, url)
+        if data:
+            _extract_urls_from_api(data, urls)
+        if (i // BATCH + 1) % 10 == 0:
+            logging.info(f"    resueltos {len(urls)} part numbers de {len(all_ids)} IDs")
+    logging.info(f"  Part numbers resueltos: {len(urls)}")
+    return urls
 
 
 def _replay_api_page(page, cap: dict, page_num: int):
@@ -567,7 +684,14 @@ def collect_product_links(page, category_url: str) -> list:
     except Exception as e:
         logging.debug(f"  No se pudo volcar diagnóstico: {e}")
 
-    # ── Detectar si hay una API paginable ─────────────────────────────────────
+    # ── Ruta preferida: paginador Salesforce B2B Commerce (search/products) ────
+    sf_urls = collect_salesforce_search(page, captured)
+    if sf_urls:
+        all_urls |= sf_urls
+        logging.info(f"Total URLs encontradas (Salesforce): {len(all_urls)}")
+        return list(all_urls)
+
+    # ── Fallback: detectar cualquier API paginable genérica ────────────────────
     api_cap = _find_product_api(captured)
     if api_cap:
         logging.info(f"  API detectada: {api_cap['method']} "
