@@ -589,47 +589,67 @@ def _click_tab_flexible(page, data_names: list, text_keywords: list) -> bool:
 
 def _extract_maintenance_kits(page) -> list:
     """
-    Lee el tab 'Maintenance Kits'. Estructura no confirmada al 100%, así que
-    captura genéricamente: por cada fila de datos guarda el número de kit
-    (primera celda) + todas las celdas como detalle, y detecta part numbers.
+    Lee el tab 'Maintenance Kits' y lo AGRUPA: cada kit (MK####) con la lista
+    de filtros que lo componen. Esta es la lista completa de filtros que Fleetguard
+    ya armó para un equipo — la que un agente IA devuelve al preguntar
+    "¿qué filtros lleva un CAT 325C?".
+
+    Estructura de la tabla (en orden):
+      MK14760                      ← cabecera del kit
+      AF25551 | 1 | Air            ← filtro del kit
+      LF3706  | 1 | Lube
+      HF35308 | 1 | Hydraulic
+      ...
+      MKxxxxx                      ← siguiente kit
+
+    Retorna: [ { kit_number, filters: [ {part, qty, system}, ... ] }, ... ]
     """
     return page.evaluate(f"""() => {{
         {_SHADOW_WALK_ALL}
-        const out  = [];
-        const seen = new Set();
-        const PN_RE = /\\b[A-Z]{{1,4}}[0-9]{{3,}}[A-Z0-9-]*\\b/g;
+        const PN_RE  = /^[A-Z]{{1,4}}[0-9]{{3,}}[A-Z0-9-]*$/;
+        const SYS_RE = /^(air|fuel|lube|hydraulic|cabin|coolant|water|crankcase|transmission)$/i;
+
+        const kits = [];
+        let current = null;
+        const fseen = new Set();   // dedup filtros dentro del kit actual
 
         const trs = [];
         swa(document, 'table tr', 0, trs);
         trs.forEach(tr => {{
             const cells = Array.from(tr.querySelectorAll('td'));
-            if (cells.length < 1) return;
             const texts = cells.map(c => c.textContent.trim().replace(/\\s+/g,' ')).filter(t => t);
             if (texts.length === 0) return;
-            // saltar encabezados
-            if (/kit number|description|part|qty/i.test(texts[0]) && texts.length <= 2 &&
-                /kit|part|description/i.test(texts.join(' '))) return;
+            const first = texts[0].toUpperCase();
 
-            const rowText = texts.join(' ');
-            const parts = (rowText.toUpperCase().match(PN_RE) || []);
-            if (parts.length === 0) return;                 // sin part numbers → no es kit
-            const kit_number = texts[0] || '';
-            // Aceptar solo: id de kit (MK####) o fila BOM con columna de sistema
-            const isKitId  = /^MK[0-9]/i.test(kit_number);
-            const hasSystem = texts.some(t =>
-                /^(air|fuel|lube|hydraulic|cabin|coolant|water)$/i.test(t));
-            if (!isKitId && !hasSystem) return;             // specs / alternativas → fuera
-            const key = rowText;
-            if (!seen.has(key)) {{
-                seen.add(key);
-                out.push({{
-                    kit_number,
-                    cells: texts,
-                    parts: [...new Set(parts)],
-                }});
+            // Cabecera de kit: MK####
+            if (/^MK[0-9]/.test(first)) {{
+                current = {{ kit_number: first, filters: [] }};
+                kits.push(current);
+                fseen.clear();
+                return;
+            }}
+
+            // Fila de filtro: part number + columna de sistema
+            const part   = first;
+            const system = texts.find(t => SYS_RE.test(t)) || '';
+            if (!PN_RE.test(part) || !system) return;       // no es filtro de kit → fuera
+            // qty: celda numérica si existe
+            const qty = texts.find(t => /^[0-9]+$/.test(t)) || '';
+
+            // Si aparece un filtro sin cabecera previa, crear kit implícito
+            if (!current) {{
+                current = {{ kit_number: '', filters: [] }};
+                kits.push(current);
+                fseen.clear();
+            }}
+            if (!fseen.has(part)) {{
+                fseen.add(part);
+                current.filters.push({{ part, qty, system }});
             }}
         }});
-        return out;
+
+        // Solo kits con al menos un filtro
+        return kits.filter(k => k.filters.length > 0);
     }}""")
 
 
