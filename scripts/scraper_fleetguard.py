@@ -56,13 +56,11 @@ PROGRESS_FILE = "fleetguard_unknown_progress.json"
 
 PAUSE_BETWEEN = (4, 9)
 
+# Solo URLs CONFIRMADAS reales. Para agregar otra categoría: copiar la URL real
+# desde fleetguard.com (debe incluir el ID Salesforce, ej. /0ZGPL...).
+# Estado: solo air-precleaners confirmada (37 códigos scrapeados).
 CATEGORIES = {
     "air-precleaners": "https://www.fleetguard.com/category/products/air-filtration/air-precleaners/0ZGPL0000000FSJ4A2",
-    "air-primary":     "https://www.fleetguard.com/category/products/air-filtration/primary-air-elements",
-    "air-safety":      "https://www.fleetguard.com/category/products/air-filtration/safety-air-elements",
-    "lube":            "https://www.fleetguard.com/category/products/lube-filtration",
-    "fuel":            "https://www.fleetguard.com/category/products/fuel-filtration",
-    "hydraulic":       "https://www.fleetguard.com/category/products/hydraulic-filtration",
 }
 
 # JS que traversa Shadow DOM recursivamente

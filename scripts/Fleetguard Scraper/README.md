@@ -13,12 +13,11 @@ Fleetguard scrapeados, por categoría.
 
 ## Categorías
 
-- `air-precleaners` ✅ (37 productos)
-- `air-primary`
-- `air-safety`
-- `lube`
-- `fuel`
-- `hydraulic`
+- `air-precleaners` ✅ (37 productos) — ÚNICA categoría obtenida hasta ahora
+
+> Las demás categorías (lube, fuel, hydraulic, primary/safety air) NO están
+> hechas. Para agregar una hay que copiar su URL real desde fleetguard.com
+> (con el ID Salesforce) y añadirla a `CATEGORIES` en `scraper_fleetguard.py`.
 
 ## Uso
 
@@ -26,6 +25,9 @@ Fleetguard scrapeados, por categoría.
 cd scripts
 python scraper_fleetguard.py air-precleaners       # corre / reanuda
 python scraper_fleetguard.py --retry-empty air-precleaners   # re-scrapea los 0/0/0/0
+
+# Para una categoría nueva, pasar la URL real directamente:
+python scraper_fleetguard.py <nombre> "https://www.fleetguard.com/category/..."
 ```
 
 > Nota: NO se hace mapeo a SKU ELIMFILTERS aquí. Estos son códigos base Fleetguard
