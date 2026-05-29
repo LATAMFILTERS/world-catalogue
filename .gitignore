@@ -7,6 +7,8 @@ config/google-credentials.json
 C:\\Users\\
 sesion_*/
 *_results.json
+# Pero SÍ guardar los resultados crudos del scraper Fleetguard
+!scripts/Fleetguard Scraper/*_results.json
 debug*.py
 scraper_debug*.py
 __pycache__/
