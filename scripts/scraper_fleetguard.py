@@ -46,6 +46,9 @@ logging.basicConfig(
 
 PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".fleetguard_profile")
 
+# Todos los resultados/progreso/matriz se guardan aquí (junto al script).
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Fleetguard Scraper")
+
 CATEGORY_NAME = "unknown"
 CATEGORY_URL  = ""
 OUTPUT_FILE   = "fleetguard_unknown_results.json"
@@ -133,10 +136,11 @@ SHADOW_TEXT_JS = """
 
 def configure(name, url):
     global CATEGORY_NAME, CATEGORY_URL, OUTPUT_FILE, PROGRESS_FILE
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     CATEGORY_NAME = name
     CATEGORY_URL  = url
-    OUTPUT_FILE   = f"fleetguard_{name}_results.json"
-    PROGRESS_FILE = f"fleetguard_{name}_progress.json"
+    OUTPUT_FILE   = os.path.join(OUTPUT_DIR, f"fleetguard_{name}_results.json")
+    PROGRESS_FILE = os.path.join(OUTPUT_DIR, f"fleetguard_{name}_progress.json")
 
 
 def rand_sleep(lo=None, hi=None):
@@ -1164,7 +1168,7 @@ def build_equipment_matrix(results: list):
                     existing.add(fkey)
                     entry["filters"].append(filt)
 
-    out_file = f"fleetguard_{CATEGORY_NAME}_equipment_matrix.json"
+    out_file = os.path.join(OUTPUT_DIR, f"fleetguard_{CATEGORY_NAME}_equipment_matrix.json")
     matrix_list = sorted(matrix.values(), key=lambda e: (e["make"], e["model"]))
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(matrix_list, f, ensure_ascii=False, indent=2)
