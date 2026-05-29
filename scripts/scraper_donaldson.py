@@ -240,36 +240,57 @@ def expand_cross_plus(page, body_id: str):
 
 # ── colección de links de categoría ────────────────────────────────────────
 
+def _extract_links_from_page(page) -> list:
+    """Extrae paths PART/SKUID de los links de producto visibles en el DOM."""
+    return page.evaluate("""() => {
+        return Array.from(document.querySelectorAll('a[href*="/product/"]'))
+            .map(a => {
+                const href = a.getAttribute('href') || '';
+                const path = href.split('/product/').pop().split('?')[0].trim();
+                const i = path.indexOf('/');
+                if (i < 0) return path.toUpperCase();
+                return path.slice(0, i).toUpperCase() + path.slice(i);
+            })
+            .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
+    }""")
+
+
 def collect_product_links(page):
-    """Devuelve lista de paths completos 'PART/SKUID' de la categoría Lube."""
-    page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
-    time.sleep(4)
-    dismiss_popups(page)
+    """
+    Recolecta todos los paths PART/SKUID de la categoría.
+
+    Estrategia dual:
+    1. URL offset (&No=N): incrementa el offset ATG de 20 en 20.
+       Funciona para categorías grandes (hydraulic: 2177, 99 páginas).
+    2. Fallback botón "Next": si el offset no avanza, prueba clic UI.
+
+    Para cuando 3 páginas consecutivas devuelvan 0 productos nuevos.
+    """
+    STEP = 20   # productos por página en Donaldson shop
+
+    # Separar parámetros base del URL para no duplicar &No=
+    import urllib.parse
+    parsed = urllib.parse.urlparse(CATEGORY_URL)
+    params = dict(urllib.parse.parse_qsl(parsed.query))
+    params.pop("No", None)   # eliminar offset previo si existe
+    base_url = urllib.parse.urlunparse(parsed._replace(
+        query=urllib.parse.urlencode(params)))
 
     seen  = set()
     paths = []
-    pg    = 1
+    empty = 0
+    offset = 0
+    pg = 1
 
     while True:
-        logging.info(f"  Página {pg} …")
-        try:
-            page.wait_for_load_state("networkidle", timeout=20000)
-        except Exception:
-            pass
+        url = base_url + f"&No={offset}"
+        logging.info(f"  Página {pg} (No={offset}) …")
+        page.goto(url, timeout=60000, wait_until="networkidle")
+        time.sleep(3)
+        if pg == 1:
+            dismiss_popups(page)
 
-        raw = page.evaluate("""() => {
-            return Array.from(document.querySelectorAll('a[href*="/product/"]'))
-                .map(a => {
-                    const href = a.getAttribute('href') || '';
-                    const path = href.split('/product/').pop().split('?')[0].trim();
-                    const i = path.indexOf('/');
-                    // Mayúsculas SOLO en el part number; el SKU (p.ej. prod340743)
-                    // es case-sensitive y debe quedar tal cual.
-                    if (i < 0) return path.toUpperCase();
-                    return path.slice(0, i).toUpperCase() + path.slice(i);
-                })
-                .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
-        }""")
+        raw = _extract_links_from_page(page)
 
         added = 0
         for p in raw:
@@ -278,26 +299,23 @@ def collect_product_links(page):
                 seen.add(part)
                 paths.append(p)
                 added += 1
-        logging.info(f"    +{added} (total {len(paths)})")
+        logging.info(f"    +{added} nuevos (total {len(paths)})")
 
-        nxt = page.evaluate("""() => {
-            const b = Array.from(document.querySelectorAll('a, button')).find(b =>
-                b.offsetParent &&
-                (b.getAttribute('aria-label') === 'Next page' ||
-                 b.textContent.trim() === 'Next' ||
-                 b.textContent.trim() === 'Siguiente' ||
-                 b.classList.contains('next-page') ||
-                 (b.parentElement && b.parentElement.classList.contains('next')))
-            );
-            if (b) { b.click(); return true; }
-            return false;
-        }""")
+        if added == 0:
+            empty += 1
+            if empty >= 3:
+                logging.info("  3 páginas vacías consecutivas — fin")
+                break
+        else:
+            empty = 0
 
-        if not nxt:
-            logging.info("  No hay más páginas")
-            break
+        offset += STEP
         pg += 1
-        rand_sleep(2, 5)
+        rand_sleep(2, 4)
+
+        if pg > 500:   # tope de seguridad
+            logging.warning("  Tope 500 páginas — deteniendo")
+            break
 
     logging.info(f"Total productos: {len(paths)}")
     return paths
