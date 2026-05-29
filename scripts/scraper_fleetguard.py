@@ -1136,7 +1136,7 @@ def test_one(url: str):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def main():
+def main(start_from: str = ""):
     with sync_playwright() as pw:
         ctx = launch_context(pw)
         page = ctx.new_page()
@@ -1152,6 +1152,16 @@ def main():
         else:
             urls = progress["part_numbers"]
             logging.info(f"Reanudando — {len(urls)} URLs totales")
+
+        # Arrancar en un producto específico (salta todo lo anterior en la lista)
+        if start_from:
+            sf = start_from.strip().upper()
+            idx0 = next((i for i, u in enumerate(urls) if sf in u.upper()), None)
+            if idx0 is None:
+                logging.warning(f"⚠ '{start_from}' no está en la lista — corriendo desde el inicio")
+            else:
+                logging.info(f"Comenzando en {start_from} (índice {idx0}/{len(urls)})")
+                urls = urls[idx0:]
 
         done_set = set(progress["done"])
         results  = progress["results"]
@@ -1317,6 +1327,16 @@ if __name__ == "__main__":
         logging.info(f"Reintentando vacíos: {name}")
         retry_empty(); sys.exit(0)
 
+    # Parsear --start <PN> en cualquier posición
+    start_from = ""
+    rest = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--start" and i + 1 < len(argv):
+            start_from = argv[i + 1]; i += 2; continue
+        rest.append(argv[i]); i += 1
+    argv = rest
+
     name = argv[0].lower()
     url  = argv[1] if len(argv) > 1 else CATEGORIES.get(name, "")
     if not url:
@@ -1326,4 +1346,4 @@ if __name__ == "__main__":
 
     configure(name, url)
     logging.info(f"Iniciando: {name} → {url}")
-    main()
+    main(start_from=start_from)
