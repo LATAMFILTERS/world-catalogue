@@ -14,6 +14,10 @@ Uso:
     python scraper_fleetguard.py --inspect <URL-categoría>
     python scraper_fleetguard.py --test    <URL-producto>
     python scraper_fleetguard.py air-precleaners [URL]
+    python scraper_fleetguard.py air-precleaners --start AF4878
+    python scraper_fleetguard.py air-precleaners --codes-only        # solo códigos (rápido)
+    python scraper_fleetguard.py air-precleaners --kits-only         # solo maintenance_kits
+    python scraper_fleetguard.py air-precleaners --no-equipment      # sin equipment tab
 
 Dependencias:
     pip install playwright playwright-stealth
@@ -57,6 +61,11 @@ PROGRESS_FILE = "fleetguard_unknown_progress.json"
 # Si False, se omite la extracción de Equipment + Maintenance Kits (lo lento).
 # Se desactiva con --no-equipment. Default: True (detalle completo).
 SCRAPE_EQUIPMENT = True
+
+# Si True, extrae SOLO part_number + maintenance_kits. Omite specs, cross-refs,
+# alternativas y equipment. Modo más rápido para catálogo de kits por máquina.
+# Se activa con --kits-only.
+SCRAPE_KITS_ONLY = False
 
 PAUSE_BETWEEN = (4, 9)
 
@@ -773,7 +782,7 @@ def _extract_equipment_tab(page) -> list:
             const key = full + '|' + engine + '|' + year;
             if (!seen.has(key)) {{
                 seen.add(key);
-                rows.push({{ equipment: full, make, model, engine, year, qty, filters: [] }});
+                rows.push({{ equipment: full, make, model, engine, year, qty }});
             }}
         }});
         return rows;
@@ -805,7 +814,7 @@ def _extract_equipment_tab(page) -> list:
                 const key = make + '|' + model + '|' + engine;
                 if (!seen.has(key)) {{
                     seen.add(key);
-                    out.push({{ equipment: full, make, model, engine, year: '', qty: '', filters: [] }});
+                    out.push({{ equipment: full, make, model, engine, year: '', qty: '' }});
                 }}
             }});
             return out;
@@ -977,27 +986,29 @@ def _scrape_once(page, url: str, result: dict, settle: float):
             if len(seg) >= 3 and seg.replace("-", "").isalnum():
                 result["part_number"] = seg.upper(); break
 
-    # ── Specs (visibles por defecto, sin tab) ────────────────────────
-    result["attributes"] = _extract_specs(page)
-    logging.info(f"    attr: {len(result['attributes'])}")
+    if not SCRAPE_KITS_ONLY:
+        # ── Specs (visibles por defecto, sin tab) ────────────────────────
+        result["attributes"] = _extract_specs(page)
+        logging.info(f"    attr: {len(result['attributes'])}")
 
-    # ── Related Parts / Alternativas ─────────────────────────────────
-    result["alternatives"] = _extract_related_parts(page)
-    logging.info(f"    alt: {len(result['alternatives'])}")
+        # ── Related Parts / Alternativas ─────────────────────────────────
+        result["alternatives"] = _extract_related_parts(page)
+        logging.info(f"    alt: {len(result['alternatives'])}")
 
-    # ── Cross Reference (tab data-name="CrossRef") ───────────────────
-    # Puente OEM para homologación — barato, siempre se extrae.
-    _click_tab(page, "CrossRef")
-    result["cross_references"] = _extract_crossref_tab(page)
-    logging.info(f"    cross: {len(result['cross_references'])}")
+        # ── Cross Reference (tab data-name="CrossRef") ───────────────────
+        _click_tab(page, "CrossRef")
+        result["cross_references"] = _extract_crossref_tab(page)
+        logging.info(f"    cross: {len(result['cross_references'])}")
 
-    # ── Equipment + Kits (LENTO: cientos de filas/clicks por código) ──
-    # Se omite con --no-equipment / --codes-only. El BOM se decide después.
-    if SCRAPE_EQUIPMENT:
+    # ── Equipment (filas de máquinas que usan este filtro) ──────────
+    if SCRAPE_EQUIPMENT and not SCRAPE_KITS_ONLY:
         _click_tab(page, "Equipment")
         result["equipment"] = _extract_equipment_tab(page)
         logging.info(f"    equip: {len(result['equipment'])}")
 
+    # ── Maintenance Kits (kits de servicio que incluyen este filtro) ─
+    # Se extrae siempre que SCRAPE_EQUIPMENT=True O SCRAPE_KITS_ONLY=True.
+    if SCRAPE_EQUIPMENT or SCRAPE_KITS_ONLY:
         if _click_tab_flexible(page,
                                ["MaintenanceKits", "MaintKits", "Kits", "Maintenance"],
                                ["maintenance kit", "maintenance", "kit"]):
@@ -1310,11 +1321,12 @@ def retry_empty():
 
 def build_equipment_matrix(results: list):
     """
-    Construye matriz equipo→filtros deduplicada para búsqueda por equipo en
-    part-search. Cada equipo único agrega su BOM completo de filtros.
+    Construye matriz equipo → filtros para búsqueda por equipo.
+    Cada equipo único agrega source_products (todos los filtros Fleetguard que usa).
     Archivo: fleetguard_{cat}_equipment_matrix.json
     """
-    matrix = {}  # key: make|model|engine → {make, model, engine, filters, source_products}
+    # key: make|model|engine → {make, model, engine, equipment, source_products}
+    matrix = {}
 
     for prod in results:
         pn = prod.get("part_number", "")
@@ -1329,33 +1341,21 @@ def build_equipment_matrix(results: list):
                 continue
             if key not in matrix:
                 matrix[key] = {
-                    "make":   make,
-                    "model":  model,
-                    "engine": engine,
-                    "equipment": eq.get("equipment", ""),
-                    "filters": [],
-                    "source_products": [],
+                    "make":            make,
+                    "model":           model,
+                    "engine":          engine,
+                    "equipment":       eq.get("equipment", ""),
+                    "source_products": [],  # todos los filtros Fleetguard que usa este equipo
                 }
             entry = matrix[key]
             if pn and pn not in entry["source_products"]:
                 entry["source_products"].append(pn)
-            # Merge filtros del BOM (dedup por system+fleetguard_part+oem_part)
-            existing = {(f.get("system",""), f.get("fleetguard_part",""), f.get("oem_part",""))
-                        for f in entry["filters"]}
-            for filt in eq.get("filters", []):
-                if not isinstance(filt, dict):
-                    continue
-                fkey = (filt.get("system",""), filt.get("fleetguard_part",""), filt.get("oem_part",""))
-                if fkey not in existing:
-                    existing.add(fkey)
-                    entry["filters"].append(filt)
 
     out_file = os.path.join(OUTPUT_DIR, f"fleetguard_{CATEGORY_NAME}_equipment_matrix.json")
     matrix_list = sorted(matrix.values(), key=lambda e: (e["make"], e["model"]))
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(matrix_list, f, ensure_ascii=False, indent=2)
-    total_filters = sum(len(e["filters"]) for e in matrix_list)
-    logging.info(f"✅ Matriz equipos — {len(matrix_list)} equipos, {total_filters} filtros en {out_file}")
+    logging.info(f"✅ Matriz equipos — {len(matrix_list)} equipos en {out_file}")
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
@@ -1401,6 +1401,11 @@ if __name__ == "__main__":
             codes_only = True; i += 1; continue
         if argv[i] == "--no-equipment":
             SCRAPE_EQUIPMENT = False; i += 1; continue
+        if argv[i] == "--kits-only":
+            # Solo extrae part_number + maintenance_kits. Omite specs/cross/equipment.
+            # Modo más rápido: útil cuando solo se necesita la lista de filtros por kit.
+            globals()["SCRAPE_KITS_ONLY"] = True
+            i += 1; continue
         rest.append(argv[i]); i += 1
     argv = rest
 
@@ -1416,6 +1421,11 @@ if __name__ == "__main__":
         logging.info(f"SOLO CÓDIGOS: {name} → {url}")
         collect_codes_only()
     else:
-        modo = "detalle SIN equipment" if not SCRAPE_EQUIPMENT else "detalle completo"
+        if SCRAPE_KITS_ONLY:
+            modo = "KITS ONLY (solo maintenance_kits)"
+        elif not SCRAPE_EQUIPMENT:
+            modo = "detalle SIN equipment"
+        else:
+            modo = "detalle completo"
         logging.info(f"Iniciando ({modo}): {name} → {url}")
         main(start_from=start_from)
