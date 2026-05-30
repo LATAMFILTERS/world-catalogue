@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Industrial Filtration Knowledge Base | ELIMFILTERS®',
   },
-  description: 'Deep technical resources on filtration science, ISO standards, contamination control, fleet maintenance, and OEM comparison — built for engineers and procurement teams.',
+  description: 'Deep technical resources on filtration science, ISO standards, contamination control, and fleet optimization — built for engineers and procurement teams.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/',
   },
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'Industrial Filtration Knowledge Base | ELIMFILTERS®',
     description: 'Deep technical resources on filtration science, ISO standards, contamination control, and fleet optimization.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],

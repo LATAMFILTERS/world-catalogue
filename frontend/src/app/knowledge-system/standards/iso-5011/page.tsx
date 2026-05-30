@@ -7,31 +7,31 @@ import RetrievalBlock from '@/components/RetrievalBlock';
 export default function ISO5011Page() {
   const sections = [
     {
-      title: '¿Para qué sirve ISO 5011?',
-      content: 'ISO 5011 sirve como el estándar de prueba que garantiza la calidad y la confiabilidad de los elementos de filtro hidráulico. Su propósito es proporcionar un método reproducible y estandarizado para verificar que un elemento de filtro puede retener adecuadamente las partículas bajo presiones diferenciales extremas sin colapsar o desarrollar fugas. Los fabricantes de filtros utilizan ISO 5011 para certificar que sus productos cumplen con las especificaciones de retención, y los compradores utilizan este estándar para validar que los filtros que adquieren proporcionarán la protección esperada. Los procedimientos de prueba ISO 5011 incluyen la "prueba de integridad", donde se aplica aire comprimido para detectar puntos de fuga, y la "prueba de colapso", donde se incrementa gradualmente la presión diferencial hasta que el elemento falla.'
+      title: 'What Is ISO 5011 Used For?',
+      content: 'ISO 5011 serves as the test standard that validates the quality and reliability of air filter elements for internal combustion engines and compressors. Its purpose is to provide a reproducible, standardised method for verifying that a filter element can adequately retain particles under extreme differential pressures without collapsing or developing leaks. Filter manufacturers use ISO 5011 to certify that their products meet retention specifications, and buyers use this standard to validate that the filters they procure will provide the expected protection. ISO 5011 test procedures include the integrity test, where compressed air is applied to detect leak points, and the collapse test, where differential pressure is gradually increased until the element fails.'
     },
     {
-      title: '¿Por qué importa en filtración industrial?',
-      content: 'En filtración industrial, ISO 5011 es absolutamente crítico porque conecta la especificación de limpieza (ISO 16889 o ISO 4406) con la realidad física de la retención de partículas. Un elemento de filtro podría estar diseñado para retener partículas de 10 µm, pero sin las pruebas ISO 5011, no hay forma confiable de verificar que realmente lo hace. Cuando un filtro falla en servicio sin colapsar visiblemente, a menudo es porque no pasó adequadamente las pruebas ISO 5011. La contaminación particularada que escapa a través de un elemento de filtro defectuoso es una de las causas más comunes de daño catastrófico en sistemas hidráulicos. ISO 5011 previene esto asegurando que solo los filtros que han demostrado su capacidad de retención se coloquen en servicio crítico.'
+      title: 'Why It Matters in Industrial Filtration',
+      content: 'In industrial filtration, ISO 5011 is critical because it connects the cleanliness specification (ISO 16889 or ISO 4406) to the physical reality of particle retention. A filter element may be designed to retain 10 µm particles, but without ISO 5011 testing there is no reliable way to verify that it actually does so. When a filter fails in service without visibly collapsing, it is often because it did not adequately pass ISO 5011 testing. Particulate contamination that escapes through a defective filter element is one of the most common causes of catastrophic damage in hydraulic systems. ISO 5011 prevents this by ensuring that only filters that have demonstrated their retention capability are placed in critical service.'
     },
     {
-      title: 'Aplicación en motores y sistemas',
-      content: 'Cuando un fabricante de equipos OEM diseña un sistema hidráulico con un requisito ISO 16889 16/14/11, especifica también un elemento de filtro que ha sido certificado bajo ISO 5011 para retener partículas de ese tamaño crítico. En maquinaria de construcción con presiones de operación de 210 bar, el filtro debe demostrar que puede mantener la integridad hasta presiones diferenciales de 350+ bar en las pruebas ISO 5011. En sistemas agrícolas con ciclos de operación largos, los elementos de filtro certificados ISO 5011 garantizan que el fluido permanece limpio durante miles de horas de funcionamiento. En equipos marinos, donde el acceso para cambiar filtros es limitado, la certificación ISO 5011 es especialmente importante para garantizar que el elemento funcionará de manera confiable durante el intervalo completo de servicio especificado.'
+      title: 'Application in Engines and Systems',
+      content: 'When an OEM equipment manufacturer designs a hydraulic system with an ISO 16889 16/14/11 requirement, they also specify a filter element that has been certified under ISO 5011 to retain particles at that critical size. In construction machinery operating at 210 bar, the filter must demonstrate it can maintain integrity up to differential pressures of 350+ bar in ISO 5011 collapse testing. In agricultural systems with long operating cycles, ISO 5011-certified filter elements ensure the fluid remains clean for thousands of operating hours. In marine equipment where access for filter changes is limited, ISO 5011 certification is especially important to guarantee the element will perform reliably across the full specified service interval.'
     }
   ];
 
   const faqs = [
     {
-      question: '¿Cuál es la diferencia entre "colapso" e "integridad" en ISO 5011?',
-      answer: 'La prueba de integridad (ISO 5011-1) utiliza aire comprimido a baja presión para detectar fugas o puntos débiles en el medio filtrante, usando un detector de burbujas. La prueba de colapso (ISO 5011-2) incrementa gradualmente la presión diferencial (típicamente con agua) hasta que el elemento cede estructuralmente o desarrolla una fuga significativa. La prueba de integridad detecta pequeñas imperfecciones, mientras que la prueba de colapso verifica que el elemento puede soportar presiones extremas antes de fallar estructuralmente.'
+      question: 'What Is the Difference Between "Collapse" and "Integrity" in ISO 5011?',
+      answer: 'The integrity test uses low-pressure compressed air to detect leaks or weak points in the filter media using a bubble detector. The collapse test gradually increases differential pressure (typically using water) until the element fails structurally or develops a significant leak. The integrity test detects small imperfections, while the collapse test verifies the element can withstand extreme pressures before structural failure.'
     },
     {
-      question: '¿Qué presión diferencial debe soportar un elemento de filtro según ISO 5011?',
-      answer: 'Los requisitos varían según el tipo de filtro y el tamaño de partículas de retención. Un filtro típico de presión media (retención de 10-25 µm) debe soportar una presión diferencial de colapso de al menos 350 kPa (3.5 bar). Los filtros de alta presión pueden requerir 1000+ kPa. Los fabricantes también especifican presiones diferenciales nominales de operación (típicamente 70-140 kPa) que son significativamente inferiores a la presión de colapso para proporcionar margen de seguridad.'
+      question: 'What Differential Pressure Must a Filter Element Withstand per ISO 5011?',
+      answer: 'Requirements vary by filter type and particle retention size. A typical medium-pressure filter (10–25 µm retention) must withstand a collapse differential pressure of at least 350 kPa (3.5 bar). High-pressure filters may require 1,000+ kPa. Manufacturers also specify nominal operating differential pressures (typically 70–140 kPa) that are significantly lower than the collapse pressure to provide a safety margin.'
     },
     {
-      question: '¿Con qué frecuencia debe realizarse la prueba ISO 5011?',
-      answer: 'Para los fabricantes de filtros, ISO 5011 es una prueba de validación que se realiza durante el desarrollo del producto y durante el control de calidad en lotes de producción (típicamente un número estadístico de muestras por lote). Para los usuarios finales, ISO 5011 no es una prueba que se realice regularmente. En cambio, los usuarios especifican filtros que han sido certificados bajo ISO 5011 y confían en esa certificación previa. Si hay sospecha de elemento defectuoso en servicio, se pueden realizar pruebas ISO 5011 en laboratorio para investigar fallos.'
+      question: 'How Often Is ISO 5011 Testing Performed?',
+      answer: 'For filter manufacturers, ISO 5011 is a validation test performed during product development and during quality control on production batches (typically a statistical sample per batch). For end users, ISO 5011 is not a test performed on a regular basis. Instead, users specify filters certified under ISO 5011 and rely on that prior certification. If a defective element is suspected in service, ISO 5011 tests can be performed in a laboratory to investigate failures.'
     }
   ];
 
@@ -120,7 +120,7 @@ export default function ISO5011Page() {
             marginBottom: '1rem',
             letterSpacing: '-0.01em',
           }}>
-            ¿Qué es ISO 5011?
+            What Is ISO 5011?
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -128,12 +128,12 @@ export default function ISO5011Page() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
           }}>
-            ISO 5011 es el estándar internacional que define el procedimiento de prueba para la verificación de la integridad y el colapso del medio filtrante en filtros de aire industriales, complementando los requisitos del dominio de{' '}
-            <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de admisión de aire</Link>.{' '}
-            Este estándar especifica métodos precisos para probar que un elemento de filtro puede retener partículas de un tamaño específico sin permitir que el fluido pase alrededor de los lados del elemento (bypass) bajo condiciones de presión diferencial extrema. ISO 5011 es crucial porque garantiza que los elementos de filtro cumplan con sus especificaciones de retención de partículas y no fallarán catastróficamente cuando se exponen a presiones diferenciales elevadas que pueden ocurrir durante la operación normal o en situaciones de emergencia. La clasificación de tamaño de partículas retenidas sigue el marco de{' '}
+            ISO 5011 is the international standard that defines the test procedure for verifying the integrity and collapse resistance of filter media in air filters for internal combustion engines and compressors, complementing the requirements of the{' '}
+            <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>air intake systems</Link>{' '}
+            domain. This standard specifies precise methods for testing that a filter element can retain particles of a specific size without allowing fluid bypass around the element under extreme differential pressure conditions. ISO 5011 is critical because it ensures filter elements meet their particle retention specifications and will not fail catastrophically when exposed to elevated differential pressures during normal operation or emergency situations. The retained particle size classification follows the{' '}
             <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
-            para asegurar coherencia entre los distintos dominios de filtración. Los filtros que no superan las pruebas ISO 5011 permiten el paso de partículas abrasivas que causan{' '}
-            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>desgaste acelerado en componentes internos de motores</Link>.
+            framework to ensure consistency across filtration domains. Filters that fail ISO 5011 testing allow abrasive particles to pass through, causing{' '}
+            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>accelerated wear of internal engine components</Link>.
           </p>
         </motion.div>
 
@@ -191,7 +191,7 @@ export default function ISO5011Page() {
             textAlign: 'center',
             letterSpacing: '-0.01em',
           }}>
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (

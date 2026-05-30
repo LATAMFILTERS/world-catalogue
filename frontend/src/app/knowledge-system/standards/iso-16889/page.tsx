@@ -7,31 +7,31 @@ import RetrievalBlock from '@/components/RetrievalBlock';
 export default function ISO16889Page() {
   const sections = [
     {
-      title: '¿Para qué sirve ISO 16889?',
-      content: 'ISO 16889 sirve como herramienta de comunicación universal entre proveedores de fluidos, fabricantes de equipos y operadores de máquinas. Su propósito es establecer un lenguaje común para especificar, verificar y documentar la limpieza de fluidos hidráulicos. Permite a las organizaciones definir requisitos precisos de calidad del fluido, monitorear la contaminación durante la operación, y garantizar que el fluido cumple con las especificaciones necesarias para proteger los componentes del sistema hidráulico de la degradación y el desgaste prematuro.'
+      title: 'What Is ISO 16889 Used For?',
+      content: 'ISO 16889 serves as a universal communication tool between fluid suppliers, equipment manufacturers, and machine operators. Its purpose is to establish a common language for specifying, verifying, and documenting the cleanliness of hydraulic fluids. It allows organisations to define precise fluid quality requirements, monitor contamination during operation, and verify that fluid meets the specifications required to protect hydraulic system components from degradation and premature wear.'
     },
     {
-      title: '¿Por qué importa en filtración industrial?',
-      content: 'En filtración industrial, ISO 16889 es fundamental porque establece el objetivo cuantificable que debe alcanzar un sistema de filtración. Sin este estándar, no existiría una forma consistente de medir si un filtro o sistema de filtración está cumpliendo su función. ISO 16889 define exactamente qué nivel de limpieza es necesario para diferentes aplicaciones, permitiendo que los ingenieros diseñen sistemas de filtración que mantengan el fluido dentro de los rangos especificados. Esto es crítico porque la contaminación particularada es la causa principal del desgaste en componentes hidráulicos, siendo responsable del 50-75% de las fallas de sistemas hidráulicos en la industria.'
+      title: 'Why It Matters in Industrial Filtration',
+      content: 'In industrial filtration, ISO 16889 is fundamental because it establishes the quantifiable target that a filtration system must achieve. Without this standard, there would be no consistent way to measure whether a filter or filtration system is performing its function. ISO 16889 defines exactly what cleanliness level is required for different applications, enabling engineers to design filtration systems that maintain fluid within the specified ranges. This is critical because particulate contamination is the primary cause of wear in hydraulic components, responsible for 50–75% of hydraulic system failures in industry.'
     },
     {
-      title: 'Aplicación en motores y sistemas',
-      content: 'En sistemas hidráulicos de maquinaria pesada, equipos de construcción, sistemas agrícolas, maquinaria marina y equipos de minería, ISO 16889 determina las especificaciones de limpieza requeridas. Por ejemplo, un sistema hidráulico servo-controlado puede requerir ISO 16889 16/14/11 (máximo de 1300 partículas >4µm, 160 partículas >6µm, 20 partículas >14µm por mL), mientras que un sistema de transmisión puede especificar ISO 16889 18/16/13. Los fabricantes de equipos OEM utilizan estos códigos en sus manuales de servicio para indicar el fluido correcto, y los operadores monitorean regularmente el fluido para asegurar que permanece dentro de la clasificación especificada mediante pruebas de conteo de partículas.'
+      title: 'Application in Engines and Systems',
+      content: 'In hydraulic systems for heavy machinery, construction equipment, agricultural systems, marine machinery, and mining equipment, ISO 16889 determines the required cleanliness specifications. For example, a servo-controlled hydraulic system may require ISO 16889 16/14/11 (maximum 1,300 particles >4 µm, 160 particles >6 µm, 20 particles >14 µm per mL), while a transmission system may specify ISO 16889 18/16/13. OEM equipment manufacturers use these codes in their service manuals to indicate the correct fluid standard, and operators regularly monitor fluid to ensure it remains within the specified classification using particle counting tests.'
     }
   ];
 
   const faqs = [
     {
-      question: '¿Cuál es la diferencia entre ISO 16889 e ISO 4406?',
-      answer: 'ISO 4406 utilizaba un código de 2-3 dígitos menos preciso, mientras que ISO 16889 utiliza 4 dígitos para medir partículas en tres tamaños diferentes (>4µm, >6µm, >14µm). ISO 16889 también especifica métodos de prueba más rigurosos y utiliza tamaños de partículas más estándar. ISO 16889 ofrece mayor precisión y es ahora el estándar preferido en la industria.'
+      question: 'What Is the Difference Between ISO 16889 and ISO 4406?',
+      answer: 'ISO 4406 used a less precise 2–3 digit code, while ISO 16889 uses a three-number code measuring particles at three different sizes (>4 µm, >6 µm, >14 µm). ISO 16889 also specifies more rigorous test methods and uses more standardised particle sizes. ISO 16889 offers greater precision and is now the preferred industry standard.'
     },
     {
-      question: '¿Qué significa el código 17/15/12 en ISO 16889?',
-      answer: 'Un código ISO 16889 17/15/12 significa que el fluido contiene: máximo 1300 partículas mayores a 4 micrones por mililitro (17 = 2^17/4 = 1300), máximo 320 partículas mayores a 6 micrones por mililitro (15 = 2^15/4 = 320), y máximo 20 partículas mayores a 14 micrones por mililitro (12 = 2^12/4 = 20). Los números son exponentes matemáticos que representan umbrales de contaminación aceptables.'
+      question: 'What Does Code 17/15/12 Mean in ISO 16889?',
+      answer: 'An ISO 16889 code of 17/15/12 means the fluid contains: maximum 1,300 particles larger than 4 microns per millilitre (scale number 17), maximum 320 particles larger than 6 microns per millilitre (scale number 15), and maximum 20 particles larger than 14 microns per millilitre (scale number 12). Each number represents an ISO scale code corresponding to a range of particle counts per millilitre.'
     },
     {
-      question: '¿Con qué frecuencia debo verificar la limpieza del fluido según ISO 16889?',
-      answer: 'La frecuencia depende del tipo de equipo y las condiciones de operación. Los sistemas críticos como maquinaria servocontrolada requieren verificación mensual o trimestral. Equipos de construcción en ambientes polvorientos pueden requerir verificación cada 50-100 horas de operación. Los fabricantes OEM especifican intervalos en sus manuales de servicio. Las pruebas se realizan mediante contadores de partículas ópticos o de luz bloqueada calibrados según ISO 11171.'
+      question: 'How Often Should I Verify Fluid Cleanliness per ISO 16889?',
+      answer: 'Frequency depends on equipment type and operating conditions. Critical systems such as servo-controlled machinery require monthly or quarterly verification. Construction equipment in dusty environments may require verification every 50–100 operating hours. OEM manufacturers specify intervals in their service manuals. Testing is performed using optical or light-blocking particle counters calibrated to ISO 11171.'
     }
   ];
 
@@ -120,7 +120,7 @@ export default function ISO16889Page() {
             marginBottom: '1rem',
             letterSpacing: '-0.01em',
           }}>
-            ¿Qué es ISO 16889?
+            What Is ISO 16889?
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -128,12 +128,12 @@ export default function ISO16889Page() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
           }}>
-            ISO 16889 es el estándar internacional que define el método de codificación de la limpieza de fluidos hidráulicos según el grado de contaminación por partículas sólidas. Es la herramienta de medición central dentro de cualquier{' '}
-            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>estrategia de filtración industrial</Link>.{' '}
-            Establece un sistema estandarizado de clasificación de 4 dígitos que identifica el número de partículas mayores a 4 µm, 6 µm y 14 µm por cada mililitro de fluido. Este estándar reemplazó a{' '}
+            ISO 16889 is the international standard that defines the cleanliness coding method for hydraulic fluids based on the degree of solid particle contamination. It is the central measurement tool within any{' '}
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration strategy</Link>.{' '}
+            It establishes a standardised three-number classification system that identifies the particle count per millilitre of fluid at three size thresholds: larger than 4 µm, 6 µm, and 14 µm. This standard superseded{' '}
             <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
-            como el código de limpieza preferido en la industria moderna, ofreciendo una metodología más precisa y confiable para la evaluación de la calidad del fluido. La contaminación que ISO 16889 cuantifica es la misma que impulsa el{' '}
-            <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>deterioro acelerado en sistemas hidráulicos de alta presión</Link>.
+            as the preferred cleanliness code in modern industry, offering a more precise and reliable methodology for fluid quality evaluation. The contamination ISO 16889 quantifies is the same contamination that drives{' '}
+            <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>accelerated degradation in high-pressure hydraulic systems</Link>.
           </p>
         </motion.div>
 
@@ -191,7 +191,7 @@ export default function ISO16889Page() {
             textAlign: 'center',
             letterSpacing: '-0.01em',
           }}>
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (

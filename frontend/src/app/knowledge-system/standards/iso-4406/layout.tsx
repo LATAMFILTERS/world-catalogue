@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'ISO 4406 Fluid Cleanliness Code — Particle Contamination | ELIMFILTERS®',
     description: 'ISO 4406 particle cleanliness code system: three-number code structure, particle count targets per system, measurement methods, and correlation to equipment component sensitivity.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
