@@ -42,21 +42,7 @@ def _is_code(tok: str) -> bool:
 
 
 def _parse_text(text: str) -> dict:
-    """
-    Parsea el texto extraído de la página (ya renderizado por JS).
-    Formato de cada línea: "BRAND CODE" o líneas separadas por split de Amazon link.
-    """
     result = {}
-
-    # Cortar sección útil
-    m_start = re.search(r'replacement oil filters', text, re.IGNORECASE)
-    m_end   = re.search(r'When you click on links|Search oil filter|Copyright', text, re.IGNORECASE)
-    if m_start:
-        text = text[m_start.end():]
-    if m_end:
-        m_end2 = re.search(r'When you click on links|Search oil filter|Copyright', text, re.IGNORECASE)
-        if m_end2:
-            text = text[:m_end2.start()]
 
     lines = [l.strip() for l in text.splitlines()]
     lines = [re.sub(r'\s+Buy from.*', '', l, flags=re.IGNORECASE).strip() for l in lines]
@@ -79,7 +65,6 @@ def _parse_text(text: str) -> dict:
                 pending_brand = tok
             continue
 
-        # Último token como código, resto como marca
         last = upper[-1]
         if _is_code(last) and not _SKIP_CODE_RE.match(last):
             code  = last
@@ -122,15 +107,15 @@ def fetch_crossrefs_page(page, part: str) -> dict:
     url = BASE_URL.format(part=part.upper())
     try:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
-        # Esperar a que aparezca al menos 1 resultado
         try:
             page.wait_for_function(
-                "() => document.body.innerText.length > 500",
-                timeout=10000
+                "() => { const t = document.body.innerText; "
+                "return t.includes('replacement oil filters') && t.length > 800; }",
+                timeout=15000
             )
         except PWTimeout:
             pass
-        time.sleep(2)
+        time.sleep(3)
         text = page.evaluate("() => document.body.innerText")
         return _parse_text(text)
     except Exception as e:
@@ -204,10 +189,14 @@ def test_one(part: str, debug: bool = False):
         url     = BASE_URL.format(part=part.upper())
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
-            page.wait_for_function("() => document.body.innerText.length > 500", timeout=10000)
+            page.wait_for_function(
+                "() => { const t = document.body.innerText; "
+                "return t.includes('replacement oil filters') && t.length > 800; }",
+                timeout=15000
+            )
         except PWTimeout:
             pass
-        time.sleep(2)
+        time.sleep(3)
         text = page.evaluate("() => document.body.innerText")
         context.close()
 
@@ -244,6 +233,23 @@ if __name__ == "__main__":
         test_one(argv[1] if len(argv) > 1 else "P552100", debug=True)
     elif argv[0] == "--test":
         test_one(argv[1] if len(argv) > 1 else "P552100")
+    elif "--retry-zeros" in argv:
+        # Borra del cache los productos que quedaron con {} para re-procesarlos
+        cats = [a for a in argv if not a.startswith("--")]
+        for cat in cats:
+            pf = f"donaldson_{cat}_crossref_progress.json"
+            if Path(pf).exists():
+                with open(pf, encoding="utf-8") as f:
+                    prog = json.load(f)
+                before = len(prog)
+                prog = {k: v for k, v in prog.items() if v}  # quitar vacíos
+                after = len(prog)
+                with open(pf, "w", encoding="utf-8") as f:
+                    json.dump(prog, f, ensure_ascii=False, indent=2)
+                print(f"{cat}: {before - after} entradas vacías eliminadas del cache ({after} quedan)")
+        with sync_playwright() as pw:
+            for cat in cats:
+                process_category(pw, cat)
     else:
         cats = [a for a in argv if not a.startswith("--")]
         with sync_playwright() as pw:
