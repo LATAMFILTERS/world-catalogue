@@ -39,6 +39,8 @@ CATEGORIES = {
             "?N=2975800598&Nr=product.language%3AEnglish&catNav=true&st=parts",
     "hydraulic": "https://shop.donaldson.com/store/en-us/search"
             "?N=2076725065&Nr=product.language%3AEnglish&catNav=true&st=parts",
+    "fuel":      "https://shop.donaldson.com/store/en-us/search"
+            "?N=626398726&Nr=product.language%3AEnglish&catNav=true&st=parts",
 }
 
 PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
@@ -51,6 +53,7 @@ PROGRESS_FILE = "donaldson_lube_progress.json"
 
 SHOW_MORE_LIMIT = 80
 PAUSE_BETWEEN   = (5, 10)
+RECOLLECT       = False   # --recollect: re-pagina y fusiona URLs sin borrar progreso
 
 
 def configure(name: str, url: str):
@@ -238,36 +241,62 @@ def expand_cross_plus(page, body_id: str):
 
 # ── colección de links de categoría ────────────────────────────────────────
 
+def _extract_links_from_page(page) -> list:
+    """Extrae paths PART/SKUID de los links de producto visibles en el DOM."""
+    return page.evaluate("""() => {
+        return Array.from(document.querySelectorAll('a[href*="/product/"]'))
+            .map(a => {
+                const href = a.getAttribute('href') || '';
+                const path = href.split('/product/').pop().split('?')[0].trim();
+                const i = path.indexOf('/');
+                if (i < 0) return path.toUpperCase();
+                return path.slice(0, i).toUpperCase() + path.slice(i);
+            })
+            .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
+    }""")
+
+
 def collect_product_links(page):
-    """Devuelve lista de paths completos 'PART/SKUID' de la categoría Lube."""
-    page.goto(CATEGORY_URL, timeout=60000, wait_until="networkidle")
-    time.sleep(4)
-    dismiss_popups(page)
+    """
+    Recolecta todos los paths PART/SKUID de la categoría.
+
+    Estrategia dual:
+    1. URL offset (&No=N): incrementa el offset ATG de 20 en 20.
+       Funciona para categorías grandes (hydraulic: 2177, 99 páginas).
+    2. Fallback botón "Next": si el offset no avanza, prueba clic UI.
+
+    Para cuando 3 páginas consecutivas devuelvan 0 productos nuevos.
+    """
+    STEP = 20   # productos por página en Donaldson shop
+
+    # Separar parámetros base del URL para no duplicar &No=
+    import urllib.parse
+    parsed = urllib.parse.urlparse(CATEGORY_URL)
+    params = dict(urllib.parse.parse_qsl(parsed.query))
+    params.pop("No", None)   # eliminar offset previo si existe
+    base_url = urllib.parse.urlunparse(parsed._replace(
+        query=urllib.parse.urlencode(params)))
 
     seen  = set()
     paths = []
-    pg    = 1
+    empty = 0
+    offset = 0
+    pg = 1
 
     while True:
-        logging.info(f"  Página {pg} …")
+        url = base_url + f"&No={offset}"
+        logging.info(f"  Página {pg} (No={offset}) …")
         try:
-            page.wait_for_load_state("networkidle", timeout=20000)
+            page.goto(url, timeout=60000, wait_until="domcontentloaded")
         except Exception:
+            # Timeout en networkidle: la página cargó pero AJAX sigue activo.
+            # domcontentloaded ya garantiza el HTML base con los links de producto.
             pass
+        time.sleep(3)
+        if pg == 1:
+            dismiss_popups(page)
 
-        raw = page.evaluate("""() => {
-            return Array.from(document.querySelectorAll('a[href*="/product/"]'))
-                .map(a => {
-                    const href = a.getAttribute('href') || '';
-                    const path = href.split('/product/').pop().split('?')[0].trim();
-                    const i = path.indexOf('/');
-                    // Mayúsculas SOLO en el part number; el SKU (p.ej. prod340743)
-                    // es case-sensitive y debe quedar tal cual.
-                    if (i < 0) return path.toUpperCase();
-                    return path.slice(0, i).toUpperCase() + path.slice(i);
-                })
-                .filter(p => p.length >= 4 && !p.includes(' ') && p.includes('/'));
-        }""")
+        raw = _extract_links_from_page(page)
 
         added = 0
         for p in raw:
@@ -276,26 +305,23 @@ def collect_product_links(page):
                 seen.add(part)
                 paths.append(p)
                 added += 1
-        logging.info(f"    +{added} (total {len(paths)})")
+        logging.info(f"    +{added} nuevos (total {len(paths)})")
 
-        nxt = page.evaluate("""() => {
-            const b = Array.from(document.querySelectorAll('a, button')).find(b =>
-                b.offsetParent &&
-                (b.getAttribute('aria-label') === 'Next page' ||
-                 b.textContent.trim() === 'Next' ||
-                 b.textContent.trim() === 'Siguiente' ||
-                 b.classList.contains('next-page') ||
-                 (b.parentElement && b.parentElement.classList.contains('next')))
-            );
-            if (b) { b.click(); return true; }
-            return false;
-        }""")
+        if added == 0:
+            empty += 1
+            if empty >= 3:
+                logging.info("  3 páginas vacías consecutivas — fin")
+                break
+        else:
+            empty = 0
 
-        if not nxt:
-            logging.info("  No hay más páginas")
-            break
+        offset += STEP
         pg += 1
-        rand_sleep(2, 5)
+        rand_sleep(2, 4)
+
+        if pg > 500:   # tope de seguridad
+            logging.warning("  Tope 500 páginas — deteniendo")
+            break
 
     logging.info(f"Total productos: {len(paths)}")
     return paths
@@ -490,8 +516,11 @@ def scrape_product(page, product_path: str) -> dict:
     }
 
     try:
-        page.goto(url, timeout=90000, wait_until="networkidle")
-        time.sleep(2)
+        try:
+            page.goto(url, timeout=60000, wait_until="domcontentloaded")
+        except Exception:
+            pass  # page partially loaded; AJAX tabs handled by activate_tab waits
+        time.sleep(3)
         dismiss_popups(page)
 
         # Verificar URL real (para detectar redirects inesperados)
@@ -588,9 +617,19 @@ def main():
             stealth_sync(page)
 
         # Recolectar paths
-        if not progress["part_numbers"]:
-            logging.info("=== Recolectando product paths ===")
-            pns = collect_product_links(page)
+        if not progress["part_numbers"] or RECOLLECT:
+            if RECOLLECT and progress["part_numbers"]:
+                logging.info("=== Re-recolectando (--recollect): fusionando URLs nuevas ===")
+            else:
+                logging.info("=== Recolectando product paths ===")
+            fresh = collect_product_links(page)
+            if RECOLLECT:
+                prev = set(p.split('/')[0] for p in progress["part_numbers"])
+                added = [p for p in fresh if p.split('/')[0] not in prev]
+                pns = progress["part_numbers"] + added
+                logging.info(f"  +{len(added)} URLs nuevas (total {len(pns)})")
+            else:
+                pns = fresh
             progress["part_numbers"] = pns
             save_progress(progress)
         else:
@@ -667,10 +706,50 @@ def test_one(target: str):
     print(json.dumps(data, ensure_ascii=False, indent=2))
 
 
+def login_session():
+    """
+    Abre shop.donaldson.com en el perfil persistente y espera login manual.
+    Guarda cookies en ~/.donaldson_profile para corridas futuras.
+    Necesario en Mac (perfil nuevo) antes de la primera corrida.
+    """
+    with sync_playwright() as pw:
+        context = pw.chromium.launch_persistent_context(
+            user_data_dir=PROFILE_DIR,
+            channel="chrome",
+            headless=False,
+            slow_mo=60,
+            locale="en-US",
+            viewport={"width": 1366, "height": 768},
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+            args=["--disable-blink-features=AutomationControlled"],
+            ignore_default_args=["--enable-automation"],
+        )
+        page = context.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        page.goto("https://shop.donaldson.com/store/en-us/", timeout=60000,
+                  wait_until="domcontentloaded")
+        print("\n" + "=" * 70)
+        print("  Navega el sitio de Donaldson unos segundos para establecer sesión.")
+        print("  No necesitas login — solo deja que cargue y ve algún producto.")
+        print("  Cuando veas productos cargados, vuelve aquí y presiona ENTER.")
+        print("=" * 70)
+        input("\n  ENTER cuando el sitio haya cargado bien... ")
+        print("  ✅ Sesión guardada. Ahora corre:")
+        print("     python3 scraper_donaldson.py hydraulic")
+        context.close()
+
+
 def _usage():
     print("Uso:")
     print("  python scraper_donaldson.py <categoria> [url]   # scrapea categoría")
     print("  python scraper_donaldson.py --test <url>        # prueba 1 producto")
+    print("  python scraper_donaldson.py --login             # guarda sesión (Mac/perfil nuevo)")
     print(f"\nCategorías conocidas: {', '.join(CATEGORIES)}")
     print("Para una nueva categoría pasa su URL de búsqueda:")
     print('  python scraper_donaldson.py fuel "https://shop.donaldson.com/.../search?N=...&..."')
@@ -680,12 +759,19 @@ if __name__ == "__main__":
     import sys
     argv = sys.argv[1:]
 
-    if argv and argv[0] == "--test":
+    if argv and argv[0] == "--login":
+        login_session()
+    elif argv and argv[0] == "--test":
         if len(argv) < 2:
             _usage()
         else:
             test_one(argv[1])
     else:
+        recollect = "--recollect" in argv
+        argv = [a for a in argv if a != "--recollect"]
+        if recollect:
+            globals()["RECOLLECT"] = True
+
         name = (argv[0] if argv else "lube").lower()
         url  = argv[1] if len(argv) > 1 else CATEGORIES.get(name)
         if not url:
