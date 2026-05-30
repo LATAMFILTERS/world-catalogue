@@ -28,6 +28,8 @@ logging.basicConfig(
 CATEGORY_URLS = {
     "lube":      "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
     "hydraulic": "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
+    "fuel":      "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
+    "air-dryer": "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
     "air":       "https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
     "air-intake":"https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
     "cabin":     "https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
@@ -142,10 +144,11 @@ def fetch_crossrefs_page(page, part: str, base_url: str = BASE_URL) -> dict:
     url = base_url.format(part=part.upper())
     try:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
-        # Esperar a que el ul.compat-list tenga al menos 1 link
+        # oilfilter-crossreference.com usa ul.compat-list
+        # airfilter-crossreference.com usa ul.twocolumns
         try:
             page.wait_for_function(
-                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"]').length > 0",
+                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"], ul.twocolumns li a[href*=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
@@ -220,7 +223,8 @@ def process_category(pw, name: str):
 
 _EXTRACT_JS = """() => {
     const result = {};
-    const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
+    const sel = 'ul.compat-list li a[href*="/convert/"], ul.twocolumns li a[href*="/convert/"]';
+    const links = document.querySelectorAll(sel);
     for (const a of links) {
         const parts = a.getAttribute('href').split('/convert/');
         if (parts.length < 2) continue;
