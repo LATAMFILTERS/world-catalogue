@@ -98,79 +98,142 @@ def _resolve_tech(product: dict, category: str) -> str:
 
 # ── Description builders ──────────────────────────────────────────────────────
 
+def _style_label(p: dict, fallback: str = "Spin-On") -> str:
+    s = _attr(p, "Style", "Type") or fallback
+    return s.title()
+
+
+def _is_cartridge(p: dict) -> bool:
+    desc  = p.get("description", "").upper()
+    style = _attr(p, "Style", "Type").upper()
+    return "CARTRIDGE" in desc or "CARTRIDGE" in style
+
+
 def _build_macrocore(p: dict) -> str:
     od     = _mm(_attr(p, "Outer Diameter"))
     length = _mm(_attr(p, "Length"))
-    style  = _attr(p, "Style", "Type") or "Round"
+    style  = _style_label(p, "Round")
     eff    = _attr(p, "Efficiency") or "99.98%"
-    media  = _attr(p, "Media Type", "Media Brand") or "nanofiber media"
+    media  = _attr(p, "Media Type", "Media Brand") or "nanofiber"
     std    = _attr(p, "Efficiency Test Std") or "ISO 5011"
     equip  = _equipment_summary(p)
+    desc_up = p.get("description", "").upper()
 
     dims = ""
     if od and length:
-        dims = f" — {style}, OD {od} × L {length}"
+        dims = f", {style}, OD {od} × L {length}"
     elif od:
-        dims = f" — {style}, OD {od}"
+        dims = f", {style}, OD {od}"
     elif length:
-        dims = f" — {style}, L {length}"
+        dims = f", {style}, L {length}"
 
-    eff_clause = f"Efficiency {eff} ({std})."
-    media_clause = f"{media.title()} media."
     equip_clause = f" Fits: {equip}." if equip else ""
 
-    # Cabin filters protect operator cab, not engine intake
-    attrs = p.get("attributes", {})
-    is_cabin = attrs.get("Type", "").lower() in ("cabin", "ventilation") or \
-               "panel" in attrs.get("Style", "").lower() or \
-               "panel" in attrs.get("Type", "").lower() or \
-               "ventilation" in p.get("description", "").lower()
+    # Cabin: operator protection
+    attrs    = p.get("attributes", {})
+    is_cabin = (
+        attrs.get("Type", "").lower() in ("cabin", "ventilation") or
+        "panel" in attrs.get("Style", "").lower() or
+        "panel" in attrs.get("Type", "").lower() or
+        "ventilation" in desc_up
+    )
     if is_cabin:
-        role = "Operator cabin air quality protection. Blocks dust, PM10, and airborne contaminants from reaching vehicle cab."
-    else:
-        role = "Progressive density gradient protection against particulate ingestion in engine air intake systems."
+        eff_pct = eff if eff.endswith("%") else eff + "%"
+        return (
+            f"ELIMFILTERS MACROCORE™ Cabin Air Filter{dims}. "
+            f"Provides clean air inside the cab for a safer, healthier work environment. "
+            f"{eff_pct} efficiency ({std}) — blocks dust, PM10, and airborne contaminants "
+            f"from reaching the operator cab, supporting longer and more productive working hours.{equip_clause}"
+        )
 
+    # Safety/secondary elements
+    if "SAFETY" in desc_up:
+        return (
+            f"ELIMFILTERS MACROCORE™ Safety Air Element{dims}. "
+            f"{eff} efficiency ({std}). {media.title()} media. "
+            f"Inner secondary element guards against unfiltered air reaching the engine "
+            f"during primary filter service — providing a critical last line of protection "
+            f"for your air intake system.{equip_clause}"
+        )
+
+    # Air cleaner housings / intake assemblies (air-intake category)
+    housing_keywords = ("HOUSING", "CLEANER", "INTAKE SYSTEM", "AIR CLEANER")
+    if any(k in desc_up for k in housing_keywords):
+        return (
+            f"ELIMFILTERS MACROCORE™ Air Cleaner Assembly{dims}. "
+            f"Complete air intake assembly engineered for heavy-duty applications. "
+            f"Accepts MACROCORE™ primary and safety elements for {eff} ({std}) system efficiency. "
+            f"Designed to protect engine air intake systems in demanding off-road and industrial environments.{equip_clause}"
+        )
+
+    filter_type = "Air Element" if "element" in style.lower() else "Air Filter"
     return (
-        f"MACROCORE™ Air Element{dims}. "
-        f"{eff_clause} {media_clause}"
-        f" {role}{equip_clause}"
+        f"ELIMFILTERS MACROCORE™ {filter_type}{dims}. "
+        f"{eff} filtration efficiency ({std}) using {media} media. "
+        f"MACROCORE™ progressive density gradient architecture captures harmful particles "
+        f"before they can reach critical engine components — protecting your air intake system "
+        f"and extending engine life in the most demanding environments.{equip_clause}"
     )
 
 
 def _build_duratech(p: dict) -> str:
-    od     = _mm(_attr(p, "Outer Diameter"))
-    length = _mm(_attr(p, "Length"))
-    thread = _attr(p, "Thread Size")
-    eff    = _attr(p, "Efficiency 99%") or _attr(p, "Efficiency")
-    std    = _attr(p, "Efficiency Test Std") or "ISO 4548-12"
-    burst  = _attr(p, "Collapse Burst")
-    media  = _attr(p, "Media Type") or "synthetic media"
-    equip  = _equipment_summary(p)
+    od      = _mm(_attr(p, "Outer Diameter"))
+    length  = _mm(_attr(p, "Length"))
+    thread  = _attr(p, "Thread Size")
+    eff     = _attr(p, "Efficiency 99%") or _attr(p, "Efficiency")
+    std     = _attr(p, "Efficiency Test Std") or "ISO 4548-12"
+    burst   = _attr(p, "Collapse Burst")
+    media   = _attr(p, "Media Type") or "synthetic"
+    equip   = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
+    desc_up = p.get("description", "").upper()
 
+    style_str = "Cartridge" if is_cart else "Spin-On"
     dims = ""
     if od and length:
-        dims = f" — Spin-On, OD {od} × L {length}"
+        dims = f", {style_str}, OD {od} × L {length}"
     elif od:
-        dims = f" — Spin-On, OD {od}"
-    elif length:
-        dims = f" — Spin-On, L {length}"
+        dims = f", {style_str}, OD {od}"
 
     specs = []
-    if eff and std:
-        specs.append(f"Efficiency 99% @ {eff} ({std})")
+    if eff:
+        specs.append(f"99% @ {eff} ({std})")
     if thread:
         specs.append(f"Thread {thread}")
     if burst:
-        specs.append(f"Burst {burst}")
+        specs.append(f"burst rated {burst}")
+    specs_str = " | ".join(specs)
+    specs_intro = f" {specs_str}." if specs_str else ""
 
-    specs_clause = ". ".join(specs) + "." if specs else ""
-    media_clause = f" {media.title()} media." if media else ""
+    eco        = " Environmentally friendly cartridge design." if is_cart else ""
     equip_clause = f" Fits: {equip}." if equip else ""
 
+    # Bypass filters: different protection mode
+    if "BYPASS" in desc_up:
+        return (
+            f"ELIMFILTERS DURATECH™ Lube Filter — Bypass{dims}.{specs_intro} "
+            f"High-efficiency bypass filtration removes ultra-fine particles, soot, "
+            f"and oxidation by-products that full-flow filters cannot capture — "
+            f"keeping oil cleaner for extended drain intervals and protecting "
+            f"critical engine components against long-term wear.{equip_clause}"
+        )
+
+    # Combination full-flow + bypass
+    if "COMBINATION" in desc_up or "COMBO" in desc_up:
+        return (
+            f"ELIMFILTERS DURATECH™ Lube Filter — Combination{dims}.{specs_intro}{eco} "
+            f"Combines full-flow and bypass filtration in a single filter — "
+            f"delivering the perfect balance between flow efficiency and fine particle removal. "
+            f"Meets or exceeds engine OEM requirements for extended oil cleanliness.{equip_clause}"
+        )
+
     return (
-        f"DURATECH™ Lube Filter{dims}. "
-        f"{specs_clause}{media_clause}"
-        f" Dual-stage wear debris capture for full-flow engine oil protection.{equip_clause}"
+        f"ELIMFILTERS DURATECH™ Lube Filter{dims}.{eco}"
+        f"{specs_intro} "
+        f"DURATECH™ dual-stage wear debris capture removes harmful particles "
+        f"before they reach critical engine surfaces, delivering full-flow engine oil "
+        f"protection that meets or exceeds OEM specifications for maximum engine life. "
+        f"{media.title()} media for superior contaminant holding capacity.{equip_clause}"
     )
 
 
@@ -178,36 +241,65 @@ def _build_nanoforce(p: dict, category: str) -> str:
     od     = _mm(_attr(p, "Outer Diameter"))
     length = _mm(_attr(p, "Length"))
     thread = _attr(p, "Thread Size")
-    # Hydraulic uses "Efficiency Alpha 1000" key; fuel uses "Efficiency"
     mic    = _attr(p, "Efficiency Alpha 1000", "Absolute Rating", "Nominal Rating")
     eff    = _attr(p, "Efficiency") or "99.9%"
-    # Donaldson stores internal codes (e.g. "23369") in Efficiency Test Std for hydraulic
     raw_std = _attr(p, "Efficiency Test Std")
     std    = raw_std if raw_std and not raw_std.isdigit() else ("ISO 16889" if category == "hydraulic" else "ISO 19438")
     equip  = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
 
-    domain = "hydraulic fluid" if category == "hydraulic" else "fuel"
+    style_str = "Cartridge" if is_cart else "Spin-On"
+    is_hyd = (category == "hydraulic")
     dims = ""
     if od and length:
-        dims = f" — Spin-On, OD {od} × L {length}"
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
 
-    specs = []
-    if mic:
-        specs.append(f"@ {mic}")
-    elif eff:
-        specs.append(f"Efficiency {eff}")
-    if thread:
-        specs.append(f"Thread {thread}")
-    specs.append(std)
+    rating_clause = f" Absolute rating {mic} ({std})." if mic else f" {eff} efficiency ({std})."
+    thread_clause = f" Thread {thread}." if thread else ""
+    equip_clause  = f" Fits: {equip}." if equip else ""
 
-    specs_clause = ". ".join(specs) + "." if specs else ""
-    equip_clause = f" Fits: {equip}." if equip else ""
+    desc_up = p.get("description", "").upper()
 
-    return (
-        f"NANOFORCE™ {'Hydraulic' if category == 'hydraulic' else 'Fuel'} Filter{dims}. "
-        f"{specs_clause}"
-        f" Electrostatic synthetic media for {domain} particle and water contamination control.{equip_clause}"
-    )
+    if is_hyd:
+        # Strainers: coarse pre-filtration, different role
+        if "STRAINER" in desc_up:
+            return (
+                f"ELIMFILTERS NANOFORCE™ Hydraulic Strainer{dims}.{thread_clause} "
+                f"Coarse pre-filtration removes large particles and debris from hydraulic fluid "
+                f"before they reach sensitive downstream components — protecting pumps, valves, "
+                f"and actuators from ingestion damage.{equip_clause}"
+            )
+        # Power steering filters
+        if "POWER STEERING" in desc_up or "STEERING" in desc_up:
+            return (
+                f"ELIMFILTERS NANOFORCE™ Power Steering Filter{dims}.{rating_clause}{thread_clause} "
+                f"Removes particles and contaminants from power steering fluid to protect "
+                f"steering rack, pump, and control valve components — maintaining precise "
+                f"steering response and extending system life.{equip_clause}"
+            )
+        return (
+            f"ELIMFILTERS NANOFORCE™ Hydraulic Filter{dims}.{rating_clause}{thread_clause} "
+            f"Electrostatic synthetic media keeps your precision hydraulic systems running "
+            f"as intended — removing particles and water that cause valve wear, seal degradation, "
+            f"and system failure. Engineered to meet or exceed OEM quality and performance standards.{equip_clause}"
+        )
+    else:
+        desc_up_fuel = p.get("description", "").upper()
+        if "IN-LINE" in desc_up_fuel or "INLINE" in desc_up_fuel:
+            return (
+                f"ELIMFILTERS NANOFORCE™ Fuel Filter — In-Line{dims}.{rating_clause}{thread_clause} "
+                f"Compact in-line fuel filter removes contaminants from the fuel supply line — "
+                f"protecting injectors and ensuring clean fuel delivery to your engine for "
+                f"optimal fuel system protection.{equip_clause}"
+            )
+        return (
+            f"ELIMFILTERS NANOFORCE™ Fuel Filter{dims}.{rating_clause}{thread_clause} "
+            f"NANOFORCE™ electrostatic synthetic media removes harmful contaminants from your "
+            f"fuel system, protecting injectors and ensuring clean fuel delivery to your engine "
+            f"for consistent performance and reduced operating costs.{equip_clause}"
+        )
 
 
 def _build_aquaguard(p: dict, category: str) -> str:
@@ -215,40 +307,82 @@ def _build_aquaguard(p: dict, category: str) -> str:
     length = _mm(_attr(p, "Length"))
     thread = _attr(p, "Thread Size")
     equip  = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
 
+    style_str = "Cartridge" if is_cart else "Spin-On"
     dims = ""
     if od and length:
-        dims = f" — Spin-On, OD {od} × L {length}"
-
-    domain = "compressed air" if category == "air-dryer" else "diesel fuel"
-    role   = "desiccant air drying" if category == "air-dryer" else "superabsorbent water extraction"
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
 
     thread_clause = f" Thread {thread}." if thread else ""
     equip_clause  = f" Fits: {equip}." if equip else ""
 
-    return (
-        f"AQUAGUARD™ {'Air Dryer' if category == 'air-dryer' else 'Water Separator'}{dims}.{thread_clause}"
-        f" Integrated {role} for {domain} systems. 99.2% water removal efficiency.{equip_clause}"
-    )
+    if category == "air-dryer":
+        return (
+            f"ELIMFILTERS AQUAGUARD™ Air Dryer{dims}.{thread_clause} "
+            f"Filters out water vapor, oil vapor, and contaminants from compressed air "
+            f"before they reach air tanks and valves — ensuring optimal system uptime "
+            f"and protecting pneumatic components. Trust your compressed air system "
+            f"with AQUAGUARD™ integrated desiccant protection.{equip_clause}"
+        )
+    else:
+        return (
+            f"ELIMFILTERS AQUAGUARD™ Fuel/Water Separator{dims}.{thread_clause} "
+            f"Removes water and particulates from diesel fuel before they reach the engine — "
+            f"protecting fuel injectors against corrosion and wear, and ensuring clean fuel "
+            f"delivery for consistent performance. AQUAGUARD™ superabsorbent technology "
+            f"achieves 99.2% water removal efficiency.{equip_clause}"
+        )
 
 
 def _build_microkappa(p: dict) -> str:
-    od     = _mm(_attr(p, "Outer Diameter"))
-    length = _mm(_attr(p, "Length"))
-    thread = _attr(p, "Thread Size")
-    equip  = _equipment_summary(p)
+    od      = _mm(_attr(p, "Outer Diameter"))
+    length  = _mm(_attr(p, "Length"))
+    thread  = _attr(p, "Thread Size")
+    equip   = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
+    desc_up = p.get("description", "").upper()
 
+    style_str = "Cartridge" if is_cart else "Spin-On"
     dims = ""
     if od and length:
-        dims = f" — Spin-On, OD {od} × L {length}"
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
 
     thread_clause = f" Thread {thread}." if thread else ""
     equip_clause  = f" Fits: {equip}." if equip else ""
 
+    # Coolant hoses — dims without Spin-On/Cartridge label
+    if "HOSE" in desc_up:
+        hose_type = "Heater Hose" if "HEATER" in desc_up else "Coolant Hose"
+        hose_dims = ""
+        if od and length:
+            hose_dims = f", ID {od} × L {length}"
+        elif od:
+            hose_dims = f", ID {od}"
+        return (
+            f"ELIMFILTERS {hose_type}{hose_dims}. "
+            f"Premium silicone coolant hose engineered for high-temperature engine cooling systems. "
+            f"Maintains flexibility and seal integrity across extreme temperature cycles — "
+            f"preventing coolant leaks and ensuring reliable thermal management.{equip_clause}"
+        )
+
+    # Head assemblies / non-filter components
+    if "HEAD ASSEMBLY" in desc_up or "ASSEMBLY" in desc_up:
+        return (
+            f"ELIMFILTERS Coolant Filter Head Assembly{dims}.{thread_clause} "
+            f"Precision housing for coolant filtration system. Engineered for reliable "
+            f"sealing and easy service access in heavy-duty cooling circuit applications.{equip_clause}"
+        )
+
     return (
-        f"MICROKAPPA™ Coolant Filter{dims}.{thread_clause}"
-        f" Precision micro-filtration for engine coolant circuits."
-        f" Extends coolant service life and controls particulate contamination.{equip_clause}"
+        f"ELIMFILTERS MICROKAPPA™ Coolant Filter{dims}.{thread_clause} "
+        f"Precision micro-filtration for engine coolant circuits removes particulates "
+        f"and maintains coolant integrity — extending coolant service life, reducing "
+        f"corrosion risk, and protecting against cavitation in high-cycle cooling systems.{equip_clause}"
     )
 
 
