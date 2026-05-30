@@ -11,7 +11,7 @@
 | fuel           | 500       | ✅ COMPLETO       | ✅ 500/500       | scraper_fuelcrossref.py  | ✅ COMPLETO       |
 | fuel-separator | (en fuel) | (en fuel)         | (en fuel)        | scraper_fuelcrossref.py  | (en fuel)         |
 | hydraulic      | 1934      | ✅ COMPLETO (28 err) | ❌ 0/1934      | scraper_oilcrossref.py   | ⏳ DESPUÉS        |
-| air            | 1366      | ✅ COMPLETO       | ❌ 0/1366        | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| air            | 1366      | ✅ COMPLETO       | ✅ 1366/1366     | scraper_aircrossref.py   | ✅ COMPLETO       |
 | air-intake     | 243       | ✅ COMPLETO       | ❌ 0/243         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
 | cabin          | 122       | ✅ COMPLETO       | ❌ 0/122         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
 | air-dryer      | 3         | ✅ COMPLETO       | ❌ 0/3           | scraper_aircrossref.py   | ⏳ PENDIENTE      |
