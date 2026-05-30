@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Hydraulic Filtration Systems — ISO 16889, NFPA T2.14 | ELIMFILTERS®',
   },
-  description: 'Hydraulic system filtration engineering: ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial machinery.',
+  description: 'ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial hydraulic systems.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems/',
   },
   openGraph: {
     title: 'Hydraulic Filtration Systems — ISO 16889, NFPA T2.14 | ELIMFILTERS®',
-    description: 'Hydraulic system filtration engineering: ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial machinery.',
+    description: 'ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial hydraulic systems.',
     url: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'Hydraulic Filtration Systems — ISO 16889, NFPA T2.14 | ELIMFILTERS®',
-    description: 'Hydraulic system filtration engineering: ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial machinery.',
+    description: 'ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial hydraulic systems.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

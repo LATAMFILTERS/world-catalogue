@@ -4,6 +4,69 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const collectionPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Industrial Filtration Standards',
+  description: 'ISO 16889, ISO 4406, SAE J1211, ASTM D6304 — filtration standards by domain: lube oil, fuel, hydraulic, air intake, cabin, and compressed air.',
+  url: 'https://elimfilters.com/knowledge-system/standards/',
+  publisher: {
+    '@type': 'Organization',
+    name: 'ELIMFILTERS®',
+    url: 'https://elimfilters.com',
+  },
+  hasPart: [
+    { '@type': 'TechArticle', name: 'Lube Oil Filtration Systems', url: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems/' },
+    { '@type': 'TechArticle', name: 'Hydraulic Filtration Systems', url: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems/' },
+    { '@type': 'TechArticle', name: 'Fuel Filtration Systems', url: 'https://elimfilters.com/knowledge-system/standards/fuel-systems/' },
+    { '@type': 'TechArticle', name: 'Air Intake Filtration Systems', url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems/' },
+    { '@type': 'TechArticle', name: 'Cabin Air Filtration', url: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems/' },
+    { '@type': 'TechArticle', name: 'Compressed Air Systems', url: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems/' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is ISO 16889 and why does it matter for filtration?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ISO 16889 is the multi-pass filter test method that defines how filter efficiency is measured. It produces the Beta ratio (β), which quantifies how many particles a filter removes per size class. A β₁₀(c) ≥ 200 means the filter removes 99.5% of particles ≥10 µm. It is the universal benchmark for hydraulic and lube oil filter selection.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between ISO and SAE filtration standards?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ISO standards (ISO 16889, ISO 4406, ISO 5011) are international standards developed by the International Organization for Standardization and are used globally across industries. SAE standards (SAE J1539, SAE J1211) are developed by SAE International and are commonly used in North American automotive and heavy equipment applications. Both are accepted in industrial filtration, and many specifications reference both.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which filtration standard applies to hydraulic systems?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Hydraulic systems are primarily governed by ISO 16889 (filter efficiency), ISO 4406 (fluid cleanliness codes), NFPA T2.14 (cleanliness targets for components), and DIN 51524 (hydraulic fluid specifications). Proportional control valves typically require cleanliness levels of ISO 4406 code 17/15/12 or better.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What ISO standard applies to compressed air quality?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ISO 8573-1 defines compressed air purity classes for three contaminant types: solid particles, water, and oil. Companion standards ISO 8573-2 and ISO 8573-3 provide test methods for measuring oil aerosol content and humidity respectively. Most industrial pneumatic systems require Class 1 or Class 2 air quality.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do cabin air filtration standards protect operators?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Cabin air filtration in mining, agriculture, and construction vehicles is governed by ISO 11155 (test standard) and DIN 71220 (classification). These standards define minimum filtration efficiency for PM10 and PM2.5 particulate matter, ensuring operators are protected from silica dust, agricultural chemicals, and combustion by-products in enclosed cab environments.' },
+    },
+  ],
+};
+
 const FILTRATION_SYSTEMS = [
   {
     code: 'LUBE',
@@ -52,6 +115,9 @@ const FILTRATION_SYSTEMS = [
 export default function StandardsHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Back */}
       <Link href="/knowledge-system" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
@@ -229,6 +295,49 @@ export default function StandardsHubPage() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{
+        maxWidth: '900px',
+        margin: '0 auto',
+        padding: '4rem 2rem',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <h2 style={{
+          fontFamily: 'Outfit, sans-serif',
+          fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
+          fontWeight: 700,
+          marginBottom: '2.5rem',
+          color: '#fff',
+        }}>
+          Frequently Asked Questions
+        </h2>
+        {faqSchema.mainEntity.map((item, i) => (
+          <div key={i} style={{
+            borderBottom: '1px solid rgba(255,255,255,0.07)',
+            paddingBottom: '1.75rem',
+            marginBottom: '1.75rem',
+          }}>
+            <h3 style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontSize: '1rem',
+              fontWeight: 600,
+              color: '#FFF12D',
+              marginBottom: '0.6rem',
+            }}>
+              {item.name}
+            </h3>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.9rem',
+              color: 'rgba(255,255,255,0.6)',
+              lineHeight: 1.7,
+            }}>
+              {item.acceptedAnswer.text}
+            </p>
+          </div>
+        ))}
       </section>
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}

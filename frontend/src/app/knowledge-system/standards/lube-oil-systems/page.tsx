@@ -4,6 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Lube Oil Filtration Systems — ISO 16889, ISO 4406',
+  description: 'ISO 16889 beta ratio, ISO 4406 cleanliness codes, particle wear mechanisms, and contamination control targets for engine and bearing protection.',
+  url: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'ISO 16889' },
+    { '@type': 'Thing', name: 'ISO 4406' },
+    { '@type': 'Thing', name: 'Lube Oil Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Lube Oil Systems', item: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
   { code: 'ISO 4406', href: '/knowledge-system/standards/iso-4406', desc: 'Legacy 2-3 digit code (19/17) providing historical continuity with automotive and pre-2000 industrial equipment.' },
@@ -51,6 +77,8 @@ const RELATED_SYSTEMS = [
 export default function LubeOilSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Navigation */}
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,

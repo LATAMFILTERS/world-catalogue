@@ -4,6 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Fuel Filtration Systems — ASTM D6304, ISO 12937',
+  description: 'ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+  url: 'https://elimfilters.com/knowledge-system/standards/fuel-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'ASTM D6304' },
+    { '@type': 'Thing', name: 'ISO 12937' },
+    { '@type': 'Thing', name: 'Fuel Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Fuel Systems', item: 'https://elimfilters.com/knowledge-system/standards/fuel-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
   { code: 'ASTM D975', desc: 'Standard specification for diesel fuel, defining upper limits on water, sediment, and contamination levels acceptable for engine fuel systems.' },
@@ -51,6 +77,8 @@ const RELATED_SYSTEMS = [
 export default function FuelSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',

@@ -4,6 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Hydraulic Filtration Systems — ISO 16889, NFPA T2.14',
+  description: 'ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial hydraulic systems.',
+  url: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'ISO 16889' },
+    { '@type': 'Thing', name: 'NFPA T2.14' },
+    { '@type': 'Thing', name: 'Hydraulic Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Hydraulic Systems', item: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
   { code: 'NFPA T2.14', desc: 'Machine tool hydraulic fluids standard specifying ISO 18/16/13 minimum cleanliness for proportional control valve systems.' },
@@ -53,6 +79,8 @@ const RELATED_SYSTEMS = [
 export default function HydraulicSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',

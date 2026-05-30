@@ -4,6 +4,31 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Compressed Air Systems — ISO 8573-1 Purity Classes',
+  description: 'ISO 8573-1 purity classes, ISO 8573-2 oil aerosol testing, ISO 8573-3 humidity measurement, dew point control, and pneumatic system protection.',
+  url: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'ISO 8573-1' },
+    { '@type': 'Thing', name: 'Compressed Air Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Compressed Air Systems', item: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'ISO 8573-1', desc: 'Compressed air purity classification system (Classes 0-9) defining maximum particle concentration, water content (dew point), and oil content for different industrial applications.' },
   { code: 'ISO 8573-2', desc: 'Measurement methods for water vapor content and dew point in compressed air systems using electrochemical sensors, chilled mirror hygrometers, and Karl Fischer titration.' },
@@ -59,6 +84,8 @@ const RELATED_SYSTEMS = [
 export default function CompressedAirSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',

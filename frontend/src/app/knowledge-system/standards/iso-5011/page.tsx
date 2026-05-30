@@ -4,6 +4,30 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const definedTermSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: 'ISO 5011',
+  description: 'ISO 5011 is the international standard for testing the performance of air filtration elements for internal combustion engines and compressors. It specifies test methods for filtration efficiency, pressure drop, dust holding capacity, and element integrity under collapse pressure.',
+  url: 'https://elimfilters.com/knowledge-system/standards/iso-5011/',
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    name: 'Industrial Filtration Standards',
+    url: 'https://elimfilters.com/knowledge-system/standards/',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'ISO 5011', item: 'https://elimfilters.com/knowledge-system/standards/iso-5011/' },
+  ],
+};
+
 export default function ISO5011Page() {
   const sections = [
     {
@@ -37,6 +61,8 @@ export default function ISO5011Page() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Back Button */}
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,

@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Fuel Filtration Systems — ASTM D6304, ISO 12937 | ELIMFILTERS®',
   },
-  description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+  description: 'ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/standards/fuel-systems/',
   },
   openGraph: {
     title: 'Fuel Filtration Systems — ASTM D6304, ISO 12937 | ELIMFILTERS®',
-    description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+    description: 'ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
     url: 'https://elimfilters.com/knowledge-system/standards/fuel-systems/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'Fuel Filtration Systems — ASTM D6304, ISO 12937 | ELIMFILTERS®',
-    description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+    description: 'ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

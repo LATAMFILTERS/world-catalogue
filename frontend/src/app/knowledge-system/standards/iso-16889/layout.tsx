@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'ISO 16889 Beta Ratio Filter Test Standard | ELIMFILTERS®',
   },
-  description: 'ISO 16889 multi-pass filter test method: Beta ratio calculation, particle counting procedures, filter efficiency classification, and application to hydraulic and lube oil filtration systems.',
+  description: 'ISO 16889 multi-pass filter test: Beta ratio calculation, particle counting, filter efficiency classification for hydraulic and lube oil filtration systems.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/standards/iso-16889/',
   },
   openGraph: {
     title: 'ISO 16889 Beta Ratio Filter Test Standard | ELIMFILTERS®',
-    description: 'ISO 16889 multi-pass filter test method: Beta ratio calculation, particle counting procedures, filter efficiency classification, and application to hydraulic and lube oil filtration systems.',
+    description: 'ISO 16889 multi-pass filter test: Beta ratio calculation, particle counting, filter efficiency classification for hydraulic and lube oil filtration systems.',
     url: 'https://elimfilters.com/knowledge-system/standards/iso-16889/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'ISO 16889 Beta Ratio Filter Test Standard | ELIMFILTERS®',
-    description: 'ISO 16889 multi-pass filter test method: Beta ratio calculation, particle counting procedures, filter efficiency classification, and application to hydraulic and lube oil filtration systems.',
+    description: 'ISO 16889 multi-pass filter test: Beta ratio calculation, particle counting, filter efficiency classification for hydraulic and lube oil filtration systems.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

@@ -4,6 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Cabin Air Filtration — ISO 11155, DIN 71220',
+  description: 'ISO 11155 test standard, DIN 71220 classification, PM10/PM2.5 exposure limits, and electrostatic filtration for mining and agricultural vehicle cabins.',
+  url: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'ISO 11155' },
+    { '@type': 'Thing', name: 'DIN 71220' },
+    { '@type': 'Thing', name: 'Cabin Air Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Cabin Safety Systems', item: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },
   { code: 'ISO 11155-2', desc: 'Gaseous contaminant filtration testing for cabin air systems, covering carbon filter performance against NO2, SO2, ozone, and organic vapor penetration.' },
@@ -59,6 +85,8 @@ const RELATED_SYSTEMS = [
 export default function CabinSafetySystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Industrial Filtration Standards — ISO, SAE, ASTM, DIN | ELIMFILTERS®',
   },
-  description: 'ISO 16889, ISO 4406, SAE J1211, ASTM D6304 and more — organized by filtration system domain. Standards for lube oil, fuel, hydraulic, air intake, cabin, and compressed air systems.',
+  description: 'ISO 16889, ISO 4406, SAE J1211, ASTM D6304 — filtration standards by domain: lube oil, fuel, hydraulic, air intake, cabin, and compressed air.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/standards/',
   },
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'Industrial Filtration Standards — ISO, SAE, ASTM, DIN | ELIMFILTERS®',
     description: 'ISO 16889, ISO 4406, SAE J1211, ASTM D6304 — standards by filtration system domain.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],

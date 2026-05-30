@@ -4,13 +4,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Air Intake Filtration Systems — SAE J1539, ISO 5011 | ELIMFILTERS®',
   },
-  description: 'Air intake filtration engineering: SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
+  description: 'SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems/',
   },
   openGraph: {
     title: 'Air Intake Filtration Systems — SAE J1539, ISO 5011 | ELIMFILTERS®',
-    description: 'Air intake filtration engineering: SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
+    description: 'SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
     url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems/',
     type: 'website',
     siteName: 'ELIMFILTERS® World Catalogue',
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@elimfilters',
     title: 'Air Intake Filtration Systems — SAE J1539, ISO 5011 | ELIMFILTERS®',
-    description: 'Air intake filtration engineering: SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
+    description: 'SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

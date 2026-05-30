@@ -4,6 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Air Intake Filtration Systems — SAE J1539, ISO 5011',
+  description: 'SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
+  url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems/',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+  about: [
+    { '@type': 'Thing', name: 'SAE J1539' },
+    { '@type': 'Thing', name: 'ISO 5011' },
+    { '@type': 'Thing', name: 'Air Intake Filtration' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system/' },
+    { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards/' },
+    { '@type': 'ListItem', position: 4, name: 'Air Intake Systems', item: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems/' },
+  ],
+};
+
 const STANDARDS = [
   { code: 'SAE J1539', desc: 'Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air to preserve engine efficiency and bearing life.' },
   { code: 'ISO 5011', href: '/knowledge-system/standards/iso-5011', desc: 'Filter element integrity testing covering element collapse and bypass verification procedures ensuring air filtration performance meets rated efficiency claims.' },
@@ -48,6 +74,8 @@ const RELATED_SYSTEMS = [
 export default function AirIntakeSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Link href="/knowledge-system/standards" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
