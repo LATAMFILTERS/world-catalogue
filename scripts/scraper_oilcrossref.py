@@ -44,19 +44,37 @@ def _is_code(tok: str) -> bool:
 def _parse_text(text: str) -> dict:
     result = {}
 
-    # Cortar sección: empieza después del disclaimer, termina antes de Amazon/footer
-    m_start = re.search(r'general reference only[^\n]*\n', text, re.IGNORECASE)
-    m_end   = re.search(r'When you click on links|Replacement oil filters.*on Amazon|Search oil filter|Copyright\s*©', text, re.IGNORECASE)
-    if m_start:
-        text = text[m_start.end():]
-    if m_end:
-        m_end2 = re.search(r'When you click on links|Replacement oil filters.*on Amazon|Search oil filter|Copyright\s*©', text, re.IGNORECASE)
-        if m_end2:
-            text = text[:m_end2.start()]
+    # Estrategias de corte en orden de preferencia
+    start_pos = 0
+    for pattern in [
+        r'general reference only[^\n]*\n',
+        r'for Donaldson [A-Z0-9]+\.?\s*\n',
+        r'replacement oil filters\s*\n',
+    ]:
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            start_pos = m.end()
+            break
 
-    lines = [l.strip() for l in text.splitlines()]
+    end_pos = len(text)
+    for pattern in [
+        r'When you click on links',
+        r'Replacement oil filters.*on Amazon',
+        r'Search oil filter',
+        r'Type an oil filter',
+        r'Copyright\s*©',
+    ]:
+        m = re.search(pattern, text[start_pos:], re.IGNORECASE)
+        if m:
+            end_pos = start_pos + m.start()
+            break
+
+    section = text[start_pos:end_pos]
+
+    lines = [l.strip() for l in section.splitlines()]
     lines = [re.sub(r'\s+Buy from.*', '', l, flags=re.IGNORECASE).strip() for l in lines]
-    lines = [l for l in lines if l and l.upper() not in ("BUY", "FROM", "AMAZON", "EBAY", "")]
+    lines = [l for l in lines if l and len(l) < 80
+             and l.upper() not in ("BUY", "FROM", "AMAZON", "EBAY", "")]
 
     pending_brand = None
     for line in lines:
