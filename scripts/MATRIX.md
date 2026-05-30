@@ -10,7 +10,8 @@
 | lube       | ~365      | Windows | donaldson_lube_progress.json          | ⚡ EN CURSO |
 | fuel       | 500       | Windows | donaldson_fuel_results.json           | ✅ COMPLETO 498 OK |
 | hydraulic  | ~2177     | Mac     | donaldson_hydraulic_progress.json     | ⚡ EN CURSO recollect |
-| air        | ?         | Windows | donaldson_air_progress.json           | ⏳ PENDIENTE |
+| air        | 1366      | Windows | donaldson_air_results.json            | ✅ COMPLETO 1365 OK |
+| air-dryer  | ?         | Windows | donaldson_air-dryer_progress.json     | ⏳ PENDIENTE |
 
 ### Comandos Windows
 
@@ -21,8 +22,11 @@ python scraper_donaldson.py lube
 # Fuel (reanuda desde [242/500])
 python scraper_donaldson.py fuel
 
-# Air (después de fuel)
-python scraper_donaldson.py air
+# Air (COMPLETO)
+# python scraper_donaldson.py air
+
+# Air Dryer
+python scraper_donaldson.py air-dryer
 
 # Hydraulic Windows (después de air, tiene 59 ya guardados)
 python scraper_donaldson.py hydraulic

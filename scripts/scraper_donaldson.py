@@ -41,6 +41,8 @@ CATEGORIES = {
             "?N=2076725065&Nr=product.language%3AEnglish&catNav=true&st=parts",
     "fuel":      "https://shop.donaldson.com/store/en-us/search"
             "?N=626398726&Nr=product.language%3AEnglish&catNav=true&st=parts",
+    "air-dryer": "https://shop.donaldson.com/store/en-us/search"
+            "?N=2748940002&catNav=true",
 }
 
 PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
