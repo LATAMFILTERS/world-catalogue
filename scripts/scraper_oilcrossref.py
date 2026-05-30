@@ -2,26 +2,19 @@
 scraper_oilcrossref.py — Cross-reference entre marcas de filtros
 Fuente: https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}
 
+La página renderiza con JavaScript → usa Playwright (headless).
+
 Uso:
     python scraper_oilcrossref.py lube
     python scraper_oilcrossref.py hydraulic
-    python scraper_oilcrossref.py lube hydraulic   # ambos a la vez
+    python scraper_oilcrossref.py lube hydraulic
     python scraper_oilcrossref.py --test P552100
-
-Lee los *_results.json de Donaldson, consulta el sitio por cada part number
-y agrega el campo "brand_crossrefs": {"FLEETGUARD": ["LF3000"], "MANN": [...], ...}
-Guarda progreso incremental en *_crossref_progress.json
+    python scraper_oilcrossref.py --debug P552100   # guarda HTML crudo
 """
 
-import json, time, random, logging, os, sys
+import json, time, random, logging, os, sys, re
 from pathlib import Path
-
-try:
-    import requests
-    from bs4 import BeautifulSoup
-    REQUESTS_OK = True
-except ImportError:
-    REQUESTS_OK = False
+from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,120 +25,120 @@ logging.basicConfig(
     ],
 )
 
-BASE_URL  = "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}"
-PAUSE     = (3, 7)
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
-
-SESSION = requests.Session() if REQUESTS_OK else None
-if SESSION:
-    SESSION.headers.update(HEADERS)
-
-
-import re as _re
+BASE_URL = "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}"
+PAUSE    = (4, 9)
 
 # Ruido a descartar
 _SKIP_BRANDS = {
     "USD", "PRIVACY", "DONALDSON", "WHEN", "AS", "AN", "WE", "SEARCH",
     "TYPE", "CHOOSE", "START", "ADVANCED", "COPYRIGHT", "REPLACEMENT",
-    "COACH",  # "COACH GUARD" → multi-word; manejado abajo
 }
-_SKIP_CODE_RE = _re.compile(r'^\d+\.\d+$')     # precios: 25.79
-_PART_RE      = _re.compile(r'^[A-Z0-9][A-Z0-9\-/\.]{2,}$')
+_SKIP_CODE_RE = re.compile(r'^\d+[\.,]\d+$')        # precios: 25.79
+_PART_RE      = re.compile(r'^[A-Z0-9][A-Z0-9\-/\.]{2,}$')
 
 
 def _is_code(tok: str) -> bool:
     return bool(_PART_RE.match(tok)) and not _SKIP_CODE_RE.match(tok)
 
 
-def fetch_crossrefs(part: str) -> dict:
+def _parse_text(text: str) -> dict:
     """
-    Devuelve {"FLEETGUARD": ["LF3000", ...], "MANN": [...], ...}
-    o {} si no se encontró nada.
+    Parsea el texto extraído de la página (ya renderizado por JS).
+    Formato de cada línea: "BRAND CODE" o líneas separadas por split de Amazon link.
     """
+    result = {}
+
+    # Cortar sección útil
+    m_start = re.search(r'replacement oil filters', text, re.IGNORECASE)
+    m_end   = re.search(r'When you click on links|Search oil filter|Copyright', text, re.IGNORECASE)
+    if m_start:
+        text = text[m_start.end():]
+    if m_end:
+        m_end2 = re.search(r'When you click on links|Search oil filter|Copyright', text, re.IGNORECASE)
+        if m_end2:
+            text = text[:m_end2.start()]
+
+    lines = [l.strip() for l in text.splitlines()]
+    lines = [re.sub(r'\s+Buy from.*', '', l, flags=re.IGNORECASE).strip() for l in lines]
+    lines = [l for l in lines if l and l.upper() not in ("BUY", "FROM", "AMAZON", "EBAY", "")]
+
+    pending_brand = None
+    for line in lines:
+        tokens = line.split()
+        if not tokens:
+            continue
+        upper = [t.upper() for t in tokens]
+
+        if len(tokens) == 1:
+            tok = upper[0]
+            if _is_code(tok) and pending_brand:
+                result.setdefault(pending_brand, [])
+                if tok not in result[pending_brand]:
+                    result[pending_brand].append(tok)
+            elif not _is_code(tok) and tok not in _SKIP_BRANDS:
+                pending_brand = tok
+            continue
+
+        # Último token como código, resto como marca
+        last = upper[-1]
+        if _is_code(last) and not _SKIP_CODE_RE.match(last):
+            code  = last
+            brand = " ".join(upper[:-1]).strip(" .,:-()")
+            brand = re.sub(r'\s+\d+[\.,]\d+$', '', brand).strip()
+            if not brand or any(w in _SKIP_BRANDS for w in brand.split()[:1]):
+                continue
+            if "DONALDSON" in brand:
+                pending_brand = None
+                continue
+            brand = re.sub(r'[\s/]+', '_', brand)
+            result.setdefault(brand, [])
+            if code not in result[brand]:
+                result[brand].append(code)
+            pending_brand = brand
+        else:
+            pending_brand = None
+
+    return result
+
+
+def _make_context(pw):
+    return pw.chromium.launch_persistent_context(
+        user_data_dir=os.path.join(os.path.expanduser("~"), ".donaldson_profile"),
+        channel="chrome",
+        headless=True,
+        locale="en-US",
+        viewport={"width": 1366, "height": 768},
+        user_agent=(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0.0.0 Safari/537.36"
+        ),
+        args=["--disable-blink-features=AutomationControlled"],
+        ignore_default_args=["--enable-automation"],
+    )
+
+
+def fetch_crossrefs_page(page, part: str) -> dict:
     url = BASE_URL.format(part=part.upper())
     try:
-        r = SESSION.get(url, timeout=30)
-        if r.status_code != 200:
-            logging.warning(f"  HTTP {r.status_code} → {part}")
-            return {}
-
-        soup = BeautifulSoup(r.text, "html.parser")
-        result = {}
-
-        # El sitio lista cross-refs como texto plano: "BRAND CODE\nBRAND CODE\n..."
-        # Los items con link "Buy from Amazon" dividen brand y code en líneas distintas.
-        # Estrategia: obtener texto línea a línea, limpiar, parear brand+code.
-
-        text = soup.get_text(separator="\n")
-
-        # Cortar solo la sección de cross-refs (entre "replacement oil filters" y "When you click")
-        m_start = _re.search(r'replacement oil filters\s*\n', text, _re.IGNORECASE)
-        m_end   = _re.search(r'When you click on links', text, _re.IGNORECASE)
-        if m_start and m_end:
-            text = text[m_start.end():m_end.start()]
-
-        lines = [l.strip() for l in text.splitlines()]
-        lines = [_re.sub(r'\s+Buy from.*', '', l, flags=_re.IGNORECASE).strip() for l in lines]
-        lines = [l for l in lines if l and l.upper() not in ("BUY", "FROM", "AMAZON", "EBAY")]
-
-        pending_brand = None
-        for line in lines:
-            tokens = line.split()
-            if not tokens:
-                continue
-
-            upper_tokens = [t.upper() for t in tokens]
-
-            # Caso A: línea con 1 token — puede ser código huérfano o marca sola
-            if len(tokens) == 1:
-                tok = upper_tokens[0]
-                if _is_code(tok) and pending_brand:
-                    # código huérfano → usar marca anterior
-                    result.setdefault(pending_brand, [])
-                    if tok not in result[pending_brand]:
-                        result[pending_brand].append(tok)
-                elif not _is_code(tok) and tok not in _SKIP_BRANDS:
-                    pending_brand = tok   # marca sola → esperar código siguiente
-                continue
-
-            # Caso B: última token es el código, el resto es la marca
-            last = upper_tokens[-1]
-            if _is_code(last) and not _SKIP_CODE_RE.match(last):
-                code  = last
-                brand = " ".join(upper_tokens[:-1]).strip(" .,:-")
-                # Limpiar suffixes de precio inline (raro)
-                brand = _re.sub(r'\s+\d+\.\d+$', '', brand).strip()
-                if not brand or brand.split()[0] in _SKIP_BRANDS:
-                    continue
-                if "DONALDSON" in brand:
-                    pending_brand = None
-                    continue
-                # Normalizar
-                brand = _re.sub(r'[\s/]+', '_', brand)
-                result.setdefault(brand, [])
-                if code not in result[brand]:
-                    result[brand].append(code)
-                pending_brand = brand
-            else:
-                pending_brand = None
-
-        return result
-
+        page.goto(url, timeout=30000, wait_until="domcontentloaded")
+        # Esperar a que aparezca al menos 1 resultado
+        try:
+            page.wait_for_function(
+                "() => document.body.innerText.length > 500",
+                timeout=10000
+            )
+        except PWTimeout:
+            pass
+        time.sleep(2)
+        text = page.evaluate("() => document.body.innerText")
+        return _parse_text(text)
     except Exception as e:
         logging.warning(f"  ERROR {part}: {e}")
         return {}
 
 
-def process_category(name: str):
+def process_category(pw, name: str):
     results_file  = f"donaldson_{name}_results.json"
     progress_file = f"donaldson_{name}_crossref_progress.json"
 
@@ -156,16 +149,17 @@ def process_category(name: str):
     with open(results_file, encoding="utf-8") as f:
         products = json.load(f)
 
-    # Cargar progreso
     try:
         with open(progress_file, encoding="utf-8") as f:
             progress = json.load(f)
     except FileNotFoundError:
-        progress = {}   # {part_number: {brand: [codes]}}
+        progress = {}
 
-    total = len(products)
-    done  = 0
-    new   = 0
+    context = _make_context(pw)
+    page    = context.new_page()
+    total   = len(products)
+    done    = 0
+    new_    = 0
 
     for i, prod in enumerate(products, 1):
         part = prod.get("part_number", "").upper()
@@ -179,60 +173,62 @@ def process_category(name: str):
             continue
 
         logging.info(f"[{i}/{total}] {part} …")
-        crossrefs = fetch_crossrefs(part)
+        crossrefs = fetch_crossrefs_page(page, part)
         prod["brand_crossrefs"] = crossrefs
         progress[part] = crossrefs
 
-        brands = list(crossrefs.keys())
+        brands      = list(crossrefs.keys())
         total_codes = sum(len(v) for v in crossrefs.values())
-        logging.info(f"  ✅ {part} → {len(brands)} marcas | {total_codes} códigos {brands[:5]}")
+        logging.info(f"  ✅ {part} → {len(brands)} marcas | {total_codes} códigos")
 
-        # Guardar progreso atómico
         tmp = progress_file + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
             json.dump(progress, f, ensure_ascii=False, indent=2)
         os.replace(tmp, progress_file)
 
-        new += 1
+        new_ += 1
         time.sleep(random.uniform(*PAUSE))
 
-    # Guardar results actualizado
+    context.close()
+
     with open(results_file, "w", encoding="utf-8") as f:
         json.dump(products, f, ensure_ascii=False, indent=2)
 
-    logging.info(f"\n=== {name.upper()} COMPLETO: {total} prods | {done} cache | {new} nuevos ===")
+    logging.info(f"\n=== {name.upper()} COMPLETO: {total} prods | {done} cache | {new_} nuevos ===")
 
 
 def test_one(part: str, debug: bool = False):
-    url = BASE_URL.format(part=part.upper())
-    r = SESSION.get(url, timeout=30)
-    soup = BeautifulSoup(r.text, "html.parser")
-    text = soup.get_text(separator="\n")
+    with sync_playwright() as pw:
+        context = _make_context(pw)
+        page    = context.new_page()
+        url     = BASE_URL.format(part=part.upper())
+        page.goto(url, timeout=30000, wait_until="domcontentloaded")
+        try:
+            page.wait_for_function("() => document.body.innerText.length > 500", timeout=10000)
+        except PWTimeout:
+            pass
+        time.sleep(2)
+        text = page.evaluate("() => document.body.innerText")
+        context.close()
 
     if debug:
         with open(f"debug_{part}.txt", "w", encoding="utf-8") as f:
             f.write(text)
-        print(f"HTML text guardado en debug_{part}.txt")
+        print(f"Guardado en debug_{part}.txt ({len(text)} chars)")
         return
 
-    crossrefs = fetch_crossrefs(part)
+    crossrefs = _parse_text(text)
     print(f"\n=== {part} ===")
     if crossrefs:
         for brand, codes in sorted(crossrefs.items()):
-            print(f"  {brand:20} {codes}")
+            print(f"  {brand:25} {codes}")
     else:
-        print("  (sin resultados — revisar HTML)")
-        # Mostrar primeras 80 líneas para diagnóstico
-        print("\n--- Primeras 80 líneas del texto ---")
-        for i, l in enumerate(text.splitlines()[:80], 1):
+        print("  (sin resultados)")
+        for i, l in enumerate(text.splitlines()[:60], 1):
             print(f"  {i:3}: {l}")
 
 
 if __name__ == "__main__":
-    if not REQUESTS_OK:
-        print("Instala dependencias: pip install requests beautifulsoup4")
-        sys.exit(1)
-
     argv = sys.argv[1:]
 
     if not argv:
@@ -241,6 +237,7 @@ if __name__ == "__main__":
         print("  python scraper_oilcrossref.py hydraulic")
         print("  python scraper_oilcrossref.py lube hydraulic")
         print("  python scraper_oilcrossref.py --test P552100")
+        print("  python scraper_oilcrossref.py --debug P552100")
         sys.exit(0)
 
     if argv[0] == "--debug":
@@ -248,5 +245,7 @@ if __name__ == "__main__":
     elif argv[0] == "--test":
         test_one(argv[1] if len(argv) > 1 else "P552100")
     else:
-        for cat in argv:
-            process_category(cat)
+        cats = [a for a in argv if not a.startswith("--")]
+        with sync_playwright() as pw:
+            for cat in cats:
+                process_category(pw, cat)
