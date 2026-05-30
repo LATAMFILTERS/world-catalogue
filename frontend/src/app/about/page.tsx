@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const fadeUp = {
@@ -17,10 +18,77 @@ const staggerCards = {
   visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
 };
 
+const FAQS = [
+  {
+    q: 'What is ELIMFILTERS®?',
+    a: 'ELIMFILTERS® is a Frisco, Texas-based industrial filtration engineering company specialising in multi-layer asset protection systems. The company designs proprietary filtration technologies — including MACROCORE™, NANOFORCE™, AQUAGUARD™, SYNTRAX™, and MICROKAPPA™ — for mining, agriculture, marine, oil & gas, construction, and other heavy-industry sectors across North America and Latin America.',
+  },
+  {
+    q: 'Where is ELIMFILTERS® headquartered?',
+    a: 'ELIMFILTERS® is headquartered in Frisco, Texas, USA, with sales and technical support operations serving customers across North America and Latin America.',
+  },
+  {
+    q: 'What industries does ELIMFILTERS® serve?',
+    a: 'ELIMFILTERS® serves 12 industrial sectors: Mining, Agriculture, Marine, Oil & Gas, Automotive, Construction, Power Generation, Bus & Coach, Manufacturing, Railway, Trucks & Fleets, and Municipal & Waste. Each sector has purpose-built asset protection filtration systems engineered for the contamination threats specific to that industry’s operating environment.',
+  },
+  {
+    q: 'What makes ELIMFILTERS® different from OEM filter suppliers?',
+    a: 'ELIMFILTERS® is an asset protection engineering company, not a parts supplier. Each system is designed to a specific contamination control target — ISO cleanliness code, Beta ratio, ingression rate — for the application. Proprietary media technologies validated under ISO 5011, ISO 16889, and ISO 4406 achieve up to 99.9% filtration efficiency across air, fuel, hydraulic, and lubrication systems.',
+  },
+  {
+    q: 'What proprietary technologies does ELIMFILTERS® offer?',
+    a: 'ELIMFILTERS® offers 12 proprietary filtration technologies, including MACROCORE™ (multi-layer air filtration), NANOFORCE™ (nanofibre hydraulic and fuel filtration), AQUAGUARD™ (water separation for fuel systems), SYNTRAX™ (synthetic media for high-temperature lube systems), and MICROKAPPA™ (cabin air filtration). Each technology is validated to ISO industry standards and engineered for a specific contamination control target.',
+  },
+];
+
+const BASE_URL = 'https://elimfilters.com';
+
 export default function About() {
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About ELIMFILTERS®',
+    url: `${BASE_URL}/about/`,
+    dateModified: '2026-05-30',
+    description: 'ELIMFILTERS® is an industrial filtration engineering company specialising in asset protection filtration for mining, agriculture, marine, and heavy industry.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'ELIMFILTERS®',
+      url: BASE_URL,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Frisco',
+        addressRegion: 'TX',
+        addressCountry: 'US',
+      },
+      areaServed: ['North America', 'Latin America'],
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'About', item: `${BASE_URL}/about/` },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  };
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ── */}
       <section
@@ -101,8 +169,10 @@ export default function About() {
                 paddingLeft: '1.25rem',
               }}
             >
-              ELIMFILTERS® specializes in protecting critical assets through advanced filtration
-              engineering. We design systems that prevent contamination before it damages.
+              ELIMFILTERS® is a Frisco, Texas-based industrial filtration engineering company
+              specialising in multi-layer asset protection systems for mining, agriculture, marine,
+              oil & gas, and heavy industry across North America and Latin America — with proprietary
+              technologies validated to ISO 5011, ISO 16889, and ISO 4406.
             </motion.p>
           </motion.div>
         </div>
@@ -195,9 +265,20 @@ export default function About() {
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
+                    marginBottom: '0.5rem',
                   }}
                 >
                   Media Efficiency Rating
+                </p>
+                <p
+                  style={{
+                    fontSize: '0.72rem',
+                    color: 'rgba(255,255,255,0.4)',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    letterSpacing: '0.06em',
+                  }}
+                >
+                  validated under ISO 5011 test conditions
                 </p>
               </div>
               <div
@@ -267,21 +348,25 @@ export default function About() {
                 title: 'Asset Protection Technology',
                 description:
                   'Proprietary systems designed to eliminate contamination events before they damage critical equipment.',
+                href: '/technologies/',
               },
               {
                 title: 'AI-Formulated Media',
                 description:
                   'Hybrid filtration media engineered using mathematical algorithms and proven in 10,000+ lab scenarios.',
+                href: '/knowledge-system/science/',
               },
               {
                 title: 'Global Engineering',
                 description:
                   'Headquartered in Frisco, Texas with operations across North America, Latin America, and beyond.',
+                href: '/contact/',
               },
               {
                 title: 'Industry Expertise',
                 description:
-                  'Serving Agriculture, Mining, Marine, Aerospace, Automotive, and 7 additional industrial verticals.',
+                  'Serving Mining, Agriculture, Marine, Oil & Gas, Automotive, Construction, Power Generation, Bus & Coach, Manufacturing, Railway, Trucks & Fleets, and Municipal sectors.',
+                href: '/industries/',
               },
             ].map((item, idx) => (
               <motion.div
@@ -314,13 +399,84 @@ export default function About() {
                     lineHeight: 1.6,
                     color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
+                    marginBottom: '1rem',
                   }}
                 >
                   {item.description}
                 </p>
+                <Link
+                  href={item.href}
+                  style={{
+                    fontSize: '0.7rem',
+                    color: 'rgba(255,241,45,0.55)',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    letterSpacing: '0.1em',
+                    textDecoration: 'none',
+                  }}
+                >
+                  EXPLORE →
+                </Link>
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <span style={{
+              display: 'block', fontSize: '0.7rem', fontWeight: 700,
+              letterSpacing: '0.25em', color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
+            }}>
+              // FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 style={{
+              fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800,
+              fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0',
+            }}>
+              About ELIMFILTERS® — Brand FAQ
+            </h2>
+          </motion.div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {FAQS.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: '6px',
+                  padding: '1.75rem 2rem',
+                }}
+              >
+                <h3 style={{
+                  fontSize: '0.975rem', fontWeight: 700,
+                  fontFamily: 'Outfit, sans-serif', color: '#fff',
+                  margin: '0 0 0.875rem', lineHeight: 1.5,
+                }}>
+                  {faq.q}
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)',
+                  fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0',
+                }}>
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
