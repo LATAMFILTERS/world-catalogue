@@ -1319,7 +1319,7 @@ def _extract_crossref_tab(page) -> list:
 
 def _is_empty(result: dict) -> bool:
     """True si no extrajo nada (0/0/0/0) — posible carga incompleta."""
-    return (not result["attributes"] and not result["cross_references"]
+    return (not result["attributes"] and not result["oem_codes"]
             and not result["alternatives"] and not result["equipment"])
 
 
@@ -1402,8 +1402,8 @@ def _scrape_once(page, url: str, result: dict, settle: float):
 
         # ── Cross Reference (tab data-name="CrossRef") ───────────────────
         _click_tab(page, "CrossRef")
-        result["cross_references"] = _extract_crossref_tab(page)
-        logging.info(f"    cross: {len(result['cross_references'])}")
+        result["oem_codes"] = _extract_crossref_tab(page)
+        logging.info(f"    cross: {len(result['oem_codes'])}")
 
     # ── Equipment (filas de máquinas que usan este filtro) ──────────
     if SCRAPE_EQUIPMENT and not SCRAPE_KITS_ONLY:
@@ -1428,7 +1428,7 @@ def scrape_product(page, url: str) -> dict:
         "name": "",
         "description": "",
         "attributes": {},
-        "cross_references": [],
+        "oem_codes": [],
         "alternatives": [],
         "equipment": [],
         "maintenance_kits": [],
@@ -1661,7 +1661,7 @@ def main(start_from: str = "", recollect: bool = False):
             data = scrape_product(page, url)
 
             na = len(data["attributes"])
-            nc = len(data["cross_references"])
+            nc = len(data["oem_codes"])
             nl = len(data["alternatives"])
             ne = len(data["equipment"])
             nk = len(data.get("maintenance_kits", []))
@@ -1698,7 +1698,7 @@ def retry_empty():
 
     empties = [r for r in results
                if not r.get("error")
-               and not r.get("attributes") and not r.get("cross_references")
+               and not r.get("attributes") and not r.get("oem_codes")
                and not r.get("alternatives") and not r.get("equipment")]
     logging.info(f"Vacíos a reintentar: {len(empties)} / {len(results)}")
     if not empties:
@@ -1719,7 +1719,7 @@ def retry_empty():
                 if r["url"] == url:
                     results[i] = fresh
                     break
-            na, nc = len(fresh["attributes"]), len(fresh["cross_references"])
+            na, nc = len(fresh["attributes"]), len(fresh["oem_codes"])
             nl, ne = len(fresh["alternatives"]), len(fresh["equipment"])
             logging.info(f"  → {fresh['part_number']}: {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
             progress["results"] = results

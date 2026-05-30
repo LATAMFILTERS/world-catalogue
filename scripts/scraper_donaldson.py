@@ -516,7 +516,7 @@ def scrape_product(page, product_path: str) -> dict:
         "url":            url,
         "description":    "",
         "attributes":     {},
-        "cross_references": [],
+        "oem_codes": [],
         "alternatives":   [],
         "equipment":      [],
         "scraped_at":     datetime.now().isoformat(),
@@ -556,7 +556,7 @@ def scrape_product(page, product_path: str) -> dict:
 
         # ── 3. Cross Reference ───────────────────────────────────────────
         activate_tab(page, "crossreferenceBody")
-        result["cross_references"] = extract_cross_refs(page)
+        result["oem_codes"] = extract_cross_refs(page)
 
         # ── 4. Equipment ─────────────────────────────────────────────────
         activate_tab(page, "equiptmentBody")
@@ -657,7 +657,7 @@ def main():
             data = scrape_product(page, product_path)
 
             na = len(data["attributes"])
-            nc = len(data["cross_references"])
+            nc = len(data["oem_codes"])
             nl = len(data["alternatives"])
             ne = len(data["equipment"])
             st = "✅" if not data["error"] else "❌"
