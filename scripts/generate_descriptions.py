@@ -31,6 +31,7 @@ TECH_BY_CATEGORY = {
     "hydraulic":  "NANOFORCE™",   # hydraulic filters
     "coolant":    "COOLTECH™",    # coolant filters + hoses
     "air-dryer":  "DRYCORE™",     # compressed air dryers
+    "diesel-kit": "DURATECH™",    # HD filter service kits
     "fuel":       None,           # SYNTAPORE™ (fuel) or AQUAGUARD™ (water sep)
 }
 
@@ -511,6 +512,24 @@ def _build_drycore(p: dict) -> str:
     )
 
 
+def _build_duratech_kit(p: dict) -> str:
+    """DURATECH™ — HD filter service kits (EK5)."""
+    equip   = _equipment_summary(p)
+    desc_up = p.get("description", "").upper()
+    equip_clause = f" Fits: {equip}." if equip else ""
+
+    # Try to name the kit contents from the description
+    contents = p.get("description", "").title().replace("Donaldson Blue", "").replace("Kit", "").strip(" ,")
+
+    return (
+        f"ELIMFILTERS DURATECH™ HD Filter Kit — {contents}. "
+        f"Complete heavy-duty filter service kit engineered for scheduled maintenance. "
+        f"All filters in the kit meet or exceed OEM specifications — reducing downtime, "
+        f"simplifying parts ordering, and protecting critical systems with DURATECH™ "
+        f"dual-stage filtration technology.{equip_clause}"
+    )
+
+
 def _build_cooltech(p: dict) -> str:
     """COOLTECH™ — Coolant filters and silicone hoses."""
     od      = _mm(_attr(p, "Outer Diameter"))
@@ -579,6 +598,8 @@ def generate_description(product: dict, category: str) -> str:
         return _build_drycore(product)
     elif tech == "COOLTECH™":
         return _build_cooltech(product)
+    elif tech == "DURATECH™":
+        return _build_duratech_kit(product)
     return product.get("description", "")
 
 
@@ -592,7 +613,7 @@ SKU_PREFIX = {
     "hydraulic":    "EH6",
     "air-dryer":    "ED4",
     "coolant":      "EW7",
-    "diesel-kit":   "EK5",  # future category
+    "diesel-kit":   "EK5",  # HD filter service kits — DURATECH™
     # fuel resolved per-product below (EF9 / ES9 water sep)
 }
 
