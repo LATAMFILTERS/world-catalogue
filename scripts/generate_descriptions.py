@@ -1,8 +1,15 @@
 """
-generate_descriptions.py — Generates ELIMFILTERS-branded descriptions for all Donaldson products.
+generate_descriptions.py — Generates ELIMFILTERS-branded descriptions + SKUs for all Donaldson products.
 
-Adds field `description_elimfilters` (English) to each product in *_results.json.
-Primary language is English; i18n system handles translations.
+Adds two fields to each product in *_results.json:
+  - description_elimfilters  (English, ELIMFILTERS tech branding)
+  - sku_elimfilters           (e.g. EL82100 from P552100 lube)
+
+SKU prefix map:
+  EA1 = air          EA2 = air-intake    EC1 = cabin
+  EL8 = lube         EH6 = hydraulic     ED4 = air-dryer
+  EF9 = fuel         ES9 = fuel-separator (water sep within fuel)
+  EW7 = coolant
 
 Usage:
     python generate_descriptions.py --sample         # Show 5 samples per category
@@ -260,6 +267,53 @@ def generate_description(product: dict, category: str) -> str:
     return product.get("description", "")
 
 
+# ── SKU generation ───────────────────────────────────────────────────────────
+
+SKU_PREFIX = {
+    "air":          "EA1",
+    "air-intake":   "EA2",
+    "cabin":        "EC1",
+    "lube":         "EL8",
+    "hydraulic":    "EH6",
+    "air-dryer":    "ED4",
+    "coolant":      "EW7",
+    "diesel-kit":   "EK5",  # future category
+    # fuel resolved per-product below (EF9 / ES9 water sep)
+}
+
+
+def _fuel_prefix(product: dict) -> str:
+    desc = product.get("description", "").upper()
+    if "SEPARATOR" in desc or "WATER" in desc:
+        return "ES9"
+    return "EF9"
+
+
+def generate_sku(product: dict, category: str, seen: set) -> str:
+    """Return ELIMFILTERS SKU. Handles collisions by extending to 5 digits."""
+    pn = product.get("part_number", "")
+    # Strip non-alphanumeric chars for digit extraction
+    digits = re.sub(r'[^A-Z0-9]', '', pn.upper())
+
+    if category == "fuel":
+        prefix = _fuel_prefix(product)
+    else:
+        prefix = SKU_PREFIX.get(category, "EX0")
+
+    # Try last 4 chars first, then 5 if collision
+    for length in (4, 5, 6):
+        suffix = digits[-length:] if len(digits) >= length else digits.zfill(length)
+        sku = prefix + suffix
+        if sku not in seen:
+            seen.add(sku)
+            return sku
+
+    # Fallback: prefix + full stripped part number
+    sku = prefix + digits
+    seen.add(sku)
+    return sku
+
+
 # ── Main processing ───────────────────────────────────────────────────────────
 
 def process_category(cat: str, sample_only: bool = False):
@@ -275,17 +329,30 @@ def process_category(cat: str, sample_only: bool = False):
         print(f"\n{'='*60}")
         print(f"  {cat.upper()} — {len(products)} products")
         print(f"{'='*60}")
+        seen: set = set()
         for p in products[:5]:
-            d = generate_description(p, cat)
+            d   = generate_description(p, cat)
+            sku = generate_sku(p, cat, seen)
             tech = _resolve_tech(p, cat)
             print(f"\n  [{p['part_number']}] ({tech})")
+            print(f"  SKU      : {sku}")
             print(f"  Original : {p.get('description','')}")
             print(f"  Generated: {d}")
         return 0
 
+    seen: set = set()
     updated = 0
+    collisions = 0
     for p in products:
         p["description_elimfilters"] = generate_description(p, cat)
+        sku = generate_sku(p, cat, seen)
+        p["sku_elimfilters"] = sku
+        # Flag if we had to use extended suffix (collision resolved)
+        base_prefix = SKU_PREFIX.get(cat, "EX0") if cat != "fuel" else _fuel_prefix(p)
+        digits = re.sub(r'[^A-Z0-9]', '', p.get("part_number","").upper())
+        expected = base_prefix + (digits[-4:] if len(digits) >= 4 else digits.zfill(4))
+        if sku != expected:
+            collisions += 1
         updated += 1
 
     tmp = results_file + ".tmp"
@@ -293,7 +360,8 @@ def process_category(cat: str, sample_only: bool = False):
         json.dump(products, f, ensure_ascii=False, indent=2)
     os.replace(tmp, results_file)
 
-    print(f"  {cat}: {updated} descriptions generated → {results_file}")
+    col_note = f" ({collisions} collisions resolved)" if collisions else ""
+    print(f"  {cat}: {updated} SKUs + descriptions{col_note} → {results_file}")
     return updated
 
 
