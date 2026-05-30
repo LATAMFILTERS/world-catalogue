@@ -9,10 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; min-height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; }
+        html, body { width: 100%; min-height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* ── WAVE CANVAS ── */
+        #waveCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.18; }
 
         /* ── LANDING ── */
-        .landing { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 24px; text-align: center; }
+        .landing { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 24px; text-align: center; }
         .headline { font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px; }
         .headline .hl { color: #FFF12D; }
         .subtitle { color: #555; font-size: 14px; line-height: 1.7; margin-bottom: 44px; max-width: 560px; }
@@ -32,6 +35,14 @@
         .search-btn:hover { background: #fff; }
         .search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+        /* ── VIN HINT ── */
+        .vin-hint { font-size: 11px; color: #333; margin-top: 10px; letter-spacing: 0.3px; }
+        .vin-hint span { color: #555; }
+
+        /* ── DECODED BADGE ── */
+        .decoded-badge { display: none; background: #111; border: 1px solid #FFF12D22; border-left: 3px solid #FFF12D; padding: 10px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 12px; color: #888; text-align: left; }
+        .decoded-badge b { color: #FFF12D; }
+
         /* ── STATS ── */
         .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; width: 100%; max-width: 700px; }
         .stat-num { font-size: 34px; font-weight: 900; color: #FFF12D; letter-spacing: -1px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
@@ -39,21 +50,21 @@
         @media (max-width: 520px) { .stats { grid-template-columns: repeat(2,1fr); } }
 
         /* ── SPINNER ── */
-        .spinner { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; gap: 16px; }
+        .spinner { position: relative; z-index: 1; display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; gap: 16px; }
         .spinner.show { display: flex; }
         .spin { width: 40px; height: 40px; border: 3px solid #222; border-top-color: #FFF12D; border-radius: 50%; animation: spin 0.7s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .spin-label { color: #444; font-size: 13px; }
 
         /* ── NOT FOUND ── */
-        .not-found { display: none; text-align: center; padding: 80px 24px; }
+        .not-found { position: relative; z-index: 1; display: none; text-align: center; padding: 80px 24px; }
         .not-found.show { display: block; }
         .not-found-code { font-size: 64px; font-weight: 900; color: #1a1a1a; letter-spacing: -2px; margin-bottom: 12px; }
         .not-found-msg { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
         .not-found-sub { font-size: 13px; color: #444; margin-bottom: 32px; }
 
         /* ── RESULTS LIST ── */
-        .results-list { display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+        .results-list { position: relative; z-index: 1; display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
         .results-list.show { display: block; }
         .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
         .results-count { font-size: 12px; color: #555; letter-spacing: 0.5px; }
@@ -70,7 +81,7 @@
         @media (max-width: 600px) { .result-card { grid-template-columns: 1fr; } .card-desc { max-width: 100%; white-space: normal; } }
 
         /* ── DETAIL ── */
-        .detail-view { display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+        .detail-view { position: relative; z-index: 1; display: none; padding: 40px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
         .detail-view.show { display: block; }
         .detail-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
         .detail-sku { font-size: 48px; font-weight: 900; color: #FFF12D; letter-spacing: -2px; line-height: 1; }
@@ -78,7 +89,6 @@
         .detail-desc { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 40px; padding: 20px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #FFF12D; }
         .detail-desc:empty { display: none; }
 
-        /* detail tabs */
         .dtabs { display: flex; gap: 0; border-bottom: 1px solid #1a1a1a; margin-bottom: 32px; overflow-x: auto; }
         .dtab { padding: 14px 20px; background: none; border: none; color: #444; cursor: pointer; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; font-family: 'Inter', sans-serif; position: relative; white-space: nowrap; transition: color 0.2s; }
         .dtab.active { color: #FFF12D; }
@@ -98,14 +108,14 @@
         .code-val { font-size: 13px; color: #FFF12D; font-weight: 700; font-family: monospace; word-break: break-all; }
         .empty-tab { color: #333; font-size: 13px; padding: 40px 0; text-align: center; }
 
-        /* ── FOOTER ── */
-        footer { text-align: center; padding: 24px; font-size: 10px; color: #2a2a2a; line-height: 1.5; }
-
-        /* ── LOGO ── */
+        footer { position: relative; z-index: 1; text-align: center; padding: 24px; font-size: 10px; color: #2a2a2a; line-height: 1.5; }
         #eLogo { position: fixed; bottom: 20px; right: 20px; width: 56px; opacity: 0.5; z-index: 100; display: none; }
     </style>
 </head>
 <body>
+
+<!-- WAVE BACKGROUND -->
+<canvas id="waveCanvas"></canvas>
 
 <!-- LANDING -->
 <div id="landing" class="landing">
@@ -115,13 +125,16 @@
     <div class="tabs">
         <button class="tab active" onclick="setMode(this,'part')">Part Number</button>
         <button class="tab" onclick="setMode(this,'equipment')">Equipment / Vehicle</button>
+        <button class="tab" onclick="setMode(this,'vin')">VIN</button>
     </div>
 
     <div class="search-wrap">
+        <div id="decodedBadge" class="decoded-badge"></div>
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Enter part number, SKU or OEM code…" autocomplete="off" autocorrect="off" spellcheck="false">
             <button class="search-btn" id="searchBtn" onclick="doSearch()">Search</button>
         </div>
+        <p id="vinHint" class="vin-hint" style="display:none;">Enter a 17-character VIN or vehicle model name. <span>Example: 1HGBH41JXMN109186</span></p>
     </div>
 
     <div class="stats">
@@ -135,7 +148,7 @@
 <!-- SPINNER -->
 <div id="spinner" class="spinner">
     <div class="spin"></div>
-    <div class="spin-label">Searching database…</div>
+    <div class="spin-label" id="spinLabel">Searching database…</div>
 </div>
 
 <!-- NOT FOUND -->
@@ -188,37 +201,102 @@
     let searchMode = 'part';
     let lastResults = [];
 
-    // ── MODE ──
+    // ── WAVE ANIMATION ────────────────────────────────────────────────────────
+    (function initWave() {
+        const canvas = document.getElementById('waveCanvas');
+        const ctx = canvas.getContext('2d');
+        let t = 0;
+        let W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const waves = [
+            { amp: 38, freq: 3.2, speed: 0.007, phase: 0,    alpha: 0.55, width: 1.8 },
+            { amp: 22, freq: 4.8, speed: 0.011, phase: 2.1,  alpha: 0.35, width: 1.2 },
+            { amp: 14, freq: 7.0, speed: 0.015, phase: 4.4,  alpha: 0.20, width: 0.8 },
+        ];
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            waves.forEach(wave => {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(255, 241, 45, ${wave.alpha})`;
+                ctx.lineWidth = wave.width;
+                for (let x = 0; x <= W; x += 3) {
+                    const ratio = x / W;
+                    const y = H * 0.5
+                        + Math.sin(ratio * Math.PI * wave.freq + t * wave.speed * 1000 + wave.phase) * wave.amp
+                        + Math.sin(ratio * Math.PI * wave.freq * 1.6 + t * wave.speed * 600 + wave.phase + 1) * (wave.amp * 0.4);
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            });
+            t++;
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
+
+    // ── MODE ──────────────────────────────────────────────────────────────────
     function setMode(btn, mode) {
         searchMode = mode;
         document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const input = document.getElementById('searchInput');
-        input.placeholder = mode === 'part'
-            ? 'Enter part number, SKU or OEM code…'
-            : 'Enter equipment model, brand or vehicle type…';
+        const hint  = document.getElementById('vinHint');
+        document.getElementById('decodedBadge').style.display = 'none';
+        if (mode === 'part') {
+            input.placeholder = 'Enter part number, SKU or OEM code…';
+            hint.style.display = 'none';
+        } else if (mode === 'equipment') {
+            input.placeholder = 'Enter equipment model, brand or vehicle type…';
+            hint.style.display = 'none';
+        } else {
+            input.placeholder = 'Enter VIN or vehicle model…';
+            hint.style.display = 'block';
+        }
         input.focus();
     }
 
-    // ── ENTER KEY ──
     document.getElementById('searchInput').addEventListener('keydown', e => {
         if (e.key === 'Enter') doSearch();
     });
 
-    // ── SEARCH ──
+    // ── SEARCH ────────────────────────────────────────────────────────────────
     async function doSearch() {
         const query = document.getElementById('searchInput').value.trim();
         if (query.length < 2) return;
 
+        document.getElementById('decodedBadge').style.display = 'none';
+        document.getElementById('spinLabel').textContent =
+            searchMode === 'vin' ? 'Decoding VIN…' : 'Searching database…';
         showSpinner();
+
         try {
-            const endpoint = searchMode === 'equipment'
-                ? `/api/search-by-application?q=${encodeURIComponent(query)}`
-                : `/api/search?q=${encodeURIComponent(query)}`;
+            let endpoint;
+            if (searchMode === 'equipment') {
+                endpoint = `/api/search-by-application?q=${encodeURIComponent(query)}`;
+            } else if (searchMode === 'vin') {
+                endpoint = `/api/search/vin?vin=${encodeURIComponent(query)}`;
+            } else {
+                endpoint = `/api/search?q=${encodeURIComponent(query)}`;
+            }
 
             const res = await fetch(endpoint);
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             const data = await res.json();
+
+            // Show decoded VIN info if available
+            if (data.decoded && data.decoded.model) {
+                const b = document.getElementById('decodedBadge');
+                b.innerHTML = `VIN decoded: <b>${data.decoded.year} ${data.decoded.make} ${data.decoded.model}</b>`;
+                b.style.display = 'block';
+            }
 
             lastResults = data.products || [];
 
@@ -235,7 +313,7 @@
         }
     }
 
-    // ── VIEWS ──
+    // ── VIEWS ─────────────────────────────────────────────────────────────────
     function hideAll() {
         ['landing','spinner','notFound','resultsList','detailView'].forEach(id => {
             const el = document.getElementById(id);
@@ -247,15 +325,17 @@
 
     function showSpinner() {
         hideAll();
-        document.getElementById('spinner').classList.add('show');
-        document.getElementById('spinner').style.display = 'flex';
+        const s = document.getElementById('spinner');
+        s.classList.add('show');
+        s.style.display = 'flex';
     }
 
     function showNotFound(query) {
         hideAll();
         document.getElementById('notFoundQuery').textContent = `"${query}" was not found in our database.`;
-        document.getElementById('notFound').classList.add('show');
-        document.getElementById('notFound').style.display = 'block';
+        const el = document.getElementById('notFound');
+        el.classList.add('show');
+        el.style.display = 'block';
     }
 
     function showResultsList(products) {
@@ -263,7 +343,7 @@
         document.getElementById('resultCount').textContent = products.length;
         const container = document.getElementById('cardsContainer');
         container.innerHTML = '';
-        products.forEach((p, i) => {
+        products.forEach(p => {
             const desc = strDesc(p.description);
             const card = document.createElement('div');
             card.className = 'result-card';
@@ -277,8 +357,9 @@
                 <div class="card-tech">${esc(p.technology || p.category || '—')}</div>`;
             container.appendChild(card);
         });
-        document.getElementById('resultsList').classList.add('show');
-        document.getElementById('resultsList').style.display = 'block';
+        const el = document.getElementById('resultsList');
+        el.classList.add('show');
+        el.style.display = 'block';
         window.scrollTo(0, 0);
     }
 
@@ -295,7 +376,6 @@
         dDesc.textContent = desc || '';
         dDesc.style.display = desc ? 'block' : 'none';
 
-        // Specs
         const specsGrid = document.getElementById('specsGrid');
         specsGrid.innerHTML = '';
         const specs = [
@@ -303,37 +383,32 @@
             { label: 'Technology',     value: product.technology },
             { label: 'Category',       value: product.category },
             { label: 'Filter Type',    value: product.type },
-            { label: 'Media Type',     value: product.media_type },
-            { label: 'Outer Diameter', value: product.outer_diameter },
-            { label: 'Inner Diameter', value: product.inner_diameter },
-            { label: 'Length',         value: product.length },
+            { label: 'Style',          value: product.style },
+            { label: 'Outer Diameter', value: product.outer_diameter ? product.outer_diameter + ' mm' : null },
+            { label: 'Inner Diameter', value: product.inner_diameter ? product.inner_diameter + ' mm' : null },
+            { label: 'Length / Height',value: product.length ? product.length + ' mm' : null },
             { label: 'Efficiency',     value: product.efficiency },
-            { label: 'Style',          value: product.style }
+            { label: 'Micron Rating',  value: product.micron_rating },
         ];
         specs.forEach(s => {
-            const val = s.value;
             const el = document.createElement('div');
             el.className = 'spec-item';
-            el.innerHTML = `<div class="spec-lbl">${s.label}</div><div class="spec-val ${val ? '' : 'na'}">${esc(val || 'N/A')}</div>`;
+            el.innerHTML = `<div class="spec-lbl">${s.label}</div><div class="spec-val ${s.value ? '' : 'na'}">${esc(s.value || 'N/A')}</div>`;
             specsGrid.appendChild(el);
         });
 
-        // OEM codes
-        buildCodesGrid('oemGrid', toArray(product.oem_codes), 'OEM');
-        // Cross refs: competitor codes + cross_references field
-        const crossCodes = [...toArray(product.competitor_codes), ...toArray(product.cross_references)];
-        buildCodesGrid('crossGrid', [...new Set(crossCodes)], 'ALT');
-        // Equipment
-        buildCodesGrid('equipGrid', toArray(product.applications), 'APP');
+        buildCodesGrid('oemGrid',   toArray(product.oem_codes),        'OEM');
+        buildCodesGrid('crossGrid', toArray(product.competitor_codes),  'ALT');
+        buildCodesGrid('equipGrid', toArray(product.applications),      'APP');
 
-        // Reset tabs
         document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.dpanel').forEach(p => p.classList.remove('active'));
         document.querySelector('.dtab').classList.add('active');
         document.getElementById('dSpecs').classList.add('active');
 
-        document.getElementById('detailView').classList.add('show');
-        document.getElementById('detailView').style.display = 'block';
+        const el = document.getElementById('detailView');
+        el.classList.add('show');
+        el.style.display = 'block';
         window.scrollTo(0, 0);
     }
 
@@ -345,11 +420,11 @@
     function reset() {
         hideAll();
         document.getElementById('landing').style.display = 'flex';
+        document.getElementById('decodedBadge').style.display = 'none';
         document.getElementById('searchInput').value = '';
         document.getElementById('searchInput').focus();
     }
 
-    // ── TAB ──
     function switchDTab(btn, panelId) {
         document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.dpanel').forEach(p => p.classList.remove('active'));
@@ -357,7 +432,7 @@
         document.getElementById(panelId).classList.add('active');
     }
 
-    // ── HELPERS ──
+    // ── HELPERS ───────────────────────────────────────────────────────────────
     function esc(str) {
         return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
@@ -368,7 +443,11 @@
     }
     function toArray(val) {
         if (!val) return [];
-        if (Array.isArray(val)) return val.filter(Boolean);
+        if (Array.isArray(val)) return val.map(item => {
+            if (typeof item === 'string') return item;
+            if (typeof item === 'object') return item.code || item.partNumber || item.sku || item.value || '';
+            return String(item);
+        }).filter(Boolean);
         if (typeof val === 'string') return val.split(',').map(s => s.trim()).filter(Boolean);
         return [];
     }
@@ -379,7 +458,7 @@
             grid.innerHTML = `<p class="empty-tab">No ${type} codes available</p>`;
             return;
         }
-        arr.slice(0, 16).forEach(code => {
+        arr.slice(0, 24).forEach(code => {
             const box = document.createElement('div');
             box.className = 'code-box';
             box.innerHTML = `<div class="code-type">${type}</div><div class="code-val">${esc(code)}</div>`;
@@ -387,7 +466,7 @@
         });
     }
 
-    // ── COUNTERS ──
+    // ── COUNTER ANIMATION ─────────────────────────────────────────────────────
     function counter(id, target, suffix, duration) {
         const el = document.getElementById(id);
         const start = Date.now();
@@ -399,13 +478,11 @@
         })();
     }
 
-    // ── INIT ──
+    // ── INIT ──────────────────────────────────────────────────────────────────
     window.addEventListener('load', async () => {
-        // Initial state
         document.getElementById('landing').style.display = 'flex';
         document.getElementById('searchInput').focus();
 
-        // Load real stats from API
         try {
             const r = await fetch('/api/stats');
             if (r.ok) {
@@ -415,7 +492,6 @@
             }
         } catch (_) {}
 
-        // Animate static stats
         counter('s3', 120, '+', 2100);
         counter('s4', 99,  '%', 1900);
     });
