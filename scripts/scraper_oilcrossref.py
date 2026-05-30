@@ -50,7 +50,7 @@ _EXTRACT_JS = """() => {
 
 def _make_context(pw):
     return pw.chromium.launch_persistent_context(
-        user_data_dir=os.path.join(os.path.expanduser("~"), ".donaldson_profile"),
+        user_data_dir=os.path.join(os.path.expanduser("~"), ".donaldson_profile_oil"),
         channel="chrome",
         headless=True,
         locale="en-US",
