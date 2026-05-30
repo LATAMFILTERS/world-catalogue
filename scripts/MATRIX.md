@@ -167,6 +167,46 @@ Progreso crossrefs (cache — NO borrar):
 
 ---
 
+## ESTRUCTURA JSON — CAMPOS POR PRODUCTO
+
+```
+part_number            Donaldson part number (código base)
+sku_elimfilters        SKU ELIMFILTERS (EL8xxxx, EA1xxxx, etc.)
+category               lube / air / fuel / hydraulic / cabin / ...
+technology             SYNTRAX™ / MACROCORE™ / NANOFORCE™ / ...
+description_elimfilters Descripción branded ELIMFILTERS (inglés)
+dimensions             { od, id, length, width, height, thread } con .in y .mm
+attributes             Specs técnicos (efficiency, media, burst, style...)
+oem_codes[]            Códigos de fabricantes de EQUIPO (Cummins, Atlas Copco, Case IH...)
+brand_crossrefs{}      Filtros equivalentes de otras marcas (Baldwin, Mann, WIX, Fleetguard...)
+alternatives[]         Otros part numbers Donaldson equivalentes
+equipment[]            Equipos/vehículos compatibles { equipment, type, engine }
+```
+
+**`oem_codes` vs `brand_crossrefs`:**
+- `oem_codes` = números de parte usados por fabricantes de equipo (OEM de maquinaria)
+- `brand_crossrefs` = filtros de marcas competidoras equivalentes al producto
+- Fleetguard aparece en `oem_codes` por error de Donaldson — el dato correcto está en `brand_crossrefs`
+
+---
+
+## ESTRATEGIA FLEETGUARD
+
+`brand_crossrefs.FLEETGUARD[]` es la clave foránea para el catálogo Fleetguard.
+
+```
+Donaldson P559000
+  brand_crossrefs.FLEETGUARD = [LF9000, LF9001, LF9011...]
+        ↓ foreign key
+  Fleetguard LF9001 → datos completos desde scraper Fleetguard
+        ↓
+  Productos Fleetguard sin equivalente Donaldson → evaluar aparte
+```
+
+Fleetguard tiene catálogo más grande — los productos sin match en Donaldson se revisan al final.
+
+---
+
 ## NOTAS
 
 - **0/0/0/0 en DBL codes**: normal. DBL = filtros bulk sin datos en Donaldson. P-codes sí tienen datos.
