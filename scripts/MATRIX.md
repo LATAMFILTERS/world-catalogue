@@ -1,109 +1,144 @@
-# SCRAPING MATRIX — Donaldson + Fleetguard
+# SCRAPING MATRIX — Donaldson
 Última actualización: 2026-05-30
 
 ---
 
-## DONALDSON
+## ESTADO GENERAL
 
-| Categoría  | Productos | Máquina | Archivo progreso                      | Estado     |
-|------------|-----------|---------|---------------------------------------|------------|
-| lube       | ~365      | Windows | donaldson_lube_progress.json          | ⚡ EN CURSO |
-| fuel       | 500       | Windows | donaldson_fuel_results.json           | ✅ COMPLETO 498 OK |
-| hydraulic  | ~2177     | Mac     | donaldson_hydraulic_progress.json     | ⚡ EN CURSO recollect |
-| air        | 1366      | Windows | donaldson_air_results.json            | ✅ COMPLETO 1365 OK |
-| air-dryer  | ?         | Windows | donaldson_air-dryer_progress.json     | ⏳ PENDIENTE |
+| Categoría   | Productos | Attrs/OEM/Equip | Brand Crossrefs | Máquina | Estado Crossrefs |
+|-------------|-----------|-----------------|-----------------|---------|------------------|
+| lube        | 351       | ✅ COMPLETO      | ✅ 330/351       | Windows | ✅ COMPLETO       |
+| fuel        | 500       | ✅ COMPLETO      | ❌ 0/500         | Windows | ⏳ PENDIENTE      |
+| air         | 1366      | ✅ COMPLETO      | ❌ 0/1366        | Windows | 🔴 BLOQUEADO*    |
+| air-intake  | 243       | ✅ COMPLETO      | ❌ 0/243         | Windows | 🔴 BLOQUEADO*    |
+| cabin       | 122       | ✅ COMPLETO      | ❌ 0/122         | Windows | 🔴 BLOQUEADO*    |
+| air-dryer   | 3         | ✅ COMPLETO      | ❌ 0/3           | Windows | ⏳ PENDIENTE      |
+| coolant     | 59        | ✅ COMPLETO      | ❌ 0/59          | Windows | ⏳ PENDIENTE†    |
+| hydraulic   | ~2177     | ⚡ EN CURSO (Mac)| ❌ 0             | Mac     | ⏳ DESPUÉS        |
 
-### Comandos Windows
+`*` BLOQUEADO: airfilter-crossreference.com usa selector HTML distinto (no `ul.compat-list`)  
+`†` Coolant: no hay crossref site confirmado — verificar si oilfilter-crossreference.com tiene coolant
+
+---
+
+## FASE 1 — Donaldson Product Scraping (COMPLETO para todos excepto hydraulic)
+
+Cada producto tiene: `part_number`, `description`, `category`, `oem_codes`, `alternatives`, `equipment`, `attributes`
+
+### Comandos (si se necesita re-correr)
 
 ```powershell
-# Lube (si se interrumpe — reanuda automático)
+# Windows
 python scraper_donaldson.py lube
-
-# Fuel (reanuda desde [242/500])
 python scraper_donaldson.py fuel
-
-# Air (COMPLETO)
-# python scraper_donaldson.py air
-
-# Air Dryer
+python scraper_donaldson.py air
+python scraper_donaldson.py air-intake
+python scraper_donaldson.py cabin
 python scraper_donaldson.py air-dryer
+python scraper_donaldson.py coolant
 
-# Hydraulic Windows (después de air, tiene 59 ya guardados)
-python scraper_donaldson.py hydraulic
-
-# Login si cookies expiran
+# Si cookies expiran
 python scraper_donaldson.py --login
 
 # Test 1 producto
 python scraper_donaldson.py --test P167405
 ```
 
-### Comandos Mac
-
 ```bash
-# Hydraulic (en curso con --recollect, 2177 productos)
+# Mac — Hydraulic (en curso)
 python3 scraper_donaldson.py hydraulic
 
-# Si se interrumpe — reanuda automático sin flag extra
+# Si se interrumpe — reanuda solo
 python3 scraper_donaldson.py hydraulic
 
-# Si página vuelve a dar 0/0/0 → renovar cookies
+# Si cookies expiran
 python3 scraper_donaldson.py --login
-# luego:
 python3 scraper_donaldson.py hydraulic
 
-# Test 1 producto para verificar cookies
+# Test
 python3 scraper_donaldson.py --test P502007/18796
 ```
 
 ---
 
-## FLEETGUARD
+## FASE 2 — Brand Crossrefs (scraper_oilcrossref.py)
 
-| Categoría             | Máquina | Archivo progreso                              | Estado     |
-|-----------------------|---------|-----------------------------------------------|------------|
-| air-precleaners       | Windows | fleetguard_air-precleaners_progress.json      | ⏳ PENDIENTE |
-| air-primary-secondary | Windows | fleetguard_air-primary-secondary_progress.json | ⏳ PENDIENTE |
-| lube-cartridge        | Windows | fleetguard_lube-cartridge_progress.json       | ⏳ PENDIENTE |
-| fuel-spin-on          | Windows | fleetguard_fuel-spin-on_progress.json         | ⏳ PENDIENTE |
-| hydraulic-spin-on     | Windows | fleetguard_hydraulic-spin-on_progress.json    | ⏳ PENDIENTE |
+Fuente lube/hydraulic/fuel: `https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}`  
+Fuente air/air-intake/cabin: `https://www.airfilter-crossreference.com/convert/DONALDSON/{part}`
 
-### Comandos Windows — Fleetguard
+Resultado: campo `brand_crossrefs` en cada producto → `{ "BALDWIN": ["B7350", ...], "WIX": [...], ... }`
+
+### ✅ Lube — COMPLETO
 
 ```powershell
-# Air precleaners
-python scraper_fleetguard.py air-precleaners
-
-# Air primary+secondary (inicia desde AF4878)
-python scraper_fleetguard.py air-primary-secondary --start AF4878
-
-# Lube
-python scraper_fleetguard.py lube-cartridge
-
-# Fuel
-python scraper_fleetguard.py fuel-spin-on
-
-# Hydraulic
-python scraper_fleetguard.py hydraulic-spin-on
-
-# Login si cookies expiran
-python scraper_fleetguard.py --login
-
-# Test 1 producto
-python scraper_fleetguard.py --test https://www.fleetguard.com/product/AF4878
+# Ya corrido. 330 de 351 tienen crossrefs.
+# Para re-procesar los 21 que quedaron en {}:
+python scraper_oilcrossref.py --retry-zeros lube
 ```
+
+### ⏳ Fuel — PENDIENTE (oilfilter-crossreference.com)
+
+```powershell
+python scraper_oilcrossref.py fuel
+```
+
+### 🔴 Air / Air-intake / Cabin — BLOQUEADO
+
+**Problema**: `airfilter-crossreference.com` no usa `ul.compat-list`.  
+El HTML de `/convert/DONALDSON/P527682` no contiene `compat`, `convert` ni datos de crossref visibles.  
+**Acción requerida**: Abrir `debug_P527682.html` en navegador → inspeccionar elemento con los links de equivalencias → encontrar el selector correcto → actualizar `_EXTRACT_JS` en `scraper_oilcrossref.py`.
+
+```powershell
+# Paso 1: guardar HTML de prueba
+python scraper_oilcrossref.py --debug air P527682
+# Archivo: debug_P527682.html
+
+# Paso 2: abrir en Chrome → F12 → inspeccionar lista de equivalencias
+# Paso 3: anotar el selector CSS correcto (ej: ul.filter-list, div.results a, etc.)
+
+# Paso 4: actualizar _EXTRACT_JS en scraper_oilcrossref.py con nuevo selector
+# Paso 5: test
+python scraper_oilcrossref.py --test air P527682
+
+# Paso 6: correr
+python scraper_oilcrossref.py air
+python scraper_oilcrossref.py air-intake
+python scraper_oilcrossref.py cabin
+```
+
+### ⏳ Hydraulic — DESPUÉS (esperar que termine Mac)
+
+```powershell
+# Windows (tiene progreso previo)
+python scraper_oilcrossref.py hydraulic
+```
+
+```bash
+# Mac (alternativa si Windows no tiene los results)
+python3 scraper_oilcrossref.py hydraulic
+```
+
+### ⏳ Air-dryer — PENDIENTE
+
+```powershell
+# Solo 3 productos — oilfilter-crossreference.com (son filtros secantes, no aire)
+python scraper_oilcrossref.py air-dryer
+```
+
+> Agregar en CATEGORY_URLS: `"air-dryer": "https://www.oilfilter-crossreference.com/..."`
 
 ---
 
-## ORDEN RECOMENDADO (para minimizar espera)
+## FASE 3 — Después de completar crossrefs
 
-```
-Windows en paralelo con Mac:
-  Mac:     hydraulic Donaldson            (~2177 prods, 6+ horas)
-  Windows: lube → fuel → air → hydraulic  (secuencial)
-  
-Cuando termina Donaldson en Windows → iniciar Fleetguard:
-  air-precleaners → air-primary-secondary → lube-cartridge → fuel-spin-on → hydraulic-spin-on
+Cuando `brand_crossrefs` esté en todos los `*_results.json`, correr:
+
+```bash
+# Construye catálogo unificado Donaldson
+python build_catalog_donaldson.py
+
+# Verifica conteos
+python count_donaldson.py
 ```
 
 ---
@@ -111,24 +146,31 @@ Cuando termina Donaldson en Windows → iniciar Fleetguard:
 ## ARCHIVOS DE SALIDA
 
 ```
-Resultados finales (JSON):
-  donaldson_lube_results.json
-  donaldson_fuel_results.json
-  donaldson_hydraulic_results.json
-  donaldson_air_results.json
-  fleetguard_air-precleaners_results.json
-  fleetguard_air-primary-secondary_results.json
-  fleetguard_lube-cartridge_results.json
-  fleetguard_fuel-spin-on_results.json
-  fleetguard_hydraulic-spin-on_results.json
+Donaldson results (con brand_crossrefs):
+  donaldson_lube_results.json        ← 351 prods ✅
+  donaldson_fuel_results.json        ← 500 prods (crossrefs pendiente)
+  donaldson_air_results.json         ← 1366 prods (crossrefs bloqueado)
+  donaldson_air-intake_results.json  ← 243 prods (crossrefs bloqueado)
+  donaldson_cabin_results.json       ← 122 prods (crossrefs bloqueado)
+  donaldson_air-dryer_results.json   ← 3 prods (crossrefs pendiente)
+  donaldson_coolant_results.json     ← 59 prods (crossrefs pendiente)
+  donaldson_hydraulic_results.json   ← ~2177 prods ⚡ en curso Mac
+
+Progreso crossrefs (cache — NO borrar):
+  donaldson_lube_crossref_progress.json
+  donaldson_hydraulic_crossref_progress.json   (cuando corra)
+  donaldson_fuel_crossref_progress.json        (cuando corra)
+  donaldson_air_crossref_progress.json         (cuando corra)
 ```
 
 ---
 
 ## NOTAS
 
-- **0/0/0/0 en DBL codes**: normal. DBL = filtros bulk sin datos de tabs. P-codes sí tienen datos.
-- **Si cookies expiran**: corre `--login`, navega el sitio 30 seg, ENTER. Luego reanuda.
-- **Progreso se guarda por producto**: si se interrumpe, reanuda solo.
+- **0/0/0/0 en DBL codes**: normal. DBL = filtros bulk sin datos en Donaldson. P-codes sí tienen datos.
+- **Si cookies expiran**: `--login`, navega 30 seg, ENTER. Luego reanuda.
+- **Progreso se guarda por producto**: si se interrumpe, reanuda solo (no re-procesa cache).
+- **`--retry-zeros <cat>`**: borra del cache los `{}` para re-intentar productos sin resultados.
 - **Mac usa `python3`**, Windows usa `python`.
 - **NO mezclar bases de datos todavía** — solo colectar códigos raw.
+- **Fleetguard**: ignorar por ahora.
