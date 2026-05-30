@@ -31,8 +31,7 @@ PAUSE = (4, 9)
 # Selector combinado — se confirma cuál usa el sitio con --test/--debug
 _EXTRACT_JS = """() => {
     const result = {};
-    const sel = 'ul.compat-list li a[href*="/convert/"], ul.twocolumns li a[href*="/convert/"]';
-    const links = document.querySelectorAll(sel);
+    const links = document.querySelectorAll('li a[href^="/convert/"]');
     for (const a of links) {
         const parts = a.getAttribute('href').split('/convert/');
         if (parts.length < 2) continue;
@@ -71,7 +70,7 @@ def fetch_crossrefs_page(page, part: str) -> dict:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
-                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"], ul.twocolumns li a[href*=\"/convert/\"]').length > 0",
+                "() => document.querySelectorAll('li a[href^=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
@@ -154,7 +153,7 @@ def test_one(part: str, debug: bool = False):
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
-                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"], ul.twocolumns li a[href*=\"/convert/\"]').length > 0",
+                "() => document.querySelectorAll('li a[href^=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
