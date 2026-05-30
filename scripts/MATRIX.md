@@ -205,6 +205,11 @@ Donaldson P559000
 
 Fleetguard tiene catálogo más grande — los productos sin match en Donaldson se revisan al final.
 
+**`alternatives[]` — pendiente multimark:**
+Actualmente solo contiene P-codes Donaldson equivalentes.
+Cuando se integre Fleetguard evaluar: `alternatives_donaldson[]` + `alternatives_fleetguard[]`
+o un formato unificado `alternatives: [{brand, part_number}]`. Decidir cuando tengamos los datos.
+
 ---
 
 ## NOTAS
