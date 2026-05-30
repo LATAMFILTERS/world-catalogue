@@ -8,7 +8,7 @@ Uso:
     python scraper_aircrossref.py air
     python scraper_aircrossref.py air-intake
     python scraper_aircrossref.py cabin
-    python scraper_aircrossref.py air air-intake cabin
+    python scraper_aircrossref.py air air-intake cabin air-dryer
     python scraper_aircrossref.py --retry-zeros air
     python scraper_aircrossref.py --test P527682
     python scraper_aircrossref.py --debug P527682
@@ -28,7 +28,7 @@ logging.basicConfig(
 )
 
 BASE_URL = "https://www.airfilter-crossreference.com/convert/DONALDSON/{part}"
-VALID_CATS = {"air", "air-intake", "cabin"}
+VALID_CATS = {"air", "air-intake", "cabin", "air-dryer"}
 PAUSE = (4, 9)
 
 _EXTRACT_JS = """() => {

@@ -64,7 +64,7 @@ python3 scraper_donaldson.py --test P502007/18796
 ## FASE 2A — Brand Crossrefs OIL (scraper_oilcrossref.py)
 
 Fuente: `https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}`  
-Categorías: lube, hydraulic, fuel, air-dryer  
+Categorías: lube, hydraulic, fuel  
 Selector: `ul.compat-list li a[href*="/convert/"]`
 
 ### ✅ Lube — COMPLETO
@@ -91,18 +91,13 @@ python scraper_oilcrossref.py hydraulic
 python3 scraper_oilcrossref.py hydraulic
 ```
 
-### ⏳ Air-dryer — PENDIENTE
-
-```powershell
-python scraper_oilcrossref.py air-dryer
-```
 
 ---
 
 ## FASE 2B — Brand Crossrefs AIR (scraper_aircrossref.py)
 
 Fuente: `https://www.airfilter-crossreference.com/convert/DONALDSON/{part}`  
-Categorías: air, air-intake, cabin  
+Categorías: air, air-intake, cabin, air-dryer  
 Selector: `ul.twocolumns li a[href*="/convert/"]`
 
 ### ⏳ Air — PENDIENTE
@@ -126,6 +121,12 @@ python scraper_aircrossref.py air-intake
 
 ```powershell
 python scraper_aircrossref.py cabin
+```
+
+### ⏳ Air-dryer — PENDIENTE
+
+```powershell
+python scraper_aircrossref.py air-dryer
 ```
 
 ---
