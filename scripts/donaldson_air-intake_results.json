@@ -5904,7 +5904,9 @@
       "NMFC Code": "069100-02",
       "UPC Code": "742330241080"
     },
-    "alternatives": [],
+    "alternatives": [
+      "D080056"
+    ],
     "equipment": [],
     "scraped_at": "2026-05-29T20:56:07.692247",
     "error": null,

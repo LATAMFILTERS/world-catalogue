@@ -4325,7 +4325,9 @@
       "NMFC Code": "069100-13",
       "UPC Code": "742330109533"
     },
-    "alternatives": [],
+    "alternatives": [
+      "P550162"
+    ],
     "equipment": [
       {
         "equipment": "ATLAS WEYHAUSEN 32C",
@@ -129804,7 +129806,9 @@
       "NMFC Code": "069100-13",
       "UPC Code": "742330106594"
     },
-    "alternatives": [],
+    "alternatives": [
+      "P551343"
+    ],
     "equipment": [
       {
         "equipment": "FREIGHTLINER FL360",
@@ -426916,7 +426920,9 @@
       "NMFC Code": "069100-13",
       "UPC Code": "742330045558"
     },
-    "alternatives": [],
+    "alternatives": [
+      "P557207"
+    ],
     "equipment": [
       {
         "equipment": "AKERMAN 10",

@@ -23,7 +23,9 @@
       "NMFC Code": "069100-13",
       "UPC Code": "742330192696"
     },
-    "alternatives": [],
+    "alternatives": [
+      "DBC4086"
+    ],
     "equipment": [
       {
         "equipment": "VOLVO VH 200",
