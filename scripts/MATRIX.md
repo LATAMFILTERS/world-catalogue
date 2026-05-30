@@ -5,19 +5,19 @@
 
 ## ESTADO GENERAL
 
-| Categoría   | Productos | Attrs/OEM/Equip | Brand Crossrefs | Máquina | Estado Crossrefs |
-|-------------|-----------|-----------------|-----------------|---------|------------------|
-| lube        | 351       | ✅ COMPLETO      | ✅ 330/351       | Windows | ✅ COMPLETO       |
-| fuel        | 500       | ✅ COMPLETO      | ❌ 0/500         | Windows | ⏳ PENDIENTE      |
-| air         | 1366      | ✅ COMPLETO      | ❌ 0/1366        | Windows | 🔴 BLOQUEADO*    |
-| air-intake  | 243       | ✅ COMPLETO      | ❌ 0/243         | Windows | 🔴 BLOQUEADO*    |
-| cabin       | 122       | ✅ COMPLETO      | ❌ 0/122         | Windows | 🔴 BLOQUEADO*    |
-| air-dryer   | 3         | ✅ COMPLETO      | ❌ 0/3           | Windows | ⏳ PENDIENTE      |
-| coolant     | 59        | ✅ COMPLETO      | ❌ 0/59          | Windows | ⏳ PENDIENTE†    |
-| hydraulic   | ~2177     | ⚡ EN CURSO (Mac)| ❌ 0             | Mac     | ⏳ DESPUÉS        |
+| Categoría      | Productos | Attrs/OEM/Equip  | Brand Crossrefs | Script crossref          | Estado Crossrefs |
+|----------------|-----------|------------------|-----------------|--------------------------|------------------|
+| lube           | 351       | ✅ COMPLETO       | ✅ 330/351       | scraper_oilcrossref.py   | ✅ COMPLETO       |
+| fuel           | 500       | ✅ COMPLETO       | ❌ 0/500         | scraper_fuelcrossref.py  | ⏳ PENDIENTE      |
+| fuel-separator | (en fuel) | (en fuel)         | (en fuel)        | scraper_fuelcrossref.py  | (en fuel)         |
+| hydraulic      | ~2177     | ⚡ EN CURSO (Mac) | ❌ 0             | scraper_oilcrossref.py   | ⏳ DESPUÉS        |
+| air            | 1366      | ✅ COMPLETO       | ❌ 0/1366        | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| air-intake     | 243       | ✅ COMPLETO       | ❌ 0/243         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| cabin          | 122       | ✅ COMPLETO       | ❌ 0/122         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| air-dryer      | 3         | ✅ COMPLETO       | ❌ 0/3           | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| coolant        | 59        | ✅ COMPLETO       | —               | —                        | sin sitio        |
 
-`*` BLOQUEADO: airfilter-crossreference.com usa selector HTML distinto (no `ul.compat-list`)  
-`†` Coolant: no hay crossref site confirmado — verificar si oilfilter-crossreference.com tiene coolant
+**fuel-separator**: incluido en `donaldson_fuel_results.json` (500 productos). No requiere scraping separado.
 
 ---
 

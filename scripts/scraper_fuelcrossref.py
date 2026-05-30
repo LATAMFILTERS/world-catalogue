@@ -1,16 +1,14 @@
 """
-scraper_oilcrossref.py — Cross-reference entre marcas de filtros
-Fuente: https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}
+scraper_fuelcrossref.py — Cross-reference entre marcas de filtros de combustible
+Fuente: https://www.fuelfilter-crossreference.com/convert/DONALDSON/{part}
 
-Categorías: lube, hydraulic, fuel, air-dryer
+Categoría: fuel (incluye fuel separators — todos en donaldson_fuel_results.json)
 
 Uso:
-    python scraper_oilcrossref.py lube
-    python scraper_oilcrossref.py fuel
-    python scraper_oilcrossref.py lube hydraulic fuel
-    python scraper_oilcrossref.py --retry-zeros lube
-    python scraper_oilcrossref.py --test P552100
-    python scraper_oilcrossref.py --debug P552100
+    python scraper_fuelcrossref.py fuel
+    python scraper_fuelcrossref.py --retry-zeros fuel
+    python scraper_fuelcrossref.py --test P550225
+    python scraper_fuelcrossref.py --debug P550225
 """
 
 import json, time, random, logging, os, sys
@@ -21,18 +19,20 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
     handlers=[
-        logging.FileHandler("scraper_oilcrossref.log", encoding="utf-8"),
+        logging.FileHandler("scraper_fuelcrossref.log", encoding="utf-8"),
         logging.StreamHandler(),
     ],
 )
 
-BASE_URL = "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}"
-VALID_CATS = {"lube", "hydraulic"}
+BASE_URL = "https://www.fuelfilter-crossreference.com/convert/DONALDSON/{part}"
+VALID_CATS = {"fuel"}
 PAUSE = (4, 9)
 
+# Selector combinado — se confirma cuál usa el sitio con --test/--debug
 _EXTRACT_JS = """() => {
     const result = {};
-    const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
+    const sel = 'ul.compat-list li a[href*="/convert/"], ul.twocolumns li a[href*="/convert/"]';
+    const links = document.querySelectorAll(sel);
     for (const a of links) {
         const parts = a.getAttribute('href').split('/convert/');
         if (parts.length < 2) continue;
@@ -71,7 +71,7 @@ def fetch_crossrefs_page(page, part: str) -> dict:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
-                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"]').length > 0",
+                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"], ul.twocolumns li a[href*=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
@@ -92,7 +92,7 @@ def process_category(pw, name: str):
     progress_file = f"donaldson_{name}_crossref_progress.json"
 
     if not Path(results_file).exists():
-        logging.error(f"No existe {results_file}")
+        logging.error(f"No existe {results_file} — scrapea Donaldson primero: python scraper_donaldson.py {name}")
         return
 
     with open(results_file, encoding="utf-8") as f:
@@ -154,7 +154,7 @@ def test_one(part: str, debug: bool = False):
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
-                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"]').length > 0",
+                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"], ul.twocolumns li a[href*=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
@@ -176,7 +176,7 @@ def test_one(part: str, debug: bool = False):
         for brand, codes in sorted(crossrefs.items()):
             print(f"  {brand:25} {codes}")
     else:
-        print("  (sin resultados)")
+        print("  (sin resultados — verificar selector con --debug)")
 
 
 if __name__ == "__main__":
@@ -184,19 +184,17 @@ if __name__ == "__main__":
 
     if not argv:
         print("Uso:")
-        print("  python scraper_oilcrossref.py lube")
-        print("  python scraper_oilcrossref.py hydraulic")
-        print("  python scraper_oilcrossref.py lube hydraulic")
-        print("  python scraper_oilcrossref.py --retry-zeros lube")
-        print("  python scraper_oilcrossref.py --test P552100")
-        print("  python scraper_oilcrossref.py --debug P552100")
+        print("  python scraper_fuelcrossref.py fuel")
+        print("  python scraper_fuelcrossref.py --retry-zeros fuel")
+        print("  python scraper_fuelcrossref.py --test P550225")
+        print("  python scraper_fuelcrossref.py --debug P550225")
         sys.exit(0)
 
     if argv[0] == "--debug":
-        part = argv[1] if len(argv) > 1 else "P552100"
+        part = argv[1] if len(argv) > 1 else "P550225"
         test_one(part, debug=True)
     elif argv[0] == "--test":
-        part = argv[1] if len(argv) > 1 else "P552100"
+        part = argv[1] if len(argv) > 1 else "P550225"
         test_one(part)
     elif "--retry-zeros" in argv:
         cats = [a for a in argv if not a.startswith("--")]
