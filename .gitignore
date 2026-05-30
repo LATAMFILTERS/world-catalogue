@@ -20,3 +20,7 @@ __pycache__/
 # But allow production videos in frontend
 !frontend/public/images/*.mp4
 !frontend/out/images/*.mp4
+
+# Graphify
+graphify-out/manifest.json
+graphify-out/cache/
