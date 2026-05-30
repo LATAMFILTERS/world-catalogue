@@ -61,7 +61,7 @@ python3 scraper_donaldson.py --test P502007/18796
 
 ---
 
-## FASE 2 — Brand Crossrefs (scraper_oilcrossref.py)
+## FASE 2 — Brand Crossrefs (scraper_crossref.py)
 
 Fuente lube/hydraulic/fuel: `https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}`  
 Fuente air/air-intake/cabin: `https://www.airfilter-crossreference.com/convert/DONALDSON/{part}`
@@ -73,56 +73,49 @@ Resultado: campo `brand_crossrefs` en cada producto → `{ "BALDWIN": ["B7350", 
 ```powershell
 # Ya corrido. 330 de 351 tienen crossrefs.
 # Para re-procesar los 21 que quedaron en {}:
-python scraper_oilcrossref.py --retry-zeros lube
+python scraper_crossref.py --retry-zeros lube
 ```
 
 ### ⏳ Fuel — PENDIENTE (oilfilter-crossreference.com)
 
 ```powershell
-python scraper_oilcrossref.py fuel
+python scraper_crossref.py fuel
 ```
 
-### 🔴 Air / Air-intake / Cabin — BLOQUEADO
+### ⏳ Air / Air-intake / Cabin — LISTO (airfilter-crossreference.com)
 
-**Problema**: `airfilter-crossreference.com` no usa `ul.compat-list`.  
-El HTML de `/convert/DONALDSON/P527682` no contiene `compat`, `convert` ni datos de crossref visibles.  
-**Acción requerida**: Abrir `debug_P527682.html` en navegador → inspeccionar elemento con los links de equivalencias → encontrar el selector correcto → actualizar `_EXTRACT_JS` en `scraper_oilcrossref.py`.
+**Fix aplicado**: selector combinado cubre ambos sitios.
+- `oilfilter-crossreference.com` → `ul.compat-list`
+- `airfilter-crossreference.com` → `ul.twocolumns`
 
 ```powershell
-# Paso 1: guardar HTML de prueba
-python scraper_oilcrossref.py --debug air P527682
-# Archivo: debug_P527682.html
+# Test primero
+python scraper_crossref.py --test air P527682
+# Debe mostrar: BALDWIN RS3518, FLEETGUARD AF25139, FRAM CA7140, WIX 46556, etc.
 
-# Paso 2: abrir en Chrome → F12 → inspeccionar lista de equivalencias
-# Paso 3: anotar el selector CSS correcto (ej: ul.filter-list, div.results a, etc.)
-
-# Paso 4: actualizar _EXTRACT_JS en scraper_oilcrossref.py con nuevo selector
-# Paso 5: test
-python scraper_oilcrossref.py --test air P527682
-
-# Paso 6: correr
-python scraper_oilcrossref.py air
-python scraper_oilcrossref.py air-intake
-python scraper_oilcrossref.py cabin
+# Si OK → correr
+python scraper_crossref.py air
+python scraper_crossref.py air-intake
+python scraper_crossref.py cabin
 ```
 
 ### ⏳ Hydraulic — DESPUÉS (esperar que termine Mac)
 
 ```powershell
 # Windows (tiene progreso previo)
-python scraper_oilcrossref.py hydraulic
+python scraper_crossref.py hydraulic
 ```
 
 ```bash
 # Mac (alternativa si Windows no tiene los results)
-python3 scraper_oilcrossref.py hydraulic
+python3 scraper_crossref.py hydraulic
 ```
 
 ### ⏳ Air-dryer — PENDIENTE
 
 ```powershell
 # Solo 3 productos — oilfilter-crossreference.com (son filtros secantes, no aire)
-python scraper_oilcrossref.py air-dryer
+python scraper_crossref.py air-dryer
 ```
 
 > Agregar en CATEGORY_URLS: `"air-dryer": "https://www.oilfilter-crossreference.com/..."`
