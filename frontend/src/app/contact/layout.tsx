@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     site: '@elimfilters',
     title: 'Contact ELIMFILTERS® | Industrial Filtration Support',
     description:
-      'Reach our global filtration team for technical support, OEM cross-references, and distributor inquiries.',
+      'Contact ELIMFILTERS® for technical filtration support, OEM cross-references, and ISO-compliant system specification across mining, agriculture, marine, and heavy industry.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
