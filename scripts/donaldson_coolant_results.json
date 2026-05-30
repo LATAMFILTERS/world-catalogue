@@ -367,7 +367,8 @@
         "manufacturer": "VOLVO",
         "part_number": "21388479"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "DBC4085",
@@ -833,7 +834,8 @@
         "manufacturer": "INTERNATIONAL",
         "part_number": "1833690C1"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "DBC4086",
@@ -1123,7 +1125,8 @@
         "manufacturer": "VOLVO",
         "part_number": "3969696"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "DBC4088",
@@ -1402,7 +1405,8 @@
         "manufacturer": "HYUNDAI",
         "part_number": "11ND70211"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "DBC4089",
@@ -1447,7 +1451,8 @@
         "manufacturer": "VMC",
         "part_number": "WF4089"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "DBC4785",
@@ -1565,7 +1570,8 @@
         "manufacturer": "PACCAR",
         "part_number": "1843659PE"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171365",
@@ -1597,7 +1603,8 @@
         "manufacturer": "FREIGHTLINER",
         "part_number": "DNP171365"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171366",
@@ -1625,7 +1632,8 @@
         "manufacturer": "FORD",
         "part_number": "9576P171366"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171367",
@@ -1661,7 +1669,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "905813"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171368",
@@ -1697,7 +1706,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "905814"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171369",
@@ -1729,7 +1739,8 @@
         "manufacturer": "GATES",
         "part_number": "26254"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171371",
@@ -1757,7 +1768,8 @@
         "manufacturer": "GATES",
         "part_number": "24810"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171374",
@@ -1793,7 +1805,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915673"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171375",
@@ -1825,7 +1838,8 @@
         "manufacturer": "GATES",
         "part_number": "24818"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171376",
@@ -1893,7 +1907,8 @@
         "manufacturer": "WILMAR",
         "part_number": "34616"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171377",
@@ -1925,7 +1940,8 @@
         "manufacturer": "GATES",
         "part_number": "24822"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171378",
@@ -1969,7 +1985,8 @@
         "manufacturer": "WILMAR",
         "part_number": "WR40090"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171379",
@@ -2001,7 +2018,8 @@
         "manufacturer": "GATES",
         "part_number": "24826"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171380",
@@ -2041,7 +2059,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915674"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171381",
@@ -2089,7 +2108,8 @@
         "manufacturer": "UNIT RIG EQUIPMENT",
         "part_number": "SC015042047"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171382",
@@ -2125,7 +2145,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915675"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171383",
@@ -2157,7 +2178,8 @@
         "manufacturer": "GATES",
         "part_number": "24838"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171384",
@@ -2201,7 +2223,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915676"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171385",
@@ -2229,7 +2252,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915677"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171386",
@@ -2257,7 +2281,8 @@
         "manufacturer": "GATES",
         "part_number": "248443PLY"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171387",
@@ -2293,7 +2318,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "377192"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171388",
@@ -2325,7 +2351,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "377196"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171389",
@@ -2357,7 +2384,8 @@
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
         "part_number": "915678"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171390",
@@ -2426,7 +2454,8 @@
         "manufacturer": "GATES",
         "part_number": "24816"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171391",
@@ -2454,7 +2483,8 @@
         "manufacturer": "GATES",
         "part_number": "24824"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171392",
@@ -2482,7 +2512,8 @@
         "manufacturer": "GATES",
         "part_number": "24832"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171394",
@@ -2510,7 +2541,8 @@
         "manufacturer": "GATES",
         "part_number": "24840"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P171395",
@@ -2538,7 +2570,8 @@
         "manufacturer": "GATES",
         "part_number": "24844"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P173714",
@@ -2560,7 +2593,8 @@
     "equipment": [],
     "scraped_at": "2026-05-29T21:43:27.998055",
     "error": null,
-    "oem_codes": []
+    "oem_codes": [],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P174766",
@@ -2619,7 +2653,8 @@
         "manufacturer": "CASE/CASE IH",
         "part_number": "A152821"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P550840",
@@ -2645,7 +2680,8 @@
     "equipment": [],
     "scraped_at": "2026-05-29T21:43:51.805882",
     "error": null,
-    "oem_codes": []
+    "oem_codes": [],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P550866",
@@ -3398,7 +3434,18 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "PMWF2126"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89112"
+      ],
+      "FRAM": [
+        "PR8693"
+      ],
+      "GOODWILL": [
+        "OGC1056"
+      ]
+    }
   },
   {
     "part_number": "P550867",
@@ -3966,7 +4013,63 @@
         "manufacturer": "VMC",
         "part_number": "WF550867"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89113"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2127"
+      ],
+      "BALDWIN": [
+        "B5087"
+      ],
+      "CUMMINS": [
+        "3680434"
+      ],
+      "FLEETGUARD": [
+        "WF2127"
+      ],
+      "FLEETRITE": [
+        "WFR82127"
+      ],
+      "FRAM": [
+        "PR8694"
+      ],
+      "GONHER": [
+        "GP2127W"
+      ],
+      "GRAINGER": [
+        "2KZP2"
+      ],
+      "HASTINGS": [
+        "WC23"
+      ],
+      "HIFI": [
+        "WE2127"
+      ],
+      "INGERSOLL-RAND": [
+        "57645202"
+      ],
+      "KRALINATOR": [
+        "CM2"
+      ],
+      "LUBERFINER": [
+        "LFW2127",
+        "LFW21271"
+      ],
+      "MACK": [
+        "5839WF2127"
+      ],
+      "NAPA": [
+        "4113"
+      ],
+      "WIX": [
+        "24113",
+        "524113",
+        "881043765"
+      ]
+    }
   },
   {
     "part_number": "P551008",
@@ -4637,7 +4740,8 @@
         "manufacturer": "MERCEDES-BENZ",
         "part_number": "A4722030255"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P551309",
@@ -4692,7 +4796,8 @@
         "manufacturer": "VMC",
         "part_number": "WF551309"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P552055",
@@ -5692,7 +5797,239 @@
         "manufacturer": "WHITE",
         "part_number": "207010002"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89074"
+      ],
+      "AP": [
+        "AP3539A"
+      ],
+      "AC-DELCO": [
+        "WF102",
+        "WF104",
+        "WF115F"
+      ],
+      "ACT": [
+        "FDW028"
+      ],
+      "AIR-MAZE": [
+        "AMW2054",
+        "AMW2056"
+      ],
+      "AVELING-BARFORD": [
+        "SWT603052"
+      ],
+      "BALDWIN": [
+        "BW5140"
+      ],
+      "BAUDOUIN": [
+        "15039040H",
+        "15039050T"
+      ],
+      "CATERPILLAR": [
+        "1W5518",
+        "2266566",
+        "3I1254",
+        "3I1285",
+        "3I1291"
+      ],
+      "CHAMP-LAB": [
+        "LFW2055",
+        "LFW4013",
+        "PW4013"
+      ],
+      "CLARK": [
+        "2512644",
+        "963797"
+      ],
+      "COACH-GUARD": [
+        "T061042"
+      ],
+      "COLES": [
+        "8769674"
+      ],
+      "CUMMINS": [
+        "258264",
+        "3315788",
+        "4096199"
+      ],
+      "ERF": [
+        "C3305370"
+      ],
+      "FAUN-FRISCH": [
+        "4787502"
+      ],
+      "FIAT": [
+        "61259013",
+        "70698281",
+        "78300099",
+        "78300224"
+      ],
+      "FLEETGUARD": [
+        "WF2014",
+        "WF2054",
+        "WF2054A",
+        "WF2055",
+        "WF2056",
+        "WF2066",
+        "WF2145"
+      ],
+      "FLEETRITE": [
+        "WFR82014",
+        "WFR82054",
+        "WFR82055",
+        "WFR82056",
+        "WFR82066"
+      ],
+      "FLXIBLE": [
+        "8710541"
+      ],
+      "FODEN": [
+        "Y02729105",
+        "Y05013401"
+      ],
+      "FORD": [
+        "749F8A469BAA"
+      ],
+      "FRAM": [
+        "PR3753",
+        "PR7570"
+      ],
+      "GENERAL-MOTORS": [
+        "23507189",
+        "23508426",
+        "6439696",
+        "6439700"
+      ],
+      "GONHER": [
+        "GP1013Q"
+      ],
+      "GRAINGER": [
+        "2KZB8"
+      ],
+      "GUD": [
+        "Z241"
+      ],
+      "HASTINGS": [
+        "WC4"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A17002"
+      ],
+      "HENGST": [
+        "H29WF"
+      ],
+      "INGERSOLL-RAND": [
+        "56985971"
+      ],
+      "JOHN-DEERE": [
+        "AR94652"
+      ],
+      "KAWASAKI": [
+        "YE3100304"
+      ],
+      "KENWORTH": [
+        "K251341",
+        "KW2054",
+        "KW2055"
+      ],
+      "KOMATSU": [
+        "6004111030",
+        "6004111160",
+        "6004111161",
+        "6004111170",
+        "6004111171",
+        "6004111420",
+        "CUWF2054"
+      ],
+      "KRALINATOR": [
+        "W300"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "2434",
+        "4123630"
+      ],
+      "LIEBHERR": [
+        "7402019"
+      ],
+      "LUBERFINER": [
+        "LFW2055",
+        "LFW4013",
+        "LFW5870"
+      ],
+      "MACK": [
+        "5839WF2054"
+      ],
+      "MOTORCRAFT": [
+        "FW8"
+      ],
+      "NATIONAL-STOCK-NUMBER": [
+        "2910010428768"
+      ],
+      "NORTHERN-LIGHTS": [
+        "2415001"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "1413608",
+        "4799646",
+        "763554"
+      ],
+      "PBR": [
+        "BW2006"
+      ],
+      "PERRY": [
+        "PFC30"
+      ],
+      "POCLAIN": [
+        "X1350558"
+      ],
+      "PREVOST-CAR": [
+        "550629"
+      ],
+      "PUROLATOR": [
+        "PW4455",
+        "W64455"
+      ],
+      "ROLLS-ROYCE": [
+        "OE46263"
+      ],
+      "SAKURA": [
+        "WC6901",
+        "WC7101"
+      ],
+      "SISU": [
+        "1696300321"
+      ],
+      "SURE": [
+        "SFC2055"
+      ],
+      "USX": [
+        "1611012980"
+      ],
+      "VAN-HOOL": [
+        "632207450"
+      ],
+      "VOLVO-CARS": [
+        "207015007",
+        "79286795"
+      ],
+      "WABCO": [
+        "WA1162"
+      ],
+      "WHITE": [
+        "207010002",
+        "207015007",
+        "27118239"
+      ],
+      "WIX": [
+        "24157"
+      ],
+      "WOODGATE": [
+        "WGW2056",
+        "WGW9096"
+      ]
+    }
   },
   {
     "part_number": "P552070",
@@ -6109,7 +6446,18 @@
         "manufacturer": "KNECHT",
         "part_number": "WFC19"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89370"
+      ],
+      "FRAM": [
+        "PR3414"
+      ],
+      "PARKER": [
+        "RA-2070"
+      ]
+    }
   },
   {
     "part_number": "P552071",
@@ -10519,7 +10867,8 @@
         "manufacturer": "BOMAG",
         "part_number": "31701003"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P552072",
@@ -11044,7 +11393,8 @@
         "manufacturer": "FURUKAWA",
         "part_number": "1257937H1"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P552073",
@@ -12068,7 +12418,18 @@
         "manufacturer": "BOMAG",
         "part_number": "31701000"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "96326"
+      ],
+      "FRAM": [
+        "PR3414"
+      ],
+      "PARKER": [
+        "RA-2016"
+      ]
+    }
   },
   {
     "part_number": "P552074",
@@ -12833,7 +13194,15 @@
         "manufacturer": "FODEN",
         "part_number": "Y05815412"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89197"
+      ],
+      "FRAM": [
+        "PR3911"
+      ]
+    }
   },
   {
     "part_number": "P552075",
@@ -14425,7 +14794,18 @@
         "manufacturer": "BOMAG",
         "part_number": "31701075"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89075"
+      ],
+      "FRAM": [
+        "PR3911"
+      ],
+      "PARKER": [
+        "RA-2013"
+      ]
+    }
   },
   {
     "part_number": "P552076",
@@ -15133,7 +15513,130 @@
         "manufacturer": "XCMG",
         "part_number": "800152501"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "FRAM": [
+        "PR3911"
+      ],
+      "AC-DELCO": [
+        "WF101F",
+        "WF115"
+      ],
+      "ALLIANCE": [
+        "ABP-N10G-WF2074"
+      ],
+      "AMC": [
+        "KO1541"
+      ],
+      "BALDWIN": [
+        "BW5074",
+        "BW5075",
+        "BW5076"
+      ],
+      "BIG-A": [
+        "96074"
+      ],
+      "CARQUEST": [
+        "89197"
+      ],
+      "CASE": [
+        "90-7707T1",
+        "J318318",
+        "S302030"
+      ],
+      "CATERPILLAR": [
+        "3I-1291"
+      ],
+      "CLARK": [
+        "12565210"
+      ],
+      "COACH-GUARD": [
+        "T06-1039"
+      ],
+      "CUMMINS": [
+        "3315114",
+        "3316053",
+        "3318318",
+        "3318319",
+        "4058965"
+      ],
+      "FLEETGUARD": [
+        "WF2074",
+        "WF2075",
+        "WF2076",
+        "WF2104"
+      ],
+      "FLEETRITE": [
+        "WFR-82074"
+      ],
+      "FORD": [
+        "E7HZ-8A424-C",
+        "E7HZ-8A824-C",
+        "E8HN-8A424-AA"
+      ],
+      "GENERAL-MOTORS": [
+        "25012897"
+      ],
+      "HASTINGS": [
+        "WC20",
+        "WC7"
+      ],
+      "HITACHI": [
+        "4228689",
+        "4299640"
+      ],
+      "IHC-NAVISTAR": [
+        "1815580C1",
+        "1815588C1",
+        "1820361-C1",
+        "3847851"
+      ],
+      "KOMATSU": [
+        "600-411-1420"
+      ],
+      "KRALINATOR": [
+        "C24"
+      ],
+      "LUBERFINER": [
+        "LFW4074",
+        "LFW4075"
+      ],
+      "MANN": [
+        "WA940-17"
+      ],
+      "MOTORCRAFT": [
+        "FW-19",
+        "FW-8A"
+      ],
+      "NAPA": [
+        "4074"
+      ],
+      "NEW-HOLLAND": [
+        "861361"
+      ],
+      "PERRY": [
+        "PFC-24A"
+      ],
+      "PUROLATOR": [
+        "K50010",
+        "S80014",
+        "W54454",
+        "W64455"
+      ],
+      "SISU": [
+        "169300441"
+      ],
+      "VOLVO-CARS": [
+        "12968663",
+        "3946515",
+        "9912-18318"
+      ],
+      "WIX": [
+        "24074",
+        "24157",
+        "24197"
+      ]
+    }
   },
   {
     "part_number": "P552096",
@@ -17187,7 +17690,8 @@
         "manufacturer": "VOLVO",
         "part_number": "1699826"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P552106",
@@ -17266,7 +17770,15 @@
         "manufacturer": "GRADALL",
         "part_number": "80994023"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89206"
+      ],
+      "FRAM": [
+        "PR3304"
+      ]
+    }
   },
   {
     "part_number": "P554019",
@@ -17654,7 +18166,8 @@
         "manufacturer": "VOLVO",
         "part_number": "3945411"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P554071",
@@ -30192,7 +30705,462 @@
         "manufacturer": "AMERICAN MOTORS CORPORATION",
         "part_number": "SFC2071"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89071"
+      ],
+      "AC-DELCO": [
+        "WF100",
+        "WF100F",
+        "WF4"
+      ],
+      "AG-CHEM-EQUIPMENT": [
+        "16295",
+        "600709"
+      ],
+      "AIR-MAZE": [
+        "AMW2051"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2051"
+      ],
+      "ALLIS-CHALMERS": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "AMERICAN-PARTS": [
+        "131",
+        "132",
+        "134"
+      ],
+      "AP-LOCKHEED": [
+        "LK3539"
+      ],
+      "ASAHI": [
+        "KO1541",
+        "KO1580"
+      ],
+      "ATLAS-COPCO": [
+        "97101788"
+      ],
+      "BALDWIN": [
+        "BW5137"
+      ],
+      "BIG-A": [
+        "131",
+        "132",
+        "134",
+        "96022",
+        "96071",
+        "96071MP"
+      ],
+      "BOMAG": [
+        "31701010",
+        "31701051"
+      ],
+      "BUDA": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "CASE": [
+        "1329039C1"
+      ],
+      "CATERPILLAR": [
+        "1112369",
+        "1112370",
+        "1W1310",
+        "2W3326",
+        "3I1302",
+        "8N0099",
+        "9N3368",
+        "9N3659",
+        "9N3717",
+        "9N3719"
+      ],
+      "CHAMPION": [
+        "WF202"
+      ],
+      "CHAMP-LAB": [
+        "LFW4744",
+        "PW2901"
+      ],
+      "CLARK": [
+        "949097",
+        "949418",
+        "960044",
+        "960978"
+      ],
+      "CO-OP": [
+        "W473"
+      ],
+      "COACH-GUARD": [
+        "T061012"
+      ],
+      "COLES": [
+        "8753934",
+        "8757435",
+        "8767435"
+      ],
+      "COOPERS": [
+        "AZW002",
+        "CSM6500"
+      ],
+      "CROSLAND": [
+        "7701",
+        "9342"
+      ],
+      "CUMMINS": [
+        "209606",
+        "259453",
+        "299084",
+        "3315789",
+        "3864148",
+        "4936016",
+        "CW1010",
+        "CW2010"
+      ],
+      "CYCLONE": [
+        "W473"
+      ],
+      "DELUXE": [
+        "7010",
+        "7473",
+        "WD7010",
+        "WD7320",
+        "WD7453",
+        "WD7473"
+      ],
+      "ERF": [
+        "C3305367"
+      ],
+      "EUCLID": [
+        "4054555"
+      ],
+      "FAUN-FRISCH": [
+        "4786765"
+      ],
+      "FIAAM": [
+        "FT4858"
+      ],
+      "FIAT": [
+        "1930549",
+        "4029084",
+        "70681546",
+        "70697135",
+        "74029120",
+        "74393505",
+        "74681776",
+        "74734562",
+        "76106535"
+      ],
+      "FLEETGUARD": [
+        "WF2010",
+        "WF2011",
+        "WF2023",
+        "WF2024",
+        "WF2051",
+        "WF2059",
+        "WF2067",
+        "WF2088"
+      ],
+      "FLEETRITE": [
+        "WFR82010",
+        "WFR82023",
+        "WFR82051",
+        "WFR82059",
+        "WFR82067",
+        "WFR82088"
+      ],
+      "FLXIBLE": [
+        "97520500163"
+      ],
+      "FMC": [
+        "3A10522"
+      ],
+      "FODEN": [
+        "Y02729203"
+      ],
+      "FORD": [
+        "1602113",
+        "749F8A469AAA",
+        "819F8A469AA",
+        "D2HZ8A424A",
+        "D5HZ8A424A",
+        "SFD28031"
+      ],
+      "FRAM": [
+        "PR3304"
+      ],
+      "GENERAL-MOTORS": [
+        "23507545",
+        "6438919",
+        "6439692",
+        "6439766",
+        "6493692",
+        "681955",
+        "681956"
+      ],
+      "GONHER": [
+        "GP1010Q"
+      ],
+      "GRAINGER": [
+        "2KXR9"
+      ],
+      "GUARDIAN": [
+        "G024071"
+      ],
+      "HASTINGS": [
+        "WC6"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA17001",
+        "HDA17003"
+      ],
+      "HENGST": [
+        "H13WF12"
+      ],
+      "HIFI": [
+        "WE2059"
+      ],
+      "IHC-CASE": [
+        "1801090C1",
+        "423870C1",
+        "427713C1",
+        "441365C1",
+        "441365C2",
+        "462816C1",
+        "462816C2",
+        "993445C1"
+      ],
+      "INGERSOLL-RAND": [
+        "35312396",
+        "35362268",
+        "58194747",
+        "91780510"
+      ],
+      "IVECO": [
+        "1907694"
+      ],
+      "JOHN-DEERE": [
+        "AR87113",
+        "AR89380"
+      ],
+      "KENWORTH": [
+        "K251C271",
+        "K251C342",
+        "KW2010",
+        "KW2051"
+      ],
+      "KOMATSU": [
+        "6004111010",
+        "6004111020",
+        "6004111191",
+        "6004111320",
+        "6004111571",
+        "6710618112",
+        "CUWF2010"
+      ],
+      "KORODY-COLYER": [
+        "FBW5137"
+      ],
+      "KRALINATOR": [
+        "C16",
+        "C22",
+        "C24",
+        "W320",
+        "W373",
+        "W453",
+        "W473"
+      ],
+      "LB": [
+        "WF2010"
+      ],
+      "LEDERER": [
+        "2752",
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LEE": [
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "LEYLAND": [
+        "13692",
+        "CU3314581"
+      ],
+      "LIEBHERR": [
+        "5602719",
+        "7361501"
+      ],
+      "LTH": [
+        "LTH1010H"
+      ],
+      "LUBERFINER": [
+        "LFW4740",
+        "LFW4744"
+      ],
+      "MACK": [
+        "3076PR3304",
+        "5839WF2051"
+      ],
+      "MAHLE": [
+        "WF1"
+      ],
+      "MASSEY-FERGUSON": [
+        "1055916M1"
+      ],
+      "MELROE": [
+        "900010"
+      ],
+      "MOTORCRAFT": [
+        "FW2"
+      ],
+      "NALCOOL": [
+        "NF3000"
+      ],
+      "NAPA": [
+        "4022",
+        "4071"
+      ],
+      "NISSAN": [
+        "2191595000"
+      ],
+      "OFSA": [
+        "OF12010"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "104403",
+        "4799709",
+        "765638"
+      ],
+      "PBR": [
+        "BW2005"
+      ],
+      "PERMATIC": [
+        "FH306V"
+      ],
+      "PERRY": [
+        "PFC16",
+        "PFC24A",
+        "PFC8A",
+        "S320",
+        "S330",
+        "S331",
+        "S373",
+        "S473"
+      ],
+      "PETERBILT": [
+        "PM2051"
+      ],
+      "PH-HARNISCHFEGER": [
+        "221046Z37"
+      ],
+      "PIERCE": [
+        "425376",
+        "SD13399"
+      ],
+      "POCLAIN": [
+        "V1350570",
+        "V1350579"
+      ],
+      "PREVOST-CAR": [
+        "550630"
+      ],
+      "PUROLATOR": [
+        "PW2010",
+        "PW4452"
+      ],
+      "QUAKER-STATE": [
+        "QS3304"
+      ],
+      "RICKEL": [
+        "F016295"
+      ],
+      "SANDVIK": [
+        "1002075"
+      ],
+      "SAVARA": [
+        "92900117"
+      ],
+      "SCANIA": [
+        "661302"
+      ],
+      "SISU": [
+        "1696300311"
+      ],
+      "STEIGER": [
+        "28031"
+      ],
+      "TECNOCAR": [
+        "RA148"
+      ],
+      "TRACTOMOTIVE": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "VERSATILE": [
+        "15802",
+        "22936",
+        "25881"
+      ],
+      "VOLVO-CARS": [
+        "200973329",
+        "366822",
+        "79250031",
+        "8390135"
+      ],
+      "WABCO": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "WANDERLODGE": [
+        "6082416"
+      ],
+      "WGB": [
+        "S320",
+        "S330",
+        "S331",
+        "S453"
+      ],
+      "WHITE": [
+        "200973329",
+        "207015003",
+        "27073723",
+        "27074037",
+        "27074039",
+        "27077520",
+        "7074037"
+      ],
+      "WIX": [
+        "24022",
+        "24071",
+        "524071"
+      ]
+    }
   },
   {
     "part_number": "P554072",
@@ -33208,7 +34176,123 @@
         "manufacturer": "BLOUNT",
         "part_number": "30003074"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89072"
+      ],
+      "AC-DELCO": [
+        "WF112"
+      ],
+      "AIR-MAZE": [
+        "AMW2067",
+        "CCSC1001"
+      ],
+      "ALLIS-CHALMERS": [
+        "70697635"
+      ],
+      "ATLAS-COPCO": [
+        "2900512200",
+        "2900535400"
+      ],
+      "BALDWIN": [
+        "BW5138"
+      ],
+      "BIG-A": [
+        "96025",
+        "96072"
+      ],
+      "BUDA": [
+        "70697635"
+      ],
+      "CATERPILLAR": [
+        "1112371",
+        "3I1287"
+      ],
+      "CHAMP-LAB": [
+        "LFW4018",
+        "PW4018"
+      ],
+      "COACH-GUARD": [
+        "T061041"
+      ],
+      "FIAT": [
+        "70697635"
+      ],
+      "FLEETGUARD": [
+        "WF2018",
+        "WF2052"
+      ],
+      "FLEETRITE": [
+        "WFR82018",
+        "WFR82052",
+        "WFR82069"
+      ],
+      "FORTIS": [
+        "1WF2053"
+      ],
+      "FRAM": [
+        "PR3758"
+      ],
+      "GENERAL-MOTORS": [
+        "23508425",
+        "25011791"
+      ],
+      "GRAINGER": [
+        "2KZW1"
+      ],
+      "HASTINGS": [
+        "WC9"
+      ],
+      "KENWORTH": [
+        "KW2018",
+        "KW2052"
+      ],
+      "KNECHT": [
+        "B457C1"
+      ],
+      "KOMATSU": [
+        "6004111140",
+        "6134618110"
+      ],
+      "KORODY-COLYER": [
+        "FBW5138"
+      ],
+      "KRALINATOR": [
+        "C30"
+      ],
+      "LINK-BELT": [
+        "C6H0280"
+      ],
+      "LUBERFINER": [
+        "LFW4018"
+      ],
+      "NAPA": [
+        "4025",
+        "4072"
+      ],
+      "PERRY": [
+        "PFC12A"
+      ],
+      "PUROLATOR": [
+        "PW4453",
+        "W54453"
+      ],
+      "SOPARIS": [
+        "CANP167"
+      ],
+      "TRACTOMOTIVE": [
+        "70697635"
+      ],
+      "WHITE": [
+        "207015001",
+        "207015004"
+      ],
+      "WIX": [
+        "24025",
+        "24072"
+      ]
+    }
   },
   {
     "part_number": "P554073",
@@ -37956,7 +39040,18 @@
         "manufacturer": "AMERICAN MOTORS CORPORATION",
         "part_number": "SFC2053"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "94202"
+      ],
+      "FRAM": [
+        "PR3414"
+      ],
+      "PARKER": [
+        "RA-2016"
+      ]
+    }
   },
   {
     "part_number": "P554074",
@@ -40992,7 +42087,15 @@
         "manufacturer": "BAUDOUIN",
         "part_number": "15039040H"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89074"
+      ],
+      "FRAM": [
+        "PR3911"
+      ]
+    }
   },
   {
     "part_number": "P554075",
@@ -42268,7 +43371,15 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3I1285"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "FRAM": [
+        "PR3911"
+      ],
+      "PARKER": [
+        "RA-2013"
+      ]
+    }
   },
   {
     "part_number": "P554685",
@@ -43957,7 +45068,177 @@
         "manufacturer": "BIG A",
         "part_number": "96070"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89070"
+      ],
+      "AC-DELCO": [
+        "WF108"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2077"
+      ],
+      "AMERICAN-PARTS": [
+        "96045",
+        "96070"
+      ],
+      "BALDWIN": [
+        "B5134"
+      ],
+      "BIG-A": [
+        "96045",
+        "96064",
+        "96069",
+        "96070",
+        "96087"
+      ],
+      "BLUEBIRD": [
+        "64641"
+      ],
+      "CATERPILLAR": [
+        "3I1300",
+        "9Y4528"
+      ],
+      "CHAMP-LAB": [
+        "LFW4011",
+        "LFW4685",
+        "PW4011"
+      ],
+      "COACH-GUARD": [
+        "T061011"
+      ],
+      "CUMMINS": [
+        "33000721",
+        "3300721",
+        "3300724",
+        "3827423"
+      ],
+      "DAF": [
+        "1296929"
+      ],
+      "DETROIT-DIESEL": [
+        "23524403"
+      ],
+      "FLEETGUARD": [
+        "WF2077",
+        "WF2101"
+      ],
+      "FLEETRITE": [
+        "WFR82077",
+        "WFR82101"
+      ],
+      "FLXIBLE": [
+        "97520500196"
+      ],
+      "FORD": [
+        "E7NN8A469AA",
+        "EGNN8A424BA"
+      ],
+      "FRAM": [
+        "PR3383"
+      ],
+      "GENERAL-MOTORS": [
+        "25010844",
+        "25010845"
+      ],
+      "GONHER": [
+        "GP2077W"
+      ],
+      "GRAINGER": [
+        "2KYF5"
+      ],
+      "HASTINGS": [
+        "WC8"
+      ],
+      "HENGST": [
+        "H35WF"
+      ],
+      "HIFI": [
+        "WE2077"
+      ],
+      "HINO": [
+        "163041015",
+        "1630441015"
+      ],
+      "IHC-CASE": [
+        "1820358C1"
+      ],
+      "JOHN-DEERE": [
+        "RE11992"
+      ],
+      "KENWORTH": [
+        "KW2011"
+      ],
+      "KOMATSU": [
+        "8853260644"
+      ],
+      "KRALINATOR": [
+        "CM1"
+      ],
+      "LIEBHERR": [
+        "7025830"
+      ],
+      "LUBERFINER": [
+        "5134",
+        "LFW4685"
+      ],
+      "MACK": [
+        "3076PR3383",
+        "5839WF2077"
+      ],
+      "MANN": [
+        "WA94018"
+      ],
+      "MOTORCRAFT": [
+        "FW12"
+      ],
+      "NAPA": [
+        "4045",
+        "4069",
+        "4070",
+        "4087"
+      ],
+      "NATIONAL-STOCK-NUMBER": [
+        "2940012741915"
+      ],
+      "NEW-HOLLAND": [
+        "83960185",
+        "9609182"
+      ],
+      "NEWSTAR": [
+        "SSWF2077"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "A010001"
+      ],
+      "PERRY": [
+        "PFC4",
+        "S3",
+        "S4",
+        "S4A"
+      ],
+      "PUROLATOR": [
+        "PW4451",
+        "W54451"
+      ],
+      "SAKURA": [
+        "WC5714"
+      ],
+      "SURE": [
+        "SFC4685"
+      ],
+      "WIX": [
+        "24045",
+        "24070",
+        "24087",
+        "524069",
+        "524087"
+      ],
+      "WOODGATE": [
+        "WGW2077"
+      ]
+    }
   },
   {
     "part_number": "P554860",
@@ -44443,7 +45724,8 @@
         "manufacturer": "CHAMP",
         "part_number": "PW4860"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P765594",
@@ -44527,6 +45809,7 @@
         "manufacturer": "VOLVO PENTA",
         "part_number": "21192875"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   }
 ]

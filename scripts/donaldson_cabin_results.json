@@ -53,7 +53,90 @@
         "manufacturer": "GARDNER DENVER",
         "part_number": "2009590"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLISON": [
+        "PR1377670001",
+        "PR1402460001"
+      ],
+      "BALDWIN": [
+        "PA1765"
+      ],
+      "CARQUEST": [
+        "87595"
+      ],
+      "CYCLONE": [
+        "PMA103951"
+      ],
+      "DETROIT-DIESEL": [
+        "PR1377670001",
+        "PR1402460001"
+      ],
+      "FLEETGUARD": [
+        "AF4128"
+      ],
+      "GARDNER-DENVER": [
+        "2009590"
+      ],
+      "GUARDIAN": [
+        "G103951"
+      ],
+      "HASTINGS": [
+        "AF336"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA3688"
+      ],
+      "HIFI": [
+        "SA14078"
+      ],
+      "KELTEC": [
+        "KC800015"
+      ],
+      "KRALINATOR": [
+        "LA202",
+        "LA202B"
+      ],
+      "LOESING": [
+        "020180",
+        "P103688"
+      ],
+      "LUBERFINER": [
+        "LAF4714"
+      ],
+      "POSTAS": [
+        "HF1381"
+      ],
+      "PUROLATOR": [
+        "AF14"
+      ],
+      "SAKURA": [
+        "A5518"
+      ],
+      "SAVARA": [
+        "92324411",
+        "92324417"
+      ],
+      "TIM": [
+        "6L6873"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686508"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810464",
+        "00810521"
+      ],
+      "WGB": [
+        "SA330"
+      ],
+      "WHITEGMC": [
+        "X27780"
+      ],
+      "WIX": [
+        "42595"
+      ]
+    }
   },
   {
     "part_number": "P105958",
@@ -104,7 +187,60 @@
         "manufacturer": "KRALINATOR",
         "part_number": "LA510"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM105958"
+      ],
+      "BALDWIN": [
+        "PA3473"
+      ],
+      "BUCYRUS-ERIE": [
+        "46163220"
+      ],
+      "CLARKE": [
+        "82404141"
+      ],
+      "FLEETGUARD": [
+        "AF1986"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA5957",
+        "HDA5958"
+      ],
+      "HIFI": [
+        "SC90026"
+      ],
+      "INTRUPA": [
+        "IF5024",
+        "IF5024Q"
+      ],
+      "KRALINATOR": [
+        "LA510"
+      ],
+      "LOESING": [
+        "020185"
+      ],
+      "NELSON": [
+        "105958",
+        "84208N"
+      ],
+      "NILFISK-ADVANCE": [
+        "82404141"
+      ],
+      "RUSTON-BUCYRUS": [
+        "46163220"
+      ],
+      "UNIT-RIG": [
+        "19865"
+      ],
+      "VMC": [
+        "AF105958"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810519"
+      ]
+    }
   },
   {
     "part_number": "P106680",
@@ -761,7 +897,313 @@
         "manufacturer": "BIG A",
         "part_number": "93555"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AGCO": [
+        "7021959",
+        "70569300V"
+      ],
+      "AIR-MAZE": [
+        "125908034",
+        "125954005",
+        "126041013"
+      ],
+      "AIR-REFINER": [
+        "ARM106680"
+      ],
+      "ALLIS-CHALMERS": [
+        "569300",
+        "5693007",
+        "70569300"
+      ],
+      "AMERICAN-PARTS": [
+        "1223",
+        "93555"
+      ],
+      "BALDWIN": [
+        "PA1990",
+        "PA2353"
+      ],
+      "BERGERAT-MONNOYEUR": [
+        "E2105"
+      ],
+      "BIG-A": [
+        "1223",
+        "93555",
+        "93571"
+      ],
+      "BOBCAT": [
+        "6620654"
+      ],
+      "CARQUEST": [
+        "87555",
+        "87571"
+      ],
+      "CASE": [
+        "1105394C1",
+        "7021959",
+        "926389C1",
+        "D2NN19N551A",
+        "D3NN19N551A",
+        "D5NN19N551A",
+        "E2NN19N551AA",
+        "F084818",
+        "F84818",
+        "LX134692"
+      ],
+      "CATERPILLAR": [
+        "3I0047"
+      ],
+      "CHAMPION": [
+        "26866"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "LAF6680"
+      ],
+      "CHAMPION-ROAD": [
+        "26866"
+      ],
+      "CLARK": [
+        "6620654"
+      ],
+      "COOPERS": [
+        "AEP3517"
+      ],
+      "CRENLO": [
+        "100499"
+      ],
+      "DART": [
+        "PPP106680"
+      ],
+      "DELUXE": [
+        "655",
+        "AF655"
+      ],
+      "DEUTZ": [
+        "7021959"
+      ],
+      "DRESSER": [
+        "1105394C1",
+        "167870C1",
+        "926389C1"
+      ],
+      "DRILL-CARRIER": [
+        "AT8071"
+      ],
+      "EVANS-PRODUCTS": [
+        "HV032248"
+      ],
+      "EXCEL": [
+        "037077",
+        "37077"
+      ],
+      "FIAT": [
+        "569300",
+        "7021959",
+        "70569300",
+        "77021959",
+        "D2NN19N551A",
+        "D3NN19N551A",
+        "D5NN19N551A",
+        "E2NN19N551AA",
+        "LX134692"
+      ],
+      "FIELD-QUEEN": [
+        "7021959",
+        "72998"
+      ],
+      "FLEETGUARD": [
+        "AF1695",
+        "AF25779"
+      ],
+      "FLEETRITE": [
+        "AFR81695",
+        "AFR825779"
+      ],
+      "FORD": [
+        "134692",
+        "D2NN19N551A",
+        "D3NN19N551A",
+        "D3NN19NSS1",
+        "D3NN19NSS1A",
+        "D5NN19N551A",
+        "E2NN19A551AA",
+        "E2NN19N551AA",
+        "LX134692"
+      ],
+      "FRAM": [
+        "PA2591",
+        "PA5003",
+        "PA5006"
+      ],
+      "FREIGHTLINER": [
+        "DNP106680"
+      ],
+      "FSI": [
+        "AP28752"
+      ],
+      "FURUKAWA": [
+        "1105394C1",
+        "167870C1",
+        "926389C1"
+      ],
+      "GUARDIAN": [
+        "G106680",
+        "G152553"
+      ],
+      "HASTINGS": [
+        "AF418"
+      ],
+      "HAVAM": [
+        "HD6116"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A4013",
+        "A6680",
+        "HDA4013",
+        "HDA6680"
+      ],
+      "HEIN-WERNER": [
+        "300340"
+      ],
+      "HESSTON": [
+        "7021959"
+      ],
+      "HIFI": [
+        "SC70037"
+      ],
+      "HINSON": [
+        "300340"
+      ],
+      "HITACHI": [
+        "569300",
+        "70569300",
+        "77021959"
+      ],
+      "JOHN-DEERE": [
+        "AN112705",
+        "AN112705J"
+      ],
+      "JURA": [
+        "SA11645"
+      ],
+      "KELLOGG-AMERICAN": [
+        "32288"
+      ],
+      "KERSHAW": [
+        "032288",
+        "32288"
+      ],
+      "KOMATSU": [
+        "926389C1"
+      ],
+      "KRALINATOR": [
+        "LA640"
+      ],
+      "KUBOTA": [
+        "7009001653"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "4081835"
+      ],
+      "LOESING": [
+        "020189"
+      ],
+      "LUBERFINER": [
+        "LAF6680"
+      ],
+      "MANITOWOC": [
+        "427206",
+        "4272060"
+      ],
+      "MCCORMICK": [
+        "F84818"
+      ],
+      "MELROE": [
+        "6620654"
+      ],
+      "MOTORCRAFT": [
+        "FA912",
+        "FA972"
+      ],
+      "NAPA": [
+        "2555",
+        "2571"
+      ],
+      "NAVISTAR": [
+        "1105394C1",
+        "167870C1",
+        "926389C1"
+      ],
+      "NELSON": [
+        "106680",
+        "83700H",
+        "84100N",
+        "84797S"
+      ],
+      "NELSON-WINSLOW": [
+        "106680"
+      ],
+      "NEW-HOLLAND": [
+        "124692",
+        "134692",
+        "22103",
+        "7021959",
+        "D2NN19N551A",
+        "D3NN19N551A",
+        "D5NN19N551A",
+        "E2NN19N551AA",
+        "LX134692"
+      ],
+      "PANDROL-JACKSON": [
+        "1552361"
+      ],
+      "PERRY": [
+        "PAK922"
+      ],
+      "PUROLATOR": [
+        "6948495",
+        "A83061",
+        "AF3061"
+      ],
+      "RYCO": [
+        "HDA5320"
+      ],
+      "SCHUPP": [
+        "SKL2553"
+      ],
+      "STOLPER": [
+        "38463",
+        "38572"
+      ],
+      "THERMO-KING": [
+        "998213"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "906962"
+      ],
+      "VERSATILE": [
+        "22103"
+      ],
+      "VMC": [
+        "AF106680"
+      ],
+      "VOLVO": [
+        "26866"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810529"
+      ],
+      "WIX": [
+        "42555",
+        "42571",
+        "542555",
+        "542571"
+      ],
+      "WOODGATE": [
+        "WGA724"
+      ]
+    }
   },
   {
     "part_number": "P106965",
@@ -945,7 +1387,155 @@
         "manufacturer": "AVELING-BARFORD",
         "part_number": "MG691022"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A993C"
+      ],
+      "ALLIS-CHALMERS": [
+        "246580",
+        "2465805",
+        "70246580"
+      ],
+      "AMERICAN-PARTS": [
+        "1480",
+        "94583"
+      ],
+      "ATLAS-COPCO": [
+        "5541321600"
+      ],
+      "AVELING-BARFORD": [
+        "MG691022"
+      ],
+      "BALDWIN": [
+        "PA2497"
+      ],
+      "BIG-A": [
+        "94583"
+      ],
+      "BUCYRUS-ERIE": [
+        "46140302"
+      ],
+      "CARQUEST": [
+        "88583"
+      ],
+      "CASE": [
+        "225946",
+        "S225946"
+      ],
+      "CATERPILLAR": [
+        "3I0049"
+      ],
+      "CHAMP": [
+        "LAF1897"
+      ],
+      "DROTT": [
+        "225946"
+      ],
+      "FIAT": [
+        "246580",
+        "70246580"
+      ],
+      "FLEETGUARD": [
+        "AF4580"
+      ],
+      "FLEETLIFE": [
+        "FA6965"
+      ],
+      "FLEETRITE": [
+        "AFR84580"
+      ],
+      "FORD": [
+        "9576P106965"
+      ],
+      "FSI": [
+        "AP11112"
+      ],
+      "GENERAL-MOTORS": [
+        "25096314",
+        "9266223"
+      ],
+      "HASTINGS": [
+        "PA2497"
+      ],
+      "HAVAM": [
+        "HD6172"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A6965",
+        "HDA6965"
+      ],
+      "HIFI": [
+        "SC14530"
+      ],
+      "HITACHI": [
+        "70246580"
+      ],
+      "INGERSOLL-RAND": [
+        "57069676",
+        "57096976"
+      ],
+      "JURA": [
+        "SA14530"
+      ],
+      "KALMAR": [
+        "5130"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "9000609"
+      ],
+      "LUBERFINER": [
+        "LAF1897"
+      ],
+      "NAPA": [
+        "6583"
+      ],
+      "NELSON": [
+        "106965",
+        "84044N"
+      ],
+      "NELSON-WINSLOW": [
+        "106965"
+      ],
+      "PUROLATOR": [
+        "6939054Q",
+        "A45137",
+        "AF3374"
+      ],
+      "RUSTON-BUCYRUS": [
+        "46140302"
+      ],
+      "STOLPER": [
+        "28464",
+        "38464",
+        "38465"
+      ],
+      "TEREX": [
+        "09266223"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686548"
+      ],
+      "VMC": [
+        "AF106965"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810533"
+      ],
+      "WHITE": [
+        "7760560"
+      ],
+      "WHITEGMC": [
+        "7760560"
+      ],
+      "WIX": [
+        "46583",
+        "546583"
+      ],
+      "WOODGATE": [
+        "WGA869"
+      ]
+    }
   },
   {
     "part_number": "P112671",
@@ -1170,7 +1760,116 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "8P5142"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM112671"
+      ],
+      "ATLAS-COPCO": [
+        "5541249900"
+      ],
+      "BALDWIN": [
+        "PA2534"
+      ],
+      "BLOUNT": [
+        "700093800"
+      ],
+      "CARQUEST": [
+        "88578"
+      ],
+      "CATERPILLAR": [
+        "700093800",
+        "8P5142"
+      ],
+      "CLARK": [
+        "3570854"
+      ],
+      "EUCLID": [
+        "3570854",
+        "MI3570854"
+      ],
+      "FLEETLIFE": [
+        "FA8P5142"
+      ],
+      "GROVE": [
+        "9304100147"
+      ],
+      "HASTINGS": [
+        "PA2534"
+      ],
+      "HAVAM": [
+        "0005208"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA2671"
+      ],
+      "HIFI": [
+        "SC90035"
+      ],
+      "KRALINATOR": [
+        "LA511",
+        "LA511CL"
+      ],
+      "LOESING": [
+        "020198"
+      ],
+      "LUBERFINER": [
+        "LAF2671"
+      ],
+      "NAPA": [
+        "6578"
+      ],
+      "NELSON": [
+        "112671",
+        "84243N"
+      ],
+      "O-K": [
+        "1791654"
+      ],
+      "PUROLATOR": [
+        "AF3372"
+      ],
+      "RED-DOT": [
+        "78R5320",
+        "RD561240"
+      ],
+      "TAYLOR": [
+        "4044424"
+      ],
+      "TEREX": [
+        "1791654"
+      ],
+      "THERMO-KING": [
+        "2052B70G01"
+      ],
+      "TIM": [
+        "8P5142"
+      ],
+      "TIMBERJACK": [
+        "700093800"
+      ],
+      "TROJAN": [
+        "460475300"
+      ],
+      "VME": [
+        "3570854",
+        "MI3570854"
+      ],
+      "VOLVO": [
+        "3570854",
+        "MI3570854"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810571"
+      ],
+      "WIX": [
+        "46578",
+        "546578"
+      ],
+      "YALE": [
+        "4604753"
+      ]
+    }
   },
   {
     "part_number": "P112775",
@@ -1354,7 +2053,185 @@
         "manufacturer": "BIG A",
         "part_number": "93561"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1062C"
+      ],
+      "AG-CHEM-EQUIPMENT": [
+        "514774",
+        "703500"
+      ],
+      "AGCO": [
+        "07722630",
+        "AG514774"
+      ],
+      "AIR-MAZE": [
+        "125929002",
+        "125929"
+      ],
+      "AIR-REFINER": [
+        "ARM112775",
+        "ARM5929"
+      ],
+      "AMERICAN-PARTS": [
+        "1201",
+        "93561"
+      ],
+      "BALDWIN": [
+        "PA2411"
+      ],
+      "BIG-A": [
+        "1201",
+        "93561"
+      ],
+      "CARQUEST": [
+        "87561"
+      ],
+      "CASE": [
+        "537268R2",
+        "537268R91",
+        "537368R2",
+        "7722630",
+        "BN2403650"
+      ],
+      "CATERPILLAR": [
+        "3I0067"
+      ],
+      "CHAMPION-ROAD": [
+        "407083"
+      ],
+      "CHARDONNET": [
+        "7211277500"
+      ],
+      "DEUTZ": [
+        "0006586580",
+        "07722630"
+      ],
+      "DRESSER": [
+        "537268R1"
+      ],
+      "EXCEL": [
+        "042408",
+        "42408"
+      ],
+      "FIAT": [
+        "7722630"
+      ],
+      "FLEETGUARD": [
+        "AF4807"
+      ],
+      "FLEETRITE": [
+        "AFR84807"
+      ],
+      "FRAM": [
+        "CA6517"
+      ],
+      "FSI": [
+        "AP38502"
+      ],
+      "FURUKAWA": [
+        "537268R1"
+      ],
+      "GEHL": [
+        "42033587"
+      ],
+      "GENERAL-MOTORS": [
+        "25096412"
+      ],
+      "GUARDIAN": [
+        "G112775",
+        "G125929"
+      ],
+      "HASTINGS": [
+        "AF630"
+      ],
+      "HAVAM": [
+        "HD6405"
+      ],
+      "HAY-FORAGE": [
+        "7722630"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A2775",
+        "A9616",
+        "AM5929",
+        "HDA2775",
+        "HDA9616",
+        "HDAM5929"
+      ],
+      "HESSTON": [
+        "6586580"
+      ],
+      "HIFI": [
+        "SC14757"
+      ],
+      "JURA": [
+        "SA14757"
+      ],
+      "KRALINATOR": [
+        "LA774",
+        "LA837",
+        "V774"
+      ],
+      "LOESING": [
+        "021973"
+      ],
+      "LUBERFINER": [
+        "LAF1870"
+      ],
+      "MCCORMICK": [
+        "MC537268R2"
+      ],
+      "MOTORCRAFT": [
+        "FA907"
+      ],
+      "MUSTANG": [
+        "42033587"
+      ],
+      "NAPA": [
+        "2561"
+      ],
+      "NAVISTAR": [
+        "537268R1"
+      ],
+      "NELSON": [
+        "112775",
+        "83770N"
+      ],
+      "NELSON-WINSLOW": [
+        "112775"
+      ],
+      "OWATONNA": [
+        "42033587"
+      ],
+      "PUROLATOR": [
+        "A93013",
+        "AF3013"
+      ],
+      "STEIGER": [
+        "24029"
+      ],
+      "TYLER-POWER-PRODUCTS": [
+        "2403650"
+      ],
+      "VMC": [
+        "AF112775"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810572"
+      ],
+      "WIX": [
+        "42561",
+        "542561"
+      ],
+      "WOODGATE": [
+        "WGA910"
+      ],
+      "YALE": [
+        "214759"
+      ]
+    }
   },
   {
     "part_number": "P113407",
@@ -1426,7 +2303,175 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3I0071"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM113407"
+      ],
+      "AMERICAN-PARTS": [
+        "1407",
+        "93562"
+      ],
+      "BADGER": [
+        "76033839"
+      ],
+      "BALDWIN": [
+        "PA2354",
+        "PA5315"
+      ],
+      "BELL": [
+        "202615",
+        "AT253693"
+      ],
+      "BIG-A": [
+        "1407",
+        "93167",
+        "93562"
+      ],
+      "CARQUEST": [
+        "87167",
+        "87562",
+        "93254"
+      ],
+      "CATERPILLAR": [
+        "3I0071"
+      ],
+      "DRESSER": [
+        "PB1257"
+      ],
+      "DRIL-TECH": [
+        "026922053"
+      ],
+      "ELGIN": [
+        "7172355"
+      ],
+      "EUCLID": [
+        "9063499",
+        "E4067182"
+      ],
+      "FLEETGUARD": [
+        "AF1728"
+      ],
+      "FLEETRITE": [
+        "AFR81728"
+      ],
+      "FORD": [
+        "9576P113407"
+      ],
+      "FREIGHTLINER": [
+        "DNP113407"
+      ],
+      "FSI": [
+        "AP20752"
+      ],
+      "GENERAL-MOTORS": [
+        "9063499"
+      ],
+      "GROVE": [
+        "7437000777",
+        "9304100162"
+      ],
+      "GUARDIAN": [
+        "G113407"
+      ],
+      "HASTINGS": [
+        "AF711",
+        "PA5315"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A3407",
+        "HDA3407"
+      ],
+      "HIFI": [
+        "SA11678"
+      ],
+      "HINSON": [
+        "3000020"
+      ],
+      "JOHN-DEERE": [
+        "AT253693",
+        "P113407",
+        "PB1257"
+      ],
+      "KOEHRING": [
+        "4033917"
+      ],
+      "KOMATSU": [
+        "PB1257"
+      ],
+      "KRALINATOR": [
+        "LA875"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "PB1257"
+      ],
+      "LUBERFINER": [
+        "LAF3407"
+      ],
+      "MANITOWOC": [
+        "7437000777",
+        "9304100162"
+      ],
+      "MOTORCRAFT": [
+        "FA788"
+      ],
+      "NAPA": [
+        "2167",
+        "2562"
+      ],
+      "NELSON": [
+        "113407",
+        "83291N",
+        "83791N",
+        "84821S"
+      ],
+      "NELSON-WINSLOW": [
+        "113407"
+      ],
+      "PUROLATOR": [
+        "AF3274"
+      ],
+      "SANDVIK": [
+        "026922053"
+      ],
+      "SCHUPP": [
+        "SKL2556"
+      ],
+      "TEREX": [
+        "09063499",
+        "403V3917",
+        "9063499"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686564"
+      ],
+      "VMC": [
+        "AF113407"
+      ],
+      "VME": [
+        "4067182"
+      ],
+      "WABCO": [
+        "PB1257"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810577"
+      ],
+      "WHITE": [
+        "167099A"
+      ],
+      "WHITEGMC": [
+        "167099A"
+      ],
+      "WIX": [
+        "42167",
+        "42562",
+        "542562"
+      ],
+      "WOODGATE": [
+        "WGA738"
+      ]
+    }
   },
   {
     "part_number": "P114229",
@@ -1477,7 +2522,42 @@
         "manufacturer": "NELSON",
         "part_number": "114229"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM114229"
+      ],
+      "CARQUEST": [
+        "87869"
+      ],
+      "DRESSER": [
+        "3137701R1"
+      ],
+      "FURUKAWA": [
+        "3137701R1"
+      ],
+      "HAVAM": [
+        "HD6470"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA4229"
+      ],
+      "HIFI": [
+        "SA16858"
+      ],
+      "LUBERFINER": [
+        "LAF22035"
+      ],
+      "NAPA": [
+        "2869"
+      ],
+      "NELSON": [
+        "114229"
+      ],
+      "WIX": [
+        "42869"
+      ]
+    }
   },
   {
     "part_number": "P115690",
@@ -1657,7 +2737,137 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3I0091"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A599C",
+        "A939C"
+      ],
+      "AGCO": [
+        "317761680"
+      ],
+      "AIR-MAZE": [
+        "125908002",
+        "125908029",
+        "736125908002"
+      ],
+      "AIR-REFINER": [
+        "ARM115690"
+      ],
+      "AMERICAN-PARTS": [
+        "1225",
+        "93559"
+      ],
+      "BALDWIN": [
+        "PA2408"
+      ],
+      "BIG-A": [
+        "1225",
+        "93559"
+      ],
+      "CANADIAN": [
+        "CFM530"
+      ],
+      "CARQUEST": [
+        "87559"
+      ],
+      "CATERPILLAR": [
+        "3I0091"
+      ],
+      "DELUXE": [
+        "661",
+        "661AIR",
+        "AF661"
+      ],
+      "FLEETGUARD": [
+        "AF1681"
+      ],
+      "FLEETRITE": [
+        "AFR81681"
+      ],
+      "FRAM": [
+        "PA5000",
+        "PA5005",
+        "PA5014",
+        "PA8458"
+      ],
+      "FSI": [
+        "AP37602"
+      ],
+      "GENERAL-MOTORS": [
+        "25043724"
+      ],
+      "GUARDIAN": [
+        "G115690"
+      ],
+      "HASTINGS": [
+        "AF462",
+        "PA2408"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A5690",
+        "HDA5690"
+      ],
+      "HIFI": [
+        "SC11631"
+      ],
+      "JOHN-DEERE": [
+        "AH80212",
+        "AH80920",
+        "AH96328"
+      ],
+      "JURA": [
+        "SA11631"
+      ],
+      "KRALINATOR": [
+        "LA530"
+      ],
+      "LUBERFINER": [
+        "LAF1872"
+      ],
+      "MOTORCRAFT": [
+        "FA786"
+      ],
+      "NAPA": [
+        "2559"
+      ],
+      "NELSON": [
+        "115690",
+        "83769N",
+        "84786S"
+      ],
+      "NELSON-WINSLOW": [
+        "115690"
+      ],
+      "PUROLATOR": [
+        "AF3063"
+      ],
+      "RYCO": [
+        "HDA5375"
+      ],
+      "VMC": [
+        "AF115690"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810617"
+      ],
+      "WHITE": [
+        "3177616",
+        "317761680",
+        "P115690"
+      ],
+      "WHITEGMC": [
+        "3177616",
+        "317761680"
+      ],
+      "WIX": [
+        "42559",
+        "542559"
+      ],
+      "WOODGATE": [
+        "WGA715"
+      ]
+    }
   },
   {
     "part_number": "P117109",
@@ -1785,7 +2995,178 @@
         "manufacturer": "CASE/CASE IH",
         "part_number": "8022345"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A663C"
+      ],
+      "AGCO": [
+        "08022345",
+        "8022345"
+      ],
+      "AIR-REFINER": [
+        "ARM117109",
+        "ARM117109C"
+      ],
+      "AMERICAN-PARTS": [
+        "1412"
+      ],
+      "BALDWIN": [
+        "PA2440"
+      ],
+      "BIG-A": [
+        "1412",
+        "93569"
+      ],
+      "CARQUEST": [
+        "87569"
+      ],
+      "CASE": [
+        "8022345"
+      ],
+      "CATERPILLAR": [
+        "3I0100"
+      ],
+      "CLARK": [
+        "949758",
+        "M0949758"
+      ],
+      "CNH": [
+        "8022345"
+      ],
+      "COMPACTION-AMERICA": [
+        "031020525"
+      ],
+      "CRENLO": [
+        "86623"
+      ],
+      "DELUXE": [
+        "660",
+        "660AIR",
+        "AF660"
+      ],
+      "DEUTZ": [
+        "08022345"
+      ],
+      "DRIL-TECH": [
+        "001675075",
+        "1675075"
+      ],
+      "EUCLID": [
+        "0949758",
+        "M0949758"
+      ],
+      "FIAT": [
+        "78022345",
+        "8022345"
+      ],
+      "FLEETGUARD": [
+        "AF1686",
+        "AF1686C"
+      ],
+      "FLEETRITE": [
+        "AFR81686",
+        "AFR81686C"
+      ],
+      "FRAM": [
+        "PA2563"
+      ],
+      "FSI": [
+        "AP33652"
+      ],
+      "GENERAL-MOTORS": [
+        "8994621"
+      ],
+      "GUARDIAN": [
+        "G117109"
+      ],
+      "HASTINGS": [
+        "AF629"
+      ],
+      "HAVAM": [
+        "HD6736"
+      ],
+      "HAY-FORAGE": [
+        "8022345"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A7109",
+        "HDA7109"
+      ],
+      "HIFI": [
+        "SC11636"
+      ],
+      "HITACHI": [
+        "78022345"
+      ],
+      "HUPP": [
+        "M3000321"
+      ],
+      "JURA": [
+        "SA11636"
+      ],
+      "KOEHRING": [
+        "31020525"
+      ],
+      "KRALINATOR": [
+        "LA1949",
+        "LA673"
+      ],
+      "KRAMER": [
+        "0009934701"
+      ],
+      "MOBILE-PRODUCTS-INCORPORATED": [
+        "63036900"
+      ],
+      "MOTORCRAFT": [
+        "FA911"
+      ],
+      "NAPA": [
+        "2569"
+      ],
+      "NELSON": [
+        "117109",
+        "83750N",
+        "84790S"
+      ],
+      "NELSON-WINSLOW": [
+        "117109",
+        "83750N",
+        "84790S"
+      ],
+      "PUROLATOR": [
+        "A23279",
+        "AF3279"
+      ],
+      "ROME": [
+        "500046"
+      ],
+      "RYCO": [
+        "HDA5391"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686600"
+      ],
+      "VMC": [
+        "AF117109"
+      ],
+      "VOLVO": [
+        "949758"
+      ],
+      "WALDON": [
+        "63036900"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810624"
+      ],
+      "WIX": [
+        "42569",
+        "542569"
+      ],
+      "WOODGATE": [
+        "WGA720"
+      ]
+    }
   },
   {
     "part_number": "P120320",
@@ -2018,7 +3399,161 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3I0139"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A129C"
+      ],
+      "AIR-REFINER": [
+        "ARM120320"
+      ],
+      "AMERICAN-PARTS": [
+        "1485",
+        "94570"
+      ],
+      "BALDWIN": [
+        "PA2626"
+      ],
+      "BIG-A": [
+        "1485",
+        "94570"
+      ],
+      "BOMAG": [
+        "5730106"
+      ],
+      "BROCE": [
+        "P120320"
+      ],
+      "CARQUEST": [
+        "88570"
+      ],
+      "CATERPILLAR": [
+        "3I0139",
+        "7T1889",
+        "8P5343"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "LAF5343"
+      ],
+      "COOPERS": [
+        "AEP3512"
+      ],
+      "EATON-CORPORATION": [
+        "219476",
+        "219479"
+      ],
+      "FILTRATION-LTD": [
+        "12020"
+      ],
+      "FLEETGUARD": [
+        "AF1915"
+      ],
+      "FLEETLIFE": [
+        "FA8P5343"
+      ],
+      "FLEETRITE": [
+        "AFR81915"
+      ],
+      "FORD": [
+        "9576P120320"
+      ],
+      "FRAM": [
+        "PA5038"
+      ],
+      "FREIGHTLINER": [
+        "DNP120320"
+      ],
+      "FSI": [
+        "AP23602"
+      ],
+      "GENERAL-MOTORS": [
+        "12326495",
+        "25096322"
+      ],
+      "GUARDIAN": [
+        "G120320"
+      ],
+      "HASTINGS": [
+        "AF2008"
+      ],
+      "HAVAM": [
+        "HD7380"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A0320",
+        "HDA0320"
+      ],
+      "HESCO-HEAVY-COMEDAT": [
+        "7T1889"
+      ],
+      "HIFI": [
+        "SC11865"
+      ],
+      "JURA": [
+        "SA11865"
+      ],
+      "KRALINATOR": [
+        "LA1017"
+      ],
+      "LBX-COMPANY": [
+        "31J2855"
+      ],
+      "LOESING": [
+        "021764"
+      ],
+      "LUBERFINER": [
+        "LAF5343"
+      ],
+      "NAPA": [
+        "6570"
+      ],
+      "NELSON": [
+        "83813N",
+        "84216N",
+        "8P5343"
+      ],
+      "PUROLATOR": [
+        "A23379",
+        "AF3379"
+      ],
+      "RYCO": [
+        "HDA5428"
+      ],
+      "SCHUPP": [
+        "SKL2561"
+      ],
+      "TEHO": [
+        "21058",
+        "IIM1058"
+      ],
+      "TIM": [
+        "7T1889"
+      ],
+      "UNIFLUX": [
+        "XC321"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686656"
+      ],
+      "VMC": [
+        "AF120320"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810659"
+      ],
+      "WIX": [
+        "46570",
+        "546570"
+      ],
+      "WOODGATE": [
+        "WGA456"
+      ],
+      "YALE": [
+        "219476",
+        "219479",
+        "8P5343"
+      ]
+    }
   },
   {
     "part_number": "P121036",
@@ -2104,7 +3639,190 @@
         "manufacturer": "CASE/CASE IH",
         "part_number": "196581"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A650C",
+        "A936C"
+      ],
+      "ADVANCE": [
+        "459588"
+      ],
+      "AIR-MAZE": [
+        "125908028",
+        "126048001"
+      ],
+      "AIR-REFINER": [
+        "ARM115154",
+        "ARM3481"
+      ],
+      "BALDWIN": [
+        "PA2407"
+      ],
+      "CAMECO": [
+        "0060033724",
+        "00633724",
+        "AW23866"
+      ],
+      "CARQUEST": [
+        "87554",
+        "90901"
+      ],
+      "CASE": [
+        "196581",
+        "4991907",
+        "5101804",
+        "A42573",
+        "F64361"
+      ],
+      "CLARK": [
+        "948887"
+      ],
+      "CRENLO": [
+        "84422"
+      ],
+      "DRESSER": [
+        "109215C1"
+      ],
+      "FIAT": [
+        "196581",
+        "4991907",
+        "5101804"
+      ],
+      "FLEETGUARD": [
+        "AF1722",
+        "AF1870"
+      ],
+      "FORD": [
+        "196581",
+        "9576P121036"
+      ],
+      "FRAM": [
+        "PA5004",
+        "PA5011"
+      ],
+      "FREIGHTLINER": [
+        "DNP121036"
+      ],
+      "FSI": [
+        "AP38602"
+      ],
+      "GENERAL-MOTORS": [
+        "25043718",
+        "8994595"
+      ],
+      "GUARDIAN": [
+        "G115154"
+      ],
+      "HASTINGS": [
+        "AF566"
+      ],
+      "HAVAM": [
+        "HD6625"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA1036",
+        "HDA2829",
+        "HDA4725",
+        "HDA4964",
+        "HDA5154"
+      ],
+      "HIFI": [
+        "SA11672"
+      ],
+      "HINSON": [
+        "3000580"
+      ],
+      "ICELANDIC": [
+        "082112"
+      ],
+      "INGERSOLL-RAND": [
+        "56894611"
+      ],
+      "JOHN-DEERE": [
+        "AW23866"
+      ],
+      "JURA": [
+        "SA11672"
+      ],
+      "KRALINATOR": [
+        "LA639"
+      ],
+      "LOESING": [
+        "022050"
+      ],
+      "LUBERFINER": [
+        "LAF5154"
+      ],
+      "MCCORMICK": [
+        "A42573",
+        "F64361"
+      ],
+      "MOTORCRAFT": [
+        "FA906"
+      ],
+      "NAVISTAR": [
+        "109215C1"
+      ],
+      "NELSON": [
+        "83739N",
+        "84816S"
+      ],
+      "NEW-HOLLAND": [
+        "196581",
+        "251408",
+        "4991907",
+        "5101804"
+      ],
+      "NILFISK-ADVANCE": [
+        "459588"
+      ],
+      "ONAN": [
+        "1401071"
+      ],
+      "PERRY": [
+        "PAK924"
+      ],
+      "PUROLATOR": [
+        "A83062",
+        "A83062Q",
+        "A93062",
+        "AF3062",
+        "AF3062Q",
+        "AF3376"
+      ],
+      "SCHUPP": [
+        "SKL2558"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686664"
+      ],
+      "VERSATILE": [
+        "105382",
+        "89497"
+      ],
+      "VMC": [
+        "AF121036"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810661"
+      ],
+      "WHITE": [
+        "20000331",
+        "207000329",
+        "207000331"
+      ],
+      "WHITEGMC": [
+        "20000331",
+        "207000331"
+      ],
+      "WIX": [
+        "42554"
+      ],
+      "WOODGATE": [
+        "WGA735"
+      ]
+    }
   },
   {
     "part_number": "P121351",
@@ -2176,7 +3894,67 @@
         "manufacturer": "GPC",
         "part_number": "EP5272"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM121351"
+      ],
+      "BALDWIN": [
+        "PA3944"
+      ],
+      "CARQUEST": [
+        "88899",
+        "93384"
+      ],
+      "DART": [
+        "625081",
+        "842408",
+        "PPP121351"
+      ],
+      "FLEETGUARD": [
+        "AF4789"
+      ],
+      "FLEETLIFE": [
+        "FA1351"
+      ],
+      "FRAM": [
+        "PA5025"
+      ],
+      "HASTINGS": [
+        "PA3944"
+      ],
+      "HIFI": [
+        "SC90005"
+      ],
+      "KOMATSU": [
+        "PB7001"
+      ],
+      "LUBERFINER": [
+        "LAF1351"
+      ],
+      "NELSON": [
+        "121351",
+        "84261N"
+      ],
+      "PACIFIC-CAR-FOUNDRY": [
+        "6250B1"
+      ],
+      "SCHUPP": [
+        "SL81007"
+      ],
+      "UNIT-RIG": [
+        "1004320"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686668"
+      ],
+      "VMC": [
+        "AF121351"
+      ],
+      "WIX": [
+        "46899"
+      ]
+    }
   },
   {
     "part_number": "P123229",
@@ -2257,7 +4035,55 @@
         "manufacturer": "EUCLID",
         "part_number": "E12583881"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AGCO": [
+        "70257109"
+      ],
+      "ALLIS-CHALMERS": [
+        "257109",
+        "70257109"
+      ],
+      "BALDWIN": [
+        "PA5681"
+      ],
+      "CARQUEST": [
+        "93314"
+      ],
+      "CLARK": [
+        "E12583881"
+      ],
+      "DEUTZ": [
+        "70257109"
+      ],
+      "EUCLID": [
+        "12583881",
+        "12630763",
+        "E12583881",
+        "E12630763"
+      ],
+      "FIAT": [
+        "70257109"
+      ],
+      "FLEETGUARD": [
+        "AF27685"
+      ],
+      "HIFI": [
+        "SC50011"
+      ],
+      "HITACHI": [
+        "70257109"
+      ],
+      "JLG": [
+        "7024225"
+      ],
+      "LOESING": [
+        "020657"
+      ],
+      "VMC": [
+        "AF123229"
+      ]
+    }
   },
   {
     "part_number": "P126227",
@@ -2341,7 +4167,141 @@
         "manufacturer": "CETCO INCORPORATED",
         "part_number": "728536C1"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM126227"
+      ],
+      "AMERICAN-PARTS": [
+        "1474",
+        "94571"
+      ],
+      "BALDWIN": [
+        "PA2572"
+      ],
+      "BIG-A": [
+        "1474",
+        "94571"
+      ],
+      "CANADIAN": [
+        "CFM1044"
+      ],
+      "CARQUEST": [
+        "88571"
+      ],
+      "CASE": [
+        "728536C1"
+      ],
+      "CATERPILLAR": [
+        "3I0198",
+        "6P1290"
+      ],
+      "CETCO": [
+        "728536C1"
+      ],
+      "COOPERS": [
+        "AEP3509"
+      ],
+      "DRESSER": [
+        "728536C1",
+        "739627C91"
+      ],
+      "FLEETGUARD": [
+        "AF1726"
+      ],
+      "FLEETLIFE": [
+        "FA6227"
+      ],
+      "FLEETRITE": [
+        "AFR81726"
+      ],
+      "FRAM": [
+        "CA6686",
+        "PA6686"
+      ],
+      "GUARDIAN": [
+        "G126227"
+      ],
+      "HASTINGS": [
+        "AF737"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A6227",
+        "HDA6227"
+      ],
+      "HIFI": [
+        "SA11676"
+      ],
+      "JURA": [
+        "SA11676"
+      ],
+      "KERSHAW": [
+        "657385"
+      ],
+      "KOMATSU": [
+        "728536C1",
+        "739627C91"
+      ],
+      "KRALINATOR": [
+        "LA1044"
+      ],
+      "LUBERFINER": [
+        "LAF1797"
+      ],
+      "NAPA": [
+        "6571"
+      ],
+      "NAVISTAR": [
+        "728536C1"
+      ],
+      "NELSON": [
+        "126227",
+        "83748N",
+        "84249N",
+        "84819S"
+      ],
+      "NELSON-WINSLOW": [
+        "126227"
+      ],
+      "O-K": [
+        "101199"
+      ],
+      "PUROLATOR": [
+        "A23368",
+        "AF3368"
+      ],
+      "REFILCO": [
+        "AF6571"
+      ],
+      "RYCO": [
+        "HDA5475"
+      ],
+      "SCHUPP": [
+        "SKL2563"
+      ],
+      "SGM": [
+        "11007"
+      ],
+      "TEREX": [
+        "101199"
+      ],
+      "TIM": [
+        "6P1290"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686744"
+      ],
+      "VMC": [
+        "AF126227"
+      ],
+      "WIX": [
+        "46571",
+        "546571"
+      ],
+      "WOODGATE": [
+        "WGA407"
+      ]
+    }
   },
   {
     "part_number": "P131231",
@@ -2433,7 +4393,75 @@
         "manufacturer": "WORTHINGTON",
         "part_number": "5L34"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM131231"
+      ],
+      "AIR-SUPPLY": [
+        "121549"
+      ],
+      "AMC": [
+        "SFA1231"
+      ],
+      "BALDWIN": [
+        "PA3421"
+      ],
+      "CARQUEST": [
+        "93460"
+      ],
+      "EXMAN": [
+        "SFA1231"
+      ],
+      "FLEETGUARD": [
+        "AF4792",
+        "AF4792Q"
+      ],
+      "FLEETLIFE": [
+        "FA1231"
+      ],
+      "GARDNER-DENVER": [
+        "5L34"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA1231"
+      ],
+      "HIFI": [
+        "SA16689"
+      ],
+      "KELTEC": [
+        "KC255011",
+        "KC615005"
+      ],
+      "KRALINATOR": [
+        "LA949"
+      ],
+      "LOESING": [
+        "020802"
+      ],
+      "NELSON": [
+        "131231",
+        "84218N"
+      ],
+      "NILFISK-ADVANCE": [
+        "56481814"
+      ],
+      "SAKURA": [
+        "A8532"
+      ],
+      "SURE": [
+        "SFA1231"
+      ],
+      "VMC": [
+        "AF131231"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00810731"
+      ],
+      "WORTHINGTON": [
+        "5L34"
+      ]
+    }
   },
   {
     "part_number": "P132448",
@@ -2782,7 +4810,105 @@
         "manufacturer": "CRENLO",
         "part_number": "135958"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1054C"
+      ],
+      "AIR-MAZE": [
+        "125908026",
+        "EA171"
+      ],
+      "AIR-REFINER": [
+        "ARM132448",
+        "ARM5908"
+      ],
+      "AMERICAN-PARTS": [
+        "94588"
+      ],
+      "BALDWIN": [
+        "PA2617"
+      ],
+      "CARQUEST": [
+        "88588"
+      ],
+      "CASE": [
+        "F064318",
+        "F64318"
+      ],
+      "CATERPILLAR": [
+        "3I0277"
+      ],
+      "CRENLO": [
+        "135958"
+      ],
+      "FLEETGUARD": [
+        "AF4732"
+      ],
+      "FLEETRITE": [
+        "AFR84732"
+      ],
+      "FRAM": [
+        "PA5002"
+      ],
+      "FSI": [
+        "AP38702"
+      ],
+      "GENERAL-MOTORS": [
+        "25096312"
+      ],
+      "GUARDIAN": [
+        "G435908"
+      ],
+      "HASTINGS": [
+        "AF705",
+        "PA2617"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A2448",
+        "AM5908",
+        "HDA2448",
+        "HDAM5908"
+      ],
+      "KRALINATOR": [
+        "LA1088"
+      ],
+      "LUBERFINER": [
+        "LAF1871"
+      ],
+      "MACK": [
+        "25096312"
+      ],
+      "MCCORMICK": [
+        "MCF64318"
+      ],
+      "NAPA": [
+        "6588"
+      ],
+      "NELSON": [
+        "83751N"
+      ],
+      "PUROLATOR": [
+        "A24502",
+        "AF4502"
+      ],
+      "RYCO": [
+        "HDA5220"
+      ],
+      "SCHUPP": [
+        "SKL2565"
+      ],
+      "VMC": [
+        "AF132448"
+      ],
+      "WIX": [
+        "46588",
+        "546588"
+      ],
+      "WOODGATE": [
+        "WGA731"
+      ]
+    }
   },
   {
     "part_number": "P137523",
@@ -2841,7 +4967,54 @@
         "manufacturer": "WALDON",
         "part_number": "351056"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA2936"
+      ],
+      "BROCE": [
+        "P137523"
+      ],
+      "CARQUEST": [
+        "83174"
+      ],
+      "CRENLO": [
+        "102419"
+      ],
+      "FLEETGUARD": [
+        "AF1987"
+      ],
+      "HASTINGS": [
+        "PA2936"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA7523"
+      ],
+      "HIFI": [
+        "SC90076"
+      ],
+      "MOBILE-PRODUCTS-INCORPORATED": [
+        "351056"
+      ],
+      "TEREX": [
+        "28000"
+      ],
+      "UNIT-RIG": [
+        "28000"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686884"
+      ],
+      "VMC": [
+        "AF137523"
+      ],
+      "WALDON": [
+        "351056"
+      ],
+      "WIX": [
+        "49174"
+      ]
+    }
   },
   {
     "part_number": "P140277",
@@ -2903,7 +5076,55 @@
         "manufacturer": "HAVAM",
         "part_number": "7319"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM169180G"
+      ],
+      "BALDWIN": [
+        "PA2693"
+      ],
+      "CARQUEST": [
+        "83183",
+        "93377"
+      ],
+      "FLEETLIFE": [
+        "FA169180G"
+      ],
+      "FSI": [
+        "AP19252G"
+      ],
+      "GUASCOR": [
+        "1835002"
+      ],
+      "HAVAM": [
+        "00007319"
+      ],
+      "HENGST": [
+        "E1511L"
+      ],
+      "KRALINATOR": [
+        "LA1133"
+      ],
+      "LOESING": [
+        "020782"
+      ],
+      "PTPJM": [
+        "J850277"
+      ],
+      "SAKURA": [
+        "A8674"
+      ],
+      "SURE": [
+        "SFA0277"
+      ],
+      "WAUKESHA": [
+        "169180G"
+      ],
+      "WIX": [
+        "49183"
+      ]
+    }
   },
   {
     "part_number": "P150348",
@@ -2959,7 +5180,41 @@
         "manufacturer": "LOESING",
         "part_number": "20680"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AMERICAN-LINCOLN": [
+        "82404074"
+      ],
+      "CLARKE": [
+        "82404074",
+        "824040741"
+      ],
+      "HIFI": [
+        "SA17043"
+      ],
+      "INTRUPA": [
+        "IF1004"
+      ],
+      "JURA": [
+        "SA17043"
+      ],
+      "LINCOLN-FLOOR": [
+        "82404074"
+      ],
+      "LOESING": [
+        "020680"
+      ],
+      "NILFISK-ADVANCE": [
+        "82404074",
+        "824040741"
+      ],
+      "NORTHEAST": [
+        "IF1004"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "686976"
+      ]
+    }
   },
   {
     "part_number": "P158333",
@@ -3306,7 +5561,106 @@
         "manufacturer": "INTERNATIONAL",
         "part_number": "131413C1"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A310C"
+      ],
+      "ADVANCE-MACHINE": [
+        "P158333"
+      ],
+      "BALDWIN": [
+        "PA2619"
+      ],
+      "BIG-A": [
+        "93554"
+      ],
+      "BUHLER": [
+        "00105382",
+        "105382"
+      ],
+      "CARQUEST": [
+        "87554"
+      ],
+      "CASE": [
+        "131413C1",
+        "143481C2",
+        "143481C91",
+        "143481C92",
+        "F63436"
+      ],
+      "FLEETGUARD": [
+        "AF1870"
+      ],
+      "FLEETRITE": [
+        "AFR81870"
+      ],
+      "GENERAL-MOTORS": [
+        "25096430"
+      ],
+      "HASTINGS": [
+        "AF782"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A2071",
+        "HDA2071"
+      ],
+      "HIFI": [
+        "SC11820"
+      ],
+      "KRALINATOR": [
+        "LA378"
+      ],
+      "LOESING": [
+        "020968"
+      ],
+      "LUBERFINER": [
+        "LAF1879"
+      ],
+      "MANN": [
+        "CUD97001"
+      ],
+      "MCCORMICK": [
+        "F63436"
+      ],
+      "NAPA": [
+        "2554"
+      ],
+      "NAVISTAR": [
+        "131413C1",
+        "143481C92"
+      ],
+      "NELSON": [
+        "115154",
+        "84935S"
+      ],
+      "NEW-HOLLAND": [
+        "V68018"
+      ],
+      "PUROLATOR": [
+        "A24885"
+      ],
+      "RYCO": [
+        "HDA5217"
+      ],
+      "VAPORMATIC": [
+        "VPM8004"
+      ],
+      "VERSATILE": [
+        "V105382",
+        "V15382",
+        "V89497"
+      ],
+      "VMC": [
+        "AF158333"
+      ],
+      "WIX": [
+        "42554"
+      ],
+      "WOODGATE": [
+        "WGA799"
+      ]
+    }
   },
   {
     "part_number": "P158854",
@@ -4051,7 +6405,160 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3I0437"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A654C"
+      ],
+      "AG-CHEM-EQUIPMENT": [
+        "709941"
+      ],
+      "AIR-REFINER": [
+        "ARM117482"
+      ],
+      "AIR-MAZE": [
+        "126142001"
+      ],
+      "AMERICAN-PARTS": [
+        "1222",
+        "93560"
+      ],
+      "BALDWIN": [
+        "PA2352"
+      ],
+      "BIG-A": [
+        "1222",
+        "93560"
+      ],
+      "CANADIAN": [
+        "CFM645"
+      ],
+      "CARQUEST": [
+        "87560"
+      ],
+      "CATERPILLAR": [
+        "3I0437"
+      ],
+      "COOPERS": [
+        "AEP3510"
+      ],
+      "CRENLO": [
+        "115121"
+      ],
+      "DELUXE": [
+        "656",
+        "656AIR",
+        "AF656"
+      ],
+      "FLEETGUARD": [
+        "AF1677"
+      ],
+      "FLEETRITE": [
+        "AFR81677"
+      ],
+      "FORD": [
+        "9576P158854"
+      ],
+      "FRAM": [
+        "CA2585",
+        "PA1571",
+        "PA2585"
+      ],
+      "FSI": [
+        "AP28752G"
+      ],
+      "GENERAL-MOTORS": [
+        "8994603"
+      ],
+      "GUARDIAN": [
+        "G117482"
+      ],
+      "HASTINGS": [
+        "AF401"
+      ],
+      "HAVAM": [
+        "HD8700"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A7482",
+        "HDA7482"
+      ],
+      "HIFI": [
+        "SC11627"
+      ],
+      "HINSON": [
+        "300161"
+      ],
+      "JOHN-DEERE": [
+        "AR49986",
+        "AR61903",
+        "AR619033",
+        "P117482",
+        "RE12793",
+        "RE67830"
+      ],
+      "JURA": [
+        "SA11627"
+      ],
+      "KRALINATOR": [
+        "LA645"
+      ],
+      "LUBERFINER": [
+        "LAF7482"
+      ],
+      "MANN": [
+        "CUD71001"
+      ],
+      "MOTORCRAFT": [
+        "FA787"
+      ],
+      "NAPA": [
+        "2560"
+      ],
+      "NELSON": [
+        "83749N",
+        "84782S"
+      ],
+      "PERRY": [
+        "PAK937"
+      ],
+      "PUROLATOR": [
+        "A83059",
+        "AF3059"
+      ],
+      "RYCO": [
+        "HDA5393"
+      ],
+      "SCHUPP": [
+        "SKL2572"
+      ],
+      "TECFIL": [
+        "ACP591"
+      ],
+      "UFI": [
+        "5350400"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "687056"
+      ],
+      "VERSATILE": [
+        "68018",
+        "V68018"
+      ],
+      "VMC": [
+        "AF158854"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00811859"
+      ],
+      "WIX": [
+        "42560",
+        "542560"
+      ],
+      "WOODGATE": [
+        "WGA712"
+      ]
+    }
   },
   {
     "part_number": "P500194",
@@ -4993,7 +7500,66 @@
         "manufacturer": "VOLVO CONSTRUCTION EQUIPMENT",
         "part_number": "VOE15052786"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ASAS": [
+        "HF6201"
+      ],
+      "BALDWIN": [
+        "PA5310"
+      ],
+      "CARQUEST": [
+        "83979"
+      ],
+      "EUROGIELLE": [
+        "864"
+      ],
+      "FILTER-CENTER": [
+        "PA0198"
+      ],
+      "FLEETGUARD": [
+        "AF26267"
+      ],
+      "HASTINGS": [
+        "AF2440"
+      ],
+      "HENGST": [
+        "E4957LI"
+      ],
+      "HIFI": [
+        "SC60014"
+      ],
+      "JURA": [
+        "SC60014"
+      ],
+      "LUBERFINER": [
+        "LAF3700"
+      ],
+      "NAPA": [
+        "9979"
+      ],
+      "SAKURA": [
+        "C2401",
+        "CA2401"
+      ],
+      "SCHUPP": [
+        "SKL46127"
+      ],
+      "SURE": [
+        "SFC03979"
+      ],
+      "VMC": [
+        "AF500194"
+      ],
+      "VOLVO": [
+        "11703979",
+        "117039792",
+        "15052786"
+      ],
+      "WIX": [
+        "49979"
+      ]
+    }
   },
   {
     "part_number": "P500195",
@@ -5519,7 +8085,62 @@
         "manufacturer": "VOLVO CONSTRUCTION EQUIPMENT",
         "part_number": "VOE11703980"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ASAS": [
+        "HF6202"
+      ],
+      "BALDWIN": [
+        "PA4991"
+      ],
+      "CARQUEST": [
+        "83980"
+      ],
+      "FILTER-CENTER": [
+        "PA0199"
+      ],
+      "FLEETGUARD": [
+        "AF26384"
+      ],
+      "HASTINGS": [
+        "AF2435"
+      ],
+      "HENGST": [
+        "E5939LI"
+      ],
+      "HIFI": [
+        "SC60015"
+      ],
+      "LUBERFINER": [
+        "LAF3699"
+      ],
+      "NABI": [
+        "9980"
+      ],
+      "NAPA": [
+        "9980"
+      ],
+      "SAKURA": [
+        "C2402",
+        "CA2402"
+      ],
+      "SCHUPP": [
+        "SKL46128"
+      ],
+      "SURE": [
+        "SFC03980"
+      ],
+      "VMC": [
+        "AF500195"
+      ],
+      "VOLVO": [
+        "11703980",
+        "11705485"
+      ],
+      "WIX": [
+        "49980"
+      ]
+    }
   },
   {
     "part_number": "P500204",
@@ -5888,7 +8509,24 @@
         "manufacturer": "KOMATSU",
         "part_number": "ND0145200280"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4987"
+      ],
+      "CARQUEST": [
+        "99059"
+      ],
+      "HENGST": [
+        "E1971LI"
+      ],
+      "HIFI": [
+        "SC80004"
+      ],
+      "SAKURA": [
+        "CA5603"
+      ]
+    }
   },
   {
     "part_number": "P500248",
@@ -6472,7 +9110,18 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "4S00686R"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E5994LI"
+      ],
+      "HIFI": [
+        "SC80021"
+      ],
+      "UFI": [
+        "5363200"
+      ]
+    }
   },
   {
     "part_number": "P500249",
@@ -6968,7 +9617,18 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "4S00685R"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E5995LI"
+      ],
+      "HIFI": [
+        "SC80027"
+      ],
+      "UFI": [
+        "5362900"
+      ]
+    }
   },
   {
     "part_number": "P520450",
@@ -7019,7 +9679,112 @@
         "manufacturer": "CARBOCOL",
         "part_number": "5G1913"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A973C"
+      ],
+      "AIR-REFINER": [
+        "ARM1913"
+      ],
+      "ALLIED-SYSTEM": [
+        "233025"
+      ],
+      "AMERICAN-PARTS": [
+        "94577"
+      ],
+      "BALDWIN": [
+        "P520450",
+        "PA3756"
+      ],
+      "BIG-A": [
+        "93641",
+        "94577"
+      ],
+      "CARBOCOL": [
+        "5G1913"
+      ],
+      "CARQUEST": [
+        "87641",
+        "88577"
+      ],
+      "CATERPILLAR": [
+        "5G1913"
+      ],
+      "FLEETGUARD": [
+        "AF4785"
+      ],
+      "FLEETLIFE": [
+        "FA5G1913"
+      ],
+      "FLEETRITE": [
+        "AFR84785"
+      ],
+      "FRAM": [
+        "233025",
+        "PA5013"
+      ],
+      "GENERAL-MOTORS": [
+        "25095207"
+      ],
+      "GUARDIAN": [
+        "G5G1913"
+      ],
+      "HASTINGS": [
+        "AF2009"
+      ],
+      "HIFI": [
+        "SC12289"
+      ],
+      "JOHN-DEERE": [
+        "AT219128"
+      ],
+      "JURA": [
+        "SA12289"
+      ],
+      "KRALINATOR": [
+        "LA1187"
+      ],
+      "LOESING": [
+        "020238"
+      ],
+      "LUBERFINER": [
+        "LAF1468"
+      ],
+      "MANN": [
+        "CUD41006"
+      ],
+      "NAPA": [
+        "2641",
+        "6577"
+      ],
+      "NELSON": [
+        "83792N"
+      ],
+      "SCHUPP": [
+        "SKL2568"
+      ],
+      "TIM": [
+        "5G1913"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "687896"
+      ],
+      "VMC": [
+        "AF520450"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00811941"
+      ],
+      "WIX": [
+        "42641",
+        "46577",
+        "546577"
+      ],
+      "WOODGATE": [
+        "WGA1196"
+      ]
+    }
   },
   {
     "part_number": "P525026",
@@ -7133,7 +9898,90 @@
         "manufacturer": "FORD",
         "part_number": "9576P525026"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM525026"
+      ],
+      "AIR-MAZE": [
+        "EA172"
+      ],
+      "AMERICAN-PARTS": [
+        "94582"
+      ],
+      "BALDWIN": [
+        "PA2844"
+      ],
+      "BIG-A": [
+        "94582"
+      ],
+      "CARBOCOL": [
+        "7T1890"
+      ],
+      "CARQUEST": [
+        "88582"
+      ],
+      "CATERPILLAR": [
+        "1T1890",
+        "7T1890",
+        "7T1S90"
+      ],
+      "FLEETGUARD": [
+        "AF4731"
+      ],
+      "FLEETLIFE": [
+        "FA7T1890"
+      ],
+      "FLEETRITE": [
+        "AFR84731"
+      ],
+      "FORD": [
+        "9576P525026"
+      ],
+      "HASTINGS": [
+        "PA2844"
+      ],
+      "HIFI": [
+        "SC90030"
+      ],
+      "KRALINATOR": [
+        "LA1541"
+      ],
+      "LUBERFINER": [
+        "LAF5026"
+      ],
+      "NAPA": [
+        "6582"
+      ],
+      "NELSON": [
+        "84280N"
+      ],
+      "PUROLATOR": [
+        "A14841"
+      ],
+      "SCHUPP": [
+        "SKL2569"
+      ],
+      "TIM": [
+        "1T1890",
+        "7T1890"
+      ],
+      "UNIFLUX": [
+        "XC3189"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "688024"
+      ],
+      "VMC": [
+        "AF525026"
+      ],
+      "WIX": [
+        "46582"
+      ],
+      "WOODGATE": [
+        "WGA1007"
+      ]
+    }
   },
   {
     "part_number": "P527595",
@@ -7586,7 +10434,92 @@
         "manufacturer": "FSI",
         "part_number": "AP21592G"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM527595"
+      ],
+      "BALDWIN": [
+        "PA3440"
+      ],
+      "BIG-A": [
+        "94700"
+      ],
+      "CARQUEST": [
+        "88700"
+      ],
+      "CATERPILLAR": [
+        "3I1453",
+        "6T0988"
+      ],
+      "FLEETGUARD": [
+        "AF26181"
+      ],
+      "FLEETLIFE": [
+        "FA6T0988"
+      ],
+      "FLEETRITE": [
+        "AFR826181"
+      ],
+      "FORD": [
+        "9576P527595"
+      ],
+      "FREIGHTLINER": [
+        "DNP527595"
+      ],
+      "FSI": [
+        "AP21592G"
+      ],
+      "HASTINGS": [
+        "AF2336"
+      ],
+      "HIFI": [
+        "SC16044"
+      ],
+      "JURA": [
+        "SA16044"
+      ],
+      "KRALINATOR": [
+        "LA1463"
+      ],
+      "LOESING": [
+        "020144"
+      ],
+      "LUBERFINER": [
+        "LAF8393"
+      ],
+      "MANN": [
+        "CU54192"
+      ],
+      "MANN-HUMMEL": [
+        "CU54192"
+      ],
+      "NAPA": [
+        "6700"
+      ],
+      "PUROLATOR": [
+        "A24884",
+        "A24884Q"
+      ],
+      "TIM": [
+        "6T0988"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "688068"
+      ],
+      "VMC": [
+        "AF527595"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00811883"
+      ],
+      "WIX": [
+        "46700"
+      ],
+      "WOODGATE": [
+        "WGA1184"
+      ]
+    }
   },
   {
     "part_number": "P533559",
@@ -8255,7 +11188,66 @@
         "manufacturer": "GPC",
         "part_number": "EP5298"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "ARM12312"
+      ],
+      "BALDWIN": [
+        "PA3613"
+      ],
+      "BERGERAT-MONNOYEUR": [
+        "E3546"
+      ],
+      "CARQUEST": [
+        "89295"
+      ],
+      "CHARLES-MACHINE": [
+        "194227A",
+        "RM002A"
+      ],
+      "CHARLES-MACHINE-WORKS": [
+        "194227A",
+        "RM002A"
+      ],
+      "FLEETGUARD": [
+        "AF25374"
+      ],
+      "FLEETRITE": [
+        "AFR825374"
+      ],
+      "HASTINGS": [
+        "AF2264",
+        "PA3613"
+      ],
+      "HIFI": [
+        "SC17022"
+      ],
+      "JURA": [
+        "SA17022"
+      ],
+      "KOMATSU": [
+        "4210712312"
+      ],
+      "KRALINATOR": [
+        "LA1395"
+      ],
+      "LOESING": [
+        "020411"
+      ],
+      "LUBERFINER": [
+        "LAF5866"
+      ],
+      "UFI": [
+        "5349700"
+      ],
+      "VMC": [
+        "AF533559"
+      ],
+      "WIX": [
+        "24295"
+      ]
+    }
   },
   {
     "part_number": "P533788",
@@ -8495,7 +11487,56 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "AT116077"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3945"
+      ],
+      "CARQUEST": [
+        "88706"
+      ],
+      "FLEETGUARD": [
+        "AF25089"
+      ],
+      "FLEETRITE": [
+        "AFR825089"
+      ],
+      "HASTINGS": [
+        "PA3945"
+      ],
+      "HIFI": [
+        "SC90041"
+      ],
+      "HITACHI": [
+        "4206637"
+      ],
+      "JOHN-DEERE": [
+        "AT116077",
+        "AT16077"
+      ],
+      "KRALINATOR": [
+        "LA1856"
+      ],
+      "LUBERFINER": [
+        "LAF8775",
+        "LAF8775001527766"
+      ],
+      "NAPA": [
+        "6706"
+      ],
+      "SAKURA": [
+        "A2715"
+      ],
+      "VMC": [
+        "AF533788"
+      ],
+      "WIX": [
+        "46706"
+      ],
+      "WOODGATE": [
+        "WGA1194"
+      ]
+    }
   },
   {
     "part_number": "P535089",
@@ -8880,7 +11921,168 @@
         "manufacturer": "CROSLAND",
         "part_number": "8006"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALCO": [
+        "MD9010"
+      ],
+      "BALDWIN": [
+        "PA3414"
+      ],
+      "BERGKRAFT": [
+        "BK8400575"
+      ],
+      "BOSCH": [
+        "1987431159"
+      ],
+      "CARQUEST": [
+        "83477"
+      ],
+      "CATERPILLAR": [
+        "312145"
+      ],
+      "COOPERS": [
+        "AEP3516"
+      ],
+      "CROSLAND": [
+        "8006",
+        "9008"
+      ],
+      "EUCLID": [
+        "110058971"
+      ],
+      "FEBI-BILSTEIN": [
+        "10148"
+      ],
+      "FIBA": [
+        "CF58C"
+      ],
+      "FIL": [
+        "HP2228"
+      ],
+      "FILTRAUTO-UK": [
+        "9008"
+      ],
+      "FILTRON": [
+        "K1084"
+      ],
+      "FLEETGUARD": [
+        "AF4608"
+      ],
+      "FLEETRITE": [
+        "AFR84608"
+      ],
+      "FRAM": [
+        "CA5590"
+      ],
+      "GPC": [
+        "EP5140"
+      ],
+      "GREYFRIARS": [
+        "1219A"
+      ],
+      "HASTINGS": [
+        "PA3414"
+      ],
+      "HENGST": [
+        "E1905LI"
+      ],
+      "HIFI": [
+        "SC14558"
+      ],
+      "JURA": [
+        "SA14558"
+      ],
+      "KNECHT": [
+        "LA99"
+      ],
+      "LOESING": [
+        "020209"
+      ],
+      "LUBERFINER": [
+        "LAF8628"
+      ],
+      "M": [
+        "K957"
+      ],
+      "MAGNETI-MARELLI": [
+        "154064169450"
+      ],
+      "MAHLE": [
+        "LA99"
+      ],
+      "MANN": [
+        "CU2785"
+      ],
+      "MANN-HUMMEL": [
+        "CU2785"
+      ],
+      "MECAFILTER": [
+        "ELR7041"
+      ],
+      "MEYLE": [
+        "5343210008"
+      ],
+      "O-K": [
+        "1448987"
+      ],
+      "PBR": [
+        "AI5031"
+      ],
+      "PURFLUX": [
+        "AH811"
+      ],
+      "SAKURA": [
+        "CA2405"
+      ],
+      "SCHUPP": [
+        "SKL2514",
+        "SKL2515"
+      ],
+      "SCT": [
+        "SA1132"
+      ],
+      "SIVENTO": [
+        "P905"
+      ],
+      "STELLOX": [
+        "8711822SX"
+      ],
+      "UFI": [
+        "3005100"
+      ],
+      "VIRGIS": [
+        "PF15686"
+      ],
+      "VMC": [
+        "AF535089"
+      ],
+      "VME": [
+        "110058971"
+      ],
+      "VOLVO": [
+        "11005897",
+        "110058971",
+        "11007388",
+        "110073889",
+        "1584575",
+        "15845753",
+        "158475",
+        "4771477",
+        "47714779"
+      ],
+      "WILMINK-GROUP": [
+        "WG1215557",
+        "WG1434766"
+      ],
+      "WIX": [
+        "49477",
+        "93049E"
+      ],
+      "WOODGATE": [
+        "WGA1032"
+      ]
+    }
   },
   {
     "part_number": "P536429",
@@ -9429,7 +12631,158 @@
         "manufacturer": "BIG A",
         "part_number": "94272"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1341C"
+      ],
+      "AIR-REFINER": [
+        "ARM8406"
+      ],
+      "AMC": [
+        "AE27410",
+        "SFA0266"
+      ],
+      "AMSOIL": [
+        "EAA106",
+        "TS106"
+      ],
+      "ATLAS": [
+        "A162"
+      ],
+      "BALDWIN": [
+        "PA3763",
+        "PA3823",
+        "PA4074"
+      ],
+      "BIG-A": [
+        "94272",
+        "94293"
+      ],
+      "CARQUEST": [
+        "88272",
+        "88293"
+      ],
+      "CATERPILLAR": [
+        "1070266"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "AF7878"
+      ],
+      "CHRYSLER": [
+        "4728406",
+        "4856649",
+        "4864442"
+      ],
+      "CUMMINS": [
+        "3097074",
+        "3100291"
+      ],
+      "DEUSCH": [
+        "A1216"
+      ],
+      "EXMAN": [
+        "AE27410",
+        "SFA0266"
+      ],
+      "FLEETGUARD": [
+        "AF25090",
+        "AF25541"
+      ],
+      "FLEETRITE": [
+        "AFR825090",
+        "AFR825541"
+      ],
+      "FRAM": [
+        "CA7640"
+      ],
+      "GENERAL-MOTORS": [
+        "25175326"
+      ],
+      "GROUP-7": [
+        "VA5378"
+      ],
+      "HASTINGS": [
+        "AF313",
+        "AF445"
+      ],
+      "HIFI": [
+        "SC90009"
+      ],
+      "KRALINATOR": [
+        "LA1510",
+        "LA1653"
+      ],
+      "LUBERFINER": [
+        "AF7878"
+      ],
+      "MANN": [
+        "MA1156"
+      ],
+      "MANN-HUMMEL": [
+        "MA1156"
+      ],
+      "MOBIL": [
+        "MA5378"
+      ],
+      "MOPAR": [
+        "4728406"
+      ],
+      "NAPA": [
+        "6272",
+        "6293"
+      ],
+      "NELSON": [
+        "870199A",
+        "870199E",
+        "87559B",
+        "87559D"
+      ],
+      "NU-TECH": [
+        "N949659"
+      ],
+      "PENNZOIL": [
+        "PZA203"
+      ],
+      "PHILLIPS-66": [
+        "PA6272"
+      ],
+      "POWER-FLO": [
+        "SA55378"
+      ],
+      "PUROLATOR": [
+        "A45047",
+        "A55378"
+      ],
+      "QUAKER-STATE": [
+        "QSA45047",
+        "QSA7640"
+      ],
+      "RACOR": [
+        "AFTFP2056"
+      ],
+      "SAKURA": [
+        "A5574"
+      ],
+      "SHELL": [
+        "SHA162"
+      ],
+      "SURE": [
+        "SFA5378"
+      ],
+      "VMC": [
+        "AF536429"
+      ],
+      "WARNER-SWASEY": [
+        "AF7878",
+        "WAF7878"
+      ],
+      "WIX": [
+        "24094",
+        "46272",
+        "46293"
+      ]
+    }
   },
   {
     "part_number": "P543107",
@@ -9767,7 +13120,53 @@
         "manufacturer": "LOESING",
         "part_number": "25221"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3782"
+      ],
+      "CARQUEST": [
+        "88825"
+      ],
+      "CATERPILLAR": [
+        "1212760",
+        "8C9657"
+      ],
+      "FLEETGUARD": [
+        "AF25659"
+      ],
+      "FLEETRITE": [
+        "AFR825659"
+      ],
+      "HASTINGS": [
+        "PA3782"
+      ],
+      "HIFI": [
+        "SC90016"
+      ],
+      "KRALINATOR": [
+        "LA6825"
+      ],
+      "LOESING": [
+        "025221"
+      ],
+      "LUBERFINER": [
+        "LAF9657",
+        "LAF9667"
+      ],
+      "NAPA": [
+        "6825"
+      ],
+      "NELSON": [
+        "87246N"
+      ],
+      "VMC": [
+        "AF543107"
+      ],
+      "WIX": [
+        "46825"
+      ]
+    }
   },
   {
     "part_number": "P606063",
@@ -10301,7 +13700,346 @@
         "manufacturer": "AUTO PAR",
         "part_number": "AC246"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1114C",
+        "ACA17"
+      ],
+      "AMERICAN-PARTS": [
+        "94128"
+      ],
+      "AMSOIL": [
+        "EAA129",
+        "LT86",
+        "TS86"
+      ],
+      "ATLAS": [
+        "A-101",
+        "A101"
+      ],
+      "AUTOEDGE": [
+        "AE5057"
+      ],
+      "AUTOPAR": [
+        "AC246"
+      ],
+      "AUTOPRO": [
+        "4128"
+      ],
+      "BALDWIN": [
+        "PA2149",
+        "PA3822",
+        "PA5482",
+        "PA5766"
+      ],
+      "BIG A": [
+        "94128"
+      ],
+      "BIG-A": [
+        "94128"
+      ],
+      "CAM2": [
+        "CA3593"
+      ],
+      "CANADIAN-TIRE": [
+        "23-3155-0"
+      ],
+      "CARCARE": [
+        "AF5057"
+      ],
+      "CARQUEST": [
+        "83820",
+        "88128",
+        "90904",
+        "BA3593"
+      ],
+      "CASITE": [
+        "CFA879"
+      ],
+      "CATERPILLAR": [
+        "112-7448"
+      ],
+      "CENEX": [
+        "CA1042"
+      ],
+      "CHAMP": [
+        "AF1042"
+      ],
+      "CHAMPION": [
+        "AF426"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "AF1042"
+      ],
+      "CITGO": [
+        "CA3593"
+      ],
+      "DEFENSE": [
+        "DA5057"
+      ],
+      "DEUSCH": [
+        "A1163"
+      ],
+      "DEUTSCH": [
+        "A1163"
+      ],
+      "ECONO-LUBE": [
+        "A33593"
+      ],
+      "EVERGARD": [
+        "EA3593"
+      ],
+      "FACET": [
+        "3593",
+        "AP3593"
+      ],
+      "FILTERS INCORPORATED": [
+        "AF5057"
+      ],
+      "FIRESTONE": [
+        "CF-3593",
+        "CF3593"
+      ],
+      "FLAG": [
+        "A-5057"
+      ],
+      "FLEETGUARD": [
+        "AF25664",
+        "AF4613",
+        "AF55727"
+      ],
+      "FLEETRITE": [
+        "AFR-84613",
+        "AFR84613"
+      ],
+      "FORD": [
+        "E6SE9601BA",
+        "E6SZ-9601-B",
+        "E6SZ9601A",
+        "E6SZ9601B"
+      ],
+      "FRAM": [
+        "CA5057"
+      ],
+      "G K INDUSTRIES": [
+        "AF2026"
+      ],
+      "GENERAL-MOTORS": [
+        "25097239",
+        "25097240"
+      ],
+      "GONHER": [
+        "GA5057"
+      ],
+      "GOODYEAR": [
+        "A3593"
+      ],
+      "GRAND-PRIX": [
+        "AF1042"
+      ],
+      "GREASE-MONKEY": [
+        "GMA33593",
+        "GMAP3593"
+      ],
+      "GREEN": [
+        "2053",
+        "2137"
+      ],
+      "GROUP-7": [
+        "VA3593"
+      ],
+      "HASTINGS": [
+        "AF879",
+        "PA3822"
+      ],
+      "HAVOLINE": [
+        "TA-68"
+      ],
+      "HIFI": [
+        "SC80010"
+      ],
+      "JIFFY-LUBE": [
+        "A33593",
+        "HA5057",
+        "JLA3593"
+      ],
+      "K-N": [
+        "33-2015",
+        "33-2040"
+      ],
+      "KNECHT": [
+        "LX2008"
+      ],
+      "KOMATSU": [
+        "427-07-22120",
+        "4270722120"
+      ],
+      "KRALINATOR": [
+        "LA1175"
+      ],
+      "LEE": [
+        "AF1042",
+        "AFL-1042",
+        "AFL1042"
+      ],
+      "LUBERFINER": [
+        "AF1042",
+        "LAF5482",
+        "LAF8777"
+      ],
+      "MAGNETI-MARELLI": [
+        "154703575400"
+      ],
+      "MAHLE": [
+        "LX2008"
+      ],
+      "MASTER-PARTS": [
+        "AF-1042"
+      ],
+      "MECHANICS-CIRCLE": [
+        "MAF 5057"
+      ],
+      "MICROGARD": [
+        "MGA5057"
+      ],
+      "MIGHTY": [
+        "A3593"
+      ],
+      "MOBIL": [
+        "MA3593"
+      ],
+      "MOTORCRAFT": [
+        "FA 1042",
+        "FA1042"
+      ],
+      "NAPA": [
+        "26128",
+        "6128"
+      ],
+      "NELSON": [
+        "87970N"
+      ],
+      "PARTSMASTER": [
+        "66128"
+      ],
+      "PARTS-PLUS": [
+        "AF1042"
+      ],
+      "PENNZOIL": [
+        "PZA-145",
+        "PZA145"
+      ],
+      "PERFORMAX": [
+        "PA-145"
+      ],
+      "PHILLIPS 66": [
+        "PA6128"
+      ],
+      "PHILLIPS-66": [
+        "PA6128"
+      ],
+      "POWER FLO": [
+        "SA33593"
+      ],
+      "POWER-FLO": [
+        "SA33593"
+      ],
+      "PRECISION-TUNE": [
+        "AF-3593"
+      ],
+      "PRO-TEC": [
+        "251"
+      ],
+      "PRO-GAUGE": [
+        "PGA-3593"
+      ],
+      "PROMOTIVE": [
+        "AF3593"
+      ],
+      "PRONTO": [
+        "PA-5057"
+      ],
+      "PUROLATOR": [
+        "A33593",
+        "AF3593"
+      ],
+      "QUAKER-STATE": [
+        "QSA5057"
+      ],
+      "ROCKHILL": [
+        "66128"
+      ],
+      "RYCO": [
+        "A491"
+      ],
+      "S-B": [
+        "66-2015"
+      ],
+      "SAKURA": [
+        "A1908",
+        "CA5676"
+      ],
+      "SERVICE-1": [
+        "AF3593"
+      ],
+      "SERVICE-PRO": [
+        "MA3593"
+      ],
+      "SHEFA": [
+        "S17593"
+      ],
+      "SHELL": [
+        "SA75",
+        "SHA68"
+      ],
+      "SILVERLINE": [
+        "26128"
+      ],
+      "STP": [
+        "SA5057",
+        "SAF1042"
+      ],
+      "TEXACO": [
+        "TA68",
+        "TA68B"
+      ],
+      "TRUST": [
+        "AF1042"
+      ],
+      "UNION-76": [
+        "935"
+      ],
+      "UNOCAL": [
+        "935"
+      ],
+      "VALVOLINE": [
+        "VA73"
+      ],
+      "VMC": [
+        "AF606063"
+      ],
+      "VOLVO": [
+        "11202052"
+      ],
+      "WARNER": [
+        "AF1042"
+      ],
+      "WARNER-SWASEY": [
+        "AF1042",
+        "WAF1042"
+      ],
+      "WIX": [
+        "46128",
+        "49820"
+      ],
+      "WOODGATE": [
+        "WGA889"
+      ],
+      "XSV": [
+        "OPA3593"
+      ]
+    }
   },
   {
     "part_number": "P606082",
@@ -10374,7 +14112,38 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "6P1319"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3680"
+      ],
+      "CARQUEST": [
+        "83081",
+        "93297"
+      ],
+      "CATERPILLAR": [
+        "6P1319"
+      ],
+      "FLEETGUARD": [
+        "AF55730"
+      ],
+      "HASTINGS": [
+        "PA3680"
+      ],
+      "HIFI": [
+        "SC90059"
+      ],
+      "LUBERFINER": [
+        "LAF3680"
+      ],
+      "NAPA": [
+        "9081"
+      ],
+      "WIX": [
+        "49081",
+        "549081"
+      ]
+    }
   },
   {
     "part_number": "P606086",
@@ -10450,7 +14219,30 @@
         "manufacturer": "NELSON",
         "part_number": "87995N"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3937"
+      ],
+      "CARQUEST": [
+        "99061"
+      ],
+      "CATERPILLAR": [
+        "1130305"
+      ],
+      "FLEETGUARD": [
+        "AF25665"
+      ],
+      "HIFI": [
+        "SC90004"
+      ],
+      "NELSON": [
+        "87995N"
+      ],
+      "UNIFLUX": [
+        "XC93"
+      ]
+    }
   },
   {
     "part_number": "P606087",
@@ -10692,7 +14484,54 @@
         "manufacturer": "VMC",
         "part_number": "AF606087"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3803"
+      ],
+      "BIG-A": [
+        "94689"
+      ],
+      "CARQUEST": [
+        "88689"
+      ],
+      "CATERPILLAR": [
+        "7T7358"
+      ],
+      "FLEETGUARD": [
+        "AF25657"
+      ],
+      "FLEETRITE": [
+        "AFR825657"
+      ],
+      "HASTINGS": [
+        "AF2373"
+      ],
+      "HIFI": [
+        "SC90019"
+      ],
+      "KRALINATOR": [
+        "LA1838"
+      ],
+      "LUBERFINER": [
+        "LAF7358"
+      ],
+      "NAPA": [
+        "6689"
+      ],
+      "NELSON": [
+        "84286N"
+      ],
+      "SAKURA": [
+        "CA5501"
+      ],
+      "VMC": [
+        "AF606087"
+      ],
+      "WIX": [
+        "46689"
+      ]
+    }
   },
   {
     "part_number": "P606089",
@@ -10793,7 +14632,54 @@
         "manufacturer": "VMC",
         "part_number": "AF606089"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3482"
+      ],
+      "BIG-A": [
+        "93403"
+      ],
+      "CARQUEST": [
+        "87403"
+      ],
+      "CATERPILLAR": [
+        "2G1946",
+        "9P5174"
+      ],
+      "FLEETGUARD": [
+        "AF1979",
+        "AF25680"
+      ],
+      "FLEETRITE": [
+        "AFR81979",
+        "AFR825680"
+      ],
+      "HASTINGS": [
+        "PA3482"
+      ],
+      "HIFI": [
+        "SC90051"
+      ],
+      "KRALINATOR": [
+        "LA2403"
+      ],
+      "LUBERFINER": [
+        "LAF8782"
+      ],
+      "NAPA": [
+        "2403"
+      ],
+      "VMC": [
+        "AF606089"
+      ],
+      "WIX": [
+        "42403"
+      ],
+      "WOODGATE": [
+        "WGA1183"
+      ]
+    }
   },
   {
     "part_number": "P606090",
@@ -10962,7 +14848,47 @@
         "manufacturer": "VMC",
         "part_number": "AF606090"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3829"
+      ],
+      "CARQUEST": [
+        "89314"
+      ],
+      "CATERPILLAR": [
+        "2321732",
+        "9X4986"
+      ],
+      "FLEETGUARD": [
+        "AF25660",
+        "AF25665"
+      ],
+      "FLEETRITE": [
+        "AFR825660"
+      ],
+      "HASTINGS": [
+        "AF2450"
+      ],
+      "HIFI": [
+        "SC90046"
+      ],
+      "KRALINATOR": [
+        "LA4314"
+      ],
+      "LUBERFINER": [
+        "LAF8779"
+      ],
+      "NAPA": [
+        "4314"
+      ],
+      "VMC": [
+        "AF606090"
+      ],
+      "WIX": [
+        "24314"
+      ]
+    }
   },
   {
     "part_number": "P606483",
@@ -11043,7 +14969,49 @@
         "manufacturer": "VMC",
         "part_number": "AF606483"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "RS4597"
+      ],
+      "BIG-A": [
+        "94754"
+      ],
+      "CARQUEST": [
+        "88754"
+      ],
+      "FLEETGUARD": [
+        "AF26178"
+      ],
+      "FLEETRITE": [
+        "AFR826178"
+      ],
+      "HASTINGS": [
+        "RS4597"
+      ],
+      "HIFI": [
+        "SC90187"
+      ],
+      "JOHN-DEERE": [
+        "T168220"
+      ],
+      "LUBERFINER": [
+        "LAF6029"
+      ],
+      "MAHLE": [
+        "LX3613"
+      ],
+      "NAPA": [
+        "6754"
+      ],
+      "VMC": [
+        "AF606483"
+      ],
+      "WIX": [
+        "46754",
+        "546754"
+      ]
+    }
   },
   {
     "part_number": "P606555",
@@ -11851,7 +15819,49 @@
         "manufacturer": "VOLVO",
         "part_number": "VO0201P"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4681"
+      ],
+      "CARQUEST": [
+        "83084"
+      ],
+      "FLEETGUARD": [
+        "AF26405"
+      ],
+      "HASTINGS": [
+        "AF2428",
+        "PA4681",
+        "PA4681**"
+      ],
+      "HENGST": [
+        "E6909LI"
+      ],
+      "HIFI": [
+        "SC60056"
+      ],
+      "LUBERFINER": [
+        "CAF24000"
+      ],
+      "MACK": [
+        "2191P606555"
+      ],
+      "NAPA": [
+        "9084"
+      ],
+      "VMC": [
+        "AF606555"
+      ],
+      "VOLVO": [
+        "20435801",
+        "85114060",
+        "VO09803P"
+      ],
+      "WIX": [
+        "49084"
+      ]
+    }
   },
   {
     "part_number": "P606762",
@@ -11928,7 +15938,46 @@
         "manufacturer": "VMC",
         "part_number": "AF606762"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5300"
+      ],
+      "CARQUEST": [
+        "83266"
+      ],
+      "CATERPILLAR": [
+        "1807487"
+      ],
+      "FLEETGUARD": [
+        "AF25780"
+      ],
+      "HASTINGS": [
+        "AF2451"
+      ],
+      "HIFI": [
+        "SC90062"
+      ],
+      "LUBERFINER": [
+        "LAF5300"
+      ],
+      "MANN": [
+        "CU42002"
+      ],
+      "NAPA": [
+        "9266"
+      ],
+      "UNIFLUX": [
+        "XC315",
+        "XCK315"
+      ],
+      "VMC": [
+        "AF606762"
+      ],
+      "WIX": [
+        "49266"
+      ]
+    }
   },
   {
     "part_number": "P606960",
@@ -11975,7 +16024,40 @@
         "manufacturer": "VOLVO",
         "part_number": "8089705"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3986"
+      ],
+      "CARQUEST": [
+        "89311"
+      ],
+      "FLEETGUARD": [
+        "AF26435"
+      ],
+      "HASTINGS": [
+        "PA3986"
+      ],
+      "HENGST": [
+        "E6911LI"
+      ],
+      "LUBERFINER": [
+        "CAF24002"
+      ],
+      "NAPA": [
+        "4311"
+      ],
+      "STELLOX": [
+        "8711826SX"
+      ],
+      "VOLVO": [
+        "8081432",
+        "8089705"
+      ],
+      "WIX": [
+        "24311"
+      ]
+    }
   },
   {
     "part_number": "P607243",
@@ -12450,7 +16532,884 @@
         "manufacturer": "AMSOIL",
         "part_number": "TS33"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A737C",
+        "A787C",
+        "A798C",
+        "PC124",
+        "PC46",
+        "PC47",
+        "PC801"
+      ],
+      "ALCO": [
+        "MD400",
+        "MD9400"
+      ],
+      "AMERICAN-MOTORS": [
+        "53002184",
+        "8953002184"
+      ],
+      "AMERICAN-PARTS": [
+        "1144",
+        "1249",
+        "93170",
+        "94123"
+      ],
+      "AMSOIL": [
+        "LT33",
+        "TS33"
+      ],
+      "AP-LOCKHEED": [
+        "AP3313",
+        "APP3313A",
+        "LK3313",
+        "LK3656"
+      ],
+      "ATLAS": [
+        "A-59",
+        "A59"
+      ],
+      "ATLAS-COPCO": [
+        "3222304251"
+      ],
+      "ATLAS-WEYHAUSEN": [
+        "3222304251"
+      ],
+      "AUDI": [
+        "113129620",
+        "69129620"
+      ],
+      "AUTOEDGE": [
+        "AE3373"
+      ],
+      "AUTOPAR": [
+        "AC225",
+        "AC263"
+      ],
+      "AUTOPRO": [
+        "3170"
+      ],
+      "AUTOWIZE": [
+        "AA325"
+      ],
+      "AWARD": [
+        "AAF-122"
+      ],
+      "BALDWIN": [
+        "PA2101A"
+      ],
+      "BECK-ARNLEY": [
+        "042-1354",
+        "042-1355"
+      ],
+      "BIG A": [
+        "93170",
+        "94123"
+      ],
+      "BIG-A": [
+        "1144",
+        "1249",
+        "93170",
+        "94123"
+      ],
+      "BOSCH": [
+        "1457429071",
+        "1457429076",
+        "1457429098",
+        "1457429971",
+        "1457429994",
+        "1457429997",
+        "1457432157",
+        "73218",
+        "73246",
+        "73351",
+        "9451730714",
+        "9457233110",
+        "9457233830",
+        "9457235530",
+        "AF218",
+        "AF246",
+        "AF264",
+        "L100",
+        "L101",
+        "L103",
+        "S9071",
+        "S9076",
+        "S9994"
+      ],
+      "CAM2": [
+        "CA1149"
+      ],
+      "CANADIAN-TIRE": [
+        "23-3191-2"
+      ],
+      "CARCARE": [
+        "AF3373"
+      ],
+      "CARQUEST": [
+        "87170",
+        "88123",
+        "BA1149"
+      ],
+      "CASE-IH": [
+        "60-4452T2"
+      ],
+      "CASITE": [
+        "CFA3373"
+      ],
+      "CENEX": [
+        "CA299"
+      ],
+      "CHAMP": [
+        "AF299",
+        "AF319"
+      ],
+      "CHAMPION": [
+        "AF306",
+        "AF35",
+        "AF454",
+        "U501",
+        "U502",
+        "U530"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "AF296",
+        "AF299"
+      ],
+      "CHRYSLER": [
+        "53002184",
+        "53006317",
+        "8953002184"
+      ],
+      "CITGO": [
+        "CA1149"
+      ],
+      "CLEAN": [
+        "MA179",
+        "MA381",
+        "MA446",
+        "MA448",
+        "MA455"
+      ],
+      "COMPAIR": [
+        "C112777"
+      ],
+      "CONOCO": [
+        "CNA3373"
+      ],
+      "COOPERS": [
+        "AG416",
+        "AG430",
+        "AG488",
+        "AG574",
+        "AG574A",
+        "AG810"
+      ],
+      "COOPERSFIAAM": [
+        "PA7002"
+      ],
+      "CROSLAND": [
+        "725",
+        "779",
+        "780",
+        "9045",
+        "9192",
+        "991"
+      ],
+      "DEFENSE": [
+        "DA3373"
+      ],
+      "DELUXE": [
+        "CA296",
+        "CA299"
+      ],
+      "DEUSCH": [
+        "A534",
+        "A537"
+      ],
+      "DEUTSCH": [
+        "A534"
+      ],
+      "DONIT": [
+        "414003",
+        "414007"
+      ],
+      "ECONO-LUBE": [
+        "A11149"
+      ],
+      "EUROFILTER": [
+        "1703"
+      ],
+      "EVERGARD": [
+        "EA1149"
+      ],
+      "FACET": [
+        "3373",
+        "AF3373",
+        "AP4349"
+      ],
+      "FEBI-BILSTEIN": [
+        "01511",
+        "01812"
+      ],
+      "FIAAM": [
+        "PA7002",
+        "PA7020",
+        "PA7021",
+        "PA7030",
+        "PA7031"
+      ],
+      "FIAT": [
+        "4419493",
+        "4434857",
+        "4434867",
+        "74419493"
+      ],
+      "FILTERS INCORPORATED": [
+        "AF3373"
+      ],
+      "FILTERS-INCORPORATED": [
+        "AF3373"
+      ],
+      "FILTRON": [
+        "K1184"
+      ],
+      "FIRESTONE": [
+        "CF-3373",
+        "CF3373"
+      ],
+      "FISPA": [
+        "FAP009",
+        "FAP024",
+        "FAP164",
+        "FAP211",
+        "FAP505"
+      ],
+      "FLAG": [
+        "A-3373",
+        "A-3441"
+      ],
+      "FLEETGUARD": [
+        "AF1774",
+        "AF25257"
+      ],
+      "FLEETRITE": [
+        "AFR-81774",
+        "AFR81774",
+        "AFR825257"
+      ],
+      "FORD": [
+        "1574618",
+        "5003243",
+        "5005099",
+        "5005823",
+        "5010295",
+        "5020868",
+        "75TM9601AA",
+        "A770X9601AMA",
+        "A780X9601BHA",
+        "A790X9601KA",
+        "A820X9601LA",
+        "H75TM9601AA"
+      ],
+      "FRAM": [
+        "CA3372",
+        "CA3373",
+        "CA3379",
+        "CA3384",
+        "CA3422",
+        "CA3873",
+        "CA6359",
+        "PA4419"
+      ],
+      "G K INDUSTRIES": [
+        "AF2052"
+      ],
+      "GENERAL-MOTORS": [
+        "25041032",
+        "25041033",
+        "25041171",
+        "7988160",
+        "834275",
+        "8996604"
+      ],
+      "GONHER": [
+        "GAVW2"
+      ],
+      "GOODYEAR": [
+        "222-4580",
+        "2224580",
+        "A3373"
+      ],
+      "GRAND-PRIX": [
+        "AF296",
+        "AF299"
+      ],
+      "GREASE-MONKEY": [
+        "GMA11149",
+        "GMAP3373"
+      ],
+      "GREEN": [
+        "2077",
+        "2107"
+      ],
+      "GREYFRIARS": [
+        "1108A",
+        "1110A",
+        "1115A"
+      ],
+      "GROUP-7": [
+        "VA1149"
+      ],
+      "GUARDIAN": [
+        "G042170"
+      ],
+      "GUD": [
+        "A280",
+        "AG416",
+        "AG488",
+        "AG574"
+      ],
+      "GUIOT": [
+        "GA3373"
+      ],
+      "HARMO": [
+        "A2025"
+      ],
+      "HASTINGS": [
+        "AF500"
+      ],
+      "HAVOLINE": [
+        "TA-123"
+      ],
+      "HENGST": [
+        "E21L",
+        "E29L",
+        "E948LI"
+      ],
+      "HIFI": [
+        "SC50351"
+      ],
+      "HUTCHENS": [
+        "APF5832",
+        "APF5833"
+      ],
+      "IAPCO": [
+        "A-0165-003",
+        "A-0180-011",
+        "AF20",
+        "AF40"
+      ],
+      "INTERNATIONAL-PARTS-SERVICES": [
+        "4-5006",
+        "4-5099",
+        "4-5116"
+      ],
+      "IPD": [
+        "30136",
+        "31063"
+      ],
+      "ITM": [
+        "100-2030",
+        "11-02030",
+        "11-09850",
+        "110-2030",
+        "110-9850"
+      ],
+      "JIFFY-LUBE": [
+        "A11149",
+        "HA3373",
+        "JLA1149"
+      ],
+      "JP-GROUP": [
+        "8118601000",
+        "8118601002",
+        "8118601009"
+      ],
+      "K-N": [
+        "33-2001",
+        "33-2046"
+      ],
+      "K-MART": [
+        "KA-53",
+        "MPA-53"
+      ],
+      "KENDALL": [
+        "KA31"
+      ],
+      "KNECHT": [
+        "AG113",
+        "AG168",
+        "AG194",
+        "AG195",
+        "AG255",
+        "AG511",
+        "AG574",
+        "AG81",
+        "AG82",
+        "LX111",
+        "LX218",
+        "LX254",
+        "LX285",
+        "LX4",
+        "LX54",
+        "LX98"
+      ],
+      "KOHLER": [
+        "6008302"
+      ],
+      "KOOL-BLUE": [
+        "KP3313",
+        "KP3327"
+      ],
+      "KRALINATOR": [
+        "LA1385",
+        "LA1461",
+        "LA732",
+        "LA914"
+      ],
+      "LAUTRETTE": [
+        "EL3064",
+        "EL3193",
+        "EL3206",
+        "ELP3064",
+        "ELP3193",
+        "ELP3198",
+        "ELP3203"
+      ],
+      "LAZORLITE": [
+        "U113964",
+        "U113972",
+        "U114987"
+      ],
+      "LEE": [
+        "AF299",
+        "AFL-155",
+        "AFL-296",
+        "AFL155",
+        "AFL155FC",
+        "AFL296"
+      ],
+      "LIEBHERR": [
+        "7009621"
+      ],
+      "LUBERFINER": [
+        "AF296",
+        "AF299"
+      ],
+      "LUCAS-GIRLING": [
+        "F7385",
+        "F778",
+        "F8278",
+        "F9196",
+        "F9245"
+      ],
+      "M": [
+        "MA6673",
+        "MAP6742"
+      ],
+      "MAN": [
+        "4510954174"
+      ],
+      "MAHLE": [
+        "LX111",
+        "LX218",
+        "LX254",
+        "LX285",
+        "LX54",
+        "LX98"
+      ],
+      "MANN": [
+        "C34109",
+        "C341091",
+        "C3453",
+        "C3463",
+        "C3474"
+      ],
+      "MANN-HUMMEL": [
+        "C1752",
+        "C34109",
+        "C341091",
+        "C3453",
+        "C3463",
+        "C3474"
+      ],
+      "MARATHON": [
+        "AF296",
+        "MA299"
+      ],
+      "MARATHON-LETOURNEAU": [
+        "AF296",
+        "MA299"
+      ],
+      "MASTER-PARTS": [
+        "AF-296",
+        "AF-299"
+      ],
+      "MECAFILTER": [
+        "ELR7524"
+      ],
+      "MECHANICS-CIRCLE": [
+        "MAF 3373"
+      ],
+      "MECHANICS-CHOICE": [
+        "MAF3373"
+      ],
+      "MEDCO": [
+        "FAF-1149"
+      ],
+      "MICROGARD": [
+        "MGA3373"
+      ],
+      "MIGHTY": [
+        "A14349",
+        "A3373"
+      ],
+      "MINIT-LUBE": [
+        "AF299"
+      ],
+      "MOBIL": [
+        "MA1149"
+      ],
+      "MOPAR": [
+        "53002184"
+      ],
+      "MOTORCRAFT": [
+        "EFA160",
+        "EFA194",
+        "EFA239",
+        "EFA250",
+        "EFA252",
+        "FA 155",
+        "FA155"
+      ],
+      "MPA": [
+        "3010"
+      ],
+      "NAPA": [
+        "2170",
+        "22170",
+        "4405150",
+        "4445152",
+        "4445153",
+        "6123"
+      ],
+      "NELSON": [
+        "84858S"
+      ],
+      "NISSAN": [
+        "16546V4960"
+      ],
+      "OE": [
+        "AF-7230",
+        "AF-7430"
+      ],
+      "OPEL": [
+        "834232",
+        "834262",
+        "834275",
+        "834804",
+        "8983692",
+        "9292493"
+      ],
+      "PARTSMASTER": [
+        "62170",
+        "66123"
+      ],
+      "PARTS-PLUS": [
+        "AF299"
+      ],
+      "PENNZOIL": [
+        "PZA-115",
+        "PZA115"
+      ],
+      "PERFORMAX": [
+        "PA-115"
+      ],
+      "PERMATIC": [
+        "FA1604",
+        "FA1605",
+        "FA1814"
+      ],
+      "PEUGEOT": [
+        "144404"
+      ],
+      "PHILLIPS 66": [
+        "PA1149",
+        "WA6123"
+      ],
+      "PHILLIPS-66": [
+        "PA1149",
+        "WA6123"
+      ],
+      "POWER FLO": [
+        "SA11149"
+      ],
+      "POWER-FLO": [
+        "FCL1149",
+        "SA11149"
+      ],
+      "PRO-TEC": [
+        "262"
+      ],
+      "PRO-GAUGE": [
+        "PGA-1149"
+      ],
+      "PROMOTIVE": [
+        "AF1149"
+      ],
+      "PRONTO": [
+        "PA-3373"
+      ],
+      "PURFLUX": [
+        "A461",
+        "A603",
+        "A688",
+        "A781"
+      ],
+      "PUROLATOR": [
+        "A10122",
+        "A11149",
+        "A14349",
+        "AF1149",
+        "AF3127",
+        "AF3534",
+        "AF4349",
+        "AFP122",
+        "FCA1149",
+        "FCA122",
+        "LX218",
+        "LX254",
+        "LX285",
+        "LX54",
+        "LX98",
+        "PM1149",
+        "PM1657",
+        "PM1794",
+        "PM1798"
+      ],
+      "QUAKER-STATE": [
+        "QSA3373"
+      ],
+      "ROAD-X": [
+        "FCA-1149"
+      ],
+      "ROCKHILL": [
+        "62170"
+      ],
+      "RYCO": [
+        "A280",
+        "A281",
+        "A282"
+      ],
+      "S-B": [
+        "66-2001",
+        "66-2046"
+      ],
+      "SAVARA": [
+        "92331117",
+        "92351217",
+        "923530",
+        "92353017",
+        "SA311",
+        "SA530"
+      ],
+      "SEARS": [
+        "45229",
+        "45337",
+        "T53",
+        "TPA53"
+      ],
+      "SERVICE-1": [
+        "AF1149"
+      ],
+      "SERVICE-PRO": [
+        "MA1149"
+      ],
+      "SHEFA": [
+        "S17049"
+      ],
+      "SHELL": [
+        "AF500",
+        "SHA123"
+      ],
+      "SILVERLINE": [
+        "22170",
+        "26123"
+      ],
+      "SOPARIS": [
+        "FPA3253",
+        "FPA3297"
+      ],
+      "STEIGER": [
+        "603846T2",
+        "604452T2"
+      ],
+      "STP": [
+        "SA3373",
+        "SAF296",
+        "SAF299"
+      ],
+      "SUNOCO": [
+        "A-43",
+        "A43"
+      ],
+      "TALBOT": [
+        "43010500"
+      ],
+      "TARGET": [
+        "APF299"
+      ],
+      "TECAFILTRES": [
+        "LX111",
+        "LX98",
+        "R0747"
+      ],
+      "TECALEMIT": [
+        "B178",
+        "B245",
+        "B331",
+        "B392"
+      ],
+      "TECNOCAR": [
+        "A187",
+        "A387",
+        "A476",
+        "A87",
+        "A91"
+      ],
+      "TEHO": [
+        "2150",
+        "2234",
+        "IIM150",
+        "IIM234"
+      ],
+      "TEXACO": [
+        "HSA729",
+        "TA123",
+        "TFA11",
+        "TFA11B"
+      ],
+      "TOPRAN": [
+        "101930"
+      ],
+      "TRUST": [
+        "AF299"
+      ],
+      "UFI": [
+        "3081700",
+        "3081800",
+        "3084100",
+        "3085700",
+        "3086400",
+        "3086402",
+        "3087000"
+      ],
+      "UNI-PART": [
+        "GFE1119",
+        "GFE2018",
+        "GFE2020",
+        "GFE2087",
+        "GFE2097",
+        "GFE2129",
+        "GFE2151"
+      ],
+      "UNICO": [
+        "AE3338",
+        "AE3342"
+      ],
+      "UNION-76": [
+        "296",
+        "299",
+        "AF6123"
+      ],
+      "UNOCAL": [
+        "296"
+      ],
+      "VAG": [
+        "34133837"
+      ],
+      "VAICO": [
+        "V250053"
+      ],
+      "VALUTEST": [
+        "V3170"
+      ],
+      "VALVOLINE": [
+        "VA36"
+      ],
+      "VERA": [
+        "11-00932",
+        "11-01038",
+        "11-01756",
+        "11-02308"
+      ],
+      "VMC": [
+        "AF607243"
+      ],
+      "VOLVO": [
+        "6400373",
+        "6400379",
+        "6774452",
+        "67744524",
+        "679658",
+        "681609",
+        "76816099"
+      ],
+      "VW-AUDI-PORSCHE": [
+        "069 129 620",
+        "113 129 620",
+        "113129620",
+        "26133837A",
+        "26133837B",
+        "34133837",
+        "35133843",
+        "55129620",
+        "69129620"
+      ],
+      "WARNER": [
+        "AF296",
+        "AF299"
+      ],
+      "WARNER-SWASEY": [
+        "AF296",
+        "AF299",
+        "WAF296",
+        "WAF299"
+      ],
+      "WESTERN-AUTO": [
+        "74-6031-4"
+      ],
+      "WIPAC": [
+        "AP121",
+        "AP335",
+        "AP368"
+      ],
+      "WIX": [
+        "42170",
+        "46123",
+        "93500E",
+        "A117",
+        "WA6161",
+        "WA6212"
+      ],
+      "WOODGATE": [
+        "WGA763"
+      ],
+      "WORLDPARTS": [
+        "W27574",
+        "W27580",
+        "W27590",
+        "W27603",
+        "W27633",
+        "W27666"
+      ],
+      "XSV": [
+        "OPA1149"
+      ]
+    }
   },
   {
     "part_number": "P607253",
@@ -12500,7 +17459,46 @@
         "manufacturer": "BIG A",
         "part_number": "93389"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A2055C",
+        "ACA210"
+      ],
+      "BALDWIN": [
+        "PA4132"
+      ],
+      "CARQUEST": [
+        "87389"
+      ],
+      "CHRYSLER": [
+        "4861480AA"
+      ],
+      "FRAM": [
+        "CA9054"
+      ],
+      "HASTINGS": [
+        "AF1103"
+      ],
+      "HIFI": [
+        "SA6089"
+      ],
+      "LUBERFINER": [
+        "AF7984"
+      ],
+      "MAGNETI-MARELLI": [
+        "1AMFA00050"
+      ],
+      "NAPA": [
+        "2389"
+      ],
+      "PUROLATOR": [
+        "A35396"
+      ],
+      "WIX": [
+        "42389"
+      ]
+    }
   },
   {
     "part_number": "P607256",
@@ -12538,7 +17536,43 @@
         "manufacturer": "TOYOTA",
         "part_number": "1780150040"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4127"
+      ],
+      "CARQUEST": [
+        "87476"
+      ],
+      "HASTINGS": [
+        "AF1061"
+      ],
+      "HIFI": [
+        "SA8122"
+      ],
+      "LUBERFINER": [
+        "AF7938"
+      ],
+      "MANN": [
+        "C31007"
+      ],
+      "NAPA": [
+        "2476"
+      ],
+      "PUROLATOR": [
+        "A35305"
+      ],
+      "SAKURA": [
+        "A1174"
+      ],
+      "TOYOTA": [
+        "1780150040"
+      ],
+      "WIX": [
+        "42476",
+        "WA9626"
+      ]
+    }
   },
   {
     "part_number": "P607258",
@@ -12745,7 +17779,42 @@
         "manufacturer": "WARNER & SWASEY",
         "part_number": "WAF1695"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "ACA223"
+      ],
+      "BALDWIN": [
+        "PA4147"
+      ],
+      "CARQUEST": [
+        "87484"
+      ],
+      "FORD": [
+        "1L2Z9601AA"
+      ],
+      "FRAM": [
+        "CA9332"
+      ],
+      "HASTINGS": [
+        "AF1127"
+      ],
+      "LUBERFINER": [
+        "AF1695"
+      ],
+      "MOTORCRAFT": [
+        "FA1695"
+      ],
+      "NAPA": [
+        "2484"
+      ],
+      "PUROLATOR": [
+        "A25418"
+      ],
+      "WIX": [
+        "42484"
+      ]
+    }
   },
   {
     "part_number": "P607281",
@@ -12803,7 +17872,149 @@
         "manufacturer": "COOP",
         "part_number": "AP150RC"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A544C"
+      ],
+      "AIR-REFINER": [
+        "ARF150"
+      ],
+      "AMERICAN-PARTS": [
+        "1161",
+        "93781"
+      ],
+      "BALDWIN": [
+        "PA2315"
+      ],
+      "BIG-A": [
+        "1161",
+        "93781"
+      ],
+      "CANADIAN": [
+        "CFM555"
+      ],
+      "CARQUEST": [
+        "87781",
+        "87840"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "AF1150",
+        "LAF150"
+      ],
+      "CLARK": [
+        "AE15"
+      ],
+      "CO-OP": [
+        "AP150RC",
+        "PMA150RC"
+      ],
+      "COOPERS": [
+        "AEP3505"
+      ],
+      "CYCLONE": [
+        "PMA150RC"
+      ],
+      "DELUXE": [
+        "874",
+        "AF874"
+      ],
+      "EMD-GENERALMOTORS": [
+        "8469002",
+        "9316812"
+      ],
+      "FARR": [
+        "999303",
+        "C29360",
+        "C38960",
+        "C389603",
+        "R150",
+        "RC150"
+      ],
+      "FLEETGUARD": [
+        "AF811"
+      ],
+      "FLEETLIFE": [
+        "FA150"
+      ],
+      "FLEETRITE": [
+        "AFR8811"
+      ],
+      "FRAM": [
+        "PA1507"
+      ],
+      "GENERAL-MOTORS": [
+        "6488452",
+        "8424753",
+        "8469003",
+        "9316812"
+      ],
+      "GUARDIAN": [
+        "G150"
+      ],
+      "HASTINGS": [
+        "AF526",
+        "PA2315"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "A150",
+        "HDA150"
+      ],
+      "HIFI": [
+        "SA10761"
+      ],
+      "KRALINATOR": [
+        "LA555"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "VJ1279"
+      ],
+      "LUBERFINER": [
+        "LAF150"
+      ],
+      "MOTORCRAFT": [
+        "FA591"
+      ],
+      "NAPA": [
+        "2781",
+        "2840"
+      ],
+      "NELSON": [
+        "70049N"
+      ],
+      "NELSON-WINSLOW": [
+        "N150"
+      ],
+      "PUROLATOR": [
+        "AF2281"
+      ],
+      "REFILCO": [
+        "AF2781"
+      ],
+      "SAVARA": [
+        "92381117"
+      ],
+      "UNITED-ENGINE-LIFE": [
+        "F150"
+      ],
+      "VMC": [
+        "AF607281"
+      ],
+      "WABCO": [
+        "VJ1279"
+      ],
+      "WHITE": [
+        "27074307"
+      ],
+      "WIX": [
+        "42781",
+        "42840",
+        "542781"
+      ],
+      "WOODGATE": [
+        "WGA430"
+      ]
+    }
   },
   {
     "part_number": "P607300",
@@ -13019,7 +18230,39 @@
         "manufacturer": "WESFIL",
         "part_number": "A851"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "ACA49"
+      ],
+      "BALDWIN": [
+        "PA4028"
+      ],
+      "CARQUEST": [
+        "88017"
+      ],
+      "FRAM": [
+        "CA7351"
+      ],
+      "HASTINGS": [
+        "AF987"
+      ],
+      "HIFI": [
+        "SA8002"
+      ],
+      "LUBERFINER": [
+        "AF7841"
+      ],
+      "NAPA": [
+        "6017"
+      ],
+      "TOYOTA": [
+        "1780174060"
+      ],
+      "WIX": [
+        "46017"
+      ]
+    }
   },
   {
     "part_number": "P607333",
@@ -13254,7 +18497,233 @@
         "manufacturer": "WARNER & SWASEY",
         "part_number": "WAF1135"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1135C"
+      ],
+      "AMSOIL": [
+        "LT98",
+        "TS98"
+      ],
+      "ATLAS": [
+        "A-5"
+      ],
+      "AUTOPAR": [
+        "AC300"
+      ],
+      "BALDWIN": [
+        "PA2218"
+      ],
+      "BIG A": [
+        "94246"
+      ],
+      "BIG-A": [
+        "94246"
+      ],
+      "CARCARE": [
+        "AF7017"
+      ],
+      "CARQUEST": [
+        "88246",
+        "BA4656"
+      ],
+      "CASITE": [
+        "CFA967"
+      ],
+      "CENEX": [
+        "CA1135"
+      ],
+      "CHAMP": [
+        "AF1135"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "AF1135"
+      ],
+      "CITGO": [
+        "CA4656"
+      ],
+      "DEFENSE": [
+        "DA7017"
+      ],
+      "DEUSCH": [
+        "A541"
+      ],
+      "DEUTSCH": [
+        "A541"
+      ],
+      "ECONO-LUBE": [
+        "A14656"
+      ],
+      "EVERGARD": [
+        "EA4656"
+      ],
+      "FLAG": [
+        "A-7017"
+      ],
+      "FLEETGUARD": [
+        "AF1003"
+      ],
+      "FRAM": [
+        "CA7017"
+      ],
+      "G K INDUSTRIES": [
+        "AF2010"
+      ],
+      "GENERAL-MOTORS": [
+        "25097917",
+        "25097919"
+      ],
+      "GRAND-PRIX": [
+        "AF1135"
+      ],
+      "GREASE-MONKEY": [
+        "GMA14656",
+        "GMAP4656"
+      ],
+      "GROUP-7": [
+        "VA4656"
+      ],
+      "HASTINGS": [
+        "AF967",
+        "AF967F"
+      ],
+      "HAVOLINE": [
+        "TA-75"
+      ],
+      "HIFI": [
+        "SA46246"
+      ],
+      "JIFFY-LUBE": [
+        "A14656",
+        "HA7017",
+        "JLA4656"
+      ],
+      "JOHN-DEERE": [
+        "RE64913"
+      ],
+      "K-N": [
+        "33-2050-1",
+        "33-2051"
+      ],
+      "KRALINATOR": [
+        "LA1310"
+      ],
+      "LUBERFINER": [
+        "AF1135"
+      ],
+      "MICROGARD": [
+        "MGA7017"
+      ],
+      "MIGHTY": [
+        "A4656"
+      ],
+      "MOBIL": [
+        "MA4656"
+      ],
+      "MOPAR": [
+        "F0AF1135"
+      ],
+      "MOTORCRAFT": [
+        "FA 1600",
+        "FA1600"
+      ],
+      "NAPA": [
+        "26246",
+        "6246"
+      ],
+      "PARTSMASTER": [
+        "66246"
+      ],
+      "PARTS-PLUS": [
+        "AF1135"
+      ],
+      "PENNZOIL": [
+        "PZA-173",
+        "PZA173"
+      ],
+      "PERFORMAX": [
+        "PA-173"
+      ],
+      "PHILLIPS 66": [
+        "WA6246"
+      ],
+      "PHILLIPS-66": [
+        "PA6246",
+        "WA6246"
+      ],
+      "POWER FLO": [
+        "SA14656"
+      ],
+      "POWER-FLO": [
+        "SA14656"
+      ],
+      "PRO-TEC": [
+        "312"
+      ],
+      "PRO-GAUGE": [
+        "PGA-4656"
+      ],
+      "PROMOTIVE": [
+        "AF4656"
+      ],
+      "PRONTO": [
+        "PA-7017"
+      ],
+      "PUROLATOR": [
+        "A14656",
+        "AF4656"
+      ],
+      "QUAKER-STATE": [
+        "QSA7017",
+        "QSA7071"
+      ],
+      "ROCKHILL": [
+        "66246"
+      ],
+      "SERVICE-1": [
+        "AF4656"
+      ],
+      "SERVICE-PRO": [
+        "MA4656"
+      ],
+      "SHELL": [
+        "SA83",
+        "SHA75"
+      ],
+      "SILVERLINE": [
+        "26246"
+      ],
+      "STP": [
+        "SA7017"
+      ],
+      "TEXACO": [
+        "TA75"
+      ],
+      "TRUST": [
+        "AF1135"
+      ],
+      "UNION-76": [
+        "AF6246"
+      ],
+      "UNOCAL": [
+        "AF6246"
+      ],
+      "VALVOLINE": [
+        "AP1135"
+      ],
+      "WARNER": [
+        "AF1135"
+      ],
+      "WARNER-SWASEY": [
+        "AF1135",
+        "WAF1135"
+      ],
+      "WIX": [
+        "46246",
+        "546246"
+      ]
+    }
   },
   {
     "part_number": "P609422",
@@ -14517,7 +19986,59 @@
         "manufacturer": "VMC",
         "part_number": "AF609422"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALCO": [
+        "MS6387"
+      ],
+      "ALLIANCE": [
+        "ABPN10G91559"
+      ],
+      "BALDWIN": [
+        "PA4857"
+      ],
+      "CARQUEST": [
+        "89318"
+      ],
+      "FLEETGUARD": [
+        "AF26235"
+      ],
+      "FRAM": [
+        "FK9295"
+      ],
+      "FREIGHTLINER": [
+        "91559",
+        "BOA91559",
+        "T1000068C",
+        "T1000291S",
+        "T1000921S",
+        "VCCT1000921S"
+      ],
+      "HASTINGS": [
+        "AF2427"
+      ],
+      "HENGST": [
+        "E3920LI"
+      ],
+      "HIFI": [
+        "SC90378"
+      ],
+      "KRALINATOR": [
+        "LA4318"
+      ],
+      "LUBERFINER": [
+        "CAF24003"
+      ],
+      "NAPA": [
+        "4318"
+      ],
+      "SAKURA": [
+        "CA79200"
+      ],
+      "WIX": [
+        "24318"
+      ]
+    }
   },
   {
     "part_number": "P609444",
@@ -14588,7 +20109,21 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "1707272"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5363"
+      ],
+      "CARQUEST": [
+        "99017"
+      ],
+      "CATERPILLAR": [
+        "1707272"
+      ],
+      "HIFI": [
+        "SC90081"
+      ]
+    }
   },
   {
     "part_number": "P609445",
@@ -14666,7 +20201,36 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "AT307501"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4659"
+      ],
+      "CARQUEST": [
+        "88080",
+        "93300"
+      ],
+      "CATERPILLAR": [
+        "1167376",
+        "2098217"
+      ],
+      "HASTINGS": [
+        "PA4659"
+      ],
+      "HIFI": [
+        "SC90070"
+      ],
+      "NAPA": [
+        "6080"
+      ],
+      "UNIFLUX": [
+        "XC313",
+        "XCK313"
+      ],
+      "WIX": [
+        "46080"
+      ]
+    }
   },
   {
     "part_number": "P609446",
@@ -14742,7 +20306,36 @@
         "manufacturer": "VMC",
         "part_number": "AF609446"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3877"
+      ],
+      "CARQUEST": [
+        "89216"
+      ],
+      "CATERPILLAR": [
+        "9X8216"
+      ],
+      "FLEETGUARD": [
+        "AF25662"
+      ],
+      "HASTINGS": [
+        "PA3877"
+      ],
+      "HIFI": [
+        "SC90074"
+      ],
+      "LUBERFINER": [
+        "LAF5818"
+      ],
+      "VMC": [
+        "AF609446"
+      ],
+      "WIX": [
+        "24216"
+      ]
+    }
   },
   {
     "part_number": "P611440",
@@ -15278,7 +20871,55 @@
         "manufacturer": "VMC",
         "part_number": "AF611440"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA2666",
+        "PA4644"
+      ],
+      "CARQUEST": [
+        "87917",
+        "93251"
+      ],
+      "FLEETGUARD": [
+        "AF4736"
+      ],
+      "FRAM": [
+        "CA7703"
+      ],
+      "HASTINGS": [
+        "AF2339"
+      ],
+      "HENGST": [
+        "E5944LI",
+        "E741L"
+      ],
+      "HIFI": [
+        "SC90105"
+      ],
+      "JOHN-DEERE": [
+        "RE24619",
+        "RE67829"
+      ],
+      "LUBERFINER": [
+        "LAF1163"
+      ],
+      "MANN": [
+        "C18009X"
+      ],
+      "NAPA": [
+        "2917"
+      ],
+      "UFI": [
+        "27H2700"
+      ],
+      "VMC": [
+        "AF611440"
+      ],
+      "WIX": [
+        "42917"
+      ]
+    }
   },
   {
     "part_number": "P612815",
@@ -15316,7 +20957,40 @@
         "manufacturer": "VOLVO",
         "part_number": "3948712"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4682"
+      ],
+      "CARQUEST": [
+        "89312"
+      ],
+      "FLEETGUARD": [
+        "AF26446"
+      ],
+      "HASTINGS": [
+        "PA4682"
+      ],
+      "HENGST": [
+        "E6969LI"
+      ],
+      "LUBERFINER": [
+        "CAF24001"
+      ],
+      "MANN-HUMMEL": [
+        "CU3141"
+      ],
+      "NAPA": [
+        "4312"
+      ],
+      "VOLVO": [
+        "3948712",
+        "VO0201P"
+      ],
+      "WIX": [
+        "24312"
+      ]
+    }
   },
   {
     "part_number": "P614220",
@@ -15667,7 +21341,53 @@
         "manufacturer": "VMC",
         "part_number": "AF614220"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLIANCE": [
+        "ABPN8332834",
+        "ABPN83328345",
+        "N8328345"
+      ],
+      "BALDWIN": [
+        "PA5319"
+      ],
+      "CARQUEST": [
+        "89720"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "CAF24004"
+      ],
+      "FLEETGUARD": [
+        "AF25697"
+      ],
+      "FREIGHTLINER": [
+        "22446600",
+        "2244665000",
+        "ABPM83328345",
+        "QABP83328345"
+      ],
+      "HASTINGS": [
+        "PA5319"
+      ],
+      "HENGST": [
+        "E4992LI"
+      ],
+      "HIFI": [
+        "SC90382"
+      ],
+      "LUBERFINER": [
+        "CAF24004"
+      ],
+      "PUROLATOR": [
+        "C15946"
+      ],
+      "VMC": [
+        "AF614220"
+      ],
+      "WIX": [
+        "24720"
+      ]
+    }
   },
   {
     "part_number": "P614221",
@@ -16243,7 +21963,53 @@
         "manufacturer": "VMC",
         "part_number": "AF614221"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4985"
+      ],
+      "CARQUEST": [
+        "89316"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "CAF24005"
+      ],
+      "FLEETGUARD": [
+        "AF26430"
+      ],
+      "HASTINGS": [
+        "AF2426",
+        "PA4985"
+      ],
+      "HENGST": [
+        "E6910LI"
+      ],
+      "HIFI": [
+        "SC90379"
+      ],
+      "LUBERFINER": [
+        "CAF24005"
+      ],
+      "NAPA": [
+        "4316"
+      ],
+      "NAVISTAR": [
+        "2506656C1",
+        "2506656C2"
+      ],
+      "PUROLATOR": [
+        "C15944"
+      ],
+      "SAKURA": [
+        "CA54010"
+      ],
+      "VMC": [
+        "AF614221"
+      ],
+      "WIX": [
+        "24316"
+      ]
+    }
   },
   {
     "part_number": "P614222",
@@ -16366,7 +22132,40 @@
         "manufacturer": "MEI CORPORATION",
         "part_number": "7996"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5306"
+      ],
+      "CARQUEST": [
+        "89977"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "CAF24007"
+      ],
+      "FLEETGUARD": [
+        "AF26447"
+      ],
+      "HENGST": [
+        "E4942LI"
+      ],
+      "HIFI": [
+        "SC90180"
+      ],
+      "KENWORTH": [
+        "525507",
+        "525507BSM"
+      ],
+      "LUBERFINER": [
+        "CAF24007"
+      ],
+      "PUROLATOR": [
+        "C15950"
+      ],
+      "WIX": [
+        "24977"
+      ]
+    }
   },
   {
     "part_number": "P614223",
@@ -17709,7 +23508,44 @@
         "manufacturer": "PETERBILT",
         "part_number": "5X010007"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5320"
+      ],
+      "CARQUEST": [
+        "83007"
+      ],
+      "FLEETGUARD": [
+        "AF26449"
+      ],
+      "FRAM": [
+        "PA10179"
+      ],
+      "HASTINGS": [
+        "PA5320"
+      ],
+      "HENGST": [
+        "E5905LI"
+      ],
+      "LUBERFINER": [
+        "CAF24012"
+      ],
+      "NAPA": [
+        "9007"
+      ],
+      "PETERBILT": [
+        "5X010007",
+        "P93CAB41020",
+        "P93CAB410201S"
+      ],
+      "PUROLATOR": [
+        "C15943"
+      ],
+      "WIX": [
+        "49007"
+      ]
+    }
   },
   {
     "part_number": "P614224",
@@ -17972,7 +23808,46 @@
         "manufacturer": "VMC",
         "part_number": "AF614224"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5321"
+      ],
+      "CARQUEST": [
+        "89116"
+      ],
+      "CHAMPION-LABORATORIES": [
+        "CAF24006"
+      ],
+      "FLEETGUARD": [
+        "AF26442"
+      ],
+      "HASTINGS": [
+        "PA5321"
+      ],
+      "HENGST": [
+        "E4946LI"
+      ],
+      "HIFI": [
+        "SC90384"
+      ],
+      "LUBERFINER": [
+        "CAF24006"
+      ],
+      "PETERBILT": [
+        "5X000180",
+        "5X000190"
+      ],
+      "PUROLATOR": [
+        "C15952"
+      ],
+      "VMC": [
+        "AF614224"
+      ],
+      "WIX": [
+        "24116"
+      ]
+    }
   },
   {
     "part_number": "P614225",
@@ -18515,7 +24390,37 @@
         "manufacturer": "VMC",
         "part_number": "AF614225"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLIANCE": [
+        "ABPN10G8031",
+        "ABPN10G803190015900"
+      ],
+      "BALDWIN": [
+        "PA5495"
+      ],
+      "CARQUEST": [
+        "93556"
+      ],
+      "FLEETGUARD": [
+        "AF26471"
+      ],
+      "FREIGHTLINER": [
+        "8031900159",
+        "803190015900",
+        "BOA80319001",
+        "BOA803190015900"
+      ],
+      "HENGST": [
+        "E4990LI"
+      ],
+      "LUBERFINER": [
+        "CAF24010"
+      ],
+      "VMC": [
+        "AF614225"
+      ]
+    }
   },
   {
     "part_number": "P614226",
@@ -18678,7 +24583,40 @@
         "manufacturer": "VMC",
         "part_number": "AF614226"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLIANCE": [
+        "ABPN10G91595"
+      ],
+      "BALDWIN": [
+        "PA5494"
+      ],
+      "CARQUEST": [
+        "89595"
+      ],
+      "FLEETGUARD": [
+        "AF26428"
+      ],
+      "FREIGHTLINER": [
+        "91595",
+        "BOA91595"
+      ],
+      "HENGST": [
+        "E3925LI"
+      ],
+      "HIFI": [
+        "SC90393"
+      ],
+      "LUBERFINER": [
+        "CAF24011"
+      ],
+      "VMC": [
+        "AF614226"
+      ],
+      "WIX": [
+        "24595"
+      ]
+    }
   },
   {
     "part_number": "P614476",
@@ -18766,7 +24704,278 @@
         "manufacturer": "VMC",
         "part_number": "AF614476"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "A1114C"
+      ],
+      "AMSOIL": [
+        "EAA129",
+        "LT86",
+        "TS86"
+      ],
+      "ATLAS": [
+        "A-101"
+      ],
+      "AUTOEDGE": [
+        "AE5057"
+      ],
+      "AUTOPAR": [
+        "AC246"
+      ],
+      "AUTOPRO": [
+        "4128"
+      ],
+      "BALDWIN": [
+        "PA2149",
+        "PA3822",
+        "PA5482"
+      ],
+      "BIG A": [
+        "94128"
+      ],
+      "BIG-A": [
+        "96128"
+      ],
+      "CAM2": [
+        "CA3593"
+      ],
+      "CANADIAN-TIRE": [
+        "23-3155-0"
+      ],
+      "CARCARE": [
+        "AF5057"
+      ],
+      "CARQUEST": [
+        "88128",
+        "93274",
+        "BA3593"
+      ],
+      "CASITE": [
+        "CFA879"
+      ],
+      "CATERPILLAR": [
+        "112-7448",
+        "1127448"
+      ],
+      "CENEX": [
+        "CA1042"
+      ],
+      "CHAMP": [
+        "AF1042"
+      ],
+      "CHAMPION": [
+        "AF426"
+      ],
+      "CITGO": [
+        "CA3593"
+      ],
+      "DEFENSE": [
+        "DA5057"
+      ],
+      "DEUTSCH": [
+        "A1163"
+      ],
+      "ECONO-LUBE": [
+        "A33593"
+      ],
+      "EVERGARD": [
+        "EA3593"
+      ],
+      "FILTERS INCORPORATED": [
+        "AF5057"
+      ],
+      "FIRESTONE": [
+        "CF-3593"
+      ],
+      "FLAG": [
+        "A-5057"
+      ],
+      "FLEETGUARD": [
+        "AF25664",
+        "AF4613"
+      ],
+      "FLEETRITE": [
+        "AFR-84613",
+        "AFR825664"
+      ],
+      "FORD": [
+        "E6SZ-9601-B"
+      ],
+      "FRAM": [
+        "CA5057"
+      ],
+      "G K INDUSTRIES": [
+        "AF2026"
+      ],
+      "GENERAL-MOTORS": [
+        "25097239",
+        "25097240"
+      ],
+      "GOODYEAR": [
+        "A3593"
+      ],
+      "GRAND-PRIX": [
+        "AF1042"
+      ],
+      "GREASE-MONKEY": [
+        "GMA33593",
+        "GMAP3593"
+      ],
+      "GREEN": [
+        "2053",
+        "2137"
+      ],
+      "GROUP-7": [
+        "VA3593"
+      ],
+      "HASTINGS": [
+        "AF879",
+        "PA3822"
+      ],
+      "HAVOLINE": [
+        "TA-68"
+      ],
+      "HIFI": [
+        "SA14563",
+        "SC90014"
+      ],
+      "JIFFY-LUBE": [
+        "A33593",
+        "HA5057",
+        "JLA3593"
+      ],
+      "K-N": [
+        "33-2015",
+        "33-2040"
+      ],
+      "KOMATSU": [
+        "427-07-22120"
+      ],
+      "KRALINATOR": [
+        "LA1175"
+      ],
+      "LEE": [
+        "AFL-1042"
+      ],
+      "LUBERFINER": [
+        "AF1042",
+        "LAF8777"
+      ],
+      "MANN": [
+        "CU29004"
+      ],
+      "MASTER-PARTS": [
+        "AF-1042"
+      ],
+      "MECHANICS-CIRCLE": [
+        "MAF 5057"
+      ],
+      "MICROGARD": [
+        "MGA5057"
+      ],
+      "MIGHTY": [
+        "A3593"
+      ],
+      "MOBIL": [
+        "MA3593"
+      ],
+      "MOTORCRAFT": [
+        "FA 1042"
+      ],
+      "NAPA": [
+        "6128"
+      ],
+      "NELSON": [
+        "87970A",
+        "87970N"
+      ],
+      "PARTSMASTER": [
+        "66128"
+      ],
+      "PARTS-PLUS": [
+        "AF1042"
+      ],
+      "PENNZOIL": [
+        "PZA-145"
+      ],
+      "PERFORMAX": [
+        "PA-145"
+      ],
+      "PHILLIPS 66": [
+        "PA6128"
+      ],
+      "POWER FLO": [
+        "SA33593"
+      ],
+      "PRECISION-TUNE": [
+        "AF-3593"
+      ],
+      "PRO-TEC": [
+        "251"
+      ],
+      "PRO-GAUGE": [
+        "PGA-3593"
+      ],
+      "PROMOTIVE": [
+        "AF3593"
+      ],
+      "PRONTO": [
+        "PA-5057"
+      ],
+      "PUROLATOR": [
+        "A33593"
+      ],
+      "QUAKER-STATE": [
+        "QSA5057"
+      ],
+      "ROCKHILL": [
+        "66128"
+      ],
+      "S-B": [
+        "66-2015"
+      ],
+      "SERVICE-1": [
+        "AF3593"
+      ],
+      "SERVICE-PRO": [
+        "MA3593"
+      ],
+      "SHEFA": [
+        "S17593"
+      ],
+      "SHELL": [
+        "SHA68"
+      ],
+      "SILVERLINE": [
+        "26128"
+      ],
+      "STP": [
+        "SA5057"
+      ],
+      "TRUST": [
+        "AF1042"
+      ],
+      "UNOCAL": [
+        "935"
+      ],
+      "VALVOLINE": [
+        "VA73"
+      ],
+      "VMC": [
+        "AF614476"
+      ],
+      "WARNER": [
+        "AF1042"
+      ],
+      "WIX": [
+        "46128",
+        "49820"
+      ],
+      "WOODGATE": [
+        "WGA1312"
+      ]
+    }
   },
   {
     "part_number": "P614544",
@@ -18837,7 +25046,37 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "RE48882"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3929"
+      ],
+      "CARQUEST": [
+        "89321"
+      ],
+      "HASTINGS": [
+        "PA3929"
+      ],
+      "HENGST": [
+        "E5921LI"
+      ],
+      "HIFI": [
+        "SC16032"
+      ],
+      "JOHN-DEERE": [
+        "RE48882"
+      ],
+      "JURA": [
+        "SA16032"
+      ],
+      "NAPA": [
+        "4321"
+      ],
+      "WIX": [
+        "24321",
+        "524321"
+      ]
+    }
   },
   {
     "part_number": "P614546",
@@ -18883,7 +25122,35 @@
         "manufacturer": "INTERNATIONAL",
         "part_number": "8031900137"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLIANCE": [
+        "ABPN10G803190013701"
+      ],
+      "CARQUEST": [
+        "89313"
+      ],
+      "FREIGHTLINER": [
+        "8031900137",
+        "803190013701"
+      ],
+      "LUBERFINER": [
+        "CAF1845P"
+      ],
+      "MANN": [
+        "CU2227"
+      ],
+      "NAPA": [
+        "4313"
+      ],
+      "NAVISTAR": [
+        "8031900137"
+      ],
+      "WIX": [
+        "24313",
+        "WP2062"
+      ]
+    }
   },
   {
     "part_number": "P614547",
@@ -19159,7 +25426,53 @@
         "manufacturer": "VMC",
         "part_number": "AF614547"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ALLIANCE": [
+        "ABPN10G36000006"
+      ],
+      "BALDWIN": [
+        "PA5359"
+      ],
+      "CARQUEST": [
+        "83082"
+      ],
+      "FLEETGUARD": [
+        "AF26427"
+      ],
+      "FREIGHTLINER": [
+        "36000006",
+        "920141R",
+        "VCC36000006"
+      ],
+      "HASTINGS": [
+        "AF2421"
+      ],
+      "HENGST": [
+        "E4993LI"
+      ],
+      "HIFI": [
+        "SC90215"
+      ],
+      "LUBERFINER": [
+        "CAF24016"
+      ],
+      "NAPA": [
+        "9082"
+      ],
+      "PUROLATOR": [
+        "C15951"
+      ],
+      "SAKURA": [
+        "CA79210"
+      ],
+      "VMC": [
+        "AF614547"
+      ],
+      "WIX": [
+        "49082"
+      ]
+    }
   },
   {
     "part_number": "P616898",
@@ -19347,7 +25660,109 @@
         "manufacturer": "VOLKSWAGEN",
         "part_number": "2E0819638A"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ACR": [
+        "321618"
+      ],
+      "BALDWIN": [
+        "PA4336"
+      ],
+      "CHRYSLER": [
+        "68012876",
+        "68012876AA"
+      ],
+      "CLEAN": [
+        "NC2345CA"
+      ],
+      "FEBI-BILSTEIN": [
+        "30640"
+      ],
+      "FIL": [
+        "HCK7135"
+      ],
+      "FILTRON": [
+        "K1288A"
+      ],
+      "FIRST-AUTOMOTIVE": [
+        "K30264"
+      ],
+      "FLEETGUARD": [
+        "AF26462"
+      ],
+      "HASTINGS": [
+        "AF1340",
+        "AFC1340"
+      ],
+      "HENGST": [
+        "E2916LC"
+      ],
+      "HIFI": [
+        "SC5102CA"
+      ],
+      "LUBERFINER": [
+        "CAF1847C"
+      ],
+      "M": [
+        "K986C"
+      ],
+      "MAHLE": [
+        "LAK1002"
+      ],
+      "MANN": [
+        "CUK3569",
+        "FP3569"
+      ],
+      "MANN-HUMMEL": [
+        "CUK3569"
+      ],
+      "MAXGEAR": [
+        "260514"
+      ],
+      "MERCEDES-BENZ": [
+        "9068300318",
+        "AA9068300318"
+      ],
+      "METAL-LEVE": [
+        "LAK1002"
+      ],
+      "MULLER": [
+        "FK264"
+      ],
+      "SCT": [
+        "SAK227"
+      ],
+      "SIVENTO": [
+        "G760",
+        "P760"
+      ],
+      "STELLOX": [
+        "7110210SX"
+      ],
+      "SWAG": [
+        "10930640"
+      ],
+      "TOPRAN": [
+        "111660"
+      ],
+      "UFI": [
+        "5416100"
+      ],
+      "VMC": [
+        "AF616898"
+      ],
+      "VW-AUDI-PORSCHE": [
+        "2E0819638A"
+      ],
+      "WILMINK-GROUP": [
+        "WG1427210",
+        "WG1439537"
+      ],
+      "WIX": [
+        "49366",
+        "WP9331"
+      ]
+    }
   },
   {
     "part_number": "P617005",
@@ -19386,7 +25801,34 @@
         "manufacturer": "VMC",
         "part_number": "AF617005"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5637"
+      ],
+      "CARQUEST": [
+        "89115"
+      ],
+      "FLEETGUARD": [
+        "AF255700",
+        "AF55700"
+      ],
+      "LUBERFINER": [
+        "CAF24013"
+      ],
+      "NAVISTAR": [
+        "1699956C1"
+      ],
+      "PUROLATOR": [
+        "C15953"
+      ],
+      "VMC": [
+        "AF617005"
+      ],
+      "WIX": [
+        "24115"
+      ]
+    }
   },
   {
     "part_number": "P618643",
@@ -19472,7 +25914,27 @@
         "manufacturer": "VMC",
         "part_number": "AF618643"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4858"
+      ],
+      "CARQUEST": [
+        "83471"
+      ],
+      "FLEETGUARD": [
+        "AF27679"
+      ],
+      "HASTINGS": [
+        "PA4858"
+      ],
+      "LUBERFINER": [
+        "LAF6030"
+      ],
+      "WIX": [
+        "49471"
+      ]
+    }
   },
   {
     "part_number": "P618644",
@@ -19548,7 +26010,42 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "RE70742"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3900"
+      ],
+      "CAMECO": [
+        "RE70742"
+      ],
+      "CARQUEST": [
+        "83644"
+      ],
+      "HASTINGS": [
+        "PA3900"
+      ],
+      "HIFI": [
+        "SC90102"
+      ],
+      "JOHN-DEERE": [
+        "RE70742"
+      ],
+      "LUBERFINER": [
+        "LAF5820"
+      ],
+      "MANN": [
+        "CU32005"
+      ],
+      "UFI": [
+        "5350500"
+      ],
+      "UNIFLUX": [
+        "XC97"
+      ],
+      "WIX": [
+        "49644"
+      ]
+    }
   },
   {
     "part_number": "P619182",
@@ -19619,7 +26116,34 @@
         "manufacturer": "VMC",
         "part_number": "AF619182"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3495"
+      ],
+      "CARQUEST": [
+        "89621"
+      ],
+      "CATERPILLAR": [
+        "7T8945",
+        "7X6012"
+      ],
+      "FLEETGUARD": [
+        "AF25776"
+      ],
+      "HASTINGS": [
+        "PA3495"
+      ],
+      "HIFI": [
+        "SC90020"
+      ],
+      "VMC": [
+        "AF619182"
+      ],
+      "WIX": [
+        "24621"
+      ]
+    }
   },
   {
     "part_number": "P626182",
@@ -19700,7 +26224,27 @@
         "manufacturer": "STERLING",
         "part_number": "F6HZ19N619AA"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5337"
+      ],
+      "CARQUEST": [
+        "88981"
+      ],
+      "HASTINGS": [
+        "AF2429"
+      ],
+      "HENGST": [
+        "E3922LI"
+      ],
+      "LUBERFINER": [
+        "CAF24014"
+      ],
+      "WIX": [
+        "46981"
+      ]
+    }
   },
   {
     "part_number": "P627028",
@@ -19772,7 +26316,24 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "2112661"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5752"
+      ],
+      "CARQUEST": [
+        "83661"
+      ],
+      "HIFI": [
+        "SC90188"
+      ],
+      "UFI": [
+        "27B6600"
+      ],
+      "WIX": [
+        "49661"
+      ]
+    }
   },
   {
     "part_number": "P627122",
@@ -19859,7 +26420,24 @@
         "manufacturer": "CASE/CASE IH",
         "part_number": "143481C92"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "87554"
+      ],
+      "HIFI": [
+        "SC11820"
+      ],
+      "LUBERFINER": [
+        "LAF1879"
+      ],
+      "MANN": [
+        "CUD97001"
+      ],
+      "WIX": [
+        "42554"
+      ]
+    }
   },
   {
     "part_number": "P628355",
@@ -19932,7 +26510,25 @@
         "manufacturer": "INTERNATIONAL",
         "part_number": "3839141C1"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5679"
+      ],
+      "CARQUEST": [
+        "89466"
+      ],
+      "HENGST": [
+        "E6977LI"
+      ],
+      "HIFI": [
+        "SC90333"
+      ],
+      "LUBERFINER": [
+        "CAF24015",
+        "CAF24015XL"
+      ]
+    }
   },
   {
     "part_number": "P628392",
@@ -20139,7 +26735,18 @@
         "manufacturer": "MEI CORPORATION",
         "part_number": "7978"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E3924LI"
+      ],
+      "HIFI": [
+        "SC90394"
+      ],
+      "LUBERFINER": [
+        "CAF24021"
+      ]
+    }
   },
   {
     "part_number": "P628394",
@@ -20810,7 +27417,21 @@
         "manufacturer": "MEI CORPORATION",
         "part_number": "7966"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA30165"
+      ],
+      "HENGST": [
+        "E4991LI"
+      ],
+      "HIFI": [
+        "SC90356"
+      ],
+      "LUBERFINER": [
+        "CAF24023"
+      ]
+    }
   },
   {
     "part_number": "P628395",
@@ -21478,7 +28099,21 @@
         "manufacturer": "FREIGHTLINER",
         "part_number": "T1000917R"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA30166"
+      ],
+      "HENGST": [
+        "E3923LI"
+      ],
+      "HIFI": [
+        "SC90357"
+      ],
+      "LUBERFINER": [
+        "CAF24022"
+      ]
+    }
   },
   {
     "part_number": "P629015",
@@ -21562,7 +28197,15 @@
         "manufacturer": "PETERBILT",
         "part_number": "5X014010"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA30140"
+      ],
+      "CARQUEST": [
+        "93709"
+      ]
+    }
   },
   {
     "part_number": "P630281",
@@ -21666,7 +28309,21 @@
         "manufacturer": "PETERBILT",
         "part_number": "5S013817"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5765"
+      ],
+      "CARQUEST": [
+        "93401"
+      ],
+      "HENGST": [
+        "E4944LI"
+      ],
+      "LUBERFINER": [
+        "CAF24024"
+      ]
+    }
   },
   {
     "part_number": "P633082",
@@ -21857,7 +28514,59 @@
         "manufacturer": "NEW HOLLAND",
         "part_number": "84350712"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90183"
+      ],
+      "BALDWIN": [
+        "RS5285"
+      ],
+      "BOSS": [
+        "BS02056"
+      ],
+      "CARQUEST": [
+        "93602"
+      ],
+      "CASE": [
+        "76303305",
+        "87712194"
+      ],
+      "CM": [
+        "CMC5210"
+      ],
+      "FLEETGUARD": [
+        "AF55738"
+      ],
+      "HASTINGS": [
+        "AF2533"
+      ],
+      "IMPREFIL": [
+        "IA4318"
+      ],
+      "NEW-HOLLAND": [
+        "6557616",
+        "84350712"
+      ],
+      "PANCLEAN": [
+        "APG7003"
+      ],
+      "SAKURA": [
+        "CA45010"
+      ],
+      "SF": [
+        "SKL46318"
+      ],
+      "VIRGIS": [
+        "CH18337LC"
+      ],
+      "WISMET": [
+        "WCA24232"
+      ],
+      "WIX": [
+        "WP10281"
+      ]
+    }
   },
   {
     "part_number": "P635967",
@@ -21929,7 +28638,8 @@
         "manufacturer": "INTERNATIONAL",
         "part_number": "3839326C1"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P636368",
@@ -22007,7 +28717,18 @@
         "manufacturer": "VOLVO",
         "part_number": "85112361"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E6986LI"
+      ],
+      "HIFI": [
+        "SC90438"
+      ],
+      "LUBERFINER": [
+        "CAF24030"
+      ]
+    }
   },
   {
     "part_number": "P636631",
@@ -22077,7 +28798,33 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "AT184590"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90321"
+      ],
+      "BALDWIN": [
+        "PA5652"
+      ],
+      "CARQUEST": [
+        "99014"
+      ],
+      "FLEETGUARD": [
+        "AF55775"
+      ],
+      "JOHN-DEERE": [
+        "AT184590"
+      ],
+      "SF": [
+        "SKL46725"
+      ],
+      "WISMET": [
+        "WCA704112"
+      ],
+      "WIX": [
+        "WP10001"
+      ]
+    }
   },
   {
     "part_number": "P637255",
@@ -22271,7 +29018,41 @@
         "manufacturer": "RED DOT",
         "part_number": "2667765"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90174"
+      ],
+      "BALDWIN": [
+        "PA5680"
+      ],
+      "CARQUEST": [
+        "93284"
+      ],
+      "CATERPILLAR": [
+        "2593222",
+        "2667765",
+        "4432127"
+      ],
+      "CM": [
+        "CMC5209"
+      ],
+      "FLEETGUARD": [
+        "AF55792"
+      ],
+      "IMPREFIL": [
+        "IA4311"
+      ],
+      "SF": [
+        "SKL46311"
+      ],
+      "UNIFLUX": [
+        "XC5010"
+      ],
+      "WISMET": [
+        "WCA24240"
+      ]
+    }
   },
   {
     "part_number": "P637256",
@@ -22345,7 +29126,35 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "2098217"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90330"
+      ],
+      "BALDWIN": [
+        "PA5632"
+      ],
+      "CATERPILLAR": [
+        "2098217",
+        "2666705",
+        "3187190"
+      ],
+      "FLEETGUARD": [
+        "AF55751"
+      ],
+      "IMPREFIL": [
+        "IA9070"
+      ],
+      "SF": [
+        "SKL46700"
+      ],
+      "WISMET": [
+        "WAP692625"
+      ],
+      "WIX": [
+        "24606"
+      ]
+    }
   },
   {
     "part_number": "P637257",
@@ -22607,7 +29416,15 @@
         "manufacturer": "RED DOT",
         "part_number": "RD5106140"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90173"
+      ],
+      "WIX": [
+        "WP10003"
+      ]
+    }
   },
   {
     "part_number": "P637258",
@@ -22677,7 +29494,31 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "2656618"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90210"
+      ],
+      "BALDWIN": [
+        "PA5770"
+      ],
+      "CARQUEST": [
+        "99056"
+      ],
+      "CATERPILLAR": [
+        "2656618"
+      ],
+      "SF": [
+        "SKL46672",
+        "SKL46746"
+      ],
+      "WISMET": [
+        "WCA104388"
+      ],
+      "WIX": [
+        "WP10034"
+      ]
+    }
   },
   {
     "part_number": "P637259",
@@ -22751,7 +29592,30 @@
         "manufacturer": "RED DOT",
         "part_number": "2656619"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90209"
+      ],
+      "BALDWIN": [
+        "PA5774"
+      ],
+      "CARQUEST": [
+        "89616"
+      ],
+      "CATERPILLAR": [
+        "2656619"
+      ],
+      "MDF-SARL": [
+        "ETUD768"
+      ],
+      "SF": [
+        "SKL46747"
+      ],
+      "WISMET": [
+        "WCA104387"
+      ]
+    }
   },
   {
     "part_number": "P637260",
@@ -22821,7 +29685,39 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "2902287"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90263"
+      ],
+      "BALDWIN": [
+        "PA30002"
+      ],
+      "BAVARIA": [
+        "5019254"
+      ],
+      "CARQUEST": [
+        "93452"
+      ],
+      "CATERPILLAR": [
+        "2902287"
+      ],
+      "FLEETGUARD": [
+        "AF55830"
+      ],
+      "PANCLEAN": [
+        "APG1087"
+      ],
+      "SF": [
+        "SKL46454"
+      ],
+      "WISMET": [
+        "WCA25638"
+      ],
+      "WIX": [
+        "WP10313"
+      ]
+    }
   },
   {
     "part_number": "P637261",
@@ -22891,7 +29787,43 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3468243"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90070"
+      ],
+      "ASAS": [
+        "HF8289S"
+      ],
+      "BALDWIN": [
+        "PA4659",
+        "PA5669"
+      ],
+      "CATERPILLAR": [
+        "1167376",
+        "3468243"
+      ],
+      "CM": [
+        "CMC5332"
+      ],
+      "ECOCLIM": [
+        "740A72"
+      ],
+      "FLEETGUARD": [
+        "AF55757",
+        "AF55838"
+      ],
+      "JOHN-DEERE": [
+        "AT307501",
+        "RE307501"
+      ],
+      "MDF-SARL": [
+        "MDA9566"
+      ],
+      "SF": [
+        "PA7794"
+      ]
+    }
   },
   {
     "part_number": "P637266",
@@ -22961,7 +29893,30 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "1832813"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90192"
+      ],
+      "BALDWIN": [
+        "PA5581"
+      ],
+      "CARQUEST": [
+        "83813"
+      ],
+      "CATERPILLAR": [
+        "1832813"
+      ],
+      "MDF-SARL": [
+        "ETUD510"
+      ],
+      "SF": [
+        "SKL46252"
+      ],
+      "WIX": [
+        "49813"
+      ]
+    }
   },
   {
     "part_number": "P637267",
@@ -23003,7 +29958,31 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3197944"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90220"
+      ],
+      "BALDWIN": [
+        "PA5755",
+        "PA5757"
+      ],
+      "CATERPILLAR": [
+        "2380479",
+        "2653857",
+        "3197944"
+      ],
+      "FLEETGUARD": [
+        "AF56007"
+      ],
+      "MDF-SARL": [
+        "ETUD766",
+        "ETUD767"
+      ],
+      "WIX": [
+        "WP10174"
+      ]
+    }
   },
   {
     "part_number": "P640110",
@@ -23185,7 +30164,15 @@
         "manufacturer": "PACCAR",
         "part_number": "X1987001"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC8153"
+      ],
+      "LUBERFINER": [
+        "CAF24035"
+      ]
+    }
   },
   {
     "part_number": "P644254",
@@ -23256,7 +30243,33 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "2902288"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HIFI": [
+        "SC90262"
+      ],
+      "BALDWIN": [
+        "PA30270"
+      ],
+      "CATERPILLAR": [
+        "2902288"
+      ],
+      "NAPA": [
+        "550248"
+      ],
+      "PANCLEAN": [
+        "KPG1088"
+      ],
+      "SF": [
+        "SKL46453"
+      ],
+      "WISMET": [
+        "WCA25636"
+      ],
+      "WIX": [
+        "WP10248"
+      ]
+    }
   },
   {
     "part_number": "P644953",
@@ -23327,7 +30340,8 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3535058"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P644954",
@@ -23388,7 +30402,8 @@
         "manufacturer": "CATERPILLAR",
         "part_number": "3657606"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P644955",
@@ -23459,7 +30474,8 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "RE199681"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P644957",
@@ -23533,7 +30549,8 @@
         "manufacturer": "TYLER POWER PRODUCTS",
         "part_number": "87267363"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P646621",
@@ -23602,7 +30619,8 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "RE291412"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P647714",
@@ -23637,7 +30655,8 @@
         "manufacturer": "FORD",
         "part_number": "KL3Z19N619AA"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P647957",
@@ -23706,7 +30725,18 @@
         "manufacturer": "JCB",
         "part_number": "30925759"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E5929LI"
+      ],
+      "MANN": [
+        "CU2910"
+      ],
+      "UFI": [
+        "5358300"
+      ]
+    }
   },
   {
     "part_number": "P647958",
@@ -23776,7 +30806,8 @@
         "manufacturer": "JCB",
         "part_number": "333C7305"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P650169",
@@ -23798,7 +30829,8 @@
     "equipment": [],
     "scraped_at": "2026-05-29T20:30:57.771875",
     "error": null,
-    "oem_codes": []
+    "oem_codes": [],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P776490",
@@ -23950,7 +30982,79 @@
         "manufacturer": "GPC",
         "part_number": "EP5045"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "AIR-REFINER": [
+        "AR238"
+      ],
+      "BALDWIN": [
+        "PA4592"
+      ],
+      "CARQUEST": [
+        "89319"
+      ],
+      "CASE": [
+        "1930782"
+      ],
+      "CATERPILLAR": [
+        "7R2258",
+        "7R2258E"
+      ],
+      "CHARDONNET": [
+        "7213613000"
+      ],
+      "FIAT": [
+        "1930782",
+        "5109236"
+      ],
+      "FLEETGUARD": [
+        "AF25675",
+        "AF26575"
+      ],
+      "FLEETRITE": [
+        "AFR825675"
+      ],
+      "HASTINGS": [
+        "PA4592"
+      ],
+      "HIFI": [
+        "SC70009"
+      ],
+      "JURA": [
+        "SA16049"
+      ],
+      "KRALINATOR": [
+        "LA4319"
+      ],
+      "LOESING": [
+        "020040"
+      ],
+      "NAPA": [
+        "4319"
+      ],
+      "NEW-HOLLAND": [
+        "1930782"
+      ],
+      "SCHUPP": [
+        "SKL2532"
+      ],
+      "TECNO-COMP": [
+        "TM238"
+      ],
+      "TIM": [
+        "7R2258"
+      ],
+      "VMC": [
+        "AF776490"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00811717",
+        "00811857"
+      ],
+      "WIX": [
+        "24319"
+      ]
+    }
   },
   {
     "part_number": "P777576",
@@ -24467,7 +31571,60 @@
         "manufacturer": "TEREX",
         "part_number": "15274303"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA4652"
+      ],
+      "CARQUEST": [
+        "99068"
+      ],
+      "CATERPILLAR": [
+        "6C9226"
+      ],
+      "FLEETGUARD": [
+        "AF25713"
+      ],
+      "HIFI": [
+        "SC16062"
+      ],
+      "JURA": [
+        "SA16062"
+      ],
+      "LIEBHERR": [
+        "10338671"
+      ],
+      "LOESING": [
+        "020834"
+      ],
+      "MANN": [
+        "CUD30018"
+      ],
+      "NELSON": [
+        "870219N"
+      ],
+      "TEREX": [
+        "15270794",
+        "15274303"
+      ],
+      "TIM": [
+        "106518",
+        "113170",
+        "6C9226"
+      ],
+      "UFI": [
+        "5351600"
+      ],
+      "UNIFLUX": [
+        "XC3155"
+      ],
+      "VMC": [
+        "AF777576"
+      ],
+      "WIX": [
+        "WP10068"
+      ]
+    }
   },
   {
     "part_number": "P780135",
@@ -24639,7 +31796,61 @@
         "manufacturer": "LOESING",
         "part_number": "024114"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3777"
+      ],
+      "BIG-A": [
+        "94585"
+      ],
+      "CARQUEST": [
+        "88585"
+      ],
+      "CATERPILLAR": [
+        "3E0410"
+      ],
+      "FLEETGUARD": [
+        "AF25677"
+      ],
+      "FLEETRITE": [
+        "AFR825677"
+      ],
+      "HASTINGS": [
+        "AF2372"
+      ],
+      "HIFI": [
+        "SC90000"
+      ],
+      "KRALINATOR": [
+        "LA1705"
+      ],
+      "LOESING": [
+        "024114"
+      ],
+      "LUBERFINER": [
+        "LAF8783"
+      ],
+      "NAPA": [
+        "6585"
+      ],
+      "NELSON": [
+        "87495A"
+      ],
+      "PUROLATOR": [
+        "A25361"
+      ],
+      "VMC": [
+        "AF780135"
+      ],
+      "WIX": [
+        "46585",
+        "546585"
+      ],
+      "WOODGATE": [
+        "WGA1295"
+      ]
+    }
   },
   {
     "part_number": "P780163",
@@ -24816,7 +32027,62 @@
         "manufacturer": "LOESING",
         "part_number": "20676"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3804"
+      ],
+      "BIG-A": [
+        "93447"
+      ],
+      "CARQUEST": [
+        "87447"
+      ],
+      "CATERPILLAR": [
+        "9X3352"
+      ],
+      "FLEETGUARD": [
+        "AF25661"
+      ],
+      "FLEETRITE": [
+        "AFR825661"
+      ],
+      "HASTINGS": [
+        "AF2335",
+        "PA3804"
+      ],
+      "HIFI": [
+        "SC17171"
+      ],
+      "KRALINATOR": [
+        "LA1795"
+      ],
+      "LOESING": [
+        "020676"
+      ],
+      "LUBERFINER": [
+        "LAF8778",
+        "LAF8778001527769"
+      ],
+      "NAPA": [
+        "2447"
+      ],
+      "NELSON": [
+        "87335N",
+        "87377N"
+      ],
+      "VMC": [
+        "AF780163"
+      ],
+      "WIX": [
+        "42447",
+        "46689",
+        "542447"
+      ],
+      "WOODGATE": [
+        "WGA1297"
+      ]
+    }
   },
   {
     "part_number": "P780298",
@@ -25154,7 +32420,79 @@
         "manufacturer": "LOESING",
         "part_number": "020677"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3781"
+      ],
+      "BIG-A": [
+        "93448"
+      ],
+      "CARQUEST": [
+        "87448"
+      ],
+      "CATERPILLAR": [
+        "7X0041",
+        "7X6041"
+      ],
+      "FLEETGUARD": [
+        "AF25672"
+      ],
+      "FLEETRITE": [
+        "AFR825672"
+      ],
+      "HASTINGS": [
+        "AF2371"
+      ],
+      "HIFI": [
+        "SC90001"
+      ],
+      "KRALINATOR": [
+        "LA1796"
+      ],
+      "LOESING": [
+        "020054",
+        "020677"
+      ],
+      "LUBERFINER": [
+        "LAF4191"
+      ],
+      "MAHLE": [
+        "LA952"
+      ],
+      "MANN": [
+        "CU31100"
+      ],
+      "METAL-LEVE": [
+        "LA952"
+      ],
+      "NAPA": [
+        "2448"
+      ],
+      "NELSON": [
+        "87295A"
+      ],
+      "TIM": [
+        "7X6041"
+      ],
+      "UNIFLUX": [
+        "XC319",
+        "XCK319"
+      ],
+      "VMC": [
+        "AF780298"
+      ],
+      "WALGAHN-MOTORENTECHNIK": [
+        "00811906"
+      ],
+      "WIX": [
+        "42448",
+        "542448"
+      ],
+      "WOODGATE": [
+        "WGA1298"
+      ]
+    }
   },
   {
     "part_number": "P781176",
@@ -25573,7 +32911,64 @@
         "manufacturer": "TIM",
         "part_number": "106238"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3939"
+      ],
+      "CARQUEST": [
+        "83083"
+      ],
+      "CATERPILLAR": [
+        "3050329",
+        "411278",
+        "41178",
+        "4I1278"
+      ],
+      "CRENLO": [
+        "128151"
+      ],
+      "FLEETGUARD": [
+        "AF25787"
+      ],
+      "HASTINGS": [
+        "PA3939"
+      ],
+      "HENGST": [
+        "E5933LI"
+      ],
+      "HIFI": [
+        "SC90007"
+      ],
+      "LUBERFINER": [
+        "LAF9092"
+      ],
+      "MANN": [
+        "CU6088",
+        "CUD6035"
+      ],
+      "MANN-HUMMEL": [
+        "CU6088"
+      ],
+      "NAPA": [
+        "9083"
+      ],
+      "TIM": [
+        "106238"
+      ],
+      "TIMBERJACK": [
+        "106238"
+      ],
+      "VMC": [
+        "AF781176"
+      ],
+      "WIX": [
+        "49083"
+      ],
+      "WOODGATE": [
+        "WGA1839"
+      ]
+    }
   },
   {
     "part_number": "P782811",
@@ -26345,7 +33740,117 @@
         "manufacturer": "VOLVO",
         "part_number": "8143691"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "ACR": [
+        "321515"
+      ],
+      "ALCO": [
+        "MS6211"
+      ],
+      "BALDWIN": [
+        "PA3839"
+      ],
+      "BERGKRAFT": [
+        "BK8400691"
+      ],
+      "CLEAN": [
+        "NC2160"
+      ],
+      "FEBI-BILSTEIN": [
+        "10152"
+      ],
+      "FIL": [
+        "HP2268"
+      ],
+      "FILTRON": [
+        "K1029"
+      ],
+      "FLEETGUARD": [
+        "AF25305",
+        "AF55712"
+      ],
+      "GPC": [
+        "EP5121"
+      ],
+      "HENGST": [
+        "E947LC",
+        "E947LI"
+      ],
+      "HIFI": [
+        "SA5066"
+      ],
+      "KNECHT": [
+        "LA148"
+      ],
+      "KOLBENSCHMIDT": [
+        "4890-ACC"
+      ],
+      "M": [
+        "K954"
+      ],
+      "MAGNETI-MARELLI": [
+        "154064159960"
+      ],
+      "MAHLE": [
+        "LA148",
+        "LAK148"
+      ],
+      "MANN": [
+        "CU2184",
+        "CUK2184"
+      ],
+      "MANN-HUMMEL": [
+        "CU2184"
+      ],
+      "MECAFILTER": [
+        "ELR7501"
+      ],
+      "SCHUPP": [
+        "SKL2503"
+      ],
+      "SCT": [
+        "SA1133"
+      ],
+      "SIVENTO": [
+        "P902"
+      ],
+      "SOFIMA": [
+        "S3089C"
+      ],
+      "SOGEFI": [
+        "PC8029"
+      ],
+      "TECNOCAR": [
+        "E504"
+      ],
+      "UFI": [
+        "5308900"
+      ],
+      "UNICO": [
+        "AC2149"
+      ],
+      "VIRGIS": [
+        "PF15441"
+      ],
+      "VMC": [
+        "AF782811"
+      ],
+      "VOLVO": [
+        "20409908",
+        "21758906",
+        "8143691",
+        "81436917",
+        "8144430"
+      ],
+      "WILMINK-GROUP": [
+        "WG1215268",
+        "WG1434767"
+      ],
+      "WIX": [
+        "93135E"
+      ]
+    }
   },
   {
     "part_number": "P783687",
@@ -26928,7 +34433,48 @@
         "manufacturer": "NEW HOLLAND",
         "part_number": "80922214"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BOSS": [
+        "BS02027"
+      ],
+      "CARQUEST": [
+        "83129"
+      ],
+      "FENDT": [
+        "F178810140010"
+      ],
+      "FLEETGUARD": [
+        "AF4663"
+      ],
+      "GPC": [
+        "EP5227"
+      ],
+      "HENGST": [
+        "E752L"
+      ],
+      "HIFI": [
+        "SC50020"
+      ],
+      "MANN": [
+        "C60148"
+      ],
+      "MANN-HUMMEL": [
+        "C60148"
+      ],
+      "SCHUPP": [
+        "SKL2547"
+      ],
+      "UFI": [
+        "5350700"
+      ],
+      "VIRGIS": [
+        "PF15688"
+      ],
+      "WIX": [
+        "49129"
+      ]
+    }
   },
   {
     "part_number": "P784574",
@@ -27332,7 +34878,68 @@
         "manufacturer": "LEKANG",
         "part_number": "15163"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA5710"
+      ],
+      "CARQUEST": [
+        "93305"
+      ],
+      "CASE": [
+        "139768A1"
+      ],
+      "CNH": [
+        "47128198"
+      ],
+      "FIBA": [
+        "CF67"
+      ],
+      "FILTER-CENTER": [
+        "PA0023"
+      ],
+      "FLEETGUARD": [
+        "AF25574"
+      ],
+      "FORD": [
+        "82014790",
+        "83994739",
+        "F0NN18N385AB"
+      ],
+      "GPC": [
+        "EP5307"
+      ],
+      "HENGST": [
+        "E5902LI"
+      ],
+      "HIFI": [
+        "SC70005"
+      ],
+      "IVECO": [
+        "107030"
+      ],
+      "MANN": [
+        "CUD5250"
+      ],
+      "NEW-HOLLAND": [
+        "47128151",
+        "5196842",
+        "81868102",
+        "82012057"
+      ],
+      "PANCLEAN": [
+        "AW7821"
+      ],
+      "SCHUPP": [
+        "SKL2596"
+      ],
+      "TEHO": [
+        "21182"
+      ],
+      "VIRGIS": [
+        "PF15701"
+      ]
+    }
   },
   {
     "part_number": "P789129",
@@ -28410,7 +36017,43 @@
         "manufacturer": "VAPORMATIC",
         "part_number": "CPM8052"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA3928"
+      ],
+      "CARQUEST": [
+        "83096"
+      ],
+      "FLEETGUARD": [
+        "AF26672"
+      ],
+      "HASTINGS": [
+        "PA3928"
+      ],
+      "HENGST": [
+        "E5918LI"
+      ],
+      "HIFI": [
+        "SC90015"
+      ],
+      "JOHN-DEERE": [
+        "AL119095",
+        "AL177184"
+      ],
+      "LUBERFINER": [
+        "LAF4340"
+      ],
+      "MANN": [
+        "CU59161"
+      ],
+      "UFI": [
+        "30C9700"
+      ],
+      "WIX": [
+        "49096"
+      ]
+    }
   },
   {
     "part_number": "P903809",
@@ -28484,7 +36127,8 @@
         "manufacturer": "FORD",
         "part_number": "EB3G9601AA"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P903833",
@@ -28552,7 +36196,8 @@
         "manufacturer": "JOHN DEERE",
         "part_number": "RE195491"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   },
   {
     "part_number": "P958618",
@@ -29491,7 +37136,15 @@
         "manufacturer": "NEW HOLLAND",
         "part_number": "87726675"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E1983LI"
+      ],
+      "HIFI": [
+        "SC90127"
+      ]
+    }
   },
   {
     "part_number": "P958619",
@@ -29566,7 +37219,75 @@
         "manufacturer": "NEW HOLLAND",
         "part_number": "87726699"
       }
-    ]
+    ],
+    "brand_crossrefs": {
+      "HENGST": [
+        "E5935LI"
+      ],
+      "BALDWIN": [
+        "PA5399"
+      ],
+      "BSB-FILTRI": [
+        "AT609936"
+      ],
+      "CASE-IH": [
+        "87311194",
+        "87726695"
+      ],
+      "CNH": [
+        "82034690",
+        "87302687"
+      ],
+      "FIL": [
+        "HP2336"
+      ],
+      "FILMAR": [
+        "PA7065C"
+      ],
+      "FLEETGUARD": [
+        "AF55773"
+      ],
+      "HIFI": [
+        "KC90486",
+        "SC90128"
+      ],
+      "MANN": [
+        "CU3861"
+      ],
+      "MANN-HUMMEL": [
+        "CU3861"
+      ],
+      "NEW-HOLLAND": [
+        "82034690",
+        "87311194",
+        "87726695",
+        "87726699"
+      ],
+      "PANCLEAN": [
+        "AT4342",
+        "AT609936.1",
+        "AXH4342"
+      ],
+      "PZL-SEDZISZOW": [
+        "WA60308"
+      ],
+      "SF": [
+        "SKL46191"
+      ],
+      "STEYR-DAIMLER-PUCH": [
+        "87726695",
+        "87726699"
+      ],
+      "WISMET": [
+        "WCA957801"
+      ],
+      "WIX": [
+        "49699"
+      ],
+      "ZAFFO": [
+        "AT4342"
+      ]
+    }
   },
   {
     "part_number": "P960024",
@@ -29605,6 +37326,7 @@
         "manufacturer": "PETERBILT",
         "part_number": "W2084001"
       }
-    ]
+    ],
+    "brand_crossrefs": {}
   }
 ]
