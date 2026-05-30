@@ -236,11 +236,12 @@ _EXTRACT_JS = """() => {
 }"""
 
 
-def test_one(part: str, debug: bool = False):
+def test_one(part: str, debug: bool = False, cat: str = "lube"):
+    base_url = CATEGORY_URLS.get(cat, BASE_URL)
     with sync_playwright() as pw:
         context = _make_context(pw)
         page    = context.new_page()
-        url     = BASE_URL.format(part=part.upper())
+        url     = base_url.format(part=part.upper())
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
@@ -249,7 +250,15 @@ def test_one(part: str, debug: bool = False):
             )
         except PWTimeout:
             pass
-        time.sleep(1)
+        time.sleep(2)
+        if debug:
+            html = page.content()
+            fname = f"debug_{part}.html"
+            with open(fname, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"Guardado en {fname}")
+            context.close()
+            return
         crossrefs = page.evaluate(_EXTRACT_JS)
         context.close()
 
@@ -274,9 +283,15 @@ if __name__ == "__main__":
         sys.exit(0)
 
     if argv[0] == "--debug":
-        test_one(argv[1] if len(argv) > 1 else "P552100", debug=True)
+        # --debug <cat> <part>  OR  --debug <part>
+        cat  = argv[1] if len(argv) > 2 else "lube"
+        part = argv[2] if len(argv) > 2 else (argv[1] if len(argv) > 1 else "P552100")
+        test_one(part, debug=True, cat=cat)
     elif argv[0] == "--test":
-        test_one(argv[1] if len(argv) > 1 else "P552100")
+        # --test <cat> <part>  OR  --test <part>
+        cat  = argv[1] if len(argv) > 2 else "lube"
+        part = argv[2] if len(argv) > 2 else (argv[1] if len(argv) > 1 else "P552100")
+        test_one(part, cat=cat)
     elif "--retry-zeros" in argv:
         # Borra del cache los productos que quedaron con {} para re-procesarlos
         cats = [a for a in argv if not a.startswith("--")]
