@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: elimfilters-search-pro
+    runtime: node
+    rootDir: .
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+    healthCheckPath: /health
