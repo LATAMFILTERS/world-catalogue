@@ -717,6 +717,20 @@ def process_category(cat: str, sample_only: bool = False):
         for drop in ("url", "description", "scraped_at", "error"):
             p.pop(drop, None)
 
+        # Strip packaging/logistics noise from attributes
+        ATTR_DROP = {"Packaged Length", "Packaged Width", "Packaged Height",
+                     "Packaged Weight", "Packaged Volume", "NMFC Code", "UPC Code",
+                     "Brand"}
+        p["attributes"] = {k: v for k, v in p.get("attributes", {}).items()
+                           if k not in ATTR_DROP}
+
+        # Strip always-empty equipment fields
+        EQ_DROP = {"year", "options", "engine_option"}
+        p["equipment"] = [
+            {k: v for k, v in e.items() if k not in EQ_DROP}
+            for e in p.get("equipment", [])
+        ]
+
         tech = _resolve_tech(p, cat)
         p["category"]              = cat
         p["technology"]            = tech
