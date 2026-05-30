@@ -24,14 +24,14 @@ from pathlib import Path
 # ── Technology mapping ────────────────────────────────────────────────────────
 
 TECH_BY_CATEGORY = {
-    "air":       "MACROCORE™",
-    "air-intake": "MACROCORE™",
-    "cabin":     "MACROCORE™",
-    "lube":      "DURATECH™",
-    "hydraulic": "NANOFORCE™",
-    "coolant":   "MICROKAPPA™",
-    "air-dryer": "AQUAGUARD™",
-    "fuel":      None,  # resolved per-product (water sep → AQUAGUARD™, else NANOFORCE™)
+    "air":        "MACROCORE™",   # primary + safety air elements
+    "air-intake": "INTAKCORE™",   # air cleaner housings/assemblies
+    "cabin":      "MICROKAPPA™",  # operator cab air quality
+    "lube":       "SYNTRAX™",     # full-flow, bypass, combination lube
+    "hydraulic":  "NANOFORCE™",   # hydraulic filters
+    "coolant":    "COOLTECH™",    # coolant filters + hoses
+    "air-dryer":  "DRYCORE™",     # compressed air dryers
+    "fuel":       None,           # SYNTAPORE™ (fuel) or AQUAGUARD™ (water sep)
 }
 
 TECH_TAGLINE = {
@@ -88,12 +88,12 @@ def _resolve_tech(product: dict, category: str) -> str:
     tech = TECH_BY_CATEGORY.get(category)
     if tech:
         return tech
-    # fuel: water separator → AQUAGUARD™, else NANOFORCE™
+    # fuel: water separator → AQUAGUARD™, else SYNTAPORE™
     desc = product.get("description", "").upper()
     attrs_style = _attr(product, "Style", "style").upper()
     if "WATER" in desc or "SEPARATOR" in desc or "WATER" in attrs_style:
         return "AQUAGUARD™"
-    return "NANOFORCE™"
+    return "SYNTAPORE™"
 
 
 # ── Description builders ──────────────────────────────────────────────────────
@@ -338,6 +338,181 @@ def _build_aquaguard(p: dict, category: str) -> str:
 
 
 def _build_microkappa(p: dict) -> str:
+    """MICROKAPPA™ — Cabin air quality filters."""
+    od     = _mm(_attr(p, "Outer Diameter"))
+    length = _mm(_attr(p, "Length"))
+    style  = _style_label(p, "Panel")
+    eff    = _attr(p, "Efficiency") or "99.98%"
+    std    = _attr(p, "Efficiency Test Std") or "ISO 5011"
+    equip  = _equipment_summary(p)
+
+    dims = ""
+    if od and length:
+        dims = f", {style}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style}, OD {od}"
+    elif length:
+        dims = f", {style}, L {length}"
+
+    eff_pct      = eff if eff.endswith("%") else eff + "%"
+    equip_clause = f" Fits: {equip}." if equip else ""
+
+    return (
+        f"ELIMFILTERS MICROKAPPA™ Cabin Air Filter{dims}. "
+        f"Provides clean air inside the cab for a safer, healthier work environment. "
+        f"{eff_pct} efficiency ({std}) — blocks dust, PM10, and airborne contaminants "
+        f"from reaching the operator cab, supporting longer and more productive working hours.{equip_clause}"
+    )
+
+
+def _build_intakcore(p: dict) -> str:
+    """INTAKCORE™ — Air cleaner housings and assemblies."""
+    od     = _mm(_attr(p, "Outer Diameter"))
+    length = _mm(_attr(p, "Length"))
+    equip  = _equipment_summary(p)
+
+    dims = ""
+    if od and length:
+        dims = f", OD {od} × L {length}"
+    elif od:
+        dims = f", OD {od}"
+
+    equip_clause = f" Fits: {equip}." if equip else ""
+
+    return (
+        f"ELIMFILTERS INTAKCORE™ Air Cleaner Assembly{dims}. "
+        f"Complete heavy-duty air intake assembly engineered for demanding off-road and industrial applications. "
+        f"Accepts MACROCORE™ primary and safety elements for maximum air intake protection — "
+        f"covering your sophisticated air intake system requirements with proven heavy-duty filtration.{equip_clause}"
+    )
+
+
+def _build_syntrax(p: dict) -> str:
+    """SYNTRAX™ — Lube filters (full-flow, bypass, combination)."""
+    od      = _mm(_attr(p, "Outer Diameter"))
+    length  = _mm(_attr(p, "Length"))
+    thread  = _attr(p, "Thread Size")
+    eff     = _attr(p, "Efficiency 99%") or _attr(p, "Efficiency")
+    std     = _attr(p, "Efficiency Test Std") or "ISO 4548-12"
+    burst   = _attr(p, "Collapse Burst")
+    media   = _attr(p, "Media Type") or "synthetic"
+    equip   = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
+    desc_up = p.get("description", "").upper()
+
+    style_str = "Cartridge" if is_cart else "Spin-On"
+    dims = ""
+    if od and length:
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
+
+    specs = []
+    if eff:
+        specs.append(f"99% @ {eff} ({std})")
+    if thread:
+        specs.append(f"Thread {thread}")
+    if burst:
+        specs.append(f"burst rated {burst}")
+    specs_intro  = f" {' | '.join(specs)}." if specs else ""
+    eco          = " Environmentally friendly cartridge design." if is_cart else ""
+    equip_clause = f" Fits: {equip}." if equip else ""
+
+    if "BYPASS" in desc_up:
+        return (
+            f"ELIMFILTERS SYNTRAX™ Lube Filter — Bypass{dims}.{specs_intro} "
+            f"High-efficiency bypass filtration removes ultra-fine particles, soot, "
+            f"and oxidation by-products that full-flow filters cannot capture — "
+            f"keeping oil cleaner for extended drain intervals and protecting "
+            f"critical engine components against long-term wear.{equip_clause}"
+        )
+
+    if "COMBINATION" in desc_up or "COMBO" in desc_up:
+        return (
+            f"ELIMFILTERS SYNTRAX™ Lube Filter — Combination{dims}.{specs_intro}{eco} "
+            f"Combines full-flow and bypass filtration in a single filter — "
+            f"delivering the perfect balance between flow efficiency and fine particle removal. "
+            f"Meets or exceeds engine OEM requirements for extended oil cleanliness.{equip_clause}"
+        )
+
+    return (
+        f"ELIMFILTERS SYNTRAX™ Lube Filter{dims}.{eco}"
+        f"{specs_intro} "
+        f"SYNTRAX™ advanced synthetic media removes harmful wear particles "
+        f"before they reach critical engine surfaces, delivering full-flow engine oil "
+        f"protection that meets or exceeds OEM specifications for maximum engine life. "
+        f"{media.title()} media for superior contaminant holding capacity.{equip_clause}"
+    )
+
+
+def _build_syntapore(p: dict) -> str:
+    """SYNTAPORE™ — Fuel filters (spin-on, cartridge, in-line)."""
+    od      = _mm(_attr(p, "Outer Diameter"))
+    length  = _mm(_attr(p, "Length"))
+    thread  = _attr(p, "Thread Size")
+    eff     = _attr(p, "Efficiency") or "99.9%"
+    raw_std = _attr(p, "Efficiency Test Std")
+    std     = raw_std if raw_std and not raw_std.isdigit() else "ISO 19438"
+    equip   = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
+    desc_up = p.get("description", "").upper()
+
+    style_str = "Cartridge" if is_cart else "Spin-On"
+    dims = ""
+    if od and length:
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
+
+    rating_clause = f" {eff} efficiency ({std})."
+    thread_clause = f" Thread {thread}." if thread else ""
+    equip_clause  = f" Fits: {equip}." if equip else ""
+
+    if "IN-LINE" in desc_up or "INLINE" in desc_up:
+        return (
+            f"ELIMFILTERS SYNTAPORE™ Fuel Filter — In-Line{dims}.{rating_clause}{thread_clause} "
+            f"Compact in-line fuel filter removes contaminants from the fuel supply line — "
+            f"protecting injectors and ensuring clean fuel delivery to your engine for "
+            f"optimal fuel system protection.{equip_clause}"
+        )
+
+    return (
+        f"ELIMFILTERS SYNTAPORE™ Fuel Filter{dims}.{rating_clause}{thread_clause} "
+        f"SYNTAPORE™ advanced media removes harmful contaminants from your fuel system, "
+        f"protecting injectors and ensuring clean fuel delivery to your engine "
+        f"for consistent performance and reduced operating costs.{equip_clause}"
+    )
+
+
+def _build_drycore(p: dict) -> str:
+    """DRYCORE™ — Air dryers (desiccant, compressed air)."""
+    od     = _mm(_attr(p, "Outer Diameter"))
+    length = _mm(_attr(p, "Length"))
+    thread = _attr(p, "Thread Size")
+    equip  = _equipment_summary(p)
+    is_cart = _is_cartridge(p)
+
+    style_str = "Cartridge" if is_cart else "Spin-On"
+    dims = ""
+    if od and length:
+        dims = f", {style_str}, OD {od} × L {length}"
+    elif od:
+        dims = f", {style_str}, OD {od}"
+
+    thread_clause = f" Thread {thread}." if thread else ""
+    equip_clause  = f" Fits: {equip}." if equip else ""
+
+    return (
+        f"ELIMFILTERS DRYCORE™ Air Dryer{dims}.{thread_clause} "
+        f"Filters out water vapor, oil vapor, and contaminants from compressed air "
+        f"before they reach air tanks and valves — ensuring optimal system uptime "
+        f"and protecting pneumatic components. Trust your compressed air system "
+        f"with DRYCORE™ integrated desiccant protection.{equip_clause}"
+    )
+
+
+def _build_cooltech(p: dict) -> str:
+    """COOLTECH™ — Coolant filters and silicone hoses."""
     od      = _mm(_attr(p, "Outer Diameter"))
     length  = _mm(_attr(p, "Length"))
     thread  = _attr(p, "Thread Size")
@@ -355,7 +530,6 @@ def _build_microkappa(p: dict) -> str:
     thread_clause = f" Thread {thread}." if thread else ""
     equip_clause  = f" Fits: {equip}." if equip else ""
 
-    # Coolant hoses — dims without Spin-On/Cartridge label
     if "HOSE" in desc_up:
         hose_type = "Heater Hose" if "HEATER" in desc_up else "Coolant Hose"
         hose_dims = ""
@@ -364,23 +538,22 @@ def _build_microkappa(p: dict) -> str:
         elif od:
             hose_dims = f", ID {od}"
         return (
-            f"ELIMFILTERS {hose_type}{hose_dims}. "
+            f"ELIMFILTERS COOLTECH™ {hose_type}{hose_dims}. "
             f"Premium silicone coolant hose engineered for high-temperature engine cooling systems. "
             f"Maintains flexibility and seal integrity across extreme temperature cycles — "
             f"preventing coolant leaks and ensuring reliable thermal management.{equip_clause}"
         )
 
-    # Head assemblies / non-filter components
     if "HEAD ASSEMBLY" in desc_up or "ASSEMBLY" in desc_up:
         return (
-            f"ELIMFILTERS Coolant Filter Head Assembly{dims}.{thread_clause} "
+            f"ELIMFILTERS COOLTECH™ Coolant Filter Assembly{dims}.{thread_clause} "
             f"Precision housing for coolant filtration system. Engineered for reliable "
             f"sealing and easy service access in heavy-duty cooling circuit applications.{equip_clause}"
         )
 
     return (
-        f"ELIMFILTERS MICROKAPPA™ Coolant Filter{dims}.{thread_clause} "
-        f"Precision micro-filtration for engine coolant circuits removes particulates "
+        f"ELIMFILTERS COOLTECH™ Coolant Filter{dims}.{thread_clause} "
+        f"COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates "
         f"and maintains coolant integrity — extending coolant service life, reducing "
         f"corrosion risk, and protecting against cavitation in high-cycle cooling systems.{equip_clause}"
     )
@@ -390,14 +563,22 @@ def generate_description(product: dict, category: str) -> str:
     tech = _resolve_tech(product, category)
     if tech == "MACROCORE™":
         return _build_macrocore(product)
-    elif tech == "DURATECH™":
-        return _build_duratech(product)
-    elif tech == "NANOFORCE™":
-        return _build_nanoforce(product, category)
-    elif tech == "AQUAGUARD™":
-        return _build_aquaguard(product, category)
+    elif tech == "INTAKCORE™":
+        return _build_intakcore(product)
     elif tech == "MICROKAPPA™":
         return _build_microkappa(product)
+    elif tech == "SYNTRAX™":
+        return _build_syntrax(product)
+    elif tech == "NANOFORCE™":
+        return _build_nanoforce(product, category)
+    elif tech == "SYNTAPORE™":
+        return _build_syntapore(product)
+    elif tech == "AQUAGUARD™":
+        return _build_aquaguard(product, category)
+    elif tech == "DRYCORE™":
+        return _build_drycore(product)
+    elif tech == "COOLTECH™":
+        return _build_cooltech(product)
     return product.get("description", "")
 
 
