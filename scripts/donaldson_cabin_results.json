@@ -138,7 +138,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 610 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC13688"
+    "sku_elimfilters": "EC13688",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "24.02",
+        "mm": "610"
+      },
+      "width": {
+        "in": "24.02",
+        "mm": "610"
+      },
+      "height": {
+        "in": "2.72",
+        "mm": "69"
+      }
+    }
   },
   {
     "part_number": "P105958",
@@ -244,7 +260,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 254 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC15958"
+    "sku_elimfilters": "EC15958",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.00",
+        "mm": "254"
+      },
+      "width": {
+        "in": "10.00",
+        "mm": "254"
+      },
+      "height": {
+        "in": "2.57",
+        "mm": "65.4"
+      }
+    }
   },
   {
     "part_number": "P106680",
@@ -1209,7 +1241,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 711.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: AGCO R60, ALLIS-CHALMERS 860, ALLIS-CHALMERS 860XTB, +38 more.",
-    "sku_elimfilters": "EC16680"
+    "sku_elimfilters": "EC16680",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "28.00",
+        "mm": "711.2"
+      },
+      "width": {
+        "in": "7.50",
+        "mm": "190.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P106965",
@@ -1543,7 +1591,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 279.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: ALLIS-CHALMERS 190, ALLIS-CHALMERS 190XT, ALLIS-CHALMERS 190XT III, +1 more.",
-    "sku_elimfilters": "EC16965"
+    "sku_elimfilters": "EC16965",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.00",
+        "mm": "279.5"
+      },
+      "width": {
+        "in": "11.00",
+        "mm": "279.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P112671",
@@ -1879,7 +1943,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 431.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 613C, CATERPILLAR 615C, JOHN DEERE 608B, +14 more.",
-    "sku_elimfilters": "EC12671"
+    "sku_elimfilters": "EC12671",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "17.00",
+        "mm": "431.8"
+      },
+      "width": {
+        "in": "10.00",
+        "mm": "254.1"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P112775",
@@ -2243,7 +2323,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 965.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: AG CHEM EQUIPMENT 1803, CASE/CASE IH 1066, CASE/CASE IH 1466, +8 more.",
-    "sku_elimfilters": "EC12775"
+    "sku_elimfilters": "EC12775",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "38.00",
+        "mm": "965.2"
+      },
+      "width": {
+        "in": "5.00",
+        "mm": "127.1"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P113407",
@@ -2485,7 +2581,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 508 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KOMATSU 252FT.",
-    "sku_elimfilters": "EC13407"
+    "sku_elimfilters": "EC13407",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "20.00",
+        "mm": "508"
+      },
+      "width": {
+        "in": "7.50",
+        "mm": "190.6"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P114229",
@@ -2573,7 +2685,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 619 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC14229"
+    "sku_elimfilters": "EC14229",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "24.37",
+        "mm": "619"
+      },
+      "width": {
+        "in": "19.37",
+        "mm": "492"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P115690",
@@ -2885,7 +3013,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 939.9 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 3300, JOHN DEERE 4400, JOHN DEERE 4420, +8 more.",
-    "sku_elimfilters": "EC15690"
+    "sku_elimfilters": "EC15690",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "37.00",
+        "mm": "939.9"
+      },
+      "width": {
+        "in": "6.12",
+        "mm": "155.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P117109",
@@ -3186,7 +3330,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 838.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 8820, CASE/CASE IH 8830, CASE/CASE IH 8840, +6 more.",
-    "sku_elimfilters": "EC17109"
+    "sku_elimfilters": "EC17109",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "33.00",
+        "mm": "838.2"
+      },
+      "width": {
+        "in": "6.50",
+        "mm": "165.2"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.5"
+      }
+    }
   },
   {
     "part_number": "P120320",
@@ -3575,7 +3735,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 597 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 834B, CATERPILLAR 836, CATERPILLAR 910E, +18 more.",
-    "sku_elimfilters": "EC10320"
+    "sku_elimfilters": "EC10320",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "23.50",
+        "mm": "597"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P121036",
@@ -3846,7 +4022,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 965 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC11036"
+    "sku_elimfilters": "EC11036",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "37.99",
+        "mm": "965"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P121351",
@@ -3980,7 +4172,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 508 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KOMATSU 730E, KOMATSU 830E1AC.",
-    "sku_elimfilters": "EC11351"
+    "sku_elimfilters": "EC11351",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "20.00",
+        "mm": "508"
+      },
+      "width": {
+        "in": "15.00",
+        "mm": "381"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P123229",
@@ -4111,7 +4319,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 406.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI EH1600, HITACHI EH1700.",
-    "sku_elimfilters": "EC13229"
+    "sku_elimfilters": "EC13229",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "16.00",
+        "mm": "406.4"
+      },
+      "width": {
+        "in": "12.00",
+        "mm": "304.9"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P126227",
@@ -4331,7 +4555,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 647.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 623B, CATERPILLAR 627B, CATERPILLAR 633D.",
-    "sku_elimfilters": "EC16227"
+    "sku_elimfilters": "EC16227",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "25.50",
+        "mm": "647.8"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P131231",
@@ -4493,7 +4733,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 813 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.9% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC11231"
+    "sku_elimfilters": "EC11231",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "32.01",
+        "mm": "813"
+      },
+      "width": {
+        "in": "9.00",
+        "mm": "228.7"
+      },
+      "height": {
+        "in": "2.56",
+        "mm": "65"
+      }
+    }
   },
   {
     "part_number": "P132448",
@@ -4942,7 +5198,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 965.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.9% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 1150C, CASE/CASE IH 1150D, CASE/CASE IH 1150E, +32 more.",
-    "sku_elimfilters": "EC12448"
+    "sku_elimfilters": "EC12448",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "38.00",
+        "mm": "965.2"
+      },
+      "width": {
+        "in": "7.00",
+        "mm": "177.8"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.5"
+      }
+    }
   },
   {
     "part_number": "P137523",
@@ -5050,7 +5322,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 381 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17523"
+    "sku_elimfilters": "EC17523",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "15.00",
+        "mm": "381"
+      },
+      "width": {
+        "in": "7.00",
+        "mm": "177.8"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P140277",
@@ -5162,7 +5450,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 647.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.9% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: WAUKESHA F2895.",
-    "sku_elimfilters": "EC10277"
+    "sku_elimfilters": "EC10277",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "25.50",
+        "mm": "647.8"
+      },
+      "width": {
+        "in": "19.51",
+        "mm": "495.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P150348",
@@ -5254,7 +5558,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 595 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.9% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC10348"
+    "sku_elimfilters": "EC10348",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "23.43",
+        "mm": "595"
+      },
+      "width": {
+        "in": "11.93",
+        "mm": "303"
+      },
+      "height": {
+        "in": "2.57",
+        "mm": "65.3"
+      }
+    }
   },
   {
     "part_number": "P158333",
@@ -5702,7 +6022,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 965.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 1070, CASE/CASE IH 1087B, CASE/CASE IH 1090, +30 more.",
-    "sku_elimfilters": "EC18333"
+    "sku_elimfilters": "EC18333",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "38.00",
+        "mm": "965.2"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P158854",
@@ -6602,7 +6938,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 711.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 2250, JOHN DEERE 2350, JOHN DEERE 2355, +73 more.",
-    "sku_elimfilters": "EC18854"
+    "sku_elimfilters": "EC18854",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "28.00",
+        "mm": "711.2"
+      },
+      "width": {
+        "in": "7.50",
+        "mm": "190.5"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P500194",
@@ -7605,7 +7957,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 435 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (JIS D 1612) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: VOLVO BL61, VOLVO CONSTRUCTION EQUIPMENT A25D, VOLVO CONSTRUCTION EQUIPMENT A25E, +104 more.",
-    "sku_elimfilters": "EC10194"
+    "sku_elimfilters": "EC10194",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "17.13",
+        "mm": "435"
+      },
+      "width": {
+        "in": "4.84",
+        "mm": "123"
+      },
+      "height": {
+        "in": "1.73",
+        "mm": "44"
+      }
+    }
   },
   {
     "part_number": "P500195",
@@ -8188,7 +8556,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 486 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (JIS D 1612) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: VOLVO CONSTRUCTION EQUIPMENT A25D, VOLVO CONSTRUCTION EQUIPMENT A25E, VOLVO CONSTRUCTION EQUIPMENT A25G, +55 more.",
-    "sku_elimfilters": "EC10195"
+    "sku_elimfilters": "EC10195",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "19.13",
+        "mm": "486"
+      },
+      "width": {
+        "in": "11.26",
+        "mm": "286"
+      },
+      "height": {
+        "in": "2.44",
+        "mm": "62"
+      }
+    }
   },
   {
     "part_number": "P500204",
@@ -8576,7 +8960,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 199 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (JIS D 1612) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KOMATSU D155A-3, KOMATSU D155A-5, KOMATSU D155AX-3, +36 more.",
-    "sku_elimfilters": "EC10204"
+    "sku_elimfilters": "EC10204",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "7.83",
+        "mm": "199"
+      },
+      "width": {
+        "in": "7.95",
+        "mm": "202"
+      },
+      "height": {
+        "in": "0.75",
+        "mm": "19"
+      }
+    }
   },
   {
     "part_number": "P500248",
@@ -9173,7 +9573,19 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Ventilation, L 317 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (JIS D 1612) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI ZX190W-3, HITACHI ZX200-3, HITACHI ZX200LC-3, +58 more.",
-    "sku_elimfilters": "EC10248"
+    "sku_elimfilters": "EC10248",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.48",
+        "mm": "317"
+      },
+      "width": {
+        "in": "7.99",
+        "mm": "203"
+      }
+    }
   },
   {
     "part_number": "P500249",
@@ -9682,7 +10094,19 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 280 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI ZX190W-3, HITACHI ZX200-3, HITACHI ZX200LC-3, +47 more.",
-    "sku_elimfilters": "EC10249"
+    "sku_elimfilters": "EC10249",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.02",
+        "mm": "280"
+      },
+      "width": {
+        "in": "6.30",
+        "mm": "160"
+      }
+    }
   },
   {
     "part_number": "P520450",
@@ -9840,7 +10264,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 406.3 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC10450"
+    "sku_elimfilters": "EC10450",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "16.00",
+        "mm": "406.3"
+      },
+      "width": {
+        "in": "8.00",
+        "mm": "203.2"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P525026",
@@ -10039,7 +10479,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 663.96 mm. Provides clean air inside the cab for a safer, healthier work environment. 96% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D10N, CATERPILLAR D10R, CATERPILLAR D11N, +4 more.",
-    "sku_elimfilters": "EC15026"
+    "sku_elimfilters": "EC15026",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "26.14",
+        "mm": "663.96"
+      },
+      "width": {
+        "in": "5.35",
+        "mm": "135.89"
+      },
+      "height": {
+        "in": "2.83",
+        "mm": "71.88"
+      }
+    }
   },
   {
     "part_number": "P527595",
@@ -10579,7 +11035,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 540.1 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D4H, CATERPILLAR D4H II, CATERPILLAR D4H III, +47 more.",
-    "sku_elimfilters": "EC17595"
+    "sku_elimfilters": "EC17595",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "21.26",
+        "mm": "540.1"
+      },
+      "width": {
+        "in": "5.91",
+        "mm": "150.1"
+      },
+      "height": {
+        "in": "2.83",
+        "mm": "71.9"
+      }
+    }
   },
   {
     "part_number": "P533559",
@@ -11309,7 +11781,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 254 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KOMATSU D135A-1, KOMATSU D135A-2, KOMATSU D155A-2, +57 more.",
-    "sku_elimfilters": "EC13559"
+    "sku_elimfilters": "EC13559",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.00",
+        "mm": "254"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.63"
+      }
+    }
   },
   {
     "part_number": "P533788",
@@ -11600,7 +12088,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 434.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI EX1800, HITACHI EX1800-2, HITACHI EX1800-3, +18 more.",
-    "sku_elimfilters": "EC13788"
+    "sku_elimfilters": "EC13788",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "17.12",
+        "mm": "434.8"
+      },
+      "width": {
+        "in": "8.46",
+        "mm": "214.8"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.63"
+      }
+    }
   },
   {
     "part_number": "P535089",
@@ -12148,7 +12652,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 269.3 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI EH600, HITACHI EH650, HITACHI EH650W, +25 more.",
-    "sku_elimfilters": "EC15089"
+    "sku_elimfilters": "EC15089",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.60",
+        "mm": "269.3"
+      },
+      "width": {
+        "in": "7.36",
+        "mm": "186.9"
+      },
+      "height": {
+        "in": "1.65",
+        "mm": "41.9"
+      }
+    }
   },
   {
     "part_number": "P536429",
@@ -12850,7 +13370,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 298.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 769D, CATERPILLAR 773D, CATERPILLAR 773E, +50 more.",
-    "sku_elimfilters": "EC16429"
+    "sku_elimfilters": "EC16429",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.75",
+        "mm": "298.4"
+      },
+      "width": {
+        "in": "10.69",
+        "mm": "271.5"
+      },
+      "height": {
+        "in": "2.23",
+        "mm": "56.6"
+      }
+    }
   },
   {
     "part_number": "P543107",
@@ -13236,7 +13772,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 445.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 98.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 611, CATERPILLAR 613C II, CATERPILLAR 615C II, +28 more.",
-    "sku_elimfilters": "EC13107"
+    "sku_elimfilters": "EC13107",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "17.54",
+        "mm": "445.4"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.7"
+      }
+    }
   },
   {
     "part_number": "P606063",
@@ -14111,7 +14663,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 313 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KOMATSU HD255-5, KOMATSU HD2555, KOMATSU HD325-7, +56 more.",
-    "sku_elimfilters": "EC16063"
+    "sku_elimfilters": "EC16063",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.32",
+        "mm": "313"
+      },
+      "width": {
+        "in": "10.04",
+        "mm": "255.1"
+      },
+      "height": {
+        "in": "1.85",
+        "mm": "46.9"
+      }
+    }
   },
   {
     "part_number": "P606082",
@@ -14217,7 +14785,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 271.53 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 623B, CATERPILLAR 627B, CATERPILLAR 633D, +2 more.",
-    "sku_elimfilters": "EC16082"
+    "sku_elimfilters": "EC16082",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.69",
+        "mm": "271.53"
+      },
+      "width": {
+        "in": "4.69",
+        "mm": "119.13"
+      },
+      "height": {
+        "in": "4.19",
+        "mm": "106.43"
+      }
+    }
   },
   {
     "part_number": "P606086",
@@ -14318,7 +14902,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 422.1 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 914G, CATERPILLAR 924G, CATERPILLAR 924GZ, +2 more.",
-    "sku_elimfilters": "EC16086"
+    "sku_elimfilters": "EC16086",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "16.62",
+        "mm": "422.1"
+      },
+      "width": {
+        "in": "5.51",
+        "mm": "140"
+      },
+      "height": {
+        "in": "2.57",
+        "mm": "65.4"
+      }
+    }
   },
   {
     "part_number": "P606087",
@@ -14609,7 +15209,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 330.3 mm. Provides clean air inside the cab for a safer, healthier work environment. 96% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 120H, CATERPILLAR 120K, CATERPILLAR 12H, +18 more.",
-    "sku_elimfilters": "EC16087"
+    "sku_elimfilters": "EC16087",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.00",
+        "mm": "330.3"
+      },
+      "width": {
+        "in": "12.00",
+        "mm": "304.8"
+      },
+      "height": {
+        "in": "2.44",
+        "mm": "62.1"
+      }
+    }
   },
   {
     "part_number": "P606089",
@@ -14759,7 +15375,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 336.55 mm. Provides clean air inside the cab for a safer, healthier work environment. 96% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 768C, CATERPILLAR 769C, CATERPILLAR 772B, +3 more.",
-    "sku_elimfilters": "EC16089"
+    "sku_elimfilters": "EC16089",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.25",
+        "mm": "336.55"
+      },
+      "width": {
+        "in": "11.94",
+        "mm": "303.28"
+      },
+      "height": {
+        "in": "0.81",
+        "mm": "20.6"
+      }
+    }
   },
   {
     "part_number": "P606090",
@@ -14970,7 +15602,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 380.9 mm. Provides clean air inside the cab for a safer, healthier work environment. 81.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 120H, CATERPILLAR 120K, CATERPILLAR 12H, +10 more.",
-    "sku_elimfilters": "EC16090"
+    "sku_elimfilters": "EC16090",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "15.00",
+        "mm": "380.9"
+      },
+      "width": {
+        "in": "3.97",
+        "mm": "100.9"
+      },
+      "height": {
+        "in": "2.69",
+        "mm": "68.3"
+      }
+    }
   },
   {
     "part_number": "P606483",
@@ -15095,7 +15743,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Round, OD 164.5 mm × L 282 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 444H, JOHN DEERE 444H LL, JOHN DEERE 444H TC, +2 more.",
-    "sku_elimfilters": "EC16483"
+    "sku_elimfilters": "EC16483",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "6.48",
+        "mm": "164.5"
+      },
+      "id": {
+        "in": "3.58",
+        "mm": "91"
+      },
+      "length": {
+        "in": "11.10",
+        "mm": "282"
+      }
+    }
   },
   {
     "part_number": "P606555",
@@ -15947,7 +16611,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 311.15 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: VOLVO VAH, VOLVO VH 200, VOLVO VHD, +16 more.",
-    "sku_elimfilters": "EC16555"
+    "sku_elimfilters": "EC16555",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.25",
+        "mm": "311.15"
+      },
+      "width": {
+        "in": "9.18",
+        "mm": "233.17"
+      },
+      "height": {
+        "in": "1.13",
+        "mm": "28.7"
+      }
+    }
   },
   {
     "part_number": "P606762",
@@ -16065,7 +16745,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 427.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.6% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 914G, CATERPILLAR 924G, CATERPILLAR 924GZ, +2 more.",
-    "sku_elimfilters": "EC16762"
+    "sku_elimfilters": "EC16762",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "16.84",
+        "mm": "427.8"
+      },
+      "width": {
+        "in": "11.73",
+        "mm": "297.9"
+      },
+      "height": {
+        "in": "2.57",
+        "mm": "65.3"
+      }
+    }
   },
   {
     "part_number": "P606960",
@@ -16147,7 +16843,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 290 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC16960"
+    "sku_elimfilters": "EC16960",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.42",
+        "mm": "290"
+      },
+      "width": {
+        "in": "4.72",
+        "mm": "120"
+      },
+      "height": {
+        "in": "1.73",
+        "mm": "44"
+      }
+    }
   },
   {
     "part_number": "P607243",
@@ -17501,7 +18213,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 334.65 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 9310, VOLVO FE 613, VOLVO FE 614, +40 more.",
-    "sku_elimfilters": "EC17243"
+    "sku_elimfilters": "EC17243",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.18",
+        "mm": "334.65"
+      },
+      "width": {
+        "in": "5.25",
+        "mm": "133.35"
+      },
+      "height": {
+        "in": "1.28",
+        "mm": "32.39"
+      }
+    }
   },
   {
     "part_number": "P607253",
@@ -17592,7 +18320,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 216 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17253"
+    "sku_elimfilters": "EC17253",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.50",
+        "mm": "216"
+      },
+      "width": {
+        "in": "7.64",
+        "mm": "194"
+      },
+      "height": {
+        "in": "1.65",
+        "mm": "42"
+      }
+    }
   },
   {
     "part_number": "P607256",
@@ -17668,7 +18412,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 310.01 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: TOYOTA SEQUOIA.",
-    "sku_elimfilters": "EC17256"
+    "sku_elimfilters": "EC17256",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.21",
+        "mm": "310.01"
+      },
+      "width": {
+        "in": "9.04",
+        "mm": "229.49"
+      },
+      "height": {
+        "in": "2.05",
+        "mm": "51.99"
+      }
+    }
   },
   {
     "part_number": "P607258",
@@ -17912,7 +18672,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 292.1 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FORD EXPLORER.",
-    "sku_elimfilters": "EC17258"
+    "sku_elimfilters": "EC17258",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.50",
+        "mm": "292.1"
+      },
+      "width": {
+        "in": "7.13",
+        "mm": "180.98"
+      },
+      "height": {
+        "in": "2.33",
+        "mm": "59.18"
+      }
+    }
   },
   {
     "part_number": "P607281",
@@ -18114,7 +18890,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 572 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17281"
+    "sku_elimfilters": "EC17281",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "22.52",
+        "mm": "572"
+      },
+      "width": {
+        "in": "14.02",
+        "mm": "356"
+      },
+      "height": {
+        "in": "6.18",
+        "mm": "157"
+      }
+    }
   },
   {
     "part_number": "P607300",
@@ -18364,7 +19156,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 312 mm. Provides clean air inside the cab for a safer, healthier work environment. 96% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17300"
+    "sku_elimfilters": "EC17300",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.28",
+        "mm": "312"
+      },
+      "width": {
+        "in": "7.36",
+        "mm": "187"
+      },
+      "height": {
+        "in": "1.65",
+        "mm": "42"
+      }
+    }
   },
   {
     "part_number": "P607333",
@@ -18827,7 +19635,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 349.76 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 5200, JOHN DEERE 5210, JOHN DEERE 5300, +2 more.",
-    "sku_elimfilters": "EC17333"
+    "sku_elimfilters": "EC17333",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.77",
+        "mm": "349.76"
+      },
+      "width": {
+        "in": "4.16",
+        "mm": "105.56"
+      },
+      "height": {
+        "in": "1.65",
+        "mm": "41.91"
+      }
+    }
   },
   {
     "part_number": "P609422",
@@ -20144,7 +20968,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 270 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (SAE J1669) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER ARGOSY, FREIGHTLINER CASCADIA, FREIGHTLINER CENTURY CLASS, +6 more.",
-    "sku_elimfilters": "EC19422"
+    "sku_elimfilters": "EC19422",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.63",
+        "mm": "270"
+      },
+      "width": {
+        "in": "10.63",
+        "mm": "270"
+      },
+      "height": {
+        "in": "0.98",
+        "mm": "24.99"
+      }
+    }
   },
   {
     "part_number": "P609444",
@@ -20231,7 +21071,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 388.7 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 312B, CATERPILLAR 315B, CATERPILLAR 416C, +2 more.",
-    "sku_elimfilters": "EC19444"
+    "sku_elimfilters": "EC19444",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "15.30",
+        "mm": "388.7"
+      },
+      "width": {
+        "in": "9.75",
+        "mm": "247.6"
+      },
+      "height": {
+        "in": "1.04",
+        "mm": "26.3"
+      }
+    }
   },
   {
     "part_number": "P609445",
@@ -20340,7 +21196,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 317.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 953C, CATERPILLAR 963C, CATERPILLAR 963C II, +2 more.",
-    "sku_elimfilters": "EC19445"
+    "sku_elimfilters": "EC19445",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.50",
+        "mm": "317.5"
+      },
+      "width": {
+        "in": "7.07",
+        "mm": "179.5"
+      },
+      "height": {
+        "in": "1.44",
+        "mm": "36.7"
+      }
+    }
   },
   {
     "part_number": "P609446",
@@ -20447,7 +21319,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 684.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 834H, CATERPILLAR 844, CATERPILLAR 844H, +2 more.",
-    "sku_elimfilters": "EC19446"
+    "sku_elimfilters": "EC19446",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "26.96",
+        "mm": "684.8"
+      },
+      "width": {
+        "in": "5.98",
+        "mm": "151.9"
+      },
+      "height": {
+        "in": "2.44",
+        "mm": "62.1"
+      }
+    }
   },
   {
     "part_number": "P611440",
@@ -21033,7 +21921,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Round, OD 173.8 mm × L 304.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 98.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 7200, JOHN DEERE 7200J, JOHN DEERE 7210, +57 more.",
-    "sku_elimfilters": "EC11440"
+    "sku_elimfilters": "EC11440",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "6.84",
+        "mm": "173.8"
+      },
+      "id": {
+        "in": "3.48",
+        "mm": "88.3"
+      },
+      "length": {
+        "in": "12.00",
+        "mm": "304.8"
+      }
+    }
   },
   {
     "part_number": "P612815",
@@ -21106,7 +22010,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 314 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC12815"
+    "sku_elimfilters": "EC12815",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.36",
+        "mm": "314"
+      },
+      "width": {
+        "in": "8.43",
+        "mm": "214"
+      },
+      "height": {
+        "in": "0.79",
+        "mm": "20"
+      }
+    }
   },
   {
     "part_number": "P614220",
@@ -21505,7 +22425,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 271 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER ARGOSY, FREIGHTLINER C120, FREIGHTLINER CARGO, +7 more.",
-    "sku_elimfilters": "EC14220"
+    "sku_elimfilters": "EC14220",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.67",
+        "mm": "271"
+      },
+      "width": {
+        "in": "10.07",
+        "mm": "255.8"
+      },
+      "height": {
+        "in": "0.68",
+        "mm": "17.3"
+      }
+    }
   },
   {
     "part_number": "P614221",
@@ -22129,7 +23065,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 317.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 93.6% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR CT610, CATERPILLAR CT630, INTERNATIONAL 4200, +16 more.",
-    "sku_elimfilters": "EC14221"
+    "sku_elimfilters": "EC14221",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.49",
+        "mm": "317.2"
+      },
+      "width": {
+        "in": "7.21",
+        "mm": "183.1"
+      },
+      "height": {
+        "in": "0.99",
+        "mm": "25.1"
+      }
+    }
   },
   {
     "part_number": "P614222",
@@ -22287,7 +23239,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 350 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: KENWORTH T2000, KENWORTH T700.",
-    "sku_elimfilters": "EC14222"
+    "sku_elimfilters": "EC14222",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.78",
+        "mm": "350"
+      },
+      "width": {
+        "in": "10.07",
+        "mm": "255.8"
+      },
+      "height": {
+        "in": "0.68",
+        "mm": "17.3"
+      }
+    }
   },
   {
     "part_number": "P614223",
@@ -23669,7 +24637,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 303.3 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: PETERBILT 330, PETERBILT 335, PETERBILT 340, +11 more.",
-    "sku_elimfilters": "EC14223"
+    "sku_elimfilters": "EC14223",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.94",
+        "mm": "303.3"
+      },
+      "width": {
+        "in": "8.12",
+        "mm": "206.2"
+      },
+      "height": {
+        "in": "0.79",
+        "mm": "20.1"
+      }
+    }
   },
   {
     "part_number": "P614224",
@@ -23973,7 +24957,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 260.1 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: PETERBILT 357, PETERBILT 379, PETERBILT 388.",
-    "sku_elimfilters": "EC14224"
+    "sku_elimfilters": "EC14224",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.24",
+        "mm": "260.1"
+      },
+      "width": {
+        "in": "6.81",
+        "mm": "172.9"
+      },
+      "height": {
+        "in": "0.68",
+        "mm": "17.3"
+      }
+    }
   },
   {
     "part_number": "P614225",
@@ -24548,7 +25548,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 218.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER COLUMBIA, FREIGHTLINER CORONADO.",
-    "sku_elimfilters": "EC14225"
+    "sku_elimfilters": "EC14225",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.59",
+        "mm": "218.2"
+      },
+      "width": {
+        "in": "7.68",
+        "mm": "195.1"
+      },
+      "height": {
+        "in": "0.71",
+        "mm": "18"
+      }
+    }
   },
   {
     "part_number": "P614226",
@@ -24746,7 +25762,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 200.8 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER CENTURY CLASS, FREIGHTLINER CENTURY CLASS S/T.",
-    "sku_elimfilters": "EC14226"
+    "sku_elimfilters": "EC14226",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "7.91",
+        "mm": "200.8"
+      },
+      "width": {
+        "in": "6.22",
+        "mm": "158.1"
+      },
+      "height": {
+        "in": "0.67",
+        "mm": "17"
+      }
+    }
   },
   {
     "part_number": "P614476",
@@ -25107,7 +26139,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 286.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 96% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 320C, CATERPILLAR 320D, CATERPILLAR 320DL, +2 more.",
-    "sku_elimfilters": "EC14476"
+    "sku_elimfilters": "EC14476",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.28",
+        "mm": "286.5"
+      },
+      "width": {
+        "in": "8.92",
+        "mm": "226.5"
+      },
+      "height": {
+        "in": "1.82",
+        "mm": "46.3"
+      }
+    }
   },
   {
     "part_number": "P614544",
@@ -25210,7 +26258,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 229.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 7200, JOHN DEERE 7210, JOHN DEERE 7400, +2 more.",
-    "sku_elimfilters": "EC14544"
+    "sku_elimfilters": "EC14544",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.03",
+        "mm": "229.4"
+      },
+      "width": {
+        "in": "7.18",
+        "mm": "182.3"
+      },
+      "height": {
+        "in": "1.63",
+        "mm": "41.5"
+      }
+    }
   },
   {
     "part_number": "P614546",
@@ -25286,7 +26350,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 220 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC14546"
+    "sku_elimfilters": "EC14546",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.66",
+        "mm": "220"
+      },
+      "width": {
+        "in": "7.64",
+        "mm": "194"
+      },
+      "height": {
+        "in": "0.98",
+        "mm": "25"
+      }
+    }
   },
   {
     "part_number": "P614547",
@@ -25610,7 +26690,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 219 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER 108SD, FREIGHTLINER 114SD, FREIGHTLINER C2, +3 more.",
-    "sku_elimfilters": "EC14547"
+    "sku_elimfilters": "EC14547",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.62",
+        "mm": "219"
+      },
+      "width": {
+        "in": "8.43",
+        "mm": "214"
+      },
+      "height": {
+        "in": "0.98",
+        "mm": "25"
+      }
+    }
   },
   {
     "part_number": "P616898",
@@ -25902,7 +26998,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 351.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: DODGE SPRINTER 2500, DODGE SPRINTER 3500, MERCEDES-BENZ 23, +9 more.",
-    "sku_elimfilters": "EC16898"
+    "sku_elimfilters": "EC16898",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.84",
+        "mm": "351.5"
+      },
+      "width": {
+        "in": "9.21",
+        "mm": "234"
+      },
+      "height": {
+        "in": "1.38",
+        "mm": "35"
+      }
+    }
   },
   {
     "part_number": "P617005",
@@ -25970,7 +27082,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 346 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17005"
+    "sku_elimfilters": "EC17005",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.62",
+        "mm": "346"
+      },
+      "width": {
+        "in": "9.96",
+        "mm": "253"
+      },
+      "height": {
+        "in": "0.59",
+        "mm": "15"
+      }
+    }
   },
   {
     "part_number": "P618643",
@@ -26078,7 +27206,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 415.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.5% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: HITACHI LX100-3, HITACHI LX120-3, HITACHI LX150-3, +2 more.",
-    "sku_elimfilters": "EC18643"
+    "sku_elimfilters": "EC18643",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "16.35",
+        "mm": "415.4"
+      },
+      "width": {
+        "in": "8.58",
+        "mm": "217.9"
+      },
+      "height": {
+        "in": "1.30",
+        "mm": "33"
+      }
+    }
   },
   {
     "part_number": "P618644",
@@ -26191,7 +27335,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 320 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 8100, JOHN DEERE 8200, JOHN DEERE 8200T, +2 more.",
-    "sku_elimfilters": "EC18644"
+    "sku_elimfilters": "EC18644",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.60",
+        "mm": "320"
+      },
+      "width": {
+        "in": "6.60",
+        "mm": "167.6"
+      },
+      "height": {
+        "in": "1.88",
+        "mm": "47.8"
+      }
+    }
   },
   {
     "part_number": "P619182",
@@ -26291,7 +27451,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 230.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D350E, CATERPILLAR D350E II, CATERPILLAR D400E, +1 more.",
-    "sku_elimfilters": "EC19182"
+    "sku_elimfilters": "EC19182",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.06",
+        "mm": "230.2"
+      },
+      "width": {
+        "in": "9.06",
+        "mm": "230.1"
+      },
+      "height": {
+        "in": "2.31",
+        "mm": "58.8"
+      }
+    }
   },
   {
     "part_number": "P626182",
@@ -26394,7 +27570,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 219 mm. Provides clean air inside the cab for a safer, healthier work environment. 96.70% efficiency (SAE J1669) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: STERLING A-LINE.",
-    "sku_elimfilters": "EC16182"
+    "sku_elimfilters": "EC16182",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.62",
+        "mm": "219"
+      },
+      "width": {
+        "in": "6.14",
+        "mm": "156"
+      },
+      "height": {
+        "in": "1.38",
+        "mm": "35"
+      }
+    }
   },
   {
     "part_number": "P627028",
@@ -26485,7 +27677,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Round, OD 155 mm × L 229 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 414E, CATERPILLAR 416E, CATERPILLAR 420D, +2 more.",
-    "sku_elimfilters": "EC17028"
+    "sku_elimfilters": "EC17028",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "6.10",
+        "mm": "155"
+      },
+      "id": {
+        "in": "3.46",
+        "mm": "88"
+      },
+      "length": {
+        "in": "9.02",
+        "mm": "229"
+      }
+    }
   },
   {
     "part_number": "P627122",
@@ -26591,7 +27799,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 965 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 1640E, CASE/CASE IH 1660, CASE/CASE IH 1680, +3 more.",
-    "sku_elimfilters": "EC17122"
+    "sku_elimfilters": "EC17122",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "37.99",
+        "mm": "965"
+      },
+      "width": {
+        "in": "5.98",
+        "mm": "152"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P628355",
@@ -26684,7 +27908,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 312 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: INTERNATIONAL DURASTAR 4400, INTERNATIONAL LT, INTERNATIONAL PROSTAR.",
-    "sku_elimfilters": "EC18355"
+    "sku_elimfilters": "EC18355",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.28",
+        "mm": "312"
+      },
+      "width": {
+        "in": "6.26",
+        "mm": "159"
+      },
+      "height": {
+        "in": "1.18",
+        "mm": "30"
+      }
+    }
   },
   {
     "part_number": "P628392",
@@ -26904,7 +28144,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 256 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER CENTURY CLASS, FREIGHTLINER CENTURY CLASS CST112, FREIGHTLINER CENTURY CLASS CST120, +1 more.",
-    "sku_elimfilters": "EC18392"
+    "sku_elimfilters": "EC18392",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.08",
+        "mm": "256"
+      },
+      "width": {
+        "in": "5.28",
+        "mm": "134"
+      },
+      "height": {
+        "in": "0.39",
+        "mm": "10"
+      }
+    }
   },
   {
     "part_number": "P628394",
@@ -27591,7 +28847,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 236 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER CASCADIA.",
-    "sku_elimfilters": "EC18394"
+    "sku_elimfilters": "EC18394",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.29",
+        "mm": "236"
+      },
+      "width": {
+        "in": "5.16",
+        "mm": "131"
+      },
+      "height": {
+        "in": "0.28",
+        "mm": "7"
+      }
+    }
   },
   {
     "part_number": "P628395",
@@ -28275,7 +29547,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 240 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FREIGHTLINER CASCADIA.",
-    "sku_elimfilters": "EC18395"
+    "sku_elimfilters": "EC18395",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.45",
+        "mm": "240"
+      },
+      "width": {
+        "in": "6.65",
+        "mm": "169"
+      },
+      "height": {
+        "in": "0.24",
+        "mm": "6"
+      }
+    }
   },
   {
     "part_number": "P629015",
@@ -28369,7 +29657,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 255 mm. Provides clean air inside the cab for a safer, healthier work environment. 92.54% efficiency (ISO 111551) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: PETERBILT 386.",
-    "sku_elimfilters": "EC19015"
+    "sku_elimfilters": "EC19015",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.04",
+        "mm": "255"
+      },
+      "width": {
+        "in": "7.91",
+        "mm": "201"
+      },
+      "height": {
+        "in": "0.91",
+        "mm": "23"
+      }
+    }
   },
   {
     "part_number": "P630281",
@@ -28489,7 +29793,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 320 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: PETERBILT 384, PETERBILT 386, PETERBILT 579.",
-    "sku_elimfilters": "EC10281"
+    "sku_elimfilters": "EC10281",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.60",
+        "mm": "320"
+      },
+      "width": {
+        "in": "8.70",
+        "mm": "221"
+      },
+      "height": {
+        "in": "0.63",
+        "mm": "16"
+      }
+    }
   },
   {
     "part_number": "P633082",
@@ -28734,7 +30054,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Radialseal, OD 160 mm × L 234.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.9% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 1021G, CASE/CASE IH 1121G, CASE/CASE IH 721E, +14 more.",
-    "sku_elimfilters": "EC13082"
+    "sku_elimfilters": "EC13082",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "6.30",
+        "mm": "160"
+      },
+      "id": {
+        "in": "2.78",
+        "mm": "70.5"
+      },
+      "length": {
+        "in": "9.23",
+        "mm": "234.5"
+      }
+    }
   },
   {
     "part_number": "P635967",
@@ -28809,7 +30145,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 175 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: INTERNATIONAL DURASTAR 4400, INTERNATIONAL PROSTAR.",
-    "sku_elimfilters": "EC15967"
+    "sku_elimfilters": "EC15967",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "6.89",
+        "mm": "175"
+      },
+      "width": {
+        "in": "4.13",
+        "mm": "105"
+      },
+      "height": {
+        "in": "0.59",
+        "mm": "15"
+      }
+    }
   },
   {
     "part_number": "P636368",
@@ -28900,7 +30252,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 250 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: MACK GRANITE, MACK SUPERLINER, MACK TITAN, +1 more.",
-    "sku_elimfilters": "EC16368"
+    "sku_elimfilters": "EC16368",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.84",
+        "mm": "250"
+      },
+      "width": {
+        "in": "9.84",
+        "mm": "250"
+      },
+      "height": {
+        "in": "0.98",
+        "mm": "25"
+      }
+    }
   },
   {
     "part_number": "P636631",
@@ -28998,7 +30366,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 319.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 310G, JOHN DEERE 310L, JOHN DEERE 310L EP.",
-    "sku_elimfilters": "EC16631"
+    "sku_elimfilters": "EC16631",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.58",
+        "mm": "319.5"
+      },
+      "width": {
+        "in": "6.49",
+        "mm": "164.8"
+      },
+      "height": {
+        "in": "1.05",
+        "mm": "26.7"
+      }
+    }
   },
   {
     "part_number": "P637255",
@@ -29228,7 +30612,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 368 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 631G, CATERPILLAR 725, CATERPILLAR 730, +14 more.",
-    "sku_elimfilters": "EC17255"
+    "sku_elimfilters": "EC17255",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "14.49",
+        "mm": "368"
+      },
+      "width": {
+        "in": "6.09",
+        "mm": "154.8"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P637256",
@@ -29332,7 +30732,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 317.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 583T, CATERPILLAR 587R, CATERPILLAR 587T, +2 more.",
-    "sku_elimfilters": "EC137256"
+    "sku_elimfilters": "EC137256",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.50",
+        "mm": "317.5"
+      },
+      "width": {
+        "in": "7.07",
+        "mm": "179.5"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P637257",
@@ -29604,7 +31020,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 400 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 120M, CATERPILLAR 140M, CATERPILLAR 14M, +23 more.",
-    "sku_elimfilters": "EC17257"
+    "sku_elimfilters": "EC17257",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "15.75",
+        "mm": "400"
+      },
+      "width": {
+        "in": "6.50",
+        "mm": "165"
+      },
+      "height": {
+        "in": "1.44",
+        "mm": "36.7"
+      }
+    }
   },
   {
     "part_number": "P637258",
@@ -29700,7 +31132,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 324.6 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 232D3, CATERPILLAR 236D3, CATERPILLAR 242D3, +2 more.",
-    "sku_elimfilters": "EC137258"
+    "sku_elimfilters": "EC137258",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.78",
+        "mm": "324.6"
+      },
+      "width": {
+        "in": "5.90",
+        "mm": "149.8"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P637259",
@@ -29799,7 +31247,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 270.4 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 232D3, CATERPILLAR 236D3, CATERPILLAR 242D3, +2 more.",
-    "sku_elimfilters": "EC17259"
+    "sku_elimfilters": "EC17259",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.65",
+        "mm": "270.4"
+      },
+      "width": {
+        "in": "4.78",
+        "mm": "121.4"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P637260",
@@ -29903,7 +31367,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 354.7 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 824K, CATERPILLAR 825K, CATERPILLAR 834K, +2 more.",
-    "sku_elimfilters": "EC17260"
+    "sku_elimfilters": "EC17260",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.96",
+        "mm": "354.7"
+      },
+      "width": {
+        "in": "11.09",
+        "mm": "281.7"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P637261",
@@ -30011,7 +31491,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 317.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D10T, CATERPILLAR D11T, CATERPILLAR D8, +2 more.",
-    "sku_elimfilters": "EC17261"
+    "sku_elimfilters": "EC17261",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.50",
+        "mm": "317.5"
+      },
+      "width": {
+        "in": "7.07",
+        "mm": "179.5"
+      },
+      "height": {
+        "in": "1.79",
+        "mm": "45.5"
+      }
+    }
   },
   {
     "part_number": "P637266",
@@ -30106,7 +31602,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 531 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D3G LGP, CATERPILLAR D3G XL, CATERPILLAR D4G LGP.",
-    "sku_elimfilters": "EC17266"
+    "sku_elimfilters": "EC17266",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "20.91",
+        "mm": "531"
+      },
+      "width": {
+        "in": "5.31",
+        "mm": "135"
+      },
+      "height": {
+        "in": "2.26",
+        "mm": "57.4"
+      }
+    }
   },
   {
     "part_number": "P637267",
@@ -30174,7 +31686,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 500.2 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR D9T.",
-    "sku_elimfilters": "EC17267"
+    "sku_elimfilters": "EC17267",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "19.69",
+        "mm": "500.2"
+      },
+      "width": {
+        "in": "3.94",
+        "mm": "100.1"
+      },
+      "height": {
+        "in": "3.57",
+        "mm": "90.7"
+      }
+    }
   },
   {
     "part_number": "P640110",
@@ -30366,7 +31894,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 227 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: INTERNATIONAL HX620, INTERNATIONAL LONESTAR, INTERNATIONAL LT, +7 more.",
-    "sku_elimfilters": "EC10110"
+    "sku_elimfilters": "EC10110",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.94",
+        "mm": "227"
+      },
+      "width": {
+        "in": "7.87",
+        "mm": "200"
+      },
+      "height": {
+        "in": "1.14",
+        "mm": "29"
+      }
+    }
   },
   {
     "part_number": "P644254",
@@ -30465,7 +32009,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 372.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 950, CATERPILLAR 962, CATERPILLAR 962K, +2 more.",
-    "sku_elimfilters": "EC14254"
+    "sku_elimfilters": "EC14254",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "14.67",
+        "mm": "372.5"
+      },
+      "width": {
+        "in": "3.82",
+        "mm": "97"
+      },
+      "height": {
+        "in": "1.46",
+        "mm": "37"
+      }
+    }
   },
   {
     "part_number": "P644953",
@@ -30539,7 +32099,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 404 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 924K, CATERPILLAR 926, CATERPILLAR 930, +1 more.",
-    "sku_elimfilters": "EC14953"
+    "sku_elimfilters": "EC14953",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "15.91",
+        "mm": "404"
+      },
+      "width": {
+        "in": "6.41",
+        "mm": "162.8"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P644954",
@@ -30603,7 +32179,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Ventilation, L 346 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 924K, CATERPILLAR 926, CATERPILLAR 930K, +1 more.",
-    "sku_elimfilters": "EC14954"
+    "sku_elimfilters": "EC14954",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "13.62",
+        "mm": "346"
+      },
+      "width": {
+        "in": "4.78",
+        "mm": "121.4"
+      },
+      "height": {
+        "in": "2.32",
+        "mm": "59"
+      }
+    }
   },
   {
     "part_number": "P644955",
@@ -30677,7 +32269,19 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Ventilation, OD 201.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 4700, JOHN DEERE 4710, JOHN DEERE 4720, +2 more.",
-    "sku_elimfilters": "EC14955"
+    "sku_elimfilters": "EC14955",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "7.93",
+        "mm": "201.5"
+      },
+      "id": {
+        "in": "3.62",
+        "mm": "92"
+      }
+    }
   },
   {
     "part_number": "P644957",
@@ -30754,7 +32358,19 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Ventilation, OD 155 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH MAGNUM 180, CASE/CASE IH MAGNUM 225, CASE/CASE IH MAGNUM 240, +2 more.",
-    "sku_elimfilters": "EC14957"
+    "sku_elimfilters": "EC14957",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "od": {
+        "in": "6.10",
+        "mm": "155"
+      },
+      "id": {
+        "in": "2.48",
+        "mm": "63"
+      }
+    }
   },
   {
     "part_number": "P646621",
@@ -30826,7 +32442,19 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 330 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 7200R, JOHN DEERE 7215R, JOHN DEERE 7230R, +1 more.",
-    "sku_elimfilters": "EC16621"
+    "sku_elimfilters": "EC16621",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.99",
+        "mm": "330"
+      },
+      "height": {
+        "in": "2.87",
+        "mm": "73"
+      }
+    }
   },
   {
     "part_number": "P647714",
@@ -30864,7 +32492,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 260 mm. Provides clean air inside the cab for a safer, healthier work environment. 97% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC17714"
+    "sku_elimfilters": "EC17714",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.24",
+        "mm": "260"
+      },
+      "width": {
+        "in": "1.57",
+        "mm": "40"
+      },
+      "height": {
+        "in": "8.07",
+        "mm": "205"
+      }
+    }
   },
   {
     "part_number": "P647957",
@@ -30946,7 +32590,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 289 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JCB 525-60 HI VIZ, JCB 531-70, JCB 533-105, +2 more.",
-    "sku_elimfilters": "EC17957"
+    "sku_elimfilters": "EC17957",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.38",
+        "mm": "289"
+      },
+      "width": {
+        "in": "0.79",
+        "mm": "20"
+      },
+      "height": {
+        "in": "3.58",
+        "mm": "91"
+      }
+    }
   },
   {
     "part_number": "P647958",
@@ -31019,7 +32679,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 273 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JCB 528-70, JCB 531-70, JCB 533-105, +2 more.",
-    "sku_elimfilters": "EC17958"
+    "sku_elimfilters": "EC17958",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.75",
+        "mm": "273"
+      },
+      "width": {
+        "in": "0.79",
+        "mm": "20"
+      },
+      "height": {
+        "in": "4.49",
+        "mm": "114"
+      }
+    }
   },
   {
     "part_number": "P650169",
@@ -31044,7 +32720,23 @@
     "oem_codes": [],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 240 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC10169"
+    "sku_elimfilters": "EC10169",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.45",
+        "mm": "240"
+      },
+      "width": {
+        "in": "8.03",
+        "mm": "204"
+      },
+      "height": {
+        "in": "1.14",
+        "mm": "29"
+      }
+    }
   },
   {
     "part_number": "P776490",
@@ -31270,7 +32962,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 435 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 950F, CATERPILLAR 966F, CATERPILLAR 980F, +9 more.",
-    "sku_elimfilters": "EC16490"
+    "sku_elimfilters": "EC16490",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "17.13",
+        "mm": "435"
+      },
+      "width": {
+        "in": "6.00",
+        "mm": "152.4"
+      },
+      "height": {
+        "in": "2.20",
+        "mm": "56"
+      }
+    }
   },
   {
     "part_number": "P777576",
@@ -31842,7 +33550,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 300 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: AURY NHL NTE240, CATERPILLAR 322B, CATERPILLAR 325B, +47 more.",
-    "sku_elimfilters": "EC17576"
+    "sku_elimfilters": "EC17576",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.81",
+        "mm": "300"
+      },
+      "width": {
+        "in": "9.84",
+        "mm": "250"
+      },
+      "height": {
+        "in": "0.94",
+        "mm": "24"
+      }
+    }
   },
   {
     "part_number": "P780135",
@@ -32070,7 +33794,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 228.6 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 814F, CATERPILLAR 815F, CATERPILLAR 816F, +12 more.",
-    "sku_elimfilters": "EC10135"
+    "sku_elimfilters": "EC10135",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.00",
+        "mm": "228.6"
+      },
+      "width": {
+        "in": "7.00",
+        "mm": "177.8"
+      },
+      "height": {
+        "in": "1.06",
+        "mm": "27"
+      }
+    }
   },
   {
     "part_number": "P780163",
@@ -32304,7 +34044,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 230 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 814F, CATERPILLAR 815F, CATERPILLAR 816F, +12 more.",
-    "sku_elimfilters": "EC10163"
+    "sku_elimfilters": "EC10163",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "9.06",
+        "mm": "230"
+      },
+      "width": {
+        "in": "9.02",
+        "mm": "229"
+      },
+      "height": {
+        "in": "2.19",
+        "mm": "55.6"
+      }
+    }
   },
   {
     "part_number": "P780298",
@@ -32716,7 +34472,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 311.3 mm. Provides clean air inside the cab for a safer, healthier work environment. 99% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 814F, CATERPILLAR 815F, CATERPILLAR 816F, +31 more.",
-    "sku_elimfilters": "EC10298"
+    "sku_elimfilters": "EC10298",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.26",
+        "mm": "311.3"
+      },
+      "width": {
+        "in": "9.50",
+        "mm": "241.3"
+      },
+      "height": {
+        "in": "2.44",
+        "mm": "62.1"
+      }
+    }
   },
   {
     "part_number": "P781176",
@@ -33194,7 +34966,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 600 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CATERPILLAR 307D, CATERPILLAR 311D, CATERPILLAR 312D, +41 more.",
-    "sku_elimfilters": "EC11176"
+    "sku_elimfilters": "EC11176",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "23.62",
+        "mm": "600"
+      },
+      "width": {
+        "in": "4.84",
+        "mm": "123"
+      },
+      "height": {
+        "in": "0.94",
+        "mm": "24"
+      }
+    }
   },
   {
     "part_number": "P782811",
@@ -34078,7 +35866,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 211 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: VOLVO FH 12 340, VOLVO FH 12 380, VOLVO FH 12 420, +61 more.",
-    "sku_elimfilters": "EC12811"
+    "sku_elimfilters": "EC12811",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "8.31",
+        "mm": "211"
+      },
+      "width": {
+        "in": "8.31",
+        "mm": "211"
+      },
+      "height": {
+        "in": "1.95",
+        "mm": "49.5"
+      }
+    }
   },
   {
     "part_number": "P783687",
@@ -34704,7 +36508,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 605 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: AGCO ST52A, FENDT 207 VARIO, FENDT 208 VARIO, +55 more.",
-    "sku_elimfilters": "EC13687"
+    "sku_elimfilters": "EC13687",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "23.82",
+        "mm": "605"
+      },
+      "width": {
+        "in": "4.25",
+        "mm": "108"
+      },
+      "height": {
+        "in": "2.17",
+        "mm": "55"
+      }
+    }
   },
   {
     "part_number": "P784574",
@@ -35171,7 +36991,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 519.5 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH 770, CASE/CASE IH JX1080U, CASE/CASE IH JX1090U, +35 more.",
-    "sku_elimfilters": "EC14574"
+    "sku_elimfilters": "EC14574",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "20.45",
+        "mm": "519.5"
+      },
+      "width": {
+        "in": "4.09",
+        "mm": "104"
+      },
+      "height": {
+        "in": "1.93",
+        "mm": "49"
+      }
+    }
   },
   {
     "part_number": "P789129",
@@ -36287,7 +38123,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 586.9 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.86% efficiency (ISO 10263-3) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 5083EN, JOHN DEERE 5093EN, JOHN DEERE 5101EN, +110 more.",
-    "sku_elimfilters": "EC19129"
+    "sku_elimfilters": "EC19129",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "23.11",
+        "mm": "586.9"
+      },
+      "width": {
+        "in": "5.20",
+        "mm": "132"
+      },
+      "height": {
+        "in": "3.37",
+        "mm": "85.5"
+      }
+    }
   },
   {
     "part_number": "P903809",
@@ -36364,7 +38216,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 297.50 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: FORD EVEREST UA, FORD RANGER PX3.",
-    "sku_elimfilters": "EC13809"
+    "sku_elimfilters": "EC13809",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "11.71",
+        "mm": "297.50"
+      },
+      "width": {
+        "in": "9.35",
+        "mm": "237.5"
+      },
+      "height": {
+        "in": "1.99",
+        "mm": "50.5"
+      }
+    }
   },
   {
     "part_number": "P903833",
@@ -36435,7 +38303,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 307 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: JOHN DEERE 1210G, JOHN DEERE 1270E, JOHN DEERE 1510E, +2 more.",
-    "sku_elimfilters": "EC13833"
+    "sku_elimfilters": "EC13833",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "12.09",
+        "mm": "307"
+      },
+      "width": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "height": {
+        "in": "1.18",
+        "mm": "30"
+      }
+    }
   },
   {
     "part_number": "P958618",
@@ -37384,7 +39268,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 550 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH PUMA 130, CASE/CASE IH PUMA 130 CVT, CASE/CASE IH PUMA 145 CVT, +67 more.",
-    "sku_elimfilters": "EC18618"
+    "sku_elimfilters": "EC18618",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "21.65",
+        "mm": "550"
+      },
+      "width": {
+        "in": "3.94",
+        "mm": "100"
+      },
+      "height": {
+        "in": "2.52",
+        "mm": "64"
+      }
+    }
   },
   {
     "part_number": "P958619",
@@ -37529,7 +39429,23 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 380 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours. Fits: CASE/CASE IH PUMA 130, CASE/CASE IH PUMA 130 CVT, CASE/CASE IH PUMA 145, +2 more.",
-    "sku_elimfilters": "EC18619"
+    "sku_elimfilters": "EC18619",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "14.96",
+        "mm": "380"
+      },
+      "width": {
+        "in": "5.12",
+        "mm": "130"
+      },
+      "height": {
+        "in": "1.89",
+        "mm": "48"
+      }
+    }
   },
   {
     "part_number": "P960024",
@@ -37571,6 +39487,22 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 265 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
-    "sku_elimfilters": "EC10024"
+    "sku_elimfilters": "EC10024",
+    "category": "cabin",
+    "technology": "MICROKAPPA™",
+    "dimensions": {
+      "length": {
+        "in": "10.43",
+        "mm": "265"
+      },
+      "width": {
+        "in": "6.50",
+        "mm": "165"
+      },
+      "height": {
+        "in": "0.39",
+        "mm": "10"
+      }
+    }
   }
 ]

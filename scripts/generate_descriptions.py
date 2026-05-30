@@ -70,6 +70,39 @@ def _mm(value: str) -> str:
     return m.group(1) if m else value
 
 
+def _parse_dim(value: str) -> dict:
+    """Parse '4.65 inch (118 mm)' → {in: '4.65', mm: '118'} or {raw: value}"""
+    if not value:
+        return {}
+    m = re.match(r'([\d.]+)\s*inch\s*\(([\d.]+)\s*mm\)', value.strip())
+    if m:
+        return {"in": m.group(1), "mm": m.group(2)}
+    m2 = re.match(r'\(([\d.]+)\s*mm\)', value.strip())
+    if m2:
+        return {"mm": m2.group(1)}
+    return {"raw": value.strip()}
+
+
+def extract_dimensions(product: dict) -> dict:
+    """Build a clean dimensions object from product attributes."""
+    attrs = product.get("attributes", {})
+    dims  = {}
+    for key, field in [
+        ("Outer Diameter", "od"),
+        ("Inner Diameter", "id"),
+        ("Length",         "length"),
+        ("Width",          "width"),
+        ("Height",         "height"),
+    ]:
+        val = attrs.get(key, "")
+        if val and val not in ("-", "N/A"):
+            dims[field] = _parse_dim(val)
+    thread = attrs.get("Thread Size", "")
+    if thread and thread not in ("-", "N/A"):
+        dims["thread"] = thread
+    return dims
+
+
 def _equipment_summary(product: dict, max_items: int = 3) -> str:
     """Return 'Cummins L9, Freightliner 108SD, +N more' or ''"""
     equip = product.get("equipment", [])
@@ -680,6 +713,10 @@ def process_category(cat: str, sample_only: bool = False):
     updated = 0
     collisions = 0
     for p in products:
+        tech = _resolve_tech(p, cat)
+        p["category"]              = cat
+        p["technology"]            = tech
+        p["dimensions"]            = extract_dimensions(p)
         p["description_elimfilters"] = generate_description(p, cat)
         sku = generate_sku(p, cat, seen)
         p["sku_elimfilters"] = sku

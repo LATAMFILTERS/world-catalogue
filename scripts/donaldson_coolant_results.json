@@ -370,7 +370,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 107 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: VOLVO VH 200, VOLVO VHD, VOLVO VHD 200, +6 more.",
-    "sku_elimfilters": "EW74081"
+    "sku_elimfilters": "EW74081",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "M16 x 1.5"
+    }
   },
   {
     "part_number": "DBC4085",
@@ -839,7 +852,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 135 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: CUMMINS QSL9, DAF CF ELECTRIC, DAF CF86 230, +43 more.",
-    "sku_elimfilters": "EW74085"
+    "sku_elimfilters": "EW74085",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.31",
+        "mm": "135"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "DBC4086",
@@ -1132,7 +1158,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: GEHL 3825SX, MACK CXP612, MACK CXP613, +19 more.",
-    "sku_elimfilters": "EW74086"
+    "sku_elimfilters": "EW74086",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "M16 x 1.5"
+    }
   },
   {
     "part_number": "DBC4088",
@@ -1414,7 +1453,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: FREIGHTLINER CENTURY CLASS, FREIGHTLINER CENTURY CLASS S/T, FREIGHTLINER CLASSIC XL, +16 more.",
-    "sku_elimfilters": "EW74088"
+    "sku_elimfilters": "EW74088",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "DBC4089",
@@ -1462,7 +1514,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
-    "sku_elimfilters": "EW74089"
+    "sku_elimfilters": "EW74089",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "M16 x 1.5"
+    }
   },
   {
     "part_number": "DBC4785",
@@ -1583,7 +1648,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: KENWORTH T680, KENWORTH T880, KENWORTH W900, +3 more.",
-    "sku_elimfilters": "EW74785"
+    "sku_elimfilters": "EW74785",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P171365",
@@ -1618,7 +1696,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 16.26 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71365"
+    "sku_elimfilters": "EW71365",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "0.64",
+        "mm": "16.26"
+      },
+      "id": {
+        "in": "0.38",
+        "mm": "9.65"
+      },
+      "length": {
+        "in": "300.00",
+        "mm": "7620"
+      }
+    }
   },
   {
     "part_number": "P171366",
@@ -1649,7 +1743,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 21 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71366"
+    "sku_elimfilters": "EW71366",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "0.83",
+        "mm": "21"
+      },
+      "id": {
+        "in": "0.51",
+        "mm": "13"
+      },
+      "length": {
+        "in": "300.00",
+        "mm": "7620"
+      }
+    }
   },
   {
     "part_number": "P171367",
@@ -1688,7 +1798,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 24 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71367"
+    "sku_elimfilters": "EW71367",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "0.94",
+        "mm": "24"
+      },
+      "id": {
+        "in": "0.63",
+        "mm": "16"
+      },
+      "length": {
+        "in": "300.00",
+        "mm": "7620"
+      }
+    }
   },
   {
     "part_number": "P171368",
@@ -1727,7 +1853,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 27 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71368"
+    "sku_elimfilters": "EW71368",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.06",
+        "mm": "27"
+      },
+      "id": {
+        "in": "0.75",
+        "mm": "19"
+      },
+      "length": {
+        "in": "300.00",
+        "mm": "7620"
+      }
+    }
   },
   {
     "part_number": "P171369",
@@ -1762,7 +1904,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 34 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71369"
+    "sku_elimfilters": "EW71369",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.34",
+        "mm": "34"
+      },
+      "id": {
+        "in": "0.98",
+        "mm": "25"
+      },
+      "length": {
+        "in": "300.00",
+        "mm": "7620"
+      }
+    }
   },
   {
     "part_number": "P171371",
@@ -1793,7 +1951,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 24 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71371"
+    "sku_elimfilters": "EW71371",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "0.94",
+        "mm": "24"
+      },
+      "id": {
+        "in": "0.63",
+        "mm": "16"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171374",
@@ -1832,7 +2006,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 34 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71374"
+    "sku_elimfilters": "EW71374",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.34",
+        "mm": "34"
+      },
+      "id": {
+        "in": "0.98",
+        "mm": "25"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171375",
@@ -1867,7 +2057,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 37 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71375"
+    "sku_elimfilters": "EW71375",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.46",
+        "mm": "37"
+      },
+      "id": {
+        "in": "1.14",
+        "mm": "29"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171376",
@@ -1938,7 +2144,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 48 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71376"
+    "sku_elimfilters": "EW71376",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.89",
+        "mm": "48"
+      },
+      "id": {
+        "in": "1.26",
+        "mm": "32"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171377",
@@ -1973,7 +2195,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 43 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71377"
+    "sku_elimfilters": "EW71377",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.69",
+        "mm": "43"
+      },
+      "id": {
+        "in": "1.38",
+        "mm": "35"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171378",
@@ -2020,7 +2258,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 46 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71378"
+    "sku_elimfilters": "EW71378",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.81",
+        "mm": "46"
+      },
+      "id": {
+        "in": "1.50",
+        "mm": "38"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171379",
@@ -2055,7 +2309,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 50 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71379"
+    "sku_elimfilters": "EW71379",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.97",
+        "mm": "50"
+      },
+      "id": {
+        "in": "1.61",
+        "mm": "41"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171380",
@@ -2098,7 +2368,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 53 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71380"
+    "sku_elimfilters": "EW71380",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.09",
+        "mm": "53"
+      },
+      "id": {
+        "in": "1.73",
+        "mm": "44"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171381",
@@ -2149,7 +2435,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 59 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71381"
+    "sku_elimfilters": "EW71381",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.32",
+        "mm": "59"
+      },
+      "id": {
+        "in": "2.00",
+        "mm": "50.8"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171382",
@@ -2188,7 +2490,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 66 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71382"
+    "sku_elimfilters": "EW71382",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.60",
+        "mm": "66"
+      },
+      "id": {
+        "in": "2.25",
+        "mm": "57.15"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171383",
@@ -2223,7 +2541,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 69 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71383"
+    "sku_elimfilters": "EW71383",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.72",
+        "mm": "69"
+      },
+      "id": {
+        "in": "2.38",
+        "mm": "60.33"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171384",
@@ -2270,7 +2604,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 72 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71384"
+    "sku_elimfilters": "EW71384",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.83",
+        "mm": "72"
+      },
+      "id": {
+        "in": "2.50",
+        "mm": "63.5"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171385",
@@ -2301,7 +2651,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 75 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71385"
+    "sku_elimfilters": "EW71385",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.95",
+        "mm": "75"
+      },
+      "id": {
+        "in": "2.64",
+        "mm": "67"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171386",
@@ -2332,7 +2698,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 78 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71386"
+    "sku_elimfilters": "EW71386",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.07",
+        "mm": "78"
+      },
+      "id": {
+        "in": "2.76",
+        "mm": "70"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171387",
@@ -2371,7 +2753,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 85 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71387"
+    "sku_elimfilters": "EW71387",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.35",
+        "mm": "85"
+      },
+      "id": {
+        "in": "2.99",
+        "mm": "76"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171388",
@@ -2406,7 +2804,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 123 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71388"
+    "sku_elimfilters": "EW71388",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "4.84",
+        "mm": "123"
+      },
+      "id": {
+        "in": "3.50",
+        "mm": "89"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171389",
@@ -2441,7 +2855,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 110 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71389"
+    "sku_elimfilters": "EW71389",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "4.33",
+        "mm": "110"
+      },
+      "id": {
+        "in": "4.02",
+        "mm": "102"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171390",
@@ -2513,7 +2943,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 36 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management. Fits: FORD ESCAPE.",
-    "sku_elimfilters": "EW71390"
+    "sku_elimfilters": "EW71390",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.42",
+        "mm": "36"
+      },
+      "id": {
+        "in": "1.00",
+        "mm": "25.4"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171391",
@@ -2544,7 +2990,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 48 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71391"
+    "sku_elimfilters": "EW71391",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "1.89",
+        "mm": "48"
+      },
+      "id": {
+        "in": "1.50",
+        "mm": "38"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171392",
@@ -2575,7 +3037,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 61 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71392"
+    "sku_elimfilters": "EW71392",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.40",
+        "mm": "61"
+      },
+      "id": {
+        "in": "2.01",
+        "mm": "51"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171394",
@@ -2606,7 +3084,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 72.89 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71394"
+    "sku_elimfilters": "EW71394",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "2.87",
+        "mm": "72.89"
+      },
+      "id": {
+        "in": "2.50",
+        "mm": "63.5"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P171395",
@@ -2637,7 +3131,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 79.25 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW71395"
+    "sku_elimfilters": "EW71395",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.12",
+        "mm": "79.25"
+      },
+      "id": {
+        "in": "2.75",
+        "mm": "69.85"
+      },
+      "length": {
+        "in": "35.98",
+        "mm": "914"
+      }
+    }
   },
   {
     "part_number": "P173714",
@@ -2662,7 +3172,23 @@
     "oem_codes": [],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 24 mm × L 15240 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
-    "sku_elimfilters": "EW73714"
+    "sku_elimfilters": "EW73714",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "0.94",
+        "mm": "24"
+      },
+      "id": {
+        "in": "0.63",
+        "mm": "16"
+      },
+      "length": {
+        "in": "600.00",
+        "mm": "15240"
+      }
+    }
   },
   {
     "part_number": "P174766",
@@ -2724,7 +3250,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter Assembly. Thread 11/16-16 UN. Precision housing for coolant filtration system. Engineered for reliable sealing and easy service access in heavy-duty cooling circuit applications.",
-    "sku_elimfilters": "EW74766"
+    "sku_elimfilters": "EW74766",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "length": {
+        "in": "3.60",
+        "mm": "91.44"
+      },
+      "height": {
+        "in": "3.60",
+        "mm": "91.44"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P550840",
@@ -2753,7 +3292,19 @@
     "oem_codes": [],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter Assembly. Precision housing for coolant filtration system. Engineered for reliable sealing and easy service access in heavy-duty cooling circuit applications.",
-    "sku_elimfilters": "EW70840"
+    "sku_elimfilters": "EW70840",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "width": {
+        "in": "3.83",
+        "mm": "97.2"
+      },
+      "height": {
+        "in": "2.05",
+        "mm": "52"
+      }
+    }
   },
   {
     "part_number": "P550866",
@@ -3519,7 +4070,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 147 mm. Thread M36 x 2. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: CASE/CASE IH STX425, CASE/CASE IH STX440, CASE/CASE IH STX450, +58 more.",
-    "sku_elimfilters": "EW70866"
+    "sku_elimfilters": "EW70866",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.79",
+        "mm": "147"
+      },
+      "thread": "M36 x 2"
+    }
   },
   {
     "part_number": "P550867",
@@ -4145,7 +4709,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 147 mm. Thread M36 x 2. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: FREIGHTLINER ARGOSY, FREIGHTLINER CASCADIA, FREIGHTLINER CENTURY CLASS, +38 more.",
-    "sku_elimfilters": "EW70867"
+    "sku_elimfilters": "EW70867",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.79",
+        "mm": "147"
+      },
+      "thread": "M36 x 2"
+    }
   },
   {
     "part_number": "P551008",
@@ -4819,7 +5396,23 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Cartridge, OD 93 mm × L 151.5 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: DETROIT DIESEL DD13, DETROIT DIESEL DD15, DETROIT DIESEL DD16, +15 more.",
-    "sku_elimfilters": "EW71008"
+    "sku_elimfilters": "EW71008",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "id": {
+        "in": "1.77",
+        "mm": "45"
+      },
+      "length": {
+        "in": "5.96",
+        "mm": "151.5"
+      }
+    }
   },
   {
     "part_number": "P551309",
@@ -4877,7 +5470,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 135 mm. Thread 3/4-20 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
-    "sku_elimfilters": "EW71309"
+    "sku_elimfilters": "EW71309",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.31",
+        "mm": "135"
+      },
+      "thread": "3/4-20 UN"
+    }
   },
   {
     "part_number": "P552055",
@@ -6111,7 +6717,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 200 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: BUCYRUS SKF 11, CATERPILLAR 245, CATERPILLAR 24H, +70 more.",
-    "sku_elimfilters": "EW72055"
+    "sku_elimfilters": "EW72055",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "7.87",
+        "mm": "200"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552070",
@@ -6541,7 +7160,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AGCO DT160, AGCO DT180, AGCO DT225, +11 more.",
-    "sku_elimfilters": "EW72070"
+    "sku_elimfilters": "EW72070",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552071",
@@ -10954,7 +11586,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AG CHEM EQUIPMENT 004, ALLIS-CHALMERS M3, BLUEBIRD ALL AMERICAN FE, +307 more.",
-    "sku_elimfilters": "EW72071"
+    "sku_elimfilters": "EW72071",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552072",
@@ -11482,7 +12127,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AG CHEM EQUIPMENT 004, AG CHEM EQUIPMENT 1803, AG CHEM EQUIPMENT 1804, +51 more.",
-    "sku_elimfilters": "EW72072"
+    "sku_elimfilters": "EW72072",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552073",
@@ -12519,7 +13177,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AG CHEM EQUIPMENT 1903, AG CHEM EQUIPMENT 2505, AG CHEM EQUIPMENT A-2800, +104 more.",
-    "sku_elimfilters": "EW72073"
+    "sku_elimfilters": "EW72073",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552074",
@@ -13294,7 +13965,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AGCO DT160, AGCO DT180, AGCO DT225, +74 more.",
-    "sku_elimfilters": "EW72074"
+    "sku_elimfilters": "EW72074",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552075",
@@ -14899,7 +15583,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AGCO 9755, AGCO 9775, AGCO 9785, +102 more.",
-    "sku_elimfilters": "EW72075"
+    "sku_elimfilters": "EW72075",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552076",
@@ -15732,7 +16429,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 200 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: ATLAS COPCO MT5010, CASE/CASE IH 9280, CASE/CASE IH 9380, +51 more.",
-    "sku_elimfilters": "EW72076"
+    "sku_elimfilters": "EW72076",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "7.87",
+        "mm": "200"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P552096",
@@ -17789,7 +18499,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: HITACHI EH600, HITACHI EH650, MACK CXP612, +142 more.",
-    "sku_elimfilters": "EW72096"
+    "sku_elimfilters": "EW72096",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "M16 x 1.5"
+    }
   },
   {
     "part_number": "P552106",
@@ -17878,7 +18601,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 94 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AGCO 9455, INTERNATIONAL DT466, INTERNATIONAL DURASTAR 4400.",
-    "sku_elimfilters": "EW72106"
+    "sku_elimfilters": "EW72106",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.70",
+        "mm": "94"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554019",
@@ -18269,7 +19005,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: VOLVO CONSTRUCTION EQUIPMENT A25C, VOLVO CONSTRUCTION EQUIPMENT A30C, VOLVO CONSTRUCTION EQUIPMENT A35C, +13 more.",
-    "sku_elimfilters": "EW74019"
+    "sku_elimfilters": "EW74019",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "M16 x 1.5"
+    }
   },
   {
     "part_number": "P554071",
@@ -31264,7 +32013,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AG CHEM EQUIPMENT 1004, AG CHEM EQUIPMENT 1253, AG CHEM EQUIPMENT 1603, +1253 more.",
-    "sku_elimfilters": "EW74071"
+    "sku_elimfilters": "EW74071",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554072",
@@ -34398,7 +35160,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 107 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: ATLAS COPCO QAS125, ATLAS COPCO QAS150, ATLAS COPCO XA430, +320 more.",
-    "sku_elimfilters": "EW74072"
+    "sku_elimfilters": "EW74072",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "4.21",
+        "mm": "107"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554073",
@@ -39159,7 +39934,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: AG CHEM EQUIPMENT 2700, AG CHEM EQUIPMENT A-2500, AG CHEM EQUIPMENT A-2600, +509 more.",
-    "sku_elimfilters": "EW74073"
+    "sku_elimfilters": "EW74073",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554074",
@@ -42205,7 +42993,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: ALLIS-CHALMERS HD31, ATLAS COPCO QAS220, ATLAS COPCO QAS275, +315 more.",
-    "sku_elimfilters": "EW74074"
+    "sku_elimfilters": "EW74074",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554075",
@@ -43491,7 +44292,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: CATERPILLAR 16G, CATERPILLAR 245, CATERPILLAR 589, +120 more.",
-    "sku_elimfilters": "EW74075"
+    "sku_elimfilters": "EW74075",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554685",
@@ -45352,7 +46166,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: BLUEBIRD VISION CE, CATERPILLAR CT660, CATERPILLAR MD6290, +104 more.",
-    "sku_elimfilters": "EW74685"
+    "sku_elimfilters": "EW74685",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "11/16-16 UN"
+    }
   },
   {
     "part_number": "P554860",
@@ -45841,7 +46668,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 136 mm. Thread 3/4-20 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: MACK CH613, MACK CL713, MACK CM400, +38 more.",
-    "sku_elimfilters": "EW74860"
+    "sku_elimfilters": "EW74860",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.66",
+        "mm": "93"
+      },
+      "length": {
+        "in": "5.35",
+        "mm": "136"
+      },
+      "thread": "3/4-20 UN"
+    }
   },
   {
     "part_number": "P765594",
@@ -45928,6 +46768,19 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 96 mm × L 144 mm. Thread M16 x 1.5. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: VOLVO CONSTRUCTION EQUIPMENT A20C, VOLVO CONSTRUCTION EQUIPMENT A25D, VOLVO CONSTRUCTION EQUIPMENT A30C, +1 more.",
-    "sku_elimfilters": "EW75594"
+    "sku_elimfilters": "EW75594",
+    "category": "coolant",
+    "technology": "COOLTECH™",
+    "dimensions": {
+      "od": {
+        "in": "3.78",
+        "mm": "96"
+      },
+      "length": {
+        "in": "5.67",
+        "mm": "144"
+      },
+      "thread": "M16 x 1.5"
+    }
   }
 ]

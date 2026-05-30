@@ -79,7 +79,20 @@
     ],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS DRYCORE™ Air Dryer, Spin-On, OD 139.5 mm × L 163 mm. Thread M41 x 1.5. Filters out water vapor, oil vapor, and contaminants from compressed air before they reach air tanks and valves — ensuring optimal system uptime and protecting pneumatic components. Trust your compressed air system with DRYCORE™ integrated desiccant protection. Fits: KENWORTH T680, KENWORTH T880.",
-    "sku_elimfilters": "ED44764"
+    "sku_elimfilters": "ED44764",
+    "category": "air-dryer",
+    "technology": "DRYCORE™",
+    "dimensions": {
+      "od": {
+        "in": "5.49",
+        "mm": "139.5"
+      },
+      "length": {
+        "in": "6.42",
+        "mm": "163"
+      },
+      "thread": "M41 x 1.5"
+    }
   },
   {
     "part_number": "P951413",
@@ -32001,7 +32014,20 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS DRYCORE™ Air Dryer, Spin-On, OD 140 mm × L 165 mm. Thread M39 x 1.5. Filters out water vapor, oil vapor, and contaminants from compressed air before they reach air tanks and valves — ensuring optimal system uptime and protecting pneumatic components. Trust your compressed air system with DRYCORE™ integrated desiccant protection. Fits: ASTRA 42.38, ASTRA 42.42, ASTRA 44.34, +3154 more.",
-    "sku_elimfilters": "ED41413"
+    "sku_elimfilters": "ED41413",
+    "category": "air-dryer",
+    "technology": "DRYCORE™",
+    "dimensions": {
+      "od": {
+        "in": "5.51",
+        "mm": "140"
+      },
+      "length": {
+        "in": "6.50",
+        "mm": "165"
+      },
+      "thread": "M39 x 1.5"
+    }
   },
   {
     "part_number": "P953571",
@@ -34145,6 +34171,19 @@
       ]
     },
     "description_elimfilters": "ELIMFILTERS DRYCORE™ Air Dryer, Spin-On, OD 140 mm × L 165 mm. Thread M39 x 1.5. Filters out water vapor, oil vapor, and contaminants from compressed air before they reach air tanks and valves — ensuring optimal system uptime and protecting pneumatic components. Trust your compressed air system with DRYCORE™ integrated desiccant protection. Fits: DENNIS 200EV Electric, DENNIS 400EV, DENNIS DART 300, +83 more.",
-    "sku_elimfilters": "ED43571"
+    "sku_elimfilters": "ED43571",
+    "category": "air-dryer",
+    "technology": "DRYCORE™",
+    "dimensions": {
+      "od": {
+        "in": "5.51",
+        "mm": "140"
+      },
+      "length": {
+        "in": "6.50",
+        "mm": "165"
+      },
+      "thread": "M39 x 1.5"
+    }
   }
 ]
