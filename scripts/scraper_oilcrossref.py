@@ -203,7 +203,18 @@ def process_category(name: str):
     logging.info(f"\n=== {name.upper()} COMPLETO: {total} prods | {done} cache | {new} nuevos ===")
 
 
-def test_one(part: str):
+def test_one(part: str, debug: bool = False):
+    url = BASE_URL.format(part=part.upper())
+    r = SESSION.get(url, timeout=30)
+    soup = BeautifulSoup(r.text, "html.parser")
+    text = soup.get_text(separator="\n")
+
+    if debug:
+        with open(f"debug_{part}.txt", "w", encoding="utf-8") as f:
+            f.write(text)
+        print(f"HTML text guardado en debug_{part}.txt")
+        return
+
     crossrefs = fetch_crossrefs(part)
     print(f"\n=== {part} ===")
     if crossrefs:
@@ -211,6 +222,10 @@ def test_one(part: str):
             print(f"  {brand:20} {codes}")
     else:
         print("  (sin resultados — revisar HTML)")
+        # Mostrar primeras 80 líneas para diagnóstico
+        print("\n--- Primeras 80 líneas del texto ---")
+        for i, l in enumerate(text.splitlines()[:80], 1):
+            print(f"  {i:3}: {l}")
 
 
 if __name__ == "__main__":
@@ -228,7 +243,9 @@ if __name__ == "__main__":
         print("  python scraper_oilcrossref.py --test P552100")
         sys.exit(0)
 
-    if argv[0] == "--test":
+    if argv[0] == "--debug":
+        test_one(argv[1] if len(argv) > 1 else "P552100", debug=True)
+    elif argv[0] == "--test":
         test_one(argv[1] if len(argv) > 1 else "P552100")
     else:
         for cat in argv:
