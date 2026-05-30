@@ -30,7 +30,7 @@ _EXTRACT_JS = """() => {
 
 with sync_playwright() as pw:
     ctx = pw.chromium.launch_persistent_context(
-        user_data_dir=os.path.join(os.path.expanduser("~"), ".donaldson_profile_air"),
+        user_data_dir=os.path.join(os.path.expanduser("~"), ".donaldson_profile_patch"),
         channel="chrome", headless=True, locale="en-US",
         viewport={"width": 1366, "height": 768},
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
