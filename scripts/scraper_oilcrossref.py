@@ -145,24 +145,7 @@ def fetch_crossrefs_page(page, part: str) -> dict:
             pass
         time.sleep(1)
 
-        # Extraer directamente del DOM: href="/convert/BRAND/CODE"
-        return page.evaluate("""() => {
-            const result = {};
-            const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
-            for (const a of links) {
-                const parts = a.getAttribute('href').split('/convert/');
-                if (parts.length < 2) continue;
-                const segments = parts[1].split('/');
-                if (segments.length < 2) continue;
-                const brand = decodeURIComponent(segments[0]).toUpperCase()
-                              .replace(/-FILTER$/i, '').trim();
-                const code  = decodeURIComponent(segments[1]).toUpperCase().trim();
-                if (!brand || !code || brand === 'DONALDSON') continue;
-                if (!result[brand]) result[brand] = [];
-                if (!result[brand].includes(code)) result[brand].push(code);
-            }
-            return result;
-        }""")
+        return page.evaluate(_EXTRACT_JS)
     except Exception as e:
         logging.warning(f"  ERROR {part}: {e}")
         return {}
@@ -227,6 +210,24 @@ def process_category(pw, name: str):
     logging.info(f"\n=== {name.upper()} COMPLETO: {total} prods | {done} cache | {new_} nuevos ===")
 
 
+_EXTRACT_JS = """() => {
+    const result = {};
+    const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
+    for (const a of links) {
+        const parts = a.getAttribute('href').split('/convert/');
+        if (parts.length < 2) continue;
+        const segments = parts[1].split('/');
+        if (segments.length < 2) continue;
+        const brand = decodeURIComponent(segments[0]).toUpperCase().replace(/-FILTER$/i,'').trim();
+        const code  = decodeURIComponent(segments[1]).toUpperCase().trim();
+        if (!brand || !code || brand === 'DONALDSON') continue;
+        if (!result[brand]) result[brand] = [];
+        if (!result[brand].includes(code)) result[brand].push(code);
+    }
+    return result;
+}"""
+
+
 def test_one(part: str, debug: bool = False):
     with sync_playwright() as pw:
         context = _make_context(pw)
@@ -241,25 +242,8 @@ def test_one(part: str, debug: bool = False):
         except PWTimeout:
             pass
         time.sleep(1)
+        crossrefs = page.evaluate(_EXTRACT_JS)
         context.close()
-
-    crossrefs = page.evaluate("""() => {
-        const result = {};
-        const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
-        for (const a of links) {
-            const parts = a.getAttribute('href').split('/convert/');
-            if (parts.length < 2) continue;
-            const segments = parts[1].split('/');
-            if (segments.length < 2) continue;
-            const brand = decodeURIComponent(segments[0]).toUpperCase().replace(/-FILTER$/i,'').trim();
-            const code  = decodeURIComponent(segments[1]).toUpperCase().trim();
-            if (!brand || !code || brand === 'DONALDSON') continue;
-            if (!result[brand]) result[brand] = [];
-            if (!result[brand].includes(code)) result[brand].push(code);
-        }
-        return result;
-    }""")
-    context.close()
 
     print(f"\n=== {part} ===")
     if crossrefs:
