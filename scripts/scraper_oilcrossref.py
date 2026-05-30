@@ -27,7 +27,7 @@ logging.basicConfig(
 )
 
 BASE_URL = "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}"
-VALID_CATS = {"lube", "hydraulic"}
+VALID_CATS = {"lube", "hydraulic", "coolant"}
 PAUSE = (4, 9)
 
 _EXTRACT_JS = """() => {
@@ -186,7 +186,8 @@ if __name__ == "__main__":
         print("Uso:")
         print("  python scraper_oilcrossref.py lube")
         print("  python scraper_oilcrossref.py hydraulic")
-        print("  python scraper_oilcrossref.py lube hydraulic")
+        print("  python scraper_oilcrossref.py coolant")
+        print("  python scraper_oilcrossref.py lube hydraulic coolant")
         print("  python scraper_oilcrossref.py --retry-zeros lube")
         print("  python scraper_oilcrossref.py --test P552100")
         print("  python scraper_oilcrossref.py --debug P552100")

@@ -15,7 +15,7 @@
 | air-intake     | 243       | ✅ COMPLETO       | ⚡ EN CURSO      | scraper_aircrossref.py   | ⚡ EN CURSO       |
 | cabin          | 122       | ✅ COMPLETO       | ❌ 0/122         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
 | air-dryer      | 3         | ✅ COMPLETO       | ✅ 3/3 (patch)   | scraper_aircrossref.py   | ✅ COMPLETO       |
-| coolant        | 59        | ✅ COMPLETO       | —               | —                        | sin sitio        |
+| coolant        | 59        | ✅ COMPLETO       | ❌ 0/59          | scraper_oilcrossref.py   | ⏳ PENDIENTE      |
 
 **fuel-separator**: incluido en `donaldson_fuel_results.json` (500 productos). No requiere scraping separado.
 
