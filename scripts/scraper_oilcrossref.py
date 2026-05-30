@@ -25,6 +25,13 @@ logging.basicConfig(
     ],
 )
 
+CATEGORY_URLS = {
+    "lube":      "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
+    "hydraulic": "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}",
+    "air":       "https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
+    "air-intake":"https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
+    "cabin":     "https://www.airfilter-crossreference.com/convert/DONALDSON/{part}",
+}
 BASE_URL = "https://www.oilfilter-crossreference.com/convert/DONALDSON/{part}"
 PAUSE    = (4, 9)
 
@@ -131,8 +138,8 @@ def _make_context(pw):
     )
 
 
-def fetch_crossrefs_page(page, part: str) -> dict:
-    url = BASE_URL.format(part=part.upper())
+def fetch_crossrefs_page(page, part: str, base_url: str = BASE_URL) -> dict:
+    url = base_url.format(part=part.upper())
     try:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         # Esperar a que el ul.compat-list tenga al menos 1 link
@@ -152,6 +159,7 @@ def fetch_crossrefs_page(page, part: str) -> dict:
 
 
 def process_category(pw, name: str):
+    base_url      = CATEGORY_URLS.get(name, BASE_URL)
     results_file  = f"donaldson_{name}_results.json"
     progress_file = f"donaldson_{name}_crossref_progress.json"
 
@@ -186,7 +194,7 @@ def process_category(pw, name: str):
             continue
 
         logging.info(f"[{i}/{total}] {part} …")
-        crossrefs = fetch_crossrefs_page(page, part)
+        crossrefs = fetch_crossrefs_page(page, part, base_url)
         prod["brand_crossrefs"] = crossrefs
         progress[part] = crossrefs
 
