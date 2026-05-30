@@ -50,6 +50,22 @@ if SESSION:
     SESSION.headers.update(HEADERS)
 
 
+import re as _re
+
+# Ruido a descartar
+_SKIP_BRANDS = {
+    "USD", "PRIVACY", "DONALDSON", "WHEN", "AS", "AN", "WE", "SEARCH",
+    "TYPE", "CHOOSE", "START", "ADVANCED", "COPYRIGHT", "REPLACEMENT",
+    "COACH",  # "COACH GUARD" → multi-word; manejado abajo
+}
+_SKIP_CODE_RE = _re.compile(r'^\d+\.\d+$')     # precios: 25.79
+_PART_RE      = _re.compile(r'^[A-Z0-9][A-Z0-9\-/\.]{2,}$')
+
+
+def _is_code(tok: str) -> bool:
+    return bool(_PART_RE.match(tok)) and not _SKIP_CODE_RE.match(tok)
+
+
 def fetch_crossrefs(part: str) -> dict:
     """
     Devuelve {"FLEETGUARD": ["LF3000", ...], "MANN": [...], ...}
@@ -65,36 +81,62 @@ def fetch_crossrefs(part: str) -> dict:
         soup = BeautifulSoup(r.text, "html.parser")
         result = {}
 
-        # Patrón 1: tabla con columnas Brand / Part Number
-        for table in soup.find_all("table"):
-            rows = table.find_all("tr")
-            headers = [th.get_text(strip=True).upper() for th in rows[0].find_all(["th", "td"])] if rows else []
-            brand_col = next((i for i, h in enumerate(headers) if "BRAND" in h or "MAKE" in h or "MANUFACTURER" in h), None)
-            part_col  = next((i for i, h in enumerate(headers) if "PART" in h or "NUMBER" in h or "CODE" in h or "FILTER" in h), None)
+        # El sitio lista cross-refs como texto plano: "BRAND CODE\nBRAND CODE\n..."
+        # Los items con link "Buy from Amazon" dividen brand y code en líneas distintas.
+        # Estrategia: obtener texto línea a línea, limpiar, parear brand+code.
 
-            if brand_col is not None and part_col is not None:
-                for row in rows[1:]:
-                    cells = row.find_all(["td", "th"])
-                    if len(cells) > max(brand_col, part_col):
-                        brand = cells[brand_col].get_text(strip=True).upper().replace(" ", "_")
-                        code  = cells[part_col].get_text(strip=True).upper()
-                        if brand and code and brand != "DONALDSON":
-                            result.setdefault(brand, [])
-                            if code not in result[brand]:
-                                result[brand].append(code)
+        text = soup.get_text(separator="\n")
 
-        # Patrón 2: listas o divs si no hay tabla estructurada
-        if not result:
-            for li in soup.find_all(["li", "div", "p"]):
-                text = li.get_text(separator=" ", strip=True)
-                # Buscar patrón "BRAND: CODE" o "BRAND CODE"
-                parts = text.split()
-                if len(parts) == 2:
-                    brand, code = parts[0].upper().rstrip(":"), parts[1].upper()
-                    if 2 < len(brand) < 25 and 3 < len(code) < 20:
-                        result.setdefault(brand, [])
-                        if code not in result[brand]:
-                            result[brand].append(code)
+        # Cortar solo la sección de cross-refs (entre "replacement oil filters" y "When you click")
+        m_start = _re.search(r'replacement oil filters\s*\n', text, _re.IGNORECASE)
+        m_end   = _re.search(r'When you click on links', text, _re.IGNORECASE)
+        if m_start and m_end:
+            text = text[m_start.end():m_end.start()]
+
+        lines = [l.strip() for l in text.splitlines()]
+        lines = [_re.sub(r'\s+Buy from.*', '', l, flags=_re.IGNORECASE).strip() for l in lines]
+        lines = [l for l in lines if l and l.upper() not in ("BUY", "FROM", "AMAZON", "EBAY")]
+
+        pending_brand = None
+        for line in lines:
+            tokens = line.split()
+            if not tokens:
+                continue
+
+            upper_tokens = [t.upper() for t in tokens]
+
+            # Caso A: línea con 1 token — puede ser código huérfano o marca sola
+            if len(tokens) == 1:
+                tok = upper_tokens[0]
+                if _is_code(tok) and pending_brand:
+                    # código huérfano → usar marca anterior
+                    result.setdefault(pending_brand, [])
+                    if tok not in result[pending_brand]:
+                        result[pending_brand].append(tok)
+                elif not _is_code(tok) and tok not in _SKIP_BRANDS:
+                    pending_brand = tok   # marca sola → esperar código siguiente
+                continue
+
+            # Caso B: última token es el código, el resto es la marca
+            last = upper_tokens[-1]
+            if _is_code(last) and not _SKIP_CODE_RE.match(last):
+                code  = last
+                brand = " ".join(upper_tokens[:-1]).strip(" .,:-")
+                # Limpiar suffixes de precio inline (raro)
+                brand = _re.sub(r'\s+\d+\.\d+$', '', brand).strip()
+                if not brand or brand.split()[0] in _SKIP_BRANDS:
+                    continue
+                if "DONALDSON" in brand:
+                    pending_brand = None
+                    continue
+                # Normalizar
+                brand = _re.sub(r'[\s/]+', '_', brand)
+                result.setdefault(brand, [])
+                if code not in result[brand]:
+                    result[brand].append(code)
+                pending_brand = brand
+            else:
+                pending_brand = None
 
         return result
 
