@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${item.title} | ELIMFILTERS® Proprietary Technology`;
   return {
     title,
-    description: item.description,
+    description: item.description.length > 160 ? item.description.slice(0, 157) + '…' : item.description,
     keywords: [
       item.title, `${item.title} filtration technology`, `${item.name.toLowerCase()} filter`,
       'ELIMFILTERS® technology', 'industrial filtration technology', 'asset protection',
@@ -33,13 +33,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title,
-      description: item.description,
+      description: item.description.length > 160 ? item.description.slice(0, 157) + '…' : item.description,
       url,
       type: 'website',
       siteName: 'ELIMFILTERS® World Catalogue',
       images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.title} — ELIMFILTERS® Technology` }],
     },
-    twitter: { card: 'summary_large_image', title, description: item.description },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@elimfilters',
+      title,
+      description: item.description.length > 160 ? item.description.slice(0, 157) + '…' : item.description,
+    },
   };
 }
 
@@ -110,11 +115,22 @@ export default function TechnologyPage({ params }: Props) {
   const fSchema = faqSchema(item);
   const bSchema = breadcrumbSchema(item, slug);
 
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: item.title,
+    url: `${BASE_URL}/technologies/${slug}`,
+    datePublished: '2025-01-01',
+    dateModified: '2026-05-30',
+    author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: BASE_URL },
+  };
+
   const schemas = (
     <>
       {pSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pSchema) }} />}
       {fSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fSchema) }} />}
       {bSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
     </>
   );
 

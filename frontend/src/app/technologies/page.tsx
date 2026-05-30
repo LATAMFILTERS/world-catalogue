@@ -92,9 +92,9 @@ export default function TechnologiesPage() {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: 'ELIMFILTERS® Proprietary Protection Architectures',
-        description: 'Nine proprietary protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
+        description: '12 proprietary protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
         url: 'https://elimfilters.com/technologies/',
-        numberOfItems: 9,
+        numberOfItems: 12,
         itemListElement: itemListData,
       }) }} />
 
@@ -108,6 +108,17 @@ export default function TechnologiesPage() {
       }) }} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'ELIMFILTERS® Proprietary Filtration Technologies',
+        description: 'ELIMFILTERS® 12 proprietary technologies achieve up to 99.98% contamination interception across air, fuel, hydraulic, coolant, and cabin systems.',
+        url: 'https://elimfilters.com/technologies/',
+        datePublished: '2025-01-01',
+        dateModified: '2026-05-30',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+      }) }} />
 
       <Link href="/" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
@@ -161,7 +172,7 @@ export default function TechnologiesPage() {
               lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            NINE PROPRIETARY PROTECTION ARCHITECTURES
+            12 PROPRIETARY PROTECTION ARCHITECTURES
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -173,7 +184,7 @@ export default function TechnologiesPage() {
               maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
             }}
           >
-            Nine protection architectures organized by contamination domain — air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin — each defined by its contamination target, failure mechanism, and measurable engineering standard.
+            ELIMFILTERS® 12 proprietary filtration technologies — MACROCORE™, NANOFORCE™, AQUAGUARD™, SYNTRAX™, MICROKAPPA™, and 7 more — are contamination control architectures for industrial equipment, validated against ISO 5011, ISO 4406, ISO 16889, ASTM D6304, and ISO 8573-1.
           </motion.p>
         </div>
       </section>
