@@ -43,8 +43,10 @@ CATEGORIES = {
             "?N=626398726&Nr=product.language%3AEnglish&catNav=true&st=parts",
     "air-dryer": "https://shop.donaldson.com/store/en-us/search"
             "?N=2748940002&catNav=true",
-    "cabin":     "https://shop.donaldson.com/store/en-us/search"
+    "cabin":      "https://shop.donaldson.com/store/en-us/search"
             "?N=3718375764&Nr=product.language%3AEnglish&catNav=true&st=parts",
+    "air-intake": "https://shop.donaldson.com/store/en-us/search"
+            "?N=2065132825&Nr=product.language%3AEnglish&catNav=true&st=parts",
 }
 
 PRODUCT_BASE  = "https://shop.donaldson.com/store/en-us/product/"
