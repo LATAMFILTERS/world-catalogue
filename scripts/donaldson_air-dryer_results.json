@@ -77,7 +77,9 @@
         "part_number": "WTP345496"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "AQUAGUARD™ Air Dryer — Spin-On, OD 139.5 mm × L 163 mm. Thread M41 x 1.5. Integrated desiccant air drying for compressed air systems. 99.2% water removal efficiency. Fits: KENWORTH T680, KENWORTH T880.",
+    "sku_elimfilters": "ED44764"
   },
   {
     "part_number": "P951413",
@@ -31997,7 +31999,9 @@
         "4324102270",
         "4324202202"
       ]
-    }
+    },
+    "description_elimfilters": "AQUAGUARD™ Air Dryer — Spin-On, OD 140 mm × L 165 mm. Thread M39 x 1.5. Integrated desiccant air drying for compressed air systems. 99.2% water removal efficiency. Fits: ASTRA 42.38, ASTRA 42.42, ASTRA 44.34, +3154 more.",
+    "sku_elimfilters": "ED41413"
   },
   {
     "part_number": "P953571",
@@ -34139,6 +34143,8 @@
       "UFI": [
         "2725900"
       ]
-    }
+    },
+    "description_elimfilters": "AQUAGUARD™ Air Dryer — Spin-On, OD 140 mm × L 165 mm. Thread M39 x 1.5. Integrated desiccant air drying for compressed air systems. 99.2% water removal efficiency. Fits: DENNIS 200EV Electric, DENNIS 400EV, DENNIS DART 300, +83 more.",
+    "sku_elimfilters": "ED43571"
   }
 ]

@@ -26,7 +26,9 @@
     "scraped_at": "2026-05-29T09:54:59.101994",
     "error": null,
     "oem_codes": [],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 200 mm. Thread 13/16-16 UN. Synteq Xp media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL80832"
   },
   {
     "part_number": "DBL3998",
@@ -97,7 +99,9 @@
       "LUBERFINER": [
         "LFP2160XL"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 5/8-12 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL83998"
   },
   {
     "part_number": "DBL4560",
@@ -136,7 +140,9 @@
         "part_number": "5375337"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 116.7 mm × L 290.6 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread M90 x 2. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL84560"
   },
   {
     "part_number": "DBL7300",
@@ -661,7 +667,9 @@
         "23.503.00",
         "2350300"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 290 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 2 1/4-12 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BLUEBIRD ALL AMERICAN FE, BLUEBIRD ALL AMERICAN RE, CUMMINS L9, +48 more.",
+    "sku_elimfilters": "EL87300"
   },
   {
     "part_number": "DBL7345",
@@ -761,7 +769,9 @@
       "MANN": [
         "W1020"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1-16 UN. Burst 100 psi (6.9 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KOMATSU PC150LC-6K, KOMATSU PC160-6K, KOMATSU PC180LC-6K, +2 more.",
+    "sku_elimfilters": "EL87345"
   },
   {
     "part_number": "DBL7349",
@@ -875,7 +885,9 @@
       "LUBERFINER": [
         "LFP780XL"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1-16 UN. Burst 100 psi (6.9 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CARRIER TRANSICOLD VECTOR 1800-04, CARRIER TRANSICOLD X22100A, CARRIER TRANSICOLD X22500A, +2 more.",
+    "sku_elimfilters": "EL87349"
   },
   {
     "part_number": "DBL7367",
@@ -937,7 +949,9 @@
       "WIX": [
         "51799XD"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 136 mm × L 308 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread M36 x 1.5. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL87367"
   },
   {
     "part_number": "DBL7405",
@@ -1378,7 +1392,9 @@
       "LUBERFINER": [
         "LFP4005XL"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 298 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 5130, CATERPILLAR 572R II, CATERPILLAR 578, +44 more.",
+    "sku_elimfilters": "EL87405"
   },
   {
     "part_number": "DBL7483",
@@ -1462,7 +1478,9 @@
         "51791",
         "51791E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL87483"
   },
   {
     "part_number": "DBL7505",
@@ -1523,7 +1541,9 @@
       "MANN": [
         "WD13145/17"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 136 mm × L 308 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/2-16 UN. Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL87505"
   },
   {
     "part_number": "DBL7670",
@@ -1626,7 +1646,9 @@
       "HIFI": [
         "SO6112"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/2-12 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HYSTER H1050, KOMATSU TD40, SANY SY1250H, +1 more.",
+    "sku_elimfilters": "EL87670"
   },
   {
     "part_number": "DBL7739",
@@ -1718,7 +1740,9 @@
         "part_number": "LF7739"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INGERSOLL RAND HP900W, INGERSOLL RAND VHP850WCAT, JOHN DEERE 14.",
+    "sku_elimfilters": "EL87739"
   },
   {
     "part_number": "DBL7900",
@@ -2085,7 +2109,9 @@
         "23.734.00",
         "2373400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 296 mm. Thread M95 x 2.5. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER 114SD, FREIGHTLINER 114SD PLUS, FREIGHTLINER CASCADIA, +15 more.",
+    "sku_elimfilters": "EL87900"
   },
   {
     "part_number": "DBL7947",
@@ -2119,7 +2145,9 @@
     "scraped_at": "2026-05-29T09:58:55.356983",
     "error": null,
     "oem_codes": [],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 160 mm. Efficiency 99% @ 15 micron (SAE J1858). Thread 1 1/2-12 UN. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL87947"
   },
   {
     "part_number": "P169071",
@@ -4179,7 +4207,9 @@
         "51622",
         "WL7096"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93.2 mm × L 135.1 mm. Efficiency 99% @ 22 micron (ISO 4572). Thread 3/4-16 UN. Burst 80 psi (5.5 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 714B, ALLIS-CHALMERS 715, ALLIS-CHALMERS 715B, +197 more.",
+    "sku_elimfilters": "EL89071"
   },
   {
     "part_number": "P173489",
@@ -4291,7 +4321,9 @@
       "WOODGATE": [
         "WGH2301"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 227 mm. Burst 145 psi (10 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL83489"
   },
   {
     "part_number": "P502007",
@@ -7038,7 +7070,9 @@
         "5JW-13440-00",
         "5JW-13440-00-00"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 91 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS WEYHAUSEN 32C, CASE/CASE IH 265, CATERPILLAR 301.6C, +198 more.",
+    "sku_elimfilters": "EL82007"
   },
   {
     "part_number": "P502008",
@@ -8996,7 +9030,9 @@
       "WOODGATE": [
         "WGL3830"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 96 mm × L 143 mm. Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER 360, FREIGHTLINER FL360, FREIGHTLINER FL360 1017, +122 more.",
+    "sku_elimfilters": "EL82008"
   },
   {
     "part_number": "P502009",
@@ -9783,7 +9819,9 @@
         "51381",
         "WL7171"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80.01 mm × L 64.01 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KATO HD50URG.",
+    "sku_elimfilters": "EL82009"
   },
   {
     "part_number": "P502015",
@@ -12762,7 +12800,9 @@
       "YAMAHA": [
         "69J-13440-00-00"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 65 mm × L 74 mm. Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 2870, CASE/CASE IH 4849, CASE/CASE IH 4894, +188 more.",
+    "sku_elimfilters": "EL82015"
   },
   {
     "part_number": "P502016",
@@ -14280,7 +14320,9 @@
       "ZINGA": [
         "BE10-18"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74 mm × L 84.5 mm. Efficiency 99% @ 50 micron (JIS D 1611). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 216, CATERPILLAR 216B, CATERPILLAR 216B2, +58 more.",
+    "sku_elimfilters": "EL82016"
   },
   {
     "part_number": "P502017",
@@ -14658,7 +14700,9 @@
       "YANMAR": [
         "119770-90620"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 99.82 mm × L 83.82 mm. Thread M24 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAIHATSU KB-CB27V, DAIHATSU Q-CB21G, DAIHATSU S-CB27V.",
+    "sku_elimfilters": "EL82017"
   },
   {
     "part_number": "P502019",
@@ -15548,7 +15592,9 @@
         "57145",
         "WL7177"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 65 mm × L 90 mm. Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAIHATSU S-YB20G, GOLDONI TRACTORS 20DT, KOMATSU FG10, +20 more.",
+    "sku_elimfilters": "EL82019"
   },
   {
     "part_number": "P502020",
@@ -15611,7 +15657,9 @@
       "TOYOTA": [
         "1560006010"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 80 mm. Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82020"
   },
   {
     "part_number": "P502022",
@@ -16656,7 +16704,9 @@
       "WORLDPARTS": [
         "W27319"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 75 mm. Efficiency 99% @ 35 micron (JIS D 1611). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO XASS96DDN, ATLAS COPCO XS96DD, CASE/CASE IH CUB CADET 982, +34 more.",
+    "sku_elimfilters": "EL82022"
   },
   {
     "part_number": "P502024",
@@ -17701,7 +17751,9 @@
       "YAMAHA": [
         "69J-13440-00-00"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 65 mm. Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 1614VH, JOHN DEERE 115, JOHN DEERE 1200, +25 more.",
+    "sku_elimfilters": "EL82024"
   },
   {
     "part_number": "P502039",
@@ -18348,7 +18400,9 @@
       "WOODGATE": [
         "WGL9161"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 90 mm × L 100 mm. Efficiency 99% @ 40 micron (JIS D 1611). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAEWOO DH55, HITACHI EX75US-7, HITACHI UE50, +26 more.",
+    "sku_elimfilters": "EL82039"
   },
   {
     "part_number": "P502042",
@@ -19239,7 +19293,9 @@
         "57521",
         "59154"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 124 mm × L 120 mm. Thread 1 1/2-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET NPR, CHEVROLET NPR 816, ISUZU 4HE1T, +53 more.",
+    "sku_elimfilters": "EL82042"
   },
   {
     "part_number": "P502043",
@@ -19388,7 +19444,9 @@
       "VMC": [
         "LF502043"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 90 mm × L 125 mm. Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ISUZU NKR ELF, ISUZU NKR69.",
+    "sku_elimfilters": "EL82043"
   },
   {
     "part_number": "P502049",
@@ -20360,7 +20418,9 @@
         "129150-35151",
         "129150-35152"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 80 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HONDA E SERIES.",
+    "sku_elimfilters": "EL82049"
   },
   {
     "part_number": "P502051",
@@ -21776,7 +21836,9 @@
         "WL7134",
         "WL7171"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83.9 mm × L 100 mm. Efficiency 99% @ 37 micron (JIS D 1611). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AIRMAN-HOKUETSU AX30, CASE/CASE IH 1825B, CASE/CASE IH CX30C, +93 more.",
+    "sku_elimfilters": "EL82051"
   },
   {
     "part_number": "P502057",
@@ -22818,7 +22880,9 @@
         "129150-35151",
         "129150-35152"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 85 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD ECONOVAN.",
+    "sku_elimfilters": "EL82057"
   },
   {
     "part_number": "P502058",
@@ -23222,7 +23286,9 @@
       "WIX": [
         "59250"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 91 mm × L 125 mm. Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ISUZU KCNHR69, ISUZU KCNKR69, ISUZU KCVHR69, +15 more.",
+    "sku_elimfilters": "EL82058"
   },
   {
     "part_number": "P502060",
@@ -23644,7 +23710,9 @@
       "YANMAR": [
         "12367235151"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 101 mm × L 125 mm. Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: GEHL SL5625DX, GEHL SL5625SX, GEHL SL6625DX, +19 more.",
+    "sku_elimfilters": "EL82060"
   },
   {
     "part_number": "P502061",
@@ -23770,7 +23838,9 @@
       "WIX": [
         "WL7154"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 125 mm. Efficiency 99% @ 37 micron (JIS D 1611). Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82061"
   },
   {
     "part_number": "P502063",
@@ -24260,7 +24330,9 @@
         "5JW-13440-00",
         "5JW-13440-00-00"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 85 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MITSUBISHI Triton MV.",
+    "sku_elimfilters": "EL82063"
   },
   {
     "part_number": "P502067",
@@ -27143,7 +27215,9 @@
         "11930535150",
         "124450-35100"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 65 mm. Efficiency 99% @ 40 micron (JIS D 1611). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ANTONIO CARRARO K327, ATLAS COPCO XAS36, BOBCAT 316, +224 more.",
+    "sku_elimfilters": "EL82067"
   },
   {
     "part_number": "P502069",
@@ -27801,7 +27875,9 @@
         "57094",
         "WL7167"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 69 mm. Efficiency 99% @ 50 micron (JIS D 1611). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KOMATSU 25 GRAYLIFT, NISSAN D01, NISSAN J01.",
+    "sku_elimfilters": "EL82069"
   },
   {
     "part_number": "P502072",
@@ -27975,7 +28051,9 @@
       "WIX": [
         "51087"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 92 mm × L 139 mm. Thread M22 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82072"
   },
   {
     "part_number": "P502076",
@@ -28907,7 +28985,9 @@
         "51381",
         "WL7086"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 87 mm × L 89 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ANTONIO CARRARO 3800, ANTONIO CARRARO 4300, ATLAS COPCO 32DD, +13 more.",
+    "sku_elimfilters": "EL82076"
   },
   {
     "part_number": "P502083",
@@ -29019,7 +29099,9 @@
       "SURE": [
         "SFO2400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 113 mm × L 171 mm. Efficiency 99% @ 48 micron (JIS D 1611). Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HITACHI UE005, HITACHI UE008, HITACHI UE011, +3 more.",
+    "sku_elimfilters": "EL82083"
   },
   {
     "part_number": "P502093",
@@ -29201,7 +29283,9 @@
         "51659",
         "57034"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 223 mm. Thread M32 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 3064, CATERPILLAR 3066, CATERPILLAR 320L, +3 more.",
+    "sku_elimfilters": "EL82093"
   },
   {
     "part_number": "P502107",
@@ -29829,7 +29913,9 @@
         "51339",
         "51374"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 88 mm. Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CLAAS JAGUAR 685SL, CLAAS JAGUAR 690SL, CLAAS JAGUAR 695SL, +21 more.",
+    "sku_elimfilters": "EL82107"
   },
   {
     "part_number": "P502180",
@@ -29980,7 +30066,9 @@
       "UNIVERSAL": [
         "O306"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 92 mm × L 160 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MITSUBISHI FD30, MITSUBISHI N-BH212.",
+    "sku_elimfilters": "EL82180"
   },
   {
     "part_number": "P502186",
@@ -30076,7 +30164,9 @@
       "WIX": [
         "59187"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 123 mm × L 138 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82186"
   },
   {
     "part_number": "P502191",
@@ -30277,7 +30367,9 @@
       "WOODGATE": [
         "WGL9167"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 122 mm × L 249 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HINO FS1K RANGER 50, HINO PGN272, HINO PGN274, +3 more.",
+    "sku_elimfilters": "EL82191"
   },
   {
     "part_number": "P502194",
@@ -30682,7 +30774,9 @@
       "WIX": [
         "51745"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 85 mm × L 143 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AIRMAN-HOKUETSU PDS185S, FURUKAWA FH-30, FURUKAWA FH-40, +23 more.",
+    "sku_elimfilters": "EL82194"
   },
   {
     "part_number": "P502203",
@@ -30861,7 +30955,9 @@
       "WIX": [
         "51399"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 79 mm × L 136 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KOMATSU FG10, KOMATSU FG14, KOMATSU FG15, +3 more.",
+    "sku_elimfilters": "EL82203"
   },
   {
     "part_number": "P502222",
@@ -31003,7 +31099,9 @@
       "VMC": [
         "LF502222"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 143 mm. Thread M30 x 2. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82222"
   },
   {
     "part_number": "P502223",
@@ -31151,7 +31249,9 @@
       "WOODGATE": [
         "WGL3367"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 194 mm × L 170 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82223"
   },
   {
     "part_number": "P502225",
@@ -31497,7 +31597,9 @@
         "51184",
         "51343"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 179 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: VALMET 802, VALMET 803.",
+    "sku_elimfilters": "EL82225"
   },
   {
     "part_number": "P502433",
@@ -32802,7 +32904,9 @@
         "57580",
         "92015E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 147 mm. Thread M24 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 8765, AGCO 9735, AGCO 9745, +126 more.",
+    "sku_elimfilters": "EL82433"
   },
   {
     "part_number": "P502458",
@@ -33271,7 +33375,9 @@
       "WIX": [
         "57106"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 101 mm. Efficiency 99% @ 39 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 236B, CATERPILLAR 236B2, CATERPILLAR 236B3, +40 more.",
+    "sku_elimfilters": "EL82458"
   },
   {
     "part_number": "P502464",
@@ -33446,7 +33552,9 @@
       "WIX": [
         "57240"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 115 mm × L 247 mm. Efficiency 99% @ 39 micron (ISO 16889). Thread 1 1/2-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAEWOO DH280, DAEWOO DX500LC, DAEWOO DX500LCG, +9 more.",
+    "sku_elimfilters": "EL82464"
   },
   {
     "part_number": "P502465",
@@ -33840,7 +33948,9 @@
       "WIX": [
         "57233"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 165 mm. Thread M22 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JCB 140X L SV, JCB 220XLC, JCB 3C-14, +32 more.",
+    "sku_elimfilters": "EL82465"
   },
   {
     "part_number": "P502476",
@@ -33979,7 +34089,9 @@
       "WIX": [
         "57411"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 150 mm. Efficiency 99% @ 39 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR DP45, CATERPILLAR DP60, CATERPILLAR DP70, +4 more.",
+    "sku_elimfilters": "EL82476"
   },
   {
     "part_number": "P502477",
@@ -34115,7 +34227,9 @@
       "HIFI": [
         "SO11075"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 124 mm × L 271 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR GEP550, PERKINS 2306C-E14TAG, PERKINS 2306C-E14TAG20, +5 more.",
+    "sku_elimfilters": "EL82477"
   },
   {
     "part_number": "P502503",
@@ -34845,7 +34959,9 @@
       "WIX": [
         "57151"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 165 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1-16 UN. Burst 100 psi (6.9 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD 6.7L, FORD F-150, FORD F-250, +6 more.",
+    "sku_elimfilters": "EL82503"
   },
   {
     "part_number": "P502549",
@@ -35128,7 +35244,9 @@
       "WIX": [
         "57075"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 115 mm. Efficiency 99% @ 21 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH JX1060C, CASE/CASE IH JX1075C, CASE/CASE IH JX65, +19 more.",
+    "sku_elimfilters": "EL82549"
   },
   {
     "part_number": "P502568",
@@ -35191,7 +35309,9 @@
       "LUBERFINER": [
         "LFP2300"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 89 mm. Efficiency 99% @ 38 micron (ISO 4548-12). Thread M16 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82568"
   },
   {
     "part_number": "P502596",
@@ -35532,7 +35652,9 @@
       "WIX": [
         "57469"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 237 mm. Efficiency 99% @ 21 micron (ISO 4548-12). Thread M30 x 2. Burst 99 psi (6.86 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: LIEBHERR A900C LITRONIC, LIEBHERR A900C ZW, LIEBHERR A904C, +29 more.",
+    "sku_elimfilters": "EL82596"
   },
   {
     "part_number": "P502597",
@@ -35808,7 +35930,9 @@
       "WIX": [
         "WL10007"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 150 mm. Efficiency 99% @ 33 micron (ISO 4548-12). Burst 99 psi (6.86 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ISUZU ELF NJR, ISUZU ELF NKR VD-NKR81, ISUZU ELF NLR, +17 more.",
+    "sku_elimfilters": "EL82597"
   },
   {
     "part_number": "P506077",
@@ -36023,7 +36147,9 @@
         "25.092.00",
         "2509200"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 70 mm × L 106.5 mm. Burst 100 psi (6.9 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER FL360 715, MITSUBISHI FB CANTER, MITSUBISHI FD CANTER, +14 more.",
+    "sku_elimfilters": "EL86077"
   },
   {
     "part_number": "P550006",
@@ -38370,7 +38496,9 @@
         "51333",
         "WL7114"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 149 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI TP45, BROYT X20, CASE/CASE IH 252, +249 more.",
+    "sku_elimfilters": "EL80006"
   },
   {
     "part_number": "P550008",
@@ -57117,7 +57245,9 @@
         "12185035150",
         "19446448310"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 136 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRIFULL 80.66, AGRIFULL 80.66DT, AGRIFULL 80.70, +1373 more.",
+    "sku_elimfilters": "EL80008"
   },
   {
     "part_number": "P550010",
@@ -60575,7 +60705,9 @@
         "WGL3319",
         "WGL720"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 160 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DYNAPAC WP20, FURUKAWA FH-40, FURUKAWA FH-60, +315 more.",
+    "sku_elimfilters": "EL80010"
   },
   {
     "part_number": "P550015",
@@ -61407,7 +61539,9 @@
       "WOODGATE": [
         "WGL9169"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 84 mm × L 143 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HITACHI UH02, HITACHI UH022, HITACHI UH025, +66 more.",
+    "sku_elimfilters": "EL80015"
   },
   {
     "part_number": "P550018",
@@ -61712,7 +61846,9 @@
       "WALGAHN-MOTOREN": [
         "00811245"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 106 mm × L 185 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FL-140, FURUKAWA FL-160, FURUKAWA FL-170, +16 more.",
+    "sku_elimfilters": "EL80018"
   },
   {
     "part_number": "P550020",
@@ -69774,7 +69910,9 @@
         "77010793",
         "793"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 140 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 13/16-16 UN. Burst 200 psi (13.8 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 100KW, ATLAS COPCO 25KW, ATLAS COPCO 35KW, +695 more.",
+    "sku_elimfilters": "EL80020"
   },
   {
     "part_number": "P550021",
@@ -71136,7 +71274,9 @@
         "57044",
         "59176"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 128 mm × L 160 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DONGFENG CWB536HMZ, FURUKAWA FL-335, KAWASAKI KSS 80ZII, +97 more.",
+    "sku_elimfilters": "EL80021"
   },
   {
     "part_number": "P550024",
@@ -72931,7 +73071,9 @@
       "YALE-TOWNE": [
         "2999100"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 132 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 13/16-16 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 175, ALLIS-CHALMERS 180, ALLIS-CHALMERS 185, +58 more.",
+    "sku_elimfilters": "EL80024"
   },
   {
     "part_number": "P550025",
@@ -74630,7 +74772,9 @@
         "YSC13231200",
         "YSC13231200C"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 13/16-16 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS F, ALLIS-CHALMERS F2, ALLIS-CHALMERS G, +48 more.",
+    "sku_elimfilters": "EL80025"
   },
   {
     "part_number": "P550034",
@@ -75913,7 +76057,9 @@
       "WOODGATE": [
         "WGL3385"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 130 mm × L 233 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FL-335, FURUKAWA FL-365, FURUKAWA FL-460, +97 more.",
+    "sku_elimfilters": "EL80034"
   },
   {
     "part_number": "P550035",
@@ -78002,7 +78148,9 @@
         "YSC14231200",
         "YSC14231200C"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 13/16-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET P30, CHEVROLET W4, DETROIT DIESEL 8.2L, +80 more.",
+    "sku_elimfilters": "EL80035"
   },
   {
     "part_number": "P550041",
@@ -85341,7 +85489,9 @@
         "WGL12109",
         "WGL121102"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 244 mm. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 455MD, ATLAS COPCO 485MD, ATLAS COPCO 515MD, +651 more.",
+    "sku_elimfilters": "EL80041"
   },
   {
     "part_number": "P550047",
@@ -87213,7 +87363,9 @@
         "OP111",
         "X111"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 86 mm. Efficiency 99% @ 45 micron (ISO 4572). Thread M18 x 1.5. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET EXPRESS, CHEVROLET P SERIES, CHEVROLET S-10, +14 more.",
+    "sku_elimfilters": "EL80047"
   },
   {
     "part_number": "P550050",
@@ -92437,7 +92589,9 @@
       "WOODGATE": [
         "WGL607"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 133 mm. Efficiency 99% @ 45 micron (SAE J806). Thread 5/8-18 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 175, ALLIS-CHALMERS 175G, ALLIS-CHALMERS ACC120, +475 more.",
+    "sku_elimfilters": "EL80050"
   },
   {
     "part_number": "P550051",
@@ -94693,7 +94847,9 @@
         "YSC16231200",
         "YSC16231200C"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 129 mm. Efficiency 99% @ 45 micron (ISO 4572). Thread M18 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET C & K SERIES PICKUP, CHEVROLET EXPRESS, CHEVROLET G SERIES, +36 more.",
+    "sku_elimfilters": "EL80051"
   },
   {
     "part_number": "P550052",
@@ -98557,7 +98713,9 @@
       "YALE-TOWNE": [
         "440044576"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 72 mm × L 137 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AVELING-BARFORD GN, AVELING-BARFORD VR4, BENFORD 1300P, +281 more.",
+    "sku_elimfilters": "EL80052"
   },
   {
     "part_number": "P550058",
@@ -98739,7 +98897,9 @@
       "VMC": [
         "LF550058"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 120 mm × L 225 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Cotton media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD 1618, HINO 306, HINO 321, +2 more.",
+    "sku_elimfilters": "EL80058"
   },
   {
     "part_number": "P550059",
@@ -98968,7 +99128,9 @@
         "WGL3383",
         "WGL3422"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 232 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FH-70, HITACHI EX122, HITACHI KH180, +1 more.",
+    "sku_elimfilters": "EL80059"
   },
   {
     "part_number": "P550062",
@@ -99149,7 +99311,9 @@
       "VMC": [
         "LF550062"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 144 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HITACHI KH100, HITACHI KH125, HITACHI KH125-2.",
+    "sku_elimfilters": "EL80062"
   },
   {
     "part_number": "P550066",
@@ -99326,7 +99490,9 @@
         "51599",
         "WL7058"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 128 mm × L 142 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HYUNDAI R290LC-3, HYUNDAI R290LC-7H, HYUNDAI R320LC-3, +1 more.",
+    "sku_elimfilters": "EL80066"
   },
   {
     "part_number": "P550067",
@@ -99967,7 +100133,9 @@
       "YUTANI": [
         "ME014833"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 126 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: GEHL CTL70, GMC D350, HITACHI EX40, +2 more.",
+    "sku_elimfilters": "EL80067"
   },
   {
     "part_number": "P550068",
@@ -100126,7 +100294,9 @@
       "VMC": [
         "LF550068"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 101 mm × L 235 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FL200, FURUKAWA FL200A, FURUKAWA FL220T, +2 more.",
+    "sku_elimfilters": "EL80068"
   },
   {
     "part_number": "P550073",
@@ -100336,7 +100506,9 @@
       "WOODGATE": [
         "WGL3436"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 114 mm × L 216 mm. Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: NISSAN CLA, NISSAN CLA83, NISSAN CMA, +2 more.",
+    "sku_elimfilters": "EL80073"
   },
   {
     "part_number": "P550077",
@@ -100540,7 +100712,9 @@
       "WIX": [
         "57045"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 100 mm × L 184 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HITACHI LX200, HITACHI LX200-1, KAWASAKI KLD 70II, +2 more.",
+    "sku_elimfilters": "EL80077"
   },
   {
     "part_number": "P550078",
@@ -101763,7 +101937,9 @@
         "OP42",
         "OP64"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 84 mm × L 144 mm. Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT 533, GEHL 3250, IHI SD2200, +2 more.",
+    "sku_elimfilters": "EL80078"
   },
   {
     "part_number": "P550080",
@@ -101927,7 +102103,9 @@
       "VMC": [
         "LF550080"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 170 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HINO 121, HINO 141, HINO 721P, +2 more.",
+    "sku_elimfilters": "EL80080"
   },
   {
     "part_number": "P550086",
@@ -102212,7 +102390,9 @@
         "WGL3362",
         "WGL3664"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 167 mm. Thread 1 1/8-16 UN. Burst 145 psi (10 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO QAS125, ATLAS COPCO QAS150, BEML BD65, +2 more.",
+    "sku_elimfilters": "EL80086"
   },
   {
     "part_number": "P550087",
@@ -102434,7 +102614,9 @@
       "WOODGATE": [
         "WGL688"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 128 mm × L 231 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KATO HD1100Q, KATO HD1500G.",
+    "sku_elimfilters": "EL80087"
   },
   {
     "part_number": "P550092",
@@ -103658,7 +103840,9 @@
         "290318AS",
         "568595"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 151 mm. Efficiency 99% @ 25 micron (SAE J806). Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AKERMAN 11, AKERMAN 11B, AKERMAN 14, +2 more.",
+    "sku_elimfilters": "EL80092"
   },
   {
     "part_number": "P550117",
@@ -106034,7 +106218,9 @@
         "30782201",
         "M7822"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 203 mm. Efficiency 99% @ 20 micron (SAE J1858). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 100, ALLIS-CHALMERS 1B, ALLIS-CHALMERS 54, +2 more.",
+    "sku_elimfilters": "EL80117"
   },
   {
     "part_number": "P550132",
@@ -108017,7 +108203,9 @@
         "6951388",
         "6955303"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 226 mm. Efficiency 99% @ 30 micron (SAE J1858). Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 10000, ALLIS-CHALMERS 100C, ALLIS-CHALMERS 11, +2 more.",
+    "sku_elimfilters": "EL80132"
   },
   {
     "part_number": "P550141",
@@ -108652,7 +108840,9 @@
       "XSV": [
         "OP141"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 90 mm × L 145 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DYNAHOE 140, DYNAHOE A, GMC 1500.",
+    "sku_elimfilters": "EL80141"
   },
   {
     "part_number": "P550147",
@@ -109093,7 +109283,9 @@
       "WOODGATE": [
         "WGL525"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 111 mm × L 146 mm. Efficiency 99% @ 40 micron (SAE J1858). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHAMPION ROAD D581, CHICAGO PNEUMATIC 160RO-1, CHICAGO PNEUMATIC 175RG-1, +2 more.",
+    "sku_elimfilters": "EL80147"
   },
   {
     "part_number": "P550152",
@@ -109423,7 +109615,9 @@
       "WOODGATE": [
         "WGL739"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 147 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 200, ALLIS-CHALMERS 200D, ALLIS-CHALMERS 2800 MKII, +1 more.",
+    "sku_elimfilters": "EL80152"
   },
   {
     "part_number": "P550154",
@@ -109676,7 +109870,9 @@
       "WOODGATE": [
         "WGL3308"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 109 mm. Efficiency 99% @ 45 micron (SAE J806). Thread 5/8-18 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 100, CASE/CASE IH 105, CASE/CASE IH 130, +2 more.",
+    "sku_elimfilters": "EL80154"
   },
   {
     "part_number": "P550157",
@@ -109982,7 +110178,9 @@
       "WOODGATE": [
         "WGL3360"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 141 mm × L 152 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1 1/8-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD 1114, FORD 6.6L, FORD 7610, +2 more.",
+    "sku_elimfilters": "EL80157"
   },
   {
     "part_number": "P550162",
@@ -111722,7 +111920,9 @@
         "YMR000933",
         "YMR001182"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 81 mm × L 86 mm. Efficiency 99% @ 39 micron (ISO 16889). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AMMANN AK12, AMMANN AK16, AMMANN AK16K, +2 more.",
+    "sku_elimfilters": "EL80162"
   },
   {
     "part_number": "P550165",
@@ -112298,7 +112498,9 @@
       "WOODGATE": [
         "WGL546"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 79 mm × L 230 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 4800G, CATERPILLAR 630A, CATERPILLAR D11000, +2 more.",
+    "sku_elimfilters": "EL80165"
   },
   {
     "part_number": "P550166",
@@ -112671,7 +112873,9 @@
         "WGL3315",
         "WGL3473"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 138 mm. Efficiency 99% @ 45 micron (SAE J1858). Thread M22 x 1.5. Burst 80 psi (5.5 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRIFULL C345C, AGRIFULL C345DT, AGRIFULL C350C, +2 more.",
+    "sku_elimfilters": "EL80166"
   },
   {
     "part_number": "P550183",
@@ -114029,7 +114233,9 @@
       "YALE-TOWNE": [
         "440042281"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74 mm × L 152.3 mm. Efficiency 99% @ 36 micron (ISO 4572). Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 705C, ALLIS-CHALMERS 706C, AVELING-BARFORD RD05, +2 more.",
+    "sku_elimfilters": "EL80183"
   },
   {
     "part_number": "P550184",
@@ -114898,7 +115104,9 @@
       "YALE-TOWNE": [
         "515179801"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 72 mm × L 114 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 160, ALLIS-CHALMERS 175, ALLIS-CHALMERS 175G, +1 more.",
+    "sku_elimfilters": "EL80184"
   },
   {
     "part_number": "P550188",
@@ -115361,7 +115569,9 @@
       "WORTHINGTON": [
         "170200"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 138 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 13/16-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 653, ALLIS-CHALMERS TR200, ALLIS-CHALMERS TS200, +2 more.",
+    "sku_elimfilters": "EL80188"
   },
   {
     "part_number": "P550194",
@@ -115658,7 +115868,9 @@
       "WOODGATE": [
         "WGL727"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 144 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 5/8-18 UN. Burst 80 psi (5.5 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS FD7, CASE/CASE IH P104, DITCH WITCH R60, +2 more.",
+    "sku_elimfilters": "EL80194"
   },
   {
     "part_number": "P550203",
@@ -117219,7 +117431,9 @@
         "K01741A",
         "K61741A"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 99 mm × L 111 mm. Efficiency 99% @ 20 micron (ISO 4548-12). Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 1BD38, ALLIS-CHALMERS 2BD77, ALLIS-CHALMERS 2BDMR77, +2 more.",
+    "sku_elimfilters": "EL80203"
   },
   {
     "part_number": "P550220",
@@ -117383,7 +117597,9 @@
       "WIX": [
         "92053E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83.5 mm × L 107 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: SCANIA - IRIZAR 11, 12 & 18.",
+    "sku_elimfilters": "EL80220"
   },
   {
     "part_number": "P550226",
@@ -117863,7 +118079,9 @@
         "WGL3480",
         "WGL3481"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 112 mm × L 145 mm. Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI 2200, AEBI 2500, AEBI 5000, +2 more.",
+    "sku_elimfilters": "EL80226"
   },
   {
     "part_number": "P550227",
@@ -119756,7 +119974,9 @@
       "YALE-TOWNE": [
         "103144"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 84 mm × L 100 mm. Efficiency 99% @ 45 micron (ISO 4572). Thread 3/4-16 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOLENS 180, BOLENS 1886, BOLENS 1886S, +2 more.",
+    "sku_elimfilters": "EL80227"
   },
   {
     "part_number": "P550242",
@@ -120057,7 +120277,9 @@
       "YUTANI": [
         "ME014838"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 94 mm. Thread M18 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KATO HD300GS1, KATO HD400SEV, KATO HD400V2, +2 more.",
+    "sku_elimfilters": "EL80242"
   },
   {
     "part_number": "P550286",
@@ -120331,7 +120553,9 @@
       "WOODGATE": [
         "WGL3416"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97.3 mm × L 114.7 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MAC CH, MAC CHR, MACK CH613, +1 more.",
+    "sku_elimfilters": "EL80286"
   },
   {
     "part_number": "P550287",
@@ -120519,7 +120743,9 @@
         "557117",
         "57117"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 98 mm × L 116 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: IRISBUS 12, IRISBUS GTC, IRISBUS GTX, +2 more.",
+    "sku_elimfilters": "EL80287"
   },
   {
     "part_number": "P550299",
@@ -121333,7 +121559,9 @@
         "WGL697",
         "WGL787"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT 2000 RTF, BOBCAT 843, CARRIER TRANSICOLD VECTOR, +2 more.",
+    "sku_elimfilters": "EL80299"
   },
   {
     "part_number": "P550315",
@@ -121791,7 +122019,9 @@
         "WGL9070",
         "WGL947X"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 84 mm × L 191 mm. Efficiency 99% @ 40 micron (SAE J806). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AUTOSAN LIDER, CLAAS DOMINATOR 108SL, CLAAS DOMINATOR 108VX, +1 more.",
+    "sku_elimfilters": "EL80315"
   },
   {
     "part_number": "P550317",
@@ -122069,7 +122299,9 @@
       "WIX": [
         "92130E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 211 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ASKAM KAMYON SUPER TL, ASKAM KAMYON SUPER TS, ATLAS COPCO 106DD, +2 more.",
+    "sku_elimfilters": "EL80317"
   },
   {
     "part_number": "P550318",
@@ -122518,7 +122750,9 @@
         "WGL9202",
         "WGL9207"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 93 mm. Efficiency 99% @ 17 micron (ISO 4548-12). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRALE TX1100, AKERMAN H11B, AKERMAN H16C, +1 more.",
+    "sku_elimfilters": "EL80318"
   },
   {
     "part_number": "P550319",
@@ -122806,7 +123040,9 @@
         "51825",
         "51825E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 203 mm. Efficiency 99% @ 23 micron (SAE J806). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DETROIT DIESEL SERIES 40, INTERNATIONAL 2000 SERIES, INTERNATIONAL 4900, +2 more.",
+    "sku_elimfilters": "EL80319"
   },
   {
     "part_number": "P550335",
@@ -124496,7 +124732,9 @@
       "ZINGA": [
         "BE10-18"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 86 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1274C, AGCO 1718H, AGCO 413H, +2 more.",
+    "sku_elimfilters": "EL80335"
   },
   {
     "part_number": "P550341",
@@ -124802,7 +125040,9 @@
       "WOODGATE": [
         "WGL13145"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 141 mm × L 310 mm. Thread 1 1/2-16 UN. Burst 59 psi (4.1 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOVA FHD10-300, BOVA FHD12-360, BOVA FHD12-370, +2 more.",
+    "sku_elimfilters": "EL80341"
   },
   {
     "part_number": "P550342",
@@ -125208,7 +125448,9 @@
       "WOODGATE": [
         "WGL9020"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 230 mm. Thread M30 x 2. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS FL14E, ALLIS-CHALMERS FR15B, ASTRA 42.38, +2 more.",
+    "sku_elimfilters": "EL80342"
   },
   {
     "part_number": "P550356",
@@ -125404,7 +125646,9 @@
       "VMC": [
         "LF550356"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 139 mm × L 168 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M60 x 3. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD CARGO 815E, FORD CARGO 816.",
+    "sku_elimfilters": "EL80356"
   },
   {
     "part_number": "P550362",
@@ -125870,7 +126114,9 @@
         "40611302",
         "MU61130"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 178 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1056, CASE/CASE IH 1056XL, CASE/CASE IH 4240, +2 more.",
+    "sku_elimfilters": "EL80362"
   },
   {
     "part_number": "P550367",
@@ -126196,7 +126442,9 @@
       "WOODGATE": [
         "WGL3640"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 136 mm × L 308 mm. Efficiency 99% @ 21 micron (SAE J1858). Thread M36 x 1.5. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 9455, AGCO 9815, CLAAS LEXION 440, +1 more.",
+    "sku_elimfilters": "EL80367"
   },
   {
     "part_number": "P550371",
@@ -126621,7 +126869,9 @@
       "YANMAR": [
         "17214673710"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 204 mm. Efficiency 99% @ 17 micron (SAE J1858). Thread 1 1/2-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DOOSAN DL200, DOOSAN DL250, DOOSAN DL250TC, +2 more.",
+    "sku_elimfilters": "EL80371"
   },
   {
     "part_number": "P550378",
@@ -126872,7 +127122,9 @@
       "WOODGATE": [
         "WGL3514"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 110 mm × L 192 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR DP80, CATERPILLAR DP90, FURUKAWA FL-270, +2 more.",
+    "sku_elimfilters": "EL80378"
   },
   {
     "part_number": "P550379",
@@ -127118,7 +127370,9 @@
         "57555",
         "59165"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 180 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HINO 700 SERIES E5 FS1E FS2844, HINO 700 SERIES E5 FS1E FS2848, HINO 700 SERIES E5 FY1E FY3248, +2 more.",
+    "sku_elimfilters": "EL80379"
   },
   {
     "part_number": "P550380",
@@ -127223,7 +127477,9 @@
       "VMC": [
         "LF550380"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 128 mm × L 201 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL80380"
   },
   {
     "part_number": "P550382",
@@ -127432,7 +127688,9 @@
         "59002",
         "59149"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 165 mm × L 280 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ISUZU FSR11HA, ISUZU FSR11KTRA, ISUZU FSR12FRA, +2 more.",
+    "sku_elimfilters": "EL80382"
   },
   {
     "part_number": "P550383",
@@ -127860,7 +128118,9 @@
       "WORLDPARTS": [
         "W27384"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 105 mm × L 80 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M20 x 1.5. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET NPR, FORD ECONOVAN, ISUZU NKR575, +1 more.",
+    "sku_elimfilters": "EL80383"
   },
   {
     "part_number": "P550389",
@@ -128038,7 +128298,9 @@
       "WESFIL": [
         "WZ333NM"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 100 mm. Thread M22 x 1.5. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET NPR, ISUZU KCNPS58, ISUZU NKR575, +2 more.",
+    "sku_elimfilters": "EL80389"
   },
   {
     "part_number": "P550393",
@@ -128224,7 +128486,9 @@
         "51747",
         "51808"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 202 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MERCEDES-BENZ OM 366 LA.",
+    "sku_elimfilters": "EL80393"
   },
   {
     "part_number": "P550396",
@@ -128775,7 +129039,9 @@
         "57131",
         "PC314P"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 60 mm × L 99 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CARRIER TRANSICOLD 250CM, MERCEDES-BENZ OF 1519, MERCEDES-BENZ U1000, +1 more.",
+    "sku_elimfilters": "EL80396"
   },
   {
     "part_number": "P550400",
@@ -129775,7 +130041,9 @@
         "OP195",
         "X195"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 120 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 720, ARIENS GT18, BADGER BUCKY, +1 more.",
+    "sku_elimfilters": "EL80400"
   },
   {
     "part_number": "P550406",
@@ -130028,7 +130296,9 @@
         "59191",
         "WL7154"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 153 mm. Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER FL360, HINO PFB111, HINO PFB112, +2 more.",
+    "sku_elimfilters": "EL80406"
   },
   {
     "part_number": "P550409",
@@ -130220,7 +130490,9 @@
         "51725",
         "52947"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 150 mm. Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MAZDA T4000.",
+    "sku_elimfilters": "EL80409"
   },
   {
     "part_number": "P550412",
@@ -130376,7 +130648,9 @@
       "WIX": [
         "59233"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 92 mm × L 125 mm. Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MAZDA T4000, MAZDA T4600.",
+    "sku_elimfilters": "EL80412"
   },
   {
     "part_number": "P550420",
@@ -130611,7 +130885,9 @@
         "51376",
         "51798"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 110 mm × L 162 mm. Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRIFULL 45, AGRIFULL 45DT, AGRIFULL 50, +1 more.",
+    "sku_elimfilters": "EL80420"
   },
   {
     "part_number": "P550421",
@@ -130839,7 +131115,9 @@
       "WOODGATE": [
         "WGL3603"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 252 mm. Efficiency 99% @ 50 micron (JIS D 1611). Thread 1 3/8-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HITACHI CX1100, HITACHI CX1800, HITACHI EX1000, +1 more.",
+    "sku_elimfilters": "EL80421"
   },
   {
     "part_number": "P550422",
@@ -131164,7 +131442,9 @@
       "YANMAR": [
         "123672-35151"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 102 mm × L 150 mm. Efficiency 99% @ 40 micron (JIS D 1611). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1500TX, FURUKAWA FL-120-2, FURUKAWA FX-100-2, +2 more.",
+    "sku_elimfilters": "EL80422"
   },
   {
     "part_number": "P550425",
@@ -131506,7 +131786,9 @@
       "WOODGATE": [
         "WGL3654"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 263 mm. Efficiency 99% @ 21 micron (SAE J806). Thread 1 3/8-16 UN. Burst 120 psi (8.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 7400, HEULIEZ BUS GX217, HEULIEZ BUS GX417, +2 more.",
+    "sku_elimfilters": "EL80425"
   },
   {
     "part_number": "P550428",
@@ -131800,7 +132082,9 @@
         "WGH7936",
         "WGL3970"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1254, AMMANN ASC110, AMMANN ASC130, +2 more.",
+    "sku_elimfilters": "EL80428"
   },
   {
     "part_number": "P550451",
@@ -131993,7 +132277,9 @@
         "57711",
         "92023E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 82 mm × L 200 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DEUTZ-FAHR AGROPLUS 100, DEUTZ-FAHR AGROTRON 105, DEUTZ-FAHR AGROTRON 106, +2 more.",
+    "sku_elimfilters": "EL80451"
   },
   {
     "part_number": "P550452",
@@ -132210,7 +132496,9 @@
         "92011E",
         "92172E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 140 mm × L 302 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M42 x 2. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAF 85CF.340, DAF 85CF.380, DAF 85CF.430, +1 more.",
+    "sku_elimfilters": "EL80452"
   },
   {
     "part_number": "P550453",
@@ -132486,7 +132774,9 @@
         "92041E",
         "92173E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 299 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BELL B35D, BELL B40D, CLAAS JAGUAR 890, +2 more.",
+    "sku_elimfilters": "EL80453"
   },
   {
     "part_number": "P550484",
@@ -133337,7 +133627,9 @@
         "WGL558",
         "WGL740"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 101 mm × L 236 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO PT900CD, AVELING-BARFORD CENTAUR 35, AVELING-BARFORD CENTAUR 40, +2 more.",
+    "sku_elimfilters": "EL80484"
   },
   {
     "part_number": "P550485",
@@ -134004,7 +134296,9 @@
         "WGH9098",
         "WGL519"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 129 mm × L 227 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 1200, ATLAS COPCO 900, ATLAS COPCO PT1200, +2 more.",
+    "sku_elimfilters": "EL80485"
   },
   {
     "part_number": "P550490",
@@ -134270,7 +134564,9 @@
         "51791E",
         "51791XE"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 260 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 1 1/8-16 UN. Burst 145 psi (10 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: SANTAL 5010, SCANIA - IRIZAR 11, 12 & 18.",
+    "sku_elimfilters": "EL80490"
   },
   {
     "part_number": "P550493",
@@ -134561,7 +134857,9 @@
       "WIX": [
         "92126E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 200 mm × L 255 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 004, AG CHEM EQUIPMENT 1004, AG CHEM EQUIPMENT 1253, +2 more.",
+    "sku_elimfilters": "EL80493"
   },
   {
     "part_number": "P550505",
@@ -135161,7 +135459,9 @@
         "OP-123",
         "X5288"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 75 mm × L 113 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 13/16-16 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET AVALANCHE, CHEVROLET COLORADO.",
+    "sku_elimfilters": "EL80505"
   },
   {
     "part_number": "P550507",
@@ -135451,7 +135751,9 @@
       "YAMAHA": [
         "YSC-10231-20-0C"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 96 mm × L 78 mm. Efficiency 99% @ 22 micron (SAE HS806). Thread 13/16-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET AVALANCHE.",
+    "sku_elimfilters": "EL80507"
   },
   {
     "part_number": "P550512",
@@ -135641,7 +135943,9 @@
         "51799",
         "51799MP"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 135 mm × L 307 mm. Efficiency 99% @ 21 micron (ISO 16889). Thread M36 x 1.5. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AURY NHL NTE330, MTU 12V4000, XCMG XDE130.",
+    "sku_elimfilters": "EL80512"
   },
   {
     "part_number": "P550516",
@@ -136444,7 +136748,9 @@
       "YALE-TOWNE": [
         "6951125"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 127 mm × L 244 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1253, AG CHEM EQUIPMENT 1603, AG CHEM EQUIPMENT 2505, +2 more.",
+    "sku_elimfilters": "EL80516"
   },
   {
     "part_number": "P550518",
@@ -136697,7 +137003,9 @@
         "57202",
         "57202MP"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 136 mm. Efficiency 99% @ 20 micron (SAE HS806). Thread 13/16-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET EXPRESS.",
+    "sku_elimfilters": "EL80518"
   },
   {
     "part_number": "P550519",
@@ -136912,7 +137220,9 @@
       "WIX": [
         "51791"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 260 mm. Efficiency 99% @ 38 micron (ISO 4548-12). Thread 1 1/8-16 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET KODIAK, FAW J6P, FODEN A3-6R, +1 more.",
+    "sku_elimfilters": "EL80519"
   },
   {
     "part_number": "P550520",
@@ -137192,7 +137502,9 @@
         "92095E",
         "WL57037"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 175 mm. Efficiency 99% @ 24 micron (SAE J806). Thread M27 x 2. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI 5000, AEBI 5500, AGCO RT100, +2 more.",
+    "sku_elimfilters": "EL80520"
   },
   {
     "part_number": "P550528",
@@ -137867,7 +138179,9 @@
         "57314MP",
         "57323"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 181 mm. Efficiency 99% @ 25 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD E-SERIES VAN, FORD EXCURSION, FORD F-250, +13 more.",
+    "sku_elimfilters": "EL80528"
   },
   {
     "part_number": "P550562",
@@ -138829,7 +139143,9 @@
       "WOODGATE": [
         "WGL3744"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 211 mm. Efficiency 99% @ 40 micron (SAE J806). Thread 1-12 UN. Burst 73 psi (5 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FIAT 500, JOHN DEERE 655C, JOHN DEERE 655C II, +86 more.",
+    "sku_elimfilters": "EL80562"
   },
   {
     "part_number": "P550564",
@@ -139476,7 +139792,9 @@
         "WL7240",
         "WL7470"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 64 mm × L 115 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER SPRINTER 3500, KOMATSU 510, KOMATSU 510B, +26 more.",
+    "sku_elimfilters": "EL80564"
   },
   {
     "part_number": "P550580",
@@ -143751,7 +144069,9 @@
       "YUGO": [
         "1612313"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 96 mm. Efficiency 99% @ 45 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 540, BADGER 6035, BADGER 8045, +354 more.",
+    "sku_elimfilters": "EL80580"
   },
   {
     "part_number": "P550595",
@@ -145217,7 +145537,9 @@
         "57307",
         "57777"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 297 mm. Efficiency 99% @ 22 micron (ISO 4548-12). Thread M52 x 1.5. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AMERICAN AUGERS DD10, HITACHI LX230-3, JOHN DEERE 370E, +73 more.",
+    "sku_elimfilters": "EL80595"
   },
   {
     "part_number": "P550596",
@@ -147950,7 +148272,9 @@
         "557259",
         "57259"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 205 mm. Efficiency 99% @ 25 micron (ISO 4548-12). Thread 1 1/2-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH CX245D SR, CASE/CASE IH CX490D LC, CASE/CASE IH CX500D LC ME, +273 more.",
+    "sku_elimfilters": "EL80596"
   },
   {
     "part_number": "P550597",
@@ -148448,7 +148772,9 @@
         "119770-90620",
         "11977090620"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 105 mm × L 122 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M24 x 1.5. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: TOYOTA PRADO, YANMAR 6LPA DTP.",
+    "sku_elimfilters": "EL80597"
   },
   {
     "part_number": "P550598",
@@ -148765,7 +149091,9 @@
       "XSV": [
         "OP123"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74 mm × L 123 mm. Thread 13/16-16 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: GMC 1500, GMC 2500, GMC 3500 SERIES, +3 more.",
+    "sku_elimfilters": "EL80598"
   },
   {
     "part_number": "P550599",
@@ -149504,7 +149832,9 @@
       "XSV": [
         "OP-33"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 110 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 13/16-16 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 375, GMC 1500, GMC 2500, +4 more.",
+    "sku_elimfilters": "EL80599"
   },
   {
     "part_number": "P550613",
@@ -150550,7 +150880,9 @@
         "6953100",
         "73211"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 189 mm. Efficiency 99% @ 48 micron (ISO 4548-12). Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 004, AG CHEM EQUIPMENT 1004, AG CHEM EQUIPMENT 2004, +63 more.",
+    "sku_elimfilters": "EL80613"
   },
   {
     "part_number": "P550614",
@@ -150738,7 +151070,9 @@
         "51644",
         "551644"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 813 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: WAUKESHA L5108, WAUKESHA L7042GL, WAUKESHA P9390.",
+    "sku_elimfilters": "EL80614"
   },
   {
     "part_number": "P550636",
@@ -151050,7 +151384,9 @@
       "WOODGATE": [
         "WGL4045"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 165 mm × L 746 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: EMD 645, EMD ME12E6, EMD ME12F7B, +12 more.",
+    "sku_elimfilters": "EL80636"
   },
   {
     "part_number": "P550639",
@@ -153962,7 +154298,9 @@
       "WOODGATE": [
         "WGL3977"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 113 mm × L 209 mm. Efficiency 99% @ 12 micron (ISO 4548-12). Thread M30 x 2. Burst 145 psi (10 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ASTRA 42.33, ASTRA 42.36, ASTRA 42.40, +266 more.",
+    "sku_elimfilters": "EL80639"
   },
   {
     "part_number": "P550671",
@@ -157157,7 +157495,9 @@
       "WOODGATE": [
         "WGL670SC"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 119 mm × L 227 mm. Efficiency 99% @ 23 micron (SAE J1858). Thread 1 1/2-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CLARK 55B, COMPAIR 600, DEMAG H 135 S, +269 more.",
+    "sku_elimfilters": "EL80671"
   },
   {
     "part_number": "P550707",
@@ -157648,7 +157988,9 @@
       "WOODGATE": [
         "WGL3399"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 140 mm. Efficiency 99% @ 48 micron (ISO 4572). Thread M30 x 1.5. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MUSTANG 320, TOYOTA 02FDA30, TOYOTA 23, +28 more.",
+    "sku_elimfilters": "EL80707"
   },
   {
     "part_number": "P550708",
@@ -158204,7 +158546,9 @@
       "WOODGATE": [
         "WGL3405"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 167 mm. Efficiency 99% @ 45 micron (ISO 4572). Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KOMATSU BR300S, KOMATSU D57S-1B, KOMATSU GD505A-3, +44 more.",
+    "sku_elimfilters": "EL80708"
   },
   {
     "part_number": "P550710",
@@ -158939,7 +159283,9 @@
       "ZETOR": [
         "0040571203"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 95 mm. Efficiency 99% @ 40 micron (ISO 4572). Thread 1-12 UN. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: KAESER 120, KAWASAKI KSS 50Z, KOMATSU 4D95, +35 more.",
+    "sku_elimfilters": "EL80710"
   },
   {
     "part_number": "P550711",
@@ -159949,7 +160295,9 @@
       "XSV": [
         "OP2821A"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 82 mm × L 99 mm. Efficiency 99% @ 45 micron (ISO 4572). Thread 3/4-16 UN. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1845S, CUMMINS C25D5P, CUMMINS C40D5P, +37 more.",
+    "sku_elimfilters": "EL80711"
   },
   {
     "part_number": "P550712",
@@ -160195,7 +160543,9 @@
       "WIX": [
         "51423"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107.7 mm × L 205.2 mm. Efficiency 99% @ 35 micron (ISO 4572). Thread M30 x 2. Burst 200 psi (13.8 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 945, ALLIS-CHALMERS FD30, ALLIS-CHALMERS FD30B, +5 more.",
+    "sku_elimfilters": "EL80712"
   },
   {
     "part_number": "P550715",
@@ -160391,7 +160741,9 @@
       "WIX": [
         "51391"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 82 mm × L 112 mm. Efficiency 99% @ 40 micron (ISO 4572). Thread 3/4-16 UN. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MASSEY FERGUSON MF1030DI, MASSEY FERGUSON MF205.",
+    "sku_elimfilters": "EL80715"
   },
   {
     "part_number": "P550719",
@@ -161695,7 +162047,9 @@
       "WOODGATE": [
         "WGL3415"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 107 mm. Efficiency 99% @ 40 micron (ISO 4572). Thread 1-12 UN. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 2400A, CASE/CASE IH 2400B, CASE/CASE IH 240A, +106 more.",
+    "sku_elimfilters": "EL80719"
   },
   {
     "part_number": "P550726",
@@ -163739,7 +164093,9 @@
         "129150-35151",
         "129150-35152"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 91 mm. Efficiency 99% @ 40 micron (ISO 4572). Thread M20 x 1.5. Burst 75 psi (5.2 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 235, CASE/CASE IH 245, CASE/CASE IH 275, +126 more.",
+    "sku_elimfilters": "EL80726"
   },
   {
     "part_number": "P550750",
@@ -171496,7 +171852,9 @@
         "6851820",
         "6953369"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 196 mm × L 383 mm. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 2505, AG CHEM EQUIPMENT 3004, AG CHEM EQUIPMENT A-4500, +592 more.",
+    "sku_elimfilters": "EL80750"
   },
   {
     "part_number": "P550751",
@@ -173029,7 +173387,9 @@
       "WIX": [
         "51750"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 196 mm × L 383 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 150C, ALLIS-CHALMERS 200C, ALLIS-CHALMERS 460, +143 more.",
+    "sku_elimfilters": "EL80751"
   },
   {
     "part_number": "P550758",
@@ -173582,7 +173942,9 @@
       "WIX": [
         "57076"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M24 x 1.5. Burst 145 psi (10 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AHLMANN AX100, AHLMANN AX70, AHLMANN AX85, +45 more.",
+    "sku_elimfilters": "EL80758"
   },
   {
     "part_number": "P550761",
@@ -175929,7 +176291,9 @@
         "92038E",
         "WL57215"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 209 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BELL B25D, BELL B30D, CLAAS DOMINATOR 128VX, +225 more.",
+    "sku_elimfilters": "EL80761"
   },
   {
     "part_number": "P550763",
@@ -176368,7 +176732,9 @@
         "92021E",
         "92022E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 193 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FAUN 50-3, MERCEDES-BENZ ATEGO 1726, MERCEDES-BENZ ATEGO 2730, +18 more.",
+    "sku_elimfilters": "EL80763"
   },
   {
     "part_number": "P550765",
@@ -179321,7 +179687,9 @@
         "57696",
         "92026E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 144 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ERF (E.R.F.) 12.36 DB2, ERF (E.R.F.) 12.36 MTP4, ERF (E.R.F.) 12.36 ST, +322 more.",
+    "sku_elimfilters": "EL80765"
   },
   {
     "part_number": "P550766",
@@ -180567,7 +180935,9 @@
         "51732",
         "WL7036"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 137 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AHLMANN AF18, BELL B25C, CLAAS DOMINATOR 68, +90 more.",
+    "sku_elimfilters": "EL80766"
   },
   {
     "part_number": "P550767",
@@ -181025,7 +181395,9 @@
       "WIX": [
         "92124E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 131 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MERCEDES-BENZ 1114, MERCEDES-BENZ 1117, MERCEDES-BENZ 1117A, +27 more.",
+    "sku_elimfilters": "EL80767"
   },
   {
     "part_number": "P550768",
@@ -182896,7 +183268,9 @@
         "92040E",
         "WL57214"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 150.4 mm. Efficiency 99% @ 21 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 236MD, ATLAS COPCO 286MD, ATLAS COPCO XAHS236MD, +171 more.",
+    "sku_elimfilters": "EL80768"
   },
   {
     "part_number": "P550769",
@@ -184100,7 +184474,9 @@
         "57213",
         "57213E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 248 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CLAAS JAGUAR 930, CLAAS JAGUAR 970, CLAAS JAGUAR 980, +79 more.",
+    "sku_elimfilters": "EL80769"
   },
   {
     "part_number": "P550776",
@@ -185425,7 +185801,9 @@
         "129150-35151",
         "129150-35152"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 80 mm × L 80 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: GENIE GS-3268RT, KUBOTA 21TLB, KUBOTA B2441, +50 more.",
+    "sku_elimfilters": "EL80776"
   },
   {
     "part_number": "P550777",
@@ -198215,7 +198593,9 @@
       "ZETTELMEYER": [
         "2288144"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 22 micron (SAE J1858). Thread 1 3/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1603, AG CHEM EQUIPMENT 1664, AG CHEM EQUIPMENT 1903, +909 more.",
+    "sku_elimfilters": "EL80777"
   },
   {
     "part_number": "P550779",
@@ -201527,7 +201907,9 @@
         "57750",
         "57750S"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 155 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M92 x 2.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BROCE BROOM RJ350, CLAAS ARES 546, CLAAS ARES 556, +324 more.",
+    "sku_elimfilters": "EL80779"
   },
   {
     "part_number": "P550788",
@@ -201756,7 +202138,9 @@
         "51801",
         "57604"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 135 mm × L 244 mm. Efficiency 99% @ 21 micron (ISO 16889). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 385C, CATERPILLAR 772, CATERPILLAR 834H, +5 more.",
+    "sku_elimfilters": "EL80788"
   },
   {
     "part_number": "P550794",
@@ -204503,7 +204887,9 @@
       "WOODGATE": [
         "WGL9177"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 83 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M22 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET AVALANCHE, CHEVROLET COLORADO, CHEVROLET EXPRESS, +33 more.",
+    "sku_elimfilters": "EL80794"
   },
   {
     "part_number": "P550812",
@@ -205551,7 +205937,9 @@
         "57370",
         "92129E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 113 mm × L 220 mm. Efficiency 99% @ 38 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOVA FHD2-122, BOVA FHD2-129, BOVA FHD2-131, +72 more.",
+    "sku_elimfilters": "EL80812"
   },
   {
     "part_number": "P550820",
@@ -208495,7 +208883,9 @@
         "57291",
         "92093E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 120.5 mm × L 204.5 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AYATS BUSES ATLAS 2, ERF (E.R.F.) 10.35 DB, ERF (E.R.F.) 10.35 DT, +297 more.",
+    "sku_elimfilters": "EL80820"
   },
   {
     "part_number": "P550832",
@@ -209158,7 +209548,9 @@
       "WOODGATE": [
         "WGL692"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 200 mm. Thread 13/16-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: GMC 1500, GMC 2500, GMC 3500 SERIES, +16 more.",
+    "sku_elimfilters": "EL850832"
   },
   {
     "part_number": "P550835",
@@ -210487,7 +210879,9 @@
       "WIX": [
         "57382"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 16 micron (ISO 4548-12). Thread 1 1/8-12 UN. Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER CLASSIC, FREIGHTLINER CLASSIC XL, FREIGHTLINER COLUMBIA, +44 more.",
+    "sku_elimfilters": "EL80835"
   },
   {
     "part_number": "P550905",
@@ -211354,7 +211748,9 @@
         "57291",
         "92161E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 120.5 mm × L 201.5 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DENNIS 10N, DENNIS 13W, DENNIS 14N, +86 more.",
+    "sku_elimfilters": "EL80905"
   },
   {
     "part_number": "P550909",
@@ -212930,7 +213326,9 @@
       "WOODGATE": [
         "WGL3713"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 176 mm. Efficiency 99% @ 23 micron (ISO 4548-12). Thread 1-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CUMMINS QSB4.5, DAEWOO DH150LC-7, DAEWOO DH150W-7, +137 more.",
+    "sku_elimfilters": "EL80909"
   },
   {
     "part_number": "P550910",
@@ -212994,7 +213392,9 @@
       "HIFI": [
         "SO10099"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 163 mm × L 764 mm.  Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL80910"
   },
   {
     "part_number": "P550920",
@@ -213767,7 +214167,9 @@
       "WIX": [
         "57325"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 200 mm. Efficiency 99% @ 26 micron (ISO 16889). Thread M24 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO XAVS 237, CATERPILLAR 120M, CATERPILLAR 12K, +78 more.",
+    "sku_elimfilters": "EL80920"
   },
   {
     "part_number": "P550933",
@@ -214022,7 +214424,9 @@
       "WIX": [
         "WL7103"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 100 mm. Efficiency 99% @ 23 micron (ISO 16889). Thread M20 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT 843B, BOBCAT 853, CLARK 843B, +13 more.",
+    "sku_elimfilters": "EL80933"
   },
   {
     "part_number": "P550934",
@@ -214739,7 +215143,9 @@
         "WL7086",
         "WL7176"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread M20 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AVIA ASHOK LEYLAND MOTORS A21 TURBO, AVIA ASHOK LEYLAND MOTORS A31 TURBO, AVIA ASHOK LEYLAND MOTORS A60, +38 more.",
+    "sku_elimfilters": "EL80934"
   },
   {
     "part_number": "P550935",
@@ -216414,7 +216820,9 @@
         "12915035150",
         "12935035150"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 86 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread M20 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT 742B, BOBCAT X120, CATERPILLAR FG10, +66 more.",
+    "sku_elimfilters": "EL80935"
   },
   {
     "part_number": "P550938",
@@ -217960,7 +218368,9 @@
       "WIX": [
         "51370"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 122 mm × L 133 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JOHN DEERE 1270D, JOHN DEERE 1270E, JOHN DEERE 1470D, +127 more.",
+    "sku_elimfilters": "EL80938"
   },
   {
     "part_number": "P550939",
@@ -224934,7 +225344,9 @@
       "ZINGA": [
         "111836"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 86 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 2700, ALLIS-CHALMERS 312, ALLIS-CHALMERS 314, +653 more.",
+    "sku_elimfilters": "EL80939"
   },
   {
     "part_number": "P550941",
@@ -225587,7 +225999,9 @@
         "331P",
         "WL7117"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 633A, CASE/CASE IH 724, CASE/CASE IH 724A, +46 more.",
+    "sku_elimfilters": "EL80941"
   },
   {
     "part_number": "P550942",
@@ -228370,7 +228784,9 @@
         "WL7113",
         "WL7400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BENFORD 2-90P, BENFORD 2-90R, BERGMEISTER 654, +269 more.",
+    "sku_elimfilters": "EL80942"
   },
   {
     "part_number": "P550947",
@@ -229167,7 +229583,9 @@
         "WGL3333SC",
         "WGL3541"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 119 mm × L 160 mm. Efficiency 99% @ 21 micron (SAE J1858). Thread 1 1/2-12 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 3004, CLARK 45C, CLARK 55C, +53 more.",
+    "sku_elimfilters": "EL80947"
   },
   {
     "part_number": "P550949",
@@ -229658,7 +230076,9 @@
         "23.734.00",
         "2373400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 297 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Thread M95 x 2.5. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER ARGOSY, FREIGHTLINER CORONADO, INTERNATIONAL PROSTAR, +38 more.",
+    "sku_elimfilters": "EL80949"
   },
   {
     "part_number": "P550952",
@@ -230646,7 +231066,9 @@
       "WIX": [
         "57140"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 103 mm × L 146 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOVA FHD2-122, BOVA FHD2-129, BOVA FHD2-131, +77 more.",
+    "sku_elimfilters": "EL80952"
   },
   {
     "part_number": "P550963",
@@ -233859,7 +234281,9 @@
       "ZINGA": [
         "AE-100"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 100 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI TP48, AEBI TP48P, AEBI TP68, +24 more.",
+    "sku_elimfilters": "EL80963"
   },
   {
     "part_number": "P550964",
@@ -236579,7 +237003,9 @@
         "YSC-10231-20-0C",
         "YSC-14231-20-OC"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 96 mm × L 131 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 13/16-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET C & K SERIES PICKUP, CHEVROLET C3500 HD, CHEVROLET EXPRESS, +14 more.",
+    "sku_elimfilters": "EL80964"
   },
   {
     "part_number": "P550965",
@@ -240337,7 +240763,9 @@
         "OP4651",
         "X4651"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 91 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread M22 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DODGE DURANGO, DODGE RAM 1500, DODGE RAM 2500, +23 more.",
+    "sku_elimfilters": "EL80965"
   },
   {
     "part_number": "P550973",
@@ -240616,7 +241044,9 @@
       "WOODGATE": [
         "WGL3622"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 123 mm × L 149 mm. Efficiency 99% @ 50 micron (JIS D 1611). Thread 1 1/2-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ISUZU 4BB1T, ISUZU 4BD2T, ISUZU 4BD2TC, +2 more.",
+    "sku_elimfilters": "EL80973"
   },
   {
     "part_number": "P551005",
@@ -241608,7 +242038,9 @@
         "57909",
         "WL10083"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 263 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DETROIT DIESEL DD13, DETROIT DIESEL DD15, DETROIT DIESEL DD16, +56 more.",
+    "sku_elimfilters": "EL81005"
   },
   {
     "part_number": "P551014",
@@ -243045,7 +243477,9 @@
       "WOODGATE": [
         "WGL550"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 126 mm × L 122 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 85, ATLAS COPCO US85, ATLAS COPCO UT85, +118 more.",
+    "sku_elimfilters": "EL81014"
   },
   {
     "part_number": "P551015",
@@ -243060,7 +243494,9 @@
     "scraped_at": "2026-05-29T14:08:19.937913",
     "error": null,
     "oem_codes": [],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81015"
   },
   {
     "part_number": "P551016",
@@ -243146,7 +243582,9 @@
       "WOODGATE": [
         "WGL3620"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 5/8-12 UN. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81016"
   },
   {
     "part_number": "P551017",
@@ -243366,7 +243804,9 @@
       "WIX": [
         "51602"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1-16 UN. Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HYUNDAI R200W-7, KOMATSU D31EX-21, KOMATSU D31EX-21A, +15 more.",
+    "sku_elimfilters": "EL81017"
   },
   {
     "part_number": "P551018",
@@ -243496,7 +243936,9 @@
         "51607",
         "57620"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1-16 UN. Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81018"
   },
   {
     "part_number": "P551019",
@@ -243662,7 +244104,9 @@
       "WIX": [
         "57182"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 100 psi (6.9 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CUMMINS QSB4.5, CUMMINS QSB6.7, HYSTER H700FT, +5 more.",
+    "sku_elimfilters": "EL81019"
   },
   {
     "part_number": "P551042",
@@ -244438,7 +244882,9 @@
         "57730",
         "WL7400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 93 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT A300, BOBCAT A770, BOBCAT AL350, +49 more.",
+    "sku_elimfilters": "EL81042"
   },
   {
     "part_number": "P551088",
@@ -244721,7 +245167,9 @@
       "WIX": [
         "57306"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 120 mm × L 177 mm. Efficiency 99% @ 39 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR CT660, INTERNATIONAL MAXXFORCE 11, INTERNATIONAL MAXXFORCE 13, +11 more.",
+    "sku_elimfilters": "EL81088"
   },
   {
     "part_number": "P551100",
@@ -245933,7 +246381,9 @@
       "WIX": [
         "57488"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 168 mm. Efficiency 99% @ 20 micron (ISO 4548-12). Thread M27 x 2. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 5130, CASE/CASE IH 580SV, CASE/CASE IH 6165 CVT, +111 more.",
+    "sku_elimfilters": "EL81100"
   },
   {
     "part_number": "P551102",
@@ -250307,7 +250757,9 @@
         "4068480",
         "40684806"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 110 mm × L 256 mm. Thread 1 1/8-16 UN. Burst 58 psi (4 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 9630, AGCO 9650, AGCO R40, +335 more.",
+    "sku_elimfilters": "EL81102"
   },
   {
     "part_number": "P551108",
@@ -250389,7 +250841,9 @@
         "57291",
         "92093E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 121 mm × L 205 mm. Efficiency 99% @ 25 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL MAXXFORCE 11, INTERNATIONAL MAXXFORCE 13, INTERNATIONAL PROSTAR.",
+    "sku_elimfilters": "EL81108"
   },
   {
     "part_number": "P551132",
@@ -250608,7 +251062,9 @@
         "23.131.00",
         "2313100"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 83 mm. Efficiency 99% @ 17 micron (ISO 16889). Thread 3/4-16 UN. Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AMMANN AV85-2, AMMANN AV95-2, CASE/CASE IH SV185, +14 more.",
+    "sku_elimfilters": "EL81132"
   },
   {
     "part_number": "P551133",
@@ -250685,7 +251141,9 @@
       "HIFI": [
         "SO6208"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 22 micron (ISO 16889). Thread 1 1/2-12 UN. Burst 200 psi (13.79 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MITSUBISHI S6R2T2MTK3M.",
+    "sku_elimfilters": "EL81133"
   },
   {
     "part_number": "P551145",
@@ -250894,7 +251352,9 @@
       "WIX": [
         "57708"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 286 mm. Efficiency 99% @ 20 micron (SAE J1858). Thread 1 3/4-12 UN. Burst 200 psi (13.8 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL DURASTAR 4300, INTERNATIONAL DURASTAR 4300LP, INTERNATIONAL DURASTAR 4400, +9 more.",
+    "sku_elimfilters": "EL81145"
   },
   {
     "part_number": "P551251",
@@ -251497,7 +251957,9 @@
         "PC317P",
         "WL7098"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 89.5 mm × L 75.3 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 80 psi (5.5 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOMAG BF331HD, BOMAG BF331HE, GEHL 3635, +25 more.",
+    "sku_elimfilters": "EL81251"
   },
   {
     "part_number": "P551257",
@@ -251870,7 +252332,9 @@
       "WOODGATE": [
         "WGL9031"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 110 mm × L 162 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FX-120-2, HITACHI EX100W-2, HITACHI EX100WD-3, +21 more.",
+    "sku_elimfilters": "EL81257"
   },
   {
     "part_number": "P551263",
@@ -252112,7 +252576,9 @@
         "51376",
         "51798"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 178 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 145 psi (10 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH D45, CASE/CASE IH DX35, CASE/CASE IH DX40, +2 more.",
+    "sku_elimfilters": "EL81263"
   },
   {
     "part_number": "P551264",
@@ -252489,7 +252955,9 @@
         "51726",
         "551726"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 143 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread M20 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DOOSAN DH50, HYSTER H3.20XML, HYSTER H40XL, +9 more.",
+    "sku_elimfilters": "EL81264"
   },
   {
     "part_number": "P551267",
@@ -252764,7 +253232,9 @@
         "51641",
         "59179"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 167 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 145 psi (10 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: UD TRUCKS UD18, UD TRUCKS UD20, UD TRUCKS UD23, +6 more.",
+    "sku_elimfilters": "EL81267"
   },
   {
     "part_number": "P551285",
@@ -254997,7 +255467,9 @@
       "YALE-TOWNE": [
         "480600269"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 89 mm × L 96 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Burst 58 psi (4 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 804, ATLAS COPCO 170, ATLAS COPCO VT3FD, +150 more.",
+    "sku_elimfilters": "EL81285"
   },
   {
     "part_number": "P551297",
@@ -255488,7 +255960,9 @@
         "51797",
         "57374"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 175 mm. Efficiency 99% @ 45 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH MXM120, KOMATSU 505, KOMATSU D45P-1, +4 more.",
+    "sku_elimfilters": "EL81297"
   },
   {
     "part_number": "P551336",
@@ -255601,7 +256075,9 @@
         "51058",
         "CW58MP"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 153 mm × L 368 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81336"
   },
   {
     "part_number": "P551343",
@@ -256161,7 +256637,9 @@
       "WOODGATE": [
         "WGL3564"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 135 mm. Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MITSUBISHI CHALLENGER PB, MITSUBISHI CHALLENGER PC, MITSUBISHI KD-K94W, +5 more.",
+    "sku_elimfilters": "EL81343"
   },
   {
     "part_number": "P551352",
@@ -258476,7 +258954,9 @@
       "WOODGATE": [
         "WGL3703"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 140 mm. Efficiency 99% @ 48 micron (ISO 4548-12). Thread 1 1/2-16 UN. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ASV INCORPORATED 4500, ATLAS COPCO QAS108, ATLAS COPCO QAS138, +227 more.",
+    "sku_elimfilters": "EL81352"
   },
   {
     "part_number": "P551364",
@@ -258530,7 +259010,9 @@
       "MANN": [
         "WD11005"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 37 micron (ISO 4548-12). Thread 1 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81364"
   },
   {
     "part_number": "P551381",
@@ -262566,7 +263048,9 @@
       "ZETTELMEYER": [
         "22871489"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 119 mm × L 199 mm. Thread 1 1/2-12 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 004, AG CHEM EQUIPMENT 1703, AG CHEM EQUIPMENT 1803, +331 more.",
+    "sku_elimfilters": "EL81381"
   },
   {
     "part_number": "P551400",
@@ -262836,7 +263320,9 @@
         "557022",
         "57022"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 135 mm × L 308 mm. Efficiency 99% @ 21 micron (SAE J1858). Thread M45 x 1.5. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BELAZ 75137, BELAZ 75302, DETROIT DIESEL SERIES 4000, +13 more.",
+    "sku_elimfilters": "EL81400"
   },
   {
     "part_number": "P551402",
@@ -263090,7 +263576,9 @@
       "WIX": [
         "57036"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 135 mm × L 308 mm. Efficiency 99% @ 21 micron (ISO 16889). Thread 1 1/2-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO MT5010, DETROIT DIESEL SERIES 2000, DETROIT DIESEL SERIES 4000, +8 more.",
+    "sku_elimfilters": "EL81402"
   },
   {
     "part_number": "P551441",
@@ -263462,7 +263950,9 @@
       "WIX": [
         "57190"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 199 mm. Efficiency 99% @ 21 micron (ISO 16889). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HINO 238, HINO 258, HINO 268, +28 more.",
+    "sku_elimfilters": "EL81441"
   },
   {
     "part_number": "P551603",
@@ -269014,7 +269504,9 @@
         "WGL3347",
         "WGL3347A"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 170 mm. Efficiency 99% @ 23 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRIFULL 40, AGRIFULL 40DT, AGRIFULL 45, +523 more.",
+    "sku_elimfilters": "EL81603"
   },
   {
     "part_number": "P551604",
@@ -271137,7 +271629,9 @@
         "119593-35100",
         "11959335100"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 232 mm. Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 10C, ALLIS-CHALMERS 14B, ALLIS-CHALMERS 14C, +180 more.",
+    "sku_elimfilters": "EL81604"
   },
   {
     "part_number": "P551670",
@@ -285965,7 +286459,9 @@
       "ZETTELMEYER": [
         "2288131"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 21 micron (SAE J1858). Thread 1 1/2-12 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1004, AG CHEM EQUIPMENT 1603, AG CHEM EQUIPMENT 1664, +1110 more.",
+    "sku_elimfilters": "EL81670"
   },
   {
     "part_number": "P551763",
@@ -286522,7 +287018,9 @@
       "WOODGATE": [
         "WGL9189"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74 mm × L 67 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 49 psi (3.4 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 2020, AGCO ZT1644, ANTONIO CARRARO 3200, +19 more.",
+    "sku_elimfilters": "EL81763"
   },
   {
     "part_number": "P551783",
@@ -286592,7 +287090,9 @@
       "WIX": [
         "51358"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 68 mm × L 71 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M20 x 1.5. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL81783"
   },
   {
     "part_number": "P551784",
@@ -287263,7 +287763,9 @@
         "WGL9159",
         "WGL9162"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 56 mm. Efficiency 99% @ 37 micron (ISO 4548-12). Thread 3/4-16 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AS-MOTOR 830, DITCH WITCH 410SX, DYNAPAC CC122, +5 more.",
+    "sku_elimfilters": "EL81784"
   },
   {
     "part_number": "P551807",
@@ -290555,7 +291057,9 @@
         "51791XE",
         "57791"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 21 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 120G, CATERPILLAR 120H, CATERPILLAR 120K, +301 more.",
+    "sku_elimfilters": "EL81807"
   },
   {
     "part_number": "P551808",
@@ -296262,7 +296766,9 @@
         "57604",
         "57792"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 136 mm × L 308 mm. Efficiency 99% @ 21 micron (ISO 4548-12). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1264C, AG CHEM EQUIPMENT 1274C, AG CHEM EQUIPMENT 3244, +424 more.",
+    "sku_elimfilters": "EL81808"
   },
   {
     "part_number": "P551910",
@@ -296745,7 +297251,9 @@
       "LUBERFINER": [
         "LFP9279"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97.5 mm × L 151 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread M92 x 2.5. Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JOHN DEERE 1210G, JOHN DEERE 180GLC, JOHN DEERE 200G, +34 more.",
+    "sku_elimfilters": "EL81910"
   },
   {
     "part_number": "P552025",
@@ -297120,7 +297628,9 @@
         "57744",
         "57744XD"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 114.8 mm × L 293 mm. Efficiency 99% @ 16 micron (ISO 16889). Thread M95 x 2. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL CXT, INTERNATIONAL DT570, INTERNATIONAL DURASTAR 4100, +13 more.",
+    "sku_elimfilters": "EL82025"
   },
   {
     "part_number": "P552050",
@@ -298372,7 +298882,9 @@
       "WOODGATE": [
         "WGL3618"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 199 mm. Efficiency 99% @ 39 micron (ISO 16889). Thread 1 1/2-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FURUKAWA FX-220-2, HINO 145, HINO 15-258, +108 more.",
+    "sku_elimfilters": "EL82050"
   },
   {
     "part_number": "P552100",
@@ -300204,7 +300716,9 @@
       "WOODGATE": [
         "WGL3620"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 260 mm. Efficiency 99% @ 21 micron (SAE J1858). Thread 1 5/8-12 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 8425 AGCOSTAR, ATLAS COPCO MT2000, ATLAS COPCO MT436B, +94 more.",
+    "sku_elimfilters": "EL82100"
   },
   {
     "part_number": "P552206",
@@ -300324,7 +300838,9 @@
       "WIX": [
         "57706"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97.6 mm × L 177.8 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MACK CH613, MACK CV713, MACK MR690P.",
+    "sku_elimfilters": "EL82206"
   },
   {
     "part_number": "P552231",
@@ -300670,7 +301186,9 @@
         "57703",
         "57707"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97.6 mm × L 177.8 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL 4700SCD, MACK CH613, MACK CL713, +13 more.",
+    "sku_elimfilters": "EL82231"
   },
   {
     "part_number": "P552361",
@@ -300893,7 +301411,9 @@
       "WIX": [
         "57090"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 53 mm × L 98 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82361"
   },
   {
     "part_number": "P552363",
@@ -301194,7 +301714,9 @@
       "WOODGATE": [
         "WGL3641"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 94 mm × L 138 mm. Thread 3/4-20 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: THERMO KING KD-II, THERMO KING MD, THERMO KING MD-100, +18 more.",
+    "sku_elimfilters": "EL82363"
   },
   {
     "part_number": "P552414",
@@ -301307,7 +301829,9 @@
         "51874",
         "CW1874"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 171 mm × L 451 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: WAUKESHA F1905GR.",
+    "sku_elimfilters": "EL82414"
   },
   {
     "part_number": "P552421",
@@ -301363,7 +301887,9 @@
       "WIX": [
         "24944"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 50 mm × L 38 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82421"
   },
   {
     "part_number": "P552422",
@@ -301455,7 +301981,9 @@
       "WIX": [
         "51186"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 83 mm × L 162 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL82422"
   },
   {
     "part_number": "P552451",
@@ -302415,7 +302943,9 @@
       "YALE-TOWNE": [
         "515743802"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 85 mm × L 123 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 2 3/4-5 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS 6DA273, BOBCAT 600, BOBCAT 610, +76 more.",
+    "sku_elimfilters": "EL82451"
   },
   {
     "part_number": "P552465",
@@ -302911,7 +303441,9 @@
       "WOODGATE": [
         "WGL674"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 86 mm × L 108 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JOHN DEERE 1010, JOHN DEERE 1010D, JOHN DEERE 115, +23 more.",
+    "sku_elimfilters": "EL852465"
   },
   {
     "part_number": "P552518",
@@ -307049,7 +307581,9 @@
         "904788100",
         "907172400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 4650, AGCO 4660, AGCO 5650, +206 more.",
+    "sku_elimfilters": "EL82518"
   },
   {
     "part_number": "P552562",
@@ -308667,7 +309201,9 @@
       "YUTANI": [
         "ME074013"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 128 mm × L 220 mm. Efficiency 99% @ 45 micron (ISO 4548-12). Thread M36 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 313BCR, CATERPILLAR DP80, CATERPILLAR DP90, +150 more.",
+    "sku_elimfilters": "EL82562"
   },
   {
     "part_number": "P552819",
@@ -314163,7 +314699,9 @@
         "A1H4123",
         "MU7512"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AHLMANN A69, AHLMANN AF10, AHLMANN AF9, +466 more.",
+    "sku_elimfilters": "EL82819"
   },
   {
     "part_number": "P552849",
@@ -316839,7 +317377,9 @@
         "11900535100",
         "12408535111"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 75 mm × L 121 mm. Efficiency 99% @ 36 micron (SAE J1858). Thread M20 x 1.5. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AMMANN AV95, AMMANN AV95K, AMMANN AV95N, +140 more.",
+    "sku_elimfilters": "EL82849"
   },
   {
     "part_number": "P553000",
@@ -326726,7 +327266,9 @@
         "WGL9099",
         "WGL9199"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 296 mm. Efficiency 99% @ 17 micron (ISO 4548-12). Thread 2 1/4-12 UN. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 004, AG CHEM EQUIPMENT 1703, AG CHEM EQUIPMENT 1803, +747 more.",
+    "sku_elimfilters": "EL83000"
   },
   {
     "part_number": "P553161",
@@ -326929,7 +327471,9 @@
       "LUBERFINER": [
         "LFP5214"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 129 mm × L 171 mm. Thread 1 5/8-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JOHN DEERE 250DII, JOHN DEERE 300DII, JOHN DEERE 330CLC, +13 more.",
+    "sku_elimfilters": "EL83161"
   },
   {
     "part_number": "P553191",
@@ -332235,7 +332779,9 @@
         "WGL3321",
         "WGL3477"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 21 micron (ISO 16889). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AKERMAN EC200, AKERMAN EC230, AKERMAN EC300, +478 more.",
+    "sku_elimfilters": "EL83191"
   },
   {
     "part_number": "P553315",
@@ -333661,7 +334207,9 @@
       "WOODGATE": [
         "WGL3315"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 140 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread M22 x 1.5. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI 4200, AGRIFULL 105, AGRIFULL 1115, +126 more.",
+    "sku_elimfilters": "EL83315"
   },
   {
     "part_number": "P553335",
@@ -335354,7 +335902,9 @@
       "WOODGATE": [
         "WGL563"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 103 mm × L 140 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BARBER-GREENE KL35, BARBER-GREENE SA190, BARBER-GREENE SA30, +112 more.",
+    "sku_elimfilters": "EL83335"
   },
   {
     "part_number": "P553400",
@@ -335412,7 +335962,9 @@
       "SURE": [
         "SFO3400"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 52 mm. Thread M14 x 1.5. Burst 102 psi (7 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL83400"
   },
   {
     "part_number": "P553404",
@@ -335966,7 +336518,9 @@
       "WOODGATE": [
         "WGL778"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 201 mm. Efficiency 99% @ 45 micron (SAE J806). Thread 5/8-18 UN. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CARRIER TRANSICOLD 1003, CARRIER TRANSICOLD 2005A, CARRIER TRANSICOLD 2005A-3, +37 more.",
+    "sku_elimfilters": "EL83404"
   },
   {
     "part_number": "P553411",
@@ -341575,7 +342129,9 @@
         "FLR-412",
         "FLR373"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 148 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 6690, AGCO 7630, AGRIFULL 100, +488 more.",
+    "sku_elimfilters": "EL83411"
   },
   {
     "part_number": "P553548",
@@ -343234,7 +343790,9 @@
       "WOODGATE": [
         "WGL3548"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 227 mm. Efficiency 99% @ 15 micron (ISO 16889). Thread 2 1/4-12 UN. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 6175, AGCO 6195, AGCO 6215, +151 more.",
+    "sku_elimfilters": "EL83548"
   },
   {
     "part_number": "P553634",
@@ -344567,7 +345125,9 @@
         "GCE-25",
         "SE-25"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 127 mm × L 174 mm. Thread 1 1/2-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS FD6024, BLAW KNOX PF120H, BOBCAT 620, +95 more.",
+    "sku_elimfilters": "EL83634"
   },
   {
     "part_number": "P553712",
@@ -345514,7 +346074,9 @@
         "WGH6122",
         "WGL694"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ALLIS-CHALMERS F3, CARRIER TRANSICOLD 1003, CARRIER TRANSICOLD 2005A, +53 more.",
+    "sku_elimfilters": "EL83712"
   },
   {
     "part_number": "P553746",
@@ -346158,7 +346720,9 @@
       "WOODGATE": [
         "WGL695"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 200 mm. Efficiency 99% @ 12 micron (SAE J1858). Thread 3/4-20 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: THERMO KING CGS1250, THERMO KING CROWN 500, THERMO KING KD, +28 more.",
+    "sku_elimfilters": "EL83746"
   },
   {
     "part_number": "P553771",
@@ -362982,7 +363546,9 @@
         "MU5074",
         "MU5345"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 200 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 9670, AGCO 9690, AGCO R60, +1664 more.",
+    "sku_elimfilters": "EL83771"
   },
   {
     "part_number": "P553871",
@@ -363586,7 +364152,9 @@
       "WOODGATE": [
         "WGL702"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 168 mm. Thread 1-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: THERMO KING CGS1250, THERMO KING CROWN 500, THERMO KING MWD, +20 more.",
+    "sku_elimfilters": "EL83871"
   },
   {
     "part_number": "P554004",
@@ -368865,7 +369433,9 @@
         "WGL3379",
         "WGL667"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 262 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1064, ALLIS-CHALMERS 4W220, ALLIS-CHALMERS 7045, +441 more.",
+    "sku_elimfilters": "EL84004"
   },
   {
     "part_number": "P554005",
@@ -376118,7 +376688,9 @@
         "WGL691",
         "WGL691R"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 136 mm × L 308 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1903, AG CHEM EQUIPMENT 2505, AG CHEM EQUIPMENT 9103, +479 more.",
+    "sku_elimfilters": "EL84005"
   },
   {
     "part_number": "P554105",
@@ -376625,7 +377197,9 @@
       "WOODGATE": [
         "WGL9137"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 298 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 1 1/2-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH CS280, CASE/CASE IH CS325, CASE/CASE IH CS360, +29 more.",
+    "sku_elimfilters": "EL84105"
   },
   {
     "part_number": "P554136",
@@ -376818,7 +377392,9 @@
       "WOODGATE": [
         "WGL3660"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 188 mm × L 340 mm. Burst 75 psi (5.2 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 3606, CATERPILLAR 3608, CATERPILLAR 3612, +6 more.",
+    "sku_elimfilters": "EL84136"
   },
   {
     "part_number": "P554206",
@@ -377237,7 +377813,9 @@
       "WOODGATE": [
         "WGL703"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 252 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 1 1/2-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 4568, CASE/CASE IH 4586, CASE/CASE IH 4786, +12 more.",
+    "sku_elimfilters": "EL84206"
   },
   {
     "part_number": "P554403",
@@ -389451,7 +390029,9 @@
         "440054600",
         "515133856"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (SAE J806). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ACE RHINO 110, AEBI TP47, AEBI TP50, +1297 more.",
+    "sku_elimfilters": "EL84403"
   },
   {
     "part_number": "P554407",
@@ -399943,7 +400523,9 @@
       "YALE-TOWNE": [
         "524136754"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 48 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI TP460, AEBI VT450, AKERMAN 130, +1088 more.",
+    "sku_elimfilters": "EL84407"
   },
   {
     "part_number": "P554408",
@@ -403831,7 +404413,9 @@
       "YALE-TOWNE": [
         "440054069"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 140 mm. Efficiency 99% @ 48 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AHLMANN AL7, AHLMANN AL7C, AHLMANN AL7D, +373 more.",
+    "sku_elimfilters": "EL84408"
   },
   {
     "part_number": "P554560",
@@ -404184,7 +404768,9 @@
       "WIX": [
         "57139"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 117 mm × L 297 mm. Efficiency 99% @ 15 micron (ISO 4548-12). Thread M90 x 2. Burst 149 psi (10.3 bar). Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AURY NHL NTE240, BELAZ 75302, BELAZ 75306, +25 more.",
+    "sku_elimfilters": "EL854560"
   },
   {
     "part_number": "P554770",
@@ -410628,7 +411214,9 @@
       "XSV": [
         "OP252"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76 mm × L 120 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 3/4-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AEBI TP1000, AEBI TP20, AEBI TP25, +551 more.",
+    "sku_elimfilters": "EL84770"
   },
   {
     "part_number": "P554925",
@@ -411935,7 +412523,9 @@
       "WOODGATE": [
         "WGL4105"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 115 mm × L 195 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1090A, CASE/CASE IH 1100, CLAAS DOMINATOR 76H, +72 more.",
+    "sku_elimfilters": "EL84925"
   },
   {
     "part_number": "P555570",
@@ -414477,7 +415067,9 @@
       "WOODGATE": [
         "WGL3342"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 133 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1 1/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1253, AG CHEM EQUIPMENT 1554, AG CHEM EQUIPMENT 1603, +209 more.",
+    "sku_elimfilters": "EL85570"
   },
   {
     "part_number": "P555616",
@@ -416541,7 +417133,9 @@
       "YANMAR": [
         "15209C8602"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 10 HYDRO, CASE/CASE IH 100 HYDRO, CASE/CASE IH 1060, +142 more.",
+    "sku_elimfilters": "EL85616"
   },
   {
     "part_number": "P555680",
@@ -420322,7 +420916,9 @@
         "501203017",
         "750131005"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1253, AG CHEM EQUIPMENT 1603, AG CHEM EQUIPMENT 1604, +323 more.",
+    "sku_elimfilters": "EL85680"
   },
   {
     "part_number": "P556352",
@@ -420575,7 +421171,9 @@
       "VAG": [
         "2P0115403"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 101.5 mm × L 175.13 mm. Thread M27 x 2. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CUMMINS ISF3.8, CUMMINS QSF2.8, CUMMINS QSF3.8, +10 more.",
+    "sku_elimfilters": "EL86352"
   },
   {
     "part_number": "P557207",
@@ -422272,7 +422870,9 @@
       "ZF": [
         "9999-000-171"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CARRIER TRANSICOLD 1003, CARRIER TRANSICOLD 2005A, CARRIER TRANSICOLD 2005A-3, +134 more.",
+    "sku_elimfilters": "EL87207"
   },
   {
     "part_number": "P557356",
@@ -422384,7 +422984,9 @@
       "SF": [
         "SP96022"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 101.5 mm × L 159.05 mm. Thread M67 x 4. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CUMMINS ISF2.8, CUMMINS QSF2.8, FOTON BJ1049, +2 more.",
+    "sku_elimfilters": "EL87356"
   },
   {
     "part_number": "P557382",
@@ -422698,7 +423300,9 @@
       "WOODGATE": [
         "WGL9028"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 176 mm. Efficiency 99% @ 25 micron (SAE J806). Thread M26 x 1.5. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: THERMO KING DE, THERMO KING SB, THERMO KING SB-100, +13 more.",
+    "sku_elimfilters": "EL87382"
   },
   {
     "part_number": "P557500",
@@ -422979,7 +423583,9 @@
       "WOODGATE": [
         "WGL3485"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 188 mm × L 254 mm. Efficiency 99% @ 40 micron (ISO 4572). Burst 87 psi (6 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 3508, CATERPILLAR 3508B, CATERPILLAR 3512, +12 more.",
+    "sku_elimfilters": "EL87500"
   },
   {
     "part_number": "P557780",
@@ -426889,7 +427495,9 @@
       "ZETTELMEYER": [
         "22665803"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 3/4-16 UN. Burst 200 psi (13.8 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AIRMAN-HOKUETSU PDS185S, ALLIS-CHALMERS 714B, ALLIS-CHALMERS TL14, +257 more.",
+    "sku_elimfilters": "EL87780"
   },
   {
     "part_number": "P558250",
@@ -431563,7 +432171,9 @@
       "ZF": [
         "9999-000-171"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 172 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 200 psi (13.8 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AKERMAN 10, AKERMAN 10LC, AKERMAN 10M, +400 more.",
+    "sku_elimfilters": "EL88250"
   },
   {
     "part_number": "P558329",
@@ -433835,7 +434445,9 @@
       "WOODGATE": [
         "WGL3317"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 129 mm × L 171 mm. Thread 1 1/2-12 UN. Burst 100 psi (6.9 bar). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1803, AG CHEM EQUIPMENT 1844, AG CHEM EQUIPMENT 3104, +204 more.",
+    "sku_elimfilters": "EL88329"
   },
   {
     "part_number": "P558425",
@@ -435902,7 +436514,9 @@
       "WOODGATE": [
         "WGL1275"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 119 mm × L 193 mm. Efficiency 99% @ 40 micron (SAE J806). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO 255MD, ATLAS COPCO 285MD, ATLAS COPCO 295MD, +176 more.",
+    "sku_elimfilters": "EL88425"
   },
   {
     "part_number": "P558462",
@@ -437314,7 +437928,9 @@
       "WORTHINGTON": [
         "268462R91"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 114 mm × L 230 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BARBER-GREENE 828, BARBER-GREENE 847, BARBER-GREENE 848A, +76 more.",
+    "sku_elimfilters": "EL88462"
   },
   {
     "part_number": "P558615",
@@ -443793,7 +444409,9 @@
       "ZETTELMEYER": [
         "22855734"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 174 mm. Efficiency 99% @ 40 micron (SAE J1858). Thread 1-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 2004, AG CHEM EQUIPMENT 544, AG CHEM EQUIPMENT 554, +559 more.",
+    "sku_elimfilters": "EL88615"
   },
   {
     "part_number": "P558616",
@@ -447474,7 +448092,9 @@
       "YALE-TOWNE": [
         "4618907"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 136 mm. Efficiency 99% @ 37 micron (ISO 4548-12). Thread 1-16 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGCO 8450, AGCO 8765, AMMANN ASC100, +354 more.",
+    "sku_elimfilters": "EL88616"
   },
   {
     "part_number": "P559000",
@@ -451126,7 +451746,9 @@
       "WOODGATE": [
         "WGL9001"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 118 mm × L 297 mm. Thread M95 x 2.5. Burst 149 psi (10.3 bar). Synteq media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ATLAS COPCO DM45 HP, ATLAS COPCO DM50, ATLAS COPCO DM50LP, +299 more.",
+    "sku_elimfilters": "EL89000"
   },
   {
     "part_number": "P559126",
@@ -451779,7 +452401,9 @@
         "51754MP",
         "51774"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 147 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 1-12 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FIAT M100, FIAT M115, FORD 1220, +51 more.",
+    "sku_elimfilters": "EL89126"
   },
   {
     "part_number": "P559127",
@@ -451914,7 +452538,9 @@
       "WIX": [
         "51742"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 147 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 1 1/2-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD E-SERIES VAN, FORD F-SERIES PICKUP, INTERNATIONAL 4000 SERIES, +3 more.",
+    "sku_elimfilters": "EL89127"
   },
   {
     "part_number": "P559128",
@@ -455552,7 +456178,9 @@
         "51376",
         "51798"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 147 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 1 1/8-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AG CHEM EQUIPMENT 1603T, AG CHEM EQUIPMENT 1664T, AGRIFULL 110, +363 more.",
+    "sku_elimfilters": "EL89128"
   },
   {
     "part_number": "P559129",
@@ -455643,7 +456271,9 @@
       "WIX": [
         "57256"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 168 mm. Efficiency 99% @ 30 micron (ISO 16889). Thread M30 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: HYSTER H880.",
+    "sku_elimfilters": "EL89129"
   },
   {
     "part_number": "P559130",
@@ -455869,7 +456499,9 @@
         "51458",
         "51766"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107 mm × L 202 mm. Efficiency 99% @ 40 micron (ISO 16889). Thread 7/8-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1060, CASE/CASE IH 1090, CASE/CASE IH 1160, +6 more.",
+    "sku_elimfilters": "EL89130"
   },
   {
     "part_number": "P559418",
@@ -466368,7 +467000,9 @@
         "40571203",
         "MU57120"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 95 mm × L 139 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Thread 1-12 UN. Burst 100 psi (6.9 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: AGRALE 1600D, AGRALE 1800D, AGRALE 4500D, +1009 more.",
+    "sku_elimfilters": "EL89418"
   },
   {
     "part_number": "P574862",
@@ -466536,7 +467170,9 @@
       "WIX": [
         "57140"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 147 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FREIGHTLINER C2, FREIGHTLINER FL112, FREIGHTLINER FL50, +8 more.",
+    "sku_elimfilters": "EL84862"
   },
   {
     "part_number": "P574863",
@@ -466743,7 +467379,9 @@
       "WIX": [
         "57467"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 97 mm × L 147 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL DURASTAR 4400, INTERNATIONAL N10, INTERNATIONAL N13, +6 more.",
+    "sku_elimfilters": "EL84863"
   },
   {
     "part_number": "P577065",
@@ -467628,7 +468266,9 @@
       "WIX": [
         "57045"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74.2 mm × L 121.3 mm. Thread M22 x 1.5. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET SILVERADO, CHEVROLET SILVERADO 1500, CHEVROLET SILVERADO 2500HD, +10 more.",
+    "sku_elimfilters": "EL87065"
   },
   {
     "part_number": "P577066",
@@ -468665,7 +469305,9 @@
       "WIX": [
         "57502"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74.24 mm × L 102.69 mm. Thread M22 x 1.5. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET SILVERADO 1500, CHEVROLET SILVERADO 2500HD, CHEVROLET SILVERADO 3500HD, +16 more.",
+    "sku_elimfilters": "EL87066"
   },
   {
     "part_number": "P577086",
@@ -469385,7 +470027,9 @@
         "23.480.00",
         "2348000"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 102 mm. Thread M27 x 2. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 420, CASE/CASE IH 580N, CASE/CASE IH 580SN, +71 more.",
+    "sku_elimfilters": "EL87086"
   },
   {
     "part_number": "P579196",
@@ -469454,7 +470098,9 @@
       "WIX": [
         "51278"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74.2 mm × L 188.9 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL89196"
   },
   {
     "part_number": "P579275",
@@ -469490,7 +470136,9 @@
         "part_number": "M213A"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 232.8 mm. Efficiency 99% @ 5 micron (ISO 4548-12). Thread 3/4-16 UN. Synteq Xp media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL89275"
   },
   {
     "part_number": "P579280",
@@ -469573,7 +470221,9 @@
       "LUBERFINER": [
         "LFP6027"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107.5 mm × L 231 mm. Efficiency 99% @ 37 micron (ISO 4548-12). Thread 1-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: INTERNATIONAL DURASTAR 4400, INTERNATIONAL MAXXFORCE 7, INTERNATIONAL MAXXFORCE DT, +1 more.",
+    "sku_elimfilters": "EL89280"
   },
   {
     "part_number": "P579787",
@@ -469648,7 +470298,9 @@
         "part_number": "3944550"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 152.2 mm × L 552.3 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 793F, CATERPILLAR 797, CATERPILLAR 797B, +1 more.",
+    "sku_elimfilters": "EL89787"
   },
   {
     "part_number": "P580780",
@@ -469967,7 +470619,9 @@
       "WIX": [
         "WL10235"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 109 mm × L 243 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAF CF85.290, DAF CF85.330, DAF CF85.370, +23 more.",
+    "sku_elimfilters": "EL80780"
   },
   {
     "part_number": "P580781",
@@ -470225,7 +470879,9 @@
         "part_number": "1928869PE"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 100.3 mm × L 139.8 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAF CF85.290, DAF CF85.330, DAF CF85.370, +23 more.",
+    "sku_elimfilters": "EL80781"
   },
   {
     "part_number": "P580794",
@@ -470526,7 +471182,9 @@
         "part_number": "A9341840225"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 89 mm × L 138 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DETROIT DIESEL DD5, FREIGHTLINER M2 106, FREIGHTLINER M2 106 PLUS, +27 more.",
+    "sku_elimfilters": "EL880794"
   },
   {
     "part_number": "P582021",
@@ -470923,7 +471581,9 @@
       "HIFI": [
         "SO11162"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 107.5 mm × L 262 mm. Efficiency 99% @ 40 micron (JIS D 1611 / ISO4548-12). Thread M32 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: MACK ANTHEM, MACK GRANITE, MACK MP8, +40 more.",
+    "sku_elimfilters": "EL82021"
   },
   {
     "part_number": "P582506",
@@ -471337,7 +471997,9 @@
       "MANN": [
         "HU12021Z"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 116.2 mm × L 248.6 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DETROIT DIESEL DD13, DETROIT DIESEL DD15, DETROIT DIESEL DD16, +13 more.",
+    "sku_elimfilters": "EL82506"
   },
   {
     "part_number": "P583710",
@@ -471410,7 +472072,9 @@
         "part_number": "68191349AA"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 50.5 mm × L 123 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: RAM RAM 1500.",
+    "sku_elimfilters": "EL83710"
   },
   {
     "part_number": "P583711",
@@ -471533,7 +472197,9 @@
         "part_number": "WCO143"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 78.5 mm × L 92.5 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD EVEREST UB, FORD F-150, FORD RANGER RA, +1 more.",
+    "sku_elimfilters": "EL83711"
   },
   {
     "part_number": "P583712",
@@ -471641,7 +472307,9 @@
         "part_number": "FT4Z6731A"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 49 mm × L 137.5 mm. Efficiency 99% @ 30 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: FORD F-150.",
+    "sku_elimfilters": "EL883712"
   },
   {
     "part_number": "P583713",
@@ -471724,7 +472392,9 @@
         "part_number": "68109834AA"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 66 mm × L 98 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: RAM RAM 1500.",
+    "sku_elimfilters": "EL83713"
   },
   {
     "part_number": "P583936",
@@ -471805,7 +472475,9 @@
         "part_number": "5802284013"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 102 mm. Thread M27 x 2. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 221F, NEW HOLLAND L223, NEW HOLLAND L225, +2 more.",
+    "sku_elimfilters": "EL83936"
   },
   {
     "part_number": "P584026",
@@ -472192,7 +472864,9 @@
       "PACCAR": [
         "2253989"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 104 mm × L 243 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAF XD300, DAF XD340, DAF XD370, +25 more.",
+    "sku_elimfilters": "EL84026"
   },
   {
     "part_number": "P584063",
@@ -472463,7 +473137,9 @@
       "WIX": [
         "WL10109"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Thread 1-12 UN. Synthetic media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT L85, BOBCAT S450, BOBCAT S510, +20 more.",
+    "sku_elimfilters": "EL84063"
   },
   {
     "part_number": "P584244",
@@ -472540,7 +473216,9 @@
         "part_number": "5580428"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 102 mm. Thread M27 x 2. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CATERPILLAR 262C2, CATERPILLAR 311F, CATERPILLAR 312F GC, +2 more.",
+    "sku_elimfilters": "EL84244"
   },
   {
     "part_number": "P584522",
@@ -472811,7 +473489,9 @@
         "part_number": "89017527"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 93 mm × L 107 mm. Thread M22 x 1.5. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET SILVERADO 2500HD, CHEVROLET SILVERADO 3500HD, CHEVROLET SILVERADO 4500HD, +4 more.",
+    "sku_elimfilters": "EL84522"
   },
   {
     "part_number": "P584944",
@@ -473128,7 +473808,9 @@
         "part_number": "12735608"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 74.5 mm × L 86 mm. Thread 1-16 UN. Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CHEVROLET SILVERADO 1500, GMC SIERRA 1500.",
+    "sku_elimfilters": "EL84944"
   },
   {
     "part_number": "P585315",
@@ -473706,7 +474388,9 @@
         "part_number": "76562846"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 76.8 mm × L 82.2 mm. Thread 3/4-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: BOBCAT 863, BOBCAT 863G, BOBCAT 863H, +58 more.",
+    "sku_elimfilters": "EL85315"
   },
   {
     "part_number": "P764896",
@@ -473803,7 +474487,9 @@
       "WIX": [
         "51768"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 78 mm × L 122.5 mm. Thread 1-12 UN. Burst 145 psi (10 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection.",
+    "sku_elimfilters": "EL84896"
   },
   {
     "part_number": "P953329",
@@ -474550,7 +475236,9 @@
       "WIX": [
         "92175E"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 90 mm × L 281 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: SANTAL S5010, SCANIA - IRIZAR 11, 12 & 18, SCANIA - IRIZAR H, L, M, +40 more.",
+    "sku_elimfilters": "EL83329"
   },
   {
     "part_number": "P956094",
@@ -475464,7 +476152,9 @@
       "WIX": [
         "WL10081"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 89 mm × L 210 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CLAAS TUCANO 320, CLAAS TUCANO 420, CLAAS TUCANO 430, +102 more.",
+    "sku_elimfilters": "EL86094"
   },
   {
     "part_number": "P957929",
@@ -475969,7 +476659,9 @@
         "25.260.00",
         "2526000"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 120 mm × L 234 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DAF CF86 280, DAF CF86 430, DAF CF86 480, +24 more.",
+    "sku_elimfilters": "EL87929"
   },
   {
     "part_number": "P959206",
@@ -476294,7 +476986,9 @@
       "WISMET": [
         "WOE23932"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 112 mm × L 224.5 mm.  Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: CASE/CASE IH 1021G, CASE/CASE IH 1121G, CASE/CASE IH MAGNUM 250, +23 more.",
+    "sku_elimfilters": "EL89206"
   },
   {
     "part_number": "P959217",
@@ -476472,7 +477166,9 @@
         "part_number": "21632667"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 186 mm. Efficiency 99% @ 19 micron (ISO 4548-12). Thread 1 3/8-16 UN. Burst 149 psi (10.3 bar). Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: VOLVO PENTA TAD1180, VOLVO PENTA TAD1640GE, VOLVO PENTA TAD1640VE-B, +13 more.",
+    "sku_elimfilters": "EL89217"
   },
   {
     "part_number": "P959218",
@@ -476657,7 +477353,9 @@
         "part_number": "21632664"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 108 mm × L 186 mm. Efficiency 99% @ 50 micron (ISO 4548-12). Thread 1 1/8-16 UN. Cellulose media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: ROPA TIGER 6S, VOLVO PENTA TAD1180, VOLVO PENTA TAD1640GE, +14 more.",
+    "sku_elimfilters": "EL89218"
   },
   {
     "part_number": "P959772",
@@ -476759,7 +477457,9 @@
         "part_number": "ED0021753090S"
       }
     ],
-    "brand_crossrefs": {}
+    "brand_crossrefs": {},
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 64 mm × L 125 mm. Efficiency 99% @ 40 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: JCB 3CX Compact, JCB 406, JCB 407, +2 more.",
+    "sku_elimfilters": "EL89772"
   },
   {
     "part_number": "P959936",
@@ -477272,6 +477972,8 @@
         "23476569",
         "23958454"
       ]
-    }
+    },
+    "description_elimfilters": "DURATECH™ Lube Filter — Spin-On, OD 105 mm × L 196 mm. Efficiency 99% @ 27 micron (ISO 4548-12). Synthetic Media media. Dual-stage wear debris capture for full-flow engine oil protection. Fits: DENNIS 280, DENNIS 320, GRADALL XL3200V, +40 more.",
+    "sku_elimfilters": "EL89936"
   }
 ]
