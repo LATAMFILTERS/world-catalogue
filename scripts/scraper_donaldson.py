@@ -516,8 +516,11 @@ def scrape_product(page, product_path: str) -> dict:
     }
 
     try:
-        page.goto(url, timeout=90000, wait_until="networkidle")
-        time.sleep(2)
+        try:
+            page.goto(url, timeout=60000, wait_until="domcontentloaded")
+        except Exception:
+            pass  # page partially loaded; AJAX tabs handled by activate_tab waits
+        time.sleep(3)
         dismiss_popups(page)
 
         # Verificar URL real (para detectar redirects inesperados)
