@@ -1,8 +1,6 @@
 [
   {
     "part_number": "DBC4081",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4081/39785",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE NO CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M16 x 1.5",
@@ -340,8 +338,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:36:33.259634",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -387,8 +383,6 @@
   },
   {
     "part_number": "DBC4085",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4085/35240",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE NO CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -806,8 +800,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:36:44.495499",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -869,8 +861,6 @@
   },
   {
     "part_number": "DBC4086",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4086/34565",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE NO CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M16 x 1.5",
@@ -1128,8 +1118,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:37:01.346179",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MACK",
@@ -1175,8 +1163,6 @@
   },
   {
     "part_number": "DBC4088",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4088/35267",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -1419,8 +1405,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:37:16.821883",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -1470,8 +1454,6 @@
   },
   {
     "part_number": "DBC4089",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4089/38298",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M16 x 1.5",
@@ -1496,8 +1478,6 @@
       "P552096"
     ],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:37:32.207437",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MACK",
@@ -1531,8 +1511,6 @@
   },
   {
     "part_number": "DBC4785",
-    "url": "https://shop.donaldson.com/store/en-us/product/DBC4785/prod381086",
-    "description": "COOLANT FILTER, SPIN-ON DONALDSON BLUE NO CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -1622,8 +1600,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:37:46.191472",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CUMMINS",
@@ -1665,8 +1641,6 @@
   },
   {
     "part_number": "P171365",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171365/16675",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "0.64 inch (16.26 mm)",
       "Inner Diameter": "0.38 inch (9.65 mm)",
@@ -1682,8 +1656,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:38:02.128700",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -1695,7 +1667,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 16.26 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 16.26 mm × L 7620 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71365",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1716,8 +1688,6 @@
   },
   {
     "part_number": "P171366",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171366/16676",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "0.83 inch (21 mm)",
       "Inner Diameter": "0.51 inch (13 mm)",
@@ -1733,8 +1703,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:38:15.070145",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -1742,7 +1710,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 21 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 21 mm × L 7620 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71366",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1763,8 +1731,6 @@
   },
   {
     "part_number": "P171367",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171367/16677",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "0.94 inch (24 mm)",
       "Inner Diameter": "0.63 inch (16 mm)",
@@ -1780,8 +1746,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:38:26.211649",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -1797,7 +1761,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 24 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 24 mm × L 7620 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71367",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1818,8 +1782,6 @@
   },
   {
     "part_number": "P171368",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171368/16678",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "1.06 inch (27 mm)",
       "Inner Diameter": "0.75 inch (19 mm)",
@@ -1835,8 +1797,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:38:37.687809",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -1852,7 +1812,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 27 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 27 mm × L 7620 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71368",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1873,8 +1833,6 @@
   },
   {
     "part_number": "P171369",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171369/16679",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "1.34 inch (34 mm)",
       "Inner Diameter": "0.98 inch (25 mm)",
@@ -1890,8 +1848,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:38:48.679542",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -1903,7 +1859,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 34 mm × L 7620 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 34 mm × L 7620 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71369",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1924,8 +1880,6 @@
   },
   {
     "part_number": "P171371",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171371/16681",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "0.94 inch (24 mm)",
       "Inner Diameter": "0.63 inch (16 mm)",
@@ -1941,8 +1895,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:00.128686",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -1950,7 +1902,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 24 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 24 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71371",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -1971,8 +1923,6 @@
   },
   {
     "part_number": "P171374",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171374/16684",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.34 inch (34 mm)",
       "Inner Diameter": "0.98 inch (25 mm)",
@@ -1988,8 +1938,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:13.512981",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -2005,7 +1953,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 34 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 34 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71374",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2026,8 +1974,6 @@
   },
   {
     "part_number": "P171375",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171375/16685",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.46 inch (37 mm)",
       "Inner Diameter": "1.14 inch (29 mm)",
@@ -2043,8 +1989,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:23.226794",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2056,7 +2000,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 37 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 37 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71375",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2077,8 +2021,6 @@
   },
   {
     "part_number": "P171376",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171376/16686",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.89 inch (48 mm)",
       "Inner Diameter": "1.26 inch (32 mm)",
@@ -2094,8 +2036,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:34.359350",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AG CHEM EQUIPMENT",
@@ -2143,7 +2083,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 48 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 48 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71376",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2164,8 +2104,6 @@
   },
   {
     "part_number": "P171377",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171377/16687",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.69 inch (43 mm)",
       "Inner Diameter": "1.38 inch (35 mm)",
@@ -2181,8 +2119,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:45.138953",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2194,7 +2130,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 43 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 43 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71377",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2215,8 +2151,6 @@
   },
   {
     "part_number": "P171378",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171378/16688",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.81 inch (46 mm)",
       "Inner Diameter": "1.50 inch (38 mm)",
@@ -2232,8 +2166,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:39:57.023082",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BADGER",
@@ -2257,7 +2189,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 46 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 46 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71378",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2278,8 +2210,6 @@
   },
   {
     "part_number": "P171379",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171379/16689",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "1.97 inch (50 mm)",
       "Inner Diameter": "1.61 inch (41 mm)",
@@ -2295,8 +2225,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:40:10.709596",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2308,7 +2236,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 50 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 50 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71379",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2329,8 +2257,6 @@
   },
   {
     "part_number": "P171380",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171380/16690",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.09 inch (53 mm)",
       "Inner Diameter": "1.73 inch (44 mm)",
@@ -2346,8 +2272,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:40:20.744309",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2367,7 +2291,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 53 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 53 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71380",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2388,8 +2312,6 @@
   },
   {
     "part_number": "P171381",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171381/16691",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.32 inch (59 mm)",
       "Inner Diameter": "2.00 inch (50.8 mm)",
@@ -2405,8 +2327,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:40:32.297257",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CMI",
@@ -2434,7 +2354,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 59 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 59 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71381",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2455,8 +2375,6 @@
   },
   {
     "part_number": "P171382",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171382/16692",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.60 inch (66 mm)",
       "Inner Diameter": "2.25 inch (57.15 mm)",
@@ -2472,8 +2390,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:40:46.986670",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2489,7 +2405,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 66 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 66 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71382",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2510,8 +2426,6 @@
   },
   {
     "part_number": "P171383",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171383/16693",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.72 inch (69 mm)",
       "Inner Diameter": "2.38 inch (60.33 mm)",
@@ -2527,8 +2441,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:40:58.722891",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2540,7 +2452,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 69 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 69 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71383",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2561,8 +2473,6 @@
   },
   {
     "part_number": "P171384",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171384/16694",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.83 inch (72 mm)",
       "Inner Diameter": "2.50 inch (63.5 mm)",
@@ -2578,8 +2488,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:41:08.919409",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -2603,7 +2511,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 72 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 72 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71384",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2624,8 +2532,6 @@
   },
   {
     "part_number": "P171385",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171385/16695",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "2.95 inch (75 mm)",
       "Inner Diameter": "2.64 inch (67 mm)",
@@ -2641,8 +2547,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:41:22.025669",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
@@ -2650,7 +2554,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 75 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 75 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71385",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2671,8 +2575,6 @@
   },
   {
     "part_number": "P171386",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171386/16696",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "3.07 inch (78 mm)",
       "Inner Diameter": "2.76 inch (70 mm)",
@@ -2688,8 +2590,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:41:33.362020",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -2697,7 +2597,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 78 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 78 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71386",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2718,8 +2618,6 @@
   },
   {
     "part_number": "P171387",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171387/16697",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "3.35 inch (85 mm)",
       "Inner Diameter": "2.99 inch (76 mm)",
@@ -2735,8 +2633,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:41:46.191722",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -2752,7 +2648,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 85 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 85 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71387",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2773,8 +2669,6 @@
   },
   {
     "part_number": "P171388",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171388/16698",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "4.84 inch (123 mm)",
       "Inner Diameter": "3.50 inch (89 mm)",
@@ -2790,8 +2684,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:41:59.586533",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -2803,7 +2695,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 123 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 123 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71388",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2824,8 +2716,6 @@
   },
   {
     "part_number": "P171389",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171389/16699",
-    "description": "COOLANT HOSE, SILICONE 3-PLY",
     "attributes": {
       "Outer Diameter": "4.33 inch (110 mm)",
       "Inner Diameter": "4.02 inch (102 mm)",
@@ -2841,8 +2731,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:42:13.679742",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -2854,7 +2742,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 110 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 110 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71389",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2875,8 +2763,6 @@
   },
   {
     "part_number": "P171390",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171390/16700",
-    "description": "COOLANT HOSE, SILICONE 4-PLY",
     "attributes": {
       "Outer Diameter": "1.42 inch (36 mm)",
       "Inner Diameter": "1.00 inch (25.4 mm)",
@@ -2933,8 +2819,6 @@
         "engine_option": "HYBRID"
       }
     ],
-    "scraped_at": "2026-05-29T21:42:23.880498",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -2942,7 +2826,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 36 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management. Fits: FORD ESCAPE.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 36 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: FORD ESCAPE.",
     "sku_elimfilters": "EW71390",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -2963,8 +2847,6 @@
   },
   {
     "part_number": "P171391",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171391/16701",
-    "description": "COOLANT HOSE, SILICONE 4-PLY",
     "attributes": {
       "Outer Diameter": "1.89 inch (48 mm)",
       "Inner Diameter": "1.50 inch (38 mm)",
@@ -2980,8 +2862,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:42:39.016262",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -2989,7 +2869,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 48 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 48 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71391",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3010,8 +2890,6 @@
   },
   {
     "part_number": "P171392",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171392/16702",
-    "description": "COOLANT HOSE, SILICONE 4-PLY",
     "attributes": {
       "Outer Diameter": "2.40 inch (61 mm)",
       "Inner Diameter": "2.01 inch (51 mm)",
@@ -3027,8 +2905,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:42:53.195439",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -3036,7 +2912,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 61 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 61 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71392",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3057,8 +2933,6 @@
   },
   {
     "part_number": "P171394",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171394/16704",
-    "description": "COOLANT HOSE, SILICONE 4-PLY",
     "attributes": {
       "Outer Diameter": "2.87 inch (72.89 mm)",
       "Inner Diameter": "2.50 inch (63.5 mm)",
@@ -3074,8 +2948,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:43:04.010883",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -3083,7 +2955,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 72.89 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 72.89 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71394",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3104,8 +2976,6 @@
   },
   {
     "part_number": "P171395",
-    "url": "https://shop.donaldson.com/store/en-us/product/P171395/16705",
-    "description": "COOLANT HOSE, SILICONE 4-PLY",
     "attributes": {
       "Outer Diameter": "3.12 inch (79.25 mm)",
       "Inner Diameter": "2.75 inch (69.85 mm)",
@@ -3121,8 +2991,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:43:15.635881",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "GATES",
@@ -3130,7 +2998,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Hose, ID 79.25 mm × L 914 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 79.25 mm × L 914 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW71395",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3151,8 +3019,6 @@
   },
   {
     "part_number": "P173714",
-    "url": "https://shop.donaldson.com/store/en-us/product/P173714/17438",
-    "description": "HEATER HOSE, SILICONE",
     "attributes": {
       "Outer Diameter": "0.94 inch (24 mm)",
       "Inner Diameter": "0.63 inch (16 mm)",
@@ -3167,11 +3033,9 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:43:27.998055",
-    "error": null,
     "oem_codes": [],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Heater Hose, ID 24 mm × L 15240 mm. Premium silicone coolant hose engineered for high-temperature engine cooling systems. Maintains flexibility and seal integrity across extreme temperature cycles — preventing coolant leaks and ensuring reliable thermal management.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 24 mm × L 15240 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW73714",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3192,8 +3056,6 @@
   },
   {
     "part_number": "P174766",
-    "url": "https://shop.donaldson.com/store/en-us/product/P174766/17549",
-    "description": "HEAD ASSEMBLY, COOLANT",
     "attributes": {
       "Thread Size": "11/16-16 UN",
       "Length": "3.60 inch (91.44 mm)",
@@ -3212,8 +3074,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:43:38.830558",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -3249,7 +3109,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter Assembly. Thread 11/16-16 UN. Precision housing for coolant filtration system. Engineered for reliable sealing and easy service access in heavy-duty cooling circuit applications.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter. Thread 11/16-16 UN. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW74766",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3267,8 +3127,6 @@
   },
   {
     "part_number": "P550840",
-    "url": "https://shop.donaldson.com/store/en-us/product/P550840/40095",
-    "description": "HEAD ASSEMBLY, COOLANT",
     "attributes": {
       "Width": "3.83 inch (97.2 mm)",
       "Height": "2.05 inch (52 mm)",
@@ -3287,11 +3145,9 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:43:51.805882",
-    "error": null,
     "oem_codes": [],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter Assembly. Precision housing for coolant filtration system. Engineered for reliable sealing and easy service access in heavy-duty cooling circuit applications.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems.",
     "sku_elimfilters": "EW70840",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -3308,8 +3164,6 @@
   },
   {
     "part_number": "P550866",
-    "url": "https://shop.donaldson.com/store/en-us/product/P550866/40226",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M36 x 2",
@@ -4006,8 +3860,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:44:02.288233",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -4087,8 +3939,6 @@
   },
   {
     "part_number": "P550867",
-    "url": "https://shop.donaldson.com/store/en-us/product/P550867/40228",
-    "description": "COOLANT FILTER, SPIN-ON NON-CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M36 x 2",
@@ -4624,8 +4474,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:44:16.794245",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -4726,8 +4574,6 @@
   },
   {
     "part_number": "P551008",
-    "url": "https://shop.donaldson.com/store/en-us/product/P551008/38932",
-    "description": "COOLANT FILTER, CARTRIDGE",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Inner Diameter": "1.77 inch (45 mm)",
@@ -5354,8 +5200,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:44:32.032486",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "DETROIT DIESEL",
@@ -5395,7 +5239,7 @@
       }
     ],
     "brand_crossrefs": {},
-    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Cartridge, OD 93 mm × L 151.5 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: DETROIT DIESEL DD13, DETROIT DIESEL DD15, DETROIT DIESEL DD16, +15 more.",
+    "description_elimfilters": "ELIMFILTERS COOLTECH™ Coolant Filter, Spin-On, OD 93 mm × L 151.5 mm. COOLTECH™ precision micro-filtration for engine coolant circuits removes particulates and maintains coolant integrity — extending coolant service life, reducing corrosion risk, and protecting against cavitation in high-cycle cooling systems. Fits: DETROIT DIESEL DD13, DETROIT DIESEL DD15, DETROIT DIESEL DD16, +15 more.",
     "sku_elimfilters": "EW71008",
     "category": "coolant",
     "technology": "COOLTECH™",
@@ -5416,8 +5260,6 @@
   },
   {
     "part_number": "P551309",
-    "url": "https://shop.donaldson.com/store/en-us/product/P551309/20726",
-    "description": "COOLANT FILTER, SPIN-ON NON-CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "3/4-20 UN",
@@ -5440,8 +5282,6 @@
       "P554860"
     ],
     "equipment": [],
-    "scraped_at": "2026-05-29T21:44:44.257642",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN PARTS",
@@ -5487,8 +5327,6 @@
   },
   {
     "part_number": "P552055",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552055/20810",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -6192,8 +6030,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:44:59.228756",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -6734,8 +6570,6 @@
   },
   {
     "part_number": "P552070",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552070/20813",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -7108,8 +6942,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:45:12.909386",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -7177,8 +7009,6 @@
   },
   {
     "part_number": "P552071",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552071/20814",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -11544,8 +11374,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:45:31.102127",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AG CHEM EQUIPMENT",
@@ -11603,8 +11431,6 @@
   },
   {
     "part_number": "P552072",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552072/20815",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -12089,8 +11915,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:45:50.139927",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AG CHEM EQUIPMENT",
@@ -12144,8 +11968,6 @@
   },
   {
     "part_number": "P552073",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552073/20816",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -13129,8 +12951,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:46:07.770204",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AG CHEM EQUIPMENT",
@@ -13194,8 +13014,6 @@
   },
   {
     "part_number": "P552074",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552074/20817",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -13912,8 +13730,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:46:20.704516",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -13982,8 +13798,6 @@
   },
   {
     "part_number": "P552075",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552075/20818",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -15543,8 +15357,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:46:34.697462",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -15600,8 +15412,6 @@
   },
   {
     "part_number": "P552076",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552076/20819",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -16105,8 +15915,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:46:49.451848",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN MOTORS CORPORATION",
@@ -16446,8 +16254,6 @@
   },
   {
     "part_number": "P552096",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552096/20822",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M16 x 1.5",
@@ -18385,8 +18191,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:47:02.220622",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN MOTORS CORPORATION",
@@ -18516,8 +18320,6 @@
   },
   {
     "part_number": "P552106",
-    "url": "https://shop.donaldson.com/store/en-us/product/P552106/20827",
-    "description": "COOLANT FILTER, SPIN-ON SCA PLUS",
     "attributes": {
       "Outer Diameter": "3.70 inch (94 mm)",
       "Thread Size": "11/16-16 UN",
@@ -18564,8 +18366,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:47:17.562254",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -18618,8 +18418,6 @@
   },
   {
     "part_number": "P554019",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554019/20882",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "M16 x 1.5",
@@ -18963,8 +18761,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:47:30.087689",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -19022,8 +18818,6 @@
   },
   {
     "part_number": "P554071",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554071/20884",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -31461,8 +31255,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:47:43.956275",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -32030,8 +31822,6 @@
   },
   {
     "part_number": "P554072",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554072/20885",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -35015,8 +34805,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:48:01.587192",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN MOTORS CORPORATION",
@@ -35177,8 +34965,6 @@
   },
   {
     "part_number": "P554073",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554073/20886",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -39866,8 +39652,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:48:17.462641",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -39951,8 +39735,6 @@
   },
   {
     "part_number": "P554074",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554074/20887",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -42952,8 +42734,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:48:31.804853",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -43010,8 +42790,6 @@
   },
   {
     "part_number": "P554075",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554075/20888",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -44211,8 +43989,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:48:43.988767",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -44309,8 +44085,6 @@
   },
   {
     "part_number": "P554685",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554685/20902",
-    "description": "COOLANT FILTER, SPIN-ON NON-CHEMICAL",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "11/16-16 UN",
@@ -45951,8 +45725,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:48:56.154596",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -46183,8 +45955,6 @@
   },
   {
     "part_number": "P554860",
-    "url": "https://shop.donaldson.com/store/en-us/product/P554860/20906",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.66 inch (93 mm)",
       "Thread Size": "3/4-20 UN",
@@ -46618,8 +46388,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:49:14.375445",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -46685,8 +46453,6 @@
   },
   {
     "part_number": "P765594",
-    "url": "https://shop.donaldson.com/store/en-us/product/P765594/40180",
-    "description": "COOLANT FILTER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "3.78 inch (96 mm)",
       "Thread Size": "M16 x 1.5",
@@ -46750,8 +46516,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T21:49:28.655519",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "SANDVIK",

@@ -713,6 +713,10 @@ def process_category(cat: str, sample_only: bool = False):
     updated = 0
     collisions = 0
     for p in products:
+        # Remove Donaldson-internal fields not needed in catalogue
+        for drop in ("url", "description", "scraped_at", "error"):
+            p.pop(drop, None)
+
         tech = _resolve_tech(p, cat)
         p["category"]              = cat
         p["technology"]            = tech

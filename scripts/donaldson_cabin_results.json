@@ -1,8 +1,6 @@
 [
   {
     "part_number": "P103688",
-    "url": "https://shop.donaldson.com/store/en-us/product/P103688/14618",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "24.02 inch (610 mm)",
       "Width": "24.02 inch (610 mm)",
@@ -22,8 +20,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:04:34.163023",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "ALLISON",
@@ -158,8 +154,6 @@
   },
   {
     "part_number": "P105958",
-    "url": "https://shop.donaldson.com/store/en-us/product/P105958/14716",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.00 inch (254 mm)",
       "Width": "10.00 inch (254 mm)",
@@ -178,8 +172,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:04:53.333340",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -280,8 +272,6 @@
   },
   {
     "part_number": "P106680",
-    "url": "https://shop.donaldson.com/store/en-us/product/P106680/14744",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "28.00 inch (711.2 mm)",
       "Width": "7.50 inch (190.5 mm)",
@@ -886,8 +876,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:05:07.318167",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -1261,8 +1249,6 @@
   },
   {
     "part_number": "P106965",
-    "url": "https://shop.donaldson.com/store/en-us/product/P106965/14754",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.00 inch (279.5 mm)",
       "Width": "11.00 inch (279.5 mm)",
@@ -1402,8 +1388,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:05:24.280419",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -1611,8 +1595,6 @@
   },
   {
     "part_number": "P112671",
-    "url": "https://shop.donaldson.com/store/en-us/product/P112671/14852",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "17.00 inch (431.8 mm)",
       "Width": "10.00 inch (254.1 mm)",
@@ -1801,8 +1783,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:05:36.970191",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN PARTS",
@@ -1963,8 +1943,6 @@
   },
   {
     "part_number": "P112775",
-    "url": "https://shop.donaldson.com/store/en-us/product/P112775/14853",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "38.00 inch (965.2 mm)",
       "Width": "5.00 inch (127.1 mm)",
@@ -2104,8 +2082,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:05:49.339316",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -2343,8 +2319,6 @@
   },
   {
     "part_number": "P113407",
-    "url": "https://shop.donaldson.com/store/en-us/product/P113407/14867",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "20.00 inch (508 mm)",
       "Width": "7.50 inch (190.6 mm)",
@@ -2372,8 +2346,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:06:00.731099",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN PARTS",
@@ -2601,8 +2573,6 @@
   },
   {
     "part_number": "P114229",
-    "url": "https://shop.donaldson.com/store/en-us/product/P114229/14880",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "24.37 inch (619 mm)",
       "Width": "19.37 inch (492 mm)",
@@ -2621,8 +2591,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:06:18.351320",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -2705,8 +2673,6 @@
   },
   {
     "part_number": "P115690",
-    "url": "https://shop.donaldson.com/store/en-us/product/P115690/14937",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "37.00 inch (939.9 mm)",
       "Width": "6.12 inch (155.5 mm)",
@@ -2846,8 +2812,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:06:32.478000",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -3033,8 +2997,6 @@
   },
   {
     "part_number": "P117109",
-    "url": "https://shop.donaldson.com/store/en-us/product/P117109/14959",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "33.00 inch (838.2 mm)",
       "Width": "6.50 inch (165.2 mm)",
@@ -3126,8 +3088,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:06:48.211021",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -3350,8 +3310,6 @@
   },
   {
     "part_number": "P120320",
-    "url": "https://shop.donaldson.com/store/en-us/product/P120320/15106",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "23.50 inch (597 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -3540,8 +3498,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:07:00.907411",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -3755,8 +3711,6 @@
   },
   {
     "part_number": "P121036",
-    "url": "https://shop.donaldson.com/store/en-us/product/P121036/15119",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "37.99 inch (965 mm)",
       "Width": "6.00 inch (152.5 mm)",
@@ -3778,8 +3732,6 @@
       "P158333"
     ],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:07:13.974646",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -4042,8 +3994,6 @@
   },
   {
     "part_number": "P121351",
-    "url": "https://shop.donaldson.com/store/en-us/product/P121351/15126",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "20.00 inch (508 mm)",
       "Width": "15.00 inch (381 mm)",
@@ -4079,8 +4029,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:07:28.233787",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -4192,8 +4140,6 @@
   },
   {
     "part_number": "P123229",
-    "url": "https://shop.donaldson.com/store/en-us/product/P123229/15173",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "16.00 inch (406.4 mm)",
       "Width": "12.00 inch (304.9 mm)",
@@ -4230,8 +4176,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:07:47.624712",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -4339,8 +4283,6 @@
   },
   {
     "part_number": "P126227",
-    "url": "https://shop.donaldson.com/store/en-us/product/P126227/15238",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "25.50 inch (647.8 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -4384,8 +4326,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:08:01.550110",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN PARTS",
@@ -4575,8 +4515,6 @@
   },
   {
     "part_number": "P131231",
-    "url": "https://shop.donaldson.com/store/en-us/product/P131231/15350",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "32.01 inch (813 mm)",
       "Width": "9.00 inch (228.7 mm)",
@@ -4596,8 +4534,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:08:18.987693",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN MOTORS CORPORATION",
@@ -4753,8 +4689,6 @@
   },
   {
     "part_number": "P132448",
-    "url": "https://shop.donaldson.com/store/en-us/product/P132448/15404",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "38.00 inch (965.2 mm)",
       "Width": "7.00 inch (177.8 mm)",
@@ -5071,8 +5005,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:08:34.673542",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -5218,8 +5150,6 @@
   },
   {
     "part_number": "P137523",
-    "url": "https://shop.donaldson.com/store/en-us/product/P137523/15499",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "15.00 inch (381 mm)",
       "Width": "7.00 inch (177.8 mm)",
@@ -5238,8 +5168,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:08:50.694410",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "ATLAS COPCO",
@@ -5342,8 +5270,6 @@
   },
   {
     "part_number": "P140277",
-    "url": "https://shop.donaldson.com/store/en-us/product/P140277/15545",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "25.50 inch (647.8 mm)",
       "Width": "19.51 inch (495.5 mm)",
@@ -5373,8 +5299,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:09:03.861706",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -5470,8 +5394,6 @@
   },
   {
     "part_number": "P150348",
-    "url": "https://shop.donaldson.com/store/en-us/product/P150348/15677",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "23.43 inch (595 mm)",
       "Width": "11.93 inch (303 mm)",
@@ -5491,8 +5413,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:09:15.638153",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN LINCOLN",
@@ -5578,8 +5498,6 @@
   },
   {
     "part_number": "P158333",
-    "url": "https://shop.donaldson.com/store/en-us/product/P158333/15732",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "38.00 inch (965.2 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -5882,8 +5800,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:09:29.508971",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -6042,8 +5958,6 @@
   },
   {
     "part_number": "P158854",
-    "url": "https://shop.donaldson.com/store/en-us/product/P158854/15753",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "28.00 inch (711.2 mm)",
       "Width": "7.50 inch (190.5 mm)",
@@ -6752,8 +6666,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:09:47.434492",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -6958,8 +6870,6 @@
   },
   {
     "part_number": "P500194",
-    "url": "https://shop.donaldson.com/store/en-us/product/P500194/36127",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "17.13 inch (435 mm)",
       "Width": "4.84 inch (123 mm)",
@@ -7869,8 +7779,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:10:03.447591",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "LEKANG",
@@ -7977,8 +7885,6 @@
   },
   {
     "part_number": "P500195",
-    "url": "https://shop.donaldson.com/store/en-us/product/P500195/36128",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "19.13 inch (486 mm)",
       "Width": "11.26 inch (286 mm)",
@@ -8472,8 +8378,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:10:17.780769",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "LEKANG",
@@ -8576,8 +8480,6 @@
   },
   {
     "part_number": "P500204",
-    "url": "https://shop.donaldson.com/store/en-us/product/P500204/41470",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "7.83 inch (199 mm)",
       "Width": "7.95 inch (202 mm)",
@@ -8926,8 +8828,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:10:30.044035",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "KOMATSU",
@@ -8980,8 +8880,6 @@
   },
   {
     "part_number": "P500248",
-    "url": "https://shop.donaldson.com/store/en-us/product/P500248/74482",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.48 inch (317 mm)",
       "Width": "7.99 inch (203 mm)",
@@ -9521,8 +9419,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:10:44.286519",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "HITACHI",
@@ -9589,8 +9485,6 @@
   },
   {
     "part_number": "P500249",
-    "url": "https://shop.donaldson.com/store/en-us/product/P500249/74483",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.02 inch (280 mm)",
       "Width": "6.30 inch (160 mm)",
@@ -10050,8 +9944,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:10:58.298121",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "HITACHI",
@@ -10110,8 +10002,6 @@
   },
   {
     "part_number": "P520450",
-    "url": "https://shop.donaldson.com/store/en-us/product/P520450/18899",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "16.00 inch (406.3 mm)",
       "Width": "8.00 inch (203.2 mm)",
@@ -10130,8 +10020,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:11:09.859582",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -10284,8 +10172,6 @@
   },
   {
     "part_number": "P525026",
-    "url": "https://shop.donaldson.com/store/en-us/product/P525026/19015",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "26.14 inch (663.96 mm)",
       "Width": "5.35 inch (135.89 mm)",
@@ -10363,8 +10249,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:11:25.585878",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMERICAN PARTS",
@@ -10499,8 +10383,6 @@
   },
   {
     "part_number": "P527595",
-    "url": "https://shop.donaldson.com/store/en-us/product/P527595/19354",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "21.26 inch (540.1 mm)",
       "Width": "5.91 inch (150.1 mm)",
@@ -10921,8 +10803,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:11:43.579435",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -11055,8 +10935,6 @@
   },
   {
     "part_number": "P533559",
-    "url": "https://shop.donaldson.com/store/en-us/product/P533559/19604",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.00 inch (254 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -11693,8 +11571,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:11:59.259444",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BERGERAT MONNOYEUR",
@@ -11801,8 +11677,6 @@
   },
   {
     "part_number": "P533788",
-    "url": "https://shop.donaldson.com/store/en-us/product/P533788/19620",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "17.12 inch (434.8 mm)",
       "Width": "8.46 inch (214.8 mm)",
@@ -11998,8 +11872,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:12:16.853359",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "DONALDSON",
@@ -12108,8 +11980,6 @@
   },
   {
     "part_number": "P535089",
-    "url": "https://shop.donaldson.com/store/en-us/product/P535089/19655",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.60 inch (269.3 mm)",
       "Width": "7.36 inch (186.9 mm)",
@@ -12458,8 +12328,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:12:32.932072",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "ALCO",
@@ -12672,8 +12540,6 @@
   },
   {
     "part_number": "P536429",
-    "url": "https://shop.donaldson.com/store/en-us/product/P536429/19697",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.75 inch (298.4 mm)",
       "Width": "10.69 inch (271.5 mm)",
@@ -13182,8 +13048,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:12:48.224445",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -13390,8 +13254,6 @@
   },
   {
     "part_number": "P543107",
-    "url": "https://shop.donaldson.com/store/en-us/product/P543107/19952",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "17.54 inch (445.4 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -13693,8 +13555,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:13:04.581587",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -13792,8 +13652,6 @@
   },
   {
     "part_number": "P606063",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606063/21363",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.32 inch (313 mm)",
       "Width": "10.04 inch (255.1 mm)",
@@ -14295,8 +14153,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:13:22.513974",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -14683,8 +14539,6 @@
   },
   {
     "part_number": "P606082",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606082/21382",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.69 inch (271.53 mm)",
       "Width": "4.69 inch (119.13 mm)",
@@ -14745,8 +14599,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:13:35.209007",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -14805,8 +14657,6 @@
   },
   {
     "part_number": "P606086",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606086/21386",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "16.62 inch (422.1 mm)",
       "Width": "5.51 inch (140 mm)",
@@ -14866,8 +14716,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:13:48.594551",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -14922,8 +14770,6 @@
   },
   {
     "part_number": "P606087",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606087/21387",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.00 inch (330.3 mm)",
       "Width": "12.00 inch (304.8 mm)",
@@ -15129,8 +14975,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:14:09.127233",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -15229,8 +15073,6 @@
   },
   {
     "part_number": "P606089",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606089/21389",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.25 inch (336.55 mm)",
       "Width": "11.94 inch (303.28 mm)",
@@ -15299,8 +15141,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:14:22.229595",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -15395,8 +15235,6 @@
   },
   {
     "part_number": "P606090",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606090/21390",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "15.00 inch (380.9 mm)",
       "Width": "3.97 inch (100.9 mm)",
@@ -15537,8 +15375,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:14:36.655282",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -15622,8 +15458,6 @@
   },
   {
     "part_number": "P606483",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606483/23275",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Outer Diameter": "6.48 inch (164.5 mm)",
       "Inner Diameter": "3.58 inch (91 mm)",
@@ -15684,8 +15518,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:14:48.395873",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -15763,8 +15595,6 @@
   },
   {
     "part_number": "P606555",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606555/23186",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.25 inch (311.15 mm)",
       "Width": "9.18 inch (233.17 mm)",
@@ -16528,8 +16358,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:15:04.886683",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MACK",
@@ -16631,8 +16459,6 @@
   },
   {
     "part_number": "P606762",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606762/23188",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "16.84 inch (427.8 mm)",
       "Width": "11.73 inch (297.9 mm)",
@@ -16693,8 +16519,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:15:20.174180",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -16765,8 +16589,6 @@
   },
   {
     "part_number": "P606960",
-    "url": "https://shop.donaldson.com/store/en-us/product/P606960/23192",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.42 inch (290 mm)",
       "Width": "4.72 inch (120 mm)",
@@ -16785,8 +16607,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:15:33.640537",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "KRALINATOR",
@@ -16863,8 +16683,6 @@
   },
   {
     "part_number": "P607243",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607243/23718",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.18 inch (334.65 mm)",
       "Width": "5.25 inch (133.35 mm)",
@@ -17267,8 +17085,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:15:50.606844",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -18233,8 +18049,6 @@
   },
   {
     "part_number": "P607253",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607253/23728",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.50 inch (216 mm)",
       "Width": "7.64 inch (194 mm)",
@@ -18252,8 +18066,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:16:05.373286",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -18340,8 +18152,6 @@
   },
   {
     "part_number": "P607256",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607256/23731",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.21 inch (310.01 mm)",
       "Width": "9.04 inch (229.49 mm)",
@@ -18367,8 +18177,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:16:21.468058",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "TOYOTA",
@@ -18432,8 +18240,6 @@
   },
   {
     "part_number": "P607258",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607258/23733",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.50 inch (292.1 mm)",
       "Width": "7.13 inch (180.98 mm)",
@@ -18548,8 +18354,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:16:35.779271",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AMSOIL",
@@ -18692,8 +18496,6 @@
   },
   {
     "part_number": "P607281",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607281/23756",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "22.52 inch (572 mm)",
       "Width": "14.02 inch (356 mm)",
@@ -18711,8 +18513,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:16:50.122675",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -18910,8 +18710,6 @@
   },
   {
     "part_number": "P607300",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607300/23687",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.28 inch (312 mm)",
       "Width": "7.36 inch (187 mm)",
@@ -18931,8 +18729,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:17:03.646830",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -19176,8 +18972,6 @@
   },
   {
     "part_number": "P607333",
-    "url": "https://shop.donaldson.com/store/en-us/product/P607333/23787",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.77 inch (349.76 mm)",
       "Width": "4.16 inch (105.56 mm)",
@@ -19236,8 +19030,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:17:15.426218",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -19655,8 +19447,6 @@
   },
   {
     "part_number": "P609422",
-    "url": "https://shop.donaldson.com/store/en-us/product/P609422/31236",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.63 inch (270 mm)",
       "Width": "10.63 inch (270 mm)",
@@ -20867,8 +20657,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:17:32.427790",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -20988,8 +20776,6 @@
   },
   {
     "part_number": "P609444",
-    "url": "https://shop.donaldson.com/store/en-us/product/P609444/31253",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "15.30 inch (388.7 mm)",
       "Width": "9.75 inch (247.6 mm)",
@@ -21048,8 +20834,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:17:46.831030",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -21091,8 +20875,6 @@
   },
   {
     "part_number": "P609445",
-    "url": "https://shop.donaldson.com/store/en-us/product/P609445/31252",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.50 inch (317.5 mm)",
       "Width": "7.07 inch (179.5 mm)",
@@ -21154,8 +20936,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:18:03.552028",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -21216,8 +20996,6 @@
   },
   {
     "part_number": "P609446",
-    "url": "https://shop.donaldson.com/store/en-us/product/P609446/31250",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "26.96 inch (684.8 mm)",
       "Width": "5.98 inch (151.9 mm)",
@@ -21277,8 +21055,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:18:20.522759",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -21339,8 +21115,6 @@
   },
   {
     "part_number": "P611440",
-    "url": "https://shop.donaldson.com/store/en-us/product/P611440/35284",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Overall Length": "12.43 inch (315.7 mm)",
       "Outer Diameter": "6.84 inch (173.8 mm)",
@@ -21852,8 +21626,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:18:38.070526",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CAMECO",
@@ -21941,8 +21713,6 @@
   },
   {
     "part_number": "P612815",
-    "url": "https://shop.donaldson.com/store/en-us/product/P612815/36988",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.36 inch (314 mm)",
       "Width": "8.43 inch (214 mm)",
@@ -21960,8 +21730,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:18:53.688184",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "KRALINATOR",
@@ -22030,8 +21798,6 @@
   },
   {
     "part_number": "P614220",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614220/37234",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.67 inch (271 mm)",
       "Width": "10.07 inch (255.8 mm)",
@@ -22346,8 +22112,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:19:03.707112",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -22445,8 +22209,6 @@
   },
   {
     "part_number": "P614221",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614221/37235",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.49 inch (317.2 mm)",
       "Width": "7.21 inch (183.1 mm)",
@@ -22994,8 +22756,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:19:17.252376",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -23085,8 +22845,6 @@
   },
   {
     "part_number": "P614222",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614222/37554",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.78 inch (350 mm)",
       "Width": "10.07 inch (255.8 mm)",
@@ -23185,8 +22943,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:19:32.729128",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "KENWORTH",
@@ -23259,8 +23015,6 @@
   },
   {
     "part_number": "P614223",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614223/37559",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.94 inch (303.3 mm)",
       "Width": "8.12 inch (206.2 mm)",
@@ -24567,8 +24321,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:19:46.595280",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MEI CORPORATION",
@@ -24657,8 +24409,6 @@
   },
   {
     "part_number": "P614224",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614224/37934",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.24 inch (260.1 mm)",
       "Width": "6.81 inch (172.9 mm)",
@@ -24893,8 +24643,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:19:58.754630",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MEI CORPORATION",
@@ -24977,8 +24725,6 @@
   },
   {
     "part_number": "P614225",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614225/37557",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.59 inch (218.2 mm)",
       "Width": "7.68 inch (195.1 mm)",
@@ -25493,8 +25239,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:20:10.739546",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -25568,8 +25312,6 @@
   },
   {
     "part_number": "P614226",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614226/37558",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "7.91 inch (200.8 mm)",
       "Width": "6.22 inch (158.1 mm)",
@@ -25708,8 +25450,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:20:24.744340",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -25782,8 +25522,6 @@
   },
   {
     "part_number": "P614476",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614476/38513",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.28 inch (286.5 mm)",
       "Width": "8.92 inch (226.5 mm)",
@@ -25843,8 +25581,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:20:40.836959",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -26159,8 +25895,6 @@
   },
   {
     "part_number": "P614544",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614544/37012",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.03 inch (229.4 mm)",
       "Width": "7.18 inch (182.3 mm)",
@@ -26219,8 +25953,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:20:55.589785",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JOHN DEERE",
@@ -26278,8 +26010,6 @@
   },
   {
     "part_number": "P614546",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614546/38356",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.66 inch (220 mm)",
       "Width": "7.64 inch (194 mm)",
@@ -26297,8 +26027,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:21:08.852576",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CHRYSLER",
@@ -26370,8 +26098,6 @@
   },
   {
     "part_number": "P614547",
-    "url": "https://shop.donaldson.com/store/en-us/product/P614547/38322",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.62 inch (219 mm)",
       "Width": "8.43 inch (214 mm)",
@@ -26615,8 +26341,6 @@
         "engine_option": "HYBRID"
       }
     ],
-    "scraped_at": "2026-05-29T20:21:26.726090",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -26710,8 +26434,6 @@
   },
   {
     "part_number": "P616898",
-    "url": "https://shop.donaldson.com/store/en-us/product/P616898/38371",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.84 inch (351.5 mm)",
       "Width": "9.21 inch (234 mm)",
@@ -26859,8 +26581,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:21:42.656925",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CHRYSLER",
@@ -27018,8 +26738,6 @@
   },
   {
     "part_number": "P617005",
-    "url": "https://shop.donaldson.com/store/en-us/product/P617005/38338",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.62 inch (346 mm)",
       "Width": "9.96 inch (253 mm)",
@@ -27038,8 +26756,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:21:55.136011",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "INTERNATIONAL",
@@ -27102,8 +26818,6 @@
   },
   {
     "part_number": "P618643",
-    "url": "https://shop.donaldson.com/store/en-us/product/P618643/62120",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "16.35 inch (415.4 mm)",
       "Width": "8.58 inch (217.9 mm)",
@@ -27165,8 +26879,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:22:09.640367",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CLARK",
@@ -27226,8 +26938,6 @@
   },
   {
     "part_number": "P618644",
-    "url": "https://shop.donaldson.com/store/en-us/product/P618644/35254",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.60 inch (320 mm)",
       "Width": "6.60 inch (167.6 mm)",
@@ -27287,8 +26997,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:22:24.854839",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CAMECO",
@@ -27355,8 +27063,6 @@
   },
   {
     "part_number": "P619182",
-    "url": "https://shop.donaldson.com/store/en-us/product/P619182/39934",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.06 inch (230.2 mm)",
       "Width": "9.06 inch (230.1 mm)",
@@ -27407,8 +27113,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:22:39.080173",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -27471,8 +27175,6 @@
   },
   {
     "part_number": "P626182",
-    "url": "https://shop.donaldson.com/store/en-us/product/P626182/38348",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.62 inch (219 mm)",
       "Width": "6.14 inch (156 mm)",
@@ -27533,8 +27235,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:22:50.693276",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -27590,8 +27290,6 @@
   },
   {
     "part_number": "P627028",
-    "url": "https://shop.donaldson.com/store/en-us/product/P627028/72502",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Outer Diameter": "6.10 inch (155 mm)",
       "Inner Diameter": "3.46 inch (88 mm)",
@@ -27651,8 +27349,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:23:07.488083",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -27697,8 +27393,6 @@
   },
   {
     "part_number": "P627122",
-    "url": "https://shop.donaldson.com/store/en-us/product/P627122/73014",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "37.99 inch (965 mm)",
       "Width": "5.98 inch (152 mm)",
@@ -27769,8 +27463,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:23:23.291414",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -27819,8 +27511,6 @@
   },
   {
     "part_number": "P628355",
-    "url": "https://shop.donaldson.com/store/en-us/product/P628355/71445",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.28 inch (312 mm)",
       "Width": "6.26 inch (159 mm)",
@@ -27881,8 +27571,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:23:40.307833",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "INTERNATIONAL",
@@ -27928,8 +27616,6 @@
   },
   {
     "part_number": "P628392",
-    "url": "https://shop.donaldson.com/store/en-us/product/P628392/38320",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.08 inch (256 mm)",
       "Width": "5.28 inch (134 mm)",
@@ -28116,8 +27802,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:23:54.107875",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -28164,8 +27848,6 @@
   },
   {
     "part_number": "P628394",
-    "url": "https://shop.donaldson.com/store/en-us/product/P628394/70104",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.29 inch (236 mm)",
       "Width": "5.16 inch (131 mm)",
@@ -28816,8 +28498,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:24:05.809652",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -28867,8 +28547,6 @@
   },
   {
     "part_number": "P628395",
-    "url": "https://shop.donaldson.com/store/en-us/product/P628395/70106",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.45 inch (240 mm)",
       "Width": "6.65 inch (169 mm)",
@@ -29520,8 +29198,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:24:20.026207",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FREIGHTLINER",
@@ -29567,8 +29243,6 @@
   },
   {
     "part_number": "P629015",
-    "url": "https://shop.donaldson.com/store/en-us/product/P629015/41711",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.04 inch (255 mm)",
       "Width": "7.91 inch (201 mm)",
@@ -29636,8 +29310,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:24:32.249853",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "PETERBILT",
@@ -29677,8 +29349,6 @@
   },
   {
     "part_number": "P630281",
-    "url": "https://shop.donaldson.com/store/en-us/product/P630281/64876",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.60 inch (320 mm)",
       "Width": "8.70 inch (221 mm)",
@@ -29762,8 +29432,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:24:46.154018",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MEI CORPORATION",
@@ -29813,8 +29481,6 @@
   },
   {
     "part_number": "P633082",
-    "url": "https://shop.donaldson.com/store/en-us/product/P633082/prod100150",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Overall Length": "10.76 inch (273.4 mm)",
       "Outer Diameter": "6.30 inch (160 mm)",
@@ -29973,8 +29639,6 @@
         "engine_option": "TIER 4"
       }
     ],
-    "scraped_at": "2026-05-29T20:25:01.080808",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -30074,8 +29738,6 @@
   },
   {
     "part_number": "P635967",
-    "url": "https://shop.donaldson.com/store/en-us/product/P635967/prod500102",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "6.89 inch (175 mm)",
       "Width": "4.13 inch (105 mm)",
@@ -30135,8 +29797,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:25:13.587757",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "INTERNATIONAL",
@@ -30165,8 +29825,6 @@
   },
   {
     "part_number": "P636368",
-    "url": "https://shop.donaldson.com/store/en-us/product/P636368/prod340813",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.84 inch (250 mm)",
       "Width": "9.84 inch (250 mm)",
@@ -30224,8 +29882,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:25:32.241885",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "MACK",
@@ -30272,8 +29928,6 @@
   },
   {
     "part_number": "P636631",
-    "url": "https://shop.donaldson.com/store/en-us/product/P636631/57388",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.58 inch (319.5 mm)",
       "Width": "6.49 inch (164.8 mm)",
@@ -30331,8 +29985,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:25:48.741187",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JOHN DEERE",
@@ -30386,8 +30038,6 @@
   },
   {
     "part_number": "P637255",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637255/58378",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "14.49 inch (368 mm)",
       "Width": "6.09 inch (154.8 mm)",
@@ -30557,8 +30207,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:26:02.992522",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -30632,8 +30280,6 @@
   },
   {
     "part_number": "P637256",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637256/71733",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.50 inch (317.5 mm)",
       "Width": "7.07 inch (179.5 mm)",
@@ -30695,8 +30341,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:26:16.179533",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -30752,8 +30396,6 @@
   },
   {
     "part_number": "P637257",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637257/prod521005",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "15.75 inch (400 mm)",
       "Width": "6.50 inch (165 mm)",
@@ -30995,8 +30637,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:26:38.953476",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31040,8 +30680,6 @@
   },
   {
     "part_number": "P637258",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637258/58408",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.78 inch (324.6 mm)",
       "Width": "5.90 inch (149.8 mm)",
@@ -31099,8 +30737,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:26:56.124474",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31152,8 +30788,6 @@
   },
   {
     "part_number": "P637259",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637259/58409",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.65 inch (270.4 mm)",
       "Width": "4.78 inch (121.4 mm)",
@@ -31211,8 +30845,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:27:15.598308",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31267,8 +30899,6 @@
   },
   {
     "part_number": "P637260",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637260/69680",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.96 inch (354.7 mm)",
       "Width": "11.09 inch (281.7 mm)",
@@ -31326,8 +30956,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:27:31.397025",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31387,8 +31015,6 @@
   },
   {
     "part_number": "P637261",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637261/69686",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.50 inch (317.5 mm)",
       "Width": "7.07 inch (179.5 mm)",
@@ -31446,8 +31072,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:27:47.908463",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31511,8 +31135,6 @@
   },
   {
     "part_number": "P637266",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637266/41776",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "20.91 inch (531 mm)",
       "Width": "5.31 inch (135 mm)",
@@ -31570,8 +31192,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:28:04.248258",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31622,8 +31242,6 @@
   },
   {
     "part_number": "P637267",
-    "url": "https://shop.donaldson.com/store/en-us/product/P637267/58407",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "19.69 inch (500.2 mm)",
       "Width": "3.94 inch (100.1 mm)",
@@ -31649,8 +31267,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:28:18.812264",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -31706,8 +31322,6 @@
   },
   {
     "part_number": "P640110",
-    "url": "https://shop.donaldson.com/store/en-us/product/P640110/prod480656",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.94 inch (227 mm)",
       "Width": "7.87 inch (200 mm)",
@@ -31861,8 +31475,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:28:33.702816",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "DODGE",
@@ -31914,8 +31526,6 @@
   },
   {
     "part_number": "P644254",
-    "url": "https://shop.donaldson.com/store/en-us/product/P644254/prod2180046",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "14.67 inch (372.5 mm)",
       "Width": "3.82 inch (97 mm)",
@@ -31974,8 +31584,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:28:47.928878",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -32029,8 +31637,6 @@
   },
   {
     "part_number": "P644953",
-    "url": "https://shop.donaldson.com/store/en-us/product/P644953/prod2241948",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "15.91 inch (404 mm)",
       "Width": "6.41 inch (162.8 mm)",
@@ -32089,8 +31695,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:29:01.132026",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -32119,8 +31723,6 @@
   },
   {
     "part_number": "P644954",
-    "url": "https://shop.donaldson.com/store/en-us/product/P644954/prod2241949",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "13.62 inch (346 mm)",
       "Width": "4.78 inch (121.4 mm)",
@@ -32169,8 +31771,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:29:16.329212",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -32199,8 +31799,6 @@
   },
   {
     "part_number": "P644955",
-    "url": "https://shop.donaldson.com/store/en-us/product/P644955/prod2241950",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Overall Length": "13.27 inch (337 mm)",
       "Outer Diameter": "7.93 inch (201.5 mm)",
@@ -32259,8 +31857,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:29:28.372734",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JOHN DEERE",
@@ -32285,8 +31881,6 @@
   },
   {
     "part_number": "P644957",
-    "url": "https://shop.donaldson.com/store/en-us/product/P644957/prod2241951",
-    "description": "AIR FILTER, ROUND VENTILATION",
     "attributes": {
       "Overall Length": "13.62 inch (346 mm)",
       "Outer Diameter": "6.10 inch (155 mm)",
@@ -32344,8 +31938,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:29:44.723718",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -32374,8 +31966,6 @@
   },
   {
     "part_number": "P646621",
-    "url": "https://shop.donaldson.com/store/en-us/product/P646621/prod3060957",
-    "description": "AIR FILTER, PRIMARY ROUND",
     "attributes": {
       "Length": "12.99 inch (330 mm)",
       "Height": "2.87 inch (73 mm)",
@@ -32432,8 +32022,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:29:59.710204",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JOHN DEERE",
@@ -32458,8 +32046,6 @@
   },
   {
     "part_number": "P647714",
-    "url": "https://shop.donaldson.com/store/en-us/product/P647714/prod2690034",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.24 inch (260 mm)",
       "Width": "1.57 inch (40 mm)",
@@ -32478,8 +32064,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:30:12.215632",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "FORD",
@@ -32512,8 +32096,6 @@
   },
   {
     "part_number": "P647957",
-    "url": "https://shop.donaldson.com/store/en-us/product/P647957/prod2740092",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.38 inch (289 mm)",
       "Width": "0.79 inch (20 mm)",
@@ -32570,8 +32152,6 @@
         "engine_option": "T4"
       }
     ],
-    "scraped_at": "2026-05-29T20:30:27.537187",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JCB",
@@ -32610,8 +32190,6 @@
   },
   {
     "part_number": "P647958",
-    "url": "https://shop.donaldson.com/store/en-us/product/P647958/prod2740093",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.75 inch (273 mm)",
       "Width": "0.79 inch (20 mm)",
@@ -32669,8 +32247,6 @@
         "engine_option": "T4"
       }
     ],
-    "scraped_at": "2026-05-29T20:30:41.799127",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JCB",
@@ -32699,8 +32275,6 @@
   },
   {
     "part_number": "P650169",
-    "url": "https://shop.donaldson.com/store/en-us/product/P650169/prod3060960",
-    "description": "AIR FILTER, PANEL",
     "attributes": {
       "Length": "9.45 inch (240 mm)",
       "Width": "8.03 inch (204 mm)",
@@ -32715,8 +32289,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:30:57.771875",
-    "error": null,
     "oem_codes": [],
     "brand_crossrefs": {},
     "description_elimfilters": "ELIMFILTERS MICROKAPPA™ Cabin Air Filter, Panel, L 240 mm. Provides clean air inside the cab for a safer, healthier work environment. 99.98% efficiency (ISO 5011) — blocks dust, PM10, and airborne contaminants from reaching the operator cab, supporting longer and more productive working hours.",
@@ -32740,8 +32312,6 @@
   },
   {
     "part_number": "P776490",
-    "url": "https://shop.donaldson.com/store/en-us/product/P776490/21827",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "17.13 inch (435 mm)",
       "Width": "6.00 inch (152.4 mm)",
@@ -32857,8 +32427,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:31:09.145107",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -32982,8 +32550,6 @@
   },
   {
     "part_number": "P777576",
-    "url": "https://shop.donaldson.com/store/en-us/product/P777576/21931",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "11.81 inch (300 mm)",
       "Width": "9.84 inch (250 mm)",
@@ -33460,8 +33026,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:31:22.715577",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -33570,8 +33134,6 @@
   },
   {
     "part_number": "P780135",
-    "url": "https://shop.donaldson.com/store/en-us/product/P780135/22061",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.00 inch (228.6 mm)",
       "Width": "7.00 inch (177.8 mm)",
@@ -33711,8 +33273,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:31:41.110644",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -33814,8 +33374,6 @@
   },
   {
     "part_number": "P780163",
-    "url": "https://shop.donaldson.com/store/en-us/product/P780163/22062",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "9.06 inch (230 mm)",
       "Width": "9.02 inch (229 mm)",
@@ -33956,8 +33514,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:32:10.794727",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -34064,8 +33620,6 @@
   },
   {
     "part_number": "P780298",
-    "url": "https://shop.donaldson.com/store/en-us/product/P780298/22077",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.26 inch (311.3 mm)",
       "Width": "9.50 inch (241.3 mm)",
@@ -34359,8 +33913,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:32:28.659369",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BIG A",
@@ -34492,8 +34044,6 @@
   },
   {
     "part_number": "P781176",
-    "url": "https://shop.donaldson.com/store/en-us/product/P781176/6358",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "23.62 inch (600 mm)",
       "Width": "4.84 inch (123 mm)",
@@ -34868,8 +34418,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:32:42.976983",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CATERPILLAR",
@@ -34986,8 +34534,6 @@
   },
   {
     "part_number": "P782811",
-    "url": "https://shop.donaldson.com/store/en-us/product/P782811/22198",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "8.31 inch (211 mm)",
       "Width": "8.31 inch (211 mm)",
@@ -35671,8 +35217,6 @@
         "engine_option": "EURO 5 EEV"
       }
     ],
-    "scraped_at": "2026-05-29T20:33:00.606155",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "ALCO",
@@ -35886,8 +35430,6 @@
   },
   {
     "part_number": "P783687",
-    "url": "https://shop.donaldson.com/store/en-us/product/P783687/23977",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "23.82 inch (605 mm)",
       "Width": "4.25 inch (108 mm)",
@@ -36418,8 +35960,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:33:12.136784",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -36528,8 +36068,6 @@
   },
   {
     "part_number": "P784574",
-    "url": "https://shop.donaldson.com/store/en-us/product/P784574/35134",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "20.45 inch (519.5 mm)",
       "Width": "4.09 inch (104 mm)",
@@ -36853,8 +36391,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:33:28.046188",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -37011,8 +36547,6 @@
   },
   {
     "part_number": "P789129",
-    "url": "https://shop.donaldson.com/store/en-us/product/P789129/62350",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "23.11 inch (586.9 mm)",
       "Width": "5.20 inch (132 mm)",
@@ -38042,8 +37576,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:33:44.055223",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "DONALDSON",
@@ -38143,8 +37675,6 @@
   },
   {
     "part_number": "P903809",
-    "url": "https://shop.donaldson.com/store/en-us/product/P903809/prod2060220",
-    "description": "AIR FILTER, PANEL ENGINE",
     "attributes": {
       "Length": "11.71 inch (297.50 mm)",
       "Width": "9.35 inch (237.5 mm)",
@@ -38202,8 +37732,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:34:03.060597",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AC DELCO",
@@ -38236,8 +37764,6 @@
   },
   {
     "part_number": "P903833",
-    "url": "https://shop.donaldson.com/store/en-us/product/P903833/prod2160245",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "12.09 inch (307 mm)",
       "Width": "4.21 inch (107 mm)",
@@ -38293,8 +37819,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:34:20.329646",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "JOHN DEERE",
@@ -38323,8 +37847,6 @@
   },
   {
     "part_number": "P958618",
-    "url": "https://shop.donaldson.com/store/en-us/product/P958618/prod2180025",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "21.65 inch (550 mm)",
       "Width": "3.94 inch (100 mm)",
@@ -39239,8 +38761,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:34:34.841633",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -39288,8 +38808,6 @@
   },
   {
     "part_number": "P958619",
-    "url": "https://shop.donaldson.com/store/en-us/product/P958619/prod2180026",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "14.96 inch (380 mm)",
       "Width": "5.12 inch (130 mm)",
@@ -39348,8 +38866,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T20:34:51.753984",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "CASE/CASE IH",
@@ -39449,8 +38965,6 @@
   },
   {
     "part_number": "P960024",
-    "url": "https://shop.donaldson.com/store/en-us/product/P960024/prod2990110",
-    "description": "AIR FILTER, PANEL VENTILATION",
     "attributes": {
       "Length": "10.43 inch (265 mm)",
       "Width": "6.50 inch (165 mm)",
@@ -39465,8 +38979,6 @@
     },
     "alternatives": [],
     "equipment": [],
-    "scraped_at": "2026-05-29T20:35:08.507361",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "DETROIT DIESEL",

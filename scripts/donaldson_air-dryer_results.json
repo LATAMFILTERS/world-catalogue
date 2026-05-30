@@ -1,8 +1,6 @@
 [
   {
     "part_number": "P584764",
-    "url": "https://shop.donaldson.com/store/en-us/product/P584764/prod2730096",
-    "description": "AIR DRYER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "5.49 inch (139.5 mm)",
       "Thread Size": "M41 x 1.5",
@@ -53,8 +51,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T19:53:54.227067",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "BENDIX",
@@ -96,8 +92,6 @@
   },
   {
     "part_number": "P951413",
-    "url": "https://shop.donaldson.com/store/en-us/product/P951413/67990",
-    "description": "AIR DRYER, SPIN-ON",
     "attributes": {
       "Outer Diameter": "5.51 inch (140 mm)",
       "Thread Size": "M39 x 1.5",
@@ -31782,8 +31776,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T19:54:06.590030",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGCO",
@@ -32031,8 +32023,6 @@
   },
   {
     "part_number": "P953571",
-    "url": "https://shop.donaldson.com/store/en-us/product/P953571/74836",
-    "description": "AIR DRYER, SPIN-ON",
     "attributes": {
       "Notes": "P953571 = P781466 + 5g Lubricant",
       "Outer Diameter": "5.51 inch (140 mm)",
@@ -33436,8 +33426,6 @@
         "engine_option": "-"
       }
     ],
-    "scraped_at": "2026-05-29T19:54:28.620467",
-    "error": null,
     "oem_codes": [
       {
         "manufacturer": "AGRALE",
