@@ -10,11 +10,11 @@
 | lube           | 351       | ✅ COMPLETO       | ✅ 330/351       | scraper_oilcrossref.py   | ✅ COMPLETO       |
 | fuel           | 500       | ✅ COMPLETO       | ✅ 500/500       | scraper_fuelcrossref.py  | ✅ COMPLETO       |
 | fuel-separator | (en fuel) | (en fuel)         | (en fuel)        | scraper_fuelcrossref.py  | (en fuel)         |
-| hydraulic      | 1934      | ✅ COMPLETO (28 err) | ❌ 0/1934      | scraper_oilcrossref.py   | ⏳ DESPUÉS        |
+| hydraulic      | 1934      | ✅ COMPLETO (28 err) | ⚡ EN CURSO     | scraper_oilcrossref.py   | ⚡ EN CURSO       |
 | air            | 1366      | ✅ COMPLETO       | ✅ 1366/1366     | scraper_aircrossref.py   | ✅ COMPLETO       |
-| air-intake     | 243       | ✅ COMPLETO       | ❌ 0/243         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| air-intake     | 243       | ✅ COMPLETO       | ⚡ EN CURSO      | scraper_aircrossref.py   | ⚡ EN CURSO       |
 | cabin          | 122       | ✅ COMPLETO       | ❌ 0/122         | scraper_aircrossref.py   | ⏳ PENDIENTE      |
-| air-dryer      | 3         | ✅ COMPLETO       | ❌ 0/3           | scraper_aircrossref.py   | ⏳ PENDIENTE      |
+| air-dryer      | 3         | ✅ COMPLETO       | ✅ 3/3 (patch)   | scraper_aircrossref.py   | ✅ COMPLETO       |
 | coolant        | 59        | ✅ COMPLETO       | —               | —                        | sin sitio        |
 
 **fuel-separator**: incluido en `donaldson_fuel_results.json` (500 productos). No requiere scraping separado.
