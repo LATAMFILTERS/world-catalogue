@@ -135,17 +135,34 @@ def fetch_crossrefs_page(page, part: str) -> dict:
     url = BASE_URL.format(part=part.upper())
     try:
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
+        # Esperar a que el ul.compat-list tenga al menos 1 link
         try:
             page.wait_for_function(
-                "() => { const t = document.body.innerText; "
-                "return t.includes('replacement oil filters') && t.length > 800; }",
+                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
             pass
-        time.sleep(3)
-        text = page.evaluate("() => document.body.innerText")
-        return _parse_text(text)
+        time.sleep(1)
+
+        # Extraer directamente del DOM: href="/convert/BRAND/CODE"
+        return page.evaluate("""() => {
+            const result = {};
+            const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
+            for (const a of links) {
+                const parts = a.getAttribute('href').split('/convert/');
+                if (parts.length < 2) continue;
+                const segments = parts[1].split('/');
+                if (segments.length < 2) continue;
+                const brand = decodeURIComponent(segments[0]).toUpperCase()
+                              .replace(/-FILTER$/i, '').trim();
+                const code  = decodeURIComponent(segments[1]).toUpperCase().trim();
+                if (!brand || !code || brand === 'DONALDSON') continue;
+                if (!result[brand]) result[brand] = [];
+                if (!result[brand].includes(code)) result[brand].push(code);
+            }
+            return result;
+        }""")
     except Exception as e:
         logging.warning(f"  ERROR {part}: {e}")
         return {}
@@ -218,31 +235,38 @@ def test_one(part: str, debug: bool = False):
         page.goto(url, timeout=30000, wait_until="domcontentloaded")
         try:
             page.wait_for_function(
-                "() => { const t = document.body.innerText; "
-                "return t.includes('replacement oil filters') && t.length > 800; }",
+                "() => document.querySelectorAll('ul.compat-list li a[href*=\"/convert/\"]').length > 0",
                 timeout=15000
             )
         except PWTimeout:
             pass
-        time.sleep(3)
-        text = page.evaluate("() => document.body.innerText")
+        time.sleep(1)
         context.close()
 
-    if debug:
-        with open(f"debug_{part}.txt", "w", encoding="utf-8") as f:
-            f.write(text)
-        print(f"Guardado en debug_{part}.txt ({len(text)} chars)")
-        return
+    crossrefs = page.evaluate("""() => {
+        const result = {};
+        const links = document.querySelectorAll('ul.compat-list li a[href*="/convert/"]');
+        for (const a of links) {
+            const parts = a.getAttribute('href').split('/convert/');
+            if (parts.length < 2) continue;
+            const segments = parts[1].split('/');
+            if (segments.length < 2) continue;
+            const brand = decodeURIComponent(segments[0]).toUpperCase().replace(/-FILTER$/i,'').trim();
+            const code  = decodeURIComponent(segments[1]).toUpperCase().trim();
+            if (!brand || !code || brand === 'DONALDSON') continue;
+            if (!result[brand]) result[brand] = [];
+            if (!result[brand].includes(code)) result[brand].push(code);
+        }
+        return result;
+    }""")
+    context.close()
 
-    crossrefs = _parse_text(text)
     print(f"\n=== {part} ===")
     if crossrefs:
         for brand, codes in sorted(crossrefs.items()):
             print(f"  {brand:25} {codes}")
     else:
-        print("  (sin resultados)")
-        for i, l in enumerate(text.splitlines()[:60], 1):
-            print(f"  {i:3}: {l}")
+        print("  (sin resultados — ul.compat-list vacío o no encontrado)")
 
 
 if __name__ == "__main__":
