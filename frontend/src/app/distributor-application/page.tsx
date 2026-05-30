@@ -4,6 +4,54 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 
+const BASE_URL = 'https://elimfilters.com';
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Authorized Distributor Application | ELIMFILTERS®',
+  url: `${BASE_URL}/distributor-application/`,
+  dateModified: '2026-05-30',
+  description: 'Apply to become an authorized ELIMFILTERS® distributor across North America and Latin America.',
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: BASE_URL },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Distributor Application', item: `${BASE_URL}/distributor-application/` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I apply to become an ELIMFILTERS® distributor?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Complete the online application form on this page with your company details, service territory, and current product lines. Applications are reviewed within 5–10 business days. Approved applicants are contacted directly by an ELIMFILTERS® account manager to discuss onboarding, pricing, and territory terms.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the requirements to become an ELIMFILTERS® distributor?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ELIMFILTERS® seeks distributors with at least 2 years of B2B distribution experience in mining, agriculture, marine, automotive, construction, oil & gas, or related heavy-industry sectors. Candidates must have an active sales team, a defined service territory, and the ability to maintain adequate stock levels to serve their market.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What industries do ELIMFILTERS® distributors serve?',
+      acceptedAnswer: { '@type': 'Answer', text: 'ELIMFILTERS® distributors serve 12 industrial sectors: Mining, Agriculture, Marine, Oil & Gas, Automotive, Construction, Power Generation, Bus & Coach, Manufacturing, Railway, Trucks & Fleets, and Municipal & Waste. Distributors typically specialise in 2–4 sectors relevant to their service territory.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What support does ELIMFILTERS® provide to authorized distributors?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Authorized ELIMFILTERS® distributors receive: competitive wholesale pricing, dedicated account manager, technical training programme on proprietary filtration technologies, co-branded marketing materials, priority order fulfillment, and full warranty support including non-prorated coverage with immediate replacement guarantee.' },
+    },
+  ],
+};
+
 export default function DistributorApplication() {
   const [formData, setFormData] = useState({
     companyName: '',
@@ -63,6 +111,9 @@ export default function DistributorApplication() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
 
       {/* Hero Section */}
@@ -121,6 +172,34 @@ export default function DistributorApplication() {
           >
             Join the ELIMFILTERS® network. We're seeking qualified distributors to expand our industrial filtration reach.
           </motion.p>
+        </div>
+      </section>
+
+      {/* Who We're Looking For */}
+      <section style={{ padding: '3rem 2rem', background: 'rgba(255,241,45,0.03)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '1.5rem' }}>
+              WHO WE'RE LOOKING FOR
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+              {[
+                { label: 'Industry Experience', detail: 'B2B distribution in mining, agriculture, marine, oil & gas, automotive, or construction' },
+                { label: 'Established Operation', detail: 'Minimum 2 years in business with an active direct sales team' },
+                { label: 'Defined Territory', detail: 'Clear service area within North America or Latin America' },
+                { label: 'Stock Capacity', detail: 'Ability to maintain adequate inventory levels to serve your market' },
+              ].map((item, i) => (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,241,45,0.12)', borderRadius: '6px', padding: '1.25rem' }}>
+                  <p style={{ fontSize: '0.78rem', fontFamily: 'JetBrains Mono, monospace', color: '#FFF12D', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>{item.label}</p>
+                  <p style={{ fontSize: '0.875rem', fontFamily: 'Outfit, sans-serif', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, margin: 0 }}>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -726,6 +805,53 @@ export default function DistributorApplication() {
               </div>
             </div>
             </AnimateIn>
+          </div>
+        </div>
+      </section>
+      {/* FAQ */}
+      <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
+            // FREQUENTLY ASKED QUESTIONS
+          </span>
+          <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2.5rem' }}>
+            Distributor Programme FAQ
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {[
+              {
+                q: 'How do I apply to become an ELIMFILTERS® distributor?',
+                a: 'Complete the application form above with your company details, service territory, and current product lines. Applications are reviewed within 5–10 business days. Approved applicants are contacted directly by an ELIMFILTERS® account manager to discuss onboarding, wholesale pricing, and territory terms.',
+              },
+              {
+                q: 'What are the requirements to become an ELIMFILTERS® distributor?',
+                a: 'ELIMFILTERS® seeks distributors with at least 2 years of B2B distribution experience in mining, agriculture, marine, automotive, construction, oil & gas, or related heavy-industry sectors. Candidates must have an active sales team, a defined service territory, and the ability to maintain adequate stock levels.',
+              },
+              {
+                q: 'What industries do ELIMFILTERS® distributors serve?',
+                a: 'ELIMFILTERS® distributors serve 12 industrial sectors: Mining, Agriculture, Marine, Oil & Gas, Automotive, Construction, Power Generation, Bus & Coach, Manufacturing, Railway, Trucks & Fleets, and Municipal & Waste. Distributors typically specialise in 2–4 sectors relevant to their service territory.',
+              },
+              {
+                q: 'What support does ELIMFILTERS® provide to authorized distributors?',
+                a: 'Authorized distributors receive: competitive wholesale pricing, a dedicated account manager, technical training on all 12 proprietary filtration technologies (validated to ISO 5011, ISO 16889, and ISO 4406), co-branded marketing materials, priority order fulfillment, and full non-prorated warranty coverage with immediate replacement guarantee.',
+              },
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '6px', padding: '1.75rem 2rem' }}
+              >
+                <h3 style={{ fontSize: '0.975rem', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 0.875rem', lineHeight: 1.5 }}>
+                  {faq.q}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0' }}>
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
