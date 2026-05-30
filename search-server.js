@@ -1,0 +1,264 @@
+require('dotenv').config();
+
+const express = require('express');
+const { Pool } = require('pg');
+const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+
+const app = express();
+
+// -------------------- BASIC SAFETY --------------------
+app.disable('x-powered-by');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// -------------------- SECURITY --------------------
+app.use(
+    helmet({
+        contentSecurityPolicy: false
+    })
+);
+
+const allowedOrigins = [
+    'https://elimfilters.com',
+    'https://www.elimfilters.com',
+    'http://localhost:3000',
+    'http://localhost:8080'
+];
+
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+            return callback(null, false);
+        },
+        methods: ['GET'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    })
+);
+
+// -------------------- RATE LIMIT --------------------
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 200
+});
+
+app.use('/api/', limiter);
+
+// -------------------- DATABASE --------------------
+if (!process.env.DATABASE_URL) {
+    console.error('DATABASE_URL missing');
+    process.exit(1);
+}
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+    max: 10,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 8000
+});
+
+pool.on('error', (err) => {
+    console.error('DB Pool Error:', err.message);
+});
+
+// -------------------- SAFE FIELDS --------------------
+const SAFE_FIELDS = `
+sku, base_code, technology, category, description,
+media_type, outer_diameter, inner_diameter, length,
+efficiency, type, style, competitor_codes, oem_codes,
+cross_references, applications
+`;
+
+// -------------------- HEALTH --------------------
+app.get('/health', async (req, res) => {
+    try {
+        await pool.query('SELECT 1');
+        res.status(200).json({
+            status: 'ok',
+            db: 'connected',
+            time: new Date().toISOString()
+        });
+    } catch (err) {
+        res.status(503).json({
+            status: 'degraded',
+            db: 'disconnected',
+            time: new Date().toISOString()
+        });
+    }
+});
+
+// -------------------- SEARCH --------------------
+app.get('/api/search', async (req, res) => {
+    try {
+        const q = (req.query.q || '').toString().trim().toUpperCase();
+
+        if (q.length < 2) {
+            return res.status(400).json({ error: 'min 2 chars' });
+        }
+
+        const result = await pool.query(
+            `SELECT ${SAFE_FIELDS}
+             FROM filters
+             WHERE UPPER(sku) LIKE $1
+                OR UPPER(base_code) LIKE $1
+                OR UPPER(sku) ILIKE $2
+                OR UPPER(base_code) ILIKE $2
+                OR competitor_codes::text ILIKE $2
+                OR oem_codes::text ILIKE $2
+                OR cross_references::text ILIKE $2
+             ORDER BY
+                CASE WHEN UPPER(sku) = $3 THEN 0
+                     WHEN UPPER(sku) LIKE $1 THEN 1
+                     ELSE 2 END
+             LIMIT 20`,
+            [q + '%', '%' + q + '%', q]
+        );
+
+        return res.json({
+            products: result.rows,
+            count: result.rows.length
+        });
+    } catch (err) {
+        console.error('SEARCH ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- FILTER BY SKU --------------------
+app.get('/api/filter/:sku', async (req, res) => {
+    try {
+        const sku = (req.params.sku || '').toString().trim().toUpperCase();
+
+        if (!sku) {
+            return res.status(400).json({ error: 'invalid sku' });
+        }
+
+        const result = await pool.query(
+            `SELECT ${SAFE_FIELDS}
+             FROM filters
+             WHERE UPPER(sku) = $1
+             LIMIT 1`,
+            [sku]
+        );
+
+        if (!result.rows.length) {
+            return res.status(404).json({ error: 'not found' });
+        }
+
+        return res.json(result.rows[0]);
+    } catch (err) {
+        console.error('FILTER ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- CROSS REFERENCE --------------------
+app.get('/api/cross-reference/:code', async (req, res) => {
+    try {
+        const code = (req.params.code || '').toString().trim().toUpperCase();
+
+        if (code.length < 2) {
+            return res.status(400).json({ error: 'invalid code' });
+        }
+
+        const result = await pool.query(
+            `SELECT ${SAFE_FIELDS}
+             FROM filters
+             WHERE competitor_codes::text ILIKE $1
+                OR oem_codes::text ILIKE $1
+             LIMIT 20`,
+            ['%' + code + '%']
+        );
+
+        return res.json({
+            results: result.rows,
+            count: result.rows.length
+        });
+    } catch (err) {
+        console.error('CROSS REF ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- SEARCH BY APPLICATION --------------------
+app.get('/api/search-by-application', async (req, res) => {
+    try {
+        const q = (req.query.q || '').toString().trim();
+
+        if (q.length < 2) {
+            return res.status(400).json({ error: 'min 2 chars' });
+        }
+
+        const result = await pool.query(
+            `SELECT ${SAFE_FIELDS}
+             FROM filters
+             WHERE applications::text ILIKE $1
+                OR description ILIKE $1
+             ORDER BY sku
+             LIMIT 20`,
+            ['%' + q + '%']
+        );
+
+        return res.json({
+            products: result.rows,
+            count: result.rows.length
+        });
+    } catch (err) {
+        console.error('APPLICATION SEARCH ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- STATS --------------------
+app.get('/api/stats', async (req, res) => {
+    try {
+        const result = await pool.query(
+            `SELECT
+                COUNT(*) AS total,
+                COUNT(DISTINCT technology) AS technologies,
+                COUNT(DISTINCT category) AS categories
+             FROM filters`
+        );
+
+        return res.json({
+            total: parseInt(result.rows[0].total) || 0,
+            technologies: parseInt(result.rows[0].technologies) || 0,
+            categories: parseInt(result.rows[0].categories) || 0,
+            timestamp: new Date().toISOString()
+        });
+    } catch (err) {
+        console.error('STATS ERROR:', err.message);
+        return res.status(500).json({ error: 'server error' });
+    }
+});
+
+// -------------------- STATIC FILES --------------------
+app.use(express.static(path.join(__dirname, 'public')));
+
+// -------------------- ROOT --------------------
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// -------------------- GLOBAL ERROR HANDLERS --------------------
+process.on('uncaughtException', (err) => {
+    console.error('UNCAUGHT:', err);
+});
+
+process.on('unhandledRejection', (err) => {
+    console.error('UNHANDLED:', err);
+});
+
+// -------------------- START --------------------
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`ELIMFILTERS API running on ${PORT}`);
+});

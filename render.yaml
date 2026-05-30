@@ -4,7 +4,7 @@ services:
     runtime: node
     rootDir: .
     buildCommand: npm install
-    startCommand: node server.js
+    startCommand: node search-server.js
     envVars:
       - key: NODE_ENV
         value: production
