@@ -1301,6 +1301,37 @@ app.get('/api/status', (req, res) => {
 const { Pool } = require('pg');
 const searchPool = new Pool({ ...dbConfig, max: 5, idleTimeoutMillis: 30000 });
 
+// ─── GET /api/catalog/export ──────────────────────────────────────────────────
+// Export full catalog as CSV. ?key=elim2026 required.
+app.get('/api/catalog/export', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, description, filter_type, sub_type, technology,
+             installation_type, thread_size,
+             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency,
+             burst_pressure_psi, collapse_pressure_psi, duty
+      FROM elimfilters_catalog
+      ORDER BY filter_type, sku
+    `);
+    const cols = result.fields.map(f => f.name);
+    const escape = v => v == null ? '' : String(v).includes(',') || String(v).includes('"') || String(v).includes('\n')
+      ? '"' + String(v).replace(/"/g, '""') + '"'
+      : String(v);
+    const lines = [cols.join(','), ...result.rows.map(r => cols.map(c => escape(r[c])).join(','))];
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename="elimfilters_catalog.csv"');
+    res.send(lines.join('\r\n'));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
