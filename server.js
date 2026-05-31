@@ -186,14 +186,16 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.precleaner)]
     );
 
-    // Air filters — secondary
+    // Air filters — secondary/safety element
     const airSecRes = await client.query(
       `UPDATE elimfilters_catalog
        SET description = $1::jsonb
        WHERE LOWER(filter_type) LIKE '%air%'
          AND LOWER(filter_type) NOT LIKE '%cabin%'
          AND LOWER(filter_type) NOT LIKE '%housing%'
-         AND (LOWER(sub_type) LIKE '%secondary%' OR LOWER(filter_type) LIKE '%secondary%')
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%secondary%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%safety%'
+              OR LOWER(filter_type) LIKE '%secondary%')
        RETURNING sku`,
       [JSON.stringify(DESC.air_secondary)]
     );
@@ -282,40 +284,34 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.hydraulic_cartridge)]
     );
 
-    // Fuel/Water Separator spin-on
+    // Fuel/Water Separator spin-on (Racor turbine style, spin-on assembly)
     const fwsSpinRes = await client.query(
       `UPDATE elimfilters_catalog
        SET description = $1::jsonb
-       WHERE (LOWER(filter_type) LIKE '%fuel%' AND LOWER(filter_type) LIKE '%water%')
-          OR LOWER(filter_type) LIKE '%separator%'
-          AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
-               OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       WHERE LOWER(filter_type) LIKE '%turbine%'
+         AND LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
        RETURNING sku`,
       [JSON.stringify(DESC.fws_spinon)]
     );
 
-    // Fuel/Water Separator cartridge
+    // Fuel/Water Separator cartridge (Racor turbine style, cartridge/assembly)
     const fwsCartRes = await client.query(
       `UPDATE elimfilters_catalog
        SET description = $1::jsonb
-       WHERE (LOWER(filter_type) LIKE '%fuel%' AND LOWER(filter_type) LIKE '%water%')
-          OR LOWER(filter_type) LIKE '%separator%'
-          AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
-                   OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       WHERE LOWER(filter_type) LIKE '%turbine%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%')
        RETURNING sku`,
       [JSON.stringify(DESC.fws_cartridge)]
     );
 
-    // Fuel in-line (before fuel spin/cartridge to avoid overlap)
+    // Fuel in-line — check installation_type, not filter_type
     const fuelInlineRes = await client.query(
       `UPDATE elimfilters_catalog
        SET description = $1::jsonb
        WHERE LOWER(filter_type) LIKE '%fuel%'
-         AND (LOWER(filter_type) LIKE '%inline%'
-              OR LOWER(filter_type) LIKE '%in-line%'
-              OR LOWER(filter_type) LIKE '%in line%'
-              OR LOWER(COALESCE(sub_type,'')) LIKE '%inline%'
-              OR LOWER(COALESCE(sub_type,'')) LIKE '%in-line%')
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%in-line%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%in line%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%inline%')
        RETURNING sku`,
       [JSON.stringify(DESC.fuel_inline)]
     );
@@ -327,10 +323,8 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
        WHERE LOWER(filter_type) LIKE '%fuel%'
          AND LOWER(filter_type) NOT LIKE '%water%'
          AND LOWER(filter_type) NOT LIKE '%separator%'
-         AND LOWER(filter_type) NOT LIKE '%inline%'
-         AND LOWER(filter_type) NOT LIKE '%in-line%'
-         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%inline%'
-         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%inline%'
          AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
               OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
        RETURNING sku`,
@@ -344,10 +338,8 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
        WHERE LOWER(filter_type) LIKE '%fuel%'
          AND LOWER(filter_type) NOT LIKE '%water%'
          AND LOWER(filter_type) NOT LIKE '%separator%'
-         AND LOWER(filter_type) NOT LIKE '%inline%'
-         AND LOWER(filter_type) NOT LIKE '%in-line%'
-         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%inline%'
-         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%inline%'
          AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
                   OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
        RETURNING sku`,
