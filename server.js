@@ -3,46 +3,6 @@ const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
-
-// ─── Startup validation ───────────────────────────────────────────────────────
-if (!process.env.DATABASE_URL) {
-  console.error('[FATAL] DATABASE_URL is not set. Exiting.');
-  process.exit(1);
-}
-
-// ─── In-memory rate limiter (no external dependency) ─────────────────────────
-const _rl = {};
-function rateLimit(ip, max, windowMs) {
-  const now = Date.now();
-  if (!_rl[ip] || now > _rl[ip].reset) _rl[ip] = { n: 0, reset: now + windowMs };
-  _rl[ip].n++;
-  return _rl[ip].n <= max;
-}
-// Clean up old entries every 10 min
-setInterval(() => {
-  const now = Date.now();
-  for (const ip of Object.keys(_rl)) if (now > _rl[ip].reset) delete _rl[ip];
-}, 600_000);
-
-// ─── HTML escape helper ───────────────────────────────────────────────────────
-function esc(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;');
-}
-
-// ─── Admin key (rotate via env var ADMIN_KEY) ─────────────────────────────────
-const ADMIN_KEY = process.env.ADMIN_KEY || 'elim2026admin';
-function adminAuth(req, res) {
-  if (req.query.key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
-  return true;
-}
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -54,207 +14,27 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// TEMP: inspect raw dimensions for a SKU — DELETE AFTER USE
-app.get('/api/admin/dims/:sku', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+// TEMP: check filter_type values for zero-result categories — DELETE AFTER USE
+app.get('/api/admin/filter-type-check', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
     const r = await client.query(
-      `SELECT sku, filter_type, sub_type, installation_type,
-              height_mm, outer_diameter_mm, gasket_od_mm, gasket_id_mm,
-              thread_size, micron_rating, nominal_efficiency,
-              burst_pressure_psi, collapse_pressure_psi, iso_test_method
-       FROM elimfilters_catalog WHERE UPPER(sku) = UPPER($1) OR UPPER(codigo_base) = UPPER($1)`,
-      [req.params.sku]
+      `SELECT filter_type, sub_type, installation_type, COUNT(*) as total
+       FROM elimfilters_catalog
+       GROUP BY filter_type, sub_type, installation_type
+       ORDER BY filter_type, total DESC
+       LIMIT 200`
     );
-    if (!r.rows.length) return res.json({ error: 'not found' });
-    const d = r.rows[0];
-    const toIn = v => v ? +(v / 25.4).toFixed(3) : null;
-    res.json({
-      sku: d.sku,
-      filter_type: d.filter_type,
-      sub_type: d.sub_type,
-      installation_type: d.installation_type,
-      height:      { mm: d.height_mm,           in: toIn(d.height_mm) },
-      od:          { mm: d.outer_diameter_mm,    in: toIn(d.outer_diameter_mm) },
-      gasket_od:   { mm: d.gasket_od_mm,         in: toIn(d.gasket_od_mm) },
-      gasket_id:   { mm: d.gasket_id_mm,         in: toIn(d.gasket_id_mm) },
-      thread:      d.thread_size,
-      micron:      d.micron_rating,
-      efficiency:  d.nominal_efficiency,
-      burst_psi:   d.burst_pressure_psi,
-      collapse_psi: d.collapse_pressure_psi,
-      iso_method:  d.iso_test_method,
-    });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
-});
-
-// TEMP: fix technology name typos — DELETE AFTER USE
-app.get('/api/admin/fix-tech-names', async (req, res) => {
-  if (!adminAuth(req, res)) return;
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const fixes = [
-      { wrong: '%SINTRAX%',   correct: 'SYNTRAX™'  },
-      { wrong: '%SYNTAPORE%', correct: 'SYNTEPORE™' },
-      { wrong: '%INTAKCORE%', correct: 'INTEKCORE™' },
-    ];
-    const results = {};
-    for (const f of fixes) {
-      const r = await client.query(
-        `UPDATE elimfilters_catalog SET technology = $1
-         WHERE UPPER(technology) LIKE $2 RETURNING sku`,
-        [f.correct, f.wrong]
-      );
-      results[f.correct] = r.rowCount;
-    }
-    res.json(results);
-  } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
-});
-
-// TEMP: fix dimensions from CSV — DELETE AFTER USE
-app.get('/api/admin/fix-dimensions', async (req, res) => {
-  if (!adminAuth(req, res)) return;
-  const csvPath = path.join(__dirname, 'data', 'dims.csv');
-  if (!fs.existsSync(csvPath)) return res.status(404).json({ error: 'dims.csv not found' });
-
-  const lines = fs.readFileSync(csvPath, 'utf8').split('\n').filter(Boolean);
-  const headers = lines[0].split(',');
-  const idx = k => headers.indexOf(k);
-
-  const rows = lines.slice(1).map(l => {
-    const cols = l.split(',');
-    const safeNum = (v, max) => { const n = parseFloat(v); return (n > 0 && n <= max) ? n : null; };
-    return {
-      sku:  cols[idx('sku')]?.trim(),
-      od:   safeNum(cols[idx('od')], 1000),  // up to 1000mm OD for large industrial air filters
-      h:    safeNum(cols[idx('h')], 2000),
-      god:  safeNum(cols[idx('god')], 500),
-      gid:  safeNum(cols[idx('gid')], 500),
-      thread: cols[idx('thread')]?.trim() || null,
-      burst:  safeNum(cols[idx('burst')], 10000),
-      collapse: safeNum(cols[idx('collapse')], 10000),
-      sub:  cols[idx('sub')]?.trim() || null,
-      inst: cols[idx('inst')]?.trim() || null,
-      ft:   cols[idx('ft')]?.trim() || null,
-    };
-  }).filter(r => r.sku);
-
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    let updated = 0, skipped = 0;
-    for (const r of rows) {
-      const res2 = await client.query(
-        `UPDATE elimfilters_catalog
-         SET outer_diameter_mm    = COALESCE($2, outer_diameter_mm),
-             height_mm            = COALESCE($3, height_mm),
-             gasket_od_mm         = COALESCE($4, gasket_od_mm),
-             gasket_id_mm         = COALESCE($5, gasket_id_mm),
-             thread_size          = COALESCE($6, thread_size),
-             burst_pressure_psi   = COALESCE($7, burst_pressure_psi),
-             collapse_pressure_psi = COALESCE($8, collapse_pressure_psi),
-             installation_type    = COALESCE($9, installation_type),
-             filter_type          = COALESCE($10, filter_type)
-         WHERE sku = $1`,
-        [r.sku, r.od, r.h, r.god, r.gid, r.thread, r.burst, r.collapse, r.inst, r.ft]
-      );
-      if (res2.rowCount > 0) updated++; else skipped++;
-    }
-    res.json({ total_csv: rows.length, updated, skipped });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  } finally { await client.end(); }
-});
-
-// Equipment audit — shows how many products have 0/few/many equipment entries by filter type
-app.get('/api/admin/audit-equipment', async (req, res) => {
-  if (!adminAuth(req, res)) return;
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const r = await client.query(`
-      SELECT
-        filter_type,
-        COUNT(*) as total,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
-        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
-      FROM elimfilters_catalog
-      GROUP BY filter_type
-      ORDER BY total DESC
-    `);
-    const totals = await client.query(`
-      SELECT
-        COUNT(*) as total,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
-        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
-        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
-      FROM elimfilters_catalog
-    `);
-    // Sample: products with few (1-5) equipment entries — likely incomplete
-    const suspects = await client.query(`
-      SELECT sku, codigo_base, filter_type,
-             jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) as equip_count
-      FROM elimfilters_catalog
-      WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5
-      ORDER BY filter_type, sku
-      LIMIT 30
-    `);
-    res.json({
-      by_filter_type: r.rows,
-      totals: totals.rows[0],
-      suspects_sample: suspects.rows
-    });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
-});
-
-// TEMP: patch EA10695 equipment_applications with complete Donaldson data — DELETE AFTER USE
-// Scraper only captured first 5 visible rows; Donaldson page has 39 unique entries
-app.get('/api/admin/patch-ea10695-equipment', async (req, res) => {
-  if (!adminAuth(req, res)) return;
-  const equipment = [{"machine":"FREIGHTLINER FL112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS NTC855"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"FREIGHTLINER FLA300","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA370","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA424","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLB9064ST","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FMC","year":"","type":"TRUCK","engine":""},{"machine":"MAC CH","year":"1998 - 2003","type":"TRUCK","engine":"MACK E-Tech VMAC III"},{"machine":"MAC CH","year":"2003 - 2008","type":"TRUCK","engine":"MACK E7 CCRS 12L"},{"machine":"MAC CH","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MAC CHR","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MACK CH613","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL653","year":"","type":"TRUCK","engine":""},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK ASET AMI"},{"machine":"MACK CL733","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK GRANITE","year":"2006 - 2012","type":"TRUCK","engine":"MACK MP7"},{"machine":"MACK GRANITE","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK SUPERLINER","year":"","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK TITAN","year":"2008 - 2017","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK VISION","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"PETERBILT 362","year":"1997","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2000","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1999","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1998","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2002","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2001","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 377","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"}];
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const r = await client.query(
-      `UPDATE elimfilters_catalog SET equipment_applications = $1::jsonb WHERE sku = 'EA10695' RETURNING sku`,
-      [JSON.stringify(equipment)]
-    );
-    res.json({ updated: r.rowCount, equipment_count: equipment.length });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
-});
-
-// TEMP: fix corrupted EW7 coolant filter heights (7620mm = scraper unit error) — DELETE AFTER USE
-app.get('/api/admin/fix-ew7-heights', async (req, res) => {
-  if (!adminAuth(req, res)) return;
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    // NULL out clearly impossible coolant filter heights (>500mm = >20 inch is wrong for coolant filters)
-    const r = await client.query(
-      `UPDATE elimfilters_catalog
-       SET height_mm = NULL
-       WHERE LOWER(filter_type) LIKE '%coolant%'
-         AND height_mm > 500
-       RETURNING sku, height_mm`,
-    );
-    res.json({ fixed: r.rowCount, nulled_skus: r.rows.map(x => x.sku) });
+    res.json({ rows: r.rows });
   } catch (e) { res.status(500).json({ error: e.message }); }
   finally { await client.end(); }
 });
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
 app.get('/api/admin/update-lube-descriptions', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -625,29 +405,10 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
   } finally { await client.end(); }
 });
 
-app.use(cors({
-  origin: [
-    'https://elimfilters.com',
-    'https://www.elimfilters.com',
-    'https://part-search.elimfilters.com',
-  ],
-  credentials: true,
-}));
+app.use(cors());
 app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
-
-// Rate limiting middleware
-app.use('/api/search', (req, res, next) => {
-  const ip = req.ip || req.connection.remoteAddress;
-  if (!rateLimit(ip, 120, 60_000)) return res.status(429).json({ error: 'Too many requests' });
-  next();
-});
-app.use('/api/admin', (req, res, next) => {
-  const ip = req.ip || req.connection.remoteAddress;
-  if (!rateLimit(ip, 10, 60_000)) return res.status(429).json({ error: 'Too many requests' });
-  next();
-});
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
 
@@ -872,7 +633,7 @@ app.get('/api/debug/find-code/:code', async (req, res) => {
 
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -937,7 +698,7 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
 
 // Temp: analyze duplicate SKUs + calculate correct SKU for each codigo_base
 app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -999,7 +760,7 @@ app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
 
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1020,7 +781,7 @@ app.get('/api/analyze/duplicate-skus', async (req, res) => {
 
 // Temp: add UNIQUE constraint to sku column (after deduplicating)
 app.get('/api/migrate/fix-sku-unique', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1051,7 +812,7 @@ app.get('/api/migrate/fix-sku-unique', async (req, res) => {
 
 // Temp: create maintenance_kits and kit_components tables
 app.get('/api/migrate/create-kit-tables', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1416,7 +1177,7 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 
 // Temp: consolidate duplicate SKUs (preview consolidation plan)
 app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1456,7 +1217,7 @@ app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
 
 // Temp: apply consolidation (delete duplicates, merge competitor_codes)
 app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1513,7 +1274,7 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
 app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1539,7 +1300,7 @@ app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
 
 // Temp: add alternative_codes column
 app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1560,7 +1321,7 @@ app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
 
 // Temp: debug EL82100 vs EL81016 comparison
 app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1590,7 +1351,7 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
 
 // Copia campos faltantes de EL81016 a EL82100 y registra alternativas
 app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -1622,7 +1383,7 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
 });
 
 app.get('/api/catalog/stats', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1669,7 +1430,7 @@ app.get('/api/catalog/stats', async (req, res) => {
 
 // Merge OEM codes from EL81016 into EL82100
 app.get('/api/migrate/merge-oem-codes', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -1689,7 +1450,7 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
 
 // Audit: Find incomplete products
 app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1719,45 +1480,426 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 });
 
 app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
-  if (!adminAuth(req, res)) return;
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
 
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
 
-// Endpoint para el scraper local — devuelve productos Donaldson pendientes de enriquecer
-app.get('/api/pending-donaldson', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const limit = parseInt(req.query.limit) || 2000;
+// ─── POST /api/import/donaldson ──────────────────────────────────────────────
+// Accepts batch of pre-processed rows and upserts into elimfilters_catalog.
+// Body: { key: "elim2026", rows: [ { sku, codigo_base, filter_type, ... } ] }
+app.post('/api/import/donaldson', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const result = await client.query(`
-      SELECT sku, codigo_base, filter_type
-      FROM elimfilters_catalog
-      WHERE codigo_base IS NOT NULL
-        AND codigo_base ~ '^P[0-9]'
-        AND (
-          equipment_applications IS NULL
-          OR jsonb_typeof(equipment_applications) <> 'array'
-          OR jsonb_array_length(equipment_applications) = 0
-          OR oem_codes IS NULL
-          OR jsonb_typeof(oem_codes) <> 'array'
-          OR jsonb_array_length(oem_codes) = 0
-        )
-      ORDER BY sku
-      LIMIT $1
-    `, [limit]);
-    res.json({ success: true, count: result.rows.length, products: result.rows });
-  } catch(e) {
+    let inserted = 0, updated = 0, errors = 0;
+
+    for (const row of rows) {
+      if (!row.sku || !row.codigo_base) { errors++; continue; }
+      try {
+        const result = await client.query(`
+          INSERT INTO elimfilters_catalog (
+            sku, codigo_base, description, filter_type, sub_type, technology,
+            installation_type, thread_size,
+            outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+            iso_test_method, micron_rating, nominal_efficiency,
+            burst_pressure_psi, collapse_pressure_psi,
+            duty,
+            oem_codes, competitor_codes, brand_crossrefs, alternatives, equipment_applications
+          ) VALUES (
+            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,
+            $19::jsonb,$20::jsonb,$21::jsonb,$22::jsonb,$23::jsonb
+          )
+          ON CONFLICT (sku) DO UPDATE SET
+            codigo_base           = COALESCE(EXCLUDED.codigo_base,           elimfilters_catalog.codigo_base),
+            description           = COALESCE(EXCLUDED.description,           elimfilters_catalog.description),
+            filter_type           = COALESCE(EXCLUDED.filter_type,           elimfilters_catalog.filter_type),
+            sub_type              = COALESCE(EXCLUDED.sub_type,              elimfilters_catalog.sub_type),
+            technology            = COALESCE(EXCLUDED.technology,            elimfilters_catalog.technology),
+            installation_type     = COALESCE(EXCLUDED.installation_type,     elimfilters_catalog.installation_type),
+            thread_size           = COALESCE(EXCLUDED.thread_size,           elimfilters_catalog.thread_size),
+            outer_diameter_mm     = COALESCE(EXCLUDED.outer_diameter_mm,     elimfilters_catalog.outer_diameter_mm),
+            height_mm             = COALESCE(EXCLUDED.height_mm,             elimfilters_catalog.height_mm),
+            gasket_od_mm          = COALESCE(EXCLUDED.gasket_od_mm,          elimfilters_catalog.gasket_od_mm),
+            gasket_id_mm          = COALESCE(EXCLUDED.gasket_id_mm,          elimfilters_catalog.gasket_id_mm),
+            iso_test_method       = COALESCE(EXCLUDED.iso_test_method,       elimfilters_catalog.iso_test_method),
+            micron_rating         = COALESCE(EXCLUDED.micron_rating,         elimfilters_catalog.micron_rating),
+            nominal_efficiency    = COALESCE(EXCLUDED.nominal_efficiency,    elimfilters_catalog.nominal_efficiency),
+            burst_pressure_psi    = COALESCE(EXCLUDED.burst_pressure_psi,    elimfilters_catalog.burst_pressure_psi),
+            collapse_pressure_psi = COALESCE(EXCLUDED.collapse_pressure_psi, elimfilters_catalog.collapse_pressure_psi),
+            duty                  = COALESCE(EXCLUDED.duty,                  elimfilters_catalog.duty),
+            oem_codes             = COALESCE(EXCLUDED.oem_codes,             elimfilters_catalog.oem_codes),
+            competitor_codes      = COALESCE(EXCLUDED.competitor_codes,      elimfilters_catalog.competitor_codes),
+            brand_crossrefs       = COALESCE(EXCLUDED.brand_crossrefs,       elimfilters_catalog.brand_crossrefs),
+            alternatives          = COALESCE(EXCLUDED.alternatives,          elimfilters_catalog.alternatives),
+            equipment_applications = COALESCE(EXCLUDED.equipment_applications, elimfilters_catalog.equipment_applications)
+          RETURNING xmax
+        `, [
+          row.sku, row.codigo_base, row.description || null,
+          row.filter_type || null, row.sub_type || null,
+          row.technology || null,
+          row.installation_type || null, row.thread_size || null,
+          row.outer_diameter_mm || null, row.height_mm || null,
+          row.gasket_od_mm || null, row.gasket_id_mm || null,
+          row.iso_test_method || null, row.micron_rating || null,
+          row.nominal_efficiency || null,
+          row.burst_pressure_psi || null, row.collapse_pressure_psi || null,
+          row.duty || 'HEAVY_DUTY',
+          JSON.stringify(row.oem_codes || []),
+          JSON.stringify(row.competitor_codes || []),
+          JSON.stringify(row.brand_crossrefs || {}),
+          JSON.stringify(row.alternatives || []),
+          JSON.stringify(row.equipment_applications || [])
+        ]);
+        // xmax = 0 means insert, otherwise update
+        if (result.rows && result.rows[0] && result.rows[0].xmax === '0') inserted++;
+        else updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[import-err]', row.sku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, inserted, updated, errors });
+  } catch (e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
     await client.end();
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} with UTF-8 encoding`);
-  console.log(`✅ Chatbot service running`);
-  console.log(`✅ WhatsApp webhook listening on /webhook/whatsapp`);
+// ─── GET /api/import/existing-skus ───────────────────────────────────────────
+// Returns all existing SKUs so the client can avoid collisions.
+app.get('/api/import/existing-skus', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
+    res.json({ success: true, skus: result.rows.map(r => r.sku) });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// Register knowledge API for AI agents
+try {
+  app.use('/api/knowledge', knowledgeRoutes);
+  console.log('[middleware] Knowledge API registered ✅');
+} catch (err) {
+  console.error('[middleware] Failed to register knowledge API:', err.message);
+}
+
+
+// ─── GET /api/migrate/init-db ────────────────────────────────────────────────
+// Initializes database schema (tables, views, constraints)
+app.get('/api/migrate/init-db', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    
+    // 1. Table schema
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS elimfilters_catalog (
+        id SERIAL PRIMARY KEY,
+        sku VARCHAR(100) UNIQUE NOT NULL,
+        codigo_base VARCHAR(100),
+        description TEXT,
+        filter_type VARCHAR(100),
+        sub_type VARCHAR(100),
+        technology VARCHAR(100),
+        installation_type VARCHAR(100),
+        thread_size VARCHAR(100),
+        outer_diameter_mm NUMERIC,
+        height_mm NUMERIC,
+        gasket_od_mm NUMERIC,
+        gasket_id_mm NUMERIC,
+        iso_test_method VARCHAR(100),
+        micron_rating NUMERIC,
+        nominal_efficiency VARCHAR(100),
+        burst_pressure_psi NUMERIC,
+        collapse_pressure_psi NUMERIC,
+        duty VARCHAR(50),
+        oem_codes JSONB,
+        competitor_codes JSONB,
+        brand_crossrefs JSONB,
+        alternatives JSONB,
+        equipment_applications JSONB
+      );
+    `);
+
+    // 2. Constraints
+    await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
+    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]{4,7}[A-Z]?$');");
+
+    // 3. View
+    await client.query(`
+      CREATE OR REPLACE VIEW filters AS 
+      SELECT 
+        sku, codigo_base as base_code, filter_type as category, 
+        technology, installation_type as style, thread_size as thread,
+        outer_diameter_mm as outer_diameter, height_mm as length,
+        iso_test_method as type, 
+        oem_codes, competitor_codes, equipment_applications as applications,
+        sub_type as description, gasket_od_mm as inner_diameter, nominal_efficiency as efficiency, filter_type as media_type
+      FROM elimfilters_catalog;
+    `);
+
+    console.log('[migrations] DB initialized successfully!');
+    return res.json({ success: true, message: 'Database initialized successfully (tables, views, constraints)' });
+  } catch (err) {
+    console.error('[migrations] DB INIT ERROR:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/migrate/fix-sku-constraint ─────────────────────────────────────
+app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
+    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]{4,7}[A-Z]?$');");
+    return res.json({ success: true, message: 'Constraint updated: accepts 4-7 digit SKU suffixes' });
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/migrate/reset-catalog ──────────────────────────────────────────
+// Truncates catalog and ensures new columns exist. Confirms with ?confirm=yes
+app.get('/api/migrate/reset-catalog', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (req.query.confirm !== 'yes') return res.status(400).json({ error: 'Add ?confirm=yes to proceed' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query('TRUNCATE TABLE elimfilters_catalog RESTART IDENTITY;');
+    // Add new columns if they don't exist yet (idempotent)
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description TEXT;`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS brand_crossrefs JSONB;`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS alternatives JSONB;`);
+    console.log('[migrations] Catalog reset: truncated + columns ensured');
+    return res.json({ success: true, message: 'Catalog truncated and schema updated' });
+  } catch (err) {
+    console.error('[migrations] RESET ERROR:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/status ─────────────────────────────────────────────────────────
+// Health and version status for deployment verification
+app.get('/api/status', (req, res) => {
+  res.json({
+    status: 'ok',
+    version: '3.7.0',
+    time: new Date().toISOString()
+  });
+});
+
+// ── UNIFIED SEARCH ──────────────────────────────────────────────────────────
+
+// ─── GET /api/catalog/export ──────────────────────────────────────────────────
+app.get('/api/catalog/export', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, description, filter_type, sub_type, technology,
+             installation_type, thread_size,
+             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency,
+             burst_pressure_psi, collapse_pressure_psi, duty
+      FROM elimfilters_catalog
+      ORDER BY filter_type, sku
+    `);
+    const cols = result.fields.map(f => f.name);
+    const escape = v => v == null ? '' : (String(v).includes(',') || String(v).includes('"') || String(v).includes('\n'))
+      ? '"' + String(v).replace(/"/g, '""') + '"'
+      : String(v);
+    const lines = [cols.join(','), ...result.rows.map(r => cols.map(c => escape(r[c])).join(','))];
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename="elimfilters_catalog.csv"');
+    res.send(lines.join('\r\n'));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.get('/api/search', async (req, res) => {
+  const q = (req.query.q || '').trim().toUpperCase();
+  if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
+  const lang = detectLang(req);
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // ── Tiered search with match_type labels ──────────────────────────────
+    // Tier 1: Exact SKU or Donaldson base code match
+    let result = await client.query(
+      `SELECT *, 'sku' AS match_type, 0 AS match_rank
+       FROM elimfilters_catalog
+       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
+       LIMIT 20`,
+      [q]
+    );
+
+    // Tier 2: Prefix match on SKU / codigo_base
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         ORDER BY sku
+         LIMIT 20`,
+        [q + '%']
+      );
+    }
+
+    // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
+    // Cross-reference codes must match precisely; prefix matching causes false positives
+    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT *, 'ref' AS match_type, 2 AS match_rank
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
+           WHERE UPPER(elem->>'code') = $1
+         )
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
+           WHERE UPPER(elem->>'code') = $1
+         )
+         ORDER BY sku
+         LIMIT 20`,
+        [q]
+      );
+    }
+
+    // Tier 5: brand_crossrefs — exact match only
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
+              jsonb_array_elements_text(kv.value) AS code_val
+         WHERE UPPER(code_val) = $1
+         ORDER BY sku
+         LIMIT 20`,
+        [q]
+      );
+    }
+
+    // Tier 6: Broad partial match fallback (OEM + competitor text scan)
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *,
+                CASE
+                  WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
+                  ELSE 'partial'
+                END AS match_type,
+                5 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
+         WHERE UPPER(sku) LIKE $1
+            OR UPPER(codigo_base) LIKE $1
+            OR UPPER(oem_elem->>'code') LIKE $1
+         ORDER BY sku
+         LIMIT 20`,
+        ['%' + q + '%']
+      );
+    }
+
+    // ── Determine human-readable match label for the frontend ─────────────
+    function buildMatchLabel(row) {
+      const mt = row.match_type;
+      if (mt === 'sku' || mt === 'sku_prefix' || mt === 'sku_partial') {
+        if (row.sku && row.sku.toUpperCase().includes(q)) return `ELIMFILTERS ${row.sku}`;
+        if (row.codigo_base && row.codigo_base.toUpperCase().includes(q)) return `DONALDSON ${row.codigo_base}`;
+        return null;
+      }
+      if (mt === 'oem' || mt === 'ref') {
+        // Check OEM codes first, then competitor codes
+        const oems = row.oem_codes || [];
+        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (oemHit) return `${oemHit.manufacturer || 'OEM'} ${oemHit.code}`;
+        const comps = row.competitor_codes || [];
+        const compHit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (compHit) return `${compHit.manufacturer || 'COMPETITOR'} ${compHit.code}`;
+        return null;
+      }
+      if (mt === 'competitor') {
+        const comps = row.competitor_codes || [];
+        const hit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (hit) return `${hit.manufacturer || 'COMPETITOR'} ${hit.code}`;
+        return null;
+      }
+      if (mt === 'crossref') {
+        return `CROSS-REFERENCE ${q}`;
+      }
+      return null;
+    }
+
+    const products = result.rows.map(row => ({
+      ...buildFilterData(row, lang),
+      sku: row.sku,
+      match_type: row.match_type || 'partial',
+      match_label: buildMatchLabel(row)
+    }));
+
+    res.json({ products, count: products.length, total_catalog: 4622 });
+  } catch (e) {
+    console.error('[api/search]', e.message);
+    res.status(500).json({ error: e.message, products: [] });
+  } finally {
+    await client.end();
+  }
+});
+
+app.get('/api/stats', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT COUNT(*) AS total, COUNT(DISTINCT technology) AS technologies
+       FROM elimfilters_catalog`
+    );
+    res.json({
+      total: parseInt(r.rows[0].total) || 0,
+      technologies: parseInt(r.rows[0].technologies) || 0,
+      timestamp: new Date().toISOString()
+    });
+  } catch (e) {
+    console.error('[api/stats]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+// ────────────────────────────────────────────────────────────────────────────
+
+const PORT = process.env.PORT || 8080;
+console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`[server] ✅ Listening on port ${PORT}`);
+  console.log(`[server] ✅ ELIMFILTERS API ready`);
 });
