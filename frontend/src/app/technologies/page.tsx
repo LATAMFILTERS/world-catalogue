@@ -92,7 +92,7 @@ export default function TechnologiesPage() {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: 'ELIMFILTERS® Proprietary Protection Architectures',
-        description: 'Nine proprietary protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
+        description: 'Nine exclusive protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
         url: 'https://elimfilters.com/technologies/',
         numberOfItems: 9,
         itemListElement: itemListData,
@@ -161,7 +161,7 @@ export default function TechnologiesPage() {
               lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            NINE PROPRIETARY PROTECTION ARCHITECTURES
+            NINE EXCLUSIVE PROTECTION ARCHITECTURES
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
