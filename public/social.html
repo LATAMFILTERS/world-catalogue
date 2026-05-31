@@ -87,8 +87,8 @@
 
   function getTargetsFromImage(img) {
     let targets = [];
-    const maxFraction = isMobile ? 0.98 : 0.50;
-    const imgW = Math.min(img.width, cvs.width * maxFraction);
+    // Como forzamos el canvas a 1080x1920, queremos que la E ocupe un 85% del ancho
+    const imgW = cvs.width * 0.85; 
     const scale = imgW / img.width;
     const imgH = img.height * scale;
     const startX = (cvs.width - imgW) / 2;
