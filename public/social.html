@@ -16,14 +16,34 @@
       align-items: center;
     }
     #splash-canvas {
-      display: block;
+      display: none;
       width: 100%;
       height: 100%;
+    }
+    #record-btn {
+      padding: 1.5rem 3rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #000;
+      background: #FFF12D;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s;
+      z-index: 100;
+    }
+    #record-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 241, 45, 0.4);
     }
   </style>
 </head>
 <body>
 
+<button id="record-btn">🎥 DESCARGAR VIDEO (Click Aquí)</button>
 <canvas id="splash-canvas"></canvas>
 
 <script>
@@ -34,7 +54,7 @@
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
   
   const isMobile = window.innerWidth < 768;
-  const particleSpacing = isMobile ? 3 : 2; 
+  const particleSpacing = isMobile ? 4 : 3; 
   const mouseRadius = isMobile ? 80 : 120;
   let particlesArray = [];
   let mouse = { x: null, y: null, radius: mouseRadius };
@@ -56,7 +76,8 @@
   let animFrameId = null;
 
   img.onload = () => {
-    startSequence();
+    // Listo para cuando el usuario haga clic en el botón
+    console.log('Imagen cargada');
   };
   
   img.onerror = () => {
@@ -66,8 +87,8 @@
 
   function getTargetsFromImage(img) {
     let targets = [];
-    const maxFraction = isMobile ? 0.98 : 0.50;
-    const imgW = Math.min(img.width, cvs.width * maxFraction);
+    // Como forzamos el canvas a 1080x1920, queremos que la E ocupe un 85% del ancho
+    const imgW = cvs.width * 0.85; 
     const scale = imgW / img.width;
     const imgH = img.height * scale;
     const startX = (cvs.width - imgW) / 2;
@@ -102,7 +123,7 @@
       this.baseX = target.x;
       this.baseY = target.y;
       this.color = target.color;
-      this.size = isMobile ? 1.2 : 0.8;
+      this.size = isMobile ? 1.8 : 1.4;
       this.density = (Math.random() * 40) + 5;
       this.active = true;
     }
@@ -124,7 +145,7 @@
         this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
         this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
       } else {
-        const returnSpeed = isMobile ? 10 : 8;
+        const returnSpeed = isMobile ? 6 : 5;
         if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
         if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
       }
@@ -141,6 +162,9 @@
     }
   }
 
+  let mediaRecorder;
+  let recordedChunks = [];
+
   function startSequence() {
     imageTargets = getTargetsFromImage(img);
     if(imageTargets.length === 0) { window.location.href = 'https://elimfilters.com'; return; }
@@ -148,19 +172,48 @@
     particlesArray = imageTargets.map(t => new Particle(t));
     animateSplash();
 
-    // 4s E → disolver
-    setTimeout(() => {
-      dissolveAll();
-    }, 4000);
+    // Iniciar grabación del canvas a 60 FPS
+    const stream = cvs.captureStream(60);
+    try {
+      mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp9' });
+    } catch (e) {
+      mediaRecorder = new MediaRecorder(stream); // fallback
+    }
 
-    // 5.5s → Redirigir al frontend principal
-    setTimeout(() => {
-      document.body.style.transition = 'opacity 1s ease';
-      document.body.style.opacity = '0';
+    mediaRecorder.ondataavailable = (e) => {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type: 'video/webm' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'elimfilters-teaser.webm';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      
+      // Después de descargar, redirigir
       setTimeout(() => {
         window.location.href = 'https://elimfilters.com';
-      }, 1000);
-    }, 5500);
+      }, 500);
+    };
+
+    mediaRecorder.start();
+
+    // 8s E → disolver
+    setTimeout(() => {
+      dissolveAll();
+    }, 8000);
+
+    // 10s → Detener grabación (esto dispara la descarga)
+    setTimeout(() => {
+      document.body.style.transition = 'opacity 1.5s ease';
+      document.body.style.opacity = '0';
+      mediaRecorder.stop();
+    }, 10000);
   }
 
   function animateSplash() {
@@ -172,6 +225,23 @@
       particlesArray[i].update();
     }
   }
+
+  // Esperar a que el usuario haga clic para empezar
+  document.getElementById('record-btn').addEventListener('click', () => {
+    document.getElementById('record-btn').style.display = 'none';
+    cvs.style.display = 'block';
+    
+    // Forzar el canvas a 1080x1920 (Formato vertical 9:16 para redes) internamente
+    // pero escalado a la pantalla para verlo completo.
+    cvs.width = 1080;
+    cvs.height = 1920;
+    
+    // Anular el resize dinámico para que grabe siempre a máxima calidad vertical
+    window.removeEventListener('resize', resizeSplash);
+    
+    startSequence();
+  });
+
 })();
 
 </script>

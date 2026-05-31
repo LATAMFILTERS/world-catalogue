@@ -17,17 +17,17 @@
     :root {
       --y: #FFF12D;
       --y2: rgba(255,241,45,0.12);
-      --y3: rgba(255,241,45,0.06);
-      --bg: #000;
-      --surface: rgba(255,255,255,0.02);
-      --border: rgba(255,255,255,0.07);
-      --muted: rgba(255,255,255,0.35);
+      --bg: #000000;
+      --fg: #ffffff;
+      --surface: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.1);
+      --muted: rgba(255,255,255,0.6);
     }
 
     html, body {
       width: 100%; min-height: 100vh;
       background: var(--bg);
-      color: #fff;
+      color: var(--fg);
       font-family: 'Outfit', sans-serif;
       overflow-x: hidden;
     }
@@ -64,8 +64,8 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.5rem;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 2px;
       padding: 0.15rem 0.4rem;
     }
@@ -83,7 +83,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.52rem;
       letter-spacing: 0.16em;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
     }
     .search-summary-main {
@@ -91,7 +91,7 @@
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.75);
+      color: var(--fg);
     }
     .search-summary-main strong {
       color: var(--y);
@@ -102,7 +102,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 0.75rem;
       font-weight: 500;
-      color: rgba(255,255,255,0.3);
+      color: var(--muted);
       text-decoration: none;
       letter-spacing: 0.04em;
       transition: color 0.2s;
@@ -113,7 +113,7 @@
     /* ─── RESULTS META ─── */
     .results-meta {
       padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       opacity: 0;
       transform: translateY(12px);
@@ -149,8 +149,8 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.1em;
-      color: rgba(255,241,45,0.5);
-      border: 1px solid rgba(255,241,45,0.15);
+      color: var(--y);
+      border: 1px solid rgba(255,241,45,0.3);
       border-radius: 2px;
       padding: 0.2rem 0.5rem;
     }
@@ -158,13 +158,13 @@
     .meta-divider {
       width: 100%;
       height: 1px;
-      background: linear-gradient(90deg, var(--y) 0%, rgba(255,241,45,0.05) 100%);
+      background: linear-gradient(90deg, var(--y) 0%, rgba(255,241,45,0.1) 100%);
       margin-top: 1.2rem;
     }
 
     /* ─── PRODUCT GRID ─── */
     .products {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem;
       display: flex;
@@ -180,9 +180,9 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.58rem;
       letter-spacing: 0.1em;
-      color: rgba(255,241,45,0.9);
-      background: rgba(255,241,45,0.08);
-      border: 1px solid rgba(255,241,45,0.2);
+      color: var(--y);
+      background: rgba(255,241,45,0.1);
+      border: 1px solid rgba(255,241,45,0.3);
       border-radius: 3px;
       padding: 0.22rem 0.6rem;
       margin-bottom: 0.75rem;
@@ -215,7 +215,7 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .product-card:hover { border-color: rgba(255,241,45,0.15); }
+    .product-card:hover { border-color: rgba(255,241,45,0.25); }
     .product-card:hover::before { opacity: 1; }
 
     .card-inner {
@@ -245,7 +245,7 @@
     .card-base {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
-      color: rgba(255,255,255,0.25);
+      color: var(--muted);
       letter-spacing: 0.06em;
     }
 
@@ -267,32 +267,32 @@
     }
     .badge-type {
       border: 1px solid var(--border);
-      color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.02);
+      color: var(--fg);
+      background: rgba(255,255,255,0.05);
     }
     .badge-tech {
-      border: 1px solid rgba(255,241,45,0.22);
-      color: rgba(255,241,45,0.7);
-      background: rgba(255,241,45,0.04);
+      border: 1px solid rgba(255,241,45,0.3);
+      color: var(--y);
+      background: rgba(255,241,45,0.08);
     }
     .badge-duty {
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.6);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: rgba(255,255,255,0.05);
     }
 
     /* Card Description */
     .card-desc {
       font-family: 'Outfit', sans-serif;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
+      color: var(--muted);
       line-height: 1.65;
       margin-bottom: 1.2rem;
     }
 
     /* Specs Grid */
     .specs-section {
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid var(--border);
       padding-top: 1.2rem;
       margin-bottom: 1.2rem;
     }
@@ -301,7 +301,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.55rem;
       letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.2);
+      color: var(--muted);
       text-transform: uppercase;
       margin-bottom: 0.85rem;
     }
@@ -318,91 +318,154 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.5rem;
       letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.2);
+      color: var(--muted);
       text-transform: uppercase;
     }
 
     .spec-value {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--fg);
     }
 
     /* Cross References */
     .refs-section {
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid var(--border);
       padding-top: 1.2rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .refs-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.55rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.15em;
+      color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.8rem;
     }
 
     .refs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem 1rem;
     }
 
     .ref-chip {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
       letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 3px;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
       padding: 0.3rem 0.6rem;
       transition: border-color 0.2s, color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
     }
     .ref-chip:hover {
-      border-color: rgba(255,241,45,0.2);
-      color: rgba(255,255,255,0.7);
+      border-color: rgba(255,241,45,0.3);
+      color: var(--y);
     }
     .ref-chip .ref-brand {
-      color: rgba(255,241,45,0.4);
-      margin-right: 0.25rem;
+      color: var(--y);
+      font-weight: 500;
+      opacity: 0.85;
     }
 
     /* Equipment Applications */
     .equip-section {
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid var(--border);
       padding-top: 1.2rem;
     }
 
     .equip-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.55rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.15em;
+      color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.8rem;
     }
 
     .equip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.5rem 1rem;
     }
 
     .equip-chip {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 3px;
-      padding: 0.3rem 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* 3-Column layout container */
+    .columns-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .columns-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Remove the separate top borders when inside the 3-column container */
+    .columns-container > div {
+      border-top: none;
+      padding-top: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Set maximum heights with scrolls inside columns to maintain visual balance */
+    .columns-container .refs-grid,
+    .columns-container .equip-grid {
+      display: flex;
+      flex-direction: column;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      gap: 0.4rem;
+    }
+
+    /* Cyberpunk Scrollbar styling */
+    .columns-container .refs-grid::-webkit-scrollbar,
+    .columns-container .equip-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-track,
+    .columns-container .equip-grid::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-thumb,
+    .columns-container .equip-grid::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-thumb:hover,
+    .columns-container .equip-grid::-webkit-scrollbar-thumb:hover {
+      background: var(--y);
     }
 
     /* ─── STATUS MESSAGES ─── */
     .status-container {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 6rem clamp(1rem, 4vw, 3rem);
       text-align: center;
@@ -413,21 +476,21 @@
     .status-icon {
       font-size: 3rem;
       margin-bottom: 1.5rem;
-      opacity: 0.3;
+      opacity: 0.5;
     }
 
     .status-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.1rem;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 0.6rem;
+      color: var(--fg);
+      margin-bottom: 0.2rem;
     }
 
     .status-desc {
       font-family: 'Outfit', sans-serif;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
+      color: var(--muted);
       line-height: 1.6;
     }
 
@@ -468,7 +531,7 @@
 
     /* ─── LOADING DOTS ─── */
     .loading-container {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 6rem clamp(1rem, 4vw, 3rem);
       text-align: center;
@@ -522,7 +585,7 @@
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
-      right: 10vw;
+      right: 3vw;
       z-index: 200;
       display: flex;
       flex-direction: column;
@@ -841,7 +904,7 @@ function showError() {
 }
 
 // ─── Format Refs ───
-function formatRefs(arr, max = 12) {
+function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
   return arr.slice(0, max).map(r => {
     if (typeof r === 'string') return { brand: '', code: r };
@@ -876,7 +939,7 @@ function renderCard(p, index) {
 
   const oem  = formatRefs(p.oem_codes);
   const comp = formatRefs(p.competitor_codes);
-  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 12) : [];
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
 
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
@@ -903,29 +966,76 @@ function renderCard(p, index) {
             <div class="specs-grid">${specs.join('')}</div>
           </div>` : ''}
 
-        ${oem.length ? `
-          <div class="refs-section">
-            <p class="refs-title">OEM Cross-References</p>
-            <div class="refs-grid">
-              ${oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+        ${(oem.length || comp.length || apps.length) ? `
+          <div class="columns-container">
+            <!-- OEM Column -->
+            <div>
+              <p class="refs-title">OEM Cross-References</p>
+              <div class="refs-grid">
+                ${oem.length 
+                  ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('') 
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No OEM cross-references</span>`
+                }
+              </div>
             </div>
-          </div>` : ''}
 
-        ${comp.length ? `
-          <div class="refs-section">
-            <p class="refs-title">Competitor Cross-References</p>
-            <div class="refs-grid">
-              ${comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+            <!-- Competitor Column -->
+            <div>
+              <p class="refs-title">Competitor Cross-References</p>
+              <div class="refs-grid">
+                ${comp.length 
+                  ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('') 
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No competitor cross-references</span>`
+                }
+              </div>
             </div>
-          </div>` : ''}
 
-        ${apps.length ? `
-          <div class="equip-section">
-            <p class="equip-title">Equipment Applications</p>
-            <div class="equip-grid">
-              ${apps.map(a => `<span class="equip-chip">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+            <!-- Equipment Column -->
+            <div>
+              <p class="equip-title">${T.equipTitle}</p>
+              <div class="equip-grid">
+                ${apps.length 
+                  ? apps.map(a => {
+                      if (typeof a === 'object') {
+                        const fullName = a.equipment || a.model || '';
+                        let eng = a.engine || '';
+                        if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                        
+                        // Extract first word as manufacturer, or highlight appropriately
+                        const spaceIdx = fullName.indexOf(' ');
+                        let brandSpan = '<span></span>';
+                        let restName = fullName;
+                        if (spaceIdx > 0) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName.substring(0, spaceIdx)}</span>`;
+                          restName = fullName.substring(spaceIdx + 1);
+                        } else if (fullName) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName}</span>`;
+                          restName = '';
+                        }
+                        
+                        return `<span class="equip-chip">${brandSpan}<span>${restName}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${eng}]</span>` : ''}</span></span>`;
+                      }
+                      
+                      // Fallback for simple string application
+                      const simpleStr = String(a);
+                      const spaceIdx = simpleStr.indexOf(' ');
+                      let brandSpan = '<span></span>';
+                      let restName = simpleStr;
+                      if (spaceIdx > 0) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr.substring(0, spaceIdx)}</span>`;
+                        restName = simpleStr.substring(spaceIdx + 1);
+                      } else if (simpleStr) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr}</span>`;
+                        restName = '';
+                      }
+                      return `<span class="equip-chip">${brandSpan}<span>${restName}</span></span>`;
+                    }).join('') 
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No equipment applications</span>`
+                }
+              </div>
             </div>
-          </div>` : ''}
+          </div>
+        ` : ''}
       </div>
     </article>`;
 }
