@@ -14,6 +14,25 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
+// TEMP: compare two SKU specs — DELETE AFTER USE
+app.get('/api/admin/compare-skus', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const skus = (req.query.skus || '').toUpperCase().split(',').map(s => s.trim()).filter(Boolean);
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT sku, codigo_base, filter_type, sub_type, technology, duty,
+              height_mm, od_mm, gasket_od_mm, thread, micron_rating,
+              nominal_efficiency, burst_pressure_psi, iso_test_method
+       FROM elimfilters_catalog WHERE UPPER(sku) = ANY($1)`,
+      [skus]
+    );
+    res.json({ skus, rows: r.rows });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: deduplicate B76 in EL84004 competitor_codes — DELETE AFTER USE
 app.get('/api/admin/fix-el84004-b76', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
