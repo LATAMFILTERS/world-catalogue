@@ -921,9 +921,17 @@ function renderCard(p, index) {
 
         ${apps.length ? `
           <div class="equip-section">
-            <p class="equip-title">Equipment Applications</p>
+            <p class="equip-title">${T.equipTitle}</p>
             <div class="equip-grid">
-              ${apps.map(a => `<span class="equip-chip">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+              ${apps.map(a => {
+                if (typeof a === 'object') {
+                  const name = a.equipment || a.model || '';
+                  let eng = a.engine || '';
+                  if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                  return `<span class="equip-chip">${name}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${eng}]</span>` : ''}</span>`;
+                }
+                return `<span class="equip-chip">${a}</span>`;
+              }).join('')}
             </div>
           </div>` : ''}
       </div>
