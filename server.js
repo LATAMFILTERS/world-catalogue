@@ -65,7 +65,7 @@ app.get('/api/admin/dims/:sku', async (req, res) => {
               height_mm, outer_diameter_mm, gasket_od_mm, gasket_id_mm,
               thread_size, micron_rating, nominal_efficiency,
               burst_pressure_psi, collapse_pressure_psi, iso_test_method
-       FROM elimfilters_catalog WHERE UPPER(sku) = UPPER($1)`,
+       FROM elimfilters_catalog WHERE UPPER(sku) = UPPER($1) OR UPPER(codigo_base) = UPPER($1)`,
       [req.params.sku]
     );
     if (!r.rows.length) return res.json({ error: 'not found' });
@@ -131,7 +131,7 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
     const safeNum = (v, max) => { const n = parseFloat(v); return (n > 0 && n <= max) ? n : null; };
     return {
       sku:  cols[idx('sku')]?.trim(),
-      od:   safeNum(cols[idx('od')], 500),
+      od:   safeNum(cols[idx('od')], 1000),  // up to 1000mm OD for large industrial air filters
       h:    safeNum(cols[idx('h')], 2000),
       god:  safeNum(cols[idx('god')], 500),
       gid:  safeNum(cols[idx('gid')], 500),
@@ -169,6 +169,25 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   } finally { await client.end(); }
+});
+
+// TEMP: fix corrupted EW7 coolant filter heights (7620mm = scraper unit error) — DELETE AFTER USE
+app.get('/api/admin/fix-ew7-heights', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    // NULL out clearly impossible coolant filter heights (>500mm = >20 inch is wrong for coolant filters)
+    const r = await client.query(
+      `UPDATE elimfilters_catalog
+       SET height_mm = NULL
+       WHERE LOWER(filter_type) LIKE '%coolant%'
+         AND height_mm > 500
+       RETURNING sku, height_mm`,
+    );
+    res.json({ fixed: r.rowCount, nulled_skus: r.rows.map(x => x.sku) });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
 });
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE

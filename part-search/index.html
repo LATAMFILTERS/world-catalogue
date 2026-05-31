@@ -1299,7 +1299,16 @@ function parseDesc(val) {
 
 function fmtRefs(arr, max = 8) {
   if (!arr?.length) return null;
-  return arr.slice(0, max);
+  const seen = new Set();
+  return arr.map(r => {
+    const brand = (r.manufacturer || '').replace(/-/g,' ').replace(/\s+/g,' ').trim().toUpperCase();
+    let code = r.code || r.partNumber || r || '';
+    try { code = decodeURIComponent(code); } catch(_) {}
+    const key = brand + '|' + String(code).toUpperCase();
+    if (!code || seen.has(key)) return null;
+    seen.add(key);
+    return { manufacturer: r.manufacturer || '', code };
+  }).filter(Boolean).slice(0, max);
 }
 
 function renderCard(p) {

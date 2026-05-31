@@ -911,16 +911,31 @@ function parseDesc(val) {
 }
 
 // ─── Format Refs ───
+function normalizeBrand(b) {
+  if (!b) return '';
+  // Normalize brand name variations (AC-DELCO → AC DELCO, BIG-A → BIG A, etc.)
+  return b.trim().replace(/-/g, ' ').replace(/\s+/g, ' ').toUpperCase();
+}
+
 function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
+  const seen = new Set();
   return arr.slice(0, max).map(r => {
     if (typeof r === 'string') return { brand: '', code: r };
-    const brand = r.manufacturer || '';
-    return {
-      brand: brand.toUpperCase() === 'UNKNOWN' ? '' : brand,
-      code: r.code || r.partNumber || ''
-    };
-  }).filter(r => r.code);
+    const rawBrand = r.manufacturer || '';
+    const brand = rawBrand.toUpperCase() === 'UNKNOWN' ? '' : rawBrand;
+    // URL-decode codes (scraper sometimes stores %2F etc.)
+    let code = r.code || r.partNumber || '';
+    try { code = decodeURIComponent(code); } catch(_) {}
+    return { brand, code };
+  }).filter(r => {
+    if (!r.code) return false;
+    // Deduplicate by normalized brand+code
+    const key = normalizeBrand(r.brand) + '|' + r.code.toUpperCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 // ─── Render Spec Item ───
