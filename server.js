@@ -503,6 +503,18 @@ function detectLang(req) {
   return langs.some(l => l.startsWith('es')) ? 'es' : 'en';
 }
 
+const PROPRIETARY_SUBTYPES = new Set([
+  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
+  'alpha-web™', 'alpha-web', 'synteq xp™',
+]);
+function safeSubtype(val, lang = 'en') {
+  const text = extractText(val, lang);
+  if (!text) return null;
+  if (/[®™]/.test(text)) return null;
+  if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
+  return text;
+}
+
 function extractText(val, lang = 'en') {
   if (val === null || val === undefined) return null;
   // Already an object (JSONB from pg)
@@ -552,9 +564,9 @@ function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
-    description: row.description || extractText(row.sub_type, lang) || null,
+    description: row.description || null,
     filter_type: extractText(row.filter_type, lang),
-    filter_subtype: extractText(row.sub_type, lang) || null,
+    filter_subtype: safeSubtype(row.sub_type, lang),
     technology: row.technology || null,
     technology_logo: getTechLogo(row.technology),
     installation_type: row.installation_type || null,
