@@ -14,58 +14,6 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// TEMP: compare two SKU specs — DELETE AFTER USE
-app.get('/api/admin/compare-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
-  const skus = (req.query.skus || '').toUpperCase().split(',').map(s => s.trim()).filter(Boolean);
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const r = await client.query(
-      `SELECT sku, codigo_base, filter_type, sub_type, technology, duty,
-              height_mm, outer_diameter_mm, gasket_od_mm, thread_size, micron_rating,
-              nominal_efficiency, burst_pressure_psi, iso_test_method
-       FROM elimfilters_catalog WHERE UPPER(sku) = ANY($1)`,
-      [skus]
-    );
-    res.json({ skus, rows: r.rows });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
-});
-
-// TEMP: deduplicate B76 in EL84004 competitor_codes — DELETE AFTER USE
-app.get('/api/admin/fix-el84004-b76', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const find = await client.query(
-      `SELECT id, sku, codigo_base, competitor_codes FROM elimfilters_catalog WHERE UPPER(sku) = 'EL84004'`
-    );
-    if (!find.rows.length) return res.json({ error: 'EL84004 not found' });
-    const row = find.rows[0];
-    let codes = row.competitor_codes || [];
-    if (typeof codes === 'string') codes = JSON.parse(codes);
-    // Deduplicate: keep first occurrence of each manufacturer+code pair
-    const seen = new Set();
-    const deduped = codes.filter(c => {
-      const key = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-    const removedCount = codes.length - deduped.length;
-    await client.query(
-      `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
-      [JSON.stringify(deduped), row.id]
-    );
-    res.json({ sku: row.sku, removed_duplicates: removedCount, total_codes: deduped.length });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  } finally { await client.end(); }
-});
-
-
 app.use(cors());
 app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
