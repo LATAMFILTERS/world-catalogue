@@ -1052,9 +1052,10 @@ function renderCard(p, index) {
                 ${apps.length 
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        const fullName = a.equipment || a.model || '';
+                        const fullName = a.equipment || a.model || a.machine || '';
                         let eng = a.engine || '';
                         if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                        const yearType = [a.year, a.type].filter(Boolean).join(' · ');
                         if (!fullName) return '';
                         
                         // Split first word as manufacturer brand
@@ -1069,7 +1070,8 @@ function renderCard(p, index) {
                           restName = '';
                         }
 
-                        return `<span class="equip-chip">${brandSpan}<span>${restName}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${esc(eng)}]</span>` : ''}</span></span>`;
+                        const extraInfo = [eng, yearType].filter(Boolean).join(' · ');
+                        return `<span class="equip-chip">${brandSpan}<span>${restName}${extraInfo ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${esc(extraInfo)}]</span>` : ''}</span></span>`;
                       }
                       
                       // Fallback for simple string application
