@@ -878,15 +878,9 @@ function renderCard(p, index) {
   const comp = formatRefs(p.competitor_codes);
   const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 12) : [];
 
-  // Match badge: only show when result came from a cross-reference (not a direct SKU hit)
-  const matchBadge = p.match_label && p.match_type !== 'sku'
-    ? `<div class="match-badge">MATCHED BY: ${p.match_label}</div>`
-    : '';
-
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
       <div class="card-inner">
-        ${matchBadge}
         <div class="card-header">
           <div class="card-identity">
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERS®</span>
