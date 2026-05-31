@@ -16,7 +16,7 @@ app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }
 
 app.use(cors());
 app.set('trust proxy', 1);
-app.use(express.json({charset: 'utf-8'}));
+app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
