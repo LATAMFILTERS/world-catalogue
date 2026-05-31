@@ -1004,6 +1004,37 @@ app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
 
+// Endpoint para el scraper local — devuelve productos Donaldson pendientes de enriquecer
+app.get('/api/pending-donaldson', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  const limit = parseInt(req.query.limit) || 2000;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, filter_type
+      FROM elimfilters_catalog
+      WHERE codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]'
+        AND (
+          equipment_applications IS NULL
+          OR jsonb_typeof(equipment_applications) <> 'array'
+          OR jsonb_array_length(equipment_applications) = 0
+          OR oem_codes IS NULL
+          OR jsonb_typeof(oem_codes) <> 'array'
+          OR jsonb_array_length(oem_codes) = 0
+        )
+      ORDER BY sku
+      LIMIT $1
+    `, [limit]);
+    res.json({ success: true, count: result.rows.length, products: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with UTF-8 encoding`);
