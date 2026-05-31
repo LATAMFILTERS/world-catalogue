@@ -915,13 +915,17 @@ function esc(str) {
 // ─── Parse description (may come as JSON string from API) ───
 function parseDesc(val) {
   if (!val) return null;
-  if (typeof val !== 'string') return val;
+  const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+  // Already a parsed object (JSONB from API)
+  if (typeof val === 'object' && !Array.isArray(val)) {
+    return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  }
+  if (typeof val !== 'string') return String(val);
   const trimmed = val.trim();
   if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
     try {
       const parsed = JSON.parse(trimmed);
-      if (parsed && typeof parsed === 'object') {
-        const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
         return parsed[lang] || parsed.en || parsed.es || Object.values(parsed)[0] || val;
       }
     } catch(e) {}
