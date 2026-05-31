@@ -12,7 +12,7 @@
         html, body { width: 100%; min-height: 100%; background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
         /* ── WAVE CANVAS ── */
-        #waveCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.18; }
+        #waveCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.35; }
 
         /* ── LANDING ── */
         .landing { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 24px; text-align: center; }
@@ -205,7 +205,6 @@
     (function initWave() {
         const canvas = document.getElementById('waveCanvas');
         const ctx = canvas.getContext('2d');
-        let t = 0;
         let W, H;
 
         function resize() {
@@ -215,31 +214,32 @@
         resize();
         window.addEventListener('resize', resize);
 
-        const waves = [
-            { amp: 38, freq: 3.2, speed: 0.007, phase: 0,    alpha: 0.55, width: 1.8 },
-            { amp: 22, freq: 4.8, speed: 0.011, phase: 2.1,  alpha: 0.35, width: 1.2 },
-            { amp: 14, freq: 7.0, speed: 0.015, phase: 4.4,  alpha: 0.20, width: 0.8 },
-        ];
-
-        function draw() {
-            ctx.clearRect(0, 0, W, H);
-            waves.forEach(wave => {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(255, 241, 45, ${wave.alpha})`;
-                ctx.lineWidth = wave.width;
-                for (let x = 0; x <= W; x += 3) {
-                    const ratio = x / W;
-                    const y = H * 0.5
-                        + Math.sin(ratio * Math.PI * wave.freq + t * wave.speed * 1000 + wave.phase) * wave.amp
-                        + Math.sin(ratio * Math.PI * wave.freq * 1.6 + t * wave.speed * 600 + wave.phase + 1) * (wave.amp * 0.4);
-                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-                }
-                ctx.stroke();
-            });
-            t++;
-            requestAnimationFrame(draw);
+        // t = seconds (from performance.now) — guarantees framerate-independent speed
+        function drawWave(t, yRatio, ampRatio, freq, speed, phase, alpha, lw) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255,241,45,${alpha})`;
+            ctx.lineWidth = lw;
+            for (let x = 0; x <= W; x += 3) {
+                const r = x / W;
+                const y = H * yRatio
+                    + H * ampRatio * Math.sin(r * Math.PI * 2 * freq + t * speed + phase)
+                    + H * ampRatio * 0.35 * Math.sin(r * Math.PI * 2 * freq * 1.7 + t * speed * 1.4 + phase + 1.2);
+                x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.stroke();
         }
-        draw();
+
+        function animate(now) {
+            const t = now * 0.001; // ms → seconds
+            ctx.clearRect(0, 0, W, H);
+            //         yRatio  ampRatio  freq  speed  phase  alpha   lw
+            drawWave(t, 0.30,   0.07,   1.4,  0.38,  0.0,   0.50,  2.0);
+            drawWave(t, 0.45,   0.06,   1.8,  0.52,  1.8,   0.35,  1.5);
+            drawWave(t, 0.60,   0.08,   1.2,  0.30,  3.4,   0.25,  1.2);
+            drawWave(t, 0.75,   0.05,   2.2,  0.65,  5.1,   0.15,  1.0);
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
     })();
 
     // ── MODE ──────────────────────────────────────────────────────────────────
