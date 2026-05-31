@@ -632,6 +632,111 @@
 <script>
 'use strict';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// i18n — TRANSLATION DICTIONARY (results page)
+// ─────────────────────────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    searchPlaceholder: 'Search again...',
+    backToSearch:      '← BACK TO SEARCH',
+    loading:           'SEARCHING',
+    noResultsTitle:    'NO RESULTS FOUND',
+    noResultsDesc:     'No filters match "%s" — verify the reference or try a different search term.',
+    newSearch:         'NEW SEARCH',
+    errorTitle:        'CONNECTION ERROR',
+    errorDesc:         'Could not reach the server. Check your connection and try again.',
+    retry:             'RETRY',
+    labelResults:      'RESULT',
+    labelResults_pl:   'RESULTS',
+    modePartNumber:    'PART NUMBER',
+    modeVin:           'VIN / MODEL',
+    modeEquip:         'EQUIPMENT',
+    specsTitle:        'Technical Specifications',
+    oemTitle:          'OEM Cross-References',
+    compTitle:         'Competitor Cross-References',
+    equipTitle:        'Equipment Applications',
+    decodedLabel:      'DECODED',
+    decodingVin:       'DECODING VIN',
+  },
+  es: {
+    searchPlaceholder: 'Buscar de nuevo...',
+    backToSearch:      '← VOLVER AL BUSCADOR',
+    loading:           'BUSCANDO',
+    noResultsTitle:    'SIN RESULTADOS',
+    noResultsDesc:     'Ningún filtro coincide con "%s" — verifica la referencia o intenta otro término.',
+    newSearch:         'NUEVA BÚSqueda',
+    errorTitle:        'ERROR DE CONEXIóN',
+    errorDesc:         'No se pudo conectar al servidor. Verifica tu conexión e intenta de nuevo.',
+    retry:             'REINTENTAR',
+    labelResults:      'RESULTADO',
+    labelResults_pl:   'RESULTADOS',
+    modePartNumber:    'N° DE PARTE',
+    modeVin:           'VIN / MODELO',
+    modeEquip:         'EQUIPO',
+    specsTitle:        'Especificaciones Técnicas',
+    oemTitle:          'Referencias OEM',
+    compTitle:         'Referencias de Competencia',
+    equipTitle:        'Aplicaciones de Equipo',
+    decodedLabel:      'DECODIFICADO',
+    decodingVin:       'DECODIFICANDO VIN',
+  },
+  pt: {
+    searchPlaceholder: 'Buscar novamente...',
+    backToSearch:      '← VOLTAR AO BUSCADOR',
+    loading:           'BUSCANDO',
+    noResultsTitle:    'SEM RESULTADOS',
+    noResultsDesc:     'Nenhum filtro corresponde a "%s" — verifique a referência ou tente outro termo.',
+    newSearch:         'NOVA BUSCA',
+    errorTitle:        'ERRO DE CONEXÃO',
+    errorDesc:         'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',
+    retry:             'TENTAR NOVAMENTE',
+    labelResults:      'RESULTADO',
+    labelResults_pl:   'RESULTADOS',
+    modePartNumber:    'N° DA PEÇA',
+    modeVin:           'VIN / MODELO',
+    modeEquip:         'EQUIPAMENTO',
+    specsTitle:        'Especificações Técnicas',
+    oemTitle:          'Referências OEM',
+    compTitle:         'Referências de Concorrentes',
+    equipTitle:        'Aplicações de Equipamento',
+    decodedLabel:      'DECODIFICADO',
+    decodingVin:       'DECODIFICANDO VIN',
+  }
+};
+
+const ES_COUNTRIES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','MX','NI','PA','PY','PE','PR','UY','VE','GQ'];
+
+async function detectLang() {
+  // Try sessionStorage first (set by index.html)
+  try {
+    const stored = sessionStorage.getItem('ef_lang');
+    if (stored && TRANSLATIONS[stored]) return stored;
+  } catch(_) {}
+  // Fallback: detect via IP
+  try {
+    const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const d = await r.json();
+    if (d.country_code === 'BR') return 'pt';
+    if (ES_COUNTRIES.includes(d.country_code)) return 'es';
+    return 'en';
+  } catch { return 'en'; }
+}
+
+let T = TRANSLATIONS.en; // default, overwritten after detection
+
+detectLang().then(lang => {
+  T = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  // Apply static elements
+  const searchInput = document.getElementById('header-search-input');
+  const backBtn     = document.querySelector('.header-back');
+  if (searchInput) searchInput.placeholder = T.searchPlaceholder;
+  if (backBtn)     backBtn.textContent      = T.backToSearch;
+  // Re-run search so rendered status messages use correct language
+  executeSearch();
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 const API = '';
 const app = document.getElementById('app');
 
@@ -655,12 +760,31 @@ document.getElementById('header-search-form').addEventListener('submit', e => {
   }
 });
 
-// ─── Render Loading ───
 function showLoading(term) {
   app.innerHTML = `
     <div class="loading-container">
-      <p class="loading-text" id="loading-msg">SEARCHING: ${(term || '').toUpperCase()}</p>
+      <p class="loading-text">${T.loading}: ${(term || '').toUpperCase()}</p>
       <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>`;
+}
+
+function showEmpty(term) {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⌕</div>
+      <p class="status-title">${T.noResultsTitle}</p>
+      <p class="status-desc">${T.noResultsDesc.replace('%s', (term || '').toUpperCase())}</p>
+      <a href="/index.html" class="status-action">${T.newSearch}</a>
+    </div>`;
+}
+
+function showError() {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⚠</div>
+      <p class="status-title">${T.errorTitle}</p>
+      <p class="status-desc">${T.errorDesc}</p>
+      <a href="/index.html" class="status-action">${T.newSearch}</a>
     </div>`;
 }
 

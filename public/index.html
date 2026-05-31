@@ -605,14 +605,14 @@
 <!-- ─── CINEMATIC SPLASH ─── -->
 <div id="cinematic-splash" style="display: none;">
   <canvas id="splash-canvas"></canvas>
-  <div class="splash-hint">Click anywhere to skip</div>
+  <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
 </div>
 
 <canvas id="nanoflow"></canvas>
 
 <a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
   <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height: 64px; width: auto; object-fit: contain;">
-  <span class="logo-badge">PART SEARCH</span>
+  <span class="logo-badge" id="logo-badge">PART SEARCH</span>
 </a>
 
 <button id="skip-btn">SKIP INTRO ›</button>
@@ -630,15 +630,15 @@
 
     <!-- Mode tabs -->
     <nav class="mode-tabs" role="tablist" aria-label="Search modes">
-      <button class="mode-tab active" data-mode="part" role="tab" aria-selected="true">PART NUMBER</button>
-      <button class="mode-tab" data-mode="vin"  role="tab" aria-selected="false">VIN / MODEL</button>
-      <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false">EQUIPMENT</button>
+      <button class="mode-tab active" data-mode="part" role="tab" aria-selected="true" id="tab-part">PART NUMBER</button>
+      <button class="mode-tab" data-mode="vin"  role="tab" aria-selected="false" id="tab-vin">VIN / MODEL</button>
+      <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false" id="tab-equip">EQUIPMENT</button>
     </nav>
 
     <!-- ── FORM: PART NUMBER ── -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
-        <label class="field-label" for="inp-part">Part number</label>
+        <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
         <div class="input-wrap primary">
           <span class="input-icon" aria-hidden="true">⌕</span>
           <input
@@ -653,7 +653,7 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
       </div>
     </form>
 
@@ -661,7 +661,7 @@
     <form class="search-form" data-form="vin" autocomplete="off">
       <div class="field-row cols-2">
         <div class="field-group">
-          <label class="field-label" for="inp-vin-model">Vehicle / Model</label>
+          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">Vehicle / Model</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
@@ -674,7 +674,7 @@
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-vin-engine">Engine (optional)</label>
+          <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional)</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
@@ -688,7 +688,7 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH →</button>
       </div>
     </form>
 
@@ -696,7 +696,7 @@
     <form class="search-form" data-form="equip" autocomplete="off">
       <div class="field-row cols-3">
         <div class="field-group">
-          <label class="field-label" for="inp-equip-model">Equipment Model</label>
+          <label class="field-label" for="inp-equip-model" id="lbl-equip-model">Equipment Model</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
@@ -709,11 +709,11 @@
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-equip-type">Equipment Type</label>
+          <label class="field-label" for="inp-equip-type" id="lbl-equip-type">Equipment Type</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">▾</span>
             <select id="inp-equip-type" name="type">
-              <option value="">Any type</option>
+              <option value="" id="opt-any">Any type</option>
               <option value="EXCAVATOR">Excavator</option>
               <option value="BULLDOZER">Bulldozer</option>
               <option value="LOADER">Wheel Loader</option>
@@ -730,7 +730,7 @@
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-equip-engine">Engine (optional)</label>
+          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
@@ -744,7 +744,7 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH →</button>
       </div>
     </form>
 
@@ -771,9 +771,165 @@
 'use strict';
 
 // ─────────────────────────────────────────────────────────────────────────────
+// i18n — TRANSLATION DICTIONARY
+// ─────────────────────────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    splashSkip:       'Click anywhere to skip',
+    logoBadge:        'PART SEARCH',
+    introLabel:       '// ASSET PROTECTION PART SEARCH',
+    tabPart:          'PART NUMBER',
+    tabVin:           'VIN / MODEL',
+    tabEquip:         'EQUIPMENT',
+    lblPart:          'Part number',
+    phPart:           'Enter part number or OEM code...',
+    lblVinModel:      'Vehicle / Model',
+    phVinModel:       'e.g. HILUX, EXCAVATOR 336...',
+    lblVinEngine:     'Engine (optional)',
+    phEngine:         'e.g. 3.0L, 1GD...',
+    lblEquipModel:    'Equipment Model',
+    phEquipModel:     'e.g. CAT 336, Komatsu PC200...',
+    lblEquipType:     'Equipment Type',
+    optAnyType:       'Any type',
+    lblEquipEngine:   'Engine (optional)',
+    btnSearch:        'SEARCH →',
+  },
+  es: {
+    splashSkip:       'Clic en cualquier lugar para saltar',
+    logoBadge:        'BUSCADOR DE PIEZAS',
+    introLabel:       '// BÚSqueda de Piezas y Filtros',
+    tabPart:          'N° DE PARTE',
+    tabVin:           'VIN / MODELO',
+    tabEquip:         'EQUIPO',
+    lblPart:          'Número de parte',
+    phPart:           'Ingresa número de parte o código OEM...',
+    lblVinModel:      'Vehículo / Modelo',
+    phVinModel:       'Ej: HILUX, EXCAVADORA 336...',
+    lblVinEngine:     'Motor (opcional)',
+    phEngine:         'Ej: 3.0L, 1GD...',
+    lblEquipModel:    'Modelo de Equipo',
+    phEquipModel:     'Ej: CAT 336, Komatsu PC200...',
+    lblEquipType:     'Tipo de Equipo',
+    optAnyType:       'Cualquier tipo',
+    lblEquipEngine:   'Motor (opcional)',
+    btnSearch:        'BUSCAR →',
+  },
+  pt: {
+    splashSkip:       'Clique em qualquer lugar para pular',
+    logoBadge:        'BUSCA DE PEÇAS',
+    introLabel:       '// Busca de Peças e Filtros',
+    tabPart:          'N° DA PEÇA',
+    tabVin:           'VIN / MODELO',
+    tabEquip:         'EQUIPAMENTO',
+    lblPart:          'Número da peça',
+    phPart:           'Digite número da peça ou código OEM...',
+    lblVinModel:      'Veículo / Modelo',
+    phVinModel:       'Ex: HILUX, ESCAVADEIRA 336...',
+    lblVinEngine:     'Motor (opcional)',
+    phEngine:         'Ex: 3.0L, 1GD...',
+    lblEquipModel:    'Modelo do Equipamento',
+    phEquipModel:     'Ex: CAT 336, Komatsu PC200...',
+    lblEquipType:     'Tipo de Equipamento',
+    optAnyType:       'Qualquer tipo',
+    lblEquipEngine:   'Motor (opcional)',
+    btnSearch:        'BUSCAR →',
+  }
+};
+
+const ES_COUNTRIES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','MX','NI','PA','PY','PE','PR','UY','VE','GQ'];
+
+async function detectLang() {
+  try {
+    const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const d = await r.json();
+    if (d.country_code === 'BR') return 'pt';
+    if (ES_COUNTRIES.includes(d.country_code)) return 'es';
+    return 'en';
+  } catch { return 'en'; }
+}
+
+function applyLang(t) {
+  // Splash
+  const splashHint = document.getElementById('splash-hint');
+  if (splashHint) splashHint.textContent = t.splashSkip;
+
+  // Header logo badge
+  const logoBadge = document.getElementById('logo-badge');
+  if (logoBadge) logoBadge.textContent = t.logoBadge;
+
+  // Intro label
+  const intro = document.getElementById('intro-label');
+  if (intro) intro.textContent = t.introLabel;
+
+  // Tabs
+  const tabPart  = document.getElementById('tab-part');
+  const tabVin   = document.getElementById('tab-vin');
+  const tabEquip = document.getElementById('tab-equip');
+  if (tabPart)  tabPart.textContent  = t.tabPart;
+  if (tabVin)   tabVin.textContent   = t.tabVin;
+  if (tabEquip) tabEquip.textContent = t.tabEquip;
+
+  // Form: Part
+  const lblPart = document.getElementById('lbl-part');
+  const inpPart = document.getElementById('inp-part');
+  const btnPart = document.getElementById('btn-search-part');
+  if (lblPart) lblPart.textContent     = t.lblPart;
+  if (inpPart) inpPart.placeholder     = t.phPart;
+  if (btnPart) btnPart.textContent     = t.btnSearch;
+
+  // Form: VIN
+  const lblVinModel  = document.getElementById('lbl-vin-model');
+  const lblVinEngine = document.getElementById('lbl-vin-engine');
+  const inpVinModel  = document.getElementById('inp-vin-model');
+  const inpVinEngine = document.getElementById('inp-vin-engine');
+  const btnVin       = document.getElementById('btn-search-vin');
+  if (lblVinModel)  lblVinModel.textContent  = t.lblVinModel;
+  if (lblVinEngine) lblVinEngine.textContent = t.lblVinEngine;
+  if (inpVinModel)  inpVinModel.placeholder  = t.phVinModel;
+  if (inpVinEngine) inpVinEngine.placeholder = t.phEngine;
+  if (btnVin)       btnVin.textContent       = t.btnSearch;
+
+  // Form: Equipment
+  const lblEquipModel  = document.getElementById('lbl-equip-model');
+  const lblEquipType   = document.getElementById('lbl-equip-type');
+  const lblEquipEngine = document.getElementById('lbl-equip-engine');
+  const inpEquipModel  = document.getElementById('inp-equip-model');
+  const inpEquipEngine = document.getElementById('inp-equip-engine');
+  const optAny         = document.getElementById('opt-any');
+  const btnEquip       = document.getElementById('btn-search-equip');
+  if (lblEquipModel)  lblEquipModel.textContent  = t.lblEquipModel;
+  if (lblEquipType)   lblEquipType.textContent   = t.lblEquipType;
+  if (lblEquipEngine) lblEquipEngine.textContent = t.lblEquipEngine;
+  if (inpEquipModel)  inpEquipModel.placeholder  = t.phEquipModel;
+  if (inpEquipEngine) inpEquipEngine.placeholder = t.phEngine;
+  if (optAny)         optAny.textContent         = t.optAnyType;
+  if (btnEquip)       btnEquip.textContent       = t.btnSearch;
+}
+
+// Run immediately
+detectLang().then(lang => {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  applyLang(t);
+  // Store for results page
+  try { sessionStorage.setItem('ef_lang', lang); } catch(_) {}
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
 const API = ''; // Use relative path since API is on the same server
+
+// ─────────────────────────────────────────────────────────────────────────────
+// WARMUP PING — fires immediately on page load so Render wakes up before
+// the user submits a search. On free tier, cold start takes 60-90s.
+// Silent background fetch; all errors intentionally ignored.
+// ─────────────────────────────────────────────────────────────────────────────
+(function warmupServer() {
+  try {
+    fetch('/api/status', { method: 'GET', cache: 'no-store' })
+      .catch(function() {}); // ignore network errors silently
+  } catch (_) {}
+})();
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CANVAS / FLOW FIELD
