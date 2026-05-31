@@ -9,6 +9,7 @@ process.on('uncaughtException', (err) => console.error('[uncaughtException]', er
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }));
