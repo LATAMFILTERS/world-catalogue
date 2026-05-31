@@ -222,6 +222,7 @@ def run(categories, dry_run, extra_files=None):
             sys.exit(1)
 
     total_inserted = total_updated = total_errors = 0
+    failed_skus = []
     for i in range(0, len(all_rows), BATCH):
         batch = all_rows[i:i + BATCH]
         result = post_batch(batch, dry_run)
@@ -232,9 +233,16 @@ def run(categories, dry_run, extra_files=None):
         total_updated  += updated
         total_errors   += errors
         pct = (i + len(batch)) / len(all_rows) * 100
-        logging.info(f"  Batch {i//BATCH+1}: {inserted} new | {updated} updated | {errors} err — {pct:.0f}%")
+        line = f"  Batch {i//BATCH+1}: {inserted} new | {updated} updated | {errors} err — {pct:.0f}%"
+        if errors:
+            logging.warning(line)
+            failed_skus.extend([r["sku"] for r in batch])
+        else:
+            logging.info(line)
 
     logging.info(f"DONE: {total_inserted} inserted | {total_updated} updated | {total_errors} errors")
+    if failed_skus:
+        logging.warning(f"Batches with errors included these SKUs: {failed_skus[:20]}{'...' if len(failed_skus)>20 else ''}")
 
 
 if __name__ == "__main__":
