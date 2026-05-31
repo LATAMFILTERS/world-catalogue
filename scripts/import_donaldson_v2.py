@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
 API_URL  = "https://elimfilters-search-pro.onrender.com/api/import/donaldson"
 API_KEY  = "elim2026"
-BATCH    = 50
+BATCH    = 20
 
 CATEGORIES = ["lube", "hydraulic", "air", "air-intake", "cabin",
               "air-dryer", "fuel", "fuel-separator", "coolant", "diesel-kit"]
