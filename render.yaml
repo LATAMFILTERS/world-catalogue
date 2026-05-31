@@ -1,15 +1,24 @@
+databases:
+  - name: catalogo_elimfilters
+    databaseName: elimfilters_db
+    user: elimfilters_user
+
 services:
   - type: web
     name: world-catalogue
     runtime: node
     plan: free
-    buildCommand: PUPPETEER_SKIP_DOWNLOAD=true npm install
+    buildCommand: npm install && node scripts/migrate-to-render.js && cd frontend && npm install && npm run build
     startCommand: node server.js
     healthCheckPath: /api/status
     envVars:
+      - key: NODE_VERSION
+        value: "20"
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: catalogo_elimfilters
+          property: connectionString
       - key: GODADDY_MAIL_PASS
         sync: false
