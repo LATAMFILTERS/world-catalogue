@@ -1256,13 +1256,16 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   const cvs = document.getElementById('splash-canvas');
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
   
-  const particleSpacing = 2;
-  const mouseRadius = 120;
+  const isMobile = window.innerWidth < 768;
+  const particleSpacing = isMobile ? 3 : 2; // Más espaciado en móvil para no sobrecargar
+  const mouseRadius = isMobile ? 80 : 120;
   let particlesArray = [];
   let mouse = { x: null, y: null, radius: mouseRadius };
   
   splashEl.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   splashEl.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+  // Soporte táctil en móvil
+  splashEl.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }, { passive: true });
   
   function resizeSplash() { cvs.width = window.innerWidth; cvs.height = window.innerHeight; }
   window.addEventListener('resize', resizeSplash);
@@ -1292,7 +1295,9 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
   function getTargetsFromImage(img, isSolidBlackBackground) {
     let targets = [];
-    const imgW = Math.min(img.width, cvs.width * 0.5);
+    // Móvil: 85% del ancho. Escritorio: 50% del ancho
+    const maxFraction = isMobile ? 0.85 : 0.50;
+    const imgW = Math.min(img.width, cvs.width * maxFraction);
     const scale = imgW / img.width;
     const imgH = img.height * scale;
     const startX = (cvs.width - imgW) / 2;
@@ -1328,7 +1333,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
       this.baseX = target.x;
       this.baseY = target.y;
       this.color = target.color;
-      this.size = 0.8;
+      this.size = isMobile ? 1.2 : 0.8; // Partículas más grandes en móvil
       this.density = (Math.random() * 40) + 5;
       this.active = true;
     }
@@ -1350,11 +1355,15 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
         this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
         this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
       } else {
-        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 30;
-        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 30;
+        // Móvil: regresa más lento (50) para que la formación sea visible
+        const returnSpeed = isMobile ? 50 : 30;
+        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
+        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
       }
-      this.x += (Math.random() - 0.5) * 0.8;
-      this.y += (Math.random() - 0.5) * 0.8;
+      // Micro-tormenta más suave en móvil
+      const jitter = isMobile ? 0.4 : 0.8;
+      this.x += (Math.random() - 0.5) * jitter;
+      this.y += (Math.random() - 0.5) * jitter;
     }
   }
 
