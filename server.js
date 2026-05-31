@@ -14,6 +14,23 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
+// TEMP: verify P554004 row — DELETE AFTER USE
+app.get('/api/admin/check-p554004', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT id, sku, codigo_base, competitor_codes
+       FROM elimfilters_catalog
+       WHERE UPPER(codigo_base) = 'P554004' OR UPPER(sku) = 'EL84004'`
+    );
+    res.json({ rows: r.rows });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally { await client.end(); }
+});
+
 
 app.use(cors());
 app.set('trust proxy', 1);
