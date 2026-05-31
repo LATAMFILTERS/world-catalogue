@@ -14,6 +14,25 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
+// TEMP: check air filter sub_types in DB — DELETE AFTER USE
+app.get('/api/admin/air-filter-subtypes', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT filter_type, sub_type, installation_type, COUNT(*) as total
+       FROM elimfilters_catalog
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+       GROUP BY filter_type, sub_type, installation_type
+       ORDER BY filter_type, total DESC`
+    );
+    res.json({ rows: r.rows });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
 app.get('/api/admin/update-lube-descriptions', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
