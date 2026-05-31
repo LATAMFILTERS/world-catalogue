@@ -14,20 +14,39 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// TEMP: check filter_type values for zero-result categories — DELETE AFTER USE
-app.get('/api/admin/filter-type-check', async (req, res) => {
+// TEMP: inspect raw dimensions for a SKU — DELETE AFTER USE
+app.get('/api/admin/dims/:sku', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
     const r = await client.query(
-      `SELECT filter_type, sub_type, installation_type, COUNT(*) as total
-       FROM elimfilters_catalog
-       GROUP BY filter_type, sub_type, installation_type
-       ORDER BY filter_type, total DESC
-       LIMIT 200`
+      `SELECT sku, filter_type, sub_type, installation_type,
+              height_mm, outer_diameter_mm, gasket_od_mm, gasket_id_mm,
+              thread_size, micron_rating, nominal_efficiency,
+              burst_pressure_psi, collapse_pressure_psi, iso_test_method
+       FROM elimfilters_catalog WHERE UPPER(sku) = UPPER($1)`,
+      [req.params.sku]
     );
-    res.json({ rows: r.rows });
+    if (!r.rows.length) return res.json({ error: 'not found' });
+    const d = r.rows[0];
+    const toIn = v => v ? +(v / 25.4).toFixed(3) : null;
+    res.json({
+      sku: d.sku,
+      filter_type: d.filter_type,
+      sub_type: d.sub_type,
+      installation_type: d.installation_type,
+      height:      { mm: d.height_mm,           in: toIn(d.height_mm) },
+      od:          { mm: d.outer_diameter_mm,    in: toIn(d.outer_diameter_mm) },
+      gasket_od:   { mm: d.gasket_od_mm,         in: toIn(d.gasket_od_mm) },
+      gasket_id:   { mm: d.gasket_id_mm,         in: toIn(d.gasket_id_mm) },
+      thread:      d.thread_size,
+      micron:      d.micron_rating,
+      efficiency:  d.nominal_efficiency,
+      burst_psi:   d.burst_pressure_psi,
+      collapse_psi: d.collapse_pressure_psi,
+      iso_method:  d.iso_test_method,
+    });
   } catch (e) { res.status(500).json({ error: e.message }); }
   finally { await client.end(); }
 });

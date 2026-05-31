@@ -942,10 +942,16 @@ function specHTML(label, value) {
 function renderCard(p, index) {
   const sku = p.elimfilters_sku || p.sku || '—';
 
+  function mmIn(mm) {
+    if (!mm) return null;
+    const inches = (mm / 25.4).toFixed(2);
+    return mm + ' mm / ' + inches + '"';
+  }
+
   const specs = [
-    specHTML('HEIGHT', p.height_mm ? p.height_mm + ' mm' : null),
-    specHTML('OD', p.outer_diameter_mm ? p.outer_diameter_mm + ' mm' : null),
-    specHTML('GASKET OD', p.gasket_od_mm ? p.gasket_od_mm + ' mm' : null),
+    specHTML('HEIGHT', mmIn(p.height_mm)),
+    specHTML('OD', mmIn(p.outer_diameter_mm)),
+    specHTML('GASKET OD', mmIn(p.gasket_od_mm)),
     specHTML('THREAD', p.thread_size),
     specHTML('MICRON', p.micron_rating ? p.micron_rating + ' µm' : null),
     specHTML('EFFICIENCY', p.nominal_efficiency ? p.nominal_efficiency + '%' : null),
