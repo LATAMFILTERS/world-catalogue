@@ -14,6 +14,57 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
+// TEMP: batch-update lube filter descriptions — DELETE AFTER USE
+app.get('/api/admin/update-lube-descriptions', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+
+    const DESC = {
+      spinon: {
+        en: 'ELIMFILTERS SYNTRAX™ lube spin-on filter combines full-flow and by-pass filtration into one single filter developed to meet or exceed engine requirements. This unique arrangement of filtration provides the perfect balance between efficiency and low restriction to oil flow.',
+        es: 'El filtro de aceite spin-on ELIMFILTERS SYNTRAX™ combina filtración de flujo total y derivación en un solo filtro, desarrollado para cumplir o superar los requisitos del motor. Esta disposición única proporciona el equilibrio perfecto entre eficiencia y baja restricción al flujo de aceite.',
+      },
+      cartridge: {
+        en: 'ELIMFILTERS SYNTRAX™ cartridge oil filter is environmentally friendly and features technology advances to achieve the high flow rates required by today\'s modern engine designs.',
+        es: 'El filtro de aceite en cartucho ELIMFILTERS SYNTRAX™ es ecológico y cuenta con avances tecnológicos para alcanzar los altos caudales requeridos por los modernos diseños de motores actuales.',
+      },
+    };
+
+    // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
+    const spinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%lube%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.spinon)]
+    );
+
+    // Cartridge: everything else in lube
+    const cartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%lube%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.cartridge)]
+    );
+
+    res.json({
+      spin_on_updated: spinRes.rowCount,
+      cartridge_updated: cartRes.rowCount,
+      sample_spinon: spinRes.rows.slice(0, 3).map(r => r.sku),
+      sample_cartridge: cartRes.rows.slice(0, 3).map(r => r.sku),
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally { await client.end(); }
+});
+
 app.use(cors());
 app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
