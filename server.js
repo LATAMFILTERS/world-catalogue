@@ -171,6 +171,23 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
   } finally { await client.end(); }
 });
 
+// TEMP: patch EA10695 equipment_applications with complete Donaldson data — DELETE AFTER USE
+// Scraper only captured first 5 visible rows; Donaldson page has 39 unique entries
+app.get('/api/admin/patch-ea10695-equipment', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const equipment = [{"machine":"FREIGHTLINER FL112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS NTC855"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"FREIGHTLINER FLA300","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA370","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA424","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLB9064ST","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FMC","year":"","type":"TRUCK","engine":""},{"machine":"MAC CH","year":"1998 - 2003","type":"TRUCK","engine":"MACK E-Tech VMAC III"},{"machine":"MAC CH","year":"2003 - 2008","type":"TRUCK","engine":"MACK E7 CCRS 12L"},{"machine":"MAC CH","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MAC CHR","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MACK CH613","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL653","year":"","type":"TRUCK","engine":""},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK ASET AMI"},{"machine":"MACK CL733","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK GRANITE","year":"2006 - 2012","type":"TRUCK","engine":"MACK MP7"},{"machine":"MACK GRANITE","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK SUPERLINER","year":"","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK TITAN","year":"2008 - 2017","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK VISION","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"PETERBILT 362","year":"1997","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2000","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1999","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1998","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2002","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2001","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 377","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"}];
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `UPDATE elimfilters_catalog SET equipment_applications = $1::jsonb WHERE sku = 'EA10695' RETURNING sku`,
+      [JSON.stringify(equipment)]
+    );
+    res.json({ updated: r.rowCount, equipment_count: equipment.length });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: fix corrupted EW7 coolant filter heights (7620mm = scraper unit error) — DELETE AFTER USE
 app.get('/api/admin/fix-ew7-heights', async (req, res) => {
   if (!adminAuth(req, res)) return;
