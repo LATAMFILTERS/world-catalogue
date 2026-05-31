@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Particle Morphing Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+    }
+    canvas {
+      display: block;
+    }
+    #controls {
+      position: absolute;
+      bottom: 30px;
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .hint {
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+  <div id="controls">
+    <div class="hint">La arena se transformará automáticamente...</div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    
+    // Configuración
+    const particleSpacing = 2; // Más resolución, partículas más pequeñas
+    const mouseRadius = 120; // Radio del viento
+    
+    let particlesArray = [];
+    let mouse = { x: null, y: null, radius: mouseRadius };
+    
+    window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+    window.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Las imágenes a mostrar en secuencia
+    const imageUrls = [
+      '/Leo-fn.avif', // Imagen 1 (KLEO)
+      '/e.png'        // Imagen 2 (E)
+    ];
+    let images = [];
+    let imageTargets = []; // Array de arrays con los targets {x,y,color} de cada imagen
+    let currentImageIndex = 0;
+
+    // 1. Precargar imágenes
+    let loaded = 0;
+    imageUrls.forEach((src, index) => {
+      let img = new Image();
+      img.src = src;
+      img.onload = () => {
+        images[index] = img;
+        loaded++;
+        if (loaded === imageUrls.length) {
+          startSequence();
+        }
+      };
+    });
+
+    // 2. Extraer "mapa de arena" de una imagen
+    function getTargetsFromImage(img, isSolidBlackBackground) {
+      let targets = [];
+      const imgWidth = Math.min(img.width, canvas.width * 0.5);
+      const scale = imgWidth / img.width;
+      const imgHeight = img.height * scale;
+      
+      const startX = (canvas.width - imgWidth) / 2;
+      const startY = (canvas.height - imgHeight) / 2;
+
+      // Dibujar temporalmente
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, startX, startY, imgWidth, imgHeight);
+      
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // limpiar tras leer
+
+      for (let y = 0; y < imageData.height; y += particleSpacing) {
+        for (let x = 0; x < imageData.width; x += particleSpacing) {
+          const index = (y * imageData.width + x) * 4;
+          const alpha = data[index + 3];
+          
+          if (alpha > 128) {
+            const red = data[index];
+            const green = data[index + 1];
+            const blue = data[index + 2];
+            
+            if (isSolidBlackBackground) {
+              // Filtrar fondos negros u oscuros para e.png
+              if (red > 20 || green > 20 || blue > 20) {
+                targets.push({ x, y, color: `rgb(${red}, ${green}, ${blue})` });
+              }
+            } else {
+              // Para Leo-fn.avif, confiamos en la transparencia (alpha > 128)
+              // Si el logo tiene partes oscuras, las incluimos.
+              targets.push({ x, y, color: `rgb(${red}, ${green}, ${blue})` });
+            }
+          }
+        }
+      }
+      return targets;
+    }
+
+    // 3. Clase Partícula
+    class Particle {
+      constructor(target) {
+        // Empiezan volando desde lugares caóticos
+        this.x = Math.random() * canvas.width * 2 - canvas.width/2;
+        this.y = Math.random() * canvas.height * 2 - canvas.height/2;
+        this.baseX = target.x;
+        this.baseY = target.y;
+        this.color = target.color;
+        this.size = 0.8;
+        this.density = (Math.random() * 40) + 5;
+        this.active = true; // Si es false, se desvanece y desaparece
+      }
+      
+      draw() {
+        if (!this.active) return;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      
+      update() {
+        if (!this.active) return;
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let maxDistance = mouse.radius;
+        let force = (maxDistance - distance) / maxDistance;
+        let directionX = forceDirectionX * force * this.density;
+        let directionY = forceDirectionY * force * this.density;
+        
+        if (distance < mouse.radius) {
+          // Viento del ratón
+          this.x -= directionX * 3;
+          this.y -= directionY * 3;
+        } else {
+          // Regresar flotando
+          if (this.x !== this.baseX) {
+            this.x -= (this.x - this.baseX) / 30;
+          }
+          if (this.y !== this.baseY) {
+            this.y -= (this.y - this.baseY) / 30;
+          }
+        }
+        
+        // Micro-tormenta
+        this.x += (Math.random() - 0.5) * 0.8;
+        this.y += (Math.random() - 0.5) * 0.8;
+      }
+    }
+
+    // 4. Iniciar y orquestar
+    function startSequence() {
+      // Extraer los mapas de todas las imágenes
+      images.forEach((img, i) => {
+        // e.png es la imagen en el index 1, así que le pasamos true al filtro de fondo negro
+        imageTargets[i] = getTargetsFromImage(img, i === 1);
+      });
+
+      // Empezar con la primera imagen
+      let firstTargets = imageTargets[0];
+      
+      if (firstTargets.length === 0) {
+        console.error("No se extrajeron partículas para la imagen 1");
+      }
+      
+      particlesArray = firstTargets.map(t => new Particle(t));
+
+      animate();
+
+      // Cambiar de imagen cada 8 segundos
+      setInterval(() => {
+        currentImageIndex = (currentImageIndex + 1) % imageTargets.length;
+        morphTo(imageTargets[currentImageIndex]);
+      }, 5000); // Reducido a 5 segundos para que la transición sea más rápida
+    }
+
+    function morphTo(newTargets) {
+      // Si la nueva imagen necesita más arena
+      if (newTargets.length > particlesArray.length) {
+        let diff = newTargets.length - particlesArray.length;
+        for (let i = 0; i < diff; i++) {
+          let p = new Particle(newTargets[particlesArray.length + i]);
+          p.x = Math.random() * canvas.width; 
+          p.y = canvas.height + 10; // Suben desde abajo
+          particlesArray.push(p);
+        }
+      } 
+      // Si la nueva imagen necesita menos arena
+      else if (newTargets.length < particlesArray.length) {
+        for (let i = newTargets.length; i < particlesArray.length; i++) {
+          // Mandamos a volar fuera de la pantalla a las que sobran
+          particlesArray[i].baseX = Math.random() * canvas.width * 2 - canvas.width/2;
+          particlesArray[i].baseY = canvas.height + 500; 
+          particlesArray[i].active = false; // Dejar de dibujar una vez que se van
+        }
+      }
+
+      // Reasignar los colores y destinos de la arena existente
+      for (let i = 0; i < newTargets.length; i++) {
+        particlesArray[i].baseX = newTargets[i].x;
+        particlesArray[i].baseY = newTargets[i].y;
+        particlesArray[i].color = newTargets[i].color;
+        particlesArray[i].active = true;
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].draw();
+        particlesArray[i].update();
+      }
+    }
+  </script>
+</body>
+</html>
