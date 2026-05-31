@@ -926,7 +926,7 @@ function formatRefs(arr, max = Infinity) {
   return arr.slice(0, max).map(r => {
     if (typeof r === 'string') return { brand: '', code: r };
     return {
-      brand: r.manufacturer && r.manufacturer !== 'UNKNOWN' ? r.manufacturer : '',
+      brand: r.manufacturer || '',
       code: r.code || r.partNumber || ''
     };
   }).filter(r => r.code);
@@ -1014,11 +1014,9 @@ function renderCard(p, index) {
                 ${apps.length 
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        const fullName = (a.equipment || a.model || '').trim();
-                        let eng = (a.engine || '').trim();
-                        // Strip dashes, N/A, empty placeholders from engine field
-                        if (!eng || /^[-–—n\/a]+$/i.test(eng)) eng = '';
-                        if (eng.startsWith('-')) eng = eng.replace(/^[-–]+\s*/, '').trim();
+                        const fullName = a.equipment || a.model || '';
+                        let eng = a.engine || '';
+                        if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
                         if (!fullName) return '';
                         
                         // Split first word as manufacturer brand
