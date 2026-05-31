@@ -12,7 +12,7 @@ const app = express();
 app.set('trust proxy', 1);
 
 // Healthcheck FIRST — must respond before anything else can fail
-app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.6.0' }));
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.7.0' }));
 
 app.use(cors());
 app.set('trust proxy', 1);
@@ -1300,15 +1300,12 @@ app.get('/api/migrate/reset-catalog', async (req, res) => {
 app.get('/api/status', (req, res) => {
   res.json({
     status: 'ok',
-    version: '3.5.0',
+    version: '3.7.0',
     time: new Date().toISOString()
   });
 });
 
-// ── UNIFIED SEARCH (used by public/index.html) ──────────────────────────────
-// Pool for high-frequency queries (avoids per-request connect/disconnect)
-const { Pool } = require('pg');
-const searchPool = new Pool({ ...dbConfig, max: 5, idleTimeoutMillis: 30000 });
+// ── UNIFIED SEARCH ──────────────────────────────────────────────────────────
 
 // ─── GET /api/catalog/export ──────────────────────────────────────────────────
 app.get('/api/catalog/export', async (req, res) => {
@@ -1344,9 +1341,11 @@ app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
+  const client = new Client(dbConfig);
   try {
+    await client.connect();
     // Exact match first
-    let result = await searchPool.query(
+    let result = await client.query(
       `SELECT * FROM elimfilters_catalog
        WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
        LIMIT 5`,
@@ -1354,12 +1353,10 @@ app.get('/api/search', async (req, res) => {
     );
     // Fallback: prefix + partial across codes
     if (result.rows.length === 0) {
-      result = await searchPool.query(
+      result = await client.query(
         `SELECT * FROM elimfilters_catalog
          WHERE UPPER(sku) LIKE $1
             OR UPPER(codigo_base) LIKE $1
-            OR UPPER(sku) ILIKE $2
-            OR UPPER(codigo_base) ILIKE $2
             OR oem_codes::text ILIKE $2
             OR competitor_codes::text ILIKE $2
          ORDER BY CASE WHEN UPPER(sku) LIKE $1 THEN 0 ELSE 1 END, sku
@@ -1369,18 +1366,22 @@ app.get('/api/search', async (req, res) => {
     }
     const products = result.rows.map(row => ({
       ...buildFilterData(row, lang),
-      sku: row.sku  // buildFilterData uses 'elimfilters_sku'; alias for frontend
+      sku: row.sku
     }));
     res.json({ products, count: products.length });
   } catch (e) {
-    console.error('[api/search]', e);
+    console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });
+  } finally {
+    await client.end();
   }
 });
 
 app.get('/api/stats', async (req, res) => {
+  const client = new Client(dbConfig);
   try {
-    const r = await searchPool.query(
+    await client.connect();
+    const r = await client.query(
       `SELECT COUNT(*) AS total, COUNT(DISTINCT technology) AS technologies
        FROM elimfilters_catalog`
     );
@@ -1390,8 +1391,10 @@ app.get('/api/stats', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (e) {
-    console.error('[api/stats]', e);
+    console.error('[api/stats]', e.message);
     res.status(500).json({ error: e.message });
+  } finally {
+    await client.end();
   }
 });
 // ────────────────────────────────────────────────────────────────────────────

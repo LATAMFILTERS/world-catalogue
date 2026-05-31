@@ -412,21 +412,21 @@
     .status-icon {
       font-size: 3rem;
       margin-bottom: 1.5rem;
-      opacity: 0.15;
+      opacity: 0.3;
     }
 
     .status-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.1rem;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 0.6rem;
     }
 
     .status-desc {
       font-family: 'Outfit', sans-serif;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.5);
       line-height: 1.6;
     }
 
@@ -477,14 +477,14 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.65);
     }
 
     .loading-bar {
       width: 200px;
-      height: 2px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 1px;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
       margin: 1.5rem auto 0;
       overflow: hidden;
     }
@@ -637,9 +637,22 @@ document.getElementById('header-search-form').addEventListener('submit', e => {
 function showLoading(term) {
   app.innerHTML = `
     <div class="loading-container">
-      <p class="loading-text">SEARCHING: ${(term || '').toUpperCase()}</p>
+      <p class="loading-text" id="loading-msg">SEARCHING: ${(term || '').toUpperCase()}</p>
       <div class="loading-bar"><div class="loading-bar-fill"></div></div>
     </div>`;
+}
+
+// ─── Warmup timer: shows message after 8s if server is cold-starting ───
+function startWarmupTimer(term) {
+  return setTimeout(() => {
+    const msg = document.getElementById('loading-msg');
+    if (msg) {
+      msg.innerHTML = `SEARCHING: ${(term || '').toUpperCase()}<br>
+        <span style="font-size:0.7rem;color:rgba(255,241,45,0.8);letter-spacing:0.06em;display:block;margin-top:0.6rem">
+          SERVER WARMING UP — FREE TIER · PLEASE WAIT ~60s
+        </span>`;
+    }
+  }, 8000);
 }
 
 // ─── Render Empty ───
@@ -798,13 +811,15 @@ async function decodeNHTSA(vin) {
 async function executeSearch() {
   if (mode === 'part' && query) {
     showLoading(query);
+    const warmupTimer = startWarmupTimer(query);
     try {
       const r = await fetch(\`\${API}/api/search?q=\${encodeURIComponent(query)}\`);
+      clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
       renderResults(data.products, data.count, 'PART NUMBER', query);
-    } catch { showError(); }
+    } catch { clearTimeout(warmupTimer); showError(); }
 
   } else if (mode === 'vin' && model) {
     let localModel = model;
