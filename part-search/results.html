@@ -70,53 +70,32 @@
       padding: 0.15rem 0.4rem;
     }
 
-    .header-search {
+    .search-summary {
       flex: 1;
-      max-width: 480px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      border: 1px solid rgba(255,241,45,0.2);
-      border-radius: 4px;
-      background: rgba(255,255,255,0.03);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      justify-content: center;
+      gap: 0.15rem;
+      text-align: center;
     }
-    .header-search:focus-within {
-      border-color: var(--y);
-      box-shadow: 0 0 0 2px rgba(255,241,45,0.06);
-    }
-    .header-search-icon {
-      padding: 0 0.75rem;
-      color: rgba(255,255,255,0.2);
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    .header-search input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
+    .search-summary-mode {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      padding: 0.55rem 0;
-      letter-spacing: 0.04em;
-      min-width: 0;
+      font-size: 0.52rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.25);
       text-transform: uppercase;
     }
-    .header-search input::placeholder { color: rgba(255,255,255,0.15); text-transform: none; }
-    .header-search-btn {
-      background: transparent;
-      border: none;
-      color: var(--y);
+    .search-summary-main {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      padding: 0.55rem 0.85rem;
-      cursor: pointer;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.75);
     }
-    .header-search-btn:hover { opacity: 1; }
+    .search-summary-main strong {
+      color: var(--y);
+    }
 
     .header-back {
       margin-left: auto;
@@ -257,7 +236,7 @@
 
     .card-sku {
       font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-size: clamp(0.65rem, 1.5vw, 0.9rem);
       font-weight: 500;
       color: var(--y);
       letter-spacing: 0.06em;
@@ -598,11 +577,10 @@
     <span class="logo-badge">PART SEARCH</span>
   </a>
 
-  <form class="header-search" id="header-search-form" autocomplete="off">
-    <span class="header-search-icon" aria-hidden="true">⌕</span>
-    <input type="search" id="header-search-input" placeholder="Search again..." spellcheck="false" aria-label="Search">
-    <button type="submit" class="header-search-btn">GO →</button>
-  </form>
+  <div class="search-summary" id="search-summary">
+    <span class="search-summary-mode">PART NUMBER</span>
+    <span class="search-summary-main"><strong>${query}</strong></span>
+  </div>
 
   <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
 </header>
@@ -726,12 +704,8 @@ let T = TRANSLATIONS.en; // default, overwritten after detection
 
 detectLang().then(lang => {
   T = TRANSLATIONS[lang] || TRANSLATIONS.en;
-  // Apply static elements
-  const searchInput = document.getElementById('header-search-input');
-  const backBtn     = document.querySelector('.header-back');
-  if (searchInput) searchInput.placeholder = T.searchPlaceholder;
-  if (backBtn)     backBtn.textContent      = T.backToSearch;
-  // Re-run search so rendered status messages use correct language
+  const backBtn = document.querySelector('.header-back');
+  if (backBtn) backBtn.textContent = T.backToSearch;
   executeSearch();
 });
 
@@ -748,17 +722,15 @@ const model  = params.get('model') || '';
 const engine = params.get('engine') || '';
 const eqType = params.get('type') || '';
 
-// Pre-fill header search
-document.getElementById('header-search-input').value = query || model;
-
-// ─── Header re-search ───
-document.getElementById('header-search-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const val = document.getElementById('header-search-input').value.trim();
-  if (val.length >= 2) {
-    window.location.href = `results.html?q=${encodeURIComponent(val)}&mode=part`;
+// Init header summary with query (count updated after search)
+(function() {
+  const el = document.getElementById('search-summary');
+  if (el && (query || model)) {
+    el.innerHTML = `
+      <span class="search-summary-mode">PART NUMBER</span>
+      <span class="search-summary-main"><strong>${(query || model).toUpperCase()}</strong></span>`;
   }
-});
+})();
 
 function showLoading(term) {
   app.innerHTML = `
@@ -888,8 +860,7 @@ function specHTML(label, value) {
 
 // ─── Render Product Card ───
 function renderCard(p, index) {
-  const sku  = p.elimfilters_sku || p.sku || '—';
-  const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
+  const sku = p.elimfilters_sku || p.sku || '—';
 
   const specs = [
     specHTML('HEIGHT', p.height_mm ? p.height_mm + ' mm' : null),
@@ -919,7 +890,6 @@ function renderCard(p, index) {
         <div class="card-header">
           <div class="card-identity">
             <span class="card-sku">${sku}</span>
-            ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
           </div>
           <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${p.filter_type}</span>` : ''}
@@ -968,6 +938,14 @@ function renderCard(p, index) {
 // ─── Render Results ───
 function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+
+  // Update header summary with real count
+  const summaryEl = document.getElementById('search-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <span class="search-summary-mode">${count} RESULT${count !== 1 ? 'S' : ''} · ${searchMode}</span>
+      <span class="search-summary-main"><strong>${searchTerm.toUpperCase()}</strong></span>`;
+  }
 
   const catalogNote = totalCatalog
     ? `<span style="
@@ -1021,12 +999,8 @@ async function executeSearch() {
     showLoading(query);
     const warmupTimer = startWarmupTimer(query);
     try {
-<<<<<<< HEAD
-      const r = await fetch(\`\${API}/api/search?q=\${encodeURIComponent(query)}\`);
-      clearTimeout(warmupTimer);
-=======
       const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}`);
->>>>>>> 3320c27 (fix: Remove erroneous backslashes from template literals in results.html (caused blank page))
+      clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
