@@ -14,30 +14,33 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// TEMP: verify and fix EL84004 competitor codes — DELETE AFTER USE
+// TEMP: deduplicate B76 in EL84004 competitor_codes — DELETE AFTER USE
 app.get('/api/admin/fix-el84004-b76', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
     const find = await client.query(
-      `SELECT id, sku, codigo_base, competitor_codes
-       FROM elimfilters_catalog
-       WHERE UPPER(sku) = 'EL84004'`
+      `SELECT id, sku, codigo_base, competitor_codes FROM elimfilters_catalog WHERE UPPER(sku) = 'EL84004'`
     );
     if (!find.rows.length) return res.json({ error: 'EL84004 not found' });
     const row = find.rows[0];
     let codes = row.competitor_codes || [];
     if (typeof codes === 'string') codes = JSON.parse(codes);
-    const already = codes.some(c => (c.manufacturer||'').toUpperCase() === 'BALDWIN' && (c.code||'').toUpperCase() === 'B76');
-    if (!already) {
-      codes.push({ manufacturer: 'BALDWIN', code: 'B76' });
-      await client.query(
-        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
-        [JSON.stringify(codes), row.id]
-      );
-    }
-    res.json({ sku: row.sku, codigo_base: row.codigo_base, b76_was_present: already, competitor_codes: codes });
+    // Deduplicate: keep first occurrence of each manufacturer+code pair
+    const seen = new Set();
+    const deduped = codes.filter(c => {
+      const key = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    const removedCount = codes.length - deduped.length;
+    await client.query(
+      `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+      [JSON.stringify(deduped), row.id]
+    );
+    res.json({ sku: row.sku, removed_duplicates: removedCount, total_codes: deduped.length });
   } catch (e) {
     res.status(500).json({ error: e.message });
   } finally { await client.end(); }
@@ -1388,8 +1391,8 @@ app.get('/api/search', async (req, res) => {
       );
     }
 
-    // Tier 3+4 combined: OEM codes AND competitor codes searched simultaneously
-    // Using EXISTS avoids cartesian product and prevents one ref type blocking the other
+    // Tier 3+4 combined: OEM + competitor codes searched simultaneously.
+    // Exact matches ranked first so they always appear within LIMIT 20.
     if (result.rows.length === 0) {
       result = await client.query(
         `SELECT *, 'ref' AS match_type, 2 AS match_rank
@@ -1402,7 +1405,15 @@ app.get('/api/search', async (req, res) => {
            SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
            WHERE UPPER(elem->>'code') = $1 OR UPPER(elem->>'code') LIKE $2
          )
-         ORDER BY sku
+         ORDER BY
+           CASE WHEN EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS e
+             WHERE UPPER(e->>'code') = $1
+           ) OR EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS e
+             WHERE UPPER(e->>'code') = $1
+           ) THEN 0 ELSE 1 END,
+           sku
          LIMIT 20`,
         [q, q + '%']
       );
