@@ -1407,13 +1407,6 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 // ─────────────────────────────────────────────────────────────────────────────
 (function initSplash() {
   const splashEl = document.getElementById('cinematic-splash');
-
-  // Skip splash on return visits — user has already seen it
-  if (localStorage.getItem('ef-ps-v')) {
-    splashEl.style.display = 'none';
-    return;
-  }
-
   splashEl.style.display = 'flex';
   const cvs = document.getElementById('splash-canvas');
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
