@@ -14,18 +14,30 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// TEMP: verify P554004 row — DELETE AFTER USE
-app.get('/api/admin/check-p554004', async (req, res) => {
+// TEMP: verify and fix EL84004 competitor codes — DELETE AFTER USE
+app.get('/api/admin/fix-el84004-b76', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
-    const r = await client.query(
+    const find = await client.query(
       `SELECT id, sku, codigo_base, competitor_codes
        FROM elimfilters_catalog
-       WHERE UPPER(codigo_base) = 'P554004' OR UPPER(sku) = 'EL84004'`
+       WHERE UPPER(sku) = 'EL84004'`
     );
-    res.json({ rows: r.rows });
+    if (!find.rows.length) return res.json({ error: 'EL84004 not found' });
+    const row = find.rows[0];
+    let codes = row.competitor_codes || [];
+    if (typeof codes === 'string') codes = JSON.parse(codes);
+    const already = codes.some(c => (c.manufacturer||'').toUpperCase() === 'BALDWIN' && (c.code||'').toUpperCase() === 'B76');
+    if (!already) {
+      codes.push({ manufacturer: 'BALDWIN', code: 'B76' });
+      await client.query(
+        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+        [JSON.stringify(codes), row.id]
+      );
+    }
+    res.json({ sku: row.sku, codigo_base: row.codigo_base, b76_was_present: already, competitor_codes: codes });
   } catch (e) {
     res.status(500).json({ error: e.message });
   } finally { await client.end(); }
