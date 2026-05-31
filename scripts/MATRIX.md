@@ -1,5 +1,5 @@
 # SCRAPING MATRIX — Donaldson
-Última actualización: 2026-05-30
+Última actualización: 2026-05-31
 
 ---
 
@@ -10,7 +10,7 @@
 | lube           | 351       | ✅ COMPLETO       | ✅ 330/351       | scraper_oilcrossref.py   | ✅ COMPLETO       |
 | fuel           | 500       | ✅ COMPLETO       | ✅ 500/500       | scraper_fuelcrossref.py  | ✅ COMPLETO       |
 | fuel-separator | (en fuel) | (en fuel)         | (en fuel)        | scraper_fuelcrossref.py  | (en fuel)         |
-| hydraulic      | 1934      | ✅ COMPLETO (28 err) | ⚡ EN CURSO     | scraper_oilcrossref.py   | ⚡ EN CURSO       |
+| hydraulic      | 1962      | ✅ COMPLETO (28 err) | ✅ 1962/1962    | scraper_oilcrossref.py   | ✅ COMPLETO       |
 | air            | 1366      | ✅ COMPLETO       | ✅ 1366/1366     | scraper_aircrossref.py   | ✅ COMPLETO       |
 | air-intake     | 243       | ✅ COMPLETO       | ✅ 243/243       | scraper_aircrossref.py   | ✅ COMPLETO       |
 | cabin          | 122       | ✅ COMPLETO       | ✅ 122/122       | scraper_aircrossref.py   | ✅ COMPLETO       |
@@ -149,20 +149,20 @@ python count_donaldson.py
 
 ```
 Donaldson results (con brand_crossrefs):
-  donaldson_lube_results.json        ← 351 prods ✅
-  donaldson_fuel_results.json        ← 500 prods (crossrefs pendiente)
-  donaldson_air_results.json         ← 1366 prods (crossrefs bloqueado)
-  donaldson_air-intake_results.json  ← 243 prods (crossrefs bloqueado)
-  donaldson_cabin_results.json       ← 122 prods (crossrefs bloqueado)
-  donaldson_air-dryer_results.json   ← 3 prods (crossrefs pendiente)
-  donaldson_coolant_results.json     ← 59 prods (crossrefs pendiente)
-  donaldson_hydraulic_results.json   ← ~2177 prods ⚡ en curso Mac
+  donaldson_lube_results.json        ← 351 prods ✅ (21 sin crossref — retry pendiente)
+  donaldson_fuel_results.json        ← 500 prods ✅
+  donaldson_air_results.json         ← 1366 prods ✅
+  donaldson_air-intake_results.json  ← 243 prods ✅
+  donaldson_cabin_results.json       ← 122 prods ✅
+  donaldson_air-dryer_results.json   ← 3 prods ✅
+  donaldson_coolant_results.json     ← 59 prods ✅
+  donaldson_hydraulic_results.json   ← 1962 prods ✅ (brand_crossrefs en Windows — push pendiente)
 
 Progreso crossrefs (cache — NO borrar):
   donaldson_lube_crossref_progress.json
-  donaldson_hydraulic_crossref_progress.json   (cuando corra)
-  donaldson_fuel_crossref_progress.json        (cuando corra)
-  donaldson_air_crossref_progress.json         (cuando corra)
+  donaldson_hydraulic_crossref_progress.json   ← ✅ en Windows, push pendiente
+  donaldson_fuel_crossref_progress.json
+  donaldson_air_crossref_progress.json
 ```
 
 ---
