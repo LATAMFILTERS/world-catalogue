@@ -12,7 +12,7 @@ const app = express();
 app.set('trust proxy', 1);
 
 // Healthcheck FIRST — must respond before anything else can fail
-app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }));
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.6.0' }));
 
 app.use(cors());
 app.set('trust proxy', 1);
@@ -181,7 +181,7 @@ function buildFilterData(row, lang = 'en'){
 }
 
 app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.4.0'});
+  res.json({status: 'ok', version: '3.6.0'});
 });
 
 app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
