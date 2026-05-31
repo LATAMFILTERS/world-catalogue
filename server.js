@@ -18,6 +18,7 @@ app.use(cors());
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('frontend/out'));
+app.use(express.static('part-search'));
 app.use(express.static('public'));
 app.use(express.static('www'));
 
