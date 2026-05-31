@@ -23,12 +23,12 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
 
     const DESC = {
       spinon: {
-        en: 'ELIMFILTERS SYNTRAX™ lube spin-on filter combines full-flow and by-pass filtration into one single filter developed to meet or exceed engine requirements. This unique arrangement of filtration provides the perfect balance between efficiency and low restriction to oil flow.',
-        es: 'El filtro de aceite spin-on ELIMFILTERS SYNTRAX™ combina filtración de flujo total y derivación en un solo filtro, desarrollado para cumplir o superar los requisitos del motor. Esta disposición única proporciona el equilibrio perfecto entre eficiencia y baja restricción al flujo de aceite.',
+        en: 'ELIMFILTERS® Lube Filter, Spin-On developed for industrial asset protection. Its SYNTRAX™ technology deploys a four-layer contamination control matrix, each layer calibrated to a specific particle size class, intercepting sub-micron particles before they reach critical engine components across the complete service interval.',
+        es: 'ELIMFILTERS® Filtro de aceite spin-on desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ despliega una matriz de control de contaminación de cuatro capas, cada una calibrada para una clase de tamaño de partícula específica, interceptando partículas submicrónónicas antes de que alcancen los componentes críticos del motor durante todo el intervalo de servicio.',
       },
       cartridge: {
-        en: 'ELIMFILTERS SYNTRAX™ cartridge oil filter is environmentally friendly and features technology advances to achieve the high flow rates required by today\'s modern engine designs.',
-        es: 'El filtro de aceite en cartucho ELIMFILTERS SYNTRAX™ es ecológico y cuenta con avances tecnológicos para alcanzar los altos caudales requeridos por los modernos diseños de motores actuales.',
+        en: 'ELIMFILTERS® Lube Filter, Cartridge developed for industrial asset protection. Its SYNTRAX™ technology deploys a four-layer contamination control matrix, each layer calibrated to a specific particle size class, intercepting sub-micron particles before they reach critical engine components. Cartridge format reduces environmental impact while maintaining full contamination control performance across high-flow modern engine architectures.',
+        es: 'ELIMFILTERS® Filtro de aceite en cartucho desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ despliega una matriz de control de contaminación de cuatro capas, cada una calibrada para una clase de tamaño de partícula específica, interceptando partículas submicrónicas antes de que alcancen los componentes críticos del motor. El formato cartucho reduce el impacto ambiental sin comprometer el control de contaminación en arquitecturas de motor modernas de alto caudal.',
       },
     };
 
