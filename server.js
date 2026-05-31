@@ -1231,7 +1231,7 @@ app.get('/api/migrate/init-db', async (req, res) => {
 
     // 2. Constraints
     await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
-    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]?[0-9]{4}[A-Z]?$');");
+    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]{4,7}[A-Z]?$');");
 
     // 3. View
     await client.query(`
@@ -1250,6 +1250,22 @@ app.get('/api/migrate/init-db', async (req, res) => {
     return res.json({ success: true, message: 'Database initialized successfully (tables, views, constraints)' });
   } catch (err) {
     console.error('[migrations] DB INIT ERROR:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/migrate/fix-sku-constraint ─────────────────────────────────────
+app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
+    await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]{4,7}[A-Z]?$');");
+    return res.json({ success: true, message: 'Constraint updated: accepts 4-7 digit SKU suffixes' });
+  } catch (err) {
     return res.status(500).json({ success: false, error: err.message });
   } finally {
     await client.end();
