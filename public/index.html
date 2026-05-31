@@ -49,6 +49,8 @@
     }
     #splash-canvas {
       display: block;
+      width: 100vw;
+      height: 100vh;
       cursor: pointer;
     }
     .splash-hint {
@@ -1404,21 +1406,21 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 4s KLEO
+    // 8s KLEO → morph a E
     sequenceTimeouts.push(setTimeout(() => {
       currentImageIndex = 1;
       morphTo(imageTargets[1]);
-    }, 4000));
+    }, 8000));
 
-    // 5s E = 9s total
+    // 8s E → disolver (16s total)
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
-    }, 9000));
+    }, 16000));
 
-    // End Splash at 10.5s
+    // Fin del splash en 17.5s
     sequenceTimeouts.push(setTimeout(() => {
       endSplash();
-    }, 10500));
+    }, 17500));
   }
 
   function animateSplash() {
