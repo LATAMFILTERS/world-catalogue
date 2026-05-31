@@ -1410,21 +1410,21 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 6s KLEO → morph a E
+    // 4s KLEO → morph a E
     sequenceTimeouts.push(setTimeout(() => {
       currentImageIndex = 1;
       morphTo(imageTargets[1]);
-    }, 6000));
+    }, 4000));
 
-    // 6s E → disolver (12s total)
+    // 4s E → disolver (8s total)
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
-    }, 12000));
+    }, 8000));
 
-    // Fin del splash en 13.5s
+    // Fin del splash en 9.5s
     sequenceTimeouts.push(setTimeout(() => {
       endSplash();
-    }, 13500));
+    }, 9500));
   }
 
   function animateSplash() {
