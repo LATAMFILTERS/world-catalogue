@@ -104,8 +104,8 @@
     /* ─── INTRO LABEL ─── */
     .intro-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.24em;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
       color: var(--y);
       opacity: 0;
       transform: translateY(6px);
@@ -133,6 +133,7 @@
     /* ─── TAB SWITCHER ─── */
     .mode-tabs {
       display: flex;
+      justify-content: center;
       border-bottom: 1px solid var(--border);
       margin-bottom: 1.5rem;
       gap: 0;
@@ -528,7 +529,7 @@
 <canvas id="nanoflow"></canvas>
 
 <a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
-  <span class="logo-text">ELIM<span>FILTERS</span>®</span>
+  <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height: 32px; width: auto; object-fit: contain;">
   <span class="logo-badge">PART SEARCH</span>
 </a>
 
@@ -550,25 +551,18 @@
     <!-- ── FORM: PART NUMBER ── -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
-        <label class="field-label" for="inp-part">Part number, OEM code, or competitor reference</label>
+        <label class="field-label" for="inp-part">Part number</label>
         <div class="input-wrap primary">
           <span class="input-icon" aria-hidden="true">⌕</span>
           <input
             type="search"
             id="inp-part"
             name="code"
-            placeholder="EL82100, P781466, LF3874, BT839..."
+            placeholder="EL82100..."
             spellcheck="false"
             autocomplete="off"
             aria-label="Part number"
           />
-        </div>
-        <div class="hint-row" aria-label="Search examples">
-          <span class="hint-pill" data-fill="inp-part">EL82100</span>
-          <span class="hint-pill" data-fill="inp-part">P781466</span>
-          <span class="hint-pill" data-fill="inp-part">LF3874</span>
-          <span class="hint-pill" data-fill="inp-part">BT839</span>
-          <span class="hint-pill" data-fill="inp-part">1R-0750</span>
         </div>
       </div>
       <div class="form-footer">
@@ -606,13 +600,6 @@
             />
           </div>
         </div>
-      </div>
-      <div class="hint-row">
-        <span class="hint-pill" data-fill="inp-vin-model">Hilux</span>
-        <span class="hint-pill" data-fill="inp-vin-model">Ranger</span>
-        <span class="hint-pill" data-fill="inp-vin-model">Land Cruiser</span>
-        <span class="hint-pill" data-fill="inp-vin-model">F-250</span>
-        <span class="hint-pill" data-fill="inp-vin-model">Sprinter</span>
       </div>
       <div class="form-footer">
         <div style="flex:1"></div>
@@ -670,12 +657,6 @@
             />
           </div>
         </div>
-      </div>
-      <div class="hint-row">
-        <span class="hint-pill" data-fill="inp-equip-model">CAT 390F</span>
-        <span class="hint-pill" data-fill="inp-equip-model">Komatsu PC360</span>
-        <span class="hint-pill" data-fill="inp-equip-model">Liebherr R 936</span>
-        <span class="hint-pill" data-fill="inp-equip-model">Volvo EC380</span>
       </div>
       <div class="form-footer">
         <div style="flex:1"></div>
