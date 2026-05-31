@@ -34,7 +34,7 @@
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
   
   const isMobile = window.innerWidth < 768;
-  const particleSpacing = isMobile ? 3 : 2; 
+  const particleSpacing = isMobile ? 4 : 3; 
   const mouseRadius = isMobile ? 80 : 120;
   let particlesArray = [];
   let mouse = { x: null, y: null, radius: mouseRadius };
@@ -102,7 +102,7 @@
       this.baseX = target.x;
       this.baseY = target.y;
       this.color = target.color;
-      this.size = isMobile ? 1.2 : 0.8;
+      this.size = isMobile ? 1.8 : 1.4;
       this.density = (Math.random() * 40) + 5;
       this.active = true;
     }
@@ -124,7 +124,7 @@
         this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
         this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
       } else {
-        const returnSpeed = isMobile ? 10 : 8;
+        const returnSpeed = isMobile ? 6 : 5;
         if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
         if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
       }
@@ -148,19 +148,19 @@
     particlesArray = imageTargets.map(t => new Particle(t));
     animateSplash();
 
-    // 4s E → disolver
+    // 8s E → disolver
     setTimeout(() => {
       dissolveAll();
-    }, 4000);
+    }, 8000);
 
-    // 5.5s → Redirigir al frontend principal
+    // 10s → Redirigir al frontend principal
     setTimeout(() => {
-      document.body.style.transition = 'opacity 1s ease';
+      document.body.style.transition = 'opacity 1.5s ease';
       document.body.style.opacity = '0';
       setTimeout(() => {
         window.location.href = 'https://elimfilters.com';
-      }, 1000);
-    }, 5500);
+      }, 1500);
+    }, 10000);
   }
 
   function animateSplash() {
