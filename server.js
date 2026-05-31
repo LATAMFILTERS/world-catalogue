@@ -23,7 +23,7 @@ app.get('/api/admin/compare-skus', async (req, res) => {
     await client.connect();
     const r = await client.query(
       `SELECT sku, codigo_base, filter_type, sub_type, technology, duty,
-              height_mm, od_mm, gasket_od_mm, thread, micron_rating,
+              height_mm, outer_diameter_mm, gasket_od_mm, thread_size, micron_rating,
               nominal_efficiency, burst_pressure_psi, iso_test_method
        FROM elimfilters_catalog WHERE UPPER(sku) = ANY($1)`,
       [skus]
