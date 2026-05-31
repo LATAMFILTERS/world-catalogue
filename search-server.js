@@ -96,6 +96,30 @@ function normalizeRow(row) {
     };
 }
 
+// ── DEBUG — list tables and row counts ───────────────────────────────────────
+app.get('/debug/schema', async (req, res) => {
+    try {
+        const tables = await pool.query(
+            `SELECT table_name
+             FROM information_schema.tables
+             WHERE table_schema = 'public'
+             ORDER BY table_name`
+        );
+        const counts = {};
+        for (const row of tables.rows) {
+            try {
+                const c = await pool.query(`SELECT COUNT(*) AS n FROM "${row.table_name}"`);
+                counts[row.table_name] = parseInt(c.rows[0].n);
+            } catch (e) {
+                counts[row.table_name] = `error: ${e.message}`;
+            }
+        }
+        res.json({ tables: counts });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // ── HEALTH ────────────────────────────────────────────────────────────────────
 app.get('/health', async (req, res) => {
     try {
