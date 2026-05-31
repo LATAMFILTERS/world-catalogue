@@ -30,6 +30,10 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Lube Filter, Cartridge developed for industrial asset protection and to minimize environmental impact in industrial operations. Its SYNTRAX™ technology deploys a four-layer contamination control matrix, each layer calibrated to a specific particle size class, intercepting sub-micron particles before they reach critical engine components across the complete service interval.',
         es: 'ELIMFILTERS® Filtro de aceite tipo cartucho desarrollado para la protección de activos industriales y minimizar el impacto ambiental en operaciones industriales. Su tecnología SYNTRAX™ despliega una matriz de control de contaminación de cuatro capas, cada una calibrada para una clase de tamaño de partícula específica, interceptando partículas submicrónicas antes de que alcancen los componentes críticos del motor durante todo el intervalo de servicio.',
       },
+      centrifuge: {
+        en: 'ELIMFILTERS® Centrifuge Disposable Rotor developed for industrial asset protection. Its SYNTRAX™ technology provides centrifugal oil filtration through a fully disposable drop-in design that eliminates the need for special tools, reducing maintenance time to approximately 20 minutes and enabling faster return-to-service across demanding industrial duty cycles.',
+        es: 'ELIMFILTERS® Rotor desechable de centrífuga desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ proporciona filtración de aceite por centrifugación mediante un diseño desechable tipo drop-in que elimina la necesidad de herramientas especiales, reduciendo el tiempo de mantenimiento a aproximadamente 20 minutos y permitiendo un retorno a operación más rápido en ciclos de trabajo industriales exigentes.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -54,11 +58,22 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.cartridge)]
     );
 
+    // Centrifuge rotor
+    const centRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%centrifug%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.centrifuge)]
+    );
+
     res.json({
       spin_on_updated: spinRes.rowCount,
       cartridge_updated: cartRes.rowCount,
+      centrifuge_updated: centRes.rowCount,
       sample_spinon: spinRes.rows.slice(0, 3).map(r => r.sku),
       sample_cartridge: cartRes.rows.slice(0, 3).map(r => r.sku),
+      sample_centrifuge: centRes.rows.slice(0, 3).map(r => r.sku),
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
