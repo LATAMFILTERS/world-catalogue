@@ -154,7 +154,9 @@ def post_batch(batch, dry_run=False):
     payload = {"key": API_KEY, "rows": batch}
     for attempt in range(4):
         try:
-            resp = requests.post(API_URL, json=payload, timeout=60)
+            resp = requests.post(API_URL, json=payload, timeout=60, verify=False)
+            if not resp.text:
+                raise ValueError("Empty response from server")
             return resp.json()
         except Exception as e:
             wait = 2 ** attempt
