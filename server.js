@@ -143,7 +143,7 @@ function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
-    description: extractText(row.description, lang),
+    description: row.description || extractText(row.sub_type, lang) || null,
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: extractText(row.sub_type, lang) || null,
     technology: row.technology || null,
@@ -162,6 +162,8 @@ function buildFilterData(row, lang = 'en'){
     duty: row.duty || null,
     oem_codes: parseRefs(row.oem_codes),
     competitor_codes: parseRefs(row.competitor_codes),
+    brand_crossrefs: row.brand_crossrefs || {},
+    alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
   };
 }
@@ -1083,19 +1085,20 @@ app.post('/api/import/donaldson', async (req, res) => {
       try {
         const result = await client.query(`
           INSERT INTO elimfilters_catalog (
-            sku, codigo_base, filter_type, sub_type, technology,
+            sku, codigo_base, description, filter_type, sub_type, technology,
             installation_type, thread_size,
             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
             iso_test_method, micron_rating, nominal_efficiency,
             burst_pressure_psi, collapse_pressure_psi,
             duty,
-            oem_codes, competitor_codes, equipment_applications
+            oem_codes, competitor_codes, brand_crossrefs, alternatives, equipment_applications
           ) VALUES (
-            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,
-            $18::jsonb,$19::jsonb,$20::jsonb
+            $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,
+            $19::jsonb,$20::jsonb,$21::jsonb,$22::jsonb,$23::jsonb
           )
           ON CONFLICT (sku) DO UPDATE SET
             codigo_base           = COALESCE(EXCLUDED.codigo_base,           elimfilters_catalog.codigo_base),
+            description           = COALESCE(EXCLUDED.description,           elimfilters_catalog.description),
             filter_type           = COALESCE(EXCLUDED.filter_type,           elimfilters_catalog.filter_type),
             sub_type              = COALESCE(EXCLUDED.sub_type,              elimfilters_catalog.sub_type),
             technology            = COALESCE(EXCLUDED.technology,            elimfilters_catalog.technology),
@@ -1111,14 +1114,14 @@ app.post('/api/import/donaldson', async (req, res) => {
             burst_pressure_psi    = COALESCE(EXCLUDED.burst_pressure_psi,    elimfilters_catalog.burst_pressure_psi),
             collapse_pressure_psi = COALESCE(EXCLUDED.collapse_pressure_psi, elimfilters_catalog.collapse_pressure_psi),
             duty                  = COALESCE(EXCLUDED.duty,                  elimfilters_catalog.duty),
-            competitor_codes      = CASE
-              WHEN elimfilters_catalog.competitor_codes IS NULL OR elimfilters_catalog.competitor_codes = '[]'::jsonb
-              THEN EXCLUDED.competitor_codes ELSE elimfilters_catalog.competitor_codes END,
-            equipment_applications = CASE
-              WHEN elimfilters_catalog.equipment_applications IS NULL OR elimfilters_catalog.equipment_applications = '[]'::jsonb
-              THEN EXCLUDED.equipment_applications ELSE elimfilters_catalog.equipment_applications END
+            oem_codes             = COALESCE(EXCLUDED.oem_codes,             elimfilters_catalog.oem_codes),
+            competitor_codes      = COALESCE(EXCLUDED.competitor_codes,      elimfilters_catalog.competitor_codes),
+            brand_crossrefs       = COALESCE(EXCLUDED.brand_crossrefs,       elimfilters_catalog.brand_crossrefs),
+            alternatives          = COALESCE(EXCLUDED.alternatives,          elimfilters_catalog.alternatives),
+            equipment_applications = COALESCE(EXCLUDED.equipment_applications, elimfilters_catalog.equipment_applications)
         `, [
-          row.sku, row.codigo_base, row.filter_type || null, row.sub_type || null,
+          row.sku, row.codigo_base, row.description || null,
+          row.filter_type || null, row.sub_type || null,
           row.technology || null,
           row.installation_type || null, row.thread_size || null,
           row.outer_diameter_mm || null, row.height_mm || null,
@@ -1129,6 +1132,8 @@ app.post('/api/import/donaldson', async (req, res) => {
           row.duty || 'HEAVY_DUTY',
           JSON.stringify(row.oem_codes || []),
           JSON.stringify(row.competitor_codes || []),
+          JSON.stringify(row.brand_crossrefs || {}),
+          JSON.stringify(row.alternatives || []),
           JSON.stringify(row.equipment_applications || [])
         ]);
         // xmax = 0 means insert, otherwise update
@@ -1186,6 +1191,7 @@ app.get('/api/migrate/init-db', async (req, res) => {
         id SERIAL PRIMARY KEY,
         sku VARCHAR(100) UNIQUE NOT NULL,
         codigo_base VARCHAR(100),
+        description TEXT,
         filter_type VARCHAR(100),
         sub_type VARCHAR(100),
         technology VARCHAR(100),
@@ -1203,6 +1209,8 @@ app.get('/api/migrate/init-db', async (req, res) => {
         duty VARCHAR(50),
         oem_codes JSONB,
         competitor_codes JSONB,
+        brand_crossrefs JSONB,
+        alternatives JSONB,
         equipment_applications JSONB
       );
     `);
@@ -1234,12 +1242,35 @@ app.get('/api/migrate/init-db', async (req, res) => {
   }
 });
 
+// ─── GET /api/migrate/reset-catalog ──────────────────────────────────────────
+// Truncates catalog and ensures new columns exist. Confirms with ?confirm=yes
+app.get('/api/migrate/reset-catalog', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (req.query.confirm !== 'yes') return res.status(400).json({ error: 'Add ?confirm=yes to proceed' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query('TRUNCATE TABLE elimfilters_catalog RESTART IDENTITY;');
+    // Add new columns if they don't exist yet (idempotent)
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description TEXT;`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS brand_crossrefs JSONB;`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS alternatives JSONB;`);
+    console.log('[migrations] Catalog reset: truncated + columns ensured');
+    return res.json({ success: true, message: 'Catalog truncated and schema updated' });
+  } catch (err) {
+    console.error('[migrations] RESET ERROR:', err.message);
+    return res.status(500).json({ success: false, error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ─── GET /api/status ─────────────────────────────────────────────────────────
 // Health and version status for deployment verification
 app.get('/api/status', (req, res) => {
   res.json({
     status: 'ok',
-    version: '3.4.0',
+    version: '3.5.0',
     time: new Date().toISOString()
   });
 });
