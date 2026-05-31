@@ -1297,8 +1297,8 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
   function getTargetsFromImage(img, isSolidBlackBackground) {
     let targets = [];
-    // Móvil: 85% del ancho. Escritorio: 50% del ancho
-    const maxFraction = isMobile ? 0.85 : 0.50;
+    // Móvil: 98% del ancho (+15%). Escritorio: 50% del ancho
+    const maxFraction = isMobile ? 0.98 : 0.50;
     const imgW = Math.min(img.width, cvs.width * maxFraction);
     const scale = imgW / img.width;
     const imgH = img.height * scale;
