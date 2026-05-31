@@ -1283,8 +1283,8 @@ app.get('/api/search', async (req, res) => {
     }));
     res.json({ products, count: products.length });
   } catch (e) {
-    console.error('[api/search]', e.message);
-    res.status(500).json({ error: e.message, products: [] });
+    console.error('[api/search]', e);
+    res.status(500).json({ error: e.message, stack: e.stack, products: [] });
   }
 });
 
@@ -1300,7 +1300,8 @@ app.get('/api/stats', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    console.error('[api/stats]', e);
+    res.status(500).json({ error: e.message, stack: e.stack });
   }
 });
 // ────────────────────────────────────────────────────────────────────────────
