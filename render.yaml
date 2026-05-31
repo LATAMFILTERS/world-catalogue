@@ -1,8 +1,3 @@
-databases:
-  - name: catalogo_elimfilters
-    databaseName: elimfilters_db
-    user: elimfilters_user
-
 services:
   - type: web
     name: world-catalogue
@@ -17,8 +12,6 @@ services:
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
-        fromDatabase:
-          name: catalogo_elimfilters
-          property: connectionString
+        sync: false
       - key: GODADDY_MAIL_PASS
         sync: false
