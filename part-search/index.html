@@ -1252,11 +1252,6 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 // ─────────────────────────────────────────────────────────────────────────────
 (function initSplash() {
   const splashEl = document.getElementById('cinematic-splash');
-  if (sessionStorage.getItem('splashPlayed')) {
-    splashEl.style.display = 'none';
-    return; // Ya se vio en esta sesión
-  }
-  
   splashEl.style.display = 'flex';
   const cvs = document.getElementById('splash-canvas');
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
@@ -1428,7 +1423,6 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   }
 
   function endSplash() {
-    sessionStorage.setItem('splashPlayed', 'true');
     splashEl.style.opacity = '0';
     sequenceTimeouts.forEach(clearTimeout);
     setTimeout(() => {
