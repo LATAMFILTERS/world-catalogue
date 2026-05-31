@@ -925,8 +925,9 @@ function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
   return arr.slice(0, max).map(r => {
     if (typeof r === 'string') return { brand: '', code: r };
+    const brand = r.manufacturer || '';
     return {
-      brand: r.manufacturer || '',
+      brand: brand.toUpperCase() === 'UNKNOWN' ? '' : brand,
       code: r.code || r.partNumber || ''
     };
   }).filter(r => r.code);
