@@ -53,6 +53,10 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Centrifuge Disposable Rotor developed for industrial asset protection. Its SYNTRAX™ technology provides centrifugal oil filtration through a fully disposable drop-in design that eliminates the need for special tools, reducing maintenance time to approximately 20 minutes and enabling faster return-to-service across demanding industrial duty cycles.',
         es: 'ELIMFILTERS® Rotor desechable de centrífuga desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ proporciona filtración de aceite por centrifugación mediante un diseño desechable tipo drop-in que elimina la necesidad de herramientas especiales, reduciendo el tiempo de mantenimiento a aproximadamente 20 minutos y permitiendo un retorno a operación más rápido en ciclos de trabajo industriales exigentes.',
       },
+      cabin: {
+        en: 'ELIMFILTERS® Cabin Air Filter developed for occupant health protection in heavy-duty and industrial vehicle cabins. Its MICROKAPPA™ technology combines three capture mechanisms — electrostatic attraction, HEPA-class mechanical filtration and activated carbon adsorption — intercepting PM2.5 particles, allergens, diesel exhaust gases and odors before they reach the cab interior.',
+        es: 'ELIMFILTERS® Filtro de aire de cabina desarrollado para la protección de la salud del operador en cabinas de vehículos industriales y de trabajo pesado. Su tecnología MICROKAPPA™ combina tres mecanismos de captura — atracción electrostática, filtración mecánica clase HEPA y adsorción de carbono activado — interceptando partículas PM2.5, alérgenos, gases de escape diésel y olores antes de que lleguen al interior de la cabina.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -86,13 +90,24 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.centrifuge)]
     );
 
+    // Cabin air filter
+    const cabinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%cabin%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.cabin)]
+    );
+
     res.json({
       spin_on_updated: spinRes.rowCount,
       cartridge_updated: cartRes.rowCount,
       centrifuge_updated: centRes.rowCount,
+      cabin_updated: cabinRes.rowCount,
       sample_spinon: spinRes.rows.slice(0, 3).map(r => r.sku),
       sample_cartridge: cartRes.rows.slice(0, 3).map(r => r.sku),
       sample_centrifuge: centRes.rows.slice(0, 3).map(r => r.sku),
+      sample_cabin: cabinRes.rows.slice(0, 3).map(r => r.sku),
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
