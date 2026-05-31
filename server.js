@@ -1285,7 +1285,7 @@ app.get('/api/search', async (req, res) => {
     res.json({ products, count: products.length });
   } catch (e) {
     console.error('[api/search]', e);
-    res.status(500).json({ error: e.message, stack: e.stack, products: [] });
+    res.status(500).json({ error: e.message, products: [] });
   }
 });
 
@@ -1302,7 +1302,7 @@ app.get('/api/stats', async (req, res) => {
     });
   } catch (e) {
     console.error('[api/stats]', e);
-    res.status(500).json({ error: e.message, stack: e.stack });
+    res.status(500).json({ error: e.message });
   }
 });
 // ────────────────────────────────────────────────────────────────────────────
