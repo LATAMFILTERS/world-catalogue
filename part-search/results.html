@@ -327,6 +327,7 @@
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--fg);
+      white-space: pre-line;
     }
 
     /* Cross References */
@@ -903,6 +904,14 @@ function showError() {
     </div>`;
 }
 
+// ─── HTML escape (XSS prevention) ───────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+}
+
 // ─── Parse description (may come as JSON string from API) ───
 function parseDesc(val) {
   if (!val) return null;
@@ -947,7 +956,13 @@ function renderCard(p, index) {
     if (!mm) return null;
     const inches = (mm / 25.4).toFixed(2);
     const mmRound = Math.round(mm);
-    return inches + ' inch (' + mmRound + ' mm)';
+    return inches + ' inch\n' + mmRound + ' mm';
+  }
+  function mediaLabel(val) {
+    if (!val) return null;
+    const v = String(val).toLowerCase().trim();
+    if (v === 'cellulose') return 'Híbrida';
+    return val;
   }
   function psiFmt(psi) {
     if (!psi) return null;
@@ -970,7 +985,7 @@ function renderCard(p, index) {
     specHTML('Gasket ID',      dimFmt(p.gasket_id_mm)),
     specHTML(effLabel,         micronVal),
     specHTML('Efficiency Test Std', p.iso_test_method),
-    specHTML('Media Type',     p.filter_subtype || null),
+    specHTML('Media Type',     mediaLabel(p.filter_subtype) || null),
     specHTML('Collapse Burst', psiFmt(p.burst_pressure_psi)),
     specHTML('Style',          p.installation_type || null),
   ].filter(Boolean);
@@ -988,15 +1003,15 @@ function renderCard(p, index) {
             <span class="card-sku">${sku}</span>
           </div>
           <div class="card-badges">
-            ${p.filter_type      ? `<span class="badge badge-type">${p.filter_type}</span>` : ''}
-            ${p.filter_subtype   ? `<span class="badge badge-type">${p.filter_subtype}</span>` : ''}
-            ${p.installation_type ? `<span class="badge badge-type">${p.installation_type}</span>` : ''}
-            ${p.duty             ? `<span class="badge badge-duty">${p.duty.toUpperCase()}</span>` : ''}
-            ${p.technology       ? `<span class="badge badge-tech">${p.technology}</span>` : ''}
+            ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
+            ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
+            ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
+            ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
+            ${p.technology       ? `<span class="badge badge-tech">${esc(p.technology)}</span>` : ''}
           </div>
         </div>
 
-        ${parseDesc(p.description) ? `<p class="card-desc">${parseDesc(p.description)}</p>` : ''}
+        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
 
         ${specs.length ? `
           <div class="specs-section">
@@ -1011,7 +1026,7 @@ function renderCard(p, index) {
               <p class="refs-title">OEM Cross-References</p>
               <div class="refs-grid">
                 ${oem.length 
-                  ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('') 
+                  ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No OEM cross-references</span>`
                 }
               </div>
@@ -1022,7 +1037,7 @@ function renderCard(p, index) {
               <p class="refs-title">Competitor Cross-References</p>
               <div class="refs-grid">
                 ${comp.length 
-                  ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('') 
+                  ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No competitor cross-references</span>`
                 }
               </div>
@@ -1045,14 +1060,14 @@ function renderCard(p, index) {
                         let brandSpan = '<span></span>';
                         let restName = fullName;
                         if (spaceIdx > 0) {
-                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName.substring(0, spaceIdx)}</span>`;
-                          restName = fullName.substring(spaceIdx + 1);
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(fullName.substring(0, spaceIdx))}</span>`;
+                          restName = esc(fullName.substring(spaceIdx + 1));
                         } else if (fullName) {
-                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName}</span>`;
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(fullName)}</span>`;
                           restName = '';
                         }
-                        
-                        return `<span class="equip-chip">${brandSpan}<span>${restName}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${eng}]</span>` : ''}</span></span>`;
+
+                        return `<span class="equip-chip">${brandSpan}<span>${restName}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${esc(eng)}]</span>` : ''}</span></span>`;
                       }
                       
                       // Fallback for simple string application
@@ -1061,10 +1076,10 @@ function renderCard(p, index) {
                       let brandSpan = '<span></span>';
                       let restName = simpleStr;
                       if (spaceIdx > 0) {
-                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr.substring(0, spaceIdx)}</span>`;
-                        restName = simpleStr.substring(spaceIdx + 1);
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(simpleStr.substring(0, spaceIdx))}</span>`;
+                        restName = esc(simpleStr.substring(spaceIdx + 1));
                       } else if (simpleStr) {
-                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr}</span>`;
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(simpleStr)}</span>`;
                         restName = '';
                       }
                       return `<span class="equip-chip">${brandSpan}<span>${restName}</span></span>`;

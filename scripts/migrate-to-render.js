@@ -80,15 +80,14 @@ async function migrate() {
     return;
   }
 
+  const srcUrl = process.env.RAILWAY_DB_URL;
+  if (!srcUrl) {
+    console.log('[migrate] RAILWAY_DB_URL not set. Cannot migrate from source. Skipping.');
+    await destClient.end();
+    return;
+  }
   console.log('[migrate] Connecting to source (Railway)...');
-  const srcClient = new Client({
-    host: 'ballast.proxy.rlwy.net',
-    port: 18263,
-    database: 'railway',
-    user: 'postgres',
-    password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-    ssl: { rejectUnauthorized: false }
-  });
+  const srcClient = new Client({ connectionString: srcUrl, ssl: { rejectUnauthorized: false } });
   await srcClient.connect();
 
   async function copyTable(tableName) {

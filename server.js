@@ -6,6 +6,44 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
+// ─── Startup validation ───────────────────────────────────────────────────────
+if (!process.env.DATABASE_URL) {
+  console.error('[FATAL] DATABASE_URL is not set. Exiting.');
+  process.exit(1);
+}
+
+// ─── In-memory rate limiter (no external dependency) ─────────────────────────
+const _rl = {};
+function rateLimit(ip, max, windowMs) {
+  const now = Date.now();
+  if (!_rl[ip] || now > _rl[ip].reset) _rl[ip] = { n: 0, reset: now + windowMs };
+  _rl[ip].n++;
+  return _rl[ip].n <= max;
+}
+// Clean up old entries every 10 min
+setInterval(() => {
+  const now = Date.now();
+  for (const ip of Object.keys(_rl)) if (now > _rl[ip].reset) delete _rl[ip];
+}, 600_000);
+
+// ─── HTML escape helper ───────────────────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+// ─── Admin key (rotate via env var ADMIN_KEY) ─────────────────────────────────
+const ADMIN_KEY = process.env.ADMIN_KEY || 'elim2026admin';
+function adminAuth(req, res) {
+  if (req.query.key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
+  return true;
+}
+
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
@@ -18,7 +56,7 @@ app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }
 
 // TEMP: inspect raw dimensions for a SKU — DELETE AFTER USE
 app.get('/api/admin/dims/:sku', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -55,7 +93,7 @@ app.get('/api/admin/dims/:sku', async (req, res) => {
 
 // TEMP: fix technology name typos — DELETE AFTER USE
 app.get('/api/admin/fix-tech-names', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -80,7 +118,7 @@ app.get('/api/admin/fix-tech-names', async (req, res) => {
 
 // TEMP: fix dimensions from CSV — DELETE AFTER USE
 app.get('/api/admin/fix-dimensions', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const csvPath = path.join(__dirname, 'data', 'dims.csv');
   if (!fs.existsSync(csvPath)) return res.status(404).json({ error: 'dims.csv not found' });
 
@@ -90,15 +128,16 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
 
   const rows = lines.slice(1).map(l => {
     const cols = l.split(',');
+    const safeNum = (v, max) => { const n = parseFloat(v); return (n > 0 && n <= max) ? n : null; };
     return {
       sku:  cols[idx('sku')]?.trim(),
-      od:   parseFloat(cols[idx('od')]) || null,
-      h:    parseFloat(cols[idx('h')]) || null,
-      god:  parseFloat(cols[idx('god')]) || null,
-      gid:  parseFloat(cols[idx('gid')]) || null,
+      od:   safeNum(cols[idx('od')], 500),
+      h:    safeNum(cols[idx('h')], 2000),
+      god:  safeNum(cols[idx('god')], 500),
+      gid:  safeNum(cols[idx('gid')], 500),
       thread: cols[idx('thread')]?.trim() || null,
-      burst:  parseFloat(cols[idx('burst')]) || null,
-      collapse: parseFloat(cols[idx('collapse')]) || null,
+      burst:  safeNum(cols[idx('burst')], 10000),
+      collapse: safeNum(cols[idx('collapse')], 10000),
       sub:  cols[idx('sub')]?.trim() || null,
       inst: cols[idx('inst')]?.trim() || null,
       ft:   cols[idx('ft')]?.trim() || null,
@@ -134,7 +173,7 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
 app.get('/api/admin/update-lube-descriptions', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -505,10 +544,29 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
   } finally { await client.end(); }
 });
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://elimfilters.com',
+    'https://www.elimfilters.com',
+    'https://part-search.elimfilters.com',
+  ],
+  credentials: true,
+}));
 app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
+
+// Rate limiting middleware
+app.use('/api/search', (req, res, next) => {
+  const ip = req.ip || req.connection.remoteAddress;
+  if (!rateLimit(ip, 120, 60_000)) return res.status(429).json({ error: 'Too many requests' });
+  next();
+});
+app.use('/api/admin', (req, res, next) => {
+  const ip = req.ip || req.connection.remoteAddress;
+  if (!rateLimit(ip, 10, 60_000)) return res.status(429).json({ error: 'Too many requests' });
+  next();
+});
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
 
@@ -733,7 +791,7 @@ app.get('/api/debug/find-code/:code', async (req, res) => {
 
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -798,7 +856,7 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
 
 // Temp: analyze duplicate SKUs + calculate correct SKU for each codigo_base
 app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -860,7 +918,7 @@ app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
 
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -881,7 +939,7 @@ app.get('/api/analyze/duplicate-skus', async (req, res) => {
 
 // Temp: add UNIQUE constraint to sku column (after deduplicating)
 app.get('/api/migrate/fix-sku-unique', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -912,7 +970,7 @@ app.get('/api/migrate/fix-sku-unique', async (req, res) => {
 
 // Temp: create maintenance_kits and kit_components tables
 app.get('/api/migrate/create-kit-tables', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1277,7 +1335,7 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 
 // Temp: consolidate duplicate SKUs (preview consolidation plan)
 app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1317,7 +1375,7 @@ app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
 
 // Temp: apply consolidation (delete duplicates, merge competitor_codes)
 app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1374,7 +1432,7 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
 app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1400,7 +1458,7 @@ app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
 
 // Temp: add alternative_codes column
 app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1421,7 +1479,7 @@ app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
 
 // Temp: debug EL82100 vs EL81016 comparison
 app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1451,7 +1509,7 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
 
 // Copia campos faltantes de EL81016 a EL82100 y registra alternativas
 app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -1483,7 +1541,7 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
 });
 
 app.get('/api/catalog/stats', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1530,7 +1588,7 @@ app.get('/api/catalog/stats', async (req, res) => {
 
 // Merge OEM codes from EL81016 into EL82100
 app.get('/api/migrate/merge-oem-codes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -1550,7 +1608,7 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
 
 // Audit: Find incomplete products
 app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1580,7 +1638,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 });
 
 app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
 
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
@@ -1676,7 +1734,7 @@ app.post('/api/import/donaldson', async (req, res) => {
 // ─── GET /api/import/existing-skus ───────────────────────────────────────────
 // Returns all existing SKUs so the client can avoid collisions.
 app.get('/api/import/existing-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1701,7 +1759,7 @@ try {
 // ─── GET /api/migrate/init-db ────────────────────────────────────────────────
 // Initializes database schema (tables, views, constraints)
 app.get('/api/migrate/init-db', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1765,7 +1823,7 @@ app.get('/api/migrate/init-db', async (req, res) => {
 
 // ─── GET /api/migrate/fix-sku-constraint ─────────────────────────────────────
 app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -1782,7 +1840,7 @@ app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
 // ─── GET /api/migrate/reset-catalog ──────────────────────────────────────────
 // Truncates catalog and ensures new columns exist. Confirms with ?confirm=yes
 app.get('/api/migrate/reset-catalog', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   if (req.query.confirm !== 'yes') return res.status(400).json({ error: 'Add ?confirm=yes to proceed' });
   const client = new Client(dbConfig);
   try {
@@ -1792,6 +1850,15 @@ app.get('/api/migrate/reset-catalog', async (req, res) => {
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description JSONB;`);
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS brand_crossrefs JSONB;`);
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS alternatives JSONB;`);
+    // Convert description TEXT→JSONB if previously created as wrong type
+    await client.query(`
+      DO $$ BEGIN
+        IF (SELECT data_type FROM information_schema.columns
+            WHERE table_name='elimfilters_catalog' AND column_name='description') = 'text' THEN
+          ALTER TABLE elimfilters_catalog ALTER COLUMN description TYPE JSONB USING description::jsonb;
+        END IF;
+      END $$;
+    `);
     console.log('[migrations] Catalog reset: truncated + columns ensured');
     return res.json({ success: true, message: 'Catalog truncated and schema updated' });
   } catch (err) {
@@ -1816,7 +1883,7 @@ app.get('/api/status', (req, res) => {
 
 // ─── GET /api/catalog/export ──────────────────────────────────────────────────
 app.get('/api/catalog/export', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
