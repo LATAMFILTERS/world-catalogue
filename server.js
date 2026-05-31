@@ -1485,6 +1485,42 @@ app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
 
+// ─── GET /api/pending-donaldson ──────────────────────────────────────────────
+// Returns pending Donaldson products that need metadata enrichment.
+app.get('/api/pending-donaldson', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const limit = parseInt(req.query.limit) || 100;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, description, filter_type, sub_type, technology,
+             installation_type, thread_size,
+             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency,
+             burst_pressure_psi, collapse_pressure_psi, duty
+      FROM elimfilters_catalog
+      WHERE codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]'
+        AND (
+          equipment_applications IS NULL
+          OR jsonb_typeof(equipment_applications) <> 'array'
+          OR jsonb_array_length(equipment_applications) = 0
+          OR oem_codes IS NULL
+          OR jsonb_typeof(oem_codes) <> 'array'
+          OR jsonb_array_length(oem_codes) = 0
+        )
+      ORDER BY sku
+      LIMIT $1
+    `, [limit]);
+    res.json({ success: true, count: result.rows.length, products: result.rows });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ─── POST /api/import/donaldson ──────────────────────────────────────────────
 // Accepts batch of pre-processed rows and upserts into elimfilters_catalog.
 // Body: { key: "elim2026", rows: [ { sku, codigo_base, filter_type, ... } ] }
