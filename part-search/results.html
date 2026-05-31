@@ -954,10 +954,13 @@ function renderCard(p, index) {
     const bar = (psi * 0.0689476).toFixed(1);
     return psi + ' psi (' + bar + ' bar)';
   }
-  const effPct = p.nominal_efficiency && /^\d/.test(String(p.nominal_efficiency)) && !String(p.nominal_efficiency).toLowerCase().includes('micron')
-    ? String(p.nominal_efficiency).replace('%','').trim() + '%'
-    : null;
-  const effLabel = effPct ? 'Efficiency ' + effPct : 'Efficiency';
+  const nomEff  = p.nominal_efficiency ? String(p.nominal_efficiency) : null;
+  const nomHasMicron = nomEff && nomEff.toLowerCase().includes('micron');
+  const micronVal = p.micron_rating
+    ? p.micron_rating + ' micron'
+    : (nomHasMicron ? nomEff : null);
+  const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
+  const effLabel = pctStr ? 'Efficiency ' + pctStr + '%' : 'Efficiency';
 
   const specs = [
     specHTML('Outer Diameter', dimFmt(p.outer_diameter_mm)),
@@ -965,7 +968,7 @@ function renderCard(p, index) {
     specHTML('Length',         dimFmt(p.height_mm)),
     specHTML('Gasket OD',      dimFmt(p.gasket_od_mm)),
     specHTML('Gasket ID',      dimFmt(p.gasket_id_mm)),
-    specHTML(effLabel,         p.micron_rating ? p.micron_rating + ' micron' : null),
+    specHTML(effLabel,         micronVal),
     specHTML('Efficiency Test Std', p.iso_test_method),
     specHTML('Media Type',     p.filter_subtype || null),
     specHTML('Collapse Burst', psiFmt(p.burst_pressure_psi)),
