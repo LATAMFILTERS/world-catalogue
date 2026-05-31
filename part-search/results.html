@@ -863,7 +863,7 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
         <span class="meta-mode">${searchMode}</span>
         ${catalogNote}
       </div>
-      ${decodedText ? \`<div style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; letter-spacing: 0.03em;">DECODED: <strong style="color: #FFF12D; font-weight: 500;">\${decodedText}</strong></div>\` : ''}
+      ${decodedText ? `<div style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; letter-spacing: 0.03em;">DECODED: <strong style="color: #FFF12D; font-weight: 500;">${decodedText}</strong></div>` : ''}
       <div class="meta-divider"></div>
     </div>
     <div class="products">
@@ -874,7 +874,7 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
 // ─── SEARCH EXECUTION ───
 async function decodeNHTSA(vin) {
   try {
-    const res = await fetch(\`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/\${vin}?format=json\`);
+    const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
     if (!res.ok) return null;
     const data = await res.json();
     if (!data.Results) return null;
@@ -897,8 +897,12 @@ async function executeSearch() {
     showLoading(query);
     const warmupTimer = startWarmupTimer(query);
     try {
+<<<<<<< HEAD
       const r = await fetch(\`\${API}/api/search?q=\${encodeURIComponent(query)}\`);
       clearTimeout(warmupTimer);
+=======
+      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}`);
+>>>>>>> 3320c27 (fix: Remove erroneous backslashes from template literals in results.html (caused blank page))
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
@@ -911,19 +915,19 @@ async function executeSearch() {
     let decodedText = null;
 
     if (/^[A-Z0-9]{17}$/i.test(model)) {
-      showLoading(\`DECODING VIN: \${model}...\`);
+      showLoading(`DECODING VIN: ${model}...`);
       const decoded = await decodeNHTSA(model);
       if (decoded) {
-        localModel = \`\${decoded.make} \${decoded.model}\`.trim();
+        localModel = `${decoded.make} ${decoded.model}`.trim();
         localEngine = decoded.disp || engine;
-        decodedText = \`\${decoded.make} \${decoded.model} \${decoded.disp}\`.trim().toUpperCase();
+        decodedText = `${decoded.make} ${decoded.model} ${decoded.disp}`.trim().toUpperCase();
       }
     }
 
     showLoading(localModel);
     try {
-      let url = \`\${API}/api/filters/search/vin?model=\${encodeURIComponent(localModel)}\`;
-      if (localEngine) url += \`&engine=\${encodeURIComponent(localEngine)}\`;
+      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(localModel)}`;
+      if (localEngine) url += `&engine=${encodeURIComponent(localEngine)}`;
       const r = await fetch(url);
       if (!r.ok) throw new Error();
       const data = await r.json();
