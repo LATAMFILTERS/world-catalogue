@@ -14,6 +14,18 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
+// TEMP: dump raw EL84004 row — DELETE AFTER USE
+app.get('/api/admin/dump-el84004', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1', ['EL84004']);
+    res.json({ found: r.rows.length, data: r.rows[0] || null });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: check filter_type values for zero-result categories — DELETE AFTER USE
 app.get('/api/admin/filter-type-check', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
