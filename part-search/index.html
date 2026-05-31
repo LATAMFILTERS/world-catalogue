@@ -776,6 +776,18 @@
 const API = ''; // Use relative path since API is on the same server
 
 // ─────────────────────────────────────────────────────────────────────────────
+// WARMUP PING — fires immediately on page load so Render wakes up before
+// the user submits a search. On free tier, cold start takes 60-90s.
+// Silent background fetch; all errors intentionally ignored.
+// ─────────────────────────────────────────────────────────────────────────────
+(function warmupServer() {
+  try {
+    fetch('/api/status', { method: 'GET', cache: 'no-store' })
+      .catch(function() {}); // ignore network errors silently
+  } catch (_) {}
+})();
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CANVAS / FLOW FIELD
 // ─────────────────────────────────────────────────────────────────────────────
 const canvas = document.getElementById('nanoflow');
