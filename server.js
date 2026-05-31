@@ -1376,28 +1376,20 @@ app.get('/api/search', async (req, res) => {
       );
     }
 
-    // Tier 3: OEM codes — proper JSONB array element search
+    // Tier 3+4 combined: OEM codes AND competitor codes searched simultaneously
+    // Using EXISTS avoids cartesian product and prevents one ref type blocking the other
     if (result.rows.length === 0) {
       result = await client.query(
-        `SELECT DISTINCT ON (sku) *, 'oem' AS match_type, 2 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-         WHERE UPPER(elem->>'code') = $1
-            OR UPPER(elem->>'code') LIKE $2
-         ORDER BY sku
-         LIMIT 20`,
-        [q, q + '%']
-      );
-    }
-
-    // Tier 4: Competitor codes — proper JSONB array element search
-    if (result.rows.length === 0) {
-      result = await client.query(
-        `SELECT DISTINCT ON (sku) *, 'competitor' AS match_type, 3 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-         WHERE UPPER(elem->>'code') = $1
-            OR UPPER(elem->>'code') LIKE $2
+        `SELECT *, 'ref' AS match_type, 2 AS match_rank
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
+           WHERE UPPER(elem->>'code') = $1 OR UPPER(elem->>'code') LIKE $2
+         )
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
+           WHERE UPPER(elem->>'code') = $1 OR UPPER(elem->>'code') LIKE $2
+         )
          ORDER BY sku
          LIMIT 20`,
         [q, q + '%']
@@ -1447,18 +1439,21 @@ app.get('/api/search', async (req, res) => {
         if (row.codigo_base && row.codigo_base.toUpperCase().includes(q)) return `DONALDSON ${row.codigo_base}`;
         return null;
       }
-      if (mt === 'oem') {
-        // Find the specific OEM entry that matched
+      if (mt === 'oem' || mt === 'ref') {
+        // Check OEM codes first, then competitor codes
         const oems = row.oem_codes || [];
-        const hit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
-        if (hit) return `${hit.manufacturer || 'OEM'} ${hit.code}`;
-        return 'OEM CODE';
+        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (oemHit) return `${oemHit.manufacturer || 'OEM'} ${oemHit.code}`;
+        const comps = row.competitor_codes || [];
+        const compHit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (compHit) return `${compHit.manufacturer || 'COMPETITOR'} ${compHit.code}`;
+        return null;
       }
       if (mt === 'competitor') {
         const comps = row.competitor_codes || [];
         const hit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
         if (hit) return `${hit.manufacturer || 'COMPETITOR'} ${hit.code}`;
-        return 'COMPETITOR CODE';
+        return null;
       }
       if (mt === 'crossref') {
         return `CROSS-REFERENCE ${q}`;
