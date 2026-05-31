@@ -1131,6 +1131,7 @@ app.post('/api/import/donaldson', async (req, res) => {
             brand_crossrefs       = COALESCE(EXCLUDED.brand_crossrefs,       elimfilters_catalog.brand_crossrefs),
             alternatives          = COALESCE(EXCLUDED.alternatives,          elimfilters_catalog.alternatives),
             equipment_applications = COALESCE(EXCLUDED.equipment_applications, elimfilters_catalog.equipment_applications)
+          RETURNING xmax
         `, [
           row.sku, row.codigo_base, row.description || null,
           row.filter_type || null, row.sub_type || null,
@@ -1153,6 +1154,7 @@ app.post('/api/import/donaldson', async (req, res) => {
         else updated++;
       } catch (rowErr) {
         errors++;
+        console.error('[import-err]', row.sku, rowErr.message);
       }
     }
 
