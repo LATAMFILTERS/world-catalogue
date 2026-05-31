@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Search Results</title>
+  <meta name="description" content="ELIMFILTERS filter search results — cross-reference OEM and competitor codes.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --y3: rgba(255,241,45,0.06);
+      --bg: #000;
+      --surface: rgba(255,255,255,0.02);
+      --border: rgba(255,255,255,0.07);
+      --muted: rgba(255,255,255,0.35);
+    }
+
+    html, body {
+      width: 100%; min-height: 100vh;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-logo .logo-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      padding: 0.15rem 0.4rem;
+    }
+
+    .header-search {
+      flex: 1;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,241,45,0.2);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .header-search:focus-within {
+      border-color: var(--y);
+      box-shadow: 0 0 0 2px rgba(255,241,45,0.06);
+    }
+    .header-search-icon {
+      padding: 0 0.75rem;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .header-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      padding: 0.55rem 0;
+      letter-spacing: 0.04em;
+      min-width: 0;
+    }
+    .header-search input::placeholder { color: rgba(255,255,255,0.15); }
+    .header-search-btn {
+      background: transparent;
+      border: none;
+      color: var(--y);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      padding: 0.55rem 0.85rem;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .header-search-btn:hover { opacity: 1; }
+
+    .header-back {
+      margin-left: auto;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+    .header-back:hover { color: var(--y); }
+
+    /* ─── RESULTS META ─── */
+    .results-meta {
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.5s ease 0.1s forwards;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-query {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 500;
+      color: var(--y);
+      letter-spacing: 0.05em;
+    }
+
+    .meta-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .meta-mode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,241,45,0.5);
+      border: 1px solid rgba(255,241,45,0.15);
+      border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .meta-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--y) 0%, rgba(255,241,45,0.05) 100%);
+      margin-top: 1.2rem;
+    }
+
+    /* ─── PRODUCT GRID ─── */
+    .products {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* ─── PRODUCT CARD ─── */
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--y);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .product-card:hover { border-color: rgba(255,241,45,0.15); }
+    .product-card:hover::before { opacity: 1; }
+
+    .card-inner {
+      padding: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    /* Card Header */
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .card-identity { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .card-sku {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: var(--y);
+      letter-spacing: 0.06em;
+    }
+
+    .card-base {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .badge-type {
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.02);
+    }
+    .badge-tech {
+      border: 1px solid rgba(255,241,45,0.22);
+      color: rgba(255,241,45,0.7);
+      background: rgba(255,241,45,0.04);
+    }
+    .badge-duty {
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* Card Description */
+    .card-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Specs Grid */
+    .specs-section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .specs-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem 1.5rem;
+    }
+
+    .spec-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .spec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Cross References */
+    .refs-section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .refs-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .refs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .ref-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 3px;
+      padding: 0.3rem 0.6rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .ref-chip:hover {
+      border-color: rgba(255,241,45,0.2);
+      color: rgba(255,255,255,0.7);
+    }
+    .ref-chip .ref-brand {
+      color: rgba(255,241,45,0.4);
+      margin-right: 0.25rem;
+    }
+
+    /* Equipment Applications */
+    .equip-section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 1.2rem;
+    }
+
+    .equip-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .equip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .equip-chip {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 3px;
+      padding: 0.3rem 0.65rem;
+    }
+
+    /* ─── STATUS MESSAGES ─── */
+    .status-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem clamp(1rem, 4vw, 3rem);
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.1s forwards;
+    }
+
+    .status-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.15;
+    }
+
+    .status-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 0.6rem;
+    }
+
+    .status-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.15);
+      line-height: 1.6;
+    }
+
+    .status-action {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: #000;
+      background: var(--y);
+      border: none;
+      border-radius: 3px;
+      padding: 0.7rem 1.8rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .status-action:hover { background: #ffe800; }
+
+    /* ─── LOADING ANIMATION ─── */
+    .scan-line {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--y) 50%, transparent 100%);
+      z-index: 200;
+      animation: scanAcross 1.2s ease-in-out;
+      opacity: 0;
+    }
+
+    @keyframes scanAcross {
+      0%   { transform: translateX(-100%); opacity: 1; }
+      80%  { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* ─── LOADING DOTS ─── */
+    .loading-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem clamp(1rem, 4vw, 3rem);
+      text-align: center;
+    }
+
+    .loading-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .loading-bar {
+      width: 200px;
+      height: 2px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 1px;
+      margin: 1.5rem auto 0;
+      overflow: hidden;
+    }
+    .loading-bar-fill {
+      height: 100%;
+      width: 40%;
+      background: var(--y);
+      border-radius: 1px;
+      animation: loadSlide 1s ease-in-out infinite;
+    }
+
+    @keyframes loadSlide {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(350%); }
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      margin-top: 2rem;
+    }
+    .footer-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.15);
+    }
+    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
+    .footer-line a:hover { color: var(--y); }
+
+    /* ─── KLEO BADGE ─── */
+    #kleo-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.75rem;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      text-decoration: none;
+      opacity: 0.45;
+      transition: opacity 0.3s ease;
+    }
+    #kleo-badge:hover { opacity: 0.85; }
+    #kleo-badge img {
+      height: 37px;
+      width: auto;
+      object-fit: contain;
+    }
+    #kleo-badge .kleo-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .header { height: 60px; gap: 0.75rem; }
+      .header-logo img { height: 32px; }
+      .header-back { display: none; }
+      .header-search { max-width: none; }
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .card-header { flex-direction: column; }
+      .specs-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scan-line"></div>
+
+<!-- ─── HEADER ─── -->
+<header class="header">
+  <a href="https://elimfilters.com" class="header-logo" aria-label="ELIMFILTERS homepage">
+    <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo">
+    <span class="logo-badge">PART SEARCH</span>
+  </a>
+
+  <form class="header-search" id="header-search-form" autocomplete="off">
+    <span class="header-search-icon" aria-hidden="true">⌕</span>
+    <input type="search" id="header-search-input" placeholder="Search again..." spellcheck="false" aria-label="Search">
+    <button type="submit" class="header-search-btn">GO →</button>
+  </form>
+
+  <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
+</header>
+
+<!-- ─── KLEO BADGE ─── -->
+<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
+  <img src="/kleo-tech-sf.avif" alt="KLEO Technology">
+  <span class="kleo-label">Powered by KLEO</span>
+</a>
+
+<!-- ─── MAIN CONTENT ─── -->
+<div id="app"></div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <p class="footer-line">
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
+  </p>
+  <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+const API = '';
+const app = document.getElementById('app');
+
+// ─── Parse URL parameters ───
+const params = new URLSearchParams(window.location.search);
+const query = (params.get('q') || '').trim();
+const mode  = params.get('mode') || 'part';
+const model  = params.get('model') || '';
+const engine = params.get('engine') || '';
+const eqType = params.get('type') || '';
+
+// Pre-fill header search
+document.getElementById('header-search-input').value = query || model;
+
+// ─── Header re-search ───
+document.getElementById('header-search-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const val = document.getElementById('header-search-input').value.trim();
+  if (val.length >= 2) {
+    window.location.href = `results.html?q=${encodeURIComponent(val)}&mode=part`;
+  }
+});
+
+// ─── Render Loading ───
+function showLoading(term) {
+  app.innerHTML = `
+    <div class="loading-container">
+      <p class="loading-text">SEARCHING: ${(term || '').toUpperCase()}</p>
+      <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>`;
+}
+
+// ─── Render Empty ───
+function showEmpty(term) {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⌕</div>
+      <p class="status-title">NO RESULTS FOUND</p>
+      <p class="status-desc">No filters match "${(term || '').toUpperCase()}" — verify the reference or try a different search term.</p>
+      <a href="/index.html" class="status-action">NEW SEARCH</a>
+    </div>`;
+}
+
+// ─── Render Error ───
+function showError() {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⚠</div>
+      <p class="status-title">CONNECTION ERROR</p>
+      <p class="status-desc">Unable to reach the search service. Please try again in a moment.</p>
+      <a href="/index.html" class="status-action">BACK TO SEARCH</a>
+    </div>`;
+}
+
+// ─── Format Refs ───
+function formatRefs(arr, max = 12) {
+  if (!arr || !arr.length) return [];
+  return arr.slice(0, max).map(r => {
+    if (typeof r === 'string') return { brand: '', code: r };
+    return {
+      brand: r.manufacturer && r.manufacturer !== 'UNKNOWN' ? r.manufacturer : '',
+      code: r.code || r.partNumber || ''
+    };
+  }).filter(r => r.code);
+}
+
+// ─── Render Spec Item ───
+function specHTML(label, value) {
+  if (!value) return '';
+  return `<div class="spec-item"><span class="spec-label">${label}</span><span class="spec-value">${value}</span></div>`;
+}
+
+// ─── Render Product Card ───
+function renderCard(p, index) {
+  const sku  = p.elimfilters_sku || p.sku || '—';
+  const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
+
+  const specs = [
+    specHTML('HEIGHT', p.height_mm ? p.height_mm + ' mm' : null),
+    specHTML('OD', p.outer_diameter_mm ? p.outer_diameter_mm + ' mm' : null),
+    specHTML('GASKET OD', p.gasket_od_mm ? p.gasket_od_mm + ' mm' : null),
+    specHTML('THREAD', p.thread_size),
+    specHTML('MICRON', p.micron_rating ? p.micron_rating + ' µm' : null),
+    specHTML('EFFICIENCY', p.nominal_efficiency ? p.nominal_efficiency + '%' : null),
+    specHTML('BURST', p.burst_pressure_psi ? p.burst_pressure_psi + ' psi' : null),
+    specHTML('COLLAPSE', p.collapse_pressure_psi ? p.collapse_pressure_psi + ' psi' : null),
+    specHTML('ISO METHOD', p.iso_test_method),
+  ].filter(Boolean);
+
+  const oem  = formatRefs(p.oem_codes);
+  const comp = formatRefs(p.competitor_codes);
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 12) : [];
+
+  return `
+    <article class="product-card" style="animation-delay: ${0.08 * index}s">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-identity">
+            <span class="card-sku">${sku}</span>
+            ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
+          </div>
+          <div class="card-badges">
+            ${p.filter_type      ? `<span class="badge badge-type">${p.filter_type}</span>` : ''}
+            ${p.filter_subtype   ? `<span class="badge badge-type">${p.filter_subtype}</span>` : ''}
+            ${p.installation_type ? `<span class="badge badge-type">${p.installation_type}</span>` : ''}
+            ${p.duty             ? `<span class="badge badge-duty">${p.duty.toUpperCase()}</span>` : ''}
+            ${p.technology       ? `<span class="badge badge-tech">${p.technology}</span>` : ''}
+          </div>
+        </div>
+
+        ${p.description ? `<p class="card-desc">${p.description}</p>` : ''}
+
+        ${specs.length ? `
+          <div class="specs-section">
+            <p class="specs-title">Technical Specifications</p>
+            <div class="specs-grid">${specs.join('')}</div>
+          </div>` : ''}
+
+        ${oem.length ? `
+          <div class="refs-section">
+            <p class="refs-title">OEM Cross-References</p>
+            <div class="refs-grid">
+              ${oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+            </div>
+          </div>` : ''}
+
+        ${comp.length ? `
+          <div class="refs-section">
+            <p class="refs-title">Competitor Cross-References</p>
+            <div class="refs-grid">
+              ${comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+            </div>
+          </div>` : ''}
+
+        ${apps.length ? `
+          <div class="equip-section">
+            <p class="equip-title">Equipment Applications</p>
+            <div class="equip-grid">
+              ${apps.map(a => `<span class="equip-chip">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+            </div>
+          </div>` : ''}
+      </div>
+    </article>`;
+}
+
+// ─── Render Results ───
+function renderResults(items, count, searchMode, searchTerm) {
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+
+  app.innerHTML = `
+    <div class="results-meta">
+      <div class="meta-row">
+        <span class="meta-query">${searchTerm.toUpperCase()}</span>
+        <span class="meta-count">${count} RESULT${count !== 1 ? 'S' : ''}</span>
+        <span class="meta-mode">${searchMode}</span>
+      </div>
+      <div class="meta-divider"></div>
+    </div>
+    <div class="products">
+      ${items.map((p, i) => renderCard(p, i)).join('')}
+    </div>`;
+}
+
+// ─── SEARCH EXECUTION ───
+async function executeSearch() {
+  if (mode === 'part' && query) {
+    showLoading(query);
+    try {
+      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}`);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.products?.length) { showEmpty(query); return; }
+      renderResults(data.products, data.count, 'PART NUMBER', query);
+    } catch { showError(); }
+
+  } else if (mode === 'vin' && model) {
+    showLoading(model);
+    try {
+      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(model)}`;
+      if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.filters?.length) { showEmpty(model); return; }
+      renderResults(data.filters, data.filters.length, 'VIN / MODEL', model);
+    } catch { showError(); }
+
+  } else if (mode === 'equip' && model) {
+    showLoading(model);
+    try {
+      let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}`;
+      if (eqType) url += `&type=${encodeURIComponent(eqType)}`;
+      if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.filters?.length) { showEmpty(model); return; }
+      renderResults(data.filters, data.filters.length, 'EQUIPMENT', model);
+    } catch { showError(); }
+
+  } else {
+    showEmpty(query || model || 'unknown');
+  }
+}
+
+// ─── BOOT ───
+executeSearch();
+</script>
+
+</body>
+</html>

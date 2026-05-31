@@ -1172,40 +1172,39 @@ function renderResults(items, count, mode, query) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FORM SUBMIT HANDLERS
+// FORM SUBMIT HANDLERS — redirect to results.html
 // ─────────────────────────────────────────────────────────────────────────────
 document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   e.preventDefault();
-  clearTimeout(debounce);
-  searchPart(document.getElementById('inp-part').value.trim());
+  const q = document.getElementById('inp-part').value.trim();
+  if (q.length >= 2) {
+    window.location.href = `results.html?q=${encodeURIComponent(q)}&mode=part`;
+  }
 });
 
 document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
   e.preventDefault();
-  searchVin(
-    document.getElementById('inp-vin-model').value.trim(),
-    document.getElementById('inp-vin-engine').value.trim()
-  );
+  const model = document.getElementById('inp-vin-model').value.trim();
+  const engine = document.getElementById('inp-vin-engine').value.trim();
+  if (model) {
+    let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    window.location.href = url;
+  }
 });
 
 document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   e.preventDefault();
-  searchEquip(
-    document.getElementById('inp-equip-model').value.trim(),
-    document.getElementById('inp-equip-type').value,
-    document.getElementById('inp-equip-engine').value.trim()
-  );
+  const model = document.getElementById('inp-equip-model').value.trim();
+  const type = document.getElementById('inp-equip-type').value;
+  const engine = document.getElementById('inp-equip-engine').value.trim();
+  if (model) {
+    let url = `results.html?mode=equip&model=${encodeURIComponent(model)}`;
+    if (type) url += `&type=${encodeURIComponent(type)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    window.location.href = url;
+  }
 });
-
-// ─── Debounce for part number (live search) ──────────────────────────────────
-function debounceSearch() {
-  clearTimeout(debounce);
-  const q = document.getElementById('inp-part').value.trim();
-  if (q.length < 2) { clearResults(); return; }
-  debounce = setTimeout(() => searchPart(q), 320);
-}
-
-document.getElementById('inp-part').addEventListener('input', debounceSearch);
 </script>
 
 </body>
