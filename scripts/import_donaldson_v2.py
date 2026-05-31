@@ -148,6 +148,29 @@ def load_category(cat, scripts_dir):
         return json.load(f)
 
 
+def warmup(max_wait=90):
+    """Wake up Render free-tier server. Retries until /api/status returns JSON or timeout."""
+    STATUS = API_URL.replace("/api/import/donaldson", "/api/status")
+    logging.info(f"Warming up server (may take up to {max_wait}s on free tier)...")
+    deadline = time.time() + max_wait
+    attempt = 0
+    while time.time() < deadline:
+        attempt += 1
+        try:
+            resp = requests.get(STATUS, timeout=15, verify=False)
+            if resp.status_code == 200 and resp.text.strip().startswith("{"):
+                data = resp.json()
+                logging.info(f"Server ready: {data}")
+                return True
+            else:
+                logging.warning(f"  [{attempt}] Not ready yet (status={resp.status_code}, body={resp.text[:80]!r}). Waiting 10s...")
+        except Exception as e:
+            logging.warning(f"  [{attempt}] Connection error: {e}. Waiting 10s...")
+        time.sleep(10)
+    logging.error("Server did not wake up in time.")
+    return False
+
+
 def post_batch(batch, dry_run=False):
     if dry_run:
         return {"success": True, "total": len(batch), "inserted": len(batch), "updated": 0, "errors": 0}
@@ -194,6 +217,9 @@ def run(categories, dry_run, extra_files=None):
     logging.info(f"Total rows to import: {len(all_rows)}")
     if dry_run:
         logging.info("DRY RUN — no API calls")
+    else:
+        if not warmup():
+            sys.exit(1)
 
     total_inserted = total_updated = total_errors = 0
     for i in range(0, len(all_rows), BATCH):
