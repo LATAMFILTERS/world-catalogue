@@ -1282,6 +1282,21 @@ async function searchEquip(model, type, engine) {
 // ─────────────────────────────────────────────────────────────────────────────
 // RENDER RESULTS
 // ─────────────────────────────────────────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
+}
+
+function parseDesc(val) {
+  if (!val) return null;
+  const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+  if (typeof val === 'object' && !Array.isArray(val)) return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  if (typeof val !== 'string') return String(val);
+  const t = val.trim();
+  if (t.startsWith('{')) { try { const p = JSON.parse(t); if (p && typeof p === 'object') return p[lang] || p.en || p.es || Object.values(p)[0] || val; } catch(_) {} }
+  return val;
+}
+
 function fmtRefs(arr, max = 8) {
   if (!arr?.length) return null;
   return arr.slice(0, max);
@@ -1290,14 +1305,19 @@ function fmtRefs(arr, max = 8) {
 function renderCard(p) {
   const sku  = p.elimfilters_sku || p.sku || '—';
   const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
+  const validMicron = p.micron_rating && String(p.micron_rating).toLowerCase() !== 'n/a' ? p.micron_rating : null;
+  const nomEff = p.nominal_efficiency ? String(p.nominal_efficiency) : null;
+  const nomHasMicron = nomEff && nomEff.toLowerCase().includes('micron');
+  const effDisplay = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() + '%' : null;
+  const micronDisplay = validMicron ? validMicron + ' µm' : (nomHasMicron ? nomEff : null);
 
   const specs = [
     p.height_mm          && ['HEIGHT',     p.height_mm + ' mm'],
     p.outer_diameter_mm  && ['OD',          p.outer_diameter_mm + ' mm'],
     p.gasket_od_mm       && ['GASKET OD',   p.gasket_od_mm + ' mm'],
     p.thread_size        && ['THREAD',      p.thread_size],
-    p.micron_rating      && ['MICRON',      p.micron_rating + ' µm'],
-    p.nominal_efficiency && ['EFFICIENCY',  p.nominal_efficiency + '%'],
+    micronDisplay        && ['MICRON',      micronDisplay],
+    effDisplay           && ['EFFICIENCY',  effDisplay],
     p.burst_pressure_psi && ['BURST',       p.burst_pressure_psi + ' psi'],
     p.collapse_pressure_psi && ['COLLAPSE', p.collapse_pressure_psi + ' psi'],
     p.iso_test_method    && ['ISO METHOD',  p.iso_test_method],
@@ -1315,15 +1335,15 @@ function renderCard(p) {
           ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
         </div>
         <div class="card-tags">
-          ${p.filter_type     ? `<span class="ctag">${p.filter_type}</span>`     : ''}
-          ${p.filter_subtype  ? `<span class="ctag">${p.filter_subtype}</span>`  : ''}
-          ${p.installation_type ? `<span class="ctag">${p.installation_type}</span>` : ''}
-          ${p.duty            ? `<span class="ctag duty">${p.duty.toUpperCase()}</span>` : ''}
-          ${p.technology      ? `<span class="ctag tech">${p.technology}</span>` : ''}
+          ${p.filter_type     ? `<span class="ctag">${esc(p.filter_type)}</span>`     : ''}
+          ${p.filter_subtype  ? `<span class="ctag">${esc(p.filter_subtype)}</span>`  : ''}
+          ${p.installation_type ? `<span class="ctag">${esc(p.installation_type)}</span>` : ''}
+          ${p.duty            ? `<span class="ctag duty">${esc(p.duty.toUpperCase())}</span>` : ''}
+          ${p.technology      ? `<span class="ctag tech">${esc(p.technology)}</span>` : ''}
         </div>
       </div>
 
-      ${p.description ? `<p class="card-desc">${p.description}</p>` : ''}
+      ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
 
       ${specs.length ? `
         <div class="card-specs">
@@ -1339,12 +1359,12 @@ function renderCard(p) {
           ${oem?.length ? `
             <p class="ref-line">
               <span class="ref-brand">OEM —</span>
-              ${oem.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+              ${oem.map(r => `<span>${r.manufacturer ? esc(r.manufacturer) + ' ' : ''}${esc(r.code || r)}</span>`).join(' · ')}
             </p>` : ''}
           ${comp?.length ? `
             <p class="ref-line">
               <span class="ref-brand">CROSS —</span>
-              ${comp.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+              ${comp.map(r => `<span>${r.manufacturer ? esc(r.manufacturer) + ' ' : ''}${esc(r.code || r)}</span>`).join(' · ')}
             </p>` : ''}
         </div>` : ''}
 
@@ -1352,7 +1372,10 @@ function renderCard(p) {
         <div class="card-equipment">
           <p class="equip-label">Equipment Applications</p>
           <div class="equip-list">
-            ${apps.map(a => `<span class="equip-pill">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+            ${apps.map(a => {
+              const name = typeof a === 'object' ? (a.equipment || a.model || a.machine || '') : String(a);
+              return name ? `<span class="equip-pill">${esc(name)}</span>` : '';
+            }).filter(Boolean).join('')}
           </div>
         </div>` : ''}
     </div>`;
