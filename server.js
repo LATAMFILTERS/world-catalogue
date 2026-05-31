@@ -1358,35 +1358,28 @@ app.get('/api/search', async (req, res) => {
       );
     }
 
-    // Tier 3+4 combined: OEM + competitor codes searched simultaneously.
-    // Exact matches ranked first so they always appear within LIMIT 20.
+    // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
+    // Cross-reference codes must match precisely; prefix matching causes false positives
+    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
     if (result.rows.length === 0) {
       result = await client.query(
         `SELECT *, 'ref' AS match_type, 2 AS match_rank
          FROM elimfilters_catalog
          WHERE EXISTS (
            SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1 OR UPPER(elem->>'code') LIKE $2
+           WHERE UPPER(elem->>'code') = $1
          )
          OR EXISTS (
            SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1 OR UPPER(elem->>'code') LIKE $2
+           WHERE UPPER(elem->>'code') = $1
          )
-         ORDER BY
-           CASE WHEN EXISTS (
-             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS e
-             WHERE UPPER(e->>'code') = $1
-           ) OR EXISTS (
-             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS e
-             WHERE UPPER(e->>'code') = $1
-           ) THEN 0 ELSE 1 END,
-           sku
+         ORDER BY sku
          LIMIT 20`,
-        [q, q + '%']
+        [q]
       );
     }
 
-    // Tier 5: brand_crossrefs — search all values in the {brand: [codes]} object
+    // Tier 5: brand_crossrefs — exact match only
     if (result.rows.length === 0) {
       result = await client.query(
         `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
@@ -1394,10 +1387,9 @@ app.get('/api/search', async (req, res) => {
               jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
               jsonb_array_elements_text(kv.value) AS code_val
          WHERE UPPER(code_val) = $1
-            OR UPPER(code_val) LIKE $2
          ORDER BY sku
          LIMIT 20`,
-        [q, q + '%']
+        [q]
       );
     }
 
