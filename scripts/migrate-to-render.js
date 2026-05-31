@@ -36,6 +36,7 @@ async function migrate() {
       id SERIAL PRIMARY KEY,
       sku VARCHAR(100) UNIQUE NOT NULL,
       codigo_base VARCHAR(100),
+      description JSONB,
       filter_type VARCHAR(100),
       sub_type VARCHAR(100),
       technology VARCHAR(100),
@@ -53,7 +54,9 @@ async function migrate() {
       duty VARCHAR(50),
       oem_codes JSONB,
       competitor_codes JSONB,
-      equipment_applications JSONB
+      equipment_applications JSONB,
+      brand_crossrefs JSONB,
+      alternatives JSONB
     )
   `);
 

@@ -53,17 +53,27 @@ app.get('/api/admin/dims/:sku', async (req, res) => {
   finally { await client.end(); }
 });
 
-// TEMP: fix SINTRAX typo → SYNTRAX in technology field — DELETE AFTER USE
-app.get('/api/admin/fix-syntrax', async (req, res) => {
+// TEMP: fix technology name typos — DELETE AFTER USE
+app.get('/api/admin/fix-tech-names', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
-    const r = await client.query(
-      `UPDATE elimfilters_catalog SET technology = 'SYNTRAX™'
-       WHERE UPPER(technology) LIKE '%SINTRAX%' RETURNING sku`
-    );
-    res.json({ fixed: r.rowCount, skus: r.rows.map(x => x.sku) });
+    const fixes = [
+      { wrong: '%SINTRAX%',   correct: 'SYNTRAX™'  },
+      { wrong: '%SYNTAPORE%', correct: 'SYNTEPORE™' },
+      { wrong: '%INTAKCORE%', correct: 'INTEKCORE™' },
+    ];
+    const results = {};
+    for (const f of fixes) {
+      const r = await client.query(
+        `UPDATE elimfilters_catalog SET technology = $1
+         WHERE UPPER(technology) LIKE $2 RETURNING sku`,
+        [f.correct, f.wrong]
+      );
+      results[f.correct] = r.rowCount;
+    }
+    res.json(results);
   } catch (e) { res.status(500).json({ error: e.message }); }
   finally { await client.end(); }
 });
@@ -1779,7 +1789,7 @@ app.get('/api/migrate/reset-catalog', async (req, res) => {
     await client.connect();
     await client.query('TRUNCATE TABLE elimfilters_catalog RESTART IDENTITY;');
     // Add new columns if they don't exist yet (idempotent)
-    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description TEXT;`);
+    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description JSONB;`);
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS brand_crossrefs JSONB;`);
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS alternatives JSONB;`);
     console.log('[migrations] Catalog reset: truncated + columns ensured');
