@@ -510,6 +510,35 @@
       66%  { content: '...'; }
     }
 
+    /* ─── KLEO BADGE ─── */
+    #kleo-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.75rem;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      text-decoration: none;
+      opacity: 0.45;
+      transition: opacity 0.3s ease;
+    }
+    #kleo-badge:hover { opacity: 0.85; }
+    #kleo-badge img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    #kleo-badge .kleo-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+
     /* ─── FOOTER ─── */
     #footer {
       position: relative;
@@ -548,6 +577,11 @@
 </a>
 
 <button id="skip-btn">SKIP INTRO ›</button>
+
+<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
+  <img src="https://elimfilters.com/images/kleo-tech-sf.avif" alt="KLEO Technology">
+  <span class="kleo-label">Powered by KLEO</span>
+</a>
 
 <div id="ui">
   <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
