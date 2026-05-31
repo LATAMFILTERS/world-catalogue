@@ -19,3 +19,4 @@ __pycache__/
 !frontend/public/images/*.mp4
 !frontend/out/images/*.mp4
 graphify-out/
+.claude/worktrees/
