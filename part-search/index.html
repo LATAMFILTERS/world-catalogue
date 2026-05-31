@@ -1071,7 +1071,7 @@ let phaseStart = 0;
 let tick = 0;
 let rafId;
 
-const DUR = { scatter: 1300, 'cf': 1700, hold: 1100, 'cs': 1000 };
+const DUR = { scatter: 600, 'cf': 800, hold: 600, 'cs': 500 };
 
 function init() {
   particles = Array.from({ length: N }, () => new Particle());
@@ -1407,6 +1407,13 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 // ─────────────────────────────────────────────────────────────────────────────
 (function initSplash() {
   const splashEl = document.getElementById('cinematic-splash');
+
+  // Skip splash on return visits — user has already seen it
+  if (localStorage.getItem('ef-ps-v')) {
+    splashEl.style.display = 'none';
+    return;
+  }
+
   splashEl.style.display = 'flex';
   const cvs = document.getElementById('splash-canvas');
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
@@ -1565,15 +1572,15 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 4s E → disolver
+    // 2s E → disolver
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
-    }, 4000));
+    }, 2000));
 
-    // Fin del splash en 5.5s
+    // Fin del splash en 3s
     sequenceTimeouts.push(setTimeout(() => {
       endSplash();
-    }, 5500));
+    }, 3000));
   }
 
   function animateSplash() {
