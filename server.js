@@ -15,6 +15,7 @@ app.set('trust proxy', 1);
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }));
 
 app.use(cors());
+app.set('trust proxy', 1);
 app.use(express.json({charset: 'utf-8'}));
 app.use(express.urlencoded({ extended: false }));
 const frontendStatic = express.static('frontend/out');
@@ -632,17 +633,17 @@ app.get('/api/filters/search/part', async (req, res) => {
       result = await client.query(
         `SELECT * FROM elimfilters_catalog WHERE
           EXISTS (
-            SELECT 1 FROM jsonb_array_elements(oem_codes) elem
-            WHERE UPPER(elem->>'code') = $1
-               OR UPPER(elem->>'partNumber') = $1
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+            SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem(val)
+            WHERE UPPER(val->>'code') = $1
+               OR UPPER(val->>'partNumber') = $1
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
           )
           OR EXISTS (
-            SELECT 1 FROM jsonb_array_elements(competitor_codes) elem
-            WHERE UPPER(elem->>'code') = $1
-               OR UPPER(elem->>'partNumber') = $1
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') = $1)
+            SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem(val)
+            WHERE UPPER(val->>'code') = $1
+               OR UPPER(val->>'partNumber') = $1
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') = $1)
           )
         ORDER BY
           CASE WHEN array_length(COALESCE(alternative_codes, '{}'::jsonb[]), 1) > 0
