@@ -998,7 +998,7 @@ function renderCard(p, index) {
 
         ${specs.length ? `
           <div class="specs-section">
-            <p class="specs-title">Technical Specifications</p>
+            <p class="specs-title">${T.specsTitle}</p>
             <div class="specs-grid">${specs.join('')}</div>
           </div>` : ''}
 
@@ -1006,7 +1006,7 @@ function renderCard(p, index) {
           <div class="columns-container">
             <!-- OEM Column -->
             <div>
-              <p class="refs-title">OEM Cross-References</p>
+              <p class="refs-title">${T.oemTitle}</p>
               <div class="refs-grid">
                 ${oem.length 
                   ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
@@ -1017,7 +1017,7 @@ function renderCard(p, index) {
 
             <!-- Competitor Column -->
             <div>
-              <p class="refs-title">Competitor Cross-References</p>
+              <p class="refs-title">${T.compTitle}</p>
               <div class="refs-grid">
                 ${comp.length 
                   ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
