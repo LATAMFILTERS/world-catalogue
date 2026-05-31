@@ -526,7 +526,7 @@
     }
     #kleo-badge:hover { opacity: 0.85; }
     #kleo-badge img {
-      height: 37px;
+      height: 55px;
       width: auto;
       object-fit: contain;
     }
@@ -578,7 +578,7 @@
 <button id="skip-btn">SKIP INTRO ›</button>
 
 <a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
-  <img src="/kleo-tech-sf.avif" alt="KLEO Technology">
+  <img src="/Leo-fn.avif" alt="KLEO Technology">
   <span class="kleo-label">Powered by KLEO</span>
 </a>
 
@@ -910,12 +910,12 @@ function revealUI() {
 }
 
 function ambientLoop() {
-  const amb = Array.from({ length: 300 }, () => new Particle());
+  const amb = Array.from({ length: 800 }, () => new Particle());
   (function loop() {
-    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
     ctx.fillRect(0, 0, W, H);
     tick += 0.004;
-    amb.forEach(p => { p.scatter(tick); p.draw(p.alpha * 0.3); });
+    amb.forEach(p => { p.scatter(tick); p.draw(p.alpha * 0.7); });
     rafId = requestAnimationFrame(loop);
   })();
 }
