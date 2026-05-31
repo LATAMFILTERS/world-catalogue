@@ -513,10 +513,23 @@ function detectLang(req) {
 }
 
 function extractText(val, lang = 'en') {
-  if (!val) return null;
-  if (typeof val === 'object') return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  if (val === null || val === undefined) return null;
+  // Already an object (JSONB from pg)
+  if (typeof val === 'object' && !Array.isArray(val)) {
+    return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  }
+  // String – may be raw text OR a JSON-encoded object
   if (typeof val === 'string') {
-    try { const p = JSON.parse(val); return p[lang] || p.en || p.es || Object.values(p)[0] || val; } catch { return val; }
+    const trimmed = val.trim();
+    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+      try {
+        const p = JSON.parse(trimmed);
+        if (p && typeof p === 'object' && !Array.isArray(p)) {
+          return p[lang] || p.en || p.es || Object.values(p)[0] || val;
+        }
+      } catch (_) {}
+    }
+    return val; // plain text
   }
   return String(val);
 }

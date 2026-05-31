@@ -903,6 +903,23 @@ function showError() {
     </div>`;
 }
 
+// ─── Parse description (may come as JSON string from API) ───
+function parseDesc(val) {
+  if (!val) return null;
+  if (typeof val !== 'string') return val;
+  const trimmed = val.trim();
+  if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (parsed && typeof parsed === 'object') {
+        const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+        return parsed[lang] || parsed.en || parsed.es || Object.values(parsed)[0] || val;
+      }
+    } catch(e) {}
+  }
+  return val;
+}
+
 // ─── Format Refs ───
 function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
@@ -958,7 +975,7 @@ function renderCard(p, index) {
           </div>
         </div>
 
-        ${p.description ? `<p class="card-desc">${p.description}</p>` : ''}
+        ${parseDesc(p.description) ? `<p class="card-desc">${parseDesc(p.description)}</p>` : ''}
 
         ${specs.length ? `
           <div class="specs-section">
@@ -997,11 +1014,14 @@ function renderCard(p, index) {
                 ${apps.length 
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        const fullName = a.equipment || a.model || '';
-                        let eng = a.engine || '';
-                        if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                        const fullName = (a.equipment || a.model || '').trim();
+                        let eng = (a.engine || '').trim();
+                        // Strip dashes, N/A, empty placeholders from engine field
+                        if (!eng || /^[-–—n\/a]+$/i.test(eng)) eng = '';
+                        if (eng.startsWith('-')) eng = eng.replace(/^[-–]+\s*/, '').trim();
+                        if (!fullName) return '';
                         
-                        // Extract first word as manufacturer, or highlight appropriately
+                        // Split first word as manufacturer brand
                         const spaceIdx = fullName.indexOf(' ');
                         let brandSpan = '<span></span>';
                         let restName = fullName;
