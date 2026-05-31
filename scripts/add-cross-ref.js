@@ -6,16 +6,16 @@
 
 const { Client } = require('pg');
 
-const dbConfig = process.env.DATABASE_URL
-  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
-  : {
-      host: 'ballast.proxy.rlwy.net',
-      port: 18263,
-      database: 'railway',
-      user: 'postgres',
-      password: process.env.DB_PASSWORD,
-      ssl: { rejectUnauthorized: false },
-    };
+// On Render, DATABASE_URL is injected automatically by the platform.
+if (!process.env.DATABASE_URL) {
+  console.error('ERROR: DATABASE_URL not set. Run this script on the Render shell.');
+  process.exit(1);
+}
+
+const dbConfig = {
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+};
 
 // ── EDIT THESE BEFORE RUNNING ──────────────────────────────────────────────
 const CODIGO_BASE   = 'P554004';          // codigo_base to target
