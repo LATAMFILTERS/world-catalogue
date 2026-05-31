@@ -236,7 +236,7 @@
 
     .card-sku {
       font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(0.65rem, 1.5vw, 0.9rem);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
       font-weight: 500;
       color: var(--y);
       letter-spacing: 0.06em;
@@ -958,16 +958,6 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
     : '';
 
   app.innerHTML = `
-    <div class="results-meta">
-      <div class="meta-row">
-        <span class="meta-query">${searchTerm.toUpperCase()}</span>
-        <span class="meta-count">${count} RESULT${count !== 1 ? 'S' : ''}</span>
-        <span class="meta-mode">${searchMode}</span>
-        ${catalogNote}
-      </div>
-      ${decodedText ? `<div style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; letter-spacing: 0.03em;">DECODED: <strong style="color: #FFF12D; font-weight: 500;">${decodedText}</strong></div>` : ''}
-      <div class="meta-divider"></div>
-    </div>
     <div class="products">
       ${items.map((p, i) => renderCard(p, i)).join('')}
     </div>`;
