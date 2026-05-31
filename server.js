@@ -14,22 +14,6 @@ app.set('trust proxy', 1);
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// ONE-TIME ADMIN: add BALDWIN B76 to P554004 — DELETE AFTER USE
-app.get('/api/admin/add-b76', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  try {
-    await client.connect();
-    const result = await client.query(
-      `UPDATE elimfilters_catalog
-       SET competitor_codes = competitor_codes || '[{"manufacturer":"BALDWIN","code":"B76"}]'::jsonb
-       WHERE UPPER(codigo_base) = 'P554004'`
-    );
-    res.json({ ok: true, rows_updated: result.rowCount });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  } finally { await client.end(); }
-});
 
 app.use(cors());
 app.set('trust proxy', 1);
