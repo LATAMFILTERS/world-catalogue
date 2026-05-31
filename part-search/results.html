@@ -436,8 +436,9 @@
     /* Set maximum heights with scrolls inside columns to maintain visual balance */
     .columns-container .refs-grid,
     .columns-container .equip-grid {
-      grid-template-columns: 1fr; /* Single column inside each main panel */
-      max-height: 400px;
+      display: flex;
+      flex-direction: column;
+      max-height: 360px;
       overflow-y: auto;
       padding-right: 0.5rem;
       gap: 0.4rem;
