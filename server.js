@@ -89,6 +89,42 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Air Dryer, Desiccant and Coalescing developed for industrial asset protection of compressed air systems. Its DRYCORE™ technology removes water vapor and oil vapor at the molecular level before they reach air tanks, valves and downstream control circuits, preventing corrosion, seal degradation and ensuring optimal system uptime.',
         es: 'ELIMFILTERS® Secador de aire, desecante y coalescente desarrollado para la protección de activos industriales en sistemas de aire comprimido. Su tecnología DRYCORE™ elimina el vapor de agua y el vapor de aceite a nivel molecular antes de que lleguen a los depósitos de aire, válvulas y circuitos de control, previniendo la corrosión, el deterioro de sellos y garantizando el tiempo de operación óptimo del sistema.',
       },
+      coolant: {
+        en: 'ELIMFILTERS® Coolant Filter developed for thermal system asset protection. Its COOLTECH™ technology delivers controlled SCA additive release alongside coolant filtration, preventing liner pitting, scale formation and corrosive degradation of engine cooling circuits.',
+        es: 'ELIMFILTERS® Filtro de refrigerante desarrollado para la protección de activos en sistemas térmicos. Su tecnología COOLTECH™ administra la liberación controlada de aditivos SCA junto con la filtración del refrigerante, previniendo la erosión por cavitación en camisas, formación de depósitos y degradación corrosiva en los circuitos de enfriamiento del motor.',
+      },
+      hydraulic_spinon: {
+        en: 'ELIMFILTERS® Hydraulic Filter, Spin-On developed for industrial asset protection of precision hydraulic systems. Its NANOFORCE™ technology maintains filtration performance under sustained high-pressure pulsation cycles, protecting proportional valves and actuator components from sub-micron particle wear.',
+        es: 'ELIMFILTERS® Filtro hidráulico tipo spin-on desarrollado para la protección de activos industriales en sistemas hidráulicos de precisión. Su tecnología NANOFORCE™ mantiene el rendimiento de filtración bajo ciclos sostenidos de pulsación de alta presión, protegiendo válvulas proporcionales y componentes actuadores del desgaste por partículas sub-micrón.',
+      },
+      hydraulic_cartridge: {
+        en: 'ELIMFILTERS® Hydraulic Filter, Cartridge developed for industrial asset protection of precision hydraulic systems and to minimize environmental impact. Its NANOFORCE™ technology maintains filtration performance under sustained high-pressure pulsation cycles, protecting proportional valves and actuator components from sub-micron particle wear.',
+        es: 'ELIMFILTERS® Filtro hidráulico tipo cartucho desarrollado para la protección de activos industriales en sistemas hidráulicos de precisión y para minimizar el impacto ambiental en operaciones industriales. Su tecnología NANOFORCE™ mantiene el rendimiento de filtración bajo ciclos sostenidos de pulsación de alta presión, protegiendo válvulas proporcionales y componentes actuadores del desgaste por partículas sub-micrón.',
+      },
+      fws_spinon: {
+        en: 'ELIMFILTERS® Fuel/Water Separator, Spin-On developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo spin-on desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+      },
+      fws_cartridge: {
+        en: 'ELIMFILTERS® Fuel/Water Separator, Cartridge developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo cartucho desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+      },
+      fuel_inline: {
+        en: 'ELIMFILTERS® Fuel Filter, In-Line developed for industrial asset protection of fuel delivery systems. Its SYNTEPORE™ technology provides compact in-line contamination interception, maintaining fuel cleanliness through the final delivery stage before primary filtration or as a secondary protection barrier in high-demand applications.',
+        es: 'ELIMFILTERS® Filtro de combustible en línea desarrollado para la protección de activos industriales en sistemas de suministro de combustible. Su tecnología SYNTEPORE™ proporciona interceptación compacta de contaminación en línea, manteniendo la limpieza del combustible en la etapa de suministro final antes de la filtración primaria o como barrera de protección secundaria en aplicaciones de alta demanda.',
+      },
+      fuel_spinon: {
+        en: 'ELIMFILTERS® Fuel Filter, Spin-On developed for industrial asset protection of high-pressure fuel systems. Its SYNTEPORE™ technology intercepts sub-micron contamination before it reaches Common Rail injectors, maintaining injection precision and protecting fuel system components from abrasive particle wear.',
+        es: 'ELIMFILTERS® Filtro de combustible tipo spin-on desarrollado para la protección de activos industriales en sistemas de combustible de alta presión. Su tecnología SYNTEPORE™ intercepta la contaminación sub-micrón antes de que alcance los inyectores Common Rail, manteniendo la precisión de inyección y protegiendo los componentes del sistema de combustible del desgaste por partículas abrasivas.',
+      },
+      fuel_cartridge: {
+        en: 'ELIMFILTERS® Fuel Filter, Cartridge developed for industrial asset protection of high-pressure fuel systems and to minimize environmental impact. Its SYNTEPORE™ technology intercepts sub-micron contamination before it reaches Common Rail injectors, maintaining injection precision and protecting fuel system components from abrasive particle wear.',
+        es: 'ELIMFILTERS® Filtro de combustible tipo cartucho desarrollado para la protección de activos industriales en sistemas de combustible de alta presión y para minimizar el impacto ambiental en operaciones industriales. Su tecnología SYNTEPORE™ intercepta la contaminación sub-micrón antes de que alcance los inyectores Common Rail, manteniendo la precisión de inyección y protegiendo los componentes del sistema de combustible del desgaste por partículas abrasivas.',
+      },
+      crankcase: {
+        en: 'ELIMFILTERS® Crankcase Ventilation Filter developed for industrial asset protection of engine lube and air intake systems. Its SYNTRAX™ technology separates oil aerosols and blow-by gas contaminants from crankcase emissions, preventing oil loss and protecting air intake components from hydrocarbon contamination.',
+        es: 'ELIMFILTERS® Filtro de ventilación del cárter desarrollado para la protección de activos industriales en sistemas de lubricación y admisión de aire del motor. Su tecnología SYNTRAX™ separa los aerosoles de aceite y contaminantes de los gases de blow-by, previniendo la pérdida de lubricante y protegiendo los componentes del sistema de admisión de la contaminación por hidrocarburos.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -216,6 +252,120 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.airdryer)]
     );
 
+    // Coolant filter
+    const coolantRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%coolant%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.coolant)]
+    );
+
+    // Hydraulic spin-on
+    const hydSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%hydraulic%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.hydraulic_spinon)]
+    );
+
+    // Hydraulic cartridge (everything else in hydraulic)
+    const hydCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%hydraulic%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.hydraulic_cartridge)]
+    );
+
+    // Fuel/Water Separator spin-on
+    const fwsSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE (LOWER(filter_type) LIKE '%fuel%' AND LOWER(filter_type) LIKE '%water%')
+          OR LOWER(filter_type) LIKE '%separator%'
+          AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+               OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fws_spinon)]
+    );
+
+    // Fuel/Water Separator cartridge
+    const fwsCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE (LOWER(filter_type) LIKE '%fuel%' AND LOWER(filter_type) LIKE '%water%')
+          OR LOWER(filter_type) LIKE '%separator%'
+          AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                   OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fws_cartridge)]
+    );
+
+    // Fuel in-line (before fuel spin/cartridge to avoid overlap)
+    const fuelInlineRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND (LOWER(filter_type) LIKE '%inline%'
+              OR LOWER(filter_type) LIKE '%in-line%'
+              OR LOWER(filter_type) LIKE '%in line%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%inline%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%in-line%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_inline)]
+    );
+
+    // Fuel spin-on (plain fuel, not water separator, not inline)
+    const fuelSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND LOWER(filter_type) NOT LIKE '%water%'
+         AND LOWER(filter_type) NOT LIKE '%separator%'
+         AND LOWER(filter_type) NOT LIKE '%inline%'
+         AND LOWER(filter_type) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%inline%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%in-line%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_spinon)]
+    );
+
+    // Fuel cartridge (plain fuel, everything else)
+    const fuelCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND LOWER(filter_type) NOT LIKE '%water%'
+         AND LOWER(filter_type) NOT LIKE '%separator%'
+         AND LOWER(filter_type) NOT LIKE '%inline%'
+         AND LOWER(filter_type) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%inline%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%in-line%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_cartridge)]
+    );
+
+    // Crankcase ventilation
+    const crankcaseRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%crankcase%'
+          OR LOWER(filter_type) LIKE '%ventilation%'
+          OR LOWER(filter_type) LIKE '%breather%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.crankcase)]
+    );
+
     // Air filters — Powercore/advanced primary (everything else primary)
     const airPowRes = await client.query(
       `UPDATE elimfilters_catalog
@@ -249,6 +399,15 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       air_tetramax_updated: airTetRes.rowCount,
       air_powercore_updated: airPowRes.rowCount,
       air_dryer_updated: airDryRes.rowCount,
+      coolant_updated: coolantRes.rowCount,
+      hydraulic_spinon_updated: hydSpinRes.rowCount,
+      hydraulic_cartridge_updated: hydCartRes.rowCount,
+      fws_spinon_updated: fwsSpinRes.rowCount,
+      fws_cartridge_updated: fwsCartRes.rowCount,
+      fuel_inline_updated: fuelInlineRes.rowCount,
+      fuel_spinon_updated: fuelSpinRes.rowCount,
+      fuel_cartridge_updated: fuelCartRes.rowCount,
+      crankcase_updated: crankcaseRes.rowCount,
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
