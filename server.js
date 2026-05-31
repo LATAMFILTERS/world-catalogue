@@ -85,6 +85,10 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Air Filter, Secondary developed for industrial asset protection. Its MACROCORE™ technology provides a precision secondary barrier that intercepts contamination bypass, protecting critical engine components during primary element service and extending maintenance intervals while reducing operational downtime.',
         es: 'ELIMFILTERS® Filtro de aire secundario desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ proporciona una barrera secundaria de precisión que intercepta el paso de contaminación, protegiendo los componentes críticos del motor durante el servicio del elemento primario y extendiendo los intervalos de mantenimiento mientras reduce el tiempo de inactividad operacional.',
       },
+      airdryer: {
+        en: 'ELIMFILTERS® Air Dryer, Desiccant and Coalescing developed for industrial asset protection of compressed air systems. Its DRYCORE™ technology removes water vapor and oil vapor at the molecular level before they reach air tanks, valves and downstream control circuits, preventing corrosion, seal degradation and ensuring optimal system uptime.',
+        es: 'ELIMFILTERS® Secador de aire, desecante y coalescente desarrollado para la protección de activos industriales en sistemas de aire comprimido. Su tecnología DRYCORE™ elimina el vapor de agua y el vapor de aceite a nivel molecular antes de que lleguen a los depósitos de aire, válvulas y circuitos de control, previniendo la corrosión, el deterioro de sellos y garantizando el tiempo de operación óptimo del sistema.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -202,6 +206,16 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.air_tetramax)]
     );
 
+    // Air dryer
+    const airDryRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%dryer%'
+          OR LOWER(filter_type) LIKE '%drier%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.airdryer)]
+    );
+
     // Air filters — Powercore/advanced primary (everything else primary)
     const airPowRes = await client.query(
       `UPDATE elimfilters_catalog
@@ -234,6 +248,7 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       air_axial_updated: airAxRes.rowCount,
       air_tetramax_updated: airTetRes.rowCount,
       air_powercore_updated: airPowRes.rowCount,
+      air_dryer_updated: airDryRes.rowCount,
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
