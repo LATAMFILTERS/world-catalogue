@@ -171,6 +171,51 @@ app.get('/api/admin/fix-dimensions', async (req, res) => {
   } finally { await client.end(); }
 });
 
+// Equipment audit — shows how many products have 0/few/many equipment entries by filter type
+app.get('/api/admin/audit-equipment', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(`
+      SELECT
+        filter_type,
+        COUNT(*) as total,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
+        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
+      FROM elimfilters_catalog
+      GROUP BY filter_type
+      ORDER BY total DESC
+    `);
+    const totals = await client.query(`
+      SELECT
+        COUNT(*) as total,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
+        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
+      FROM elimfilters_catalog
+    `);
+    // Sample: products with few (1-5) equipment entries — likely incomplete
+    const suspects = await client.query(`
+      SELECT sku, codigo_base, filter_type,
+             jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) as equip_count
+      FROM elimfilters_catalog
+      WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5
+      ORDER BY filter_type, sku
+      LIMIT 30
+    `);
+    res.json({
+      by_filter_type: r.rows,
+      totals: totals.rows[0],
+      suspects_sample: suspects.rows
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: patch EA10695 equipment_applications with complete Donaldson data — DELETE AFTER USE
 // Scraper only captured first 5 visible rows; Donaldson page has 39 unique entries
 app.get('/api/admin/patch-ea10695-equipment', async (req, res) => {
