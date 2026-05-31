@@ -804,26 +804,6 @@ function showLoading(term) {
     </div>`;
 }
 
-function showEmpty(term) {
-  app.innerHTML = `
-    <div class="status-container">
-      <div class="status-icon">⌕</div>
-      <p class="status-title">${T.noResultsTitle}</p>
-      <p class="status-desc">${T.noResultsDesc.replace('%s', (term || '').toUpperCase())}</p>
-      <a href="/index.html" class="status-action">${T.newSearch}</a>
-    </div>`;
-}
-
-function showError() {
-  app.innerHTML = `
-    <div class="status-container">
-      <div class="status-icon">⚠</div>
-      <p class="status-title">${T.errorTitle}</p>
-      <p class="status-desc">${T.errorDesc}</p>
-      <a href="/index.html" class="status-action">${T.newSearch}</a>
-    </div>`;
-}
-
 // ─── Warmup timer: shows message after 8s if server is cold-starting ───
 function startWarmupTimer(term) {
   return setTimeout(() => {
@@ -842,11 +822,8 @@ function showEmpty(term) {
   app.innerHTML = `
     <div class="status-container">
       <div class="status-icon">⌕</div>
-      <p class="status-title">NO RESULTS FOUND</p>
-      <p class="status-desc">
-        No filters match <strong style="color: rgba(255,241,45,0.8);">"${(term || '').toUpperCase()}"</strong>
-        in the 4,622-product catalog.
-      </p>
+      <p class="status-title">${T.noResultsTitle}</p>
+      <p class="status-desc">${T.noResultsDesc.replace('%s', (term || '').toUpperCase())}</p>
       <div style="
         margin: 1.5rem auto 0;
         max-width: 480px;
@@ -889,7 +866,7 @@ function showEmpty(term) {
             </div>`).join('')}
         </div>
       </div>
-      <a href="/index.html" class="status-action" style="margin-top: 1.75rem;">NEW SEARCH</a>
+      <a href="/index.html" class="status-action" style="margin-top: 1.75rem;">${T.newSearch}</a>
     </div>`;
 }
 
@@ -898,9 +875,9 @@ function showError() {
   app.innerHTML = `
     <div class="status-container">
       <div class="status-icon">⚠</div>
-      <p class="status-title">CONNECTION ERROR</p>
-      <p class="status-desc">Unable to reach the search service. Please try again in a moment.</p>
-      <a href="/index.html" class="status-action">BACK TO SEARCH</a>
+      <p class="status-title">${T.errorTitle}</p>
+      <p class="status-desc">${T.errorDesc}</p>
+      <a href="/index.html" class="status-action">${T.retry}</a>
     </div>`;
 }
 
@@ -1208,8 +1185,7 @@ async function executeSearch() {
   }
 }
 
-// ─── BOOT ───
-executeSearch();
+// executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
 </body>
