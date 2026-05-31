@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --volt: #FFF12D;
+  --bg: #000000;
+  --surface: #050505;
+  --surface-2: #0a0a0a;
+  --surface-3: #111111;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-2: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --text-muted: #aaaaaa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+.font-heading {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Volt glow effect */
+.volt-glow {
+  box-shadow: 0 0 20px rgba(255, 241, 45, 0.3), 0 0 40px rgba(255, 241, 45, 0.1);
+}
+
+.volt-glow-text {
+  text-shadow: 0 0 20px rgba(255, 241, 45, 0.5);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border);
+}
+
+.card-hover:hover {
+  border-color: var(--volt);
+  box-shadow: 0 0 24px rgba(255, 241, 45, 0.15), inset 0 0 24px rgba(255, 241, 45, 0.03);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 241, 45, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--volt);
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 241, 45, 0.3);
+  color: #000;
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
+/* Section divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Tag styles */
+.tech-tag {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--volt);
+  background: rgba(255, 241, 45, 0.05);
+  border-radius: 2px;
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--volt);
+  transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Number display */
+.stat-number {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700;
+  color: var(--volt);
+  line-height: 1;
+}
+
+/* CTA button */
+.btn-volt {
+  background: var(--volt);
+  color: #000;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-volt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.2s ease;
+}
+
+.btn-volt:hover::after {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-volt:hover {
+  box-shadow: 0 0 30px rgba(255, 241, 45, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--volt);
+  color: var(--volt);
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--volt);
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 241, 45, 0.3);
+}
+
+/* Grid layout helpers */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.industry-grid > * {
+  background: var(--bg);
+}
+
+/* ── Responsive grid overrides ──────────────────────────────────────── */
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .product-desc-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .product-compare-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .spotlight-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .why-grid { grid-template-columns: 1fr !important; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .marine-product-image { width: 100% !important; height: 280px !important; margin-left: 0 !important; margin-top: 0 !important; }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .product-desc-grid { gap: 2rem !important; }
+  .product-specs-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .product-compare-grid { gap: 1.5rem !important; }
+  .spotlight-grid { padding: 1.5rem !important; }
+  .tech-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .problem-grid { grid-template-columns: 1fr !important; }
+  .hero-bottom { flex-direction: column !important; gap: 1rem !important; }
+  .footer-bottom { flex-direction: column !important; gap: 2rem !important; text-align: center !important; }
+  .footer-bottom > div { text-align: center !important; }
+  .home-hero-section { padding: 0 5% 80px !important; padding-top: 100px !important; }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .product-specs-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+}
+/* Hero responsive height */
+.industry-hero-section { min-height: 100vh; }
+@media (max-width: 1024px) {
+  .industry-hero-section { min-height: 70vh !important; }
+}
+@media (max-width: 768px) {
+  .industry-hero-section { min-height: 60vh !important; }
+}
+/* ─────────────────────────────────────────────────────────────────── */

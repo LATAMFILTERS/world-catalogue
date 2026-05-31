@@ -2,16 +2,718 @@ require('dotenv').config();
 const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
+
+// ─── Startup validation ───────────────────────────────────────────────────────
+if (!process.env.DATABASE_URL) {
+  console.error('[FATAL] DATABASE_URL is not set. Exiting.');
+  process.exit(1);
+}
+
+// ─── In-memory rate limiter (no external dependency) ─────────────────────────
+const _rl = {};
+function rateLimit(ip, max, windowMs) {
+  const now = Date.now();
+  if (!_rl[ip] || now > _rl[ip].reset) _rl[ip] = { n: 0, reset: now + windowMs };
+  _rl[ip].n++;
+  return _rl[ip].n <= max;
+}
+// Clean up old entries every 10 min
+setInterval(() => {
+  const now = Date.now();
+  for (const ip of Object.keys(_rl)) if (now > _rl[ip].reset) delete _rl[ip];
+}, 600_000);
+
+// ─── HTML escape helper ───────────────────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+// ─── Admin key (rotate via env var ADMIN_KEY) ─────────────────────────────────
+const ADMIN_KEY = process.env.ADMIN_KEY || 'elim2026admin';
+function adminAuth(req, res) {
+  if (req.query.key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
+  return true;
+}
+
+// Prevent unhandled errors from crashing the process
+process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
+process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
-app.use(cors());
-app.use(express.json({charset: 'utf-8'}));
-app.use(express.urlencoded({ extended: false })); // Twilio sends form-urlencoded
-app.use(express.static('www')); // Serve static files from public/
+app.set('trust proxy', 1);
 
-// Import new routes
-const chatRoutes = require('./routes/chat.routes');
-const whatsappRoutes = require('./routes/whatsapp.routes');
+// Healthcheck FIRST — must respond before anything else can fail
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
+
+// TEMP: inspect raw dimensions for a SKU — DELETE AFTER USE
+app.get('/api/admin/dims/:sku', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT sku, filter_type, sub_type, installation_type,
+              height_mm, outer_diameter_mm, gasket_od_mm, gasket_id_mm,
+              thread_size, micron_rating, nominal_efficiency,
+              burst_pressure_psi, collapse_pressure_psi, iso_test_method
+       FROM elimfilters_catalog WHERE UPPER(sku) = UPPER($1) OR UPPER(codigo_base) = UPPER($1)`,
+      [req.params.sku]
+    );
+    if (!r.rows.length) return res.json({ error: 'not found' });
+    const d = r.rows[0];
+    const toIn = v => v ? +(v / 25.4).toFixed(3) : null;
+    res.json({
+      sku: d.sku,
+      filter_type: d.filter_type,
+      sub_type: d.sub_type,
+      installation_type: d.installation_type,
+      height:      { mm: d.height_mm,           in: toIn(d.height_mm) },
+      od:          { mm: d.outer_diameter_mm,    in: toIn(d.outer_diameter_mm) },
+      gasket_od:   { mm: d.gasket_od_mm,         in: toIn(d.gasket_od_mm) },
+      gasket_id:   { mm: d.gasket_id_mm,         in: toIn(d.gasket_id_mm) },
+      thread:      d.thread_size,
+      micron:      d.micron_rating,
+      efficiency:  d.nominal_efficiency,
+      burst_psi:   d.burst_pressure_psi,
+      collapse_psi: d.collapse_pressure_psi,
+      iso_method:  d.iso_test_method,
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// TEMP: fix technology name typos — DELETE AFTER USE
+app.get('/api/admin/fix-tech-names', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const fixes = [
+      { wrong: '%SINTRAX%',   correct: 'SYNTRAX™'  },
+      { wrong: '%SYNTAPORE%', correct: 'SYNTEPORE™' },
+      { wrong: '%INTAKCORE%', correct: 'INTEKCORE™' },
+    ];
+    const results = {};
+    for (const f of fixes) {
+      const r = await client.query(
+        `UPDATE elimfilters_catalog SET technology = $1
+         WHERE UPPER(technology) LIKE $2 RETURNING sku`,
+        [f.correct, f.wrong]
+      );
+      results[f.correct] = r.rowCount;
+    }
+    res.json(results);
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// TEMP: fix dimensions from CSV — DELETE AFTER USE
+app.get('/api/admin/fix-dimensions', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const csvPath = path.join(__dirname, 'data', 'dims.csv');
+  if (!fs.existsSync(csvPath)) return res.status(404).json({ error: 'dims.csv not found' });
+
+  const lines = fs.readFileSync(csvPath, 'utf8').split('\n').filter(Boolean);
+  const headers = lines[0].split(',');
+  const idx = k => headers.indexOf(k);
+
+  const rows = lines.slice(1).map(l => {
+    const cols = l.split(',');
+    const safeNum = (v, max) => { const n = parseFloat(v); return (n > 0 && n <= max) ? n : null; };
+    return {
+      sku:  cols[idx('sku')]?.trim(),
+      od:   safeNum(cols[idx('od')], 1000),  // up to 1000mm OD for large industrial air filters
+      h:    safeNum(cols[idx('h')], 2000),
+      god:  safeNum(cols[idx('god')], 500),
+      gid:  safeNum(cols[idx('gid')], 500),
+      thread: cols[idx('thread')]?.trim() || null,
+      burst:  safeNum(cols[idx('burst')], 10000),
+      collapse: safeNum(cols[idx('collapse')], 10000),
+      sub:  cols[idx('sub')]?.trim() || null,
+      inst: cols[idx('inst')]?.trim() || null,
+      ft:   cols[idx('ft')]?.trim() || null,
+    };
+  }).filter(r => r.sku);
+
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    let updated = 0, skipped = 0;
+    for (const r of rows) {
+      const res2 = await client.query(
+        `UPDATE elimfilters_catalog
+         SET outer_diameter_mm    = COALESCE($2, outer_diameter_mm),
+             height_mm            = COALESCE($3, height_mm),
+             gasket_od_mm         = COALESCE($4, gasket_od_mm),
+             gasket_id_mm         = COALESCE($5, gasket_id_mm),
+             thread_size          = COALESCE($6, thread_size),
+             burst_pressure_psi   = COALESCE($7, burst_pressure_psi),
+             collapse_pressure_psi = COALESCE($8, collapse_pressure_psi),
+             installation_type    = COALESCE($9, installation_type),
+             filter_type          = COALESCE($10, filter_type)
+         WHERE sku = $1`,
+        [r.sku, r.od, r.h, r.god, r.gid, r.thread, r.burst, r.collapse, r.inst, r.ft]
+      );
+      if (res2.rowCount > 0) updated++; else skipped++;
+    }
+    res.json({ total_csv: rows.length, updated, skipped });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally { await client.end(); }
+});
+
+// Equipment audit — shows how many products have 0/few/many equipment entries by filter type
+app.get('/api/admin/audit-equipment', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(`
+      SELECT
+        filter_type,
+        COUNT(*) as total,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
+        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
+      FROM elimfilters_catalog
+      GROUP BY filter_type
+      ORDER BY total DESC
+    `);
+    const totals = await client.query(`
+      SELECT
+        COUNT(*) as total,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) = 0) as zero_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5) as few_equip,
+        COUNT(*) FILTER (WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 5) as many_equip,
+        ROUND(AVG(jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb))),1) as avg_equip
+      FROM elimfilters_catalog
+    `);
+    // Sample: products with few (1-5) equipment entries — likely incomplete
+    const suspects = await client.query(`
+      SELECT sku, codigo_base, filter_type,
+             jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) as equip_count
+      FROM elimfilters_catalog
+      WHERE jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) BETWEEN 1 AND 5
+      ORDER BY filter_type, sku
+      LIMIT 30
+    `);
+    res.json({
+      by_filter_type: r.rows,
+      totals: totals.rows[0],
+      suspects_sample: suspects.rows
+    });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// TEMP: patch EA10695 equipment_applications with complete Donaldson data — DELETE AFTER USE
+// Scraper only captured first 5 visible rows; Donaldson page has 39 unique entries
+app.get('/api/admin/patch-ea10695-equipment', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const equipment = [{"machine":"FREIGHTLINER FL112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS NTC855"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"FREIGHTLINER FLA300","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA370","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLA424","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLB9064ST","year":"","type":"TRUCK","engine":"CUMMINS N14"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC112","year":"","type":"TRUCK","engine":""},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CATERPILLAR 3306"},{"machine":"FREIGHTLINER FLC120","year":"","type":"TRUCK","engine":"CUMMINS NTC315"},{"machine":"FREIGHTLINER FMC","year":"","type":"TRUCK","engine":""},{"machine":"MAC CH","year":"1998 - 2003","type":"TRUCK","engine":"MACK E-Tech VMAC III"},{"machine":"MAC CH","year":"2003 - 2008","type":"TRUCK","engine":"MACK E7 CCRS 12L"},{"machine":"MAC CH","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MAC CHR","year":"to 1998","type":"TRUCK","engine":"MACK E7 VMAC I, II"},{"machine":"MACK CH613","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL653","year":"","type":"TRUCK","engine":""},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CATERPILLAR 3406"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK CL713","year":"","type":"TRUCK","engine":"MACK ASET AMI"},{"machine":"MACK CL733","year":"","type":"TRUCK","engine":"CUMMINS ISX"},{"machine":"MACK GRANITE","year":"2006 - 2012","type":"TRUCK","engine":"MACK MP7"},{"machine":"MACK GRANITE","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"MACK SUPERLINER","year":"","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK TITAN","year":"2008 - 2017","type":"TRUCK","engine":"MACK MP10"},{"machine":"MACK VISION","year":"","type":"TRUCK","engine":"MACK E7"},{"machine":"PETERBILT 362","year":"1997","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2000","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1999","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"1998","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2002","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 362","year":"2001","type":"TRUCK","engine":"CATERPILLAR C10"},{"machine":"PETERBILT 377","year":"","type":"TRUCK","engine":"DETROIT DIESEL SERIES 60"}];
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `UPDATE elimfilters_catalog SET equipment_applications = $1::jsonb WHERE sku = 'EA10695' RETURNING sku`,
+      [JSON.stringify(equipment)]
+    );
+    res.json({ updated: r.rowCount, equipment_count: equipment.length });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// TEMP: fix corrupted EW7 coolant filter heights (7620mm = scraper unit error) — DELETE AFTER USE
+app.get('/api/admin/fix-ew7-heights', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    // NULL out clearly impossible coolant filter heights (>500mm = >20 inch is wrong for coolant filters)
+    const r = await client.query(
+      `UPDATE elimfilters_catalog
+       SET height_mm = NULL
+       WHERE LOWER(filter_type) LIKE '%coolant%'
+         AND height_mm > 500
+       RETURNING sku, height_mm`,
+    );
+    res.json({ fixed: r.rowCount, nulled_skus: r.rows.map(x => x.sku) });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// TEMP: batch-update lube filter descriptions — DELETE AFTER USE
+app.get('/api/admin/update-lube-descriptions', async (req, res) => {
+  if (!adminAuth(req, res)) return;
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+
+    const DESC = {
+      spinon: {
+        en: 'ELIMFILTERS® Lube Filter, Spin-On developed for industrial asset protection. Its SYNTRAX™ technology deploys a four-layer contamination control matrix, each layer calibrated to a specific particle size class, intercepting sub-micron particles before they reach critical engine components across the complete service interval.',
+        es: 'ELIMFILTERS® Filtro de aceite spin-on desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ despliega una matriz de control de contaminación de cuatro capas, cada una calibrada para una clase de tamaño de partícula específica, interceptando partículas submicrónónicas antes de que alcancen los componentes críticos del motor durante todo el intervalo de servicio.',
+      },
+      cartridge: {
+        en: 'ELIMFILTERS® Lube Filter, Cartridge developed for industrial asset protection and to minimize environmental impact in industrial operations. Its SYNTRAX™ technology deploys a four-layer contamination control matrix, each layer calibrated to a specific particle size class, intercepting sub-micron particles before they reach critical engine components across the complete service interval.',
+        es: 'ELIMFILTERS® Filtro de aceite tipo cartucho desarrollado para la protección de activos industriales y minimizar el impacto ambiental en operaciones industriales. Su tecnología SYNTRAX™ despliega una matriz de control de contaminación de cuatro capas, cada una calibrada para una clase de tamaño de partícula específica, interceptando partículas submicrónicas antes de que alcancen los componentes críticos del motor durante todo el intervalo de servicio.',
+      },
+      centrifuge: {
+        en: 'ELIMFILTERS® Centrifuge Disposable Rotor developed for industrial asset protection. Its SYNTRAX™ technology provides centrifugal oil filtration through a fully disposable drop-in design that eliminates the need for special tools, reducing maintenance time to approximately 20 minutes and enabling faster return-to-service across demanding industrial duty cycles.',
+        es: 'ELIMFILTERS® Rotor desechable de centrífuga desarrollado para la protección de activos industriales. Su tecnología SYNTRAX™ proporciona filtración de aceite por centrifugación mediante un diseño desechable tipo drop-in que elimina la necesidad de herramientas especiales, reduciendo el tiempo de mantenimiento a aproximadamente 20 minutos y permitiendo un retorno a operación más rápido en ciclos de trabajo industriales exigentes.',
+      },
+      cabin: {
+        en: 'ELIMFILTERS® Cabin Air Filter developed for occupant health protection in heavy-duty and industrial vehicle cabins. Its MICROKAPPA™ technology combines three capture mechanisms — electrostatic attraction, HEPA-class mechanical filtration and activated carbon adsorption — intercepting PM2.5 particles, allergens, diesel exhaust gases and odors before they reach the cab interior.',
+        es: 'ELIMFILTERS® Filtro de aire de cabina desarrollado para la protección de la salud del operador en cabinas de vehículos industriales y de trabajo pesado. Su tecnología MICROKAPPA™ combina tres mecanismos de captura — atracción electrostática, filtración mecánica clase HEPA y adsorción de carbono activado — interceptando partículas PM2.5, alérgenos, gases de escape diésel y olores antes de que lleguen al interior de la cabina.',
+      },
+      airhousing: {
+        en: 'ELIMFILTERS® Air Filter Housing developed for industrial asset protection across heavy-duty air intake systems. Its INTEKCORE™ technology delivers a high-pressure rated housing engineered to maintain structural integrity across the full thermal cycling range of commercial and industrial engines, ensuring the housing never becomes the failure point of the filtration system.',
+        es: 'ELIMFILTERS® Carcasa de filtro de aire desarrollada para la protección de activos industriales en sistemas de admisión de aire para trabajo pesado. Su tecnología INTEKCORE™ ofrece una carcasa de alta presión diseñada para mantener la integridad estructural en todo el rango de ciclos térmicos de motores comerciales e industriales, asegurando que la carcasa nunca sea el punto de falla del sistema de filtración.',
+      },
+      precleaner: {
+        en: 'ELIMFILTERS® Air Precleaner developed for industrial asset protection as the first stage of the air intake system. Its INTEKCORE™ technology provides self-cleaning pre-separation of particles denser than air before they reach the primary filtration element, extending air filter service life and reducing maintenance frequency across demanding industrial duty cycles.',
+        es: 'ELIMFILTERS® Preclasificador de aire desarrollado para la protección de activos industriales como primera etapa del sistema de admisión de aire. Su tecnología INTEKCORE™ proporciona preseparación autolimpiante de partículas más densas que el aire antes de que lleguen al elemento filtrante primario, extendiendo la vida útil del filtro de aire y reduciendo la frecuencia de mantenimiento en ciclos de trabajo industriales exigentes.',
+      },
+      air_radial: {
+        en: 'ELIMFILTERS® Air Filter, Primary — Radial Seal, developed for industrial asset protection in the most demanding operating environments. Its MACROCORE™ technology deploys a progressive density gradient matrix that intercepts airborne contamination before it reaches the combustion chamber, delivering extended service life across the harshest industrial duty cycles.',
+        es: 'ELIMFILTERS® Filtro de aire primario — sello radial, desarrollado para la protección de activos industriales en los entornos operativos más exigentes. Su tecnología MACROCORE™ despliega una matriz de gradiente de densidad progresiva que intercepta la contaminación del aire antes de que llegue a la cámara de combustión, garantizando una vida útil extendida en los ciclos de trabajo industriales más severos.',
+      },
+      air_axial: {
+        en: 'ELIMFILTERS® Air Filter, Primary — Axial Seal, developed for industrial asset protection. Its MACROCORE™ technology delivers a precision axial seal that eliminates contamination bypass, ensuring airborne particles are intercepted before reaching the combustion chamber and preserving engine efficiency across the complete service interval.',
+        es: 'ELIMFILTERS® Filtro de aire primario — sello axial, desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ proporciona un sello axial de precisión que elimina el paso de contaminación, asegurando que las partículas en suspensión sean interceptadas antes de llegar a la cámara de combustión y preservando la eficiencia del motor durante todo el intervalo de servicio.',
+      },
+      air_tetramax: {
+        en: 'ELIMFILTERS® Air Filter, Primary developed for industrial asset protection in medium- and heavy-duty applications. Its MACROCORE™ technology delivers a high-density axial flow media pack in a compact form factor, achieving higher contamination control performance across 5 to 15L engine platforms while reducing the physical footprint of the air filtration system.',
+        es: 'ELIMFILTERS® Filtro de aire primario desarrollado para la protección de activos industriales en aplicaciones medianas y pesadas. Su tecnología MACROCORE™ ofrece un paquete de medios de flujo axial de alta densidad en formato compacto, logrando un mayor rendimiento en el control de contaminación en plataformas de motores de 5 a 15L, reduciendo la huella física del sistema de filtración.',
+      },
+      air_powercore: {
+        en: 'ELIMFILTERS® Air Filter, Primary developed for industrial asset protection. Its MACROCORE™ technology is engineered to precise media specifications — fiber geometry, pore size, thickness and mechanical strength — delivering consistent contamination control performance that meets or exceeds OEM air filtration system requirements.',
+        es: 'ELIMFILTERS® Filtro de aire primario desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ está diseñada con especificaciones precisas de medio filtrante — geometría de fibra, tamaño de poro, espesor y resistencia mecánica — ofreciendo un control de contaminación consistente que cumple o supera los requisitos de los sistemas de filtración de aire OEM.',
+      },
+      air_secondary: {
+        en: 'ELIMFILTERS® Air Filter, Secondary developed for industrial asset protection. Its MACROCORE™ technology provides a precision secondary barrier that intercepts contamination bypass, protecting critical engine components during primary element service and extending maintenance intervals while reducing operational downtime.',
+        es: 'ELIMFILTERS® Filtro de aire secundario desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ proporciona una barrera secundaria de precisión que intercepta el paso de contaminación, protegiendo los componentes críticos del motor durante el servicio del elemento primario y extendiendo los intervalos de mantenimiento mientras reduce el tiempo de inactividad operacional.',
+      },
+      airdryer: {
+        en: 'ELIMFILTERS® Air Dryer, Desiccant and Coalescing developed for industrial asset protection of compressed air systems. Its DRYCORE™ technology removes water vapor and oil vapor at the molecular level before they reach air tanks, valves and downstream control circuits, preventing corrosion, seal degradation and ensuring optimal system uptime.',
+        es: 'ELIMFILTERS® Secador de aire, desecante y coalescente desarrollado para la protección de activos industriales en sistemas de aire comprimido. Su tecnología DRYCORE™ elimina el vapor de agua y el vapor de aceite a nivel molecular antes de que lleguen a los depósitos de aire, válvulas y circuitos de control, previniendo la corrosión, el deterioro de sellos y garantizando el tiempo de operación óptimo del sistema.',
+      },
+      coolant: {
+        en: 'ELIMFILTERS® Coolant Filter developed for thermal system asset protection. Its COOLTECH™ technology delivers controlled SCA additive release alongside coolant filtration, preventing liner pitting, scale formation and corrosive degradation of engine cooling circuits.',
+        es: 'ELIMFILTERS® Filtro de refrigerante desarrollado para la protección de activos en sistemas térmicos. Su tecnología COOLTECH™ administra la liberación controlada de aditivos SCA junto con la filtración del refrigerante, previniendo la erosión por cavitación en camisas, formación de depósitos y degradación corrosiva en los circuitos de enfriamiento del motor.',
+      },
+      hydraulic_spinon: {
+        en: 'ELIMFILTERS® Hydraulic Filter, Spin-On developed for industrial asset protection of precision hydraulic systems. Its NANOFORCE™ technology maintains filtration performance under sustained high-pressure pulsation cycles, protecting proportional valves and actuator components from sub-micron particle wear.',
+        es: 'ELIMFILTERS® Filtro hidráulico tipo spin-on desarrollado para la protección de activos industriales en sistemas hidráulicos de precisión. Su tecnología NANOFORCE™ mantiene el rendimiento de filtración bajo ciclos sostenidos de pulsación de alta presión, protegiendo válvulas proporcionales y componentes actuadores del desgaste por partículas sub-micrón.',
+      },
+      hydraulic_cartridge: {
+        en: 'ELIMFILTERS® Hydraulic Filter, Cartridge developed for industrial asset protection of precision hydraulic systems and to minimize environmental impact. Its NANOFORCE™ technology maintains filtration performance under sustained high-pressure pulsation cycles, protecting proportional valves and actuator components from sub-micron particle wear.',
+        es: 'ELIMFILTERS® Filtro hidráulico tipo cartucho desarrollado para la protección de activos industriales en sistemas hidráulicos de precisión y para minimizar el impacto ambiental en operaciones industriales. Su tecnología NANOFORCE™ mantiene el rendimiento de filtración bajo ciclos sostenidos de pulsación de alta presión, protegiendo válvulas proporcionales y componentes actuadores del desgaste por partículas sub-micrón.',
+      },
+      fws_spinon: {
+        en: 'ELIMFILTERS® Fuel/Water Separator, Spin-On developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo spin-on desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+      },
+      fws_cartridge: {
+        en: 'ELIMFILTERS® Fuel/Water Separator, Cartridge developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo cartucho desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+      },
+      fuel_inline: {
+        en: 'ELIMFILTERS® Fuel Filter, In-Line developed for industrial asset protection of fuel delivery systems. Its SYNTEPORE™ technology provides compact in-line contamination interception, maintaining fuel cleanliness through the final delivery stage before primary filtration or as a secondary protection barrier in high-demand applications.',
+        es: 'ELIMFILTERS® Filtro de combustible en línea desarrollado para la protección de activos industriales en sistemas de suministro de combustible. Su tecnología SYNTEPORE™ proporciona interceptación compacta de contaminación en línea, manteniendo la limpieza del combustible en la etapa de suministro final antes de la filtración primaria o como barrera de protección secundaria en aplicaciones de alta demanda.',
+      },
+      fuel_spinon: {
+        en: 'ELIMFILTERS® Fuel Filter, Spin-On developed for industrial asset protection of high-pressure fuel systems. Its SYNTEPORE™ technology intercepts sub-micron contamination before it reaches Common Rail injectors, maintaining injection precision and protecting fuel system components from abrasive particle wear.',
+        es: 'ELIMFILTERS® Filtro de combustible tipo spin-on desarrollado para la protección de activos industriales en sistemas de combustible de alta presión. Su tecnología SYNTEPORE™ intercepta la contaminación sub-micrón antes de que alcance los inyectores Common Rail, manteniendo la precisión de inyección y protegiendo los componentes del sistema de combustible del desgaste por partículas abrasivas.',
+      },
+      fuel_cartridge: {
+        en: 'ELIMFILTERS® Fuel Filter, Cartridge developed for industrial asset protection of high-pressure fuel systems and to minimize environmental impact. Its SYNTEPORE™ technology intercepts sub-micron contamination before it reaches Common Rail injectors, maintaining injection precision and protecting fuel system components from abrasive particle wear.',
+        es: 'ELIMFILTERS® Filtro de combustible tipo cartucho desarrollado para la protección de activos industriales en sistemas de combustible de alta presión y para minimizar el impacto ambiental en operaciones industriales. Su tecnología SYNTEPORE™ intercepta la contaminación sub-micrón antes de que alcance los inyectores Common Rail, manteniendo la precisión de inyección y protegiendo los componentes del sistema de combustible del desgaste por partículas abrasivas.',
+      },
+      crankcase: {
+        en: 'ELIMFILTERS® Crankcase Ventilation Filter developed for industrial asset protection of engine lube and air intake systems. Its SYNTRAX™ technology separates oil aerosols and blow-by gas contaminants from crankcase emissions, preventing oil loss and protecting air intake components from hydrocarbon contamination.',
+        es: 'ELIMFILTERS® Filtro de ventilación del cárter desarrollado para la protección de activos industriales en sistemas de lubricación y admisión de aire del motor. Su tecnología SYNTRAX™ separa los aerosoles de aceite y contaminantes de los gases de blow-by, previniendo la pérdida de lubricante y protegiendo los componentes del sistema de admisión de la contaminación por hidrocarburos.',
+      },
+    };
+
+    // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
+    const spinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%lube%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.spinon)]
+    );
+
+    // Cartridge: everything else in lube
+    const cartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%lube%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.cartridge)]
+    );
+
+    // Centrifuge rotor
+    const centRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%centrifug%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.centrifuge)]
+    );
+
+    // Cabin air filter
+    const cabinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%cabin%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.cabin)]
+    );
+
+    // Air filter housing
+    const housingRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%housing%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.airhousing)]
+    );
+
+    // Air precleaner
+    const precleanRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%precleaner%'
+          OR LOWER(filter_type) LIKE '%pre-cleaner%'
+          OR LOWER(filter_type) LIKE '%pre cleaner%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.precleaner)]
+    );
+
+    // Air filters — secondary/safety element
+    const airSecRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%secondary%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%safety%'
+              OR LOWER(filter_type) LIKE '%secondary%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_secondary)]
+    );
+
+    // Air filters — radial seal primary
+    const airRadRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%radial%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%radial%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_radial)]
+    );
+
+    // Air filters — axial seal primary
+    const airAxRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%axial%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%axial%')
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%radial%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_axial)]
+    );
+
+    // Air filters — TetraMax primary
+    const airTetRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%tetra%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%tetra%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_tetramax)]
+    );
+
+    // Air dryer
+    const airDryRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%dryer%'
+          OR LOWER(filter_type) LIKE '%drier%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.airdryer)]
+    );
+
+    // Coolant filter
+    const coolantRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%coolant%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.coolant)]
+    );
+
+    // Hydraulic spin-on
+    const hydSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%hydraulic%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.hydraulic_spinon)]
+    );
+
+    // Hydraulic cartridge (everything else in hydraulic)
+    const hydCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%hydraulic%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.hydraulic_cartridge)]
+    );
+
+    // Fuel/Water Separator spin-on (Racor turbine style, spin-on assembly)
+    const fwsSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%turbine%'
+         AND LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.fws_spinon)]
+    );
+
+    // Fuel/Water Separator cartridge (Racor turbine style, cartridge/assembly)
+    const fwsCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%turbine%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fws_cartridge)]
+    );
+
+    // Fuel in-line — check installation_type, not filter_type
+    const fuelInlineRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%in-line%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%in line%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%inline%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_inline)]
+    );
+
+    // Fuel spin-on (plain fuel, not water separator, not inline)
+    const fuelSpinRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND LOWER(filter_type) NOT LIKE '%water%'
+         AND LOWER(filter_type) NOT LIKE '%separator%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%inline%'
+         AND (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+              OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_spinon)]
+    );
+
+    // Fuel cartridge (plain fuel, everything else)
+    const fuelCartRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%fuel%'
+         AND LOWER(filter_type) NOT LIKE '%water%'
+         AND LOWER(filter_type) NOT LIKE '%separator%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%in-line%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%inline%'
+         AND NOT (LOWER(COALESCE(installation_type,'')) LIKE '%spin%'
+                  OR LOWER(COALESCE(sub_type,'')) LIKE '%spin%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.fuel_cartridge)]
+    );
+
+    // Crankcase ventilation
+    const crankcaseRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%crankcase%'
+          OR LOWER(filter_type) LIKE '%ventilation%'
+          OR LOWER(filter_type) LIKE '%breather%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.crankcase)]
+    );
+
+    // Air filters — Powercore/advanced primary (everything else primary)
+    const airPowRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(filter_type) NOT LIKE '%precleaner%'
+         AND LOWER(filter_type) NOT LIKE '%pre-cleaner%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%radial%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%axial%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%tetra%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%radial%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%axial%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%tetra%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_powercore)]
+    );
+
+    res.json({
+      spin_on_updated: spinRes.rowCount,
+      cartridge_updated: cartRes.rowCount,
+      centrifuge_updated: centRes.rowCount,
+      cabin_updated: cabinRes.rowCount,
+      air_housing_updated: housingRes.rowCount,
+      precleaner_updated: precleanRes.rowCount,
+      air_secondary_updated: airSecRes.rowCount,
+      air_radial_updated: airRadRes.rowCount,
+      air_axial_updated: airAxRes.rowCount,
+      air_tetramax_updated: airTetRes.rowCount,
+      air_powercore_updated: airPowRes.rowCount,
+      air_dryer_updated: airDryRes.rowCount,
+      coolant_updated: coolantRes.rowCount,
+      hydraulic_spinon_updated: hydSpinRes.rowCount,
+      hydraulic_cartridge_updated: hydCartRes.rowCount,
+      fws_spinon_updated: fwsSpinRes.rowCount,
+      fws_cartridge_updated: fwsCartRes.rowCount,
+      fuel_inline_updated: fuelInlineRes.rowCount,
+      fuel_spinon_updated: fuelSpinRes.rowCount,
+      fuel_cartridge_updated: fuelCartRes.rowCount,
+      crankcase_updated: crankcaseRes.rowCount,
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally { await client.end(); }
+});
+
+app.use(cors({
+  origin: [
+    'https://elimfilters.com',
+    'https://www.elimfilters.com',
+    'https://part-search.elimfilters.com',
+  ],
+  credentials: true,
+}));
+app.set('trust proxy', 1);
+app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
+app.use(express.urlencoded({ extended: false }));
+
+// Rate limiting middleware
+app.use('/api/search', (req, res, next) => {
+  const ip = req.ip || req.connection.remoteAddress;
+  if (!rateLimit(ip, 120, 60_000)) return res.status(429).json({ error: 'Too many requests' });
+  next();
+});
+app.use('/api/admin', (req, res, next) => {
+  const ip = req.ip || req.connection.remoteAddress;
+  if (!rateLimit(ip, 10, 60_000)) return res.status(429).json({ error: 'Too many requests' });
+  next();
+});
+const frontendStatic = express.static('frontend/out');
+const partSearchStatic = express.static('part-search');
+
+app.use((req, res, next) => {
+  const host = req.get('host') || req.hostname || '';
+  if (host.includes('part-search')) {
+    partSearchStatic(req, res, next);
+  } else {
+    frontendStatic(req, res, next);
+  }
+});
+app.use(express.static('public'));
+app.use(express.static('www'));
+
+// Contact form endpoint
+app.post('/api/contact', async (req, res) => {
+  const { name, email, phone, company, message } = req.body;
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'info@elimfilters.com',
+        pass: process.env.GODADDY_MAIL_PASS,
+      },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
+      to: 'info@elimfilters.com',
+      replyTo: email,
+      subject: `[Web Contact] ${name} — ${company || 'No company'}`,
+      html: `
+        <h2 style="color:#000">New contact from elimfilters.com</h2>
+        <table cellpadding="8" style="border-collapse:collapse;width:100%">
+          <tr><td><b>Name</b></td><td>${name}</td></tr>
+          <tr><td><b>Email</b></td><td>${email}</td></tr>
+          <tr><td><b>Phone</b></td><td>${phone || '—'}</td></tr>
+          <tr><td><b>Company</b></td><td>${company || '—'}</td></tr>
+        </table>
+        <h3>Message</h3>
+        <p style="background:#f5f5f5;padding:1rem">${message.replace(/\n/g, '<br>')}</p>
+      `,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[contact]', err.message);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
+// Import routes (with fallback if file is missing)
+let knowledgeRoutes;
+try {
+  knowledgeRoutes = require('./routes/knowledge.routes');
+  console.log('[routes] Knowledge routes loaded ✅');
+} catch (err) {
+  console.error('[routes] Failed to load knowledge routes:', err.message);
+  // Create dummy router if knowledge routes fail
+  const express = require('express');
+  knowledgeRoutes = express.Router();
+  knowledgeRoutes.get('/', (req, res) => res.json({ status: 'knowledge-api-unavailable' }));
+}
 
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
@@ -21,17 +723,10 @@ app.use((req, res, next) => {
   next();
 });
 
-const dbConfig = process.env.DATABASE_URL
-  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
-  : {
-      host: 'ballast.proxy.rlwy.net',
-      port: 18263,
-      database: 'railway',
-      user: 'postgres',
-      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-      client_encoding: 'UTF8',
-      ssl: { rejectUnauthorized: false }
-    };
+const dbConfig = {
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+};
 
 function parseRefs(arr){
   if(!arr) return [];
@@ -47,11 +742,36 @@ function detectLang(req) {
   return langs.some(l => l.startsWith('es')) ? 'es' : 'en';
 }
 
+const PROPRIETARY_SUBTYPES = new Set([
+  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
+  'alpha-web™', 'alpha-web', 'synteq xp™',
+]);
+function safeSubtype(val, lang = 'en') {
+  const text = extractText(val, lang);
+  if (!text) return null;
+  if (/[®™]/.test(text)) return null;
+  if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
+  return text;
+}
+
 function extractText(val, lang = 'en') {
-  if (!val) return null;
-  if (typeof val === 'object') return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  if (val === null || val === undefined) return null;
+  // Already an object (JSONB from pg)
+  if (typeof val === 'object' && !Array.isArray(val)) {
+    return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  }
+  // String – may be raw text OR a JSON-encoded object
   if (typeof val === 'string') {
-    try { const p = JSON.parse(val); return p[lang] || p.en || p.es || Object.values(p)[0] || val; } catch { return val; }
+    const trimmed = val.trim();
+    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+      try {
+        const p = JSON.parse(trimmed);
+        if (p && typeof p === 'object' && !Array.isArray(p)) {
+          return p[lang] || p.en || p.es || Object.values(p)[0] || val;
+        }
+      } catch (_) {}
+    }
+    return val; // plain text
   }
   return String(val);
 }
@@ -83,9 +803,9 @@ function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
-    description: extractText(row.description, lang),
+    description: row.description || null,
     filter_type: extractText(row.filter_type, lang),
-    filter_subtype: extractText(row.sub_type, lang) || null,
+    filter_subtype: safeSubtype(row.sub_type, lang),
     technology: row.technology || null,
     technology_logo: getTechLogo(row.technology),
     installation_type: row.installation_type || null,
@@ -102,13 +822,13 @@ function buildFilterData(row, lang = 'en'){
     duty: row.duty || null,
     oem_codes: parseRefs(row.oem_codes),
     competitor_codes: parseRefs(row.competitor_codes),
+    brand_crossrefs: row.brand_crossrefs || {},
+    alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
   };
 }
 
-app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.4.0'});
-});
+// Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
 
 app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
   const sku = req.params.sku.toUpperCase();
@@ -152,7 +872,7 @@ app.get('/api/debug/find-code/:code', async (req, res) => {
 
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -217,7 +937,7 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
 
 // Temp: analyze duplicate SKUs + calculate correct SKU for each codigo_base
 app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -279,7 +999,7 @@ app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
 
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -300,7 +1020,7 @@ app.get('/api/analyze/duplicate-skus', async (req, res) => {
 
 // Temp: add UNIQUE constraint to sku column (after deduplicating)
 app.get('/api/migrate/fix-sku-unique', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -331,7 +1051,7 @@ app.get('/api/migrate/fix-sku-unique', async (req, res) => {
 
 // Temp: create maintenance_kits and kit_components tables
 app.get('/api/migrate/create-kit-tables', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -561,17 +1281,17 @@ app.get('/api/filters/search/part', async (req, res) => {
       result = await client.query(
         `SELECT * FROM elimfilters_catalog WHERE
           EXISTS (
-            SELECT 1 FROM jsonb_array_elements(oem_codes) elem
-            WHERE UPPER(elem->>'code') = $1
-               OR UPPER(elem->>'partNumber') = $1
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+            SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem(val)
+            WHERE UPPER(val->>'code') = $1
+               OR UPPER(val->>'partNumber') = $1
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
           )
           OR EXISTS (
-            SELECT 1 FROM jsonb_array_elements(competitor_codes) elem
-            WHERE UPPER(elem->>'code') = $1
-               OR UPPER(elem->>'partNumber') = $1
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
-               OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') = $1)
+            SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem(val)
+            WHERE UPPER(val->>'code') = $1
+               OR UPPER(val->>'partNumber') = $1
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') = $1)
           )
         ORDER BY
           CASE WHEN array_length(COALESCE(alternative_codes, '{}'::jsonb[]), 1) > 0
@@ -696,7 +1416,7 @@ app.get('/api/filters/search/homologous', async (req, res) => {
 
 // Temp: consolidate duplicate SKUs (preview consolidation plan)
 app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -736,7 +1456,7 @@ app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
 
 // Temp: apply consolidation (delete duplicates, merge competitor_codes)
 app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -793,7 +1513,7 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
 app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -819,7 +1539,7 @@ app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
 
 // Temp: add alternative_codes column
 app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -840,7 +1560,7 @@ app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
 
 // Temp: debug EL82100 vs EL81016 comparison
 app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -870,7 +1590,7 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
 
 // Copia campos faltantes de EL81016 a EL82100 y registra alternativas
 app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -902,7 +1622,7 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
 });
 
 app.get('/api/catalog/stats', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -949,7 +1669,7 @@ app.get('/api/catalog/stats', async (req, res) => {
 
 // Merge OEM codes from EL81016 into EL82100
 app.get('/api/migrate/merge-oem-codes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
   const client = new Client(dbConfig);
   try {
@@ -969,7 +1689,7 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
 
 // Audit: Find incomplete products
 app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -999,7 +1719,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 });
 
 app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!adminAuth(req, res)) return;
 
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });

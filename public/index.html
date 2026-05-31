@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Part Search</title>
+  <meta name="description" content="Find ELIMFILTERS filters by part number, VIN/vehicle model, or equipment reference. Cross-reference with OEM and competitor codes.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ELIMFILTERS Part Search">
+  <meta property="og:description" content="Industrial filtration cross-reference — Part number, VIN, and Equipment search.">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --y3: rgba(255,241,45,0.06);
+      --bg: #000;
+      --border: rgba(255,255,255,0.07);
+      --muted: rgba(255,255,255,0.35);
+    }
+
+    html, body {
+      width: 100%; min-height: 100%;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── SPLASH SCREEN ─── */
+    #cinematic-splash {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      transition: opacity 1s ease-in-out;
+    }
+    #splash-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: pointer;
+    }
+    .splash-hint {
+      position: absolute;
+      bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      pointer-events: none;
+      animation: pulseHint 2s infinite;
+    }
+    @keyframes pulseHint {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.6; }
+    }
+
+    /* ─── CANVAS ─── */
+    #nanoflow {
+      position: fixed;
+      inset: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ─── LOGO ─── */
+    #logo {
+      position: fixed;
+      top: 1.5rem; left: 2rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+    }
+    .logo-text span { color: var(--y); }
+    .logo-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      padding: 0.15rem 0.4rem;
+    }
+
+    /* ─── SKIP ─── */
+    #skip-btn {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 200;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.2);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 2px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
+
+    /* ─── UI LAYER ─── */
+    #ui {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem clamp(1rem, 4vw, 2rem) 4rem;
+      gap: 0;
+    }
+
+    /* ─── INTRO LABEL ─── */
+    .intro-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.3rem, 5.2vw, 2.08rem);
+      letter-spacing: 0.05em;
+      color: var(--y);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 1s ease, transform 1s ease;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .intro-label.vis { opacity: 1; transform: translateY(0); }
+
+    /* ─── SEARCH PANEL ─── */
+    #search-panel {
+      width: 100%;
+      max-width: 720px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+      pointer-events: none;
+    }
+    #search-panel.vis {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    /* ─── TAB SWITCHER ─── */
+    .mode-tabs {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      gap: 0;
+    }
+    .mode-tab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.94rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.65rem 1.2rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+      white-space: nowrap;
+    }
+    .mode-tab:hover { color: rgba(255,255,255,0.7); }
+    .mode-tab.active {
+      color: var(--y);
+      border-bottom-color: var(--y);
+    }
+
+    /* ─── FORMS ─── */
+    .search-form { display: none; flex-direction: column; gap: 0.85rem; }
+    .search-form.active { display: flex; }
+
+    .field-row {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: 1fr;
+    }
+    .field-row.cols-2 { grid-template-columns: 1fr 1fr; }
+    .field-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .field-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,241,45,0.28);
+      border-radius: 3px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(16px);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .input-wrap:focus-within {
+      border-color: var(--y);
+      box-shadow: 0 0 0 3px rgba(255,241,45,0.06);
+    }
+    .input-wrap.primary { border-color: rgba(255,241,45,0.4); }
+
+    .input-icon {
+      padding: 0 0.9rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .input-wrap input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      padding: 0.6rem 0;
+      letter-spacing: 0.04em;
+      min-width: 0;
+      text-transform: uppercase;
+    }
+    .input-wrap input::placeholder { color: rgba(255,255,255,0.12); text-transform: none; }
+
+    select {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      padding: 0.65rem 0.5rem 0.65rem 0;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    select option { 
+      background: #111; 
+      color: #fff; 
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+    }
+
+    .select-arrow {
+      padding: 0 0.9rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.7rem;
+      pointer-events: none;
+    }
+
+    /* ─── SEARCH BUTTON ─── */
+    .btn-search {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      color: #000;
+      background: var(--y);
+      border: none;
+      border-radius: 3px;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-search:hover { background: #ffe800; }
+    .btn-search:active { transform: scale(0.97); }
+
+    .form-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    /* ─── HINT PILLS ─── */
+    .hint-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .hint-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 100px;
+      padding: 0.22rem 0.6rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
+
+    /* ─── RESULTS ─── */
+    #results {
+      width: 100%;
+      max-width: 720px;
+      margin-top: 2.5rem;
+    }
+
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .results-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    .results-mode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,241,45,0.5);
+      border: 1px solid rgba(255,241,45,0.15);
+      border-radius: 2px;
+      padding: 0.18rem 0.5rem;
+    }
+
+    /* ─── RESULT CARD ─── */
+    .result-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 0.7rem;
+      background: rgba(255,255,255,0.012);
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .result-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--y3) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .result-card:hover { border-color: rgba(255,241,45,0.22); }
+    .result-card:hover::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .card-left { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .card-sku {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--y);
+      letter-spacing: 0.07em;
+    }
+    .card-base {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+    .ctag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.54rem;
+      letter-spacing: 0.1em;
+      padding: 0.18rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ctag.tech {
+      border-color: rgba(255,241,45,0.22);
+      color: rgba(255,241,45,0.7);
+      background: rgba(255,241,45,0.04);
+    }
+    .ctag.duty {
+      border-color: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.55);
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      margin-top: 0.6rem;
+      position: relative;
+    }
+
+    /* ─── SPECS GRID ─── */
+    .card-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 0.75rem 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .spec-l {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+    }
+    .spec-v {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.82);
+    }
+
+    /* ─── REFS ─── */
+    .card-refs {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: relative;
+    }
+    .ref-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.28);
+      line-height: 1.7;
+    }
+    .ref-brand {
+      color: rgba(255,255,255,0.5);
+      margin-right: 0.4rem;
+    }
+
+    /* ─── EQUIPMENT APPS ─── */
+    .card-equipment {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .equip-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .equip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .equip-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 2px;
+      padding: 0.18rem 0.5rem;
+    }
+
+    /* ─── STATUS MESSAGES ─── */
+    .status-msg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      text-align: center;
+      padding: 3rem 0;
+      letter-spacing: 0.08em;
+    }
+    .status-msg em {
+      display: block;
+      font-style: normal;
+      margin-top: 0.5rem;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.15);
+    }
+
+    /* ─── LOADING DOTS ─── */
+    .loading-dots::after {
+      content: '...';
+      animation: dots 1.2s steps(3, end) infinite;
+    }
+    @keyframes dots {
+      0%   { content: '.'; }
+      33%  { content: '..'; }
+      66%  { content: '...'; }
+    }
+
+    /* ─── KLEO BADGE ─── */
+    #kleo-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 3vw;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      text-decoration: none;
+      opacity: 0.45;
+      transition: opacity 0.3s ease;
+    }
+    #kleo-badge:hover { opacity: 0.85; }
+    #kleo-badge img {
+      height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+    #kleo-badge .kleo-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ─── */
+    #footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.15);
+    }
+    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
+    .footer-line a:hover { color: var(--y); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .field-row.cols-2,
+      .field-row.cols-3 { grid-template-columns: 1fr; }
+      .mode-tab { padding: 0.55rem 0.75rem; font-size: 0.55rem; }
+      .card-specs { grid-template-columns: repeat(2, 1fr); }
+      #logo { top: 1rem; left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── CINEMATIC SPLASH ─── -->
+<div id="cinematic-splash" style="display: none;">
+  <canvas id="splash-canvas"></canvas>
+  <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
+</div>
+
+<canvas id="nanoflow"></canvas>
+
+<a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
+  <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height: 64px; width: auto; object-fit: contain;">
+  <span class="logo-badge" id="logo-badge">PART SEARCH</span>
+</a>
+
+<button id="skip-btn">SKIP INTRO ›</button>
+
+<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
+  <img src="/Leo-fn.avif" alt="KLEO Technology">
+  <span class="kleo-label">Powered by KLEO</span>
+</a>
+
+<div id="ui">
+  <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
+
+  <!-- ── SEARCH PANEL ── -->
+  <div id="search-panel">
+
+    <!-- Mode tabs -->
+    <nav class="mode-tabs" role="tablist" aria-label="Search modes">
+      <button class="mode-tab active" data-mode="part" role="tab" aria-selected="true" id="tab-part">PART NUMBER</button>
+      <button class="mode-tab" data-mode="vin"  role="tab" aria-selected="false" id="tab-vin">VIN / MODEL</button>
+      <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false" id="tab-equip">EQUIPMENT</button>
+    </nav>
+
+    <!-- ── FORM: PART NUMBER ── -->
+    <form class="search-form active" data-form="part" autocomplete="off">
+      <div class="field-group">
+        <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
+        <div class="input-wrap primary">
+          <span class="input-icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="inp-part"
+            name="code"
+            placeholder="Enter part number..."
+            spellcheck="false"
+            autocomplete="off"
+            aria-label="Part number"
+          />
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
+      </div>
+    </form>
+
+    <!-- ── FORM: VIN / MODEL ── -->
+    <form class="search-form" data-form="vin" autocomplete="off">
+      <div class="field-row cols-2">
+        <div class="field-group">
+          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">Vehicle / Model</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-vin-model"
+              name="model"
+              placeholder="Enter model..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional)</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-vin-engine"
+              name="engine"
+              placeholder="Enter engine..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH →</button>
+      </div>
+    </form>
+
+    <!-- ── FORM: EQUIPMENT ── -->
+    <form class="search-form" data-form="equip" autocomplete="off">
+      <div class="field-row cols-3">
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-model" id="lbl-equip-model">Equipment Model</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-equip-model"
+              name="model"
+              placeholder="Enter equipment model..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-type" id="lbl-equip-type">Equipment Type</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">▾</span>
+            <select id="inp-equip-type" name="type">
+              <option value="" id="opt-any">Any type</option>
+              <option value="EXCAVATOR">Excavator</option>
+              <option value="BULLDOZER">Bulldozer</option>
+              <option value="LOADER">Wheel Loader</option>
+              <option value="CRANE">Crane</option>
+              <option value="TRUCK">Mining Truck</option>
+              <option value="DRILL">Drill Rig</option>
+              <option value="COMPRESSOR">Compressor</option>
+              <option value="GENERATOR">Generator</option>
+              <option value="MARINE">Marine / Vessel</option>
+              <option value="AGRICULTURAL">Agricultural</option>
+              <option value="FORKLIFT">Forklift</option>
+            </select>
+            <span class="select-arrow" aria-hidden="true">▾</span>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
+          <div class="input-wrap">
+            <span class="input-icon" aria-hidden="true">◈</span>
+            <input
+              type="text"
+              id="inp-equip-engine"
+              name="engine"
+              placeholder="Enter engine..."
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH →</button>
+      </div>
+    </form>
+
+  </div><!-- /search-panel -->
+
+  <!-- ── RESULTS ── -->
+  <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
+
+</div><!-- /ui -->
+
+<footer id="footer">
+  <p class="footer-line">
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
+  </p>
+  <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// i18n — TRANSLATION DICTIONARY
+// ─────────────────────────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    splashSkip:       'Click anywhere to skip',
+    logoBadge:        'PART SEARCH',
+    introLabel:       '// ASSET PROTECTION PART SEARCH',
+    tabPart:          'PART NUMBER',
+    tabVin:           'VIN / MODEL',
+    tabEquip:         'EQUIPMENT',
+    lblPart:          'Part number',
+    phPart:           'Enter part number or OEM code...',
+    lblVinModel:      'Vehicle / Model',
+    phVinModel:       'e.g. HILUX, EXCAVATOR 336...',
+    lblVinEngine:     'Engine (optional)',
+    phEngine:         'e.g. 3.0L, 1GD...',
+    lblEquipModel:    'Equipment Model',
+    phEquipModel:     'e.g. CAT 336, Komatsu PC200...',
+    lblEquipType:     'Equipment Type',
+    optAnyType:       'Any type',
+    lblEquipEngine:   'Engine (optional)',
+    btnSearch:        'SEARCH →',
+  },
+  es: {
+    splashSkip:       'Clic en cualquier lugar para saltar',
+    logoBadge:        'BUSCADOR DE PIEZAS',
+    introLabel:       '// BÚSqueda de Piezas y Filtros',
+    tabPart:          'N° DE PARTE',
+    tabVin:           'VIN / MODELO',
+    tabEquip:         'EQUIPO',
+    lblPart:          'Número de parte',
+    phPart:           'Ingresa número de parte o código OEM...',
+    lblVinModel:      'Vehículo / Modelo',
+    phVinModel:       'Ej: HILUX, EXCAVADORA 336...',
+    lblVinEngine:     'Motor (opcional)',
+    phEngine:         'Ej: 3.0L, 1GD...',
+    lblEquipModel:    'Modelo de Equipo',
+    phEquipModel:     'Ej: CAT 336, Komatsu PC200...',
+    lblEquipType:     'Tipo de Equipo',
+    optAnyType:       'Cualquier tipo',
+    lblEquipEngine:   'Motor (opcional)',
+    btnSearch:        'BUSCAR →',
+  },
+  pt: {
+    splashSkip:       'Clique em qualquer lugar para pular',
+    logoBadge:        'BUSCA DE PEÇAS',
+    introLabel:       '// Busca de Peças e Filtros',
+    tabPart:          'N° DA PEÇA',
+    tabVin:           'VIN / MODELO',
+    tabEquip:         'EQUIPAMENTO',
+    lblPart:          'Número da peça',
+    phPart:           'Digite número da peça ou código OEM...',
+    lblVinModel:      'Veículo / Modelo',
+    phVinModel:       'Ex: HILUX, ESCAVADEIRA 336...',
+    lblVinEngine:     'Motor (opcional)',
+    phEngine:         'Ex: 3.0L, 1GD...',
+    lblEquipModel:    'Modelo do Equipamento',
+    phEquipModel:     'Ex: CAT 336, Komatsu PC200...',
+    lblEquipType:     'Tipo de Equipamento',
+    optAnyType:       'Qualquer tipo',
+    lblEquipEngine:   'Motor (opcional)',
+    btnSearch:        'BUSCAR →',
+  }
+};
+
+const ES_COUNTRIES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','MX','NI','PA','PY','PE','PR','UY','VE','GQ'];
+
+async function detectLang() {
+  try {
+    const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const d = await r.json();
+    if (d.country_code === 'BR') return 'pt';
+    if (ES_COUNTRIES.includes(d.country_code)) return 'es';
+    return 'en';
+  } catch { return 'en'; }
+}
+
+function applyLang(t) {
+  // Splash
+  const splashHint = document.getElementById('splash-hint');
+  if (splashHint) splashHint.textContent = t.splashSkip;
+
+  // Header logo badge
+  const logoBadge = document.getElementById('logo-badge');
+  if (logoBadge) logoBadge.textContent = t.logoBadge;
+
+  // Intro label
+  const intro = document.getElementById('intro-label');
+  if (intro) intro.textContent = t.introLabel;
+
+  // Tabs
+  const tabPart  = document.getElementById('tab-part');
+  const tabVin   = document.getElementById('tab-vin');
+  const tabEquip = document.getElementById('tab-equip');
+  if (tabPart)  tabPart.textContent  = t.tabPart;
+  if (tabVin)   tabVin.textContent   = t.tabVin;
+  if (tabEquip) tabEquip.textContent = t.tabEquip;
+
+  // Form: Part
+  const lblPart = document.getElementById('lbl-part');
+  const inpPart = document.getElementById('inp-part');
+  const btnPart = document.getElementById('btn-search-part');
+  if (lblPart) lblPart.textContent     = t.lblPart;
+  if (inpPart) inpPart.placeholder     = t.phPart;
+  if (btnPart) btnPart.textContent     = t.btnSearch;
+
+  // Form: VIN
+  const lblVinModel  = document.getElementById('lbl-vin-model');
+  const lblVinEngine = document.getElementById('lbl-vin-engine');
+  const inpVinModel  = document.getElementById('inp-vin-model');
+  const inpVinEngine = document.getElementById('inp-vin-engine');
+  const btnVin       = document.getElementById('btn-search-vin');
+  if (lblVinModel)  lblVinModel.textContent  = t.lblVinModel;
+  if (lblVinEngine) lblVinEngine.textContent = t.lblVinEngine;
+  if (inpVinModel)  inpVinModel.placeholder  = t.phVinModel;
+  if (inpVinEngine) inpVinEngine.placeholder = t.phEngine;
+  if (btnVin)       btnVin.textContent       = t.btnSearch;
+
+  // Form: Equipment
+  const lblEquipModel  = document.getElementById('lbl-equip-model');
+  const lblEquipType   = document.getElementById('lbl-equip-type');
+  const lblEquipEngine = document.getElementById('lbl-equip-engine');
+  const inpEquipModel  = document.getElementById('inp-equip-model');
+  const inpEquipEngine = document.getElementById('inp-equip-engine');
+  const optAny         = document.getElementById('opt-any');
+  const btnEquip       = document.getElementById('btn-search-equip');
+  if (lblEquipModel)  lblEquipModel.textContent  = t.lblEquipModel;
+  if (lblEquipType)   lblEquipType.textContent   = t.lblEquipType;
+  if (lblEquipEngine) lblEquipEngine.textContent = t.lblEquipEngine;
+  if (inpEquipModel)  inpEquipModel.placeholder  = t.phEquipModel;
+  if (inpEquipEngine) inpEquipEngine.placeholder = t.phEngine;
+  if (optAny)         optAny.textContent         = t.optAnyType;
+  if (btnEquip)       btnEquip.textContent       = t.btnSearch;
+}
+
+// Run immediately
+detectLang().then(lang => {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  applyLang(t);
+  // Store for results page
+  try { sessionStorage.setItem('ef_lang', lang); } catch(_) {}
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CONFIG
+// ─────────────────────────────────────────────────────────────────────────────
+const API = ''; // Use relative path since API is on the same server
+
+// ─────────────────────────────────────────────────────────────────────────────
+// WARMUP PING — fires immediately on page load so Render wakes up before
+// the user submits a search. On free tier, cold start takes 60-90s.
+// Silent background fetch; all errors intentionally ignored.
+// ─────────────────────────────────────────────────────────────────────────────
+(function warmupServer() {
+  try {
+    fetch('/api/status', { method: 'GET', cache: 'no-store' })
+      .catch(function() {}); // ignore network errors silently
+  } catch (_) {}
+})();
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CANVAS / FLOW FIELD
+// ─────────────────────────────────────────────────────────────────────────────
+const canvas = document.getElementById('nanoflow');
+const ctx = canvas.getContext('2d');
+let W, H;
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function flowAngle(x, y, t) {
+  const nx = x / W, ny = y / H;
+  return (
+    Math.sin(nx * 3.2 + t * 0.38) * Math.cos(ny * 2.1 + t * 0.29) +
+    Math.sin(nx * 1.4 - t * 0.21) * Math.sin(ny * 2.8 + t * 0.52)
+  ) * Math.PI;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FILTER SILHOUETTE — spin-on oil filter geometry
+// ─────────────────────────────────────────────────────────────────────────────
+function buildFilterSilhouette(cx, cy, scale = 2.1) {
+  const OW = 180, OH = 300;
+  const off = document.createElement('canvas');
+  off.width = OW; off.height = OH;
+  const oc = off.getContext('2d');
+
+  const bx = 36, by = 26, bw = 108, bh = 200;
+  const mx = bx + bw / 2;
+
+  oc.fillStyle = '#fff';
+
+  // Main cylinder body
+  oc.beginPath();
+  oc.moveTo(bx + 12, by);
+  oc.lineTo(bx + bw - 12, by);
+  oc.quadraticCurveTo(bx + bw, by, bx + bw, by + 12);
+  oc.lineTo(bx + bw, by + bh);
+  oc.lineTo(bx, by + bh);
+  oc.lineTo(bx, by + 12);
+  oc.quadraticCurveTo(bx, by, bx + 12, by);
+  oc.closePath();
+  oc.fill();
+
+  // Top dome
+  oc.beginPath();
+  oc.ellipse(mx, by + 5, bw / 2 - 1, 26, 0, Math.PI, 0, true);
+  oc.fill();
+
+  // Neck
+  oc.fillRect(bx + 22, by + bh - 2, bw - 44, 22);
+
+  // Thread base
+  oc.fillRect(bx + 28, by + bh + 18, bw - 56, 22);
+
+  // Center bore (hole)
+  oc.fillStyle = '#000';
+  oc.beginPath();
+  oc.arc(mx, by + bh + 29, 9, 0, Math.PI * 2);
+  oc.fill();
+
+  // Bolt holes
+  [-20, -12, 12, 20].forEach(dx => {
+    oc.beginPath();
+    oc.arc(mx + dx, by + bh + 29, 3.5, 0, Math.PI * 2);
+    oc.fill();
+  });
+
+  // Sample points
+  const img = oc.getImageData(0, 0, OW, OH).data;
+  const pts = [];
+  for (let y = 0; y < OH; y += 3) {
+    for (let x = 0; x < OW; x += 3) {
+      const i = (y * OW + x) * 4;
+      if (img[i] > 120 && img[i + 3] > 128) {
+        pts.push({
+          x: cx + (x - OW / 2) * scale,
+          y: cy + (y - OH / 2) * scale,
+        });
+      }
+    }
+  }
+  return pts;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PARTICLE
+// ─────────────────────────────────────────────────────────────────────────────
+class Particle {
+  constructor() {
+    this.x  = Math.random() * (W || 800);
+    this.y  = Math.random() * (H || 600);
+    this.vx = (Math.random() - 0.5) * 2;
+    this.vy = (Math.random() - 0.5) * 2;
+    this.tx = this.x; this.ty = this.y;
+    this.size  = Math.random() * 1.4 + 0.35;
+    this.alpha = Math.random() * 0.5 + 0.18;
+    this.ls    = 0.02 + Math.random() * 0.02;
+  }
+
+  scatter(t) {
+    const a = flowAngle(this.x, this.y, t);
+    this.vx += Math.cos(a) * 0.13;
+    this.vy += Math.sin(a) * 0.13;
+    this.vx *= 0.91; this.vy *= 0.91;
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < -8) this.x = W + 8;
+    if (this.x > W + 8) this.x = -8;
+    if (this.y < -8) this.y = H + 8;
+    if (this.y > H + 8) this.y = -8;
+  }
+
+  converge() {
+    this.vx = this.vx * 0.77 + (this.tx - this.x) * this.ls;
+    this.vy = this.vy * 0.77 + (this.ty - this.y) * this.ls;
+    this.x += this.vx; this.y += this.vy;
+  }
+
+  draw(a) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${a ?? this.alpha})`;
+    ctx.fill();
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ANIMATION SYSTEM
+// ─────────────────────────────────────────────────────────────────────────────
+const N = 2200;
+let particles = [];
+let phase = 'scatter';
+let phaseStart = 0;
+let tick = 0;
+let rafId;
+
+const DUR = { scatter: 600, 'cf': 800, hold: 600, 'cs': 500 };
+
+function init() {
+  particles = Array.from({ length: N }, () => new Particle());
+}
+
+function assignTargets(pts) {
+  particles.forEach((p, i) => {
+    const q = pts[i % pts.length];
+    p.tx = q.x + (Math.random() - 0.5) * 1.5;
+    p.ty = q.y + (Math.random() - 0.5) * 1.5;
+  });
+}
+
+function searchBarTargets() {
+  const bw = Math.min(680, W * 0.87);
+  const bh = 54;
+  const bx = W / 2 - bw / 2, by = H / 2 - bh / 2;
+  return particles.map(() => {
+    const r = Math.random();
+    if      (r < 0.32) return { x: bx + Math.random() * bw, y: by + Math.random() * 1.5 };
+    else if (r < 0.64) return { x: bx + Math.random() * bw, y: by + bh - Math.random() * 1.5 };
+    else if (r < 0.82) return { x: bx + Math.random() * 1.5, y: by + Math.random() * bh };
+    else               return { x: bx + bw - Math.random() * 1.5, y: by + Math.random() * bh };
+  });
+}
+
+function revealUI() {
+  document.getElementById('search-panel').classList.add('vis');
+  document.getElementById('skip-btn').style.display = 'none';
+  document.getElementById('inp-part').focus();
+  localStorage.setItem('ef-ps-v', '1');
+}
+
+function ambientLoop() {
+  const amb = Array.from({ length: 800 }, () => new Particle());
+  (function loop() {
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
+    ctx.fillRect(0, 0, W, H);
+    tick += 0.004;
+    amb.forEach(p => { p.scatter(tick); p.draw(p.alpha * 0.7); });
+    rafId = requestAnimationFrame(loop);
+  })();
+}
+
+function mainLoop(now) {
+  if (!phaseStart) phaseStart = now;
+  const el = now - phaseStart;
+
+  ctx.fillStyle = 'rgba(0,0,0,0.13)';
+  ctx.fillRect(0, 0, W, H);
+  tick += 0.005;
+
+  if (phase === 'scatter') {
+    particles.forEach(p => { p.scatter(tick); p.draw(); });
+    if (el > DUR.scatter) {
+      phase = 'cf'; phaseStart = now;
+      assignTargets(buildFilterSilhouette(W / 2, H / 2 - 20));
+    }
+
+  } else if (phase === 'cf') {
+    particles.forEach(p => { p.converge(); p.draw(); });
+    if (el > DUR.cf) { phase = 'hold'; phaseStart = now; }
+
+  } else if (phase === 'hold') {
+    particles.forEach(p => {
+      p.tx += (Math.random() - 0.5) * 0.22;
+      p.ty += (Math.random() - 0.5) * 0.22;
+      p.converge(); p.draw();
+    });
+    if (el > DUR.hold) {
+      phase = 'cs'; phaseStart = now;
+      const sp = searchBarTargets();
+      particles.forEach((p, i) => { p.tx = sp[i].x; p.ty = sp[i].y; });
+    }
+
+  } else if (phase === 'cs') {
+    particles.forEach(p => { p.converge(); p.draw(); });
+    if (el > DUR.cs) {
+      cancelAnimationFrame(rafId);
+      revealUI();
+      ambientLoop();
+      return;
+    }
+  }
+
+  rafId = requestAnimationFrame(mainLoop);
+}
+
+// Boot
+if (localStorage.getItem('ef-ps-v')) {
+  document.getElementById('intro-label').classList.add('vis');
+  document.getElementById('skip-btn').style.display = 'none';
+  revealUI();
+  ambientLoop();
+} else {
+  init();
+  setTimeout(() => document.getElementById('intro-label').classList.add('vis'), 500);
+  requestAnimationFrame(mainLoop);
+  document.getElementById('skip-btn').addEventListener('click', () => {
+    cancelAnimationFrame(rafId);
+    ctx.clearRect(0, 0, W, H);
+    document.getElementById('intro-label').classList.add('vis');
+    revealUI();
+    ambientLoop();
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MODE TABS
+// ─────────────────────────────────────────────────────────────────────────────
+let currentMode = 'part';
+
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    currentMode = tab.dataset.mode;
+    document.querySelectorAll('.mode-tab').forEach(t => {
+      t.classList.toggle('active', t === tab);
+      t.setAttribute('aria-selected', t === tab);
+    });
+    document.querySelectorAll('.search-form').forEach(f => {
+      f.classList.toggle('active', f.dataset.form === currentMode);
+    });
+    clearResults();
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HINT PILLS
+// ─────────────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.hint-pill[data-fill]').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const inp = document.getElementById(pill.dataset.fill);
+    if (inp) {
+      inp.value = pill.textContent.trim();
+      inp.focus();
+      if (currentMode === 'part') debounceSearch();
+    }
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SEARCH LOGIC
+// ─────────────────────────────────────────────────────────────────────────────
+const resultsEl = document.getElementById('results');
+let debounce;
+
+function clearResults() { resultsEl.innerHTML = ''; }
+
+function setLoading(query) {
+  resultsEl.innerHTML = `<p class="status-msg"><span class="loading-dots">// SEARCHING</span><em>${query.toUpperCase()}</em></p>`;
+}
+
+function setEmpty(query) {
+  resultsEl.innerHTML = `
+    <p class="status-msg">// NO RESULTS
+      <em>No filters found for "${query.toUpperCase()}" — try a different reference or check the spelling</em>
+    </p>`;
+}
+
+function setError() {
+  resultsEl.innerHTML = `<p class="status-msg">// CONNECTION ERROR<em>Cannot reach API — verify endpoint configuration</em></p>`;
+}
+
+// ─── PART NUMBER ────────────────────────────────────────────────────────────
+async function searchPart(code) {
+  if (code.length < 2) { clearResults(); return; }
+  setLoading(code);
+  try {
+    const r = await fetch(`${API}/api/search?q=${encodeURIComponent(code)}`);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.products?.length) { setEmpty(code); return; }
+    renderResults(data.products, data.count, 'PART', code);
+  } catch { setError(); }
+}
+
+// ─── VIN / MODEL ────────────────────────────────────────────────────────────
+async function searchVin(model, engine) {
+  if (!model) return;
+  setLoading(model + (engine ? ' / ' + engine : ''));
+  try {
+    let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(model)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.filters?.length) { setEmpty(model); return; }
+    renderResults(data.filters, data.filters.length, 'VIN / MODEL', model);
+  } catch { setError(); }
+}
+
+// ─── EQUIPMENT ──────────────────────────────────────────────────────────────
+async function searchEquip(model, type, engine) {
+  if (!model) return;
+  setLoading(model);
+  try {
+    let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}`;
+    if (type)   url += `&type=${encodeURIComponent(type)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (!data.filters?.length) { setEmpty(model); return; }
+    renderResults(data.filters, data.filters.length, 'EQUIPMENT', model);
+  } catch { setError(); }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RENDER RESULTS
+// ─────────────────────────────────────────────────────────────────────────────
+function fmtRefs(arr, max = 8) {
+  if (!arr?.length) return null;
+  return arr.slice(0, max);
+}
+
+function renderCard(p) {
+  const sku  = p.elimfilters_sku || p.sku || '—';
+  const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
+
+  const specs = [
+    p.height_mm          && ['HEIGHT',     p.height_mm + ' mm'],
+    p.outer_diameter_mm  && ['OD',          p.outer_diameter_mm + ' mm'],
+    p.gasket_od_mm       && ['GASKET OD',   p.gasket_od_mm + ' mm'],
+    p.thread_size        && ['THREAD',      p.thread_size],
+    p.micron_rating      && ['MICRON',      p.micron_rating + ' µm'],
+    p.nominal_efficiency && ['EFFICIENCY',  p.nominal_efficiency + '%'],
+    p.burst_pressure_psi && ['BURST',       p.burst_pressure_psi + ' psi'],
+    p.collapse_pressure_psi && ['COLLAPSE', p.collapse_pressure_psi + ' psi'],
+    p.iso_test_method    && ['ISO METHOD',  p.iso_test_method],
+  ].filter(Boolean);
+
+  const oem  = fmtRefs(p.oem_codes);
+  const comp = fmtRefs(p.competitor_codes);
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 8) : [];
+
+  return `
+    <div class="result-card">
+      <div class="card-top">
+        <div class="card-left">
+          <span class="card-sku">${sku}</span>
+          ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
+        </div>
+        <div class="card-tags">
+          ${p.filter_type     ? `<span class="ctag">${p.filter_type}</span>`     : ''}
+          ${p.filter_subtype  ? `<span class="ctag">${p.filter_subtype}</span>`  : ''}
+          ${p.installation_type ? `<span class="ctag">${p.installation_type}</span>` : ''}
+          ${p.duty            ? `<span class="ctag duty">${p.duty.toUpperCase()}</span>` : ''}
+          ${p.technology      ? `<span class="ctag tech">${p.technology}</span>` : ''}
+        </div>
+      </div>
+
+      ${p.description ? `<p class="card-desc">${p.description}</p>` : ''}
+
+      ${specs.length ? `
+        <div class="card-specs">
+          ${specs.map(([l, v]) => `
+            <div class="spec">
+              <span class="spec-l">${l}</span>
+              <span class="spec-v">${v}</span>
+            </div>`).join('')}
+        </div>` : ''}
+
+      ${(oem?.length || comp?.length) ? `
+        <div class="card-refs">
+          ${oem?.length ? `
+            <p class="ref-line">
+              <span class="ref-brand">OEM —</span>
+              ${oem.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+            </p>` : ''}
+          ${comp?.length ? `
+            <p class="ref-line">
+              <span class="ref-brand">CROSS —</span>
+              ${comp.map(r => `<span>${r.manufacturer ? r.manufacturer + ' ' : ''}${r.code || r}</span>`).join(' · ')}
+            </p>` : ''}
+        </div>` : ''}
+
+      ${apps.length ? `
+        <div class="card-equipment">
+          <p class="equip-label">Equipment Applications</p>
+          <div class="equip-list">
+            ${apps.map(a => `<span class="equip-pill">${typeof a === 'object' ? (a.model || JSON.stringify(a)) : a}</span>`).join('')}
+          </div>
+        </div>` : ''}
+    </div>`;
+}
+
+function renderResults(items, count, mode, query) {
+  resultsEl.innerHTML = `
+    <div class="results-header">
+      <span class="results-count">// ${count} RESULT${count !== 1 ? 'S' : ''} — "${query.toUpperCase()}"</span>
+      <span class="results-mode">${mode}</span>
+    </div>
+    ${items.map(renderCard).join('')}`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FORM SUBMIT HANDLERS — redirect to results.html
+// ─────────────────────────────────────────────────────────────────────────────
+document.querySelector('[data-form="part"]').addEventListener('submit', e => {
+  e.preventDefault();
+  const q = document.getElementById('inp-part').value.trim();
+  if (q.length >= 2) {
+    window.location.href = `results.html?q=${encodeURIComponent(q)}&mode=part`;
+  }
+});
+
+document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
+  e.preventDefault();
+  const model = document.getElementById('inp-vin-model').value.trim();
+  const engine = document.getElementById('inp-vin-engine').value.trim();
+  if (model) {
+    let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    window.location.href = url;
+  }
+});
+
+document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
+  e.preventDefault();
+  const model = document.getElementById('inp-equip-model').value.trim();
+  const type = document.getElementById('inp-equip-type').value;
+  const engine = document.getElementById('inp-equip-engine').value.trim();
+  if (model) {
+    let url = `results.html?mode=equip&model=${encodeURIComponent(model)}`;
+    if (type) url += `&type=${encodeURIComponent(type)}`;
+    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    window.location.href = url;
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CINEMATIC SPLASH SCREEN (NETFLIX MODE)
+// ─────────────────────────────────────────────────────────────────────────────
+(function initSplash() {
+  const splashEl = document.getElementById('cinematic-splash');
+  splashEl.style.display = 'flex';
+  const cvs = document.getElementById('splash-canvas');
+  const ctx = cvs.getContext('2d', { willReadFrequently: true });
+  
+  const isMobile = window.innerWidth < 768;
+  const particleSpacing = isMobile ? 3 : 2; // Más espaciado en móvil para no sobrecargar
+  const mouseRadius = isMobile ? 80 : 120;
+  let particlesArray = [];
+  let mouse = { x: null, y: null, radius: mouseRadius };
+  
+  splashEl.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  splashEl.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+  // Soporte táctil en móvil
+  splashEl.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }, { passive: true });
+  
+  function resizeSplash() {
+    // clientWidth/Height es más preciso en móvil (ignora la barra del navegador)
+    cvs.width = document.documentElement.clientWidth;
+    cvs.height = document.documentElement.clientHeight;
+  }
+  window.addEventListener('resize', resizeSplash);
+  resizeSplash();
+
+  const imageUrls = ['/e.png'];
+  let images = [];
+  let imageTargets = [];
+  let loaded = 0;
+  let animFrameId = null;
+  let sequenceTimeouts = [];
+
+  imageUrls.forEach((src, index) => {
+    let img = new Image();
+    img.src = src;
+    img.onload = () => {
+      images[index] = img;
+      loaded++;
+      if (loaded === imageUrls.length) startSequence();
+    };
+    img.onerror = () => {
+      // Si falla una imagen, ocultar splash y abortar
+      endSplash();
+    };
+  });
+
+  function getTargetsFromImage(img, isSolidBlackBackground) {
+    let targets = [];
+    // Móvil: 98% del ancho (+15%). Escritorio: 50% del ancho
+    const maxFraction = isMobile ? 0.98 : 0.50;
+    const imgW = Math.min(img.width, cvs.width * maxFraction);
+    const scale = imgW / img.width;
+    const imgH = img.height * scale;
+    const startX = (cvs.width - imgW) / 2;
+    const startY = (cvs.height - imgH) / 2;
+
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    ctx.drawImage(img, startX, startY, imgW, imgH);
+    const imageData = ctx.getImageData(0, 0, cvs.width, cvs.height);
+    const data = imageData.data;
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+    for (let y = 0; y < imageData.height; y += particleSpacing) {
+      for (let x = 0; x < imageData.width; x += particleSpacing) {
+        const index = (y * imageData.width + x) * 4;
+        const alpha = data[index + 3];
+        if (alpha > 128) {
+          const red = data[index], green = data[index + 1], blue = data[index + 2];
+          if (isSolidBlackBackground) {
+            if (red > 20 || green > 20 || blue > 20) targets.push({ x, y, color: `rgb(${red}, ${green}, ${blue})` });
+          } else {
+            targets.push({ x, y, color: `rgb(${red}, ${green}, ${blue})` });
+          }
+        }
+      }
+    }
+    return targets;
+  }
+
+  class Particle {
+    constructor(target) {
+      // Empiezan desde los bordes de la pantalla, no desde el doble del ancho
+      const side = Math.floor(Math.random() * 4);
+      if (side === 0) { this.x = Math.random() * cvs.width; this.y = -50; }
+      else if (side === 1) { this.x = cvs.width + 50; this.y = Math.random() * cvs.height; }
+      else if (side === 2) { this.x = Math.random() * cvs.width; this.y = cvs.height + 50; }
+      else { this.x = -50; this.y = Math.random() * cvs.height; }
+      this.baseX = target.x;
+      this.baseY = target.y;
+      this.color = target.color;
+      this.size = isMobile ? 1.2 : 0.8;
+      this.density = (Math.random() * 40) + 5;
+      this.active = true;
+    }
+    draw() {
+      if (!this.active) return;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fill();
+    }
+    update() {
+      if (!this.active) return;
+      let dx = mouse.x - this.x;
+      let dy = mouse.y - this.y;
+      let distance = Math.sqrt(dx*dx + dy*dy);
+      
+      if (distance < mouse.radius) {
+        this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
+        this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
+      } else {
+        // Ensamble rápido: divisor 8 = forma el logo en ~2s
+        const returnSpeed = isMobile ? 10 : 8;
+        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
+        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
+      }
+      const jitter = isMobile ? 0.4 : 0.8;
+      this.x += (Math.random() - 0.5) * jitter;
+      this.y += (Math.random() - 0.5) * jitter;
+    }
+  }
+
+  function morphTo(newTargets) {
+    if (newTargets.length > particlesArray.length) {
+      let diff = newTargets.length - particlesArray.length;
+      for (let i = 0; i < diff; i++) {
+        let p = new Particle(newTargets[particlesArray.length + i]);
+        p.x = Math.random() * cvs.width; p.y = cvs.height + 10;
+        particlesArray.push(p);
+      }
+    } else if (newTargets.length < particlesArray.length) {
+      for (let i = newTargets.length; i < particlesArray.length; i++) {
+        particlesArray[i].baseX = Math.random() * cvs.width * 2 - cvs.width/2;
+        particlesArray[i].baseY = cvs.height + 500; 
+        particlesArray[i].active = false;
+      }
+    }
+    for (let i = 0; i < newTargets.length; i++) {
+      particlesArray[i].baseX = newTargets[i].x;
+      particlesArray[i].baseY = newTargets[i].y;
+      particlesArray[i].color = newTargets[i].color;
+      particlesArray[i].active = true;
+    }
+  }
+
+  function dissolveAll() {
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].baseX = Math.random() * cvs.width * 2 - cvs.width/2;
+      particlesArray[i].baseY = cvs.height + 500;
+    }
+  }
+
+  function startSequence() {
+    images.forEach((img, i) => imageTargets[i] = getTargetsFromImage(img, i === 0));
+    if(imageTargets[0].length === 0) { endSplash(); return; }
+
+    particlesArray = imageTargets[0].map(t => new Particle(t));
+    animateSplash();
+
+    // 2s E → disolver
+    sequenceTimeouts.push(setTimeout(() => {
+      dissolveAll();
+    }, 2000));
+
+    // Fin del splash en 3s
+    sequenceTimeouts.push(setTimeout(() => {
+      endSplash();
+    }, 3000));
+  }
+
+  function animateSplash() {
+    animFrameId = requestAnimationFrame(animateSplash);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].draw();
+      particlesArray[i].update();
+    }
+  }
+
+  function endSplash() {
+    splashEl.style.opacity = '0';
+    sequenceTimeouts.forEach(clearTimeout);
+    setTimeout(() => {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      splashEl.style.display = 'none';
+      window.removeEventListener('resize', resizeSplash);
+    }, 1000);
+  }
+
+  // Click to skip
+  splashEl.addEventListener('click', endSplash);
+
+})();
+
+</script>
+
+</body>
+</html>

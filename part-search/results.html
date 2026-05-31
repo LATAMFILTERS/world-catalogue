@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Search Results</title>
+  <meta name="description" content="ELIMFILTERS filter search results — cross-reference OEM and competitor codes.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --bg: #000000;
+      --fg: #ffffff;
+      --surface: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.1);
+      --muted: rgba(255,255,255,0.6);
+    }
+
+    html, body {
+      width: 100%; min-height: 100vh;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-logo .logo-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      padding: 0.15rem 0.4rem;
+    }
+
+    .search-summary {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem;
+      text-align: center;
+    }
+    .search-summary-mode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+    .search-summary-main {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--fg);
+    }
+    .search-summary-main strong {
+      color: var(--y);
+    }
+
+    .header-back {
+      margin-left: auto;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+    .header-back:hover { color: var(--y); }
+
+    /* ─── RESULTS META ─── */
+    .results-meta {
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
+      max-width: 1600px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.5s ease 0.1s forwards;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-query {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 500;
+      color: var(--y);
+      letter-spacing: 0.05em;
+    }
+
+    .meta-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .meta-mode {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--y);
+      border: 1px solid rgba(255,241,45,0.3);
+      border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .meta-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--y) 0%, rgba(255,241,45,0.1) 100%);
+      margin-top: 1.2rem;
+    }
+
+    /* ─── PRODUCT GRID ─── */
+    .products {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    /* ─── MATCH BADGE ─── */
+    .match-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--y);
+      background: rgba(255,241,45,0.1);
+      border: 1px solid rgba(255,241,45,0.3);
+      border-radius: 3px;
+      padding: 0.22rem 0.6rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .match-badge::before {
+      content: '⌕';
+      font-size: 0.75em;
+      opacity: 0.7;
+    }
+
+    /* ─── PRODUCT CARD ─── */
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--y);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .product-card:hover { border-color: rgba(255,241,45,0.25); }
+    .product-card:hover::before { opacity: 1; }
+
+    .card-inner {
+      padding: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    /* Card Header */
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .card-identity { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .card-sku {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: var(--y);
+      letter-spacing: 0.06em;
+    }
+
+    .card-base {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .badge-type {
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: rgba(255,255,255,0.05);
+    }
+    .badge-tech {
+      border: 1px solid rgba(255,241,45,0.3);
+      color: var(--y);
+      background: rgba(255,241,45,0.08);
+    }
+    .badge-duty {
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Card Description */
+    .card-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Specs Grid */
+    .specs-section {
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .specs-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem 1.5rem;
+    }
+
+    .spec-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .spec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      color: var(--y);
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--fg);
+      white-space: pre-line;
+    }
+
+    /* Cross References */
+    .refs-section {
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .refs-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .refs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem 1rem;
+    }
+
+    .ref-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      transition: border-color 0.2s, color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
+    }
+    .ref-chip:hover {
+      border-color: rgba(255,241,45,0.3);
+      color: var(--y);
+    }
+    .ref-chip .ref-brand {
+      color: var(--y);
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    /* Equipment Applications */
+    .equip-section {
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+    }
+
+    .equip-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.5rem 1rem;
+    }
+
+    .equip-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* 3-Column layout container */
+    .columns-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .columns-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Remove the separate top borders when inside the 3-column container */
+    .columns-container > div {
+      border-top: none;
+      padding-top: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Set maximum heights with scrolls inside columns to maintain visual balance */
+    .columns-container .refs-grid,
+    .columns-container .equip-grid {
+      display: flex;
+      flex-direction: column;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      gap: 0.4rem;
+    }
+
+    /* Cyberpunk Scrollbar styling */
+    .columns-container .refs-grid::-webkit-scrollbar,
+    .columns-container .equip-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-track,
+    .columns-container .equip-grid::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-thumb,
+    .columns-container .equip-grid::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+    .columns-container .refs-grid::-webkit-scrollbar-thumb:hover,
+    .columns-container .equip-grid::-webkit-scrollbar-thumb:hover {
+      background: var(--y);
+    }
+
+    /* ─── STATUS MESSAGES ─── */
+    .status-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 6rem clamp(1rem, 4vw, 3rem);
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.1s forwards;
+    }
+
+    .status-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.5;
+    }
+
+    .status-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: var(--fg);
+      margin-bottom: 0.2rem;
+    }
+
+    .status-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .status-action {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: #000;
+      background: var(--y);
+      border: none;
+      border-radius: 3px;
+      padding: 0.7rem 1.8rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .status-action:hover { background: #ffe800; }
+
+    /* ─── LOADING ANIMATION ─── */
+    .scan-line {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--y) 50%, transparent 100%);
+      z-index: 200;
+      animation: scanAcross 1.2s ease-in-out;
+      opacity: 0;
+    }
+
+    @keyframes scanAcross {
+      0%   { transform: translateX(-100%); opacity: 1; }
+      80%  { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* ─── LOADING DOTS ─── */
+    .loading-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 6rem clamp(1rem, 4vw, 3rem);
+      text-align: center;
+    }
+
+    .loading-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .loading-bar {
+      width: 200px;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      margin: 1.5rem auto 0;
+      overflow: hidden;
+    }
+    .loading-bar-fill {
+      height: 100%;
+      width: 40%;
+      background: var(--y);
+      border-radius: 1px;
+      animation: loadSlide 1s ease-in-out infinite;
+    }
+
+    @keyframes loadSlide {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(350%); }
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      margin-top: 2rem;
+    }
+    .footer-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.15);
+    }
+    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
+    .footer-line a:hover { color: var(--y); }
+
+    /* ─── KLEO BADGE ─── */
+    #kleo-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 3vw;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      text-decoration: none;
+      opacity: 0.45;
+      transition: opacity 0.3s ease;
+    }
+    #kleo-badge:hover { opacity: 0.85; }
+    #kleo-badge img {
+      height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+    #kleo-badge .kleo-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.42rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .header { height: 60px; gap: 0.75rem; }
+      .header-logo img { height: 32px; }
+      .header-back { display: none; }
+      .header-search { max-width: none; }
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .card-header { flex-direction: column; }
+      .specs-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scan-line"></div>
+
+<!-- ─── HEADER ─── -->
+<header class="header">
+  <a href="https://elimfilters.com" class="header-logo" aria-label="ELIMFILTERS homepage">
+    <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo">
+    <span class="logo-badge">PART SEARCH</span>
+  </a>
+
+  <div class="search-summary" id="search-summary">
+    <span class="search-summary-mode">PART NUMBER</span>
+    <span class="search-summary-main"><strong>${query}</strong></span>
+  </div>
+
+  <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
+</header>
+
+<!-- ─── KLEO BADGE ─── -->
+<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
+  <img src="/Leo-fn.avif" alt="KLEO Technology">
+  <span class="kleo-label">Powered by KLEO</span>
+</a>
+
+<!-- ─── MAIN CONTENT ─── -->
+<div id="app"></div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <p class="footer-line">
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
+  </p>
+  <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// i18n — TRANSLATION DICTIONARY (results page)
+// ─────────────────────────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    searchPlaceholder: 'Search again...',
+    backToSearch:      '← BACK TO SEARCH',
+    loading:           'SEARCHING',
+    noResultsTitle:    'NO RESULTS FOUND',
+    noResultsDesc:     'No filters match "%s" — verify the reference or try a different search term.',
+    newSearch:         'NEW SEARCH',
+    errorTitle:        'CONNECTION ERROR',
+    errorDesc:         'Could not reach the server. Check your connection and try again.',
+    retry:             'RETRY',
+    labelResults:      'RESULT',
+    labelResults_pl:   'RESULTS',
+    modePartNumber:    'PART NUMBER',
+    modeVin:           'VIN / MODEL',
+    modeEquip:         'EQUIPMENT',
+    specsTitle:        'Technical Specifications',
+    oemTitle:          'OEM Cross-References',
+    compTitle:         'Competitor Cross-References',
+    equipTitle:        'Equipment Applications',
+    decodedLabel:      'DECODED',
+    decodingVin:       'DECODING VIN',
+  },
+  es: {
+    searchPlaceholder: 'Buscar de nuevo...',
+    backToSearch:      '← VOLVER AL BUSCADOR',
+    loading:           'BUSCANDO',
+    noResultsTitle:    'SIN RESULTADOS',
+    noResultsDesc:     'Ningún filtro coincide con "%s" — verifica la referencia o intenta otro término.',
+    newSearch:         'NUEVA BÚSqueda',
+    errorTitle:        'ERROR DE CONEXIóN',
+    errorDesc:         'No se pudo conectar al servidor. Verifica tu conexión e intenta de nuevo.',
+    retry:             'REINTENTAR',
+    labelResults:      'RESULTADO',
+    labelResults_pl:   'RESULTADOS',
+    modePartNumber:    'N° DE PARTE',
+    modeVin:           'VIN / MODELO',
+    modeEquip:         'EQUIPO',
+    specsTitle:        'Especificaciones Técnicas',
+    oemTitle:          'Referencias OEM',
+    compTitle:         'Referencias de Competencia',
+    equipTitle:        'Aplicaciones de Equipo',
+    decodedLabel:      'DECODIFICADO',
+    decodingVin:       'DECODIFICANDO VIN',
+  },
+  pt: {
+    searchPlaceholder: 'Buscar novamente...',
+    backToSearch:      '← VOLTAR AO BUSCADOR',
+    loading:           'BUSCANDO',
+    noResultsTitle:    'SEM RESULTADOS',
+    noResultsDesc:     'Nenhum filtro corresponde a "%s" — verifique a referência ou tente outro termo.',
+    newSearch:         'NOVA BUSCA',
+    errorTitle:        'ERRO DE CONEXÃO',
+    errorDesc:         'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',
+    retry:             'TENTAR NOVAMENTE',
+    labelResults:      'RESULTADO',
+    labelResults_pl:   'RESULTADOS',
+    modePartNumber:    'N° DA PEÇA',
+    modeVin:           'VIN / MODELO',
+    modeEquip:         'EQUIPAMENTO',
+    specsTitle:        'Especificações Técnicas',
+    oemTitle:          'Referências OEM',
+    compTitle:         'Referências de Concorrentes',
+    equipTitle:        'Aplicações de Equipamento',
+    decodedLabel:      'DECODIFICADO',
+    decodingVin:       'DECODIFICANDO VIN',
+  }
+};
+
+const ES_COUNTRIES = ['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','MX','NI','PA','PY','PE','PR','UY','VE','GQ'];
+
+async function detectLang() {
+  // Try sessionStorage first (set by index.html)
+  try {
+    const stored = sessionStorage.getItem('ef_lang');
+    if (stored && TRANSLATIONS[stored]) return stored;
+  } catch(_) {}
+  // Fallback: detect via IP
+  try {
+    const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const d = await r.json();
+    if (d.country_code === 'BR') return 'pt';
+    if (ES_COUNTRIES.includes(d.country_code)) return 'es';
+    return 'en';
+  } catch { return 'en'; }
+}
+
+let T = TRANSLATIONS.en; // default, overwritten after detection
+
+detectLang().then(lang => {
+  T = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const backBtn = document.querySelector('.header-back');
+  if (backBtn) backBtn.textContent = T.backToSearch;
+  executeSearch();
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+const API = '';
+const app = document.getElementById('app');
+
+// ─── Parse URL parameters ───
+const params = new URLSearchParams(window.location.search);
+const query = (params.get('q') || '').trim();
+const mode  = params.get('mode') || 'part';
+const model  = params.get('model') || '';
+const engine = params.get('engine') || '';
+const eqType = params.get('type') || '';
+
+// Init header summary with query (count updated after search)
+(function() {
+  const el = document.getElementById('search-summary');
+  if (el && (query || model)) {
+    el.innerHTML = `
+      <span class="search-summary-mode">PART NUMBER</span>
+      <span class="search-summary-main"><strong>${(query || model).toUpperCase()}</strong></span>`;
+  }
+})();
+
+function showLoading(term) {
+  app.innerHTML = `
+    <div class="loading-container">
+      <p class="loading-text">${T.loading}: ${(term || '').toUpperCase()}</p>
+      <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>`;
+}
+
+// ─── Warmup timer: shows message after 8s if server is cold-starting ───
+function startWarmupTimer(term) {
+  return setTimeout(() => {
+    const msg = document.getElementById('loading-msg');
+    if (msg) {
+      msg.innerHTML = `SEARCHING: ${(term || '').toUpperCase()}<br>
+        <span style="font-size:0.7rem;color:rgba(255,241,45,0.8);letter-spacing:0.06em;display:block;margin-top:0.6rem">
+          SERVER WARMING UP — FREE TIER · PLEASE WAIT ~60s
+        </span>`;
+    }
+  }, 8000);
+}
+
+// ─── Render Empty ───
+function showEmpty(term) {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⌕</div>
+      <p class="status-title">${T.noResultsTitle}</p>
+      <p class="status-desc">${T.noResultsDesc.replace('%s', (term || '').toUpperCase())}</p>
+      <div style="
+        margin: 1.5rem auto 0;
+        max-width: 480px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 6px;
+        padding: 1.25rem 1.5rem;
+        text-align: left;
+      ">
+        <p style="
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.14em;
+          color: rgba(255,255,255,0.25);
+          text-transform: uppercase;
+          margin-bottom: 0.8rem;
+        ">SEARCH FORMAT GUIDE</p>
+        <div style="display: flex; flex-direction: column; gap: 0.55rem;">
+          ${[
+            ['ELIMFILTERS SKU', 'EL82100, EH60949, EA22526'],
+            ['DONALDSON BASE', 'P552100, DBH0949, DBL3998'],
+            ['CAT OEM CODE', '1R-0739, 4M-9690, 6I-0273'],
+            ['FLEETGUARD', 'LF3349, AF25453, HF6553'],
+            ['BALDWIN', 'BT267, PA2870, RS3542'],
+          ].map(([label, ex]) => `
+            <div style="display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;">
+              <span style="
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.55rem;
+                letter-spacing: 0.1em;
+                color: rgba(255,241,45,0.45);
+                flex-shrink: 0;
+                min-width: 140px;
+              ">${label}</span>
+              <span style="
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.7rem;
+                color: rgba(255,255,255,0.45);
+              ">${ex}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+      <a href="/index.html" class="status-action" style="margin-top: 1.75rem;">${T.newSearch}</a>
+    </div>`;
+}
+
+// ─── Render Error ───
+function showError() {
+  app.innerHTML = `
+    <div class="status-container">
+      <div class="status-icon">⚠</div>
+      <p class="status-title">${T.errorTitle}</p>
+      <p class="status-desc">${T.errorDesc}</p>
+      <a href="/index.html" class="status-action">${T.retry}</a>
+    </div>`;
+}
+
+// ─── HTML escape (XSS prevention) ───────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+}
+
+// ─── Parse description (may come as JSON string from API) ───
+function parseDesc(val) {
+  if (!val) return null;
+  const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+  // Already a parsed object (JSONB from API)
+  if (typeof val === 'object' && !Array.isArray(val)) {
+    return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+  }
+  if (typeof val !== 'string') return String(val);
+  const trimmed = val.trim();
+  if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        return parsed[lang] || parsed.en || parsed.es || Object.values(parsed)[0] || val;
+      }
+    } catch(e) {}
+  }
+  return val;
+}
+
+// ─── Format Refs ───
+function normalizeBrand(b) {
+  if (!b) return '';
+  // Normalize brand name variations (AC-DELCO → AC DELCO, BIG-A → BIG A, etc.)
+  return b.trim().replace(/-/g, ' ').replace(/\s+/g, ' ').toUpperCase();
+}
+
+function formatRefs(arr, max = Infinity) {
+  if (!arr || !arr.length) return [];
+  const seen = new Set();
+  return arr.slice(0, max).map(r => {
+    if (typeof r === 'string') return { brand: '', code: r };
+    const rawBrand = r.manufacturer || '';
+    const brand = rawBrand.toUpperCase() === 'UNKNOWN' ? '' : rawBrand;
+    // URL-decode codes (scraper sometimes stores %2F etc.)
+    let code = r.code || r.partNumber || '';
+    try { code = decodeURIComponent(code); } catch(_) {}
+    return { brand, code };
+  }).filter(r => {
+    if (!r.code) return false;
+    // Deduplicate by normalized brand+code
+    const key = normalizeBrand(r.brand) + '|' + r.code.toUpperCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+// ─── Render Spec Item ───
+function specHTML(label, value) {
+  if (!value) return '';
+  return `<div class="spec-item"><span class="spec-label">${label}</span><span class="spec-value">${value}</span></div>`;
+}
+
+// ─── Render Product Card ───
+function renderCard(p, index) {
+  const sku = p.elimfilters_sku || p.sku || '—';
+
+  function dimFmt(mm) {
+    if (!mm) return null;
+    const inches = (mm / 25.4).toFixed(2);
+    const mmRound = Math.round(mm);
+    return inches + ' inch\n' + mmRound + ' mm';
+  }
+  function mediaLabel(val) {
+    if (!val) return null;
+    const v = String(val).toLowerCase().trim();
+    if (v === 'cellulose') return 'Híbrida';
+    return val;
+  }
+  function psiFmt(psi) {
+    if (!psi) return null;
+    const bar = (psi * 0.0689476).toFixed(1);
+    return psi + ' psi (' + bar + ' bar)';
+  }
+  const nomEff  = p.nominal_efficiency ? String(p.nominal_efficiency) : null;
+  const nomHasMicron = nomEff && nomEff.toLowerCase().includes('micron');
+  const validMicron = p.micron_rating && String(p.micron_rating).toLowerCase() !== 'n/a'
+    ? p.micron_rating : null;
+  const micronVal = validMicron
+    ? validMicron + ' micron'
+    : (nomHasMicron ? nomEff : null);
+  const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
+  const effLabel = pctStr ? 'Efficiency ' + pctStr + '%' : 'Efficiency';
+
+  const specs = [
+    specHTML('Outer Diameter', dimFmt(p.outer_diameter_mm)),
+    specHTML('Thread Size',    p.thread_size),
+    specHTML('Length',         dimFmt(p.height_mm)),
+    specHTML('Gasket OD',      dimFmt(p.gasket_od_mm)),
+    specHTML('Gasket ID',      dimFmt(p.gasket_id_mm)),
+    specHTML(effLabel,         micronVal),
+    specHTML('Efficiency Test Std', p.iso_test_method),
+    specHTML('Media Type',     mediaLabel(p.filter_subtype) || null),
+    specHTML('Collapse Burst', psiFmt(p.burst_pressure_psi)),
+    specHTML('Style',          p.installation_type || null),
+  ].filter(Boolean);
+
+  const oem  = formatRefs(p.oem_codes);
+  const comp = formatRefs(p.competitor_codes);
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
+
+  return `
+    <article class="product-card" style="animation-delay: ${0.08 * index}s">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-identity">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERS®</span>
+            <span class="card-sku">${sku}</span>
+          </div>
+          <div class="card-badges">
+            ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
+            ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
+            ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
+            ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
+            ${p.technology       ? `<span class="badge badge-tech">${esc(p.technology)}</span>` : ''}
+          </div>
+        </div>
+
+        ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
+
+        ${specs.length ? `
+          <div class="specs-section">
+            <p class="specs-title">${T.specsTitle}</p>
+            <div class="specs-grid">${specs.join('')}</div>
+          </div>` : ''}
+
+        ${(oem.length || comp.length || apps.length) ? `
+          <div class="columns-container">
+            <!-- OEM Column -->
+            <div>
+              <p class="refs-title">${T.oemTitle}</p>
+              <div class="refs-grid">
+                ${oem.length 
+                  ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No OEM cross-references</span>`
+                }
+              </div>
+            </div>
+
+            <!-- Competitor Column -->
+            <div>
+              <p class="refs-title">${T.compTitle}</p>
+              <div class="refs-grid">
+                ${comp.length 
+                  ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No competitor cross-references</span>`
+                }
+              </div>
+            </div>
+
+            <!-- Equipment Column -->
+            <div>
+              <p class="equip-title">${T.equipTitle}</p>
+              <div class="equip-grid">
+                ${apps.length 
+                  ? apps.map(a => {
+                      if (typeof a === 'object') {
+                        const fullName = a.equipment || a.model || a.machine || '';
+                        let eng = a.engine || '';
+                        if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                        const yearType = [a.year, a.type].filter(Boolean).join(' · ');
+                        if (!fullName) return '';
+                        
+                        // Split first word as manufacturer brand
+                        const spaceIdx = fullName.indexOf(' ');
+                        let brandSpan = '<span></span>';
+                        let restName = fullName;
+                        if (spaceIdx > 0) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(fullName.substring(0, spaceIdx))}</span>`;
+                          restName = esc(fullName.substring(spaceIdx + 1));
+                        } else if (fullName) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(fullName)}</span>`;
+                          restName = '';
+                        }
+
+                        const extraInfo = [eng, yearType].filter(Boolean).join(' · ');
+                        return `<span class="equip-chip">${brandSpan}<span>${restName}${extraInfo ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${esc(extraInfo)}]</span>` : ''}</span></span>`;
+                      }
+                      
+                      // Fallback for simple string application
+                      const simpleStr = String(a);
+                      const spaceIdx = simpleStr.indexOf(' ');
+                      let brandSpan = '<span></span>';
+                      let restName = simpleStr;
+                      if (spaceIdx > 0) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(simpleStr.substring(0, spaceIdx))}</span>`;
+                        restName = esc(simpleStr.substring(spaceIdx + 1));
+                      } else if (simpleStr) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${esc(simpleStr)}</span>`;
+                        restName = '';
+                      }
+                      return `<span class="equip-chip">${brandSpan}<span>${restName}</span></span>`;
+                    }).join('') 
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No equipment applications</span>`
+                }
+              </div>
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    </article>`;
+}
+
+// ─── Render Results ───
+function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null) {
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+
+  // Update header summary with real count
+  const summaryEl = document.getElementById('search-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <span class="search-summary-mode">${count} ${count !== 1 ? T.labelResults_pl : T.labelResults} · ${searchMode}</span>
+      <span class="search-summary-main"><strong>${searchTerm.toUpperCase()}</strong></span>`;
+  }
+
+  app.innerHTML = `
+    <div class="products">
+      ${items.map((p, i) => renderCard(p, i)).join('')}
+    </div>`;
+}
+
+// ─── SEARCH EXECUTION ───
+async function decodeNHTSA(vin) {
+  try {
+    const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.Results) return null;
+    
+    let make = '', mod = '', disp = '';
+    for (const r of data.Results) {
+      if (r.Variable === 'Make' && r.Value) make = r.Value;
+      if (r.Variable === 'Model' && r.Value) mod = r.Value;
+      if (r.Variable === 'Displacement (L)' && r.Value) disp = r.Value;
+    }
+    if (!make || !mod) return null;
+    return { make, model: mod, disp: disp ? disp + 'L' : '' };
+  } catch (e) {
+    return null;
+  }
+}
+
+async function executeSearch() {
+  if (mode === 'part' && query) {
+    showLoading(query);
+    const warmupTimer = startWarmupTimer(query);
+    try {
+      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}`);
+      clearTimeout(warmupTimer);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.products?.length) { showEmpty(query); return; }
+      renderResults(data.products, data.count, 'PART NUMBER', query, null, data.total_catalog);
+    } catch { clearTimeout(warmupTimer); showError(); }
+
+  } else if (mode === 'vin' && model) {
+    let localModel = model;
+    let localEngine = engine;
+    let decodedText = null;
+
+    if (/^[A-Z0-9]{17}$/i.test(model)) {
+      showLoading(`DECODING VIN: ${model}...`);
+      const decoded = await decodeNHTSA(model);
+      if (decoded) {
+        localModel = `${decoded.make} ${decoded.model}`.trim();
+        localEngine = decoded.disp || engine;
+        decodedText = `${decoded.make} ${decoded.model} ${decoded.disp}`.trim().toUpperCase();
+      }
+    }
+
+    showLoading(localModel);
+    try {
+      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(localModel)}`;
+      if (localEngine) url += `&engine=${encodeURIComponent(localEngine)}`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.filters?.length) { showEmpty(model); return; }
+      renderResults(data.filters, data.filters.length, 'VIN / MODEL', model, decodedText);
+    } catch { showError(); }
+
+  } else if (mode === 'equip' && model) {
+    showLoading(model);
+    try {
+      let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}`;
+      if (eqType) url += `&type=${encodeURIComponent(eqType)}`;
+      if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      if (!data.filters?.length) { showEmpty(model); return; }
+      renderResults(data.filters, data.filters.length, 'EQUIPMENT', model);
+    } catch { showError(); }
+
+  } else {
+    showEmpty(query || model || 'unknown');
+  }
+}
+
+// executeSearch() is called by detectLang().then() above — no boot call needed
+</script>
+
+</body>
+</html>
