@@ -113,7 +113,7 @@
     /* ─── RESULTS META ─── */
     .results-meta {
       padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       opacity: 0;
       transform: translateY(12px);
@@ -164,7 +164,7 @@
 
     /* ─── PRODUCT GRID ─── */
     .products {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem;
       display: flex;
@@ -402,7 +402,7 @@
 
     /* ─── STATUS MESSAGES ─── */
     .status-container {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 6rem clamp(1rem, 4vw, 3rem);
       text-align: center;
@@ -468,7 +468,7 @@
 
     /* ─── LOADING DOTS ─── */
     .loading-container {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 6rem clamp(1rem, 4vw, 3rem);
       text-align: center;
@@ -841,7 +841,7 @@ function showError() {
 }
 
 // ─── Format Refs ───
-function formatRefs(arr, max = 12) {
+function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
   return arr.slice(0, max).map(r => {
     if (typeof r === 'string') return { brand: '', code: r };
@@ -876,7 +876,7 @@ function renderCard(p, index) {
 
   const oem  = formatRefs(p.oem_codes);
   const comp = formatRefs(p.competitor_codes);
-  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 12) : [];
+  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
 
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
