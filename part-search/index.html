@@ -1274,10 +1274,9 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   window.addEventListener('resize', resizeSplash);
   resizeSplash();
 
-  const imageUrls = ['/Leo-fn.avif', '/e.png'];
+  const imageUrls = ['/e.png'];
   let images = [];
   let imageTargets = [];
-  let currentImageIndex = 0;
   let loaded = 0;
   let animFrameId = null;
   let sequenceTimeouts = [];
@@ -1404,27 +1403,21 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   }
 
   function startSequence() {
-    images.forEach((img, i) => imageTargets[i] = getTargetsFromImage(img, i === 1));
+    images.forEach((img, i) => imageTargets[i] = getTargetsFromImage(img, i === 0));
     if(imageTargets[0].length === 0) { endSplash(); return; }
 
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 4s KLEO → morph a E
-    sequenceTimeouts.push(setTimeout(() => {
-      currentImageIndex = 1;
-      morphTo(imageTargets[1]);
-    }, 4000));
-
-    // 4s E → disolver (8s total)
+    // 4s E → disolver
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
-    }, 8000));
+    }, 4000));
 
-    // Fin del splash en 9.5s
+    // Fin del splash en 5.5s
     sequenceTimeouts.push(setTimeout(() => {
       endSplash();
-    }, 9500));
+    }, 5500));
   }
 
   function animateSplash() {
