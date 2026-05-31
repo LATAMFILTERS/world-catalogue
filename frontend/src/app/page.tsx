@@ -58,34 +58,53 @@ function SplitText({ text, startDelay = 0 }: { text: string; startDelay?: number
   let charCount = 0;
 
   return (
-    <>
-      {words.map((word, wi) => {
-        const startIdx = charCount;
-        charCount += word.length + 1;
-        return (
-          <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-            {word.split('').map((char, ci) => (
-              <motion.span
-                key={ci}
-                initial={{ opacity: 0, y: 48, rotateX: -30 }}
-                animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{
-                  duration: 0.55,
-                  delay: startDelay + (startIdx + ci) * 0.028,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                style={{ display: 'inline-block' }}
-              >
-                {char}
-              </motion.span>
-            ))}
-            {wi < words.length - 1 && (
-              <span style={{ display: 'inline-block', width: '0.3em' }} />
-            )}
-          </span>
-        );
-      })}
-    </>
+    <span style={{ position: 'relative' }}>
+      {/* Visually hidden full text for translators and screen readers */}
+      <span
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0, 0, 0, 0)',
+          whiteSpace: 'nowrap',
+          borderWidth: 0,
+        }}
+      >
+        {text}
+      </span>
+      {/* Animated text hidden from translators and screen readers */}
+      <span aria-hidden="true" translate="no" className="notranslate">
+        {words.map((word, wi) => {
+          const startIdx = charCount;
+          charCount += word.length + 1;
+          return (
+            <span key={wi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              {word.split('').map((char, ci) => (
+                <motion.span
+                  key={ci}
+                  initial={{ opacity: 0, y: 48, rotateX: -30 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: startDelay + (startIdx + ci) * 0.028,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              {wi < words.length - 1 && (
+                <span style={{ display: 'inline-block', width: '0.3em' }} />
+              )}
+            </span>
+          );
+        })}
+      </span>
+    </span>
   );
 }
 
