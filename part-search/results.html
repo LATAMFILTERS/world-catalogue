@@ -346,9 +346,9 @@
     }
 
     .refs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem 1rem;
     }
 
     .ref-chip {
@@ -360,6 +360,10 @@
       border-radius: 4px;
       padding: 0.3rem 0.6rem;
       transition: border-color 0.2s, color 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
     }
     .ref-chip:hover {
       border-color: rgba(255,241,45,0.3);
@@ -367,7 +371,8 @@
     }
     .ref-chip .ref-brand {
       color: var(--y);
-      margin-right: 0.25rem;
+      font-weight: 500;
+      opacity: 0.85;
     }
 
     /* Equipment Applications */
@@ -386,9 +391,9 @@
     }
 
     .equip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.5rem 1rem;
     }
 
     .equip-chip {
@@ -398,6 +403,10 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 0.3rem 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.01);
     }
 
     /* ─── STATUS MESSAGES ─── */
@@ -907,7 +916,7 @@ function renderCard(p, index) {
           <div class="refs-section">
             <p class="refs-title">OEM Cross-References</p>
             <div class="refs-grid">
-              ${oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+              ${oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('')}
             </div>
           </div>` : ''}
 
@@ -915,7 +924,7 @@ function renderCard(p, index) {
           <div class="refs-section">
             <p class="refs-title">Competitor Cross-References</p>
             <div class="refs-grid">
-              ${comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : ''}${r.code}</span>`).join('')}
+              ${comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${r.brand}</span>` : '<span></span>'}<span class="ref-code">${r.code}</span></span>`).join('')}
             </div>
           </div>` : ''}
 
