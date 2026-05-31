@@ -1,0 +1,378 @@
+[
+  {
+    "part_number": "500FG2",
+    "sku_elimfilters": "ET95002",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Spin-On Assembly",
+      "Flow Rate": "60 GPH (227 LPH)",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Micron Rating": "2 micron",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "3/4-16 UNF (SAE J1926)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2010SM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "500FG2"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.15", "mm": "105"},
+      "length": {"in": "11.45", "mm": "291"},
+      "thread": "3/4-16 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 500FG, 3-Stage Fuel/Water Separator Assembly, 2 micron (ISO 4548-12) | Flow 60 GPH (227 LPH) | Port 3/4-16 UNF (SAE J1926) | Max 15 PSI (1.03 bar) | Weight 1.8 kg. AQUAGUARD™ three-stage process: centrifugal separation of large solids and water, coalescence of micro-droplets on conical baffle, and sub-micron filtration via Aquabloc® media — protecting precision fuel injection components from water contamination and particulate damage. Replacement element: 2010SM-OR."
+  },
+  {
+    "part_number": "500FG10",
+    "sku_elimfilters": "ET95010",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Spin-On Assembly",
+      "Flow Rate": "60 GPH (227 LPH)",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Micron Rating": "10 micron",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "3/4-16 UNF (SAE J1926)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2010TM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "500FG10"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.15", "mm": "105"},
+      "length": {"in": "11.45", "mm": "291"},
+      "thread": "3/4-16 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 500FG, 3-Stage Fuel/Water Separator Assembly, 10 micron (ISO 4548-12) | Flow 60 GPH (227 LPH) | Port 3/4-16 UNF (SAE J1926) | Max 15 PSI (1.03 bar) | Weight 1.8 kg. AQUAGUARD™ three-stage process: centrifugal separation of large solids and water, coalescence of micro-droplets on conical baffle, and filtration via Aquabloc® media — protecting precision fuel injection components. Replacement element: 2010TM-OR."
+  },
+  {
+    "part_number": "500FG30",
+    "sku_elimfilters": "ET95030",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Spin-On Assembly",
+      "Flow Rate": "60 GPH (227 LPH)",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Micron Rating": "30 micron",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "3/4-16 UNF (SAE J1926)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2010PM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "500FG30"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.15", "mm": "105"},
+      "length": {"in": "11.45", "mm": "291"},
+      "thread": "3/4-16 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 500FG, 3-Stage Fuel/Water Separator Assembly, 30 micron (ISO 4548-12) | Flow 60 GPH (227 LPH) | Port 3/4-16 UNF (SAE J1926) | Max 15 PSI (1.03 bar) | Weight 1.8 kg. AQUAGUARD™ three-stage process for primary (suction-side) filtration: centrifugal separation, coalescence, and 30-micron Aquabloc® filtration. Recommended as primary/first stage filter. Replacement element: 2010PM-OR."
+  },
+  {
+    "part_number": "900FH",
+    "sku_elimfilters": "ET90900",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Turbine Assembly",
+      "Flow Rate": "90 GPH (341 LPH)",
+      "Micron Rating": "2/10/30 micron (element dependent)",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "7/8-14 UNF (SAE J1926)",
+      "Water Bowl Capacity": "10.3 oz (305 ml)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2040SM-OR", "2040TM-OR", "2040PM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "900FH"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.5", "mm": "114"},
+      "length": {"in": "11.0", "mm": "279"},
+      "thread": "7/8-14 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 900FH, 3-Stage Fuel/Water Separator Assembly | OD 114 mm × H 279 mm | Flow 90 GPH (341 LPH) | Port 7/8-14 UNF (SAE J1926) | Water bowl 305 ml | Max 15 PSI (1.03 bar). AQUAGUARD™ triple-stage process removes water and particulate from diesel: centrifugal stage removes large contaminants, coalescence stage beads micro-droplets, Aquabloc® cartridge repels remaining water. Compatible elements: 2040S (2 mic), 2040T (10 mic), 2040P (30 mic)."
+  },
+  {
+    "part_number": "902FH",
+    "sku_elimfilters": "ET90902",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Turbine Assembly (Horizontal Bowl)",
+      "Flow Rate": "90 GPH (341 LPH)",
+      "Micron Rating": "2/10/30 micron (element dependent)",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "7/8-14 UNF (SAE J1926)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2040SM-OR", "2040TM-OR", "2040PM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "902FH"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.5", "mm": "114"},
+      "length": {"in": "11.0", "mm": "279"},
+      "thread": "7/8-14 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 902FH, 3-Stage Fuel/Water Separator Assembly (horizontal bowl variant) | OD 114 mm × H 279 mm | Flow 90 GPH (341 LPH) | Port 7/8-14 UNF (SAE J1926) | Max 15 PSI (1.03 bar). Same filtration performance as 900FH with horizontal bowl orientation for space-constrained installations. Compatible elements: 2040S (2 mic), 2040T (10 mic), 2040P (30 mic)."
+  },
+  {
+    "part_number": "1000FH",
+    "sku_elimfilters": "ET91000",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Turbine Assembly",
+      "Flow Rate": "180 GPH (681 LPH)",
+      "Micron Rating": "2/10/30 micron (element dependent)",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "7/8-14 UNF (SAE J1926)",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2020SM-OR", "2020TM-OR", "2020PM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "1000FH"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.5", "mm": "114"},
+      "length": {"in": "10.9", "mm": "277"},
+      "thread": "7/8-14 UNF (SAE J1926)"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 1000FH, Heavy-Duty 3-Stage Fuel/Water Separator Assembly | OD 114 mm × H 277 mm | Flow 180 GPH (681 LPH) | Port 7/8-14 UNF (SAE J1926) | Max 15 PSI (1.03 bar) | Weight 4.5 kg. High-capacity AQUAGUARD™ triple-stage separation for high-flow diesel applications: centrifugal stage, coalescence stage, and Aquabloc® cartridge filtration. Compatible elements: 2020S (2 mic), 2020T (10 mic), 2020P (30 mic)."
+  },
+  {
+    "part_number": "1002FH",
+    "sku_elimfilters": "ET91002",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Turbine Assembly (Horizontal Bowl)",
+      "Flow Rate": "180 GPH (681 LPH)",
+      "Micron Rating": "2/10/30 micron (element dependent)",
+      "Collapse Burst": "15 PSI (1.03 bar)",
+      "Thread Size": "22M x 1.5",
+      "Stages": "3-stage centrifugal + coalescence + filtration"
+    },
+    "alternatives": ["2020SM-OR", "2020TM-OR", "2020PM-OR"],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "1002FH"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "4.5", "mm": "114"},
+      "length": {"in": "10.9", "mm": "277"},
+      "thread": "22M x 1.5"
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Turbine Series 1002FH, Heavy-Duty 3-Stage Fuel/Water Separator Assembly (metric port) | OD 114 mm × H 277 mm | Flow 180 GPH (681 LPH) | Port 22M x 1.5 | Max 15 PSI (1.03 bar). High-capacity variant with metric port for European and international engine applications. Compatible elements: 2020S (2 mic), 2020T (10 mic), 2020P (30 mic)."
+  },
+  {
+    "part_number": "2010SM-OR",
+    "sku_elimfilters": "ET92010S",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "2 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II",
+      "Outer Diameter": "3.07 inch (78 mm)",
+      "Length": "2.76 inch (70 mm)"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2010SM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "3.07", "mm": "78"},
+      "length": {"in": "2.76", "mm": "70"},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 2 micron, OD 78 mm × L 70 mm | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 500FG. AQUAGUARD™ Aquabloc® II media repels water and removes diesel fuel contaminants to 2 micron — waterproof and effective longer than water-absorbing media. Use when 500FG is the sole filter in the system."
+  },
+  {
+    "part_number": "2010TM-OR",
+    "sku_elimfilters": "ET92010T",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "10 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II",
+      "Outer Diameter": "3.07 inch (78 mm)",
+      "Length": "2.76 inch (70 mm)"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2010TM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "3.07", "mm": "78"},
+      "length": {"in": "2.76", "mm": "70"},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 10 micron, OD 78 mm × L 70 mm | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 500FG. Standard service element for general diesel applications. AQUAGUARD™ Aquabloc® II media repels water and removes particulate contamination — waterproof and effective longer than water-absorbing media."
+  },
+  {
+    "part_number": "2010PM-OR",
+    "sku_elimfilters": "ET92010P",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "30 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II",
+      "Outer Diameter": "3.07 inch (78 mm)",
+      "Length": "2.76 inch (70 mm)"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2010PM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": "3.07", "mm": "78"},
+      "length": {"in": "2.76", "mm": "70"},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 30 micron, OD 78 mm × L 70 mm | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 500FG. Primary (first-stage/suction-side) element — recommended when 500FG is used as primary filter before a secondary fine filter. AQUAGUARD™ Aquabloc® II media repels water and removes large particulate."
+  },
+  {
+    "part_number": "2020SM-OR",
+    "sku_elimfilters": "ET92020S",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "2 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2020SM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 2 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 1000FH / 1002FH. AQUAGUARD™ Aquabloc® II media repels water and removes diesel contaminants to 2 micron — waterproof and effective longer than water-absorbing media. For high-flow applications (180 GPH / 681 LPH)."
+  },
+  {
+    "part_number": "2020TM-OR",
+    "sku_elimfilters": "ET92020T",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "10 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2020TM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 10 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 1000FH / 1002FH. Standard service element for high-flow diesel systems. AQUAGUARD™ Aquabloc® II media repels water and removes particulate contamination — waterproof and effective for extended service intervals."
+  },
+  {
+    "part_number": "2020PM-OR",
+    "sku_elimfilters": "ET92020P",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "30 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2020PM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 30 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 1000FH / 1002FH. Primary (first-stage) element for high-flow systems — use as suction-side pre-filter before secondary fine filtration. AQUAGUARD™ Aquabloc® II media repels water and removes large particulate at high flow rates."
+  },
+  {
+    "part_number": "2040SM-OR",
+    "sku_elimfilters": "ET92040S",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "2 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2040SM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 2 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 900FH / 902FH. AQUAGUARD™ Aquabloc® II media repels water and removes diesel contaminants to 2 micron — waterproof and more effective longer than water-absorbing media. For flow rates up to 90 GPH (341 LPH)."
+  },
+  {
+    "part_number": "2040TM-OR",
+    "sku_elimfilters": "ET92040T",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "10 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2040TM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 10 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 900FH / 902FH. Standard service element for diesel applications up to 90 GPH (341 LPH). AQUAGUARD™ Aquabloc® II media repels water and removes particulate contamination — waterproof and effective for extended service intervals."
+  },
+  {
+    "part_number": "2040PM-OR",
+    "sku_elimfilters": "ET92040P",
+    "category": "turbine",
+    "technology": "AQUAGUARD™",
+    "attributes": {
+      "Style": "Replacement Cartridge Element",
+      "Micron Rating": "30 micron",
+      "Efficiency Test Std": "ISO 4548-12",
+      "Media Type": "Aquabloc® II"
+    },
+    "alternatives": [],
+    "equipment": [],
+    "oem_codes": [{"manufacturer": "PARKER RACOR", "part_number": "2040PM-OR"}],
+    "brand_crossrefs": {},
+    "dimensions": {
+      "od": {"in": null, "mm": null},
+      "length": {"in": null, "mm": null},
+      "thread": null
+    },
+    "description_elimfilters": "ELIMFILTERS AQUAGUARD™ Replacement Cartridge Element 30 micron | Aquabloc® II water-repelling media (ISO 4548-12) | Includes O-ring | Fits: Parker Racor Turbine Series 900FH / 902FH. Primary (first-stage/suction-side) element — use when turbine is primary filter before a secondary fine filter. AQUAGUARD™ Aquabloc® II media repels water and removes large particulate."
+  }
+]

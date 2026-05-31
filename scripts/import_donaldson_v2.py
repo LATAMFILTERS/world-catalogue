@@ -163,7 +163,16 @@ def post_batch(batch, dry_run=False):
     return {"success": False, "error": "All retries failed", "errors": len(batch)}
 
 
-def run(categories, dry_run):
+def load_file(filepath):
+    """Load any *_results.json by full path."""
+    if not os.path.exists(filepath):
+        logging.warning(f"Not found: {filepath}")
+        return []
+    with open(filepath, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def run(categories, dry_run, extra_files=None):
     scripts_dir = os.path.dirname(os.path.abspath(__file__))
     all_rows = []
     for cat in categories:
@@ -171,6 +180,13 @@ def run(categories, dry_run):
         mapped = [map_product(p) for p in products]
         valid  = [r for r in mapped if r["sku"] and r["codigo_base"]]
         logging.info(f"[{cat}] {len(products)} products → {len(valid)} valid rows")
+        all_rows.extend(valid)
+    for fpath in (extra_files or []):
+        products = load_file(fpath)
+        mapped = [map_product(p) for p in products]
+        valid  = [r for r in mapped if r["sku"] and r["codigo_base"]]
+        label = os.path.basename(fpath)
+        logging.info(f"[{label}] {len(products)} products → {len(valid)} valid rows")
         all_rows.extend(valid)
 
     logging.info(f"Total rows to import: {len(all_rows)}")
@@ -196,8 +212,14 @@ def run(categories, dry_run):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Parse only, no API calls")
-    parser.add_argument("--category", help="Single category (e.g. lube)")
+    parser.add_argument("--category", help="Single Donaldson category (e.g. lube)")
+    parser.add_argument("--file", action="append", dest="files", help="Extra results JSON file (e.g. parker_turbine_results.json). Repeatable.")
+    parser.add_argument("--parker", action="store_true", help="Also import parker_turbine_results.json")
     args = parser.parse_args()
 
     cats = [args.category] if args.category else CATEGORIES
-    run(cats, args.dry_run)
+    scripts_dir = os.path.dirname(os.path.abspath(__file__))
+    extra = list(args.files or [])
+    if args.parker:
+        extra.append(os.path.join(scripts_dir, "parker_turbine_results.json"))
+    run(cats, args.dry_run, extra_files=extra)
