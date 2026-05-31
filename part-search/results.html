@@ -997,12 +997,38 @@ function renderCard(p, index) {
                 ${apps.length 
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        const name = a.equipment || a.model || '';
+                        const fullName = a.equipment || a.model || '';
                         let eng = a.engine || '';
                         if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
-                        return `<span class="equip-chip">${name}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${eng}]</span>` : ''}</span>`;
+                        
+                        // Extract first word as manufacturer, or highlight appropriately
+                        const spaceIdx = fullName.indexOf(' ');
+                        let brandSpan = '<span></span>';
+                        let restName = fullName;
+                        if (spaceIdx > 0) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName.substring(0, spaceIdx)}</span>`;
+                          restName = fullName.substring(spaceIdx + 1);
+                        } else if (fullName) {
+                          brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${fullName}</span>`;
+                          restName = '';
+                        }
+                        
+                        return `<span class="equip-chip">${brandSpan}<span>${restName}${eng ? ` <span style="opacity:0.5; font-size:0.9em; margin-left:0.3rem;">[${eng}]</span>` : ''}</span></span>`;
                       }
-                      return `<span class="equip-chip">${a}</span>`;
+                      
+                      // Fallback for simple string application
+                      const simpleStr = String(a);
+                      const spaceIdx = simpleStr.indexOf(' ');
+                      let brandSpan = '<span></span>';
+                      let restName = simpleStr;
+                      if (spaceIdx > 0) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr.substring(0, spaceIdx)}</span>`;
+                        restName = simpleStr.substring(spaceIdx + 1);
+                      } else if (simpleStr) {
+                        brandSpan = `<span class="ref-brand" style="color: var(--y); font-weight: 500; opacity: 0.85; margin-right: 0.25rem;">${simpleStr}</span>`;
+                        restName = '';
+                      }
+                      return `<span class="equip-chip">${brandSpan}<span>${restName}</span></span>`;
                     }).join('') 
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No equipment applications</span>`
                 }
