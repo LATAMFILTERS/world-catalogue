@@ -57,6 +57,14 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Cabin Air Filter developed for occupant health protection in heavy-duty and industrial vehicle cabins. Its MICROKAPPA™ technology combines three capture mechanisms — electrostatic attraction, HEPA-class mechanical filtration and activated carbon adsorption — intercepting PM2.5 particles, allergens, diesel exhaust gases and odors before they reach the cab interior.',
         es: 'ELIMFILTERS® Filtro de aire de cabina desarrollado para la protección de la salud del operador en cabinas de vehículos industriales y de trabajo pesado. Su tecnología MICROKAPPA™ combina tres mecanismos de captura — atracción electrostática, filtración mecánica clase HEPA y adsorción de carbono activado — interceptando partículas PM2.5, alérgenos, gases de escape diésel y olores antes de que lleguen al interior de la cabina.',
       },
+      airhousing: {
+        en: 'ELIMFILTERS® Air Filter Housing developed for industrial asset protection across heavy-duty air intake systems. Its INTEKCORE™ technology delivers a high-pressure rated housing engineered to maintain structural integrity across the full thermal cycling range of commercial and industrial engines, ensuring the housing never becomes the failure point of the filtration system.',
+        es: 'ELIMFILTERS® Carcasa de filtro de aire desarrollada para la protección de activos industriales en sistemas de admisión de aire para trabajo pesado. Su tecnología INTEKCORE™ ofrece una carcasa de alta presión diseñada para mantener la integridad estructural en todo el rango de ciclos térmicos de motores comerciales e industriales, asegurando que la carcasa nunca sea el punto de falla del sistema de filtración.',
+      },
+      precleaner: {
+        en: 'ELIMFILTERS® Air Precleaner developed for industrial asset protection as the first stage of the air intake system. Its INTEKCORE™ technology provides self-cleaning pre-separation of particles denser than air before they reach the primary filtration element, extending air filter service life and reducing maintenance frequency across demanding industrial duty cycles.',
+        es: 'ELIMFILTERS® Preclasificador de aire desarrollado para la protección de activos industriales como primera etapa del sistema de admisión de aire. Su tecnología INTEKCORE™ proporciona preseparación autolimpiante de partículas más densas que el aire antes de que lleguen al elemento filtrante primario, extendiendo la vida útil del filtro de aire y reduciendo la frecuencia de mantenimiento en ciclos de trabajo industriales exigentes.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -99,15 +107,39 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.cabin)]
     );
 
+    // Air filter housing
+    const housingRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%housing%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.airhousing)]
+    );
+
+    // Air precleaner
+    const precleanRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%precleaner%'
+          OR LOWER(filter_type) LIKE '%pre-cleaner%'
+          OR LOWER(filter_type) LIKE '%pre cleaner%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.precleaner)]
+    );
+
     res.json({
       spin_on_updated: spinRes.rowCount,
       cartridge_updated: cartRes.rowCount,
       centrifuge_updated: centRes.rowCount,
       cabin_updated: cabinRes.rowCount,
+      air_housing_updated: housingRes.rowCount,
+      precleaner_updated: precleanRes.rowCount,
       sample_spinon: spinRes.rows.slice(0, 3).map(r => r.sku),
       sample_cartridge: cartRes.rows.slice(0, 3).map(r => r.sku),
       sample_centrifuge: centRes.rows.slice(0, 3).map(r => r.sku),
       sample_cabin: cabinRes.rows.slice(0, 3).map(r => r.sku),
+      sample_housing: housingRes.rows.slice(0, 3).map(r => r.sku),
+      sample_precleaner: precleanRes.rows.slice(0, 3).map(r => r.sku),
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
