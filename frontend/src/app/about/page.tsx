@@ -71,7 +71,7 @@ export default function About() {
                 color: '#fff',
               }}
             >
-              ENGINEERING OF CERTAINTY
+              ENGINEERING EXCELLENCE
             </motion.h1>
 
             <motion.p
@@ -149,7 +149,7 @@ export default function About() {
               >
                 Every ELIMFILTERS® system is engineered with one core principle: protect against
                 catastrophic failure first, optimize efficiency second. We believe that in industrial
-                filtration, certainty isn't optional—it's mandatory.
+                filtration, excellence isn't optional—it's mandatory.
               </p>
               <p
                 style={{

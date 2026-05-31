@@ -661,7 +661,7 @@ export default function SystemsPage() {
         name: 'What are the five industrial asset protection systems from ELIMFILTERS®?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'ELIMFILTERS® organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the proprietary technologies that control the contamination pathway.',
+          text: 'ELIMFILTERS® organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
         },
       },
       {
@@ -813,7 +813,7 @@ export default function SystemsPage() {
           >
             Industrial equipment fails when contamination accumulates faster than the protection system
             removes it. ELIMFILTERS® structures contamination control into five engineering domains —
-            each defined by its contamination target, failure mechanism, and the proprietary architecture
+            each defined by its contamination target, failure mechanism, and the exclusive architecture
             that prevents it.
           </motion.p>
         </div>
@@ -929,7 +929,7 @@ export default function SystemsPage() {
                 marginBottom: '0.5rem',
               }}
             >
-              NINE PROPRIETARY PROTECTION ARCHITECTURES
+              NINE EXCLUSIVE PROTECTION ARCHITECTURES
             </p>
             <h2
               style={{
@@ -1138,7 +1138,7 @@ export default function SystemsPage() {
             {[
               {
                 q: 'What are the five asset protection systems?',
-                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more proprietary protection architectures.',
+                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more exclusive protection architectures.',
               },
               {
                 q: 'How does AQUAGUARD™ protect HPCR injection systems?',
