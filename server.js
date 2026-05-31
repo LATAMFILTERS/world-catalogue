@@ -65,6 +65,26 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         en: 'ELIMFILTERS® Air Precleaner developed for industrial asset protection as the first stage of the air intake system. Its INTEKCORE™ technology provides self-cleaning pre-separation of particles denser than air before they reach the primary filtration element, extending air filter service life and reducing maintenance frequency across demanding industrial duty cycles.',
         es: 'ELIMFILTERS® Preclasificador de aire desarrollado para la protección de activos industriales como primera etapa del sistema de admisión de aire. Su tecnología INTEKCORE™ proporciona preseparación autolimpiante de partículas más densas que el aire antes de que lleguen al elemento filtrante primario, extendiendo la vida útil del filtro de aire y reduciendo la frecuencia de mantenimiento en ciclos de trabajo industriales exigentes.',
       },
+      air_radial: {
+        en: 'ELIMFILTERS® Air Filter, Primary — Radial Seal, developed for industrial asset protection in the most demanding operating environments. Its MACROCORE™ technology deploys a progressive density gradient matrix that intercepts airborne contamination before it reaches the combustion chamber, delivering extended service life across the harshest industrial duty cycles.',
+        es: 'ELIMFILTERS® Filtro de aire primario — sello radial, desarrollado para la protección de activos industriales en los entornos operativos más exigentes. Su tecnología MACROCORE™ despliega una matriz de gradiente de densidad progresiva que intercepta la contaminación del aire antes de que llegue a la cámara de combustión, garantizando una vida útil extendida en los ciclos de trabajo industriales más severos.',
+      },
+      air_axial: {
+        en: 'ELIMFILTERS® Air Filter, Primary — Axial Seal, developed for industrial asset protection. Its MACROCORE™ technology delivers a precision axial seal that eliminates contamination bypass, ensuring airborne particles are intercepted before reaching the combustion chamber and preserving engine efficiency across the complete service interval.',
+        es: 'ELIMFILTERS® Filtro de aire primario — sello axial, desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ proporciona un sello axial de precisión que elimina el paso de contaminación, asegurando que las partículas en suspensión sean interceptadas antes de llegar a la cámara de combustión y preservando la eficiencia del motor durante todo el intervalo de servicio.',
+      },
+      air_tetramax: {
+        en: 'ELIMFILTERS® Air Filter, Primary developed for industrial asset protection in medium- and heavy-duty applications. Its MACROCORE™ technology delivers a high-density axial flow media pack in a compact form factor, achieving higher contamination control performance across 5 to 15L engine platforms while reducing the physical footprint of the air filtration system.',
+        es: 'ELIMFILTERS® Filtro de aire primario desarrollado para la protección de activos industriales en aplicaciones medianas y pesadas. Su tecnología MACROCORE™ ofrece un paquete de medios de flujo axial de alta densidad en formato compacto, logrando un mayor rendimiento en el control de contaminación en plataformas de motores de 5 a 15L, reduciendo la huella física del sistema de filtración.',
+      },
+      air_powercore: {
+        en: 'ELIMFILTERS® Air Filter, Primary developed for industrial asset protection. Its MACROCORE™ technology is engineered to precise media specifications — fiber geometry, pore size, thickness and mechanical strength — delivering consistent contamination control performance that meets or exceeds OEM air filtration system requirements.',
+        es: 'ELIMFILTERS® Filtro de aire primario desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ está diseñada con especificaciones precisas de medio filtrante — geometría de fibra, tamaño de poro, espesor y resistencia mecánica — ofreciendo un control de contaminación consistente que cumple o supera los requisitos de los sistemas de filtración de aire OEM.',
+      },
+      air_secondary: {
+        en: 'ELIMFILTERS® Air Filter, Secondary developed for industrial asset protection. Its MACROCORE™ technology provides a precision secondary barrier that intercepts contamination bypass, protecting critical engine components during primary element service and extending maintenance intervals while reducing operational downtime.',
+        es: 'ELIMFILTERS® Filtro de aire secundario desarrollado para la protección de activos industriales. Su tecnología MACROCORE™ proporciona una barrera secundaria de precisión que intercepta el paso de contaminación, protegiendo los componentes críticos del motor durante el servicio del elemento primario y extendiendo los intervalos de mantenimiento mientras reduce el tiempo de inactividad operacional.',
+      },
     };
 
     // Spin-on: installation_type contains 'Spin-On' or sub_type contains 'Spin'
@@ -127,6 +147,81 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       [JSON.stringify(DESC.precleaner)]
     );
 
+    // Air filters — secondary
+    const airSecRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND (LOWER(sub_type) LIKE '%secondary%' OR LOWER(filter_type) LIKE '%secondary%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_secondary)]
+    );
+
+    // Air filters — radial seal primary
+    const airRadRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%radial%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%radial%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_radial)]
+    );
+
+    // Air filters — axial seal primary
+    const airAxRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%axial%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%axial%')
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%radial%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_axial)]
+    );
+
+    // Air filters — TetraMax primary
+    const airTetRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND (LOWER(COALESCE(sub_type,'')) LIKE '%tetra%'
+              OR LOWER(COALESCE(installation_type,'')) LIKE '%tetra%')
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_tetramax)]
+    );
+
+    // Air filters — Powercore/advanced primary (everything else primary)
+    const airPowRes = await client.query(
+      `UPDATE elimfilters_catalog
+       SET description = $1::jsonb
+       WHERE LOWER(filter_type) LIKE '%air%'
+         AND LOWER(filter_type) NOT LIKE '%cabin%'
+         AND LOWER(filter_type) NOT LIKE '%housing%'
+         AND LOWER(filter_type) NOT LIKE '%precleaner%'
+         AND LOWER(filter_type) NOT LIKE '%pre-cleaner%'
+         AND LOWER(sub_type) NOT LIKE '%secondary%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%radial%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%axial%'
+         AND LOWER(COALESCE(sub_type,'')) NOT LIKE '%tetra%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%radial%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%axial%'
+         AND LOWER(COALESCE(installation_type,'')) NOT LIKE '%tetra%'
+       RETURNING sku`,
+      [JSON.stringify(DESC.air_powercore)]
+    );
+
     res.json({
       spin_on_updated: spinRes.rowCount,
       cartridge_updated: cartRes.rowCount,
@@ -134,12 +229,11 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
       cabin_updated: cabinRes.rowCount,
       air_housing_updated: housingRes.rowCount,
       precleaner_updated: precleanRes.rowCount,
-      sample_spinon: spinRes.rows.slice(0, 3).map(r => r.sku),
-      sample_cartridge: cartRes.rows.slice(0, 3).map(r => r.sku),
-      sample_centrifuge: centRes.rows.slice(0, 3).map(r => r.sku),
-      sample_cabin: cabinRes.rows.slice(0, 3).map(r => r.sku),
-      sample_housing: housingRes.rows.slice(0, 3).map(r => r.sku),
-      sample_precleaner: precleanRes.rows.slice(0, 3).map(r => r.sku),
+      air_secondary_updated: airSecRes.rowCount,
+      air_radial_updated: airRadRes.rowCount,
+      air_axial_updated: airAxRes.rowCount,
+      air_tetramax_updated: airTetRes.rowCount,
+      air_powercore_updated: airPowRes.rowCount,
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
