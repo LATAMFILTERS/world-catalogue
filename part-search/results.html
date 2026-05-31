@@ -1087,19 +1087,9 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
     summaryEl.innerHTML = `
-      <span class="search-summary-mode">${count} RESULT${count !== 1 ? 'S' : ''} · ${searchMode}</span>
+      <span class="search-summary-mode">${count} ${count !== 1 ? T.labelResults_pl : T.labelResults} · ${searchMode}</span>
       <span class="search-summary-main"><strong>${searchTerm.toUpperCase()}</strong></span>`;
   }
-
-  const catalogNote = totalCatalog
-    ? `<span style="
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.58rem;
-        letter-spacing: 0.08em;
-        color: rgba(255,255,255,0.2);
-        margin-left: auto;
-      ">checked ${totalCatalog.toLocaleString()} products</span>`
-    : '';
 
   app.innerHTML = `
     <div class="products">
