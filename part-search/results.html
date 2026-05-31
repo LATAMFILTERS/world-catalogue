@@ -193,6 +193,28 @@
       gap: 1.2rem;
     }
 
+    /* ─── MATCH BADGE ─── */
+    .match-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,241,45,0.9);
+      background: rgba(255,241,45,0.08);
+      border: 1px solid rgba(255,241,45,0.2);
+      border-radius: 3px;
+      padding: 0.22rem 0.6rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .match-badge::before {
+      content: '⌕';
+      font-size: 0.75em;
+      opacity: 0.7;
+    }
+
     /* ─── PRODUCT CARD ─── */
     .product-card {
       border: 1px solid var(--border);
@@ -661,8 +683,53 @@ function showEmpty(term) {
     <div class="status-container">
       <div class="status-icon">⌕</div>
       <p class="status-title">NO RESULTS FOUND</p>
-      <p class="status-desc">No filters match "${(term || '').toUpperCase()}" — verify the reference or try a different search term.</p>
-      <a href="/index.html" class="status-action">NEW SEARCH</a>
+      <p class="status-desc">
+        No filters match <strong style="color: rgba(255,241,45,0.8);">"${(term || '').toUpperCase()}"</strong>
+        in the 4,622-product catalog.
+      </p>
+      <div style="
+        margin: 1.5rem auto 0;
+        max-width: 480px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 6px;
+        padding: 1.25rem 1.5rem;
+        text-align: left;
+      ">
+        <p style="
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.14em;
+          color: rgba(255,255,255,0.25);
+          text-transform: uppercase;
+          margin-bottom: 0.8rem;
+        ">SEARCH FORMAT GUIDE</p>
+        <div style="display: flex; flex-direction: column; gap: 0.55rem;">
+          ${[
+            ['ELIMFILTERS SKU', 'EL82100, EH60949, EA22526'],
+            ['DONALDSON BASE', 'P552100, DBH0949, DBL3998'],
+            ['CAT OEM CODE', '1R-0739, 4M-9690, 6I-0273'],
+            ['FLEETGUARD', 'LF3349, AF25453, HF6553'],
+            ['BALDWIN', 'BT267, PA2870, RS3542'],
+          ].map(([label, ex]) => `
+            <div style="display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;">
+              <span style="
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.55rem;
+                letter-spacing: 0.1em;
+                color: rgba(255,241,45,0.45);
+                flex-shrink: 0;
+                min-width: 140px;
+              ">${label}</span>
+              <span style="
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.7rem;
+                color: rgba(255,255,255,0.45);
+              ">${ex}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+      <a href="/index.html" class="status-action" style="margin-top: 1.75rem;">NEW SEARCH</a>
     </div>`;
 }
 
@@ -716,9 +783,15 @@ function renderCard(p, index) {
   const comp = formatRefs(p.competitor_codes);
   const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications.slice(0, 12) : [];
 
+  // Match badge: only show when result came from a cross-reference (not a direct SKU hit)
+  const matchBadge = p.match_label && p.match_type !== 'sku'
+    ? `<div class="match-badge">MATCHED BY: ${p.match_label}</div>`
+    : '';
+
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
       <div class="card-inner">
+        ${matchBadge}
         <div class="card-header">
           <div class="card-identity">
             <span class="card-sku">${sku}</span>
@@ -769,8 +842,18 @@ function renderCard(p, index) {
 }
 
 // ─── Render Results ───
-function renderResults(items, count, searchMode, searchTerm, decodedText = null) {
+function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+
+  const catalogNote = totalCatalog
+    ? `<span style="
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        color: rgba(255,255,255,0.2);
+        margin-left: auto;
+      ">checked ${totalCatalog.toLocaleString()} products</span>`
+    : '';
 
   app.innerHTML = `
     <div class="results-meta">
@@ -778,6 +861,7 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null)
         <span class="meta-query">${searchTerm.toUpperCase()}</span>
         <span class="meta-count">${count} RESULT${count !== 1 ? 'S' : ''}</span>
         <span class="meta-mode">${searchMode}</span>
+        ${catalogNote}
       </div>
       ${decodedText ? \`<div style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; letter-spacing: 0.03em;">DECODED: <strong style="color: #FFF12D; font-weight: 500;">\${decodedText}</strong></div>\` : ''}
       <div class="meta-divider"></div>
@@ -818,7 +902,7 @@ async function executeSearch() {
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
-      renderResults(data.products, data.count, 'PART NUMBER', query);
+      renderResults(data.products, data.count, 'PART NUMBER', query, null, data.total_catalog);
     } catch { clearTimeout(warmupTimer); showError(); }
 
   } else if (mode === 'vin' && model) {

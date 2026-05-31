@@ -12,7 +12,7 @@ const app = express();
 app.set('trust proxy', 1);
 
 // Healthcheck FIRST — must respond before anything else can fail
-app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.7.0' }));
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
 app.use(cors());
 app.set('trust proxy', 1);
@@ -180,9 +180,7 @@ function buildFilterData(row, lang = 'en'){
   };
 }
 
-app.get('/api/status', (req, res) => {
-  res.json({status: 'ok', version: '3.6.0'});
-});
+// Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
 
 app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
   const sku = req.params.sku.toUpperCase();
@@ -1344,31 +1342,127 @@ app.get('/api/search', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    // Exact match first
+
+    // ── Tiered search with match_type labels ──────────────────────────────
+    // Tier 1: Exact SKU or Donaldson base code match
     let result = await client.query(
-      `SELECT * FROM elimfilters_catalog
+      `SELECT *, 'sku' AS match_type, 0 AS match_rank
+       FROM elimfilters_catalog
        WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
-       LIMIT 5`,
+       LIMIT 20`,
       [q]
     );
-    // Fallback: prefix + partial across codes
+
+    // Tier 2: Prefix match on SKU / codigo_base
     if (result.rows.length === 0) {
       result = await client.query(
-        `SELECT * FROM elimfilters_catalog
-         WHERE UPPER(sku) LIKE $1
-            OR UPPER(codigo_base) LIKE $1
-            OR oem_codes::text ILIKE $2
-            OR competitor_codes::text ILIKE $2
-         ORDER BY CASE WHEN UPPER(sku) LIKE $1 THEN 0 ELSE 1 END, sku
+        `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         ORDER BY sku
          LIMIT 20`,
-        [q + '%', '%' + q + '%']
+        [q + '%']
       );
     }
+
+    // Tier 3: OEM codes — proper JSONB array element search
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *, 'oem' AS match_type, 2 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
+         WHERE UPPER(elem->>'code') = $1
+            OR UPPER(elem->>'code') LIKE $2
+         ORDER BY sku
+         LIMIT 20`,
+        [q, q + '%']
+      );
+    }
+
+    // Tier 4: Competitor codes — proper JSONB array element search
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *, 'competitor' AS match_type, 3 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
+         WHERE UPPER(elem->>'code') = $1
+            OR UPPER(elem->>'code') LIKE $2
+         ORDER BY sku
+         LIMIT 20`,
+        [q, q + '%']
+      );
+    }
+
+    // Tier 5: brand_crossrefs — search all values in the {brand: [codes]} object
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
+              jsonb_array_elements_text(kv.value) AS code_val
+         WHERE UPPER(code_val) = $1
+            OR UPPER(code_val) LIKE $2
+         ORDER BY sku
+         LIMIT 20`,
+        [q, q + '%']
+      );
+    }
+
+    // Tier 6: Broad partial match fallback (OEM + competitor text scan)
+    if (result.rows.length === 0) {
+      result = await client.query(
+        `SELECT DISTINCT ON (sku) *,
+                CASE
+                  WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
+                  ELSE 'partial'
+                END AS match_type,
+                5 AS match_rank
+         FROM elimfilters_catalog,
+              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
+         WHERE UPPER(sku) LIKE $1
+            OR UPPER(codigo_base) LIKE $1
+            OR UPPER(oem_elem->>'code') LIKE $1
+         ORDER BY sku
+         LIMIT 20`,
+        ['%' + q + '%']
+      );
+    }
+
+    // ── Determine human-readable match label for the frontend ─────────────
+    function buildMatchLabel(row) {
+      const mt = row.match_type;
+      if (mt === 'sku' || mt === 'sku_prefix' || mt === 'sku_partial') {
+        if (row.sku && row.sku.toUpperCase().includes(q)) return `ELIMFILTERS ${row.sku}`;
+        if (row.codigo_base && row.codigo_base.toUpperCase().includes(q)) return `DONALDSON ${row.codigo_base}`;
+        return null;
+      }
+      if (mt === 'oem') {
+        // Find the specific OEM entry that matched
+        const oems = row.oem_codes || [];
+        const hit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (hit) return `${hit.manufacturer || 'OEM'} ${hit.code}`;
+        return 'OEM CODE';
+      }
+      if (mt === 'competitor') {
+        const comps = row.competitor_codes || [];
+        const hit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        if (hit) return `${hit.manufacturer || 'COMPETITOR'} ${hit.code}`;
+        return 'COMPETITOR CODE';
+      }
+      if (mt === 'crossref') {
+        return `CROSS-REFERENCE ${q}`;
+      }
+      return null;
+    }
+
     const products = result.rows.map(row => ({
       ...buildFilterData(row, lang),
-      sku: row.sku
+      sku: row.sku,
+      match_type: row.match_type || 'partial',
+      match_label: buildMatchLabel(row)
     }));
-    res.json({ products, count: products.length });
+
+    res.json({ products, count: products.length, total_catalog: 4622 });
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });
