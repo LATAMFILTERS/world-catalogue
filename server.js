@@ -53,6 +53,21 @@ app.get('/api/admin/dims/:sku', async (req, res) => {
   finally { await client.end(); }
 });
 
+// TEMP: fix SINTRAX typo → SYNTRAX in technology field — DELETE AFTER USE
+app.get('/api/admin/fix-syntrax', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const r = await client.query(
+      `UPDATE elimfilters_catalog SET technology = 'SYNTRAX™'
+       WHERE UPPER(technology) LIKE '%SINTRAX%' RETURNING sku`
+    );
+    res.json({ fixed: r.rowCount, skus: r.rows.map(x => x.sku) });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
 // TEMP: fix dimensions from CSV — DELETE AFTER USE
 app.get('/api/admin/fix-dimensions', async (req, res) => {
   if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
