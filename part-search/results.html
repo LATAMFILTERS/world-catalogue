@@ -943,22 +943,30 @@ function specHTML(label, value) {
 function renderCard(p, index) {
   const sku = p.elimfilters_sku || p.sku || '—';
 
-  function mmIn(mm) {
+  function dimFmt(mm) {
     if (!mm) return null;
     const inches = (mm / 25.4).toFixed(2);
-    return mm + ' mm / ' + inches + '"';
+    const mmRound = Math.round(mm);
+    return inches + ' inch (' + mmRound + ' mm)';
   }
+  function psiFmt(psi) {
+    if (!psi) return null;
+    const bar = (psi * 0.0689476).toFixed(1);
+    return psi + ' psi (' + bar + ' bar)';
+  }
+  const effLabel = p.nominal_efficiency ? 'Efficiency ' + p.nominal_efficiency + '%' : 'Efficiency';
 
   const specs = [
-    specHTML('HEIGHT', mmIn(p.height_mm)),
-    specHTML('OD', mmIn(p.outer_diameter_mm)),
-    specHTML('GASKET OD', mmIn(p.gasket_od_mm)),
-    specHTML('THREAD', p.thread_size),
-    specHTML('MICRON', p.micron_rating ? p.micron_rating + ' µm' : null),
-    specHTML('EFFICIENCY', p.nominal_efficiency ? p.nominal_efficiency + '%' : null),
-    specHTML('BURST', p.burst_pressure_psi ? p.burst_pressure_psi + ' psi' : null),
-    specHTML('COLLAPSE', p.collapse_pressure_psi ? p.collapse_pressure_psi + ' psi' : null),
-    specHTML('ISO METHOD', p.iso_test_method),
+    specHTML('Outer Diameter', dimFmt(p.outer_diameter_mm)),
+    specHTML('Thread Size',    p.thread_size),
+    specHTML('Length',         dimFmt(p.height_mm)),
+    specHTML('Gasket OD',      dimFmt(p.gasket_od_mm)),
+    specHTML('Gasket ID',      dimFmt(p.gasket_id_mm)),
+    specHTML(effLabel,         p.micron_rating ? p.micron_rating + ' micron' : null),
+    specHTML('Efficiency Test Std', p.iso_test_method),
+    specHTML('Media Type',     p.filter_subtype || null),
+    specHTML('Collapse Burst', psiFmt(p.burst_pressure_psi)),
+    specHTML('Style',          p.installation_type || null),
   ].filter(Boolean);
 
   const oem  = formatRefs(p.oem_codes);

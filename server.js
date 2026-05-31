@@ -3,6 +3,8 @@ const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -49,6 +51,60 @@ app.get('/api/admin/dims/:sku', async (req, res) => {
     });
   } catch (e) { res.status(500).json({ error: e.message }); }
   finally { await client.end(); }
+});
+
+// TEMP: fix dimensions from CSV — DELETE AFTER USE
+app.get('/api/admin/fix-dimensions', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const csvPath = path.join(__dirname, 'data', 'dims.csv');
+  if (!fs.existsSync(csvPath)) return res.status(404).json({ error: 'dims.csv not found' });
+
+  const lines = fs.readFileSync(csvPath, 'utf8').split('\n').filter(Boolean);
+  const headers = lines[0].split(',');
+  const idx = k => headers.indexOf(k);
+
+  const rows = lines.slice(1).map(l => {
+    const cols = l.split(',');
+    return {
+      sku:  cols[idx('sku')]?.trim(),
+      od:   parseFloat(cols[idx('od')]) || null,
+      h:    parseFloat(cols[idx('h')]) || null,
+      god:  parseFloat(cols[idx('god')]) || null,
+      gid:  parseFloat(cols[idx('gid')]) || null,
+      thread: cols[idx('thread')]?.trim() || null,
+      burst:  parseFloat(cols[idx('burst')]) || null,
+      collapse: parseFloat(cols[idx('collapse')]) || null,
+      sub:  cols[idx('sub')]?.trim() || null,
+      inst: cols[idx('inst')]?.trim() || null,
+      ft:   cols[idx('ft')]?.trim() || null,
+    };
+  }).filter(r => r.sku);
+
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    let updated = 0, skipped = 0;
+    for (const r of rows) {
+      const res2 = await client.query(
+        `UPDATE elimfilters_catalog
+         SET outer_diameter_mm    = COALESCE($2, outer_diameter_mm),
+             height_mm            = COALESCE($3, height_mm),
+             gasket_od_mm         = COALESCE($4, gasket_od_mm),
+             gasket_id_mm         = COALESCE($5, gasket_id_mm),
+             thread_size          = COALESCE($6, thread_size),
+             burst_pressure_psi   = COALESCE($7, burst_pressure_psi),
+             collapse_pressure_psi = COALESCE($8, collapse_pressure_psi),
+             installation_type    = COALESCE($9, installation_type),
+             filter_type          = COALESCE($10, filter_type)
+         WHERE sku = $1`,
+        [r.sku, r.od, r.h, r.god, r.gid, r.thread, r.burst, r.collapse, r.inst, r.ft]
+      );
+      if (res2.rowCount > 0) updated++; else skipped++;
+    }
+    res.json({ total_csv: rows.length, updated, skipped });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally { await client.end(); }
 });
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
