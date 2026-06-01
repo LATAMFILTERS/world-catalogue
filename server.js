@@ -1572,6 +1572,38 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
   }
 });
 
+// ─── GET /api/admin/suspects-equipment ──────────────────────────────────────
+// Returns products with ≤N equipment entries — feed to scrape_equipment.py batch mode.
+// Query params: key (required), max_entries (default 5), filter_type (optional), limit (default 2000)
+app.get('/api/admin/suspects-equipment', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const maxEntries = parseInt(req.query.max_entries) || 5;
+  const limitRows  = parseInt(req.query.limit) || 2000;
+  const filterType = req.query.filter_type || null;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const params = [maxEntries, limitRows];
+    let typeFilter = '';
+    if (filterType) { params.push(filterType); typeFilter = `AND filter_type ILIKE $${params.length}`; }
+    const result = await client.query(`
+      SELECT sku, codigo_base, filter_type,
+             COALESCE(jsonb_array_length(equipment_applications), 0) AS equip_count
+      FROM elimfilters_catalog
+      WHERE codigo_base IS NOT NULL
+        AND COALESCE(jsonb_array_length(equipment_applications), 0) <= $1
+        ${typeFilter}
+      ORDER BY equip_count ASC, sku ASC
+      LIMIT $2
+    `, params);
+    res.json({ success: true, total: result.rows.length, suspects: result.rows });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
 
