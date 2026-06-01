@@ -339,6 +339,27 @@ def main():
         log.info("Nothing to do. Delete scrape_equipment_progress.json to restart.")
         return
 
+    # Cabin filters have no equipment data on Donaldson — skip them automatically
+    NO_EQUIP_TYPES = {"cabin"}
+    skippable = [p for p in pending if (p.get("filter_type") or "").lower() in NO_EQUIP_TYPES]
+    if skippable:
+        log.info(f"Skipping {len(skippable)} cabin filter(s) — Donaldson has no equipment data for cabin filters")
+        for p in skippable:
+            progress["done"].append(p["sku"])
+        save_progress(progress)
+        pending = [p for p in pending if p not in skippable]
+
+    if args.dry_run:
+        log.info("DRY RUN — products that WOULD be scraped:")
+        for p in pending:
+            log.info(f"  {p['sku']} ({p['codigo_base']}) [{p.get('filter_type','')}] equip:{p.get('equip_count',0)}")
+        log.info(f"\nTotal: {len(pending)} products to scrape (no Donaldson requests made)")
+        return
+
+    if not pending:
+        log.info("Nothing to scrape after filtering.")
+        return
+
     updated = failed = skipped = 0
 
     for i, p in enumerate(pending):
