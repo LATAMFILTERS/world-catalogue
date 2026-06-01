@@ -489,12 +489,50 @@ const dbConfig = {
   ssl: { rejectUnauthorized: false },
 };
 
+// Filter brands (competitors) — everything else is an OEM equipment manufacturer
+const COMPETITOR_BRANDS = new Set([
+  'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
+  'WIX','FRAM','PUROLATOR','NAPA','AC DELCO','ACDELCO','BOSCH','MAHLE',
+  'HENGST','SAKURA','HASTINGS','LUBER-FINER','LUBERFINER','PARKER',
+  'PALL','HYDAC','MP FILTRI','MPFILTRI','UFI','CHAMPION','COOPERSFITERS',
+  'COOPERSFILTERS','MOTORCRAFT','KNECHT','SOGEFI','FILTRON','SOFIMA',
+  'FIAAM','NIPPARTS','STARLINE','CHAMPION LABS','CARQUEST','PRONTO',
+  'DEFENSE','PENNZOIL','CASTROL','MOBIL','SHELL','TOTAL','DENSO',
+  'TISCO','TRACTORPARTS','AGCO','ATLAS COPCO','SULLAIR','INGERSOLL RAND',
+  'COMPAIR','GARDNER DENVER','QUINCY','LEROI','KOBELCO COMPRESSORS',
+  'ALCO','INLINE','GOLDENROD','RACOR','PARKER RACOR','DAVCO',
+  'FLEETRITE','JOHN DEERE PARTS','CAT PARTS','CASE PARTS',
+  'EUROPART','DINEX','TRUCKTEC','FEBI','SWAG','MEYLE','VALEO',
+  'ELOFIC','WABCO','KNORR','ALLISON','ZF',
+]);
+
+function isCompetitor(manufacturer) {
+  if (!manufacturer) return false;
+  const m = manufacturer.toUpperCase().trim();
+  // Direct match
+  if (COMPETITOR_BRANDS.has(m)) return true;
+  // Partial match for common patterns
+  return m.includes('FILTER') || m.includes('FILTR') || m.includes('FILTRO');
+}
+
 function parseRefs(arr){
   if(!arr) return [];
   return arr.map(item => ({
     manufacturer: item.manufacturer || item.brand || 'UNKNOWN',
     code: item.code
   }));
+}
+
+// Split a combined refs array into { oem, competitor }
+function splitRefs(arr) {
+  if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [] };
+  const oem = [], competitor = [];
+  arr.forEach(item => {
+    const mfr = item.manufacturer || item.brand || '';
+    if (isCompetitor(mfr)) competitor.push(item);
+    else oem.push(item);
+  });
+  return { oem, competitor };
 }
 
 function detectLang(req) {
@@ -594,8 +632,16 @@ function buildFilterData(row, lang = 'en'){
     burst_pressure_psi: row.burst_pressure_psi || null,
     collapse_pressure_psi: row.collapse_pressure_psi || null,
     duty: row.duty || null,
-    oem_codes: parseRefs(row.oem_codes),
-    competitor_codes: parseRefs(row.competitor_codes),
+    oem_codes: (() => {
+      const combined = [...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)];
+      const { oem, competitor: _c } = splitRefs(combined);
+      return oem;
+    })(),
+    competitor_codes: (() => {
+      const combined = [...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)];
+      const { competitor } = splitRefs(combined);
+      return competitor;
+    })(),
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
