@@ -53,7 +53,6 @@ ADMIN_KEY  = os.environ.get("ADMIN_KEY", "elim2026admin")
 DELAY_SEC  = 2.0
 
 MILLARD_BASE    = "https://www.millardcatalog.com"
-LIST_URL_TPL    = MILLARD_BASE + "/en/dimensions/{region}/{filter_type}"
 PRODUCT_URL_TPL = MILLARD_BASE + "/en/millard/{region}/{filter_type}/{sku}"
 
 PROGRESS_FILE = Path(__file__).parent / "millard_progress.json"
@@ -90,48 +89,52 @@ def get_page(ctx, url, wait="networkidle", timeout=30000):
     return page
 
 
-# ─── List scraper — gets all SKUs from catalog list page ─────────────────────
+# ─── List scraper — paginated catalog list ────────────────────────────────────
 
 def scrape_sku_list(ctx, region, filter_type):
-    """Returns list of SKU strings from the Millard catalog list page."""
-    url = LIST_URL_TPL.format(
-        region=region.replace(" ", "%20"),
-        filter_type=filter_type,
+    """Returns list of SKU strings from the Millard catalog list pages."""
+    region_enc = region.replace(" ", "%20")
+    base_url   = f"{MILLARD_BASE}/en/millard/{region_enc}/{filter_type}"
+    log.info(f"Fetching list: {base_url}")
+
+    page = get_page(ctx, base_url)
+    # Pattern that matches the SKU in a product link href
+    sku_re = re.compile(
+        r'/en/millard/[^/]+/' + re.escape(filter_type) + r'/([A-Za-z0-9][A-Za-z0-9\-]{1,15})',
+        re.I,
     )
-    log.info(f"Fetching list: {url}")
-    page = get_page(ctx, url)
 
-    skus = []
+    skus: list = []
+    seen: set  = set()
+    page_num   = 1
 
-    # Strategy 1: links whose href contains the product path pattern
-    links = page.locator(f"a[href*='/{filter_type}/']").all()
-    for link in links:
-        href = link.get_attribute("href") or ""
-        # Extract last path segment (the SKU)
-        m = re.search(r'/([^/]+)$', href.rstrip('/'))
-        if m:
-            sku = m.group(1)
-            if sku and sku not in skus:
-                skus.append(sku)
+    while True:
+        html   = page.content()
+        found  = sku_re.findall(html)
+        new    = [s for s in dict.fromkeys(found) if s.upper() not in seen]
+        for s in new:
+            seen.add(s.upper())
+            skus.append(s)
+        log.info(f"  Página {page_num} … +{len(new)} nuevos (total {len(skus)})")
 
-    # Strategy 2: table rows with part numbers
-    if not skus:
-        rows = page.locator("table tr td:first-child, .part-number, [data-sku]").all()
-        for r in rows:
-            txt = r.inner_text().strip()
-            if txt and re.match(r'^MC-?\d+', txt, re.I):
-                sku = txt.strip()
-                if sku not in skus:
-                    skus.append(sku)
-
-    # Strategy 3: any text matching MC-XXXX pattern
-    if not skus:
-        body = page.inner_text("body")
-        found = re.findall(r'\bMC-?\d{3,6}\b', body)
-        skus = list(dict.fromkeys(found))  # deduplicate preserving order
+        # Bootstrap pagination — click the enabled "next" chevron/arrow
+        next_sel = (
+            "ul.pagination li:not(.disabled) a[aria-label='Next'], "
+            "ul.pagination li:not(.disabled) a[rel='next'], "
+            "ul.pagination li:not(.disabled) a:text('»'), "
+            "ul.pagination li:not(.disabled) a:text('>')"
+        )
+        nxt = page.locator(next_sel).first
+        if nxt.count() == 0:
+            log.info("  No hay más páginas")
+            break
+        nxt.click()
+        page.wait_for_load_state("networkidle")
+        time.sleep(0.5)
+        page_num += 1
 
     page.close()
-    log.info(f"  Found {len(skus)} SKUs on list page")
+    log.info(f"Total part numbers: {len(skus)}")
     return skus
 
 
