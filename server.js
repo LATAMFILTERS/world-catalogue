@@ -569,12 +569,9 @@ function getTechLogo(tech) {
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
   
-  // Enforce rule: SYNTRAX technology cannot have Cellulose/Celulosa media (sub_type)
-  const tech = row.technology ? String(row.technology).toUpperCase() : '';
-  if (tech.includes('SYNTRAX')) {
-    if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
-      subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
-    }
+  // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
+  if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
+    subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
   }
 
   return {

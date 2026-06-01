@@ -998,7 +998,7 @@ function renderCard(p, index) {
   function mediaLabel(val) {
     if (!val) return null;
     const v = String(val).toLowerCase().trim();
-    if (v === 'cellulose') return 'Híbrida';
+    if (v === 'cellulose' || v === 'celulosa') return currentLang === 'es' ? 'Híbrida' : 'Genuine Media';
     return val;
   }
   function psiFmt(psi) {
