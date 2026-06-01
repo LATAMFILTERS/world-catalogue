@@ -1479,10 +1479,10 @@ if (inpPartCode && acDropdown) {
         
         acDropdown.innerHTML = data.map(item => {
           const highlighted = item.text.replace(regex, '<span class="ac-match">$1</span>');
-          return \`<div class="ac-item" data-val="\${item.text}">
-                    <span class="ac-val">\${highlighted}</span>
-                    <span class="ac-type">\${item.type}</span>
-                  </div>\`;
+          return `<div class="ac-item" data-val="${item.text}">
+                    <span class="ac-val">${highlighted}</span>
+                    <span class="ac-type">${item.type}</span>
+                  </div>`;
         }).join('');
         
         acDropdown.classList.add('active');
