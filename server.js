@@ -615,6 +615,12 @@ function buildFilterData(row, lang = 'en'){
     subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
   }
 
+  // Re-classify on every response: after the consolidation migration oem_codes
+  // may contain competitor filter-brand codes. Merging both arrays and running
+  // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
+  // in the correct columns regardless of what the DB stored.
+  const refs = splitRefs([...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)]);
+
   return {
     elimfilters_sku: row.sku,
     codigo_base: row.codigo_base,
@@ -635,8 +641,8 @@ function buildFilterData(row, lang = 'en'){
     burst_pressure_psi: row.burst_pressure_psi || null,
     collapse_pressure_psi: row.collapse_pressure_psi || null,
     duty: row.duty || null,
-    oem_codes: parseRefs(row.oem_codes),
-    competitor_codes: parseRefs(row.competitor_codes),
+    oem_codes:        refs.oem,
+    competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
