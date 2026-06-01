@@ -589,7 +589,7 @@ const TECH_LOGO_MAP = {
   'drycore': 'drycore',
   'duratech': 'duratech',
   'cooltech': 'cooltech',
-  'syntepore': 'syntepore',
+  'syntepore': 'syntepore', 'syntapore': 'syntepore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
   'aquaguard': 'aquaguard',
@@ -604,9 +604,12 @@ function getTechLogo(tech) {
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
 
+// Canonical technology name corrections (DB may have older/misspelled variants)
+const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
+
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
-  
+
   // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
   if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
     subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
@@ -618,8 +621,8 @@ function buildFilterData(row, lang = 'en'){
     description: row.description || null,
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: subtype,
-    technology: row.technology || null,
-    technology_logo: getTechLogo(row.technology),
+    technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
+    technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
     installation_type: row.installation_type || null,
     thread_size: row.thread_size || null,
     height_mm: row.height_mm || null,
