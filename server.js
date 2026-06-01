@@ -722,7 +722,7 @@ app.get('/api/debug/find-code/:code', async (req, res) => {
   try {
     await client.connect();
     const result = await client.query(
-      `SELECT sku, codigo_base,
+      `SELECT sku,
         oem_codes,
         competitor_codes
        FROM elimfilters_catalog
