@@ -1582,11 +1582,11 @@ app.post('/api/import/donaldson', async (req, res) => {
             burst_pressure_psi    = COALESCE(EXCLUDED.burst_pressure_psi,    elimfilters_catalog.burst_pressure_psi),
             collapse_pressure_psi = COALESCE(EXCLUDED.collapse_pressure_psi, elimfilters_catalog.collapse_pressure_psi),
             duty                  = COALESCE(EXCLUDED.duty,                  elimfilters_catalog.duty),
-            oem_codes             = COALESCE(EXCLUDED.oem_codes,             elimfilters_catalog.oem_codes),
-            competitor_codes      = COALESCE(EXCLUDED.competitor_codes,      elimfilters_catalog.competitor_codes),
-            brand_crossrefs       = COALESCE(EXCLUDED.brand_crossrefs,       elimfilters_catalog.brand_crossrefs),
-            alternatives          = COALESCE(EXCLUDED.alternatives,          elimfilters_catalog.alternatives),
-            equipment_applications = COALESCE(EXCLUDED.equipment_applications, elimfilters_catalog.equipment_applications)
+            oem_codes             = CASE WHEN jsonb_array_length(EXCLUDED.oem_codes) > 0             THEN EXCLUDED.oem_codes             ELSE COALESCE(elimfilters_catalog.oem_codes,             EXCLUDED.oem_codes) END,
+            competitor_codes      = CASE WHEN jsonb_array_length(EXCLUDED.competitor_codes) > 0      THEN EXCLUDED.competitor_codes      ELSE COALESCE(elimfilters_catalog.competitor_codes,      EXCLUDED.competitor_codes) END,
+            brand_crossrefs       = CASE WHEN EXCLUDED.brand_crossrefs <> '{}'::jsonb               THEN EXCLUDED.brand_crossrefs       ELSE COALESCE(elimfilters_catalog.brand_crossrefs,       EXCLUDED.brand_crossrefs) END,
+            alternatives          = CASE WHEN jsonb_array_length(EXCLUDED.alternatives) > 0          THEN EXCLUDED.alternatives          ELSE COALESCE(elimfilters_catalog.alternatives,          EXCLUDED.alternatives) END,
+            equipment_applications = CASE WHEN jsonb_array_length(EXCLUDED.equipment_applications) > 0 THEN EXCLUDED.equipment_applications ELSE COALESCE(elimfilters_catalog.equipment_applications, EXCLUDED.equipment_applications) END
           RETURNING xmax
         `, [
           row.sku, row.codigo_base, row.description || null,
@@ -1616,6 +1616,43 @@ app.post('/api/import/donaldson', async (req, res) => {
 
     res.json({ success: true, total: rows.length, inserted, updated, errors });
   } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
+// Returns products that were scraped (have spec data) but are missing
+// oem_codes AND/OR equipment_applications — second-pass recheck queue.
+app.get('/api/recheck-donaldson', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const limit = parseInt(req.query.limit) || 200;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, description, filter_type, sub_type, technology,
+             installation_type, thread_size,
+             outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+             iso_test_method, micron_rating, nominal_efficiency,
+             burst_pressure_psi, collapse_pressure_psi, duty
+      FROM elimfilters_catalog
+      WHERE codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]'
+        AND (
+          outer_diameter_mm IS NOT NULL OR height_mm IS NOT NULL
+          OR thread_size IS NOT NULL OR filter_type IS NOT NULL
+        )
+        AND (
+          (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)
+          OR (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)
+        )
+      ORDER BY sku
+      LIMIT $1
+    `, [limit]);
+    res.json({ success: true, count: result.rows.length, products: result.rows });
+  } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
     await client.end();
