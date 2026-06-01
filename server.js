@@ -1793,6 +1793,70 @@ app.get('/api/catalog/export', async (req, res) => {
   }
 });
 
+app.get('/api/autocomplete', async (req, res) => {
+  const q = (req.query.q || '').trim().toUpperCase();
+  if (q.length < 3) return res.json([]);
+  
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT sku, codigo_base, oem_codes, competitor_codes
+      FROM elimfilters_catalog
+      WHERE sku ILIKE $1 OR codigo_base ILIKE $1 
+         OR oem_codes::text ILIKE $1 OR competitor_codes::text ILIKE $1
+      LIMIT 40
+    `, [`%${q}%`]);
+
+    const suggestions = new Map();
+    const addMatch = (text, type) => {
+      if (!text || suggestions.size >= 8) return;
+      const upper = text.toUpperCase();
+      if (upper.includes(q) && !suggestions.has(upper)) {
+        suggestions.set(upper, { text: upper, type });
+      }
+    };
+
+    result.rows.forEach(r => {
+      addMatch(r.sku, 'ELIMFILTERS SKU');
+      addMatch(r.codigo_base, 'Base Code');
+      
+      const checkRefs = (arr) => {
+        if (!Array.isArray(arr)) return;
+        arr.forEach(ref => {
+          let code = '';
+          let brand = '';
+          if (typeof ref === 'string') {
+            const parts = ref.split(':');
+            code = parts.length >= 2 ? parts.slice(1).join(':').trim() : ref.trim();
+            brand = parts.length >= 2 ? parts[0].trim() : '';
+          } else {
+            code = ref.code || ref.partNumber || '';
+            brand = ref.manufacturer || '';
+          }
+          try { code = decodeURIComponent(code); } catch(e){}
+          
+          if (code.toUpperCase().includes(q)) {
+            const displayType = brand && brand.toUpperCase() !== 'UNKNOWN' && brand.toUpperCase() !== 'OEM' 
+              ? `Ref (${brand.toUpperCase()})` 
+              : 'Cross-Reference';
+            addMatch(code, displayType);
+          }
+        });
+      };
+      
+      checkRefs(r.oem_codes);
+      checkRefs(r.competitor_codes);
+    });
+
+    res.json(Array.from(suggestions.values()));
+  } catch(e) {
+    res.status(500).json([]);
+  } finally {
+    await client.end();
+  }
+});
+
 app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });

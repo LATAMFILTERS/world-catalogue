@@ -220,6 +220,7 @@
     .input-wrap {
       display: flex;
       align-items: center;
+      position: relative;
       border: 1px solid rgba(255,241,45,0.28);
       border-radius: 3px;
       background: rgba(0,0,0,0.6);
@@ -326,6 +327,51 @@
       transition: color 0.2s, border-color 0.2s;
     }
     .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
+
+    /* ─── AUTOCOMPLETE ─── */
+    .autocomplete-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      z-index: 1000;
+      max-height: 280px;
+      overflow-y: auto;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+      display: none;
+      flex-direction: column;
+    }
+    .autocomplete-dropdown.active { display: flex; }
+    .ac-item {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+    }
+    .ac-item:last-child { border-bottom: none; }
+    .ac-item:hover { background: rgba(255,241,45,0.12); }
+    .ac-val {
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .ac-match { color: var(--y); font-weight: 600; }
+    .ac-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
     /* ─── RESULTS ─── */
     #results {
@@ -650,6 +696,7 @@
             autocomplete="off"
             aria-label="Part number"
           />
+          <div id="ac-dropdown" class="autocomplete-dropdown"></div>
         </div>
       </div>
       <div class="form-footer">
@@ -1397,6 +1444,69 @@ function renderResults(items, count, mode, query) {
       <span class="results-mode">${mode}</span>
     </div>
     ${items.map(renderCard).join('')}`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTOCOMPLETE
+// ─────────────────────────────────────────────────────────────────────────────
+const acDropdown = document.getElementById('ac-dropdown');
+const inpPartCode = document.getElementById('inp-part');
+let acTimeout;
+
+if (inpPartCode && acDropdown) {
+  inpPartCode.addEventListener('input', e => {
+    const q = e.target.value.trim();
+    clearTimeout(acTimeout);
+    
+    if (q.length < 3) {
+      acDropdown.classList.remove('active');
+      return;
+    }
+    
+    acTimeout = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/autocomplete?q=${encodeURIComponent(q)}`);
+        const data = await res.json();
+        
+        if (!data || data.length === 0) {
+          acDropdown.classList.remove('active');
+          return;
+        }
+        
+        // Escape regex special chars from query
+        const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(${safeQ})`, 'gi');
+        
+        acDropdown.innerHTML = data.map(item => {
+          const highlighted = item.text.replace(regex, '<span class="ac-match">$1</span>');
+          return \`<div class="ac-item" data-val="\${item.text}">
+                    <span class="ac-val">\${highlighted}</span>
+                    <span class="ac-type">\${item.type}</span>
+                  </div>\`;
+        }).join('');
+        
+        acDropdown.classList.add('active');
+      } catch(err) {
+        console.error('Autocomplete error:', err);
+      }
+    }, 250);
+  });
+
+  acDropdown.addEventListener('click', e => {
+    const item = e.target.closest('.ac-item');
+    if (item) {
+      inpPartCode.value = item.getAttribute('data-val');
+      acDropdown.classList.remove('active');
+      // trigger search
+      document.querySelector('[data-form="part"]').dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target !== inpPartCode && e.target !== acDropdown && !acDropdown.contains(e.target)) {
+      acDropdown.classList.remove('active');
+    }
+  });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
