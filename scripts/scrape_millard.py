@@ -43,6 +43,7 @@ import os
 import re
 import time
 import urllib.request
+from html.parser import HTMLParser
 from pathlib import Path
 
 # ─── Config ──────────────────────────────────────────────────────────────────
@@ -223,57 +224,72 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
                 continue
             result["cross_refs"].append({"brand": brand, "code": code})
 
-        # ── Vehicle applications from table.results ────────────────────────
+        # ── Vehicle applications — parse with HTMLParser (avoids quote-escaping issues) ──
         html = page.content()
-        n_markers = html.count("idApp_")
-        log.info(f"  idApp_ in page HTML: {n_markers}")
-        idx = html.find("idApp_")
-        if idx >= 0:
-            log.info(f"  First idApp_ snippet: {html[max(0,idx-80):idx+300]!r}")
+        log.info(f"  idApp_ in page HTML: {html.count('idApp_')}")
 
-        td_re  = re.compile(r'<td[^>]*>(.*?)</td>', re.S | re.I)
-        tag_re = re.compile(r'<[^>]+>')
+        class _AppParser(HTMLParser):
+            def __init__(self):
+                super().__init__(convert_charrefs=True)
+                self.apps = []
+                self._in_row = False
+                self._onclick = ""
+                self._tds = []
+                self._td_buf = None
 
-        seen_apps: set = set()
-        for tr_open, tr_body in re.findall(
-            r'(<tr\b[^>]*idApp_\d+[^>]*>)(.*?)</tr\s*>',
-            html, re.S | re.I,
-        ):
-            try:
-                # onclick may use single or double quotes
-                oc_m = re.search(r"""onclick\s*=\s*["']([^"']+)["']""", tr_open, re.I)
-                onclick_val = oc_m.group(1) if oc_m else ""
+            def handle_starttag(self, tag, attrs):
+                a = dict(attrs)
+                if tag == "tr" and a.get("id", "").startswith("idApp_"):
+                    self._in_row = True
+                    self._onclick = a.get("onclick", "")
+                    self._tds = []
+                    self._td_buf = None
+                elif tag == "td" and self._in_row:
+                    self._td_buf = ""
 
-                # goToApp('en','America Del Sur','HYUNDAI','allSeries','','ACCENT 1.4')
-                m = re.search(
-                    r"goToApp\s*\([^,]+,[^,]+,\s*'([^']+)'[^,]*,[^,]+,[^,]*'([^']*)'\s*\)",
-                    onclick_val,
-                )
-                brand_name = m.group(1).strip() if m else ""
-                model_name = m.group(2).strip() if m else ""
+            def handle_endtag(self, tag):
+                if tag == "td" and self._in_row and self._td_buf is not None:
+                    self._tds.append(self._td_buf.strip())
+                    self._td_buf = None
+                elif tag == "tr" and self._in_row:
+                    self._in_row = False
+                    oc = self._onclick
+                    m = re.search(
+                        r"goToApp\s*\([^,]+,[^,]+,\s*'([^']+)'[^,]*,[^,]+,[^,]*'([^']*)'\s*\)",
+                        oc,
+                    )
+                    if not m:
+                        return
+                    brand = m.group(1).strip()
+                    model = m.group(2).strip()
+                    tds = self._tds
+                    engine   = tds[3] if len(tds) > 3 else ""
+                    yr_start = tds[7] if len(tds) > 7 else ""
+                    yr_end   = tds[8] if len(tds) > 8 else ""
+                    if yr_end == "-":
+                        yr_end = ""
+                    if brand and model:
+                        self.apps.append({
+                            "brand":     brand,
+                            "model":     model,
+                            "engine":    engine,
+                            "year_from": yr_start,
+                            "year_to":   yr_end,
+                        })
 
-                tds = [tag_re.sub("", td).strip() for td in td_re.findall(tr_body)]
-                # tds: [img, brand, model, engine, n1, n2, n3, yr_start, yr_end, ...]
-                engine   = tds[3] if len(tds) > 3 else ""
-                yr_start = tds[7] if len(tds) > 7 else ""
-                yr_end   = tds[8] if len(tds) > 8 else ""
-                yr_end   = "" if yr_end in ("-", "") else yr_end
+            def handle_data(self, data):
+                if self._td_buf is not None:
+                    self._td_buf += data
 
-                if not brand_name or not model_name:
-                    continue
-                key = f"{brand_name}|{model_name}|{engine}|{yr_start}"
-                if key in seen_apps:
-                    continue
-                seen_apps.add(key)
-                result["applications"].append({
-                    "brand":     brand_name,
-                    "model":     model_name,
-                    "engine":    engine,
-                    "year_from": yr_start,
-                    "year_to":   yr_end,
-                })
-            except Exception:
-                pass
+        _p = _AppParser()
+        _p.feed(html)
+
+        seen_keys: set = set()
+        for app in _p.apps:
+            key = f"{app['brand']}|{app['model']}|{app['engine']}|{app['year_from']}"
+            if key not in seen_keys:
+                seen_keys.add(key)
+                result["applications"].append(app)
 
     except Exception as ex:
         log.error(f"  Parse error: {ex}")
