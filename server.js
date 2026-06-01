@@ -498,6 +498,12 @@ function parseRefs(arr){
 }
 
 function detectLang(req) {
+  if (req.query.lang) {
+    const qLang = String(req.query.lang).toLowerCase().trim();
+    if (qLang === 'es' || qLang === 'en' || qLang === 'pt' || qLang === 'fr' || qLang === 'it' || qLang === 'nl' || qLang === 'ru' || qLang === 'zh' || qLang === 'ja' || qLang === 'ar' || qLang === 'fa') {
+      return qLang;
+    }
+  }
   const langs = (req.headers['accept-language'] || '').toLowerCase()
     .split(',').map(l => l.split(';')[0].trim());
   return langs.some(l => l.startsWith('es')) ? 'es' : 'en';

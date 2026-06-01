@@ -699,6 +699,19 @@ const TRANSLATIONS = {
     equipTitle:        'Equipment Applications',
     decodedLabel:      'DECODED',
     decodingVin:       'DECODING VIN',
+    // Technical spec translations
+    specOD:            'Outer Diameter',
+    specThread:        'Thread Size',
+    specLength:        'Length',
+    specGasketOD:      'Gasket OD',
+    specGasketID:      'Gasket ID',
+    specEfficiency:    'Efficiency',
+    specTestStd:       'Efficiency Test Std',
+    specMediaType:     'Media Type',
+    specCollapse:      'Collapse Burst',
+    specStyle:         'Style',
+    specNoRefs:        'No cross-references',
+    specNoEquip:       'No equipment applications',
   },
   es: {
     searchPlaceholder: 'Buscar de nuevo...',
@@ -721,6 +734,19 @@ const TRANSLATIONS = {
     equipTitle:        'Aplicaciones de Equipo',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
+    // Technical spec translations
+    specOD:            'Diámetro Exterior',
+    specThread:        'Rosca / Hilo',
+    specLength:        'Largo / Altura',
+    specGasketOD:      'Empaque DE',
+    specGasketID:      'Empaque DI',
+    specEfficiency:    'Eficiencia',
+    specTestStd:       'Norma de Eficiencia',
+    specMediaType:     'Medio Filtrante',
+    specCollapse:      'Colapso / Explosión',
+    specStyle:         'Estilo / Tipo',
+    specNoRefs:        'Sin referencias cruzadas',
+    specNoEquip:       'Sin aplicaciones de equipo',
   },
   pt: {
     searchPlaceholder: 'Buscar novamente...',
@@ -743,6 +769,19 @@ const TRANSLATIONS = {
     equipTitle:        'Aplicações de Equipamento',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
+    // Technical spec translations
+    specOD:            'Diâmetro Externo',
+    specThread:        'Rosca',
+    specLength:        'Comprimento',
+    specGasketOD:      'Gaxeta DE',
+    specGasketID:      'Gaxeta DI',
+    specEfficiency:    'Eficiência',
+    specTestStd:       'Norma de Eficiência',
+    specMediaType:     'Tipo de Mídia',
+    specCollapse:      'Colapso / Explosão',
+    specStyle:         'Estilo',
+    specNoRefs:        'Sem referências cruzadas',
+    specNoEquip:       'Sem aplicações de equipamento',
   }
 };
 
@@ -764,10 +803,12 @@ async function detectLang() {
   } catch { return 'en'; }
 }
 
+let currentLang = 'en'; // Auth language
 let T = TRANSLATIONS.en; // default, overwritten after detection
 
 detectLang().then(lang => {
-  T = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  currentLang = lang || 'en';
+  T = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
   const backBtn = document.querySelector('.header-back');
   if (backBtn) backBtn.textContent = T.backToSearch;
   executeSearch();
@@ -892,7 +933,7 @@ function esc(str) {
 // ─── Parse description (may come as JSON string from API) ───
 function parseDesc(val) {
   if (!val) return null;
-  const lang = (navigator.language || 'en').startsWith('es') ? 'es' : 'en';
+  const lang = currentLang;
   // Already a parsed object (JSONB from API)
   if (typeof val === 'object' && !Array.isArray(val)) {
     return val[lang] || val.en || val.es || Object.values(val)[0] || null;
@@ -973,19 +1014,19 @@ function renderCard(p, index) {
     ? validMicron + ' micron'
     : (nomHasMicron ? nomEff : null);
   const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
-  const effLabel = pctStr ? 'Efficiency ' + pctStr + '%' : 'Efficiency';
+  const effLabel = pctStr ? (T.specEfficiency || 'Efficiency') + ' ' + pctStr + '%' : (T.specEfficiency || 'Efficiency');
 
   const specs = [
-    specHTML('Outer Diameter', dimFmt(p.outer_diameter_mm)),
-    specHTML('Thread Size',    p.thread_size),
-    specHTML('Length',         dimFmt(p.height_mm)),
-    specHTML('Gasket OD',      dimFmt(p.gasket_od_mm)),
-    specHTML('Gasket ID',      dimFmt(p.gasket_id_mm)),
-    specHTML(effLabel,         micronVal),
-    specHTML('Efficiency Test Std', p.iso_test_method),
-    specHTML('Media Type',     mediaLabel(p.filter_subtype) || null),
-    specHTML('Collapse Burst', psiFmt(p.burst_pressure_psi)),
-    specHTML('Style',          p.installation_type || null),
+    specHTML(T.specOD,        dimFmt(p.outer_diameter_mm)),
+    specHTML(T.specThread,    p.thread_size),
+    specHTML(T.specLength,    dimFmt(p.height_mm)),
+    specHTML(T.specGasketOD,  dimFmt(p.gasket_od_mm)),
+    specHTML(T.specGasketID,  dimFmt(p.gasket_id_mm)),
+    specHTML(effLabel,        micronVal),
+    specHTML(T.specTestStd,   p.iso_test_method),
+    specHTML(T.specMediaType, mediaLabel(p.filter_subtype) || null),
+    specHTML(T.specCollapse,  psiFmt(p.burst_pressure_psi)),
+    specHTML(T.specStyle,     p.installation_type || null),
   ].filter(Boolean);
 
   const oem  = formatRefs(p.oem_codes);
@@ -1025,7 +1066,7 @@ function renderCard(p, index) {
               <div class="refs-grid">
                 ${oem.length 
                   ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No OEM cross-references</span>`
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
               </div>
             </div>
@@ -1036,7 +1077,7 @@ function renderCard(p, index) {
               <div class="refs-grid">
                 ${comp.length 
                   ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No competitor cross-references</span>`
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
               </div>
             </div>
@@ -1084,7 +1125,7 @@ function renderCard(p, index) {
                       }
                       return `<span class="equip-chip">${brandSpan}<span>${restName}</span></span>`;
                     }).join('') 
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">No equipment applications</span>`
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoEquip}</span>`
                 }
               </div>
             </div>
@@ -1138,7 +1179,7 @@ async function executeSearch() {
     showLoading(query);
     const warmupTimer = startWarmupTimer(query);
     try {
-      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}`);
+      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}&lang=${currentLang}`);
       clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
@@ -1163,7 +1204,7 @@ async function executeSearch() {
 
     showLoading(localModel);
     try {
-      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(localModel)}`;
+      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(localModel)}&lang=${currentLang}`;
       if (localEngine) url += `&engine=${encodeURIComponent(localEngine)}`;
       const r = await fetch(url);
       if (!r.ok) throw new Error();
@@ -1175,7 +1216,7 @@ async function executeSearch() {
   } else if (mode === 'equip' && model) {
     showLoading(model);
     try {
-      let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}`;
+      let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}&lang=${currentLang}`;
       if (eqType) url += `&type=${encodeURIComponent(eqType)}`;
       if (engine) url += `&engine=${encodeURIComponent(engine)}`;
       const r = await fetch(url);
