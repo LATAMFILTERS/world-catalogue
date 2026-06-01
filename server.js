@@ -632,16 +632,8 @@ function buildFilterData(row, lang = 'en'){
     burst_pressure_psi: row.burst_pressure_psi || null,
     collapse_pressure_psi: row.collapse_pressure_psi || null,
     duty: row.duty || null,
-    oem_codes: (() => {
-      const combined = [...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)];
-      const { oem, competitor: _c } = splitRefs(combined);
-      return oem;
-    })(),
-    competitor_codes: (() => {
-      const combined = [...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)];
-      const { competitor } = splitRefs(combined);
-      return competitor;
-    })(),
+    oem_codes: parseRefs(row.oem_codes),
+    competitor_codes: parseRefs(row.competitor_codes),
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
