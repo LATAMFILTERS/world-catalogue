@@ -386,7 +386,9 @@ def main():
             result = scrape_product(ctx, args.sku, args.region, args.filter_type,
                                     dump_html=args.dump_html)
             if args.dump_html:
-                print(result["__html__"])
+                out_file = Path(args.out).with_suffix('.html') if args.out != "millard_scraped.json" else Path("mc2200_debug.html")
+                out_file.write_text(result["__html__"], encoding="utf-8")
+                log.info(f"HTML saved to {out_file}")
                 return
             print(json.dumps(result, indent=2, ensure_ascii=False))
             if args.push_db and result:
