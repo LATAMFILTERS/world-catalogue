@@ -969,11 +969,22 @@ function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
   const seen = new Set();
   return arr.slice(0, max).map(r => {
-    if (typeof r === 'string') return { brand: '', code: r };
-    const rawBrand = r.manufacturer || '';
-    const brand = rawBrand.toUpperCase() === 'UNKNOWN' ? '' : rawBrand;
+    let brand = '';
+    let code = '';
+    if (typeof r === 'string') {
+      const parts = r.split(':');
+      if (parts.length >= 2) {
+        brand = parts[0].trim();
+        code = parts.slice(1).join(':').trim();
+      } else {
+        code = r.trim();
+      }
+    } else {
+      brand = (r.manufacturer || '').toUpperCase() === 'UNKNOWN' ? '' : (r.manufacturer || '');
+      code = r.code || r.partNumber || '';
+    }
+    
     // URL-decode codes (scraper sometimes stores %2F etc.)
-    let code = r.code || r.partNumber || '';
     try { code = decodeURIComponent(code); } catch(_) {}
     return { brand, code };
   }).filter(r => {
@@ -984,6 +995,39 @@ function formatRefs(arr, max = Infinity) {
     seen.add(key);
     return true;
   });
+}
+
+const KNOWN_COMPETITORS = new Set([
+  'DONALDSON', 'FLEETGUARD', 'BALDWIN', 'WIX', 'LUBERFINER', 'LUBER FINER', 'FRAM', 
+  'MANN', 'MANN FILTER', 'PUROLATOR', 'HASTINGS', 'AC DELCO', 
+  'CHAMPION', 'BOSCH', 'RYCO', 'HIFI FILTER', 'SAKURA', 'SURE FILTER', 'SURE', 'UFI', 
+  'HENGST', 'MAHLE', 'K&N', 'CARQUEST', 'NAPA', 'BIG A', 'MICROPORE', 'WAKO', 
+  'GUD', 'FILTRON', 'PERRY', 'FLEETRITE', 'SERVICE 1', 'STELLOX', 'DENSO', 'ALCOA MARINE', 
+  'WESFIL', 'FIRST AUTOMOTIVE', 'MULLER', 'VMC', 'EXXEL PTY LTD', 'GOODWILL',
+  'AMERICAN PARTS', 'ALLIANCE', 'AIR REFINER', 'AMC', 'VIC'
+]);
+
+function splitCrossReferences(oemArr, compArr) {
+  const merged = [...(oemArr || []), ...(compArr || [])];
+  const formatted = formatRefs(merged);
+  
+  const oem = [];
+  const comp = [];
+  
+  formatted.forEach(r => {
+    const normBrand = normalizeBrand(r.brand);
+    if (normBrand === 'OEM') {
+      r.brand = ''; // Strip 'OEM' brand text
+      oem.push(r);
+    } else if (KNOWN_COMPETITORS.has(normBrand)) {
+      comp.push(r);
+    } else {
+      oem.push(r); // Default to OEM if unknown brand
+    }
+  });
+  
+  const sortByBrand = (a, b) => (a.brand || '').localeCompare(b.brand || '');
+  return { oem: oem.sort(sortByBrand), comp: comp.sort(sortByBrand) };
 }
 
 // ─── Render Spec Item ───
@@ -1036,8 +1080,7 @@ function renderCard(p, index) {
     specHTML(T.specStyle,     p.installation_type || null),
   ].filter(Boolean);
 
-  const oem  = formatRefs(p.oem_codes);
-  const comp = formatRefs(p.competitor_codes);
+  const { oem, comp } = splitCrossReferences(p.oem_codes, p.competitor_codes);
   const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
 
   return `
