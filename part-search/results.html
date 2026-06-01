@@ -650,7 +650,7 @@
 
   <div class="search-summary" id="search-summary">
     <span class="search-summary-mode">PART NUMBER</span>
-    <span class="search-summary-main"><strong>${query}</strong></span>
+    <span class="search-summary-main"><strong>—</strong></span>
   </div>
 
   <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
@@ -1013,37 +1013,13 @@ function formatRefs(arr, max = Infinity) {
   }).slice(0, max);
 }
 
-const KNOWN_COMPETITORS = new Set([
-  'DONALDSON', 'FLEETGUARD', 'BALDWIN', 'WIX', 'LUBERFINER', 'LUBER FINER', 'FRAM', 
-  'MANN', 'MANN FILTER', 'PUROLATOR', 'HASTINGS', 'AC DELCO', 
-  'CHAMPION', 'BOSCH', 'RYCO', 'HIFI FILTER', 'SAKURA', 'SURE FILTER', 'SURE', 'UFI', 
-  'HENGST', 'MAHLE', 'K&N', 'CARQUEST', 'NAPA', 'BIG A', 'MICROPORE', 'WAKO', 
-  'GUD', 'FILTRON', 'PERRY', 'FLEETRITE', 'SERVICE 1', 'STELLOX', 'DENSO', 'ALCOA MARINE', 
-  'WESFIL', 'FIRST AUTOMOTIVE', 'MULLER', 'VMC', 'EXXEL PTY LTD', 'GOODWILL',
-  'AMERICAN PARTS', 'ALLIANCE', 'AIR REFINER', 'AMC', 'VIC'
-]);
-
+// Server pre-classifies oem_codes (equipment makers) and competitor_codes (filter brands).
+// Trust the server's classification — no client-side re-sorting needed.
 function splitCrossReferences(oemArr, compArr) {
-  const merged = [...(oemArr || []), ...(compArr || [])];
-  const formatted = formatRefs(merged);
-  
-  const oem = [];
-  const comp = [];
-  
-  formatted.forEach(r => {
-    const normBrand = normalizeBrand(r.brand);
-    if (normBrand === 'OEM') {
-      r.brand = ''; // Strip 'OEM' brand text
-      oem.push(r);
-    } else if (KNOWN_COMPETITORS.has(normBrand)) {
-      comp.push(r);
-    } else {
-      oem.push(r); // Default to OEM if unknown brand
-    }
-  });
-  
   const sortByBrand = (a, b) => (a.brand || '').localeCompare(b.brand || '');
-  return { oem: oem.sort(sortByBrand), comp: comp.sort(sortByBrand) };
+  const oem  = formatRefs(oemArr  || []).sort(sortByBrand);
+  const comp = formatRefs(compArr || []).sort(sortByBrand);
+  return { oem, comp };
 }
 
 // ─── Render Spec Item ───
@@ -1258,7 +1234,7 @@ async function executeSearch() {
     let localEngine = engine;
     let decodedText = null;
 
-    if (/^[A-Z0-9]{17}$/i.test(model)) {
+    if (model && /^[A-Z0-9]{17}$/i.test(model)) {
       showLoading(`DECODING VIN: ${model}...`);
       const decoded = await decodeNHTSA(model);
       if (decoded) {

@@ -2091,6 +2091,106 @@ app.get('/api/stats', async (req, res) => {
     await client.end();
   }
 });
+// ─── GET /api/audit/report ───────────────────────────────────────────────────
+// Full catalog data quality audit. Returns stats on completeness.
+app.get('/api/audit/report', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    const [total, donaldson, missingOem, missingEquip, missingBoth,
+           scrapedMissingOem, scrapedMissingEquip, scrapedMissingBoth,
+           fullyEmpty, topMfr, topComp] = await Promise.all([
+
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog`),
+
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'`),
+
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)`),
+
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)`),
+
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)
+                    AND (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)`),
+
+      // Scraped (has specs) but missing oem
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (outer_diameter_mm IS NOT NULL OR height_mm IS NOT NULL OR thread_size IS NOT NULL)
+                    AND (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)`),
+
+      // Scraped (has specs) but missing equipment
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (outer_diameter_mm IS NOT NULL OR height_mm IS NOT NULL OR thread_size IS NOT NULL)
+                    AND (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)`),
+
+      // Scraped but missing both
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND (outer_diameter_mm IS NOT NULL OR height_mm IS NOT NULL OR thread_size IS NOT NULL)
+                    AND (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)
+                    AND (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)`),
+
+      // Fully empty — no specs, no crossrefs, no equipment (likely obsolete)
+      client.query(`SELECT COUNT(*) FROM elimfilters_catalog
+                    WHERE codigo_base ~ '^P[0-9]'
+                    AND outer_diameter_mm IS NULL AND height_mm IS NULL AND thread_size IS NULL
+                    AND (oem_codes IS NULL OR jsonb_array_length(oem_codes) = 0)
+                    AND (equipment_applications IS NULL OR jsonb_array_length(equipment_applications) = 0)`),
+
+      // Top OEM manufacturers
+      client.query(`SELECT elem->>'manufacturer' AS mfr, COUNT(*) AS cnt
+                    FROM elimfilters_catalog, jsonb_array_elements(oem_codes) AS elem
+                    WHERE oem_codes IS NOT NULL AND jsonb_array_length(oem_codes) > 0
+                    GROUP BY mfr ORDER BY cnt DESC LIMIT 20`),
+
+      // Top competitor brands
+      client.query(`SELECT elem->>'manufacturer' AS mfr, COUNT(*) AS cnt
+                    FROM elimfilters_catalog, jsonb_array_elements(competitor_codes) AS elem
+                    WHERE competitor_codes IS NOT NULL AND jsonb_array_length(competitor_codes) > 0
+                    GROUP BY mfr ORDER BY cnt DESC LIMIT 20`),
+    ]);
+
+    const t = parseInt(total.rows[0].count);
+    const d = parseInt(donaldson.rows[0].count);
+
+    res.json({
+      success: true,
+      generated: new Date().toISOString(),
+      catalog: {
+        total_products: t,
+        donaldson_products: d,
+      },
+      completeness: {
+        missing_oem_codes:          { count: parseInt(missingOem.rows[0].count),    pct: ((parseInt(missingOem.rows[0].count)/d)*100).toFixed(1)+'%' },
+        missing_equipment:          { count: parseInt(missingEquip.rows[0].count),  pct: ((parseInt(missingEquip.rows[0].count)/d)*100).toFixed(1)+'%' },
+        missing_both:               { count: parseInt(missingBoth.rows[0].count),   pct: ((parseInt(missingBoth.rows[0].count)/d)*100).toFixed(1)+'%' },
+      },
+      recheck_queue: {
+        scraped_missing_oem:        { count: parseInt(scrapedMissingOem.rows[0].count),   note: 'Has specs but 0 OEM codes — Show More may have been missed' },
+        scraped_missing_equipment:  { count: parseInt(scrapedMissingEquip.rows[0].count), note: 'Has specs but 0 equipment apps — Show More may have been missed' },
+        scraped_missing_both:       { count: parseInt(scrapedMissingBoth.rows[0].count),  note: 'Has specs but 0 of either — priority recheck targets' },
+        fully_empty:                { count: parseInt(fullyEmpty.rows[0].count),          note: 'No specs, no refs, no equipment — likely obsolete Donaldson products' },
+      },
+      top_oem_manufacturers:   topMfr.rows,
+      top_competitor_brands:   topComp.rows,
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;
