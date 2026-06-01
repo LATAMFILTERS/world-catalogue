@@ -43,7 +43,7 @@ from pathlib import Path
 
 # ─── Config ──────────────────────────────────────────────────────────────────
 
-API_BASE   = "https://world-catalogue.onrender.com"
+API_BASE   = "https://part-search.elimfilters.com"
 ADMIN_KEY  = os.environ.get("ADMIN_KEY", "elim2026admin")
 IMPORT_KEY = "elim2026"
 DELAY_SEC  = 2.0   # seconds between Donaldson page requests
