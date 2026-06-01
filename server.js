@@ -2032,8 +2032,8 @@ app.get('/api/autocomplete', async (req, res) => {
 
     result.rows.forEach(r => {
       addMatch(r.sku, 'ELIMFILTERS SKU');
-      addMatch(r.codigo_base, 'Base Code');
-      
+      // codigo_base is internal — never surfaced as autocomplete suggestion
+
       const checkRefs = (arr) => {
         if (!Array.isArray(arr)) return;
         arr.forEach(ref => {
