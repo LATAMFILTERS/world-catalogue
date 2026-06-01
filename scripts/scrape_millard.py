@@ -232,6 +232,7 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
             def __init__(self):
                 super().__init__(convert_charrefs=True)
                 self.apps = []
+                self.rows_seen = 0
                 self._in_row = False
                 self._onclick = ""
                 self._tds = []
@@ -241,6 +242,7 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
                 a = dict(attrs)
                 if tag == "tr" and a.get("id", "").startswith("idApp_"):
                     self._in_row = True
+                    self.rows_seen += 1
                     self._onclick = a.get("onclick", "")
                     self._tds = []
                     self._td_buf = None
@@ -254,15 +256,15 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
                 elif tag == "tr" and self._in_row:
                     self._in_row = False
                     oc = self._onclick
-                    m = re.search(
-                        r"goToApp\s*\([^,]+,[^,]+,\s*'([^']+)'[^,]*,[^,]+,[^,]*'([^']*)'\s*\)",
-                        oc,
-                    )
-                    if not m:
+                    # goToApp('en','America Del Sur','HYUNDAI','allSeries','','ACCENT 1.4')
+                    # arg indices: 0=lang 1=region 2=brand 3=series 4=? 5=model
+                    parts = re.findall(r"'([^']*)'", oc)
+                    if len(parts) < 6:
                         return
-                    brand = m.group(1).strip()
-                    model = m.group(2).strip()
+                    brand = parts[2].strip()
+                    model = parts[5].strip()
                     tds = self._tds
+                    # tds: [img, brand, model, engine, kw, hp, cv, yr_start, yr_end, ...]
                     engine   = tds[3] if len(tds) > 3 else ""
                     yr_start = tds[7] if len(tds) > 7 else ""
                     yr_end   = tds[8] if len(tds) > 8 else ""
@@ -283,6 +285,7 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
 
         _p = _AppParser()
         _p.feed(html)
+        log.info(f"  Parser: rows_seen={_p.rows_seen} raw_apps={len(_p.apps)}")
 
         seen_keys: set = set()
         for app in _p.apps:
