@@ -1226,12 +1226,6 @@ if (localStorage.getItem('ef-ps-v')) {
   });
 }
 
-// Fallback: if animation stalls, reveal UI after 4 seconds
-setTimeout(() => {
-  const panel = document.getElementById('search-panel');
-  if (panel && !panel.classList.contains('vis')) revealUI();
-}, 4000);
-
 // ─────────────────────────────────────────────────────────────────────────────
 // MODE TABS
 // ─────────────────────────────────────────────────────────────────────────────
