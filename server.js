@@ -16,7 +16,16 @@ app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.4.0' }
 app.use(cors());
 app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('frontend/out'));
+const frontendStatic = express.static('frontend/out');
+const partSearchStatic = express.static('part-search');
+app.use((req, res, next) => {
+  const host = req.get('host') || req.hostname || '';
+  if (host.includes('part-search')) {
+    partSearchStatic(req, res, next);
+  } else {
+    frontendStatic(req, res, next);
+  }
+});
 app.use(express.static('public'));
 app.use(express.static('www'));
 

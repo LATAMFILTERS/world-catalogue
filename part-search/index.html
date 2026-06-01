@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Part Search — ELIMFILTERS®</title>
+<meta name="description" content="Search 4,600+ industrial filter parts by part number, OEM code, or cross-reference. ELIMFILTERS® professional filtration catalog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow: #FFF12D;
+  --bg: #000;
+  --surface: #0a0a0a;
+  --border: rgba(255,255,255,0.07);
+  --text: #fff;
+  --muted: rgba(255,255,255,0.45);
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Outfit', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.header-logo img { height: 28px; }
+.header-badge {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--yellow);
+  border: 1px solid rgba(255,241,45,0.35);
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+.header-link {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.header-link:hover { color: var(--yellow); }
+
+/* ── Hero search ── */
+.hero {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--yellow);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.hero h1 {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 span { color: var(--yellow); }
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Search box ── */
+.search-wrap {
+  display: flex;
+  gap: 0;
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+.search-wrap:focus-within { border-color: var(--yellow); }
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.9rem 1.25rem;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.search-input::placeholder {
+  color: rgba(255,255,255,0.22);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.88rem;
+}
+.search-btn {
+  background: var(--yellow);
+  border: none;
+  cursor: pointer;
+  padding: 0 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #000;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.search-btn:hover { background: #fff; }
+.search-hint {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+.search-hint span { color: rgba(255,241,45,0.5); }
+
+/* ── State messages ── */
+.state-msg {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  display: none;
+}
+.state-msg.visible { display: block; }
+.state-error { color: rgba(255,80,80,0.6); }
+
+/* ── Result card ── */
+.result-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  display: none;
+}
+.result-wrap.visible { display: block; }
+
+.result-card {
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+
+/* Card header */
+.card-header {
+  background: #0d0d0d;
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+.card-sku-block {}
+.card-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+.card-sku {
+  font-family: var(--sans);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--yellow);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.card-base {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+.card-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.65);
+  margin-top: 0.85rem;
+  max-width: 580px;
+}
+.card-tech-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.card-tech-name {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+.card-tech-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Tabs */
+.card-tabs {
+  display: flex;
+  background: #080808;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.card-tabs::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 0.85rem 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tab-btn:hover { color: rgba(255,255,255,0.7); }
+.tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+.tab-count {
+  background: rgba(255,255,255,0.07);
+  border-radius: 99px;
+  padding: 1px 7px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
+}
+.tab-btn.active .tab-count { background: rgba(255,241,45,0.12); color: rgba(255,241,45,0.7); }
+
+/* Panels */
+.card-panel { display: none; padding: 1.75rem 2rem; }
+.card-panel.active { display: block; }
+
+/* Specs */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+}
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  align-items: baseline;
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-key {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+.spec-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+.spec-val.highlight { color: var(--yellow); }
+
+/* Dimensions section in specs */
+.dim-block {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.dim-title {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.dim-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.dim-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  padding: 0.65rem 1rem;
+  min-width: 120px;
+}
+.dim-label {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.dim-value {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+}
+.dim-value small {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+/* Code grids (OEM / Crossref) */
+.code-section { margin-bottom: 1.5rem; }
+.code-section-title {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.code-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.code-chip {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.code-mfr {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+}
+.code-num {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.04em;
+}
+
+/* Equipment */
+.equip-list { display: flex; flex-direction: column; gap: 0.35rem; }
+.equip-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.82rem;
+}
+.equip-row:last-child { border-bottom: none; }
+.equip-row > * { color: rgba(255,255,255,0.6); }
+.equip-row > *:first-child { color: rgba(255,255,255,0.85); font-weight: 500; }
+.equip-header {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.equip-header span {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+
+/* Alternatives */
+.alt-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.alt-chip {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.65);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+.alt-chip:hover {
+  border-color: rgba(255,241,45,0.4);
+  color: var(--yellow);
+  background: rgba(255,241,45,0.05);
+}
+
+/* Empty panel */
+.panel-empty {
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.15);
+  text-transform: uppercase;
+}
+.footer a { color: rgba(255,241,45,0.4); text-decoration: none; }
+.footer a:hover { color: var(--yellow); }
+
+@media (max-width: 600px) {
+  .card-header { grid-template-columns: 1fr; }
+  .card-tech-badge { align-items: flex-start; }
+  .equip-row, .equip-header { grid-template-columns: 1.5fr 1fr; }
+  .equip-row > *:last-child, .equip-header > *:last-child { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="header">
+  <a class="header-logo" href="https://elimfilters.com">
+    <img src="/assets/logo-elimfilters.png" alt="ELIMFILTERS">
+    <span class="header-badge">Part Search</span>
+  </a>
+  <a class="header-link" href="https://elimfilters.com">← Back to catalog</a>
+</header>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <span class="hero-tag">// ELIMFILTERS® Industrial Filter Catalog</span>
+  <h1>Part <span>Number</span><br>Search</h1>
+  <p class="hero-sub">Enter an ELIMFILTERS SKU, Donaldson part number, OEM code, or competitor cross-reference to find specifications and equivalents.</p>
+
+  <div class="search-wrap">
+    <input
+      class="search-input"
+      id="search-input"
+      type="text"
+      placeholder="e.g. EL82100 · P552100 · LF3000 · B7253"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+    >
+    <button class="search-btn" id="search-btn" onclick="doSearch()">Search →</button>
+  </div>
+  <div class="search-hint">
+    <span>SKU</span> EL82100 &nbsp;·&nbsp;
+    <span>Donaldson</span> P552100 &nbsp;·&nbsp;
+    <span>OEM</span> Cummins 3937153 &nbsp;·&nbsp;
+    <span>Baldwin</span> B7253
+  </div>
+</section>
+
+<!-- ── States ── -->
+<div class="state-msg" id="state-loading">Searching catalog…</div>
+<div class="state-msg state-error" id="state-error"></div>
+
+<!-- ── Result ── -->
+<div class="result-wrap" id="result-wrap">
+  <div class="result-card" id="result-card">
+
+    <!-- Header -->
+    <div class="card-header">
+      <div class="card-sku-block">
+        <div class="card-label">ELIMFILTERS SKU</div>
+        <div class="card-sku" id="r-sku">—</div>
+        <div class="card-base" id="r-base"></div>
+        <p class="card-desc" id="r-desc"></p>
+      </div>
+      <div class="card-tech-badge" id="r-tech-badge">
+        <span class="card-tech-name" id="r-tech-name"></span>
+        <img class="card-tech-logo" id="r-tech-logo" src="" alt="" style="display:none">
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="card-tabs">
+      <button class="tab-btn active" data-panel="specs" onclick="switchTab(this)">Specifications</button>
+      <button class="tab-btn" data-panel="oem" onclick="switchTab(this)">
+        OEM Codes <span class="tab-count" id="cnt-oem">0</span>
+      </button>
+      <button class="tab-btn" data-panel="cross" onclick="switchTab(this)">
+        Cross Refs <span class="tab-count" id="cnt-cross">0</span>
+      </button>
+      <button class="tab-btn" data-panel="equip" onclick="switchTab(this)">
+        Equipment <span class="tab-count" id="cnt-equip">0</span>
+      </button>
+      <button class="tab-btn" data-panel="alt" onclick="switchTab(this)" id="tab-alt" style="display:none">
+        Alternatives <span class="tab-count" id="cnt-alt">0</span>
+      </button>
+    </div>
+
+    <!-- Panels -->
+    <div class="card-panel active" id="panel-specs">
+      <div class="specs-grid" id="r-specs"></div>
+      <div class="dim-block" id="r-dims" style="display:none">
+        <div class="dim-title">// Physical Dimensions</div>
+        <div class="dim-grid" id="r-dims-grid"></div>
+      </div>
+    </div>
+
+    <div class="card-panel" id="panel-oem">
+      <div class="code-grid" id="r-oem-grid"></div>
+    </div>
+
+    <div class="card-panel" id="panel-cross">
+      <div id="r-cross-sections"></div>
+    </div>
+
+    <div class="card-panel" id="panel-equip">
+      <div id="r-equip-content"></div>
+    </div>
+
+    <div class="card-panel" id="panel-alt">
+      <div class="alt-list" id="r-alt-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <p>ELIMFILTERS® Industrial Filter Catalog &nbsp;·&nbsp; <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp; Data accuracy subject to catalog updates</p>
+</footer>
+
+<script>
+// ── Config ──────────────────────────────────────────────────────────────────
+const API = '';  // same origin
+
+// ── Spec field labels ────────────────────────────────────────────────────────
+const SPEC_MAP = [
+  ['filter_type',           'Filter Type'],
+  ['filter_subtype',        'Sub-Type'],
+  ['technology',            'Technology'],
+  ['installation_type',     'Installation'],
+  ['thread_size',           'Thread Size'],
+  ['iso_test_method',       'ISO Test Method'],
+  ['micron_rating',         'Micron Rating'],
+  ['nominal_efficiency',    'Efficiency'],
+  ['burst_pressure_psi',    'Burst Pressure (psi)'],
+  ['collapse_pressure_psi', 'Collapse Pressure (psi)'],
+  ['duty',                  'Duty Class'],
+];
+
+// ── Keyboard shortcut ────────────────────────────────────────────────────────
+document.getElementById('search-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doSearch();
+});
+
+// ── Tab switching ────────────────────────────────────────────────────────────
+function switchTab(btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.card-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val || '';
+}
+
+function hide(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'none';
+}
+function show(id, display) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = display || 'block';
+}
+
+function setState(which, msg) {
+  ['loading', 'error'].forEach(s => {
+    const el = document.getElementById('state-' + s);
+    el.classList.remove('visible');
+  });
+  hide('result-wrap');
+  if (which) {
+    const el = document.getElementById('state-' + which);
+    if (el) {
+      el.textContent = msg || el.textContent;
+      el.classList.add('visible');
+    }
+  }
+}
+
+// ── Render ───────────────────────────────────────────────────────────────────
+function renderResult(d) {
+  // Header
+  setText('r-sku', d.elimfilters_sku || d.sku || '—');
+  const base = d.codigo_base ? `DONALDSON ${d.codigo_base}` : '';
+  setText('r-base', base);
+  setText('r-desc', d.description || '');
+
+  // Tech badge
+  if (d.technology) {
+    setText('r-tech-name', d.technology);
+    if (d.technology_logo) {
+      const logo = document.getElementById('r-tech-logo');
+      logo.src = d.technology_logo;
+      logo.alt = d.technology;
+      show('r-tech-logo', 'block');
+    } else {
+      hide('r-tech-logo');
+    }
+  } else {
+    document.getElementById('r-tech-badge').style.display = 'none';
+  }
+
+  // Specs — only show non-null
+  const grid = document.getElementById('r-specs');
+  grid.innerHTML = '';
+  let specCount = 0;
+  SPEC_MAP.forEach(([key, label]) => {
+    const val = d[key];
+    if (val === null || val === undefined || val === '' || val === '—') return;
+    const row = document.createElement('div');
+    row.className = 'spec-row';
+    row.innerHTML = `
+      <span class="spec-key">${label}</span>
+      <span class="spec-val${key === 'technology' ? ' highlight' : ''}">${val}</span>
+    `;
+    grid.appendChild(row);
+    specCount++;
+  });
+  if (specCount === 0) {
+    grid.innerHTML = '<div class="panel-empty">No specifications in catalog yet</div>';
+  }
+
+  // Dimensions
+  const dims = {};
+  if (d.height_mm)        dims['Height'] = d.height_mm + ' mm';
+  if (d.outer_diameter_mm) dims['Outer Dia.'] = d.outer_diameter_mm + ' mm';
+  if (d.gasket_od_mm)     dims['Gasket OD'] = d.gasket_od_mm + ' mm';
+  if (d.gasket_id_mm)     dims['Gasket ID'] = d.gasket_id_mm + ' mm';
+
+  const dimKeys = Object.keys(dims);
+  if (dimKeys.length > 0) {
+    const dimGrid = document.getElementById('r-dims-grid');
+    dimGrid.innerHTML = '';
+    dimKeys.forEach(k => {
+      const el = document.createElement('div');
+      el.className = 'dim-item';
+      el.innerHTML = `<div class="dim-label">${k}</div><div class="dim-value">${dims[k]}</div>`;
+      dimGrid.appendChild(el);
+    });
+    show('r-dims', 'block');
+  } else {
+    hide('r-dims');
+  }
+
+  // OEM codes
+  const oems = d.oem_codes || [];
+  const oemGrid = document.getElementById('r-oem-grid');
+  oemGrid.innerHTML = '';
+  setText('cnt-oem', oems.length);
+  if (oems.length > 0) {
+    oems.forEach(c => {
+      const chip = document.createElement('div');
+      chip.className = 'code-chip';
+      const mfr = c.manufacturer || '';
+      const num = c.code || (typeof c === 'string' ? c : '');
+      chip.innerHTML = (mfr ? `<span class="code-mfr">${mfr}</span>` : '') +
+                       `<span class="code-num">${num || '—'}</span>`;
+      oemGrid.appendChild(chip);
+    });
+  } else {
+    oemGrid.innerHTML = '<div class="panel-empty">No OEM codes available</div>';
+  }
+
+  // Cross reference — group by brand
+  const competitor = d.competitor_codes || [];
+  const crossSections = document.getElementById('r-cross-sections');
+  crossSections.innerHTML = '';
+  setText('cnt-cross', competitor.length);
+  if (competitor.length > 0) {
+    const byBrand = {};
+    competitor.forEach(c => {
+      const brand = (c.manufacturer || 'OTHER').toUpperCase();
+      if (!byBrand[brand]) byBrand[brand] = [];
+      byBrand[brand].push(c.code || (typeof c === 'string' ? c : ''));
+    });
+    Object.entries(byBrand).sort((a,b) => a[0].localeCompare(b[0])).forEach(([brand, codes]) => {
+      const sec = document.createElement('div');
+      sec.className = 'code-section';
+      const grid = document.createElement('div');
+      grid.className = 'code-grid';
+      codes.forEach(code => {
+        const chip = document.createElement('div');
+        chip.className = 'code-chip';
+        chip.innerHTML = `<span class="code-mfr">${brand}</span><span class="code-num">${code}</span>`;
+        grid.appendChild(chip);
+      });
+      sec.innerHTML = `<div class="code-section-title">${brand} <span style="color:rgba(255,255,255,0.2);font-size:0.5rem;">(${codes.length})</span></div>`;
+      sec.appendChild(grid);
+      crossSections.appendChild(sec);
+    });
+  } else {
+    crossSections.innerHTML = '<div class="panel-empty">No cross-reference data available</div>';
+  }
+
+  // Equipment
+  const equip = d.equipment_applications || [];
+  const equipContent = document.getElementById('r-equip-content');
+  equipContent.innerHTML = '';
+  setText('cnt-equip', equip.length);
+  if (equip.length > 0) {
+    const header = document.createElement('div');
+    header.className = 'equip-header';
+    header.innerHTML = '<span>Machine / Model</span><span>Engine</span><span>Type</span>';
+    equipContent.appendChild(header);
+    const list = document.createElement('div');
+    list.className = 'equip-list';
+    equip.forEach(app => {
+      const machine = app.machine || app.equipment || (typeof app === 'string' ? app : '—');
+      const engine  = app.engine || '—';
+      const type    = app.type || '—';
+      const row = document.createElement('div');
+      row.className = 'equip-row';
+      row.innerHTML = `<span>${machine}</span><span>${engine}</span><span>${type}</span>`;
+      list.appendChild(row);
+    });
+    equipContent.appendChild(list);
+  } else {
+    equipContent.innerHTML = '<div class="panel-empty">No equipment data available</div>';
+  }
+
+  // Alternatives
+  const alts = d.alternative_codes || d.alternatives || [];
+  setText('cnt-alt', alts.length);
+  const altList = document.getElementById('r-alt-list');
+  altList.innerHTML = '';
+  if (alts.length > 0) {
+    show('tab-alt', 'flex');
+    alts.forEach(a => {
+      const chip = document.createElement('a');
+      chip.className = 'alt-chip';
+      const code = typeof a === 'string' ? a : (a.code || a.part_number || '—');
+      chip.textContent = code;
+      chip.href = '#';
+      chip.onclick = e => { e.preventDefault(); document.getElementById('search-input').value = code; doSearch(); };
+      altList.appendChild(chip);
+    });
+  } else {
+    hide('tab-alt');
+  }
+
+  // Show result
+  setState(null);
+  show('result-wrap', 'block');
+
+  // Scroll to card
+  document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Search ───────────────────────────────────────────────────────────────────
+async function doSearch() {
+  const q = document.getElementById('search-input').value.trim();
+  if (!q) return;
+
+  setState('loading');
+
+  try {
+    const res = await fetch(`${API}/api/search?q=${encodeURIComponent(q)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+
+    if (!json.products || json.products.length === 0) {
+      setState('error', `No results found for "${q}" — try a different part number or OEM code`);
+      return;
+    }
+
+    // Show first result (exact match or best)
+    renderResult(json.products[0]);
+
+    // If multiple results, show count
+    if (json.count > 1) {
+      // Could extend to show list — for now show best match
+    }
+
+  } catch (err) {
+    console.error('[search]', err);
+    if (err.message.includes('HTTP 400')) {
+      setState('error', 'Enter at least 2 characters');
+    } else if (err.message.includes('Failed to fetch')) {
+      setState('error', 'Cannot reach catalog server — check connection');
+    } else {
+      setState('error', `Search error: ${err.message}`);
+    }
+  }
+}
+
+// ── Auto-search from URL param ────────────────────────────────────────────────
+(function () {
+  const q = new URLSearchParams(location.search).get('q');
+  if (q) {
+    document.getElementById('search-input').value = q;
+    doSearch();
+  }
+})();
+</script>
+</body>
+</html>
