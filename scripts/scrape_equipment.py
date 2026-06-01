@@ -177,8 +177,15 @@ def scrape_equipment_playwright(part_number, filter_type=None):
                     log.info(f"    → {resp.status}, trying next URL")
                     continue
 
-                # Detect redirect: Donaldson redirects unknown products to search/home
+                # Detect chrome error page (network failure without exception)
                 final_url = page.url.lower()
+                if "chrome-error://" in final_url:
+                    log.info(f"    → Chrome error page, resetting and trying next URL")
+                    try: page.goto("about:blank", timeout=5000, wait_until="domcontentloaded")
+                    except Exception: pass
+                    continue
+
+                # Detect redirect: Donaldson redirects unknown products to search/home
                 expected_path = f"/{part_lower}/".lower()
                 if expected_path not in final_url:
                     log.info(f"    → redirected (product not at this URL), skipping remaining")
@@ -247,6 +254,10 @@ def scrape_equipment_playwright(part_number, filter_type=None):
 
             except Exception as ex:
                 log.warning(f"    → Error: {ex}, trying next URL")
+                # Reset page state — prevents "interrupted by another navigation"
+                # on subsequent URLs after net::ERR_NETWORK_CHANGED or similar
+                try: page.goto("about:blank", timeout=5000, wait_until="domcontentloaded")
+                except Exception: pass
                 continue
 
         browser.close()
