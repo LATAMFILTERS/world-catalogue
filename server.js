@@ -523,6 +523,55 @@ function parseRefs(arr){
   }));
 }
 
+// ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
+// Called from every search endpoint so all modes (part / VIN / equipment) benefit.
+// alternatives[] is stored as codigo_base values ("P552100"). This function resolves
+// them to EL-SKUs in one batch query and inherits equipment_applications /
+// competitor_codes from the source product when the current product has none.
+async function enrichAlternatives(products, client) {
+  const withAlts = products.filter(p =>
+    Array.isArray(p.alternatives) && p.alternatives.length > 0
+  );
+  if (!withAlts.length) return;
+
+  const altCodes = [...new Set(withAlts.flatMap(p =>
+    p.alternatives
+      .map(a => typeof a === 'object' ? (a.sku || a.code || '') : String(a))
+      .filter(Boolean)
+      .map(c => c.toUpperCase())
+  ))];
+  if (!altCodes.length) return;
+
+  const { rows } = await client.query(
+    `SELECT sku, codigo_base, oem_codes, competitor_codes, equipment_applications
+     FROM elimfilters_catalog
+     WHERE UPPER(codigo_base) = ANY($1)`,
+    [altCodes]
+  );
+
+  const altMap = {};
+  rows.forEach(r => { if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; });
+
+  for (const p of withAlts) {
+    const resolvedSkus = [];
+    for (const a of p.alternatives) {
+      const cb = (typeof a === 'object' ? (a.sku || a.code || '') : String(a)).toUpperCase();
+      const src = altMap[cb];
+      if (!src) continue;
+      if (src.sku) resolvedSkus.push(src.sku);
+      if (p.equipment_applications.length === 0 && Array.isArray(src.equipment_applications) && src.equipment_applications.length) {
+        p.equipment_applications = src.equipment_applications;
+      }
+      if (p.competitor_codes.length === 0) {
+        const srcRefs = splitRefs([...parseRefs(src.oem_codes), ...parseRefs(src.competitor_codes)]);
+        if (srcRefs.competitor.length) p.competitor_codes = srcRefs.competitor;
+        if (p.oem_codes.length === 0 && srcRefs.oem.length) p.oem_codes = srcRefs.oem;
+      }
+    }
+    if (resolvedSkus.length > 0) p.alternatives = resolvedSkus;
+  }
+}
+
 // Split a combined refs array into { oem, competitor }
 function splitRefs(arr) {
   if (!arr || !Array.isArray(arr)) return { oem: [], competitor: [] };
@@ -623,7 +672,6 @@ function buildFilterData(row, lang = 'en'){
 
   return {
     elimfilters_sku: row.sku,
-    codigo_base: row.codigo_base,
     description: row.description || null,
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: subtype,
@@ -1162,6 +1210,7 @@ app.get('/api/filters/search/vin', async (req, res) => {
 
     const result = await client.query(query, params);
     const filters = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(filters, client);
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -1204,6 +1253,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
 
     const result = await client.query(query, params);
     const filters = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(filters, client);
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -2142,67 +2192,10 @@ app.get('/api/search', async (req, res) => {
       match_label: buildMatchLabel(row)
     }));
 
-    // ── Resolve alternatives: P-codes → ELIMFILTERS SKUs + inherit data ──────
-    // alternatives[] stores codigo_base values (e.g. "P552100"), not EL-SKUs.
-    // One batch query resolves them to SKUs and also provides equipment/competitor
-    // data for products whose own fields are empty.
-    const withAlts = products.filter(p =>
-      Array.isArray(p.alternatives) && p.alternatives.length > 0
-    );
+    await enrichAlternatives(products, client);
 
-    if (withAlts.length > 0) {
-      const altCodes = [...new Set(withAlts.flatMap(p =>
-        p.alternatives
-          .map(a => typeof a === 'object' ? (a.sku || a.code || '') : String(a))
-          .filter(Boolean)
-          .map(c => c.toUpperCase())
-      ))];
-
-      if (altCodes.length > 0) {
-        const altRows = await client.query(
-          `SELECT sku, codigo_base, oem_codes, competitor_codes, equipment_applications
-           FROM elimfilters_catalog
-           WHERE UPPER(codigo_base) = ANY($1)`,
-          [altCodes]
-        );
-
-        // Map: UPPER(codigo_base) → { sku, oem_codes, competitor_codes, equipment_applications }
-        const altMap = {};
-        altRows.rows.forEach(r => {
-          if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r;
-        });
-
-        for (const p of withAlts) {
-          const resolvedSkus = [];
-
-          for (const a of p.alternatives) {
-            const cb = (typeof a === 'object' ? (a.sku || a.code || '') : String(a)).toUpperCase();
-            const src = altMap[cb];
-            if (!src) continue;
-
-            // Replace P-code with ELIMFILTERS SKU
-            if (src.sku) resolvedSkus.push(src.sku);
-
-            // Inherit equipment_applications if own list is empty
-            if (p.equipment_applications.length === 0 && Array.isArray(src.equipment_applications) && src.equipment_applications.length) {
-              p.equipment_applications = src.equipment_applications;
-            }
-
-            // Inherit competitor_codes (and oem_codes) if own list is empty
-            if (p.competitor_codes.length === 0) {
-              const srcRefs = splitRefs([...parseRefs(src.oem_codes), ...parseRefs(src.competitor_codes)]);
-              if (srcRefs.competitor.length) p.competitor_codes = srcRefs.competitor;
-              if (p.oem_codes.length === 0 && srcRefs.oem.length) p.oem_codes = srcRefs.oem;
-            }
-          }
-
-          // Replace raw P-codes with resolved ELIMFILTERS SKUs (drop unresolved)
-          if (resolvedSkus.length > 0) p.alternatives = resolvedSkus;
-        }
-      }
-    }
-
-    res.json({ products, count: products.length, total_catalog: 4622 });
+    const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+    res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });

@@ -444,12 +444,7 @@
       color: var(--y);
       letter-spacing: 0.07em;
     }
-    .card-base {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
-    }
+
 
     .card-tags {
       display: flex;
@@ -1360,7 +1355,6 @@ function fmtRefs(arr, max = 8) {
 
 function renderCard(p) {
   const sku  = p.elimfilters_sku || p.sku || '—';
-  const base = p.codigo_base && p.codigo_base !== sku ? p.codigo_base : null;
   const validMicron = p.micron_rating && String(p.micron_rating).toLowerCase() !== 'n/a' ? p.micron_rating : null;
   const nomEff = p.nominal_efficiency ? String(p.nominal_efficiency) : null;
   const nomHasMicron = nomEff && nomEff.toLowerCase().includes('micron');
@@ -1388,7 +1382,6 @@ function renderCard(p) {
       <div class="card-top">
         <div class="card-left">
           <span class="card-sku">${sku}</span>
-          ${base ? `<span class="card-base">BASE ${base}</span>` : ''}
         </div>
         <div class="card-tags">
           ${p.filter_type     ? `<span class="ctag">${esc(p.filter_type)}</span>`     : ''}
