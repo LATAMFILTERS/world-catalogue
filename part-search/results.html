@@ -310,16 +310,35 @@
       letter-spacing: 0.18em;
       color: var(--muted);
       text-transform: uppercase;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .specs-group { margin-bottom: 1.2rem; }
+    .specs-group:last-child { margin-bottom: 0; }
+
+    .specs-group-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,241,45,0.35);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .specs-group-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.05);
+      margin: 1.1rem 0;
     }
 
     .specs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem 2rem;
     }
 
-    .spec-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .spec-item { display: flex; flex-direction: column; gap: 0.25rem; }
 
     .spec-label {
       font-family: 'JetBrains Mono', monospace;
@@ -1067,18 +1086,25 @@ function renderCard(p, index) {
   const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
   const effLabel = pctStr ? (T.specEfficiency || 'Efficiency') + ' ' + pctStr + '%' : (T.specEfficiency || 'Efficiency');
 
-  const specs = [
-    specHTML(T.specOD,        dimFmt(p.outer_diameter_mm)),
-    specHTML(T.specThread,    p.thread_size),
-    specHTML(T.specLength,    dimFmt(p.height_mm)),
-    specHTML(T.specGasketOD,  dimFmt(p.gasket_od_mm)),
-    specHTML(T.specGasketID,  dimFmt(p.gasket_id_mm)),
+  // Group 1 — physical dimensions
+  const dimSpecs = [
+    specHTML(T.specOD,       dimFmt(p.outer_diameter_mm)),
+    specHTML(T.specThread,   p.thread_size),
+    specHTML(T.specLength,   dimFmt(p.height_mm)),
+    specHTML(T.specGasketOD, dimFmt(p.gasket_od_mm)),
+    specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
+  ].filter(Boolean);
+
+  // Group 2 — filtration performance
+  const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
     specHTML(T.specMediaType, mediaLabel(p.filter_subtype) || null),
     specHTML(T.specCollapse,  psiFmt(p.burst_pressure_psi)),
     specHTML(T.specStyle,     p.installation_type || null),
   ].filter(Boolean);
+
+  const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
 
   const { oem, comp } = splitCrossReferences(p.oem_codes, p.competitor_codes);
   const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
@@ -1105,7 +1131,17 @@ function renderCard(p, index) {
         ${specs.length ? `
           <div class="specs-section">
             <p class="specs-title">${T.specsTitle}</p>
-            <div class="specs-grid">${specs.join('')}</div>
+            ${dimSpecs.length ? `
+            <div class="specs-group">
+              <span class="specs-group-label">// DIMENSIONS</span>
+              <div class="specs-grid">${dimSpecs.join('')}</div>
+            </div>` : ''}
+            ${dimSpecs.length && perfSpecs.length ? '<div class="specs-group-divider"></div>' : ''}
+            ${perfSpecs.length ? `
+            <div class="specs-group">
+              <span class="specs-group-label">// PERFORMANCE</span>
+              <div class="specs-grid">${perfSpecs.join('')}</div>
+            </div>` : ''}
           </div>` : ''}
 
         ${(oem.length || comp.length || apps.length) ? `
