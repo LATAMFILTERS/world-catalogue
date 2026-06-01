@@ -48,6 +48,23 @@ ADMIN_KEY  = os.environ.get("ADMIN_KEY", "elim2026admin")
 IMPORT_KEY = "elim2026"
 DELAY_SEC  = 2.0   # seconds between Donaldson page requests
 
+# Map of user-friendly type names → DB short form values
+FILTER_TYPE_MAP = {
+    "cabin filter": "cabin",
+    "cabin":        "cabin",
+    "air filter":   "air",
+    "air":          "air",
+    "lube filter":  "lube",
+    "lube":         "lube",
+    "fuel filter":  "fuel",
+    "fuel":         "fuel",
+    "hydraulic":    "hydraulic",
+    "hydraulic filter": "hydraulic",
+    "coolant":      "coolant",
+    "coolant filter": "coolant",
+    "air dryer":    "air_dryer",
+}
+
 # Donaldson URL patterns to try per part number (in order).
 # The correct path depends on the product category; we try all and take the first
 # that returns equipment rows.
@@ -278,7 +295,12 @@ def main():
     max_e = 0 if args.force else args.max_entries
     log.info(f"Fetching products with ≤{max_e} equipment entries from server...")
 
-    filter_type = args.types[0] if args.types and len(args.types) == 1 else None
+    # Normalize user-supplied type names to DB short form
+    db_types = None
+    if args.types:
+        db_types = {FILTER_TYPE_MAP.get(t.lower(), t.lower()) for t in args.types}
+
+    filter_type = next(iter(db_types)) if db_types and len(db_types) == 1 else None
     try:
         suspects = get_suspects(max_entries=max_e, filter_type=filter_type)
     except Exception as e:
@@ -286,9 +308,8 @@ def main():
         return
 
     # Filter by multiple types if requested
-    if args.types and len(args.types) > 1:
-        types_lower = {t.lower() for t in args.types}
-        suspects = [s for s in suspects if (s.get("filter_type") or "").lower() in types_lower]
+    if db_types and len(db_types) > 1:
+        suspects = [s for s in suspects if (s.get("filter_type") or "").lower() in db_types]
 
     log.info(f"Total suspects: {len(suspects)}")
     pending = [s for s in suspects if s["sku"] not in done_skus and (args.force or s["sku"] not in fail_skus)]
