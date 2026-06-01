@@ -967,8 +967,8 @@ function normalizeBrand(b) {
 
 function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
-  const seen = new Set();
-  return arr.slice(0, max).map(r => {
+  
+  let parsed = arr.map(r => {
     let brand = '';
     let code = '';
     if (typeof r === 'string') {
@@ -986,15 +986,31 @@ function formatRefs(arr, max = Infinity) {
     
     // URL-decode codes (scraper sometimes stores %2F etc.)
     try { code = decodeURIComponent(code); } catch(_) {}
-    return { brand, code };
-  }).filter(r => {
-    if (!r.code) return false;
-    // Deduplicate by normalized brand+code
-    const key = normalizeBrand(r.brand) + '|' + r.code.toUpperCase();
+    return { brand: normalizeBrand(brand), code: code.toUpperCase() };
+  }).filter(r => r.code);
+
+  const codeToBrands = {};
+  parsed.forEach(r => {
+    if (!codeToBrands[r.code]) codeToBrands[r.code] = new Set();
+    if (r.brand && r.brand !== 'OEM') codeToBrands[r.code].add(r.brand);
+  });
+
+  const seen = new Set();
+  return parsed.filter(r => {
+    // If this code has no brand (or is 'OEM'), but we know its real brand, drop the blank one
+    if ((!r.brand || r.brand === 'OEM') && codeToBrands[r.code].size > 0) {
+      return false;
+    }
+    
+    const finalBrand = r.brand === 'OEM' ? '' : r.brand;
+    const key = finalBrand + '|' + r.code;
+    
     if (seen.has(key)) return false;
     seen.add(key);
+    
+    r.brand = finalBrand;
     return true;
-  });
+  }).slice(0, max);
 }
 
 const KNOWN_COMPETITORS = new Set([
