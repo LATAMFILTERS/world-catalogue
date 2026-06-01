@@ -65,17 +65,37 @@ FILTER_TYPE_MAP = {
     "air dryer":    "air_dryer",
 }
 
-# Donaldson URL patterns to try per part number (in order).
-# The correct path depends on the product category; we try all and take the first
-# that returns equipment rows.
-DONALDSON_URL_PATTERNS = [
-    "https://www.donaldson.com/en-us/engine/products/filters/{part}/",
-    "https://www.donaldson.com/en-us/engine/products/air-intake-systems/{part}/",
-    "https://www.donaldson.com/en-us/engine/products/oil-filters/{part}/",
-    "https://www.donaldson.com/en-us/engine/products/fuel-filters/{part}/",
-    "https://www.donaldson.com/en-us/engine/products/hydraulic-filters/{part}/",
-    "https://www.donaldson.com/en-us/industrial-dust-collection-filtration/products/filters/{part}/",
+# Matrix: filter_type → primary URL (tried first), then fallback list
+# Avoids blind 6-URL loop; goes directly to correct category path.
+DONALDSON_BASE = "https://www.donaldson.com/en-us"
+
+TYPE_PRIMARY_URL = {
+    "air":       f"{DONALDSON_BASE}/engine/products/air-intake-systems/{{part}}/",
+    "cabin":     f"{DONALDSON_BASE}/engine/products/filters/{{part}}/",
+    "lube":      f"{DONALDSON_BASE}/engine/products/oil-filters/{{part}}/",
+    "fuel":      f"{DONALDSON_BASE}/engine/products/fuel-filters/{{part}}/",
+    "hydraulic": f"{DONALDSON_BASE}/engine/products/hydraulic-filters/{{part}}/",
+}
+
+DONALDSON_FALLBACK_URLS = [
+    f"{DONALDSON_BASE}/engine/products/filters/{{part}}/",
+    f"{DONALDSON_BASE}/engine/products/air-intake-systems/{{part}}/",
+    f"{DONALDSON_BASE}/engine/products/oil-filters/{{part}}/",
+    f"{DONALDSON_BASE}/engine/products/fuel-filters/{{part}}/",
+    f"{DONALDSON_BASE}/engine/products/hydraulic-filters/{{part}}/",
+    f"{DONALDSON_BASE}/industrial-dust-collection-filtration/products/filters/{{part}}/",
 ]
+
+def get_url_list(filter_type, part):
+    """Return ordered URL list: primary for this type first, then unique fallbacks."""
+    primary = TYPE_PRIMARY_URL.get((filter_type or "").lower(), "").format(part=part)
+    seen = set()
+    result = []
+    for url in ([primary] if primary else []) + [u.format(part=part) for u in DONALDSON_FALLBACK_URLS]:
+        if url and url not in seen:
+            seen.add(url)
+            result.append(url)
+    return result
 
 logging.basicConfig(
     level=logging.INFO,
@@ -124,7 +144,7 @@ def get_suspects(max_entries=5, filter_type=None):
 
 # ─── Playwright scraper ───────────────────────────────────────────────────────
 
-def scrape_equipment_playwright(part_number):
+def scrape_equipment_playwright(part_number, filter_type=None):
     """
     Scrape equipment_applications from Donaldson product pages.
     Tries multiple URL patterns, clicks Show More until exhausted.
@@ -148,8 +168,7 @@ def scrape_equipment_playwright(part_number):
 
         entries = []
 
-        for url_tmpl in DONALDSON_URL_PATTERNS:
-            url = url_tmpl.format(part=part_lower)
+        for url in get_url_list(filter_type, part_lower):
             log.info(f"  Trying: {url}")
 
             try:
@@ -329,7 +348,7 @@ def main():
 
         log.info(f"[{i+1}/{len(pending)}] {sku} (base: {base}, current: {count})")
 
-        equipment = scrape_equipment_playwright(base)
+        equipment = scrape_equipment_playwright(base, filter_type=p.get("filter_type"))
         time.sleep(DELAY_SEC)
 
         if equipment is None:
