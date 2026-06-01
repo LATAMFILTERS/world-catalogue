@@ -169,104 +169,85 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
     }
 
     try:
-        # ── Dimensions ─────────────────────────────────────────────────────
-        # Millard typically shows dimensions in a table or definition list.
-        # Common selectors (adjust after --dump-html inspection):
-        dim_selectors = [
-            ".dimensions",
-            ".specs",
-            ".product-specs",
-            "table.product-table",
-            "[class*='dimen']",
-            "[class*='spec']",
-            ".product-details table",
-        ]
-        dim_text = ""
-        for sel in dim_selectors:
-            try:
-                el = page.locator(sel).first
-                if el.is_visible():
-                    dim_text = el.inner_text()
-                    break
-            except Exception:
-                pass
+        # ── Product info block (dimensions + cross-refs) ────────────────────
+        # Millard uses div.i_elementsTable for the product details panel
+        info_text = ""
+        try:
+            el = page.locator("div.i_elementsTable").first
+            if el.count():
+                info_text = el.inner_text()
+        except Exception:
+            pass
 
-        if not dim_text:
-            # Fall back: look for dimension patterns anywhere on page
-            dim_text = page.inner_text("body")
+        if not info_text:
+            info_text = page.inner_text("body")
 
-        result["raw_text"] = dim_text[:2000]  # keep for debugging
+        result["raw_text"] = info_text[:3000]
 
-        # Parse dimensions from text (mm values)
+        # Parse dimensions — look for mm values labeled with keywords
         dim_patterns = {
-            "length_mm":    r'(?:length|largo|L)[:\s]*(\d+(?:\.\d+)?)\s*mm',
-            "width_mm":     r'(?:width|ancho|W|B)[:\s]*(\d+(?:\.\d+)?)\s*mm',
-            "height_mm":    r'(?:height|altura|H)[:\s]*(\d+(?:\.\d+)?)\s*mm',
-            "thickness_mm": r'(?:thickness|espesor|T|depth)[:\s]*(\d+(?:\.\d+)?)\s*mm',
-            "od_mm":        r'(?:OD|outer diameter|diámetro exterior)[:\s]*(\d+(?:\.\d+)?)\s*mm',
-            "id_mm":        r'(?:ID|inner diameter|diámetro interior)[:\s]*(\d+(?:\.\d+)?)\s*mm',
+            "length_mm":    r'(?:length|largo|L)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
+            "width_mm":     r'(?:width|ancho|W|B)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
+            "height_mm":    r'(?:height|altura|H|thickness|espesor|T)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
+            "od_mm":        r'(?:OD|outer diameter|diámetro exterior|Ø)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
+            "id_mm":        r'(?:ID|inner diameter|diámetro interior)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
         }
         for key, pattern in dim_patterns.items():
-            m = re.search(pattern, dim_text, re.I)
+            m = re.search(pattern, info_text, re.I)
             if m:
-                result["dimensions"][key] = float(m.group(1))
+                val = float(m.group(1))
+                if 1 < val < 2000:  # sanity check
+                    result["dimensions"][key] = val
 
-        # ── Cross-references ────────────────────────────────────────────────
-        cross_selectors = [
-            ".cross-reference",
-            ".references",
-            ".interchanges",
-            "[class*='cross']",
-            "[class*='refer']",
-            "table.cross",
-        ]
-        cross_text = ""
-        for sel in cross_selectors:
+        # ── Cross-references from i_elementsTable ──────────────────────────
+        # Millard lists competitor refs as "BRAND: CODE" or in a table
+        # Try to find cross-ref entries — pattern: UPPERCASE_BRAND followed by part number
+        cross_pattern = re.compile(
+            r'\b([A-Z][A-Z0-9\-\.& ]{1,30}?)\s*[:\-]\s*([A-Z0-9\-\/\.]{4,20})\b'
+        )
+        for brand, code in cross_pattern.findall(info_text):
+            brand = brand.strip()
+            code = code.strip()
+            skip = {"HTTP", "HTTPS", "WWW", "COM", "HTML", "PHP", "EN"}
+            if brand.upper() in skip or len(brand) < 2:
+                continue
+            result["cross_refs"].append({"brand": brand, "code": code})
+
+        # ── Vehicle applications from table.results ────────────────────────
+        # Each app row: tr[id^=idApp_] with tds: [img, brand, model, engine, w, h1, h2, yr_start, yr_end, ...]
+        app_rows = page.locator("table.results tr[id^=idApp_]").all()
+        seen_apps = set()
+        for row in app_rows:
             try:
-                el = page.locator(sel).first
-                if el.is_visible():
-                    cross_text = el.inner_text()
-                    break
+                onclick = row.get_attribute("onclick") or ""
+                # goToApp('en','America Del Sur','HYUNDAI','allSeries','','ACCENT 1.4')
+                m = re.search(r"goToApp\([^,]+,[^,]+,'([^']+)',[^,]+,[^,]+'([^']*)'\)", onclick)
+                brand_name = m.group(1).strip() if m else ""
+                model_name = m.group(2).strip() if m else ""
+
+                tds = row.locator("td").all()
+                if len(tds) < 9:
+                    continue
+                engine    = tds[3].inner_text().strip() if len(tds) > 3 else ""
+                yr_start  = tds[7].inner_text().strip() if len(tds) > 7 else ""
+                yr_end    = tds[8].inner_text().strip() if len(tds) > 8 else ""
+                yr_end    = "" if yr_end == "-" else yr_end
+
+                if not brand_name or not model_name:
+                    continue
+                key = f"{brand_name}|{model_name}|{engine}|{yr_start}"
+                if key in seen_apps:
+                    continue
+                seen_apps.add(key)
+                result["applications"].append({
+                    "brand":    brand_name,
+                    "model":    model_name,
+                    "engine":   engine,
+                    "year_from": yr_start,
+                    "year_to":  yr_end,
+                })
             except Exception:
                 pass
-
-        if cross_text:
-            # Each line may be "BRAND  CODE" or just "CODE"
-            for line in cross_text.splitlines():
-                line = line.strip()
-                if not line or line.lower() in ("cross reference", "referencias", "brand", "part"):
-                    continue
-                parts = re.split(r'\s{2,}|\t', line)
-                if len(parts) >= 2:
-                    result["cross_refs"].append({"brand": parts[0], "code": parts[1]})
-                elif len(parts) == 1 and re.search(r'\d', parts[0]):
-                    result["cross_refs"].append({"brand": "", "code": parts[0]})
-
-        # ── Vehicle applications ────────────────────────────────────────────
-        app_selectors = [
-            ".applications",
-            ".vehicles",
-            ".fitment",
-            "[class*='appli']",
-            "[class*='vehicle']",
-            "table.applications",
-        ]
-        app_text = ""
-        for sel in app_selectors:
-            try:
-                el = page.locator(sel).first
-                if el.is_visible():
-                    app_text = el.inner_text()
-                    break
-            except Exception:
-                pass
-
-        if app_text:
-            for line in app_text.splitlines():
-                line = line.strip()
-                if not line or line.lower() in ("application", "vehicle", "year", "model"):
-                    continue
-                result["applications"].append(line)
 
     except Exception as ex:
         log.error(f"  Parse error: {ex}")
