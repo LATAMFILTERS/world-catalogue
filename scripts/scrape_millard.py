@@ -184,20 +184,30 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
 
         result["raw_text"] = info_text[:3000]
 
-        # Parse dimensions — look for mm values labeled with keywords
-        dim_patterns = {
-            "length_mm":    r'(?:length|largo|L)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
-            "width_mm":     r'(?:width|ancho|W|B)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
-            "height_mm":    r'(?:height|altura|H|thickness|espesor|T)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
-            "od_mm":        r'(?:OD|outer diameter|diámetro exterior|Ø)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
-            "id_mm":        r'(?:ID|inner diameter|diámetro interior)[:\s.]*(\d+(?:\.\d+)?)\s*(?:mm)?',
+        # Parse dimensions — Millard format: label on one line, "NNN mm" on next line
+        # e.g. "H (Height)\n17 mm"  or  "L (Length)\n225 mm"
+        lines = [l.strip() for l in info_text.splitlines()]
+        dim_label_map = {
+            "length_mm":  re.compile(r'\bL\b.*length|largo', re.I),
+            "width_mm":   re.compile(r'\bW\b.*width|ancho|\bB\b.*width', re.I),
+            "height_mm":  re.compile(r'\bH\b.*height|altura|thickness|espesor|\bT\b.*thick', re.I),
+            "od_mm":      re.compile(r'\bOD\b|outer diameter|diámetro exterior', re.I),
+            "id_mm":      re.compile(r'\bID\b|inner diameter|diámetro interior', re.I),
         }
-        for key, pattern in dim_patterns.items():
-            m = re.search(pattern, info_text, re.I)
-            if m:
-                val = float(m.group(1))
-                if 1 < val < 2000:  # sanity check
-                    result["dimensions"][key] = val
+        for i, line in enumerate(lines):
+            for key, label_re in dim_label_map.items():
+                if key in result["dimensions"]:
+                    continue
+                if label_re.search(line):
+                    # value is on the same line or next non-empty line
+                    candidates = [line] + (lines[i+1:i+3] if i+1 < len(lines) else [])
+                    for c in candidates:
+                        mv = re.search(r'(\d+(?:\.\d+)?)\s*mm', c, re.I)
+                        if mv:
+                            val = float(mv.group(1))
+                            if 1 < val < 2000:
+                                result["dimensions"][key] = val
+                            break
 
         # ── Cross-references from i_elementsTable ──────────────────────────
         # Millard lists competitor refs as "BRAND: CODE" or in a table
@@ -214,24 +224,34 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
             result["cross_refs"].append({"brand": brand, "code": code})
 
         # ── Vehicle applications from table.results ────────────────────────
-        # Each app row: tr[id^=idApp_] with tds: [img, brand, model, engine, w, h1, h2, yr_start, yr_end, ...]
-        app_rows = page.locator("table.results tr[id^=idApp_]").all()
-        seen_apps = set()
-        for row in app_rows:
+        # Playwright locators may return 0 for dynamically-classed tables;
+        # parse raw HTML directly instead.
+        html = page.content()
+        # Match each <tr id="idApp_..."> block up to </tr>
+        row_re = re.compile(
+            r'<tr[^>]+id="idApp_\d+"[^>]*onclick="([^"]+)"[^>]*>(.*?)</tr>',
+            re.S | re.I,
+        )
+        td_re = re.compile(r'<td[^>]*>(.*?)</td>', re.S | re.I)
+        tag_re = re.compile(r'<[^>]+>')
+
+        seen_apps: set = set()
+        for onclick_val, row_body in row_re.findall(html):
             try:
-                onclick = row.get_attribute("onclick") or ""
                 # goToApp('en','America Del Sur','HYUNDAI','allSeries','','ACCENT 1.4')
-                m = re.search(r"goToApp\([^,]+,[^,]+,'([^']+)',[^,]+,[^,]+'([^']*)'\)", onclick)
+                m = re.search(
+                    r"goToApp\([^,]+,[^,]+,'([^']+)',[^,]+,[^,]*'([^']*)'\)",
+                    onclick_val,
+                )
                 brand_name = m.group(1).strip() if m else ""
                 model_name = m.group(2).strip() if m else ""
 
-                tds = row.locator("td").all()
-                if len(tds) < 9:
-                    continue
-                engine    = tds[3].inner_text().strip() if len(tds) > 3 else ""
-                yr_start  = tds[7].inner_text().strip() if len(tds) > 7 else ""
-                yr_end    = tds[8].inner_text().strip() if len(tds) > 8 else ""
-                yr_end    = "" if yr_end == "-" else yr_end
+                tds = [tag_re.sub("", td).strip() for td in td_re.findall(row_body)]
+                # tds: [img_cell, brand, model, engine, n1, n2, n3, yr_start, yr_end, ...]
+                engine   = tds[3] if len(tds) > 3 else ""
+                yr_start = tds[7] if len(tds) > 7 else ""
+                yr_end   = tds[8] if len(tds) > 8 else ""
+                yr_end   = "" if yr_end in ("-", "") else yr_end
 
                 if not brand_name or not model_name:
                     continue
@@ -240,11 +260,11 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
                     continue
                 seen_apps.add(key)
                 result["applications"].append({
-                    "brand":    brand_name,
-                    "model":    model_name,
-                    "engine":   engine,
+                    "brand":     brand_name,
+                    "model":     model_name,
+                    "engine":    engine,
                     "year_from": yr_start,
-                    "year_to":  yr_end,
+                    "year_to":   yr_end,
                 })
             except Exception:
                 pass
