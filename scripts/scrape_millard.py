@@ -224,30 +224,33 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
             result["cross_refs"].append({"brand": brand, "code": code})
 
         # ── Vehicle applications from table.results ────────────────────────
-        # Playwright locators may return 0 for dynamically-classed tables;
-        # parse raw HTML directly instead.
         html = page.content()
-        # Match each <tr id="idApp_..."> block up to </tr>
-        row_re = re.compile(
-            r'<tr[^>]+id="idApp_\d+"[^>]*onclick="([^"]+)"[^>]*>(.*?)</tr>',
-            re.S | re.I,
-        )
-        td_re = re.compile(r'<td[^>]*>(.*?)</td>', re.S | re.I)
+        n_markers = html.count("idApp_")
+        log.info(f"  idApp_ in page HTML: {n_markers}")
+
+        td_re  = re.compile(r'<td[^>]*>(.*?)</td>', re.S | re.I)
         tag_re = re.compile(r'<[^>]+>')
 
         seen_apps: set = set()
-        for onclick_val, row_body in row_re.findall(html):
+        for tr_open, tr_body in re.findall(
+            r'(<tr\b[^>]*idApp_\d+[^>]*>)(.*?)</tr\s*>',
+            html, re.S | re.I,
+        ):
             try:
+                # onclick may use single or double quotes
+                oc_m = re.search(r"""onclick\s*=\s*["']([^"']+)["']""", tr_open, re.I)
+                onclick_val = oc_m.group(1) if oc_m else ""
+
                 # goToApp('en','America Del Sur','HYUNDAI','allSeries','','ACCENT 1.4')
                 m = re.search(
-                    r"goToApp\([^,]+,[^,]+,'([^']+)',[^,]+,[^,]*'([^']*)'\)",
+                    r"goToApp\s*\([^,]+,[^,]+,\s*'([^']+)'[^,]*,[^,]+,[^,]*'([^']*)'\s*\)",
                     onclick_val,
                 )
                 brand_name = m.group(1).strip() if m else ""
                 model_name = m.group(2).strip() if m else ""
 
-                tds = [tag_re.sub("", td).strip() for td in td_re.findall(row_body)]
-                # tds: [img_cell, brand, model, engine, n1, n2, n3, yr_start, yr_end, ...]
+                tds = [tag_re.sub("", td).strip() for td in td_re.findall(tr_body)]
+                # tds: [img, brand, model, engine, n1, n2, n3, yr_start, yr_end, ...]
                 engine   = tds[3] if len(tds) > 3 else ""
                 yr_start = tds[7] if len(tds) > 7 else ""
                 yr_end   = tds[8] if len(tds) > 8 else ""
