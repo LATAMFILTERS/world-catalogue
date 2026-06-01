@@ -18,6 +18,14 @@ Uso:
     python scraper_fleetguard.py air-precleaners --codes-only        # solo códigos (rápido)
     python scraper_fleetguard.py air-precleaners --kits-only         # solo maintenance_kits
     python scraper_fleetguard.py air-precleaners --no-equipment      # sin equipment tab
+    python scraper_fleetguard.py air-precleaners --no-images         # sin descargar imágenes
+    python scraper_fleetguard.py --download-images air-precleaners   # descarga retroactiva
+
+Imágenes:
+    - Se descargan en scripts/Fleetguard Scraper/images/[PN].jpg
+    - URL pública generada: /images/fleetguard/[PN].jpg
+    - Copiar a frontend/public/images/fleetguard/ para desplegar
+    - Campos en resultado: image_src (CDN original), image_url (URL propia)
 
 Dependencias:
     pip install playwright playwright-stealth
@@ -30,6 +38,8 @@ import random
 import logging
 import os
 import sys
+import urllib.request
+import urllib.error
 from datetime import datetime
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
@@ -68,6 +78,11 @@ SCRAPE_EQUIPMENT = True
 SCRAPE_KITS_ONLY = False
 
 PAUSE_BETWEEN = (4, 9)
+
+IMAGES_DIR      = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                               "Fleetguard Scraper", "images")
+PUBLIC_IMG_BASE = "/images/fleetguard"   # URL base en el sitio desplegado
+SCRAPE_IMAGES   = True                   # False con --no-images
 
 # Solo URLs CONFIRMADAS reales. Para agregar otra categoría: copiar la URL real
 # desde fleetguard.com (debe incluir el ID Salesforce, ej. /0ZGPL...).
@@ -1315,6 +1330,178 @@ def _extract_crossref_tab(page) -> list:
     }}""")
 
 
+# ── Image extraction ─────────────────────────────────────────────────────────
+
+def _extract_image_url(page) -> str:
+    """
+    Extrae la URL de la imagen principal del producto desde Shadow DOM.
+    Fleetguard/Salesforce B2B: imagen en <img> dentro de componentes LWC.
+    Descarta: logos, íconos, placeholders, imágenes < 80px.
+    """
+    return page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+
+        const SKIP_TERMS = ['logo','icon','flag','sprite','blank',
+                            'placeholder','loading','avatar','arrow',
+                            'chevron','caret','close','search','cart'];
+        function isSkip(s) {{
+            if (!s) return true;
+            const l = s.toLowerCase();
+            return SKIP_TERMS.some(t => l.includes(t));
+        }}
+
+        // Colectar todas las <img> traversando Shadow DOM
+        const imgs = [];
+        swa(document, 'img', 0, imgs);
+
+        // Ordenar: imágenes más grandes primero (preferir foto de producto)
+        const candidates = imgs
+            .map(img => ({{
+                src: img.src || img.getAttribute('src') || '',
+                alt: img.alt || '',
+                cls: (typeof img.className === 'string' ? img.className : '') || '',
+                w:   img.naturalWidth  || parseInt(img.getAttribute('width')  || '0'),
+                h:   img.naturalHeight || parseInt(img.getAttribute('height') || '0'),
+            }}))
+            .filter(c => {{
+                if (!c.src || c.src.startsWith('data:')) return false;
+                if (isSkip(c.src) || isSkip(c.alt) || isSkip(c.cls)) return false;
+                if (c.w > 0 && c.w < 80) return false;   // ícono pequeño
+                return true;
+            }})
+            .sort((a, b) => (b.w * b.h) - (a.w * a.h));   // mayor área primero
+
+        return candidates.length ? candidates[0].src : null;
+    }}""")
+
+
+def _download_image(src_url: str, part_number: str) -> tuple:
+    """
+    Descarga la imagen del producto y la guarda en IMAGES_DIR.
+    Retorna (local_filename, public_url) o (None, None) si falla.
+
+    Nombre de archivo: [PART_NUMBER].[ext]
+    URL pública:       /images/fleetguard/[PART_NUMBER].[ext]
+    """
+    if not src_url or not part_number:
+        return None, None
+
+    os.makedirs(IMAGES_DIR, exist_ok=True)
+
+    # Determinar extensión desde URL o Content-Type
+    ext = "jpg"
+    path_part = src_url.split("?")[0].split("/")[-1]
+    if "." in path_part:
+        candidate = path_part.rsplit(".", 1)[-1].lower()
+        if candidate in ("jpg", "jpeg", "png", "webp", "gif"):
+            ext = "jpeg" if candidate == "jpeg" else candidate
+
+    pn_clean   = part_number.upper().replace("/", "-")
+    filename   = f"{pn_clean}.{ext}"
+    local_path = os.path.join(IMAGES_DIR, filename)
+    public_url = f"{PUBLIC_IMG_BASE}/{filename}"
+
+    # No re-descargar si ya existe
+    if os.path.exists(local_path) and os.path.getsize(local_path) > 500:
+        return filename, public_url
+
+    try:
+        req = urllib.request.Request(
+            src_url,
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                                   "AppleWebKit/537.36 (KHTML, like Gecko) "
+                                   "Chrome/124.0.0.0 Safari/537.36",
+                     "Referer":    "https://www.fleetguard.com/"},
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            ct = resp.headers.get("Content-Type", "")
+            # Ajustar extensión por Content-Type si hace falta
+            if "png" in ct:
+                ext = "png"
+                filename   = f"{pn_clean}.png"
+                local_path = os.path.join(IMAGES_DIR, filename)
+                public_url = f"{PUBLIC_IMG_BASE}/{filename}"
+            elif "webp" in ct:
+                ext = "webp"
+                filename   = f"{pn_clean}.webp"
+                local_path = os.path.join(IMAGES_DIR, filename)
+                public_url = f"{PUBLIC_IMG_BASE}/{filename}"
+            data = resp.read()
+        with open(local_path, "wb") as f:
+            f.write(data)
+        logging.info(f"    img: {filename} ({len(data)//1024} KB)")
+        return filename, public_url
+    except urllib.error.URLError as e:
+        logging.warning(f"    img FAIL [{part_number}]: {e.reason}")
+        return None, None
+    except Exception as e:
+        logging.warning(f"    img FAIL [{part_number}]: {e}")
+        return None, None
+
+
+def download_images_batch(results_file: str):
+    """
+    Modo retroactivo: lee un _results.json existente, descarga imágenes
+    para cada producto usando Playwright, y actualiza image_src / image_url.
+    Uso:
+        python scraper_fleetguard.py --download-images air-precleaners
+    """
+    if not os.path.exists(results_file):
+        logging.error(f"Archivo no encontrado: {results_file}")
+        return
+
+    with open(results_file, encoding="utf-8") as f:
+        results = json.load(f)
+
+    pending = [r for r in results if not r.get("image_src")]
+    logging.info(f"Productos sin imagen: {len(pending)} / {len(results)}")
+    if not pending:
+        logging.info("Todas las imágenes ya descargadas.")
+        return
+
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+
+        for idx, prod in enumerate(results, 1):
+            if prod.get("image_src"):
+                continue
+            url = prod.get("url", "")
+            pn  = prod.get("part_number", "")
+            if not url:
+                continue
+            logging.info(f"[img {idx}/{len(results)}] {pn}")
+            try:
+                page.goto(url, timeout=60000, wait_until="domcontentloaded")
+                time.sleep(3)
+                dismiss_popups(page)
+                try:
+                    page.wait_for_load_state("networkidle", timeout=15000)
+                except Exception:
+                    pass
+                src = _extract_image_url(page)
+                if src:
+                    fname, pub = _download_image(src, pn)
+                    prod["image_src"] = src
+                    prod["image_url"] = pub
+                else:
+                    prod["image_src"] = None
+                    prod["image_url"] = None
+                    logging.warning(f"    sin imagen: {pn}")
+            except Exception as e:
+                logging.warning(f"    ERROR {pn}: {e}")
+            rand_sleep(3, 7)
+
+        ctx.close()
+
+    with open(results_file, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    downloaded = sum(1 for r in results if r.get("image_url"))
+    logging.info(f"✅ Imágenes descargadas: {downloaded} / {len(results)}")
+
+
 # ── Product scraper ───────────────────────────────────────────────────────────
 
 def _is_empty(result: dict) -> bool:
@@ -1391,6 +1578,16 @@ def _scrape_once(page, url: str, result: dict, settle: float):
             if len(seg) >= 3 and seg.replace("-", "").isalnum():
                 result["part_number"] = seg.upper(); break
 
+    # ── Imagen del producto ──────────────────────────────────────────────
+    if SCRAPE_IMAGES and not result.get("image_src"):
+        src = _extract_image_url(page)
+        if src:
+            fname, pub = _download_image(src, result["part_number"])
+            result["image_src"] = src
+            result["image_url"] = pub
+        else:
+            logging.info("    img: no encontrada")
+
     if not SCRAPE_KITS_ONLY:
         # ── Specs (visibles por defecto, sin tab) ────────────────────────
         result["attributes"] = _extract_specs(page)
@@ -1427,6 +1624,8 @@ def scrape_product(page, url: str) -> dict:
         "part_number": "",
         "name": "",
         "description": "",
+        "image_src": None,    # URL original en CDN de Fleetguard/Salesforce
+        "image_url": None,    # URL pública propia: /images/fleetguard/[PN].jpg
         "attributes": {},
         "oem_codes": [],
         "alternatives": [],
@@ -1807,6 +2006,17 @@ if __name__ == "__main__":
         logging.info(f"Reintentando vacíos: {name}")
         retry_empty(); sys.exit(0)
 
+    if argv[0] == "--download-images":
+        # python scraper_fleetguard.py --download-images air-precleaners
+        name = argv[1].lower() if len(argv) > 1 else ""
+        if not name:
+            print("ERROR: --download-images necesita la categoría (ej. air-precleaners)")
+            sys.exit(1)
+        configure(name, CATEGORIES.get(name, ""))
+        results_f = os.path.join(OUTPUT_DIR, f"fleetguard_{name}_results.json")
+        logging.info(f"Descarga retroactiva de imágenes: {name}")
+        download_images_batch(results_f); sys.exit(0)
+
     # Parsear flags en cualquier posición
     start_from = ""
     codes_only = False
@@ -1824,6 +2034,8 @@ if __name__ == "__main__":
             recollect = True; i += 1; continue
         if argv[i] == "--no-equipment":
             SCRAPE_EQUIPMENT = False; i += 1; continue
+        if argv[i] == "--no-images":
+            globals()["SCRAPE_IMAGES"] = False; i += 1; continue
         if argv[i] == "--kits-only":
             # Solo extrae part_number + maintenance_kits. Omite specs/cross/equipment.
             # Modo más rápido: útil cuando solo se necesita la lista de filtros por kit.
