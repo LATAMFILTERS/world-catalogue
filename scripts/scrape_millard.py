@@ -53,6 +53,8 @@ ADMIN_KEY  = os.environ.get("ADMIN_KEY", "elim2026admin")
 DELAY_SEC  = 2.0
 
 MILLARD_BASE    = "https://www.millardcatalog.com"
+# Search page lists all products for a region with paginated hrefs
+SEARCH_URL_TPL  = MILLARD_BASE + "/en/search/{region}"
 PRODUCT_URL_TPL = MILLARD_BASE + "/en/millard/{region}/{filter_type}/{sku}"
 
 PROGRESS_FILE = Path(__file__).parent / "millard_progress.json"
@@ -94,28 +96,12 @@ def get_page(ctx, url, wait="networkidle", timeout=30000):
 def scrape_sku_list(ctx, region, filter_type):
     """Returns list of SKU strings from the Millard catalog list pages."""
     region_enc = region.replace(" ", "%20")
-    base_url   = f"{MILLARD_BASE}/en/millard/{region_enc}/{filter_type}"
+    base_url   = SEARCH_URL_TPL.format(region=region_enc)
     log.info(f"Fetching list: {base_url}")
 
     page = get_page(ctx, base_url)
-    html0 = page.content()
 
-    # ── DEBUG DUMP ── save first page HTML so we can inspect link patterns
-    dump_path = Path("millard_list_debug.html")
-    dump_path.write_text(html0, encoding="utf-8")
-    log.info(f"  List HTML saved → {dump_path} ({len(html0)} chars)")
-
-    # Show every unique href that contains the filter type name
-    sample_hrefs = list(dict.fromkeys(
-        re.findall(r'href="([^"]*' + re.escape(filter_type) + r'[^"]*)"', html0, re.I)
-    ))[:8]
-    log.info(f"  Sample hrefs with '{filter_type}': {sample_hrefs}")
-
-    # Show any text matching MC-\d pattern on the page
-    sample_skus = re.findall(r'\bMC-?\d{3,6}\b', html0)[:8]
-    log.info(f"  Sample MC-* text on page: {sample_skus}")
-
-    # Pattern that matches the SKU in a product link href
+    # Pattern: extract SKU from hrefs like /en/millard/{region}/{filter_type}/{sku}
     sku_re = re.compile(
         r'/en/millard/[^/]+/' + re.escape(filter_type) + r'/([A-Za-z0-9][A-Za-z0-9\-]{1,15})',
         re.I,
@@ -126,7 +112,7 @@ def scrape_sku_list(ctx, region, filter_type):
     page_num   = 1
 
     while True:
-        html   = page.content() if page_num > 1 else html0
+        html   = page.content()
         found  = sku_re.findall(html)
         new    = [s for s in dict.fromkeys(found) if s.upper() not in seen]
         for s in new:
