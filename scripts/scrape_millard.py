@@ -156,10 +156,19 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
     log.info(f"  Fetching: {url}")
 
     try:
-        page = get_page(ctx, url, timeout=30000)
+        page = get_page(ctx, url, wait="domcontentloaded", timeout=20000)
     except Exception as ex:
         log.error(f"  Page load failed: {ex}")
         return None
+
+    # Fast 404 detection — Millard title is "Millard Filters - Error 404"
+    try:
+        title = page.title()
+        if "404" in title or "Error" in title:
+            page.close()
+            return None
+    except Exception:
+        pass
 
     if dump_html:
         html = page.content()
@@ -408,6 +417,8 @@ def main():
     ap.add_argument("--out",         default="millard_scraped.json",
                     help="Output JSON file (default: millard_scraped.json)")
     ap.add_argument("--limit",       type=int, default=9999)
+    ap.add_argument("--sku-range",   nargs=2, type=int, metavar=("START", "END"),
+                    help="Scan MC-START through MC-END (e.g. --sku-range 100 5000)")
     args = ap.parse_args()
 
     pw, browser, ctx = make_browser()
@@ -427,11 +438,16 @@ def main():
                 push_to_db(result)
             return
 
-        # List mode
-        skus = scrape_sku_list(ctx, args.region, args.filter_type)
-        if not skus:
-            log.error("No SKUs found on list page — check --region and --filter-type")
-            return
+        # Build SKU list: range scan, or catalog list
+        if args.sku_range:
+            start, end = args.sku_range
+            skus = [f"MC-{n}" for n in range(start, end + 1)]
+            log.info(f"Range scan: MC-{start} … MC-{end} ({len(skus)} candidates)")
+        else:
+            skus = scrape_sku_list(ctx, args.region, args.filter_type)
+            if not skus:
+                log.error("No SKUs found — use --sku-range START END to scan a numeric range")
+                return
 
         progress = load_progress()
         done_set = set(progress["done"])
@@ -447,15 +463,16 @@ def main():
                 log.info(f"[SKIP] {sku} already done")
                 continue
 
-            log.info(f"[{processed+1}/{len(skus)}] {sku}")
+            log.info(f"[{processed+1}] {sku}")
             result = scrape_product(ctx, sku, args.region, args.filter_type)
-            time.sleep(DELAY_SEC)
 
             if result is None:
-                progress["failed"].append(sku)
+                # 404 or load failure — skip silently in range mode
+                time.sleep(0.3)
                 save_progress(progress)
                 continue
 
+            time.sleep(DELAY_SEC)
             all_results.append(result)
 
             if args.push_db and not args.dry_run:
