@@ -490,6 +490,42 @@
       background: var(--y);
     }
 
+    /* ─── SEE ALSO ─── */
+    .see-also {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .see-also-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-right: 0.25rem;
+    }
+    .see-also-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--y);
+      border: 1px solid rgba(255,241,45,0.25);
+      border-radius: 3px;
+      padding: 0.22rem 0.65rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .see-also-chip:hover {
+      background: rgba(255,241,45,0.1);
+      border-color: rgba(255,241,45,0.55);
+    }
+
     /* ─── STATUS MESSAGES ─── */
     .status-container {
       max-width: 1600px;
@@ -742,10 +778,11 @@ const TRANSLATIONS = {
     specEfficiency:    'Efficiency',
     specTestStd:       'Efficiency Test Std',
     specMediaType:     'Media Type',
-    specCollapse:      'Collapse Burst',
-    specStyle:         'Style',
+    specBurst:         'Burst Pressure',
+    specCollapse:      'Collapse Pressure',
     specNoRefs:        'No cross-references',
     specNoEquip:       'No equipment applications',
+    altTitle:          'See Also',
   },
   es: {
     searchPlaceholder: 'Buscar de nuevo...',
@@ -777,10 +814,11 @@ const TRANSLATIONS = {
     specEfficiency:    'Eficiencia',
     specTestStd:       'Norma de Eficiencia',
     specMediaType:     'Medio Filtrante',
-    specCollapse:      'Colapso / Explosión',
-    specStyle:         'Estilo / Tipo',
+    specBurst:         'Presión de Rotura',
+    specCollapse:      'Presión de Colapso',
     specNoRefs:        'Sin referencias cruzadas',
     specNoEquip:       'Sin aplicaciones de equipo',
+    altTitle:          'Ver También',
   },
   pt: {
     searchPlaceholder: 'Buscar novamente...',
@@ -812,9 +850,10 @@ const TRANSLATIONS = {
     specEfficiency:    'Eficiência',
     specTestStd:       'Norma de Eficiência',
     specMediaType:     'Tipo de Mídia',
-    specCollapse:      'Colapso / Explosão',
-    specStyle:         'Estilo',
+    specBurst:         'Pressão de Ruptura',
+    specCollapse:      'Pressão de Colapso',
     specNoRefs:        'Sem referências cruzadas',
+    altTitle:          'Ver Também',
     specNoEquip:       'Sem aplicações de equipamento',
   }
 };
@@ -1095,13 +1134,13 @@ function renderCard(p, index) {
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
   ].filter(Boolean);
 
-  // Group 2 — filtration performance
+  // Group 2 — filtration performance (Style omitted: already shown as badge)
   const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
     specHTML(T.specMediaType, mediaLabel(p.filter_subtype) || null),
-    specHTML(T.specCollapse,  psiFmt(p.burst_pressure_psi)),
-    specHTML(T.specStyle,     p.installation_type || null),
+    specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)),
+    specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
   ].filter(Boolean);
 
   const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
@@ -1217,6 +1256,18 @@ function renderCard(p, index) {
             </div>
           </div>
         ` : ''}
+
+        ${(() => {
+          const alts = Array.isArray(p.alternatives) ? p.alternatives.filter(Boolean) : [];
+          if (!alts.length) return '';
+          const chips = alts.map(a => {
+            const altSku = typeof a === 'object' ? (a.sku || a.code || '') : String(a);
+            if (!altSku) return '';
+            return `<a href="/results.html?q=${encodeURIComponent(altSku)}" class="see-also-chip">${esc(altSku)}</a>`;
+          }).filter(Boolean).join('');
+          if (!chips) return '';
+          return `<div class="see-also"><span class="see-also-label">${T.altTitle || 'See Also'}</span>${chips}</div>`;
+        })()}
       </div>
     </article>`;
 }
