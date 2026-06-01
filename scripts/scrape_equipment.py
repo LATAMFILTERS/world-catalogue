@@ -178,7 +178,7 @@ def scrape_equipment_playwright(part_number, filter_type=None):
                     continue
 
                 # Detect redirect: Donaldson redirects unknown products to search/home
-                final_url = page.url().lower()
+                final_url = page.url.lower()
                 expected_path = f"/{part_lower}/".lower()
                 if expected_path not in final_url:
                     log.info(f"    → redirected (product not at this URL), skipping remaining")
