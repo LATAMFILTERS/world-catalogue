@@ -101,6 +101,12 @@ def scrape_sku_list(ctx, region, filter_type):
 
     page = get_page(ctx, base_url)
 
+    # Dump search page HTML once so we can inspect form structure
+    _search_dump = Path("millard_search_debug.html")
+    if not _search_dump.exists():
+        _search_dump.write_text(page.content(), encoding="utf-8")
+        log.info(f"  Search page saved → {_search_dump}")
+
     # Pattern: extract SKU from hrefs like /en/millard/{region}/{filter_type}/{sku}
     sku_re = re.compile(
         r'/en/millard/[^/]+/' + re.escape(filter_type) + r'/([A-Za-z0-9][A-Za-z0-9\-]{1,15})',
@@ -161,10 +167,12 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
         log.error(f"  Page load failed: {ex}")
         return None
 
-    # Fast 404 detection — Millard title is "Millard Filters - Error 404"
+    # Fast invalid-page detection using page content (no extra round-trip)
     try:
+        quick_html = page.content()
         title = page.title()
-        if "404" in title or "Error" in title:
+        # 404 page: title contains "404" and no product info block
+        if "404" in title or "i_elementsTable" not in quick_html:
             page.close()
             return None
     except Exception:
