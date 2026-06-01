@@ -227,6 +227,9 @@ def scrape_product(ctx, sku, region, filter_type, dump_html=False):
         html = page.content()
         n_markers = html.count("idApp_")
         log.info(f"  idApp_ in page HTML: {n_markers}")
+        idx = html.find("idApp_")
+        if idx >= 0:
+            log.info(f"  First idApp_ snippet: {html[max(0,idx-80):idx+300]!r}")
 
         td_re  = re.compile(r'<td[^>]*>(.*?)</td>', re.S | re.I)
         tag_re = re.compile(r'<[^>]+>')
