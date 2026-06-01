@@ -98,6 +98,23 @@ def scrape_sku_list(ctx, region, filter_type):
     log.info(f"Fetching list: {base_url}")
 
     page = get_page(ctx, base_url)
+    html0 = page.content()
+
+    # ── DEBUG DUMP ── save first page HTML so we can inspect link patterns
+    dump_path = Path("millard_list_debug.html")
+    dump_path.write_text(html0, encoding="utf-8")
+    log.info(f"  List HTML saved → {dump_path} ({len(html0)} chars)")
+
+    # Show every unique href that contains the filter type name
+    sample_hrefs = list(dict.fromkeys(
+        re.findall(r'href="([^"]*' + re.escape(filter_type) + r'[^"]*)"', html0, re.I)
+    ))[:8]
+    log.info(f"  Sample hrefs with '{filter_type}': {sample_hrefs}")
+
+    # Show any text matching MC-\d pattern on the page
+    sample_skus = re.findall(r'\bMC-?\d{3,6}\b', html0)[:8]
+    log.info(f"  Sample MC-* text on page: {sample_skus}")
+
     # Pattern that matches the SKU in a product link href
     sku_re = re.compile(
         r'/en/millard/[^/]+/' + re.escape(filter_type) + r'/([A-Za-z0-9][A-Za-z0-9\-]{1,15})',
@@ -109,7 +126,7 @@ def scrape_sku_list(ctx, region, filter_type):
     page_num   = 1
 
     while True:
-        html   = page.content()
+        html   = page.content() if page_num > 1 else html0
         found  = sku_re.findall(html)
         new    = [s for s in dict.fromkeys(found) if s.upper() not in seen]
         for s in new:
