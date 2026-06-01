@@ -2142,17 +2142,16 @@ app.get('/api/search', async (req, res) => {
       match_label: buildMatchLabel(row)
     }));
 
-    // ── Inherit from alternatives ─────────────────────────────────────────
-    // If a product has alternatives[] (stored as codigo_base values like "P552100")
-    // and is missing equipment_applications or competitor_codes, pull them from
-    // the parent product so alternatives share the same application data.
-    const toEnrich = products.filter(p =>
-      Array.isArray(p.alternatives) && p.alternatives.length > 0 &&
-      (p.equipment_applications.length === 0 || p.competitor_codes.length === 0)
+    // ── Resolve alternatives: P-codes → ELIMFILTERS SKUs + inherit data ──────
+    // alternatives[] stores codigo_base values (e.g. "P552100"), not EL-SKUs.
+    // One batch query resolves them to SKUs and also provides equipment/competitor
+    // data for products whose own fields are empty.
+    const withAlts = products.filter(p =>
+      Array.isArray(p.alternatives) && p.alternatives.length > 0
     );
 
-    if (toEnrich.length > 0) {
-      const altCodes = [...new Set(toEnrich.flatMap(p =>
+    if (withAlts.length > 0) {
+      const altCodes = [...new Set(withAlts.flatMap(p =>
         p.alternatives
           .map(a => typeof a === 'object' ? (a.sku || a.code || '') : String(a))
           .filter(Boolean)
@@ -2161,35 +2160,44 @@ app.get('/api/search', async (req, res) => {
 
       if (altCodes.length > 0) {
         const altRows = await client.query(
-          `SELECT codigo_base, oem_codes, competitor_codes, equipment_applications
+          `SELECT sku, codigo_base, oem_codes, competitor_codes, equipment_applications
            FROM elimfilters_catalog
            WHERE UPPER(codigo_base) = ANY($1)`,
           [altCodes]
         );
 
+        // Map: UPPER(codigo_base) → { sku, oem_codes, competitor_codes, equipment_applications }
         const altMap = {};
         altRows.rows.forEach(r => {
           if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r;
         });
 
-        for (const p of toEnrich) {
+        for (const p of withAlts) {
+          const resolvedSkus = [];
+
           for (const a of p.alternatives) {
             const cb = (typeof a === 'object' ? (a.sku || a.code || '') : String(a)).toUpperCase();
             const src = altMap[cb];
             if (!src) continue;
 
+            // Replace P-code with ELIMFILTERS SKU
+            if (src.sku) resolvedSkus.push(src.sku);
+
+            // Inherit equipment_applications if own list is empty
             if (p.equipment_applications.length === 0 && Array.isArray(src.equipment_applications) && src.equipment_applications.length) {
               p.equipment_applications = src.equipment_applications;
             }
 
+            // Inherit competitor_codes (and oem_codes) if own list is empty
             if (p.competitor_codes.length === 0) {
               const srcRefs = splitRefs([...parseRefs(src.oem_codes), ...parseRefs(src.competitor_codes)]);
               if (srcRefs.competitor.length) p.competitor_codes = srcRefs.competitor;
               if (p.oem_codes.length === 0 && srcRefs.oem.length) p.oem_codes = srcRefs.oem;
             }
-
-            break; // first matching alternative is sufficient
           }
+
+          // Replace raw P-codes with resolved ELIMFILTERS SKUs (drop unresolved)
+          if (resolvedSkus.length > 0) p.alternatives = resolvedSkus;
         }
       }
     }
