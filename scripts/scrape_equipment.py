@@ -173,14 +173,16 @@ def scrape_equipment_playwright(part_number, filter_type=None):
 
             try:
                 resp = page.goto(url, timeout=30000, wait_until="domcontentloaded")
-                if resp and resp.status in (404, 410, 301, 302):
-                    # 301/302 that didn't redirect to a product page — skip
-                    if resp.status in (301, 302):
-                        # playwright follows redirects; if status is these it's unusual
-                        pass
-                    else:
-                        log.info(f"    → {resp.status}, trying next URL")
-                        continue
+                if resp and resp.status in (404, 410):
+                    log.info(f"    → {resp.status}, trying next URL")
+                    continue
+
+                # Detect redirect: Donaldson redirects unknown products to search/home
+                final_url = page.url().lower()
+                expected_path = f"/{part_lower}/".lower()
+                if expected_path not in final_url:
+                    log.info(f"    → redirected (product not at this URL), skipping remaining")
+                    break  # Don't try more URLs — product not in Donaldson DB
 
                 # Wait for the page to stabilise
                 page.wait_for_timeout(2000)
