@@ -1499,6 +1499,45 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
   }
 });
 
+// ─── POST /api/migrate/consolidate-oem-codes ─────────────────────────────────
+// One-time migration: merges competitor_codes → oem_codes for ALL products.
+// Donaldson scraper may have split codes by brand type; this corrects that.
+// After running this, competitor_codes will be empty for all products —
+// then run the recovery script to repopulate from oilfilter-crossreference.com.
+app.get('/api/migrate/consolidate-oem-codes', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes to proceed' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    // Count affected products first
+    const { rows: [{ affected }] } = await client.query(`
+      SELECT COUNT(*) AS affected
+      FROM elimfilters_catalog
+      WHERE competitor_codes IS NOT NULL AND jsonb_array_length(competitor_codes) > 0
+    `);
+    // Merge: append competitor_codes onto oem_codes, clear competitor_codes
+    const { rowCount } = await client.query(`
+      UPDATE elimfilters_catalog
+      SET
+        oem_codes = COALESCE(oem_codes, '[]'::jsonb) || COALESCE(competitor_codes, '[]'::jsonb),
+        competitor_codes = '[]'::jsonb
+      WHERE competitor_codes IS NOT NULL AND jsonb_array_length(competitor_codes) > 0
+    `);
+    res.json({
+      success: true,
+      message: 'competitor_codes merged into oem_codes and cleared',
+      products_affected: parseInt(affected),
+      rows_updated: rowCount,
+      next_step: 'Run node scripts/recover-competitor-codes.js to repopulate competitor_codes from oilfilter-crossreference.com'
+    });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // Audit: Find incomplete products
 app.get('/api/audit/incomplete-products', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
@@ -1588,6 +1627,14 @@ app.post('/api/import/donaldson', async (req, res) => {
 
     for (const row of rows) {
       if (!row.sku || !row.codigo_base) { errors++; continue; }
+
+      // ALL codes from Donaldson's website are OEM codes regardless of brand name.
+      // If the scraper sends any codes in competitor_codes, merge them into oem_codes.
+      if (Array.isArray(row.competitor_codes) && row.competitor_codes.length > 0) {
+        row.oem_codes = [...(row.oem_codes || []), ...row.competitor_codes];
+        row.competitor_codes = [];
+      }
+
       try {
         const result = await client.query(`
           INSERT INTO elimfilters_catalog (
