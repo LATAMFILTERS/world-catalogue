@@ -129,5 +129,5 @@ SELECT COUNT(*) AS catalog_count FROM elimfilters_catalog; -- Expected: ~4622
 
 -- In all cases: Phase 1 tables must be intact
 SELECT COUNT(*) FROM kg_systems;      -- Expected: 6
-SELECT COUNT(*) FROM kg_technologies; -- Expected: 13
+SELECT COUNT(*) FROM kg_technologies; -- Expected: 11
 */

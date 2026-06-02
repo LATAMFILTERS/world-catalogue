@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS kg_equipment_makes (
   country_of_origin VARCHAR(60),                    -- 'United States', null if unknown
   industry_type     VARCHAR(120),                   -- comma-separated: 'construction,mining,marine'
   is_active         BOOLEAN      NOT NULL DEFAULT TRUE,
+  notes             TEXT,
   created_at        TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
   updated_at        TIMESTAMPTZ  NOT NULL DEFAULT NOW()
 );
