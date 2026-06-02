@@ -12,11 +12,13 @@
 --   air-dryer   →     3 products (DRYCORE)
 --   fuel        →   500 products (SYNTAPORE → SYNTEPORE)
 --   hydraulic   → 1,962 products (NANOFORCE)
---   lube        →   351 products (SYNTRAX)
+--   lube        →   350 products (SYNTRAX)
+--   Oil Filter  →     1 product  (EL84004/SINTRAX — filter_type changed post-audit; maps to lube-oil)
 --   cabin       →   122 products (MICROKAPPA)
 --   coolant     →    59 products (COOLTECH)
 --   turbine     →    16 products (AQUAGUARD — turbine fuel system)
 --   TOTAL: 4,622 products (100% expected coverage)
+-- NOTE: EL84004 inserted manually post-populate (ON CONFLICT DO NOTHING handles re-runs)
 -- =============================================================================
 
 -- Step 1: Dry-run count before population
@@ -112,7 +114,7 @@ ORDER BY ks.sort_order;
 -- air-intake      | Air Intake Filtration     | 1,609  (1366 air + 243 air-intake)
 -- fuel            | Fuel Filtration           |   516  (500 fuel + 16 turbine)
 -- hydraulic       | Hydraulic Systems         | 1,962
--- lube-oil        | Lube / Oil Filtration     |   410  (351 lube + 59 coolant)
+-- lube-oil        | Lube / Oil Filtration     |   410  (350 lube + 59 coolant + 1 Oil Filter)
 -- cabin           | Cabin / Operator Safety   |   122
 -- compressed-air  | Compressed Air Systems    |     3
 -- TOTAL                                       | 4,622  ← should equal SELECT COUNT(*) FROM elimfilters_catalog
