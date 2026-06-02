@@ -105,11 +105,13 @@ def split_statements(sql):
 
 def is_select(stmt):
     first = stmt.lstrip().upper()
-    return (
-        first.startswith('SELECT') or
-        first.startswith('WITH') or
-        first.startswith('TABLE')
-    )
+    if first.startswith('WITH'):
+        # WITH...INSERT / UPDATE / DELETE = DML, not a query
+        body = stmt.upper()
+        if re.search(r'\bINSERT\b|\bUPDATE\b|\bDELETE\b', body):
+            return False
+        return True
+    return first.startswith('SELECT') or first.startswith('TABLE')
 
 
 def print_table(rows, keys):
