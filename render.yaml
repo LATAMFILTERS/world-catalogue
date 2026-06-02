@@ -24,6 +24,14 @@ services:
         source: /technologies/cooltech/
         destination: /technologies/thermacore/
         permanent: true
+      - type: redirect
+        source: /technologies/aquaguard-series
+        destination: /technologies/hydrocore-series
+        permanent: true
+      - type: redirect
+        source: /technologies/aquaguard-series/
+        destination: /technologies/hydrocore-series/
+        permanent: true
       # SPA catch-all — serves index.html for all unmatched routes
       - type: rewrite
         source: /*
