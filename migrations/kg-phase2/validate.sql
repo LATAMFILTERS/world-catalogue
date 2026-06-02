@@ -118,9 +118,12 @@ ORDER BY slug;
 -- SECTION C: MODEL DATA INTEGRITY
 -- ─────────────────────────────────────────────────────────────────────────────
 
--- C1: Model count (PASS range: 100–2,500)
+-- C1: Model count
+-- NOTE: equipment field = "MAKE MODEL" combined (e.g., "MACK CH613").
+-- Each unique equipment string becomes one model row.
+-- Diagnostic baseline: 37,552 unique equipment strings → expect 20k–40k models.
 SELECT COUNT(*) AS model_count FROM kg_equipment_models;
--- Expected: BETWEEN 100 AND 2,500
+-- Expected: BETWEEN 5,000 AND 50,000
 
 -- C2: Orphan models (FK violation — should be 0)
 SELECT COUNT(*) AS orphan_models
@@ -180,9 +183,12 @@ HAVING COUNT(*) > 1;
 -- SECTION D: PRODUCT COVERAGE
 -- ─────────────────────────────────────────────────────────────────────────────
 
--- D1: kg_product_equipment row count (PASS range: 500–8,000)
+-- D1: kg_product_equipment row count
+-- Diagnostic: 169,253 total JSONB entries, 8,896 with empty make.
+-- Mappable entries: ~160,000. After deduplication by (product_sku, model_id)
+-- expect 50,000–160,000 rows.
 SELECT COUNT(*) AS total_product_equipment_rows FROM kg_product_equipment;
--- Expected: BETWEEN 500 AND 8,000
+-- Expected: BETWEEN 10,000 AND 200,000
 
 -- D2: Products with at least one equipment link
 SELECT
@@ -208,8 +214,8 @@ FROM elimfilters_catalog
 WHERE equipment_applications IS NOT NULL
   AND jsonb_array_length(equipment_applications) > 0
   AND sku NOT IN (SELECT DISTINCT product_sku FROM kg_product_equipment);
--- Expected: BETWEEN 0 AND 500
--- >500 suggests normalization table is missing common makes
+-- Expected: BETWEEN 0 AND 200
+-- >200 suggests make alias table is missing common makes
 
 -- D5: Top 20 most-referenced models (distribution check)
 SELECT
@@ -289,10 +295,16 @@ UNION ALL
 SELECT 'elimfilters_catalog (source, must match baseline)', COUNT(*) FROM elimfilters_catalog;
 
 -- Phase 2 is COMPLETE if ALL of the following are true:
---   kg_equipment_makes row count:    20 ≤ count ≤ 120
---   kg_equipment_models row count:  100 ≤ count ≤ 2,500
---   kg_product_equipment row count: 500 ≤ count ≤ 8,000
---   elimfilters_catalog count:      unchanged from pre-Phase 2 baseline (~4622)
+--   kg_equipment_makes row count:    20 ≤ count ≤ 200
+--   kg_equipment_models row count:   5,000 ≤ count ≤ 50,000
+--   kg_product_equipment row count:  10,000 ≤ count ≤ 200,000
+--   elimfilters_catalog count:       unchanged from pre-Phase 2 baseline (~4622)
+--
+-- Diagnostic baseline (2026-06-02):
+--   unique equipment strings: 37,552 (= "MAKE MODEL" combined in equipment field)
+--   total JSONB entries:     169,253
+--   entries with empty make:   8,896 (excluded from KG)
+--   products with equipment:   2,473 of 4,622 (53.5%)
 --
 -- Additionally:
 --   Section A: all tables, indexes, constraints present

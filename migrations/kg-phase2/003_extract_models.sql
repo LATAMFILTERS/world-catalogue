@@ -373,11 +373,11 @@ BEGIN
   RAISE NOTICE '  Total models in kg_equipment_models:    %', v_model_count;
   RAISE NOTICE '  Models with extraction flags (notes):   %', v_flagged_count;
   RAISE NOTICE '  Distinct makes with at least 1 model:   %', v_makes_with_models;
-  RAISE NOTICE '  Expected model count range: 100–2,500';
-  IF v_model_count < 100 THEN
-    RAISE WARNING '  LOW MODEL COUNT: % is below expected minimum of 100', v_model_count;
-  ELSIF v_model_count > 2500 THEN
-    RAISE WARNING '  HIGH MODEL COUNT: % exceeds expected max of 2,500 — review deduplication', v_model_count;
+  RAISE NOTICE '  Expected model count range: 5,000–50,000 (equipment field contains MAKE+MODEL combined)';
+  IF v_model_count < 1000 THEN
+    RAISE WARNING '  LOW MODEL COUNT: % is below expected minimum of 1,000 — investigate extraction', v_model_count;
+  ELSIF v_model_count > 50000 THEN
+    RAISE WARNING '  HIGH MODEL COUNT: % exceeds expected max of 50,000 — review deduplication', v_model_count;
   END IF;
 END;
 $$;

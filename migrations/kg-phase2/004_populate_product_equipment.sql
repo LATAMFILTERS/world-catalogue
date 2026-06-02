@@ -245,11 +245,11 @@ BEGIN
   RAISE NOTICE '  Products with JSONB but no model link:         % (unresolved makes/models)', v_unlinked_with_eq;
   RAISE NOTICE '  Coverage: %.1f%% of catalog has equipment links',
     ROUND(100.0 * v_linked_products / NULLIF(v_total_products, 0), 1);
-  RAISE NOTICE '  Expected range: 500–8,000 rows in kg_product_equipment';
-  IF v_pe_rows < 500 THEN
+  RAISE NOTICE '  Expected range: 10,000–200,000 rows (169k JSONB entries, ~8.9k empty makes excluded)';
+  IF v_pe_rows < 5000 THEN
     RAISE WARNING '  LOW ROW COUNT in kg_product_equipment: % — investigate extraction', v_pe_rows;
   END IF;
-  IF v_unlinked_with_eq > 500 THEN
+  IF v_unlinked_with_eq > 200 THEN
     RAISE WARNING '  % products have JSONB but no model link — check normalization table', v_unlinked_with_eq;
   END IF;
 END;
