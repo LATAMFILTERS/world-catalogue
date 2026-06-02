@@ -358,7 +358,7 @@ export const INDUSTRIES: IndustryRecord = {
     contaminationExposure: 'HIGH',
     primaryEquipment: ['EXCAVATORS', 'BULLDOZERS', 'LOADERS', 'COMPACTORS'],
     relevantContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'NANOFORCE_HYDRAULIC', 'DURATECH'],
+    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'DURATECH'],
     applicableStandards: ['SAE_J1539', 'ISO_16889', 'ISO_5011'],
     operatingConditions: {
       environment: 'High-dust earthwork sites, unpaved roads',
