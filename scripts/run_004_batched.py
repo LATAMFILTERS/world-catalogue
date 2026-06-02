@@ -18,7 +18,7 @@ if not db_url:
     print("ERROR: DATABASE_URL not set")
     sys.exit(1)
 
-BATCH_SIZE = 25
+BATCH_SIZE = 10
 
 # Normalization aliases — identical to 004_populate_product_equipment.sql
 MAKE_ALIASES_SQL = """
@@ -192,18 +192,24 @@ async def run():
         batch_num = batch_start // BATCH_SIZE + 1
         total_batches = (total + BATCH_SIZE - 1) // BATCH_SIZE
 
-        try:
-            conn = await asyncpg.connect(db_url, ssl="require")
-            result = await conn.execute(MAKE_ALIASES_SQL, batch, timeout=90)
-            await conn.close()
-
-            # result is like "INSERT 0 N"
-            n = int(result.split()[-1]) if result else 0
-            inserted_total += n
-            print(f"[{batch_num}/{total_batches}] SKUs {batch_start+1}–{batch_start+len(batch)}: +{n} filas")
-        except Exception as e:
+        success = False
+        for attempt in range(1, 4):  # up to 3 attempts
+            try:
+                conn = await asyncpg.connect(db_url, ssl="require")
+                result = await conn.execute(MAKE_ALIASES_SQL, batch, timeout=300)
+                await conn.close()
+                n = int(result.split()[-1]) if result else 0
+                inserted_total += n
+                label = f"[{batch_num}/{total_batches}] SKUs {batch_start+1}–{batch_start+len(batch)}"
+                retry_tag = f" (intento {attempt})" if attempt > 1 else ""
+                print(f"{label}: +{n} filas{retry_tag}")
+                success = True
+                break
+            except Exception as e:
+                print(f"[{batch_num}/{total_batches}] intento {attempt} ERROR: {e!r}")
+                await asyncio.sleep(2 * attempt)
+        if not success:
             errors += 1
-            print(f"[{batch_num}/{total_batches}] ERROR: {e!r}")
 
     print(f"\n{'='*50}")
     print(f"Total filas insertadas: {inserted_total}")
