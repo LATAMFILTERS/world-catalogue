@@ -107,6 +107,7 @@ export function Navigation() {
           <NavLink href="/technologies">{t('nav.technologies')}</NavLink>
           <NavLink href="/knowledge-system">{t('nav.knowledge')}</NavLink>
           <NavLink href="/contact">{t('nav.contact')}</NavLink>
+          <NavLink href="/about">{t('footer.about')}</NavLink>
 
           {/* Language switcher — shown for all non-US/CA users */}
           {showSwitcher && (
@@ -269,6 +270,7 @@ export function Navigation() {
                 { href: '/technologies', label: t('nav.technologies') },
                 { href: '/knowledge-system', label: t('nav.knowledge') },
                 { href: '/contact', label: t('nav.contact') },
+                { href: '/about', label: t('footer.about') },
               ].map((item) => (
                 <motion.div
                   key={item.href}
