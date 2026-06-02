@@ -4,6 +4,20 @@ Generated: 2026-06-02 | Scope: Full repository (excluding `frontend/out/` build 
 
 ---
 
+## OWNER DECISIONS — 2026-06-02
+
+| Technology | Decision | Implementation |
+|-----------|----------|---------------|
+| **AQUAGUARD** | ✅ **Deprecate with sunset plan** | Mark `@deprecated` in `unified-data.ts`. Keep existing product pages live. Stop referencing in new canonical blocks and `TechnologyKey` union. Set future removal milestone. |
+| **COOLTECH** | ✅ **Deprecate with sunset plan** | Mark `@deprecated` in `unified-data.ts`. Keep existing product pages live. Stop referencing in new canonical blocks and `TechnologyKey` union. Set future removal milestone. |
+| **Content errors** | ✅ **Fix now as part of implementation** | Correct all 8 DURATECH-as-filtration-media content errors during `unified-data.ts` implementation. Replace with correct technology attributions (SYNTRAX for oil filtration, NANOFORCE for hydraulic return-line, DRYCORE for compressed air). |
+| **MARINECLEAN** | ✅ Ecosystem (pre-declared) | Reframe from technology peer to Ecosystem entry. No product page deletion. |
+| **DURATECH** | ✅ Ecosystem (pre-declared) | Reframe from technology peer to Ecosystem entry. Replace filtration-media descriptions with correct technology attributions. |
+
+**All blocking decisions resolved. `unified-data.ts` implementation may proceed.**
+
+---
+
 ## 1. Authoritative Platform Declaration
 
 ### Active Technologies (9)
