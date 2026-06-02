@@ -80,7 +80,7 @@ raw_elements AS (
     END AS source_format
   FROM elimfilters_catalog ec,
        jsonb_array_elements(COALESCE(ec.equipment_applications, '[]'::jsonb)) AS elem
-  WHERE ec.sku = ANY($1)
+  WHERE ec.sku = ANY($1::text[])
     AND ec.equipment_applications IS NOT NULL
     AND jsonb_array_length(ec.equipment_applications) > 0
     AND elem IS NOT NULL
