@@ -132,7 +132,15 @@ def print_table(rows, keys):
 
 
 async def run():
-    conn = await asyncpg.connect(db_url, ssl="require")
+    conn = await asyncpg.connect(
+        db_url,
+        ssl="require",
+        server_settings={
+            "statement_timeout":                    "0",  # no server-side cut-off
+            "idle_in_transaction_session_timeout":  "0",
+        },
+        command_timeout=1800,  # 30 min per statement (covers heavy migrations)
+    )
     try:
         statements = split_statements(raw)
         print(f"--- {sql_file} ({len(statements)} statements) ---\n")
@@ -141,14 +149,14 @@ async def run():
             print(f"[{i}/{len(statements)}] {preview}{'...' if len(stmt) > 60 else ''}")
             try:
                 if is_select(stmt):
-                    rows = await conn.fetch(stmt)
+                    rows = await conn.fetch(stmt, timeout=1800)
                     if rows:
                         keys = list(rows[0].keys())
                         print_table(rows, keys)
                     else:
                         print("(0 rows)")
                 else:
-                    result = await conn.execute(stmt)
+                    result = await conn.execute(stmt, timeout=1800)
                     print(f"  → {result}")
             except Exception as e:
                 print(f"  ERROR: {e}")
