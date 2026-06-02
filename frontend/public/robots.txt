@@ -26,5 +26,9 @@ Allow: /knowledge-system/
 User-agent: PerplexityBot
 Allow: /knowledge-system/
 
-# Sitemap
+# Sitemaps
 Sitemap: https://elimfilters.com/sitemap.xml
+Sitemap: https://elimfilters.com/sitemap-ai.xml
+
+# AI Knowledge Reference
+# Full structured reference for LLMs: https://elimfilters.com/llm.txt
