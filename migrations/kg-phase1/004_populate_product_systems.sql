@@ -53,6 +53,7 @@ WITH filter_type_map AS (
     ('fuel',        'fuel'),
     ('hydraulic',   'hydraulic'),
     ('lube',        'lube-oil'),
+    ('oil filter',  'lube-oil'),
     ('cabin',       'cabin'),
     ('coolant',     'lube-oil'),
     ('turbine',     'fuel')
@@ -80,7 +81,7 @@ SELECT
 FROM elimfilters_catalog ec
 LEFT JOIN (VALUES
   ('air'), ('air-intake'), ('air-dryer'), ('fuel'),
-  ('hydraulic'), ('lube'), ('cabin'), ('coolant'), ('turbine')
+  ('hydraulic'), ('lube'), ('oil filter'), ('cabin'), ('coolant'), ('turbine')
 ) AS known_types(ft) ON LOWER(TRIM(ec.filter_type)) = known_types.ft
 WHERE ec.filter_type IS NOT NULL
   AND known_types.ft IS NULL;
