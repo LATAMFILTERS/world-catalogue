@@ -4,33 +4,47 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
+import {
+  TECHNOLOGIES as UD_TECHNOLOGIES,
+  DEPRECATED_TECHNOLOGIES as UD_DEPRECATED,
+  ECOSYSTEMS as UD_ECOSYSTEMS,
+  SYSTEMS as UD_SYSTEMS,
+  type TechnologyKey,
+  type DeprecatedTechnologyKey,
+} from '@/lib/unified-data';
 
-const GEO_DEFINITIONS: Record<string, string> = {
-  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS®' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
-  'aquaguard': 'AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
-  'cooltech': 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
-  'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
-  'duratech': 'DURATECH™ is a fleet maintenance standardisation system that consolidates OEM-interchangeable filtration components into master kits. Designed for mixed-fleet operations in mining, construction, and agriculture, DURATECH™ reduces parts inventory complexity, lowers procurement cost, and ensures every service event uses the correct filter specification for each asset.',
-  'intekcore': 'INTEKCORE™ is a high-pressure filter housing architecture rated for heavy-duty trucks and industrial machinery. Precision-formed sealing surfaces and corrosion-resistant materials deliver zero-bypass performance under peak system pressure, ensuring no unfiltered fluid bypasses the element during cold starts, load spikes, or element change events.',
-  'macrocore': 'MACROCORE™ is a Progressive Density Gradient (PDG) multi-layer air filtration system rated to ISO 5011 standards. Outer protection layers capture macro-contaminants while progressively denser inner zones neutralise sub-micron threats, achieving 99.9%–99.98% interception efficiency with a 62 PSI anti-collapse rating. Engineered for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.',
-  'marineclean': 'MARINECLEAN™ is a salt-resistant filtration technology that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.',
-  'microkappa': 'MICROKAPPA™ is an electrostatic cabin air filtration system combining activated carbon and HEPA-grade particle capture. The electrostatic charge attracts sub-micron particles, allergens, and diesel particulate matter, while the activated carbon layer controls odours from fuel vapours and exhaust intrusion. Designed for mining cabs, agricultural machinery, and heavy-duty trucks operating in high-dust environments.',
-  'nanoforce': 'NANOFORCE™ is a multi-layer hydraulic filtration architecture engineered for high-pressure hydraulic circuits in heavy industrial machinery. It combines structural integrity reinforcement with vapour control mechanisms to maintain filter element form under system pressure spikes, delivering consistent sub-micron contamination interception across variable duty cycles.',
-  'syntepore': 'SYNTEPORE™ is an all-synthetic air intake protection architecture for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure conditions that degrade cellulose-based constructions, delivering consistent ISO 5011-compliant airflow restriction across variable humidity operating environments aboard offshore platforms, marine vessels, and humid tropical agricultural operations.',
-  'syntrax': 'SYNTRAX™ is a synthetic lubrication protection architecture maintaining ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals for diesel, gas, and dual-fuel engines. It captures combustion soot above 2% by weight, metal wear particles, and fuel dilution byproducts — the primary degradation mechanisms that reduce oil film strength, accelerate bearing wear, and reduce engine service life in mobile and stationary applications.',
+// GEO_DEFINITIONS derived from unified-data.ts (Single Source of Truth)
+// All 12 slug→description entries are sourced from geoDefinition fields and system descriptions.
+const _geoDefBySlug: Record<string, string> = {
+  // AQUAGUARD_SERIES has a product-line description separate from the AQUAGUARD technology definition
+  'aquaguard-series': UD_SYSTEMS.AQUAGUARD_SERIES.description!,
+  ...Object.fromEntries(Object.values(UD_TECHNOLOGIES).map((t) => [t.slug, t.geoDefinition])),
+  ...Object.fromEntries(Object.values(UD_DEPRECATED).map((t) => [t.slug, t.geoDefinition])),
+  ...Object.fromEntries(Object.values(UD_ECOSYSTEMS).map((t) => [t.slug, t.geoDefinition])),
 };
 
-const TECH_COMPARISON = [
-  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
-  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
-  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
-  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
-  { name: 'AQUAGUARD™', slug: 'aquaguard', system: 'Fuel Cleanliness', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
-  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
-  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
-  { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
-  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Protection', func: 'PM2.5 capture + activated carbon adsorption', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
-];
+// TECH_COMPARISON derived from unified-data.ts
+// Row order preserved: 7 active (with pages) + AQUAGUARD/COOLTECH (deprecated, pages live)
+// HYDROCORE and THERMOCORE are active but don't have catalogue pages yet — excluded.
+const _COMPARISON_KEYS = [
+  'MACROCORE', 'SYNTEPORE', 'INTEKCORE', 'DRYCORE',
+  'AQUAGUARD',   // deprecated — page lives at /technologies/aquaguard
+  'SYNTRAX', 'NANOFORCE',
+  'COOLTECH',    // deprecated — page lives at /technologies/cooltech
+  'MICROKAPPA',
+] as const;
+
+type _CompKey = typeof _COMPARISON_KEYS[number];
+
+const _techComparison = _COMPARISON_KEYS.map((_key) => {
+  const key = _key as _CompKey;
+  if (key === 'AQUAGUARD' || key === 'COOLTECH') {
+    const d = UD_DEPRECATED[key as DeprecatedTechnologyKey];
+    return { name: d.name, slug: d.slug, system: d.domain, func: d.comparisonFunction, metric: d.comparisonMetric, industries: d.comparisonIndustries };
+  }
+  const t = UD_TECHNOLOGIES[key as TechnologyKey];
+  return { name: t.name, slug: t.slug, system: t.domain, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
+});
 
 const FAQS = [
   {
@@ -69,7 +83,7 @@ export default function TechnologiesPage() {
         '@type': 'Product',
         name: tech.title,
         brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
-        description: GEO_DEFINITIONS[slug] || tech.description,
+        description: _geoDefBySlug[slug] || tech.description,
         url: `https://elimfilters.com/technologies/${slug}`,
         manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
       },
@@ -206,7 +220,7 @@ export default function TechnologiesPage() {
           }}>
             {catalogue.technologies.map((tech) => {
               const slug = getSlug(tech.name);
-              const geoDef = GEO_DEFINITIONS[slug];
+              const geoDef = _geoDefBySlug[slug];
               return (
                 <motion.div key={tech.name} variants={itemVariants}>
                   <Link href={`/technologies/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -319,7 +333,7 @@ export default function TechnologiesPage() {
                 </tr>
               </thead>
               <tbody>
-                {TECH_COMPARISON.map((row, i) => (
+                {_techComparison.map((row, i) => (
                   <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
                     <td style={{ padding: '1rem 1.25rem', whiteSpace: 'nowrap' }}>
                       <Link href={`/technologies/${row.slug}`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none', fontFamily: 'Space Grotesk, sans-serif' }}>

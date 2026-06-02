@@ -128,6 +128,9 @@ export interface DeprecatedTechnology {
   readonly geoDefinition: string;
   readonly deprecatedDate: string;
   readonly sunsetNote: string;
+  readonly comparisonFunction: string;
+  readonly comparisonMetric: string;
+  readonly comparisonIndustries: string;
 }
 
 export interface EcosystemEntry {
@@ -163,6 +166,7 @@ export interface UnifiedSystem {
   readonly domain: SystemDomain;
   readonly primaryTechnology: TechnologyKey;
   readonly supportingTechnologies: TechnologyKey[];
+  readonly description?: string; // product-line prose for catalogue display (optional)
 }
 
 export interface UnifiedStandard {
@@ -444,6 +448,9 @@ export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, Deprecated
     geoDefinition: 'AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
     deprecatedDate: '2026-06-02',
     sunsetNote: 'AQUAGUARD product pages remain live. New content and canonical blocks reference HYDROCORE. Remove from TechnologyKey union after full consumer migration.',
+    comparisonFunction: 'Turbine-stage water separation',
+    comparisonMetric: '99.8% free water · 95% emulsified removal',
+    comparisonIndustries: 'Marine, Oil & Gas, Power Gen, Agriculture',
   },
 
   /** @deprecated Replaced by THERMOCORE. Existing product pages remain live pending sunset. */
@@ -458,6 +465,9 @@ export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, Deprecated
     geoDefinition: 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
     deprecatedDate: '2026-06-02',
     sunsetNote: 'COOLTECH product pages remain live. New content and canonical blocks reference THERMOCORE. Remove from TechnologyKey union after full consumer migration.',
+    comparisonFunction: 'DCA-replenishing coolant protection',
+    comparisonMetric: 'SCA restoration · liner cavitation prevention',
+    comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
   },
 
 };
@@ -722,6 +732,7 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
     domain: 'Fuel Cleanliness',
     primaryTechnology: 'HYDROCORE',
     supportingTechnologies: [],
+    description: "AQUAGUARD/SERIES™ is ELIMFILTERS®’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   },
 
   CABIN: {
