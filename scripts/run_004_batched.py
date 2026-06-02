@@ -18,7 +18,7 @@ if not db_url:
     print("ERROR: DATABASE_URL not set")
     sys.exit(1)
 
-BATCH_SIZE = 100
+BATCH_SIZE = 25
 
 # Normalization aliases — identical to 004_populate_product_equipment.sql
 MAKE_ALIASES_SQL = """
@@ -171,7 +171,7 @@ ON CONFLICT (product_sku, model_id) DO NOTHING
 
 async def run():
     # Connection for fetching SKU list (short query)
-    conn = await asyncpg.connect(db_url, ssl="require", command_timeout=60)
+    conn = await asyncpg.connect(db_url, ssl="require")
     skus = [r["sku"] for r in await conn.fetch("""
         SELECT sku FROM elimfilters_catalog
         WHERE equipment_applications IS NOT NULL
@@ -193,8 +193,8 @@ async def run():
         total_batches = (total + BATCH_SIZE - 1) // BATCH_SIZE
 
         try:
-            conn = await asyncpg.connect(db_url, ssl="require", command_timeout=120)
-            result = await conn.execute(MAKE_ALIASES_SQL, batch)
+            conn = await asyncpg.connect(db_url, ssl="require")
+            result = await conn.execute(MAKE_ALIASES_SQL, batch, timeout=90)
             await conn.close()
 
             # result is like "INSERT 0 N"
@@ -210,7 +210,7 @@ async def run():
     print(f"Errores de lote:        {errors}")
 
     # Final count
-    conn = await asyncpg.connect(db_url, ssl="require", command_timeout=60)
+    conn = await asyncpg.connect(db_url, ssl="require")
     total_pe = await conn.fetchval("SELECT COUNT(*) FROM kg_product_equipment")
     linked = await conn.fetchval("SELECT COUNT(DISTINCT product_sku) FROM kg_product_equipment")
     await conn.close()
