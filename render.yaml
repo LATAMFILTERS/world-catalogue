@@ -6,6 +6,25 @@ services:
     staticPublishPath: ./frontend/out
     pullRequestPreviewsEnabled: false
     routes:
+      # Technology renames — HTTP 301 permanent redirects
+      # Must precede catch-all rewrite or rewrite wins first
+      - type: redirect
+        source: /technologies/aquaguard
+        destination: /technologies/hydrocore
+        permanent: true
+      - type: redirect
+        source: /technologies/aquaguard/
+        destination: /technologies/hydrocore/
+        permanent: true
+      - type: redirect
+        source: /technologies/cooltech
+        destination: /technologies/thermacore
+        permanent: true
+      - type: redirect
+        source: /technologies/cooltech/
+        destination: /technologies/thermacore/
+        permanent: true
+      # SPA catch-all — serves index.html for all unmatched routes
       - type: rewrite
         source: /*
         destination: /index.html
