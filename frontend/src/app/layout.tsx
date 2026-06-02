@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Space_Grotesk, Outfit, JetBrains_Mono, Montserrat } from 'next/font/google';
+import { Space_Grotesk, Outfit, JetBrains_Mono, Montserrat, Barlow_Condensed, Barlow } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
@@ -9,6 +9,8 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', weight: ['300', '400', '500', '600', '700'] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', weight: ['400', '500'] });
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ['400', '500', '700', '900'] });
+const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow-condensed', weight: ['400', '600', '700'] });
+const barlow = Barlow({ subsets: ['latin'], variable: '--font-barlow', weight: ['400', '500', '600', '700'] });
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -93,7 +95,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} ${jetBrainsMono.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} ${jetBrainsMono.variable} ${montserrat.variable} ${barlowCondensed.variable} ${barlow.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <script
