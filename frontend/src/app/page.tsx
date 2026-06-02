@@ -19,7 +19,7 @@ const TECHNOLOGIES = [
   { code: 'MACROCORE™',  role: 'Particulate Capture',     spec: '18µm absolute',      std: 'ISO 16889 β18[c] ≥ 1000', n: '01', href: '/technologies/macrocore' },
   { code: 'NANOFORCE™',  role: 'Sub-Micron Filtration',   spec: '1µm efficiency',     std: 'ISO 16889 β1[c] ≥ 200',   n: '02', href: '/technologies/nanoforce' },
   { code: 'SYNTRAX™',    role: 'Synthetic Media Matrix',  spec: 'High dirt capacity', std: 'SAE J1239 Grade 4',        n: '03', href: '/technologies/syntrax' },
-  { code: 'AQUAGUARD™',  role: 'Water Separation',        spec: '99.8% efficiency',   std: 'ISO 16332',                n: '04', href: '/technologies/aquaguard' },
+  { code: 'HYDROCORE™',  role: 'Water Separation',        spec: '99.8% efficiency',   std: 'ISO 16332',                n: '04', href: '/technologies/hydrocore' },
   { code: 'DURATECH™',   role: 'Extended Lifecycle',      spec: '2× service interval',std: 'ISO 4548-12',              n: '05', href: '/technologies/duratech' },
   { code: 'IONSHIELD™',  role: 'Cabin Air Protection',    spec: 'PM10 removal',       std: 'ISO 11155-1',              n: '06', href: '/technologies/ionshield' },
 ];

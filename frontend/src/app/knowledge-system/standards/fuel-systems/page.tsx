@@ -13,7 +13,7 @@ const STANDARDS = [
 
 const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removing sub-10 micron water droplets and particles from fuel before injection, achieving 99.9% efficiency.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
 ];
 
 const IMPACTS = [
@@ -252,7 +252,7 @@ export default function FuelSystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406, ASTM D975</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/fuel-systems</p>

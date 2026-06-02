@@ -12,8 +12,8 @@
 --   SYNTRAX™     →   351  → slug: syntrax
 --   INTAKCORE™   →   243  → slug: intekcore  ← DB TYPO, canonical is intekcore
 --   MICROKAPPA™  →   122  → slug: microkappa
---   COOLTECH™    →    59  → slug: cooltech
---   AQUAGUARD™   →    16  → slug: aquaguard
+--   COOLTECH™    →    59  → slug: thermacore  ← DB still stores COOLTECH™; slug renamed
+--   AQUAGUARD™   →    16  → slug: hydrocore   ← DB still stores AQUAGUARD™; slug renamed
 --   DRYCORE™     →     3  → slug: drycore
 --   TOTAL: 4,622  (100% technology fill rate)
 --
@@ -21,10 +21,9 @@
 --   SINTRAX™     → slug: syntrax   (known alias)
 --   INTEKCORE™   → slug: intekcore (canonical form — not yet in DB but may appear)
 --   SYNTEPORE™   → slug: syntepore (correct name — not yet in DB but may appear)
---   DURATECH™    → slug: duratech  (in logo map, 0 products currently)
---   GASULTRA™    → slug: gasultra
---   MARINECLEAN™ → slug: marineclean
---   BLUECLEAN™   → slug: blueclean
+--   DURATECH™    → slug: duratech     (0 products, PRE_LAUNCH)
+--   MARINECLEAN™ → slug: marineclean  (0 products, PRE_LAUNCH)
+-- (GASULTRA™ and BLUECLEAN™ excluded from KG — not seeded)
 -- =============================================================================
 
 -- Step 1: Dry-run — show what will be mapped
@@ -58,8 +57,16 @@ ORDER BY product_count DESC;
 -- Step 2: Populate kg_product_technologies
 -- Normalization logic:
 --   1. Strip ™, ®, whitespace chars
---   2. Apply alias corrections (SYNTAPORE→SYNTEPORE, SINTRAX→SYNTRAX, INTAKCORE→INTEKCORE)
+--   2. Apply alias corrections and slug renames
 --   3. Lowercase → join to kg_technologies.slug
+--
+-- DB VALUE → KG SLUG mapping (full table):
+--   SYNTAPORE  → syntepore   (deprecated brand name)
+--   SINTRAX    → syntrax     (alias)
+--   INTAKCORE  → intekcore   (DB typo, canonical is intekcore)
+--   AQUAGUARD  → hydrocore   (STRATEGIC RENAME: AQUAGUARD™ → HYDROCORE™)
+--   COOLTECH   → thermacore  (STRATEGIC RENAME: COOLTECH™ → THERMACORE™)
+--   All others → lowercase(strip(value)) — matches slug directly
 
 INSERT INTO kg_product_technologies (product_sku, technology_id)
 SELECT
@@ -72,6 +79,8 @@ JOIN kg_technologies kt ON kt.slug = LOWER(
         WHEN 'SYNTAPORE'  THEN 'SYNTEPORE'
         WHEN 'SINTRAX'    THEN 'SYNTRAX'
         WHEN 'INTAKCORE'  THEN 'INTEKCORE'
+        WHEN 'AQUAGUARD'  THEN 'HYDROCORE'
+        WHEN 'COOLTECH'   THEN 'THERMACORE'
       ELSE REGEXP_REPLACE(ec.technology, '[™®[:space:]]', '', 'g')
       END,
       '[™®[:space:]]', '', 'g'
@@ -132,11 +141,10 @@ ORDER BY COUNT(kptec.product_sku) DESC;
 -- syntrax     | SYNTRAX™       | Lube / Oil Filtration  |   351
 -- intekcore   | INTEKCORE™     | Air Housing & Precl.   |   243  ← was INTAKCORE in DB
 -- microkappa  | MICROKAPPA™    | Cabin Air Filtration   |   122
--- cooltech    | COOLTECH™      | Coolant Filtration     |    59
--- aquaguard   | AQUAGUARD™     | Fuel/Water Separation  |    16
+-- thermacore  | THERMACORE™    | Coolant Filtration     |    59  ← DB stores COOLTECH™
+-- hydrocore   | HYDROCORE™     | Fuel/Water Separation  |    16  ← DB stores AQUAGUARD™
 -- drycore     | DRYCORE™       | Air Dryer Technology   |     3
--- duratech    | DURATECH™      | Heavy-Duty Engine Oil  |     0  ← expected, no products yet
--- gasultra    | GASULTRA™      | Compressed Air         |     0  ← expected
--- marineclean | MARINECLEAN™   | Marine Filtration      |     0  ← expected
--- blueclean   | BLUECLEAN™     | Specialty Filtration   |     0  ← expected
+-- duratech    | DURATECH™      | Heavy-Duty Engine Oil  |     0  ← PRE_LAUNCH
+-- marineclean | MARINECLEAN™   | Marine Filtration      |     0  ← PRE_LAUNCH
 -- TOTAL mapped                                          | 4,622
+-- (BLUECLEAN and GASULTRA not in kg_technologies — excluded)

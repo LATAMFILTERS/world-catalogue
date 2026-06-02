@@ -12,8 +12,8 @@
 --   PRE_LAUNCH — 2 technologies with pages built but no catalog products yet
 --
 -- ACTIVE TECHNOLOGIES (9):
---   macrocore, intekcore, drycore, syntrax, cooltech, nanoforce,
---   aquaguard, syntepore, microkappa
+--   macrocore, intekcore, drycore, syntrax, thermacore, nanoforce,
+--   hydrocore, syntepore, microkappa
 --
 -- PRE_LAUNCH TECHNOLOGIES (2):
 --   duratech   — Fleet maintenance kit system. Pages exist in techPagesData.ts.
@@ -88,6 +88,7 @@ FROM (VALUES
   ),
 
   -- ─── LUBE / OIL SYSTEMS ────────────────────────────────────────────────────
+  -- COOLTECH™ in DB maps to slug 'thermacore' (renamed from cooltech)
   -- NOTE: BLUECLEAN™ excluded from this section — no products, no technical
   -- content, placeholder only. See file header for exclusion rationale.
 
@@ -110,12 +111,12 @@ FROM (VALUES
     'PRE_LAUNCH'
   ),
   (
-    'cooltech',
-    'COOLTECH™',
+    'thermacore',
+    'THERMACORE™',
     'lube-oil',
     'Coolant Filtration',
     'Coolant filter technology for engine cooling systems. Spin-on configuration. Controls corrosion particles, scale deposits, and chemical degradation byproducts in coolant circuits. Adjacent to lube-oil system domain in the thermal management context.',
-    'logo-cooltech.png',
+    'logo-thermacore.png',
     'ACTIVE'
   ),
   (
@@ -140,15 +141,17 @@ FROM (VALUES
     'ACTIVE'
   ),
 
-  -- ─── FUEL SYSTEMS ──────────────────────────────────────────────────────────
+  -- ─── FUEL SYSTEMS ─────────────────────────────────────────────────────────
+  -- AQUAGUARD™ in DB maps to slug 'hydrocore' (renamed from aquaguard)
+  -- See 005_populate_product_technologies.sql for normalization CASE
 
   (
-    'aquaguard',
-    'AQUAGUARD™',
+    'hydrocore',
+    'HYDROCORE™',
     'fuel',
     'Fuel/Water Separation',
     'Fuel/water separator technology removing free and emulsified water from diesel fuel. Spin-on and cartridge configurations. Addresses DIESEL_WATER contamination mode: prevents injector stiction, microbial growth, and fuel gum formation. Applied in agriculture, marine, automotive, and power generation.',
-    'logo-aquaguard.png',
+    'logo-hydrocore.png',
     'ACTIVE'
   ),
   (
@@ -204,9 +207,9 @@ ORDER BY kt.status DESC, ks.sort_order, kt.slug;
 -- ACTIVE      | intekcore   | INTEKCORE™     | air-intake     | Air Housing & Precleaner
 -- ACTIVE      | drycore     | DRYCORE™       | compressed-air | Air Dryer Technology
 -- ACTIVE      | syntrax     | SYNTRAX™       | lube-oil       | Lube / Engine Oil Filtration
--- ACTIVE      | cooltech    | COOLTECH™      | lube-oil       | Coolant Filtration
+-- ACTIVE      | thermacore  | THERMACORE™    | lube-oil       | Coolant Filtration
 -- ACTIVE      | nanoforce   | NANOFORCE™     | hydraulic      | Hydraulic Filtration
--- ACTIVE      | aquaguard   | AQUAGUARD™     | fuel           | Fuel/Water Separation
+-- ACTIVE      | hydrocore   | HYDROCORE™     | fuel           | Fuel/Water Separation
 -- ACTIVE      | syntepore   | SYNTEPORE™     | fuel           | Fuel Filtration
 -- ACTIVE      | microkappa  | MICROKAPPA™    | cabin          | Cabin Air Filtration
 -- PRE_LAUNCH  | duratech    | DURATECH™      | lube-oil       | Heavy-Duty Engine Oil Filtration

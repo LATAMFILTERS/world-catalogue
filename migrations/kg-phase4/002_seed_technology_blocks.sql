@@ -207,7 +207,7 @@ uncontrolled operation at ISO 19/17/14. System pressure increase from contaminat
   ]'::jsonb,
 
   '[
-    {"slug": "aquaguard", "mechanism": "Water removal from hydraulic fluid — water contamination accelerates fluid oxidation and reduces film strength"},
+    {"slug": "hydrocore", "mechanism": "Water removal from hydraulic fluid — water contamination accelerates fluid oxidation and reduces film strength"},
     {"slug": "syntrax", "mechanism": "Lube oil system filtration — particle wear overlap between lube and hydraulic systems on combined equipment"}
   ]'::jsonb,
 
@@ -285,7 +285,7 @@ Extended drain intervals enabled by synthetic media reduce oil consumption volum
 
   '[
     {"slug": "duratech", "mechanism": "Extended-life lube oil filtration complementary technology — different oil viscosity ranges"},
-    {"slug": "cooltech", "mechanism": "Coolant filtration for engines using SYNTRAX lube filtration — addresses separate fluid circuit"},
+    {"slug": "thermacore", "mechanism": "Coolant filtration for engines using SYNTRAX lube filtration — addresses separate fluid circuit"},
     {"slug": "nanoforce", "mechanism": "Hydraulic filtration on combined equipment with shared engine/hydraulic system maintenance"}
   ]'::jsonb,
 
@@ -384,9 +384,10 @@ ON CONFLICT (concept_slug, concept_type) DO UPDATE SET
   updated_at           = NOW();
 
 
--- ─── 6. COOLTECH™ ─────────────────────────────────────────────────────────────
+-- ─── 6. THERMACORE™ ───────────────────────────────────────────────────────────
 -- Lube / coolant filtration — engine coolant circuit filtration
--- DB product count: 59 products
+-- DB product count: 59 products (stored as COOLTECH™ in elimfilters_catalog)
+-- STRATEGIC RENAME: COOLTECH™ → THERMACORE™ (effective before Phase 1 execution)
 
 INSERT INTO kg_canonical_blocks (
   concept_slug, concept_type, display_name,
@@ -399,9 +400,9 @@ INSERT INTO kg_canonical_blocks (
   industrial_role,
   citation_url
 ) VALUES (
-  'cooltech', 'technology', 'COOLTECH™',
+  'thermacore', 'technology', 'THERMACORE™',
 
-  'COOLTECH™ coolant filtration media removes silicate gel precipitates, rust particles,
+  'THERMACORE™ coolant filtration media removes silicate gel precipitates, rust particles,
 and cavitation erosion debris from diesel engine coolant circuits, maintaining coolant
 cleanliness and supplemental coolant additive (SCA) concentration to prevent liner
 pitting and heat exchanger scaling.',
@@ -441,7 +442,7 @@ irreversible and requires expensive engine-out repair; maintaining SCA concentra
 and particle cleanliness through filtration is significantly more cost-effective than
 cylinder liner replacement.',
 
-  '/knowledge-system/technologies/cooltech'
+  '/knowledge-system/technologies/thermacore'
 )
 ON CONFLICT (concept_slug, concept_type) DO UPDATE SET
   definition           = EXCLUDED.definition,
@@ -506,7 +507,7 @@ for affected vessels.',
   ]'::jsonb,
 
   '[
-    {"slug": "aquaguard", "mechanism": "Water separation from marine fuel — complementary to lube circuit water control"},
+    {"slug": "hydrocore", "mechanism": "Water separation from marine fuel — complementary to lube circuit water control"},
     {"slug": "nanoforce", "mechanism": "Hydraulic filtration on marine steering and deck machinery systems"},
     {"slug": "syntrax", "mechanism": "Non-marine lube oil filtration reference technology for land-based equivalent applications"}
   ]'::jsonb,
@@ -605,9 +606,10 @@ ON CONFLICT (concept_slug, concept_type) DO UPDATE SET
   updated_at           = NOW();
 
 
--- ─── 9. AQUAGUARD™ ────────────────────────────────────────────────────────────
+-- ─── 9. HYDROCORE™ ────────────────────────────────────────────────────────────
 -- Fuel / water separation — water removal from diesel and hydraulic fluid
--- DB product count: 16 products
+-- DB product count: 16 products (stored as AQUAGUARD™ in elimfilters_catalog)
+-- STRATEGIC RENAME: AQUAGUARD™ → HYDROCORE™ (effective before Phase 1 execution)
 
 INSERT INTO kg_canonical_blocks (
   concept_slug, concept_type, display_name,
@@ -620,9 +622,9 @@ INSERT INTO kg_canonical_blocks (
   industrial_role,
   citation_url
 ) VALUES (
-  'aquaguard', 'technology', 'AQUAGUARD™',
+  'hydrocore', 'technology', 'HYDROCORE™',
 
-  'AQUAGUARD™ water separation technology removes free and emulsified water from diesel
+  'HYDROCORE™ water separation technology removes free and emulsified water from diesel
 fuel and hydraulic fluid using coalescing media to aggregate water droplets to
 drainable size, maintaining water concentration below 200 ppm (Karl Fischer method,
 ASTM D6304) to prevent injector stiction, corrosion, and microbial growth.',
@@ -656,8 +658,8 @@ on common-rail systems; full set replacement on 6-cylinder engine: $1,200–$4,8
   ]'::jsonb,
 
   '[
-    {"slug": "syntepore", "mechanism": "Fuel filtration downstream of AQUAGUARD — particle removal after water separation stage"},
-    {"slug": "nanoforce", "mechanism": "Hydraulic filtration — AQUAGUARD water removal from hydraulic fluid upstream of NANOFORCE fine filtration"}
+    {"slug": "syntepore", "mechanism": "Fuel filtration downstream of HYDROCORE — particle removal after water separation stage"},
+    {"slug": "nanoforce", "mechanism": "Hydraulic filtration — HYDROCORE water removal from hydraulic fluid upstream of NANOFORCE fine filtration"}
   ]'::jsonb,
 
   'Water removal from fuel and hydraulic systems is the foundational contamination control
@@ -665,7 +667,7 @@ measure for preventing the accelerated corrosion, microbial growth, and injector
 that water contamination causes; even 500 ppm free water in diesel fuel initiates
 corrosion and microbial growth mechanisms within 2–4 weeks.',
 
-  '/knowledge-system/technologies/aquaguard'
+  '/knowledge-system/technologies/hydrocore'
 )
 ON CONFLICT (concept_slug, concept_type) DO UPDATE SET
   definition           = EXCLUDED.definition,
@@ -732,7 +734,7 @@ spray angle degradation (+3–8% fuel consumption from spray degradation).',
   ]'::jsonb,
 
   '[
-    {"slug": "aquaguard", "mechanism": "Water separation upstream of SYNTEPORE — water contamination degrades fuel filter media efficiency"},
+    {"slug": "hydrocore", "mechanism": "Water separation upstream of SYNTEPORE — water contamination degrades fuel filter media efficiency"},
     {"slug": "macrocore", "mechanism": "Air intake filtration on same engine platform — reduces particle ingestion from combustion air side"}
   ]'::jsonb,
 

@@ -11,7 +11,7 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removes sub-10 micron contaminants from fuel before injection, preserving spray pattern geometry critical for combustion efficiency.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
   { name: 'MACROCORE', slug: 'macrocore', role: 'Progressive density gradient air filtration ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Engine oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
 ];
@@ -456,7 +456,7 @@ export default function FuelEfficiencyPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/fuel-efficiency</p>

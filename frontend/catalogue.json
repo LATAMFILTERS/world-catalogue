@@ -23,7 +23,7 @@
       ],
       "techTags": [
         "MACROCORE™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTRAX™",
         "NANOFORCE™"
       ],
@@ -119,7 +119,7 @@
       "techTags": [
         "MACROCORE™",
         "NANOFORCE™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTRAX™"
       ],
       "stats": {},
@@ -152,7 +152,7 @@
       "techTags": [
         "MACROCORE™",
         "SYNTRAX™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "NANOFORCE™"
       ],
       "videoBody": [
@@ -190,7 +190,7 @@
       ],
       "techTags": [
         "MACROCORE™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTRAX™",
         "NANOFORCE™"
       ],
@@ -215,7 +215,7 @@
       "description": "In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair — it's a massive disruption to the global supply chain. ELIMFILTERS® engineering targets mechanical risk reduction and service life extension for massive assets in haulage, extraction, and crushing operations.",
       "features": [
         "AIR INTAKE / SYNTEPORE™",
-        "FUEL / AQUAGUARD™",
+        "FUEL / HYDROCORE™",
         "HYDRAULIC / NANOFORCE™"
       ],
       "benefits": [
@@ -229,7 +229,7 @@
         "MACROCORE™",
         "SYNTRAX™",
         "NANOFORCE™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTEPORE™"
       ],
       "stats": {
@@ -265,7 +265,7 @@
       ],
       "techTags": [
         "MACROCORE™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTRAX™",
         "DRYCORE™"
       ],
@@ -306,7 +306,7 @@
       "techTags": [
         "SYNTEPORE™",
         "SYNTRAX™",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "DRYCORE™"
       ],
       "videoBody": [
@@ -478,27 +478,27 @@
       "cta": "EXPLORE MACROCORE"
     },
     {
-      "name": "Aquaguard Series",
-      "file": "aquaguard-series.html",
-      "title": "AQUAGUARD",
+      "name": "Hydrocore Series",
+      "file": "hydrocore-series.html",
+      "title": "HYDROCORE",
       "subtitle": "SERIES FH",
-      "description": "The AQUAGUARD™ Turbine Fuel Separator Series (900FH and 1000FH) combines 3-stage filtration: particle interception, water coalescing, and precision defense. The system achieves 99.8% water removal and is rated ISO 16332 with 30-micron absolute filtration for high-pressure common rail (HPCR) injection systems. AQUAGUARD™ is designed for contaminated fuel environments in oil & gas, marine, and power generation applications where water ingress from fuel degradation or brine exposure is inevitable.",
+      "description": "The HYDROCORE™ Turbine Fuel Separator Series (900FH and 1000FH) combines 3-stage filtration: particle interception, water coalescing, and precision defense. The system achieves 99.8% water removal and is rated ISO 16332 with 30-micron absolute filtration for high-pressure common rail (HPCR) injection systems. HYDROCORE™ is designed for contaminated fuel environments in oil & gas, marine, and power generation applications where water ingress from fuel degradation or brine exposure is inevitable.",
       "features": [
         "900FH/1000FH",
         "3-STAGE DESIGN",
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "TURBINE ROTATION"
       ],
       "benefits": [
         "3-stage turbine protection: particle interception, water coalescing, precision defense",
         "900FH and 1000FH interchangeable platform elements",
-        "AQUAGUARD™ hydrophobic coating for advanced fuel system integrity",
+        "HYDROCORE™ hydrophobic coating for advanced fuel system integrity",
         "30-micron rated precision filtration for HPCR injection systems",
         "ISO 16332 certified — zero contamination events guaranteed"
       ],
       "techTags": [
-        "AQUAGUARD/SERIES™",
-        "AQUAGUARD™"
+        "HYDROCORE/SERIES™",
+        "HYDROCORE™"
       ],
       "stats": {
         "ratings": [
@@ -544,7 +544,7 @@
       "file": "coolant.html",
       "title": "COOLANT",
       "subtitle": "THERMAL CUSTODY",
-      "description": "The ELIMFILTERS® COOLTECH™ Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology to maintain corrosion protection and prevent cavitation-induced liner erosion in turbocharged diesel engines. COOLTECH™ maintains thermal stability across the full operating temperature range and extends coolant service intervals beyond OEM specifications in automotive, manufacturing, and power generation applications.",
+      "description": "The ELIMFILTERS® THERMACORE™ Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology to maintain corrosion protection and prevent cavitation-induced liner erosion in turbocharged diesel engines. THERMACORE™ maintains thermal stability across the full operating temperature range and extends coolant service intervals beyond OEM specifications in automotive, manufacturing, and power generation applications.",
       "features": [
         "ACTIVE PROTECTION",
         "THERMAL STABILITY",
@@ -559,7 +559,7 @@
         "Corrosion barrier chemistry for aluminum and cast iron engine blocks"
       ],
       "techTags": [
-        "COOLTECH™"
+        "THERMACORE™"
       ],
       "stats": {},
       "cta": "IDENTIFY SKU"
@@ -615,7 +615,7 @@
         "Zero contamination events across the full service interval"
       ],
       "techTags": [
-        "AQUAGUARD™",
+        "HYDROCORE™",
         "SYNTEPORE™"
       ],
       "stats": {},
@@ -783,7 +783,7 @@
         "Compatible with diesel, biodiesel and marine fuel system applications"
       ],
       "techTags": [
-        "AQUAGUARD™"
+        "HYDROCORE™"
       ],
       "stats": {},
       "cta": "IDENTIFY SKU"
@@ -791,9 +791,9 @@
   ],
   "technologies": [
     {
-      "name": "Aquaguard Series",
-      "file": "aquaguard-series.html",
-      "title": "AQUAGUARD/SERIES™",
+      "name": "Hydrocore Series",
+      "file": "hydrocore-series.html",
+      "title": "HYDROCORE/SERIES™",
       "subtitle": "SERIES FH",
       "description": "900FH and 1000FH Turbine Fuel Filter/Water Separators Professional-Grade Fuel Filtration & Water Removal",
       "features": [
@@ -815,9 +815,9 @@
       "cta": "Find My Filter"
     },
     {
-      "name": "Aquaguard",
-      "file": "aquaguard.html",
-      "title": "AQUAGUARD™",
+      "name": "Hydrocore",
+      "file": "hydrocore.html",
+      "title": "HYDROCORE™",
       "subtitle": "WATER SEPARATOR",
       "description": "Hydrophobic protection technology achieving 99.8% water separation from fuel systems defending injector precision assets.",
       "features": [
@@ -836,9 +836,9 @@
       "cta": "IDENTIFY SKU"
     },
     {
-      "name": "Cooltech",
-      "file": "cooltech.html",
-      "title": "COOLTECH™",
+      "name": "Thermacore",
+      "file": "thermacore.html",
+      "title": "THERMACORE™",
       "subtitle": "SCA ADDITIVE",
       "description": "SCA additive release technology for thermal systems with cavitation prevention and extended coolant protection.",
       "features": [

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'industrial filtration', 'asset protection filters', 'air filters industrial',
     'fuel filters heavy duty', 'hydraulic filters', 'oil filters industrial',
     'mining filtration', 'agriculture filtration', 'marine filtration',
-    'SYNTRAX filter', 'NANOFORCE filter', 'AQUAGUARD filter', 'ELIMFILTERS®',
+    'SYNTRAX filter', 'NANOFORCE filter', 'HYDROCORE filter', 'ELIMFILTERS®',
   ],
   authors: [{ name: 'ELIMFILTERS®', url: BASE_URL }],
   creator: 'ELIMFILTERS®',

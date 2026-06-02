@@ -92,31 +92,31 @@ const SYSTEMS: ProtectionSystem[] = [
         description:
           'Primary particulate capture for diesel fuel delivery across mobile and stationary applications. Controls contamination from storage to injection components.',
         slug: 'fuel',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Turbine-Stage Water Separation',
         description:
           'Three-stage turbine-coalescing-precision separation: 99.8% free water removal, 95% emulsified water reduction. For HPCR injection systems at 1,800–2,500 bar operating pressure.',
-        slug: 'aquaguard-series',
-        tech: 'AQUAGUARD™',
+        slug: 'hydrocore-series',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Water-Fuel Separation Module',
         description:
           'Coalescing water separation for high water ingress rate applications including field-fueled construction equipment and marine fuel storage transfer.',
         slug: 'water',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Marine Fuel Protection',
         description:
           'Corrosion-resistant alloy construction for permanent salt, brine, and humidity exposure. Continuous fuel cleanliness for commercial vessels and offshore support systems.',
         slug: 'marine',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
     ],
-    technologies: ['AQUAGUARD™'],
+    technologies: ['HYDROCORE™'],
     equipment: [
       'HPCR diesel engines (1,800–2,500 bar injection)',
       'Common-rail marine diesel engines',
@@ -218,7 +218,7 @@ const SYSTEMS: ProtectionSystem[] = [
         description:
           'DCA-replenishing cooling protection that continuously restores supplemental coolant additives throughout the service interval, preventing liner cavitation erosion and corrosion scaling.',
         slug: 'coolant',
-        tech: 'COOLTECH™',
+        tech: 'THERMACORE™',
       },
       {
         label: 'Cabin Environmental Protection',
@@ -228,7 +228,7 @@ const SYSTEMS: ProtectionSystem[] = [
         tech: 'MICROKAPPA™',
       },
     ],
-    technologies: ['COOLTECH™', 'MICROKAPPA™'],
+    technologies: ['THERMACORE™', 'MICROKAPPA™'],
     equipment: [
       'Industrial diesel engines with wet sleeve liner construction',
       'Commercial truck and bus cooling circuits',
@@ -271,7 +271,7 @@ const TECH_MAP = [
       'Molecular sieve desiccant achieving ISO 8573-1 Class 1–2 dew point targets. Prevents valve icing, actuator corrosion, and seal degradation in pneumatic braking and process control systems.',
   },
   {
-    name: 'AQUAGUARD™',
+    name: 'HYDROCORE™',
     system: '02',
     role: 'Fuel Cleanliness',
     brief:
@@ -292,7 +292,7 @@ const TECH_MAP = [
       'Sub-micron Beta-rated hydraulic contamination control at 200–450 bar. Maintains ISO 4406 cleanliness for proportional valve spool protection in construction, mining, and manufacturing circuits.',
   },
   {
-    name: 'COOLTECH™',
+    name: 'THERMACORE™',
     system: '05',
     role: 'Cooling System',
     brief:
@@ -666,10 +666,10 @@ export default function SystemsPage() {
       },
       {
         '@type': 'Question',
-        name: 'How does AQUAGUARD™ protect HPCR diesel injection systems?',
+        name: 'How does HYDROCORE™ protect HPCR diesel injection systems?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'AQUAGUARD™ uses a three-stage turbine-coalescing-precision architecture to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. AQUAGUARD™ prevents these failure modes across long-haul trucks, marine diesel engines, standby generators, and offshore equipment.',
+          text: 'HYDROCORE™ uses a three-stage turbine-coalescing-precision architecture to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. HYDROCORE™ prevents these failure modes across long-haul trucks, marine diesel engines, standby generators, and offshore equipment.',
         },
       },
       {
@@ -1141,8 +1141,8 @@ export default function SystemsPage() {
                 a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more proprietary protection architectures.',
               },
               {
-                q: 'How does AQUAGUARD™ protect HPCR injection systems?',
-                a: 'AQUAGUARD™ uses three-stage turbine-coalescing-precision separation to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. HPCR injection operates at 1,800–2,500 bar with needle clearances of 1–3 µm — tolerances where free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys within 200–500 operating hours.',
+                q: 'How does HYDROCORE™ protect HPCR injection systems?',
+                a: 'HYDROCORE™ uses three-stage turbine-coalescing-precision separation to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. HPCR injection operates at 1,800–2,500 bar with needle clearances of 1–3 µm — tolerances where free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys within 200–500 operating hours.',
               },
               {
                 q: 'What hydraulic cleanliness standard does NANOFORCE™ maintain?',

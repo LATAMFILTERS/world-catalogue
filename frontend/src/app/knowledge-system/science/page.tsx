@@ -491,7 +491,7 @@ export default function SciencePage() {
           <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
           <p>&nbsp;&nbsp;Related_Standards: ISO 16889 (/knowledge-system/standards/iso-16889), ISO 4406 (/knowledge-system/standards/iso-4406), ISO 5011 (/knowledge-system/standards/iso-5011)</p>
           <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-          <p>&nbsp;&nbsp;Related_Technologies: MACROCORE (18µm absolute), NANOFORCE (1µm sub-micron), DURATECH (extended lifecycle), SYNTRAX (synthetic media), DRYCORE (dry element), AQUAGUARD (water separation)</p>
+          <p>&nbsp;&nbsp;Related_Technologies: MACROCORE (18µm absolute), NANOFORCE (1µm sub-micron), DURATECH (extended lifecycle), SYNTRAX (synthetic media), DRYCORE (dry element), HYDROCORE (water separation)</p>
           <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
           <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
           <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/science</p>

@@ -69,15 +69,15 @@ VALUES
   ('duratech',    'technology', 'particle-wear',            'contamination_mode', 'controls', 3),
 
   -- COOLTECH controls coolant contamination (coolant degradation mode)
-  ('cooltech',    'technology', 'particle-wear',            'contamination_mode', 'controls', 1),  -- removes coolant-borne particles
+  ('thermacore',    'technology', 'particle-wear',            'contamination_mode', 'controls', 1),  -- removes coolant-borne particles
 
   -- MARINECLEAN controls particle wear in marine environment
   ('marineclean', 'technology', 'particle-wear',            'contamination_mode', 'controls', 3),
 
   -- AQUAGUARD controls diesel water and microbial growth (by removing water)
-  ('aquaguard',   'technology', 'diesel-water',             'contamination_mode', 'controls', 3),
-  ('aquaguard',   'technology', 'microbial-growth',         'contamination_mode', 'controls', 3),  -- removes water substrate
-  ('aquaguard',   'technology', 'hydraulic-contamination',  'contamination_mode', 'controls', 2),  -- water removal from hydraulic fluid
+  ('hydrocore',   'technology', 'diesel-water',             'contamination_mode', 'controls', 3),
+  ('hydrocore',   'technology', 'microbial-growth',         'contamination_mode', 'controls', 3),  -- removes water substrate
+  ('hydrocore',   'technology', 'hydraulic-contamination',  'contamination_mode', 'controls', 2),  -- water removal from hydraulic fluid
 
   -- SYNTEPORE controls particle wear in fuel injection systems
   ('syntepore',   'technology', 'particle-wear',            'contamination_mode', 'controls', 2),
@@ -104,12 +104,12 @@ VALUES
   -- Lube oil technologies
   ('syntrax',       'technology', 'lube-oil',       'system', 'controls', 3),
   ('duratech',      'technology', 'lube-oil',       'system', 'controls', 3),
-  ('cooltech',      'technology', 'lube-oil',       'system', 'controls', 2),  -- coolant is lube system adjacent
+  ('thermacore',      'technology', 'lube-oil',       'system', 'controls', 2),  -- coolant is lube system adjacent
   ('marineclean',   'technology', 'lube-oil',       'system', 'controls', 3),
   ('blueclean',     'technology', 'lube-oil',       'system', 'controls', 2),  -- ATF/specialty fluid
 
   -- Fuel technologies
-  ('aquaguard',     'technology', 'fuel',           'system', 'controls', 3),
+  ('hydrocore',     'technology', 'fuel',           'system', 'controls', 3),
   ('syntepore',     'technology', 'fuel',           'system', 'controls', 3),
 
   -- Cabin technology
@@ -121,7 +121,7 @@ VALUES
 
   -- Cross-system links (technologies with secondary system coverage)
   ('nanoforce',     'technology', 'fuel',           'system', 'controls', 1),  -- water removal in some fuel applications
-  ('aquaguard',     'technology', 'hydraulic',      'system', 'controls', 2),  -- water removal from hydraulic fluid
+  ('hydrocore',     'technology', 'hydraulic',      'system', 'controls', 2),  -- water removal from hydraulic fluid
   ('syntrax',       'technology', 'hydraulic',      'system', 'controls', 1)   -- some SYNTRAX products overlap hydraulic-adjacent
 
 ON CONFLICT (source_concept_slug, source_type, target_concept_slug, target_type, link_type) DO NOTHING;
@@ -159,7 +159,7 @@ VALUES
   ('intekcore',   'technology', 'macrocore',    'technology', 'related', 3),
 
   -- Fuel water separator + fuel particle filter (two-stage fuel filtration)
-  ('aquaguard',   'technology', 'syntepore',    'technology', 'related', 3),
+  ('hydrocore',   'technology', 'syntepore',    'technology', 'related', 3),
 
   -- Desiccant dryer + coalescer (compressed air treatment train)
   ('drycore',     'technology', 'gasultra',     'technology', 'related', 3),
@@ -170,10 +170,10 @@ VALUES
 
   -- Lube oil technologies (related within lube system family)
   ('syntrax',     'technology', 'duratech',     'technology', 'related', 2),
-  ('syntrax',     'technology', 'cooltech',     'technology', 'related', 2),
+  ('syntrax',     'technology', 'thermacore',     'technology', 'related', 2),
 
   -- Marine technology relationships
-  ('marineclean', 'technology', 'aquaguard',    'technology', 'related', 2)
+  ('marineclean', 'technology', 'hydrocore',    'technology', 'related', 2)
 
 ON CONFLICT (source_concept_slug, source_type, target_concept_slug, target_type, link_type) DO NOTHING;
 

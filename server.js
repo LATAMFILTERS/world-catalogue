@@ -132,12 +132,17 @@ const TECH_LOGO_MAP = {
   'intekcore': 'intekcore',
   'drycore': 'drycore',
   'duratech': 'duratech',
-  'cooltech': 'cooltech',
   'syntepore': 'syntepore',
   'microkappa': 'microkappa',
-  'gasultra': 'gasultra',
-  'aquaguard': 'aquaguard',
   'marineclean': 'marineclean',
+  // Strategic rename: COOLTECH™ → THERMACORE™
+  'thermacore': 'thermacore',
+  'cooltech': 'thermacore',     // DB legacy alias — elimfilters_catalog still stores COOLTECH™
+  // Strategic rename: AQUAGUARD™ → HYDROCORE™
+  'hydrocore': 'hydrocore',
+  'aquaguard': 'hydrocore',     // DB legacy alias — elimfilters_catalog still stores AQUAGUARD™
+  // Inactive placeholders (retained in map, not seeded in KG)
+  'gasultra': 'gasultra',
   'blueclean': 'blueclean',
 };
 
