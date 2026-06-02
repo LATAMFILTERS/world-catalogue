@@ -56,12 +56,29 @@ SELECT
   kt.slug,
   kt.display_name,
   kt.category,
+  kt.status,
   ks.slug AS primary_system,
   kt.logo_file
 FROM kg_technologies kt
 LEFT JOIN kg_systems ks ON ks.id = kt.primary_system_id
-ORDER BY ks.sort_order, kt.slug;
--- Expected: 13 rows
+ORDER BY kt.status DESC, ks.sort_order, kt.slug;
+-- Expected: 11 rows (9 ACTIVE + 2 PRE_LAUNCH)
+-- BLUECLEAN and GASULTRA are intentionally excluded — placeholder-only, no products.
+
+-- B2b: Status distribution check
+SELECT status, COUNT(*) AS count
+FROM kg_technologies
+GROUP BY status
+ORDER BY status;
+-- Expected:
+--   ACTIVE     | 9
+--   PRE_LAUNCH | 2
+
+-- B2c: Confirm excluded technologies are NOT present
+SELECT COUNT(*) AS excluded_techs_present
+FROM kg_technologies
+WHERE slug IN ('blueclean', 'gasultra');
+-- Expected: 0 (these are permanently excluded from KG)
 
 -- B3: Technology → system assignment completeness
 SELECT COUNT(*) AS technologies_without_system
@@ -70,7 +87,7 @@ WHERE primary_system_id IS NULL;
 -- Expected: 0
 
 -- B4: CRITICAL — Verify category corrections
-SELECT slug, display_name, category,
+SELECT slug, display_name, category, status,
   CASE
     WHEN slug = 'microkappa' AND category LIKE '%Cabin%' THEN '✅ CORRECT'
     WHEN slug = 'microkappa' THEN '❌ WRONG — should be Cabin Air Filtration'
@@ -104,19 +121,19 @@ LEFT JOIN kg_product_technologies kpt ON kpt.technology_id = kt.id
 GROUP BY kt.id, kt.slug, kt.display_name
 ORDER BY product_count DESC;
 -- Expected:
---   nanoforce:    1,962
---   macrocore:    1,366
---   syntepore:      500
---   syntrax:        351
---   intekcore:      243
---   microkappa:     122
---   cooltech:        59
---   aquaguard:       16
---   drycore:          3
---   duratech:         0  (no products in current catalog)
---   gasultra:         0
---   marineclean:      0
---   blueclean:        0
+--   nanoforce:    1,962   (ACTIVE)
+--   macrocore:    1,366   (ACTIVE)
+--   syntepore:      500   (ACTIVE — was SYNTAPORE in DB)
+--   syntrax:        351   (ACTIVE)
+--   intekcore:      243   (ACTIVE — was INTAKCORE in DB)
+--   microkappa:     122   (ACTIVE)
+--   cooltech:        59   (ACTIVE)
+--   aquaguard:       16   (ACTIVE)
+--   drycore:          3   (ACTIVE)
+--   duratech:         0   (PRE_LAUNCH — no catalog products yet)
+--   marineclean:      0   (PRE_LAUNCH — no catalog products yet)
+--   TOTAL mapped:  4,622
+-- NOTE: BLUECLEAN and GASULTRA are not present in kg_technologies.
 
 -- C3: Products NOT mapped to any technology
 SELECT COUNT(*) AS unmapped_products
@@ -279,10 +296,11 @@ SELECT 'elimfilters_catalog (source)',           COUNT(*) FROM elimfilters_catal
 
 -- Expected:
 -- kg_systems:               6
--- kg_technologies:         13
+-- kg_technologies:         11   ← 9 ACTIVE + 2 PRE_LAUNCH (DURATECH, MARINECLEAN)
 -- kg_product_systems:   4,622
 -- kg_product_technologies: 4,622
 -- elimfilters_catalog:     4,622  ← source (unchanged)
+-- NOTE: BLUECLEAN and GASULTRA intentionally absent from kg_technologies.
 
 -- Phase 1 is COMPLETE if:
 --   kg_product_systems count   = elimfilters_catalog count (4,622)

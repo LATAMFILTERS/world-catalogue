@@ -216,7 +216,7 @@ id | slug           | name                      | sort_order
 
 ---
 
-### Step 3 — Seed Technologies (13 rows)
+### Step 3 — Seed Technologies (11 rows)
 
 ```bash
 psql $DATABASE_URL -f migrations/kg-phase1/003_seed_technologies.sql
@@ -224,21 +224,37 @@ psql $DATABASE_URL -f migrations/kg-phase1/003_seed_technologies.sql
 
 **Success indicators:**
 ```
-INSERT 0 13  (or UPDATE 13 if re-run)
+INSERT 0 11  (or UPDATE 11 if re-run)
 ```
+9 ACTIVE + 2 PRE_LAUNCH. BLUECLEAN and GASULTRA intentionally excluded.
 
-**Verify critical categories:**
+**Verify categories and status:**
 ```sql
-SELECT slug, category FROM kg_technologies
-WHERE slug IN ('microkappa', 'syntrax', 'nanoforce')
-ORDER BY slug;
+SELECT slug, category, status FROM kg_technologies ORDER BY status DESC, slug;
 ```
 **Expected:**
 ```
-microkappa  | Cabin Air Filtration
-nanoforce   | Hydraulic Filtration
-syntrax     | Lube / Oil Filtration
+slug         | category                          | status
+aquaguard    | Fuel/Water Separation             | ACTIVE
+cooltech     | Coolant Filtration                | ACTIVE
+drycore      | Air Dryer Technology              | ACTIVE
+intekcore    | Air Housing & Precleaner          | ACTIVE
+macrocore    | Air Intake Filtration             | ACTIVE
+microkappa   | Cabin Air Filtration              | ACTIVE
+nanoforce    | Hydraulic Filtration              | ACTIVE
+syntepore    | Fuel Filtration                   | ACTIVE
+syntrax      | Lube / Engine Oil Filtration      | ACTIVE
+duratech     | Heavy-Duty Engine Oil Filtration  | PRE_LAUNCH
+marineclean  | Marine Filtration                 | PRE_LAUNCH
+(11 rows)
 ```
+
+**Confirm exclusions:**
+```sql
+SELECT COUNT(*) FROM kg_technologies WHERE slug IN ('blueclean', 'gasultra');
+-- Expected: 0
+```
+
 If any wrong → run `003_seed_technologies.sql` again (it uses ON CONFLICT DO UPDATE).
 
 ---
@@ -312,10 +328,13 @@ psql $DATABASE_URL -f migrations/kg-phase1/validate.sql
 |-------|---------|
 | A1: Table count | 4 rows |
 | B1: System count | 6 rows |
-| B2: Technology count | 13 rows |
+| B2: Technology count | 11 rows (9 ACTIVE + 2 PRE_LAUNCH) |
+| B2b: ACTIVE count | 9 |
+| B2b: PRE_LAUNCH count | 2 (duratech, marineclean) |
+| B2c: Excluded (blueclean, gasultra) | 0 rows |
 | B3: Technologies without system | 0 |
 | B4: MICROKAPPA category | `Cabin Air Filtration` |
-| B4: SYNTRAX category | `Lube / Oil Filtration` |
+| B4: SYNTRAX category | `Lube / Engine Oil Filtration` |
 | B4: NANOFORCE category | `Hydraulic Filtration` |
 | C1: Products with technology | 4,622 |
 | C3: Unmapped products | 0 |
