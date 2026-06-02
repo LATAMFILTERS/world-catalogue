@@ -31,35 +31,72 @@ with open(sql_file, encoding="utf-8") as f:
 
 
 def split_statements(sql):
-    """Split SQL into individual statements, skipping comments and blanks."""
-    # Remove block comments
+    """Split SQL into statements. Handles single-quoted strings and $$ dollar-quoting."""
+    # Remove block comments /* ... */
     sql = re.sub(r'/\*.*?\*/', '', sql, flags=re.DOTALL)
     statements = []
     current = []
-    in_string = False
+    in_single = False
+    in_dollar = False
+    dollar_tag = ''
     i = 0
-    while i < len(sql):
+    n = len(sql)
+
+    while i < n:
         ch = sql[i]
-        if ch == "'" and not in_string:
-            in_string = True
-            current.append(ch)
-        elif ch == "'" and in_string:
-            in_string = False
-            current.append(ch)
-        elif ch == '-' and not in_string and i + 1 < len(sql) and sql[i+1] == '-':
-            # Line comment — skip to end of line
-            while i < len(sql) and sql[i] != '\n':
+
+        # Dollar-quote start: $tag$ or $$
+        if not in_single and not in_dollar and ch == '$':
+            j = i + 1
+            while j < n and (sql[j].isalnum() or sql[j] == '_'):
+                j += 1
+            if j < n and sql[j] == '$':
+                dollar_tag = sql[i:j + 1]
+                in_dollar = True
+                current.append(dollar_tag)
+                i = j + 1
+                continue
+
+        # Dollar-quote end
+        if in_dollar and ch == '$':
+            tag_end = dollar_tag
+            if sql[i:i + len(tag_end)] == tag_end:
+                in_dollar = False
+                current.append(tag_end)
+                i += len(tag_end)
+                dollar_tag = ''
+                continue
+
+        # Single-quote toggle (only outside dollar-quotes)
+        if not in_dollar:
+            if ch == "'" and not in_single:
+                in_single = True
+            elif ch == "'" and in_single:
+                # Escaped quote ''
+                if i + 1 < n and sql[i + 1] == "'":
+                    current.append("''")
+                    i += 2
+                    continue
+                in_single = False
+
+        # Line comment (only outside all quoting)
+        if not in_single and not in_dollar and ch == '-' and i + 1 < n and sql[i + 1] == '-':
+            while i < n and sql[i] != '\n':
                 i += 1
             continue
-        elif ch == ';' and not in_string:
+
+        # Statement terminator
+        if ch == ';' and not in_single and not in_dollar:
             stmt = ''.join(current).strip()
             if stmt:
                 statements.append(stmt)
             current = []
-        else:
-            current.append(ch)
+            i += 1
+            continue
+
+        current.append(ch)
         i += 1
-    # Last statement without trailing semicolon
+
     stmt = ''.join(current).strip()
     if stmt:
         statements.append(stmt)
