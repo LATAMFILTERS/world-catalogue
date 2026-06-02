@@ -235,15 +235,15 @@ SELECT slug, category, status FROM kg_technologies ORDER BY status DESC, slug;
 **Expected:**
 ```
 slug         | category                          | status
-aquaguard    | Fuel/Water Separation             | ACTIVE
-cooltech     | Coolant Filtration                | ACTIVE
 drycore      | Air Dryer Technology              | ACTIVE
+hydrocore    | Fuel/Water Separation             | ACTIVE
 intekcore    | Air Housing & Precleaner          | ACTIVE
 macrocore    | Air Intake Filtration             | ACTIVE
 microkappa   | Cabin Air Filtration              | ACTIVE
 nanoforce    | Hydraulic Filtration              | ACTIVE
 syntepore    | Fuel Filtration                   | ACTIVE
 syntrax      | Lube / Engine Oil Filtration      | ACTIVE
+thermacore   | Coolant Filtration                | ACTIVE
 duratech     | Heavy-Duty Engine Oil Filtration  | PRE_LAUNCH
 marineclean  | Marine Filtration                 | PRE_LAUNCH
 (11 rows)
@@ -404,7 +404,7 @@ UNION ALL SELECT 'kg_product_technologies', COUNT(*) FROM kg_product_technologie
 t                        | count
 -------------------------+-------
 kg_systems               |     6
-kg_technologies          |    13
+kg_technologies          |    11
 kg_product_systems       |  4622
 kg_product_technologies  |  4622
 ```
