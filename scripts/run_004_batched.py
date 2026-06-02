@@ -66,7 +66,7 @@ raw_elements AS (
     ec.sku AS product_sku,
     elem,
     CASE
-      WHEN jsonb_typeof(elem) = 'string'    THEN UPPER(TRIM(elem #>> '{{}}'))
+      WHEN jsonb_typeof(elem) = 'string'    THEN UPPER(TRIM(elem #>> '{}'))
       WHEN elem->>'equipment' IS NOT NULL   THEN UPPER(TRIM(elem->>'equipment'))
       WHEN elem->>'model'     IS NOT NULL   THEN UPPER(TRIM(elem->>'model'))
       WHEN elem->>'machine'   IS NOT NULL   THEN UPPER(TRIM(elem->>'machine'))
@@ -203,7 +203,7 @@ async def run():
             print(f"[{batch_num}/{total_batches}] SKUs {batch_start+1}–{batch_start+len(batch)}: +{n} filas")
         except Exception as e:
             errors += 1
-            print(f"[{batch_num}/{total_batches}] ERROR: {e}")
+            print(f"[{batch_num}/{total_batches}] ERROR: {e!r}")
 
     print(f"\n{'='*50}")
     print(f"Total filas insertadas: {inserted_total}")
