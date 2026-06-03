@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generated": "2026-06-03T12:07:29.542Z",
+    "source_index": "elimfilters-vault/00-meta/CITATION_INDEX.json",
+    "source_index_version": "1.0",
+    "path_count": 19,
+    "valid_path_count": 5,
+    "product_family_count": 1,
+    "coverage_summary": {
+      "problems_with_complete_paths": "1/1",
+      "industries_with_complete_paths": "3/11",
+      "technologies_with_product_families": "1/7",
+      "product_families_reachable": "1/1"
+    },
+    "generator": "scripts/build-part-search-map.js",
+    "note": "Phase 4B — Part Search traversal map from Citation Index"
+  },
+  "traversal_paths": [
+    {
+      "path_id": "PATH_A_DUST_INGESTION_001",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "steps": [
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_A_DUST_INGESTION_002",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "steps": [
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "NANOFORCE",
+          "type": "technology",
+          "name": "NANOFORCE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_A_DUST_INGESTION_003",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "steps": [
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX — Full-Flow Lube Protection"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_004",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "steps": [
+        {
+          "key": "AGRICULTURE",
+          "type": "industry",
+          "name": "Agriculture"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_005",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "steps": [
+        {
+          "key": "AGRICULTURE",
+          "type": "industry",
+          "name": "Agriculture"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "NANOFORCE",
+          "type": "technology",
+          "name": "NANOFORCE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_006",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "steps": [
+        {
+          "key": "AGRICULTURE",
+          "type": "industry",
+          "name": "Agriculture"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX — Full-Flow Lube Protection"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_007",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "steps": [
+        {
+          "key": "CONSTRUCTION",
+          "type": "industry",
+          "name": "Construction"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_008",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "steps": [
+        {
+          "key": "CONSTRUCTION",
+          "type": "industry",
+          "name": "Construction"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "NANOFORCE",
+          "type": "technology",
+          "name": "NANOFORCE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_009",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "steps": [
+        {
+          "key": "CONSTRUCTION",
+          "type": "industry",
+          "name": "Construction"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX — Full-Flow Lube Protection"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_MINING_010",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MINING_011",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "NANOFORCE",
+          "type": "technology",
+          "name": "NANOFORCE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_B_MINING_012",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX — Full-Flow Lube Protection"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_HYDROCORE_013",
+      "path_type": "C",
+      "entry_node": "HYDROCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "HYDROCORE",
+          "type": "technology",
+          "name": "HYDROCORE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_INTEKCORE_014",
+      "path_type": "C",
+      "entry_node": "INTEKCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "INTEKCORE",
+          "type": "technology",
+          "name": "INTEKCORE — Zero-Bypass Radial Seal Housing"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_MACROCORE_015",
+      "path_type": "C",
+      "entry_node": "MACROCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_C_MICROKAPPA_016",
+      "path_type": "C",
+      "entry_node": "MICROKAPPA",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "MICROKAPPA",
+          "type": "technology",
+          "name": "MICROKAPPA™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_NANOFORCE_017",
+      "path_type": "C",
+      "entry_node": "NANOFORCE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "NANOFORCE",
+          "type": "technology",
+          "name": "NANOFORCE™"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_SYNTEPORE_018",
+      "path_type": "C",
+      "entry_node": "SYNTEPORE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "SYNTEPORE",
+          "type": "technology",
+          "name": "SYNTEPORE — All-Synthetic Intake Media"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    },
+    {
+      "path_id": "PATH_C_SYNTRAX_019",
+      "path_type": "C",
+      "entry_node": "SYNTRAX",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX — Full-Flow Lube Protection"
+        }
+      ],
+      "terminal_product_families": [],
+      "valid": false,
+      "validation_failures": [
+        "V003: Path has no terminal ProductFamily"
+      ]
+    }
+  ],
+  "product_family_index": {
+    "AIRFILTER_PRIMARY": {
+      "name": "Primary Intake Protection",
+      "reachable_via": [
+        "PATH_A_DUST_INGESTION_001",
+        "PATH_B_AGRICULTURE_004",
+        "PATH_B_CONSTRUCTION_007",
+        "PATH_B_MINING_010",
+        "PATH_C_MACROCORE_015"
+      ],
+      "entry_problems": [
+        "DUST_INGESTION"
+      ],
+      "entry_industries": [
+        "AGRICULTURE",
+        "CONSTRUCTION",
+        "MINING"
+      ],
+      "entry_technologies": [
+        "MACROCORE"
+      ],
+      "uses_technology": "MACROCORE",
+      "meets_standards": [
+        "ISO_5011",
+        "SAE_J1539"
+      ],
+      "target_industries": [
+        "MINING",
+        "AGRICULTURE",
+        "CONSTRUCTION",
+        "TRUCKS_FLEETS",
+        "POWER_GENERATION"
+      ]
+    }
+  },
+  "unmapped_entities": {
+    "product_families_unreachable": [],
+    "technologies_without_families": [
+      "HYDROCORE",
+      "INTEKCORE",
+      "MICROKAPPA",
+      "NANOFORCE",
+      "SYNTEPORE",
+      "SYNTRAX"
+    ],
+    "problems_without_paths": []
+  }
+}
