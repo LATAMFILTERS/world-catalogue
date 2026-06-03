@@ -20,3 +20,6 @@ __pycache__/
 !frontend/out/images/*.mp4
 graphify-out/
 .claude/worktrees/
+
+# Obsidian local configuration
+elimfilters-vault/.obsidian/
