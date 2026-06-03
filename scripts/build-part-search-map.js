@@ -493,9 +493,12 @@ const output = {
 };
 
 // ---------------------------------------------------------------------------
-// 10. Write output
+// 10. Write output (skip in --validate mode)
 // ---------------------------------------------------------------------------
-fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), 'utf8');
+const validateOnly = process.argv.includes('--validate');
+if (!validateOnly) {
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), 'utf8');
+}
 
 // ---------------------------------------------------------------------------
 // 11. Print summary
@@ -514,4 +517,9 @@ console.log(`Unmapped families:        ${productFamiliesUnreachable.length}`);
 console.log(`Technologies without PF:  ${technologiesWithoutFamilies.length}`);
 console.log(`Problems without paths:   ${problemsWithoutPaths.length}`);
 console.log('');
-console.log(`OUTPUT: elimfilters-vault/00-meta/PART_SEARCH_MAP.json`);
+if (validateOnly) {
+  console.log(`OUTPUT: (--validate mode, no files written)`);
+  process.exit(0);
+} else {
+  console.log(`OUTPUT: elimfilters-vault/00-meta/PART_SEARCH_MAP.json`);
+};

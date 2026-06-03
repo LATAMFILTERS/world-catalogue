@@ -1,0 +1,78 @@
+{
+  "key": "PISTON_RING_ASSEMBLY",
+  "type": "component",
+  "name": "Piston Ring Assembly",
+  "slug": "piston-ring-assembly",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "component",
+    "engine",
+    "piston-ring",
+    "wear-surface",
+    "vault-only"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/components/piston-ring-assembly",
+    "concept": "Piston Ring Assembly",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:9b01f803b4b709000a2bf08d4eca0a8f1c5babf1ee84b488d6b47ddc68661479"
+  },
+  "canonical": {
+    "definition": "The piston ring assembly is the compression and oil sealing interface between piston rings and cylinder bore in diesel engines, operating at 5–15 µm ring-to-wall clearance — the tightest precision surface in a running engine — where hard abrasive particles above 5 µm act as micro-cutting tools during each of 2,000–5,000 piston strokes per minute.",
+    "systems": "Engine combustion chamber; oil film at cylinder bore; combustion blow-by pathway to crankcase lube circuit",
+    "failure_impact": "Particle ingestion above 50 mg/m³ from air intake or oil ISO 4406 >19/17/14 → two-body and three-body abrasive micro-cutting at ring-to-wall interface → progressive cylinder bore wear → compression loss 10–25%; blow-by increase → crankcase pressure buildup and oil contamination → engine overhaul required at 3,000–5,000 hours versus 15,000–25,000 hours with proper filtration.",
+    "related_standards": "ISO 5011: Air intake filtration performance standard governing particle ingestion rate reaching ring-to-wall interface | ISO 4406: Lube oil cleanliness code governing particle concentration in oil film at cylinder bore",
+    "related_technologies": "MACROCORE: Air intake particle capture preventing silica and environmental dust from entering combustion chamber | SYNTRAX: Full-flow lube filtration at ISO 4406 16/14/11 reducing abrasive particle concentration in oil film at ring-to-wall interface",
+    "industrial_role": "The piston ring assembly is the primary mechanical failure point converting air intake and lube oil contamination events into compression loss and blow-by — it is the component where air filtration and lube filtration system performance directly determines whether an engine operates 15,000+ hours or requires overhaul at 3,000–5,000 hours."
+  },
+  "relationships": {
+    "protected_by_technologies": [
+      "MACROCORE",
+      "SYNTRAX"
+    ],
+    "located_in_systems": [
+      "AIRFILTER"
+    ],
+    "sensitive_to_contamination": [
+      "PARTICLE_WEAR"
+    ],
+    "protection_standard": [
+      "ISO_5011"
+    ]
+  },
+  "vault_path": "elimfilters-vault/06-components/PISTON_RING_ASSEMBLY.md",
+  "_links": {
+    "self": "/api/citation/PISTON_RING_ASSEMBLY.json",
+    "type_index": "/api/citation/type/component.json",
+    "related": [
+      {
+        "key": "MACROCORE",
+        "relation": "protected_by_technologies",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "protected_by_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "AIRFILTER",
+        "relation": "located_in_systems",
+        "href": "/api/citation/AIRFILTER.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "sensitive_to_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      },
+      {
+        "key": "ISO_5011",
+        "relation": "protection_standard",
+        "href": "/api/citation/ISO_5011.json"
+      }
+    ]
+  }
+}

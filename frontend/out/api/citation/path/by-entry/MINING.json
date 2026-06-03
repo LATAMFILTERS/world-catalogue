@@ -1,0 +1,42 @@
+{
+  "entry_key": "MINING",
+  "path_count": 3,
+  "paths": [
+    {
+      "path_id": "PATH_B_MINING_010",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_010.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_011",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_011.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_012",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_012.json"
+    }
+  ]
+}

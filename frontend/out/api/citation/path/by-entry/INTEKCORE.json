@@ -1,0 +1,16 @@
+{
+  "entry_key": "INTEKCORE",
+  "path_count": 1,
+  "paths": [
+    {
+      "path_id": "PATH_C_INTEKCORE_014",
+      "path_type": "C",
+      "entry_node": "INTEKCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": false,
+      "terminal_product_families": [],
+      "href": "/api/citation/path/PATH_C_INTEKCORE_014.json"
+    }
+  ]
+}

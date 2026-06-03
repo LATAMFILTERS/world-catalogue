@@ -1,0 +1,230 @@
+{
+  "path_count": 19,
+  "valid_count": 17,
+  "paths": [
+    {
+      "path_id": "PATH_A_DUST_INGESTION_001",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_A_DUST_INGESTION_001.json"
+    },
+    {
+      "path_id": "PATH_A_DUST_INGESTION_002",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_A_DUST_INGESTION_002.json"
+    },
+    {
+      "path_id": "PATH_A_DUST_INGESTION_003",
+      "path_type": "A",
+      "entry_node": "DUST_INGESTION",
+      "entry_type": "problem",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_A_DUST_INGESTION_003.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_004",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_004.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_005",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_005.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_006",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_006.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_007",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_007.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_008",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_008.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_009",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_009.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_010",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_010.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_011",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_011.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_012",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_012.json"
+    },
+    {
+      "path_id": "PATH_C_HYDROCORE_013",
+      "path_type": "C",
+      "entry_node": "HYDROCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_HYDROCORE_013.json"
+    },
+    {
+      "path_id": "PATH_C_INTEKCORE_014",
+      "path_type": "C",
+      "entry_node": "INTEKCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": false,
+      "terminal_product_families": [],
+      "href": "/api/citation/path/PATH_C_INTEKCORE_014.json"
+    },
+    {
+      "path_id": "PATH_C_MACROCORE_015",
+      "path_type": "C",
+      "entry_node": "MACROCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_MACROCORE_015.json"
+    },
+    {
+      "path_id": "PATH_C_MICROKAPPA_016",
+      "path_type": "C",
+      "entry_node": "MICROKAPPA",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_MICROKAPPA_016.json"
+    },
+    {
+      "path_id": "PATH_C_NANOFORCE_017",
+      "path_type": "C",
+      "entry_node": "NANOFORCE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_NANOFORCE_017.json"
+    },
+    {
+      "path_id": "PATH_C_SYNTEPORE_018",
+      "path_type": "C",
+      "entry_node": "SYNTEPORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": false,
+      "terminal_product_families": [],
+      "href": "/api/citation/path/PATH_C_SYNTEPORE_018.json"
+    },
+    {
+      "path_id": "PATH_C_SYNTRAX_019",
+      "path_type": "C",
+      "entry_node": "SYNTRAX",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_SYNTRAX_019.json"
+    }
+  ]
+}

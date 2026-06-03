@@ -1,0 +1,18 @@
+{
+  "entry_key": "NANOFORCE",
+  "path_count": 1,
+  "paths": [
+    {
+      "path_id": "PATH_C_NANOFORCE_017",
+      "path_type": "C",
+      "entry_node": "NANOFORCE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_NANOFORCE_017.json"
+    }
+  ]
+}

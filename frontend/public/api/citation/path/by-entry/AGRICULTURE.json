@@ -1,0 +1,42 @@
+{
+  "entry_key": "AGRICULTURE",
+  "path_count": 3,
+  "paths": [
+    {
+      "path_id": "PATH_B_AGRICULTURE_004",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_004.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_005",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_005.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_006",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_006.json"
+    }
+  ]
+}

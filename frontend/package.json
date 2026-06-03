@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js",
+    "prebuild": "node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "verify": "npm run type-check && npm run lint && npm run build"
+    "verify": "npm run type-check && npm run lint && npm run build",
+    "validate:vault": "node ../scripts/build-citation-index.js --validate",
+    "validate:map": "node ../scripts/build-part-search-map.js --validate",
+    "validate:citation-api": "node ../scripts/generate-citation-api.js --validate"
   },
   "dependencies": {
     "i18next": "^26.2.0",
