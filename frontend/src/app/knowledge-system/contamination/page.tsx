@@ -4,6 +4,22 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+// JSON-LD: CollectionPage — sourced from CITATION_INDEX.json (build-time inline)
+const PAGE_JSONLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Industrial Filtration Failure Analysis — ELIMFILTERS Knowledge System',
+  description: 'Index of contamination failure modes: diesel water contamination, particle wear in engines, hydraulic system contamination, and cabin air contamination.',
+  url: 'https://elimfilters.com/knowledge-system/contamination',
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+  hasPart: [
+    { '@type': 'DefinedTerm', name: 'Diesel Water Contamination', identifier: 'DIESEL_WATER', description: 'Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems causing injector damage, microbial growth, and corrosion.', url: 'https://elimfilters.com/knowledge-system/contamination/diesel-water' },
+    { '@type': 'DefinedTerm', name: 'Particle Wear in Engines', identifier: 'PARTICLE_WEAR', description: 'Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals — caused by hard particle contamination in lube oil.', url: 'https://elimfilters.com/knowledge-system/contamination/particle-wear' },
+    { '@type': 'DefinedTerm', name: 'Hydraulic System Contamination', identifier: 'HYDRAULIC_CONTAMINATION', description: 'Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid threatening proportional valve and pump reliability.', url: 'https://elimfilters.com/knowledge-system/contamination/hydraulic-contamination' },
+    { '@type': 'DefinedTerm', name: 'Cabin Air Contamination', identifier: 'CABIN_AIR_CONTAMINATION', description: 'Cabin air contamination is the occupational exposure of equipment operators to respirable particulate matter (PM10, PM2.5) inside enclosed cab environments.', url: 'https://elimfilters.com/knowledge-system/contamination/cabin-air-contamination' },
+  ],
+});
+
 const CONTAMINATION_TYPES = [
   {
     code: 'WATER',
@@ -227,7 +243,7 @@ export default function ContaminationHubPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

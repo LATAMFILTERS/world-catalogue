@@ -4,6 +4,29 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+// JSON-LD: TechArticle — sourced from CITATION_INDEX.json (build-time inline)
+const PAGE_JSONLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Hydraulic System Contamination — Particle and Water Failure Analysis',
+  description: 'Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid threatening proportional valve and pump reliability.',
+  url: 'https://elimfilters.com/knowledge-system/contamination/hydraulic-system',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+  dateModified: '2026-06-03',
+  keywords: 'hydraulic contamination, ISO 16889, ISO 4406, NFPA T2.14, NANOFORCE, SYNTRAX, proportional valve, hydraulic pump, fluid cleanliness',
+  about: [
+    { '@type': 'Thing', name: 'ISO 16889 — Multi-Pass Filter Efficiency Test' },
+    { '@type': 'Thing', name: 'NFPA T2.14 — Collapse/Burst Resistance Verification' },
+    { '@type': 'Thing', name: 'ISO 4406 — Hydraulic Fluid Cleanliness Code' },
+  ],
+  mentions: [
+    { '@type': 'Thing', name: 'NANOFORCE™' },
+    { '@type': 'Thing', name: 'SYNTRAX — Full-Flow Lube Protection' },
+  ],
+  inLanguage: 'en',
+});
+
 export default function HydraulicSystemContaminationPage() {
   const sections = [
     {
@@ -345,6 +368,7 @@ export default function HydraulicSystemContaminationPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

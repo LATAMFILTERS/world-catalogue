@@ -4,6 +4,29 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+// JSON-LD: TechArticle — sourced from CITATION_INDEX.json (build-time inline)
+const PAGE_JSONLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Particle Wear in Engines — Abrasive Contamination Failure Analysis',
+  description: 'Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals — caused by hard particle contamination in lube oil.',
+  url: 'https://elimfilters.com/knowledge-system/contamination/particle-wear',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+  dateModified: '2026-06-03',
+  keywords: 'particle wear, abrasive wear, engine contamination, ISO 16889, ISO 4406, MACROCORE, NANOFORCE, lube oil filtration, bearing wear',
+  about: [
+    { '@type': 'Thing', name: 'ISO 16889 — Multi-Pass Filter Efficiency Test' },
+    { '@type': 'Thing', name: 'ISO 4406 — Hydraulic Fluid Cleanliness Code' },
+  ],
+  mentions: [
+    { '@type': 'Thing', name: 'MACROCORE™' },
+    { '@type': 'Thing', name: 'NANOFORCE™' },
+    { '@type': 'Thing', name: 'SYNTRAX — Full-Flow Lube Protection' },
+  ],
+  inLanguage: 'en',
+});
+
 export default function ParticleWearPage() {
   const sections = [
     {
@@ -347,6 +370,7 @@ export default function ParticleWearPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

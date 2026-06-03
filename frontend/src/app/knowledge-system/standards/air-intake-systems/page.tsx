@@ -1,5 +1,35 @@
 'use client';
 
+// JSON-LD: TechArticle + DefinedTermSet — sourced from CITATION_INDEX.json (build-time inline)
+const PAGE_JSONLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': ['TechArticle', 'DefinedTermSet'],
+  headline: 'Air Intake Filtration Systems — ISO 5011 and SAE J1539 Standards',
+  description: 'Air intake filtration system standards — ISO 5011, SAE J1539 — defining efficiency measurement, flow restriction, and dust holding capacity for diesel engine air intake filters.',
+  url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems',
+  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+  dateModified: '2026-06-03',
+  keywords: 'air intake filtration, ISO 5011, SAE J1539, MACROCORE, SYNTEPORE, INTEKCORE, engine air filter, diesel air intake',
+  about: [
+    { '@type': 'Thing', name: 'ISO 5011 — Air Filter Performance Test' },
+    { '@type': 'Thing', name: 'SAE J1539 — Air Intake Cleanliness for Diesel Engines' },
+  ],
+  mentions: [
+    { '@type': 'Thing', name: 'MACROCORE™' },
+    { '@type': 'Thing', name: 'SYNTEPORE — All-Synthetic Intake Media' },
+    { '@type': 'Thing', name: 'INTEKCORE — Zero-Bypass Radial Seal Housing' },
+  ],
+  inLanguage: 'en',
+  hasDefinedTerm: [
+    { '@type': 'DefinedTerm', name: 'Air Filter Performance Test', identifier: 'ISO_5011', description: 'ISO 5011 is the standardised laboratory test method for measuring air intake filter efficiency (%), flow restriction (kPa), and dust holding capacity.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
+    { '@type': 'DefinedTerm', name: 'Air Intake Cleanliness for Diesel Engines', identifier: 'SAE_J1539', description: 'SAE J1539 is the Society of Automotive Engineers classification standard defining air intake cleanliness requirements and test procedures for diesel engines.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
+    { '@type': 'DefinedTerm', name: 'MACROCORE™', identifier: 'MACROCORE', description: 'Progressive Density Gradient (PDG) multi-layer air intake filtration system achieving 99.9%–99.98% particle interception efficiency per ISO 5011.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
+    { '@type': 'DefinedTerm', name: 'SYNTEPORE — All-Synthetic Intake Media', identifier: 'SYNTEPORE', description: 'SYNTEPORE is an all-synthetic air intake filter media that maintains rated particle capture efficiency (ISO 5011, SAE J1539) under high humidity and wet operating conditions.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
+    { '@type': 'DefinedTerm', name: 'INTEKCORE — Zero-Bypass Radial Seal Housing', identifier: 'INTEKCORE', description: 'INTEKCORE is a zero-bypass radial seal air filter housing technology that eliminates installation-induced and vibration-caused bypass leakage paths.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
+  ],
+});
+
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
@@ -253,6 +283,7 @@ export default function AirIntakeSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }
