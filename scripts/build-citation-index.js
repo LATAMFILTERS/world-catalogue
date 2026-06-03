@@ -654,12 +654,15 @@ function main() {
     },
   };
 
-  // 9. Write output
-  const outputDir = path.dirname(OUTPUT_PATH);
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
+  // 9. Write output (skip in --validate mode)
+  const validateOnly = process.argv.includes('--validate');
+  if (!validateOnly) {
+    const outputDir = path.dirname(OUTPUT_PATH);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(index, null, 2), 'utf8');
   }
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(index, null, 2), 'utf8');
 
   // 10. Print validation summary
   console.log(`Notes scanned:    ${noteFiles.length}`);
@@ -694,6 +697,10 @@ function main() {
   }
 
   console.log('');
+  if (validateOnly) {
+    console.log('Validation complete (--validate mode, no files written)');
+    process.exit(errors.length > 0 ? 1 : 0);
+  }
   console.log(`OUTPUT: ${path.relative(PROJECT_ROOT, OUTPUT_PATH)}`);
 
   // Return stats for report generation
