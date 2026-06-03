@@ -28,6 +28,16 @@ applicable_standards:
   - "[[ISO_5011]]"
   - "[[NFPA_T214]]"
   - "[[ISO_11155]]"
+common_problems:
+  - "[[DUST_INGESTION]]"
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[HYDRAULIC_VALVE_FAILURE]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[AIRFILTER_PRIMARY]]"
+  - "[[LUBE_PRIMARY]]"
+  - "[[HYDRAULIC_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 in_unified_data: true
 ud_key: CONSTRUCTION
 tags:

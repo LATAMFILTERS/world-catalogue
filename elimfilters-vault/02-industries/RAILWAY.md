@@ -25,8 +25,12 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ISO_11155]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 statistic: "Diesel locomotive engine overhaul: $500,000–$2,000,000 per event; particle contamination accounts for 35–45% of unplanned locomotive engine failures"
 in_unified_data: true
 ud_key: RAILWAY

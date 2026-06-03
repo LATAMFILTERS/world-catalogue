@@ -23,6 +23,16 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ASTM_D6304]]"
+common_problems:
+  - "[[DUST_INGESTION]]"
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[AIRFILTER_PRIMARY]]"
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 in_unified_data: true
 ud_key: AGRICULTURE
 tags:

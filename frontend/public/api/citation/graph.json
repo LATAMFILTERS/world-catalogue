@@ -1,6 +1,6 @@
 {
-  "edge_count": 385,
-  "node_count": 41,
+  "edge_count": 505,
+  "node_count": 45,
   "dangling_keys": [
     "CABIN",
     "DIN_51524",
@@ -475,6 +475,46 @@
       "relation": "applicable_standards"
     },
     {
+      "from": "AGRICULTURE",
+      "to": "DUST_INGESTION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
       "from": "AUTOMOTIVE",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -518,6 +558,26 @@
       "from": "AUTOMOTIVE",
       "to": "ISO_4406",
       "relation": "applicable_standards"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
     },
     {
       "from": "BUS_COACH",
@@ -573,6 +633,26 @@
       "from": "BUS_COACH",
       "to": "ISO_11155",
       "relation": "applicable_standards"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
     },
     {
       "from": "CONSTRUCTION",
@@ -650,6 +730,46 @@
       "relation": "applicable_standards"
     },
     {
+      "from": "CONSTRUCTION",
+      "to": "DUST_INGESTION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
       "from": "MARINE",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -703,6 +823,36 @@
       "from": "MARINE",
       "to": "ASTM_D6304",
       "relation": "applicable_standards"
+    },
+    {
+      "from": "MARINE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MARINE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
     },
     {
       "from": "MINING",
@@ -766,7 +916,47 @@
     },
     {
       "from": "MINING",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
       "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "CABIN_PRIMARY",
       "relation": "typical_product_families"
     },
     {
@@ -818,6 +1008,36 @@
       "from": "OIL_GAS",
       "to": "ISO_4406",
       "relation": "applicable_standards"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
     },
     {
       "from": "POWER_GENERATION",
@@ -875,6 +1095,36 @@
       "relation": "applicable_standards"
     },
     {
+      "from": "POWER_GENERATION",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
       "from": "RAILWAY",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -935,6 +1185,26 @@
       "relation": "applicable_standards"
     },
     {
+      "from": "RAILWAY",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
       "from": "TRUCKS_FLEETS",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -995,6 +1265,36 @@
       "relation": "applicable_standards"
     },
     {
+      "from": "TRUCKS_FLEETS",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
       "from": "WASTE_MUNICIPAL",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -1053,6 +1353,26 @@
       "from": "WASTE_MUNICIPAL",
       "to": "ISO_11155",
       "relation": "applicable_standards"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
     },
     {
       "from": "AIRFILTER",
@@ -1632,6 +1952,286 @@
     {
       "from": "DUST_INGESTION",
       "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "SYNTRAX",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "NANOFORCE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ENGINE_BEARING_JOURNAL",
+      "relation": "affects_components"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "PISTON_RING_ASSEMBLY",
+      "relation": "affects_components"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "LUBE_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "PARTICLE_WEAR",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "RAILWAY",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "BUS_COACH",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "AUTOMOTIVE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "ISO_12937",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "HYDROCORE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "FUEL_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "DIESEL_WATER",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "AUTOMOTIVE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "NFPA_T214",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "NANOFORCE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "SYNTRAX",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "DIN_71220",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "MICROKAPPA",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CABIN_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "BUS_COACH",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "RAILWAY",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "WASTE_MUNICIPAL",
       "relation": "industry_frequency"
     },
     {

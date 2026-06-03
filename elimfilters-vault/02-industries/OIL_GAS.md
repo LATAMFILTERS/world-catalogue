@@ -23,8 +23,14 @@ applicable_standards:
   - "[[ISO_5011]]"
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[HYDRAULIC_VALVE_FAILURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[HYDRAULIC_PRIMARY]]"
 statistic: "Unplanned downtime on a pump jack station: $15,000–$50,000/day; compressor bearing failure from particle contamination: $200,000+ per event"
 in_unified_data: true
 ud_key: OIL_GAS

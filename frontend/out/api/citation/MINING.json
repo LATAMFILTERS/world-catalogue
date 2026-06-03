@@ -50,10 +50,18 @@
       "SAE_J1539"
     ],
     "common_problems": [
-      "DUST_INGESTION"
+      "DUST_INGESTION",
+      "ENGINE_OIL_CONTAMINATION",
+      "HYDRAULIC_VALVE_FAILURE",
+      "FUEL_FILTER_PLUGGING",
+      "OPERATOR_DUST_EXPOSURE"
     ],
     "typical_product_families": [
-      "AIRFILTER_PRIMARY"
+      "AIRFILTER_PRIMARY",
+      "LUBE_PRIMARY",
+      "HYDRAULIC_PRIMARY",
+      "FUEL_PRIMARY",
+      "CABIN_PRIMARY"
     ]
   },
   "vault_path": "elimfilters-vault/02-industries/MINING.md",
@@ -122,9 +130,49 @@
         "href": "/api/citation/DUST_INGESTION.json"
       },
       {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems",
+        "href": "/api/citation/ENGINE_OIL_CONTAMINATION.json"
+      },
+      {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems",
+        "href": "/api/citation/HYDRAULIC_VALVE_FAILURE.json"
+      },
+      {
+        "key": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems",
+        "href": "/api/citation/FUEL_FILTER_PLUGGING.json"
+      },
+      {
+        "key": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems",
+        "href": "/api/citation/OPERATOR_DUST_EXPOSURE.json"
+      },
+      {
         "key": "AIRFILTER_PRIMARY",
         "relation": "typical_product_families",
         "href": "/api/citation/AIRFILTER_PRIMARY.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/HYDRAULIC_PRIMARY.json"
+      },
+      {
+        "key": "FUEL_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/FUEL_PRIMARY.json"
+      },
+      {
+        "key": "CABIN_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/CABIN_PRIMARY.json"
       }
     ]
   }

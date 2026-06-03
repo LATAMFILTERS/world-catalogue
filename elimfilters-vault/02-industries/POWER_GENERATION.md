@@ -24,8 +24,14 @@ applicable_standards:
   - "[[ISO_5011]]"
   - "[[ISO_16889]]"
   - "[[ASTM_D6304]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[HYDRAULIC_VALVE_FAILURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[HYDRAULIC_PRIMARY]]"
 statistic: "Generator set MTBF with optimised filtration: 20,000+ hours vs. 6,000–8,000 hours with commodity filters; grid-support outage cost: $100,000–$1,000,000+ per event"
 in_unified_data: true
 ud_key: POWER_GENERATION

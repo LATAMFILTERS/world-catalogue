@@ -31,8 +31,16 @@ applicable_standards:
   - "[[SAE_J1539]]"
 common_problems:
   - "[[DUST_INGESTION]]"
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[HYDRAULIC_VALVE_FAILURE]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
 typical_product_families:
   - "[[AIRFILTER_PRIMARY]]"
+  - "[[LUBE_PRIMARY]]"
+  - "[[HYDRAULIC_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 catalogue_title: "Mining Filtration Systems"
 catalogue_subtitle: "MINING ASSETS."
 catalogue_description: "In the pit, downtime is measured in thousands of dollars per minute. A filtration failure is more than a repair — it is a massive disruption to the global supply chain. ELIMFILTERS® engineering targets mechanical risk reduction and service life extension for massive assets in haulage, extraction, and crushing operations."

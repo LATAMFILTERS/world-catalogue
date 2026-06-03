@@ -22,8 +22,12 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
 statistic: "Passenger car diesel engine particle ingestion: 5–15 mg/m³ highway ambient; contaminated oil reduces bearing life 40–60% in high-performance diesel applications"
 in_unified_data: true
 ud_key: AUTOMOTIVE

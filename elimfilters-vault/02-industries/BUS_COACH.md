@@ -24,8 +24,12 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ISO_11155]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 statistic: "Urban bus engine replacement cost: $40,000–$80,000; passenger cab PM2.5 exposure above WHO guidelines in 35–50% of urban bus routes without certified cabin filtration"
 in_unified_data: true
 ud_key: BUS_COACH

@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-06-03T13:32:12.182Z",
-    "note_count": 41,
+    "generated": "2026-06-03T18:38:13.483Z",
+    "note_count": 45,
     "entity_types": [
       "component",
       "contamination-mode",
@@ -433,6 +433,18 @@
           "SAE_J1539",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
@@ -481,6 +493,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_4406"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/AUTOMOTIVE.md"
@@ -531,6 +551,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
@@ -587,6 +615,18 @@
           "ISO_5011",
           "NFPA_T214",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "HYDRAULIC_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
@@ -637,6 +677,16 @@
           "SAE_J1539",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/MARINE.md"
@@ -693,10 +743,18 @@
           "SAE_J1539"
         ],
         "common_problems": [
-          "DUST_INGESTION"
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
         ],
         "typical_product_families": [
-          "AIRFILTER_PRIMARY"
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "HYDRAULIC_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/MINING.md"
@@ -746,6 +804,16 @@
           "ISO_5011",
           "ISO_16889",
           "ISO_4406"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md"
@@ -796,6 +864,16 @@
           "ISO_5011",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
@@ -847,6 +925,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/RAILWAY.md"
@@ -898,6 +984,16 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
@@ -949,6 +1045,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
@@ -1832,6 +1936,245 @@
       },
       "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
     },
+    "ENGINE_OIL_CONTAMINATION": {
+      "key": "ENGINE_OIL_CONTAMINATION",
+      "type": "problem",
+      "name": "Engine Oil Contamination",
+      "slug": null,
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "problem",
+        "active",
+        "lube-oil",
+        "not-in-ud",
+        "part-search-entry",
+        "exposure-high"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+        "concept": "Engine Oil Contamination — Lube Circuit Problem",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:4b8a3044d83f87619b563eb245228f6856be9b6690c8039108174307d6997b20"
+      },
+      "canonical": {
+        "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
+        "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
+        "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
+        "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
+        "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |\nNANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil",
+        "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
+      },
+      "relationships": {
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ],
+        "resolved_by_technologies": [
+          "SYNTRAX",
+          "NANOFORCE"
+        ],
+        "affects_components": [
+          "ENGINE_BEARING_JOURNAL",
+          "PISTON_RING_ASSEMBLY"
+        ],
+        "recommended_product_families": [
+          "LUBE_PRIMARY"
+        ],
+        "root_contamination": [
+          "PARTICLE_WEAR"
+        ],
+        "industry_frequency": [
+          "MINING",
+          "CONSTRUCTION",
+          "AGRICULTURE",
+          "TRUCKS_FLEETS",
+          "MARINE",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "RAILWAY",
+          "BUS_COACH",
+          "WASTE_MUNICIPAL",
+          "AUTOMOTIVE"
+        ]
+      },
+      "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+    },
+    "FUEL_FILTER_PLUGGING": {
+      "key": "FUEL_FILTER_PLUGGING",
+      "type": "problem",
+      "name": "Fuel Filter Plugging",
+      "slug": null,
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "problem",
+        "active",
+        "fuel",
+        "not-in-ud",
+        "part-search-entry",
+        "exposure-medium"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+        "concept": "Fuel Filter Plugging — Fuel System Problem",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:4e0ee8e53861cf5ea0aed1a16047e055266469a3179276714d52da5a1d74b752"
+      },
+      "canonical": {
+        "definition": "Fuel filter plugging — premature blockage of diesel fuel filters by water contamination,\nmicrobial growth, and associated debris — is the most frequent fuel system maintenance\nevent in off-highway, marine, and stationary engine applications.",
+        "systems": "Fuel; affected components: fuel filter elements, injector needles, high-pressure fuel pumps;\nprimary industries: Agriculture, Marine, Mining, Oil & Gas, Power Generation, Trucks/Fleets",
+        "failure_impact": "Water contamination in diesel → microbial growth at fuel-water interface\n→ biofilm and debris plugging fuel filter → restricted fuel flow → injection pressure drop\n→ engine power loss or shutdown; water slug in common rail injectors (1,200–2,500 bar)\n→ hydraulic hammer erosion of injector needle seats → injector failure |\nOperational Impact: fuel filter life reduction from 500 hours to 50–100 hours under\nactive microbial contamination; injector service life 15,000 hours reduced to 3,000–6,000 hours",
+        "related_standards": "ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel quality monitoring |\nISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring",
+        "related_technologies": "HYDROCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
+        "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform."
+      },
+      "relationships": {
+        "applicable_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ],
+        "resolved_by_technologies": [
+          "HYDROCORE"
+        ],
+        "recommended_product_families": [
+          "FUEL_PRIMARY"
+        ],
+        "root_contamination": [
+          "DIESEL_WATER"
+        ],
+        "industry_frequency": [
+          "AGRICULTURE",
+          "MARINE",
+          "MINING",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "TRUCKS_FLEETS",
+          "AUTOMOTIVE"
+        ]
+      },
+      "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+    },
+    "HYDRAULIC_VALVE_FAILURE": {
+      "key": "HYDRAULIC_VALVE_FAILURE",
+      "type": "problem",
+      "name": "Hydraulic Valve Failure",
+      "slug": null,
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "problem",
+        "active",
+        "hydraulic",
+        "not-in-ud",
+        "part-search-entry",
+        "exposure-high"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+        "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+      },
+      "canonical": {
+        "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
+        "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
+        "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
+        "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
+        "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
+        "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
+      },
+      "relationships": {
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406",
+          "NFPA_T214"
+        ],
+        "resolved_by_technologies": [
+          "NANOFORCE",
+          "SYNTRAX"
+        ],
+        "recommended_product_families": [
+          "HYDRAULIC_PRIMARY"
+        ],
+        "root_contamination": [
+          "HYDRAULIC_CONTAMINATION"
+        ],
+        "industry_frequency": [
+          "CONSTRUCTION",
+          "MINING",
+          "AGRICULTURE",
+          "MARINE",
+          "OIL_GAS",
+          "POWER_GENERATION"
+        ]
+      },
+      "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+    },
+    "OPERATOR_DUST_EXPOSURE": {
+      "key": "OPERATOR_DUST_EXPOSURE",
+      "type": "problem",
+      "name": "Operator Dust Exposure",
+      "slug": null,
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "problem",
+        "active",
+        "cabin",
+        "not-in-ud",
+        "part-search-entry",
+        "exposure-extreme",
+        "occupational-health"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "concept": "Operator Dust Exposure — Cabin Air Problem",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:c40db41df53c67068ca4e4630112bac9c0ee4c538a0d86fdac6efc593d06a68e"
+      },
+      "canonical": {
+        "definition": "Operator dust exposure — ingress of respirable particulate and chemical contaminants into\nequipment operator cabs — is the primary occupational health contamination problem in\nconstruction, mining, and agricultural equipment, governed by ISO 11155 cab air standards\nand occupational health regulations.",
+        "systems": "Cabin/Operator Protection; affected: operator respiratory system; primary industries:\nMining (EXTREME), Construction (HIGH), Agriculture (HIGH), Bus/Coach, Railway, Trucks/Fleets",
+        "failure_impact": "Cab filter degradation or bypass → ambient dust (silica, PM2.5) enters breathing zone\n→ cumulative alveolar deposition of crystalline silica → progressive pulmonary fibrosis\n→ silicosis (irreversible) after 10+ years sustained exposure |\nOperational Impact: regulatory non-compliance exposure ($500K–$2M lifetime cost per case);\nISO 11155 Class A cab maintains <0.025 mg/m³ at 500 mg/m³ ambient concentration",
+        "related_standards": "ISO 11155: Cab air filter performance requirements for agricultural and construction equipment |\nDIN 71220: Vehicle cabin air filter classification standard",
+        "related_technologies": "MICROKAPPA: ISO 11155-compliant cabin filtration removing PM10, PM2.5, and chemical aerosols\nfrom operator cab air supply; available in Class A (particulate) and Class B (particulate + carbon)",
+        "industrial_role": "Operator dust exposure is the only contamination problem with direct human health and\nregulatory compliance consequences. It is distinct from all equipment-failure contamination\nproblems in that the failure is measured in occupational health outcomes, not equipment\nlifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain."
+      },
+      "relationships": {
+        "applicable_standards": [
+          "ISO_11155",
+          "DIN_71220"
+        ],
+        "resolved_by_technologies": [
+          "MICROKAPPA"
+        ],
+        "recommended_product_families": [
+          "CABIN_PRIMARY"
+        ],
+        "root_contamination": [
+          "CABIN_AIR_CONTAMINATION"
+        ],
+        "industry_frequency": [
+          "CONSTRUCTION",
+          "MINING",
+          "AGRICULTURE",
+          "BUS_COACH",
+          "RAILWAY",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL"
+        ]
+      },
+      "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+    },
     "AIRFILTER_PRIMARY": {
       "key": "AIRFILTER_PRIMARY",
       "type": "product-family",
@@ -2581,6 +2924,46 @@
         "relation": "applicable_standards"
       },
       {
+        "from": "AGRICULTURE",
+        "to": "DUST_INGESTION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "AIRFILTER_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "AGRICULTURE",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
         "from": "AUTOMOTIVE",
         "to": "PARTICLE_WEAR",
         "relation": "relevant_contamination"
@@ -2624,6 +3007,26 @@
         "from": "AUTOMOTIVE",
         "to": "ISO_4406",
         "relation": "applicable_standards"
+      },
+      {
+        "from": "AUTOMOTIVE",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AUTOMOTIVE",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "AUTOMOTIVE",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "AUTOMOTIVE",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
       },
       {
         "from": "BUS_COACH",
@@ -2679,6 +3082,26 @@
         "from": "BUS_COACH",
         "to": "ISO_11155",
         "relation": "applicable_standards"
+      },
+      {
+        "from": "BUS_COACH",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "BUS_COACH",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "BUS_COACH",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "BUS_COACH",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
       },
       {
         "from": "CONSTRUCTION",
@@ -2756,6 +3179,46 @@
         "relation": "applicable_standards"
       },
       {
+        "from": "CONSTRUCTION",
+        "to": "DUST_INGESTION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "AIRFILTER_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "CONSTRUCTION",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
         "from": "MARINE",
         "to": "PARTICLE_WEAR",
         "relation": "relevant_contamination"
@@ -2809,6 +3272,36 @@
         "from": "MARINE",
         "to": "ASTM_D6304",
         "relation": "applicable_standards"
+      },
+      {
+        "from": "MARINE",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MARINE",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MARINE",
+        "to": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MARINE",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MARINE",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MARINE",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families"
       },
       {
         "from": "MINING",
@@ -2872,7 +3365,47 @@
       },
       {
         "from": "MINING",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MINING",
+        "to": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MINING",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MINING",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "MINING",
         "to": "AIRFILTER_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MINING",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MINING",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MINING",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "MINING",
+        "to": "CABIN_PRIMARY",
         "relation": "typical_product_families"
       },
       {
@@ -2924,6 +3457,36 @@
         "from": "OIL_GAS",
         "to": "ISO_4406",
         "relation": "applicable_standards"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "OIL_GAS",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families"
       },
       {
         "from": "POWER_GENERATION",
@@ -2981,6 +3544,36 @@
         "relation": "applicable_standards"
       },
       {
+        "from": "POWER_GENERATION",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "POWER_GENERATION",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "POWER_GENERATION",
+        "to": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "POWER_GENERATION",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "POWER_GENERATION",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "POWER_GENERATION",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
         "from": "RAILWAY",
         "to": "PARTICLE_WEAR",
         "relation": "relevant_contamination"
@@ -3041,6 +3634,26 @@
         "relation": "applicable_standards"
       },
       {
+        "from": "RAILWAY",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "RAILWAY",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "RAILWAY",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "RAILWAY",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
         "from": "TRUCKS_FLEETS",
         "to": "PARTICLE_WEAR",
         "relation": "relevant_contamination"
@@ -3101,6 +3714,36 @@
         "relation": "applicable_standards"
       },
       {
+        "from": "TRUCKS_FLEETS",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "TRUCKS_FLEETS",
+        "to": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems"
+      },
+      {
+        "from": "TRUCKS_FLEETS",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "TRUCKS_FLEETS",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "TRUCKS_FLEETS",
+        "to": "FUEL_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "TRUCKS_FLEETS",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
         "from": "WASTE_MUNICIPAL",
         "to": "PARTICLE_WEAR",
         "relation": "relevant_contamination"
@@ -3159,6 +3802,26 @@
         "from": "WASTE_MUNICIPAL",
         "to": "ISO_11155",
         "relation": "applicable_standards"
+      },
+      {
+        "from": "WASTE_MUNICIPAL",
+        "to": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems"
+      },
+      {
+        "from": "WASTE_MUNICIPAL",
+        "to": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems"
+      },
+      {
+        "from": "WASTE_MUNICIPAL",
+        "to": "LUBE_PRIMARY",
+        "relation": "typical_product_families"
+      },
+      {
+        "from": "WASTE_MUNICIPAL",
+        "to": "CABIN_PRIMARY",
+        "relation": "typical_product_families"
       },
       {
         "from": "AIRFILTER",
@@ -3738,6 +4401,286 @@
       {
         "from": "DUST_INGESTION",
         "to": "AGRICULTURE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "ISO_16889",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "ISO_4406",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "SYNTRAX",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "NANOFORCE",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "ENGINE_BEARING_JOURNAL",
+        "relation": "affects_components"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "PISTON_RING_ASSEMBLY",
+        "relation": "affects_components"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "LUBE_PRIMARY",
+        "relation": "recommended_product_families"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "PARTICLE_WEAR",
+        "relation": "root_contamination"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "MINING",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "CONSTRUCTION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "AGRICULTURE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "TRUCKS_FLEETS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "MARINE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "OIL_GAS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "POWER_GENERATION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "RAILWAY",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "BUS_COACH",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "WASTE_MUNICIPAL",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "ENGINE_OIL_CONTAMINATION",
+        "to": "AUTOMOTIVE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "ASTM_D6304",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "ISO_12937",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "HYDROCORE",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "FUEL_PRIMARY",
+        "relation": "recommended_product_families"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "DIESEL_WATER",
+        "relation": "root_contamination"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "AGRICULTURE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "MARINE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "MINING",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "OIL_GAS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "POWER_GENERATION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "TRUCKS_FLEETS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "FUEL_FILTER_PLUGGING",
+        "to": "AUTOMOTIVE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "ISO_16889",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "ISO_4406",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "NFPA_T214",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "NANOFORCE",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "SYNTRAX",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "HYDRAULIC_PRIMARY",
+        "relation": "recommended_product_families"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "HYDRAULIC_CONTAMINATION",
+        "relation": "root_contamination"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "CONSTRUCTION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "MINING",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "AGRICULTURE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "MARINE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "OIL_GAS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "HYDRAULIC_VALVE_FAILURE",
+        "to": "POWER_GENERATION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "ISO_11155",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "DIN_71220",
+        "relation": "applicable_standards"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "MICROKAPPA",
+        "relation": "resolved_by_technologies"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "CABIN_PRIMARY",
+        "relation": "recommended_product_families"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "CABIN_AIR_CONTAMINATION",
+        "relation": "root_contamination"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "CONSTRUCTION",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "MINING",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "AGRICULTURE",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "BUS_COACH",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "RAILWAY",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "TRUCKS_FLEETS",
+        "relation": "industry_frequency"
+      },
+      {
+        "from": "OPERATOR_DUST_EXPOSURE",
+        "to": "WASTE_MUNICIPAL",
         "relation": "industry_frequency"
       },
       {

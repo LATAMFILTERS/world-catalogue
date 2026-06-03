@@ -24,8 +24,14 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ASTM_D6304]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[HYDRAULIC_VALVE_FAILURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[HYDRAULIC_PRIMARY]]"
 statistic: "Marine diesel injector replacement: $800–$4,000 per unit; micro-biological diesel contamination causes 30–40% of fuel filter failures in marine fleets"
 in_unified_data: true
 ud_key: MARINE

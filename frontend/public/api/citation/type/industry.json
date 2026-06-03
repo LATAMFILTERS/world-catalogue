@@ -49,6 +49,18 @@
           "SAE_J1539",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
@@ -97,6 +109,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_4406"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/AUTOMOTIVE.md"
@@ -147,6 +167,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
@@ -203,6 +231,18 @@
           "ISO_5011",
           "NFPA_T214",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "HYDRAULIC_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
@@ -253,6 +293,16 @@
           "SAE_J1539",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/MARINE.md"
@@ -309,10 +359,18 @@
           "SAE_J1539"
         ],
         "common_problems": [
-          "DUST_INGESTION"
+          "DUST_INGESTION",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
         ],
         "typical_product_families": [
-          "AIRFILTER_PRIMARY"
+          "AIRFILTER_PRIMARY",
+          "LUBE_PRIMARY",
+          "HYDRAULIC_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/MINING.md"
@@ -362,6 +420,16 @@
           "ISO_5011",
           "ISO_16889",
           "ISO_4406"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md"
@@ -412,6 +480,16 @@
           "ISO_5011",
           "ISO_16889",
           "ASTM_D6304"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "HYDRAULIC_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
@@ -463,6 +541,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/RAILWAY.md"
@@ -514,6 +600,16 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "FUEL_FILTER_PLUGGING",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "FUEL_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
@@ -565,6 +661,14 @@
           "SAE_J1539",
           "ISO_16889",
           "ISO_11155"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "LUBE_PRIMARY",
+          "CABIN_PRIMARY"
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"

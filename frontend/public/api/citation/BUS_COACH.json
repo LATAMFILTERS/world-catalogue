@@ -44,6 +44,14 @@
       "SAE_J1539",
       "ISO_16889",
       "ISO_11155"
+    ],
+    "common_problems": [
+      "ENGINE_OIL_CONTAMINATION",
+      "OPERATOR_DUST_EXPOSURE"
+    ],
+    "typical_product_families": [
+      "LUBE_PRIMARY",
+      "CABIN_PRIMARY"
     ]
   },
   "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md",
@@ -105,6 +113,26 @@
         "key": "ISO_11155",
         "relation": "applicable_standards",
         "href": "/api/citation/ISO_11155.json"
+      },
+      {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems",
+        "href": "/api/citation/ENGINE_OIL_CONTAMINATION.json"
+      },
+      {
+        "key": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems",
+        "href": "/api/citation/OPERATOR_DUST_EXPOSURE.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "CABIN_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/CABIN_PRIMARY.json"
       }
     ]
   }

@@ -43,6 +43,16 @@
       "ISO_5011",
       "ISO_16889",
       "ISO_4406"
+    ],
+    "common_problems": [
+      "ENGINE_OIL_CONTAMINATION",
+      "FUEL_FILTER_PLUGGING",
+      "HYDRAULIC_VALVE_FAILURE"
+    ],
+    "typical_product_families": [
+      "LUBE_PRIMARY",
+      "FUEL_PRIMARY",
+      "HYDRAULIC_PRIMARY"
     ]
   },
   "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md",
@@ -99,6 +109,36 @@
         "key": "ISO_4406",
         "relation": "applicable_standards",
         "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems",
+        "href": "/api/citation/ENGINE_OIL_CONTAMINATION.json"
+      },
+      {
+        "key": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems",
+        "href": "/api/citation/FUEL_FILTER_PLUGGING.json"
+      },
+      {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems",
+        "href": "/api/citation/HYDRAULIC_VALVE_FAILURE.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "FUEL_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/FUEL_PRIMARY.json"
+      },
+      {
+        "key": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/HYDRAULIC_PRIMARY.json"
       }
     ]
   }

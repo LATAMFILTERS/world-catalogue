@@ -50,6 +50,18 @@
       "ISO_5011",
       "NFPA_T214",
       "ISO_11155"
+    ],
+    "common_problems": [
+      "DUST_INGESTION",
+      "ENGINE_OIL_CONTAMINATION",
+      "HYDRAULIC_VALVE_FAILURE",
+      "OPERATOR_DUST_EXPOSURE"
+    ],
+    "typical_product_families": [
+      "AIRFILTER_PRIMARY",
+      "LUBE_PRIMARY",
+      "HYDRAULIC_PRIMARY",
+      "CABIN_PRIMARY"
     ]
   },
   "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md",
@@ -131,6 +143,46 @@
         "key": "ISO_11155",
         "relation": "applicable_standards",
         "href": "/api/citation/ISO_11155.json"
+      },
+      {
+        "key": "DUST_INGESTION",
+        "relation": "common_problems",
+        "href": "/api/citation/DUST_INGESTION.json"
+      },
+      {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems",
+        "href": "/api/citation/ENGINE_OIL_CONTAMINATION.json"
+      },
+      {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems",
+        "href": "/api/citation/HYDRAULIC_VALVE_FAILURE.json"
+      },
+      {
+        "key": "OPERATOR_DUST_EXPOSURE",
+        "relation": "common_problems",
+        "href": "/api/citation/OPERATOR_DUST_EXPOSURE.json"
+      },
+      {
+        "key": "AIRFILTER_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/AIRFILTER_PRIMARY.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/HYDRAULIC_PRIMARY.json"
+      },
+      {
+        "key": "CABIN_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/CABIN_PRIMARY.json"
       }
     ]
   }

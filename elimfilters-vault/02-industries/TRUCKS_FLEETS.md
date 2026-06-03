@@ -25,8 +25,14 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ISO_11155]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[FUEL_FILTER_PLUGGING]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[FUEL_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 statistic: "Fleet-wide filtration standardisation: 15–25% reduction in filter procurement cost; 10–18% reduction in unplanned engine downtime across 100+ vehicle fleets"
 in_unified_data: true
 ud_key: TRUCKS_FLEETS

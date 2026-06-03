@@ -25,8 +25,12 @@ applicable_standards:
   - "[[SAE_J1539]]"
   - "[[ISO_16889]]"
   - "[[ISO_11155]]"
-common_problems: []
-typical_product_families: []
+common_problems:
+  - "[[ENGINE_OIL_CONTAMINATION]]"
+  - "[[OPERATOR_DUST_EXPOSURE]]"
+typical_product_families:
+  - "[[LUBE_PRIMARY]]"
+  - "[[CABIN_PRIMARY]]"
 statistic: "Municipal refuse vehicle availability requirement: >90% fleet uptime; contamination-related downtime accounts for 20–30% of unplanned maintenance events"
 in_unified_data: true
 ud_key: WASTE_MUNICIPAL
