@@ -87,13 +87,34 @@ SCRAPE_IMAGES   = True                   # False con --no-images
 # Solo URLs CONFIRMADAS reales. Para agregar otra categoría: copiar la URL real
 # desde fleetguard.com (debe incluir el ID Salesforce, ej. /0ZGPL...).
 # Estado: air-precleaners ✅ (37), air-primary-secondary ✅ (942), resto pendiente.
+# NOTAS DE AGRUPACIÓN (para build_catalog_fleetguard.py):
+#   air-housings → agrupar resultados junto a air-primary-secondary
+#   hydraulic-filter-accessories → post-filtrar: solo filtros, excluir accesorios/válvulas
 CATEGORIES = {
-    "air-precleaners":       "https://www.fleetguard.com/category/products/air-filtration/air-precleaners/0ZGPL0000000FSJ4A2",
-    "air-primary-secondary": "https://www.fleetguard.com/category/products/air-filtration/primary-and-secondary-air-filters/0ZGPL0000000FSF4A2",
-    "cabin-air-filters":     "https://www.fleetguard.com/category/products/air-filtration/cabin-air-filters/0ZGPL0000000FSH4A2",
-    "lube-cartridge":        "https://www.fleetguard.com/category/products/lube-filtration/cartridge-lube-filters/0ZGPL0000000FTB4A2",
-    "fuel-spin-on":          "https://www.fleetguard.com/category/products/fuel-filtration/spin-on-fuel-filters/0ZGPL0000000FTP4A2",
-    "hydraulic-spin-on":     "https://www.fleetguard.com/category/products/hydraulic-filtration/spinon-hydraulic-filters/0ZGPL0000000FSs4AM",
+    # ── AIR FILTRATION ────────────────────────────────────────────────────────
+    "air-precleaners":              "https://www.fleetguard.com/category/products/air-filtration/air-precleaners/0ZGPL0000000FSJ4A2",
+    "air-primary-secondary":        "https://www.fleetguard.com/category/products/air-filtration/primary-and-secondary-air-filters/0ZGPL0000000FSF4A2",
+    "air-housings":                 "https://www.fleetguard.com/category/products/air-filtration/air-housings/0ZGPL0000000FSL4A2",
+    "panel-air-filters":            "https://www.fleetguard.com/category/products/air-filtration/panel-air-filters/0ZGPL0000000FSI4A2",
+    "cabin-air-filters":            "https://www.fleetguard.com/category/products/air-filtration/cabin-air-filters/0ZGPL0000000FSH4A2",
+    "air-dryer":                    "https://www.fleetguard.com/category/products/air-filtration/air-dryer/0ZGPL0000000FT74AM",
+    # ── LUBE FILTRATION ───────────────────────────────────────────────────────
+    "lube-cartridge":               "https://www.fleetguard.com/category/products/lube-filtration/cartridge-lube-filters/0ZGPL0000000FTB4A2",
+    "lube-centrifuge":              "https://www.fleetguard.com/category/products/lube-filtration/centrifuge-filters/0ZGPL0000000FSX4A2",
+    # ── FUEL FILTRATION ───────────────────────────────────────────────────────
+    "fuel-spin-on":                 "https://www.fleetguard.com/category/products/fuel-filtration/spin-on-fuel-filters/0ZGPL0000000FTP4A2",
+    "fuel-cartridge":               "https://www.fleetguard.com/category/products/fuel-filtration/cartridge-fuel-filters/0ZGPL0000000FSf4AM",
+    "fuel-cartridge-water-sep":     "https://www.fleetguard.com/category/products/fuel-filtration/cartridge-fuel-water-separators/0ZGPL0000000FTA4A2",
+    "fuel-spinon-water-sep":        "https://www.fleetguard.com/category/products/fuel-filtration/spinon-fuel-water-separators/0ZGPL0000000FTQ4A2",
+    "fuel-inline":                  "https://www.fleetguard.com/category/products/fuel-filtration/in-line-fuel-filters/0ZGPL0000000FTG4A2",
+    # ── HYDRAULIC FILTRATION ──────────────────────────────────────────────────
+    "hydraulic-spin-on":            "https://www.fleetguard.com/category/products/hydraulic-filtration/spinon-hydraulic-filters/0ZGPL0000000FSs4AM",
+    "hydraulic-cartridge":          "https://www.fleetguard.com/category/products/hydraulic-filtration/cartridge-hydraulic-filters/0ZGPL0000000FSt4AM",
+    "hydraulic-filter-accessories": "https://www.fleetguard.com/category/products/hydraulic-filtration/hydraulic-filter-head-accessories/0ZGPL0000000FSu4AM",
+    # ── COOLANTS & CHEMICALS ──────────────────────────────────────────────────
+    "coolant-filters":              "https://www.fleetguard.com/category/products/coolants-chemicals/coolant-filters/0ZGPL0000000FSP4A2",
+    # ── CRANKCASE VENTILATION ─────────────────────────────────────────────────
+    "crankcase-ventilation":        "https://www.fleetguard.com/category/products/crankcase-ventilation/open-crankcase-ventilation-filters/0ZGPL0000000FSc4AM",
 }
 
 # JS que traversa Shadow DOM recursivamente
