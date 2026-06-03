@@ -3,32 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_FUEL_SYSTEMS } from '@/lib/jsonld-constants.generated';
 
-// JSON-LD: TechArticle + DefinedTermSet — sourced from CITATION_INDEX.json (build-time inline)
-const PAGE_JSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': ['TechArticle', 'DefinedTermSet'],
-  headline: 'Fuel Filtration Systems — ASTM D6304 and ISO 12937 Standards',
-  description: 'Diesel fuel filtration standards — ASTM D6304, ISO 12937 — measuring water content in petroleum products and preventing injector damage from water contamination.',
-  url: 'https://elimfilters.com/knowledge-system/standards/fuel-systems',
-  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-  dateModified: '2026-06-03',
-  keywords: 'fuel filtration, ASTM D6304, ISO 12937, HYDROCORE, diesel water contamination, Karl Fischer titration, fuel filter',
-  about: [
-    { '@type': 'Thing', name: 'ASTM D6304 — Water in Petroleum Products by Coulometric Karl Fischer Titration' },
-    { '@type': 'Thing', name: 'ISO 12937 — Petroleum Products Determination of Water' },
-  ],
-  mentions: [
-    { '@type': 'Thing', name: 'HYDROCORE™' },
-  ],
-  inLanguage: 'en',
-  hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Water in Petroleum Products by Coulometric Karl Fischer Titration', identifier: 'ASTM_D6304', description: 'ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'Petroleum Products — Determination of Water — Coulometric Karl Fischer Titration', identifier: 'ISO_12937', description: 'ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'HYDROCORE™', identifier: 'HYDROCORE', description: 'HYDROCORE is a multi-stage coalescing fuel filtration technology that removes free water (>99% efficiency) and emulsified water from diesel fuel.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-  ],
-});
+// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_FUEL_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },

@@ -3,34 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_LUBE_OIL_SYSTEMS } from '@/lib/jsonld-constants.generated';
 
-// JSON-LD: TechArticle + DefinedTermSet — sourced from CITATION_INDEX.json (build-time inline)
-const PAGE_JSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': ['TechArticle', 'DefinedTermSet'],
-  headline: 'Lube Oil Filtration Systems — ISO 16889 and ISO 4406 Standards',
-  description: 'Lube oil filtration system standards — ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes) — defining particle contamination control in engine and hydraulic lube circuits.',
-  url: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems',
-  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-  dateModified: '2026-06-03',
-  keywords: 'lube oil filtration, ISO 16889, ISO 4406, SYNTRAX, NANOFORCE, Beta ratio, cleanliness code, engine oil filter',
-  about: [
-    { '@type': 'Thing', name: 'ISO 16889 — Multi-Pass Filter Efficiency Test' },
-    { '@type': 'Thing', name: 'ISO 4406 — Hydraulic Fluid Cleanliness Code' },
-  ],
-  mentions: [
-    { '@type': 'Thing', name: 'SYNTRAX — Full-Flow Lube Protection' },
-    { '@type': 'Thing', name: 'NANOFORCE™' },
-  ],
-  inLanguage: 'en',
-  hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance', identifier: 'ISO_16889', description: 'ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil circuits.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'Hydraulic Fluid Cleanliness Code', identifier: 'ISO_4406', description: 'ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle counts at 4µm, 6µm, and 14µm.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'SYNTRAX — Full-Flow Lube Protection', identifier: 'SYNTRAX', description: 'SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits under continuous load.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'NANOFORCE™', identifier: 'NANOFORCE', description: 'NANOFORCE is a sub-micron lube oil and hydraulic fluid filtration technology deployed in kidney-loop or bypass circuit configurations targeting ISO 4406 cleanliness codes.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-  ],
-});
+// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_LUBE_OIL_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },

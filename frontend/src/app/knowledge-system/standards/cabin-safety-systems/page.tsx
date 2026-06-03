@@ -3,32 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_CABIN_SAFETY_SYSTEMS } from '@/lib/jsonld-constants.generated';
 
-// JSON-LD: TechArticle + DefinedTermSet — sourced from CITATION_INDEX.json (build-time inline)
-const PAGE_JSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': ['TechArticle', 'DefinedTermSet'],
-  headline: 'Cabin Safety Filtration Systems — ISO 11155 and DIN 71220 Standards',
-  description: 'Cabin air filtration standards — ISO 11155 (particulate and gaseous), DIN 71220 — protecting equipment operators from PM10, PM2.5 and chemical exposure inside enclosed cabs.',
-  url: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems',
-  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-  dateModified: '2026-06-03',
-  keywords: 'cabin air filtration, ISO 11155, DIN 71220, MICROKAPPA, operator safety, PM10, cabin filter, respiratory protection',
-  about: [
-    { '@type': 'Thing', name: 'ISO 11155 — Road Vehicles Air Filters for Passenger Compartments' },
-    { '@type': 'Thing', name: 'DIN 71220 — Cabin Air Filters Requirements and Testing' },
-  ],
-  mentions: [
-    { '@type': 'Thing', name: 'MICROKAPPA™' },
-  ],
-  inLanguage: 'en',
-  hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Road Vehicles — Air Filters for Passenger Compartments', identifier: 'ISO_11155', description: 'ISO 11155 is the two-part international performance standard for road vehicle cabin air filters covering particulate and gaseous contamination.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'Road Vehicles — Cabin Air Filters — Requirements and Testing', identifier: 'DIN_71220', description: 'DIN 71220 is the German DIN standard for road vehicle cabin air filter requirements and testing.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-    { '@type': 'DefinedTerm', name: 'MICROKAPPA™', identifier: 'MICROKAPPA', description: 'MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contamination) protecting operator respiratory health.', inDefinedTermSet: 'https://elimfilters.com/knowledge-system' },
-  ],
-});
+// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_CABIN_SAFETY_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },

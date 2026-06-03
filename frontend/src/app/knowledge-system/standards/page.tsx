@@ -3,27 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_STANDARDS_INDEX } from '@/lib/jsonld-constants.generated';
 
-// JSON-LD: CollectionPage — sourced from CITATION_INDEX.json (build-time inline)
-const PAGE_JSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Industrial Filtration Standards — ELIMFILTERS Knowledge System',
-  description: 'Index of international standards governing industrial filtration: ISO 16889, ISO 4406, ISO 5011, ISO 11155, ISO 12937, ASTM D6304, SAE J1539, DIN 71220, NFPA T2.14.',
-  url: 'https://elimfilters.com/knowledge-system/standards',
-  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-  hasPart: [
-    { '@type': 'DefinedTerm', name: 'Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance', identifier: 'ISO_16889', description: 'ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil circuits.', url: 'https://elimfilters.com/knowledge-system/standards/iso-16889' },
-    { '@type': 'DefinedTerm', name: 'Hydraulic Fluid Cleanliness Code', identifier: 'ISO_4406', description: 'ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle counts at 4µm, 6µm, and 14µm.', url: 'https://elimfilters.com/knowledge-system/standards/iso-4406' },
-    { '@type': 'DefinedTerm', name: 'Air Filter Performance Test', identifier: 'ISO_5011', description: 'ISO 5011 is the standardised laboratory test method for measuring air intake filter efficiency (%), flow restriction (kPa), and dust holding capacity.', url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems' },
-    { '@type': 'DefinedTerm', name: 'Road Vehicles — Air Filters for Passenger Compartments', identifier: 'ISO_11155', description: 'ISO 11155 is the two-part international performance standard for road vehicle cabin air filters covering particulate and gaseous contamination.', url: 'https://elimfilters.com/knowledge-system/standards/iso-11155' },
-    { '@type': 'DefinedTerm', name: 'Petroleum Products — Determination of Water — Coulometric Karl Fischer Titration', identifier: 'ISO_12937', description: 'ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products.', url: 'https://elimfilters.com/knowledge-system/standards/iso-12937' },
-    { '@type': 'DefinedTerm', name: 'Water in Petroleum Products by Coulometric Karl Fischer Titration', identifier: 'ASTM_D6304', description: 'ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration.', url: 'https://elimfilters.com/knowledge-system/standards/astm-d6304' },
-    { '@type': 'DefinedTerm', name: 'Air Intake Cleanliness for Diesel Engines', identifier: 'SAE_J1539', description: 'SAE J1539 is the Society of Automotive Engineers classification standard defining air intake cleanliness requirements and test procedures for diesel engines.', url: 'https://elimfilters.com/knowledge-system/standards/sae-j1539' },
-    { '@type': 'DefinedTerm', name: 'Road Vehicles — Cabin Air Filters — Requirements and Testing', identifier: 'DIN_71220', description: 'DIN 71220 is the German DIN standard for road vehicle cabin air filter requirements and testing.', url: 'https://elimfilters.com/knowledge-system/standards/din-71220' },
-    { '@type': 'DefinedTerm', name: 'Fluid Power Systems — Hydraulic Filters — Method for Verifying Collapse/Burst Resistance', identifier: 'NFPA_T214', description: 'NFPA T2.14 is the fluid power standard specifying collapse and burst resistance test methods for hydraulic filter elements.', url: 'https://elimfilters.com/knowledge-system/standards/nfpa-t214' },
-  ],
-});
+// JSON-LD: CollectionPage — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_STANDARDS_INDEX;
 
 const FILTRATION_SYSTEMS = [
   {

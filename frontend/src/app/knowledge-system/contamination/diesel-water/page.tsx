@@ -3,27 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_DIESEL_WATER } from '@/lib/jsonld-constants.generated';
 
-// JSON-LD: TechArticle — sourced from CITATION_INDEX.json (build-time inline)
-const PAGE_JSONLD = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'TechArticle',
-  headline: 'Diesel Water Contamination — Fuel System Failure Analysis',
-  description: 'Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems causing injector damage, microbial growth, and corrosion.',
-  url: 'https://elimfilters.com/knowledge-system/contamination/diesel-water',
-  author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-  publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-  dateModified: '2026-06-03',
-  keywords: 'diesel water contamination, fuel contamination, ASTM D6304, ISO 12937, HYDROCORE, Karl Fischer titration, injector damage, fuel filter',
-  about: [
-    { '@type': 'Thing', name: 'ASTM D6304 — Water in Petroleum Products' },
-    { '@type': 'Thing', name: 'ISO 12937 — Petroleum Products Determination of Water' },
-  ],
-  mentions: [
-    { '@type': 'Thing', name: 'HYDROCORE™' },
-  ],
-  inLanguage: 'en',
-});
+// JSON-LD: TechArticle — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_DIESEL_WATER;
 
 export default function DieselWaterContaminationPage() {
   const sections = [
