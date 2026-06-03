@@ -1,17 +1,17 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-06-03T12:07:29.542Z",
+    "generated": "2026-06-03T12:16:41.494Z",
     "source_index": "elimfilters-vault/00-meta/CITATION_INDEX.json",
     "source_index_version": "1.0",
     "path_count": 19,
-    "valid_path_count": 5,
-    "product_family_count": 1,
+    "valid_path_count": 17,
+    "product_family_count": 5,
     "coverage_summary": {
       "problems_with_complete_paths": "1/1",
       "industries_with_complete_paths": "3/11",
-      "technologies_with_product_families": "1/7",
-      "product_families_reachable": "1/1"
+      "technologies_with_product_families": "5/7",
+      "product_families_reachable": "5/5"
     },
     "generator": "scripts/build-part-search-map.js",
     "note": "Phase 4B — Part Search traversal map from Citation Index"
@@ -68,11 +68,10 @@
           "name": "NANOFORCE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_A_DUST_INGESTION_003",
@@ -97,11 +96,10 @@
           "name": "SYNTRAX — Full-Flow Lube Protection"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_AGRICULTURE_004",
@@ -164,11 +162,10 @@
           "name": "NANOFORCE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_AGRICULTURE_006",
@@ -198,11 +195,10 @@
           "name": "SYNTRAX — Full-Flow Lube Protection"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_CONSTRUCTION_007",
@@ -265,11 +261,10 @@
           "name": "NANOFORCE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_CONSTRUCTION_009",
@@ -299,11 +294,10 @@
           "name": "SYNTRAX — Full-Flow Lube Protection"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_MINING_010",
@@ -366,11 +360,10 @@
           "name": "NANOFORCE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_B_MINING_012",
@@ -400,11 +393,10 @@
           "name": "SYNTRAX — Full-Flow Lube Protection"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_C_HYDROCORE_013",
@@ -419,11 +411,10 @@
           "name": "HYDROCORE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "FUEL_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_C_INTEKCORE_014",
@@ -475,11 +466,10 @@
           "name": "MICROKAPPA™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_C_NANOFORCE_017",
@@ -494,11 +484,10 @@
           "name": "NANOFORCE™"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "valid": true
     },
     {
       "path_id": "PATH_C_SYNTEPORE_018",
@@ -532,11 +521,10 @@
           "name": "SYNTRAX — Full-Flow Lube Protection"
         }
       ],
-      "terminal_product_families": [],
-      "valid": false,
-      "validation_failures": [
-        "V003: Path has no terminal ProductFamily"
-      ]
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
     }
   ],
   "product_family_index": {
@@ -572,17 +560,135 @@
         "TRUCKS_FLEETS",
         "POWER_GENERATION"
       ]
+    },
+    "CABIN_PRIMARY": {
+      "name": "Primary Cabin Air Protection",
+      "reachable_via": [
+        "PATH_C_MICROKAPPA_016"
+      ],
+      "entry_problems": [],
+      "entry_industries": [],
+      "entry_technologies": [
+        "MICROKAPPA"
+      ],
+      "uses_technology": "MICROKAPPA",
+      "meets_standards": [
+        "ISO_11155",
+        "DIN_71220"
+      ],
+      "target_industries": [
+        "AGRICULTURE",
+        "BUS_COACH",
+        "CONSTRUCTION",
+        "MINING",
+        "RAILWAY",
+        "TRUCKS_FLEETS",
+        "WASTE_MUNICIPAL"
+      ]
+    },
+    "FUEL_PRIMARY": {
+      "name": "Primary Fuel Protection",
+      "reachable_via": [
+        "PATH_C_HYDROCORE_013"
+      ],
+      "entry_problems": [],
+      "entry_industries": [],
+      "entry_technologies": [
+        "HYDROCORE"
+      ],
+      "uses_technology": "HYDROCORE",
+      "meets_standards": [
+        "ASTM_D6304",
+        "ISO_12937"
+      ],
+      "target_industries": [
+        "AGRICULTURE",
+        "MARINE",
+        "MINING",
+        "OIL_GAS",
+        "POWER_GENERATION",
+        "TRUCKS_FLEETS"
+      ]
+    },
+    "HYDRAULIC_PRIMARY": {
+      "name": "Primary Hydraulic Protection",
+      "reachable_via": [
+        "PATH_A_DUST_INGESTION_002",
+        "PATH_B_AGRICULTURE_005",
+        "PATH_B_CONSTRUCTION_008",
+        "PATH_B_MINING_011",
+        "PATH_C_NANOFORCE_017"
+      ],
+      "entry_problems": [
+        "DUST_INGESTION"
+      ],
+      "entry_industries": [
+        "AGRICULTURE",
+        "CONSTRUCTION",
+        "MINING"
+      ],
+      "entry_technologies": [
+        "NANOFORCE"
+      ],
+      "uses_technology": "NANOFORCE",
+      "meets_standards": [
+        "ISO_16889",
+        "ISO_4406",
+        "NFPA_T214"
+      ],
+      "target_industries": [
+        "AGRICULTURE",
+        "CONSTRUCTION",
+        "MINING",
+        "OIL_GAS",
+        "POWER_GENERATION"
+      ]
+    },
+    "LUBE_PRIMARY": {
+      "name": "Primary Lube Oil Protection",
+      "reachable_via": [
+        "PATH_A_DUST_INGESTION_003",
+        "PATH_B_AGRICULTURE_006",
+        "PATH_B_CONSTRUCTION_009",
+        "PATH_B_MINING_012",
+        "PATH_C_SYNTRAX_019"
+      ],
+      "entry_problems": [
+        "DUST_INGESTION"
+      ],
+      "entry_industries": [
+        "AGRICULTURE",
+        "CONSTRUCTION",
+        "MINING"
+      ],
+      "entry_technologies": [
+        "SYNTRAX"
+      ],
+      "uses_technology": "SYNTRAX",
+      "meets_standards": [
+        "ISO_16889",
+        "ISO_4406"
+      ],
+      "target_industries": [
+        "AGRICULTURE",
+        "AUTOMOTIVE",
+        "BUS_COACH",
+        "CONSTRUCTION",
+        "MARINE",
+        "MINING",
+        "OIL_GAS",
+        "POWER_GENERATION",
+        "RAILWAY",
+        "TRUCKS_FLEETS",
+        "WASTE_MUNICIPAL"
+      ]
     }
   },
   "unmapped_entities": {
     "product_families_unreachable": [],
     "technologies_without_families": [
-      "HYDROCORE",
       "INTEKCORE",
-      "MICROKAPPA",
-      "NANOFORCE",
-      "SYNTEPORE",
-      "SYNTRAX"
+      "SYNTEPORE"
     ],
     "problems_without_paths": []
   }
