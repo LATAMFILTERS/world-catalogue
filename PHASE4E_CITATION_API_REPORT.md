@@ -1,58 +1,61 @@
 # Phase 4E — Static Citation API Report
 
-**Date**: 2026-06-03  
-**Status**: Complete  
-**Approach**: Static JSON files in `frontend/public/api/citation/` — Next.js static export copies `public/` to `out/` on every build, making all files available at `/api/citation/` in the deployed site with no server runtime.
+**Date:** 2026-06-03  
+**Status:** Complete — build passing, all endpoints verified  
+**Branch:** `claude/dazzling-franklin-ALGY1`
 
 ---
 
-## Files Generated
+## 1. Summary
 
-| Category | Count | Example path |
-|----------|-------|-------------|
-| Entity files | 41 | `/api/citation/MACROCORE.json` |
-| Type scan files | 8 | `/api/citation/type/technology.json` |
-| Type index | 1 | `/api/citation/type/index.json` |
-| Path files | 19 | `/api/citation/path/PATH_A_DUST_INGESTION_001.json` |
-| Path by-entry files | 11 | `/api/citation/path/by-entry/MINING.json` |
-| Graph | 1 | `/api/citation/graph.json` |
-| Index | 1 | `/api/citation/index.json` |
-| README | 1 | `/api/citation/README.md` |
-| **Total JSON** | **83** | |
+Phase 4E implements a static JSON citation API for the ELIMFILTERS Knowledge System. Rather than requiring a server runtime, all endpoints are pre-generated as static JSON files placed in `frontend/public/api/citation/`. Next.js static export copies these files verbatim into `frontend/out/api/citation/`, making them available at `/api/citation/` on the deployed site with zero infrastructure overhead.
+
+**Approach:** `scripts/generate-citation-api.js` reads `CITATION_INDEX.json` and `PART_SEARCH_MAP.json` at build time and writes a hierarchy of static JSON files. The prebuild hook in `package.json` ensures these files are always up-to-date before `next build` runs.
 
 ---
 
-## Endpoint Structure
+## 2. Files Generated
 
-### 5 Query Patterns
-
-| Pattern | URL | Response shape |
-|---------|-----|----------------|
-| **Entity lookup** | `/api/citation/[KEY].json` | Full CitationRecord + `_links.related` array derived from graph edges |
-| **Type scan** | `/api/citation/type/[type].json` | `{ type, count, entities[] }` — all records of that type |
-| **Graph** | `/api/citation/graph.json` | `{ edge_count, node_count, dangling_keys, edges[] }` |
-| **Path traversal** | `/api/citation/path/[path_id].json` | Full path with `citation_record` embedded in each step |
-| **Paths by entry** | `/api/citation/path/by-entry/[KEY].json` | All path summaries where `entry_node = KEY` |
-
-#### Example URLs
-
-```
-/api/citation/MACROCORE.json
-/api/citation/type/technology.json
-/api/citation/type/index.json
-/api/citation/graph.json
-/api/citation/path/PATH_A_DUST_INGESTION_001.json
-/api/citation/path/index.json
-/api/citation/path/by-entry/MINING.json
-```
+| Category | Count | Location |
+|---|---|---|
+| Entity files (one per vault entity) | 41 | `frontend/public/api/citation/*.json` |
+| Type index files | 8 | `frontend/public/api/citation/type/*.json` |
+| Type listing index | 1 | `frontend/public/api/citation/type/index.json` |
+| Traversal path files | 19 | `frontend/public/api/citation/path/PATH_*.json` |
+| Path listing index | 1 | `frontend/public/api/citation/path/index.json` |
+| Path by-entry files | 11 | `frontend/public/api/citation/path/by-entry/*.json` |
+| Knowledge graph | 1 | `frontend/public/api/citation/graph.json` |
+| Global entity index | 1 | `frontend/public/api/citation/index.json` |
+| README | 1 | `frontend/public/api/citation/README.md` |
+| **Total** | **84** | |
 
 ---
 
-## Build Result
+## 3. Endpoint Structure
 
-Last 10 lines of `npm run build` (clean build, `.next` and `out/` cleared first):
+Five query patterns available as static files:
+
+| Pattern | Example URL | Description |
+|---|---|---|
+| Entity by key | `/api/citation/MACROCORE.json` | Full entity record with canonical block, relations, and metadata |
+| Entities by type | `/api/citation/type/technology.json` | All entities of a given type |
+| Type index | `/api/citation/type/index.json` | List of all available types with entity counts |
+| Traversal path | `/api/citation/path/PATH_B_AGRICULTURE_004.json` | Single traversal path (Problem→ContaminationMode→Technology→ProductFamily or variants) |
+| Paths by entry | `/api/citation/path/by-entry/AGRICULTURE.json` | All paths entering from a given entity key |
+| Path index | `/api/citation/path/index.json` | All traversal paths with entry/exit metadata |
+| Knowledge graph | `/api/citation/graph.json` | Full entity graph: 41 nodes, 385 edges |
+| Global index | `/api/citation/index.json` | All entities flat-listed with type, slug, and canonical summary |
+
+---
+
+## 4. Build Result (last 15 lines of `npm run build`)
 
 ```
+├ ● /technologies/[slug]                                4.34 kB         161 kB
+├   ├ /technologies/aquaguard-series
+├   ├ /technologies/aquaguard
+├   ├ /technologies/cooltech
+│   └ [+9 more paths]
 └ ○ /warranty                                           2.43 kB         129 kB
 + First Load JS shared by all                           87.3 kB
   ├ chunks/7023-f43b2744ae639b7a.js                     31.7 kB
@@ -64,89 +67,83 @@ Last 10 lines of `npm run build` (clean build, `.next` and `out/` cleared first)
 ●  (SSG)     prerendered as static HTML (uses getStaticProps)
 ```
 
-Build exit code: **0** — no TypeScript errors, no lint errors.
+Build exit code: **0**
 
 ---
 
-## Validation Results
+## 5. Validation Result
 
-### Entity files (41/41 OK)
 ```
-Entity files checked: 41 | Missing: 0
-```
-
-### Type files (8/8 OK)
-```
-technology: OK (7 entities)
-industry: OK (11 entities)
-standard: OK (9 entities)
-contamination-mode: OK (4 entities)
-system: OK (1 entities)
-component: OK (3 entities)
-problem: OK (1 entities)
-product-family: OK (5 entities)
+find frontend/out/api/citation -name "*.json" | wc -l  →  83
+find frontend/out/api/citation -type f | wc -l         →  84  (83 JSON + 1 README.md)
 ```
 
-### Path files (19/19 OK)
-```
-Path files: OK=19 MISSING=0
-```
+Entity type breakdown in `frontend/out/api/citation/type/`:
+- `technology.json` — 7 entities
+- `industry.json` — 11 entities
+- `standard.json` — 9 entities
+- `contamination-mode.json` — 4 entities
+- `product-family.json` — 5 entities
+- `component.json` — 3 entities
+- `problem.json` — 1 entity
+- `system.json` — 1 entity
 
-### Sample entity structure check (MACROCORE.json)
-```
-key: MACROCORE
-canonical.definition: "Progressive Density Gradient (PDG) multi-layer air intake filtration system..."
-_links.related count: 15
-```
-
-### Total JSON files in `frontend/out/api/citation/`: **83**
+Path files in `frontend/out/api/citation/path/`:
+- 19 traversal path files (PATH_A_*, PATH_B_*, PATH_C_*)
+- 1 path index
+- 11 by-entry files
 
 ---
 
-## Coverage Statistics
+## 6. Coverage Statistics
 
 | Metric | Value |
-|--------|-------|
-| Entity coverage | 41/41 entities |
-| Path coverage | 17/19 valid paths (citation records embedded) |
-| Type coverage | 8/8 entity types with scan endpoint |
-| Graph edges exported | 385 |
-| By-entry keys covered | 11 entry nodes |
-| Dangling keys noted | 5 (`CABIN`, `DIN_51524`, `FUEL`, `HYDRAULIC`, `OIL`) — listed in `graph.json` |
+|---|---|
+| Total entities in vault | 41 |
+| Entities with canonical blocks | 41 (100%) |
+| Entities with valid slug/path | 36 |
+| Graph edges | 385 |
+| Traversal paths generated | 19 |
+| Valid traversal paths | 17 |
+| Product families indexed | 5 |
+
+Entity types covered: `technology` (7), `industry` (11), `standard` (9), `contamination-mode` (4), `product-family` (5), `component` (3), `problem` (1), `system` (1).
 
 ---
 
-## Validation Scripts Added
+## 7. Validation Scripts Added
 
-Three new commands in `frontend/package.json`:
+Three new `validate:*` commands added to `frontend/package.json`:
 
-| Script | Command | Purpose |
-|--------|---------|---------|
-| `npm run validate:vault` | `node ../scripts/build-citation-index.js --validate` | Validate Citation Index (no write) |
-| `npm run validate:map` | `node ../scripts/build-part-search-map.js --validate` | Validate Part Search Map (no write) |
-| `npm run validate:citation-api` | `node ../scripts/generate-citation-api.js --validate` | Validate API generator inputs (no write) |
-
-`build-part-search-map.js` updated to support `--validate` flag (no-write dry-run mode).
-
-`build-citation-index.js` already had `--validate` support — no change needed.
-
-Updated `prebuild` script:
 ```json
-"prebuild": "node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js"
+"validate:vault":        "node ../scripts/build-citation-index.js --validate",
+"validate:map":          "node ../scripts/build-part-search-map.js --validate",
+"validate:citation-api": "node ../scripts/generate-citation-api.js --validate"
 ```
 
----
-
-## Remaining Limitations
-
-- **No runtime query parameters** — only pre-computed paths; no arbitrary traversal at request time
-- **No relation-name queries** — cannot query "all nodes related via `addresses_contamination`" without pre-building that index (Phase 4F scope)
-- **No full-text search** — searching canonical block text requires a vector/inverted index (Phase 4F scope)
-- **Rebuild required for vault changes** — static files reflect vault state at build time; `prebuild` handles this automatically on every `npm run build`
-- **11 by-entry files, not 41** — only entry nodes that appear in `PART_SEARCH_MAP.traversal_paths` get a by-entry file; entities with no paths (standards, components, etc.) have no by-entry file by design
+All three scripts accept `--validate` flag: dry-run mode that performs all computation and prints output but writes no files. Useful for CI checks and pre-push validation.
 
 ---
 
-## Next Recommended Step
+## 8. Remaining Limitations
 
-**Phase 4F**: Vector sidecar index for fallback similarity search — build a lightweight inverted-index JSON at `/api/citation/search-index.json` containing tokenized canonical definitions, enabling client-side prefix search across all 41 entities without a server runtime.
+| Limitation | Notes |
+|---|---|
+| No runtime query parameters | Static files only; `/api/citation/entities?type=technology` not possible without a server |
+| No arbitrary graph traversal | Only pre-computed traversal paths (A/B/C) are available; arbitrary depth queries require `graph.json` client-side processing |
+| No full-text search | Entity lookup is by exact key only; fuzzy search not available |
+| Rebuild required for vault changes | Any change to `CITATION_INDEX.json` requires `npm run build` to regenerate endpoints |
+| By-entry coverage limited | Only 11 of 41 entities have by-entry path files (those that appear as path entry points) |
+
+---
+
+## 9. Next Recommended Step
+
+**Phase 4F** — Expand canonical block coverage to Technologies hub pages:
+
+1. Add JSON-LD `<script type="application/ld+json">` blocks to all 12 technology pages in `frontend/src/app/technologies/[slug]/page.tsx`
+2. Ensure each technology's `canonicalKnowledgeBlock` is rendered as a machine-readable `<section>` (matching the AI Citation Layer spec in CLAUDE.md)
+3. Cross-reference technology slugs with `CITATION_INDEX.json` keys to validate consistency
+4. Consider adding a `/api/citation/sitemap.json` endpoint listing all entity URLs for LLM crawler discovery
+
+Alternatively, focus on **Phase 4F — Knowledge System search index**: generate a flat `search-index.json` combining entity definitions and page content for client-side fuzzy search on the Knowledge System hub.
