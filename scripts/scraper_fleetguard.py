@@ -1604,9 +1604,8 @@ def _scrape_once(page, url: str, result: dict, settle: float):
     if SCRAPE_IMAGES and not result.get("image_src"):
         src = _extract_image_url(page)
         if src:
-            fname, pub = _download_image(src, result["part_number"])
-            result["image_src"] = src
-            result["image_url"] = pub
+            result["image_src"] = src   # URL fuente — no se descarga
+            result["image_url"] = src   # mismo valor; descarga diferida si se necesita
         else:
             logging.info("    img: no encontrada")
 
