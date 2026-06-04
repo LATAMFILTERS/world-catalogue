@@ -66,6 +66,12 @@ interface GeoData {
   schemas: object[];
   ctaTitle?: string;
   ctaDescription?: string;
+  contaminationCallout?: {
+    mechanism: string;
+    detail: string;
+    dataPoints: { label: string; value: string; severity: 'critical' | 'warning' }[];
+    target: string;
+  };
 }
 
 const industryGeoData: Record<string, GeoData> = {
@@ -124,6 +130,15 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Construction': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'CEMENT & CONCRETE DUST INGESTION',
+      detail: 'Calcium carbonate and silica from concrete dust create alkaline contamination in engine oil. pH shift accelerates bearing corrosion. Air intake restriction increases fuel consumption 8–15%.',
+      dataPoints: [
+        { label: 'Construction site dust density', value: '500–2,000 µg/m³', severity: 'critical' },
+        { label: 'Fuel consumption increase', value: '+8–15% under restriction', severity: 'warning' },
+      ],
+      target: 'SAE J1539 air intake + ISO 16/14/11 lube — dual system protection',
+    },
     ctaTitle: 'Ready to Protect Your Construction Equipment?',
     ctaDescription: 'Find the right heavy equipment asset protection system for your construction equipment platform. Cross-reference 500,000+ parts.',
     directAnswer: 'Construction equipment operates in environments with ambient silica dust concentrations ranging from 3,000 mg/m³ on earthwork sites to over 10,000 mg/m³ in tunneling operations — conditions that exceed ISO 5011 air filter test limits by a factor of 10 to 30. ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, and articulated machinery operating under continuous multi-shift duty cycles. Proprietary hybrid protection media provides high contaminant retention capacity for hydraulic system cleanliness, air intake protection, and fuel system integrity throughout extended off-road service schedules.',
@@ -283,6 +298,15 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Marine': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'SALT WATER EMULSIFICATION',
+      detail: 'Salt water ingestion emulsifies diesel fuel, accelerating injector nozzle corrosion at 150–350 bar injection pressure. Sea spray ingestion into engine air intake causes piston ring corrosion within 200–500 operating hours.',
+      dataPoints: [
+        { label: 'Injector nozzle corrosion onset', value: '< 200 hrs salt exposure', severity: 'critical' },
+        { label: 'Air intake salt concentration (coastal)', value: '5–50 mg/m³ NaCl', severity: 'warning' },
+      ],
+      target: 'AQUAGUARD™ fuel water separation + INTEKCORE™ salt-resistant air intake',
+    },
     ctaTitle: 'Ready to Protect Your Marine Equipment?',
     ctaDescription: 'Find the right marine asset protection system for your vessel or offshore equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS® systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
@@ -336,6 +360,15 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Oil Gas': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'H₂S & CONDENSATE CONTAMINATION',
+      detail: 'Hydrogen sulfide in compressed air corrodes instrument lines and pneumatic actuators. Water condensate in diesel fuel tanks promotes microbial growth blocking fuel filters within 30–60 days.',
+      dataPoints: [
+        { label: 'H₂S threshold (compressed air)', value: '< 0.1 ppm ISO 8573-1 Class 1', severity: 'critical' },
+        { label: 'Microbial growth onset (diesel)', value: '30–60 days water contamination', severity: 'warning' },
+      ],
+      target: 'ISO 8573-1 Class 1 compressed air + AQUAGUARD™ fuel protection',
+    },
     ctaTitle: 'Ready to Protect Your Energy Equipment?',
     ctaDescription: 'Find the right Oil & Gas asset protection system for your offshore or energy equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS® Oil & Gas asset protection systems are engineered for offshore platforms, onshore facilities, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and continuous severe-duty energy cycles. Gas turbine air intake systems require contamination control matched to airborne salinity concentrations of 1–10 mg/m³ in offshore environments. Hydraulic systems in drilling and compression equipment require ISO 16/14/11 or tighter cleanliness to prevent proportional valve stiction under high-pressure continuous operation. ELIMFILTERS® systems maintain air intake efficiency, fuel cleanliness, lubrication stability, and hydraulic protection throughout extended Oil & Gas service schedules.',
@@ -601,6 +634,15 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Agriculture': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'HARVEST HYDRAULIC CONTAMINATION',
+      detail: 'Chaff, organic dust, and crop debris bypass air pre-cleaners during harvest. Hydraulic system contamination during peak season causes actuator failures when downtime is most costly.',
+      dataPoints: [
+        { label: 'Harvest season airborne dust', value: '200–800 µg/m³', severity: 'critical' },
+        { label: 'Hydraulic actuator failure risk', value: '3× higher in harvest', severity: 'warning' },
+      ],
+      target: 'ISO 17/15/12 hydraulic cleanliness — ELIMFILTERS® minimum',
+    },
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
     faq: [
       {
@@ -649,6 +691,21 @@ const industryGeoData: Record<string, GeoData> = {
         ],
       },
     ],
+  },
+  'Mining': {
+    lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'SILICA INGESTION',
+      detail: 'Silica (SiO₂) Mohs hardness 7 exceeds engine cylinder liner hardness of 5–6. Abrasive wear rate increases exponentially above ISO 19/17/14 cleanliness.',
+      dataPoints: [
+        { label: 'Normal operations', value: '3–8 g/hr ingestion', severity: 'warning' },
+        { label: 'Blasting & loading', value: '12–25 g/hr ingestion', severity: 'critical' },
+      ],
+      target: 'ISO 16/14/11 — ELIMFILTERS® system target',
+    },
+    directAnswer: 'ELIMFILTERS® mining asset protection systems are engineered for heavy mining equipment operating under continuous high-silica dust exposure, extended multi-shift duty cycles, and severe abrasive contamination environments.',
+    faq: [],
+    schemas: [],
   },
 };
 
@@ -730,12 +787,106 @@ export default function IndustryPage({ params }: Props) {
   const geoData = industryGeoData[item.name];
 
   return (
-    <CategoryPage
-      item={item}
-      category="industries"
-      industryImage={media.image}
-      industryVideo={media.video}
-      geoData={geoData}
-    />
+    <>
+      <CategoryPage
+        item={item}
+        category="industries"
+        industryImage={media.image}
+        industryVideo={media.video}
+        geoData={geoData}
+      />
+      {geoData?.contaminationCallout && (
+        <section style={{
+          background: '#000',
+          padding: '0 8% 4rem',
+        }}>
+          <div style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            border: '1px solid rgba(255,241,45,0.25)',
+            borderLeft: '4px solid #FFF12D',
+            padding: '2rem 2.5rem',
+            background: 'rgba(255,241,45,0.03)',
+          }}>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.68rem',
+              letterSpacing: '0.2em',
+              color: '#FFF12D',
+              marginBottom: '0.75rem',
+              textTransform: 'uppercase',
+            }}>
+              // PRIMARY FAILURE MECHANISM
+            </p>
+            <h3 style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
+              color: '#fff',
+              marginBottom: '0.75rem',
+              letterSpacing: '0.02em',
+            }}>
+              {geoData.contaminationCallout.mechanism}
+            </h3>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.9rem',
+              color: 'rgba(255,255,255,0.65)',
+              lineHeight: 1.7,
+              marginBottom: '1.5rem',
+              maxWidth: '720px',
+            }}>
+              {geoData.contaminationCallout.detail}
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1rem',
+              marginBottom: '1.5rem',
+            }}>
+              {geoData.contaminationCallout.dataPoints.map((dp, i) => (
+                <div key={i} style={{
+                  padding: '1rem 1.25rem',
+                  background: dp.severity === 'critical'
+                    ? 'rgba(255,60,60,0.06)'
+                    : 'rgba(255,165,0,0.06)',
+                  border: `1px solid ${dp.severity === 'critical' ? 'rgba(255,60,60,0.25)' : 'rgba(255,165,0,0.2)'}`,
+                }}>
+                  <p style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.65rem',
+                    color: dp.severity === 'critical' ? 'rgba(255,100,100,0.8)' : 'rgba(255,165,0,0.8)',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: '0.4rem',
+                  }}>
+                    {dp.label}
+                  </p>
+                  <p style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    color: '#fff',
+                  }}>
+                    {dp.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.7rem',
+              color: '#FFF12D',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              borderTop: '1px solid rgba(255,241,45,0.15)',
+              paddingTop: '1rem',
+            }}>
+              {geoData.contaminationCallout.target}
+            </p>
+          </div>
+        </section>
+      )}
+    </>
   );
 }

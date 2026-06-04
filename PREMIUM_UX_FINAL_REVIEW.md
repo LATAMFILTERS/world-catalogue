@@ -330,8 +330,16 @@ The Premium UX workstream is now complete. The following documents have been pro
 | `PREMIUM_UX_FINAL_REVIEW.md` | This document — approval decision | ✅ Complete |
 
 **Decision:** Approve with Modifications  
-**Next action:** Phase 0 Quick Wins (21 hours, 3–4 days, zero architectural risk)  
-**Workstream status:** CLOSED — ready for next priority
+**Approved priority order:**
+
+| Phase | Scope | Sequence |
+|-------|-------|----------|
+| UX-1 | Homepage Hero · Knowledge System Enhancements · Industry Page Improvements | First |
+| UX-2 | Contamination Animation · Technology Gallery | Second — after UX-1 measured |
+| UX-3 | Distributor Experience | Third — after UX-2 measured |
+
+**Instruction:** Implement progressively. Measure impact between phases. Do not implement all six simultaneously.  
+**Workstream status:** APPROVED — UX-1 implementation in progress
 
 ---
 

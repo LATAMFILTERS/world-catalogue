@@ -131,6 +131,11 @@ export default function LubeOilSystemsPage() {
           }}>
             A typical engine oil filter operates under 3 to 5 bar differential pressure, processing 40 to 100 liters per minute depending on engine displacement and speed. Over a 500-hour service interval, the filter element accumulates kilograms of contaminant mass while maintaining target ISO cleanliness codes that directly determine bearing life and oil oxidation rate.
           </p>
+          <p className="ks-pullquote">
+            Optimal ISO 16/14/11 cleanliness targets extend bearing life{' '}
+            <span className="ks-metric">3–5×</span>{' '}
+            compared to commodity-approach contamination levels at 19/17/14 — the difference between 5,000-hour and 15,000-hour overhaul intervals.
+          </p>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
