@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 — Industry Page Mockup — ELIMFILTERS®</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+
+  .page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* FILE HEADER */
+  .file-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #FFF12D;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,241,45,0.2);
+    padding-bottom: 16px;
+    margin-bottom: 48px;
+  }
+  .file-header span { color: rgba(255,255,255,0.35); margin: 0 12px; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  .panel-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .panel-label.after { color: rgba(255,241,45,0.6); }
+
+  /* ============================
+     BEFORE PANEL
+     ============================ */
+  .before-panel {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .before-hero {
+    height: 220px;
+    background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  .before-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(60,60,60,0.4) 0%, transparent 70%);
+  }
+
+  .before-eyebrow {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .before-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    line-height: 1;
+    position: relative;
+  }
+
+  .before-body {
+    padding: 28px 32px;
+    background: #0a0a0a;
+  }
+
+  .before-para {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .before-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .before-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 14px;
+  }
+
+  .before-card-title {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .before-card-val {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .before-tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .before-tag {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ============================
+     AFTER PANEL
+     ============================ */
+  .after-panel {
+    border: 1px solid rgba(255,241,45,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(255,241,45,0.05);
+  }
+
+  /* PARTICLE ANIMATION */
+  .after-hero {
+    height: 220px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(40,20,0,0.9) 0%, rgba(20,10,0,0.7) 40%, #000 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    border-bottom: 1px solid rgba(255,241,45,0.1);
+  }
+
+  .after-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,0,0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(40,20,0,0.2) 0%, transparent 50%);
+  }
+
+  /* Particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-particle linear infinite;
+  }
+
+  @keyframes float-particle {
+    0%   { transform: translateY(100%) translateX(0); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 0.6; }
+    100% { transform: translateY(-100px) translateX(var(--drift)); opacity: 0; }
+  }
+
+  .after-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #FFF12D;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .after-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    position: relative;
+    z-index: 2;
+  }
+
+  .after-hero-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* CONTAMINATION CALLOUT CARD */
+  .contamination-callout {
+    margin: 20px;
+    background: rgba(255,241,45,0.04);
+    border: 1px solid rgba(255,241,45,0.15);
+    border-left: 4px solid #FFF12D;
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+
+  .callout-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: #FFF12D;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .callout-divider {
+    height: 1px;
+    background: rgba(255,241,45,0.15);
+    margin-bottom: 14px;
+  }
+
+  .callout-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .callout-data-card {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 12px;
+  }
+
+  .callout-data-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .callout-data-compare {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .hardness-val {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .hardness-silica { color: #ff6b35; }
+  .hardness-liner  { color: rgba(255,255,255,0.6); }
+
+  .hardness-vs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .hardness-note {
+    font-size: 0.65rem;
+    color: rgba(255,80,20,0.85);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  .ingestion-normal {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .ingestion-blast {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ff6b35;
+    margin-top: 6px;
+  }
+
+  .ingestion-label {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+
+  .callout-target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #FFF12D;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  /* SYSTEM TAGS */
+  .system-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 20px 16px;
+  }
+
+  .system-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: #FFF12D;
+    border: 1px solid rgba(255,241,45,0.35);
+    border-radius: 20px;
+    padding: 4px 14px;
+    letter-spacing: 0.1em;
+  }
+
+  /* TECHNOLOGY TEASER CARD */
+  .tech-teaser {
+    margin: 0 20px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .tech-teaser:hover { border-color: rgba(255,241,45,0.3); }
+
+  .tech-teaser-left {}
+
+  .tech-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #FFF12D;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .tech-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  .tech-explore {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,241,45,0.7);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+
+  /* ============================
+     MOBILE COMPARISON
+     ============================ */
+  .mobile-section {
+    margin-top: 48px;
+  }
+
+  .mobile-section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mobile-row {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mobile-device {
+    width: 375px;
+    flex-shrink: 0;
+  }
+
+  .mobile-device-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .mobile-device-label.after { color: rgba(255,241,45,0.5); }
+
+  .mobile-frame {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .mobile-frame.after-frame {
+    border-color: rgba(255,241,45,0.15);
+  }
+
+  /* Mobile BEFORE content */
+  .mob-before-hero {
+    height: 120px;
+    background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mob-before-hero h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .mob-before-body {
+    padding: 16px;
+    background: #0a0a0a;
+  }
+
+  .mob-before-para {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .mob-before-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .mob-before-tag {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+
+  /* Mobile AFTER content */
+  .mob-after-hero {
+    height: 120px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(40,20,0,0.9) 0%, rgba(20,10,0,0.7) 40%, #000 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,241,45,0.1);
+  }
+
+  .mob-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: #FFF12D;
+    letter-spacing: 0.14em;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mob-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mob-after-body {
+    padding: 12px;
+    background: #050505;
+  }
+
+  .mob-callout {
+    background: rgba(255,241,45,0.04);
+    border: 1px solid rgba(255,241,45,0.15);
+    border-left: 3px solid #FFF12D;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .mob-callout-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: #FFF12D;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .mob-data-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .mob-data-chip {
+    flex: 1;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 8px;
+  }
+
+  .mob-data-chip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+  }
+
+  .mob-data-chip-val {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #ff6b35;
+  }
+
+  .mob-data-chip-val.normal { color: rgba(255,255,255,0.65); }
+
+  .mob-callout-target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: #FFF12D;
+    letter-spacing: 0.08em;
+  }
+
+  .mob-chip-row {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .mob-chip-row::-webkit-scrollbar { display: none; }
+
+  .mob-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: #FFF12D;
+    border: 1px solid rgba(255,241,45,0.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  /* mobile particles */
+  .mob-particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-particle linear infinite;
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- FILE HEADER -->
+  <div class="file-header">
+    // ELIMFILTERS® PREMIUM UX MOCKUPS
+    <span>·</span>
+    04 — INDUSTRY PAGE
+    <span>·</span>
+    MINING FILTRATION SYSTEMS — BEFORE vs AFTER
+    <span>·</span>
+    DESIGN EVALUATION
+  </div>
+
+  <!-- DESKTOP COMPARISON -->
+  <div class="section-label">DESKTOP — 600px PANELS · SIDE BY SIDE COMPARISON</div>
+
+  <div class="comparison-row">
+
+    <!-- ========================
+         BEFORE PANEL
+         ======================== -->
+    <div>
+      <div class="panel-label">◦ BEFORE — CategoryPage Template (Current)</div>
+      <div class="before-panel">
+
+        <!-- Hero -->
+        <div class="before-hero">
+          <div class="before-eyebrow">Industry Application</div>
+          <div class="before-heading">MINING</div>
+        </div>
+
+        <!-- Body -->
+        <div class="before-body">
+          <p class="before-para">
+            Extreme contamination in open-pit mining operations demands robust filtration solutions. ELIMFILTERS products are suitable for mining equipment filtration needs in challenging conditions.
+          </p>
+
+          <div class="before-grid">
+            <div class="before-card">
+              <div class="before-card-title">Environment</div>
+              <div class="before-card-val" style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Open-Pit / Underground</div>
+            </div>
+            <div class="before-card">
+              <div class="before-card-title">Contamination Risk</div>
+              <div class="before-card-val" style="color:rgba(255,255,255,0.55);font-size:0.85rem;">High</div>
+            </div>
+            <div class="before-card">
+              <div class="before-card-title">Equipment Types</div>
+              <div class="before-card-val" style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Haul Trucks, Drills</div>
+            </div>
+            <div class="before-card">
+              <div class="before-card-title">Primary Systems</div>
+              <div class="before-card-val" style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Air, Hydraulic, Lube</div>
+            </div>
+          </div>
+
+          <div class="before-tag-row">
+            <span class="before-tag">Air Filtration</span>
+            <span class="before-tag">Hydraulic</span>
+            <span class="before-tag">Lube Oil</span>
+            <span class="before-tag">Fuel</span>
+          </div>
+        </div>
+
+      </div><!-- /before-panel -->
+    </div>
+
+    <!-- ========================
+         AFTER PANEL
+         ======================== -->
+    <div>
+      <div class="panel-label after">● AFTER — Premium Industry Experience</div>
+      <div class="after-panel">
+
+        <!-- Hero with Particles -->
+        <div class="after-hero" id="heroDesktop">
+          <!-- Particles injected by JS -->
+          <div class="after-eyebrow">// INDUSTRIAL APPLICATION · MINING</div>
+          <div class="after-heading">MINING FILTRATION<br>SYSTEMS</div>
+          <div class="after-hero-sub">Open-pit · Underground · Processing</div>
+        </div>
+
+        <!-- Contamination Callout Card -->
+        <div class="contamination-callout">
+          <div class="callout-title">PRIMARY FAILURE MECHANISM: SILICA INGESTION</div>
+          <div class="callout-divider"></div>
+
+          <div class="callout-data-grid">
+            <!-- Hardness Comparison -->
+            <div class="callout-data-card">
+              <div class="callout-data-label">ABRASIVE HARDNESS COMPARISON</div>
+              <div class="callout-data-compare">
+                <span class="hardness-val hardness-silica">7</span>
+                <span class="hardness-vs">Mohs SiO₂</span>
+                <span class="hardness-vs">vs</span>
+                <span class="hardness-val hardness-liner">5–6</span>
+                <span class="hardness-vs">Liner</span>
+              </div>
+              <div class="hardness-note">↑ Silica harder than engine surfaces</div>
+            </div>
+
+            <!-- Ingestion Rate -->
+            <div class="callout-data-card">
+              <div class="callout-data-label">SILICA INGESTION RATE</div>
+              <div class="ingestion-normal">3–8 g/hr</div>
+              <div class="ingestion-label">Normal operations</div>
+              <div class="ingestion-blast">12–25 g/hr</div>
+              <div class="ingestion-label" style="color:rgba(255,100,30,0.6);">During blasting</div>
+            </div>
+          </div>
+
+          <div class="callout-target">ELIMFILTERS® TARGET: ISO 16/14/11 CLEANLINESS CODE</div>
+        </div>
+
+        <!-- System Tags -->
+        <div class="system-tags">
+          <span class="system-tag">AIR</span>
+          <span class="system-tag">HYDRAULIC</span>
+          <span class="system-tag">LUBE</span>
+          <span class="system-tag">FUEL</span>
+        </div>
+
+        <!-- Technology Teaser -->
+        <div class="tech-teaser">
+          <div class="tech-teaser-left">
+            <div class="tech-name">MACROCORE™</div>
+            <div class="tech-desc">Primary air intake protection for silica environments. Multi-stage centrifugal pre-separation.</div>
+          </div>
+          <div class="tech-explore">EXPLORE →</div>
+        </div>
+
+      </div><!-- /after-panel -->
+    </div>
+
+  </div><!-- /comparison-row -->
+
+  <!-- ============================
+       MOBILE COMPARISON
+       ============================ -->
+  <div class="mobile-section">
+    <div class="mobile-section-title">MOBILE — 375px — RESPONSIVE COMPARISON</div>
+
+    <div class="mobile-row">
+
+      <!-- Mobile BEFORE -->
+      <div class="mobile-device">
+        <div class="mobile-device-label">◦ BEFORE — Mobile (Current)</div>
+        <div class="mobile-frame">
+
+          <div class="mob-before-hero">
+            <h3>MINING</h3>
+          </div>
+
+          <div class="mob-before-body">
+            <p class="mob-before-para">Extreme contamination in open-pit operations demands robust filtration. ELIMFILTERS products suitable for mining equipment.</p>
+            <div class="mob-before-tags">
+              <span class="mob-before-tag">Air Filtration</span>
+              <span class="mob-before-tag">Hydraulic</span>
+              <span class="mob-before-tag">Lube Oil</span>
+              <span class="mob-before-tag">Fuel</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile AFTER -->
+      <div class="mobile-device">
+        <div class="mobile-device-label after">● AFTER — Mobile Premium</div>
+        <div class="mobile-frame after-frame">
+
+          <div class="mob-after-hero" id="heroMobile">
+            <!-- particles injected by JS -->
+            <div class="mob-eyebrow">// INDUSTRIAL APPLICATION · MINING</div>
+            <div class="mob-heading">MINING FILTRATION</div>
+          </div>
+
+          <div class="mob-after-body">
+            <!-- Contamination Callout -->
+            <div class="mob-callout">
+              <div class="mob-callout-title">PRIMARY FAILURE: SILICA INGESTION</div>
+              <div class="mob-data-row">
+                <div class="mob-data-chip">
+                  <div class="mob-data-chip-label">SILICA MOHS</div>
+                  <div class="mob-data-chip-val">7.0</div>
+                </div>
+                <div class="mob-data-chip">
+                  <div class="mob-data-chip-label">LINER MOHS</div>
+                  <div class="mob-data-chip-val normal">5–6</div>
+                </div>
+              </div>
+              <div class="mob-data-row">
+                <div class="mob-data-chip">
+                  <div class="mob-data-chip-label">NORMAL OPS</div>
+                  <div class="mob-data-chip-val normal">3–8 g/hr</div>
+                </div>
+                <div class="mob-data-chip">
+                  <div class="mob-data-chip-label">BLASTING</div>
+                  <div class="mob-data-chip-val">12–25 g/hr</div>
+                </div>
+              </div>
+              <div class="mob-callout-target">TARGET: ISO 16/14/11</div>
+            </div>
+
+            <!-- Scrollable Chip Row -->
+            <div class="mob-chip-row">
+              <span class="mob-chip">AIR</span>
+              <span class="mob-chip">HYDRAULIC</span>
+              <span class="mob-chip">LUBE</span>
+              <span class="mob-chip">FUEL</span>
+              <span class="mob-chip">MACROCORE™ →</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /mobile-row -->
+  </div><!-- /mobile-section -->
+
+</div><!-- /page-wrapper -->
+
+<script>
+  // Inject particles into hero elements
+  function createParticles(container, count) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      const size = Math.random() * 3 + 1.5; // 1.5–4.5px
+      const left = Math.random() * 100;
+      const duration = Math.random() * 8 + 6; // 6–14s
+      const delay = Math.random() * 10;
+      const drift = (Math.random() - 0.5) * 60;
+
+      // Brown/amber dust palette
+      const hue = Math.floor(Math.random() * 30 + 20); // 20–50 = amber/brown
+      const sat = Math.floor(Math.random() * 40 + 40);
+      const lit = Math.floor(Math.random() * 30 + 40);
+      const color = `hsl(${hue}, ${sat}%, ${lit}%)`;
+
+      p.className = 'particle';
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${left}%;
+        bottom: -10px;
+        background: ${color};
+        --drift: ${drift}px;
+        animation-duration: ${duration}s;
+        animation-delay: -${delay}s;
+      `;
+      container.appendChild(p);
+    }
+  }
+
+  createParticles(document.getElementById('heroDesktop'), 28);
+  createParticles(document.getElementById('heroMobile'), 16);
+</script>
+</body>
+</html>
