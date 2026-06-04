@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELIMFILTERS® — Distributor Experience Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 1400px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 2rem;
+    }
+    .page-header .file-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #FFF12D;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+    .page-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .page-header p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.06em;
+    }
+
+    .section-heading {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.16em;
+    }
+    .section-divider {
+      max-width: 1400px;
+      margin: 4.5rem auto 3rem;
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* PANEL LABELS */
+    .panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .panel-label.before {
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .panel-label.after {
+      background: rgba(255,241,45,0.08);
+      color: #FFF12D;
+      border: 1px solid rgba(255,241,45,0.3);
+    }
+    .panel-label.neutral {
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    /* ============================================
+       SECTION A — FLYOUT SIMULATION
+    ============================================ */
+    .flyout-section {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Simulated full-page container */
+    .simulated-page {
+      position: relative;
+      height: 600px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    /* Dimmed background page */
+    .bg-page {
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(60,40,0,0.6) 0%, transparent 60%),
+        linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 4rem;
+    }
+    .bg-page-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,241,45,0.4);
+      letter-spacing: 0.14em;
+      margin-bottom: 1rem;
+    }
+    .bg-page h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .bg-page p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.25);
+      max-width: 480px;
+    }
+
+    /* Overlay scrim */
+    .flyout-scrim {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
+
+    /* The flyout panel */
+    .flyout-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 420px;
+      background: #0a0a0a;
+      border-left: 1px solid rgba(255,241,45,0.18);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      /* Slide-in animation */
+      animation: slideInRight 0.4s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0);    opacity: 1; }
+    }
+
+    /* Panel header */
+    .flyout-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    .flyout-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .flyout-brand span {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: rgba(255,241,45,0.6);
+      letter-spacing: 0.12em;
+      margin-top: 0.2rem;
+    }
+    .flyout-close {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Panel body */
+    .flyout-body {
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,241,45,0.2) transparent;
+    }
+
+    .flyout-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: #FFF12D;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Territory rows */
+    .territory-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 1.25rem;
+    }
+    .territory-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .territory-row:last-child { border-bottom: none; }
+    .tr-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .tr-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .tr-dot.available  { background: #FFF12D; box-shadow: 0 0 6px rgba(255,241,45,0.5); }
+    .tr-dot.contact    { background: rgba(255,255,255,0.2); }
+    .tr-country {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+    .tr-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 3px;
+    }
+    .tr-badge.avail   { background: rgba(80,220,100,0.12); color: rgba(80,220,100,0.9); border: 1px solid rgba(80,220,100,0.2); }
+    .tr-badge.contact { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.08); }
+
+    /* Text field stub */
+    .territory-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 4px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Separator */
+    .flyout-sep {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 0 0 1.25rem;
+    }
+
+    /* Buttons */
+    .flyout-btn-primary {
+      display: block;
+      width: 100%;
+      background: #FFF12D;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 0.65rem;
+    }
+    .flyout-btn-outline {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: rgba(255,241,45,0.85);
+      border: 1px solid rgba(255,241,45,0.35);
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .flyout-fine-print {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.55;
+    }
+
+    /* ============================================
+       SECTION B — APPLICATION PAGE BEFORE vs AFTER
+    ============================================ */
+    .form-comparison {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* Before form */
+    .form-before {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .form-before-header {
+      background: #0c0c0c;
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .form-before-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+    }
+    .form-before-header p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 0.35rem;
+    }
+    .form-before-body {
+      background: #090909;
+      padding: 1.75rem;
+    }
+    .form-field-group {
+      margin-bottom: 1.1rem;
+    }
+    .plain-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .plain-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Inter', sans-serif;
+    }
+    .plain-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Inter', sans-serif;
+      height: 80px;
+      resize: none;
+    }
+    .plain-submit {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 0.7rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .annotation-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(255,90,70,0.65);
+      background: rgba(255,70,50,0.05);
+      border: 1px solid rgba(255,70,50,0.14);
+      border-radius: 3px;
+      padding: 0.22rem 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* After form */
+    .form-after {
+      border: 1px solid rgba(255,241,45,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .form-after-header {
+      background: #080808;
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid rgba(255,241,45,0.08);
+    }
+    .form-after-header .fa-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,241,45,0.6);
+      letter-spacing: 0.14em;
+      margin-bottom: 0.5rem;
+    }
+    .form-after-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .form-after-body {
+      background: #050505;
+      padding: 1.5rem 1.75rem;
+    }
+
+    /* Program summary card */
+    .program-card {
+      border: 1px solid rgba(255,241,45,0.2);
+      border-radius: 6px;
+      background: rgba(255,241,45,0.025);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .program-card-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: #FFF12D;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.85rem;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255,241,45,0.12);
+      border: 1px solid rgba(255,241,45,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.6rem;
+      color: #FFF12D;
+    }
+    .program-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .program-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .pm-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      padding-top: 0.1rem;
+      min-width: 72px;
+    }
+    .pm-tags {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .pm-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.56rem;
+      color: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 0.15rem 0.45rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Styled form inputs */
+    .styled-field-group {
+      margin-bottom: 1rem;
+    }
+    .styled-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .styled-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    /* Show focus state visually on one field */
+    .styled-input.focused {
+      border-color: rgba(255,241,45,0.45);
+      background: rgba(255,241,45,0.02);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .styled-submit {
+      width: 100%;
+      background: #FFF12D;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      padding: 0.8rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="file-label">// FILE 06 — DISTRIBUTOR EXPERIENCE · TERRITORY FLYOUT + APPLICATION PAGE</span>
+    <h1>Distributor Experience: Flyout & Application</h1>
+    <p>SECTION A: HOMEPAGE FLYOUT · SECTION B: APPLICATION PAGE BEFORE VS AFTER</p>
+  </div>
+
+  <!-- ============================================
+       SECTION A — HOMEPAGE → DISTRIBUTOR CTA FLYOUT
+  ============================================ -->
+  <p class="section-heading">// SECTION A — HOMEPAGE → DISTRIBUTOR CTA FLYOUT</p>
+
+  <div class="flyout-section">
+    <span class="panel-label neutral">LIVE INTERACTION SIMULATION — Flyout slides in from right over homepage</span>
+
+    <div class="simulated-page">
+      <!-- Dimmed background page content -->
+      <div class="bg-page">
+        <div class="bg-page-eyebrow">// INDUSTRIAL ASSET PROTECTION · ELIMFILTERS®</div>
+        <h2>PROTECTING<br/>INDUSTRIAL ASSETS<br/>THROUGH<br/>CONTAMINATION<br/>CONTROL</h2>
+        <p>12 industries. 12 filtration systems. One contamination control framework engineered for equipment reliability.</p>
+      </div>
+
+      <!-- Scrim overlay -->
+      <div class="flyout-scrim"></div>
+
+      <!-- Flyout panel -->
+      <div class="flyout-panel">
+        <div class="flyout-header">
+          <div class="flyout-brand">
+            ELIMFILTERS®
+            <span>DISTRIBUTOR PROGRAM</span>
+          </div>
+          <div class="flyout-close">✕ CLOSE</div>
+        </div>
+
+        <div class="flyout-body">
+          <div class="flyout-section-label">IS YOUR TERRITORY AVAILABLE?</div>
+
+          <div class="territory-list">
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot available"></div>
+                <span class="tr-country">COLOMBIA</span>
+              </div>
+              <span class="tr-badge avail">Available</span>
+            </div>
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot available"></div>
+                <span class="tr-country">MEXICO</span>
+              </div>
+              <span class="tr-badge avail">Available</span>
+            </div>
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot available"></div>
+                <span class="tr-country">CHILE</span>
+              </div>
+              <span class="tr-badge avail">Available</span>
+            </div>
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot available"></div>
+                <span class="tr-country">PERU</span>
+              </div>
+              <span class="tr-badge avail">Available</span>
+            </div>
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot available"></div>
+                <span class="tr-country">ECUADOR</span>
+              </div>
+              <span class="tr-badge avail">Available</span>
+            </div>
+            <div class="territory-row">
+              <div class="tr-left">
+                <div class="tr-dot contact"></div>
+                <span class="tr-country" style="color:rgba(255,255,255,0.4)">VENEZUELA</span>
+              </div>
+              <span class="tr-badge contact">Contact us</span>
+            </div>
+          </div>
+
+          <input
+            class="territory-input"
+            type="text"
+            placeholder="Other territory — type your country"
+          />
+
+          <div class="flyout-sep"></div>
+
+          <button class="flyout-btn-primary">APPLY NOW →</button>
+          <button class="flyout-btn-outline">DOWNLOAD PROGRAM PDF →</button>
+
+          <p class="flyout-fine-print">
+            Authorized distributors serve mining, agriculture, construction, transportation, and oil &amp; gas operations across Latin America. Territory exclusivity granted upon qualification review.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION B — APPLICATION PAGE BEFORE vs AFTER
+  ============================================ -->
+  <hr class="section-divider" />
+  <p class="section-heading">// SECTION B — DISTRIBUTOR APPLICATION PAGE · BEFORE VS AFTER</p>
+
+  <div class="form-comparison">
+
+    <!-- BEFORE -->
+    <div>
+      <span class="panel-label before">BEFORE — Plain Contact Form</span>
+      <div class="form-before">
+        <div class="form-before-header">
+          <h2>Distributor Application</h2>
+          <p>Fill out the form below and we will get back to you.</p>
+        </div>
+        <div class="form-before-body">
+          <span class="annotation-tag">↑ Cold start — no context, feels like a generic contact form</span>
+
+          <div class="form-field-group">
+            <label class="plain-label">Name</label>
+            <input class="plain-input" type="text" placeholder="Your name" />
+          </div>
+          <div class="form-field-group">
+            <label class="plain-label">Company</label>
+            <input class="plain-input" type="text" placeholder="Company name" />
+          </div>
+          <div class="form-field-group">
+            <label class="plain-label">Country</label>
+            <input class="plain-input" type="text" placeholder="Country" />
+          </div>
+          <div class="form-field-group">
+            <label class="plain-label">Message</label>
+            <textarea class="plain-textarea" placeholder="Tell us about your business"></textarea>
+          </div>
+          <button class="plain-submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div>
+      <span class="panel-label after">AFTER — Premium Application Experience</span>
+      <div class="form-after">
+        <div class="form-after-header">
+          <div class="fa-eyebrow">// AUTHORIZED DISTRIBUTOR PROGRAM</div>
+          <h2>BECOME AN ELIMFILTERS®<br/>AUTHORIZED DISTRIBUTOR</h2>
+        </div>
+
+        <div class="form-after-body">
+          <!-- Program summary card -->
+          <div class="program-card">
+            <div class="program-card-heading">WHAT WE'RE LOOKING FOR</div>
+            <div class="checklist">
+              <div class="checklist-item">
+                <div class="check-icon">✓</div>
+                Established sales team with industrial sector access
+              </div>
+              <div class="checklist-item">
+                <div class="check-icon">✓</div>
+                Territorial coverage and distribution network
+              </div>
+              <div class="checklist-item">
+                <div class="check-icon">✓</div>
+                Industrial sector experience (mining, agri, transport)
+              </div>
+              <div class="checklist-item">
+                <div class="check-icon">✓</div>
+                Existing customer base with equipment operators
+              </div>
+            </div>
+            <div class="program-meta-row">
+              <div class="program-meta-item">
+                <span class="pm-label">INDUSTRIES</span>
+                <div class="pm-tags">
+                  <span class="pm-tag">Mining</span>
+                  <span class="pm-tag">Agriculture</span>
+                  <span class="pm-tag">Transport</span>
+                  <span class="pm-tag">Construction</span>
+                  <span class="pm-tag">Oil &amp; Gas</span>
+                </div>
+              </div>
+              <div class="program-meta-item">
+                <span class="pm-label">TERRITORIES</span>
+                <div class="pm-tags">
+                  <span class="pm-tag">Mexico</span>
+                  <span class="pm-tag">Colombia</span>
+                  <span class="pm-tag">Chile</span>
+                  <span class="pm-tag">Peru</span>
+                  <span class="pm-tag">Ecuador</span>
+                  <span class="pm-tag">Brazil</span>
+                  <span class="pm-tag">Panama</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Styled form -->
+          <div class="form-row">
+            <div class="styled-field-group">
+              <label class="styled-label">FULL NAME</label>
+              <input class="styled-input" type="text" placeholder="Your name" />
+            </div>
+            <div class="styled-field-group">
+              <label class="styled-label">COMPANY</label>
+              <input class="styled-input focused" type="text" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="styled-field-group">
+              <label class="styled-label">COUNTRY / TERRITORY</label>
+              <input class="styled-input" type="text" placeholder="e.g. Colombia" />
+            </div>
+            <div class="styled-field-group">
+              <label class="styled-label">BUSINESS EMAIL</label>
+              <input class="styled-input" type="email" placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="styled-field-group">
+            <label class="styled-label">DESCRIBE YOUR DISTRIBUTION OPERATION</label>
+            <input class="styled-input" type="text" placeholder="Industries served, team size, geographic coverage..." style="padding:0.65rem 0.85rem;" />
+          </div>
+
+          <button class="styled-submit">SUBMIT APPLICATION →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
