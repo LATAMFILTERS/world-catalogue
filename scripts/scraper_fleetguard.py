@@ -20,6 +20,7 @@ Uso:
     python scraper_fleetguard.py air-precleaners --no-equipment      # sin equipment tab
     python scraper_fleetguard.py air-precleaners --no-images         # sin descargar imágenes
     python scraper_fleetguard.py --download-images air-precleaners   # descarga retroactiva
+    python scraper_fleetguard.py --equipment-only air-primary-secondary  # solo equipment tab (retroactivo)
 
 Imágenes:
     - Se descargan en scripts/Fleetguard Scraper/images/[PN].jpg
@@ -1954,6 +1955,66 @@ def retry_empty():
     build_equipment_matrix(results)
 
 
+def equipment_only_run():
+    """
+    Re-scrapea SOLO el tab Equipment para productos con equipment=[] en el
+    _results.json existente. No toca specs/cross/alternativas.
+    Uso: python scraper_fleetguard.py --equipment-only air-primary-secondary
+    """
+    if not os.path.exists(OUTPUT_FILE):
+        logging.error(f"No existe {OUTPUT_FILE} — corre la categoría completa primero")
+        return
+
+    with open(OUTPUT_FILE, encoding="utf-8") as f:
+        results = json.load(f)
+
+    targets = [r for r in results if not r.get("equipment") and not r.get("error")]
+    logging.info(f"Productos sin equipment: {len(targets)} / {len(results)}")
+    if not targets:
+        logging.info("Todos los productos ya tienen equipment. Nada que hacer.")
+        build_equipment_matrix(results)
+        return
+
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+
+        for idx, prod in enumerate(targets, 1):
+            url = prod.get("url") or f"https://www.fleetguard.com/product/{prod['part_number']}"
+            logging.info(f"[equip {idx}/{len(targets)}] {url}")
+            try:
+                page.goto(url, timeout=60000, wait_until="domcontentloaded")
+                time.sleep(3)
+                dismiss_popups(page)
+                wait_net(page, 20000)
+                time.sleep(3)
+                _click_tab(page, "Equipment")
+                equipment = _extract_equipment_tab(page)
+                if not equipment:
+                    time.sleep(3)
+                    _click_tab(page, "Equipment")
+                    equipment = _extract_equipment_tab(page)
+                prod["equipment"] = equipment
+                logging.info(f"  → {prod['part_number']}: {len(equipment)} equipos")
+            except Exception as e:
+                logging.warning(f"  ERROR {prod['part_number']}: {e}")
+            # Guardar progreso parcial cada 10 productos
+            if idx % 10 == 0:
+                with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+                logging.info(f"  Guardado parcial ({idx}/{len(targets)})")
+            rand_sleep()
+
+        ctx.close()
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    logging.info(f"✅ Equipment actualizado — {OUTPUT_FILE}")
+    build_equipment_matrix(results)
+
+
 def build_equipment_matrix(results: list):
     """
     Construye matriz equipo → filtros para búsqueda por equipo.
@@ -2015,6 +2076,16 @@ if __name__ == "__main__":
         url = argv[1] if len(argv) > 1 else ""
         if not url: print("ERROR: --test necesita URL de producto"); sys.exit(1)
         test_one(url); sys.exit(0)
+
+    if argv[0] == "--equipment-only":
+        # python scraper_fleetguard.py --equipment-only <categoria>
+        name = argv[1].lower() if len(argv) > 1 else ""
+        if not name:
+            print("ERROR: --equipment-only necesita la categoría (ej. air-primary-secondary)")
+            sys.exit(1)
+        configure(name, CATEGORIES.get(name, ""))
+        logging.info(f"Solo equipment: {name}")
+        equipment_only_run(); sys.exit(0)
 
     if argv[0] == "--retry-empty":
         # python scraper_fleetguard.py --retry-empty <categoria>
