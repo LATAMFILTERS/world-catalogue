@@ -1957,8 +1957,8 @@ def retry_empty():
 
 def equipment_only_run():
     """
-    Re-scrapea SOLO el tab Equipment para productos con equipment=[] en el
-    _results.json existente. No toca specs/cross/alternativas.
+    Re-scrapea SOLO los tabs Equipment + MaintenanceKits para productos que
+    tengan equipment=[] en el _results.json existente. No toca specs/cross/alts.
     Uso: python scraper_fleetguard.py --equipment-only air-primary-secondary
     """
     if not os.path.exists(OUTPUT_FILE):
@@ -1969,7 +1969,7 @@ def equipment_only_run():
         results = json.load(f)
 
     targets = [r for r in results if not r.get("equipment") and not r.get("error")]
-    logging.info(f"Productos sin equipment: {len(targets)} / {len(results)}")
+    logging.info(f"Productos sin equipment/kits: {len(targets)} / {len(results)}")
     if not targets:
         logging.info("Todos los productos ya tienen equipment. Nada que hacer.")
         build_equipment_matrix(results)
@@ -1990,6 +1990,8 @@ def equipment_only_run():
                 dismiss_popups(page)
                 wait_net(page, 20000)
                 time.sleep(3)
+
+                # Equipment tab
                 _click_tab(page, "Equipment")
                 equipment = _extract_equipment_tab(page)
                 if not equipment:
@@ -1997,7 +1999,16 @@ def equipment_only_run():
                     _click_tab(page, "Equipment")
                     equipment = _extract_equipment_tab(page)
                 prod["equipment"] = equipment
-                logging.info(f"  → {prod['part_number']}: {len(equipment)} equipos")
+
+                # Maintenance Kits tab
+                kits = []
+                if _click_tab_flexible(page,
+                                       ["MaintenanceKits", "MaintKits", "Kits", "Maintenance"],
+                                       ["maintenance kit", "maintenance", "kit"]):
+                    kits = _extract_maintenance_kits(page)
+                prod["maintenance_kits"] = kits
+
+                logging.info(f"  → {prod['part_number']}: {len(equipment)} equipos | {len(kits)} kits")
             except Exception as e:
                 logging.warning(f"  ERROR {prod['part_number']}: {e}")
             # Guardar progreso parcial cada 10 productos
@@ -2011,7 +2022,7 @@ def equipment_only_run():
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    logging.info(f"✅ Equipment actualizado — {OUTPUT_FILE}")
+    logging.info(f"✅ Equipment + Kits actualizados — {OUTPUT_FILE}")
     build_equipment_matrix(results)
 
 
