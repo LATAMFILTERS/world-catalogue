@@ -70,30 +70,21 @@ const CSS = `
     transition: width 0.1s linear;
   }
 
-  .hero-text-swap {
+  .hero-word {
     display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1);
   }
-  .hero-text-inner {
-    display: block;
-    animation: textCycle 9s steps(1) infinite;
+  .hero-word.out {
+    opacity: 0;
+    transform: translateY(-18px);
   }
-  @keyframes textCycle {
-    0%   { transform: translateY(0%); opacity: 1; }
-    28%  { transform: translateY(0%); opacity: 1; }
-    33%  { transform: translateY(-100%); opacity: 0; }
-    34%  { transform: translateY(100%); opacity: 0; }
-    38%  { transform: translateY(0%); opacity: 1; }
-    61%  { transform: translateY(0%); opacity: 1; }
-    66%  { transform: translateY(-100%); opacity: 0; }
-    67%  { transform: translateY(100%); opacity: 0; }
-    71%  { transform: translateY(0%); opacity: 1; }
-    99%  { transform: translateY(0%); opacity: 1; }
-    100% { transform: translateY(-100%); opacity: 0; }
+  .hero-word.in {
+    opacity: 0;
+    transform: translateY(18px);
   }
-  .hero-text-inner span {
-    display: block;
+  .hero-word.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @keyframes pulse-dot {
@@ -155,6 +146,34 @@ function useReveal() {
     els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   });
+}
+
+// ─── Industry word cycler ─────────────────────────────────────────────────────
+const CYCLE_WORDS = [
+  'Mining.','Marine.','Agriculture.','Construction.',
+  'Oil & Gas.','Power Gen.','Manufacturing.','Fleet.','Utilities.',
+];
+
+function useCycleWord() {
+  const [idx, setIdx] = useState(0);
+  const [phase, setPhase] = useState<'visible'|'out'|'in'>('visible');
+
+  useEffect(() => {
+    const tick = setInterval(() => {
+      // 1. slide out
+      setPhase('out');
+      setTimeout(() => {
+        // 2. swap word while invisible, snap to 'in' (below)
+        setIdx(i => (i + 1) % CYCLE_WORDS.length);
+        setPhase('in');
+        // 3. slide in
+        setTimeout(() => setPhase('visible'), 30);
+      }, 370);
+    }, 2200);
+    return () => clearInterval(tick);
+  }, []);
+
+  return { word: CYCLE_WORDS[idx], phase };
 }
 
 // ─── Scroll progress ──────────────────────────────────────────────────────────
@@ -256,6 +275,7 @@ function H2({ children, style }: { children: React.ReactNode; style?: React.CSSP
 // SECTION 01 — HERO
 // ═══════════════════════════════════════════════════════════════════════════════
 function Hero() {
+  const { word, phase } = useCycleWord();
   return (
     <section id="hero" style={{ position:'relative', minHeight:'100vh',
       display:'flex', alignItems:'center', overflow:'hidden', background: S1 }}>
@@ -284,12 +304,8 @@ function Hero() {
               fontSize:'clamp(3rem,6.5vw,5.2rem)', fontWeight:700,
               letterSpacing:'-0.04em', lineHeight:1.0, marginBottom:'2rem', color:'#fff' }}>
               Filtration for<br />
-              <span style={{ color: G }} className="hero-text-swap">
-                <span className="hero-text-inner">
-                  <span>Mining.</span>
-                  <span>Marine.</span>
-                  <span>Agriculture.</span>
-                </span>
+              <span className={`hero-word ${phase}`} style={{ color: G, minWidth:'6ch', display:'inline-block' }}>
+                {word}
               </span>
               <br />
               <span style={{ color:'rgba(255,255,255,0.45)' }}>Zero Compromise.</span>
