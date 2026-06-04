@@ -4,16 +4,37 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 
+const inputStyle: React.CSSProperties = {
+  width: '100%',
+  padding: '0.75rem',
+  background: 'rgba(255,255,255,0.05)',
+  border: '1px solid rgba(255,255,255,0.1)',
+  borderRadius: '4px',
+  color: 'rgba(255,255,255,0.75)',
+  fontFamily: 'Outfit, sans-serif',
+  fontSize: '0.95rem',
+  boxSizing: 'border-box',
+};
+
+const labelStyle: React.CSSProperties = {
+  display: 'block',
+  fontSize: '0.9rem',
+  fontWeight: 600,
+  marginBottom: '0.5rem',
+  color: 'rgba(255,255,255,0.75)',
+  fontFamily: 'Outfit, sans-serif',
+};
+
 export default function DistributorApplication() {
   const [formData, setFormData] = useState({
-    companyName: '',
     legalName: '',
     contactName: '',
     email: '',
-    phone: '',
+    whatsapp: '',
     country: '',
     state: '',
-    employees: '',
+    website: '',
+    primaryIndustry: '',
     yearsInBusiness: '',
     currentProducts: '',
     serviceArea: '',
@@ -41,20 +62,20 @@ export default function DistributorApplication() {
       .then(() => {
         setSubmitted(true);
         setFormData({
-          companyName: '',
           legalName: '',
           contactName: '',
           email: '',
-          phone: '',
+          whatsapp: '',
           country: '',
           state: '',
-          employees: '',
+          website: '',
+          primaryIndustry: '',
           yearsInBusiness: '',
           currentProducts: '',
           serviceArea: '',
           message: '',
         });
-        setTimeout(() => setSubmitted(false), 5000);
+        setTimeout(() => setSubmitted(false), 30000);
       })
       .catch(() => {
         alert('Error sending application. Please try again.');
@@ -63,7 +84,6 @@ export default function DistributorApplication() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
 
       {/* Hero Section */}
       <section
@@ -119,7 +139,8 @@ export default function DistributorApplication() {
               maxWidth: '700px',
             }}
           >
-            Join the ELIMFILTERS® network. We're seeking qualified distributors to expand our industrial filtration reach.
+            Join the ELIMFILTERS® authorized distributor network. We review every
+            application within 72 business hours and contact qualified candidates directly.
           </motion.p>
         </div>
       </section>
@@ -150,106 +171,279 @@ export default function DistributorApplication() {
                 WHY PARTNER WITH ELIMFILTERS®?
               </h2>
 
+              {/* Block 1 */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <h3
                   style={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
-                    marginBottom: '0.75rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
                   }}
                 >
-                  Market-Leading Technology
+                  Sell on Performance, Not Price
                 </h3>
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    color: 'rgba(255,255,255,0.65)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
-                  12 proprietary filtration technologies engineered for maximum performance across 12 industry verticals.
+                  ELIMFILTERS® is built on contamination control engineering — ISO standards,
+                  Beta ratio efficiency, quantified TCO impact. Your sales team closes on
+                  equipment reliability, not price. No commodity price pressure.
                 </p>
               </div>
 
+              {/* Block 2 */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <h3
                   style={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
-                    marginBottom: '0.75rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
                   }}
                 >
-                  Global Support Infrastructure
+                  20,000+ OEM Cross-References — Live at Your Fingertips
                 </h3>
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    color: 'rgba(255,255,255,0.65)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
-                  Headquarters in Frisco, Texas with LATAM operations center in Barquisimeto. Direct access to engineering and support teams.
+                  The Part Search tool at{' '}
+                  <a
+                    href="https://part-search.elimfilters.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#FFF12D', textDecoration: 'none' }}
+                  >
+                    part-search.elimfilters.com
+                  </a>{' '}
+                  lets you or your customers find the ELIMFILTERS® equivalent for any OEM
+                  part number in seconds. No catalog, no lookup table, no waiting on a
+                  quote. Your competitors do not offer this.
                 </p>
               </div>
 
+              {/* Block 3 */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <h3
                   style={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
-                    marginBottom: '0.75rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
                   }}
                 >
-                  Comprehensive Warranty
+                  30 Technical Pages — Your Team&apos;s Sales Toolkit
                 </h3>
                 <p
                   style={{
                     fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    color: 'rgba(255,255,255,0.65)',
                     fontFamily: 'Outfit, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
-                  Non-prorated coverage with immediate replacement guarantee. Full engine protection included.
+                  The{' '}
+                  <a
+                    href="/knowledge-system"
+                    style={{ color: '#FFF12D', textDecoration: 'none' }}
+                  >
+                    ELIMFILTERS® Knowledge System
+                  </a>{' '}
+                  covers ISO standards, contamination failure modes, and fleet optimization
+                  strategies — organized by industry and system type. Your team uses these
+                  pages in customer conversations. Your customers use them to understand why
+                  filtration decisions affect equipment lifespan.
                 </p>
               </div>
 
+              {/* Block 4 */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <h3
                   style={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     fontWeight: 700,
                     fontFamily: 'Space Grotesk, sans-serif',
-                    marginBottom: '0.75rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
                   }}
                 >
-                  Distributor Benefits
+                  Engine Protection Warranty — A Closing Argument
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.95rem',
+                    color: 'rgba(255,255,255,0.65)',
+                    fontFamily: 'Outfit, sans-serif',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  ELIMFILTERS® includes engine protection coverage with every authorized
+                  distributor sale. Non-prorated, with 24-hour response. Tell your customer:
+                  if this filter fails and damages the engine, ELIMFILTERS® covers the repair.
+                  No competing brand in this category makes that commitment.
+                </p>
+              </div>
+
+              {/* Block 5 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h3
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
+                  }}
+                >
+                  11 Languages — Your Customers Served in Their Language
+                </h3>
+                <p
+                  style={{
+                    fontSize: '0.95rem',
+                    color: 'rgba(255,255,255,0.65)',
+                    fontFamily: 'Outfit, sans-serif',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  The ELIMFILTERS® website detects your customer&apos;s language and serves
+                  content in Spanish, Portuguese, French, German, and eight other languages
+                  automatically. Send a customer to elimfilters.com — they get it in their
+                  own language without any setup on your end.
+                </p>
+              </div>
+
+              {/* Block 6 */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <h3
+                  style={{
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    marginBottom: '0.6rem',
+                    color: 'rgba(255,255,255,0.9)',
+                  }}
+                >
+                  Program Structure
                 </h3>
                 <ul
                   style={{
-                    fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.75)',
+                    fontSize: '0.9rem',
+                    color: 'rgba(255,255,255,0.6)',
                     fontFamily: 'Outfit, sans-serif',
-                    lineHeight: 1.7,
-                    paddingLeft: '1.5rem',
+                    lineHeight: 1.75,
+                    paddingLeft: '1.25rem',
+                    margin: 0,
                   }}
                 >
-                  <li>Competitive wholesale pricing</li>
-                  <li>Marketing and sales support</li>
-                  <li>Technical training program</li>
-                  <li>Dedicated account manager</li>
-                  <li>Co-branded marketing materials</li>
-                  <li>Priority order fulfillment</li>
+                  <li>Territory-based exclusivity for qualified distributors</li>
+                  <li>Competitive wholesale pricing with volume structure</li>
+                  <li>Dedicated account manager and WhatsApp technical support</li>
+                  <li>Three-module training program (online, 8 hours)</li>
+                  <li>Co-brandable digital marketing materials</li>
+                  <li>Priority order fulfillment and 24H warranty response</li>
                 </ul>
+              </div>
+
+              {/* What Happens Next */}
+              <div
+                style={{
+                  marginTop: '3rem',
+                  paddingTop: '2.5rem',
+                  borderTop: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.2em',
+                    color: '#FFF12D',
+                    fontFamily: 'JetBrains Mono, monospace',
+                    marginBottom: '1.75rem',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  // WHAT HAPPENS AFTER YOU APPLY
+                </h3>
+
+                {[
+                  {
+                    number: '01',
+                    title: 'APPLICATION REVIEW',
+                    body: 'We evaluate your territory, industry focus, and product line fit. Response within 72 business hours.',
+                  },
+                  {
+                    number: '02',
+                    title: 'DISCOVERY CALL',
+                    body: 'A member of our commercial team contacts you to discuss your market and how ELIMFILTERS® fits your current portfolio.',
+                  },
+                  {
+                    number: '03',
+                    title: 'PROGRAM TERMS',
+                    body: 'If there is a mutual fit, we provide program terms, territory details, and onboarding timeline.',
+                  },
+                ].map((step) => (
+                  <div
+                    key={step.number}
+                    style={{
+                      display: 'flex',
+                      gap: '1rem',
+                      marginBottom: '1.5rem',
+                      alignItems: 'flex-start',
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: '0.7rem',
+                        fontFamily: 'JetBrains Mono, monospace',
+                        color: '#FFF12D',
+                        fontWeight: 700,
+                        minWidth: '28px',
+                        paddingTop: '2px',
+                      }}
+                    >
+                      {step.number}
+                    </span>
+                    <div>
+                      <div
+                        style={{
+                          fontSize: '0.8rem',
+                          fontWeight: 700,
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          color: 'rgba(255,255,255,0.9)',
+                          marginBottom: '0.35rem',
+                          letterSpacing: '0.05em',
+                        }}
+                      >
+                        {step.title}
+                      </div>
+                      <p
+                        style={{
+                          fontSize: '0.9rem',
+                          color: 'rgba(255,255,255,0.6)',
+                          fontFamily: 'Outfit, sans-serif',
+                          lineHeight: 1.55,
+                          margin: 0,
+                        }}
+                      >
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             </AnimateIn>
@@ -280,51 +474,50 @@ export default function DistributorApplication() {
                 {submitted && (
                   <div
                     style={{
-                      background: 'rgba(100, 200, 100, 0.2)',
-                      border: '1px solid rgba(100, 200, 100, 0.4)',
+                      background: 'rgba(100, 200, 100, 0.08)',
+                      border: '1px solid rgba(100, 200, 100, 0.3)',
                       borderRadius: '8px',
-                      padding: '1rem',
+                      padding: '1.25rem',
                       marginBottom: '1.5rem',
-                      fontSize: '0.95rem',
-                      color: '#90ee90',
                       fontFamily: 'Outfit, sans-serif',
                     }}
                   >
-                    ✓ Application submitted! Our team will review and contact you soon.
+                    <div
+                      style={{
+                        fontSize: '0.95rem',
+                        color: '#90ee90',
+                        marginBottom: '0.5rem',
+                        fontWeight: 600,
+                      }}
+                    >
+                      ✓ Application received.
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '0.85rem',
+                        color: 'rgba(255,255,255,0.55)',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      We will complete our review within 72 business hours and contact
+                      you at the email address you provided. Check your inbox for a
+                      confirmation email from ELIMFILTERS®.
+                    </div>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit}>
+
+                  {/* Company Legal Name */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Company Legal Name *
-                    </label>
+                    <label style={labelStyle}>Company Legal Name *</label>
                     <input
                       type="text"
                       name="legalName"
                       value={formData.legalName}
                       onChange={handleChange}
                       required
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -336,36 +529,16 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Contact Name */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Contact Name *
-                    </label>
+                    <label style={labelStyle}>Contact Name *</label>
                     <input
                       type="text"
                       name="contactName"
                       value={formData.contactName}
                       onChange={handleChange}
                       required
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -377,36 +550,16 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Email */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Email *
-                    </label>
+                    <label style={labelStyle}>Email *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -418,36 +571,17 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* WhatsApp */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Phone *
-                    </label>
+                    <label style={labelStyle}>WhatsApp Number *</label>
                     <input
                       type="tel"
-                      name="phone"
-                      value={formData.phone}
+                      name="whatsapp"
+                      value={formData.whatsapp}
                       onChange={handleChange}
                       required
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      placeholder="+1 555 000 0000"
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -459,36 +593,16 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Country */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Country *
-                    </label>
+                    <label style={labelStyle}>Country *</label>
                     <input
                       type="text"
                       name="country"
                       value={formData.country}
                       onChange={handleChange}
                       required
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -500,35 +614,15 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* State / Province */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      State / Province
-                    </label>
+                    <label style={labelStyle}>State / Province</label>
                     <input
                       type="text"
                       name="state"
                       value={formData.state}
                       onChange={handleChange}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -540,35 +634,77 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Company Website */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
+                    <label style={labelStyle}>Company Website *</label>
+                    <input
+                      type="url"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      required
+                      placeholder="https://yourcompany.com"
+                      style={inputStyle}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
+                        e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                        e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                      }}
+                    />
+                  </div>
+
+                  {/* Primary Industry */}
+                  <div style={{ marginBottom: '1.25rem' }}>
+                    <label style={labelStyle}>Primary Industry *</label>
+                    <select
+                      name="primaryIndustry"
+                      value={formData.primaryIndustry}
+                      onChange={handleChange}
+                      required
                       style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        ...inputStyle,
+                        background: formData.primaryIndustry ? 'rgba(255,255,255,0.05)' : 'rgba(20,20,20,0.9)',
+                        cursor: 'pointer',
+                        color: formData.primaryIndustry ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.35)',
+                        appearance: 'none' as const,
+                        WebkitAppearance: 'none' as const,
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
                       }}
                     >
-                      Years in Business
-                    </label>
+                      <option value="" disabled>Select primary industry</option>
+                      <option value="Agriculture">Agriculture</option>
+                      <option value="Mining">Mining</option>
+                      <option value="Marine">Marine</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Oil & Gas">Oil &amp; Gas</option>
+                      <option value="Power Generation">Power Generation</option>
+                      <option value="Transportation & Fleets">Transportation &amp; Fleets</option>
+                      <option value="Automotive">Automotive</option>
+                      <option value="Bus & Coach">Bus &amp; Coach</option>
+                      <option value="Railway">Railway</option>
+                      <option value="Waste Management">Waste Management</option>
+                      <option value="Manufacturing">Manufacturing</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  {/* Years in Business */}
+                  <div style={{ marginBottom: '1.25rem' }}>
+                    <label style={labelStyle}>Years in Business</label>
                     <input
                       type="number"
                       name="yearsInBusiness"
                       value={formData.yearsInBusiness}
                       onChange={handleChange}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                      }}
+                      style={inputStyle}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -580,36 +716,15 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Current Product Lines */}
                   <div style={{ marginBottom: '1.25rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Current Product Lines
-                    </label>
+                    <label style={labelStyle}>Current Product Lines</label>
                     <textarea
                       name="currentProducts"
                       value={formData.currentProducts}
                       onChange={handleChange}
                       rows={3}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                        resize: 'vertical',
-                      }}
+                      style={{ ...inputStyle, resize: 'vertical' }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -621,36 +736,15 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Service Area */}
                   <div style={{ marginBottom: '1.75rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Service Area / Markets
-                    </label>
+                    <label style={labelStyle}>Service Area / Markets</label>
                     <textarea
                       name="serviceArea"
                       value={formData.serviceArea}
                       onChange={handleChange}
                       rows={3}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                        resize: 'vertical',
-                      }}
+                      style={{ ...inputStyle, resize: 'vertical' }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -662,36 +756,15 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Additional Information */}
                   <div style={{ marginBottom: '1.75rem' }}>
-                    <label
-                      style={{
-                        display: 'block',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        marginBottom: '0.5rem',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                      }}
-                    >
-                      Additional Information
-                    </label>
+                    <label style={labelStyle}>Additional Information</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '4px',
-                        color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.95rem',
-                        boxSizing: 'border-box',
-                        resize: 'vertical',
-                      }}
+                      style={{ ...inputStyle, resize: 'vertical' }}
                       onFocus={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)';
                         e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
@@ -702,6 +775,20 @@ export default function DistributorApplication() {
                       }}
                     />
                   </div>
+
+                  {/* Response timeline */}
+                  <p
+                    style={{
+                      fontSize: '0.8rem',
+                      color: 'rgba(255,255,255,0.4)',
+                      fontFamily: 'Outfit, sans-serif',
+                      marginBottom: '1.25rem',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Applications are reviewed within 72 business hours. You will receive
+                    our response at the email address you provided.
+                  </p>
 
                   <motion.button
                     type="submit"

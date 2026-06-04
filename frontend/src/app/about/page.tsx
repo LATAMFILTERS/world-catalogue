@@ -104,6 +104,21 @@ export default function About() {
               ELIMFILTERS® specializes in protecting critical assets through advanced filtration
               engineering. We design systems that prevent contamination before it damages.
             </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.45)',
+                fontFamily: 'Outfit, sans-serif',
+                maxWidth: '680px',
+                marginTop: '1.5rem',
+              }}
+            >
+              ELIMFILTERS® is an advanced filtration solutions brand built on proprietary technologies owned and developed by Kleo Technologies.
+            </motion.p>
           </motion.div>
         </div>
       </section>

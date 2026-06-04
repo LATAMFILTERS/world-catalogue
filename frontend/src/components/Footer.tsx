@@ -223,7 +223,7 @@ export function Footer() {
                 marginTop: '4px',
               }}
             >
-              © 2015–2026 Kleo Technologies
+              © 2015–2026 ELIMFILTERS® — Kleo Technologies
             </div>
           </div>
         </div>
