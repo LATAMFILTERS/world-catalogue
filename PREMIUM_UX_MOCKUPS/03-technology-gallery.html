@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ELIMFILTERS® — Technology Gallery · Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+
+/* ─── RESET & BASE ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #000000;
+  --yellow: #FFF12D;
+  --white: #ffffff;
+  --muted: rgba(255,255,255,0.45);
+  --faint: rgba(255,255,255,0.18);
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.12);
+  --yellow-glow: rgba(255,241,45,0.22);
+  --blue-tint: rgba(0,140,255,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── WRAPPER ───────────────────────────────────────────────────── */
+.mockup-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 40px 100px;
+}
+
+/* ─── FILE HEADER ───────────────────────────────────────────────── */
+.file-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--yellow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.file-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.file-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 56px;
+}
+
+/* ─── SECTION LABEL ─────────────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--yellow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,241,45,0.35);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background: rgba(255,241,45,0.04);
+}
+
+.section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+/* ─── SECTION DIVIDER ───────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,241,45,0.18), transparent);
+  margin: 64px 0 48px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION A — HORIZONTAL GALLERY
+═══════════════════════════════════════════════════════════════════ */
+
+.gallery-section {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+/* Gallery header bar */
+.gallery-header {
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gallery-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--yellow);
+  letter-spacing: 0.18em;
+}
+
+.gallery-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Navigation arrows */
+.gallery-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.2s;
+}
+
+.nav-arrow.active-arrow {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+/* Gallery track */
+.gallery-track-outer {
+  padding: 32px 32px 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Right fade-out mask simulating scroll cutoff */
+.gallery-track-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #000);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  /* Partially revealing next cards */
+}
+
+/* ─── TECH CARD (large, primary) ─────────────────────────────────── */
+.tech-card {
+  flex: 0 0 520px;
+  min-height: 480px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #000;
+  transition: border-color 0.3s;
+}
+
+.tech-card.primary {
+  border-color: rgba(255,241,45,0.25);
+}
+
+.tech-card.secondary {
+  flex: 0 0 340px;
+  opacity: 0.85;
+}
+
+.tech-card.tertiary {
+  flex: 0 0 200px;
+  opacity: 0.5;
+}
+
+/* Card visual area */
+.card-visual {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-visual.primary-visual {
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,241,45,0.08) 0%, rgba(255,241,45,0.02) 40%, #000 75%);
+}
+
+.card-visual.secondary-visual {
+  background: radial-gradient(ellipse at 50% 40%, rgba(0,120,255,0.1) 0%, rgba(0,80,200,0.03) 40%, #000 75%);
+}
+
+.card-visual.tertiary-visual {
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.04) 0%, #000 70%);
+}
+
+/* Grid overlay on card visual */
+.card-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255,255,255,0.02) 32px),
+    repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(255,255,255,0.02) 32px);
+  pointer-events: none;
+}
+
+/* Concentric circle filter media pattern */
+.filter-media-svg {
+  position: absolute;
+  opacity: 0.7;
+}
+
+/* Card content */
+.card-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-system-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--yellow);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.card-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.card-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+
+.card-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: rgba(255,241,45,0.07);
+  border: 1px solid rgba(255,241,45,0.25);
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--yellow);
+  letter-spacing: 0.08em;
+  align-self: flex-start;
+}
+
+.card-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--yellow);
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255,241,45,0.35);
+  align-self: flex-start;
+}
+
+/* Card: secondary (blue tint) */
+.card-name.blue { color: rgba(120,180,255,0.9); }
+.card-spec-pill.blue {
+  background: rgba(0,120,255,0.07);
+  border-color: rgba(0,120,255,0.3);
+  color: rgba(100,160,255,0.9);
+}
+.card-cta.blue { color: rgba(100,160,255,0.9); border-color: rgba(100,160,255,0.35); }
+.card-system-label.blue { color: rgba(100,160,255,0.9); }
+
+/* Position dots */
+.position-dots {
+  display: flex;
+  gap: 8px;
+  padding: 16px 32px;
+  border-top: 1px solid var(--border);
+  align-items: center;
+}
+
+.pos-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.pos-dot.active {
+  background: var(--yellow);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION B — MECHANISM ANIMATION
+═══════════════════════════════════════════════════════════════════ */
+
+.mechanism-section {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.mechanism-header {
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.mech-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.mech-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--yellow);
+  letter-spacing: 0.18em;
+}
+
+.mechanism-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+}
+
+/* Left: particle capture SVG panel */
+.capture-panel {
+  padding: 48px 40px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 40% 50%, rgba(255,241,45,0.04) 0%, #000 65%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── PARTICLE CAPTURE ANIMATIONS ──────────────────────────────── */
+
+/* Large particle: hits outer layer */
+@keyframes large-particle {
+  0%   { transform: translateX(0); opacity: 0; }
+  5%   { opacity: 1; }
+  38%  { transform: translateX(100px); opacity: 1; }
+  42%  { transform: translateX(96px); opacity: 1; }
+  /* flash */
+  44%  { transform: translateX(96px); opacity: 0.2; }
+  48%  { transform: translateX(96px); opacity: 1; }
+  80%  { transform: translateX(96px); opacity: 0.8; }
+  100% { transform: translateX(96px); opacity: 0; }
+}
+
+/* Medium particle: passes outer, hits composite */
+@keyframes medium-particle {
+  0%   { transform: translateX(0); opacity: 0; }
+  5%   { opacity: 0; }
+  8%   { opacity: 0.9; }
+  55%  { transform: translateX(172px); opacity: 0.9; }
+  60%  { transform: translateX(168px); opacity: 0.2; }
+  65%  { transform: translateX(168px); opacity: 0.9; }
+  88%  { transform: translateX(168px); opacity: 0.6; }
+  100% { transform: translateX(168px); opacity: 0; }
+}
+
+/* Small particle: passes two layers, hits synthetic */
+@keyframes small-particle {
+  0%   { transform: translateX(0); opacity: 0; }
+  12%  { opacity: 0; }
+  15%  { opacity: 0.85; }
+  72%  { transform: translateX(242px); opacity: 0.85; }
+  76%  { transform: translateX(238px); opacity: 0.15; }
+  80%  { transform: translateX(238px); opacity: 0.85; }
+  95%  { transform: translateX(238px); opacity: 0.5; }
+  100% { transform: translateX(238px); opacity: 0; }
+}
+
+/* Capture flash at collision point */
+@keyframes capture-flash-outer {
+  0%, 37%, 55%, 100% { opacity: 0; }
+  40%, 48% { opacity: 1; }
+}
+
+@keyframes capture-flash-composite {
+  0%, 53%, 68%, 100% { opacity: 0; }
+  57%, 63% { opacity: 1; }
+}
+
+@keyframes capture-flash-synthetic {
+  0%, 70%, 84%, 100% { opacity: 0; }
+  74%, 79% { opacity: 1; }
+}
+
+/* Background particles (tiny, passing through when caught) */
+@keyframes bg-particle-drift {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  8%   { opacity: 0.4; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateX(260px) translateY(2px); opacity: 0; }
+}
+
+/* Right: spec panel */
+.spec-panel {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* ─── PARTICLE SIZE SCALE ────────────────────────────────────────── */
+.size-scale {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.size-scale-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+
+.scale-track {
+  position: relative;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+/* Yellow fill from left to MACROCORE position */
+.scale-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 62%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,241,45,0.6), rgba(255,241,45,0.2));
+  border-radius: 3px;
+}
+
+.scale-marker {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 14px;
+  background: var(--yellow);
+  border-radius: 1px;
+}
+
+.scale-marker-label {
+  position: absolute;
+  top: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--yellow);
+  white-space: nowrap;
+  transform: translateX(-50%);
+  letter-spacing: 0.08em;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.scale-label-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.scale-label-size {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.08em;
+}
+
+.scale-label-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+}
+
+.scale-label-name.highlighted {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* Spec highlight box */
+.spec-highlight {
+  background: rgba(255,241,45,0.05);
+  border: 1px solid rgba(255,241,45,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spec-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+}
+
+.spec-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+.spec-cert {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.12em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION C — PERFORMANCE CURVE
+═══════════════════════════════════════════════════════════════════ */
+
+.curve-section {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.curve-header {
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.curve-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--white);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.curve-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.12em;
+}
+
+.curve-body {
+  padding: 40px 48px 48px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─── PERFORMANCE CURVE ANIMATIONS ─────────────────────────────── */
+@keyframes draw-curve {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes dashed-line-slide {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes dot-appear {
+  0%, 60%   { opacity: 0; transform: scale(0); }
+  70%  { opacity: 1; transform: scale(1.3); }
+  80%  { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ─── CURVE LEGEND ───────────────────────────────────────────────── */
+.curve-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 16px;
+}
+
+.legend-card {
+  padding: 18px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.legend-card.highlighted {
+  background: rgba(255,241,45,0.04);
+  border-color: rgba(255,241,45,0.2);
+}
+
+.legend-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.legend-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.legend-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+}
+
+/* ─── CONCENTRIC CIRCLE SVG PATTERN ─────────────────────────────── */
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.28; }
+}
+
+@keyframes ring-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.ring-group {
+  transform-origin: 120px 120px;
+  animation: ring-rotate 40s linear infinite;
+}
+
+/* ─── FILTER LAYER ANIMATION SVG ────────────────────────────────── */
+.layer-svg-wrap {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+}
+
+</style>
+</head>
+<body>
+
+<div class="mockup-wrapper">
+
+  <!-- FILE HEADER -->
+  <p class="file-header">ELIMFILTERS® · UX MOCKUP 03 · TECHNOLOGY GALLERY</p>
+  <h1 class="file-title">Technology Gallery — Horizontal Scroll + Mechanism Animation</h1>
+  <p class="file-subtitle">Three sections: (A) horizontal gallery with scroll simulation, (B) filter mechanism particle capture animation, (C) performance efficiency curve with ISO data visualization.</p>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- SECTION A — HORIZONTAL GALLERY                                  -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+
+  <div class="section-label">SECTION A — TECHNOLOGY HUB · HORIZONTAL GALLERY</div>
+
+  <div class="gallery-section">
+
+    <!-- Header bar -->
+    <div class="gallery-header">
+      <div class="gallery-header-left">
+        <span class="gallery-eyebrow">// ELIMFILTERS® · 12 PROTECTION TECHNOLOGIES</span>
+        <span class="gallery-title">Technology Ecosystem</span>
+      </div>
+      <div class="gallery-nav">
+        <div class="nav-arrow">←</div>
+        <div class="nav-arrow active-arrow">→</div>
+      </div>
+    </div>
+
+    <!-- Gallery track -->
+    <div class="gallery-track-outer">
+      <div class="gallery-track">
+
+        <!-- CARD 1: MACROCORE — Primary, full width -->
+        <div class="tech-card primary">
+
+          <!-- Visual area: concentric circles filter media cross-section -->
+          <div class="card-visual primary-visual">
+            <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Animated concentric rings (filter media cross-section) -->
+              <g class="ring-group">
+                <circle cx="120" cy="120" r="108" stroke="rgba(255,241,45,0.06)" stroke-width="1.5" fill="none"/>
+                <circle cx="120" cy="120" r="96"  stroke="rgba(255,241,45,0.09)" stroke-width="1.5" fill="none"/>
+                <circle cx="120" cy="120" r="84"  stroke="rgba(255,241,45,0.12)" stroke-width="2" fill="none"/>
+                <circle cx="120" cy="120" r="72"  stroke="rgba(255,241,45,0.15)" stroke-width="2" fill="none"/>
+                <circle cx="120" cy="120" r="60"  stroke="rgba(255,241,45,0.19)" stroke-width="2" fill="none"/>
+                <circle cx="120" cy="120" r="48"  stroke="rgba(255,241,45,0.22)" stroke-width="2.5" fill="none"/>
+                <circle cx="120" cy="120" r="36"  stroke="rgba(255,241,45,0.27)" stroke-width="2.5" fill="none"/>
+                <circle cx="120" cy="120" r="24"  stroke="rgba(255,241,45,0.32)" stroke-width="3" fill="rgba(255,241,45,0.04)"/>
+                <circle cx="120" cy="120" r="12"  fill="rgba(255,241,45,0.12)"/>
+              </g>
+
+              <!-- Radial spokes -->
+              <line x1="120" y1="12"  x2="120" y2="228" stroke="rgba(255,241,45,0.04)" stroke-width="1"/>
+              <line x1="12"  y1="120" x2="228" y2="120" stroke="rgba(255,241,45,0.04)" stroke-width="1"/>
+              <line x1="35"  y1="35"  x2="205" y2="205" stroke="rgba(255,241,45,0.04)" stroke-width="1"/>
+              <line x1="205" y1="35"  x2="35"  y2="205" stroke="rgba(255,241,45,0.04)" stroke-width="1"/>
+
+              <!-- Center label -->
+              <text x="120" y="116" fill="rgba(255,241,45,0.4)" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle" letter-spacing="2">FILTER</text>
+              <text x="120" y="130" fill="rgba(255,241,45,0.4)" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle" letter-spacing="2">MEDIA</text>
+
+              <!-- Section indicator marks -->
+              <rect x="70" y="12" width="18" height="4" rx="2" fill="rgba(255,241,45,0.2)"/>
+              <text x="79" y="27" fill="rgba(255,241,45,0.3)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle">OUTER</text>
+
+              <rect x="106" y="52" width="12" height="3" rx="1.5" fill="rgba(255,241,45,0.15)"/>
+              <text x="112" y="64" fill="rgba(255,241,45,0.25)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle">MID</text>
+            </svg>
+
+            <!-- "CROSS-SECTION" label -->
+            <div style="position:absolute; bottom:12px; left:16px; font-family:'JetBrains Mono',monospace; font-size:0.6rem; color:rgba(255,241,45,0.3); letter-spacing:0.14em;">FILTER MEDIA · CROSS-SECTION</div>
+          </div>
+
+          <!-- Card content -->
+          <div class="card-content">
+            <span class="card-system-label">SYSTEM 01 · AIR INTAKE FILTRATION</span>
+            <span class="card-name">MACROCORE™</span>
+            <span class="card-subtitle">Depth-Loading Cellulose-Synthetic Composite Media — Engineered for High-Dust Industrial Environments</span>
+            <span class="card-spec-pill">β₁₀(c) ≥ 200 · 18µm absolute</span>
+            <a href="#" class="card-cta">DISCOVER →</a>
+          </div>
+
+        </div>
+
+        <!-- CARD 2: AQUAGUARD — Secondary, partially visible -->
+        <div class="tech-card secondary">
+
+          <div class="card-visual secondary-visual">
+            <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Water droplet abstraction (fuel/water filtration) -->
+              <ellipse cx="90" cy="95" rx="45" ry="52" fill="rgba(0,120,255,0.06)" stroke="rgba(0,140,255,0.25)" stroke-width="1.5"/>
+              <ellipse cx="90" cy="95" rx="30" ry="36" fill="rgba(0,120,255,0.04)" stroke="rgba(0,140,255,0.15)" stroke-width="1"/>
+              <ellipse cx="90" cy="95" rx="15" ry="18" fill="rgba(0,120,255,0.06)" stroke="rgba(0,140,255,0.2)" stroke-width="1"/>
+              <!-- Droplet tip -->
+              <path d="M 90 43 C 78 62 72 72 72 85" stroke="rgba(0,140,255,0.3)" stroke-width="1.5" fill="none"/>
+              <path d="M 90 43 C 102 62 108 72 108 85" stroke="rgba(0,140,255,0.3)" stroke-width="1.5" fill="none"/>
+              <!-- Water removal icon -->
+              <line x1="60" y1="148" x2="120" y2="148" stroke="rgba(0,140,255,0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+              <text x="90" y="162" fill="rgba(0,140,255,0.4)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="2">H₂O REMOVAL</text>
+            </svg>
+          </div>
+
+          <div class="card-content">
+            <span class="card-system-label blue">SYSTEM 04 · FUEL FILTRATION</span>
+            <span class="card-name blue">AQUAGUARD™</span>
+            <span class="card-subtitle" style="font-size:0.78rem;">Coalescing Water-Separation Fuel Filtration — ISO 12937 Compliant</span>
+            <span class="card-spec-pill blue">Water sep. ≥ 95% · 2µm</span>
+          </div>
+
+        </div>
+
+        <!-- CARD 3: NANOFORCE — Edge visible -->
+        <div class="tech-card tertiary">
+          <div class="card-visual tertiary-visual" style="height:160px;">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <circle cx="60" cy="60" r="50" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none"/>
+              <circle cx="60" cy="60" r="35" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none"/>
+              <circle cx="60" cy="60" r="20" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="card-content">
+            <span class="card-system-label" style="color:rgba(255,255,255,0.3); font-size:0.6rem;">SYSTEM 02 · LUBE OIL</span>
+            <span class="card-name" style="font-size:1.4rem; color:rgba(255,255,255,0.4);">NANO<br/>FORCE™</span>
+          </div>
+        </div>
+
+      </div><!-- /gallery-track -->
+    </div><!-- /gallery-track-outer -->
+
+    <!-- Position dots -->
+    <div class="position-dots">
+      <div class="pos-dot active"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <div class="pos-dot"></div>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:rgba(255,255,255,0.2); margin-left:8px; letter-spacing:0.1em;">1 / 9 TECHNOLOGIES</span>
+    </div>
+
+  </div><!-- /gallery-section -->
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- SECTION B — MECHANISM ANIMATION                                 -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+
+  <div class="section-label">SECTION B — TECHNOLOGY DETAIL · MACROCORE™ MECHANISM ANIMATION</div>
+
+  <div class="mechanism-section">
+
+    <div class="mechanism-header">
+      <span class="mech-eyebrow">// MACROCORE™ · PARTICLE CAPTURE MECHANISM</span>
+      <span class="mech-title">Depth-Loading Filtration — Three-Stage Capture</span>
+    </div>
+
+    <div class="mechanism-body">
+
+      <!-- LEFT: Animated particle capture SVG -->
+      <div class="capture-panel">
+        <div class="layer-svg-wrap">
+          <svg width="560" height="360" viewBox="0 0 560 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- ── Background grid ── -->
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="560" height="360" fill="url(#grid)"/>
+
+            <!-- ── LAYER BACKGROUNDS ── -->
+            <!-- Layer 1: OUTER CELLULOSE -->
+            <rect x="100" y="30" width="80" height="300" rx="3"
+              fill="rgba(255,241,45,0.03)"
+              stroke="rgba(255,241,45,0.18)" stroke-width="1.5"/>
+
+            <!-- Internal cellulose fiber pattern (vertical) -->
+            <line x1="112" y1="30" x2="112" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="122" y1="30" x2="122" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="132" y1="30" x2="132" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="142" y1="30" x2="142" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="152" y1="30" x2="152" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="162" y1="30" x2="162" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <line x1="172" y1="30" x2="172" y2="330" stroke="rgba(255,241,45,0.07)" stroke-width="1"/>
+            <!-- Horizontal weave -->
+            <line x1="100" y1="80"  x2="180" y2="80"  stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+            <line x1="100" y1="120" x2="180" y2="120" stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+            <line x1="100" y1="160" x2="180" y2="160" stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+            <line x1="100" y1="200" x2="180" y2="200" stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+            <line x1="100" y1="240" x2="180" y2="240" stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+            <line x1="100" y1="280" x2="180" y2="280" stroke="rgba(255,241,45,0.06)" stroke-width="0.5"/>
+
+            <!-- Layer 2: COMPOSITE MEDIA -->
+            <rect x="200" y="30" width="80" height="300" rx="3"
+              fill="rgba(255,241,45,0.05)"
+              stroke="rgba(255,241,45,0.28)" stroke-width="1.5"/>
+
+            <!-- Composite diagonal pattern -->
+            <line x1="200" y1="50"  x2="280" y2="130" stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <line x1="200" y1="100" x2="280" y2="180" stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <line x1="200" y1="150" x2="280" y2="230" stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <line x1="200" y1="200" x2="280" y2="280" stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <line x1="200" y1="250" x2="263" y2="313" stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <line x1="220" y1="30"  x2="280" y2="90"  stroke="rgba(255,241,45,0.08)" stroke-width="1"/>
+            <!-- Reverse diagonal -->
+            <line x1="280" y1="50"  x2="200" y2="130" stroke="rgba(255,241,45,0.05)" stroke-width="0.8"/>
+            <line x1="280" y1="120" x2="200" y2="200" stroke="rgba(255,241,45,0.05)" stroke-width="0.8"/>
+            <line x1="280" y1="190" x2="200" y2="270" stroke="rgba(255,241,45,0.05)" stroke-width="0.8"/>
+
+            <!-- Layer 3: SYNTHETIC DEPTH -->
+            <rect x="300" y="30" width="80" height="300" rx="3"
+              fill="rgba(255,241,45,0.08)"
+              stroke="rgba(255,241,45,0.4)" stroke-width="2"/>
+
+            <!-- Synthetic mesh pattern -->
+            <line x1="310" y1="30" x2="310" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="320" y1="30" x2="320" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="330" y1="30" x2="330" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="340" y1="30" x2="340" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="350" y1="30" x2="350" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="360" y1="30" x2="360" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="370" y1="30" x2="370" y2="330" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="50"  x2="380" y2="50"  stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="70"  x2="380" y2="70"  stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="90"  x2="380" y2="90"  stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="110" x2="380" y2="110" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="130" x2="380" y2="130" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="150" x2="380" y2="150" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="170" x2="380" y2="170" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="190" x2="380" y2="190" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="210" x2="380" y2="210" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="230" x2="380" y2="230" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="250" x2="380" y2="250" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="270" x2="380" y2="270" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="290" x2="380" y2="290" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+            <line x1="300" y1="310" x2="380" y2="310" stroke="rgba(255,241,45,0.1)" stroke-width="1.5"/>
+
+            <!-- ── LAYER LABELS (above) ── -->
+            <text x="140" y="20" fill="rgba(255,241,45,0.5)" font-family="JetBrains Mono, monospace" font-size="8.5" text-anchor="middle" letter-spacing="1">OUTER</text>
+            <text x="140" y="10" fill="rgba(255,241,45,0.35)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">CELLULOSE</text>
+
+            <text x="240" y="20" fill="rgba(255,241,45,0.65)" font-family="JetBrains Mono, monospace" font-size="8.5" text-anchor="middle" letter-spacing="1">COMPOSITE</text>
+            <text x="240" y="10" fill="rgba(255,241,45,0.5)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">MEDIA</text>
+
+            <text x="340" y="20" fill="rgba(255,241,45,0.85)" font-family="JetBrains Mono, monospace" font-size="8.5" text-anchor="middle" letter-spacing="1">SYNTHETIC</text>
+            <text x="340" y="10" fill="rgba(255,241,45,0.7)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">DEPTH</text>
+
+            <!-- ── INPUT LABEL ── -->
+            <text x="60" y="178" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">DIRTY</text>
+            <text x="60" y="190" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">AIR →</text>
+
+            <!-- Input arrows -->
+            <path d="M 15 170 L 95 170" stroke="rgba(255,255,255,0.12)" stroke-width="1" marker-end="url(#arrowIn)"/>
+            <path d="M 15 185 L 95 185" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <path d="M 15 200 L 95 200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+            <!-- ── OUTPUT LABEL ── -->
+            <text x="460" y="178" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">CLEAN</text>
+            <text x="460" y="190" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">AIR →</text>
+
+            <!-- Output arrows -->
+            <path d="M 385 170 L 520 170" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" marker-end="url(#arrowOut)"/>
+            <path d="M 385 185 L 520 185" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+            <path d="M 385 200 L 520 200" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+            <!-- ── PARTICLE PATHS ── -->
+
+            <!-- LARGE particle (≥18µm) — hits OUTER CELLULOSE layer -->
+            <!-- The circle is at y=180 (center), x starts at 15 -->
+            <circle cx="15" cy="180" r="9"
+              fill="rgba(255,100,100,0.85)"
+              stroke="rgba(255,80,80,0.6)" stroke-width="1"
+              style="animation: large-particle 3.5s ease-in-out infinite;">
+            </circle>
+
+            <!-- Flash at outer layer collision -->
+            <circle cx="111" cy="180" r="14"
+              fill="rgba(255,241,45,0.6)"
+              style="animation: capture-flash-outer 3.5s ease-in-out infinite; opacity:0;"/>
+
+            <!-- MEDIUM particle (5–18µm) — passes outer, hits composite -->
+            <circle cx="15" cy="155" r="5.5"
+              fill="rgba(255,160,80,0.85)"
+              stroke="rgba(255,140,60,0.6)" stroke-width="1"
+              style="animation: medium-particle 3.5s ease-in-out infinite;">
+            </circle>
+
+            <!-- Flash at composite layer collision -->
+            <circle cx="186" cy="155" r="10"
+              fill="rgba(255,241,45,0.6)"
+              style="animation: capture-flash-composite 3.5s ease-in-out infinite; opacity:0;"/>
+
+            <!-- SMALL particle (1–5µm) — passes two layers, hits synthetic -->
+            <circle cx="15" cy="205" r="3"
+              fill="rgba(180,220,255,0.9)"
+              stroke="rgba(160,200,255,0.6)" stroke-width="1"
+              style="animation: small-particle 3.5s ease-in-out infinite;">
+            </circle>
+
+            <!-- Flash at synthetic layer collision -->
+            <circle cx="258" cy="205" r="8"
+              fill="rgba(255,241,45,0.6)"
+              style="animation: capture-flash-synthetic 3.5s ease-in-out infinite; opacity:0;"/>
+
+            <!-- ── PARTICLE SIZE LABELS ── -->
+            <text x="15" y="148" fill="rgba(255,100,100,0.5)" font-family="JetBrains Mono, monospace" font-size="7.5" text-anchor="middle">≥18µm</text>
+            <text x="15" y="138" fill="rgba(255,160,80,0.5)"  font-family="JetBrains Mono, monospace" font-size="7.5" text-anchor="middle">5–18µm</text>
+            <text x="15" y="218" fill="rgba(180,220,255,0.6)" font-family="JetBrains Mono, monospace" font-size="7.5" text-anchor="middle">1–5µm</text>
+
+            <!-- ── CAPTURE ZONE LABELS (below layers) ── -->
+            <text x="140" y="346" fill="rgba(255,100,100,0.4)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">LARGE PARTICLE</text>
+            <text x="140" y="356" fill="rgba(255,100,100,0.3)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">CAPTURE ZONE</text>
+
+            <text x="240" y="346" fill="rgba(255,160,80,0.5)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">MEDIUM PARTICLE</text>
+            <text x="240" y="356" fill="rgba(255,160,80,0.4)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">CAPTURE ZONE</text>
+
+            <text x="340" y="346" fill="rgba(255,241,45,0.6)" font-family="JetBrains Mono, monospace" font-size="8" text-anchor="middle" letter-spacing="1">SUB-MICRON</text>
+            <text x="340" y="356" fill="rgba(255,241,45,0.5)" font-family="JetBrains Mono, monospace" font-size="7" text-anchor="middle" letter-spacing="1">CAPTURE ZONE</text>
+
+            <!-- Separator lines between layer zones below -->
+            <line x1="100" y1="333" x2="100" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="200" y1="333" x2="200" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="300" y1="333" x2="300" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="380" y1="333" x2="380" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+            <defs>
+              <marker id="arrowIn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.15)"/>
+              </marker>
+              <marker id="arrowOut" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.4)"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div><!-- /capture-panel -->
+
+      <!-- RIGHT: Spec panel -->
+      <div class="spec-panel">
+
+        <!-- Particle size scale -->
+        <div class="size-scale">
+          <p class="size-scale-title">PARTICLE SIZE REFERENCE SCALE</p>
+
+          <div class="scale-track">
+            <div class="scale-fill"></div>
+            <!-- Marker: MACROCORE at ~62% -->
+            <div class="scale-marker" style="left:62%;">
+              <div class="scale-marker-label">MACROCORE<br/>18µm</div>
+            </div>
+            <!-- Marker: NANOFORCE at ~12% -->
+            <div class="scale-marker" style="left:12%; background: rgba(255,241,45,0.45);">
+              <div class="scale-marker-label" style="color:rgba(255,241,45,0.6);">NANOFORCE<br/>1µm</div>
+            </div>
+          </div>
+
+          <div class="scale-labels" style="margin-top: 50px;">
+            <div class="scale-label-item">
+              <span class="scale-label-size">1µm</span>
+              <span class="scale-label-name highlighted">NANO<br/>FORCE™</span>
+            </div>
+            <div class="scale-label-item">
+              <span class="scale-label-size">10µm</span>
+              <span class="scale-label-name">Fine<br/>Dust</span>
+            </div>
+            <div class="scale-label-item">
+              <span class="scale-label-size">18µm</span>
+              <span class="scale-label-name highlighted">MACRO<br/>CORE™</span>
+            </div>
+            <div class="scale-label-item">
+              <span class="scale-label-size">40µm</span>
+              <span class="scale-label-name">Coarse<br/>Particle</span>
+            </div>
+            <div class="scale-label-item">
+              <span class="scale-label-size">70µm</span>
+              <span class="scale-label-name">Human<br/>Hair</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec highlight -->
+        <div class="spec-highlight">
+          <span class="spec-value">β₁₀(c) ≥ 200</span>
+          <span class="spec-description">99.5% particle capture efficiency at 10µm. Depth-loading mechanism captures and retains particles without surface blinding, maintaining stable differential pressure throughout service interval.</span>
+          <span class="spec-cert">ISO 16889 · LABORATORY VERIFIED</span>
+        </div>
+
+        <!-- Secondary spec -->
+        <div style="background: rgba(255,255,255,0.015); border:1px solid var(--border); border-radius:6px; padding:20px 24px;">
+          <p style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--muted); letter-spacing:0.12em; margin-bottom:12px;">PERFORMANCE PARAMETERS</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:8px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(255,255,255,0.4);">Absolute rating</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--white);">18µm</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:8px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(255,255,255,0.4);">Efficiency @ 10µm</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--yellow);">99.5%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:8px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(255,255,255,0.4);">Dust capacity (SAE Fine)</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--white);">≥ 180g/m²</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(255,255,255,0.4);">Test standard</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(255,255,255,0.6);">ISO 16889 / SAE J1239</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /spec-panel -->
+
+    </div><!-- /mechanism-body -->
+  </div><!-- /mechanism-section -->
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- SECTION C — PERFORMANCE CURVE                                   -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+
+  <div class="section-label">SECTION C — MACROCORE™ · PERFORMANCE EFFICIENCY CURVE</div>
+
+  <div class="curve-section">
+
+    <div class="curve-header">
+      <div>
+        <p class="curve-title">FILTRATION EFFICIENCY vs. PARTICLE SIZE</p>
+        <p class="curve-subtitle" style="margin-top:4px;">ISO 16889 Performance Data — MACROCORE™ Composite Media</p>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:rgba(255,241,45,0.4); letter-spacing:0.12em;">β₁₀(c) ≥ 200</div>
+    </div>
+
+    <div class="curve-body">
+
+      <!-- SVG Performance Curve -->
+      <div>
+        <svg width="100%" viewBox="0 0 680 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+
+          <!-- ── Axes ── -->
+          <!-- Y-axis -->
+          <line x1="80" y1="20" x2="80" y2="310" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <!-- X-axis -->
+          <line x1="80" y1="310" x2="660" y2="310" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+
+          <!-- ── Y-axis labels ── -->
+          <text x="68" y="24"  fill="rgba(255,255,255,0.35)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">100%</text>
+          <text x="68" y="93"  fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">75%</text>
+          <text x="68" y="163" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">50%</text>
+          <text x="68" y="233" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">25%</text>
+          <text x="68" y="314" fill="rgba(255,255,255,0.2)"  font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">0%</text>
+
+          <!-- Y-axis grid lines (dashed) -->
+          <line x1="80" y1="23"  x2="660" y2="23"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="80" y1="93"  x2="660" y2="93"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="80" y1="163" x2="660" y2="163" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 6"/>
+          <line x1="80" y1="233" x2="660" y2="233" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 6"/>
+
+          <!-- ── X-axis labels — particle sizes ── -->
+          <!-- 1µm:x=100, 2µm:x=175, 4µm:x=260, 6µm:x=330, 10µm:x=415, 15µm:x=500, 20µm:x=565, 30µm:x=640 -->
+          <text x="100" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">1µm</text>
+          <text x="175" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">2µm</text>
+          <text x="265" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">4µm</text>
+          <text x="340" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">6µm</text>
+          <text x="415" y="330" fill="rgba(255,241,45,0.65)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">10µm</text>
+          <text x="495" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">15µm</text>
+          <text x="565" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">20µm</text>
+          <text x="645" y="330" fill="rgba(255,255,255,0.25)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">30µm</text>
+
+          <!-- X-axis ticks -->
+          <line x1="100" y1="308" x2="100" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="175" y1="308" x2="175" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="265" y1="308" x2="265" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="340" y1="308" x2="340" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="415" y1="308" x2="415" y2="316" stroke="rgba(255,241,45,0.6)" stroke-width="2"/>
+          <line x1="495" y1="308" x2="495" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="565" y1="308" x2="565" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="645" y1="308" x2="645" y2="316" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+          <!-- ── Axis labels ── -->
+          <text x="370" y="365" fill="rgba(255,255,255,0.2)" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="2">PARTICLE SIZE (µm)</text>
+          <!-- Y-axis label (rotated) -->
+          <text x="-165" y="18" fill="rgba(255,255,255,0.2)" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="2" transform="rotate(-90)">EFFICIENCY (%)</text>
+
+          <!-- ── GRADIENT FILL under curve ── -->
+          <defs>
+            <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="rgba(255,241,45,0.0)"/>
+              <stop offset="40%"  stop-color="rgba(255,241,45,0.07)"/>
+              <stop offset="75%"  stop-color="rgba(180,255,100,0.12)"/>
+              <stop offset="100%" stop-color="rgba(100,255,100,0.08)"/>
+            </linearGradient>
+            <linearGradient id="curveStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="rgba(255,241,45,0.3)"/>
+              <stop offset="60%"  stop-color="rgba(255,241,45,0.9)"/>
+              <stop offset="100%" stop-color="rgba(120,255,80,0.9)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- S-curve path — efficiency vs particle size -->
+          <!-- Points: 1µm=5%, 2µm=22%, 4µm=55%, 6µm=77%, 10µm=99.5%, 15µm=100%, 20µm=100%, 30µm=100% -->
+          <!-- Y axis: 310=0%, 23=100% → range 287px for 100% -->
+          <!-- y = 310 - (efficiency * 2.87) -->
+          <!-- 5%=296, 22%=247, 55%=152, 77%=90, 99.5%=24, 100%=23 -->
+
+          <!-- Fill area -->
+          <path d="
+            M 100 296
+            C 130 280, 150 255, 175 247
+            C 205 237, 235 175, 265 152
+            C 295 128, 320 97, 340 90
+            C 370 80, 395 28, 415 24
+            C 435 23, 465 23, 495 23
+            L 660 23
+            L 660 310
+            L 100 310
+            Z
+          " fill="url(#curveGrad)"/>
+
+          <!-- S-curve line — animated draw -->
+          <path
+            d="
+              M 100 296
+              C 130 280, 150 255, 175 247
+              C 205 237, 235 175, 265 152
+              C 295 128, 320 97, 340 90
+              C 370 80, 395 28, 415 24
+              C 435 23, 465 23, 495 23
+              L 660 23
+            "
+            stroke="url(#curveStroke)"
+            stroke-width="2.5"
+            fill="none"
+            stroke-dasharray="1000"
+            stroke-dashoffset="1000"
+            stroke-linecap="round"
+            style="animation: draw-curve 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;"
+          />
+
+          <!-- ── VERTICAL DASHED LINE at 10µm ── -->
+          <line x1="415" y1="24" x2="415" y2="310"
+            stroke="rgba(255,241,45,0.5)" stroke-width="1.5"
+            stroke-dasharray="6 4"
+            style="animation: dashed-line-slide 1s linear infinite;"/>
+
+          <!-- ── 99.5% CALLOUT at 10µm ── -->
+          <circle cx="415" cy="24" r="6"
+            fill="var(--yellow)"
+            style="animation: dot-appear 2.8s ease-in-out 0.3s forwards; opacity:0; transform-origin:415px 24px;"/>
+
+          <rect x="422" y="8" width="70" height="20" rx="3"
+            fill="rgba(255,241,45,0.12)"
+            stroke="rgba(255,241,45,0.4)" stroke-width="1"
+            style="animation: dot-appear 3s ease-in-out 0.5s forwards; opacity:0; transform-origin:457px 18px;"/>
+          <text x="457" y="22" fill="rgba(255,241,45,0.95)"
+            font-family="JetBrains Mono, monospace" font-size="10.5"
+            text-anchor="middle" font-weight="500"
+            style="animation: dot-appear 3s ease-in-out 0.5s forwards; opacity:0; transform-origin:457px 18px;">99.5%</text>
+
+          <!-- ── β₁₀(c) reference band (highlight between 8-12µm range) ── -->
+          <rect x="395" y="23" width="40" height="287"
+            fill="rgba(255,241,45,0.04)"
+            stroke="none"/>
+
+          <!-- ── Comparison curve (generic competitor dashed gray) ── -->
+          <path
+            d="
+              M 100 308
+              C 130 305, 165 295, 175 290
+              C 205 275, 240 230, 265 210
+              C 295 185, 320 155, 340 148
+              C 370 138, 400 120, 415 115
+              C 445 100, 475 90, 495 85
+              L 660 70
+            "
+            stroke="rgba(255,255,255,0.1)"
+            stroke-width="1.5"
+            fill="none"
+            stroke-dasharray="5 5"
+          />
+
+          <!-- Competitor label -->
+          <text x="500" y="78" fill="rgba(255,255,255,0.15)" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="1">COMMODITY</text>
+          <text x="500" y="90" fill="rgba(255,255,255,0.12)" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="1">CELLULOSE</text>
+
+          <!-- MACROCORE label at curve end -->
+          <text x="510" y="20" fill="rgba(255,241,45,0.6)" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1">MACROCORE™</text>
+
+        </svg>
+      </div>
+
+      <!-- Legend / annotation cards -->
+      <div class="curve-legend">
+
+        <div class="legend-card highlighted">
+          <p class="legend-label">KEY PERFORMANCE POINT</p>
+          <p class="legend-value">99.5%</p>
+          <p class="legend-desc">Particle capture efficiency at 10µm particle size under ISO 16889 multi-pass test conditions.</p>
+        </div>
+
+        <div class="legend-card">
+          <p class="legend-label">BETA RATIO</p>
+          <p class="legend-value" style="color:var(--white); font-size:1rem;">β₁₀(c) ≥ 200</p>
+          <p class="legend-desc">For every 200 particles upstream at 10µm, 1 passes downstream. Verified under ISO 16889 laboratory conditions.</p>
+        </div>
+
+        <div class="legend-card">
+          <p class="legend-label">ABSOLUTE RATING</p>
+          <p class="legend-value" style="color:var(--white); font-size:1rem;">18µm</p>
+          <p class="legend-desc">100% capture of particles ≥18µm. No bypass of particles above this threshold under rated conditions.</p>
+        </div>
+
+        <div style="padding: 14px 0; border-top: 1px solid var(--border); display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:32px; height:2px; background:linear-gradient(90deg, rgba(255,241,45,0.4), rgba(100,255,80,0.9));"></div>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:rgba(255,255,255,0.35); letter-spacing:0.1em;">MACROCORE™</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:32px; height:1.5px; background:rgba(255,255,255,0.15); border-top: 1px dashed rgba(255,255,255,0.15);"></div>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:rgba(255,255,255,0.2); letter-spacing:0.1em;">COMMODITY CELLULOSE</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /curve-body -->
+
+    <!-- Footer bar -->
+    <div style="padding:16px 48px; border-top:1px solid var(--border); background:rgba(255,255,255,0.01); display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:rgba(255,255,255,0.18); letter-spacing:0.12em;">DATA SOURCE: ISO 16889 MULTI-PASS TEST METHOD · MACROCORE™ SERIES · TEST REF: ELIM-MK-A22-01</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:rgba(255,241,45,0.3); letter-spacing:0.12em;">ELIMFILTERS® · TECHNOLOGY DOCUMENTATION</span>
+    </div>
+
+  </div><!-- /curve-section -->
+
+</div><!-- /mockup-wrapper -->
+
+</body>
+</html>
