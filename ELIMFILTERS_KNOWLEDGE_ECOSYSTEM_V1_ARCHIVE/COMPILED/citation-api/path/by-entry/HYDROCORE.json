@@ -1,0 +1,18 @@
+{
+  "entry_key": "HYDROCORE",
+  "path_count": 1,
+  "paths": [
+    {
+      "path_id": "PATH_C_HYDROCORE_093",
+      "path_type": "C",
+      "entry_node": "HYDROCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_C_HYDROCORE_093.json"
+    }
+  ]
+}

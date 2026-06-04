@@ -1,0 +1,22 @@
+# ARCHIVE CHECKSUM — ELIMFILTERS Knowledge Ecosystem V1
+# Generated: 2026-06-03
+# Algorithm: SHA-256
+
+# PRIMARY COMPILED FILES
+# These are the two master outputs of the build pipeline.
+# Verify these after any rebuild to confirm no data corruption.
+
+24269996c452a32ba0ddf41d758de3895709f7dc770fde3c7010701ce94032d2  COMPILED/citation-index/CITATION_INDEX.json
+266f212b6e06413e4d33ce8ea88279f6ab65d73848be64b44677936854c7a4b7  COMPILED/citation-index/PART_SEARCH_MAP.json
+
+# VERIFICATION COMMAND
+# Run from ELIMFILTERS_KNOWLEDGE_ECOSYSTEM_V1_ARCHIVE/ directory:
+#
+#   sha256sum -c METRICS/ARCHIVE_CHECKSUM.txt
+#
+# Expected output:
+#   COMPILED/citation-index/CITATION_INDEX.json: OK
+#   COMPILED/citation-index/PART_SEARCH_MAP.json: OK
+#
+# Any FAILED result means the compiled index has been modified
+# after the V1 declaration. Run SCRIPTS/ to regenerate from vault.

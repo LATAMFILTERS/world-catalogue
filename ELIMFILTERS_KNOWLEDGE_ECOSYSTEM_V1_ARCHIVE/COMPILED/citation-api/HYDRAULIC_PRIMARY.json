@@ -1,0 +1,116 @@
+{
+  "key": "HYDRAULIC_PRIMARY",
+  "type": "product-family",
+  "name": "Primary Hydraulic Protection",
+  "slug": "hydraulic-primary",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "product-family",
+    "active",
+    "hydraulic",
+    "not-in-ud",
+    "part-search-node"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/systems/hydraulic-primary",
+    "concept": "Primary Hydraulic Protection Product Family",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:6447fffd2aa19484aa43588c358344d730379e45dcad678afb54d621611d3dd2"
+  },
+  "canonical": {
+    "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nBeta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness\nacross agriculture, construction, mining, oil/gas, and power generation applications.",
+    "systems": "Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements\nNANOFORCE™ nanofibre-layered glass media technology",
+    "failure_impact": "Incorrect element selection (wrong Beta ratio class or wrong collapse pressure rating)\nor extended service interval → particle contamination exceeds ISO 18/16/13 threshold →\nproportional valve spool erosion → valve stiction and position error → hydraulic\nactuator failure; pump bearing wear reduces service life from 10,000 hours to 2,000–3,000\nhours",
+    "related_standards": "ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥\n1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |\nNFPA T2.14: Collapse pressure rating standard for element structural integrity",
+    "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |\nHYDROCORE: Water removal from hydraulic systems where water contamination co-exists\n(separate family)",
+    "industrial_role": "This product family is the principal contamination control implementation for hydraulic\nparticle contamination — the single largest cause of proportional valve and piston pump\nfailure in mobile construction, mining, and agricultural equipment operating precision\nhydraulic circuits above 200 bar."
+  },
+  "relationships": {
+    "meets_standards": [
+      "ISO_16889",
+      "ISO_4406",
+      "NFPA_T214"
+    ],
+    "target_industries": [
+      "AGRICULTURE",
+      "CONSTRUCTION",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION"
+    ],
+    "uses_technology": [
+      "NANOFORCE"
+    ],
+    "belongs_to_domain": [
+      "HYDRAULIC"
+    ],
+    "belongs_to_product_system": [
+      "HYDRAULIC"
+    ]
+  },
+  "vault_path": "elimfilters-vault/08-product-families/HYDRAULIC_PRIMARY.md",
+  "_links": {
+    "self": "/api/citation/HYDRAULIC_PRIMARY.json",
+    "type_index": "/api/citation/type/product-family.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "meets_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "meets_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "NFPA_T214",
+        "relation": "meets_standards",
+        "href": "/api/citation/NFPA_T214.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "target_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "target_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "target_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "target_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "target_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "uses_technology",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "HYDRAULIC",
+        "relation": "belongs_to_domain",
+        "href": "/api/citation/HYDRAULIC.json"
+      },
+      {
+        "key": "HYDRAULIC",
+        "relation": "belongs_to_product_system",
+        "href": "/api/citation/HYDRAULIC.json"
+      }
+    ]
+  }
+}

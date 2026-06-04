@@ -1,0 +1,71 @@
+{
+  "key": "SAE_J1539",
+  "type": "standard",
+  "name": "Air Intake Cleanliness for Diesel Engines",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "SAE_J1539",
+  "tags": [
+    "standard",
+    "active",
+    "air-intake",
+    "sae",
+    "primary",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/standards/sae-j1539",
+    "concept": "SAE J1539 Air Intake Cleanliness",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:7b9d850b22dcbacc487a5dacf57c9e7ff29b03864c50dfb1115631162d5e4094"
+  },
+  "canonical": {
+    "definition": "SAE J1539 is the Society of Automotive Engineers classification standard defining air intake cleanliness requirements and test protocols for diesel engines, using SAE Fine Test Dust (ISO 12103-1 A2) to evaluate filtration performance in terms of dust ingestion limits and particle size distribution.",
+    "systems": "Diesel engine air intake systems across all on-highway and off-highway equipment categories",
+    "failure_impact": "Non-compliant air cleaner performance under SAE J1539 criteria → elevated silica and environmental dust ingestion → particle entry into combustion chamber → piston ring and cylinder bore abrasive wear → compression loss 10–25% and engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours.",
+    "related_standards": "ISO 5011: ISO-framework equivalent test methodology for inlet air cleaning equipment | ISO 4406: Fluid cleanliness code used to measure downstream lube circuit contamination resulting from air ingestion failure",
+    "related_technologies": "MACROCORE: Air intake particulate capture technology rated to SAE J1539 dust challenge performance | SYNTEPORE: All-synthetic intake media maintaining SAE J1539 performance under high-humidity conditions",
+    "industrial_role": "SAE J1539 provides the measurable performance criterion for comparing and selecting air intake filtration elements — it is the quantitative link between filter specification and engine protection against particle wear in operating environments."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_5011"
+    ],
+    "applicable_to_technologies": [
+      "MACROCORE",
+      "SYNTEPORE"
+    ],
+    "related_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md",
+  "_links": {
+    "self": "/api/citation/SAE_J1539.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "ISO_5011",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "MACROCORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "SYNTEPORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/SYNTEPORE.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "related_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}

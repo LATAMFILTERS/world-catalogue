@@ -1,0 +1,87 @@
+{
+  "key": "ISO_16889",
+  "type": "standard",
+  "name": "Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "ISO_16889",
+  "tags": [
+    "standard",
+    "active",
+    "hydraulic",
+    "lube-oil",
+    "fuel",
+    "iso",
+    "primary",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/standards/iso-16889",
+    "concept": "ISO 16889 Filter Multi-Pass Test Method",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:df017dbfddf4beef40dd713d378cc5bc3164a12e0fb3d6bbe0b1498899142fa7"
+  },
+  "canonical": {
+    "definition": "ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil systems, using ISO Medium Test Dust (ISO 12103-1 A3) to calculate particle capture efficiency across defined size classes (β₆, β₁₀, β₁₆, β₂₅).",
+    "systems": "Hydraulic fluid power systems, engine lube oil circuits, fuel filtration systems",
+    "failure_impact": "Filters without ISO 16889 certified Beta ratios cannot be verified for actual particle capture efficiency → assumed performance diverges from actual → ISO 4406 cleanliness targets are not met → particles above 10–15 µm remain in oil → abrasive bearing wear → clearance loss → seizure at 3,000–5,000 hours instead of 15,000–25,000 hours.",
+    "related_standards": "ISO 4406: Three-number cleanliness code (≥4/≥6/≥14 µm) that ISO 16889 Beta ratio performance enables and validates | SAE J1539: Air intake cleanliness standard (parallel domain — air-side particle control)",
+    "related_technologies": "NANOFORCE: Sub-micron particle removal rated at 1 µm efficiency under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
+    "industrial_role": "ISO 16889 Beta ratio is the only quantitative performance metric that converts a filter product specification into a verifiable contamination control capability — it is the engineering basis for achieving and maintaining ISO 4406 cleanliness targets in hydraulic and lube systems."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_4406"
+    ],
+    "applicable_to_technologies": [
+      "NANOFORCE",
+      "SYNTRAX"
+    ],
+    "applicable_to_industries": [
+      "MINING",
+      "AGRICULTURE"
+    ],
+    "related_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/ISO_16889.md",
+  "_links": {
+    "self": "/api/citation/ISO_16889.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "ISO_4406",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "related_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}
