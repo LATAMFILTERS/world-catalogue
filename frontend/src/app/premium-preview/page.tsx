@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
@@ -122,21 +121,9 @@ function WaveCanvas() {
   );
 }
 
-// ─── Scroll-reveal wrapper ────────────────────────────────────────────────────
-function Reveal({ children, delay = 0, style }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      style={style}
-    >
-      {children}
-    </motion.div>
-  );
+// ─── Scroll-reveal wrapper (no-op — works without framer motion) ──────────────
+function Reveal({ children, style }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
+  return <div style={style}>{children}</div>;
 }
 
 // ─── Section 1: Homepage Hero ─────────────────────────────────────────────────
@@ -164,7 +151,7 @@ function HeroSection() {
       }} />
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 900, margin: '0 auto', padding: 'clamp(5rem,10vw,8rem) 2rem 4rem' }}>
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <div>
           <SectionLabel>HOMEPAGE HERO — SCREEN 01</SectionLabel>
 
           {/* Eyebrow */}
@@ -254,32 +241,23 @@ function HeroSection() {
           {/* Stats row */}
           <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
             {stats.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
-              >
+              <div key={i}>
                 <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 700, color: GOLD, lineHeight: 1 }}>
                   {s.num}
                 </div>
                 <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: TEXT_MUTED, marginTop: 4, letterSpacing: '0.05em' }}>
                   {s.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
+      <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
         <div style={{ width: 1, height: 40, background: `linear-gradient(180deg, ${GOLD}, transparent)`, margin: '0 auto' }} />
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -510,13 +488,8 @@ function TechnologySection() {
         </div>
 
         {/* Active tech panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
+        <div
             key={active}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3 }}
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -573,8 +546,7 @@ function TechnologySection() {
                 ))}
               </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
       </div>
     </section>
   );
@@ -657,9 +629,9 @@ function IndustriesSection() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1.25rem' }}>
           {industries.map((ind, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <motion.div
-                onHoverStart={() => setHoveredIdx(i)}
-                onHoverEnd={() => setHoveredIdx(null)}
+              <div
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx(null)}
                 style={{
                   background: hoveredIdx === i ? ELEVATED : SURFACE,
                   border: `1px solid ${hoveredIdx === i ? ind.color.replace('0.8)', '0.35)') : 'rgba(255,255,255,0.06)'}`,
@@ -704,7 +676,7 @@ function IndustriesSection() {
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -843,9 +815,7 @@ function KnowledgeSection() {
             {domains.map((d, i) => (
               <Reveal key={i} delay={i * 0.07}>
                 <Link href={d.path} style={{ textDecoration: 'none' }}>
-                  <motion.div
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
+                  <div
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -876,7 +846,7 @@ function KnowledgeSection() {
                       </p>
                     </div>
                     <span style={{ color: TEXT_DIM, flexShrink: 0 }}>→</span>
-                  </motion.div>
+                  </div>
                 </Link>
               </Reveal>
             ))}
