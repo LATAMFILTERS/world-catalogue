@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
+import { CinematicIntro } from './CinematicIntro';
 
 export interface TechStage {
   number: string;
@@ -70,6 +71,13 @@ interface Props {
 export function TechDetailPage({ data }: Props) {
   return (
     <>
+      <CinematicIntro
+        heroImage={data.heroImage}
+        heroTitle={data.heroTitle}
+        categoryTag={data.categoryTag}
+        logoSrc={data.logoSrc}
+      />
+
       {/* Breadcrumb — HOME → TECHNOLOGY → [name] */}
       <div style={{
         position: 'relative', zIndex: 20,
