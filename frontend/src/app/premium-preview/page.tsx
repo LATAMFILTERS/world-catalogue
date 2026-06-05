@@ -1394,7 +1394,7 @@ function Footer() {
 
               {/* Kleo logo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo-kleo.png" alt="Kleo Technologies"
+              <img src="/images/Leo-fn.avif" alt="Kleo Technologies"
                 style={{ height:28, width:'auto', objectFit:'contain', opacity:0.7 }}
                 onError={e => {
                   const el = e.currentTarget as HTMLImageElement;
