@@ -215,7 +215,7 @@ export function Navigation() {
               display: 'inline-block',
             }}
           >
-            {t('nav.findMyFilter')}
+            <span suppressHydrationWarning>{t('nav.findMyFilter')}</span>
           </motion.a>
         </div>
 
@@ -275,8 +275,8 @@ export function Navigation() {
                   variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
-                    {item.label}
+                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)} suppressHydrationWarning>
+                    <span suppressHydrationWarning>{item.label}</span>
                   </Link>
                 </motion.div>
               ))}
@@ -291,8 +291,9 @@ export function Navigation() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
+                  suppressHydrationWarning
                 >
-                  {t('nav.findMyFilter')} →
+                  <span suppressHydrationWarning>{t('nav.findMyFilter')} →</span>
                 </a>
 
                 {/* Mobile language picker — non-US/CA only */}
@@ -353,6 +354,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     >
       <Link
         href={href}
+        suppressHydrationWarning
         style={{
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
@@ -365,7 +367,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
           paddingBottom: '3px',
         }}
       >
-        {children}
+        <span suppressHydrationWarning>{children}</span>
       </Link>
       <motion.span
         animate={{ scaleX: hovered ? 1 : 0 }}
