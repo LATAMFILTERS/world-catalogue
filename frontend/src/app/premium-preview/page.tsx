@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useInView } from 'motion/react';
 
 // ─── CSS injected once ────────────────────────────────────────────────────────
 const CSS = `
@@ -240,6 +241,24 @@ function Ticker() {
   );
 }
 
+// ─── Auto-play video (plays only when in viewport) ───────────────────────────
+function IndustryVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const inView = useInView(ref as any, { once: false, margin: '-5%' });
+  useEffect(() => {
+    if (!ref.current) return;
+    if (inView) ref.current.play().catch(() => {});
+    else ref.current.pause();
+  }, [inView]);
+  return (
+    <video ref={ref} playsInline muted loop preload="metadata"
+      style={{ position:'absolute', inset:0, width:'100%', height:'100%',
+        objectFit:'cover', opacity:0.28, transition:'opacity 0.6s' }}>
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+}
+
 // ─── Scroll reveal hook ───────────────────────────────────────────────────────
 function useReveal() {
   useEffect(() => {
@@ -384,6 +403,12 @@ function Hero() {
   return (
     <section id="hero" style={{ position:'relative', minHeight:'100vh',
       display:'flex', alignItems:'center', overflow:'hidden', background: S1 }}>
+      {/* Background video */}
+      <video autoPlay playsInline muted loop preload="metadata"
+        style={{ position:'absolute', inset:0, width:'100%', height:'100%',
+          objectFit:'cover', opacity:0.12, pointerEvents:'none' }}>
+        <source src="/images/moleculas.mp4" type="video/mp4" />
+      </video>
       <ParticleCanvas />
       <div style={{ position:'absolute', inset:0,
         background:'radial-gradient(ellipse 70% 55% at 55% 45%, rgba(255,241,45,0.032) 0%, transparent 65%)' }} />
@@ -1024,23 +1049,22 @@ function ROI() {
 function Industries() {
   useReveal();
   const industries = [
-    { code:'MI', name:'Mining', color:'rgba(245,158,11,0.85)', kpis:['4,000h service life','ISO 4406: 17/15/12','350 bar collapse'] },
-    { code:'AG', name:'Agriculture', color:'rgba(74,222,128,0.85)', kpis:['Seasonal dust management','Water-rejection fuel media','Cabin air protection'] },
-    { code:'MR', name:'Marine', color:'rgba(96,165,250,0.85)', kpis:['Salt-corrosion resistant','Bio-fouling prevention','99.5% water rejection'] },
-    { code:'CO', name:'Construction', color:'rgba(251,113,133,0.85)', kpis:['350 bar hydraulic rated','Mixed application fleets','OEM cross-ref library'] },
-    { code:'OG', name:'Oil & Gas', color: G, kpis:['β₁(c) = 1000 lube','H₂S resistant housings','+200°C temperature range'] },
-    { code:'FL', name:'Fleet & Transport', color:'rgba(192,132,252,0.85)', kpis:['+45% engine lifespan','20k+ OEM cross-refs','VIN search integration'] },
-    { code:'PG', name:'Power Generation', color:'rgba(45,212,191,0.85)', kpis:['Turbine lube circuits','High-temp lube oil','Continuous duty rated'] },
-    { code:'MF', name:'Manufacturing', color:'rgba(251,146,60,0.85)', kpis:['ISO 4406: 14/12/9','Servo valve protection','CNC hydraulic circuits'] },
-    { code:'UT', name:'Water & Utilities', color:'rgba(125,211,252,0.85)', kpis:['Pump protection media','NSF-rated options','Continuous operation rated'] },
+    { code:'MI', name:'Mining',            video:'/images/Mina-Video-1.mp4',          color:'rgba(245,158,11,0.9)',  kpis:['4,000h service life','ISO 4406: 17/15/12','350 bar collapse'] },
+    { code:'AG', name:'Agriculture',       video:'/images/Agriculture-2.mp4',         color:'rgba(74,222,128,0.9)', kpis:['Seasonal dust management','Water-rejection fuel media','Cabin air protection'] },
+    { code:'MR', name:'Marine',            video:'/images/Marino-1.mp4',              color:'rgba(96,165,250,0.9)', kpis:['Salt-corrosion resistant','Bio-fouling prevention','99.5% water rejection'] },
+    { code:'CO', name:'Construction',      video:'/images/construction-2.mp4',        color:'rgba(251,113,133,0.9)',kpis:['350 bar hydraulic rated','Mixed application fleets','OEM cross-ref library'] },
+    { code:'OG', name:'Oil & Gas',         video:'/images/Petro&Gas-1.mp4',           color: G,                    kpis:['β₁(c) = 1000 lube','H₂S resistant housings','+200°C temperature range'] },
+    { code:'FL', name:'Fleet & Transport', video:'/images/Trucks&Feel-1.mp4',         color:'rgba(192,132,252,0.9)',kpis:['+45% engine lifespan','20k+ OEM cross-refs','VIN search integration'] },
+    { code:'PG', name:'Power Generation',  video:'/images/powergenerator-Video-1.mp4',color:'rgba(45,212,191,0.9)',kpis:['Turbine lube circuits','High-temp lube oil','Continuous duty rated'] },
+    { code:'MF', name:'Manufacturing',     video:'/images/Manufacture-1.mp4',         color:'rgba(251,146,60,0.9)',kpis:['ISO 4406: 14/12/9','Servo valve protection','CNC hydraulic circuits'] },
+    { code:'BU', name:'Bus & Coach',       video:'/images/buses-2.mp4',               color:'rgba(251,191,36,0.9)',kpis:['Extended oil drain','Cabin air HEPA','Fleet cross-ref tool'] },
+    { code:'RW', name:'Railway',           video:'/images/Train.mp4',                 color:'rgba(129,140,248,0.9)',kpis:['Diesel loco certified','High-vibration housing','24/7 continuous duty'] },
+    { code:'AU', name:'Automotive',        video:'/images/Autos-Vin4.mp4',            color:'rgba(244,114,182,0.9)',kpis:['OEM-grade media','VIN lookup','20k+ cross-refs'] },
+    { code:'WU', name:'Water & Utilities', video:'/images/wasted-2.mp4',              color:'rgba(125,211,252,0.9)',kpis:['Pump protection media','NSF-rated options','Continuous operation'] },
   ];
 
   return (
-    <section id="industries" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
-      <div style={{ position:'absolute', right:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
-        color:'rgba(255,255,255,0.016)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>06</div>
-
+    <section id="industries" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <Wrap style={{ position:'relative', zIndex:1 }}>
         <div className="reveal" style={{ display:'flex', justifyContent:'space-between',
           alignItems:'flex-end', marginBottom:'4rem', flexWrap:'wrap', gap:'2rem' }}>
@@ -1049,36 +1073,55 @@ function Industries() {
             <H2>Built for the<br /><span style={{ color: G }}>World's Hardest Jobs.</span></H2>
           </div>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.95rem', color: W6,
-            maxWidth:360, lineHeight:1.75 }}>
-            Twelve industries. One filtration standard. Every ELIMFILTERS® product
-            is specified against the operating parameters of your exact application.
+            maxWidth:340, lineHeight:1.75 }}>
+            12 industries. One filtration standard. Every product specified for
+            your exact operating environment.
           </p>
         </div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)',
-          gap:1, background: W1, border:`1px solid ${W1}`, borderRadius:8, overflow:'hidden' }}>
+        {/* Video cards grid */}
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:2 }}>
           {industries.map((ind, i) => (
-            <div key={i} className={`ind-card reveal stagger-${Math.min(i + 1, 6)}`}
-              style={{ padding:'2rem' }}>
-              <div style={{ display:'flex', justifyContent:'space-between',
-                alignItems:'flex-start', marginBottom:'1.25rem' }}>
-                <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'1.6rem',
-                  fontWeight:700, color: ind.color, letterSpacing:'-0.02em' }}>{ind.code}</span>
-                <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.52rem',
-                  color: W3, padding:'3px 7px', border:`1px solid ${W1}`, borderRadius:2 }}>
-                  IND-0{i + 1}
+            <div key={i} style={{
+              position:'relative', overflow:'hidden', borderRadius:4,
+              height:220, background:'#0a0a0a',
+              border:`1px solid rgba(255,255,255,0.05)`,
+            }}
+              onMouseEnter={e => { const v = e.currentTarget.querySelector('video') as HTMLVideoElement; if (v) v.style.opacity = '0.55'; }}
+              onMouseLeave={e => { const v = e.currentTarget.querySelector('video') as HTMLVideoElement; if (v) v.style.opacity = '0.28'; }}
+            >
+              <IndustryVideo src={ind.video} />
+
+              {/* gradient overlay */}
+              <div style={{ position:'absolute', inset:0,
+                background:'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)' }} />
+
+              {/* colored top line */}
+              <div style={{ position:'absolute', top:0, left:0, right:0, height:2, background: ind.color }} />
+
+              {/* content */}
+              <div style={{ position:'absolute', inset:0, padding:'1.1rem', display:'flex',
+                flexDirection:'column', justifyContent:'space-between' }}>
+                <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.54rem',
+                  color:'rgba(255,255,255,0.3)', letterSpacing:'0.14em' }}>
+                  IND-{String(i+1).padStart(2,'0')}
                 </span>
-              </div>
-              <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.1rem',
-                fontWeight:700, color:'#fff', marginBottom:'1rem' }}>{ind.name}</h3>
-              <div style={{ display:'grid', gap:'0.4rem' }}>
-                {ind.kpis.map(k => (
-                  <div key={k} style={{ display:'flex', alignItems:'center', gap:7 }}>
-                    <div style={{ width:3, height:3, borderRadius:'50%',
-                      background: ind.color, flexShrink:0 }} />
-                    <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.73rem', color: W3 }}>{k}</span>
+                <div>
+                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'1.3rem',
+                    fontWeight:700, color: ind.color, letterSpacing:'-0.02em', lineHeight:1,
+                    marginBottom:'0.3rem' }}>{ind.code}</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'0.88rem',
+                    fontWeight:700, color:'#fff', marginBottom:'0.6rem' }}>{ind.name}</div>
+                  <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+                    {ind.kpis.map(k => (
+                      <div key={k} style={{ display:'flex', alignItems:'center', gap:5 }}>
+                        <div style={{ width:2, height:2, borderRadius:'50%', background: ind.color, flexShrink:0 }} />
+                        <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.62rem',
+                          color:'rgba(255,255,255,0.5)', lineHeight:1.3 }}>{k}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           ))}
@@ -1271,8 +1314,11 @@ function Footer() {
             <div className="reveal" style={{ gridColumn:'1 / -1', display:'grid',
               gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'3rem 2rem', alignItems:'start' }}>
               <div style={{ gridColumn:'1 / 1' }}>
-                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem',
-                  fontWeight:600, color: G, letterSpacing:'0.18em', marginBottom:'1rem' }}>ELIMFILTERS®</div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/elimfilters-logo.png" alt="ELIMFILTERS®"
+                  style={{ height:32, width:'auto', objectFit:'contain', marginBottom:'1rem', display:'block' }}
+                  onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; }}
+                />
                 <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.77rem', color: W3,
                   lineHeight:1.8, marginBottom:'1.25rem', maxWidth:220 }}>
                   Industrial asset protection filtration engineered for maximum performance.
@@ -1367,9 +1413,15 @@ function Nav() {
       borderBottom:`1px solid ${W1}`, height:52,
       display:'flex', alignItems:'center' }}>
       <Wrap style={{ display:'flex', alignItems:'center', gap:'0.2rem', width:'100%', padding:'0 clamp(1.5rem,4vw,3rem)' }}>
-        <Link href="/" style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem',
-          color: G, fontWeight:600, letterSpacing:'0.16em', textDecoration:'none',
-          marginRight:'1.5rem', flexShrink:0 }}>ELIMFILTERS®</Link>
+        <Link href="/" style={{ marginRight:'1.5rem', flexShrink:0, textDecoration:'none', display:'flex', alignItems:'center' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/logo-elimfilters.png" alt="ELIMFILTERS®"
+            style={{ height:28, width:'auto', objectFit:'contain' }}
+            onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; (e.currentTarget.nextSibling as HTMLElement).style.display='inline'; }}
+          />
+          <span style={{ display:'none', fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem',
+            color: G, fontWeight:600, letterSpacing:'0.16em' }}>ELIMFILTERS®</span>
+        </Link>
         <div style={{ width:1, height:16, background: W1, marginRight:'1rem', flexShrink:0 }} />
         <div style={{ display:'flex', gap:'0.1rem', overflowX:'auto', scrollbarWidth:'none', flex:1 }}>
           {NAV_ITEMS.map(s => (
