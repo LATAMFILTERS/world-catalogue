@@ -926,7 +926,7 @@ function Standards() {
   ];
 
   return (
-    <section id="standards" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
+    <section id="knowledge" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', right:'-3%', top:'50%', transform:'translateY(-50%)',
         fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,255,255,0.016)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>04</div>
@@ -1161,7 +1161,7 @@ function Industries() {
 function Distributor() {
   useReveal();
   return (
-    <section id="distributor" style={{ background: S1, padding:'8rem 0 10rem', position:'relative', overflow:'hidden' }}>
+    <section id="contact" style={{ background: S1, padding:'8rem 0 10rem', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', inset:0,
         background:'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255,241,45,0.03) 0%, transparent 60%)' }} />
       <div style={{ position:'absolute', left:'-3%', top:'50%', transform:'translateY(-50%)',
@@ -1410,14 +1410,11 @@ function Footer() {
 // NAV
 // ═══════════════════════════════════════════════════════════════════════════════
 const NAV_ITEMS = [
-  { id:'hero', label:'Overview' },
-  { id:'contamination', label:'Contamination' },
-  { id:'technology', label:'Technology' },
-  { id:'products', label:'Products' },
-  { id:'standards', label:'Standards' },
-  { id:'roi', label:'ROI' },
   { id:'industries', label:'Industries' },
-  { id:'distributor', label:'Distributors' },
+  { id:'products',   label:'Systems' },
+  { id:'technology', label:'Technologies' },
+  { id:'knowledge',  label:'Knowledge' },
+  { id:'contact',    label:'Contact' },
 ];
 
 function Nav() {
@@ -1458,6 +1455,12 @@ function Nav() {
               transition:'all 0.15s',
             }}>{s.label}</a>
           ))}
+          <a href="/about" style={{
+            fontFamily:'Inter, sans-serif', fontSize:'0.7rem',
+            color: W3, textDecoration:'none',
+            padding:'5px 11px', borderRadius:3, whiteSpace:'nowrap',
+            transition:'all 0.15s',
+          }}>About Us</a>
         </div>
         <Link href="https://part-search.elimfilters.com" style={{
           fontFamily:'Outfit, sans-serif', fontSize:'0.7rem', fontWeight:700,
