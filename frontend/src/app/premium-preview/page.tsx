@@ -692,81 +692,57 @@ function Technology() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// SECTION 04 — COMPARISON
+// SECTION 04 — TECHNICAL STANDARDS
 // ═══════════════════════════════════════════════════════════════════════════════
-function Comparison() {
+function Standards() {
   useReveal();
-  const rows = [
-    ['Media Technology', 'Proprietary (4 platforms)', 'Standard glass fibre', 'Standard glass fibre', 'Cellulose/synthetic'],
-    ['Best Beta Ratio', 'β₁(c) = 1000', 'β₆(c) ≥ 200', 'β₁₀(c) ≥ 200', 'β₇(c) ≥ 200'],
-    ['Absolute Rating', '1 µm', '6 µm', '10 µm', '7 µm'],
-    ['Collapse Pressure', '≥ 350 bar', '≥ 250 bar', '≥ 210 bar', '≥ 250 bar'],
-    ['OEM Cross-Refs', '20,000+', '15,000+', '12,000+', '14,000+'],
-    ['Industry Coverage', '12 industries', '8 industries', 'Fleet / OTR', 'Automotive / Ind.'],
-    ['ISO 16889', '✓', '✓', '✓', '✓'],
-    ['VIN / Machine Search', '✓', '✗', '✗', '✗'],
-    ['Technical Knowledge Base', '26 articles · 6 domains', 'Datasheets only', 'Datasheets only', 'Datasheets only'],
-    ['Distributor Portal', 'Territory + co-marketing', 'Standard program', 'Standard program', 'Standard program'],
+
+  const specs = [
+    { label:'Media Technology', value:'4 proprietary platforms', sub:'SYNTRAX · NANOFORCE · AQUAGUARD · PULSECORE' },
+    { label:'Best Beta Ratio', value:'β₁(c) = 1000', sub:'ISO 16889 multi-pass test validated' },
+    { label:'Absolute Rating', value:'1 µm', sub:'Finest particle capture in class' },
+    { label:'Collapse Pressure', value:'≥ 350 bar', sub:'Engineered for high-pressure hydraulic circuits' },
+    { label:'Temperature Range', value:'−40 °C → +150 °C', sub:'Extended arctic and tropical performance' },
+    { label:'OEM Cross-References', value:'20,000+', sub:'VIN & machine-hour lookup integrated' },
+    { label:'Industry Coverage', value:'12 industries', sub:'Mining · Marine · Agriculture · Construction · and more' },
+    { label:'VIN / Machine Search', value:'Native support', sub:'Real-time lookup by asset identifier' },
+    { label:'Knowledge Base', value:'26 articles · 6 domains', sub:'Engineering guides, sizing calculators, field reports' },
+    { label:'Distributor Portal', value:'Territory + co-marketing', sub:'Exclusive territory agreements, launch support' },
+    { label:'ISO 16889', value:'Certified', sub:'Multi-pass filtration efficiency' },
+    { label:'ISO 4406', value:'Certified', sub:'Fluid cleanliness classification' },
   ];
 
   return (
-    <section id="comparison" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
+    <section id="standards" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', right:'-3%', top:'50%', transform:'translateY(-50%)',
         fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,255,255,0.016)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>04</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
         <div className="reveal" style={{ textAlign:'center', marginBottom:'4rem' }}>
-          <Eyebrow>COMPETITIVE BENCHMARK</Eyebrow>
-          <H2>How We Stand Against<br /><span style={{ color: G }}>the Industry Leaders.</span></H2>
+          <Eyebrow>TECHNICAL STANDARDS</Eyebrow>
+          <H2>Engineered to the<br /><span style={{ color: G }}>Highest Specification.</span></H2>
+          <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
+            lineHeight:1.8, marginTop:'1.25rem', maxWidth:520, margin:'1.25rem auto 0' }}>
+            Every ELIMFILTERS® product is validated against international standards
+            and built on proprietary media technology developed in-house.
+          </p>
         </div>
 
-        <div className="reveal" style={{ overflowX:'auto' }}>
-          <table style={{ width:'100%', borderCollapse:'collapse', minWidth:680 }}>
-            <thead>
-              <tr>
-                <th style={{ padding:'0.9rem 1.2rem', textAlign:'left',
-                  fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W3,
-                  fontWeight:400, borderBottom:`1px solid ${W1}`, width:'28%' }}>SPECIFICATION</th>
-                {['ELIMFILTERS®', 'Donaldson', 'Fleetguard', 'Mann+Hummel'].map((h, i) => (
-                  <th key={h} style={{ padding:'0.9rem 1.2rem', textAlign:'center',
-                    fontFamily:'Outfit, sans-serif', fontSize:'0.82rem', fontWeight:700,
-                    color: i === 0 ? G : W6,
-                    background: i === 0 ? G3 : 'transparent',
-                    borderBottom: i === 0 ? `2px solid ${GB}` : `1px solid ${W1}`,
-                    borderTop: i === 0 ? `2px solid ${GB}` : 'none',
-                    borderLeft: i === 0 ? `1px solid ${GB}` : 'none',
-                    borderRight: i === 0 ? `1px solid ${GB}` : 'none',
-                  }}>
-                    {h}
-                    {i === 0 && <div style={{ fontFamily:'JetBrains Mono, monospace',
-                      fontSize:'0.52rem', color: G, opacity:0.65, marginTop:2 }}>WORLD CATALOGUE</div>}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, ri) => (
-                <tr key={ri} style={{ background: ri % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)' }}>
-                  <td style={{ padding:'0.8rem 1.2rem', fontFamily:'Inter, sans-serif',
-                    fontSize:'0.8rem', color: W6, borderBottom:`1px solid ${W1}` }}>{r[0]}</td>
-                  {r.slice(1).map((v, vi) => (
-                    <td key={vi} style={{ padding:'0.8rem 1.2rem', textAlign:'center',
-                      fontFamily: vi === 0 ? 'JetBrains Mono, monospace' : 'Inter, sans-serif',
-                      fontSize:'0.8rem',
-                      color: vi === 0 ? (v === '✓' ? 'rgba(34,197,94,0.9)' : G) :
-                             (v === '✗' ? 'rgba(239,68,68,0.4)' : W3),
-                      fontWeight: vi === 0 ? 600 : 400,
-                      background: vi === 0 ? G3 : 'transparent',
-                      borderBottom:`1px solid ${W1}`,
-                      borderLeft: vi === 0 ? `1px solid ${GB}` : 'none',
-                      borderRight: vi === 0 ? `1px solid ${GB}` : 'none',
-                    }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="reveal" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(320px,1fr))',
+          gap:1, background: W1, border:`1px solid ${W1}`, borderRadius:8, overflow:'hidden' }}>
+          {specs.map((s, i) => (
+            <div key={i} style={{
+              background: S2, padding:'1.5rem 1.75rem',
+              borderLeft: i % 2 === 0 ? `3px solid ${G}` : `3px solid rgba(255,241,45,0.22)`,
+            }}>
+              <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem',
+                color: W3, letterSpacing:'0.08em', marginBottom:'0.4rem', textTransform:'uppercase' }}>{s.label}</div>
+              <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'1.05rem',
+                fontWeight:700, color: i % 2 === 0 ? G : '#fff', marginBottom:'0.3rem' }}>{s.value}</div>
+              <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.73rem', color: W3, lineHeight:1.5 }}>{s.sub}</div>
+            </div>
+          ))}
         </div>
       </Wrap>
     </section>
@@ -1203,7 +1179,7 @@ const NAV_ITEMS = [
   { id:'hero', label:'Overview' },
   { id:'contamination', label:'Contamination' },
   { id:'technology', label:'Technology' },
-  { id:'comparison', label:'Benchmark' },
+  { id:'standards', label:'Standards' },
   { id:'roi', label:'ROI Calculator' },
   { id:'industries', label:'Industries' },
   { id:'distributor', label:'Distributors' },
@@ -1265,7 +1241,7 @@ export default function PremiumPreview() {
         <Hero />
         <Contamination />
         <Technology />
-        <Comparison />
+        <Standards />
         <ROI />
         <Industries />
         <Distributor />
