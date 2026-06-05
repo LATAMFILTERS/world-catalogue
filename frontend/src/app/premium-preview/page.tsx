@@ -674,22 +674,18 @@ function Technology() {
   useReveal();
 
   const techs = [
-    { id:'NANOCORE', tag:'Electrospun PTFE Nanofiber', color: G,
-      beta:'β₁(c) = 1000', micron:'1 µm', collapse:'350 bar', temp:'+200°C',
-      std:'ISO 16889', apps:['Lube Oil', 'Turbines', 'Precision Hydraulics'], bar:100,
-      desc:'Absolute filtration at 1µm. Designed for turbine lube circuits and precision hydraulic systems where ISO 4406 code 14/12/9 is a contractual requirement. Performance that commodity glass-fibre media cannot physically reach.' },
-    { id:'MACROCORE', tag:'Borosilicate Glass + Wire Mesh', color:'rgba(99,179,237,0.9)',
-      beta:'β₁₀(c) = 1000', micron:'10 µm', collapse:'350 bar', temp:'+120°C',
-      std:'ISO 16889', apps:['Mobile Hydraulics', 'Construction', 'Mining'], bar:92,
-      desc:'Wire-mesh reinforced glass fibre for 350-bar hydraulic circuits. Standard on open-pit mining shovels, underground loaders, and construction plant where filter collapse causes immediate and catastrophic actuator failure.' },
-    { id:'SYNTEPORE', tag:'Hydrophobic Nanofiber Membrane', color:'rgba(192,132,252,0.9)',
-      beta:'β₁(c) ≥ 200', micron:'1 µm', collapse:'120 kPa', temp:'+90°C',
-      std:'ISO 8573-1', apps:['Fuel Systems', 'Compressed Air', 'Marine'], bar:86,
-      desc:'99.5% water-phase rejection. Critical in marine diesel and agricultural fuel systems where bio-fouling and water contamination destroy precision injectors within 500 operating hours. ISO 8573-1 Class 1 compressed air certification.' },
-    { id:'DRYCORE', tag:'Gradient-Density Cellulose Matrix', color:'rgba(74,222,128,0.9)',
-      beta:'β₁₀(c) ≥ 200', micron:'10 µm', collapse:'250 kPa', temp:'+120°C',
-      std:'ISO 5011', apps:['Air Intake', 'Cabin Air', 'Agriculture'], bar:78,
-      desc:'Three-layer gradient density for high dust-load air intake environments. Outer layer captures macro-particles; fine inner layer retains sub-10µm contamination. ISO 5011 collapse resistance exceeds SAE J726 specification.' },
+    { id:'NANOCORE',   tag:'Electrospun PTFE Nanofibre',          color: G,                        beta:'β₁(c) = 1000',  micron:'1 µm',   collapse:'350 bar', temp:'+200°C', std:'ISO 16889', bar:100, apps:['Turbine Lube','Precision Hyd.','Clean Room'],   desc:'Absolute filtration at 1 µm. Designed for turbine lube circuits and precision hydraulic systems where ISO 4406 code 14/12/9 is a contractual requirement.' },
+    { id:'MACROCORE',  tag:'Borosilicate Glass + Wire Mesh',       color:'rgba(99,179,237,0.9)',     beta:'β₁₀(c) = 1000', micron:'10 µm',  collapse:'350 bar', temp:'+120°C', std:'ISO 16889', bar:92,  apps:['Mobile Hyd.','Construction','Mining'],           desc:'Wire-mesh reinforced glass fibre for 350 bar circuits. Standard on open-pit mining shovels and underground loaders.' },
+    { id:'SYNTEPORE',  tag:'Hydrophobic Nanofibre Membrane',       color:'rgba(192,132,252,0.9)',    beta:'β₁(c) ≥ 200',   micron:'1 µm',   collapse:'120 kPa', temp:'+90°C',  std:'ISO 8573-1', bar:86,  apps:['Fuel Systems','Compr. Air','Marine'],            desc:'99.5% water-phase rejection. Critical in marine diesel and agriculture fuel systems where bio-fouling destroys CR injectors within 500 hours.' },
+    { id:'DRYCORE',    tag:'Gradient-Density Cellulose Matrix',    color:'rgba(74,222,128,0.9)',     beta:'β₁₀(c) ≥ 200',  micron:'10 µm',  collapse:'250 kPa', temp:'+120°C', std:'ISO 5011',   bar:78,  apps:['Air Intake','Cabin Air','Agriculture'],          desc:'Three-layer gradient density for high dust-load air intake environments. ISO 5011 collapse resistance exceeds SAE J726.' },
+    { id:'AQUAGUARD',  tag:'Coalescing Water-Separation Media',    color:'rgba(56,189,248,0.9)',     beta:'WR ≥ 99.5%',    micron:'3 µm',   collapse:'200 kPa', temp:'+80°C',  std:'ISO 19438',  bar:88,  apps:['Marine','Offshore','Fuel Storage'],              desc:'Multi-stage coalescing separates free and emulsified water from diesel, biodiesel and HVO fuel streams. Mandatory offshore.' },
+    { id:'PULSECORE',  tag:'Self-Cleaning Pulse-Jet Technology',   color:'rgba(251,191,36,0.9)',     beta:'N/A',           micron:'0.3 µm', collapse:'150 kPa', temp:'+150°C', std:'ISO 11057',  bar:95,  apps:['Dust Collectors','Hoppers','Cement'],            desc:'Reverse-pulse jet cleaning technology for continuous industrial dust collection. Maintains ΔP under 1.2 kPa at rated flow.' },
+    { id:'SYNTRAX',    tag:'Meltblown Synthetic Nanofibre',        color:'rgba(251,146,60,0.9)',     beta:'β₆(c) ≥ 200',   micron:'6 µm',   collapse:'200 bar', temp:'+140°C', std:'ISO 16889',  bar:82,  apps:['General Hyd.','Lube Oil','Transmissions'],      desc:'High-throughput meltblown media for standard hydraulic and lube circuits. Cost-effective performance at high flow rates.' },
+    { id:'THERMACORE', tag:'Ceramic-Composite High-Temp Media',    color:'rgba(239,68,68,0.9)',      beta:'β₃(c) ≥ 200',   micron:'3 µm',   collapse:'500 bar', temp:'+600°C', std:'ISO 4548',   bar:90,  apps:['Power Gen','Gas Turbines','Exhaust'],            desc:'Ceramic fibre composite rated to 600°C for gas turbine inlet and exhaust-side applications. Non-flammable under sustained flame.' },
+    { id:'BIOSHIELD',  tag:'Anti-Microbial Nanofibre Treatment',   color:'rgba(52,211,153,0.9)',     beta:'BFE ≥ 99.9%',   micron:'0.3 µm', collapse:'80 kPa',  temp:'+70°C',  std:'EN 779',     bar:83,  apps:['Cabin Air','HVAC','Medical Rooms'],              desc:'Permanently bonded silver-ion treatment inhibits bacterial and mould growth. Cabin air protection for cabs operating in bio-hazardous zones.' },
+    { id:'DUALPLEX',   tag:'Dual-Layer Fuel + Water Combination',  color:'rgba(167,139,250,0.9)',    beta:'WR ≥ 97%',      micron:'2 µm',   collapse:'160 kPa', temp:'+90°C',  std:'ISO 19438',  bar:85,  apps:['Agriculture','Marine','Fleet Diesel'],           desc:'Single-element dual-stage combining 2 µm particulate capture with coalescing water separation. Reduces service points by 50%.' },
+    { id:'ISOGUARD',   tag:'Precision ISO-Grade Depth Media',      color:'rgba(129,140,248,0.9)',    beta:'β₁(c) = 1000',  micron:'1 µm',   collapse:'420 bar', temp:'+180°C', std:'ISO 16889',  bar:97,  apps:['Turbines','Servo Systems','Semiconductor'],     desc:'Ultra-high-pressure depth filtration for servo-valve circuits requiring sustained ISO 4406 class 13/11/8 or better.' },
+    { id:'MICROLOCK',  tag:'Sub-Micron Depth Electrostatic',       color:'rgba(244,114,182,0.9)',    beta:'β₀.₅(c) ≥ 100', micron:'0.5 µm', collapse:'300 bar', temp:'+160°C', std:'ISO 16889',  bar:98,  apps:['Electronics','Pharma','Aerospace'],             desc:'Electrostatic charge capture for sub-0.5 µm particles in critical process filtration. Approved for pharma and aerospace clean circuits.' },
   ];
   const t = techs[active];
 
@@ -700,95 +696,88 @@ function Technology() {
         color:'rgba(255,241,45,0.018)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>03</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem' }}>
-          <div className="reveal-left">
-            <Eyebrow>PROPRIETARY MEDIA TECHNOLOGY</Eyebrow>
-            <H2>Four Technologies.<br /><span style={{ color: G }}>One Standard<br />of Excellence.</span></H2>
-            <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
-              lineHeight:1.8, marginTop:'1.5rem', marginBottom:'2.5rem', maxWidth:420 }}>
-              Not commodity glass fibre. Every ELIMFILTERS® product is built on a
-              proprietary media platform engineered for a specific contamination
-              environment and validated against international test standards.
-            </p>
+        {/* Header */}
+        <div className="reveal" style={{ marginBottom:'3.5rem' }}>
+          <Eyebrow>PROPRIETARY MEDIA TECHNOLOGY</Eyebrow>
+          <H2>12 Technologies.<br /><span style={{ color: G }}>Zero Compromise.</span></H2>
+          <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
+            lineHeight:1.8, marginTop:'1rem', maxWidth:560 }}>
+            Every ELIMFILTERS® product is built on a proprietary media platform —
+            not commodity glass fibre. Each technology is engineered for a specific
+            contamination environment and validated against international test standards.
+          </p>
+        </div>
 
-            {techs.map((tech, i) => (
-              <button key={i} className="tech-btn" onClick={() => setActive(i)} style={{
-                display:'flex', alignItems:'center', gap:'1rem',
-                padding:'0.9rem 1.1rem', marginBottom:'0.4rem',
-                background: active === i ? G2 : 'transparent',
-                border:`1px solid ${active === i ? GB : W1}`, borderRadius:5,
-              }}>
-                <div style={{ width:8, height:8, borderRadius:2, flexShrink:0,
-                  background: active === i ? tech.color : W3 }} />
-                <div style={{ flex:1 }}>
-                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem',
-                    fontWeight:600, color: active === i ? tech.color : W6 }}>{tech.id}</div>
-                  <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.7rem',
-                    color: W3, marginTop:2 }}>{tech.tag}</div>
+        {/* Tech selector pills */}
+        <div className="reveal" style={{ display:'flex', flexWrap:'wrap', gap:'0.4rem', marginBottom:'2rem' }}>
+          {techs.map((tech, i) => (
+            <button key={i} onClick={() => setActive(i)} className="tech-btn" style={{
+              padding:'6px 14px', borderRadius:3,
+              background: active === i ? G2 : 'transparent',
+              border:`1px solid ${active === i ? GB : W1}`,
+              fontFamily:'JetBrains Mono, monospace', fontSize:'0.68rem',
+              fontWeight: active === i ? 700 : 400,
+              color: active === i ? tech.color : W3,
+            }}>{tech.id}</button>
+          ))}
+        </div>
+
+        {/* Detail panel */}
+        <div className="reveal" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2.5rem', alignItems:'start' }}>
+          <div style={{ background: S2, border:`1px solid ${GB}`, borderTop:`3px solid ${t.color}`, borderRadius:8, overflow:'hidden' }}>
+            <div style={{ padding:'2rem' }}>
+              <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'0.5rem' }}>
+                <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.8rem', fontWeight:700, color: t.color }}>{t.id}</span>
+                <div style={{ display:'flex', gap:6, flexWrap:'wrap', justifyContent:'flex-end' }}>
+                  {t.apps.map(a => (
+                    <span key={a} style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
+                      color: W3, padding:'3px 7px', border:`1px solid ${W1}`, borderRadius:2 }}>{a}</span>
+                  ))}
                 </div>
-                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem',
-                  color: active === i ? tech.color : W3 }}>{tech.beta}</div>
-              </button>
-            ))}
+              </div>
+              <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.62rem',
+                color: t.color, opacity:0.72, letterSpacing:'0.1em', marginBottom:'1.25rem' }}>{t.tag}</p>
+              <div style={{ marginBottom:'1.5rem' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}>
+                  <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W6 }}>Performance Index</span>
+                  <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', color: t.color }}>{t.bar}/100</span>
+                </div>
+                <div style={{ height:5, background: W1, borderRadius:3 }}>
+                  <div style={{ height:'100%', width:`${t.bar}%`,
+                    background:`linear-gradient(90deg, ${t.color}88, ${t.color})`,
+                    borderRadius:3, transition:'width 0.45s ease' }} />
+                </div>
+              </div>
+              <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.88rem', color: W6, lineHeight:1.75 }}>{t.desc}</p>
+            </div>
+            <div style={{ borderTop:`1px solid ${W1}`, display:'grid', gridTemplateColumns:'repeat(3,1fr)', background: W1, gap:1 }}>
+              {[['BETA RATIO',t.beta],['ABS. RATING',t.micron],['COLLAPSE ΔP',t.collapse],['MAX TEMP',t.temp],['STANDARD',t.std],['MEDIA',t.tag.split(' ').slice(0,2).join(' ')]].map(([k,v]) => (
+                <div key={k} style={{ background: S1, padding:'0.85rem 1rem' }}>
+                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.52rem', color: W3, letterSpacing:'0.12em', marginBottom:4 }}>{k}</div>
+                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', color:'#fff', fontWeight:600 }}>{v}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="reveal-right">
-            <div style={{ background: S2, border:`1px solid ${GB}`,
-              borderTop:`3px solid ${t.color}`, borderRadius:8, overflow:'hidden' }}>
-              <div style={{ padding:'2rem' }}>
-                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'0.5rem' }}>
-                  <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.9rem',
-                    fontWeight:700, color: t.color }}>{t.id}</span>
-                  <div style={{ display:'flex', gap:6, flexWrap:'wrap', justifyContent:'flex-end' }}>
-                    {t.apps.map(a => (
-                      <span key={a} style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
-                        color: W3, padding:'3px 7px', border:`1px solid ${W1}`, borderRadius:2 }}>{a}</span>
-                    ))}
-                  </div>
+          {/* Mini grid — all 12 at a glance */}
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:1, background: W1, borderRadius:6, overflow:'hidden', border:`1px solid ${W1}` }}>
+            {techs.map((tech, i) => (
+              <button key={i} onClick={() => setActive(i)} className="tech-btn" style={{
+                background: active === i ? G3 : S2, padding:'1rem 0.85rem',
+                borderBottom:'none', textAlign:'left',
+                outline: active === i ? `1px solid ${GB}` : 'none',
+              }}>
+                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem',
+                  fontWeight:700, color: active === i ? tech.color : W6, marginBottom:3 }}>{tech.id}</div>
+                <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.62rem', color: W3,
+                  lineHeight:1.4, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+                  {tech.tag.split(' ').slice(0,3).join(' ')}
                 </div>
-                <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.62rem',
-                  color: t.color, opacity:0.72, letterSpacing:'0.1em', marginBottom:'1.25rem' }}>{t.tag}</p>
-
-                {/* Animated efficiency bar */}
-                <div style={{ marginBottom:'1.5rem' }}>
-                  <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}>
-                    <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W6 }}>
-                      Filtration Performance Index
-                    </span>
-                    <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', color: t.color }}>
-                      {t.bar}/100
-                    </span>
-                  </div>
-                  <div style={{ height:5, background: W1, borderRadius:3 }}>
-                    <div style={{ height:'100%', width:`${t.bar}%`,
-                      background:`linear-gradient(90deg, ${t.color}99, ${t.color})`,
-                      borderRadius:3, transition:'width 0.5s ease' }} />
-                  </div>
-                </div>
-
-                <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.88rem',
-                  color: W6, lineHeight:1.75, marginBottom:'1.5rem' }}>{t.desc}</p>
-              </div>
-
-              <div style={{ borderTop:`1px solid ${W1}`, display:'grid',
-                gridTemplateColumns:'repeat(3,1fr)', background: W1, gap:1 }}>
-                {[
-                  ['BETA RATIO', t.beta],
-                  ['ABS. RATING', t.micron],
-                  ['COLLAPSE ΔP', t.collapse],
-                  ['MAX TEMP', t.temp],
-                  ['STANDARD', t.std],
-                  ['MEDIA TYPE', t.tag.split(' ').slice(0,2).join(' ')],
-                ].map(([k, v]) => (
-                  <div key={k} style={{ background: S1, padding:'0.9rem 1rem' }}>
-                    <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.53rem',
-                      color: W3, letterSpacing:'0.12em', marginBottom:4 }}>{k}</div>
-                    <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.73rem',
-                      color:'#fff', fontWeight:600, lineHeight:1.4 }}>{v}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                  color: active === i ? tech.color : W3, marginTop:4 }}>{tech.micron}</div>
+              </button>
+            ))}
           </div>
         </div>
       </Wrap>
@@ -802,12 +791,18 @@ function Technology() {
 function ProductLines() {
   useReveal();
   const lines = [
-    { code:'AF', name:'Air Filtration',           spec:'ISO 5011 · 0.3 µm',  desc:'Primary and safety elements for turbocharged engines, compressors and HVAC. SYNTRAX nanofibre media for maximum dust-hold capacity.', ind:'Mining · Agriculture · Construction · Marine' },
-    { code:'FF', name:'Fuel Filtration',          spec:'ISO 19438 · 2 µm',   desc:'Primary, secondary and pre-filter fuel elements with integrated water separation. Protects high-pressure common-rail injectors.', ind:'Oil & Gas · Agriculture · Fleet · Marine' },
-    { code:'HF', name:'Hydraulic Filtration',     spec:'ISO 16889 · 1 µm',   desc:'Return-line, pressure and suction elements. NANOFORCE glass-fibre composite with wire mesh support rated to 350 bar collapse.', ind:'Mining · Construction · Manufacturing · Utilities' },
-    { code:'OF', name:'Oil Filtration',           spec:'API SN · 5 µm',      desc:'Full-flow and bypass lube oil elements. Engineered for extended drain intervals up to 1,000 machine hours under severe duty.', ind:'Fleet · Mining · Power Gen · Agriculture' },
-    { code:'CF', name:'Coolant Filtration',       spec:'ASTM D6922',         desc:'SCA dosing and bypass units. Prevents scale, corrosion and liner pitting in wet-sleeve engine blocks across all climate zones.', ind:'Fleet · Power Gen · Marine · Construction' },
-    { code:'DP', name:'Differential Protection',  spec:'API GL-5 · 10 µm',   desc:'Axle and gearbox protection elements for differentials operating under extreme load, high torque, and continuous vibration.', ind:'Mining · Agriculture · Construction · Fleet' },
+    { code:'AF', name:'Air Filtration',             spec:'ISO 5011 · 0.3 µm',    desc:'Primary and safety air elements for turbocharged engines, compressors and HVAC. DRYCORE gradient-density media for maximum dust-hold capacity.', ind:'Mining · Agriculture · Construction · Marine' },
+    { code:'FF', name:'Fuel Filtration',            spec:'ISO 19438 · 2 µm',     desc:'Primary, secondary and pre-filter fuel elements with integrated water separation. Protects high-pressure common-rail injectors from abrasive contamination.', ind:'Oil & Gas · Agriculture · Fleet · Marine' },
+    { code:'HF', name:'Hydraulic Filtration',       spec:'ISO 16889 · 1 µm',     desc:'Return-line, pressure and suction elements. MACROCORE glass-fibre composite with wire mesh support rated to 350 bar collapse pressure.', ind:'Mining · Construction · Manufacturing · Utilities' },
+    { code:'OF', name:'Oil / Lube Filtration',      spec:'API SN · 5 µm',        desc:'Full-flow and bypass lube oil elements with SYNTRAX media. Engineered for extended drain intervals up to 1,000 machine hours under severe duty cycles.', ind:'Fleet · Mining · Power Gen · Agriculture' },
+    { code:'CF', name:'Coolant Filtration',         spec:'ASTM D6922',           desc:'SCA dosing and bypass units. Prevents scale, corrosion and liner pitting in wet-sleeve engine blocks across all climate zones and seasonal extremes.', ind:'Fleet · Power Gen · Marine · Construction' },
+    { code:'DP', name:'Differential Protection',    spec:'API GL-5 · 10 µm',     desc:'Axle and gearbox protection elements for differentials under extreme load, high torque and continuous vibration. Extended drain rated.', ind:'Mining · Agriculture · Construction · Fleet' },
+    { code:'CA', name:'Cabin Air Filtration',       spec:'EN 779 · BFE ≥ 99.9%', desc:'Operator cabin air elements using BIOSHIELD anti-microbial treatment. Removes dust, pollen, diesel particulates and bio-hazardous aerosols.', ind:'Mining · Agriculture · Construction · Fleet' },
+    { code:'WS', name:'Water Separation',           spec:'ISO 19438 · WR ≥ 99%', desc:'AQUAGUARD coalescing elements for free and emulsified water removal from diesel, biodiesel and HVO fuel streams. Mandatory for offshore applications.', ind:'Marine · Offshore · Fuel Storage · Oil & Gas' },
+    { code:'GA', name:'Gas & Compressed Air',       spec:'ISO 8573-1 Class 1',   desc:'Compressed air inline elements removing particulates, water and oil aerosols. SYNTEPORE hydrophobic membrane for ISO 8573-1 Class 1 certification.', ind:'Manufacturing · Pharma · Food & Bev · Power Gen' },
+    { code:'TR', name:'Transmission Filtration',    spec:'ISO 16889 · 6 µm',     desc:'Suction and return elements for automatic, powershift and hydrostatic transmissions. Designed for shared sump circuits and high-cycle shift duty.', ind:'Mining · Agriculture · Construction · Fleet' },
+    { code:'BR', name:'Breathers & Venting',        spec:'ISO 5011 · 3 µm',      desc:'Reservoir and gearbox breather elements preventing ingressed contamination during thermal breathing cycles. DRYCORE media, stainless mesh pre-filter.', ind:'All Industries · Reservoirs · Gearboxes' },
+    { code:'DS', name:'Dust Separation Systems',    spec:'ISO 11057 · 0.3 µm',   desc:'Industrial dust collector cartridges with PULSECORE reverse-pulse jet cleaning. Continuous operation at rated flow with ΔP below 1.2 kPa.', ind:'Cement · Mining · Steel · Grain · Pharma' },
   ];
   return (
     <section id="products" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
@@ -820,7 +815,7 @@ function ProductLines() {
           marginBottom:'4rem', flexWrap:'wrap', gap:'1.5rem' }}>
           <div className="reveal-left">
             <Eyebrow>PRODUCT LINES</Eyebrow>
-            <H2>Six systems.<br /><span style={{ color: G }}>One ecosystem.</span></H2>
+            <H2>12 systems.<br /><span style={{ color: G }}>One ecosystem.</span></H2>
           </div>
           <div className="reveal-right" style={{ fontFamily:'Inter, sans-serif', fontSize:'0.82rem',
             color: W3, maxWidth:280, lineHeight:1.75, textAlign:'right' }}>
