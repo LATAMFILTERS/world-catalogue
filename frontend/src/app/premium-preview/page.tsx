@@ -699,18 +699,18 @@ function Technology() {
   useReveal();
 
   const techs = [
-    { id:'NANOCORE',   tag:'Electrospun PTFE Nanofibre',          color: G,                        beta:'β₁(c) = 1000',  micron:'1 µm',   collapse:'350 bar', temp:'+200°C', std:'ISO 16889', bar:100, apps:['Turbine Lube','Precision Hyd.','Clean Room'],   desc:'Absolute filtration at 1 µm. Designed for turbine lube circuits and precision hydraulic systems where ISO 4406 code 14/12/9 is a contractual requirement.' },
-    { id:'MACROCORE',  tag:'Borosilicate Glass + Wire Mesh',       color:'rgba(99,179,237,0.9)',     beta:'β₁₀(c) = 1000', micron:'10 µm',  collapse:'350 bar', temp:'+120°C', std:'ISO 16889', bar:92,  apps:['Mobile Hyd.','Construction','Mining'],           desc:'Wire-mesh reinforced glass fibre for 350 bar circuits. Standard on open-pit mining shovels and underground loaders.' },
-    { id:'SYNTEPORE',  tag:'Hydrophobic Nanofibre Membrane',       color:'rgba(192,132,252,0.9)',    beta:'β₁(c) ≥ 200',   micron:'1 µm',   collapse:'120 kPa', temp:'+90°C',  std:'ISO 8573-1', bar:86,  apps:['Fuel Systems','Compr. Air','Marine'],            desc:'99.5% water-phase rejection. Critical in marine diesel and agriculture fuel systems where bio-fouling destroys CR injectors within 500 hours.' },
-    { id:'DRYCORE',    tag:'Gradient-Density Cellulose Matrix',    color:'rgba(74,222,128,0.9)',     beta:'β₁₀(c) ≥ 200',  micron:'10 µm',  collapse:'250 kPa', temp:'+120°C', std:'ISO 5011',   bar:78,  apps:['Air Intake','Cabin Air','Agriculture'],          desc:'Three-layer gradient density for high dust-load air intake environments. ISO 5011 collapse resistance exceeds SAE J726.' },
-    { id:'AQUAGUARD',  tag:'Coalescing Water-Separation Media',    color:'rgba(56,189,248,0.9)',     beta:'WR ≥ 99.5%',    micron:'3 µm',   collapse:'200 kPa', temp:'+80°C',  std:'ISO 19438',  bar:88,  apps:['Marine','Offshore','Fuel Storage'],              desc:'Multi-stage coalescing separates free and emulsified water from diesel, biodiesel and HVO fuel streams. Mandatory offshore.' },
-    { id:'PULSECORE',  tag:'Self-Cleaning Pulse-Jet Technology',   color:'rgba(251,191,36,0.9)',     beta:'N/A',           micron:'0.3 µm', collapse:'150 kPa', temp:'+150°C', std:'ISO 11057',  bar:95,  apps:['Dust Collectors','Hoppers','Cement'],            desc:'Reverse-pulse jet cleaning technology for continuous industrial dust collection. Maintains ΔP under 1.2 kPa at rated flow.' },
-    { id:'SYNTRAX',    tag:'Meltblown Synthetic Nanofibre',        color:'rgba(251,146,60,0.9)',     beta:'β₆(c) ≥ 200',   micron:'6 µm',   collapse:'200 bar', temp:'+140°C', std:'ISO 16889',  bar:82,  apps:['General Hyd.','Lube Oil','Transmissions'],      desc:'High-throughput meltblown media for standard hydraulic and lube circuits. Cost-effective performance at high flow rates.' },
-    { id:'THERMACORE', tag:'Ceramic-Composite High-Temp Media',    color:'rgba(239,68,68,0.9)',      beta:'β₃(c) ≥ 200',   micron:'3 µm',   collapse:'500 bar', temp:'+600°C', std:'ISO 4548',   bar:90,  apps:['Power Gen','Gas Turbines','Exhaust'],            desc:'Ceramic fibre composite rated to 600°C for gas turbine inlet and exhaust-side applications. Non-flammable under sustained flame.' },
-    { id:'BIOSHIELD',  tag:'Anti-Microbial Nanofibre Treatment',   color:'rgba(52,211,153,0.9)',     beta:'BFE ≥ 99.9%',   micron:'0.3 µm', collapse:'80 kPa',  temp:'+70°C',  std:'EN 779',     bar:83,  apps:['Cabin Air','HVAC','Medical Rooms'],              desc:'Permanently bonded silver-ion treatment inhibits bacterial and mould growth. Cabin air protection for cabs operating in bio-hazardous zones.' },
-    { id:'DUALPLEX',   tag:'Dual-Layer Fuel + Water Combination',  color:'rgba(167,139,250,0.9)',    beta:'WR ≥ 97%',      micron:'2 µm',   collapse:'160 kPa', temp:'+90°C',  std:'ISO 19438',  bar:85,  apps:['Agriculture','Marine','Fleet Diesel'],           desc:'Single-element dual-stage combining 2 µm particulate capture with coalescing water separation. Reduces service points by 50%.' },
-    { id:'ISOGUARD',   tag:'Precision ISO-Grade Depth Media',      color:'rgba(129,140,248,0.9)',    beta:'β₁(c) = 1000',  micron:'1 µm',   collapse:'420 bar', temp:'+180°C', std:'ISO 16889',  bar:97,  apps:['Turbines','Servo Systems','Semiconductor'],     desc:'Ultra-high-pressure depth filtration for servo-valve circuits requiring sustained ISO 4406 class 13/11/8 or better.' },
-    { id:'MICROLOCK',  tag:'Sub-Micron Depth Electrostatic',       color:'rgba(244,114,182,0.9)',    beta:'β₀.₅(c) ≥ 100', micron:'0.5 µm', collapse:'300 bar', temp:'+160°C', std:'ISO 16889',  bar:98,  apps:['Electronics','Pharma','Aerospace'],             desc:'Electrostatic charge capture for sub-0.5 µm particles in critical process filtration. Approved for pharma and aerospace clean circuits.' },
+    { id:'NANOCORE',    img:'/assets/nanoforce.avif',        tag:'Electrospun PTFE Nanofibre',         color: G,                        beta:'β₁(c) = 1000',   micron:'1 µm',   collapse:'350 bar', temp:'+200°C', std:'ISO 16889',  bar:100, apps:['Turbine Lube','Precision Hyd.','Clean Room'],  desc:'Absolute filtration at 1 µm. Designed for turbine lube circuits and precision hydraulic systems where ISO 4406 code 14/12/9 is a contractual requirement.' },
+    { id:'MACROCORE',   img:'/assets/macrocore.avif',        tag:'Borosilicate Glass + Wire Mesh',      color:'rgba(99,179,237,0.9)',     beta:'β₁₀(c) = 1000',  micron:'10 µm',  collapse:'350 bar', temp:'+120°C', std:'ISO 16889',  bar:92,  apps:['Mobile Hyd.','Construction','Mining'],          desc:'Wire-mesh reinforced glass fibre for 350 bar circuits. Standard on open-pit mining shovels and underground loaders.' },
+    { id:'SYNTEPORE',   img:'/assets/syntepore.avif',        tag:'Hydrophobic Nanofibre Membrane',      color:'rgba(192,132,252,0.9)',    beta:'β₁(c) ≥ 200',    micron:'1 µm',   collapse:'120 kPa', temp:'+90°C',  std:'ISO 8573-1', bar:86,  apps:['Fuel Systems','Compr. Air','Marine'],           desc:'99.5% water-phase rejection. Critical in marine diesel and agriculture fuel systems where bio-fouling destroys CR injectors within 500 hours.' },
+    { id:'DRYCORE',     img:'/assets/drycore.avif',          tag:'Gradient-Density Cellulose Matrix',   color:'rgba(74,222,128,0.9)',     beta:'β₁₀(c) ≥ 200',   micron:'10 µm',  collapse:'250 kPa', temp:'+120°C', std:'ISO 5011',   bar:78,  apps:['Air Intake','Cabin Air','Agriculture'],         desc:'Three-layer gradient density for high dust-load air intake environments. ISO 5011 collapse resistance exceeds SAE J726.' },
+    { id:'HYDROCORE',   img:'/assets/aquaguardseries.avif',  tag:'Multi-Stage Coalescing Media',        color:'rgba(56,189,248,0.9)',     beta:'WR ≥ 99.5%',     micron:'3 µm',   collapse:'200 kPa', temp:'+80°C',  std:'ISO 19438',  bar:88,  apps:['Marine','Offshore','Fuel Storage'],             desc:'Multi-stage coalescing separates free and emulsified water from diesel, biodiesel and HVO fuel streams. Mandatory for offshore applications.' },
+    { id:'INTEKCORE',   img:'/assets/intekcore.avif',        tag:'Integrated Composite Core System',    color:'rgba(251,191,36,0.9)',     beta:'β₅(c) ≥ 200',    micron:'5 µm',   collapse:'300 kPa', temp:'+130°C', std:'ISO 16889',  bar:91,  apps:['Dust Collectors','Hoppers','Cement'],           desc:'Integrated composite core media for continuous industrial filtration under high-vibration, high-cycle operating conditions.' },
+    { id:'SYNTRAX',     img:'/assets/syntrax.avif',          tag:'Meltblown Synthetic Nanofibre',       color:'rgba(251,146,60,0.9)',     beta:'β₆(c) ≥ 200',    micron:'6 µm',   collapse:'200 bar', temp:'+140°C', std:'ISO 16889',  bar:82,  apps:['General Hyd.','Lube Oil','Transmissions'],     desc:'High-throughput meltblown media for standard hydraulic and lube circuits. Cost-effective performance at high flow rates.' },
+    { id:'THERMACORE',  img:'/assets/cooltech.avif',         tag:'Ceramic-Composite High-Temp Media',   color:'rgba(239,68,68,0.9)',      beta:'β₃(c) ≥ 200',    micron:'3 µm',   collapse:'500 bar', temp:'+600°C', std:'ISO 4548',   bar:90,  apps:['Power Gen','Gas Turbines','Exhaust'],           desc:'Ceramic fibre composite rated to 600°C for gas turbine inlet and exhaust-side applications. Non-flammable under sustained flame.' },
+    { id:'MARINECLEAN', img:'/assets/marineclear.avif',      tag:'Marine-Grade Corrosion-Proof Media',  color:'rgba(52,211,153,0.9)',     beta:'β₃(c) ≥ 200',    micron:'3 µm',   collapse:'180 kPa', temp:'+85°C',  std:'ISO 8573-1', bar:84,  apps:['Marine','Offshore','Coastal Diesel'],          desc:'Salt-spray and bio-fouling resistant media for marine engine rooms, deck machinery and offshore fuel systems. Certified for continuous saltwater exposure.' },
+    { id:'DURATECH',    img:'/assets/duratech.avif',         tag:'Extended-Life Dual-Stage Media',      color:'rgba(167,139,250,0.9)',    beta:'WR ≥ 97%',       micron:'2 µm',   collapse:'160 kPa', temp:'+90°C',  std:'ISO 19438',  bar:85,  apps:['Agriculture','Marine','Fleet Diesel'],          desc:'Single-element dual-stage combining 2 µm particulate capture with coalescing water separation. Extended service life reduces drain intervals by 50%.' },
+    { id:'ISOGUARD',    img:'/assets/aquaguard.avif',        tag:'Precision ISO-Grade Depth Media',     color:'rgba(129,140,248,0.9)',    beta:'β₁(c) = 1000',   micron:'1 µm',   collapse:'420 bar', temp:'+180°C', std:'ISO 16889',  bar:97,  apps:['Turbines','Servo Systems','Semiconductor'],    desc:'Ultra-high-pressure depth filtration for servo-valve circuits requiring sustained ISO 4406 class 13/11/8 or better.' },
+    { id:'MICROKAPPA',  img:'/assets/microkappa.avif',       tag:'Sub-Micron Depth Electrostatic',      color:'rgba(244,114,182,0.9)',    beta:'β₀.₅(c) ≥ 100',  micron:'0.5 µm', collapse:'300 bar', temp:'+160°C', std:'ISO 16889',  bar:98,  apps:['Electronics','Pharma','Aerospace'],             desc:'Electrostatic charge capture for sub-0.5 µm particles in critical process filtration. Approved for pharma and aerospace clean circuits.' },
   ];
   const t = techs[active];
 
@@ -750,6 +750,18 @@ function Technology() {
         {/* Detail panel */}
         <div className="reveal" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2.5rem', alignItems:'start' }}>
           <div style={{ background: S2, border:`1px solid ${GB}`, borderTop:`3px solid ${t.color}`, borderRadius:8, overflow:'hidden' }}>
+            {/* Technology image */}
+            <div style={{ height:140, overflow:'hidden', position:'relative', background:'#0a0a0a' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={t.img} alt={t.id}
+                style={{ width:'100%', height:'100%', objectFit:'cover', opacity:0.55, transition:'opacity 0.3s' }}
+                onMouseEnter={e => (e.currentTarget.style.opacity='0.8')}
+                onMouseLeave={e => (e.currentTarget.style.opacity='0.55')}
+                onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; }}
+              />
+              <div style={{ position:'absolute', inset:0,
+                background:`linear-gradient(to top, ${S2} 0%, transparent 60%)` }} />
+            </div>
             <div style={{ padding:'2rem' }}>
               <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'0.5rem' }}>
                 <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.8rem', fontWeight:700, color: t.color }}>{t.id}</span>
@@ -789,18 +801,30 @@ function Technology() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:1, background: W1, borderRadius:6, overflow:'hidden', border:`1px solid ${W1}` }}>
             {techs.map((tech, i) => (
               <button key={i} onClick={() => setActive(i)} className="tech-btn" style={{
+                position:'relative', overflow:'hidden',
                 background: active === i ? G3 : S2, padding:'1rem 0.85rem',
                 borderBottom:'none', textAlign:'left',
                 outline: active === i ? `1px solid ${GB}` : 'none',
+                minHeight:80,
               }}>
-                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem',
-                  fontWeight:700, color: active === i ? tech.color : W6, marginBottom:3 }}>{tech.id}</div>
-                <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.62rem', color: W3,
-                  lineHeight:1.4, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
-                  {tech.tag.split(' ').slice(0,3).join(' ')}
+                {/* bg image */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={tech.img} alt="" aria-hidden
+                  style={{ position:'absolute', inset:0, width:'100%', height:'100%',
+                    objectFit:'cover', opacity: active === i ? 0.18 : 0.07, transition:'opacity 0.2s',
+                    pointerEvents:'none' }}
+                  onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; }}
+                />
+                <div style={{ position:'relative', zIndex:1 }}>
+                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem',
+                    fontWeight:700, color: active === i ? tech.color : W6, marginBottom:3 }}>{tech.id}</div>
+                  <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.6rem', color: W3,
+                    lineHeight:1.4, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+                    {tech.tag.split(' ').slice(0,3).join(' ')}
+                  </div>
+                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
+                    color: active === i ? tech.color : W3, marginTop:4 }}>{tech.micron}</div>
                 </div>
-                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
-                  color: active === i ? tech.color : W3, marginTop:4 }}>{tech.micron}</div>
               </button>
             ))}
           </div>
