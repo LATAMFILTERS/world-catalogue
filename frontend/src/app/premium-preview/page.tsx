@@ -7,7 +7,8 @@ import Link from 'next/link';
 const CSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: #080808; }
+  body { background: #080808; cursor: none; }
+  a, button, [role=button], input[type=range] { cursor: none; }
 
   .reveal {
     opacity: 0;
@@ -121,6 +122,51 @@ const CSS = `
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: #080808; }
   ::-webkit-scrollbar-thumb { background: rgba(255,241,45,0.15); border-radius: 2px; }
+
+  .c-dot {
+    position: fixed; top: -3px; left: -3px;
+    width: 6px; height: 6px;
+    background: #FFF12D; border-radius: 50%;
+    pointer-events: none; z-index: 99999;
+    will-change: transform; transition: opacity 0.2s;
+  }
+  .c-ring {
+    position: fixed; top: -16px; left: -16px;
+    width: 32px; height: 32px;
+    border: 1px solid rgba(255,241,45,0.5);
+    border-radius: 50%;
+    pointer-events: none; z-index: 99998;
+    will-change: transform;
+    transition: width 0.22s ease, height 0.22s ease,
+                top 0.22s ease, left 0.22s ease,
+                border-color 0.22s ease;
+  }
+  .c-ring.expanded {
+    width: 54px; height: 54px;
+    top: -27px; left: -27px;
+    border-color: rgba(255,241,45,0.18);
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .ticker-track {
+    display: flex; width: max-content;
+    animation: ticker 36s linear infinite;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+
+  .pl-card {
+    background: #090909;
+    border-left: 3px solid rgba(255,241,45,0.15);
+    transition: background 0.22s, border-color 0.22s;
+  }
+  .pl-card:hover {
+    background: #111;
+    border-left-color: #FFF12D;
+  }
+  .pl-card:hover .pl-code { color: #FFF12D !important; }
 `;
 
 // ─── Tokens ───────────────────────────────────────────────────────────────────
@@ -134,6 +180,65 @@ const W1 = 'rgba(255,255,255,0.07)';
 const S1 = '#080808';
 const S2 = '#0f0f0f';
 const S3 = '#161616';
+
+// ─── Custom cursor ────────────────────────────────────────────────────────────
+function Cursor() {
+  const dot  = useRef<HTMLDivElement>(null);
+  const ring = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let mx = 0, my = 0, rx = 0, ry = 0, raf = 0;
+    const move = (e: MouseEvent) => {
+      mx = e.clientX; my = e.clientY;
+      if (dot.current) dot.current.style.transform = `translate(${mx}px,${my}px)`;
+    };
+    const tick = () => {
+      rx += (mx - rx) * 0.11;
+      ry += (my - ry) * 0.11;
+      if (ring.current) ring.current.style.transform = `translate(${rx}px,${ry}px)`;
+      raf = requestAnimationFrame(tick);
+    };
+    const expand = () => ring.current?.classList.add('expanded');
+    const shrink = () => ring.current?.classList.remove('expanded');
+    window.addEventListener('mousemove', move);
+    document.addEventListener('mouseover', e => {
+      const t = e.target as HTMLElement;
+      if (t.closest('a,button,[role=button]')) expand(); else shrink();
+    });
+    raf = requestAnimationFrame(tick);
+    return () => { window.removeEventListener('mousemove', move); cancelAnimationFrame(raf); };
+  }, []);
+  return (
+    <>
+      <div ref={dot}  className="c-dot" />
+      <div ref={ring} className="c-ring" />
+    </>
+  );
+}
+
+// ─── Ticker ───────────────────────────────────────────────────────────────────
+const TICKER_ITEMS = [
+  'AIR FILTRATION','FUEL FILTRATION','HYDRAULIC FILTRATION','OIL FILTRATION',
+  'COOLANT FILTRATION','DIFFERENTIAL PROTECTION','CABIN AIR','WATER SEPARATION',
+];
+function Ticker() {
+  const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
+  return (
+    <div style={{ background:'#050505', borderTop:`1px solid rgba(255,241,45,0.07)`,
+      borderBottom:`1px solid rgba(255,241,45,0.07)`, overflow:'hidden', padding:'13px 0' }}>
+      <div className="ticker-track">
+        {items.map((t, i) => (
+          <div key={i} style={{ display:'flex', alignItems:'center', gap:'2.5rem',
+            paddingRight:'2.5rem', flexShrink:0 }}>
+            <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+              color:'rgba(255,255,255,0.22)', letterSpacing:'0.22em', whiteSpace:'nowrap' }}>{t}</span>
+            <span style={{ width:3, height:3, borderRadius:'50%',
+              background:'rgba(255,241,45,0.35)', flexShrink:0 }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // ─── Scroll reveal hook ───────────────────────────────────────────────────────
 function useReveal() {
@@ -692,7 +797,71 @@ function Technology() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// SECTION 04 — TECHNICAL STANDARDS
+// SECTION 04 — PRODUCT LINES
+// ═══════════════════════════════════════════════════════════════════════════════
+function ProductLines() {
+  useReveal();
+  const lines = [
+    { code:'AF', name:'Air Filtration',           spec:'ISO 5011 · 0.3 µm',  desc:'Primary and safety elements for turbocharged engines, compressors and HVAC. SYNTRAX nanofibre media for maximum dust-hold capacity.', ind:'Mining · Agriculture · Construction · Marine' },
+    { code:'FF', name:'Fuel Filtration',          spec:'ISO 19438 · 2 µm',   desc:'Primary, secondary and pre-filter fuel elements with integrated water separation. Protects high-pressure common-rail injectors.', ind:'Oil & Gas · Agriculture · Fleet · Marine' },
+    { code:'HF', name:'Hydraulic Filtration',     spec:'ISO 16889 · 1 µm',   desc:'Return-line, pressure and suction elements. NANOFORCE glass-fibre composite with wire mesh support rated to 350 bar collapse.', ind:'Mining · Construction · Manufacturing · Utilities' },
+    { code:'OF', name:'Oil Filtration',           spec:'API SN · 5 µm',      desc:'Full-flow and bypass lube oil elements. Engineered for extended drain intervals up to 1,000 machine hours under severe duty.', ind:'Fleet · Mining · Power Gen · Agriculture' },
+    { code:'CF', name:'Coolant Filtration',       spec:'ASTM D6922',         desc:'SCA dosing and bypass units. Prevents scale, corrosion and liner pitting in wet-sleeve engine blocks across all climate zones.', ind:'Fleet · Power Gen · Marine · Construction' },
+    { code:'DP', name:'Differential Protection',  spec:'API GL-5 · 10 µm',   desc:'Axle and gearbox protection elements for differentials operating under extreme load, high torque, and continuous vibration.', ind:'Mining · Agriculture · Construction · Fleet' },
+  ];
+  return (
+    <section id="products" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
+      <div style={{ position:'absolute', left:'-2%', top:'50%', transform:'translateY(-50%)',
+        fontFamily:'Outfit, sans-serif', fontSize:'clamp(14rem,22vw,28rem)', fontWeight:700,
+        color:'rgba(255,255,255,0.013)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>PL</div>
+
+      <Wrap style={{ position:'relative', zIndex:1 }}>
+        <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between',
+          marginBottom:'4rem', flexWrap:'wrap', gap:'1.5rem' }}>
+          <div className="reveal-left">
+            <Eyebrow>PRODUCT LINES</Eyebrow>
+            <H2>Six systems.<br /><span style={{ color: G }}>One ecosystem.</span></H2>
+          </div>
+          <div className="reveal-right" style={{ fontFamily:'Inter, sans-serif', fontSize:'0.82rem',
+            color: W3, maxWidth:280, lineHeight:1.75, textAlign:'right' }}>
+            All six lines engineered around a shared cross-reference database.
+            One part number resolves across every system.
+          </div>
+        </div>
+
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(340px,1fr))',
+          gap:1, background: W1, borderRadius:8, overflow:'hidden', border:`1px solid ${W1}` }}>
+          {lines.map((l, i) => (
+            <div key={i} className={`pl-card reveal stagger-${Math.min(i+1,6)}`}
+              style={{ padding:'2.25rem 2rem' }}>
+              <div style={{ display:'flex', alignItems:'flex-start',
+                justifyContent:'space-between', marginBottom:'1.5rem' }}>
+                <span className="pl-code" style={{ fontFamily:'JetBrains Mono, monospace',
+                  fontSize:'2rem', fontWeight:700, color:'rgba(255,255,255,0.18)',
+                  letterSpacing:'-0.03em', transition:'color 0.22s' }}>{l.code}</span>
+                <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.56rem',
+                  color: W3, padding:'4px 9px', border:`1px solid ${W1}`,
+                  borderRadius:2, letterSpacing:'0.1em', whiteSpace:'nowrap' }}>{l.spec}</span>
+              </div>
+              <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.12rem',
+                fontWeight:700, color:'#fff', marginBottom:'0.85rem' }}>{l.name}</h3>
+              <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.78rem',
+                color: W3, lineHeight:1.75, marginBottom:'1.5rem' }}>{l.desc}</p>
+              <div style={{ borderTop:`1px solid ${W1}`, paddingTop:'1rem' }}>
+                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.54rem',
+                  color:'rgba(255,255,255,0.18)', letterSpacing:'0.16em', marginBottom:'0.35rem' }}>INDUSTRIES</div>
+                <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W3 }}>{l.ind}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Wrap>
+    </section>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SECTION 05 — TECHNICAL STANDARDS
 // ═══════════════════════════════════════════════════════════════════════════════
 function Standards() {
   useReveal();
@@ -1179,8 +1348,9 @@ const NAV_ITEMS = [
   { id:'hero', label:'Overview' },
   { id:'contamination', label:'Contamination' },
   { id:'technology', label:'Technology' },
+  { id:'products', label:'Products' },
   { id:'standards', label:'Standards' },
-  { id:'roi', label:'ROI Calculator' },
+  { id:'roi', label:'ROI' },
   { id:'industries', label:'Industries' },
   { id:'distributor', label:'Distributors' },
 ];
@@ -1235,12 +1405,15 @@ export default function PremiumPreview() {
   return (
     <main style={{ background: S1, color:'#fff', minHeight:'100vh' }}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
+      <Cursor />
       <Nav />
       <ScrollProgress />
       <div style={{ paddingTop:52 }}>
         <Hero />
+        <Ticker />
         <Contamination />
         <Technology />
+        <ProductLines />
         <Standards />
         <ROI />
         <Industries />
