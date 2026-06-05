@@ -65,9 +65,11 @@ export const CATEGORY_ICONS: Record<string, string[]> = {
 
 // Logo lookup derived from unified-data.ts (computed once at module load)
 const _techLogoBySlug: Record<string, string> = {
-  // 'aquaguard-series' is a System slug in unified-data.ts, not a Technology slug.
-  // Map it to the deprecated AQUAGUARD technology logo so display pages continue working.
-  'aquaguard-series': DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  // Legacy slug aliases — old routes remain functional
+  'aquaguard-series':  DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'hydrocore-series':  DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'hydrocore':         DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'thermocore':        DEPRECATED_TECHNOLOGIES.COOLTECH.logoFile,
   ...Object.fromEntries(Object.values(TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
   ...Object.fromEntries(Object.values(DEPRECATED_TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
   ...Object.fromEntries(Object.values(ECOSYSTEMS).map((e) => [e.slug, e.logoFile])),

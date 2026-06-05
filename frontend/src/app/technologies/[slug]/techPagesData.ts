@@ -918,4 +918,14 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     ctaBody: 'Cross-reference 500,000+ OEM part numbers. Identify the exact MICROKAPPA™ element for your vehicle cabin specification.',
   },
 
+  // Slug aliases — new canonical routes after renaming deprecated entries
+  // Old URLs (/technologies/aquaguard, /technologies/cooltech) remain functional via these keys
+  'hydrocore-series': undefined as unknown as TechDetailData,
+  'hydrocore':        undefined as unknown as TechDetailData,
+  'thermocore':       undefined as unknown as TechDetailData,
 };
+
+// Resolve aliases at runtime (avoids duplicating large data objects)
+TECH_PAGES['hydrocore-series'] = TECH_PAGES['aquaguard-series'];
+TECH_PAGES['hydrocore']        = TECH_PAGES['aquaguard'];
+TECH_PAGES['thermocore']       = TECH_PAGES['cooltech'];
