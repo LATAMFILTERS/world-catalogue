@@ -1238,24 +1238,6 @@ function Distributor() {
 // ═══════════════════════════════════════════════════════════════════════════════
 function Footer() {
   useReveal();
-  const cols = [
-    {
-      head: 'SOLUTIONS',
-      links: ['Air Filtration Systems','Fuel Filtration','Hydraulic Filtration','Oil Filtration','Coolant Filtration','Differential Protection'],
-    },
-    {
-      head: 'INDUSTRIES',
-      links: ['Mining & Extraction','Agriculture','Marine & Offshore','Construction','Oil & Gas','Power Generation'],
-    },
-    {
-      head: 'CATALOGUE',
-      links: ['Product Search','Cross-Reference Tool','Technical Datasheets','System Configurator','Specification Request','Part Finder API'],
-    },
-    {
-      head: 'COMPANY',
-      links: ['About ELIMFILTERS®','Proprietary Technologies','Certifications','Distributor Programme','Contact / Support','Press & Media'],
-    },
-  ];
 
   return (
     <footer style={{ background:'#040404', borderTop:`1px solid rgba(255,241,45,0.08)`, position:'relative', overflow:'hidden' }}>
@@ -1318,75 +1300,123 @@ function Footer() {
         </Wrap>
       </div>
 
-      {/* Link columns */}
-      <div style={{ padding:'4rem 0 3rem' }}>
+      {/* Link columns + right block */}
+      <div style={{ padding:'4rem 0 4rem' }}>
         <Wrap>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'3rem 2rem' }}>
-            {/* Brand column */}
-            <div className="reveal" style={{ gridColumn:'1 / -1', display:'grid',
-              gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'3rem 2rem', alignItems:'start' }}>
-              <div style={{ gridColumn:'1 / 1' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/elimfilters-logo.png" alt="ELIMFILTERS®"
-                  style={{ height:32, width:'auto', objectFit:'contain', marginBottom:'1rem', display:'block' }}
-                  onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; }}
-                />
-                <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.77rem', color: W3,
-                  lineHeight:1.8, marginBottom:'1.25rem', maxWidth:220 }}>
-                  Industrial asset protection filtration engineered for maximum performance.
-                  12 industries. 12 systems. 12 proprietary technologies.
-                </p>
-                <div style={{ display:'flex', gap:'0.5rem', flexWrap:'wrap' }}>
-                  {['LinkedIn','YouTube','WhatsApp'].map(n => (
-                    <span key={n} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.68rem',
-                      color: W3, padding:'5px 10px',
-                      border:`1px solid ${W1}`, borderRadius:2,
-                      cursor:'pointer', letterSpacing:'0.05em' }}>{n}</span>
-                  ))}
-                </div>
+          <div className="reveal" style={{
+            display:'grid',
+            gridTemplateColumns:'1fr 1fr 1fr 1fr auto',
+            gap:'2rem 3rem',
+            alignItems:'start',
+          }}>
+
+            {/* COMPANY */}
+            <div>
+              <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                color:'rgba(255,255,255,0.35)', letterSpacing:'0.22em',
+                marginBottom:'1.4rem' }}>COMPANY</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.9rem' }}>
+                {[['About Us','/about'],['Industries','#industries'],['Contact','#contact']].map(([label,href]) => (
+                  <a key={label} href={href} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.83rem',
+                    color:'rgba(255,255,255,0.45)', textDecoration:'none', transition:'color 0.15s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color='#fff')}
+                    onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.45)')}
+                  >{label}</a>
+                ))}
+              </div>
+            </div>
+
+            {/* PRODUCTS */}
+            <div>
+              <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                color:'rgba(255,255,255,0.35)', letterSpacing:'0.22em',
+                marginBottom:'1.4rem' }}>PRODUCTS</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.9rem' }}>
+                {[['Part Search','/search'],['Technologies','#technology'],['Systems','#products']].map(([label,href]) => (
+                  <a key={label} href={href} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.83rem',
+                    color:'rgba(255,255,255,0.45)', textDecoration:'none', transition:'color 0.15s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color='#fff')}
+                    onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.45)')}
+                  >{label}</a>
+                ))}
+              </div>
+            </div>
+
+            {/* SUPPORT */}
+            <div>
+              <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                color:'rgba(255,255,255,0.35)', letterSpacing:'0.22em',
+                marginBottom:'1.4rem' }}>SUPPORT</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.9rem' }}>
+                {[['Technical Support','/support'],['Become a Dealer','#contact'],['Warranty','/warranty']].map(([label,href]) => (
+                  <a key={label} href={href} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.83rem',
+                    color:'rgba(255,255,255,0.45)', textDecoration:'none', transition:'color 0.15s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color='#fff')}
+                    onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.45)')}
+                  >{label}</a>
+                ))}
+              </div>
+            </div>
+
+            {/* KNOWLEDGE */}
+            <div>
+              <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                color:'rgba(255,255,255,0.35)', letterSpacing:'0.22em',
+                marginBottom:'1.4rem' }}>KNOWLEDGE</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:'0.9rem' }}>
+                {[['Knowledge System','#knowledge'],['Standards','#knowledge'],['Fleet Optimization','/knowledge/fleet']].map(([label,href]) => (
+                  <a key={label} href={href} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.83rem',
+                    color:'rgba(255,255,255,0.45)', textDecoration:'none', transition:'color 0.15s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color='#fff')}
+                    onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.45)')}
+                  >{label}</a>
+                ))}
+              </div>
+            </div>
+
+            {/* Right block — social + Kleo logo + address */}
+            <div style={{ display:'flex', flexDirection:'column', alignItems:'flex-end', gap:'1.5rem', minWidth:180 }}>
+              {/* Social icons */}
+              <div style={{ display:'flex', gap:'0.6rem' }}>
+                {[['in','https://linkedin.com'],['Ig','https://instagram.com'],['Yt','https://youtube.com']].map(([label, href]) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                    style={{ width:34, height:34, borderRadius:'50%',
+                      border:`1px solid rgba(255,255,255,0.15)`,
+                      display:'flex', alignItems:'center', justifyContent:'center',
+                      fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
+                      color:'rgba(255,255,255,0.5)', textDecoration:'none',
+                      transition:'all 0.15s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = G; (e.currentTarget as HTMLAnchorElement).style.color = G; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.15)'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; }}
+                  >{label}</a>
+                ))}
               </div>
 
-              {cols.map(col => (
-                <div key={col.head}>
-                  <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
-                    color: W3, letterSpacing:'0.2em', marginBottom:'1.25rem',
-                    paddingBottom:'0.75rem', borderBottom:`1px solid ${W1}` }}>{col.head}</div>
-                  <div style={{ display:'flex', flexDirection:'column', gap:'0.55rem' }}>
-                    {col.links.map(l => (
-                      <span key={l} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.78rem',
-                        color:'rgba(255,255,255,0.38)', cursor:'pointer',
-                        transition:'color 0.15s',
-                        letterSpacing:'0.01em' }}
-                        onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-                        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.38)')}
-                      >{l}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Wrap>
-      </div>
+              {/* Kleo logo */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/logo-kleo.png" alt="Kleo Technologies"
+                style={{ height:28, width:'auto', objectFit:'contain', opacity:0.7 }}
+                onError={e => {
+                  const el = e.currentTarget as HTMLImageElement;
+                  el.style.display = 'none';
+                  (el.nextSibling as HTMLElement).style.display = 'block';
+                }}
+              />
+              <span style={{ display:'none', fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem',
+                color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em' }}>KLEO TECHNOLOGIES</span>
 
-      {/* Bottom bar */}
-      <div style={{ borderTop:`1px solid ${W1}`, padding:'1.5rem 0' }}>
-        <Wrap style={{ display:'flex', flexWrap:'wrap', alignItems:'center',
-          justifyContent:'space-between', gap:'1rem' }}>
-          <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
-            color: W3, letterSpacing:'0.1em' }}>
-            © {new Date().getFullYear()} ELIMFILTERS® — ALL RIGHTS RESERVED
-          </span>
-          <div style={{ display:'flex', gap:'1.5rem' }}>
-            {['Privacy Policy','Terms of Use','Cookie Preferences'].map(l => (
-              <span key={l} style={{ fontFamily:'Inter, sans-serif', fontSize:'0.68rem',
-                color: W3, cursor:'pointer', letterSpacing:'0.04em' }}>{l}</span>
-            ))}
-          </div>
-          <div style={{ display:'flex', alignItems:'center', gap:'0.4rem' }}>
-            <span className="live-dot" />
-            <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
-              color: W3, letterSpacing:'0.1em' }}>SYSTEMS OPERATIONAL</span>
+              {/* Address + copyright */}
+              <div style={{ textAlign:'right' }}>
+                <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.62rem',
+                  color:'rgba(255,255,255,0.28)', letterSpacing:'0.12em',
+                  marginBottom:'0.35rem' }}>FRISCO, TEXAS</div>
+                <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.68rem',
+                  color:'rgba(255,255,255,0.22)' }}>
+                  © 2015–{new Date().getFullYear()} Kleo Technologies
+                </div>
+              </div>
+            </div>
+
           </div>
         </Wrap>
       </div>
