@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -90,11 +92,13 @@ export default function About() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
+      <Navigation />
+
       {/* ── HERO ── */}
       <section
         style={{
           marginTop: 0,
-          paddingTop: '6rem',
+          paddingTop: '9rem',
           paddingBottom: '6rem',
           backgroundImage:
             'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,1) 100%), url(/images/grupo-filters.jpg)',
@@ -534,6 +538,8 @@ export default function About() {
           </motion.a>
         </motion.div>
       </section>
+
+      <Footer />
     </main>
   );
 }
