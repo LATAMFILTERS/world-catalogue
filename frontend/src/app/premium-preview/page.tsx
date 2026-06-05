@@ -64,7 +64,7 @@ const CSS = `
 
   .scroll-progress {
     position: fixed;
-    top: 52px;
+    top: 68px;
     left: 0;
     height: 2px;
     background: #FFF12D;
@@ -482,12 +482,12 @@ function Hero() {
               borderBottom:`1px solid ${W1}`, padding:'1.1rem 1.5rem',
               display:'flex', alignItems:'center', justifyContent:'space-between' }}>
               <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', color: G, fontWeight:600 }}>
-                NANOCORE-H1000
+                ELIMFILTERS® NANOCORE
               </span>
               <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
                 color:'rgba(34,197,94,0.9)', padding:'3px 9px',
                 border:'1px solid rgba(34,197,94,0.22)', borderRadius:2,
-                background:'rgba(34,197,94,0.07)' }}>ACTIVE SKU</span>
+                background:'rgba(34,197,94,0.07)' }}>IN STOCK</span>
             </div>
 
             <div style={{ padding:'1.5rem' }}>
@@ -519,9 +519,9 @@ function Hero() {
               <div style={{ marginTop:'1.25rem', padding:'0.85rem 1rem',
                 background: G3, border:`1px solid ${GB}`, borderRadius:4 }}>
                 <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.62rem',
-                  color: W3, marginBottom:4 }}>OEM CROSS-REFERENCES</p>
+                  color: W3, marginBottom:4 }}>OEM CROSS-REFERENCE</p>
                 <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.78rem',
-                  color: G, fontWeight:600 }}>P550048 · LF3000 · W719/30 · +340 more</p>
+                  color: G, fontWeight:600 }}>20,000+ active cross-references in catalogue</p>
               </div>
             </div>
           </div>
@@ -731,20 +731,6 @@ function Technology() {
           </p>
         </div>
 
-        {/* Tech selector pills */}
-        <div className="reveal" style={{ display:'flex', flexWrap:'wrap', gap:'0.4rem', marginBottom:'2rem' }}>
-          {techs.map((tech, i) => (
-            <button key={i} onClick={() => setActive(i)} className="tech-btn" style={{
-              padding:'6px 14px', borderRadius:3,
-              background: active === i ? G2 : 'transparent',
-              border:`1px solid ${active === i ? GB : W1}`,
-              fontFamily:'JetBrains Mono, monospace', fontSize:'0.68rem',
-              fontWeight: active === i ? 700 : 400,
-              color: active === i ? tech.color : W3,
-            }}>{tech.id}</button>
-          ))}
-        </div>
-
         {/* Detail panel */}
         <div className="reveal" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2.5rem', alignItems:'start' }}>
           <div style={{ background: S2, border:`1px solid ${GB}`, borderTop:`3px solid ${t.color}`, borderRadius:8, overflow:'hidden' }}>
@@ -876,8 +862,9 @@ function ProductLines() {
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(340px,1fr))',
           gap:1, background: W1, borderRadius:8, overflow:'hidden', border:`1px solid ${W1}` }}>
           {lines.map((l, i) => (
-            <div key={i} className={`pl-card reveal stagger-${Math.min(i+1,6)}`}
-              style={{ padding:'2.25rem 2rem' }}>
+            <a key={i} href={`/systems/${l.code.toLowerCase()}`}
+              className={`pl-card reveal stagger-${Math.min(i+1,6)}`}
+              style={{ padding:'2.25rem 2rem', textDecoration:'none', display:'block' }}>
               <div style={{ display:'flex', alignItems:'flex-start',
                 justifyContent:'space-between', marginBottom:'1.5rem' }}>
                 <span className="pl-code" style={{ fontFamily:'JetBrains Mono, monospace',
@@ -896,7 +883,7 @@ function ProductLines() {
                   color:'rgba(255,255,255,0.18)', letterSpacing:'0.16em', marginBottom:'0.35rem' }}>INDUSTRIES</div>
                 <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W3 }}>{l.ind}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Wrap>
@@ -1106,11 +1093,12 @@ function Industries() {
         {/* Video cards grid */}
         <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:2 }}>
           {industries.map((ind, i) => (
-            <div key={i} style={{
-              position:'relative', overflow:'hidden', borderRadius:4,
-              height:220, background:'#0a0a0a',
-              border:`1px solid rgba(255,255,255,0.05)`,
-            }}
+            <a key={i} href={`/industries/${ind.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}`}
+              style={{
+                position:'relative', overflow:'hidden', borderRadius:4,
+                height:220, background:'#0a0a0a', display:'block',
+                border:`1px solid rgba(255,255,255,0.05)`, textDecoration:'none',
+              }}
               onMouseEnter={e => { const v = e.currentTarget.querySelector('video') as HTMLVideoElement; if (v) v.style.opacity = '0.55'; }}
               onMouseLeave={e => { const v = e.currentTarget.querySelector('video') as HTMLVideoElement; if (v) v.style.opacity = '0.28'; }}
             >
@@ -1147,7 +1135,7 @@ function Industries() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Wrap>
@@ -1430,35 +1418,35 @@ function Nav() {
 
   return (
     <nav style={{ position:'fixed', top:0, left:0, right:0, zIndex:100,
-      background:'rgba(8,8,8,0.92)', backdropFilter:'blur(20px)',
-      borderBottom:`1px solid ${W1}`, height:52,
+      background:'rgba(8,8,8,0.94)', backdropFilter:'blur(20px)',
+      borderBottom:`1px solid ${W1}`, height:68,
       display:'flex', alignItems:'center' }}>
-      <Wrap style={{ display:'flex', alignItems:'center', gap:'0.2rem', width:'100%', padding:'0 clamp(1.5rem,4vw,3rem)' }}>
-        <Link href="/" style={{ marginRight:'1.5rem', flexShrink:0, textDecoration:'none', display:'flex', alignItems:'center' }}>
+      <Wrap style={{ display:'flex', alignItems:'center', gap:'0.25rem', width:'100%', padding:'0 clamp(2rem,5vw,4rem)' }}>
+        <Link href="/" style={{ marginRight:'2rem', flexShrink:0, textDecoration:'none', display:'flex', alignItems:'center' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo-elimfilters.png" alt="ELIMFILTERS®"
-            style={{ height:28, width:'auto', objectFit:'contain' }}
+            style={{ height:38, width:'auto', objectFit:'contain' }}
             onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; (e.currentTarget.nextSibling as HTMLElement).style.display='inline'; }}
           />
-          <span style={{ display:'none', fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem',
+          <span style={{ display:'none', fontFamily:'JetBrains Mono, monospace', fontSize:'0.85rem',
             color: G, fontWeight:600, letterSpacing:'0.16em' }}>ELIMFILTERS®</span>
         </Link>
-        <div style={{ width:1, height:16, background: W1, marginRight:'1rem', flexShrink:0 }} />
-        <div style={{ display:'flex', gap:'0.1rem', overflowX:'auto', scrollbarWidth:'none', flex:1 }}>
+        <div style={{ width:1, height:20, background: W1, marginRight:'1.25rem', flexShrink:0 }} />
+        <div style={{ display:'flex', gap:'0.2rem', overflowX:'auto', scrollbarWidth:'none', flex:1 }}>
           {NAV_ITEMS.map(s => (
             <a key={s.id} href={`#${s.id}`} style={{
-              fontFamily:'Inter, sans-serif', fontSize:'0.7rem',
+              fontFamily:'Inter, sans-serif', fontSize:'0.82rem',
               color: active === s.id ? G : W3, textDecoration:'none',
-              padding:'5px 11px', borderRadius:3, whiteSpace:'nowrap',
+              padding:'6px 14px', borderRadius:3, whiteSpace:'nowrap',
               background: active === s.id ? G3 : 'transparent',
               border:`1px solid ${active === s.id ? GB : 'transparent'}`,
               transition:'all 0.15s',
             }}>{s.label}</a>
           ))}
           <a href="/about" style={{
-            fontFamily:'Inter, sans-serif', fontSize:'0.7rem',
+            fontFamily:'Inter, sans-serif', fontSize:'0.82rem',
             color: W3, textDecoration:'none',
-            padding:'5px 11px', borderRadius:3, whiteSpace:'nowrap',
+            padding:'6px 14px', borderRadius:3, whiteSpace:'nowrap',
             transition:'all 0.15s',
           }}>About Us</a>
         </div>
@@ -1482,7 +1470,7 @@ export default function PremiumPreview() {
       <Cursor />
       <Nav />
       <ScrollProgress />
-      <div style={{ paddingTop:52 }}>
+      <div style={{ paddingTop:68 }}>
         <Hero />
         <Ticker />
         <Contamination />
