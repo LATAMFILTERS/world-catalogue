@@ -335,7 +335,7 @@ export default function Home() {
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
-                fontSize: 'clamp(2.5rem, 9vw, 7rem)',
+                fontSize: 'clamp(2rem, 5.5vw, 4.5rem)',
                 lineHeight: 1.05,
                 letterSpacing: '0.01em',
                 color: '#FFF12D',
@@ -351,7 +351,7 @@ export default function Home() {
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.1rem, 4vw, 3.5rem)',
+                fontSize: 'clamp(1rem, 2.8vw, 2.4rem)',
                 lineHeight: 1.1,
                 color: 'rgba(255,241,45,0.85)',
                 textTransform: 'uppercase',
