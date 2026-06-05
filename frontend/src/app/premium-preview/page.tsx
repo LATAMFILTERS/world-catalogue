@@ -707,8 +707,6 @@ function Technology() {
     { id:'INTEKCORE',   img:'/assets/intekcore.avif',        tag:'Integrated Composite Core System',    color:'rgba(251,191,36,0.9)',     beta:'β₅(c) ≥ 200',    micron:'5 µm',   collapse:'300 kPa', temp:'+130°C', std:'ISO 16889',  bar:91,  apps:['Dust Collectors','Hoppers','Cement'],           desc:'Integrated composite core media for continuous industrial filtration under high-vibration, high-cycle operating conditions.' },
     { id:'SYNTRAX',     img:'/assets/syntrax.avif',          tag:'Meltblown Synthetic Nanofibre',       color:'rgba(251,146,60,0.9)',     beta:'β₆(c) ≥ 200',    micron:'6 µm',   collapse:'200 bar', temp:'+140°C', std:'ISO 16889',  bar:82,  apps:['General Hyd.','Lube Oil','Transmissions'],     desc:'High-throughput meltblown media for standard hydraulic and lube circuits. Cost-effective performance at high flow rates.' },
     { id:'THERMACORE',  img:'/assets/cooltech.avif',         tag:'Ceramic-Composite High-Temp Media',   color:'rgba(239,68,68,0.9)',      beta:'β₃(c) ≥ 200',    micron:'3 µm',   collapse:'500 bar', temp:'+600°C', std:'ISO 4548',   bar:90,  apps:['Power Gen','Gas Turbines','Exhaust'],           desc:'Ceramic fibre composite rated to 600°C for gas turbine inlet and exhaust-side applications. Non-flammable under sustained flame.' },
-    { id:'MARINECLEAN', img:'/assets/marineclear.avif',      tag:'Marine-Grade Corrosion-Proof Media',  color:'rgba(52,211,153,0.9)',     beta:'β₃(c) ≥ 200',    micron:'3 µm',   collapse:'180 kPa', temp:'+85°C',  std:'ISO 8573-1', bar:84,  apps:['Marine','Offshore','Coastal Diesel'],          desc:'Salt-spray and bio-fouling resistant media for marine engine rooms, deck machinery and offshore fuel systems. Certified for continuous saltwater exposure.' },
-    { id:'DURATECH',    img:'/assets/duratech.avif',         tag:'Extended-Life Dual-Stage Media',      color:'rgba(167,139,250,0.9)',    beta:'WR ≥ 97%',       micron:'2 µm',   collapse:'160 kPa', temp:'+90°C',  std:'ISO 19438',  bar:85,  apps:['Agriculture','Marine','Fleet Diesel'],          desc:'Single-element dual-stage combining 2 µm particulate capture with coalescing water separation. Extended service life reduces drain intervals by 50%.' },
     { id:'ISOGUARD',    img:'/assets/aquaguard.avif',        tag:'Precision ISO-Grade Depth Media',     color:'rgba(129,140,248,0.9)',    beta:'β₁(c) = 1000',   micron:'1 µm',   collapse:'420 bar', temp:'+180°C', std:'ISO 16889',  bar:97,  apps:['Turbines','Servo Systems','Semiconductor'],    desc:'Ultra-high-pressure depth filtration for servo-valve circuits requiring sustained ISO 4406 class 13/11/8 or better.' },
     { id:'MICROKAPPA',  img:'/assets/microkappa.avif',       tag:'Sub-Micron Depth Electrostatic',      color:'rgba(244,114,182,0.9)',    beta:'β₀.₅(c) ≥ 100',  micron:'0.5 µm', collapse:'300 bar', temp:'+160°C', std:'ISO 16889',  bar:98,  apps:['Electronics','Pharma','Aerospace'],             desc:'Electrostatic charge capture for sub-0.5 µm particles in critical process filtration. Approved for pharma and aerospace clean circuits.' },
   ];
@@ -724,7 +722,7 @@ function Technology() {
         {/* Header */}
         <div className="reveal" style={{ marginBottom:'3.5rem' }}>
           <Eyebrow>PROPRIETARY MEDIA TECHNOLOGY</Eyebrow>
-          <H2>12 Technologies.<br /><span style={{ color: G }}>Zero Compromise.</span></H2>
+          <H2>10 Technologies.<br /><span style={{ color: G }}>Zero Compromise.</span></H2>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
             lineHeight:1.8, marginTop:'1rem', maxWidth:560 }}>
             Every ELIMFILTERS® product is built on a proprietary media platform —
@@ -852,6 +850,8 @@ function ProductLines() {
     { code:'TR', name:'Transmission Filtration',    spec:'ISO 16889 · 6 µm',     desc:'Suction and return elements for automatic, powershift and hydrostatic transmissions. Designed for shared sump circuits and high-cycle shift duty.', ind:'Mining · Agriculture · Construction · Fleet' },
     { code:'BR', name:'Breathers & Venting',        spec:'ISO 5011 · 3 µm',      desc:'Reservoir and gearbox breather elements preventing ingressed contamination during thermal breathing cycles. DRYCORE media, stainless mesh pre-filter.', ind:'All Industries · Reservoirs · Gearboxes' },
     { code:'DS', name:'Dust Separation Systems',    spec:'ISO 11057 · 0.3 µm',   desc:'Industrial dust collector cartridges with PULSECORE reverse-pulse jet cleaning. Continuous operation at rated flow with ΔP below 1.2 kPa.', ind:'Cement · Mining · Steel · Grain · Pharma' },
+    { code:'MR', name:'Marine Filter Systems',      spec:'ISO 8573-1 · IMO MSC', desc:'Complete marine filtration sets — engine room, fuel polishing, deck machinery and offshore — built with MARINECLEAN corrosion-proof media. Certified for continuous saltwater and bio-fouling exposure.', ind:'Commercial Marine · Offshore · Coastal Diesel · Shipbuilding' },
+    { code:'KT', name:'Maintenance Kit Sets',       spec:'ISO 19438 · OEM Spec',  desc:'Pre-engineered multi-filter maintenance kits grouping air, oil, fuel and hydraulic elements per equipment model and service interval. DURATECH extended-life media reduces drain intervals by 50%.', ind:'Agriculture · Fleet · Mining · Construction · Bus & Coach' },
   ];
   return (
     <section id="products" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
@@ -864,11 +864,11 @@ function ProductLines() {
           marginBottom:'4rem', flexWrap:'wrap', gap:'1.5rem' }}>
           <div className="reveal-left">
             <Eyebrow>PRODUCT LINES</Eyebrow>
-            <H2>12 systems.<br /><span style={{ color: G }}>One ecosystem.</span></H2>
+            <H2>14 systems.<br /><span style={{ color: G }}>One ecosystem.</span></H2>
           </div>
           <div className="reveal-right" style={{ fontFamily:'Inter, sans-serif', fontSize:'0.82rem',
             color: W3, maxWidth:280, lineHeight:1.75, textAlign:'right' }}>
-            All six lines engineered around a shared cross-reference database.
+            All 14 systems engineered around a shared cross-reference database.
             One part number resolves across every system.
           </div>
         </div>
