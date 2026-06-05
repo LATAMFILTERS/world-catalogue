@@ -1018,7 +1018,7 @@ export default function Home() {
                 },
                 {
                   q: 'How often should industrial fuel filters be changed?',
-                  a: 'ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
+                  a: 'ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. HYDROCORE™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
                 },
                 {
                   q: 'What ISO cleanliness code should a hydraulic system target?',

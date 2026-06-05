@@ -10,14 +10,13 @@ import {
   ECOSYSTEMS as UD_ECOSYSTEMS,
   SYSTEMS as UD_SYSTEMS,
   type TechnologyKey,
-  type DeprecatedTechnologyKey,
 } from '@/lib/unified-data';
 
 // GEO_DEFINITIONS derived from unified-data.ts (Single Source of Truth)
 // All 12 slug→description entries are sourced from geoDefinition fields and system descriptions.
 const _geoDefBySlug: Record<string, string> = {
-  // AQUAGUARD_SERIES has a product-line description separate from the AQUAGUARD technology definition
-  'aquaguard-series': UD_SYSTEMS.AQUAGUARD_SERIES.description!,
+  // HYDROCORE_SERIES has a product-line description separate from the AQUAGUARD technology definition
+  'aquaguard-series': UD_SYSTEMS.HYDROCORE_SERIES.description!,
   ...Object.fromEntries(Object.values(UD_TECHNOLOGIES).map((t) => [t.slug, t.geoDefinition])),
   ...Object.fromEntries(Object.values(UD_DEPRECATED).map((t) => [t.slug, t.geoDefinition])),
   ...Object.fromEntries(Object.values(UD_ECOSYSTEMS).map((t) => [t.slug, t.geoDefinition])),
@@ -26,23 +25,16 @@ const _geoDefBySlug: Record<string, string> = {
 // TECH_COMPARISON derived from unified-data.ts
 // Row order preserved: 7 active (with pages) + AQUAGUARD/COOLTECH (deprecated, pages live)
 // HYDROCORE and THERMOCORE are active but don't have catalogue pages yet — excluded.
-const _COMPARISON_KEYS = [
+const _COMPARISON_KEYS: TechnologyKey[] = [
   'MACROCORE', 'SYNTEPORE', 'INTEKCORE', 'DRYCORE',
-  'AQUAGUARD',   // deprecated — page lives at /technologies/aquaguard
+  'HYDROCORE',
   'SYNTRAX', 'NANOFORCE',
-  'COOLTECH',    // deprecated — page lives at /technologies/cooltech
+  'THERMOCORE',
   'MICROKAPPA',
-] as const;
+];
 
-type _CompKey = typeof _COMPARISON_KEYS[number];
-
-const _techComparison = _COMPARISON_KEYS.map((_key) => {
-  const key = _key as _CompKey;
-  if (key === 'AQUAGUARD' || key === 'COOLTECH') {
-    const d = UD_DEPRECATED[key as DeprecatedTechnologyKey];
-    return { name: d.name, slug: d.slug, system: d.domain, func: d.comparisonFunction, metric: d.comparisonMetric, industries: d.comparisonIndustries };
-  }
-  const t = UD_TECHNOLOGIES[key as TechnologyKey];
+const _techComparison = _COMPARISON_KEYS.map((key) => {
+  const t = UD_TECHNOLOGIES[key];
   return { name: t.name, slug: t.slug, system: t.domain, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
 });
 
@@ -53,7 +45,7 @@ const FAQS = [
   },
   {
     q: 'Which ELIMFILTERS® architecture protects HPCR diesel injection systems?',
-    a: 'AQUAGUARD™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
+    a: 'HYDROCORE™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
   },
   {
     q: 'What is SYNTRAX™ and which system does it protect?',
@@ -61,7 +53,7 @@ const FAQS = [
   },
   {
     q: 'What ISO standards govern ELIMFILTERS® protection architectures?',
-    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). AQUAGUARD™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
+    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). HYDROCORE™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
   },
   {
     q: 'How does NANOFORCE™ prevent hydraulic proportional valve failure?',

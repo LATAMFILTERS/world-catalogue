@@ -17,7 +17,7 @@ const STANDARDS = [
 
 const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removing sub-10 micron water droplets and particles from fuel before injection, achieving 99.9% efficiency.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
+  { name: 'HYDROCORE', slug: 'aquaguard', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
 ];
 
 const IMPACTS = [
