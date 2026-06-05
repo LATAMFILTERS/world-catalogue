@@ -1,6 +1,6 @@
 """
 import_donaldson.py — ELIMFILTERS Donaldson Catalog Importer
-Reads scraped JSON files and sends them to the Railway API for DB insertion.
+Reads scraped JSON files and sends them to the Render API for DB insertion.
 
 Usage:
     python3 import_donaldson.py [--dry-run] [--category lube|fuel|air|...]
@@ -33,7 +33,7 @@ import urllib.error
 
 # ─── Config ──────────────────────────────────────────────────────────────────
 
-API_BASE  = "https://world-catalogue-production-a151.up.railway.app"
+API_BASE  = "https://world-catalogue.onrender.com"
 API_KEY   = "elim2026"
 BATCH_SIZE = 50  # rows per POST request
 

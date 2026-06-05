@@ -119,7 +119,7 @@ export default function DistributorApplication() {
               maxWidth: '700px',
             }}
           >
-            Join the ELIMFILTERS network. We're seeking qualified distributors to expand our industrial filtration reach.
+            Join the ELIMFILTERS® network. We're seeking qualified distributors to expand our industrial filtration reach.
           </motion.p>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function DistributorApplication() {
                   color: '#FFF12D',
                 }}
               >
-                WHY PARTNER WITH ELIMFILTERS?
+                WHY PARTNER WITH ELIMFILTERS®?
               </h2>
 
               <div style={{ marginBottom: '2.5rem' }}>

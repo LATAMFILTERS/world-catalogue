@@ -1,18 +1,17 @@
 services:
   - type: web
-    name: elimfilters-frontend
-    runtime: static
-    buildCommand: echo "pre-built static export"
-    staticPublishPath: ./frontend/out
-    pullRequestPreviewsEnabled: false
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-    headers:
-      - path: /_next/static/*
-        name: Cache-Control
-        value: public, max-age=31536000, immutable
-      - path: /images/*
-        name: Cache-Control
-        value: public, max-age=86400
+    name: world-catalogue
+    runtime: node
+    plan: free
+    buildCommand: npm install && node scripts/migrate-to-render.js && cd frontend && npm install && npm run build
+    startCommand: node server.js
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: GODADDY_MAIL_PASS
+        sync: false

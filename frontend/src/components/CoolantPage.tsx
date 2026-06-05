@@ -169,14 +169,14 @@ export function CoolantPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS coolant filters integrate a slow-release Supplemental Coolant Additive (SCA) matrix directly into the filter element. As coolant flows through the media, inhibitor packages are continuously replenished — neutralizing acids, depositing a protective layer on cylinder liner walls and preventing cavitation erosion before it starts. Compatible with all major OEM cooling systems and glycol-based coolants.
+                  ELIMFILTERS® coolant filters integrate a slow-release Supplemental Coolant Additive (SCA) matrix directly into the filter element. As coolant flows through the media, inhibitor packages are continuously replenished — neutralizing acids, depositing a protective layer on cylinder liner walls and preventing cavitation erosion before it starts. Compatible with all major OEM cooling systems and glycol-based coolants.
                 </p>
 
                 <div
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}

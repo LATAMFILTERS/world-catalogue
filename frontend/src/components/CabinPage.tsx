@@ -169,14 +169,14 @@ export function CabinPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS cabin filters deploy a progressive 6-layer filtration matrix to intercept fine dust, pollen, soot, bacteria and volatile organic compounds before they reach the operator. Each unit is geometry-matched to OEM specifications to guarantee a sealed fit and full airflow coverage — no bypass, no gaps.
+                  ELIMFILTERS® cabin filters deploy a progressive 6-layer filtration matrix to intercept fine dust, pollen, soot, bacteria and volatile organic compounds before they reach the operator. Each unit is geometry-matched to OEM specifications to guarantee a sealed fit and full airflow coverage — no bypass, no gaps.
                 </p>
 
                 <div
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}

@@ -2,193 +2,241 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
-const colVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-};
+const NAV_COLUMNS = [
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '/about', external: false },
+      { label: 'Industries', href: '/industries', external: false },
+      { label: 'Contact', href: '/contact', external: false },
+    ],
+  },
+  {
+    title: 'Products',
+    links: [
+      { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
+      { label: 'Technologies', href: '/technologies', external: false },
+      { label: 'Systems', href: '/systems', external: false },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { label: 'Technical Support', href: '/contact', external: false },
+      { label: 'Become a Dealer', href: '/distributor-application', external: false },
+      { label: 'Warranty', href: '/warranty', external: false },
+    ],
+  },
+  {
+    title: 'Knowledge',
+    links: [
+      { label: 'Knowledge System', href: '/knowledge-system', external: false },
+      { label: 'Standards', href: '/knowledge-system/standards', external: false },
+      { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
+    ],
+  },
+];
+
+const SOCIAL = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/elimfilters', letter: 'in' },
+  { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
+];
 
 export function Footer() {
   return (
     <footer
       style={{
         background: '#0a0a0a',
-        borderTop: '1px solid rgba(255,255,255,0.02)',
-        padding: '4rem 0 2rem',
+        borderTop: '1px solid rgba(255,255,255,0.04)',
+        padding: '60px 0 50px',
       }}
     >
       <div
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 20px',
+          padding: '0 40px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto',
+          gap: '80px',
+          alignItems: 'start',
         }}
       >
-        {/* Grid columns */}
-        <StaggerContainer
-          staggerDelay={0.1}
+        {/* LEFT: Navigation columns */}
+        <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             gap: '40px',
-            marginBottom: '60px',
           }}
         >
-          {/* Company */}
-          <motion.div variants={colVariants}>
-            <div style={colTitleStyle}>Company</div>
-            <FooterLink href="/about">About Us</FooterLink>
-            <FooterLink href="/industries">Industries</FooterLink>
-            <FooterLink href="/contact">Contact</FooterLink>
-          </motion.div>
-
-          {/* Systems */}
-          <motion.div variants={colVariants}>
-            <div style={colTitleStyle}>Systems</div>
-            <FooterLinkExternal href="https://part-search.elimfilters.com/">Part Search</FooterLinkExternal>
-            <FooterLink href="/technologies">Technologies</FooterLink>
-            <FooterLink href="/systems">Systems</FooterLink>
-          </motion.div>
-
-          {/* Support */}
-          <motion.div variants={colVariants}>
-            <div style={colTitleStyle}>Support</div>
-            <FooterLink href="/contact">Technical Support</FooterLink>
-            <FooterLink href="/distributor-application">Become a Dealer</FooterLink>
-            <FooterLink href="/warranty">Warranty</FooterLink>
-          </motion.div>
-
-          {/* Follow Us */}
-          <motion.div variants={colVariants}>
-            <div style={colTitleStyle}>Follow Us</div>
-            <FooterLinkExternal href="https://www.linkedin.com/company/elimfilters/?viewAsMember=false">LinkedIn</FooterLinkExternal>
-            <FooterLinkExternal href="https://www.instagram.com/elimfilters.global/?hl=en">Instagram</FooterLinkExternal>
-            <FooterLinkExternal href="https://www.youtube.com/@elimfilters9112">YouTube</FooterLinkExternal>
-          </motion.div>
-        </StaggerContainer>
-
-        {/* Bottom section */}
-        <AnimateIn direction="up" delay={0.1}>
-          <div
-            className="footer-bottom"
-            style={{
-              borderTop: '1px solid #1a1a1a',
-              paddingTop: '50px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            {/* Left: Large E image */}
-            <motion.div
-              whileHover={{ opacity: 1, scale: 1.04 }}
-              transition={{ duration: 0.3 }}
-              style={{ textAlign: 'left', flex: 1, opacity: 0.8 }}
-            >
-              <img
-                src="/images/e.png"
-                alt="ELIMFILTERS"
-                style={{ height: '120px' }}
-              />
-            </motion.div>
-
-            {/* Center: FRISCO TEXAS */}
-            <div style={{ textAlign: 'center', flex: 1 }}>
+          {NAV_COLUMNS.map((col) => (
+            <div key={col.title}>
               <div
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontSize: '18px',
-                  color: '#666',
+                  fontWeight: 700,
+                  fontSize: '12px',
+                  color: '#fff',
+                  textTransform: 'uppercase',
                   letterSpacing: '3px',
-                  textTransform: 'uppercase',
+                  marginBottom: '24px',
                 }}
               >
-                <strong style={{ color: '#fff' }}>FRISCO TEXAS</strong>
+                {col.title}
               </div>
+              {col.links.map((link) =>
+                link.external ? (
+                  <motion.div
+                    key={link.label}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ marginBottom: '14px' }}
+                  >
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={linkStyle}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+                    >
+                      {link.label}
+                    </a>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={link.label}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ marginBottom: '14px' }}
+                  >
+                    <Link
+                      href={link.href}
+                      style={linkStyle}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                )
+              )}
             </div>
+          ))}
+        </div>
 
-            {/* Right: Copyright */}
-            <div style={{ textAlign: 'right', flex: 1 }}>
-              <p
+        {/* RIGHT: Social + Logo + Address */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            gap: '24px',
+            minWidth: '180px',
+          }}
+        >
+          {/* Social icons row */}
+          <div style={{ display: 'flex', gap: '10px' }}>
+            {SOCIAL.map((s) => (
+              <motion.a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.label}
+                whileHover={{ scale: 1.15 }}
+                transition={{ duration: 0.2 }}
                 style={{
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  color: '#888',
+                  textDecoration: 'none',
                   fontSize: '10px',
-                  color: '#444',
-                  textTransform: 'uppercase',
-                  letterSpacing: '4px',
                   fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 700,
+                  letterSpacing: '0.5px',
+                  transition: 'all 0.25s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#FFF12D';
+                  e.currentTarget.style.color = '#FFF12D';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
+                  e.currentTarget.style.color = '#888';
                 }}
               >
-                © 2015-2026 ELIMFILTERS LLC | Intelligence and Engineering in Filtration
-              </p>
+                {s.letter}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Kleo Logo */}
+          <motion.div
+            whileHover={{ opacity: 0.9 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src="/images/Leo-fn.avif"
+              alt="Kleo Technologies"
+              style={{
+                maxHeight: '55px',
+                maxWidth: '160px',
+                objectFit: 'contain',
+                display: 'block',
+              }}
+            />
+          </motion.div>
+
+          {/* Address */}
+          <div
+            style={{
+              textAlign: 'right',
+              lineHeight: '1.6',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontSize: '12px',
+                color: '#666',
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Frisco, Texas
+            </div>
+            <div
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontSize: '11px',
+                color: '#444',
+                letterSpacing: '0.5px',
+                marginTop: '4px',
+              }}
+            >
+              © 2015–2026 Kleo Technologies
             </div>
           </div>
-        </AnimateIn>
+        </div>
       </div>
     </footer>
   );
 }
 
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <motion.div
-      whileHover={{ x: 4 }}
-      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      style={{ marginBottom: '12px' }}
-    >
-      <Link
-        href={href}
-        style={{
-          fontSize: '14px',
-          textDecoration: 'none',
-          color: '#888',
-          display: 'block',
-          fontFamily: 'Barlow, sans-serif',
-          transition: 'color 0.25s ease',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-        onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
-      >
-        {children}
-      </Link>
-    </motion.div>
-  );
-}
-
-function FooterLinkExternal({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <motion.div
-      whileHover={{ x: 4 }}
-      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      style={{ marginBottom: '12px' }}
-    >
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          fontSize: '14px',
-          textDecoration: 'none',
-          color: '#888',
-          display: 'block',
-          fontFamily: 'Barlow, sans-serif',
-          transition: 'color 0.25s ease',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-        onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
-      >
-        {children}
-      </a>
-    </motion.div>
-  );
-}
-
-const colTitleStyle: React.CSSProperties = {
-  fontFamily: "'Barlow Condensed', sans-serif",
-  fontWeight: 700,
-  fontSize: '13px',
-  color: '#fff',
-  textTransform: 'uppercase',
-  letterSpacing: '3px',
-  marginBottom: '25px',
+const linkStyle: React.CSSProperties = {
+  fontSize: '14px',
+  textDecoration: 'none',
+  color: '#888',
+  display: 'block',
+  fontFamily: 'Barlow, sans-serif',
+  transition: 'color 0.25s ease',
 };

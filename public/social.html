@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elimfilters Social Teaser</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #splash-canvas {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+    #record-btn {
+      padding: 1.5rem 3rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #000;
+      background: #FFF12D;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s;
+      z-index: 100;
+    }
+    #record-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 241, 45, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+<button id="record-btn">🎥 DESCARGAR VIDEO (Click Aquí)</button>
+<canvas id="splash-canvas"></canvas>
+
+<script>
+'use strict';
+
+(function initSplash() {
+  const cvs = document.getElementById('splash-canvas');
+  const ctx = cvs.getContext('2d', { willReadFrequently: true });
+  
+  const isMobile = window.innerWidth < 768;
+  const particleSpacing = isMobile ? 4 : 3; 
+  const mouseRadius = isMobile ? 80 : 120;
+  let particlesArray = [];
+  let mouse = { x: null, y: null, radius: mouseRadius };
+  
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  window.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
+  window.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }, { passive: true });
+  
+  function resizeSplash() {
+    cvs.width = document.documentElement.clientWidth;
+    cvs.height = document.documentElement.clientHeight;
+  }
+  window.addEventListener('resize', resizeSplash);
+  resizeSplash();
+
+  const img = new Image();
+  img.src = '/e.png';
+  let imageTargets = [];
+  let animFrameId = null;
+
+  img.onload = () => {
+    // Listo para cuando el usuario haga clic en el botón
+    console.log('Imagen cargada');
+  };
+  
+  img.onerror = () => {
+    // Si falla, redirigir de inmediato
+    window.location.href = 'https://elimfilters.com';
+  };
+
+  function getTargetsFromImage(img) {
+    let targets = [];
+    // Como forzamos el canvas a 1080x1920, queremos que la E ocupe un 85% del ancho
+    const imgW = cvs.width * 0.85; 
+    const scale = imgW / img.width;
+    const imgH = img.height * scale;
+    const startX = (cvs.width - imgW) / 2;
+    const startY = (cvs.height - imgH) / 2;
+
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    ctx.drawImage(img, startX, startY, imgW, imgH);
+    const imageData = ctx.getImageData(0, 0, cvs.width, cvs.height);
+    const data = imageData.data;
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+    for (let y = 0; y < imageData.height; y += particleSpacing) {
+      for (let x = 0; x < imageData.width; x += particleSpacing) {
+        const index = (y * imageData.width + x) * 4;
+        const alpha = data[index + 3];
+        if (alpha > 128) {
+          const red = data[index], green = data[index + 1], blue = data[index + 2];
+          targets.push({ x, y, color: `rgb(${red}, ${green}, ${blue})` });
+        }
+      }
+    }
+    return targets;
+  }
+
+  class Particle {
+    constructor(target) {
+      const side = Math.floor(Math.random() * 4);
+      if (side === 0) { this.x = Math.random() * cvs.width; this.y = -50; }
+      else if (side === 1) { this.x = cvs.width + 50; this.y = Math.random() * cvs.height; }
+      else if (side === 2) { this.x = Math.random() * cvs.width; this.y = cvs.height + 50; }
+      else { this.x = -50; this.y = Math.random() * cvs.height; }
+      this.baseX = target.x;
+      this.baseY = target.y;
+      this.color = target.color;
+      this.size = isMobile ? 1.8 : 1.4;
+      this.density = (Math.random() * 40) + 5;
+      this.active = true;
+    }
+    draw() {
+      if (!this.active) return;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fill();
+    }
+    update() {
+      if (!this.active) return;
+      let dx = mouse.x - this.x;
+      let dy = mouse.y - this.y;
+      let distance = Math.sqrt(dx*dx + dy*dy);
+      
+      if (distance < mouse.radius) {
+        this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
+        this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
+      } else {
+        const returnSpeed = isMobile ? 6 : 5;
+        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
+        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
+      }
+      const jitter = isMobile ? 0.4 : 0.8;
+      this.x += (Math.random() - 0.5) * jitter;
+      this.y += (Math.random() - 0.5) * jitter;
+    }
+  }
+
+  function dissolveAll() {
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].baseX = Math.random() * cvs.width * 2 - cvs.width/2;
+      particlesArray[i].baseY = cvs.height + 500;
+    }
+  }
+
+  let mediaRecorder;
+  let recordedChunks = [];
+
+  function startSequence() {
+    imageTargets = getTargetsFromImage(img);
+    if(imageTargets.length === 0) { window.location.href = 'https://elimfilters.com'; return; }
+
+    particlesArray = imageTargets.map(t => new Particle(t));
+    animateSplash();
+
+    // Iniciar grabación del canvas a 60 FPS
+    const stream = cvs.captureStream(60);
+    try {
+      mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp9' });
+    } catch (e) {
+      mediaRecorder = new MediaRecorder(stream); // fallback
+    }
+
+    mediaRecorder.ondataavailable = (e) => {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type: 'video/webm' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'elimfilters-teaser.webm';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      
+      // Después de descargar, redirigir
+      setTimeout(() => {
+        window.location.href = 'https://elimfilters.com';
+      }, 500);
+    };
+
+    mediaRecorder.start();
+
+    // 8s E → disolver
+    setTimeout(() => {
+      dissolveAll();
+    }, 8000);
+
+    // 10s → Detener grabación (esto dispara la descarga)
+    setTimeout(() => {
+      document.body.style.transition = 'opacity 1.5s ease';
+      document.body.style.opacity = '0';
+      mediaRecorder.stop();
+    }, 10000);
+  }
+
+  function animateSplash() {
+    animFrameId = requestAnimationFrame(animateSplash);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].draw();
+      particlesArray[i].update();
+    }
+  }
+
+  // Esperar a que el usuario haga clic para empezar
+  document.getElementById('record-btn').addEventListener('click', () => {
+    document.getElementById('record-btn').style.display = 'none';
+    cvs.style.display = 'block';
+    
+    // Forzar el canvas a 1080x1920 (Formato vertical 9:16 para redes) internamente
+    // pero escalado a la pantalla para verlo completo.
+    cvs.width = 1080;
+    cvs.height = 1920;
+    
+    // Anular el resize dinámico para que grabe siempre a máxima calidad vertical
+    window.removeEventListener('resize', resizeSplash);
+    
+    startSequence();
+  });
+
+})();
+
+</script>
+</body>
+</html>

@@ -7,11 +7,15 @@ export interface CatalogueItem {
   subtitle: string;
   description: string;
   features: string[];
+  benefits?: string[];
+  techTags?: string[];
   stats: {
     percentages?: string[];
     ratings?: string[];
   };
   cta: string;
+  videoBody?: string[];
+  engineeringBody?: string;
 }
 
 export const catalogue = {
@@ -33,8 +37,14 @@ export function getItemBySlug(
 
 export const CATEGORY_LABELS: Record<string, string> = {
   industries: 'INDUSTRY',
-  products: 'PRODUCT',
+  products: 'SYSTEM',
   technologies: 'TECHNOLOGY',
+};
+
+export const CATEGORY_URLS: Record<string, string> = {
+  industries: '/industries',
+  products: '/systems',
+  technologies: '/technologies',
 };
 
 export const CATEGORY_ICONS: Record<string, string[]> = {

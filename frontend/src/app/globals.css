@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,8 +37,12 @@ body {
 
 /* Typography */
 .font-heading {
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-weight: 900;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
 }
 
 .font-mono {
@@ -108,7 +112,7 @@ body {
 
 /* Tag styles */
 .tech-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.65rem;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.5rem;
@@ -140,8 +144,8 @@ body {
 
 /* Number display */
 .stat-number {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700;
   color: var(--volt);
   line-height: 1;
 }
@@ -150,7 +154,7 @@ body {
 .btn-volt {
   background: var(--volt);
   color: #000;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-weight: 700;
   letter-spacing: 0.08em;
   transition: all 0.2s ease;
@@ -178,7 +182,7 @@ body {
 .btn-outline {
   border: 1px solid var(--volt);
   color: var(--volt);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-weight: 700;
   letter-spacing: 0.08em;
   transition: all 0.2s ease;
@@ -210,6 +214,8 @@ body {
   .spotlight-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
   .why-grid { grid-template-columns: 1fr !important; }
   .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .marine-product-image { width: 100% !important; height: 280px !important; margin-left: 0 !important; margin-top: 0 !important; }
 }
 
 /* Mobile (≤768px) */
@@ -231,5 +237,13 @@ body {
 @media (max-width: 480px) {
   .product-specs-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+}
+/* Hero responsive height */
+.industry-hero-section { min-height: 100vh; }
+@media (max-width: 1024px) {
+  .industry-hero-section { min-height: 70vh !important; }
+}
+@media (max-width: 768px) {
+  .industry-hero-section { min-height: 60vh !important; }
 }
 /* ─────────────────────────────────────────────────────────────────── */

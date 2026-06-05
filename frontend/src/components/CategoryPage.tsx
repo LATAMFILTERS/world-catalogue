@@ -1,8 +1,9 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, useInView } from 'motion/react';
-import { CatalogueItem, CATEGORY_LABELS } from '@/lib/catalogue';
+import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
 import { FeatureList } from './FeatureList';
 import { StatCounter } from './StatCounter';
@@ -15,6 +16,14 @@ interface CategoryPageProps {
   industryImage?: string;
   industryVideo?: string;
   technologyLogo?: string;
+  geoData?: {
+    directAnswer?: string;
+    faq?: { q: string; a: string }[];
+    lastUpdated?: string;
+    schemas?: object[];
+    ctaTitle?: string;
+    ctaDescription?: string;
+  };
 }
 
 function InlineVideo({ src }: { src: string }) {
@@ -69,7 +78,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -101,6 +110,15 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   return (
     <>
       <main>
+        {/* Additional GEO Schemas */}
+        {geoData?.schemas && geoData.schemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+
         {/* Breadcrumb */}
         <div
           style={{
@@ -112,7 +130,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           }}
         >
           <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <a
+            <Link
               href="/"
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -126,10 +144,10 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
             >
               HOME
-            </a>
+            </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
-            <a
-              href={`/#${category}`}
+            <Link
+              href={CATEGORY_URLS[category]}
               style={{
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: '0.62rem',
@@ -142,7 +160,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
             >
               {categoryLabel.toUpperCase()}
-            </a>
+            </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
             <span
               style={{
@@ -167,6 +185,25 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           category={`// ${categoryLabel}_ENGINEERING`}
         />
 
+        {/* Direct Answer / Industrial Context Block */}
+        {geoData?.directAnswer && (
+          <section style={{ padding: '3rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                // INDUSTRIAL CONTEXT
+              </p>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.8, color: 'rgba(255,255,255,0.8)', fontFamily: 'Outfit, sans-serif', maxWidth: '780px' }}>
+                {geoData.directAnswer}
+              </p>
+              {geoData.lastUpdated && (
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.25)', marginTop: '1.5rem', letterSpacing: '0.1em' }}>
+                  LAST UPDATED: {geoData.lastUpdated}
+                </p>
+              )}
+            </div>
+          </section>
+        )}
+
         {/* Video Section */}
         {industryVideo && (
           <section
@@ -190,7 +227,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         color: '#FFF12D',
                       }}
                     >
-                      FILTRATION MEDIA IMPORTANCE
+                      {item.name.toUpperCase()} ASSET PROTECTION SYSTEM
                     </span>
                   </div>
                   <h3
@@ -203,29 +240,48 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       lineHeight: 1.2,
                     }}
                   >
-                    ENGINEERED PROTECTION
+                    ENGINEERED FOR {item.name.toUpperCase()}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: '1rem',
-                      lineHeight: 1.8,
-                      color: 'rgba(255,255,255,0.8)',
-                      fontFamily: 'Outfit, sans-serif',
-                      marginBottom: '1rem',
-                    }}
-                  >
-                    The filtration media is the heart of every ELIMFILTERS system. In {item.name} operations, specialized media must handle extreme conditions: constant stop-and-go cycles, urban pollution, soot accumulation, and thermal stress. Our proprietary hybrid media formulation combines synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection.
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.95rem',
-                      lineHeight: 1.8,
-                      color: 'rgba(255,255,255,0.7)',
-                      fontFamily: 'Outfit, sans-serif',
-                    }}
-                  >
-                    Every micron matters. Our media technology ensures {item.name} fleets stay operational 24/7 with extended service intervals, reduced maintenance costs, and guaranteed engine protection against contamination failure.
-                  </p>
+                  {item.videoBody ? (
+                    item.videoBody.map((para, i) => (
+                      <p
+                        key={i}
+                        style={{
+                          fontSize: i === 0 ? '1rem' : '0.95rem',
+                          lineHeight: 1.8,
+                          color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)',
+                          fontFamily: 'Outfit, sans-serif',
+                          marginBottom: i < item.videoBody!.length - 1 ? '1rem' : 0,
+                        }}
+                      >
+                        {para}
+                      </p>
+                    ))
+                  ) : (
+                    <>
+                      <p
+                        style={{
+                          fontSize: '1rem',
+                          lineHeight: 1.8,
+                          color: 'rgba(255,255,255,0.8)',
+                          fontFamily: 'Outfit, sans-serif',
+                          marginBottom: '1rem',
+                        }}
+                      >
+                        The protection media is the core of every ELIMFILTERS® system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '0.95rem',
+                          lineHeight: 1.8,
+                          color: 'rgba(255,255,255,0.7)',
+                          fontFamily: 'Outfit, sans-serif',
+                        }}
+                      >
+                        Every micron of contamination matters. ELIMFILTERS® systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
+                      </p>
+                    </>
+                  )}
                 </div>
 
                 {/* Right: Video */}
@@ -386,7 +442,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   lineHeight: 1.8,
                 }}
               >
-                ELIMFILTERS engineering applies German-grade quality standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.
+                {item.engineeringBody ?? 'ELIMFILTERS® engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.'}
               </p>
             </AnimateIn>
 
@@ -513,17 +569,17 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                WHY ELIMFILTERS
+                WHY ELIMFILTERS®
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {[
+                {(item.benefits || [
                   'Extended service intervals reduce downtime',
                   'Superior contamination retention extends asset life',
                   'German engineering precision and reliability',
                   'Cost-effective protection across all duty cycles',
                   'Proven performance in extreme environments',
                   'Industry-leading filtration efficiency',
-                ].map((benefit, i) => (
+                ]).map((benefit, i) => (
                   <motion.div key={i} variants={itemVariants} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <span
                       style={{
@@ -572,7 +628,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 Technologies Included
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'].map((tech) => (
+                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
                   <span
                     key={tech}
                     style={{
@@ -589,131 +645,52 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   </span>
                 ))}
               </div>
-
-              {/* Quote */}
-              <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                <p
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.4)',
-                    lineHeight: 1.7,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  &ldquo;The most expensive filter is the one that fails — ELIMFILTERS engineering ensures it never does.&rdquo;
-                </p>
-              </div>
             </div>
             </AnimateIn>
           </div>
         </section>
 
-        {/* Technical Specifications - Macrocore */}
-        {item.name === 'Macrocore' && (
-          <section
-            id="technical-specs"
-            style={{
-              padding: '6rem 2rem',
-              background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, rgba(0,0,0,0.3) 100%)',
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-            }}
-          >
-            <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-              <div style={{ marginBottom: '3rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
-                <h2
-                  style={{
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
-                    color: '#FFF12D',
-                    fontFamily: 'JetBrains Mono, monospace',
-                    margin: 0,
-                  }}
-                >
-                  TECHNICAL SPECIFICATIONS
-                </h2>
-              </div>
+        {/* CTA */}
+        <CTASection
+          title={geoData?.ctaTitle ?? 'Ready to Protect Your Equipment?'}
+          description={geoData?.ctaDescription ?? `Find the right asset protection system for your ${item.name.toLowerCase()} application. Cross-reference 500,000+ parts.`}
+          buttonText={item.cta}
+          buttonHref={buttonHref}
+        />
 
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                  gap: '2rem',
-                }}
-              >
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    FILTRATION EFFICIENCY
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    99.9% - 99.98% efficiency per ISO 5011 industrial standards. Progressive Density Gradient matrix
-                    captures macro-contaminants on external layers while sub-micron particles are detained internally.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    PRESSURE RATING & STABILITY
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    62 PSI anti-collapse rated construction. Prevents blind pleating and structural degradation under
-                    flow pulsations. Engineered equidistant pleating geometry maintains effective filtration area.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    THERMAL PERFORMANCE
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Continuous operation rated to 120°C. High-purity cellulose fibers reinforced with synthetic resins
-                    guarantee structural stability under humidity and thermal cycling in heavy-duty applications.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    CAPTURE MECHANISM
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Multi-mode capture: interception, inertial impact, and diffusion. Macro-contaminants lodge in
-                    external layers; sub-micron contaminants trapped in internal matrix. Zero bypass technology.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    INDUSTRIAL APPLICATIONS
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    On-road vehicles, mining equipment, agricultural machinery, stationary power generation, industrial
-                    compressors, and heavy construction equipment. Optimized for every motor type.
-                  </p>
-                </div>
-
-                <div style={{ border: '1px solid rgba(255,241,45,0.2)', padding: '2rem', borderRadius: '8px' }}>
-                  <h3 style={{ color: '#FFF12D', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 700 }}>
-                    REGULATORY COMPLIANCE
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    ISO 5011 (Filtration Efficiency), SAE J726 (DHC - Dust Holding Capacity), ASTM D202 (Thermal
-                    Resistance). Meets international standards for heavy-duty industrial filtration.
-                  </p>
-                </div>
+        {/* FAQ Section */}
+        {geoData?.faq && geoData.faq.length > 0 && (
+          <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: geoData.faq.map(({ q, a }) => ({
+                  '@type': 'Question',
+                  name: q,
+                  acceptedAnswer: { '@type': 'Answer', text: a },
+                })),
+              })}}
+            />
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                // COMMON QUESTIONS
+              </p>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+                Frequently Asked Questions
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {geoData.faq.map(({ q, a }) => (
+                  <div key={q} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#000' }}>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{a}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
         )}
-
-        {/* CTA */}
-        <CTASection
-          title="Ready to Upgrade?"
-          description={`Find the exact ${categoryLabel.toLowerCase()} filter for your application. Cross-reference 500,000+ parts.`}
-          buttonText={item.cta}
-          buttonHref={buttonHref}
-        />
       </main>
     </>
   );

@@ -169,14 +169,14 @@ export function HydraulicPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS hydraulic filters are engineered for the most demanding fluid power circuits. The high-collapse glass fiber media achieves 99.99% single-pass efficiency, capturing particles down to 3 microns absolute before they reach precision-clearance components. A coalescing water separation stage removes free and emulsified water from the fluid stream — the primary cause of hydraulic pump cavitation, valve spool corrosion and fluid oxidation acceleration. Rated to 450 PSI collapse pressure, these elements hold structural integrity under the full shock-load range of mobile and industrial hydraulic systems.
+                  ELIMFILTERS® hydraulic filters are engineered for the most demanding fluid power circuits. The high-collapse glass fiber media achieves 99.99% single-pass efficiency, capturing particles down to 3 microns absolute before they reach precision-clearance components. A coalescing water separation stage removes free and emulsified water from the fluid stream — the primary cause of hydraulic pump cavitation, valve spool corrosion and fluid oxidation acceleration. Rated to 450 PSI collapse pressure, these elements hold structural integrity under the full shock-load range of mobile and industrial hydraulic systems.
                 </p>
 
                 <div
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}
@@ -266,7 +266,7 @@ export function HydraulicPage() {
               <div>
                 <AnimateIn direction="left" delay={0.05}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                    What ELIMFILTERS Prevents
+                    What ELIMFILTERS® Prevents
                   </h3>
                 </AnimateIn>
                 <StaggerContainer>

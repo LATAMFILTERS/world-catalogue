@@ -169,14 +169,14 @@ export function HousingPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  A filter element is only as effective as the housing that holds it. ELIMFILTERS housings deploy radial seal geometry — the filter element seats under radial compression, not axial load — eliminating the risk of seal rollover, deformation or bypass under pressure pulses. The hi-flow internal architecture maintains unrestricted airflow while the precision OEM-matched outer geometry guarantees a drop-in fit with zero rework on the original intake system.
+                  A filter element is only as effective as the housing that holds it. ELIMFILTERS® housings deploy radial seal geometry — the filter element seats under radial compression, not axial load — eliminating the risk of seal rollover, deformation or bypass under pressure pulses. The hi-flow internal architecture maintains unrestricted airflow while the precision OEM-matched outer geometry guarantees a drop-in fit with zero rework on the original intake system.
                 </p>
 
                 <div
                   className="product-specs-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
                     gap: '2rem',
                     marginBottom: '2rem',
                   }}
@@ -266,7 +266,7 @@ export function HousingPage() {
               <div>
                 <AnimateIn direction="left" delay={0.05}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                    ELIMFILTERS Radial Seal Housing
+                    ELIMFILTERS® Radial Seal Housing
                   </h3>
                 </AnimateIn>
                 <StaggerContainer>

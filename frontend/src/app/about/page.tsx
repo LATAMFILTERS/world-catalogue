@@ -56,7 +56,7 @@ export default function About() {
                 marginBottom: '1.5rem',
               }}
             >
-              // ABOUT ELIMFILTERS
+              // ABOUT ELIMFILTERS®
             </motion.span>
 
             <motion.h1
@@ -71,7 +71,7 @@ export default function About() {
                 color: '#fff',
               }}
             >
-              ENGINEERING OF CERTAINTY
+              ENGINEERING EXCELLENCE
             </motion.h1>
 
             <motion.p
@@ -101,7 +101,7 @@ export default function About() {
                 paddingLeft: '1.25rem',
               }}
             >
-              ELIMFILTERS specializes in protecting critical assets through advanced filtration
+              ELIMFILTERS® specializes in protecting critical assets through advanced filtration
               engineering. We design systems that prevent contamination before it damages.
             </motion.p>
           </motion.div>
@@ -147,9 +147,9 @@ export default function About() {
                   marginBottom: '1.5rem',
                 }}
               >
-                Every ELIMFILTERS system is engineered with one core principle: protect against
+                Every ELIMFILTERS® system is engineered with one core principle: protect against
                 catastrophic failure first, optimize efficiency second. We believe that in industrial
-                filtration, certainty isn't optional—it's mandatory.
+                filtration, excellence isn't optional—it's mandatory.
               </p>
               <p
                 style={{
@@ -215,7 +215,7 @@ export default function About() {
                     lineHeight: 1.6,
                   }}
                 >
-                  All ELIMFILTERS systems undergo rigorous testing and validation before
+                  All ELIMFILTERS® systems undergo rigorous testing and validation before
                   deployment. We guarantee certainty through engineering.
                 </p>
               </div>
@@ -355,7 +355,7 @@ export default function About() {
             }}
           >
             Contact our engineering team to discuss your filtration requirements and discover how
-            ELIMFILTERS protects critical assets.
+            ELIMFILTERS® protects critical assets.
           </p>
           <motion.a
             href="/contact"
