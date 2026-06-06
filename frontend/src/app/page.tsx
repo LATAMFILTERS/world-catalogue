@@ -21,13 +21,16 @@ const FAILURE_MODES = [
 ];
 
 const TECHNOLOGIES = [
-  { code: 'MACROCORE™',  slug: 'macrocore',  domain: 'Air Intake',   spec: 'β₁₀(c) ≥ 200',    logo: '/images/macrocore(fn).avif',  desc: 'AI-formulated hybrid media capturing 99.9% of particulate matter at 10µm absolute. Engineered for mining, construction and agriculture where ambient dust is the primary asset killer.' },
-  { code: 'NANOFORCE™',  slug: 'nanoforce',  domain: 'Hydraulic',    spec: 'ISO 17/15/12',     logo: '/images/nanoforce(fn).avif',  desc: 'Sub-micron filtration protecting proportional valve spools and servo cylinders in high-precision hydraulic circuits operating above 3,000 PSI.' },
-  { code: 'HYDROCORE™',  slug: 'hydrocore',  domain: 'Fuel Systems', spec: '99.8% H₂O SEP.',   logo: '/images/Hihdrocore.avif',     desc: 'Three-phase water interception — free, emulsified, dissolved — before contamination reaches the injection circuit. Validated at ISO 16332.' },
-  { code: 'SYNTRAX™',    slug: 'syntrax',    domain: 'Lube / Oil',   spec: 'ISO 16/14/11',     logo: '/images/syntrax.avif',        desc: 'Synthetic media lube oil filtration delivering ISO 16/14/11 cleanliness targets. Extends bearing life 3–5× versus commodity filtration in continuous heavy-duty operation.' },
-  { code: 'THERMOCORE™', slug: 'thermocore', domain: 'Cooling',      spec: 'SCA RELEASE',      logo: '/images/Thermacore.avif',     desc: 'Controlled gradual additive release maintaining SCA chemistry within the protection corridor across the full service interval. Eliminates cavitation erosion on cylinder liners.' },
-  { code: 'DRYCORE™',    slug: 'drycore',    domain: 'Compressed Air', spec: 'ISO 8573-1',     logo: '/images/drycore(fn).avif',    desc: 'Molecular sieve desiccant technology removing moisture from pneumatic systems. Corrosion prevention and extended service life for air brake, suspension and control circuits.' },
-  { code: 'MICROKAPPA™', slug: 'microkappa', domain: 'Cabin Safety', spec: 'ISO 11155',        logo: '/images/microkappa(fn).avif', desc: 'Multilayer cabin air filtration blocking PM10, PM2.5, allergens and chemical vapors. Protects operator health in mining, agriculture and construction environments.' },
+  { code: 'MACROCORE™',  slug: 'macrocore',  domain: 'Air Intake',     spec: 'β₁₀(c) ≥ 200',    logo: '/assets/MACROCORE.avif',  desc: 'AI-formulated hybrid media capturing 99.9% of particulate matter at 10µm absolute. Engineered for mining, construction and agriculture where ambient dust is the primary asset killer.' },
+  { code: 'MICROKAPPA™', slug: 'microkappa', domain: 'Cabin Safety',   spec: 'ISO 11155',        logo: '/assets/MICROKAPPA.avif', desc: 'Multilayer cabin air filtration blocking PM10, PM2.5, allergens and chemical vapors. Protects operator health in mining, agriculture and construction environments.' },
+  { code: 'DRYCORE™',    slug: 'drycore',    domain: 'Compressed Air', spec: 'ISO 8573-1',       logo: '/assets/DRYCORE.avif',    desc: 'Molecular sieve desiccant technology removing moisture from pneumatic systems. Corrosion prevention and extended service life for air brake, suspension and control circuits.' },
+  { code: 'INTEKCORE™',  slug: 'intekcore',  domain: 'Air Intake',     spec: 'ISO 5011',         logo: '/assets/INTEKCORE.avif',  desc: 'High-pressure filter housing architecture with precision-formed sealing surfaces delivering zero-bypass performance under peak system pressure, cold starts and load spikes.' },
+  { code: 'HYDROCORE™',  slug: 'hydrocore',  domain: 'Fuel Systems',   spec: '99.8% H₂O SEP.',   logo: '/assets/HYDROCORE.avif',  desc: 'Three-phase water interception — free, emulsified, dissolved — before contamination reaches the injection circuit. Validated at ISO 16332.' },
+  { code: 'SYNTEPORE™',  slug: 'syntepore',  domain: 'Air Intake',     spec: 'ISO 5011',         logo: '/assets/SYNTEPORE.avif',  desc: 'All-synthetic intake protection architecture maintaining structural integrity under high-humidity, coastal and marine moisture exposure conditions that degrade cellulose-based media.' },
+  { code: 'SYNTRAX™',    slug: 'syntrax',    domain: 'Lube / Oil',     spec: 'ISO 16/14/11',     logo: '/assets/SYNTRAX.avif',    desc: 'Synthetic media lube oil filtration delivering ISO 16/14/11 cleanliness targets. Extends bearing life 3–5× versus commodity filtration in continuous heavy-duty operation.' },
+  { code: 'NANOFORCE™',  slug: 'nanoforce',  domain: 'Hydraulic',      spec: 'ISO 17/15/12',     logo: '/assets/NANOFORCE.avif',  desc: 'Sub-micron filtration protecting proportional valve spools and servo cylinders in high-precision hydraulic circuits operating above 3,000 PSI.' },
+  { code: 'THERMACORE™', slug: 'thermocore', domain: 'Cooling',        spec: 'SCA RELEASE',      logo: '/assets/THERMACORE.avif', desc: 'Controlled gradual additive release maintaining SCA chemistry within the protection corridor across the full service interval. Eliminates cavitation erosion on cylinder liners.' },
+  { code: 'TURBOCORE™',  slug: 'turbocore',  href: '/technologies', domain: 'Turbo Protection', spec: 'INGRESS REDUCTION', logo: '/assets/TURBOCORE.avif', desc: 'Pre-compression intake protection layer designed to shield turbocharger assemblies from abrasive ingress, extending turbo service life under continuous high-load cycles.' },
 ];
 
 const FAQS = [
@@ -642,15 +645,27 @@ export default function Home() {
                 style={{ padding: 'clamp(2rem, 4vw, 3.5rem) clamp(2rem, 4vw, 4rem)', display: 'flex', flexDirection: 'column' }}
               >
                 {/* Logo oficial */}
-                <div style={{ marginBottom: '1.75rem' }}>
+                <div style={{
+                  width: 'clamp(160px, 18vw, 220px)',
+                  height: 'clamp(120px, 13vw, 160px)',
+                  marginBottom: '1.75rem',
+                  background: '#000',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={TECHNOLOGIES[activeTech].logo}
                     alt={TECHNOLOGIES[activeTech].code}
                     style={{
-                      height: 'clamp(48px, 6vw, 80px)',
-                      width: 'auto',
+                      width: '100%',
+                      height: '100%',
                       objectFit: 'contain',
-                      objectPosition: 'left center',
+                      padding: '12px',
                       display: 'block',
                     }}
                   />
@@ -687,7 +702,7 @@ export default function Home() {
                     </div>
                   </div>
                   <motion.a
-                    href={`/technologies/${TECHNOLOGIES[activeTech].code.replace('™', '').toLowerCase()}`}
+                    href={TECHNOLOGIES[activeTech].href ?? `/technologies/${TECHNOLOGIES[activeTech].slug}`}
                     whileHover={{ background: '#fff', boxShadow: '0 0 40px rgba(255,241,45,0.3)' }}
                     transition={{ duration: 0.15 }}
                     style={{
