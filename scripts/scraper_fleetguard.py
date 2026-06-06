@@ -522,28 +522,60 @@ def dump_crossref_html(part_numbers: list):
             out.push('--- TABLE #' + i + ' ---\\n' + t.outerHTML.slice(0, 1200));
         }});
 
-        // 3. Panel de contenido del tab activo: subir desde el botón
-        // data-name="CrossRef" hasta el contenedor de tabs, y volcar TODOS
-        // sus hermanos (ahí suele vivir el panel con el listado real).
+        // 3. Subida shadow-aware: desde el botón CrossRef y desde la 1ª tabla
+        // de specs (contenido confirmado visible), subir por el árbol —
+        // cruzando shadow roots vía getRootNode().host — hasta dar con un
+        // contenedor cuyo texto aplanado mencione "cross reference" con
+        // contenido nuevo real (no solo el botón). Volcar ESE contenedor
+        // completo (aplanado, incluye shadow DOM) — ahí debe vivir la lista.
+        function climb(el) {{
+            if (el.parentElement) return el.parentElement;
+            const root = el.getRootNode && el.getRootNode();
+            if (root && root.host) return root.host;
+            return null;
+        }}
+        function flatten(node, depth, buf, cap) {{
+            if (!node || depth > 30 || buf.length > cap) return;
+            if (node.nodeType === 3) {{
+                const t = node.textContent.trim();
+                if (t) buf.push(t);
+                return;
+            }}
+            if (node.nodeType !== 1) return;
+            const tag = node.tagName.toLowerCase();
+            const dn = node.getAttribute ? (node.getAttribute('data-name') || '') : '';
+            buf.push('<' + tag + (dn ? ' [' + dn + ']' : '') + '>');
+            if (node.shadowRoot) {{
+                Array.from(node.shadowRoot.childNodes).forEach(c => flatten(c, depth + 1, buf, cap));
+            }}
+            Array.from(node.childNodes).forEach(c => flatten(c, depth + 1, buf, cap));
+        }}
+
         const tabBtns = [];
         swa(document, '[data-name="CrossRef"]', 0, tabBtns);
-        tabBtns.forEach((btn, i) => {{
-            out.push('--- DATA-NAME=CrossRef ELEMENT #' + i + ' (' + btn.tagName + ', class=' + (btn.className || '') + ') ---\\n' + btn.outerHTML.slice(0, 300));
-            // Subir hasta 4 niveles buscando un contenedor con varios hijos (fila de tabs)
-            let node = btn;
-            for (let up = 0; up < 4 && node && node.parentElement; up++) {{
-                node = node.parentElement;
-                const siblings = Array.from(node.parentElement ? node.parentElement.children : []);
-                if (siblings.length > 1) {{
-                    siblings.forEach((sib, j) => {{
-                        if (sib !== node) {{
-                            const style = window.getComputedStyle(sib);
-                            out.push('--- SIBLING #' + up + '.' + j + ' (' + sib.tagName + ', class=' + (sib.className || '') + ', display=' + style.display + ', data-name=' + (sib.getAttribute('data-name') || '') + ') ---\\n' + sib.outerHTML.slice(0, 3000));
-                        }}
-                    }});
+        const seeds = [];
+        if (tabBtns[0]) seeds.push(['BOTON CrossRef', tabBtns[0]]);
+        if (tables[0]) seeds.push(['TABLA SPEC #0', tables[0]]);
+        seeds.forEach(([label, el]) => {{
+            let node = el;
+            let prevLen = 0;
+            let found = false;
+            for (let up = 0; up <= 8; up++) {{
+                const buf = [];
+                flatten(node, 0, buf, 4000);
+                const text = buf.join(' ');
+                const hasCR = /cross reference/i.test(text);
+                if (hasCR && (text.length - prevLen) > 80) {{
+                    out.push('--- CONTENEDOR #' + up + ' con "cross reference" subiendo desde ' + label + ' (' + node.tagName + ', class=' + (node.className||'') + ') ---\\n' + text.slice(0, 8000));
+                    found = true;
                     break;
                 }}
+                prevLen = text.length;
+                const next = climb(node);
+                if (!next || next === node) break;
+                node = next;
             }}
+            if (!found) out.push('--- (sin contenedor con "cross reference" subiendo desde ' + label + ' en 8 niveles) ---');
         }});
 
         return out.join('\\n\\n');
