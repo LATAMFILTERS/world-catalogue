@@ -1333,7 +1333,7 @@ def _extract_crossref_tab(page) -> list:
             'WEIGHT','EFFICIENCY','MICRON','GASKET','OD','ID',
             'EFFICIENCY TEST STD','TEST STANDARD','EFFICIENCY TEST STANDARD'];
         tableRows.forEach(tr => {{
-            const cells = Array.from(tr.querySelectorAll('td'));
+            const cells = Array.from(tr.querySelectorAll('td, th'));
             if (cells.length < 2 || cells.length > 2) return;   // cross-ref es exactamente 2 col
             const brand = cells[0].textContent.trim();
             const pn    = cells[1].textContent.trim().toUpperCase();
@@ -1349,6 +1349,50 @@ def _extract_crossref_tab(page) -> list:
             seen.add(key);
             refs.push({{ brand, part_number: pn }});
         }});
+
+        // Fallback: sección "OEM Cross Reference" sin <table> (divs/listas en línea,
+        // común en páginas de producto obsoleto que muestran todo inline sin tabs).
+        if (refs.length === 0) {{
+            const heads = [];
+            swa(document, 'h1, h2, h3, h4, h5, h6, strong, b, span, div, p', 0, heads);
+            const header = heads.find(h => {{
+                const t = (h.textContent || '').trim();
+                return /^oem cross reference$/i.test(t) || /^cross reference$/i.test(t);
+            }});
+            if (header) {{
+                let container = header.parentElement;
+                for (let depth = 0; depth < 5 && container; depth++) {{
+                    const leafTexts = [];
+                    container.querySelectorAll('*').forEach(el => {{
+                        if (el.children.length === 0) {{
+                            const t = el.textContent.trim();
+                            if (t) leafTexts.push(t);
+                        }}
+                    }});
+                    // descartar el propio texto del header
+                    const idx = leafTexts.findIndex(t => /cross reference/i.test(t));
+                    const items = idx >= 0 ? leafTexts.slice(idx + 1) : leafTexts;
+                    if (items.length >= 4) {{
+                        for (let j = 0; j + 1 < items.length; j += 2) {{
+                            const brand = items[j];
+                            const pn    = items[j + 1].toUpperCase();
+                            const key   = brand + '|' + pn;
+                            if (!brand || !pn || pn.length <= 1 || seen.has(key)) continue;
+                            if (SPEC_LABELS.includes(brand.toUpperCase())) continue;
+                            if (/^(ISO|SAE|ASTM|DIN|NAS|JIS)\\s?[0-9]/.test(pn)) continue;
+                            if (/INCH|\\bMM\\b|\\//.test(pn)) continue;
+                            if (/^[0-9]+$/.test(pn)) continue;
+                            if (pn.split(' ').length > 2) continue;
+                            seen.add(key);
+                            refs.push({{ brand, part_number: pn }});
+                        }}
+                        break;
+                    }}
+                    container = container.parentElement;
+                }}
+            }}
+        }}
+
         return refs;
     }}""")
 
