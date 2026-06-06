@@ -495,7 +495,7 @@ def dump_crossref_html(part_numbers: list):
         // sea cual sea su contenedor real.
         const buf = [];
         function walk(node, depth) {{
-            if (!node || depth > 40 || buf.length > 20000) return;
+            if (!node || depth > 400 || buf.length > 40000) return;
             if (node.nodeType === 3) {{
                 const t = node.textContent.replace(/\\s+/g, ' ').trim();
                 if (t) buf.push(t);
