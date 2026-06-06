@@ -361,10 +361,8 @@ export default function Home() {
         }}>
           {/* Full-bleed mechanic photo */}
           <motion.div style={{
-            position: 'absolute', inset: '-8%',
-            backgroundImage: 'url(/images/mecanico-fn.avif)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 35%',
+            position: 'absolute', inset: '-2%',
+            background: '#000 url(/images/mecanico-fn.avif) center 30% / contain no-repeat',
             y: contaminationY,
             zIndex: 0,
           }} />
