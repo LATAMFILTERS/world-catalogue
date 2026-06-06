@@ -21,6 +21,7 @@ Uso:
     python scraper_fleetguard.py air-precleaners --no-images         # sin descargar imágenes
     python scraper_fleetguard.py --download-images air-precleaners   # descarga retroactiva
     python scraper_fleetguard.py --equipment-only air-primary-secondary  # solo equipment tab (retroactivo)
+    python scraper_fleetguard.py --crossref-only air-primary-secondary   # solo cross-reference (recupera oem_codes=[])
 
 Imágenes:
     - Se descargan en scripts/Fleetguard Scraper/images/[PN].jpg
@@ -2070,6 +2071,68 @@ def equipment_only_run():
     build_equipment_matrix(results)
 
 
+def crossref_only_run():
+    """
+    Re-scrapea SOLO el cross-reference (oem_codes) para productos que tengan
+    oem_codes=[] en el _results.json existente. No toca specs/equipment/kits.
+    Pensado para recuperar datos perdidos por el bug de <th> en _extract_crossref_tab
+    (corregido en 754ac8c5) sin tener que re-scrapear la categoría completa.
+    Uso: python scraper_fleetguard.py --crossref-only air-primary-secondary
+    """
+    if not os.path.exists(OUTPUT_FILE):
+        logging.error(f"No existe {OUTPUT_FILE} — corre la categoría completa primero")
+        return
+
+    with open(OUTPUT_FILE, encoding="utf-8") as f:
+        results = json.load(f)
+
+    targets = [r for r in results if not r.get("oem_codes") and not r.get("error")]
+    logging.info(f"Productos sin cross-reference: {len(targets)} / {len(results)}")
+    if not targets:
+        logging.info("Todos los productos ya tienen cross-reference. Nada que hacer.")
+        return
+
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+
+        for idx, prod in enumerate(targets, 1):
+            url = prod.get("url") or f"https://www.fleetguard.com/product/{prod['part_number']}"
+            logging.info(f"[crossref {idx}/{len(targets)}] {url}")
+            try:
+                page.goto(url, timeout=60000, wait_until="domcontentloaded")
+                time.sleep(3)
+                dismiss_popups(page)
+                wait_net(page, 20000)
+                time.sleep(3)
+
+                _click_tab(page, "CrossRef")
+                oem_codes = _extract_crossref_tab(page)
+                if not oem_codes:
+                    time.sleep(3)
+                    _click_tab(page, "CrossRef")
+                    oem_codes = _extract_crossref_tab(page)
+                prod["oem_codes"] = oem_codes
+
+                logging.info(f"  → {prod['part_number']}: {len(oem_codes)} cross-refs")
+            except Exception as e:
+                logging.warning(f"  ERROR {prod['part_number']}: {e}")
+            # Guardar progreso parcial cada 10 productos
+            if idx % 10 == 0:
+                with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+                logging.info(f"  Guardado parcial ({idx}/{len(targets)})")
+            rand_sleep()
+
+        ctx.close()
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    logging.info(f"✅ Cross-reference actualizado — {OUTPUT_FILE}")
+
+
 def build_equipment_matrix(results: list):
     """
     Construye matriz equipo → filtros para búsqueda por equipo.
@@ -2141,6 +2204,16 @@ if __name__ == "__main__":
         configure(name, CATEGORIES.get(name, ""))
         logging.info(f"Solo equipment: {name}")
         equipment_only_run(); sys.exit(0)
+
+    if argv[0] == "--crossref-only":
+        # python scraper_fleetguard.py --crossref-only <categoria>
+        name = argv[1].lower() if len(argv) > 1 else ""
+        if not name:
+            print("ERROR: --crossref-only necesita la categoría (ej. air-primary-secondary)")
+            sys.exit(1)
+        configure(name, CATEGORIES.get(name, ""))
+        logging.info(f"Solo cross-reference: {name}")
+        crossref_only_run(); sys.exit(0)
 
     if argv[0] == "--retry-empty":
         # python scraper_fleetguard.py --retry-empty <categoria>
