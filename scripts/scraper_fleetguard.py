@@ -2013,8 +2013,10 @@ def equipment_only_run():
     with open(OUTPUT_FILE, encoding="utf-8") as f:
         results = json.load(f)
 
-    targets = [r for r in results if not r.get("equipment") and not r.get("error")]
-    logging.info(f"Productos sin equipment/kits: {len(targets)} / {len(results)}")
+    targets = [r for r in results
+               if (not r.get("equipment") or not r.get("maintenance_kits"))
+               and not r.get("error")]
+    logging.info(f"Productos sin equipment y/o kits: {len(targets)} / {len(results)}")
     if not targets:
         logging.info("Todos los productos ya tienen equipment. Nada que hacer.")
         build_equipment_matrix(results)
