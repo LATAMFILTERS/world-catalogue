@@ -522,6 +522,30 @@ def dump_crossref_html(part_numbers: list):
             out.push('--- TABLE #' + i + ' ---\\n' + t.outerHTML.slice(0, 1200));
         }});
 
+        // 3. Panel de contenido del tab activo: subir desde el botón
+        // data-name="CrossRef" hasta el contenedor de tabs, y volcar TODOS
+        // sus hermanos (ahí suele vivir el panel con el listado real).
+        const tabBtns = [];
+        swa(document, '[data-name="CrossRef"]', 0, tabBtns);
+        tabBtns.forEach((btn, i) => {{
+            out.push('--- DATA-NAME=CrossRef ELEMENT #' + i + ' (' + btn.tagName + ', class=' + (btn.className || '') + ') ---\\n' + btn.outerHTML.slice(0, 300));
+            // Subir hasta 4 niveles buscando un contenedor con varios hijos (fila de tabs)
+            let node = btn;
+            for (let up = 0; up < 4 && node && node.parentElement; up++) {{
+                node = node.parentElement;
+                const siblings = Array.from(node.parentElement ? node.parentElement.children : []);
+                if (siblings.length > 1) {{
+                    siblings.forEach((sib, j) => {{
+                        if (sib !== node) {{
+                            const style = window.getComputedStyle(sib);
+                            out.push('--- SIBLING #' + up + '.' + j + ' (' + sib.tagName + ', class=' + (sib.className || '') + ', display=' + style.display + ', data-name=' + (sib.getAttribute('data-name') || '') + ') ---\\n' + sib.outerHTML.slice(0, 3000));
+                        }}
+                    }});
+                    break;
+                }}
+            }}
+        }});
+
         return out.join('\\n\\n');
     }}"""
 
