@@ -499,7 +499,7 @@ def dump_crossref_html(part_numbers: list):
             const own = Array.from(el.childNodes)
                 .filter(n => n.nodeType === 3)
                 .map(n => n.textContent.trim()).join(' ').trim();
-            if (own && /cross reference/i.test(own) && own.length < 80) {{
+            if (own && /cross reference/i.test(own) && own.length < 200) {{
                 const html = el.outerHTML || '';
                 if (!seen.has(html)) {{
                     seen.add(html);
@@ -542,7 +542,21 @@ def dump_crossref_html(part_numbers: list):
                 dismiss_popups(page)
                 wait_net(page, 20000)
                 time.sleep(3)
-                _click_tab(page, "CrossRef")
+                clicked = _click_tab(page, "CrossRef")
+                lines.append(f"[tab CrossRef encontrado y clickeado: {clicked}]")
+                # Forzar carga perezosa: recorrer la página con scroll y esperar
+                # a que el contenido async (tablas/listas de cross-ref) se rellene.
+                try:
+                    page.evaluate("""() => {
+                        const h = document.body.scrollHeight;
+                        for (let y = 0; y <= h; y += 400) window.scrollTo(0, y);
+                        window.scrollTo(0, 0);
+                    }""")
+                except Exception:
+                    pass
+                time.sleep(4)
+                wait_net(page, 15000)
+                time.sleep(4)
                 dump = page.evaluate(dump_js)
                 lines.append(dump or "(sin coincidencias — ni headers 'cross reference' ni <table>)")
             except Exception as e:
