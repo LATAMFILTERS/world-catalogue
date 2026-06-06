@@ -488,95 +488,45 @@ def dump_crossref_html(part_numbers: list):
     """
     out_path = "fleetguard_crossref_dump.txt"
     dump_js = f"""() => {{
-        {_SHADOW_WALK_ALL}
-        const out = [];
-
-        // 1. Cualquier elemento cuyo texto propio (no de hijos) mencione "cross reference"
-        const all = [];
-        swa(document, '*', 0, all);
-        const seen = new Set();
-        all.forEach(el => {{
-            const own = Array.from(el.childNodes)
-                .filter(n => n.nodeType === 3)
-                .map(n => n.textContent.trim()).join(' ').trim();
-            if (own && /cross reference/i.test(own) && own.length < 200) {{
-                const html = el.outerHTML || '';
-                if (!seen.has(html)) {{
-                    seen.add(html);
-                    out.push('--- HEADER MATCH (' + el.tagName + ') ---\\n' + html.slice(0, 500));
-                    // contexto: padre y abuelo
-                    if (el.parentElement) {{
-                        out.push('--- PARENT (' + el.parentElement.tagName + ') ---\\n' + el.parentElement.outerHTML.slice(0, 1500));
-                    }}
-                    if (el.parentElement && el.parentElement.parentElement) {{
-                        out.push('--- GRANDPARENT (' + el.parentElement.parentElement.tagName + ') ---\\n' + el.parentElement.parentElement.outerHTML.slice(0, 2500));
-                    }}
-                }}
-            }}
-        }});
-
-        // 2. Todas las tablas de la página (recortadas)
-        const tables = [];
-        swa(document, 'table', 0, tables);
-        tables.forEach((t, i) => {{
-            out.push('--- TABLE #' + i + ' ---\\n' + t.outerHTML.slice(0, 1200));
-        }});
-
-        // 3. Subida shadow-aware: desde el botón CrossRef y desde la 1ª tabla
-        // de specs (contenido confirmado visible), subir por el árbol —
-        // cruzando shadow roots vía getRootNode().host — hasta dar con un
-        // contenedor cuyo texto aplanado mencione "cross reference" con
-        // contenido nuevo real (no solo el botón). Volcar ESE contenedor
-        // completo (aplanado, incluye shadow DOM) — ahí debe vivir la lista.
-        function climb(el) {{
-            if (el.parentElement) return el.parentElement;
-            const root = el.getRootNode && el.getRootNode();
-            if (root && root.host) return root.host;
-            return null;
-        }}
-        function flatten(node, depth, buf, cap) {{
-            if (!node || depth > 30 || buf.length > cap) return;
+        // Aplana TODO el documento (cruzando shadow roots) a texto plano,
+        // sin asumir estructura (tabs, tablas, headers). Luego busca TODAS
+        // las apariciones de "cross reference" y vuelca ventanas de contexto
+        // alrededor — el contenido tiene que estar en algún punto de ese texto,
+        // sea cual sea su contenedor real.
+        const buf = [];
+        function walk(node, depth) {{
+            if (!node || depth > 40 || buf.length > 20000) return;
             if (node.nodeType === 3) {{
-                const t = node.textContent.trim();
+                const t = node.textContent.replace(/\\s+/g, ' ').trim();
                 if (t) buf.push(t);
                 return;
             }}
             if (node.nodeType !== 1) return;
-            const tag = node.tagName.toLowerCase();
-            const dn = node.getAttribute ? (node.getAttribute('data-name') || '') : '';
-            buf.push('<' + tag + (dn ? ' [' + dn + ']' : '') + '>');
             if (node.shadowRoot) {{
-                Array.from(node.shadowRoot.childNodes).forEach(c => flatten(c, depth + 1, buf, cap));
+                Array.from(node.shadowRoot.childNodes).forEach(c => walk(c, depth + 1));
             }}
-            Array.from(node.childNodes).forEach(c => flatten(c, depth + 1, buf, cap));
+            Array.from(node.childNodes).forEach(c => walk(c, depth + 1));
         }}
+        walk(document.body, 0);
+        const fullText = buf.join(' | ');
 
-        const tabBtns = [];
-        swa(document, '[data-name="CrossRef"]', 0, tabBtns);
-        const seeds = [];
-        if (tabBtns[0]) seeds.push(['BOTON CrossRef', tabBtns[0]]);
-        if (tables[0]) seeds.push(['TABLA SPEC #0', tables[0]]);
-        seeds.forEach(([label, el]) => {{
-            let node = el;
-            let prevLen = 0;
-            let found = false;
-            for (let up = 0; up <= 8; up++) {{
-                const buf = [];
-                flatten(node, 0, buf, 4000);
-                const text = buf.join(' ');
-                const hasCR = /cross reference/i.test(text);
-                if (hasCR && (text.length - prevLen) > 80) {{
-                    out.push('--- CONTENEDOR #' + up + ' con "cross reference" subiendo desde ' + label + ' (' + node.tagName + ', class=' + (node.className||'') + ') ---\\n' + text.slice(0, 8000));
-                    found = true;
-                    break;
-                }}
-                prevLen = text.length;
-                const next = climb(node);
-                if (!next || next === node) break;
-                node = next;
-            }}
-            if (!found) out.push('--- (sin contenedor con "cross reference" subiendo desde ' + label + ' en 8 niveles) ---');
-        }});
+        const out = [];
+        out.push('LONGITUD TEXTO TOTAL: ' + fullText.length + ' chars');
+
+        const re = /cross reference/gi;
+        let m;
+        let n = 0;
+        const seen = new Set();
+        while ((m = re.exec(fullText)) !== null && n < 15) {{
+            const start = Math.max(0, m.index - 250);
+            const end = Math.min(fullText.length, m.index + 350);
+            const window = fullText.slice(start, end);
+            if (seen.has(window)) continue;
+            seen.add(window);
+            out.push('--- COINCIDENCIA #' + n + ' (posición ' + m.index + ') ---\\n...' + window + '...');
+            n++;
+        }}
+        if (n === 0) out.push('(NINGUNA aparición de "cross reference" en todo el texto aplanado de la página)');
 
         return out.join('\\n\\n');
     }}"""
