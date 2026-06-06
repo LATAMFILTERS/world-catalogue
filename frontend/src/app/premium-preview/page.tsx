@@ -202,6 +202,7 @@ export default function PremiumPreviewPage() {
                 display: 'flex',
                 flexDirection: 'column',
                 background: '#000',
+                minHeight: '477px',
               }}
             >
               <div
