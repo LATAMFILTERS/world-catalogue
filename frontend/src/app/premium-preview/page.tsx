@@ -69,10 +69,10 @@ const TECHS: Tech[] = [
   },
   {
     system: 'SYSTEM 09 / THERMAL PROTECTION SYSTEMS',
-    name: 'THERMOCORE',
+    name: 'THERMACORE',
     subtitle: 'Heat-stable filtration architecture maintaining structural integrity across extreme thermal cycles.',
     spec: 'Operating range -40 deg C to 150 deg C',
-    asset: '/assets/THERMOCORE.avif',
+    asset: '/assets/THERMACORE.avif',
   },
   {
     system: 'SYSTEM 10 / TURBOCHARGER PROTECTION',
