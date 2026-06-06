@@ -742,7 +742,7 @@ export default function Home() {
                 letterSpacing: '-0.02em', color: '#fff',
                 margin: '0 0 clamp(1.5rem, 3vh, 2.5rem)',
               }}>
-                WHY CHOOSE<br /><span style={{ color: '#FFF12D' }}>ELIMFILTERS®</span>
+                WHY CHOOSE<br /><span style={{ color: '#FFF12D' }}>ELIMFILTERS<sup style={{ fontSize: '0.4em', fontWeight: 400, marginLeft: '0.15em' }}>®</sup></span>
               </h2>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', margin: '0 0 1.25rem' }}>
                 ELIMFILTERS® is more than a filter manufacturer. We are a company specialized in{' '}
@@ -800,7 +800,7 @@ export default function Home() {
                 textTransform: 'uppercase', lineHeight: 0.95,
                 letterSpacing: '-0.02em', color: '#000', margin: 0,
               }}>
-                ONLY THE BEST<br />SELL ELIMFILTERS®.
+                ONLY THE BEST<br />SELL ELIMFILTERS<sup style={{ fontSize: '0.4em', fontWeight: 400, marginLeft: '0.15em' }}>®</sup>.
               </h2>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
