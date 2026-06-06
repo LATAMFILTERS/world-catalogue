@@ -22,6 +22,7 @@ Uso:
     python scraper_fleetguard.py --download-images air-precleaners   # descarga retroactiva
     python scraper_fleetguard.py --equipment-only air-primary-secondary  # solo equipment tab (retroactivo)
     python scraper_fleetguard.py --crossref-only air-primary-secondary   # solo cross-reference (recupera oem_codes=[])
+    python scraper_fleetguard.py --dump-crossref AF463 AF25728 AF836     # diagnóstico: vuelca HTML crudo del bloque cross-ref
 
 Imágenes:
     - Se descargan en scripts/Fleetguard Scraper/images/[PN].jpg
@@ -475,6 +476,85 @@ def inspect_page(url: str):
 
         input("\nPresiona ENTER para cerrar...")
         ctx.close()
+
+
+def dump_crossref_html(part_numbers: list):
+    """
+    Diagnóstico puntual: navega a cada producto, activa el tab CrossRef
+    (si existe) y vuelca el HTML crudo de cualquier elemento relacionado con
+    "Cross Reference" — tablas, contenedores, texto — a un archivo de texto.
+    Sirve para ver la estructura REAL del DOM y ajustar el extractor sin
+    adivinar. Uso: python scraper_fleetguard.py --dump-crossref AF463 AF25728 AF836
+    """
+    out_path = "fleetguard_crossref_dump.txt"
+    dump_js = f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const out = [];
+
+        // 1. Cualquier elemento cuyo texto propio (no de hijos) mencione "cross reference"
+        const all = [];
+        swa(document, '*', 0, all);
+        const seen = new Set();
+        all.forEach(el => {{
+            const own = Array.from(el.childNodes)
+                .filter(n => n.nodeType === 3)
+                .map(n => n.textContent.trim()).join(' ').trim();
+            if (own && /cross reference/i.test(own) && own.length < 80) {{
+                const html = el.outerHTML || '';
+                if (!seen.has(html)) {{
+                    seen.add(html);
+                    out.push('--- HEADER MATCH (' + el.tagName + ') ---\\n' + html.slice(0, 500));
+                    // contexto: padre y abuelo
+                    if (el.parentElement) {{
+                        out.push('--- PARENT (' + el.parentElement.tagName + ') ---\\n' + el.parentElement.outerHTML.slice(0, 1500));
+                    }}
+                    if (el.parentElement && el.parentElement.parentElement) {{
+                        out.push('--- GRANDPARENT (' + el.parentElement.parentElement.tagName + ') ---\\n' + el.parentElement.parentElement.outerHTML.slice(0, 2500));
+                    }}
+                }}
+            }}
+        }});
+
+        // 2. Todas las tablas de la página (recortadas)
+        const tables = [];
+        swa(document, 'table', 0, tables);
+        tables.forEach((t, i) => {{
+            out.push('--- TABLE #' + i + ' ---\\n' + t.outerHTML.slice(0, 1200));
+        }});
+
+        return out.join('\\n\\n');
+    }}"""
+
+    lines = []
+    with sync_playwright() as pw:
+        ctx = launch_context(pw)
+        page = ctx.new_page()
+        if STEALTH:
+            stealth_sync(page)
+        for pn in part_numbers:
+            url = f"https://www.fleetguard.com/product/{pn}"
+            lines.append("=" * 70)
+            lines.append(f"PRODUCTO: {pn}  ({url})")
+            lines.append("=" * 70)
+            try:
+                page.goto(url, timeout=60000, wait_until="domcontentloaded")
+                time.sleep(3)
+                dismiss_popups(page)
+                wait_net(page, 20000)
+                time.sleep(3)
+                _click_tab(page, "CrossRef")
+                dump = page.evaluate(dump_js)
+                lines.append(dump or "(sin coincidencias — ni headers 'cross reference' ni <table>)")
+            except Exception as e:
+                lines.append(f"ERROR: {e}")
+            lines.append("")
+            rand_sleep()
+        ctx.close()
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    logging.info(f"✅ Volcado HTML guardado en {out_path}")
+    print(f"\nAbre {out_path} y pega aquí su contenido para análisis.")
 
 
 # ── Category collector ────────────────────────────────────────────────────────
@@ -2196,6 +2276,14 @@ if __name__ == "__main__":
         url = argv[1] if len(argv) > 1 else ""
         if not url: print("ERROR: --test necesita URL de producto"); sys.exit(1)
         test_one(url); sys.exit(0)
+
+    if argv[0] == "--dump-crossref":
+        # python scraper_fleetguard.py --dump-crossref AF463 AF25728 AF836
+        pns = argv[1:]
+        if not pns:
+            print("ERROR: --dump-crossref necesita 1+ part numbers (ej. AF463 AF25728)")
+            sys.exit(1)
+        dump_crossref_html(pns); sys.exit(0)
 
     if argv[0] == "--equipment-only":
         # python scraper_fleetguard.py --equipment-only <categoria>
