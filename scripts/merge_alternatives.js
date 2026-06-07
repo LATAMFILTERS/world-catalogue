@@ -163,20 +163,24 @@ async function main() {
       const curComp  = (member.competitor_codes        || []).length;
       const curEquip = (member.equipment_applications  || []).length;
 
+      // NEVER reduce — only apply union if it adds entries
+      const finalOem   = oemUnion.length   > curOem   ? oemUnion   : (member.oem_codes   || []);
+      const finalComp  = compUnion.length  > curComp  ? compUnion  : (member.competitor_codes || []);
+      const finalEquip = equipUnion.length > curEquip ? equipUnion : (member.equipment_applications || []);
+
       const needsUpdate =
-        oemUnion.length   > curOem   ||
-        compUnion.length  > curComp  ||
-        equipUnion.length > curEquip;
+        finalOem.length   > curOem   ||
+        finalComp.length  > curComp  ||
+        finalEquip.length > curEquip;
 
       if (!needsUpdate) continue;
 
       if (DRY_RUN) {
-        console.log(
-          `  [DRY] ${member.sku}: ` +
-          `oem ${curOem}→${oemUnion.length} | ` +
-          `comp ${curComp}→${compUnion.length} | ` +
-          `equip ${curEquip}→${equipUnion.length}`
-        );
+        const parts = [];
+        if (finalOem.length   > curOem)   parts.push(`oem ${curOem}→${finalOem.length}`);
+        if (finalComp.length  > curComp)  parts.push(`comp ${curComp}→${finalComp.length}`);
+        if (finalEquip.length > curEquip) parts.push(`equip ${curEquip}→${finalEquip.length}`);
+        console.log(`  [DRY] ${member.sku}: ${parts.join(' | ')}`);
       } else {
         await client.query(`
           UPDATE elimfilters_catalog
@@ -185,9 +189,9 @@ async function main() {
                  equipment_applications = $3::jsonb
           WHERE  sku = $4
         `, [
-          JSON.stringify(oemUnion),
-          JSON.stringify(compUnion),
-          JSON.stringify(equipUnion),
+          JSON.stringify(finalOem),
+          JSON.stringify(finalComp),
+          JSON.stringify(finalEquip),
           member.sku,
         ]);
       }
