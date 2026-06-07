@@ -90,10 +90,12 @@ export function Navigation() {
         {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <img
+            <Image
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
-              style={{ height: '46px', width: 'auto', objectFit: 'contain', display: 'block' }}
+              width={180}
+              height={48}
+              style={{ objectFit: 'contain', height: '48px', width: 'auto' }}
             />
           </Link>
         </motion.div>
