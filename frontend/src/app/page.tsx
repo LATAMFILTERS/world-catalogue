@@ -265,37 +265,6 @@ export default function Home() {
                 When equipment fails, operations stop.
               </p>
 
-              <div style={{ display: 'flex', gap: '0.75rem', flexShrink: 0, marginLeft: 'auto' }}>
-                <motion.a
-                  href="https://part-search.elimfilters.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ background: '#fff', boxShadow: '0 0 60px rgba(255,241,45,0.5)' }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.15 }}
-                  style={{
-                    background: '#FFF12D', color: '#000',
-                    fontFamily: 'Outfit, sans-serif', fontWeight: 800,
-                    fontSize: '0.72rem', letterSpacing: '0.18em',
-                    padding: '0.9rem 2rem',
-                    textDecoration: 'none', textTransform: 'uppercase', flexShrink: 0,
-                  }}
-                >FIND MY FILTER →</motion.a>
-                <motion.a
-                  href="/knowledge-system"
-                  whileHover={{ borderColor: '#FFF12D', color: '#FFF12D' }}
-                  transition={{ duration: 0.15 }}
-                  style={{
-                    background: 'transparent', color: 'rgba(255,255,255,0.5)',
-                    fontFamily: 'Outfit, sans-serif', fontWeight: 600,
-                    fontSize: '0.72rem', letterSpacing: '0.18em',
-                    padding: '0.9rem 1.75rem',
-                    textDecoration: 'none', textTransform: 'uppercase', flexShrink: 0,
-                    border: '1px solid rgba(255,255,255,0.18)',
-                    transition: 'border-color 0.15s, color 0.15s',
-                  }}
-                >KNOWLEDGE SYSTEM</motion.a>
-              </div>
             </motion.div>
           </div>
         </section>

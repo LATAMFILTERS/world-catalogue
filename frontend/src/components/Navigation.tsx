@@ -66,7 +66,7 @@ export function Navigation() {
     <nav
       style={{
         position: 'fixed',
-        top: 0,
+        top: '1.5%',
         left: 0,
         right: 0,
         zIndex: 100,
@@ -90,12 +90,10 @@ export function Navigation() {
         {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image
+            <img
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
-              width={220}
-              height={220}
-              style={{ objectFit: 'contain' }}
+              style={{ height: '46px', width: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </Link>
         </motion.div>
@@ -359,7 +357,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
           fontFamily: 'Inter, sans-serif',
-          fontSize: '0.875rem',
+          fontSize: '1rem',
           fontWeight: 500,
           letterSpacing: '0.05em',
           transition: 'color 0.2s ease',
