@@ -89,14 +89,30 @@ export function Navigation() {
       >
         {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <img
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
-              width={180}
+              width={178}
               height={48}
-              style={{ objectFit: 'contain', height: '48px', width: 'auto' }}
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.style.display = 'none';
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'block';
+              }}
+              style={{ height: '48px', width: 'auto', display: 'block' }}
             />
+            <span style={{
+              display: 'none',
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 900,
+              fontSize: '1.15rem',
+              letterSpacing: '-0.02em',
+              color: '#fff',
+            }}>
+              ELIM<span style={{ color: '#FFF12D' }}>FILTERS</span><sup style={{ fontSize: '0.55em', color: '#FFF12D' }}>®</sup>
+            </span>
           </Link>
         </motion.div>
 
