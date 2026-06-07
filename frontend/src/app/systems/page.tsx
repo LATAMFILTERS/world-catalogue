@@ -181,29 +181,22 @@ export default function SystemsPage() {
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
         {/* System image strip */}
-        <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-          <img
-            src="/images/mecanica-air.avif"
-            alt="Air Intake Protection"
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'brightness(0.45) contrast(1.1) saturate(0.75)',
-            }}
-          />
+        <div style={{ position: 'relative', height: '280px', overflow: 'hidden', display: 'flex', background: '#080808' }}>
+          {/* Left: text */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-          <div style={{ position: 'absolute', bottom: '2rem', left: 'clamp(1.5rem,5vw,3rem)' }}>
+            width: '58%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,5vw,3rem)',
+            position: 'relative', zIndex: 1,
+          }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
               letterSpacing: '0.2em', color: '#FFF12D', margin: '0 0 0.5rem',
             }}>SYS-01</p>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-              fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', letterSpacing: '-0.03em',
-              color: '#fff', margin: '0 0 0.4rem', textShadow: '0 2px 24px rgba(0,0,0,0.8)',
+              fontSize: 'clamp(1.6rem,3vw,2.5rem)', letterSpacing: '-0.03em',
+              color: '#fff', margin: '0 0 0.4rem',
             }}>
               Air Intake &amp; Airflow Protection
             </h2>
@@ -213,6 +206,15 @@ export default function SystemsPage() {
             }}>
               COMBUSTION &amp; PNEUMATIC SYSTEM INTEGRITY
             </p>
+          </div>
+          {/* Right: filter image */}
+          <div style={{ position: 'absolute', right: 0, top: 0, width: '50%', height: '100%' }}>
+            <img
+              src="/images/air-filterld.avif"
+              alt="Air Intake Protection"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.82) saturate(0.85)' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0) 100%)' }} />
           </div>
         </div>
 
@@ -343,37 +345,12 @@ export default function SystemsPage() {
             </div>
           </div>
 
-          {/* Technologies, Assets, Industries row */}
+          {/* Assets, Industries row */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '2rem',
           }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-                letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '0.75rem',
-              }}>TECHNOLOGIES</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                {['MACROCORE™', 'SYNTEPORE™', 'DRYCORE™', 'INTEKCORE™'].map((t) => (
-                  <Link key={t} href={`/technologies/${t.toLowerCase().replace('™', '').trim()}`} style={{ textDecoration: 'none' }}>
-                    <motion.span
-                      whileHover={{ borderColor: '#FFF12D', color: '#FFF12D', background: 'rgba(255,241,45,0.08)' }}
-                      style={{
-                        display: 'inline-block',
-                        fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-                        fontWeight: 700, letterSpacing: '0.05em',
-                        color: 'rgba(255,241,45,0.8)',
-                        border: '1px solid rgba(255,241,45,0.25)',
-                        padding: '0.25rem 0.6rem',
-                        transition: 'all 0.2s',
-                      }}
-                    >{t}</motion.span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
             <div>
               <p style={{
                 fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
@@ -430,29 +407,22 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-          <img
-            src="/images/fuelfilter-hero.avif"
-            alt="Fuel Cleanliness Protection"
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'brightness(0.45) contrast(1.1) saturate(0.75)',
-            }}
-          />
+        <div style={{ position: 'relative', height: '280px', overflow: 'hidden', display: 'flex', background: '#080808' }}>
+          {/* Left: text */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-          <div style={{ position: 'absolute', bottom: '2rem', left: 'clamp(1.5rem,5vw,3rem)' }}>
+            width: '58%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,5vw,3rem)',
+            position: 'relative', zIndex: 1,
+          }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
               letterSpacing: '0.2em', color: '#FFF12D', margin: '0 0 0.5rem',
             }}>SYS-02</p>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-              fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', letterSpacing: '-0.03em',
-              color: '#fff', margin: '0 0 0.4rem', textShadow: '0 2px 24px rgba(0,0,0,0.8)',
+              fontSize: 'clamp(1.6rem,3vw,2.5rem)', letterSpacing: '-0.03em',
+              color: '#fff', margin: '0 0 0.4rem',
             }}>
               Fuel Cleanliness Protection
             </h2>
@@ -462,6 +432,15 @@ export default function SystemsPage() {
             }}>
               INJECTION SYSTEM INTEGRITY
             </p>
+          </div>
+          {/* Right: filter image */}
+          <div style={{ position: 'absolute', right: 0, top: 0, width: '50%', height: '100%' }}>
+            <img
+              src="/images/fuel-filters.avif"
+              alt="Fuel Cleanliness Protection"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.82) saturate(0.85)' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0) 100%)' }} />
           </div>
         </div>
 
@@ -597,32 +576,9 @@ export default function SystemsPage() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '2rem',
           }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-                letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '0.75rem',
-              }}>TECHNOLOGIES</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                <Link href="/technologies/hydrocore" style={{ textDecoration: 'none' }}>
-                  <motion.span
-                    whileHover={{ borderColor: '#FFF12D', color: '#FFF12D', background: 'rgba(255,241,45,0.08)' }}
-                    style={{
-                      display: 'inline-block',
-                      fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-                      fontWeight: 700, letterSpacing: '0.05em',
-                      color: 'rgba(255,241,45,0.8)',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      padding: '0.25rem 0.6rem',
-                      transition: 'all 0.2s',
-                    }}
-                  >HYDROCORE™</motion.span>
-                </Link>
-              </div>
-            </div>
-
             <div>
               <p style={{
                 fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
@@ -679,29 +635,22 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-          <img
-            src="/images/oil-hero.avif"
-            alt="Lubrication Reliability Protection"
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'brightness(0.45) contrast(1.1) saturate(0.75)',
-            }}
-          />
+        <div style={{ position: 'relative', height: '280px', overflow: 'hidden', display: 'flex', background: '#080808' }}>
+          {/* Left: text */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-          <div style={{ position: 'absolute', bottom: '2rem', left: 'clamp(1.5rem,5vw,3rem)' }}>
+            width: '58%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,5vw,3rem)',
+            position: 'relative', zIndex: 1,
+          }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
               letterSpacing: '0.2em', color: '#FFF12D', margin: '0 0 0.5rem',
             }}>SYS-03</p>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-              fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', letterSpacing: '-0.03em',
-              color: '#fff', margin: '0 0 0.4rem', textShadow: '0 2px 24px rgba(0,0,0,0.8)',
+              fontSize: 'clamp(1.6rem,3vw,2.5rem)', letterSpacing: '-0.03em',
+              color: '#fff', margin: '0 0 0.4rem',
             }}>
               Lubrication Reliability Protection
             </h2>
@@ -711,6 +660,15 @@ export default function SystemsPage() {
             }}>
               BEARING AND DRIVETRAIN INTEGRITY
             </p>
+          </div>
+          {/* Right: filter image */}
+          <div style={{ position: 'absolute', right: 0, top: 0, width: '50%', height: '100%' }}>
+            <img
+              src="/images/elementos-oil.avif"
+              alt="Lubrication Reliability Protection"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.82) saturate(0.85)' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0) 100%)' }} />
           </div>
         </div>
 
@@ -818,32 +776,9 @@ export default function SystemsPage() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '2rem',
           }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-                letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '0.75rem',
-              }}>TECHNOLOGIES</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                <Link href="/technologies/syntrax" style={{ textDecoration: 'none' }}>
-                  <motion.span
-                    whileHover={{ borderColor: '#FFF12D', color: '#FFF12D', background: 'rgba(255,241,45,0.08)' }}
-                    style={{
-                      display: 'inline-block',
-                      fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-                      fontWeight: 700, letterSpacing: '0.05em',
-                      color: 'rgba(255,241,45,0.8)',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      padding: '0.25rem 0.6rem',
-                      transition: 'all 0.2s',
-                    }}
-                  >SYNTRAX™</motion.span>
-                </Link>
-              </div>
-            </div>
-
             <div>
               <p style={{
                 fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
@@ -900,29 +835,22 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-          <img
-            src="/images/hidraulic.avif"
-            alt="Hydraulic Contamination Control"
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'brightness(0.45) contrast(1.1) saturate(0.75)',
-            }}
-          />
+        <div style={{ position: 'relative', height: '280px', overflow: 'hidden', display: 'flex', background: '#080808' }}>
+          {/* Left: text */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-          <div style={{ position: 'absolute', bottom: '2rem', left: 'clamp(1.5rem,5vw,3rem)' }}>
+            width: '58%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,5vw,3rem)',
+            position: 'relative', zIndex: 1,
+          }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
               letterSpacing: '0.2em', color: '#FFF12D', margin: '0 0 0.5rem',
             }}>SYS-04</p>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-              fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', letterSpacing: '-0.03em',
-              color: '#fff', margin: '0 0 0.4rem', textShadow: '0 2px 24px rgba(0,0,0,0.8)',
+              fontSize: 'clamp(1.6rem,3vw,2.5rem)', letterSpacing: '-0.03em',
+              color: '#fff', margin: '0 0 0.4rem',
             }}>
               Hydraulic Contamination Control
             </h2>
@@ -932,6 +860,15 @@ export default function SystemsPage() {
             }}>
               PROPORTIONAL VALVE AND ACTUATOR INTEGRITY
             </p>
+          </div>
+          {/* Right: filter image */}
+          <div style={{ position: 'absolute', right: 0, top: 0, width: '50%', height: '100%' }}>
+            <img
+              src="/images/nanoforce.avif"
+              alt="Hydraulic Contamination Control"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.82) saturate(0.85)' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0) 100%)' }} />
           </div>
         </div>
 
@@ -1039,32 +976,9 @@ export default function SystemsPage() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '2rem',
           }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-                letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '0.75rem',
-              }}>TECHNOLOGIES</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                <Link href="/technologies/nanoforce" style={{ textDecoration: 'none' }}>
-                  <motion.span
-                    whileHover={{ borderColor: '#FFF12D', color: '#FFF12D', background: 'rgba(255,241,45,0.08)' }}
-                    style={{
-                      display: 'inline-block',
-                      fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-                      fontWeight: 700, letterSpacing: '0.05em',
-                      color: 'rgba(255,241,45,0.8)',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      padding: '0.25rem 0.6rem',
-                      transition: 'all 0.2s',
-                    }}
-                  >NANOFORCE™</motion.span>
-                </Link>
-              </div>
-            </div>
-
             <div>
               <p style={{
                 fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
@@ -1121,29 +1035,22 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div style={{ position: 'relative', height: '320px', overflow: 'hidden' }}>
-          <img
-            src="/images/coolant-hero.avif"
-            alt="Cooling System & Environmental Protection"
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center',
-              filter: 'brightness(0.45) contrast(1.1) saturate(0.75)',
-            }}
-          />
+        <div style={{ position: 'relative', height: '280px', overflow: 'hidden', display: 'flex', background: '#080808' }}>
+          {/* Left: text */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-          <div style={{ position: 'absolute', bottom: '2rem', left: 'clamp(1.5rem,5vw,3rem)' }}>
+            width: '58%',
+            display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.5rem,5vw,3rem)',
+            position: 'relative', zIndex: 1,
+          }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
               letterSpacing: '0.2em', color: '#FFF12D', margin: '0 0 0.5rem',
             }}>SYS-05</p>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-              fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', letterSpacing: '-0.03em',
-              color: '#fff', margin: '0 0 0.4rem', textShadow: '0 2px 24px rgba(0,0,0,0.8)',
+              fontSize: 'clamp(1.6rem,3vw,2.5rem)', letterSpacing: '-0.03em',
+              color: '#fff', margin: '0 0 0.4rem',
             }}>
               Cooling System &amp; Environmental Protection
             </h2>
@@ -1153,6 +1060,15 @@ export default function SystemsPage() {
             }}>
               THERMAL CIRCUIT AND CABIN INTEGRITY
             </p>
+          </div>
+          {/* Right: filter image */}
+          <div style={{ position: 'absolute', right: 0, top: 0, width: '50%', height: '100%' }}>
+            <img
+              src="/images/COOLANT-FILTER.avif"
+              alt="Cooling System & Environmental Protection"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.82) saturate(0.85)' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0) 100%)' }} />
           </div>
         </div>
 
