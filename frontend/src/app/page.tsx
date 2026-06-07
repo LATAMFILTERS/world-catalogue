@@ -366,8 +366,8 @@ export default function Home() {
           <motion.div style={{
             position: 'absolute', inset: 0,
             backgroundImage: 'url(/images/mecanico-fn.avif)',
-            backgroundSize: '45%',
-            backgroundPosition: '70% center',
+            backgroundSize: '35%',
+            backgroundPosition: '72% 40%',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#000',
             y: contaminationY,
