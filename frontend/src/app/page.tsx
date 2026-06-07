@@ -552,14 +552,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════════════════════════ */}
-        {/*  05 · TECHNOLOGY — TAB SELECTOR, NOT GRID OF CARDS             */}
-        {/* ═══════════════════════════════════════════════════════════════ */}
-        <section style={{
-          padding: 'clamp(4rem, 8vh, 7rem) 8%',
-          background: 'rgba(255,241,45,0.018)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}>
+        {/* TECHNOLOGY SECTION REMOVED */}
+        {false && <section style={{ display: 'none' }}>
           <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'clamp(2.5rem, 5vh, 4rem)', flexWrap: 'wrap', gap: '1rem' }}>
@@ -711,7 +705,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section>}
 
         {/* ═══════════════════════════════════════════════════════════════ */}
         {/*  06 · WHY ELIMFILTERS — STRIPPED DOWN                          */}
