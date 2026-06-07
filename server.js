@@ -1401,6 +1401,51 @@ app.get('/api/stats', async (req, res) => {
 });
 // ────────────────────────────────────────────────────────────────────────────
 
+// ─── POST /api/migrate/fill-competitor-codes ─────────────────────────────────
+// Receives batches of {sku, competitor_codes} and updates ONLY products where
+// competitor_codes is currently NULL or empty AND the new value is non-empty.
+// Safe: never overwrites existing populated competitor_codes data.
+// Body: { key: "elim2026", rows: [{sku: "EA10006", competitor_codes: [...]}] }
+app.post('/api/migrate/fill-competitor-codes', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      if (!row.sku || !Array.isArray(row.competitor_codes) || row.competitor_codes.length === 0) {
+        skipped++;
+        continue;
+      }
+      try {
+        const result = await client.query(
+          `UPDATE elimfilters_catalog
+           SET competitor_codes = $2::jsonb
+           WHERE sku = $1
+             AND (competitor_codes IS NULL
+                  OR jsonb_array_length(COALESCE(competitor_codes, '[]'::jsonb)) = 0)`,
+          [row.sku, JSON.stringify(row.competitor_codes)]
+        );
+        if (result.rowCount > 0) updated++;
+        else skipped++;
+      } catch (e) {
+        errors++;
+      }
+    }
+
+    res.json({ success: true, updated, skipped, errors, total: rows.length });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally {
+    await client.end().catch(() => {});
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {
