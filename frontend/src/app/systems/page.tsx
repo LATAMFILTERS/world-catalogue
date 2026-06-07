@@ -57,8 +57,8 @@ export default function SystemsPage() {
           padding: 'clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,3rem)',
           width: '100%',
           display: 'grid',
-          gridTemplateColumns: '1fr clamp(260px,28vw,380px)',
-          gap: 'clamp(3rem,6vw,6rem)',
+          gridTemplateColumns: '1fr clamp(380px,42vw,580px)',
+          gap: 'clamp(2rem,4vw,4rem)',
           alignItems: 'center',
         }}>
           {/* Left: text content */}
@@ -166,7 +166,7 @@ export default function SystemsPage() {
             transition={{ duration: 0.8, delay: 0.25 }}
             style={{
               width: '100%',
-              aspectRatio: '3 / 4',
+              aspectRatio: '16 / 10',
               border: '1px solid rgba(255,255,255,0.1)',
               overflow: 'hidden',
               position: 'relative',
