@@ -2324,6 +2324,90 @@ app.get('/api/audit/report', async (req, res) => {
   }
 });
 
+// ─── CUSTOMER INTELLIGENCE ───────────────────────────────────────────────────
+
+app.post('/api/intelligence/migrate', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS intelligence_events (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        distributor TEXT,
+        customer TEXT,
+        country TEXT,
+        industry TEXT,
+        equipment_make TEXT,
+        equipment_model TEXT,
+        equipment_id TEXT,
+        part_number TEXT,
+        technology TEXT,
+        event_type TEXT,
+        quantity INTEGER,
+        operating_hours INTEGER
+      )
+    `);
+    res.json({ success: true, message: 'intelligence_events table ready' });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/intelligence/events', async (req, res) => {
+  const {
+    distributor, customer, country, industry,
+    equipment_make, equipment_model, equipment_id,
+    part_number, technology, event_type, quantity, operating_hours
+  } = req.body;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `INSERT INTO intelligence_events
+        (distributor, customer, country, industry, equipment_make, equipment_model,
+         equipment_id, part_number, technology, event_type, quantity, operating_hours)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+       RETURNING id, created_at`,
+      [distributor||null, customer||null, country||null, industry||null,
+       equipment_make||null, equipment_model||null, equipment_id||null,
+       part_number||null, technology||null, event_type||null,
+       quantity ? parseInt(quantity) : null,
+       operating_hours ? parseInt(operating_hours) : null]
+    );
+    res.status(201).json({ success: true, event: result.rows[0] });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.get('/api/intelligence/dashboard', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const [total, topParts, topDistributors, topCountries] = await Promise.all([
+      client.query(`SELECT COUNT(*) AS total FROM intelligence_events`),
+      client.query(`SELECT part_number, COUNT(*) AS count FROM intelligence_events WHERE part_number IS NOT NULL GROUP BY part_number ORDER BY count DESC LIMIT 10`),
+      client.query(`SELECT distributor, COUNT(*) AS count FROM intelligence_events WHERE distributor IS NOT NULL GROUP BY distributor ORDER BY count DESC LIMIT 10`),
+      client.query(`SELECT country, COUNT(*) AS count FROM intelligence_events WHERE country IS NOT NULL GROUP BY country ORDER BY count DESC LIMIT 10`),
+    ]);
+    res.json({
+      total_events: parseInt(total.rows[0].total),
+      top_part_numbers: topParts.rows,
+      top_distributors: topDistributors.rows,
+      top_countries: topCountries.rows,
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;
