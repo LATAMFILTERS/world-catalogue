@@ -646,20 +646,16 @@ export default function Home() {
                 initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                style={{ padding: 'clamp(2rem, 4vw, 3.5rem) clamp(2rem, 4vw, 4rem)', display: 'flex', flexDirection: 'column' }}
+                style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '420px' }}
               >
-                {/* Logo oficial */}
+                {/* Logo — columna izquierda, grande */}
                 <div style={{
-                  width: 'clamp(160px, 18vw, 220px)',
-                  height: 'clamp(120px, 13vw, 160px)',
-                  marginBottom: '1.75rem',
-                  background: '#000',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '4px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  overflow: 'hidden',
+                  padding: '3rem 2.5rem',
+                  borderRight: '1px solid rgba(255,255,255,0.06)',
+                  background: 'rgba(255,255,255,0.015)',
                 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -667,35 +663,28 @@ export default function Home() {
                     alt={TECHNOLOGIES[activeTech].code}
                     style={{
                       width: '100%',
-                      height: '100%',
+                      maxWidth: '300px',
+                      height: 'auto',
                       objectFit: 'contain',
-                      padding: '12px',
                       display: 'block',
                     }}
                   />
                 </div>
 
+                {/* Detalles — columna derecha */}
+                <div style={{ padding: 'clamp(2rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   fontFamily: 'JetBrains Mono, monospace',
                   fontSize: '0.58rem', letterSpacing: '0.2em',
-                  color: 'rgba(255,241,45,0.5)',
-                  textTransform: 'uppercase', marginBottom: '0.5rem',
+                  color: 'rgba(255,241,45,0.6)',
+                  textTransform: 'uppercase', marginBottom: '1rem',
                 }}>{TECHNOLOGIES[activeTech].domain}</div>
-
-                <h3 style={{
-                  fontFamily: 'Outfit, sans-serif', fontWeight: 900,
-                  fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
-                  color: '#fff', textTransform: 'uppercase',
-                  letterSpacing: '-0.02em', lineHeight: 0.95,
-                  margin: '0 0 1.5rem',
-                }}>{TECHNOLOGIES[activeTech].code}</h3>
 
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
                   fontSize: 'clamp(0.9rem, 1.1vw, 1.05rem)',
                   color: 'rgba(255,255,255,0.65)',
                   lineHeight: 1.8, margin: '0 0 2.5rem',
-                  maxWidth: '580px',
                 }}>{TECHNOLOGIES[activeTech].desc}</p>
 
                 <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -717,6 +706,7 @@ export default function Home() {
                       textDecoration: 'none', textTransform: 'uppercase',
                     }}
                   >EXPLORE TECHNOLOGY →</motion.a>
+                </div>
                 </div>
               </motion.div>
             </div>
