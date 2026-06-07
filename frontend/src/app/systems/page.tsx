@@ -5,43 +5,18 @@ import { motion } from 'motion/react';
 
 /* ─── DATA ──────────────────────────────────────────────────────────────── */
 
-interface ProductFamily {
-  name: string;
-  slug: string;
-}
-
-interface Technology {
-  name: string;
-  slug: string;
-}
-
+interface ProductFamily { name: string; slug: string; }
+interface Technology { name: string; slug: string; }
 interface ProtectionSystem {
-  id: string;
-  code: string;
-  name: string;
-  tag: string;
-  image: string;
-  assets: string[];
-  families: ProductFamily[];
-  technologies: Technology[];
-  industries: string[];
+  id: string; code: string; name: string; tag: string; image: string;
+  families: ProductFamily[]; technologies: Technology[]; industries: string[];
 }
 
 const SYSTEMS: ProtectionSystem[] = [
   {
-    id: 'air-intake',
-    code: 'SYS-01',
-    name: 'Air Intake & Airflow',
+    id: 'air-intake', code: 'SYS-01', name: 'Air Intake\n& Airflow',
     tag: 'COMBUSTION + PNEUMATIC INTEGRITY',
     image: '/assets/mecanica-air.avif',
-    assets: [
-      'Diesel and gas engines — mobile and stationary',
-      'Gas turbines and centrifugal compressors',
-      'Turbochargers and charge air circuits',
-      'Pneumatic brake and suspension systems',
-      'Process control instrumentation air circuits',
-      'Industrial compressor stations',
-    ],
     families: [
       { name: 'Air Filters', slug: 'airfilter' },
       { name: 'Air Intake Housings', slug: 'housing' },
@@ -56,87 +31,37 @@ const SYSTEMS: ProtectionSystem[] = [
     industries: ['Agriculture', 'Construction', 'Mining', 'Oil & Gas', 'Railway', 'Power Generation', 'Bus & Coach'],
   },
   {
-    id: 'fuel-cleanliness',
-    code: 'SYS-02',
-    name: 'Fuel Cleanliness',
+    id: 'fuel-cleanliness', code: 'SYS-02', name: 'Fuel\nCleanliness',
     tag: 'INJECTION SYSTEM INTEGRITY',
     image: '/assets/fuelfilter-hero.avif',
-    assets: [
-      'HPCR diesel engines — 1,800 to 2,500 bar injection',
-      'Common-rail marine diesel engines',
-      'Gas turbines on liquid fuel',
-      'Standby and emergency diesel generators',
-      'Offshore compression and power systems',
-      'Bulk fuel storage and transfer circuits',
-    ],
     families: [
       { name: 'Fuel Filters', slug: 'fuel' },
       { name: 'Fuel Water Separators', slug: 'water' },
       { name: 'Turbine Fuel Filtration', slug: 'aquaguard-series' },
     ],
-    technologies: [
-      { name: 'HYDROCORE™', slug: 'hydrocore' },
-    ],
+    technologies: [{ name: 'HYDROCORE™', slug: 'hydrocore' }],
     industries: ['Marine', 'Oil & Gas', 'Power Generation', 'Trucks & Fleets', 'Waste & Municipal', 'Agriculture'],
   },
   {
-    id: 'lubrication',
-    code: 'SYS-03',
-    name: 'Lubrication',
+    id: 'lubrication', code: 'SYS-03', name: 'Lubrication',
     tag: 'BEARING AND DRIVETRAIN INTEGRITY',
     image: '/assets/oil-hero.avif',
-    assets: [
-      'Diesel and dual-fuel engines — mobile and stationary',
-      'Natural gas and bi-fuel generator engines',
-      'Marine propulsion engines',
-      'Industrial engine-driven equipment',
-      'Gearboxes and differential housings',
-      'Transmission and final drive assemblies',
-    ],
-    families: [
-      { name: 'Oil Filters', slug: 'oil' },
-    ],
-    technologies: [
-      { name: 'SYNTRAX™', slug: 'syntrax' },
-    ],
+    families: [{ name: 'Oil Filters', slug: 'oil' }],
+    technologies: [{ name: 'SYNTRAX™', slug: 'syntrax' }],
     industries: ['Trucks & Fleets', 'Bus & Coach', 'Automotive', 'Manufacturing', 'Railway', 'Agriculture'],
   },
   {
-    id: 'hydraulic',
-    code: 'SYS-04',
-    name: 'Hydraulic',
+    id: 'hydraulic', code: 'SYS-04', name: 'Hydraulic',
     tag: 'PROPORTIONAL VALVE + ACTUATOR INTEGRITY',
     image: '/assets/hidraulic.avif',
-    assets: [
-      'Excavators, wheel loaders, and motor graders',
-      'Drilling and tunneling equipment',
-      'Industrial presses and injection molding machines',
-      'Marine crane, winch, and deck machinery',
-      'Agricultural implement and harvester hydraulics',
-      'Proportional valve and servo actuator circuits',
-    ],
-    families: [
-      { name: 'Hydraulic Filters', slug: 'hydraulic' },
-    ],
-    technologies: [
-      { name: 'NANOFORCE™', slug: 'nanoforce' },
-    ],
+    families: [{ name: 'Hydraulic Filters', slug: 'hydraulic' }],
+    technologies: [{ name: 'NANOFORCE™', slug: 'nanoforce' }],
     industries: ['Construction', 'Mining', 'Manufacturing', 'Agriculture', 'Marine'],
   },
   {
-    id: 'cooling',
-    code: 'SYS-05',
-    name: 'Cooling',
+    id: 'cooling', code: 'SYS-05', name: 'Cooling',
     tag: 'THERMAL CIRCUIT + CABIN INTEGRITY',
     image: '/assets/coolant-hero.avif',
-    assets: [
-      'Industrial diesel engines — wet sleeve liner construction',
-      'Commercial truck and bus cooling circuits',
-      'Generator set cooling systems',
-      'Commercial vehicle operator cabins',
-      'Construction equipment operator environments',
-      'Transit bus driver and passenger cabins',
-    ],
     families: [
       { name: 'Coolant Filters', slug: 'coolant' },
       { name: 'Cabin Filters', slug: 'cabin' },
@@ -161,303 +86,226 @@ const TECH_INDEX = [
   { name: 'MICROKAPPA™', slug: 'microkappa', sys: 'SYS-05', fn: 'Multi-stage cabin PM2.5 capture with activated carbon VOC adsorption' },
 ];
 
-/* ─── HELPERS ────────────────────────────────────────────────────────────── */
-
 function slugifyIndustry(s: string) {
-  return s
-    .toLowerCase()
-    .replace(/\s*&\s*/g, '-')
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+  return s.toLowerCase().replace(/\s*&\s*/g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 }
 
 /* ─── SYSTEM PANEL ───────────────────────────────────────────────────────── */
 
 function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
-  const altBg = idx % 2 === 1;
+  const flip = idx % 2 === 1;
 
   return (
     <motion.section
       id={sys.id}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45 }}
-      style={{
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
-        background: altBg ? 'rgba(255,255,255,0.014)' : 'transparent',
-      }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.5 }}
+      style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
     >
-      <div style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem)',
-      }}>
-
-        {/* Panel header */}
+      <div
+        className="sys-panel-layout"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '42% 1fr',
+          minHeight: '360px',
+          direction: flip ? 'rtl' : 'ltr',
+        }}
+      >
+        {/* ── IMAGE SIDE ── */}
         <div style={{
-          display: 'flex',
-          gap: '2rem',
-          marginBottom: '2rem',
-          paddingBottom: '1.25rem',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
-          alignItems: 'flex-start',
+          position: 'relative',
+          overflow: 'hidden',
+          direction: 'ltr',
+          minHeight: '300px',
         }}>
-          {/* Left: system identity */}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.65rem', flexWrap: 'wrap' }}>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.62rem',
-                fontWeight: 700,
-                letterSpacing: '0.18em',
-                color: '#FFF12D',
-                background: 'rgba(255,241,45,0.08)',
-                border: '1px solid rgba(255,241,45,0.2)',
-                padding: '0.22rem 0.6rem',
-                flexShrink: 0,
-              }}>
-                {sys.code}
-              </span>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.52rem',
-                letterSpacing: '0.16em',
-                color: 'rgba(255,255,255,0.27)',
-              }}>
-                {sys.tag}
-              </span>
+          <img
+            src={sys.image}
+            alt={sys.name}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              filter: 'brightness(0.55) contrast(1.1) saturate(0.85)',
+            }}
+          />
+          {/* Gradient overlay towards content side */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: flip
+              ? 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)'
+              : 'linear-gradient(to left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)',
+          }} />
+          {/* System code + name overlaid on image */}
+          <div style={{
+            position: 'absolute',
+            bottom: '1.75rem',
+            left: '1.75rem',
+            right: '1.75rem',
+          }}>
+            <div style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.58rem',
+              fontWeight: 700,
+              letterSpacing: '0.22em',
+              color: '#FFF12D',
+              marginBottom: '0.55rem',
+            }}>
+              {sys.code}
             </div>
             <h2 style={{
               fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(1.25rem,3vw,1.85rem)',
+              fontWeight: 900,
+              fontSize: 'clamp(1.6rem,3.5vw,2.6rem)',
               color: '#fff',
               margin: 0,
-              letterSpacing: '-0.01em',
-              lineHeight: 1.1,
+              lineHeight: 1.0,
+              letterSpacing: '-0.02em',
+              whiteSpace: 'pre-line',
+              textShadow: '0 2px 20px rgba(0,0,0,0.8)',
             }}>
               {sys.name}
             </h2>
-          </div>
-
-          {/* Right: system image */}
-          <div style={{
-            flexShrink: 0,
-            width: 'clamp(160px, 22vw, 280px)',
-            height: 'clamp(100px, 14vw, 175px)',
-            overflow: 'hidden',
-            border: '1px solid rgba(255,255,255,0.08)',
-            position: 'relative',
-          }}>
-            <img
-              src={sys.image}
-              alt={sys.name}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                display: 'block',
-                filter: 'brightness(0.75) contrast(1.05)',
-              }}
-            />
             <div style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, transparent 60%)',
-            }} />
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.46rem',
+              letterSpacing: '0.15em',
+              color: 'rgba(255,255,255,0.35)',
+              marginTop: '0.6rem',
+            }}>
+              {sys.tag}
+            </div>
           </div>
         </div>
 
-        {/* 3-column data grid */}
-        <div
-          className="sys-panel-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            gap: 0,
-            border: '1px solid rgba(255,255,255,0.07)',
-          }}
-        >
-          {/* ASSETS PROTECTED */}
-          <div style={{
-            padding: '1.5rem 1.75rem',
-            borderRight: '1px solid rgba(255,255,255,0.07)',
-          }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.5rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,255,255,0.26)',
-              marginBottom: '1rem',
-            }}>
-              ASSETS PROTECTED
-            </p>
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.5rem' }}>
-              {sys.assets.map((a, i) => (
-                <li key={i} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.6rem',
-                    color: 'rgba(255,241,45,0.35)',
-                    flexShrink: 0,
-                    lineHeight: 1.7,
-                  }}>—</span>
-                  <span style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.8rem',
-                    color: 'rgba(255,255,255,0.52)',
-                    lineHeight: 1.65,
-                  }}>
-                    {a}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* ── CONTENT SIDE ── */}
+        <div style={{
+          direction: 'ltr',
+          padding: 'clamp(1.75rem,3.5vw,2.5rem) clamp(1.5rem,3.5vw,2.5rem)',
+          borderLeft: flip ? 'none' : '1px solid rgba(255,255,255,0.06)',
+          borderRight: flip ? '1px solid rgba(255,255,255,0.06)' : 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.75rem',
+        }}>
 
-          {/* PRODUCT FAMILIES */}
-          <div style={{
-            padding: '1.5rem 1.75rem',
-            borderRight: '1px solid rgba(255,255,255,0.07)',
-          }}>
+          {/* Product Families */}
+          <div>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.5rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,255,255,0.26)',
-              marginBottom: '1rem',
+              fontSize: '0.46rem',
+              letterSpacing: '0.24em',
+              color: 'rgba(255,255,255,0.22)',
+              marginBottom: '0.7rem',
             }}>
               PRODUCT FAMILIES
             </p>
-            <div style={{ display: 'grid', gap: '0.55rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
               {sys.families.map((f) => (
-                <Link key={f.slug} href={`/products/${f.slug}`} style={{ textDecoration: 'none' }}>
-                  <motion.div
-                    whileHover={{ borderColor: 'rgba(255,241,45,0.3)', color: '#fff' }}
+                <Link key={f.slug} href={`/systems/${f.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.span
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.35)', color: '#fff', background: 'rgba(255,255,255,0.04)' }}
                     style={{
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '0.65rem 0.85rem',
-                      border: '1px solid rgba(255,255,255,0.07)',
-                      color: 'rgba(255,255,255,0.6)',
-                      transition: 'border-color 0.2s, color 0.2s',
-                    }}
-                  >
-                    <span style={{
+                      gap: '0.45rem',
+                      padding: '0.45rem 0.85rem',
+                      border: '1px solid rgba(255,255,255,0.12)',
                       fontFamily: 'Outfit, sans-serif',
                       fontSize: '0.82rem',
                       fontWeight: 500,
-                    }}>
-                      {f.name}
-                    </span>
-                    <span style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.58rem',
-                      color: 'rgba(255,241,45,0.45)',
-                    }}>
-                      →
-                    </span>
-                  </motion.div>
+                      color: 'rgba(255,255,255,0.62)',
+                      transition: 'all 0.2s',
+                    }}
+                  >
+                    {f.name}
+                    <span style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.28)' }}>→</span>
+                  </motion.span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* TECHNOLOGY PLATFORM */}
-          <div style={{ padding: '1.5rem 1.75rem' }}>
+          {/* Technologies */}
+          <div>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.5rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,255,255,0.26)',
-              marginBottom: '1rem',
+              fontSize: '0.46rem',
+              letterSpacing: '0.24em',
+              color: 'rgba(255,255,255,0.22)',
+              marginBottom: '0.7rem',
             }}>
               TECHNOLOGY PLATFORM
             </p>
-            <div style={{ display: 'grid', gap: '0.55rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
               {sys.technologies.map((tech) => (
                 <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
-                  <motion.div
-                    whileHover={{ borderColor: 'rgba(255,241,45,0.45)', background: 'rgba(255,241,45,0.05)' }}
+                  <motion.span
+                    whileHover={{ borderColor: '#FFF12D', background: 'rgba(255,241,45,0.08)', color: '#FFF12D' }}
                     style={{
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '0.65rem 0.85rem',
-                      border: '1px solid rgba(255,241,45,0.15)',
-                      background: 'rgba(255,241,45,0.025)',
-                      transition: 'border-color 0.2s, background 0.2s',
+                      gap: '0.45rem',
+                      padding: '0.45rem 0.85rem',
+                      border: '1px solid rgba(255,241,45,0.25)',
+                      background: 'rgba(255,241,45,0.04)',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                      color: 'rgba(255,241,45,0.75)',
+                      letterSpacing: '0.04em',
+                      transition: 'all 0.2s',
                     }}
                   >
-                    <span style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      color: '#FFF12D',
-                      letterSpacing: '0.04em',
-                    }}>
-                      {tech.name}
-                    </span>
-                    <span style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.58rem',
-                      color: 'rgba(255,241,45,0.4)',
-                    }}>
-                      →
-                    </span>
-                  </motion.div>
+                    {tech.name}
+                    <span style={{ fontSize: '0.6rem', opacity: 0.5 }}>→</span>
+                  </motion.span>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Industries strip */}
-        <div style={{
-          border: '1px solid rgba(255,255,255,0.07)',
-          borderTop: 'none',
-          padding: '0.85rem 1.75rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1.5rem',
-          flexWrap: 'wrap',
-        }}>
-          <span style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.5rem',
-            letterSpacing: '0.22em',
-            color: 'rgba(255,255,255,0.22)',
-            flexShrink: 0,
-          }}>
-            INDUSTRIES
-          </span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem 1.25rem' }}>
-            {sys.industries.map((ind) => (
-              <Link
-                key={ind}
-                href={`/industries/${slugifyIndustry(ind)}`}
-                style={{ textDecoration: 'none' }}
-              >
-                <motion.span
-                  whileHover={{ color: 'rgba(255,255,255,0.75)' }}
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.75rem',
-                    color: 'rgba(255,255,255,0.38)',
-                    display: 'inline-block',
-                    transition: 'color 0.15s',
-                  }}
-                >
-                  {ind}
-                </motion.span>
-              </Link>
-            ))}
+          {/* Industries */}
+          <div style={{ marginTop: 'auto', paddingTop: '0.25rem' }}>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.46rem',
+              letterSpacing: '0.24em',
+              color: 'rgba(255,255,255,0.18)',
+              marginBottom: '0.55rem',
+            }}>
+              INDUSTRIES
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem 0.65rem', alignItems: 'center' }}>
+              {sys.industries.map((ind, i) => (
+                <span key={ind} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                  <Link href={`/industries/${slugifyIndustry(ind)}`} style={{ textDecoration: 'none' }}>
+                    <motion.span
+                      whileHover={{ color: 'rgba(255,255,255,0.65)' }}
+                      style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '0.72rem',
+                        color: 'rgba(255,255,255,0.3)',
+                        transition: 'color 0.15s',
+                      }}
+                    >
+                      {ind}
+                    </motion.span>
+                  </Link>
+                  {i < sys.industries.length - 1 && (
+                    <span style={{ color: 'rgba(255,255,255,0.1)', fontSize: '0.6rem' }}>·</span>
+                  )}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </motion.section>
   );
@@ -471,7 +319,7 @@ export default function SystemsPage() {
     '@type': 'WebPage',
     name: 'Industrial Asset Protection Systems — ELIMFILTERS®',
     description:
-      'Five independent asset protection systems for industrial equipment: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling. Nine proprietary protection technologies across ten product families.',
+      'Five independent asset protection systems: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling. Nine proprietary protection technologies across ten product families.',
     url: 'https://elimfilters.com/systems',
     dateModified: '2026-06-07',
     author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
@@ -486,177 +334,128 @@ export default function SystemsPage() {
 
       {/* ── MASTHEAD ───────────────────────────────────────────────────── */}
       <section style={{
-        paddingTop: 'clamp(5.5rem,12vw,9rem)',
-        paddingBottom: 'clamp(2.5rem,5vw,4rem)',
+        paddingTop: 'clamp(5rem,11vw,8rem)',
+        paddingBottom: 'clamp(2.5rem,5vw,3.5rem)',
         paddingLeft: 'clamp(1.5rem,4vw,3rem)',
         paddingRight: 'clamp(1.5rem,4vw,3rem)',
-        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        {/* Subtle background grid */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'linear-gradient(rgba(255,241,45,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,241,45,0.025) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+          pointerEvents: 'none',
+        }} />
 
-          {/* Top row */}
+        <div style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative' }}>
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginBottom: '2.5rem',
+            alignItems: 'flex-end',
             flexWrap: 'wrap',
-            gap: '1rem',
+            gap: '2rem',
           }}>
+
+            {/* Left: title */}
             <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.6rem',
-                letterSpacing: '0.22em',
-                color: 'rgba(255,241,45,0.6)',
-                marginBottom: '0.75rem',
-              }}>
-                // ELIMFILTERS® · ASSET PROTECTION PLATFORM
-              </p>
-              <motion.h1
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontWeight: 900,
-                  fontSize: 'clamp(2.2rem,5.5vw,4rem)',
-                  color: '#fff',
-                  lineHeight: 1.0,
-                  letterSpacing: '-0.02em',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.6rem',
+                  letterSpacing: '0.24em',
+                  color: 'rgba(255,241,45,0.55)',
                   marginBottom: '0.75rem',
                 }}
               >
-                SYSTEM<br />ARCHITECTURE
+                // ELIMFILTERS® · ASSET PROTECTION PLATFORM
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.08 }}
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 900,
+                  fontSize: 'clamp(2.5rem,6vw,4.5rem)',
+                  color: '#fff',
+                  lineHeight: 0.92,
+                  letterSpacing: '-0.03em',
+                  margin: 0,
+                }}
+              >
+                SYSTEM<br />
+                <span style={{ color: '#FFF12D' }}>ARCHITECTURE</span>
               </motion.h1>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.62rem',
-                letterSpacing: '0.15em',
-                color: 'rgba(255,255,255,0.32)',
-              }}>
-                FIVE INDEPENDENT PROTECTION SYSTEMS · INDUSTRIAL ASSET INTEGRITY
-              </p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontSize: '0.9rem',
+                  color: 'rgba(255,255,255,0.38)',
+                  marginTop: '1rem',
+                  maxWidth: '420px',
+                  lineHeight: 1.6,
+                }}
+              >
+                Five independent protection systems — each defined by its contamination target, product families, and proprietary technology platform.
+              </motion.p>
             </div>
 
-            {/* Document metadata */}
-            <div style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.56rem',
-              color: 'rgba(255,255,255,0.2)',
-              letterSpacing: '0.1em',
-              lineHeight: 2.2,
-              textAlign: 'right',
-            }}>
-              <div>DOC: SYS-ARCH-2026.06</div>
-              <div>REV: 2.0 — ACTIVE</div>
-              <div>9 TECHNOLOGIES</div>
-              <div>10 PRODUCT FAMILIES</div>
-            </div>
-          </div>
-
-          {/* Platform stats */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, auto)',
-            gap: 0,
-            border: '1px solid rgba(255,255,255,0.08)',
-            width: 'fit-content',
-          }}>
-            {[
-              { val: '05', label: 'SYSTEMS' },
-              { val: '09', label: 'TECHNOLOGIES' },
-              { val: '10', label: 'PRODUCT FAMILIES' },
-              { val: '12', label: 'INDUSTRIES' },
-            ].map((item, i) => (
-              <div key={i} style={{
-                padding: '1rem 1.75rem',
-                borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-              }}>
-                <div style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: 'clamp(1.6rem,3vw,2.2rem)',
-                  fontWeight: 700,
-                  color: '#FFF12D',
-                  lineHeight: 1,
+            {/* Right: counters */}
+            <motion.div
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '1px',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
+            >
+              {[
+                { val: '05', label: 'SYSTEMS' },
+                { val: '09', label: 'TECHNOLOGIES' },
+                { val: '10', label: 'PRODUCT FAMILIES' },
+                { val: '12', label: 'INDUSTRIES' },
+              ].map((item) => (
+                <div key={item.label} style={{
+                  padding: '1.1rem 1.5rem',
+                  background: '#000',
+                  textAlign: 'center',
                 }}>
-                  {item.val}
-                </div>
-                <div style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.5rem',
-                  letterSpacing: '0.2em',
-                  color: 'rgba(255,255,255,0.28)',
-                  marginTop: '0.35rem',
-                }}>
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HIERARCHY ──────────────────────────────────────────────────── */}
-      <section style={{
-        padding: 'clamp(1.5rem,3vw,2.25rem) clamp(1.5rem,4vw,3rem)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        background: 'rgba(255,255,255,0.012)',
-      }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 0,
-            flexWrap: 'wrap',
-            marginBottom: '0.85rem',
-          }}>
-            <span style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.55rem',
-              letterSpacing: '0.2em',
-              color: 'rgba(255,255,255,0.2)',
-              marginRight: '1.5rem',
-            }}>
-              DECISION HIERARCHY
-            </span>
-            {['SYSTEM', 'PRODUCT FAMILY', 'TECHNOLOGY', 'INDUSTRY'].map((step, i) => (
-              <span key={i} style={{ display: 'flex', alignItems: 'center' }}>
-                <span style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.62rem',
-                  fontWeight: i === 0 ? 700 : 400,
-                  letterSpacing: '0.13em',
-                  color: i === 0 ? '#FFF12D' : `rgba(255,255,255,${0.55 - i * 0.12})`,
-                  padding: '0.28rem 0.65rem',
-                  background: i === 0 ? 'rgba(255,241,45,0.08)' : 'transparent',
-                  border: i === 0 ? '1px solid rgba(255,241,45,0.2)' : 'none',
-                }}>
-                  {step}
-                </span>
-                {i < 3 && (
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.68rem',
-                    color: 'rgba(255,255,255,0.18)',
-                    padding: '0 0.4rem',
+                  <div style={{
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontSize: 'clamp(1.6rem,3vw,2.2rem)',
+                    fontWeight: 900,
+                    color: '#FFF12D',
+                    lineHeight: 1,
                   }}>
-                    →
-                  </span>
-                )}
-              </span>
-            ))}
+                    {item.val}
+                  </div>
+                  <div style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.44rem',
+                    letterSpacing: '0.2em',
+                    color: 'rgba(255,255,255,0.24)',
+                    marginTop: '0.35rem',
+                  }}>
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </div>
-          <p style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: '0.82rem',
-            lineHeight: 1.7,
-            color: 'rgba(255,255,255,0.38)',
-            maxWidth: '680px',
-            margin: 0,
-          }}>
-            Selection begins with the system domain. Each system defines the applicable product families and technology platforms. Industry exposure determines which systems apply to a given asset.
-          </p>
         </div>
       </section>
 
@@ -664,6 +463,7 @@ export default function SystemsPage() {
       <div style={{
         borderBottom: '1px solid rgba(255,255,255,0.07)',
         overflowX: 'auto',
+        background: 'rgba(255,255,255,0.01)',
       }}>
         <div style={{
           maxWidth: '1280px',
@@ -677,33 +477,40 @@ export default function SystemsPage() {
               key={sys.id}
               href={`#${sys.id}`}
               style={{
-                display: 'block',
-                flex: '1 0 140px',
-                padding: '0.9rem 1.1rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                flex: '1 0 120px',
+                padding: '0.85rem 1rem',
                 borderRight: i < SYSTEMS.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none',
                 textDecoration: 'none',
+                transition: 'background 0.15s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,241,45,0.04)')}
               onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
             >
-              <div style={{
+              <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.52rem',
-                letterSpacing: '0.18em',
+                fontSize: '0.5rem',
+                letterSpacing: '0.15em',
                 color: '#FFF12D',
-                marginBottom: '0.3rem',
+                background: 'rgba(255,241,45,0.08)',
+                padding: '0.15rem 0.4rem',
+                flexShrink: 0,
               }}>
                 {sys.code}
-              </div>
-              <div style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                color: 'rgba(255,255,255,0.6)',
+              </span>
+              <span style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontSize: '0.78rem',
+                fontWeight: 500,
+                color: 'rgba(255,255,255,0.5)',
                 whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}>
-                {sys.name}
-              </div>
+                {sys.name.replace('\n', ' ')}
+              </span>
             </a>
           ))}
         </div>
@@ -716,9 +523,9 @@ export default function SystemsPage() {
 
       {/* ── TECHNOLOGY CROSS-REFERENCE ─────────────────────────────────── */}
       <section style={{
-        padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,4vw,3rem)',
-        borderTop: '1px solid rgba(255,241,45,0.1)',
-        background: 'rgba(255,241,45,0.01)',
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem)',
+        borderTop: '2px solid rgba(255,241,45,0.12)',
+        background: 'rgba(255,241,45,0.008)',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
 
@@ -726,17 +533,17 @@ export default function SystemsPage() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'baseline',
-            marginBottom: '2rem',
+            marginBottom: '1.75rem',
             flexWrap: 'wrap',
             gap: '0.75rem',
           }}>
             <div>
               <p style={{
                 fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.52rem',
+                fontSize: '0.5rem',
                 letterSpacing: '0.22em',
-                color: 'rgba(255,241,45,0.5)',
-                marginBottom: '0.5rem',
+                color: 'rgba(255,241,45,0.45)',
+                marginBottom: '0.4rem',
               }}>
                 TECHNOLOGY CROSS-REFERENCE
               </p>
@@ -752,7 +559,7 @@ export default function SystemsPage() {
             </div>
             <Link href="/technologies" style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.62rem',
+              fontSize: '0.6rem',
               fontWeight: 700,
               letterSpacing: '0.14em',
               color: '#FFF12D',
@@ -763,20 +570,19 @@ export default function SystemsPage() {
           </div>
 
           <div style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
-            {/* Table header */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '200px 110px 1fr',
-              padding: '0.65rem 1.25rem',
+              gridTemplateColumns: '190px 100px 1fr',
+              padding: '0.6rem 1.2rem',
               background: 'rgba(255,255,255,0.03)',
               borderBottom: '1px solid rgba(255,255,255,0.07)',
             }}>
               {['TECHNOLOGY', 'SYSTEM', 'FUNCTION'].map((h) => (
                 <span key={h} style={{
                   fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.48rem',
+                  fontSize: '0.46rem',
                   letterSpacing: '0.22em',
-                  color: 'rgba(255,255,255,0.24)',
+                  color: 'rgba(255,255,255,0.2)',
                 }}>
                   {h}
                 </span>
@@ -789,12 +595,12 @@ export default function SystemsPage() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.04 }}
-                whileHover={{ background: 'rgba(255,255,255,0.025)' }}
+                transition={{ delay: i * 0.03 }}
+                whileHover={{ background: 'rgba(255,255,255,0.02)' }}
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: '200px 110px 1fr',
-                  padding: '0.9rem 1.25rem',
+                  gridTemplateColumns: '190px 100px 1fr',
+                  padding: '0.8rem 1.2rem',
                   borderBottom: i < TECH_INDEX.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                   alignItems: 'center',
                   transition: 'background 0.15s',
@@ -813,8 +619,8 @@ export default function SystemsPage() {
                 </Link>
                 <span style={{
                   fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.62rem',
-                  color: 'rgba(255,241,45,0.38)',
+                  fontSize: '0.6rem',
+                  color: 'rgba(255,241,45,0.35)',
                   letterSpacing: '0.12em',
                 }}>
                   {t.sys}
@@ -822,8 +628,8 @@ export default function SystemsPage() {
                 <span style={{
                   fontFamily: 'Outfit, sans-serif',
                   fontSize: '0.82rem',
-                  color: 'rgba(255,255,255,0.48)',
-                  lineHeight: 1.6,
+                  color: 'rgba(255,255,255,0.46)',
+                  lineHeight: 1.5,
                 }}>
                   {t.fn}
                 </span>
@@ -835,20 +641,20 @@ export default function SystemsPage() {
 
       {/* ── FOOTER NAVIGATION ──────────────────────────────────────────── */}
       <section style={{
-        padding: 'clamp(1.75rem,3.5vw,2.5rem) clamp(1.5rem,4vw,3rem)',
+        padding: 'clamp(1.5rem,3vw,2rem) clamp(1.5rem,4vw,3rem)',
         borderTop: '1px solid rgba(255,255,255,0.07)',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
-        gap: '1.25rem',
+        gap: '1rem',
       }}>
         <div style={{
           fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.5rem',
-          color: 'rgba(255,255,255,0.2)',
+          fontSize: '0.46rem',
+          color: 'rgba(255,255,255,0.16)',
           letterSpacing: '0.12em',
-          lineHeight: 2,
+          lineHeight: 2.2,
         }}>
           <div>ELIMFILTERS® · ASSET PROTECTION PLATFORM</div>
           <div>DOC: SYS-ARCH-2026.06 · REV 2.0</div>
@@ -862,10 +668,10 @@ export default function SystemsPage() {
           ].map((lnk) => (
             <Link key={lnk.href} href={lnk.href} style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.62rem',
+              fontSize: '0.6rem',
               fontWeight: 600,
               letterSpacing: '0.14em',
-              color: lnk.hi ? '#FFF12D' : 'rgba(255,255,255,0.35)',
+              color: lnk.hi ? '#FFF12D' : 'rgba(255,255,255,0.3)',
               textDecoration: 'none',
             }}>
               {lnk.label} →
@@ -875,16 +681,10 @@ export default function SystemsPage() {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
-          .sys-panel-grid {
+        @media (max-width: 860px) {
+          .sys-panel-layout {
             grid-template-columns: 1fr !important;
-          }
-          .sys-panel-grid > div {
-            border-right: none !important;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-          }
-          .sys-panel-grid > div:last-child {
-            border-bottom: none;
+            direction: ltr !important;
           }
         }
       `}</style>
