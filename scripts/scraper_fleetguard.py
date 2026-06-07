@@ -1468,27 +1468,41 @@ def _extract_crossref_tab(page) -> list:
             refs.push({{ brand, part_number: pn }});
         }});
 
-        // Fallback: sección "OEM Cross Reference" sin <table> (divs/listas en línea,
-        // común en páginas de producto obsoleto que muestran todo inline sin tabs).
+        // Fallback: sección "OEM Cross Reference" en divs/spans (sin <table>).
+        // Confirmado en AF463: los pares brand/part son nodos de texto planos
+        // dentro de shadow roots anidados — container.querySelectorAll NO los
+        // alcanza. Usamos swa() que sí penetra shadow roots, y subimos el árbol
+        // con parentNode en lugar de parentElement para cruzar shadow boundaries.
         if (refs.length === 0) {{
             const heads = [];
-            swa(document, 'h1, h2, h3, h4, h5, h6, strong, b, span, div, p', 0, heads);
+            swa(document, '*', 0, heads);
             const header = heads.find(h => {{
-                const t = (h.textContent || '').trim();
-                return /^oem cross reference$/i.test(t) || /^cross reference$/i.test(t);
+                // Buscar nodo cuyo texto propio (sin subtree) sea exactamente
+                // "OEM Cross Reference" o variantes.
+                const own = Array.from(h.childNodes)
+                    .filter(n => n.nodeType === 3)
+                    .map(n => n.textContent.trim()).join(' ').trim();
+                return /^oem cross reference$/i.test(own) || /^cross reference$/i.test(own);
             }});
             if (header) {{
-                let container = header.parentElement;
-                for (let depth = 0; depth < 5 && container; depth++) {{
+                // Subir hasta encontrar un contenedor con suficientes hijos con texto
+                function shadowParent(n) {{
+                    if (n.parentElement) return n.parentElement;
+                    const r = n.parentNode;
+                    return (r && r.nodeType === 11 && r.host) ? r.host : null;
+                }}
+                let container = shadowParent(header);
+                for (let d = 0; d < 6 && container; d++) {{
                     const leafTexts = [];
-                    container.querySelectorAll('*').forEach(el => {{
-                        if (el.children.length === 0) {{
+                    const allEls = [];
+                    swa(container, '*', 0, allEls);  // shadow-piercing
+                    allEls.forEach(el => {{
+                        if (el.children.length === 0 && !el.shadowRoot) {{
                             const t = el.textContent.trim();
                             if (t) leafTexts.push(t);
                         }}
                     }});
-                    // descartar el propio texto del header
-                    const idx = leafTexts.findIndex(t => /cross reference/i.test(t));
+                    const idx = leafTexts.findIndex(t => /oem cross reference/i.test(t));
                     const items = idx >= 0 ? leafTexts.slice(idx + 1) : leafTexts;
                     if (items.length >= 4) {{
                         for (let j = 0; j + 1 < items.length; j += 2) {{
@@ -1499,14 +1513,14 @@ def _extract_crossref_tab(page) -> list:
                             if (SPEC_LABELS.includes(brand.toUpperCase())) continue;
                             if (/^(ISO|SAE|ASTM|DIN|NAS|JIS)\\s?[0-9]/.test(pn)) continue;
                             if (/INCH|\\bMM\\b|\\//.test(pn)) continue;
-                            if (/^[0-9]+$/.test(pn)) continue;
+                            if (/^[0-9]{6,}$/.test(pn)) continue; // numérico largo (spec value)
                             if (pn.split(' ').length > 2) continue;
                             seen.add(key);
                             refs.push({{ brand, part_number: pn }});
                         }}
                         break;
                     }}
-                    container = container.parentElement;
+                    container = shadowParent(container);
                 }}
             }}
         }}
