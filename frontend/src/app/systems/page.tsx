@@ -42,7 +42,7 @@ export default function SystemsPage() {
       }}>
         {/* Background image */}
         <img
-          src="/images/camio-elimfilters.avif"
+          src="/images/elemento-elim.avif"
           alt="Industrial fleet"
           style={{
             position: 'absolute',
@@ -51,14 +51,14 @@ export default function SystemsPage() {
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center 40%',
-            filter: 'brightness(0.35) contrast(1.1) saturate(0.7)',
+            filter: 'brightness(0.75) contrast(1.05) saturate(0.85)',
           }}
         />
         {/* Gradient overlay */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.88) 100%)',
         }} />
 
         <div style={{
@@ -99,10 +99,9 @@ export default function SystemsPage() {
 
             <p style={{
               fontFamily: 'Outfit, sans-serif',
-              fontSize: 'clamp(0.95rem,1.3vw,1.12rem)',
+              fontSize: 'clamp(1rem,1.5vw,1.22rem)',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.72)',
-              maxWidth: '640px',
               margin: '0 0 3rem',
             }}>
               Industrial equipment fails when contamination accumulates faster than the protection system removes it.
@@ -119,6 +118,7 @@ export default function SystemsPage() {
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '0.4rem 0',
                 marginBottom: '1.5rem',
               }}
@@ -156,10 +156,9 @@ export default function SystemsPage() {
               transition={{ duration: 0.7, delay: 0.5 }}
               style={{
                 fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.82rem',
-                lineHeight: 1.65,
-                color: 'rgba(255,255,255,0.42)',
-                maxWidth: '600px',
+                fontSize: 'clamp(1rem,1.4vw,1.18rem)',
+                lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.55)',
                 margin: 0,
               }}
             >
