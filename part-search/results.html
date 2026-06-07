@@ -1301,7 +1301,7 @@ function renderCard(p, index) {
 }
 
 // ─── Render Results ───
-function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null) {
+function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null, limitReached = false) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
 
   // Update header summary with real count
@@ -1315,7 +1315,8 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
   app.innerHTML = `
     <div class="products">
       ${items.map((p, i) => renderCard(p, i)).join('')}
-    </div>`;
+    </div>
+    ${limitReached ? `<div style="text-align:center;padding:1.5rem 0 0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;color:rgba(255,255,255,0.3);">// SHOWING FIRST 30 RESULTS — REFINE YOUR SEARCH FOR MORE PRECISION</div>` : ''}`;
 }
 
 // ─── SEARCH EXECUTION ───
@@ -1374,8 +1375,8 @@ async function executeSearch() {
       const r = await fetch(url);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      if (!data.filters?.length) { showEmpty(model); return; }
-      renderResults(data.filters, data.filters.length, 'VIN / MODEL', model, decodedText);
+      if (!data.products?.length) { showEmpty(model); return; }
+      renderResults(data.products, data.count, 'VIN / MODEL', model, decodedText, null, data.count >= 30);
     } catch { showError(); }
 
   } else if (mode === 'equip' && model) {
@@ -1387,8 +1388,8 @@ async function executeSearch() {
       const r = await fetch(url);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      if (!data.filters?.length) { showEmpty(model); return; }
-      renderResults(data.filters, data.filters.length, 'EQUIPMENT', model);
+      if (!data.products?.length) { showEmpty(model); return; }
+      renderResults(data.products, data.count, 'EQUIPMENT', model, null, null, data.count >= 30);
     } catch { showError(); }
 
   } else {

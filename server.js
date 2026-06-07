@@ -1186,7 +1186,7 @@ app.get('/api/filters/search/vin', async (req, res) => {
   const model = (req.query.model || '').trim().toUpperCase();
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
-  if(!model) return res.json({success: false, filters: []});
+  if(!model) return res.json({success: false, products: [], count: 0});
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
@@ -1194,24 +1194,30 @@ app.get('/api/filters/search/vin', async (req, res) => {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
-    let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
-    const params = [];
-
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    const params = ['%' + model + '%'];
+    let query = `
+      SELECT * FROM elimfilters_catalog
+      WHERE equipment_applications IS NOT NULL
+        AND jsonb_array_length(equipment_applications) > 0
+        AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
+          WHERE app->>'equipment' ILIKE $1
+        )`;
 
     if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
+      query += ` AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
+          WHERE app->>'engine' ILIKE $${params.length}
+        )`;
     }
 
-    query += ' LIMIT 10';
+    query += ' LIMIT 30';
 
     const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row, lang));
-    await enrichAlternatives(filters, client);
-    res.status(200).json({success: true, filters});
+    const products = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(products, client);
+    res.status(200).json({success: true, products, count: products.length});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
@@ -1224,7 +1230,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   const type = req.query.type ? req.query.type.trim().toUpperCase() : null;
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
-  if(!model) return res.json({success: false, filters: []});
+  if(!model) return res.json({success: false, products: [], count: 0});
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
@@ -1232,29 +1238,38 @@ app.get('/api/filters/search/equipment', async (req, res) => {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
-    let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
-    const params = [];
-
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    const params = ['%' + model + '%'];
+    let query = `
+      SELECT * FROM elimfilters_catalog
+      WHERE equipment_applications IS NOT NULL
+        AND jsonb_array_length(equipment_applications) > 0
+        AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
+          WHERE app->>'equipment' ILIKE $1
+        )`;
 
     if(type) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + type + '%');
+      query += ` AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
+          WHERE app->>'type' ILIKE $${params.length}
+        )`;
     }
 
     if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
+      query += ` AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
+          WHERE app->>'engine' ILIKE $${params.length}
+        )`;
     }
 
-    query += ' LIMIT 10';
+    query += ' LIMIT 30';
 
     const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row, lang));
-    await enrichAlternatives(filters, client);
-    res.status(200).json({success: true, filters});
+    const products = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(products, client);
+    res.status(200).json({success: true, products, count: products.length});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
