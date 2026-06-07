@@ -746,9 +746,9 @@ export default function Home() {
                   padding: 'clamp(1rem, 2vh, 1.25rem) 0',
                   borderBottom: '1px solid rgba(255,255,255,0.06)',
                 }}>
-                  <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', textAlign: 'right' }}>{item.code}</div>
+                  <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', letterSpacing: '0.1em', color: '#FFF12D', textAlign: 'right' }}>{item.code}</div>
                   <div style={{ width: '1px', height: '28px', background: 'rgba(255,241,45,0.25)', flexShrink: 0 }} />
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>{item.text}</span>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>{item.text}</span>
                 </div>
               ))}
             </motion.div>
