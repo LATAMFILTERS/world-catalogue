@@ -127,14 +127,28 @@ export default function Home() {
           flexDirection: 'column',
           justifyContent: 'flex-end',
         }}>
-          {/* Parallax background */}
-          <motion.div style={{
-            position: 'absolute', inset: '-20%',
-            backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.88) 100%), url(/images/hero-bg.jpg)',
-            backgroundPosition: 'center 30%',
-            backgroundSize: 'cover',
-            y: bgY, zIndex: 0,
-          }} />
+          {/* Parallax background — video */}
+          <motion.div style={{ position: 'absolute', inset: 0, zIndex: 0, y: bgY }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                position: 'absolute', inset: 0,
+                width: '100%', height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center center',
+              }}
+            >
+              <source src="/images/moleculas.mp4" type="video/mp4" />
+            </video>
+            {/* Gradient overlay */}
+            <div style={{
+              position: 'absolute', inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.90) 100%)',
+            }} />
+          </motion.div>
 
           {/* Left edge mark */}
           <motion.div
