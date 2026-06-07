@@ -7,6 +7,7 @@ config/google-credentials.json
 C:\\Users\\
 sesion_*/
 *_results.json
+!scripts/donaldson_*_results.json
 debug*.py
 scraper_debug*.py
 __pycache__/
