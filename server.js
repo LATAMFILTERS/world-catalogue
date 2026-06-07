@@ -1446,6 +1446,103 @@ app.post('/api/migrate/fill-competitor-codes', async (req, res) => {
   }
 });
 
+// ── Merge alternatives endpoint ───────────────────────────────────────────
+app.post('/api/migrate/merge-alternatives', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const dryRun = req.query.dry === '1';
+  const fs   = require('fs');
+  const path = require('path');
+  const DIR  = path.join(__dirname, 'scripts');
+
+  function keyOem(o) {
+    if (typeof o === 'string') return o.trim().toUpperCase();
+    const m = (o.manufacturer || o.brand || '').toUpperCase().trim();
+    const c = (o.code || o.part_number || '').toUpperCase().trim();
+    const k = m + '|' + c;
+    return k === '|' ? JSON.stringify(o) : k;
+  }
+  function keyEq(e) { return (e.equipment||'')+'|'+(e.type||'')+'|'+(e.engine||''); }
+  function unionArr(arrays, kfn) {
+    const s = new Map();
+    for (const a of arrays) for (const x of (a || [])) { const k = kfn(x); if (!s.has(k)) s.set(k, x); }
+    return [...s.values()];
+  }
+
+  // Build pnToSku + graph from JSON files
+  const pnToSku = new Map();
+  const graph   = new Map();
+  const files = fs.readdirSync(DIR).filter(f => /^donaldson_.*_results\.json$/.test(f)).map(f => path.join(DIR, f));
+  for (const f of files) {
+    let d; try { d = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
+    for (const p of d) if (p.sku_elimfilters && p.part_number) pnToSku.set(p.part_number, p.sku_elimfilters);
+  }
+  for (const f of files) {
+    let d; try { d = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
+    for (const p of d) {
+      const sku = p.sku_elimfilters; if (!sku) continue;
+      if (!graph.has(sku)) graph.set(sku, new Set());
+      for (const a of (p.alternatives || [])) {
+        const as = pnToSku.get(a); if (!as || as === sku) continue;
+        if (!graph.has(as)) graph.set(as, new Set());
+        graph.get(sku).add(as); graph.get(as).add(sku);
+      }
+    }
+  }
+
+  // Connected components
+  const visited = new Set(), components = [];
+  for (const s of graph.keys()) {
+    if (visited.has(s)) continue;
+    const comp = [], q = [s]; visited.add(s);
+    while (q.length) { const n = q.shift(); comp.push(n); for (const nb of (graph.get(n)||[])) { if (!visited.has(nb)) { visited.add(nb); q.push(nb); } } }
+    if (comp.length > 1) components.push(comp);
+  }
+
+  const allSkus = [...new Set(components.flat())];
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const ph = allSkus.map((_, i) => '$' + (i + 1)).join(',');
+    const { rows } = await client.query(
+      `SELECT sku, oem_codes, competitor_codes, equipment_applications FROM elimfilters_catalog WHERE sku IN (${ph})`,
+      allSkus
+    );
+    const bySku = new Map(rows.map(r => [r.sku, r]));
+    let totalUpdated = 0, groupsChanged = 0;
+    const log = [];
+
+    for (const grp of components) {
+      const ms = grp.map(s => bySku.get(s)).filter(Boolean);
+      if (ms.length < 2) continue;
+      const oemU = unionArr(ms.map(m => m.oem_codes), keyOem);
+      const cmpU = unionArr(ms.map(m => m.competitor_codes), keyOem);
+      const eqU  = unionArr(ms.map(m => m.equipment_applications), keyEq);
+      let gc = false;
+      for (const m of ms) {
+        const co = (m.oem_codes||[]).length, cc = (m.competitor_codes||[]).length, ce = (m.equipment_applications||[]).length;
+        const fo = oemU.length > co ? oemU : (m.oem_codes||[]);
+        const fc = cmpU.length > cc ? cmpU : (m.competitor_codes||[]);
+        const fe = eqU.length  > ce ? eqU  : (m.equipment_applications||[]);
+        if (fo.length <= co && fc.length <= cc && fe.length <= ce) continue;
+        if (!dryRun) {
+          await client.query(
+            'UPDATE elimfilters_catalog SET oem_codes=$1::jsonb,competitor_codes=$2::jsonb,equipment_applications=$3::jsonb WHERE sku=$4',
+            [JSON.stringify(fo), JSON.stringify(fc), JSON.stringify(fe), m.sku]
+          );
+        }
+        log.push({ sku: m.sku, oem: `${co}→${fo.length}`, comp: `${cc}→${fc.length}`, equip: `${ce}→${fe.length}` });
+        totalUpdated++; gc = true;
+      }
+      if (gc) groupsChanged++;
+    }
+    res.json({ success: true, dryRun, groups: components.length, groupsChanged, totalUpdated, sample: log.slice(0, 20) });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end().catch(() => {});
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {
