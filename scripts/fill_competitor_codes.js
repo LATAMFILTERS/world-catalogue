@@ -13,18 +13,22 @@ const path = require('path');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const BATCH   = 100;
-const DIR     = __dirname;
+// JSON files live in the same directory as this script
+const DIR     = process.cwd();
 
 const DB_URL = process.env.DATABASE_URL;
-if (!DB_URL && !DRY_RUN) {
-  console.error('ERROR: DATABASE_URL no definido');
-  process.exit(1);
-}
 
-const pool = DRY_RUN ? null : new Pool({
-  connectionString: DB_URL,
-  ssl: { rejectUnauthorized: false },
-});
+const pool = DRY_RUN ? null : (DB_URL
+  ? new Pool({ connectionString: DB_URL, ssl: { rejectUnauthorized: false } })
+  : new Pool({
+      host:     'ballast.proxy.rlwy.net',
+      port:     18263,
+      database: 'railway',
+      user:     'postgres',
+      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+      ssl:      { rejectUnauthorized: false },
+    })
+);
 
 function loadAllJson() {
   const rows = {};
