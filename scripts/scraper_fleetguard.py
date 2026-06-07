@@ -249,6 +249,22 @@ def wait_net(page, timeout=15000):
         pass
 
 
+def wait_for_tabs(page, timeout: int = 35000):
+    """Espera hasta que los componentes LWC de tabs estén renderizados.
+    networkidle no garantiza que Lightning Web Components hayan terminado
+    de inicializarse — button.tablinks aparece vía requestAnimationFrame
+    DESPUÉS de networkidle en páginas de producto Fleetguard/Salesforce."""
+    try:
+        page.wait_for_function(f"""() => {{
+            {_SHADOW_WALK}
+            return !!sw(document, 'button.tablinks', 0);
+        }}""", timeout=timeout)
+        time.sleep(1)  # micro-settle tras aparición del botón
+    except Exception:
+        pass  # Si nunca aparece, seguimos (extractor maneja fallback)
+        pass
+
+
 # ── Progress ─────────────────────────────────────────────────────────────────
 
 def load_progress():
@@ -548,6 +564,7 @@ def dump_crossref_html(part_numbers: list):
                 dismiss_popups(page)
                 wait_net(page, 20000)
                 time.sleep(3)
+                wait_for_tabs(page)
                 clicked = _click_tab(page, "CrossRef")
                 lines.append(f"[tab CrossRef encontrado y clickeado: {clicked}]")
                 # Forzar carga perezosa: recorrer la página con scroll y esperar
@@ -1685,6 +1702,7 @@ def _scrape_once(page, url: str, result: dict, settle: float):
     dismiss_popups(page)
     wait_net(page, 20000)
     time.sleep(settle)
+    wait_for_tabs(page)  # esperar a que LWC tabs terminen de inicializarse
 
     # ── Part number + nombre/tipo + descripción ──────────────────────
     info = page.evaluate(f"""() => {{
@@ -2137,6 +2155,7 @@ def equipment_only_run():
                 dismiss_popups(page)
                 wait_net(page, 20000)
                 time.sleep(3)
+                wait_for_tabs(page)
 
                 # Equipment tab
                 _click_tab(page, "Equipment")
@@ -2209,6 +2228,7 @@ def crossref_only_run():
                 dismiss_popups(page)
                 wait_net(page, 20000)
                 time.sleep(3)
+                wait_for_tabs(page)
 
                 _click_tab(page, "CrossRef")
                 oem_codes = _extract_crossref_tab(page)
