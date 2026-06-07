@@ -198,9 +198,9 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
           <div>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.46rem',
-              letterSpacing: '0.24em',
-              color: 'rgba(255,255,255,0.22)',
+              fontSize: '0.6rem',
+              letterSpacing: '0.2em',
+              color: 'rgba(255,255,255,0.45)',
               marginBottom: '0.7rem',
             }}>
               PRODUCT FAMILIES
@@ -217,9 +217,9 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                       padding: '0.45rem 0.85rem',
                       border: '1px solid rgba(255,255,255,0.12)',
                       fontFamily: 'Outfit, sans-serif',
-                      fontSize: '0.82rem',
+                      fontSize: '0.9rem',
                       fontWeight: 500,
-                      color: 'rgba(255,255,255,0.62)',
+                      color: 'rgba(255,255,255,0.82)',
                       transition: 'all 0.2s',
                     }}
                   >
@@ -235,9 +235,9 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
           <div>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.46rem',
-              letterSpacing: '0.24em',
-              color: 'rgba(255,255,255,0.22)',
+              fontSize: '0.6rem',
+              letterSpacing: '0.2em',
+              color: 'rgba(255,255,255,0.45)',
               marginBottom: '0.7rem',
             }}>
               TECHNOLOGY PLATFORM
@@ -255,9 +255,9 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                       border: '1px solid rgba(255,241,45,0.25)',
                       background: 'rgba(255,241,45,0.04)',
                       fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.78rem',
+                      fontSize: '0.85rem',
                       fontWeight: 700,
-                      color: 'rgba(255,241,45,0.75)',
+                      color: '#FFF12D',
                       letterSpacing: '0.04em',
                       transition: 'all 0.2s',
                     }}
@@ -274,9 +274,9 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
           <div style={{ marginTop: 'auto', paddingTop: '0.25rem' }}>
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.46rem',
-              letterSpacing: '0.24em',
-              color: 'rgba(255,255,255,0.18)',
+              fontSize: '0.6rem',
+              letterSpacing: '0.2em',
+              color: 'rgba(255,255,255,0.45)',
               marginBottom: '0.55rem',
             }}>
               INDUSTRIES
@@ -289,8 +289,8 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                       whileHover={{ color: 'rgba(255,255,255,0.65)' }}
                       style={{
                         fontFamily: 'Outfit, sans-serif',
-                        fontSize: '0.72rem',
-                        color: 'rgba(255,255,255,0.3)',
+                        fontSize: '0.82rem',
+                        color: 'rgba(255,255,255,0.55)',
                         transition: 'color 0.15s',
                       }}
                     >
@@ -520,124 +520,6 @@ export default function SystemsPage() {
       {SYSTEMS.map((sys, idx) => (
         <SystemPanel key={sys.id} sys={sys} idx={idx} />
       ))}
-
-      {/* ── TECHNOLOGY CROSS-REFERENCE ─────────────────────────────────── */}
-      <section style={{
-        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem)',
-        borderTop: '2px solid rgba(255,241,45,0.12)',
-        background: 'rgba(255,241,45,0.008)',
-      }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'baseline',
-            marginBottom: '1.75rem',
-            flexWrap: 'wrap',
-            gap: '0.75rem',
-          }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.5rem',
-                letterSpacing: '0.22em',
-                color: 'rgba(255,241,45,0.45)',
-                marginBottom: '0.4rem',
-              }}>
-                TECHNOLOGY CROSS-REFERENCE
-              </p>
-              <h2 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(1.1rem,2.5vw,1.5rem)',
-                color: '#fff',
-                margin: 0,
-              }}>
-                Nine Protection Architectures
-              </h2>
-            </div>
-            <Link href="/technologies" style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.6rem',
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              color: '#FFF12D',
-              textDecoration: 'none',
-            }}>
-              TECHNOLOGY PLATFORM →
-            </Link>
-          </div>
-
-          <div style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '190px 100px 1fr',
-              padding: '0.6rem 1.2rem',
-              background: 'rgba(255,255,255,0.03)',
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
-            }}>
-              {['TECHNOLOGY', 'SYSTEM', 'FUNCTION'].map((h) => (
-                <span key={h} style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.46rem',
-                  letterSpacing: '0.22em',
-                  color: 'rgba(255,255,255,0.2)',
-                }}>
-                  {h}
-                </span>
-              ))}
-            </div>
-
-            {TECH_INDEX.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.03 }}
-                whileHover={{ background: 'rgba(255,255,255,0.02)' }}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '190px 100px 1fr',
-                  padding: '0.8rem 1.2rem',
-                  borderBottom: i < TECH_INDEX.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                  alignItems: 'center',
-                  transition: 'background 0.15s',
-                }}
-              >
-                <Link href={`/technologies/${t.slug}`} style={{ textDecoration: 'none' }}>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.82rem',
-                    fontWeight: 700,
-                    color: '#FFF12D',
-                    letterSpacing: '0.03em',
-                  }}>
-                    {t.name}
-                  </span>
-                </Link>
-                <span style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.6rem',
-                  color: 'rgba(255,241,45,0.35)',
-                  letterSpacing: '0.12em',
-                }}>
-                  {t.sys}
-                </span>
-                <span style={{
-                  fontFamily: 'Outfit, sans-serif',
-                  fontSize: '0.82rem',
-                  color: 'rgba(255,255,255,0.46)',
-                  lineHeight: 1.5,
-                }}>
-                  {t.fn}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── FOOTER NAVIGATION ──────────────────────────────────────────── */}
       <section style={{
