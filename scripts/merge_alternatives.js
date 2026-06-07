@@ -3,16 +3,24 @@
  * Para cada grupo de productos alternativos, propaga la unión de
  * oem_codes + competitor_codes + equipment_applications a todos los miembros.
  *
- * Uso en Render shell:
- *   node scripts/merge_alternatives.js [--dry-run]
+ * Las relaciones de alternativas se leen desde los JSON locales (donaldson_*_results.json).
+ * Los datos actuales y las actualizaciones van al DB via DATABASE_URL o Railway directo.
+ *
+ * Uso:
+ *   node scripts/merge_alternatives.js --dry-run   (solo muestra stats)
+ *   node scripts/merge_alternatives.js             (escribe al DB)
  */
 
 'use strict';
 
 const { Pool } = require('pg');
+const fs   = require('fs');
+const path = require('path');
 
-const DRY_RUN = process.argv.includes('--dry-run');
-const POOL    = process.env.DATABASE_URL
+const DRY_RUN  = process.argv.includes('--dry-run');
+const JSON_DIR = path.join(__dirname);   // JSON files live next to this script
+
+const POOL = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } })
   : new Pool({
       host:     'ballast.proxy.rlwy.net',
@@ -25,8 +33,8 @@ const POOL    = process.env.DATABASE_URL
 
 // ── helpers ────────────────────────────────────────────────────────────────
 
-function keyOem(o)   { return `${o.manufacturer}|${o.code}`; }
-function keyEquip(e) { return `${e.equipment}|${e.type}|${e.engine}`; }
+function keyOem(o)   { return `${(o.manufacturer||'').toUpperCase()}|${(o.code||'').toUpperCase()}`; }
+function keyEquip(e) { return `${e.equipment||''}|${e.type||''}|${e.engine||''}`; }
 
 function unionArrays(arrays, keyFn) {
   const seen = new Map();
@@ -39,42 +47,55 @@ function unionArrays(arrays, keyFn) {
   return [...seen.values()];
 }
 
-// ── main ───────────────────────────────────────────────────────────────────
+// ── load alternatives from JSON files ─────────────────────────────────────
 
-async function main() {
-  const client = await POOL.connect();
+function buildAlternativesGraph() {
+  // donaldson_pn → sku_elimfilters
+  const pnToSku = new Map();
+  // sku → Set<sku>  (undirected edges)
+  const graph   = new Map();
 
-  // 1. Load all products
-  console.log('Cargando productos...');
-  const { rows } = await client.query(`
-    SELECT sku, codigo_base, alternatives,
-           oem_codes, competitor_codes, equipment_applications
-    FROM   elimfilters_catalog
-  `);
-  console.log(`  ${rows.length} productos cargados`);
+  const files = fs.readdirSync(JSON_DIR)
+    .filter(f => /^donaldson_.*_results\.json$/.test(f))
+    .map(f => path.join(JSON_DIR, f));
 
-  // 2. Build map: donaldson_pn → row
-  const byBase = new Map();
-  for (const row of rows) {
-    if (row.codigo_base) byBase.set(row.codigo_base, row);
-  }
-
-  // 3. Build undirected graph: sku → Set<sku>
-  const graph = new Map();
-  for (const row of rows) {
-    if (!graph.has(row.sku)) graph.set(row.sku, new Set());
-    const alts = row.alternatives || [];
-    for (const altPn of alts) {
-      const altRow = byBase.get(altPn);
-      if (!altRow) continue;
-      if (!graph.has(altRow.sku)) graph.set(altRow.sku, new Set());
-      graph.get(row.sku).add(altRow.sku);
-      graph.get(altRow.sku).add(row.sku);
+  // Pass 1: build pn→sku map
+  for (const fpath of files) {
+    let data;
+    try { data = JSON.parse(fs.readFileSync(fpath, 'utf8')); }
+    catch { continue; }
+    for (const p of data) {
+      if (p.sku_elimfilters && p.part_number) {
+        pnToSku.set(p.part_number, p.sku_elimfilters);
+      }
     }
   }
 
-  // 4. Find connected components (BFS)
-  const visited   = new Set();
+  // Pass 2: build graph
+  for (const fpath of files) {
+    let data;
+    try { data = JSON.parse(fs.readFileSync(fpath, 'utf8')); }
+    catch { continue; }
+    for (const p of data) {
+      const sku  = p.sku_elimfilters;
+      const alts = p.alternatives || [];
+      if (!sku) continue;
+      if (!graph.has(sku)) graph.set(sku, new Set());
+      for (const altPn of alts) {
+        const altSku = pnToSku.get(altPn);
+        if (!altSku || altSku === sku) continue;
+        if (!graph.has(altSku)) graph.set(altSku, new Set());
+        graph.get(sku).add(altSku);
+        graph.get(altSku).add(sku);
+      }
+    }
+  }
+
+  return graph;
+}
+
+function findComponents(graph) {
+  const visited    = new Set();
   const components = [];
   for (const sku of graph.keys()) {
     if (visited.has(sku)) continue;
@@ -85,36 +106,62 @@ async function main() {
       const cur = queue.shift();
       component.push(cur);
       for (const neighbor of (graph.get(cur) || [])) {
-        if (!visited.has(neighbor)) {
-          visited.add(neighbor);
-          queue.push(neighbor);
-        }
+        if (!visited.has(neighbor)) { visited.add(neighbor); queue.push(neighbor); }
       }
     }
     if (component.length > 1) components.push(component);
   }
-  console.log(`  ${components.length} grupos de alternativos encontrados`);
+  return components;
+}
 
-  // 5. Build lookup by sku
+// ── main ───────────────────────────────────────────────────────────────────
+
+async function main() {
+  // 1. Build groups from JSON
+  console.log('Construyendo grafo de alternativos desde JSON...');
+  const graph      = buildAlternativesGraph();
+  const components = findComponents(graph);
+  const allSkus    = new Set(components.flat());
+  console.log(`  ${components.length} grupos | ${allSkus.size} SKUs involucrados`);
+
+  if (components.length === 0) {
+    console.log('No hay grupos de alternativos. Saliendo.');
+    await POOL.end();
+    return;
+  }
+
+  // 2. Fetch DB data for all involved SKUs
+  console.log('Cargando datos del DB...');
+  const client = await POOL.connect();
+  const skuList = [...allSkus];
+  const placeholders = skuList.map((_, i) => `$${i + 1}`).join(',');
+  const { rows } = await client.query(`
+    SELECT sku, oem_codes, competitor_codes, equipment_applications
+    FROM   elimfilters_catalog
+    WHERE  sku IN (${placeholders})
+  `, skuList);
+  console.log(`  ${rows.length} / ${skuList.length} SKUs encontrados en DB`);
+
   const bySku = new Map(rows.map(r => [r.sku, r]));
 
-  // 6. For each group: compute union and update
+  // 3. Process each group
   let totalUpdated = 0;
-  let groupsWithChanges = 0;
+  let groupsChanged = 0;
 
   for (const group of components) {
     const members = group.map(sku => bySku.get(sku)).filter(Boolean);
+    if (members.length < 2) continue;
 
-    const oemUnion   = unionArrays(members.map(m => m.oem_codes),   keyOem);
-    const compUnion  = unionArrays(members.map(m => m.competitor_codes), keyOem);
-    const equipUnion = unionArrays(members.map(m => m.equipment_applications), keyEquip);
+    const oemUnion   = unionArrays(members.map(m => m.oem_codes),              keyOem);
+    const compUnion  = unionArrays(members.map(m => m.competitor_codes),        keyOem);
+    const equipUnion = unionArrays(members.map(m => m.equipment_applications),  keyEquip);
 
     let groupChanged = false;
 
     for (const member of members) {
-      const curOem   = (member.oem_codes || []).length;
-      const curComp  = (member.competitor_codes || []).length;
-      const curEquip = (member.equipment_applications || []).length;
+      const curOem   = (member.oem_codes              || []).length;
+      const curComp  = (member.competitor_codes        || []).length;
+      const curEquip = (member.equipment_applications  || []).length;
 
       const needsUpdate =
         oemUnion.length   > curOem   ||
@@ -124,35 +171,37 @@ async function main() {
       if (!needsUpdate) continue;
 
       if (DRY_RUN) {
-        console.log(`  [DRY] ${member.sku}: oem ${curOem}→${oemUnion.length} | comp ${curComp}→${compUnion.length} | equip ${curEquip}→${equipUnion.length}`);
-        totalUpdated++;
-        groupChanged = true;
-        continue;
+        console.log(
+          `  [DRY] ${member.sku}: ` +
+          `oem ${curOem}→${oemUnion.length} | ` +
+          `comp ${curComp}→${compUnion.length} | ` +
+          `equip ${curEquip}→${equipUnion.length}`
+        );
+      } else {
+        await client.query(`
+          UPDATE elimfilters_catalog
+          SET    oem_codes              = $1::jsonb,
+                 competitor_codes       = $2::jsonb,
+                 equipment_applications = $3::jsonb
+          WHERE  sku = $4
+        `, [
+          JSON.stringify(oemUnion),
+          JSON.stringify(compUnion),
+          JSON.stringify(equipUnion),
+          member.sku,
+        ]);
       }
-
-      await client.query(`
-        UPDATE elimfilters_catalog
-        SET    oem_codes               = $1::jsonb,
-               competitor_codes        = $2::jsonb,
-               equipment_applications  = $3::jsonb
-        WHERE  sku = $4
-      `, [
-        JSON.stringify(oemUnion),
-        JSON.stringify(compUnion),
-        JSON.stringify(equipUnion),
-        member.sku,
-      ]);
       totalUpdated++;
       groupChanged = true;
     }
-
-    if (groupChanged) groupsWithChanges++;
+    if (groupChanged) groupsChanged++;
   }
 
   client.release();
   await POOL.end();
 
-  console.log(`\nDONE: ${totalUpdated} productos actualizados en ${groupsWithChanges} grupos`);
+  const action = DRY_RUN ? '[DRY RUN] ' : '';
+  console.log(`\n${action}DONE: ${totalUpdated} productos actualizados en ${groupsChanged} grupos`);
 }
 
 main().catch(err => { console.error('FATAL:', err.message); process.exit(1); });
