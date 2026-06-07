@@ -1,15 +1,13 @@
 """
-fill_competitor_codes.py — Poblate competitor_codes desde brand_crossrefs de los JSON Donaldson.
+fill_competitor_codes.py — Poblar competitor_codes desde brand_crossrefs de los JSON Donaldson.
 
-El script recover-competitor-codes.js buscaba en oilfilter-crossreference.com,
-que solo tiene aceite. Los datos reales están en brand_crossrefs de los JSON del
-scraper. Este script los extrae y actualiza SOLO productos con competitor_codes
-vacío en el DB (nunca sobreescribe datos existentes).
+Conecta DIRECTAMENTE a PostgreSQL (sin pasar por el API server de Render)
+para actualizar solo los productos con competitor_codes vacío.
 
 Uso:
     python3 fill_competitor_codes.py [--dry-run]
 
-Requiere: pip install requests
+Requiere: pip install psycopg2-binary
 """
 
 import argparse
@@ -17,15 +15,21 @@ import glob
 import json
 import logging
 import os
-import time
 
-import requests
+import psycopg2
+import psycopg2.extras
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-API_URL = "https://elimfilters-search-pro.onrender.com/api/migrate/fill-competitor-codes"
-API_KEY = "elim2026"
-BATCH   = 50
+DB = {
+    "host":     "ballast.proxy.rlwy.net",
+    "port":     18263,
+    "dbname":   "railway",
+    "user":     "postgres",
+    "password": "qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm",
+    "sslmode":  "require",
+}
+BATCH   = 200
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -64,52 +68,43 @@ def load_all_json():
     return rows
 
 
-def post_batch(batch, dry_run=False):
-    if dry_run:
-        return {"success": True, "updated": len(batch), "skipped": 0, "errors": 0, "total": len(batch)}
-    payload = {"key": API_KEY, "rows": batch}
-    for attempt in range(4):
-        try:
-            r = requests.post(API_URL, json=payload, timeout=60, verify=False)
-            if not r.text:
-                raise ValueError("Respuesta vacía del servidor")
-            return r.json()
-        except Exception as e:
-            wait = 2 ** attempt
-            logging.warning(f"  Intento {attempt+1} fallido: {e}. Reintentando en {wait}s...")
-            time.sleep(wait)
-    return {"success": False, "error": "Todos los reintentos fallaron", "errors": len(batch)}
-
-
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true", help="Solo muestra stats, no envía al API")
+    parser.add_argument("--dry-run", action="store_true", help="Solo muestra stats, sin escribir al DB")
     args = parser.parse_args()
 
     rows_map = load_all_json()
-    rows = [{"sku": sku, "competitor_codes": codes} for sku, codes in rows_map.items()]
-    logging.info(f"\nTotal productos con competitor_codes para enviar: {len(rows)}")
+    rows = [(sku, json.dumps(codes)) for sku, codes in rows_map.items()]
+    logging.info(f"\nTotal productos con competitor_codes para actualizar: {len(rows)}")
 
     if args.dry_run:
-        logging.info("DRY RUN — no se hacen llamadas al API")
+        logging.info("DRY RUN — sin escritura al DB")
         if rows:
-            sku, codes = rows[0]["sku"], rows[0]["competitor_codes"]
-            logging.info(f"Ejemplo: {sku} → {codes[:3]}...")
+            logging.info(f"Ejemplo: {rows[0][0]} → {json.loads(rows[0][1])[:3]}...")
         return
 
-    total_updated = total_skipped = total_errors = 0
+    conn = psycopg2.connect(**DB)
+    conn.autocommit = False
+    cur  = conn.cursor()
+
+    total_updated = 0
     for i in range(0, len(rows), BATCH):
         batch = rows[i:i + BATCH]
-        result = post_batch(batch)
-        total_updated  += result.get("updated", 0)
-        total_skipped  += result.get("skipped", 0)
-        total_errors   += result.get("errors", 0)
+        psycopg2.extras.execute_batch(cur, """
+            UPDATE elimfilters_catalog
+            SET    competitor_codes = %s::jsonb
+            WHERE  sku = %s
+              AND  (competitor_codes IS NULL
+                    OR jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb)) = 0)
+        """, [(codes, sku) for sku, codes in batch])
+        total_updated += cur.rowcount
+        conn.commit()
         pct = (i + len(batch)) / len(rows) * 100
-        logging.info(f"  Lote {i//BATCH+1}: {result.get('updated',0)} actualizados | "
-                     f"{result.get('skipped',0)} ya tenían datos | {pct:.0f}%")
+        logging.info(f"  Lote {i//BATCH+1}: {cur.rowcount} actualizados | {pct:.0f}%")
 
-    logging.info(f"\nDONE: {total_updated} actualizados | "
-                 f"{total_skipped} omitidos (ya tenían datos) | {total_errors} errores")
+    cur.close()
+    conn.close()
+    logging.info(f"\nDONE: {total_updated} productos actualizados")
 
 
 if __name__ == "__main__":
