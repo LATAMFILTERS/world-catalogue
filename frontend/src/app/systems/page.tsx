@@ -26,7 +26,7 @@ const SYSTEMS: ProtectionSystem[] = [
     name: 'Air Intake\n& Airflow',
     tag: 'COMBUSTION · PNEUMATIC INTEGRITY',
     image: '/assets/mecanica-air.avif',
-    threat: 'Airborne particulate contamination degrades engine volumetric efficiency and causes abrasive wear in turbocharger turbines, cylinder bores, and pneumatic control circuits — directly reducing asset service life.',
+    threat: 'A tractor, excavator, or generator operating with degraded airflow loses power output, consumes more fuel, and reaches service limits ahead of schedule. The asset continues working — but at a reduced capacity to generate value. Uncontrolled airborne particulate is the leading cause of premature engine wear across mobile and stationary assets.',
     families: [
       { name: 'Air Filters', slug: 'airfilter' },
       { name: 'Air Intake Housings', slug: 'housing' },
@@ -46,7 +46,7 @@ const SYSTEMS: ProtectionSystem[] = [
     name: 'Fuel\nCleanliness',
     tag: 'INJECTION SYSTEM INTEGRITY',
     image: '/assets/fuelfilter-hero.avif',
-    threat: 'Water and particulate contamination in fuel circuits damage HPCR injectors operating at 1,800–2,500 bar. A single contamination event causes injection failure, unplanned downtime, and premature injector replacement.',
+    threat: 'When fuel contamination causes injector failure in a mining truck or marine vessel, the asset stops generating value immediately. It is no longer a productive unit — it becomes a cost center. HPCR systems operating at 1,800–2,500 bar have zero tolerance for water or particulate contamination.',
     families: [
       { name: 'Fuel Filters', slug: 'fuel' },
       { name: 'Fuel Water Separators', slug: 'water' },
@@ -63,7 +63,7 @@ const SYSTEMS: ProtectionSystem[] = [
     name: 'Lubrication',
     tag: 'BEARING · DRIVETRAIN INTEGRITY',
     image: '/assets/oil-hero.avif',
-    threat: 'Particle contamination in engine oil causes abrasive wear on bearing journals and piston rings. Maintaining ISO 4406 16/14/11 cleanliness codes extends bearing life 3–5x compared to uncontrolled contamination levels.',
+    threat: 'A truck or bus that reaches premature engine overhaul due to bearing wear has consumed more in maintenance than it recovered in productive operation. Lubrication contamination shortens the productive lifecycle of the asset — reducing its total return on investment. ISO 4406 16/14/11 cleanliness control extends bearing life 3–5x.',
     families: [
       { name: 'Oil Filters', slug: 'oil' },
     ],
@@ -78,7 +78,7 @@ const SYSTEMS: ProtectionSystem[] = [
     name: 'Hydraulic',
     tag: 'PROPORTIONAL VALVE · ACTUATOR INTEGRITY',
     image: '/assets/hidraulic.avif',
-    threat: 'Particulate above ISO 17/15/12 causes proportional valve stiction and accelerated actuator wear. In precision hydraulic circuits, contamination is the leading cause of unscheduled equipment failure.',
+    threat: 'An excavator or loader stopped by hydraulic failure is an asset that has transitioned from productive unit to cost center — generating downtime, repair costs, and lost production simultaneously. Contamination-driven proportional valve failure is the primary cause of unscheduled downtime in heavy mobile equipment.',
     families: [
       { name: 'Hydraulic Filters', slug: 'hydraulic' },
     ],
@@ -93,7 +93,7 @@ const SYSTEMS: ProtectionSystem[] = [
     name: 'Cooling',
     tag: 'THERMAL CIRCUIT · CABIN INTEGRITY',
     image: '/assets/coolant-hero.avif',
-    threat: 'Corrosion and scale formation in cooling circuits reduce thermal transfer efficiency and cause wet sleeve liner pitting in high-load diesel engines. Cabin contamination exposes operators to PM2.5 and chemical compounds.',
+    threat: 'Thermal degradation reduces engine reliability over time — increasing the probability of unplanned downtime and shortening the asset\'s productive lifecycle. Simultaneously, contaminated cabin air reduces operator performance and increases health risk — affecting the productivity of the human asset operating the equipment.',
     families: [
       { name: 'Coolant Filters', slug: 'coolant' },
       { name: 'Cabin Filters', slug: 'cabin' },
@@ -398,7 +398,7 @@ export default function SystemsPage() {
                   margin: 0,
                 }}
               >
-                Industrial equipment fails through contamination. ELIMFILTERS® controls contamination across five independent protection domains — each engineered to maintain asset integrity, extend service life, and reduce unplanned downtime.
+                An asset — a truck, an excavator, a generator, a production line — retains its value only while it remains available, reliable, and productive. Contamination is the primary mechanism that degrades that capacity. ELIMFILTERS® controls contamination across five independent protection domains to preserve what matters: the asset's ability to keep generating value.
               </motion.p>
             </div>
 
@@ -514,9 +514,16 @@ export default function SystemsPage() {
             <p style={{
               fontFamily: 'Outfit, sans-serif',
               fontSize: '1.05rem', lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.6)', margin: 0,
+              color: 'rgba(255,255,255,0.6)', margin: '0 0 1rem',
             }}>
-              Equipment reliability is not determined by any single filter. It is determined by how effectively the total filtration system controls contamination across all critical domains.
+              The objective is not to protect a component. The objective is to preserve the asset's capacity to continue generating value.
+            </p>
+            <p style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontSize: '0.92rem', lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.38)', margin: 0,
+            }}>
+              Equipment reliability is not determined by any single filter. It is determined by how effectively the total contamination control system protects the asset across all critical domains.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-end' }}>
