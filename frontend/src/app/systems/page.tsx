@@ -6,624 +6,420 @@ import { motion } from 'motion/react';
 /* ─── DATA ──────────────────────────────────────────────────────────────── */
 
 interface ProductFamily {
-  label: string;
-  description: string;
+  name: string;
   slug: string;
-  tech: string;
+}
+
+interface Technology {
+  name: string;
+  slug: string;
 }
 
 interface ProtectionSystem {
-  number: string;
   id: string;
+  code: string;
   name: string;
-  headline: string;
-  description: string;
-  contaminants: string[];
+  tag: string;
+  assets: string[];
   families: ProductFamily[];
-  technologies: string[];
-  equipment: string[];
+  technologies: Technology[];
   industries: string[];
 }
 
 const SYSTEMS: ProtectionSystem[] = [
   {
-    number: '01',
     id: 'air-intake',
-    name: 'Air Intake & Airflow Protection',
-    headline: 'COMBUSTION & PNEUMATIC SYSTEM INTEGRITY',
-    description:
-      'Air intake contamination is the primary cause of abrasive wear in combustion engines, gas turbines, and industrial compressors. Silica dust at active mining and construction sites reaches 3,000–10,000 mg/m³ — ten to thirty times the ISO 5011 test threshold of 300 mg/m³. Agricultural harvest operations generate organic particulate at 1,500 mg/m³ or more. Offshore gas turbine installations draw salt-laden air at 1–10 mg/m³ NaCl, causing compressor blade corrosion and efficiency losses of 2–5% per 1,000 operating hours. Compressed air circuits serving pneumatic braking, suspension, and process control require moisture removal to ISO 8573-1 Class 1–2 dew point targets. Moisture above −20°C dew point at pressure causes valve icing, actuator seal degradation, and corrosion in safety-critical pneumatic circuits.',
-    contaminants: [
-      'Silica dust at 3,000–10,000 mg/m³ in mining and earthwork environments — 10 to 30× ISO 5011 test threshold',
-      'Agricultural organic particulate at 1,500 mg/m³ during grain, corn, and cotton harvest operations',
-      'Salt aerosol at 1–10 mg/m³ NaCl at offshore and coastal gas turbine installations',
-      'Moisture and humidity accumulation in compressed air circuits for pneumatic braking and process control',
-    ],
-    families: [
-      {
-        label: 'Primary Intake Protection',
-        description:
-          'High-capacity intake protection for diesel engines, gas turbines, and industrial compressors in particulate-laden environments. Maintains ISO 5011-compliant airflow restriction through extended service intervals at dust concentrations up to 10,000 mg/m³.',
-        slug: 'airfilter',
-        tech: 'MACROCORE™ / SYNTEPORE™',
-      },
-      {
-        label: 'Intake Housing & Pre-Cleaner Assembly',
-        description:
-          'Integrated pre-separation housing that removes coarse particulate before the primary intake element, extending service intervals and protecting primary element sealing geometry in extreme-dust applications.',
-        slug: 'housing',
-        tech: 'INTEKCORE™',
-      },
-      {
-        label: 'Compressed Air Conditioning System',
-        description:
-          'Molecular sieve desiccant system achieving ISO 8573-1 Class 1–2 dew point targets for pneumatic braking, suspension, and process control circuits. Prevents valve icing, actuator corrosion, and seal degradation.',
-        slug: 'dryer',
-        tech: 'DRYCORE™',
-      },
-    ],
-    technologies: ['MACROCORE™', 'SYNTEPORE™', 'DRYCORE™', 'INTEKCORE™'],
-    equipment: [
-      'Diesel engines (mobile and stationary)',
+    code: 'SYS-01',
+    name: 'Air Intake & Airflow',
+    tag: 'COMBUSTION + PNEUMATIC INTEGRITY',
+    assets: [
+      'Diesel and gas engines — mobile and stationary',
       'Gas turbines and centrifugal compressors',
-      'Turbochargers',
+      'Turbochargers and charge air circuits',
       'Pneumatic brake and suspension systems',
       'Process control instrumentation air circuits',
+      'Industrial compressor stations',
+    ],
+    families: [
+      { name: 'Air Filters', slug: 'airfilter' },
+      { name: 'Air Intake Housings', slug: 'housing' },
+      { name: 'Air Dryers', slug: 'dryer' },
+    ],
+    technologies: [
+      { name: 'MACROCORE™', slug: 'macrocore' },
+      { name: 'INTEKCORE™', slug: 'intekcore' },
+      { name: 'SYNTEPORE™', slug: 'syntepore' },
+      { name: 'DRYCORE™', slug: 'drycore' },
     ],
     industries: ['Agriculture', 'Construction', 'Mining', 'Oil & Gas', 'Railway', 'Power Generation', 'Bus & Coach'],
   },
   {
-    number: '02',
     id: 'fuel-cleanliness',
-    name: 'Fuel Cleanliness Protection',
-    headline: 'INJECTION SYSTEM INTEGRITY',
-    description:
-      'Modern high-pressure common-rail (HPCR) injection systems operate at 1,800–2,500 bar. Injector needle clearances measure 1–3 µm — where particle contamination above 10 µm causes injector tip erosion and free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. Marine fuel on commercial vessels accumulates water through tank condensation and bunkered fuel quality variation. Diesel stored in offshore or standby tanks reaches ASTM D6304 exceedance within 30–60 days without active separation. Emergency generator fuel stored 6–18 months undergoes biological colonization, oxidative degradation, and gum formation that blocks delivery components and prevents startup under load conditions.',
-    contaminants: [
-      'Free water from condensation in bulk tanks and bunkered fuel — injector corrosion above 200 ppm',
-      'Emulsified water suspended in fuel — pump cavitation and microbial colonization at water-fuel interface',
-      'Particulate from tank corrosion products above 10 µm — injector tip erosion at 1,800–2,500 bar injection pressure',
-      'Microbial biomass and acidic metabolites from bacteria and fungi at water-fuel interface',
-      'Oxidative gum and varnish deposits on injector nozzles during extended fuel storage periods',
-    ],
-    families: [
-      {
-        label: 'Fuel Cleanliness Module',
-        description:
-          'Primary particulate capture for diesel fuel delivery across mobile and stationary applications. Controls contamination from storage to injection components.',
-        slug: 'fuel',
-        tech: 'HYDROCORE™',
-      },
-      {
-        label: 'Turbine-Stage Water Separation',
-        description:
-          'Three-stage turbine-coalescing-precision separation: 99.8% free water removal, 95% emulsified water reduction. For HPCR injection systems at 1,800–2,500 bar operating pressure.',
-        slug: 'aquaguard-series',
-        tech: 'HYDROCORE™',
-      },
-      {
-        label: 'Water-Fuel Separation Module',
-        description:
-          'Coalescing water separation for high water ingress rate applications including field-fueled construction equipment and marine fuel storage transfer.',
-        slug: 'water',
-        tech: 'HYDROCORE™',
-      },
-      {
-        label: 'Marine Fuel Protection',
-        description:
-          'Corrosion-resistant alloy construction for permanent salt, brine, and humidity exposure. Continuous fuel cleanliness for commercial vessels and offshore support systems.',
-        slug: 'marine',
-        tech: 'HYDROCORE™',
-      },
-    ],
-    technologies: ['HYDROCORE™'],
-    equipment: [
-      'HPCR diesel engines (1,800–2,500 bar injection)',
+    code: 'SYS-02',
+    name: 'Fuel Cleanliness',
+    tag: 'INJECTION SYSTEM INTEGRITY',
+    assets: [
+      'HPCR diesel engines — 1,800 to 2,500 bar injection',
       'Common-rail marine diesel engines',
       'Gas turbines on liquid fuel',
       'Standby and emergency diesel generators',
       'Offshore compression and power systems',
+      'Bulk fuel storage and transfer circuits',
+    ],
+    families: [
+      { name: 'Fuel Filters', slug: 'fuel' },
+      { name: 'Fuel Water Separators', slug: 'water' },
+      { name: 'Turbine Fuel Filtration', slug: 'aquaguard-series' },
+    ],
+    technologies: [
+      { name: 'HYDROCORE™', slug: 'hydrocore' },
     ],
     industries: ['Marine', 'Oil & Gas', 'Power Generation', 'Trucks & Fleets', 'Waste & Municipal', 'Agriculture'],
   },
   {
-    number: '03',
     id: 'lubrication',
-    name: 'Lubrication Reliability Protection',
-    headline: 'BEARING AND DRIVETRAIN INTEGRITY',
-    description:
-      'Engine oil cleanliness measured against ISO 4406 particle count codes determines bearing, cam lobe, valve train, and journal service life across all diesel and gas engine applications. Maintaining ISO 4406 code 16/14/11 or cleaner extends bearing service life three to five times compared to uncontrolled contamination at 19/17/14 — the difference between a 15,000-hour overhaul interval and a 3,000-hour failure event. Urban transit buses and refuse vehicles complete 300–600 engine starts per week, accumulating soot at three to five times the rate of steady-state operation. Long-haul commercial trucks run extended drain programs at 60,000–100,000 km with oil analysis — intervals where lube protection must maintain ISO 4406 targets from service start to drain.',
-    contaminants: [
-      'Combustion soot above 2% by weight — degrades oil film strength, initiates abrasive bearing wear',
-      'Metal wear particles from ring, liner, and bearing contact — create secondary contamination cycles',
-      'Fuel dilution from cold-start cycles — thins oil viscosity below SAE specification',
-      'Acidic combustion byproducts — attack bearing alloys and reduce oil alkalinity reserve',
-      'External particulate ingress through shaft seals and crankcase vents in contaminated field environments',
-    ],
-    families: [
-      {
-        label: 'Engine Oil Protection',
-        description:
-          'Full-flow lubrication protection maintaining ISO 4406 cleanliness codes throughout extended drain intervals for diesel, gas, and dual-fuel engines in mobile and stationary applications.',
-        slug: 'oil',
-        tech: 'SYNTRAX™',
-      },
-      {
-        label: 'Multi-Circuit Service Package',
-        description:
-          'Coordinated protection across intake, oil, and fuel circuits in a single scheduled service event. Matched service intervals calibrated for specific equipment platforms.',
-        slug: 'kits',
-        tech: 'SYNTRAX™',
-      },
-    ],
-    technologies: ['SYNTRAX™'],
-    equipment: [
-      'Diesel and dual-fuel engines (mobile and stationary)',
+    code: 'SYS-03',
+    name: 'Lubrication',
+    tag: 'BEARING AND DRIVETRAIN INTEGRITY',
+    assets: [
+      'Diesel and dual-fuel engines — mobile and stationary',
       'Natural gas and bi-fuel generator engines',
       'Marine propulsion engines',
       'Industrial engine-driven equipment',
       'Gearboxes and differential housings',
+      'Transmission and final drive assemblies',
+    ],
+    families: [
+      { name: 'Oil Filters', slug: 'oil' },
+    ],
+    technologies: [
+      { name: 'SYNTRAX™', slug: 'syntrax' },
     ],
     industries: ['Trucks & Fleets', 'Bus & Coach', 'Automotive', 'Manufacturing', 'Railway', 'Agriculture'],
   },
   {
-    number: '04',
     id: 'hydraulic',
-    name: 'Hydraulic Contamination Control',
-    headline: 'PROPORTIONAL VALVE AND ACTUATOR INTEGRITY',
-    description:
-      'Hydraulic systems in mobile equipment, manufacturing machinery, and marine deck systems operate at 200–450 bar. Proportional valve spool clearances measure 5–25 µm — where ISO 4406 cleanliness targets of 16/14/11 or tighter are required to prevent spool stiction, position drift, and pump wear. Silica particles entering hydraulic circuits from construction and mining environments have Mohs hardness 7, harder than valve alloy surfaces — each particle contact above 5 µm creates permanent micro-abrasion on spool faces. At ISO 19/17/14 contamination levels, proportional valve failure rates increase three to five times. Standard return-line protection captures contamination above 25 µm. Sub-micron hydraulic protection captures particles at 1–10 µm that bypass standard systems and drive the progressive valve wear behind 40–60% of unplanned hydraulic maintenance costs.',
-    contaminants: [
-      'Silica particulate at Mohs hardness 7 — permanent micro-abrasion on valve spool surfaces above 5 µm',
-      'Metal wear particles from pump and actuator contact — create secondary contamination cycles in closed-loop circuits',
-      'Water ingress through cylinder seals and reservoir condensation — valve corrosion and fluid viscosity degradation',
-      'Aeration and cavitation in high-flow circuits — generates micro-particulate and accelerates pump wear',
-    ],
-    families: [
-      {
-        label: 'Hydraulic Contamination Control Unit',
-        description:
-          'Sub-micron Beta-rated protection maintaining ISO 4406 16/14/11 or cleaner for proportional valve and actuator integrity across high-pressure hydraulic circuits up to 450 bar.',
-        slug: 'hydraulic',
-        tech: 'NANOFORCE™',
-      },
-    ],
-    technologies: ['NANOFORCE™'],
-    equipment: [
+    code: 'SYS-04',
+    name: 'Hydraulic',
+    tag: 'PROPORTIONAL VALVE + ACTUATOR INTEGRITY',
+    assets: [
       'Excavators, wheel loaders, and motor graders',
       'Drilling and tunneling equipment',
       'Industrial presses and injection molding machines',
       'Marine crane, winch, and deck machinery',
       'Agricultural implement and harvester hydraulics',
+      'Proportional valve and servo actuator circuits',
+    ],
+    families: [
+      { name: 'Hydraulic Filters', slug: 'hydraulic' },
+    ],
+    technologies: [
+      { name: 'NANOFORCE™', slug: 'nanoforce' },
     ],
     industries: ['Construction', 'Mining', 'Manufacturing', 'Agriculture', 'Marine'],
   },
   {
-    number: '05',
-    id: 'cooling-environmental',
-    name: 'Cooling System & Environmental Protection',
-    headline: 'THERMAL CIRCUIT AND CABIN INTEGRITY',
-    description:
-      'Engine cooling circuits in industrial diesel engines depend on coolant additive concentration to prevent liner cavitation erosion and passage corrosion. Supplemental coolant additives (SCAs) and DCA inhibitors deplete through thermal cycling, electrolytic action, and combustion contamination. When DCA concentration falls below specification, cavitation erosion initiates on wet sleeve liner surfaces within 500–1,000 hours — a failure mode undetectable until compression testing. Operator cabin environments in commercial vehicles and construction equipment expose occupants to PM2.5 concentrations of 30–80 µg/m³ at road level, above WHO 24-hour exposure guidelines. Professional drivers completing 9–11 hour daily schedules accumulate sustained occupational exposure to diesel exhaust particulate classified as Group 1 carcinogen by IARC — regulated under EU Directive 2019/130 and OSHA occupational health standards.',
-    contaminants: [
-      'DCA depletion below SCA concentration threshold — initiates cavitation erosion on wet sleeve liner surfaces',
-      'Corrosion products (aluminum oxide, iron deposits) in cooling passages — reduce heat transfer efficiency',
-      'Silicate scale on heat exchanger surfaces — reduces radiator thermal efficiency 10–30% over service life',
-      'PM2.5 at 30–80 µg/m³ at street level (road dust, diesel exhaust, brake wear particulate)',
-      'Traffic-generated VOC and NOx accumulation in close-following highway and high-density urban conditions',
-    ],
-    families: [
-      {
-        label: 'Cooling Circuit Protection',
-        description:
-          'DCA-replenishing cooling protection that continuously restores supplemental coolant additives throughout the service interval, preventing liner cavitation erosion and corrosion scaling.',
-        slug: 'coolant',
-        tech: 'THERMOCORE™',
-      },
-      {
-        label: 'Cabin Environmental Protection',
-        description:
-          'Multi-stage particulate capture combined with activated carbon adsorption for operator cabin protection. Reduces cabin PM2.5 by up to 85% versus standard OEM cabin elements. Supports professional driver health compliance under OSHA and EU Directive 2019/130.',
-        slug: 'cabin',
-        tech: 'MICROKAPPA™',
-      },
-    ],
-    technologies: ['THERMOCORE™', 'MICROKAPPA™'],
-    equipment: [
-      'Industrial diesel engines with wet sleeve liner construction',
+    id: 'cooling',
+    code: 'SYS-05',
+    name: 'Cooling',
+    tag: 'THERMAL CIRCUIT + CABIN INTEGRITY',
+    assets: [
+      'Industrial diesel engines — wet sleeve liner construction',
       'Commercial truck and bus cooling circuits',
       'Generator set cooling systems',
       'Commercial vehicle operator cabins',
       'Construction equipment operator environments',
       'Transit bus driver and passenger cabins',
     ],
+    families: [
+      { name: 'Coolant Filters', slug: 'coolant' },
+      { name: 'Cabin Filters', slug: 'cabin' },
+    ],
+    technologies: [
+      { name: 'THERMACORE™', slug: 'thermacore' },
+      { name: 'MICROKAPPA™', slug: 'microkappa' },
+    ],
     industries: ['Trucks & Fleets', 'Bus & Coach', 'Power Generation', 'Construction', 'Waste & Municipal', 'Automotive'],
   },
 ];
 
-const TECH_MAP = [
-  {
-    name: 'MACROCORE™',
-    system: '01',
-    role: 'Air Intake',
-    brief:
-      'High-capacity cellulose-synthetic composite intake protection. Maintains ISO 5011-compliant restriction at dust concentrations up to 10,000 mg/m³ across extended service intervals.',
-  },
-  {
-    name: 'SYNTEPORE™',
-    system: '01',
-    role: 'Air Intake',
-    brief:
-      'All-synthetic intake protection for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure that degrades cellulose constructions.',
-  },
-  {
-    name: 'INTEKCORE™',
-    system: '01',
-    role: 'Air Intake',
-    brief:
-      'Integrated core construction for stationary industrial engines, railway traction systems, and pre-cleaner housing assemblies. Radial seal geometry engineered for high-vibration operating environments.',
-  },
-  {
-    name: 'DRYCORE™',
-    system: '01',
-    role: 'Compressed Air',
-    brief:
-      'Molecular sieve desiccant achieving ISO 8573-1 Class 1–2 dew point targets. Prevents valve icing, actuator corrosion, and seal degradation in pneumatic braking and process control systems.',
-  },
-  {
-    name: 'HYDROCORE™',
-    system: '02',
-    role: 'Fuel Cleanliness',
-    brief:
-      '99.8% free water removal, 95% emulsified water reduction via turbine-stage coalescing. Protects HPCR injection systems at 1,800–2,500 bar from water-driven corrosion and stiction failure.',
-  },
-  {
-    name: 'SYNTRAX™',
-    system: '03',
-    role: 'Lubrication',
-    brief:
-      'Synthetic lube protection maintaining ISO 4406 16/14/11 through extended drain intervals. Captures soot above 2% by weight, metal wear particles, and fuel dilution byproducts.',
-  },
-  {
-    name: 'NANOFORCE™',
-    system: '04',
-    role: 'Hydraulic',
-    brief:
-      'Sub-micron Beta-rated hydraulic contamination control at 200–450 bar. Maintains ISO 4406 cleanliness for proportional valve spool protection in construction, mining, and manufacturing circuits.',
-  },
-  {
-    name: 'THERMOCORE™',
-    system: '05',
-    role: 'Cooling System',
-    brief:
-      'DCA-replenishing coolant protection restoring SCA concentration throughout the service interval. Prevents wet sleeve liner cavitation erosion and corrosion scaling in industrial diesel cooling circuits.',
-  },
-  {
-    name: 'MICROKAPPA™',
-    system: '05',
-    role: 'Cabin Protection',
-    brief:
-      'Multi-stage particulate capture with activated carbon adsorption. Reduces cabin PM2.5 by up to 85% for professional driver health compliance under EU Directive 2019/130 and OSHA standards.',
-  },
+const TECH_INDEX = [
+  { name: 'MACROCORE™',  slug: 'macrocore',  sys: 'SYS-01', fn: 'High-capacity particulate capture — air intake, ISO 5011' },
+  { name: 'INTEKCORE™',  slug: 'intekcore',  sys: 'SYS-01', fn: 'Integrated housing and pre-cleaner core assembly' },
+  { name: 'SYNTEPORE™',  slug: 'syntepore',  sys: 'SYS-01', fn: 'All-synthetic intake media — high-humidity and coastal environments' },
+  { name: 'DRYCORE™',   slug: 'drycore',   sys: 'SYS-01', fn: 'Molecular sieve desiccant — ISO 8573-1 Class 1–2 dew point' },
+  { name: 'HYDROCORE™',  slug: 'hydrocore',  sys: 'SYS-02', fn: 'Turbine-stage fuel water separation — 99.8% free water removal' },
+  { name: 'SYNTRAX™',   slug: 'syntrax',   sys: 'SYS-03', fn: 'Synthetic lube media — ISO 4406 16/14/11 across extended drain intervals' },
+  { name: 'NANOFORCE™',  slug: 'nanoforce',  sys: 'SYS-04', fn: 'Sub-micron Beta-rated hydraulic protection — 1–10 µm particle control' },
+  { name: 'THERMACORE™', slug: 'thermacore', sys: 'SYS-05', fn: 'DCA-replenishing coolant filtration — SCA restoration per interval' },
+  { name: 'MICROKAPPA™', slug: 'microkappa', sys: 'SYS-05', fn: 'Multi-stage cabin PM2.5 capture with activated carbon VOC adsorption' },
 ];
 
-/* ─── SUB-COMPONENTS ─────────────────────────────────────────────────────── */
+/* ─── HELPERS ────────────────────────────────────────────────────────────── */
 
-function ProductFamilyCard({ family }: { family: ProductFamily }) {
-  return (
-    <motion.div
-      whileHover={{ borderColor: 'rgba(255,241,45,0.4)', background: 'rgba(255,241,45,0.025)' }}
-      style={{
-        border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '3px',
-        padding: '1.25rem 1.5rem',
-        transition: 'border-color 0.25s, background 0.25s',
-      }}
-    >
-      <Link href={`/products/${family.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-        <p
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.6rem',
-            color: 'rgba(255,241,45,0.6)',
-            letterSpacing: '0.15em',
-            margin: '0 0 0.4rem',
-          }}
-        >
-          {family.tech}
-        </p>
-        <p
-          style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontWeight: 700,
-            fontSize: '0.9rem',
-            color: '#fff',
-            margin: '0 0 0.6rem',
-          }}
-        >
-          {family.label}
-        </p>
-        <p
-          style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: '0.8rem',
-            lineHeight: 1.65,
-            color: 'rgba(255,255,255,0.5)',
-            margin: '0 0 0.75rem',
-          }}
-        >
-          {family.description}
-        </p>
-        <span
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.62rem',
-            fontWeight: 700,
-            letterSpacing: '0.12em',
-            color: '#FFF12D',
-          }}
-        >
-          VIEW SYSTEM →
-        </span>
-      </Link>
-    </motion.div>
-  );
+function slugifyIndustry(s: string) {
+  return s
+    .toLowerCase()
+    .replace(/\s*&\s*/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 }
 
-function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
-  const bg = idx % 2 === 1 ? 'rgba(255,255,255,0.018)' : 'transparent';
+/* ─── SYSTEM PANEL ───────────────────────────────────────────────────────── */
+
+function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
+  const altBg = idx % 2 === 1;
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      id={sys.id}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.55 }}
+      transition={{ duration: 0.45 }}
       style={{
-        background: bg,
-        borderTop: '1px solid rgba(255,255,255,0.07)',
-        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        background: altBg ? 'rgba(255,255,255,0.014)' : 'transparent',
       }}
     >
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem)',
+      }}>
 
-        {/* Header row */}
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.25rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-          <span
-            style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              color: 'rgba(255,241,45,0.45)',
-              letterSpacing: '0.2em',
-              flexShrink: 0,
-            }}
-          >
-            SYSTEM {sys.number}
+        {/* Panel header */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: '1.25rem',
+          marginBottom: '2rem',
+          paddingBottom: '1.25rem',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          flexWrap: 'wrap',
+        }}>
+          <span style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.62rem',
+            fontWeight: 700,
+            letterSpacing: '0.18em',
+            color: '#FFF12D',
+            background: 'rgba(255,241,45,0.08)',
+            border: '1px solid rgba(255,241,45,0.2)',
+            padding: '0.22rem 0.6rem',
+            flexShrink: 0,
+          }}>
+            {sys.code}
           </span>
-          <h2
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(1.35rem,3vw,2rem)',
-              color: '#fff',
-              margin: 0,
-              lineHeight: 1.15,
-            }}
-          >
+          <h2 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontWeight: 800,
+            fontSize: 'clamp(1.25rem,3vw,1.85rem)',
+            color: '#fff',
+            margin: 0,
+            letterSpacing: '-0.01em',
+          }}>
             {sys.name}
           </h2>
+          <span style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.52rem',
+            letterSpacing: '0.16em',
+            color: 'rgba(255,255,255,0.27)',
+            marginLeft: 'auto',
+          }}>
+            {sys.tag}
+          </span>
         </div>
 
-        <p
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.18em',
-            marginBottom: '2rem',
-          }}
-        >
-          {sys.headline}
-        </p>
-
-        {/* Description */}
-        <p
-          style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: '0.92rem',
-            lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.65)',
-            textAlign: 'justify',
-            marginBottom: '2rem',
-          }}
-        >
-          {sys.description}
-        </p>
-
-        {/* Contamination targets */}
+        {/* 3-column data grid */}
         <div
+          className="sys-panel-grid"
           style={{
-            background: 'rgba(255,241,45,0.03)',
-            border: '1px solid rgba(255,241,45,0.12)',
-            borderRadius: '3px',
-            padding: '1.25rem 1.5rem',
-            marginBottom: '2.5rem',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gap: 0,
+            border: '1px solid rgba(255,255,255,0.07)',
           }}
         >
-          <p
-            style={{
+          {/* ASSETS PROTECTED */}
+          <div style={{
+            padding: '1.5rem 1.75rem',
+            borderRight: '1px solid rgba(255,255,255,0.07)',
+          }}>
+            <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.6rem',
-              color: 'rgba(255,241,45,0.55)',
-              letterSpacing: '0.18em',
-              marginBottom: '0.75rem',
-            }}
-          >
-            CONTAMINATION TARGETS
-          </p>
-          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.4rem' }}>
-            {sys.contaminants.map((c, i) => (
-              <li
-                key={i}
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.72rem',
-                  lineHeight: 1.6,
-                  color: 'rgba(255,255,255,0.55)',
-                  paddingLeft: '1rem',
-                  position: 'relative',
-                }}
-              >
-                <span
-                  style={{
-                    position: 'absolute',
-                    left: 0,
-                    color: '#FFF12D',
-                  }}
-                >
-                  ›
-                </span>
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Product families */}
-        <p
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.6rem',
-            color: 'rgba(255,255,255,0.3)',
-            letterSpacing: '0.18em',
-            marginBottom: '0.85rem',
-          }}
-        >
-          PRODUCT FAMILIES
-        </p>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1px',
-            background: 'rgba(255,255,255,0.06)',
-            marginBottom: '2.5rem',
-          }}
-        >
-          {sys.families.map((f) => (
-            <div key={f.slug} style={{ background: bg === 'transparent' ? '#000' : 'rgb(5,5,5)' }}>
-              <ProductFamilyCard family={f} />
-            </div>
-          ))}
-        </div>
-
-        {/* Technologies / Equipment / Industries — 3-col auto grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
-            gap: '2rem',
-            paddingTop: '1.5rem',
-            borderTop: '1px solid rgba(255,255,255,0.07)',
-          }}
-        >
-          <div>
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.58rem',
-                color: 'rgba(255,255,255,0.28)',
-                letterSpacing: '0.16em',
-                marginBottom: '0.6rem',
-              }}
-            >
-              TECHNOLOGIES
+              fontSize: '0.5rem',
+              letterSpacing: '0.22em',
+              color: 'rgba(255,255,255,0.26)',
+              marginBottom: '1rem',
+            }}>
+              ASSETS PROTECTED
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-              {sys.technologies.map((t) => (
-                <Link
-                  key={t}
-                  href={`/technologies/${t.toLowerCase().replace(/[™®]/g, '').trim()}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <span
+            <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.5rem' }}>
+              {sys.assets.map((a, i) => (
+                <li key={i} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.6rem',
+                    color: 'rgba(255,241,45,0.35)',
+                    flexShrink: 0,
+                    lineHeight: 1.7,
+                  }}>—</span>
+                  <span style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '0.8rem',
+                    color: 'rgba(255,255,255,0.52)',
+                    lineHeight: 1.65,
+                  }}>
+                    {a}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* PRODUCT FAMILIES */}
+          <div style={{
+            padding: '1.5rem 1.75rem',
+            borderRight: '1px solid rgba(255,255,255,0.07)',
+          }}>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.5rem',
+              letterSpacing: '0.22em',
+              color: 'rgba(255,255,255,0.26)',
+              marginBottom: '1rem',
+            }}>
+              PRODUCT FAMILIES
+            </p>
+            <div style={{ display: 'grid', gap: '0.55rem' }}>
+              {sys.families.map((f) => (
+                <Link key={f.slug} href={`/products/${f.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,241,45,0.3)', color: '#fff' }}
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.65rem',
-                      color: '#FFF12D',
-                      background: 'rgba(255,241,45,0.07)',
-                      border: '1px solid rgba(255,241,45,0.2)',
-                      borderRadius: '2px',
-                      padding: '0.2rem 0.55rem',
-                      cursor: 'pointer',
-                      display: 'inline-block',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '0.65rem 0.85rem',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      color: 'rgba(255,255,255,0.6)',
+                      transition: 'border-color 0.2s, color 0.2s',
                     }}
                   >
-                    {t}
-                  </span>
+                    <span style={{
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: '0.82rem',
+                      fontWeight: 500,
+                    }}>
+                      {f.name}
+                    </span>
+                    <span style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.58rem',
+                      color: 'rgba(255,241,45,0.45)',
+                    }}>
+                      →
+                    </span>
+                  </motion.div>
                 </Link>
               ))}
             </div>
           </div>
 
-          <div>
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.58rem',
-                color: 'rgba(255,255,255,0.28)',
-                letterSpacing: '0.16em',
-                marginBottom: '0.6rem',
-              }}
-            >
-              ASSETS PROTECTED
+          {/* TECHNOLOGY PLATFORM */}
+          <div style={{ padding: '1.5rem 1.75rem' }}>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.5rem',
+              letterSpacing: '0.22em',
+              color: 'rgba(255,255,255,0.26)',
+              marginBottom: '1rem',
+            }}>
+              TECHNOLOGY PLATFORM
             </p>
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-              {sys.equipment.map((eq) => (
-                <li
-                  key={eq}
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.78rem',
-                    color: 'rgba(255,255,255,0.48)',
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {eq}
-                </li>
+            <div style={{ display: 'grid', gap: '0.55rem' }}>
+              {sys.technologies.map((tech) => (
+                <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,241,45,0.45)', background: 'rgba(255,241,45,0.05)' }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '0.65rem 0.85rem',
+                      border: '1px solid rgba(255,241,45,0.15)',
+                      background: 'rgba(255,241,45,0.025)',
+                      transition: 'border-color 0.2s, background 0.2s',
+                    }}
+                  >
+                    <span style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      color: '#FFF12D',
+                      letterSpacing: '0.04em',
+                    }}>
+                      {tech.name}
+                    </span>
+                    <span style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.58rem',
+                      color: 'rgba(255,241,45,0.4)',
+                    }}>
+                      →
+                    </span>
+                  </motion.div>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
+        </div>
 
-          <div>
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.58rem',
-                color: 'rgba(255,255,255,0.28)',
-                letterSpacing: '0.16em',
-                marginBottom: '0.6rem',
-              }}
-            >
-              INDUSTRIES
-            </p>
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-              {sys.industries.map((ind) => (
-                <li
-                  key={ind}
+        {/* Industries strip */}
+        <div style={{
+          border: '1px solid rgba(255,255,255,0.07)',
+          borderTop: 'none',
+          padding: '0.85rem 1.75rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1.5rem',
+          flexWrap: 'wrap',
+        }}>
+          <span style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.5rem',
+            letterSpacing: '0.22em',
+            color: 'rgba(255,255,255,0.22)',
+            flexShrink: 0,
+          }}>
+            INDUSTRIES
+          </span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem 1.25rem' }}>
+            {sys.industries.map((ind) => (
+              <Link
+                key={ind}
+                href={`/industries/${slugifyIndustry(ind)}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <motion.span
+                  whileHover={{ color: 'rgba(255,255,255,0.75)' }}
                   style={{
                     fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.78rem',
-                    color: 'rgba(255,255,255,0.48)',
-                    lineHeight: 1.65,
+                    fontSize: '0.75rem',
+                    color: 'rgba(255,255,255,0.38)',
+                    display: 'inline-block',
+                    transition: 'color 0.15s',
                   }}
                 >
                   {ind}
-                </li>
-              ))}
-            </ul>
+                </motion.span>
+              </Link>
+            ))}
           </div>
         </div>
+
       </div>
     </motion.section>
   );
@@ -632,661 +428,428 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
 /* ─── PAGE ───────────────────────────────────────────────────────────────── */
 
 export default function SystemsPage() {
-  const webPageSchema = {
+  const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Industrial Asset Protection Systems — ELIMFILTERS®',
     description:
-      'Five industrial asset protection systems covering air intake, fuel cleanliness, lubrication reliability, hydraulic contamination control, and cooling/environmental protection across 12 heavy industry sectors.',
+      'Five independent asset protection systems for industrial equipment: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling. Nine proprietary protection technologies across ten product families.',
     url: 'https://elimfilters.com/systems',
-    dateModified: '2026-05-26',
+    dateModified: '2026-06-07',
     author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
-      { '@type': 'ListItem', position: 2, name: 'Asset Protection Systems', item: 'https://elimfilters.com/systems' },
-    ],
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What are the five industrial asset protection systems from ELIMFILTERS®?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'ELIMFILTERS® organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does HYDROCORE™ protect HPCR diesel injection systems?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'HYDROCORE™ uses a three-stage turbine-coalescing-precision architecture to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. HYDROCORE™ prevents these failure modes across long-haul trucks, marine diesel engines, standby generators, and offshore equipment.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What ISO 4406 cleanliness target does NANOFORCE™ maintain in hydraulic systems?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'NANOFORCE™ sub-micron hydraulic contamination control maintains ISO 4406 cleanliness codes of 16/14/11 or tighter — the threshold required to prevent proportional valve spool stiction and actuator position drift in construction, mining, and manufacturing hydraulic systems at 200–450 bar operating pressure. At contamination levels above ISO 19/17/14, proportional valve failure rates increase three to five times. NANOFORCE™ captures particles at 1–10 µm that bypass standard return-line protection.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Why does the Air Intake & Airflow Protection system include compressed air conditioning?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Compressed air circuits for pneumatic braking, suspension, and process control instrumentation are downstream of the same air intake infrastructure as combustion engines. Moisture above −20°C dew point at system pressure causes valve icing, actuator seal degradation, and corrosion in safety-critical pneumatic circuits — particularly in railway braking and transit bus pneumatic systems. DRYCORE™ molecular sieve desiccant achieves ISO 8573-1 Class 1–2 dew point targets to prevent these failure modes within the same system protection architecture.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What does MICROKAPPA™ cabin protection provide for professional vehicle operators?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'MICROKAPPA™ combines multi-stage particulate capture with activated carbon adsorption to reduce cabin PM2.5 concentration by up to 85% versus standard OEM cabin elements. Professional drivers completing 9–11 hour daily schedules in commercial vehicles accumulate sustained occupational exposure to diesel exhaust particulate — classified as Group 1 carcinogen by IARC. EU Directive 2019/130 and OSHA standards impose PM2.5 exposure limits for commercial vehicle operators, making documented cabin environmental protection a compliance requirement for fleet operators in regulated jurisdictions.',
-        },
-      },
-    ],
   };
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* Back nav */}
-      <Link
-        href="/"
-        style={{
-          position: 'fixed',
-          top: '1rem',
-          right: '1.5rem',
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          background: 'rgba(0,0,0,0.88)',
-          border: '1px solid rgba(255,241,45,0.35)',
-          borderRadius: '4px',
-          padding: '0.45rem 1rem',
-          fontFamily: 'Outfit, sans-serif',
-          fontWeight: 700,
-          fontSize: '0.72rem',
-          letterSpacing: '0.12em',
-          color: '#FFF12D',
-          textDecoration: 'none',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-        }}
-      >
-        ← HOME
-      </Link>
+      {/* ── MASTHEAD ───────────────────────────────────────────────────── */}
+      <section style={{
+        paddingTop: 'clamp(5.5rem,12vw,9rem)',
+        paddingBottom: 'clamp(2.5rem,5vw,4rem)',
+        paddingLeft: 'clamp(1.5rem,4vw,3rem)',
+        paddingRight: 'clamp(1.5rem,4vw,3rem)',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
+      }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
 
-      {/* ── HERO ───────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          paddingTop: 'clamp(4rem,10vw,7rem)',
-          paddingBottom: 'clamp(3.5rem,8vw,6rem)',
-          paddingLeft: 'clamp(1.25rem,5vw,2.5rem)',
-          paddingRight: 'clamp(1.25rem,5vw,2.5rem)',
-          backgroundImage: 'url(/images/system-hero.avif)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          position: 'relative',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.50) 100%)',
-            zIndex: 1,
-          }}
-        />
-        <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
+          {/* Top row */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            marginBottom: '2.5rem',
+            flexWrap: 'wrap',
+            gap: '1rem',
+          }}>
+            <div>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.6rem',
+                letterSpacing: '0.22em',
+                color: 'rgba(255,241,45,0.6)',
+                marginBottom: '0.75rem',
+              }}>
+                // ELIMFILTERS® · ASSET PROTECTION PLATFORM
+              </p>
+              <motion.h1
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 900,
+                  fontSize: 'clamp(2.2rem,5.5vw,4rem)',
+                  color: '#fff',
+                  lineHeight: 1.0,
+                  letterSpacing: '-0.02em',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                SYSTEM<br />ARCHITECTURE
+              </motion.h1>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.15em',
+                color: 'rgba(255,255,255,0.32)',
+              }}>
+                FIVE INDEPENDENT PROTECTION SYSTEMS · INDUSTRIAL ASSET INTEGRITY
+              </p>
+            </div>
+
+            {/* Document metadata */}
+            <div style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.68rem',
-              fontWeight: 700,
-              letterSpacing: '0.28em',
-              color: '#FFF12D',
-              marginBottom: '1.25rem',
-            }}
-          >
-            // ASSET PROTECTION SYSTEMS
-          </motion.p>
+              fontSize: '0.56rem',
+              color: 'rgba(255,255,255,0.2)',
+              letterSpacing: '0.1em',
+              lineHeight: 2.2,
+              textAlign: 'right',
+            }}>
+              <div>DOC: SYS-ARCH-2026.06</div>
+              <div>REV: 2.0 — ACTIVE</div>
+              <div>9 TECHNOLOGIES</div>
+              <div>10 PRODUCT FAMILIES</div>
+            </div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.08 }}
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 900,
-              fontSize: 'clamp(2rem,5vw,3.75rem)',
-              lineHeight: 1.08,
-              color: 'rgba(255,255,255,0.95)',
-              marginBottom: '1.5rem',
-            }}
-          >
-            SEIS DOMINIOS DE CONTAMINACIÓN.
-            <br />
-            <span style={{ color: '#FFF12D' }}>SEIS SISTEMAS DE PROTECCIÓN.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.16 }}
-            style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontSize: 'clamp(0.9rem,2vw,1.05rem)',
-              lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.68)',
-              maxWidth: '660px',
-              borderLeft: '3px solid #FFF12D',
-              paddingLeft: '1.25rem',
-            }}
-          >
-            Un activo industrial puede fallar por seis vías de contaminación independientes.
-            Cada vía tiene su propio mecanismo de degradación, sus estándares de medición
-            aplicables y su arquitectura de protección exclusiva. La selección comienza
-            por identificar el dominio — no el producto.
-          </motion.p>
+          {/* Platform stats */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, auto)',
+            gap: 0,
+            border: '1px solid rgba(255,255,255,0.08)',
+            width: 'fit-content',
+          }}>
+            {[
+              { val: '05', label: 'SYSTEMS' },
+              { val: '09', label: 'TECHNOLOGIES' },
+              { val: '10', label: 'PRODUCT FAMILIES' },
+              { val: '12', label: 'INDUSTRIES' },
+            ].map((item, i) => (
+              <div key={i} style={{
+                padding: '1rem 1.75rem',
+                borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+              }}>
+                <div style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: 'clamp(1.6rem,3vw,2.2rem)',
+                  fontWeight: 700,
+                  color: '#FFF12D',
+                  lineHeight: 1,
+                }}>
+                  {item.val}
+                </div>
+                <div style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.5rem',
+                  letterSpacing: '0.2em',
+                  color: 'rgba(255,255,255,0.28)',
+                  marginTop: '0.35rem',
+                }}>
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── ARCHITECTURE BRIEF ─────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2.5rem)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                color: '#FFF12D',
-                letterSpacing: '0.2em',
-                marginBottom: '1rem',
-              }}
-            >
-              CONTAMINATION CONTROL HIERARCHY
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.72rem',
-                marginBottom: '1.5rem',
-              }}
-            >
-              {[
-                'Contamination Source',
-                '→',
-                'Entry Pathway',
-                '→',
-                'Protection System',
-                '→',
-                'Proprietary Architecture',
-                '→',
-                'Asset Preserved',
-              ].map((step, i) => (
-                <span
-                  key={i}
-                  style={{
-                    color:
-                      step === '→'
-                        ? 'rgba(255,255,255,0.2)'
-                        : i === 4
-                        ? '#FFF12D'
-                        : 'rgba(255,255,255,0.5)',
-                    fontWeight: i === 4 ? 700 : 400,
-                  }}
-                >
+      {/* ── HIERARCHY ──────────────────────────────────────────────────── */}
+      <section style={{
+        padding: 'clamp(1.5rem,3vw,2.25rem) clamp(1.5rem,4vw,3rem)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'rgba(255,255,255,0.012)',
+      }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0,
+            flexWrap: 'wrap',
+            marginBottom: '0.85rem',
+          }}>
+            <span style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.55rem',
+              letterSpacing: '0.2em',
+              color: 'rgba(255,255,255,0.2)',
+              marginRight: '1.5rem',
+            }}>
+              DECISION HIERARCHY
+            </span>
+            {['SYSTEM', 'PRODUCT FAMILY', 'TECHNOLOGY', 'INDUSTRY'].map((step, i) => (
+              <span key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                <span style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.62rem',
+                  fontWeight: i === 0 ? 700 : 400,
+                  letterSpacing: '0.13em',
+                  color: i === 0 ? '#FFF12D' : `rgba(255,255,255,${0.55 - i * 0.12})`,
+                  padding: '0.28rem 0.65rem',
+                  background: i === 0 ? 'rgba(255,241,45,0.08)' : 'transparent',
+                  border: i === 0 ? '1px solid rgba(255,241,45,0.2)' : 'none',
+                }}>
                   {step}
+                </span>
+                {i < 3 && (
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.68rem',
+                    color: 'rgba(255,255,255,0.18)',
+                    padding: '0 0.4rem',
+                  }}>
+                    →
+                  </span>
+                )}
+              </span>
+            ))}
+          </div>
+          <p style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '0.82rem',
+            lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.38)',
+            maxWidth: '680px',
+            margin: 0,
+          }}>
+            Selection begins with the system domain. Each system defines the applicable product families and technology platforms. Industry exposure determines which systems apply to a given asset.
+          </p>
+        </div>
+      </section>
+
+      {/* ── SYSTEM INDEX BAR ───────────────────────────────────────────── */}
+      <div style={{
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        overflowX: 'auto',
+      }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          paddingLeft: 'clamp(1.5rem,4vw,3rem)',
+          paddingRight: 'clamp(1.5rem,4vw,3rem)',
+          display: 'flex',
+        }}>
+          {SYSTEMS.map((sys, i) => (
+            <a
+              key={sys.id}
+              href={`#${sys.id}`}
+              style={{
+                display: 'block',
+                flex: '1 0 140px',
+                padding: '0.9rem 1.1rem',
+                borderRight: i < SYSTEMS.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,241,45,0.04)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+            >
+              <div style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.52rem',
+                letterSpacing: '0.18em',
+                color: '#FFF12D',
+                marginBottom: '0.3rem',
+              }}>
+                {sys.code}
+              </div>
+              <div style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.6)',
+                whiteSpace: 'nowrap',
+              }}>
+                {sys.name}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* ── FIVE SYSTEM PANELS ─────────────────────────────────────────── */}
+      {SYSTEMS.map((sys, idx) => (
+        <SystemPanel key={sys.id} sys={sys} idx={idx} />
+      ))}
+
+      {/* ── TECHNOLOGY CROSS-REFERENCE ─────────────────────────────────── */}
+      <section style={{
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,4vw,3rem)',
+        borderTop: '1px solid rgba(255,241,45,0.1)',
+        background: 'rgba(255,241,45,0.01)',
+      }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: '2rem',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+          }}>
+            <div>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.52rem',
+                letterSpacing: '0.22em',
+                color: 'rgba(255,241,45,0.5)',
+                marginBottom: '0.5rem',
+              }}>
+                TECHNOLOGY CROSS-REFERENCE
+              </p>
+              <h2 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(1.1rem,2.5vw,1.5rem)',
+                color: '#fff',
+                margin: 0,
+              }}>
+                Nine Protection Architectures
+              </h2>
+            </div>
+            <Link href="/technologies" style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.62rem',
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              color: '#FFF12D',
+              textDecoration: 'none',
+            }}>
+              TECHNOLOGY PLATFORM →
+            </Link>
+          </div>
+
+          <div style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
+            {/* Table header */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '200px 110px 1fr',
+              padding: '0.65rem 1.25rem',
+              background: 'rgba(255,255,255,0.03)',
+              borderBottom: '1px solid rgba(255,255,255,0.07)',
+            }}>
+              {['TECHNOLOGY', 'SYSTEM', 'FUNCTION'].map((h) => (
+                <span key={h} style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.48rem',
+                  letterSpacing: '0.22em',
+                  color: 'rgba(255,255,255,0.24)',
+                }}>
+                  {h}
                 </span>
               ))}
             </div>
-            <p
-              style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.92rem',
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.55)',
-                maxWidth: '780px',
-              }}
-            >
-              La confiabilidad de un activo depende de que la contaminación que ingresa a cada sistema
-              se mantenga por debajo del umbral que genera desgaste medible. La selección del producto
-              es el último paso de esta decisión — no el primero. Los sistemas a continuación están
-              organizados por dominio de contaminación, no por categoría de producto.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* ── FIVE SYSTEMS ──────────────────────────────────────────────── */}
-      {SYSTEMS.map((sys, idx) => (
-        <SystemSection key={sys.id} sys={sys} idx={idx} />
-      ))}
-
-      {/* ── TECHNOLOGY INDEX ───────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem)',
-          background: 'rgba(255,241,45,0.02)',
-          borderTop: '1px solid rgba(255,241,45,0.1)',
-          borderBottom: '1px solid rgba(255,241,45,0.1)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                color: '#FFF12D',
-                letterSpacing: '0.2em',
-                marginBottom: '0.5rem',
-              }}
-            >
-              NINE EXCLUSIVE PROTECTION ARCHITECTURES
-            </p>
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(1.3rem,3vw,1.85rem)',
-                color: '#fff',
-                marginBottom: '2rem',
-              }}
-            >
-              Technologies are architectures. Not products.
-            </h2>
-          </motion.div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-              gap: '1.5rem',
-            }}
-          >
-            {TECH_MAP.map((t, i) => (
+            {TECH_INDEX.map((t, i) => (
               <motion.div
                 key={t.name}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
+                whileHover={{ background: 'rgba(255,255,255,0.025)' }}
                 style={{
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '3px',
-                  padding: '1.5rem',
+                  display: 'grid',
+                  gridTemplateColumns: '200px 110px 1fr',
+                  padding: '0.9rem 1.25rem',
+                  borderBottom: i < TECH_INDEX.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                  alignItems: 'center',
+                  transition: 'background 0.15s',
                 }}
               >
-                <p
-                  style={{
+                <Link href={`/technologies/${t.slug}`} style={{ textDecoration: 'none' }}>
+                  <span style={{
                     fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.58rem',
-                    color: 'rgba(255,241,45,0.45)',
-                    letterSpacing: '0.14em',
-                    marginBottom: '0.3rem',
-                  }}
-                >
-                  SYSTEM {t.system} · {t.role.toUpperCase()}
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontSize: '0.82rem',
                     fontWeight: 700,
-                    fontSize: '0.92rem',
-                    color: '#fff',
-                    marginBottom: '0.6rem',
-                  }}
-                >
-                  {t.name}
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.78rem',
-                    lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.45)',
-                    margin: 0,
-                  }}
-                >
-                  {t.brief}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div style={{ marginTop: '1.75rem', textAlign: 'right' }}>
-            <Link
-              href="/technologies"
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                fontWeight: 700,
-                letterSpacing: '0.15em',
-                color: '#FFF12D',
-                textDecoration: 'none',
-              }}
-            >
-              VIEW TECHNOLOGY PLATFORM →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CROSS-NAVIGATION ───────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                color: 'rgba(255,255,255,0.3)',
-                letterSpacing: '0.2em',
-                marginBottom: '2rem',
-                textAlign: 'center',
-              }}
-            >
-              PROTECTION COVERAGE BY INDUSTRY
-            </p>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-                gap: '1px',
-                background: 'rgba(255,255,255,0.05)',
-              }}
-            >
-              {[
-                { name: 'Agriculture', slug: 'agriculture', systems: ['01', '02', '03'] },
-                { name: 'Automotive', slug: 'automotive', systems: ['01', '02', '03', '05'] },
-                { name: 'Bus & Coach', slug: 'bus-coach', systems: ['01', '03', '01', '05'] },
-                { name: 'Construction', slug: 'construction', systems: ['01', '02', '04', '05'] },
-                { name: 'Manufacturing', slug: 'manufacturing', systems: ['01', '03', '04'] },
-                { name: 'Marine', slug: 'marine', systems: ['02', '03', '04'] },
-                { name: 'Mining', slug: 'mining', systems: ['01', '02', '04'] },
-                { name: 'Oil & Gas', slug: 'oil-gas', systems: ['01', '02', '03'] },
-                { name: 'Power Generation', slug: 'power-generation', systems: ['01', '02', '05'] },
-                { name: 'Railway', slug: 'railway', systems: ['01', '02', '03'] },
-                { name: 'Trucks & Fleets', slug: 'trucks-fleets', systems: ['01', '02', '03', '05'] },
-                { name: 'Waste & Municipal', slug: 'waste-municipal', systems: ['01', '02', '03', '05'] },
-              ].map((ind) => (
-                <motion.div
-                  key={ind.slug}
-                  whileHover={{ background: 'rgba(255,241,45,0.04)' }}
-                  style={{ background: '#000', padding: '1rem 1.25rem', transition: 'background 0.2s' }}
-                >
-                  <Link href={`/industries/${ind.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <p
-                      style={{
-                        fontFamily: 'Space Grotesk, sans-serif',
-                        fontWeight: 600,
-                        fontSize: '0.85rem',
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      {ind.name}
-                    </p>
-                    <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
-                      {Array.from(new Set(ind.systems)).map((s) => (
-                        <span
-                          key={s}
-                          style={{
-                            fontFamily: 'JetBrains Mono, monospace',
-                            fontSize: '0.58rem',
-                            color: 'rgba(255,241,45,0.6)',
-                            background: 'rgba(255,241,45,0.06)',
-                            border: '1px solid rgba(255,241,45,0.15)',
-                            borderRadius: '2px',
-                            padding: '0.15rem 0.4rem',
-                          }}
-                        >
-                          SYS {s}
-                        </span>
-                      ))}
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── FAQ ────────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(1.3rem,3vw,1.85rem)',
-              color: '#fff',
-              marginBottom: '2.5rem',
-              textAlign: 'center',
-            }}
-          >
-            Technical Questions
-          </motion.h2>
-
-          <div style={{ display: 'grid', gap: '1.25rem' }}>
-            {[
-              {
-                q: 'What are the five asset protection systems?',
-                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more exclusive protection architectures.',
-              },
-              {
-                q: 'How does HYDROCORE™ protect HPCR injection systems?',
-                a: 'HYDROCORE™ uses three-stage turbine-coalescing-precision separation to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. HPCR injection operates at 1,800–2,500 bar with needle clearances of 1–3 µm — tolerances where free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys within 200–500 operating hours.',
-              },
-              {
-                q: 'What hydraulic cleanliness standard does NANOFORCE™ maintain?',
-                a: 'NANOFORCE™ maintains ISO 4406 cleanliness codes of 16/14/11 or tighter — the threshold required to prevent proportional valve spool stiction and actuator position drift at 200–450 bar. At contamination levels above ISO 19/17/14, proportional valve failure rates increase three to five times. NANOFORCE™ captures particles at 1–10 µm that bypass standard return-line protection systems.',
-              },
-              {
-                q: 'Why does Air Intake & Airflow include compressed air conditioning?',
-                a: 'Compressed air circuits for pneumatic braking and process control are downstream of the same intake infrastructure. Moisture above −20°C dew point at pressure causes valve icing in safety-critical pneumatic systems. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets within the same system protection architecture that governs combustion air cleanliness.',
-              },
-              {
-                q: 'What professional driver health compliance does MICROKAPPA™ address?',
-                a: 'MICROKAPPA™ multi-stage capture reduces cabin PM2.5 by up to 85% versus standard OEM cabin elements. Professional drivers in commercial vehicles accumulate sustained occupational exposure to diesel exhaust particulate — IARC Group 1 carcinogen — regulated under EU Directive 2019/130 and OSHA standards. Fleet operators in regulated jurisdictions require documented cabin environmental protection as a compliance obligation.',
-              },
-            ].map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                style={{
-                  padding: '1.5rem 1.75rem',
-                  background: 'rgba(255,241,45,0.025)',
-                  border: '1px solid rgba(255,241,45,0.1)',
-                  borderRadius: '3px',
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    fontWeight: 700,
-                    fontSize: '0.95rem',
                     color: '#FFF12D',
-                    margin: '0 0 0.75rem',
-                  }}
-                >
-                  {faq.q}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '0.88rem',
-                    lineHeight: 1.75,
-                    color: 'rgba(255,255,255,0.68)',
-                    margin: 0,
-                  }}
-                >
-                  {faq.a}
-                </p>
+                    letterSpacing: '0.03em',
+                  }}>
+                    {t.name}
+                  </span>
+                </Link>
+                <span style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.62rem',
+                  color: 'rgba(255,241,45,0.38)',
+                  letterSpacing: '0.12em',
+                }}>
+                  {t.sys}
+                </span>
+                <span style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontSize: '0.82rem',
+                  color: 'rgba(255,255,255,0.48)',
+                  lineHeight: 1.6,
+                }}>
+                  {t.fn}
+                </span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(3.5rem,7vw,6rem) clamp(1.25rem,5vw,2.5rem)',
-          background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, transparent 60%)',
-          borderTop: '1px solid rgba(255,241,45,0.12)',
-        }}
-      >
-        <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 800,
-                fontSize: 'clamp(1.5rem,3.5vw,2.1rem)',
-                color: '#fff',
-                marginBottom: '1rem',
-                lineHeight: 1.2,
-              }}
-            >
-              Identify the right protection system for your equipment
-            </h2>
-            <p
-              style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.95rem',
-                lineHeight: 1.75,
-                color: 'rgba(255,255,255,0.55)',
-                marginBottom: '2.5rem',
-              }}
-            >
-              Cross-reference 500,000+ part numbers across all five protection systems.
-              Match your equipment platform and contamination environment to the correct
-              protection architecture.
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '1rem',
-                flexWrap: 'wrap',
-              }}
-            >
-              <Link
-                href="/industries"
-                style={{
-                  background: '#FFF12D',
-                  color: '#000',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.12em',
-                  padding: '0.85rem 2rem',
-                  borderRadius: '2px',
-                  textDecoration: 'none',
-                  display: 'inline-block',
-                }}
-              >
-                BROWSE BY INDUSTRY
-              </Link>
-              <Link
-                href="/technologies"
-                style={{
-                  background: 'transparent',
-                  color: '#FFF12D',
-                  border: '1px solid rgba(255,241,45,0.45)',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.12em',
-                  padding: '0.85rem 2rem',
-                  borderRadius: '2px',
-                  textDecoration: 'none',
-                  display: 'inline-block',
-                }}
-              >
-                VIEW TECHNOLOGIES
-              </Link>
-            </div>
-          </motion.div>
+      {/* ── FOOTER NAVIGATION ──────────────────────────────────────────── */}
+      <section style={{
+        padding: 'clamp(1.75rem,3.5vw,2.5rem) clamp(1.5rem,4vw,3rem)',
+        borderTop: '1px solid rgba(255,255,255,0.07)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '1.25rem',
+      }}>
+        <div style={{
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: '0.5rem',
+          color: 'rgba(255,255,255,0.2)',
+          letterSpacing: '0.12em',
+          lineHeight: 2,
+        }}>
+          <div>ELIMFILTERS® · ASSET PROTECTION PLATFORM</div>
+          <div>DOC: SYS-ARCH-2026.06 · REV 2.0</div>
+        </div>
+        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+          {[
+            { label: 'INDUSTRIES', href: '/industries', hi: false },
+            { label: 'TECHNOLOGIES', href: '/technologies', hi: false },
+            { label: 'KNOWLEDGE SYSTEM', href: '/knowledge-system', hi: false },
+            { label: 'CONTACT', href: '/contact', hi: true },
+          ].map((lnk) => (
+            <Link key={lnk.href} href={lnk.href} style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.62rem',
+              fontWeight: 600,
+              letterSpacing: '0.14em',
+              color: lnk.hi ? '#FFF12D' : 'rgba(255,255,255,0.35)',
+              textDecoration: 'none',
+            }}>
+              {lnk.label} →
+            </Link>
+          ))}
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .sys-panel-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .sys-panel-grid > div {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+          }
+          .sys-panel-grid > div:last-child {
+            border-bottom: none;
+          }
+        }
+      `}</style>
     </main>
   );
 }
