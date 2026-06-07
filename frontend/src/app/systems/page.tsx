@@ -20,6 +20,7 @@ interface ProtectionSystem {
   code: string;
   name: string;
   tag: string;
+  image: string;
   assets: string[];
   families: ProductFamily[];
   technologies: Technology[];
@@ -32,6 +33,7 @@ const SYSTEMS: ProtectionSystem[] = [
     code: 'SYS-01',
     name: 'Air Intake & Airflow',
     tag: 'COMBUSTION + PNEUMATIC INTEGRITY',
+    image: '/assets/mecanica-air.avif',
     assets: [
       'Diesel and gas engines — mobile and stationary',
       'Gas turbines and centrifugal compressors',
@@ -58,6 +60,7 @@ const SYSTEMS: ProtectionSystem[] = [
     code: 'SYS-02',
     name: 'Fuel Cleanliness',
     tag: 'INJECTION SYSTEM INTEGRITY',
+    image: '/assets/fuelfilter-hero.avif',
     assets: [
       'HPCR diesel engines — 1,800 to 2,500 bar injection',
       'Common-rail marine diesel engines',
@@ -81,6 +84,7 @@ const SYSTEMS: ProtectionSystem[] = [
     code: 'SYS-03',
     name: 'Lubrication',
     tag: 'BEARING AND DRIVETRAIN INTEGRITY',
+    image: '/assets/oil-hero.avif',
     assets: [
       'Diesel and dual-fuel engines — mobile and stationary',
       'Natural gas and bi-fuel generator engines',
@@ -102,6 +106,7 @@ const SYSTEMS: ProtectionSystem[] = [
     code: 'SYS-04',
     name: 'Hydraulic',
     tag: 'PROPORTIONAL VALVE + ACTUATOR INTEGRITY',
+    image: '/assets/hidraulic.avif',
     assets: [
       'Excavators, wheel loaders, and motor graders',
       'Drilling and tunneling equipment',
@@ -123,6 +128,7 @@ const SYSTEMS: ProtectionSystem[] = [
     code: 'SYS-05',
     name: 'Cooling',
     tag: 'THERMAL CIRCUIT + CABIN INTEGRITY',
+    image: '/assets/coolant-hero.avif',
     assets: [
       'Industrial diesel engines — wet sleeve liner construction',
       'Commercial truck and bus cooling circuits',
@@ -191,45 +197,77 @@ function SystemPanel({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
         {/* Panel header */}
         <div style={{
           display: 'flex',
-          alignItems: 'baseline',
-          gap: '1.25rem',
+          gap: '2rem',
           marginBottom: '2rem',
           paddingBottom: '1.25rem',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
-          flexWrap: 'wrap',
+          alignItems: 'flex-start',
         }}>
-          <span style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.62rem',
-            fontWeight: 700,
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            background: 'rgba(255,241,45,0.08)',
-            border: '1px solid rgba(255,241,45,0.2)',
-            padding: '0.22rem 0.6rem',
+          {/* Left: system identity */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.65rem', flexWrap: 'wrap' }}>
+              <span style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                fontWeight: 700,
+                letterSpacing: '0.18em',
+                color: '#FFF12D',
+                background: 'rgba(255,241,45,0.08)',
+                border: '1px solid rgba(255,241,45,0.2)',
+                padding: '0.22rem 0.6rem',
+                flexShrink: 0,
+              }}>
+                {sys.code}
+              </span>
+              <span style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.52rem',
+                letterSpacing: '0.16em',
+                color: 'rgba(255,255,255,0.27)',
+              }}>
+                {sys.tag}
+              </span>
+            </div>
+            <h2 style={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              fontWeight: 800,
+              fontSize: 'clamp(1.25rem,3vw,1.85rem)',
+              color: '#fff',
+              margin: 0,
+              letterSpacing: '-0.01em',
+              lineHeight: 1.1,
+            }}>
+              {sys.name}
+            </h2>
+          </div>
+
+          {/* Right: system image */}
+          <div style={{
             flexShrink: 0,
+            width: 'clamp(160px, 22vw, 280px)',
+            height: 'clamp(100px, 14vw, 175px)',
+            overflow: 'hidden',
+            border: '1px solid rgba(255,255,255,0.08)',
+            position: 'relative',
           }}>
-            {sys.code}
-          </span>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontWeight: 800,
-            fontSize: 'clamp(1.25rem,3vw,1.85rem)',
-            color: '#fff',
-            margin: 0,
-            letterSpacing: '-0.01em',
-          }}>
-            {sys.name}
-          </h2>
-          <span style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.52rem',
-            letterSpacing: '0.16em',
-            color: 'rgba(255,255,255,0.27)',
-            marginLeft: 'auto',
-          }}>
-            {sys.tag}
-          </span>
+            <img
+              src={sys.image}
+              alt={sys.name}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                display: 'block',
+                filter: 'brightness(0.75) contrast(1.05)',
+              }}
+            />
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, transparent 60%)',
+            }} />
+          </div>
         </div>
 
         {/* 3-column data grid */}
