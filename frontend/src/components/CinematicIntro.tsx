@@ -13,8 +13,8 @@ export function CinematicIntro({ logoSrc, heroTitle, categoryTag }: Props) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Hold for 8 seconds, then begin exit
-    const timer = setTimeout(() => setVisible(false), 8000);
+    // Hold for 3.5 seconds, then begin exit
+    const timer = setTimeout(() => setVisible(false), 3500);
     return () => clearTimeout(timer);
   }, []);
 
