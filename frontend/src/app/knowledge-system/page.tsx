@@ -172,15 +172,16 @@ export default function KnowledgeSystemPage() {
             fontSize: '0.7rem', letterSpacing: '0.18em',
             color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
           }}>
-            // KNOWLEDGE SYSTEM
+            // KNOWLEDGE SYSTEM — ELIMFILTERS®
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
-            fontWeight: 700, letterSpacing: '-0.01em',
-            lineHeight: 1.15, marginBottom: '1.75rem',
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: 'clamp(1.8rem, 5vw, 3rem)',
+            fontWeight: 900, lineHeight: 1.1, marginBottom: '1.75rem',
           }}>
-            Industrial Filtration Knowledge Base
+            NO ES POSIBLE CONTROLAR
+            <br />
+            <span style={{ color: '#FFF12D' }}>AQUELLO QUE NO SE COMPRENDE.</span>
           </h1>
           {/* Direct Answer Block */}
           <p style={{
@@ -194,7 +195,7 @@ export default function KnowledgeSystemPage() {
             borderLeft: '3px solid #FFF12D',
             paddingLeft: '1.25rem',
           }}>
-            Industrial filtration is the engineered control of particulate contamination in hydraulic, fuel, air, and lubrication systems. This knowledge base documents the contamination mechanisms, engineering standards (ISO 4406, ISO 16889, SAE J1227), and operational strategies that determine whether industrial equipment runs reliably or fails prematurely.
+            La protección efectiva requiere conocimiento. Este sistema documenta los mecanismos de contaminación, los estándares de medición aplicables y las estrategias operacionales que determinan si un activo industrial opera de forma confiable o falla prematuramente.
           </p>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -285,6 +286,103 @@ export default function KnowledgeSystemPage() {
             // Information Architecture: Contamination → Asset Degradation → Standards → Technologies → Products → Fleet Optimization → Sustainability
           </p>
         </motion.div>
+      </section>
+
+      {/* Information Architecture */}
+      <section style={{
+        padding: 'clamp(3rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
+        background: '#000',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '2rem' }}
+          >
+            <span style={{
+              display: 'block', fontSize: '0.65rem', fontWeight: 700,
+              letterSpacing: '0.22em', color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem',
+            }}>
+              // JERARQUÍA DE INFORMACIÓN
+            </span>
+            <p style={{
+              fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)',
+              fontFamily: 'Outfit, sans-serif', maxWidth: '560px', lineHeight: 1.6,
+            }}>
+              El conocimiento en ELIMFILTERS® sigue un orden lógico: desde la raíz del problema
+              hasta la estrategia operacional. Cada nivel informa al siguiente.
+            </p>
+          </motion.div>
+
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0',
+            alignItems: 'center',
+          }}>
+            {[
+              { label: 'CONTAMINACIÓN', sub: 'Causa raíz' },
+              { label: 'DEGRADACIÓN', sub: 'Impacto en activos' },
+              { label: 'ESTÁNDARES', sub: 'Medición y evaluación' },
+              { label: 'TECNOLOGÍAS', sub: 'Control y protección' },
+              { label: 'PRODUCTOS', sub: 'Implementación' },
+              { label: 'OPTIMIZACIÓN', sub: 'Estrategia operacional' },
+              { label: 'SOSTENIBILIDAD', sub: 'Impacto a largo plazo' },
+            ].map((node, i, arr) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  style={{
+                    background: i === 0 ? 'rgba(255,241,45,0.12)' : 'rgba(255,255,255,0.03)',
+                    border: `1px solid ${i === 0 ? 'rgba(255,241,45,0.4)' : 'rgba(255,255,255,0.08)'}`,
+                    borderRadius: '6px',
+                    padding: '0.75rem 1rem',
+                    textAlign: 'center',
+                    minWidth: '100px',
+                  }}
+                >
+                  <div style={{
+                    fontSize: '0.65rem', fontWeight: 700,
+                    fontFamily: 'JetBrains Mono, monospace',
+                    color: i === 0 ? '#FFF12D' : 'rgba(255,255,255,0.7)',
+                    letterSpacing: '0.08em', marginBottom: '0.3rem',
+                  }}>
+                    {node.label}
+                  </div>
+                  <div style={{
+                    fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)',
+                    fontFamily: 'Outfit, sans-serif',
+                  }}>
+                    {node.sub}
+                  </div>
+                </motion.div>
+                {i < arr.length - 1 && (
+                  <div style={{
+                    width: '1.5rem', height: '1px',
+                    background: 'rgba(255,241,45,0.2)',
+                    flexShrink: 0,
+                    position: 'relative',
+                  }}>
+                    <div style={{
+                      position: 'absolute', right: '-3px', top: '-3px',
+                      width: '7px', height: '7px',
+                      borderTop: '1px solid rgba(255,241,45,0.35)',
+                      borderRight: '1px solid rgba(255,241,45,0.35)',
+                      transform: 'rotate(45deg)',
+                    }} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Knowledge Sections */}

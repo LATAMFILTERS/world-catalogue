@@ -794,7 +794,9 @@ export default function SystemsPage() {
               marginBottom: '1.5rem',
             }}
           >
-            Five Systems.<br />One Industrial Protection Architecture.
+            SEIS DOMINIOS DE CONTAMINACIÓN.
+            <br />
+            <span style={{ color: '#FFF12D' }}>SEIS SISTEMAS DE PROTECCIÓN.</span>
           </motion.h1>
 
           <motion.p
@@ -811,10 +813,10 @@ export default function SystemsPage() {
               paddingLeft: '1.25rem',
             }}
           >
-            Industrial equipment fails when contamination accumulates faster than the protection system
-            removes it. ELIMFILTERS® structures contamination control into five engineering domains —
-            each defined by its contamination target, failure mechanism, and the exclusive architecture
-            that prevents it.
+            Un activo industrial puede fallar por seis vías de contaminación independientes.
+            Cada vía tiene su propio mecanismo de degradación, sus estándares de medición
+            aplicables y su arquitectura de protección exclusiva. La selección comienza
+            por identificar el dominio — no el producto.
           </motion.p>
         </div>
       </section>
@@ -891,9 +893,10 @@ export default function SystemsPage() {
                 maxWidth: '780px',
               }}
             >
-              Asset reliability is determined by whether contamination entering each system stays below the
-              threshold that causes measurable wear. Product selection is the last step in this decision —
-              not the first. The five systems below are organized by contamination domain, not by product category.
+              La confiabilidad de un activo depende de que la contaminación que ingresa a cada sistema
+              se mantenga por debajo del umbral que genera desgaste medible. La selección del producto
+              es el último paso de esta decisión — no el primero. Los sistemas a continuación están
+              organizados por dominio de contaminación, no por categoría de producto.
             </p>
           </motion.div>
         </div>

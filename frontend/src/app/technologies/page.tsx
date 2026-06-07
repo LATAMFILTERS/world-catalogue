@@ -162,12 +162,14 @@ export default function TechnologiesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900,
+              fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1.5rem',
-              lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
+              lineHeight: 1.05, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            NINE EXCLUSIVE PROTECTION ARCHITECTURES
+            LAS TECNOLOGÍAS EXISTEN PORQUE
+            <br />
+            <span style={{ color: '#FFF12D' }}>LOS PROBLEMAS SON DIFERENTES.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -179,7 +181,7 @@ export default function TechnologiesPage() {
               maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
             }}
           >
-            Nine protection architectures organized by contamination domain — air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin — each defined by its contamination target, failure mechanism, and measurable engineering standard.
+            Nueve arquitecturas de protección organizadas por dominio de contaminación. Cada una definida por su objetivo de contaminación, su mecanismo de falla y su estándar de ingeniería aplicable.
           </motion.p>
         </div>
       </section>
@@ -197,9 +199,172 @@ export default function TechnologiesPage() {
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            ELIMFILTERS® technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS®&apos; industrial asset protection strategy.
+            Las tecnologías existen porque los problemas son diferentes. Cada tecnología desarrollada por ELIMFILTERS® tiene un propósito específico: controlar un mecanismo de contaminación definido, en un dominio operacional concreto, medible contra un estándar de ingeniería aplicable. La selección comienza por el problema — no por el producto.
           </p>
         </motion.div>
+      </section>
+
+      {/* Contamination Domains */}
+      <section style={{
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
+        background: '#000',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '2.5rem' }}
+          >
+            <span style={{
+              display: 'block', fontSize: '0.7rem', fontWeight: 700,
+              letterSpacing: '0.25em', color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
+            }}>
+              // 01 — LOS DOMINIOS DE CONTAMINACIÓN
+            </span>
+            <h2 style={{
+              fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800,
+              fontFamily: 'Space Grotesk, sans-serif', color: '#fff',
+              margin: '0 0 0.75rem',
+            }}>
+              Seis Dominios. Seis Mecanismos de Falla.
+            </h2>
+            <p style={{
+              fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)',
+              fontFamily: 'Inter, sans-serif', maxWidth: '620px', lineHeight: 1.7, margin: 0,
+            }}>
+              Un activo industrial puede fallar por seis vías de contaminación independientes.
+              Cada vía tiene su propio contaminante primario, su mecanismo de degradación
+              y su estándar de medición.
+            </p>
+          </motion.div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1rem',
+          }}>
+            {[
+              {
+                domain: 'AIR INTAKE',
+                contaminant: 'Silica dust · Salt aerosol · Organic particulate',
+                mechanism: 'Abrasive wear of engine cylinders, turbine blades, and compressor rotors',
+                standard: 'ISO 5011',
+                techs: 'MACROCORE™ · SYNTEPORE™ · INTEKCORE™',
+              },
+              {
+                domain: 'FUEL CLEANLINESS',
+                contaminant: 'Free water · Emulsified water · Particulate > 10 µm',
+                mechanism: 'Injector tip erosion and needle corrosion at 1,800–2,500 bar injection pressure',
+                standard: 'ASTM D6304 · SAE J1488',
+                techs: 'HYDROCORE™',
+              },
+              {
+                domain: 'LUBE / OIL',
+                contaminant: 'Combustion soot · Metal wear particles · Fuel dilution',
+                mechanism: 'Abrasive wear of bearing surfaces → clearance reduction → seizure',
+                standard: 'ISO 4406 · ISO 16889',
+                techs: 'SYNTRAX™',
+              },
+              {
+                domain: 'HYDRAULIC',
+                contaminant: 'Hard particles > 5 µm · Silica · Metallic oxides',
+                mechanism: 'Micro-abrasion of proportional valve spool at 5–25 µm clearance',
+                standard: 'ISO 16889 · ISO 4406',
+                techs: 'NANOFORCE™',
+              },
+              {
+                domain: 'CABIN SAFETY',
+                contaminant: 'PM2.5 · Diesel exhaust particulate · Chemical vapors',
+                mechanism: 'Sustained occupational exposure to IARC Group 1 carcinogens',
+                standard: 'ISO 11155 · EU Dir. 2019/130',
+                techs: 'MICROKAPPA™',
+              },
+              {
+                domain: 'COMPRESSED AIR',
+                contaminant: 'Moisture · Oil aerosol · Microbial contamination',
+                mechanism: 'Valve icing · actuator seal degradation · corrosion in safety circuits',
+                standard: 'ISO 8573-1',
+                techs: 'DRYCORE™',
+              },
+            ].map((d, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: '8px',
+                  padding: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                }}
+              >
+                <div style={{
+                  fontSize: '0.62rem', fontFamily: 'JetBrains Mono, monospace',
+                  color: '#FFF12D', letterSpacing: '0.18em', fontWeight: 700,
+                }}>
+                  {d.domain}
+                </div>
+                <div>
+                  <p style={{
+                    fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)',
+                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.3rem',
+                    letterSpacing: '0.05em',
+                  }}>
+                    CONTAMINANT
+                  </p>
+                  <p style={{
+                    fontSize: '0.85rem', lineHeight: 1.5,
+                    color: 'rgba(255,255,255,0.72)', fontFamily: 'Inter, sans-serif', margin: 0,
+                  }}>
+                    {d.contaminant}
+                  </p>
+                </div>
+                <div>
+                  <p style={{
+                    fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)',
+                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.3rem',
+                    letterSpacing: '0.05em',
+                  }}>
+                    FAILURE MECHANISM
+                  </p>
+                  <p style={{
+                    fontSize: '0.85rem', lineHeight: 1.5,
+                    color: 'rgba(255,255,255,0.72)', fontFamily: 'Inter, sans-serif', margin: 0,
+                  }}>
+                    {d.mechanism}
+                  </p>
+                </div>
+                <div style={{
+                  marginTop: 'auto', paddingTop: '0.75rem',
+                  borderTop: '1px solid rgba(255,255,255,0.06)',
+                  display: 'flex', flexDirection: 'column', gap: '0.35rem',
+                }}>
+                  <span style={{
+                    fontSize: '0.7rem', color: 'rgba(255,241,45,0.5)',
+                    fontFamily: 'JetBrains Mono, monospace',
+                  }}>
+                    {d.standard}
+                  </span>
+                  <span style={{
+                    fontSize: '0.75rem', color: '#FFF12D',
+                    fontFamily: 'Outfit, sans-serif', fontWeight: 600,
+                  }}>
+                    {d.techs}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Technologies Grid */}
