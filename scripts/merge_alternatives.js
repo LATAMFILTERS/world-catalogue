@@ -33,7 +33,14 @@ const POOL = process.env.DATABASE_URL
 
 // ── helpers ────────────────────────────────────────────────────────────────
 
-function keyOem(o)   { return `${(o.manufacturer||'').toUpperCase()}|${(o.code||'').toUpperCase()}`; }
+function keyOem(o) {
+  if (typeof o === 'string') return o.trim().toUpperCase();
+  const m = (o.manufacturer || o.brand  || o.make  || '').toUpperCase().trim();
+  const c = (o.code || o.part_number || o.partNumber || o.number || o.value || '').toUpperCase().trim();
+  const k = `${m}|${c}`;
+  // If both fields empty, fallback to full JSON to avoid false deduplication
+  return k === '|' ? JSON.stringify(o) : k;
+}
 function keyEquip(e) { return `${e.equipment||''}|${e.type||''}|${e.engine||''}`; }
 
 function unionArrays(arrays, keyFn) {
@@ -143,6 +150,20 @@ async function main() {
   console.log(`  ${rows.length} / ${skuList.length} SKUs encontrados en DB`);
 
   const bySku = new Map(rows.map(r => [r.sku, r]));
+
+  // Debug: show actual oem_codes format from DB
+  const debugSku = ['EL80335','EH65569','EA15034'].find(s => bySku.has(s));
+  if (debugSku) {
+    const sample = bySku.get(debugSku).oem_codes;
+    console.log(`\nDEBUG oem_codes format (${debugSku}):`);
+    if (Array.isArray(sample) && sample.length > 0) {
+      console.log('  item[0]:', JSON.stringify(sample[0]));
+      if (sample.length > 1) console.log('  item[1]:', JSON.stringify(sample[1]));
+    } else {
+      console.log('  value:', JSON.stringify(sample));
+    }
+    console.log();
+  }
 
   // 3. Process each group
   let totalUpdated = 0;
