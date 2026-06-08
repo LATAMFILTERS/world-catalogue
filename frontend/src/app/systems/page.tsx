@@ -38,14 +38,44 @@ export default function SystemsPage() {
         minHeight: '88vh',
         display: 'flex',
         alignItems: 'center',
-        background: '#000',
         overflow: 'hidden',
       }}>
-        {/* Subtle radial accent */}
+        {/* Full-bleed background — cropped to logo + SKU area */}
+        <img
+          src="/images/elemento-elim.avif"
+          alt="ELIMFILTERS® filter element"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: '78% 60%',
+            filter: 'brightness(0.55) contrast(1.1) saturate(0.75)',
+          }}
+        />
+
+        {/* Horizontal gradient: dark left for text legibility, reveal product right */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at 72% 50%, rgba(255,241,45,0.05) 0%, transparent 55%)',
+          background: 'linear-gradient(to right, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.88) 38%, rgba(0,0,0,0.52) 65%, rgba(0,0,0,0.18) 100%)',
+          pointerEvents: 'none',
+        }} />
+
+        {/* Bottom fade for smooth section transition */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.9) 100%)',
+          pointerEvents: 'none',
+        }} />
+
+        {/* Yellow accent — subtle top-left warmth */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(ellipse at 8% 20%, rgba(255,241,45,0.06) 0%, transparent 50%)',
           pointerEvents: 'none',
         }} />
 
@@ -56,16 +86,12 @@ export default function SystemsPage() {
           margin: '0 auto',
           padding: 'clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,3rem)',
           width: '100%',
-          display: 'grid',
-          gridTemplateColumns: '1fr clamp(380px,42vw,580px)',
-          gap: 'clamp(2rem,4vw,4rem)',
-          alignItems: 'center',
         }}>
-          {/* Left: text content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            style={{ maxWidth: '660px' }}
           >
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -157,41 +183,6 @@ export default function SystemsPage() {
               causes measurable wear. Product selection is the last step in this decision — not the first. The five systems
               below are organized by contamination domain, not by product category.
             </motion.p>
-          </motion.div>
-
-          {/* Right: filter image — contained rectangular panel */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            style={{
-              width: '100%',
-              aspectRatio: '16 / 10',
-              border: '1px solid rgba(255,255,255,0.1)',
-              overflow: 'hidden',
-              position: 'relative',
-              flexShrink: 0,
-              boxShadow: '0 40px 80px rgba(0,0,0,0.7), 0 12px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)',
-            }}
-          >
-            <img
-              src="/images/elemento-elim.avif"
-              alt="ELIMFILTERS® industrial filter element"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                filter: 'brightness(0.92) contrast(1.06) saturate(0.88)',
-              }}
-            />
-            <div style={{
-              position: 'absolute',
-              bottom: 0, left: 0, right: 0,
-              height: '35%',
-              background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%)',
-              pointerEvents: 'none',
-            }} />
           </motion.div>
         </div>
       </section>
