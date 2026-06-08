@@ -1543,6 +1543,174 @@ app.post('/api/migrate/merge-alternatives', async (req, res) => {
   }
 });
 
+// ── Apply competitor matrix endpoint ─────────────────────────────────────────
+app.post('/api/migrate/apply-matrix', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const fs   = require('fs');
+  const path = require('path');
+  const dryRun = req.query.dry === '1';
+  const DIR  = path.join(__dirname, 'scripts');
+
+  const FILES = [
+    { file: 'coolant_competitor_matrix.json',  prefix: 'EW' },
+    { file: 'cabin_competitor_matrix.json',    prefix: 'EC' },
+    { file: 'fuel_competitor_matrix.json',     prefix: 'EF' },
+    { file: 'airdryer_competitor_matrix.json', prefix: 'ED' },
+  ];
+
+  const client = new Client(dbConfig);
+  await client.connect();
+
+  let totalUpdated = 0;
+  const results = [];
+
+  try {
+    for (const { file, prefix } of FILES) {
+      const fpath = path.join(DIR, file);
+      if (!fs.existsSync(fpath)) { results.push({ file, error: 'not found' }); continue; }
+      const matrix = JSON.parse(fs.readFileSync(fpath, 'utf8'));
+      const pnums  = Object.keys(matrix).filter(p => matrix[p].length > 0);
+      if (!pnums.length) { results.push({ file, updated: 0 }); continue; }
+
+      const ph = pnums.map((_, i) => `$${i + 1}`).join(', ');
+      const { rows } = await client.query(
+        `SELECT sku, codigo_base FROM elimfilters_catalog
+         WHERE codigo_base IN (${ph}) AND sku LIKE $${pnums.length + 1}
+           AND (competitor_codes IS NULL OR jsonb_array_length(competitor_codes) = 0)`,
+        [...pnums, `${prefix}%`]
+      );
+
+      let updated = 0;
+      for (const { sku, codigo_base } of rows) {
+        const refs = matrix[codigo_base];
+        if (!refs || !refs.length) continue;
+        if (!dryRun) {
+          await client.query(
+            `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+            [JSON.stringify(refs), sku]
+          );
+        }
+        updated++;
+      }
+      totalUpdated += updated;
+      results.push({ file, prefix, updated });
+    }
+  } finally {
+    await client.end();
+  }
+
+  res.json({ success: true, dryRun, totalUpdated, results });
+});
+
+// ── Apply turbine competitor matrix (ET SKUs with P/T/S micronage suffix) ────
+// Creates ET92010P/T/S, ET92020P/T/S, ET92040P/T/S if not present,
+// then sets competitor_codes for each micronage variant.
+app.post('/api/migrate/apply-turbine-matrix', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const fs   = require('fs');
+  const path = require('path');
+  const dryRun = req.query.dry === '1';
+
+  const MATRIX_FILE = path.join(__dirname, 'scripts', 'turbine_competitor_matrix.json');
+  if (!fs.existsSync(MATRIX_FILE)) {
+    return res.status(404).json({ error: 'turbine_competitor_matrix.json not found' });
+  }
+  const matrix = JSON.parse(fs.readFileSync(MATRIX_FILE, 'utf8'));
+
+  // micronage suffix → description label
+  const MICRON_LABEL = { P: '30 Micron', T: '10 Micron', S: '2 Micron' };
+
+  // base SKU → P-number mapping (from donaldson_fuel_results.json)
+  const BASE_PNUM = {
+    ET92010: 'P552010',
+    ET92020: 'P552020',
+    ET92040: 'P552040',
+  };
+
+  const client = new Client(dbConfig);
+  await client.connect();
+
+  let created = 0;
+  let updated = 0;
+  const log = [];
+
+  try {
+    for (const [variantSku, refs] of Object.entries(matrix)) {
+      // e.g. ET92010P → base=ET92010, suffix=P
+      const base   = variantSku.slice(0, -1);
+      const suffix = variantSku.slice(-1);
+      const micron = MICRON_LABEL[suffix] || suffix;
+
+      // 1. Check if variant already exists
+      const existing = await client.query(
+        'SELECT sku FROM elimfilters_catalog WHERE sku = $1',
+        [variantSku]
+      );
+
+      if (existing.rows.length === 0) {
+        // 2. Clone from base SKU
+        const baseRow = await client.query(
+          'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
+          [base]
+        );
+        if (baseRow.rows.length === 0) {
+          log.push({ sku: variantSku, action: 'skipped', reason: `base ${base} not found` });
+          continue;
+        }
+        const b = baseRow.rows[0];
+
+        // Build description variants with micronage label injected
+        let descEn = b.description_en || b.description || '';
+        let descEs = b.description_es || '';
+        const micronTag = ` — ${micron} Turbine Element`;
+        if (descEn && !descEn.includes('Micron')) descEn = descEn.replace(/\.$/, '') + micronTag + '.';
+        if (descEs && !descEs.includes('Micrón')) descEs = descEs.replace(/\.$/, '') + micronTag + '.';
+
+        if (!dryRun) {
+          await client.query(
+            `INSERT INTO elimfilters_catalog
+               (sku, filter_type, sub_type, installation_type, codigo_base,
+                duty, description_en, description_es, oem_codes, competitor_codes,
+                dimensions, weight, certifications, technology, created_at)
+             SELECT
+               $1, filter_type, sub_type, installation_type, $2,
+               duty, $3, $4, oem_codes, $5::jsonb,
+               dimensions, weight, certifications, technology, NOW()
+             FROM elimfilters_catalog WHERE sku = $6
+             ON CONFLICT (sku) DO NOTHING`,
+            [
+              variantSku,
+              BASE_PNUM[base] || b.codigo_base,
+              descEn || null,
+              descEs || null,
+              JSON.stringify(refs),
+              base,
+            ]
+          );
+        }
+        created++;
+        log.push({ sku: variantSku, action: dryRun ? 'dry-create' : 'created', refs: refs.length });
+      } else {
+        // 3. Update competitor_codes on existing row
+        if (!dryRun) {
+          await client.query(
+            'UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2',
+            [JSON.stringify(refs), variantSku]
+          );
+        }
+        updated++;
+        log.push({ sku: variantSku, action: dryRun ? 'dry-update' : 'updated', refs: refs.length });
+      }
+    }
+  } finally {
+    await client.end();
+  }
+
+  res.json({ success: true, dryRun, created, updated, log });
+});
+
+// ────────────────────────────────────────────────────────────────────────────
+
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {
