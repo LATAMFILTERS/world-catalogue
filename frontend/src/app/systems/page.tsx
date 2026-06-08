@@ -35,7 +35,7 @@ export default function SystemsPage() {
       {/* ── HERO ────────────────────────────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        minHeight: '50vh',
+        minHeight: '38vh',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
