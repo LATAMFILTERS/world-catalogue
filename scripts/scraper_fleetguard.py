@@ -1705,7 +1705,7 @@ def download_images_batch(results_file: str):
 
 def _is_empty(result: dict) -> bool:
     """True si no extrajo nada (0/0/0/0) — posible carga incompleta."""
-    return (not result["attributes"] and not result["oem_codes"]
+    return (not result["attributes"] and not result["cross_references"]
             and not result["alternatives"] and not result["equipment"])
 
 
@@ -1798,8 +1798,8 @@ def _scrape_once(page, url: str, result: dict, settle: float):
 
         # ── Cross Reference (tab data-name="CrossRef") ───────────────────
         _click_tab(page, "CrossRef")
-        result["oem_codes"] = _extract_crossref_tab(page)
-        logging.info(f"    cross: {len(result['oem_codes'])}")
+        result["cross_references"] = _extract_crossref_tab(page)
+        logging.info(f"    cross: {len(result['cross_references'])}")
 
     # ── Equipment (filas de máquinas que usan este filtro) ──────────
     if SCRAPE_EQUIPMENT and not SCRAPE_KITS_ONLY:
@@ -1826,7 +1826,7 @@ def scrape_product(page, url: str) -> dict:
         "image_src": None,    # URL original en CDN de Fleetguard/Salesforce
         "image_url": None,    # URL pública propia: /images/fleetguard/[PN].jpg
         "attributes": {},
-        "oem_codes": [],
+        "cross_references": [],
         "alternatives": [],
         "equipment": [],
         "maintenance_kits": [],
@@ -2096,7 +2096,7 @@ def retry_empty():
 
     empties = [r for r in results
                if not r.get("error")
-               and not r.get("attributes") and not r.get("oem_codes")
+               and not r.get("attributes") and not r.get("cross_references")
                and not r.get("alternatives") and not r.get("equipment")]
     logging.info(f"Vacíos a reintentar: {len(empties)} / {len(results)}")
     if not empties:
@@ -2117,7 +2117,7 @@ def retry_empty():
                 if r["url"] == url:
                     results[i] = fresh
                     break
-            na, nc = len(fresh["attributes"]), len(fresh["oem_codes"])
+            na, nc = len(fresh["attributes"]), len(fresh["cross_references"])
             nl, ne = len(fresh["alternatives"]), len(fresh["equipment"])
             logging.info(f"  → {fresh['part_number']}: {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip")
             progress["results"] = results
@@ -2221,7 +2221,7 @@ def crossref_only_run():
     with open(OUTPUT_FILE, encoding="utf-8") as f:
         results = json.load(f)
 
-    targets = [r for r in results if not r.get("oem_codes") and not r.get("error")]
+    targets = [r for r in results if not r.get("cross_references") and not r.get("error")]
     logging.info(f"Productos sin cross-reference: {len(targets)} / {len(results)}")
     if not targets:
         logging.info("Todos los productos ya tienen cross-reference. Nada que hacer.")
@@ -2250,7 +2250,7 @@ def crossref_only_run():
                     time.sleep(3)
                     _click_tab(page, "CrossRef")
                     oem_codes = _extract_crossref_tab(page)
-                prod["oem_codes"] = oem_codes
+                prod["cross_references"] = oem_codes
 
                 logging.info(f"  → {prod['part_number']}: {len(oem_codes)} cross-refs")
             except Exception as e:
@@ -2380,6 +2380,64 @@ if __name__ == "__main__":
         results_f = os.path.join(OUTPUT_DIR, f"fleetguard_{name}_results.json")
         logging.info(f"Descarga retroactiva de imágenes: {name}")
         download_images_batch(results_f); sys.exit(0)
+
+    if argv[0] == "--batch":
+        # python scraper_fleetguard.py --batch air-primary-secondary lube-cartridge fuel-spin-on
+        # Corre categorías en secuencia, reanudando desde progreso existente.
+        names = [a.lower() for a in argv[1:] if not a.startswith("--")]
+        if not names:
+            print("ERROR: --batch necesita al menos una categoría")
+            print(f"Disponibles: {list(CATEGORIES.keys())}")
+            sys.exit(1)
+        for bname in names:
+            burl = CATEGORIES.get(bname, "")
+            if not burl:
+                logging.warning(f"BATCH: '{bname}' no conocida — saltando")
+                continue
+            configure(bname, burl)
+            logging.info(f"\n{'='*65}")
+            logging.info(f"BATCH [{names.index(bname)+1}/{len(names)}]: {bname}")
+            logging.info(f"{'='*65}")
+            main()
+        logging.info(f"\nBATCH COMPLETO — {len(names)} categorías procesadas")
+        sys.exit(0)
+
+    if argv[0] == "--fix-crossrefs":
+        # python scraper_fleetguard.py --fix-crossrefs air-precleaners
+        # Post-procesa un _results.json existente: elimina cross_references
+        # que sean spec labels (Applicable Region, etc.) y guarda el JSON limpio.
+        name = argv[1].lower() if len(argv) > 1 else ""
+        if not name:
+            print("ERROR: --fix-crossrefs necesita la categoría (ej. air-precleaners)")
+            sys.exit(1)
+        configure(name, CATEGORIES.get(name, ""))
+        out_f = os.path.join(OUTPUT_DIR, f"fleetguard_{name}_results.json")
+        if not os.path.exists(out_f):
+            print(f"ERROR: {out_f} no existe"); sys.exit(1)
+        with open(out_f, encoding="utf-8") as f:
+            results = json.load(f)
+        SPEC_LABELS_SET = {
+            'LARGEST OD','HEIGHT','FULL LIFE EFFICIENCY','LARGEST ID',
+            'RATED FLOW','APPLICABLE REGION','MEDIA TYPE','LENGTH',
+            'THREAD SIZE','WIDTH','WEIGHT','EFFICIENCY','MICRON','GASKET',
+            'OD','ID','EFFICIENCY TEST STD','TEST STANDARD',
+            'EFFICIENCY TEST STANDARD','OUTLET DIAMETER','OVERALL WIDTH',
+        }
+        fixed = 0
+        for prod in results:
+            raw = prod.get("cross_references", [])
+            cleaned = [
+                r for r in raw
+                if r.get("brand","").upper().strip() not in SPEC_LABELS_SET
+                and r.get("part_number","").upper().strip() not in SPEC_LABELS_SET
+            ]
+            if len(cleaned) != len(raw):
+                prod["cross_references"] = cleaned
+                fixed += 1
+        with open(out_f, "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        logging.info(f"✅ --fix-crossrefs: {fixed} productos corregidos en {out_f}")
+        sys.exit(0)
 
     # Parsear flags en cualquier posición
     start_from = ""

@@ -17,12 +17,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -45,24 +40,7 @@
       "Height": "43.39 inch / 1102.15 mm",
       "Applicable Region": "North America, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "16.60 INCH / 421.64 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "6.00 INCH / 152.40 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "43.39 INCH / 1102.15 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8405",
       "3953535S",
@@ -134,12 +112,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South America, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH AMERICA, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -162,24 +135,7 @@
       "Height": "41.30 inch / 1049.06 mm",
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "16.60 INCH / 421.64 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "7.00 INCH / 177.80 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "41.30 INCH / 1049.06 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8405",
       "3952353S",
@@ -252,24 +208,7 @@
       "Height": "7.98 inch / 202.70 mm",
       "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "10.63 INCH / 270.00 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "5.04 INCH / 128.10 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "7.98 INCH / 202.70 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, CHINA, EUROPE, SOUTH AMERICA, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -307,12 +246,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -368,12 +302,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -949,24 +878,7 @@
       "Largest OD": "9.00 inch / 228.60 mm",
       "Applicable Region": "North America, Europe, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Height",
-        "part_number": "31.54 INCH / 801.23 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "6.00 INCH / 152.40 MM"
-      },
-      {
-        "brand": "Largest OD",
-        "part_number": "9.00 INCH / 228.60 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8404",
       "3953525S",
@@ -1034,12 +946,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -1572,20 +1479,7 @@
       "Length": "6.18 inch / 157.00 mm",
       "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Height",
-        "part_number": "6.69 INCH / 170.00 MM"
-      },
-      {
-        "brand": "Length",
-        "part_number": "6.18 INCH / 157.00 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, CHINA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -1628,12 +1522,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -1717,12 +1606,7 @@
     "attributes": {
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8410",
       "AP8404"
@@ -1778,24 +1662,7 @@
       "Largest OD": "12.50 inch / 317.50 mm",
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Height",
-        "part_number": "30.83 INCH / 783.16 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "6.00 INCH / 152.40 MM"
-      },
-      {
-        "brand": "Largest OD",
-        "part_number": "12.50 INCH / 317.50 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8404",
       "3953526S",
@@ -1866,24 +1733,7 @@
       "Height": "32.95 inch / 836.90 mm",
       "Applicable Region": "North America, Europe, South America, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "12.50 INCH / 317.50 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "6.00 INCH / 152.40 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "32.95 INCH / 836.90 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH AMERICA, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8410",
       "3946090S",
@@ -2897,24 +2747,7 @@
       "Height": "38.06 inch / 966.79 mm",
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "16.60 INCH / 421.64 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "11.00 INCH / 279.40 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "38.06 INCH / 966.79 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8405",
       "3952350S",
@@ -3140,20 +2973,7 @@
       "Height": "11.10 inch / 282.00 mm",
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "11.33 INCH / 287.90 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "11.10 INCH / 282.00 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [],
     "equipment": [
       {
@@ -3188,24 +3008,7 @@
       "Largest OD": "16.60 inch / 421.64 mm",
       "Applicable Region": "North America, Europe, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Height",
-        "part_number": "39.74 INCH / 1009.34 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "7.00 INCH / 177.80 MM"
-      },
-      {
-        "brand": "Largest OD",
-        "part_number": "16.60 INCH / 421.64 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8405",
       "3952350S",
@@ -3276,24 +3079,7 @@
       "Height": "34.68 inch / 880.97 mm",
       "Applicable Region": "North America, Europe, South East Asia"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "12.50 INCH / 317.50 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "6.00 INCH / 152.40 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "34.68 INCH / 880.97 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, EUROPE, SOUTH EAST ASIA"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "AP8404",
       "3953530S",
@@ -3578,24 +3364,7 @@
       "Height": "14.60 inch / 370.90 mm",
       "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
     },
-    "cross_references": [
-      {
-        "brand": "Largest OD",
-        "part_number": "16.29 INCH / 413.70 MM"
-      },
-      {
-        "brand": "Outlet Diameter",
-        "part_number": "8.05 INCH / 204.50 MM"
-      },
-      {
-        "brand": "Height",
-        "part_number": "14.60 INCH / 370.90 MM"
-      },
-      {
-        "brand": "Applicable Region",
-        "part_number": "NORTH AMERICA, CHINA, EUROPE, SOUTH AMERICA, SOUTH EAST ASIA, SOUTH PACIFIC"
-      }
-    ],
+    "cross_references": [],
     "alternatives": [
       "3905075S",
       "3904842S",
