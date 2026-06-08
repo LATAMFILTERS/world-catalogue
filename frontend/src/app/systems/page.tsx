@@ -1150,7 +1150,7 @@ export default function SystemsPage() {
               minHeight: 'clamp(220px,24vw,360px)',
               borderLeft: '1px solid rgba(255,255,255,0.05)',
             }}>
-              <img src="/images/Thermacore.avif" alt="Cooling System Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
+              <img src="/images/thermocore-mesa.png" alt="Cooling System Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
