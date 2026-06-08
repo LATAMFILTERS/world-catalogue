@@ -862,81 +862,97 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {/* System header */}
+        {/* System header — 2×2 grid */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr clamp(400px,44vw,580px)', gap: 0, alignItems: 'stretch' }}>
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.25rem' }}>
+          <div style={{
+            maxWidth: '1280px', margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr clamp(400px,44vw,580px)',
+            gridTemplateRows: 'auto 1fr',
+            gap: 0,
+          }}>
+            {/* [1,1] SYS number + H2 title — anchored to bottom of top row */}
+            <div style={{
+              gridColumn: '1', gridRow: '1',
+              padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+            }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>04</span>
               </div>
-              <div>
-                <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
-                  Hydraulic Contamination Control
-                </h2>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
-                  PROPORTIONAL VALVE AND ACTUATOR INTEGRITY
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: 0 }}>
+                Hydraulic Contamination Control
+              </h2>
+            </div>
+
+            {/* [1,2] Contamination targets */}
+            <div style={{
+              gridColumn: '2', gridRow: '1',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 1.25rem',
+              }}>
+                CONTAMINATION TARGETS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                {[
+                  'Silica particulate at Mohs hardness 7 — permanent micro-abrasion on valve spool surfaces above 5 µm',
+                  'Metal wear particles from pump and actuator contact — create secondary contamination cycles in closed-loop circuits',
+                  'Water ingress through cylinder seals and reservoir condensation — valve corrosion and fluid viscosity degradation',
+                  'Aeration and cavitation in high-flow circuits — generates micro-particulate and accelerates pump wear',
+                ].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span style={{ width: '2px', minWidth: '2px', alignSelf: 'stretch', background: '#FFF12D', display: 'inline-block', flexShrink: 0 }} />
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* [2,1] Subtitle + intro paragraph — starts at same height as image */}
+            <div style={{
+              gridColumn: '1', gridRow: '2',
+              padding: '0 clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-start', gap: '1rem',
+            }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
+                PROPORTIONAL VALVE AND ACTUATOR INTEGRITY
+              </p>
+              <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
+                <p style={{
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                }}>
+                  Hydraulic systems in mobile equipment, manufacturing machinery, and marine deck systems operate at
+                  200–450 bar. Proportional valve spool clearances measure 5–25 µm — where ISO 4406 cleanliness targets
+                  of 16/14/11 or tighter are required to prevent spool stiction, position drift, and pump wear. Silica
+                  particles entering hydraulic circuits from construction and mining environments have Mohs hardness 7,
+                  harder than valve alloy surfaces — each particle contact above 5 µm creates permanent micro-abrasion on
+                  spool faces. At ISO 19/17/14 contamination levels, proportional valve failure rates increase three to
+                  five times. Standard return-line protection captures contamination above 25 µm. Sub-micron hydraulic
+                  protection captures particles at 1–10 µm that bypass standard systems and drive the progressive valve
+                  wear behind 40–60% of unplanned hydraulic maintenance costs.
                 </p>
               </div>
             </div>
-            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(260px,28vw,380px)' }}>
+
+            {/* [2,2] Image — starts at same row as subtitle */}
+            <div style={{
+              gridColumn: '2', gridRow: '2',
+              position: 'relative' as const, overflow: 'hidden',
+              minHeight: 'clamp(220px,24vw,360px)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
               <img src="/images/nanoforce.avif" alt="Hydraulic Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
-
-          <div style={{
-            borderLeft: '2px solid rgba(255,241,45,0.45)',
-            paddingLeft: '1.25rem',
-            marginBottom: '2.5rem',
-            maxWidth: '820px',
-          }}>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: '0.97rem', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)', margin: 0,
-            }}>
-              Hydraulic systems in mobile equipment, manufacturing machinery, and marine deck systems operate at
-              200–450 bar. Proportional valve spool clearances measure 5–25 µm — where ISO 4406 cleanliness targets
-              of 16/14/11 or tighter are required to prevent spool stiction, position drift, and pump wear. Silica
-              particles entering hydraulic circuits from construction and mining environments have Mohs hardness 7,
-              harder than valve alloy surfaces — each particle contact above 5 µm creates permanent micro-abrasion on
-              spool faces. At ISO 19/17/14 contamination levels, proportional valve failure rates increase three to
-              five times. Standard return-line protection captures contamination above 25 µm. Sub-micron hydraulic
-              protection captures particles at 1–10 µm that bypass standard systems and drive the progressive valve
-              wear behind 40–60% of unplanned hydraulic maintenance costs.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '1rem',
-            }}>
-              CONTAMINATION TARGETS
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', maxWidth: '780px' }}>
-              {[
-                'Silica particulate at Mohs hardness 7 — permanent micro-abrasion on valve spool surfaces above 5 µm',
-                'Metal wear particles from pump and actuator contact — create secondary contamination cycles in closed-loop circuits',
-                'Water ingress through cylinder seals and reservoir condensation — valve corrosion and fluid viscosity degradation',
-                'Aeration and cavitation in high-flow circuits — generates micro-particulate and accelerates pump wear',
-              ].map((item) => (
-                <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    width: '3px', minWidth: '3px', alignSelf: 'stretch',
-                    background: '#FFF12D', marginTop: '0.3rem',
-                    display: 'inline-block', flexShrink: 0, borderRadius: '2px',
-                  }} />
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.68)', margin: 0,
-                  }}>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)' }}>
 
           <div style={{ marginBottom: '2.5rem' }}>
             <p style={{
@@ -1048,82 +1064,98 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {/* System header */}
+        {/* System header — 2×2 grid */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr clamp(400px,44vw,580px)', gap: 0, alignItems: 'stretch' }}>
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.25rem' }}>
+          <div style={{
+            maxWidth: '1280px', margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr clamp(400px,44vw,580px)',
+            gridTemplateRows: 'auto 1fr',
+            gap: 0,
+          }}>
+            {/* [1,1] SYS number + H2 title — anchored to bottom of top row */}
+            <div style={{
+              gridColumn: '1', gridRow: '1',
+              padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+            }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>05</span>
               </div>
-              <div>
-                <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
-                  Cooling System &amp; Environmental Protection
-                </h2>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
-                  THERMAL CIRCUIT AND CABIN INTEGRITY
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: 0 }}>
+                Cooling System &amp; Environmental Protection
+              </h2>
+            </div>
+
+            {/* [1,2] Contamination targets */}
+            <div style={{
+              gridColumn: '2', gridRow: '1',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 1.25rem',
+              }}>
+                CONTAMINATION TARGETS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                {[
+                  'DCA depletion below SCA concentration threshold — initiates cavitation erosion on wet sleeve liner surfaces',
+                  'Corrosion products (aluminum oxide, iron deposits) in cooling passages — reduce heat transfer efficiency',
+                  'Silicate scale on heat exchanger surfaces — reduces radiator thermal efficiency 10–30% over service life',
+                  'PM2.5 at 30–80 µg/m³ at street level (road dust, diesel exhaust, brake wear particulate)',
+                  'Traffic-generated VOC and NOx accumulation in close-following highway and high-density urban conditions',
+                ].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span style={{ width: '2px', minWidth: '2px', alignSelf: 'stretch', background: '#FFF12D', display: 'inline-block', flexShrink: 0 }} />
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* [2,1] Subtitle + intro paragraph — starts at same height as image */}
+            <div style={{
+              gridColumn: '1', gridRow: '2',
+              padding: '0 clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-start', gap: '1rem',
+            }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
+                THERMAL CIRCUIT AND CABIN INTEGRITY
+              </p>
+              <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
+                <p style={{
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                }}>
+                  Engine cooling circuits in industrial diesel engines depend on coolant additive concentration to prevent
+                  liner cavitation erosion and passage corrosion. Supplemental coolant additives (SCAs) and DCA inhibitors
+                  deplete through thermal cycling, electrolytic action, and combustion contamination. When DCA concentration
+                  falls below specification, cavitation erosion initiates on wet sleeve liner surfaces within 500–1,000 hours
+                  — a failure mode undetectable until compression testing. Operator cabin environments in commercial vehicles
+                  and construction equipment expose occupants to PM2.5 concentrations of 30–80 µg/m³ at road level, above
+                  WHO 24-hour exposure guidelines. Professional drivers completing 9–11 hour daily schedules accumulate
+                  sustained occupational exposure to diesel exhaust particulate classified as Group 1 carcinogen by IARC —
+                  regulated under EU Directive 2019/130 and OSHA occupational health standards.
                 </p>
               </div>
             </div>
-            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(260px,28vw,380px)' }}>
+
+            {/* [2,2] Image — starts at same row as subtitle */}
+            <div style={{
+              gridColumn: '2', gridRow: '2',
+              position: 'relative' as const, overflow: 'hidden',
+              minHeight: 'clamp(220px,24vw,360px)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
               <img src="/images/COOLANT-FILTER.avif" alt="Cooling System Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
-
-          <div style={{
-            borderLeft: '2px solid rgba(255,241,45,0.45)',
-            paddingLeft: '1.25rem',
-            marginBottom: '2.5rem',
-            maxWidth: '820px',
-          }}>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: '0.97rem', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)', margin: 0,
-            }}>
-              Engine cooling circuits in industrial diesel engines depend on coolant additive concentration to prevent
-              liner cavitation erosion and passage corrosion. Supplemental coolant additives (SCAs) and DCA inhibitors
-              deplete through thermal cycling, electrolytic action, and combustion contamination. When DCA concentration
-              falls below specification, cavitation erosion initiates on wet sleeve liner surfaces within 500–1,000 hours
-              — a failure mode undetectable until compression testing. Operator cabin environments in commercial vehicles
-              and construction equipment expose occupants to PM2.5 concentrations of 30–80 µg/m³ at road level, above
-              WHO 24-hour exposure guidelines. Professional drivers completing 9–11 hour daily schedules accumulate
-              sustained occupational exposure to diesel exhaust particulate classified as Group 1 carcinogen by IARC —
-              regulated under EU Directive 2019/130 and OSHA occupational health standards.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '1rem',
-            }}>
-              CONTAMINATION TARGETS
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', maxWidth: '780px' }}>
-              {[
-                'DCA depletion below SCA concentration threshold — initiates cavitation erosion on wet sleeve liner surfaces',
-                'Corrosion products (aluminum oxide, iron deposits) in cooling passages — reduce heat transfer efficiency',
-                'Silicate scale on heat exchanger surfaces — reduces radiator thermal efficiency 10–30% over service life',
-                'PM2.5 at 30–80 µg/m³ at street level (road dust, diesel exhaust, brake wear particulate)',
-                'Traffic-generated VOC and NOx accumulation in close-following highway and high-density urban conditions',
-              ].map((item) => (
-                <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    width: '3px', minWidth: '3px', alignSelf: 'stretch',
-                    background: '#FFF12D', marginTop: '0.3rem',
-                    display: 'inline-block', flexShrink: 0, borderRadius: '2px',
-                  }} />
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.68)', margin: 0,
-                  }}>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)' }}>
 
           <div style={{ marginBottom: '2.5rem' }}>
             <p style={{
@@ -1242,81 +1274,6 @@ export default function SystemsPage() {
             </div>
           </div>
 
-        </div>
-      </motion.section>
-
-      {/* ── PROTECTION COVERAGE BY INDUSTRY ─────────────────────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.55 }}
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-      >
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)' }}>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-            letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '0.75rem',
-          }}>
-            PROTECTION COVERAGE BY INDUSTRY
-          </p>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800,
-            fontSize: 'clamp(1.4rem,2.5vw,2rem)', letterSpacing: '-0.025em',
-            color: '#fff', margin: '0 0 2.5rem',
-          }}>
-            Cross-system coverage for each industrial vertical
-          </h2>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '0.75rem',
-          }}>
-            {[
-              { industry: 'Agriculture', systems: ['SYS 01', 'SYS 02', 'SYS 03'] },
-              { industry: 'Automotive', systems: ['SYS 01', 'SYS 02', 'SYS 03', 'SYS 05'] },
-              { industry: 'Bus & Coach', systems: ['SYS 01', 'SYS 03', 'SYS 05'] },
-              { industry: 'Construction', systems: ['SYS 01', 'SYS 02', 'SYS 04', 'SYS 05'] },
-              { industry: 'Manufacturing', systems: ['SYS 01', 'SYS 03', 'SYS 04'] },
-              { industry: 'Marine', systems: ['SYS 02', 'SYS 03', 'SYS 04'] },
-              { industry: 'Mining', systems: ['SYS 01', 'SYS 02', 'SYS 04'] },
-              { industry: 'Oil & Gas', systems: ['SYS 01', 'SYS 02', 'SYS 03'] },
-              { industry: 'Power Generation', systems: ['SYS 01', 'SYS 02', 'SYS 05'] },
-              { industry: 'Railway', systems: ['SYS 01', 'SYS 02', 'SYS 03'] },
-              { industry: 'Trucks & Fleets', systems: ['SYS 01', 'SYS 02', 'SYS 03', 'SYS 05'] },
-              { industry: 'Waste & Municipal', systems: ['SYS 01', 'SYS 02', 'SYS 03', 'SYS 05'] },
-            ].map((row) => (
-              <Link key={row.industry} href={`/industries/${slugifyIndustry(row.industry)}`} style={{ textDecoration: 'none' }}>
-                <motion.div
-                  whileHover={{ borderColor: 'rgba(255,241,45,0.3)', background: 'rgba(255,255,255,0.02)' }}
-                  style={{
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    padding: '1.25rem',
-                    transition: 'border-color 0.2s, background 0.2s',
-                  }}
-                >
-                  <p style={{
-                    fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600,
-                    fontSize: '0.88rem', color: '#fff', margin: '0 0 0.75rem',
-                    letterSpacing: '-0.01em',
-                  }}>{row.industry}</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
-                    {row.systems.map((s) => (
-                      <span key={s} style={{
-                        fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
-                        letterSpacing: '0.08em', fontWeight: 700,
-                        color: '#FFF12D',
-                        background: 'rgba(255,241,45,0.1)',
-                        border: '1px solid rgba(255,241,45,0.22)',
-                        padding: '0.15rem 0.45rem',
-                      }}>{s}</span>
-                    ))}
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
         </div>
       </motion.section>
 
