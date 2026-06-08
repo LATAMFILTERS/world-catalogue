@@ -22,7 +22,7 @@ const path  = require('path');
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 const DB_CONFIG = process.env.DATABASE_URL
-  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }
+  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false, checkServerIdentity: () => undefined } }
   : {
       host: 'ballast.proxy.rlwy.net', port: 18263,
       database: 'railway', user: 'postgres',
