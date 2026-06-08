@@ -208,17 +208,17 @@ export default function SystemsPage() {
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
-            padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,3rem)',
+            padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            gap: 'clamp(1.5rem,3vw,2.5rem)',
-            alignItems: 'center',
+            gridTemplateColumns: 'auto 1fr clamp(340px,36vw,500px)',
+            gap: 0,
+            alignItems: 'stretch',
           }}>
-            <div style={{ textAlign: 'center' as const }}>
+            <div style={{ textAlign: 'center' as const, padding: 'clamp(2rem,4vw,3rem) clamp(1.2rem,2.5vw,1.8rem)', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 0.1rem' }}>SYS</p>
               <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem,4vw,4rem)', lineHeight: 1, color: '#FFF12D', margin: 0, letterSpacing: '-0.04em' }}>01</p>
             </div>
-            <div>
+            <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
                 Air Intake &amp; Airflow Protection
               </h2>
@@ -226,8 +226,8 @@ export default function SystemsPage() {
                 COMBUSTION &amp; PNEUMATIC SYSTEM INTEGRITY
               </p>
             </div>
-            <div style={{ width: 'clamp(160px,18vw,240px)', height: 'clamp(108px,12vw,162px)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)' }}>
-              <img src="/images/air-filterld.avif" alt="Air Intake Filter" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.88) contrast(1.06) saturate(0.85)' }} />
+            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(220px,24vw,320px)' }}>
+              <img src="/images/air-filterld.avif" alt="Air Intake Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
@@ -425,17 +425,17 @@ export default function SystemsPage() {
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
-            padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,3rem)',
+            padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            gap: 'clamp(1.5rem,3vw,2.5rem)',
-            alignItems: 'center',
+            gridTemplateColumns: 'auto 1fr clamp(340px,36vw,500px)',
+            gap: 0,
+            alignItems: 'stretch',
           }}>
-            <div style={{ textAlign: 'center' as const }}>
+            <div style={{ textAlign: 'center' as const, padding: 'clamp(2rem,4vw,3rem) clamp(1.2rem,2.5vw,1.8rem)', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 0.1rem' }}>SYS</p>
               <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem,4vw,4rem)', lineHeight: 1, color: '#FFF12D', margin: 0, letterSpacing: '-0.04em' }}>02</p>
             </div>
-            <div>
+            <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
                 Fuel Cleanliness Protection
               </h2>
@@ -443,8 +443,8 @@ export default function SystemsPage() {
                 INJECTION SYSTEM INTEGRITY
               </p>
             </div>
-            <div style={{ width: 'clamp(160px,18vw,240px)', height: 'clamp(108px,12vw,162px)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)' }}>
-              <img src="/images/fuel-filters.avif" alt="Fuel Cleanliness Filter" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.88) contrast(1.06) saturate(0.85)' }} />
+            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(220px,24vw,320px)' }}>
+              <img src="/images/fuel-filters.avif" alt="Fuel Cleanliness Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
@@ -644,17 +644,17 @@ export default function SystemsPage() {
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
-            padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,3rem)',
+            padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            gap: 'clamp(1.5rem,3vw,2.5rem)',
-            alignItems: 'center',
+            gridTemplateColumns: 'auto 1fr clamp(340px,36vw,500px)',
+            gap: 0,
+            alignItems: 'stretch',
           }}>
-            <div style={{ textAlign: 'center' as const }}>
+            <div style={{ textAlign: 'center' as const, padding: 'clamp(2rem,4vw,3rem) clamp(1.2rem,2.5vw,1.8rem)', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 0.1rem' }}>SYS</p>
               <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem,4vw,4rem)', lineHeight: 1, color: '#FFF12D', margin: 0, letterSpacing: '-0.04em' }}>03</p>
             </div>
-            <div>
+            <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
                 Lubrication Reliability Protection
               </h2>
@@ -662,8 +662,8 @@ export default function SystemsPage() {
                 BEARING AND DRIVETRAIN INTEGRITY
               </p>
             </div>
-            <div style={{ width: 'clamp(160px,18vw,240px)', height: 'clamp(108px,12vw,162px)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)' }}>
-              <img src="/images/elementos-oil.avif" alt="Lubrication Filter" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.88) contrast(1.06) saturate(0.85)' }} />
+            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(220px,24vw,320px)' }}>
+              <img src="/images/elementos-oil.avif" alt="Lubrication Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
@@ -835,17 +835,17 @@ export default function SystemsPage() {
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
-            padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,3rem)',
+            padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            gap: 'clamp(1.5rem,3vw,2.5rem)',
-            alignItems: 'center',
+            gridTemplateColumns: 'auto 1fr clamp(340px,36vw,500px)',
+            gap: 0,
+            alignItems: 'stretch',
           }}>
-            <div style={{ textAlign: 'center' as const }}>
+            <div style={{ textAlign: 'center' as const, padding: 'clamp(2rem,4vw,3rem) clamp(1.2rem,2.5vw,1.8rem)', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 0.1rem' }}>SYS</p>
               <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem,4vw,4rem)', lineHeight: 1, color: '#FFF12D', margin: 0, letterSpacing: '-0.04em' }}>04</p>
             </div>
-            <div>
+            <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
                 Hydraulic Contamination Control
               </h2>
@@ -853,8 +853,8 @@ export default function SystemsPage() {
                 PROPORTIONAL VALVE AND ACTUATOR INTEGRITY
               </p>
             </div>
-            <div style={{ width: 'clamp(160px,18vw,240px)', height: 'clamp(108px,12vw,162px)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)' }}>
-              <img src="/images/nanoforce.avif" alt="Hydraulic Filter" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.88) contrast(1.06) saturate(0.85)' }} />
+            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(220px,24vw,320px)' }}>
+              <img src="/images/nanoforce.avif" alt="Hydraulic Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
@@ -1026,17 +1026,17 @@ export default function SystemsPage() {
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
-            padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,3rem)',
+            padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'auto 1fr auto',
-            gap: 'clamp(1.5rem,3vw,2.5rem)',
-            alignItems: 'center',
+            gridTemplateColumns: 'auto 1fr clamp(340px,36vw,500px)',
+            gap: 0,
+            alignItems: 'stretch',
           }}>
-            <div style={{ textAlign: 'center' as const }}>
+            <div style={{ textAlign: 'center' as const, padding: 'clamp(2rem,4vw,3rem) clamp(1.2rem,2.5vw,1.8rem)', borderRight: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 0.1rem' }}>SYS</p>
               <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem,4vw,4rem)', lineHeight: 1, color: '#FFF12D', margin: 0, letterSpacing: '-0.04em' }}>05</p>
             </div>
-            <div>
+            <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' }}>
               <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
                 Cooling System &amp; Environmental Protection
               </h2>
@@ -1044,8 +1044,8 @@ export default function SystemsPage() {
                 THERMAL CIRCUIT AND CABIN INTEGRITY
               </p>
             </div>
-            <div style={{ width: 'clamp(160px,18vw,240px)', height: 'clamp(108px,12vw,162px)', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)' }}>
-              <img src="/images/COOLANT-FILTER.avif" alt="Cooling System Filter" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.88) contrast(1.06) saturate(0.85)' }} />
+            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(220px,24vw,320px)' }}>
+              <img src="/images/COOLANT-FILTER.avif" alt="Cooling System Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
