@@ -2445,8 +2445,10 @@ app.post('/api/migrate/apply-matrix', async (req, res) => {
   const DIR  = path.join(__dirname, 'scripts');
 
   const FILES = [
-    { file: 'coolant_competitor_matrix.json', prefix: 'EW' },
-    { file: 'cabin_competitor_matrix.json',   prefix: 'EC' },
+    { file: 'coolant_competitor_matrix.json',  prefix: 'EW' },
+    { file: 'cabin_competitor_matrix.json',    prefix: 'EC' },
+    { file: 'fuel_competitor_matrix.json',     prefix: 'EF' },
+    { file: 'airdryer_competitor_matrix.json', prefix: 'ED' },
   ];
 
   const client = new Client(dbConfig);
