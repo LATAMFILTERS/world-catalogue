@@ -327,6 +327,12 @@ export default function SystemsPage() {
                   desc: 'Molecular sieve desiccant system achieving ISO 8573-1 Class 1–2 dew point targets for pneumatic braking, suspension, and process control circuits. Prevents valve icing, actuator corrosion, and seal degradation.',
                   href: '/systems/dryer',
                 },
+                {
+                  tech: 'MICROKAPPA™',
+                  name: 'Cabin Environmental Protection',
+                  desc: 'Multi-stage particulate capture combined with activated carbon adsorption for operator cabin protection. Reduces cabin PM2.5 by up to 85% versus standard OEM cabin elements. Supports professional driver health compliance under OSHA and EU Directive 2019/130.',
+                  href: '/systems/cabin',
+                },
               ].map((pf) => (
                 <motion.div
                   key={pf.href}
@@ -550,12 +556,6 @@ export default function SystemsPage() {
                   tech: 'AQUAGUARD™',
                   name: 'Water-Fuel Separation Module',
                   desc: 'Coalescing water separation for high water ingress rate applications including field-fueled construction equipment and marine fuel storage transfer.',
-                  href: '/systems/water',
-                },
-                {
-                  tech: 'AQUAGUARD™',
-                  name: 'Marine Fuel Protection',
-                  desc: 'Corrosion-resistant alloy construction for permanent salt, brine, and humidity exposure. Continuous fuel cleanliness for commercial vessels and offshore support systems.',
                   href: '/systems/water',
                 },
               ].map((pf, i) => (
@@ -1176,12 +1176,6 @@ export default function SystemsPage() {
                   name: 'Cooling Circuit Protection',
                   desc: 'DCA-replenishing cooling protection that continuously restores supplemental coolant additives throughout the service interval, preventing liner cavitation erosion and corrosion scaling.',
                   href: '/systems/coolant',
-                },
-                {
-                  tech: 'MICROKAPPA™',
-                  name: 'Cabin Environmental Protection',
-                  desc: 'Multi-stage particulate capture combined with activated carbon adsorption for operator cabin protection. Reduces cabin PM2.5 by up to 85% versus standard OEM cabin elements. Supports professional driver health compliance under OSHA and EU Directive 2019/130.',
-                  href: '/systems/cabin',
                 },
               ].map((pf) => (
                 <motion.div
