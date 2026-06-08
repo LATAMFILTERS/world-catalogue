@@ -293,7 +293,7 @@ export default function SystemsPage() {
           </div>
         </div>
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)' }}>
 
           {/* Product Families */}
           <div style={{ marginBottom: '2.5rem' }}>
