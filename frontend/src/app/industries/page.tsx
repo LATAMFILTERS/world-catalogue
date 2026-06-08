@@ -8,16 +8,16 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 const INDUSTRY_IMAGES: Record<string, string> = {
   'Agriculture':        '/images/agriculture-2_converted.avif',
   'Automotive':         '/images/autos-02.avif',
-  'Bus & Coach':        '/images/bus-hero.avif',
+  'Bus Coach':          '/images/bus-hero.avif',
   'Construction':       '/images/construccion.avif',
   'Manufacturing':      '/images/manufacture.avif',
   'Marine':             '/images/marine.avif',
   'Mining':             '/images/mineria.avif',
-  'Oil & Gas':          '/images/oil&gas.avif',
+  'Oil Gas':            '/images/oil&gas.avif',
   'Power Generation':   '/images/power-generator.avif',
   'Railway':            '/images/trenes.avif',
-  'Trucks & Fleets':    '/images/trucks-1.avif',
-  'Waste & Municipal':  '/images/wasted.avif',
+  'Trucks Fleets':      '/images/trucks-1.avif',
+  'Waste Municipal':    '/images/wasted.avif',
 };
 
 const cardVariants = {
