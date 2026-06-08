@@ -35,7 +35,7 @@ export default function SystemsPage() {
       {/* ── HERO ────────────────────────────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        minHeight: '88vh',
+        minHeight: '50vh',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
@@ -84,7 +84,7 @@ export default function SystemsPage() {
           zIndex: 1,
           maxWidth: '1280px',
           margin: '0 auto',
-          padding: 'clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,3rem)',
+          padding: 'clamp(2.5rem,5vh,4rem) clamp(1.5rem,5vw,3rem)',
           width: '100%',
         }}>
           {/* Label + heading + intro — constrained left column */}
