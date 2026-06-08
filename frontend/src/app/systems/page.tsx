@@ -87,11 +87,12 @@ export default function SystemsPage() {
           padding: 'clamp(4rem,8vh,7rem) clamp(1.5rem,5vw,3rem)',
           width: '100%',
         }}>
+          {/* Label + heading + intro — constrained left column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            style={{ maxWidth: '660px' }}
+            style={{ maxWidth: '660px', marginBottom: '3rem' }}
           >
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -120,70 +121,72 @@ export default function SystemsPage() {
               fontSize: 'clamp(1rem,1.5vw,1.22rem)',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.72)',
-              margin: '0 0 3rem',
+              margin: 0,
             }}>
               Industrial equipment fails when contamination accumulates faster than the protection system removes it.
               ELIMFILTERS® structures contamination control into five engineering domains — each defined by its contamination
               target, failure mechanism, and the exclusive architecture that prevents it.
             </p>
-
-            {/* Contamination Control Hierarchy */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: '0.4rem 0',
-                marginBottom: '1.5rem',
-              }}
-            >
-              {[
-                'Contamination Source',
-                'Entry Pathway',
-                'Protection System',
-                'Proprietary Architecture',
-                'Asset Preserved',
-              ].map((step, i, arr) => (
-                <span key={step} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.68rem',
-                    letterSpacing: '0.1em',
-                    color: i === arr.length - 1 ? '#FFF12D' : 'rgba(255,255,255,0.6)',
-                    background: i === arr.length - 1 ? 'rgba(255,241,45,0.12)' : 'rgba(255,255,255,0.06)',
-                    border: `1px solid ${i === arr.length - 1 ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.1)'}`,
-                    padding: '0.3rem 0.7rem',
-                    whiteSpace: 'nowrap' as const,
-                  }}>
-                    {step}
-                  </span>
-                  {i < arr.length - 1 && (
-                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.85rem', padding: '0 0.1rem' }}>→</span>
-                  )}
-                </span>
-              ))}
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: 'clamp(1rem,1.4vw,1.18rem)',
-                lineHeight: 1.7,
-                color: 'rgba(255,255,255,0.55)',
-                margin: 0,
-              }}
-            >
-              Asset reliability is determined by whether contamination entering each system stays below the threshold that
-              causes measurable wear. Product selection is the last step in this decision — not the first. The five systems
-              below are organized by contamination domain, not by product category.
-            </motion.p>
           </motion.div>
+
+          {/* Contamination Control Hierarchy — full container width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: '0.4rem 0',
+              marginBottom: '1.5rem',
+            }}
+          >
+            {[
+              'Contamination Source',
+              'Entry Pathway',
+              'Protection System',
+              'Proprietary Architecture',
+              'Asset Preserved',
+            ].map((step, i, arr) => (
+              <span key={step} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.72rem',
+                  letterSpacing: '0.1em',
+                  color: i === arr.length - 1 ? '#FFF12D' : 'rgba(255,255,255,0.6)',
+                  background: i === arr.length - 1 ? 'rgba(255,241,45,0.12)' : 'rgba(255,255,255,0.06)',
+                  border: `1px solid ${i === arr.length - 1 ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.1)'}`,
+                  padding: '0.35rem 0.9rem',
+                  whiteSpace: 'nowrap' as const,
+                }}>
+                  {step}
+                </span>
+                {i < arr.length - 1 && (
+                  <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.95rem', padding: '0 0.15rem' }}>→</span>
+                )}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* Last paragraph — full container width */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontSize: 'clamp(1rem,1.4vw,1.18rem)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.55)',
+              margin: 0,
+              maxWidth: '900px',
+            }}
+          >
+            Asset reliability is determined by whether contamination entering each system stays below the threshold that
+            causes measurable wear. Product selection is the last step in this decision — not the first. The five systems
+            below are organized by contamination domain, not by product category.
+          </motion.p>
         </div>
       </section>
 
