@@ -2449,6 +2449,23 @@ def _usage():
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
+
+    # Pre-pass: extraer flags modificadores ANTES de los checks de modo,
+    # para que --headless --batch ... funcione igual que --batch --headless ...
+    _pre = []
+    for _a in argv:
+        if _a == "--headless":
+            globals()["HEADLESS"] = True
+        elif _a == "--no-equipment":
+            globals()["SCRAPE_EQUIPMENT"] = False
+        elif _a == "--no-images":
+            globals()["SCRAPE_IMAGES"] = False
+        elif _a == "--kits-only":
+            globals()["SCRAPE_KITS_ONLY"] = True
+        else:
+            _pre.append(_a)
+    argv = _pre
+
     if not argv or argv[0] in ("-h", "--help"):
         _usage(); sys.exit(0)
 
