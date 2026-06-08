@@ -2436,6 +2436,63 @@ app.post('/api/migrate/merge-alternatives', async (req, res) => {
   }
 });
 
+// ── Apply competitor matrix endpoint ─────────────────────────────────────────
+app.post('/api/migrate/apply-matrix', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const fs   = require('fs');
+  const path = require('path');
+  const dryRun = req.query.dry === '1';
+  const DIR  = path.join(__dirname, 'scripts');
+
+  const FILES = [
+    { file: 'coolant_competitor_matrix.json', prefix: 'EW' },
+    { file: 'cabin_competitor_matrix.json',   prefix: 'EC' },
+  ];
+
+  const client = new Client(dbConfig);
+  await client.connect();
+
+  let totalUpdated = 0;
+  const results = [];
+
+  try {
+    for (const { file, prefix } of FILES) {
+      const fpath = path.join(DIR, file);
+      if (!fs.existsSync(fpath)) { results.push({ file, error: 'not found' }); continue; }
+      const matrix = JSON.parse(fs.readFileSync(fpath, 'utf8'));
+      const pnums  = Object.keys(matrix).filter(p => matrix[p].length > 0);
+      if (!pnums.length) { results.push({ file, updated: 0 }); continue; }
+
+      const ph = pnums.map((_, i) => `$${i + 1}`).join(', ');
+      const { rows } = await client.query(
+        `SELECT sku, codigo_base FROM elimfilters_catalog
+         WHERE codigo_base IN (${ph}) AND sku LIKE $${pnums.length + 1}
+           AND (competitor_codes IS NULL OR jsonb_array_length(competitor_codes) = 0)`,
+        [...pnums, `${prefix}%`]
+      );
+
+      let updated = 0;
+      for (const { sku, codigo_base } of rows) {
+        const refs = matrix[codigo_base];
+        if (!refs || !refs.length) continue;
+        if (!dryRun) {
+          await client.query(
+            `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+            [JSON.stringify(refs), sku]
+          );
+        }
+        updated++;
+      }
+      totalUpdated += updated;
+      results.push({ file, prefix, updated });
+    }
+  } finally {
+    await client.end();
+  }
+
+  res.json({ success: true, dryRun, totalUpdated, results });
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;
