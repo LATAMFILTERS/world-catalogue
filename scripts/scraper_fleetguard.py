@@ -79,6 +79,7 @@ SCRAPE_EQUIPMENT = True
 # alternativas y equipment. Modo más rápido para catálogo de kits por máquina.
 # Se activa con --kits-only.
 SCRAPE_KITS_ONLY = False
+HEADLESS = False   # True con --headless (unattended / sin ventana)
 
 PAUSE_BETWEEN = (4, 9)
 
@@ -207,7 +208,7 @@ def launch_context(pw):
     return pw.chromium.launch_persistent_context(
         user_data_dir=PROFILE_DIR,
         channel="chrome",
-        headless=False,
+        headless=HEADLESS,
         slow_mo=40,
         locale="en-US",
         viewport={"width": 1366, "height": 768},
@@ -2458,6 +2459,8 @@ if __name__ == "__main__":
             SCRAPE_EQUIPMENT = False; i += 1; continue
         if argv[i] == "--no-images":
             globals()["SCRAPE_IMAGES"] = False; i += 1; continue
+        if argv[i] == "--headless":
+            globals()["HEADLESS"] = True; i += 1; continue
         if argv[i] == "--kits-only":
             # Solo extrae part_number + maintenance_kits. Omite specs/cross/equipment.
             # Modo más rápido: útil cuando solo se necesita la lista de filtros por kit.
