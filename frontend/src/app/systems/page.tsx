@@ -92,7 +92,7 @@ export default function SystemsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            style={{ maxWidth: '660px', marginBottom: '3rem' }}
+            style={{ maxWidth: '660px', marginBottom: '1.75rem' }}
           >
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -111,23 +111,29 @@ export default function SystemsPage() {
               letterSpacing: '-0.03em',
               lineHeight: 1.05,
               color: '#fff',
-              margin: '0 0 1.75rem',
+              margin: 0,
             }}>
               Five Systems. One Industrial Protection Architecture.
             </h1>
+          </motion.div>
 
-            <p style={{
+          {/* First paragraph — full container width */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            style={{
               fontFamily: 'Outfit, sans-serif',
               fontSize: 'clamp(1rem,1.5vw,1.22rem)',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.72)',
-              margin: 0,
-            }}>
-              Industrial equipment fails when contamination accumulates faster than the protection system removes it.
-              ELIMFILTERS® structures contamination control into five engineering domains — each defined by its contamination
-              target, failure mechanism, and the exclusive architecture that prevents it.
-            </p>
-          </motion.div>
+              margin: '0 0 2.5rem',
+            }}
+          >
+            Industrial equipment fails when contamination accumulates faster than the protection system removes it.
+            ELIMFILTERS® structures contamination control into five engineering domains — each defined by its contamination
+            target, failure mechanism, and the exclusive architecture that prevents it.
+          </motion.p>
 
           {/* Contamination Control Hierarchy — full container width */}
           <motion.div
