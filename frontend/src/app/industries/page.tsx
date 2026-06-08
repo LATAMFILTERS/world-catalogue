@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 
 const INDUSTRY_IMAGES: Record<string, string> = {
-  'Agriculture':        '/images/agriculture.avif',
+  'Agriculture':        '/images/agriculture-2_converted.avif',
   'Automotive':         '/images/autos-02.avif',
   'Bus & Coach':        '/images/bus-hero.avif',
   'Construction':       '/images/construccion.avif',
