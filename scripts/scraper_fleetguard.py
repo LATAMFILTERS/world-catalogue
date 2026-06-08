@@ -1265,37 +1265,95 @@ def _extract_specs(page) -> dict:
 
 def _extract_related_parts(page) -> list:
     """
-    Extrae 'Related Parts' (Uses Precleaner / Uses Service Part).
-    Estructura confirmada: sección con h3/h4 como label y .product-name como part numbers.
+    Extrae 'Partes relacionadas' / 'Related Parts' con etiqueta de relación.
+    Retorna: [{"label": "For Upgrade, Use", "parts": ["LF3671", "LF9620"]}, ...]
+    Si no hay etiqueta, usa label="related".
     """
     return page.evaluate(f"""() => {{
         {_SHADOW_WALK_ALL}
-        const parts = [];
-        const seen  = new Set();
+        const groups  = [];
+        const seenPn  = new Set();
 
-        function push(pn) {{
-            pn = (pn || '').trim().toUpperCase().replace(/^0+/, '');
-            if (pn && pn.length >= 3 && !seen.has(pn)) {{
-                seen.add(pn); parts.push(pn);
+        function normPn(t) {{
+            return (t || '').trim().toUpperCase().replace(/^0+/, '');
+        }}
+        function looksLikePn(t) {{
+            // Ej: LF3671, AF25551, FS1903 — prefijo letra + dígitos
+            return /^[A-Z]{{1,4}}[0-9]{{3,}}/.test(t) && t.length <= 14;
+        }}
+        function shadowParent(n) {{
+            if (n.parentElement) return n.parentElement;
+            const r = n.parentNode;
+            return (r && r.nodeType === 11 && r.host) ? r.host : null;
+        }}
+
+        const allEls = [];
+        swa(document, '*', 0, allEls);
+
+        // ── Estrategia 1: localizar el encabezado "Related Parts" / "Partes relacionadas"
+        //    y subir al contenedor que agrupa las relaciones + part numbers
+        const relHeader = allEls.find(el => {{
+            const own = Array.from(el.childNodes)
+                .filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join(' ').trim();
+            return /^(related parts|partes relacionadas)$/i.test(own);
+        }});
+
+        if (relHeader) {{
+            let container = shadowParent(relHeader);
+            for (let d = 0; d < 6 && container; d++) {{
+                const allInner = [];
+                swa(container, '*', 0, allInner);
+                const leaves = [];
+                allInner.forEach(el => {{
+                    if (el.children.length === 0 && !el.shadowRoot) {{
+                        const t = el.textContent.trim();
+                        if (t) leaves.push(t);
+                    }}
+                }});
+
+                // Descartar el encabezado del contenedor mismo
+                const relIdx = leaves.findIndex(t => /^(related parts|partes relacionadas)$/i.test(t));
+                const items  = relIdx >= 0 ? leaves.slice(relIdx + 1) : leaves;
+                if (items.length === 0) {{ container = shadowParent(container); continue; }}
+
+                // Recorrer: texto que parece PN → parte; otro texto → nueva etiqueta
+                let currentLabel = null;
+                let currentParts = [];
+                items.forEach(t => {{
+                    const pn = normPn(t);
+                    if (looksLikePn(pn)) {{
+                        if (!seenPn.has(pn)) {{ seenPn.add(pn); currentParts.push(pn); }}
+                    }} else {{
+                        // Nueva etiqueta de relación
+                        if (currentLabel !== null && currentParts.length > 0)
+                            groups.push({{ label: currentLabel, parts: currentParts }});
+                        currentLabel = t.replace(/,\s*$/, '').replace(/\s*:$/, '').trim();
+                        currentParts = [];
+                    }}
+                }});
+                if (currentLabel !== null && currentParts.length > 0)
+                    groups.push({{ label: currentLabel, parts: currentParts }});
+                else if (groups.length === 0 && currentParts.length > 0)
+                    groups.push({{ label: 'related', parts: currentParts }});
+
+                if (groups.length > 0) break;
+                container = shadowParent(container);
             }}
         }}
 
-        // Buscar el contenedor de related parts y extraer .product-name dentro
-        const containers = [];
-        swa(document, '[class*="related"], [class*="Related"]', 0, containers);
-        containers.forEach(c => {{
-            c.querySelectorAll('.product-name, [class*="part-number"], a').forEach(el => push(el.textContent));
-        }});
-
-        // Fallback: buscar todos .product-name que NO sean el producto principal
-        if (parts.length === 0) {{
-            const all = [];
-            swa(document, '.product-name', 0, all);
-            // El primero suele ser el producto principal, saltarlo
-            all.slice(1).forEach(el => push(el.textContent));
+        // ── Fallback: .product-name globales (salta el PN principal)
+        if (groups.length === 0) {{
+            const pnEls = [];
+            swa(document, '.product-name', 0, pnEls);
+            const parts = [];
+            pnEls.slice(1).forEach(el => {{
+                const pn = normPn(el.textContent);
+                if (looksLikePn(pn) && !seenPn.has(pn)) {{ seenPn.add(pn); parts.push(pn); }}
+            }});
+            if (parts.length > 0) groups.push({{ label: 'related', parts }});
         }}
 
-        return parts;
+        return groups;
     }}""")
 
 
@@ -1447,10 +1505,21 @@ def _extract_crossref_tab(page) -> list:
         const seen = new Set();
         const tableRows = [];
         swa(document, 'table tr', 0, tableRows);
-        const SPEC_LABELS = ['LARGEST OD','HEIGHT','FULL LIFE EFFICIENCY','LARGEST ID',
+        const SPEC_LABELS = [
+            // English
+            'LARGEST OD','HEIGHT','FULL LIFE EFFICIENCY','LARGEST ID',
             'RATED FLOW','APPLICABLE REGION','MEDIA TYPE','LENGTH','THREAD SIZE','WIDTH',
             'WEIGHT','EFFICIENCY','MICRON','GASKET','OD','ID',
-            'EFFICIENCY TEST STD','TEST STANDARD','EFFICIENCY TEST STANDARD'];
+            'EFFICIENCY TEST STD','TEST STANDARD','EFFICIENCY TEST STANDARD',
+            'BYPASS VALVE','PRESSURE VALVE','MIN BURST PRESSURE','NOMINAL FLOW',
+            'TEST FREQUENCY','HYDROSTATIC BURST',
+            // Spanish
+            'TAMAÑO DE ROSCA','DIÁMETRO EXTERIOR DE LA JUNTA','DIÁMETRO INTERIOR DE LA JUNTA',
+            'MAYOR DIÁMETRO EXTERIOR','LONGITUD','FLUJO NOMINAL','TIPO DE MEDIO',
+            'VÁLVULA DE PRESIÓN','RUPTURA HIDROSTÁTICA MÍNIMA','EFICIENCIA DE PARTÍCULAS PRIMARIAS',
+            'REGIÓN APLICABLE','ESPECIFICACIÓN DE PRUEBA','A FRECUENCIA',
+            'PESO','ALTURA','DIÁMETRO','LONGITUD TOTAL',
+        ];
         tableRows.forEach(tr => {{
             const cells = Array.from(tr.querySelectorAll('td, th'));
             if (cells.length < 2 || cells.length > 2) return;   // cross-ref es exactamente 2 col
@@ -1706,8 +1775,14 @@ def download_images_batch(results_file: str):
 
 def _is_empty(result: dict) -> bool:
     """True si no extrajo nada (0/0/0/0) — posible carga incompleta."""
+    alts = result["alternatives"]
+    # alternatives puede ser [{label, parts}, ...] o [] — contar partes totales
+    has_alts = bool(alts) and (
+        isinstance(alts[0], str) or                          # formato legacy
+        any(g.get("parts") for g in alts if isinstance(g, dict))
+    ) if alts else False
     return (not result["attributes"] and not result["cross_references"]
-            and not result["alternatives"] and not result["equipment"])
+            and not has_alts and not result["equipment"])
 
 
 DISCONTINUED_SIGNALS = [
