@@ -1779,14 +1779,13 @@ def _scrape_once(page, url: str, result: dict, settle: float):
             if len(seg) >= 3 and seg.replace("-", "").isalnum():
                 result["part_number"] = seg.upper(); break
 
-    # ── Imagen del producto ──────────────────────────────────────────────
-    if SCRAPE_IMAGES and not result.get("image_src"):
-        src = _extract_image_url(page)
-        if src:
-            result["image_src"] = src   # URL fuente — no se descarga
-            result["image_url"] = src   # mismo valor; descarga diferida si se necesita
-        else:
-            logging.info("    img: no encontrada")
+    # ── Imagen del producto ─────────────────────────────────────────────
+    # URL generada por convención: /images/fleetguard/[PN].jpg
+    # No se hace scraping ni descarga — la imagen se sirve desde CDN propio.
+    pn_img = (result.get("part_number") or "").upper().replace("/", "-")
+    if pn_img and not result.get("image_url"):
+        result["image_src"] = None
+        result["image_url"] = f"{PUBLIC_IMG_BASE}/{pn_img}.jpg"
 
     if not SCRAPE_KITS_ONLY:
         # ── Specs (visibles por defecto, sin tab) ────────────────────────
