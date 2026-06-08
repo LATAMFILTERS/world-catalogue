@@ -21,14 +21,25 @@ const fs    = require('fs');
 const path  = require('path');
 
 // ─── Config ──────────────────────────────────────────────────────────────────
-const DB_CONFIG = process.env.DATABASE_URL
-  ? { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false, checkServerIdentity: () => undefined } }
-  : {
-      host: 'ballast.proxy.rlwy.net', port: 18263,
-      database: 'railway', user: 'postgres',
-      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-      ssl: { rejectUnauthorized: false },
+const DB_CONFIG = (() => {
+  if (process.env.DATABASE_URL) {
+    const u = new URL(process.env.DATABASE_URL.replace('?sslmode=require','').replace('?sslmode=verify-full',''));
+    return {
+      host:     u.hostname,
+      port:     parseInt(u.port) || 5432,
+      database: u.pathname.slice(1),
+      user:     decodeURIComponent(u.username),
+      password: decodeURIComponent(u.password),
+      ssl:      { rejectUnauthorized: false },
     };
+  }
+  return {
+    host: 'ballast.proxy.rlwy.net', port: 18263,
+    database: 'railway', user: 'postgres',
+    password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+    ssl: { rejectUnauthorized: false },
+  };
+})();
 
 const DELAY_MS     = 2500;   // polite crawl delay
 const PROGRESS_FILE = path.join(__dirname, 'recover_progress.json');
@@ -129,11 +140,14 @@ async function run() {
   console.log('Connected to DB ✓\n');
 
   // ── 1. Find affected products ─────────────────────────────────────────────
+  // EA=air, EH=hydraulic — not indexed on oilfilter-crossreference.com, skip them
   let query = `
     SELECT sku, codigo_base
     FROM elimfilters_catalog
     WHERE codigo_base IS NOT NULL
       AND codigo_base ~ '^P[0-9]'
+      AND sku NOT LIKE 'EA%'
+      AND sku NOT LIKE 'EH%'
       AND (competitor_codes IS NULL OR jsonb_array_length(competitor_codes) = 0)
     ORDER BY sku
   `;
