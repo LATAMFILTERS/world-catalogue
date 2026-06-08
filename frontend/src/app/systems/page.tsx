@@ -449,7 +449,7 @@ export default function SystemsPage() {
             <div style={{
               gridColumn: '1', gridRow: '1',
               padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
-              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '0.9rem',
             }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
@@ -673,7 +673,7 @@ export default function SystemsPage() {
             <div style={{
               gridColumn: '1', gridRow: '1',
               padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
-              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '0.9rem',
             }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
@@ -1077,7 +1077,7 @@ export default function SystemsPage() {
             <div style={{
               gridColumn: '1', gridRow: '1',
               padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
-              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '0.9rem',
             }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
