@@ -182,11 +182,10 @@ export default function SystemsPage() {
             transition={{ duration: 0.7, delay: 0.5 }}
             style={{
               fontFamily: 'Outfit, sans-serif',
-              fontSize: 'clamp(1rem,1.4vw,1.18rem)',
+              fontSize: 'clamp(0.82rem,1.1vw,0.95rem)',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.55)',
+              color: 'rgba(255,255,255,0.5)',
               margin: 0,
-              maxWidth: '900px',
             }}
           >
             Asset reliability is determined by whether contamination entering each system stays below the threshold that
