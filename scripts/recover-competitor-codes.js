@@ -148,6 +148,8 @@ async function run() {
       AND codigo_base ~ '^P[0-9]'
       AND sku NOT LIKE 'EA%'
       AND sku NOT LIKE 'EH%'
+      AND sku NOT LIKE 'EC%'
+      AND sku NOT LIKE 'ECB%'
       AND (competitor_codes IS NULL OR jsonb_array_length(competitor_codes) = 0)
     ORDER BY sku
   `;
