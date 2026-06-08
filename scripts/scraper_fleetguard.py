@@ -1710,6 +1710,50 @@ def _is_empty(result: dict) -> bool:
             and not result["alternatives"] and not result["equipment"])
 
 
+DISCONTINUED_SIGNALS = [
+    "discontinued", "obsolete", "no longer available", "superseded",
+    "product not found", "page not found", "this product is no longer",
+    "has been replaced", "end of life", "fuera de producción",
+]
+
+def _check_discontinued(page) -> bool:
+    """
+    True si la página indica que el producto está discontinuado/obsoleto.
+    Recorre todo el Shadow DOM buscando señales de texto conocidas.
+    También detecta páginas vacías (sin part number h2.product-name) tras
+    espera completa — esto cubre el caso Fleetguard donde los productos
+    descontinuados muestran un shell totalmente vacío.
+    """
+    text_lower = page.evaluate(f"""() => {{
+        {_SHADOW_WALK_ALL}
+        const parts = [];
+        const els = [];
+        swa(document, '*', 0, els);
+        els.forEach(el => {{
+            if (el.children.length === 0 && !el.shadowRoot) {{
+                const t = (el.textContent || '').trim();
+                if (t) parts.push(t);
+            }}
+        }});
+        return parts.join(' ').toLowerCase().slice(0, 5000);
+    }}""") or ""
+
+    for signal in DISCONTINUED_SIGNALS:
+        if signal in text_lower:
+            return True
+
+    # Shell vacío: no hay h2.product-name con contenido (tras espera completa)
+    has_pn = page.evaluate(f"""() => {{
+        {_SHADOW_WALK}
+        const el = sw(document, 'h2.product-name', 0) || sw(document, '.product-name', 0);
+        return !!(el && (el.textContent || '').trim());
+    }}""")
+    if not has_pn:
+        return True
+
+    return False
+
+
 def _scrape_once(page, url: str, result: dict, settle: float):
     """Una pasada de extracción. settle = espera extra (s) tras cargar la página."""
     page.goto(url, timeout=60000, wait_until="domcontentloaded")
@@ -1837,14 +1881,23 @@ def scrape_product(page, url: str) -> dict:
     try:
         _scrape_once(page, url, result, settle=3)
 
-        # Reintento si 0/0/0/0: muchas páginas (AP8404, AP8400...) cargan
-        # lento y la extracción corrió antes de tiempo. Recargar con más espera.
+        # Reintento si 0/0/0/0: muchas páginas cargan lento y la extracción
+        # corrió antes de tiempo. Recargar con más espera SOLO si la página
+        # tiene contenido (no es un shell vacío/discontinuado).
         if _is_empty(result):
+            if _check_discontinued(page):
+                result["error"] = "discontinued"
+                logging.info("    ⏭  DISCONTINUADO — saltando")
+                return result
             logging.info("    ⟳ 0/0/0/0 — reintentando con espera larga")
             time.sleep(2)
             _scrape_once(page, url, result, settle=7)
             if _is_empty(result):
-                logging.info("    (vacío confirmado tras reintento)")
+                if _check_discontinued(page):
+                    result["error"] = "discontinued"
+                    logging.info("    ⏭  DISCONTINUADO confirmado tras reintento")
+                else:
+                    logging.info("    (vacío — posible producto sin datos públicos)")
 
     except PlaywrightTimeout:
         result["error"] = "timeout"
@@ -2059,14 +2112,20 @@ def main(start_from: str = "", recollect: bool = False):
             data = scrape_product(page, url)
 
             na = len(data["attributes"])
-            nc = len(data["oem_codes"])
+            nc = len(data.get("cross_references", []))
             nl = len(data["alternatives"])
             ne = len(data["equipment"])
             nk = len(data.get("maintenance_kits", []))
-            st = "✅" if not data["error"] else "❌"
+            if data.get("error") == "discontinued":
+                st = "⏭"
+            elif data["error"]:
+                st = "❌"
+            else:
+                st = "✅"
             logging.info(f"  {st} {data['part_number']} → {na} Attr | {nc} Cross | {nl} Alt | {ne} Equip | {nk} Kits")
 
-            results.append(data)
+            if data.get("error") != "discontinued":
+                results.append(data)
             done_set.add(url)
             progress["done"]    = list(done_set)
             progress["results"] = results
