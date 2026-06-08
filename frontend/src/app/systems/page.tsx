@@ -213,7 +213,8 @@ export default function SystemsPage() {
             gap: 0,
             alignItems: 'stretch',
           }}>
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.25rem' }}>
+            {/* Left: identifier + title + intro paragraph */}
+            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>01</span>
@@ -226,66 +227,63 @@ export default function SystemsPage() {
                   COMBUSTION &amp; PNEUMATIC SYSTEM INTEGRITY
                 </p>
               </div>
+              <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
+                <p style={{
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                }}>
+                  Air intake contamination is the primary cause of abrasive wear in combustion engines, gas turbines, and
+                  industrial compressors. Silica dust at active mining and construction sites reaches 3,000–10,000 mg/m³ —
+                  ten to thirty times the ISO 5011 test threshold of 300 mg/m³. Agricultural harvest operations generate
+                  organic particulate at 1,500 mg/m³ or more. Offshore gas turbine installations draw salt-laden air at
+                  1–10 mg/m³ NaCl, causing compressor blade corrosion and efficiency losses of 2–5% per 1,000 operating hours.
+                  Compressed air circuits serving pneumatic braking, suspension, and process control require moisture removal
+                  to ISO 8573-1 Class 1–2 dew point targets. Moisture above −20°C dew point at pressure causes valve icing,
+                  actuator seal degradation, and corrosion in safety-critical pneumatic circuits.
+                </p>
+              </div>
             </div>
-            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(260px,28vw,380px)' }}>
-              <img src="/images/mecanica-air.avif" alt="Air Intake System" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
+
+            {/* Right: contamination targets (top) + image (bottom) */}
+            <div style={{ display: 'flex', flexDirection: 'column' as const, borderLeft: '1px solid rgba(255,255,255,0.05)' }}>
+              {/* Contamination targets block */}
+              <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', flex: '0 0 auto' }}>
+                <p style={{
+                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                  letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', marginBottom: '1.25rem', margin: '0 0 1.25rem',
+                }}>
+                  CONTAMINATION TARGETS
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                  {[
+                    'Silica dust at 3,000–10,000 mg/m³ in mining and earthwork environments — 10 to 30× ISO 5011 test threshold',
+                    'Agricultural organic particulate at 1,500 mg/m³ during grain, corn, and cotton harvest operations',
+                    'Salt aerosol at 1–10 mg/m³ NaCl at offshore and coastal gas turbine installations',
+                    'Moisture and humidity accumulation in compressed air circuits for pneumatic braking and process control',
+                  ].map((item) => (
+                    <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                      <span style={{
+                        width: '2px', minWidth: '2px', alignSelf: 'stretch',
+                        background: '#FFF12D', marginTop: '0.25rem',
+                        display: 'inline-block', flexShrink: 0,
+                      }} />
+                      <p style={{
+                        fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65,
+                        color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                      }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Image below */}
+              <div style={{ position: 'relative' as const, overflow: 'hidden', flex: '1 1 clamp(200px,22vw,320px)', minHeight: 'clamp(200px,22vw,320px)' }}>
+                <img src="/images/mecanica-air.avif" alt="Air Intake System" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
+              </div>
             </div>
           </div>
         </div>
 
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
-
-          {/* Intro */}
-          <div style={{
-            borderLeft: '2px solid rgba(255,241,45,0.45)',
-            paddingLeft: '1.25rem',
-            marginBottom: '2.5rem',
-            maxWidth: '820px',
-          }}>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: '0.97rem', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)', margin: 0,
-            }}>
-              Air intake contamination is the primary cause of abrasive wear in combustion engines, gas turbines, and
-              industrial compressors. Silica dust at active mining and construction sites reaches 3,000–10,000 mg/m³ —
-              ten to thirty times the ISO 5011 test threshold of 300 mg/m³. Agricultural harvest operations generate
-              organic particulate at 1,500 mg/m³ or more. Offshore gas turbine installations draw salt-laden air at
-              1–10 mg/m³ NaCl, causing compressor blade corrosion and efficiency losses of 2–5% per 1,000 operating hours.
-              Compressed air circuits serving pneumatic braking, suspension, and process control require moisture removal
-              to ISO 8573-1 Class 1–2 dew point targets. Moisture above −20°C dew point at pressure causes valve icing,
-              actuator seal degradation, and corrosion in safety-critical pneumatic circuits.
-            </p>
-          </div>
-
-          {/* Contamination Targets */}
-          <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '1rem',
-            }}>
-              CONTAMINATION TARGETS
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', maxWidth: '780px' }}>
-              {[
-                'Silica dust at 3,000–10,000 mg/m³ in mining and earthwork environments — 10 to 30× ISO 5011 test threshold',
-                'Agricultural organic particulate at 1,500 mg/m³ during grain, corn, and cotton harvest operations',
-                'Salt aerosol at 1–10 mg/m³ NaCl at offshore and coastal gas turbine installations',
-                'Moisture and humidity accumulation in compressed air circuits for pneumatic braking and process control',
-              ].map((item) => (
-                <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    width: '3px', minWidth: '3px', alignSelf: 'stretch',
-                    background: '#FFF12D', marginTop: '0.3rem',
-                    display: 'inline-block', flexShrink: 0, borderRadius: '2px',
-                  }} />
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.68)', margin: 0,
-                  }}>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Product Families */}
           <div style={{ marginBottom: '2.5rem' }}>
