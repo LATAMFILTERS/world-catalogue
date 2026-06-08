@@ -204,29 +204,66 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {/* System header */}
+        {/* System header — 2×2 grid: top row = SYS+title | contamination targets; bottom row = subtitle+intro | image */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             maxWidth: '1280px', margin: '0 auto',
             display: 'grid',
             gridTemplateColumns: '1fr clamp(400px,44vw,580px)',
+            gridTemplateRows: 'auto 1fr',
             gap: 0,
-            alignItems: 'stretch',
           }}>
-            {/* Left: identifier + title + intro paragraph */}
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.5rem' }}>
+            {/* [1,1] SYS number + H2 title — anchored to bottom of top row */}
+            <div style={{
+              gridColumn: '1', gridRow: '1',
+              padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+            }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>01</span>
               </div>
-              <div>
-                <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
-                  Air Intake &amp; Airflow Protection
-                </h2>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
-                  COMBUSTION &amp; PNEUMATIC SYSTEM INTEGRITY
-                </p>
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: 0 }}>
+                Air Intake &amp; Airflow Protection
+              </h2>
+            </div>
+
+            {/* [1,2] Contamination targets */}
+            <div style={{
+              gridColumn: '2', gridRow: '1',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 1.25rem',
+              }}>
+                CONTAMINATION TARGETS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                {[
+                  'Silica dust at 3,000–10,000 mg/m³ in mining and earthwork environments — 10 to 30× ISO 5011 test threshold',
+                  'Agricultural organic particulate at 1,500 mg/m³ during grain, corn, and cotton harvest operations',
+                  'Salt aerosol at 1–10 mg/m³ NaCl at offshore and coastal gas turbine installations',
+                  'Moisture and humidity accumulation in compressed air circuits for pneumatic braking and process control',
+                ].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span style={{ width: '2px', minWidth: '2px', alignSelf: 'stretch', background: '#FFF12D', display: 'inline-block', flexShrink: 0 }} />
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const }}>{item}</p>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* [2,1] Subtitle + intro paragraph — starts at same height as image */}
+            <div style={{
+              gridColumn: '1', gridRow: '2',
+              padding: '0 clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-start', gap: '1rem',
+            }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
+                COMBUSTION &amp; PNEUMATIC SYSTEM INTEGRITY
+              </p>
               <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
                 <p style={{
                   fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
@@ -244,41 +281,14 @@ export default function SystemsPage() {
               </div>
             </div>
 
-            {/* Right: contamination targets (top) + image (bottom) */}
-            <div style={{ display: 'flex', flexDirection: 'column' as const, borderLeft: '1px solid rgba(255,255,255,0.05)' }}>
-              {/* Contamination targets block */}
-              <div style={{ padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)', flex: '0 0 auto' }}>
-                <p style={{
-                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
-                  letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', marginBottom: '1.25rem', margin: '0 0 1.25rem',
-                }}>
-                  CONTAMINATION TARGETS
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
-                  {[
-                    'Silica dust at 3,000–10,000 mg/m³ in mining and earthwork environments — 10 to 30× ISO 5011 test threshold',
-                    'Agricultural organic particulate at 1,500 mg/m³ during grain, corn, and cotton harvest operations',
-                    'Salt aerosol at 1–10 mg/m³ NaCl at offshore and coastal gas turbine installations',
-                    'Moisture and humidity accumulation in compressed air circuits for pneumatic braking and process control',
-                  ].map((item) => (
-                    <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                      <span style={{
-                        width: '2px', minWidth: '2px', alignSelf: 'stretch',
-                        background: '#FFF12D', marginTop: '0.25rem',
-                        display: 'inline-block', flexShrink: 0,
-                      }} />
-                      <p style={{
-                        fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65,
-                        color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
-                      }}>{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Image below */}
-              <div style={{ position: 'relative' as const, overflow: 'hidden', flex: '1 1 clamp(200px,22vw,320px)', minHeight: 'clamp(200px,22vw,320px)' }}>
-                <img src="/images/mecanica-air.avif" alt="Air Intake System" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
-              </div>
+            {/* [2,2] Image — starts at same row as subtitle */}
+            <div style={{
+              gridColumn: '2', gridRow: '2',
+              position: 'relative' as const, overflow: 'hidden',
+              minHeight: 'clamp(220px,24vw,360px)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <img src="/images/mecanica-air.avif" alt="Air Intake System" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
