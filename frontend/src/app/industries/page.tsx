@@ -82,7 +82,7 @@ function IndustryCard({
               backgroundImage: `url(${img})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              opacity: hovered ? 0.18 : 0.08,
+              opacity: hovered ? 0.38 : 0.22,
               transition: 'opacity 0.4s ease',
               zIndex: 0,
             }} />
