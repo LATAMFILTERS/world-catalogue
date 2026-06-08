@@ -430,80 +430,96 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {/* System header */}
+        {/* System header — 2×2 grid */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr clamp(400px,44vw,580px)', gap: 0, alignItems: 'stretch' }}>
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.25rem' }}>
+          <div style={{
+            maxWidth: '1280px', margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr clamp(400px,44vw,580px)',
+            gridTemplateRows: 'auto 1fr',
+            gap: 0,
+          }}>
+            {/* [1,1] SYS number + H2 title — anchored to bottom of top row */}
+            <div style={{
+              gridColumn: '1', gridRow: '1',
+              padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+            }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>02</span>
               </div>
-              <div>
-                <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
-                  Fuel Cleanliness Protection
-                </h2>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
-                  INJECTION SYSTEM INTEGRITY
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: 0 }}>
+                Fuel Cleanliness Protection
+              </h2>
+            </div>
+
+            {/* [1,2] Contamination targets */}
+            <div style={{
+              gridColumn: '2', gridRow: '1',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 1.25rem',
+              }}>
+                CONTAMINATION TARGETS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                {[
+                  'Free water from condensation in bulk tanks and bunkered fuel — injector corrosion above 200 ppm',
+                  'Emulsified water suspended in fuel — pump cavitation and microbial colonization at water-fuel interface',
+                  'Particulate from tank corrosion products above 10 µm — injector tip erosion at 1,800–2,500 bar injection pressure',
+                  'Microbial biomass and acidic metabolites from bacteria and fungi at water-fuel interface',
+                  'Oxidative gum and varnish deposits on injector nozzles during extended fuel storage periods',
+                ].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span style={{ width: '2px', minWidth: '2px', alignSelf: 'stretch', background: '#FFF12D', display: 'inline-block', flexShrink: 0 }} />
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* [2,1] Subtitle + intro paragraph — starts at same height as image */}
+            <div style={{
+              gridColumn: '1', gridRow: '2',
+              padding: '0 clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-start', gap: '1rem',
+            }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
+                INJECTION SYSTEM INTEGRITY
+              </p>
+              <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
+                <p style={{
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                }}>
+                  Modern high-pressure common-rail (HPCR) injection systems operate at 1,800–2,500 bar. Injector needle
+                  clearances measure 1–3 µm — where particle contamination above 10 µm causes injector tip erosion and
+                  free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. Marine fuel on
+                  commercial vessels accumulates water through tank condensation and bunkered fuel quality variation. Diesel
+                  stored in offshore or standby tanks reaches ASTM D6304 exceedance within 30–60 days without active
+                  separation. Emergency generator fuel stored 6–18 months undergoes biological colonization, oxidative
+                  degradation, and gum formation that blocks delivery components and prevents startup under load conditions.
                 </p>
               </div>
             </div>
-            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(260px,28vw,380px)' }}>
+
+            {/* [2,2] Image — starts at same row as subtitle */}
+            <div style={{
+              gridColumn: '2', gridRow: '2',
+              position: 'relative' as const, overflow: 'hidden',
+              minHeight: 'clamp(220px,24vw,360px)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
               <img src="/images/fuel-filters.avif" alt="Fuel Cleanliness Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
-
-          <div style={{
-            borderLeft: '2px solid rgba(255,241,45,0.45)',
-            paddingLeft: '1.25rem',
-            marginBottom: '2.5rem',
-            maxWidth: '820px',
-          }}>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: '0.97rem', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)', margin: 0,
-            }}>
-              Modern high-pressure common-rail (HPCR) injection systems operate at 1,800–2,500 bar. Injector needle
-              clearances measure 1–3 µm — where particle contamination above 10 µm causes injector tip erosion and
-              free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. Marine fuel on
-              commercial vessels accumulates water through tank condensation and bunkered fuel quality variation. Diesel
-              stored in offshore or standby tanks reaches ASTM D6304 exceedance within 30–60 days without active
-              separation. Emergency generator fuel stored 6–18 months undergoes biological colonization, oxidative
-              degradation, and gum formation that blocks delivery components and prevents startup under load conditions.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '1rem',
-            }}>
-              CONTAMINATION TARGETS
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', maxWidth: '780px' }}>
-              {[
-                'Free water from condensation in bulk tanks and bunkered fuel — injector corrosion above 200 ppm',
-                'Emulsified water suspended in fuel — pump cavitation and microbial colonization at water-fuel interface',
-                'Particulate from tank corrosion products above 10 µm — injector tip erosion at 1,800–2,500 bar injection pressure',
-                'Microbial biomass and acidic metabolites from bacteria and fungi at water-fuel interface',
-                'Oxidative gum and varnish deposits on injector nozzles during extended fuel storage periods',
-              ].map((item) => (
-                <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    width: '3px', minWidth: '3px', alignSelf: 'stretch',
-                    background: '#FFF12D', marginTop: '0.3rem',
-                    display: 'inline-block', flexShrink: 0, borderRadius: '2px',
-                  }} />
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.68)', margin: 0,
-                  }}>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)' }}>
 
           <div style={{ marginBottom: '2.5rem' }}>
             <p style={{
@@ -644,81 +660,97 @@ export default function SystemsPage() {
         transition={{ duration: 0.55 }}
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        {/* System header */}
+        {/* System header — 2×2 grid */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr clamp(400px,44vw,580px)', gap: 0, alignItems: 'stretch' }}>
-            <div style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', gap: '1.25rem' }}>
+          <div style={{
+            maxWidth: '1280px', margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr clamp(400px,44vw,580px)',
+            gridTemplateRows: 'auto 1fr',
+            gap: 0,
+          }}>
+            {/* [1,1] SYS number + H2 title — anchored to bottom of top row */}
+            <div style={{
+              gridColumn: '1', gridRow: '1',
+              padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem) clamp(1.25rem,2.5vw,2rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '0.9rem',
+            }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.8rem' }}>
                 <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)' }}>SYS</span>
                 <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(3rem,5vw,5rem)', lineHeight: 1, color: '#FFF12D', letterSpacing: '-0.04em' }}>03</span>
               </div>
-              <div>
-                <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: '0 0 0.5rem' }}>
-                  Lubrication Reliability Protection
-                </h2>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
-                  BEARING AND DRIVETRAIN INTEGRITY
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2.4rem)', letterSpacing: '-0.03em', color: '#fff', margin: 0 }}>
+                Lubrication Reliability Protection
+              </h2>
+            </div>
+
+            {/* [1,2] Contamination targets */}
+            <div style={{
+              gridColumn: '2', gridRow: '1',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
+                letterSpacing: '0.22em', color: 'rgba(255,241,45,0.55)', margin: '0 0 1.25rem',
+              }}>
+                CONTAMINATION TARGETS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.85rem' }}>
+                {[
+                  'Combustion soot above 2% by weight — degrades oil film strength, initiates abrasive bearing wear',
+                  'Metal wear particles from ring, liner, and bearing contact — create secondary contamination cycles',
+                  'Fuel dilution from cold-start cycles — thins oil viscosity below SAE specification',
+                  'Acidic combustion byproducts — attack bearing alloys and reduce oil alkalinity reserve',
+                  'External particulate ingress through shaft seals and crankcase vents in contaminated field environments',
+                ].map((item) => (
+                  <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <span style={{ width: '2px', minWidth: '2px', alignSelf: 'stretch', background: '#FFF12D', display: 'inline-block', flexShrink: 0 }} />
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* [2,1] Subtitle + intro paragraph — starts at same height as image */}
+            <div style={{
+              gridColumn: '1', gridRow: '2',
+              padding: '0 clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)',
+              display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-start', gap: '1rem',
+            }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.38)', margin: 0 }}>
+                BEARING AND DRIVETRAIN INTEGRITY
+              </p>
+              <div style={{ borderLeft: '2px solid rgba(255,241,45,0.35)', paddingLeft: '1.25rem' }}>
+                <p style={{
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.65)', margin: 0, textAlign: 'justify' as const,
+                }}>
+                  Engine oil cleanliness measured against ISO 4406 particle count codes determines bearing, cam lobe, valve
+                  train, and journal service life across all diesel and gas engine applications. Maintaining ISO 4406 code
+                  16/14/11 or cleaner extends bearing service life three to five times compared to uncontrolled contamination
+                  at 19/17/14 — the difference between a 15,000-hour overhaul interval and a 3,000-hour failure event. Urban
+                  transit buses and refuse vehicles complete 300–600 engine starts per week, accumulating soot at three to
+                  five times the rate of steady-state operation. Long-haul commercial trucks run extended drain programs at
+                  60,000–100,000 km with oil analysis — intervals where lube protection must maintain ISO 4406 targets from
+                  service start to drain.
                 </p>
               </div>
             </div>
-            <div style={{ position: 'relative' as const, overflow: 'hidden', minHeight: 'clamp(260px,28vw,380px)' }}>
+
+            {/* [2,2] Image — starts at same row as subtitle */}
+            <div style={{
+              gridColumn: '2', gridRow: '2',
+              position: 'relative' as const, overflow: 'hidden',
+              minHeight: 'clamp(220px,24vw,360px)',
+              borderLeft: '1px solid rgba(255,255,255,0.05)',
+            }}>
               <img src="/images/elementos-oil.avif" alt="Lubrication Filter" style={{ position: 'absolute' as const, inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'brightness(0.75) contrast(1.1) saturate(0.8)' }} />
             </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem)' }}>
-
-          <div style={{
-            borderLeft: '2px solid rgba(255,241,45,0.45)',
-            paddingLeft: '1.25rem',
-            marginBottom: '2.5rem',
-            maxWidth: '820px',
-          }}>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: '0.97rem', lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)', margin: 0,
-            }}>
-              Engine oil cleanliness measured against ISO 4406 particle count codes determines bearing, cam lobe, valve
-              train, and journal service life across all diesel and gas engine applications. Maintaining ISO 4406 code
-              16/14/11 or cleaner extends bearing service life three to five times compared to uncontrolled contamination
-              at 19/17/14 — the difference between a 15,000-hour overhaul interval and a 3,000-hour failure event. Urban
-              transit buses and refuse vehicles complete 300–600 engine starts per week, accumulating soot at three to
-              five times the rate of steady-state operation. Long-haul commercial trucks run extended drain programs at
-              60,000–100,000 km with oil analysis — intervals where lube protection must maintain ISO 4406 targets from
-              service start to drain.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2.5rem' }}>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.38)', marginBottom: '1rem',
-            }}>
-              CONTAMINATION TARGETS
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', maxWidth: '780px' }}>
-              {[
-                'Combustion soot above 2% by weight — degrades oil film strength, initiates abrasive bearing wear',
-                'Metal wear particles from ring, liner, and bearing contact — create secondary contamination cycles',
-                'Fuel dilution from cold-start cycles — thins oil viscosity below SAE specification',
-                'Acidic combustion byproducts — attack bearing alloys and reduce oil alkalinity reserve',
-                'External particulate ingress through shaft seals and crankcase vents in contaminated field environments',
-              ].map((item) => (
-                <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <span style={{
-                    width: '3px', minWidth: '3px', alignSelf: 'stretch',
-                    background: '#FFF12D', marginTop: '0.3rem',
-                    display: 'inline-block', flexShrink: 0, borderRadius: '2px',
-                  }} />
-                  <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.65,
-                    color: 'rgba(255,255,255,0.68)', margin: 0,
-                  }}>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'clamp(1.25rem,2.5vw,2rem) clamp(1.5rem,5vw,3rem) clamp(2.5rem,5vw,4rem)' }}>
 
           <div style={{ marginBottom: '2.5rem' }}>
             <p style={{
