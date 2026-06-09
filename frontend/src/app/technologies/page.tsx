@@ -371,7 +371,7 @@ export default function TechnologiesPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '1.5rem',
           }}>
-            {catalogue.technologies.map((tech) => {
+            {catalogue.technologies.filter((tech) => !['marineclean', 'duratech'].includes(getSlug(tech.name))).map((tech) => {
               const slug = getSlug(tech.name);
               const geoDef = _geoDefBySlug[slug];
               const techImg = TECH_IMAGES[slug];
