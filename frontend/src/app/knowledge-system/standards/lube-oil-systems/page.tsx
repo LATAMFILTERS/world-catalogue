@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { AudioOverview } from '@/components/AudioOverview';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
@@ -100,6 +101,7 @@ export default function LubeOilSystemsPage() {
 
       {/* Body */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+        <AudioOverview pageSlug="lube-oil-systems" title="Lube Oil Filtration Systems" />
 
         {/* 1. System Overview */}
         <motion.section
