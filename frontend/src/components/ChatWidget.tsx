@@ -276,8 +276,7 @@ export function ChatWidget() {
             dir={isRTL ? 'rtl' : 'ltr'}
             style={{
               position: 'fixed', bottom: '1.5rem', right: '1.5rem',
-              width: '360px', maxWidth: 'calc(100vw - 2rem)',
-              height: '520px', maxHeight: 'calc(100vh - 4rem)',
+              width: '300px', maxWidth: 'calc(100vw - 2rem)',
               background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '4px', display: 'flex', flexDirection: 'column',
               zIndex: 9999, boxShadow: '0 8px 40px rgba(0,0,0,0.6)', overflow: 'hidden',
@@ -285,12 +284,12 @@ export function ChatWidget() {
           >
             {/* Header */}
             <div style={{
-              background: '#FFF12D', padding: '0.85rem 1rem',
+              background: '#FFF12D', padding: '0.6rem 0.85rem',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0,
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <img src="/assets/elimfilters-e.png" alt="ELIMFILTERS" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
-                <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.9rem', color: '#000' }}>ELIMFILTERS</span>
+                <img src="/assets/elimfilters-e.png" alt="ELIMFILTERS" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: '#000' }}>ELIMFILTERS</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 {stage !== 'menu' && stage !== 'done' && (
@@ -310,7 +309,7 @@ export function ChatWidget() {
             </div>
 
             {/* Messages */}
-            <div style={{ flex: 1, overflowY: 'auto', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ maxHeight: '320px', overflowY: 'auto', padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {messages.map((m, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}
                   style={{ alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '88%' }}
@@ -318,9 +317,10 @@ export function ChatWidget() {
                   <div style={{
                     background: m.role === 'user' ? '#FFF12D' : 'rgba(255,255,255,0.07)',
                     color: m.role === 'user' ? '#000' : '#fff',
-                    borderRadius: m.role === 'user' ? '12px 12px 2px 12px' : '12px 12px 12px 2px',
-                    padding: '0.65rem 0.9rem', fontSize: '0.875rem', lineHeight: 1.55,
+                    borderRadius: m.role === 'user' ? '10px 10px 2px 10px' : '10px 10px 10px 2px',
+                    padding: '0.5rem 0.75rem', fontSize: '0.8rem', lineHeight: 1.5,
                     whiteSpace: 'pre-wrap', fontFamily: 'Inter, sans-serif',
+                    maxHeight: '7.5rem', overflowY: 'auto',
                   }}>
                     {m.text}
                   </div>
@@ -333,8 +333,8 @@ export function ChatWidget() {
                       {(['part', 'tech', 'dist'] as const).map((opt) => (
                         <button key={opt} onClick={() => handleMenu(opt)} style={{
                           background: 'rgba(255,241,45,0.08)', border: '1px solid rgba(255,241,45,0.25)',
-                          borderRadius: '8px', padding: '0.6rem 0.9rem', color: '#FFF12D',
-                          fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', cursor: 'pointer',
+                          borderRadius: '6px', padding: '0.45rem 0.75rem', color: '#FFF12D',
+                          fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', cursor: 'pointer',
                           textAlign: isRTL ? 'right' : 'left', transition: 'background 0.15s',
                         }}
                           onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,241,45,0.15)')}
@@ -370,7 +370,7 @@ export function ChatWidget() {
 
             {/* Input */}
             {showInput && (
-              <div style={{ padding: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', gap: '0.5rem', flexShrink: 0, background: '#0a0a0a' }}>
+              <div style={{ padding: '0.5rem 0.6rem', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', gap: '0.4rem', flexShrink: 0, background: '#0a0a0a' }}>
                 <textarea
                   ref={inputRef}
                   value={input}
@@ -380,7 +380,7 @@ export function ChatWidget() {
                   rows={1}
                   style={{
                     flex: 1, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '4px', color: '#fff', fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
+                    borderRadius: '4px', color: '#fff', fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                     padding: '0.6rem 0.75rem', outline: 'none', resize: 'none', lineHeight: 1.5,
                   }}
                 />
