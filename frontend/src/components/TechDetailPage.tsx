@@ -364,10 +364,10 @@ export function TechDetailPage({ data }: Props) {
                     animate={{ y: '0%', opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      fontFamily: 'Barlow Condensed, sans-serif',
-                      fontSize: 'clamp(2.8rem, 6.5vw, 6rem)',
-                      fontWeight: 700, color: '#fff',
-                      letterSpacing: '0.03em', lineHeight: 0.95, margin: 0,
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: 'clamp(2.2rem, 5.2vw, 5rem)',
+                      fontWeight: 900, color: '#fff',
+                      letterSpacing: '0.04em', lineHeight: 0.95, margin: 0,
                     }}
                   >
                     {data.heroTitle}

@@ -253,7 +253,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'ANTI-COLLAPSE', value: '427 kPa' },
       { key: 'DUST CAPACITY', value: '480 g/m²' },
     ],
-    logoSrc: '/images/macrocore(fn).avif',
+    logoSrc: '/assets/MACROCORE.avif',
     systemHeadline: 'NOT A SURFACE BARRIER.\nA FULL-DEPTH PROTECTION MATRIX.',
     systemParagraphs: [
       'Conventional single-density air filter elements share a common failure mode: they load from the surface inward. As the upstream face accumulates dust and particles, restriction builds exponentially — but the interior capacity of the element remains largely unused. The element reaches its service restriction threshold while retaining 40–60% of its theoretical contamination capacity unused. The result is premature replacement events, increased service frequency and turbocharged engine restriction starvation during extended field operations.',
