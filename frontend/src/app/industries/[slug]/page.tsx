@@ -66,6 +66,12 @@ interface GeoData {
   schemas: object[];
   ctaTitle?: string;
   ctaDescription?: string;
+  contaminationCallout?: {
+    mechanism: string;
+    detail: string;
+    dataPoints: { label: string; value: string; severity: 'critical' | 'warning' }[];
+    target: string;
+  };
 }
 
 const industryGeoData: Record<string, GeoData> = {
@@ -124,6 +130,15 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Construction': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'CEMENT & CONCRETE DUST INGESTION',
+      detail: 'Calcium carbonate and silica from concrete dust create alkaline contamination in engine oil. pH shift accelerates bearing corrosion. Air intake restriction increases fuel consumption 8–15%.',
+      dataPoints: [
+        { label: 'Construction site dust density', value: '500–2,000 µg/m³', severity: 'critical' },
+        { label: 'Fuel consumption increase', value: '+8–15% under restriction', severity: 'warning' },
+      ],
+      target: 'SAE J1539 air intake + ISO 16/14/11 lube — dual system protection',
+    },
     ctaTitle: 'Ready to Protect Your Construction Equipment?',
     ctaDescription: 'Find the right heavy equipment asset protection system for your construction equipment platform. Cross-reference 500,000+ parts.',
     directAnswer: 'Construction equipment operates in environments with ambient silica dust concentrations ranging from 3,000 mg/m³ on earthwork sites to over 10,000 mg/m³ in tunneling operations — conditions that exceed ISO 5011 air filter test limits by a factor of 10 to 30. ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, and articulated machinery operating under continuous multi-shift duty cycles. Proprietary hybrid protection media provides high contaminant retention capacity for hydraulic system cleanliness, air intake protection, and fuel system integrity throughout extended off-road service schedules.',
@@ -142,7 +157,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'What role does fuel system protection play in off-road construction equipment operations?',
-        a: 'Construction equipment diesel fuel is frequently stored in field tanks, transferred via portable dispensing units, and exposed to condensation during temperature cycling. This fuel delivery chain introduces water contamination, sediment, and microbial growth into fuel systems. Modern common-rail injection systems in construction equipment operate at injection pressures of 1,800–2,500 bar — pressure levels where water and particulate contamination cause injector erosion and stiction within 200–500 operating hours. AQUAGUARD™ fuel system protection achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail injection components during continuous off-road operation.',
+        a: 'Construction equipment diesel fuel is frequently stored in field tanks, transferred via portable dispensing units, and exposed to condensation during temperature cycling. This fuel delivery chain introduces water contamination, sediment, and microbial growth into fuel systems. Modern common-rail injection systems in construction equipment operate at injection pressures of 1,800–2,500 bar — pressure levels where water and particulate contamination cause injector erosion and stiction within 200–500 operating hours. HYDROCORE™ fuel system protection achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail injection components during continuous off-road operation.',
       },
       {
         q: 'How do extended service intervals affect heavy construction equipment availability on active projects?',
@@ -236,7 +251,7 @@ const industryGeoData: Record<string, GeoData> = {
     faq: [
       {
         q: 'What asset protection systems do manufacturing facility equipment require?',
-        a: 'Industrial manufacturing equipment requires air intake protection (MACROCORE™), hydraulic system contamination control (NANOFORCE™), lubrication cleanliness protection (SYNTRAX™), and fuel system protection (AQUAGUARD™). Compressors and industrial engines require air intake protection matched to the particulate profile of the production environment. Hydraulic systems in presses, injection molding equipment, and CNC machinery require ISO 16/14/11 or tighter cleanliness to prevent proportional valve failure and actuator wear. Lubrication systems in pumps, gearboxes, and rotating production machinery require contamination control to maintain bearing film strength across extended operating hours.',
+        a: 'Industrial manufacturing equipment requires air intake protection (MACROCORE™), hydraulic system contamination control (NANOFORCE™), lubrication cleanliness protection (SYNTRAX™), and fuel system protection (HYDROCORE™). Compressors and industrial engines require air intake protection matched to the particulate profile of the production environment. Hydraulic systems in presses, injection molding equipment, and CNC machinery require ISO 16/14/11 or tighter cleanliness to prevent proportional valve failure and actuator wear. Lubrication systems in pumps, gearboxes, and rotating production machinery require contamination control to maintain bearing film strength across extended operating hours.',
       },
       {
         q: 'How does airborne particulate contamination affect industrial production equipment?',
@@ -283,13 +298,22 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Marine': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'SALT WATER EMULSIFICATION',
+      detail: 'Salt water ingestion emulsifies diesel fuel, accelerating injector nozzle corrosion at 150–350 bar injection pressure. Sea spray ingestion into engine air intake causes piston ring corrosion within 200–500 operating hours.',
+      dataPoints: [
+        { label: 'Injector nozzle corrosion onset', value: '< 200 hrs salt exposure', severity: 'critical' },
+        { label: 'Air intake salt concentration (coastal)', value: '5–50 mg/m³ NaCl', severity: 'warning' },
+      ],
+      target: 'HYDROCORE™ fuel water separation + INTEKCORE™ salt-resistant air intake',
+    },
     ctaTitle: 'Ready to Protect Your Marine Equipment?',
     ctaDescription: 'Find the right marine asset protection system for your vessel or offshore equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS® systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
     faq: [
       {
         q: 'What asset protection systems do marine diesel engines require?',
-        a: 'Marine diesel engines require fuel and water separation protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and hydraulic system protection (NANOFORCE™). Fuel systems on commercial vessels are exposed to water contamination from tank condensation and bunkered fuel quality variation. AQUAGUARD™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail marine injectors from corrosion and stiction failure. Air intake systems must control airborne salinity that causes compressor blade corrosion and increases engine deposit formation rates.',
+        a: 'Marine diesel engines require fuel and water separation protection (HYDROCORE™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and hydraulic system protection (NANOFORCE™). Fuel systems on commercial vessels are exposed to water contamination from tank condensation and bunkered fuel quality variation. HYDROCORE™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail marine injectors from corrosion and stiction failure. Air intake systems must control airborne salinity that causes compressor blade corrosion and increases engine deposit formation rates.',
       },
       {
         q: 'How does salt-air exposure affect onboard equipment contamination in marine applications?',
@@ -297,7 +321,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'Why is fuel and water separation critical for marine diesel engine reliability?',
-        a: 'Marine diesel fuel stored in vessel tanks accumulates water through condensation, wave agitation mixing, and bunkered fuel quality variation. Water contamination in marine fuel causes injector corrosion, microbial growth that blocks fuel lines, and cavitation damage in high-pressure fuel pumps operating at 800–2,000 bar in modern common-rail marine engines. ASTM D6304 defines water content standards for diesel fuel — marine storage conditions frequently exceed these limits without active water separation. AQUAGUARD™ turbine-stage water separation removes free and emulsified water before fuel reaches injection components, preventing the corrosion and stiction failure modes that cause unscheduled engine downtime on commercial vessels.',
+        a: 'Marine diesel fuel stored in vessel tanks accumulates water through condensation, wave agitation mixing, and bunkered fuel quality variation. Water contamination in marine fuel causes injector corrosion, microbial growth that blocks fuel lines, and cavitation damage in high-pressure fuel pumps operating at 800–2,000 bar in modern common-rail marine engines. ASTM D6304 defines water content standards for diesel fuel — marine storage conditions frequently exceed these limits without active water separation. HYDROCORE™ turbine-stage water separation removes free and emulsified water before fuel reaches injection components, preventing the corrosion and stiction failure modes that cause unscheduled engine downtime on commercial vessels.',
       },
       {
         q: 'What is the role of hydraulic system protection on commercial vessels and offshore equipment?',
@@ -336,13 +360,22 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Oil Gas': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'H₂S & CONDENSATE CONTAMINATION',
+      detail: 'Hydrogen sulfide in compressed air corrodes instrument lines and pneumatic actuators. Water condensate in diesel fuel tanks promotes microbial growth blocking fuel filters within 30–60 days.',
+      dataPoints: [
+        { label: 'H₂S threshold (compressed air)', value: '< 0.1 ppm ISO 8573-1 Class 1', severity: 'critical' },
+        { label: 'Microbial growth onset (diesel)', value: '30–60 days water contamination', severity: 'warning' },
+      ],
+      target: 'ISO 8573-1 Class 1 compressed air + HYDROCORE™ fuel protection',
+    },
     ctaTitle: 'Ready to Protect Your Energy Equipment?',
     ctaDescription: 'Find the right Oil & Gas asset protection system for your offshore or energy equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS® Oil & Gas asset protection systems are engineered for offshore platforms, onshore facilities, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and continuous severe-duty energy cycles. Gas turbine air intake systems require contamination control matched to airborne salinity concentrations of 1–10 mg/m³ in offshore environments. Hydraulic systems in drilling and compression equipment require ISO 16/14/11 or tighter cleanliness to prevent proportional valve stiction under high-pressure continuous operation. ELIMFILTERS® systems maintain air intake efficiency, fuel cleanliness, lubrication stability, and hydraulic protection throughout extended Oil & Gas service schedules.',
     faq: [
       {
         q: 'What asset protection systems do offshore platforms and drilling equipment require?',
-        a: 'Offshore platforms require air intake contamination control (MACROCORE™), fuel and water separation (AQUAGUARD™), lubrication cleanliness protection (SYNTRAX™), compressed air drying (DRYCORE™), and hydraulic system protection. Gas turbines and diesel generators require air intake protection matched to offshore salt-laden air at 1–10 mg/m³ sodium chloride concentration. Diesel fuel stored in offshore tanks accumulates water from condensation and humidity absorption, requiring AQUAGUARD™ turbine-stage water separation to maintain ASTM D6304 compliance. Hydraulic systems controlling drilling equipment, BOP stacks, and deck machinery require ISO 16/14/11 or tighter cleanliness to prevent valve stiction and actuator failure.',
+        a: 'Offshore platforms require air intake contamination control (MACROCORE™), fuel and water separation (HYDROCORE™), lubrication cleanliness protection (SYNTRAX™), compressed air drying (DRYCORE™), and hydraulic system protection. Gas turbines and diesel generators require air intake protection matched to offshore salt-laden air at 1–10 mg/m³ sodium chloride concentration. Diesel fuel stored in offshore tanks accumulates water from condensation and humidity absorption, requiring HYDROCORE™ turbine-stage water separation to maintain ASTM D6304 compliance. Hydraulic systems controlling drilling equipment, BOP stacks, and deck machinery require ISO 16/14/11 or tighter cleanliness to prevent valve stiction and actuator failure.',
       },
       {
         q: 'How does H2S exposure affect equipment contamination in Oil & Gas environments?',
@@ -350,7 +383,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'Why is fuel cleanliness protection critical for gas turbines and engine-driven compression equipment?',
-        a: 'Gas turbines operating on liquid fuel require fuel cleanliness to ISO 4406 targets of 15/13/10 or cleaner to prevent combustion nozzle erosion and fuel control valve stiction. Diesel generators on offshore platforms operate on stored fuel that accumulates water, microbial growth, and particulate contamination from tank corrosion. AQUAGUARD™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting high-pressure fuel pumps operating at 800–2,000 bar in common-rail diesel systems. Contaminated fuel in gas turbines causes hot section corrosion, nozzle blockage, and combustion instability that increases maintenance frequency and reduces turbine availability.',
+        a: 'Gas turbines operating on liquid fuel require fuel cleanliness to ISO 4406 targets of 15/13/10 or cleaner to prevent combustion nozzle erosion and fuel control valve stiction. Diesel generators on offshore platforms operate on stored fuel that accumulates water, microbial growth, and particulate contamination from tank corrosion. HYDROCORE™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting high-pressure fuel pumps operating at 800–2,000 bar in common-rail diesel systems. Contaminated fuel in gas turbines causes hot section corrosion, nozzle blockage, and combustion instability that increases maintenance frequency and reduces turbine availability.',
       },
       {
         q: 'What role does air intake protection play in offshore turbine and compressor reliability?',
@@ -395,11 +428,11 @@ const industryGeoData: Record<string, GeoData> = {
     faq: [
       {
         q: 'What protection systems do standby diesel generators require?',
-        a: 'Standby generators require fuel cleanliness protection (AQUAGUARD™), air intake protection (SYNTEPORE™), lubrication reliability protection (SYNTRAX™), and compressed air drying (DRYCORE™) for pneumatic controls. Standby generators face a contamination challenge distinct from continuous-run equipment: fuel stored in tanks during standby periods accumulates water from daily condensation cycles, microbial growth that generates acidic byproducts, and oxidative degradation that forms gum and varnish deposits. NFPA 110 defines fuel quality standards for emergency power systems — without active fuel treatment and filtration, standby fuel stored beyond 6 months frequently falls outside acceptable limits for injector-safe operation.',
+        a: 'Standby generators require fuel cleanliness protection (HYDROCORE™), air intake protection (SYNTEPORE™), lubrication reliability protection (SYNTRAX™), and compressed air drying (DRYCORE™) for pneumatic controls. Standby generators face a contamination challenge distinct from continuous-run equipment: fuel stored in tanks during standby periods accumulates water from daily condensation cycles, microbial growth that generates acidic byproducts, and oxidative degradation that forms gum and varnish deposits. NFPA 110 defines fuel quality standards for emergency power systems — without active fuel treatment and filtration, standby fuel stored beyond 6 months frequently falls outside acceptable limits for injector-safe operation.',
       },
       {
         q: 'How does fuel degradation during standby periods affect generator reliability?',
-        a: 'Diesel fuel in standby generator tanks undergoes progressive degradation when unused. Water accumulates from daily thermal cycling as humid air enters the fuel tank through the vent. Microbial organisms (bacteria, fungi) colonize the water-fuel interface and generate acidic metabolic byproducts that accelerate tank corrosion and produce biomass that blocks fuel filters. Oxidative instability causes fuel to polymerize into gum and varnish compounds that coat injector nozzles, reducing spray pattern quality and combustion efficiency. AQUAGUARD™ water separation systems maintain free and emulsified water below ASTM D6304 thresholds, preventing the primary biological and oxidative degradation pathways that compromise standby fuel quality.',
+        a: 'Diesel fuel in standby generator tanks undergoes progressive degradation when unused. Water accumulates from daily thermal cycling as humid air enters the fuel tank through the vent. Microbial organisms (bacteria, fungi) colonize the water-fuel interface and generate acidic metabolic byproducts that accelerate tank corrosion and produce biomass that blocks fuel filters. Oxidative instability causes fuel to polymerize into gum and varnish compounds that coat injector nozzles, reducing spray pattern quality and combustion efficiency. HYDROCORE™ water separation systems maintain free and emulsified water below ASTM D6304 thresholds, preventing the primary biological and oxidative degradation pathways that compromise standby fuel quality.',
       },
       {
         q: 'What air intake protection requirements apply to prime power and continuous-run generators?',
@@ -411,7 +444,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'Why do emergency backup power systems require contamination protection different from base-load generators?',
-        a: 'Emergency backup systems — hospital generators, data center UPS diesels, critical infrastructure standby units — face a fundamentally different operational pattern than base-load generators. Base-load systems generate contamination continuously through normal combustion. Emergency systems accumulate contamination through inactivity: fuel degradation, condensation, oxidation, and microbial growth occur during standby periods measured in months. When an emergency system starts under load conditions, it must perform immediately at full rated output. NFPA 110 requires weekly or monthly test runs to verify operational readiness — and these test cycles can flush degraded fuel through injection systems if fuel quality has not been maintained. AQUAGUARD™ and SYNTEPORE™ combined with periodic fuel conditioning maintain emergency system readiness between test cycles.',
+        a: 'Emergency backup systems — hospital generators, data center UPS diesels, critical infrastructure standby units — face a fundamentally different operational pattern than base-load generators. Base-load systems generate contamination continuously through normal combustion. Emergency systems accumulate contamination through inactivity: fuel degradation, condensation, oxidation, and microbial growth occur during standby periods measured in months. When an emergency system starts under load conditions, it must perform immediately at full rated output. NFPA 110 requires weekly or monthly test runs to verify operational readiness — and these test cycles can flush degraded fuel through injection systems if fuel quality has not been maintained. HYDROCORE™ and SYNTEPORE™ combined with periodic fuel conditioning maintain emergency system readiness between test cycles.',
       },
       {
         q: 'What are the financial consequences of contamination-related generator failure during a power outage?',
@@ -448,7 +481,7 @@ const industryGeoData: Record<string, GeoData> = {
     faq: [
       {
         q: 'What asset protection systems do diesel-electric locomotives require?',
-        a: 'Diesel-electric locomotives require fuel and water separation protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and pneumatic system drying (DRYCORE™). Locomotive diesel engines operate at continuous high-load conditions for 12–24 hour haul cycles, accumulating soot in lube oil at rates significantly higher than intermittent-load applications. Fuel stored in locomotive tanks accumulates water through thermal cycling condensation, requiring AQUAGUARD™ water separation to maintain injection system cleanliness. Pneumatic braking systems require air dried to dew points below -20°C at system pressure to prevent moisture-related valve and actuator failure.',
+        a: 'Diesel-electric locomotives require fuel and water separation protection (HYDROCORE™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and pneumatic system drying (DRYCORE™). Locomotive diesel engines operate at continuous high-load conditions for 12–24 hour haul cycles, accumulating soot in lube oil at rates significantly higher than intermittent-load applications. Fuel stored in locomotive tanks accumulates water through thermal cycling condensation, requiring HYDROCORE™ water separation to maintain injection system cleanliness. Pneumatic braking systems require air dried to dew points below -20°C at system pressure to prevent moisture-related valve and actuator failure.',
       },
       {
         q: 'How does track ballast dust affect locomotive air intake and engine systems?',
@@ -460,7 +493,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'What is the impact of fuel water contamination on locomotive diesel engine performance?',
-        a: 'Locomotive diesel engines in line-haul service use fuel stored in bulk depot tanks and transferred to locomotive fuel tanks during servicing. Bulk fuel storage accumulates water through tank breathing condensation, particularly in climates with significant day-night temperature differentials. Water contamination above ASTM D6304 thresholds causes fuel injector corrosion, microbial growth that generates acidic byproducts, and cavitation damage in high-pressure fuel pumps operating at 1,800–2,500 bar. Contamination-related injector failure in a locomotive diesel requires workshop removal and injector replacement at $800–2,500 per injector, with a typical 16-cylinder locomotive requiring 16 injectors. AQUAGUARD™ turbine-stage water separation removes free and emulsified water from locomotive fuel before it reaches high-pressure injection components.',
+        a: 'Locomotive diesel engines in line-haul service use fuel stored in bulk depot tanks and transferred to locomotive fuel tanks during servicing. Bulk fuel storage accumulates water through tank breathing condensation, particularly in climates with significant day-night temperature differentials. Water contamination above ASTM D6304 thresholds causes fuel injector corrosion, microbial growth that generates acidic byproducts, and cavitation damage in high-pressure fuel pumps operating at 1,800–2,500 bar. Contamination-related injector failure in a locomotive diesel requires workshop removal and injector replacement at $800–2,500 per injector, with a typical 16-cylinder locomotive requiring 16 injectors. HYDROCORE™ turbine-stage water separation removes free and emulsified water from locomotive fuel before it reaches high-pressure injection components.',
       },
       {
         q: 'How do extended service intervals support railway fleet operational continuity?',
@@ -501,11 +534,11 @@ const industryGeoData: Record<string, GeoData> = {
     faq: [
       {
         q: 'What asset protection systems do heavy commercial trucks and fleet vehicles require?',
-        a: 'Heavy commercial trucks require HPCR fuel system protection (AQUAGUARD™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and cabin air quality protection (MICROKAPPA™) for driver health compliance. Modern Euro VI and EPA 2024 compliant diesel engines operate at fuel injection pressures of 1,800–2,500 bar, where particle contamination above 10 µm causes injector needle wear and water contamination above 200 ppm causes corrosion and stiction. Air intake systems for turbocharged diesel engines must maintain consistent airflow volume across highway, urban, and mountain gradient operating conditions to support turbocharger efficiency and boost pressure stability.',
+        a: 'Heavy commercial trucks require HPCR fuel system protection (HYDROCORE™), air intake contamination control (MACROCORE™), lubrication cleanliness protection (SYNTRAX™), and cabin air quality protection (MICROKAPPA™) for driver health compliance. Modern Euro VI and EPA 2024 compliant diesel engines operate at fuel injection pressures of 1,800–2,500 bar, where particle contamination above 10 µm causes injector needle wear and water contamination above 200 ppm causes corrosion and stiction. Air intake systems for turbocharged diesel engines must maintain consistent airflow volume across highway, urban, and mountain gradient operating conditions to support turbocharger efficiency and boost pressure stability.',
       },
       {
         q: 'How does HPCR injection system contamination affect long-haul truck engine reliability?',
-        a: 'High-pressure common-rail injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, particle contamination above 10 µm causes injector tip erosion and internal leakage. Water contamination above 200 ppm causes hydrogen embrittlement of injector needle components and accelerates corrosion of high-pressure pump internals. Free water enters diesel fuel through bulk fuel storage condensation and fueling from contaminated road stop tanks. Injector replacement in a heavy commercial truck costs $800–2,500 per injector, with a six-cylinder engine requiring six injectors per service event. AQUAGUARD™ fuel system protection removes free and emulsified water to below ASTM D6304 thresholds and captures particulate above 3 µm before fuel reaches injection components.',
+        a: 'High-pressure common-rail injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, particle contamination above 10 µm causes injector tip erosion and internal leakage. Water contamination above 200 ppm causes hydrogen embrittlement of injector needle components and accelerates corrosion of high-pressure pump internals. Free water enters diesel fuel through bulk fuel storage condensation and fueling from contaminated road stop tanks. Injector replacement in a heavy commercial truck costs $800–2,500 per injector, with a six-cylinder engine requiring six injectors per service event. HYDROCORE™ fuel system protection removes free and emulsified water to below ASTM D6304 thresholds and captures particulate above 3 µm before fuel reaches injection components.',
       },
       {
         q: 'What air intake protection do turbocharged commercial diesel engines require?',
@@ -554,7 +587,7 @@ const industryGeoData: Record<string, GeoData> = {
     faq: [
       {
         q: 'What asset protection systems do municipal refuse collection and emergency response vehicles require?',
-        a: 'Refuse collection vehicles require lubrication protection (SYNTRAX™), air intake contamination control (MACROCORE™), and fuel system protection (AQUAGUARD™). Emergency response vehicles — fire apparatus, ambulances, and rescue units — require the same base protection with particular emphasis on rapid cold-start lubrication performance. Fire apparatus complete 200–400 engine starts per month in short-duration emergency response cycles, with engines returning to cold-standby state between calls. This high cold-start frequency generates fuel dilution and soot accumulation in engine oil at accelerated rates. SYNTRAX™ lubrication protection maintains ISO 4406 cleanliness targets despite frequent cold-start cycling and the short-duration high-load combustion profiles of emergency response operation.',
+        a: 'Refuse collection vehicles require lubrication protection (SYNTRAX™), air intake contamination control (MACROCORE™), and fuel system protection (HYDROCORE™). Emergency response vehicles — fire apparatus, ambulances, and rescue units — require the same base protection with particular emphasis on rapid cold-start lubrication performance. Fire apparatus complete 200–400 engine starts per month in short-duration emergency response cycles, with engines returning to cold-standby state between calls. This high cold-start frequency generates fuel dilution and soot accumulation in engine oil at accelerated rates. SYNTRAX™ lubrication protection maintains ISO 4406 cleanliness targets despite frequent cold-start cycling and the short-duration high-load combustion profiles of emergency response operation.',
       },
       {
         q: 'How does stop-start urban operation accelerate contamination in refuse collection vehicles?',
@@ -601,11 +634,20 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Agriculture': {
     lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'HARVEST HYDRAULIC CONTAMINATION',
+      detail: 'Chaff, organic dust, and crop debris bypass air pre-cleaners during harvest. Hydraulic system contamination during peak season causes actuator failures when downtime is most costly.',
+      dataPoints: [
+        { label: 'Harvest season airborne dust', value: '200–800 µg/m³', severity: 'critical' },
+        { label: 'Hydraulic actuator failure risk', value: '3× higher in harvest', severity: 'warning' },
+      ],
+      target: 'ISO 17/15/12 hydraulic cleanliness — ELIMFILTERS® minimum',
+    },
     directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
     faq: [
       {
         q: 'What asset protection systems do combine harvesters require?',
-        a: 'Combine harvesters require high-capacity air intake protection (MACROCORE™), hydraulic contamination control (NANOFORCE™), fuel system protection (AQUAGUARD™), and lube oil protection (SYNTRAX™). During grain harvest, dust concentrations can exceed 1,500 mg/m³ — more than five times ISO 5011 test limits. Each system must provide high contaminant retention capacity and complete sealing efficiency to prevent contamination events across 10–12 hour daily operating cycles.'
+        a: 'Combine harvesters require high-capacity air intake protection (MACROCORE™), hydraulic contamination control (NANOFORCE™), fuel system protection (HYDROCORE™), and lube oil protection (SYNTRAX™). During grain harvest, dust concentrations can exceed 1,500 mg/m³ — more than five times ISO 5011 test limits. Each system must provide high contaminant retention capacity and complete sealing efficiency to prevent contamination events across 10–12 hour daily operating cycles.'
       },
       {
         q: 'Why do agricultural machines require specialized asset protection systems instead of standard OEM components?',
@@ -620,8 +662,8 @@ const industryGeoData: Record<string, GeoData> = {
         a: 'MACROCORE™ is the primary air intake protection technology for high-dust agricultural environments. It combines a proprietary large-diameter cellulose-synthetic composite element with a radial seal design that maintains complete sealing efficiency under high particulate loads. In tractor and combine harvester applications, MACROCORE™ achieves 99.9% silica particle retention at dust concentrations exceeding 1,500 mg/m³. The oversized element geometry provides 40–60% more media surface area than standard OEM air intake components, enabling extended service intervals without efficiency degradation.'
       },
       {
-        q: 'How does AQUAGUARD™ fuel system protection prevent water contamination failure?',
-        a: 'AQUAGUARD™ is a turbine fuel separator system that removes free and emulsified water from diesel before it reaches high-pressure injection components. Agricultural diesel stored in field tanks accumulates water through condensation, particularly during temperature cycles between day and night operations. AQUAGUARD™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail injectors from corrosion and stiction failure. A water collection bowl with automatic drain prevents bypass during water saturation events.'
+        q: 'How does HYDROCORE™ fuel system protection prevent water contamination failure?',
+        a: 'HYDROCORE™ is a turbine fuel separator system that removes free and emulsified water from diesel before it reaches high-pressure injection components. Agricultural diesel stored in field tanks accumulates water through condensation, particularly during temperature cycles between day and night operations. HYDROCORE™ achieves 99.8% free water removal and 95% emulsified water reduction, protecting common-rail injectors from corrosion and stiction failure. A water collection bowl with automatic drain prevents bypass during water saturation events.'
       },
       {
         q: 'What are the financial consequences of contamination-related equipment failure during harvest?',
@@ -649,6 +691,21 @@ const industryGeoData: Record<string, GeoData> = {
         ],
       },
     ],
+  },
+  'Mining': {
+    lastUpdated: 'May 2026',
+    contaminationCallout: {
+      mechanism: 'SILICA INGESTION',
+      detail: 'Silica (SiO₂) Mohs hardness 7 exceeds engine cylinder liner hardness of 5–6. Abrasive wear rate increases exponentially above ISO 19/17/14 cleanliness.',
+      dataPoints: [
+        { label: 'Normal operations', value: '3–8 g/hr ingestion', severity: 'warning' },
+        { label: 'Blasting & loading', value: '12–25 g/hr ingestion', severity: 'critical' },
+      ],
+      target: 'ISO 16/14/11 — ELIMFILTERS® system target',
+    },
+    directAnswer: 'ELIMFILTERS® mining asset protection systems are engineered for heavy mining equipment operating under continuous high-silica dust exposure, extended multi-shift duty cycles, and severe abrasive contamination environments.',
+    faq: [],
+    schemas: [],
   },
 };
 
@@ -730,12 +787,106 @@ export default function IndustryPage({ params }: Props) {
   const geoData = industryGeoData[item.name];
 
   return (
-    <CategoryPage
-      item={item}
-      category="industries"
-      industryImage={media.image}
-      industryVideo={media.video}
-      geoData={geoData}
-    />
+    <>
+      <CategoryPage
+        item={item}
+        category="industries"
+        industryImage={media.image}
+        industryVideo={media.video}
+        geoData={geoData}
+      />
+      {geoData?.contaminationCallout && (
+        <section style={{
+          background: '#000',
+          padding: '0 8% 4rem',
+        }}>
+          <div style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            border: '1px solid rgba(255,241,45,0.25)',
+            borderLeft: '4px solid #FFF12D',
+            padding: '2rem 2.5rem',
+            background: 'rgba(255,241,45,0.03)',
+          }}>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.68rem',
+              letterSpacing: '0.2em',
+              color: '#FFF12D',
+              marginBottom: '0.75rem',
+              textTransform: 'uppercase',
+            }}>
+              // PRIMARY FAILURE MECHANISM
+            </p>
+            <h3 style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
+              color: '#fff',
+              marginBottom: '0.75rem',
+              letterSpacing: '0.02em',
+            }}>
+              {geoData.contaminationCallout.mechanism}
+            </h3>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.9rem',
+              color: 'rgba(255,255,255,0.65)',
+              lineHeight: 1.7,
+              marginBottom: '1.5rem',
+              maxWidth: '720px',
+            }}>
+              {geoData.contaminationCallout.detail}
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1rem',
+              marginBottom: '1.5rem',
+            }}>
+              {geoData.contaminationCallout.dataPoints.map((dp, i) => (
+                <div key={i} style={{
+                  padding: '1rem 1.25rem',
+                  background: dp.severity === 'critical'
+                    ? 'rgba(255,60,60,0.06)'
+                    : 'rgba(255,165,0,0.06)',
+                  border: `1px solid ${dp.severity === 'critical' ? 'rgba(255,60,60,0.25)' : 'rgba(255,165,0,0.2)'}`,
+                }}>
+                  <p style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.65rem',
+                    color: dp.severity === 'critical' ? 'rgba(255,100,100,0.8)' : 'rgba(255,165,0,0.8)',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: '0.4rem',
+                  }}>
+                    {dp.label}
+                  </p>
+                  <p style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    color: '#fff',
+                  }}>
+                    {dp.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.7rem',
+              color: '#FFF12D',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              borderTop: '1px solid rgba(255,241,45,0.15)',
+              paddingTop: '1rem',
+            }}>
+              {geoData.contaminationCallout.target}
+            </p>
+          </div>
+        </section>
+      )}
+    </>
   );
 }

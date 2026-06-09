@@ -1,4 +1,5 @@
 import catalogueData from '../../catalogue.json';
+import { TECHNOLOGIES, DEPRECATED_TECHNOLOGIES, ECOSYSTEMS } from './unified-data';
 
 export interface CatalogueItem {
   name: string;
@@ -62,21 +63,19 @@ export const CATEGORY_ICONS: Record<string, string[]> = {
   'Waste Municipal': ['♻'],
 };
 
-// Map technology name to logo file
+// Logo lookup derived from unified-data.ts (computed once at module load)
+const _techLogoBySlug: Record<string, string> = {
+  // Legacy slug aliases — old routes remain functional
+  'aquaguard-series':  DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'hydrocore-series':  DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'hydrocore':         DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
+  'thermocore':        DEPRECATED_TECHNOLOGIES.COOLTECH.logoFile,
+  ...Object.fromEntries(Object.values(TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
+  ...Object.fromEntries(Object.values(DEPRECATED_TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
+  ...Object.fromEntries(Object.values(ECOSYSTEMS).map((e) => [e.slug, e.logoFile])),
+};
+
 export function getTechLogoFile(name: string): string {
-  const logoMap: Record<string, string> = {
-    'Aquaguard Series': 'logo-aquaguard.png',
-    Aquaguard: 'logo-aquaguard.png',
-    Cooltech: 'logo-cooltech.png',
-    Drycore: 'logo-drycore.png',
-    Duratech: 'logo-duratech.png',
-    Intekcore: 'logo-intekcore.png',
-    Macrocore: 'logo-macrocore.png',
-    Marineclean: 'logo-marineclean.png',
-    Microkappa: 'logo-microkappa.png',
-    Nanoforce: 'logo-nanoforce.png',
-    Syntepore: 'logo-syntepore.png',
-    Syntrax: 'logo-sintrax.png',
-  };
-  return logoMap[name] || 'logo-elimfilters.png';
+  const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  return _techLogoBySlug[slug] ?? 'logo-elimfilters.png';
 }

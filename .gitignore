@@ -7,7 +7,6 @@ config/google-credentials.json
 C:\\Users\\
 sesion_*/
 *_results.json
-!scripts/donaldson_*_results.json
 debug*.py
 scraper_debug*.py
 __pycache__/
@@ -21,3 +20,6 @@ __pycache__/
 !frontend/out/images/*.mp4
 graphify-out/
 .claude/worktrees/
+
+# Obsidian local configuration
+elimfilters-vault/.obsidian/

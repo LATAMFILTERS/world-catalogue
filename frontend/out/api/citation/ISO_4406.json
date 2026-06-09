@@ -1,0 +1,73 @@
+{
+  "key": "ISO_4406",
+  "type": "standard",
+  "name": "Hydraulic Fluid Cleanliness Code",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "ISO_4406",
+  "tags": [
+    "standard",
+    "active",
+    "hydraulic",
+    "lube-oil",
+    "cleanliness-code",
+    "iso",
+    "primary",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/standards/iso-4406",
+    "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:1a84dfd2603115b9a058eee1c98db6ad3cdc6ff5540b8be12d3e877a8201cccf"
+  },
+  "canonical": {
+    "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 100 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
+    "systems": "Hydraulic fluid power systems, engine lube oil circuits, transmission circuits — any fluid system requiring measurable particle contamination control",
+    "failure_impact": "Lube oil or hydraulic fluid at ISO 4406 19/17/14 (typical commodity filtration outcome) has 8× the particle count at ≥4 µm compared to 16/14/11 (system filtration target) → proportional hydraulic valve sticktion and bearing surface abrasive wear → valve replacement ($5,000–$25,000) and engine bearing seizure at 3,000–5,000 hours versus 15,000–25,000 hours at target code.",
+    "related_standards": "ISO 16889: Multi-pass filter test method that generates the Beta ratios used to select filters achieving ISO 4406 target codes | SAE J1539: Air intake standard (parallel domain — air-side particle control feeding lube circuit contamination)",
+    "related_technologies": "SYNTRAX: Full-flow lube filtration engineered to achieve and maintain ISO 4406 16/14/11 | NANOFORCE: Sub-micron polishing filtration for achieving cleanliness codes below standard full-flow filtration threshold",
+    "industrial_role": "ISO 4406 is the operational measurement standard that converts contamination control from qualitative assessment into quantifiable engineering specification — without ISO 4406 monitoring and target codes, equipment operators cannot verify that filtration system performance actually protects bearing and valve components against abrasive wear."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_16889"
+    ],
+    "applicable_to_technologies": [
+      "NANOFORCE",
+      "SYNTRAX"
+    ],
+    "related_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/ISO_4406.md",
+  "_links": {
+    "self": "/api/citation/ISO_4406.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "related_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}

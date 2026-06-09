@@ -1,8 +1,10 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
+import { CinematicIntro } from './CinematicIntro';
 
 export interface TechStage {
   number: string;
@@ -67,15 +69,218 @@ interface Props {
   data: TechDetailData;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   SCROLL-DRIVEN STAGES SECTION
+   320vh container, sticky inner panel, each stage activates
+   as the user scrolls through the tall container.
+───────────────────────────────────────────────────────────── */
+function StagesSection({ stages, heading }: { stages: TechStage[]; heading?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeStage, setActiveStage] = useState(-1);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  });
+  const smooth = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
+  const lineHeight = useTransform(smooth, [0, 0.88], ['0%', '100%']);
+
+  const thresholds = stages.map((_, i) => (i * 0.85) / stages.length + 0.08);
+
+  useMotionValueEvent(smooth, 'change', (v) => {
+    let active = -1;
+    for (let i = thresholds.length - 1; i >= 0; i--) {
+      if (v >= thresholds[i]) { active = i; break; }
+    }
+    setActiveStage(active);
+  });
+
+  const totalVh = stages.length * 100 + 60;
+
+  return (
+    <section
+      style={{ background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}
+    >
+      {/* Section label above */}
+      <div style={{ padding: '4rem 2rem 0', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', flexWrap: 'wrap' }}>
+          <span style={{
+            fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em',
+            color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0,
+          }}>
+            // PROTECTION ARCHITECTURE
+          </span>
+          <h2 style={{
+            fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900,
+            fontFamily: 'Space Grotesk, sans-serif', margin: 0, color: '#fff',
+          }}>
+            {heading || 'EACH LAYER STOPS WHAT THE PREVIOUS CANNOT.'}
+          </h2>
+        </div>
+      </div>
+
+      {/* Scroll container */}
+      <div
+        ref={containerRef}
+        style={{ position: 'relative', height: `${totalVh}vh` }}
+      >
+        <div style={{
+          position: 'sticky', top: 0, height: '100vh', overflow: 'hidden',
+          display: 'grid', gridTemplateColumns: '1fr 1fr',
+        }}>
+
+          {/* LEFT — stage list with progress line */}
+          <div style={{
+            padding: 'clamp(3rem, 6vw, 6rem)',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            position: 'relative', borderRight: '1px solid rgba(255,255,255,0.06)',
+          }}>
+            {/* Vertical progress line */}
+            <div style={{
+              position: 'absolute',
+              left: 'clamp(3rem, 6vw, 6rem)',
+              top: '50%', transform: 'translateY(-50%)',
+              height: `${stages.length * 90}px`,
+              width: '1px', background: 'rgba(255,255,255,0.06)',
+            }}>
+              <motion.div style={{
+                position: 'absolute', top: 0, left: 0,
+                width: '100%', background: '#FFF12D', height: lineHeight,
+              }} />
+            </div>
+
+            <div style={{ paddingLeft: 'clamp(2rem, 3.5vw, 3.5rem)', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+              {stages.map((stage, i) => {
+                const isActive = i <= activeStage;
+                return (
+                  <div key={i} style={{ transition: 'opacity 0.6s ease', opacity: isActive ? 1 : 0.22 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
+                      <span style={{
+                        fontFamily: 'JetBrains Mono, monospace', fontSize: '0.52rem',
+                        letterSpacing: '0.25em', color: isActive ? '#FFF12D' : 'rgba(255,255,255,0.3)',
+                        transition: 'color 0.6s ease',
+                      }}>
+                        {stage.number}
+                      </span>
+                      <span style={{
+                        fontFamily: 'JetBrains Mono, monospace', fontSize: '0.52rem',
+                        letterSpacing: '0.15em', color: isActive ? 'rgba(255,241,45,0.55)' : 'rgba(255,255,255,0.2)',
+                        transition: 'color 0.6s ease',
+                      }}>
+                        {stage.tag}
+                      </span>
+                    </div>
+                    <h3 style={{
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontSize: 'clamp(0.9rem, 1.4vw, 1.15rem)',
+                      fontWeight: 700, margin: 0,
+                      color: isActive ? '#fff' : 'rgba(255,255,255,0.28)',
+                      transition: 'color 0.6s ease',
+                      lineHeight: 1.3,
+                    }}>
+                      {stage.title}
+                    </h3>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* RIGHT — active stage detail */}
+          <div style={{
+            padding: 'clamp(3rem, 6vw, 6rem)',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            background: '#050505',
+          }}>
+            {activeStage >= 0 ? (
+              <motion.div
+                key={activeStage}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div style={{ marginBottom: '3rem' }}>
+                  <span style={{
+                    display: 'block',
+                    fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem',
+                    letterSpacing: '0.25em', color: 'rgba(255,241,45,0.6)',
+                    marginBottom: '0.75rem',
+                  }}>
+                    {stages[activeStage].tag} · {stages[activeStage].number}
+                  </span>
+                  <h3 style={{
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontSize: 'clamp(1.3rem, 2.2vw, 1.85rem)',
+                    fontWeight: 700, color: '#fff',
+                    margin: '0 0 1.5rem', lineHeight: 1.2,
+                  }}>
+                    {stages[activeStage].title}
+                  </h3>
+                  <p style={{
+                    fontFamily: 'Outfit, sans-serif', fontSize: '0.92rem',
+                    lineHeight: 1.9, color: 'rgba(255,255,255,0.6)',
+                    maxWidth: '480px', margin: 0,
+                  }}>
+                    {stages[activeStage].body}
+                  </p>
+                </div>
+
+                <div style={{
+                  borderTop: '1px solid rgba(255,255,255,0.06)',
+                  paddingTop: '2rem',
+                }}>
+                  <div style={{
+                    fontSize: 'clamp(2.8rem, 5vw, 4.5rem)',
+                    fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif',
+                    color: '#FFF12D', lineHeight: 1, letterSpacing: '-0.02em',
+                  }}>
+                    {stages[activeStage].stat}
+                  </div>
+                  <div style={{
+                    fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
+                    letterSpacing: '0.15em', color: 'rgba(255,255,255,0.35)',
+                    marginTop: '0.6rem', textTransform: 'uppercase',
+                  }}>
+                    {stages[activeStage].statLabel}
+                  </div>
+                </div>
+              </motion.div>
+            ) : (
+              <div style={{ opacity: 0.2 }}>
+                <p style={{
+                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
+                  letterSpacing: '0.2em', color: '#fff',
+                }}>
+                  ↓ SCROLL TO TRACE EACH STAGE
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MAIN PAGE COMPONENT
+───────────────────────────────────────────────────────────── */
 export function TechDetailPage({ data }: Props) {
   return (
     <>
-      {/* Breadcrumb — HOME → TECHNOLOGY → [name] */}
+      <CinematicIntro
+        logoSrc={data.logoSrc}
+        heroTitle={data.heroTitle}
+        categoryTag={data.categoryTag}
+      />
+
+      {/* Breadcrumb */}
       <div style={{
         position: 'relative', zIndex: 20,
-        background: 'rgba(0,0,0,0.6)',
+        background: 'rgba(0,0,0,0.85)',
         borderBottom: '1px solid rgba(255,255,255,0.05)',
         padding: '0.75rem 2rem',
+        backdropFilter: 'blur(8px)',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Link
@@ -101,121 +306,157 @@ export function TechDetailPage({ data }: Props) {
       <main style={{ background: '#000', color: '#fff' }}>
 
         {/* ══════════════════════════════════════════════
-            SECTION 1 — LOGO IDENTITY BLOCK
-            Centered, full-width, logo as primary element
+            SECTION 1 — FULL VIEWPORT HERO
+            Background image + overlay, title bottom-left,
+            stats bottom-right.
         ══════════════════════════════════════════════ */}
         <section style={{
-          background: '#000',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-          padding: '1.5rem 2rem 0',
           position: 'relative',
+          height: '100vh',
+          minHeight: '560px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
           overflow: 'hidden',
         }}>
-          {/* Subtle dot matrix background */}
+          {/* Background image */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 0,
-            backgroundImage: 'radial-gradient(rgba(255,241,45,0.07) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
+            backgroundImage: `url(${data.heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }} />
-          {/* Radial fade so content stays readable */}
+          {/* Gradient overlay */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
-            background: 'radial-gradient(ellipse 80% 70% at 50% 40%, transparent 30%, #000 100%)',
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.75) 100%)',
+          }} />
+          {/* Noise grain */}
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 2, opacity: 0.03,
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")',
           }} />
 
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Content overlay */}
+          <div style={{ position: 'relative', zIndex: 3, width: '100%', padding: 'clamp(2rem, 5vw, 4rem)' }}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: '1fr auto',
+              gap: '2rem', alignItems: 'flex-end', maxWidth: '1400px', margin: '0 auto',
+            }}>
+              {/* Left — title block */}
+              <div>
+                <motion.span
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  style={{
+                    display: 'block',
+                    fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem',
+                    letterSpacing: '0.28em', color: '#FFF12D', marginBottom: '1.5rem',
+                  }}
+                >
+                  {data.categoryTag}
+                </motion.span>
 
-            {/* Category tag */}
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <span className="category-tag" style={{
-                display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
-                letterSpacing: '0.28em', color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
-                marginBottom: '0.75rem',
-                padding: '0.35rem 0.85rem',
-                border: '1px solid rgba(255,241,45,0.25)',
-                borderRadius: '2px',
-              }}>
-                {data.categoryTag}
-              </span>
-            </motion.div>
+                <div style={{ overflow: 'hidden' }}>
+                  <motion.h1
+                    initial={{ y: '100%', opacity: 0 }}
+                    animate={{ y: '0%', opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    style={{
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                      fontWeight: 700, color: '#fff',
+                      letterSpacing: '-0.03em', lineHeight: 0.92, margin: 0,
+                    }}
+                  >
+                    {data.heroTitle}
+                    {data.heroSubtitle && (
+                      <span style={{ color: '#FFF12D', display: 'block' }}>
+                        {data.heroSubtitle}
+                      </span>
+                    )}
+                  </motion.h1>
+                </div>
 
-            {/* Logo — the protagonist */}
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.5 }}
+                  style={{
+                    fontSize: 'clamp(0.85rem, 1.4vw, 1rem)',
+                    maxWidth: '520px', margin: '1.5rem 0 0',
+                    lineHeight: 1.8, color: 'rgba(255,255,255,0.5)',
+                    fontFamily: 'Outfit, sans-serif', fontStyle: 'italic',
+                  }}
+                >
+                  {data.heroTagline}
+                </motion.p>
+              </div>
+
+              {/* Right — stats strip */}
+              {data.heroStats && data.heroStats.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  style={{
+                    display: 'flex', flexDirection: 'column', gap: '0',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(0,0,0,0.45)',
+                    backdropFilter: 'blur(12px)',
+                    minWidth: '140px',
+                  }}
+                >
+                  {data.heroStats.map(({ key, value }, i) => (
+                    <div key={key} style={{
+                      padding: '1.25rem 1.5rem',
+                      borderBottom: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                    }}>
+                      <div style={{
+                        fontSize: '0.5rem', letterSpacing: '0.22em',
+                        color: 'rgba(255,255,255,0.28)', fontFamily: 'JetBrains Mono, monospace',
+                        marginBottom: '0.4rem',
+                      }}>{key}</div>
+                      <div style={{
+                        fontSize: '1.5rem', fontWeight: 900, color: '#FFF12D',
+                        fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1,
+                      }}>{value}</div>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
+            {/* Scroll indicator */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '0.5rem' }}
-            >
-              <img
-                src={data.logoSrc}
-                alt={data.heroTitle}
-                style={{
-                  display: 'block',
-                  margin: '0 auto',
-                  width: 'clamp(300px, 38vw, 560px)',
-                  height: 'auto',
-                  mixBlendMode: 'screen',
-                  filter: 'brightness(1.15) contrast(1.1)',
-                }}
-              />
-            </motion.div>
-
-            {/* Tagline */}
-            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.55, delay: 0.38 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
               style={{
-                fontSize: 'clamp(0.85rem, 1.4vw, 1rem)',
-                maxWidth: '640px',
-                margin: '0 auto',
-                lineHeight: 1.85,
-                color: 'rgba(255,255,255,0.5)',
-                fontFamily: 'Outfit, sans-serif',
-                fontStyle: 'italic',
+                position: 'absolute', bottom: 'clamp(2rem, 4vw, 3rem)',
+                left: '50%', transform: 'translateX(-50%)',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem',
               }}
             >
-              {data.heroTagline}
-            </motion.p>
-
-            {/* Stats strip — horizontal, full width, below tagline */}
-            {data.heroStats && data.heroStats.length > 0 && (
+              <span style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.5rem',
+                letterSpacing: '0.2em', color: 'rgba(255,255,255,0.25)',
+              }}>
+                SCROLL
+              </span>
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="hero-stats-strip"
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  flexWrap: 'wrap',
-                  gap: '0',
-                  marginTop: '4rem',
-                  borderTop: '1px solid rgba(255,255,255,0.06)',
-                }}
-              >
-                {data.heroStats.map(({ key, value }, i) => (
-                  <div key={key} className="hero-stat-item" style={{
-                    flex: '1',
-                    minWidth: '120px',
-                    maxWidth: '220px',
-                    padding: '1.75rem 1.5rem',
-                    borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-                    textAlign: 'center',
-                  }}>
-                    <div style={{ fontSize: '0.52rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.3)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{key}</div>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{value}</div>
-                  </div>
-                ))}
-              </motion.div>
-            )}
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+                style={{ width: '1px', height: '24px', background: 'rgba(255,241,45,0.4)' }}
+              />
+            </motion.div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════════════
             SECTION 2 — TECHNICAL OVERVIEW
-            Full prose left, lab results right (terminal)
+            Prose left, lab results / product image right
         ══════════════════════════════════════════════ */}
         <section style={{ padding: '6rem 2rem', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -224,7 +465,7 @@ export function TechDetailPage({ data }: Props) {
                 <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
                   // TECHNICAL OVERVIEW
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, marginBottom: '2rem', whiteSpace: 'pre-line' }}>
+                <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, marginBottom: '2rem', whiteSpace: 'pre-line', color: '#fff' }}>
                   {data.systemHeadline}
                 </h2>
                 {data.systemParagraphs.map((para, i) => (
@@ -240,7 +481,7 @@ export function TechDetailPage({ data }: Props) {
                     <div style={{ padding: '1.25rem 1.75rem', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                       <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#FFF12D', boxShadow: '0 0 8px rgba(255,241,45,0.7)' }} />
                       <span style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.35)' }}>
-                        AI LAB SIMULATION — ISO CERTIFIED
+                        LAB RESULTS — ISO CERTIFIED
                       </span>
                     </div>
                     <div style={{ padding: '0 1.75rem' }}>
@@ -259,14 +500,17 @@ export function TechDetailPage({ data }: Props) {
                     </div>
                     <div style={{ padding: '0.9rem 1.75rem', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.07)' }}>
                       <span style={{ fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.07em' }}>
-                        ∷ RESULTS SIMULATED UNDER ISO-CONTROLLED CONDITIONS
+                        ∷ RESULTS UNDER ISO-CONTROLLED CONDITIONS
                       </span>
                     </div>
                   </div>
                 ) : (
                   <div style={{ position: 'sticky', top: '5rem' }}>
-                    <img src={data.productImageSrc} alt={data.heroTitle}
-                      style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.12)', display: 'block' }} />
+                    <img
+                      src={data.productImageSrc}
+                      alt={data.heroTitle}
+                      style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.12)', display: 'block' }}
+                    />
                     <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.15em', marginTop: '0.75rem', textAlign: 'center' }}>
                       {data.productImageCaption}
                     </p>
@@ -279,60 +523,13 @@ export function TechDetailPage({ data }: Props) {
 
         {/* ══════════════════════════════════════════════
             SECTION 3 — PROTECTION ARCHITECTURE
-            Vertical layer stack — numbered, opacity-graduated
+            Scroll-driven sticky: left panel shows stage list,
+            right panel reveals each stage detail as user scrolls.
         ══════════════════════════════════════════════ */}
-        <section style={{ padding: '6rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <AnimateIn direction="up">
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '4rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
-                  // PROTECTION ARCHITECTURE
-                </span>
-                <h2 style={{ fontSize: 'clamp(1.3rem, 2.4vw, 1.9rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, margin: 0 }}>
-                  {data.stagesHeading || 'EACH LAYER STOPS WHAT THE PREVIOUS CANNOT.'}
-                </h2>
-              </div>
-            </AnimateIn>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-              {data.stages.map((stage, idx) => (
-                <AnimateIn key={idx} direction="up">
-                  <div className="stage-row" style={{
-                    display: 'grid',
-                    gridTemplateColumns: '56px 1fr auto',
-                    gap: '2rem',
-                    alignItems: 'start',
-                    padding: '2.25rem 2rem',
-                    background: `rgba(255,255,255,${0.018 - idx * 0.002})`,
-                    border: '1px solid rgba(255,255,255,0.04)',
-                    borderLeft: `3px solid rgba(255,241,45,${1 - idx * 0.22})`,
-                  }}>
-                    <div style={{ paddingTop: '0.15rem' }}>
-                      <div style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: `rgba(255,241,45,${1 - idx * 0.22})`, fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{stage.tag}</div>
-                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'rgba(255,255,255,0.05)', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.number}</div>
-                    </div>
-                    <div>
-                      <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '0.75rem', letterSpacing: '0.02em' }}>
-                        {stage.title}
-                      </h3>
-                      <p style={{ fontSize: '0.86rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', margin: 0, maxWidth: '600px' }}>
-                        {stage.body}
-                      </p>
-                    </div>
-                    <div className="stage-stat" style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
-                      <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
-                      <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Outfit, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
-                    </div>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StagesSection stages={data.stages} heading={data.stagesHeading} />
 
         {/* ══════════════════════════════════════════════
             SECTION 4 — FIELD SPECIFICATIONS
-            Dense data grid — technical datasheet style
         ══════════════════════════════════════════════ */}
         {data.specs.length > 0 && (
           <section style={{ padding: '5rem 2rem', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
@@ -342,7 +539,7 @@ export function TechDetailPage({ data }: Props) {
                   <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
                     // PROTECTION PARAMETERS
                   </span>
-                  <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0 }}>
+                  <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0, color: '#fff' }}>
                     {data.specsHeading || 'FIELD SPECIFICATIONS'}
                   </h2>
                 </div>
@@ -396,7 +593,7 @@ export function TechDetailPage({ data }: Props) {
                 <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
                   // ASSET APPLICATIONS
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0 }}>
+                <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0, color: '#fff' }}>
                   {data.applicationsHeading}
                 </h2>
               </div>
@@ -444,7 +641,8 @@ export function TechDetailPage({ data }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(0,0,0,0.25)' }}
-                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
+                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}
+              >
                 IDENTIFY SKU →
               </motion.a>
             </div>
@@ -461,250 +659,46 @@ export function TechDetailPage({ data }: Props) {
                 Related Knowledge
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Inter, sans-serif', marginBottom: '3rem', maxWidth: '560px' }}>
-                Explore complementary resources from our engineering knowledge base.
+                Engineering knowledge base — standards, contamination modes, fleet strategy.
               </p>
             </AnimateIn>
             <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-              {/* Standards */}
-              <motion.div variants={itemVariants}>
-                <Link href="/knowledge-system/standards" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <motion.div
-                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
-                    transition={{ duration: 0.2 }}
-                    style={{
-                      background: 'rgba(255,255,255,0.02)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                      padding: '2rem',
-                      cursor: 'pointer',
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '1rem',
-                      borderRadius: '2px',
-                    }}
-                  >
-                    <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
-                    }}>
-                      ⬡
-                    </div>
-                    <div>
-                      <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}>
-                        International Standards
-                      </h3>
-                      <p style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.85rem',
-                        color: 'rgba(255,255,255,0.45)',
-                        lineHeight: 1.5,
-                        margin: 0,
-                      }}>
-                        ISO cleanliness codes, particle counting, and filter integrity testing.
-                      </p>
-                    </div>
-                    <div style={{
-                      fontSize: '0.7rem',
-                      color: 'rgba(255,241,45,0.4)',
-                      fontFamily: 'JetBrains Mono, monospace',
-                      letterSpacing: '0.08em',
-                      marginTop: 'auto',
-                    }}>
-                      LEARN MORE →
-                    </div>
-                  </motion.div>
-                </Link>
-              </motion.div>
-
-              {/* Contamination & Failure Modes */}
-              <motion.div variants={itemVariants}>
-                <Link href="/knowledge-system/contamination" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <motion.div
-                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
-                    transition={{ duration: 0.2 }}
-                    style={{
-                      background: 'rgba(255,255,255,0.02)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                      padding: '2rem',
-                      cursor: 'pointer',
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '1rem',
-                      borderRadius: '2px',
-                    }}
-                  >
-                    <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
-                    }}>
-                      ⚠
-                    </div>
-                    <div>
-                      <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}>
-                        Contamination & Failure
-                      </h3>
-                      <p style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.85rem',
-                        color: 'rgba(255,255,255,0.45)',
-                        lineHeight: 1.5,
-                        margin: 0,
-                      }}>
-                        Root causes, degradation mechanisms, and failure prevention.
-                      </p>
-                    </div>
-                    <div style={{
-                      fontSize: '0.7rem',
-                      color: 'rgba(255,241,45,0.4)',
-                      fontFamily: 'JetBrains Mono, monospace',
-                      letterSpacing: '0.08em',
-                      marginTop: 'auto',
-                    }}>
-                      LEARN MORE →
-                    </div>
-                  </motion.div>
-                </Link>
-              </motion.div>
-
-              {/* Fleet Optimization */}
-              <motion.div variants={itemVariants}>
-                <Link href="/knowledge-system/fleet" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <motion.div
-                    whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
-                    transition={{ duration: 0.2 }}
-                    style={{
-                      background: 'rgba(255,255,255,0.02)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                      padding: '2rem',
-                      cursor: 'pointer',
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '1rem',
-                      borderRadius: '2px',
-                    }}
-                  >
-                    <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
-                    }}>
-                      🚛
-                    </div>
-                    <div>
-                      <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
-                        fontSize: '1rem',
-                        fontWeight: 600,
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}>
-                        Fleet Optimization
-                      </h3>
-                      <p style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.85rem',
-                        color: 'rgba(255,255,255,0.45)',
-                        lineHeight: 1.5,
-                        margin: 0,
-                      }}>
-                        Maintenance strategies, performance tracking, and operational efficiency.
-                      </p>
-                    </div>
-                    <div style={{
-                      fontSize: '0.7rem',
-                      color: 'rgba(255,241,45,0.4)',
-                      fontFamily: 'JetBrains Mono, monospace',
-                      letterSpacing: '0.08em',
-                      marginTop: 'auto',
-                    }}>
-                      LEARN MORE →
-                    </div>
-                  </motion.div>
-                </Link>
-              </motion.div>
+              {[
+                { href: '/knowledge-system/standards', icon: '⬡', title: 'International Standards', desc: 'ISO cleanliness codes, particle counting, and filter integrity testing.' },
+                { href: '/knowledge-system/contamination', icon: '⚠', title: 'Contamination & Failure', desc: 'Root causes, degradation mechanisms, and failure prevention.' },
+                { href: '/knowledge-system/fleet', icon: '◈', title: 'Fleet Optimization', desc: 'Maintenance intervals, TCO analysis, and operational strategy.' },
+              ].map(({ href, icon, title, desc }) => (
+                <motion.div key={href} variants={itemVariants}>
+                  <Link href={href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                    <motion.div
+                      whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                      transition={{ duration: 0.2 }}
+                      style={{
+                        background: 'rgba(255,255,255,0.02)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                        padding: '2rem', cursor: 'pointer', height: '100%',
+                        display: 'flex', flexDirection: 'column', gap: '1rem', borderRadius: '2px',
+                      }}
+                    >
+                      <div style={{ width: '36px', height: '36px', border: '1px solid rgba(255,241,45,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF12D', fontSize: '1rem' }}>
+                        {icon}
+                      </div>
+                      <div>
+                        <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{title}</h3>
+                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, margin: 0 }}>{desc}</p>
+                      </div>
+                      <div style={{ fontSize: '0.7rem', color: 'rgba(255,241,45,0.4)', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.08em', marginTop: 'auto' }}>
+                        LEARN MORE →
+                      </div>
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              ))}
             </StaggerContainer>
           </div>
         </section>
 
       </main>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .product-desc-grid {
-            grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .category-tag {
-            letter-spacing: 0.1em !important;
-            font-size: 0.55rem !important;
-            padding: 0.3rem 0.65rem !important;
-            word-break: break-word !important;
-            white-space: normal !important;
-            max-width: 90vw !important;
-          }
-          .hero-stats-strip {
-            justify-content: flex-start !important;
-          }
-          .hero-stat-item {
-            flex: 1 1 45% !important;
-            max-width: 50% !important;
-            border-right: none !important;
-            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-            padding: 1.25rem 1rem !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .stage-row {
-            grid-template-columns: 40px 1fr !important;
-            gap: 1rem 1.25rem !important;
-            padding: 1.5rem 1rem !important;
-          }
-          .stage-stat {
-            grid-column: 2 !important;
-            text-align: left !important;
-            min-width: unset !important;
-            padding-top: 0.75rem !important;
-            border-top: 1px solid rgba(255,255,255,0.05) !important;
-          }
-          .stage-stat div:last-child {
-            max-width: unset !important;
-            text-align: left !important;
-          }
-        }
-      `}</style>
     </>
   );
 }

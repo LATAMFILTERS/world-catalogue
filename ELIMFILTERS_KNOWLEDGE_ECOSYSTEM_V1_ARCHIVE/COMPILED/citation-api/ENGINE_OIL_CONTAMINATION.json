@@ -1,0 +1,167 @@
+{
+  "key": "ENGINE_OIL_CONTAMINATION",
+  "type": "problem",
+  "name": "Engine Oil Contamination",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "problem",
+    "active",
+    "lube-oil",
+    "not-in-ud",
+    "part-search-entry",
+    "exposure-high"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+    "concept": "Engine Oil Contamination — Lube Circuit Problem",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:4b8a3044d83f87619b563eb245228f6856be9b6690c8039108174307d6997b20"
+  },
+  "canonical": {
+    "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
+    "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
+    "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
+    "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
+    "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |\nNANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil",
+    "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
+  },
+  "relationships": {
+    "applicable_standards": [
+      "ISO_16889",
+      "ISO_4406"
+    ],
+    "resolved_by_technologies": [
+      "SYNTRAX",
+      "NANOFORCE"
+    ],
+    "affects_components": [
+      "ENGINE_BEARING_JOURNAL",
+      "PISTON_RING_ASSEMBLY"
+    ],
+    "recommended_product_families": [
+      "LUBE_PRIMARY"
+    ],
+    "root_contamination": [
+      "PARTICLE_WEAR"
+    ],
+    "industry_frequency": [
+      "MINING",
+      "CONSTRUCTION",
+      "AGRICULTURE",
+      "TRUCKS_FLEETS",
+      "MARINE",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "RAILWAY",
+      "BUS_COACH",
+      "WASTE_MUNICIPAL",
+      "AUTOMOTIVE"
+    ]
+  },
+  "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md",
+  "_links": {
+    "self": "/api/citation/ENGINE_OIL_CONTAMINATION.json",
+    "type_index": "/api/citation/type/problem.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "resolved_by_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "resolved_by_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "ENGINE_BEARING_JOURNAL",
+        "relation": "affects_components",
+        "href": "/api/citation/ENGINE_BEARING_JOURNAL.json"
+      },
+      {
+        "key": "PISTON_RING_ASSEMBLY",
+        "relation": "affects_components",
+        "href": "/api/citation/PISTON_RING_ASSEMBLY.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "recommended_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "root_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "industry_frequency",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "industry_frequency",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "industry_frequency",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "industry_frequency",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "industry_frequency",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "industry_frequency",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "BUS_COACH",
+        "relation": "industry_frequency",
+        "href": "/api/citation/BUS_COACH.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "industry_frequency",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "AUTOMOTIVE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/AUTOMOTIVE.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "path_id": "PATH_C_INTEKCORE_014",
+  "path_type": "C",
+  "entry_node": "INTEKCORE",
+  "entry_type": "technology",
+  "industry": null,
+  "valid": false,
+  "steps": [
+    {
+      "key": "INTEKCORE",
+      "type": "technology",
+      "name": "INTEKCORE — Zero-Bypass Radial Seal Housing",
+      "citation_record": {
+        "key": "INTEKCORE",
+        "type": "technology",
+        "name": "INTEKCORE — Zero-Bypass Radial Seal Housing",
+        "slug": "intekcore",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "INTEKCORE",
+        "tags": [
+          "technology",
+          "active",
+          "air-intake",
+          "housing",
+          "zero-bypass",
+          "radial-seal",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/technologies/intekcore",
+          "concept": "INTEKCORE Zero-Bypass Radial Seal Housing",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:28ef77baadbd119afa48a7feb970cd7799bb83ab1811981426079c53024b063d"
+        },
+        "canonical": {
+          "definition": "INTEKCORE is a zero-bypass radial seal air filter housing technology that eliminates installation-induced and vibration-induced bypass in diesel engine intake systems through a self-centering radial interference seal between filter element end-cap and housing bore, independent of axial clamping force.",
+          "systems": "Diesel engine air intake systems on heavy-duty off-highway equipment in mining, agriculture, construction, and on-highway applications",
+          "failure_impact": "Axial-seal housing bypass under vibration or improper installation → unfiltered air path bypassing filter element → silica and environmental dust ingestion into combustion chamber → piston ring and cylinder bore abrasive wear → compression loss 10–25% | INTEKCORE eliminates this failure mode through radial seal geometry that maintains positive seal under vibration and variable clamping torque.",
+          "related_standards": "ISO 5011: Inlet air cleaning equipment test methodology; INTEKCORE achieves zero bypass under ISO 5011 test conditions confirming element efficiency equals system efficiency",
+          "related_technologies": "MACROCORE: Primary particle capture media deployed within INTEKCORE housing; combined system provides rated efficiency from media and zero bypass from housing | SYNTEPORE: All-synthetic media compatible with INTEKCORE housing for humid-environment installations",
+          "industrial_role": "INTEKCORE closes the gap between rated filter element efficiency (from ISO 5011 media testing) and actual installed system efficiency — in axial-seal designs this gap can represent 10–30% unfiltered air bypass under field vibration conditions, negating the performance of even high-specification filter media."
+        },
+        "relationships": {
+          "applicable_industries": [
+            "MINING",
+            "AGRICULTURE",
+            "CONSTRUCTION",
+            "RAILWAY",
+            "TRUCKS_FLEETS"
+          ],
+          "related_standards": [
+            "ISO_5011"
+          ],
+          "addresses_contamination": [
+            "PARTICLE_WEAR"
+          ]
+        },
+        "vault_path": "elimfilters-vault/01-technologies/active/INTEKCORE.md"
+      }
+    }
+  ],
+  "terminal_product_families": []
+}

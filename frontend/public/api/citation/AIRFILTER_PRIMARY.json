@@ -1,0 +1,110 @@
+{
+  "key": "AIRFILTER_PRIMARY",
+  "type": "product-family",
+  "name": "Primary Intake Protection",
+  "slug": "airfilter",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "product-family",
+    "active",
+    "air-intake",
+    "not-in-ud",
+    "part-search-node"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/systems/airfilter",
+    "concept": "Primary Intake Protection Product Family",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:30980fc7d226b1651895431311bfbb8cd9d81e3545897c1c6382115881b0fd22"
+  },
+  "canonical": {
+    "definition": "Primary Intake Protection — the MACROCORE™-technology filter element family for\nprimary-duty air intake applications in heavy-duty diesel engines, covering approximately\n120 SKUs across mining, agricultural, construction, and commercial transport\nconfigurations, all ISO 5011 certified to 99.9%–99.98% efficiency.",
+    "systems": "Air Intake domain; belongs to AIRFILTER product-line system; implements MACROCORE™\nProgressive Density Gradient technology",
+    "failure_impact": "Selecting incorrect element from this family (wrong size, wrong efficiency class) or\nexceeding service interval → reduced filtration performance → dust ingestion → engine\noverhaul interval compression (see DUST_INGESTION)",
+    "related_standards": "ISO 5011: All elements in this family are ISO 5011 certified |\nSAE J1539: Contamination classification standard confirming element specification suitability",
+    "related_technologies": "MACROCORE: Primary element technology (PDG multi-layer construction) |\nSYNTEPORE: Alternative family for humid/marine environments (not in this family)",
+    "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon filtration requirement in heavy-duty equipment — air intake protection. It connects\nthe MACROCORE™ technology specification to the specific SKU that fits a given engine\nmake and model."
+  },
+  "relationships": {
+    "meets_standards": [
+      "ISO_5011",
+      "SAE_J1539"
+    ],
+    "target_industries": [
+      "MINING",
+      "AGRICULTURE",
+      "CONSTRUCTION",
+      "TRUCKS_FLEETS",
+      "POWER_GENERATION"
+    ],
+    "uses_technology": [
+      "MACROCORE"
+    ],
+    "belongs_to_domain": [
+      "AIRFILTER"
+    ],
+    "belongs_to_product_system": [
+      "AIRFILTER"
+    ]
+  },
+  "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md",
+  "_links": {
+    "self": "/api/citation/AIRFILTER_PRIMARY.json",
+    "type_index": "/api/citation/type/product-family.json",
+    "related": [
+      {
+        "key": "ISO_5011",
+        "relation": "meets_standards",
+        "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "SAE_J1539",
+        "relation": "meets_standards",
+        "href": "/api/citation/SAE_J1539.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "target_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "target_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "target_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "target_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "target_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "MACROCORE",
+        "relation": "uses_technology",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "AIRFILTER",
+        "relation": "belongs_to_domain",
+        "href": "/api/citation/AIRFILTER.json"
+      },
+      {
+        "key": "AIRFILTER",
+        "relation": "belongs_to_product_system",
+        "href": "/api/citation/AIRFILTER.json"
+      }
+    ]
+  }
+}

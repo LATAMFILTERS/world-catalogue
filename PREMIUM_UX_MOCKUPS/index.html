@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELIMFILTERS® — Premium UX Mockup Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --yellow: #FFF12D;
+      --black: #000;
+      --white: #ffffff;
+      --gray: rgba(255,255,255,0.5);
+      --muted: rgba(255,255,255,0.35);
+      --border: rgba(255,241,45,0.12);
+      --border-hover: rgba(255,241,45,0.30);
+      --card-bg: rgba(255,255,255,0.025);
+      --row-alt: rgba(255,255,255,0.02);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      width: 100%;
+      background: rgba(0,0,0,0.95);
+      border-bottom: 1px solid var(--yellow);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .header-brand span {
+      color: var(--yellow);
+    }
+
+    .header-center {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-align: center;
+      flex: 1;
+    }
+
+    .header-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 3.8rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--yellow);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-para {
+      max-width: 660px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ─── VIEWING INSTRUCTIONS ─── */
+    .instructions-section {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .instructions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .instruction-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .instruction-card-icon {
+      width: 36px;
+      height: 28px;
+      border: 2px solid var(--gray);
+      border-radius: 3px;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Desktop monitor icon */
+    .icon-desktop::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 4px;
+      background: var(--gray);
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 1px;
+    }
+
+    /* Mobile phone icon */
+    .icon-mobile {
+      width: 20px;
+      height: 32px;
+      border: 2px solid var(--gray);
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .icon-mobile::after {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 2px;
+      background: var(--gray);
+      border-radius: 1px;
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .instruction-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .instruction-steps {
+      list-style: none;
+      counter-reset: step;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .instruction-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    .instruction-steps li::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      min-width: 22px;
+      padding-top: 0.05rem;
+      flex-shrink: 0;
+    }
+
+    .instruction-note {
+      margin-top: 1.25rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border-left: 2px solid rgba(255,241,45,0.3);
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ─── COMPARISON TABLE ─── */
+    .comparison-section {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .comparison-header-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      gap: 0;
+      margin-bottom: 0;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px 6px 0 0;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-bottom: none;
+    }
+
+    .col-header-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .col-header-current {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-left: 1rem;
+    }
+
+    .col-header-premium {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-left: 1rem;
+    }
+
+    .comparison-table {
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.15s ease;
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-row:nth-child(odd) {
+      background: var(--row-alt);
+    }
+
+    .comparison-row:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .comparison-category {
+      padding: 1rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comparison-current {
+      padding: 1rem 1rem 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.55;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comparison-premium {
+      padding: 1rem 1rem 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+    }
+
+    /* ─── MOCKUP GALLERY ─── */
+    .gallery-section {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .mockup-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .mockup-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .mockup-card:nth-child(1) { animation-delay: 0.05s; }
+    .mockup-card:nth-child(2) { animation-delay: 0.10s; }
+    .mockup-card:nth-child(3) { animation-delay: 0.15s; }
+    .mockup-card:nth-child(4) { animation-delay: 0.20s; }
+    .mockup-card:nth-child(5) { animation-delay: 0.25s; }
+    .mockup-card:nth-child(6) { animation-delay: 0.30s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--yellow);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px;
+      padding: 0.25rem 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .card-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--yellow);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+      transition: gap 0.15s ease;
+    }
+
+    .mockup-card:hover .card-cta {
+      gap: 0.65rem;
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-main {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 640px;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: opacity 0.15s ease;
+    }
+
+    .footer-link:hover {
+      opacity: 0.7;
+    }
+
+    .footer-next {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-next span {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ─── SECTION DIVIDER ─── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin: 0;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comparison-header-row,
+      .comparison-row {
+        grid-template-columns: 140px 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.4rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .header-date {
+        text-align: center;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .instructions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-header-row {
+        display: none;
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 0.5rem;
+      }
+
+      .comparison-category {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 0 0 0.5rem;
+      }
+
+      .comparison-current {
+        border-right: none;
+        padding: 0;
+        font-size: 0.82rem;
+      }
+
+      .comparison-current::before {
+        content: 'CURRENT  ';
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.6rem;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .comparison-premium {
+        padding: 0;
+        font-size: 0.82rem;
+      }
+
+      .comparison-premium::before {
+        content: 'PREMIUM UX LAYER  ';
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.6rem;
+        color: var(--yellow);
+        display: block;
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        padding: 3rem 1.25rem 3rem;
+      }
+
+      .footer-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header">
+    <div class="header-brand">ELIMFILTERS<span>®</span></div>
+    <div class="header-center">Premium UX Layer — Mockup Gallery</div>
+    <div class="header-date">June 2026 · Design Review</div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <h1 class="hero-heading">PREMIUM UX LAYER</h1>
+    <p class="hero-sub">Visual Concepts for Design Evaluation</p>
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      READY FOR REVIEW
+    </div>
+    <p class="hero-para">
+      Six browser-rendered mockups covering the complete ELIMFILTERS® website experience.
+      Each shows BEFORE vs. AFTER the Premium UX Layer. Open any mockup in a browser —
+      no server required, all self-contained HTML.
+    </p>
+  </section>
+
+  <!-- ─── VIEWING INSTRUCTIONS ─── -->
+  <section class="instructions-section">
+    <div class="container">
+      <span class="section-label">// Viewing Instructions</span>
+      <div class="instructions-grid">
+
+        <!-- Desktop -->
+        <div class="instruction-card">
+          <div class="instruction-card-icon icon-desktop"></div>
+          <div class="instruction-card-title">Desktop Viewing</div>
+          <ol class="instruction-steps">
+            <li>Download all files to the same folder</li>
+            <li>Open any .html file directly in Chrome, Firefox, or Safari</li>
+            <li>View at 1400px+ window width for optimal layout</li>
+            <li>All animations trigger on page load — refresh to replay</li>
+            <li>Each file is self-contained — no internet required after loading (except Google Fonts)</li>
+          </ol>
+          <div class="instruction-note">
+            Best experienced in Chrome or Firefox. Some CSS animations may render differently in Safari.
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <div class="instruction-card">
+          <div class="icon-mobile"></div>
+          <div class="instruction-card-title">Mobile Viewing</div>
+          <ol class="instruction-steps">
+            <li>Send any .html file to your phone (AirDrop, email, WhatsApp)</li>
+            <li>Open in mobile browser (Chrome for Android / Safari for iOS)</li>
+            <li>Each mockup includes a 375px mobile comparison panel</li>
+            <li>Or: host locally with <code style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: rgba(255,241,45,0.8);">npx serve . -l 3000</code> and open on device</li>
+          </ol>
+          <div class="instruction-note">
+            Mobile panels show the 375px viewport — the experience is best evaluated on an actual iPhone or Android device at that width.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPARISON TABLE ─── -->
+  <section class="comparison-section">
+    <div class="container">
+      <span class="section-label">// Current Experience vs. Premium UX Layer</span>
+
+      <!-- Column headers -->
+      <div class="comparison-header-row">
+        <div class="col-header-category">Category</div>
+        <div class="col-header-current">Current</div>
+        <div class="col-header-premium">Premium UX Layer</div>
+      </div>
+
+      <!-- Rows -->
+      <div class="comparison-table">
+
+        <div class="comparison-row">
+          <div class="comparison-category">Homepage First Impression</div>
+          <div class="comparison-current">"ENGINE FILTRATION" headline over dark gradient. Functional, informative.</div>
+          <div class="comparison-premium">"PROTECTING INDUSTRIAL ASSETS" over ambient mining scene with CSS dust particles. Brand claim visible before any reading.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Problem Communication</div>
+          <div class="comparison-current">Text + mechanic image. "What you can't see is stopping your fleet."</div>
+          <div class="comparison-premium">Pinned scroll section: 3 failure modes reveal sequentially. Bearing wear, injector stiction, valve failure — animated, not described.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Statistics</div>
+          <div class="comparison-current">Animated counters. Numbers visible.</div>
+          <div class="comparison-premium">Numbers + context lines. "+45%" becomes "8,000 → 11,600+ hours per overhaul cycle."</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Technology Pages</div>
+          <div class="comparison-current">Comparison table. Spec-sheet format.</div>
+          <div class="comparison-premium">Horizontal scroll gallery + particle capture SVG animation + ISO 16889 performance curve. Engineering communication, not spec listing.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Industry Pages</div>
+          <div class="comparison-current">12 identical CategoryPage templates. Different words, same layout.</div>
+          <div class="comparison-premium">Industry-specific ambient overlays. Mining: silica dust particles + Mohs hardness comparison. Each industry feels designed for that buyer.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Knowledge System</div>
+          <div class="comparison-current">Plain numbered sections. Information-dense, experience-thin.</div>
+          <div class="comparison-premium">Section progress rail (01–08). Inline yellow metric highlights. Pullquote blocks. Network graph on hub.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Distributor Entry Point</div>
+          <div class="comparison-current">Direct to form. Cold.</div>
+          <div class="comparison-premium">Territory flyout: Colombia/Mexico/Chile/Peru/Ecuador availability confirmed before form. Reduces abandonment.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Mobile Experience</div>
+          <div class="comparison-current">Responsive (desktop shrunk). Works, not designed for mobile.</div>
+          <div class="comparison-premium">Portrait hero crop, 2x2 stat grid with context lines, particle animations sized for mobile.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Visual Language</div>
+          <div class="comparison-current">Yellow accents on black. Professional.</div>
+          <div class="comparison-premium">Yellow = protection (capture flash on filter animation). Red = failure. Color carries meaning, not just aesthetic.</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-category">Emotional Register</div>
+          <div class="comparison-current">"Well-built industrial website."</div>
+          <div class="comparison-premium">"Engineering company with a point of view."</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MOCKUP GALLERY ─── -->
+  <section class="gallery-section">
+    <div class="container">
+      <span class="section-label">// Mockup Gallery — 6 Files</span>
+      <div class="gallery-grid">
+
+        <!-- Card 01 -->
+        <a class="mockup-card" href="01-homepage-hero.html">
+          <div class="card-number">01</div>
+          <div class="card-title">HOMEPAGE HERO</div>
+          <p class="card-desc">
+            Desktop + mobile BEFORE/AFTER. Ambient dust particle field, brand claim headline,
+            stat cards with operational context lines.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Desktop</span>
+            <span class="tag">Mobile</span>
+            <span class="tag">Particles</span>
+            <span class="tag">Stats</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+        <!-- Card 02 -->
+        <a class="mockup-card" href="02-contamination-animation.html">
+          <div class="card-number">02</div>
+          <div class="card-title">CONTAMINATION ANIMATION</div>
+          <p class="card-desc">
+            Three scroll-state reveal: clean bearing → particle wear → valve failure.
+            Yellow sweep protection reveal.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Pinned Scroll</span>
+            <span class="tag">SVG Animation</span>
+            <span class="tag">Failure Modes</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+        <!-- Card 03 -->
+        <a class="mockup-card" href="03-technology-gallery.html">
+          <div class="card-number">03</div>
+          <div class="card-title">TECHNOLOGY GALLERY</div>
+          <p class="card-desc">
+            Horizontal scroll gallery, filter mechanism particle capture animation,
+            ISO 16889 performance curve.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Horizontal Scroll</span>
+            <span class="tag">Mechanism Animation</span>
+            <span class="tag">Performance Data</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+        <!-- Card 04 -->
+        <a class="mockup-card" href="04-industry-page.html">
+          <div class="card-number">04</div>
+          <div class="card-title">INDUSTRY PAGE — MINING</div>
+          <p class="card-desc">
+            Industry-specific contamination callout. Silica dust ambient overlay.
+            Mohs hardness comparison. Ingestion rate data.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Mining</span>
+            <span class="tag">Ambient Particles</span>
+            <span class="tag">Contamination Data</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+        <!-- Card 05 -->
+        <a class="mockup-card" href="05-knowledge-system.html">
+          <div class="card-number">05</div>
+          <div class="card-title">KNOWLEDGE SYSTEM</div>
+          <p class="card-desc">
+            Section progress rail, inline metric highlights, pullquote blocks.
+            Palantir-inspired knowledge network graph.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Reading Experience</span>
+            <span class="tag">Network Graph</span>
+            <span class="tag">Navigation</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+        <!-- Card 06 -->
+        <a class="mockup-card" href="06-distributor-experience.html">
+          <div class="card-number">06</div>
+          <div class="card-title">DISTRIBUTOR EXPERIENCE</div>
+          <p class="card-desc">
+            Territory availability flyout. Application page with pre-form program context.
+            Converts cold form to qualified entry point.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Territory Flyout</span>
+            <span class="tag">Application Form</span>
+            <span class="tag">Conversion</span>
+          </div>
+          <span class="card-cta">→ OPEN MOCKUP</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <p class="footer-main">ELIMFILTERS® Premium UX Layer — Design Review · June 2026</p>
+    <p class="footer-note">
+      All mockups are self-contained HTML. No code has been written for production.
+      These are visual concepts for design direction approval.
+    </p>
+    <nav class="footer-nav">
+      <a class="footer-link" href="index.html">← INDEX (current page)</a>
+      <div class="footer-next">Next step: <span>PREMIUM_UX_FINAL_REVIEW.md</span></div>
+    </nav>
+  </footer>
+
+</body>
+</html>

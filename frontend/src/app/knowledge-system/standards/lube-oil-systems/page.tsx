@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
+import { JSONLD_LUBE_OIL_SYSTEMS } from '@/lib/jsonld-constants.generated';
+
+// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
+const PAGE_JSONLD = JSONLD_LUBE_OIL_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
@@ -126,6 +130,11 @@ export default function LubeOilSystemsPage() {
             color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
           }}>
             A typical engine oil filter operates under 3 to 5 bar differential pressure, processing 40 to 100 liters per minute depending on engine displacement and speed. Over a 500-hour service interval, the filter element accumulates kilograms of contaminant mass while maintaining target ISO cleanliness codes that directly determine bearing life and oil oxidation rate.
+          </p>
+          <p className="ks-pullquote">
+            Optimal ISO 16/14/11 cleanliness targets extend bearing life{' '}
+            <span className="ks-metric">3–5×</span>{' '}
+            compared to commodity-approach contamination levels at 19/17/14 — the difference between 5,000-hour and 15,000-hour overhaul intervals.
           </p>
         </motion.section>
 
@@ -492,6 +501,7 @@ export default function LubeOilSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }
