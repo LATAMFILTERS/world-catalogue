@@ -419,15 +419,19 @@ export default function TechnologiesPage() {
                         )}
                       </div>
 
-                      {/* GEO Definition — full prose for AI engine extraction */}
+                      {/* GEO Definition — capped at 4 lines to keep logo visible */}
                       <p style={{
                         fontSize: '0.875rem',
                         color: 'rgba(255,255,255,0.7)',
                         fontFamily: 'Inter, sans-serif',
-                        lineHeight: 1.75,
+                        lineHeight: 1.65,
                         margin: '0',
                         flexGrow: 1,
                         position: 'relative', zIndex: 1,
+                        display: '-webkit-box',
+                        WebkitLineClamp: 4,
+                        WebkitBoxOrient: 'vertical' as const,
+                        overflow: 'hidden',
                       }}>
                         {geoDef || tech.description}
                       </p>
