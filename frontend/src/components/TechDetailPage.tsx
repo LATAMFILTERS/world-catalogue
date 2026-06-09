@@ -364,15 +364,21 @@ export function TechDetailPage({ data }: Props) {
                     animate={{ y: '0%', opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      fontFamily: 'Outfit, sans-serif',
-                      fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                      fontFamily: 'Barlow Condensed, sans-serif',
+                      fontSize: 'clamp(2.8rem, 6.5vw, 6rem)',
                       fontWeight: 700, color: '#fff',
-                      letterSpacing: '-0.03em', lineHeight: 0.92, margin: 0,
+                      letterSpacing: '0.03em', lineHeight: 0.95, margin: 0,
                     }}
                   >
                     {data.heroTitle}
                     {data.heroSubtitle && (
-                      <span style={{ color: '#FFF12D', display: 'block' }}>
+                      <span style={{
+                        color: '#FFF12D', display: 'block',
+                        fontSize: 'clamp(1.2rem, 2.4vw, 2rem)',
+                        letterSpacing: '0.1em',
+                        fontWeight: 600,
+                        marginTop: '0.25rem',
+                      }}>
                         {data.heroSubtitle}
                       </span>
                     )}

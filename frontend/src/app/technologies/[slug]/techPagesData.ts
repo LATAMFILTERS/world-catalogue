@@ -249,9 +249,9 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTagline: 'Every contaminant that bypasses air intake reaches cylinder bores and turbocharger bearings without further interception. MACROCORE™ PDG distributes contamination load across three calibrated density zones — eliminating the surface-loading failure mode that leaves conventional elements 40–60% unused at service change.',
     heroImage: '/images/mecanica-air.avif',
     heroStats: [
-      { key: 'PDG ZONES', value: '3 ACTIVE' },
+      { key: 'CAPTURE EFF.', value: '99.98%' },
       { key: 'ANTI-COLLAPSE', value: '427 kPa' },
-      { key: 'CAPTURE EFFICIENCY', value: '99.98%' },
+      { key: 'DUST CAPACITY', value: '480 g/m²' },
     ],
     logoSrc: '/images/macrocore(fn).avif',
     systemHeadline: 'NOT A SURFACE BARRIER.\nA FULL-DEPTH PROTECTION MATRIX.',
@@ -290,12 +290,12 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       },
     ],
     specs: [
-      { label: 'PDG EFFICIENCY', value: '99.98%', sub: 'ISO 5011 single-pass test — rated airflow conditions' },
+      { label: 'PDG EFFICIENCY', value: '99.98%', sub: 'ISO 5011 single-pass — rated airflow conditions' },
       { label: 'ANTI-COLLAPSE', value: '427 kPa', sub: '62 PSI differential pressure structural rating' },
-      { label: 'THERMAL RATING', value: '120°C', sub: 'Continuous operation — turbo inlet temperature rated' },
-      { label: 'PLEAT GEOMETRY', value: 'EQUIDISTANT', sub: 'Uniform airflow — zero blind pleats, zero channeling' },
+      { label: 'DUST CAPACITY', value: '480 g/m²', sub: 'ISO 5011 — total dirt holding capacity' },
+      { label: 'CLEAN RESTRICTION', value: '<1.5 kPa', sub: 'New element airflow resistance at rated flow' },
+      { label: 'THERMAL RATING', value: '120°C', sub: 'Continuous — turbo inlet temperature rated' },
       { label: 'CERTIFICATION', value: 'ISO 5011', sub: 'SAE J726 · ASTM D202 compliant' },
-      { label: 'CAPTURE MECHANISMS', value: '3', sub: 'Inertial impaction · Interception · Diffusion' },
     ],
     labResults: [
       { test: 'Single-Pass Filtration Efficiency', standard: 'ISO 5011', result: '99.98', unit: '%' },
@@ -305,7 +305,6 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { test: 'Thermal Stability (Continuous)', standard: 'ELIMFILTERS®-AT-02', result: '120', unit: '°C' },
     ],
     applicationsHeading: 'WHERE MACROCORE™ PROTECTS',
-    applicationsSubtext: 'MACROCORE™ PDG protection is validated for turbocharged and naturally aspirated engines across all industrial duty cycles and intake contamination classes.',
     applications: [
       { sector: 'HEAVY TRANSPORT', detail: 'Turbocharged diesel engines operating at continuous high airflow demand. The MACROCORE™ anti-collapse structure protects against vacuum events during turbo boost transition cycles — the pressure differential condition that collapses conventional filter elements and opens unfiltered air bypass paths directly to turbocharger compressor blades and intercooler circuits.' },
       { sector: 'MINING', detail: '24/7 off-highway extraction equipment in silica-heavy dust environments where intake contamination rates can exceed 10× on-road benchmarks. PDG full-depth loading distributes the sustained high contamination mass flux that would surface-load and restrict conventional single-density elements within hours of service start.' },
