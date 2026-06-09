@@ -1,7 +1,7 @@
 // AUTO-GENERATED — do not edit manually
 // Regenerate with: node scripts/sync-jsonld-constants.js
 // Source: elimfilters-vault/00-meta/CITATION_INDEX.json
-// Generated: 2026-06-09T04:09:15.133Z
+// Generated: 2026-06-09T04:32:44.985Z
 //
 // Each constant is a pre-serialized JSON-LD string for use with:
 //   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: CONSTANT }} />

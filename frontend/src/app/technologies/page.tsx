@@ -483,89 +483,100 @@ export default function TechnologiesPage() {
               System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
             </p>
           </motion.div>
-          {/* Network Visualization */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-            {Object.entries(
-              _techComparison.reduce((acc, row) => {
-                if (!acc[row.system]) acc[row.system] = [];
-                acc[row.system].push(row);
-                return acc;
-              }, {} as Record<string, typeof _techComparison>)
-            ).map(([domain, techs], gi) => (
-              <motion.div
-                key={domain}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: gi * 0.07 }}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'clamp(140px,18%,220px) 1fr auto 1fr clamp(180px,28%,380px)',
-                  alignItems: 'center',
-                  borderBottom: '1px solid rgba(255,255,255,0.05)',
-                  minHeight: '80px',
-                }}
-              >
-                {/* Domain label */}
-                <div style={{ padding: '1.25rem 1.5rem 1.25rem 0', borderRight: '1px solid rgba(255,241,45,0.2)', textAlign: 'right' }}>
-                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', letterSpacing: '0.04em', color: '#FFF12D', fontWeight: 700 }}>
-                    {domain}
-                  </span>
-                </div>
+          {/* Network Diagram SVG */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            style={{ width: '100%', overflowX: 'auto' }}
+          >
+            <svg viewBox="0 0 1200 760" style={{ width: '100%', minWidth: '700px', height: 'auto', display: 'block' }}>
+              <defs>
+                <filter id="nodeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="lineGlow" x="-10%" y="-100%" width="120%" height="300%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
 
-                {/* Left connector line */}
-                <div style={{ height: '1px', background: 'linear-gradient(to right, rgba(255,241,45,0.25), rgba(255,241,45,0.08))' }} />
+              {/* Connection bezier curves — domain (right x=290) → tech (left x=760) */}
+              {[
+                { dy: 80,  ty: 62  },  // Air Intake → MACROCORE
+                { dy: 80,  ty: 148 },  // Air Intake → INTEKCORE
+                { dy: 190, ty: 235 },  // Fuel Cleanliness → SYNTEPORE
+                { dy: 190, ty: 322 },  // Fuel Cleanliness → HYDROCORE
+                { dy: 300, ty: 408 },  // Compressed Air → DRYCORE
+                { dy: 410, ty: 492 },  // Lubrication → SYNTRAX
+                { dy: 520, ty: 578 },  // Hydraulic → NANOFORCE
+                { dy: 630, ty: 662 },  // Cooling System → THERMOCORE
+                { dy: 700, ty: 748 },  // Cabin Protection → MICROKAPPA
+              ].map((c, i) => (
+                <path
+                  key={i}
+                  d={`M 290 ${c.dy} C 525 ${c.dy} 525 ${c.ty} 760 ${c.ty}`}
+                  fill="none"
+                  stroke="rgba(255,241,45,0.3)"
+                  strokeWidth="1.5"
+                  filter="url(#lineGlow)"
+                />
+              ))}
 
-                {/* Tech nodes */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', padding: '1rem 0', alignItems: 'center' }}>
-                  {techs.map(tech => (
-                    <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
-                      <motion.div
-                        whileHover={{ background: 'rgba(255,241,45,0.18)', borderColor: 'rgba(255,241,45,0.7)' }}
-                        transition={{ duration: 0.15 }}
-                        style={{
-                          border: '1px solid rgba(255,241,45,0.35)',
-                          borderRadius: '6px',
-                          padding: '0.6rem 1.1rem',
-                          fontFamily: 'Space Grotesk, sans-serif',
-                          fontWeight: 700,
-                          fontSize: '0.88rem',
-                          color: '#FFF12D',
-                          whiteSpace: 'nowrap',
-                          background: 'rgba(255,241,45,0.06)',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.6rem',
-                        }}
-                      >
-                        {tech.img && (
-                          <img
-                            src={tech.img}
-                            alt={tech.name}
-                            style={{ height: '36px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
-                          />
-                        )}
-                      </motion.div>
-                    </Link>
-                  ))}
-                </div>
+              {/* Domain nodes — left column */}
+              {[
+                { label: 'Air Intake',        cy: 80  },
+                { label: 'Fuel Cleanliness',  cy: 190 },
+                { label: 'Compressed Air',    cy: 300 },
+                { label: 'Lubrication',       cy: 410 },
+                { label: 'Hydraulic',         cy: 520 },
+                { label: 'Cooling System',    cy: 630 },
+                { label: 'Cabin Protection',  cy: 700 },
+              ].map((d, i) => (
+                <g key={i} filter="url(#nodeGlow)">
+                  <rect x="10" y={d.cy - 22} width="280" height="44" rx="6"
+                    fill="rgba(255,241,45,0.04)" stroke="rgba(255,241,45,0.35)" strokeWidth="1.2"/>
+                  <text x="150" y={d.cy + 6}
+                    textAnchor="middle" dominantBaseline="middle"
+                    fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="15"
+                    fill="#FFF12D">
+                    {d.label}
+                  </text>
+                </g>
+              ))}
 
-                {/* Right connector line */}
-                <div style={{ height: '1px', background: 'linear-gradient(to right, rgba(255,241,45,0.08), rgba(255,241,45,0.25))' }} />
+              {/* Tech nodes — right column with logo images */}
+              {[
+                { slug: 'macrocore',  img: '/assets/MACROCORE.avif',  cy: 62  },
+                { slug: 'intekcore',  img: '/assets/INTEKCORE.avif',  cy: 148 },
+                { slug: 'syntepore', img: '/assets/SYNTEPORE.avif', cy: 235 },
+                { slug: 'hydrocore', img: '/assets/HYDROCORE.avif', cy: 322 },
+                { slug: 'drycore',   img: '/assets/DRYCORE.avif',   cy: 408 },
+                { slug: 'syntrax',   img: '/assets/SYNTRAX.avif',   cy: 492 },
+                { slug: 'nanoforce', img: '/assets/NANOFORCE.avif', cy: 578 },
+                { slug: 'thermocore',img: '/assets/THERMOCORE.avif',cy: 662 },
+                { slug: 'microkappa',img: '/assets/MICROKAPPA.avif',cy: 748 },
+              ].map((t) => (
+                <a key={t.slug} href={`/technologies/${t.slug}`} style={{ cursor: 'pointer' }}>
+                  <g filter="url(#nodeGlow)">
+                    <rect x="760" y={t.cy - 36} width="200" height="72" rx="8"
+                      fill="rgba(255,241,45,0.05)" stroke="rgba(255,241,45,0.4)" strokeWidth="1.2"/>
+                    <image href={t.img} x="770" y={t.cy - 30} width="180" height="60"
+                      preserveAspectRatio="xMidYMid meet" opacity="0.9"/>
+                  </g>
+                </a>
+              ))}
 
-                {/* Function + metric */}
-                <div style={{ padding: '1.25rem 0 1.25rem 1.5rem', borderLeft: '1px solid rgba(255,241,45,0.2)' }}>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', margin: '0 0 0.4rem', lineHeight: 1.55 }}>
-                    {techs[0].func}
-                  </p>
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,241,45,0.6)', letterSpacing: '0.02em' }}>
-                    {techs[0].metric}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              {/* Center dot at each bezier midpoint for visual polish */}
+              {[62, 148, 235, 322, 408, 492, 578, 662, 748].map((ty, i) => (
+                <circle key={i} cx="525" cy={(
+                  [80, 80, 190, 190, 300, 410, 520, 630, 700][i] + ty
+                ) / 2} r="3" fill="rgba(255,241,45,0.45)" />
+              ))}
+            </svg>
+          </motion.div>
         </div>
       </section>
 
