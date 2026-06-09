@@ -543,10 +543,9 @@ export default function TechnologiesPage() {
                           <img
                             src={tech.img}
                             alt={tech.name}
-                            style={{ height: '28px', width: 'auto', objectFit: 'contain', opacity: 0.85 }}
+                            style={{ height: '36px', width: 'auto', objectFit: 'contain', opacity: 0.9 }}
                           />
                         )}
-                        {tech.name}
                       </motion.div>
                     </Link>
                   ))}
