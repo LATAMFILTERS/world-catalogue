@@ -43,7 +43,7 @@ const TECH_IMAGES: Record<string, string> = {
   'aquaguard-series': '/assets/HYDROCORE.avif',
   'syntrax':          '/assets/SYNTRAX.avif',
   'nanoforce':        '/assets/NANOFORCE.avif',
-  'thermocore':       '/assets/THERMOCORE.avif',
+  'thermocore':       '/assets/THERMACORE.avif',
   'microkappa':       '/assets/MICROKAPPA.avif',
 };
 
@@ -463,9 +463,9 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Technology Comparison Table */}
-      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      {/* Technology Network Diagram */}
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1rem,4vw,2rem)', background: 'rgba(255,241,45,0.01)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -474,106 +474,125 @@ export default function TechnologiesPage() {
             style={{ marginBottom: '3rem' }}
           >
             <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-              // TECHNOLOGY COMPARISON
+              // 02 — RED DE PROTECCIÓN
             </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 1rem' }}>
-              Nine Protection Architectures — Quick Reference
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem' }}>
+              Siete Dominios. Nueve Tecnologías.
             </h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif', maxWidth: '540px', margin: 0, lineHeight: 1.7 }}>
+              Cada dominio de contaminación se conecta a la arquitectura de protección diseñada específicamente para controlarlo.
             </p>
           </motion.div>
-          {/* Network Diagram SVG */}
+
+          {/* Radial constellation diagram */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            style={{ width: '100%', overflowX: 'auto' }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <svg viewBox="0 0 1200 760" style={{ width: '100%', minWidth: '700px', height: 'auto', display: 'block' }}>
+            <svg viewBox="0 0 1200 900" style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}>
               <defs>
-                <filter id="nodeGlow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                <filter id="nodeGlow2" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="7" result="blur"/>
                   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
-                <filter id="lineGlow" x="-10%" y="-100%" width="120%" height="300%">
-                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                <filter id="lineGlow2" x="-10%" y="-200%" width="120%" height="500%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur"/>
                   <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                 </filter>
+                <radialGradient id="bgPulse" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(255,241,45,0.07)"/>
+                  <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
+                </radialGradient>
+                {/* Clip paths for circular tech logos */}
+                {[
+                  { slug:'hydrocore',  cx:760, cy:450 },
+                  { slug:'drycore',    cx:723, cy:553 },
+                  { slug:'syntrax',    cx:628, cy:607 },
+                  { slug:'nanoforce',  cx:520, cy:589 },
+                  { slug:'thermocore', cx:450, cy:505 },
+                  { slug:'microkappa', cx:450, cy:395 },
+                  { slug:'intekcore',  cx:520, cy:311 },
+                  { slug:'macrocore',  cx:628, cy:293 },
+                  { slug:'syntepore',  cx:723, cy:347 },
+                ].map(t => (
+                  <clipPath key={t.slug} id={`circ-${t.slug}`}>
+                    <circle cx={t.cx} cy={t.cy} r="50"/>
+                  </clipPath>
+                ))}
               </defs>
 
-              {/* Connection bezier curves — domain (right x=290) → tech (left x=760) */}
+              {/* Background radial glow */}
+              <ellipse cx="600" cy="450" rx="420" ry="380" fill="url(#bgPulse)"/>
+
+              {/* Decorative orbital rings */}
+              <circle cx="600" cy="450" r="162" fill="none" stroke="rgba(255,241,45,0.06)" strokeWidth="1" strokeDasharray="3 9"/>
+              <circle cx="600" cy="450" r="332" fill="none" stroke="rgba(255,241,45,0.04)" strokeWidth="1" strokeDasharray="3 14"/>
+
+              {/* Central node */}
+              <circle cx="600" cy="450" r="12" fill="rgba(255,241,45,0.15)" stroke="rgba(255,241,45,0.6)" strokeWidth="1.5" filter="url(#nodeGlow2)"/>
+              <circle cx="600" cy="450" r="5"  fill="#FFF12D"/>
+
+              {/* Bezier connection lines — all curve through center (600,450) */}
               {[
-                { dy: 80,  ty: 62  },  // Air Intake → MACROCORE
-                { dy: 80,  ty: 148 },  // Air Intake → INTEKCORE
-                { dy: 190, ty: 235 },  // Fuel Cleanliness → SYNTEPORE
-                { dy: 190, ty: 322 },  // Fuel Cleanliness → HYDROCORE
-                { dy: 300, ty: 408 },  // Compressed Air → DRYCORE
-                { dy: 410, ty: 492 },  // Lubrication → SYNTRAX
-                { dy: 520, ty: 578 },  // Hydraulic → NANOFORCE
-                { dy: 630, ty: 662 },  // Cooling System → THERMOCORE
-                { dy: 700, ty: 748 },  // Cabin Protection → MICROKAPPA
+                /* Air Intake → MACROCORE   */ { dx:600, dy:120, tx:628, ty:293 },
+                /* Air Intake → INTEKCORE   */ { dx:600, dy:120, tx:520, ty:311 },
+                /* Fuel → SYNTEPORE         */ { dx:858, dy:244, tx:723, ty:347 },
+                /* Fuel → HYDROCORE         */ { dx:858, dy:244, tx:760, ty:450 },
+                /* Compressed → DRYCORE     */ { dx:922, dy:524, tx:723, ty:553 },
+                /* Lubrication → SYNTRAX    */ { dx:743, dy:748, tx:628, ty:607 },
+                /* Hydraulic → NANOFORCE    */ { dx:457, dy:748, tx:520, ty:589 },
+                /* Cooling → THERMOCORE     */ { dx:279, dy:523, tx:450, ty:505 },
+                /* Cabin → MICROKAPPA       */ { dx:342, dy:244, tx:450, ty:395 },
               ].map((c, i) => (
-                <path
-                  key={i}
-                  d={`M 290 ${c.dy} C 525 ${c.dy} 525 ${c.ty} 760 ${c.ty}`}
-                  fill="none"
-                  stroke="rgba(255,241,45,0.3)"
-                  strokeWidth="1.5"
-                  filter="url(#lineGlow)"
+                <path key={i}
+                  d={`M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`}
+                  fill="none" stroke="rgba(255,241,45,0.28)" strokeWidth="1.8"
+                  filter="url(#lineGlow2)"
                 />
               ))}
 
-              {/* Domain nodes — left column */}
+              {/* Tech nodes — circular, logos clipped */}
               {[
-                { label: 'Air Intake',        cy: 80  },
-                { label: 'Fuel Cleanliness',  cy: 190 },
-                { label: 'Compressed Air',    cy: 300 },
-                { label: 'Lubrication',       cy: 410 },
-                { label: 'Hydraulic',         cy: 520 },
-                { label: 'Cooling System',    cy: 630 },
-                { label: 'Cabin Protection',  cy: 700 },
-              ].map((d, i) => (
-                <g key={i} filter="url(#nodeGlow)">
-                  <rect x="10" y={d.cy - 22} width="280" height="44" rx="6"
-                    fill="rgba(255,241,45,0.04)" stroke="rgba(255,241,45,0.35)" strokeWidth="1.2"/>
-                  <text x="150" y={d.cy + 6}
-                    textAnchor="middle" dominantBaseline="middle"
-                    fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="15"
-                    fill="#FFF12D">
-                    {d.label}
-                  </text>
-                </g>
-              ))}
-
-              {/* Tech nodes — right column with logo images */}
-              {[
-                { slug: 'macrocore',  img: '/assets/MACROCORE.avif',  cy: 62  },
-                { slug: 'intekcore',  img: '/assets/INTEKCORE.avif',  cy: 148 },
-                { slug: 'syntepore', img: '/assets/SYNTEPORE.avif', cy: 235 },
-                { slug: 'hydrocore', img: '/assets/HYDROCORE.avif', cy: 322 },
-                { slug: 'drycore',   img: '/assets/DRYCORE.avif',   cy: 408 },
-                { slug: 'syntrax',   img: '/assets/SYNTRAX.avif',   cy: 492 },
-                { slug: 'nanoforce', img: '/assets/NANOFORCE.avif', cy: 578 },
-                { slug: 'thermocore',img: '/assets/THERMOCORE.avif',cy: 662 },
-                { slug: 'microkappa',img: '/assets/MICROKAPPA.avif',cy: 748 },
-              ].map((t) => (
-                <a key={t.slug} href={`/technologies/${t.slug}`} style={{ cursor: 'pointer' }}>
-                  <g filter="url(#nodeGlow)">
-                    <rect x="760" y={t.cy - 36} width="200" height="72" rx="8"
-                      fill="rgba(255,241,45,0.05)" stroke="rgba(255,241,45,0.4)" strokeWidth="1.2"/>
-                    <image href={t.img} x="770" y={t.cy - 30} width="180" height="60"
-                      preserveAspectRatio="xMidYMid meet" opacity="0.9"/>
+                { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:760, cy:450 },
+                { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:723, cy:553 },
+                { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:628, cy:607 },
+                { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:520, cy:589 },
+                { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:450, cy:505 },
+                { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:450, cy:395 },
+                { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:520, cy:311 },
+                { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:628, cy:293 },
+                { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:723, cy:347 },
+              ].map(t => (
+                <a key={t.slug} href={`/technologies/${t.slug}`}>
+                  <g filter="url(#nodeGlow2)">
+                    <circle cx={t.cx} cy={t.cy} r="54" fill="rgba(0,0,0,0.92)" stroke="rgba(255,241,45,0.55)" strokeWidth="1.5"/>
+                    <image href={t.img} x={t.cx-48} y={t.cy-48} width="96" height="96"
+                      clipPath={`url(#circ-${t.slug})`} preserveAspectRatio="xMidYMid meet" opacity="0.95"/>
                   </g>
                 </a>
               ))}
 
-              {/* Center dot at each bezier midpoint for visual polish */}
-              {[62, 148, 235, 322, 408, 492, 578, 662, 748].map((ty, i) => (
-                <circle key={i} cx="525" cy={(
-                  [80, 80, 190, 190, 300, 410, 520, 630, 700][i] + ty
-                ) / 2} r="3" fill="rgba(255,241,45,0.45)" />
+              {/* Domain label nodes — outer ring */}
+              {[
+                { label:'Air Intake',       x:600, y:120  },
+                { label:'Fuel Cleanliness', x:858, y:244  },
+                { label:'Compressed Air',   x:922, y:524  },
+                { label:'Lubrication',      x:743, y:748  },
+                { label:'Hydraulic',        x:457, y:748  },
+                { label:'Cooling System',   x:279, y:523  },
+                { label:'Cabin Protection', x:342, y:244  },
+              ].map((d, i) => (
+                <g key={i} filter="url(#nodeGlow2)">
+                  <rect x={d.x - 88} y={d.y - 22} width="176" height="44" rx="7"
+                    fill="rgba(0,0,0,0.88)" stroke="#FFF12D" strokeWidth="1.5"/>
+                  <text x={d.x} y={d.y + 1}
+                    textAnchor="middle" dominantBaseline="middle"
+                    fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="14" fill="#FFF12D">
+                    {d.label}
+                  </text>
+                </g>
               ))}
             </svg>
           </motion.div>
