@@ -373,13 +373,12 @@ export default function TechnologiesPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <StaggerContainer style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '1.25rem',
           }}>
             {catalogue.technologies.filter((tech) => !['marineclean', 'duratech'].includes(getSlug(tech.name))).map((tech) => {
               const slug = getSlug(tech.name);
               const geoDef = _geoDefBySlug[slug];
-              const techImg = TECH_IMAGES[slug];
               return (
                 <motion.div key={tech.name} variants={itemVariants}>
                   <Link href={`/technologies/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -390,26 +389,15 @@ export default function TechnologiesPage() {
                         background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
                         border: '1px solid rgba(255,241,45,0.2)',
                         borderRadius: '12px',
-                        padding: 'clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem)',
+                        padding: '1.75rem 1.5rem',
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '1rem',
                         cursor: 'pointer',
-                        position: 'relative',
-                        overflow: 'hidden',
                       }}
                     >
-                      {techImg && (
-                        <div style={{
-                          position: 'absolute', inset: 0,
-                          backgroundImage: `url(${techImg})`,
-                          backgroundSize: '65%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
-                          opacity: 0.12,
-                          zIndex: 0,
-                        }} />
-                      )}
-                      <div style={{ position: 'relative', zIndex: 1, paddingBottom: '1rem', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
+                      <div style={{ paddingBottom: '1rem', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
                         <h3 style={{
                           fontSize: '1.4rem', fontWeight: 700,
                           fontFamily: 'Space Grotesk, sans-serif',
@@ -424,7 +412,6 @@ export default function TechnologiesPage() {
                         )}
                       </div>
 
-                      {/* GEO Definition — capped at 4 lines to keep logo visible */}
                       <p style={{
                         fontSize: '0.875rem',
                         color: 'rgba(255,255,255,0.7)',
@@ -432,7 +419,6 @@ export default function TechnologiesPage() {
                         lineHeight: 1.65,
                         margin: '0',
                         flexGrow: 1,
-                        position: 'relative', zIndex: 1,
                         display: '-webkit-box',
                         WebkitLineClamp: 4,
                         WebkitBoxOrient: 'vertical' as const,
@@ -441,7 +427,7 @@ export default function TechnologiesPage() {
                         {geoDef || tech.description}
                       </p>
 
-                      <div style={{ marginTop: 'auto', position: 'relative', zIndex: 1 }}>
+                      <div style={{ marginTop: 'auto' }}>
                         {tech.features.length > 0 && (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
                             {tech.features.slice(0, 3).map((feature, idx) => (
