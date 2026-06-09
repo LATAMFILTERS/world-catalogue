@@ -2975,6 +2975,26 @@ Rules: Technical tone only. No marketing language. Include ISO codes. Quantify o
   }
 });
 
+// ── Escalation email ─────────────────────────────────────────────────────────
+app.post('/api/ai/escalate', async (req, res) => {
+  const { session_id, lang, transcript } = req.body;
+  if (!transcript) return res.status(400).json({ error: 'transcript required' });
+  try {
+    const transporter = require('nodemailer').createTransport({
+      host: process.env.GODADDY_MAIL_HOST || 'smtpout.secureserver.net',
+      port: 465, secure: true,
+      auth: { user: process.env.GODADDY_MAIL_USER || 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
+      to: 'support@elimfilters.com',
+      subject: `[Chat Escalation] Session ${session_id} — Lang: ${lang}`,
+      text: `A customer has reached the 3-question limit and requires follow-up.\n\nSession: ${session_id}\nLanguage: ${lang}\n\n--- TRANSCRIPT ---\n\n${transcript}\n\n--- END ---\n\nPlease reply within 24 hours.`,
+    });
+    res.json({ success: true });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
 // ── List generated content pages ──────────────────────────────────────────────
 app.get('/api/ai/content-pages', async (req, res) => {
   const client = new Client(dbConfig);
