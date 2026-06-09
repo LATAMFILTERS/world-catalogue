@@ -276,8 +276,8 @@ export default function TechnologiesPage() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1rem',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '1.25rem',
           }}>
             {[
               {
@@ -333,62 +333,62 @@ export default function TechnologiesPage() {
                   background: 'rgba(255,255,255,0.02)',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: '8px',
-                  padding: '1.5rem',
+                  padding: '2rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '0.75rem',
+                  gap: '1rem',
                 }}
               >
                 <div style={{
-                  fontSize: '0.62rem', fontFamily: 'JetBrains Mono, monospace',
-                  color: '#FFF12D', letterSpacing: '0.18em', fontWeight: 700,
+                  fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
+                  color: '#FFF12D', letterSpacing: '0.2em', fontWeight: 700,
                 }}>
                   {d.domain}
                 </div>
                 <div>
                   <p style={{
-                    fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)',
-                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.3rem',
-                    letterSpacing: '0.05em',
+                    fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)',
+                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.4rem',
+                    letterSpacing: '0.08em',
                   }}>
                     CONTAMINANT
                   </p>
                   <p style={{
-                    fontSize: '0.85rem', lineHeight: 1.5,
-                    color: 'rgba(255,255,255,0.72)', fontFamily: 'Inter, sans-serif', margin: 0,
+                    fontSize: '0.95rem', lineHeight: 1.6,
+                    color: 'rgba(255,255,255,0.8)', fontFamily: 'Inter, sans-serif', margin: 0,
                   }}>
                     {d.contaminant}
                   </p>
                 </div>
                 <div>
                   <p style={{
-                    fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)',
-                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.3rem',
-                    letterSpacing: '0.05em',
+                    fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)',
+                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.4rem',
+                    letterSpacing: '0.08em',
                   }}>
                     FAILURE MECHANISM
                   </p>
                   <p style={{
-                    fontSize: '0.85rem', lineHeight: 1.5,
-                    color: 'rgba(255,255,255,0.72)', fontFamily: 'Inter, sans-serif', margin: 0,
+                    fontSize: '0.95rem', lineHeight: 1.6,
+                    color: 'rgba(255,255,255,0.8)', fontFamily: 'Inter, sans-serif', margin: 0,
                   }}>
                     {d.mechanism}
                   </p>
                 </div>
                 <div style={{
-                  marginTop: 'auto', paddingTop: '0.75rem',
+                  marginTop: 'auto', paddingTop: '1rem',
                   borderTop: '1px solid rgba(255,255,255,0.06)',
-                  display: 'flex', flexDirection: 'column', gap: '0.35rem',
+                  display: 'flex', flexDirection: 'column', gap: '0.4rem',
                 }}>
                   <span style={{
-                    fontSize: '0.7rem', color: 'rgba(255,241,45,0.5)',
+                    fontSize: '0.72rem', color: 'rgba(255,241,45,0.5)',
                     fontFamily: 'JetBrains Mono, monospace',
                   }}>
                     {d.standard}
                   </span>
                   <span style={{
-                    fontSize: '0.75rem', color: '#FFF12D',
-                    fontFamily: 'Outfit, sans-serif', fontWeight: 600,
+                    fontSize: '0.9rem', color: '#FFF12D',
+                    fontFamily: 'Outfit, sans-serif', fontWeight: 700,
                   }}>
                     {d.techs}
                   </span>
