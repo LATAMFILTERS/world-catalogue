@@ -38,6 +38,20 @@ const _techComparison = _COMPARISON_KEYS.map((key) => {
   return { name: t.name, slug: t.slug, system: t.domain, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
 });
 
+const TECH_IMAGES: Record<string, string> = {
+  'macrocore':        '/assets/MACROCORE.avif',
+  'syntepore':        '/assets/SYNTEPORE.avif',
+  'intekcore':        '/assets/INTEKCORE.avif',
+  'drycore':          '/assets/DRYCORE.avif',
+  'hydrocore':        '/assets/HYDROCORE.avif',
+  'hydrocore-series': '/assets/HYDROCORE.avif',
+  'aquaguard-series': '/assets/HYDROCORE.avif',
+  'syntrax':          '/assets/SYNTRAX.avif',
+  'nanoforce':        '/assets/NANOFORCE.avif',
+  'thermocore':       '/assets/THERMOCORE.avif',
+  'microkappa':       '/assets/MICROKAPPA.avif',
+};
+
 const FAQS = [
   {
     q: 'What is the difference between MACROCORE™ and SYNTEPORE™ air intake protection?',
@@ -186,22 +200,40 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Asset Protection Narrative */}
+      {/* Stats Bar */}
       <section style={{
-        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
-        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'rgba(255,255,255,0.01)',
       }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ maxWidth: '900px', margin: '0 auto' }}
-        >
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            Las tecnologías existen porque los problemas son diferentes. Cada tecnología desarrollada por ELIMFILTERS® tiene un propósito específico: controlar un mecanismo de contaminación definido, en un dominio operacional concreto, medible contra un estándar de ingeniería aplicable. La selección comienza por el problema — no por el producto.
-          </p>
-        </motion.div>
+        <div style={{
+          maxWidth: '1400px', margin: '0 auto',
+          padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.25rem,5vw,2rem)',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+          gap: '0',
+        }}>
+          {[
+            { value: '9',  label: 'Architectures' },
+            { value: '6',  label: 'Domains' },
+            { value: '12', label: 'Industries' },
+            { value: '5',  label: 'Systems' },
+          ].map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
+              style={{
+                display: 'flex', flexDirection: 'column', gap: '0.2rem',
+                padding: 'clamp(1rem,2vw,1.5rem) clamp(1rem,3vw,2rem)',
+                borderRight: i < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+              }}
+            >
+              <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.6rem,2.5vw,2.2rem)', color: '#FFF12D', letterSpacing: '-0.03em' }}>{s.value}</span>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>{s.label.toUpperCase()}</span>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Contamination Domains */}
@@ -378,6 +410,7 @@ export default function TechnologiesPage() {
             {catalogue.technologies.map((tech) => {
               const slug = getSlug(tech.name);
               const geoDef = _geoDefBySlug[slug];
+              const techImg = TECH_IMAGES[slug];
               return (
                 <motion.div key={tech.name} variants={itemVariants}>
                   <Link href={`/technologies/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -394,9 +427,20 @@ export default function TechnologiesPage() {
                         flexDirection: 'column',
                         gap: '1rem',
                         cursor: 'pointer',
+                        position: 'relative',
+                        overflow: 'hidden',
                       }}
                     >
-                      <div style={{ paddingBottom: '1rem', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
+                      {techImg && (
+                        <div style={{
+                          position: 'absolute', inset: 0,
+                          backgroundImage: `url(${techImg})`,
+                          backgroundSize: 'cover', backgroundPosition: 'center',
+                          opacity: 0.1,
+                          zIndex: 0,
+                        }} />
+                      )}
+                      <div style={{ position: 'relative', zIndex: 1, paddingBottom: '1rem', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
                         <h3 style={{
                           fontSize: '1.4rem', fontWeight: 700,
                           fontFamily: 'Space Grotesk, sans-serif',
@@ -419,11 +463,12 @@ export default function TechnologiesPage() {
                         lineHeight: 1.75,
                         margin: '0',
                         flexGrow: 1,
+                        position: 'relative', zIndex: 1,
                       }}>
                         {geoDef || tech.description}
                       </p>
 
-                      <div style={{ marginTop: 'auto' }}>
+                      <div style={{ marginTop: 'auto', position: 'relative', zIndex: 1 }}>
                         {tech.features.length > 0 && (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
                             {tech.features.slice(0, 3).map((feature, idx) => (
@@ -490,8 +535,19 @@ export default function TechnologiesPage() {
                 </tr>
               </thead>
               <tbody>
-                {_techComparison.map((row, i) => (
-                  <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+                {_techComparison.map((row, i) => {
+                  const prevSystem = i > 0 ? _techComparison[i - 1].system : null;
+                  const showGroupHeader = prevSystem !== row.system;
+                  return (
+                  <>
+                  {showGroupHeader && (
+                    <tr key={`group-${row.system}`} style={{ background: 'rgba(255,241,45,0.04)', borderTop: i > 0 ? '2px solid rgba(255,241,45,0.15)' : 'none' }}>
+                      <td colSpan={5} style={{ padding: '0.55rem 1.25rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.65)', fontWeight: 700 }}>
+                        {row.system.toUpperCase()}
+                      </td>
+                    </tr>
+                  )}
+                  <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'transparent' }}>
                     <td style={{ padding: '1rem 1.25rem', whiteSpace: 'nowrap' }}>
                       <Link href={`/technologies/${row.slug}`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none', fontFamily: 'Space Grotesk, sans-serif' }}>
                         {row.name}
@@ -510,7 +566,9 @@ export default function TechnologiesPage() {
                       {row.industries}
                     </td>
                   </tr>
-                ))}
+                  </>
+                  );
+                })}
               </tbody>
             </table>
           </div>
