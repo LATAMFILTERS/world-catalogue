@@ -200,42 +200,6 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section style={{
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        background: 'rgba(255,255,255,0.01)',
-      }}>
-        <div style={{
-          maxWidth: '1400px', margin: '0 auto',
-          padding: 'clamp(1.5rem,3vw,2.5rem) clamp(1.25rem,5vw,2rem)',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-          gap: '0',
-        }}>
-          {[
-            { value: '9',  label: 'Architectures' },
-            { value: '6',  label: 'Domains' },
-            { value: '12', label: 'Industries' },
-            { value: '5',  label: 'Systems' },
-          ].map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
-              style={{
-                display: 'flex', flexDirection: 'column', gap: '0.2rem',
-                padding: 'clamp(1rem,2vw,1.5rem) clamp(1rem,3vw,2rem)',
-                borderRight: i < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-              }}
-            >
-              <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: 'clamp(1.6rem,2.5vw,2.2rem)', color: '#FFF12D', letterSpacing: '-0.03em' }}>{s.value}</span>
-              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)' }}>{s.label.toUpperCase()}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Contamination Domains */}
       <section style={{
         padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
@@ -435,8 +399,8 @@ export default function TechnologiesPage() {
                         <div style={{
                           position: 'absolute', inset: 0,
                           backgroundImage: `url(${techImg})`,
-                          backgroundSize: 'cover', backgroundPosition: 'center',
-                          opacity: 0.1,
+                          backgroundSize: '65%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+                          opacity: 0.12,
                           zIndex: 0,
                         }} />
                       )}
@@ -523,54 +487,79 @@ export default function TechnologiesPage() {
               System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
             </p>
           </motion.div>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Inter, sans-serif', fontSize: '0.875rem' }}>
-              <thead>
-                <tr style={{ borderBottom: '2px solid rgba(255,241,45,0.3)' }}>
-                  {['Technology', 'System', 'Primary Function', 'Key Metric', 'Industries'].map(h => (
-                    <th key={h} style={{ padding: '1rem 1.25rem', textAlign: 'left', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.15em', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                      {h.toUpperCase()}
-                    </th>
+          {/* Network Visualization */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {Object.entries(
+              _techComparison.reduce((acc, row) => {
+                if (!acc[row.system]) acc[row.system] = [];
+                acc[row.system].push(row);
+                return acc;
+              }, {} as Record<string, typeof _techComparison>)
+            ).map(([domain, techs], gi) => (
+              <motion.div
+                key={domain}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: gi * 0.07 }}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'clamp(140px,18%,220px) 1fr auto 1fr clamp(180px,28%,380px)',
+                  alignItems: 'center',
+                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  minHeight: '80px',
+                }}
+              >
+                {/* Domain label */}
+                <div style={{ padding: '1.25rem 1.5rem 1.25rem 0', borderRight: '1px solid rgba(255,241,45,0.2)', textAlign: 'right' }}>
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.18em', color: '#FFF12D', fontWeight: 700 }}>
+                    {domain}
+                  </span>
+                </div>
+
+                {/* Left connector line */}
+                <div style={{ height: '1px', background: 'linear-gradient(to right, rgba(255,241,45,0.25), rgba(255,241,45,0.08))' }} />
+
+                {/* Tech nodes */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', padding: '1rem 0', alignItems: 'center' }}>
+                  {techs.map(tech => (
+                    <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
+                      <motion.div
+                        whileHover={{ background: 'rgba(255,241,45,0.18)', borderColor: 'rgba(255,241,45,0.7)' }}
+                        transition={{ duration: 0.15 }}
+                        style={{
+                          border: '1px solid rgba(255,241,45,0.35)',
+                          borderRadius: '3px',
+                          padding: '0.4rem 1.1rem',
+                          fontFamily: 'Space Grotesk, sans-serif',
+                          fontWeight: 700,
+                          fontSize: '0.88rem',
+                          color: '#FFF12D',
+                          whiteSpace: 'nowrap',
+                          background: 'rgba(255,241,45,0.06)',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {tech.name}
+                      </motion.div>
+                    </Link>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {_techComparison.map((row, i) => {
-                  const prevSystem = i > 0 ? _techComparison[i - 1].system : null;
-                  const showGroupHeader = prevSystem !== row.system;
-                  return (
-                  <>
-                  {showGroupHeader && (
-                    <tr key={`group-${row.system}`} style={{ background: 'rgba(255,241,45,0.04)', borderTop: i > 0 ? '2px solid rgba(255,241,45,0.15)' : 'none' }}>
-                      <td colSpan={5} style={{ padding: '0.55rem 1.25rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.65)', fontWeight: 700 }}>
-                        {row.system.toUpperCase()}
-                      </td>
-                    </tr>
-                  )}
-                  <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'transparent' }}>
-                    <td style={{ padding: '1rem 1.25rem', whiteSpace: 'nowrap' }}>
-                      <Link href={`/technologies/${row.slug}`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none', fontFamily: 'Space Grotesk, sans-serif' }}>
-                        {row.name}
-                      </Link>
-                    </td>
-                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap', fontSize: '0.8rem', fontFamily: 'JetBrains Mono, monospace' }}>
-                      {row.system}
-                    </td>
-                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5 }}>
-                      {row.func}
-                    </td>
-                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5, whiteSpace: 'nowrap' }}>
-                      {row.metric}
-                    </td>
-                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5, fontSize: '0.82rem' }}>
-                      {row.industries}
-                    </td>
-                  </tr>
-                  </>
-                  );
-                })}
-              </tbody>
-            </table>
+                </div>
+
+                {/* Right connector line */}
+                <div style={{ height: '1px', background: 'linear-gradient(to right, rgba(255,241,45,0.08), rgba(255,241,45,0.25))' }} />
+
+                {/* Function + metric */}
+                <div style={{ padding: '1.25rem 0 1.25rem 1.5rem', borderLeft: '1px solid rgba(255,241,45,0.2)' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', margin: '0 0 0.3rem', lineHeight: 1.55 }}>
+                    {techs[0].func}
+                  </p>
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,241,45,0.45)', letterSpacing: '0.05em' }}>
+                    {techs[0].metric}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
