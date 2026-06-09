@@ -1258,7 +1258,7 @@ export default function IndustrialFiltrationPage() {
                 "NANOFORCE",
                 "SYNTRAX",
                 "DURATECH",
-                "THERMOCORE"
+                "COOLTECH"
               ]
             },
             "relatedLink": [

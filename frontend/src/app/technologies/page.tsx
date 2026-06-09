@@ -1,63 +1,36 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
-import {
-  TECHNOLOGIES as UD_TECHNOLOGIES,
-  DEPRECATED_TECHNOLOGIES as UD_DEPRECATED,
-  ECOSYSTEMS as UD_ECOSYSTEMS,
-  SYSTEMS as UD_SYSTEMS,
-  type TechnologyKey,
-} from '@/lib/unified-data';
 
-// GEO_DEFINITIONS derived from unified-data.ts (Single Source of Truth)
-// All 12 slug→description entries are sourced from geoDefinition fields and system descriptions.
-const _geoDefBySlug: Record<string, string> = {
-  // HYDROCORE_SERIES has a product-line description separate from the AQUAGUARD technology definition
-  'aquaguard-series': UD_SYSTEMS.HYDROCORE_SERIES.description!,
-  ...Object.fromEntries(Object.values(UD_TECHNOLOGIES).map((t) => [t.slug, t.geoDefinition])),
-  ...Object.fromEntries(Object.values(UD_DEPRECATED).map((t) => [t.slug, t.geoDefinition])),
-  ...Object.fromEntries(Object.values(UD_ECOSYSTEMS).map((t) => [t.slug, t.geoDefinition])),
+const GEO_DEFINITIONS: Record<string, string> = {
+  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS®' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+  'aquaguard': 'AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
+  'cooltech': 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
+  'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
+  'duratech': 'DURATECH™ is a fleet maintenance standardisation system that consolidates OEM-interchangeable filtration components into master kits. Designed for mixed-fleet operations in mining, construction, and agriculture, DURATECH™ reduces parts inventory complexity, lowers procurement cost, and ensures every service event uses the correct filter specification for each asset.',
+  'intekcore': 'INTEKCORE™ is a high-pressure filter housing architecture rated for heavy-duty trucks and industrial machinery. Precision-formed sealing surfaces and corrosion-resistant materials deliver zero-bypass performance under peak system pressure, ensuring no unfiltered fluid bypasses the element during cold starts, load spikes, or element change events.',
+  'macrocore': 'MACROCORE™ is a Progressive Density Gradient (PDG) multi-layer air filtration system rated to ISO 5011 standards. Outer protection layers capture macro-contaminants while progressively denser inner zones neutralise sub-micron threats, achieving 99.9%–99.98% interception efficiency with a 62 PSI anti-collapse rating. Engineered for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.',
+  'marineclean': 'MARINECLEAN™ is a salt-resistant filtration technology that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.',
+  'microkappa': 'MICROKAPPA™ is an electrostatic cabin air filtration system combining activated carbon and HEPA-grade particle capture. The electrostatic charge attracts sub-micron particles, allergens, and diesel particulate matter, while the activated carbon layer controls odours from fuel vapours and exhaust intrusion. Designed for mining cabs, agricultural machinery, and heavy-duty trucks operating in high-dust environments.',
+  'nanoforce': 'NANOFORCE™ is a multi-layer hydraulic filtration architecture engineered for high-pressure hydraulic circuits in heavy industrial machinery. It combines structural integrity reinforcement with vapour control mechanisms to maintain filter element form under system pressure spikes, delivering consistent sub-micron contamination interception across variable duty cycles.',
+  'syntepore': 'SYNTEPORE™ is an all-synthetic air intake protection architecture for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure conditions that degrade cellulose-based constructions, delivering consistent ISO 5011-compliant airflow restriction across variable humidity operating environments aboard offshore platforms, marine vessels, and humid tropical agricultural operations.',
+  'syntrax': 'SYNTRAX™ is a synthetic lubrication protection architecture maintaining ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals for diesel, gas, and dual-fuel engines. It captures combustion soot above 2% by weight, metal wear particles, and fuel dilution byproducts — the primary degradation mechanisms that reduce oil film strength, accelerate bearing wear, and reduce engine service life in mobile and stationary applications.',
 };
 
-// TECH_COMPARISON derived from unified-data.ts
-// Row order preserved: 7 active (with pages) + AQUAGUARD/COOLTECH (deprecated, pages live)
-// HYDROCORE and THERMOCORE are active but don't have catalogue pages yet — excluded.
-const _COMPARISON_KEYS: TechnologyKey[] = [
-  'MACROCORE', 'SYNTEPORE', 'INTEKCORE', 'DRYCORE',
-  'HYDROCORE',
-  'SYNTRAX', 'NANOFORCE',
-  'THERMOCORE',
-  'MICROKAPPA',
+const TECH_COMPARISON = [
+  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
+  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
+  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
+  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
+  { name: 'AQUAGUARD™', slug: 'aquaguard', system: 'Fuel Cleanliness', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
+  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
+  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
+  { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
+  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Protection', func: 'PM2.5 capture + activated carbon adsorption', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
-
-const TECH_IMAGES: Record<string, string> = {
-  'macrocore':        '/assets/MACROCORE.avif',
-  'syntepore':        '/assets/SYNTEPORE.avif',
-  'intekcore':        '/assets/INTEKCORE.avif',
-  'drycore':          '/assets/DRYCORE.avif',
-  'hydrocore':        '/assets/HYDROCORE.avif',
-  'hydrocore-series': '/assets/HYDROCORE.avif',
-  'aquaguard-series': '/assets/HYDROCORE.avif',
-  'syntrax':          '/assets/SYNTRAX.avif',
-  'nanoforce':        '/assets/NANOFORCE.avif',
-  'thermocore':       '/assets/THERMACORE.avif',
-  'microkappa':       '/assets/MICROKAPPA.avif',
-};
-
-const _DOMAIN_OVERRIDES: Record<string, string> = {
-  syntepore: 'Fuel Cleanliness',
-};
-
-const _techComparison = _COMPARISON_KEYS.map((key) => {
-  const t = UD_TECHNOLOGIES[key];
-  const system = _DOMAIN_OVERRIDES[t.slug] ?? t.domain;
-  const img = TECH_IMAGES[t.slug] ?? null;
-  return { name: t.name, slug: t.slug, system, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries, img };
-});
 
 const FAQS = [
   {
@@ -66,7 +39,7 @@ const FAQS = [
   },
   {
     q: 'Which ELIMFILTERS® architecture protects HPCR diesel injection systems?',
-    a: 'HYDROCORE™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
+    a: 'AQUAGUARD™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
   },
   {
     q: 'What is SYNTRAX™ and which system does it protect?',
@@ -74,7 +47,7 @@ const FAQS = [
   },
   {
     q: 'What ISO standards govern ELIMFILTERS® protection architectures?',
-    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). HYDROCORE™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
+    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). AQUAGUARD™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
   },
   {
     q: 'How does NANOFORCE™ prevent hydraulic proportional valve failure?',
@@ -86,42 +59,6 @@ const FAQS = [
   },
 ];
 
-// ─── Constellation data ────────────────────────────────────────────────────
-const TECH_NODES_DATA = [
-  { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:820, cy:450 },
-  { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:769, cy:592 },
-  { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:639, cy:666 },
-  { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:490, cy:641 },
-  { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:394, cy:526 },
-  { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:394, cy:374 },
-  { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:490, cy:259 },
-  { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:639, cy:234 },
-  { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:769, cy:308 },
-];
-
-const CONNECTIONS_DATA = [
-  { dx:600, dy:120, tx:639, ty:234, tech:'macrocore' },
-  { dx:600, dy:120, tx:490, ty:259, tech:'intekcore' },
-  { dx:858, dy:244, tx:769, ty:308, tech:'syntepore' },
-  { dx:858, dy:244, tx:820, ty:450, tech:'hydrocore' },
-  { dx:922, dy:524, tx:769, ty:592, tech:'drycore' },
-  { dx:743, dy:748, tx:639, ty:666, tech:'syntrax' },
-  { dx:457, dy:748, tx:490, ty:641, tech:'nanoforce' },
-  { dx:279, dy:523, tx:394, ty:526, tech:'thermocore' },
-  { dx:342, dy:244, tx:394, ty:374, tech:'microkappa' },
-];
-
-const DOMAIN_NODES_DATA = [
-  { label:'Air Intake',       x:600, y:120 },
-  { label:'Fuel Cleanliness', x:858, y:244 },
-  { label:'Compressed Air',   x:922, y:524 },
-  { label:'Lubrication',      x:743, y:748 },
-  { label:'Hydraulic',        x:457, y:748 },
-  { label:'Cooling System',   x:279, y:523 },
-  { label:'Cabin Protection', x:342, y:244 },
-];
-// ───────────────────────────────────────────────────────────────────────────
-
 export default function TechnologiesPage() {
   const itemListData = catalogue.technologies.map((tech, i) => {
     const slug = getSlug(tech.name);
@@ -132,7 +69,7 @@ export default function TechnologiesPage() {
         '@type': 'Product',
         name: tech.title,
         brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
-        description: _geoDefBySlug[slug] || tech.description,
+        description: GEO_DEFINITIONS[slug] || tech.description,
         url: `https://elimfilters.com/technologies/${slug}`,
         manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
       },
@@ -148,23 +85,6 @@ export default function TechnologiesPage() {
       acceptedAnswer: { '@type': 'Answer', text: faq.a },
     })),
   };
-
-  // ── Interactive constellation hooks ─────────────────────────────────────
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-  const diagramRotateY = useTransform(springX, [-1, 1], [-7, 7]);
-  const diagramRotateX = useTransform(springY, [-1, 1], [5, -5]);
-  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
-
-  const handleDiagramMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    mouseX.set((e.clientX - rect.left - rect.width / 2) / (rect.width / 2));
-    mouseY.set((e.clientY - rect.top - rect.height / 2) / (rect.height / 2));
-  };
-  const handleDiagramMouseLeave = () => { mouseX.set(0); mouseY.set(0); setHoveredTech(null); };
-  // ─────────────────────────────────────────────────────────────────────────
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -236,14 +156,12 @@ export default function TechnologiesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 900,
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900,
               fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1.5rem',
-              lineHeight: 1.05, color: 'rgba(255,255,255,0.9)',
+              lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            LAS TECNOLOGÍAS EXISTEN PORQUE
-            <br />
-            <span style={{ color: '#FFF12D' }}>LOS PROBLEMAS SON DIFERENTES.</span>
+            NINE EXCLUSIVE PROTECTION ARCHITECTURES
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -255,172 +173,27 @@ export default function TechnologiesPage() {
               maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
             }}
           >
-            Nueve arquitecturas de protección organizadas por dominio de contaminación. Cada una definida por su objetivo de contaminación, su mecanismo de falla y su estándar de ingeniería aplicable.
+            Nine protection architectures organized by contamination domain — air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin — each defined by its contamination target, failure mechanism, and measurable engineering standard.
           </motion.p>
         </div>
       </section>
 
-      {/* Contamination Domains */}
+      {/* Asset Protection Narrative */}
       <section style={{
-        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
-        background: '#000',
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
+        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '2.5rem' }}
-          >
-            <span style={{
-              display: 'block', fontSize: '0.7rem', fontWeight: 700,
-              letterSpacing: '0.25em', color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
-            }}>
-              // 01 — LOS DOMINIOS DE CONTAMINACIÓN
-            </span>
-            <h2 style={{
-              fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800,
-              fontFamily: 'Space Grotesk, sans-serif', color: '#fff',
-              margin: '0 0 0.75rem',
-            }}>
-              Seis Dominios. Seis Mecanismos de Falla.
-            </h2>
-            <p style={{
-              fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)',
-              fontFamily: 'Inter, sans-serif', maxWidth: '620px', lineHeight: 1.7, margin: 0,
-            }}>
-              Un activo industrial puede fallar por seis vías de contaminación independientes.
-              Cada vía tiene su propio contaminante primario, su mecanismo de degradación
-              y su estándar de medición.
-            </p>
-          </motion.div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1.25rem',
-          }}>
-            {[
-              {
-                domain: 'AIR INTAKE',
-                contaminant: 'Silica dust · Salt aerosol · Organic particulate',
-                mechanism: 'Abrasive wear of engine cylinders, turbine blades, and compressor rotors',
-                standard: 'ISO 5011',
-                techs: 'MACROCORE™ · INTEKCORE™',
-              },
-              {
-                domain: 'FUEL CLEANLINESS',
-                contaminant: 'Free water · Emulsified water · Particulate > 10 µm',
-                mechanism: 'Injector tip erosion and needle corrosion at 1,800–2,500 bar injection pressure',
-                standard: 'ASTM D6304 · SAE J1488',
-                techs: 'HYDROCORE™ · SYNTEPORE™',
-              },
-              {
-                domain: 'LUBE / OIL',
-                contaminant: 'Combustion soot · Metal wear particles · Fuel dilution',
-                mechanism: 'Abrasive wear of bearing surfaces → clearance reduction → seizure',
-                standard: 'ISO 4406 · ISO 16889',
-                techs: 'SYNTRAX™',
-              },
-              {
-                domain: 'HYDRAULIC',
-                contaminant: 'Hard particles > 5 µm · Silica · Metallic oxides',
-                mechanism: 'Micro-abrasion of proportional valve spool at 5–25 µm clearance',
-                standard: 'ISO 16889 · ISO 4406',
-                techs: 'NANOFORCE™',
-              },
-              {
-                domain: 'CABIN SAFETY',
-                contaminant: 'PM2.5 · Diesel exhaust particulate · Chemical vapors',
-                mechanism: 'Sustained occupational exposure to IARC Group 1 carcinogens',
-                standard: 'ISO 11155 · EU Dir. 2019/130',
-                techs: 'MICROKAPPA™',
-              },
-              {
-                domain: 'COMPRESSED AIR',
-                contaminant: 'Moisture · Oil aerosol · Microbial contamination',
-                mechanism: 'Valve icing · actuator seal degradation · corrosion in safety circuits',
-                standard: 'ISO 8573-1',
-                techs: 'DRYCORE™',
-              },
-            ].map((d, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
-                style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '8px',
-                  padding: '2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1rem',
-                }}
-              >
-                <div style={{
-                  fontSize: '1.05rem', fontFamily: 'JetBrains Mono, monospace',
-                  color: '#FFF12D', letterSpacing: '0.15em', fontWeight: 700,
-                }}>
-                  {d.domain}
-                </div>
-                <div>
-                  <p style={{
-                    fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)',
-                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.4rem',
-                    letterSpacing: '0.08em',
-                  }}>
-                    CONTAMINANT
-                  </p>
-                  <p style={{
-                    fontSize: '0.95rem', lineHeight: 1.6,
-                    color: 'rgba(255,255,255,0.8)', fontFamily: 'Inter, sans-serif', margin: 0,
-                  }}>
-                    {d.contaminant}
-                  </p>
-                </div>
-                <div>
-                  <p style={{
-                    fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)',
-                    fontFamily: 'JetBrains Mono, monospace', margin: '0 0 0.4rem',
-                    letterSpacing: '0.08em',
-                  }}>
-                    FAILURE MECHANISM
-                  </p>
-                  <p style={{
-                    fontSize: '0.95rem', lineHeight: 1.6,
-                    color: 'rgba(255,255,255,0.8)', fontFamily: 'Inter, sans-serif', margin: 0,
-                  }}>
-                    {d.mechanism}
-                  </p>
-                </div>
-                <div style={{
-                  marginTop: 'auto', paddingTop: '1rem',
-                  borderTop: '1px solid rgba(255,255,255,0.06)',
-                  display: 'flex', flexDirection: 'column', gap: '0.4rem',
-                }}>
-                  <span style={{
-                    fontSize: '0.72rem', color: 'rgba(255,241,45,0.5)',
-                    fontFamily: 'JetBrains Mono, monospace',
-                  }}>
-                    {d.standard}
-                  </span>
-                  <span style={{
-                    fontSize: '0.9rem', color: '#FFF12D',
-                    fontFamily: 'Outfit, sans-serif', fontWeight: 700,
-                  }}>
-                    {d.techs}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '900px', margin: '0 auto' }}
+        >
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+            ELIMFILTERS® technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS®&apos; industrial asset protection strategy.
+          </p>
+        </motion.div>
       </section>
 
       {/* Technologies Grid */}
@@ -428,12 +201,12 @@ export default function TechnologiesPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <StaggerContainer style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: '1.25rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem',
           }}>
-            {catalogue.technologies.filter((tech) => !['marineclean', 'duratech'].includes(getSlug(tech.name))).map((tech) => {
+            {catalogue.technologies.map((tech) => {
               const slug = getSlug(tech.name);
-              const geoDef = _geoDefBySlug[slug];
+              const geoDef = GEO_DEFINITIONS[slug];
               return (
                 <motion.div key={tech.name} variants={itemVariants}>
                   <Link href={`/technologies/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -444,7 +217,7 @@ export default function TechnologiesPage() {
                         background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
                         border: '1px solid rgba(255,241,45,0.2)',
                         borderRadius: '12px',
-                        padding: '1.75rem 1.5rem',
+                        padding: 'clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem)',
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
@@ -467,17 +240,14 @@ export default function TechnologiesPage() {
                         )}
                       </div>
 
+                      {/* GEO Definition — full prose for AI engine extraction */}
                       <p style={{
                         fontSize: '0.875rem',
                         color: 'rgba(255,255,255,0.7)',
                         fontFamily: 'Inter, sans-serif',
-                        lineHeight: 1.65,
+                        lineHeight: 1.75,
                         margin: '0',
                         flexGrow: 1,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 4,
-                        WebkitBoxOrient: 'vertical' as const,
-                        overflow: 'hidden',
                       }}>
                         {geoDef || tech.description}
                       </p>
@@ -517,9 +287,9 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Technology Network Diagram — Living System */}
-      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1rem,4vw,2rem)', background: 'rgba(255,241,45,0.01)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
+      {/* Technology Comparison Table */}
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -528,182 +298,51 @@ export default function TechnologiesPage() {
             style={{ marginBottom: '3rem' }}
           >
             <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-              // 02 — RED DE PROTECCIÓN
+              // TECHNOLOGY COMPARISON
             </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem' }}>
-              Siete Dominios. Nueve Tecnologías.
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 1rem' }}>
+              Nine Protection Architectures — Quick Reference
             </h2>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif', maxWidth: '540px', margin: 0, lineHeight: 1.7 }}>
-              Cada dominio de contaminación se conecta a la arquitectura de protección diseñada específicamente para controlarlo.
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
+              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
             </p>
           </motion.div>
-
-          {/* Radial constellation — interactive living system */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {/* Perspective container for 3-D tilt */}
-            <div style={{ perspective: '1400px' }}>
-              <motion.div
-                style={{ rotateX: diagramRotateX, rotateY: diagramRotateY }}
-                onMouseMove={handleDiagramMouseMove}
-                onMouseLeave={handleDiagramMouseLeave}
-              >
-                <svg viewBox="0 0 1200 900" style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}>
-                  <defs>
-                    <filter id="nodeGlow2" x="-60%" y="-60%" width="220%" height="220%">
-                      <feGaussianBlur stdDeviation="7" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <filter id="lineGlow2" x="-10%" y="-200%" width="120%" height="500%">
-                      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <filter id="domainGlow" x="-40%" y="-120%" width="180%" height="340%">
-                      <feGaussianBlur stdDeviation="5" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <radialGradient id="bgPulse" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="rgba(255,241,45,0.07)"/>
-                      <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
-                    </radialGradient>
-                    {/* Clip paths for circular tech logos */}
-                    {TECH_NODES_DATA.map(t => (
-                      <clipPath key={t.slug} id={`circ-${t.slug}`}>
-                        <circle cx={t.cx} cy={t.cy} r="50"/>
-                      </clipPath>
-                    ))}
-                  </defs>
-
-                  {/* Background glow — breathing */}
-                  <motion.ellipse
-                    cx="600" cy="450" rx="420" ry="380" fill="url(#bgPulse)"
-                    animate={{ rx: [420, 465, 420], ry: [380, 425, 380] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                  />
-
-                  {/* Orbital rings — slow counter-rotation (pure decorative, no clipPath) */}
-                  <motion.circle
-                    cx="600" cy="450" r="222"
-                    fill="none" stroke="rgba(255,241,45,0.07)" strokeWidth="1" strokeDasharray="3 9"
-                    style={{ transformOrigin: '600px 450px' }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 55, repeat: Infinity, ease: 'linear' }}
-                  />
-                  <motion.circle
-                    cx="600" cy="450" r="332"
-                    fill="none" stroke="rgba(255,241,45,0.04)" strokeWidth="1" strokeDasharray="3 14"
-                    style={{ transformOrigin: '600px 450px' }}
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 85, repeat: Infinity, ease: 'linear' }}
-                  />
-
-                  {/* Sonar ripple from center */}
-                  <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.5)" strokeWidth="1.5"
-                    animate={{ r: [10, 120], opacity: [0.5, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeOut' }}
-                  />
-                  <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.35)" strokeWidth="1"
-                    animate={{ r: [10, 120], opacity: [0.4, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: 1.5 }}
-                  />
-
-                  {/* Central node */}
-                  <circle cx="600" cy="450" r="14" fill="rgba(255,241,45,0.1)" stroke="rgba(255,241,45,0.45)" strokeWidth="1.5" filter="url(#nodeGlow2)"/>
-                  <motion.circle cx="600" cy="450" fill="#FFF12D"
-                    animate={{ r: [5, 7.5, 5] }}
-                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                  />
-
-                  {/* Connection lines — base (always visible) + energy pulse overlay */}
-                  {CONNECTIONS_DATA.map((c, i) => {
-                    const isHovered = hoveredTech === c.tech;
-                    const d = `M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`;
-                    return (
-                      <g key={i}>
-                        {/* Base line — always solid and visible */}
-                        <motion.path
-                          d={d}
-                          fill="none"
-                          filter="url(#lineGlow2)"
-                          animate={{
-                            stroke: isHovered ? 'rgba(255,241,45,0.75)' : 'rgba(255,241,45,0.28)',
-                            strokeWidth: isHovered ? 2.5 : 1.6,
-                          }}
-                          transition={{ duration: 0.25 }}
-                        />
-                        {/* Energy pulse overlay — flowing dots */}
-                        <motion.path
-                          d={d}
-                          fill="none"
-                          strokeDasharray="4 20"
-                          animate={{
-                            strokeDashoffset: [0, -24],
-                            stroke: isHovered ? 'rgba(255,241,45,1)' : 'rgba(255,241,45,0.7)',
-                            strokeWidth: isHovered ? 3 : 2,
-                          }}
-                          transition={{
-                            strokeDashoffset: { duration: 1.2 + i * 0.13, repeat: Infinity, ease: 'linear' },
-                            stroke: { duration: 0.25 },
-                            strokeWidth: { duration: 0.25 },
-                          }}
-                        />
-                      </g>
-                    );
-                  })}
-
-                  {/* Tech nodes — breathing scale + hover illuminate */}
-                  {TECH_NODES_DATA.map((t, i) => (
-                    <a key={t.slug} href={`/technologies/${t.slug}`}>
-                      <motion.g
-                        filter="url(#nodeGlow2)"
-                        style={{ transformOrigin: `${t.cx}px ${t.cy}px`, cursor: 'pointer' }}
-                        animate={{ scale: [1, 1.048, 1] }}
-                        transition={{ duration: 2.8 + (i % 4) * 0.7, repeat: Infinity, ease: 'easeInOut', delay: i * 0.38 }}
-                        onHoverStart={() => setHoveredTech(t.slug)}
-                        onHoverEnd={() => setHoveredTech(null)}
-                      >
-                        <motion.circle
-                          cx={t.cx} cy={t.cy} r="54"
-                          fill="rgba(0,0,0,0.92)"
-                          animate={{
-                            stroke: hoveredTech === t.slug ? 'rgba(255,241,45,1)' : 'rgba(255,241,45,0.55)',
-                            strokeWidth: hoveredTech === t.slug ? 2.8 : 1.5,
-                          }}
-                          transition={{ duration: 0.2 }}
-                        />
-                        <image href={t.img} x={t.cx-48} y={t.cy-48} width="96" height="96"
-                          clipPath={`url(#circ-${t.slug})`} preserveAspectRatio="xMidYMid meet"
-                          opacity={hoveredTech === t.slug ? 1 : 0.92}
-                        />
-                      </motion.g>
-                    </a>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Inter, sans-serif', fontSize: '0.875rem' }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid rgba(255,241,45,0.3)' }}>
+                  {['Technology', 'System', 'Primary Function', 'Key Metric', 'Industries'].map(h => (
+                    <th key={h} style={{ padding: '1rem 1.25rem', textAlign: 'left', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.15em', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                      {h.toUpperCase()}
+                    </th>
                   ))}
-
-                  {/* Domain label nodes — gentle float */}
-                  {DOMAIN_NODES_DATA.map((d, i) => (
-                    <motion.g
-                      key={i}
-                      filter="url(#domainGlow)"
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ duration: 4.5 + i * 0.55, repeat: Infinity, ease: 'easeInOut', delay: i * 0.6 }}
-                    >
-                      <rect x={d.x - 88} y={d.y - 22} width="176" height="44" rx="7"
-                        fill="rgba(0,0,0,0.88)" stroke="#FFF12D" strokeWidth="1.5"/>
-                      <text x={d.x} y={d.y + 1}
-                        textAnchor="middle" dominantBaseline="middle"
-                        fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="14" fill="#FFF12D">
-                        {d.label}
-                      </text>
-                    </motion.g>
-                  ))}
-                </svg>
-              </motion.div>
-            </div>
-          </motion.div>
+                </tr>
+              </thead>
+              <tbody>
+                {TECH_COMPARISON.map((row, i) => (
+                  <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+                    <td style={{ padding: '1rem 1.25rem', whiteSpace: 'nowrap' }}>
+                      <Link href={`/technologies/${row.slug}`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none', fontFamily: 'Space Grotesk, sans-serif' }}>
+                        {row.name}
+                      </Link>
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap', fontSize: '0.8rem', fontFamily: 'JetBrains Mono, monospace' }}>
+                      {row.system}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5 }}>
+                      {row.func}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+                      {row.metric}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5, fontSize: '0.82rem' }}>
+                      {row.industries}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

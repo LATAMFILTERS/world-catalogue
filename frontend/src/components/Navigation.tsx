@@ -66,7 +66,7 @@ export function Navigation() {
     <nav
       style={{
         position: 'fixed',
-        top: '1.5%',
+        top: 0,
         left: 0,
         right: 0,
         zIndex: 100,
@@ -89,30 +89,14 @@ export function Navigation() {
       >
         {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <img
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <Image
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
-              width={178}
-              height={48}
-              onError={(e) => {
-                const target = e.currentTarget;
-                target.style.display = 'none';
-                const fallback = target.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = 'block';
-              }}
-              style={{ height: '48px', width: 'auto', display: 'block' }}
+              width={220}
+              height={220}
+              style={{ objectFit: 'contain' }}
             />
-            <span style={{
-              display: 'none',
-              fontFamily: 'Outfit, sans-serif',
-              fontWeight: 900,
-              fontSize: '1.15rem',
-              letterSpacing: '-0.02em',
-              color: '#fff',
-            }}>
-              ELIM<span style={{ color: '#FFF12D' }}>FILTERS</span><sup style={{ fontSize: '0.55em', color: '#FFF12D' }}>®</sup>
-            </span>
           </Link>
         </motion.div>
 
@@ -123,7 +107,6 @@ export function Navigation() {
           <NavLink href="/technologies">{t('nav.technologies')}</NavLink>
           <NavLink href="/knowledge-system">{t('nav.knowledge')}</NavLink>
           <NavLink href="/contact">{t('nav.contact')}</NavLink>
-          <NavLink href="/about">{t('footer.about')}</NavLink>
 
           {/* Language switcher — shown for all non-US/CA users */}
           {showSwitcher && (
@@ -286,7 +269,6 @@ export function Navigation() {
                 { href: '/technologies', label: t('nav.technologies') },
                 { href: '/knowledge-system', label: t('nav.knowledge') },
                 { href: '/contact', label: t('nav.contact') },
-                { href: '/about', label: t('footer.about') },
               ].map((item) => (
                 <motion.div
                   key={item.href}
@@ -375,7 +357,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
           fontFamily: 'Inter, sans-serif',
-          fontSize: '1rem',
+          fontSize: '0.875rem',
           fontWeight: 500,
           letterSpacing: '0.05em',
           transition: 'color 0.2s ease',

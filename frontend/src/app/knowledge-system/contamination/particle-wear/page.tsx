@@ -3,10 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
-import { JSONLD_PARTICLE_WEAR } from '@/lib/jsonld-constants.generated';
-
-// JSON-LD: TechArticle — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
-const PAGE_JSONLD = JSONLD_PARTICLE_WEAR;
 
 export default function ParticleWearPage() {
   const sections = [
@@ -351,7 +347,6 @@ export default function ParticleWearPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

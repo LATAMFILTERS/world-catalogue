@@ -3,10 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
-import { JSONLD_HYDRAULIC_CONTAMINATION } from '@/lib/jsonld-constants.generated';
-
-// JSON-LD: TechArticle — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
-const PAGE_JSONLD = JSONLD_HYDRAULIC_CONTAMINATION;
 
 export default function HydraulicSystemContaminationPage() {
   const sections = [
@@ -32,7 +28,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS® hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; HYDROCORE™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
+      content: 'ELIMFILTERS® hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; AQUAGUARD™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
     }
   ];
 
@@ -349,7 +345,6 @@ export default function HydraulicSystemContaminationPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

@@ -3,10 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
-import { JSONLD_HYDRAULIC_SYSTEMS } from '@/lib/jsonld-constants.generated';
-
-// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
-const PAGE_JSONLD = JSONLD_HYDRAULIC_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
@@ -19,7 +15,7 @@ const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media achieving 99.9% efficiency for proportional valve protection, maintaining ISO 16/14/11 cleanliness under high-flow conditions.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: 'Advanced synthetic fluids with +40% oxidation resistance, providing 4,000+ hour service life while maintaining contamination resistance.' },
   { name: 'MICROKAPPA', slug: 'microkappa', role: 'Precision micro-filtration for coolant and specialty fluid systems addressing proportional control contamination in machine tools.' },
-  { name: 'HYDROCORE', slug: 'aquaguard', role: 'Water removal technology preventing hydrolysis and seal degradation in hydraulic systems, maintaining fluid integrity across operating life.' },
+  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water removal technology preventing hydrolysis and seal degradation in hydraulic systems, maintaining fluid integrity across operating life.' },
 ];
 
 const IMPACTS = [
@@ -249,7 +245,6 @@ export default function HydraulicSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }
