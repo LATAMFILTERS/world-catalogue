@@ -33,16 +33,6 @@ const _COMPARISON_KEYS: TechnologyKey[] = [
   'MICROKAPPA',
 ];
 
-const _DOMAIN_OVERRIDES: Record<string, string> = {
-  syntepore: 'Fuel Cleanliness',
-};
-
-const _techComparison = _COMPARISON_KEYS.map((key) => {
-  const t = UD_TECHNOLOGIES[key];
-  const system = _DOMAIN_OVERRIDES[t.slug] ?? t.domain;
-  return { name: t.name, slug: t.slug, system, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
-});
-
 const TECH_IMAGES: Record<string, string> = {
   'macrocore':        '/assets/MACROCORE.avif',
   'syntepore':        '/assets/SYNTEPORE.avif',
@@ -56,6 +46,17 @@ const TECH_IMAGES: Record<string, string> = {
   'thermocore':       '/assets/THERMOCORE.avif',
   'microkappa':       '/assets/MICROKAPPA.avif',
 };
+
+const _DOMAIN_OVERRIDES: Record<string, string> = {
+  syntepore: 'Fuel Cleanliness',
+};
+
+const _techComparison = _COMPARISON_KEYS.map((key) => {
+  const t = UD_TECHNOLOGIES[key];
+  const system = _DOMAIN_OVERRIDES[t.slug] ?? t.domain;
+  const img = TECH_IMAGES[t.slug] ?? null;
+  return { name: t.name, slug: t.slug, system, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries, img };
+});
 
 const FAQS = [
   {
@@ -524,8 +525,8 @@ export default function TechnologiesPage() {
                         transition={{ duration: 0.15 }}
                         style={{
                           border: '1px solid rgba(255,241,45,0.35)',
-                          borderRadius: '3px',
-                          padding: '0.4rem 1.1rem',
+                          borderRadius: '6px',
+                          padding: '0.6rem 1.1rem',
                           fontFamily: 'Space Grotesk, sans-serif',
                           fontWeight: 700,
                           fontSize: '0.88rem',
@@ -533,8 +534,18 @@ export default function TechnologiesPage() {
                           whiteSpace: 'nowrap',
                           background: 'rgba(255,241,45,0.06)',
                           cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.6rem',
                         }}
                       >
+                        {tech.img && (
+                          <img
+                            src={tech.img}
+                            alt={tech.name}
+                            style={{ height: '28px', width: 'auto', objectFit: 'contain', opacity: 0.85 }}
+                          />
+                        )}
                         {tech.name}
                       </motion.div>
                     </Link>
