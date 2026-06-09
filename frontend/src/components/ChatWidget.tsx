@@ -230,6 +230,10 @@ export function ChatWidget() {
     setInput('');
     if (stage === 'part_input') handlePartInput(text);
     else if (stage === 'technical') await handleTechnical(text);
+    else {
+      // Fallback: if somehow input shows in wrong stage, go to menu
+      setStage('menu');
+    }
   };
 
   const isRTL = ['ar', 'fa'].includes(lang);
@@ -321,8 +325,8 @@ export function ChatWidget() {
                     {m.text}
                   </div>
 
-                  {/* Menu options — shown after welcome message */}
-                  {m.isMenu && i === messages.length - 1 && stage === 'menu' && (
+                  {/* Menu options — shown on last message when stage is menu */}
+                  {stage === 'menu' && i === messages.length - 1 && (
                     <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                       style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginTop: '0.6rem' }}
                     >
