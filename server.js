@@ -2728,6 +2728,240 @@ app.get('/api/ai/content-pages', async (req, res) => {
   finally { await client.end(); }
 });
 
+// ══════════════════════════════════════════════════════════════════════════════
+// COMPETITIVE INTELLIGENCE LAYER
+// Feeds market data from NotebookLM + external sources into Hermes context
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Migrate CI table ──────────────────────────────────────────────────────────
+app.post('/api/intel/migrate', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS competitive_intel (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        updated_at TIMESTAMP DEFAULT NOW(),
+        source_type TEXT NOT NULL,   -- 'notebooklm' | 'manual' | 'pdf' | 'web'
+        brand TEXT,                  -- 'donaldson' | 'fleetguard' | 'mann' | 'wix' | 'baldwin' | 'general'
+        category TEXT NOT NULL,      -- 'product_update' | 'pricing' | 'standard' | 'market' | 'technical'
+        title TEXT NOT NULL,
+        summary TEXT NOT NULL,       -- Structured summary for Hermes
+        raw_content TEXT,            -- Full source text
+        source_url TEXT,
+        active BOOLEAN DEFAULT TRUE,
+        priority INTEGER DEFAULT 5   -- 1=highest, 10=lowest; top items loaded into context
+      )
+    `);
+    await client.query(`
+      CREATE INDEX IF NOT EXISTS idx_intel_brand ON competitive_intel(brand);
+      CREATE INDEX IF NOT EXISTS idx_intel_category ON competitive_intel(category);
+      CREATE INDEX IF NOT EXISTS idx_intel_active ON competitive_intel(active);
+    `);
+    res.json({ success: true, message: 'Competitive intelligence table ready' });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Ingest intelligence entry ─────────────────────────────────────────────────
+// Used by the Python script and manual admin inputs
+app.post('/api/intel/ingest', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const { source_type, brand, category, title, summary, raw_content, source_url, priority } = req.body;
+  if (!title || !summary || !category) {
+    return res.status(400).json({ error: 'title, summary, category required' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `INSERT INTO competitive_intel (source_type, brand, category, title, summary, raw_content, source_url, priority)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
+      [source_type||'manual', brand||'general', category, title, summary, raw_content||null, source_url||null, priority||5]
+    );
+    res.json({ success: true, id: r.rows[0].id });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── List intelligence entries ─────────────────────────────────────────────────
+app.get('/api/intel/list', async (req, res) => {
+  const key = req.query.key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT id, created_at, source_type, brand, category, title, priority, active
+       FROM competitive_intel ORDER BY priority ASC, created_at DESC LIMIT 100`
+    );
+    res.json({ intel: r.rows });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Toggle active status ──────────────────────────────────────────────────────
+app.patch('/api/intel/:id/toggle', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `UPDATE competitive_intel SET active = NOT active, updated_at = NOW()
+       WHERE id = $1 RETURNING id, active`,
+      [req.params.id]
+    );
+    res.json({ success: true, ...r.rows[0] });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Load active intel into Hermes system context ──────────────────────────────
+async function loadCompetitiveIntel() {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT brand, category, title, summary
+       FROM competitive_intel
+       WHERE active = TRUE
+       ORDER BY priority ASC, created_at DESC
+       LIMIT 30`
+    );
+    if (r.rows.length === 0) return '';
+    const grouped = {};
+    for (const row of r.rows) {
+      const k = row.brand || 'general';
+      if (!grouped[k]) grouped[k] = [];
+      grouped[k].push(`[${row.category.toUpperCase()}] ${row.title}: ${row.summary}`);
+    }
+    const lines = Object.entries(grouped).map(([brand, items]) =>
+      `${brand.toUpperCase()}:\n${items.map(i => `  • ${i}`).join('\n')}`
+    ).join('\n\n');
+    return `\n\nCOMPETITIVE INTELLIGENCE (current market data):\n${lines}`;
+  } catch(e) {
+    // Table may not exist yet — silent fail
+    return '';
+  } finally {
+    await client.end();
+  }
+}
+
+// ── Use Claude to extract structured intel from raw text ──────────────────────
+app.post('/api/intel/extract', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const { raw_text, source_url, brand } = req.body;
+  if (!raw_text) return res.status(400).json({ error: 'raw_text required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      messages: [{
+        role: 'user',
+        content: `You are analyzing competitive intelligence for ELIMFILTERS industrial filtration.
+
+Extract structured intelligence from this text and return JSON array:
+[
+  {
+    "brand": "donaldson|fleetguard|mann|wix|baldwin|general",
+    "category": "product_update|pricing|standard|market|technical",
+    "title": "Short descriptive title (max 80 chars)",
+    "summary": "1-2 sentences: what changed, why it matters for ELIMFILTERS positioning",
+    "priority": 1-10
+  }
+]
+
+Source brand hint: ${brand || 'auto-detect'}
+Source URL: ${source_url || 'not provided'}
+
+Text to analyze:
+${raw_text.slice(0, 4000)}
+
+Return only the JSON array. No markdown, no extra text.`
+      }],
+    });
+    await logUsage('intel', response.usage, null);
+    const text = response.content[0].text;
+    const match = text.match(/\[[\s\S]*\]/);
+    const extracted = JSON.parse(match ? match[0] : text);
+    res.json({ success: true, extracted });
+  } catch(e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Patch consult endpoint to load dynamic intel into system context
+// (The consult route above uses SYSTEM_CONTEXT — we extend it at request time)
+
+// ── Extended consult with competitive intel ───────────────────────────────────
+app.post('/api/ai/consult-v2', async (req, res) => {
+  const { query, agent = 'technical', session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const [budget, intelContext] = await Promise.all([
+    checkBudget('consult'),
+    loadCompetitiveIntel(),
+  ]);
+
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly consultation budget reached. Resets next month.',
+    used: budget.used, limit: budget.limit
+  });
+
+  const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  const systemWithIntel = SYSTEM_CONTEXT + intelContext;
+
+  try {
+    const messages = [
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: query },
+    ];
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      system: [
+        { type: 'text', text: systemWithIntel, cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
+      ],
+      messages,
+    });
+    await logUsage(agent, response.usage, session_id);
+    res.json({
+      answer: response.content[0].text,
+      agent,
+      intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
+      usage: {
+        input: response.usage.input_tokens,
+        output: response.usage.output_tokens,
+        cached: response.usage.cache_read_input_tokens || 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/consult-v2]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;

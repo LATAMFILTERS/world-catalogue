@@ -11,7 +11,7 @@ const AGENTS = [
   { id: 'marketing', label: 'Marketing', desc: 'Content strategy, positioning' },
 ];
 
-interface Message { role: 'user' | 'assistant'; content: string; agent?: string; cached?: number; }
+interface Message { role: 'user' | 'assistant'; content: string; agent?: string; cached?: number; intel?: number; }
 
 export default function ConsultPage() {
   const [agent, setAgent] = useState('technical');
@@ -35,7 +35,7 @@ export default function ConsultPage() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/ai/consult', {
+      const res = await fetch('/api/ai/consult-v2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -51,6 +51,7 @@ export default function ConsultPage() {
         content: data.answer,
         agent: data.agent,
         cached: data.usage?.cached,
+        intel: data.intel_entries,
       }]);
       setBudgetInfo({ used: data.budget_used, limit: data.budget_limit });
     } catch(e: unknown) {
@@ -144,7 +145,7 @@ export default function ConsultPage() {
               >
                 {m.role === 'assistant' && (
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', marginBottom: '0.35rem' }}>
-                    {m.agent?.toUpperCase()} AGENT {m.cached ? `· ${m.cached} tokens cached` : ''}
+                    {m.agent?.toUpperCase()} AGENT {m.cached ? `· ${m.cached} cached` : ''}{m.intel ? ` · ${m.intel} intel` : ''}
                   </p>
                 )}
                 <div style={{
