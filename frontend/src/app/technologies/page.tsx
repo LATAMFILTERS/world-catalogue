@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 import {
@@ -85,6 +86,42 @@ const FAQS = [
   },
 ];
 
+// ─── Constellation data ────────────────────────────────────────────────────
+const TECH_NODES_DATA = [
+  { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:760, cy:450 },
+  { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:723, cy:553 },
+  { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:628, cy:607 },
+  { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:520, cy:589 },
+  { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:450, cy:505 },
+  { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:450, cy:395 },
+  { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:520, cy:311 },
+  { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:628, cy:293 },
+  { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:723, cy:347 },
+];
+
+const CONNECTIONS_DATA = [
+  { dx:600, dy:120, tx:628, ty:293, tech:'macrocore' },
+  { dx:600, dy:120, tx:520, ty:311, tech:'intekcore' },
+  { dx:858, dy:244, tx:723, ty:347, tech:'syntepore' },
+  { dx:858, dy:244, tx:760, ty:450, tech:'hydrocore' },
+  { dx:922, dy:524, tx:723, ty:553, tech:'drycore' },
+  { dx:743, dy:748, tx:628, ty:607, tech:'syntrax' },
+  { dx:457, dy:748, tx:520, ty:589, tech:'nanoforce' },
+  { dx:279, dy:523, tx:450, ty:505, tech:'thermocore' },
+  { dx:342, dy:244, tx:450, ty:395, tech:'microkappa' },
+];
+
+const DOMAIN_NODES_DATA = [
+  { label:'Air Intake',       x:600, y:120 },
+  { label:'Fuel Cleanliness', x:858, y:244 },
+  { label:'Compressed Air',   x:922, y:524 },
+  { label:'Lubrication',      x:743, y:748 },
+  { label:'Hydraulic',        x:457, y:748 },
+  { label:'Cooling System',   x:279, y:523 },
+  { label:'Cabin Protection', x:342, y:244 },
+];
+// ───────────────────────────────────────────────────────────────────────────
+
 export default function TechnologiesPage() {
   const itemListData = catalogue.technologies.map((tech, i) => {
     const slug = getSlug(tech.name);
@@ -111,6 +148,23 @@ export default function TechnologiesPage() {
       acceptedAnswer: { '@type': 'Answer', text: faq.a },
     })),
   };
+
+  // ── Interactive constellation hooks ─────────────────────────────────────
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
+  const diagramRotateY = useTransform(springX, [-1, 1], [-7, 7]);
+  const diagramRotateX = useTransform(springY, [-1, 1], [5, -5]);
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
+
+  const handleDiagramMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left - rect.width / 2) / (rect.width / 2));
+    mouseY.set((e.clientY - rect.top - rect.height / 2) / (rect.height / 2));
+  };
+  const handleDiagramMouseLeave = () => { mouseX.set(0); mouseY.set(0); setHoveredTech(null); };
+  // ─────────────────────────────────────────────────────────────────────────
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -463,7 +517,7 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Technology Network Diagram */}
+      {/* Technology Network Diagram — Living System */}
       <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1rem,4vw,2rem)', background: 'rgba(255,241,45,0.01)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <motion.div
@@ -484,117 +538,158 @@ export default function TechnologiesPage() {
             </p>
           </motion.div>
 
-          {/* Radial constellation diagram */}
+          {/* Radial constellation — interactive living system */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
+            initial={{ opacity: 0, scale: 0.88 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <svg viewBox="0 0 1200 900" style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}>
-              <defs>
-                <filter id="nodeGlow2" x="-60%" y="-60%" width="220%" height="220%">
-                  <feGaussianBlur stdDeviation="7" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="lineGlow2" x="-10%" y="-200%" width="120%" height="500%">
-                  <feGaussianBlur stdDeviation="2.5" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <radialGradient id="bgPulse" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="rgba(255,241,45,0.07)"/>
-                  <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
-                </radialGradient>
-                {/* Clip paths for circular tech logos */}
-                {[
-                  { slug:'hydrocore',  cx:760, cy:450 },
-                  { slug:'drycore',    cx:723, cy:553 },
-                  { slug:'syntrax',    cx:628, cy:607 },
-                  { slug:'nanoforce',  cx:520, cy:589 },
-                  { slug:'thermocore', cx:450, cy:505 },
-                  { slug:'microkappa', cx:450, cy:395 },
-                  { slug:'intekcore',  cx:520, cy:311 },
-                  { slug:'macrocore',  cx:628, cy:293 },
-                  { slug:'syntepore',  cx:723, cy:347 },
-                ].map(t => (
-                  <clipPath key={t.slug} id={`circ-${t.slug}`}>
-                    <circle cx={t.cx} cy={t.cy} r="50"/>
-                  </clipPath>
-                ))}
-              </defs>
+            {/* Perspective container for 3-D tilt */}
+            <div style={{ perspective: '1400px' }}>
+              <motion.div
+                style={{ rotateX: diagramRotateX, rotateY: diagramRotateY }}
+                onMouseMove={handleDiagramMouseMove}
+                onMouseLeave={handleDiagramMouseLeave}
+              >
+                <svg viewBox="0 0 1200 900" style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}>
+                  <defs>
+                    <filter id="nodeGlow2" x="-60%" y="-60%" width="220%" height="220%">
+                      <feGaussianBlur stdDeviation="7" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <filter id="lineGlow2" x="-10%" y="-200%" width="120%" height="500%">
+                      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <filter id="domainGlow" x="-40%" y="-120%" width="180%" height="340%">
+                      <feGaussianBlur stdDeviation="5" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <radialGradient id="bgPulse" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="rgba(255,241,45,0.07)"/>
+                      <stop offset="100%" stopColor="rgba(0,0,0,0)"/>
+                    </radialGradient>
+                    {/* Clip paths for circular tech logos */}
+                    {TECH_NODES_DATA.map(t => (
+                      <clipPath key={t.slug} id={`circ-${t.slug}`}>
+                        <circle cx={t.cx} cy={t.cy} r="50"/>
+                      </clipPath>
+                    ))}
+                  </defs>
 
-              {/* Background radial glow */}
-              <ellipse cx="600" cy="450" rx="420" ry="380" fill="url(#bgPulse)"/>
+                  {/* Background glow — breathing */}
+                  <motion.ellipse
+                    cx="600" cy="450" rx="420" ry="380" fill="url(#bgPulse)"
+                    animate={{ rx: [420, 465, 420], ry: [380, 425, 380] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                  />
 
-              {/* Decorative orbital rings */}
-              <circle cx="600" cy="450" r="162" fill="none" stroke="rgba(255,241,45,0.06)" strokeWidth="1" strokeDasharray="3 9"/>
-              <circle cx="600" cy="450" r="332" fill="none" stroke="rgba(255,241,45,0.04)" strokeWidth="1" strokeDasharray="3 14"/>
+                  {/* Orbital rings — slow counter-rotation (pure decorative, no clipPath) */}
+                  <motion.circle
+                    cx="600" cy="450" r="162"
+                    fill="none" stroke="rgba(255,241,45,0.07)" strokeWidth="1" strokeDasharray="3 9"
+                    style={{ transformOrigin: '600px 450px' }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 55, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <motion.circle
+                    cx="600" cy="450" r="332"
+                    fill="none" stroke="rgba(255,241,45,0.04)" strokeWidth="1" strokeDasharray="3 14"
+                    style={{ transformOrigin: '600px 450px' }}
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 85, repeat: Infinity, ease: 'linear' }}
+                  />
 
-              {/* Central node */}
-              <circle cx="600" cy="450" r="12" fill="rgba(255,241,45,0.15)" stroke="rgba(255,241,45,0.6)" strokeWidth="1.5" filter="url(#nodeGlow2)"/>
-              <circle cx="600" cy="450" r="5"  fill="#FFF12D"/>
+                  {/* Sonar ripple from center */}
+                  <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.5)" strokeWidth="1.5"
+                    animate={{ r: [10, 95], opacity: [0.5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeOut' }}
+                  />
+                  <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.35)" strokeWidth="1"
+                    animate={{ r: [10, 95], opacity: [0.4, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: 1.5 }}
+                  />
 
-              {/* Bezier connection lines — all curve through center (600,450) */}
-              {[
-                /* Air Intake → MACROCORE   */ { dx:600, dy:120, tx:628, ty:293 },
-                /* Air Intake → INTEKCORE   */ { dx:600, dy:120, tx:520, ty:311 },
-                /* Fuel → SYNTEPORE         */ { dx:858, dy:244, tx:723, ty:347 },
-                /* Fuel → HYDROCORE         */ { dx:858, dy:244, tx:760, ty:450 },
-                /* Compressed → DRYCORE     */ { dx:922, dy:524, tx:723, ty:553 },
-                /* Lubrication → SYNTRAX    */ { dx:743, dy:748, tx:628, ty:607 },
-                /* Hydraulic → NANOFORCE    */ { dx:457, dy:748, tx:520, ty:589 },
-                /* Cooling → THERMOCORE     */ { dx:279, dy:523, tx:450, ty:505 },
-                /* Cabin → MICROKAPPA       */ { dx:342, dy:244, tx:450, ty:395 },
-              ].map((c, i) => (
-                <path key={i}
-                  d={`M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`}
-                  fill="none" stroke="rgba(255,241,45,0.28)" strokeWidth="1.8"
-                  filter="url(#lineGlow2)"
-                />
-              ))}
+                  {/* Central node */}
+                  <circle cx="600" cy="450" r="14" fill="rgba(255,241,45,0.1)" stroke="rgba(255,241,45,0.45)" strokeWidth="1.5" filter="url(#nodeGlow2)"/>
+                  <motion.circle cx="600" cy="450" fill="#FFF12D"
+                    animate={{ r: [5, 7.5, 5] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+                  />
 
-              {/* Tech nodes — circular, logos clipped */}
-              {[
-                { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:760, cy:450 },
-                { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:723, cy:553 },
-                { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:628, cy:607 },
-                { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:520, cy:589 },
-                { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:450, cy:505 },
-                { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:450, cy:395 },
-                { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:520, cy:311 },
-                { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:628, cy:293 },
-                { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:723, cy:347 },
-              ].map(t => (
-                <a key={t.slug} href={`/technologies/${t.slug}`}>
-                  <g filter="url(#nodeGlow2)">
-                    <circle cx={t.cx} cy={t.cy} r="54" fill="rgba(0,0,0,0.92)" stroke="rgba(255,241,45,0.55)" strokeWidth="1.5"/>
-                    <image href={t.img} x={t.cx-48} y={t.cy-48} width="96" height="96"
-                      clipPath={`url(#circ-${t.slug})`} preserveAspectRatio="xMidYMid meet" opacity="0.95"/>
-                  </g>
-                </a>
-              ))}
+                  {/* Connection lines — flowing energy pulse */}
+                  {CONNECTIONS_DATA.map((c, i) => {
+                    const isHovered = hoveredTech === c.tech;
+                    return (
+                      <motion.path
+                        key={i}
+                        d={`M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`}
+                        fill="none"
+                        strokeDasharray="8 12"
+                        filter="url(#lineGlow2)"
+                        animate={{
+                          strokeDashoffset: [0, -20],
+                          stroke: isHovered ? 'rgba(255,241,45,0.92)' : 'rgba(255,241,45,0.3)',
+                          strokeWidth: isHovered ? 2.8 : 1.8,
+                        }}
+                        transition={{
+                          strokeDashoffset: { duration: 1.3 + i * 0.14, repeat: Infinity, ease: 'linear' },
+                          stroke: { duration: 0.25 },
+                          strokeWidth: { duration: 0.25 },
+                        }}
+                      />
+                    );
+                  })}
 
-              {/* Domain label nodes — outer ring */}
-              {[
-                { label:'Air Intake',       x:600, y:120  },
-                { label:'Fuel Cleanliness', x:858, y:244  },
-                { label:'Compressed Air',   x:922, y:524  },
-                { label:'Lubrication',      x:743, y:748  },
-                { label:'Hydraulic',        x:457, y:748  },
-                { label:'Cooling System',   x:279, y:523  },
-                { label:'Cabin Protection', x:342, y:244  },
-              ].map((d, i) => (
-                <g key={i} filter="url(#nodeGlow2)">
-                  <rect x={d.x - 88} y={d.y - 22} width="176" height="44" rx="7"
-                    fill="rgba(0,0,0,0.88)" stroke="#FFF12D" strokeWidth="1.5"/>
-                  <text x={d.x} y={d.y + 1}
-                    textAnchor="middle" dominantBaseline="middle"
-                    fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="14" fill="#FFF12D">
-                    {d.label}
-                  </text>
-                </g>
-              ))}
-            </svg>
+                  {/* Tech nodes — breathing scale + hover illuminate */}
+                  {TECH_NODES_DATA.map((t, i) => (
+                    <a key={t.slug} href={`/technologies/${t.slug}`}>
+                      <motion.g
+                        filter="url(#nodeGlow2)"
+                        style={{ transformOrigin: `${t.cx}px ${t.cy}px`, cursor: 'pointer' }}
+                        animate={{ scale: [1, 1.048, 1] }}
+                        transition={{ duration: 2.8 + (i % 4) * 0.7, repeat: Infinity, ease: 'easeInOut', delay: i * 0.38 }}
+                        onHoverStart={() => setHoveredTech(t.slug)}
+                        onHoverEnd={() => setHoveredTech(null)}
+                      >
+                        <motion.circle
+                          cx={t.cx} cy={t.cy} r="54"
+                          fill="rgba(0,0,0,0.92)"
+                          animate={{
+                            stroke: hoveredTech === t.slug ? 'rgba(255,241,45,1)' : 'rgba(255,241,45,0.55)',
+                            strokeWidth: hoveredTech === t.slug ? 2.8 : 1.5,
+                          }}
+                          transition={{ duration: 0.2 }}
+                        />
+                        <image href={t.img} x={t.cx-48} y={t.cy-48} width="96" height="96"
+                          clipPath={`url(#circ-${t.slug})`} preserveAspectRatio="xMidYMid meet"
+                          opacity={hoveredTech === t.slug ? 1 : 0.92}
+                        />
+                      </motion.g>
+                    </a>
+                  ))}
+
+                  {/* Domain label nodes — gentle float */}
+                  {DOMAIN_NODES_DATA.map((d, i) => (
+                    <motion.g
+                      key={i}
+                      filter="url(#domainGlow)"
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ duration: 4.5 + i * 0.55, repeat: Infinity, ease: 'easeInOut', delay: i * 0.6 }}
+                    >
+                      <rect x={d.x - 88} y={d.y - 22} width="176" height="44" rx="7"
+                        fill="rgba(0,0,0,0.88)" stroke="#FFF12D" strokeWidth="1.5"/>
+                      <text x={d.x} y={d.y + 1}
+                        textAnchor="middle" dominantBaseline="middle"
+                        fontFamily="Outfit, sans-serif" fontWeight="700" fontSize="14" fill="#FFF12D">
+                        {d.label}
+                      </text>
+                    </motion.g>
+                  ))}
+                </svg>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
