@@ -304,8 +304,8 @@ export default function TechnologiesPage() {
                 }}
               >
                 <div style={{
-                  fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
-                  color: '#FFF12D', letterSpacing: '0.2em', fontWeight: 700,
+                  fontSize: '1.05rem', fontFamily: 'JetBrains Mono, monospace',
+                  color: '#FFF12D', letterSpacing: '0.15em', fontWeight: 700,
                 }}>
                   {d.domain}
                 </div>
