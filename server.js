@@ -2495,6 +2495,409 @@ app.post('/api/migrate/apply-matrix', async (req, res) => {
   res.json({ success: true, dryRun, totalUpdated, results });
 });
 
+// ─── CUSTOMER INTELLIGENCE ───────────────────────────────────────────────────
+
+app.post('/api/intelligence/migrate', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS intelligence_events (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        distributor TEXT,
+        customer TEXT,
+        country TEXT,
+        industry TEXT,
+        equipment_make TEXT,
+        equipment_model TEXT,
+        equipment_id TEXT,
+        part_number TEXT,
+        technology TEXT,
+        event_type TEXT,
+        quantity INTEGER,
+        operating_hours INTEGER
+      )
+    `);
+    res.json({ success: true, message: 'intelligence_events table ready' });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/intelligence/events', async (req, res) => {
+  const {
+    distributor, customer, country, industry,
+    equipment_make, equipment_model, equipment_id,
+    part_number, technology, event_type, quantity, operating_hours
+  } = req.body;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `INSERT INTO intelligence_events
+        (distributor, customer, country, industry, equipment_make, equipment_model,
+         equipment_id, part_number, technology, event_type, quantity, operating_hours)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+       RETURNING id, created_at`,
+      [distributor||null, customer||null, country||null, industry||null,
+       equipment_make||null, equipment_model||null, equipment_id||null,
+       part_number||null, technology||null, event_type||null,
+       quantity ? parseInt(quantity) : null,
+       operating_hours ? parseInt(operating_hours) : null]
+    );
+    res.status(201).json({ success: true, event: result.rows[0] });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.get('/api/intelligence/dashboard', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const [total, topParts, topDistributors, topCountries] = await Promise.all([
+      client.query(`SELECT COUNT(*) AS total FROM intelligence_events`),
+      client.query(`SELECT part_number, COUNT(*) AS count FROM intelligence_events WHERE part_number IS NOT NULL GROUP BY part_number ORDER BY count DESC LIMIT 10`),
+      client.query(`SELECT distributor, COUNT(*) AS count FROM intelligence_events WHERE distributor IS NOT NULL GROUP BY distributor ORDER BY count DESC LIMIT 10`),
+      client.query(`SELECT country, COUNT(*) AS count FROM intelligence_events WHERE country IS NOT NULL GROUP BY country ORDER BY count DESC LIMIT 10`),
+    ]);
+    res.json({
+      total_events: parseInt(total.rows[0].total),
+      top_part_numbers: topParts.rows,
+      top_distributors: topDistributors.rows,
+      top_countries: topCountries.rows,
+    });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ════════════════════════════════════════════════════════════════════════════
+// AI SYSTEM — Token budget + Sub-agents + Content Agent
+// ════════════════════════════════════════════════════════════════════════════
+
+const Anthropic = require('@anthropic-ai/sdk');
+
+const MONTHLY_TOKEN_BUDGET = 500000; // ~$6-8/month with caching
+const CONTENT_TOKENS_PER_PAGE = 3000; // ~20 pages/month reserved
+
+// ── Migrate AI tables ────────────────────────────────────────────────────────
+app.post('/api/ai/migrate', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS ai_usage_log (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        month_key TEXT NOT NULL,
+        agent TEXT NOT NULL,
+        input_tokens INTEGER DEFAULT 0,
+        output_tokens INTEGER DEFAULT 0,
+        cached_tokens INTEGER DEFAULT 0,
+        session_id TEXT
+      )
+    `);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS ai_content_pages (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        trigger_query TEXT,
+        slug TEXT UNIQUE NOT NULL,
+        title TEXT,
+        content_json JSONB,
+        published BOOLEAN DEFAULT FALSE
+      )
+    `);
+    res.json({ success: true, message: 'AI tables ready' });
+  } catch(e) { res.status(500).json({ success: false, error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Token budget check ───────────────────────────────────────────────────────
+async function checkBudget(agentType) {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const monthKey = new Date().toISOString().slice(0, 7); // "2026-06"
+    const r = await client.query(
+      `SELECT COALESCE(SUM(input_tokens + output_tokens), 0) AS used
+       FROM ai_usage_log WHERE month_key = $1`, [monthKey]
+    );
+    const used = parseInt(r.rows[0].used);
+    const limit = agentType === 'content' ? MONTHLY_TOKEN_BUDGET : MONTHLY_TOKEN_BUDGET - (CONTENT_TOKENS_PER_PAGE * 20);
+    return { ok: used < limit, used, limit };
+  } catch(e) { return { ok: true, used: 0, limit: MONTHLY_TOKEN_BUDGET }; }
+  finally { await client.end(); }
+}
+
+async function logUsage(agent, usage, sessionId) {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const monthKey = new Date().toISOString().slice(0, 7);
+    await client.query(
+      `INSERT INTO ai_usage_log (month_key, agent, input_tokens, output_tokens, cached_tokens, session_id)
+       VALUES ($1,$2,$3,$4,$5,$6)`,
+      [monthKey, agent, usage.input_tokens || 0, usage.output_tokens || 0, usage.cache_read_input_tokens || 0, sessionId || null]
+    );
+  } catch(e) { console.error('[ai_usage_log]', e.message); }
+  finally { await client.end(); }
+}
+
+// ── Shared ELIMFILTERS system context (cached) ───────────────────────────────
+const SYSTEM_CONTEXT = `You are an ELIMFILTERS industrial filtration expert assistant.
+
+ELIMFILTERS manufactures industrial filtration systems using proprietary technologies:
+- MACROCORE: Particulate capture, 18µm absolute, for lube/oil systems
+- NANOFORCE: Sub-micron particle removal, 1µm efficiency, for hydraulic/fuel
+- SYNTRAX: Active synthetic media, high dirt capacity, 4-layer matrix
+- DURATECH: Extended lifecycle synthesis, chemical resistance
+- MICROKAPPA: HEPA-class cabin air, PM2.5 + activated carbon
+- INTEKCORE: Air intake, high-pressure housing, thermal cycling rated
+
+Applicable standards: ISO 16889 (beta ratio), ISO 4406 (cleanliness codes),
+SAE J1539 (air intake), ISO 11155 (cabin), ISO 8573 (compressed air),
+ASTM D6304 (fuel water content), NFPA T2.14 (hydraulic).
+
+Industries served: Agriculture, Mining, Marine, Construction, Transport,
+Oil & Gas, Power Generation, Forestry, Industrial.
+
+Tone: Professional, technical, factual. No marketing language. Cite ISO codes.
+Quantify impacts in hours, percentages, or measurable units.`;
+
+const AGENT_PERSONAS = {
+  technical: `You are the ELIMFILTERS Technical Agent. Focus on:
+- Filter specifications (micron ratings, beta ratios, dirt capacity)
+- ISO standards compliance and measurement
+- Contamination root cause analysis
+- Equipment compatibility and part number recommendations
+- Failure mode diagnosis`,
+
+  sales: `You are the ELIMFILTERS Sales Agent. Focus on:
+- Understanding customer fleet size and filtration needs
+- Total cost of ownership comparisons
+- Equipment lifespan extension benefits (quantified)
+- Distributor network and availability
+- Volume pricing and service agreements
+Language: clear, value-focused, never pushy.`,
+
+  marketing: `You are the ELIMFILTERS Marketing Agent. Focus on:
+- Positioning ELIMFILTERS as asset protection system (not commodity filters)
+- Industry-specific content and case studies
+- Category reframing: contamination control vs product selection
+- SEO content strategy from customer query patterns
+Language: professional, positioning-focused.`,
+
+  support: `You are the ELIMFILTERS Support Agent. Focus on:
+- Installation and maintenance procedures
+- Troubleshooting filter performance issues
+- Warranty and quality claims
+- Cross-reference to OEM part numbers
+- Service interval guidance`,
+};
+
+// ── Main consultation endpoint ────────────────────────────────────────────────
+app.post('/api/ai/consult', async (req, res) => {
+  const { query, agent = 'technical', session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const budget = await checkBudget('consult');
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly consultation budget reached. Resets next month.',
+    used: budget.used, limit: budget.limit
+  });
+
+  const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  try {
+    const messages = [
+      // Cached system context turns
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: query },
+    ];
+
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      system: [
+        { type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
+      ],
+      messages,
+    });
+
+    await logUsage(agent, response.usage, session_id);
+
+    res.json({
+      answer: response.content[0].text,
+      agent,
+      usage: {
+        input: response.usage.input_tokens,
+        output: response.usage.output_tokens,
+        cached: response.usage.cache_read_input_tokens || 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/consult]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── Usage stats ───────────────────────────────────────────────────────────────
+app.get('/api/ai/usage', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const monthKey = new Date().toISOString().slice(0, 7);
+    const [monthly, byAgent] = await Promise.all([
+      client.query(
+        `SELECT COALESCE(SUM(input_tokens+output_tokens),0) AS total_tokens,
+                COALESCE(SUM(cached_tokens),0) AS cached_tokens,
+                COUNT(*) AS calls
+         FROM ai_usage_log WHERE month_key=$1`, [monthKey]
+      ),
+      client.query(
+        `SELECT agent, COUNT(*) AS calls, SUM(input_tokens+output_tokens) AS tokens
+         FROM ai_usage_log WHERE month_key=$1 GROUP BY agent ORDER BY tokens DESC`, [monthKey]
+      ),
+    ]);
+    res.json({
+      month: monthKey,
+      budget: MONTHLY_TOKEN_BUDGET,
+      used: parseInt(monthly.rows[0].total_tokens),
+      cached: parseInt(monthly.rows[0].cached_tokens),
+      calls: parseInt(monthly.rows[0].calls),
+      remaining: MONTHLY_TOKEN_BUDGET - parseInt(monthly.rows[0].total_tokens),
+      by_agent: byAgent.rows,
+    });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Content Agent — generate Knowledge System page from query ─────────────────
+app.post('/api/ai/generate-content', async (req, res) => {
+  const { query, equipment, part_number } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const budget = await checkBudget('content');
+  if (!budget.ok) return res.status(429).json({ error: 'Content generation budget reached for this month.' });
+
+  // Generate a URL slug from the query
+  const slug = query.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim().replace(/\s+/g, '-')
+    .slice(0, 60);
+
+  // Check if already generated
+  const checkClient = new Client(dbConfig);
+  try {
+    await checkClient.connect();
+    const existing = await checkClient.query('SELECT id, slug, title FROM ai_content_pages WHERE slug=$1', [slug]);
+    if (existing.rows.length > 0) {
+      return res.json({ existing: true, page: existing.rows[0] });
+    }
+  } catch(e) {} finally { await checkClient.end(); }
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  const prompt = `A customer asked: "${query}"
+${equipment ? `Equipment: ${equipment}` : ''}
+${part_number ? `Part Number mentioned: ${part_number}` : ''}
+
+Generate a Knowledge System page for the ELIMFILTERS website. Return JSON with this structure:
+{
+  "title": "SEO-optimized page title (50-65 chars)",
+  "slug": "${slug}",
+  "meta_description": "One sentence, 150 chars max",
+  "sections": [
+    { "heading": "Industrial Context", "content": "2-3 paragraphs..." },
+    { "heading": "Contamination Challenges", "content": "..." },
+    { "heading": "Applicable Standards", "items": [{ "code": "ISO XXXX", "desc": "..." }] },
+    { "heading": "ELIMFILTERS Technologies", "items": [{ "name": "MACROCORE", "role": "..." }] },
+    { "heading": "Operational Impact", "content": "..." }
+  ],
+  "canonical_block": {
+    "definition": "Technical neutral definition",
+    "systems": ["list", "of", "systems"],
+    "failure_impact": "Root cause → consequence chain",
+    "related_standards": ["ISO XXXX: scope"],
+    "related_technologies": ["MACROCORE: mechanism"]
+  },
+  "internal_links": [
+    { "text": "Lube Oil Systems", "href": "/knowledge-system/standards/lube-oil-systems" }
+  ],
+  "schema_type": "TechArticle"
+}
+
+Rules: Technical tone only. No marketing language. Include ISO codes. Quantify operational impacts.`;
+
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 2048,
+      system: [{ type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } }],
+      messages: [{ role: 'user', content: prompt }],
+    });
+
+    await logUsage('content', response.usage, null);
+
+    let pageData;
+    try {
+      const text = response.content[0].text;
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      pageData = JSON.parse(jsonMatch ? jsonMatch[0] : text);
+    } catch(e) {
+      return res.status(500).json({ error: 'Failed to parse AI response', raw: response.content[0].text });
+    }
+
+    // Save to DB
+    const saveClient = new Client(dbConfig);
+    try {
+      await saveClient.connect();
+      await saveClient.query(
+        `INSERT INTO ai_content_pages (trigger_query, slug, title, content_json, published)
+         VALUES ($1,$2,$3,$4,FALSE)
+         ON CONFLICT (slug) DO NOTHING`,
+        [query, slug, pageData.title, JSON.stringify(pageData)]
+      );
+    } catch(e) { console.error('[ai_content_pages save]', e.message); }
+    finally { await saveClient.end(); }
+
+    res.json({ success: true, slug, page: pageData });
+  } catch(e) {
+    console.error('[ai/generate-content]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── List generated content pages ──────────────────────────────────────────────
+app.get('/api/ai/content-pages', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT id, created_at, slug, title, trigger_query, published
+       FROM ai_content_pages ORDER BY created_at DESC LIMIT 50`
+    );
+    res.json({ pages: r.rows });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;

@@ -595,7 +595,7 @@ function Contamination() {
             {/* 70% stat */}
             <div style={{ marginTop:'2.5rem', padding:'1.5rem',
               background: S1, borderLeft:`3px solid rgba(239,68,68,0.65)`, borderRadius:'0 4px 4px 0',
-              border:`1px solid rgba(239,68,68,0.15)`, borderLeft:`3px solid rgba(239,68,68,0.65)` }}>
+              border:`1px solid rgba(239,68,68,0.15)` }}>
               <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
                 color:'rgba(239,68,68,0.7)', letterSpacing:'0.15em', marginBottom:'0.6rem' }}>
                 INDUSTRY DATA — NFPA / ISO 4406
