@@ -618,27 +618,40 @@ export default function TechnologiesPage() {
                     transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
                   />
 
-                  {/* Connection lines — flowing energy pulse */}
+                  {/* Connection lines — base (always visible) + energy pulse overlay */}
                   {CONNECTIONS_DATA.map((c, i) => {
                     const isHovered = hoveredTech === c.tech;
+                    const d = `M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`;
                     return (
-                      <motion.path
-                        key={i}
-                        d={`M ${c.dx} ${c.dy} Q 600 450 ${c.tx} ${c.ty}`}
-                        fill="none"
-                        strokeDasharray="8 12"
-                        filter="url(#lineGlow2)"
-                        animate={{
-                          strokeDashoffset: [0, -20],
-                          stroke: isHovered ? 'rgba(255,241,45,0.92)' : 'rgba(255,241,45,0.3)',
-                          strokeWidth: isHovered ? 2.8 : 1.8,
-                        }}
-                        transition={{
-                          strokeDashoffset: { duration: 1.3 + i * 0.14, repeat: Infinity, ease: 'linear' },
-                          stroke: { duration: 0.25 },
-                          strokeWidth: { duration: 0.25 },
-                        }}
-                      />
+                      <g key={i}>
+                        {/* Base line — always solid and visible */}
+                        <motion.path
+                          d={d}
+                          fill="none"
+                          filter="url(#lineGlow2)"
+                          animate={{
+                            stroke: isHovered ? 'rgba(255,241,45,0.75)' : 'rgba(255,241,45,0.28)',
+                            strokeWidth: isHovered ? 2.5 : 1.6,
+                          }}
+                          transition={{ duration: 0.25 }}
+                        />
+                        {/* Energy pulse overlay — flowing dots */}
+                        <motion.path
+                          d={d}
+                          fill="none"
+                          strokeDasharray="4 20"
+                          animate={{
+                            strokeDashoffset: [0, -24],
+                            stroke: isHovered ? 'rgba(255,241,45,1)' : 'rgba(255,241,45,0.7)',
+                            strokeWidth: isHovered ? 3 : 2,
+                          }}
+                          transition={{
+                            strokeDashoffset: { duration: 1.2 + i * 0.13, repeat: Infinity, ease: 'linear' },
+                            stroke: { duration: 0.25 },
+                            strokeWidth: { duration: 0.25 },
+                          }}
+                        />
+                      </g>
                     );
                   })}
 
