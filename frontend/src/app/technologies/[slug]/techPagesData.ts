@@ -245,7 +245,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
   macrocore: {
     categoryTag: '// AIR ASSET PROTECTION · MACROCORE™',
     heroTitle: 'MACROCORE™',
-    heroSubtitle: 'PROGRESSIVE DENSITY GRADIENT',
+    heroSubtitle: 'PDG ARCHITECTURE',
     heroTagline: 'Every liter of fuel combusted draws over 10,000 liters of air through the engine. Any particle that bypasses air intake protection reaches cylinder bores, piston rings and turbocharger bearings directly. MACROCORE™ Progressive Density Gradient eliminates the surface-loading failure of single-density elements through a three-zone architecture that distributes contamination load across the full depth of the protection matrix.',
     heroImage: '/images/mecanica-air.avif',
     heroStats: [
