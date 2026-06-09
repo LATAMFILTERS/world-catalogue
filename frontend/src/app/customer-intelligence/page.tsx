@@ -19,6 +19,17 @@ export default function CustomerIntelligencePage() {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+
+            <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>00</p>
+              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Consultation</h2>
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                Technical, sales, support and marketing sub-agents. Generates Knowledge pages from queries.
+              </p>
+              <Link href="/customer-intelligence/consult" style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', textDecoration: 'none' }}>
+                CONSULT AI →
+              </Link>
+            </motion.div>
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>01</p>
               <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Log Event</h2>
