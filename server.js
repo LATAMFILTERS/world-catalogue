@@ -2616,6 +2616,28 @@ app.post('/api/ai/migrate', async (req, res) => {
         published BOOLEAN DEFAULT FALSE
       )
     `);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS ai_sessions (
+        id BIGSERIAL PRIMARY KEY,
+        session_id TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT NOW(),
+        last_active TIMESTAMP DEFAULT NOW(),
+        agent TEXT NOT NULL,
+        turn_count INTEGER DEFAULT 0
+      )
+    `);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS ai_messages (
+        id BIGSERIAL PRIMARY KEY,
+        session_id TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT NOW(),
+        role TEXT NOT NULL,
+        content TEXT NOT NULL,
+        model_used TEXT,
+        tokens_used INTEGER DEFAULT 0
+      )
+    `);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_ai_messages_session ON ai_messages(session_id, created_at)`);
     res.json({ success: true, message: 'AI tables ready' });
   } catch(e) { res.status(500).json({ success: false, error: e.message }); }
   finally { await client.end(); }
@@ -2704,9 +2726,60 @@ Language: professional, positioning-focused.`,
 - Service interval guidance`,
 };
 
+// ── Model router (Hermes-inspired) ───────────────────────────────────────────
+function routeModel(query) {
+  const q = query.toLowerCase();
+  const complexSignals = [
+    'analiza', 'analyze', 'explica', 'explain', 'diseña', 'design',
+    'estrategia', 'strategy', 'comparar', 'compare', 'diferencia',
+    'por qué', 'why', 'cómo funciona', 'how does', 'recomienda',
+    'recommend', 'problema', 'problem', 'falla', 'failure', 'diagnos',
+  ];
+  const isComplex = complexSignals.some(s => q.includes(s)) || query.length > 200;
+  return isComplex ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+}
+
+// ── Session memory helpers ────────────────────────────────────────────────────
+async function getSessionHistory(sessionId, limit = 10) {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT role, content FROM ai_messages
+       WHERE session_id=$1 ORDER BY created_at DESC LIMIT $2`,
+      [sessionId, limit]
+    );
+    return r.rows.reverse();
+  } catch(e) { return []; }
+  finally { await client.end(); }
+}
+
+async function saveMessage(sessionId, role, content, model, tokens) {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(
+      `INSERT INTO ai_messages (session_id, role, content, model_used, tokens_used)
+       VALUES ($1,$2,$3,$4,$5)`,
+      [sessionId, role, content, model || null, tokens || 0]
+    );
+    await client.query(
+      `INSERT INTO ai_sessions (session_id, agent, turn_count, last_active)
+       VALUES ($1,'unknown',1,NOW())
+       ON CONFLICT DO NOTHING`,
+      [sessionId]
+    );
+    await client.query(
+      `UPDATE ai_sessions SET last_active=NOW(), turn_count=turn_count+1
+       WHERE session_id=$1`, [sessionId]
+    );
+  } catch(e) { console.error('[saveMessage]', e.message); }
+  finally { await client.end(); }
+}
+
 // ── Main consultation endpoint ────────────────────────────────────────────────
 app.post('/api/ai/consult', async (req, res) => {
-  const { query, agent = 'technical', session_id, history = [] } = req.body;
+  const { query, agent = 'technical', session_id } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
   if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
@@ -2717,18 +2790,22 @@ app.post('/api/ai/consult', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
+  const model = routeModel(query);
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  // Load memory from DB if session exists
+  const sid = session_id || `anon-${Date.now()}`;
+  const history = session_id ? await getSessionHistory(session_id) : [];
 
   try {
     const messages = [
-      // Cached system context turns
-      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      ...history.map(h => ({ role: h.role, content: h.content })),
       { role: 'user', content: query },
     ];
 
     const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1024,
+      model,
+      max_tokens: model.includes('sonnet') ? 2048 : 1024,
       system: [
         { type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } },
         { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
@@ -2736,11 +2813,20 @@ app.post('/api/ai/consult', async (req, res) => {
       messages,
     });
 
-    await logUsage(agent, response.usage, session_id);
+    const answer = response.content[0].text;
+    const totalTokens = response.usage.input_tokens + response.usage.output_tokens;
+
+    // Persist to memory
+    await saveMessage(sid, 'user', query, model, 0);
+    await saveMessage(sid, 'assistant', answer, model, totalTokens);
+    await logUsage(agent, response.usage, sid);
 
     res.json({
-      answer: response.content[0].text,
+      answer,
       agent,
+      model,
+      session_id: sid,
+      turn_count: history.length / 2 + 1,
       usage: {
         input: response.usage.input_tokens,
         output: response.usage.output_tokens,
@@ -2753,6 +2839,12 @@ app.post('/api/ai/consult', async (req, res) => {
     console.error('[ai/consult]', e.message);
     res.status(500).json({ error: e.message });
   }
+});
+
+// ── Session history endpoint ──────────────────────────────────────────────────
+app.get('/api/ai/session/:session_id', async (req, res) => {
+  const history = await getSessionHistory(req.params.session_id, 50);
+  res.json({ session_id: req.params.session_id, messages: history });
 });
 
 // ── Usage stats ───────────────────────────────────────────────────────────────
