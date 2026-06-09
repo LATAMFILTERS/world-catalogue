@@ -88,27 +88,27 @@ const FAQS = [
 
 // ─── Constellation data ────────────────────────────────────────────────────
 const TECH_NODES_DATA = [
-  { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:760, cy:450 },
-  { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:723, cy:553 },
-  { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:628, cy:607 },
-  { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:520, cy:589 },
-  { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:450, cy:505 },
-  { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:450, cy:395 },
-  { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:520, cy:311 },
-  { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:628, cy:293 },
-  { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:723, cy:347 },
+  { slug:'hydrocore',  img:'/assets/HYDROCORE.avif',  cx:820, cy:450 },
+  { slug:'drycore',    img:'/assets/DRYCORE.avif',    cx:769, cy:592 },
+  { slug:'syntrax',    img:'/assets/SYNTRAX.avif',    cx:639, cy:666 },
+  { slug:'nanoforce',  img:'/assets/NANOFORCE.avif',  cx:490, cy:641 },
+  { slug:'thermocore', img:'/assets/THERMACORE.avif', cx:394, cy:526 },
+  { slug:'microkappa', img:'/assets/MICROKAPPA.avif', cx:394, cy:374 },
+  { slug:'intekcore',  img:'/assets/INTEKCORE.avif',  cx:490, cy:259 },
+  { slug:'macrocore',  img:'/assets/MACROCORE.avif',  cx:639, cy:234 },
+  { slug:'syntepore',  img:'/assets/SYNTEPORE.avif',  cx:769, cy:308 },
 ];
 
 const CONNECTIONS_DATA = [
-  { dx:600, dy:120, tx:628, ty:293, tech:'macrocore' },
-  { dx:600, dy:120, tx:520, ty:311, tech:'intekcore' },
-  { dx:858, dy:244, tx:723, ty:347, tech:'syntepore' },
-  { dx:858, dy:244, tx:760, ty:450, tech:'hydrocore' },
-  { dx:922, dy:524, tx:723, ty:553, tech:'drycore' },
-  { dx:743, dy:748, tx:628, ty:607, tech:'syntrax' },
-  { dx:457, dy:748, tx:520, ty:589, tech:'nanoforce' },
-  { dx:279, dy:523, tx:450, ty:505, tech:'thermocore' },
-  { dx:342, dy:244, tx:450, ty:395, tech:'microkappa' },
+  { dx:600, dy:120, tx:639, ty:234, tech:'macrocore' },
+  { dx:600, dy:120, tx:490, ty:259, tech:'intekcore' },
+  { dx:858, dy:244, tx:769, ty:308, tech:'syntepore' },
+  { dx:858, dy:244, tx:820, ty:450, tech:'hydrocore' },
+  { dx:922, dy:524, tx:769, ty:592, tech:'drycore' },
+  { dx:743, dy:748, tx:639, ty:666, tech:'syntrax' },
+  { dx:457, dy:748, tx:490, ty:641, tech:'nanoforce' },
+  { dx:279, dy:523, tx:394, ty:526, tech:'thermocore' },
+  { dx:342, dy:244, tx:394, ty:374, tech:'microkappa' },
 ];
 
 const DOMAIN_NODES_DATA = [
@@ -587,7 +587,7 @@ export default function TechnologiesPage() {
 
                   {/* Orbital rings — slow counter-rotation (pure decorative, no clipPath) */}
                   <motion.circle
-                    cx="600" cy="450" r="162"
+                    cx="600" cy="450" r="222"
                     fill="none" stroke="rgba(255,241,45,0.07)" strokeWidth="1" strokeDasharray="3 9"
                     style={{ transformOrigin: '600px 450px' }}
                     animate={{ rotate: 360 }}
@@ -603,11 +603,11 @@ export default function TechnologiesPage() {
 
                   {/* Sonar ripple from center */}
                   <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.5)" strokeWidth="1.5"
-                    animate={{ r: [10, 95], opacity: [0.5, 0] }}
+                    animate={{ r: [10, 120], opacity: [0.5, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeOut' }}
                   />
                   <motion.circle cx="600" cy="450" r="10" fill="none" stroke="rgba(255,241,45,0.35)" strokeWidth="1"
-                    animate={{ r: [10, 95], opacity: [0.4, 0] }}
+                    animate={{ r: [10, 120], opacity: [0.4, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeOut', delay: 1.5 }}
                   />
 
