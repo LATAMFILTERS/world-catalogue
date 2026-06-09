@@ -33,9 +33,14 @@ const _COMPARISON_KEYS: TechnologyKey[] = [
   'MICROKAPPA',
 ];
 
+const _DOMAIN_OVERRIDES: Record<string, string> = {
+  syntepore: 'Fuel Cleanliness',
+};
+
 const _techComparison = _COMPARISON_KEYS.map((key) => {
   const t = UD_TECHNOLOGIES[key];
-  return { name: t.name, slug: t.slug, system: t.domain, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
+  const system = _DOMAIN_OVERRIDES[t.slug] ?? t.domain;
+  return { name: t.name, slug: t.slug, system, func: t.comparisonFunction, metric: t.comparisonMetric, industries: t.comparisonIndustries };
 });
 
 const TECH_IMAGES: Record<string, string> = {
@@ -249,14 +254,14 @@ export default function TechnologiesPage() {
                 contaminant: 'Silica dust · Salt aerosol · Organic particulate',
                 mechanism: 'Abrasive wear of engine cylinders, turbine blades, and compressor rotors',
                 standard: 'ISO 5011',
-                techs: 'MACROCORE™ · SYNTEPORE™ · INTEKCORE™',
+                techs: 'MACROCORE™ · INTEKCORE™',
               },
               {
                 domain: 'FUEL CLEANLINESS',
                 contaminant: 'Free water · Emulsified water · Particulate > 10 µm',
                 mechanism: 'Injector tip erosion and needle corrosion at 1,800–2,500 bar injection pressure',
                 standard: 'ASTM D6304 · SAE J1488',
-                techs: 'HYDROCORE™',
+                techs: 'HYDROCORE™ · SYNTEPORE™',
               },
               {
                 domain: 'LUBE / OIL',
@@ -516,7 +521,7 @@ export default function TechnologiesPage() {
               >
                 {/* Domain label */}
                 <div style={{ padding: '1.25rem 1.5rem 1.25rem 0', borderRight: '1px solid rgba(255,241,45,0.2)', textAlign: 'right' }}>
-                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.18em', color: '#FFF12D', fontWeight: 700 }}>
+                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', letterSpacing: '0.04em', color: '#FFF12D', fontWeight: 700 }}>
                     {domain}
                   </span>
                 </div>
@@ -555,10 +560,10 @@ export default function TechnologiesPage() {
 
                 {/* Function + metric */}
                 <div style={{ padding: '1.25rem 0 1.25rem 1.5rem', borderLeft: '1px solid rgba(255,241,45,0.2)' }}>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', margin: '0 0 0.3rem', lineHeight: 1.55 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', margin: '0 0 0.4rem', lineHeight: 1.55 }}>
                     {techs[0].func}
                   </p>
-                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,241,45,0.45)', letterSpacing: '0.05em' }}>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,241,45,0.6)', letterSpacing: '0.02em' }}>
                     {techs[0].metric}
                   </span>
                 </div>
