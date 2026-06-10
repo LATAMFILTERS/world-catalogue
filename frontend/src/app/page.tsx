@@ -222,6 +222,8 @@ export default function Home() {
             .tech-grid { grid-template-columns: 1fr !important; }
             .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
             .spotlight-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            .hero-grid-line { display: none !important; }
+            .hero-glass-card { display: none !important; }
           }
         `}</style>
 
@@ -238,7 +240,7 @@ export default function Home() {
             overflow: 'hidden',
           }}
         >
-          {/* Video background */}
+          {/* Video background — 65% opacity */}
           <video
             autoPlay
             muted
@@ -252,19 +254,116 @@ export default function Home() {
               objectFit: 'cover',
               objectPosition: 'center',
               zIndex: 0,
+              opacity: 0.65,
             }}
           >
             <source src="/images/moleculas.mp4" type="video/mp4" />
           </video>
-          {/* Dark overlay for legibility */}
-          <div
+
+          {/* Gradient: left panel darkens for legibility */}
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 1,
+            background: 'linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.15) 100%)',
+          }} />
+          {/* Gradient: bottom up — anchors text */}
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 1,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 55%)',
+          }} />
+
+          {/* Central SVG glow — amber brand color */}
+          <svg
+            aria-hidden="true"
             style={{
               position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.88) 100%)',
+              top: '5%',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '70vw',
+              height: '320px',
               zIndex: 1,
+              pointerEvents: 'none',
+              overflow: 'visible',
             }}
-          />
+          >
+            <defs>
+              <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="28" />
+              </filter>
+            </defs>
+            <ellipse
+              cx="50%" cy="50%"
+              rx="42%" ry="30%"
+              fill="rgba(255,220,30,0.07)"
+              filter="url(#hero-glow)"
+            />
+          </svg>
+
+          {/* Vertical grid lines — desktop only */}
+          {[25, 50, 75].map(pct => (
+            <div
+              key={pct}
+              className="hero-grid-line"
+              style={{
+                position: 'absolute',
+                top: 0, bottom: 0,
+                left: `${pct}%`,
+                width: '1px',
+                background: 'rgba(255,255,255,0.06)',
+                zIndex: 1,
+                pointerEvents: 'none',
+              }}
+            />
+          ))}
+
+          {/* Liquid Glass credential card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'absolute',
+              top: '12%',
+              right: '8%',
+              width: '200px',
+              zIndex: 3,
+              transform: 'translateY(-50px)',
+            }}
+            className="hero-glass-card"
+          >
+            <div style={{
+              padding: '1.5rem',
+              background: 'rgba(255,255,255,0.01)',
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+              boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.4)',
+              border: '1px solid rgba(255,241,45,0.18)',
+            }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.2em',
+                color: '#FFF12D',
+                opacity: 0.7,
+                marginBottom: '0.75rem',
+                textTransform: 'uppercase',
+              }}>[ ISO CERTIFIED ]</p>
+              <p style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                color: '#fff',
+                lineHeight: 1.35,
+                marginBottom: '0.6rem',
+              }}>Asset Protection<br />Technology</p>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.6rem',
+                color: 'rgba(255,255,255,0.45)',
+                lineHeight: 1.6,
+              }}>ISO 5011 · 16889<br />19438 · 4406</p>
+            </div>
+          </motion.div>
 
           <div
             style={{
@@ -365,20 +464,26 @@ export default function Home() {
                 whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(255,241,45,0.55)' }}
                 whileTap={{ scale: 0.96 }}
                 style={{
-                  display: 'inline-block',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
                   background: '#FFF12D',
                   color: '#000',
                   fontFamily: 'Outfit, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.75rem',
                   letterSpacing: '0.15em',
-                  padding: '1rem 2.5rem',
+                  padding: '1rem 2rem 1rem 2.5rem',
                   textDecoration: 'none',
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
+                  borderRadius: '9999px',
                 }}
               >
-                FIND MY FILTER
+                FIND MY PART
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
               </motion.a>
             </motion.div>
           </div>
