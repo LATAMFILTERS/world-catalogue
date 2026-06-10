@@ -2417,8 +2417,6 @@ const Anthropic = require('@anthropic-ai/sdk');
 const MONTHLY_TOKEN_BUDGET = 500000; // ~$6-8/month with caching
 const CONTENT_TOKENS_PER_PAGE = 3000; // ~20 pages/month reserved
 
-const dbConfig = { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } };
-
 // ── Migrate AI tables ────────────────────────────────────────────────────────
 app.post('/api/ai/migrate', async (req, res) => {
   const client = new Client(dbConfig);
