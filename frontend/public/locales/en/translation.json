@@ -104,7 +104,14 @@
     "dealer": "Become a Dealer",
     "warranty": "Warranty",
     "copyright": "© 2015-2026 ELIMFILTERS® LLC | Intelligence and Engineering in Filtration",
-    "location": "FRISCO TEXAS"
+    "location": "FRISCO TEXAS",
+    "colProducts": "PRODUCTS",
+    "colKnowledge": "KNOWLEDGE",
+    "knowledgeSystem": "Knowledge System",
+    "standards": "Standards",
+    "fleetOpt": "Fleet Optimization",
+    "locationText": "Frisco, Texas",
+    "kleoText": "© 2015–2026 Kleo Technologies"
   },
   "category": {
     "keyAdvantages": "KEY ADVANTAGES",
@@ -124,5 +131,120 @@
   },
   "language": {
     "switchToEn": "EN"
+  },
+  "home": {
+    "eyebrow": "Frisco, Texas · Asset Protection Technology",
+    "hero1": "Protecting industrial assets",
+    "hero2": "through contamination control.",
+    "heroDesc": "Air, fuel, hydraulic, lube and cabin filtration systems engineered for 12 industrial sectors. ISO 5011 · ISO 16889 · ISO 19438.",
+    "ctaFilter": "Find my filter",
+    "ctaKnowledge": "Knowledge system",
+    "statsLabels": [
+      "Filtration Efficiency",
+      "Asset Life Extension",
+      "OEM Cross References",
+      "Distribution Network"
+    ],
+    "assetTag": "// ASSET PROTECTION STRATEGY",
+    "assetTitle": "Protecting Industrial Assets Through Contamination Control",
+    "assetP1": "ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.",
+    "assetP2": "Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.",
+    "archLabel": "INFORMATION ARCHITECTURE",
+    "archItems": [
+      "Contamination",
+      "Asset Degradation",
+      "Standards & Measurement",
+      "Protection Technologies",
+      "Product Implementation",
+      "Fleet Optimization",
+      "Sustainability Impact"
+    ],
+    "problemTag": "// OPERATIONAL RISK DIAGNOSIS",
+    "problemH1": "WHAT YOU CAN'T SEE",
+    "problemH2": "IS STOPPING YOUR OPERATION.",
+    "problemIntro": "80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "Of premature failures are caused by contamination.",
+    "failModes": [
+      {
+        "title": "Injector Erosion",
+        "desc": "Micronic particles deform spray orifices, causing immediate power loss and poor combustion."
+      },
+      {
+        "title": "Critical Bearing Friction",
+        "desc": "Contaminated oil accelerates metal wear, reducing engine block life by up to 40%."
+      },
+      {
+        "title": "Fuel Efficiency Loss",
+        "desc": "Contaminated fuel systems force engines to consume up to 8% more diesel to maintain the same torque output."
+      }
+    ],
+    "whyTitle1": "ASSET PROTECTION",
+    "whyTitle2": "TECHNOLOGY",
+    "whyP1": "ELIMFILTERS is not a filter company. ELIMFILTERS is an ",
+    "whyP1hl": "Asset Protection Technology",
+    "whyP1after": " company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.",
+    "whyP2": "Every technology we build addresses a measurable contamination threat. Equipment that fails costs hundreds of thousands to repair. We protect that investment at the system level, not the product level.",
+    "whyCheckItems": [
+      "System-level contamination control, not product replacement",
+      "25+ years protecting high-value industrial assets",
+      "Engineering standards: ISO 5011 · 16889 · 19438 · 4406",
+      "Deployed across 12 industries — mining, marine, agriculture and more"
+    ],
+    "whyCardTag": "// ASSET PROTECTION TECHNOLOGY",
+    "whyCardTitle1": "Your equipment is worth millions.",
+    "whyCardTitle2": "Protect it accordingly.",
+    "whyCardDesc": "Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.",
+    "whyCardItems": [
+      "AI-Formulated Hybrid Media",
+      "Hydrophobic Separation Systems",
+      "Anti-Bypass Structures",
+      "20,000+ OEM cross-references validated"
+    ],
+    "techTag": "// PROVEN TECHNOLOGY",
+    "techTitle": "Asset Protection",
+    "techHighlight": "Technology",
+    "techItems": [
+      {
+        "title": "AI-Formulated Hybrid Media",
+        "desc": "Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated."
+      },
+      {
+        "title": "Hydrophobic Separation Systems",
+        "desc": "Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation while ensuring reliable long-term operation."
+      },
+      {
+        "title": "Anti-Bypass Structures",
+        "desc": "100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Absolute protection of critical equipment."
+      }
+    ],
+    "ctaDealerTag": "// DEALER NETWORK",
+    "ctaDealerTitle": "ONLY THE BEST",
+    "ctaDealerHl": "SELL ELIMFILTERS.",
+    "ctaDealerBtn": "BECOME A DEALER",
+    "ctaSearchTag": "// TECHNICAL SEARCH",
+    "ctaSearchTitle": "THE RIGHT FILTER.",
+    "ctaSearchHl": "SEARCH LIKE A PRO.",
+    "ctaSearchBtn": "FIND MY PART",
+    "faqTag": "// FREQUENTLY ASKED QUESTIONS",
+    "faqTitle": "Common Questions About Industrial Filtration",
+    "faqItems": [
+      {
+        "q": "What is the best air filter for mining equipment?",
+        "a": "ELIMFILTERS® MACROCORE™ and NANOFORCE™ technologies achieve 99.9% particulate capture efficiency for mining air intake systems, meeting SAE J1539 and ISO 5011 standards. Selection depends on engine displacement and operating environment."
+      },
+      {
+        "q": "How often should industrial fuel filters be changed?",
+        "a": "ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency)."
+      },
+      {
+        "q": "What ISO cleanliness code should a hydraulic system target?",
+        "a": "Most industrial hydraulic systems require ISO 17/15/12 cleanliness code to protect proportional valve spools. Critical systems may specify ISO 15/13/10. ELIMFILTERS® filtration strategies target measured cleanliness codes, not product brand."
+      },
+      {
+        "q": "Why does contamination cause engine failure?",
+        "a": "Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. ELIMFILTERS® system-level contamination control prevents these failure modes."
+      }
+    ]
   }
 }
