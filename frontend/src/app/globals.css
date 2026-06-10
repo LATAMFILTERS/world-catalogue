@@ -35,9 +35,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Paragraphs — justified, no hyphenation */
+/* Paragraphs — left-aligned, no hyphenation */
 p {
-  text-align: justify;
+  text-align: left;
   hyphens: none;
   -webkit-hyphens: none;
   -ms-hyphens: none;

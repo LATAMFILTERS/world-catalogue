@@ -209,7 +209,6 @@ export default function Warranty() {
                     lineHeight: 1.7,
                     color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Titillium Web, sans-serif',
-                    textAlign: 'justify',
                   }}
                 >
                   {pillar.description}

@@ -195,7 +195,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                 // INDUSTRIAL CONTEXT
               </p>
-              <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'Titillium Web, sans-serif', width: '100%', textAlign: 'justify', hyphens: 'none' }}>
+              <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'Titillium Web, sans-serif', width: '100%' }}>
                 {geoData.directAnswer.split('®').map((part, i, arr) =>
                   i < arr.length - 1
                     ? <span key={i}>{part}<sup style={{ fontSize: '0.6em', verticalAlign: 'super', lineHeight: 0 }}>®</sup></span>

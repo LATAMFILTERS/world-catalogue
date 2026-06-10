@@ -88,16 +88,27 @@ export function Navigation() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Logo */}
+        {/* Logo + Kleo tagline */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             <Image
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
               width={220}
               height={220}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'contain', height: '38px', width: 'auto' }}
             />
+            <span style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.48rem',
+              letterSpacing: '0.12em',
+              color: 'rgba(255,255,255,0.2)',
+              textTransform: 'uppercase',
+              lineHeight: 1,
+              paddingLeft: '1px',
+            }}>
+              Powered by Kleo Technologies™
+            </span>
           </Link>
         </motion.div>
 

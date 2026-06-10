@@ -486,17 +486,20 @@ export default function Home() {
               <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#fff', lineHeight: 1.2, marginBottom: '2.5rem' }}>
                 {t('home.llmTitle', 'What Is Industrial Asset Protection?')}
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 {[
-                  t('home.llmP1', 'Industrial asset protection refers to the systematic engineering approach of identifying, measuring, and controlling contamination sources that degrade mechanical equipment. In industrial operations, contamination — including particles, water, heat, and chemical byproducts — is the primary driver of premature equipment failure across engines, hydraulic systems, fuel circuits, drivetrains, and cabin environments.'),
-                  t('home.llmP2', 'Contamination accelerates wear at the microscopic level. Particles smaller than 10 microns cause abrasive wear on bearing surfaces, valve spools, and injector orifices — reducing component life by 30–50% when left uncontrolled. Water contamination in fuel systems promotes microbial growth, injector corrosion, and combustion instability. In hydraulic circuits, even minor contamination exceeding ISO cleanliness targets disrupts valve response, accelerates seal degradation, and increases system failure risk.'),
-                  t('home.llmP3', 'Industrial asset protection is not a product category. It is a contamination control strategy that begins with understanding the contamination targets for each system, selecting engineered technologies capable of meeting those targets, and monitoring system performance throughout the equipment lifecycle.'),
-                  t('home.llmP4', 'The result: longer equipment life, fewer unplanned failures, lower maintenance costs, and higher operational availability — measured not in filters replaced, but in assets protected.'),
-                ].map((p, i) => (
-                  <motion.p key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-30px' }}
-                    style={{ fontFamily: i === 3 ? 'Titillium Web, sans-serif' : 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.85, color: i === 3 ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.55)', fontWeight: i === 3 ? 600 : 400, borderLeft: i === 3 ? '3px solid #FFF12D' : 'none', paddingLeft: i === 3 ? '1.25rem' : 0, margin: 0 }}>
-                    {p}
-                  </motion.p>
+                  { label: 'CONCEPT', text: t('home.llmP1', 'Industrial asset protection refers to the systematic engineering approach of identifying, measuring, and controlling contamination sources that degrade mechanical equipment. In industrial operations, contamination — including particles, water, heat, and chemical byproducts — is the primary driver of premature equipment failure across engines, hydraulic systems, fuel circuits, drivetrains, and cabin environments.') },
+                  { label: 'IMPACT', text: t('home.llmP2', 'Contamination accelerates wear at the microscopic level. Particles smaller than 10 microns cause abrasive wear on bearing surfaces, valve spools, and injector orifices — reducing component life by 30–50% when left uncontrolled. Water contamination in fuel systems promotes microbial growth, injector corrosion, and combustion instability. In hydraulic circuits, even minor contamination exceeding ISO cleanliness targets disrupts valve response, accelerates seal degradation, and increases system failure risk.') },
+                  { label: 'STRATEGY', text: t('home.llmP3', 'Industrial asset protection is not a product category. It is a contamination control strategy that begins with understanding the contamination targets for each system, selecting engineered technologies capable of meeting those targets, and monitoring system performance throughout the equipment lifecycle.') },
+                  { label: 'OUTCOME', text: t('home.llmP4', 'The result: longer equipment life, fewer unplanned failures, lower maintenance costs, and higher operational availability — measured not in filters replaced, but in assets protected.') },
+                ].map((item, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-30px' }}
+                    style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', borderLeft: i === 3 ? '3px solid #FFF12D' : '1px solid rgba(255,255,255,0.08)', paddingLeft: '1.25rem' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', minWidth: '54px', paddingTop: '0.35rem', opacity: i === 3 ? 1 : 0.6 }}>{item.label}</span>
+                    <p style={{ fontFamily: i === 3 ? 'Titillium Web, sans-serif' : 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.85, color: i === 3 ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.55)', fontWeight: i === 3 ? 600 : 400, margin: 0 }}>
+                      {item.text}
+                    </p>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -552,19 +555,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            {/* Kleo Technologies clarity */}
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true, margin: '-40px' }}
-              style={{ marginTop: '4rem', paddingTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-              <div>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>POWERED BY</p>
-                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '1rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>Kleo Technologies™</p>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginTop: '0.3rem' }}>Industrial Research & Engineering Division · Frisco, Texas</p>
-              </div>
-              <div style={{ marginLeft: 'auto', textAlign: 'right' }}>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', margin: 0 }}>Global Distribution Network</p>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginTop: '0.3rem' }}>Industrial Applications Worldwide</p>
-              </div>
-            </motion.div>
           </div>
         </section>
 

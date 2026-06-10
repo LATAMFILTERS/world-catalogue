@@ -434,7 +434,6 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
             fontSize: '0.92rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.65)',
-            textAlign: 'justify',
             marginBottom: '2rem',
           }}
         >
@@ -473,8 +472,6 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                   color: 'rgba(255,255,255,0.78)',
                   paddingLeft: '1.25rem',
                   position: 'relative',
-                  textAlign: 'justify',
-                  hyphens: 'none',
                 }}
               >
                 <span
