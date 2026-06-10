@@ -1,444 +1,326 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const SECTIONS = [
   {
-    title: 'What International Standards Govern Industrial Filtration?',
-    slug: 'standards',
-    domain: 'Standards Domain',
-    description: 'ISO 16889 (Beta ratio filter testing), ISO 4406 (fluid cleanliness codes), SAE J1539 (air intake efficiency), and ASTM D6304 (water content in fuel) — each standard defines measurement methodology for a specific contamination threat.',
-    icon: '⬡',
+    num: '01',
+    title: 'Industrial Standards',
+    subtitle: 'ISO · SAE · ASTM · DIN',
+    description: 'ISO 16889 (Beta ratio testing), ISO 4406 (cleanliness codes), SAE J1539 (air filter performance), ASTM D6304 (water in fuel) — each standard defines measurable contamination targets for a specific fluid circuit.',
     href: '/knowledge-system/standards',
+    tags: ['ISO 16889', 'ISO 4406', 'ISO 5011', 'SAE J1539'],
+    img: '/images/air-filters-lab.avif',
   },
   {
-    title: 'What Causes Industrial Filter and System Failures?',
-    slug: 'contamination',
-    domain: 'Failure Analysis',
-    description: 'Particle contamination causes 70–80% of hydraulic system failures (NFPA). Root failure mechanisms: abrasive wear from hard particles, water contamination of fuel injectors, varnish formation in hydraulic oil, and silica ingestion in air intake systems.',
-    icon: '⚠',
+    num: '02',
+    title: 'Contamination & Failure',
+    subtitle: 'Root cause analysis',
+    description: 'Particle contamination causes 70–80% of hydraulic failures (NFPA). Understand how abrasive wear, water ingress, varnish formation, and silica ingestion degrade equipment at the component level.',
     href: '/knowledge-system/contamination',
+    tags: ['Particle wear', 'Water contamination', 'Hydraulic failure'],
+    img: '/images/oilfilter-mecan.avif',
   },
   {
-    title: 'How Do Industrial Filtration Systems Work?',
-    slug: 'science',
-    domain: 'Technical Library',
-    description: 'Filter efficiency is measured by Beta ratio (β): a β₁₀ = 200 filter captures 99.5% of particles ≥10 microns (ISO 16889). Multi-layer media, bypass valve thresholds, collapse pressure ratings, and dirt-holding capacity define system performance.',
-    icon: '🔬',
+    num: '03',
+    title: 'Filtration Science',
+    subtitle: 'Beta ratio · media · efficiency',
+    description: 'A β₁₀ = 200 filter captures 99.5% of particles ≥10 µm (ISO 16889). Learn how multi-layer media, bypass valve thresholds, collapse pressure ratings, and dirt-holding capacity define real-world filter performance.',
     href: '/knowledge-system/science',
+    tags: ['Beta ratio', 'Multi-pass test', 'ISO 16889'],
+    img: '/images/media-pliegue.avif',
   },
   {
-    title: 'OEM vs Aftermarket Filters: What Is the Difference?',
-    slug: 'compare',
-    domain: 'Evaluation Framework',
-    description: 'OEM filters ensure warranty compliance and specification matching. Aftermarket filters are evaluated by contamination control performance (Beta ratio, ISO cleanliness targets, bypass threshold) — not brand or price. Filter cost is typically 1–5% of total ownership cost.',
-    icon: '⚖',
+    num: '04',
+    title: 'OEM vs Aftermarket',
+    subtitle: 'Evaluation framework',
+    description: 'Filter cost is 1–5% of total ownership cost. OEM compliance ensures warranty coverage; performance evaluation requires Beta ratio, ISO cleanliness targets, and bypass threshold — not brand or price.',
     href: '/knowledge-system/compare',
+    tags: ['TCO analysis', 'Beta ratio', 'Specification matching'],
+    img: '/images/dossier-filters.avif',
   },
   {
-    title: 'How Do You Reduce Fleet Downtime Through Filtration?',
-    slug: 'fleet',
-    domain: 'Operational Strategy',
-    description: 'Unplanned downtime in heavy industry costs approximately $260,000 per hour (Siemens, 2023). System-level filtration — targeting contamination before failure — extends equipment service intervals 30–50% and reduces unplanned breakdowns.',
-    icon: '🚛',
+    num: '05',
+    title: 'Fleet Optimisation',
+    subtitle: 'Operational strategy',
+    description: 'Unplanned heavy industry downtime costs ~$260,000/hr (Siemens, 2023). System-level filtration targeting contamination before failure extends service intervals 30–50% and reduces unplanned breakdowns.',
     href: '/knowledge-system/fleet',
+    tags: ['Downtime reduction', 'TCO', 'Extended drain intervals'],
+    img: '/images/trucks-1.avif',
   },
 ];
 
 const STATS = [
-  {
-    stat: '70–80%',
-    label: 'of hydraulic system failures are caused by particle contamination',
-    source: 'National Fluid Power Association (NFPA)',
-  },
-  {
-    stat: '$260K/hr',
-    label: 'average cost of unplanned downtime in heavy industry',
-    source: 'Siemens Industrial Study, 2023',
-  },
-  {
-    stat: '3–5×',
-    label: 'bearing life extension from ISO 18/16/13 → 14/12/10 cleanliness target',
-    source: 'ISO 4406 / Engineering studies',
-  },
-  {
-    stat: 'β₁₀ ≥ 200',
-    label: '99.5% capture efficiency at 10 microns — hydraulic system standard per ISO 16889',
-    source: 'ISO 16889 Multi-Pass Test',
-  },
+  { val: '70–80%', label: 'of hydraulic failures caused by particle contamination', src: 'NFPA' },
+  { val: '$260K', label: 'per hour — average unplanned downtime cost in heavy industry', src: 'Siemens 2023' },
+  { val: '3–5×', label: 'bearing life extension when cleanliness targets are maintained', src: 'ISO 4406' },
+  { val: 'β ≥ 200', label: '99.5% capture at 10 µm — ISO 16889 hydraulic standard', src: 'ISO 16889' },
 ];
 
-const FAQS = [
-  {
-    q: 'What is an ISO cleanliness code and how do you read it?',
-    a: 'An ISO cleanliness code (ISO 4406) is a three-number expression of particle concentration in a fluid sample — for example, 16/14/11. Each number represents the count of particles per millilitre at three size thresholds: ≥4 microns, ≥6 microns, and ≥14 microns. ISO scale code 16 means 320–640 particles/mL; lower numbers indicate cleaner fluid. Hydraulic systems in mining typically require 16/14/11 or cleaner; precision servo systems require 14/12/9 or better.',
-  },
-  {
-    q: 'What causes industrial hydraulic filters to fail prematurely?',
-    a: 'Hydraulic filters fail prematurely through three main mechanisms: (1) particle overloading — when fluid contamination exceeds the filter\'s dirt-holding capacity, causing premature differential pressure rise and bypass; (2) incorrect Beta ratio specification — a β₁₀ = 10 filter captures only 90% of 10-micron particles, allowing continued contamination ingression; and (3) water contamination — free water accelerates filter media degradation and promotes microbial growth in the element. Undersized elements and incorrect bypass valve settings are secondary causes.',
-  },
-  {
-    q: 'What is the difference between OEM and aftermarket industrial filters?',
-    a: 'OEM filters are manufactured to the original equipment specification and ensure warranty compliance. Aftermarket filters may replicate OEM dimensions and thread patterns but vary in filtration media quality, Beta ratio performance, collapse pressure rating, and bypass valve threshold. The key evaluation criteria are not brand affiliation but contamination control specifications: Beta ratio (ISO 16889), rated collapse pressure, and bypass valve cracking pressure. A correctly specified aftermarket filter can meet or exceed OEM contamination control performance.',
-  },
-  {
-    q: 'What is Beta ratio in filtration and how is it calculated?',
-    a: 'Beta ratio (β) measures filter efficiency at a specific particle size: β_x = upstream particle count ÷ downstream particle count, for particles ≥x microns (ISO 16889 multi-pass test). A β₁₀ = 200 filter captures 200 upstream particles for every 1 that passes — 99.5% efficiency. A β₁₀ = 10 filter captures only 90%. Beta ratio is the primary engineering criterion for hydraulic and lube oil filter selection because it directly correlates to the contamination cleanliness level maintained in the system under steady-state conditions.',
-  },
-  {
-    q: 'How does contamination cause gear and bearing failures?',
-    a: 'Hard particles (silica, metallic oxides, wear debris) in lubricating oil create abrasive wear between bearing surfaces. When particle size approaches the hydrodynamic oil film thickness (0.1–1.0 microns for precision bearings), particles become trapped between moving surfaces and cause micro-cutting. Cumulative micro-cutting reduces bearing clearance, increases friction, generates heat, and leads to fatigue spalling or seizure. Achieving ISO 14/12/10 cleanliness instead of 18/16/13 can extend bearing L10 life by 3–5×.',
-  },
-  {
-    q: 'What ISO standards apply to industrial filtration?',
-    a: 'Core standards: ISO 4406 (fluid cleanliness codes for hydraulic and lube systems), ISO 16889 (multi-pass filter test), ISO 5011 (air filter test for combustion engines), ISO 8573-1 (compressed air purity classes), ISO 11155 (cabin air filtration), and ISO 23015 (coalescing separators for water-in-fuel). For fuel systems: ASTM D6304 (Karl Fischer water content) and SAE J1488 (free and emulsified water separation). For coolant: ASTM D3306 and ASTM D6210.',
-  },
-  {
-    q: 'How do you reduce fleet downtime through filtration?',
-    a: 'Fleet downtime reduction through filtration follows three steps: (1) identify contamination targets — measure current fluid cleanliness codes (ISO 4406) and compare to OEM specification targets per equipment type; (2) select filtration technologies that achieve and maintain those targets under operating conditions, accounting for ingression rates and service intervals; (3) implement condition-based maintenance — use oil analysis and differential pressure monitoring to replace filters on performance, not calendar intervals. This approach extends equipment service intervals 30–50% and reduces unplanned failures.',
-  },
-  {
-    q: 'What is the most common cause of diesel injector failure?',
-    a: 'Common Rail direct injection (CRDI) injectors fail primarily from particle contamination and water ingression in diesel fuel. CRDI injectors operate with clearances below 1 micron and fuel pressures of 1,600–2,500 bar — at these tolerances, 4-micron particles cause abrasive wear of injector nozzle tips and needle seats. Water in diesel accelerates corrosion of precision injector components and promotes microbial contamination. Control standards are ASTM D6304 (fuel water content) and SAE J1488 (water separation efficiency), with injector protection requiring a 4-micron absolute fuel filter barrier.',
-  },
-];
-
-export default function KnowledgeSystemPage() {
-  const collectionSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Industrial Filtration Knowledge Base',
-    description: 'Comprehensive technical resources on filtration science, ISO standards, contamination control, fleet optimization, and OEM comparison — built for engineers and procurement teams.',
-    url: 'https://elimfilters.com/knowledge-system/',
-    publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-    dateModified: '2026-05-25',
-    hasPart: [
-      { '@type': 'WebPage', name: 'Industrial Filtration Standards', url: 'https://elimfilters.com/knowledge-system/standards/' },
-      { '@type': 'WebPage', name: 'Contamination & Failure Modes', url: 'https://elimfilters.com/knowledge-system/contamination/' },
-      { '@type': 'WebPage', name: 'Filtration Science', url: 'https://elimfilters.com/knowledge-system/science/' },
-      { '@type': 'WebPage', name: 'OEM vs Aftermarket', url: 'https://elimfilters.com/knowledge-system/compare/' },
-      { '@type': 'WebPage', name: 'Fleet Optimization', url: 'https://elimfilters.com/knowledge-system/fleet/' },
-    ],
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQS.map(faq => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: { '@type': 'Answer', text: faq.a },
-    })),
-  };
+function SectionCard({ section, index }: { section: typeof SECTIONS[0]; index: number }) {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-      {/* Back */}
-      <Link href="/" style={{
-        position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
-        display: 'flex', alignItems: 'center', gap: '0.4rem',
-        background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
-        borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
-        letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
-        backdropFilter: 'blur(8px)',
-      }}>← HOME</Link>
-
-      {/* Hero */}
-      <section style={{
-        paddingTop: 'clamp(5rem, 10vw, 8rem)',
-        paddingBottom: '4rem',
-        background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        textAlign: 'center',
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ maxWidth: '760px', margin: '0 auto', padding: '0 2rem' }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <Link href={section.href} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+        <div
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          style={{
+            position: 'relative',
+            height: '340px',
+            overflow: 'hidden',
+            cursor: 'pointer',
+          }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem', letterSpacing: '0.18em',
-            color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM
-          </p>
-          <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
-            fontWeight: 700, letterSpacing: '-0.01em',
-            lineHeight: 1.15, marginBottom: '1.75rem',
-          }}>
-            Industrial Filtration Knowledge Base
-          </h1>
-          {/* Direct Answer Block */}
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.75)',
-            maxWidth: '660px',
-            margin: '0 auto 1.5rem',
-            lineHeight: 1.75,
-            textAlign: 'left',
-            borderLeft: '3px solid #FFF12D',
-            paddingLeft: '1.25rem',
-          }}>
-            Industrial filtration is the engineered control of particulate contamination in hydraulic, fuel, air, and lubrication systems. This knowledge base documents the contamination mechanisms, engineering standards (ISO 4406, ISO 16889, SAE J1227), and operational strategies that determine whether industrial equipment runs reliably or fails prematurely.
-          </p>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.62rem',
-            color: 'rgba(255,255,255,0.28)',
-            letterSpacing: '0.08em',
-          }}>
-            Technical content by the ELIMFILTERS® Engineering Team ·{' '}
-            <time dateTime="2026-05-25">Updated May 2026</time>
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Statistics + Narrative */}
-      <section style={{
-        padding: '4rem 2rem',
-        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ maxWidth: '900px', margin: '0 auto' }}
-        >
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
-            marginBottom: '2.5rem',
-          }}>
-            The ELIMFILTERS® Knowledge System explains how{' '}
-            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
-              industrial filtration systems
-            </Link>{' '}
-            fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection. Operational strategies such as{' '}
-            <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
-              reducing fleet downtime
-            </Link>{' '}
-            begin with understanding the contamination root causes that drive unplanned equipment failures.
-          </p>
-
-          {/* Statistics */}
+          {/* Background image */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '1.25rem',
-            marginBottom: '2.5rem',
+            position: 'absolute', inset: 0,
+            backgroundImage: `url(${section.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: hovered ? 'scale(1.05)' : 'scale(1)',
+            transition: 'transform 0.65s cubic-bezier(0.16,1,0.3,1)',
+            filter: hovered ? 'brightness(0.5)' : 'brightness(0.35)',
+          }} />
+
+          {/* Gradient overlay */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
+          }} />
+
+          {/* Yellow bottom border on hover */}
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            height: '2px', background: '#FFF12D',
+            transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
+            transformOrigin: 'left',
+            transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)',
+          }} />
+
+          {/* Content */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            padding: '1.75rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
           }}>
-            {STATS.map((item, i) => (
-              <div key={i} style={{
-                background: 'rgba(255,241,45,0.04)',
-                border: '1px solid rgba(255,241,45,0.12)',
-                borderRadius: '6px',
-                padding: '1.25rem 1.5rem',
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.25)' }}>
+                {section.num}
+              </span>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: hovered ? '#FFF12D' : 'rgba(255,241,45,0.5)', textTransform: 'uppercase', transition: 'color 0.3s' }}>
+                {section.subtitle}
+              </span>
+            </div>
+
+            <div>
+              <h3 style={{
+                fontFamily: '"Space Grotesk", sans-serif',
+                fontWeight: 600,
+                fontSize: 'clamp(1.15rem, 2vw, 1.4rem)',
+                lineHeight: 1.2,
+                letterSpacing: '-0.01em',
+                color: '#fff',
+                margin: '0 0 0.75rem',
               }}>
-                <div style={{
-                  fontSize: '1.5rem', fontWeight: 800,
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  color: '#FFF12D', marginBottom: '0.5rem',
-                }}>
-                  {item.stat}
-                </div>
-                <p style={{
-                  fontSize: '0.83rem', color: 'rgba(255,255,255,0.7)',
-                  fontFamily: 'Inter, sans-serif', lineHeight: 1.5, margin: '0 0 0.5rem',
-                }}>
-                  {item.label}
-                </p>
-                <p style={{
-                  fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)',
-                  fontFamily: 'JetBrains Mono, monospace', margin: '0',
-                }}>
-                  {item.source}
+                {section.title}
+              </h3>
+
+              <div style={{
+                overflow: 'hidden',
+                maxHeight: hovered ? '100px' : '0',
+                opacity: hovered ? 1 : 0,
+                transition: 'max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
+                marginBottom: hovered ? '1rem' : '0',
+              }}>
+                <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+                  {section.description}
                 </p>
               </div>
-            ))}
-          </div>
 
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.75rem',
-            color: 'rgba(255,241,45,0.5)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}>
-            // Information Architecture: Contamination → Asset Degradation → Standards → Technologies → Products → Fleet Optimization → Sustainability
-          </p>
-        </motion.div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>
+                {section.tags.map(tag => (
+                  <span key={tag} style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.1em',
+                    color: 'rgba(255,255,255,0.35)',
+                    background: 'rgba(255,255,255,0.05)',
+                    padding: '0.2rem 0.5rem',
+                  }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.3)', transition: 'color 0.3s' }}>
+                  Enter section
+                </span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={hovered ? '#FFF12D' : 'rgba(255,255,255,0.3)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'stroke 0.3s, transform 0.3s', transform: hovered ? 'translateX(3px)' : 'none' }}>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
+export default function KnowledgeSystemPage() {
+  return (
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .knowledge-grid { grid-template-columns: 1fr !important; }
+          .knowledge-header { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .stats-row { grid-template-columns: repeat(2,1fr) !important; }
+        }
+      `}</style>
+
+      {/* ── HERO ── */}
+      <section style={{ padding: '10rem 7% 5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.7)', textTransform: 'uppercase', marginBottom: '1.5rem' }}
+        >
+          Industrial knowledge · 5 domains
+        </motion.p>
+
+        <div className="knowledge-header" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', maxWidth: '1200px', alignItems: 'end' }}>
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 300, fontSize: 'clamp(2rem, 4vw, 3.5rem)', lineHeight: 1.15, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.9)', margin: 0 }}
+            >
+              Understanding contamination<br />
+              <span style={{ fontWeight: 600, color: '#FFF12D' }}>is understanding failure.</span>
+            </motion.h1>
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', margin: 0 }}
+          >
+            The ELIMFILTERS Knowledge System covers the physics of contamination, the standards that measure it, the failure mechanisms it causes, and the operational strategies that prevent it. Five domains. One objective: zero unplanned downtime caused by contamination.
+          </motion.p>
+        </div>
       </section>
 
-      {/* Knowledge Sections */}
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
-          gap: '1.75rem',
-        }}>
-          {SECTIONS.map((section, i) => (
+      {/* ── STATS ROW ── */}
+      <section style={{ padding: '3.5rem 7%', borderBottom: '1px solid rgba(255,255,255,0.05)', background: '#050505' }}>
+        <div className="stats-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+          {STATS.map((s, i) => (
             <motion.div
-              key={section.slug}
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link href={section.href} style={{ textDecoration: 'none', display: 'block' }}>
-                <motion.div
-                  whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
-                  transition={{ duration: 0.2 }}
-                  style={{
-                    background: 'rgba(255,255,255,0.02)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    padding: '2rem',
-                    cursor: 'pointer',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1.2rem',
-                  }}
-                >
-                  <div style={{
-                    width: '36px', height: '36px',
-                    border: '1px solid rgba(255,241,45,0.25)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#FFF12D', fontSize: '1rem', flexShrink: 0,
-                  }}>
-                    {section.icon}
-                  </div>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.58rem', letterSpacing: '0.13em',
-                    color: 'rgba(255,241,45,0.45)', textTransform: 'uppercase',
-                  }}>
-                    {section.domain}
-                  </span>
-                  <h2 style={{
-                    fontFamily: 'Outfit, sans-serif',
-                    fontSize: '1.05rem', fontWeight: 600,
-                    color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.4,
-                    marginTop: '-0.5rem',
-                  }}>
-                    {section.title}
-                  </h2>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.875rem',
-                    color: 'rgba(255,255,255,0.55)',
-                    lineHeight: 1.65, marginTop: 'auto',
-                  }}>
-                    {section.description}
-                  </p>
-                  <div style={{
-                    fontSize: '0.7rem', color: 'rgba(255,241,45,0.4)',
-                    fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.08em',
-                  }}>
-                    EXPLORE →
-                  </div>
-                </motion.div>
-              </Link>
+              <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 700, fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.5rem' }}>
+                {s.val}
+              </div>
+              <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.45)', margin: '0 0 0.4rem' }}>
+                {s.label}
+              </p>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>
+                {s.src}
+              </span>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section style={{ padding: '5rem 2rem', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '3rem' }}
-          >
-            <span style={{
-              display: 'block', fontSize: '0.7rem', fontWeight: 700,
-              letterSpacing: '0.25em', color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
-            }}>
-              // FREQUENTLY ASKED QUESTIONS
-            </span>
-            <h2 style={{
-              fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800,
-              fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem',
-            }}>
-              Industrial Filtration — Technical Questions
-            </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.5)', margin: '0' }}>
-              Common questions from engineers and procurement teams working with industrial filtration systems.
-            </p>
-          </motion.div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {FAQS.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.04 }}
-                style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '6px',
-                  padding: '1.75rem 2rem',
-                }}
-              >
-                <h3 style={{
-                  fontSize: '0.975rem', fontWeight: 700,
-                  fontFamily: 'Outfit, sans-serif', color: '#fff',
-                  margin: '0 0 0.875rem', lineHeight: 1.5,
-                }}>
-                  {faq.q}
-                </h3>
-                <p style={{
-                  fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)',
-                  fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0',
-                }}>
-                  {faq.a}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+      {/* ── KNOWLEDGE SECTIONS GRID ── */}
+      <section style={{ padding: '0' }}>
+        <div
+          className="knowledge-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '1px',
+            background: 'rgba(255,255,255,0.06)',
+          }}
+        >
+          {SECTIONS.map((section, i) => (
+            <SectionCard key={section.href} section={section} index={i} />
+          ))}
         </div>
       </section>
 
-      {/* Retrieval Summary Block */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>KEY_STATISTICS:</p>
-        <p>&nbsp;&nbsp;70-80% of hydraulic failures caused by particle contamination (NFPA)</p>
-        <p>&nbsp;&nbsp;$260,000/hr average heavy industry downtime cost (Siemens, 2023)</p>
-        <p>&nbsp;&nbsp;3-5x bearing life extension from ISO 18/16/13 to 14/12/10 (ISO 4406)</p>
-        <p>&nbsp;&nbsp;Beta ratio b10 ≥ 200 = 99.5% efficiency at 10 microns (ISO 16889)</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD, DRYCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system</p>
-        <p>&nbsp;&nbsp;concept_id: knowledge-system-hub</p>
-        <p>&nbsp;&nbsp;version: 1.1</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-25</p>
-      </RetrievalBlock>
+      {/* ── BOTTOM CTA ── */}
+      <section style={{ padding: '6rem 7%', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ maxWidth: '700px' }}>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.7)', textTransform: 'uppercase', marginBottom: '1.5rem' }}
+          >
+            Not a filter company
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 300, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1.2, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.85)', margin: '0 0 1.5rem' }}
+          >
+            Equipment fails when contamination is not measured, not monitored, and not controlled. Every section in this library exists to close that gap.
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}
+          >
+            <Link href="/knowledge-system/standards" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              background: '#FFF12D', color: '#000',
+              fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600, fontSize: '0.78rem',
+              letterSpacing: '0.08em', padding: '0.8rem 1.75rem',
+              textDecoration: 'none', textTransform: 'uppercase', borderRadius: '3px',
+            }}>
+              Start with Standards
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </Link>
+            <Link href="/knowledge-system/contamination" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              color: 'rgba(255,255,255,0.45)',
+              fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem',
+              letterSpacing: '0.08em', padding: '0.8rem 0',
+              textDecoration: 'none', textTransform: 'uppercase',
+              transition: 'color 0.25s',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+            >
+              Failure analysis
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10" /></svg>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }
