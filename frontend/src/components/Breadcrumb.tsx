@@ -34,11 +34,11 @@ const SEGMENT_LABELS: Record<string, string> = {
   'macrocore': 'MACROCORE',
   'nanoforce': 'NANOFORCE',
   'syntrax': 'SYNTRAX',
-  'aquaguard': 'AQUAGUARD',
+  'hydrocore': 'HYDROCORE',
   'syntepore': 'SYNTEPORE',
   'drycore': 'DRYCORE',
   'intekcore': 'INTEKCORE',
-  'cooltech': 'COOLTECH',
+  'thermacore': 'THERMACORE',
   'microkappa': 'MICROKAPPA',
   'duratech': 'DURATECH',
   // systems / products
@@ -52,7 +52,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   'housing': 'HOUSING',
   'kits': 'SERVICE KITS',
   'water': 'WATER SEPARATOR',
-  'aquaguard-series': 'AQUAGUARD SERIES',
+  'hydrocore-series': 'HYDROCORE SERIES',
   // knowledge standards
   'lube-oil-systems': 'LUBE OIL SYSTEMS',
   'air-intake-systems': 'AIR INTAKE SYSTEMS',

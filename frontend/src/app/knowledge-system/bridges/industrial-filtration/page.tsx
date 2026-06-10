@@ -1185,7 +1185,7 @@ export default function IndustrialFiltrationPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_TECHNOLOGIES</p>
-              <p style={{ margin: '0' }}>MACROCORE (Particulate capture, 18µm absolute, extends intervals 20-30%) | NANOFORCE (Sub-micron filtration, 1µm efficiency, reduces abrasive wear 40-60%) | SYNTRAX (Synthetic media, extended lifecycle 50-100% longer than cellulose) | DURATECH (High dirt capacity media, extends replacement intervals 35-50%) | COOLTECH (Temperature-resistant media for extreme conditions)</p>
+              <p style={{ margin: '0' }}>MACROCORE (Particulate capture, 18µm absolute, extends intervals 20-30%) | NANOFORCE (Sub-micron filtration, 1µm efficiency, reduces abrasive wear 40-60%) | SYNTRAX (Synthetic media, extended lifecycle 50-100% longer than cellulose) | DURATECH (High dirt capacity media, extends replacement intervals 35-50%) | THERMACORE (Temperature-resistant media for extreme conditions)</p>
             </div>
 
             <div>
@@ -1260,7 +1260,7 @@ export default function IndustrialFiltrationPage() {
                 "NANOFORCE",
                 "SYNTRAX",
                 "DURATECH",
-                "COOLTECH"
+                "THERMACORE"
               ]
             },
             "relatedLink": [

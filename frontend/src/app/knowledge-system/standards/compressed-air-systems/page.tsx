@@ -19,8 +19,8 @@ const TECHNOLOGIES = [
     role: 'Nano-fiber coalescent media achieving ISO 8573-1 Class 1-2 particle removal at rated flow conditions, capturing sub-micron aerosols and oil mist before downstream instrumentation.',
   },
   {
-    name: 'AQUAGUARD',
-    slug: 'aquaguard-series',
+    name: 'HYDROCORE',
+    slug: 'hydrocore-series',
     role: 'Coalescing element technology engineered for water and oil aerosol separation in compressed air distribution, achieving bulk liquid removal and maintaining dew point stability across operating pressure ranges.',
   },
 ];
@@ -278,7 +278,7 @@ export default function CompressedAirSystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 8573-1, ISO 8573-2, ISO 8573-3</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, COOLTECH, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, THERMACORE, MACROCORE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/compressed-air-systems</p>

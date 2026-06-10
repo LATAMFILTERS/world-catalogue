@@ -20,7 +20,7 @@ A structured Obsidian knowledge graph connecting 11 entity types:
 | Component | `06-components/` | `TURBOCHARGER_BEARING` |
 | Problem | `07-problems/` | `DUST_INGESTION` |
 | ProductFamily | `08-product-families/` | `AIRFILTER_PRIMARY` |
-| Product (SKU) | `09-products/` | `AQUAGUARD_SERIES_900FH` |
+| Product (SKU) | `09-products/` | `HYDROCORE_SERIES_900FH` |
 | CaseStudy | `10-case-studies/` | `CS_DIESEL_WATER` |
 | TechnicalArticle | `11-articles/` | `TA_AIR_INTAKE_SYSTEMS` |
 
@@ -55,7 +55,7 @@ Product / SKU result
 - YAML is the machine-readable sync contract — keep it accurate
 - Relationships in YAML: bare wikilink form `[[KEY]]`
 - Only modify `ud_description` if you have verified the change against `unified-data.ts`
-- Do not invent data for HYDROCORE or THERMOCORE — both carry unverified TODO flags
+- Do not invent data for HYDROCORE or THERMACORE — both carry unverified TODO flags
 
 ### Body text
 - Body text is editorial — free-form prose, never parsed by automation
@@ -104,7 +104,7 @@ Automated bidirectional sync is planned for Phase 3E (not yet authorised).
 
 - Do not edit files in `frontend/` from inside this vault
 - Do not create automated sync without explicit authorisation
-- Do not invent specifications for HYDROCORE or THERMOCORE
+- Do not invent specifications for HYDROCORE or THERMACORE
 - Do not commit `.obsidian/` folder contents — Obsidian config is local only
 
 Add `.obsidian/` to `.gitignore` at project root if not already present.

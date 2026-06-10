@@ -63,7 +63,7 @@ const SYSTEMS: ProtectionSystem[] = [
         description:
           'High-capacity intake protection for diesel engines, gas turbines, and industrial compressors in particulate-laden environments. Maintains ISO 5011-compliant airflow restriction through extended service intervals at dust concentrations up to 10,000 mg/m³.',
         slug: 'airfilter',
-        tech: 'MACROCORE™ / SYNTEPORE™',
+        tech: 'MACROCORE™ / INTEKCORE™',
       },
       {
         label: 'Intake Housing & Pre-Cleaner Assembly',
@@ -80,7 +80,7 @@ const SYSTEMS: ProtectionSystem[] = [
         tech: 'DRYCORE™',
       },
     ],
-    technologies: ['MACROCORE™', 'SYNTEPORE™', 'DRYCORE™', 'INTEKCORE™'],
+    technologies: ['MACROCORE™', 'DRYCORE™', 'INTEKCORE™'],
     equipment: [
       'Diesel engines (mobile and stationary)',
       'Gas turbines and centrifugal compressors',
@@ -118,7 +118,7 @@ const SYSTEMS: ProtectionSystem[] = [
       'Injector replacement costs for HPCR systems range from $800–$2,500 per unit — multiplied across 6-cylinder engines, contamination-driven failure represents significant unplanned capital expenditure',
     ],
     strategy:
-      'AQUAGUARD™ three-stage turbine-coalescing-precision architecture addresses both water and particulate contamination from storage through delivery. 99.8% free water removal and 95% emulsified water reduction protect injection tolerances at every stage of the fuel circuit — from bulk tank transfer to final delivery at injection pressure.',
+      'HYDROCORE™ three-stage turbine-coalescing-precision architecture addresses both water and particulate contamination from storage through delivery. 99.8% free water removal and 95% emulsified water reduction protect injection tolerances at every stage of the fuel circuit — from bulk tank transfer to final delivery at injection pressure.',
     outcome:
       'Protected injection system precision at 1,800–2,500 bar. Extended HPCR injector service life. Prevented biological contamination in stored fuel circuits. Maintained combustion stability and fuel economy under continuous load.',
     families: [
@@ -127,31 +127,31 @@ const SYSTEMS: ProtectionSystem[] = [
         description:
           'Primary particulate capture for diesel fuel delivery across mobile and stationary applications. Controls contamination from storage to injection components.',
         slug: 'fuel',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Turbine-Stage Water Separation',
         description:
           'Three-stage turbine-coalescing-precision separation: 99.8% free water removal, 95% emulsified water reduction. For HPCR injection systems at 1,800–2,500 bar operating pressure.',
-        slug: 'aquaguard-series',
-        tech: 'AQUAGUARD™',
+        slug: 'hydrocore-series',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Water-Fuel Separation Module',
         description:
           'Coalescing water separation for high water ingress rate applications including field-fueled construction equipment and marine fuel storage transfer.',
         slug: 'water',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
       {
         label: 'Marine Fuel Protection',
         description:
           'Corrosion-resistant alloy construction for permanent salt, brine, and humidity exposure. Continuous fuel cleanliness for commercial vessels and offshore support systems.',
         slug: 'marine',
-        tech: 'AQUAGUARD™',
+        tech: 'HYDROCORE™',
       },
     ],
-    technologies: ['AQUAGUARD™'],
+    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'HYDROCORE™/SERIES'],
     equipment: [
       'HPCR diesel engines (1,800–2,500 bar injection)',
       'Common-rail marine diesel engines',
@@ -295,7 +295,7 @@ const SYSTEMS: ProtectionSystem[] = [
       'Inadequate cabin VOC filtration in urban transit environments exposes professional drivers to cumulative IARC Group 1 carcinogen exposure across 9–11 hour daily schedules',
     ],
     strategy:
-      'COOLTECH™ DCA-replenishing protection continuously restores supplemental coolant additives throughout the service interval — treating cooling system protection as an active chemistry maintenance function, not a passive filter replacement. MICROKAPPA™ multi-stage cabin filtration with activated carbon adsorption addresses operator health as a system-level objective alongside mechanical reliability.',
+      'THERMACORE™ DCA-replenishing protection continuously restores supplemental coolant additives throughout the service interval — treating cooling system protection as an active chemistry maintenance function, not a passive filter replacement. MICROKAPPA™ multi-stage cabin filtration with activated carbon adsorption addresses operator health as a system-level objective alongside mechanical reliability.',
     outcome:
       'Prevented wet sleeve liner cavitation erosion through continuous DCA concentration maintenance. Maintained radiator thermal efficiency through scale and corrosion control. Reduced operator cabin PM2.5 by up to 85% for EU Directive 2019/130 and OSHA occupational compliance. Extended engine overhaul intervals in wet-liner diesel applications.',
     families: [
@@ -304,7 +304,7 @@ const SYSTEMS: ProtectionSystem[] = [
         description:
           'DCA-replenishing cooling protection that continuously restores supplemental coolant additives throughout the service interval, preventing liner cavitation erosion and corrosion scaling.',
         slug: 'coolant',
-        tech: 'COOLTECH™',
+        tech: 'THERMACORE™',
       },
       {
         label: 'Cabin Environmental Protection',
@@ -314,7 +314,7 @@ const SYSTEMS: ProtectionSystem[] = [
         tech: 'MICROKAPPA™',
       },
     ],
-    technologies: ['COOLTECH™', 'MICROKAPPA™'],
+    technologies: ['THERMACORE™', 'MICROKAPPA™'],
     equipment: [
       'Industrial diesel engines with wet sleeve liner construction',
       'Commercial truck and bus cooling circuits',
@@ -342,10 +342,10 @@ const TECH_MAP = [
   },
   {
     name: 'SYNTEPORE™',
-    system: '01',
-    role: 'Air Intake',
+    system: '02',
+    role: 'Fuel Filtration',
     brief:
-      'All-synthetic intake protection for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure that degrades cellulose constructions.',
+      'All-synthetic fuel filtration media for diesel, HVO, and biodiesel circuits. Chemical resistance and structural stability where cellulose media degrades under fuel chemistry exposure.',
   },
   {
     name: 'INTEKCORE™',
@@ -362,7 +362,7 @@ const TECH_MAP = [
       'Molecular sieve desiccant achieving ISO 8573-1 Class 1–2 dew point targets. Prevents valve icing, actuator corrosion, and seal degradation in pneumatic braking and process control systems.',
   },
   {
-    name: 'AQUAGUARD™',
+    name: 'HYDROCORE™',
     system: '02',
     role: 'Fuel Cleanliness',
     brief:
@@ -383,7 +383,7 @@ const TECH_MAP = [
       'Sub-micron Beta-rated hydraulic contamination control at 200–450 bar. Maintains ISO 4406 cleanliness for proportional valve spool protection in construction, mining, and manufacturing circuits.',
   },
   {
-    name: 'COOLTECH™',
+    name: 'THERMACORE™',
     system: '05',
     role: 'Cooling System',
     brief:
@@ -930,7 +930,7 @@ export default function SystemsPage() {
         name: 'Why is cooling system protection important for diesel engines?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Diesel engine cooling systems with wet sleeve liner construction depend on supplemental coolant additive (SCA/DCA) concentration to prevent cavitation erosion — a failure mode where coolant pressure waves create micro-bubbles that collapse against liner surfaces, removing metal at a microscopic level. When DCA concentration falls below specification through thermal cycling and electrolytic depletion, cavitation erosion initiates within 500–1,000 operating hours. The damage is undetectable until compression testing reveals liner wear requiring engine overhaul. Passive coolant filters cannot replenish depleted additives — only DCA-replenishing technology like COOLTECH™ maintains protective concentration continuously throughout the service interval.',
+          text: 'Diesel engine cooling systems with wet sleeve liner construction depend on supplemental coolant additive (SCA/DCA) concentration to prevent cavitation erosion — a failure mode where coolant pressure waves create micro-bubbles that collapse against liner surfaces, removing metal at a microscopic level. When DCA concentration falls below specification through thermal cycling and electrolytic depletion, cavitation erosion initiates within 500–1,000 operating hours. The damage is undetectable until compression testing reveals liner wear requiring engine overhaul. Passive coolant filters cannot replenish depleted additives — only DCA-replenishing technology like THERMACORE™ maintains protective concentration continuously throughout the service interval.',
         },
       },
       {
@@ -959,10 +959,10 @@ export default function SystemsPage() {
       },
       {
         '@type': 'Question',
-        name: 'How does AQUAGUARD™ protect HPCR diesel injection systems?',
+        name: 'How does HYDROCORE™ protect HPCR diesel injection systems?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'AQUAGUARD™ uses a three-stage turbine-coalescing-precision architecture to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. AQUAGUARD™ prevents these failure modes across long-haul trucks, marine diesel engines, standby generators, and offshore equipment.',
+          text: 'HYDROCORE™ uses a three-stage turbine-coalescing-precision architecture to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. At these tolerances, free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. HYDROCORE™ prevents these failure modes across long-haul trucks, marine diesel engines, standby generators, and offshore equipment.',
         },
       },
       {
@@ -1722,11 +1722,11 @@ export default function SystemsPage() {
               },
               {
                 q: 'What are the five asset protection systems?',
-                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more exclusive protection architectures including MACROCORE™, AQUAGUARD™, SYNTRAX™, NANOFORCE™, COOLTECH™, and MICROKAPPA™.',
+                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more exclusive protection architectures including MACROCORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, and MICROKAPPA™.',
               },
               {
-                q: 'How does AQUAGUARD™ protect HPCR injection systems?',
-                a: 'AQUAGUARD™ uses three-stage turbine-coalescing-precision separation to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. HPCR injection operates at 1,800–2,500 bar with needle clearances of 1–3 µm — tolerances where free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys within 200–500 operating hours.',
+                q: 'How does HYDROCORE™ protect HPCR injection systems?',
+                a: 'HYDROCORE™ uses three-stage turbine-coalescing-precision separation to remove free water to below ASTM D6304 thresholds (99.8% removal) and emulsified water by 95%. HPCR injection operates at 1,800–2,500 bar with needle clearances of 1–3 µm — tolerances where free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys within 200–500 operating hours.',
               },
               {
                 q: 'What hydraulic cleanliness standard does NANOFORCE™ maintain?',

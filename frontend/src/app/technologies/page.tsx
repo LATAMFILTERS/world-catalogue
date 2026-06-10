@@ -37,17 +37,17 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
     industries: ['Mining', 'Construction', 'Agriculture', 'Power Generation'],
   },
   'syntepore': {
-    system: 'Air Intake',
-    metric: 'ISO 5011 · Moisture-resistant · All-synthetic',
-    short: 'All-synthetic air intake for high-humidity, coastal, and marine environments where cellulose media would degrade.',
-    purpose: 'Engineered for air intake protection in high-humidity, coastal, and marine environments where moisture exposure degrades cellulose-based media constructions. Maintains filtration efficiency where MACROCORE™ cellulose-synthetic composite media cannot be specified.',
-    contaminationTarget: 'Airborne particulate in humid, salt-laden, and marine environments · Moisture-contaminated intake air · Salt aerosol at 1–10 mg/m³ NaCl',
-    engineeringPrinciple: 'All-synthetic multi-layer media eliminates the hydrolytic degradation and tensile strength loss that affects cellulose-containing media under continuous moisture exposure. Synthetic fiber construction maintains structural geometry, pleat stability, and filtration efficiency under humidity conditions that cause cellulose media to soften, deform, and lose media-to-endcap bond integrity.',
-    systemApplications: ['Air Intake & Airflow Protection'],
-    outcome: ['Maintained combustion air cleanliness in marine and coastal operating environments', 'Structural performance stability under humidity and salt spray that degrades conventional intake media', 'Consistent ISO 5011 performance in offshore and tropical climate applications'],
-    relatedSystems: [{ label: 'Air Intake & Airflow System', href: '/systems' }],
-    relatedKnowledge: [{ label: 'Air Intake Standards', href: '/knowledge-system/standards/air-intake-systems' }],
-    industries: ['Marine', 'Oil & Gas', 'Bus & Coach', 'Railway'],
+    system: 'Fuel Filtration',
+    metric: 'All-synthetic · Chemical resistance · Diesel / HVO / Biodiesel',
+    short: 'All-synthetic fuel filtration media for diesel, HVO, and biodiesel circuits where chemical resistance and media stability are required.',
+    purpose: 'Engineered for fuel filtration applications where all-synthetic construction provides chemical compatibility and structural stability across diesel, HVO, and biodiesel fuel types. Maintains filtration efficiency in fuel circuits where conventional cellulose media degrades under fuel chemistry exposure.',
+    contaminationTarget: 'Particulate contamination in diesel, HVO, and biodiesel fuel circuits · Fuel-borne contaminants where chemical media resistance is required',
+    engineeringPrinciple: 'All-synthetic multi-layer fuel filtration media provides chemical resistance to diesel fuel, biodiesel blends, and HVO synthetic fuel across the full operating temperature range. Synthetic fiber construction maintains structural integrity and pleat geometry under continuous fuel exposure — preventing the media degradation and fuel bypass that affects cellulose-containing fuel elements in biodiesel and HVO circuits.',
+    systemApplications: ['Fuel Cleanliness Protection'],
+    outcome: ['Maintained fuel cleanliness in diesel, HVO, and biodiesel fuel circuits', 'Chemical media stability across fuel chemistry variations including biodiesel blends and HVO', 'Extended service life in fuel circuits where conventional cellulose media degrades'],
+    relatedSystems: [{ label: 'Fuel Cleanliness Protection System', href: '/systems' }],
+    relatedKnowledge: [{ label: 'Fuel Systems Standards', href: '/knowledge-system/standards/fuel-systems' }, { label: 'Diesel Water Contamination', href: '/knowledge-system/contamination/diesel-water' }],
+    industries: ['Trucks & Fleets', 'Marine', 'Agriculture', 'Construction'],
   },
   'intekcore': {
     system: 'Air Intake',
@@ -75,7 +75,7 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
     relatedKnowledge: [{ label: 'Compressed Air Systems', href: '/knowledge-system/standards/compressed-air-systems' }],
     industries: ['Railway', 'Bus & Coach', 'Manufacturing', 'Oil & Gas'],
   },
-  'aquaguard': {
+  'hydrocore': {
     system: 'Fuel Cleanliness',
     metric: '99.8% water removal · ASTM D6304 · 1,800–2,500 bar',
     short: 'Hydrophobic water-separation for diesel and turbine fuel at 99.8% efficiency. Protects HPCR injectors from corrosion and cavitation.',
@@ -88,7 +88,7 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
     relatedKnowledge: [{ label: 'Fuel Systems Standards', href: '/knowledge-system/standards/fuel-systems' }, { label: 'Diesel Water Contamination', href: '/knowledge-system/contamination/diesel-water' }],
     industries: ['Trucks & Fleets', 'Marine', 'Oil & Gas', 'Power Generation'],
   },
-  'aquaguard-series': {
+  'hydrocore-series': {
     system: 'Fuel Cleanliness',
     metric: '99.8% free water removal · High-flow power systems',
     short: 'Heavy-duty turbine fuel filter/water separator. Three-stage protection for high-flow power generation and mining fuel systems.',
@@ -127,13 +127,13 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
     relatedKnowledge: [{ label: 'Hydraulic Systems Standards', href: '/knowledge-system/standards/hydraulic-systems' }, { label: 'Hydraulic System Contamination', href: '/knowledge-system/contamination/hydraulic-system' }],
     industries: ['Construction', 'Mining', 'Manufacturing', 'Agriculture'],
   },
-  'cooltech': {
+  'thermacore': {
     system: 'Cooling System',
     metric: 'SCA dosing · DCA concentration maintenance · Liner protection',
     short: 'Supplemental Coolant Additive release technology preventing liner pitting and scale in diesel engine cooling circuits.',
     purpose: 'Engineered to continuously replenish supplemental coolant additives throughout the service interval, preventing cavitation erosion on wet sleeve liner surfaces and corrosion scaling in industrial diesel engine cooling circuits.',
     contaminationTarget: 'DCA depletion below cavitation-protection threshold · Corrosion products in cooling passages · Silicate scale on heat exchanger surfaces · Electrolytic degradation of coolant additive package',
-    engineeringPrinciple: 'Slow-release DCA matrix dissolves supplemental coolant additives at a controlled rate matched to the thermal cycling and electrolytic depletion rate. Maintains protective DCA concentration above the cavitation suppression threshold throughout the full service interval. Unlike passive coolant filters that capture particulate but cannot replenish depleted chemistry, COOLTECH™ treats cooling system protection as an active chemistry maintenance function.',
+    engineeringPrinciple: 'Slow-release DCA matrix dissolves supplemental coolant additives at a controlled rate matched to the thermal cycling and electrolytic depletion rate. Maintains protective DCA concentration above the cavitation suppression threshold throughout the full service interval. Unlike passive coolant filters that capture particulate but cannot replenish depleted chemistry, THERMACORE™ treats cooling system protection as an active chemistry maintenance function.',
     systemApplications: ['Cooling System & Environmental Protection'],
     outcome: ['Prevented wet sleeve liner cavitation erosion — a failure mode that initiates within 500–1,000 hours below DCA threshold', 'Maintained radiator thermal efficiency through scale and corrosion product control', 'Extended engine overhaul intervals in wet-liner industrial diesel and commercial transport applications'],
     relatedSystems: [{ label: 'Cooling System & Environmental Protection', href: '/systems' }],
@@ -159,7 +159,7 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
     short: 'Salt-resistant filtration with epoxy brine-rejection coating for fuel and lube systems aboard vessels and offshore platforms.',
     purpose: 'Engineered for continuous fuel and lubrication protection aboard commercial vessels and offshore platforms where salt brine, humidity, and marine corrosion prevent the use of standard land-based filtration components.',
     contaminationTarget: 'Salt brine and humidity on component surfaces · Marine fuel water contamination · Particulate in marine diesel and bunker fuel delivery circuits',
-    engineeringPrinciple: 'Epoxy brine-rejection coating on housing and end-cap components provides ASTM B117 salt spray resistance for extended offshore service. IMO-certified construction meets marine flag state requirements for onboard filtration equipment. Internal media construction maintains AQUAGUARD™-equivalent water separation and particle capture performance in marine fuel and lube circuits.',
+    engineeringPrinciple: 'Epoxy brine-rejection coating on housing and end-cap components provides ASTM B117 salt spray resistance for extended offshore service. IMO-certified construction meets marine flag state requirements for onboard filtration equipment. Internal media construction maintains HYDROCORE™-equivalent water separation and particle capture performance in marine fuel and lube circuits.',
     systemApplications: ['Fuel Cleanliness Protection', 'Lubrication Reliability Protection'],
     outcome: ['Extended service life in permanent marine salt and humidity exposure environments', 'IMO-compliant filtration for regulated commercial maritime operations', 'Fuel and lubrication cleanliness protection aboard commercial vessels and offshore support platforms'],
     relatedSystems: [{ label: 'Fuel Cleanliness Protection System', href: '/systems' }],
@@ -182,12 +182,12 @@ const TECH_PLATFORM: Record<string, TechPlatformData> = {
 };
 
 const SYSTEM_GROUPS = [
-  { label: 'Air Intake', techs: ['macrocore', 'syntepore', 'intekcore'] },
-  { label: 'Fuel Cleanliness', techs: ['aquaguard', 'aquaguard-series'] },
+  { label: 'Air Intake', techs: ['macrocore', 'intekcore'] },
+  { label: 'Fuel Filtration', techs: ['syntepore', 'hydrocore', 'hydrocore-series'] },
   { label: 'Lubrication', techs: ['syntrax'] },
   { label: 'Hydraulic', techs: ['nanoforce'] },
   { label: 'Compressed Air', techs: ['drycore'] },
-  { label: 'Cooling System', techs: ['cooltech'] },
+  { label: 'Cooling System', techs: ['thermacore'] },
   { label: 'Cabin Protection', techs: ['microkappa'] },
   { label: 'Marine & Offshore', techs: ['marineclean'] },
   { label: 'Fleet Maintenance', techs: ['duratech'] },
@@ -419,8 +419,8 @@ export default function TechnologiesPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is AQUAGUARD™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'AQUAGUARD™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting high-pressure common-rail injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. AQUAGUARD™ applies to mobile diesel, marine, standby generator, and offshore fuel systems.' },
+        name: 'What is HYDROCORE™ by ELIMFILTERS?',
+        acceptedAnswer: { '@type': 'Answer', text: 'HYDROCORE™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting high-pressure common-rail injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. HYDROCORE™ applies to mobile diesel, marine, standby generator, and offshore fuel systems.' },
       },
       {
         '@type': 'Question',
@@ -430,7 +430,7 @@ export default function TechnologiesPage() {
       {
         '@type': 'Question',
         name: 'What is SYNTEPORE™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'SYNTEPORE™ is a proprietary ELIMFILTERS all-synthetic air intake technology engineered for high-humidity, coastal, and marine environments. Unlike cellulose-synthetic composite media, SYNTEPORE™ maintains structural integrity and filtration efficiency under continuous moisture exposure, preventing the hydrolytic degradation and tensile strength loss that affects cellulose media in salt-laden and offshore operating conditions.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'SYNTEPORE™ is a proprietary ELIMFILTERS all-synthetic fuel filtration technology engineered for diesel, HVO, and biodiesel fuel circuits where chemical media resistance and structural stability are required. Unlike cellulose-containing fuel elements, SYNTEPORE™ maintains structural integrity and filtration efficiency under continuous fuel chemistry exposure, preventing the media degradation and bypass that affects cellulose media in biodiesel blends and HVO synthetic fuel circuits.' },
       },
       {
         '@type': 'Question',
@@ -440,32 +440,32 @@ export default function TechnologiesPage() {
       {
         '@type': 'Question',
         name: 'How do contamination control technologies improve industrial reliability?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Contamination control technologies improve reliability by maintaining the physical, chemical, and mechanical properties of industrial fluids and operating environments within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11, bearing service life extends 3–5× versus uncontrolled contamination at 19/17/14. When fuel water content is maintained below 200 ppm via AQUAGUARD™, HPCR injector service life extends from under 2,000 hours to 10,000+ hours. Contamination control technologies are reliability engineering tools, not commodity replacements.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Contamination control technologies improve reliability by maintaining the physical, chemical, and mechanical properties of industrial fluids and operating environments within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11, bearing service life extends 3–5× versus uncontrolled contamination at 19/17/14. When fuel water content is maintained below 200 ppm via HYDROCORE™, HPCR injector service life extends from under 2,000 hours to 10,000+ hours. Contamination control technologies are reliability engineering tools, not commodity replacements.' },
       },
       {
         '@type': 'Question',
         name: 'Why does ELIMFILTERS use multiple technologies rather than a single filtration solution?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Different contamination threats require fundamentally different engineering approaches. Silica dust ingestion in air intake circuits requires Progressive Density Gradient media (MACROCORE™) rated to 10,000 mg/m³. Water contamination in fuel systems requires turbine-stage coalescing architecture (AQUAGUARD™). Sub-micron hydraulic particle contamination requires Beta-rated sub-micron retention (NANOFORCE™). A single filtration solution cannot address these distinct contamination mechanisms, failure modes, and measurement standards (ISO 5011, ASTM D6304, ISO 16889). Each ELIMFILTERS technology is engineered for a specific contamination domain.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Different contamination threats require fundamentally different engineering approaches. Silica dust ingestion in air intake circuits requires Progressive Density Gradient media (MACROCORE™) rated to 10,000 mg/m³. Water contamination in fuel systems requires turbine-stage coalescing architecture (HYDROCORE™). Sub-micron hydraulic particle contamination requires Beta-rated sub-micron retention (NANOFORCE™). A single filtration solution cannot address these distinct contamination mechanisms, failure modes, and measurement standards (ISO 5011, ASTM D6304, ISO 16889). Each ELIMFILTERS technology is engineered for a specific contamination domain.' },
       },
       {
         '@type': 'Question',
         name: 'How are ELIMFILTERS technologies connected to industrial protection systems?',
-        acceptedAnswer: { '@type': 'Answer', text: 'ELIMFILTERS technologies are organized within five industrial asset protection systems: Air Intake & Airflow Protection (MACROCORE™, SYNTEPORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness Protection (AQUAGUARD™), Lubrication Reliability Protection (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (COOLTECH™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system — not selected as standalone product replacements.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'ELIMFILTERS technologies are organized within five industrial asset protection systems: Air Intake & Airflow Protection (MACROCORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness Protection (SYNTEPORE™, HYDROCORE™, HYDROCORE™/SERIES), Lubrication Reliability Protection (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (THERMACORE™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system — not selected as standalone product replacements.' },
       },
       {
         '@type': 'Question',
         name: 'What is the difference between a technology and a product in the ELIMFILTERS framework?',
-        acceptedAnswer: { '@type': 'Answer', text: 'In the ELIMFILTERS framework, a technology is a contamination control architecture — an engineered approach for addressing a specific failure mechanism (e.g., AQUAGUARD™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products can implement the same technology. The technology defines the contamination control capability; the product deploys it in a specific application. Selecting a filtration solution by technology-first rather than product-first ensures the contamination challenge is addressed, not just the part number.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'In the ELIMFILTERS framework, a technology is a contamination control architecture — an engineered approach for addressing a specific failure mechanism (e.g., HYDROCORE™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products can implement the same technology. The technology defines the contamination control capability; the product deploys it in a specific application. Selecting a filtration solution by technology-first rather than product-first ensures the contamination challenge is addressed, not just the part number.' },
       },
       {
         '@type': 'Question',
         name: 'How does contamination type influence technology selection?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Contamination type determines which failure mechanism is active, which engineering approach addresses it, and which ISO or ASTM standard defines the acceptable threshold. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water contamination in fuel systems → AQUAGUARD™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve desiccant → ISO 8573-1 dew point class. Technology selection begins with contamination identification, not product catalog browsing.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Contamination type determines which failure mechanism is active, which engineering approach addresses it, and which ISO or ASTM standard defines the acceptable threshold. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water contamination in fuel systems → HYDROCORE™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve desiccant → ISO 8573-1 dew point class. Technology selection begins with contamination identification, not product catalog browsing.' },
       },
       {
         '@type': 'Question',
-        name: 'What is the difference between MACROCORE™ and SYNTEPORE™?',
-        acceptedAnswer: { '@type': 'Answer', text: 'MACROCORE™ uses Progressive Density Gradient media — multi-layer cellulose-synthetic composite at 99.9–99.98% efficiency (ISO 5011) for dust concentrations up to 10,000 mg/m³. SYNTEPORE™ is all-synthetic for high-humidity, coastal, and marine environments where moisture would degrade cellulose media.' },
+        name: 'What is the difference between HYDROCORE™ and SYNTEPORE™?',
+        acceptedAnswer: { '@type': 'Answer', text: 'HYDROCORE™ uses three-stage turbine-coalescing-precision architecture to achieve 99.8% free water removal and 95% emulsified water reduction — protecting HPCR injection systems at 1,800–2,500 bar from water-driven corrosion and embrittlement. SYNTEPORE™ is all-synthetic fuel filtration media providing chemical resistance and structural stability for diesel, HVO, and biodiesel circuits where cellulose media degrades under fuel chemistry exposure. HYDROCORE™ addresses water contamination; SYNTEPORE™ addresses particulate contamination with chemical media compatibility.' },
       },
     ],
   };
@@ -480,12 +480,12 @@ export default function TechnologiesPage() {
     author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
     mentions: [
       { '@type': 'Thing', name: 'MACROCORE™', description: 'Progressive Density Gradient air intake protection technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'AQUAGUARD™', description: 'Three-stage turbine-coalescing fuel water separation technology by ELIMFILTERS' },
+      { '@type': 'Thing', name: 'HYDROCORE™', description: 'Three-stage turbine-coalescing fuel water separation technology by ELIMFILTERS' },
       { '@type': 'Thing', name: 'SYNTRAX™', description: 'Synthetic lube oil cleanliness technology by ELIMFILTERS' },
       { '@type': 'Thing', name: 'NANOFORCE™', description: 'Sub-micron hydraulic contamination control technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'SYNTEPORE™', description: 'All-synthetic moisture-resistant air intake technology by ELIMFILTERS' },
+      { '@type': 'Thing', name: 'SYNTEPORE™', description: 'All-synthetic fuel filtration technology for diesel, HVO, and biodiesel circuits by ELIMFILTERS' },
       { '@type': 'Thing', name: 'MICROKAPPA™', description: 'Multi-stage cabin PM2.5 protection technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'COOLTECH™', description: 'DCA-replenishing cooling system protection technology by ELIMFILTERS' },
+      { '@type': 'Thing', name: 'THERMACORE™', description: 'DCA-replenishing cooling system protection technology by ELIMFILTERS' },
       { '@type': 'Thing', name: 'DRYCORE™', description: 'Molecular sieve compressed air desiccant technology by ELIMFILTERS' },
       { '@type': 'Thing', name: 'INTEKCORE™', description: 'Zero-bypass radial-seal air intake housing technology by ELIMFILTERS' },
     ],
@@ -864,7 +864,7 @@ export default function TechnologiesPage() {
                 },
                 {
                   label: 'DIFFERENTIATION',
-                  text: 'Different contamination threats require different engineering approaches. Water contamination, airborne particulate, hydraulic wear particles, soot, oxidation, and fluid degradation each require unique protection mechanisms. AQUAGUARD™ addresses water in fuel through turbine-stage coalescing — a fundamentally different mechanism than NANOFORCE™ sub-micron particle retention in hydraulic circuits. Specifying the wrong technology for a contamination challenge leaves the failure mechanism unaddressed regardless of replacement frequency.',
+                  text: 'Different contamination threats require different engineering approaches. Water contamination, airborne particulate, hydraulic wear particles, soot, oxidation, and fluid degradation each require unique protection mechanisms. HYDROCORE™ addresses water in fuel through turbine-stage coalescing — a fundamentally different mechanism than NANOFORCE™ sub-micron particle retention in hydraulic circuits. Specifying the wrong technology for a contamination challenge leaves the failure mechanism unaddressed regardless of replacement frequency.',
                 },
                 {
                   label: 'FRAMEWORK',
@@ -954,8 +954,8 @@ export default function TechnologiesPage() {
           <div style={{ display: 'grid', gap: '1.25rem' }}>
             {[
               {
-                q: 'What is AQUAGUARD™ by ELIMFILTERS?',
-                a: 'AQUAGUARD™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting HPCR injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. Applies to mobile diesel, marine, standby generator, and offshore fuel systems.',
+                q: 'What is HYDROCORE™ by ELIMFILTERS?',
+                a: 'HYDROCORE™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting HPCR injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. Applies to mobile diesel, marine, standby generator, and offshore fuel systems.',
               },
               {
                 q: 'What is MACROCORE™ by ELIMFILTERS?',
@@ -967,23 +967,23 @@ export default function TechnologiesPage() {
               },
               {
                 q: 'How do contamination control technologies improve industrial reliability?',
-                a: 'Contamination control technologies maintain fluid and system cleanliness within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11 via SYNTRAX™, bearing service life extends 3–5×. When fuel water content is maintained below 200 ppm via AQUAGUARD™, HPCR injector service life extends from under 2,000 hours to 10,000+. The technology determines whether the contamination threshold is maintained — and whether the failure mechanism remains active or controlled.',
+                a: 'Contamination control technologies maintain fluid and system cleanliness within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11 via SYNTRAX™, bearing service life extends 3–5×. When fuel water content is maintained below 200 ppm via HYDROCORE™, HPCR injector service life extends from under 2,000 hours to 10,000+. The technology determines whether the contamination threshold is maintained — and whether the failure mechanism remains active or controlled.',
               },
               {
                 q: 'Why does ELIMFILTERS use multiple technologies rather than a single filtration solution?',
-                a: 'Different contamination threats require fundamentally different engineering approaches. Silica dust in air intake requires Progressive Density Gradient media (MACROCORE™). Water in fuel requires turbine-stage coalescing (AQUAGUARD™). Sub-micron hydraulic particles require Beta-rated retention (NANOFORCE™). Soot in lube oil requires high-capacity synthetic media (SYNTRAX™). A single technology cannot address these distinct failure mechanisms, measurement standards, and operating conditions. Each ELIMFILTERS technology is engineered for a specific contamination domain.',
+                a: 'Different contamination threats require fundamentally different engineering approaches. Silica dust in air intake requires Progressive Density Gradient media (MACROCORE™). Water in fuel requires turbine-stage coalescing (HYDROCORE™). Sub-micron hydraulic particles require Beta-rated retention (NANOFORCE™). Soot in lube oil requires high-capacity synthetic media (SYNTRAX™). A single technology cannot address these distinct failure mechanisms, measurement standards, and operating conditions. Each ELIMFILTERS technology is engineered for a specific contamination domain.',
               },
               {
                 q: 'How are ELIMFILTERS technologies connected to industrial protection systems?',
-                a: 'ELIMFILTERS technologies are organized within five protection systems: Air Intake & Airflow (MACROCORE™, SYNTEPORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness (AQUAGUARD™), Lubrication Reliability (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (COOLTECH™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system, not as standalone product replacements.',
+                a: 'ELIMFILTERS technologies are organized within five protection systems: Air Intake & Airflow (MACROCORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness (SYNTEPORE™, HYDROCORE™, HYDROCORE™/SERIES), Lubrication Reliability (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (THERMACORE™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system, not as standalone product replacements.',
               },
               {
                 q: 'What is the difference between a technology and a product in the ELIMFILTERS framework?',
-                a: 'A technology is a contamination control architecture — an engineered approach for a specific failure mechanism (e.g., AQUAGUARD™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products implement the same technology. The technology defines contamination control capability; the product deploys it in a specific application. Technology-first selection ensures the contamination challenge is addressed, not just the part number matched.',
+                a: 'A technology is a contamination control architecture — an engineered approach for a specific failure mechanism (e.g., HYDROCORE™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products implement the same technology. The technology defines contamination control capability; the product deploys it in a specific application. Technology-first selection ensures the contamination challenge is addressed, not just the part number matched.',
               },
               {
                 q: 'How does contamination type influence technology selection?',
-                a: 'Contamination type determines which failure mechanism is active and which engineering approach addresses it. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water in fuel systems → AQUAGUARD™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve → ISO 8573-1 dew point class. Technology selection begins with contamination identification.',
+                a: 'Contamination type determines which failure mechanism is active and which engineering approach addresses it. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water in fuel systems → HYDROCORE™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve → ISO 8573-1 dew point class. Technology selection begins with contamination identification.',
               },
             ].map((faq, i) => (
               <motion.div

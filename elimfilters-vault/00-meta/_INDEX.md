@@ -18,15 +18,15 @@ Last updated: 2026-06-03
 | HYDROCORE | HYDROCORE™ | Fuel Cleanliness | ⬜ Pending |
 | SYNTRAX | SYNTRAX™ | Lubrication | ⬜ Pending |
 | NANOFORCE | NANOFORCE™ | Hydraulic | ⬜ Pending |
-| THERMOCORE | THERMOCORE™ | Cooling System | ⬜ Pending |
+| THERMACORE | THERMACORE™ | Cooling System | ⬜ Pending |
 | MICROKAPPA | MICROKAPPA™ | Cabin Protection | ⬜ Pending |
 
 ### Deprecated (0 of 2 created)
 
 | Key | Replaced By | Status |
 |-----|-------------|--------|
-| AQUAGUARD | HYDROCORE | ⬜ Pending |
-| COOLTECH | THERMOCORE | ⬜ Pending |
+| (retired) | HYDROCORE | — erased 2026-06-10 |
+| (retired) | THERMACORE | — erased 2026-06-10 |
 
 ### Ecosystems (0 of 2 created)
 
@@ -70,7 +70,7 @@ Last updated: 2026-06-03
 | HYDRAULIC | Hydraulic | NANOFORCE | ⬜ Pending |
 | CABIN | Cabin Protection | MICROKAPPA | ⬜ Pending |
 | COMPRESSED_AIR | Compressed Air | DRYCORE | ⬜ Pending |
-| COOLANT | Cooling System | THERMOCORE | ⬜ Pending |
+| COOLANT | Cooling System | THERMACORE | ⬜ Pending |
 | WATER | Fuel Cleanliness | HYDROCORE | ⬜ Pending |
 | HOUSING | Air Intake | INTEKCORE | ⬜ Pending |
 | DRYER | Compressed Air | DRYCORE | ⬜ Pending |
