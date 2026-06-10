@@ -3237,6 +3237,7 @@ app.post('/api/ai/v2/route', async (req, res) => {
 });
 
 // ────────────────────────────────────────────────────────────────────────────
+const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
