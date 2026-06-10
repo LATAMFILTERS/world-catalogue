@@ -13,7 +13,7 @@ const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Air intake protection preventing abrasive ingestion that accelerates component wear between service intervals.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration capturing wear debris before recirculation extends time between unplanned oil failures.' },
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Fuel system contamination control reducing injector stiction events that trigger unscheduled engine shutdowns.' },
-  { name: 'HYDROCORE', slug: 'aquaguard', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
+  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
 ];
 
 const STANDARDS = [

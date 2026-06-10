@@ -1186,7 +1186,7 @@ app.get('/api/filters/search/vin', async (req, res) => {
   const model = (req.query.model || '').trim().toUpperCase();
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
-  if(!model) return res.json({success: false, products: [], count: 0});
+  if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
@@ -1194,30 +1194,24 @@ app.get('/api/filters/search/vin', async (req, res) => {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
-    const params = ['%' + model + '%'];
-    let query = `
-      SELECT * FROM elimfilters_catalog
-      WHERE equipment_applications IS NOT NULL
-        AND jsonb_array_length(equipment_applications) > 0
-        AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
-          WHERE app->>'equipment' ILIKE $1
-        )`;
+    let query = `SELECT * FROM elimfilters_catalog
+                 WHERE equipment_applications IS NOT NULL`;
+    const params = [];
+
+    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
+    params.push('%' + model + '%');
 
     if(engine) {
+      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
-      query += ` AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
-          WHERE app->>'engine' ILIKE $${params.length}
-        )`;
     }
 
-    query += ' LIMIT 30';
+    query += ' LIMIT 10';
 
     const result = await client.query(query, params);
-    const products = result.rows.map(row => buildFilterData(row, lang));
-    await enrichAlternatives(products, client);
-    res.status(200).json({success: true, products, count: products.length});
+    const filters = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(filters, client);
+    res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
@@ -1230,7 +1224,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   const type = req.query.type ? req.query.type.trim().toUpperCase() : null;
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
-  if(!model) return res.json({success: false, products: [], count: 0});
+  if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
@@ -1238,38 +1232,29 @@ app.get('/api/filters/search/equipment', async (req, res) => {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
-    const params = ['%' + model + '%'];
-    let query = `
-      SELECT * FROM elimfilters_catalog
-      WHERE equipment_applications IS NOT NULL
-        AND jsonb_array_length(equipment_applications) > 0
-        AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
-          WHERE app->>'equipment' ILIKE $1
-        )`;
+    let query = `SELECT * FROM elimfilters_catalog
+                 WHERE equipment_applications IS NOT NULL`;
+    const params = [];
+
+    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
+    params.push('%' + model + '%');
 
     if(type) {
+      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + type + '%');
-      query += ` AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
-          WHERE app->>'type' ILIKE $${params.length}
-        )`;
     }
 
     if(engine) {
+      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
       params.push('%' + engine + '%');
-      query += ` AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(equipment_applications) app
-          WHERE app->>'engine' ILIKE $${params.length}
-        )`;
     }
 
-    query += ' LIMIT 30';
+    query += ' LIMIT 10';
 
     const result = await client.query(query, params);
-    const products = result.rows.map(row => buildFilterData(row, lang));
-    await enrichAlternatives(products, client);
-    res.status(200).json({success: true, products, count: products.length});
+    const filters = result.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(filters, client);
+    res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
@@ -2339,162 +2324,6 @@ app.get('/api/audit/report', async (req, res) => {
   }
 });
 
-// ── Merge alternatives endpoint ───────────────────────────────────────────
-app.post('/api/migrate/merge-alternatives', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const dryRun = req.query.dry === '1';
-  const fs   = require('fs');
-  const path = require('path');
-  const DIR  = path.join(__dirname, 'scripts');
-
-  function keyOem(o) {
-    if (typeof o === 'string') return o.trim().toUpperCase();
-    const m = (o.manufacturer || o.brand || '').toUpperCase().trim();
-    const c = (o.code || o.part_number || '').toUpperCase().trim();
-    const k = m + '|' + c;
-    return k === '|' ? JSON.stringify(o) : k;
-  }
-  function keyEq(e) { return (e.equipment||'')+'|'+(e.type||'')+'|'+(e.engine||''); }
-  function unionArr(arrays, kfn) {
-    const s = new Map();
-    for (const a of arrays) for (const x of (a || [])) { const k = kfn(x); if (!s.has(k)) s.set(k, x); }
-    return [...s.values()];
-  }
-
-  // Build pnToSku + graph from JSON files
-  const pnToSku = new Map();
-  const graph   = new Map();
-  const files = fs.readdirSync(DIR).filter(f => /^donaldson_.*_results\.json$/.test(f)).map(f => path.join(DIR, f));
-  for (const f of files) {
-    let d; try { d = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
-    for (const p of d) if (p.sku_elimfilters && p.part_number) pnToSku.set(p.part_number, p.sku_elimfilters);
-  }
-  for (const f of files) {
-    let d; try { d = JSON.parse(fs.readFileSync(f, 'utf8')); } catch { continue; }
-    for (const p of d) {
-      const sku = p.sku_elimfilters; if (!sku) continue;
-      if (!graph.has(sku)) graph.set(sku, new Set());
-      for (const a of (p.alternatives || [])) {
-        const as = pnToSku.get(a); if (!as || as === sku) continue;
-        if (!graph.has(as)) graph.set(as, new Set());
-        graph.get(sku).add(as); graph.get(as).add(sku);
-      }
-    }
-  }
-
-  // Connected components
-  const visited = new Set(), components = [];
-  for (const s of graph.keys()) {
-    if (visited.has(s)) continue;
-    const comp = [], q = [s]; visited.add(s);
-    while (q.length) { const n = q.shift(); comp.push(n); for (const nb of (graph.get(n)||[])) { if (!visited.has(nb)) { visited.add(nb); q.push(nb); } } }
-    if (comp.length > 1) components.push(comp);
-  }
-
-  const allSkus = [...new Set(components.flat())];
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const ph = allSkus.map((_, i) => '$' + (i + 1)).join(',');
-    const { rows } = await client.query(
-      `SELECT sku, oem_codes, competitor_codes, equipment_applications FROM elimfilters_catalog WHERE sku IN (${ph})`,
-      allSkus
-    );
-    const bySku = new Map(rows.map(r => [r.sku, r]));
-    let totalUpdated = 0, groupsChanged = 0;
-    const log = [];
-
-    for (const grp of components) {
-      const ms = grp.map(s => bySku.get(s)).filter(Boolean);
-      if (ms.length < 2) continue;
-      const oemU = unionArr(ms.map(m => m.oem_codes), keyOem);
-      const cmpU = unionArr(ms.map(m => m.competitor_codes), keyOem);
-      const eqU  = unionArr(ms.map(m => m.equipment_applications), keyEq);
-      let gc = false;
-      for (const m of ms) {
-        const co = (m.oem_codes||[]).length, cc = (m.competitor_codes||[]).length, ce = (m.equipment_applications||[]).length;
-        const fo = oemU.length > co ? oemU : (m.oem_codes||[]);
-        const fc = cmpU.length > cc ? cmpU : (m.competitor_codes||[]);
-        const fe = eqU.length  > ce ? eqU  : (m.equipment_applications||[]);
-        if (fo.length <= co && fc.length <= cc && fe.length <= ce) continue;
-        if (!dryRun) {
-          await client.query(
-            'UPDATE elimfilters_catalog SET oem_codes=$1::jsonb,competitor_codes=$2::jsonb,equipment_applications=$3::jsonb WHERE sku=$4',
-            [JSON.stringify(fo), JSON.stringify(fc), JSON.stringify(fe), m.sku]
-          );
-        }
-        log.push({ sku: m.sku, oem: `${co}→${fo.length}`, comp: `${cc}→${fc.length}`, equip: `${ce}→${fe.length}` });
-        totalUpdated++; gc = true;
-      }
-      if (gc) groupsChanged++;
-    }
-    res.json({ success: true, dryRun, groups: components.length, groupsChanged, totalUpdated, sample: log.slice(0, 20) });
-  } catch (e) {
-    res.status(500).json({ success: false, error: e.message });
-  } finally {
-    await client.end().catch(() => {});
-  }
-});
-
-// ── Apply competitor matrix endpoint ─────────────────────────────────────────
-app.post('/api/migrate/apply-matrix', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const fs   = require('fs');
-  const path = require('path');
-  const dryRun = req.query.dry === '1';
-  const DIR  = path.join(__dirname, 'scripts');
-
-  const FILES = [
-    { file: 'coolant_competitor_matrix.json',  prefix: 'EW' },
-    { file: 'cabin_competitor_matrix.json',    prefix: 'EC' },
-    { file: 'fuel_competitor_matrix.json',     prefix: 'EF' },
-    { file: 'airdryer_competitor_matrix.json', prefix: 'ED' },
-  ];
-
-  const client = new Client(dbConfig);
-  await client.connect();
-
-  let totalUpdated = 0;
-  const results = [];
-
-  try {
-    for (const { file, prefix } of FILES) {
-      const fpath = path.join(DIR, file);
-      if (!fs.existsSync(fpath)) { results.push({ file, error: 'not found' }); continue; }
-      const matrix = JSON.parse(fs.readFileSync(fpath, 'utf8'));
-      const pnums  = Object.keys(matrix).filter(p => matrix[p].length > 0);
-      if (!pnums.length) { results.push({ file, updated: 0 }); continue; }
-
-      const ph = pnums.map((_, i) => `$${i + 1}`).join(', ');
-      const { rows } = await client.query(
-        `SELECT sku, codigo_base FROM elimfilters_catalog
-         WHERE codigo_base IN (${ph}) AND sku LIKE $${pnums.length + 1}
-           AND (competitor_codes IS NULL OR jsonb_array_length(competitor_codes) = 0)`,
-        [...pnums, `${prefix}%`]
-      );
-
-      let updated = 0;
-      for (const { sku, codigo_base } of rows) {
-        const refs = matrix[codigo_base];
-        if (!refs || !refs.length) continue;
-        if (!dryRun) {
-          await client.query(
-            `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
-            [JSON.stringify(refs), sku]
-          );
-        }
-        updated++;
-      }
-      totalUpdated += updated;
-      results.push({ file, prefix, updated });
-    }
-  } finally {
-    await client.end();
-  }
-
-  res.json({ success: true, dryRun, totalUpdated, results });
-});
-
 // ─── CUSTOMER INTELLIGENCE ───────────────────────────────────────────────────
 
 app.post('/api/intelligence/migrate', async (req, res) => {
@@ -2588,6 +2417,8 @@ const Anthropic = require('@anthropic-ai/sdk');
 const MONTHLY_TOKEN_BUDGET = 500000; // ~$6-8/month with caching
 const CONTENT_TOKENS_PER_PAGE = 3000; // ~20 pages/month reserved
 
+const dbConfig = { connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } };
+
 // ── Migrate AI tables ────────────────────────────────────────────────────────
 app.post('/api/ai/migrate', async (req, res) => {
   const client = new Client(dbConfig);
@@ -2616,28 +2447,6 @@ app.post('/api/ai/migrate', async (req, res) => {
         published BOOLEAN DEFAULT FALSE
       )
     `);
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS ai_sessions (
-        id BIGSERIAL PRIMARY KEY,
-        session_id TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT NOW(),
-        last_active TIMESTAMP DEFAULT NOW(),
-        agent TEXT NOT NULL,
-        turn_count INTEGER DEFAULT 0
-      )
-    `);
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS ai_messages (
-        id BIGSERIAL PRIMARY KEY,
-        session_id TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT NOW(),
-        role TEXT NOT NULL,
-        content TEXT NOT NULL,
-        model_used TEXT,
-        tokens_used INTEGER DEFAULT 0
-      )
-    `);
-    await client.query(`CREATE INDEX IF NOT EXISTS idx_ai_messages_session ON ai_messages(session_id, created_at)`);
     res.json({ success: true, message: 'AI tables ready' });
   } catch(e) { res.status(500).json({ success: false, error: e.message }); }
   finally { await client.end(); }
@@ -2726,60 +2535,9 @@ Language: professional, positioning-focused.`,
 - Service interval guidance`,
 };
 
-// ── Model router (Hermes-inspired) ───────────────────────────────────────────
-function routeModel(query) {
-  const q = query.toLowerCase();
-  const complexSignals = [
-    'analiza', 'analyze', 'explica', 'explain', 'diseña', 'design',
-    'estrategia', 'strategy', 'comparar', 'compare', 'diferencia',
-    'por qué', 'why', 'cómo funciona', 'how does', 'recomienda',
-    'recommend', 'problema', 'problem', 'falla', 'failure', 'diagnos',
-  ];
-  const isComplex = complexSignals.some(s => q.includes(s)) || query.length > 200;
-  return isComplex ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
-}
-
-// ── Session memory helpers ────────────────────────────────────────────────────
-async function getSessionHistory(sessionId, limit = 10) {
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const r = await client.query(
-      `SELECT role, content FROM ai_messages
-       WHERE session_id=$1 ORDER BY created_at DESC LIMIT $2`,
-      [sessionId, limit]
-    );
-    return r.rows.reverse();
-  } catch(e) { return []; }
-  finally { await client.end(); }
-}
-
-async function saveMessage(sessionId, role, content, model, tokens) {
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    await client.query(
-      `INSERT INTO ai_messages (session_id, role, content, model_used, tokens_used)
-       VALUES ($1,$2,$3,$4,$5)`,
-      [sessionId, role, content, model || null, tokens || 0]
-    );
-    await client.query(
-      `INSERT INTO ai_sessions (session_id, agent, turn_count, last_active)
-       VALUES ($1,'unknown',1,NOW())
-       ON CONFLICT DO NOTHING`,
-      [sessionId]
-    );
-    await client.query(
-      `UPDATE ai_sessions SET last_active=NOW(), turn_count=turn_count+1
-       WHERE session_id=$1`, [sessionId]
-    );
-  } catch(e) { console.error('[saveMessage]', e.message); }
-  finally { await client.end(); }
-}
-
 // ── Main consultation endpoint ────────────────────────────────────────────────
 app.post('/api/ai/consult', async (req, res) => {
-  const { query, agent = 'technical', session_id } = req.body;
+  const { query, agent = 'technical', session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
   if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
@@ -2790,22 +2548,18 @@ app.post('/api/ai/consult', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
-  const model = routeModel(query);
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
-  // Load memory from DB if session exists
-  const sid = session_id || `anon-${Date.now()}`;
-  const history = session_id ? await getSessionHistory(session_id) : [];
 
   try {
     const messages = [
-      ...history.map(h => ({ role: h.role, content: h.content })),
+      // Cached system context turns
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
       { role: 'user', content: query },
     ];
 
     const response = await anthropic.messages.create({
-      model,
-      max_tokens: model.includes('sonnet') ? 2048 : 1024,
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
       system: [
         { type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } },
         { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
@@ -2813,20 +2567,11 @@ app.post('/api/ai/consult', async (req, res) => {
       messages,
     });
 
-    const answer = response.content[0].text;
-    const totalTokens = response.usage.input_tokens + response.usage.output_tokens;
-
-    // Persist to memory
-    await saveMessage(sid, 'user', query, model, 0);
-    await saveMessage(sid, 'assistant', answer, model, totalTokens);
-    await logUsage(agent, response.usage, sid);
+    await logUsage(agent, response.usage, session_id);
 
     res.json({
-      answer,
+      answer: response.content[0].text,
       agent,
-      model,
-      session_id: sid,
-      turn_count: history.length / 2 + 1,
       usage: {
         input: response.usage.input_tokens,
         output: response.usage.output_tokens,
@@ -2839,12 +2584,6 @@ app.post('/api/ai/consult', async (req, res) => {
     console.error('[ai/consult]', e.message);
     res.status(500).json({ error: e.message });
   }
-});
-
-// ── Session history endpoint ──────────────────────────────────────────────────
-app.get('/api/ai/session/:session_id', async (req, res) => {
-  const history = await getSessionHistory(req.params.session_id, 50);
-  res.json({ session_id: req.params.session_id, messages: history });
 });
 
 // ── Usage stats ───────────────────────────────────────────────────────────────
@@ -2975,26 +2714,6 @@ Rules: Technical tone only. No marketing language. Include ISO codes. Quantify o
   }
 });
 
-// ── Escalation email ─────────────────────────────────────────────────────────
-app.post('/api/ai/escalate', async (req, res) => {
-  const { session_id, lang, transcript } = req.body;
-  if (!transcript) return res.status(400).json({ error: 'transcript required' });
-  try {
-    const transporter = require('nodemailer').createTransport({
-      host: process.env.GODADDY_MAIL_HOST || 'smtpout.secureserver.net',
-      port: 465, secure: true,
-      auth: { user: process.env.GODADDY_MAIL_USER || 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
-    });
-    await transporter.sendMail({
-      from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
-      to: 'support@elimfilters.com',
-      subject: `[Chat Escalation] Session ${session_id} — Lang: ${lang}`,
-      text: `A customer has reached the 3-question limit and requires follow-up.\n\nSession: ${session_id}\nLanguage: ${lang}\n\n--- TRANSCRIPT ---\n\n${transcript}\n\n--- END ---\n\nPlease reply within 24 hours.`,
-    });
-    res.json({ success: true });
-  } catch(e) { res.status(500).json({ error: e.message }); }
-});
-
 // ── List generated content pages ──────────────────────────────────────────────
 app.get('/api/ai/content-pages', async (req, res) => {
   const client = new Client(dbConfig);
@@ -3007,7 +2726,240 @@ app.get('/api/ai/content-pages', async (req, res) => {
     res.json({ pages: r.rows });
   } catch(e) { res.status(500).json({ error: e.message }); }
   finally { await client.end(); }
+});
 
+// ══════════════════════════════════════════════════════════════════════════════
+// COMPETITIVE INTELLIGENCE LAYER
+// Feeds market data from NotebookLM + external sources into Hermes context
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── Migrate CI table ──────────────────────────────────────────────────────────
+app.post('/api/intel/migrate', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS competitive_intel (
+        id BIGSERIAL PRIMARY KEY,
+        created_at TIMESTAMP DEFAULT NOW(),
+        updated_at TIMESTAMP DEFAULT NOW(),
+        source_type TEXT NOT NULL,   -- 'notebooklm' | 'manual' | 'pdf' | 'web'
+        brand TEXT,                  -- 'donaldson' | 'fleetguard' | 'mann' | 'wix' | 'baldwin' | 'general'
+        category TEXT NOT NULL,      -- 'product_update' | 'pricing' | 'standard' | 'market' | 'technical'
+        title TEXT NOT NULL,
+        summary TEXT NOT NULL,       -- Structured summary for Hermes
+        raw_content TEXT,            -- Full source text
+        source_url TEXT,
+        active BOOLEAN DEFAULT TRUE,
+        priority INTEGER DEFAULT 5   -- 1=highest, 10=lowest; top items loaded into context
+      )
+    `);
+    await client.query(`
+      CREATE INDEX IF NOT EXISTS idx_intel_brand ON competitive_intel(brand);
+      CREATE INDEX IF NOT EXISTS idx_intel_category ON competitive_intel(category);
+      CREATE INDEX IF NOT EXISTS idx_intel_active ON competitive_intel(active);
+    `);
+    res.json({ success: true, message: 'Competitive intelligence table ready' });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Ingest intelligence entry ─────────────────────────────────────────────────
+// Used by the Python script and manual admin inputs
+app.post('/api/intel/ingest', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const { source_type, brand, category, title, summary, raw_content, source_url, priority } = req.body;
+  if (!title || !summary || !category) {
+    return res.status(400).json({ error: 'title, summary, category required' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `INSERT INTO competitive_intel (source_type, brand, category, title, summary, raw_content, source_url, priority)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
+      [source_type||'manual', brand||'general', category, title, summary, raw_content||null, source_url||null, priority||5]
+    );
+    res.json({ success: true, id: r.rows[0].id });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── List intelligence entries ─────────────────────────────────────────────────
+app.get('/api/intel/list', async (req, res) => {
+  const key = req.query.key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT id, created_at, source_type, brand, category, title, priority, active
+       FROM competitive_intel ORDER BY priority ASC, created_at DESC LIMIT 100`
+    );
+    res.json({ intel: r.rows });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Toggle active status ──────────────────────────────────────────────────────
+app.patch('/api/intel/:id/toggle', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `UPDATE competitive_intel SET active = NOT active, updated_at = NOW()
+       WHERE id = $1 RETURNING id, active`,
+      [req.params.id]
+    );
+    res.json({ success: true, ...r.rows[0] });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+  finally { await client.end(); }
+});
+
+// ── Load active intel into Hermes system context ──────────────────────────────
+async function loadCompetitiveIntel() {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT brand, category, title, summary
+       FROM competitive_intel
+       WHERE active = TRUE
+       ORDER BY priority ASC, created_at DESC
+       LIMIT 30`
+    );
+    if (r.rows.length === 0) return '';
+    const grouped = {};
+    for (const row of r.rows) {
+      const k = row.brand || 'general';
+      if (!grouped[k]) grouped[k] = [];
+      grouped[k].push(`[${row.category.toUpperCase()}] ${row.title}: ${row.summary}`);
+    }
+    const lines = Object.entries(grouped).map(([brand, items]) =>
+      `${brand.toUpperCase()}:\n${items.map(i => `  • ${i}`).join('\n')}`
+    ).join('\n\n');
+    return `\n\nCOMPETITIVE INTELLIGENCE (current market data):\n${lines}`;
+  } catch(e) {
+    // Table may not exist yet — silent fail
+    return '';
+  } finally {
+    await client.end();
+  }
+}
+
+// ── Use Claude to extract structured intel from raw text ──────────────────────
+app.post('/api/intel/extract', async (req, res) => {
+  const key = req.headers['x-intel-key'] || req.body.admin_key;
+  if (key !== process.env.INTEL_ADMIN_KEY && key !== 'elim2026intel') {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const { raw_text, source_url, brand } = req.body;
+  if (!raw_text) return res.status(400).json({ error: 'raw_text required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      messages: [{
+        role: 'user',
+        content: `You are analyzing competitive intelligence for ELIMFILTERS industrial filtration.
+
+Extract structured intelligence from this text and return JSON array:
+[
+  {
+    "brand": "donaldson|fleetguard|mann|wix|baldwin|general",
+    "category": "product_update|pricing|standard|market|technical",
+    "title": "Short descriptive title (max 80 chars)",
+    "summary": "1-2 sentences: what changed, why it matters for ELIMFILTERS positioning",
+    "priority": 1-10
+  }
+]
+
+Source brand hint: ${brand || 'auto-detect'}
+Source URL: ${source_url || 'not provided'}
+
+Text to analyze:
+${raw_text.slice(0, 4000)}
+
+Return only the JSON array. No markdown, no extra text.`
+      }],
+    });
+    await logUsage('intel', response.usage, null);
+    const text = response.content[0].text;
+    const match = text.match(/\[[\s\S]*\]/);
+    const extracted = JSON.parse(match ? match[0] : text);
+    res.json({ success: true, extracted });
+  } catch(e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Patch consult endpoint to load dynamic intel into system context
+// (The consult route above uses SYSTEM_CONTEXT — we extend it at request time)
+
+// ── Extended consult with competitive intel ───────────────────────────────────
+app.post('/api/ai/consult-v2', async (req, res) => {
+  const { query, agent = 'technical', session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const [budget, intelContext] = await Promise.all([
+    checkBudget('consult'),
+    loadCompetitiveIntel(),
+  ]);
+
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly consultation budget reached. Resets next month.',
+    used: budget.used, limit: budget.limit
+  });
+
+  const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  const systemWithIntel = SYSTEM_CONTEXT + intelContext;
+
+  try {
+    const messages = [
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: query },
+    ];
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      system: [
+        { type: 'text', text: systemWithIntel, cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
+      ],
+      messages,
+    });
+    await logUsage(agent, response.usage, session_id);
+    res.json({
+      answer: response.content[0].text,
+      agent,
+      intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
+      usage: {
+        input: response.usage.input_tokens,
+        output: response.usage.output_tokens,
+        cached: response.usage.cache_read_input_tokens || 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/consult-v2]', e.message);
+    res.status(500).json({ error: e.message });
+  }
 });
 
 // ────────────────────────────────────────────────────────────────────────────

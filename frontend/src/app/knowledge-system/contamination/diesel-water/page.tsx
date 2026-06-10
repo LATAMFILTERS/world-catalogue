@@ -3,10 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
-import { JSONLD_DIESEL_WATER } from '@/lib/jsonld-constants.generated';
-
-// JSON-LD: TechArticle — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
-const PAGE_JSONLD = JSONLD_DIESEL_WATER;
 
 export default function DieselWaterContaminationPage() {
   const sections = [
@@ -32,7 +28,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS® fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
+      content: 'ELIMFILTERS® fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; AQUAGUARD™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
     }
   ];
 
@@ -349,7 +345,6 @@ export default function DieselWaterContaminationPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

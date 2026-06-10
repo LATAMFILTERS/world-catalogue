@@ -5,10 +5,10 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { CustomCursor } from './CustomCursor';
 import { ScrollProgress } from './ScrollProgress';
-import { ChatWidget } from './ChatWidget';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    // Update html lang attribute when language changes
     const updateLang = (lng: string) => {
       document.documentElement.lang = lng;
       document.documentElement.dir = ['ar', 'fa', 'he'].includes(lng) ? 'rtl' : 'ltr';
@@ -23,7 +23,6 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <CustomCursor />
       <ScrollProgress />
       {children}
-      <ChatWidget />
     </I18nextProvider>
   );
 }

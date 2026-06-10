@@ -3,10 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
-import { JSONLD_CABIN_SAFETY_SYSTEMS } from '@/lib/jsonld-constants.generated';
-
-// JSON-LD: TechArticle + DefinedTermSet — auto-generated from CITATION_INDEX.json via sync-jsonld-constants.js
-const PAGE_JSONLD = JSONLD_CABIN_SAFETY_SYSTEMS;
 
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },
@@ -292,7 +288,6 @@ export default function CabinSafetySystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: PAGE_JSONLD }} />
     </main>
   );
 }

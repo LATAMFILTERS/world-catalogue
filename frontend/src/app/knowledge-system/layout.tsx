@@ -29,30 +29,5 @@ export default function KnowledgeSystemLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <style>{`
-        .ks-pullquote {
-          border-left: 3px solid #FFF12D;
-          background: rgba(255,241,45,0.04);
-          padding: 1.25rem 1.5rem;
-          margin: 2rem 0;
-          font-family: Outfit, sans-serif;
-          font-size: 1.05rem;
-          line-height: 1.7;
-          color: rgba(255,255,255,0.85);
-          font-style: italic;
-        }
-        .ks-metric {
-          color: #FFF12D;
-          font-weight: 700;
-          font-size: 1.15em;
-        }
-        @media (max-width: 900px) {
-          .ks-progress-rail { display: none !important; }
-        }
-      `}</style>
-      {children}
-    </>
-  );
+  return children;
 }

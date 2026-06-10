@@ -11,9 +11,7 @@ const AGENTS = [
   { id: 'marketing', label: 'Marketing', desc: 'Content strategy, positioning' },
 ];
 
-interface Message { role: 'user' | 'assistant'; content: string; agent?: string; cached?: number; model?: string; }
-
-function genSessionId() { return `s-${Date.now()}-${Math.random().toString(36).slice(2,8)}`; }
+interface Message { role: 'user' | 'assistant'; content: string; agent?: string; cached?: number; intel?: number; }
 
 export default function ConsultPage() {
   const [agent, setAgent] = useState('technical');
@@ -24,8 +22,6 @@ export default function ConsultPage() {
   const [budgetInfo, setBudgetInfo] = useState<{ used: number; limit: number } | null>(null);
   const [generating, setGenerating] = useState(false);
   const [contentGenerated, setContentGenerated] = useState<{ slug: string; title: string } | null>(null);
-  const [sessionId] = useState(genSessionId);
-  const [turnCount, setTurnCount] = useState(0);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
@@ -39,13 +35,13 @@ export default function ConsultPage() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/ai/consult', {
+      const res = await fetch('/api/ai/consult-v2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           query: userMsg,
           agent,
-          session_id: sessionId,
+          history: messages.slice(-6),
         }),
       });
       const data = await res.json();
@@ -55,10 +51,9 @@ export default function ConsultPage() {
         content: data.answer,
         agent: data.agent,
         cached: data.usage?.cached,
-        model: data.model,
+        intel: data.intel_entries,
       }]);
       setBudgetInfo({ used: data.budget_used, limit: data.budget_limit });
-      setTurnCount(data.turn_count || 0);
     } catch(e: unknown) {
       setError(e instanceof Error ? e.message : 'Unknown error');
     } finally {
@@ -99,11 +94,8 @@ export default function ConsultPage() {
         <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           ELIMFILTERS Expert AI
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '0.75rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '2rem', lineHeight: 1.6 }}>
           Specialized sub-agents for technical, sales, support, and marketing consultations.
-        </p>
-        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.2)', marginBottom: '2rem' }}>
-          SESSION {sessionId} {turnCount > 0 ? `· ${turnCount} turns` : ''} · memory active
         </p>
 
         {/* Agent selector */}
@@ -153,9 +145,7 @@ export default function ConsultPage() {
               >
                 {m.role === 'assistant' && (
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', marginBottom: '0.35rem' }}>
-                    {m.agent?.toUpperCase()} AGENT
-                    {m.model?.includes('sonnet') ? ' · sonnet' : ' · haiku'}
-                    {m.cached ? ` · ${m.cached} cached` : ''}
+                    {m.agent?.toUpperCase()} AGENT {m.cached ? `· ${m.cached} cached` : ''}{m.intel ? ` · ${m.intel} intel` : ''}
                   </p>
                 )}
                 <div style={{
