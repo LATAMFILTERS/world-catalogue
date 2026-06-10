@@ -185,7 +185,7 @@ export function Footer() {
             transition={{ duration: 0.3 }}
           >
             <img
-              src="/images/Leo-fn.avif"
+              src="/images/KLEO-TECHNOLOGY-fn.avif"
               alt="Kleo Technologies"
               style={{
                 maxHeight: '55px',
