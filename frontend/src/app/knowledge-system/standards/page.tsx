@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -52,6 +53,7 @@ const FILTRATION_SYSTEMS = [
 export default function StandardsHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       {/* Back */}
       <Link href="/knowledge-system" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
@@ -244,6 +245,7 @@ export default function IndustriesPage() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       <style>{`
         @media (max-width: 768px) {
           .industries-grid { grid-template-columns: 1fr !important; }

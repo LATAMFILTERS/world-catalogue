@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 const INPUT_STYLE: React.CSSProperties = {
   width: '100%',
@@ -73,6 +74,7 @@ export default function Contact() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

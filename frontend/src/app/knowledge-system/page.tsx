@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
@@ -182,6 +183,7 @@ function SectionCard({ section, index }: { section: typeof SECTIONS[0]; index: n
 export default function KnowledgeSystemPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       <style>{`
         @media (max-width: 768px) {
           .knowledge-grid { grid-template-columns: 1fr !important; }

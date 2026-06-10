@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
@@ -194,6 +195,7 @@ export default function TechnologiesPage() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── PAGE HERO ── */}
