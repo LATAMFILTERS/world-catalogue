@@ -23,3 +23,7 @@ graphify-out/
 
 # Obsidian local configuration
 elimfilters-vault/.obsidian/
+
+# Next.js build output — generated, never commit
+frontend/out/
+frontend/.next/

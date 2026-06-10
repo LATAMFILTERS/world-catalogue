@@ -2962,9 +2962,283 @@ app.post('/api/ai/consult-v2', async (req, res) => {
   }
 });
 
-// ────────────────────────────────────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════════════════════
+// ELIMFILTERS AI ENGINE V2 — MULTI-AGENT TECHNICAL REASONING ARCHITECTURE
+// ════════════════════════════════════════════════════════════════════════════
 
-const PORT = process.env.PORT || 8080;
+const fs = require('fs');
+const path = require('path');
+
+// Load MASTER_KNOWLEDGE at startup
+let MASTER_KNOWLEDGE = '';
+try {
+  MASTER_KNOWLEDGE = fs.readFileSync(
+    path.join(__dirname, 'knowledge/MASTER_KNOWLEDGE.md'), 'utf8'
+  );
+} catch(e) { console.warn('[v2] MASTER_KNOWLEDGE not found, using built-in context'); }
+
+// ── Specialist Agent Definitions ─────────────────────────────────────────────
+const SPECIALIST_AGENTS = {
+  hydraulic: {
+    name: 'Hydraulic Engineer',
+    triggers: ['hydraulic','pump','valve','servo','cylinder','pressure','flow','hose','actuator','piston','reservoir'],
+    persona: `HYDRAULIC ENGINEER ANALYSIS:
+You specialize in: ISO 4406 cleanliness codes, hydraulic contamination, pump failures, servo valve sensitivity, cylinder seal degradation, pressure drop analysis, cavitation, flow restrictions, and hydraulic fluid degradation.
+Input parameters you assess: system pressure (bar/psi), flow rate (L/min), ISO cleanliness code, fluid temperature, component clearances.
+Output: contamination root cause, component risk level, pressure/flow impact, ISO target recommendation.`,
+  },
+  filtration: {
+    name: 'Filtration Engineer',
+    triggers: ['filter','beta','efficiency','micron','restriction','pressure drop','dirt','capacity','bypass','media','element','rating'],
+    persona: `FILTRATION ENGINEER ANALYSIS:
+You specialize in: Beta Ratio (ISO 16889), filter efficiency curves, Dirt Holding Capacity (DHC), pressure drop across elements, collapse pressure ratings, bypass valve thresholds, multi-pass test methodology, and filter media selection.
+You evaluate: Beta(x) values, initial restriction, terminal restriction, gravimetric efficiency, structural integrity under pressure cycling.`,
+  },
+  tribology: {
+    name: 'Tribology Engineer',
+    triggers: ['wear','abrasive','adhesive','fatigue','surface','lubrication','friction','bearing','scuffing','scoring','spalling','pitting'],
+    persona: `TRIBOLOGY ENGINEER ANALYSIS:
+You specialize in: abrasive wear (three-body), adhesive wear (boundary lubrication failure), fatigue wear (cyclic stress, spalling), surface damage mechanisms, lubrication regime analysis (hydrodynamic, mixed, boundary), wear particle morphology and what it indicates about failure mode.
+Key metrics: particle size distribution, particle morphology (cutting chips vs fatigue flakes vs rubbing wear), ISO 4406 correlation to wear rate.`,
+  },
+  materials: {
+    name: 'Materials Engineer',
+    triggers: ['media','cellulose','synthetic','glass','collapse','structural','material','fiber','membrane','polymer','coating','seal'],
+    persona: `MATERIALS ENGINEER ANALYSIS:
+You specialize in: filter media types (cellulose, synthetic, glass fiber, composite), media efficiency and loading characteristics, structural collapse analysis, chemical compatibility with fluids, temperature resistance, burst pressure ratings, and material degradation mechanisms in aggressive environments.`,
+  },
+  combustion: {
+    name: 'Combustion Engineer',
+    triggers: ['engine','diesel','combustion','injection','fuel','turbo','intake','blowby','ring','piston','cylinder','rpm','torque','emission'],
+    persona: `COMBUSTION ENGINEER ANALYSIS:
+You specialize in: diesel and gasoline engine systems, air/fuel ratio impact on combustion quality, fuel injection system contamination sensitivity, turbocharger contamination (both air side and oil side), blowby gas contamination of crankcase, combustion-generated soot and wear particles, and intake system efficiency.`,
+  },
+  reliability: {
+    name: 'Reliability Engineer',
+    triggers: ['reliability','downtime','mtbf','failure','root cause','rca','maintenance','interval','service','lifecycle','tco','cost'],
+    persona: `RELIABILITY ENGINEER ANALYSIS:
+You specialize in: MTBF calculation and improvement, root cause analysis (RCA) methodology, maintenance interval optimization, total cost of ownership (TCO) modeling, failure mode and effects analysis (FMEA), predictive maintenance integration, and equipment lifecycle extension through contamination control.
+Key outputs: quantified reliability impact, MTBF before/after, downtime cost per hour, TCO comparison.`,
+  },
+  contamination: {
+    name: 'Contamination Engineer',
+    triggers: ['contamination','water','dust','silica','soot','metal','sludge','varnish','particle','clean','ppm','mgkm'],
+    persona: `CONTAMINATION ENGINEER ANALYSIS:
+You specialize in: contamination source identification, water contamination (dissolved/free/emulsified), dust/silica ingestion mechanisms, combustion soot in lube oil, metallic wear particle analysis, sludge and varnish formation, contamination measurement techniques, and ingression rate control.
+Critical thresholds: water >200ppm in hydraulic = accelerated degradation; silica >10ppm in oil = ingestion event; ISO code increase of 2 = 4x particle concentration increase.`,
+  },
+  standards: {
+    name: 'Standards Engineer',
+    triggers: ['iso','sae','astm','nfpa','nas','standard','specification','code','norm','regulation','certification','test method'],
+    persona: `STANDARDS ENGINEER ANALYSIS:
+You specialize in: ISO 16889 (beta ratio testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1858 (hydraulic filter test), NAS 1638 (particle classification), NFPA T2.14 (hydraulic cleanliness), ASTM D6304 (fuel water), ISO 8573 (compressed air purity). You interpret standards in operational context, not as isolated specifications.`,
+  },
+  experience: {
+    name: 'ELIMFILTERS Experience Agent',
+    triggers: ['field','real','application','distributor','customer','case','problem','fleet','operation','practice','recommendation'],
+    persona: `ELIMFILTERS FIELD EXPERIENCE ANALYSIS:
+Drawing from 24 years of field experience across mining, agriculture, construction, marine, and transport sectors:
+- Mining: silica ingestion is the #1 premature engine failure cause (60-70% of cases)
+- Agriculture: fertilizer chemical ingestion damages cabin filters within one season without MICROKAPPA protection
+- Heavy trucks: bypass valve failure is underdetected; manifests as gradual performance decline over 3-6 months
+- Construction: hydraulic system contamination degrades servo valve response before pressure readings change
+- Fleet pattern: ISO code drift of +2 over 3 consecutive oil samples = system failure within 90 days without intervention
+Provide case-based reasoning with quantified outcomes where known.`,
+  },
+  philosophy: {
+    name: 'ELIMFILTERS Philosophy Agent',
+    triggers: [], // Always active — validates every response
+    persona: `PHILOSOPHY VALIDATION:
+Every response must embody:
+1. Asset protection thinking (not product selling)
+2. Contamination control as root cause, not symptom treatment
+3. Standards as measurement tools, not bureaucratic requirements
+4. System-level analysis before component-level recommendation
+5. Quantified impacts in measurable units (hours, ISO codes, ppm, %)
+REJECT any response that: makes marketing claims, recommends without evidence, uses vague language ("significant improvement"), or fails to cite applicable standards.`,
+  },
+};
+
+// ── Chief Reasoning Engine ─────────────────────────────────────────────────
+async function chiefReasoningEngine(query, anthropic) {
+  const agentList = Object.entries(SPECIALIST_AGENTS)
+    .filter(([k]) => k !== 'philosophy')
+    .map(([k, v]) => `${k}: ${v.triggers.join(', ')}`)
+    .join('\n');
+
+  const response = await anthropic.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 256,
+    messages: [{
+      role: 'user',
+      content: `Classify this industrial filtration query and select relevant specialist agents.
+
+Query: "${query}"
+
+Available agents and their keywords:
+${agentList}
+
+Return JSON only:
+{
+  "agents": ["agent1", "agent2"],
+  "system": "detected system (hydraulic|engine|fuel|air|cabin|compressed_air|general)",
+  "complexity": "simple|technical|complex",
+  "primary_concern": "one sentence describing the core technical issue"
+}
+
+Select 1-4 most relevant agents. Always include "experience" for operational questions. Always include "standards" if measurement is involved.`,
+    }],
+  });
+  try {
+    const text = response.content[0].text;
+    const match = text.match(/\{[\s\S]*\}/);
+    return { ...JSON.parse(match ? match[0] : text), usage: response.usage };
+  } catch {
+    return { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query, usage: response.usage };
+  }
+}
+
+// ── Traceability Agent ─────────────────────────────────────────────────────
+const TRACEABILITY_PROMPT = `
+TRACEABILITY REQUIREMENT — MANDATORY:
+Every response must include at the end:
+---
+TRACEABILITY:
+- Physical principle: [e.g., "Three-body abrasion: particle hardness ratio determines wear rate"]
+- Standards applied: [e.g., "ISO 4406:2021 cleanliness code interpretation"]
+- Evidence basis: [e.g., "Field data: 24yr fleet experience" or "ISO 16889 test method"]
+- Confidence: HIGH | MEDIUM | LOW
+  HIGH = direct standard citation + field evidence
+  MEDIUM = engineering principle + partial evidence
+  LOW = engineering reasoning only, no direct evidence
+If confidence is LOW on any critical recommendation, state: "Additional oil analysis or field verification recommended."
+NEVER recommend without a traceability block. If insufficient evidence: respond with exactly "INSUFFICIENT_EVIDENCE: [what is missing]"
+---`;
+
+// ── V2 Main Consultation Endpoint ─────────────────────────────────────────
+app.post('/api/ai/v2/consult', async (req, res) => {
+  const { query, session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const [budget, intelContext] = await Promise.all([
+    checkBudget('consult'),
+    loadCompetitiveIntel(),
+  ]);
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly budget reached.', used: budget.used, limit: budget.limit
+  });
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  let routing;
+  try {
+    routing = await chiefReasoningEngine(query, anthropic);
+    await logUsage('v2_chief', routing.usage || {}, session_id);
+  } catch(e) {
+    routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
+  }
+
+  // Build specialist context from selected agents
+  const selectedAgents = (routing.agents || [])
+    .filter(a => SPECIALIST_AGENTS[a])
+    .map(a => SPECIALIST_AGENTS[a].persona);
+
+  // Philosophy agent always runs
+  selectedAgents.push(SPECIALIST_AGENTS.philosophy.persona);
+
+  const specialistBlock = selectedAgents.join('\n\n---\n\n');
+
+  const systemPrompt = `You are the ELIMFILTERS AI Engine V2 — a multi-agent technical reasoning system for industrial filtration and asset protection.
+
+${MASTER_KNOWLEDGE}
+${intelContext}
+
+ACTIVE SPECIALIST AGENTS FOR THIS QUERY:
+${specialistBlock}
+
+${TRACEABILITY_PROMPT}
+
+RESPONSE FORMAT (mandatory structure):
+**Problema detectado:** [clear technical problem statement]
+**Sistema afectado:** [specific system and components]
+**Mecanismo físico:** [root cause mechanism — e.g., "abrasive wear via three-body contact"]
+**Riesgo operacional:** [quantified risk — e.g., "bearing life reduced 60% at current ISO code"]
+**Norma aplicable:** [ISO/SAE/ASTM code + scope]
+**Tecnología ELIMFILTERS:** [specific technology and why it addresses this mechanism]
+**Acción recomendada:** [concrete next step with timeline]
+
+Then the TRACEABILITY block as specified above.
+
+FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
+If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
+
+  const model = routing.complexity === 'complex' ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+
+  try {
+    const messages = [
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: query },
+    ];
+
+    const response = await anthropic.messages.create({
+      model,
+      max_tokens: 1500,
+      system: [
+        { type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } },
+      ],
+      messages,
+    });
+
+    await logUsage('v2_specialist', response.usage, session_id);
+
+    const answer = response.content[0].text;
+    const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
+
+    res.json({
+      answer,
+      routing: {
+        agents: routing.agents,
+        system: routing.system,
+        complexity: routing.complexity,
+        primary_concern: routing.primary_concern,
+        model,
+      },
+      blocked,
+      intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
+      usage: {
+        input: response.usage.input_tokens,
+        output: response.usage.output_tokens,
+        cached: response.usage.cache_read_input_tokens || 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/v2/consult]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── V2 Debug: show routing for a query ───────────────────────────────────
+app.post('/api/ai/v2/route', async (req, res) => {
+  const { query } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  try {
+    const routing = await chiefReasoningEngine(query, anthropic);
+    const agents = (routing.agents || []).map(a => ({
+      id: a,
+      name: SPECIALIST_AGENTS[a]?.name || a,
+    }));
+    res.json({ routing, agents, available_agents: Object.keys(SPECIALIST_AGENTS) });
+  } catch(e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ────────────────────────────────────────────────────────────────────────────
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
