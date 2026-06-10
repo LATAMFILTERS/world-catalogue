@@ -183,9 +183,9 @@ export default function Home() {
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
-                fontSize: 'clamp(3rem, 11vw, 11rem)',
-                lineHeight: 0.88,
-                letterSpacing: '-0.03em',
+                fontSize: 'clamp(3rem, 8vw, 6rem)',
+                lineHeight: 0.9,
+                letterSpacing: '-0.02em',
                 color: '#fff',
                 margin: 0,
               }}
@@ -218,7 +218,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
               style={{
-                fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
+                fontFamily: 'Outfit, sans-serif', fontSize: '0.8rem',
                 color: 'rgba(255,255,255,0.45)',
                 borderLeft: '1px solid rgba(255,255,255,0.12)',
                 paddingLeft: '2rem',
@@ -359,7 +359,7 @@ export default function Home() {
                   marginBottom: '0.9rem', letterSpacing: '0.05em',
                 }}>{fm.title}</h3>
                 <p style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.75,
                 }}>{fm.desc}</p>
               </motion.div>
@@ -412,7 +412,7 @@ export default function Home() {
                     color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '-0.01em',
                   }}>{t.code}</div>
                   <div style={{
-                    fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
+                    fontFamily: 'Outfit, sans-serif', fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.4)', marginBottom: '2.5rem',
                   }}>{t.role}</div>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.25rem' }}>
@@ -459,7 +459,7 @@ export default function Home() {
             </RevealLine>
             <RevealLine delay={0.16}>
               <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: '0.9rem',
+                fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
                 color: 'rgba(255,255,255,0.5)', lineHeight: 1.8,
                 marginBottom: '2rem',
               }}>
@@ -508,7 +508,7 @@ export default function Home() {
                   flexShrink: 0,
                 }} />
                 <span style={{
-                  fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
+                  fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem',
                   color: i === 0 ? '#fff' : 'rgba(255,255,255,0.4)',
                 }}>
                   {step}
@@ -547,7 +547,7 @@ export default function Home() {
             </RevealLine>
             <RevealLine delay={0.1}>
               <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: '0.9rem',
+                fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
                 color: 'rgba(0,0,0,0.55)', marginTop: '1rem', margin: 0,
               }}>
                 20,000+ cross-references. Search by OEM part number.
