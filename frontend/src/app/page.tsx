@@ -36,7 +36,7 @@ const CTA_SLIDES = [
   {
     tag: '// DEALER NETWORK',
     title: 'ONLY THE BEST',
-    highlight: 'SELL ELIMFILTERS®.',
+    highlight: 'SELL ELIMFILTERS.',
     buttonText: 'BECOME A DEALER',
     href: '/distributor-application',
   },
@@ -387,7 +387,7 @@ export default function Home() {
                 marginBottom: '1.25rem',
               }}
             >
-              ELIMFILTERS® | ASSET PROTECTION TECHNOLOGY
+              ELIMFILTERS | ASSET PROTECTION TECHNOLOGY
             </motion.p>
 
             {/* Split text H1 */}

@@ -39,7 +39,7 @@ const NAV_COLUMNS = [
 ];
 
 const SOCIAL = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/elimfilters', letter: 'in' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/elimfilters', letter: 'in' },
   { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
   { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
 ];
@@ -185,7 +185,7 @@ export function Footer() {
             transition={{ duration: 0.3 }}
           >
             <img
-              src="/images/Leo-fn.avif"
+              src="/images/KLEO-TECHNOLOGY-fn.avif"
               alt="Kleo Technologies"
               style={{
                 maxHeight: '55px',
