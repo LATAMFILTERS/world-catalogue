@@ -1,0 +1,66 @@
+{
+  "entry_key": "TRUCKS_FLEETS",
+  "path_count": 5,
+  "paths": [
+    {
+      "path_id": "PATH_B_TRUCKS_FLEETS_084",
+      "path_type": "B",
+      "entry_node": "TRUCKS_FLEETS",
+      "entry_type": "industry",
+      "industry": "TRUCKS_FLEETS",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_084.json"
+    },
+    {
+      "path_id": "PATH_B_TRUCKS_FLEETS_085",
+      "path_type": "B",
+      "entry_node": "TRUCKS_FLEETS",
+      "entry_type": "industry",
+      "industry": "TRUCKS_FLEETS",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_085.json"
+    },
+    {
+      "path_id": "PATH_B_TRUCKS_FLEETS_086",
+      "path_type": "B",
+      "entry_node": "TRUCKS_FLEETS",
+      "entry_type": "industry",
+      "industry": "TRUCKS_FLEETS",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_086.json"
+    },
+    {
+      "path_id": "PATH_B_TRUCKS_FLEETS_087",
+      "path_type": "B",
+      "entry_node": "TRUCKS_FLEETS",
+      "entry_type": "industry",
+      "industry": "TRUCKS_FLEETS",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_087.json"
+    },
+    {
+      "path_id": "PATH_B_TRUCKS_FLEETS_088",
+      "path_type": "B",
+      "entry_node": "TRUCKS_FLEETS",
+      "entry_type": "industry",
+      "industry": "TRUCKS_FLEETS",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_088.json"
+    }
+  ]
+}

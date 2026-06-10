@@ -20,16 +20,16 @@ const FAILURE_MODES = [
   },
   {
     num: '03',
-    title: 'Fuel Drainage',
-    desc: 'A restricted engine consumes up to 8% more diesel just to maintain the same torque levels.',
+    title: 'Fuel Efficiency Loss',
+    desc: 'Contaminated fuel systems force engines to consume up to 8% more diesel to maintain the same torque output.',
   },
 ];
 
 const STATS = [
-  { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency' },
-  { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
-  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs' },
-  { value: null, display: 'GLOBAL', label: 'Distribution' },
+  { value: 99.9, prefix: '', suffix: '%', label: 'Filtration Efficiency' },
+  { value: 45, prefix: '+', suffix: '%', label: 'Asset Life Extension' },
+  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross References' },
+  { value: null, display: 'GLOBAL', label: 'Distribution Network' },
 ];
 
 const CTA_SLIDES = [
@@ -278,7 +278,7 @@ export default function Home() {
                 marginBottom: '1.25rem',
               }}
             >
-              ELIMFILTERS® | TOTAL PROTECTION SYSTEMS
+              ELIMFILTERS® | ASSET PROTECTION TECHNOLOGY
             </motion.p>
 
             {/* Split text H1 */}
@@ -295,17 +295,18 @@ export default function Home() {
                 perspective: '600px',
               }}
             >
-              <SplitText text="ENGINE FILTRATION" startDelay={0.35} />
+              <SplitText text="PROTECTING INDUSTRIAL ASSETS" startDelay={0.35} />
             </h1>
 
             <h2
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.1rem, 4vw, 3.5rem)',
-                lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
-                textTransform: 'uppercase',
+                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                lineHeight: 1.5,
+                color: 'rgba(255,255,255,0.65)',
+                textTransform: 'none',
+                maxWidth: '640px',
                 marginBottom: '2.5rem',
                 overflow: 'hidden',
               }}
@@ -316,7 +317,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
                 style={{ display: 'block' }}
               >
-                HEAVY-DUTY AND LIGHT-DUTY
+                Through contamination control across critical mechanical, hydraulic, fuel, lubrication, cooling and air intake systems.
               </motion.span>
             </h2>
 
@@ -333,21 +334,20 @@ export default function Home() {
                 gap: '2rem',
               }}
             >
-              <p
+              <div
                 style={{
                   maxWidth: '560px',
-                  color: 'rgba(255,255,255,0.75)',
-                  fontStyle: 'italic',
                   borderLeft: '3px solid #FFF12D',
                   paddingLeft: '1.5rem',
-                  fontSize: '1.1rem',
-                  lineHeight: 1.65,
-                  fontFamily: 'Outfit, sans-serif',
                 }}
               >
-                Engineering filtration designed for those who cannot afford a stalled engine or a
-                fleet out of action.
-              </p>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, fontFamily: 'Outfit, sans-serif', marginBottom: '0.25rem' }}>
+                  ELIMFILTERS is not a filter company.
+                </p>
+                <p style={{ color: '#FFF12D', fontSize: '1rem', lineHeight: 1.6, fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}>
+                  ELIMFILTERS is an Asset Protection Technology company.
+                </p>
+              </div>
               <motion.a
                 href="https://part-search.elimfilters.com"
                 target="_blank"
@@ -472,7 +472,7 @@ export default function Home() {
                   lineHeight: 1.8,
                   marginBottom: '1.5rem',
                 }}>
-                  ELIMFILTERS® protects industrial assets by controlling contamination across critical mechanical and fluid systems. We extend equipment life, improve operational efficiency, and reduce total cost of ownership through advanced filtration technologies engineered for heavy-duty industrial applications.
+                  ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.
                 </p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
@@ -482,7 +482,7 @@ export default function Home() {
                   paddingLeft: '1.25rem',
                   borderLeft: '3px solid #FFF12D',
                 }}>
-                  Our engineering approach starts with understanding contamination mechanisms, documenting failure modes, integrating international standards, and designing technologies that protect your most critical assets from degradation.
+                  Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.
                 </p>
               </div>
               <div style={{
@@ -549,9 +549,9 @@ export default function Home() {
                   marginBottom: '3.5rem',
                 }}
               >
-                WHAT YOU CAN&apos;T SEE,
+                WHAT YOU CAN&apos;T SEE
                 <br />
-                <span style={{ color: '#FFF12D' }}>IS STOPPING YOUR FLEET.</span>
+                <span style={{ color: '#FFF12D' }}>IS STOPPING YOUR OPERATION.</span>
               </motion.h2>
             </motion.div>
 
@@ -588,9 +588,7 @@ export default function Home() {
                     fontFamily: 'Outfit, sans-serif',
                   }}
                 >
-                  A low-quality filter is an economic decision that ends up costing thousands at
-                  the shop. Inefficient filtration allows invisible contaminants to act like
-                  sandpaper inside critical components.
+                  80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {FAILURE_MODES.map(item => (
@@ -693,7 +691,7 @@ export default function Home() {
                 marginBottom: '3.5rem',
               }}
             >
-              WHY CHOOSE <span style={{ color: '#FFF12D' }}>ELIMFILTERS®</span>
+              ASSET PROTECTION <span style={{ color: '#FFF12D' }}>TECHNOLOGY</span>
             </motion.h2>
 
             <div
@@ -708,12 +706,12 @@ export default function Home() {
               >
                 {[
                   {
-                    text: 'ELIMFILTERS® is more than a filter manufacturer. We are a company specialized in ',
+                    text: 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ',
                     highlight: 'Asset Protection Technology',
-                    after: ', designing solutions that preserve the value and operability of your equipment in the most demanding environments.',
+                    after: ' company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.',
                   },
                   {
-                    text: 'Every product we develop responds to one reality: the equipment that stops your operation costs hundreds of thousands to repair. A filter is the guardian of that investment.',
+                    text: 'Every technology we build addresses a measurable contamination threat. Equipment that fails costs hundreds of thousands to repair. We protect that investment at the system level, not the product level.',
                   },
                 ].map((p, i) => (
                   <motion.p
@@ -728,10 +726,10 @@ export default function Home() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
-                    'German engineering in industrial filtration',
-                    '25+ years protecting fleets and critical equipment',
-                    'Compliance with international ISO standards',
-                    'Technical support across 12+ industries',
+                    'System-level contamination control, not product replacement',
+                    '25+ years protecting high-value industrial assets',
+                    'Engineering standards: ISO 5011 · 16889 · 19438 · 4406',
+                    'Deployed across 12 industries — mining, marine, agriculture and more',
                   ].map((item, i) => (
                     <motion.div
                       key={item}
@@ -767,14 +765,14 @@ export default function Home() {
                     Your equipment is worth millions.<br />Protect it accordingly.
                   </h3>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
-                    ELIMFILTERS® engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.
+                    Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[
-                      'AI-formulated multi-layer protection matrix',
-                      'Zero bypass architecture on every system',
-                      'ISO 5011 · 16332 · 16889 · 19438 certified',
-                      '20,000+ OEM asset cross-references',
+                      'AI-Formulated Hybrid Media',
+                      'Hydrophobic Separation Systems',
+                      'Anti-Bypass Structures',
+                      '20,000+ OEM cross-references validated',
                     ].map(item => (
                       <li key={item} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>◆</span>
