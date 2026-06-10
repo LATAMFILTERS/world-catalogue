@@ -35,7 +35,22 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography */
+/* Paragraphs — justified, no hyphenation */
+p {
+  text-align: justify;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
+/* ® symbol as superscript */
+sup {
+  font-size: 0.6em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+
 .font-heading {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-weight: 700;

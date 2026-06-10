@@ -462,17 +462,19 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
           >
             CONTAMINATION TARGETS
           </p>
-          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.4rem' }}>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.6rem' }}>
             {sys.contaminants.map((c, i) => (
               <li
                 key={i}
                 style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.72rem',
-                  lineHeight: 1.6,
-                  color: 'rgba(255,255,255,0.55)',
-                  paddingLeft: '1rem',
+                  fontFamily: 'Titillium Web, sans-serif',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.65,
+                  color: 'rgba(255,255,255,0.78)',
+                  paddingLeft: '1.25rem',
                   position: 'relative',
+                  textAlign: 'justify',
+                  hyphens: 'none',
                 }}
               >
                 <span
