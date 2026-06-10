@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, useScroll, useTransform, useSpring, animate } from 'motion/react';
+import { motion, useInView, animate } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
@@ -178,11 +178,7 @@ export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Parallax
   const heroRef = useRef<HTMLElement>(null);
-  const { scrollY } = useScroll();
-  const rawBgY = useTransform(scrollY, [0, 700], [0, 180]);
-  const bgY = useSpring(rawBgY, { stiffness: 80, damping: 20 });
 
   useEffect(() => {
     setProgress(0);
@@ -242,17 +238,31 @@ export default function Home() {
             overflow: 'hidden',
           }}
         >
-          {/* Parallax background */}
-          <motion.div
+          {/* Video background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             style={{
               position: 'absolute',
-              inset: '-25%',
-              backgroundImage:
-                'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.9) 100%), url(/images/hero-bg.jpg)',
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              y: bgY,
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
               zIndex: 0,
+            }}
+          >
+            <source src="/videos/moleculas.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for legibility */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.88) 100%)',
+              zIndex: 1,
             }}
           />
 
@@ -262,7 +272,7 @@ export default function Home() {
               margin: '0 auto',
               width: '100%',
               position: 'relative',
-              zIndex: 10,
+              zIndex: 2,
             }}
           >
             <motion.p
@@ -640,9 +650,10 @@ export default function Home() {
                     height: '100%',
                     minHeight: '480px',
                     backgroundImage: 'url(/images/mecanico-fn.avif)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center top',
+                    backgroundSize: 'contain',
+                    backgroundPosition: 'center center',
                     backgroundRepeat: 'no-repeat',
+                    backgroundColor: 'transparent',
                   }}
                 />
                 <motion.div
