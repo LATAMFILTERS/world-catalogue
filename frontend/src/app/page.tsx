@@ -254,7 +254,7 @@ export default function Home() {
               zIndex: 0,
             }}
           >
-            <source src="/videos/moleculas.mp4" type="video/mp4" />
+            <source src="/images/moleculas.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay for legibility */}
           <div
