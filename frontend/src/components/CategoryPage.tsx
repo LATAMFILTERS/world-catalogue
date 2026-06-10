@@ -354,8 +354,8 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 900,
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
                   letterSpacing: '-0.01em',
@@ -421,8 +421,8 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 900,
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
                   letterSpacing: '-0.01em',
@@ -560,8 +560,8 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 900,
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 700,
                   fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
                   color: '#fff',
                   letterSpacing: '-0.01em',
@@ -569,7 +569,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                WHY ELIMFILTERS®
+                WHY ELIMFILTERS
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {(item.benefits || [
@@ -616,7 +616,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             >
               <h3
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
+                  fontFamily: 'Space Grotesk, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.72rem',
                   letterSpacing: '0.15em',

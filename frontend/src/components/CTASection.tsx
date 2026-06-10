@@ -36,39 +36,64 @@ export function CTASection({
     <section
       ref={sectionRef}
       style={{
-        background: '#FFF12D',
-        padding: '6rem 2rem',
+        background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, transparent 60%)',
+        borderTop: '1px solid rgba(255,241,45,0.15)',
+        padding: 'clamp(3.5rem, 7vw, 6rem) 2rem',
         textAlign: 'center',
       }}
     >
       <div
         style={{
-          maxWidth: '700px',
+          maxWidth: '680px',
           margin: '0 auto',
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0)' : 'translateY(24px)',
           transition: 'opacity 0.7s ease, transform 0.7s ease',
         }}
       >
-        <h2
+        <p
           style={{
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: 900,
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-            color: '#000',
-            letterSpacing: '-0.02em',
-            lineHeight: 1.05,
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.22em',
+            color: '#FFF12D',
             marginBottom: '1.25rem',
           }}
         >
-          {title}
+          // ASSET PROTECTION
+        </p>
+        <h2
+          style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontWeight: 300,
+            fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+            color: 'rgba(255,255,255,0.92)',
+            lineHeight: 1.15,
+            marginBottom: '0.4rem',
+            letterSpacing: '-0.01em',
+          }}
+        >
+          {title.split(' ').slice(0, Math.ceil(title.split(' ').length / 2)).join(' ')}
+        </h2>
+        <h2
+          style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontWeight: 600,
+            fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+            color: '#FFF12D',
+            lineHeight: 1.15,
+            marginBottom: '1.5rem',
+            letterSpacing: '-0.01em',
+          }}
+        >
+          {title.split(' ').slice(Math.ceil(title.split(' ').length / 2)).join(' ')}
         </h2>
         <p
           style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(0,0,0,0.65)',
-            lineHeight: 1.7,
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: '0.95rem',
+            color: 'rgba(255,255,255,0.5)',
+            lineHeight: 1.75,
             marginBottom: '2.5rem',
             maxWidth: '520px',
             margin: '0 auto 2.5rem',
@@ -76,35 +101,36 @@ export function CTASection({
         >
           {description}
         </p>
-        <a
-          href={buttonHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-block',
-            background: '#000',
-            color: '#FFF12D',
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: 700,
-            fontSize: '0.85rem',
-            letterSpacing: '0.12em',
-            padding: '1.1rem 3rem',
-            textDecoration: 'none',
-            transition: 'all 0.25s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#111';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.4)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#000';
-            e.currentTarget.style.transform = 'none';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        >
-          {buttonText} →
-        </a>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <a
+            href={buttonHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              background: '#FFF12D',
+              color: '#000',
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 700,
+              fontSize: '0.78rem',
+              letterSpacing: '0.12em',
+              padding: '0.85rem 2.5rem',
+              textDecoration: 'none',
+              transition: 'all 0.25s ease',
+              borderRadius: '2px',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 32px rgba(255,241,45,0.45)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = 'none';
+              e.currentTarget.style.transform = 'none';
+            }}
+          >
+            {buttonText} →
+          </a>
+        </div>
       </div>
     </section>
   );
