@@ -30,6 +30,18 @@ export default function CustomerIntelligencePage() {
                 CONSULT AI →
               </Link>
             </motion.div>
+
+            <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.6)' }} style={{ border: '1px solid rgba(255,241,45,0.25)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s', background: 'rgba(255,241,45,0.02)' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>00-V2 ✦ NEW</p>
+              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Engine V2</h2>
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                Multi-agent technical reasoning. Chief Engine routes to Hydraulic, Tribology, Filtration, Standards, and Field Experience specialists. Every answer requires traceability.
+              </p>
+              <Link href="/customer-intelligence/v2" style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', textDecoration: 'none' }}>
+                ANALYZE V2 →
+              </Link>
+            </motion.div>
+
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>01</p>
               <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Log Event</h2>
