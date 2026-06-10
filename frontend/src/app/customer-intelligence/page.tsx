@@ -11,7 +11,7 @@ export default function CustomerIntelligencePage() {
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '1rem' }}>
             // CUSTOMER INTELLIGENCE
           </p>
-          <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem' }}>
+          <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem' }}>
             Customer Intelligence
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1rem', marginBottom: '3rem', lineHeight: 1.7 }}>
@@ -22,7 +22,7 @@ export default function CustomerIntelligencePage() {
 
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>00</p>
-              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Consultation</h2>
+              <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Consultation</h2>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 Technical, sales, support and marketing sub-agents. Generates Knowledge pages from queries.
               </p>
@@ -33,7 +33,7 @@ export default function CustomerIntelligencePage() {
 
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.6)' }} style={{ border: '1px solid rgba(255,241,45,0.25)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s', background: 'rgba(255,241,45,0.02)' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>00-V2 ✦ NEW</p>
-              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Engine V2</h2>
+              <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>AI Engine V2</h2>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 Multi-agent technical reasoning. Chief Engine routes to Hydraulic, Tribology, Filtration, Standards, and Field Experience specialists. Every answer requires traceability.
               </p>
@@ -44,7 +44,7 @@ export default function CustomerIntelligencePage() {
 
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>01</p>
-              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Log Event</h2>
+              <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Log Event</h2>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 Record a field event: part installation, service call, or equipment reading.
               </p>
@@ -55,7 +55,7 @@ export default function CustomerIntelligencePage() {
 
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.4)' }} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '2rem', transition: 'border-color 0.2s' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.75rem' }}>02</p>
-              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Dashboard</h2>
+              <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Dashboard</h2>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 View aggregate metrics: top parts, distributors, and geographic distribution.
               </p>

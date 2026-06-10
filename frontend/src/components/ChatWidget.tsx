@@ -289,7 +289,7 @@ export function ChatWidget() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <img src="/assets/elimfilters-e.png" alt="ELIMFILTERS" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
-                <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: '#000' }}>ELIMFILTERS</span>
+                <span style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: '#000' }}>ELIMFILTERS</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 {stage !== 'menu' && stage !== 'done' && (

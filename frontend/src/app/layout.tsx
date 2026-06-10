@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Space_Grotesk, Outfit, JetBrains_Mono, Montserrat } from 'next/font/google';
+import { Titillium_Web, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', weight: ['400', '500', '700'] });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', weight: ['300', '400', '500', '600', '700'] });
+const titilliumWeb = Titillium_Web({ subsets: ['latin'], variable: '--font-titillium', weight: ['300', '400', '600', '700'] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', weight: ['400', '500'] });
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ['400', '500', '700', '900'] });
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -93,7 +91,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} ${jetBrainsMono.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${titilliumWeb.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <script

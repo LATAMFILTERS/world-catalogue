@@ -221,7 +221,7 @@ function HeroSection() {
           position: 'absolute', inset: 0,
           width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center',
-          zIndex: 0, opacity: 0.45,
+          zIndex: 0, opacity: 0.55,
         }}
       >
         <source src="/images/moleculas.mp4" type="video/mp4" />
@@ -477,7 +477,7 @@ export default function Home() {
               >
                 <div
                   style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontWeight: 700,
                     fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                     color: '#FFF12D',
@@ -534,7 +534,7 @@ export default function Home() {
                   // ASSET PROTECTION STRATEGY
                 </p>
                 <h2 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: 'clamp(1.8rem, 4vw, 2.4rem)',
                   fontWeight: 700,
                   lineHeight: 1.2,
@@ -581,7 +581,7 @@ export default function Home() {
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                       <div style={{ width: '8px', height: '8px', background: '#FFF12D', flexShrink: 0 }} />
-                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', margin: 0 }}>{item}</p>
+                      <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', margin: 0 }}>{item}</p>
                     </div>
                   ))}
                 </div>
@@ -617,7 +617,7 @@ export default function Home() {
                 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: 'clamp(2rem, 5vw, 3.75rem)',
                   textTransform: 'uppercase',
@@ -663,7 +663,7 @@ export default function Home() {
                     fontSize: '1.05rem',
                     marginBottom: '2.5rem',
                     lineHeight: 1.75,
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                   }}
                 >
                   80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.
@@ -688,15 +688,15 @@ export default function Home() {
                           justifyContent: 'center',
                         }}
                       >
-                        <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', fontFamily: 'Outfit, sans-serif' }}>
+                        <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', fontFamily: 'Titillium Web, sans-serif' }}>
                           {item.num}
                         </span>
                       </div>
                       <div>
-                        <h3 style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Outfit, sans-serif' }}>
+                        <h3 style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Titillium Web, sans-serif' }}>
                           {item.title}
                         </h3>
-                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Outfit, sans-serif' }}>
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Titillium Web, sans-serif' }}>
                           {item.desc}
                         </p>
                       </div>
@@ -741,8 +741,8 @@ export default function Home() {
                     boxShadow: '0 8px 40px rgba(255,241,45,0.35)',
                   }}
                 >
-                  <p style={{ fontSize: '1.75rem', fontWeight: 900, lineHeight: 1, fontFamily: 'Outfit, sans-serif' }}>80%</p>
-                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Outfit, sans-serif' }}>
+                  <p style={{ fontSize: '1.75rem', fontWeight: 900, lineHeight: 1, fontFamily: 'Titillium Web, sans-serif' }}>80%</p>
+                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Titillium Web, sans-serif' }}>
                     Of premature failures are caused by contamination.
                   </p>
                 </motion.div>
@@ -760,7 +760,7 @@ export default function Home() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                 textTransform: 'uppercase',
@@ -797,7 +797,7 @@ export default function Home() {
                     key={i}
                     variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }}
                     transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}
+                    style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}
                   >
                     {p.text}{p.highlight && <strong style={{ color: '#FFF12D' }}>{p.highlight}</strong>}{p.after}
                   </motion.p>
@@ -817,7 +817,7 @@ export default function Home() {
                       style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}
                     >
                       <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>✓</span>
-                      <span style={{ fontFamily: 'Outfit, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>{item}</span>
+                      <span style={{ fontFamily: 'Titillium Web, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -840,10 +840,10 @@ export default function Home() {
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                     // ASSET PROTECTION TECHNOLOGY
                   </p>
-                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+                  <h3 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
                     Your equipment is worth millions.<br />Protect it accordingly.
                   </h3>
-                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
+                  <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
                     Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -853,7 +853,7 @@ export default function Home() {
                       'Anti-Bypass Structures',
                       '20,000+ OEM cross-references validated',
                     ].map(item => (
-                      <li key={item} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
+                      <li key={item} style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>◆</span>
                         {item}
                       </li>
@@ -884,7 +884,7 @@ export default function Home() {
               <motion.h2
                 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}
+                style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}
               >
                 Asset Protection <span style={{ color: '#FFF12D' }}>Technology</span>
               </motion.h2>
@@ -923,10 +923,10 @@ export default function Home() {
                     >
                       <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                         <div style={{ width: 32, height: 2, background: '#FFF12D', marginBottom: '1.5rem' }} />
-                        <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#FFF12D', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        <h3 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#FFF12D', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                           {tech.title}
                         </h3>
-                        <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)' }}>
+                        <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)' }}>
                           {tech.desc}
                         </p>
                       </motion.div>
@@ -958,7 +958,7 @@ export default function Home() {
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                   {slide.tag}
                 </p>
-                <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
+                <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
                   {slide.title}<br />
                   <span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
                 </h2>
@@ -968,7 +968,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }}
                   whileTap={{ scale: 0.96 }}
-                  style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}
+                  style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}
                 >
                   {slide.buttonText}
                 </motion.a>
@@ -1015,7 +1015,7 @@ export default function Home() {
                 // FREQUENTLY ASKED QUESTIONS
               </p>
               <h2 style={{
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontSize: 'clamp(1.8rem, 4vw, 2.4rem)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -1058,7 +1058,7 @@ export default function Home() {
                   }}
                 >
                   <h3 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1rem',
                     fontWeight: 700,
                     color: '#FFF12D',

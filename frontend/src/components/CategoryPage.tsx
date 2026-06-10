@@ -192,7 +192,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                 // INDUSTRIAL CONTEXT
               </p>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.8, color: 'rgba(255,255,255,0.8)', fontFamily: 'Outfit, sans-serif', maxWidth: '780px' }}>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.8, color: 'rgba(255,255,255,0.8)', fontFamily: 'Titillium Web, sans-serif', maxWidth: '780px' }}>
                 {geoData.directAnswer}
               </p>
               {geoData.lastUpdated && (
@@ -234,7 +234,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     style={{
                       fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                       fontWeight: 700,
-                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontFamily: 'Titillium Web, sans-serif',
                       color: 'rgba(255,255,255,0.75)',
                       marginBottom: '1.5rem',
                       lineHeight: 1.2,
@@ -250,7 +250,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: i === 0 ? '1rem' : '0.95rem',
                           lineHeight: 1.8,
                           color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)',
-                          fontFamily: 'Outfit, sans-serif',
+                          fontFamily: 'Titillium Web, sans-serif',
                           marginBottom: i < item.videoBody!.length - 1 ? '1rem' : 0,
                         }}
                       >
@@ -264,7 +264,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: '1rem',
                           lineHeight: 1.8,
                           color: 'rgba(255,255,255,0.8)',
-                          fontFamily: 'Outfit, sans-serif',
+                          fontFamily: 'Titillium Web, sans-serif',
                           marginBottom: '1rem',
                         }}
                       >
@@ -275,7 +275,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: '0.95rem',
                           lineHeight: 1.8,
                           color: 'rgba(255,255,255,0.7)',
-                          fontFamily: 'Outfit, sans-serif',
+                          fontFamily: 'Titillium Web, sans-serif',
                         }}
                       >
                         Every micron of contamination matters. ELIMFILTERS® systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
@@ -354,7 +354,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
@@ -421,7 +421,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
@@ -560,7 +560,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
                   color: '#fff',
@@ -616,7 +616,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             >
               <h3
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.72rem',
                   letterSpacing: '0.15em',
@@ -677,14 +677,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                 // COMMON QUESTIONS
               </p>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '3rem' }}>
                 Frequently Asked Questions
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {geoData.faq.map(({ q, a }) => (
                   <div key={q} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#000' }}>
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
-                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{a}</p>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>{a}</p>
                   </div>
                 ))}
               </div>

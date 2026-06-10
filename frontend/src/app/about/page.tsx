@@ -65,7 +65,7 @@ export default function About() {
               style={{
                 fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
                 fontWeight: 900,
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 marginBottom: '1rem',
                 lineHeight: 1.05,
                 color: '#fff',
@@ -80,7 +80,7 @@ export default function About() {
               style={{
                 fontSize: '1.2rem',
                 fontWeight: 600,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 color: '#FFF12D',
                 marginBottom: '2rem',
               }}
@@ -95,7 +95,7 @@ export default function About() {
                 fontSize: 'clamp(1rem, 2vw, 1.1rem)',
                 lineHeight: 1.7,
                 color: 'rgba(255,255,255,0.8)',
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 maxWidth: '680px',
                 borderLeft: '3px solid #FFF12D',
                 paddingLeft: '1.25rem',
@@ -129,7 +129,7 @@ export default function About() {
                 style={{
                   fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                   fontWeight: 900,
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   marginBottom: '1.5rem',
                   lineHeight: 1.2,
                 }}
@@ -143,7 +143,7 @@ export default function About() {
                   fontSize: '1rem',
                   lineHeight: 1.7,
                   color: 'rgba(255,255,255,0.75)',
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   marginBottom: '1.5rem',
                 }}
               >
@@ -156,7 +156,7 @@ export default function About() {
                   fontSize: '1rem',
                   lineHeight: 1.7,
                   color: 'rgba(255,255,255,0.75)',
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                 }}
               >
                 Our Asset Protection Technology combines AI-formulated hybrid media, hydrophobic
@@ -184,7 +184,7 @@ export default function About() {
                     fontSize: '3.5rem',
                     fontWeight: 900,
                     color: '#FFF12D',
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '0.5rem',
                   }}
                 >
@@ -194,7 +194,7 @@ export default function About() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                   }}
                 >
                   Media Efficiency Rating
@@ -211,7 +211,7 @@ export default function About() {
                   style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -242,7 +242,7 @@ export default function About() {
             style={{
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '3rem',
               textAlign: 'center',
               lineHeight: 1.2,
@@ -301,7 +301,7 @@ export default function About() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '1rem',
                     color: '#FFF12D',
                   }}
@@ -313,7 +313,7 @@ export default function About() {
                     fontSize: '0.95rem',
                     lineHeight: 1.6,
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                   }}
                 >
                   {item.description}
@@ -337,7 +337,7 @@ export default function About() {
             style={{
               fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               color: '#000',
               lineHeight: 1.2,
@@ -350,7 +350,7 @@ export default function About() {
               fontSize: '1.05rem',
               marginBottom: '2rem',
               color: '#000',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               lineHeight: 1.6,
             }}
           >
@@ -366,7 +366,7 @@ export default function About() {
               background: '#000',
               color: '#FFF12D',
               padding: '0.875rem 2.5rem',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: '0.85rem',
               letterSpacing: '0.12em',

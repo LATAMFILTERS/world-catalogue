@@ -43,7 +43,7 @@ export default function ComparisonHubPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← KNOWLEDGE SYSTEM</Link>
@@ -73,7 +73,7 @@ export default function ComparisonHubPage() {
             // FILTRATION EVALUATION
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -184,7 +184,7 @@ export default function ComparisonHubPage() {
                   </div>
 
                   <h2 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1.1rem',
                     fontWeight: 600,
                     color: '#fff',

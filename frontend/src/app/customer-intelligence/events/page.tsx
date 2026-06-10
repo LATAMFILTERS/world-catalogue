@@ -72,7 +72,7 @@ export default function EventsPage() {
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
             // LOG EVENT
           </p>
-          <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '2.5rem' }}>
+          <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '2.5rem' }}>
             New Intelligence Event
           </h1>
 
@@ -121,7 +121,7 @@ export default function EventsPage() {
               type="submit"
               disabled={status === 'saving'}
               whileHover={{ background: status === 'saving' ? undefined : '#e6d800' }}
-              style={{ marginTop: '0.5rem', background: '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0.85rem 2rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.95rem', cursor: status === 'saving' ? 'not-allowed' : 'pointer', opacity: status === 'saving' ? 0.6 : 1, alignSelf: 'flex-start', transition: 'background 0.2s' }}
+              style={{ marginTop: '0.5rem', background: '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0.85rem 2rem', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.95rem', cursor: status === 'saving' ? 'not-allowed' : 'pointer', opacity: status === 'saving' ? 0.6 : 1, alignSelf: 'flex-start', transition: 'background 0.2s' }}
             >
               {status === 'saving' ? 'Saving…' : 'Save Event'}
             </motion.button>

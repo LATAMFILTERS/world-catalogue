@@ -64,7 +64,7 @@ export function CTASection({
         </p>
         <h2
           style={{
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontWeight: 300,
             fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
             color: 'rgba(255,255,255,0.92)',
@@ -77,7 +77,7 @@ export function CTASection({
         </h2>
         <h2
           style={{
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
             color: '#FFF12D',
@@ -90,7 +90,7 @@ export function CTASection({
         </h2>
         <p
           style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.5)',
             lineHeight: 1.75,
@@ -110,7 +110,7 @@ export function CTASection({
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.12em',

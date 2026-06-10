@@ -12,7 +12,7 @@ export default function TCOPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← COMPARISON</Link>
@@ -49,7 +49,7 @@ export default function TCOPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +65,7 @@ export default function TCOPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -100,7 +100,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -193,7 +193,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -423,7 +423,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -540,7 +540,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>

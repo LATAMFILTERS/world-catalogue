@@ -91,7 +91,7 @@ export default function V2ConsultPage() {
         </Link>
 
         <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>// AI ENGINE V2</p>
-        <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
+        <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           Multi-Agent Technical Reasoning
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '0.5rem', lineHeight: 1.6 }}>
@@ -204,7 +204,7 @@ export default function V2ConsultPage() {
           <button
             onClick={send}
             disabled={loading || !query.trim()}
-            style={{ background: loading || !query.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0 1.5rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.9rem', cursor: loading || !query.trim() ? 'not-allowed' : 'pointer', whiteSpace: 'nowrap' }}
+            style={{ background: loading || !query.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0 1.5rem', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.9rem', cursor: loading || !query.trim() ? 'not-allowed' : 'pointer', whiteSpace: 'nowrap' }}
           >
             Analyze
           </button>

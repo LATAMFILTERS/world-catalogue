@@ -64,11 +64,11 @@ export default function DashboardPage() {
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
               // DASHBOARD
             </p>
-            <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700 }}>
+            <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700 }}>
               Intelligence Overview
             </h1>
           </div>
-          <Link href="/customer-intelligence/events" style={{ background: '#FFF12D', color: '#000', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.875rem', padding: '0.65rem 1.25rem', borderRadius: '6px', textDecoration: 'none', alignSelf: 'flex-end' }}>
+          <Link href="/customer-intelligence/events" style={{ background: '#FFF12D', color: '#000', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.875rem', padding: '0.65rem 1.25rem', borderRadius: '6px', textDecoration: 'none', alignSelf: 'flex-end' }}>
             + Log Event
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function DashboardPage() {
             {/* Total events stat */}
             <div style={{ border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.04)', borderRadius: '8px', padding: '1.75rem 2rem', marginBottom: '2rem', display: 'inline-flex', flexDirection: 'column', gap: '0.25rem' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.1em' }}>TOTAL EVENTS</p>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#FFF12D', lineHeight: 1 }}>
+              <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, color: '#FFF12D', lineHeight: 1 }}>
                 {data.total_events.toLocaleString()}
               </p>
             </div>

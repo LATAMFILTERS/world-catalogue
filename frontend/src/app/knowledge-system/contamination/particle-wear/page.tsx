@@ -63,7 +63,7 @@ export default function ParticleWearPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← CONTAMINATION</Link>
@@ -93,7 +93,7 @@ export default function ParticleWearPage() {
             // CONTAMINATION & FAILURE MODES
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -133,7 +133,7 @@ export default function ParticleWearPage() {
           }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.3rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -167,7 +167,7 @@ export default function ParticleWearPage() {
             }}
           >
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: '1.3rem',
               fontWeight: 700,
               color: '#FFF12D',
@@ -215,7 +215,7 @@ export default function ParticleWearPage() {
           transition={{ duration: 0.5, delay: sections.length * 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.5rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -240,7 +240,7 @@ export default function ParticleWearPage() {
                 }}
               >
                 <h3 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#FFF12D',
@@ -275,7 +275,7 @@ export default function ParticleWearPage() {
           transition={{ duration: 0.5 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.2rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -303,7 +303,7 @@ export default function ParticleWearPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>💧 WATER</p>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Water ingress and microbial growth</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Water ingress and microbial growth</p>
               </div>
             </Link>
             <Link href="/knowledge-system/contamination/hydraulic-system" style={{ textDecoration: 'none' }}>
@@ -324,7 +324,7 @@ export default function ParticleWearPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>⚡ HYDRAULIC</p>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Pressurized fluid system contamination</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Pressurized fluid system contamination</p>
               </div>
             </Link>
           </div>

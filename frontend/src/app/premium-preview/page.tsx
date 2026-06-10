@@ -391,7 +391,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
     color: G, opacity:0.72, marginBottom:'1.25rem', textTransform:'uppercase' }}>▸ {children}</p>;
 }
 function H2({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <h2 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(2.4rem,5vw,4rem)',
+  return <h2 style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(2.4rem,5vw,4rem)',
     fontWeight:700, letterSpacing:'-0.035em', lineHeight:1.03, color:'#fff', ...style }}>{children}</h2>;
 }
 
@@ -415,7 +415,7 @@ function Hero() {
 
       {/* Large background number */}
       <div style={{ position:'absolute', right:'-2%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(18rem,28vw,36rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(18rem,28vw,36rem)', fontWeight:700,
         color:'rgba(255,241,45,0.022)', lineHeight:1, userSelect:'none', pointerEvents:'none',
         letterSpacing:'-0.06em' }}>01</div>
 
@@ -430,7 +430,7 @@ function Hero() {
                 letterSpacing:'0.18em', color: W3 }}>WORLD CATALOGUE · ACTIVE</span>
             </div>
 
-            <h1 style={{ fontFamily:'Outfit, sans-serif',
+            <h1 style={{ fontFamily:'Titillium Web, sans-serif',
               fontSize:'clamp(3rem,6.5vw,5.2rem)', fontWeight:700,
               letterSpacing:'-0.04em', lineHeight:1.0, marginBottom:'2rem', color:'#fff' }}>
               Filtration for<br />
@@ -451,13 +451,13 @@ function Hero() {
             <div style={{ display:'flex', gap:'0.85rem', flexWrap:'wrap', marginBottom:'4rem' }}>
               <Link href="/distributor-application" style={{
                 padding:'14px 34px', background: G, color:'#000',
-                fontFamily:'Outfit, sans-serif', fontWeight:700, fontSize:'0.85rem',
+                fontFamily:'Titillium Web, sans-serif', fontWeight:700, fontSize:'0.85rem',
                 letterSpacing:'0.09em', borderRadius:3, textDecoration:'none' }}>
                 BECOME A DISTRIBUTOR
               </Link>
               <Link href="https://part-search.elimfilters.com" style={{
                 padding:'14px 34px', color: G, background:'transparent',
-                fontFamily:'Outfit, sans-serif', fontWeight:700, fontSize:'0.85rem',
+                fontFamily:'Titillium Web, sans-serif', fontWeight:700, fontSize:'0.85rem',
                 letterSpacing:'0.09em', borderRadius:3, textDecoration:'none',
                 border:`1.5px solid ${GB}` }}>
                 PART SEARCH →
@@ -491,7 +491,7 @@ function Hero() {
             </div>
 
             <div style={{ padding:'1.5rem' }}>
-              <p style={{ fontFamily:'Outfit, sans-serif', fontSize:'1rem',
+              <p style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1rem',
                 fontWeight:700, color:'#fff', marginBottom:'0.3rem' }}>
                 High-Pressure Hydraulic Element
               </p>
@@ -538,7 +538,7 @@ function Hero() {
           ].map((k, i) => (
             <div key={i} style={{ background: S1, padding:'2rem 1.5rem', textAlign:'center',
               borderRight: i < 3 ? `1px solid ${W1}` : 'none' }}>
-              <div style={{ fontFamily:'Outfit, sans-serif',
+              <div style={{ fontFamily:'Titillium Web, sans-serif',
                 fontSize:'clamp(2rem,3.5vw,2.8rem)', fontWeight:700, color: G, lineHeight:1 }}>
                 <Counter to={k.n} suffix={k.s} decimals={k.d} />
               </div>
@@ -575,7 +575,7 @@ function Contamination() {
   return (
     <section id="contamination" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', right:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,255,255,0.018)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>02</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -600,7 +600,7 @@ function Contamination() {
                 color:'rgba(239,68,68,0.7)', letterSpacing:'0.15em', marginBottom:'0.6rem' }}>
                 INDUSTRY DATA — NFPA / ISO 4406
               </p>
-              <p style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.7rem',
+              <p style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1.7rem',
                 fontWeight:700, color:'#fff', lineHeight:1.2 }}>
                 70% of hydraulic system failures are contamination-related.
               </p>
@@ -612,7 +612,7 @@ function Contamination() {
                 ['3.2×',  'More downtime with substandard filtration media'],
               ].map(([n, l]) => (
                 <div key={n} style={{ padding:'1.25rem', background: S1, border:`1px solid ${W1}`, borderRadius:4 }}>
-                  <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'2rem', fontWeight:700, color: G }}>{n}</div>
+                  <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'2rem', fontWeight:700, color: G }}>{n}</div>
                   <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem', color: W6, marginTop:5, lineHeight:1.4 }}>{l}</div>
                 </div>
               ))}
@@ -658,11 +658,11 @@ function Contamination() {
                   <div style={{ display:'flex', alignItems:'center', gap:'0.85rem' }}>
                     <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
                       color: W3, minWidth:38 }}>{f.code}</span>
-                    <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1rem',
+                    <span style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1rem',
                       fontWeight:700, color:'#fff' }}>{f.name}</span>
                   </div>
                   <div style={{ textAlign:'right' }}>
-                    <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.3rem',
+                    <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1.3rem',
                       fontWeight:700, color: f.sev }}>{f.cost}</div>
                     <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.65rem', color: W3 }}>avg repair</div>
                   </div>
@@ -717,7 +717,7 @@ function Technology() {
   return (
     <section id="technology" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', left:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,241,45,0.018)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>03</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -764,7 +764,7 @@ function Technology() {
             </div>
             <div style={{ padding:'2rem' }}>
               <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'0.5rem' }}>
-                <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.8rem', fontWeight:700, color: t.color }}>{t.id}</span>
+                <span style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1.8rem', fontWeight:700, color: t.color }}>{t.id}</span>
                 <div style={{ display:'flex', gap:6, flexWrap:'wrap', justifyContent:'flex-end' }}>
                   {t.apps.map(a => (
                     <span key={a} style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
@@ -856,7 +856,7 @@ function ProductLines() {
   return (
     <section id="products" style={{ background: S1, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', left:'-2%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(14rem,22vw,28rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(14rem,22vw,28rem)', fontWeight:700,
         color:'rgba(255,255,255,0.013)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>PL</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -887,7 +887,7 @@ function ProductLines() {
                   color: W3, padding:'4px 9px', border:`1px solid ${W1}`,
                   borderRadius:2, letterSpacing:'0.1em', whiteSpace:'nowrap' }}>{l.spec}</span>
               </div>
-              <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.12rem',
+              <h3 style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1.12rem',
                 fontWeight:700, color:'#fff', marginBottom:'0.85rem' }}>{l.name}</h3>
               <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.78rem',
                 color: W3, lineHeight:1.75, marginBottom:'1.5rem' }}>{l.desc}</p>
@@ -928,7 +928,7 @@ function Standards() {
   return (
     <section id="standards" style={{ background: S2, padding:'8rem 0', position:'relative', overflow:'hidden' }}>
       <div style={{ position:'absolute', right:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,255,255,0.016)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>04</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -983,7 +983,7 @@ function ROI() {
       <div style={{ position:'absolute', inset:0,
         background:'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,241,45,0.022) 0%, transparent 65%)' }} />
       <div style={{ position:'absolute', left:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,241,45,0.018)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>05</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -1029,7 +1029,7 @@ function ROI() {
               border:`1px solid ${GB}`, borderRadius:8, padding:'2rem', textAlign:'center' }}>
               <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.6rem',
                 color: G, letterSpacing:'0.15em', marginBottom:'0.75rem' }}>ESTIMATED NET ANNUAL SAVINGS</p>
-              <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'3.8rem', fontWeight:700,
+              <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'3.8rem', fontWeight:700,
                 color: net >= 0 ? G : 'rgba(239,68,68,0.9)', lineHeight:1 }}>
                 {fmt(Math.abs(net))}
               </div>
@@ -1051,7 +1051,7 @@ function ROI() {
                   <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.78rem', color: W6 }}>{row.label}</div>
                   <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.68rem', color: W3, marginTop:2 }}>{row.sub}</div>
                 </div>
-                <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'1.4rem',
+                <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1.4rem',
                   fontWeight:700, color: row.c }}>{row.val}</div>
               </div>
             ))}
@@ -1134,7 +1134,7 @@ function Industries() {
                   <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'1.3rem',
                     fontWeight:700, color: ind.color, letterSpacing:'-0.02em', lineHeight:1,
                     marginBottom:'0.3rem' }}>{ind.code}</div>
-                  <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'0.88rem',
+                  <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'0.88rem',
                     fontWeight:700, color:'#fff', marginBottom:'0.6rem' }}>{ind.name}</div>
                   <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
                     {ind.kpis.map(k => (
@@ -1165,7 +1165,7 @@ function Distributor() {
       <div style={{ position:'absolute', inset:0,
         background:'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255,241,45,0.03) 0%, transparent 60%)' }} />
       <div style={{ position:'absolute', left:'-3%', top:'50%', transform:'translateY(-50%)',
-        fontFamily:'Outfit, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
+        fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(16rem,25vw,32rem)', fontWeight:700,
         color:'rgba(255,241,45,0.016)', lineHeight:1, userSelect:'none', letterSpacing:'-0.06em' }}>07</div>
 
       <Wrap style={{ position:'relative', zIndex:1 }}>
@@ -1192,7 +1192,7 @@ function Distributor() {
                 <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.68rem',
                   color: G, minWidth:28, paddingTop:2 }}>{s.n}</span>
                 <div>
-                  <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'0.95rem',
+                  <div style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'0.95rem',
                     fontWeight:700, color:'#fff', marginBottom:3 }}>{s.t}</div>
                   <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.78rem', color: W6 }}>{s.d}</div>
                 </div>
@@ -1201,7 +1201,7 @@ function Distributor() {
 
             <Link href="/distributor-application" style={{
               display:'inline-block', marginTop:'2rem', padding:'15px 38px',
-              background: G, color:'#000', fontFamily:'Outfit, sans-serif', fontWeight:700,
+              background: G, color:'#000', fontFamily:'Titillium Web, sans-serif', fontWeight:700,
               fontSize:'0.88rem', letterSpacing:'0.1em', borderRadius:3, textDecoration:'none' }}>
               APPLY NOW →
             </Link>
@@ -1223,7 +1223,7 @@ function Distributor() {
                 borderRadius:6, padding:'1.5rem' }}>
                 <div style={{ display:'flex', alignItems:'center',
                   justifyContent:'space-between', marginBottom:'1rem' }}>
-                  <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'1rem',
+                  <span style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'1rem',
                     fontWeight:700, color: t.color }}>{t.name}</span>
                   <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
                     color: W3, padding:'3px 8px', border:`1px solid ${W1}`, borderRadius:2 }}>{t.badge}</span>
@@ -1282,7 +1282,7 @@ function Footer() {
           <div className="reveal-left">
             <div style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.62rem',
               color: G, letterSpacing:'0.2em', marginBottom:'0.75rem' }}>CONTACT US</div>
-            <h2 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(1.6rem,3vw,2.4rem)',
+            <h2 style={{ fontFamily:'Titillium Web, sans-serif', fontSize:'clamp(1.6rem,3vw,2.4rem)',
               fontWeight:700, color:'#fff', lineHeight:1.15 }}>
               Ready to protect<br />
               <span style={{ color: G }}>your fleet?</span>
@@ -1297,7 +1297,7 @@ function Footer() {
             <a href="mailto:sales@elimfilters.com" style={{
               display:'inline-flex', alignItems:'center', gap:'0.6rem',
               padding:'15px 36px', background: G, color:'#000',
-              fontFamily:'Outfit, sans-serif', fontWeight:700, fontSize:'0.88rem',
+              fontFamily:'Titillium Web, sans-serif', fontWeight:700, fontSize:'0.88rem',
               letterSpacing:'0.1em', borderRadius:3, textDecoration:'none' }}>
               <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem' }}>→</span>
               REQUEST CONSULTATION
@@ -1305,7 +1305,7 @@ function Footer() {
             <a href="https://part-search.elimfilters.com" style={{
               display:'inline-flex', alignItems:'center', gap:'0.6rem',
               padding:'15px 36px', background:'transparent', color: G,
-              fontFamily:'Outfit, sans-serif', fontWeight:700, fontSize:'0.88rem',
+              fontFamily:'Titillium Web, sans-serif', fontWeight:700, fontSize:'0.88rem',
               letterSpacing:'0.1em', borderRadius:3, textDecoration:'none',
               border:`1px solid rgba(255,241,45,0.25)` }}>
               SEARCH CATALOGUE
@@ -1460,7 +1460,7 @@ function Nav() {
           ))}
         </div>
         <Link href="https://part-search.elimfilters.com" style={{
-          fontFamily:'Outfit, sans-serif', fontSize:'0.7rem', fontWeight:700,
+          fontFamily:'Titillium Web, sans-serif', fontSize:'0.7rem', fontWeight:700,
           color:'#000', background: G, padding:'7px 15px', borderRadius:3,
           textDecoration:'none', flexShrink:0, letterSpacing:'0.07em', marginLeft:'1rem',
         }}>SEARCH PARTS</Link>

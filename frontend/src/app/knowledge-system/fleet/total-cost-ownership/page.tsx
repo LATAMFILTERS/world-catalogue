@@ -76,7 +76,7 @@ export default function TotalCostOwnershipPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← FLEET</Link>
@@ -102,7 +102,7 @@ export default function TotalCostOwnershipPage() {
             // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · TCO
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -131,7 +131,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / DEFINITION</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Total Cost of Ownership in Filtration Systems</h2>
           <p style={{
@@ -161,7 +161,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>The Unit Price Procurement Trap</h2>
           <p style={{
@@ -197,7 +197,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / COST IMPACT</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>TCO Component Structure</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -208,7 +208,7 @@ export default function TotalCostOwnershipPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                   fontWeight: 600, color: '#FFF12D', marginBottom: '0.85rem',
                 }}>{comp.category}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: '1rem' }}>
@@ -268,7 +268,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Building a TCO-Optimized Filtration Program</h2>
           {[
@@ -295,7 +295,7 @@ export default function TotalCostOwnershipPage() {
               marginBottom: '1.5rem',
             }}>
               <p style={{
-                fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                 fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
               }}>{item.title}</p>
               <p style={{
@@ -319,7 +319,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Documented TCO Outcomes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -362,7 +362,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Relevant to TCO Modeling</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
@@ -404,7 +404,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / RELATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -442,7 +442,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -452,7 +452,7 @@ export default function TotalCostOwnershipPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
@@ -486,7 +486,7 @@ export default function TotalCostOwnershipPage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{page.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{page.title}</span>
                   <span style={{

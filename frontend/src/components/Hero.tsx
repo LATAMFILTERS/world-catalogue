@@ -140,7 +140,7 @@ export function Hero({
         <h1
           ref={titleRef}
           style={{
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontWeight: 300,
             fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
             lineHeight: 1.1,
@@ -157,7 +157,7 @@ export function Hero({
           <p
             ref={subtitleRef}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 600,
               fontSize: 'clamp(1.8rem, 4vw, 3.5rem)',
               lineHeight: 1.1,
@@ -174,7 +174,7 @@ export function Hero({
           <p
             ref={taglineRef}
             style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
               color: 'rgba(255,255,255,0.62)',
               maxWidth: '560px',
@@ -197,7 +197,7 @@ export function Hero({
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.12em',
@@ -223,7 +223,7 @@ export function Hero({
               display: 'inline-block',
               border: '1px solid rgba(255,241,45,0.35)',
               color: 'rgba(255,241,45,0.8)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.12em',
@@ -284,7 +284,7 @@ export function Hero({
               >
                 <div
                   style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontWeight: 700,
                     fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                     color: '#FFF12D',

@@ -334,7 +334,7 @@ function ProductFamilyCard({ family }: { family: ProductFamily }) {
         </p>
         <p
           style={{
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontWeight: 700,
             fontSize: '0.9rem',
             color: '#fff',
@@ -345,7 +345,7 @@ function ProductFamilyCard({ family }: { family: ProductFamily }) {
         </p>
         <p
           style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '0.8rem',
             lineHeight: 1.65,
             color: 'rgba(255,255,255,0.5)',
@@ -402,7 +402,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
           </span>
           <h2
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 800,
               fontSize: 'clamp(1.35rem,3vw,2rem)',
               color: '#fff',
@@ -429,7 +429,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
         {/* Description */}
         <p
           style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '0.92rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.65)',
@@ -583,7 +583,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                 <li
                   key={eq}
                   style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '0.78rem',
                     color: 'rgba(255,255,255,0.48)',
                     lineHeight: 1.65,
@@ -612,7 +612,7 @@ function SystemSection({ sys, idx }: { sys: ProtectionSystem; idx: number }) {
                 <li
                   key={ind}
                   style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '0.78rem',
                     color: 'rgba(255,255,255,0.48)',
                     lineHeight: 1.65,
@@ -729,7 +729,7 @@ export default function SystemsPage() {
           border: '1px solid rgba(255,241,45,0.35)',
           borderRadius: '4px',
           padding: '0.45rem 1rem',
-          fontFamily: 'Outfit, sans-serif',
+          fontFamily: 'Titillium Web, sans-serif',
           fontWeight: 700,
           fontSize: '0.72rem',
           letterSpacing: '0.12em',
@@ -786,7 +786,7 @@ export default function SystemsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 900,
               fontSize: 'clamp(2rem,5vw,3.75rem)',
               lineHeight: 1.08,
@@ -802,7 +802,7 @@ export default function SystemsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.16 }}
             style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: 'clamp(0.9rem,2vw,1.05rem)',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.68)',
@@ -884,7 +884,7 @@ export default function SystemsPage() {
             </div>
             <p
               style={{
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontSize: '0.92rem',
                 lineHeight: 1.8,
                 color: 'rgba(255,255,255,0.55)',
@@ -933,7 +933,7 @@ export default function SystemsPage() {
             </p>
             <h2
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(1.3rem,3vw,1.85rem)',
                 color: '#fff',
@@ -977,7 +977,7 @@ export default function SystemsPage() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontWeight: 700,
                     fontSize: '0.92rem',
                     color: '#fff',
@@ -988,7 +988,7 @@ export default function SystemsPage() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '0.78rem',
                     lineHeight: 1.65,
                     color: 'rgba(255,255,255,0.45)',
@@ -1075,7 +1075,7 @@ export default function SystemsPage() {
                   <Link href={`/industries/${ind.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <p
                       style={{
-                        fontFamily: 'Space Grotesk, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontWeight: 600,
                         fontSize: '0.85rem',
                         color: '#fff',
@@ -1123,7 +1123,7 @@ export default function SystemsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: 'clamp(1.3rem,3vw,1.85rem)',
               color: '#fff',
@@ -1172,7 +1172,7 @@ export default function SystemsPage() {
               >
                 <h3
                   style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontWeight: 700,
                     fontSize: '0.95rem',
                     color: '#FFF12D',
@@ -1183,7 +1183,7 @@ export default function SystemsPage() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '0.88rem',
                     lineHeight: 1.75,
                     color: 'rgba(255,255,255,0.68)',
@@ -1214,7 +1214,7 @@ export default function SystemsPage() {
           >
             <h2
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontWeight: 800,
                 fontSize: 'clamp(1.5rem,3.5vw,2.1rem)',
                 color: '#fff',
@@ -1226,7 +1226,7 @@ export default function SystemsPage() {
             </h2>
             <p
               style={{
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontSize: '0.95rem',
                 lineHeight: 1.75,
                 color: 'rgba(255,255,255,0.55)',
@@ -1250,7 +1250,7 @@ export default function SystemsPage() {
                 style={{
                   background: '#FFF12D',
                   color: '#000',
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.78rem',
                   letterSpacing: '0.12em',
@@ -1268,7 +1268,7 @@ export default function SystemsPage() {
                   background: 'transparent',
                   color: '#FFF12D',
                   border: '1px solid rgba(255,241,45,0.45)',
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontWeight: 700,
                   fontSize: '0.78rem',
                   letterSpacing: '0.12em',

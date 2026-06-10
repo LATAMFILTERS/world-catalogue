@@ -94,7 +94,7 @@ export default function SciencePage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← KNOWLEDGE</Link>
@@ -124,7 +124,7 @@ export default function SciencePage() {
             // KNOWLEDGE SYSTEM · FILTRATION SCIENCE
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -196,7 +196,7 @@ export default function SciencePage() {
             // CORE CONCEPTS
           </p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(1.3rem, 3vw, 1.8rem)',
             fontWeight: 600,
             letterSpacing: '-0.01em',
@@ -240,7 +240,7 @@ export default function SciencePage() {
                     {concept.code}
                   </span>
                   <h3 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1rem',
                     fontWeight: 600,
                     color: '#fff',
@@ -294,7 +294,7 @@ export default function SciencePage() {
               // ENGINEERING PRINCIPLES
             </p>
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: 'clamp(1.3rem, 3vw, 1.8rem)',
               fontWeight: 600,
               letterSpacing: '-0.01em',
@@ -328,7 +328,7 @@ export default function SciencePage() {
                 </span>
                 <div>
                   <h3 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1rem',
                     fontWeight: 600,
                     color: '#fff',
@@ -373,7 +373,7 @@ export default function SciencePage() {
               // TECHNICAL QUESTIONS
             </p>
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: 'clamp(1.3rem, 3vw, 1.8rem)',
               fontWeight: 600,
               letterSpacing: '-0.01em',
@@ -396,7 +396,7 @@ export default function SciencePage() {
                 }}
               >
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   color: '#fff',
@@ -466,7 +466,7 @@ export default function SciencePage() {
                     {rel.label.toUpperCase()}
                   </span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '0.9rem',
                     fontWeight: 600,
                     color: '#fff',

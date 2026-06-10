@@ -86,7 +86,7 @@ export default function DistributorApplication() {
                 fontWeight: 700,
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 display: 'inline-block',
               }}
             >
@@ -100,7 +100,7 @@ export default function DistributorApplication() {
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1rem',
               lineHeight: 1.1,
             }}
@@ -115,7 +115,7 @@ export default function DistributorApplication() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
             }}
           >
@@ -142,7 +142,7 @@ export default function DistributorApplication() {
                 style={{
                   fontSize: '1.8rem',
                   fontWeight: 900,
-                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   marginBottom: '2rem',
                   color: '#FFF12D',
                 }}
@@ -155,7 +155,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '0.75rem',
                     color: 'rgba(255,255,255,0.75)',
                   }}
@@ -166,7 +166,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -179,7 +179,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '0.75rem',
                     color: 'rgba(255,255,255,0.75)',
                   }}
@@ -190,7 +190,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -203,7 +203,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '0.75rem',
                     color: 'rgba(255,255,255,0.75)',
                   }}
@@ -214,7 +214,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     lineHeight: 1.6,
                   }}
                 >
@@ -227,7 +227,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.1rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '0.75rem',
                     color: 'rgba(255,255,255,0.75)',
                   }}
@@ -238,7 +238,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.95rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     lineHeight: 1.7,
                     paddingLeft: '1.5rem',
                   }}
@@ -269,7 +269,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '1.5rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '2rem',
                     color: 'rgba(255,255,255,0.75)',
                   }}
@@ -287,7 +287,7 @@ export default function DistributorApplication() {
                       marginBottom: '1.5rem',
                       fontSize: '0.95rem',
                       color: '#90ee90',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: 'Titillium Web, sans-serif',
                     }}
                   >
                     ✓ Application submitted! Our team will review and contact you soon.
@@ -303,7 +303,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Company Legal Name *
@@ -321,7 +321,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -344,7 +344,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Contact Name *
@@ -362,7 +362,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -385,7 +385,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Email *
@@ -403,7 +403,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -426,7 +426,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Phone *
@@ -444,7 +444,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -467,7 +467,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Country *
@@ -485,7 +485,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -508,7 +508,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       State / Province
@@ -525,7 +525,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -548,7 +548,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Years in Business
@@ -565,7 +565,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                       }}
@@ -588,7 +588,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Current Product Lines
@@ -605,7 +605,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -629,7 +629,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Service Area / Markets
@@ -646,7 +646,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -670,7 +670,7 @@ export default function DistributorApplication() {
                         fontWeight: 600,
                         marginBottom: '0.5rem',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}
                     >
                       Additional Information
@@ -687,7 +687,7 @@ export default function DistributorApplication() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: '4px',
                         color: 'rgba(255,255,255,0.75)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '0.95rem',
                         boxSizing: 'border-box',
                         resize: 'vertical',
@@ -711,7 +711,7 @@ export default function DistributorApplication() {
                       padding: '0.875rem',
                       background: '#FFF12D',
                       color: '#000',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: 'Titillium Web, sans-serif',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       letterSpacing: '0.1em',

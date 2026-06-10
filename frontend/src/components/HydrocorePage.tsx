@@ -57,7 +57,7 @@ export function HydrocorePage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
       }}>← HOME</Link>
@@ -84,15 +84,15 @@ export function HydrocorePage() {
               </span>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.0, marginBottom: '0.5rem' }}>
+              style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.0, marginBottom: '0.5rem' }}>
               HYDROCORE
             </motion.h1>
             <motion.h2 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: 'clamp(1.4rem, 4vw, 2.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '2rem' }}>
+              style={{ fontSize: 'clamp(1.4rem, 4vw, 2.8rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#FFF12D', marginBottom: '2rem' }}>
               /SERIES™
             </motion.h2>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: '1rem', maxWidth: '560px', lineHeight: 1.75, color: 'rgba(255,255,255,0.7)', fontFamily: 'Outfit, sans-serif', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem' }}>
+              style={{ fontSize: '1rem', maxWidth: '560px', lineHeight: 1.75, color: 'rgba(255,255,255,0.7)', fontFamily: 'Titillium Web, sans-serif', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem' }}>
               Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.55 }}
@@ -100,7 +100,7 @@ export function HydrocorePage() {
               {[['900FH', '90 GPH'], ['1000FH', '180 GPH'], ['ISO 16332', 'CERTIFIED']].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.4)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.25rem' }}>{k}</div>
-                  <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif' }}>{v}</div>
+                  <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif' }}>{v}</div>
                 </div>
               ))}
             </motion.div>
@@ -115,16 +115,16 @@ export function HydrocorePage() {
                 <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
                   // SYSTEM OVERVIEW
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, marginBottom: '1.5rem' }}>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, marginBottom: '1.5rem' }}>
                   NOT A FILTER.<br />AN ASSET PROTECTION SYSTEM.
                 </h2>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.25rem' }}>
                   Conventional fuel filters intercept particles. HYDROCORE/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
                 </p>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.25rem' }}>
                   The 900FH and 1000FH models deploy HYDROCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
                 </p>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif' }}>
                   The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.
                 </p>
               </AnimateIn>
@@ -152,7 +152,7 @@ export function HydrocorePage() {
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
                 // THREE-STAGE PROTECTION ARCHITECTURE
               </span>
-              <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '4rem', lineHeight: 1.15 }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '4rem', lineHeight: 1.15 }}>
                 EACH STAGE ELIMINATES<br />WHAT THE PREVIOUS ONE CANNOT.
               </h2>
             </AnimateIn>
@@ -172,19 +172,19 @@ export function HydrocorePage() {
                   }}>
                     <div>
                       <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{stage.tag}</div>
-                      <div style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,255,255,0.08)', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.number}</div>
+                      <div style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,255,255,0.08)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.number}</div>
                     </div>
                     <div>
-                      <h3 style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '1rem', letterSpacing: '0.02em' }}>
+                      <h3 style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '1rem', letterSpacing: '0.02em' }}>
                         {stage.title}
                       </h3>
-                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0, maxWidth: '600px' }}>
+                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Titillium Web, sans-serif', margin: 0, maxWidth: '600px' }}>
                         {stage.body}
                       </p>
                     </div>
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>
-                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
-                      <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'Outfit, sans-serif', marginTop: '0.4rem', maxWidth: '110px', textAlign: 'right' }}>{stage.statLabel}</div>
+                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'Titillium Web, sans-serif', marginTop: '0.4rem', maxWidth: '110px', textAlign: 'right' }}>{stage.statLabel}</div>
                     </div>
                   </div>
                 </AnimateIn>
@@ -200,7 +200,7 @@ export function HydrocorePage() {
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
                 // PROTECTION PARAMETERS
               </span>
-              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '3rem' }}>
                 FIELD SPECIFICATIONS
               </h2>
             </AnimateIn>
@@ -208,8 +208,8 @@ export function HydrocorePage() {
               {SPECS.map((spec, idx) => (
                 <motion.div key={idx} variants={itemVariants} style={{ background: '#000', padding: '2rem 1.75rem' }}>
                   <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>{spec.label}</div>
-                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1, marginBottom: '0.5rem' }}>{spec.value}</div>
-                  <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'Outfit, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
+                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1, marginBottom: '0.5rem' }}>{spec.value}</div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
                 </motion.div>
               ))}
             </StaggerContainer>
@@ -223,10 +223,10 @@ export function HydrocorePage() {
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
                 // ASSET APPLICATIONS
               </span>
-              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '0.75rem' }}>
                 WHERE HYDROCORE/SERIES™ PROTECTS
               </h2>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', marginBottom: '3rem', maxWidth: '580px', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '3rem', maxWidth: '580px', lineHeight: 1.7 }}>
                 FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.
               </p>
             </AnimateIn>
@@ -237,7 +237,7 @@ export function HydrocorePage() {
                   <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
                     {app.sector}
                   </div>
-                  <p style={{ fontSize: '0.88rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)', fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                     {app.detail}
                   </p>
                 </motion.div>
@@ -253,10 +253,10 @@ export function HydrocorePage() {
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.5)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
                 // IDENTIFY YOUR HYDROCORE/SERIES™ SKU
               </span>
-              <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
                 FIND YOUR PROTECTION SYSTEM
               </h2>
-              <p style={{ fontSize: '1rem', color: 'rgba(0,0,0,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
+              <p style={{ fontSize: '1rem', color: 'rgba(0,0,0,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
                 Cross-reference 500,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.
               </p>
               <motion.a
@@ -264,7 +264,7 @@ export function HydrocorePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(0,0,0,0.3)' }}
-                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
+                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
                 IDENTIFY SKU →
               </motion.a>
             </div>
