@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
+import '@/i18n';
+import { useTranslation } from 'react-i18next';
 import { motion, useInView } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
@@ -79,6 +81,7 @@ const CATEGORY_BG: Record<string, string> = {
 };
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
+  const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
 
@@ -143,7 +146,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
             >
-              HOME
+              {t('category.home', 'HOME')}
             </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
             <Link
@@ -353,7 +356,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     color: '#FFF12D',
                   }}
                 >
-                  KEY ADVANTAGES
+                  {t('category.keyAdvantages', 'KEY ADVANTAGES')}
                 </span>
               </div>
               <h2
@@ -367,9 +370,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                ENGINEERED
+                {t('category.keyAdvantages', 'KEY ADVANTAGES')}
                 <br />
-                <span style={{ color: '#FFF12D' }}>ADVANTAGES</span>
+                <span style={{ color: '#FFF12D' }}>{t('category.engineeredAdvantages', 'ENGINEERED ADVANTAGES')}</span>
               </h2>
               <p
                 style={{
@@ -420,7 +423,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     color: '#FFF12D',
                   }}
                 >
-                  ENGINEERING EXCELLENCE
+                  {t('category.engineeringExcellence', 'ENGINEERING EXCELLENCE')}
                 </span>
               </div>
               <h2
@@ -434,9 +437,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '1.5rem',
                 }}
               >
-                PRECISION
+                {t('category.precisionEngineering', 'PRECISION ENGINEERING')}
                 <br />
-                <span style={{ color: '#FFF12D' }}>ENGINEERING</span>
+                <span style={{ color: '#FFF12D' }}>{t('category.engineeringExcellence', 'ENGINEERING EXCELLENCE')}</span>
               </h2>
               <p
                 style={{
@@ -477,7 +480,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       color: 'rgba(255,255,255,0.5)',
                     }}
                   >
-                    SYSTEM SPECIFICATIONS
+                    {t('category.systemSpecs', 'SYSTEM SPECIFICATIONS')}
                   </span>
                 </div>
 
@@ -511,7 +514,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           letterSpacing: '0.05em',
                         }}
                       >
-                        ✓ ACTIVE
+                        {t('category.active', '✓ ACTIVE')}
                       </span>
                     </motion.div>
                   ))}
@@ -559,7 +562,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     color: '#FFF12D',
                   }}
                 >
-                  OPERATIONAL ADVANTAGES
+                  {t('category.operationalAdvantages', 'OPERATIONAL ADVANTAGES')}
                 </span>
               </div>
               <h2
@@ -573,7 +576,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                WHY ELIMFILTERS
+                {t('category.whyElimfilters', 'WHY ELIMFILTERS')}
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {(item.benefits || [
@@ -629,7 +632,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '1.5rem',
                 }}
               >
-                Technologies Included
+                {t('category.technologiesIncluded', 'Technologies Included')}
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (

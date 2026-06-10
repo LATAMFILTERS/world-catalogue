@@ -2,41 +2,8 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-
-const NAV_COLUMNS = [
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '/about', external: false },
-      { label: 'Industries', href: '/industries', external: false },
-      { label: 'Contact', href: '/contact', external: false },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
-      { label: 'Technologies', href: '/technologies', external: false },
-      { label: 'Systems', href: '/systems', external: false },
-    ],
-  },
-  {
-    title: 'Support',
-    links: [
-      { label: 'Technical Support', href: '/contact', external: false },
-      { label: 'Become a Dealer', href: '/distributor-application', external: false },
-      { label: 'Warranty', href: '/warranty', external: false },
-    ],
-  },
-  {
-    title: 'Knowledge',
-    links: [
-      { label: 'Knowledge System', href: '/knowledge-system', external: false },
-      { label: 'Standards', href: '/knowledge-system/standards', external: false },
-      { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
-    ],
-  },
-];
+import '@/i18n';
+import { useTranslation } from 'react-i18next';
 
 const SOCIAL = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/elimfilters', letter: 'in' },
@@ -45,6 +12,43 @@ const SOCIAL = [
 ];
 
 export function Footer() {
+  const { t } = useTranslation();
+
+  const NAV_COLUMNS = [
+    {
+      title: t('footer.company', 'COMPANY'),
+      links: [
+        { label: t('footer.about', 'About Us'), href: '/about', external: false },
+        { label: t('footer.industries', 'Industries'), href: '/industries', external: false },
+        { label: t('footer.contact', 'Contact'), href: '/contact', external: false },
+      ],
+    },
+    {
+      title: t('footer.colProducts', 'PRODUCTS'),
+      links: [
+        { label: t('footer.partSearch', 'Part Search'), href: 'https://part-search.elimfilters.com/', external: true },
+        { label: t('footer.technologies', 'Technologies'), href: '/technologies', external: false },
+        { label: t('footer.systems', 'Systems'), href: '/systems', external: false },
+      ],
+    },
+    {
+      title: t('footer.support', 'SUPPORT'),
+      links: [
+        { label: t('footer.technical', 'Technical Support'), href: '/contact', external: false },
+        { label: t('footer.dealer', 'Become a Dealer'), href: '/distributor-application', external: false },
+        { label: t('footer.warranty', 'Warranty'), href: '/warranty', external: false },
+      ],
+    },
+    {
+      title: t('footer.colKnowledge', 'KNOWLEDGE'),
+      links: [
+        { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-system', external: false },
+        { label: t('footer.standards', 'Standards'), href: '/knowledge-system/standards', external: false },
+        { label: t('footer.fleetOpt', 'Fleet Optimization'), href: '/knowledge-system/fleet', external: false },
+      ],
+    },
+  ];
+
   return (
     <footer
       style={{
@@ -212,7 +216,7 @@ export function Footer() {
                 textTransform: 'uppercase',
               }}
             >
-              Frisco, Texas
+              {t('footer.locationText', 'Frisco, Texas')}
             </div>
             <div
               style={{
@@ -223,7 +227,7 @@ export function Footer() {
                 marginTop: '4px',
               }}
             >
-              © 2015–2026 Kleo Technologies
+              {t('footer.kleoText', '© 2015–2026 Kleo Technologies')}
             </div>
           </div>
         </div>

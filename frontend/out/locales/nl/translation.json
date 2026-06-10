@@ -104,7 +104,14 @@
     "dealer": "Word dealer",
     "warranty": "Garantie",
     "copyright": "© 2015-2026 ELIMFILTERS® LLC | Intelligentie en techniek in filtratie",
-    "location": "FRISCO-TEXAS"
+    "location": "FRISCO-TEXAS",
+    "colProducts": "PRODUCTEN",
+    "colKnowledge": "KENNIS",
+    "knowledgeSystem": "Kennissysteem",
+    "standards": "Normen",
+    "fleetOpt": "Vlootoptimalisatie",
+    "locationText": "Frisco, Texas",
+    "kleoText": "© 2015–2026 Kleo Technologies"
   },
   "category": {
     "keyAdvantages": "BELANGRIJKSTE VOORDELEN",
@@ -124,5 +131,120 @@
   },
   "language": {
     "switchToEn": "NL"
+  },
+  "home": {
+    "eyebrow": "Frisco, Texas · Activabeschermingstechnologie",
+    "hero1": "Industriële activa beschermen",
+    "hero2": "via contaminatiebeheersing.",
+    "heroDesc": "Lucht-, brandstof-, hydraulische, smeermiddel- en cabinefiltersystemen voor 12 industriële sectoren. ISO 5011 · ISO 16889 · ISO 19438.",
+    "ctaFilter": "Vind mijn filter",
+    "ctaKnowledge": "Kennissysteem",
+    "statsLabels": [
+      "Filtratie-efficiëntie",
+      "Verlengde Activalevensduur",
+      "OEM-kruisreferenties",
+      "Distributienetwerk"
+    ],
+    "assetTag": "// ACTIVABESCHERMINGSSTRATEGIE",
+    "assetTitle": "Industriële Activa Beschermen via Contaminatiebeheersing",
+    "assetP1": "ELIMFILTERS beschermt industriële activa door verontreiniging in kritieke systemen te beheersen. Onze technische aanpak richt zich op het voorkomen van degradatie, verlengen van de levensduur, verbeteren van de betrouwbaarheid en verlagen van de totale eigendomskosten.",
+    "assetP2": "Elke technologie die wij ontwikkelen pakt een specifiek verontreinigingsmechanisme aan — deeltjesslijtage, waterinname, bypass-storing of thermische degradatie — gericht op de grondoorzaak van voortijdig falen van activa.",
+    "archLabel": "INFORMATIEARCHITECTUUR",
+    "archItems": [
+      "Verontreiniging",
+      "Activadegradatie",
+      "Normen en Meting",
+      "Beschermingstechnologieën",
+      "Productimplementatie",
+      "Vlootoptimalisatie",
+      "Duurzaamheidsimpact"
+    ],
+    "problemTag": "// OPERATIONELE RISICODIAGNOSE",
+    "problemH1": "WAT U NIET KUNT ZIEN",
+    "problemH2": "STOPT UW OPERATIE.",
+    "problemIntro": "80% van de vroegtijdige apparatuurstoringen worden veroorzaakt door verontreiniging. Inefficiënte filtratie laat onzichtbare deeltjes werken als schuurpapier binnen kritieke componenten — lagervlakken, injecteuropeningen, hydraulische spoelen.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "Van voortijdige storingen worden veroorzaakt door verontreiniging.",
+    "failModes": [
+      {
+        "title": "Injector-erosie",
+        "desc": "Micronische deeltjes vervormen de spuitopeningen, wat onmiddellijk vermogensverlies en slechte verbranding veroorzaakt."
+      },
+      {
+        "title": "Kritische Lagerwrijving",
+        "desc": "Vervuilde olie versnelt de metaalslijtage, waardoor de levensduur van het motorblok met maximaal 40% wordt verkort."
+      },
+      {
+        "title": "Verlies van Brandstofefficiëntie",
+        "desc": "Verontreinigde brandstofsystemen dwingen motoren om tot 8% meer diesel te verbruiken om hetzelfde koppeloutput te behouden."
+      }
+    ],
+    "whyTitle1": "ACTIVABESCHERMING",
+    "whyTitle2": "TECHNOLOGIE",
+    "whyP1": "ELIMFILTERS is geen filterbedrijf. ELIMFILTERS is een bedrijf van ",
+    "whyP1hl": "Activabeschermingstechnologie",
+    "whyP1after": " — ingenieurssystemen die verontreiniging beheersen, degradatie voorkomen en de waarde van kritieke industriële activa beschermen.",
+    "whyP2": "Elke technologie die wij ontwikkelen pakt een meetbare verontreinigingsdreiging aan. Defect raakende apparatuur kost honderdduizenden aan reparaties. Wij beschermen die investering op systeemniveau, niet op productniveau.",
+    "whyCheckItems": [
+      "Contaminatiebeheersing op systeemniveau, geen productvervanging",
+      "25+ jaar bescherming van hoogwaardige industriële activa",
+      "Technische normen: ISO 5011 · 16889 · 19438 · 4406",
+      "Ingezet in 12 industrieën — mijnbouw, marine, landbouw en meer"
+    ],
+    "whyCardTag": "// ACTIVABESCHERMINGSTECHNOLOGIE",
+    "whyCardTitle1": "Uw apparatuur is miljoenen waard.",
+    "whyCardTitle2": "Bescherm het dienovereenkomstig.",
+    "whyCardDesc": "Elke ELIMFILTERS-technologie bestaat om kritieke activa te beschermen, downtime te verminderen en de operationele levensduur te verlengen.",
+    "whyCardItems": [
+      "AI-geformuleerde Hybride Media",
+      "Hydrofobe Scheidingssystemen",
+      "Anti-bypass-structuren",
+      "20.000+ OEM-kruisreferenties gevalideerd"
+    ],
+    "techTag": "// BEWEZEN TECHNOLOGIE",
+    "techTitle": "Activabescherming",
+    "techHighlight": "Technologie",
+    "techItems": [
+      {
+        "title": "AI-geformuleerde Hybride Media",
+        "desc": "Propriëtaire mediatechnologie ontwikkeld met wiskundige algoritmen en laboratoriumgeteste scenario's. Unieke formulering levert uitzonderlijke prestaties die niet kunnen worden gerepliceerd."
+      },
+      {
+        "title": "Hydrofobe Scheidingssystemen",
+        "desc": "Geavanceerde verwijdering van water en vocht uit brandstoffen en smeermiddelen. Voorkomt corrosie, oxidatie en viscositeitsdegradatie terwijl betrouwbare werking op lange termijn wordt gegarandeerd."
+      },
+      {
+        "title": "Anti-bypass-structuren",
+        "desc": "100% gegarandeerde veiligheid: als bypass optreedt, faalt het filter veilig. Nul risico op plotselinge verontreinigingsgebeurtenissen. Absolute bescherming van kritieke apparatuur."
+      }
+    ],
+    "ctaDealerTag": "// DEALERNETWERK",
+    "ctaDealerTitle": "ALLEEN HET BESTE",
+    "ctaDealerHl": "VERKOOPT ELIMFILTERS.",
+    "ctaDealerBtn": "WORD EEN DEALER",
+    "ctaSearchTag": "// TECHNISCH ZOEKEN",
+    "ctaSearchTitle": "HET JUISTE FILTER.",
+    "ctaSearchHl": "ZOEKEN ALS EEN PRO.",
+    "ctaSearchBtn": "VIND MIJN ONDERDEEL",
+    "faqTag": "// VEELGESTELDE VRAGEN",
+    "faqTitle": "Veelgestelde Vragen over Industriële Filtratie",
+    "faqItems": [
+      {
+        "q": "Wat is het beste luchtfilter voor mijnbouwapparatuur?",
+        "a": "ELIMFILTERS® MACROCORE™ en NANOFORCE™ technologieën bereiken 99,9% deeltjesvangstefficiëntie voor luchtinlaatsystemen in de mijnbouw, conform SAE J1539 en ISO 5011. De selectie hangt af van de motorinhoud en de operationele omgeving."
+      },
+      {
+        "q": "Hoe vaak moeten industriële brandstoffilters worden vervangen?",
+        "a": "ELIMFILTERS® beveelt vervangingsintervallen aan van 500–1.000 bedrijfsuren voor zware dieselmotoren, of 250–500 uur in sterk verontreinigde omgevingen. AQUAGUARD™ brandstoffilters verlengen intervallen door superieure waterafscheiding (99,8% efficiëntie)."
+      },
+      {
+        "q": "Welke ISO-reinheidsklasse moet een hydraulisch systeem nastreven?",
+        "a": "De meeste industriële hydraulische systemen vereisen ISO 17/15/12 om proportionele klepspinnen te beschermen. Kritieke systemen kunnen ISO 15/13/10 specificeren. ELIMFILTERS® filtratiestrategieën richten zich op gemeten reinheidsklassen, niet op productmerken."
+      },
+      {
+        "q": "Waarom veroorzaakt verontreiniging motorstoring?",
+        "a": "Verontreinigingsdeeltjes slijten lageroppervlakken, beperken brandstofinjectoren en tasten de afdichtingsintegriteit aan. Ongecontroleerde verontreiniging vermindert de lagerlevensduur van 15.000+ uur tot 2.000–3.000 uur. ELIMFILTERS® systeem-niveau contaminatiecontrole voorkomt deze faalwijzen."
+      }
+    ]
   }
 }
