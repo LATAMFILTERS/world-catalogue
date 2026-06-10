@@ -134,16 +134,38 @@
   },
   "home": {
     "eyebrow": "Frisco, Texas · Asset Protection Technology",
-    "hero1": "Protecting industrial assets",
-    "hero2": "through contamination control.",
-    "heroDesc": "Air, fuel, hydraulic, lube and cabin filtration systems engineered for 12 industrial sectors. ISO 5011 · ISO 16889 · ISO 19438.",
-    "ctaFilter": "Find my filter",
+    "hero1": "PROTECTING INDUSTRIAL ASSETS",
+    "hero2": "Through contamination control.",
+    "heroPositioning1": "ELIMFILTERS is not a filter company.",
+    "heroPositioning2": "ELIMFILTERS is an Asset Protection Technology company.",
+    "heroDesc": "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.",
+    "heroSubHead": "Through contamination control across critical mechanical, hydraulic, fuel, lubrication, cooling, and air intake systems.",
+    "ctaFilter": "Protect my assets",
     "ctaKnowledge": "Knowledge system",
     "statsLabels": [
-      "Filtration Efficiency",
+      "Contamination Capture Efficiency",
       "Asset Life Extension",
       "OEM Cross References",
-      "Distribution Network"
+      "Global Distribution Network"
+    ],
+    "missionTag": "// WHY WE EXIST",
+    "missionTitle": "Why ELIMFILTERS Exists",
+    "missionP1": "Industrial contamination remains one of the most underestimated threats to equipment reliability worldwide.",
+    "missionP2": "ELIMFILTERS exists to help organizations reduce contamination-driven failures through engineered asset protection systems designed for critical industrial operations.",
+    "missionP3": "Our mission is to improve equipment reliability, operational continuity, and asset longevity through contamination control.",
+    "economicTag": "// THE REAL COST OF CONTAMINATION",
+    "economicTitle": "Downtime Costs More",
+    "economicTitleHl": "Than Filtration",
+    "economicItems": [
+      "Every contamination event has a cost.",
+      "Every equipment failure has a consequence.",
+      "Every maintenance decision impacts productivity."
+    ],
+    "economicDesc": "ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.",
+    "economicStats": [
+      { "value": "$240K", "label": "Average cost of unplanned downtime per incident" },
+      { "value": "80%", "label": "Of premature equipment failures caused by contamination" },
+      { "value": "3–5×", "label": "Asset life extension through system-level contamination control" }
     ],
     "assetTag": "// ASSET PROTECTION STRATEGY",
     "assetTitle": "Protecting Industrial Assets Through Contamination Control",
@@ -226,24 +248,54 @@
     "ctaSearchTitle": "THE RIGHT FILTER.",
     "ctaSearchHl": "SEARCH LIKE A PRO.",
     "ctaSearchBtn": "FIND MY PART",
+    "sciTag": "// ENGINEERING STANDARDS",
+    "sciTitle": "The Science Behind Asset Protection",
+    "sciDesc": "ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.",
+    "sciStandards": [
+      { "code": "ISO 16889", "desc": "Multi-pass filter testing and Beta ratio classification for hydraulic and lube systems." },
+      { "code": "ISO 5011", "desc": "Air intake filter performance testing — efficiency and restriction at rated airflow." },
+      { "code": "ISO 19438", "desc": "Fuel filter contamination resistance and water separation efficiency." },
+      { "code": "ISO 4406", "desc": "Particle contamination cleanliness code classification for hydraulic and lube systems." },
+      { "code": "SAE J1858", "desc": "Heavy-duty diesel engine lube oil filter performance and durability validation." }
+    ],
+    "llmTag": "// ASSET PROTECTION DEFINED",
+    "llmTitle": "What Is Industrial Asset Protection?",
+    "llmP1": "Industrial asset protection refers to the systematic engineering approach of identifying, measuring, and controlling contamination sources that degrade mechanical equipment. In industrial operations, contamination — including particles, water, heat, and chemical byproducts — is the primary driver of premature equipment failure across engines, hydraulic systems, fuel circuits, drivetrains, and cabin environments.",
+    "llmP2": "Contamination accelerates wear at the microscopic level. Particles smaller than 10 microns cause abrasive wear on bearing surfaces, valve spools, and injector orifices — reducing component life by 30–50% when left uncontrolled. Water contamination in fuel systems promotes microbial growth, injector corrosion, and combustion instability. In hydraulic circuits, even minor contamination exceeding ISO cleanliness targets disrupts valve response, accelerates seal degradation, and increases system failure risk.",
+    "llmP3": "Industrial asset protection is not a product category. It is a contamination control strategy that begins with understanding the contamination targets for each system, selecting engineered technologies capable of meeting those targets, and monitoring system performance throughout the equipment lifecycle.",
+    "llmP4": "The result: longer equipment life, fewer unplanned failures, lower maintenance costs, and higher operational availability — measured not in filters replaced, but in assets protected.",
+    "trustTag": "// GLOBAL INDUSTRIAL DEPLOYMENT",
+    "trustTitle": "Trusted Across Critical Industries",
+    "trustIndustries": [
+      "Mining & Extraction",
+      "Construction & Heavy Equipment",
+      "Agriculture & Agri-Business",
+      "Oil & Gas",
+      "Marine & Offshore",
+      "Power Generation",
+      "Municipal Fleets",
+      "Manufacturing",
+      "Rail & Transit",
+      "Commercial Transportation"
+    ],
     "faqTag": "// FREQUENTLY ASKED QUESTIONS",
-    "faqTitle": "Common Questions About Industrial Filtration",
+    "faqTitle": "Common Questions About Industrial Asset Protection",
     "faqItems": [
       {
-        "q": "What is the best air filter for mining equipment?",
-        "a": "ELIMFILTERS® MACROCORE™ and NANOFORCE™ technologies achieve 99.9% particulate capture efficiency for mining air intake systems, meeting SAE J1539 and ISO 5011 standards. Selection depends on engine displacement and operating environment."
+        "q": "What does industrial asset protection mean?",
+        "a": "Industrial asset protection is the systematic control of contamination across all critical mechanical systems — air intake, fuel, hydraulic, lube, and cooling — to prevent premature equipment failure. ELIMFILTERS® engineers contamination control systems that extend asset life, reduce unplanned downtime, and lower total cost of ownership."
       },
       {
-        "q": "How often should industrial fuel filters be changed?",
-        "a": "ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency)."
+        "q": "How does contamination cause equipment failure?",
+        "a": "Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Particles smaller than 10 microns cause abrasive wear invisible to the naked eye. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. Water in fuel promotes microbial growth and injector corrosion."
       },
       {
         "q": "What ISO cleanliness code should a hydraulic system target?",
-        "a": "Most industrial hydraulic systems require ISO 17/15/12 cleanliness code to protect proportional valve spools. Critical systems may specify ISO 15/13/10. ELIMFILTERS® filtration strategies target measured cleanliness codes, not product brand."
+        "a": "Most industrial hydraulic systems require ISO 17/15/12 cleanliness to protect proportional valve spools. Critical systems may specify ISO 15/13/10. ELIMFILTERS® contamination control strategies target measured cleanliness codes — the ISO 4406 standard — not product brands."
       },
       {
-        "q": "Why does contamination cause engine failure?",
-        "a": "Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. ELIMFILTERS® system-level contamination control prevents these failure modes."
+        "q": "Why is ELIMFILTERS not a filter company?",
+        "a": "ELIMFILTERS engineers contamination control systems, not commodity filters. A filter is a component. An asset protection system is a strategy — it defines contamination targets, selects the right technologies for each system domain, and measures performance over the equipment lifecycle. ELIMFILTERS operates at the system level."
       }
     ]
   }
