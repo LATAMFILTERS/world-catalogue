@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, animate } from 'motion/react';
+import { motion, useInView, animate, useSpring, useMotionValue } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
@@ -172,13 +172,235 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+
+function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const mouseX = useSpring(50, { stiffness: 60, damping: 20 });
+  const mouseY = useSpring(50, { stiffness: 60, damping: 20 });
+  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const unsub1 = mouseX.on('change', x => setGlowPos(p => ({ ...p, x })));
+    const unsub2 = mouseY.on('change', y => setGlowPos(p => ({ ...p, y })));
+    return () => { unsub1(); unsub2(); };
+  }, [mouseX, mouseY]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    mouseX.set(((e.clientX - rect.left) / rect.width) * 100);
+    mouseY.set(((e.clientY - rect.top) / rect.height) * 100);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(50);
+    mouseY.set(50);
+  };
+
+  return (
+    <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        padding: '0 7% 7vh',
+        overflow: 'hidden',
+        background: '#000',
+      }}
+    >
+      {/* Video background */}
+      <video
+        autoPlay muted loop playsInline
+        style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          objectFit: 'cover', objectPosition: 'center',
+          zIndex: 0, opacity: 0.45,
+        }}
+      >
+        <source src="/images/moleculas.mp4" type="video/mp4" />
+      </video>
+
+      {/* Bottom vignette */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 1,
+        background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%)',
+      }} />
+
+      {/* Mouse-tracking glow — immersive cursor effect */}
+      <div
+        style={{
+          position: 'absolute', inset: 0, zIndex: 1,
+          background: `radial-gradient(ellipse 55vw 45vh at ${glowPos.x}% ${glowPos.y}%, rgba(255,241,45,0.055) 0%, transparent 70%)`,
+          transition: 'background 0.05s linear',
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Subtle vertical divider line */}
+      <div style={{
+        position: 'absolute', top: 0, bottom: 0,
+        left: '50%', width: '1px',
+        background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, transparent 100%)',
+        zIndex: 1, pointerEvents: 'none',
+      }} />
+
+      {/* Content */}
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px' }}>
+
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.22em',
+            color: 'rgba(255,241,45,0.75)',
+            textTransform: 'uppercase',
+            marginBottom: '2rem',
+          }}
+        >
+          Frisco, Texas · Asset Protection Technology
+        </motion.p>
+
+        {/* H1 — elegant, controlled size */}
+        <h1 style={{ margin: 0, padding: 0 }}>
+          <motion.span
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: 'block',
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 300,
+              fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+              color: 'rgba(255,255,255,0.92)',
+            }}
+          >
+            Protecting industrial assets
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: 'block',
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 600,
+              fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+              color: '#FFF12D',
+            }}
+          >
+            through contamination control.
+          </motion.span>
+        </h1>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            height: '1px',
+            width: '60px',
+            background: 'rgba(255,241,45,0.5)',
+            marginTop: '2rem',
+            marginBottom: '1.75rem',
+            transformOrigin: 'left',
+          }}
+        />
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: '"Space Grotesk", sans-serif',
+            fontWeight: 400,
+            fontSize: 'clamp(0.9rem, 1.4vw, 1.1rem)',
+            lineHeight: 1.65,
+            color: 'rgba(255,255,255,0.5)',
+            maxWidth: '520px',
+            marginBottom: '3rem',
+          }}
+        >
+          Air, fuel, hydraulic, lube and cabin filtration systems engineered for 12 industrial sectors. ISO 5011 · ISO 16889 · ISO 19438.
+        </motion.p>
+
+        {/* CTA row */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}
+        >
+          <motion.a
+            href="https://part-search.elimfilters.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.45)' }}
+            whileTap={{ scale: 0.97 }}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+              background: '#FFF12D', color: '#000',
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 600, fontSize: '0.8rem',
+              letterSpacing: '0.08em',
+              padding: '0.85rem 2rem',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              borderRadius: '4px',
+            }}
+          >
+            Find my filter
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </motion.a>
+
+          <motion.a
+            href="/knowledge-system"
+            whileHover={{ color: '#fff' }}
+            style={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 400, fontSize: '0.8rem',
+              letterSpacing: '0.08em',
+              color: 'rgba(255,255,255,0.4)',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              transition: 'color 0.25s ease',
+              display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+            }}
+          >
+            Knowledge system
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17L17 7M7 7h10v10"/>
+            </svg>
+          </motion.a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [progress, setProgress] = useState(0);
-
-  const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setProgress(0);
@@ -228,266 +450,7 @@ export default function Home() {
         `}</style>
 
         {/* ── HERO ── */}
-        <section
-          ref={heroRef}
-          className="home-hero-section"
-          style={{
-            position: 'relative',
-            minHeight: '90vh',
-            display: 'flex',
-            alignItems: 'flex-end',
-            padding: '72px 5% 60px',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Video background — 65% opacity */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              zIndex: 0,
-              opacity: 0.65,
-            }}
-          >
-            <source src="/images/moleculas.mp4" type="video/mp4" />
-          </video>
-
-          {/* Gradient: left panel darkens for legibility */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.15) 100%)',
-          }} />
-          {/* Gradient: bottom up — anchors text */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 55%)',
-          }} />
-
-          {/* Central SVG glow — amber brand color */}
-          <svg
-            aria-hidden="true"
-            style={{
-              position: 'absolute',
-              top: '5%',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '70vw',
-              height: '320px',
-              zIndex: 1,
-              pointerEvents: 'none',
-              overflow: 'visible',
-            }}
-          >
-            <defs>
-              <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="28" />
-              </filter>
-            </defs>
-            <ellipse
-              cx="50%" cy="50%"
-              rx="42%" ry="30%"
-              fill="rgba(255,220,30,0.07)"
-              filter="url(#hero-glow)"
-            />
-          </svg>
-
-          {/* Vertical grid lines — desktop only */}
-          {[25, 50, 75].map(pct => (
-            <div
-              key={pct}
-              className="hero-grid-line"
-              style={{
-                position: 'absolute',
-                top: 0, bottom: 0,
-                left: `${pct}%`,
-                width: '1px',
-                background: 'rgba(255,255,255,0.06)',
-                zIndex: 1,
-                pointerEvents: 'none',
-              }}
-            />
-          ))}
-
-          {/* Liquid Glass credential card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              position: 'absolute',
-              top: '12%',
-              right: '8%',
-              width: '200px',
-              zIndex: 3,
-              transform: 'translateY(-50px)',
-            }}
-            className="hero-glass-card"
-          >
-            <div style={{
-              padding: '1.5rem',
-              background: 'rgba(255,255,255,0.01)',
-              backdropFilter: 'blur(4px)',
-              WebkitBackdropFilter: 'blur(4px)',
-              boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.4)',
-              border: '1px solid rgba(255,241,45,0.18)',
-            }}>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.62rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                opacity: 0.7,
-                marginBottom: '0.75rem',
-                textTransform: 'uppercase',
-              }}>[ ISO CERTIFIED ]</p>
-              <p style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                color: '#fff',
-                lineHeight: 1.35,
-                marginBottom: '0.6rem',
-              }}>Asset Protection<br />Technology</p>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.6rem',
-                color: 'rgba(255,255,255,0.45)',
-                lineHeight: 1.6,
-              }}>ISO 5011 · 16889<br />19438 · 4406</p>
-            </div>
-          </motion.div>
-
-          <div
-            style={{
-              maxWidth: '1400px',
-              margin: '0 auto',
-              width: '100%',
-              position: 'relative',
-              zIndex: 2,
-            }}
-          >
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '1.25rem',
-              }}
-            >
-              ELIMFILTERS | ASSET PROTECTION TECHNOLOGY
-            </motion.p>
-
-            {/* Split text H1 */}
-            <h1
-              style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontWeight: 900,
-                fontSize: 'clamp(2.5rem, 9vw, 7rem)',
-                lineHeight: 1.05,
-                letterSpacing: '0.01em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '0.5rem',
-                perspective: '600px',
-              }}
-            >
-              <SplitText text="PROTECTING INDUSTRIAL ASSETS" startDelay={0.35} />
-            </h1>
-
-            <h2
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontWeight: 400,
-                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-                lineHeight: 1.5,
-                color: 'rgba(255,255,255,0.65)',
-                textTransform: 'none',
-                maxWidth: '640px',
-                marginBottom: '2.5rem',
-                overflow: 'hidden',
-              }}
-            >
-              <motion.span
-                initial={{ y: '110%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block' }}
-              >
-                Through contamination control across critical mechanical, hydraulic, fuel, lubrication, cooling and air intake systems.
-              </motion.span>
-            </h2>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-bottom"
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                gap: '2rem',
-              }}
-            >
-              <div
-                style={{
-                  maxWidth: '560px',
-                  borderLeft: '3px solid #FFF12D',
-                  paddingLeft: '1.5rem',
-                }}
-              >
-                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, fontFamily: 'Outfit, sans-serif', marginBottom: '0.25rem' }}>
-                  ELIMFILTERS is not a filter company.
-                </p>
-                <p style={{ color: '#FFF12D', fontSize: '1rem', lineHeight: 1.6, fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}>
-                  ELIMFILTERS is an Asset Protection Technology company.
-                </p>
-              </div>
-              <motion.a
-                href="https://part-search.elimfilters.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(255,241,45,0.55)' }}
-                whileTap={{ scale: 0.96 }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  background: '#FFF12D',
-                  color: '#000',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.75rem',
-                  letterSpacing: '0.15em',
-                  padding: '1rem 2rem 1rem 2.5rem',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  whiteSpace: 'nowrap',
-                  borderRadius: '9999px',
-                }}
-              >
-                FIND MY PART
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </motion.a>
-            </motion.div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* ── STATS ── */}
         <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid #111' }}>
