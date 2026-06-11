@@ -3338,6 +3338,53 @@ app.post('/api/crosslink/fg-don', async (req, res) => {
   }
 });
 
+// ─── POST /api/enrich/oem-codes ──────────────────────────────────────────────
+// Agrega OEM codes a un producto existente SIN sobrescribir los que ya tiene.
+// Body: { key, sku, oem_codes: [{manufacturer, part_number}], mode: "append" }
+app.post('/api/enrich/oem-codes', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const { sku, oem_codes } = req.body;
+  if (!sku || !Array.isArray(oem_codes) || oem_codes.length === 0)
+    return res.status(400).json({ error: 'sku and oem_codes required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Leer OEM codes actuales
+    const row = await client.query(
+      'SELECT oem_codes FROM elimfilters_catalog WHERE sku = $1', [sku]
+    );
+    if (row.rows.length === 0) return res.status(404).json({ error: 'SKU not found' });
+
+    const existing = row.rows[0].oem_codes || [];
+    const existingKeys = new Set(
+      existing.map(e => `${(e.manufacturer||'').toUpperCase()}|${(e.part_number||'').toUpperCase().replace(/[^A-Z0-9]/g,'')}`)
+    );
+
+    // Solo agregar los que no existen
+    const toAdd = oem_codes.filter(o => {
+      const key = `${(o.manufacturer||'').toUpperCase()}|${(o.part_number||'').toUpperCase().replace(/[^A-Z0-9]/g,'')}`;
+      return !existingKeys.has(key);
+    });
+
+    if (toAdd.length === 0) return res.json({ status: 'no_new_codes', added: 0, sku });
+
+    const merged = [...existing, ...toAdd];
+    await client.query(
+      'UPDATE elimfilters_catalog SET oem_codes = $1::jsonb WHERE sku = $2',
+      [JSON.stringify(merged), sku]
+    );
+
+    res.json({ status: 'ok', added: toAdd.length, total: merged.length, sku });
+  } catch (err) {
+    console.error('[enrich/oem-codes]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
