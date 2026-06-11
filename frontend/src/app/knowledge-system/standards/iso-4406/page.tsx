@@ -232,21 +232,46 @@ export default function ISO4406Page() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY]</p>
-        <p>SYSTEMS_AFFECTED: lube, hydraulic, fuel, transmission</p>
-        <p>CONCEPT_TAXONOMY: type=standard | domain=contamination-measurement | standards=ISO-4406, ISO-16889</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-4406</p>
-        <p>&nbsp;&nbsp;concept_id: iso-4406-cleanliness-codes</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: ISO 4406 — Particle Cleanliness Codes</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>ISO 4406 translates particle count measurements per milliliter into a three-number cleanliness code (e.g., 16/14/11) where each code number represents a particle population range — each step doubles the particle count — providing a standardized language for specifying and measuring fluid cleanliness targets in lube, hydraulic, and fuel systems.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Engine lube oil circuits, hydraulic power units, transmission fluid systems, fuel storage and transfer systems, industrial fluid power circuits, bearing lubrication systems, gearbox oil systems</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Operating hydraulic system at ISO 19/17/14 instead of target 17/15/12 → 4x higher particle population at ≥4µm → proportional valve spool wear rate increases 3–5x → valve service interval reduced from 15,000 hours to 3,000–5,000 hours. In engine lube: ISO 19/17/14 oil cleanliness vs. target 16/14/11 → 4x particle population → bearing surface wear rate doubles → bearing clearance opens → oil consumption increases → premature overhaul. Each two-code-number step increase represents 4x contamination increase and proportional acceleration of wear rates.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 4406:2021: Current cleanliness code standard with updated particle count ranges and reporting format | ISO 16889: Multi-pass filter test that specifies achievable ISO 4406 cleanliness codes for certified filter elements | ISO 11500: Automatic particle counting method for hydraulic fluids used to generate ISO 4406 cleanliness codes | NAS 1638: Alternative American cleanliness classification used in aerospace and defense applications</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>NANOFORCE: Achieves ISO 4406 cleanliness codes of 15/13/10 in hydraulic circuits at flow capacity — targeting sub-3µm particle capture | MACROCORE: Maintains ISO 17/15/12 cleanliness codes in engine oil and hydraulic return-line applications | SYNTRAX: High-capacity synthetic media for maintaining ISO 4406 targets across extended service intervals</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>ISO 4406 cleanliness codes are the primary measurement tool for contamination control system effectiveness — the difference between ISO 16/14/11 and ISO 19/17/14 represents 8x more particles at ≥4µm and determines whether bearing life is measured in 15,000 hours or 3,000 hours, making cleanliness code selection the most consequential engineering decision in fluid system design.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/iso-4406 | concept: ISO 4406 Particle Cleanliness Codes | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "ISO 4406 — Particle Cleanliness Code Standard",
+        "description": "ISO 4406 translates particle count measurements into three-number cleanliness codes providing a standardized language for specifying contamination targets in lube, hydraulic, and fuel systems.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["ISO 4406", "cleanliness codes", "particle contamination measurement", "hydraulic cleanliness", "lube oil cleanliness", "contamination targets"],
+        "about": { "@type": "Thing", "name": "ISO 4406 Cleanliness Codes", "description": "Particle count classification system for fluid cleanliness measurement and specification" },
+        "mentions": {
+          "standards": ["ISO 4406", "ISO 16889", "ISO 11500", "NAS 1638"],
+          "technologies": ["NANOFORCE", "MACROCORE", "SYNTRAX"],
+          "contaminationModes": ["particle contamination", "bearing wear", "valve spool erosion", "oil contamination"]
+        }
+      })}} />
     </main>
   );
 }

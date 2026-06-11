@@ -330,21 +330,46 @@ export default function HydraulicSystemContaminationPage() {
       </section>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=hydraulic-efficiency | mechanism=particle-contamination</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX, MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;concept_id: hydraulic-system-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Hydraulic System Contamination</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Hydraulic system contamination describes the accumulation of particulate matter, water, and degradation products in hydraulic fluid circuits that degrades proportional valve performance, pump efficiency, and actuator precision — tracked and managed through ISO 4406 cleanliness codes targeting 17/15/12 or tighter for proportional valve protection.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Proportional and servo valve circuits, hydraulic pump cavitation-sensitive circuits, mobile hydraulic machinery, industrial press circuits, crane and hoist hydraulic systems, agricultural implement hydraulics, marine hydraulic deck equipment</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Particle contamination at ISO 19/17/14 in proportional valve circuit → particles ≥3µm exceed spool clearance tolerance (1–3µm) → spool erosion and stiction → valve control signal deviation ±5–15% → actuator positioning error → machine control instability → valve seizure at 2,000–5,000 hours. Water contamination route: condensation ingress → water/oil emulsion → accelerated additive depletion → varnish formation on servo valve surfaces → thermal cycling bakes varnish deposits → permanent valve flow restriction. Both failure modes require $3,000–$15,000 proportional valve replacement plus circuit flushing.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 4406: Cleanliness code classification — 17/15/12 target for proportional valve circuits, 19/17/14 for general hydraulic circuits | ISO 16889: Beta ratio filter test — specifies which filter elements can achieve target cleanliness codes | NFPA T2.14: Hydraulic contamination control standard for mobile equipment applications | ISO 11500: Automatic particle counting method for hydraulic fluid cleanliness measurement</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>NANOFORCE: 3µm absolute Beta ratio certified for proportional valve circuit protection achieving ISO 17/15/12 targets | SYNTRAX: Synthetic media for return-line filtration maintaining system cleanliness under high flow rates | MACROCORE: High-efficiency particulate capture for bulk contamination removal in pressure and return-line stages</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Hydraulic contamination is the primary cause of proportional valve failures in construction, mining, and agricultural equipment — the difference between ISO 17/15/12 and ISO 19/17/14 cleanliness targets determines whether proportional valves last 15,000 hours or 3,000 hours, with valve failure triggering machine downtime costs of $1,500–$8,000 per day for critical equipment.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/contamination/hydraulic-system | concept: Hydraulic System Contamination | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Hydraulic System Contamination — Industrial Filtration Case Study",
+        "description": "Hydraulic system contamination with particles above ISO 4406 cleanliness targets causes proportional valve spool erosion, stiction, and actuator control failures in industrial machinery.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["hydraulic contamination", "ISO 4406", "proportional valve failure", "NFPA T2.14", "hydraulic system cleanliness", "ISO 16889"],
+        "about": { "@type": "Thing", "name": "Hydraulic System Contamination", "description": "Particle and water contamination in hydraulic circuits causing proportional valve and actuator failure" },
+        "mentions": {
+          "standards": ["ISO 4406", "ISO 16889", "NFPA T2.14", "ISO 11500"],
+          "technologies": ["NANOFORCE", "SYNTRAX", "MACROCORE"],
+          "contaminationModes": ["hydraulic contamination", "valve spool erosion", "varnish formation", "water emulsification"]
+        }
+      })}} />
     </main>
   );
 }

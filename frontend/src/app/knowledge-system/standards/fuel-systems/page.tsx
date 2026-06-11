@@ -245,21 +245,46 @@ export default function FuelSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage_tank</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=fuel-integrity | standards=ASTM-D6304, ISO-12937</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406, ASTM D975</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/fuel-systems</p>
-        <p>&nbsp;&nbsp;concept_id: diesel-fuel-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Diesel Fuel Filtration Systems</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Diesel fuel filtration systems remove water contamination, particulate matter, and microbial growth from fuel circuits serving HPCR injection systems operating at 1,800–2,500 bar, where sub-10µm particle contamination and free water above 200 ppm cause injector stiction, needle seat scoring, and injection timing failure.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>HPCR fuel injection circuits, diesel fuel storage tanks, transfer pump circuits, bulk fuel handling systems, marine fuel systems, generator fuel supply</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Free water exceeds 200 ppm dissolved threshold → water/fuel emulsion reaches injector needle seat → hydraulic lock during injection stroke → needle seat scoring and micro-pitting → injection timing deviation ±2–5° → combustion efficiency loss 8–15% → injector replacement intervals reduced from 15,000+ hours to 3,000–6,000 hours. Microbial contamination route: water ingress → bacterial growth → biomass accumulation → filter plugging → fuel starvation → engine stall.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ASTM D6304: Karl Fischer titration method for measuring total water content in diesel fuel | ISO 12937: Petroleum product water determination by Coulometric Karl Fischer titration | ASTM D975: Diesel fuel specification defining particulate and water contamination limits | EN 590: European diesel fuel standard with water and sediment specifications</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>HYDROCORE: Water separation and coalescing technology targeting free water removal to below 100 ppm | SYNTEPORE: Sub-4µm terminal filtration protecting HPCR injector needle seats | NANOFORCE: Sub-micron water-absorbing media for last-stage fuel protection</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>HPCR injector protection via fuel contamination control is the single largest determinant of fuel system lifecycle cost — maintaining water below 200 ppm and particles below 10µm extends injector service intervals from 3,000 to 15,000+ hours, with injector replacement costs averaging $800–2,500 per unit in heavy diesel applications.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/fuel-systems | concept: Diesel Fuel Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Diesel Fuel Filtration Systems — Industrial Standards",
+        "description": "Diesel fuel filtration removes water and particulate contamination protecting HPCR injection systems operating at 1,800–2,500 bar injection pressure.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["diesel fuel filtration", "ASTM D6304", "ISO 12937", "HPCR injector protection", "water contamination", "fuel filtration"],
+        "about": { "@type": "Thing", "name": "Diesel Fuel Filtration Systems", "description": "Multi-stage fuel filtration targeting water removal and particle capture for HPCR injection system protection" },
+        "mentions": {
+          "standards": ["ASTM D6304", "ISO 12937", "ASTM D975", "EN 590"],
+          "technologies": ["HYDROCORE", "SYNTEPORE", "NANOFORCE"],
+          "contaminationModes": ["water contamination", "injector stiction", "microbial growth", "particle contamination"]
+        }
+      })}} />
     </main>
   );
 }

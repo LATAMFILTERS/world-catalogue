@@ -238,21 +238,46 @@ export default function AirIntakeSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Air Intake Filtration Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: air_intake, engine, turbocharger, crankcase</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=air-intake | standards=ISO-5011, SAE-J1539</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 5011, SAE J1539, SAE J726</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, MACROCORE, SYNTEPORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/air-intake-systems</p>
-        <p>&nbsp;&nbsp;concept_id: air-intake-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Air Intake Filtration Systems</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Air intake filtration systems maintain SAE J1539-compliant combustion air cleanliness for diesel engines and compressors by capturing airborne particulate before it enters the intake manifold — preserving volumetric efficiency, protecting cylinder bore surfaces, and preventing abrasive wear on turbocharger compressor wheels operating at 100,000–200,000 RPM.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Diesel engine air intake circuits, turbocharger compressor sections, air compressor intake systems, agricultural machinery engines, mining equipment intake systems, construction equipment diesel engines</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Air filter restriction exceeds 200 mbar above clean-element baseline → engine volumetric efficiency drops 8% → fuel consumption increases 6–10% → engine management compensates by increasing fuel delivery → increased exhaust temperatures → accelerated turbocharger bearing wear. Unfiltered air bypass route: filter element collapse or bypass valve open → abrasive particle ingestion → cylinder bore scoring → piston ring wear → blow-by increase → engine overhaul at 2,000–5,000 hours vs. 10,000–15,000 hours with proper air filtration.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>SAE J1539: Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air | ISO 5011: Air filter element integrity and efficiency test standard covering collapse pressure verification | ANSI B132.1: Industrial air filter test methods for dust holding capacity and pressure drop | SAE J726: Air cleaner test code for evaluating air filter restriction characteristics</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>MACROCORE: Progressive density gradient air filtration achieving 99.98% efficiency with extended dust holding capacity for high-dust environments | DRYCORE: Pre-filtration and moisture separation for humid and wet-environment intake systems | INTEKCORE: Housing systems maintaining intake circuit seal integrity preventing unfiltered air bypass</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Air filtration is the primary defense against accelerated engine wear in dust-intensive operations — a single filter bypass event during agricultural harvesting or mining operations can introduce enough abrasive material to reduce engine bore life from 12,000 hours to under 3,000 hours, making condition-based monitoring and correct filter selection critical for fleet maintenance economics.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/air-intake-systems | concept: Air Intake Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Air Intake Filtration Systems — Industrial Standards",
+        "description": "Air intake filtration maintains SAE J1539-compliant combustion air cleanliness protecting diesel engines and turbochargers from abrasive particle ingestion and volumetric efficiency loss.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["air intake filtration", "SAE J1539", "ISO 5011", "turbocharger protection", "engine air filter", "combustion air quality"],
+        "about": { "@type": "Thing", "name": "Air Intake Filtration Systems", "description": "Engine air intake filtration for abrasive particle capture and combustion air quality maintenance" },
+        "mentions": {
+          "standards": ["SAE J1539", "ISO 5011", "ANSI B132.1", "SAE J726"],
+          "technologies": ["MACROCORE", "DRYCORE", "INTEKCORE"],
+          "contaminationModes": ["abrasive particle ingestion", "turbocharger blade erosion", "cylinder bore scoring", "intake restriction"]
+        }
+      })}} />
     </main>
   );
 }

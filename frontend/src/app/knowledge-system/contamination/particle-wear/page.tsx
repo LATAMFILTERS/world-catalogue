@@ -332,21 +332,46 @@ export default function ParticleWearPage() {
       </section>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Air Intake Filtration Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, lube, air_intake, bearing</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=contamination | mechanism=abrasive-wear</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;concept_id: particle-wear-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Particle Wear Contamination</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Particle wear contamination describes the mechanism by which hard mineral particles (silica, iron oxides, wear debris) suspended in oil or air cause progressive abrasive material removal from precision metallic surfaces — creating a self-accelerating wear cycle where initial wear generates secondary particles that further accelerate component degradation.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Engine lube oil circuits, hydraulic power units, air intake systems, transmission fluid circuits, fuel injection systems, gearbox lubrication, bearing systems, turbocharger shaft bearings</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Hard particles (≥3µm, Mohs hardness &gt;6) enter bearing clearance (5–25µm) → micro-cutting removes surface material → wear particles accumulate in oil → oil particle count exceeds ISO 4406 target → secondary wear particles enter the wear cycle → bearing clearance opens beyond tolerance → journal instability → bearing seizure. Air intake route: abrasive ingestion → cylinder bore scoring → ring gap increase → blow-by → oil contamination → accelerated bearing wear. Measured: ISO 19/17/14 oil cleanliness vs. ISO 16/14/11 → 4x particle population → 2–3x wear rate acceleration → engine service life halved.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 4406: Particle cleanliness code classification — the measurement tool for quantifying particle contamination levels | ISO 16889: Beta ratio filter efficiency test — defines which filters can achieve target ISO 4406 cleanliness codes | ASTM D7085: ICP spectrometry for wear metal analysis in lube oil — quantifies metal removal rates from wear surfaces | SAE J1211: Crankcase ventilation standard — addresses recirculated wear particle management</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>MACROCORE: Primary particle capture at 10–18µm targeting bulk contamination removal in lube and air systems | NANOFORCE: Sub-micron particle removal targeting 1–3µm wear debris that conventional filters miss | DURATECH: High-capacity synthetic media maintaining contamination targets across extended drain intervals</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Particle wear is the root cause of 70–80% of all hydraulic and engine component failures in industrial equipment — controlling particle contamination to ISO 4406 targets is the single most impactful maintenance decision for extending component service life and reducing unplanned downtime in any equipment operating with fluid power or combustion systems.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/contamination/particle-wear | concept: Particle Wear Contamination | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Particle Wear Contamination — Industrial Filtration Case Study",
+        "description": "Particle wear contamination describes how hard mineral particles cause progressive abrasive wear in engine, hydraulic, and bearing systems — the root cause of 70–80% of industrial component failures.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["particle wear", "abrasive contamination", "ISO 4406", "bearing wear", "engine contamination", "hydraulic particle contamination"],
+        "about": { "@type": "Thing", "name": "Particle Wear Contamination", "description": "Abrasive wear mechanism caused by hard particles in oil and air systems" },
+        "mentions": {
+          "standards": ["ISO 4406", "ISO 16889", "ASTM D7085", "SAE J1211"],
+          "technologies": ["MACROCORE", "NANOFORCE", "DURATECH"],
+          "contaminationModes": ["particle wear", "bearing surface abrasion", "cylinder bore scoring", "turbine blade erosion"]
+        }
+      })}} />
     </main>
   );
 }

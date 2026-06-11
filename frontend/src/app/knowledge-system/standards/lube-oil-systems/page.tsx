@@ -477,21 +477,46 @@ export default function LubeOilSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: lube, engine, hydraulic, transmission</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=contamination | standards=ISO-16889, ISO-4406</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, SAE J1211, ASTM D7085</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DURATECH, NANOFORCE, MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/lube-oil-systems</p>
-        <p>&nbsp;&nbsp;concept_id: lube-oil-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Lube Oil Filtration Systems</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Lube oil filtration systems maintain measurable cleanliness codes (ISO 4406) in engine oil circuits through multi-stage filtration targeting specific particle size removal and dirt-holding capacity — protecting bearing journals, piston rings, and camshaft surfaces operating within 5–25µm clearance tolerances.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Engine main oil galleries, crankshaft bearing circuits, camshaft lubrication systems, transmission fluid circuits, gearbox lubrication, hydraulic systems, bearing lubrication circuits</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Particle contamination in lube oil accelerates abrasive wear: hard particles (silica, oxides) trapped between moving surfaces (piston rings, bearing journals) create micro-cutting. Cumulative wear reduces bearing clearance precision. Clearance deviation increases journal velocity variation → increased friction → localized temperature spikes → bearing seizure. Measured impact: optimal ISO 16/14/11 cleanliness targets extend engine bearing life 3–5x (typical: 5,000 hrs → 15,000–25,000 hrs). Poor contamination control reduces life to 2,000–3,000 hrs.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 16889: Beta ratio filter testing and classification for lube and hydraulic filter elements | ISO 4406: Particle cleanliness code classification — 16/14/11 target for engine oil systems | SAE J1211: Crankcase ventilation performance requirements relevant to oil circuit cleanliness | ASTM D7085: Determination of wear metals and contaminants in lube oil by ICP spectrometry</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>DURATECH: Extended lifecycle synthetic media with high dirt-holding capacity for drain interval optimization | NANOFORCE: Sub-micron particle removal targeting particles below 3µm that bypass standard lube filters | SYNTRAX: Active synthetic media achieving ISO 16/14/11 cleanliness targets in heavy-duty diesel applications</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Lube oil filtration is the single largest controllable factor in engine bearing lifespan — the difference between a system approach (ISO 16/14/11) and commodity approach (ISO 19/17/14) determines whether equipment operates 15,000+ hours or 3,000 hours between major overhauls, with overhaul costs for heavy diesel engines ranging from $25,000 to $150,000.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/lube-oil-systems | concept: Lube Oil Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Lube Oil Filtration Systems — Industrial Standards",
+        "description": "Lube oil filtration maintains ISO 4406 cleanliness codes preventing abrasive wear and extending engine bearing lifespan 3–5x through contamination control at 3–25µm particle thresholds.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["lube oil filtration", "ISO 16889", "ISO 4406", "engine bearing protection", "oil contamination control", "SAE J1211"],
+        "about": { "@type": "Thing", "name": "Lube Oil Filtration Systems", "description": "Engine oil circuit filtration for bearing protection and contamination control" },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 4406", "SAE J1211", "ASTM D7085"],
+          "technologies": ["DURATECH", "NANOFORCE", "SYNTRAX"],
+          "contaminationModes": ["particle wear", "bearing surface abrasion", "journal wear", "oil contamination"]
+        }
+      })}} />
     </main>
   );
 }

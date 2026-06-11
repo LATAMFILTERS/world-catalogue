@@ -232,21 +232,46 @@ export default function ISO16889Page() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Hydraulic Efficiency Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, lube, fuel, industrial_fluid</p>
-        <p>CONCEPT_TAXONOMY: type=standard | domain=filter-testing | standards=ISO-16889, ISO-4406</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 4406, ISO 16889, NFPA T2.14</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX, MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-16889</p>
-        <p>&nbsp;&nbsp;concept_id: iso-16889-filter-testing</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: ISO 16889 — Filter Testing Standard</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>ISO 16889 defines the multi-pass filter test method for measuring hydraulic and lube filter element efficiency (Beta ratio) and dirt-holding capacity using calibrated ISO 12103-1 A3 medium test dust in a controlled single-element test circuit — the universal benchmark for filter performance claims in industrial applications.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Hydraulic filter testing laboratories, lube filter certification, industrial fluid power component qualification, filter procurement specifications, OEM filtration requirement documentation</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Filter elements without ISO 16889 certification have unmeasured Beta ratios → purchaser cannot verify actual particle capture efficiency at critical micron thresholds → system contamination targets (ISO 4406) are unachievable → equipment component wear accelerates beyond predicted rates → maintenance interval planning becomes unreliable → unplanned downtime occurs when predicted filter performance does not match actual field behavior.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 12103-1: Test dust specification (A1 fine, A2 fine, A3 medium, A4 coarse) used in ISO 16889 multi-pass test | ISO 4406: Cleanliness code standard that uses Beta ratio data to define achievable cleanliness targets | ISO 16889:2022: Current revision including updated test procedures and Beta ratio calculation methods | NFPA T2.14: References ISO 16889 Beta ratios as the basis for hydraulic system filtration specification</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>NANOFORCE: Certified to ISO 16889 Beta ratio at 3µm absolute (β3 ≥200) for sub-micron hydraulic protection | SYNTRAX: ISO 16889 certified synthetic media with documented dirt-holding capacity for service interval planning | MACROCORE: ISO 16889 multi-pass test certified at 10µm absolute for primary filtration stages</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>ISO 16889 Beta ratio certification is the minimum verifiable performance claim for industrial hydraulic and lube filters — without it, filter efficiency is a manufacturer claim rather than a measured value, making it impossible to verify that contamination targets (ISO 4406 cleanliness codes) are achievable with the selected element.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/iso-16889 | concept: ISO 16889 Filter Testing Standard | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "ISO 16889 — Filter Testing Standard and Beta Ratio",
+        "description": "ISO 16889 multi-pass filter test method measures filter element efficiency (Beta ratio) and dirt-holding capacity — the universal benchmark for hydraulic and lube filter performance certification.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["ISO 16889", "Beta ratio", "filter efficiency test", "multi-pass test", "hydraulic filter certification", "ISO 12103-1"],
+        "about": { "@type": "Thing", "name": "ISO 16889 Filter Testing Standard", "description": "Multi-pass test method for measuring filter element efficiency and dirt-holding capacity" },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 12103-1", "ISO 4406", "NFPA T2.14"],
+          "technologies": ["NANOFORCE", "SYNTRAX", "MACROCORE"],
+          "contaminationModes": ["particle contamination", "hydraulic system contamination", "lube oil contamination"]
+        }
+      })}} />
     </main>
   );
 }
