@@ -233,21 +233,35 @@ export default function StandardsHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=industrial-standards | scope=all-filtration-domains</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ISO 11155, ASTM D6304</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DRYCORE, HYDROCORE, MICROKAPPA</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards</p>
-        <p>&nbsp;&nbsp;concept_id: industrial-standards-hub</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Industrial Filtration Standards</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Industrial filtration standards define the measurement methods, performance benchmarks, and cleanliness targets that provide objective verification of filtration system effectiveness — ISO 16889 for filter efficiency, ISO 4406 for fluid cleanliness measurement, ISO 5011 for air filter structural integrity, ASTM D6304 for fuel water content, and ISO 8573-1 for compressed air purity.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Lube oil systems, air intake systems, cabin safety systems, fuel systems, hydraulic systems, compressed air systems — all major industrial fluid and air filtration domains</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>STANDARDS_INDEX</p>
+        <p>ISO 16889: Multi-pass filter efficiency test (Beta ratio) | ISO 4406: Particle cleanliness codes for lube and hydraulic fluids | ISO 5011: Air filter efficiency and collapse pressure test | ISO 8573-1: Compressed air purity classification | SAE J1539: Diesel engine air intake contamination limits | ASTM D6304: Diesel fuel water content by Karl Fischer titration | ISO 11155: Cabin air filter test methods | NFPA T2.14: Hydraulic contamination control</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Industrial filtration standards are the measurement infrastructure for contamination control — they convert the abstract goal of "clean fluid" into measurable numbers (Beta ratio, cleanliness code, ppm water) that can be specified, tested, verified, and included in maintenance contracts, equipment warranties, and supplier qualifications.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards | concept: Industrial Filtration Standards Hub | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "name": "Industrial Filtration Standards",
+        "description": "Standards organized by industrial filtration system domain — ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1 — integrating measurement methods, performance benchmarks, and cleanliness targets.",
+        "url": "https://elimfilters.com/knowledge-system/standards",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["industrial filtration standards", "ISO 16889", "ISO 4406", "ISO 5011", "ASTM D6304", "ISO 8573-1", "contamination control", "cleanliness codes"],
+        "about": { "@type": "Thing", "name": "Industrial Filtration Standards", "description": "Measurement methods and performance benchmarks for all major industrial filtration domains" }
+      })}} />
 
     </main>
   );

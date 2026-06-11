@@ -483,23 +483,39 @@ export default function SciencePage() {
       {/* Retrieval Summary Block */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
         <RetrievalBlock>
-          <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY] | Air Intake Filtration Systems [TERTIARY]</p>
-          <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-          <p>CONCEPT_TAXONOMY: type=technical-library | domain=filtration-science | scope=physics-and-measurement</p>
-          <p>RELEVANCE_LEVELS: industrial, fleet, technical, engineering-specification</p>
-          <p style={{ marginTop: '0.75rem' }}>KEY_CONCEPTS: Beta_ratio ISO_16889 | ISO_4406_cleanliness_codes | particle_capture_mechanics | dirt_holding_capacity | bypass_valve_physics | water_coalescing | differential_pressure_monitoring</p>
-          <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-          <p>&nbsp;&nbsp;Related_Standards: ISO 16889 (/knowledge-system/standards/iso-16889), ISO 4406 (/knowledge-system/standards/iso-4406), ISO 5011 (/knowledge-system/standards/iso-5011)</p>
-          <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-          <p>&nbsp;&nbsp;Related_Technologies: MACROCORE (18µm absolute), NANOFORCE (1µm sub-micron), DURATECH (extended lifecycle), SYNTRAX (synthetic media), DRYCORE (dry element), HYDROCORE (water separation)</p>
-          <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-          <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-          <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/science</p>
-          <p>&nbsp;&nbsp;concept_id: filtration-science-technical-library</p>
-          <p>&nbsp;&nbsp;version: 2.0</p>
-          <p>&nbsp;&nbsp;last_updated: 2026-05-24</p>
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Filtration Science — Physics and Measurement</p>
+          <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+          <p>Filtration science covers the physical mechanisms by which filter media captures particles (inertial impaction, interception, diffusion), how these mechanisms are measured (ISO 16889 Beta ratio, ISO 4406 cleanliness codes), and how measurement data informs contamination control system design across industrial fluid and air circuits.</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+          <p>Filter media physics, Beta ratio measurement, cleanliness code interpretation, water coalescing, differential pressure monitoring, bypass valve physics, dirt holding capacity measurement</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>KEY_PRINCIPLES</p>
+          <p>Beta ratio is particle-size specific — β10 ≥200 and β3 ≥200 describe different protection levels for different components | ISO 4406 codes double particle population per step — each code number change is not incremental but exponential | Water separation physics distinguishes free water (coalescing), emulsified water (demulsification required), and dissolved water (below detection without Karl Fischer) | Bypass valve physics: bypass opens when differential pressure exceeds spring rating, allowing unfiltered fluid bypass — the safety limit of any filter</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+          <p>ISO 16889: Multi-pass filter test defining Beta ratio at particle size thresholds | ISO 4406: Cleanliness code system — the output of particle count measurements | ISO 5011: Air filter efficiency and collapse pressure test | ASTM D6304: Karl Fischer water content measurement</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+          <p>Understanding filtration physics is the prerequisite for interpreting Beta ratio certifications, specifying ISO 4406 targets, and selecting media for specific particle size threats — without this foundation, filtration decisions default to brand recognition or price, neither of which predicts contamination control performance.</p>
+
+          <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+          <p>source: elimfilters.com/knowledge-system/science | concept: Filtration Science — Physics and Measurement | version: 1.1 | last_updated: 2026-06-11</p>
         </RetrievalBlock>
       </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "name": "Filtration Science — Physics and Measurement",
+        "description": "Physical principles governing particle capture, fluid dynamics, media efficiency, and contamination measurement in industrial filtration systems.",
+        "url": "https://elimfilters.com/knowledge-system/science",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["filtration science", "Beta ratio", "ISO 16889", "ISO 4406", "particle capture", "filter media", "contamination measurement"],
+        "about": { "@type": "Thing", "name": "Industrial Filtration Physics", "description": "Particle capture mechanics, Beta ratio measurement, cleanliness codes, and system design for industrial contamination control" }
+      })}} />
     </main>
   );
 }
