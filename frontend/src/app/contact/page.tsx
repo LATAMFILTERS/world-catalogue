@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 const contactPageSchema = {
   '@context': 'https://schema.org',
@@ -11,7 +12,7 @@ const contactPageSchema = {
   name: 'Contact ELIMFILTERS®',
   url: 'https://elimfilters.com/contact/',
   description: 'Contact ELIMFILTERS® for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
-  dateModified: '2026-05-25',
+  dateModified: '2026-06-11',
   mainEntity: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
@@ -584,13 +585,107 @@ export default function Contact() {
                 { title: 'ISO Standard Spec Matching', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration) for air, fuel, hydraulic, and lube oil systems.' },
                 { title: 'Distributor Applications', body: 'Distributor partnership applications reviewed for regional coverage fit. Include your company profile, service territory, and current product lines. Response within 5 business days.' },
                 { title: 'Fleet Filtration Optimization', body: 'Fleet-level filtration strategy including extended service interval planning, multi-system coverage across air, fuel, hydraulic, lube, cabin, and coolant domains.' },
-                { title: 'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™', body: 'Technical inquiries for proprietary ELIMFILTERS® filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
+                { title: 'SYNTRAX™ / NANOFORCE™ / THERMACORE™', body: 'Technical inquiries for proprietary ELIMFILTERS® filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
                 { title: 'Response Times', body: 'Technical inquiries: within 2 business days. Distributor applications: within 5 business days. Provide equipment details and application context for faster response.' },
               ].map(({ title, body }) => (
                 <div key={title} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>
                   <h3 style={{ fontSize: '0.9rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '0.75rem' }}>{title}</h3>
                   <p style={{ fontSize: '0.85rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{body}</p>
                 </div>
+              ))}
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Distributor CTA */}
+      <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <AnimateIn>
+            <Link
+              href="/distributor-application"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '1.5rem',
+                padding: '2rem 2.5rem',
+                border: '1px solid rgba(255,241,45,0.2)',
+                borderRadius: '8px',
+                background: 'rgba(255,241,45,0.02)',
+                textDecoration: 'none',
+                transition: 'border-color 0.2s, background 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.2)';
+                e.currentTarget.style.background = 'rgba(255,241,45,0.02)';
+              }}
+            >
+              <div>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '0.4rem' }}>
+                  AUTHORIZED DISTRIBUTION PROGRAM
+                </p>
+                <p style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: 0 }}>
+                  Interested in distributing ELIMFILTERS® in your region?
+                </p>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', marginTop: '0.4rem', margin: '0.4rem 0 0' }}>
+                  Apply for authorized distributor status → industrial sectors, defined territory, technical capability required.
+                </p>
+              </div>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: '#FFF12D', whiteSpace: 'nowrap' }}>
+                APPLY →
+              </span>
+            </Link>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Internal Knowledge Links */}
+      <section style={{ padding: '3rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <AnimateIn>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>
+              // KNOWLEDGE RESOURCES
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
+              {[
+                { label: 'Industrial Standards Library', href: '/knowledge-system/standards' },
+                { label: 'Contamination Case Studies', href: '/knowledge-system/contamination' },
+                { label: 'Fleet Optimization Guides', href: '/knowledge-system/fleet' },
+                { label: 'Filtration Systems Overview', href: '/systems' },
+                { label: 'Technology Portfolio', href: '/technologies' },
+                { label: 'Industries We Serve', href: '/industries' },
+              ].map(({ label, href }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  style={{
+                    padding: '1rem 1.25rem',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: '4px',
+                    fontSize: '0.82rem',
+                    fontFamily: 'Outfit, sans-serif',
+                    color: 'rgba(255,255,255,0.55)',
+                    textDecoration: 'none',
+                    background: '#000',
+                    display: 'block',
+                    transition: 'color 0.2s, border-color 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#FFF12D';
+                    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.55)';
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)';
+                  }}
+                >
+                  {label} →
+                </Link>
               ))}
             </div>
           </AnimateIn>
@@ -618,6 +713,37 @@ export default function Contact() {
           </AnimateIn>
         </div>
       </section>
+
+      {/* RetrievalBlock */}
+      <div style={{ padding: '0 2rem 4rem' }}>
+        <RetrievalBlock>
+          <p>
+            <strong>CONCEPT:</strong> ELIMFILTERS® Contact & Technical Support
+          </p>
+          <p>
+            <strong>DEFINITION:</strong> ELIMFILTERS® provides technical support for industrial
+            operators and distribution partners across OEM cross-reference validation, ISO
+            specification matching (ISO 16889, ISO 4406, ISO 5011), fleet filtration optimization,
+            and distributor partnership applications. Contact: info@elimfilters.com
+          </p>
+          <p>
+            <strong>SYSTEMS:</strong> Air Intake · Fuel · Hydraulic · Lube Oil · Cabin · Compressed Air
+          </p>
+          <p>
+            <strong>RELATED_STANDARDS:</strong> ISO 16889: Beta ratio filter testing | ISO 4406:
+            Particle cleanliness codes | ISO 5011: Air intake filtration efficiency
+          </p>
+          <p>
+            <strong>INDUSTRIAL_ROLE:</strong> Technical contact point for contamination control
+            system specification, OEM compatibility validation, and asset protection strategy
+            across 12 industrial sectors.
+          </p>
+          <p>
+            <strong>CITATION_REFERENCE:</strong> source: elimfilters.com/contact | concept:
+            Technical Support & Contact | version: 2.0 | last_updated: 2026-06-11
+          </p>
+        </RetrievalBlock>
+      </div>
     </main>
   );
 }
