@@ -111,7 +111,11 @@ WHERE sku = $2
 
 
 async def run(dry_run=False, stats_only=False):
-    conn = await asyncpg.connect(db_url, ssl="require", command_timeout=300)
+    import ssl as _ssl
+    ssl_ctx = _ssl.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = _ssl.CERT_NONE
+    conn = await asyncpg.connect(db_url, ssl=ssl_ctx, command_timeout=300)
     try:
         # ── Pass A ────────────────────────────────────────────────────────────
         print("Pass A: brand_crossrefs['FLEETGUARD'] → codigo_base ...")
