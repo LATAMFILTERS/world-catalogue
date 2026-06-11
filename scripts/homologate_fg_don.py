@@ -1,17 +1,28 @@
 #!/usr/bin/env python3
 """
 homologate_fg_don.py
-Cross-matches Fleetguard and Donaldson filter catalogs from scraped JSON files.
+Cross-match Fleetguard and Donaldson filter catalogs from scraped JSON files.
 
-Donaldson JSON structure:
-  - part_number: str
-  - oem_codes: [{manufacturer, part_number}]          (most categories)
-  - cross_references: [{manufacturer, part_number}]   (hydraulic category)
-  - brand_crossrefs: {BRAND: [part_number, ...]}      (filter brand refs)
+Actual data structures (verified from scraped files):
 
-Fleetguard JSON structure:
-  - part_number: str
-  - cross_references: [{brand, part_number}]
+  Fleetguard (scripts/Fleetguard Scraper/fleetguard_*_results.json):
+    - part_number: str
+    - cross_references: [{"brand": "BrandName", "part_number": "CODE123"}]
+    - oem_codes:        [{"manufacturer": "BRAND", "part_number": "CODE"}]
+
+  Donaldson (scripts/donaldson_*_results.json):
+    - part_number: str
+    - brand_crossrefs:  {"BRAND": ["PN1", "PN2", ...]}   ← filter brand xrefs
+    - oem_codes:        [{"manufacturer": "BRAND", "part_number": "CODE"}]
+    - cross_references: [{"manufacturer": "BRAND", "part_number": "CODE"}]
+      (some categories use cross_references instead of oem_codes)
+
+Usage:
+  python3 homologate_fg_don.py
+
+Environment overrides:
+  FG_DIR   Path to Fleetguard JSON directory (default: scripts/Fleetguard Scraper/)
+  DON_DIR  Path to Donaldson JSON directory  (default: scripts/)
 """
 
 import glob
@@ -19,34 +30,30 @@ import json
 import os
 from collections import defaultdict
 
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Configuration
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-FG_DIR = os.environ.get(
-    "FG_DIR",
-    os.path.join(SCRIPT_DIR, "Fleetguard Scraper"),
-)
-DON_DIR = os.environ.get(
-    "DON_DIR",
-    SCRIPT_DIR,
-)
+FG_DIR  = os.environ.get("FG_DIR",  os.path.join(SCRIPT_DIR, "Fleetguard Scraper"))
+DON_DIR = os.environ.get("DON_DIR", SCRIPT_DIR)
 
-OUTPUT_MATRIX = os.path.join(SCRIPT_DIR, "homologation_matrix.json")
+OUTPUT_MATRIX  = os.path.join(SCRIPT_DIR, "homologation_matrix.json")
 OUTPUT_SUMMARY = os.path.join(SCRIPT_DIR, "homologation_summary.json")
 
-# Filter brands to exclude from Pass C (shared-OEM matching).
-# These are filter brands, not equipment OEMs — a shared part number
-# between two filter brands just means they copied each other's catalog,
-# not that both fit the same equipment.
+# Brands to exclude from Pass C (shared OEM) — these are filter brands,
+# not equipment OEMs.  A shared part number between two filter brands just
+# means they reference each other, not that they fit the same equipment.
 FILTER_BRANDS_EXCLUDE = {
     "DONALDSON",
     "FLEETGUARD",
+    "FLEETRITE",
     "CUMMINS FILTRATION",
+    "CUMMINS",
     "BALDWIN",
     "MANN",
+    "MANN-HUMMEL",
     "WIX",
     "PUROLATOR",
     "FRAM",
@@ -55,24 +62,41 @@ FILTER_BRANDS_EXCLUDE = {
     "LUBER-FINER",
     "LUBERFINER",
     "HIFI",
+    "MAHLE",
+    "KNECHT",
+    "FILTRON",
+    "PURFLUX",
+    "AC-DELCO",
+    "MOTORCRAFT",
     "CARQUEST",
     "SAKURA",
-    "FLEETRITE",
     "HENGST",
     "UFI",
+    "RYCO",
 }
 
-
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Helpers
-# ──────────────────────────────────────────────
-
-def normalize_pn(pn: str) -> str:
-    """Uppercase and strip whitespace from a part number."""
-    return pn.upper().strip() if pn else ""
+# ---------------------------------------------------------------------------
 
 
-def load_json_files(pattern: str) -> list[dict]:
+def normalize_pn(pn) -> str:
+    """Uppercase and strip all whitespace from a part number."""
+    if not pn:
+        return ""
+    return str(pn).upper().strip().replace(" ", "")
+
+
+def is_filter_brand(brand: str) -> bool:
+    """Return True if brand matches a known filter manufacturer (not an OEM)."""
+    bu = brand.upper().strip()
+    for fb in FILTER_BRANDS_EXCLUDE:
+        if fb in bu:
+            return True
+    return False
+
+
+def load_json_files(pattern: str) -> list:
     """Load all JSON files matching glob pattern; each file is a list of products."""
     products = []
     for path in sorted(glob.glob(pattern)):
@@ -91,11 +115,46 @@ def load_json_files(pattern: str) -> list[dict]:
     return products
 
 
-def get_don_oem_codes(product: dict) -> list[dict]:
+# ---------------------------------------------------------------------------
+# Catalog loading
+# ---------------------------------------------------------------------------
+
+
+def load_donaldson(base_dir: str) -> dict:
+    """Load all Donaldson results → {normalized_pn: product_dict}."""
+    pattern = os.path.join(base_dir, "donaldson_*_results.json")
+    products = load_json_files(pattern)
+    index = {}
+    for p in products:
+        pn = normalize_pn(p.get("part_number", ""))
+        if pn and pn not in index:
+            index[pn] = p
+    return index
+
+
+def load_fleetguard(base_dir: str) -> dict:
+    """Load all Fleetguard results → {normalized_pn: product_dict}."""
+    pattern = os.path.join(base_dir, "fleetguard_*_results.json")
+    products = load_json_files(pattern)
+    index = {}
+    for p in products:
+        pn = normalize_pn(p.get("part_number", ""))
+        if pn and pn not in index:
+            index[pn] = p
+    return index
+
+
+# ---------------------------------------------------------------------------
+# OEM-code extraction helpers
+# ---------------------------------------------------------------------------
+
+
+def get_don_oem_entries(product: dict) -> list:
     """
-    Return the list of OEM/manufacturer cross-reference entries for a
-    Donaldson product.  Handles two field names used in different scraper
-    versions ('oem_codes' and 'cross_references').
+    Return all OEM/manufacturer cross-reference entries from a Donaldson product.
+    Handles two field names used in different categories:
+      - oem_codes        → [{"manufacturer": ..., "part_number": ...}]
+      - cross_references → [{"manufacturer": ..., "part_number": ...}]
     """
     entries = []
     for field in ("oem_codes", "cross_references"):
@@ -105,87 +164,60 @@ def get_don_oem_codes(product: dict) -> list[dict]:
     return entries
 
 
-def is_filter_brand(brand_str: str) -> bool:
-    """Return True if the brand string matches a known filter brand."""
-    bu = brand_str.upper().strip()
-    for fb in FILTER_BRANDS_EXCLUDE:
-        if fb in bu:
-            return True
-    return False
+def get_fg_oem_entries(product: dict) -> list:
+    """
+    Return OEM (non-filter-brand) entries from a Fleetguard product.
+    Fleetguard stores these in:
+      - cross_references → [{"brand": ..., "part_number": ...}]
+      - oem_codes        → [{"manufacturer": ..., "part_number": ...}]
+    """
+    entries = []
+    for xref in (product.get("cross_references") or []):
+        brand = xref.get("brand", "") or xref.get("manufacturer", "")
+        pn = normalize_pn(xref.get("part_number", ""))
+        if brand and pn:
+            entries.append({"brand": brand, "part_number": pn})
+    for oc in (product.get("oem_codes") or []):
+        brand = oc.get("manufacturer", "") or oc.get("brand", "")
+        pn = normalize_pn(oc.get("part_number", ""))
+        if brand and pn:
+            entries.append({"brand": brand, "part_number": pn})
+    return entries
 
 
-# ──────────────────────────────────────────────
-# Data loading
-# ──────────────────────────────────────────────
-
-def load_donaldson(base_dir: str) -> dict[str, dict]:
-    """Load all Donaldson results into {normalized_pn: product}."""
-    pattern = os.path.join(base_dir, "donaldson_*_results.json")
-    products = load_json_files(pattern)
-    index: dict[str, dict] = {}
-    for p in products:
-        pn = normalize_pn(p.get("part_number", ""))
-        if pn and pn not in index:
-            index[pn] = p
-    return index
-
-
-def load_fleetguard(base_dir: str) -> dict[str, dict]:
-    """Load all Fleetguard results into {normalized_pn: product}."""
-    pattern = os.path.join(base_dir, "fleetguard_*_results.json")
-    products = load_json_files(pattern)
-    index: dict[str, dict] = {}
-    for p in products:
-        if p.get("error"):
-            continue  # skip failed scrapes
-        pn = normalize_pn(p.get("part_number", ""))
-        if pn and pn not in index:
-            index[pn] = p
-    return index
-
-
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Matching passes
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 
-def pass_a_fg_to_don(
-    fg_by_pn: dict[str, dict],
-    don_by_pn: dict[str, dict],
-) -> list[dict]:
+
+def pass_a(fg_by_pn: dict, don_by_pn: dict) -> list:
     """
     Pass A — Direct FG → DON cross-reference.
-    For each FG product, look in its cross_references for entries whose
-    'brand' contains 'DONALDSON'.  If that part number exists in
-    don_by_pn, record a match.
+    For each FG product, check cross_references for entries whose 'brand'
+    contains "DONALDSON".  Record a match for every referenced DON part number.
+    Match dict: {fg_pn, don_pn, method: "FG_CROSSREF_TO_DON", fg_brand_ref}
     """
     matches = []
     for fg_pn, fg_prod in fg_by_pn.items():
-        xrefs = fg_prod.get("cross_references") or []
-        for xref in xrefs:
+        for xref in (fg_prod.get("cross_references") or []):
             brand = xref.get("brand", "")
             don_ref_pn = normalize_pn(xref.get("part_number", ""))
             if "DONALDSON" in brand.upper() and don_ref_pn:
-                if don_ref_pn in don_by_pn:
-                    matches.append(
-                        {
-                            "fg_pn": fg_pn,
-                            "don_pn": don_ref_pn,
-                            "method": "FG_CROSSREF_TO_DON",
-                            "fg_brand_ref": brand,
-                        }
-                    )
+                matches.append({
+                    "fg_pn": fg_pn,
+                    "don_pn": don_ref_pn,
+                    "method": "FG_CROSSREF_TO_DON",
+                    "fg_brand_ref": brand,
+                })
     return matches
 
 
-def pass_b_don_to_fg(
-    fg_by_pn: dict[str, dict],
-    don_by_pn: dict[str, dict],
-) -> list[dict]:
+def pass_b(fg_by_pn: dict, don_by_pn: dict) -> list:
     """
     Pass B — Direct DON → FG cross-reference.
-    Donaldson stores filter-brand cross-references in brand_crossrefs
-    (a dict keyed by brand name).  Look for keys containing 'FLEETGUARD'
-    or 'CUMMINS FILTRATION'; the values are lists of FG part numbers.
+    Donaldson stores filter-brand xrefs in brand_crossrefs: {"BRAND": ["PN1", ...]}.
+    Look for keys containing "FLEETGUARD" or "CUMMINS FILTRATION".
+    Match dict: {fg_pn, don_pn, method: "DON_CROSSREF_TO_FG"}
     """
     matches = []
     for don_pn, don_prod in don_by_pn.items():
@@ -194,72 +226,65 @@ def pass_b_don_to_fg(
             bku = brand_key.upper()
             if "FLEETGUARD" not in bku and "CUMMINS FILTRATION" not in bku:
                 continue
-            for fg_ref_pn in (pn_list if isinstance(pn_list, list) else [pn_list]):
+            if not isinstance(pn_list, list):
+                pn_list = [pn_list]
+            for fg_ref_pn in pn_list:
                 fg_norm = normalize_pn(str(fg_ref_pn))
-                if fg_norm in fg_by_pn:
-                    matches.append(
-                        {
-                            "fg_pn": fg_norm,
-                            "don_pn": don_pn,
-                            "method": "DON_CROSSREF_TO_FG",
-                            "don_brand_ref": brand_key,
-                        }
-                    )
+                if fg_norm:
+                    matches.append({
+                        "fg_pn": fg_norm,
+                        "don_pn": don_pn,
+                        "method": "DON_CROSSREF_TO_FG",
+                    })
     return matches
 
 
-def pass_c_shared_oem(
-    fg_by_pn: dict[str, dict],
-    don_by_pn: dict[str, dict],
-) -> list[dict]:
+def pass_c(fg_by_pn: dict, don_by_pn: dict) -> list:
     """
     Pass C — Shared OEM part number.
-    Build a reverse index {normalized_oem_code → [fg_pn, ...]} from FG
-    cross_references, excluding entries whose brand is a known filter brand.
-    Then for each Donaldson OEM code entry, check if that code is in the
+    Build reverse index {normalized_oem_code → [(fg_pn, brand), ...]} from FG
+    cross_references and oem_codes, excluding filter brands.
+    For each Donaldson oem_codes/cross_references entry, look up that code in the
     FG reverse index.
+    Match dict: {fg_pn, don_pn, method: "SHARED_OEM", shared_code, brand}
     """
     # Build FG OEM reverse index
-    # FG cross_references: [{brand, part_number}]
-    fg_oem_index: dict[str, list[tuple[str, str]]] = defaultdict(list)
-    # key = (normalized_oem_code, brand)
+    fg_oem_index = defaultdict(list)  # {norm_oem_pn: [(fg_pn, brand), ...]}
     for fg_pn, fg_prod in fg_by_pn.items():
-        xrefs = fg_prod.get("cross_references") or []
-        for xref in xrefs:
-            brand = xref.get("brand", "")
+        for entry in get_fg_oem_entries(fg_prod):
+            brand = entry.get("brand", "")
             if is_filter_brand(brand):
                 continue
-            oem_pn = normalize_pn(xref.get("part_number", ""))
+            oem_pn = normalize_pn(entry.get("part_number", ""))
             if oem_pn:
                 fg_oem_index[oem_pn].append((fg_pn, brand))
 
     matches = []
     for don_pn, don_prod in don_by_pn.items():
-        oem_entries = get_don_oem_codes(don_prod)
-        for entry in oem_entries:
-            mfr = entry.get("manufacturer", "")
+        seen_oem_pns = set()
+        for entry in get_don_oem_entries(don_prod):
+            mfr = entry.get("manufacturer", "") or entry.get("brand", "")
             if is_filter_brand(mfr):
                 continue
             oem_pn = normalize_pn(entry.get("part_number", ""))
-            if not oem_pn:
+            if not oem_pn or oem_pn in seen_oem_pns:
                 continue
+            seen_oem_pns.add(oem_pn)
             if oem_pn in fg_oem_index:
                 for fg_pn, fg_brand in fg_oem_index[oem_pn]:
-                    matches.append(
-                        {
-                            "fg_pn": fg_pn,
-                            "don_pn": don_pn,
-                            "method": "SHARED_OEM",
-                            "shared_code": oem_pn,
-                            "brand": mfr or fg_brand,
-                        }
-                    )
+                    matches.append({
+                        "fg_pn": fg_pn,
+                        "don_pn": don_pn,
+                        "method": "SHARED_OEM",
+                        "shared_code": oem_pn,
+                        "brand": mfr if mfr else fg_brand,
+                    })
     return matches
 
 
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Deduplication
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 
 METHOD_PRIORITY = {
     "FG_CROSSREF_TO_DON": 0,
@@ -268,61 +293,58 @@ METHOD_PRIORITY = {
 }
 
 
-def deduplicate(
-    pass_a: list[dict],
-    pass_b: list[dict],
-    pass_c: list[dict],
-) -> list[dict]:
+def deduplicate(raw_a: list, raw_b: list, raw_c: list) -> list:
     """
     Keep one canonical match per (fg_pn, don_pn) pair.
-    Preference order: Pass A > Pass B > Pass C.
+    Preference: Pass A > Pass B > Pass C.
+    Returns list sorted by fg_pn then don_pn for stable output.
     """
-    # Collect all candidates grouped by pair
-    pair_candidates: dict[tuple[str, str], list[dict]] = defaultdict(list)
-    for match in pass_a + pass_b + pass_c:
-        pair = (match["fg_pn"], match["don_pn"])
-        pair_candidates[pair].append(match)
-
-    canonical: list[dict] = []
-    for pair, candidates in pair_candidates.items():
-        best = min(candidates, key=lambda m: METHOD_PRIORITY.get(m["method"], 99))
-        canonical.append(best)
-
-    # Stable sort: by fg_pn then don_pn
-    canonical.sort(key=lambda m: (m["fg_pn"], m["don_pn"]))
-    return canonical
+    best = {}  # {(fg_pn, don_pn): match_dict}
+    for match in raw_a + raw_b + raw_c:
+        key = (match["fg_pn"], match["don_pn"])
+        priority = METHOD_PRIORITY.get(match["method"], 99)
+        if key not in best or priority < METHOD_PRIORITY.get(best[key]["method"], 99):
+            best[key] = match
+    result = list(best.values())
+    result.sort(key=lambda m: (m["fg_pn"], m["don_pn"]))
+    return result
 
 
-# ──────────────────────────────────────────────
-# Statistics
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Summary statistics
+# ---------------------------------------------------------------------------
+
 
 def build_summary(
-    matches: list[dict],
-    pass_a: list[dict],
-    pass_b: list[dict],
-    pass_c: list[dict],
+    matches: list,
+    raw_a: list,
+    raw_b: list,
+    raw_c: list,
     fg_total: int,
     don_total: int,
 ) -> dict:
-    fg_matched = len({m["fg_pn"] for m in matches})
+    fg_matched  = len({m["fg_pn"]  for m in matches})
     don_matched = len({m["don_pn"] for m in matches})
 
-    # Top OEM brands from Pass C
-    brand_counts: dict[str, int] = defaultdict(int)
+    # Count canonical matches by method (post-dedup)
+    method_counts = defaultdict(int)
+    for m in matches:
+        method_counts[m["method"]] += 1
+
+    # Top OEM brands from canonical Pass C matches
+    brand_counts = defaultdict(int)
     for m in matches:
         if m["method"] == "SHARED_OEM":
             brand_counts[m.get("brand", "UNKNOWN")] += 1
-
     top_oem = sorted(brand_counts.items(), key=lambda x: x[1], reverse=True)[:10]
 
     return {
         "fg_total": fg_total,
         "don_total": don_total,
         "total_matches": len(matches),
-        "pass_a_count": len(pass_a),
-        "pass_b_count": len(pass_b),
-        "pass_c_count": len(pass_c),
+        "pass_a_count": method_counts["FG_CROSSREF_TO_DON"],
+        "pass_b_count": method_counts["DON_CROSSREF_TO_FG"],
+        "pass_c_count": method_counts["SHARED_OEM"],
         "fg_matched": fg_matched,
         "fg_unmatched": fg_total - fg_matched,
         "fg_match_pct": round(fg_matched / fg_total * 100, 1) if fg_total else 0.0,
@@ -333,12 +355,12 @@ def build_summary(
     }
 
 
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Console output
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 
-def print_summary(summary: dict, output_matrix: str) -> None:
-    s = summary
+
+def print_summary(s: dict) -> None:
     print("\n=== HOMOLOGACIÓN FLEETGUARD ↔ DONALDSON ===")
     print(f"Fleetguard total: {s['fg_total']}")
     print(f"Donaldson total:  {s['don_total']}")
@@ -348,13 +370,15 @@ def print_summary(summary: dict, output_matrix: str) -> None:
     print(f"  - Pass B (DON→FG crossref):  {s['pass_b_count']}")
     print(f"  - Pass C (OEM compartido):   {s['pass_c_count']}")
     print()
+    fg_unmatch_pct = round(100.0 - s["fg_match_pct"], 1)
+    don_unmatch_pct = round(100.0 - s["don_match_pct"], 1)
     print(
         f"FG con match:   {s['fg_matched']:>5} / {s['fg_total']} "
         f"({s['fg_match_pct']}%)"
     )
     print(
         f"FG sin match:   {s['fg_unmatched']:>5} / {s['fg_total']} "
-        f"({round(100 - s['fg_match_pct'], 1)}%)"
+        f"({fg_unmatch_pct}%)"
     )
     print(
         f"DON con match:  {s['don_matched']:>5} / {s['don_total']} "
@@ -362,7 +386,7 @@ def print_summary(summary: dict, output_matrix: str) -> None:
     )
     print(
         f"DON sin match:  {s['don_unmatched']:>5} / {s['don_total']} "
-        f"({round(100 - s['don_match_pct'], 1)}%)"
+        f"({don_unmatch_pct}%)"
     )
     if s["top_oem_brands"]:
         print()
@@ -370,41 +394,41 @@ def print_summary(summary: dict, output_matrix: str) -> None:
         for entry in s["top_oem_brands"]:
             print(f"  {entry['brand']}: {entry['count']}")
     print()
-    print(f"→ {output_matrix} ({s['total_matches']} matches)")
+    print(f"→ {OUTPUT_MATRIX} ({s['total_matches']} matches)")
     print(f"→ {OUTPUT_SUMMARY}")
-    print()
 
 
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
 # Main
-# ──────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+
 
 def main() -> None:
-    print("Loading Donaldson catalog …")
+    print("Loading Donaldson catalog...")
     don_by_pn = load_donaldson(DON_DIR)
     print(f"  {len(don_by_pn)} unique Donaldson part numbers loaded.")
 
-    print("Loading Fleetguard catalog …")
+    print("Loading Fleetguard catalog...")
     fg_by_pn = load_fleetguard(FG_DIR)
     print(f"  {len(fg_by_pn)} unique Fleetguard part numbers loaded.")
 
-    print("Running Pass A (FG → DON crossref) …")
-    pa = pass_a_fg_to_don(fg_by_pn, don_by_pn)
-    print(f"  {len(pa)} candidate matches.")
+    print("Running Pass A (FG → DON crossref)...")
+    raw_a = pass_a(fg_by_pn, don_by_pn)
+    print(f"  {len(raw_a)} candidate matches.")
 
-    print("Running Pass B (DON → FG crossref) …")
-    pb = pass_b_don_to_fg(fg_by_pn, don_by_pn)
-    print(f"  {len(pb)} candidate matches.")
+    print("Running Pass B (DON → FG crossref)...")
+    raw_b = pass_b(fg_by_pn, don_by_pn)
+    print(f"  {len(raw_b)} candidate matches.")
 
-    print("Running Pass C (shared OEM code) …")
-    pc = pass_c_shared_oem(fg_by_pn, don_by_pn)
-    print(f"  {len(pc)} candidate matches.")
+    print("Running Pass C (shared OEM code)...")
+    raw_c = pass_c(fg_by_pn, don_by_pn)
+    print(f"  {len(raw_c)} candidate matches.")
 
-    print("Deduplicating …")
-    matches = deduplicate(pa, pb, pc)
+    print("Deduplicating...")
+    matches = deduplicate(raw_a, raw_b, raw_c)
 
-    summary = build_summary(matches, pa, pb, pc, len(fg_by_pn), len(don_by_pn))
-    print_summary(summary, OUTPUT_MATRIX)
+    summary = build_summary(matches, raw_a, raw_b, raw_c, len(fg_by_pn), len(don_by_pn))
+    print_summary(summary)
 
     with open(OUTPUT_MATRIX, "w", encoding="utf-8") as fh:
         json.dump(matches, fh, indent=2, ensure_ascii=False)
