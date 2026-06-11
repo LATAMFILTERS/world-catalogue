@@ -649,7 +649,7 @@ export default function SciencePage() {
             {[
               { label: 'Lube / Oil', href: '/knowledge-system/standards/lube-oil-systems', code: 'ISO 4406 · ISO 16889' },
               { label: 'Air Intake', href: '/knowledge-system/standards/air-intake-systems', code: 'ISO 5011 · SAE J1539' },
-              { label: 'Cabin / Safety', href: '/knowledge-system/standards/cabin-air-systems', code: 'ISO 11155 · DIN 71220' },
+              { label: 'Cabin / Safety', href: '/knowledge-system/standards/cabin-safety-systems', code: 'ISO 11155 · DIN 71220' },
               { label: 'Fuel', href: '/knowledge-system/standards/fuel-systems', code: 'ISO 12937 · ASTM D6304' },
               { label: 'Hydraulic', href: '/knowledge-system/standards/hydraulic-systems', code: 'ISO 16889 · NFPA T2.14' },
               { label: 'Compressed Air', href: '/knowledge-system/standards/compressed-air-systems', code: 'ISO 8573-1 · ISO 8573-2' },
