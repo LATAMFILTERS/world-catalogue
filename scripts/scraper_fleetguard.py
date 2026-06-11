@@ -103,6 +103,7 @@ CATEGORIES = {
     "cabin-air-filters":            "https://www.fleetguard.com/category/products/air-filtration/cabin-air-filters/0ZGPL0000000FSH4A2",
     "air-dryer":                    "https://www.fleetguard.com/category/products/air-filtration/air-dryer/0ZGPL0000000FT74AM",
     # ── LUBE FILTRATION ───────────────────────────────────────────────────────
+    "lube-spin-on":                 "https://www.fleetguard.com/category/products/lube-filtration/spinon-lube-filters/0ZGPL0000000FSv4AM",
     "lube-cartridge":               "https://www.fleetguard.com/category/products/lube-filtration/cartridge-lube-filters/0ZGPL0000000FTB4A2",
     "lube-centrifuge":              "https://www.fleetguard.com/category/products/lube-filtration/centrifuge-filters/0ZGPL0000000FSX4A2",
     # ── FUEL FILTRATION ───────────────────────────────────────────────────────
