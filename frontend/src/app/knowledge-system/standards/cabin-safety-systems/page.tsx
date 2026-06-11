@@ -288,6 +288,32 @@ export default function CabinSafetySystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Cabin Air Filtration Systems',
+        description: 'Cabin air filtration for operator safety: ISO 11155 test standard, DIN 71220 classification, PM10/PM2.5 exposure limits, and electrostatic filtration for mining and agricultural vehicles.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['cabin air filtration', 'ISO 11155', 'DIN 71220', 'PM10 exposure', 'operator safety', 'mining vehicles', 'agricultural equipment', 'RCS silica', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Cabin Air Filtration Systems', description: 'Engineering domain protecting heavy equipment operators from airborne particulate hazards (PM10, PM2.5, RCS silica) through ISO 11155 and DIN 71220 compliant cabin filtration.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Cabin Air Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

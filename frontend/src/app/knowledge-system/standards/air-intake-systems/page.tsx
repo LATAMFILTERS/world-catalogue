@@ -253,6 +253,32 @@ export default function AirIntakeSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Air Intake Filtration Systems',
+        description: 'Air intake filtration engineering: SAE J1539 volumetric efficiency, ISO 5011 filter test standard, bypass mechanisms, and dust particle control for turbocharged diesel engines.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['air intake filtration', 'SAE J1539', 'ISO 5011', 'dust ingestion', 'engine protection', 'turbocharged diesel', 'air filter efficiency', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Air Intake Filtration Systems', description: 'Engineering domain controlling airborne dust and particle ingestion in diesel engine air intake systems to prevent abrasive cylinder and ring wear.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Air Intake Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

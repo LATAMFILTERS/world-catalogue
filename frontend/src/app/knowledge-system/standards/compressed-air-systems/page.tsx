@@ -284,6 +284,32 @@ export default function CompressedAirSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Compressed Air Systems',
+        description: 'Compressed air filtration engineering: ISO 8573-1 purity classes, ISO 8573-2 oil aerosol testing, ISO 8573-3 humidity measurement, dew point control, and pneumatic system protection.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['compressed air filtration', 'ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3', 'air purity classes', 'dew point control', 'pneumatic systems', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Compressed Air Filtration Systems', description: 'Engineering domain governing air purity in pneumatic industrial systems through ISO 8573-1 purity classification for particulate, water, and oil content control.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Compressed Air Systems', item: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems' },
+        ],
+      }) }} />
     </main>
   );
 }
