@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,6 +34,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
 }
 
 /* Typography */
@@ -346,5 +351,34 @@ button:focus-visible,
   .footer-nav-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 1.5rem 1rem !important;
+  }
+}
+
+/* ── Performance Metrics KPI grid — responsive ────────────────────── */
+@media (max-width: 768px) {
+  .stat-counter-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .stat-counter-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Footer right-col mobile visibility ──────────────────────────── */
+@media (max-width: 768px) {
+  .footer-right-col {
+    align-items: flex-start !important;
+  }
+  .footer-address {
+    text-align: left !important;
+  }
+}
+
+/* ── Nav header mobile height ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  .nav-logo {
+    height: 44px !important;
   }
 }

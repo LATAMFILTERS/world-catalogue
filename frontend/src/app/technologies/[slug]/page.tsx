@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getItemBySlug('technologies', params.slug);
   if (!item) return { title: 'Not Found' };
   const url = `${BASE_URL}/technologies/${params.slug}`;
-  const title = `${item.title} | ELIMFILTERS® Proprietary Technology`;
+  const title = `${item.title} | ELIMFILTERS Proprietary Technology`;
   return {
     title,
     description: item.description,
     keywords: [
       item.title, `${item.title} filtration technology`, `${item.name.toLowerCase()} filter`,
-      'ELIMFILTERS® technology', 'industrial filtration technology', 'asset protection',
+      'ELIMFILTERS technology', 'industrial filtration technology', 'asset protection',
     ],
     alternates: {
       canonical: url,
@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: item.description,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS® World Catalogue',
-      images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.title} — ELIMFILTERS® Technology` }],
+      siteName: 'ELIMFILTERS World Catalogue',
+      images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.title} — ELIMFILTERS Technology` }],
     },
     twitter: { card: 'summary_large_image', title, description: item.description },
   };
@@ -49,11 +49,11 @@ function productSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: item.title,
-    brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
+    brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
     description: item.description,
     url: `${BASE_URL}/technologies/${slug}`,
     category: 'Industrial Filtration Technology',
-    manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS®', url: BASE_URL },
+    manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: BASE_URL },
   };
 }
 
@@ -81,7 +81,7 @@ function faqSchema(item: ReturnType<typeof getItemBySlug>) {
         name: `What is the engineering architecture behind ${item.title}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${item.title} is a proprietary ELIMFILTERS® protection architecture engineered for specific contamination control targets in industrial operating environments. It uses a multi-layer protection construction validated against ISO industry standards (ISO 5011, ISO 16889, ISO 4406) for the contamination particle size ranges, operating pressures, and service intervals characteristic of the applications it protects.`,
+          text: `${item.title} is a proprietary ELIMFILTERS protection architecture engineered for specific contamination control targets in industrial operating environments. It uses a multi-layer protection construction validated against ISO industry standards (ISO 5011, ISO 16889, ISO 4406) for the contamination particle size ranges, operating pressures, and service intervals characteristic of the applications it protects.`,
         },
       },
     ],

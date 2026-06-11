@@ -112,7 +112,7 @@ export default function KnowledgeSystemPage() {
     name: 'Industrial Filtration Knowledge Base',
     description: 'Comprehensive technical resources on filtration science, ISO standards, contamination control, fleet optimization, and OEM comparison — built for engineers and procurement teams.',
     url: 'https://elimfilters.com/knowledge-system/',
-    publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+    publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
     dateModified: '2026-06-11',
     hasPart: [
       { '@type': 'WebPage', name: 'Industrial Filtration Standards', url: 'https://elimfilters.com/knowledge-system/standards/' },
@@ -199,7 +199,7 @@ export default function KnowledgeSystemPage() {
             color: 'rgba(255,255,255,0.28)',
             letterSpacing: '0.08em',
           }}>
-            Technical content by the ELIMFILTERS® Engineering Team ·{' '}
+            Technical content by the ELIMFILTERS Engineering Team ·{' '}
             <time dateTime="2026-05-25">Updated May 2026</time>
           </p>
         </motion.div>
@@ -224,7 +224,7 @@ export default function KnowledgeSystemPage() {
             lineHeight: 1.8,
             marginBottom: '2.5rem',
           }}>
-            The ELIMFILTERS® Knowledge System explains how{' '}
+            The ELIMFILTERS Knowledge System explains how{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
               industrial filtration systems
             </Link>{' '}

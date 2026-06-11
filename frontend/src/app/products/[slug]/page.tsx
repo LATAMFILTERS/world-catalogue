@@ -39,13 +39,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getItemBySlug('products', params.slug);
   if (!item) return { title: 'Not Found' };
   const url = `${BASE_URL}/products/${params.slug}`;
-  const title = `${item.name} Filter System | ELIMFILTERS®`;
+  const title = `${item.name} Filter System | ELIMFILTERS`;
   return {
     title,
     description: item.description,
     keywords: [
       `${item.name.toLowerCase()} filter`, `industrial ${item.name.toLowerCase()} filtration`,
-      'ELIMFILTERS®', 'heavy duty filter', 'asset protection filtration',
+      'ELIMFILTERS', 'heavy duty filter', 'asset protection filtration',
     ],
     alternates: {
       canonical: url,
@@ -56,8 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: item.description,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS® World Catalogue',
-      images: [{ url: '/assets/logo-elimfilters.png', width: 800, height: 400, alt: `${item.name} Filter — ELIMFILTERS®` }],
+      siteName: 'ELIMFILTERS World Catalogue',
+      images: [{ url: '/assets/logo-elimfilters.png', width: 800, height: 400, alt: `${item.name} Filter — ELIMFILTERS` }],
     },
     twitter: { card: 'summary_large_image', title, description: item.description },
   };

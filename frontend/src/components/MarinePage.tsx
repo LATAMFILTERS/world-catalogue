@@ -117,7 +117,7 @@ export function MarinePage() {
                 fontStyle: 'italic',
               }}
             >
-              Filtration systems engineered for the harshest environment on earth. Saltwater corrosion, fuel contamination, hydraulic failures and air intake fouling are the leading causes of marine engine loss — ELIMFILTERS® addresses all four simultaneously.
+              Filtration systems engineered for the harshest environment on earth. Saltwater corrosion, fuel contamination, hydraulic failures and air intake fouling are the leading causes of marine engine loss — ELIMFILTERS addresses all four simultaneously.
             </motion.p>
           </div>
         </section>
@@ -169,7 +169,7 @@ export function MarinePage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Marine engines operate under conditions that expose every filtration weakness simultaneously: saltwater aerosol ingestion, condensation in fuel tanks, biofouling in stored diesel, hydraulic deck machinery under constant shock loads and air intakes exposed to spray and particulate. ELIMFILTERS® marine product line covers all four critical circuits — fuel, lube, hydraulic and air — with elements built for the corrosive, high-humidity, high-vibration demands of offshore, commercial and naval operations.
+                  Marine engines operate under conditions that expose every filtration weakness simultaneously: saltwater aerosol ingestion, condensation in fuel tanks, biofouling in stored diesel, hydraulic deck machinery under constant shock loads and air intakes exposed to spray and particulate. ELIMFILTERS marine product line covers all four critical circuits — fuel, lube, hydraulic and air — with elements built for the corrosive, high-humidity, high-vibration demands of offshore, commercial and naval operations.
                 </p>
 
                 <div

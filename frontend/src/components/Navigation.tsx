@@ -81,7 +81,7 @@ export function Navigation() {
           maxWidth: '1400px',
           margin: '0 auto',
           padding: '0 2rem',
-          height: '72px',
+          height: '90px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -92,10 +92,11 @@ export function Navigation() {
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image
               src="/assets/logo-elimfilters.png"
-              alt="ELIMFILTERS®"
-              width={180}
-              height={48}
-              style={{ objectFit: 'contain', height: '42px', width: 'auto' }}
+              alt="ELIMFILTERS"
+              width={220}
+              height={60}
+              className="nav-logo"
+              style={{ objectFit: 'contain', height: '56px', width: 'auto' }}
               priority
             />
           </Link>

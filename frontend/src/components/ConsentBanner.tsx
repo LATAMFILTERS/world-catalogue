@@ -47,7 +47,7 @@ export default function ConsentBanner() {
               margin: 0,
             }}
           >
-            We use analytics (GA4, PostHog, Clarity) to improve the ELIMFILTERS® platform.
+            We use analytics (GA4, PostHog, Clarity) to improve the ELIMFILTERS platform.
             No personal data is shared with third parties.
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexShrink: 0 }}>

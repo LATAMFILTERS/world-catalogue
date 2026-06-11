@@ -443,7 +443,7 @@ function Hero() {
 
             <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1.05rem', color: W6,
               lineHeight:1.8, maxWidth:510, marginBottom:'3rem' }}>
-              ELIMFILTERS® engineers asset-protection filtration for the most demanding
+              ELIMFILTERS engineers asset-protection filtration for the most demanding
               industrial environments on earth — validated against ISO 16889, ISO 4406,
               and ISO 5011.
             </p>
@@ -727,7 +727,7 @@ function Technology() {
           <H2>12 Technologies.<br /><span style={{ color: G }}>Zero Compromise.</span></H2>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
             lineHeight:1.8, marginTop:'1rem', maxWidth:560 }}>
-            Every ELIMFILTERS® product is built on a proprietary media platform —
+            Every ELIMFILTERS product is built on a proprietary media platform —
             not commodity glass fibre. Each technology is engineered for a specific
             contamination environment and validated against international test standards.
           </p>
@@ -937,7 +937,7 @@ function Standards() {
           <H2>Engineered to the<br /><span style={{ color: G }}>Highest Specification.</span></H2>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
             lineHeight:1.8, marginTop:'1.25rem', maxWidth:520, margin:'1.25rem auto 0' }}>
-            Every ELIMFILTERS® product is validated against international standards
+            Every ELIMFILTERS product is validated against international standards
             and built on proprietary media technology developed in-house.
           </p>
         </div>
@@ -993,7 +993,7 @@ function ROI() {
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
             lineHeight:1.8, maxWidth:520, margin:'1rem auto 0' }}>
             Enter your fleet parameters. See the real cost of substandard filtration
-            and what ELIMFILTERS® returns to your P&L.
+            and what ELIMFILTERS returns to your P&L.
           </p>
         </div>
 
@@ -1172,7 +1172,7 @@ function Distributor() {
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem', alignItems:'center' }}>
           <div className="reveal-left">
             <Eyebrow>DISTRIBUTOR PROGRAMME</Eyebrow>
-            <H2>Only the Best<br /><span style={{ color: G }}>Sell ELIMFILTERS®.</span></H2>
+            <H2>Only the Best<br /><span style={{ color: G }}>Sell ELIMFILTERS.</span></H2>
             <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
               lineHeight:1.8, marginTop:'1.5rem', marginBottom:'2.5rem' }}>
               A selective network built for companies that serve industrial markets
@@ -1184,7 +1184,7 @@ function Distributor() {
               { n:'01', t:'Apply', d:'Submit company details, territory, and intended verticals.' },
               { n:'02', t:'Territory Review', d:'We review for market fit and strategic alignment.' },
               { n:'03', t:'Onboarding', d:'Portal access, catalogue, pricing, and technical training.' },
-              { n:'04', t:'First Order', d:'Opening stock with full ELIMFILTERS® launch support.' },
+              { n:'04', t:'First Order', d:'Opening stock with full ELIMFILTERS launch support.' },
             ].map(s => (
               <div key={s.n} style={{ display:'flex', gap:'1.25rem', alignItems:'flex-start',
                 padding:'1rem 1.2rem', background: S2, border:`1px solid ${W1}`,
@@ -1265,7 +1265,7 @@ function Footer() {
     },
     {
       head: 'COMPANY',
-      links: ['About ELIMFILTERS®','Proprietary Technologies','Certifications','Distributor Programme','Contact / Support','Press & Media'],
+      links: ['About ELIMFILTERS','Proprietary Technologies','Certifications','Distributor Programme','Contact / Support','Press & Media'],
     },
   ];
 
@@ -1339,7 +1339,7 @@ function Footer() {
               gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'3rem 2rem', alignItems:'start' }}>
               <div style={{ gridColumn:'1 / 1' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/elimfilters-logo.png" alt="ELIMFILTERS®"
+                <img src="/assets/elimfilters-logo.png" alt="ELIMFILTERS"
                   style={{ height:32, width:'auto', objectFit:'contain', marginBottom:'1rem', display:'block' }}
                   onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; }}
                 />
@@ -1387,7 +1387,7 @@ function Footer() {
           justifyContent:'space-between', gap:'1rem' }}>
           <span style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.58rem',
             color: W3, letterSpacing:'0.1em' }}>
-            © {new Date().getFullYear()} ELIMFILTERS® — ALL RIGHTS RESERVED
+            © {new Date().getFullYear()} ELIMFILTERS — ALL RIGHTS RESERVED
           </span>
           <div style={{ display:'flex', gap:'1.5rem' }}>
             {['Privacy Policy','Terms of Use','Cookie Preferences'].map(l => (
@@ -1439,12 +1439,12 @@ function Nav() {
       <Wrap style={{ display:'flex', alignItems:'center', gap:'0.2rem', width:'100%', padding:'0 clamp(1.5rem,4vw,3rem)' }}>
         <Link href="/" style={{ marginRight:'1.5rem', flexShrink:0, textDecoration:'none', display:'flex', alignItems:'center' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-elimfilters.png" alt="ELIMFILTERS®"
+          <img src="/assets/logo-elimfilters.png" alt="ELIMFILTERS"
             style={{ height:28, width:'auto', objectFit:'contain' }}
             onError={e => { (e.currentTarget as HTMLImageElement).style.display='none'; (e.currentTarget.nextSibling as HTMLElement).style.display='inline'; }}
           />
           <span style={{ display:'none', fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem',
-            color: G, fontWeight:600, letterSpacing:'0.16em' }}>ELIMFILTERS®</span>
+            color: G, fontWeight:600, letterSpacing:'0.16em' }}>ELIMFILTERS</span>
         </Link>
         <div style={{ width:1, height:16, background: W1, marginRight:'1rem', flexShrink:0 }} />
         <div style={{ display:'flex', gap:'0.1rem', overflowX:'auto', scrollbarWidth:'none', flex:1 }}>

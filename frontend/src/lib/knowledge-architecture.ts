@@ -1,5 +1,5 @@
 /**
- * ELIMFILTERS® Knowledge Architecture Map
+ * ELIMFILTERS Knowledge Architecture Map
  *
  * Defines relational structure between:
  * - Technologies (product systems)

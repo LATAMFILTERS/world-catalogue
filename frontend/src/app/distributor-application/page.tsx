@@ -32,12 +32,12 @@ const PARTNER_CRITERIA = [
   {
     code: '03',
     title: 'Regional Coverage',
-    body: 'Defined service territory with distribution infrastructure. ELIMFILTERS® prioritizes coverage gaps in LATAM, Southeast Asia, Middle East, and Sub-Saharan Africa where industrial asset density is highest.',
+    body: 'Defined service territory with distribution infrastructure. ELIMFILTERS prioritizes coverage gaps in LATAM, Southeast Asia, Middle East, and Sub-Saharan Africa where industrial asset density is highest.',
   },
   {
     code: '04',
     title: 'Asset Protection Alignment',
-    body: 'Willingness to position ELIMFILTERS® as a contamination control system — not a filter SKU. Partners who sell on specification and system value, not on price and brand recognition.',
+    body: 'Willingness to position ELIMFILTERS as a contamination control system — not a filter SKU. Partners who sell on specification and system value, not on price and brand recognition.',
   },
 ];
 
@@ -48,7 +48,7 @@ const PARTNER_VALUE = [
   },
   {
     title: 'Knowledge System Access',
-    body: 'Full access to the ELIMFILTERS® Knowledge System — ISO standards library, contamination case studies, fleet optimization frameworks — tools to sell by engineering value, not price.',
+    body: 'Full access to the ELIMFILTERS Knowledge System — ISO standards library, contamination case studies, fleet optimization frameworks — tools to sell by engineering value, not price.',
   },
   {
     title: 'Technical Support Infrastructure',
@@ -71,7 +71,7 @@ const PARTNER_VALUE = [
 const schemaService = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'ELIMFILTERS® Authorized Distributor Program',
+  name: 'ELIMFILTERS Authorized Distributor Program',
   provider: {
     '@type': 'Organization',
     name: 'ELIMFILTERS',
@@ -79,7 +79,7 @@ const schemaService = {
     url: 'https://elimfilters.com',
   },
   description:
-    'Authorized distributor partnership program for industrial asset protection. ELIMFILTERS® provides proprietary contamination control technologies across 12 industrial sectors.',
+    'Authorized distributor partnership program for industrial asset protection. ELIMFILTERS provides proprietary contamination control technologies across 12 industrial sectors.',
   areaServed: 'Worldwide',
   serviceType: 'Industrial Distributor Partnership',
 };
@@ -278,7 +278,7 @@ export default function DistributorApplication() {
               maxWidth: '680px',
             }}
           >
-            ELIMFILTERS® authorized distributors represent a contamination control system — 10
+            ELIMFILTERS authorized distributors represent a contamination control system — 10
             proprietary technologies, 12 industrial sectors, and a knowledge infrastructure that
             enables technical selling. Industrial clients protect equipment assets. Distributors
             deliver the system that makes that possible.
@@ -311,7 +311,7 @@ export default function DistributorApplication() {
                 lineHeight: 1.25,
               }}
             >
-              Most filter distributors sell SKUs. ELIMFILTERS® distributors sell outcomes.
+              Most filter distributors sell SKUs. ELIMFILTERS distributors sell outcomes.
             </h2>
             <div
               style={{
@@ -381,7 +381,7 @@ export default function DistributorApplication() {
                   }}
                 >
                   System-level consultation. Sell on contamination control outcomes — bearing life
-                  extension, downtime reduction, total cost of ownership. ELIMFILTERS® technologies
+                  extension, downtime reduction, total cost of ownership. ELIMFILTERS technologies
                   are specified, not substituted. Technical value creates client retention.
                 </p>
               </div>
@@ -725,7 +725,7 @@ export default function DistributorApplication() {
                     marginBottom: '2rem',
                   }}
                 >
-                  The ELIMFILTERS® commercial team reviews each application for regional coverage
+                  The ELIMFILTERS commercial team reviews each application for regional coverage
                   fit, industrial sector alignment, and technical capability. Applications that do
                   not clearly define a service territory or industrial focus are typically not
                   approved.
@@ -1035,10 +1035,10 @@ export default function DistributorApplication() {
       <div style={{ padding: '0 clamp(1.25rem,5vw,2rem) 4rem' }}>
         <RetrievalBlock>
           <p>
-            <strong>CONCEPT:</strong> ELIMFILTERS® Authorized Distributor Program
+            <strong>CONCEPT:</strong> ELIMFILTERS Authorized Distributor Program
           </p>
           <p>
-            <strong>DEFINITION:</strong> Authorized distributors represent the ELIMFILTERS® asset
+            <strong>DEFINITION:</strong> Authorized distributors represent the ELIMFILTERS asset
             protection platform — 10 proprietary contamination control technologies across 12
             industrial sectors. Program requires industrial sector access, technical consultation
             capability, defined service territory, and commitment to system-level positioning over
@@ -1055,7 +1055,7 @@ export default function DistributorApplication() {
           </p>
           <p>
             <strong>INDUSTRIAL_ROLE:</strong> Authorized distributors deliver contamination control
-            systems to industrial operators — the last link between ELIMFILTERS® asset protection
+            systems to industrial operators — the last link between ELIMFILTERS asset protection
             engineering and equipment reliability outcomes in the field.
           </p>
           <p>

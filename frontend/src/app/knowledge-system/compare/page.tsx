@@ -126,7 +126,7 @@ export default function ComparisonHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            ELIMFILTERS® reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
+            ELIMFILTERS reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',

@@ -6,7 +6,7 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 
 const GEO_DEFINITIONS: Record<string, string> = {
-  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS®' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+  'aquaguard-series': "AQUAGUARD/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   'aquaguard': 'AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
   'cooltech': 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
   'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
@@ -38,7 +38,7 @@ const FAQS = [
     a: 'Both are Air Intake architectures (System 01) but target different operating environments. MACROCORE™ uses Progressive Density Gradient (PDG) media — a multi-layer cellulose-synthetic composite achieving 99.9%–99.98% efficiency (ISO 5011) at dust concentrations up to 10,000 mg/m³ in mining, agriculture, and construction. SYNTEPORE™ is all-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure would degrade cellulose media — maintaining ISO 5011-compliant airflow restriction regardless of humidity conditions.',
   },
   {
-    q: 'Which ELIMFILTERS® architecture protects HPCR diesel injection systems?',
+    q: 'Which ELIMFILTERS architecture protects HPCR diesel injection systems?',
     a: 'AQUAGUARD™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
   },
   {
@@ -46,7 +46,7 @@ const FAQS = [
     a: 'SYNTRAX™ is the lubrication reliability architecture for System 03 — engine oil protection. It maintains ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals (60,000–100,000 km programs) for diesel, gas, and dual-fuel engines. SYNTRAX™ captures combustion soot above 2% by weight, metal wear particles from ring/liner/bearing contact, and fuel dilution byproducts that reduce oil viscosity below SAE specification. Maintaining ISO 4406 code 16/14/11 extends bearing service life three to five times compared to uncontrolled contamination at 19/17/14.',
   },
   {
-    q: 'What ISO standards govern ELIMFILTERS® protection architectures?',
+    q: 'What ISO standards govern ELIMFILTERS protection architectures?',
     a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). AQUAGUARD™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
   },
   {
@@ -68,10 +68,10 @@ export default function TechnologiesPage() {
       item: {
         '@type': 'Product',
         name: tech.title,
-        brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
+        brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
         description: GEO_DEFINITIONS[slug] || tech.description,
         url: `https://elimfilters.com/technologies/${slug}`,
-        manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
       },
     };
   });
@@ -91,7 +91,7 @@ export default function TechnologiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'ELIMFILTERS® Proprietary Protection Architectures',
+        name: 'ELIMFILTERS Proprietary Protection Architectures',
         description: 'Nine exclusive protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
         url: 'https://elimfilters.com/technologies/',
         numberOfItems: 9,
@@ -192,7 +192,7 @@ export default function TechnologiesPage() {
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            ELIMFILTERS® technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS®&apos; industrial asset protection strategy.
+            ELIMFILTERS technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS&apos; industrial asset protection strategy.
           </p>
         </motion.div>
       </section>
@@ -305,7 +305,7 @@ export default function TechnologiesPage() {
               Nine Protection Architectures — Quick Reference
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS® protection architectures.
+              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS protection architectures.
             </p>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>

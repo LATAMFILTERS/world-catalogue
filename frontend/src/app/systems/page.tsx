@@ -635,12 +635,12 @@ export default function SystemsPage() {
   const webPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Industrial Asset Protection Systems — ELIMFILTERS®',
+    name: 'Industrial Asset Protection Systems — ELIMFILTERS',
     description:
       'Five industrial asset protection systems covering air intake, fuel cleanliness, lubrication reliability, hydraulic contamination control, and cooling/environmental protection across 12 heavy industry sectors.',
     url: 'https://elimfilters.com/systems',
     dateModified: '2026-05-26',
-    author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+    author: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   };
 
   const breadcrumbSchema = {
@@ -658,10 +658,10 @@ export default function SystemsPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What are the five industrial asset protection systems from ELIMFILTERS®?',
+        name: 'What are the five industrial asset protection systems from ELIMFILTERS?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'ELIMFILTERS® organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
+          text: 'ELIMFILTERS organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
         },
       },
       {
@@ -812,7 +812,7 @@ export default function SystemsPage() {
             }}
           >
             Industrial equipment fails when contamination accumulates faster than the protection system
-            removes it. ELIMFILTERS® structures contamination control into five engineering domains —
+            removes it. ELIMFILTERS structures contamination control into five engineering domains —
             each defined by its contamination target, failure mechanism, and the exclusive architecture
             that prevents it.
           </motion.p>

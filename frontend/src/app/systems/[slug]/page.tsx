@@ -86,7 +86,7 @@ export default function SystemPage({ params }: PageProps) {
           url: `https://elimfilters.com/systems/${params.slug}`,
           datePublished: '2026-01-15',
           dateModified: '2026-05-25',
-          author: { '@type': 'Organization', name: 'ELIMFILTERS®' },
+          author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         })}
       </script>
       <SystemPageClient product={product} displayName={displayName} industries={industries} slug={params.slug} />

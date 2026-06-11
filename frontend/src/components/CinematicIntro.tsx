@@ -100,7 +100,7 @@ export function CinematicIntro({ logoSrc, heroTitle, categoryTag }: Props) {
             }}
           />
 
-          {/* ELIMFILTERS® mark — bottom */}
+          {/* ELIMFILTERS mark — bottom */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.28 }}
@@ -119,7 +119,7 @@ export function CinematicIntro({ logoSrc, heroTitle, categoryTag }: Props) {
               margin: 0,
             }}
           >
-            ELIMFILTERS® · INDUSTRIAL ASSET PROTECTION
+            ELIMFILTERS · INDUSTRIAL ASSET PROTECTION
           </motion.p>
         </motion.div>
       )}

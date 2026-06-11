@@ -456,7 +456,7 @@ export default function AboutPage() {
                 {
                   label: 'PARENT COMPANY',
                   value: 'Kleo Technologies LLC',
-                  note: 'ELIMFILTERS® is the industrial asset protection brand of Kleo Technologies LLC.',
+                  note: 'ELIMFILTERS is the industrial asset protection brand of Kleo Technologies LLC.',
                 },
                 {
                   label: 'GLOBAL HEADQUARTERS',

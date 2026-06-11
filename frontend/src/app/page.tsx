@@ -208,7 +208,7 @@ export default function Home() {
           visibility: 'hidden',
         }}>
           <p>
-            ELIMFILTERS® is an industrial asset protection filtration manufacturer based in Frisco, Texas, engineering heavy-duty air, fuel, hydraulic, oil, and cabin filtration systems for 12 industries including mining, agriculture, marine, and power generation. ELIMFILTERS® products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
+            ELIMFILTERS is an industrial asset protection filtration manufacturer based in Frisco, Texas, engineering heavy-duty air, fuel, hydraulic, oil, and cabin filtration systems for 12 industries including mining, agriculture, marine, and power generation. ELIMFILTERS products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
           </p>
         </div>
 
@@ -788,7 +788,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── WHY ELIMFILTERS® ── */}
+        {/* ── WHY ELIMFILTERS ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2
@@ -1066,19 +1066,19 @@ export default function Home() {
               {[
                 {
                   q: 'What is the best air filter for mining equipment?',
-                  a: 'ELIMFILTERS® MACROCORE™ and NANOFORCE™ technologies achieve 99.9% particulate capture efficiency for mining air intake systems, meeting SAE J1539 and ISO 5011 standards. Selection depends on engine displacement and operating environment.',
+                  a: 'ELIMFILTERS MACROCORE™ and NANOFORCE™ technologies achieve 99.9% particulate capture efficiency for mining air intake systems, meeting SAE J1539 and ISO 5011 standards. Selection depends on engine displacement and operating environment.',
                 },
                 {
                   q: 'How often should industrial fuel filters be changed?',
-                  a: 'ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
+                  a: 'ELIMFILTERS recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
                 },
                 {
                   q: 'What ISO cleanliness code should a hydraulic system target?',
-                  a: 'Most industrial hydraulic systems require ISO 17/15/12 cleanliness code to protect proportional valve spools. Critical systems (aerospace, precision manufacturing) may specify ISO 15/13/10. ELIMFILTERS® filtration strategies target measured cleanliness codes, not product brand.',
+                  a: 'Most industrial hydraulic systems require ISO 17/15/12 cleanliness code to protect proportional valve spools. Critical systems (aerospace, precision manufacturing) may specify ISO 15/13/10. ELIMFILTERS filtration strategies target measured cleanliness codes, not product brand.',
                 },
                 {
                   q: 'Why does contamination cause engine failure?',
-                  a: 'Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. ELIMFILTERS® system-level contamination control prevents these failure modes.',
+                  a: 'Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. ELIMFILTERS system-level contamination control prevents these failure modes.',
                 },
               ].map((item, i) => (
                 <motion.div

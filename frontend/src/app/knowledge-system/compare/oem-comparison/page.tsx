@@ -180,7 +180,7 @@ export default function OEMComparisonPage() {
             marginBottom: '2rem',
             fontStyle: 'italic',
           }}>
-            Note: The following overview is factual market analysis. ELIMFILTERS® does not compete on price or brand positioning. We compete on system-level contamination control.
+            Note: The following overview is factual market analysis. ELIMFILTERS does not compete on price or brand positioning. We compete on system-level contamination control.
           </p>
           <div style={{
             display: 'grid',
@@ -243,7 +243,7 @@ export default function OEMComparisonPage() {
                 color: '#FFF12D',
                 marginBottom: '0.75rem',
               }}>
-                <strong>ELIMFILTERS® Positioning:</strong> Not a filter brand, but an asset protection system.
+                <strong>ELIMFILTERS Positioning:</strong> Not a filter brand, but an asset protection system.
               </p>
               <p style={{
                 fontSize: '0.85rem',
@@ -375,7 +375,7 @@ export default function OEMComparisonPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / THE ELIMFILTERS® ADVANTAGE
+            04 / THE ELIMFILTERS ADVANTAGE
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -398,7 +398,7 @@ export default function OEMComparisonPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
-              ELIMFILTERS® does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
+              ELIMFILTERS does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
             </p>
             <ul style={{
               fontSize: '1rem',
