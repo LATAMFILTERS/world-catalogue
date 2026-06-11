@@ -54,24 +54,15 @@ export function Footer() {
       }}
     >
       <div
+        className="footer-outer-grid"
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
           padding: '0 40px',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '80px',
-          alignItems: 'start',
         }}
       >
         {/* LEFT: Navigation columns */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '40px',
-          }}
-        >
+        <div className="footer-nav-grid">
           {NAV_COLUMNS.map((col) => (
             <div key={col.title}>
               <div
@@ -130,6 +121,7 @@ export function Footer() {
 
         {/* RIGHT: Social + Logo + Address */}
         <div
+          className="footer-right-col"
           style={{
             display: 'flex',
             flexDirection: 'column',

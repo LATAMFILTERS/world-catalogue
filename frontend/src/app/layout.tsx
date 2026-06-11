@@ -4,6 +4,7 @@ import { Space_Grotesk, Outfit, JetBrains_Mono, Montserrat } from 'next/font/goo
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
+import ConsentBanner from '@/components/ConsentBanner';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', weight: ['400', '500', '700'] });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', weight: ['300', '400', '500', '600', '700'] });
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     'industrial filtration', 'asset protection filters', 'air filters industrial',
     'fuel filters heavy duty', 'hydraulic filters', 'oil filters industrial',
     'mining filtration', 'agriculture filtration', 'marine filtration',
-    'SYNTRAX filter', 'NANOFORCE filter', 'AQUAGUARD filter', 'ELIMFILTERS®',
+    'SYNTRAX filter', 'NANOFORCE filter', 'INTEKCORE fuel filter', 'ELIMFILTERS®',
   ],
   authors: [{ name: 'ELIMFILTERS®', url: BASE_URL }],
   creator: 'ELIMFILTERS®',
@@ -106,20 +107,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {/* Skip to main content — keyboard/screen reader accessibility */}
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <Analytics />
-        <ClientProviders>{children}</ClientProviders>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-          `}
-        </Script>
+        <ConsentBanner />
+        <ClientProviders>
+          <div id="main-content">
+            {children}
+          </div>
+        </ClientProviders>
       </body>
     </html>
   );

@@ -247,3 +247,104 @@ body {
   .industry-hero-section { min-height: 60vh !important; }
 }
 /* ─────────────────────────────────────────────────────────────────── */
+
+/* ── Skip to content (accessibility) ──────────────────────────────── */
+.skip-to-content {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 99999;
+  background: var(--volt);
+  color: #000;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid #000;
+  outline-offset: 0;
+}
+
+/* ── Focus-visible styles (keyboard navigation) ───────────────────── */
+:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Suppress focus ring on mouse clicks, keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Back nav button — mobile responsive ──────────────────────────── */
+.back-nav-btn {
+  /* Desktop: already positioned correctly via inline style */
+}
+
+@media (max-width: 768px) {
+  .back-nav-btn {
+    /* Move to left side on mobile to avoid hamburger menu collision */
+    right: auto !important;
+    left: 1rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* ── Footer responsive grid ───────────────────────────────────────── */
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-outer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .footer-outer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .footer-right-col {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-nav-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem 1rem !important;
+  }
+}

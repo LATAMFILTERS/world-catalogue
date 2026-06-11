@@ -139,7 +139,8 @@ export default function KnowledgeSystemPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Back */}
-      <Link href="/" style={{
+      <Link href="/"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',

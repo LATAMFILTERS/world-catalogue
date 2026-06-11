@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { trackKnowledgePageView } from '@/lib/analytics';
+import { useConsent } from '@/lib/useConsent';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
@@ -47,6 +48,7 @@ function resolveConceptId(path: string): string {
 
 export default function Analytics() {
   const pathname = usePathname();
+  const { consent } = useConsent();
 
   const firePageView = useCallback(
     (path: string) => {
@@ -67,8 +69,11 @@ export default function Analytics() {
   );
 
   useEffect(() => {
-    firePageView(pathname);
-  }, [pathname, firePageView]);
+    if (consent === 'accepted') firePageView(pathname);
+  }, [pathname, firePageView, consent]);
+
+  // Only render tracking scripts after explicit consent
+  if (consent !== 'accepted') return null;
 
   return (
     <>
@@ -110,7 +115,8 @@ export default function Analytics() {
               capture_pageleave: true,
               autocapture: true,
               session_recording: {
-                maskAllInputs: false,
+                maskAllInputs: true,
+                maskTextSelector: 'input, textarea, select',
               }
             });
           `}

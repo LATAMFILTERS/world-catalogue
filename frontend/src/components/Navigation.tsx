@@ -93,9 +93,10 @@ export function Navigation() {
             <Image
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS®"
-              width={220}
-              height={220}
-              style={{ objectFit: 'contain' }}
+              width={180}
+              height={48}
+              style={{ objectFit: 'contain', height: '42px', width: 'auto' }}
+              priority
             />
           </Link>
         </motion.div>

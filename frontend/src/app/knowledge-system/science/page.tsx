@@ -273,6 +273,7 @@ export default function SciencePage() {
       {/* Back Navigation */}
       <Link
         href="/knowledge-system"
+        className="back-nav-btn"
         style={{
           position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
           display: 'flex', alignItems: 'center', gap: '0.4rem',
@@ -333,8 +334,71 @@ export default function SciencePage() {
         </motion.div>
       </section>
 
+      {/* Jump Navigation TOC */}
+      <nav aria-label="Page sections" style={{
+        background: 'rgba(255,241,45,0.03)',
+        borderBottom: '1px solid rgba(255,241,45,0.1)',
+        padding: '1.25rem 2rem',
+      }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <details style={{ cursor: 'pointer' }}>
+            <summary style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              letterSpacing: '0.18em',
+              color: 'rgba(255,241,45,0.7)',
+              listStyle: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              userSelect: 'none',
+            }}>
+              <span>// JUMP TO SECTION</span>
+              <span style={{ opacity: 0.4, fontSize: '0.6rem' }}>▼</span>
+            </summary>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '0.5rem',
+              marginTop: '1rem',
+            }}>
+              {[
+                { id: 'core-thesis',          label: '02 Scientific Thesis' },
+                { id: 'failure-chain',         label: '03 Failure Chain' },
+                { id: 'protection-chain',      label: '04 Protection Chain' },
+                { id: 'bearing-life',          label: '05 Bearing Life Evidence' },
+                { id: 'contamination-physics', label: '06 Contamination Physics' },
+                { id: 'wear-mechanisms',       label: '07 Wear Mechanisms' },
+                { id: 'failure-modes',         label: '08 Failure Modes' },
+                { id: 'technology-map',        label: '09 Technology Map' },
+                { id: 'systems-integration',   label: '10 Systems' },
+                { id: 'industry-integration',  label: '11 Industries' },
+                { id: 'faq',                   label: '12 FAQ' },
+              ].map(({ id, label }) => (
+                <a key={id} href={`#${id}`} style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.62rem',
+                  letterSpacing: '0.1em',
+                  color: 'rgba(255,255,255,0.5)',
+                  textDecoration: 'none',
+                  padding: '0.3rem 0.75rem',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '2px',
+                  transition: 'color 0.15s, border-color 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#FFF12D'; e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; }}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </details>
+        </div>
+      </nav>
+
       {/* 02 — CORE SCIENTIFIC THESIS */}
-      <section style={{
+      <section id="core-thesis" style={{
         padding: 'clamp(3rem, 6vw, 5rem) 2rem',
         background: 'rgba(255,241,45,0.015)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -366,7 +430,7 @@ export default function SciencePage() {
       </section>
 
       {/* 03 — FAILURE CHAIN FRAMEWORK */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="failure-chain" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -446,7 +510,7 @@ export default function SciencePage() {
       </section>
 
       {/* 05 — ISO 4406 / BEARING LIFE EVIDENCE */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="bearing-life" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -489,7 +553,7 @@ export default function SciencePage() {
       </section>
 
       {/* 06 — CONTAMINATION PHYSICS */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="contamination-physics" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -514,7 +578,7 @@ export default function SciencePage() {
       </section>
 
       {/* 07 — WEAR MECHANISMS */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="wear-mechanisms" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -591,7 +655,7 @@ export default function SciencePage() {
       </section>
 
       {/* 09 — TECHNOLOGY INTEGRATION */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="technology-map" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -635,7 +699,7 @@ export default function SciencePage() {
       </section>
 
       {/* 10 — SYSTEMS INTEGRATION */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="systems-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -670,7 +734,7 @@ export default function SciencePage() {
       </section>
 
       {/* 11 — INDUSTRY INTEGRATION */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="industry-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
@@ -706,7 +770,7 @@ export default function SciencePage() {
       </section>
 
       {/* 12 — FAQ */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section id="faq" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '3rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
