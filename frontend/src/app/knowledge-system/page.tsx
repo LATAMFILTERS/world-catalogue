@@ -113,11 +113,11 @@ export default function KnowledgeSystemPage() {
     description: 'Comprehensive technical resources on filtration science, ISO standards, contamination control, fleet optimization, and OEM comparison — built for engineers and procurement teams.',
     url: 'https://elimfilters.com/knowledge-system/',
     publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-    dateModified: '2026-05-25',
+    dateModified: '2026-06-11',
     hasPart: [
       { '@type': 'WebPage', name: 'Industrial Filtration Standards', url: 'https://elimfilters.com/knowledge-system/standards/' },
       { '@type': 'WebPage', name: 'Contamination & Failure Modes', url: 'https://elimfilters.com/knowledge-system/contamination/' },
-      { '@type': 'WebPage', name: 'Filtration Science', url: 'https://elimfilters.com/knowledge-system/science/' },
+      { '@type': 'WebPage', name: 'The Physics of Industrial Failure', url: 'https://elimfilters.com/knowledge-system/science/' },
       { '@type': 'WebPage', name: 'OEM vs Aftermarket', url: 'https://elimfilters.com/knowledge-system/compare/' },
       { '@type': 'WebPage', name: 'Fleet Optimization', url: 'https://elimfilters.com/knowledge-system/fleet/' },
     ],
