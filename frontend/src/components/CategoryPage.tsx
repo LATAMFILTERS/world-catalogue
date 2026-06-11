@@ -26,6 +26,11 @@ interface CategoryPageProps {
     ctaTitle?: string;
     ctaDescription?: string;
   };
+  industryLinks?: {
+    contamination?: { href: string; label: string }[];
+    systems?: { href: string; label: string }[];
+    knowledge?: { href: string; label: string }[];
+  };
 }
 
 function InlineVideo({ src }: { src: string }) {
@@ -80,7 +85,7 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
+export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData, industryLinks }: CategoryPageProps) {
   const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
@@ -635,22 +640,37 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 {t('category.technologiesIncluded', 'Technologies Included')}
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
-                  <span
-                    key={tech}
-                    style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.62rem',
-                      letterSpacing: '0.05em',
-                      padding: '0.3rem 0.7rem',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      color: 'rgba(255,241,45,0.75)',
-                      background: 'rgba(255,241,45,0.04)',
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
+                  const slug = tech.replace(/™/g, '').replace(/\//g, '-').replace(/\s+/g, '-').toLowerCase().replace(/--+/g, '-');
+                  return (
+                    <Link
+                      key={tech}
+                      href={`/technologies/${slug}`}
+                      style={{
+                        fontFamily: 'JetBrains Mono, monospace',
+                        fontSize: '0.62rem',
+                        letterSpacing: '0.05em',
+                        padding: '0.3rem 0.7rem',
+                        border: '1px solid rgba(255,241,45,0.25)',
+                        color: 'rgba(255,241,45,0.75)',
+                        background: 'rgba(255,241,45,0.04)',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        transition: 'border-color 0.2s, color 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.6)';
+                        e.currentTarget.style.color = '#FFF12D';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.25)';
+                        e.currentTarget.style.color = 'rgba(255,241,45,0.75)';
+                      }}
+                    >
+                      {tech}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
             </AnimateIn>
@@ -664,6 +684,79 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           buttonText={item.cta}
           buttonHref={buttonHref}
         />
+
+        {/* Knowledge Network */}
+        {industryLinks && (
+          <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
+                // KNOWLEDGE NETWORK
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem' }}>
+                {industryLinks.contamination && industryLinks.contamination.length > 0 && (
+                  <div>
+                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                      Contamination Threats
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      {industryLinks.contamination.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                        >
+                          → {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {industryLinks.systems && industryLinks.systems.length > 0 && (
+                  <div>
+                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                      Protection Systems
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      {industryLinks.systems.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                        >
+                          → {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {industryLinks.knowledge && industryLinks.knowledge.length > 0 && (
+                  <div>
+                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                      Knowledge System
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      {industryLinks.knowledge.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                        >
+                          → {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* FAQ Section */}
         {geoData?.faq && geoData.faq.length > 0 && (
