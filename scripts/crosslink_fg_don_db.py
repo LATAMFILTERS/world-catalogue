@@ -208,9 +208,49 @@ DON sin match:     {total_don - don_matched} / {total_don} ({(total_don-don_matc
         await conn.close()
 
 
+API_URL = "https://elimfilters-search-pro.onrender.com/api/crosslink/fg-don"
+API_KEY = "elim2026"
+
+
+def run_via_api(dry_run=False, stats_only=False):
+    import requests
+    payload = {"key": API_KEY, "dry_run": dry_run, "stats_only": stats_only}
+    print(f"→ POST {API_URL} (dry_run={dry_run}, stats_only={stats_only}) ...")
+    r = requests.post(API_URL, json=payload, timeout=300)
+    r.raise_for_status()
+    data = r.json()
+    s = data.get("stats", {})
+    print(f"""
+=== CROSSLINK FLEETGUARD ↔ DONALDSON ===
+Fleetguard en DB:  {s.get('total_fg')}
+Donaldson en DB:   {s.get('total_don')}
+
+Pairs únicos:      {s.get('pairs')}
+  Pass A (brand):  {s.get('pass_a')}
+  Pass B (OEM):    {s.get('pass_b')}
+
+FG con match:      {s.get('fg_matched')} / {s.get('total_fg')} ({s.get('fg_match_pct')}%)
+FG sin match:      {s.get('fg_unmatched')} / {s.get('total_fg')}
+DON con match:     {s.get('don_matched')} / {s.get('total_don')} ({s.get('don_match_pct')}%)
+DON sin match:     {s.get('don_unmatched')} / {s.get('total_don')}
+""")
+    if not stats_only and not dry_run:
+        print(f"✅ DON rows actualizados: {data.get('updated_don')}")
+        print(f"✅ FG rows actualizados:  {data.get('updated_fg')}")
+    if data.get("sample"):
+        print("Muestra pairs:")
+        for p in data["sample"]:
+            print(f"  {p['don']} ↔ {p['fg']} [{p['method']}]")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run",    action="store_true")
     parser.add_argument("--stats-only", action="store_true")
+    parser.add_argument("--direct",     action="store_true", help="Conectar directo a DB (requiere DATABASE_URL)")
     args = parser.parse_args()
-    asyncio.run(run(dry_run=args.dry_run, stats_only=args.stats_only))
+
+    if args.direct:
+        asyncio.run(run(dry_run=args.dry_run, stats_only=args.stats_only))
+    else:
+        run_via_api(dry_run=args.dry_run, stats_only=args.stats_only)

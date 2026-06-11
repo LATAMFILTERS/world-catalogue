@@ -1709,6 +1709,111 @@ app.post('/api/migrate/apply-turbine-matrix', async (req, res) => {
   res.json({ success: true, dryRun, created, updated, log });
 });
 
+// ─── POST /api/crosslink/fg-don ──────────────────────────────────────────────
+// Cross-links Fleetguard ↔ Donaldson in competitor_codes (bidirectional).
+// Body: { key: "elim2026", dry_run?: bool, stats_only?: bool }
+app.post('/api/crosslink/fg-don', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const dryRun    = !!req.body.dry_run;
+  const statsOnly = !!req.body.stats_only;
+
+  const SQL_PASS_A = `
+    SELECT d.sku AS don_sku, d.codigo_base AS don_code,
+           fg_pn.value AS fg_code, f.sku AS fg_sku
+    FROM elimfilters_catalog d
+    CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
+    JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
+    WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL`;
+
+  const SQL_PASS_B = `
+    WITH fg_oem AS (
+      SELECT f.sku AS fg_sku, f.codigo_base AS fg_code,
+             upper(trim(o->>'manufacturer')) AS mfr, upper(trim(o->>'part_number')) AS oem_pn
+      FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
+      WHERE jsonb_array_length(f.oem_codes) > 0
+    ), don_oem AS (
+      SELECT d.sku AS don_sku, d.codigo_base AS don_code,
+             upper(trim(o->>'manufacturer')) AS mfr, upper(trim(o->>'part_number')) AS oem_pn
+      FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
+      WHERE jsonb_array_length(d.oem_codes) > 0
+    )
+    SELECT DISTINCT fg.fg_sku, fg.fg_code, don.don_sku, don.don_code,
+           fg.mfr AS shared_brand, fg.oem_pn AS shared_code
+    FROM fg_oem fg JOIN don_oem don
+      ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
+    WHERE fg.mfr NOT IN (
+      'DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
+      'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
+      'HENGST','FILTREC','HYDAC','PALL','PARKER'
+    )`;
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    const rowsA = (await client.query(SQL_PASS_A)).rows;
+    const rowsB = (await client.query(SQL_PASS_B)).rows;
+
+    // Deduplicate — Pass A wins
+    const pairs = {};
+    for (const r of rowsA) {
+      pairs[`${r.don_sku}|${r.fg_sku}`] = { ...r, method: 'BRAND_CROSSREF' };
+    }
+    for (const r of rowsB) {
+      const k = `${r.don_sku}|${r.fg_sku}`;
+      if (!pairs[k]) pairs[k] = { ...r, method: `SHARED_OEM:${r.shared_brand}:${r.shared_code}` };
+    }
+
+    const pairList    = Object.values(pairs);
+    const totalFg     = parseInt((await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE sub_type ILIKE '%Fleetguard%'`)).rows[0].count);
+    const totalDon    = parseInt((await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE (sub_type NOT ILIKE '%Fleetguard%' OR sub_type IS NULL)`)).rows[0].count);
+    const fgMatched   = new Set(pairList.map(p => p.fg_sku)).size;
+    const donMatched  = new Set(pairList.map(p => p.don_sku)).size;
+    const passA_count = pairList.filter(p => p.method === 'BRAND_CROSSREF').length;
+    const passB_count = pairList.length - passA_count;
+
+    const stats = {
+      total_fg: totalFg, total_don: totalDon,
+      pairs: pairList.length, pass_a: passA_count, pass_b: passB_count,
+      fg_matched: fgMatched,  fg_unmatched: totalFg - fgMatched,
+      don_matched: donMatched, don_unmatched: totalDon - donMatched,
+      fg_match_pct:  totalFg  ? +(fgMatched  / totalFg  * 100).toFixed(1) : 0,
+      don_match_pct: totalDon ? +(donMatched / totalDon * 100).toFixed(1) : 0,
+    };
+
+    if (statsOnly || dryRun) {
+      return res.json({ success: true, dryRun, statsOnly, stats,
+        sample: pairList.slice(0, 5).map(p => ({
+          don: `${p.don_code} (${p.don_sku})`, fg: `${p.fg_code} (${p.fg_sku})`, method: p.method
+        }))
+      });
+    }
+
+    // Bidirectional update
+    let updatedDon = 0, updatedFg = 0;
+    const SQL_UPD = `
+      UPDATE elimfilters_catalog
+      SET competitor_codes = COALESCE(competitor_codes,'[]'::jsonb) || $1::jsonb
+      WHERE sku = $2 AND NOT (COALESCE(competitor_codes,'[]'::jsonb) @> $1::jsonb)`;
+
+    for (const p of pairList) {
+      const fgEntry  = JSON.stringify([{ brand:'FLEETGUARD', part_number: p.fg_code,  linked_sku: p.fg_sku  }]);
+      const donEntry = JSON.stringify([{ brand:'DONALDSON',  part_number: p.don_code, linked_sku: p.don_sku }]);
+      const rDon = await client.query(SQL_UPD, [fgEntry,  p.don_sku]);
+      const rFg  = await client.query(SQL_UPD, [donEntry, p.fg_sku]);
+      if (rDon.rowCount > 0) updatedDon++;
+      if (rFg.rowCount  > 0) updatedFg++;
+    }
+
+    res.json({ success: true, stats, updated_don: updatedDon, updated_fg: updatedFg });
+  } catch (err) {
+    console.error('[crosslink/fg-don]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;
