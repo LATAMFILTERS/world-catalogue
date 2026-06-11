@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -11,7 +12,7 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removes sub-10 micron contaminants from fuel before injection, preserving spray pattern geometry critical for combustion efficiency.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
   { name: 'MACROCORE', slug: 'macrocore', role: 'Progressive density gradient air filtration ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Engine oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
 ];
@@ -45,13 +46,14 @@ const FAQS = [
 export default function FuelEfficiencyPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Navigation */}
       <Link href="/knowledge-system/fleet" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← FLEET</Link>
@@ -77,7 +79,7 @@ export default function FuelEfficiencyPage() {
             // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · FUEL
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -106,7 +108,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / DEFINITION</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration as an Efficiency Variable</h2>
           <p style={{
@@ -136,7 +138,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Gradual Efficiency Loss Across Systems</h2>
           <p style={{
@@ -172,7 +174,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / COST IMPACT</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Economic Scale of Efficiency Losses</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -219,7 +221,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>System-by-System Efficiency Protection</h2>
           {[
@@ -242,7 +244,7 @@ export default function FuelEfficiencyPage() {
               marginBottom: '1.5rem',
             }}>
               <p style={{
-                fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                 fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
               }}>{item.title}</p>
               <p style={{
@@ -266,7 +268,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Documented Efficiency Outcomes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -309,7 +311,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Supporting Efficiency</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
@@ -351,7 +353,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / RELATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -389,7 +391,7 @@ export default function FuelEfficiencyPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -399,7 +401,7 @@ export default function FuelEfficiencyPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
@@ -433,7 +435,7 @@ export default function FuelEfficiencyPage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{page.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{page.title}</span>
                   <span style={{
@@ -456,7 +458,7 @@ export default function FuelEfficiencyPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/fuel-efficiency</p>
@@ -464,6 +466,39 @@ export default function FuelEfficiencyPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Filtration and Fuel Efficiency',
+        description: 'Fuel consumption in industrial equipment is not a fixed parameter. Contamination of fuel, air, and lubrication systems creates measurable degradation in thermodynamic efficiency that compounds across fleet operating hours.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'fuel efficiency', 'diesel fuel filtration', 'injector wear', 'specific fuel consumption', 'ASTM D975'],
+        about: { '@type': 'Thing', name: 'Filtration and Fuel Efficiency', description: 'Contamination in fuel, air intake, and engine oil systems drives measurable specific fuel consumption increases that compound across industrial fleet operating hours.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Filtration and Fuel Efficiency', item: 'https://elimfilters.com/knowledge-system/fleet/fuel-efficiency' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How does fuel contamination affect combustion efficiency at the injector level?', acceptedAnswer: { '@type': 'Answer', text: 'Modern high-pressure common-rail injectors operate at pressures between 1,600 and 2,500 bar with spray orifice diameters of 100 to 200 microns. Particles above 10 microns that pass through fuel filtration cause three failure modes: erosive wear of nozzle orifice geometry which enlarges spray holes and reduces atomization quality; abrasive wear of control valve seats causing internal leakage; and nozzle coking from combustion deposits accelerated by water contamination. Each failure mode shifts fuel delivery quantity and timing from calibrated values, increasing specific fuel consumption by 1 to 4% per injector affected.' } },
+          { '@type': 'Question', name: 'What is the measurable relationship between air filter restriction and fuel consumption?', acceptedAnswer: { '@type': 'Answer', text: 'Engine volumetric efficiency decreases approximately 1% for every 25 mbar increase in air intake restriction above the clean-element baseline. A typical diesel engine operating at 200 mbar restriction (a partially loaded filter) may lose 3 to 5% volumetric efficiency compared to a fresh element. The engine management system compensates by increasing fuel quantity to maintain power output, directly increasing specific fuel consumption. Operating equipment with a restriction indicator alarm active - typically above 375 mbar - can increase fuel consumption by 6 to 10% depending on engine load profile.' } },
+          { '@type': 'Question', name: 'Does water contamination in diesel fuel affect consumption beyond injector damage?', acceptedAnswer: { '@type': 'Answer', text: 'Water in diesel fuel affects combustion thermodynamics independently of mechanical damage. Free water droplets entering the combustion chamber consume heat energy during vaporization, reducing the thermal energy available for power stroke work. This effect becomes measurable above 500 ppm water concentration. Additionally, water contamination accelerates microbial growth in fuel storage systems - bacterial and fungal colonies produce biomass that blocks filter elements at accelerated rates, increasing filter change frequency and causing unexpected restriction events that force engines into derated operating modes.' } },
+          { '@type': 'Question', name: 'How should filtration specifications change for biodiesel blends compared to petroleum diesel?', acceptedAnswer: { '@type': 'Answer', text: 'Biodiesel blends above B10 (10% biodiesel content) require more aggressive water management due to biodiesel\'s higher hygroscopicity. Biodiesel absorbs atmospheric moisture at rates 3 to 5 times higher than petroleum diesel, making water saturation at the fuel-air interface a chronic condition rather than an episodic one. Filter elements with higher water absorption capacity and more frequent separator bowl drainage are required. Additionally, biodiesel degrades elastomeric seals in older filter housings, so seal material compatibility must be verified before transitioning to higher blend ratios.' } },
+        ],
+      }) }} />
     </main>
   );
 }

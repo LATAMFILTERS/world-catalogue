@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -14,7 +15,7 @@ const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Extended-interval synthetic fuel and hydraulic media reduces filter replacement frequency while maintaining target cleanliness codes across longer operating periods.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration reduces engine reconditioning frequency, extending the interval between major overhauls that represent the largest single maintenance cost events.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: 'Synthetic fluid formulations with 4,000+ hour service life reduce fluid replacement cost and disposal frequency in hydraulic and transmission systems.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Preventing injector damage from water contamination defers injector replacement events that typically cost 800 to 2,500 USD per set for heavy diesel applications.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Preventing injector damage from water contamination defers injector replacement events that typically cost 800 to 2,500 USD per set for heavy diesel applications.' },
   { name: 'MICROKAPPA', slug: 'microkappa', role: 'Coolant system contamination control extends coolant service life and prevents thermal system degradation that leads to costly head gasket and heat exchanger failures.' },
 ];
 
@@ -70,13 +71,14 @@ const TCO_COMPONENTS = [
 export default function TotalCostOwnershipPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Navigation */}
       <Link href="/knowledge-system/fleet" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← FLEET</Link>
@@ -102,7 +104,7 @@ export default function TotalCostOwnershipPage() {
             // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · TCO
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -131,7 +133,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / DEFINITION</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Total Cost of Ownership in Filtration Systems</h2>
           <p style={{
@@ -161,7 +163,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>The Unit Price Procurement Trap</h2>
           <p style={{
@@ -197,7 +199,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / COST IMPACT</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>TCO Component Structure</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -208,7 +210,7 @@ export default function TotalCostOwnershipPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                   fontWeight: 600, color: '#FFF12D', marginBottom: '0.85rem',
                 }}>{comp.category}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: '1rem' }}>
@@ -268,7 +270,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Building a TCO-Optimized Filtration Program</h2>
           {[
@@ -295,7 +297,7 @@ export default function TotalCostOwnershipPage() {
               marginBottom: '1.5rem',
             }}>
               <p style={{
-                fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                 fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
               }}>{item.title}</p>
               <p style={{
@@ -319,7 +321,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Documented TCO Outcomes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -362,7 +364,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Relevant to TCO Modeling</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
@@ -404,7 +406,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / RELATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -442,7 +444,7 @@ export default function TotalCostOwnershipPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -452,7 +454,7 @@ export default function TotalCostOwnershipPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
@@ -486,7 +488,7 @@ export default function TotalCostOwnershipPage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{page.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{page.title}</span>
                   <span style={{
@@ -517,6 +519,39 @@ export default function TotalCostOwnershipPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Total Cost of Ownership in Filtration',
+        description: 'Filter element unit cost represents a fraction of the economic decision. The complete TCO model accounts for service labor, component longevity, fluid waste, downtime exposure, and the quantifiable value of failures that did not occur.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'total cost of ownership', 'filtration TCO', 'ISO 16889', 'maintenance economics', 'equipment lifecycle cost'],
+        about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Lifecycle economic model for industrial filtration programs encompassing filter procurement, service labor, component longevity, and avoided failure costs.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Total Cost of Ownership in Filtration', item: 'https://elimfilters.com/knowledge-system/fleet/total-cost-ownership' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the correct method for calculating filtration ROI in an industrial fleet?', acceptedAnswer: { '@type': 'Answer', text: 'Filtration return on investment compares filtration program costs against measurable cost reductions in three categories: avoided repair costs (unplanned failures prevented multiplied by average event cost), reduced scheduled maintenance costs (extended component service life reducing overhaul frequency), and fuel cost savings from efficiency preservation. The denominator includes filter element costs, labor for replacement, fluid analysis program fees, and any equipment upgrades to filtration specification. A minimum 18-month analysis period is required to capture component lifecycle benefits, since some savings (engine overhaul deferral) occur at multi-year intervals rather than monthly.' } },
+          { '@type': 'Question', name: 'How does OEM filter specification compare to aftermarket options in TCO modeling?', acceptedAnswer: { '@type': 'Answer', text: 'OEM filter specifications define the minimum performance requirements validated for a given application. Aftermarket elements must meet or exceed these specifications to maintain equivalent protection. In TCO modeling, the relevant variables are: absolute filtration efficiency at the rated particle size, element collapse pressure rating relative to system bypass valve pressure, service life in operating hours at expected contamination levels, and cost per service hour. An aftermarket element costing 30% less but requiring 40% more frequent service intervals produces higher total cost. Conversely, an extended-interval synthetic element costing 60% more but lasting twice as long typically reduces cost per operating hour when labor cost is included.' } },
+          { '@type': 'Question', name: 'At what fleet size does a formal oil analysis program become economically justified?', acceptedAnswer: { '@type': 'Answer', text: 'Oil analysis programs typically reach positive ROI at fleet sizes above 8 to 12 units with operating hours exceeding 1,500 hours per year per unit. Below this threshold, analysis program fixed costs - laboratory fees, sampling kits, data management - often exceed the avoided cost benefit. For smaller fleets, periodic bulk sampling at shared service intervals provides meaningful data at lower program overhead. The inflection point shifts downward in high-value equipment categories: a single large mining excavator with overhaul costs exceeding 300,000 USD justifies individual oil analysis programs regardless of fleet size.' } },
+          { '@type': 'Question', name: 'How should filtration specifications change when equipment is operating beyond design lifespan?', acceptedAnswer: { '@type': 'Answer', text: 'Equipment operating beyond original design lifespan - typically defined as hours exceeding the first major overhaul interval - experiences accelerated wear particle generation from clearance growth in worn components. Worn engine cylinders generate more blow-by gas carrying oil-soluble contaminants. Worn hydraulic pump internals generate higher wear debris loads. In these conditions, upgrading to higher-efficiency filter elements (lower beta ratio) and shortening sampling intervals for oil analysis is justified. The additional filtration cost delays further component degradation and extends economic service life, deferring capital replacement expenditure.' } },
+        ],
+      }) }} />
     </main>
   );
 }

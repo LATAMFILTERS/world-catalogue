@@ -1,17 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 
 export default function AftermarketSelectionPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       <Link href="/knowledge-system/bridges" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
@@ -48,7 +50,7 @@ export default function AftermarketSelectionPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -64,7 +66,7 @@ export default function AftermarketSelectionPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -101,7 +103,7 @@ export default function AftermarketSelectionPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -148,7 +150,7 @@ export default function AftermarketSelectionPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -238,7 +240,7 @@ export default function AftermarketSelectionPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -322,7 +324,7 @@ export default function AftermarketSelectionPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -536,6 +538,29 @@ export default function AftermarketSelectionPage() {
         </motion.section>
 
       </div>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Aftermarket Filter Selection Strategy',
+        description: 'Technical framework for evaluating aftermarket filtration options using system-level contamination control criteria—ISO 16889 Beta ratios, dirt capacity, and bypass thresholds—when warranty has expired or OEM is optional.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['aftermarket filter selection', 'ISO 16889', 'Beta ratio', 'filter evaluation', 'contamination control', 'OEM alternative', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Aftermarket Filter Selection Strategy', description: 'Methodology for selecting aftermarket industrial filters based on verified ISO 16889 performance and contamination control metrics.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Bridges', item: 'https://elimfilters.com/knowledge-system/bridges' },
+          { '@type': 'ListItem', position: 4, name: 'Aftermarket Filter Selection Strategy', item: 'https://elimfilters.com/knowledge-system/bridges/aftermarket-selection' },
+        ],
+      }) }} />
     </main>
   );
 }

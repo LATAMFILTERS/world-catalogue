@@ -245,8 +245,41 @@ export default function ISO5011Page() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-5011</p>
         <p>&nbsp;&nbsp;concept_id: iso-5011-air-filter-testing</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'ISO 5011 — Air Filter Element Test Standard for Internal Combustion Engines',
+        description: 'ISO 5011 specifies test methods for evaluating air filter element performance including initial efficiency, dust capacity, and element integrity testing. Defines standardized procedures for measuring filtration efficiency and structural durability of air intake filter elements.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['ISO 5011', 'air filter testing', 'filter element integrity', 'dust capacity test', 'air intake filtration', 'SAE J726', 'SAE J1539', 'engine air filter'],
+        about: { '@type': 'Thing', name: 'ISO 5011 Air Filter Testing', description: 'International standard for measuring air filter element performance including efficiency, dust holding capacity, and structural integrity under test conditions.' },
+        inLanguage: 'es',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'ISO 5011', item: 'https://elimfilters.com/knowledge-system/standards/iso-5011' },
+        ],
+      }) }} />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -13,7 +14,7 @@ const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Air intake protection preventing abrasive ingestion that accelerates component wear between service intervals.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration capturing wear debris before recirculation extends time between unplanned oil failures.' },
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Fuel system contamination control reducing injector stiction events that trigger unscheduled engine shutdowns.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
 ];
 
 const STANDARDS = [
@@ -45,13 +46,14 @@ const FAQS = [
 export default function ReducingDowntimePage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Navigation */}
       <Link href="/knowledge-system/fleet" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← FLEET</Link>
@@ -77,7 +79,7 @@ export default function ReducingDowntimePage() {
             // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · DOWNTIME
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -106,7 +108,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / DEFINITION</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>What Is Fleet Downtime</h2>
           <p style={{
@@ -136,7 +138,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>The Cumulative Contamination Problem</h2>
           <p style={{
@@ -172,7 +174,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / COST IMPACT</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Quantified Downtime Costs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -219,7 +221,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Contamination Control as Downtime Prevention</h2>
           <p style={{
@@ -252,7 +254,7 @@ export default function ReducingDowntimePage() {
               marginBottom: '1.5rem',
             }}>
               <p style={{
-                fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                 fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
               }}>{item.title}</p>
               <p style={{
@@ -276,7 +278,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Measured Outcomes in Industrial Operations</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -319,7 +321,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Supporting Availability</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
@@ -361,7 +363,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / RELATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -399,7 +401,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -409,7 +411,7 @@ export default function ReducingDowntimePage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
@@ -443,7 +445,7 @@ export default function ReducingDowntimePage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{page.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{page.title}</span>
                   <span style={{
@@ -474,6 +476,39 @@ export default function ReducingDowntimePage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Reducing Fleet Downtime',
+        description: 'Unplanned mechanical failure is the primary driver of availability loss in industrial fleets. Filtration discipline is one of the highest-leverage variables within an operator\'s direct control.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'fleet downtime', 'unplanned maintenance', 'ISO 16889', 'oil cleanliness', 'predictive maintenance'],
+        about: { '@type': 'Thing', name: 'Fleet Downtime Reduction', description: 'Contamination control strategies that prevent unplanned mechanical failures and extend equipment availability in industrial fleet operations.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Reducing Fleet Downtime', item: 'https://elimfilters.com/knowledge-system/fleet/reducing-downtime' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the difference between planned and unplanned downtime in fleet operations?', acceptedAnswer: { '@type': 'Answer', text: 'Planned downtime occurs during scheduled maintenance windows where work scope, parts, and technician availability are pre-coordinated. Unplanned downtime results from component failure without prior warning, requiring emergency mobilization of resources. The cost differential between the two is typically 3 to 8 times higher for unplanned events due to emergency parts procurement, overtime labor, and production losses that compound while equipment sits idle.' } },
+          { '@type': 'Question', name: 'How does filter bypass affect unplanned failure rates?', acceptedAnswer: { '@type': 'Answer', text: 'Bypass events occur when differential pressure across a filter element exceeds the bypass valve opening threshold, typically between 3 and 6 bar for engine oil filters. During bypass, unfiltered fluid circulates through the system carrying accumulated wear debris directly to precision clearance surfaces. A single sustained bypass event can introduce enough abrasive material to reduce bearing service life by 20 to 40%, often without producing immediate symptoms visible in routine inspection.' } },
+          { '@type': 'Question', name: 'At what oil contamination level should an operator intervene before failure occurs?', acceptedAnswer: { '@type': 'Answer', text: 'ISO cleanliness code 18/16/13 is typically the intervention threshold for critical engine oil systems. Above this level, wear particle concentration accelerates abrasive mechanisms in a compounding pattern. For hydraulic systems with proportional control valves, ISO 16/14/11 is the maximum acceptable operating level. Exceeding these thresholds by even one ISO scale code represents a doubling of particle concentration and a measurable increase in component degradation rate.' } },
+          { '@type': 'Question', name: 'Can extended oil drain intervals increase unplanned downtime risk?', acceptedAnswer: { '@type': 'Answer', text: 'Extended drain intervals reduce planned maintenance frequency but increase contamination accumulation risk when filter element capacity is not proportionally upgraded. Oil oxidation byproducts and wear metal concentration both rise monotonically with service hours. When drain extensions are implemented without corresponding changes to filtration specification - higher efficiency elements or bypass filtration - the probability of in-service fluid degradation reaching critical thresholds increases significantly.' } },
+        ],
+      }) }} />
     </main>
   );
 }

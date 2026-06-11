@@ -1,18 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function TCOPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       <Link href="/knowledge-system/compare" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← COMPARISON</Link>
@@ -49,7 +51,7 @@ export default function TCOPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +67,7 @@ export default function TCOPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -100,7 +102,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -193,7 +195,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -423,7 +425,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -540,7 +542,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -588,6 +590,29 @@ export default function TCOPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Total Cost of Ownership',
+        description: 'Total cost of ownership analysis showing how system-level filtration reduces equipment lifecycle costs through contamination control, extended component life, and reduced unplanned downtime.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['total cost of ownership', 'filtration TCO', 'contamination control', 'fleet economics', 'ISO 16889', 'ISO 4406', 'asset protection', 'equipment lifecycle cost'],
+        about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Economic framework for evaluating filtration decisions based on equipment lifecycle cost rather than filter purchase price.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'Total Cost of Ownership', item: 'https://elimfilters.com/knowledge-system/compare/total-cost-ownership' },
+        ],
+      }) }} />
     </main>
   );
 }

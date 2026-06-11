@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -38,12 +39,13 @@ const BRIDGE_PAGES = [
 export default function BridgesHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       <Link href="/knowledge-system" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← KNOWLEDGE SYSTEM</Link>
@@ -73,7 +75,7 @@ export default function BridgesHubPage() {
             // FILTRATION DECISION BRIDGE
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -184,7 +186,7 @@ export default function BridgesHubPage() {
                   </div>
 
                   <h2 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1.1rem',
                     fontWeight: 600,
                     color: '#fff',
@@ -236,6 +238,28 @@ export default function BridgesHubPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'From Product Selection to System Design',
+        description: 'Decision bridge hub connecting product-based filtration selection to system-level contamination control design—covering OEM requirements, aftermarket selection, and fleet standardization strategies.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['filtration decision bridge', 'OEM filter requirements', 'aftermarket filter selection', 'fleet filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
+        about: { '@type': 'Thing', name: 'Filtration Decision Bridges', description: 'Bridge framework connecting product-based filtration decisions to system-level contamination control across OEM, aftermarket, and fleet operation contexts.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'From Product Selection to System Design', item: 'https://elimfilters.com/knowledge-system/bridges' },
+        ],
+      }) }} />
     </main>
   );
 }

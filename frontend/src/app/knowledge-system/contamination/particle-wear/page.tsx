@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -57,13 +58,14 @@ export default function ParticleWearPage() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Back Button */}
       <Link href="/knowledge-system/contamination" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← CONTAMINATION</Link>
@@ -93,7 +95,7 @@ export default function ParticleWearPage() {
             // CONTAMINATION & FAILURE MODES
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -133,7 +135,7 @@ export default function ParticleWearPage() {
           }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.3rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -167,7 +169,7 @@ export default function ParticleWearPage() {
             }}
           >
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: '1.3rem',
               fontWeight: 700,
               color: '#FFF12D',
@@ -215,7 +217,7 @@ export default function ParticleWearPage() {
           transition={{ duration: 0.5, delay: sections.length * 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.5rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -240,7 +242,7 @@ export default function ParticleWearPage() {
                 }}
               >
                 <h3 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#FFF12D',
@@ -275,7 +277,7 @@ export default function ParticleWearPage() {
           transition={{ duration: 0.5 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.2rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -303,7 +305,7 @@ export default function ParticleWearPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>💧 WATER</p>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Water ingress and microbial growth</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Water ingress and microbial growth</p>
               </div>
             </Link>
             <Link href="/knowledge-system/contamination/hydraulic-system" style={{ textDecoration: 'none' }}>
@@ -324,13 +326,45 @@ export default function ParticleWearPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>⚡ HYDRAULIC</p>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Pressurized fluid system contamination</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Pressurized fluid system contamination</p>
               </div>
             </Link>
           </div>
         </motion.div>
       </section>
 
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Particle Wear in Engines',
+        description: 'Particle contamination in engine oil and air intake systems causes three-body abrasive wear that reduces bearing life from 15,000+ hours to 2,000-3,000 hours. Particles in the 10-50 micron range represent the critical damage zone for bearing surfaces and piston rings.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['particle wear', 'engine contamination', 'abrasive wear', 'ISO 4406', 'wear debris analysis', 'MACROCORE', 'NANOFORCE', 'DURATECH', 'bearing wear', 'engine filtration'],
+        about: { '@type': 'Thing', name: 'Particle Wear in Engines', description: 'Abrasive wear mechanism in engines caused by particle contamination in lube oil and combustion air, resulting in bearing surface damage and accelerated component failure.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Contamination', item: 'https://elimfilters.com/knowledge-system/contamination' },
+          { '@type': 'ListItem', position: 4, name: 'Particle Wear in Engines', item: 'https://elimfilters.com/knowledge-system/contamination/particle-wear' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What particle size causes the most engine damage?', acceptedAnswer: { '@type': 'Answer', text: 'Particles in the 10-50 micron range cause the highest damage rate: particles <5 microns pass through bearing clearances without causing contact with surfaces; particles >50 microns are typically captured by filters or settle rapidly in oil. The 10-50 micron window represents the "critical damage zone" where particles are small enough to circulate freely in bearing clearances (typically 20-60 microns), yet large enough to support high contact pressures when embedded in surfaces. Within this range, 15-25 micron particles cause maximum damage rate because they create multiple contact points in bearing raceways while maintaining enough size to sustain high local stress concentrations. Equipment operating in environments with 30-50% of contamination in the 15-25 micron range experiences 5-8x faster bearing wear compared to clean baseline.' } },
+          { '@type': 'Question', name: 'How do I interpret wear debris analysis results?', acceptedAnswer: { '@type': 'Answer', text: 'Wear debris analysis quantifies iron (Fe), copper (Cu), lead (Pb), chromium (Cr), aluminum (Al), nickel (Ni), tin (Sn) concentration in ppm. Normal baselines for 500-hour oil: Fe <20 ppm (ferrous bearing wear), Cu <5 ppm (bearing alloy), Pb <2 ppm (bearing alloy), Cr <1 ppm (piston rings, valve seats). Elevated trends indicate: Fe >50 ppm = cylinder wall or piston ring wear progressing; Cu >15 ppm = bearing copper alloy depletion; Pb >5 ppm = bearing lead-tin backing material exposed. Rate of change is more significant than absolute value; increasing 5 ppm Fe per 250 hours indicates accelerating wear, requiring attention.' } },
+          { '@type': 'Question', name: 'Can heavily contaminated engines be reconditioned or must they be rebuilt?', acceptedAnswer: { '@type': 'Answer', text: 'Engine reconditioning viability depends on damage severity: If wear particle analysis shows elevated metals but <100 ppm Fe and <20 ppm Cu, and bearing noise is absent, reconditioning is viable - remove deposits through bore cleaning, hone cylinder walls, replace piston rings, and install new bearings; cost approximately 30-40% of new engine. If analysis shows >200 ppm Fe, audible bearing knock, or blue discoloration inside cylinders indicating chronic overheating, full overhaul is required. If main bearing surfaces are spalled or cylinder walls show >200 microns of scoring, engine is beyond economic repair.' } },
+          { '@type': 'Question', name: 'How does oil change frequency affect particle accumulation?', acceptedAnswer: { '@type': 'Answer', text: 'Oil change interval directly controls particle concentration trajectory: Normal interval (500 hours) with premium filtration maintains 20-40 mg/L wear debris until 1500-2000 hours; extended interval (1000 hours) with same filtration accumulates 60-120 mg/L by 2000 hours, accelerating wear rates 2-3x; extended interval (1000 hours) with standard filtration reaches 150-300 mg/L, causing engine damage by 1500 hours. Optimal strategy depends on contamination environment: Clean environment supports 1000-hour intervals with on-board filtration; Severe environment (mining, desert) requires 250-hour intervals with primary-secondary filtration plus oil conditioning systems.' } },
+        ],
+      }) }} />
       <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Air Intake Filtration Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, lube, air_intake, bearing</p>
