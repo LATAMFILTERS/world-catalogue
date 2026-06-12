@@ -489,6 +489,9 @@ const dbConfig = {
   ssl: { rejectUnauthorized: false },
 };
 
+// Product Catalog: housing/element/alternative-group API + migration endpoints
+require('./scripts/product-catalog-migration-routes')(app, Client, dbConfig);
+
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
