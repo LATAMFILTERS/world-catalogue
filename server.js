@@ -3552,6 +3552,45 @@ app.post('/api/enrich/fg-to-don-oem', async (req, res) => {
   }
 });
 
+// ─── GET /api/catalog/inventory ──────────────────────────────────────────────
+app.get('/api/catalog/inventory', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(`
+      SELECT
+        left(sku, 3)                        AS prefix,
+        count(*)::int                       AS total,
+        count(*) FILTER (WHERE sub_type ILIKE '%Fleetguard%')::int AS fg_count,
+        count(*) FILTER (WHERE sub_type NOT ILIKE '%Fleetguard%' OR sub_type IS NULL)::int AS don_count,
+        count(*) FILTER (WHERE jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) > 0)::int AS with_oem,
+        count(*) FILTER (WHERE jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb)) > 0)::int AS with_crossref
+      FROM elimfilters_catalog
+      WHERE sku IS NOT NULL
+      GROUP BY left(sku, 3)
+      ORDER BY total DESC
+    `);
+
+    const PREFIX_NAME = {
+      EL8:'Lube/Oil', EF9:'Fuel', ES9:'Fuel Water Sep', ET9:'Fuel Turbine',
+      EA1:'Air Filter', EA2:'Air Housing', EH6:'Hydraulic', EW7:'Coolant',
+      EC1:'Cabin', ED4:'Air Dryer', EC5:'Crankcase', EK5:'Kit HD', EK3:'Kit LD',
+    };
+
+    const rows = result.rows.map(r => ({
+      ...r,
+      name: PREFIX_NAME[r.prefix] || r.prefix,
+    }));
+
+    const total = rows.reduce((s, r) => s + r.total, 0);
+    res.json({ total, by_prefix: rows });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 // ─── POST /api/enrich/oem-codes ──────────────────────────────────────────────
