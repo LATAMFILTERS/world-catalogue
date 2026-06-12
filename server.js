@@ -655,7 +655,18 @@ function getTechLogo(tech) {
 }
 
 // Canonical technology name corrections (DB may have older/misspelled variants)
-const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
+const TECH_NAME_FIXES = {
+  'SYNTAPORE': 'SYNTEPORE',
+  'SYNTAPORE™': 'SYNTEPORE™',
+  'AQUAGUARD': 'HYDROCORE',
+  'AQUAGUARD™': 'HYDROCORE™',
+};
+
+// Proprietary ELIMFILTERS technology names — triggers Tier 5 technology search in /api/search
+const TECH_NAMES = new Set([
+  'HYDROCORE','MACROCORE','NANOFORCE','SYNTRAX','SYNTEPORE',
+  'MICROKAPPA','INTEKCORE','DRYCORE','COOLTECH',
+]);
 
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
@@ -696,6 +707,21 @@ function buildFilterData(row, lang = 'en'){
     alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
   };
+}
+
+// Classify a search query to route it into the correct tier group
+function classifyQuery(q) {
+  // Strip SERIES suffix: "HYDROCORE SERIES" → "HYDROCORE", "HYDROCORE/SERIES" → "HYDROCORE"
+  const techBase = q.replace(/[\s/\-]+SERIES$/, '').trim();
+  if (TECH_NAMES.has(q) || TECH_NAMES.has(techBase)) {
+    return { type: 'technology', value: TECH_NAMES.has(q) ? q : techBase };
+  }
+  // Housing model: 3–4 digits + FH  (500FH, 900FH, 1000FH)
+  if (/^\d{3,4}FH$/.test(q)) return { type: 'housing', value: q };
+  // Filter brand / manufacturer in COMPETITOR_BRANDS set
+  if (COMPETITOR_BRANDS.has(q)) return { type: 'brand', value: q };
+  // Default: product code cascade
+  return { type: 'code', value: q };
 }
 
 // Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
@@ -1381,6 +1407,149 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
   } finally {
     await client.end();
   }
+});
+
+// ── Search V2: Create GIN + trgm indexes ─────────────────────────────────────
+// Run once. CONCURRENTLY means zero downtime. Idempotent (IF NOT EXISTS).
+// Requires pg_trgm extension (created here too).
+app.get('/api/migrate/search-v2-indexes', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const steps = [];
+
+    await client.query('CREATE EXTENSION IF NOT EXISTS pg_trgm');
+    steps.push('pg_trgm extension: OK');
+
+    // GIN on brand_crossrefs — enables fast brand_crossrefs ? 'FLEETGUARD' lookups
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_brand_crossrefs_gin
+      ON elimfilters_catalog USING GIN (brand_crossrefs)
+    `);
+    steps.push('idx_catalog_brand_crossrefs_gin: created');
+
+    // GIN on oem_codes — accelerates Tier 3 JSONB array element searches
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_oem_codes_gin
+      ON elimfilters_catalog USING GIN (oem_codes)
+    `);
+    steps.push('idx_catalog_oem_codes_gin: created');
+
+    // B-tree on UPPER(technology) — used by Tier 5 technology search
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_technology_upper
+      ON elimfilters_catalog (UPPER(technology))
+    `);
+    steps.push('idx_catalog_technology_upper: created');
+
+    // Trigram on equipment_applications text — prepares for Tier 7 (P3)
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_equipment_apps_trgm
+      ON elimfilters_catalog USING GIN (
+        (equipment_applications::text) gin_trgm_ops
+      )
+    `);
+    steps.push('idx_catalog_equipment_apps_trgm: created');
+
+    res.json({ success: true, steps });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
+});
+
+// ── Search V2: Normalize technology column values ─────────────────────────────
+// Corrects SYNTAPORE → SYNTEPORE and AQUAGUARD → HYDROCORE in the DB.
+// Safe: only touches rows with the legacy values. Idempotent.
+app.get('/api/migrate/search-v2-normalize-tech', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    const r1 = await client.query(`
+      UPDATE elimfilters_catalog SET technology = 'SYNTEPORE'
+      WHERE technology = 'SYNTAPORE'
+    `);
+    const r2 = await client.query(`
+      UPDATE elimfilters_catalog SET technology = 'SYNTEPORE™'
+      WHERE technology = 'SYNTAPORE™'
+    `);
+    const r3 = await client.query(`
+      UPDATE elimfilters_catalog SET technology = 'HYDROCORE'
+      WHERE technology = 'AQUAGUARD'
+    `);
+    const r4 = await client.query(`
+      UPDATE elimfilters_catalog SET technology = 'HYDROCORE™'
+      WHERE technology = 'AQUAGUARD™'
+    `);
+
+    res.json({
+      success: true,
+      syntapore_fixed: r1.rowCount + r2.rowCount,
+      aquaguard_fixed: r3.rowCount + r4.rowCount,
+    });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
+});
+
+// ── Search V2: Add HYDROCORE housing model aliases ────────────────────────────
+// Adds 500FH / 900FH / 1000FH as OEM codes on HYDROCORE Fuel/Water Separator
+// and Turbine Filter records so Tier 6 (housing model search) can find them.
+// Preview mode (default): shows affected rows without writing.
+// Apply mode (?apply=1): executes the UPDATE.
+app.get('/api/migrate/search-v2-hydrocore-aliases', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const apply = req.query.apply === '1';
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Find all HYDROCORE FWS / Turbine records that don't already have housing codes
+    const preview = await client.query(`
+      SELECT sku, codigo_base, filter_type, technology,
+             jsonb_array_length(COALESCE(oem_codes, '[]'::jsonb)) AS oem_count
+      FROM elimfilters_catalog
+      WHERE UPPER(REPLACE(technology, '™','')) = 'HYDROCORE'
+        AND filter_type IN ('Fuel/Water Separator', 'Turbine Filter')
+        AND NOT EXISTS (
+          SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) elem
+          WHERE elem->>'code' IN ('500FH','900FH','1000FH')
+        )
+      ORDER BY sku
+    `);
+
+    if (!apply) {
+      return res.json({
+        mode: 'preview',
+        affected_rows: preview.rows.length,
+        records: preview.rows,
+        message: 'Add ?apply=1 to execute. All listed records will receive 500FH/900FH/1000FH in oem_codes.',
+      });
+    }
+
+    if (preview.rows.length === 0) {
+      return res.json({ success: true, updated: 0, message: 'Already up to date' });
+    }
+
+    const skus = preview.rows.map(r => r.sku);
+    const aliases = JSON.stringify([
+      { manufacturer: 'HYDROCORE', code: '500FH' },
+      { manufacturer: 'HYDROCORE', code: '900FH' },
+      { manufacturer: 'HYDROCORE', code: '1000FH' },
+    ]);
+
+    const update = await client.query(`
+      UPDATE elimfilters_catalog
+      SET oem_codes = COALESCE(oem_codes, '[]'::jsonb) || $1::jsonb
+      WHERE sku = ANY($2)
+    `, [aliases, skus]);
+
+    res.json({ success: true, updated: update.rowCount, skus_updated: skus });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
 });
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
@@ -2071,6 +2240,15 @@ app.get('/api/autocomplete', async (req, res) => {
   }
 });
 
+// ── /api/search — Industrial Search Engine V2 ────────────────────────────────
+// Tier 1: Exact SKU / codigo_base
+// Tier 2: SKU / codigo_base prefix
+// Tier 3: OEM + competitor codes exact (JSONB array)
+// Tier 4: brand_crossrefs exact (JSONB object values)
+// Tier 5: Technology name (HYDROCORE, MACROCORE, NANOFORCE, …)
+// Tier 6: Housing model pattern (500FH, 900FH, 1000FH)
+// Tier 8: Manufacturer / brand name (FLEETGUARD, BALDWIN, …)
+// Tier 10: Partial ILIKE fallback
 app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
@@ -2079,110 +2257,202 @@ app.get('/api/search', async (req, res) => {
   try {
     await client.connect();
 
-    // ── Tiered search with match_type labels ──────────────────────────────
-    // Tier 1: Exact SKU or Donaldson base code match
-    let result = await client.query(
-      `SELECT *, 'sku' AS match_type, 0 AS match_rank
-       FROM elimfilters_catalog
-       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
-       LIMIT 20`,
-      [q]
-    );
+    const cls = classifyQuery(q);
+    let result = { rows: [] };
+    let searchType = cls.type;
+    let searchTier = 0;
 
-    // Tier 2: Prefix match on SKU / codigo_base
-    if (result.rows.length === 0) {
+    // ── Semantic tiers: technology / housing / brand ──────────────────────
+
+    if (cls.type === 'technology') {
+      // Tier 5: Technology name match — returns all products for that technology family
       result = await client.query(
-        `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+        `SELECT *, 'technology' AS match_type, 5 AS match_rank
          FROM elimfilters_catalog
-         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         WHERE UPPER(REPLACE(technology, '™','')) = $1
          ORDER BY sku
-         LIMIT 20`,
-        [q + '%']
+         LIMIT 50`,
+        [cls.value]
       );
-    }
+      searchTier = 5;
 
-    // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
-    // Cross-reference codes must match precisely; prefix matching causes false positives
-    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
-    if (result.rows.length === 0) {
+    } else if (cls.type === 'housing') {
+      // Tier 6: Housing model (500FH, 900FH, 1000FH)
+      // Step 6a: exact codigo_base or SKU
       result = await client.query(
-        `SELECT *, 'ref' AS match_type, 2 AS match_rank
+        `SELECT *, 'housing' AS match_type, 6 AS match_rank
          FROM elimfilters_catalog
-         WHERE EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         ORDER BY sku
+         WHERE UPPER(codigo_base) = $1 OR UPPER(sku) = $1
          LIMIT 20`,
         [q]
       );
-    }
+      // Step 6b: OEM code match (added by search-v2-hydrocore-aliases migration)
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'housing' AS match_type, 6 AS match_rank
+           FROM elimfilters_catalog
+           WHERE EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+      }
+      searchTier = 6;
 
-    // Tier 5: brand_crossrefs — exact match only
-    if (result.rows.length === 0) {
+    } else if (cls.type === 'brand') {
+      // Tier 8: Manufacturer / brand name
+      // brand_crossrefs ? KEY uses the GIN index for O(log n) lookups
       result = await client.query(
-        `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
-              jsonb_array_elements_text(kv.value) AS code_val
-         WHERE UPPER(code_val) = $1
+        `SELECT DISTINCT ON (sku) *, 'brand' AS match_type, 8 AS match_rank
+         FROM elimfilters_catalog
+         WHERE brand_crossrefs ? $1
+            OR EXISTS (
+              SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+              WHERE UPPER(elem->>'manufacturer') = $1
+            )
          ORDER BY sku
+         LIMIT 50`,
+        [q]
+      );
+      searchTier = 8;
+
+    } else {
+      // ── Product code cascade (Tiers 1–4 + semantic fallbacks + Tier 10) ──
+
+      // Tier 1: Exact SKU or Donaldson base code
+      result = await client.query(
+        `SELECT *, 'sku' AS match_type, 0 AS match_rank
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
          LIMIT 20`,
         [q]
       );
+      if (result.rows.length > 0) { searchTier = 1; searchType = 'sku'; }
+
+      // Tier 2: Prefix match on SKU / codigo_base
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+           FROM elimfilters_catalog
+           WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+           ORDER BY sku
+           LIMIT 20`,
+          [q + '%']
+        );
+        if (result.rows.length > 0) { searchTier = 2; searchType = 'sku'; }
+      }
+
+      // Tier 3: OEM + competitor codes exact
+      // Cross-reference codes must match precisely to avoid false positives.
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'ref' AS match_type, 2 AS match_rank
+           FROM elimfilters_catalog
+           WHERE EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           OR EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 3; searchType = 'oem'; }
+      }
+
+      // Tier 4: brand_crossrefs exact code value
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
+           FROM elimfilters_catalog,
+                jsonb_each(COALESCE(brand_crossrefs,'{}'::jsonb)) AS kv,
+                jsonb_array_elements_text(kv.value) AS code_val
+           WHERE UPPER(code_val) = $1
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 4; searchType = 'brand_crossref'; }
+      }
+
+      // Tier 5 fallback: technology name (catches partial input like "NANO" if 4+ chars)
+      if (result.rows.length === 0 && q.length >= 4) {
+        const techBase = q.replace(/[\s/\-]+SERIES$/, '').trim();
+        if (TECH_NAMES.has(techBase)) {
+          result = await client.query(
+            `SELECT *, 'technology' AS match_type, 5 AS match_rank
+             FROM elimfilters_catalog
+             WHERE UPPER(REPLACE(technology,'™','')) = $1
+             ORDER BY sku
+             LIMIT 50`,
+            [techBase]
+          );
+          if (result.rows.length > 0) { searchTier = 5; searchType = 'technology'; }
+        }
+      }
+
+      // Tier 8 fallback: brand key in brand_crossrefs (e.g. FLEETGUARD typed in code box)
+      if (result.rows.length === 0 && q.length >= 3) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *, 'brand' AS match_type, 8 AS match_rank
+           FROM elimfilters_catalog
+           WHERE brand_crossrefs ? $1
+           ORDER BY sku
+           LIMIT 50`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 8; searchType = 'manufacturer'; }
+      }
+
+      // Tier 10: Partial ILIKE fallback
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *,
+                  CASE
+                    WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
+                    ELSE 'partial'
+                  END AS match_type,
+                  10 AS match_rank
+           FROM elimfilters_catalog,
+                jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS oem_elem
+           WHERE UPPER(sku) LIKE $1
+              OR UPPER(codigo_base) LIKE $1
+              OR UPPER(oem_elem->>'code') LIKE $1
+           ORDER BY sku
+           LIMIT 20`,
+          ['%' + q + '%']
+        );
+        if (result.rows.length > 0) { searchTier = 10; searchType = 'partial'; }
+      }
     }
 
-    // Tier 6: Broad partial match fallback (OEM + competitor text scan)
-    if (result.rows.length === 0) {
-      result = await client.query(
-        `SELECT DISTINCT ON (sku) *,
-                CASE
-                  WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
-                  ELSE 'partial'
-                END AS match_type,
-                5 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
-         WHERE UPPER(sku) LIKE $1
-            OR UPPER(codigo_base) LIKE $1
-            OR UPPER(oem_elem->>'code') LIKE $1
-         ORDER BY sku
-         LIMIT 20`,
-        ['%' + q + '%']
-      );
-    }
-
-    // ── Determine human-readable match label for the frontend ─────────────
+    // ── Build human-readable match label ──────────────────────────────────
     function buildMatchLabel(row) {
       const mt = row.match_type;
+      if (mt === 'technology') return `ELIMFILTERS ${row.technology || cls.value} FILTERS`;
+      if (mt === 'housing') return `HYDROCORE ${q} HOUSING`;
+      if (mt === 'brand') return `${q} CROSS-REFERENCE`;
       if (mt === 'sku' || mt === 'sku_prefix' || mt === 'sku_partial') {
         if (row.sku && row.sku.toUpperCase().includes(q)) return `ELIMFILTERS ${row.sku}`;
         if (row.codigo_base && row.codigo_base.toUpperCase().includes(q)) return `DONALDSON ${row.codigo_base}`;
         return null;
       }
       if (mt === 'oem' || mt === 'ref') {
-        // Check OEM codes first, then competitor codes
         const oems = row.oem_codes || [];
-        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase() === q);
         if (oemHit) return `${oemHit.manufacturer || 'OEM'} ${oemHit.code}`;
         const comps = row.competitor_codes || [];
-        const compHit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        const compHit = comps.find(e => e && e.code && e.code.toUpperCase() === q);
         if (compHit) return `${compHit.manufacturer || 'COMPETITOR'} ${compHit.code}`;
         return null;
       }
-      if (mt === 'competitor') {
-        const comps = row.competitor_codes || [];
-        const hit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
-        if (hit) return `${hit.manufacturer || 'COMPETITOR'} ${hit.code}`;
-        return null;
-      }
-      if (mt === 'crossref') {
-        return `CROSS-REFERENCE ${q}`;
-      }
+      if (mt === 'crossref') return `CROSS-REFERENCE ${q}`;
       return null;
     }
 
@@ -2190,13 +2460,19 @@ app.get('/api/search', async (req, res) => {
       ...buildFilterData(row, lang),
       sku: row.sku,
       match_type: row.match_type || 'partial',
-      match_label: buildMatchLabel(row)
+      match_label: buildMatchLabel(row),
     }));
 
     await enrichAlternatives(products, client);
 
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
-    res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
+    res.json({
+      products,
+      count: products.length,
+      total_catalog: parseInt(totalCatalog, 10),
+      search_type: searchType,
+      search_tier: searchTier,
+    });
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });
