@@ -51,7 +51,7 @@ export type IndustryKey =
 
 export type SystemKey =
   | 'AIRFILTER'
-  | 'HYDRACORE_SERIES'
+  | 'HYDROCORE_SERIES'
   | 'CABIN'
   | 'COOLANT'
   | 'DRYER'
@@ -725,14 +725,14 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
     supportingTechnologies: [],
   },
 
-  HYDRACORE_SERIES: {
-    key: 'HYDRACORE_SERIES',
-    name: 'Hydracore Series',
-    slug: 'hydracore-series',
+  HYDROCORE_SERIES: {
+    key: 'HYDROCORE_SERIES',
+    name: 'Hydrocore Series',
+    slug: 'hydrocore-series',
     domain: 'Fuel Cleanliness',
     primaryTechnology: 'HYDROCORE',
     supportingTechnologies: [],
-    description: "HYDRACORE/SERIES™ is ELIMFILTERS’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+    description: "HYDROCORE/SERIES™ is ELIMFILTERS’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   },
 
   CABIN: {

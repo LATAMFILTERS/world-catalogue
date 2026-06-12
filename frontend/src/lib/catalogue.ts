@@ -65,7 +65,7 @@ export const CATEGORY_ICONS: Record<string, string[]> = {
 // Map technology name to logo file
 export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
-    'Hydracore Series': 'logo-hydrocore.png',
+    'Hydrocore Series': 'logo-hydrocore.png',
     Hydrocore: 'logo-hydrocore.png',
     Cooltech: 'logo-cooltech.png',
     Drycore: 'logo-drycore.png',

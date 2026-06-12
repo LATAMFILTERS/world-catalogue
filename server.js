@@ -670,7 +670,7 @@ const TECH_NAME_FIXES = {
 
 // Proprietary ELIMFILTERS technology names — triggers Tier 5 technology search in /api/search
 const TECH_NAMES = new Set([
-  'HYDROCORE','HYDRACORE','MACROCORE','NANOFORCE','SYNTRAX','SYNTEPORE',
+  'HYDROCORE','MACROCORE','NANOFORCE','SYNTRAX','SYNTEPORE',
   'MICROKAPPA','INTEKCORE','DRYCORE','THERMACORE',
 ]);
 
@@ -717,9 +717,9 @@ function buildFilterData(row, lang = 'en'){
 
 // Classify a search query to route it into the correct tier group
 function classifyQuery(q) {
-  // Strip ™ and ® marks — users may type "NANOFORCE™" or "HYDRACORE/SERIES™"
+  // Strip ™ and ® marks — users may type "NANOFORCE™" or "HYDROCORE/SERIES™"
   const qClean = q.replace(/[™®]/g, '').trim();
-  // Strip SERIES suffix: "HYDROCORE SERIES" → "HYDROCORE", "HYDRACORE/SERIES" → "HYDRACORE"
+  // Strip SERIES suffix: "HYDROCORE SERIES" → "HYDROCORE", "HYDROCORE/SERIES" → "HYDROCORE"
   const techBase = qClean.replace(/[\s/\-]+SERIES$/, '').trim();
   if (TECH_NAMES.has(qClean) || TECH_NAMES.has(techBase)) {
     return { type: 'technology', value: TECH_NAMES.has(qClean) ? qClean : techBase };

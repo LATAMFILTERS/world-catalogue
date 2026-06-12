@@ -98,7 +98,7 @@ const SYSTEMS: ProtectionSystem[] = [
         label: 'Turbine-Stage Water Separation',
         description:
           'Three-stage turbine-coalescing-precision separation: 99.8% free water removal, 95% emulsified water reduction. For HPCR injection systems at 1,800–2,500 bar operating pressure.',
-        slug: 'hydracore-series',
+        slug: 'hydrocore-series',
         tech: 'HYDROCORE™',
       },
       {

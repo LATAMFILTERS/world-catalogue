@@ -68,7 +68,7 @@ export default function ProductPage({ params }: Props) {
   if (!item) return null;
 
   if (item.name === 'Airfilter') return <AirfilterPage />;
-  if (item.name === 'Hydracore Series') return <HydrocorePage />;
+  if (item.name === 'Hydrocore Series') return <HydrocorePage />;
   if (item.name === 'Cabin') return <CabinPage />;
   if (item.name === 'Coolant') return <CoolantPage />;
   if (item.name === 'Dryer') return <DryerPage />;
