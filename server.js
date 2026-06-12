@@ -656,10 +656,14 @@ function getTechLogo(tech) {
 
 // Canonical technology name corrections (DB may have older/misspelled variants)
 const TECH_NAME_FIXES = {
-  'SYNTAPORE': 'SYNTEPORE',
-  'SYNTAPORE™': 'SYNTEPORE™',
-  'AQUAGUARD': 'HYDROCORE',
-  'AQUAGUARD™': 'HYDROCORE™',
+  'SYNTAPORE':   'SYNTEPORE',
+  'SYNTAPORE™':  'SYNTEPORE™',
+  'AQUAGUARD':   'HYDROCORE',
+  'AQUAGUARD™':  'HYDROCORE™',
+  'INTAKCORE':   'INTEKCORE',
+  'INTAKCORE™':  'INTEKCORE™',
+  'COOLTECH':    'THERMOCORE',
+  'COOLTECH™':   'THERMOCORE™',
 };
 
 // Proprietary ELIMFILTERS technology names — triggers Tier 5 technology search in /api/search
@@ -1467,27 +1471,22 @@ app.get('/api/migrate/search-v2-normalize-tech', async (req, res) => {
   try {
     await client.connect();
 
-    const r1 = await client.query(`
-      UPDATE elimfilters_catalog SET technology = 'SYNTEPORE'
-      WHERE technology = 'SYNTAPORE'
-    `);
-    const r2 = await client.query(`
-      UPDATE elimfilters_catalog SET technology = 'SYNTEPORE™'
-      WHERE technology = 'SYNTAPORE™'
-    `);
-    const r3 = await client.query(`
-      UPDATE elimfilters_catalog SET technology = 'HYDROCORE'
-      WHERE technology = 'AQUAGUARD'
-    `);
-    const r4 = await client.query(`
-      UPDATE elimfilters_catalog SET technology = 'HYDROCORE™'
-      WHERE technology = 'AQUAGUARD™'
-    `);
+    const r1 = await client.query(`UPDATE elimfilters_catalog SET technology = 'SYNTEPORE'   WHERE technology = 'SYNTAPORE'`);
+    const r2 = await client.query(`UPDATE elimfilters_catalog SET technology = 'SYNTEPORE™'  WHERE technology = 'SYNTAPORE™'`);
+    const r3 = await client.query(`UPDATE elimfilters_catalog SET technology = 'HYDROCORE'   WHERE technology = 'AQUAGUARD'`);
+    const r4 = await client.query(`UPDATE elimfilters_catalog SET technology = 'HYDROCORE™'  WHERE technology = 'AQUAGUARD™'`);
+    const r5 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE'   WHERE technology = 'INTAKCORE'`);
+    const r6 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE™'  WHERE technology = 'INTAKCORE™'`);
+    const r7 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMOCORE'  WHERE technology = 'COOLTECH'`);
+    const r8 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMOCORE™' WHERE technology = 'COOLTECH™'`);
 
     res.json({
       success: true,
-      syntapore_fixed: r1.rowCount + r2.rowCount,
-      aquaguard_fixed: r3.rowCount + r4.rowCount,
+      syntapore_fixed:  r1.rowCount + r2.rowCount,
+      aquaguard_fixed:  r3.rowCount + r4.rowCount,
+      intakcore_fixed:  r5.rowCount + r6.rowCount,
+      cooltech_fixed:   r7.rowCount + r8.rowCount,
+      total_rows_fixed: r1.rowCount + r2.rowCount + r3.rowCount + r4.rowCount + r5.rowCount + r6.rowCount + r7.rowCount + r8.rowCount,
     });
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });
