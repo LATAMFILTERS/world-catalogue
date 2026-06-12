@@ -40,6 +40,7 @@ def _connect(url=DATABASE_URL):
         user=p.username,
         password=p.password,
         sslmode='require',
+        gssencmode='disable',
     )
 
 
