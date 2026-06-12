@@ -42,14 +42,19 @@ ORDER BY tbl;
 
 -- ── V3: One baseline per alternative group ────────────────────────────────────
 -- Expected: 2 rows. baseline_count = 1 for each group.
--- FAIL if baseline_count != 1 → partial unique index violation possible
+-- FAIL if baseline_count = 0 (missing baseline) or > 1 (duplicate baseline).
+-- Uses LEFT JOIN so groups with zero baseline members are also detected.
 SELECT
   ag.group_code,
-  COUNT(*) AS baseline_count,
-  CASE WHEN COUNT(*) = 1 THEN 'PASS' ELSE 'FAIL' END AS status
+  COUNT(agm.element_id) AS baseline_count,
+  CASE
+    WHEN COUNT(agm.element_id) = 1 THEN 'PASS'
+    WHEN COUNT(agm.element_id) = 0 THEN 'FAIL — NO BASELINE'
+    ELSE                                 'FAIL — DUPLICATE BASELINE'
+  END AS status
 FROM alternative_group ag
-JOIN alternative_group_member agm ON agm.group_id = ag.id
-WHERE agm.is_baseline = TRUE
+LEFT JOIN alternative_group_member agm
+  ON agm.group_id = ag.id AND agm.is_baseline = TRUE
 GROUP BY ag.group_code
 ORDER BY ag.group_code;
 

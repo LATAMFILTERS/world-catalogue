@@ -88,12 +88,12 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
         row_counts[t] = parseInt(r.rows[0].count);
       }
 
-      // One baseline per group
+      // One baseline per group — LEFT JOIN detects zero-baseline groups as well as duplicates
       const baseline = await client.query(`
-        SELECT ag.group_code, COUNT(*) AS baseline_count
+        SELECT ag.group_code, COUNT(agm.element_id) AS baseline_count
         FROM alternative_group ag
-        JOIN alternative_group_member agm ON agm.group_id = ag.id
-        WHERE agm.is_baseline = TRUE
+        LEFT JOIN alternative_group_member agm
+          ON agm.group_id = ag.id AND agm.is_baseline = TRUE
         GROUP BY ag.group_code ORDER BY ag.group_code
       `);
       const baseline_valid = baseline.rows.every(r => parseInt(r.baseline_count) === 1);
@@ -271,9 +271,16 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
         WHERE agm.group_id = $1 AND agm.is_baseline = TRUE
         LIMIT 1
       `, [group.group_id]);
-      const baseline_level = baseline_row.rows.length
-        ? parseInt(baseline_row.rows[0].protection_level)
-        : 0;
+      if (!baseline_row.rows.length) {
+        return res.status(500).json({
+          error:       'validation_error',
+          code:        'baseline_missing',
+          message:     `Alternative group '${group.group_code}' has no baseline member. ` +
+                       'TYPE_A/TYPE_B classification requires exactly one is_baseline = TRUE member.',
+          group_code:  group.group_code,
+        });
+      }
+      const baseline_level = parseInt(baseline_row.rows[0].protection_level);
 
       // Get all members with TYPE_A/TYPE_B classification
       const members = await client.query(`

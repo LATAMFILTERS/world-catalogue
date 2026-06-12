@@ -117,21 +117,29 @@ async function runValidation(client) {
   }
 
   // ── One baseline per group ──────────────────────────────────────────────────
+  // LEFT JOIN so groups with zero baselines are detected, not just duplicates.
   try {
     const r = await client.query(`
-      SELECT ag.group_code, COUNT(*) AS baseline_count
+      SELECT ag.group_code, COUNT(agm.element_id) AS baseline_count
       FROM alternative_group ag
-      JOIN alternative_group_member agm ON agm.group_id = ag.id
-      WHERE agm.is_baseline = TRUE
+      LEFT JOIN alternative_group_member agm
+        ON agm.group_id = ag.id AND agm.is_baseline = TRUE
       GROUP BY ag.group_code
     `);
     const bad = r.rows.filter(row => parseInt(row.baseline_count) !== 1);
     const pass = bad.length === 0;
     if (!pass) results.overall_pass = false;
+    const badLabeled = bad.map(row => ({
+      group_code:     row.group_code,
+      baseline_count: parseInt(row.baseline_count),
+      failure:        parseInt(row.baseline_count) === 0 ? 'NO_BASELINE' : 'DUPLICATE_BASELINE',
+    }));
     results.checks.push({
       check: 'one_baseline_per_group',
       status: pass ? 'PASS' : 'FAIL',
-      detail: pass ? `${r.rows.length} groups, all valid` : `Violations: ${JSON.stringify(bad)}`,
+      detail: pass
+        ? `${r.rows.length} group(s), all valid`
+        : `Violations: ${JSON.stringify(badLabeled)}`,
     });
   } catch (e) {
     results.checks.push({ check: 'one_baseline_per_group', status: 'FAIL', detail: e.message });
