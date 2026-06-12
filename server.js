@@ -3425,6 +3425,135 @@ app.post('/api/crosslink/fg-don', async (req, res) => {
   }
 });
 
+// ─── POST /api/enrich/fg-to-don-oem ─────────────────────────────────────────
+// Copies OEM codes from matched Fleetguard products into Donaldson entries.
+// Uses Pass A (brand_crossrefs) pairs — high confidence only.
+// Append-only: never modifies existing data.
+// Body: { key: "elim2026", dry_run?: bool }
+app.post('/api/enrich/fg-to-don-oem', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const dryRun = !!req.body.dry_run;
+
+  const FILTER_BRANDS = `'DONALDSON','FLEETGUARD','FLEETRITE','CUMMINS FILTRATION','CUMMINS',
+    'BALDWIN','MANN','MANN-HUMMEL','WIX','PUROLATOR','FRAM','NAPA','HASTINGS',
+    'LUBER-FINER','LUBERFINER','BOSCH','MAHLE','HENGST','FILTREC','HYDAC',
+    'PALL','PARKER','SAKURA','HIFI','KNECHT','FILTRON','PURFLUX'`;
+
+  // Build the new OEM entries to add (deduplicated, filtered)
+  const SQL_NEW_OEM = `
+    WITH pairs AS (
+      SELECT d.sku AS don_sku,
+             COALESCE(d.oem_codes, '[]'::jsonb) AS don_oem,
+             f.sku AS fg_sku
+      FROM elimfilters_catalog d
+      CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
+      JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
+      WHERE d.brand_crossrefs ? 'FLEETGUARD'
+        AND f.sku IS NOT NULL
+        AND jsonb_array_length(COALESCE(f.oem_codes, '[]'::jsonb)) > 0
+    ),
+    candidates AS (
+      SELECT p.don_sku,
+             jsonb_build_object(
+               'manufacturer', upper(trim(oem->>'manufacturer')),
+               'part_number',  upper(trim(oem->>'part_number'))
+             ) AS entry
+      FROM pairs p
+      JOIN elimfilters_catalog f ON f.sku = p.fg_sku
+      CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) oem
+      WHERE upper(trim(oem->>'manufacturer')) NOT IN (${FILTER_BRANDS})
+        AND upper(trim(oem->>'part_number')) <> ''
+        AND NOT p.don_oem @> jsonb_build_array(jsonb_build_object(
+              'manufacturer', upper(trim(oem->>'manufacturer')),
+              'part_number',  upper(trim(oem->>'part_number'))
+            ))
+    ),
+    deduped AS (
+      SELECT DISTINCT don_sku, entry FROM candidates
+    )
+    SELECT don_sku, jsonb_agg(entry) AS new_oem, count(*) AS n
+    FROM deduped
+    GROUP BY don_sku`;
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const preview = await client.query(SQL_NEW_OEM);
+    const affectedRows  = preview.rowCount;
+    const totalNewCodes = preview.rows.reduce((s, r) => s + parseInt(r.n), 0);
+
+    if (dryRun) {
+      return res.json({
+        dry_run: true,
+        don_rows_affected: affectedRows,
+        new_oem_entries: totalNewCodes,
+        sample: preview.rows.slice(0, 5).map(r => ({
+          don_sku: r.don_sku,
+          new_codes: parseInt(r.n),
+          sample_entry: r.new_oem[0]
+        }))
+      });
+    }
+
+    // Bulk UPDATE
+    const SQL_UPDATE = `
+      WITH pairs AS (
+        SELECT d.sku AS don_sku,
+               COALESCE(d.oem_codes, '[]'::jsonb) AS don_oem,
+               f.sku AS fg_sku
+        FROM elimfilters_catalog d
+        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
+        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
+        WHERE d.brand_crossrefs ? 'FLEETGUARD'
+          AND f.sku IS NOT NULL
+          AND jsonb_array_length(COALESCE(f.oem_codes, '[]'::jsonb)) > 0
+      ),
+      candidates AS (
+        SELECT p.don_sku,
+               jsonb_build_object(
+                 'manufacturer', upper(trim(oem->>'manufacturer')),
+                 'part_number',  upper(trim(oem->>'part_number'))
+               ) AS entry
+        FROM pairs p
+        JOIN elimfilters_catalog f ON f.sku = p.fg_sku
+        CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) oem
+        WHERE upper(trim(oem->>'manufacturer')) NOT IN (${FILTER_BRANDS})
+          AND upper(trim(oem->>'part_number')) <> ''
+          AND NOT p.don_oem @> jsonb_build_array(jsonb_build_object(
+                'manufacturer', upper(trim(oem->>'manufacturer')),
+                'part_number',  upper(trim(oem->>'part_number'))
+              ))
+      ),
+      deduped AS (SELECT DISTINCT don_sku, entry FROM candidates),
+      agg AS (SELECT don_sku, jsonb_agg(entry) new_oem FROM deduped GROUP BY don_sku)
+      UPDATE elimfilters_catalog t
+      SET oem_codes = (
+        SELECT jsonb_agg(elem)
+        FROM (
+          SELECT DISTINCT ON ((elem->>'manufacturer'), (elem->>'part_number')) elem
+          FROM jsonb_array_elements(COALESCE(t.oem_codes,'[]'::jsonb) || a.new_oem) elem
+        ) dd
+      )
+      FROM agg a
+      WHERE t.sku = a.don_sku
+      RETURNING t.sku`;
+
+    const result = await client.query(SQL_UPDATE);
+    res.json({
+      success: true,
+      don_rows_updated: result.rowCount,
+      new_oem_entries: totalNewCodes
+    });
+  } catch (err) {
+    console.error('[enrich/fg-to-don-oem]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ────────────────────────────────────────────────────────────────────────────
+
 // ─── POST /api/enrich/oem-codes ──────────────────────────────────────────────
 // Agrega OEM codes a un producto existente SIN sobrescribir los que ya tiene.
 // Body: { key, sku, oem_codes: [{manufacturer, part_number}], mode: "append" }
