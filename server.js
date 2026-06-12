@@ -495,6 +495,9 @@ require('./scripts/product-catalog-migration-routes')(app, Client, dbConfig);
 // Recommendation Engine v2: alternatives, cross-reference, housing lookup
 require('./scripts/recommendation-engine-routes')(app, Client, dbConfig);
 
+// RE v2 core functions — used inside consult-grounded for AI context injection
+const { findAlternatives, findCrossReferenceRE, getHousingWithAlternatives } = require('./scripts/recommendation-engine-v2');
+
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
@@ -3597,6 +3600,64 @@ app.get('/api/tools/technology-info/:technology', async (req, res) => {
   } catch(e) { res.status(500).json({ error: e.message }); }
 });
 
+// ── RE context builder — runs in parallel with catalog tool calls ─────────────
+// Creates one DB client, resolves each detected part number through the
+// Recommendation Engine, and returns a formatted context block for the AI.
+// Never throws — failures are swallowed so the AI call always proceeds.
+async function runREContextLookup(partMatches) {
+  if (!partMatches.length) return null;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const sections = [];
+    for (const pn of partMatches.slice(0, 3)) {
+      try {
+        const xref = await findCrossReferenceRE(client, pn);
+        if (xref.status === 'NOT_FOUND') continue;
+
+        let section = `RE: "${pn}" → ${xref.source} [${xref.type.toUpperCase()}]\n`;
+
+        if (xref.type === 'element' && xref.result) {
+          const r = xref.result;
+          section += `  Element: ${r.element_code} | Tech: ${r.technology} | Class: ${r.compatibility_class}\n`;
+          const alts = await findAlternatives(client, r.element_code);
+          if (alts.status === 'OK') {
+            if (alts.baseline) {
+              section += `  BASELINE: ${alts.baseline.element_code} (${alts.baseline.media_grade}, OBJ: ${alts.baseline.operational_objective})\n`;
+            }
+            if (alts.TYPE_A.length) {
+              section += `  TYPE_A upgrades: ${alts.TYPE_A.map(a => `${a.element_code} [${a.media_grade}, level ${a.protection_level}]`).join(', ')}\n`;
+            }
+            if (alts.TYPE_B.length) {
+              section += `  TYPE_B alternatives: ${alts.TYPE_B.map(a => `${a.element_code} [${a.operational_objective}]`).join(', ')}\n`;
+            }
+            section += `  Traceability: ${alts.traceability.source_document}\n`;
+            section += `  Confidence: ${alts.traceability.confidence_floor}`;
+          }
+        } else if (xref.type === 'housing' && xref.result) {
+          const r = xref.result;
+          section += `  Housing: ${r.model_code} | Tech: ${r.technology} | Class: ${r.compatibility_class}\n`;
+          const housing = await getHousingWithAlternatives(client, r.model_code);
+          if (housing.status === 'OK') {
+            if (housing.primary_element) {
+              section += `  Primary element: ${housing.primary_element.element_code} (${housing.primary_element.media_grade})\n`;
+            }
+            section += `  Compatible elements (${housing.element_count}): ${housing.compatible_elements.map(e => e.element_code).join(', ')}`;
+          }
+        } else if (xref.type === 'catalog_match' && xref.results) {
+          section += `  Catalog matches: ${xref.results.map(r => r.sku).join(', ')} [INFERRED]`;
+        }
+        sections.push(section);
+      } catch (_) { /* skip this part number silently */ }
+    }
+    return sections.length ? sections.join('\n\n') : null;
+  } catch (_) {
+    return null;
+  } finally {
+    await client.end();
+  }
+}
+
 // ── Grounded AI consultation (product data injected into user message) ─────────
 // POST /api/ai/v2/consult-grounded
 // Detects part numbers / machine refs / technology names in the query,
@@ -3631,6 +3692,7 @@ app.post('/api/ai/v2/consult-grounded', async (req, res) => {
   // Run tool functions in parallel
   const toolCalls = [];
   const contextParts = [];
+  const reContextParts = [];
 
   // Product / cross-reference lookups for each detected part number
   for (const pn of partMatches.slice(0, 3)) {
@@ -3687,11 +3749,26 @@ app.post('/api/ai/v2/consult-grounded', async (req, res) => {
     );
   }
 
+  // Recommendation Engine v2 lookup — runs in parallel with catalog tool calls
+  if (partMatches.length > 0) {
+    toolCalls.push(
+      runREContextLookup(partMatches).then(ctx => { if (ctx) reContextParts.push(ctx); })
+    );
+  }
+
   await Promise.all(toolCalls);
 
-  // Assemble grounded user message
-  const groundedQuery = contextParts.length > 0
-    ? `[CATALOG CONTEXT — live data from ELIMFILTERS database]\n${contextParts.join('\n\n')}\n\n[USER QUERY]\n${query}`
+  // Assemble grounded user message — catalog context + RE context + user query
+  const groundedQuery = (contextParts.length > 0 || reContextParts.length > 0)
+    ? [
+        contextParts.length > 0
+          ? `[CATALOG CONTEXT — live data from ELIMFILTERS database]\n${contextParts.join('\n\n')}`
+          : null,
+        reContextParts.length > 0
+          ? `[RECOMMENDATION ENGINE v2 — deterministic structured recommendations]\n${reContextParts.join('\n\n')}`
+          : null,
+        `[USER QUERY]\n${query}`,
+      ].filter(Boolean).join('\n\n')
     : query;
 
   // Delegate to V2 specialist-agent pipeline via chiefReasoningEngine
