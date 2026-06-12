@@ -3244,6 +3244,538 @@ app.post('/api/ai/consult-v2', async (req, res) => {
 });
 
 // ════════════════════════════════════════════════════════════════════════════
+// PRODUCT TOOL LAYER — database-grounded functions for AI + API consumers
+// ════════════════════════════════════════════════════════════════════════════
+
+// ── Static technology metadata ────────────────────────────────────────────────
+const TECHNOLOGY_INFO_MAP = {
+  MACROCORE: {
+    system: 'Air Intake Filtration',
+    description: 'Progressive density gradient media matrix. Intercepts airborne contamination before combustion chamber. 18µm absolute particle capture. Rated for extreme thermal cycling in commercial and industrial engines.',
+    standards: ['SAE J1539', 'ISO 5011'],
+  },
+  NANOFORCE: {
+    system: 'Hydraulic / Fuel Filtration',
+    description: 'Sub-micron particle removal, 1µm efficiency. Maintains ISO 4406 cleanliness codes under sustained high-pressure pulsation cycles. Protects proportional valves and actuator components.',
+    standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14'],
+  },
+  SYNTRAX: {
+    system: 'Lube Oil Filtration',
+    description: 'Four-layer contamination control matrix, each layer calibrated to a specific particle size class. High dirt holding capacity. Intercepts sub-micron particles across the complete service interval.',
+    standards: ['ISO 16889', 'ISO 4406', 'SAE J1211'],
+  },
+  SYNTEPORE: {
+    system: 'Fuel Filtration',
+    description: 'Synthetic pore-geometry media for fuel systems. Consistent pore distribution enables predictable Beta ratio performance. Designed for high-flow diesel and biodiesel applications.',
+    standards: ['ISO 16889', 'ASTM D6304'],
+  },
+  MICROKAPPA: {
+    system: 'Cabin Air Filtration',
+    description: 'Three-layer capture: electrostatic attraction, HEPA-class mechanical filtration, activated carbon adsorption. Intercepts PM2.5 particles, allergens, diesel exhaust gases and odors. Meets ISO 11155.',
+    standards: ['ISO 11155', 'DIN 71220'],
+  },
+  INTEKCORE: {
+    system: 'Air Intake Housing / Pre-Cleaning',
+    description: 'High-pressure rated housing engineered for full thermal cycling range of commercial and industrial engines. Structural integrity maintained across all operating conditions. Supports MACROCORE primary elements.',
+    standards: ['SAE J1539', 'ISO 5011'],
+  },
+  DRYCORE: {
+    system: 'Compressed Air Filtration',
+    description: 'Removes water vapor and oil vapor at molecular level before air tanks, valves and downstream control circuits. Desiccant and coalescing technology. Prevents corrosion and seal degradation.',
+    standards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
+  },
+  THERMACORE: {
+    system: 'Coolant Filtration',
+    description: 'Controlled SCA additive release alongside coolant filtration. Prevents liner pitting, scale formation and corrosive degradation of engine cooling circuits. Compatible with OAT and NOAT coolant formulations.',
+    standards: ['ASTM D6210', 'ASTM D3306'],
+  },
+  HYDROCORE: {
+    system: 'Fuel / Water Separation',
+    description: 'Multi-stage coalescing water separation for fuel systems. Free water removal >99%, emulsified water >95%. Protects injector systems from water-induced stiction and corrosion.',
+    standards: ['ASTM D6304', 'ISO 12937'],
+  },
+};
+
+// ── Shared row formatter for tool responses ───────────────────────────────────
+function formatToolRow(row) {
+  return {
+    sku:          row.sku,
+    codigo_base:  row.codigo_base || null,
+    description:  row.description || null,
+    technology:   TECH_NAME_FIXES[row.technology] || row.technology || null,
+    filter_type:  extractText(row.filter_type, 'en') || null,
+  };
+}
+
+// ── 1. searchProducts(query, limit) ──────────────────────────────────────────
+// Tiers: exact SKU → exact codigo_base → OEM code exact → competitor code exact
+//        → brand_crossrefs value → partial ILIKE fallback
+async function searchProducts(query, limit = 20) {
+  const q = (query || '').trim().toUpperCase();
+  if (!q) return [];
+  const cap = Math.min(limit, 50);
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Tier 1 — exact SKU
+    let r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog WHERE UPPER(sku) = $1 LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 2 — exact codigo_base
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog WHERE UPPER(codigo_base) = $1 LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 3 — OEM code exact (JSONB array: {code, partNumber, manufacturer})
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(oem_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         ) LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 4 — competitor code exact
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         ) LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 5 — brand_crossrefs value match (stored as {"BRAND": ["P-CODE", ...]})
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE brand_crossrefs::text ILIKE $1 LIMIT $2`,
+      [`%${q}%`, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 6 — partial ILIKE on SKU / codigo_base / description
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+            OR description ILIKE $2
+         LIMIT $3`,
+      [`%${q}%`, `%${query.trim()}%`, cap]
+    );
+    return r.rows.map(formatToolRow);
+  } finally { await client.end(); }
+}
+
+// ── 2. findCrossReference(partNumber) ────────────────────────────────────────
+// Returns ELIMFILTERS products matching the part number (OEM or competitor codes)
+// plus all competitor references on those products.
+async function findCrossReference(partNumber) {
+  const p = (partNumber || '').trim().toUpperCase();
+  if (!p) return { elimfilters_products: [], competitor_refs: [] };
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type,
+              oem_codes, competitor_codes, brand_crossrefs
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(oem_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         )
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         )
+         OR brand_crossrefs::text ILIKE $2
+         LIMIT 20`,
+      [p, `%${p}%`]
+    );
+    const elimfilters_products = r.rows.map(formatToolRow);
+    // Collect all competitor references from matching products
+    const competitor_refs = [];
+    const seen = new Set();
+    for (const row of r.rows) {
+      const refs = splitRefs([
+        ...parseRefs(row.oem_codes),
+        ...parseRefs(row.competitor_codes),
+      ]);
+      for (const ref of refs.competitor) {
+        const key = `${ref.manufacturer}:${ref.code}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          competitor_refs.push(ref);
+        }
+      }
+      // Also surface brand_crossrefs entries
+      const bcr = row.brand_crossrefs || {};
+      for (const [brand, codes] of Object.entries(bcr)) {
+        if (Array.isArray(codes)) {
+          for (const code of codes) {
+            const key = `${brand}:${code}`;
+            if (!seen.has(key)) {
+              seen.add(key);
+              competitor_refs.push({ manufacturer: brand, code });
+            }
+          }
+        }
+      }
+    }
+    return { elimfilters_products, competitor_refs };
+  } finally { await client.end(); }
+}
+
+// ── 3. searchByMachine(machineQuery, limit) ───────────────────────────────────
+// Searches equipment_applications JSONB by tokenizing the query string.
+// Each token must appear in the JSONB text (AND logic).
+// Examples: "Freightliner M2", "Cummins ISB", "CAT 320", "Komatsu PC200"
+async function searchByMachine(machineQuery, limit = 20) {
+  const raw = (machineQuery || '').trim();
+  if (!raw) return [];
+  const cap = Math.min(limit, 50);
+  // Tokenize: split on whitespace, keep tokens ≥ 2 chars
+  const tokens = raw.split(/\s+/).filter(t => t.length >= 2);
+  if (!tokens.length) return [];
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Build AND conditions: each token must appear in the JSONB text
+    const conditions = tokens.map((_, i) =>
+      `equipment_applications::text ILIKE $${i + 1}`
+    ).join(' AND ');
+
+    const params = tokens.map(t => `%${t.toUpperCase()}%`);
+    params.push(cap);
+
+    const r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type,
+              equipment_applications
+         FROM elimfilters_catalog
+         WHERE equipment_applications IS NOT NULL
+           AND ${conditions}
+         LIMIT $${params.length}`,
+      params
+    );
+
+    return r.rows.map(row => ({
+      ...formatToolRow(row),
+      equipment_applications: row.equipment_applications || [],
+    }));
+  } finally { await client.end(); }
+}
+
+// ── 4. getProductSpecs(sku) ───────────────────────────────────────────────────
+// Returns the full specification record for an ELIMFILTERS SKU.
+async function getProductSpecs(sku) {
+  const s = (sku || '').trim().toUpperCase();
+  if (!s) return null;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT * FROM elimfilters_catalog WHERE UPPER(sku) = $1 LIMIT 1`,
+      [s]
+    );
+    if (!r.rows.length) return null;
+    // Use buildFilterData for consistent shape + TECH_NAME_FIXES + splitRefs
+    return buildFilterData(r.rows[0], 'en');
+  } finally { await client.end(); }
+}
+
+// ── 5. getTechnologyInfo(technology) ─────────────────────────────────────────
+// Returns static technology description + live product count + sample SKUs from DB.
+async function getTechnologyInfo(technology) {
+  const raw = (technology || '').trim().toUpperCase().replace(/[™®]/g, '');
+  if (!raw) return null;
+  // Apply canonical name mapping
+  const canonical = (TECH_NAME_FIXES[raw] || raw).replace(/[™®]/g, '').trim();
+  const meta = TECHNOLOGY_INFO_MAP[canonical] || null;
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    // Match DB rows after stripping ™ from the technology column
+    const r = await client.query(
+      `SELECT sku, filter_type, technology,
+              COUNT(*) OVER () AS total_count
+         FROM elimfilters_catalog
+         WHERE UPPER(REPLACE(technology, '™', '')) = $1
+         ORDER BY sku
+         LIMIT 10`,
+      [canonical]
+    );
+    const associated_products = r.rows.map(row => ({
+      sku: row.sku,
+      filter_type: extractText(row.filter_type, 'en'),
+    }));
+    const product_count = r.rows.length > 0 ? parseInt(r.rows[0].total_count) : 0;
+
+    return {
+      technology: canonical,
+      system:      meta?.system || null,
+      description: meta?.description || null,
+      standards:   meta?.standards || [],
+      product_count,
+      associated_products,
+    };
+  } finally { await client.end(); }
+}
+
+// ── Tool Layer HTTP Endpoints ─────────────────────────────────────────────────
+
+// GET /api/tools/search-products?q=LF3970&limit=20
+app.get('/api/tools/search-products', async (req, res) => {
+  const q = (req.query.q || '').trim();
+  if (!q) return res.status(400).json({ error: 'q required' });
+  try {
+    const results = await searchProducts(q, parseInt(req.query.limit) || 20);
+    res.json({ query: q, count: results.length, results });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/cross-reference/:partNumber
+app.get('/api/tools/cross-reference/:partNumber', async (req, res) => {
+  const pn = (req.params.partNumber || '').trim();
+  if (!pn) return res.status(400).json({ error: 'partNumber required' });
+  try {
+    const result = await findCrossReference(pn);
+    res.json({ part_number: pn, ...result });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/search-by-machine?q=Freightliner+M2&limit=20
+app.get('/api/tools/search-by-machine', async (req, res) => {
+  const q = (req.query.q || '').trim();
+  if (!q) return res.status(400).json({ error: 'q required' });
+  try {
+    const results = await searchByMachine(q, parseInt(req.query.limit) || 20);
+    res.json({ query: q, count: results.length, results });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/product-specs/:sku
+app.get('/api/tools/product-specs/:sku', async (req, res) => {
+  const sku = (req.params.sku || '').trim();
+  if (!sku) return res.status(400).json({ error: 'sku required' });
+  try {
+    const specs = await getProductSpecs(sku);
+    if (!specs) return res.status(404).json({ error: 'not found', sku });
+    res.json(specs);
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/technology-info/:technology
+app.get('/api/tools/technology-info/:technology', async (req, res) => {
+  const tech = (req.params.technology || '').trim();
+  if (!tech) return res.status(400).json({ error: 'technology required' });
+  try {
+    const info = await getTechnologyInfo(tech);
+    if (!info) return res.status(404).json({ error: 'not found', technology: tech });
+    res.json(info);
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// ── Grounded AI consultation (product data injected into user message) ─────────
+// POST /api/ai/v2/consult-grounded
+// Detects part numbers / machine refs / technology names in the query,
+// fetches live catalog data, prepends it to the user message as a context block,
+// then delegates to the existing V2 specialist-agent pipeline.
+app.post('/api/ai/v2/consult-grounded', async (req, res) => {
+  const { query, session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const [budget, intelContext] = await Promise.all([
+    checkBudget('consult'),
+    loadCompetitiveIntel(),
+  ]);
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly budget reached.', used: budget.used, limit: budget.limit
+  });
+
+  // ── Entity detection: extract tokens that may be product/machine references ──
+  // Patterns: EL-prefix SKUs, P-prefix Donaldson codes, alphanumeric part numbers,
+  // known technology names, and remaining text for machine search.
+  const qUpper = query.toUpperCase().replace(/[™®]/g, '');
+  const partPattern = /\b(EL[0-9A-Z]{4,8}|P-?\d{5,7}|[A-Z]{2,4}[-\s]?\d{3,7}[A-Z0-9]*)\b/g;
+  const partMatches = [...new Set([...qUpper.matchAll(partPattern)].map(m => m[1].replace(/[-\s]/g, '')))];
+
+  // Detect technology names in query
+  const techMatches = [];
+  for (const name of TECH_NAMES) {
+    if (qUpper.includes(name)) techMatches.push(name);
+  }
+
+  // Run tool functions in parallel
+  const toolCalls = [];
+  const contextParts = [];
+
+  // Product / cross-reference lookups for each detected part number
+  for (const pn of partMatches.slice(0, 3)) {
+    toolCalls.push(
+      findCrossReference(pn).then(data => {
+        if (data.elimfilters_products.length > 0) {
+          const lines = data.elimfilters_products.map(p =>
+            `  ${p.sku} | ${p.codigo_base || '-'} | ${p.filter_type || '-'} | ${p.technology || '-'}`
+          ).join('\n');
+          const refs = data.competitor_refs.slice(0, 8).map(r => `  ${r.manufacturer}: ${r.code}`).join('\n');
+          contextParts.push(
+            `CROSS-REFERENCE: "${pn}"\nELIMFILTERS matches:\n${lines}` +
+            (refs ? `\nCompetitor refs on these products:\n${refs}` : '')
+          );
+        } else {
+          // Fall back to general search
+          return searchProducts(pn, 5).then(results => {
+            if (results.length) {
+              const lines = results.map(p => `  ${p.sku} | ${p.filter_type || '-'} | ${p.technology || '-'}`).join('\n');
+              contextParts.push(`PRODUCT SEARCH: "${pn}"\n${lines}`);
+            } else {
+              contextParts.push(`PRODUCT SEARCH: "${pn}"\n  No catalog match found.`);
+            }
+          });
+        }
+      })
+    );
+  }
+
+  // Technology info for detected tech names
+  for (const tech of techMatches.slice(0, 2)) {
+    toolCalls.push(
+      getTechnologyInfo(tech).then(info => {
+        if (info) {
+          contextParts.push(
+            `TECHNOLOGY: ${info.technology}\nSystem: ${info.system}\n` +
+            `Products in catalog: ${info.product_count}\n` +
+            `Standards: ${info.standards.join(', ')}`
+          );
+        }
+      })
+    );
+  }
+
+  // Machine search if query contains equipment-like text and no part numbers found
+  if (partMatches.length === 0 && /\b(CAT|CATERPILLAR|CUMMINS|DETROIT|VOLVO|MACK|FREIGHTLINER|KENWORTH|PETERBILT|KOMATSU|LIEBHERR|JOHN DEERE|DEERE|SCANIA|MAN|DAF|MERCEDES|IVECO|CASE|NEW HOLLAND|TEREX)\b/.test(qUpper)) {
+    toolCalls.push(
+      searchByMachine(query, 10).then(results => {
+        if (results.length) {
+          const lines = results.map(p => `  ${p.sku} | ${p.filter_type || '-'} | ${p.technology || '-'}`).join('\n');
+          contextParts.push(`MACHINE SEARCH: "${query}"\n${lines}`);
+        }
+      })
+    );
+  }
+
+  await Promise.all(toolCalls);
+
+  // Assemble grounded user message
+  const groundedQuery = contextParts.length > 0
+    ? `[CATALOG CONTEXT — live data from ELIMFILTERS database]\n${contextParts.join('\n\n')}\n\n[USER QUERY]\n${query}`
+    : query;
+
+  // Delegate to V2 specialist-agent pipeline via chiefReasoningEngine
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  let routing;
+  try {
+    routing = await chiefReasoningEngine(query, anthropic); // route on original query
+    await logUsage('v2_chief', routing.usage || {}, session_id);
+  } catch(e) {
+    routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
+  }
+
+  const selectedAgents = (routing.agents || [])
+    .filter(a => SPECIALIST_AGENTS[a])
+    .map(a => SPECIALIST_AGENTS[a].persona);
+  selectedAgents.push(SPECIALIST_AGENTS.philosophy.persona);
+
+  const specialistBlock = selectedAgents.join('\n\n---\n\n');
+
+  const systemPrompt = `You are the ELIMFILTERS AI Engine V2 — a multi-agent technical reasoning system for industrial filtration and asset protection.
+
+${MASTER_KNOWLEDGE}
+${intelContext}
+
+ACTIVE SPECIALIST AGENTS FOR THIS QUERY:
+${specialistBlock}
+
+${TRACEABILITY_PROMPT}
+
+RESPONSE FORMAT (mandatory structure):
+**Problema detectado:** [clear technical problem statement]
+**Sistema afectado:** [specific system and components]
+**Mecanismo físico:** [root cause mechanism — e.g., "abrasive wear via three-body contact"]
+**Riesgo operacional:** [quantified risk — e.g., "bearing life reduced 60% at current ISO code"]
+**Norma aplicable:** [ISO/SAE/ASTM code + scope]
+**Tecnología ELIMFILTERS:** [specific technology and why it addresses this mechanism]
+**Acción recomendada:** [concrete next step with timeline]
+
+Then the TRACEABILITY block as specified above.
+
+FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
+If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
+
+  const model = routing.complexity === 'complex' ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+
+  try {
+    const messages = [
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: groundedQuery },
+    ];
+
+    const response = await anthropic.messages.create({
+      model,
+      max_tokens: 1500,
+      system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
+      messages,
+    });
+
+    await logUsage('v2_grounded', response.usage, session_id);
+
+    const answer = response.content[0].text;
+    const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
+
+    res.json({
+      answer,
+      catalog_context: contextParts,
+      routing: {
+        agents: routing.agents,
+        system: routing.system,
+        complexity: routing.complexity,
+        primary_concern: routing.primary_concern,
+        model,
+      },
+      blocked,
+      usage: {
+        input: response.usage.input_tokens,
+        output: response.usage.output_tokens,
+        cached: response.usage.cache_read_input_tokens || 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/v2/consult-grounded]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ════════════════════════════════════════════════════════════════════════════
 // ELIMFILTERS AI ENGINE V2 — MULTI-AGENT TECHNICAL REASONING ARCHITECTURE
 // ════════════════════════════════════════════════════════════════════════════
 
