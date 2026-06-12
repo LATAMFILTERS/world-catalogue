@@ -21,9 +21,6 @@ if sys.platform == "win32":
 import asyncpg
 
 db_url = os.environ.get("DATABASE_URL")
-if not db_url:
-    print("ERROR: DATABASE_URL not set")
-    sys.exit(1)
 
 # ─── SQL Queries ──────────────────────────────────────────────────────────────
 
@@ -111,6 +108,9 @@ WHERE sku = $2
 
 
 async def run(dry_run=False, stats_only=False):
+    if not db_url:
+        print("ERROR: DATABASE_URL not set")
+        sys.exit(1)
     import ssl as _ssl
     ssl_ctx = _ssl.create_default_context()
     ssl_ctx.check_hostname = False
