@@ -544,7 +544,7 @@
       "file": "coolant.html",
       "title": "COOLANT",
       "subtitle": "THERMAL CUSTODY",
-      "description": "The ELIMFILTERS\u00ae THERMOCORE\u2122 Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology to maintain corrosion protection and prevent cavitation-induced liner erosion in turbocharged diesel engines. THERMOCORE\u2122 maintains thermal stability across the full operating temperature range and extends coolant service intervals beyond OEM specifications in automotive, manufacturing, and power generation applications.",
+      "description": "The ELIMFILTERS\u00ae THERMACORE\u2122 Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology to maintain corrosion protection and prevent cavitation-induced liner erosion in turbocharged diesel engines. THERMACORE\u2122 maintains thermal stability across the full operating temperature range and extends coolant service intervals beyond OEM specifications in automotive, manufacturing, and power generation applications.",
       "features": [
         "ACTIVE PROTECTION",
         "THERMAL STABILITY",
@@ -559,7 +559,7 @@
         "Corrosion barrier chemistry for aluminum and cast iron engine blocks"
       ],
       "techTags": [
-        "THERMOCORE\u2122"
+        "THERMACORE\u2122"
       ],
       "stats": {},
       "cta": "IDENTIFY SKU"
@@ -837,8 +837,8 @@
     },
     {
       "name": "Thermocore",
-      "file": "thermocore.html",
-      "title": "THERMOCORE\u2122",
+      "file": "thermacore.html",
+      "title": "THERMACORE\u2122",
       "subtitle": "SCA ADDITIVE",
       "description": "SCA additive release technology for thermal systems with cavitation prevention and extended coolant protection.",
       "features": [

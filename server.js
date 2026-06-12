@@ -662,14 +662,16 @@ const TECH_NAME_FIXES = {
   'AQUAGUARD™':  'HYDROCORE™',
   'INTAKCORE':   'INTEKCORE',
   'INTAKCORE™':  'INTEKCORE™',
-  'COOLTECH':    'THERMOCORE',
-  'COOLTECH™':   'THERMOCORE™',
+  'COOLTECH':    'THERMACORE',
+  'COOLTECH™':   'THERMACORE™',
+  'THERMOCORE':  'THERMACORE',
+  'THERMOCORE™': 'THERMACORE™',
 };
 
 // Proprietary ELIMFILTERS technology names — triggers Tier 5 technology search in /api/search
 const TECH_NAMES = new Set([
   'HYDROCORE','MACROCORE','NANOFORCE','SYNTRAX','SYNTEPORE',
-  'MICROKAPPA','INTEKCORE','DRYCORE','COOLTECH',
+  'MICROKAPPA','INTEKCORE','DRYCORE','THERMACORE',
 ]);
 
 function buildFilterData(row, lang = 'en'){
@@ -1477,16 +1479,18 @@ app.get('/api/migrate/search-v2-normalize-tech', async (req, res) => {
     const r4 = await client.query(`UPDATE elimfilters_catalog SET technology = 'HYDROCORE™'  WHERE technology = 'AQUAGUARD™'`);
     const r5 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE'   WHERE technology = 'INTAKCORE'`);
     const r6 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE™'  WHERE technology = 'INTAKCORE™'`);
-    const r7 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMOCORE'  WHERE technology = 'COOLTECH'`);
-    const r8 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMOCORE™' WHERE technology = 'COOLTECH™'`);
+    const r7 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE'  WHERE technology = 'COOLTECH'`);
+    const r8 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE™' WHERE technology = 'COOLTECH™'`);
+    const r9 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE'  WHERE technology = 'THERMOCORE'`);
+    const r10= await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE™' WHERE technology = 'THERMOCORE™'`);
 
     res.json({
       success: true,
       syntapore_fixed:  r1.rowCount + r2.rowCount,
       aquaguard_fixed:  r3.rowCount + r4.rowCount,
       intakcore_fixed:  r5.rowCount + r6.rowCount,
-      cooltech_fixed:   r7.rowCount + r8.rowCount,
-      total_rows_fixed: r1.rowCount + r2.rowCount + r3.rowCount + r4.rowCount + r5.rowCount + r6.rowCount + r7.rowCount + r8.rowCount,
+      cooltech_fixed:   r7.rowCount + r8.rowCount + r9.rowCount + r10.rowCount,
+      total_rows_fixed: r1.rowCount + r2.rowCount + r3.rowCount + r4.rowCount + r5.rowCount + r6.rowCount + r7.rowCount + r8.rowCount + r9.rowCount + r10.rowCount,
     });
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });

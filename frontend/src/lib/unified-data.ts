@@ -8,8 +8,8 @@
  *
  * Platform declaration (2026-06-02):
  *   Active Technologies:  MACROCORE · SYNTEPORE · INTEKCORE · DRYCORE ·
- *                         HYDROCORE · SYNTRAX · NANOFORCE · THERMOCORE · MICROKAPPA
- *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE) · COOLTECH (→ THERMOCORE)
+ *                         HYDROCORE · SYNTRAX · NANOFORCE · THERMACORE · MICROKAPPA
+ *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE) · COOLTECH (→ THERMACORE)
  *   Ecosystems:           MARINECLEAN · DURATECH
  *
  * Migration status: Phase 2 Task 1 — file created, not yet consumed by any page.
@@ -28,7 +28,7 @@ export type TechnologyKey =
   | 'HYDROCORE'
   | 'SYNTRAX'
   | 'NANOFORCE'
-  | 'THERMOCORE'
+  | 'THERMACORE'
   | 'MICROKAPPA';
 
 export type DeprecatedTechnologyKey = 'AQUAGUARD' | 'COOLTECH';
@@ -377,17 +377,17 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     },
   },
 
-  // TODO: verify THERMOCORE performance data, logo asset, and product specifications.
-  // THERMOCORE replaces COOLTECH (deprecated 2026-06-02). Functional domain: cooling system / SCA.
-  THERMOCORE: {
-    key: 'THERMOCORE',
-    name: 'THERMOCORE™',
-    slug: 'thermocore',
+  // TODO: verify THERMACORE performance data, logo asset, and product specifications.
+  // THERMACORE replaces COOLTECH (deprecated 2026-06-02). Functional domain: cooling system / SCA.
+  THERMACORE: {
+    key: 'THERMACORE',
+    name: 'THERMACORE™',
+    slug: 'thermacore',
     domain: 'Cooling System',
-    logoFile: 'logo-thermocore.png', // TODO: add image asset
+    logoFile: 'logo-thermacore.png', // TODO: add image asset
     category: 'Coolant Filtration',
     tagline: 'SCA-Release Cooling System Protection',
-    geoDefinition: 'THERMOCORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. THERMOCORE™ delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty commercial vehicles and stationary power generation. Replaces THERMOCORE™ as the authoritative cooling system protection technology in the ELIMFILTERS platform.', // TODO: verify SCA release data and product-line details
+    geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. THERMACORE™ delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty commercial vehicles and stationary power generation. Replaces THERMACORE™ as the authoritative cooling system protection technology in the ELIMFILTERS platform.', // TODO: verify SCA release data and product-line details
     comparisonFunction: 'SCA-releasing coolant protection',
     comparisonMetric: 'TODO: verify SCA release data', // TODO: verify
     comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
@@ -453,18 +453,18 @@ export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, Deprecated
     comparisonIndustries: 'Marine, Oil & Gas, Power Gen, Agriculture',
   },
 
-  /** @deprecated Replaced by THERMOCORE. Existing product pages remain live pending sunset. */
+  /** @deprecated Replaced by THERMACORE. Existing product pages remain live pending sunset. */
   COOLTECH: {
     key: 'COOLTECH',
-    name: 'THERMOCORE™',
+    name: 'THERMACORE™',
     slug: 'cooltech',
-    replacedBy: 'THERMOCORE',
-    replacedByName: 'THERMOCORE™',
+    replacedBy: 'THERMACORE',
+    replacedByName: 'THERMACORE™',
     domain: 'Cooling System',
     logoFile: 'logo-cooltech.png',
-    geoDefinition: 'THERMOCORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
+    geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
     deprecatedDate: '2026-06-02',
-    sunsetNote: 'COOLTECH product pages remain live. New content and canonical blocks reference THERMOCORE. Remove from TechnologyKey union after full consumer migration.',
+    sunsetNote: 'COOLTECH product pages remain live. New content and canonical blocks reference THERMACORE. Remove from TechnologyKey union after full consumer migration.',
     comparisonFunction: 'DCA-replenishing coolant protection',
     comparisonMetric: 'SCA restoration · liner cavitation prevention',
     comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
@@ -528,7 +528,7 @@ export const INDUSTRIES: Record<IndustryKey, UnifiedIndustry> = {
     contaminationExposure: 'MEDIUM',
     primaryEquipment: ['Heavy trucks', 'Buses', 'Commercial vehicles'],
     relevantContamination: ['PARTICLE_WEAR', 'DIESEL_WATER', 'CABIN_AIR_CONTAMINATION', 'COOLANT_CONTAMINATION'],
-    applicableTechnologies: ['MACROCORE', 'SYNTRAX', 'MICROKAPPA', 'THERMOCORE'],
+    applicableTechnologies: ['MACROCORE', 'SYNTRAX', 'MICROKAPPA', 'THERMACORE'],
     applicableStandards: ['SAE_J1539', 'ISO_4406', 'ISO_16889', 'ISO_11155'],
     operatingConditions: {
       environment: 'Mixed urban/highway, seasonal',
@@ -579,7 +579,7 @@ export const INDUSTRIES: Record<IndustryKey, UnifiedIndustry> = {
     contaminationExposure: 'LOW-MEDIUM',
     primaryEquipment: ['Machine tools', 'Presses', 'Injection moulding', 'Hydraulic systems'],
     relevantContamination: ['HYDRAULIC_CONTAMINATION', 'PARTICLE_WEAR', 'CABIN_AIR_CONTAMINATION', 'COOLANT_CONTAMINATION', 'COMPRESSED_AIR_MOISTURE'],
-    applicableTechnologies: ['NANOFORCE', 'SYNTRAX', 'MICROKAPPA', 'THERMOCORE', 'DRYCORE'],
+    applicableTechnologies: ['NANOFORCE', 'SYNTRAX', 'MICROKAPPA', 'THERMACORE', 'DRYCORE'],
     applicableStandards: ['NFPA_T214', 'ISO_16889', 'DIN_51524', 'ISO_8573_1', 'ISO_11155'],
     operatingConditions: {
       environment: 'Climate-controlled, clean facilities',
@@ -647,7 +647,7 @@ export const INDUSTRIES: Record<IndustryKey, UnifiedIndustry> = {
     contaminationExposure: 'MEDIUM',
     primaryEquipment: ['Diesel generators', 'Gas turbines', 'Compressors'],
     relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'COMPRESSED_AIR_MOISTURE', 'COOLANT_CONTAMINATION'],
-    applicableTechnologies: ['MACROCORE', 'HYDROCORE', 'SYNTRAX', 'DRYCORE', 'THERMOCORE'],
+    applicableTechnologies: ['MACROCORE', 'HYDROCORE', 'SYNTRAX', 'DRYCORE', 'THERMACORE'],
     applicableStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_5011', 'ISO_8573_1'],
     operatingConditions: {
       environment: 'Industrial sites, variable outdoor/semi-indoor exposure',
@@ -749,7 +749,7 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
     name: 'Coolant Filter',
     slug: 'coolant',
     domain: 'Cooling System',
-    primaryTechnology: 'THERMOCORE',
+    primaryTechnology: 'THERMACORE',
     supportingTechnologies: ['MICROKAPPA'],
   },
 
@@ -1041,7 +1041,7 @@ export const CONTAMINATION_MODES: Record<ContaminationKey, UnifiedContaminationM
       coolantServiceInterval: '−50% without controlled release',
       engineReconditioning: '$12,000+ per event (liner replacement)',
     },
-    resolvedBy: ['THERMOCORE'],
+    resolvedBy: ['THERMACORE'],
     relatedStandards: ['ISO_16889'],
   },
 
