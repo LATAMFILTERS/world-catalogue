@@ -120,7 +120,7 @@ export function HydrocorePage() {
                   NOT A FILTER.<br />AN ASSET PROTECTION SYSTEM.
                 </h2>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
-                  Conventional fuel filters intercept particles. HYDROCORE/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
+                  Conventional fuel filters intercept particles. HYDRACORE/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.25rem' }}>
                   The 900FH and 1000FH models deploy HYDROCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
@@ -134,11 +134,11 @@ export function HydrocorePage() {
                 <div style={{ position: 'sticky', top: '6rem' }}>
                   <img
                     src="/images/turbinefh-foto.avif"
-                    alt="HYDROCORE/SERIES™ 900FH · 1000FH"
+                    alt="HYDRACORE/SERIES™ 900FH · 1000FH"
                     style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.15)', display: 'block' }}
                   />
                   <p style={{ fontSize: '0.65rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em', marginTop: '1rem', textAlign: 'center' }}>
-                    HYDROCORE/SERIES™ · 900FH / 1000FH
+                    HYDRACORE/SERIES™ · 900FH / 1000FH
                   </p>
                 </div>
               </AnimateIn>
@@ -225,7 +225,7 @@ export function HydrocorePage() {
                 // ASSET APPLICATIONS
               </span>
               <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '0.75rem' }}>
-                WHERE HYDROCORE/SERIES™ PROTECTS
+                WHERE HYDRACORE/SERIES™ PROTECTS
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', marginBottom: '3rem', maxWidth: '580px', lineHeight: 1.7 }}>
                 FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.
@@ -252,7 +252,7 @@ export function HydrocorePage() {
           <AnimateIn direction="up">
             <div style={{ maxWidth: '700px', margin: '0 auto' }}>
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.5)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-                // IDENTIFY YOUR HYDROCORE/SERIES™ SKU
+                // IDENTIFY YOUR HYDRACORE/SERIES™ SKU
               </span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
                 FIND YOUR PROTECTION SYSTEM

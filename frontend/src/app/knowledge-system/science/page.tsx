@@ -152,7 +152,7 @@ const TECHNOLOGIES = [
   },
   {
     code: 'HYDROCORE™/SERIES',
-    href: '/technologies/hydrocore-series',
+    href: '/technologies/hydracore-series',
     failureMechanism: 'High-volume water contamination in large-displacement fuel systems exceeding single-stage coalescer capacity',
     protection: 'Extended-capacity HYDROCORE configuration for bulk fuel and marine applications. Multi-stage coalescing for high-flow systems with continuous water ingress from storage or transfer.',
     system: 'Bulk Fuel | Large Equipment | Marine',
