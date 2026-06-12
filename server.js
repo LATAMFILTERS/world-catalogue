@@ -3844,6 +3844,223 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
   }
 });
 
+// ─── OEM Resolution Engine ───────────────────────────────────────────────────
+
+app.post('/api/oem/mann-setup', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS mann_oem_clean (
+        id             SERIAL PRIMARY KEY,
+        sku            TEXT NOT NULL,
+        segment        TEXT,
+        oem_brand      TEXT,
+        oem_original   TEXT,
+        oem_normalized TEXT NOT NULL,
+        CONSTRAINT uq_mann_oem UNIQUE (sku, oem_normalized)
+      )
+    `);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_mann_oem_norm ON mann_oem_clean(oem_normalized)`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_mann_oem_sku  ON mann_oem_clean(sku)`);
+    await client.query(`CREATE INDEX IF NOT EXISTS idx_mann_oem_seg  ON mann_oem_clean(segment)`);
+    const { rows } = await client.query(`SELECT COUNT(*) FROM mann_oem_clean`);
+    res.json({ success: true, existing_rows: parseInt(rows[0].count) });
+  } catch (err) {
+    console.error('[oem/mann-setup]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/oem/mann-load-batch', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0) return res.status(400).json({ error: 'rows required' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const result = await client.query(
+      `INSERT INTO mann_oem_clean (sku, segment, oem_brand, oem_original, oem_normalized)
+       SELECT * FROM unnest($1::text[], $2::text[], $3::text[], $4::text[], $5::text[])
+         AS t(sku, segment, oem_brand, oem_original, oem_normalized)
+       ON CONFLICT (sku, oem_normalized) DO NOTHING`,
+      [
+        rows.map(r => r.sku),
+        rows.map(r => r.segment  || null),
+        rows.map(r => r.oem_brand || null),
+        rows.map(r => r.oem_original || null),
+        rows.map(r => r.oem_normalized),
+      ]
+    );
+    res.json({ success: true, inserted: result.rowCount, total: rows.length });
+  } catch (err) {
+    console.error('[oem/mann-load-batch]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/oem/build-donaldson-matches', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`DROP TABLE IF EXISTS mann_donaldson_matches`);
+    await client.query(`
+      CREATE TABLE mann_donaldson_matches AS
+      SELECT DISTINCT
+        m.sku            AS mann_part,
+        m.segment        AS mann_segment,
+        d.don_part       AS donaldson_part,
+        d.elimfilters_sku,
+        m.oem_normalized,
+        m.oem_brand
+      FROM mann_oem_clean m
+      JOIN (
+        SELECT p.sku AS elimfilters_sku, p.part_number AS don_part,
+               UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
+        FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
+        WHERE p.oem_codes IS NOT NULL
+          AND jsonb_typeof(p.oem_codes) = 'array'
+          AND (elem->>'part_number') IS NOT NULL
+          AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
+          AND p.codigo_base ~ '^(P|BF|PA|DT|PX|AF1|AF2|AF3|AF4|AF5)[0-9]'
+      ) d ON d.oem_normalized = m.oem_normalized
+      WHERE length(m.oem_normalized) >= 4
+    `);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(mann_part)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(donaldson_part)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(elimfilters_sku)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(oem_normalized)`);
+    const { rows } = await client.query(`
+      SELECT COUNT(*)                        AS total,
+             COUNT(DISTINCT mann_part)       AS mann_u,
+             COUNT(DISTINCT donaldson_part)  AS don_u
+      FROM mann_donaldson_matches
+    `);
+    res.json({ success: true, ...rows[0] });
+  } catch (err) {
+    console.error('[oem/build-donaldson-matches]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`DROP TABLE IF EXISTS mann_fleetguard_matches`);
+    await client.query(`
+      CREATE TABLE mann_fleetguard_matches AS
+      SELECT DISTINCT
+        m.sku            AS mann_part,
+        m.segment        AS mann_segment,
+        f.fg_part        AS fleetguard_part,
+        f.elimfilters_sku,
+        m.oem_normalized,
+        m.oem_brand
+      FROM mann_oem_clean m
+      JOIN (
+        SELECT p.sku AS elimfilters_sku, p.part_number AS fg_part,
+               UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
+        FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
+        WHERE p.oem_codes IS NOT NULL
+          AND jsonb_typeof(p.oem_codes) = 'array'
+          AND (elem->>'part_number') IS NOT NULL
+          AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
+          AND p.codigo_base ~ '^(LF|HF|FF|FS|WF|AF0|CV|CC|SCA|RS)[0-9]'
+      ) f ON f.oem_normalized = m.oem_normalized
+      WHERE length(m.oem_normalized) >= 4
+    `);
+    await client.query(`CREATE INDEX ON mann_fleetguard_matches(mann_part)`);
+    await client.query(`CREATE INDEX ON mann_fleetguard_matches(fleetguard_part)`);
+    await client.query(`CREATE INDEX ON mann_fleetguard_matches(elimfilters_sku)`);
+    await client.query(`CREATE INDEX ON mann_fleetguard_matches(oem_normalized)`);
+    const { rows } = await client.query(`
+      SELECT COUNT(*)                          AS total,
+             COUNT(DISTINCT mann_part)         AS mann_u,
+             COUNT(DISTINCT fleetguard_part)   AS fg_u
+      FROM mann_fleetguard_matches
+    `);
+    res.json({ success: true, ...rows[0] });
+  } catch (err) {
+    console.error('[oem/build-fleetguard-matches]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+app.post('/api/oem/build-cross-reference-master', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    await client.query(`DROP TABLE IF EXISTS cross_reference_master`);
+    await client.query(`
+      CREATE TABLE cross_reference_master AS
+      WITH base AS (
+        SELECT DISTINCT sku AS mann_part, segment, oem_brand, oem_normalized
+        FROM mann_oem_clean
+        WHERE oem_normalized IS NOT NULL AND length(oem_normalized) >= 4
+      ),
+      with_don AS (
+        SELECT b.mann_part, b.segment, b.oem_brand, b.oem_normalized, md.donaldson_part
+        FROM base b
+        LEFT JOIN (
+          SELECT DISTINCT ON (mann_part, oem_normalized)
+            mann_part, donaldson_part, oem_normalized
+          FROM mann_donaldson_matches
+          ORDER BY mann_part, oem_normalized, donaldson_part
+        ) md ON md.mann_part = b.mann_part AND md.oem_normalized = b.oem_normalized
+      ),
+      with_fg AS (
+        SELECT w.mann_part, w.segment, w.oem_brand, w.oem_normalized,
+               w.donaldson_part, mf.fleetguard_part
+        FROM with_don w
+        LEFT JOIN (
+          SELECT DISTINCT ON (mann_part, oem_normalized)
+            mann_part, fleetguard_part, oem_normalized
+          FROM mann_fleetguard_matches
+          ORDER BY mann_part, oem_normalized, fleetguard_part
+        ) mf ON mf.mann_part = w.mann_part AND mf.oem_normalized = w.oem_normalized
+      )
+      SELECT oem_normalized, oem_brand, mann_part, donaldson_part,
+             fleetguard_part, NULL::text AS elimfilters_sku, segment
+      FROM with_fg
+      WHERE donaldson_part IS NOT NULL OR fleetguard_part IS NOT NULL
+    `);
+    await client.query(`CREATE INDEX ON cross_reference_master(oem_normalized)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(mann_part)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(donaldson_part)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(fleetguard_part)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(segment)`);
+    const { rows } = await client.query(`
+      SELECT COUNT(*)                                                                          AS total,
+             COUNT(DISTINCT mann_part)                                                         AS mann_u,
+             COUNT(DISTINCT donaldson_part)  FILTER (WHERE donaldson_part  IS NOT NULL)        AS don_u,
+             COUNT(DISTINCT fleetguard_part) FILTER (WHERE fleetguard_part IS NOT NULL)        AS fg_u,
+             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NOT NULL) AS don_and_fg,
+             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NULL)     AS don_only,
+             COUNT(*) FILTER (WHERE donaldson_part IS NULL     AND fleetguard_part IS NOT NULL) AS fg_only
+      FROM cross_reference_master
+    `);
+    res.json({ success: true, ...rows[0] });
+  } catch (err) {
+    console.error('[oem/build-cross-reference-master]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
