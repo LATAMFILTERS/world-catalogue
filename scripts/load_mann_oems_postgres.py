@@ -2,8 +2,8 @@
 """
 load_mann_oems_postgres.py
 ==========================
-Crea mann_oem_clean y carga C:\mann\mann_oem_master_clean.csv
-vía API (Node.js → Render.com PostgreSQL, evita psycopg2 SSL en Windows).
+Crea mann_oem_clean y carga C:/mann/mann_oem_master_clean.csv
+via API (Node.js -> Render.com PostgreSQL, evita psycopg2 SSL en Windows).
 """
 
 import csv
