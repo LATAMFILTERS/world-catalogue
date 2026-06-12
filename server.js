@@ -3314,20 +3314,107 @@ app.post('/api/crosslink/fg-don', async (req, res) => {
       });
     }
 
-    const SQL_UPD = `
-      UPDATE elimfilters_catalog
-      SET competitor_codes = COALESCE(competitor_codes,'[]'::jsonb) || $1::jsonb
-      WHERE sku = $2 AND NOT (COALESCE(competitor_codes,'[]'::jsonb) @> $1::jsonb)`;
+    // Bulk SQL updates — avoid 250k individual queries by doing it all in 2 SQL statements
+    const SQL_PAIRS_SUBQUERY = `
+      WITH a_pairs AS (
+        SELECT d.sku AS don_sku, f.codigo_base AS fg_code, f.sku AS fg_sku
+        FROM elimfilters_catalog d
+        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
+        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
+        WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL
+      ),
+      b_pairs AS (
+        SELECT DISTINCT don.don_sku, fg.fg_sku, fg.fg_code
+        FROM (
+          SELECT f.sku fg_sku, f.codigo_base fg_code,
+                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
+          FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
+          WHERE jsonb_array_length(f.oem_codes) > 0
+        ) fg
+        JOIN (
+          SELECT d.sku don_sku,
+                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
+          FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
+          WHERE jsonb_array_length(d.oem_codes) > 0
+        ) don ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
+        WHERE fg.mfr NOT IN ('DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
+          'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
+          'HENGST','FILTREC','HYDAC','PALL','PARKER')
+      )
+      SELECT don_sku, fg_code, fg_sku FROM a_pairs
+      UNION
+      SELECT don_sku, fg_code, fg_sku FROM b_pairs`;
 
-    let updatedDon = 0, updatedFg = 0;
-    for (const p of pairList) {
-      const fgEntry  = JSON.stringify([{ brand:'FLEETGUARD', part_number: p.fg_code,  linked_sku: p.fg_sku  }]);
-      const donEntry = JSON.stringify([{ brand:'DONALDSON',  part_number: p.don_code, linked_sku: p.don_sku }]);
-      const rDon = await client.query(SQL_UPD, [fgEntry,  p.don_sku]);
-      const rFg  = await client.query(SQL_UPD, [donEntry, p.fg_sku]);
-      if (rDon.rowCount > 0) updatedDon++;
-      if (rFg.rowCount  > 0) updatedFg++;
-    }
+    const SQL_BULK_DON = `
+      WITH pairs AS (${SQL_PAIRS_SUBQUERY}),
+      new_e AS (
+        SELECT DISTINCT don_sku,
+               jsonb_build_object('brand','FLEETGUARD','part_number',fg_code,'linked_sku',fg_sku) AS entry
+        FROM pairs
+      ),
+      agg AS (SELECT don_sku, jsonb_agg(entry) new_codes FROM new_e GROUP BY don_sku)
+      UPDATE elimfilters_catalog t
+      SET competitor_codes = (
+        SELECT jsonb_agg(elem) FROM (
+          SELECT DISTINCT ON (elem::text) elem
+          FROM jsonb_array_elements(COALESCE(t.competitor_codes,'[]'::jsonb) || a.new_codes) elem
+        ) dedup
+      )
+      FROM agg a WHERE t.sku = a.don_sku
+      RETURNING t.sku`;
+
+    const SQL_BULK_FG = `
+      WITH a_pairs AS (
+        SELECT f.sku AS fg_sku, d.codigo_base AS don_code, d.sku AS don_sku
+        FROM elimfilters_catalog d
+        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
+        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
+        WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL
+      ),
+      b_pairs AS (
+        SELECT DISTINCT fg.fg_sku, don.don_sku, don.don_code
+        FROM (
+          SELECT f.sku fg_sku, upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
+          FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
+          WHERE jsonb_array_length(f.oem_codes) > 0
+        ) fg
+        JOIN (
+          SELECT d.sku don_sku, d.codigo_base don_code,
+                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
+          FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
+          WHERE jsonb_array_length(d.oem_codes) > 0
+        ) don ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
+        WHERE fg.mfr NOT IN ('DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
+          'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
+          'HENGST','FILTREC','HYDAC','PALL','PARKER')
+      ),
+      pairs AS (
+        SELECT fg_sku, don_code, don_sku FROM a_pairs
+        UNION
+        SELECT fg_sku, don_code, don_sku FROM b_pairs
+      ),
+      new_e AS (
+        SELECT DISTINCT fg_sku,
+               jsonb_build_object('brand','DONALDSON','part_number',don_code,'linked_sku',don_sku) AS entry
+        FROM pairs
+      ),
+      agg AS (SELECT fg_sku, jsonb_agg(entry) new_codes FROM new_e GROUP BY fg_sku)
+      UPDATE elimfilters_catalog t
+      SET competitor_codes = (
+        SELECT jsonb_agg(elem) FROM (
+          SELECT DISTINCT ON (elem::text) elem
+          FROM jsonb_array_elements(COALESCE(t.competitor_codes,'[]'::jsonb) || a.new_codes) elem
+        ) dedup
+      )
+      FROM agg a WHERE t.sku = a.fg_sku
+      RETURNING t.sku`;
+
+    const [donRes, fgRes] = await Promise.all([
+      client.query(SQL_BULK_DON),
+      client.query(SQL_BULK_FG),
+    ]);
+    const updatedDon = donRes.rowCount;
+    const updatedFg  = fgRes.rowCount;
 
     res.json({ success: true, stats, updated_don: updatedDon, updated_fg: updatedFg });
   } catch (err) {
