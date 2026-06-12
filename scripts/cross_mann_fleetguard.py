@@ -2,14 +2,17 @@
 """
 cross_mann_fleetguard.py
 ========================
-Cruza MANN OEM numbers con Fleetguard OEM numbers.
+Cruza MANN OEM numbers con OEM codes de productos Fleetguard
+en elimfilters_catalog (campo oem_codes JSONB).
+
 Resultado: tabla mann_fleetguard_matches
 
-Mismo mecanismo que cross_mann_donaldson.py
-pero contra fleetguard_products.
-
-Variables de entorno:
-    PG_HOST / PG_PORT / PG_DATABASE / PG_USER / PG_PASSWORD
+    mann_part       — SKU MANN
+    mann_segment    — HD / LD / MIXED
+    fleetguard_part — part_number del producto FG en elimfilters_catalog
+    elimfilters_sku — SKU interno
+    oem_normalized  — código OEM que los une
+    oem_brand       — fabricante del equipo
 """
 
 import os
@@ -21,67 +24,31 @@ except ImportError:
     print("ERROR: pip install psycopg2-binary")
     sys.exit(1)
 
-DB_CONFIG = {
-    "host":     os.getenv("PG_HOST",     "localhost"),
-    "port":     int(os.getenv("PG_PORT", "5432")),
-    "database": os.getenv("PG_DATABASE", "mann"),
-    "user":     os.getenv("PG_USER",     "postgres"),
-    "password": os.getenv("PG_PASSWORD", ""),
-}
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://catalogo_elimfilters_user:d1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf"
+    "@dpg-d86ju1p9rddc739lc230-a.oregon-postgres.render.com/catalogo_elimfilters"
+)
 
-_OEM_KEY_EXPR = """COALESCE(
-    elem->>'part_number',
-    elem->>'code',
-    elem->>'number',
-    elem->>'oem_number'
-)"""
-
-_NORMALIZE_EXPR = f"""
-UPPER(REGEXP_REPLACE(
-    {_OEM_KEY_EXPR},
-    '[\\s\\-/\\.()]', '', 'g'
-))
-""".strip()
+# Fleetguard part number patterns
+FG_PART_PATTERN = r'^(LF|HF|FF|FS|WF|AF0|CV|CC|SCA|RS)[0-9]'
 
 
 def check_prerequisites(cur):
-    cur.execute("""
-        SELECT EXISTS (
-            SELECT 1 FROM information_schema.tables
-            WHERE table_name = 'fleetguard_products'
-        )
-    """)
-    if not cur.fetchone()[0]:
-        print("ERROR: table 'fleetguard_products' not found")
-        sys.exit(1)
-
-    cur.execute("""
-        SELECT EXISTS (
-            SELECT 1 FROM information_schema.tables
-            WHERE table_name = 'mann_oem_clean'
-        )
-    """)
-    if not cur.fetchone()[0]:
-        print("ERROR: table 'mann_oem_clean' not found. Run load_mann_oems_postgres.py first.")
-        sys.exit(1)
-
-
-def detect_oem_column_type(cur):
-    cur.execute("""
-        SELECT data_type FROM information_schema.columns
-        WHERE table_name = 'fleetguard_products'
-          AND column_name = 'oem_numbers'
-    """)
-    row = cur.fetchone()
-    if not row:
-        print("ERROR: column 'oem_numbers' not found in fleetguard_products")
-        sys.exit(1)
-    return row[0]
+    for tbl in ("elimfilters_catalog", "mann_oem_clean"):
+        cur.execute(f"""
+            SELECT EXISTS (
+                SELECT 1 FROM information_schema.tables WHERE table_name = '{tbl}'
+            )
+        """)
+        if not cur.fetchone()[0]:
+            print(f"ERROR: table '{tbl}' not found")
+            sys.exit(1)
 
 
 def main():
     try:
-        conn = psycopg2.connect(**DB_CONFIG)
+        conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     except Exception as e:
         print(f"ERROR connecting: {e}")
         sys.exit(1)
@@ -90,86 +57,88 @@ def main():
     cur = conn.cursor()
 
     check_prerequisites(cur)
-    col_type = detect_oem_column_type(cur)
-    print(f"fleetguard_products.oem_numbers type: {col_type}")
 
-    oem_cast = "oem_numbers" if col_type in ("jsonb", "json") else "oem_numbers::jsonb"
+    cur.execute("""
+        SELECT COUNT(*) FROM elimfilters_catalog
+        WHERE oem_codes IS NOT NULL
+          AND jsonb_array_length(oem_codes) > 0
+          AND codigo_base ~ %s
+    """, (FG_PART_PATTERN,))
+    fg_products = cur.fetchone()[0]
+    print(f"Fleetguard products with OEM codes: {fg_products:,}")
 
     print("Step 1: Building normalized Fleetguard OEM temp table...")
-    cur.execute(f"""
+    cur.execute("""
         DROP TABLE IF EXISTS _fg_oem_norm;
         CREATE TEMP TABLE _fg_oem_norm AS
         SELECT
-            p.part_number                           AS fg_part,
-            {_OEM_KEY_EXPR}                         AS oem_original,
-            {_NORMALIZE_EXPR}                       AS oem_normalized
-        FROM fleetguard_products p,
-             jsonb_array_elements(
-                 CASE
-                     WHEN jsonb_typeof({oem_cast}) = 'array' THEN {oem_cast}
-                     ELSE '[]'::jsonb
-                 END
-             ) elem
-        WHERE p.oem_numbers IS NOT NULL
-          AND {_OEM_KEY_EXPR} IS NOT NULL
-          AND length({_NORMALIZE_EXPR}) >= 4;
+            p.sku                                                      AS elimfilters_sku,
+            p.part_number                                              AS fg_part,
+            (elem->>'part_number')                                     AS oem_original,
+            UPPER(REGEXP_REPLACE(
+                COALESCE(elem->>'part_number', ''),
+                '[\\s\\-/\\.()]', '', 'g'
+            ))                                                         AS oem_normalized
+        FROM elimfilters_catalog p,
+             jsonb_array_elements(p.oem_codes) elem
+        WHERE p.oem_codes IS NOT NULL
+          AND jsonb_typeof(p.oem_codes) = 'array'
+          AND (elem->>'part_number') IS NOT NULL
+          AND length(UPPER(REGEXP_REPLACE(
+                COALESCE(elem->>'part_number',''),
+                '[\\s\\-/\\.()]','','g'))) >= 4
+          AND p.codigo_base ~ %s;
 
         CREATE INDEX ON _fg_oem_norm(oem_normalized);
-    """)
+    """, (FG_PART_PATTERN,))
     conn.commit()
 
     cur.execute("SELECT COUNT(*) FROM _fg_oem_norm")
-    fg_count = cur.fetchone()[0]
-    print(f"   Fleetguard OEM rows normalized: {fg_count:,}")
+    fg_oem_count = cur.fetchone()[0]
+    print(f"   FG OEM rows extracted: {fg_oem_count:,}")
 
     print("Step 2: Creating mann_fleetguard_matches...")
     cur.execute("""
         DROP TABLE IF EXISTS mann_fleetguard_matches;
         CREATE TABLE mann_fleetguard_matches AS
         SELECT DISTINCT
-            m.sku           AS mann_part,
-            m.segment       AS mann_segment,
-            f.fg_part       AS fleetguard_part,
+            m.sku            AS mann_part,
+            m.segment        AS mann_segment,
+            f.fg_part        AS fleetguard_part,
+            f.elimfilters_sku,
             m.oem_normalized,
-            m.oem_brand     AS oem_brand
+            m.oem_brand
         FROM mann_oem_clean m
         INNER JOIN _fg_oem_norm f
             ON f.oem_normalized = m.oem_normalized
-        WHERE m.oem_normalized IS NOT NULL
-          AND length(m.oem_normalized) >= 4;
+        WHERE length(m.oem_normalized) >= 4;
 
         CREATE INDEX ON mann_fleetguard_matches(mann_part);
         CREATE INDEX ON mann_fleetguard_matches(fleetguard_part);
+        CREATE INDEX ON mann_fleetguard_matches(elimfilters_sku);
         CREATE INDEX ON mann_fleetguard_matches(oem_normalized);
     """)
     conn.commit()
 
-    # Stats
     cur.execute("SELECT COUNT(*) FROM mann_fleetguard_matches")
     total = cur.fetchone()[0]
-
-    cur.execute("""
-        SELECT COUNT(DISTINCT mann_part), COUNT(DISTINCT fleetguard_part)
-        FROM mann_fleetguard_matches
-    """)
+    cur.execute("SELECT COUNT(DISTINCT mann_part), COUNT(DISTINCT fleetguard_part) FROM mann_fleetguard_matches")
     mann_u, fg_u = cur.fetchone()
-
     cur.execute("""
-        SELECT mann_segment, COUNT(*) AS n
-        FROM mann_fleetguard_matches
-        GROUP BY mann_segment ORDER BY n DESC
+        SELECT mann_segment, COUNT(*) FROM mann_fleetguard_matches
+        GROUP BY mann_segment ORDER BY 2 DESC
     """)
-    seg_stats = cur.fetchall()
+    segs = cur.fetchall()
 
     cur.close()
     conn.close()
 
     print(f"\n✅ mann_fleetguard_matches created")
-    print(f"   Total match rows      : {total:,}")
+    print(f"   Total rows            : {total:,}")
     print(f"   Unique MANN parts     : {mann_u:,}")
-    print(f"   Unique Fleetguard pts : {fg_u:,}")
+    print(f"   Unique FG parts       : {fg_u:,}")
     print("\nBy MANN segment:")
-    for seg, n in seg_stats:
+    for seg, n in segs:
         print(f"  {seg or '(null)':10} {n:>8,}")
 
 
