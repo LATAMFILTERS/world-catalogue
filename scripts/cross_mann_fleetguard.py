@@ -28,6 +28,7 @@ DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "postgresql://catalogo_elimfilters_user:d1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf"
     "@dpg-d86ju1p9rddc739lc230-a.oregon-postgres.render.com/catalogo_elimfilters"
+    "?sslmode=require"
 )
 
 # Fleetguard part number patterns
@@ -48,7 +49,7 @@ def check_prerequisites(cur):
 
 def main():
     try:
-        conn = psycopg2.connect(DATABASE_URL, sslmode="require")
+        conn = psycopg2.connect(DATABASE_URL)
     except Exception as e:
         print(f"ERROR connecting: {e}")
         sys.exit(1)
