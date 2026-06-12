@@ -255,8 +255,14 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/technologies/aquaguard</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://elimfilters.com/technologies/hydrocore</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/technologies/hydrocore-series</loc>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

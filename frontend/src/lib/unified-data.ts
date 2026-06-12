@@ -436,18 +436,18 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
 
 export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, DeprecatedTechnology> = {
 
-  /** @deprecated Replaced by HYDROCORE. Existing product pages remain live pending sunset. */
+  /** @deprecated Replaced by HYDROCORE. Migration complete 2026-06-11. This entry retained for historical reference only. */
   AQUAGUARD: {
     key: 'AQUAGUARD',
     name: 'HYDROCORE™',
-    slug: 'aquaguard',
+    slug: 'hydrocore',
     replacedBy: 'HYDROCORE',
     replacedByName: 'HYDROCORE™',
     domain: 'Fuel Cleanliness',
-    logoFile: 'logo-aquaguard.png',
+    logoFile: 'logo-hydrocore.png',
     geoDefinition: 'HYDROCORE™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
     deprecatedDate: '2026-06-02',
-    sunsetNote: 'AQUAGUARD product pages remain live. New content and canonical blocks reference HYDROCORE. Remove from TechnologyKey union after full consumer migration.',
+    sunsetNote: 'Migration to HYDROCORE complete 2026-06-11. Remove this entry after confirming no consumers reference the AQUAGUARD key.',
     comparisonFunction: 'Turbine-stage water separation',
     comparisonMetric: '99.8% free water · 95% emulsified removal',
     comparisonIndustries: 'Marine, Oil & Gas, Power Gen, Agriculture',
@@ -727,8 +727,8 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
 
   HYDROCORE_SERIES: {
     key: 'HYDROCORE_SERIES',
-    name: 'Aquaguard Series',
-    slug: 'aquaguard-series', // preserved — existing indexed route, do not change
+    name: 'Hydrocore Series',
+    slug: 'hydrocore-series',
     domain: 'Fuel Cleanliness',
     primaryTechnology: 'HYDROCORE',
     supportingTechnologies: [],

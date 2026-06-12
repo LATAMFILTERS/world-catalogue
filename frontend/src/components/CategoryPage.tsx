@@ -628,7 +628,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 Technologies Included
               </h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
+                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
                   <span
                     key={tech}
                     style={{

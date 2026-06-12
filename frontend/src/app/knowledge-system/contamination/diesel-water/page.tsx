@@ -341,7 +341,7 @@ export default function DieselWaterContaminationPage() {
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
-        keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'AQUAGUARD', 'MACROCORE', 'NANOFORCE'],
+        keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'MACROCORE', 'NANOFORCE'],
         about: { '@type': 'Thing', name: 'Diesel Water Contamination', description: 'Water ingress failure mechanism in diesel fuel systems causing injector precision degradation, corrosion, and microbial colonization through atmospheric moisture, condensation, and handling.' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -17,11 +17,6 @@ const TECHNOLOGIES = [
     slug: 'nanoforce',
     role: 'Nano-fiber coalescent media achieving ISO 8573-1 Class 1-2 particle removal at rated flow conditions, capturing sub-micron aerosols and oil mist before downstream instrumentation.',
   },
-  {
-    name: 'AQUAGUARD',
-    slug: 'aquaguard-series',
-    role: 'Coalescing element technology engineered for water and oil aerosol separation in compressed air distribution, achieving bulk liquid removal and maintaining dew point stability across operating pressure ranges.',
-  },
 ];
 
 const OPERATIONAL_IMPACTS = [

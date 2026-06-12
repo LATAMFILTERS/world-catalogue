@@ -341,7 +341,7 @@ export default function HydraulicSystemContaminationPage() {
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
-        keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'kidney loop filtration'],
+        keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'kidney loop filtration'],
         about: { '@type': 'Thing', name: 'Hydraulic System Contamination', description: 'Particle contamination failure mechanism in hydraulic systems causing valve spool stiction, orifice blockage, and fluid varnish that degrades system response and availability.' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
