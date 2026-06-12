@@ -3640,6 +3640,76 @@ app.post('/api/enrich/oem-codes', async (req, res) => {
   }
 });
 
+// ─── GET /api/catalog/fg-parts ───────────────────────────────────────────────
+// Returns {sku, part_number} for Fleetguard products by SKU prefix.
+// Query: ?prefix=EL8  or  ?prefix=EL8,EH6,EF9
+app.get('/api/catalog/fg-parts', async (req, res) => {
+  const prefixes = (req.query.prefix || '').split(',').map(p => p.trim().toUpperCase()).filter(Boolean);
+  if (!prefixes.length) return res.status(400).json({ error: 'prefix required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const conditions = prefixes.map((p, i) => `left(sku,3) = $${i+1}`).join(' OR ');
+    const result = await client.query(
+      `SELECT sku, codigo_base AS part_number
+       FROM elimfilters_catalog
+       WHERE sub_type ILIKE '%Fleetguard%'
+         AND sku IS NOT NULL AND codigo_base IS NOT NULL
+         AND (${conditions})
+       ORDER BY sku`,
+      prefixes
+    );
+    res.json({ count: result.rowCount, parts: result.rows });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── POST /api/enrich/brand-crossrefs-batch ──────────────────────────────────
+// Appends brand_crossrefs entries for multiple SKUs in one call.
+// Body: { key, updates: [{sku, brand, codes: ["LF3620", ...]}] }
+// Append-only: never removes existing entries.
+app.post('/api/enrich/brand-crossrefs-batch', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const { updates } = req.body;
+  if (!Array.isArray(updates) || !updates.length)
+    return res.status(400).json({ error: 'updates array required' });
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    let updated = 0, skipped = 0;
+    for (const u of updates) {
+      const { sku, brand, codes } = u;
+      if (!sku || !brand || !Array.isArray(codes) || !codes.length) { skipped++; continue; }
+      const brandKey = brand.toUpperCase();
+      const row = await client.query(
+        `SELECT brand_crossrefs FROM elimfilters_catalog WHERE sku = $1`, [sku]
+      );
+      if (!row.rows.length) { skipped++; continue; }
+      const existing = row.rows[0].brand_crossrefs || {};
+      const prev = existing[brandKey] || [];
+      const prevSet = new Set(prev.map(c => c.toUpperCase().replace(/[^A-Z0-9]/g, '')));
+      const toAdd = codes.filter(c => !prevSet.has(c.toUpperCase().replace(/[^A-Z0-9]/g, '')));
+      if (!toAdd.length) { skipped++; continue; }
+      const merged = { ...existing, [brandKey]: [...prev, ...toAdd] };
+      await client.query(
+        `UPDATE elimfilters_catalog SET brand_crossrefs = $1::jsonb WHERE sku = $2`,
+        [JSON.stringify(merged), sku]
+      );
+      updated++;
+    }
+    res.json({ success: true, updated, skipped });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
