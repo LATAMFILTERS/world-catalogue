@@ -47,7 +47,11 @@ log = logging.getLogger(__name__)
 API_BASE = "https://elimfilters-search-pro.onrender.com"
 API_KEY  = "elim2026"
 
-PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".fg_crossref_profile")
+PROFILE_DIRS = {
+    "oil":  os.path.join(os.path.expanduser("~"), ".fg_crossref_oil"),
+    "fuel": os.path.join(os.path.expanduser("~"), ".fg_crossref_fuel"),
+    "air":  os.path.join(os.path.expanduser("~"), ".fg_crossref_air"),
+}
 
 # Crossref site URLs — brand = FLEETGUARD
 SITES = {
@@ -125,9 +129,9 @@ def scrape_crossrefs(page, part: str, site: str) -> dict:
     return page.evaluate(_EXTRACT_JS)
 
 
-def _make_context(pw):
+def _make_context(pw, site="oil"):
     return pw.chromium.launch_persistent_context(
-        user_data_dir=PROFILE_DIR,
+        user_data_dir=PROFILE_DIRS[site],
         channel="chrome",
         headless=True,
         locale="en-US",
@@ -141,6 +145,44 @@ def _make_context(pw):
     )
 
 
+def _scrape_site(pw, site: str, parts: list, start_from: str, total_global: int, offset: int) -> tuple:
+    """Scrape all parts for a single site. Returns (updated, skipped)."""
+    total_updated = total_skipped = 0
+    BATCH = 50
+    ctx = _make_context(pw, site)
+    page = ctx.new_page()
+    batch: list = []
+
+    for i, prod in enumerate(parts, 1):
+        part = prod["part_number"].upper()
+        sku  = prod["sku"]
+
+        log.info(f"[{offset+i}/{total_global}] {part} ({sku}) site:{site}")
+        crossrefs = scrape_crossrefs(page, part, site)
+
+        if crossrefs:
+            brands = list(crossrefs.keys())
+            total_codes = sum(len(v) for v in crossrefs.values())
+            log.info(f"  → {len(brands)} marcas | {total_codes} códigos")
+            for brand, codes in crossrefs.items():
+                batch.append({"sku": sku, "brand": brand, "codes": codes})
+        else:
+            log.info(f"  → sin crossrefs")
+
+        if len(batch) >= BATCH or i == len(parts):
+            if batch:
+                result = push_crossrefs(batch)
+                total_updated += result.get("updated", 0)
+                total_skipped += result.get("skipped", 0)
+                log.info(f"  DB push: {result.get('updated')} updated, {result.get('skipped')} skipped")
+                batch = []
+
+        time.sleep(random.uniform(*PAUSE))
+
+    ctx.close()
+    return total_updated, total_skipped
+
+
 def run(prefixes: list, dry_run: bool = False, start_from: str = None):
     # Group prefixes by site
     by_site: dict = {}
@@ -151,64 +193,53 @@ def run(prefixes: list, dry_run: bool = False, start_from: str = None):
             continue
         by_site.setdefault(site, []).append(p)
 
-    all_parts = []
+    # Fetch parts per site
+    parts_by_site: dict = {}
+    total = 0
     for site, site_prefixes in by_site.items():
         parts = get_fg_parts(site_prefixes)
         for p in parts:
             p["site"] = site
-        all_parts.extend(parts)
+        parts_by_site[site] = parts
+        total += len(parts)
 
-    log.info(f"Total a scrapear: {len(all_parts)} productos FG")
+    log.info(f"Total a scrapear: {total} productos FG")
 
+    # Apply --start filter (applies to the full flattened list)
     if start_from:
         start_from = start_from.upper()
-        idx = next((i for i, p in enumerate(all_parts) if p["part_number"].upper() == start_from), 0)
-        all_parts = all_parts[idx:]
-        log.info(f"Reanudando desde {start_from} ({len(all_parts)} restantes)")
+        found = False
+        for site in list(parts_by_site.keys()):
+            if found:
+                break
+            for idx, p in enumerate(parts_by_site[site]):
+                if p["part_number"].upper() == start_from:
+                    parts_by_site[site] = parts_by_site[site][idx:]
+                    found = True
+                    break
+            else:
+                if not found:
+                    parts_by_site[site] = []
+        log.info(f"Reanudando desde {start_from}")
 
     if dry_run:
-        log.info("[DRY-RUN] Muestra primeros 5:")
-        for p in all_parts[:5]:
-            log.info(f"  {p['sku']} / {p['part_number']} → site:{p['site']}")
+        log.info("[DRY-RUN] Muestra primeros 5 por sitio:")
+        for site, parts in parts_by_site.items():
+            for p in parts[:5]:
+                log.info(f"  {p['sku']} / {p['part_number']} → site:{site}")
         return
 
     total_updated = total_skipped = 0
-    BATCH = 50  # push to DB every N products
 
     with sync_playwright() as pw:
-        ctx = _make_context(pw)
-        page = ctx.new_page()
-        batch: list = []
-
-        for i, prod in enumerate(all_parts, 1):
-            part = prod["part_number"].upper()
-            sku  = prod["sku"]
-            site = prod["site"]
-
-            log.info(f"[{i}/{len(all_parts)}] {part} ({sku}) site:{site}")
-            crossrefs = scrape_crossrefs(page, part, site)
-
-            if crossrefs:
-                brands = list(crossrefs.keys())
-                total_codes = sum(len(v) for v in crossrefs.values())
-                log.info(f"  → {len(brands)} marcas | {total_codes} códigos")
-                for brand, codes in crossrefs.items():
-                    batch.append({"sku": sku, "brand": brand, "codes": codes})
-            else:
-                log.info(f"  → sin crossrefs")
-
-            # Push batch
-            if len(batch) >= BATCH or i == len(all_parts):
-                if batch:
-                    result = push_crossrefs(batch)
-                    total_updated += result.get("updated", 0)
-                    total_skipped += result.get("skipped", 0)
-                    log.info(f"  DB push: {result.get('updated')} updated, {result.get('skipped')} skipped")
-                    batch = []
-
-            time.sleep(random.uniform(*PAUSE))
-
-        ctx.close()
+        offset = 0
+        for site, parts in parts_by_site.items():
+            if not parts:
+                continue
+            u, s = _scrape_site(pw, site, parts, start_from, total, offset)
+            total_updated += u
+            total_skipped += s
+            offset += len(parts)
 
     log.info(f"\n✅ Completado — DB updated: {total_updated} | skipped: {total_skipped}")
 
@@ -229,7 +260,7 @@ if __name__ == "__main__":
         prefix = part[:3]
         site = PREFIX_SITE.get(prefix, "oil")
         with sync_playwright() as pw:
-            ctx = _make_context(pw)
+            ctx = _make_context(pw, site)
             page = ctx.new_page()
             result = scrape_crossrefs(page, part, site)
             ctx.close()
