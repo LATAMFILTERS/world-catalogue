@@ -3710,6 +3710,140 @@ app.post('/api/enrich/brand-crossrefs-batch', async (req, res) => {
   }
 });
 
+// ─── POST /api/catalog/merge-fg-into-don ─────────────────────────────────────
+// Merges Fleetguard records into matched Donaldson records, then deletes the FG
+// duplicates. Safe: runs in a transaction, supports dry_run=true preview.
+// Body: { key, dry_run: true|false }
+app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
+  const { key, dry_run = true } = req.body || {};
+  if (key !== 'elim2026') return res.status(401).json({ error: 'unauthorized' });
+
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  await client.connect();
+  try {
+    // Find all (don_sku, fg_sku) pairs via competitor_codes
+    const pairsRes = await client.query(`
+      SELECT d.sku AS don_sku,
+             elem->>'linked_sku'    AS fg_sku,
+             elem->>'part_number'   AS fg_part
+      FROM elimfilters_catalog d,
+           jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
+      WHERE elem->>'brand' = 'FLEETGUARD'
+        AND elem->>'linked_sku' IS NOT NULL
+        AND elem->>'linked_sku' <> ''
+    `);
+    const pairs     = pairsRes.rows;
+    const fg_skus   = [...new Set(pairs.map(p => p.fg_sku))];
+    const don_count = new Set(pairs.map(p => p.don_sku)).size;
+
+    if (dry_run) {
+      return res.json({
+        dry_run: true,
+        pairs_found:      pairs.length,
+        don_to_enrich:    don_count,
+        fg_to_delete:     fg_skus.length,
+        sample_pairs:     pairs.slice(0, 5)
+      });
+    }
+
+    await client.query('BEGIN');
+
+    // ── Step 1: merge brand_crossrefs from FG into DON ──────────────────────
+    const r1 = await client.query(`
+      WITH pairs AS (
+        SELECT d.sku AS don_sku, elem->>'linked_sku' AS fg_sku
+        FROM elimfilters_catalog d,
+             jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
+        WHERE elem->>'brand' = 'FLEETGUARD'
+          AND elem->>'linked_sku' IS NOT NULL AND elem->>'linked_sku' <> ''
+      ),
+      fg_expanded AS (
+        SELECT p.don_sku, kv.k AS brand, jsonb_array_elements_text(kv.v) AS code
+        FROM pairs p
+        JOIN elimfilters_catalog f ON f.sku = p.fg_sku,
+             jsonb_each(COALESCE(f.brand_crossrefs,'{}')) kv(k,v)
+      ),
+      fg_by_brand AS (
+        SELECT don_sku, brand, jsonb_agg(DISTINCT code) AS codes
+        FROM fg_expanded GROUP BY don_sku, brand
+      ),
+      fg_obj AS (
+        SELECT don_sku, jsonb_object_agg(brand, codes) AS fg_refs
+        FROM fg_by_brand GROUP BY don_sku
+      ),
+      merged AS (
+        SELECT d.sku,
+          (SELECT jsonb_object_agg(b, jsonb_agg(DISTINCT c ORDER BY c))
+           FROM (
+             SELECT key AS b, jsonb_array_elements_text(value) AS c
+             FROM jsonb_each(COALESCE(d.brand_crossrefs,'{}'))
+             UNION ALL
+             SELECT key AS b, jsonb_array_elements_text(value) AS c
+             FROM jsonb_each(COALESCE(m.fg_refs,'{}'))
+           ) x GROUP BY b
+          ) AS new_refs
+        FROM elimfilters_catalog d
+        JOIN fg_obj m ON m.don_sku = d.sku
+      )
+      UPDATE elimfilters_catalog t
+      SET brand_crossrefs = m.new_refs
+      FROM merged m WHERE t.sku = m.sku
+      RETURNING t.sku
+    `);
+
+    // ── Step 2: merge oem_codes from FG into DON ────────────────────────────
+    const r2 = await client.query(`
+      WITH pairs AS (
+        SELECT d.sku AS don_sku, elem->>'linked_sku' AS fg_sku
+        FROM elimfilters_catalog d,
+             jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
+        WHERE elem->>'brand' = 'FLEETGUARD'
+          AND elem->>'linked_sku' IS NOT NULL AND elem->>'linked_sku' <> ''
+      ),
+      fg_oem AS (
+        SELECT p.don_sku, jsonb_agg(elem) AS oems
+        FROM pairs p
+        JOIN elimfilters_catalog f ON f.sku = p.fg_sku,
+             jsonb_array_elements(COALESCE(f.oem_codes,'[]'::jsonb)) elem
+        GROUP BY p.don_sku
+      )
+      UPDATE elimfilters_catalog t
+      SET oem_codes = (
+        SELECT jsonb_agg(DISTINCT elem ORDER BY elem::text)
+        FROM jsonb_array_elements(
+          COALESCE(t.oem_codes,'[]'::jsonb) || fo.oems
+        ) elem
+      )
+      FROM fg_oem fo
+      WHERE t.sku = fo.don_sku
+      RETURNING t.sku
+    `);
+
+    // ── Step 3: delete merged FG records ────────────────────────────────────
+    const r3 = await client.query(
+      `DELETE FROM elimfilters_catalog WHERE sku = ANY($1) RETURNING sku`,
+      [fg_skus]
+    );
+
+    await client.query('COMMIT');
+
+    res.json({
+      dry_run:         false,
+      refs_merged:     r1.rowCount,
+      oem_merged:      r2.rowCount,
+      fg_deleted:      r3.rowCount,
+      sample_deleted:  r3.rows.slice(0, 5).map(r => r.sku)
+    });
+
+  } catch (err) {
+    await client.query('ROLLBACK').catch(() => {});
+    console.error('merge-fg-into-don error:', err);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
