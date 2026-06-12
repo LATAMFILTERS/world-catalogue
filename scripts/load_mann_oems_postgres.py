@@ -34,8 +34,20 @@ DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "postgresql://catalogo_elimfilters_user:d1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf"
     "@dpg-d86ju1p9rddc739lc230-a.oregon-postgres.render.com/catalogo_elimfilters"
-    "?sslmode=require"
 )
+
+def _connect(url=DATABASE_URL):
+    from urllib.parse import urlparse
+    p = urlparse(url)
+    return psycopg2.connect(
+        host=p.hostname,
+        port=p.port or 5432,
+        dbname=p.path.lstrip('/').split('?')[0],
+        user=p.username,
+        password=p.password,
+        sslmode='require',
+    )
+
 
 DDL = """
 DROP TABLE IF EXISTS mann_oem_clean;
@@ -79,7 +91,7 @@ def main():
 
     # Connect
     try:
-        conn = psycopg2.connect(DATABASE_URL)
+        conn = _connect()
     except Exception as e:
         print(f"ERROR connecting to DB: {e}")
         sys.exit(1)
