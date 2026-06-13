@@ -3,7 +3,8 @@
 -- Links INTEKCORE housings to MACROCORE elements via Donaldson Family codes.
 --
 -- Source: donaldson_air-intake_results.json + donaldson_air_results.json
--- Method: cross_reference — shared Family attribute implies compatibility.
+-- model_code / element_code = elimfilters SKU (EA2XXXX / EA1XXXX).
+-- Method: cross_reference — shared Donaldson Family attribute.
 -- Confidence: INFERRED
 -- is_primary: TRUE for Type=Primary elements, FALSE for Safety/other.
 --
@@ -24,8 +25,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('A092037', 'A112018', 'A112078', 'A132001')
-  AND pe.element_code IN ('P129396', 'P129472', 'P140822', 'P141228', 'P151097', 'P181008', 'P181009', 'P181016', 'P181017', 'P182007', 'P182008', 'P182016')
+WHERE pm.model_code IN ('EA22037', 'EA22018', 'EA22078', 'EA22001')
+  AND pe.element_code IN ('EA19396', 'EA19472', 'EA10822', 'EA11228', 'EA11097', 'EA11008', 'EA11009', 'EA11016', 'EA11017', 'EA12007', 'EA12008', 'EA12016')
 ON CONFLICT DO NOTHING;
 
 -- ── Family EBB: 3 housings × 9 elements ──────────────────────────
@@ -39,8 +40,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B120271', 'B140044', 'B160049')
-  AND pe.element_code IN ('P181015', 'P181019', 'P181021', 'P181028', 'P181030', 'P181099', 'P182015', 'P182028', 'P182099')
+WHERE pm.model_code IN ('EA20271', 'EA20044', 'EA20049')
+  AND pe.element_code IN ('EA11015', 'EA11019', 'EA11021', 'EA181028', 'EA11030', 'EA11099', 'EA12015', 'EA12028', 'EA12099')
 ON CONFLICT DO NOTHING;
 
 -- ── Family ECG: 8 housings × 10 elements ──────────────────────────
@@ -54,8 +55,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G092001', 'G092401', 'G112001', 'G112404', 'G112417', 'G112501', 'G112504', 'G132000')
-  AND pe.element_code IN ('P142100', 'P148043', 'P148044', 'P150692', 'P150693', 'P150694', 'P150695', 'P153551', 'P154575', 'P537791')
+WHERE pm.model_code IN ('EA292001', 'EA22401', 'EA212001', 'EA22404', 'EA22417', 'EA22501', 'EA22504', 'EA22000')
+  AND pe.element_code IN ('EA12100', 'EA18043', 'EA18044', 'EA10692', 'EA10693', 'EA10694', 'EA10695', 'EA13551', 'EA14575', 'EA17791')
 ON CONFLICT DO NOTHING;
 
 -- ── Family EPG: 6 housings × 6 elements ──────────────────────────
@@ -69,8 +70,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G110119', 'G110120', 'G130079', 'G130089', 'G150048', 'G150049')
-  AND pe.element_code IN ('P527484', 'P527682', 'P533930')
+WHERE pm.model_code IN ('EA20119', 'EA20120', 'EA20079', 'EA20089', 'EA20048', 'EA250049')
+  AND pe.element_code IN ('EA17484', 'EA17682', 'EA13930')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -82,8 +83,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G110119', 'G110120', 'G130079', 'G130089', 'G150048', 'G150049')
-  AND pe.element_code IN ('P527680', 'P527683', 'P533890')
+WHERE pm.model_code IN ('EA20119', 'EA20120', 'EA20079', 'EA20089', 'EA20048', 'EA250049')
+  AND pe.element_code IN ('EA17680', 'EA17683', 'EA13890')
 ON CONFLICT DO NOTHING;
 
 -- ── Family ERA: 4 housings × 4 elements ──────────────────────────
@@ -97,8 +98,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('A110052', 'A130115', 'A150138', 'A150141')
-  AND pe.element_code IN ('P544243', 'P544301', 'P544741', 'P544950')
+WHERE pm.model_code IN ('EA20052', 'EA20115', 'EA20138', 'EA20141')
+  AND pe.element_code IN ('EA14243', 'EA14301', 'EA14741', 'EA14950')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FHG: 5 housings × 27 elements ──────────────────────────
@@ -112,8 +113,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052626', 'G065256', 'G080372', 'G120037', 'G160048')
-  AND pe.element_code IN ('P148573', 'P148586', 'P181002', 'P181034', 'P181046', 'P181059', 'P181062', 'P181063', 'P181064', 'P181072', 'P182002', 'P182034', 'P182046', 'P182059', 'P182062', 'P182063', 'P182064', 'P182072')
+WHERE pm.model_code IN ('EA22626', 'EA25256', 'EA20372', 'EA20037', 'EA260048')
+  AND pe.element_code IN ('EA18573', 'EA18586', 'EA11002', 'EA11034', 'EA11046', 'EA11059', 'EA11062', 'EA11063', 'EA11064', 'EA11072', 'EA12002', 'EA12034', 'EA12046', 'EA12059', 'EA12062', 'EA12063', 'EA12064', 'EA12072')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -125,8 +126,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052626', 'G065256', 'G080372', 'G120037', 'G160048')
-  AND pe.element_code IN ('P112212', 'P119372', 'P119373', 'P119374', 'P119375', 'P119410', 'P119539', 'P119778', 'P120307')
+WHERE pm.model_code IN ('EA22626', 'EA25256', 'EA20372', 'EA20037', 'EA260048')
+  AND pe.element_code IN ('EA12212', 'EA19372', 'EA19373', 'EA19374', 'EA19375', 'EA19410', 'EA19539', 'EA19778', 'EA10307')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FKB: 3 housings × 6 elements ──────────────────────────
@@ -140,8 +141,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B045008', 'B055006', 'B065045')
-  AND pe.element_code IN ('P604457', 'P609218', 'P609221')
+WHERE pm.model_code IN ('EA25008', 'EA25006', 'EA25045')
+  AND pe.element_code IN ('EA14457', 'EA19218', 'EA19221')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -153,8 +154,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B045008', 'B055006', 'B065045')
-  AND pe.element_code IN ('P602427', 'P603729', 'P608599')
+WHERE pm.model_code IN ('EA25008', 'EA25006', 'EA25045')
+  AND pe.element_code IN ('EA12427', 'EA13729', 'EA18599')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FPG: 25 housings × 17 elements ──────────────────────────
@@ -168,8 +169,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G042544', 'G042545', 'G052741', 'G052742', 'G057511', 'G057512', 'G057513', 'G057514', 'G065411', 'G065424', 'G065432', 'G065433', 'G070009', 'G070017', 'G070018', 'G070019', 'G070020', 'G082525', 'G082526', 'G082527', 'G082528', 'G090219', 'G090225', 'G100317', 'G100319')
-  AND pe.element_code IN ('P532410', 'P780522', 'P781039', 'P821575', 'P822686', 'P822768', 'P827653', 'P828889', 'P831424', 'P831520')
+WHERE pm.model_code IN ('EA22544', 'EA22545', 'EA22741', 'EA22742', 'EA27511', 'EA27512', 'EA27513', 'EA27514', 'EA25411', 'EA25424', 'EA25432', 'EA25433', 'EA20009', 'EA270017', 'EA20018', 'EA270019', 'EA20020', 'EA22525', 'EA282526', 'EA282527', 'EA22528', 'EA20219', 'EA20225', 'EA20317', 'EA20319')
+  AND pe.element_code IN ('EA12410', 'EA10522', 'EA181039', 'EA121575', 'EA12686', 'EA12768', 'EA17653', 'EA18889', 'EA11424', 'EA131520')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -181,8 +182,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G042544', 'G042545', 'G052741', 'G052742', 'G057511', 'G057512', 'G057513', 'G057514', 'G065411', 'G065424', 'G065432', 'G065433', 'G070009', 'G070017', 'G070018', 'G070019', 'G070020', 'G082525', 'G082526', 'G082527', 'G082528', 'G090219', 'G090225', 'G100317', 'G100319')
-  AND pe.element_code IN ('P535396', 'P777639', 'P780523', 'P822769', 'P822858', 'P829332', 'P829333')
+WHERE pm.model_code IN ('EA22544', 'EA22545', 'EA22741', 'EA22742', 'EA27511', 'EA27512', 'EA27513', 'EA27514', 'EA25411', 'EA25424', 'EA25432', 'EA25433', 'EA20009', 'EA270017', 'EA20018', 'EA270019', 'EA20020', 'EA22525', 'EA282526', 'EA282527', 'EA22528', 'EA20219', 'EA20225', 'EA20317', 'EA20319')
+  AND pe.element_code IN ('EA135396', 'EA17639', 'EA10523', 'EA12769', 'EA12858', 'EA19332', 'EA19333')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FRG: 23 housings × 24 elements ──────────────────────────
@@ -196,8 +197,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052685', 'G052686', 'G065541', 'G065551', 'G080582', 'G080585', 'G090245', 'G090250', 'G100297', 'G100395', 'G100398', 'G110206', 'G110214', 'G120415', 'G120417', 'G130097', 'G130107', 'G140523', 'G140526', 'G150092', 'G160679', 'G180031', 'G180087')
-  AND pe.element_code IN ('P532503', 'P532966', 'P536457', 'P537876', 'P549271', 'P549523', 'P600043', 'P601280', 'P601437', 'P601767', 'P601790', 'P777868', 'P781098')
+WHERE pm.model_code IN ('EA22685', 'EA22686', 'EA25541', 'EA25551', 'EA20582', 'EA20585', 'EA20245', 'EA20250', 'EA20297', 'EA20395', 'EA200398', 'EA20206', 'EA20214', 'EA20415', 'EA20417', 'EA20097', 'EA20107', 'EA20523', 'EA20526', 'EA20092', 'EA20679', 'EA20031', 'EA20087')
+  AND pe.element_code IN ('EA12503', 'EA12966', 'EA16457', 'EA17876', 'EA19271', 'EA19523', 'EA10043', 'EA101280', 'EA11437', 'EA11767', 'EA11790', 'EA17868', 'EA1781098')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -209,8 +210,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052685', 'G052686', 'G065541', 'G065551', 'G080582', 'G080585', 'G090245', 'G090250', 'G100297', 'G100395', 'G100398', 'G110206', 'G110214', 'G120415', 'G120417', 'G130097', 'G130107', 'G140523', 'G140526', 'G150092', 'G160679', 'G180031', 'G180087')
-  AND pe.element_code IN ('P532504', 'P533781', 'P536492', 'P549277', 'P549530', 'P600047', 'P601286', 'P601476', 'P601774', 'P777869', 'P781102')
+WHERE pm.model_code IN ('EA22685', 'EA22686', 'EA25541', 'EA25551', 'EA20582', 'EA20585', 'EA20245', 'EA20250', 'EA20297', 'EA20395', 'EA200398', 'EA20206', 'EA20214', 'EA20415', 'EA20417', 'EA20097', 'EA20107', 'EA20523', 'EA20526', 'EA20092', 'EA20679', 'EA20031', 'EA20087')
+  AND pe.element_code IN ('EA12504', 'EA13781', 'EA16492', 'EA19277', 'EA19530', 'EA10047', 'EA11286', 'EA11476', 'EA11774', 'EA17869', 'EA181102')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FTG: 3 housings × 4 elements ──────────────────────────
@@ -224,8 +225,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G180011', 'G210007', 'G210010')
-  AND pe.element_code IN ('P181082', 'P182082')
+WHERE pm.model_code IN ('EA20011', 'EA20007', 'EA20010')
+  AND pe.element_code IN ('EA11082', 'EA12082')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -237,8 +238,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G180011', 'G210007', 'G210010')
-  AND pe.element_code IN ('P127309', 'P138722')
+WHERE pm.model_code IN ('EA20011', 'EA20007', 'EA20010')
+  AND pe.element_code IN ('EA17309', 'EA18722')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FVG: 3 housings × 8 elements ──────────────────────────
@@ -252,8 +253,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G140195', 'G160376', 'G160587')
-  AND pe.element_code IN ('P124867', 'P181043', 'P181049', 'P182043', 'P182049')
+WHERE pm.model_code IN ('EA20195', 'EA260376', 'EA20587')
+  AND pe.element_code IN ('EA14867', 'EA11043', 'EA11049', 'EA12043', 'EA12049')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -265,8 +266,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G140195', 'G160376', 'G160587')
-  AND pe.element_code IN ('P116446', 'P124860', 'P124866')
+WHERE pm.model_code IN ('EA20195', 'EA260376', 'EA20587')
+  AND pe.element_code IN ('EA16446', 'EA14860', 'EA14866')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FWA: 9 housings × 14 elements ──────────────────────────
@@ -280,8 +281,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('A052526', 'A052527', 'A065007', 'A065015', 'A080022', 'A100017', 'A100019', 'A120003', 'A120036')
-  AND pe.element_code IN ('P148968', 'P181000', 'P181001', 'P181035', 'P181045', 'P181050', 'P181054', 'P182000', 'P182001', 'P182035', 'P182045', 'P182050', 'P182052', 'P182054')
+WHERE pm.model_code IN ('EA22526', 'EA22527', 'EA25007', 'EA25015', 'EA20022', 'EA20017', 'EA20019', 'EA20003', 'EA20036')
+  AND pe.element_code IN ('EA18968', 'EA11000', 'EA11001', 'EA11035', 'EA11045', 'EA11050', 'EA11054', 'EA12000', 'EA12001', 'EA12035', 'EA12045', 'EA12050', 'EA182052', 'EA12054')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FWB: 1 housings × 1 elements ──────────────────────────
@@ -295,8 +296,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B100002')
-  AND pe.element_code IN ('P101038')
+WHERE pm.model_code IN ('EA20002')
+  AND pe.element_code IN ('EA11038')
 ON CONFLICT DO NOTHING;
 
 -- ── Family FWG: 15 housings × 5 elements ──────────────────────────
@@ -310,8 +311,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G042503', 'G052510', 'G052512', 'G065008', 'G065012', 'G065266', 'G080023', 'G080026', 'G100003', 'G100004', 'G120059', 'G120063', 'G140077', 'G140083', 'G160104')
-  AND pe.element_code IN ('P122510', 'P122514', 'P148966', 'P148970', 'P181052')
+WHERE pm.model_code IN ('EA22503', 'EA22510', 'EA22512', 'EA2065008', 'EA25012', 'EA25266', 'EA20023', 'EA20026', 'EA200003', 'EA20004', 'EA20059', 'EA20063', 'EA20077', 'EA20083', 'EA20104')
+  AND pe.element_code IN ('EA12510', 'EA12514', 'EA18966', 'EA18970', 'EA11052')
 ON CONFLICT DO NOTHING;
 
 -- ── Family PSD: 20 housings × 27 elements ──────────────────────────
@@ -325,8 +326,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('D080056', 'D090055', 'D090266', 'D090278', 'D090285', 'D090287', 'D100366', 'D100384', 'D100390', 'D100391', 'D100397', 'D100398', 'D120320', 'D120338', 'D120339', 'D120340', 'D140078', 'D140088', 'D140110', 'D140111')
-  AND pe.element_code IN ('DBA5394', 'DBA5395', 'DBA5396', 'DBA5397', 'DBA5398', 'DBA5399', 'DBA5400', 'P608533', 'P608665', 'P608666', 'P608667', 'P608675', 'P608676', 'P608677', 'P617631', 'P621983', 'P639937', 'P641172', 'P641175', 'P641176', 'P641182', 'P957050')
+WHERE pm.model_code IN ('EA20056', 'EA20055', 'EA20266', 'EA20278', 'EA20285', 'EA20287', 'EA20366', 'EA20384', 'EA20390', 'EA20391', 'EA20397', 'EA20398', 'EA20320', 'EA20338', 'EA20339', 'EA20340', 'EA20078', 'EA20088', 'EA20110', 'EA20111')
+  AND pe.element_code IN ('EA15394', 'EA15395', 'EA15396', 'EA15397', 'EA15398', 'EA15399', 'EA15400', 'EA18533', 'EA108665', 'EA108666', 'EA18667', 'EA108675', 'EA108676', 'EA108677', 'EA17631', 'EA11983', 'EA19937', 'EA11172', 'EA11175', 'EA11176', 'EA11182', 'EA17050')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -338,8 +339,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('D080056', 'D090055', 'D090266', 'D090278', 'D090285', 'D090287', 'D100366', 'D100384', 'D100390', 'D100391', 'D100397', 'D100398', 'D120320', 'D120338', 'D120339', 'D120340', 'D140078', 'D140088', 'D140110', 'D140111')
-  AND pe.element_code IN ('P600975', 'P601560', 'P606121', 'P607557', 'P615493')
+WHERE pm.model_code IN ('EA20056', 'EA20055', 'EA20266', 'EA20278', 'EA20285', 'EA20287', 'EA20366', 'EA20384', 'EA20390', 'EA20391', 'EA20397', 'EA20398', 'EA20320', 'EA20338', 'EA20339', 'EA20340', 'EA20078', 'EA20088', 'EA20110', 'EA20111')
+  AND pe.element_code IN ('EA10975', 'EA11560', 'EA16121', 'EA17557', 'EA15493')
 ON CONFLICT DO NOTHING;
 
 -- ── Family PowerPleat: 9 housings × 4 elements ──────────────────────────
@@ -353,8 +354,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052828', 'G052829', 'G110468', 'G110469', 'G110474', 'G110475', 'G130372', 'G130374', 'G130375')
-  AND pe.element_code IN ('P626096', 'P628805')
+WHERE pm.model_code IN ('EA22828', 'EA22829', 'EA20468', 'EA20469', 'EA20474', 'EA20475', 'EA230372', 'EA20374', 'EA20375')
+  AND pe.element_code IN ('EA16096', 'EA18805')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -366,8 +367,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G052828', 'G052829', 'G110468', 'G110469', 'G110474', 'G110475', 'G130372', 'G130374', 'G130375')
-  AND pe.element_code IN ('P626104', 'P628802')
+WHERE pm.model_code IN ('EA22828', 'EA22829', 'EA20468', 'EA20469', 'EA20474', 'EA20475', 'EA230372', 'EA20374', 'EA20375')
+  AND pe.element_code IN ('EA16104', 'EA18802')
 ON CONFLICT DO NOTHING;
 
 -- ── Family SBG: 4 housings × 13 elements ──────────────────────────
@@ -381,8 +382,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G100161', 'G120251', 'G140261', 'G160035')
-  AND pe.element_code IN ('P181031', 'P181033', 'P181036', 'P181037', 'P181068', 'P181071', 'P182031', 'P182032', 'P182033', 'P182036', 'P182037', 'P182068', 'P182071')
+WHERE pm.model_code IN ('EA20161', 'EA20251', 'EA20261', 'EA20035')
+  AND pe.element_code IN ('EA11031', 'EA11033', 'EA11036', 'EA11037', 'EA11068', 'EA11071', 'EA12031', 'EA12032', 'EA12033', 'EA12036', 'EA12037', 'EA12068', 'EA12071')
 ON CONFLICT DO NOTHING;
 
 -- ── Family SRG: 2 housings × 5 elements ──────────────────────────
@@ -396,8 +397,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G200086', 'G200087')
-  AND pe.element_code IN ('P181038', 'P181040', 'P182038', 'P182040')
+WHERE pm.model_code IN ('EA20086', 'EA200087')
+  AND pe.element_code IN ('EA181038', 'EA11040', 'EA12038', 'EA12040')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -409,8 +410,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G200086', 'G200087')
-  AND pe.element_code IN ('P115070')
+WHERE pm.model_code IN ('EA20086', 'EA200087')
+  AND pe.element_code IN ('EA15070')
 ON CONFLICT DO NOTHING;
 
 -- ── Family SSG: 5 housings × 3 elements ──────────────────────────
@@ -424,8 +425,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G200088', 'G290052', 'G290053', 'G290055', 'G290057')
-  AND pe.element_code IN ('DBA7152', 'P608306')
+WHERE pm.model_code IN ('EA200088', 'EA290052', 'EA20053', 'EA290055', 'EA20057')
+  AND pe.element_code IN ('EA17152', 'EA18306')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -437,8 +438,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G200088', 'G290052', 'G290053', 'G290055', 'G290057')
-  AND pe.element_code IN ('P609518')
+WHERE pm.model_code IN ('EA200088', 'EA290052', 'EA20053', 'EA290055', 'EA20057')
+  AND pe.element_code IN ('EA19518')
 ON CONFLICT DO NOTHING;
 
 -- ── Family STB: 2 housings × 3 elements ──────────────────────────
@@ -452,8 +453,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B140019', 'B160071')
-  AND pe.element_code IN ('P127075')
+WHERE pm.model_code IN ('EA240019', 'EA20071')
+  AND pe.element_code IN ('EA17075')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -465,8 +466,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B140019', 'B160071')
-  AND pe.element_code IN ('P119371', 'P124837')
+WHERE pm.model_code IN ('EA240019', 'EA20071')
+  AND pe.element_code IN ('EA19371', 'EA14837')
 ON CONFLICT DO NOTHING;
 
 -- ── Family STG: 6 housings × 12 elements ──────────────────────────
@@ -480,8 +481,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G120332', 'G140076', 'G160077', 'G160445', 'G161006', 'G161020')
-  AND pe.element_code IN ('DBA7039', 'P181039', 'P181041', 'P181042', 'P181044', 'P182039', 'P182041', 'P182042', 'P182044')
+WHERE pm.model_code IN ('EA20332', 'EA20076', 'EA260077', 'EA20445', 'EA21006', 'EA21020')
+  AND pe.element_code IN ('EA17039', 'EA11039', 'EA11041', 'EA11042', 'EA11044', 'EA12039', 'EA12041', 'EA12042', 'EA12044')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -493,8 +494,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('G120332', 'G140076', 'G160077', 'G160445', 'G161006', 'G161020')
-  AND pe.element_code IN ('P114931', 'P119370', 'P128408')
+WHERE pm.model_code IN ('EA20332', 'EA20076', 'EA260077', 'EA20445', 'EA21006', 'EA21020')
+  AND pe.element_code IN ('EA14931', 'EA19370', 'EA18408')
 ON CONFLICT DO NOTHING;
 
 -- ── Family XRB: 3 housings × 6 elements ──────────────────────────
@@ -508,8 +509,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B080080', 'B100127', 'B120470')
-  AND pe.element_code IN ('P608116', 'P611190', 'P611539')
+WHERE pm.model_code IN ('EA20080', 'EA20127', 'EA20470')
+  AND pe.element_code IN ('EA18116', 'EA11190', 'EA11539')
 ON CONFLICT DO NOTHING;
 INSERT INTO model_element_compatibility (
   product_model_id, product_element_id,
@@ -521,8 +522,8 @@ INSERT INTO model_element_compatibility (
   NOW(), 'cross_reference', 'INFERRED'
 FROM product_model pm
 CROSS JOIN product_element pe
-WHERE pm.model_code IN ('B080080', 'B100127', 'B120470')
-  AND pe.element_code IN ('P608391', 'P611189', 'P611540')
+WHERE pm.model_code IN ('EA20080', 'EA20127', 'EA20470')
+  AND pe.element_code IN ('EA18391', 'EA111189', 'EA11540')
 ON CONFLICT DO NOTHING;
 
 COMMIT;

@@ -454,7 +454,7 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
 
       const verify = await client.query(`
         SELECT
-          COUNT(*) FILTER (WHERE pe.element_code LIKE 'P1%' OR pe.element_code LIKE 'P5%' OR pe.element_code LIKE 'P6%' OR pe.element_code LIKE 'DBA%') AS total_pairs,
+          COUNT(*)                                       AS total_pairs,
           COUNT(*) FILTER (WHERE mec.is_primary = TRUE)  AS primary_pairs,
           COUNT(*) FILTER (WHERE mec.is_primary = FALSE) AS safety_pairs,
           COUNT(DISTINCT mec.product_model_id)           AS housings_linked,
@@ -462,7 +462,9 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
         FROM model_element_compatibility mec
         JOIN product_model pm   ON pm.id = mec.product_model_id
         JOIN product_element pe ON pe.id = mec.product_element_id
-        WHERE mec.compatibility_method = 'cross_reference'
+        WHERE pm.model_code   LIKE 'EA2%'
+          AND pe.element_code LIKE 'EA1%'
+          AND mec.compatibility_method     = 'cross_reference'
           AND mec.compatibility_confidence = 'INFERRED'
       `);
 
