@@ -160,41 +160,26 @@ def make_context(pw, headless: bool = False):
 
 # ── MANN fitment extractor ─────────────────────────────────────────────────
 _MANN_FITMENT_JS = """() => {
-    // MANN ph-en AEM Accordion structure (2 nested levels):
-    //   Level-1: MAKE accordion  (e.g. ALFA ROMEO)
-    //   Level-2: MODEL FAMILY accordion  (e.g. 2300 Berlina)
-    //   Inside: div.cmp-application-table > table
+    // MANN ph-en AEM Accordion — actual DOM structure discovered via ancestry dump:
     //
-    // A "panel" = any node that has a .cmp-accordion__button as a preceding sibling.
-    // We don't rely on cmp-accordion__panel class or aria-controls.
+    //   DIV.cmp-accordion__item
+    //     H3.cmp-accordion__header          ← "AGRIFULL"  (make label)
+    //     DIV.cmp-accordion__panel
+    //       DIV.aem-GridColumn > DIV.aem-Grid > DIV.cmp-accordion.cmp-accordion__nested
+    //         DIV.cmp-accordion__item
+    //           H3.cmp-accordion__header     ← "80-Serie"  (model family label)
+    //           DIV.cmp-accordion__panel
+    //             div.cmp-application-table > table
     //
-    // findAncestorButtons: walks up the DOM, at each level checks ALL preceding siblings.
-    // If one is a cmp-accordion__button → that's the controlling button for this level.
-    // Returns [model_family_btn_text, make_btn_text] (innermost first).
+    // Key facts:
+    //  • Panels use class 'cmp-accordion__panel'  → closest() works
+    //  • The element immediately BEFORE each panel is H3.cmp-accordion__header
+    //    (NOT a button!) — textContent = label text
 
     const SKIP = new Set([
         'Model Type','Filter Type','Engine Code',
         'ccm','kW','HP','Year of Manufacture','-',''
     ]);
-
-    function findAncestorButtons(startEl, want) {
-        const found = [];
-        let node = startEl.parentElement;
-        let safety = 0;
-        while (node && found.length < want && safety++ < 25) {
-            let prev = node.previousElementSibling;
-            while (prev) {
-                if (prev.classList?.contains('cmp-accordion__button')) {
-                    const txt = prev.textContent.trim();
-                    if (txt) { found.push(txt); }
-                    break;  // only take the nearest button at this DOM level
-                }
-                prev = prev.previousElementSibling;
-            }
-            node = node.parentElement;
-        }
-        return found;  // [model_family, make, ...]
-    }
 
     const rows = [];
 
@@ -202,9 +187,13 @@ _MANN_FITMENT_JS = """() => {
         const table = appDiv.querySelector('table');
         if (!table) return;
 
-        const btns      = findAncestorButtons(appDiv, 2);
-        const modelFamily = btns[0] || '';
-        const makeName    = btns[1] || '';
+        // Find the two ancestor accordion panels
+        const innerPanel = appDiv.closest('.cmp-accordion__panel');
+        const outerPanel = innerPanel?.parentElement?.closest('.cmp-accordion__panel');
+
+        // The element immediately preceding each panel is the H3 header with the label
+        const modelFamily = (innerPanel?.previousElementSibling?.textContent || '').trim();
+        const makeName    = (outerPanel?.previousElementSibling?.textContent  || '').trim();
 
         // Column index map from <th>
         const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
@@ -224,7 +213,7 @@ _MANN_FITMENT_JS = """() => {
             const cells = [...tr.querySelectorAll('td')]
                 .map(td => td.textContent.trim().replace(/\\s+/g, ' '));
             if (!cells.length) continue;
-            if (SKIP.has(cells[0])) continue;  // skip all label-repeat rows
+            if (SKIP.has(cells[0])) continue;
 
             const clean = (v) => (v === '-' || v === '–') ? '' : v;
 
@@ -241,7 +230,6 @@ _MANN_FITMENT_JS = """() => {
         }
     });
 
-    // Only keep rows with at least some data
     return rows.filter(r => r.make || r.model_family || r.model_type || r.engine_code || r.year);
 }"""
 
