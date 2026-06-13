@@ -31,6 +31,11 @@
  *     → Runs 007_fix_500fg_micron_ratings.sql. Corrects SM-OR (2µm) and PM-OR (30µm)
  *       per Parker datasheet 15332 Rev G. Updates protection_spec, descriptions,
  *       alternative_group_member rankings, and model_element_compatibility.is_primary.
+ *
+ *   GET /api/migrate/product-catalog-intekcore-compat?key=elim2026admin
+ *     → Runs 011_intekcore_macrocore_compatibility.sql. Links INTEKCORE housings to
+ *       MACROCORE elements via shared Donaldson Family codes. ~2324 pairs across
+ *       22 families. confidence: INFERRED, method: cross_reference.
  */
 
 const fs   = require('fs');
@@ -429,6 +434,45 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
       res.json({ success: true, records: verify.rows });
     } catch(e) {
       console.error('[product-catalog elements-sku]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
+  // ── Migration 011: INTEKCORE ↔ MACROCORE compatibility (Family codes) ─────────
+  // GET /api/migrate/product-catalog-intekcore-compat?key=elim2026admin
+  // Links INTEKCORE housings to MACROCORE elements via Donaldson Family codes.
+  // 22 family groups, ~2324 compatibility pairs. confidence: INFERRED.
+  app.get('/api/migrate/product-catalog-intekcore-compat', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '011_intekcore_macrocore_compatibility.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const verify = await client.query(`
+        SELECT
+          COUNT(*) FILTER (WHERE pe.element_code LIKE 'P1%' OR pe.element_code LIKE 'P5%' OR pe.element_code LIKE 'P6%' OR pe.element_code LIKE 'DBA%') AS total_pairs,
+          COUNT(*) FILTER (WHERE mec.is_primary = TRUE)  AS primary_pairs,
+          COUNT(*) FILTER (WHERE mec.is_primary = FALSE) AS safety_pairs,
+          COUNT(DISTINCT mec.product_model_id)           AS housings_linked,
+          COUNT(DISTINCT mec.product_element_id)         AS elements_linked
+        FROM model_element_compatibility mec
+        JOIN product_model pm   ON pm.id = mec.product_model_id
+        JOIN product_element pe ON pe.id = mec.product_element_id
+        WHERE mec.compatibility_method = 'cross_reference'
+          AND mec.compatibility_confidence = 'INFERRED'
+      `);
+
+      res.json({
+        success: true,
+        message: 'Migration 011: INTEKCORE↔MACROCORE compatibility linked via Donaldson Family codes',
+        stats: verify.rows[0],
+      });
+    } catch(e) {
+      console.error('[product-catalog intekcore-compat]', e.message);
       res.status(500).json({ success: false, error: e.message });
     } finally { await client.end(); }
   });
