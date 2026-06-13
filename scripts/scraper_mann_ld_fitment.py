@@ -160,68 +160,53 @@ def make_context(pw, headless: bool = False):
 
 # ── MANN fitment extractor ─────────────────────────────────────────────────
 _MANN_FITMENT_JS = """() => {
-    // MANN product page (ph-en) uses AEM Accordion component:
-    //   button.cmp-accordion__button[aria-controls="panel-id"]  ← make / model_family
-    //   div#panel-id  (the panel — class may NOT be cmp-accordion__panel on all MANN builds)
-    //     ...
-    //     div.cmp-application-table > table
+    // MANN ph-en AEM Accordion structure (2 nested levels):
+    //   Level-1: MAKE accordion  (e.g. ALFA ROMEO)
+    //   Level-2: MODEL FAMILY accordion  (e.g. 2300 Berlina)
+    //   Inside: div.cmp-application-table > table
     //
-    // Strategy: build panelId→buttonText map, then walk up each appDiv's ancestors
-    // to find their controlling buttons (innermost = model_family, next = make).
+    // A "panel" = any node that has a .cmp-accordion__button as a preceding sibling.
+    // We don't rely on cmp-accordion__panel class or aria-controls.
+    //
+    // findAncestorButtons: walks up the DOM, at each level checks ALL preceding siblings.
+    // If one is a cmp-accordion__button → that's the controlling button for this level.
+    // Returns [model_family_btn_text, make_btn_text] (innermost first).
+
+    const SKIP = new Set([
+        'Model Type','Filter Type','Engine Code',
+        'ccm','kW','HP','Year of Manufacture','-',''
+    ]);
+
+    function findAncestorButtons(startEl, want) {
+        const found = [];
+        let node = startEl.parentElement;
+        let safety = 0;
+        while (node && found.length < want && safety++ < 25) {
+            let prev = node.previousElementSibling;
+            while (prev) {
+                if (prev.classList?.contains('cmp-accordion__button')) {
+                    const txt = prev.textContent.trim();
+                    if (txt) { found.push(txt); }
+                    break;  // only take the nearest button at this DOM level
+                }
+                prev = prev.previousElementSibling;
+            }
+            node = node.parentElement;
+        }
+        return found;  // [model_family, make, ...]
+    }
 
     const rows = [];
 
-    // 1. Map every panel ID to its controlling button text
-    const panelToBtn = {};
-    document.querySelectorAll('.cmp-accordion__button[aria-controls]').forEach(btn => {
-        const pid = btn.getAttribute('aria-controls');
-        if (pid) panelToBtn[pid] = btn.textContent.trim();
-    });
-
-    // 2. Fallback: also walk all cmp-accordion__button elements and record
-    //    their next sibling panel if it has an id (handles non-aria-controls builds)
-    document.querySelectorAll('.cmp-accordion__button').forEach(btn => {
-        let next = btn.nextElementSibling;
-        while (next) {
-            if (next.id && !panelToBtn[next.id]) {
-                panelToBtn[next.id] = btn.textContent.trim();
-            }
-            if (next.id) break;  // stop at first element with an id
-            next = next.nextElementSibling;
-        }
-    });
-
-    // 3. For each application table, trace ancestry to find make + model_family
     document.querySelectorAll('.cmp-application-table').forEach(appDiv => {
         const table = appDiv.querySelector('table');
         if (!table) return;
 
-        // Walk up: collect button texts from ancestor panels (innermost first)
-        const ancestorBtns = [];
-        let el = appDiv.parentElement;
-        while (el && ancestorBtns.length < 3) {
-            const id = el.id;
-            if (id && panelToBtn[id]) {
-                ancestorBtns.push(panelToBtn[id]);
-            } else {
-                // Fallback: check preceding sibling buttons
-                let prev = el.previousElementSibling;
-                while (prev) {
-                    if (prev.classList?.contains('cmp-accordion__button')) {
-                        const txt = prev.textContent.trim();
-                        if (txt) { ancestorBtns.push(txt); break; }
-                    }
-                    prev = prev.previousElementSibling;
-                }
-            }
-            el = el.parentElement;
-        }
+        const btns      = findAncestorButtons(appDiv, 2);
+        const modelFamily = btns[0] || '';
+        const makeName    = btns[1] || '';
 
-        // ancestorBtns[0] = model family, [1] = make  (innermost → outermost)
-        const modelFamily = ancestorBtns[0] || '';
-        const makeName    = ancestorBtns[1] || '';
-
-        // 4. Column index map from <th>
+        // Column index map from <th>
         const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
         const colIdx = {};
         ths.forEach((h, i) => { colIdx[h] = i; });
@@ -235,34 +220,29 @@ _MANN_FITMENT_JS = """() => {
             year:       colIdx['Year of Manufacture'] ?? -1,
         };
 
-        // 5. Extract data rows; skip header-repeat rows MANN embeds inside <tbody>
         for (const tr of table.querySelectorAll('tbody tr')) {
             const cells = [...tr.querySelectorAll('td')]
                 .map(td => td.textContent.trim().replace(/\\s+/g, ' '));
             if (!cells.length) continue;
+            if (SKIP.has(cells[0])) continue;  // skip all label-repeat rows
 
-            const first = cells[0];
-            if (first === 'Model Type' || first === 'Filter Type' ||
-                first === 'Engine Code' || first === 'Year of Manufacture') continue;
+            const clean = (v) => (v === '-' || v === '–') ? '' : v;
 
-            const row = {
+            rows.push({
                 make:         makeName,
                 model_family: modelFamily,
-                model_type:   c.modelType  >= 0 ? (cells[c.modelType]  || '').substring(0, 80) : '',
-                engine_code:  c.engineCode >= 0 ? (cells[c.engineCode] || '').substring(0, 30) : '',
-                ccm:          c.ccm        >= 0 ? (cells[c.ccm]        || '').substring(0, 10) : '',
-                kw:           c.kw         >= 0 ? (cells[c.kw]         || '').substring(0, 10) : '',
-                hp:           c.hp         >= 0 ? (cells[c.hp]         || '').substring(0, 10) : '',
-                year:         c.year       >= 0 ? (cells[c.year]       || '').substring(0, 30) : '',
-            };
-
-            if (row.make || row.model_family || row.model_type || row.engine_code) {
-                rows.push(row);
-            }
+                model_type:   c.modelType  >= 0 ? clean(cells[c.modelType]  || '').substring(0, 80) : '',
+                engine_code:  c.engineCode >= 0 ? clean(cells[c.engineCode] || '').substring(0, 30) : '',
+                ccm:          c.ccm        >= 0 ? clean(cells[c.ccm]        || '').substring(0, 10) : '',
+                kw:           c.kw         >= 0 ? clean(cells[c.kw]         || '').substring(0, 10) : '',
+                hp:           c.hp         >= 0 ? clean(cells[c.hp]         || '').substring(0, 10) : '',
+                year:         c.year       >= 0 ? clean(cells[c.year]       || '').substring(0, 30) : '',
+            });
         }
     });
 
-    return rows;
+    // Only keep rows with at least some data
+    return rows.filter(r => r.make || r.model_family || r.model_type || r.engine_code || r.year);
 }"""
 
 
