@@ -26,6 +26,11 @@
  *   GET /api/product-catalog/alternatives/:elementCode
  *     → Returns the full alternative group for a given element, with TYPE_A/TYPE_B
  *       classification computed relative to the group baseline.
+ *
+ *   GET /api/migrate/product-catalog-fix-500fg?key=elim2026admin
+ *     → Runs 007_fix_500fg_micron_ratings.sql. Corrects SM-OR (2µm) and PM-OR (30µm)
+ *       per Parker datasheet 15332 Rev G. Updates protection_spec, descriptions,
+ *       alternative_group_member rankings, and model_element_compatibility.is_primary.
  */
 
 const fs   = require('fs');
@@ -395,6 +400,46 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
       });
     } catch(e) {
       console.error('[product-catalog phase-b]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
+  // ── Migration 007: Fix 500FG micron ratings ──────────────────────────────────
+  // GET /api/migrate/product-catalog-fix-500fg?key=elim2026admin
+  // Corrects SM-OR (2µm) and PM-OR (30µm) per Parker datasheet 15332 Rev G.
+  app.get('/api/migrate/product-catalog-fix-500fg', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '007_fix_500fg_micron_ratings.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const verify = await client.query(`
+        SELECT pe.element_code,
+               (pe.protection_spec->>'micron_nominal')::int AS micron_nominal,
+               agm.is_baseline,
+               agm.protection_level,
+               agm.operational_objective,
+               mec.is_primary
+        FROM product_element pe
+        JOIN alternative_group_member agm ON agm.element_id = pe.id
+        JOIN alternative_group ag ON ag.id = agm.group_id AND ag.group_code = 'HYDROCORE-2010'
+        LEFT JOIN model_element_compatibility mec ON mec.product_element_id = pe.id
+          AND mec.product_model_id = (SELECT id FROM product_model WHERE model_code = '500FG')
+        WHERE pe.element_code IN ('2010SM-OR', '2010TM-OR', '2010PM-OR')
+        ORDER BY agm.rank_in_group
+      `);
+
+      res.json({
+        success: true,
+        message: 'Migration 007: 500FG micron ratings corrected per Parker datasheet 15332 Rev G',
+        elements: verify.rows,
+      });
+    } catch(e) {
+      console.error('[product-catalog fix-500fg]', e.message);
       res.status(500).json({ success: false, error: e.message });
     } finally { await client.end(); }
   });
