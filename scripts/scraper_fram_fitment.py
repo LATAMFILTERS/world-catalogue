@@ -186,6 +186,7 @@ def make_context(pw):
         headless=True,
         locale="en-US",
         viewport={"width": 1366, "height": 900},
+        ignore_https_errors=True,
         user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
