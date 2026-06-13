@@ -321,6 +321,23 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     finally { await client.end(); }
   });
 
+  // ── Migration: HYDROCORE/SERIES™ 500FG series ───────────────────────────────
+  app.get('/api/migrate/product-catalog-500fg', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '005_hydrocore_500fg_series.sql'), 'utf8'
+      );
+      await client.query(sql);
+      res.json({ success: true, message: 'HYDROCORE/SERIES™ 500FG series migrated (idempotent)' });
+    } catch(e) {
+      console.error('[product-catalog 500fg]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Migration: Phase A — all technologies ───────────────────────────────────
   app.get('/api/migrate/product-catalog-phase-a', async (req, res) => {
     if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
