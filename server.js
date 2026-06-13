@@ -4196,6 +4196,8 @@ app.post('/api/oem/mann-load-batch', async (req, res) => {
 
 app.post('/api/oem/build-donaldson-matches', async (req, res) => {
   if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const segment = req.body.segment ? req.body.segment.toUpperCase() : null;
+  const segFilter = segment ? `AND m.segment = '${segment}'` : '';
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -4211,7 +4213,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
         m.oem_brand
       FROM mann_oem_clean m
       JOIN (
-        SELECT p.sku AS elimfilters_sku, p.part_number AS don_part,
+        SELECT p.sku AS elimfilters_sku, p.codigo_base AS don_part,
                UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
         FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
         WHERE p.oem_codes IS NOT NULL
@@ -4221,6 +4223,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
           AND p.codigo_base ~ '^(P|BF|PA|DT|PX|AF1|AF2|AF3|AF4|AF5)[0-9]'
       ) d ON d.oem_normalized = m.oem_normalized
       WHERE length(m.oem_normalized) >= 4
+      ${segFilter}
     `);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(donaldson_part)`);
@@ -4241,6 +4244,8 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
 
 app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
   if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const segment = req.body.segment ? req.body.segment.toUpperCase() : null;
+  const segFilter = segment ? `AND m.segment = '${segment}'` : '';
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -4256,7 +4261,7 @@ app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
         m.oem_brand
       FROM mann_oem_clean m
       JOIN (
-        SELECT p.sku AS elimfilters_sku, p.part_number AS fg_part,
+        SELECT p.sku AS elimfilters_sku, p.codigo_base AS fg_part,
                UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
         FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
         WHERE p.oem_codes IS NOT NULL
@@ -4266,6 +4271,7 @@ app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
           AND p.codigo_base ~ '^(LF|HF|FF|FS|WF|AF0|CV|CC|SCA|RS)[0-9]'
       ) f ON f.oem_normalized = m.oem_normalized
       WHERE length(m.oem_normalized) >= 4
+      ${segFilter}
     `);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(fleetguard_part)`);
