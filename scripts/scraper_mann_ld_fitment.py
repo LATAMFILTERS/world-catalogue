@@ -460,50 +460,105 @@ def test_one(sku: str, debug: bool = False):
             DEBUG_DIR.mkdir(parents=True, exist_ok=True)
             html_path = DEBUG_DIR / f"mann_{sku.replace('/', '-')}.html"
             html_path.write_text(page.content(), encoding="utf-8")
-            diag = page.evaluate("""() => ({
-                title: document.title,
-                url: location.href,
-                h1: document.querySelector('h1')?.textContent?.trim() || '',
-                tables: document.querySelectorAll('table').length,
-                total_links: document.querySelectorAll('a[href]').length,
-                spare_links: [...document.querySelectorAll('a[href*="/spare-parts/"]')]
-                                .map(a => a.href).slice(0, 10),
-            })""")
             log.info(f"HTML guardado en {html_path}")
+
+            # ── Deep structure analysis ──────────────────────────────────────
+            diag = page.evaluate("""() => {
+                // 1. Basic info
+                const info = {
+                    title: document.title,
+                    url: location.href,
+                    h1: document.querySelector('h1')?.textContent?.trim() || '',
+                    tables: document.querySelectorAll('table').length,
+                    total_links: document.querySelectorAll('a[href]').length,
+                };
+
+                // 2. Table headers from first 15 tables
+                const tableHeaders = [];
+                document.querySelectorAll('table').forEach((t, i) => {
+                    if (i >= 15) return;
+                    const ths = [...t.querySelectorAll('th')].map(h => h.textContent.trim()).filter(h => h);
+                    const tds = [...t.querySelectorAll('tbody tr:first-child td')]
+                                    .map(td => td.textContent.trim().substring(0, 20));
+                    const rows = t.querySelectorAll('tbody tr').length;
+                    tableHeaders.push({ index: i, ths, firstRowTds: tds, rows });
+                });
+                info.tableHeaders = tableHeaders;
+
+                // 3. Collapsible / accordion / tab triggers
+                const triggers = [];
+                const triggerSels = [
+                    '[data-toggle="collapse"]',
+                    '[data-bs-toggle="collapse"]',
+                    '[aria-expanded]',
+                    '[data-target]',
+                    'button[class*="accordion"]',
+                    'button[class*="toggle"]',
+                    'button[class*="expand"]',
+                    '.collapsible',
+                    '[class*="tab-trigger"]',
+                    '[role="tab"]',
+                    'dt',
+                ];
+                const seen = new Set();
+                for (const sel of triggerSels) {
+                    document.querySelectorAll(sel).forEach(el => {
+                        const text = el.textContent.trim().substring(0, 60);
+                        if (seen.has(text) || !text) return;
+                        seen.add(text);
+                        triggers.push({
+                            tag: el.tagName,
+                            text,
+                            cls: (el.className || '').substring(0, 60),
+                            expanded: el.getAttribute('aria-expanded'),
+                        });
+                    });
+                }
+                info.triggers = triggers.slice(0, 30);
+
+                // 4. Section headings (h2-h4) to understand page structure
+                info.headings = [...document.querySelectorAll('h2,h3,h4')]
+                    .map(h => h.textContent.trim().substring(0, 80))
+                    .filter(h => h)
+                    .slice(0, 20);
+
+                // 5. Any elements with class names suggesting vehicle/fitment
+                const fitmentEls = [...document.querySelectorAll(
+                    '[class*="vehicle"],[class*="fitment"],[class*="application"],' +
+                    '[class*="compat"],[class*="suitable"],[class*="applicable"]'
+                )].slice(0, 10).map(el => ({
+                    tag: el.tagName,
+                    cls: (el.className||'').substring(0,60),
+                    text: el.textContent.trim().substring(0,80),
+                }));
+                info.fitmentEls = fitmentEls;
+
+                return info;
+            }""")
+
             print(f"\n=== DIAGNÓSTICO MANN {sku} ===")
             print(f"  Title      : {diag['title']}")
             print(f"  H1         : {diag['h1']}")
             print(f"  URL        : {diag['url']}")
             print(f"  Tables     : {diag['tables']}")
             print(f"  Total links: {diag['total_links']}")
-            print(f"  /spare-parts links:")
-            for lnk in diag.get("spare_links", []):
-                print(f"    {lnk}")
 
-            # also try the search fallback and show what comes back
-            encoded    = quote(sku, safe="")
-            search_url = MANN_SEARCH.format(part=encoded)
-            print(f"\n  Trying search: {search_url}")
-            page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
-            try:
-                page.wait_for_load_state("networkidle", timeout=8000)
-            except PWTimeout:
-                pass
-            time.sleep(1)
-            product_url = page.evaluate(_SEARCH_RESULT_JS)
-            print(f"  Product found: {product_url or '(none)'}")
-            if product_url:
-                html_path2 = DEBUG_DIR / f"mann_{sku.replace('/', '-')}_product.html"
-                page.goto(product_url, wait_until="domcontentloaded", timeout=25000)
-                try:
-                    page.wait_for_load_state("networkidle", timeout=8000)
-                except PWTimeout:
-                    pass
-                time.sleep(1)
-                html_path2.write_text(page.content(), encoding="utf-8")
-                _, fitment = _extract(page)
-                print(f"  Fitment rows : {len(fitment)}")
-                log.info(f"Product HTML guardado en {html_path2}")
+            print(f"\n── SECTION HEADINGS (h2-h4) ──")
+            for h in diag.get("headings", []):
+                print(f"  {h}")
+
+            print(f"\n── TABLE HEADERS (first 15 tables) ──")
+            for t in diag.get("tableHeaders", []):
+                if t["ths"] or t["firstRowTds"]:
+                    print(f"  Table[{t['index']:02d}] rows={t['rows']:>4}  TH={t['ths']}  TD={t['firstRowTds']}")
+
+            print(f"\n── COLLAPSIBLE TRIGGERS ({len(diag.get('triggers', []))}) ──")
+            for tr in diag.get("triggers", [])[:20]:
+                print(f"  <{tr['tag']}> expanded={tr['expanded']}  text={tr['text']!r}  cls={tr['cls']!r}")
+
+            print(f"\n── FITMENT-CLASS ELEMENTS ({len(diag.get('fitmentEls', []))}) ──")
+            for el in diag.get("fitmentEls", []):
+                print(f"  <{el['tag']}> cls={el['cls']!r}  text={el['text']!r}")
 
             ctx.close()
             return
