@@ -433,28 +433,41 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
             else:
                 log.info(f"  locale:{locale} → 200 but no fitment/OE, trying next")
 
-        # OE fallback: us-en has OE Numbers section; ph-en/de-de often do not
+        # OE fallback: us-en has OE Numbers section; ph-en/de-de often do not.
+        # OE content is AJAX-loaded after accordion click — must wait for networkidle.
         n_oe = sum(len(v) for v in data.get("oeNumbers", {}).values())
         if n_oe == 0 and status == 200:
             try:
                 oe_url = MANN_BASE.format(locale="us-en", url_key=url_key)
                 oe_st  = _load_page(page, oe_url)
                 if oe_st == 200:
-                    try:
-                        page.click('.cmp-accordion__button:has-text("OE Number")', timeout=3000)
-                        time.sleep(0.8)
-                    except Exception:
-                        pass
+                    oe_clicked = False
+                    for sel in [
+                        'button:has-text("OE Number")',
+                        '.cmp-accordion__button:has-text("OE")',
+                        'text=OE Numbers',
+                    ]:
+                        try:
+                            page.click(sel, timeout=2000)
+                            oe_clicked = True
+                            break
+                        except Exception:
+                            continue
+                    if oe_clicked:
+                        try:
+                            page.wait_for_load_state("networkidle", timeout=6000)
+                        except PWTimeout:
+                            pass
+                        time.sleep(0.5)
                     data2 = page.evaluate(_MANN_MASTER_JS)
                     n_oe2 = sum(len(v) for v in data2.get("oeNumbers", {}).values())
+                    log.info(f"  us-en OE fallback: clicked={oe_clicked} codes={n_oe2}")
                     if n_oe2 > 0:
                         data["oeNumbers"] = data2["oeNumbers"]
-                        log.info(f"  us-en OE fallback: {n_oe2} codes")
-                    # Also inherit filterType from us-en if ours is empty
                     if data2.get("filterType") and not data.get("filterType"):
                         data["filterType"] = data2["filterType"]
             except Exception as e:
-                log.debug(f"  OE fallback: {e}")
+                log.info(f"  OE fallback error: {e}")
 
         return {
             "status":        status,
