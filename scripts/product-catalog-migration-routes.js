@@ -321,4 +321,57 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     finally { await client.end(); }
   });
 
+  // ── Inspect: elimfilters_catalog data grouped by technology ─────────────────
+  // GET /api/migrate/catalog-inspect?key=elim2026admin
+  app.get('/api/migrate/catalog-inspect', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+
+      // Technologies present
+      const techs = await client.query(`
+        SELECT technology, COUNT(*) AS total,
+               COUNT(DISTINCT filter_type) AS filter_types,
+               COUNT(DISTINCT installation_type) AS install_types
+        FROM elimfilters_catalog
+        WHERE technology IS NOT NULL
+        GROUP BY technology
+        ORDER BY total DESC
+      `);
+
+      // Per-technology: filter_types, installation_types, sample codigo_base values
+      const detail = {};
+      for (const row of techs.rows) {
+        const tech = row.technology;
+
+        const breakdown = await client.query(`
+          SELECT filter_type, installation_type, COUNT(*) AS cnt
+          FROM elimfilters_catalog
+          WHERE technology = $1
+          GROUP BY filter_type, installation_type
+          ORDER BY cnt DESC
+        `, [tech]);
+
+        const samples = await client.query(`
+          SELECT sku, codigo_base, filter_type, installation_type, description
+          FROM elimfilters_catalog
+          WHERE technology = $1
+          ORDER BY sku
+          LIMIT 8
+        `, [tech]);
+
+        detail[tech] = {
+          total: parseInt(row.total),
+          breakdown: breakdown.rows,
+          samples: samples.rows,
+        };
+      }
+
+      res.json({ technologies: techs.rows, detail });
+    } catch(e) {
+      res.status(500).json({ error: e.message });
+    } finally { await client.end(); }
+  });
+
 };
