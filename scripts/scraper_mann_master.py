@@ -60,13 +60,13 @@ log = logging.getLogger(__name__)
 
 # ── URL key builder ────────────────────────────────────────────────────────
 def _build_url_key(raw_key: str, sku: str) -> str:
-    """W940/21 → w940/21_mann-filter  (slash kept: literal path segment on MANN site)"""
+    """HU 6014/1 Z → hu6014/1z_mann-filter  (spaces removed, slash kept as path segment)"""
     s = raw_key.strip().lower() if raw_key.strip() else sku.lower()
     for sfx in ("_mann-filter", "-mann-filter"):
         if s.endswith(sfx):
             s = s[: -len(sfx)]
             break
-    s = s.replace(" ", "-").strip("-")
+    s = s.replace(" ", "").strip("-")
     s += "_mann-filter"
     return s
 

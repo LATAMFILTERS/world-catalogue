@@ -73,7 +73,7 @@ def _build_url_key(raw_key: str, sku: str) -> str:
             s = s[: -len(sfx)]
             break
 
-    s = s.replace(" ", "-").strip("-")
+    s = s.replace(" ", "").strip("-")
     s += "_mann-filter"
     return s
 
