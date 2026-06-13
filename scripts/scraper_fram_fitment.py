@@ -41,9 +41,7 @@ DEBUG_DIR       = Path(r"C:\mann\debug_html")
 
 PROFILE_DIR     = os.path.join(os.path.expanduser("~"), ".fram_fitment_profile")
 
-FRAM_BASE       = "https://www.fram.com/products/{part}/"
-FRAM_SEARCH     = "https://www.fram.com/search?q={part}"
-AUTOZONE_SEARCH = "https://www.autozone.com/allpart?searchText={part}"
+WALMART_SEARCH  = "https://www.walmart.com/search?q=FRAM+{part}"
 PAUSE           = (4, 8)
 
 # ── Logging ────────────────────────────────────────────────────────────────
@@ -181,11 +179,11 @@ def append_result(row: dict):
 
 
 # ── Playwright ──────────────────────────────────────────────────────────────
-def make_context(pw):
+def make_context(pw, headless: bool = False):
     return pw.chromium.launch_persistent_context(
         user_data_dir=PROFILE_DIR,
         channel="chrome",
-        headless=True,
+        headless=headless,
         locale="en-US",
         viewport={"width": 1366, "height": 900},
         ignore_https_errors=True,
@@ -199,70 +197,63 @@ def make_context(pw):
     )
 
 
-def _find_autozone_url(page, fram_code: str) -> str | None:
-    """
-    Searches AutoZone for the FRAM code and returns the product page URL.
-    AutoZone carries FRAM products and has ACES-based structured fitment.
-    """
-    search_url = AUTOZONE_SEARCH.format(part=fram_code.upper())
+def _find_walmart_url(page, fram_code: str) -> str | None:
+    """Searches Walmart for FRAM {code} and returns the first product URL."""
+    search_url = WALMART_SEARCH.format(part=fram_code.upper())
     try:
-        page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
+        page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
         try:
-            page.wait_for_load_state("networkidle", timeout=10000)
+            page.wait_for_load_state("networkidle", timeout=12000)
         except PWTimeout:
             pass
-        time.sleep(2)
+        time.sleep(2.5)
 
-        # AutoZone search results: find product link containing the part code
         product_url = page.evaluate("""(code) => {
             const lc = code.toLowerCase();
-            // Pattern 1: link containing the code in the href
-            for (const a of document.querySelectorAll('a[href]')) {
+            // Pattern 1: product link whose href contains the code
+            for (const a of document.querySelectorAll('a[href*="/ip/"]')) {
+                const txt = (a.textContent || '').toLowerCase();
                 const href = a.getAttribute('href') || '';
-                const hrefLc = href.toLowerCase();
-                if (hrefLc.includes(lc) && (hrefLc.includes('/filters-') || hrefLc.includes('/oil-filter') || hrefLc.includes('/fuel-filter') || hrefLc.includes('/air-filter') || hrefLc.includes('/cabin-'))) {
-                    return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
+                if (txt.includes(lc) || href.toLowerCase().includes(lc)) {
+                    return href.startsWith('http') ? href : 'https://www.walmart.com' + href;
                 }
             }
-            // Pattern 2: first product card link in results
-            const card = document.querySelector('[class*="product-card"] a[href], [class*="ProductCard"] a[href], [data-testid*="product"] a[href]');
-            if (card) {
-                const href = card.getAttribute('href');
-                return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
-            }
-            // Pattern 3: any /p/ product link
-            const prodLink = document.querySelector('a[href*="/p/"]');
-            if (prodLink) {
-                const href = prodLink.getAttribute('href');
-                return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
+            // Pattern 2: first /ip/ link in results (most are products)
+            const first = document.querySelector('a[href*="/ip/"]');
+            if (first) {
+                const href = first.getAttribute('href');
+                return href.startsWith('http') ? href : 'https://www.walmart.com' + href;
             }
             return null;
         }""", fram_code)
 
         if product_url:
-            log.info(f"  AutoZone URL: {product_url[:80]}")
+            log.info(f"  Walmart URL: {product_url[:90]}")
         else:
-            log.info(f"  AutoZone: no product link found for {fram_code}")
+            # Diagnose
+            n_links = page.evaluate("() => document.querySelectorAll('a[href]').length")
+            log.info(f"  Walmart: no product link found (total <a>: {n_links})")
         return product_url
 
     except Exception as e:
-        log.warning(f"  AutoZone search error {fram_code}: {e}")
+        log.warning(f"  Walmart search error {fram_code}: {e}")
         return None
 
 
-# AutoZone fitment extractor — "Fits these vehicles" section
-_AZ_FITMENT_JS = """() => {
+# Walmart fitment extractor — "Specifications" + "Compatible with" sections
+_WM_FITMENT_JS = """() => {
     const rows = [];
-    // Pattern 1: fitment table with Year/Make/Model/Engine columns
+
+    // Pattern 1: structured fitment table (Year / Make / Model / Engine)
     const tables = document.querySelectorAll('table');
     for (const table of tables) {
-        const headers = [...table.querySelectorAll('th,td[class*="header"]')].map(h => h.textContent.trim().toLowerCase());
+        const headers = [...table.querySelectorAll('th')].map(h => h.textContent.trim().toLowerCase());
         const yearIdx  = headers.findIndex(h => h.includes('year'));
         const makeIdx  = headers.findIndex(h => h.includes('make'));
         const modelIdx = headers.findIndex(h => h.includes('model'));
-        const engIdx   = headers.findIndex(h => h.includes('engine') || h.includes('motor'));
+        const engIdx   = headers.findIndex(h => h.includes('engine'));
         if (yearIdx === -1 && makeIdx === -1) continue;
-        for (const tr of table.querySelectorAll('tbody tr, tr:not(:first-child)')) {
+        for (const tr of table.querySelectorAll('tbody tr')) {
             const cells = [...tr.querySelectorAll('td')].map(td => td.textContent.trim());
             if (!cells.length) continue;
             const row = {};
@@ -274,70 +265,77 @@ _AZ_FITMENT_JS = """() => {
         }
         if (rows.length) break;
     }
-    // Pattern 2: fitment list items (some AZ pages use divs)
+
+    // Pattern 2: Walmart's __NEXT_DATA__ JSON (rich product data)
     if (!rows.length) {
-        const items = document.querySelectorAll('[class*="fitment"] li, [class*="Fitment"] li, [data-testid*="fitment"] li');
-        for (const li of items) {
-            const text = li.textContent.trim();
-            if (text) rows.push({ raw: text });
-        }
-    }
-    // Pattern 3: JSON in page data
-    if (!rows.length) {
-        const scripts = document.querySelectorAll('script[type="application/json"], script[id*="__NEXT_DATA__"]');
-        for (const s of scripts) {
+        const nd = document.getElementById('__NEXT_DATA__');
+        if (nd) {
             try {
-                const walk = (obj) => {
-                    if (!obj || typeof obj !== 'object') return;
-                    if (Array.isArray(obj)) { obj.forEach(walk); return; }
-                    const keys = Object.keys(obj);
-                    const hasFitment = keys.some(k => ['year','make','model','engine','vehicleYear'].includes(k.toLowerCase()));
-                    if (hasFitment && (obj.year || obj.Year || obj.vehicleYear)) {
+                const walk = (obj, depth) => {
+                    if (!obj || typeof obj !== 'object' || depth > 12) return;
+                    if (Array.isArray(obj)) { obj.forEach(o => walk(o, depth+1)); return; }
+                    const k = Object.keys(obj);
+                    // Look for vehicleFitment or similar arrays
+                    const hasYear = k.some(x => /year/i.test(x));
+                    const hasMake = k.some(x => /make|brand/i.test(x));
+                    if (hasYear && hasMake) {
                         rows.push({
-                            year:   String(obj.year || obj.Year || obj.vehicleYear || ''),
-                            make:   obj.make || obj.Make || obj.vehicleMake || '',
-                            model:  obj.model || obj.Model || obj.vehicleModel || '',
-                            engine: obj.engine || obj.Engine || obj.engineDescription || '',
+                            year:   String(obj.year || obj.startYear || obj.endYear || ''),
+                            make:   obj.make || obj.vehicleMake || obj.brand || '',
+                            model:  obj.model || obj.vehicleModel || '',
+                            engine: obj.engine || obj.engineDescription || obj.displacement || '',
                         });
-                    } else { keys.forEach(k => walk(obj[k])); }
+                    } else {
+                        k.forEach(key => walk(obj[key], depth+1));
+                    }
                 };
-                walk(JSON.parse(s.textContent));
+                walk(JSON.parse(nd.textContent), 0);
             } catch(e) {}
         }
     }
+
+    // Pattern 3: "Compatible with" text list — "2001-2010 Ford Explorer 4.0L V6"
+    if (!rows.length) {
+        const allText = document.body.innerText;
+        const matches = allText.match(/\\b(19|20)\\d{2}[-–](19|20)\\d{2}\\s+[A-Z][a-z]+[^\\n]{5,60}/g) || [];
+        matches.forEach(m => rows.push({ raw: m.trim() }));
+    }
+
     return rows;
 }"""
 
 
 def scrape_fitment(page, fram_code: str) -> dict:
-    product_url = _find_autozone_url(page, fram_code)
+    product_url = _find_walmart_url(page, fram_code)
     if not product_url:
-        return {"status": 404, "url": AUTOZONE_SEARCH.format(part=fram_code),
-                "title": "", "fitment": [], "source": "autozone"}
+        return {"status": 404, "url": WALMART_SEARCH.format(part=fram_code),
+                "title": "", "fitment": [], "source": "walmart"}
     try:
-        resp = page.goto(product_url, wait_until="domcontentloaded", timeout=25000)
+        resp = page.goto(product_url, wait_until="domcontentloaded", timeout=30000)
         status = resp.status if resp else 0
         try:
-            page.wait_for_load_state("networkidle", timeout=10000)
+            page.wait_for_load_state("networkidle", timeout=12000)
         except PWTimeout:
             pass
-        time.sleep(1.5)
+        time.sleep(2)
 
-        fitment = page.evaluate(_AZ_FITMENT_JS)
-        title   = page.evaluate("() => document.querySelector('h1')?.textContent?.trim() || document.title || ''")
+        fitment = page.evaluate(_WM_FITMENT_JS)
+        title   = page.evaluate(
+            "() => document.querySelector('h1')?.textContent?.trim() || document.title || ''"
+        )
 
         return {
             "status":  status,
             "url":     page.url,
             "title":   title,
             "fitment": fitment,
-            "source":  "autozone",
+            "source":  "walmart",
         }
     except PWTimeout:
-        return {"status": 408, "url": product_url, "title": "", "fitment": [], "source": "autozone"}
+        return {"status": 408, "url": product_url, "title": "", "fitment": [], "source": "walmart"}
     except Exception as e:
         log.warning(f"  Error {fram_code}: {e}")
-        return {"status": 0, "url": product_url, "title": "", "fitment": [], "source": "autozone"}
+        return {"status": 0, "url": product_url, "title": "", "fitment": [], "source": "walmart"}
 
 
 # ── Main run ────────────────────────────────────────────────────────────────
@@ -365,7 +363,7 @@ def run(start_from: str = None, retry_zeros: bool = False):
     log.info(f"Total: {len(items)} | Cache: {cached} | A scrapear: {len(to_process)}")
 
     with sync_playwright() as pw:
-        ctx  = make_context(pw)
+        ctx  = make_context(pw, headless=False)
         page = ctx.new_page()
 
         for i, item in enumerate(to_process, 1):
@@ -451,44 +449,42 @@ def stats():
 def test_one(fram_code: str, debug: bool = False):
     log.info(f"Testing FRAM {fram_code}")
     with sync_playwright() as pw:
-        ctx  = make_context(pw)
+        ctx  = make_context(pw, headless=False)
         page = ctx.new_page()
 
-        # Always start with AutoZone search for diagnosis
-        search_url = AUTOZONE_SEARCH.format(part=fram_code.upper())
+        # Walmart search for diagnosis
+        search_url = WALMART_SEARCH.format(part=fram_code.upper())
         log.info(f"  → {search_url}")
-        page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
+        page.goto(search_url, wait_until="domcontentloaded", timeout=30000)
         try:
-            page.wait_for_load_state("networkidle", timeout=10000)
+            page.wait_for_load_state("networkidle", timeout=12000)
         except PWTimeout:
             pass
-        time.sleep(2)
+        time.sleep(3)
 
         if debug:
             DEBUG_DIR.mkdir(parents=True, exist_ok=True)
-            html_path = DEBUG_DIR / f"az_{fram_code}.html"
+            html_path = DEBUG_DIR / f"wm_{fram_code}.html"
             html_path.write_text(page.content(), encoding="utf-8")
             log.info(f"HTML guardado en {html_path}")
-            # Also print diagnostic info
             diag = page.evaluate("""() => {
-                const links = [...document.querySelectorAll('a[href]')]
+                const links = [...document.querySelectorAll('a[href*="/ip/"]')]
                     .map(a => a.getAttribute('href'))
-                    .filter(h => h && h.length > 5)
-                    .slice(0, 30);
+                    .slice(0, 15);
                 return {
                     title: document.title,
                     url: location.href,
                     total_links: document.querySelectorAll('a[href]').length,
-                    sample_links: links,
+                    ip_links: links,
                 };
             }""")
-            print(f"\n=== DIAGNÓSTICO AutoZone ===")
+            print(f"\n=== DIAGNÓSTICO Walmart ===")
             print(f"  Title       : {diag['title']}")
             print(f"  Final URL   : {diag['url']}")
             print(f"  Total <a>   : {diag['total_links']}")
-            print(f"  Sample hrefs:")
-            for h in diag['sample_links']:
-                print(f"    {h}")
+            print(f"  /ip/ links:")
+            for h in diag['ip_links']:
+                print(f"    {h[:100]}")
             ctx.close()
             return
 
