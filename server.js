@@ -4406,6 +4406,29 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
   }
 });
 
+// GET /api/oem/segment-stats
+app.get('/api/oem/segment-stats', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const { rows } = await client.query(`
+      SELECT
+        COALESCE(segment, 'SIN SEGMENTO') AS segment,
+        COUNT(*)                           AS oem_rows,
+        COUNT(DISTINCT sku)                AS partes_unicas
+      FROM mann_oem_clean
+      GROUP BY segment
+      ORDER BY oem_rows DESC
+    `);
+    const total = rows.reduce((s, r) => s + parseInt(r.oem_rows), 0);
+    res.json({ success: true, total_oem_rows: total, breakdown: rows });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // GET /api/oem/hd-parts
 // Returns distinct Donaldson and Fleetguard part numbers from cross_reference_master
 app.get('/api/oem/hd-parts', async (req, res) => {
