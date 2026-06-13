@@ -46,10 +46,11 @@ DEBUG_DIR        = Path(r"C:\mann\debug_html")
 PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".mann_fitment_profile")
 
 # Locale cascade — tried in order until one returns 200 + fitment.
-# ph-en (Philippines) has the widest Asian/Pacific catalog.
-# de-de (Germany) is MANN's home market — most complete European catalog.
-# gb-en (Great Britain) catches products not in ph-en or de-de.
-MANN_LOCALES = ["ph-en", "de-de", "gb-en"]
+# us-en (US English) — confirmed working via browser screenshot, wide coverage.
+# ph-en (Philippines) — wide Asian/Pacific catalog, historically first.
+# de-de (Germany) — MANN home market, most complete European catalog.
+# gb-en (Great Britain) — fallback for EU products not in de-de.
+MANN_LOCALES = ["us-en", "ph-en", "de-de", "gb-en"]
 MANN_BASE    = "https://www.mann-filter.com/{locale}/catalog/search-results/product.html/{url_key}.html"
 MANN_SEARCH  = "https://www.mann-filter.com/ph-en/catalogsearch/result/?q={part}"
 MANN_DOMAIN  = "https://www.mann-filter.com"
@@ -61,8 +62,8 @@ def _build_url_key(raw_key: str, sku: str) -> str:
 
     MANN URL format:
       /{locale}/catalog/search-results/product.html/{slug}_mann-filter.html
-    For SKUs like W940/21 the slug uses ONLY the part before the slash: w940
-    For SKUs like WK8114 (no slash) the slug is: wk8114
+    The slash in SKUs like W940/21 is a literal path separator:
+      → w940/21_mann-filter  (NOT w940_mann-filter)
     """
     s = raw_key.strip().lower() if raw_key.strip() else sku.lower()
 
@@ -72,14 +73,7 @@ def _build_url_key(raw_key: str, sku: str) -> str:
             s = s[: -len(sfx)]
             break
 
-    # replace spaces with dashes
-    s = s.replace(" ", "-")
-
-    # W940/21 → w940  (MANN URL uses only the base, not the variant suffix)
-    if "/" in s:
-        s = s.split("/")[0]
-
-    s = s.strip("-")
+    s = s.replace(" ", "-").strip("-")
     s += "_mann-filter"
     return s
 
