@@ -160,7 +160,7 @@ def make_context(pw, headless: bool = False):
 
 # ── MANN fitment extractor ─────────────────────────────────────────────────
 _MANN_FITMENT_JS = """() => {
-    // MANN ph-en AEM Accordion — actual DOM structure discovered via ancestry dump:
+    // MANN int-en AEM Accordion — actual DOM structure discovered via ancestry dump:
     //
     //   DIV.cmp-accordion__item
     //     H3.cmp-accordion__header          ← "AGRIFULL"  (make label)
@@ -349,42 +349,72 @@ def run(start_from: str = None, retry_zeros: bool = False):
         log.info(f"retry-zeros: {before - len(progress)} sin fitment eliminados")
         save_progress(progress)
 
+    # ── URL-KEY MATRIX ──────────────────────────────────────────────────────
+    # Many MANN SKUs share the same product page (e.g. W940/1, W940/21, W940/B
+    # all → w940_mann-filter). Build a matrix: url_key → [skus] so we scrape
+    # each unique page ONCE and fan results back to all SKUs that share it.
+    from collections import defaultdict
+    key_to_skus: dict[str, list] = defaultdict(list)
+    for item in items:
+        key_to_skus[item["url_key"]].append(item["sku"])
+
+    # Unique url_keys that still need processing (any sku in group not in progress)
+    pending_keys = [
+        uk for uk, skus in key_to_skus.items()
+        if any(s not in progress for s in skus)
+    ]
+
+    cached_skus = len(items) - sum(
+        sum(1 for s in skus if s not in progress)
+        for skus in key_to_skus.values()
+    )
+    log.info(
+        f"Total SKUs: {len(items)} | Unique url_keys: {len(key_to_skus)} | "
+        f"Pending url_keys: {len(pending_keys)} | Cached SKUs: {cached_skus}"
+    )
+
     if start_from:
         su = start_from.upper()
-        idx = next((i for i, p in enumerate(items) if p["sku"].upper() == su), None)
-        if idx is None:
-            log.warning(f"--start '{start_from}' no encontrado")
+        # find the url_key for this sku and start from there
+        target_key = next(
+            (item["url_key"] for item in items if item["sku"].upper() == su), None
+        )
+        if target_key and target_key in pending_keys:
+            idx = pending_keys.index(target_key)
+            pending_keys = pending_keys[idx:]
+            log.info(f"Reanudando desde {start_from} (url_key: {target_key})")
         else:
-            items = items[idx:]
-            log.info(f"Reanudando desde {start_from}")
-
-    to_do  = [p for p in items if p["sku"] not in progress]
-    cached = len(items) - len(to_do)
-    log.info(f"Total: {len(items)} | Cache: {cached} | A scrapear: {len(to_do)}")
+            log.warning(f"--start '{start_from}' no encontrado en pending")
 
     with sync_playwright() as pw:
         ctx  = make_context(pw, headless=False)
         page = ctx.new_page()
 
-        for item in to_do:
-            sku     = item["sku"]
-            url_key = item["url_key"]
-            idx     = next(i+1 for i, p in enumerate(items) if p["sku"] == sku)
-            log.info(f"[{idx}/{len(items)}] {sku}  url_key:{url_key}")
+        for i, url_key in enumerate(pending_keys, 1):
+            skus_in_group = key_to_skus[url_key]
+            representative_sku = skus_in_group[0]
 
-            result  = scrape_mann_fitment(page, sku, url_key)
-            n_fit   = len(result["fitment"])
+            log.info(
+                f"[{i}/{len(pending_keys)}] url_key:{url_key}  "
+                f"({len(skus_in_group)} SKU{'s' if len(skus_in_group) > 1 else ''})"
+            )
+
+            result = scrape_mann_fitment(page, representative_sku, url_key)
+            n_fit  = len(result["fitment"])
 
             if n_fit:
                 log.info(f"  ✅ {n_fit} vehicles | {result['title'][:50]}")
             else:
                 log.info(f"  ○ sin fitment | HTTP {result['status']}")
 
-            row = {"sku": sku, "url_key": url_key, **result}
-            progress[sku] = result
-            save_progress(progress)
-            append_result(row)
+            # Write result for EVERY SKU in this url_key group
+            for sku in skus_in_group:
+                if sku not in progress:
+                    row = {"sku": sku, "url_key": url_key, **result}
+                    progress[sku] = result
+                    append_result(row)
 
+            save_progress(progress)
             time.sleep(random.uniform(*PAUSE))
 
         ctx.close()
