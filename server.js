@@ -4191,13 +4191,16 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
     await client.query(`DROP TABLE IF EXISTS mann_donaldson_matches`);
     await client.query(`
       CREATE TABLE mann_donaldson_matches AS
+
+      -- Pathway A: match por código OEM compartido (MANN ↔ Donaldson fitean el mismo equipo)
       SELECT DISTINCT
         m.sku            AS mann_part,
         m.segment        AS mann_segment,
         d.don_part       AS donaldson_part,
         d.elimfilters_sku,
         m.oem_normalized,
-        m.oem_brand
+        m.oem_brand,
+        'oem_code'       AS match_method
       FROM mann_oem_clean m
       JOIN (
         SELECT p.sku AS elimfilters_sku, p.codigo_base AS don_part,
@@ -4207,17 +4210,44 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
           AND jsonb_typeof(p.oem_codes) = 'array'
           AND (elem->>'part_number') IS NOT NULL
           AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
-          AND p.codigo_base ~ '^(P|BF|PA|DT|PX|AF1|AF2|AF3|AF4|AF5)[0-9]'
+          AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
       ) d ON d.oem_normalized = m.oem_normalized
       WHERE length(m.oem_normalized) >= 4
       ${segFilter}
+
+      UNION
+
+      -- Pathway B: match directo via brand_crossrefs['MANN'] (referencia cruzada explícita)
+      SELECT DISTINCT
+        m.sku            AS mann_part,
+        m.segment        AS mann_segment,
+        p.codigo_base    AS donaldson_part,
+        p.sku            AS elimfilters_sku,
+        NULL             AS oem_normalized,
+        'MANN'           AS oem_brand,
+        'brand_crossref' AS match_method
+      FROM elimfilters_catalog p
+      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+      JOIN mann_oem_clean m
+        ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
+         = UPPER(REGEXP_REPLACE(mann_ref.code, '[\\s\\-/\\.()]', '', 'g'))
+      WHERE p.brand_crossrefs ? 'MANN'
+        AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
+        AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
+      ${segFilter ? segFilter.replace('m.segment', 'm.segment') : ''}
     `);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(donaldson_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(elimfilters_sku)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(oem_normalized)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(match_method)`);
     const { rows } = await client.query(`
-      SELECT COUNT(*) AS total, COUNT(DISTINCT mann_part) AS mann_u, COUNT(DISTINCT donaldson_part) AS don_u
+      SELECT
+        COUNT(*)                                                      AS total,
+        COUNT(DISTINCT mann_part)                                     AS mann_u,
+        COUNT(DISTINCT donaldson_part)                                AS don_u,
+        COUNT(*) FILTER (WHERE match_method = 'oem_code')            AS via_oem_code,
+        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')      AS via_brand_crossref
       FROM mann_donaldson_matches
     `);
     res.json({ success: true, ...rows[0] });
@@ -4285,6 +4315,8 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
     await client.query(`DROP TABLE IF EXISTS cross_reference_master`);
     await client.query(`
       CREATE TABLE cross_reference_master AS
+
+      -- Bloque 1: matches via código OEM compartido (Donaldson + Fleetguard)
       WITH base AS (
         SELECT DISTINCT sku AS mann_part, segment, oem_brand, oem_normalized
         FROM mann_oem_clean
@@ -4297,6 +4329,7 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
           SELECT DISTINCT ON (mann_part, oem_normalized)
             mann_part, donaldson_part, oem_normalized
           FROM mann_donaldson_matches
+          WHERE match_method = 'oem_code'
           ORDER BY mann_part, oem_normalized, donaldson_part
         ) md ON md.mann_part = b.mann_part AND md.oem_normalized = b.oem_normalized
       ),
@@ -4310,25 +4343,58 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
           FROM mann_fleetguard_matches
           ORDER BY mann_part, oem_normalized, fleetguard_part
         ) mf ON mf.mann_part = w.mann_part AND mf.oem_normalized = w.oem_normalized
+      ),
+      oem_matches AS (
+        SELECT oem_normalized, oem_brand, mann_part, donaldson_part,
+               fleetguard_part, NULL::text AS elimfilters_sku, segment,
+               'oem_code'::text AS match_method
+        FROM with_fg
+        WHERE donaldson_part IS NOT NULL OR fleetguard_part IS NOT NULL
+      ),
+
+      -- Bloque 2: matches directos via brand_crossrefs['MANN'] (sin oem_normalized)
+      direct_matches AS (
+        SELECT
+          NULL::text        AS oem_normalized,
+          'MANN'            AS oem_brand,
+          md.mann_part,
+          md.donaldson_part,
+          NULL::text        AS fleetguard_part,
+          md.elimfilters_sku,
+          m.segment,
+          'brand_crossref'::text AS match_method
+        FROM mann_donaldson_matches md
+        JOIN mann_oem_clean m ON m.sku = md.mann_part
+        WHERE md.match_method = 'brand_crossref'
+          -- excluir si ya está cubierto por un oem_code match para este mann_part
+          AND NOT EXISTS (
+            SELECT 1 FROM oem_matches om
+            WHERE om.mann_part      = md.mann_part
+              AND om.donaldson_part = md.donaldson_part
+          )
       )
-      SELECT oem_normalized, oem_brand, mann_part, donaldson_part,
-             fleetguard_part, NULL::text AS elimfilters_sku, segment
-      FROM with_fg
-      WHERE donaldson_part IS NOT NULL OR fleetguard_part IS NOT NULL
+
+      SELECT * FROM oem_matches
+      UNION ALL
+      SELECT * FROM direct_matches
     `);
     await client.query(`CREATE INDEX ON cross_reference_master(oem_normalized)`);
     await client.query(`CREATE INDEX ON cross_reference_master(mann_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(donaldson_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(fleetguard_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(segment)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(match_method)`);
     const { rows } = await client.query(`
-      SELECT COUNT(*) AS total,
-             COUNT(DISTINCT mann_part) AS mann_u,
-             COUNT(DISTINCT donaldson_part)  FILTER (WHERE donaldson_part  IS NOT NULL) AS don_u,
-             COUNT(DISTINCT fleetguard_part) FILTER (WHERE fleetguard_part IS NOT NULL) AS fg_u,
-             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NOT NULL) AS don_and_fg,
-             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NULL)     AS don_only,
-             COUNT(*) FILTER (WHERE donaldson_part IS NULL     AND fleetguard_part IS NOT NULL) AS fg_only
+      SELECT
+        COUNT(*)                                                                          AS total,
+        COUNT(DISTINCT mann_part)                                                         AS mann_u,
+        COUNT(DISTINCT donaldson_part)  FILTER (WHERE donaldson_part  IS NOT NULL)        AS don_u,
+        COUNT(DISTINCT fleetguard_part) FILTER (WHERE fleetguard_part IS NOT NULL)        AS fg_u,
+        COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NOT NULL) AS don_and_fg,
+        COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NULL)     AS don_only,
+        COUNT(*) FILTER (WHERE donaldson_part IS NULL     AND fleetguard_part IS NOT NULL) AS fg_only,
+        COUNT(*) FILTER (WHERE match_method = 'oem_code')                                 AS via_oem_code,
+        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')                           AS via_brand_crossref
       FROM cross_reference_master
     `);
     res.json({ success: true, ...rows[0] });
