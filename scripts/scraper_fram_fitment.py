@@ -42,6 +42,7 @@ DEBUG_DIR       = Path(r"C:\mann\debug_html")
 PROFILE_DIR     = os.path.join(os.path.expanduser("~"), ".fram_fitment_profile")
 
 FRAM_BASE       = "https://www.fram.com/products/{part}/"
+FRAM_SEARCH     = "https://www.fram.com/search?q={part}"
 PAUSE           = (3, 6)
 
 # ── Logging ────────────────────────────────────────────────────────────────
@@ -197,33 +198,89 @@ def make_context(pw):
     )
 
 
-def scrape_fitment(page, fram_code: str) -> dict:
-    url = FRAM_BASE.format(part=fram_code.lower())
+def _find_product_url(page, fram_code: str) -> str | None:
+    """
+    Resolves the actual FRAM product page URL for a given part code.
+    Strategy:
+      1. Try direct URL  → if not 404, use it
+      2. Try search page → follow first product link
+    """
+    direct_url = FRAM_BASE.format(part=fram_code.lower())
     try:
-        resp = page.goto(url, wait_until="domcontentloaded", timeout=25000)
-        status = resp.status if resp else 0
+        resp = page.goto(direct_url, wait_until="domcontentloaded", timeout=20000)
+        if resp and resp.status not in (404, 410):
+            return page.url   # may have redirected to canonical URL
+    except Exception:
+        pass
 
-        # wait for content to load
+    # Fallback: search
+    search_url = FRAM_SEARCH.format(part=fram_code.upper())
+    try:
+        page.goto(search_url, wait_until="domcontentloaded", timeout=20000)
+        try:
+            page.wait_for_load_state("networkidle", timeout=6000)
+        except PWTimeout:
+            pass
+        time.sleep(1)
+
+        # Extract first product link — FRAM search results have links to /products/...
+        product_url = page.evaluate("""(code) => {
+            // look for an <a> whose href contains the part code (case-insensitive)
+            const lc = code.toLowerCase();
+            for (const a of document.querySelectorAll('a[href]')) {
+                const href = a.getAttribute('href') || '';
+                if (href.toLowerCase().includes(lc) && href.includes('/product')) {
+                    return href.startsWith('http') ? href : 'https://www.fram.com' + href;
+                }
+            }
+            // fallback: first link in search results section
+            const result = document.querySelector(
+                '.search-result a[href*="/product"], [class*="product"] a[href*="/product"], ' +
+                '[class*="result"] a[href*="/product"]'
+            );
+            if (result) {
+                const href = result.getAttribute('href');
+                return href.startsWith('http') ? href : 'https://www.fram.com' + href;
+            }
+            return null;
+        }""", fram_code)
+
+        if product_url:
+            return product_url
+    except Exception as e:
+        log.warning(f"  Search fallback error for {fram_code}: {e}")
+
+    return None
+
+
+def scrape_fitment(page, fram_code: str) -> dict:
+    product_url = _find_product_url(page, fram_code)
+    if not product_url:
+        return {"status": 404, "url": FRAM_BASE.format(part=fram_code.lower()),
+                "title": "", "fitment": []}
+    try:
+        resp = page.goto(product_url, wait_until="domcontentloaded", timeout=25000)
+        status = resp.status if resp else 0
         try:
             page.wait_for_load_state("networkidle", timeout=8000)
         except PWTimeout:
             pass
-        time.sleep(0.5)
+        time.sleep(0.8)
 
         fitment = page.evaluate(_FITMENT_JS)
         meta    = page.evaluate(_META_JS)
 
         return {
             "status":  status,
-            "url":     url,
+            "url":     page.url,
             "title":   meta.get("title", ""),
             "fitment": fitment,
         }
     except PWTimeout:
-        return {"status": 408, "url": url, "title": "", "fitment": []}
+        return {"status": 408, "url": product_url, "title": "", "fitment": []}
     except Exception as e:
         log.warning(f"  Error {fram_code}: {e}")
-        return {"status": 0, "url": url, "title": "", "fitment": []}
+        return {"status": 0, "url": product_url, "title": "", "fitment": []}
 
 
 # ── Main run ────────────────────────────────────────────────────────────────
