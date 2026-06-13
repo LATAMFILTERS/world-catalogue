@@ -83,13 +83,14 @@ _SKIP_PREFIXES = {"LE", "LB", "WK", "PU", "KC", "KL"}
 def should_skip(sku: str) -> bool:
     """True if this SKU is known to return 0 crossref results on all sites."""
     u = sku.upper().strip()
-    # numeric OEM part numbers
     if u and u[0].isdigit():
         return True
     for pfx in _SKIP_PREFIXES:
         if u.startswith(pfx):
             return True
     return False
+
+def prefix_to_site(sku: str) -> str:
     upper = sku.upper().lstrip()
     for prefix, site in _PREFIX_ROUTES:
         if upper.startswith(prefix):
