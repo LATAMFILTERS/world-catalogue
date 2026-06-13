@@ -321,6 +321,34 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     finally { await client.end(); }
   });
 
+  // ── Migration: Phase A — all technologies ───────────────────────────────────
+  app.get('/api/migrate/product-catalog-phase-a', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '004_phase_a_all_technologies.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      // Row counts after migration
+      const counts = {};
+      for (const t of ['product_family', 'product_model', 'product_element']) {
+        const r = await client.query(`SELECT COUNT(*) FROM ${t}`);
+        counts[t] = parseInt(r.rows[0].count);
+      }
+      res.json({
+        success: true,
+        message: 'Phase A: all technology families + products migrated (idempotent)',
+        row_counts: counts,
+      });
+    } catch(e) {
+      console.error('[product-catalog phase-a]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Inspect: elimfilters_catalog data grouped by technology ─────────────────
   // GET /api/migrate/catalog-inspect?key=elim2026admin
   app.get('/api/migrate/catalog-inspect', async (req, res) => {
