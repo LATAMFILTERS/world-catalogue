@@ -118,20 +118,32 @@ _MANN_MASTER_JS = """() => {
         return el ? el.textContent.trim().replace(/\\s+/g, ' ') : '';
     }
 
-    // 1. Filter type — parse document.title: "Oil Filter W 940/21 | MANN-FILTER"
+    // 1+2. Body text (shared by filterType and GTIN)
+    var bodyText = document.body ? (document.body.innerText || '') : '';
+    var btLower  = bodyText.toLowerCase();
+
+    // 1. Filter type — search body text for known filter type phrases (works across locales)
     var filterType = '';
-    var pageTitle = document.title || '';
-    var beforePipe = pageTitle.indexOf(' | ') >= 0 ? pageTitle.split(' | ')[0] : pageTitle;
-    var lc = beforePipe.toLowerCase();
-    var fi = lc.indexOf('filter');
-    if (fi >= 0) {
-        filterType = beforePipe.substring(0, fi + 6).trim(); // "Oil Filter" / "Ölfilter"
-    } else {
-        filterType = beforePipe.split(/\s+\d/)[0].trim();   // fallback: cut at first digit
+    var typePatterns = ['Oil Filter', 'Fuel Filter', 'Air Filter', 'Cabin Filter',
+                        'Hydraulic Filter', 'Olfilter', 'Luftfilter', 'Kraftstofffilter',
+                        'Innenraumfilter'];
+    for (var tpi = 0; tpi < typePatterns.length; tpi++) {
+        if (btLower.indexOf(typePatterns[tpi].toLowerCase()) >= 0) {
+            filterType = typePatterns[tpi]; break;
+        }
+    }
+    // Fallback: document.title before the pipe, cut at "Filter" word (skip "MANN-FILTER")
+    if (!filterType) {
+        var ptitle = document.title || '';
+        var bpipe  = ptitle.indexOf(' | ') >= 0 ? ptitle.split(' | ')[0] : ptitle;
+        var bplc   = bpipe.toLowerCase();
+        var fidx   = bplc.indexOf('filter');
+        if (fidx >= 0 && bpipe.substring(0, fidx).toLowerCase().indexOf('mann') < 0) {
+            filterType = bpipe.substring(0, fidx + 6).trim();
+        }
     }
 
     // 2. GTIN — find "GTIN" then extract first run of 8+ digits after it
-    var bodyText = document.body ? (document.body.innerText || '') : '';
     var gtin = '';
     var gtinIdx = bodyText.indexOf('GTIN');
     if (gtinIdx >= 0) {
@@ -160,7 +172,7 @@ _MANN_MASTER_JS = """() => {
     // 5. Technical specs table
     var specs = kvTable(document.getElementById('technicalData'));
 
-    // 6. OE Numbers accordion
+    // 6. OE Numbers accordion — click button to expand (synchronous, works for CSS-hidden)
     var oeNumbers = {};
     var allItems = document.querySelectorAll('.cmp-accordion__item');
     var oeItem = null;
@@ -168,7 +180,9 @@ _MANN_MASTER_JS = """() => {
         var btn = allItems[ii].querySelector('.cmp-accordion__button') ||
                   allItems[ii].querySelector('.cmp-accordion__header');
         if (btn && btn.textContent.indexOf('OE Number') >= 0) {
-            oeItem = allItems[ii]; break;
+            oeItem = allItems[ii];
+            try { btn.click(); } catch(e) {}  // expand if CSS-collapsed
+            break;
         }
     }
     if (oeItem) {
@@ -255,8 +269,8 @@ _MANN_MASTER_JS = """() => {
         }
     }
     var cleanFitment = [];
-    for (var fi = 0; fi < fitment.length; fi++) {
-        var fr = fitment[fi];
+    for (var fii = 0; fii < fitment.length; fii++) {
+        var fr = fitment[fii];
         if (fr.make || fr.model_family || fr.model_type || fr.engine_code || fr.year)
             cleanFitment.push(fr);
     }
@@ -418,6 +432,29 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
                 break
             else:
                 log.info(f"  locale:{locale} → 200 but no fitment/OE, trying next")
+
+        # OE fallback: us-en has OE Numbers section; ph-en/de-de often do not
+        n_oe = sum(len(v) for v in data.get("oeNumbers", {}).values())
+        if n_oe == 0 and status == 200:
+            try:
+                oe_url = MANN_BASE.format(locale="us-en", url_key=url_key)
+                oe_st  = _load_page(page, oe_url)
+                if oe_st == 200:
+                    try:
+                        page.click('.cmp-accordion__button:has-text("OE Number")', timeout=3000)
+                        time.sleep(0.8)
+                    except Exception:
+                        pass
+                    data2 = page.evaluate(_MANN_MASTER_JS)
+                    n_oe2 = sum(len(v) for v in data2.get("oeNumbers", {}).values())
+                    if n_oe2 > 0:
+                        data["oeNumbers"] = data2["oeNumbers"]
+                        log.info(f"  us-en OE fallback: {n_oe2} codes")
+                    # Also inherit filterType from us-en if ours is empty
+                    if data2.get("filterType") and not data.get("filterType"):
+                        data["filterType"] = data2["filterType"]
+            except Exception as e:
+                log.debug(f"  OE fallback: {e}")
 
         return {
             "status":        status,
