@@ -3,7 +3,10 @@
 cross_mann_fleetguard.py
 ========================
 Cruza MANN OEM numbers con OEM codes de productos Fleetguard.
-Resultado: tabla mann_fleetguard_matches (ejecutado server-side vía API).
+Resultado: tabla mann_fleetguard_matches (ejecutado server-side via API).
+
+Uso:
+    python cross_mann_fleetguard.py [--segment HD|LD|MIXED]
 """
 
 import json
@@ -28,9 +31,20 @@ def api_post(path, payload, timeout=300):
 
 
 def main():
-    print("Building mann_fleetguard_matches (server-side)...")
+    segment = None
+    if "--segment" in sys.argv:
+        idx = sys.argv.index("--segment")
+        segment = sys.argv[idx + 1].upper()
+
+    label = f" [{segment}]" if segment else " [ALL]"
+    print(f"Building mann_fleetguard_matches{label} (server-side)...")
+
+    payload = {"key": API_KEY}
+    if segment:
+        payload["segment"] = segment
+
     try:
-        result = api_post("/api/oem/build-fleetguard-matches", {"key": API_KEY})
+        result = api_post("/api/oem/build-fleetguard-matches", payload)
     except urllib.error.HTTPError as e:
         print(f"ERROR {e.code}: {e.read().decode()}")
         sys.exit(1)
