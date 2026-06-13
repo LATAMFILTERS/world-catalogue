@@ -44,8 +44,14 @@ PROGRESS_FILE    = Path(r"C:\mann\mann_ld_fitment_progress.json")
 DEBUG_DIR        = Path(r"C:\mann\debug_html")
 
 PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".mann_fitment_profile")
-MANN_BASE    = "https://www.mann-filter.com/int-en/catalog/search-results/product.html/{url_key}.html"
-MANN_SEARCH  = "https://www.mann-filter.com/int-en/catalogsearch/result/?q={part}"
+
+# Locale cascade — tried in order until one returns 200 + fitment.
+# ph-en (Philippines) has the widest Asian/Pacific catalog.
+# de-de (Germany) is MANN's home market — most complete European catalog.
+# gb-en (Great Britain) catches products not in ph-en or de-de.
+MANN_LOCALES = ["ph-en", "de-de", "gb-en"]
+MANN_BASE    = "https://www.mann-filter.com/{locale}/catalog/search-results/product.html/{url_key}.html"
+MANN_SEARCH  = "https://www.mann-filter.com/ph-en/catalogsearch/result/?q={part}"
 MANN_DOMAIN  = "https://www.mann-filter.com"
 PAUSE        = (3, 6)
 
@@ -53,8 +59,8 @@ PAUSE        = (3, 6)
 def _build_url_key(raw_key: str, sku: str) -> str:
     """Build MANN product URL slug.
 
-    MANN int-en URL format:
-      /int-en/catalog/search-results/product.html/{slug}_mann-filter.html
+    MANN URL format:
+      /{locale}/catalog/search-results/product.html/{slug}_mann-filter.html
     For SKUs like W940/21 the slug uses ONLY the part before the slash: w940
     For SKUs like WK8114 (no slash) the slug is: wk8114
     """
@@ -297,17 +303,30 @@ _SEARCH_RESULT_JS = """() => {
 
 
 def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
-    url_key = _build_url_key(url_key, sku)
-    direct  = MANN_BASE.format(url_key=url_key)
+    url_key    = _build_url_key(url_key, sku)
     via_search = False
+    final_url  = ""
+    status     = 0
+    title      = ""
+    fitment    = []
 
     try:
-        status = _load_page(page, direct)
-        title, fitment = _extract(page)
-        final_url = page.url
+        # ── Locale cascade: try each locale until we get fitment ──────────────
+        for locale in MANN_LOCALES:
+            direct = MANN_BASE.format(locale=locale, url_key=url_key)
+            status = _load_page(page, direct)
+            title, fitment = _extract(page)
+            final_url = page.url
+            if status == 200 and fitment:
+                log.info(f"  locale:{locale} → {len(fitment)} vehicles")
+                break
+            elif status == 200:
+                log.info(f"  locale:{locale} → 200 but no fitment, trying next")
+            else:
+                log.info(f"  locale:{locale} → {status}")
 
-        # only try search when page loaded OK but has no fitment data
-        if status == 200 and not fitment:
+        # ── Search fallback: only when all locales returned 200 + no fitment ──
+        if not fitment and status == 200:
             encoded    = quote(sku, safe="")
             search_url = MANN_SEARCH.format(part=encoded)
             log.info(f"  → fallback search: {search_url}")
@@ -316,10 +335,10 @@ def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
             product_url = page.evaluate(_SEARCH_RESULT_JS)
             if product_url and "/spare-parts/" in product_url:
                 log.info(f"  → product found: {product_url}")
-                status    = _load_page(page, product_url)
+                status         = _load_page(page, product_url)
                 title, fitment = _extract(page)
-                final_url  = page.url
-                via_search = True
+                final_url      = page.url
+                via_search     = True
             else:
                 log.info(f"  → no product link found in search results")
 
@@ -332,10 +351,10 @@ def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
         }
 
     except PWTimeout:
-        return {"status": 408, "url": direct, "title": "", "fitment": [], "via_search": False}
+        return {"status": 408, "url": final_url or MANN_BASE.format(locale=MANN_LOCALES[0], url_key=url_key), "title": "", "fitment": [], "via_search": False}
     except Exception as e:
         log.warning(f"  Error {sku}: {e}")
-        return {"status": 0, "url": direct, "title": "", "fitment": [], "via_search": False}
+        return {"status": 0, "url": final_url or MANN_BASE.format(locale=MANN_LOCALES[0], url_key=url_key), "title": "", "fitment": [], "via_search": False}
 
 
 # ── Main run ────────────────────────────────────────────────────────────────
@@ -468,7 +487,7 @@ def test_one(sku: str, debug: bool = False):
         url_key = _build_url_key("", sku)
 
     url_key = _build_url_key(url_key, sku)
-    url     = MANN_BASE.format(url_key=url_key)
+    url     = MANN_BASE.format(locale=MANN_LOCALES[0], url_key=url_key)
     log.info(f"Testing {sku}  url_key:{url_key}")
     log.info(f"  → {url}")
 
