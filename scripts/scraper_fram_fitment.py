@@ -454,24 +454,45 @@ def test_one(fram_code: str, debug: bool = False):
         ctx  = make_context(pw)
         page = ctx.new_page()
 
-        url = FRAM_BASE.format(part=fram_code.lower())
-        page.goto(url, wait_until="domcontentloaded", timeout=25000)
+        # Always start with AutoZone search for diagnosis
+        search_url = AUTOZONE_SEARCH.format(part=fram_code.upper())
+        log.info(f"  → {search_url}")
+        page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
         try:
-            page.wait_for_load_state("networkidle", timeout=8000)
+            page.wait_for_load_state("networkidle", timeout=10000)
         except PWTimeout:
             pass
-        time.sleep(1)
+        time.sleep(2)
 
         if debug:
             DEBUG_DIR.mkdir(parents=True, exist_ok=True)
-            html_path = DEBUG_DIR / f"fram_{fram_code}.html"
+            html_path = DEBUG_DIR / f"az_{fram_code}.html"
             html_path.write_text(page.content(), encoding="utf-8")
             log.info(f"HTML guardado en {html_path}")
+            # Also print diagnostic info
+            diag = page.evaluate("""() => {
+                const links = [...document.querySelectorAll('a[href]')]
+                    .map(a => a.getAttribute('href'))
+                    .filter(h => h && h.length > 5)
+                    .slice(0, 30);
+                return {
+                    title: document.title,
+                    url: location.href,
+                    total_links: document.querySelectorAll('a[href]').length,
+                    sample_links: links,
+                };
+            }""")
+            print(f"\n=== DIAGNÓSTICO AutoZone ===")
+            print(f"  Title       : {diag['title']}")
+            print(f"  Final URL   : {diag['url']}")
+            print(f"  Total <a>   : {diag['total_links']}")
+            print(f"  Sample hrefs:")
+            for h in diag['sample_links']:
+                print(f"    {h}")
             ctx.close()
             return
 
-        result  = scrape_fitment(page, fram_code)
-        meta    = page.evaluate(_META_JS)
+        result = scrape_fitment(page, fram_code)
         ctx.close()
 
     print(f"\n=== FRAM {fram_code} ===")
