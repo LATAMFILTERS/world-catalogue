@@ -74,7 +74,22 @@ _PREFIX_ROUTES = [
     ("SP",  "air"),
 ]
 
-def prefix_to_site(sku: str) -> str:
+# Prefixes confirmed to return 0% crossrefs across all sites — skip entirely.
+# LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
+# WK / PU = MANN fuel filters NOT indexed by fuelfilter-crossreference.com
+# Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
+_SKIP_PREFIXES = {"LE", "LB", "WK", "PU", "KC", "KL"}
+
+def should_skip(sku: str) -> bool:
+    """True if this SKU is known to return 0 crossref results on all sites."""
+    u = sku.upper().strip()
+    # numeric OEM part numbers
+    if u and u[0].isdigit():
+        return True
+    for pfx in _SKIP_PREFIXES:
+        if u.startswith(pfx):
+            return True
+    return False
     upper = sku.upper().lstrip()
     for prefix, site in _PREFIX_ROUTES:
         if upper.startswith(prefix):
@@ -257,11 +272,18 @@ def run(start_from: str = None, dry_run: bool = False, retry_zeros: bool = False
 
     # Group by site to reuse browser contexts
     by_site: dict[str, list] = {"oil": [], "fuel": [], "air": []}
+    skipped = 0
     for sku in skus:
         if sku in progress:
             continue   # already done
+        if should_skip(sku):
+            skipped += 1
+            continue   # known-zero prefix — no crossrefs on any site
         site = prefix_to_site(sku)
         by_site[site].append(sku)
+
+    if skipped:
+        log.info(f"Skip (known-zero prefixes / numeric OEM): {skipped} SKUs")
 
     cached = sum(1 for s in skus if s in progress)
     to_scrape = total - cached
