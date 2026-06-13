@@ -72,144 +72,154 @@ def _build_url_key(raw_key: str, sku: str) -> str:
 
 
 # ── Master JS extractor ────────────────────────────────────────────────────
+# NOTE: avoid matchAll, optional chaining (?.), and {n,m} in inline regex
+# literals — all cause SyntaxError: Unexpected number on certain Chrome builds
+# used via Playwright channel="chrome".
 _MANN_MASTER_JS = """() => {
-    // ── Column aliases: EN + DE ──────────────────────────────────────────
-    const COL_ALIASES = {
-        modelType:  ['Model Type',           'Fahrzeugtyp',     'Typ'],
-        filterType: ['Filter Type',          'Filtertyp'],
-        engineCode: ['Engine Code',          'Motorcode',       'Motor'],
+    var COL_ALIASES = {
+        modelType:  ['Model Type', 'Fahrzeugtyp', 'Typ'],
+        filterType: ['Filter Type', 'Filtertyp'],
+        engineCode: ['Engine Code', 'Motorcode', 'Motor'],
         ccm:        ['ccm'],
         kw:         ['kW'],
         hp:         ['HP', 'PS'],
-        year:       ['Year of Manufacture',  'Baujahr',         'Herstellungsjahr'],
+        year:       ['Year of Manufacture', 'Baujahr', 'Herstellungsjahr'],
     };
-    const SKIP_CELLS = new Set(['-', '–', '']);
-    for (const aliases of Object.values(COL_ALIASES))
-        for (const a of aliases) SKIP_CELLS.add(a);
+    var SKIP_CELLS = {'-':1, '\\u2013':1, '':1};
+    var aliasKeys = Object.keys(COL_ALIASES);
+    for (var ai = 0; ai < aliasKeys.length; ai++) {
+        var alist = COL_ALIASES[aliasKeys[ai]];
+        for (var aj = 0; aj < alist.length; aj++) SKIP_CELLS[alist[aj]] = 1;
+    }
 
-    // ── Helper: extract key-value table from an accordion item ───────────
     function kvTable(section) {
-        const result = {};
+        var result = {};
         if (!section) return result;
-        section.querySelectorAll('table tr').forEach(tr => {
-            const cells = [...tr.querySelectorAll('td,th')]
-                .map(c => c.textContent.trim().replace(/\\s+/g, ' '));
-            if (cells.length >= 2 && cells[0] && cells[1])
-                result[cells[0]] = cells[1];
-        });
+        var rows = section.querySelectorAll('table tr');
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].querySelectorAll('td,th');
+            if (cells.length >= 2) {
+                var k = cells[0].textContent.trim().replace(/\\s+/g, ' ');
+                var v = cells[1].textContent.trim().replace(/\\s+/g, ' ');
+                if (k && v) result[k] = v;
+            }
+        }
         return result;
     }
 
-    // ── 1. Filter type & product title ───────────────────────────────────
-    // MANN titles look like: "Oil Filter\nW 940/21" or "Ölfilter\nHU 6013 y"
-    const titleEl = document.querySelector('.cmp-product__title, h1');
-    const rawTitle = (titleEl?.textContent || document.title || '').trim().replace(/\\s+/g,' ');
-    const filterType = rawTitle.split(/\\n/)[0].trim();
-
-    // ── 2. GTIN code ─────────────────────────────────────────────────────
-    const bodyText = document.body.innerText || '';
-    const gtinMatch = bodyText.match(/GTIN[\\s\\w]*[:\\s]+([0-9]{8,14})/i);
-    const gtin = gtinMatch ? gtinMatch[1].trim() : '';
-
-    // ── 3. Description ("About this item") ───────────────────────────────
-    let description = '';
-    const aboutSection = document.querySelector('[id*="about"], [class*="about-item"], .cmp-product__description');
-    if (aboutSection) {
-        description = aboutSection.textContent.trim().replace(/\\s+/g,' ').substring(0, 800);
-    } else {
-        // Fallback: find first substantial text block on page (≥100 chars)
-        for (const el of document.querySelectorAll('p, [class*="text"]')) {
-            const t = el.textContent.trim().replace(/\\s+/g,' ');
-            if (t.length >= 100 && t.length <= 800) { description = t; break; }
-        }
-    }
-
-    // ── 4. Dimensions ────────────────────────────────────────────────────
-    const dims = kvTable(document.getElementById('dimensions'));
-
-    // Also try to extract inline dimension string from "About this item" text
-    // e.g. "Outer diameter (A) = 3.661 in; Inner diameter of gasket (B) = 2.441 in; ..."
-    const dimInline = {};
-    const dimMatches = [...bodyText.matchAll(/([A-Z][^=]{0,40})\\(([A-Z])\\)\\s*=\\s*([0-9.]+\\s*(?:in|mm)[^;]*)/gi)];
-    for (const m of dimMatches) {
-        const code = m[2].toUpperCase();
-        const val  = m[3].trim();
-        dimInline[code] = val;
-    }
-
-    // ── 5. Technical Specifications ──────────────────────────────────────
-    const specs = kvTable(document.getElementById('technicalData'));
-
-    // ── 6. OE Numbers ────────────────────────────────────────────────────
-    // Accordion item with "OE Number" in its button text
-    const oeNumbers = {};
-    const oeItem = [...document.querySelectorAll('.cmp-accordion__item')].find(item =>
-        (item.querySelector('.cmp-accordion__button, .cmp-accordion__header')?.textContent || '').includes('OE Number')
-    );
-    if (oeItem) {
-        const table = oeItem.querySelector('table');
-        if (table) {
-            let lastMake = '';
-            table.querySelectorAll('tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td')]
-                    .map(c => c.textContent.trim().replace(/\\s+/g, ' '))
-                    .filter(c => c);
-                if (!cells.length) return;
-                if (cells.length === 2) {
-                    // make | code  or  make (rowspan) | code
-                    const [makeCell, codeCell] = cells;
-                    // If first cell looks like a make name (no digits or short alphanumeric brand)
-                    if (makeCell && !/^\\d/.test(makeCell)) lastMake = makeCell;
-                    const target = lastMake || makeCell;
-                    if (!oeNumbers[target]) oeNumbers[target] = [];
-                    if (codeCell) oeNumbers[target].push(codeCell);
-                } else if (cells.length === 1) {
-                    // Single-cell row: either a make header (rowspan) or an OE code under lastMake
-                    const val = cells[0];
-                    if (!oeNumbers[val] && /^[A-Z][A-Z0-9\\s&-]{0,25}$/.test(val) && !/^[0-9]/.test(val)) {
-                        // Looks like a make name
-                        lastMake = val;
-                        oeNumbers[lastMake] = [];
-                    } else if (lastMake) {
-                        oeNumbers[lastMake].push(val);
-                    }
-                }
-            });
-        } else {
-            // No table: try reading raw text blocks (make name then codes)
-            let lastMake = '';
-            oeItem.querySelectorAll('p, li, div, span').forEach(el => {
-                if (el.children.length > 2) return;
-                const t = el.textContent.trim().replace(/\\s+/g, ' ');
-                if (!t || t.length > 60 || t === 'OE Numbers') return;
-                if (/^[A-Z][A-Z0-9\\s&-]{1,24}$/.test(t) && !/^[0-9]/.test(t)) {
-                    lastMake = t;
-                    if (!oeNumbers[lastMake]) oeNumbers[lastMake] = [];
-                } else if (lastMake && t) {
-                    oeNumbers[lastMake].push(t);
-                }
-            });
-        }
-    }
-
-    // ── 7. Fitment / Vehicles / Applications ─────────────────────────────
     function resolveCol(colIdx, aliases) {
-        for (const a of aliases) if (colIdx[a] !== undefined) return colIdx[a];
+        for (var i = 0; i < aliases.length; i++) {
+            if (colIdx[aliases[i]] !== undefined) return colIdx[aliases[i]];
+        }
         return -1;
     }
 
-    const fitment = [];
-    document.querySelectorAll('.cmp-application-table').forEach(appDiv => {
-        const table = appDiv.querySelector('table');
-        if (!table) return;
-        const innerPanel = appDiv.closest('.cmp-accordion__panel');
-        const outerPanel = innerPanel?.parentElement?.closest('.cmp-accordion__panel');
-        const modelFamily = (innerPanel?.previousElementSibling?.textContent || '').trim();
-        const makeName    = (outerPanel?.previousElementSibling?.textContent  || '').trim();
-        const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
-        const colIdx = {};
-        ths.forEach((h, i) => { colIdx[h] = i; });
-        const c = {
+    function getText(el) {
+        return el ? el.textContent.trim().replace(/\\s+/g, ' ') : '';
+    }
+
+    // 1. Filter type
+    var titleEl = document.querySelector('.cmp-product__title, h1');
+    var rawTitle = getText(titleEl) || document.title || '';
+    var titleParts = rawTitle.split('\\n');
+    var filterType = titleParts[0].trim();
+
+    // 2. GTIN — find "GTIN" then extract first run of 8+ digits after it
+    var bodyText = document.body ? (document.body.innerText || '') : '';
+    var gtin = '';
+    var gtinIdx = bodyText.indexOf('GTIN');
+    if (gtinIdx >= 0) {
+        var chunk = bodyText.substring(gtinIdx, gtinIdx + 50);
+        var gm = chunk.match(/(\\d+)/);
+        if (gm && gm[1].length >= 8) gtin = gm[1].substring(0, 14);
+    }
+
+    // 3. Description
+    var description = '';
+    var aboutEl = document.querySelector('[class*="about-item"]') ||
+                  document.querySelector('.cmp-product__description');
+    if (aboutEl) {
+        description = getText(aboutEl).substring(0, 800);
+    } else {
+        var pTags = document.querySelectorAll('p');
+        for (var pi = 0; pi < pTags.length; pi++) {
+            var pt = getText(pTags[pi]);
+            if (pt.length >= 100 && pt.length <= 800) { description = pt; break; }
+        }
+    }
+
+    // 4. Dimensions table
+    var dims = kvTable(document.getElementById('dimensions'));
+
+    // 5. Technical specs table
+    var specs = kvTable(document.getElementById('technicalData'));
+
+    // 6. OE Numbers accordion
+    var oeNumbers = {};
+    var allItems = document.querySelectorAll('.cmp-accordion__item');
+    var oeItem = null;
+    for (var ii = 0; ii < allItems.length; ii++) {
+        var btn = allItems[ii].querySelector('.cmp-accordion__button') ||
+                  allItems[ii].querySelector('.cmp-accordion__header');
+        if (btn && btn.textContent.indexOf('OE Number') >= 0) {
+            oeItem = allItems[ii]; break;
+        }
+    }
+    if (oeItem) {
+        var oeTable = oeItem.querySelector('table');
+        if (oeTable) {
+            var lastMake = '';
+            var oeRows = oeTable.querySelectorAll('tr');
+            for (var ri = 0; ri < oeRows.length; ri++) {
+                var oeCells = oeRows[ri].querySelectorAll('td');
+                var cv = [];
+                for (var ci = 0; ci < oeCells.length; ci++) {
+                    var ct = oeCells[ci].textContent.trim().replace(/\\s+/g, ' ');
+                    if (ct) cv.push(ct);
+                }
+                if (!cv.length) continue;
+                if (cv.length >= 2) {
+                    var mc = cv[0], cc = cv[1];
+                    // make cell: starts with letter, not a digit
+                    if (mc && mc.charCodeAt(0) >= 65) lastMake = mc;
+                    var tgt = lastMake || mc;
+                    if (tgt) {
+                        if (!oeNumbers[tgt]) oeNumbers[tgt] = [];
+                        if (cc) oeNumbers[tgt].push(cc);
+                    }
+                } else {
+                    var sv = cv[0];
+                    var fc = sv ? sv.charCodeAt(0) : 0;
+                    // looks like a brand name: starts A-Z, not a digit, short
+                    if (fc >= 65 && fc <= 90 && sv.length <= 30 && !oeNumbers[sv]) {
+                        lastMake = sv;
+                        oeNumbers[lastMake] = [];
+                    } else if (lastMake && sv) {
+                        oeNumbers[lastMake].push(sv);
+                    }
+                }
+            }
+        }
+    }
+
+    // 7. Fitment / Vehicles
+    var fitment = [];
+    var appDivs = document.querySelectorAll('.cmp-application-table');
+    for (var di = 0; di < appDivs.length; di++) {
+        var appDiv = appDivs[di];
+        var appTable = appDiv.querySelector('table');
+        if (!appTable) continue;
+        var innerPanel = appDiv.closest('.cmp-accordion__panel');
+        var outerPanel = innerPanel && innerPanel.parentElement
+                         ? innerPanel.parentElement.closest('.cmp-accordion__panel') : null;
+        var prevInner = innerPanel ? innerPanel.previousElementSibling : null;
+        var prevOuter = outerPanel ? outerPanel.previousElementSibling : null;
+        var modelFamily = getText(prevInner);
+        var makeName    = getText(prevOuter);
+        var ths = appTable.querySelectorAll('th');
+        var colIdx = {};
+        for (var ti = 0; ti < ths.length; ti++) colIdx[ths[ti].textContent.trim()] = ti;
+        var c = {
             modelType:  resolveCol(colIdx, COL_ALIASES.modelType),
             engineCode: resolveCol(colIdx, COL_ALIASES.engineCode),
             ccm:        resolveCol(colIdx, COL_ALIASES.ccm),
@@ -217,29 +227,44 @@ _MANN_MASTER_JS = """() => {
             hp:         resolveCol(colIdx, COL_ALIASES.hp),
             year:       resolveCol(colIdx, COL_ALIASES.year),
         };
-        for (const tr of table.querySelectorAll('tbody tr')) {
-            const cells = [...tr.querySelectorAll('td')]
-                .map(td => td.textContent.trim().replace(/\\s+/g, ' '));
+        var tbodyRows = appTable.querySelectorAll('tbody tr');
+        for (var tri = 0; tri < tbodyRows.length; tri++) {
+            var tds = tbodyRows[tri].querySelectorAll('td');
+            var cells = [];
+            for (var tdi = 0; tdi < tds.length; tdi++)
+                cells.push(tds[tdi].textContent.trim().replace(/\\s+/g, ' '));
             if (!cells.length) continue;
-            if (SKIP_CELLS.has(cells[0])) continue;
-            const clean = v => (v === '-' || v === '–') ? '' : v;
+            if (SKIP_CELLS[cells[0]]) continue;
+            function clean(v) { return (v === '-' || v === '\\u2013') ? '' : (v || ''); }
             fitment.push({
                 make:         makeName,
                 model_family: modelFamily,
-                model_type:   c.modelType  >= 0 ? clean(cells[c.modelType]  || '').substring(0,80) : '',
-                engine_code:  c.engineCode >= 0 ? clean(cells[c.engineCode] || '').substring(0,30) : '',
-                ccm:          c.ccm        >= 0 ? clean(cells[c.ccm]        || '').substring(0,10) : '',
-                kw:           c.kw         >= 0 ? clean(cells[c.kw]         || '').substring(0,10) : '',
-                hp:           c.hp         >= 0 ? clean(cells[c.hp]         || '').substring(0,10) : '',
-                year:         c.year       >= 0 ? clean(cells[c.year]       || '').substring(0,30) : '',
+                model_type:   c.modelType  >= 0 ? clean(cells[c.modelType]).substring(0, 80)  : '',
+                engine_code:  c.engineCode >= 0 ? clean(cells[c.engineCode]).substring(0, 30) : '',
+                ccm:          c.ccm        >= 0 ? clean(cells[c.ccm]).substring(0, 10)        : '',
+                kw:           c.kw         >= 0 ? clean(cells[c.kw]).substring(0, 10)         : '',
+                hp:           c.hp         >= 0 ? clean(cells[c.hp]).substring(0, 10)         : '',
+                year:         c.year       >= 0 ? clean(cells[c.year]).substring(0, 30)       : '',
             });
         }
-    });
-    const cleanFitment = fitment.filter(r =>
-        r.make || r.model_family || r.model_type || r.engine_code || r.year
-    );
+    }
+    var cleanFitment = [];
+    for (var fi = 0; fi < fitment.length; fi++) {
+        var fr = fitment[fi];
+        if (fr.make || fr.model_family || fr.model_type || fr.engine_code || fr.year)
+            cleanFitment.push(fr);
+    }
 
-    return { filterType, gtin, description, dims, dimInline, specs, oeNumbers, fitment: cleanFitment };
+    return {
+        filterType: filterType,
+        gtin: gtin,
+        description: description,
+        dims: dims,
+        dimInline: {},
+        specs: specs,
+        oeNumbers: oeNumbers,
+        fitment: cleanFitment
+    };
 }"""
 
 
