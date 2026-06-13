@@ -1,5 +1,5 @@
 -- ============================================================================
--- 007_fix_500fg_micron_ratings.sql
+-- 007_fix_500fg_micron_ratings.sql  (corrected)
 -- Corrects micron ratings for 500FG series elements per Parker Racor
 -- 500FG Turbine Series datasheet (Part Number 15332 Rev G, page 5 & 6).
 --
@@ -7,13 +7,15 @@
 -- Racor naming convention:
 --   SM = Super Micron  →  2µm  (finest — maximum protection)
 --   TM = Turbine Media → 10µm  (enhanced)
---   PM = Primary Micron → 30µm (coarsest — OEM/primary fuel circuit)
+--   PM = Primary Micron → 30µm (coarsest — OEM baseline)
 --
 -- Corrections applied:
 --   1. product_element.protection_spec — micron_nominal + water_sep specs
 --   2. product_element.description
 --   3. alternative_group_member — is_baseline, protection_level,
 --      operational_objective, compatibility_note, rank_in_group
+--      NOTE: SM-OR set to FALSE *before* PM-OR set to TRUE to avoid
+--      triggering the idx_agm_one_baseline_per_group partial unique index.
 --   4. model_element_compatibility — is_primary (PM-OR is OEM standard)
 --
 -- All statements idempotent — safe to re-run.
@@ -71,40 +73,11 @@ WHERE element_code = '2010PM-OR';
 
 
 -- ── Step 2: Fix alternative_group_member for HYDROCORE-2010 ──────────────────
--- PM-OR (30µm) = baseline OEM equivalent
--- TM-OR (10µm) = enhanced (TYPE A)
--- SM-OR (2µm)  = maximum protection (TYPE A)
+-- IMPORTANT: SM-OR must be demoted (is_baseline=FALSE) BEFORE PM-OR is
+-- promoted (is_baseline=TRUE) to avoid the partial unique index violation.
+-- idx_agm_one_baseline_per_group enforces only one TRUE per group.
 
--- 2010PM-OR → baseline
-UPDATE alternative_group_member
-SET
-  is_baseline          = TRUE,
-  protection_level     = 1,
-  operational_objective = 'oem_equivalent',
-  compatibility_note   =
-    'O-ring seat match confirmed; same bowl class 2010. Primary 30µm media. '
-    'Free water separation 95%. OEM-equivalent protection level. '
-    'Direct cross-reference to Racor 2010PM-OR. '
-    'Recommended for suction-side primary filtration per Racor installation guide.',
-  rank_in_group        = 1
-WHERE element_id = (SELECT id FROM product_element WHERE element_code = '2010PM-OR')
-  AND group_id   = (SELECT id FROM alternative_group WHERE group_code = 'HYDROCORE-2010');
-
--- 2010TM-OR → enhanced (TYPE A, level 3)
-UPDATE alternative_group_member
-SET
-  is_baseline          = FALSE,
-  protection_level     = 3,
-  operational_objective = 'enhanced_protection',
-  compatibility_note   =
-    'Same O-ring seat and bowl class 2010. Turbine-grade 10µm media. '
-    'Free water separation upgraded from 95% to 99%; emulsified water 95%. '
-    'TYPE A upgrade. Recommended for EFI systems with water contamination history.',
-  rank_in_group        = 2
-WHERE element_id = (SELECT id FROM product_element WHERE element_code = '2010TM-OR')
-  AND group_id   = (SELECT id FROM alternative_group WHERE group_code = 'HYDROCORE-2010');
-
--- 2010SM-OR → maximum protection (TYPE A, level 5)
+-- 2010SM-OR → demote first (was baseline, now TYPE A level 5)
 UPDATE alternative_group_member
 SET
   is_baseline          = FALSE,
@@ -119,9 +92,38 @@ SET
 WHERE element_id = (SELECT id FROM product_element WHERE element_code = '2010SM-OR')
   AND group_id   = (SELECT id FROM alternative_group WHERE group_code = 'HYDROCORE-2010');
 
+-- 2010TM-OR → enhanced (TYPE A, level 3) — no baseline change
+UPDATE alternative_group_member
+SET
+  is_baseline          = FALSE,
+  protection_level     = 3,
+  operational_objective = 'enhanced_protection',
+  compatibility_note   =
+    'Same O-ring seat and bowl class 2010. Turbine-grade 10µm media. '
+    'Free water separation upgraded from 95% to 99%; emulsified water 95%. '
+    'TYPE A upgrade. Recommended for EFI systems with water contamination history.',
+  rank_in_group        = 2
+WHERE element_id = (SELECT id FROM product_element WHERE element_code = '2010TM-OR')
+  AND group_id   = (SELECT id FROM alternative_group WHERE group_code = 'HYDROCORE-2010');
+
+-- 2010PM-OR → promote to baseline (now safe — SM-OR is already FALSE)
+UPDATE alternative_group_member
+SET
+  is_baseline          = TRUE,
+  protection_level     = 1,
+  operational_objective = 'oem_equivalent',
+  compatibility_note   =
+    'O-ring seat match confirmed; same bowl class 2010. Primary 30µm media. '
+    'Free water separation 95%. OEM-equivalent protection level. '
+    'Direct cross-reference to Racor 2010PM-OR. '
+    'Recommended for suction-side primary filtration per Racor installation guide.',
+  rank_in_group        = 1
+WHERE element_id = (SELECT id FROM product_element WHERE element_code = '2010PM-OR')
+  AND group_id   = (SELECT id FROM alternative_group WHERE group_code = 'HYDROCORE-2010');
+
 
 -- ── Step 3: Fix model_element_compatibility — correct primary element ─────────
--- is_primary = TRUE should be 2010PM-OR (30µm — OEM standard primary filter)
+-- is_primary = TRUE → 2010PM-OR (30µm — OEM standard primary filter)
 
 UPDATE model_element_compatibility
 SET is_primary = TRUE
