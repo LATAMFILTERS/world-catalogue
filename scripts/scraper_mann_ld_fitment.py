@@ -572,9 +572,48 @@ def test_one(sku: str, debug: bool = False):
             return
 
         result = scrape_mann_fitment(page, sku, url_key)
+
+        # DOM ancestry diagnostic (always shown in --test mode)
+        ancestry = page.evaluate("""() => {
+            const appDiv = document.querySelector('.cmp-application-table');
+            if (!appDiv) return [{error: 'no cmp-application-table found'}];
+            const chain = [];
+            let node = appDiv.parentElement;
+            for (let depth = 0; depth < 15 && node; depth++) {
+                const prevSibs = [];
+                let prev = node.previousElementSibling;
+                for (let i = 0; i < 5 && prev; i++, prev = prev.previousElementSibling) {
+                    prevSibs.push({
+                        tag: prev.tagName,
+                        cls: (prev.className||'').substring(0,50),
+                        id:  prev.id||'',
+                        txt: prev.textContent.trim().substring(0,25),
+                    });
+                }
+                chain.push({
+                    depth,
+                    tag: node.tagName,
+                    cls: (node.className||'').substring(0,60),
+                    id:  node.id||'',
+                    prevSibs,
+                });
+                node = node.parentElement;
+            }
+            return chain;
+        }""")
+
         ctx.close()
 
     print(f"\n=== MANN {sku} ===")
+    print(f"\n── DOM ANCESTRY OF FIRST cmp-application-table ──")
+    for lvl in ancestry:
+        if "error" in lvl:
+            print(f"  ERROR: {lvl['error']}")
+            continue
+        print(f"  [{lvl['depth']}] <{lvl['tag']} class='{lvl['cls']}' id='{lvl['id']}'>")
+        for ps in lvl.get("prevSibs", []):
+            print(f"        prevSib: <{ps['tag']} class='{ps['cls']}' id='{ps['id']}'> text='{ps['txt']}'")
+    print()
     print(f"  URL        : {result['url']}")
     print(f"  Status     : {result['status']}")
     print(f"  Title      : {result['title']}")
