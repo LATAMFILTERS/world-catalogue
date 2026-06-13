@@ -160,79 +160,87 @@ def make_context(pw, headless: bool = False):
 
 # ── MANN fitment extractor ─────────────────────────────────────────────────
 _MANN_FITMENT_JS = """() => {
+    // MANN product page structure (ph-en):
+    //   cmp-accordion (Vehicles/Applications)
+    //     cmp-accordion__panel (Make panel, e.g. ALFA ROMEO)
+    //       cmp-accordion__panel (Model Family panel, e.g. 2300 Berlina)
+    //         div.cmp-application-table
+    //           table [th: Model Type | Filter Type | Engine Code | ccm | kW | HP | Year of Manufacture]
+    //             tbody > tr > td x 7
+
     const rows = [];
 
-    // Pattern 1: structured vehicle table (Make / Model / Year / Engine)
-    const tables = document.querySelectorAll('table');
-    for (const table of tables) {
-        const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim().toLowerCase());
-        const makeIdx  = ths.findIndex(h => h.includes('make') || h.includes('brand') || h.includes('manufacturer'));
-        const modelIdx = ths.findIndex(h => h.includes('model') || h.includes('type'));
-        const yearIdx  = ths.findIndex(h => h.includes('year') || h.includes('from') || h.includes('period'));
-        const engIdx   = ths.findIndex(h => h.includes('engine') || h.includes('motor') || h.includes('displacement'));
-        if (makeIdx === -1 && modelIdx === -1) continue;
+    function getButtonText(panelEl) {
+        if (!panelEl) return '';
+        // Button is a previous sibling of the panel OR a direct child of parent item wrapper
+        let prev = panelEl.previousElementSibling;
+        while (prev) {
+            if (prev.classList && prev.classList.contains('cmp-accordion__button')) {
+                return prev.textContent.trim();
+            }
+            prev = prev.previousElementSibling;
+        }
+        const parent = panelEl.parentElement;
+        if (parent) {
+            const btn = parent.querySelector(':scope > .cmp-accordion__button');
+            if (btn) return btn.textContent.trim();
+        }
+        return '';
+    }
+
+    document.querySelectorAll('.cmp-application-table').forEach(appDiv => {
+        const table = appDiv.querySelector('table');
+        if (!table) return;
+
+        // Walk up two accordion panel levels: model family → make
+        const innerPanel = appDiv.closest('.cmp-accordion__panel');
+        const outerPanel = innerPanel
+            ? innerPanel.parentElement?.closest('.cmp-accordion__panel')
+            : null;
+
+        const modelFamily = getButtonText(innerPanel);
+        const makeName    = getButtonText(outerPanel);
+
+        // Build column index map from <th> text
+        const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
+        const colIdx = {};
+        ths.forEach((h, i) => { colIdx[h] = i; });
+
+        const c = {
+            modelType:  colIdx['Model Type']           ?? -1,
+            engineCode: colIdx['Engine Code']           ?? -1,
+            ccm:        colIdx['ccm']                   ?? -1,
+            kw:         colIdx['kW']                    ?? -1,
+            hp:         colIdx['HP']                    ?? -1,
+            year:       colIdx['Year of Manufacture']   ?? -1,
+        };
+
         for (const tr of table.querySelectorAll('tbody tr')) {
-            const cells = [...tr.querySelectorAll('td')].map(td => td.textContent.trim());
+            const cells = [...tr.querySelectorAll('td')]
+                .map(td => td.textContent.trim().replace(/\\s+/g, ' '));
             if (!cells.length) continue;
-            const row = {};
-            if (makeIdx  >= 0) row.make   = cells[makeIdx]  || '';
-            if (modelIdx >= 0) row.model  = cells[modelIdx] || '';
-            if (yearIdx  >= 0) row.year   = cells[yearIdx]  || '';
-            if (engIdx   >= 0) row.engine = cells[engIdx]   || '';
-            if (row.make || row.model) rows.push(row);
-        }
-        if (rows.length) break;
-    }
 
-    // Pattern 2: application list items / cards
-    if (!rows.length) {
-        const cards = document.querySelectorAll(
-            '[class*="vehicle"] [class*="item"], [class*="application"] li, ' +
-            '[class*="compat"] li, [data-vehicle], [class*="car-item"]'
-        );
-        for (const card of cards) {
-            const text = card.textContent.trim().replace(/\\s+/g, ' ');
-            if (text.length > 3) rows.push({ raw: text });
-        }
-    }
+            // Skip in-table header-repeat rows (MANN repeats <th> text inside <tbody>)
+            const first = cells[0];
+            if (first === 'Model Type' || first === 'Filter Type' ||
+                first === 'Engine Code' || first === 'Year of Manufacture') continue;
 
-    // Pattern 3: JSON-LD or embedded data
-    if (!rows.length) {
-        document.querySelectorAll('script[type="application/json"], script[type="application/ld+json"]')
-            .forEach(s => {
-                try {
-                    const walk = (obj, depth) => {
-                        if (!obj || typeof obj !== 'object' || depth > 10) return;
-                        if (Array.isArray(obj)) { obj.forEach(o => walk(o, depth+1)); return; }
-                        const keys = Object.keys(obj);
-                        const hasVeh = keys.some(k => /make|model|vehicle|brand/i.test(k));
-                        if (hasVeh && (obj.make || obj.model || obj.vehicleType)) {
-                            rows.push({
-                                make:   obj.make || obj.brand || obj.vehicleMake || '',
-                                model:  obj.model || obj.vehicleModel || '',
-                                year:   String(obj.year || obj.startYear || ''),
-                                engine: obj.engine || obj.engineDescription || obj.displacement || '',
-                            });
-                        } else {
-                            keys.forEach(k => walk(obj[k], depth+1));
-                        }
-                    };
-                    walk(JSON.parse(s.textContent), 0);
-                } catch(e) {}
-            });
-    }
+            const row = {
+                make:         makeName,
+                model_family: modelFamily,
+                model_type:   c.modelType  >= 0 ? (cells[c.modelType]  || '').substring(0, 80) : '',
+                engine_code:  c.engineCode >= 0 ? (cells[c.engineCode] || '').substring(0, 30) : '',
+                ccm:          c.ccm        >= 0 ? (cells[c.ccm]        || '').substring(0, 10) : '',
+                kw:           c.kw         >= 0 ? (cells[c.kw]         || '').substring(0, 10) : '',
+                hp:           c.hp         >= 0 ? (cells[c.hp]         || '').substring(0, 10) : '',
+                year:         c.year       >= 0 ? (cells[c.year]       || '').substring(0, 30) : '',
+            };
 
-    // Pattern 4: all text lines matching "Make Model YYYY" pattern
-    if (!rows.length) {
-        const bodyText = document.body?.innerText || '';
-        const lines = bodyText.split('\\n').map(l => l.trim()).filter(l => l.length > 5);
-        const yearRe = /\\b(19|20)\\d{2}\\b/;
-        for (const line of lines) {
-            if (yearRe.test(line) && line.length < 120) {
-                rows.push({ raw: line });
+            if (row.make || row.model_family || row.model_type || row.engine_code) {
+                rows.push(row);
             }
         }
-    }
+    });
 
     return rows;
 }"""
