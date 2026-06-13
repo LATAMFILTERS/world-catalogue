@@ -4340,6 +4340,51 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
   }
 });
 
+// GET /api/oem/hd-parts
+// Returns distinct Donaldson and Fleetguard part numbers from cross_reference_master
+app.get('/api/oem/hd-parts', async (req, res) => {
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const brand = (req.query.brand || '').toLowerCase();
+
+    let donParts = [], fgParts = [];
+
+    if (!brand || brand === 'donaldson') {
+      const { rows } = await client.query(`
+        SELECT DISTINCT donaldson_part AS part, mann_part
+        FROM cross_reference_master
+        WHERE donaldson_part IS NOT NULL
+        ORDER BY donaldson_part
+      `);
+      donParts = rows;
+    }
+
+    if (!brand || brand === 'fleetguard') {
+      const { rows } = await client.query(`
+        SELECT DISTINCT fleetguard_part AS part, mann_part
+        FROM cross_reference_master
+        WHERE fleetguard_part IS NOT NULL
+        ORDER BY fleetguard_part
+      `);
+      fgParts = rows;
+    }
+
+    res.json({
+      success:      true,
+      don_count:    donParts.length,
+      fg_count:     fgParts.length,
+      donaldson:    donParts,
+      fleetguard:   fgParts,
+    });
+  } catch (err) {
+    console.error('[oem/hd-parts]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
