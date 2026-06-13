@@ -2702,7 +2702,7 @@ app.get('/api/intelligence/dashboard', async (req, res) => {
 // AI SYSTEM — Token budget + Sub-agents + Content Agent
 // ════════════════════════════════════════════════════════════════════════════
 
-const Anthropic = require('@anthropic-ai/sdk');
+const Groq = require('groq-sdk');
 
 const MONTHLY_TOKEN_BUDGET = 500000; // ~$6-8/month with caching
 const CONTENT_TOKENS_PER_PAGE = 3000; // ~20 pages/month reserved
@@ -2765,7 +2765,7 @@ async function logUsage(agent, usage, sessionId) {
     await client.query(
       `INSERT INTO ai_usage_log (month_key, agent, input_tokens, output_tokens, cached_tokens, session_id)
        VALUES ($1,$2,$3,$4,$5,$6)`,
-      [monthKey, agent, usage.input_tokens || 0, usage.output_tokens || 0, usage.cache_read_input_tokens || 0, sessionId || null]
+      [monthKey, agent, usage.prompt_tokens || usage.input_tokens || 0, usage.completion_tokens || usage.output_tokens || 0, 0, sessionId || null]
     );
   } catch(e) { console.error('[ai_usage_log]', e.message); }
   finally { await client.end(); }
@@ -2828,7 +2828,7 @@ Language: professional, positioning-focused.`,
 app.post('/api/ai/consult', async (req, res) => {
   const { query, agent = 'technical', session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const budget = await checkBudget('consult');
   if (!budget.ok) return res.status(429).json({
@@ -2837,7 +2837,7 @@ app.post('/api/ai/consult', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   try {
     const messages = [
@@ -2846,25 +2846,21 @@ app.post('/api/ai/consult', async (req, res) => {
       { role: 'user', content: query },
     ];
 
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
-      system: [
-        { type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } },
-        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: `${SYSTEM_CONTEXT}\n\n${persona}` }, ...messages],
     });
 
     await logUsage(agent, response.usage, session_id);
 
     res.json({
-      answer: response.content[0].text,
+      answer: response.choices[0].message.content,
       agent,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -2910,7 +2906,7 @@ app.get('/api/ai/usage', async (req, res) => {
 app.post('/api/ai/generate-content', async (req, res) => {
   const { query, equipment, part_number } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const budget = await checkBudget('content');
   if (!budget.ok) return res.status(429).json({ error: 'Content generation budget reached for this month.' });
@@ -2931,7 +2927,7 @@ app.post('/api/ai/generate-content', async (req, res) => {
     }
   } catch(e) {} finally { await checkClient.end(); }
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   const prompt = `A customer asked: "${query}"
 ${equipment ? `Equipment: ${equipment}` : ''}
@@ -2965,22 +2961,21 @@ Generate a Knowledge System page for the ELIMFILTERS website. Return JSON with t
 Rules: Technical tone only. No marketing language. Include ISO codes. Quantify operational impacts.`;
 
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 2048,
-      system: [{ type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } }],
-      messages: [{ role: 'user', content: prompt }],
+      messages: [{ role: 'system', content: SYSTEM_CONTEXT }, { role: 'user', content: prompt }],
     });
 
     await logUsage('content', response.usage, null);
 
     let pageData;
     try {
-      const text = response.content[0].text;
+      const text = response.choices[0].message.content;
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       pageData = JSON.parse(jsonMatch ? jsonMatch[0] : text);
     } catch(e) {
-      return res.status(500).json({ error: 'Failed to parse AI response', raw: response.content[0].text });
+      return res.status(500).json({ error: 'Failed to parse AI response', raw: response.choices[0].message.content });
     }
 
     // Save to DB
@@ -3153,12 +3148,12 @@ app.post('/api/intel/extract', async (req, res) => {
   }
   const { raw_text, source_url, brand } = req.body;
   if (!raw_text) return res.status(400).json({ error: 'raw_text required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
       messages: [{
         role: 'user',
@@ -3185,7 +3180,7 @@ Return only the JSON array. No markdown, no extra text.`
       }],
     });
     await logUsage('intel', response.usage, null);
-    const text = response.content[0].text;
+    const text = response.choices[0].message.content;
     const match = text.match(/\[[\s\S]*\]/);
     const extracted = JSON.parse(match ? match[0] : text);
     res.json({ success: true, extracted });
@@ -3201,7 +3196,7 @@ Return only the JSON array. No markdown, no extra text.`
 app.post('/api/ai/consult-v2', async (req, res) => {
   const { query, agent = 'technical', session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const [budget, intelContext] = await Promise.all([
     checkBudget('consult'),
@@ -3214,7 +3209,7 @@ app.post('/api/ai/consult-v2', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   const systemWithIntel = SYSTEM_CONTEXT + intelContext;
 
@@ -3223,24 +3218,20 @@ app.post('/api/ai/consult-v2', async (req, res) => {
       ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
       { role: 'user', content: query },
     ];
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
-      system: [
-        { type: 'text', text: systemWithIntel, cache_control: { type: 'ephemeral' } },
-        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: `${systemWithIntel}\n\n${persona}` }, ...messages],
     });
     await logUsage(agent, response.usage, session_id);
     res.json({
-      answer: response.content[0].text,
+      answer: response.choices[0].message.content,
       agent,
       intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -3665,7 +3656,7 @@ async function runREContextLookup(partMatches) {
 app.post('/api/ai/v2/consult-grounded', async (req, res) => {
   const { query, session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const [budget, intelContext] = await Promise.all([
     checkBudget('consult'),
@@ -3771,11 +3762,11 @@ app.post('/api/ai/v2/consult-grounded', async (req, res) => {
     : query;
 
   // Delegate to V2 specialist-agent pipeline via chiefReasoningEngine
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   let routing;
   try {
-    routing = await chiefReasoningEngine(query, anthropic); // route on original query
+    routing = await chiefReasoningEngine(query, groq); // route on original query
     await logUsage('v2_chief', routing.usage || {}, session_id);
   } catch(e) {
     routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
@@ -3812,7 +3803,7 @@ Then the TRACEABILITY block as specified above.
 FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
 If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
 
-  const model = routing.complexity === 'complex' ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+  const model = routing.complexity === 'complex' ? 'llama-3.3-70b-versatile' : 'llama-3.1-8b-instant';
 
   try {
     const messages = [
@@ -3820,16 +3811,15 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       { role: 'user', content: groundedQuery },
     ];
 
-    const response = await anthropic.messages.create({
+    const response = await groq.chat.completions.create({
       model,
       max_tokens: 1500,
-      system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
-      messages,
+      messages: [{ role: 'system', content: systemPrompt }, ...messages],
     });
 
     await logUsage('v2_grounded', response.usage, session_id);
 
-    const answer = response.content[0].text;
+    const answer = response.choices[0].message.content;
     const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
 
     res.json({
@@ -3844,9 +3834,9 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       },
       blocked,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -3955,14 +3945,14 @@ REJECT any response that: makes marketing claims, recommends without evidence, u
 };
 
 // ── Chief Reasoning Engine ─────────────────────────────────────────────────
-async function chiefReasoningEngine(query, anthropic) {
+async function chiefReasoningEngine(query, groq) {
   const agentList = Object.entries(SPECIALIST_AGENTS)
     .filter(([k]) => k !== 'philosophy')
     .map(([k, v]) => `${k}: ${v.triggers.join(', ')}`)
     .join('\n');
 
-  const response = await anthropic.messages.create({
-    model: 'claude-haiku-4-5-20251001',
+  const response = await groq.chat.completions.create({
+    model: 'llama-3.1-8b-instant',
     max_tokens: 256,
     messages: [{
       role: 'user',
@@ -3985,7 +3975,7 @@ Select 1-4 most relevant agents. Always include "experience" for operational que
     }],
   });
   try {
-    const text = response.content[0].text;
+    const text = response.choices[0].message.content;
     const match = text.match(/\{[\s\S]*\}/);
     return { ...JSON.parse(match ? match[0] : text), usage: response.usage };
   } catch {
@@ -4014,7 +4004,7 @@ NEVER recommend without a traceability block. If insufficient evidence: respond 
 app.post('/api/ai/v2/consult', async (req, res) => {
   const { query, session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const [budget, intelContext] = await Promise.all([
     checkBudget('consult'),
@@ -4024,11 +4014,11 @@ app.post('/api/ai/v2/consult', async (req, res) => {
     error: 'Monthly budget reached.', used: budget.used, limit: budget.limit
   });
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   let routing;
   try {
-    routing = await chiefReasoningEngine(query, anthropic);
+    routing = await chiefReasoningEngine(query, groq);
     await logUsage('v2_chief', routing.usage || {}, session_id);
   } catch(e) {
     routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
@@ -4068,7 +4058,7 @@ Then the TRACEABILITY block as specified above.
 FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
 If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
 
-  const model = routing.complexity === 'complex' ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+  const model = routing.complexity === 'complex' ? 'llama-3.3-70b-versatile' : 'llama-3.1-8b-instant';
 
   try {
     const messages = [
@@ -4076,18 +4066,15 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       { role: 'user', content: query },
     ];
 
-    const response = await anthropic.messages.create({
+    const response = await groq.chat.completions.create({
       model,
       max_tokens: 1500,
-      system: [
-        { type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: systemPrompt }, ...messages],
     });
 
     await logUsage('v2_specialist', response.usage, session_id);
 
-    const answer = response.content[0].text;
+    const answer = response.choices[0].message.content;
     const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
 
     res.json({
@@ -4102,9 +4089,9 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       blocked,
       intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -4119,10 +4106,10 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
 app.post('/api/ai/v2/route', async (req, res) => {
   const { query } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   try {
-    const routing = await chiefReasoningEngine(query, anthropic);
+    const routing = await chiefReasoningEngine(query, groq);
     const agents = (routing.agents || []).map(a => ({
       id: a,
       name: SPECIALIST_AGENTS[a]?.name || a,
