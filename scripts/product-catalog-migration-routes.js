@@ -366,6 +366,39 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     } finally { await client.end(); }
   });
 
+  // ── Migration: Phase B — singleton alternative_groups for MACROCORE/MICROKAPPA
+  app.get('/api/migrate/product-catalog-phase-b', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '006_phase_b_singleton_alternative_groups.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const counts = {};
+      for (const t of ['alternative_group', 'alternative_group_member']) {
+        const r = await client.query(`SELECT COUNT(*) FROM ${t}`);
+        counts[t] = parseInt(r.rows[0].count);
+      }
+      const orphans = await client.query(`
+        SELECT COUNT(*) FROM product_element pe
+        LEFT JOIN alternative_group_member agm ON agm.element_id = pe.id
+        WHERE agm.element_id IS NULL
+      `);
+      res.json({
+        success:          true,
+        message:          'Phase B: MACROCORE + MICROKAPPA singleton groups created (idempotent)',
+        row_counts:       counts,
+        remaining_orphans: parseInt(orphans.rows[0].count),
+      });
+    } catch(e) {
+      console.error('[product-catalog phase-b]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Inspect: Phase B planning data ──────────────────────────────────────────
   // GET /api/migrate/phase-b-inspect?key=elim2026admin
   // Returns MACROCORE alternative group candidates (grouped by codigo_base)
