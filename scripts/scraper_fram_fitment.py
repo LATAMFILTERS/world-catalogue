@@ -43,7 +43,8 @@ PROFILE_DIR     = os.path.join(os.path.expanduser("~"), ".fram_fitment_profile")
 
 FRAM_BASE       = "https://www.fram.com/products/{part}/"
 FRAM_SEARCH     = "https://www.fram.com/search?q={part}"
-PAUSE           = (3, 6)
+AUTOZONE_SEARCH = "https://www.autozone.com/allpart?searchText={part}"
+PAUSE           = (4, 8)
 
 # ── Logging ────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -198,89 +199,145 @@ def make_context(pw):
     )
 
 
-def _find_product_url(page, fram_code: str) -> str | None:
+def _find_autozone_url(page, fram_code: str) -> str | None:
     """
-    Resolves the actual FRAM product page URL for a given part code.
-    Strategy:
-      1. Try direct URL  → if not 404, use it
-      2. Try search page → follow first product link
+    Searches AutoZone for the FRAM code and returns the product page URL.
+    AutoZone carries FRAM products and has ACES-based structured fitment.
     """
-    direct_url = FRAM_BASE.format(part=fram_code.lower())
+    search_url = AUTOZONE_SEARCH.format(part=fram_code.upper())
     try:
-        resp = page.goto(direct_url, wait_until="domcontentloaded", timeout=20000)
-        if resp and resp.status not in (404, 410):
-            return page.url   # may have redirected to canonical URL
-    except Exception:
-        pass
-
-    # Fallback: search
-    search_url = FRAM_SEARCH.format(part=fram_code.upper())
-    try:
-        page.goto(search_url, wait_until="domcontentloaded", timeout=20000)
+        page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
         try:
-            page.wait_for_load_state("networkidle", timeout=6000)
+            page.wait_for_load_state("networkidle", timeout=10000)
         except PWTimeout:
             pass
-        time.sleep(1)
+        time.sleep(2)
 
-        # Extract first product link — FRAM search results have links to /products/...
+        # AutoZone search results: find product link containing the part code
         product_url = page.evaluate("""(code) => {
-            // look for an <a> whose href contains the part code (case-insensitive)
             const lc = code.toLowerCase();
+            // Pattern 1: link containing the code in the href
             for (const a of document.querySelectorAll('a[href]')) {
                 const href = a.getAttribute('href') || '';
-                if (href.toLowerCase().includes(lc) && href.includes('/product')) {
-                    return href.startsWith('http') ? href : 'https://www.fram.com' + href;
+                const hrefLc = href.toLowerCase();
+                if (hrefLc.includes(lc) && (hrefLc.includes('/filters-') || hrefLc.includes('/oil-filter') || hrefLc.includes('/fuel-filter') || hrefLc.includes('/air-filter') || hrefLc.includes('/cabin-'))) {
+                    return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
                 }
             }
-            // fallback: first link in search results section
-            const result = document.querySelector(
-                '.search-result a[href*="/product"], [class*="product"] a[href*="/product"], ' +
-                '[class*="result"] a[href*="/product"]'
-            );
-            if (result) {
-                const href = result.getAttribute('href');
-                return href.startsWith('http') ? href : 'https://www.fram.com' + href;
+            // Pattern 2: first product card link in results
+            const card = document.querySelector('[class*="product-card"] a[href], [class*="ProductCard"] a[href], [data-testid*="product"] a[href]');
+            if (card) {
+                const href = card.getAttribute('href');
+                return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
+            }
+            // Pattern 3: any /p/ product link
+            const prodLink = document.querySelector('a[href*="/p/"]');
+            if (prodLink) {
+                const href = prodLink.getAttribute('href');
+                return href.startsWith('http') ? href : 'https://www.autozone.com' + href;
             }
             return null;
         }""", fram_code)
 
         if product_url:
-            return product_url
-    except Exception as e:
-        log.warning(f"  Search fallback error for {fram_code}: {e}")
+            log.info(f"  AutoZone URL: {product_url[:80]}")
+        else:
+            log.info(f"  AutoZone: no product link found for {fram_code}")
+        return product_url
 
-    return None
+    except Exception as e:
+        log.warning(f"  AutoZone search error {fram_code}: {e}")
+        return None
+
+
+# AutoZone fitment extractor — "Fits these vehicles" section
+_AZ_FITMENT_JS = """() => {
+    const rows = [];
+    // Pattern 1: fitment table with Year/Make/Model/Engine columns
+    const tables = document.querySelectorAll('table');
+    for (const table of tables) {
+        const headers = [...table.querySelectorAll('th,td[class*="header"]')].map(h => h.textContent.trim().toLowerCase());
+        const yearIdx  = headers.findIndex(h => h.includes('year'));
+        const makeIdx  = headers.findIndex(h => h.includes('make'));
+        const modelIdx = headers.findIndex(h => h.includes('model'));
+        const engIdx   = headers.findIndex(h => h.includes('engine') || h.includes('motor'));
+        if (yearIdx === -1 && makeIdx === -1) continue;
+        for (const tr of table.querySelectorAll('tbody tr, tr:not(:first-child)')) {
+            const cells = [...tr.querySelectorAll('td')].map(td => td.textContent.trim());
+            if (!cells.length) continue;
+            const row = {};
+            if (yearIdx  >= 0) row.year   = cells[yearIdx]  || '';
+            if (makeIdx  >= 0) row.make   = cells[makeIdx]  || '';
+            if (modelIdx >= 0) row.model  = cells[modelIdx] || '';
+            if (engIdx   >= 0) row.engine = cells[engIdx]   || '';
+            if (row.year || row.make) rows.push(row);
+        }
+        if (rows.length) break;
+    }
+    // Pattern 2: fitment list items (some AZ pages use divs)
+    if (!rows.length) {
+        const items = document.querySelectorAll('[class*="fitment"] li, [class*="Fitment"] li, [data-testid*="fitment"] li');
+        for (const li of items) {
+            const text = li.textContent.trim();
+            if (text) rows.push({ raw: text });
+        }
+    }
+    // Pattern 3: JSON in page data
+    if (!rows.length) {
+        const scripts = document.querySelectorAll('script[type="application/json"], script[id*="__NEXT_DATA__"]');
+        for (const s of scripts) {
+            try {
+                const walk = (obj) => {
+                    if (!obj || typeof obj !== 'object') return;
+                    if (Array.isArray(obj)) { obj.forEach(walk); return; }
+                    const keys = Object.keys(obj);
+                    const hasFitment = keys.some(k => ['year','make','model','engine','vehicleYear'].includes(k.toLowerCase()));
+                    if (hasFitment && (obj.year || obj.Year || obj.vehicleYear)) {
+                        rows.push({
+                            year:   String(obj.year || obj.Year || obj.vehicleYear || ''),
+                            make:   obj.make || obj.Make || obj.vehicleMake || '',
+                            model:  obj.model || obj.Model || obj.vehicleModel || '',
+                            engine: obj.engine || obj.Engine || obj.engineDescription || '',
+                        });
+                    } else { keys.forEach(k => walk(obj[k])); }
+                };
+                walk(JSON.parse(s.textContent));
+            } catch(e) {}
+        }
+    }
+    return rows;
+}"""
 
 
 def scrape_fitment(page, fram_code: str) -> dict:
-    product_url = _find_product_url(page, fram_code)
+    product_url = _find_autozone_url(page, fram_code)
     if not product_url:
-        return {"status": 404, "url": FRAM_BASE.format(part=fram_code.lower()),
-                "title": "", "fitment": []}
+        return {"status": 404, "url": AUTOZONE_SEARCH.format(part=fram_code),
+                "title": "", "fitment": [], "source": "autozone"}
     try:
         resp = page.goto(product_url, wait_until="domcontentloaded", timeout=25000)
         status = resp.status if resp else 0
         try:
-            page.wait_for_load_state("networkidle", timeout=8000)
+            page.wait_for_load_state("networkidle", timeout=10000)
         except PWTimeout:
             pass
-        time.sleep(0.8)
+        time.sleep(1.5)
 
-        fitment = page.evaluate(_FITMENT_JS)
-        meta    = page.evaluate(_META_JS)
+        fitment = page.evaluate(_AZ_FITMENT_JS)
+        title   = page.evaluate("() => document.querySelector('h1')?.textContent?.trim() || document.title || ''")
 
         return {
             "status":  status,
             "url":     page.url,
-            "title":   meta.get("title", ""),
+            "title":   title,
             "fitment": fitment,
+            "source":  "autozone",
         }
     except PWTimeout:
-        return {"status": 408, "url": product_url, "title": "", "fitment": []}
+        return {"status": 408, "url": product_url, "title": "", "fitment": [], "source": "autozone"}
     except Exception as e:
         log.warning(f"  Error {fram_code}: {e}")
-        return {"status": 0, "url": product_url, "title": "", "fitment": []}
+        return {"status": 0, "url": product_url, "title": "", "fitment": [], "source": "autozone"}
 
 
 # ── Main run ────────────────────────────────────────────────────────────────
