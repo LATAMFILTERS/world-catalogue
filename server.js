@@ -3670,7 +3670,7 @@ app.post('/api/ai/v2/consult-grounded', async (req, res) => {
   // Patterns: EL-prefix SKUs, P-prefix Donaldson codes, alphanumeric part numbers,
   // known technology names, and remaining text for machine search.
   const qUpper = query.toUpperCase().replace(/[™®]/g, '');
-  const partPattern = /\b(EL[0-9A-Z]{4,8}|P-?\d{5,7}|[A-Z]{2,4}[-\s]?\d{3,7}[A-Z0-9]*)\b/g;
+  const partPattern = /\b(EL[0-9A-Z]{4,8}|P-?\d{5,7}|[A-Z]{2,4}[-\s]?\d{3,7}[A-Z0-9]*|\d{3,4}[A-Z]{1,4}(?:-[A-Z0-9]+)?)\b/g;
   const partMatches = [...new Set([...qUpper.matchAll(partPattern)].map(m => m[1].replace(/[-\s]/g, '')))];
 
   // Detect technology names in query
