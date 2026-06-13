@@ -44,8 +44,8 @@ PROGRESS_FILE    = Path(r"C:\mann\mann_ld_fitment_progress.json")
 DEBUG_DIR        = Path(r"C:\mann\debug_html")
 
 PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".mann_fitment_profile")
-MANN_BASE    = "https://www.mann-filter.com/ph-en/catalog/search-results/product.html/{url_key}.html"
-MANN_SEARCH  = "https://www.mann-filter.com/ph-en/catalogsearch/result/?q={part}"
+MANN_BASE    = "https://www.mann-filter.com/int-en/catalog/search-results/product.html/{url_key}.html"
+MANN_SEARCH  = "https://www.mann-filter.com/int-en/catalogsearch/result/?q={part}"
 MANN_DOMAIN  = "https://www.mann-filter.com"
 PAUSE        = (3, 6)
 
@@ -53,8 +53,8 @@ PAUSE        = (3, 6)
 def _build_url_key(raw_key: str, sku: str) -> str:
     """Build MANN product URL slug.
 
-    MANN ph-en URL format:
-      /ph-en/catalog/search-results/product.html/{slug}_mann-filter.html
+    MANN int-en URL format:
+      /int-en/catalog/search-results/product.html/{slug}_mann-filter.html
     For SKUs like W940/21 the slug uses ONLY the part before the slash: w940
     For SKUs like WK8114 (no slash) the slug is: wk8114
     """
@@ -306,8 +306,8 @@ def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
         title, fitment = _extract(page)
         final_url = page.url
 
-        # 404 or empty → try search to find actual product URL
-        if status == 404 or not fitment:
+        # only try search when page loaded OK but has no fitment data
+        if status == 200 and not fitment:
             encoded    = quote(sku, safe="")
             search_url = MANN_SEARCH.format(part=encoded)
             log.info(f"  → fallback search: {search_url}")
