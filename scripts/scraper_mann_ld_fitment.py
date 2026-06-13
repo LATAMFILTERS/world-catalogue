@@ -44,15 +44,18 @@ PROGRESS_FILE    = Path(r"C:\mann\mann_ld_fitment_progress.json")
 DEBUG_DIR        = Path(r"C:\mann\debug_html")
 
 PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".mann_fitment_profile")
-MANN_BASE   = "https://www.mann-filter.com/en-us/spare-parts/{url_key}/"
-PAUSE       = (3, 6)
+MANN_BASE    = "https://www.mann-filter.com/en-us/spare-parts/{url_key}/"
+MANN_SEARCH  = "https://www.mann-filter.com/en-us/spare-parts/?q={part}"
+MANN_DOMAIN  = "https://www.mann-filter.com"
+PAUSE        = (3, 6)
 
 
 def _build_url_key(raw_key: str, sku: str) -> str:
-    """Normalizes url_key for MANN URLs — keeps _mann-filter suffix, replaces / with -."""
-    s = raw_key.strip() if raw_key else sku.lower() + "_mann-filter"
-    # Only replace path-unsafe chars, keep _mann-filter suffix
-    s = s.replace("/", "-").replace(" ", "-").strip("-").lower()
+    """Normalizes url_key: replace / and spaces with -, ensure _mann-filter suffix."""
+    s = raw_key.strip().lower() if raw_key.strip() else sku.lower()
+    s = s.replace("/", "-").replace(" ", "-").strip("-")
+    if not s.endswith("_mann-filter"):
+        s += "_mann-filter"
     return s
 
 # ── Logging ────────────────────────────────────────────────────────────────
@@ -216,42 +219,103 @@ _MANN_FITMENT_JS = """() => {
 }"""
 
 
-def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
-    url_key = _build_url_key(url_key, sku)
-    url = MANN_BASE.format(url_key=url_key)
+def _dismiss_cookies(page):
+    for sel in [
+        "button#onetrust-accept-btn-handler",
+        "button:has-text('Accept All')",
+        "button:has-text('Accept')",
+        "[class*='cookie'] button",
+        "button:has-text('OK')",
+    ]:
+        try:
+            if page.locator(sel).is_visible(timeout=400):
+                page.locator(sel).click()
+                time.sleep(0.4)
+                break
+        except Exception:
+            pass
+
+
+def _load_page(page, url: str) -> int:
+    """Navigate to url, wait for idle, dismiss cookies. Returns HTTP status."""
     try:
         resp = page.goto(url, wait_until="domcontentloaded", timeout=25000)
         status = resp.status if resp else 0
-
         try:
             page.wait_for_load_state("networkidle", timeout=8000)
         except PWTimeout:
             pass
         time.sleep(1)
+        _dismiss_cookies(page)
+        return status
+    except PWTimeout:
+        return 408
 
-        # dismiss cookie banner if present
-        for sel in ["button#onetrust-accept-btn-handler", "button:has-text('Accept All')",
-                    "button:has-text('Accept')", "[class*='cookie'] button", "button:has-text('OK')"]:
-            try:
-                if page.locator(sel).is_visible(timeout=500):
-                    page.locator(sel).click()
-                    time.sleep(0.5)
-                    break
-            except Exception:
-                pass
 
-        fitment = page.evaluate(_MANN_FITMENT_JS)
-        title   = page.evaluate(
-            "() => document.querySelector('h1')?.textContent?.trim() || document.title || ''"
-        )
+def _extract(page) -> tuple[str, list]:
+    title   = page.evaluate(
+        "() => document.querySelector('h1')?.textContent?.trim() || document.title || ''"
+    )
+    fitment = page.evaluate(_MANN_FITMENT_JS)
+    return title, fitment
 
-        return {"status": status, "url": page.url, "title": title, "fitment": fitment}
+
+# JS that finds first product href from MANN search results
+_SEARCH_RESULT_JS = """() => {
+    // Typical MANN search results: cards/links containing /spare-parts/ but not the search page
+    const candidates = document.querySelectorAll('a[href*="/spare-parts/"]');
+    for (const a of candidates) {
+        const href = a.getAttribute('href') || '';
+        // must look like a product path, not a search or category page
+        const tail = href.split('/spare-parts/')[1] || '';
+        if (tail.length > 3 && !tail.startsWith('?') && !tail.startsWith('#')) {
+            return a.href;
+        }
+    }
+    return null;
+}"""
+
+
+def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
+    url_key = _build_url_key(url_key, sku)
+    direct  = MANN_BASE.format(url_key=url_key)
+    via_search = False
+
+    try:
+        status = _load_page(page, direct)
+        title, fitment = _extract(page)
+        final_url = page.url
+
+        # 404 or empty → try search to find actual product URL
+        if status == 404 or not fitment:
+            encoded    = quote(sku, safe="")
+            search_url = MANN_SEARCH.format(part=encoded)
+            log.info(f"  → fallback search: {search_url}")
+            _load_page(page, search_url)
+
+            product_url = page.evaluate(_SEARCH_RESULT_JS)
+            if product_url and "/spare-parts/" in product_url:
+                log.info(f"  → product found: {product_url}")
+                status    = _load_page(page, product_url)
+                title, fitment = _extract(page)
+                final_url  = page.url
+                via_search = True
+            else:
+                log.info(f"  → no product link found in search results")
+
+        return {
+            "status":     status,
+            "url":        final_url,
+            "title":      title,
+            "fitment":    fitment,
+            "via_search": via_search,
+        }
 
     except PWTimeout:
-        return {"status": 408, "url": url, "title": "", "fitment": []}
+        return {"status": 408, "url": direct, "title": "", "fitment": [], "via_search": False}
     except Exception as e:
         log.warning(f"  Error {sku}: {e}")
-        return {"status": 0, "url": url, "title": "", "fitment": []}
+        return {"status": 0, "url": direct, "title": "", "fitment": [], "via_search": False}
 
 
 # ── Main run ────────────────────────────────────────────────────────────────
@@ -378,14 +442,45 @@ def test_one(sku: str, debug: bool = False):
                 h1: document.querySelector('h1')?.textContent?.trim() || '',
                 tables: document.querySelectorAll('table').length,
                 total_links: document.querySelectorAll('a[href]').length,
+                spare_links: [...document.querySelectorAll('a[href*="/spare-parts/"]')]
+                                .map(a => a.href).slice(0, 10),
             })""")
             log.info(f"HTML guardado en {html_path}")
             print(f"\n=== DIAGNÓSTICO MANN {sku} ===")
-            print(f"  Title   : {diag['title']}")
-            print(f"  H1      : {diag['h1']}")
-            print(f"  URL     : {diag['url']}")
-            print(f"  Tables  : {diag['tables']}")
-            print(f"  Links   : {diag['total_links']}")
+            print(f"  Title      : {diag['title']}")
+            print(f"  H1         : {diag['h1']}")
+            print(f"  URL        : {diag['url']}")
+            print(f"  Tables     : {diag['tables']}")
+            print(f"  Total links: {diag['total_links']}")
+            print(f"  /spare-parts links:")
+            for lnk in diag.get("spare_links", []):
+                print(f"    {lnk}")
+
+            # also try the search fallback and show what comes back
+            encoded    = quote(sku, safe="")
+            search_url = MANN_SEARCH.format(part=encoded)
+            print(f"\n  Trying search: {search_url}")
+            page.goto(search_url, wait_until="domcontentloaded", timeout=25000)
+            try:
+                page.wait_for_load_state("networkidle", timeout=8000)
+            except PWTimeout:
+                pass
+            time.sleep(1)
+            product_url = page.evaluate(_SEARCH_RESULT_JS)
+            print(f"  Product found: {product_url or '(none)'}")
+            if product_url:
+                html_path2 = DEBUG_DIR / f"mann_{sku.replace('/', '-')}_product.html"
+                page.goto(product_url, wait_until="domcontentloaded", timeout=25000)
+                try:
+                    page.wait_for_load_state("networkidle", timeout=8000)
+                except PWTimeout:
+                    pass
+                time.sleep(1)
+                html_path2.write_text(page.content(), encoding="utf-8")
+                _, fitment = _extract(page)
+                print(f"  Fitment rows : {len(fitment)}")
+                log.info(f"Product HTML guardado en {html_path2}")
+
             ctx.close()
             return
 
