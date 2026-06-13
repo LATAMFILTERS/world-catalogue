@@ -182,10 +182,22 @@ _MANN_FITMENT_JS = """() => {
     //  • The element immediately BEFORE each panel is H3.cmp-accordion__header
     //    (NOT a button!) — textContent = label text
 
-    const SKIP = new Set([
-        'Model Type','Filter Type','Engine Code',
-        'ccm','kW','HP','Year of Manufacture','-',''
-    ]);
+    // Column name aliases: EN headers and DE headers (de-de locale uses German)
+    const COL_ALIASES = {
+        modelType:  ['Model Type',          'Fahrzeugtyp',    'Typ'],
+        filterType: ['Filter Type',         'Filtertyp'],
+        engineCode: ['Engine Code',         'Motorcode',      'Motor'],
+        ccm:        ['ccm'],
+        kw:         ['kW'],
+        hp:         ['HP',                  'PS'],
+        year:       ['Year of Manufacture', 'Baujahr',        'Herstellungsjahr'],
+    };
+
+    // Build SKIP set from all known header aliases
+    const SKIP = new Set(['-', '']);
+    for (const aliases of Object.values(COL_ALIASES)) {
+        for (const a of aliases) SKIP.add(a);
+    }
 
     const rows = [];
 
@@ -201,18 +213,25 @@ _MANN_FITMENT_JS = """() => {
         const modelFamily = (innerPanel?.previousElementSibling?.textContent || '').trim();
         const makeName    = (outerPanel?.previousElementSibling?.textContent  || '').trim();
 
-        // Column index map from <th>
+        // Column index map from <th> — resolves first matching alias
         const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
         const colIdx = {};
         ths.forEach((h, i) => { colIdx[h] = i; });
 
+        function resolveCol(aliases) {
+            for (const a of aliases) {
+                if (colIdx[a] !== undefined) return colIdx[a];
+            }
+            return -1;
+        }
+
         const c = {
-            modelType:  colIdx['Model Type']         ?? -1,
-            engineCode: colIdx['Engine Code']         ?? -1,
-            ccm:        colIdx['ccm']                 ?? -1,
-            kw:         colIdx['kW']                  ?? -1,
-            hp:         colIdx['HP']                  ?? -1,
-            year:       colIdx['Year of Manufacture'] ?? -1,
+            modelType:  resolveCol(COL_ALIASES.modelType),
+            engineCode: resolveCol(COL_ALIASES.engineCode),
+            ccm:        resolveCol(COL_ALIASES.ccm),
+            kw:         resolveCol(COL_ALIASES.kw),
+            hp:         resolveCol(COL_ALIASES.hp),
+            year:       resolveCol(COL_ALIASES.year),
         };
 
         for (const tr of table.querySelectorAll('tbody tr')) {
