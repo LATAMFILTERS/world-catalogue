@@ -37,7 +37,8 @@ from urllib.parse import quote
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-INPUT_CLASSIFIED = Path(r"C:\mann\mann_classified.jsonl")
+INPUT_CLASSIFIED  = Path(r"C:\mann\mann_classified.jsonl")
+INPUT_OEM_MASTER  = Path(r"C:\mann\mann_oem_master_clean.csv")
 OUTPUT_FILE      = Path(r"C:\mann\mann_ld_crossrefs.jsonl")
 PROGRESS_FILE    = Path(r"C:\mann\mann_ld_crossrefs_progress.json")
 
@@ -116,18 +117,44 @@ _EXTRACT_JS = """() => {
 
 # ── Load input ─────────────────────────────────────────────────────────────
 def load_ld_skus() -> list:
-    """Returns list of unique LD SKUs from mann_classified.jsonl."""
-    seen  = set()
-    skus  = []
-    with open(INPUT_CLASSIFIED, encoding="utf-8") as f:
-        for line in f:
-            p = json.loads(line)
-            if p.get("segment", "").upper() == "LD":
-                sku = p["sku"].strip()
-                if sku and sku not in seen:
-                    seen.add(sku)
-                    skus.append(sku)
-    log.info(f"LD SKUs cargados: {len(skus)}")
+    """Returns list of unique LD SKUs from mann_oem_master_clean.csv (2,056 entries).
+    Falls back to mann_classified.jsonl if CSV not found.
+    Strips '_MANN-FILTER' suffix and any extra whitespace from all SKUs.
+    """
+    import csv
+
+    def clean_sku(raw: str) -> str:
+        s = raw.strip()
+        # strip brand suffix appended during enrichment
+        for suffix in ("_MANN-FILTER", "_MANN", "-MANN-FILTER", "-MANN"):
+            if s.upper().endswith(suffix.upper()):
+                s = s[: len(s) - len(suffix)]
+        return s.strip()
+
+    seen = set()
+    skus = []
+
+    if INPUT_OEM_MASTER.exists():
+        with open(INPUT_OEM_MASTER, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("segment", "").upper() == "LD":
+                    sku = clean_sku(row["sku"])
+                    if sku and sku not in seen:
+                        seen.add(sku)
+                        skus.append(sku)
+        log.info(f"LD SKUs cargados desde CSV: {len(skus)}")
+    else:
+        # fallback: classified JSONL
+        with open(INPUT_CLASSIFIED, encoding="utf-8") as f:
+            for line in f:
+                p = json.loads(line)
+                if p.get("segment", "").upper() == "LD":
+                    sku = clean_sku(p["sku"])
+                    if sku and sku not in seen:
+                        seen.add(sku)
+                        skus.append(sku)
+        log.info(f"LD SKUs cargados desde JSONL (fallback): {len(skus)}")
+
     return skus
 
 
