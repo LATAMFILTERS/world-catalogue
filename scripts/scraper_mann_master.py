@@ -118,11 +118,17 @@ _MANN_MASTER_JS = """() => {
         return el ? el.textContent.trim().replace(/\\s+/g, ' ') : '';
     }
 
-    // 1. Filter type
-    var titleEl = document.querySelector('.cmp-product__title, h1');
-    var rawTitle = getText(titleEl) || document.title || '';
-    var titleParts = rawTitle.split('\\n');
-    var filterType = titleParts[0].trim();
+    // 1. Filter type — parse document.title: "Oil Filter W 940/21 | MANN-FILTER"
+    var filterType = '';
+    var pageTitle = document.title || '';
+    var beforePipe = pageTitle.indexOf(' | ') >= 0 ? pageTitle.split(' | ')[0] : pageTitle;
+    var lc = beforePipe.toLowerCase();
+    var fi = lc.indexOf('filter');
+    if (fi >= 0) {
+        filterType = beforePipe.substring(0, fi + 6).trim(); // "Oil Filter" / "Ölfilter"
+    } else {
+        filterType = beforePipe.split(/\s+\d/)[0].trim();   // fallback: cut at first digit
+    }
 
     // 2. GTIN — find "GTIN" then extract first run of 8+ digits after it
     var bodyText = document.body ? (document.body.innerText || '') : '';
@@ -392,6 +398,20 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
             data   = page.evaluate(_MANN_MASTER_JS)
             n_fit  = len(data.get("fitment", []))
             n_oe   = sum(len(v) for v in data.get("oeNumbers", {}).values())
+
+            # OE Numbers accordion may be collapsed — click to expand then re-read
+            if n_oe == 0 and n_fit > 0:
+                try:
+                    page.click('.cmp-accordion__button:has-text("OE Number")', timeout=3000)
+                    time.sleep(0.8)
+                    data2  = page.evaluate(_MANN_MASTER_JS)
+                    n_oe2  = sum(len(v) for v in data2.get("oeNumbers", {}).values())
+                    if n_oe2 > 0:
+                        data  = data2
+                        n_oe  = n_oe2
+                        log.info(f"  OE accordion expanded → {n_oe} OE codes")
+                except Exception:
+                    pass
 
             if n_fit > 0 or n_oe > 0:
                 log.info(f"  locale:{locale} → {n_fit} vehicles | {n_oe} OE codes")
