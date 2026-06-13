@@ -266,9 +266,15 @@ def run(start_from: str = None, dry_run: bool = False, retry_zeros: bool = False
     log.info(f"A procesar: {total} SKUs LD")
 
     if dry_run:
-        log.info("[DRY-RUN] Primeros 10:")
-        for s in skus[:10]:
+        will_skip   = [s for s in skus if should_skip(s)]
+        will_scrape = [s for s in skus if not should_skip(s)]
+        log.info(f"[DRY-RUN] Skip: {len(will_skip)} | A scrapear: {len(will_scrape)}")
+        log.info("[DRY-RUN] Primeros 10 que SE SCRAPEARAN:")
+        for s in will_scrape[:10]:
             log.info(f"  {s} → site:{prefix_to_site(s)}")
+        log.info("[DRY-RUN] Primeros 5 que SE SKIPPEAN:")
+        for s in will_skip[:5]:
+            log.info(f"  SKIP {s}")
         return
 
     # Group by site to reuse browser contexts
