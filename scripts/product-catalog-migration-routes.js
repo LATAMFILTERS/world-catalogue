@@ -36,6 +36,11 @@
  *     → Runs 011_intekcore_macrocore_compatibility.sql. Links INTEKCORE housings to
  *       MACROCORE elements via shared Donaldson Family codes. ~2324 pairs across
  *       22 families. confidence: INFERRED, method: cross_reference.
+ *
+ *   GET /api/migrate/product-catalog-intekcore-durable?key=elim2026admin
+ *     → Runs 012_intekcore_activate_durable.sql. Promotes INTEKCORE housings to
+ *       model_type=durable, accepts_elements=TRUE. Sets compatibility_class=
+ *       'macrocore-<family>' on both housings and their matched MACROCORE elements.
  */
 
 const fs   = require('fs');
@@ -434,6 +439,50 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
       res.json({ success: true, records: verify.rows });
     } catch(e) {
       console.error('[product-catalog elements-sku]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
+  // ── Migration 012: Activate INTEKCORE as durable + align compatibility_class ──
+  // GET /api/migrate/product-catalog-intekcore-durable?key=elim2026admin
+  // Promotes 163 INTEKCORE housings to model_type=durable, accepts_elements=TRUE.
+  // Sets compatibility_class='macrocore-<family>' on both housings and elements.
+  app.get('/api/migrate/product-catalog-intekcore-durable', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '012_intekcore_activate_durable.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const verify = await client.query(`
+        SELECT
+          COUNT(*) FILTER (WHERE model_type = 'durable' AND accepts_elements = TRUE
+                           AND compatibility_class LIKE 'macrocore-%')  AS intekcore_durable,
+          COUNT(*) FILTER (WHERE model_type = 'assembly')               AS still_assembly,
+          COUNT(DISTINCT compatibility_class)                            AS distinct_classes
+        FROM product_model
+        WHERE model_code LIKE 'EA2%'
+      `);
+
+      const elementCheck = await client.query(`
+        SELECT COUNT(*) AS elements_updated
+        FROM product_element
+        WHERE element_code LIKE 'EA1%'
+          AND compatibility_class LIKE 'macrocore-%'
+          AND LENGTH(compatibility_class) > LENGTH('macrocore-') + 3
+      `);
+
+      res.json({
+        success: true,
+        message: 'Migration 012: INTEKCORE housings activated as durable with family-based compatibility_class',
+        housings: verify.rows[0],
+        elements: elementCheck.rows[0],
+      });
+    } catch(e) {
+      console.error('[product-catalog intekcore-durable]', e.message);
       res.status(500).json({ success: false, error: e.message });
     } finally { await client.end(); }
   });
