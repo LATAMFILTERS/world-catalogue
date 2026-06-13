@@ -695,11 +695,158 @@ def test_one(sku: str, debug: bool = False):
             print(f"  ... ({len(result['fitment'])} total)")
 
 
+# ── Explore one ──────────────────────────────────────────────────────────────
+def explore_one(sku: str):
+    """Click every accordion panel on the MANN product page and dump all table content."""
+    url_key = _build_url_key("", sku)
+    url = MANN_BASE.format(locale=MANN_LOCALES[0], url_key=url_key)
+    log.info(f"Exploring {sku}  → {url}")
+
+    _EXPLORE_JS = """() => {
+        // 1. Click ALL accordion buttons to expand everything
+        const buttons = [...document.querySelectorAll('button.cmp-accordion__button')];
+        for (const btn of buttons) {
+            try { btn.click(); } catch(e) {}
+        }
+
+        // 2. Extract Dimensions (first key-value table without TH)
+        const dims = {};
+        const dimSection = document.querySelector('[id="dimensions"]') ||
+                           document.querySelector('[data-cmp-hook-accordion="item"][id*="dim"]');
+        if (dimSection) {
+            dimSection.querySelectorAll('table tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td,th')].map(c => c.textContent.trim());
+                if (cells.length >= 2 && cells[0] && cells[1]) {
+                    dims[cells[0]] = cells[1];
+                }
+            });
+        } else {
+            // fallback: first table with no TH
+            const t = document.querySelector('table');
+            if (t) t.querySelectorAll('tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim());
+                if (cells.length >= 2 && cells[0]) dims[cells[0]] = cells[1];
+            });
+        }
+
+        // 3. Extract Technical Specifications
+        const specs = {};
+        const specSection = document.querySelector('[id="technicalData"]') ||
+                            document.querySelector('[data-cmp-hook-accordion="item"][id*="tech"]');
+        if (specSection) {
+            specSection.querySelectorAll('table tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td,th')].map(c => c.textContent.trim());
+                if (cells.length >= 2 && cells[0] && cells[1]) {
+                    specs[cells[0]] = cells[1];
+                }
+            });
+        } else {
+            // fallback: second table
+            const tables = document.querySelectorAll('table');
+            if (tables[1]) tables[1].querySelectorAll('tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim());
+                if (cells.length >= 2 && cells[0]) specs[cells[0]] = cells[1];
+            });
+        }
+
+        // 4. OEM codes — look for any section/div with "OEM" or "original equipment"
+        const oemCodes = [];
+        const allText = document.body.innerText;
+        // Look for OEM tables or lists
+        document.querySelectorAll('[class*="oem"],[class*="OEM"],[id*="oem"],[id*="OEM"]').forEach(el => {
+            el.querySelectorAll('td,li,span').forEach(c => {
+                const t = c.textContent.trim();
+                if (t && t.length > 2 && t.length < 40) oemCodes.push(t);
+            });
+        });
+
+        // 5. Cross-reference codes
+        const crossrefs = [];
+        document.querySelectorAll('[class*="cross"],[class*="reference"],[id*="cross"]').forEach(el => {
+            el.querySelectorAll('td,li,span').forEach(c => {
+                const t = c.textContent.trim();
+                if (t && t.length > 2 && t.length < 40) crossrefs.push(t);
+            });
+        });
+
+        // 6. All section IDs to understand page structure
+        const sections = [...document.querySelectorAll('[id]')]
+            .filter(el => el.id)
+            .map(el => ({
+                id: el.id,
+                tag: el.tagName,
+                cls: (el.className||'').substring(0, 50),
+                textPreview: el.textContent.trim().substring(0, 60),
+            }))
+            .filter(s => s.textPreview)
+            .slice(0, 30);
+
+        // 7. ALL tables on page with full content
+        const allTables = [];
+        document.querySelectorAll('table').forEach((t, i) => {
+            if (i > 4) return;  // only first 5 tables (dims + specs + first app tables)
+            const headers = [...t.querySelectorAll('th')].map(h => h.textContent.trim());
+            const rows = [];
+            t.querySelectorAll('tbody tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim().replace(/\\s+/g,' ').substring(0,40));
+                if (cells.some(c => c)) rows.push(cells);
+            });
+            allTables.push({ index: i, headers, rows: rows.slice(0, 10) });
+        });
+
+        return { dims, specs, oemCodes, crossrefs, sections, allTables };
+    }"""
+
+    with sync_playwright() as pw:
+        ctx  = make_context(pw, headless=False)
+        page = ctx.new_page()
+        page.goto(url, wait_until="domcontentloaded", timeout=25000)
+        try:
+            page.wait_for_load_state("networkidle", timeout=8000)
+        except PWTimeout:
+            pass
+        time.sleep(2)
+
+        data = page.evaluate(_EXPLORE_JS)
+        ctx.close()
+
+    print(f"\n{'='*60}")
+    print(f"EXPLORE: MANN {sku}")
+    print(f"{'='*60}")
+
+    print(f"\n── DIMENSIONS ──")
+    for k, v in data.get("dims", {}).items():
+        print(f"  {k:<35} {v}")
+
+    print(f"\n── TECHNICAL SPECIFICATIONS ──")
+    for k, v in data.get("specs", {}).items():
+        print(f"  {k:<35} {v}")
+
+    print(f"\n── OEM CODES ({len(data.get('oemCodes',[]))}) ──")
+    for c in data.get("oemCodes", [])[:20]:
+        print(f"  {c}")
+
+    print(f"\n── CROSS-REFERENCES ({len(data.get('crossrefs',[]))}) ──")
+    for c in data.get("crossrefs", [])[:20]:
+        print(f"  {c}")
+
+    print(f"\n── ALL SECTION IDs ──")
+    for s in data.get("sections", []):
+        print(f"  [{s['id']}] <{s['tag']}> {s['textPreview']!r}")
+
+    print(f"\n── RAW TABLES (first 5) ──")
+    for t in data.get("allTables", []):
+        print(f"\n  Table[{t['index']}]  headers={t['headers']}")
+        for row in t["rows"]:
+            print(f"    {row}")
+
+
 # ── Entry point ──────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--test",        default=None, help="SKU a testear (ej: W940/21)")
     parser.add_argument("--debug",       default=None, help="Guardar HTML + diagnóstico")
+    parser.add_argument("--explore",     default=None, help="Expandir TODAS las pestañas y volcar contenido completo")
     parser.add_argument("--start",       default=None, help="Reanudar desde este SKU")
     parser.add_argument("--retry-zeros", action="store_true")
     parser.add_argument("--stats",       action="store_true")
@@ -709,6 +856,8 @@ if __name__ == "__main__":
         test_one(args.test)
     elif args.debug:
         test_one(args.debug, debug=True)
+    elif args.explore:
+        explore_one(args.explore)
     elif args.stats:
         stats()
     else:
