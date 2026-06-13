@@ -404,6 +404,35 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     } finally { await client.end(); }
   });
 
+  // ── Migration 010: Assign ELIMFILTERS SKUs to 2020/2040 series elements ──────
+  // GET /api/migrate/product-catalog-elements-sku?key=elim2026admin
+  app.get('/api/migrate/product-catalog-elements-sku', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '010_hydrocore_elements_sku.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const verify = await client.query(`
+        SELECT element_code, elimfilters_sku
+        FROM product_element
+        WHERE element_code IN (
+          '2020PM-OR','2020TM-OR','2020SM-OR',
+          '2040PM-OR','2040TM-OR','2040SM-OR'
+        )
+        ORDER BY element_code
+      `);
+
+      res.json({ success: true, records: verify.rows });
+    } catch(e) {
+      console.error('[product-catalog elements-sku]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Migration 009: Assign ELIMFILTERS SKUs to 900/1000 FH housings ──────────
   // GET /api/migrate/product-catalog-housing-sku?key=elim2026admin
   app.get('/api/migrate/product-catalog-housing-sku', async (req, res) => {
