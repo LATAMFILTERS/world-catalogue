@@ -160,67 +160,87 @@ def make_context(pw, headless: bool = False):
 
 # ── MANN fitment extractor ─────────────────────────────────────────────────
 _MANN_FITMENT_JS = """() => {
-    // MANN product page structure (ph-en):
-    //   cmp-accordion (Vehicles/Applications)
-    //     cmp-accordion__panel (Make panel, e.g. ALFA ROMEO)
-    //       cmp-accordion__panel (Model Family panel, e.g. 2300 Berlina)
-    //         div.cmp-application-table
-    //           table [th: Model Type | Filter Type | Engine Code | ccm | kW | HP | Year of Manufacture]
-    //             tbody > tr > td x 7
+    // MANN product page (ph-en) uses AEM Accordion component:
+    //   button.cmp-accordion__button[aria-controls="panel-id"]  ← make / model_family
+    //   div#panel-id  (the panel — class may NOT be cmp-accordion__panel on all MANN builds)
+    //     ...
+    //     div.cmp-application-table > table
+    //
+    // Strategy: build panelId→buttonText map, then walk up each appDiv's ancestors
+    // to find their controlling buttons (innermost = model_family, next = make).
 
     const rows = [];
 
-    function getButtonText(panelEl) {
-        if (!panelEl) return '';
-        // Button is a previous sibling of the panel OR a direct child of parent item wrapper
-        let prev = panelEl.previousElementSibling;
-        while (prev) {
-            if (prev.classList && prev.classList.contains('cmp-accordion__button')) {
-                return prev.textContent.trim();
-            }
-            prev = prev.previousElementSibling;
-        }
-        const parent = panelEl.parentElement;
-        if (parent) {
-            const btn = parent.querySelector(':scope > .cmp-accordion__button');
-            if (btn) return btn.textContent.trim();
-        }
-        return '';
-    }
+    // 1. Map every panel ID to its controlling button text
+    const panelToBtn = {};
+    document.querySelectorAll('.cmp-accordion__button[aria-controls]').forEach(btn => {
+        const pid = btn.getAttribute('aria-controls');
+        if (pid) panelToBtn[pid] = btn.textContent.trim();
+    });
 
+    // 2. Fallback: also walk all cmp-accordion__button elements and record
+    //    their next sibling panel if it has an id (handles non-aria-controls builds)
+    document.querySelectorAll('.cmp-accordion__button').forEach(btn => {
+        let next = btn.nextElementSibling;
+        while (next) {
+            if (next.id && !panelToBtn[next.id]) {
+                panelToBtn[next.id] = btn.textContent.trim();
+            }
+            if (next.id) break;  // stop at first element with an id
+            next = next.nextElementSibling;
+        }
+    });
+
+    // 3. For each application table, trace ancestry to find make + model_family
     document.querySelectorAll('.cmp-application-table').forEach(appDiv => {
         const table = appDiv.querySelector('table');
         if (!table) return;
 
-        // Walk up two accordion panel levels: model family → make
-        const innerPanel = appDiv.closest('.cmp-accordion__panel');
-        const outerPanel = innerPanel
-            ? innerPanel.parentElement?.closest('.cmp-accordion__panel')
-            : null;
+        // Walk up: collect button texts from ancestor panels (innermost first)
+        const ancestorBtns = [];
+        let el = appDiv.parentElement;
+        while (el && ancestorBtns.length < 3) {
+            const id = el.id;
+            if (id && panelToBtn[id]) {
+                ancestorBtns.push(panelToBtn[id]);
+            } else {
+                // Fallback: check preceding sibling buttons
+                let prev = el.previousElementSibling;
+                while (prev) {
+                    if (prev.classList?.contains('cmp-accordion__button')) {
+                        const txt = prev.textContent.trim();
+                        if (txt) { ancestorBtns.push(txt); break; }
+                    }
+                    prev = prev.previousElementSibling;
+                }
+            }
+            el = el.parentElement;
+        }
 
-        const modelFamily = getButtonText(innerPanel);
-        const makeName    = getButtonText(outerPanel);
+        // ancestorBtns[0] = model family, [1] = make  (innermost → outermost)
+        const modelFamily = ancestorBtns[0] || '';
+        const makeName    = ancestorBtns[1] || '';
 
-        // Build column index map from <th> text
+        // 4. Column index map from <th>
         const ths = [...table.querySelectorAll('th')].map(h => h.textContent.trim());
         const colIdx = {};
         ths.forEach((h, i) => { colIdx[h] = i; });
 
         const c = {
-            modelType:  colIdx['Model Type']           ?? -1,
-            engineCode: colIdx['Engine Code']           ?? -1,
-            ccm:        colIdx['ccm']                   ?? -1,
-            kw:         colIdx['kW']                    ?? -1,
-            hp:         colIdx['HP']                    ?? -1,
-            year:       colIdx['Year of Manufacture']   ?? -1,
+            modelType:  colIdx['Model Type']         ?? -1,
+            engineCode: colIdx['Engine Code']         ?? -1,
+            ccm:        colIdx['ccm']                 ?? -1,
+            kw:         colIdx['kW']                  ?? -1,
+            hp:         colIdx['HP']                  ?? -1,
+            year:       colIdx['Year of Manufacture'] ?? -1,
         };
 
+        // 5. Extract data rows; skip header-repeat rows MANN embeds inside <tbody>
         for (const tr of table.querySelectorAll('tbody tr')) {
             const cells = [...tr.querySelectorAll('td')]
                 .map(td => td.textContent.trim().replace(/\\s+/g, ' '));
             if (!cells.length) continue;
 
-            // Skip in-table header-repeat rows (MANN repeats <th> text inside <tbody>)
             const first = cells[0];
             if (first === 'Model Type' || first === 'Filter Type' ||
                 first === 'Engine Code' || first === 'Year of Manufacture') continue;
@@ -575,18 +595,28 @@ def test_one(sku: str, debug: bool = False):
         ctx.close()
 
     print(f"\n=== MANN {sku} ===")
-    print(f"  URL     : {result['url']}")
-    print(f"  Status  : {result['status']}")
-    print(f"  Title   : {result['title']}")
-    print(f"  Fitment : {len(result['fitment'])} vehicles")
+    print(f"  URL        : {result['url']}")
+    print(f"  Status     : {result['status']}")
+    print(f"  Title      : {result['title']}")
+    print(f"  Via search : {result.get('via_search', False)}")
+    print(f"  Fitment    : {len(result['fitment'])} vehicles")
     if result["fitment"]:
+        # Show first row as dict for field-name verification
+        print(f"\n  Sample row fields: {list(result['fitment'][0].keys())}")
         print()
-        for r in result["fitment"][:15]:
-            if "raw" in r:
-                print(f"  {r['raw']}")
-            else:
-                print(f"  {r.get('year',''):<12} {r.get('make',''):<15} {r.get('model',''):<20} {r.get('engine','')}")
-        if len(result["fitment"]) > 15:
+        print(f"  {'MAKE':<18} {'MODEL FAMILY':<22} {'MODEL TYPE':<25} {'ENGINE':<12} {'ccm':<6} {'kW':<5} {'YEAR'}")
+        print(f"  {'-'*18} {'-'*22} {'-'*25} {'-'*12} {'-'*6} {'-'*5} {'-'*20}")
+        for r in result["fitment"][:20]:
+            print(
+                f"  {r.get('make',''):<18} "
+                f"{r.get('model_family',''):<22} "
+                f"{r.get('model_type',''):<25} "
+                f"{r.get('engine_code',''):<12} "
+                f"{r.get('ccm',''):<6} "
+                f"{r.get('kw',''):<5} "
+                f"{r.get('year','')}"
+            )
+        if len(result["fitment"]) > 20:
             print(f"  ... ({len(result['fitment'])} total)")
 
 
