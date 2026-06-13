@@ -49,12 +49,9 @@ PAUSE       = (3, 6)
 
 
 def _build_url_key(raw_key: str, sku: str) -> str:
-    """Normalizes url_key: remove _mann-filter suffix, replace / and spaces with -."""
-    s = raw_key.strip() if raw_key else sku
-    for sfx in ("_mann-filter", "_MANN-FILTER"):
-        if s.lower().endswith(sfx.lower()):
-            s = s[: -len(sfx)]
-    # Replace URL-unsafe chars with dash
+    """Normalizes url_key for MANN URLs — keeps _mann-filter suffix, replaces / with -."""
+    s = raw_key.strip() if raw_key else sku.lower() + "_mann-filter"
+    # Only replace path-unsafe chars, keep _mann-filter suffix
     s = s.replace("/", "-").replace(" ", "-").strip("-").lower()
     return s
 
