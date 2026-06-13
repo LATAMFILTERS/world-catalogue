@@ -178,7 +178,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'SYNTRAX'
-WHERE ec.technology = 'SYNTRAX'
+WHERE REPLACE(ec.technology, '™', '') = 'SYNTRAX'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -198,7 +198,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'SYNTEPORE'
-WHERE ec.technology = 'SYNTEPORE'
+WHERE REPLACE(ec.technology, '™', '') = 'SYNTEPORE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -219,7 +219,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'THERMACORE'
-WHERE ec.technology = 'THERMACORE'
+WHERE REPLACE(ec.technology, '™', '') = 'THERMACORE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -239,7 +239,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'DRYCORE'
-WHERE ec.technology = 'DRYCORE'
+WHERE REPLACE(ec.technology, '™', '') = 'DRYCORE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -261,7 +261,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'HYDROCORE'
-WHERE ec.technology = 'HYDROCORE'
+WHERE REPLACE(ec.technology, '™', '') = 'HYDROCORE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -290,7 +290,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'NANOFORCE'
-WHERE ec.technology = 'NANOFORCE'
+WHERE REPLACE(ec.technology, '™', '') = 'NANOFORCE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -315,7 +315,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'INTEKCORE'
-WHERE ec.technology = 'INTEKCORE'
+WHERE REPLACE(ec.technology, '™', '') = 'INTEKCORE'
 ON CONFLICT (model_code) DO NOTHING;
 
 
@@ -343,7 +343,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'MACROCORE'
-WHERE ec.technology = 'MACROCORE'
+WHERE REPLACE(ec.technology, '™', '') = 'MACROCORE'
 ON CONFLICT (element_code) DO NOTHING;
 
 
@@ -368,7 +368,7 @@ SELECT
   ec.description
 FROM elimfilters_catalog ec
 JOIN product_family pf ON pf.family_code = 'MICROKAPPA'
-WHERE ec.technology = 'MICROKAPPA'
+WHERE REPLACE(ec.technology, '™', '') = 'MICROKAPPA'
 ON CONFLICT (element_code) DO NOTHING;
 
 
