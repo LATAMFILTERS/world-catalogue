@@ -349,6 +349,89 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     } finally { await client.end(); }
   });
 
+  // ── Inspect: Phase B planning data ──────────────────────────────────────────
+  // GET /api/migrate/phase-b-inspect?key=elim2026admin
+  // Returns MACROCORE alternative group candidates (grouped by codigo_base)
+  // and INTEKCORE housing sample — used to plan Phase B migration structure.
+  app.get('/api/migrate/phase-b-inspect', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+
+      // MACROCORE: groups with 2+ SKUs — these are alternative group candidates
+      const macroGroups = await client.query(`
+        SELECT
+          codigo_base,
+          COUNT(*)                              AS variant_count,
+          array_agg(sku ORDER BY sku)           AS skus,
+          MIN(installation_type)                AS installation_type,
+          array_agg(description ORDER BY sku)   AS descriptions
+        FROM elimfilters_catalog
+        WHERE REPLACE(technology, '™', '') = 'MACROCORE'
+          AND codigo_base IS NOT NULL
+        GROUP BY codigo_base
+        HAVING COUNT(*) > 1
+        ORDER BY variant_count DESC, codigo_base
+        LIMIT 30
+      `);
+
+      // MACROCORE: single-SKU entries (no alternatives)
+      const macroSingle = await client.query(`
+        SELECT COUNT(DISTINCT codigo_base) AS single_sku_groups
+        FROM elimfilters_catalog
+        WHERE REPLACE(technology, '™', '') = 'MACROCORE'
+          AND codigo_base IS NOT NULL
+        GROUP BY codigo_base
+        HAVING COUNT(*) = 1
+      `);
+
+      // MACROCORE: installation_type breakdown
+      const macroInstall = await client.query(`
+        SELECT installation_type, COUNT(*) AS total_skus,
+               COUNT(DISTINCT codigo_base) AS unique_bases
+        FROM elimfilters_catalog
+        WHERE REPLACE(technology, '™', '') = 'MACROCORE'
+        GROUP BY installation_type
+        ORDER BY total_skus DESC
+      `);
+
+      // INTEKCORE: sample of housing records with full data
+      const intekSample = await client.query(`
+        SELECT sku, codigo_base, installation_type, description
+        FROM elimfilters_catalog
+        WHERE REPLACE(technology, '™', '') = 'INTEKCORE'
+        ORDER BY installation_type, sku
+        LIMIT 30
+      `);
+
+      // INTEKCORE: installation_type breakdown
+      const intekInstall = await client.query(`
+        SELECT installation_type, COUNT(*) AS total_skus,
+               COUNT(DISTINCT codigo_base) AS unique_bases
+        FROM elimfilters_catalog
+        WHERE REPLACE(technology, '™', '') = 'INTEKCORE'
+        GROUP BY installation_type
+        ORDER BY total_skus DESC
+      `);
+
+      res.json({
+        macrocore: {
+          alternative_group_candidates: macroGroups.rows,
+          single_sku_count:             macroSingle.rows.length,
+          installation_type_breakdown:  macroInstall.rows,
+        },
+        intekcore: {
+          installation_type_breakdown: intekInstall.rows,
+          sample:                      intekSample.rows,
+        },
+      });
+    } catch(e) {
+      console.error('[phase-b-inspect]', e.message);
+      res.status(500).json({ error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Inspect: elimfilters_catalog data grouped by technology ─────────────────
   // GET /api/migrate/catalog-inspect?key=elim2026admin
   app.get('/api/migrate/catalog-inspect', async (req, res) => {
