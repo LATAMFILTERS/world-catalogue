@@ -697,104 +697,81 @@ def test_one(sku: str, debug: bool = False):
 
 # ── Explore one ──────────────────────────────────────────────────────────────
 def explore_one(sku: str):
-    """Click every accordion panel on the MANN product page and dump all table content."""
+    """Dump ALL sections from MANN product page without clicking (content already in DOM)."""
     url_key = _build_url_key("", sku)
     url = MANN_BASE.format(locale=MANN_LOCALES[0], url_key=url_key)
     log.info(f"Exploring {sku}  → {url}")
 
     _EXPLORE_JS = """() => {
-        // 1. Click ALL accordion buttons to expand everything
-        const buttons = [...document.querySelectorAll('button.cmp-accordion__button')];
-        for (const btn of buttons) {
-            try { btn.click(); } catch(e) {}
+        // Content is already in DOM even when accordions are collapsed (CSS-hidden, not JS-lazy).
+        // No clicking needed — clicking could toggle already-expanded panels shut.
+
+        function kvTable(section) {
+            const result = {};
+            if (!section) return result;
+            section.querySelectorAll('table tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td,th')]
+                    .map(c => c.textContent.trim().replace(/\\s+/g,' '));
+                if (cells.length >= 2 && cells[0] && cells[1])
+                    result[cells[0]] = cells[1];
+            });
+            return result;
         }
 
-        // 2. Extract Dimensions (first key-value table without TH)
-        const dims = {};
-        const dimSection = document.querySelector('[id="dimensions"]') ||
-                           document.querySelector('[data-cmp-hook-accordion="item"][id*="dim"]');
-        if (dimSection) {
-            dimSection.querySelectorAll('table tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td,th')].map(c => c.textContent.trim());
-                if (cells.length >= 2 && cells[0] && cells[1]) {
-                    dims[cells[0]] = cells[1];
-                }
-            });
-        } else {
-            // fallback: first table with no TH
-            const t = document.querySelector('table');
-            if (t) t.querySelectorAll('tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim());
-                if (cells.length >= 2 && cells[0]) dims[cells[0]] = cells[1];
-            });
-        }
+        // 2. Dimensions
+        const dims = kvTable(document.querySelector('[id="dimensions"]'));
 
-        // 3. Extract Technical Specifications
-        const specs = {};
-        const specSection = document.querySelector('[id="technicalData"]') ||
-                            document.querySelector('[data-cmp-hook-accordion="item"][id*="tech"]');
-        if (specSection) {
-            specSection.querySelectorAll('table tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td,th')].map(c => c.textContent.trim());
-                if (cells.length >= 2 && cells[0] && cells[1]) {
-                    specs[cells[0]] = cells[1];
-                }
-            });
-        } else {
-            // fallback: second table
-            const tables = document.querySelectorAll('table');
-            if (tables[1]) tables[1].querySelectorAll('tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim());
-                if (cells.length >= 2 && cells[0]) specs[cells[0]] = cells[1];
-            });
-        }
+        // 3. Technical Specifications
+        const specs = kvTable(document.querySelector('[id="technicalData"]'));
 
-        // 4. OEM codes — look for any section/div with "OEM" or "original equipment"
+        // 4. Scan ALL accordion items for any with "OEM" / "article" in header text
         const oemCodes = [];
-        const allText = document.body.innerText;
-        // Look for OEM tables or lists
-        document.querySelectorAll('[class*="oem"],[class*="OEM"],[id*="oem"],[id*="OEM"]').forEach(el => {
-            el.querySelectorAll('td,li,span').forEach(c => {
-                const t = c.textContent.trim();
-                if (t && t.length > 2 && t.length < 40) oemCodes.push(t);
-            });
+        document.querySelectorAll('.cmp-accordion__item').forEach(item => {
+            const header = (item.querySelector('.cmp-accordion__button')?.textContent || '').toLowerCase();
+            if (header.includes('oem') || header.includes('article') || header.includes('original')) {
+                item.querySelectorAll('td,li').forEach(c => {
+                    const t = c.textContent.trim();
+                    if (t && t.length > 2 && t.length < 50) oemCodes.push(t);
+                });
+            }
         });
 
-        // 5. Cross-reference codes
+        // 5. Scan ALL accordion items for cross-references
         const crossrefs = [];
-        document.querySelectorAll('[class*="cross"],[class*="reference"],[id*="cross"]').forEach(el => {
-            el.querySelectorAll('td,li,span').forEach(c => {
-                const t = c.textContent.trim();
-                if (t && t.length > 2 && t.length < 40) crossrefs.push(t);
-            });
+        document.querySelectorAll('.cmp-accordion__item').forEach(item => {
+            const header = (item.querySelector('.cmp-accordion__button')?.textContent || '').toLowerCase();
+            if (header.includes('cross') || header.includes('reference') || header.includes('equivalent')) {
+                item.querySelectorAll('td,li').forEach(c => {
+                    const t = c.textContent.trim();
+                    if (t && t.length > 2 && t.length < 50) crossrefs.push(t);
+                });
+            }
         });
 
-        // 6. All section IDs to understand page structure
-        const sections = [...document.querySelectorAll('[id]')]
-            .filter(el => el.id)
-            .map(el => ({
-                id: el.id,
-                tag: el.tagName,
-                cls: (el.className||'').substring(0, 50),
-                textPreview: el.textContent.trim().substring(0, 60),
-            }))
-            .filter(s => s.textPreview)
-            .slice(0, 30);
+        // 6. ALL accordion section IDs + header text → tells us EXACTLY what sections exist
+        const accordionItems = [...document.querySelectorAll('.cmp-accordion__item')].map(item => ({
+            id:     item.id || '',
+            header: (item.querySelector('.cmp-accordion__button')?.textContent || '').trim().substring(0,60),
+            tables: item.querySelectorAll('table').length,
+            lists:  item.querySelectorAll('ul,ol').length,
+            textLen: item.textContent.trim().length,
+        })).slice(0, 40);
 
-        // 7. ALL tables on page with full content
+        // 7. Full content of first 4 tables (dims + specs + first 2 app tables)
         const allTables = [];
         document.querySelectorAll('table').forEach((t, i) => {
-            if (i > 4) return;  // only first 5 tables (dims + specs + first app tables)
+            if (i > 3) return;
             const headers = [...t.querySelectorAll('th')].map(h => h.textContent.trim());
             const rows = [];
-            t.querySelectorAll('tbody tr').forEach(tr => {
-                const cells = [...tr.querySelectorAll('td')].map(c => c.textContent.trim().replace(/\\s+/g,' ').substring(0,40));
+            t.querySelectorAll('tr').forEach(tr => {
+                const cells = [...tr.querySelectorAll('td,th')]
+                    .map(c => c.textContent.trim().replace(/\\s+/g,' ').substring(0,40));
                 if (cells.some(c => c)) rows.push(cells);
             });
-            allTables.push({ index: i, headers, rows: rows.slice(0, 10) });
+            allTables.push({ index: i, headers, rows });
         });
 
-        return { dims, specs, oemCodes, crossrefs, sections, allTables };
+        return { dims, specs, oemCodes, crossrefs, accordionItems, allTables };
     }"""
 
     with sync_playwright() as pw:
