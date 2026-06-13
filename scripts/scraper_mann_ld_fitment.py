@@ -47,6 +47,17 @@ PROFILE_DIR = os.path.join(os.path.expanduser("~"), ".mann_fitment_profile")
 MANN_BASE   = "https://www.mann-filter.com/en-us/spare-parts/{url_key}/"
 PAUSE       = (3, 6)
 
+
+def _build_url_key(raw_key: str, sku: str) -> str:
+    """Normalizes url_key: remove _mann-filter suffix, replace / and spaces with -."""
+    s = raw_key.strip() if raw_key else sku
+    for sfx in ("_mann-filter", "_MANN-FILTER"):
+        if s.lower().endswith(sfx.lower()):
+            s = s[: -len(sfx)]
+    # Replace URL-unsafe chars with dash
+    s = s.replace("/", "-").replace(" ", "-").strip("-").lower()
+    return s
+
 # ── Logging ────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
@@ -83,7 +94,7 @@ def load_ld_items() -> list:
             if not sku or sku in seen:
                 continue
             seen.add(sku)
-            items.append({"sku": sku, "url_key": url_key or sku.lower().replace("/", "-")})
+            items.append({"sku": sku, "url_key": _build_url_key(url_key, sku)})
 
     log.info(f"LD items cargados: {len(items)}")
     return items
@@ -209,7 +220,8 @@ _MANN_FITMENT_JS = """() => {
 
 
 def scrape_mann_fitment(page, sku: str, url_key: str) -> dict:
-    url = MANN_BASE.format(url_key=quote(url_key, safe="-_"))
+    url_key = _build_url_key(url_key, sku)
+    url = MANN_BASE.format(url_key=url_key)
     try:
         resp = page.goto(url, wait_until="domcontentloaded", timeout=25000)
         status = resp.status if resp else 0
@@ -339,16 +351,13 @@ def test_one(sku: str, debug: bool = False):
                 p = json.loads(line)
                 raw_sku = p.get("sku", "")
                 if sku.upper() in raw_sku.upper():
-                    uk = p.get("url_key", "")
-                    for sfx in ("_mann-filter", "_MANN-FILTER"):
-                        if uk.endswith(sfx):
-                            uk = uk[:-len(sfx)]
-                    url_key = uk.strip()
+                    url_key = _build_url_key(p.get("url_key", ""), sku)
                     break
     if not url_key:
-        url_key = sku.lower().replace("/", "-").replace(" ", "-")
+        url_key = _build_url_key("", sku)
 
-    url = MANN_BASE.format(url_key=quote(url_key, safe="-_"))
+    url_key = _build_url_key(url_key, sku)
+    url = MANN_BASE.format(url_key=url_key)
     log.info(f"Testing {sku}  url_key:{url_key}")
     log.info(f"  → {url}")
 
