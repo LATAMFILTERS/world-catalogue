@@ -404,6 +404,34 @@ module.exports = function registerProductCatalogRoutes(app, Client, dbConfig) {
     } finally { await client.end(); }
   });
 
+  // ── Migration 008: Assign ELIMFILTERS SKUs to 500FG series ──────────────────
+  // GET /api/migrate/product-catalog-500fg-sku?key=elim2026admin
+  app.get('/api/migrate/product-catalog-500fg-sku', async (req, res) => {
+    if (req.query.key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+    const client = new Client(dbConfig);
+    try {
+      await client.connect();
+      const sql = fs.readFileSync(
+        path.join(MIGRATIONS_DIR, '008_500fg_elimfilters_sku.sql'), 'utf8'
+      );
+      await client.query(sql);
+
+      const verify = await client.query(`
+        SELECT 'model' AS type, model_code AS code, elimfilters_sku
+        FROM product_model WHERE model_code = '500FG'
+        UNION ALL
+        SELECT 'element', element_code, elimfilters_sku
+        FROM product_element WHERE element_code IN ('2010SM-OR','2010TM-OR','2010PM-OR')
+        ORDER BY type DESC, code
+      `);
+
+      res.json({ success: true, records: verify.rows });
+    } catch(e) {
+      console.error('[product-catalog 500fg-sku]', e.message);
+      res.status(500).json({ success: false, error: e.message });
+    } finally { await client.end(); }
+  });
+
   // ── Migration 007: Fix 500FG micron ratings ──────────────────────────────────
   // GET /api/migrate/product-catalog-fix-500fg?key=elim2026admin
   // Corrects SM-OR (2µm) and PM-OR (30µm) per Parker datasheet 15332 Rev G.
