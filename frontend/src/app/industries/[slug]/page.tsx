@@ -68,6 +68,7 @@ interface GeoData {
   ctaDescription?: string;
   protectionLabel?: string;
   videoSectionName?: string;
+  protectedAssets?: string[];
   protectionSystems?: string[];
   techFocus?: string;
   knowledgeLinks?: { label: string; href?: string }[];
@@ -147,6 +148,23 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Construction': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Excavators',
+      'Wheel Loaders',
+      'Bulldozers',
+      'Motor Graders',
+      'Articulated Dump Trucks',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Construction Equipment?',
     ctaDescription: 'Find the right heavy equipment asset protection system for your construction equipment platform. Cross-reference 500,000+ parts.',
     directAnswer: 'Construction equipment operates in environments with ambient silica dust concentrations ranging from 3,000 mg/m³ on earthwork sites to over 10,000 mg/m³ in tunneling operations — conditions that exceed ISO 5011 air filter test limits by a factor of 10 to 30. ELIMFILTERS construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, and articulated machinery operating under continuous multi-shift duty cycles. Proprietary hybrid protection media provides high contaminant retention capacity for hydraulic system cleanliness, air intake protection, and fuel system integrity throughout extended off-road service schedules.',

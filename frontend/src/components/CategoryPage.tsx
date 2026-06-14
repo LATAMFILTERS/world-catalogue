@@ -25,6 +25,7 @@ interface CategoryPageProps {
     ctaDescription?: string;
     protectionLabel?: string;
     videoSectionName?: string;
+    protectedAssets?: string[];
     protectionSystems?: string[];
     techFocus?: string;
     knowledgeLinks?: { label: string; href?: string }[];
@@ -248,6 +249,20 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   >
                     ENGINEERED FOR {item.name.toUpperCase()}
                   </h3>
+                  {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
+                    <div style={{ marginBottom: '1.5rem' }}>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '0.6rem' }}>
+                        PROTECTED ASSETS
+                      </p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        {geoData.protectedAssets.map((asset) => (
+                          <span key={asset} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
+                            · {asset}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {item.videoBody ? (
                     item.videoBody.map((para, i) => (
                       <p
