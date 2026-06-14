@@ -171,7 +171,7 @@ function IndustryCard({
                 textTransform: 'uppercase',
               }}
             >
-              LEARN MORE →
+              View Asset Protection Systems →
             </motion.span>
           </div>
         </div>
@@ -338,31 +338,53 @@ export default function IndustriesPage() {
               marginBottom: '3rem',
             }}
           >
-            Industrial Filtration Systems by Industry
+            Industrial Asset Protection by Industry
           </motion.h1>
+
+          {/* Tagline — Change 2 */}
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
+              color: '#fff',
+              lineHeight: 1.25,
+              marginBottom: '1.5rem',
+            }}
+          >
+            Every industry has contamination risks.<br />
+            <span style={{ color: '#FFF12D' }}>Every asset deserves protection.</span>
+          </motion.h2>
 
           {/* Direct Answer Block — GEO Optimization */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              background: 'rgba(255,241,45,0.04)',
-              border: '1px solid rgba(255,241,45,0.15)',
-              borderRadius: '4px',
-              padding: '1.75rem',
-              marginBottom: '3rem',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.75)',
               fontSize: '0.95rem',
               fontFamily: 'Outfit, sans-serif',
+              marginBottom: '2rem',
+              maxWidth: '820px',
             }}
           >
-            <p style={{ margin: 0 }}>
-              <strong>ELIMFILTERS serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
+            <p style={{ margin: '0 0 1.5rem' }}>
+              From open-pit mining to offshore platforms, from harvest combines to municipal fleets — contamination is the single largest cause of unplanned equipment failure. ELIMFILTERS engineers asset protection systems calibrated to your sector's specific contamination profile and ISO cleanliness targets.
             </p>
-            <p style={{ margin: '0.75rem 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)' }}>
-              Industries served include agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, trucks & fleets, and municipal waste management — across operations in over 50 countries.
+            {/* Change 3 — new positioning paragraphs */}
+            <p style={{ margin: '0 0 0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)' }}>
+              Industries do not buy filters.
+            </p>
+            <p style={{ margin: '0 0 1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)' }}>
+              Industries protect assets.
+            </p>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,0.65)' }}>
+              Every ELIMFILTERS solution begins by identifying the assets at risk, understanding the contamination threats affecting them, and deploying the protection systems required to maintain operational continuity.
             </p>
           </motion.div>
         </div>
@@ -387,6 +409,59 @@ export default function IndustriesPage() {
               <IndustryCard key={industry.name} industry={industry} index={i} />
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Cost of Contamination — Changes 5 & 6 */}
+      <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-80px' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+              // The cost of contamination
+            </p>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.25, marginBottom: '3rem' }}>
+              Asset protection is not a maintenance cost.<br />
+              <span style={{ color: '#FFF12D' }}>It is operational insurance.</span>
+            </h2>
+          </motion.div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            {[
+              {
+                stat: '70%',
+                desc: 'of all hydraulic and engine failures are caused by contamination — particles you cannot see with the naked eye.',
+              },
+              {
+                stat: '3–5×',
+                desc: 'asset component life extension when ISO cleanliness targets are consistently maintained.',
+              },
+              {
+                stat: '1–5%',
+                desc: 'of total asset ownership cost is filtration. The remaining 95% is determined by how well that 1–5% performs.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                style={{ borderLeft: '3px solid #FFF12D', paddingLeft: '1.5rem' }}
+              >
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.75rem' }}>
+                  {item.stat}
+                </p>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
