@@ -40,6 +40,14 @@ img, video, iframe, svg {
   max-width: 100%;
 }
 
+/* Global paragraph style — justify all body text, no auto-hyphens */
+p {
+  text-align: justify;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
 /* Typography */
 .font-heading {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
@@ -377,8 +385,13 @@ button:focus-visible,
 }
 
 /* ── Nav header mobile height ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 52px !important;
+  }
+}
 @media (max-width: 480px) {
   .nav-logo {
-    height: 44px !important;
+    height: 46px !important;
   }
 }

@@ -80,8 +80,7 @@ export function Navigation() {
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 2rem',
-          height: '90px',
+          padding: '1.4rem 2rem 0.9rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -96,7 +95,7 @@ export function Navigation() {
               width={220}
               height={60}
               className="nav-logo"
-              style={{ objectFit: 'contain', height: '56px', width: 'auto' }}
+              style={{ objectFit: 'contain', height: '68px', width: 'auto' }}
               priority
             />
           </Link>
@@ -210,9 +209,9 @@ export function Navigation() {
               color: '#000',
               fontFamily: 'Montserrat, sans-serif',
               fontWeight: 700,
-              fontSize: '0.75rem',
+              fontSize: '0.82rem',
               letterSpacing: '0.1em',
-              padding: '0.5rem 1.25rem',
+              padding: '0.55rem 1.35rem',
               textDecoration: 'none',
               display: 'inline-block',
             }}
@@ -359,9 +358,9 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
           fontFamily: 'Inter, sans-serif',
-          fontSize: '0.875rem',
+          fontSize: '0.95rem',
           fontWeight: 500,
-          letterSpacing: '0.05em',
+          letterSpacing: '0.04em',
           transition: 'color 0.2s ease',
           display: 'block',
           paddingBottom: '3px',
