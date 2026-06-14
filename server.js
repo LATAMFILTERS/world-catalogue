@@ -4196,7 +4196,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
 
         -- Pathway A: match por código OEM compartido
         SELECT DISTINCT
-          m.sku            AS mann_part,
+          REPLACE(m.sku, '_MANN-FILTER', '') AS mann_part,
           m.segment        AS mann_segment,
           d.don_part       AS donaldson_part,
           d.elimfilters_sku,
@@ -4221,7 +4221,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
 
         -- Pathway B: match directo via brand_crossrefs['MANN']
         SELECT DISTINCT
-          m.sku            AS mann_part,
+          REPLACE(m.sku, '_MANN-FILTER', '') AS mann_part,
           m.segment        AS mann_segment,
           p.codigo_base    AS donaldson_part,
           p.sku            AS elimfilters_sku,
@@ -4231,7 +4231,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
         FROM elimfilters_catalog p
         CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
         JOIN mann_oem_clean m
-          ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
+          ON UPPER(REGEXP_REPLACE(REPLACE(m.sku, '_MANN-FILTER', ''), '[\\s\\-/\\.()]', '', 'g'))
            = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
         WHERE p.brand_crossrefs ? 'MANN'
           AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
@@ -4542,13 +4542,13 @@ app.get('/api/oem/pathway-b-debug', async (req, res) => {
       LIMIT 20
     `);
 
-    // Prueba directa del JOIN
+    // Prueba directa del JOIN (con fix _MANN-FILTER)
     const joinTest = await client.query(`
       SELECT COUNT(*) AS pathway_b_count
       FROM elimfilters_catalog p
       CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
       JOIN mann_oem_clean m
-        ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
+        ON UPPER(REGEXP_REPLACE(REPLACE(m.sku, '_MANN-FILTER', ''), '[\\s\\-/\\.()]', '', 'g'))
          = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
       WHERE p.brand_crossrefs ? 'MANN'
         AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
