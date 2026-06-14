@@ -40,9 +40,10 @@ import sys
 from pathlib import Path
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-INPUT_FILE   = Path(r"C:\mann\mann_master.jsonl")
-OUTPUT_JSONL = Path(r"C:\mann\mann_ld_elimfilters.jsonl")
-OUTPUT_CSV   = Path(r"C:\mann\mann_ld_elimfilters.csv")
+INPUT_FILE    = Path(r"C:\mann\mann_master.jsonl")
+INPUT_XREF    = Path(r"C:\mann\mann_ld_crossrefs.jsonl")   # output de scraper_mann_ld_crossref.py
+OUTPUT_JSONL  = Path(r"C:\mann\mann_ld_elimfilters.jsonl")
+OUTPUT_CSV    = Path(r"C:\mann\mann_ld_elimfilters.csv")
 
 # ── Prefix → ELIMFILTERS family ──────────────────────────────────────────────
 # Longest prefix first to avoid CU matching before CUK
@@ -128,8 +129,39 @@ def mann_to_elim_sku(mann_sku: str) -> tuple[str | None, str | None]:
     return f"{family}5{digits}", family
 
 
-def process(records: list[dict]) -> list[dict]:
+def load_xrefs() -> dict:
+    """
+    Lee mann_ld_crossrefs.jsonl y devuelve dict {sku_upper: xref_string}.
+    xref_string formato: "FRAM:PH8A,PH9688 | WIX:51372 | BOSCH:3311"
+    Fuentes: oilfilter-crossreference.com / airfilter-crossreference.com / fuelfilter-crossreference.com
+    """
+    if not INPUT_XREF.exists():
+        return {}
+    xrefs = {}
+    with open(INPUT_XREF, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            row = json.loads(line)
+            sku = row.get("sku", "").strip().upper()
+            if not sku:
+                continue
+            # crossrefs stored as {"FRAM": ["PH8A"], "WIX": ["51372"], ...}
+            refs = {k: v for k, v in row.items()
+                    if k not in ("sku", "site", "url", "status") and isinstance(v, list) and v}
+            if refs:
+                xrefs[sku] = " | ".join(
+                    f"{brand}:{','.join(codes)}" for brand, codes in refs.items()
+                )
+    print(f"Crossrefs cargados: {len(xrefs)} SKUs con equivalencias")
+    return xrefs
+
+
+def process(records: list[dict], xrefs: dict | None = None) -> list[dict]:
     """Apply SKU generation to a list of MANN records."""
+    if xrefs is None:
+        xrefs = {}
     out = []
     collisions: dict[str, list[str]] = {}
 
@@ -163,8 +195,8 @@ def process(records: list[dict]) -> list[dict]:
             f"{make}:{','.join(codes)}" for make, codes in oe_raw.items()
         ) if oe_raw else ""
 
-        # Cross-reference codes (FRAM / WIX / BOSCH equivalents) — populated in future scrape
-        xref_codes = rec.get("xref_codes", "")
+        # Cross-reference codes from oilfilter/airfilter/fuelfilter-crossreference.com
+        xref_codes = xrefs.get(mann_sku.upper(), "") or rec.get("xref_codes", "")
 
         # Fitment: list of dicts → engine_year "2.0/1998", full fitment string
         fitment_raw = rec.get("fitment", [])
@@ -290,7 +322,8 @@ def main():
         return
 
     # ── Generate ──
-    results = process(records)
+    xrefs   = load_xrefs()
+    results = process(records, xrefs)
     print(f"SKUs ELIMFILTERS generados: {len(results)}")
 
     # Stats mode

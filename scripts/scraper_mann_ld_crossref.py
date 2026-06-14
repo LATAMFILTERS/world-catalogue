@@ -76,9 +76,9 @@ _PREFIX_ROUTES = [
 
 # Prefixes confirmed to return 0% crossrefs across all sites — skip entirely.
 # LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
-# WK / PU = MANN fuel filters NOT indexed by fuelfilter-crossreference.com
 # Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
-_SKIP_PREFIXES = {"LE", "LB", "WK", "PU", "KC", "KL"}
+# WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
+_SKIP_PREFIXES = {"LE", "LB"}
 
 def should_skip(sku: str) -> bool:
     """True if this SKU is known to return 0 crossref results on all sites."""
