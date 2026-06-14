@@ -66,6 +66,10 @@ interface GeoData {
   schemas: object[];
   ctaTitle?: string;
   ctaDescription?: string;
+  protectionLabel?: string;
+  protectionSystems?: string[];
+  knowledgeLinks?: { label: string; href?: string }[];
+  preCtaQuote?: { line1: string; line2: string };
 }
 
 const industryGeoData: Record<string, GeoData> = {
@@ -601,6 +605,23 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Agriculture': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectionSystems: [
+      'Air Intake & Airflow Protection',
+      'Fuel Cleanliness Protection',
+      'Lubrication Protection',
+      'Hydraulic Protection',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     directAnswer: 'ELIMFILTERS agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
     faq: [
       {
