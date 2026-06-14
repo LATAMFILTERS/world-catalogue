@@ -41,7 +41,8 @@ CATALOG_GAPS_FILE = Path(r"C:\mann\mann_catalog_gaps.txt")   # output de scraper
 OUTPUT_FILE       = Path(r"C:\mann\mann_master.jsonl")
 PROGRESS_FILE     = Path(r"C:\mann\mann_master_progress.json")
 
-PROFILE_DIR  = os.path.join(os.path.expanduser("~"), ".mann_master_profile")
+PROFILE_DIR      = os.path.join(os.path.expanduser("~"), ".mann_master_profile")
+PROFILE_DIR_GAPS = os.path.join(os.path.expanduser("~"), ".mann_master_gaps_profile")
 MANN_LOCALES = ["us-en", "ph-en", "de-de", "gb-en"]
 MANN_BASE    = "https://www.mann-filter.com/{locale}/catalog/search-results/product.html/{url_key}.html"
 MANN_DOMAIN  = "https://www.mann-filter.com"
@@ -290,9 +291,9 @@ _MANN_MASTER_JS = """() => {
 
 
 # ── Playwright helpers ─────────────────────────────────────────────────────
-def make_context(pw, headless: bool = False):
+def make_context(pw, headless: bool = False, profile_dir: str = None):
     return pw.chromium.launch_persistent_context(
-        user_data_dir=PROFILE_DIR,
+        user_data_dir=profile_dir or PROFILE_DIR,
         channel="chrome",
         headless=headless,
         locale="en-US",
@@ -580,8 +581,9 @@ def run(start_from: str = None, retry_zeros: bool = False, from_gaps: bool = Fal
             pending_keys = pending_keys[pending_keys.index(target):]
             log.info(f"Reanudando desde {start_from} (url_key: {target})")
 
+    profile = PROFILE_DIR_GAPS if from_gaps else PROFILE_DIR
     with sync_playwright() as pw:
-        ctx  = make_context(pw, headless=False)
+        ctx  = make_context(pw, headless=False, profile_dir=profile)
         page = ctx.new_page()
 
         for i, url_key in enumerate(pending_keys, 1):

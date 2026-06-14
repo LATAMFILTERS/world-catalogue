@@ -167,8 +167,7 @@ def mann_to_elim_sku(mann_sku: str) -> tuple[str | None, str | None]:
 def load_xrefs() -> dict:
     """
     Lee mann_ld_crossrefs.jsonl y devuelve dict {sku_upper: xref_string}.
-    xref_string formato: "FRAM:PH8A,PH9688 | WIX:51372 | BOSCH:3311"
-    Fuentes: oilfilter-crossreference.com / airfilter-crossreference.com / fuelfilter-crossreference.com
+    Formato de archivo: {"sku":..., "site":..., "crossrefs": {"FRAM":["PH8A"],...}, "fram":...}
     """
     if not INPUT_XREF.exists():
         return {}
@@ -182,12 +181,12 @@ def load_xrefs() -> dict:
             sku = row.get("sku", "").strip().upper()
             if not sku:
                 continue
-            # crossrefs stored as {"FRAM": ["PH8A"], "WIX": ["51372"], ...}
-            refs = {k: v for k, v in row.items()
-                    if k not in ("sku", "site", "url", "status") and isinstance(v, list) and v}
-            if refs:
+            refs = row.get("crossrefs", {})
+            if refs and isinstance(refs, dict):
                 xrefs[sku] = " | ".join(
-                    f"{brand}:{','.join(codes)}" for brand, codes in refs.items()
+                    f"{brand}:{','.join(codes)}"
+                    for brand, codes in refs.items()
+                    if codes
                 )
     print(f"Crossrefs cargados: {len(xrefs)} SKUs con equivalencias")
     return xrefs
