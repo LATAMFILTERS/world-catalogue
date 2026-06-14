@@ -3,7 +3,7 @@ import { catalogue, getSlug } from '@/lib/catalogue';
 
 const displayNames: Record<string, string> = {
   'Airfilter': 'Air Filter',
-  'Aquaguard Series': 'Turbine Fuel Separator',
+  'Hydrocore Series': 'Turbine Fuel Separator',
   'Cabin': 'Cabin Filter',
   'Coolant': 'Coolant Filter',
   'Dryer': 'Air Dryer',

@@ -1,15 +1,13 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Space_Grotesk, Outfit, JetBrains_Mono, Montserrat } from 'next/font/google';
+import { Titillium_Web, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', weight: ['400', '500', '700'] });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', weight: ['300', '400', '500', '600', '700'] });
+const titilliumWeb = Titillium_Web({ subsets: ['latin'], variable: '--font-titillium', weight: ['300', '400', '600', '700'] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', weight: ['400', '500'] });
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ['400', '500', '700', '900'] });
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -75,21 +73,38 @@ const organizationSchema = {
   name: 'ELIMFILTERS',
   url: BASE_URL,
   logo: `${BASE_URL}/assets/logo-elimfilters.png`,
-  description: 'Industrial asset protection filtration systems engineered for mining, agriculture, marine, power generation, and heavy industry.',
+  description: 'ELIMFILTERS® is an Industrial Asset Protection Technology company engineered by Kleo Technologies. Contamination control systems that improve equipment reliability, operational continuity, and asset lifecycle across mining, agriculture, marine, oil & gas, and heavy industry.',
+  foundingLocation: 'Frisco, Texas, USA',
+  areaServed: 'Worldwide',
+  knowsAbout: [
+    'Industrial Asset Protection',
+    'Contamination Control',
+    'Equipment Reliability Engineering',
+    'ISO 16889 Filtration Standards',
+    'ISO 4406 Cleanliness Codes',
+    'Hydraulic System Protection',
+    'Fuel System Contamination Control',
+  ],
   contactPoint: {
     '@type': 'ContactPoint',
-    contactType: 'customer support',
+    contactType: 'technical support',
     url: `${BASE_URL}/contact`,
-    availableLanguage: ['English', 'Spanish'],
+    availableLanguage: ['English', 'Spanish', 'Portuguese', 'French'],
   },
-  sameAs: ['https://www.linkedin.com/company/elimfilters'],
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Kleo Technologies',
+    description: 'Industrial Research & Engineering Division',
+  },
+  sameAs: ['https://www.linkedin.com/company/elimfilters', 'https://www.instagram.com/elimfilters.global'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'ELIMFILTERS World Catalogue',
     itemListElement: [
-      { '@type': 'OfferCatalog', name: 'Industrial Filtration by Industry', url: `${BASE_URL}/industries` },
-      { '@type': 'OfferCatalog', name: 'Filtration Systems', url: `${BASE_URL}/systems` },
-      { '@type': 'OfferCatalog', name: 'Proprietary Technologies', url: `${BASE_URL}/technologies` },
+      { '@type': 'OfferCatalog', name: 'Asset Protection by Industry', url: `${BASE_URL}/industries` },
+      { '@type': 'OfferCatalog', name: 'Contamination Control Systems', url: `${BASE_URL}/systems` },
+      { '@type': 'OfferCatalog', name: 'Proprietary Protection Technologies', url: `${BASE_URL}/technologies` },
+      { '@type': 'OfferCatalog', name: 'Knowledge System', url: `${BASE_URL}/knowledge-system` },
     ],
   },
 };
@@ -108,7 +123,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} ${jetBrainsMono.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${titilliumWeb.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <script

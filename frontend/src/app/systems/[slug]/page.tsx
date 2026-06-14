@@ -4,7 +4,7 @@ import SystemPageClient from './SystemPageClient';
 
 const displayNames: Record<string, string> = {
   'Airfilter': 'Air Filter',
-  'Aquaguard Series': 'Turbine Fuel Separator',
+  'Hydrocore Series': 'Turbine Fuel Separator',
   'Cabin': 'Cabin Filter',
   'Coolant': 'Coolant Filter',
   'Dryer': 'Air Dryer',
@@ -45,7 +45,7 @@ export default function SystemPage({ params }: PageProps) {
 
   const systemCategories: Record<string, string[]> = {
     'Airfilter': ['Mining', 'Agriculture', 'Construction', 'Oil Gas'],
-    'Aquaguard Series': ['Oil Gas', 'Marine', 'Power Generation'],
+    'Hydrocore Series': ['Oil Gas', 'Marine', 'Power Generation'],
     'Cabin': ['Automotive', 'Bus Coach', 'Trucks Fleets'],
     'Coolant': ['Automotive', 'Manufacturing', 'Power Generation'],
     'Dryer': ['Manufacturing', 'Power Generation', 'Railway'],

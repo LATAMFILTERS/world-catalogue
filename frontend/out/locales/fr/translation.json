@@ -104,7 +104,14 @@
     "dealer": "Devenez revendeur",
     "warranty": "Garantie",
     "copyright": "© 2015-2026 ELIMFILTERS® LLC | Intelligence et ingénierie en filtration",
-    "location": "FRISCO-TEXAS"
+    "location": "FRISCO-TEXAS",
+    "colProducts": "PRODUITS",
+    "colKnowledge": "CONNAISSANCE",
+    "knowledgeSystem": "Système de Connaissances",
+    "standards": "Normes",
+    "fleetOpt": "Optimisation de Flotte",
+    "locationText": "Frisco, Texas",
+    "kleoText": "© 2015–2026 Kleo Technologies"
   },
   "category": {
     "keyAdvantages": "AVANTAGES CLÉS",
@@ -124,5 +131,120 @@
   },
   "language": {
     "switchToEn": "FR"
+  },
+  "home": {
+    "eyebrow": "Frisco, Texas · Technologie de Protection des Actifs",
+    "hero1": "Protection des actifs industriels",
+    "hero2": "grâce au contrôle de la contamination.",
+    "heroDesc": "Systèmes de filtration d'air, carburant, hydraulique, lubrifiant et cabine pour 12 secteurs industriels. ISO 5011 · ISO 16889 · ISO 19438.",
+    "ctaFilter": "Trouver mon filtre",
+    "ctaKnowledge": "Système de connaissances",
+    "statsLabels": [
+      "Efficacité de Filtration",
+      "Extension de Durée de Vie",
+      "Références OEM",
+      "Réseau de Distribution"
+    ],
+    "assetTag": "// STRATÉGIE DE PROTECTION DES ACTIFS",
+    "assetTitle": "Protéger les Actifs Industriels par le Contrôle de la Contamination",
+    "assetP1": "ELIMFILTERS protège les actifs industriels en contrôlant la contamination dans les systèmes critiques. Notre approche d'ingénierie vise à prévenir la dégradation, prolonger la durée de vie, améliorer la fiabilité et réduire le coût total de possession.",
+    "assetP2": "Chaque technologie que nous concevons traite un mécanisme de contamination spécifique — usure par particules, ingestion d'eau, défaillance de bypass ou dégradation thermique — ciblant la cause profonde de la défaillance prématurée des actifs.",
+    "archLabel": "ARCHITECTURE DE L'INFORMATION",
+    "archItems": [
+      "Contamination",
+      "Dégradation des Actifs",
+      "Normes et Mesure",
+      "Technologies de Protection",
+      "Mise en Œuvre des Produits",
+      "Optimisation de Flotte",
+      "Impact sur la Durabilité"
+    ],
+    "problemTag": "// DIAGNOSTIC DES RISQUES OPÉRATIONNELS",
+    "problemH1": "CE QUE VOUS NE VOYEZ PAS",
+    "problemH2": "ARRÊTE VOTRE OPÉRATION.",
+    "problemIntro": "80 % des pannes prématurées des équipements sont causées par la contamination. Une filtration inefficace permet à des particules invisibles d'agir comme du papier de verre à l'intérieur des composants critiques — surfaces de paliers, orifices d'injecteurs, tiroirs hydrauliques.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "Des pannes prématurées sont causées par la contamination.",
+    "failModes": [
+      {
+        "title": "Érosion des Injecteurs",
+        "desc": "Les particules microniques déforment les orifices de pulvérisation, provoquant une perte de puissance immédiate et une mauvaise combustion."
+      },
+      {
+        "title": "Friction Critique des Paliers",
+        "desc": "L'huile contaminée accélère l'usure du métal, réduisant la durée de vie du bloc moteur jusqu'à 40%."
+      },
+      {
+        "title": "Perte d'Efficacité du Carburant",
+        "desc": "Les systèmes de carburant contaminés obligent les moteurs à consommer jusqu'à 8% de diesel en plus pour maintenir le même couple."
+      }
+    ],
+    "whyTitle1": "PROTECTION DES ACTIFS",
+    "whyTitle2": "TECHNOLOGIE",
+    "whyP1": "ELIMFILTERS n'est pas une entreprise de filtres. ELIMFILTERS est une entreprise de ",
+    "whyP1hl": "Technologie de Protection des Actifs",
+    "whyP1after": " — systèmes d'ingénierie qui contrôlent la contamination, préviennent la dégradation et protègent la valeur des actifs industriels critiques.",
+    "whyP2": "Chaque technologie que nous développons s'attaque à une menace de contamination mesurable. Les équipements défaillants coûtent des centaines de milliers à réparer. Nous protégeons cet investissement au niveau du système, pas du produit.",
+    "whyCheckItems": [
+      "Contrôle de contamination au niveau du système, pas remplacement de produit",
+      "25+ ans de protection des actifs industriels à haute valeur",
+      "Normes d'ingénierie : ISO 5011 · 16889 · 19438 · 4406",
+      "Déployé dans 12 industries — mines, marine, agriculture et plus"
+    ],
+    "whyCardTag": "// TECHNOLOGIE DE PROTECTION DES ACTIFS",
+    "whyCardTitle1": "Votre équipement vaut des millions.",
+    "whyCardTitle2": "Protégez-le en conséquence.",
+    "whyCardDesc": "Chaque technologie ELIMFILTERS existe pour protéger les actifs critiques, réduire les temps d'arrêt et prolonger la durée de vie opérationnelle.",
+    "whyCardItems": [
+      "Médias Hybrides Formulés par IA",
+      "Systèmes de Séparation Hydrophobes",
+      "Structures Anti-Bypass",
+      "20 000+ références OEM validées"
+    ],
+    "techTag": "// TECHNOLOGIE ÉPROUVÉE",
+    "techTitle": "Protection des Actifs",
+    "techHighlight": "Technologie",
+    "techItems": [
+      {
+        "title": "Médias Hybrides Formulés par IA",
+        "desc": "Technologie de médias propriétaire développée avec des algorithmes mathématiques et des scénarios testés en laboratoire. La formulation unique offre des performances exceptionnelles qui ne peuvent pas être reproduites."
+      },
+      {
+        "title": "Systèmes de Séparation Hydrophobes",
+        "desc": "Élimination avancée de l'eau et de l'humidité des carburants et lubrifiants. Prévient la corrosion, l'oxydation et la dégradation de la viscosité tout en garantissant un fonctionnement fiable à long terme."
+      },
+      {
+        "title": "Structures Anti-Bypass",
+        "desc": "Sécurité 100% garantie : en cas de bypass, le filtre tombe en panne en toute sécurité. Risque zéro d'événements soudains de contamination. Protection absolue des équipements critiques."
+      }
+    ],
+    "ctaDealerTag": "// RÉSEAU DE REVENDEURS",
+    "ctaDealerTitle": "SEULEMENT LE MEILLEUR",
+    "ctaDealerHl": "VEND DES ELIMFILTERS.",
+    "ctaDealerBtn": "DEVENEZ REVENDEUR",
+    "ctaSearchTag": "// RECHERCHE TECHNIQUE",
+    "ctaSearchTitle": "LE BON FILTRE.",
+    "ctaSearchHl": "RECHERCHEZ COMME UN PRO.",
+    "ctaSearchBtn": "TROUVER MA PIÈCE",
+    "faqTag": "// QUESTIONS FRÉQUENTES",
+    "faqTitle": "Questions Courantes sur la Filtration Industrielle",
+    "faqItems": [
+      {
+        "q": "Quel est le meilleur filtre à air pour les équipements miniers ?",
+        "a": "Les technologies ELIMFILTERS® MACROCORE™ et NANOFORCE™ atteignent 99,9% d'efficacité de capture de particules pour les systèmes d'admission d'air miniers, conformes SAE J1539 et ISO 5011. La sélection dépend de la cylindrée et de l'environnement opérationnel."
+      },
+      {
+        "q": "À quelle fréquence les filtres à carburant industriels doivent-ils être changés ?",
+        "a": "ELIMFILTERS® recommande des intervalles de 500 à 1 000 heures pour les moteurs diesel lourds, ou 250 à 500 heures en environnements très contaminés. Les filtres HYDROCORE™ prolongent les intervalles grâce à une séparation d'eau de 99,8%."
+      },
+      {
+        "q": "Quel code de propreté ISO un système hydraulique doit-il cibler ?",
+        "a": "La plupart des systèmes hydrauliques industriels nécessitent le code ISO 17/15/12 pour protéger les tiroirs de vannes proportionnelles. Les systèmes critiques peuvent spécifier ISO 15/13/10. Les stratégies ELIMFILTERS® ciblent des codes mesurés, pas des marques."
+      },
+      {
+        "q": "Pourquoi la contamination provoque-t-elle une défaillance du moteur ?",
+        "a": "Les particules de contamination usent les surfaces des paliers, obstruent les injecteurs et dégradent l'intégrité des joints. La contamination non contrôlée réduit la durée de vie des paliers de 15 000+ heures à 2 000–3 000 heures. ELIMFILTERS® prévient ces modes de défaillance."
+      }
+    ]
   }
 }

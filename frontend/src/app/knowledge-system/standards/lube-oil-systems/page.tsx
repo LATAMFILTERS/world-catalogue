@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 import { AudioOverview } from '@/components/AudioOverview';
@@ -52,6 +53,7 @@ const RELATED_SYSTEMS = [
 export default function LubeOilSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       {/* Navigation */}
       <Link href="/knowledge-system/standards"
         className="back-nav-btn" style={{
@@ -59,7 +61,7 @@ export default function LubeOilSystemsPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← STANDARDS</Link>
@@ -85,7 +87,7 @@ export default function LubeOilSystemsPage() {
             // INDUSTRIAL STANDARDS · LUBE OIL SYSTEMS
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -115,7 +117,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / SYSTEM OVERVIEW</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Engine Oil Filtration Domain</h2>
           <p style={{
@@ -145,7 +147,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / CONTAMINATION CHALLENGES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Wear Particle Accumulation Pathways</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -172,7 +174,7 @@ export default function LubeOilSystemsPage() {
                 paddingLeft: '1.25rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
                 }}>{item.title}</p>
                 <p style={{
@@ -197,7 +199,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / ASSOCIATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -244,7 +246,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / OPERATIONAL IMPACT & COST</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Contamination-Driven Degradation Metrics</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -286,7 +288,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / RELATED CONTAMINATION MODES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Primary & Secondary Failure Mechanisms</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -307,7 +309,7 @@ export default function LubeOilSystemsPage() {
                   }}
                 >
                   <p style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                     fontWeight: 600, color: '#fff', margin: 0,
                   }}>{item.mode}</p>
                   <p style={{
@@ -337,7 +339,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / ELIMFILTERS TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
@@ -379,7 +381,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / SYSTEM DESIGN CONSIDERATIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Engineering Factors</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -394,7 +396,7 @@ export default function LubeOilSystemsPage() {
                 paddingLeft: '1.25rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
                 }}>{item.title}</p>
                 <p style={{
@@ -419,7 +421,7 @@ export default function LubeOilSystemsPage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -429,7 +431,7 @@ export default function LubeOilSystemsPage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
@@ -463,7 +465,7 @@ export default function LubeOilSystemsPage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{sys.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{sys.title}</span>
                   <span style={{

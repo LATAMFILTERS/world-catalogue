@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 
 export default function IndustrialFiltrationPage() {
@@ -12,7 +13,7 @@ export default function IndustrialFiltrationPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
@@ -49,7 +50,7 @@ export default function IndustrialFiltrationPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +66,7 @@ export default function IndustrialFiltrationPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -102,7 +103,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -157,7 +158,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -248,7 +249,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -303,7 +304,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -387,7 +388,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -575,7 +576,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -647,7 +648,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -783,7 +784,7 @@ export default function IndustrialFiltrationPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -1184,7 +1185,7 @@ export default function IndustrialFiltrationPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_TECHNOLOGIES</p>
-              <p style={{ margin: '0' }}>MACROCORE (Particulate capture, 18µm absolute, extends intervals 20-30%) | NANOFORCE (Sub-micron filtration, 1µm efficiency, reduces abrasive wear 40-60%) | SYNTRAX (Synthetic media, extended lifecycle 50-100% longer than cellulose) | DURATECH (High dirt capacity media, extends replacement intervals 35-50%) | COOLTECH (Temperature-resistant media for extreme conditions)</p>
+              <p style={{ margin: '0' }}>MACROCORE (Particulate capture, 18µm absolute, extends intervals 20-30%) | NANOFORCE (Sub-micron filtration, 1µm efficiency, reduces abrasive wear 40-60%) | SYNTRAX (Synthetic media, extended lifecycle 50-100% longer than cellulose) | DURATECH (High dirt capacity media, extends replacement intervals 35-50%) | THERMACORE (Temperature-resistant media for extreme conditions)</p>
             </div>
 
             <div>
@@ -1259,7 +1260,7 @@ export default function IndustrialFiltrationPage() {
                 "NANOFORCE",
                 "SYNTRAX",
                 "DURATECH",
-                "COOLTECH"
+                "THERMACORE"
               ]
             },
             "relatedLink": [

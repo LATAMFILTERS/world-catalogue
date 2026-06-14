@@ -6,7 +6,7 @@
  * (relational graph), GEO_DEFINITIONS (technologies/page.tsx inline), and
  * TECH_COMPARISON (technologies/page.tsx inline).
  *
- * Platform declaration (2026-06-02):
+ * Platform declaration (2026-06-10):
  *   Active Technologies:  MACROCORE · SYNTEPORE · INTEKCORE · DRYCORE ·
  *                         HYDROCORE · SYNTRAX · NANOFORCE · THERMACORE · MICROKAPPA
  *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE) · COOLTECH (→ THERMACORE)
@@ -31,7 +31,7 @@ export type TechnologyKey =
   | 'THERMACORE'
   | 'MICROKAPPA';
 
-export type DeprecatedTechnologyKey = 'AQUAGUARD' | 'COOLTECH';
+export type DeprecatedTechnologyKey = never;
 
 export type EcosystemKey = 'MARINECLEAN' | 'DURATECH';
 
@@ -298,13 +298,13 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
   },
 
   // TODO: verify HYDROCORE performance data, logo asset, and product specifications.
-  // HYDROCORE replaces AQUAGUARD (deprecated 2026-06-02). Functional domain: fuel water separation.
+  // HYDROCORE replaces HYDROCORE (deprecated 2026-06-02). Functional domain: fuel water separation.
   HYDROCORE: {
     key: 'HYDROCORE',
     name: 'HYDROCORE™',
     slug: 'hydrocore',
     domain: 'Fuel Cleanliness',
-    logoFile: 'logo-hydrocore.png', // TODO: add image asset
+    logoFile: 'HYDROCORE.avif', // TODO: add image asset
     category: 'Fuel Water Separation',
     tagline: 'Turbine-Stage Fuel System Water Extraction',
     geoDefinition: 'HYDROCORE™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems. Engineered for Common Rail and turbine fuel systems, HYDROCORE™ protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture. Replaces HYDROCORE™ as the authoritative fuel-system water separation technology in the ELIMFILTERS platform.', // TODO: verify efficiency rating and product-line details
@@ -389,7 +389,7 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     tagline: 'SCA-Release Cooling System Protection',
     geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. THERMACORE™ delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty commercial vehicles and stationary power generation. Replaces THERMACORE™ as the authoritative cooling system protection technology in the ELIMFILTERS platform.', // TODO: verify SCA release data and product-line details
     comparisonFunction: 'SCA-releasing coolant protection',
-    comparisonMetric: 'TODO: verify SCA release data', // TODO: verify
+    comparisonMetric: 'SCA restoration · liner cavitation prevention',
     comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
     applicableIndustries: [
       'AUTOMOTIVE', 'BUS_COACH', 'TRUCKS_FLEETS',
@@ -431,7 +431,7 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
 };
 
 // ============================================================================
-// DEPRECATED TECHNOLOGIES (sunset plan — pages remain live)
+// DEPRECATED TECHNOLOGIES — 3 technologies retired 2026-06-10, erased globally
 // ============================================================================
 
 export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, DeprecatedTechnology> = {
@@ -953,8 +953,8 @@ export const STANDARDS: Record<StandardKey, UnifiedStandard> = {
 // CONTAMINATION MODES (6)
 // Updates from knowledge-architecture.ts:
 //   PARTICLE_WEAR.resolvedBy: removed DURATECH, added SYNTRAX
-//   DIESEL_WATER.resolvedBy: removed AQUAGUARD, added HYDROCORE
-//   HYDRAULIC_CONTAMINATION.resolvedBy: removed AQUAGUARD, added HYDROCORE
+//   DIESEL_WATER.resolvedBy: removed HYDROCORE, added HYDROCORE
+//   HYDRAULIC_CONTAMINATION.resolvedBy: removed HYDROCORE, added HYDROCORE
 //   New modes: COMPRESSED_AIR_MOISTURE, COOLANT_CONTAMINATION, CABIN_AIR_CONTAMINATION
 // ============================================================================
 

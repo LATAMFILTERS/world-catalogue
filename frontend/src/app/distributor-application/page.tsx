@@ -851,7 +851,7 @@ export default function DistributorApplication() {
                       marginBottom: '1.5rem',
                       fontSize: '0.9rem',
                       color: '#90ee90',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: 'Titillium Web, sans-serif',
                     }}
                   >
                     Application submitted. Our commercial team will review and respond within 5

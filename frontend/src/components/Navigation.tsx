@@ -86,9 +86,9 @@ export function Navigation() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Logo */}
+        {/* Logo + Kleo tagline */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             <Image
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS"
@@ -98,6 +98,17 @@ export function Navigation() {
               style={{ objectFit: 'contain', height: '68px', width: 'auto' }}
               priority
             />
+            <span style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.48rem',
+              letterSpacing: '0.12em',
+              color: 'rgba(255,255,255,0.2)',
+              textTransform: 'uppercase',
+              lineHeight: 1,
+              paddingLeft: '1px',
+            }}>
+              Powered by Kleo Technologies™
+            </span>
           </Link>
         </motion.div>
 
@@ -168,7 +179,7 @@ export function Navigation() {
                           border: 'none',
                           borderBottom: '1px solid rgba(255,255,255,0.05)',
                           color: currentLang === code ? '#FFF12D' : 'rgba(255,255,255,0.65)',
-                          fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Outfit, sans-serif',
+                          fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Titillium Web, sans-serif',
                           fontSize: '0.82rem',
                           textAlign: 'left',
                           cursor: 'pointer',
@@ -207,7 +218,7 @@ export function Navigation() {
             style={{
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
               fontSize: '0.82rem',
               letterSpacing: '0.1em',
@@ -291,7 +302,7 @@ export function Navigation() {
                   href="https://part-search.elimfilters.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
+                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
                 >
                   {t('nav.findMyFilter')} →
                 </a>
@@ -311,7 +322,7 @@ export function Navigation() {
                             background: currentLang === code ? 'rgba(255,241,45,0.15)' : 'rgba(255,255,255,0.04)',
                             border: `1px solid ${currentLang === code ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.1)'}`,
                             color: currentLang === code ? '#FFF12D' : 'rgba(255,255,255,0.55)',
-                            fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Outfit, sans-serif',
+                            fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Titillium Web, sans-serif',
                             fontSize: '0.78rem',
                             padding: '0.35rem 0.65rem',
                             cursor: 'pointer',
@@ -389,7 +400,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 const mobileLinkStyle: React.CSSProperties = {
   color: 'rgba(255,255,255,0.85)',
   textDecoration: 'none',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'Titillium Web, sans-serif',
   fontSize: '1rem',
   fontWeight: 500,
 };

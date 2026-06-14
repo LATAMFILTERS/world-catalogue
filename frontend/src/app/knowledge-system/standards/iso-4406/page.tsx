@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -37,6 +38,7 @@ export default function ISO4406Page() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       {/* Back Button */}
       <Link href="/knowledge-system/standards"
         className="back-nav-btn" style={{
@@ -44,7 +46,7 @@ export default function ISO4406Page() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← STANDARDS</Link>
@@ -74,7 +76,7 @@ export default function ISO4406Page() {
             // INTERNATIONAL FILTRATION STANDARD
           </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -114,7 +116,7 @@ export default function ISO4406Page() {
           }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.3rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -151,7 +153,7 @@ export default function ISO4406Page() {
             }}
           >
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: '1.3rem',
               fontWeight: 700,
               color: '#FFF12D',
@@ -184,7 +186,7 @@ export default function ISO4406Page() {
           transition={{ duration: 0.5, delay: sections.length * 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.5rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -209,7 +211,7 @@ export default function ISO4406Page() {
                 }}
               >
                 <h3 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#FFF12D',

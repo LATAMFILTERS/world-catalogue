@@ -172,7 +172,7 @@ export function TechDetailPage({ data }: Props) {
                 margin: '0 auto',
                 lineHeight: 1.85,
                 color: 'rgba(255,255,255,0.5)',
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 fontStyle: 'italic',
               }}
             >
@@ -205,7 +205,7 @@ export function TechDetailPage({ data }: Props) {
                     textAlign: 'center',
                   }}>
                     <div style={{ fontSize: '0.52rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.3)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{key}</div>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{value}</div>
+                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{value}</div>
                   </div>
                 ))}
               </motion.div>
@@ -224,11 +224,11 @@ export function TechDetailPage({ data }: Props) {
                 <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
                   // TECHNICAL OVERVIEW
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, marginBottom: '2rem', whiteSpace: 'pre-line' }}>
+                <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, marginBottom: '2rem', whiteSpace: 'pre-line' }}>
                   {data.systemHeadline}
                 </h2>
                 {data.systemParagraphs.map((para, i) => (
-                  <p key={i} style={{ fontSize: '0.92rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.55)', fontFamily: 'Outfit, sans-serif', marginBottom: '1.35rem' }}>
+                  <p key={i} style={{ fontSize: '0.92rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.55)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.35rem' }}>
                     {para}
                   </p>
                 ))}
@@ -251,7 +251,7 @@ export function TechDetailPage({ data }: Props) {
                             <div style={{ fontSize: '0.56rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.08em' }}>{r.standard}</div>
                           </div>
                           <div style={{ textAlign: 'right' }}>
-                            <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{r.result}</span>
+                            <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{r.result}</span>
                             <span style={{ fontSize: '0.56rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'JetBrains Mono, monospace', marginLeft: '0.25rem' }}>{r.unit}</span>
                           </div>
                         </div>
@@ -288,7 +288,7 @@ export function TechDetailPage({ data }: Props) {
                 <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
                   // PROTECTION ARCHITECTURE
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.3rem, 2.4vw, 1.9rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1.15, margin: 0 }}>
+                <h2 style={{ fontSize: 'clamp(1.3rem, 2.4vw, 1.9rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, margin: 0 }}>
                   {data.stagesHeading || 'EACH LAYER STOPS WHAT THE PREVIOUS CANNOT.'}
                 </h2>
               </div>
@@ -309,19 +309,19 @@ export function TechDetailPage({ data }: Props) {
                   }}>
                     <div style={{ paddingTop: '0.15rem' }}>
                       <div style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: `rgba(255,241,45,${1 - idx * 0.22})`, fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{stage.tag}</div>
-                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'rgba(255,255,255,0.05)', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.number}</div>
+                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'rgba(255,255,255,0.05)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.number}</div>
                     </div>
                     <div>
-                      <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '0.75rem', letterSpacing: '0.02em' }}>
+                      <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '0.75rem', letterSpacing: '0.02em' }}>
                         {stage.title}
                       </h3>
-                      <p style={{ fontSize: '0.86rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', margin: 0, maxWidth: '600px' }}>
+                      <p style={{ fontSize: '0.86rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', margin: 0, maxWidth: '600px' }}>
                         {stage.body}
                       </p>
                     </div>
                     <div className="stage-stat" style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
-                      <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
-                      <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Outfit, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
+                      <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Titillium Web, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
                     </div>
                   </div>
                 </AnimateIn>
@@ -342,7 +342,7 @@ export function TechDetailPage({ data }: Props) {
                   <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
                     // PROTECTION PARAMETERS
                   </span>
-                  <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0 }}>
+                  <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                     {data.specsHeading || 'FIELD SPECIFICATIONS'}
                   </h2>
                 </div>
@@ -351,8 +351,8 @@ export function TechDetailPage({ data }: Props) {
                 {data.specs.map((spec, idx) => (
                   <motion.div key={idx} variants={itemVariants} style={{ background: '#050505', padding: '1.65rem 1.4rem' }}>
                     <div style={{ fontSize: '0.52rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.28)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.6rem' }}>{spec.label}</div>
-                    <div style={{ fontSize: '1.7rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Space Grotesk, sans-serif', lineHeight: 1, marginBottom: '0.4rem' }}>{spec.value}</div>
-                    <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.38)', fontFamily: 'Outfit, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
+                    <div style={{ fontSize: '1.7rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1, marginBottom: '0.4rem' }}>{spec.value}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.38)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
                   </motion.div>
                 ))}
               </StaggerContainer>
@@ -371,7 +371,7 @@ export function TechDetailPage({ data }: Props) {
                   // FIELD REPORT
                 </span>
                 <blockquote style={{ margin: 0, padding: '2.5rem', background: '#050505', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '3px solid #FFF12D' }}>
-                  <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.7)', fontFamily: 'Outfit, sans-serif', fontStyle: 'italic', margin: '0 0 1.5rem' }}>
+                  <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.7)', fontFamily: 'Titillium Web, sans-serif', fontStyle: 'italic', margin: '0 0 1.5rem' }}>
                     &ldquo;{data.testimonial.quote}&rdquo;
                   </p>
                   <footer style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -396,12 +396,12 @@ export function TechDetailPage({ data }: Props) {
                 <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
                   // ASSET APPLICATIONS
                 </span>
-                <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', margin: 0 }}>
+                <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                   {data.applicationsHeading}
                 </h2>
               </div>
               {data.applicationsSubtext && (
-                <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'Outfit, sans-serif', marginBottom: '3rem', maxWidth: '560px', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '3rem', maxWidth: '560px', lineHeight: 1.7 }}>
                   {data.applicationsSubtext}
                 </p>
               )}
@@ -415,7 +415,7 @@ export function TechDetailPage({ data }: Props) {
                       {app.sector}
                     </div>
                   </div>
-                  <p style={{ fontSize: '0.84rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                  <p style={{ fontSize: '0.84rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                     {app.detail}
                   </p>
                 </motion.div>
@@ -433,10 +433,10 @@ export function TechDetailPage({ data }: Props) {
               <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.4)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
                 {data.ctaTag}
               </span>
-              <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', color: '#000', marginBottom: '1rem', lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', color: '#000', marginBottom: '1rem', lineHeight: 1.1 }}>
                 {data.ctaHeading}
               </h2>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(0,0,0,0.55)', fontFamily: 'Outfit, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(0,0,0,0.55)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
                 {data.ctaBody}
               </p>
               <motion.a
@@ -444,7 +444,7 @@ export function TechDetailPage({ data }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(0,0,0,0.25)' }}
-                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
+                style={{ display: 'inline-block', background: '#000', color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.15em', padding: '1rem 3rem', textDecoration: 'none', borderRadius: '4px' }}>
                 IDENTIFY SKU →
               </motion.a>
             </div>
@@ -457,7 +457,7 @@ export function TechDetailPage({ data }: Props) {
         <section style={{ padding: '5rem 2rem', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
                 Related Knowledge
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Inter, sans-serif', marginBottom: '3rem', maxWidth: '560px' }}>
@@ -497,7 +497,7 @@ export function TechDetailPage({ data }: Props) {
                     </div>
                     <div>
                       <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '1rem',
                         fontWeight: 600,
                         color: '#fff',
@@ -560,7 +560,7 @@ export function TechDetailPage({ data }: Props) {
                     </div>
                     <div>
                       <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '1rem',
                         fontWeight: 600,
                         color: '#fff',
@@ -623,7 +623,7 @@ export function TechDetailPage({ data }: Props) {
                     </div>
                     <div>
                       <h3 style={{
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         fontSize: '1rem',
                         fontWeight: 600,
                         color: '#fff',

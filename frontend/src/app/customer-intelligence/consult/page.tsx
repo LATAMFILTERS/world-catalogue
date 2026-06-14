@@ -91,7 +91,7 @@ export default function ConsultPage() {
           ← CUSTOMER INTELLIGENCE
         </Link>
         <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>// AI CONSULTATION</p>
-        <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
+        <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           ELIMFILTERS Expert AI
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '2rem', lineHeight: 1.6 }}>
@@ -209,7 +209,7 @@ export default function ConsultPage() {
           <button
             onClick={send}
             disabled={loading || !query.trim()}
-            style={{ background: loading || !query.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0 1.5rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.9rem', cursor: loading || !query.trim() ? 'not-allowed' : 'pointer', transition: 'background 0.15s', whiteSpace: 'nowrap' }}
+            style={{ background: loading || !query.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D', color: '#000', border: 'none', borderRadius: '6px', padding: '0 1.5rem', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.9rem', cursor: loading || !query.trim() ? 'not-allowed' : 'pointer', transition: 'background 0.15s', whiteSpace: 'nowrap' }}
           >
             Send
           </button>

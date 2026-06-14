@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
