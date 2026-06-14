@@ -48,6 +48,18 @@ p {
   -ms-hyphens: none;
 }
 
+/* ® in headings — reduce to superscript size so it doesn't look oversized */
+h1 .reg-sup,
+h2 .reg-sup,
+h3 .reg-sup,
+h4 .reg-sup {
+  font-size: 0.38em;
+  vertical-align: super;
+  line-height: 0;
+  font-weight: inherit;
+  letter-spacing: 0;
+}
+
 /* Typography */
 .font-heading {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;

@@ -132,6 +132,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </div>
         </ClientProviders>
+        {/* ® in headings: wrap as small superscript so it doesn't look oversized */}
+        <Script id="reg-in-headings" strategy="afterInteractive">{`
+          (function(){
+            function wrapReg(root){
+              var heads = root.querySelectorAll('h1,h2,h3,h4');
+              heads.forEach(function(h){
+                h.innerHTML = h.innerHTML.replace(/®/g,'<span class="reg-sup">®</span>');
+              });
+            }
+            wrapReg(document);
+            var obs = new MutationObserver(function(muts){
+              muts.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) wrapReg(n); }); });
+            });
+            obs.observe(document.body,{childList:true,subtree:true});
+          })();
+        `}</Script>
       </body>
     </html>
   );

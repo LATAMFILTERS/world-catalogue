@@ -289,10 +289,12 @@ export default function IndustriesPage() {
       }}>← HOME</Link>
 
       <section style={{
-        paddingTop: '4rem',
+        minHeight: '72vh',
         background: '#000',
         position: 'relative',
         overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
       }}>
         {/* Hero background image */}
         <div style={{
@@ -305,7 +307,7 @@ export default function IndustriesPage() {
           opacity: 0.18,
           zIndex: 0,
         }} />
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '6rem 2rem 4rem', position: 'relative', zIndex: 1, width: '100%' }}>
           <motion.p
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}

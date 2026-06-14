@@ -788,6 +788,67 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── REAL COST OF CONTAMINATION ── */}
+        <section style={{ padding: '6rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: '-80px' }}
+            >
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                // THE REAL COST OF CONTAMINATION
+              </p>
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3rem' }}>
+                One Contamination Event.<br />
+                <span style={{ color: '#FFF12D' }}>$62,000 In Losses.</span>
+              </h2>
+            </motion.div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+              {[
+                { label: 'Hydraulic Pump Replacement', cost: '$18,000–$32,000', icon: '⚙', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
+                { label: 'System Flush + Fluid', cost: '$4,000–$6,000', icon: '🔧', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
+                { label: 'Unplanned Downtime (5–8 days)', cost: '$40,000–$80,000', icon: '⏱', desc: 'Lost production on a 50-ton excavator: $5,000–$10,000/day. 5–8 days of downtime compounds cost rapidly.' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  style={{ background: 'rgba(255,0,0,0.04)', border: '1px solid rgba(255,80,80,0.15)', padding: '2rem', borderRadius: '8px' }}
+                >
+                  <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '0.4rem' }}>{item.label}</p>
+                  <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: '#f87171', marginBottom: '0.75rem' }}>{item.cost}</p>
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true, margin: '-60px' }}
+              style={{ background: 'rgba(255,241,45,0.05)', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
+            >
+              <div>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost — 4× NANOFORCE™ Hydraulic Filters</p>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>$480</p>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+                  Proper hydraulic filtration costs less than 1% of a single contamination event.<br />
+                  <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* ── WHY ELIMFILTERS ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -1025,6 +1086,70 @@ export default function Home() {
 
           <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
+
+        {/* ── GLOBAL INDUSTRIAL DEPLOYMENT ── */}
+        <section style={{ padding: '6rem 8%', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: '-80px' }}
+              style={{ marginBottom: '3rem' }}
+            >
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                // GLOBAL INDUSTRIAL DEPLOYMENT
+              </p>
+              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)' }}>
+                Trusted Across <span style={{ color: '#FFF12D' }}>Critical Industries</span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}
+            >
+              {[
+                { id: 'agriculture', label: 'Agriculture', href: '/industries/agriculture' },
+                { id: 'mining', label: 'Mining', href: '/industries/mining' },
+                { id: 'marine', label: 'Marine', href: '/industries/marine' },
+                { id: 'construction', label: 'Construction', href: '/industries/construction' },
+                { id: 'oil-gas', label: 'Oil & Gas', href: '/industries/oil-gas' },
+                { id: 'power-generation', label: 'Power Generation', href: '/industries/power-generation' },
+                { id: 'heavy-transport', label: 'Heavy Transport', href: '/industries/heavy-transport' },
+                { id: 'forestry', label: 'Forestry', href: '/industries/forestry' },
+                { id: 'military', label: 'Military & Defense', href: '/industries/military' },
+                { id: 'industrial-equipment', label: 'Industrial Equipment', href: '/industries/industrial-equipment' },
+                { id: 'rail', label: 'Rail', href: '/industries/rail' },
+                { id: 'stationary-engines', label: 'Stationary Engines', href: '/industries/stationary-engines' },
+              ].map((ind, i) => (
+                <motion.a
+                  key={ind.id}
+                  href={ind.href}
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  transition={{ duration: 0.4 }}
+                  whileHover={{ background: 'rgba(255,241,45,0.06)' }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '1.5rem',
+                    background: '#000',
+                    textDecoration: 'none',
+                    gap: '0.5rem',
+                    transition: 'background 0.2s ease',
+                  }}
+                >
+                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{ind.label}</span>
+                  <span style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: 0.6 }}>→</span>
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
         {/* ── FAQ SECTION ── */}
         <section style={{
