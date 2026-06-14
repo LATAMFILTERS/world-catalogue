@@ -397,7 +397,8 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
     url_key = _build_url_key(url_key, sku)
     status  = 0
     url     = ""
-    data    = {}
+    data      = {}
+    saved_oe  = {}  # OE codes captured from us-en; merged after fitment cascade
 
     try:
         for locale in MANN_LOCALES:
@@ -427,11 +428,21 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
                 except Exception:
                     pass
 
-            if n_fit > 0 or n_oe > 0:
-                log.info(f"  locale:{locale} → {n_fit} vehicles | {n_oe} OE codes")
-                break
+            # Preserve OE codes from us-en (best source); cascade continues for fitment
+            if locale == "us-en" and n_oe > 0:
+                saved_oe = data.get("oeNumbers", {})
+
+            log.info(f"  locale:{locale} → {n_fit} vehicles | {n_oe} OE codes")
+
+            if n_fit > 0:
+                break  # have fitment — done cascading
             else:
-                log.info(f"  locale:{locale} → 200 but no fitment/OE, trying next")
+                log.info(f"  no fitment, trying next locale")
+
+        # Merge us-en OE into whichever locale won fitment
+        if saved_oe and not data.get("oeNumbers"):
+            data["oeNumbers"] = saved_oe
+            log.info(f"  merged us-en OE → {sum(len(v) for v in saved_oe.values())} codes")
 
         # OE fallback: us-en has OE Numbers section; ph-en/de-de often do not.
         # OE content is AJAX-loaded after accordion click — must wait for networkidle.
