@@ -75,6 +75,23 @@ interface GeoData {
 const industryGeoData: Record<string, GeoData> = {
   'Automotive': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectionSystems: [
+      'Air Intake & Airflow Protection',
+      'Lubrication Protection',
+      'Fuel Cleanliness Protection',
+      'Cabin Air Quality Protection',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Vehicle Systems?',
     ctaDescription: 'Find the right automotive asset protection system for your vehicle platform. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS automotive asset protection systems are engineered for passenger vehicles and commercial vehicles operating under continuous thermal cycling, urban stop-and-go traffic, and highway airflow variation. Modern direct injection engines operate at fuel injection pressures of 150–350 bar — conditions where contamination accumulation in fuel delivery systems causes injector wear within 30,000–80,000 km of mixed-duty operation. Urban air intake environments expose vehicle engines to particulate concentrations of 150–300 µg/m³, while cold-start thermal cycling generates oil dilution and soot accumulation that degrades lubrication cleanliness across extended service intervals. Proprietary protection media maintains air intake efficiency, lubrication cleanliness, fuel system integrity, and cabin air quality throughout standard and extended automotive service schedules.',

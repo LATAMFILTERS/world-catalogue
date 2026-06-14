@@ -45,9 +45,9 @@
       "subtitle": "ENGINEERED PROTECTION FOR PASSENGER & COMMERCIAL VEHICLES",
       "description": "Automotive systems require contamination control capable of maintaining airflow efficiency, lubrication cleanliness, fuel system protection, and cabin air quality across continuous urban, highway, fleet, and mixed-duty vehicle operation. ELIMFILTERS\u00ae automotive asset protection systems are engineered to help reduce contamination-related wear, preserve engine efficiency, and support long-term vehicle reliability under demanding operating conditions.",
       "features": [
-        "AIR INTAKE PROTECTION",
-        "LUBRICATION SYSTEM PROTECTION",
-        "FUEL SYSTEM PROTECTION",
+        "Air Intake & Airflow Protection",
+        "Lubrication Protection",
+        "Fuel Cleanliness Protection",
         "CABIN AIR QUALITY PROTECTION"
       ],
       "benefits": [
@@ -64,7 +64,7 @@
         "MICROKAPPA\u2122"
       ],
       "stats": {},
-      "cta": "VIEW TECHNOLOGY",
+      "cta": "EXPLORE PROTECTION SYSTEMS",
       "statistic": "Engine air intake exposure: 150-300 mg/m\u00b3 urban, 5,000+ mg/m\u00b3 construction zones",
       "statisticSource": "SAE J1539 Air Filter Performance"
     },
