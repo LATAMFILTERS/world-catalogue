@@ -102,6 +102,36 @@ html, body {
   margin-bottom: 2.5rem;
 }
 
+/* ── Mode tabs ── */
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 560px;
+  margin: 0 auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-bottom: none;
+  background: rgba(255,255,255,0.02);
+}
+.mode-tab {
+  flex: 1;
+  padding: 0.55rem 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+.mode-tab:last-child { border-right: none; }
+.mode-tab:hover { color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.03); }
+.mode-tab.active { color: var(--yellow); background: rgba(255,241,45,0.05); }
+
 /* ── Search box ── */
 .search-wrap {
   display: flex;
@@ -504,23 +534,30 @@ html, body {
   <h1>Part <span>Number</span><br>Search</h1>
   <p class="hero-sub">Enter an ELIMFILTERS SKU, Donaldson part number, OEM code, or competitor cross-reference to find specifications and equivalents.</p>
 
+  <!-- Mode selector -->
+  <div class="mode-tabs">
+    <button class="mode-tab active" data-mode="part" onclick="setMode('part',this)">Part&nbsp;Number</button>
+    <button class="mode-tab" data-mode="vin"  onclick="setMode('vin',this)">VIN&nbsp;/&nbsp;Vehicle</button>
+    <button class="mode-tab" data-mode="equip" onclick="setMode('equip',this)">Equipment</button>
+  </div>
+
   <div class="search-wrap">
     <input
       class="search-input"
       id="search-input"
       type="text"
-      placeholder="e.g. EL82100 · P552100 · LF3000 · B7253"
+      placeholder="e.g. EL82100 · WIX 33193 · P552100 · Cummins 3937153"
       autocomplete="off"
       autocorrect="off"
       spellcheck="false"
     >
     <button class="search-btn" id="search-btn" onclick="doSearch()">Search →</button>
   </div>
-  <div class="search-hint">
+  <div class="search-hint" id="search-hint">
     <span>SKU</span> EL82100 &nbsp;·&nbsp;
-    <span>Donaldson</span> P552100 &nbsp;·&nbsp;
     <span>OEM</span> Cummins 3937153 &nbsp;·&nbsp;
-    <span>Baldwin</span> B7253
+    <span>Donaldson</span> P552100 &nbsp;·&nbsp;
+    <span>Competitor</span> WIX 33193 · Baldwin B7253
   </div>
 </section>
 
@@ -614,6 +651,35 @@ const SPEC_MAP = [
   ['collapse_pressure_psi', 'Collapse Pressure (psi)'],
   ['duty',                  'Duty Class'],
 ];
+
+// ── Mode config ──────────────────────────────────────────────────────────────
+const MODES = {
+  part: {
+    placeholder: 'e.g. EL82100 · WIX 33193 · P552100 · Cummins 3937153',
+    hint: '<span>SKU</span> EL82100 &nbsp;·&nbsp; <span>OEM</span> Cummins 3937153 &nbsp;·&nbsp; <span>Donaldson</span> P552100 &nbsp;·&nbsp; <span>Competitor</span> WIX 33193 · Baldwin B7253'
+  },
+  vin: {
+    placeholder: 'VIN (17 chars)  ·  e.g. 1HGBH41JXMN109186',
+    hint: 'Enter the <span>17-character VIN</span> of the vehicle &nbsp;·&nbsp; The system will decode make, model and year automatically'
+  },
+  equip: {
+    placeholder: 'Make · Model · Year · Engine  ·  e.g. 2020 TOYOTA COROLLA 1.8L',
+    hint: 'Enter <span>Make</span>, <span>Model</span>, <span>Year</span> and optionally engine &nbsp;·&nbsp; e.g. CATERPILLAR 3406E · KOMATSU D65 2019 · JOHN DEERE 6135B'
+  }
+};
+
+let currentMode = 'part';
+
+function setMode(mode, btn) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const inp = document.getElementById('search-input');
+  inp.placeholder = MODES[mode].placeholder;
+  inp.value = '';
+  document.getElementById('search-hint').innerHTML = MODES[mode].hint;
+  inp.focus();
+}
 
 // ── Keyboard shortcut ────────────────────────────────────────────────────────
 document.getElementById('search-input').addEventListener('keydown', e => {
@@ -832,6 +898,16 @@ async function doSearch() {
   const q = document.getElementById('search-input').value.trim();
   if (!q) return;
 
+  if (currentMode === 'vin') {
+    window.location.href = `results.html?mode=vin&model=${encodeURIComponent(q)}`;
+    return;
+  }
+  if (currentMode === 'equip') {
+    window.location.href = `results.html?mode=equip&model=${encodeURIComponent(q)}`;
+    return;
+  }
+
+  // Part Number mode — inline result
   setState('loading');
 
   try {
@@ -844,13 +920,7 @@ async function doSearch() {
       return;
     }
 
-    // Show first result (exact match or best)
     renderResult(json.products[0]);
-
-    // If multiple results, show count
-    if (json.count > 1) {
-      // Could extend to show list — for now show best match
-    }
 
   } catch (err) {
     console.error('[search]', err);

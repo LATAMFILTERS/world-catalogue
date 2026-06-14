@@ -578,7 +578,7 @@
 
   <form class="header-search" id="header-search-form" autocomplete="off">
     <span class="header-search-icon" aria-hidden="true">⌕</span>
-    <input type="search" id="header-search-input" placeholder="Search again..." spellcheck="false" aria-label="Search">
+    <input type="search" id="header-search-input" placeholder="Part number / OEM / Cross-ref code..." spellcheck="false" aria-label="Search">
     <button type="submit" class="header-search-btn">GO →</button>
   </form>
 
@@ -621,8 +621,17 @@ const model  = params.get('model') || '';
 const engine = params.get('engine') || '';
 const eqType = params.get('type') || '';
 
-// Pre-fill header search
-document.getElementById('header-search-input').value = query || model;
+// Pre-fill header search + set placeholder per mode
+(function() {
+  const inp = document.getElementById('header-search-input');
+  inp.value = query || model;
+  const ph = {
+    part:  'SKU · OEM code · Cross-ref  (e.g. EL82100 · WIX 33193 · P552100)',
+    vin:   'VIN 17 chars  or  Make Model Year  (e.g. 1HGBH41JXMN109186)',
+    equip: 'Make · Model · Year · Engine  (e.g. 2020 TOYOTA COROLLA 1.8L)'
+  };
+  inp.placeholder = ph[mode] || ph.part;
+})();
 
 // ─── Header re-search ───
 document.getElementById('header-search-form').addEventListener('submit', e => {
