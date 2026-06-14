@@ -13,7 +13,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: '1000FH', value: '180 GPH' },
       { key: 'ISO 16332', value: 'CERTIFIED' },
     ],
-    logoSrc: '/assets/HYDROCORE.avif',
+    logoSrc: '/images/hydrocore-series(fn).avif',
     systemHeadline: 'THREE-STAGE DEFENSE.\nFULL CONTAMINATION SPECTRUM.',
     systemParagraphs: [
       'Conventional fuel filters intercept particles. HYDROCORE/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
@@ -154,7 +154,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { test: 'Multi-Pass Filtration Efficiency', standard: 'ISO 4548-12', result: '99.7', unit: '%' },
       { test: 'Dirt Holding Capacity', standard: 'ISO 4548-12', result: '42.8', unit: 'g' },
       { test: 'Collapse Pressure Rating', standard: 'ISO 4548-7', result: '≥ 20', unit: 'bar' },
-      { test: 'Layer Migration Resistance', standard: 'ELIMFILTERS®-LT-01', result: '0', unit: 'events / 500h' },
+      { test: 'Layer Migration Resistance', standard: 'ELIMFILTERS-LT-01', result: '0', unit: 'events / 500h' },
       { test: 'Turbo Bearing Contamination', standard: 'SAE J1858', result: '< 3', unit: 'µm pass-through' },
     ],
     testimonial: {
@@ -479,7 +479,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'BARRIER TYPE', value: 'HYDROPHOBIC' },
       { key: 'PROTECTION', value: 'WATER REPULSION' },
     ],
-    logoSrc: '/assets/HYDROCORE.avif',
+    logoSrc: '/images/hydrocore(fn).avif',
     systemHeadline: 'HYDROPHOBIC DEFENSE.\nWATER CANNOT PASS.',
     systemParagraphs: [
       'Water contamination in fuel systems operates across three phases: free water that settles and can be drained, emulsified water suspended in micro-droplets that conventional filters cannot intercept, and dissolved water that forms free phase when temperature changes. Each phase causes a different failure mode — microbial growth, injector corrosion, and cavitation erosion respectively.',

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -29,7 +29,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS® hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; HYDROCORE™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
+      content: 'ELIMFILTERS hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; HYDROCORE™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
     }
   ];
 
@@ -58,9 +58,10 @@ export default function HydraulicSystemContaminationPage() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Back Button */}
-      <Link href="/knowledge-system/contamination" style={{
+      <Link href="/knowledge-system/contamination"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -331,6 +332,38 @@ export default function HydraulicSystemContaminationPage() {
         </motion.div>
       </section>
 
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Hydraulic System Contamination',
+        description: 'Particle and water contamination in hydraulic systems causes proportional valve stiction, pump swashplate failure, and fluid varnish formation. Complete system failure occurs within 200-500 operating hours in severely contaminated baseline conditions above ISO 16889 22/20/18.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'kidney loop filtration'],
+        about: { '@type': 'Thing', name: 'Hydraulic System Contamination', description: 'Particle contamination failure mechanism in hydraulic systems causing valve spool stiction, orifice blockage, and fluid varnish that degrades system response and availability.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Contamination', item: 'https://elimfilters.com/knowledge-system/contamination' },
+          { '@type': 'ListItem', position: 4, name: 'Hydraulic System Contamination', item: 'https://elimfilters.com/knowledge-system/contamination/hydraulic-system' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the correct procedure for flushing a hydraulic system before commissioning?', acceptedAnswer: { '@type': 'Answer', text: 'ISO 4406 flushing procedure: (1) Install temporary bypass loops with 3-5 micron filters on main circuit and return line; (2) Fill system with new, clean hydraulic fluid (pre-flushed to ISO 4406 15/13/10 minimum); (3) Operate pump at 50% rated displacement, 1000-1500 RPM for 2 hours, monitoring fluid temperature (maintain <50°C); (4) Take fluid samples every 2 hours and measure particle count - continue flushing until three consecutive samples confirm ISO 15/13/10 or better; (5) Install permanent filters, change fluid one final time, and verify target cleanliness with freshly drawn sample. Total flushing duration: 20-24 hours for new equipment, 40-48 hours for previously contaminated systems. Skip or abbreviate flushing is the most common cause of premature hydraulic system failure.' } },
+          { '@type': 'Question', name: 'How do I choose between offline kidney-loop and main circuit filtration?', acceptedAnswer: { '@type': 'Answer', text: 'Main circuit filters (on-line): Sized to match pump flow, rated 10-25 micron absolute; protect components during equipment operation; increase pressure drop 1-3 bar during peak flow. Kidney-loop (offline): Circulates fluid through pump at low flow rate (5-10% of main pump displacement) during idle periods and low-load operation; removes contamination continuously without affecting system pressure response. Optimal strategy uses both: Main circuit filter (16-micron) handles routine 80-90% of duty cycle; Kidney-loop (3-5 micron) processes 30-40% of total system flow during idle periods, achieving sustained ISO 16/14/11 or better.' } },
+          { '@type': 'Question', name: 'What causes hydraulic fluid varnish and how is it removed?', acceptedAnswer: { '@type': 'Answer', text: 'Varnish forms through three mechanisms: (1) Thermal oxidation - fluid oxidizes at elevated temperatures (>60°C sustained), producing organic polymers; rate doubles for each 10°C temperature increase; (2) Catalytic oxidation - ferrous contamination (iron particles >100 ppm) accelerates oxidation 3-5x; (3) Fluid degradation - incompatible fluid blends produce unstable mixtures that polymerize. Varnish appears as yellow-brown deposits on cooler tubes, strainer screens, proportional valve spools. Removal requires offline circulation through high-capacity filters (3-5 micron absolute) for 100-200 hours, followed by chemical flushing and complete fluid change.' } },
+          { '@type': 'Question', name: 'How do valve spools become stuck and can they be cleaned?', acceptedAnswer: { '@type': 'Answer', text: 'Valve spool stiction results from: (1) Particle lodging in radial clearance (10-20 microns) between spool and housing bore; (2) Varnish film deposit forming an adhesive layer; (3) Corrosion product layer from water-induced oxidation. In-situ cleaning is unreliable - circulating high-pressure flush does not dislodge embedded particles or varnish; success rate <30%. Spool replacement is necessary: Remove valve cartridge (0.5-2 hour labor), soak original spool in hydraulic system cleaner for 24 hours (may recover 50%), test cleaned spool actuation with pilot pressure. Prevention through contamination control is far more cost-effective than spool replacement: maintain ISO 16889 16/14/11 maximum cleanliness.' } },
+        ],
+      }) }} />
       <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>

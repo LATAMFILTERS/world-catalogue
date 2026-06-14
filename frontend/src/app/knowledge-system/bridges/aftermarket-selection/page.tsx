@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 
 export default function AftermarketSelectionPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/bridges" style={{
+
+      <Link href="/knowledge-system/bridges"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -538,6 +539,29 @@ export default function AftermarketSelectionPage() {
         </motion.section>
 
       </div>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Aftermarket Filter Selection Strategy',
+        description: 'Technical framework for evaluating aftermarket filtration options using system-level contamination control criteria—ISO 16889 Beta ratios, dirt capacity, and bypass thresholds—when warranty has expired or OEM is optional.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['aftermarket filter selection', 'ISO 16889', 'Beta ratio', 'filter evaluation', 'contamination control', 'OEM alternative', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Aftermarket Filter Selection Strategy', description: 'Methodology for selecting aftermarket industrial filters based on verified ISO 16889 performance and contamination control metrics.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Bridges', item: 'https://elimfilters.com/knowledge-system/bridges' },
+          { '@type': 'ListItem', position: 4, name: 'Aftermarket Filter Selection Strategy', item: 'https://elimfilters.com/knowledge-system/bridges/aftermarket-selection' },
+        ],
+      }) }} />
     </main>
   );
 }

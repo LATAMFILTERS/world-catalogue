@@ -169,7 +169,7 @@ export function FuelPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS® fuel filters are built on a synthetic fiber matrix engineered to ISO 16332 — the international standard for diesel fuel filter testing. The armor media delivers superior dirt-holding capacity over conventional cellulose elements, maintaining stable restriction levels across the full service interval. Compatible with diesel, biodiesel blends up to B20, and gasoline, protecting common rail injectors, unit injectors and injection pumps from particulate abrasion, water ingress and microbial fouling.
+                  ELIMFILTERS fuel filters are built on a synthetic fiber matrix engineered to ISO 16332 — the international standard for diesel fuel filter testing. The armor media delivers superior dirt-holding capacity over conventional cellulose elements, maintaining stable restriction levels across the full service interval. Compatible with diesel, biodiesel blends up to B20, and gasoline, protecting common rail injectors, unit injectors and injection pumps from particulate abrasion, water ingress and microbial fouling.
                 </p>
 
                 <div
@@ -263,7 +263,7 @@ export function FuelPage() {
             <div className="product-compare-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <AnimateIn direction="left">
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                  ELIMFILTERS® Synthetic Armor
+                  ELIMFILTERS Synthetic Armor
                 </h3>
                 <StaggerContainer>
                   {[

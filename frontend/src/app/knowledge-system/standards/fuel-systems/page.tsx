@@ -14,7 +14,7 @@ const STANDARDS = [
 
 const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removing sub-10 micron water droplets and particles from fuel before injection, achieving 99.9% efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Hydrophobic water-separation technology extracting 99.8% of free and emulsified water from fuel, preventing injector corrosion, cavitation, and microbial growth.' },
 ];
 
 const IMPACTS = [
@@ -52,8 +52,8 @@ const RELATED_SYSTEMS = [
 export default function FuelSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -179,8 +179,8 @@ export default function FuelSystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
-          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS TECHNOLOGIES</p>
+          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
@@ -262,6 +262,32 @@ export default function FuelSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Fuel Filtration Systems',
+        description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['fuel filtration', 'ASTM D6304', 'ISO 12937', 'Karl Fischer', 'diesel contamination', 'common rail injection', 'water contamination fuel', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Fuel Filtration Systems', description: 'Engineering domain governing particle and water contamination control in diesel fuel systems to protect common rail injectors and fuel delivery components.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Fuel Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/fuel-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

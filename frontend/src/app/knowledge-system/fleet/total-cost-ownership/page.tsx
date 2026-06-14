@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -71,9 +71,10 @@ const TCO_COMPONENTS = [
 export default function TotalCostOwnershipPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Navigation */}
-      <Link href="/knowledge-system/fleet" style={{
+      <Link href="/knowledge-system/fleet"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -519,6 +520,39 @@ export default function TotalCostOwnershipPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Total Cost of Ownership in Filtration',
+        description: 'Filter element unit cost represents a fraction of the economic decision. The complete TCO model accounts for service labor, component longevity, fluid waste, downtime exposure, and the quantifiable value of failures that did not occur.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'total cost of ownership', 'filtration TCO', 'ISO 16889', 'maintenance economics', 'equipment lifecycle cost'],
+        about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Lifecycle economic model for industrial filtration programs encompassing filter procurement, service labor, component longevity, and avoided failure costs.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Total Cost of Ownership in Filtration', item: 'https://elimfilters.com/knowledge-system/fleet/total-cost-ownership' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the correct method for calculating filtration ROI in an industrial fleet?', acceptedAnswer: { '@type': 'Answer', text: 'Filtration return on investment compares filtration program costs against measurable cost reductions in three categories: avoided repair costs (unplanned failures prevented multiplied by average event cost), reduced scheduled maintenance costs (extended component service life reducing overhaul frequency), and fuel cost savings from efficiency preservation. The denominator includes filter element costs, labor for replacement, fluid analysis program fees, and any equipment upgrades to filtration specification. A minimum 18-month analysis period is required to capture component lifecycle benefits, since some savings (engine overhaul deferral) occur at multi-year intervals rather than monthly.' } },
+          { '@type': 'Question', name: 'How does OEM filter specification compare to aftermarket options in TCO modeling?', acceptedAnswer: { '@type': 'Answer', text: 'OEM filter specifications define the minimum performance requirements validated for a given application. Aftermarket elements must meet or exceed these specifications to maintain equivalent protection. In TCO modeling, the relevant variables are: absolute filtration efficiency at the rated particle size, element collapse pressure rating relative to system bypass valve pressure, service life in operating hours at expected contamination levels, and cost per service hour. An aftermarket element costing 30% less but requiring 40% more frequent service intervals produces higher total cost. Conversely, an extended-interval synthetic element costing 60% more but lasting twice as long typically reduces cost per operating hour when labor cost is included.' } },
+          { '@type': 'Question', name: 'At what fleet size does a formal oil analysis program become economically justified?', acceptedAnswer: { '@type': 'Answer', text: 'Oil analysis programs typically reach positive ROI at fleet sizes above 8 to 12 units with operating hours exceeding 1,500 hours per year per unit. Below this threshold, analysis program fixed costs - laboratory fees, sampling kits, data management - often exceed the avoided cost benefit. For smaller fleets, periodic bulk sampling at shared service intervals provides meaningful data at lower program overhead. The inflection point shifts downward in high-value equipment categories: a single large mining excavator with overhaul costs exceeding 300,000 USD justifies individual oil analysis programs regardless of fleet size.' } },
+          { '@type': 'Question', name: 'How should filtration specifications change when equipment is operating beyond design lifespan?', acceptedAnswer: { '@type': 'Answer', text: 'Equipment operating beyond original design lifespan - typically defined as hours exceeding the first major overhaul interval - experiences accelerated wear particle generation from clearance growth in worn components. Worn engine cylinders generate more blow-by gas carrying oil-soluble contaminants. Worn hydraulic pump internals generate higher wear debris loads. In these conditions, upgrading to higher-efficiency filter elements (lower beta ratio) and shortening sampling intervals for oil analysis is justified. The additional filtration cost delays further component degradation and extends economic service life, deferring capital replacement expenditure.' } },
+        ],
+      }) }} />
     </main>
   );
 }

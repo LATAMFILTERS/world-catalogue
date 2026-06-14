@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
@@ -101,12 +100,12 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
         es: 'ELIMFILTERS® Filtro hidráulico tipo cartucho desarrollado para la protección de activos industriales en sistemas hidráulicos de precisión y para minimizar el impacto ambiental en operaciones industriales. Su tecnología NANOFORCE™ mantiene el rendimiento de filtración bajo ciclos sostenidos de pulsación de alta presión, protegiendo válvulas proporcionales y componentes actuadores del desgaste por partículas sub-micrón.',
       },
       fws_spinon: {
-        en: 'ELIMFILTERS® Fuel/Water Separator, Spin-On developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
-        es: 'ELIMFILTERS® Separador combustible/agua tipo spin-on desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+        en: 'ELIMFILTERS® Fuel/Water Separator, Spin-On developed for industrial asset protection against water contamination in fuel systems. Its HYDROCORE™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo spin-on desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología HYDROCORE™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
       },
       fws_cartridge: {
-        en: 'ELIMFILTERS® Fuel/Water Separator, Cartridge developed for industrial asset protection against water contamination in fuel systems. Its AQUAGUARD™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
-        es: 'ELIMFILTERS® Separador combustible/agua tipo cartucho desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología AQUAGUARD™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
+        en: 'ELIMFILTERS® Fuel/Water Separator, Cartridge developed for industrial asset protection against water contamination in fuel systems. Its HYDROCORE™ technology achieves three-phase water interception — free, emulsified and dissolved — protecting Common Rail injectors and fuel system components from corrosive water-induced degradation.',
+        es: 'ELIMFILTERS® Separador combustible/agua tipo cartucho desarrollado para la protección de activos industriales contra la contaminación por agua en sistemas de combustible. Su tecnología HYDROCORE™ logra la interceptación trifásica del agua — libre, emulsionada y disuelta — protegiendo los inyectores Common Rail y los componentes del sistema de combustible de la degradación corrosiva inducida por el agua.',
       },
       fuel_inline: {
         en: 'ELIMFILTERS® Fuel Filter, In-Line developed for industrial asset protection of fuel delivery systems. Its SYNTEPORE™ technology provides compact in-line contamination interception, maintaining fuel cleanliness through the final delivery stage before primary filtration or as a secondary protection barrier in high-demand applications.',
@@ -489,6 +488,15 @@ const dbConfig = {
   ssl: { rejectUnauthorized: false },
 };
 
+// Product Catalog: housing/element/alternative-group API + migration endpoints
+require('./scripts/product-catalog-migration-routes')(app, Client, dbConfig);
+
+// Recommendation Engine v2: alternatives, cross-reference, housing lookup
+require('./scripts/recommendation-engine-routes')(app, Client, dbConfig);
+
+// RE v2 core functions — used inside consult-grounded for AI context injection
+const { findAlternatives, findCrossReferenceRE, getHousingWithAlternatives } = require('./scripts/recommendation-engine-v2');
+
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
@@ -641,7 +649,8 @@ const TECH_LOGO_MAP = {
   'syntepore': 'syntepore', 'syntapore': 'syntepore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
-  'aquaguard': 'aquaguard',
+  'aquaguard': 'hydrocore',
+  'hydrocore': 'hydrocore',
   'marineclean': 'marineclean',
   'blueclean': 'blueclean',
 };
@@ -654,7 +663,24 @@ function getTechLogo(tech) {
 }
 
 // Canonical technology name corrections (DB may have older/misspelled variants)
-const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
+const TECH_NAME_FIXES = {
+  'SYNTAPORE':   'SYNTEPORE',
+  'SYNTAPORE™':  'SYNTEPORE™',
+  'AQUAGUARD':   'HYDROCORE',
+  'AQUAGUARD™':  'HYDROCORE™',
+  'INTAKCORE':   'INTEKCORE',
+  'INTAKCORE™':  'INTEKCORE™',
+  'COOLTECH':    'THERMACORE',
+  'COOLTECH™':   'THERMACORE™',
+  'THERMOCORE':  'THERMACORE',
+  'THERMOCORE™': 'THERMACORE™',
+};
+
+// Proprietary ELIMFILTERS technology names — triggers Tier 5 technology search in /api/search
+const TECH_NAMES = new Set([
+  'HYDROCORE','MACROCORE','NANOFORCE','SYNTRAX','SYNTEPORE',
+  'MICROKAPPA','INTEKCORE','DRYCORE','THERMACORE',
+]);
 
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
@@ -695,6 +721,23 @@ function buildFilterData(row, lang = 'en'){
     alternatives: row.alternatives || [],
     equipment_applications: row.equipment_applications || []
   };
+}
+
+// Classify a search query to route it into the correct tier group
+function classifyQuery(q) {
+  // Strip ™ and ® marks — users may type "NANOFORCE™" or "HYDROCORE/SERIES™"
+  const qClean = q.replace(/[™®]/g, '').trim();
+  // Strip SERIES suffix: "HYDROCORE SERIES" → "HYDROCORE", "HYDROCORE/SERIES" → "HYDROCORE"
+  const techBase = qClean.replace(/[\s/\-]+SERIES$/, '').trim();
+  if (TECH_NAMES.has(qClean) || TECH_NAMES.has(techBase)) {
+    return { type: 'technology', value: TECH_NAMES.has(qClean) ? qClean : techBase };
+  }
+  // Housing model: 3–4 digits + FH  (500FH, 900FH, 1000FH)
+  if (/^\d{3,4}FH$/.test(q)) return { type: 'housing', value: q };
+  // Filter brand / manufacturer in COMPETITOR_BRANDS set
+  if (COMPETITOR_BRANDS.has(q)) return { type: 'brand', value: q };
+  // Default: product code cascade
+  return { type: 'code', value: q };
 }
 
 // Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
@@ -1380,6 +1423,146 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
   } finally {
     await client.end();
   }
+});
+
+// ── Search V2: Create GIN + trgm indexes ─────────────────────────────────────
+// Run once. CONCURRENTLY means zero downtime. Idempotent (IF NOT EXISTS).
+// Requires pg_trgm extension (created here too).
+app.get('/api/migrate/search-v2-indexes', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const steps = [];
+
+    await client.query('CREATE EXTENSION IF NOT EXISTS pg_trgm');
+    steps.push('pg_trgm extension: OK');
+
+    // GIN on brand_crossrefs — enables fast brand_crossrefs ? 'FLEETGUARD' lookups
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_brand_crossrefs_gin
+      ON elimfilters_catalog USING GIN (brand_crossrefs)
+    `);
+    steps.push('idx_catalog_brand_crossrefs_gin: created');
+
+    // GIN on oem_codes — accelerates Tier 3 JSONB array element searches
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_oem_codes_gin
+      ON elimfilters_catalog USING GIN (oem_codes)
+    `);
+    steps.push('idx_catalog_oem_codes_gin: created');
+
+    // B-tree on UPPER(technology) — used by Tier 5 technology search
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_technology_upper
+      ON elimfilters_catalog (UPPER(technology))
+    `);
+    steps.push('idx_catalog_technology_upper: created');
+
+    // Trigram on equipment_applications text — prepares for Tier 7 (P3)
+    await client.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_equipment_apps_trgm
+      ON elimfilters_catalog USING GIN (
+        (equipment_applications::text) gin_trgm_ops
+      )
+    `);
+    steps.push('idx_catalog_equipment_apps_trgm: created');
+
+    res.json({ success: true, steps });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
+});
+
+// ── Search V2: Normalize technology column values ─────────────────────────────
+// Corrects SYNTAPORE → SYNTEPORE and AQUAGUARD → HYDROCORE in the DB.
+// Safe: only touches rows with the legacy values. Idempotent.
+app.get('/api/migrate/search-v2-normalize-tech', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    const r1 = await client.query(`UPDATE elimfilters_catalog SET technology = 'SYNTEPORE'   WHERE technology = 'SYNTAPORE'`);
+    const r2 = await client.query(`UPDATE elimfilters_catalog SET technology = 'SYNTEPORE™'  WHERE technology = 'SYNTAPORE™'`);
+    const r3 = await client.query(`UPDATE elimfilters_catalog SET technology = 'HYDROCORE'   WHERE technology = 'AQUAGUARD'`);
+    const r4 = await client.query(`UPDATE elimfilters_catalog SET technology = 'HYDROCORE™'  WHERE technology = 'AQUAGUARD™'`);
+    const r5 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE'   WHERE technology = 'INTAKCORE'`);
+    const r6 = await client.query(`UPDATE elimfilters_catalog SET technology = 'INTEKCORE™'  WHERE technology = 'INTAKCORE™'`);
+    const r7 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE'  WHERE technology = 'COOLTECH'`);
+    const r8 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE™' WHERE technology = 'COOLTECH™'`);
+    const r9 = await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE'  WHERE technology = 'THERMOCORE'`);
+    const r10= await client.query(`UPDATE elimfilters_catalog SET technology = 'THERMACORE™' WHERE technology = 'THERMOCORE™'`);
+
+    res.json({
+      success: true,
+      syntapore_fixed:  r1.rowCount + r2.rowCount,
+      aquaguard_fixed:  r3.rowCount + r4.rowCount,
+      intakcore_fixed:  r5.rowCount + r6.rowCount,
+      cooltech_fixed:   r7.rowCount + r8.rowCount + r9.rowCount + r10.rowCount,
+      total_rows_fixed: r1.rowCount + r2.rowCount + r3.rowCount + r4.rowCount + r5.rowCount + r6.rowCount + r7.rowCount + r8.rowCount + r9.rowCount + r10.rowCount,
+    });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
+});
+
+// ── Search V2: Add HYDROCORE housing model aliases ────────────────────────────
+// Adds 500FH / 900FH / 1000FH as OEM codes on HYDROCORE Fuel/Water Separator
+// and Turbine Filter records so Tier 6 (housing model search) can find them.
+// Preview mode (default): shows affected rows without writing.
+// Apply mode (?apply=1): executes the UPDATE.
+app.get('/api/migrate/search-v2-hydrocore-aliases', async (req, res) => {
+  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  const apply = req.query.apply === '1';
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Find all HYDROCORE FWS / Turbine records that don't already have housing codes
+    const preview = await client.query(`
+      SELECT sku, codigo_base, filter_type, technology,
+             jsonb_array_length(COALESCE(oem_codes, '[]'::jsonb)) AS oem_count
+      FROM elimfilters_catalog
+      WHERE UPPER(REPLACE(technology, '™','')) = 'HYDROCORE'
+        AND filter_type IN ('Fuel/Water Separator', 'Turbine Filter')
+        AND NOT EXISTS (
+          SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) elem
+          WHERE elem->>'code' IN ('500FH','900FH','1000FH')
+        )
+      ORDER BY sku
+    `);
+
+    if (!apply) {
+      return res.json({
+        mode: 'preview',
+        affected_rows: preview.rows.length,
+        records: preview.rows,
+        message: 'Add ?apply=1 to execute. All listed records will receive 500FH/900FH/1000FH in oem_codes.',
+      });
+    }
+
+    if (preview.rows.length === 0) {
+      return res.json({ success: true, updated: 0, message: 'Already up to date' });
+    }
+
+    const skus = preview.rows.map(r => r.sku);
+    const aliases = JSON.stringify([
+      { manufacturer: 'HYDROCORE', code: '500FH' },
+      { manufacturer: 'HYDROCORE', code: '900FH' },
+      { manufacturer: 'HYDROCORE', code: '1000FH' },
+    ]);
+
+    const update = await client.query(`
+      UPDATE elimfilters_catalog
+      SET oem_codes = COALESCE(oem_codes, '[]'::jsonb) || $1::jsonb
+      WHERE sku = ANY($2)
+    `, [aliases, skus]);
+
+    res.json({ success: true, updated: update.rowCount, skus_updated: skus });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally { await client.end(); }
 });
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
@@ -2070,6 +2253,15 @@ app.get('/api/autocomplete', async (req, res) => {
   }
 });
 
+// ── /api/search — Industrial Search Engine V2 ────────────────────────────────
+// Tier 1: Exact SKU / codigo_base
+// Tier 2: SKU / codigo_base prefix
+// Tier 3: OEM + competitor codes exact (JSONB array)
+// Tier 4: brand_crossrefs exact (JSONB object values)
+// Tier 5: Technology name (HYDROCORE, MACROCORE, NANOFORCE, …)
+// Tier 6: Housing model pattern (500FH, 900FH, 1000FH)
+// Tier 8: Manufacturer / brand name (FLEETGUARD, BALDWIN, …)
+// Tier 10: Partial ILIKE fallback
 app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
@@ -2078,110 +2270,202 @@ app.get('/api/search', async (req, res) => {
   try {
     await client.connect();
 
-    // ── Tiered search with match_type labels ──────────────────────────────
-    // Tier 1: Exact SKU or Donaldson base code match
-    let result = await client.query(
-      `SELECT *, 'sku' AS match_type, 0 AS match_rank
-       FROM elimfilters_catalog
-       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
-       LIMIT 20`,
-      [q]
-    );
+    const cls = classifyQuery(q);
+    let result = { rows: [] };
+    let searchType = cls.type;
+    let searchTier = 0;
 
-    // Tier 2: Prefix match on SKU / codigo_base
-    if (result.rows.length === 0) {
+    // ── Semantic tiers: technology / housing / brand ──────────────────────
+
+    if (cls.type === 'technology') {
+      // Tier 5: Technology name match — returns all products for that technology family
       result = await client.query(
-        `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+        `SELECT *, 'technology' AS match_type, 5 AS match_rank
          FROM elimfilters_catalog
-         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         WHERE UPPER(REPLACE(technology, '™','')) = $1
          ORDER BY sku
-         LIMIT 20`,
-        [q + '%']
+         LIMIT 50`,
+        [cls.value]
       );
-    }
+      searchTier = 5;
 
-    // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
-    // Cross-reference codes must match precisely; prefix matching causes false positives
-    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
-    if (result.rows.length === 0) {
+    } else if (cls.type === 'housing') {
+      // Tier 6: Housing model (500FH, 900FH, 1000FH)
+      // Step 6a: exact codigo_base or SKU
       result = await client.query(
-        `SELECT *, 'ref' AS match_type, 2 AS match_rank
+        `SELECT *, 'housing' AS match_type, 6 AS match_rank
          FROM elimfilters_catalog
-         WHERE EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         ORDER BY sku
+         WHERE UPPER(codigo_base) = $1 OR UPPER(sku) = $1
          LIMIT 20`,
         [q]
       );
-    }
+      // Step 6b: OEM code match (added by search-v2-hydrocore-aliases migration)
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'housing' AS match_type, 6 AS match_rank
+           FROM elimfilters_catalog
+           WHERE EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+      }
+      searchTier = 6;
 
-    // Tier 5: brand_crossrefs — exact match only
-    if (result.rows.length === 0) {
+    } else if (cls.type === 'brand') {
+      // Tier 8: Manufacturer / brand name
+      // brand_crossrefs ? KEY uses the GIN index for O(log n) lookups
       result = await client.query(
-        `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
-              jsonb_array_elements_text(kv.value) AS code_val
-         WHERE UPPER(code_val) = $1
+        `SELECT DISTINCT ON (sku) *, 'brand' AS match_type, 8 AS match_rank
+         FROM elimfilters_catalog
+         WHERE brand_crossrefs ? $1
+            OR EXISTS (
+              SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+              WHERE UPPER(elem->>'manufacturer') = $1
+            )
          ORDER BY sku
+         LIMIT 50`,
+        [q]
+      );
+      searchTier = 8;
+
+    } else {
+      // ── Product code cascade (Tiers 1–4 + semantic fallbacks + Tier 10) ──
+
+      // Tier 1: Exact SKU or Donaldson base code
+      result = await client.query(
+        `SELECT *, 'sku' AS match_type, 0 AS match_rank
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
          LIMIT 20`,
         [q]
       );
+      if (result.rows.length > 0) { searchTier = 1; searchType = 'sku'; }
+
+      // Tier 2: Prefix match on SKU / codigo_base
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
+           FROM elimfilters_catalog
+           WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+           ORDER BY sku
+           LIMIT 20`,
+          [q + '%']
+        );
+        if (result.rows.length > 0) { searchTier = 2; searchType = 'sku'; }
+      }
+
+      // Tier 3: OEM + competitor codes exact
+      // Cross-reference codes must match precisely to avoid false positives.
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'ref' AS match_type, 2 AS match_rank
+           FROM elimfilters_catalog
+           WHERE EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           OR EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 3; searchType = 'oem'; }
+      }
+
+      // Tier 4: brand_crossrefs exact code value
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *, 'crossref' AS match_type, 4 AS match_rank
+           FROM elimfilters_catalog,
+                jsonb_each(COALESCE(brand_crossrefs,'{}'::jsonb)) AS kv,
+                jsonb_array_elements_text(kv.value) AS code_val
+           WHERE UPPER(code_val) = $1
+           ORDER BY sku
+           LIMIT 20`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 4; searchType = 'brand_crossref'; }
+      }
+
+      // Tier 5 fallback: technology name (catches partial input like "NANO" if 4+ chars)
+      if (result.rows.length === 0 && q.length >= 4) {
+        const techBase = q.replace(/[\s/\-]+SERIES$/, '').trim();
+        if (TECH_NAMES.has(techBase)) {
+          result = await client.query(
+            `SELECT *, 'technology' AS match_type, 5 AS match_rank
+             FROM elimfilters_catalog
+             WHERE UPPER(REPLACE(technology,'™','')) = $1
+             ORDER BY sku
+             LIMIT 50`,
+            [techBase]
+          );
+          if (result.rows.length > 0) { searchTier = 5; searchType = 'technology'; }
+        }
+      }
+
+      // Tier 8 fallback: brand key in brand_crossrefs (e.g. FLEETGUARD typed in code box)
+      if (result.rows.length === 0 && q.length >= 3) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *, 'brand' AS match_type, 8 AS match_rank
+           FROM elimfilters_catalog
+           WHERE brand_crossrefs ? $1
+           ORDER BY sku
+           LIMIT 50`,
+          [q]
+        );
+        if (result.rows.length > 0) { searchTier = 8; searchType = 'manufacturer'; }
+      }
+
+      // Tier 10: Partial ILIKE fallback
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT DISTINCT ON (sku) *,
+                  CASE
+                    WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
+                    ELSE 'partial'
+                  END AS match_type,
+                  10 AS match_rank
+           FROM elimfilters_catalog,
+                jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS oem_elem
+           WHERE UPPER(sku) LIKE $1
+              OR UPPER(codigo_base) LIKE $1
+              OR UPPER(oem_elem->>'code') LIKE $1
+           ORDER BY sku
+           LIMIT 20`,
+          ['%' + q + '%']
+        );
+        if (result.rows.length > 0) { searchTier = 10; searchType = 'partial'; }
+      }
     }
 
-    // Tier 6: Broad partial match fallback (OEM + competitor text scan)
-    if (result.rows.length === 0) {
-      result = await client.query(
-        `SELECT DISTINCT ON (sku) *,
-                CASE
-                  WHEN UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1 THEN 'sku_partial'
-                  ELSE 'partial'
-                END AS match_type,
-                5 AS match_rank
-         FROM elimfilters_catalog,
-              jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
-         WHERE UPPER(sku) LIKE $1
-            OR UPPER(codigo_base) LIKE $1
-            OR UPPER(oem_elem->>'code') LIKE $1
-         ORDER BY sku
-         LIMIT 20`,
-        ['%' + q + '%']
-      );
-    }
-
-    // ── Determine human-readable match label for the frontend ─────────────
+    // ── Build human-readable match label ──────────────────────────────────
     function buildMatchLabel(row) {
       const mt = row.match_type;
+      if (mt === 'technology') return `ELIMFILTERS ${row.technology || cls.value} FILTERS`;
+      if (mt === 'housing') return `HYDROCORE ${q} HOUSING`;
+      if (mt === 'brand') return `${q} CROSS-REFERENCE`;
       if (mt === 'sku' || mt === 'sku_prefix' || mt === 'sku_partial') {
         if (row.sku && row.sku.toUpperCase().includes(q)) return `ELIMFILTERS ${row.sku}`;
         if (row.codigo_base && row.codigo_base.toUpperCase().includes(q)) return `DONALDSON ${row.codigo_base}`;
         return null;
       }
       if (mt === 'oem' || mt === 'ref') {
-        // Check OEM codes first, then competitor codes
         const oems = row.oem_codes || [];
-        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        const oemHit = oems.find(e => e && e.code && e.code.toUpperCase() === q);
         if (oemHit) return `${oemHit.manufacturer || 'OEM'} ${oemHit.code}`;
         const comps = row.competitor_codes || [];
-        const compHit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
+        const compHit = comps.find(e => e && e.code && e.code.toUpperCase() === q);
         if (compHit) return `${compHit.manufacturer || 'COMPETITOR'} ${compHit.code}`;
         return null;
       }
-      if (mt === 'competitor') {
-        const comps = row.competitor_codes || [];
-        const hit = comps.find(e => e && e.code && e.code.toUpperCase().includes(q));
-        if (hit) return `${hit.manufacturer || 'COMPETITOR'} ${hit.code}`;
-        return null;
-      }
-      if (mt === 'crossref') {
-        return `CROSS-REFERENCE ${q}`;
-      }
+      if (mt === 'crossref') return `CROSS-REFERENCE ${q}`;
       return null;
     }
 
@@ -2189,13 +2473,19 @@ app.get('/api/search', async (req, res) => {
       ...buildFilterData(row, lang),
       sku: row.sku,
       match_type: row.match_type || 'partial',
-      match_label: buildMatchLabel(row)
+      match_label: buildMatchLabel(row),
     }));
 
     await enrichAlternatives(products, client);
 
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
-    res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
+    res.json({
+      products,
+      count: products.length,
+      total_catalog: parseInt(totalCatalog, 10),
+      search_type: searchType,
+      search_tier: searchTier,
+    });
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });
@@ -2412,7 +2702,7 @@ app.get('/api/intelligence/dashboard', async (req, res) => {
 // AI SYSTEM — Token budget + Sub-agents + Content Agent
 // ════════════════════════════════════════════════════════════════════════════
 
-const Anthropic = require('@anthropic-ai/sdk');
+const Groq = require('groq-sdk');
 
 const MONTHLY_TOKEN_BUDGET = 500000; // ~$6-8/month with caching
 const CONTENT_TOKENS_PER_PAGE = 3000; // ~20 pages/month reserved
@@ -2475,7 +2765,7 @@ async function logUsage(agent, usage, sessionId) {
     await client.query(
       `INSERT INTO ai_usage_log (month_key, agent, input_tokens, output_tokens, cached_tokens, session_id)
        VALUES ($1,$2,$3,$4,$5,$6)`,
-      [monthKey, agent, usage.input_tokens || 0, usage.output_tokens || 0, usage.cache_read_input_tokens || 0, sessionId || null]
+      [monthKey, agent, usage.prompt_tokens || usage.input_tokens || 0, usage.completion_tokens || usage.output_tokens || 0, 0, sessionId || null]
     );
   } catch(e) { console.error('[ai_usage_log]', e.message); }
   finally { await client.end(); }
@@ -2491,6 +2781,7 @@ ELIMFILTERS manufactures industrial filtration systems using proprietary technol
 - DURATECH: Extended lifecycle synthesis, chemical resistance
 - MICROKAPPA: HEPA-class cabin air, PM2.5 + activated carbon
 - INTEKCORE: Air intake, high-pressure housing, thermal cycling rated
+- HYDROCORE: Multi-stage coalescing water separation for fuel systems, free water removal >99%, emulsified water >95%
 
 Applicable standards: ISO 16889 (beta ratio), ISO 4406 (cleanliness codes),
 SAE J1539 (air intake), ISO 11155 (cabin), ISO 8573 (compressed air),
@@ -2537,7 +2828,7 @@ Language: professional, positioning-focused.`,
 app.post('/api/ai/consult', async (req, res) => {
   const { query, agent = 'technical', session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const budget = await checkBudget('consult');
   if (!budget.ok) return res.status(429).json({
@@ -2546,7 +2837,7 @@ app.post('/api/ai/consult', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   try {
     const messages = [
@@ -2555,25 +2846,21 @@ app.post('/api/ai/consult', async (req, res) => {
       { role: 'user', content: query },
     ];
 
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
-      system: [
-        { type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } },
-        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: `${SYSTEM_CONTEXT}\n\n${persona}` }, ...messages],
     });
 
     await logUsage(agent, response.usage, session_id);
 
     res.json({
-      answer: response.content[0].text,
+      answer: response.choices[0].message.content,
       agent,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -2619,7 +2906,7 @@ app.get('/api/ai/usage', async (req, res) => {
 app.post('/api/ai/generate-content', async (req, res) => {
   const { query, equipment, part_number } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const budget = await checkBudget('content');
   if (!budget.ok) return res.status(429).json({ error: 'Content generation budget reached for this month.' });
@@ -2640,7 +2927,7 @@ app.post('/api/ai/generate-content', async (req, res) => {
     }
   } catch(e) {} finally { await checkClient.end(); }
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   const prompt = `A customer asked: "${query}"
 ${equipment ? `Equipment: ${equipment}` : ''}
@@ -2674,22 +2961,21 @@ Generate a Knowledge System page for the ELIMFILTERS website. Return JSON with t
 Rules: Technical tone only. No marketing language. Include ISO codes. Quantify operational impacts.`;
 
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 2048,
-      system: [{ type: 'text', text: SYSTEM_CONTEXT, cache_control: { type: 'ephemeral' } }],
-      messages: [{ role: 'user', content: prompt }],
+      messages: [{ role: 'system', content: SYSTEM_CONTEXT }, { role: 'user', content: prompt }],
     });
 
     await logUsage('content', response.usage, null);
 
     let pageData;
     try {
-      const text = response.content[0].text;
+      const text = response.choices[0].message.content;
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       pageData = JSON.parse(jsonMatch ? jsonMatch[0] : text);
     } catch(e) {
-      return res.status(500).json({ error: 'Failed to parse AI response', raw: response.content[0].text });
+      return res.status(500).json({ error: 'Failed to parse AI response', raw: response.choices[0].message.content });
     }
 
     // Save to DB
@@ -2862,12 +3148,12 @@ app.post('/api/intel/extract', async (req, res) => {
   }
   const { raw_text, source_url, brand } = req.body;
   if (!raw_text) return res.status(400).json({ error: 'raw_text required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
       messages: [{
         role: 'user',
@@ -2894,7 +3180,7 @@ Return only the JSON array. No markdown, no extra text.`
       }],
     });
     await logUsage('intel', response.usage, null);
-    const text = response.content[0].text;
+    const text = response.choices[0].message.content;
     const match = text.match(/\[[\s\S]*\]/);
     const extracted = JSON.parse(match ? match[0] : text);
     res.json({ success: true, extracted });
@@ -2910,7 +3196,7 @@ Return only the JSON array. No markdown, no extra text.`
 app.post('/api/ai/consult-v2', async (req, res) => {
   const { query, agent = 'technical', session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const [budget, intelContext] = await Promise.all([
     checkBudget('consult'),
@@ -2923,7 +3209,7 @@ app.post('/api/ai/consult-v2', async (req, res) => {
   });
 
   const persona = AGENT_PERSONAS[agent] || AGENT_PERSONAS.technical;
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   const systemWithIntel = SYSTEM_CONTEXT + intelContext;
 
@@ -2932,30 +3218,631 @@ app.post('/api/ai/consult-v2', async (req, res) => {
       ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
       { role: 'user', content: query },
     ];
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant',
       max_tokens: 1024,
-      system: [
-        { type: 'text', text: systemWithIntel, cache_control: { type: 'ephemeral' } },
-        { type: 'text', text: persona, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: `${systemWithIntel}\n\n${persona}` }, ...messages],
     });
     await logUsage(agent, response.usage, session_id);
     res.json({
-      answer: response.content[0].text,
+      answer: response.choices[0].message.content,
       agent,
       intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
     });
   } catch(e) {
     console.error('[ai/consult-v2]', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ════════════════════════════════════════════════════════════════════════════
+// PRODUCT TOOL LAYER — database-grounded functions for AI + API consumers
+// ════════════════════════════════════════════════════════════════════════════
+
+// ── Static technology metadata ────────────────────────────────────────────────
+const TECHNOLOGY_INFO_MAP = {
+  MACROCORE: {
+    system: 'Air Intake Filtration',
+    description: 'Progressive density gradient media matrix. Intercepts airborne contamination before combustion chamber. 18µm absolute particle capture. Rated for extreme thermal cycling in commercial and industrial engines.',
+    standards: ['SAE J1539', 'ISO 5011'],
+  },
+  NANOFORCE: {
+    system: 'Hydraulic / Fuel Filtration',
+    description: 'Sub-micron particle removal, 1µm efficiency. Maintains ISO 4406 cleanliness codes under sustained high-pressure pulsation cycles. Protects proportional valves and actuator components.',
+    standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14'],
+  },
+  SYNTRAX: {
+    system: 'Lube Oil Filtration',
+    description: 'Four-layer contamination control matrix, each layer calibrated to a specific particle size class. High dirt holding capacity. Intercepts sub-micron particles across the complete service interval.',
+    standards: ['ISO 16889', 'ISO 4406', 'SAE J1211'],
+  },
+  SYNTEPORE: {
+    system: 'Fuel Filtration',
+    description: 'Synthetic pore-geometry media for fuel systems. Consistent pore distribution enables predictable Beta ratio performance. Designed for high-flow diesel and biodiesel applications.',
+    standards: ['ISO 16889', 'ASTM D6304'],
+  },
+  MICROKAPPA: {
+    system: 'Cabin Air Filtration',
+    description: 'Three-layer capture: electrostatic attraction, HEPA-class mechanical filtration, activated carbon adsorption. Intercepts PM2.5 particles, allergens, diesel exhaust gases and odors. Meets ISO 11155.',
+    standards: ['ISO 11155', 'DIN 71220'],
+  },
+  INTEKCORE: {
+    system: 'Air Intake Housing / Pre-Cleaning',
+    description: 'High-pressure rated housing engineered for full thermal cycling range of commercial and industrial engines. Structural integrity maintained across all operating conditions. Supports MACROCORE primary elements.',
+    standards: ['SAE J1539', 'ISO 5011'],
+  },
+  DRYCORE: {
+    system: 'Compressed Air Filtration',
+    description: 'Removes water vapor and oil vapor at molecular level before air tanks, valves and downstream control circuits. Desiccant and coalescing technology. Prevents corrosion and seal degradation.',
+    standards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
+  },
+  THERMACORE: {
+    system: 'Coolant Filtration',
+    description: 'Controlled SCA additive release alongside coolant filtration. Prevents liner pitting, scale formation and corrosive degradation of engine cooling circuits. Compatible with OAT and NOAT coolant formulations.',
+    standards: ['ASTM D6210', 'ASTM D3306'],
+  },
+  HYDROCORE: {
+    system: 'Fuel / Water Separation',
+    description: 'Multi-stage coalescing water separation for fuel systems. Free water removal >99%, emulsified water >95%. Protects injector systems from water-induced stiction and corrosion.',
+    standards: ['ASTM D6304', 'ISO 12937'],
+  },
+};
+
+// ── Shared row formatter for tool responses ───────────────────────────────────
+function formatToolRow(row) {
+  return {
+    sku:          row.sku,
+    codigo_base:  row.codigo_base || null,
+    description:  row.description || null,
+    technology:   TECH_NAME_FIXES[row.technology] || row.technology || null,
+    filter_type:  extractText(row.filter_type, 'en') || null,
+  };
+}
+
+// ── 1. searchProducts(query, limit) ──────────────────────────────────────────
+// Tiers: exact SKU → exact codigo_base → OEM code exact → competitor code exact
+//        → brand_crossrefs value → partial ILIKE fallback
+async function searchProducts(query, limit = 20) {
+  const q = (query || '').trim().toUpperCase();
+  if (!q) return [];
+  const cap = Math.min(limit, 50);
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Tier 1 — exact SKU
+    let r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog WHERE UPPER(sku) = $1 LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 2 — exact codigo_base
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog WHERE UPPER(codigo_base) = $1 LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 3 — OEM code exact (JSONB array: {code, partNumber, manufacturer})
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(oem_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         ) LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 4 — competitor code exact
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         ) LIMIT $2`,
+      [q, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 5 — brand_crossrefs value match (stored as {"BRAND": ["P-CODE", ...]})
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE brand_crossrefs::text ILIKE $1 LIMIT $2`,
+      [`%${q}%`, cap]
+    );
+    if (r.rows.length) return r.rows.map(formatToolRow);
+
+    // Tier 6 — partial ILIKE on SKU / codigo_base / description
+    r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type
+         FROM elimfilters_catalog
+         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+            OR description ILIKE $2
+         LIMIT $3`,
+      [`%${q}%`, `%${query.trim()}%`, cap]
+    );
+    return r.rows.map(formatToolRow);
+  } finally { await client.end(); }
+}
+
+// ── 2. findCrossReference(partNumber) ────────────────────────────────────────
+// Returns ELIMFILTERS products matching the part number (OEM or competitor codes)
+// plus all competitor references on those products.
+async function findCrossReference(partNumber) {
+  const p = (partNumber || '').trim().toUpperCase();
+  if (!p) return { elimfilters_products: [], competitor_refs: [] };
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type,
+              oem_codes, competitor_codes, brand_crossrefs
+         FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(oem_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         )
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
+           WHERE UPPER(e->>'code') = $1 OR UPPER(e->>'partNumber') = $1
+         )
+         OR brand_crossrefs::text ILIKE $2
+         LIMIT 20`,
+      [p, `%${p}%`]
+    );
+    const elimfilters_products = r.rows.map(formatToolRow);
+    // Collect all competitor references from matching products
+    const competitor_refs = [];
+    const seen = new Set();
+    for (const row of r.rows) {
+      const refs = splitRefs([
+        ...parseRefs(row.oem_codes),
+        ...parseRefs(row.competitor_codes),
+      ]);
+      for (const ref of refs.competitor) {
+        const key = `${ref.manufacturer}:${ref.code}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          competitor_refs.push(ref);
+        }
+      }
+      // Also surface brand_crossrefs entries
+      const bcr = row.brand_crossrefs || {};
+      for (const [brand, codes] of Object.entries(bcr)) {
+        if (Array.isArray(codes)) {
+          for (const code of codes) {
+            const key = `${brand}:${code}`;
+            if (!seen.has(key)) {
+              seen.add(key);
+              competitor_refs.push({ manufacturer: brand, code });
+            }
+          }
+        }
+      }
+    }
+    return { elimfilters_products, competitor_refs };
+  } finally { await client.end(); }
+}
+
+// ── 3. searchByMachine(machineQuery, limit) ───────────────────────────────────
+// Searches equipment_applications JSONB by tokenizing the query string.
+// Each token must appear in the JSONB text (AND logic).
+// Examples: "Freightliner M2", "Cummins ISB", "CAT 320", "Komatsu PC200"
+async function searchByMachine(machineQuery, limit = 20) {
+  const raw = (machineQuery || '').trim();
+  if (!raw) return [];
+  const cap = Math.min(limit, 50);
+  // Tokenize: split on whitespace, keep tokens ≥ 2 chars
+  const tokens = raw.split(/\s+/).filter(t => t.length >= 2);
+  if (!tokens.length) return [];
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Build AND conditions: each token must appear in the JSONB text
+    const conditions = tokens.map((_, i) =>
+      `equipment_applications::text ILIKE $${i + 1}`
+    ).join(' AND ');
+
+    const params = tokens.map(t => `%${t.toUpperCase()}%`);
+    params.push(cap);
+
+    const r = await client.query(
+      `SELECT sku, codigo_base, description, technology, filter_type,
+              equipment_applications
+         FROM elimfilters_catalog
+         WHERE equipment_applications IS NOT NULL
+           AND ${conditions}
+         LIMIT $${params.length}`,
+      params
+    );
+
+    return r.rows.map(row => ({
+      ...formatToolRow(row),
+      equipment_applications: row.equipment_applications || [],
+    }));
+  } finally { await client.end(); }
+}
+
+// ── 4. getProductSpecs(sku) ───────────────────────────────────────────────────
+// Returns the full specification record for an ELIMFILTERS SKU.
+async function getProductSpecs(sku) {
+  const s = (sku || '').trim().toUpperCase();
+  if (!s) return null;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const r = await client.query(
+      `SELECT * FROM elimfilters_catalog WHERE UPPER(sku) = $1 LIMIT 1`,
+      [s]
+    );
+    if (!r.rows.length) return null;
+    // Use buildFilterData for consistent shape + TECH_NAME_FIXES + splitRefs
+    return buildFilterData(r.rows[0], 'en');
+  } finally { await client.end(); }
+}
+
+// ── 5. getTechnologyInfo(technology) ─────────────────────────────────────────
+// Returns static technology description + live product count + sample SKUs from DB.
+async function getTechnologyInfo(technology) {
+  const raw = (technology || '').trim().toUpperCase().replace(/[™®]/g, '');
+  if (!raw) return null;
+  // Apply canonical name mapping
+  const canonical = (TECH_NAME_FIXES[raw] || raw).replace(/[™®]/g, '').trim();
+  const meta = TECHNOLOGY_INFO_MAP[canonical] || null;
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    // Match DB rows after stripping ™ from the technology column
+    const r = await client.query(
+      `SELECT sku, filter_type, technology,
+              COUNT(*) OVER () AS total_count
+         FROM elimfilters_catalog
+         WHERE UPPER(REPLACE(technology, '™', '')) = $1
+         ORDER BY sku
+         LIMIT 10`,
+      [canonical]
+    );
+    const associated_products = r.rows.map(row => ({
+      sku: row.sku,
+      filter_type: extractText(row.filter_type, 'en'),
+    }));
+    const product_count = r.rows.length > 0 ? parseInt(r.rows[0].total_count) : 0;
+
+    return {
+      technology: canonical,
+      system:      meta?.system || null,
+      description: meta?.description || null,
+      standards:   meta?.standards || [],
+      product_count,
+      associated_products,
+    };
+  } finally { await client.end(); }
+}
+
+// ── Tool Layer HTTP Endpoints ─────────────────────────────────────────────────
+
+// GET /api/tools/search-products?q=LF3970&limit=20
+app.get('/api/tools/search-products', async (req, res) => {
+  const q = (req.query.q || '').trim();
+  if (!q) return res.status(400).json({ error: 'q required' });
+  try {
+    const results = await searchProducts(q, parseInt(req.query.limit) || 20);
+    res.json({ query: q, count: results.length, results });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/cross-reference/:partNumber
+app.get('/api/tools/cross-reference/:partNumber', async (req, res) => {
+  const pn = (req.params.partNumber || '').trim();
+  if (!pn) return res.status(400).json({ error: 'partNumber required' });
+  try {
+    const result = await findCrossReference(pn);
+    res.json({ part_number: pn, ...result });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/search-by-machine?q=Freightliner+M2&limit=20
+app.get('/api/tools/search-by-machine', async (req, res) => {
+  const q = (req.query.q || '').trim();
+  if (!q) return res.status(400).json({ error: 'q required' });
+  try {
+    const results = await searchByMachine(q, parseInt(req.query.limit) || 20);
+    res.json({ query: q, count: results.length, results });
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/product-specs/:sku
+app.get('/api/tools/product-specs/:sku', async (req, res) => {
+  const sku = (req.params.sku || '').trim();
+  if (!sku) return res.status(400).json({ error: 'sku required' });
+  try {
+    const specs = await getProductSpecs(sku);
+    if (!specs) return res.status(404).json({ error: 'not found', sku });
+    res.json(specs);
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// GET /api/tools/technology-info/:technology
+app.get('/api/tools/technology-info/:technology', async (req, res) => {
+  const tech = (req.params.technology || '').trim();
+  if (!tech) return res.status(400).json({ error: 'technology required' });
+  try {
+    const info = await getTechnologyInfo(tech);
+    if (!info) return res.status(404).json({ error: 'not found', technology: tech });
+    res.json(info);
+  } catch(e) { res.status(500).json({ error: e.message }); }
+});
+
+// ── RE context builder — runs in parallel with catalog tool calls ─────────────
+// Creates one DB client, resolves each detected part number through the
+// Recommendation Engine, and returns a formatted context block for the AI.
+// Never throws — failures are swallowed so the AI call always proceeds.
+async function runREContextLookup(partMatches) {
+  if (!partMatches.length) return null;
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const sections = [];
+    for (const pn of partMatches.slice(0, 3)) {
+      try {
+        const xref = await findCrossReferenceRE(client, pn);
+        if (xref.status === 'NOT_FOUND') continue;
+
+        let section = `RE: "${pn}" → ${xref.source} [${xref.type.toUpperCase()}]\n`;
+
+        if (xref.type === 'element' && xref.result) {
+          const r = xref.result;
+          section += `  Element: ${r.element_code} | Tech: ${r.technology} | Class: ${r.compatibility_class}\n`;
+          const alts = await findAlternatives(client, r.element_code);
+          if (alts.status === 'OK') {
+            if (alts.baseline) {
+              section += `  BASELINE: ${alts.baseline.element_code} (${alts.baseline.media_grade}, OBJ: ${alts.baseline.operational_objective})\n`;
+            }
+            if (alts.TYPE_A.length) {
+              section += `  TYPE_A upgrades: ${alts.TYPE_A.map(a => `${a.element_code} [${a.media_grade}, level ${a.protection_level}]`).join(', ')}\n`;
+            }
+            if (alts.TYPE_B.length) {
+              section += `  TYPE_B alternatives: ${alts.TYPE_B.map(a => `${a.element_code} [${a.operational_objective}]`).join(', ')}\n`;
+            }
+            section += `  Traceability: ${alts.traceability.source_document}\n`;
+            section += `  Confidence: ${alts.traceability.confidence_floor}`;
+          }
+        } else if (xref.type === 'housing' && xref.result) {
+          const r = xref.result;
+          section += `  Housing: ${r.model_code} | Tech: ${r.technology} | Class: ${r.compatibility_class}\n`;
+          const housing = await getHousingWithAlternatives(client, r.model_code);
+          if (housing.status === 'OK') {
+            if (housing.primary_element) {
+              section += `  Primary element: ${housing.primary_element.element_code} (${housing.primary_element.media_grade})\n`;
+            }
+            section += `  Compatible elements (${housing.element_count}): ${housing.compatible_elements.map(e => e.element_code).join(', ')}`;
+          }
+        } else if (xref.type === 'catalog_match' && xref.results) {
+          section += `  Catalog matches: ${xref.results.map(r => r.sku).join(', ')} [INFERRED]`;
+        }
+        sections.push(section);
+      } catch (_) { /* skip this part number silently */ }
+    }
+    return sections.length ? sections.join('\n\n') : null;
+  } catch (_) {
+    return null;
+  } finally {
+    await client.end();
+  }
+}
+
+// ── Grounded AI consultation (product data injected into user message) ─────────
+// POST /api/ai/v2/consult-grounded
+// Detects part numbers / machine refs / technology names in the query,
+// fetches live catalog data, prepends it to the user message as a context block,
+// then delegates to the existing V2 specialist-agent pipeline.
+app.post('/api/ai/v2/consult-grounded', async (req, res) => {
+  const { query, session_id, history = [] } = req.body;
+  if (!query) return res.status(400).json({ error: 'query required' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+
+  const [budget, intelContext] = await Promise.all([
+    checkBudget('consult'),
+    loadCompetitiveIntel(),
+  ]);
+  if (!budget.ok) return res.status(429).json({
+    error: 'Monthly budget reached.', used: budget.used, limit: budget.limit
+  });
+
+  // ── Entity detection: extract tokens that may be product/machine references ──
+  // Patterns: EL-prefix SKUs, P-prefix Donaldson codes, alphanumeric part numbers,
+  // known technology names, and remaining text for machine search.
+  const qUpper = query.toUpperCase().replace(/[™®]/g, '');
+  const partPattern = /\b(EL[0-9A-Z]{4,8}|P-?\d{5,7}|[A-Z]{2,4}[-\s]?\d{3,7}[A-Z0-9]*|\d{3,4}[A-Z]{1,4}(?:-[A-Z0-9]+)?)\b/g;
+  const partMatches = [...new Set([...qUpper.matchAll(partPattern)].map(m => m[1].replace(/[-\s]/g, '')))];
+
+  // Detect technology names in query
+  const techMatches = [];
+  for (const name of TECH_NAMES) {
+    if (qUpper.includes(name)) techMatches.push(name);
+  }
+
+  // Run tool functions in parallel
+  const toolCalls = [];
+  const contextParts = [];
+  const reContextParts = [];
+
+  // Product / cross-reference lookups for each detected part number
+  for (const pn of partMatches.slice(0, 3)) {
+    toolCalls.push(
+      findCrossReference(pn).then(data => {
+        if (data.elimfilters_products.length > 0) {
+          const lines = data.elimfilters_products.map(p =>
+            `  ${p.sku} | ${p.codigo_base || '-'} | ${p.filter_type || '-'} | ${p.technology || '-'}`
+          ).join('\n');
+          const refs = data.competitor_refs.slice(0, 8).map(r => `  ${r.manufacturer}: ${r.code}`).join('\n');
+          contextParts.push(
+            `CROSS-REFERENCE: "${pn}"\nELIMFILTERS matches:\n${lines}` +
+            (refs ? `\nCompetitor refs on these products:\n${refs}` : '')
+          );
+        } else {
+          // Fall back to general search
+          return searchProducts(pn, 5).then(results => {
+            if (results.length) {
+              const lines = results.map(p => `  ${p.sku} | ${p.filter_type || '-'} | ${p.technology || '-'}`).join('\n');
+              contextParts.push(`PRODUCT SEARCH: "${pn}"\n${lines}`);
+            } else {
+              contextParts.push(`PRODUCT SEARCH: "${pn}"\n  No catalog match found.`);
+            }
+          });
+        }
+      })
+    );
+  }
+
+  // Technology info for detected tech names
+  for (const tech of techMatches.slice(0, 2)) {
+    toolCalls.push(
+      getTechnologyInfo(tech).then(info => {
+        if (info) {
+          contextParts.push(
+            `TECHNOLOGY: ${info.technology}\nSystem: ${info.system}\n` +
+            `Products in catalog: ${info.product_count}\n` +
+            `Standards: ${info.standards.join(', ')}`
+          );
+        }
+      })
+    );
+  }
+
+  // Machine search if query contains equipment-like text and no part numbers found
+  if (partMatches.length === 0 && /\b(CAT|CATERPILLAR|CUMMINS|DETROIT|VOLVO|MACK|FREIGHTLINER|KENWORTH|PETERBILT|KOMATSU|LIEBHERR|JOHN DEERE|DEERE|SCANIA|MAN|DAF|MERCEDES|IVECO|CASE|NEW HOLLAND|TEREX)\b/.test(qUpper)) {
+    toolCalls.push(
+      searchByMachine(query, 10).then(results => {
+        if (results.length) {
+          const lines = results.map(p => `  ${p.sku} | ${p.filter_type || '-'} | ${p.technology || '-'}`).join('\n');
+          contextParts.push(`MACHINE SEARCH: "${query}"\n${lines}`);
+        }
+      })
+    );
+  }
+
+  // Recommendation Engine v2 lookup — runs in parallel with catalog tool calls
+  if (partMatches.length > 0) {
+    toolCalls.push(
+      runREContextLookup(partMatches).then(ctx => { if (ctx) reContextParts.push(ctx); })
+    );
+  }
+
+  await Promise.all(toolCalls);
+
+  // Assemble grounded user message — catalog context + RE context + user query
+  const groundedQuery = (contextParts.length > 0 || reContextParts.length > 0)
+    ? [
+        contextParts.length > 0
+          ? `[CATALOG CONTEXT — live data from ELIMFILTERS database]\n${contextParts.join('\n\n')}`
+          : null,
+        reContextParts.length > 0
+          ? `[RECOMMENDATION ENGINE v2 — deterministic structured recommendations]\n${reContextParts.join('\n\n')}`
+          : null,
+        `[USER QUERY]\n${query}`,
+      ].filter(Boolean).join('\n\n')
+    : query;
+
+  // Delegate to V2 specialist-agent pipeline via chiefReasoningEngine
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+  let routing;
+  try {
+    routing = await chiefReasoningEngine(query, groq); // route on original query
+    await logUsage('v2_chief', routing.usage || {}, session_id);
+  } catch(e) {
+    routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
+  }
+
+  const selectedAgents = (routing.agents || [])
+    .filter(a => SPECIALIST_AGENTS[a])
+    .map(a => SPECIALIST_AGENTS[a].persona);
+  selectedAgents.push(SPECIALIST_AGENTS.philosophy.persona);
+
+  const specialistBlock = selectedAgents.join('\n\n---\n\n');
+
+  const systemPrompt = `You are the ELIMFILTERS AI Engine V2 — a multi-agent technical reasoning system for industrial filtration and asset protection.
+
+${MASTER_KNOWLEDGE}
+${intelContext}
+
+ACTIVE SPECIALIST AGENTS FOR THIS QUERY:
+${specialistBlock}
+
+${TRACEABILITY_PROMPT}
+
+RESPONSE FORMAT (mandatory structure):
+**Problema detectado:** [clear technical problem statement]
+**Sistema afectado:** [specific system and components]
+**Mecanismo físico:** [root cause mechanism — e.g., "abrasive wear via three-body contact"]
+**Riesgo operacional:** [quantified risk — e.g., "bearing life reduced 60% at current ISO code"]
+**Norma aplicable:** [ISO/SAE/ASTM code + scope]
+**Tecnología ELIMFILTERS:** [specific technology and why it addresses this mechanism]
+**Acción recomendada:** [concrete next step with timeline]
+
+Then the TRACEABILITY block as specified above.
+
+FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
+If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
+
+  const model = routing.complexity === 'complex' ? 'llama-3.3-70b-versatile' : 'llama-3.1-8b-instant';
+
+  try {
+    const messages = [
+      ...history.slice(-6).map(h => ({ role: h.role, content: h.content })),
+      { role: 'user', content: groundedQuery },
+    ];
+
+    const response = await groq.chat.completions.create({
+      model,
+      max_tokens: 1500,
+      messages: [{ role: 'system', content: systemPrompt }, ...messages],
+    });
+
+    await logUsage('v2_grounded', response.usage, session_id);
+
+    const answer = response.choices[0].message.content;
+    const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
+
+    res.json({
+      answer,
+      catalog_context: contextParts,
+      routing: {
+        agents: routing.agents,
+        system: routing.system,
+        complexity: routing.complexity,
+        primary_concern: routing.primary_concern,
+        model,
+      },
+      blocked,
+      usage: {
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
+      },
+      budget_used: budget.used,
+      budget_limit: budget.limit,
+    });
+  } catch(e) {
+    console.error('[ai/v2/consult-grounded]', e.message);
     res.status(500).json({ error: e.message });
   }
 });
@@ -3058,14 +3945,14 @@ REJECT any response that: makes marketing claims, recommends without evidence, u
 };
 
 // ── Chief Reasoning Engine ─────────────────────────────────────────────────
-async function chiefReasoningEngine(query, anthropic) {
+async function chiefReasoningEngine(query, groq) {
   const agentList = Object.entries(SPECIALIST_AGENTS)
     .filter(([k]) => k !== 'philosophy')
     .map(([k, v]) => `${k}: ${v.triggers.join(', ')}`)
     .join('\n');
 
-  const response = await anthropic.messages.create({
-    model: 'claude-haiku-4-5-20251001',
+  const response = await groq.chat.completions.create({
+    model: 'llama-3.1-8b-instant',
     max_tokens: 256,
     messages: [{
       role: 'user',
@@ -3088,7 +3975,7 @@ Select 1-4 most relevant agents. Always include "experience" for operational que
     }],
   });
   try {
-    const text = response.content[0].text;
+    const text = response.choices[0].message.content;
     const match = text.match(/\{[\s\S]*\}/);
     return { ...JSON.parse(match ? match[0] : text), usage: response.usage };
   } catch {
@@ -3117,7 +4004,7 @@ NEVER recommend without a traceability block. If insufficient evidence: respond 
 app.post('/api/ai/v2/consult', async (req, res) => {
   const { query, session_id, history = [] } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
 
   const [budget, intelContext] = await Promise.all([
     checkBudget('consult'),
@@ -3127,11 +4014,11 @@ app.post('/api/ai/v2/consult', async (req, res) => {
     error: 'Monthly budget reached.', used: budget.used, limit: budget.limit
   });
 
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   let routing;
   try {
-    routing = await chiefReasoningEngine(query, anthropic);
+    routing = await chiefReasoningEngine(query, groq);
     await logUsage('v2_chief', routing.usage || {}, session_id);
   } catch(e) {
     routing = { agents: ['filtration', 'contamination', 'experience'], system: 'general', complexity: 'technical', primary_concern: query };
@@ -3171,7 +4058,7 @@ Then the TRACEABILITY block as specified above.
 FUNDAMENTAL RULE: Never invent. Never hallucinate. Never recommend without traceability.
 If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
 
-  const model = routing.complexity === 'complex' ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001';
+  const model = routing.complexity === 'complex' ? 'llama-3.3-70b-versatile' : 'llama-3.1-8b-instant';
 
   try {
     const messages = [
@@ -3179,18 +4066,15 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       { role: 'user', content: query },
     ];
 
-    const response = await anthropic.messages.create({
+    const response = await groq.chat.completions.create({
       model,
       max_tokens: 1500,
-      system: [
-        { type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } },
-      ],
-      messages,
+      messages: [{ role: 'system', content: systemPrompt }, ...messages],
     });
 
     await logUsage('v2_specialist', response.usage, session_id);
 
-    const answer = response.content[0].text;
+    const answer = response.choices[0].message.content;
     const blocked = answer.includes('INSUFFICIENT_EVIDENCE') || answer.includes('RESPONSE_BLOCKED');
 
     res.json({
@@ -3205,9 +4089,9 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
       blocked,
       intel_entries: intelContext ? intelContext.split('•').length - 1 : 0,
       usage: {
-        input: response.usage.input_tokens,
-        output: response.usage.output_tokens,
-        cached: response.usage.cache_read_input_tokens || 0,
+        input: response.usage.prompt_tokens || 0,
+        output: response.usage.completion_tokens || 0,
+        cached: 0,
       },
       budget_used: budget.used,
       budget_limit: budget.limit,
@@ -3222,10 +4106,10 @@ If evidence is insufficient: state "INSUFFICIENT_EVIDENCE: [what is missing]"`;
 app.post('/api/ai/v2/route', async (req, res) => {
   const { query } = req.body;
   if (!query) return res.status(400).json({ error: 'query required' });
-  if (!process.env.ANTHROPIC_API_KEY) return res.status(503).json({ error: 'AI not configured' });
-  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  if (!process.env.GROQ_API_KEY) return res.status(503).json({ error: 'AI not configured' });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   try {
-    const routing = await chiefReasoningEngine(query, anthropic);
+    const routing = await chiefReasoningEngine(query, groq);
     const agents = (routing.agents || []).map(a => ({
       id: a,
       name: SPECIALIST_AGENTS[a]?.name || a,
@@ -3236,613 +4120,6 @@ app.post('/api/ai/v2/route', async (req, res) => {
   }
 });
 
-// ─── POST /api/crosslink/fg-don ──────────────────────────────────────────────
-// Cross-links Fleetguard ↔ Donaldson in competitor_codes (bidirectional).
-// Body: { key: "elim2026", dry_run?: bool, stats_only?: bool }
-app.post('/api/crosslink/fg-don', async (req, res) => {
-  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const dryRun    = !!req.body.dry_run;
-  const statsOnly = !!req.body.stats_only;
-
-  const SQL_PASS_A = `
-    SELECT d.sku AS don_sku, d.codigo_base AS don_code,
-           fg_pn.value AS fg_code, f.sku AS fg_sku
-    FROM elimfilters_catalog d
-    CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
-    JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
-    WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL`;
-
-  const SQL_PASS_B = `
-    WITH fg_oem AS (
-      SELECT f.sku AS fg_sku, f.codigo_base AS fg_code,
-             upper(trim(o->>'manufacturer')) AS mfr, upper(trim(o->>'part_number')) AS oem_pn
-      FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
-      WHERE jsonb_array_length(f.oem_codes) > 0
-    ), don_oem AS (
-      SELECT d.sku AS don_sku, d.codigo_base AS don_code,
-             upper(trim(o->>'manufacturer')) AS mfr, upper(trim(o->>'part_number')) AS oem_pn
-      FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
-      WHERE jsonb_array_length(d.oem_codes) > 0
-    )
-    SELECT DISTINCT fg.fg_sku, fg.fg_code, don.don_sku, don.don_code,
-           fg.mfr AS shared_brand, fg.oem_pn AS shared_code
-    FROM fg_oem fg JOIN don_oem don
-      ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
-    WHERE fg.mfr NOT IN (
-      'DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
-      'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
-      'HENGST','FILTREC','HYDAC','PALL','PARKER'
-    )`;
-
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-
-    const rowsA = (await client.query(SQL_PASS_A)).rows;
-    const rowsB = (await client.query(SQL_PASS_B)).rows;
-
-    const pairs = {};
-    for (const r of rowsA) {
-      pairs[`${r.don_sku}|${r.fg_sku}`] = { ...r, method: 'BRAND_CROSSREF' };
-    }
-    for (const r of rowsB) {
-      const k = `${r.don_sku}|${r.fg_sku}`;
-      if (!pairs[k]) pairs[k] = { ...r, method: `SHARED_OEM:${r.shared_brand}:${r.shared_code}` };
-    }
-
-    const pairList   = Object.values(pairs);
-    const totalFg    = parseInt((await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE sub_type ILIKE '%Fleetguard%'`)).rows[0].count);
-    const totalDon   = parseInt((await client.query(`SELECT COUNT(*) FROM elimfilters_catalog WHERE (sub_type NOT ILIKE '%Fleetguard%' OR sub_type IS NULL)`)).rows[0].count);
-    const fgMatched  = new Set(pairList.map(p => p.fg_sku)).size;
-    const donMatched = new Set(pairList.map(p => p.don_sku)).size;
-    const passACount = pairList.filter(p => p.method === 'BRAND_CROSSREF').length;
-
-    const stats = {
-      total_fg: totalFg, total_don: totalDon,
-      pairs: pairList.length, pass_a: passACount, pass_b: pairList.length - passACount,
-      fg_matched: fgMatched,  fg_unmatched: totalFg - fgMatched,
-      don_matched: donMatched, don_unmatched: totalDon - donMatched,
-      fg_match_pct:  totalFg  ? +(fgMatched  / totalFg  * 100).toFixed(1) : 0,
-      don_match_pct: totalDon ? +(donMatched / totalDon * 100).toFixed(1) : 0,
-    };
-
-    if (statsOnly || dryRun) {
-      return res.json({ success: true, dryRun, statsOnly, stats,
-        sample: pairList.slice(0, 5).map(p => ({
-          don: `${p.don_code} (${p.don_sku})`, fg: `${p.fg_code} (${p.fg_sku})`, method: p.method
-        }))
-      });
-    }
-
-    // Bulk SQL updates — avoid 250k individual queries by doing it all in 2 SQL statements
-    const SQL_PAIRS_SUBQUERY = `
-      WITH a_pairs AS (
-        SELECT d.sku AS don_sku, f.codigo_base AS fg_code, f.sku AS fg_sku
-        FROM elimfilters_catalog d
-        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
-        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
-        WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL
-      ),
-      b_pairs AS (
-        SELECT DISTINCT don.don_sku, fg.fg_sku, fg.fg_code
-        FROM (
-          SELECT f.sku fg_sku, f.codigo_base fg_code,
-                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
-          FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
-          WHERE jsonb_array_length(f.oem_codes) > 0
-        ) fg
-        JOIN (
-          SELECT d.sku don_sku,
-                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
-          FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
-          WHERE jsonb_array_length(d.oem_codes) > 0
-        ) don ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
-        WHERE fg.mfr NOT IN ('DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
-          'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
-          'HENGST','FILTREC','HYDAC','PALL','PARKER')
-      )
-      SELECT don_sku, fg_code, fg_sku FROM a_pairs
-      UNION
-      SELECT don_sku, fg_code, fg_sku FROM b_pairs`;
-
-    const SQL_BULK_DON = `
-      WITH pairs AS (${SQL_PAIRS_SUBQUERY}),
-      new_e AS (
-        SELECT DISTINCT don_sku,
-               jsonb_build_object('brand','FLEETGUARD','part_number',fg_code,'linked_sku',fg_sku) AS entry
-        FROM pairs
-      ),
-      agg AS (SELECT don_sku, jsonb_agg(entry) new_codes FROM new_e GROUP BY don_sku)
-      UPDATE elimfilters_catalog t
-      SET competitor_codes = (
-        SELECT jsonb_agg(elem) FROM (
-          SELECT DISTINCT ON (elem::text) elem
-          FROM jsonb_array_elements(COALESCE(t.competitor_codes,'[]'::jsonb) || a.new_codes) elem
-        ) dedup
-      )
-      FROM agg a WHERE t.sku = a.don_sku
-      RETURNING t.sku`;
-
-    const SQL_BULK_FG = `
-      WITH a_pairs AS (
-        SELECT f.sku AS fg_sku, d.codigo_base AS don_code, d.sku AS don_sku
-        FROM elimfilters_catalog d
-        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
-        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
-        WHERE d.brand_crossrefs ? 'FLEETGUARD' AND f.sku IS NOT NULL
-      ),
-      b_pairs AS (
-        SELECT DISTINCT fg.fg_sku, don.don_sku, don.don_code
-        FROM (
-          SELECT f.sku fg_sku, upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
-          FROM elimfilters_catalog f CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) o
-          WHERE jsonb_array_length(f.oem_codes) > 0
-        ) fg
-        JOIN (
-          SELECT d.sku don_sku, d.codigo_base don_code,
-                 upper(trim(o->>'manufacturer')) mfr, upper(trim(o->>'part_number')) oem_pn
-          FROM elimfilters_catalog d CROSS JOIN LATERAL jsonb_array_elements(d.oem_codes) o
-          WHERE jsonb_array_length(d.oem_codes) > 0
-        ) don ON fg.oem_pn = don.oem_pn AND fg.mfr = don.mfr AND fg.fg_sku <> don.don_sku
-        WHERE fg.mfr NOT IN ('DONALDSON','FLEETGUARD','CUMMINS FILTRATION','BALDWIN','MANN','WIX',
-          'PUROLATOR','FRAM','NAPA','HASTINGS','LUBER-FINER','BOSCH','MAHLE',
-          'HENGST','FILTREC','HYDAC','PALL','PARKER')
-      ),
-      pairs AS (
-        SELECT fg_sku, don_code, don_sku FROM a_pairs
-        UNION
-        SELECT fg_sku, don_code, don_sku FROM b_pairs
-      ),
-      new_e AS (
-        SELECT DISTINCT fg_sku,
-               jsonb_build_object('brand','DONALDSON','part_number',don_code,'linked_sku',don_sku) AS entry
-        FROM pairs
-      ),
-      agg AS (SELECT fg_sku, jsonb_agg(entry) new_codes FROM new_e GROUP BY fg_sku)
-      UPDATE elimfilters_catalog t
-      SET competitor_codes = (
-        SELECT jsonb_agg(elem) FROM (
-          SELECT DISTINCT ON (elem::text) elem
-          FROM jsonb_array_elements(COALESCE(t.competitor_codes,'[]'::jsonb) || a.new_codes) elem
-        ) dedup
-      )
-      FROM agg a WHERE t.sku = a.fg_sku
-      RETURNING t.sku`;
-
-    const [donRes, fgRes] = await Promise.all([
-      client.query(SQL_BULK_DON),
-      client.query(SQL_BULK_FG),
-    ]);
-    const updatedDon = donRes.rowCount;
-    const updatedFg  = fgRes.rowCount;
-
-    res.json({ success: true, stats, updated_don: updatedDon, updated_fg: updatedFg });
-  } catch (err) {
-    console.error('[crosslink/fg-don]', err.message);
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ─── POST /api/enrich/fg-to-don-oem ─────────────────────────────────────────
-// Copies OEM codes from matched Fleetguard products into Donaldson entries.
-// Uses Pass A (brand_crossrefs) pairs — high confidence only.
-// Append-only: never modifies existing data.
-// Body: { key: "elim2026", dry_run?: bool }
-app.post('/api/enrich/fg-to-don-oem', async (req, res) => {
-  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const dryRun = !!req.body.dry_run;
-
-  const FILTER_BRANDS = `'DONALDSON','FLEETGUARD','FLEETRITE','CUMMINS FILTRATION','CUMMINS',
-    'BALDWIN','MANN','MANN-HUMMEL','WIX','PUROLATOR','FRAM','NAPA','HASTINGS',
-    'LUBER-FINER','LUBERFINER','BOSCH','MAHLE','HENGST','FILTREC','HYDAC',
-    'PALL','PARKER','SAKURA','HIFI','KNECHT','FILTRON','PURFLUX'`;
-
-  // Build the new OEM entries to add (deduplicated, filtered)
-  const SQL_NEW_OEM = `
-    WITH pairs AS (
-      SELECT d.sku AS don_sku,
-             COALESCE(d.oem_codes, '[]'::jsonb) AS don_oem,
-             f.sku AS fg_sku
-      FROM elimfilters_catalog d
-      CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
-      JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
-      WHERE d.brand_crossrefs ? 'FLEETGUARD'
-        AND f.sku IS NOT NULL
-        AND jsonb_array_length(COALESCE(f.oem_codes, '[]'::jsonb)) > 0
-    ),
-    candidates AS (
-      SELECT p.don_sku,
-             jsonb_build_object(
-               'manufacturer', upper(trim(oem->>'manufacturer')),
-               'part_number',  upper(trim(oem->>'part_number'))
-             ) AS entry
-      FROM pairs p
-      JOIN elimfilters_catalog f ON f.sku = p.fg_sku
-      CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) oem
-      WHERE upper(trim(oem->>'manufacturer')) NOT IN (${FILTER_BRANDS})
-        AND upper(trim(oem->>'part_number')) <> ''
-        AND NOT p.don_oem @> jsonb_build_array(jsonb_build_object(
-              'manufacturer', upper(trim(oem->>'manufacturer')),
-              'part_number',  upper(trim(oem->>'part_number'))
-            ))
-    ),
-    deduped AS (
-      SELECT DISTINCT don_sku, entry FROM candidates
-    )
-    SELECT don_sku, jsonb_agg(entry) AS new_oem, count(*) AS n
-    FROM deduped
-    GROUP BY don_sku`;
-
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const preview = await client.query(SQL_NEW_OEM);
-    const affectedRows  = preview.rowCount;
-    const totalNewCodes = preview.rows.reduce((s, r) => s + parseInt(r.n), 0);
-
-    if (dryRun) {
-      return res.json({
-        dry_run: true,
-        don_rows_affected: affectedRows,
-        new_oem_entries: totalNewCodes,
-        sample: preview.rows.slice(0, 5).map(r => ({
-          don_sku: r.don_sku,
-          new_codes: parseInt(r.n),
-          sample_entry: r.new_oem[0]
-        }))
-      });
-    }
-
-    // Bulk UPDATE
-    const SQL_UPDATE = `
-      WITH pairs AS (
-        SELECT d.sku AS don_sku,
-               COALESCE(d.oem_codes, '[]'::jsonb) AS don_oem,
-               f.sku AS fg_sku
-        FROM elimfilters_catalog d
-        CROSS JOIN LATERAL jsonb_array_elements_text(d.brand_crossrefs->'FLEETGUARD') fg_pn(value)
-        JOIN elimfilters_catalog f ON upper(trim(f.codigo_base)) = upper(trim(fg_pn.value))
-        WHERE d.brand_crossrefs ? 'FLEETGUARD'
-          AND f.sku IS NOT NULL
-          AND jsonb_array_length(COALESCE(f.oem_codes, '[]'::jsonb)) > 0
-      ),
-      candidates AS (
-        SELECT p.don_sku,
-               jsonb_build_object(
-                 'manufacturer', upper(trim(oem->>'manufacturer')),
-                 'part_number',  upper(trim(oem->>'part_number'))
-               ) AS entry
-        FROM pairs p
-        JOIN elimfilters_catalog f ON f.sku = p.fg_sku
-        CROSS JOIN LATERAL jsonb_array_elements(f.oem_codes) oem
-        WHERE upper(trim(oem->>'manufacturer')) NOT IN (${FILTER_BRANDS})
-          AND upper(trim(oem->>'part_number')) <> ''
-          AND NOT p.don_oem @> jsonb_build_array(jsonb_build_object(
-                'manufacturer', upper(trim(oem->>'manufacturer')),
-                'part_number',  upper(trim(oem->>'part_number'))
-              ))
-      ),
-      deduped AS (SELECT DISTINCT don_sku, entry FROM candidates),
-      agg AS (SELECT don_sku, jsonb_agg(entry) new_oem FROM deduped GROUP BY don_sku)
-      UPDATE elimfilters_catalog t
-      SET oem_codes = (
-        SELECT jsonb_agg(elem)
-        FROM (
-          SELECT DISTINCT ON ((elem->>'manufacturer'), (elem->>'part_number')) elem
-          FROM jsonb_array_elements(COALESCE(t.oem_codes,'[]'::jsonb) || a.new_oem) elem
-        ) dd
-      )
-      FROM agg a
-      WHERE t.sku = a.don_sku
-      RETURNING t.sku`;
-
-    const result = await client.query(SQL_UPDATE);
-    res.json({
-      success: true,
-      don_rows_updated: result.rowCount,
-      new_oem_entries: totalNewCodes
-    });
-  } catch (err) {
-    console.error('[enrich/fg-to-don-oem]', err.message);
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ─── GET /api/catalog/inventory ──────────────────────────────────────────────
-app.get('/api/catalog/inventory', async (req, res) => {
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const result = await client.query(`
-      SELECT
-        left(sku, 3)                        AS prefix,
-        count(*)::int                       AS total,
-        count(*) FILTER (WHERE sub_type ILIKE '%Fleetguard%')::int AS fg_count,
-        count(*) FILTER (WHERE sub_type NOT ILIKE '%Fleetguard%' OR sub_type IS NULL)::int AS don_count,
-        count(*) FILTER (WHERE jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) > 0)::int AS with_oem,
-        count(*) FILTER (WHERE jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb)) > 0)::int AS with_crossref
-      FROM elimfilters_catalog
-      WHERE sku IS NOT NULL
-      GROUP BY left(sku, 3)
-      ORDER BY total DESC
-    `);
-
-    const PREFIX_NAME = {
-      EL8:'Lube/Oil', EF9:'Fuel', ES9:'Fuel Water Sep', ET9:'Fuel Turbine',
-      EA1:'Air Filter', EA2:'Air Housing', EH6:'Hydraulic', EW7:'Coolant',
-      EC1:'Cabin', ED4:'Air Dryer', EC5:'Crankcase', EK5:'Kit HD', EK3:'Kit LD',
-    };
-
-    const rows = result.rows.map(r => ({
-      ...r,
-      name: PREFIX_NAME[r.prefix] || r.prefix,
-    }));
-
-    const total = rows.reduce((s, r) => s + r.total, 0);
-    res.json({ total, by_prefix: rows });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ────────────────────────────────────────────────────────────────────────────
-
-// ─── POST /api/enrich/oem-codes ──────────────────────────────────────────────
-// Agrega OEM codes a un producto existente SIN sobrescribir los que ya tiene.
-// Body: { key, sku, oem_codes: [{manufacturer, part_number}], mode: "append" }
-app.post('/api/enrich/oem-codes', async (req, res) => {
-  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const { sku, oem_codes } = req.body;
-  if (!sku || !Array.isArray(oem_codes) || oem_codes.length === 0)
-    return res.status(400).json({ error: 'sku and oem_codes required' });
-
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-
-    // Leer OEM codes actuales
-    const row = await client.query(
-      'SELECT oem_codes FROM elimfilters_catalog WHERE sku = $1', [sku]
-    );
-    if (row.rows.length === 0) return res.status(404).json({ error: 'SKU not found' });
-
-    const existing = row.rows[0].oem_codes || [];
-    const existingKeys = new Set(
-      existing.map(e => `${(e.manufacturer||'').toUpperCase()}|${(e.part_number||'').toUpperCase().replace(/[^A-Z0-9]/g,'')}`)
-    );
-
-    // Solo agregar los que no existen
-    const toAdd = oem_codes.filter(o => {
-      const key = `${(o.manufacturer||'').toUpperCase()}|${(o.part_number||'').toUpperCase().replace(/[^A-Z0-9]/g,'')}`;
-      return !existingKeys.has(key);
-    });
-
-    if (toAdd.length === 0) return res.json({ status: 'no_new_codes', added: 0, sku });
-
-    const merged = [...existing, ...toAdd];
-    await client.query(
-      'UPDATE elimfilters_catalog SET oem_codes = $1::jsonb WHERE sku = $2',
-      [JSON.stringify(merged), sku]
-    );
-
-    res.json({ status: 'ok', added: toAdd.length, total: merged.length, sku });
-  } catch (err) {
-    console.error('[enrich/oem-codes]', err.message);
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ─── GET /api/catalog/fg-parts ───────────────────────────────────────────────
-// Returns {sku, part_number} for Fleetguard products by SKU prefix.
-// Query: ?prefix=EL8  or  ?prefix=EL8,EH6,EF9
-app.get('/api/catalog/fg-parts', async (req, res) => {
-  const prefixes = (req.query.prefix || '').split(',').map(p => p.trim().toUpperCase()).filter(Boolean);
-  if (!prefixes.length) return res.status(400).json({ error: 'prefix required' });
-
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    const conditions = prefixes.map((p, i) => `left(sku,3) = $${i+1}`).join(' OR ');
-    const result = await client.query(
-      `SELECT sku, codigo_base AS part_number
-       FROM elimfilters_catalog
-       WHERE sub_type ILIKE '%Fleetguard%'
-         AND sku IS NOT NULL AND codigo_base IS NOT NULL
-         AND (${conditions})
-       ORDER BY sku`,
-      prefixes
-    );
-    res.json({ count: result.rowCount, parts: result.rows });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ─── POST /api/enrich/brand-crossrefs-batch ──────────────────────────────────
-// Appends brand_crossrefs entries for multiple SKUs in one call.
-// Body: { key, updates: [{sku, brand, codes: ["LF3620", ...]}] }
-// Append-only: never removes existing entries.
-app.post('/api/enrich/brand-crossrefs-batch', async (req, res) => {
-  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const { updates } = req.body;
-  if (!Array.isArray(updates) || !updates.length)
-    return res.status(400).json({ error: 'updates array required' });
-
-  const client = new Client(dbConfig);
-  try {
-    await client.connect();
-    let updated = 0, skipped = 0;
-    for (const u of updates) {
-      const { sku, brand, codes } = u;
-      if (!sku || !brand || !Array.isArray(codes) || !codes.length) { skipped++; continue; }
-      const brandKey = brand.toUpperCase();
-      const row = await client.query(
-        `SELECT brand_crossrefs FROM elimfilters_catalog WHERE sku = $1`, [sku]
-      );
-      if (!row.rows.length) { skipped++; continue; }
-      const existing = row.rows[0].brand_crossrefs || {};
-      const prev = existing[brandKey] || [];
-      const prevSet = new Set(prev.map(c => c.toUpperCase().replace(/[^A-Z0-9]/g, '')));
-      const toAdd = codes.filter(c => !prevSet.has(c.toUpperCase().replace(/[^A-Z0-9]/g, '')));
-      if (!toAdd.length) { skipped++; continue; }
-      const merged = { ...existing, [brandKey]: [...prev, ...toAdd] };
-      await client.query(
-        `UPDATE elimfilters_catalog SET brand_crossrefs = $1::jsonb WHERE sku = $2`,
-        [JSON.stringify(merged), sku]
-      );
-      updated++;
-    }
-    res.json({ success: true, updated, skipped });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
-
-// ─── POST /api/catalog/merge-fg-into-don ─────────────────────────────────────
-// Merges Fleetguard records into matched Donaldson records, then deletes the FG
-// duplicates. Safe: runs in a transaction, supports dry_run=true preview.
-// Body: { key, dry_run: true|false }
-app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
-  const { key, dry_run = true } = req.body || {};
-  if (key !== 'elim2026') return res.status(401).json({ error: 'unauthorized' });
-
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  await client.connect();
-  try {
-    // Find all (don_sku, fg_sku) pairs via competitor_codes
-    const pairsRes = await client.query(`
-      SELECT d.sku AS don_sku,
-             elem->>'linked_sku'    AS fg_sku,
-             elem->>'part_number'   AS fg_part
-      FROM elimfilters_catalog d,
-           jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
-      WHERE elem->>'brand' = 'FLEETGUARD'
-        AND elem->>'linked_sku' IS NOT NULL
-        AND elem->>'linked_sku' <> ''
-    `);
-    const pairs     = pairsRes.rows;
-    const fg_skus   = [...new Set(pairs.map(p => p.fg_sku))];
-    const don_count = new Set(pairs.map(p => p.don_sku)).size;
-
-    if (dry_run) {
-      return res.json({
-        dry_run: true,
-        pairs_found:      pairs.length,
-        don_to_enrich:    don_count,
-        fg_to_delete:     fg_skus.length,
-        sample_pairs:     pairs.slice(0, 5)
-      });
-    }
-
-    await client.query('BEGIN');
-
-    // ── Step 1: merge brand_crossrefs from FG into DON ──────────────────────
-    const r1 = await client.query(`
-      WITH pairs AS (
-        SELECT d.sku AS don_sku, elem->>'linked_sku' AS fg_sku
-        FROM elimfilters_catalog d,
-             jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
-        WHERE elem->>'brand' = 'FLEETGUARD'
-          AND elem->>'linked_sku' IS NOT NULL AND elem->>'linked_sku' <> ''
-      ),
-      fg_expanded AS (
-        SELECT p.don_sku, kv.k AS brand, jsonb_array_elements_text(kv.v) AS code
-        FROM pairs p
-        JOIN elimfilters_catalog f ON f.sku = p.fg_sku,
-             jsonb_each(COALESCE(f.brand_crossrefs,'{}')) kv(k,v)
-      ),
-      fg_by_brand AS (
-        SELECT don_sku, brand, jsonb_agg(DISTINCT code) AS codes
-        FROM fg_expanded GROUP BY don_sku, brand
-      ),
-      fg_obj AS (
-        SELECT don_sku, jsonb_object_agg(brand, codes) AS fg_refs
-        FROM fg_by_brand GROUP BY don_sku
-      ),
-      merged AS (
-        SELECT d.sku,
-          (SELECT jsonb_object_agg(b, jsonb_agg(DISTINCT c ORDER BY c))
-           FROM (
-             SELECT key AS b, jsonb_array_elements_text(value) AS c
-             FROM jsonb_each(COALESCE(d.brand_crossrefs,'{}'))
-             UNION ALL
-             SELECT key AS b, jsonb_array_elements_text(value) AS c
-             FROM jsonb_each(COALESCE(m.fg_refs,'{}'))
-           ) x GROUP BY b
-          ) AS new_refs
-        FROM elimfilters_catalog d
-        JOIN fg_obj m ON m.don_sku = d.sku
-      )
-      UPDATE elimfilters_catalog t
-      SET brand_crossrefs = m.new_refs
-      FROM merged m WHERE t.sku = m.sku
-      RETURNING t.sku
-    `);
-
-    // ── Step 2: merge oem_codes from FG into DON ────────────────────────────
-    const r2 = await client.query(`
-      WITH pairs AS (
-        SELECT d.sku AS don_sku, elem->>'linked_sku' AS fg_sku
-        FROM elimfilters_catalog d,
-             jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) elem
-        WHERE elem->>'brand' = 'FLEETGUARD'
-          AND elem->>'linked_sku' IS NOT NULL AND elem->>'linked_sku' <> ''
-      ),
-      fg_oem AS (
-        SELECT p.don_sku, jsonb_agg(elem) AS oems
-        FROM pairs p
-        JOIN elimfilters_catalog f ON f.sku = p.fg_sku,
-             jsonb_array_elements(COALESCE(f.oem_codes,'[]'::jsonb)) elem
-        GROUP BY p.don_sku
-      )
-      UPDATE elimfilters_catalog t
-      SET oem_codes = (
-        SELECT jsonb_agg(DISTINCT elem ORDER BY elem::text)
-        FROM jsonb_array_elements(
-          COALESCE(t.oem_codes,'[]'::jsonb) || fo.oems
-        ) elem
-      )
-      FROM fg_oem fo
-      WHERE t.sku = fo.don_sku
-      RETURNING t.sku
-    `);
-
-    // ── Step 3: delete merged FG records ────────────────────────────────────
-    const r3 = await client.query(
-      `DELETE FROM elimfilters_catalog WHERE sku = ANY($1) RETURNING sku`,
-      [fg_skus]
-    );
-
-    await client.query('COMMIT');
-
-    res.json({
-      dry_run:         false,
-      refs_merged:     r1.rowCount,
-      oem_merged:      r2.rowCount,
-      fg_deleted:      r3.rowCount,
-      sample_deleted:  r3.rows.slice(0, 5).map(r => r.sku)
-    });
-
-  } catch (err) {
-    await client.query('ROLLBACK').catch(() => {});
-    console.error('merge-fg-into-don error:', err);
-    res.status(500).json({ error: err.message });
-  } finally {
-    await client.end();
-  }
-});
 
 // ─── OEM Resolution Engine ───────────────────────────────────────────────────
 
@@ -3906,40 +4183,119 @@ app.post('/api/oem/mann-load-batch', async (req, res) => {
 
 app.post('/api/oem/build-donaldson-matches', async (req, res) => {
   if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const segment = req.body.segment ? req.body.segment.toUpperCase() : null;
+  const segFilter = segment ? `AND m.segment = '${segment}'` : '';
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query(`DROP TABLE IF EXISTS mann_donaldson_matches`);
     await client.query(`
       CREATE TABLE mann_donaldson_matches AS
-      SELECT DISTINCT
-        m.sku            AS mann_part,
-        m.segment        AS mann_segment,
-        d.don_part       AS donaldson_part,
-        d.elimfilters_sku,
-        m.oem_normalized,
-        m.oem_brand
-      FROM mann_oem_clean m
-      JOIN (
-        SELECT p.sku AS elimfilters_sku, p.part_number AS don_part,
-               UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
-        FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
-        WHERE p.oem_codes IS NOT NULL
-          AND jsonb_typeof(p.oem_codes) = 'array'
-          AND (elem->>'part_number') IS NOT NULL
-          AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
-          AND p.codigo_base ~ '^(P|BF|PA|DT|PX|AF1|AF2|AF3|AF4|AF5)[0-9]'
-      ) d ON d.oem_normalized = m.oem_normalized
-      WHERE length(m.oem_normalized) >= 4
+
+      WITH raw_matches AS (
+
+        -- Pathway A: match por código OEM compartido
+        SELECT DISTINCT
+          REPLACE(m.sku, '_MANN-FILTER', '') AS mann_part,
+          m.segment        AS mann_segment,
+          d.don_part       AS donaldson_part,
+          d.elimfilters_sku,
+          m.oem_normalized,
+          m.oem_brand,
+          'oem_code'       AS match_method
+        FROM mann_oem_clean m
+        JOIN (
+          SELECT p.sku AS elimfilters_sku, p.codigo_base AS don_part,
+                 UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
+          FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
+          WHERE p.oem_codes IS NOT NULL
+            AND jsonb_typeof(p.oem_codes) = 'array'
+            AND (elem->>'part_number') IS NOT NULL
+            AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
+            AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
+        ) d ON d.oem_normalized = m.oem_normalized
+        WHERE length(m.oem_normalized) >= 4
+        ${segFilter}
+
+        UNION
+
+        -- Pathway B: match directo via brand_crossrefs['MANN']
+        SELECT DISTINCT
+          REPLACE(m.sku, '_MANN-FILTER', '') AS mann_part,
+          m.segment        AS mann_segment,
+          p.codigo_base    AS donaldson_part,
+          p.sku            AS elimfilters_sku,
+          NULL             AS oem_normalized,
+          'MANN'           AS oem_brand,
+          'brand_crossref' AS match_method
+        FROM elimfilters_catalog p
+        CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+        JOIN mann_oem_clean m
+          ON UPPER(REGEXP_REPLACE(REPLACE(m.sku, '_MANN-FILTER', ''), '[\\s\\-/\\.()]', '', 'g'))
+           = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
+        WHERE p.brand_crossrefs ? 'MANN'
+          AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
+          AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
+        ${segFilter ? segFilter.replace('m.segment', 'm.segment') : ''}
+      ),
+
+      -- Votación por segmento: cada elimfilters_sku vota según cuántos matches tiene por segmento.
+      -- El segmento con más votos gana y determina si el producto es HD o LD.
+      -- Regla: HD > LD > MIXED en caso de empate exacto (sesgo industrial).
+      segment_votes AS (
+        SELECT
+          elimfilters_sku,
+          COUNT(*) FILTER (WHERE mann_segment = 'HD')    AS votes_hd,
+          COUNT(*) FILTER (WHERE mann_segment = 'LD')    AS votes_ld,
+          COUNT(*) FILTER (WHERE mann_segment = 'MIXED') AS votes_mixed
+        FROM raw_matches
+        GROUP BY elimfilters_sku
+      ),
+      segment_winner AS (
+        SELECT
+          elimfilters_sku,
+          votes_hd,
+          votes_ld,
+          votes_mixed,
+          CASE
+            WHEN votes_hd  >= votes_ld AND votes_hd  >= votes_mixed THEN 'HD'
+            WHEN votes_ld  >  votes_hd AND votes_ld  >= votes_mixed THEN 'LD'
+            ELSE 'MIXED'
+          END AS assigned_segment
+        FROM segment_votes
+      )
+
+      SELECT
+        r.mann_part,
+        r.mann_segment,
+        r.donaldson_part,
+        r.elimfilters_sku,
+        r.oem_normalized,
+        r.oem_brand,
+        r.match_method,
+        sw.assigned_segment,
+        sw.votes_hd,
+        sw.votes_ld,
+        sw.votes_mixed
+      FROM raw_matches r
+      JOIN segment_winner sw ON sw.elimfilters_sku = r.elimfilters_sku
     `);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(donaldson_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(elimfilters_sku)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(oem_normalized)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(match_method)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(assigned_segment)`);
     const { rows } = await client.query(`
-      SELECT COUNT(*)                        AS total,
-             COUNT(DISTINCT mann_part)       AS mann_u,
-             COUNT(DISTINCT donaldson_part)  AS don_u
+      SELECT
+        COUNT(*)                                                                  AS total,
+        COUNT(DISTINCT mann_part)                                                 AS mann_u,
+        COUNT(DISTINCT donaldson_part)                                            AS don_u,
+        COUNT(*) FILTER (WHERE match_method = 'oem_code')                        AS via_oem_code,
+        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')                  AS via_brand_crossref,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'HD')   AS productos_hd,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'LD')   AS productos_ld,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'MIXED') AS productos_mixed
       FROM mann_donaldson_matches
     `);
     res.json({ success: true, ...rows[0] });
@@ -3953,6 +4309,8 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
 
 app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
   if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const segment = req.body.segment ? req.body.segment.toUpperCase() : null;
+  const segFilter = segment ? `AND m.segment = '${segment}'` : '';
   const client = new Client(dbConfig);
   try {
     await client.connect();
@@ -3968,7 +4326,7 @@ app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
         m.oem_brand
       FROM mann_oem_clean m
       JOIN (
-        SELECT p.sku AS elimfilters_sku, p.part_number AS fg_part,
+        SELECT p.sku AS elimfilters_sku, p.codigo_base AS fg_part,
                UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
         FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
         WHERE p.oem_codes IS NOT NULL
@@ -3978,15 +4336,14 @@ app.post('/api/oem/build-fleetguard-matches', async (req, res) => {
           AND p.codigo_base ~ '^(LF|HF|FF|FS|WF|AF0|CV|CC|SCA|RS)[0-9]'
       ) f ON f.oem_normalized = m.oem_normalized
       WHERE length(m.oem_normalized) >= 4
+      ${segFilter}
     `);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(fleetguard_part)`);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(elimfilters_sku)`);
     await client.query(`CREATE INDEX ON mann_fleetguard_matches(oem_normalized)`);
     const { rows } = await client.query(`
-      SELECT COUNT(*)                          AS total,
-             COUNT(DISTINCT mann_part)         AS mann_u,
-             COUNT(DISTINCT fleetguard_part)   AS fg_u
+      SELECT COUNT(*) AS total, COUNT(DISTINCT mann_part) AS mann_u, COUNT(DISTINCT fleetguard_part) AS fg_u
       FROM mann_fleetguard_matches
     `);
     res.json({ success: true, ...rows[0] });
@@ -4006,6 +4363,8 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
     await client.query(`DROP TABLE IF EXISTS cross_reference_master`);
     await client.query(`
       CREATE TABLE cross_reference_master AS
+
+      -- Bloque 1: matches via código OEM compartido (Donaldson + Fleetguard)
       WITH base AS (
         SELECT DISTINCT sku AS mann_part, segment, oem_brand, oem_normalized
         FROM mann_oem_clean
@@ -4018,6 +4377,7 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
           SELECT DISTINCT ON (mann_part, oem_normalized)
             mann_part, donaldson_part, oem_normalized
           FROM mann_donaldson_matches
+          WHERE match_method = 'oem_code'
           ORDER BY mann_part, oem_normalized, donaldson_part
         ) md ON md.mann_part = b.mann_part AND md.oem_normalized = b.oem_normalized
       ),
@@ -4031,30 +4391,269 @@ app.post('/api/oem/build-cross-reference-master', async (req, res) => {
           FROM mann_fleetguard_matches
           ORDER BY mann_part, oem_normalized, fleetguard_part
         ) mf ON mf.mann_part = w.mann_part AND mf.oem_normalized = w.oem_normalized
+      ),
+      oem_matches AS (
+        SELECT oem_normalized, oem_brand, mann_part, donaldson_part,
+               fleetguard_part, NULL::text AS elimfilters_sku, segment,
+               'oem_code'::text AS match_method
+        FROM with_fg
+        WHERE donaldson_part IS NOT NULL OR fleetguard_part IS NOT NULL
+      ),
+
+      -- Bloque 2: matches directos via brand_crossrefs['MANN'] (sin oem_normalized)
+      direct_matches AS (
+        SELECT
+          NULL::text        AS oem_normalized,
+          'MANN'            AS oem_brand,
+          md.mann_part,
+          md.donaldson_part,
+          NULL::text        AS fleetguard_part,
+          md.elimfilters_sku,
+          m.segment,
+          'brand_crossref'::text AS match_method
+        FROM mann_donaldson_matches md
+        JOIN mann_oem_clean m ON m.sku = md.mann_part
+        WHERE md.match_method = 'brand_crossref'
+          -- excluir si ya está cubierto por un oem_code match para este mann_part
+          AND NOT EXISTS (
+            SELECT 1 FROM oem_matches om
+            WHERE om.mann_part      = md.mann_part
+              AND om.donaldson_part = md.donaldson_part
+          )
       )
-      SELECT oem_normalized, oem_brand, mann_part, donaldson_part,
-             fleetguard_part, NULL::text AS elimfilters_sku, segment
-      FROM with_fg
-      WHERE donaldson_part IS NOT NULL OR fleetguard_part IS NOT NULL
+
+      SELECT * FROM oem_matches
+      UNION ALL
+      SELECT * FROM direct_matches
     `);
     await client.query(`CREATE INDEX ON cross_reference_master(oem_normalized)`);
     await client.query(`CREATE INDEX ON cross_reference_master(mann_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(donaldson_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(fleetguard_part)`);
     await client.query(`CREATE INDEX ON cross_reference_master(segment)`);
+    await client.query(`CREATE INDEX ON cross_reference_master(match_method)`);
     const { rows } = await client.query(`
-      SELECT COUNT(*)                                                                          AS total,
-             COUNT(DISTINCT mann_part)                                                         AS mann_u,
-             COUNT(DISTINCT donaldson_part)  FILTER (WHERE donaldson_part  IS NOT NULL)        AS don_u,
-             COUNT(DISTINCT fleetguard_part) FILTER (WHERE fleetguard_part IS NOT NULL)        AS fg_u,
-             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NOT NULL) AS don_and_fg,
-             COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NULL)     AS don_only,
-             COUNT(*) FILTER (WHERE donaldson_part IS NULL     AND fleetguard_part IS NOT NULL) AS fg_only
+      SELECT
+        COUNT(*)                                                                          AS total,
+        COUNT(DISTINCT mann_part)                                                         AS mann_u,
+        COUNT(DISTINCT donaldson_part)  FILTER (WHERE donaldson_part  IS NOT NULL)        AS don_u,
+        COUNT(DISTINCT fleetguard_part) FILTER (WHERE fleetguard_part IS NOT NULL)        AS fg_u,
+        COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NOT NULL) AS don_and_fg,
+        COUNT(*) FILTER (WHERE donaldson_part IS NOT NULL AND fleetguard_part IS NULL)     AS don_only,
+        COUNT(*) FILTER (WHERE donaldson_part IS NULL     AND fleetguard_part IS NOT NULL) AS fg_only,
+        COUNT(*) FILTER (WHERE match_method = 'oem_code')                                 AS via_oem_code,
+        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')                           AS via_brand_crossref
       FROM cross_reference_master
     `);
     res.json({ success: true, ...rows[0] });
   } catch (err) {
     console.error('[oem/build-cross-reference-master]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/oem/segment-stats
+app.get('/api/oem/segment-stats', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const { rows } = await client.query(`
+      SELECT
+        COALESCE(segment, 'SIN SEGMENTO') AS segment,
+        COUNT(*)                           AS oem_rows,
+        COUNT(DISTINCT sku)                AS partes_unicas
+      FROM mann_oem_clean
+      GROUP BY segment
+      ORDER BY oem_rows DESC
+    `);
+    const total = rows.reduce((s, r) => s + parseInt(r.oem_rows), 0);
+    res.json({ success: true, total_oem_rows: total, breakdown: rows });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/oem/ld-breakdown
+app.get('/api/oem/ld-breakdown', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const byBrand = await client.query(`
+      SELECT
+        COALESCE(oem_brand, 'SIN MARCA') AS oem_brand,
+        COUNT(*)                          AS oem_rows,
+        COUNT(DISTINCT sku)               AS partes_unicas
+      FROM mann_oem_clean
+      WHERE segment = 'LD'
+      GROUP BY oem_brand
+      ORDER BY oem_rows DESC
+      LIMIT 30
+    `);
+    const byPrefix = await client.query(`
+      SELECT
+        LEFT(sku, 2)        AS prefijo,
+        COUNT(*)            AS oem_rows,
+        COUNT(DISTINCT sku) AS partes_unicas
+      FROM mann_oem_clean
+      WHERE segment = 'LD'
+      GROUP BY LEFT(sku, 2)
+      ORDER BY partes_unicas DESC
+    `);
+    res.json({
+      success: true,
+      total_ld_rows: 8879,
+      por_marca_oem: byBrand.rows,
+      por_prefijo_mann: byPrefix.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/oem/pathway-b-debug
+// Diagnostics: prueba directa del JOIN de Pathway B
+app.get('/api/oem/pathway-b-debug', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Muestra de SKUs en mann_oem_clean
+    const mannSkus = await client.query(`
+      SELECT DISTINCT sku, segment
+      FROM mann_oem_clean
+      ORDER BY sku
+      LIMIT 20
+    `);
+
+    // Muestra de códigos en brand_crossrefs['MANN']
+    const mannRefs = await client.query(`
+      SELECT p.sku AS elim_sku, p.codigo_base,
+             mann_ref.code AS mann_code,
+             UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g')) AS mann_code_norm
+      FROM elimfilters_catalog p
+      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+      WHERE p.brand_crossrefs ? 'MANN'
+      LIMIT 20
+    `);
+
+    // Prueba directa del JOIN (con fix _MANN-FILTER)
+    const joinTest = await client.query(`
+      SELECT COUNT(*) AS pathway_b_count
+      FROM elimfilters_catalog p
+      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+      JOIN mann_oem_clean m
+        ON UPPER(REGEXP_REPLACE(REPLACE(m.sku, '_MANN-FILTER', ''), '[\\s\\-/\\.()]', '', 'g'))
+         = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
+      WHERE p.brand_crossrefs ? 'MANN'
+        AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
+    `);
+
+    res.json({
+      success: true,
+      pathway_b_direct_count: parseInt(joinTest.rows[0].pathway_b_count),
+      muestra_mann_oem_clean_skus: mannSkus.rows,
+      muestra_brand_crossrefs_mann: mannRefs.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/oem/brand-crossref-check
+// Diagnostics: ¿tiene el catálogo entradas brand_crossrefs['MANN']?
+app.get('/api/oem/brand-crossref-check', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Cuántos productos tienen brand_crossrefs ? 'MANN'
+    const countMann = await client.query(`
+      SELECT COUNT(*) AS productos_con_mann
+      FROM elimfilters_catalog
+      WHERE brand_crossrefs ? 'MANN'
+    `);
+
+    // Muestra de los primeros 5 con sus brand_crossrefs
+    const sample = await client.query(`
+      SELECT sku, codigo_base, technology,
+             brand_crossrefs -> 'MANN' AS mann_refs
+      FROM elimfilters_catalog
+      WHERE brand_crossrefs ? 'MANN'
+      LIMIT 5
+    `);
+
+    // Qué claves existen en brand_crossrefs (top 20)
+    const keys = await client.query(`
+      SELECT key, COUNT(*) AS productos
+      FROM elimfilters_catalog,
+           jsonb_object_keys(COALESCE(brand_crossrefs, '{}'::jsonb)) AS key
+      WHERE brand_crossrefs IS NOT NULL
+        AND brand_crossrefs <> '{}'::jsonb
+      GROUP BY key
+      ORDER BY productos DESC
+      LIMIT 20
+    `);
+
+    res.json({
+      success: true,
+      productos_con_mann: parseInt(countMann.rows[0].productos_con_mann),
+      muestra: sample.rows,
+      claves_en_brand_crossrefs: keys.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// GET /api/oem/hd-parts
+// Returns distinct Donaldson and Fleetguard part numbers from cross_reference_master
+app.get('/api/oem/hd-parts', async (req, res) => {
+  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  try {
+    await client.connect();
+    const brand = (req.query.brand || '').toLowerCase();
+
+    let donParts = [], fgParts = [];
+
+    if (!brand || brand === 'donaldson') {
+      const { rows } = await client.query(`
+        SELECT DISTINCT donaldson_part AS part, mann_part
+        FROM cross_reference_master
+        WHERE donaldson_part IS NOT NULL
+        ORDER BY donaldson_part
+      `);
+      donParts = rows;
+    }
+
+    if (!brand || brand === 'fleetguard') {
+      const { rows } = await client.query(`
+        SELECT DISTINCT fleetguard_part AS part, mann_part
+        FROM cross_reference_master
+        WHERE fleetguard_part IS NOT NULL
+        ORDER BY fleetguard_part
+      `);
+      fgParts = rows;
+    }
+
+    res.json({
+      success:      true,
+      don_count:    donParts.length,
+      fg_count:     fgParts.length,
+      donaldson:    donParts,
+      fleetguard:   fgParts,
+    });
+  } catch (err) {
+    console.error('[oem/hd-parts]', err.message);
     res.status(500).json({ error: err.message });
   } finally {
     await client.end();

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -46,9 +46,10 @@ const FAQS = [
 export default function FuelEfficiencyPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Navigation */}
-      <Link href="/knowledge-system/fleet" style={{
+      <Link href="/knowledge-system/fleet"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -466,6 +467,39 @@ export default function FuelEfficiencyPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Filtration and Fuel Efficiency',
+        description: 'Fuel consumption in industrial equipment is not a fixed parameter. Contamination of fuel, air, and lubrication systems creates measurable degradation in thermodynamic efficiency that compounds across fleet operating hours.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'fuel efficiency', 'diesel fuel filtration', 'injector wear', 'specific fuel consumption', 'ASTM D975'],
+        about: { '@type': 'Thing', name: 'Filtration and Fuel Efficiency', description: 'Contamination in fuel, air intake, and engine oil systems drives measurable specific fuel consumption increases that compound across industrial fleet operating hours.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Filtration and Fuel Efficiency', item: 'https://elimfilters.com/knowledge-system/fleet/fuel-efficiency' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How does fuel contamination affect combustion efficiency at the injector level?', acceptedAnswer: { '@type': 'Answer', text: 'Modern high-pressure common-rail injectors operate at pressures between 1,600 and 2,500 bar with spray orifice diameters of 100 to 200 microns. Particles above 10 microns that pass through fuel filtration cause three failure modes: erosive wear of nozzle orifice geometry which enlarges spray holes and reduces atomization quality; abrasive wear of control valve seats causing internal leakage; and nozzle coking from combustion deposits accelerated by water contamination. Each failure mode shifts fuel delivery quantity and timing from calibrated values, increasing specific fuel consumption by 1 to 4% per injector affected.' } },
+          { '@type': 'Question', name: 'What is the measurable relationship between air filter restriction and fuel consumption?', acceptedAnswer: { '@type': 'Answer', text: 'Engine volumetric efficiency decreases approximately 1% for every 25 mbar increase in air intake restriction above the clean-element baseline. A typical diesel engine operating at 200 mbar restriction (a partially loaded filter) may lose 3 to 5% volumetric efficiency compared to a fresh element. The engine management system compensates by increasing fuel quantity to maintain power output, directly increasing specific fuel consumption. Operating equipment with a restriction indicator alarm active - typically above 375 mbar - can increase fuel consumption by 6 to 10% depending on engine load profile.' } },
+          { '@type': 'Question', name: 'Does water contamination in diesel fuel affect consumption beyond injector damage?', acceptedAnswer: { '@type': 'Answer', text: 'Water in diesel fuel affects combustion thermodynamics independently of mechanical damage. Free water droplets entering the combustion chamber consume heat energy during vaporization, reducing the thermal energy available for power stroke work. This effect becomes measurable above 500 ppm water concentration. Additionally, water contamination accelerates microbial growth in fuel storage systems - bacterial and fungal colonies produce biomass that blocks filter elements at accelerated rates, increasing filter change frequency and causing unexpected restriction events that force engines into derated operating modes.' } },
+          { '@type': 'Question', name: 'How should filtration specifications change for biodiesel blends compared to petroleum diesel?', acceptedAnswer: { '@type': 'Answer', text: 'Biodiesel blends above B10 (10% biodiesel content) require more aggressive water management due to biodiesel\'s higher hygroscopicity. Biodiesel absorbs atmospheric moisture at rates 3 to 5 times higher than petroleum diesel, making water saturation at the fuel-air interface a chronic condition rather than an episodic one. Filter elements with higher water absorption capacity and more frequent separator bowl drainage are required. Additionally, biodiesel degrades elastomeric seals in older filter housings, so seal material compatibility must be verified before transitioning to higher blend ratios.' } },
+        ],
+      }) }} />
     </main>
   );
 }

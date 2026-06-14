@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -29,7 +29,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS® fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
+      content: 'ELIMFILTERS fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
     }
   ];
 
@@ -58,9 +58,10 @@ export default function DieselWaterContaminationPage() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Back Button */}
-      <Link href="/knowledge-system/contamination" style={{
+      <Link href="/knowledge-system/contamination"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -331,6 +332,38 @@ export default function DieselWaterContaminationPage() {
         </motion.div>
       </section>
 
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Diesel Water Contamination',
+        description: 'Water contamination in diesel fuel causes injector stiction, microbial growth, and fuel system corrosion. Above 500 ppm water concentration, microbial colonies establish at the fuel-water interface, and above 1,000 ppm visible biomass accumulation occurs within days.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'MACROCORE', 'NANOFORCE'],
+        about: { '@type': 'Thing', name: 'Diesel Water Contamination', description: 'Water ingress failure mechanism in diesel fuel systems causing injector precision degradation, corrosion, and microbial colonization through atmospheric moisture, condensation, and handling.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Contamination', item: 'https://elimfilters.com/knowledge-system/contamination' },
+          { '@type': 'ListItem', position: 4, name: 'Diesel Water Contamination', item: 'https://elimfilters.com/knowledge-system/contamination/diesel-water' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How do I know if my fuel has water contamination?', acceptedAnswer: { '@type': 'Answer', text: 'Visual indicators include hazy or cloudy appearance in clear sample bottles (emulsified water), sediment at tank bottom (free water settling), or a distinct water layer if fuel is left in a glass overnight. Operational symptoms include hard starting, injector rough idle, smoke during warm-up, and reduced fuel economy. The only accurate measurement is Karl Fischer titration (ASTM D6304), performed by a certified fuel lab. Field test kits exist (paste-based water detection) but are only qualitative; they confirm water presence but not concentration. Total water content must be measured monthly in high-exposure applications (marine, outdoor storage, extreme climates).' } },
+          { '@type': 'Question', name: 'Can water-contaminated fuel be cleaned or treated in-tank?', acceptedAnswer: { '@type': 'Answer', text: 'Partial treatment is possible: chemical demulsifiers and water-removal additives can coalesce emulsified water into free water, allowing gravity separation to a tank sump within 24-48 hours for removal via drain valve. However, this method only recovers 40-60% of emulsified water and does not address microbial contamination already established as biofilm. Complete remediation requires tank bottom sediment removal, high-capacity fuel filter pass-through with water-removal cartridges, biocide treatment, and verification testing every 100 hours until water content stabilizes below specification.' } },
+          { '@type': 'Question', name: 'What is the difference between free water and emulsified water?', acceptedAnswer: { '@type': 'Answer', text: 'Free water is liquid water that separates from fuel due to density difference and gravity; it collects at tank bottoms and can be visually detected and removed via drain valves. Emulsified water is suspended as microscopic droplets (1-10 microns) throughout the fuel matrix, stabilized by fuel surfactants and additives; it appears as haze or cloudiness and cannot be separated by gravity. Sedimentary water is water that has reacted with fuel additives and degradation products, forming a stable gel-like suspension. Free water is easily removed (drain method, coalescent filtration). Emulsified water requires chemical demulsifiers or high-shear coalescent filtration to convert to free water before removal.' } },
+          { '@type': 'Question', name: 'How does microbial growth affect fuel systems?', acceptedAnswer: { '@type': 'Answer', text: 'Microbes thrive at water-fuel interfaces where moisture provides the growth medium. Bacterial colonies (Pseudomonas, Bacillus) produce enzymes that degrade fuel hydrocarbons into organic acids, lowering fuel pH and accelerating corrosion. Fungal hyphae (Aspergillus, Cladosporium) penetrate fuel filter media, causing rapid plugging within days. Biofilm accumulation forms a slime layer on tank interior and fuel system components, causing fuel flow restriction and injector stiction. Biocide treatment kills planktonic (free-floating) microbes within hours but is less effective against established biofilm colonies.' } },
+        ],
+      }) }} />
       <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage</p>

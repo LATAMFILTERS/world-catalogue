@@ -25,6 +25,14 @@ interface CategoryPageProps {
     schemas?: object[];
     ctaTitle?: string;
     ctaDescription?: string;
+    protectionLabel?: string;
+    videoSectionName?: string;
+    protectedAssets?: string[];
+    protectionSystems?: string[];
+    techFocus?: string;
+    knowledgeLinks?: { label: string; href?: string }[];
+    preCtaQuote?: { line1: string; line2: string };
+    operationalObjective?: { headline: string; lines: string[] };
   };
   industryLinks?: {
     contamination?: { href: string; label: string }[];
@@ -216,6 +224,27 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           </section>
         )}
 
+        {/* Operational Objective */}
+        {geoData?.operationalObjective && (
+          <section style={{ padding: '2.5rem 2rem', background: 'rgba(255,241,45,0.03)', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <AnimateIn>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '0.75rem' }}>
+                  // OPERATIONAL OBJECTIVE
+                </p>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.15rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
+                  {geoData.operationalObjective.headline}
+                </p>
+                {geoData.operationalObjective.lines.map((line, i) => (
+                  <p key={i} style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.5rem' : 0 }}>
+                    {line}
+                  </p>
+                ))}
+              </AnimateIn>
+            </div>
+          </section>
+        )}
+
         {/* Video Section */}
         {industryVideo && (
           <section
@@ -239,7 +268,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         color: '#FFF12D',
                       }}
                     >
-                      {item.name.toUpperCase()} ASSET PROTECTION SYSTEM
+                      {geoData?.videoSectionName ?? item.name.toUpperCase()} ASSET PROTECTION {geoData?.protectionLabel ?? 'SYSTEM'}
                     </span>
                   </div>
                   <h3
@@ -254,6 +283,20 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   >
                     ENGINEERED FOR {item.name.toUpperCase()}
                   </h3>
+                  {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
+                    <div style={{ marginBottom: '1.5rem' }}>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '0.6rem' }}>
+                        PROTECTED ASSETS
+                      </p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        {geoData.protectedAssets.map((asset) => (
+                          <span key={asset} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
+                            · {asset}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {item.videoBody ? (
                     item.videoBody.map((para, i) => (
                       <p
@@ -280,7 +323,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           marginBottom: '1rem',
                         }}
                       >
-                        The protection media is the core of every ELIMFILTERS® system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
+                        The protection media is the core of every ELIMFILTERS system. In {item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Our proprietary hybrid media formulation combines synthetic and cellulose fibers optimized through AI-assisted engineering models. This structure provides high contaminant retention capacity while maintaining airflow stability, system cleanliness, and protection performance throughout extended service intervals.
                       </p>
                       <p
                         style={{
@@ -290,7 +333,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontFamily: 'Titillium Web, sans-serif',
                         }}
                       >
-                        Every micron of contamination matters. ELIMFILTERS® systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
+                        Every micron of contamination matters. ELIMFILTERS systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
                       </p>
                     </>
                   )}
@@ -454,7 +497,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   lineHeight: 1.8,
                 }}
               >
-                {item.engineeringBody ?? 'ELIMFILTERS® engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.'}
+                {item.engineeringBody ?? 'ELIMFILTERS engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.'}
               </p>
             </AnimateIn>
 
@@ -581,7 +624,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   marginBottom: '2rem',
                 }}
               >
-                {t('category.whyElimfilters', 'WHY ELIMFILTERS')}
+                WHY ELIMFILTERS
               </h2>
               <StaggerContainer style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {(item.benefits || [
@@ -626,6 +669,39 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 padding: '2rem',
               }}
             >
+              {geoData?.protectionSystems && geoData.protectionSystems.length > 0 && (
+                <div style={{ marginBottom: '1.75rem' }}>
+                  <h3
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontWeight: 700,
+                      fontSize: '0.72rem',
+                      letterSpacing: '0.15em',
+                      color: 'rgba(255,255,255,0.35)',
+                      textTransform: 'uppercase',
+                      marginBottom: '0.75rem',
+                    }}
+                  >
+                    Protection Systems
+                  </h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '0.25rem' }}>
+                    {geoData.protectionSystems.map((ps) => (
+                      <span
+                        key={ps}
+                        style={{
+                          fontFamily: 'Outfit, sans-serif',
+                          fontSize: '0.8rem',
+                          color: 'rgba(255,255,255,0.55)',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        · {ps}
+                      </span>
+                    ))}
+                  </div>
+                  <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.07)', margin: '1.25rem 0' }} />
+                </div>
+              )}
               <h3
                 style={{
                   fontFamily: 'Titillium Web, sans-serif',
@@ -639,9 +715,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               >
                 {t('category.technologiesIncluded', 'Technologies Included')}
               </h3>
+              {geoData?.techFocus && (
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', marginBottom: '1rem', lineHeight: 1.5 }}>
+                  {geoData.techFocus}
+                </p>
+              )}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
-                  const slug = tech.replace(/™/g, '').replace(/\//g, '-').replace(/\s+/g, '-').toLowerCase().replace(/--+/g, '-');
+                  const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
                   return (
                     <Link
                       key={tech}
@@ -655,16 +736,18 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         color: 'rgba(255,241,45,0.75)',
                         background: 'rgba(255,241,45,0.04)',
                         textDecoration: 'none',
-                        display: 'inline-block',
-                        transition: 'border-color 0.2s, color 0.2s',
+                        transition: 'border-color 0.2s, background 0.2s, color 0.2s',
+                        cursor: 'pointer',
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.6)';
-                        e.currentTarget.style.color = '#FFF12D';
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.6)';
+                        (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,241,45,0.1)';
+                        (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D';
                       }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,241,45,0.25)';
-                        e.currentTarget.style.color = 'rgba(255,241,45,0.75)';
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.25)';
+                        (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,241,45,0.04)';
+                        (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,241,45,0.75)';
                       }}
                     >
                       {tech}
@@ -676,6 +759,57 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             </AnimateIn>
           </div>
         </section>
+
+        {/* Knowledge Network */}
+        {geoData?.knowledgeLinks && geoData.knowledgeLinks.length > 0 && (
+          <section style={{ padding: '4rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <AnimateIn>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                  // KNOWLEDGE NETWORK
+                </p>
+                <h2 style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2rem' }}>
+                  Protection Systems Applied
+                </h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
+                  {geoData.knowledgeLinks.map(({ label, href }) => {
+                    const inner = (
+                      <div style={{ padding: '1rem 1.25rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>
+                        <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', display: 'block' }}>
+                          {label} {href ? '→' : ''}
+                        </span>
+                      </div>
+                    );
+                    return href ? (
+                      <Link key={label} href={href} style={{ textDecoration: 'none', display: 'block', transition: 'opacity 0.2s' }}
+                        onMouseEnter={(e) => { (e.currentTarget.querySelector('span') as HTMLElement).style.color = '#FFF12D'; }}
+                        onMouseLeave={(e) => { (e.currentTarget.querySelector('span') as HTMLElement).style.color = 'rgba(255,255,255,0.65)'; }}
+                      >{inner}</Link>
+                    ) : (
+                      <div key={label}>{inner}</div>
+                    );
+                  })}
+                </div>
+              </AnimateIn>
+            </div>
+          </section>
+        )}
+
+        {/* Pre-CTA Quote */}
+        {geoData?.preCtaQuote && (
+          <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}>
+              <AnimateIn>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                  {geoData.preCtaQuote.line1}
+                </p>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
+                  {geoData.preCtaQuote.line2}
+                </p>
+              </AnimateIn>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <CTASection

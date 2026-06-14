@@ -55,7 +55,8 @@ export default function LubeOilSystemsPage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Breadcrumb />
       {/* Navigation */}
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -336,7 +337,7 @@ export default function LubeOilSystemsPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
+          }}>06 / ELIMFILTERS TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -496,6 +497,32 @@ export default function LubeOilSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Lube / Oil Filtration Systems',
+        description: 'Lube oil filtration system engineering: ISO 16889 beta ratio, ISO 4406 cleanliness codes, particle wear mechanisms, and contamination control targets for engine and bearing protection.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['lube oil filtration', 'ISO 16889', 'ISO 4406', 'engine oil cleanliness', 'bearing protection', 'contamination control', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Lube Oil Filtration Systems', description: 'Engineering domain governing oil cleanliness in engine and hydraulic bearing circuits through ISO 4406 cleanliness codes and ISO 16889 Beta ratio filtration standards.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Lube / Oil Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

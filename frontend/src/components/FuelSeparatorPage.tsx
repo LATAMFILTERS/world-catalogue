@@ -169,7 +169,7 @@ export function FuelSeparatorPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS® fuel separators deploy a three-stage HYDROCORE™ asset protection system: the first defense layer captures sediment and large contaminants, the second protection stage forces microscopic water droplets to merge and fall into the collection chamber, and the HYDROCORE™ hydrophobic final barrier blocks any residual water from reaching the injection circuit. ISO 16332 certified — the international standard for diesel fuel water separation performance.
+                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS fuel separators deploy a three-stage HYDROCORE™ asset protection system: the first defense layer captures sediment and large contaminants, the second protection stage forces microscopic water droplets to merge and fall into the collection chamber, and the HYDROCORE™ hydrophobic final barrier blocks any residual water from reaching the injection circuit. ISO 16332 certified — the international standard for diesel fuel water separation performance.
                 </p>
 
                 <div
@@ -266,7 +266,7 @@ export function FuelSeparatorPage() {
               <div>
                 <AnimateIn direction="left" delay={0.05}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                    Entry Points — What ELIMFILTERS® Stops
+                    Entry Points — What ELIMFILTERS Stops
                   </h3>
                 </AnimateIn>
                 <StaggerContainer>

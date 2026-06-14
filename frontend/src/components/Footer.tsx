@@ -58,24 +58,15 @@ export function Footer() {
       }}
     >
       <div
+        className="footer-outer-grid"
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 40px',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '80px',
-          alignItems: 'start',
+          padding: '0 clamp(1.25rem, 5vw, 40px)',
         }}
       >
         {/* LEFT: Navigation columns */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '40px',
-          }}
-        >
+        <div className="footer-nav-grid">
           {NAV_COLUMNS.map((col) => (
             <div key={col.title}>
               <div
@@ -134,6 +125,7 @@ export function Footer() {
 
         {/* RIGHT: Social + Logo + Address */}
         <div
+          className="footer-right-col"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -202,6 +194,7 @@ export function Footer() {
 
           {/* Address */}
           <div
+            className="footer-address"
             style={{
               textAlign: 'right',
               lineHeight: '1.6',
@@ -211,7 +204,7 @@ export function Footer() {
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
                 fontSize: '12px',
-                color: '#666',
+                color: '#999',
                 letterSpacing: '1.5px',
                 textTransform: 'uppercase',
               }}
@@ -222,7 +215,7 @@ export function Footer() {
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
                 fontSize: '11px',
-                color: '#444',
+                color: '#777',
                 letterSpacing: '0.5px',
                 marginTop: '4px',
               }}

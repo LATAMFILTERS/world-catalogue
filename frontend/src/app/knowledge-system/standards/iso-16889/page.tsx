@@ -40,7 +40,8 @@ export default function ISO16889Page() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Breadcrumb />
       {/* Back Button */}
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -247,8 +248,41 @@ export default function ISO16889Page() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-16889</p>
         <p>&nbsp;&nbsp;concept_id: iso-16889-filter-testing</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'ISO 16889 — Multi-Pass Filter Performance Testing Standard',
+        description: 'ISO 16889 specifies the multi-pass method for evaluating filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic fluid power filter elements. Beta ratio quantifies filter efficiency at specific particle sizes, enabling system designers to specify target cleanliness codes for critical components.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['ISO 16889', 'Beta ratio', 'filter efficiency', 'multi-pass test', 'hydraulic filtration', 'ISO 4406', 'contamination control', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'ISO 16889 Filter Testing', description: 'International standard for measuring filtration efficiency (Beta ratio) and dirt-holding capacity of hydraulic filter elements using the multi-pass method.' },
+        inLanguage: 'es',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'ISO 16889', item: 'https://elimfilters.com/knowledge-system/standards/iso-16889' },
+        ],
+      }) }} />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 /**
- * ELIMFILTERS® Knowledge Architecture Map
+ * ELIMFILTERS Knowledge Architecture Map
  *
  * Defines relational structure between:
  * - Technologies (product systems)
@@ -157,7 +157,7 @@ export const TECHNOLOGIES: TechnologyRecord = {
     tagline: 'Integrated Water Extraction System',
     slug: 'hydrocore',
     relatedStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_12937'],
-    addressesContamination: ['DIESEL_WATER', 'HYDRAULIC_CONTAMINATION'],
+    addressesContamination: ['DIESEL_WATER'],
     applicableIndustries: ['MARINE', 'AGRICULTURE', 'OUTDOOR_EQUIPMENT', 'POWER_GEN'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {

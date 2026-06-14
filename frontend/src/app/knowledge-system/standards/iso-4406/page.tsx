@@ -40,7 +40,8 @@ export default function ISO4406Page() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       <Breadcrumb />
       {/* Back Button */}
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -247,8 +248,41 @@ export default function ISO4406Page() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-4406</p>
         <p>&nbsp;&nbsp;concept_id: iso-4406-cleanliness-codes</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'ISO 4406 — Fluid Cleanliness Classification Standard',
+        description: 'ISO 4406 establishes a particle count classification system for hydraulic and lube oil fluids using a two-number code representing particle concentrations at 4µm and 6µm thresholds. Predecessor to ISO 16889, widely referenced in legacy equipment specifications.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['ISO 4406', 'fluid cleanliness code', 'hydraulic oil cleanliness', 'particle count classification', 'contamination measurement', 'ISO 16889', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'ISO 4406 Cleanliness Codes', description: 'International standard for classifying hydraulic and lube oil fluid cleanliness using particle count codes at defined size thresholds.' },
+        inLanguage: 'es',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'ISO 4406', item: 'https://elimfilters.com/knowledge-system/standards/iso-4406' },
+        ],
+      }) }} />
     </main>
   );
 }

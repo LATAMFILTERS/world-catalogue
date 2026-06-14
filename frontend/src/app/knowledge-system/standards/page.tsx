@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -53,9 +53,10 @@ const FILTRATION_SYSTEMS = [
 export default function StandardsHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Back */}
-      <Link href="/knowledge-system" style={{
+      <Link href="/knowledge-system"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -250,6 +251,28 @@ export default function StandardsHubPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Industrial Filtration Standards',
+        description: 'Industrial filtration standards hub covering ISO, ASTM, SAE, and DIN specifications across lube oil, air intake, cabin safety, fuel, hydraulic, and compressed air filtration system domains.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration standards', 'ISO 16889', 'ISO 4406', 'ISO 5011', 'ISO 8573', 'ASTM D6304', 'SAE J1539', 'contamination control', 'asset protection'],
+        about: { '@type': 'Thing', name: 'Industrial Filtration Standards', description: 'ISO, ASTM, SAE, and DIN standards organized by filtration system domain for contamination measurement and control.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Industrial Filtration Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+        ],
+      }) }} />
 
     </main>
   );

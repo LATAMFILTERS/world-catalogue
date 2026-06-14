@@ -4,6 +4,7 @@ import { Titillium_Web, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
+import ConsentBanner from '@/components/ConsentBanner';
 
 const titilliumWeb = Titillium_Web({ subsets: ['latin'], variable: '--font-titillium', weight: ['300', '400', '600', '700'] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', weight: ['400', '500'] });
@@ -15,43 +16,53 @@ const BASE_URL = 'https://elimfilters.com';
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'ELIMFILTERS® | Industrial Asset Protection & Contamination Control Systems',
-    template: '%s | ELIMFILTERS®',
+    default: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
+    template: '%s | ELIMFILTERS',
   },
   description:
-    'ELIMFILTERS® is an Industrial Asset Protection Technology company. Engineered contamination control systems for equipment reliability, operational continuity, and asset lifecycle extension across mining, agriculture, marine, and heavy industry.',
+    'ELIMFILTERS World Catalogue: 12 industries, 12 products, 12 proprietary technologies. Asset protection filtration engineered for maximum performance in mining, agriculture, marine, and heavy industry.',
   keywords: [
-    'industrial asset protection', 'contamination control', 'equipment reliability',
-    'operational continuity', 'lifecycle extension', 'reliability engineering',
-    'downtime reduction', 'industrial reliability', 'asset protection technology',
-    'contamination control systems', 'hydraulic contamination control',
-    'fuel contamination control', 'air intake protection', 'lube oil cleanliness',
-    'ISO 16889', 'ISO 5011', 'ISO 4406', 'ISO 19438',
-    'mining equipment protection', 'agriculture filtration', 'marine asset protection',
-    'ELIMFILTERS®', 'Kleo Technologies',
+    'industrial filtration', 'asset protection filters', 'air filters industrial',
+    'fuel filters heavy duty', 'hydraulic filters', 'oil filters industrial',
+    'mining filtration', 'agriculture filtration', 'marine filtration',
+    'SYNTRAX filter', 'NANOFORCE filter', 'INTEKCORE fuel filter', 'ELIMFILTERS',
   ],
-  authors: [{ name: 'ELIMFILTERS® | Kleo Technologies', url: BASE_URL }],
-  creator: 'ELIMFILTERS®',
-  publisher: 'Kleo Technologies',
+  authors: [{ name: 'ELIMFILTERS', url: BASE_URL }],
+  creator: 'ELIMFILTERS',
+  publisher: 'ELIMFILTERS',
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
-    siteName: 'ELIMFILTERS® — Industrial Asset Protection',
-    title: 'ELIMFILTERS® | Industrial Asset Protection & Contamination Control Systems',
-    description: 'Engineered contamination control systems for equipment reliability, operational continuity, and asset lifecycle extension. Mining, agriculture, marine, oil & gas, and heavy industry.',
+    siteName: 'ELIMFILTERS World Catalogue',
+    title: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
+    description: 'Asset protection filtration for mining, agriculture, marine and heavy industry. 12 industries · 12 systems · 12 proprietary technologies.',
     url: BASE_URL,
-    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS® Industrial Asset Protection' }],
+    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS World Catalogue' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@elimfilters',
-    title: 'ELIMFILTERS® | Industrial Asset Protection',
-    description: 'Engineered contamination control for equipment reliability, uptime, and asset lifecycle extension.',
+    title: 'ELIMFILTERS — World Catalogue',
+    description: 'Asset protection filtration for mining, agriculture, marine and heavy industry.',
     images: ['/assets/logo-elimfilters.png'],
   },
 };
@@ -59,8 +70,7 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'ELIMFILTERS®',
-  alternateName: 'ELIMFILTERS by Kleo Technologies',
+  name: 'ELIMFILTERS',
   url: BASE_URL,
   logo: `${BASE_URL}/assets/logo-elimfilters.png`,
   description: 'ELIMFILTERS® is an Industrial Asset Protection Technology company engineered by Kleo Technologies. Contamination control systems that improve equipment reliability, operational continuity, and asset lifecycle across mining, agriculture, marine, oil & gas, and heavy industry.',
@@ -89,7 +99,7 @@ const organizationSchema = {
   sameAs: ['https://www.linkedin.com/company/elimfilters', 'https://www.instagram.com/elimfilters.global'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'ELIMFILTERS® Asset Protection Systems',
+    name: 'ELIMFILTERS World Catalogue',
     itemListElement: [
       { '@type': 'OfferCatalog', name: 'Asset Protection by Industry', url: `${BASE_URL}/industries` },
       { '@type': 'OfferCatalog', name: 'Contamination Control Systems', url: `${BASE_URL}/systems` },
@@ -102,7 +112,7 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ELIMFILTERS® World Catalogue',
+  name: 'ELIMFILTERS World Catalogue',
   url: BASE_URL,
   potentialAction: {
     '@type': 'SearchAction',
@@ -126,20 +136,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {/* Skip to main content — keyboard/screen reader accessibility */}
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <Analytics />
-        <ClientProviders>{children}</ClientProviders>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-          `}
-        </Script>
+        <ConsentBanner />
+        <ClientProviders>
+          <div id="main-content">
+            {children}
+          </div>
+        </ClientProviders>
+        {/* ® in headings: wrap as small superscript so it doesn't look oversized */}
+        <Script id="reg-in-headings" strategy="afterInteractive">{`
+          (function(){
+            function wrapReg(root){
+              var heads = root.querySelectorAll('h1,h2,h3,h4');
+              heads.forEach(function(h){
+                h.innerHTML = h.innerHTML.replace(/®/g,'<span class="reg-sup">®</span>');
+              });
+            }
+            wrapReg(document);
+            var obs = new MutationObserver(function(muts){
+              muts.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) wrapReg(n); }); });
+            });
+            obs.observe(document.body,{childList:true,subtree:true});
+          })();
+        `}</Script>
       </body>
     </html>
   );

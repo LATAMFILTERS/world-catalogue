@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 
 export default function OEMReplacementPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/bridges" style={{
+
+      <Link href="/knowledge-system/bridges"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -732,6 +733,29 @@ export default function OEMReplacementPage() {
         </motion.section>
 
       </div>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'OEM Filter Requirements Strategy',
+        description: 'Technical framework for understanding when OEM filters are required, optional, or replaceable—covering warranty compliance, specification matching, and post-warranty optimization using ISO 16889 equivalent aftermarket alternatives.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['OEM filter requirements', 'OEM vs aftermarket', 'ISO 16889', 'filter specification matching', 'warranty compliance', 'contamination control', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'OEM Filter Requirements Strategy', description: 'Framework for evaluating OEM filter compliance requirements across warranty and post-warranty equipment lifecycle phases.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Bridges', item: 'https://elimfilters.com/knowledge-system/bridges' },
+          { '@type': 'ListItem', position: 4, name: 'OEM Filter Requirements Strategy', item: 'https://elimfilters.com/knowledge-system/bridges/oem-replacement' },
+        ],
+      }) }} />
     </main>
   );
 }

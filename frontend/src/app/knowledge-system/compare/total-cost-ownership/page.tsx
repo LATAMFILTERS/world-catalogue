@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function TCOPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -479,7 +480,7 @@ export default function TCOPage() {
                 color: '#FFF12D',
                 marginBottom: '1rem',
               }}>
-                SYSTEM APPROACH (ELIMFILTERS®)
+                SYSTEM APPROACH (ELIMFILTERS)
               </p>
               <ul style={{
                 fontSize: '0.85rem',
@@ -590,6 +591,29 @@ export default function TCOPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Total Cost of Ownership',
+        description: 'Total cost of ownership analysis showing how system-level filtration reduces equipment lifecycle costs through contamination control, extended component life, and reduced unplanned downtime.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['total cost of ownership', 'filtration TCO', 'contamination control', 'fleet economics', 'ISO 16889', 'ISO 4406', 'asset protection', 'equipment lifecycle cost'],
+        about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Economic framework for evaluating filtration decisions based on equipment lifecycle cost rather than filter purchase price.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'Total Cost of Ownership', item: 'https://elimfilters.com/knowledge-system/compare/total-cost-ownership' },
+        ],
+      }) }} />
     </main>
   );
 }

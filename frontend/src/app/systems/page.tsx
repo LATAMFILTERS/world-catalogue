@@ -151,7 +151,7 @@ const SYSTEMS: ProtectionSystem[] = [
         tech: 'HYDROCORE™',
       },
     ],
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'HYDROCORE™/SERIES'],
+    technologies: ['HYDROCORE™'],
     equipment: [
       'HPCR diesel engines (1,800–2,500 bar injection)',
       'Common-rail marine diesel engines',
@@ -880,12 +880,12 @@ export default function SystemsPage() {
   const webPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Industrial Asset Protection Systems — ELIMFILTERS®',
+    name: 'Industrial Asset Protection Systems — ELIMFILTERS',
     description:
       'Five industrial asset protection systems covering air intake, fuel cleanliness, lubrication reliability, hydraulic contamination control, and cooling/environmental protection across 12 heavy industry sectors.',
     url: 'https://elimfilters.com/systems',
-    dateModified: '2026-06-10',
-    author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+    dateModified: '2026-05-26',
+    author: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   };
 
   const breadcrumbSchema = {
@@ -903,58 +903,10 @@ export default function SystemsPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Why does contamination damage industrial systems?',
+        name: 'What are the five industrial asset protection systems from ELIMFILTERS?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Industrial contamination — particles, water, heat degradation products, and chemical byproducts — physically damages precision components through abrasive wear, corrosion, and viscosity breakdown. In lube oil circuits, particles smaller than bearing clearances (1–10 µm) create micro-cutting wear on journal surfaces. In fuel systems, water above 200 ppm causes hydrogen embrittlement of injector needle alloys. In hydraulic circuits, particles at Mohs hardness 7 permanently abrade valve spool faces at tolerances of 5–25 µm. The damage is cumulative and progressive — occurring silently over operating hours until component failure triggers unplanned downtime.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is fuel cleanliness and why does it matter?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Fuel cleanliness refers to controlling particle contamination and water content in diesel fuel below the tolerance thresholds of fuel delivery components. Modern high-pressure common-rail (HPCR) injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. Particles above 10 µm cause injector tip erosion at these pressures. Free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. Fuel cleanliness is measured against ASTM D6304 (water content) and particle count standards. Without active water separation and particulate control, HPCR injector service life is reduced from 10,000+ hours to under 2,000 hours.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is hydraulic contamination control?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Hydraulic contamination control is the engineering practice of maintaining fluid cleanliness within ISO 4406 particle count targets to protect proportional valves, actuators, and pumps in high-pressure hydraulic circuits. Proportional valves operate at 200–450 bar with spool clearances of 5–25 µm. Particles in this size range cause permanent micro-abrasion on spool faces, leading to position drift and loss of actuator precision. ISO 4406 cleanliness codes (e.g., 16/14/11) define maximum particle counts at 4, 6, and 14 µm sizes. Maintaining these targets requires sub-micron filtration beyond what standard 25 µm return-line systems provide.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Why is cooling system protection important for diesel engines?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Diesel engine cooling systems with wet sleeve liner construction depend on supplemental coolant additive (SCA/DCA) concentration to prevent cavitation erosion — a failure mode where coolant pressure waves create micro-bubbles that collapse against liner surfaces, removing metal at a microscopic level. When DCA concentration falls below specification through thermal cycling and electrolytic depletion, cavitation erosion initiates within 500–1,000 operating hours. The damage is undetectable until compression testing reveals liner wear requiring engine overhaul. Passive coolant filters cannot replenish depleted additives — only DCA-replenishing technology like THERMACORE™ maintains protective concentration continuously throughout the service interval.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does lubrication contamination affect equipment life?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Lube oil contamination accelerates bearing and drivetrain wear through three mechanisms: abrasive wear from hard particles (silica, metal oxides) creating micro-cutting on bearing surfaces; viscosity degradation from soot accumulation and fuel dilution reducing oil film strength; and acidic byproduct attack on bearing alloys depleting alkalinity reserve. ISO 4406 cleanliness codes quantify particle contamination levels. Maintaining ISO 16/14/11 extends bearing service life 3–5× versus uncontrolled contamination at 19/17/14 — the difference between a 15,000-hour overhaul interval and a 3,000-hour failure event. Extended drain programs at 60,000–100,000 km require filtration systems that maintain these cleanliness targets from service start to drain.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Why does ELIMFILTERS organize protection by systems rather than products?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Equipment reliability is determined by whether contamination in each critical system stays below the threshold that causes measurable wear — not by which filter brand is installed. Air intake, fuel, lubrication, hydraulic, and cooling systems each have distinct contamination types, failure mechanisms, and measurement standards. Organizing by system ensures that the protection strategy addresses the root cause (contamination control) rather than the symptom (filter selection). Product selection is the final step in a system-level decision that begins with identifying the contamination target, applying relevant ISO or ASTM standards as measurement tools, and matching technologies capable of meeting those targets. This is why ELIMFILTERS five systems are defined by contamination domain, not by product category.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What are the five industrial asset protection systems from ELIMFILTERS®?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'ELIMFILTERS® organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
+          text: 'ELIMFILTERS organizes industrial contamination control into five protection systems: Air Intake & Airflow Protection (combustion and pneumatic system integrity), Fuel Cleanliness Protection (injection system integrity), Lubrication Reliability Protection (bearing and drivetrain integrity), Hydraulic Contamination Control (proportional valve and actuator integrity), and Cooling System & Environmental Protection (thermal circuit and cabin integrity). Each system is defined by its contamination target, failure mechanism, product families, and the exclusive technologies that control the contamination pathway.',
         },
       },
       {
@@ -1090,7 +1042,7 @@ export default function SystemsPage() {
             }}
           >
             Industrial equipment fails when contamination accumulates faster than the protection system
-            removes it. ELIMFILTERS® structures contamination control into five engineering domains —
+            removes it. ELIMFILTERS structures contamination control into five engineering domains —
             each defined by its contamination target, failure mechanism, and the exclusive architecture
             that prevents it.
           </motion.p>
@@ -1699,30 +1651,6 @@ export default function SystemsPage() {
               {
                 q: 'Why does contamination damage industrial systems?',
                 a: 'Industrial contamination — particles, water, degradation products, chemical byproducts — physically damages precision components through abrasive wear, corrosion, and viscosity breakdown. Particles smaller than bearing clearances create micro-cutting wear on journal surfaces. Water above 200 ppm causes hydrogen embrittlement of injector needle alloys. Hard particles at Mohs 7 permanently abrade valve spool faces at tolerances of 5–25 µm. The damage is cumulative and progressive — occurring silently over operating hours until component failure triggers unplanned downtime.',
-              },
-              {
-                q: 'What is fuel cleanliness and why does it matter?',
-                a: 'Fuel cleanliness refers to controlling particle contamination and water content in diesel fuel below the tolerance thresholds of fuel delivery components. Modern HPCR injection systems operate at 1,800–2,500 bar with injector needle clearances of 1–3 µm. Particles above 10 µm cause injector tip erosion at these pressures. Free water above 200 ppm causes hydrogen embrittlement and corrosion of needle alloys. Without active water separation and particulate control, HPCR injector service life is reduced from 10,000+ hours to under 2,000 hours.',
-              },
-              {
-                q: 'What is hydraulic contamination control?',
-                a: 'Hydraulic contamination control maintains fluid cleanliness within ISO 4406 particle count targets to protect proportional valves, actuators, and pumps in high-pressure circuits. Proportional valves operate at 200–450 bar with spool clearances of 5–25 µm. Particles in this range cause permanent micro-abrasion on spool faces, leading to position drift and loss of actuator precision. Maintaining ISO 4406 targets of 16/14/11 requires sub-micron filtration beyond what standard 25 µm return-line systems provide — this is why NANOFORCE™ captures contamination at 1–10 µm.',
-              },
-              {
-                q: 'Why is cooling system protection important for diesel engines?',
-                a: 'Wet sleeve liner diesel engines depend on supplemental coolant additive (SCA/DCA) concentration to prevent cavitation erosion — where coolant pressure waves create micro-bubbles that collapse against liner surfaces, removing metal progressively. When DCA concentration falls below specification through thermal cycling and electrolytic depletion, cavitation erosion initiates within 500–1,000 hours. The damage is undetectable until compression testing reveals liner wear requiring engine overhaul. Passive coolant filters cannot replenish depleted additives — only DCA-replenishing technology maintains protective concentration continuously.',
-              },
-              {
-                q: 'How does lubrication contamination affect equipment life?',
-                a: 'Lube oil contamination accelerates bearing and drivetrain wear through three mechanisms: abrasive wear from hard particles creating micro-cutting on bearing surfaces; viscosity degradation from soot and fuel dilution reducing oil film strength; and acidic byproduct attack on bearing alloys. ISO 4406 cleanliness codes quantify contamination levels. Maintaining ISO 16/14/11 extends bearing service life 3–5× versus uncontrolled contamination at 19/17/14 — the difference between a 15,000-hour overhaul interval and a 3,000-hour failure event.',
-              },
-              {
-                q: 'Why does ELIMFILTERS organize protection by systems rather than products?',
-                a: 'Equipment reliability is determined by whether contamination in each critical system stays below the threshold that causes measurable wear — not by which filter brand is installed. Air intake, fuel, lubrication, hydraulic, and cooling systems each have distinct contamination types, failure mechanisms, and measurement standards (SAE J1539, ASTM D6304, ISO 4406, ISO 16889, ISO 8573). Organizing by system ensures the protection strategy addresses root cause rather than symptom. Product selection is the final step in a system-level decision that begins with identifying the contamination target.',
-              },
-              {
-                q: 'What are the five asset protection systems?',
-                a: 'Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Reliability Protection, Hydraulic Contamination Control, and Cooling System & Environmental Protection. Each system targets a specific contamination pathway — from silica dust ingestion in air intake circuits to moisture accumulation in HPCR fuel systems — and is served by one or more exclusive protection architectures including MACROCORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, and MICROKAPPA™.',
               },
               {
                 q: 'How does HYDROCORE™ protect HPCR injection systems?',

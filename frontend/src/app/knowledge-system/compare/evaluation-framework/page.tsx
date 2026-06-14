@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function EvaluationFrameworkPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -533,6 +534,29 @@ export default function EvaluationFrameworkPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Filter Evaluation Framework',
+        description: 'Technical framework for evaluating industrial filters using contamination control metrics—ISO 16889 Beta ratios, ISO 4406 cleanliness codes, and bypass thresholds—rather than product specifications alone.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['filter evaluation framework', 'ISO 16889', 'Beta ratio', 'ISO 4406', 'contamination control', 'filter selection', 'industrial filtration', 'asset protection'],
+        about: { '@type': 'Thing', name: 'Filter Evaluation Framework', description: 'Methodology for selecting industrial filters based on measured contamination control performance rather than product brand or OEM specification compliance.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'Filter Evaluation Framework', item: 'https://elimfilters.com/knowledge-system/compare/evaluation-framework' },
+        ],
+      }) }} />
     </main>
   );
 }

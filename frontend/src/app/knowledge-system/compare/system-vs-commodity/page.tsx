@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function SystemVsCommodityPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -349,7 +350,7 @@ export default function SystemVsCommodityPage() {
                 marginBottom: '0.75rem',
                 textTransform: 'uppercase',
               }}>
-                System Approach (ELIMFILTERS®)
+                System Approach (ELIMFILTERS)
               </p>
               <ul style={{
                 fontSize: '0.9rem',
@@ -451,6 +452,29 @@ export default function SystemVsCommodityPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'System vs Commodity Filtration',
+        description: 'Why filtration performance is a system design problem, not a product commodity selection problem. Equipment reliability is determined by contamination control effectiveness, not filter brand choice.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'system filtration', 'commodity filtration', 'ISO 16889', 'OEM specification', 'equipment reliability'],
+        about: { '@type': 'Thing', name: 'System vs Commodity Filtration', description: 'Framework distinguishing system-level contamination control from commodity filter product selection, showing why OEM specification compliance does not equal equipment reliability.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'System vs Commodity Filtration', item: 'https://elimfilters.com/knowledge-system/compare/system-vs-commodity' },
+        ],
+      }) }} />
     </main>
   );
 }

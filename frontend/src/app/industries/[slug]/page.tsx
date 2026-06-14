@@ -66,14 +66,39 @@ interface GeoData {
   schemas: object[];
   ctaTitle?: string;
   ctaDescription?: string;
+  protectionLabel?: string;
+  videoSectionName?: string;
+  protectedAssets?: string[];
+  protectionSystems?: string[];
+  techFocus?: string;
+  knowledgeLinks?: { label: string; href?: string }[];
+  preCtaQuote?: { line1: string; line2: string };
+  operationalObjective?: { headline: string; lines: string[] };
 }
 
 const industryGeoData: Record<string, GeoData> = {
   'Automotive': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectionSystems: [
+      'Air Intake & Airflow Protection',
+      'Lubrication Protection',
+      'Fuel Cleanliness Protection',
+      'Cabin Air Quality Protection',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Vehicle Systems?',
     ctaDescription: 'Find the right automotive asset protection system for your vehicle platform. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® automotive asset protection systems are engineered for passenger vehicles and commercial vehicles operating under continuous thermal cycling, urban stop-and-go traffic, and highway airflow variation. Modern direct injection engines operate at fuel injection pressures of 150–350 bar — conditions where contamination accumulation in fuel delivery systems causes injector wear within 30,000–80,000 km of mixed-duty operation. Urban air intake environments expose vehicle engines to particulate concentrations of 150–300 µg/m³, while cold-start thermal cycling generates oil dilution and soot accumulation that degrades lubrication cleanliness across extended service intervals. Proprietary protection media maintains air intake efficiency, lubrication cleanliness, fuel system integrity, and cabin air quality throughout standard and extended automotive service schedules.',
+    directAnswer: 'ELIMFILTERS automotive asset protection systems are engineered for passenger vehicles and commercial vehicles operating under continuous thermal cycling, urban stop-and-go traffic, and highway airflow variation. Modern direct injection engines operate at fuel injection pressures of 150–350 bar — conditions where contamination accumulation in fuel delivery systems causes injector wear within 30,000–80,000 km of mixed-duty operation. Urban air intake environments expose vehicle engines to particulate concentrations of 150–300 µg/m³, while cold-start thermal cycling generates oil dilution and soot accumulation that degrades lubrication cleanliness across extended service intervals. Proprietary protection media maintains air intake efficiency, lubrication cleanliness, fuel system integrity, and cabin air quality throughout standard and extended automotive service schedules.',
     faq: [
       {
         q: 'What asset protection systems do passenger and commercial vehicles require?',
@@ -93,7 +118,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended automotive service intervals affect engine reliability in mixed-duty vehicles?',
-        a: 'Extended service intervals in mixed-duty vehicles — combining urban stop-and-go, short-trip, and highway operation — must account for accelerated contamination accumulation during cold-start cycles and low-speed urban driving. Standard OEM service intervals are typically calibrated for average driving conditions. Vehicles completing predominantly urban short-trip cycles accumulate lubrication degradation at two to three times the rate of steady-state highway vehicles within the same calendar interval. ELIMFILTERS® automotive protection systems are engineered to maintain air intake restriction below OEM threshold limits and lubrication cleanliness within ISO 4406 targets across urban, highway, and mixed-duty service intervals.',
+        a: 'Extended service intervals in mixed-duty vehicles — combining urban stop-and-go, short-trip, and highway operation — must account for accelerated contamination accumulation during cold-start cycles and low-speed urban driving. Standard OEM service intervals are typically calibrated for average driving conditions. Vehicles completing predominantly urban short-trip cycles accumulate lubrication degradation at two to three times the rate of steady-state highway vehicles within the same calendar interval. ELIMFILTERS automotive protection systems are engineered to maintain air intake restriction below OEM threshold limits and lubrication cleanliness within ISO 4406 targets across urban, highway, and mixed-duty service intervals.',
       },
       {
         q: 'What is the long-term engine performance impact of contamination in automotive applications?',
@@ -105,7 +130,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Automotive Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Automotive asset protection systems engineered for passenger and commercial vehicles operating under thermal cycling, urban stop-and-go traffic, and highway conditions. Air intake, lubrication, fuel system, and cabin air quality protection for mixed-duty vehicle operation.',
         areaServed: 'Global',
         serviceType: 'Automotive Contamination Control',
@@ -124,9 +149,26 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Construction': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Excavators',
+      'Wheel Loaders',
+      'Bulldozers',
+      'Motor Graders',
+      'Articulated Dump Trucks',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Construction Equipment?',
     ctaDescription: 'Find the right heavy equipment asset protection system for your construction equipment platform. Cross-reference 500,000+ parts.',
-    directAnswer: 'Construction equipment operates in environments with ambient silica dust concentrations ranging from 3,000 mg/m³ on earthwork sites to over 10,000 mg/m³ in tunneling operations — conditions that exceed ISO 5011 air filter test limits by a factor of 10 to 30. ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, and articulated machinery operating under continuous multi-shift duty cycles. Proprietary hybrid protection media provides high contaminant retention capacity for hydraulic system cleanliness, air intake protection, and fuel system integrity throughout extended off-road service schedules.',
+    directAnswer: 'Construction equipment operates in environments with ambient silica dust concentrations ranging from 3,000 mg/m³ on earthwork sites to over 10,000 mg/m³ in tunneling operations — conditions that exceed ISO 5011 air filter test limits by a factor of 10 to 30. ELIMFILTERS construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, and articulated machinery operating under continuous multi-shift duty cycles. Proprietary hybrid protection media provides high contaminant retention capacity for hydraulic system cleanliness, air intake protection, and fuel system integrity throughout extended off-road service schedules.',
     faq: [
       {
         q: 'What contamination risks do heavy construction equipment systems face on active job sites?',
@@ -146,7 +188,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended service intervals affect heavy construction equipment availability on active projects?',
-        a: 'Unplanned maintenance stops on active construction sites create direct schedule and cost impacts. Taking an excavator or loader out of service on a time-critical earthwork or foundation project generates delays that cascade across the project schedule. Extended service interval protection systems reduce the frequency of planned maintenance events without exceeding ISO 4406 hydraulic cleanliness targets or ISO 5011 air filter restriction limits. ELIMFILTERS® construction protection systems are engineered to support severe-duty service intervals through high contaminant retention capacity and differential pressure monitoring compatibility.',
+        a: 'Unplanned maintenance stops on active construction sites create direct schedule and cost impacts. Taking an excavator or loader out of service on a time-critical earthwork or foundation project generates delays that cascade across the project schedule. Extended service interval protection systems reduce the frequency of planned maintenance events without exceeding ISO 4406 hydraulic cleanliness targets or ISO 5011 air filter restriction limits. ELIMFILTERS construction protection systems are engineered to support severe-duty service intervals through high contaminant retention capacity and differential pressure monitoring compatibility.',
       },
       {
         q: 'What are the financial consequences of hydraulic contamination failure in heavy construction equipment?',
@@ -158,7 +200,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Construction Equipment Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Heavy construction equipment asset protection systems engineered for excavators, wheel loaders, bulldozers, and motor graders operating in abrasive silica dust environments with hydraulic pressure spikes, off-road fuel contamination, and continuous multi-shift duty cycles.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -177,9 +219,22 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Bus Coach': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'BUS & COACH',
+    techFocus: 'Primary Technology Focus: DRYCORE™ Pneumatic Protection',
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Transit Fleet?',
     ctaDescription: 'Find the right transit asset protection system for your bus or coach fleet application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles. Urban transit engines complete 1,200–2,000 cold-start and partial-load cycles per week. Each cycle introduces combustion particulate and fuel dilution into engine oil. Soot contamination accumulates at three to five times the rate of highway applications. ELIMFILTERS® systems maintain engine lube oil cleanliness, pneumatic brake system air purity to ISO 8573-1 Class 2 standards, cabin airflow quality, and fuel system protection throughout extended transit service schedules.',
+    directAnswer: 'ELIMFILTERS bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles. Urban transit engines complete 1,200–2,000 cold-start and partial-load cycles per week. Each cycle introduces combustion particulate and fuel dilution into engine oil. Soot contamination accumulates at three to five times the rate of highway applications. ELIMFILTERS systems maintain engine lube oil cleanliness, pneumatic brake system air purity to ISO 8573-1 Class 2 standards, cabin airflow quality, and fuel system protection throughout extended transit service schedules.',
     faq: [
       {
         q: 'What asset protection systems do transit buses require?',
@@ -211,7 +266,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Bus & Coach Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Transit fleet asset protection systems engineered for diesel buses, intercity coaches, and articulated urban vehicles operating under continuous stop-and-go duty cycles with high-rate soot, combustion particulate, and pneumatic system contamination.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -230,9 +285,29 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Manufacturing': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Industrial Engines',
+      'Compressors',
+      'Pumps',
+      'Hydraulic Presses',
+      'Injection Molding Machines',
+      'CNC Equipment',
+      'Conveyor Systems',
+    ],
+    knowledgeLinks: [
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Production Equipment?',
     ctaDescription: 'Find the right manufacturing asset protection system for your industrial equipment application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® manufacturing asset protection systems are engineered for industrial engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles. Manufacturing environments generate airborne particulate contamination at concentrations dependent on process type — metalworking and casting generate silica and metal particle loads, textile and packaging lines generate fiber and dust accumulation. Hydraulic systems in production equipment require cleanliness targets of ISO 16/14/11 or tighter to prevent proportional valve stiction and actuator degradation. ELIMFILTERS® systems maintain air intake efficiency, lubrication cleanliness, fuel system integrity, and hydraulic protection throughout extended manufacturing service schedules.',
+    directAnswer: 'ELIMFILTERS manufacturing asset protection systems are engineered for industrial engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles. Manufacturing environments generate airborne particulate contamination at concentrations dependent on process type — metalworking and casting generate silica and metal particle loads, textile and packaging lines generate fiber and dust accumulation. Hydraulic systems in production equipment require cleanliness targets of ISO 16/14/11 or tighter to prevent proportional valve stiction and actuator degradation. ELIMFILTERS systems maintain air intake efficiency, lubrication cleanliness, fuel system integrity, and hydraulic protection throughout extended manufacturing service schedules.',
     faq: [
       {
         q: 'What asset protection systems do manufacturing facility equipment require?',
@@ -252,7 +327,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended service intervals support manufacturing production continuity?',
-        a: 'Scheduled maintenance on production equipment creates planned downtime that can be coordinated with production schedules. However, shortened service intervals caused by accelerated contamination increase the frequency of production interruptions and maintenance labor costs. ELIMFILTERS® manufacturing asset protection systems are engineered to maintain ISO 4406 and ISO 5011 compliance throughout extended service intervals — typically 500–1,000 hours for air intake systems and 250–500 hours for lube and hydraulic systems in continuous production environments. Extended intervals reduce the total number of maintenance events per year per machine, supporting higher overall equipment effectiveness (OEE) targets.',
+        a: 'Scheduled maintenance on production equipment creates planned downtime that can be coordinated with production schedules. However, shortened service intervals caused by accelerated contamination increase the frequency of production interruptions and maintenance labor costs. ELIMFILTERS manufacturing asset protection systems are engineered to maintain ISO 4406 and ISO 5011 compliance throughout extended service intervals — typically 500–1,000 hours for air intake systems and 250–500 hours for lube and hydraulic systems in continuous production environments. Extended intervals reduce the total number of maintenance events per year per machine, supporting higher overall equipment effectiveness (OEE) targets.',
       },
       {
         q: 'What are the financial consequences of contamination-related equipment failure in manufacturing?',
@@ -264,7 +339,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Manufacturing Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Industrial manufacturing asset protection systems engineered for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles with airborne particulate, hydraulic impurity, and lubrication contamination challenges.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -283,9 +358,30 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Marine': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Commercial Vessels',
+      'Fishing Fleets',
+      'Offshore Support Vessels',
+      'Marine Diesel Engines',
+      'Deck Machinery',
+      'Hydraulic Crane Systems',
+      'Steering Systems',
+    ],
+    techFocus: 'MARINECLEAN™ — Marine-specific complementary technology for offshore and salt-air operating environments.',
+    knowledgeLinks: [
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Marine Equipment?',
     ctaDescription: 'Find the right marine asset protection system for your vessel or offshore equipment application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS® systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
+    directAnswer: 'ELIMFILTERS marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
     faq: [
       {
         q: 'What asset protection systems do marine diesel engines require?',
@@ -305,7 +401,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended service intervals support offshore vessel operational continuity?',
-        a: 'Offshore vessels and commercial fishing fleets operate on schedules where maintenance port calls are costly and infrequent. A commercial fishing vessel that must return to port for an unscheduled filter change loses 24–72 hours of fishing operation plus fuel and crew costs of $5,000–25,000 per interrupted trip. Extended service intervals reduce the total number of scheduled maintenance events per deployment season. ELIMFILTERS® marine asset protection systems are engineered to maintain ISO 4406 hydraulic cleanliness and ASTM D6304 fuel protection standards throughout intervals of 500–1,000 hours for appropriate marine applications, reducing port call frequency without exceeding contamination limits.',
+        a: 'Offshore vessels and commercial fishing fleets operate on schedules where maintenance port calls are costly and infrequent. A commercial fishing vessel that must return to port for an unscheduled filter change loses 24–72 hours of fishing operation plus fuel and crew costs of $5,000–25,000 per interrupted trip. Extended service intervals reduce the total number of scheduled maintenance events per deployment season. ELIMFILTERS marine asset protection systems are engineered to maintain ISO 4406 hydraulic cleanliness and ASTM D6304 fuel protection standards throughout intervals of 500–1,000 hours for appropriate marine applications, reducing port call frequency without exceeding contamination limits.',
       },
       {
         q: 'What are the financial consequences of contamination-related engine failure at sea?',
@@ -317,7 +413,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Marine Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Marine asset protection systems engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, fuel storage contamination, and long-duration marine duty cycles.',
         areaServed: 'Global',
         serviceType: 'Marine Contamination Control',
@@ -334,11 +430,64 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
+  'Mining': {
+    lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Hydraulic Mining Excavators',
+      'Ultra-Class Haul Trucks',
+      'Wheel Loaders',
+      'Rotary Drill Rigs',
+      'Dozers',
+      'Crushing Systems',
+      'Mineral Processing Equipment',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
+    ctaTitle: 'Ready to Protect Your Mining Equipment?',
+    ctaDescription: 'Find the right mining asset protection system for your mining equipment application. Cross-reference 500,000+ parts.',
+    directAnswer: 'ELIMFILTERS mining asset protection systems are engineered for hydraulic excavators, ultra-class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment operating in open-pit and underground mining environments. Mine sites generate ambient dust concentrations of 5,000–15,000 mg/m³ — 17–50 times the ISO 5011 air filter test limit of 300 mg/m³. Unplanned equipment downtime in high-tonnage mining operations costs $100,000–$180,000 per hour per machine. ELIMFILTERS proprietary protection media controls contamination across air intake, hydraulic, fuel, and lubrication systems throughout extended mining service intervals.',
+    faq: [],
+    schemas: [],
+  },
   'Oil Gas': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'OIL & GAS',
+    protectedAssets: [
+      'Offshore Platforms',
+      'Drilling Systems',
+      'Gas Turbines',
+      'Compressors',
+      'Generators',
+      'Pumping Systems',
+      'BOP Equipment',
+      'Engine-Driven Assets',
+    ],
+    techFocus: 'MARINECLEAN™ — Complementary technology for offshore and salt-air operating environments.',
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Energy Equipment?',
     ctaDescription: 'Find the right Oil & Gas asset protection system for your offshore or energy equipment application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® Oil & Gas asset protection systems are engineered for offshore platforms, onshore facilities, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and continuous severe-duty energy cycles. Gas turbine air intake systems require contamination control matched to airborne salinity concentrations of 1–10 mg/m³ in offshore environments. Hydraulic systems in drilling and compression equipment require ISO 16/14/11 or tighter cleanliness to prevent proportional valve stiction under high-pressure continuous operation. ELIMFILTERS® systems maintain air intake efficiency, fuel cleanliness, lubrication stability, and hydraulic protection throughout extended Oil & Gas service schedules.',
+    directAnswer: 'ELIMFILTERS Oil & Gas asset protection systems are engineered for offshore platforms, onshore facilities, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and continuous severe-duty energy cycles. Gas turbine air intake systems require contamination control matched to airborne salinity concentrations of 1–10 mg/m³ in offshore environments. Hydraulic systems in drilling and compression equipment require ISO 16/14/11 or tighter cleanliness to prevent proportional valve stiction under high-pressure continuous operation. ELIMFILTERS systems maintain air intake efficiency, fuel cleanliness, lubrication stability, and hydraulic protection throughout extended Oil & Gas service schedules.',
     faq: [
       {
         q: 'What asset protection systems do offshore platforms and drilling equipment require?',
@@ -358,7 +507,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended service intervals support Oil & Gas operational continuity in remote locations?',
-        a: 'Offshore platforms, subsea support vessels, and remote onshore facilities operate under logistical constraints that make frequent maintenance interventions costly. Helicopter or vessel logistics for offshore filter changes cost $3,000–15,000 per maintenance call when accounting for mobilization, personnel, and weather delays. Extended service intervals reduce the total number of logistics events per year per installation. ELIMFILTERS® Oil & Gas protection systems are engineered to maintain ISO 4406 hydraulic cleanliness, ASTM D6304 fuel purity, and ISO 5011 air intake performance throughout 500–1,500 hour intervals for appropriate applications, reducing offshore logistics frequency without exceeding contamination control limits.',
+        a: 'Offshore platforms, subsea support vessels, and remote onshore facilities operate under logistical constraints that make frequent maintenance interventions costly. Helicopter or vessel logistics for offshore filter changes cost $3,000–15,000 per maintenance call when accounting for mobilization, personnel, and weather delays. Extended service intervals reduce the total number of logistics events per year per installation. ELIMFILTERS Oil & Gas protection systems are engineered to maintain ISO 4406 hydraulic cleanliness, ASTM D6304 fuel purity, and ISO 5011 air intake performance throughout 500–1,500 hour intervals for appropriate applications, reducing offshore logistics frequency without exceeding contamination control limits.',
       },
       {
         q: 'What are the financial consequences of contamination-related equipment failure in Oil & Gas operations?',
@@ -370,7 +519,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Oil & Gas Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Oil & Gas asset protection systems engineered for offshore platforms, drilling systems, compression equipment, turbines, pumps, generators, and engine-driven assets operating under corrosive atmospheres, H2S exposure, airborne salinity, and severe-duty energy cycles.',
         areaServed: 'Global',
         serviceType: 'Energy Equipment Contamination Control',
@@ -389,9 +538,38 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Power Generation': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
     ctaTitle: 'Ready to Protect Your Power Systems?',
-    ctaDescription: 'Find the right power generation asset protection system for your generator or energy equipment platform. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® power generation asset protection systems are engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure. Standby diesel fuel stored beyond 6–12 months without treatment accumulates water through condensation, microbial growth, and oxidative degradation — all of which compromise common-rail injector systems operating at 800–2,000 bar fuel pressure. Generator air intake systems must maintain consistent airflow volume under variable ambient conditions to support stable combustion and rated power output. ELIMFILTERS® systems preserve fuel cleanliness to NFPA 110 standards, airflow stability, and lubrication reliability throughout continuous and intermittent power generation service intervals.',
+    ctaDescription: 'Find the right power generation asset protection strategy for your generator or energy equipment platform. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Prime Power Generators',
+      'Standby Generators',
+      'Emergency Backup Systems',
+      'Industrial Diesel Engines',
+      'Hospital Power Systems',
+      'Data Center Backup Systems',
+      'Critical Infrastructure Power Assets',
+      'Utility Support Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Power Availability.',
+      lines: [
+        'Every generator that fails during a critical event becomes a liability.',
+        'Every contamination-related failure compromises operational continuity, facility resilience, and emergency preparedness.',
+        'ELIMFILTERS protection strategies are engineered to maximize reliability, readiness, and uninterrupted power availability.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Operational Readiness Protection' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
+    directAnswer: 'ELIMFILTERS power generation asset protection systems are engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure. Standby diesel fuel stored beyond 6–12 months without treatment accumulates water through condensation, microbial growth, and oxidative degradation — all of which compromise common-rail injector systems operating at 800–2,000 bar fuel pressure. Generator air intake systems must maintain consistent airflow volume under variable ambient conditions to support stable combustion and rated power output. ELIMFILTERS systems preserve fuel cleanliness to NFPA 110 standards, airflow stability, and lubrication reliability throughout continuous and intermittent power generation service intervals.',
     faq: [
       {
         q: 'What protection systems do standby diesel generators require?',
@@ -423,7 +601,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Power Generation Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Power generation asset protection systems engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure.',
         areaServed: 'Global',
         serviceType: 'Power Generation Equipment Protection',
@@ -442,9 +620,38 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Railway': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Diesel-Electric Locomotives',
+      'Passenger Rolling Stock',
+      'Freight Locomotives',
+      'DMUs',
+      'Shunting Locomotives',
+      'Auxiliary Power Units',
+      'Pneumatic Brake Systems',
+      'Traction Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Fleet Availability.',
+      lines: [
+        'Railway systems operate on schedules measured in minutes.',
+        'A contamination-related failure can impact an entire network.',
+        'Every ELIMFILTERS protection strategy is engineered to maximize locomotive reliability, braking integrity, and operational continuity.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Railway Equipment?',
     ctaDescription: 'Find the right railway asset protection system for your locomotive or rolling stock application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® railway asset protection systems are engineered for diesel-electric locomotives, diesel multiple units (DMUs), shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles. Locomotive diesel engines accumulate fuel system contamination from bulk fuel storage condensation, ballast silica dust ingestion through air intake systems, and soot build-up in lube oil across extended haul cycles. Pneumatic braking systems require compressed air to ISO 8573-1 Class 1–2 standards to maintain brake actuation reliability across ambient temperature ranges of -30°C to +55°C. ELIMFILTERS® systems maintain fuel cleanliness, air intake performance, pneumatic air purity, and lubrication reliability throughout locomotive service intervals.',
+    directAnswer: 'ELIMFILTERS railway asset protection systems are engineered for diesel-electric locomotives, diesel multiple units (DMUs), shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles. Locomotive diesel engines accumulate fuel system contamination from bulk fuel storage condensation, ballast silica dust ingestion through air intake systems, and soot build-up in lube oil across extended haul cycles. Pneumatic braking systems require compressed air to ISO 8573-1 Class 1–2 standards to maintain brake actuation reliability across ambient temperature ranges of -30°C to +55°C. ELIMFILTERS systems maintain fuel cleanliness, air intake performance, pneumatic air purity, and lubrication reliability throughout locomotive service intervals.',
     faq: [
       {
         q: 'What asset protection systems do diesel-electric locomotives require?',
@@ -464,7 +671,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How do extended service intervals support railway fleet operational continuity?',
-        a: 'Railway fleets operate on tightly scheduled maintenance windows between haul cycles. Reducing unscheduled maintenance events and extending planned service intervals increases fleet availability and reduces maintenance labor costs per vehicle kilometer. ELIMFILTERS® locomotive protection systems are engineered to maintain ISO 4406 lube oil cleanliness, ASTM D6304 fuel purity, and ISO 8573-1 pneumatic air quality throughout extended service intervals appropriate for line-haul, commuter, and freight applications. Extended air intake service intervals — typically 500–1,000 hours for MACROCORE™ elements in controlled ballast dust environments — reduce the number of annual maintenance events per locomotive without exceeding system restriction thresholds.',
+        a: 'Railway fleets operate on tightly scheduled maintenance windows between haul cycles. Reducing unscheduled maintenance events and extending planned service intervals increases fleet availability and reduces maintenance labor costs per vehicle kilometer. ELIMFILTERS locomotive protection systems are engineered to maintain ISO 4406 lube oil cleanliness, ASTM D6304 fuel purity, and ISO 8573-1 pneumatic air quality throughout extended service intervals appropriate for line-haul, commuter, and freight applications. Extended air intake service intervals — typically 500–1,000 hours for MACROCORE™ elements in controlled ballast dust environments — reduce the number of annual maintenance events per locomotive without exceeding system restriction thresholds.',
       },
       {
         q: 'What are the financial consequences of contamination-related locomotive failure in railway operations?',
@@ -476,7 +683,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Railway Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Railway asset protection systems engineered for diesel-electric locomotives, DMUs, shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles.',
         areaServed: 'Global',
         serviceType: 'Railway Equipment Contamination Control',
@@ -495,9 +702,38 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Trucks Fleets': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'FLEET',
     ctaTitle: 'Ready to Protect Your Fleet Operations?',
-    ctaDescription: 'Find the right fleet asset protection system for your commercial vehicle application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® fleet asset protection systems are engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under continuous HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules. Modern common-rail diesel engines in heavy commercial vehicles operate at injection pressures of 1,800–2,500 bar — conditions where fuel contamination above ISO 4406 cleanliness targets causes injector wear and stiction within 150,000–250,000 km of mixed highway operation. Turbocharged diesel engines require consistent intake air volume to maintain combustion efficiency and turbocharger longevity across urban delivery, highway, and mountain gradient duty cycles. ELIMFILTERS® systems maintain HPCR fuel cleanliness, air intake performance, lubrication reliability, and extended service interval support throughout commercial fleet operating schedules.',
+    ctaDescription: 'Find the right fleet asset protection strategy for your commercial vehicle application. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Long-Haul Trucks',
+      'Regional Delivery Fleets',
+      'Owner-Operator Equipment',
+      'Heavy-Duty Diesel Engines',
+      'HPCR Fuel Systems',
+      'Turbocharged Powertrains',
+      'Fleet Support Vehicles',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Fleet Uptime.',
+      lines: [
+        'Every parked truck is a non-producing asset.',
+        'Every contamination-related failure impacts utilization, revenue, and fleet profitability.',
+        'ELIMFILTERS protection strategies are engineered to maximize uptime, reliability, and total fleet efficiency.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
+    directAnswer: 'ELIMFILTERS fleet asset protection systems are engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under continuous HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules. Modern common-rail diesel engines in heavy commercial vehicles operate at injection pressures of 1,800–2,500 bar — conditions where fuel contamination above ISO 4406 cleanliness targets causes injector wear and stiction within 150,000–250,000 km of mixed highway operation. Turbocharged diesel engines require consistent intake air volume to maintain combustion efficiency and turbocharger longevity across urban delivery, highway, and mountain gradient duty cycles. ELIMFILTERS systems maintain HPCR fuel cleanliness, air intake performance, lubrication reliability, and extended service interval support throughout commercial fleet operating schedules.',
     faq: [
       {
         q: 'What asset protection systems do heavy commercial trucks and fleet vehicles require?',
@@ -529,7 +765,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Commercial Fleet Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Commercial fleet asset protection systems engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules.',
         areaServed: 'Global',
         serviceType: 'Commercial Vehicle Contamination Control',
@@ -548,9 +784,39 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Waste Municipal': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'MUNICIPAL FLEET',
     ctaTitle: 'Ready to Protect Your Municipal Fleet?',
-    ctaDescription: 'Find the right municipal fleet asset protection system for your public service or emergency vehicle application. Cross-reference 500,000+ parts.',
-    directAnswer: 'ELIMFILTERS® municipal fleet asset protection systems are engineered for refuse collection vehicles, emergency response vehicles (fire apparatus, ambulances, rescue units), public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments. Municipal diesel engines complete 300–600 engine starts per week in refuse and emergency service applications, accumulating soot at three to five times the rate of steady-state highway operation. Fire apparatus and ambulances must respond from cold-start to full rated power within 60–90 seconds, placing acute demands on lubrication systems immediately after engine startup. ELIMFILTERS® systems maintain urban air intake performance, lubrication reliability, fuel system integrity, and cabin air quality for personnel across extended municipal service schedules.',
+    ctaDescription: 'Find the right municipal fleet asset protection strategy for your public service or emergency vehicle application. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Refuse Collection Vehicles',
+      'Fire Apparatus',
+      'Ambulances',
+      'Rescue Units',
+      'Street Sweepers',
+      'Municipal Service Trucks',
+      'Utility Service Vehicles',
+      'Public Infrastructure Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Public Service Availability.',
+      lines: [
+        'Every unavailable municipal vehicle impacts essential city services.',
+        'Every contamination-related failure reduces operational readiness, emergency response capability, and public service continuity.',
+        'ELIMFILTERS protection strategies are engineered to maximize fleet availability, reliability, and service readiness.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
+    directAnswer: 'ELIMFILTERS municipal fleet asset protection systems are engineered for refuse collection vehicles, emergency response vehicles (fire apparatus, ambulances, rescue units), public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments. Municipal diesel engines complete 300–600 engine starts per week in refuse and emergency service applications, accumulating soot at three to five times the rate of steady-state highway operation. Fire apparatus and ambulances must respond from cold-start to full rated power within 60–90 seconds, placing acute demands on lubrication systems immediately after engine startup. ELIMFILTERS systems maintain urban air intake performance, lubrication reliability, fuel system integrity, and cabin air quality for personnel across extended municipal service schedules.',
     faq: [
       {
         q: 'What asset protection systems do municipal refuse collection and emergency response vehicles require?',
@@ -582,7 +848,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Municipal Fleet Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Municipal fleet asset protection systems engineered for refuse collection vehicles, emergency response vehicles, public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments.',
         areaServed: 'Global',
         serviceType: 'Municipal Fleet Contamination Control',
@@ -599,62 +865,26 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
-  'Mining': {
-    lastUpdated: 'June 2026',
-    ctaTitle: 'Ready to Protect Your Mining Equipment?',
-    ctaDescription: 'Find the right mining asset protection system for your excavator, haul truck, or drill rig application. Cross-reference 500,000+ parts.',
-    directAnswer: 'Mining operations expose equipment to the most extreme contamination environment in industrial operation. Open-pit bench faces and active haul roads generate ambient silica dust concentrations of 2,000–15,000 mg/m³ — up to 50 times the 300 mg/m³ maximum in ISO 5011 air filter testing standards. Equipment values range from $500,000 for a medium wheel loader to $5–6 million for a 200-tonne hydraulic mining excavator and $2–5 million for a 300-tonne ultra-class haul truck. Unplanned downtime on key production equipment carries operational costs of $5,000–35,000 per hour, with knock-on effects on truck-shovel productivity balance that can idle multiple pieces of equipment simultaneously. ELIMFILTERS® mining asset protection systems are engineered for the complete contamination profile of hard rock, coal, and mineral processing operations: progressive-density air intake protection rated to extreme silica concentrations, turbine-stage fuel water separation for remote bulk fuel storage, sub-micron hydraulic contamination control at operating pressures of 250–450 bar, lubrication cleanliness protection for high-cycle engine and drivetrain systems, and cabin air quality protection for operators in respirable crystalline silica-classified work environments.',
-    faq: [
-      {
-        q: 'What asset protection systems do mining excavators, haul trucks, and drill rigs require?',
-        a: 'Large mining equipment requires five integrated protection systems. Air intake protection (MACROCORE™) manages silica dust concentrations of 2,000–15,000 mg/m³ on active bench faces, maintaining ISO 5011-compliant filtration efficiency in environments that exceed standard OEM test conditions by a factor of 10 to 50. Hydraulic system protection (NANOFORCE™) maintains ISO 4406 cleanliness at 16/14/11 or cleaner in excavator and loader circuits operating at 250–450 bar through 400–800 load cycles per shift. Fuel system protection (HYDROCORE™) removes free and emulsified water from diesel stored in remote bulk tanks subject to daily condensation cycling, protecting common-rail injectors operating at 1,800–2,500 bar. Lubrication system protection (SYNTRAX™) preserves ISO 4406 cleanliness in engine oil against accelerated soot accumulation from continuous high-load mining cycles. Cabin air protection (MICROKAPPA™) controls respirable crystalline silica (RCS) and diesel exhaust particulate exposure for operators completing 12-hour shifts under national mine safety regulatory frameworks.',
-      },
-      {
-        q: 'How does silica dust at mining concentrations damage air intake and engine systems beyond OEM specifications?',
-        a: 'Silica has a Mohs hardness of 7 — harder than the aluminum alloy compressor wheels, piston ring materials, and cylinder liner surfaces it contacts inside the engine. At 2,000 mg/m³ dust concentration, a standard OEM air element reaches full contamination load within 50–80 operating hours. At 10,000 mg/m³ on active blast sites, this reduces to 15–25 hours. Silica particles bypassing or saturating the air intake system enter combustion chambers as abrasive media against piston rings and cylinder liners, causing measurable bore wear within 200–500 operating hours. Turbocharger compressor blade erosion from silica ingestion reduces boost pressure and increases exhaust temperature, triggering derating modes before visible blade damage appears. MACROCORE™ air intake protection systems provide 40–60% greater media surface area than standard OEM elements, with a progressive-density gradient architecture that captures macro-particles in outer zones while preserving inner zone efficiency — enabling service intervals of 500–750 hours even in severe dust environments.',
-      },
-      {
-        q: 'Why is hydraulic contamination control the most critical reliability factor for excavator and loader productivity in open-pit mining?',
-        a: 'Hydraulic systems are the primary production mechanism of mining excavators and loaders — every load cycle, every bucket curl, every swing rotation is a hydraulic function. Mining excavator systems operate at 250–450 bar through 400–800 load cycles per shift. At these duty rates, proportional valve spool clearances of 1–5 µm are exposed to fluid contamination during every actuator movement. ISO 4406 contamination levels above 19/17/14 increase proportional valve failure rates by a factor of three to five compared to a 16/14/11 cleanliness target. A single excavator main control valve failure generates parts costs of $8,000–35,000 and 8–24 hours of downtime — plus the truck-shovel balance impact of idling a 10–18 haul truck fleet awaiting excavator production. Main hydraulic pump replacement: $15,000–45,000 per event. NANOFORCE™ sub-micron hydraulic filtration maintains ISO 4406 targets throughout extended shift operation by capturing particles below 3 µm that pass through standard hydraulic filter media.',
-      },
-      {
-        q: 'What is the impact of fuel water contamination on diesel engines operating from remote bulk fuel storage in mining?',
-        a: 'Remote mining operations store diesel in bulk surface tanks subject to daily thermal cycling. Day-night temperature differentials of 10–25°C draw humid air into tank headspace through vent tubes, depositing condensation water at the fuel-water interface. Active sites can accumulate 0.2–0.8% water volume in storage within 30–60 days without active water removal. Modern common-rail diesel engines — Caterpillar C27/C32, Komatsu SAA6D170, Cummins QSK series — operate at injection pressures of 1,800–2,500 bar with injector needle clearances below 3 µm. Water contamination above ASTM D6304 thresholds (200 ppm free water) causes hydrogen embrittlement of injector needle components, corrosion of high-pressure pump internals, and cavitation damage within 200–500 operating hours. Injector replacement in a 12-cylinder mining engine: $800–2,500 per injector, $9,600–30,000 per engine event. HYDROCORE™ turbine-stage water separation achieves 99.8% free water removal and 95% emulsified water reduction at point of delivery, protecting injection systems from contamination accumulated across bulk storage and transfer.',
-      },
-      {
-        q: 'Why is cabin air quality protection a regulatory compliance requirement in mining environments?',
-        a: 'Respirable crystalline silica (RCS) is classified as a Group 1 human carcinogen by the International Agency for Research on Cancer and is the primary occupational health hazard in hard rock, coal, and mineral processing mining. National mine safety regulations — MSHA 30 CFR Part 57 (USA), COSHH Regulation 6 (UK), and equivalent national frameworks — impose permissible exposure limits for RCS of 0.05–0.1 mg/m³ as an 8-hour time-weighted average. Excavator, haul truck, and drill cab environments without active air filtration can reach RCS concentrations of 0.1–1.0 mg/m³ during active bench and blast operations, exceeding the TWA limit in under two hours of unprotected exposure. MICROKAPPA™ provides multi-stage cabin protection combining electrostatic HEPA-grade particle capture with activated carbon adsorption media, reducing cabin PM2.5 and RCS concentrations by up to 85% compared to standard single-layer OEM cabin filters. Operators completing 12-hour shifts accumulate exposure at 1.5 times the 8-hour TWA rate, requiring documented high-efficiency cabin protection to maintain compliance under national mine safety and operator health monitoring programs.',
-      },
-      {
-        q: 'What are the financial consequences of contamination-related equipment failure in mining production operations?',
-        a: 'Mining equipment failure carries production loss costs at a scale unique among industrial sectors. An unplanned hydraulic failure on a 200-tonne excavator generates direct downtime costs of $5,000–35,000 per hour plus knock-on idle time for the 10–18 haul trucks in the truck-shovel circuit, multiplying total production loss by two to four times. Engine rebuild following liner and ring failure from air intake bypass: $50,000–200,000 in parts and labor, plus 3–7 days downtime at $120,000–250,000 per day for a mid-sized surface mine. Hydraulic pump replacement: $15,000–45,000 plus 12–36 hours. Fuel injector event on a 12-cylinder engine: $9,600–30,000 in parts plus service. Across a 40–80 vehicle mining fleet, contamination failures preventable through systematic asset protection represent $500,000–3,000,000 per year in avoidable maintenance and production loss. Contamination control system investment for an equivalent fleet is under 2% of that exposure — making it the highest-return reliability engineering decision available to a mining operation.',
-      },
-    ],
-    schemas: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Mining Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-        description: 'Mining asset protection systems engineered for excavators, haul trucks, drill rigs, and loaders operating in extreme silica dust environments of 2,000–15,000 mg/m³, with remote bulk fuel storage contamination, high-cycle hydraulic pressures of 250–450 bar, and respirable crystalline silica operator exposure requirements.',
-        areaServed: 'Global',
-        serviceType: 'Mining Equipment Contamination Control',
-        dateModified: '2026-06-10',
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
-          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
-          { '@type': 'ListItem', position: 3, name: 'Mining Asset Protection Systems', item: 'https://elimfilters.com/industries/mining' },
-        ],
-      },
-    ],
-  },
   'Agriculture': {
     lastUpdated: 'May 2026',
-    directAnswer: 'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
+    protectionLabel: 'STRATEGY',
+    protectionSystems: [
+      'Air Intake & Airflow Protection',
+      'Fuel Cleanliness Protection',
+      'Lubrication Protection',
+      'Hydraulic Protection',
+    ],
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
+    directAnswer: 'ELIMFILTERS agricultural asset protection systems are engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust environments. During grain and corn harvest, ambient dust concentrations can exceed 1,500 mg/m³ — more than five times the 300 mg/m³ maximum defined in ISO 5011 air filter testing standards. Proprietary synthetic-cellulose protection media provides high contaminant retention capacity while maintaining sealing efficiency throughout extended service intervals. The system is designed to reduce contamination-related failures during critical harvest operations.',
     faq: [
       {
         q: 'What asset protection systems do combine harvesters require?',
@@ -666,7 +896,7 @@ const industryGeoData: Record<string, GeoData> = {
       },
       {
         q: 'How often should the air intake protection system be serviced during harvest season?',
-        a: 'Air intake protection system service intervals depend on ambient dust concentration and daily operating hours. In standard conditions (under 500 mg/m³), ELIMFILTERS® MACROCORE™ systems support 500–750 operating hour intervals. During heavy grain or cotton harvest (dust above 1,000 mg/m³), inspection at 250 hours and service at first restriction indicator activation is recommended. Service intervals should not be based on time alone — differential pressure monitoring is required to maintain sealing efficiency.'
+        a: 'Air intake protection system service intervals depend on ambient dust concentration and daily operating hours. In standard conditions (under 500 mg/m³), ELIMFILTERS MACROCORE™ systems support 500–750 operating hour intervals. During heavy grain or cotton harvest (dust above 1,000 mg/m³), inspection at 250 hours and service at first restriction indicator activation is recommended. Service intervals should not be based on time alone — differential pressure monitoring is required to maintain sealing efficiency.'
       },
       {
         q: 'What does MACROCORE™ technology provide in agricultural asset protection applications?',
@@ -686,7 +916,7 @@ const industryGeoData: Record<string, GeoData> = {
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Agricultural Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        provider: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
         description: 'Agricultural asset protection systems engineered for tractors, combine harvesters, and self-propelled agricultural equipment operating in high-dust harvest environments with ambient dust concentrations exceeding 1,500 mg/m³.',
         areaServed: 'Global',
         serviceType: 'Industrial Contamination Control',
@@ -701,207 +931,6 @@ const industryGeoData: Record<string, GeoData> = {
           { '@type': 'ListItem', position: 3, name: 'Agricultural Asset Protection Systems', item: 'https://elimfilters.com/industries/agriculture' },
         ],
       },
-    ],
-  },
-};
-
-type IndustryLink = { href: string; label: string };
-const industryLinksData: Record<string, {
-  contamination?: IndustryLink[];
-  systems?: IndustryLink[];
-  knowledge?: IndustryLink[];
-}> = {
-  'Agriculture': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-    ],
-  },
-  'Automotive': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Bus Coach': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
-    ],
-  },
-  'Construction': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Manufacturing': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-    ],
-  },
-  'Marine': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-    ],
-  },
-  'Mining': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Oil Gas': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Power Generation': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Railway': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Trucks Fleets': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-    ],
-  },
-  'Waste Municipal': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
     ],
   },
 };
@@ -939,8 +968,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Railway asset protection systems for diesel-electric locomotives, DMUs, and shunting locomotives operating under continuous traction loading and track ballast dust exposure. Fuel, pneumatic, air intake, and lubrication contamination control engineered for multi-day locomotive service cycles.'
     : item.name === 'Trucks Fleets'
     ? 'Commercial fleet asset protection systems for long-haul trucks and delivery vehicles operating under HPCR diesel fuel system demands. Air intake, fuel cleanliness, lubrication, and cabin air protection engineered for extended road service schedules and high-frequency urban delivery cycles.'
-    : item.name === 'Mining'
-    ? 'Mining asset protection systems for excavators, haul trucks, drill rigs, and loaders operating in silica dust concentrations of 2,000–15,000 mg/m³. Air intake, hydraulic, fuel, lubrication, and cabin air protection engineered for extreme contamination exposure in hard rock and mineral processing operations.'
     : item.name === 'Waste Municipal'
     ? 'Municipal fleet asset protection systems for refuse collection vehicles, fire apparatus, ambulances, and public service equipment. Lubrication, air intake, fuel system, and cabin air protection engineered for 24/7 urban duty cycles, frequent stop-start loading, and emergency response readiness.'
     : item.description;
@@ -949,7 +976,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: [
       `${item.name.toLowerCase()} filtration`, `${item.name.toLowerCase()} filters`,
-      `industrial filters ${item.name.toLowerCase()}`, 'ELIMFILTERS®', 'asset protection filtration',
+      `industrial filters ${item.name.toLowerCase()}`, 'ELIMFILTERS', 'asset protection filtration',
     ],
     alternates: {
       canonical: url,
@@ -960,12 +987,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS® World Catalogue',
+      siteName: 'ELIMFILTERS World Catalogue',
       images: [{
         url: industryMedia[item.name]?.image ? `https://elimfilters.com${industryMedia[item.name].image}` : 'https://elimfilters.com/assets/logo-elimfilters.png',
         width: 1200,
         height: 630,
-        alt: `${item.title} — ELIMFILTERS®`
+        alt: `${item.title} — ELIMFILTERS`
       }],
       locale: 'en_US',
     },
@@ -984,7 +1011,6 @@ export default function IndustryPage({ params }: Props) {
 
   const media = industryMedia[item.name] || {};
   const geoData = industryGeoData[item.name];
-  const industryLinks = industryLinksData[item.name];
 
   return (
     <CategoryPage
@@ -993,7 +1019,6 @@ export default function IndustryPage({ params }: Props) {
       industryImage={media.image}
       industryVideo={media.video}
       geoData={geoData}
-      industryLinks={industryLinks}
     />
   );
 }

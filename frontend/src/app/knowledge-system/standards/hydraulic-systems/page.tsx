@@ -16,7 +16,6 @@ const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media achieving 99.9% efficiency for proportional valve protection, maintaining ISO 16/14/11 cleanliness under high-flow conditions.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: 'Advanced synthetic fluids with +40% oxidation resistance, providing 4,000+ hour service life while maintaining contamination resistance.' },
   { name: 'MICROKAPPA', slug: 'microkappa', role: 'Precision micro-filtration for coolant and specialty fluid systems addressing proportional control contamination in machine tools.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water removal technology preventing hydrolysis and seal degradation in hydraulic systems, maintaining fluid integrity across operating life.' },
 ];
 
 const IMPACTS = [
@@ -54,8 +53,8 @@ const RELATED_SYSTEMS = [
 export default function HydraulicSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -164,8 +163,8 @@ export default function HydraulicSystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
-          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS TECHNOLOGIES</p>
+          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
@@ -247,6 +246,32 @@ export default function HydraulicSystemsPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Hydraulic Systems',
+        description: 'Hydraulic system filtration engineering: ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial machinery.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['hydraulic filtration', 'ISO 16889', 'NFPA T2.14', 'proportional valve protection', 'DIN 51524', 'hydraulic oil cleanliness', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Hydraulic Filtration Systems', description: 'Engineering domain governing fluid cleanliness in hydraulic power systems through ISO 16889 Beta ratio testing and NFPA T2.14 cleanliness targets.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Hydraulic Systems', item: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

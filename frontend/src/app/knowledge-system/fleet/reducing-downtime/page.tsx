@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -46,9 +46,10 @@ const FAQS = [
 export default function ReducingDowntimePage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
+
       {/* Navigation */}
-      <Link href="/knowledge-system/fleet" style={{
+      <Link href="/knowledge-system/fleet"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -476,6 +477,39 @@ export default function ReducingDowntimePage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Reducing Fleet Downtime',
+        description: 'Unplanned mechanical failure is the primary driver of availability loss in industrial fleets. Filtration discipline is one of the highest-leverage variables within an operator\'s direct control.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'fleet downtime', 'unplanned maintenance', 'ISO 16889', 'oil cleanliness', 'predictive maintenance'],
+        about: { '@type': 'Thing', name: 'Fleet Downtime Reduction', description: 'Contamination control strategies that prevent unplanned mechanical failures and extend equipment availability in industrial fleet operations.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Reducing Fleet Downtime', item: 'https://elimfilters.com/knowledge-system/fleet/reducing-downtime' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the difference between planned and unplanned downtime in fleet operations?', acceptedAnswer: { '@type': 'Answer', text: 'Planned downtime occurs during scheduled maintenance windows where work scope, parts, and technician availability are pre-coordinated. Unplanned downtime results from component failure without prior warning, requiring emergency mobilization of resources. The cost differential between the two is typically 3 to 8 times higher for unplanned events due to emergency parts procurement, overtime labor, and production losses that compound while equipment sits idle.' } },
+          { '@type': 'Question', name: 'How does filter bypass affect unplanned failure rates?', acceptedAnswer: { '@type': 'Answer', text: 'Bypass events occur when differential pressure across a filter element exceeds the bypass valve opening threshold, typically between 3 and 6 bar for engine oil filters. During bypass, unfiltered fluid circulates through the system carrying accumulated wear debris directly to precision clearance surfaces. A single sustained bypass event can introduce enough abrasive material to reduce bearing service life by 20 to 40%, often without producing immediate symptoms visible in routine inspection.' } },
+          { '@type': 'Question', name: 'At what oil contamination level should an operator intervene before failure occurs?', acceptedAnswer: { '@type': 'Answer', text: 'ISO cleanliness code 18/16/13 is typically the intervention threshold for critical engine oil systems. Above this level, wear particle concentration accelerates abrasive mechanisms in a compounding pattern. For hydraulic systems with proportional control valves, ISO 16/14/11 is the maximum acceptable operating level. Exceeding these thresholds by even one ISO scale code represents a doubling of particle concentration and a measurable increase in component degradation rate.' } },
+          { '@type': 'Question', name: 'Can extended oil drain intervals increase unplanned downtime risk?', acceptedAnswer: { '@type': 'Answer', text: 'Extended drain intervals reduce planned maintenance frequency but increase contamination accumulation risk when filter element capacity is not proportionally upgraded. Oil oxidation byproducts and wear metal concentration both rise monotonically with service hours. When drain extensions are implemented without corresponding changes to filtration specification - higher efficiency elements or bypass filtration - the probability of in-service fluid degradation reaching critical thresholds increases significantly.' } },
+        ],
+      }) }} />
     </main>
   );
 }

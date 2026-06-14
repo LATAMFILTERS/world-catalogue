@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -39,8 +39,9 @@ const FRAMEWORK_SECTIONS = [
 export default function ComparisonHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system" style={{
+
+      <Link href="/knowledge-system"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -125,7 +126,7 @@ export default function ComparisonHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            ELIMFILTERS® reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
+            ELIMFILTERS reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -238,6 +239,28 @@ export default function ComparisonHubPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'System vs Commodity Thinking',
+        description: 'Reframes industrial filtration evaluation from product-based commodity selection to system-level contamination control strategy, covering OEM comparison, filter evaluation frameworks, and total cost of ownership analysis.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['system vs commodity filtration', 'OEM filter comparison', 'filter evaluation', 'total cost of ownership', 'contamination control', 'ISO 16889', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'System vs Commodity Filtration Thinking', description: 'Framework for evaluating industrial filtration decisions based on contamination control system performance rather than product price or brand.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'System vs Commodity Thinking', item: 'https://elimfilters.com/knowledge-system/compare' },
+        ],
+      }) }} />
     </main>
   );
 }

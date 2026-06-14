@@ -7,8 +7,8 @@ import { motion } from 'motion/react';
 export default function IndustrialFiltrationPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/bridges" style={{
+      <Link href="/knowledge-system/bridges"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -1221,7 +1221,7 @@ export default function IndustrialFiltrationPage() {
             "url": "https://elimfilters.com/knowledge-system/bridges/industrial-filtration",
             "author": {
               "@type": "Organization",
-              "name": "ELIMFILTERS®"
+              "name": "ELIMFILTERS"
             },
             "about": {
               "@type": "Thing",

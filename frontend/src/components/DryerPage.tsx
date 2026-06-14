@@ -169,7 +169,7 @@ export function DryerPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS® air dryer cartridges combine a two-stage process: a coalescing pre-filter captures oil aerosols and liquid water before they reach the desiccant bed, extending desiccant life and preventing channeling. The activated desiccant matrix then drives moisture content to zero dew point — protecting pneumatic valves, brake chambers, ABS modulators and downstream instrumentation from corrosion, freeze-up and premature failure.
+                  ELIMFILTERS air dryer cartridges combine a two-stage process: a coalescing pre-filter captures oil aerosols and liquid water before they reach the desiccant bed, extending desiccant life and preventing channeling. The activated desiccant matrix then drives moisture content to zero dew point — protecting pneumatic valves, brake chambers, ABS modulators and downstream instrumentation from corrosion, freeze-up and premature failure.
                 </p>
 
                 <div

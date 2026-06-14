@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function OEMComparisonPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
@@ -179,7 +180,7 @@ export default function OEMComparisonPage() {
             marginBottom: '2rem',
             fontStyle: 'italic',
           }}>
-            Note: The following overview is factual market analysis. ELIMFILTERS® does not compete on price or brand positioning. We compete on system-level contamination control.
+            Note: The following overview is factual market analysis. ELIMFILTERS does not compete on price or brand positioning. We compete on system-level contamination control.
           </p>
           <div style={{
             display: 'grid',
@@ -242,7 +243,7 @@ export default function OEMComparisonPage() {
                 color: '#FFF12D',
                 marginBottom: '0.75rem',
               }}>
-                <strong>ELIMFILTERS® Positioning:</strong> Not a filter brand, but an asset protection system.
+                <strong>ELIMFILTERS Positioning:</strong> Not a filter brand, but an asset protection system.
               </p>
               <p style={{
                 fontSize: '0.85rem',
@@ -374,7 +375,7 @@ export default function OEMComparisonPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / THE ELIMFILTERS® ADVANTAGE
+            04 / THE ELIMFILTERS ADVANTAGE
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -397,7 +398,7 @@ export default function OEMComparisonPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
-              ELIMFILTERS® does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
+              ELIMFILTERS does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
             </p>
             <ul style={{
               fontSize: '1rem',
@@ -451,6 +452,29 @@ export default function OEMComparisonPage() {
         <p>&nbsp;&nbsp;version: 1.0</p>
         <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'OEM vs Aftermarket Analysis',
+        description: 'When brand choice matters, and when system design is what actually determines equipment reliability. Factual analysis of OEM filter requirements versus aftermarket alternatives in industrial filtration.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'OEM filters', 'aftermarket filters', 'Donaldson', 'Fleetguard', 'filter brand comparison', 'contamination control', 'ISO 16889'],
+        about: { '@type': 'Thing', name: 'OEM vs Aftermarket Filtration Analysis', description: 'Analysis of when OEM filter brand choice is a compliance requirement versus when system-level contamination control design determines equipment reliability.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'OEM vs Aftermarket Analysis', item: 'https://elimfilters.com/knowledge-system/compare/oem-comparison' },
+        ],
+      }) }} />
     </main>
   );
 }
