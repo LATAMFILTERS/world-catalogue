@@ -1358,7 +1358,7 @@ app.get('/api/search', async (req, res) => {
        LIMIT 5`,
       [q]
     );
-    // Fallback: prefix + partial across codes
+    // Fallback: prefix on SKU/base; exact prefix on OEM/competitor codes (no substring to avoid collisions)
     if (result.rows.length === 0) {
       result = await searchPool.query(
         `SELECT * FROM elimfilters_catalog
@@ -1366,8 +1366,17 @@ app.get('/api/search', async (req, res) => {
             OR UPPER(codigo_base) LIKE $1
             OR UPPER(sku) ILIKE $2
             OR UPPER(codigo_base) ILIKE $2
-            OR oem_codes::text ILIKE $2
-            OR competitor_codes::text ILIKE $2
+            OR EXISTS (
+              SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) elem
+              WHERE UPPER(elem->>'code') LIKE $1
+                 OR UPPER(elem->>'partNumber') LIKE $1
+            )
+            OR EXISTS (
+              SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) elem
+              WHERE UPPER(elem->>'code') LIKE $1
+                 OR UPPER(elem->>'partNumber') LIKE $1
+                 OR (jsonb_typeof(elem) = 'string' AND UPPER(elem#>>'{}') LIKE $1)
+            )
          ORDER BY CASE WHEN UPPER(sku) LIKE $1 THEN 0 ELSE 1 END, sku
          LIMIT 20`,
         [q + '%', '%' + q + '%']
