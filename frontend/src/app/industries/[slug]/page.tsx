@@ -284,6 +284,26 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Manufacturing': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Industrial Engines',
+      'Compressors',
+      'Pumps',
+      'Hydraulic Presses',
+      'Injection Molding Machines',
+      'CNC Equipment',
+      'Conveyor Systems',
+    ],
+    knowledgeLinks: [
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Production Equipment?',
     ctaDescription: 'Find the right manufacturing asset protection system for your industrial equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS manufacturing asset protection systems are engineered for industrial engines, hydraulic systems, compressors, pumps, conveyors, and production equipment operating under continuous manufacturing duty cycles. Manufacturing environments generate airborne particulate contamination at concentrations dependent on process type — metalworking and casting generate silica and metal particle loads, textile and packaging lines generate fiber and dust accumulation. Hydraulic systems in production equipment require cleanliness targets of ISO 16/14/11 or tighter to prevent proportional valve stiction and actuator degradation. ELIMFILTERS systems maintain air intake efficiency, lubrication cleanliness, fuel system integrity, and hydraulic protection throughout extended manufacturing service schedules.',
