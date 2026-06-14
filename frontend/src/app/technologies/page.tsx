@@ -19,29 +19,32 @@ const GEO_DEFINITIONS: Record<string, string> = {
 };
 
 const TECH_COMPARISON = [
-  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
-  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
-  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
-  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
-  { name: 'HYDROCORE™', slug: 'hydrocore', system: 'Fuel Cleanliness', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
-  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
-  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
-  { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
-  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Protection', func: 'PM2.5 capture + activated carbon adsorption', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
+  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake & Airflow Protection', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
+  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake & Airflow Protection', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
+  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake & Airflow Protection', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
+  { name: 'DRYCORE™', slug: 'drycore', system: 'Air Intake & Airflow Protection', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
+  { name: 'HYDROCORE™', slug: 'hydrocore', system: 'Fuel Cleanliness Protection', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
+  { name: 'HYDROCORE/SERIES™', slug: 'hydrocore-series', system: 'Fuel Cleanliness Protection', func: 'High-flow fuel protection for stationary power systems', metric: '99.8% free water removal · High-flow power systems', industries: 'Power Generation, Mining, Stationary industrial' },
+  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication Protection', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
+  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic Protection', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
+  { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System Protection', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
+  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Cross-System', func: 'Corrosion-resistant fuel and lube protection for marine environments', metric: 'IMO certified · ASTM B117 · Salt-resistant', industries: 'Marine, Offshore, Commercial vessels' },
+  { name: 'DURATECH™', slug: 'duratech', system: 'Cross-System', func: 'Multi-domain fleet standardisation and consolidated service kits', metric: 'OEM-interchangeable · Mixed-fleet', industries: 'Trucks & Fleets, Mining, Construction, Agriculture' },
+  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cross-System', func: 'PM2.5 capture + activated carbon cabin protection', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
 const FAQS = [
   {
     q: 'What is the difference between MACROCORE™ and SYNTEPORE™ air intake protection?',
-    a: 'Both are Air Intake architectures (System 01) but target different operating environments. MACROCORE™ uses Progressive Density Gradient (PDG) media — a multi-layer cellulose-synthetic composite achieving 99.9%–99.98% efficiency (ISO 5011) at dust concentrations up to 10,000 mg/m³ in mining, agriculture, and construction. SYNTEPORE™ is all-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure would degrade cellulose media — maintaining ISO 5011-compliant airflow restriction regardless of humidity conditions.',
+    a: 'Both are Air Intake & Airflow Protection technologies but target different operating environments. MACROCORE™ uses Progressive Density Gradient (PDG) media — a multi-layer cellulose-synthetic composite achieving 99.9%–99.98% efficiency (ISO 5011) at dust concentrations up to 10,000 mg/m³ in mining, agriculture, and construction. SYNTEPORE™ is all-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure would degrade cellulose media — maintaining ISO 5011-compliant airflow restriction regardless of humidity conditions.',
   },
   {
     q: 'Which ELIMFILTERS architecture protects HPCR diesel injection systems?',
-    a: 'HYDROCORE™ is the fuel cleanliness architecture (System 02) for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
+    a: 'HYDROCORE™ is the Fuel Cleanliness Protection technology for HPCR injection systems operating at 1,800–2,500 bar. It uses turbine-stage coalescing separation to remove free water at 99.8% efficiency and emulsified water at 95% — preventing injector needle corrosion above 200 ppm water content and pump cavitation. HPCR injector needle clearances measure 1–3 µm, making water contamination the primary failure mechanism in fuel-injection equipment.',
   },
   {
     q: 'What is SYNTRAX™ and which system does it protect?',
-    a: 'SYNTRAX™ is the lubrication reliability architecture for System 03 — engine oil protection. It maintains ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals (60,000–100,000 km programs) for diesel, gas, and dual-fuel engines. SYNTRAX™ captures combustion soot above 2% by weight, metal wear particles from ring/liner/bearing contact, and fuel dilution byproducts that reduce oil viscosity below SAE specification. Maintaining ISO 4406 code 16/14/11 extends bearing service life three to five times compared to uncontrolled contamination at 19/17/14.',
+    a: 'SYNTRAX™ is the Lubrication Protection technology for engine oil protection. It maintains ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals (60,000–100,000 km programs) for diesel, gas, and dual-fuel engines. SYNTRAX™ captures combustion soot above 2% by weight, metal wear particles from ring/liner/bearing contact, and fuel dilution byproducts that reduce oil viscosity below SAE specification. Maintaining ISO 4406 code 16/14/11 extends bearing service life three to five times compared to uncontrolled contamination at 19/17/14.',
   },
   {
     q: 'What ISO standards govern ELIMFILTERS protection architectures?',
@@ -49,11 +52,11 @@ const FAQS = [
   },
   {
     q: 'How does NANOFORCE™ prevent hydraulic proportional valve failure?',
-    a: 'NANOFORCE™ is the hydraulic contamination control architecture (System 04) maintaining ISO 4406 cleanliness codes of 16/14/11 or tighter at 200–450 bar. Proportional valve spool clearances measure 5–25 µm — where silica particles above 5 µm (Mohs hardness 7) cause permanent micro-abrasion on valve faces. At contamination levels above ISO 19/17/14, proportional valve failure rates increase three to five times. NANOFORCE™ captures sub-micron particles at 1–10 µm that bypass standard 25 µm return-line protection systems.',
+    a: 'NANOFORCE™ is the Hydraulic Protection technology maintaining ISO 4406 cleanliness codes of 16/14/11 or tighter at 200–450 bar. Proportional valve spool clearances measure 5–25 µm — where silica particles above 5 µm (Mohs hardness 7) cause permanent micro-abrasion on valve faces. At contamination levels above ISO 19/17/14, proportional valve failure rates increase three to five times. NANOFORCE™ captures sub-micron particles at 1–10 µm that bypass standard 25 µm return-line protection systems.',
   },
   {
     q: 'What protection does MICROKAPPA™ provide for commercial vehicle operators?',
-    a: 'MICROKAPPA™ is the cabin environmental protection architecture (System 05) combining multi-stage PM2.5 particulate capture with activated carbon adsorption. It reduces cabin PM2.5 concentration by up to 85% versus standard OEM cabin elements. Professional drivers completing 9–11 hour daily schedules accumulate sustained occupational exposure to diesel exhaust particulate — classified as IARC Group 1 carcinogen. EU Directive 2019/130 and OSHA standards impose PM2.5 exposure limits for commercial vehicle operators, making documented cabin protection a compliance obligation for fleet operators in regulated jurisdictions.',
+    a: 'MICROKAPPA™ is a cross-system cabin protection technology combining multi-stage PM2.5 particulate capture with activated carbon adsorption. It reduces cabin PM2.5 concentration by up to 85% versus standard OEM cabin elements. Professional drivers completing 9–11 hour daily schedules accumulate sustained occupational exposure to diesel exhaust particulate — classified as IARC Group 1 carcinogen. EU Directive 2019/130 and OSHA standards impose PM2.5 exposure limits for commercial vehicle operators, making documented cabin protection a compliance obligation for fleet operators in regulated jurisdictions.',
   },
 ];
 
@@ -89,10 +92,10 @@ export default function TechnologiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'ELIMFILTERS Proprietary Protection Architectures',
-        description: 'Nine exclusive protection architectures for industrial asset protection across air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin contamination domains.',
+        name: 'ELIMFILTERS Proprietary Technologies — Asset Protection Platform',
+        description: 'Twelve proprietary technologies organized within five protection systems: Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Protection, Hydraulic Protection, and Cooling System Protection.',
         url: 'https://elimfilters.com/technologies/',
-        numberOfItems: 9,
+        numberOfItems: 12,
         itemListElement: itemListData,
       }) }} />
 
@@ -160,7 +163,7 @@ export default function TechnologiesPage() {
               lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
             }}
           >
-            NINE EXCLUSIVE PROTECTION ARCHITECTURES
+            TWELVE TECHNOLOGIES. FIVE PROTECTION SYSTEMS.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -170,10 +173,34 @@ export default function TechnologiesPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif',
               maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
+              marginBottom: '2.5rem',
             }}
           >
-            Nine protection architectures organized by contamination domain — air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin — each defined by its contamination target, failure mechanism, and measurable engineering standard.
+            Twelve proprietary technologies organized within five protection systems — each defined by its contamination target, failure mechanism, and measurable engineering standard.
           </motion.p>
+
+          {/* Change 1 & 2 — metrics bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }}
+          >
+            {[
+              { value: '12', label: 'Technologies' },
+              { value: '5', label: 'Protection Systems' },
+              { value: 'ISO', label: 'Referenced' },
+            ].map(item => (
+              <div key={item.label}>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#FFF12D', lineHeight: 1, margin: '0 0 0.25rem' }}>
+                  {item.value}
+                </p>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', margin: 0 }}>
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -300,10 +327,10 @@ export default function TechnologiesPage() {
               // TECHNOLOGY COMPARISON
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 1rem' }}>
-              Nine Protection Architectures — Quick Reference
+              Twelve Technologies — Quick Reference
             </h2>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
-              System assignment, primary contamination target, key engineering metric, and applicable industries across the nine proprietary ELIMFILTERS protection architectures.
+              Protection system assignment, primary contamination target, key engineering metric, and applicable industries across the twelve ELIMFILTERS technologies. MARINECLEAN™, DURATECH™, and MICROKAPPA™ are classified as cross-system platform technologies.
             </p>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>
