@@ -837,11 +837,11 @@ export default function Home() {
             >
               <div>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost — 4× NANOFORCE™ Hydraulic Filters</p>
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>$480</p>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
-                  Proper hydraulic filtration costs less than 1% of a single contamination event.<br />
+                  4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
                   <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
                 </p>
               </div>
