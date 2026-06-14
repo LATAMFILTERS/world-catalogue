@@ -67,7 +67,9 @@ interface GeoData {
   ctaTitle?: string;
   ctaDescription?: string;
   protectionLabel?: string;
+  videoSectionName?: string;
   protectionSystems?: string[];
+  techFocus?: string;
   knowledgeLinks?: { label: string; href?: string }[];
   preCtaQuote?: { line1: string; line2: string };
 }
@@ -198,6 +200,19 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Bus Coach': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'BUS & COACH',
+    techFocus: 'Primary Technology Focus: DRYCORE™ Pneumatic Protection',
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Transit Fleet?',
     ctaDescription: 'Find the right transit asset protection system for your bus or coach fleet application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS bus and coach asset protection systems are engineered for diesel transit buses, intercity coaches, and articulated urban vehicles. Urban transit engines complete 1,200–2,000 cold-start and partial-load cycles per week. Each cycle introduces combustion particulate and fuel dilution into engine oil. Soot contamination accumulates at three to five times the rate of highway applications. ELIMFILTERS systems maintain engine lube oil cleanliness, pneumatic brake system air purity to ISO 8573-1 Class 2 standards, cabin airflow quality, and fuel system protection throughout extended transit service schedules.',

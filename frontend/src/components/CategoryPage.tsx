@@ -24,7 +24,9 @@ interface CategoryPageProps {
     ctaTitle?: string;
     ctaDescription?: string;
     protectionLabel?: string;
+    videoSectionName?: string;
     protectionSystems?: string[];
+    techFocus?: string;
     knowledgeLinks?: { label: string; href?: string }[];
     preCtaQuote?: { line1: string; line2: string };
   };
@@ -231,7 +233,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         color: '#FFF12D',
                       }}
                     >
-                      {item.name.toUpperCase()} ASSET PROTECTION {geoData?.protectionLabel ?? 'SYSTEM'}
+                      {geoData?.videoSectionName ?? item.name.toUpperCase()} ASSET PROTECTION {geoData?.protectionLabel ?? 'SYSTEM'}
                     </span>
                   </div>
                   <h3
@@ -664,6 +666,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               >
                 Technologies Included
               </h3>
+              {geoData?.techFocus && (
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', marginBottom: '1rem', lineHeight: 1.5 }}>
+                  {geoData.techFocus}
+                </p>
+              )}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
                   <span
