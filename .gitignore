@@ -27,3 +27,4 @@ elimfilters-vault/.obsidian/
 # Next.js build output — generated, never commit
 frontend/out/
 frontend/.next/
+.next/
