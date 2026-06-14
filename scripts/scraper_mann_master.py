@@ -181,43 +181,43 @@ _MANN_MASTER_JS = """() => {
                   allItems[ii].querySelector('.cmp-accordion__header');
         if (btn && btn.textContent.indexOf('OE Number') >= 0) {
             oeItem = allItems[ii];
-            try { btn.click(); } catch(e) {}  // expand if CSS-collapsed
+            try { btn.click(); } catch(e) {}  // expand outer panel
             break;
         }
     }
     if (oeItem) {
-        var oeTable = oeItem.querySelector('table');
-        if (oeTable) {
-            var lastMake = '';
-            var oeRows = oeTable.querySelectorAll('tr');
-            for (var ri = 0; ri < oeRows.length; ri++) {
-                var oeCells = oeRows[ri].querySelectorAll('td');
-                var cv = [];
-                for (var ci = 0; ci < oeCells.length; ci++) {
-                    var ct = oeCells[ci].textContent.trim().replace(/\\s+/g, ' ');
-                    if (ct) cv.push(ct);
-                }
-                if (!cv.length) continue;
-                if (cv.length >= 2) {
-                    var mc = cv[0], cc = cv[1];
-                    // make cell: starts with letter, not a digit
-                    if (mc && mc.charCodeAt(0) >= 65) lastMake = mc;
-                    var tgt = lastMake || mc;
-                    if (tgt) {
-                        if (!oeNumbers[tgt]) oeNumbers[tgt] = [];
-                        if (cc) oeNumbers[tgt].push(cc);
+        var oePanel = oeItem.querySelector('.cmp-accordion__panel');
+        if (oePanel) {
+            // OE Numbers uses a NESTED accordion: outer=OE Numbers, inner=one item per make.
+            // Each inner item has: button title = make name, panel = OE codes (may be hidden in DOM).
+            var nestedItems = oePanel.querySelectorAll('.cmp-accordion__item');
+            for (var ni = 0; ni < nestedItems.length; ni++) {
+                var makeTitle = nestedItems[ni].querySelector('.cmp-accordion__title');
+                var makeName  = makeTitle ? makeTitle.textContent.trim().replace(/\\s+/g, ' ') : '';
+                if (!makeName) continue;
+                // Click to expand inner panel (makes content readable even if AJAX)
+                var innerBtn = nestedItems[ni].querySelector('.cmp-accordion__button');
+                if (innerBtn) { try { innerBtn.click(); } catch(e) {} }
+                // Read codes from inner panel — look for table cells first, then raw text lines
+                var innerPanel = nestedItems[ni].querySelector('.cmp-accordion__panel');
+                if (!innerPanel) continue;
+                var codes = [];
+                var codeTds = innerPanel.querySelectorAll('td');
+                if (codeTds.length) {
+                    for (var cdi = 0; cdi < codeTds.length; cdi++) {
+                        var cdt = codeTds[cdi].textContent.trim().replace(/\\s+/g, ' ');
+                        if (cdt) codes.push(cdt);
                     }
                 } else {
-                    var sv = cv[0];
-                    var fc = sv ? sv.charCodeAt(0) : 0;
-                    // looks like a brand name: starts A-Z, not a digit, short
-                    if (fc >= 65 && fc <= 90 && sv.length <= 30 && !oeNumbers[sv]) {
-                        lastMake = sv;
-                        oeNumbers[lastMake] = [];
-                    } else if (lastMake && sv) {
-                        oeNumbers[lastMake].push(sv);
+                    // Fallback: split raw text by double-space or newline
+                    var raw = innerPanel.textContent.trim().replace(/\\s*\\n\\s*/g, '\\n');
+                    var lines = raw.split('\\n');
+                    for (var li = 0; li < lines.length; li++) {
+                        var lv = lines[li].trim();
+                        if (lv && lv.length > 2) codes.push(lv);
                     }
                 }
+                if (codes.length) oeNumbers[makeName] = codes;
             }
         }
     }
