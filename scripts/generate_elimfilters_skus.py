@@ -166,9 +166,11 @@ def process(records: list[dict]) -> list[dict]:
         # Cross-reference codes (FRAM / WIX / BOSCH equivalents) — populated in future scrape
         xref_codes = rec.get("xref_codes", "")
 
-        # Fitment: list of dicts → compact string per vehicle
+        # Fitment: list of dicts → separate engine, year, and full fitment columns
         fitment_raw = rec.get("fitment", [])
         fitment_lines = []
+        engines = []
+        years   = []
         for v in fitment_raw:
             make  = v.get("make", "")
             model = v.get("model_family", "") or v.get("model", "")
@@ -177,7 +179,13 @@ def process(records: list[dict]) -> list[dict]:
             kw    = v.get("kw", "")
             year  = v.get("year", "")
             fitment_lines.append(f"{make} {model} {eng} {ccm}cc {kw}kW {year}".strip())
-        fitment = " / ".join(fitment_lines)
+            if eng and eng not in engines:
+                engines.append(eng)
+            if year and year not in years:
+                years.append(year)
+        fitment    = " / ".join(fitment_lines)
+        engines_str = " | ".join(engines)
+        years_str   = " | ".join(years)
 
         out.append({
             "elim_sku":     elim_sku,
@@ -191,11 +199,12 @@ def process(records: list[dict]) -> list[dict]:
             "description":  rec.get("description", "")[:120],
             "dimensions":   dimensions,
             "specs":        specs,
-            "oe_numbers":   oe_numbers,
-            "fitment_count": rec.get("fitment_count", 0),
             "oe_count":     rec.get("oe_count", 0),
             "oem_codes":    oem_codes,
             "xref_codes":   xref_codes,
+            "fitment_count": rec.get("fitment_count", 0),
+            "engines":      engines_str,
+            "years":        years_str,
             "fitment":      fitment,
         })
 
@@ -292,7 +301,7 @@ def main():
         "technology", "hd_equiv",
         "gtin", "description", "dimensions", "specs",
         "oe_count", "oem_codes", "xref_codes",
-        "fitment_count", "fitment",
+        "fitment_count", "engines", "years", "fitment",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CSV_COLS)
