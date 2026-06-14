@@ -157,11 +157,14 @@ def process(records: list[dict]) -> list[dict]:
             f"{k}:{v}" for k, v in specs_raw.items()
         ) if specs_raw else ""
 
-        # Flatten OE numbers: {"FIAT": ["4119015",...], "OPEL": [...]} → "FIAT:4119015,4121392 | OPEL:3448991"
+        # OEM codes: {"FIAT": ["4119015",...], "OPEL": [...]} → "FIAT:4119015,4121392 | OPEL:3448991"
         oe_raw = rec.get("oe_numbers", {})
-        oe_numbers = " | ".join(
+        oem_codes = " | ".join(
             f"{make}:{','.join(codes)}" for make, codes in oe_raw.items()
         ) if oe_raw else ""
+
+        # Cross-reference codes (FRAM / WIX / BOSCH equivalents) — populated in future scrape
+        xref_codes = rec.get("xref_codes", "")
 
         # Fitment: list of dicts → compact string per vehicle
         fitment_raw = rec.get("fitment", [])
@@ -191,6 +194,8 @@ def process(records: list[dict]) -> list[dict]:
             "oe_numbers":   oe_numbers,
             "fitment_count": rec.get("fitment_count", 0),
             "oe_count":     rec.get("oe_count", 0),
+            "oem_codes":    oem_codes,
+            "xref_codes":   xref_codes,
             "fitment":      fitment,
         })
 
@@ -286,7 +291,7 @@ def main():
         "elim_sku", "base_code", "product_type", "family", "family_label",
         "technology", "hd_equiv",
         "gtin", "description", "dimensions", "specs",
-        "oe_count", "oe_numbers",
+        "oe_count", "oem_codes", "xref_codes",
         "fitment_count", "fitment",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
