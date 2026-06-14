@@ -145,6 +145,37 @@ def process(records: list[dict]) -> list[dict]:
 
         product_type = rec.get("filter_type", "")
 
+        # Flatten dimensions: {"Height": "142 mm", ...} → "Height:142mm | OD:93mm"
+        dims_raw = rec.get("dimensions", {}) or rec.get("dims_inline", {})
+        dimensions = " | ".join(
+            f"{k}:{v}".replace(" ", "") for k, v in dims_raw.items()
+        ) if dims_raw else ""
+
+        # Flatten specs: {"Filter with by-pass valve": "No", ...} → "bypass:No | anti-drain:No"
+        specs_raw = rec.get("specs", {})
+        specs = " | ".join(
+            f"{k}:{v}" for k, v in specs_raw.items()
+        ) if specs_raw else ""
+
+        # Flatten OE numbers: {"FIAT": ["4119015",...], "OPEL": [...]} → "FIAT:4119015,4121392 | OPEL:3448991"
+        oe_raw = rec.get("oe_numbers", {})
+        oe_numbers = " | ".join(
+            f"{make}:{','.join(codes)}" for make, codes in oe_raw.items()
+        ) if oe_raw else ""
+
+        # Fitment: list of dicts → compact string per vehicle
+        fitment_raw = rec.get("fitment", [])
+        fitment_lines = []
+        for v in fitment_raw:
+            make  = v.get("make", "")
+            model = v.get("model_family", "") or v.get("model", "")
+            eng   = v.get("engine_code", "") or v.get("engine", "")
+            ccm   = v.get("ccm", "")
+            kw    = v.get("kw", "")
+            year  = v.get("year", "")
+            fitment_lines.append(f"{make} {model} {eng} {ccm}cc {kw}kW {year}".strip())
+        fitment = " / ".join(fitment_lines)
+
         out.append({
             "elim_sku":     elim_sku,
             "base_code":    mann_sku,
@@ -154,9 +185,13 @@ def process(records: list[dict]) -> list[dict]:
             "technology":   TECHNOLOGY_MAP.get(family, ""),
             "hd_equiv":     HD_EQUIV_MAP.get(family, ""),
             "gtin":         rec.get("gtin", ""),
+            "description":  rec.get("description", "")[:120],
+            "dimensions":   dimensions,
+            "specs":        specs,
+            "oe_numbers":   oe_numbers,
             "fitment_count": rec.get("fitment_count", 0),
             "oe_count":     rec.get("oe_count", 0),
-            "description":  rec.get("description", "")[:120],
+            "fitment":      fitment,
         })
 
     # Report collisions
@@ -250,7 +285,9 @@ def main():
     CSV_COLS = [
         "elim_sku", "base_code", "product_type", "family", "family_label",
         "technology", "hd_equiv",
-        "gtin", "fitment_count", "oe_count", "description",
+        "gtin", "description", "dimensions", "specs",
+        "oe_count", "oe_numbers",
+        "fitment_count", "fitment",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CSV_COLS)
