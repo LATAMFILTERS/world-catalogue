@@ -143,18 +143,22 @@ def process(records: list[dict]) -> list[dict]:
         # Track collisions (different MANN SKUs → same ELIMFILTERS SKU)
         collisions.setdefault(elim_sku, []).append(mann_sku)
 
+        filter_type  = rec.get("filter_type", "")
+        product_name = f"{filter_type} {mann_sku}".strip() if filter_type else mann_sku
+
         out.append({
-            "elim_sku":    elim_sku,
-            "mann_sku":    mann_sku,
-            "family":      family,
+            "elim_sku":     elim_sku,
+            "product_name": product_name,
+            "mann_sku":     mann_sku,
+            "family":       family,
             "family_label": FAMILY_LABELS.get(family, ""),
-            "technology":  TECHNOLOGY_MAP.get(family, ""),
-            "hd_equiv":    HD_EQUIV_MAP.get(family, ""),
-            "filter_type": rec.get("filter_type", ""),
-            "gtin":        rec.get("gtin", ""),
+            "technology":   TECHNOLOGY_MAP.get(family, ""),
+            "hd_equiv":     HD_EQUIV_MAP.get(family, ""),
+            "filter_type":  filter_type,
+            "gtin":         rec.get("gtin", ""),
             "fitment_count": rec.get("fitment_count", 0),
-            "oe_count":    rec.get("oe_count", 0),
-            "description": rec.get("description", "")[:120],
+            "oe_count":     rec.get("oe_count", 0),
+            "description":  rec.get("description", "")[:120],
         })
 
     # Report collisions
@@ -246,7 +250,7 @@ def main():
 
     # ── Save CSV ──
     CSV_COLS = [
-        "elim_sku", "mann_sku", "family", "family_label",
+        "elim_sku", "product_name", "mann_sku", "family", "family_label",
         "technology", "hd_equiv", "filter_type",
         "gtin", "fitment_count", "oe_count", "description",
     ]
