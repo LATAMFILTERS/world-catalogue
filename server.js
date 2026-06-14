@@ -4429,6 +4429,45 @@ app.get('/api/oem/segment-stats', async (req, res) => {
   }
 });
 
+// GET /api/oem/ld-breakdown
+app.get('/api/oem/ld-breakdown', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const byBrand = await client.query(`
+      SELECT
+        COALESCE(oem_brand, 'SIN MARCA') AS oem_brand,
+        COUNT(*)                          AS oem_rows,
+        COUNT(DISTINCT sku)               AS partes_unicas
+      FROM mann_oem_clean
+      WHERE segment = 'LD'
+      GROUP BY oem_brand
+      ORDER BY oem_rows DESC
+      LIMIT 30
+    `);
+    const byPrefix = await client.query(`
+      SELECT
+        LEFT(sku, 2)        AS prefijo,
+        COUNT(*)            AS oem_rows,
+        COUNT(DISTINCT sku) AS partes_unicas
+      FROM mann_oem_clean
+      WHERE segment = 'LD'
+      GROUP BY LEFT(sku, 2)
+      ORDER BY partes_unicas DESC
+    `);
+    res.json({
+      success: true,
+      total_ld_rows: 8879,
+      por_marca_oem: byBrand.rows,
+      por_prefijo_mann: byPrefix.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // GET /api/oem/hd-parts
 // Returns distinct Donaldson and Fleetguard part numbers from cross_reference_master
 app.get('/api/oem/hd-parts', async (req, res) => {
