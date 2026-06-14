@@ -285,40 +285,41 @@
     {
       "name": "Power Generation",
       "file": "power-generation.html",
-      "title": "Power Generation Asset Protection Systems",
+      "title": "Power Generation Asset Protection Strategy",
       "subtitle": "ENGINEERED PROTECTION FOR CONTINUOUS POWER SYSTEMS",
-      "description": "Power generation equipment must maintain operational readiness under continuous base-load operation, emergency standby conditions, and variable power demand cycles. ELIMFILTERS\u00ae power generation asset protection systems are engineered to help reduce contamination-related wear, preserve generator reliability, support fuel stability, and protect the systems responsible for continuous electrical generation.",
+      "description": "Power generation assets are critical infrastructure. Prime power generators, standby systems, and emergency backup equipment must maintain operational readiness at all times \u2014 because when they are needed, failure is not an option. ELIMFILTERS\u00ae power generation asset protection strategies are engineered to preserve generator reliability, maintain fuel system integrity, and protect the assets responsible for operational continuity, emergency preparedness, and business resilience.",
       "features": [
-        "FUEL STABILITY PROTECTION",
+        "OPERATIONAL READINESS PROTECTION",
+        "FUEL SYSTEM INTEGRITY PROTECTION",
         "LUBRICATION RELIABILITY PROTECTION",
-        "GENERATOR AIRFLOW PROTECTION",
-        "CONTINUOUS POWER OPERATION SUPPORT",
-        "STANDBY SYSTEM RELIABILITY"
+        "EMERGENCY PREPAREDNESS SUPPORT",
+        "STANDBY SYSTEM AVAILABILITY"
       ],
       "benefits": [
-        "Fuel cleanliness protection for standby and continuous power generation systems",
-        "Lubrication reliability support for industrial diesel engines operating under constant thermal load",
-        "Generator airflow protection for prime power and emergency backup equipment",
-        "Fuel stability protection during extended standby storage conditions",
-        "Extended service intervals engineered for continuous electrical generation environments",
-        "Operational continuity support for industrial and emergency power infrastructure"
+        "Generator availability protection for standby, prime power, and emergency backup systems",
+        "Fuel system integrity protection against degradation, moisture, and microbial contamination",
+        "Lubrication reliability support for industrial diesel engines under continuous thermal load",
+        "Air intake protection for consistent combustion efficiency and rated power output",
+        "Extended service intervals engineered for continuous and intermittent power generation environments",
+        "Operational continuity support for critical infrastructure, hospitals, and data center power assets"
       ],
       "techTags": [
+        "MACROCORE\u2122",
         "SYNTEPORE\u2122",
         "SYNTRAX\u2122",
         "HYDROCORE\u2122",
         "DRYCORE\u2122"
       ],
       "videoBody": [
-        "Power generation systems operate under continuous thermal loading, standby cycling, fuel storage exposure, and extended operational schedules capable of affecting generator reliability and long-term equipment performance.",
-        "Prime power generators, standby power systems, industrial diesel engines, and emergency backup equipment require contamination control systems capable of protecting air intake systems, lubrication circuits, fuel delivery components, and cooling-related operating stability throughout continuous and intermittent power operation.",
-        "Fuel degradation during standby periods, moisture accumulation, airflow contamination, and lubrication instability can reduce combustion efficiency, damage injection systems, accelerate component wear, and compromise power system reliability.",
-        "ELIMFILTERS\u00ae power generation asset protection systems are engineered to help preserve fuel cleanliness, airflow stability, lubrication reliability, and operational continuity across industrial power generation environments.",
+        "Power generation is operational continuity. When a generator fails during a critical event \u2014 a grid outage, a medical emergency, a data center demand surge \u2014 the consequences extend far beyond equipment repair costs.",
+        "Prime power generators, standby power systems, industrial diesel engines, and emergency backup equipment require contamination control strategies capable of protecting air intake systems, lubrication circuits, fuel delivery components, and pneumatic controls throughout continuous and intermittent power operation.",
+        "Fuel degradation during standby periods, moisture accumulation, airflow contamination, and lubrication instability can reduce combustion efficiency, damage injection systems, accelerate component wear, and compromise the readiness that critical infrastructure depends on.",
+        "ELIMFILTERS\u00ae power generation asset protection strategies are engineered to preserve fuel cleanliness, airflow stability, lubrication reliability, and operational readiness across every power generation environment.",
         "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining fuel system protection, lubrication cleanliness, and stable airflow performance throughout extended power generation service intervals."
       ],
-      "engineeringBody": "ELIMFILTERS\u00ae engineering applies German-grade quality standards to every protection system component. Our power generation asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across standby generators, prime power systems, industrial diesel engines, and continuous electrical generation equipment.",
+      "engineeringBody": "ELIMFILTERS\u00ae engineering applies German-grade quality standards to every protection system component. Our power generation asset protection strategies are designed to exceed OEM operational requirements while supporting long-term reliability and emergency readiness across standby generators, prime power systems, industrial diesel engines, and critical infrastructure power assets.",
       "stats": {},
-      "cta": "FIND MY FILTER",
+      "cta": "PROTECT MY POWER SYSTEMS",
       "statistic": "NFPA 110 fuel conditioning standard: standby diesel stored beyond 12 months without treatment risks microbial growth and injector contamination",
       "statisticSource": "NFPA 110 Emergency Power Standard"
     },

@@ -538,8 +538,37 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Power Generation': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
     ctaTitle: 'Ready to Protect Your Power Systems?',
-    ctaDescription: 'Find the right power generation asset protection system for your generator or energy equipment platform. Cross-reference 500,000+ parts.',
+    ctaDescription: 'Find the right power generation asset protection strategy for your generator or energy equipment platform. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Prime Power Generators',
+      'Standby Generators',
+      'Emergency Backup Systems',
+      'Industrial Diesel Engines',
+      'Hospital Power Systems',
+      'Data Center Backup Systems',
+      'Critical Infrastructure Power Assets',
+      'Utility Support Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Power Availability.',
+      lines: [
+        'Every generator that fails during a critical event becomes a liability.',
+        'Every contamination-related failure compromises operational continuity, facility resilience, and emergency preparedness.',
+        'ELIMFILTERS protection strategies are engineered to maximize reliability, readiness, and uninterrupted power availability.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Operational Readiness Protection' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     directAnswer: 'ELIMFILTERS power generation asset protection systems are engineered for standby generators, prime power systems, industrial diesel engines, and emergency backup equipment operating under continuous thermal loading, standby cycling, and fuel storage exposure. Standby diesel fuel stored beyond 6–12 months without treatment accumulates water through condensation, microbial growth, and oxidative degradation — all of which compromise common-rail injector systems operating at 800–2,000 bar fuel pressure. Generator air intake systems must maintain consistent airflow volume under variable ambient conditions to support stable combustion and rated power output. ELIMFILTERS systems preserve fuel cleanliness to NFPA 110 standards, airflow stability, and lubrication reliability throughout continuous and intermittent power generation service intervals.',
     faq: [
       {
