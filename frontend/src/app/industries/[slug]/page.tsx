@@ -673,8 +673,37 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Trucks Fleets': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'FLEET',
     ctaTitle: 'Ready to Protect Your Fleet Operations?',
-    ctaDescription: 'Find the right fleet asset protection system for your commercial vehicle application. Cross-reference 500,000+ parts.',
+    ctaDescription: 'Find the right fleet asset protection strategy for your commercial vehicle application. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Long-Haul Trucks',
+      'Regional Delivery Fleets',
+      'Owner-Operator Equipment',
+      'Heavy-Duty Diesel Engines',
+      'HPCR Fuel Systems',
+      'Turbocharged Powertrains',
+      'Fleet Support Vehicles',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Fleet Uptime.',
+      lines: [
+        'Every parked truck is a non-producing asset.',
+        'Every contamination-related failure impacts utilization, revenue, and fleet profitability.',
+        'ELIMFILTERS protection strategies are engineered to maximize uptime, reliability, and total fleet efficiency.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     directAnswer: 'ELIMFILTERS fleet asset protection systems are engineered for long-haul semi-trucks, regional delivery vehicles, and mixed commercial fleets operating under continuous HPCR diesel fuel system demands, turbocharged airflow requirements, and extended road service schedules. Modern common-rail diesel engines in heavy commercial vehicles operate at injection pressures of 1,800–2,500 bar — conditions where fuel contamination above ISO 4406 cleanliness targets causes injector wear and stiction within 150,000–250,000 km of mixed highway operation. Turbocharged diesel engines require consistent intake air volume to maintain combustion efficiency and turbocharger longevity across urban delivery, highway, and mountain gradient duty cycles. ELIMFILTERS systems maintain HPCR fuel cleanliness, air intake performance, lubrication reliability, and extended service interval support throughout commercial fleet operating schedules.',
     faq: [
       {

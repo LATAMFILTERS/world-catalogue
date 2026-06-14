@@ -365,7 +365,7 @@
     {
       "name": "Trucks Fleets",
       "file": "trucks-fleets.html",
-      "title": "Fleet Asset Protection Systems",
+      "title": "Fleet Asset Protection Strategy",
       "subtitle": "ENGINEERED PROTECTION FOR COMMERCIAL FLEET OPERATIONS",
       "description": "Commercial transportation fleets require contamination control systems capable of supporting continuous highway operation, long-distance hauling, heavy-load transportation, and scheduled fleet maintenance intervals. ELIMFILTERS\u00ae fleet asset protection systems are engineered to help reduce contamination-related wear, preserve diesel engine reliability, protect HPCR fuel systems, and support operational continuity across owner-operator and commercial fleet applications.",
       "features": [
@@ -387,6 +387,8 @@
         "SYNTRAX\u2122",
         "SYNTEPORE\u2122",
         "MACROCORE\u2122",
+        "HYDROCORE\u2122",
+        "MICROKAPPA\u2122",
         "DURATECH\u2122"
       ],
       "videoBody": [
@@ -398,7 +400,7 @@
       ],
       "engineeringBody": "ELIMFILTERS\u00ae engineering applies German-grade quality standards to every protection system component. Our fleet asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across heavy-duty diesel engines, commercial transportation equipment, and long-haul fleet operations.",
       "stats": {},
-      "cta": "FIND MY FILTER",
+      "cta": "PROTECT MY FLEET",
       "statistic": "HPCR injection pressure: 1,600\u20132,500 bar; fuel contamination above ISO 18/16/13 causes injector stiction within 50,000 km",
       "statisticSource": "ISO 4406 Fuel System Cleanliness Standards"
     },
