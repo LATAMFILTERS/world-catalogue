@@ -73,6 +73,7 @@ interface GeoData {
   techFocus?: string;
   knowledgeLinks?: { label: string; href?: string }[];
   preCtaQuote?: { line1: string; line2: string };
+  operationalObjective?: { headline: string; lines: string[] };
 }
 
 const industryGeoData: Record<string, GeoData> = {
@@ -590,6 +591,35 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Railway': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Diesel-Electric Locomotives',
+      'Passenger Rolling Stock',
+      'Freight Locomotives',
+      'DMUs',
+      'Shunting Locomotives',
+      'Auxiliary Power Units',
+      'Pneumatic Brake Systems',
+      'Traction Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Fleet Availability.',
+      lines: [
+        'Railway systems operate on schedules measured in minutes.',
+        'A contamination-related failure can impact an entire network.',
+        'Every ELIMFILTERS protection strategy is engineered to maximize locomotive reliability, braking integrity, and operational continuity.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Railway Equipment?',
     ctaDescription: 'Find the right railway asset protection system for your locomotive or rolling stock application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS railway asset protection systems are engineered for diesel-electric locomotives, diesel multiple units (DMUs), shunting locomotives, and auxiliary power units operating under continuous traction loading, track ballast dust exposure, and multi-day service cycles. Locomotive diesel engines accumulate fuel system contamination from bulk fuel storage condensation, ballast silica dust ingestion through air intake systems, and soot build-up in lube oil across extended haul cycles. Pneumatic braking systems require compressed air to ISO 8573-1 Class 1–2 standards to maintain brake actuation reliability across ambient temperature ranges of -30°C to +55°C. ELIMFILTERS systems maintain fuel cleanliness, air intake performance, pneumatic air purity, and lubrication reliability throughout locomotive service intervals.',

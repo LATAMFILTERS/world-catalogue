@@ -30,6 +30,7 @@ interface CategoryPageProps {
     techFocus?: string;
     knowledgeLinks?: { label: string; href?: string }[];
     preCtaQuote?: { line1: string; line2: string };
+    operationalObjective?: { headline: string; lines: string[] };
   };
 }
 
@@ -207,6 +208,27 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   LAST UPDATED: {geoData.lastUpdated}
                 </p>
               )}
+            </div>
+          </section>
+        )}
+
+        {/* Operational Objective */}
+        {geoData?.operationalObjective && (
+          <section style={{ padding: '2.5rem 2rem', background: 'rgba(255,241,45,0.03)', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <AnimateIn>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '0.75rem' }}>
+                  // OPERATIONAL OBJECTIVE
+                </p>
+                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.15rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
+                  {geoData.operationalObjective.headline}
+                </p>
+                {geoData.operationalObjective.lines.map((line, i) => (
+                  <p key={i} style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.5rem' : 0 }}>
+                    {line}
+                  </p>
+                ))}
+              </AnimateIn>
             </div>
           </section>
         )}
