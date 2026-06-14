@@ -676,21 +676,33 @@ app.get('/api/filters/search/vin', async (req, res) => {
   if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
+  // Split model into words; each word must appear in same equipment element (AND)
+  const words = model.split(/\s+/).filter(w => w.length > 1);
+  if (words.length === 0) return res.json({success: false, filters: []});
+
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
+    const params = words.map(w => '%' + w + '%');
+    const wordConds = words.map((_, i) =>
+      `UPPER(CASE WHEN jsonb_typeof(elem)='string' THEN elem#>>'{}'
+              ELSE COALESCE(elem->>'equipment', elem->>'machine', elem->>'model', '') END) ILIKE $${i + 1}`
+    ).join(' AND ');
+
     let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
-    const params = [];
+                 WHERE EXISTS (
+                   SELECT 1 FROM jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb)) elem
+                   WHERE ${wordConds}
+                 )`;
 
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
-
-    if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
+    if (engine) {
       params.push('%' + engine + '%');
+      query += ` AND EXISTS (
+        SELECT 1 FROM jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb)) elem
+        WHERE UPPER(COALESCE(elem->>'engine','')) ILIKE $${params.length}
+      )`;
     }
 
     query += ' LIMIT 10';
@@ -713,26 +725,41 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
+  // Each word in model must appear in the same equipment element (AND, order-independent)
+  const words = model.split(/\s+/).filter(w => w.length > 1);
+  if (words.length === 0) return res.json({success: false, filters: []});
+
   const client = new Client(dbConfig);
   try {
     await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
+    const params = words.map(w => '%' + w + '%');
+    const wordConds = words.map((_, i) =>
+      `UPPER(CASE WHEN jsonb_typeof(elem)='string' THEN elem#>>'{}'
+              ELSE COALESCE(elem->>'equipment', elem->>'machine', elem->>'model', '') END) ILIKE $${i + 1}`
+    ).join(' AND ');
+
     let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
-    const params = [];
+                 WHERE EXISTS (
+                   SELECT 1 FROM jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb)) elem
+                   WHERE ${wordConds}
+                 )`;
 
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
-
-    if(type) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
+    if (type) {
       params.push('%' + type + '%');
+      query += ` AND EXISTS (
+        SELECT 1 FROM jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb)) elem
+        WHERE UPPER(COALESCE(elem->>'type','')) ILIKE $${params.length}
+      )`;
     }
 
-    if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
+    if (engine) {
       params.push('%' + engine + '%');
+      query += ` AND EXISTS (
+        SELECT 1 FROM jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb)) elem
+        WHERE UPPER(COALESCE(elem->>'engine','')) ILIKE $${params.length}
+      )`;
     }
 
     query += ' LIMIT 10';

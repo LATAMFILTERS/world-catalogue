@@ -795,14 +795,15 @@ async function decodeNHTSA(vin) {
     const data = await res.json();
     if (!data.Results) return null;
 
-    let make = '', mod = '', disp = '';
+    let make = '', mod = '', disp = '', year = '';
     for (const r of data.Results) {
       if (r.Variable === 'Make' && r.Value) make = r.Value;
       if (r.Variable === 'Model' && r.Value) mod = r.Value;
       if (r.Variable === 'Displacement (L)' && r.Value) disp = r.Value;
+      if (r.Variable === 'Model Year' && r.Value && /^\d{4}$/.test(r.Value)) year = r.Value;
     }
     if (!make || !mod) return null;
-    return { make, model: mod, disp: disp ? disp + 'L' : '' };
+    return { make, model: mod, disp: disp ? disp + 'L' : '', year };
   } catch (e) {
     return null;
   }
@@ -830,9 +831,10 @@ async function executeSearch() {
       showLoading(`DECODING VIN: ${model}...`);
       const decoded = await decodeNHTSA(model);
       if (decoded) {
-        localModel = `${decoded.make} ${decoded.model}`.trim();
+        // Include year so server can filter by exact model year
+        localModel = `${decoded.make} ${decoded.model}${decoded.year ? ' ' + decoded.year : ''}`.trim();
         localEngine = decoded.disp || engine;
-        decodedText = `${decoded.make} ${decoded.model} ${decoded.disp}`.trim().toUpperCase();
+        decodedText = `${decoded.make} ${decoded.model} ${decoded.year || ''} ${decoded.disp}`.replace(/\s+/g,' ').trim().toUpperCase();
       }
     }
 
