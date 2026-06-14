@@ -4232,7 +4232,7 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
         CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
         JOIN mann_oem_clean m
           ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
-           = UPPER(REGEXP_REPLACE(mann_ref.code, '[\\s\\-/\\.()]', '', 'g'))
+           = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
         WHERE p.brand_crossrefs ? 'MANN'
           AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
           AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
