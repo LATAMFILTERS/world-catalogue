@@ -661,6 +661,46 @@ def test_one(sku: str):
     for make, codes in result.get("oe_numbers", {}).items():
         print(f"  {make}: {codes}")
 
+    # OE diagnostic: if 0 codes, dump raw panel HTML so we can see the structure
+    if result["oe_count"] == 0:
+        with sync_playwright() as pw:
+            ctx2  = make_context(pw, headless=False)
+            page2 = ctx2.new_page()
+            oe_url = MANN_BASE.format(locale="us-en", url_key=_build_url_key("", sku))
+            _load_page(page2, oe_url)
+            for sel in ['button:has-text("OE Number")', 'text=OE Numbers']:
+                try:
+                    page2.click(sel, timeout=2000)
+                    break
+                except Exception:
+                    pass
+            try:
+                page2.wait_for_load_state("networkidle", timeout=6000)
+            except PWTimeout:
+                pass
+            time.sleep(1)
+            oe_diag = page2.evaluate("""() => {
+                var items = document.querySelectorAll('.cmp-accordion__item');
+                for (var i = 0; i < items.length; i++) {
+                    var btn = items[i].querySelector('.cmp-accordion__button') ||
+                              items[i].querySelector('.cmp-accordion__header');
+                    if (btn && btn.textContent.indexOf('OE Number') >= 0) {
+                        return {
+                            found: true,
+                            btnText: btn.textContent.trim(),
+                            panelHTML: items[i].innerHTML.substring(0, 1200)
+                        };
+                    }
+                }
+                return {found: false, btnText: '', panelHTML: ''};
+            }""")
+            ctx2.close()
+        print(f"\n── OE DIAGNOSTIC ──")
+        print(f"  OE accordion found : {oe_diag['found']}")
+        print(f"  Button text        : {oe_diag['btnText']!r}")
+        print(f"  Panel HTML (first 1200 chars):")
+        print(oe_diag['panelHTML'])
+
     print(f"\n── FITMENT ({result['fitment_count']} vehicles) ──")
     rows = result.get("fitment", [])
     if rows:
