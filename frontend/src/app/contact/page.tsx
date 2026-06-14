@@ -11,7 +11,7 @@ const contactPageSchema = {
   '@type': 'ContactPage',
   name: 'Contact ELIMFILTERS',
   url: 'https://elimfilters.com/contact/',
-  description: 'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, distributor inquiries, and technical support.',
+  description: 'Contact ELIMFILTERS for industrial asset protection support: asset protection strategy, contamination control engineering, OEM cross-reference validation, system specification, and distributor partnerships across 12 industrial industries.',
   dateModified: '2026-06-11',
   mainEntity: {
     '@type': 'ContactPoint',
@@ -177,7 +177,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
-            Engineering Consultation &amp; Industrial Partnerships
+            Engineering Consultation, Asset Protection Strategy &amp; Industrial Partnerships
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)', fontFamily: 'Outfit, sans-serif', maxWidth: '640px' }}
           >
-            ELIMFILTERS supports industrial operators, equipment managers, and distribution partners with asset protection system specification, contamination control strategy, and OEM compatibility validation across mining, marine, oil &amp; gas, agriculture, power generation, and heavy industry sectors.
+            Asset protection strategy, contamination control engineering, OEM cross-reference validation, system specification, and distributor partnerships across 12 industrial industries.
           </motion.p>
         </div>
       </section>
@@ -519,6 +519,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         rows={5}
+                        placeholder="Describe your assets, application, contamination challenge, or operational requirements..."
                         style={{
                           width: '100%',
                           padding: '0.75rem',
@@ -582,12 +583,11 @@ export default function Contact() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
               {[
-                { title: 'OEM Cross-Reference Validation', body: 'Submit your OEM part number, equipment make, and model. Our team identifies the compatible ELIMFILTERS product and confirms specification compliance.' },
-                { title: 'ISO Standard Spec Matching', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration) for air, fuel, hydraulic, and lube oil systems.' },
+                { title: 'Asset Protection Strategy', body: 'System-level filtration strategy identifying contamination targets across air, fuel, hydraulic, lube, cabin, and coolant domains for specific equipment and operational environments.' },
+                { title: 'OEM Cross-Reference Validation', body: 'Submit your OEM part number, equipment make, and model. Our team identifies the compatible ELIMFILTERS product and confirms specification compliance against ISO standards.' },
+                { title: 'Contamination Control Engineering', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration). Application engineering for defined contamination targets.' },
                 { title: 'Distributor Applications', body: 'Distributor partnership applications reviewed for regional coverage fit. Include your company profile, service territory, and current product lines. Response within 5 business days.' },
-                { title: 'Fleet Filtration Optimization', body: 'Fleet-level filtration strategy including extended service interval planning, multi-system coverage across air, fuel, hydraulic, lube, cabin, and coolant domains.' },
-                { title: 'SYNTRAX™ / NANOFORCE™ / THERMACORE™', body: 'Technical inquiries for proprietary ELIMFILTERS filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
-                { title: 'Response Times', body: 'Technical inquiries: within 2 business days. Distributor applications: within 5 business days. Provide equipment details and application context for faster response.' },
+                { title: 'Fleet Optimization Support', body: 'Fleet-level extended service interval planning, multi-system coverage, and total cost of ownership analysis across all 12 industrial sectors.' },
               ].map(({ title, body }) => (
                 <div key={title} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>
                   <h3 style={{ fontSize: '0.9rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#FFF12D', marginBottom: '0.75rem' }}>{title}</h3>
