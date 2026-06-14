@@ -83,24 +83,16 @@ SITEMAPS = [
 # Each entry: (product_type_label, candidate_URL_list)
 CATEGORY_URLS = [
     ("Oil Filter",   [
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results.html?producttype=OIL",
-        f"https://www.mann-filter.com/{LOCALE}/products/lube-oil-filters.html",
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results/oil-filters.html",
+        f"https://www.mann-filter.com/{LOCALE}/parts/oil-filter.html",
     ]),
     ("Air Filter",   [
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results.html?producttype=AIR",
-        f"https://www.mann-filter.com/{LOCALE}/products/air-filters.html",
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results/air-filters.html",
+        f"https://www.mann-filter.com/{LOCALE}/parts/air-filter.html",
     ]),
     ("Fuel Filter",  [
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results.html?producttype=FUEL",
-        f"https://www.mann-filter.com/{LOCALE}/products/fuel-filters.html",
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results/fuel-filters.html",
+        f"https://www.mann-filter.com/{LOCALE}/parts/fuel-filter.html",
     ]),
     ("Cabin Filter", [
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results.html?producttype=CABIN",
-        f"https://www.mann-filter.com/{LOCALE}/products/cabin-filters.html",
-        f"https://www.mann-filter.com/{LOCALE}/catalog/search-results/interior-air-filters.html",
+        f"https://www.mann-filter.com/{LOCALE}/parts/cabin-air-filter.html",
     ]),
 ]
 
