@@ -407,41 +407,42 @@
     {
       "name": "Waste Municipal",
       "file": "waste-municipal.html",
-      "title": "Municipal Fleet Asset Protection Systems",
+      "title": "Municipal Fleet Asset Protection Strategy",
       "subtitle": "ENGINEERED PROTECTION FOR MUNICIPAL & EMERGENCY SERVICE FLEETS",
-      "description": "Municipal fleets require contamination control systems capable of supporting continuous urban operation, emergency response readiness, public service continuity, and scheduled maintenance efficiency across multiple vehicle platforms. ELIMFILTERS\u00ae municipal asset protection systems are engineered to help reduce contamination-related wear, preserve fleet reliability, protect critical service equipment, and support uninterrupted city operations.",
+      "description": "Municipal fleets are critical public infrastructure assets. Emergency response vehicles, public service equipment, and urban infrastructure vehicles require contamination control strategies capable of maintaining 24/7 operational readiness, emergency response capability, and uninterrupted service continuity. ELIMFILTERS\u00ae municipal fleet protection strategies are engineered to preserve fleet availability, protect critical service equipment, and support the operational reliability that public safety depends on.",
       "features": [
-        "WASTE COLLECTION VEHICLE PROTECTION",
-        "EMERGENCY RESPONSE FLEET PROTECTION",
+        "PUBLIC INFRASTRUCTURE ASSET PROTECTION",
+        "EMERGENCY RESPONSE FLEET READINESS",
         "PUBLIC SERVICE VEHICLE RELIABILITY",
         "URBAN AIRFLOW PROTECTION",
-        "FUEL SYSTEM PROTECTION",
-        "24/7 MUNICIPAL FLEET SUPPORT"
+        "FUEL CLEANLINESS PROTECTION",
+        "24/7 MUNICIPAL FLEET AVAILABILITY"
       ],
       "benefits": [
-        "Operational reliability support for waste collection and municipal service fleets",
-        "Emergency response equipment protection for fire, rescue, and ambulance operations",
-        "Airflow contamination control for high-cycle urban stop-and-go vehicle operation",
-        "Fuel cleanliness protection for municipal diesel fleet systems",
-        "Extended service intervals engineered for continuous urban fleet activity",
-        "Fleet operational continuity support across critical city infrastructure services"
+        "Fleet availability protection for critical public service and infrastructure operations",
+        "Emergency response readiness protection for fire apparatus, rescue units, and ambulances",
+        "Airflow contamination control for high-cycle urban stop-and-go service vehicle operation",
+        "Fuel cleanliness protection for municipal diesel and hybrid fleet systems",
+        "Extended service intervals engineered for continuous urban public service activity",
+        "Operational continuity support across critical city infrastructure and public safety fleets"
       ],
       "techTags": [
         "MACROCORE\u2122",
         "SYNTRAX\u2122",
         "SYNTEPORE\u2122",
+        "HYDROCORE\u2122",
         "MICROKAPPA\u2122"
       ],
       "videoBody": [
-        "Municipal operations depend on continuous fleet availability across waste collection, emergency response, public transit support, street maintenance, and utility service operations that keep urban infrastructure functioning.",
-        "Waste collection vehicles, fire trucks, ambulances, public service fleets, street maintenance equipment, and municipal support vehicles operate under continuous stop-and-go duty cycles, airborne particulate exposure, thermal loading, fuel contamination risks, and extended urban operating schedules.",
-        "High-cycle municipal service environments increase exposure to soot accumulation, airflow contamination, lubrication degradation, and fuel system impurities capable of reducing fleet reliability and increasing maintenance interruptions.",
-        "ELIMFILTERS\u00ae municipal fleet asset protection systems are engineered to help preserve airflow integrity, fuel cleanliness, lubrication stability, and operational reliability across critical urban service vehicle platforms.",
+        "Municipal fleets are public infrastructure. Emergency response vehicles, refuse collection equipment, street maintenance machinery, and utility service vehicles keep cities functioning \u2014 and their operational availability directly affects public safety and service continuity.",
+        "Fire apparatus, ambulances, rescue units, public service fleets, street maintenance equipment, and municipal support vehicles operate under continuous stop-and-go duty cycles, airborne particulate exposure, thermal loading, fuel contamination risks, and extended urban operating schedules.",
+        "High-cycle municipal service environments increase exposure to soot accumulation, airflow contamination, lubrication degradation, and fuel system impurities capable of reducing fleet availability and compromising emergency response readiness.",
+        "ELIMFILTERS\u00ae municipal fleet asset protection strategies are engineered to preserve airflow integrity, fuel cleanliness, lubrication stability, and operational reliability across every critical public service vehicle platform.",
         "Our proprietary hybrid protection media combines synthetic and cellulose fibers optimized through AI-assisted engineering models. The structure provides high contaminant retention capacity while maintaining airflow stability, fuel system protection, lubrication cleanliness, and extended municipal fleet service intervals."
       ],
-      "engineeringBody": "ELIMFILTERS\u00ae engineering applies German-grade quality standards to every protection system component. Our municipal fleet asset protection systems are designed to exceed OEM operational requirements while supporting long-term reliability across waste collection vehicles, fire apparatus, ambulances, public service fleets, and municipal infrastructure equipment.",
+      "engineeringBody": "ELIMFILTERS\u00ae engineering applies German-grade quality standards to every protection system component. Our municipal fleet asset protection strategies are designed to exceed OEM operational requirements while supporting long-term reliability across fire apparatus, ambulances, rescue units, public service fleets, and all critical urban infrastructure equipment.",
       "stats": {},
-      "cta": "FIND MY FILTER",
+      "cta": "PROTECT MY FLEET",
       "statistic": "Urban stop-and-go duty cycles generate soot contamination 3\u20135x faster than highway operation in waste collection vehicles",
       "statisticSource": "Municipal Fleet Operations Analysis"
     }

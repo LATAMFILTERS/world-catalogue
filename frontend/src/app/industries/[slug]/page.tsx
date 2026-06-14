@@ -755,8 +755,38 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Waste Municipal': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    videoSectionName: 'MUNICIPAL FLEET',
     ctaTitle: 'Ready to Protect Your Municipal Fleet?',
-    ctaDescription: 'Find the right municipal fleet asset protection system for your public service or emergency vehicle application. Cross-reference 500,000+ parts.',
+    ctaDescription: 'Find the right municipal fleet asset protection strategy for your public service or emergency vehicle application. Cross-reference 500,000+ parts.',
+    protectedAssets: [
+      'Refuse Collection Vehicles',
+      'Fire Apparatus',
+      'Ambulances',
+      'Rescue Units',
+      'Street Sweepers',
+      'Municipal Service Trucks',
+      'Utility Service Vehicles',
+      'Public Infrastructure Equipment',
+    ],
+    operationalObjective: {
+      headline: 'Maximum Public Service Availability.',
+      lines: [
+        'Every unavailable municipal vehicle impacts essential city services.',
+        'Every contamination-related failure reduces operational readiness, emergency response capability, and public service continuity.',
+        'ELIMFILTERS protection strategies are engineered to maximize fleet availability, reliability, and service readiness.',
+      ],
+    },
+    knowledgeLinks: [
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     directAnswer: 'ELIMFILTERS municipal fleet asset protection systems are engineered for refuse collection vehicles, emergency response vehicles (fire apparatus, ambulances, rescue units), public transit buses, and road maintenance equipment operating under 24/7 urban duty cycles, frequent stop-start loading, and varied urban contamination environments. Municipal diesel engines complete 300–600 engine starts per week in refuse and emergency service applications, accumulating soot at three to five times the rate of steady-state highway operation. Fire apparatus and ambulances must respond from cold-start to full rated power within 60–90 seconds, placing acute demands on lubrication systems immediately after engine startup. ELIMFILTERS systems maintain urban air intake performance, lubrication reliability, fuel system integrity, and cabin air quality for personnel across extended municipal service schedules.',
     faq: [
       {
