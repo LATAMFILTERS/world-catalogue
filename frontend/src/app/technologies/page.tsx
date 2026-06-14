@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
+import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 
 const GEO_DEFINITIONS: Record<string, string> = {
   'hydrocore-series': "HYDROCORE/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
@@ -81,79 +80,11 @@ export default function TechnologiesPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is HYDROCORE™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'HYDROCORE™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting high-pressure common-rail injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. HYDROCORE™ applies to mobile diesel, marine, standby generator, and offshore fuel systems.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is MACROCORE™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'MACROCORE™ is a proprietary ELIMFILTERS Progressive Density Gradient air intake technology using multi-layer cellulose-synthetic composite media. It achieves 99.9–99.98% ISO 5011 filtration efficiency at dust concentrations up to 10,000 mg/m³ — 10 to 30× the ISO 5011 test threshold of 300 mg/m³. MACROCORE™ protects combustion engines, gas turbines, and industrial compressors in mining, construction, and agriculture environments where silica and mineral dust cause abrasive intake wear.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is SYNTEPORE™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'SYNTEPORE™ is a proprietary ELIMFILTERS all-synthetic fuel filtration technology engineered for diesel, HVO, and biodiesel fuel circuits where chemical media resistance and structural stability are required. Unlike cellulose-containing fuel elements, SYNTEPORE™ maintains structural integrity and filtration efficiency under continuous fuel chemistry exposure, preventing the media degradation and bypass that affects cellulose media in biodiesel blends and HVO synthetic fuel circuits.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is NANOFORCE™ by ELIMFILTERS?',
-        acceptedAnswer: { '@type': 'Answer', text: 'NANOFORCE™ is a proprietary ELIMFILTERS sub-micron hydraulic contamination control technology. It uses ISO 16889 Beta-rated multi-layer media to capture particles at 1–10 µm in high-pressure circuits at 200–450 bar — the contamination range that bypasses standard 25 µm return-line protection and drives progressive proportional valve spool wear. NANOFORCE™ maintains ISO 4406 16/14/11 cleanliness codes in construction, mining, and manufacturing hydraulic circuits.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How do contamination control technologies improve industrial reliability?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Contamination control technologies improve reliability by maintaining the physical, chemical, and mechanical properties of industrial fluids and operating environments within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11, bearing service life extends 3–5× versus uncontrolled contamination at 19/17/14. When fuel water content is maintained below 200 ppm via HYDROCORE™, HPCR injector service life extends from under 2,000 hours to 10,000+ hours. Contamination control technologies are reliability engineering tools, not commodity replacements.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'Why does ELIMFILTERS use multiple technologies rather than a single filtration solution?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Different contamination threats require fundamentally different engineering approaches. Silica dust ingestion in air intake circuits requires Progressive Density Gradient media (MACROCORE™) rated to 10,000 mg/m³. Water contamination in fuel systems requires turbine-stage coalescing architecture (HYDROCORE™). Sub-micron hydraulic particle contamination requires Beta-rated sub-micron retention (NANOFORCE™). A single filtration solution cannot address these distinct contamination mechanisms, failure modes, and measurement standards (ISO 5011, ASTM D6304, ISO 16889). Each ELIMFILTERS technology is engineered for a specific contamination domain.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How are ELIMFILTERS technologies connected to industrial protection systems?',
-        acceptedAnswer: { '@type': 'Answer', text: 'ELIMFILTERS technologies are organized within five industrial asset protection systems: Air Intake & Airflow Protection (MACROCORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness Protection (SYNTEPORE™, HYDROCORE™, HYDROCORE™/SERIES), Lubrication Reliability Protection (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (THERMACORE™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system — not selected as standalone product replacements.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the difference between a technology and a product in the ELIMFILTERS framework?',
-        acceptedAnswer: { '@type': 'Answer', text: 'In the ELIMFILTERS framework, a technology is a contamination control architecture — an engineered approach for addressing a specific failure mechanism (e.g., HYDROCORE™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products can implement the same technology. The technology defines the contamination control capability; the product deploys it in a specific application. Selecting a filtration solution by technology-first rather than product-first ensures the contamination challenge is addressed, not just the part number.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does contamination type influence technology selection?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Contamination type determines which failure mechanism is active, which engineering approach addresses it, and which ISO or ASTM standard defines the acceptable threshold. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water contamination in fuel systems → HYDROCORE™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve desiccant → ISO 8573-1 dew point class. Technology selection begins with contamination identification, not product catalog browsing.' },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the difference between HYDROCORE™ and SYNTEPORE™?',
-        acceptedAnswer: { '@type': 'Answer', text: 'HYDROCORE™ uses three-stage turbine-coalescing-precision architecture to achieve 99.8% free water removal and 95% emulsified water reduction — protecting HPCR injection systems at 1,800–2,500 bar from water-driven corrosion and embrittlement. SYNTEPORE™ is all-synthetic fuel filtration media providing chemical resistance and structural stability for diesel, HVO, and biodiesel circuits where cellulose media degrades under fuel chemistry exposure. HYDROCORE™ addresses water contamination; SYNTEPORE™ addresses particulate contamination with chemical media compatibility.' },
-      },
-    ],
-  };
-
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Industrial Asset Protection Technology Platform — ELIMFILTERS®',
-    description: 'Nine proprietary ELIMFILTERS contamination control technologies organized into a system-level asset protection framework covering air intake, fuel cleanliness, lubrication, hydraulic, compressed air, cooling, and cabin protection domains.',
-    url: 'https://elimfilters.com/technologies',
-    dateModified: '2026-06-10',
-    author: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-    mentions: [
-      { '@type': 'Thing', name: 'MACROCORE™', description: 'Progressive Density Gradient air intake protection technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'HYDROCORE™', description: 'Three-stage turbine-coalescing fuel water separation technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'SYNTRAX™', description: 'Synthetic lube oil cleanliness technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'NANOFORCE™', description: 'Sub-micron hydraulic contamination control technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'SYNTEPORE™', description: 'All-synthetic fuel filtration technology for diesel, HVO, and biodiesel circuits by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'MICROKAPPA™', description: 'Multi-stage cabin PM2.5 protection technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'THERMACORE™', description: 'DCA-replenishing cooling system protection technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'DRYCORE™', description: 'Molecular sieve compressed air desiccant technology by ELIMFILTERS' },
-      { '@type': 'Thing', name: 'INTEKCORE™', description: 'Zero-bypass radial-seal air intake housing technology by ELIMFILTERS' },
-    ],
+    mainEntity: FAQS.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
   };
 
   return (
@@ -178,7 +109,6 @@ export default function TechnologiesPage() {
       }) }} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <Link href="/"
         className="back-nav-btn" style={{
@@ -283,15 +213,8 @@ export default function TechnologiesPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.22em',
-            color: 'rgba(255,241,45,0.7)',
-            textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-          }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.15rem)', color: '#fff', lineHeight: 1.6, marginBottom: '1.25rem' }}>
             Technology exists to protect assets.
@@ -546,200 +469,6 @@ export default function TechnologiesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,241,45,0.7)',
-              textTransform: 'uppercase',
-              marginBottom: '1rem',
-            }}>
-              // Engineering Philosophy
-            </p>
-            <h2 style={{
-              fontFamily: 'Titillium Web, sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(1.5rem,3.5vw,2.2rem)',
-              color: '#fff',
-              marginBottom: '2rem',
-              lineHeight: 1.2,
-            }}>
-              Engineering Asset Protection Through Technology
-            </h2>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
-              <div>
-                <p style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontSize: '0.92rem',
-                  lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.6)',
-                  margin: '0 0 1rem',
-                }}>
-                  Industrial asset protection requires more than replacement parts. Each contamination challenge demands a specific protection strategy, filtration mechanism, material architecture, and engineering approach.
-                </p>
-                <p style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontSize: '0.92rem',
-                  lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.6)',
-                  margin: 0,
-                }}>
-                  Water contamination in fuel circuits requires turbine-stage coalescing architecture. Sub-micron hydraulic particle contamination requires Beta-rated multi-layer retention. Soot accumulation in lube oil requires synthetic high-capacity media. These are distinct engineering problems — not variations of the same replacement decision.
-                </p>
-              </div>
-              <div>
-                <p style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontSize: '0.92rem',
-                  lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.6)',
-                  margin: '0 0 1rem',
-                }}>
-                  ELIMFILTERS organizes its technologies into a contamination control framework designed to support reliability, operational continuity, equipment protection, and lifecycle extension across critical industrial systems.
-                </p>
-                <p style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontSize: '0.92rem',
-                  lineHeight: 1.8,
-                  color: 'rgba(255,255,255,0.6)',
-                  margin: 0,
-                }}>
-                  The technologies support the systems. The systems protect the assets. The objective is not filtration alone. The objective is asset protection.
-                </p>
-              </div>
-            </div>
-
-            {/* Technology architecture hierarchy */}
-            <div style={{
-              background: 'rgba(0,0,0,0.5)',
-              border: '1px solid rgba(255,241,45,0.12)',
-              borderRadius: '4px',
-              padding: '1.75rem 2rem',
-            }}>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.58rem',
-                color: 'rgba(255,255,255,0.22)',
-                letterSpacing: '0.18em',
-                marginBottom: '1.25rem',
-              }}>
-                ASSET PROTECTION FRAMEWORK — TECHNOLOGY POSITION
-              </p>
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: '0.6rem',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.72rem',
-              }}>
-                {[
-                  { label: 'Industrial Asset Protection', dim: false },
-                  { label: '↓', arrow: true },
-                  { label: 'Contamination Control', dim: false },
-                  { label: '↓', arrow: true },
-                  { label: 'Systems', dim: false },
-                  { label: '↓', arrow: true },
-                  { label: 'Technologies', highlight: true },
-                  { label: '↓', arrow: true },
-                  { label: 'Protection Implementations', dim: true },
-                  { label: '↓', arrow: true },
-                  { label: 'Operational Outcomes', dim: true },
-                ].map((item, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      color: item.arrow
-                        ? 'rgba(255,255,255,0.15)'
-                        : item.highlight
-                        ? '#FFF12D'
-                        : item.dim
-                        ? 'rgba(255,255,255,0.3)'
-                        : 'rgba(255,255,255,0.5)',
-                      fontWeight: item.highlight ? 700 : 400,
-                    }}
-                  >
-                    {item.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── TECHNOLOGIES GRID ── */}
-      <section style={{ padding: '5rem 7%' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          {SYSTEM_GROUPS.map((group) => {
-            const techs = catalogue.technologies.filter(t => {
-              const slug = getSlug(t.name);
-              return group.techs.includes(slug);
-            });
-            if (techs.length === 0) return null;
-            return (
-              <div key={group.label} style={{ marginBottom: '4rem' }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  marginBottom: '1.5rem',
-                }}>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.62rem',
-                    letterSpacing: '0.2em',
-                    color: 'rgba(255,241,45,0.6)',
-                    textTransform: 'uppercase',
-                  }}>
-                    {group.label}
-                  </span>
-                  <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.05)' }} />
-                </div>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                  gap: '1px',
-                  background: 'rgba(255,255,255,0.05)',
-                }}>
-                  {techs.map((tech, i) => (
-                    <TechCard key={tech.name} tech={tech} index={i} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-
-          {/* Techs not in any group — catch-all */}
-          {(() => {
-            const allGrouped = SYSTEM_GROUPS.flatMap(g => g.techs);
-            const ungrouped = catalogue.technologies.filter(t => !allGrouped.includes(getSlug(t.name)));
-            if (ungrouped.length === 0) return null;
-            return (
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.6)', textTransform: 'uppercase' }}>Other Systems</span>
-                  <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.05)' }} />
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
-                  {ungrouped.map((tech, i) => <TechCard key={tech.name} tech={tech} index={i} />)}
-                </div>
-              </div>
-            );
-          })()}
-        </div>
-      </section>
-
-      {/* ── COMPARISON QUICK TABLE ── */}
-      <section style={{ padding: '5rem 7%', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
             <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
@@ -751,244 +480,82 @@ export default function TechnologiesPage() {
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif', maxWidth: '600px', margin: '0' }}>
               Protection system assignment, primary contamination target, key engineering metric, and applicable industries across the twelve ELIMFILTERS technologies. MARINECLEAN™, DURATECH™, and MICROKAPPA™ are classified as cross-system platform technologies.
             </p>
-            <h2 style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 600, fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', letterSpacing: '-0.02em', color: '#fff', margin: 0 }}>
-              Technology platform — architecture comparison
-            </h2>
           </motion.div>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.85rem' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Inter, sans-serif', fontSize: '0.875rem' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid rgba(255,241,45,0.2)' }}>
-                  {['Technology', 'Domain', 'Key metric', 'System Application'].map(h => (
-                    <th key={h} style={{ padding: '1rem 1.5rem', textAlign: 'left', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,241,45,0.6)', textTransform: 'uppercase', fontWeight: 400, whiteSpace: 'nowrap' }}>
-                      {h}
+                <tr style={{ borderBottom: '2px solid rgba(255,241,45,0.3)' }}>
+                  {['Technology', 'System', 'Primary Function', 'Key Metric', 'Industries'].map(h => (
+                    <th key={h} style={{ padding: '1rem 1.25rem', textAlign: 'left', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.15em', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                      {h.toUpperCase()}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {catalogue.technologies.map((tech) => {
-                  const slug = getSlug(tech.name);
-                  const meta = TECH_PLATFORM[slug];
-                  return (
-                    <tr key={slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                      <td style={{ padding: '1rem 1.5rem', whiteSpace: 'nowrap' }}>
-                        <Link href={`/technologies/${slug}`} style={{ color: '#fff', fontWeight: 600, textDecoration: 'none', letterSpacing: '-0.01em' }}>
-                          {tech.title || tech.name}
-                        </Link>
-                      </td>
-                      <td style={{ padding: '1rem 1.5rem', color: 'rgba(255,255,255,0.35)', whiteSpace: 'nowrap', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-                        {meta?.system || '—'}
-                      </td>
-                      <td style={{ padding: '1rem 1.5rem', color: 'rgba(255,241,45,0.7)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', whiteSpace: 'nowrap' }}>
-                        {meta?.metric || '—'}
-                      </td>
-                      <td style={{ padding: '1rem 1.5rem', color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem', lineHeight: 1.5 }}>
-                        {meta?.systemApplications?.join(' · ') || '—'}
-                      </td>
-                    </tr>
-                  );
-                })}
+                {TECH_COMPARISON.map((row, i) => (
+                  <tr key={row.slug} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+                    <td style={{ padding: '1rem 1.25rem', whiteSpace: 'nowrap' }}>
+                      <Link href={`/technologies/${row.slug}`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none', fontFamily: 'Space Grotesk, sans-serif' }}>
+                        {row.name}
+                      </Link>
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap', fontSize: '0.8rem', fontFamily: 'JetBrains Mono, monospace' }}>
+                      {row.system}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5 }}>
+                      {row.func}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+                      {row.metric}
+                    </td>
+                    <td style={{ padding: '1rem 1.25rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5, fontSize: '0.82rem' }}>
+                      {row.industries}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </section>
 
-      {/* ── GEO / AI DISCOVERABILITY ──────────────────────────────────── */}
-      <section style={{
-        padding: 'clamp(3rem,6vw,5rem) 7%',
-        background: '#000',
-        borderTop: '1px solid rgba(255,255,255,0.04)',
-        borderBottom: '1px solid rgba(255,255,255,0.04)',
-      }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      {/* FAQ Section */}
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-          >
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,241,45,0.7)',
-              textTransform: 'uppercase',
-              marginBottom: '1rem',
-            }}>
-              // Reliability Engineering Context
-            </p>
-            <h2 style={{
-              fontFamily: 'Titillium Web, sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(1.4rem,3vw,2rem)',
-              color: '#fff',
-              marginBottom: '2rem',
-              lineHeight: 1.2,
-            }}>
-              Why Technology Matters In Asset Protection
-            </h2>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              {[
-                {
-                  label: 'PRINCIPLE',
-                  text: 'Industrial reliability depends on the effectiveness of the technologies used to control contamination. A bearing does not fail because maintenance was delayed by a week. It fails because particle contamination in the lubrication circuit accumulated above the ISO 4406 cleanliness threshold at which abrasive wear rate exceeds the design tolerance for that bearing geometry. Technology determines whether that threshold is maintained.',
-                },
-                {
-                  label: 'DIFFERENTIATION',
-                  text: 'Different contamination threats require different engineering approaches. Water contamination, airborne particulate, hydraulic wear particles, soot, oxidation, and fluid degradation each require unique protection mechanisms. HYDROCORE™ addresses water in fuel through turbine-stage coalescing — a fundamentally different mechanism than NANOFORCE™ sub-micron particle retention in hydraulic circuits. Specifying the wrong technology for a contamination challenge leaves the failure mechanism unaddressed regardless of replacement frequency.',
-                },
-                {
-                  label: 'FRAMEWORK',
-                  text: 'ELIMFILTERS technologies are designed to address specific contamination challenges through specialized protection architectures aligned with industrial systems. The framework is: identify the contamination type and entry pathway → determine the measurable threshold standard (ISO 4406, ASTM D6304, ISO 8573-1) → select the technology engineered to meet that threshold → implement through the correct product specification. Technology selection is a reliability engineering decision, not a procurement decision.',
-                },
-                {
-                  label: 'OUTCOME',
-                  text: 'When technologies are matched to contamination challenges, assets operate longer, fail less, and cost less to maintain. When technology selection is replaced by commodity substitution, the contamination mechanism continues regardless of service frequency. The difference between a 15,000-hour engine overhaul interval and a 3,000-hour failure event is not which brand of filter was installed — it is whether the correct contamination control technology was specified for the operating environment.',
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  style={{
-                    display: 'flex',
-                    gap: '1.25rem',
-                    alignItems: 'flex-start',
-                    borderLeft: i === 3 ? '3px solid #FFF12D' : '1px solid rgba(255,255,255,0.08)',
-                    paddingLeft: '1.25rem',
-                  }}
-                >
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.55rem',
-                    letterSpacing: '0.18em',
-                    color: '#FFF12D',
-                    textTransform: 'uppercase',
-                    minWidth: '90px',
-                    paddingTop: '0.3rem',
-                    opacity: i === 3 ? 1 : 0.55,
-                  }}>
-                    {item.label}
-                  </span>
-                  <p style={{
-                    fontFamily: i === 3 ? 'Titillium Web, sans-serif' : 'Inter, sans-serif',
-                    fontSize: '0.92rem',
-                    lineHeight: 1.85,
-                    color: i === 3 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.55)',
-                    fontWeight: i === 3 ? 600 : 400,
-                    margin: 0,
-                  }}>
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── FAQ SECTION ───────────────────────────────────────────────── */}
-      <section style={{
-        padding: 'clamp(3rem,6vw,5rem) 7%',
-        background: 'rgba(255,255,255,0.01)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
-      }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '3rem' }}
           >
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              letterSpacing: '0.22em',
-              color: 'rgba(255,241,45,0.7)',
-              textTransform: 'uppercase',
-              marginBottom: '0.75rem',
-            }}>
-              // Technical Reference
-            </p>
-            <h2 style={{
-              fontFamily: 'Titillium Web, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(1.3rem,3vw,1.85rem)',
-              color: '#fff',
-              marginBottom: '2.5rem',
-            }}>
-              Technology Platform — Technical Questions
+            <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
+              // FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0' }}>
+              Technical Questions
             </h2>
           </motion.div>
-
-          <div style={{ display: 'grid', gap: '1.25rem' }}>
-            {[
-              {
-                q: 'What is HYDROCORE™ by ELIMFILTERS?',
-                a: 'HYDROCORE™ is a proprietary ELIMFILTERS water separation and fuel cleanliness technology using three-stage turbine-coalescing-precision architecture. It achieves 99.8% free water removal and 95% emulsified water reduction per ASTM D6304, protecting HPCR injection systems at 1,800–2,500 bar from water-driven injector corrosion, hydrogen embrittlement, and stiction failure. Applies to mobile diesel, marine, standby generator, and offshore fuel systems.',
-              },
-              {
-                q: 'What is MACROCORE™ by ELIMFILTERS?',
-                a: 'MACROCORE™ is a proprietary ELIMFILTERS Progressive Density Gradient air intake technology using multi-layer cellulose-synthetic composite media. It achieves 99.9–99.98% ISO 5011 efficiency at dust concentrations up to 10,000 mg/m³ — 10–30× the ISO 5011 test threshold. MACROCORE™ protects combustion engines, gas turbines, and industrial compressors in mining, construction, and agriculture environments from silica and mineral dust abrasive intake wear.',
-              },
-              {
-                q: 'What is NANOFORCE™ by ELIMFILTERS?',
-                a: 'NANOFORCE™ is a proprietary ELIMFILTERS sub-micron hydraulic contamination control technology. It uses ISO 16889 Beta-rated multi-layer media to capture particles at 1–10 µm in high-pressure circuits at 200–450 bar — the contamination range that bypasses standard 25 µm return-line protection and drives progressive proportional valve spool wear. Maintains ISO 4406 16/14/11 in construction, mining, and manufacturing hydraulic circuits.',
-              },
-              {
-                q: 'How do contamination control technologies improve industrial reliability?',
-                a: 'Contamination control technologies maintain fluid and system cleanliness within the thresholds that determine component wear rates. When lube oil cleanliness is maintained at ISO 4406 16/14/11 via SYNTRAX™, bearing service life extends 3–5×. When fuel water content is maintained below 200 ppm via HYDROCORE™, HPCR injector service life extends from under 2,000 hours to 10,000+. The technology determines whether the contamination threshold is maintained — and whether the failure mechanism remains active or controlled.',
-              },
-              {
-                q: 'Why does ELIMFILTERS use multiple technologies rather than a single filtration solution?',
-                a: 'Different contamination threats require fundamentally different engineering approaches. Silica dust in air intake requires Progressive Density Gradient media (MACROCORE™). Water in fuel requires turbine-stage coalescing (HYDROCORE™). Sub-micron hydraulic particles require Beta-rated retention (NANOFORCE™). Soot in lube oil requires high-capacity synthetic media (SYNTRAX™). A single technology cannot address these distinct failure mechanisms, measurement standards, and operating conditions. Each ELIMFILTERS technology is engineered for a specific contamination domain.',
-              },
-              {
-                q: 'How are ELIMFILTERS technologies connected to industrial protection systems?',
-                a: 'ELIMFILTERS technologies are organized within five protection systems: Air Intake & Airflow (MACROCORE™, INTEKCORE™, DRYCORE™), Fuel Cleanliness (SYNTEPORE™, HYDROCORE™, HYDROCORE™/SERIES), Lubrication Reliability (SYNTRAX™), Hydraulic Contamination Control (NANOFORCE™), and Cooling System & Environmental Protection (THERMACORE™, MICROKAPPA™). Technologies are selected based on the contamination challenge within each system, not as standalone product replacements.',
-              },
-              {
-                q: 'What is the difference between a technology and a product in the ELIMFILTERS framework?',
-                a: 'A technology is a contamination control architecture — an engineered approach for a specific failure mechanism (e.g., HYDROCORE™ for water separation in fuel systems). A product is the implementation of that technology in a specific housing, size, and configuration for a particular equipment platform. Multiple products implement the same technology. The technology defines contamination control capability; the product deploys it in a specific application. Technology-first selection ensures the contamination challenge is addressed, not just the part number matched.',
-              },
-              {
-                q: 'How does contamination type influence technology selection?',
-                a: 'Contamination type determines which failure mechanism is active and which engineering approach addresses it. Particle contamination in hydraulic circuits → NANOFORCE™ sub-micron Beta-rated capture → ISO 16889 / ISO 4406 measurement. Water in fuel systems → HYDROCORE™ turbine-stage coalescing → ASTM D6304 compliance. Soot and wear particles in lube oil → SYNTRAX™ synthetic media → ISO 4406 cleanliness codes. Moisture in compressed air → DRYCORE™ molecular sieve → ISO 8573-1 dew point class. Technology selection begins with contamination identification.',
-              },
-            ].map((faq, i) => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {FAQS.map((faq, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.04 }}
+                transition={{ duration: 0.5, delay: i * 0.04 }}
                 style={{
-                  padding: '1.5rem 1.75rem',
-                  background: 'rgba(255,241,45,0.025)',
-                  border: '1px solid rgba(255,241,45,0.1)',
-                  borderRadius: '3px',
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '8px',
+                  padding: '2rem',
                 }}
               >
-                <h3 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.95rem',
-                  color: '#FFF12D',
-                  margin: '0 0 0.75rem',
-                }}>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 1rem', lineHeight: 1.5 }}>
                   {faq.q}
                 </h3>
-                <p style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontSize: '0.88rem',
-                  lineHeight: 1.75,
-                  color: 'rgba(255,255,255,0.68)',
-                  margin: 0,
-                }}>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0' }}>
                   {faq.a}
                 </p>
               </motion.div>

@@ -865,59 +865,6 @@ const industryGeoData: Record<string, GeoData> = {
       },
     ],
   },
-  'Mining': {
-    lastUpdated: 'June 2026',
-    ctaTitle: 'Ready to Protect Your Mining Equipment?',
-    ctaDescription: 'Find the right mining asset protection system for your excavator, haul truck, or drill rig application. Cross-reference 500,000+ parts.',
-    directAnswer: 'Mining operations expose equipment to the most extreme contamination environment in industrial operation. Open-pit bench faces and active haul roads generate ambient silica dust concentrations of 2,000–15,000 mg/m³ — up to 50 times the 300 mg/m³ maximum in ISO 5011 air filter testing standards. Equipment values range from $500,000 for a medium wheel loader to $5–6 million for a 200-tonne hydraulic mining excavator and $2–5 million for a 300-tonne ultra-class haul truck. Unplanned downtime on key production equipment carries operational costs of $5,000–35,000 per hour, with knock-on effects on truck-shovel productivity balance that can idle multiple pieces of equipment simultaneously. ELIMFILTERS® mining asset protection systems are engineered for the complete contamination profile of hard rock, coal, and mineral processing operations: progressive-density air intake protection rated to extreme silica concentrations, turbine-stage fuel water separation for remote bulk fuel storage, sub-micron hydraulic contamination control at operating pressures of 250–450 bar, lubrication cleanliness protection for high-cycle engine and drivetrain systems, and cabin air quality protection for operators in respirable crystalline silica-classified work environments.',
-    faq: [
-      {
-        q: 'What asset protection systems do mining excavators, haul trucks, and drill rigs require?',
-        a: 'Large mining equipment requires five integrated protection systems. Air intake protection (MACROCORE™) manages silica dust concentrations of 2,000–15,000 mg/m³ on active bench faces, maintaining ISO 5011-compliant filtration efficiency in environments that exceed standard OEM test conditions by a factor of 10 to 50. Hydraulic system protection (NANOFORCE™) maintains ISO 4406 cleanliness at 16/14/11 or cleaner in excavator and loader circuits operating at 250–450 bar through 400–800 load cycles per shift. Fuel system protection (HYDROCORE™) removes free and emulsified water from diesel stored in remote bulk tanks subject to daily condensation cycling, protecting common-rail injectors operating at 1,800–2,500 bar. Lubrication system protection (SYNTRAX™) preserves ISO 4406 cleanliness in engine oil against accelerated soot accumulation from continuous high-load mining cycles. Cabin air protection (MICROKAPPA™) controls respirable crystalline silica (RCS) and diesel exhaust particulate exposure for operators completing 12-hour shifts under national mine safety regulatory frameworks.',
-      },
-      {
-        q: 'How does silica dust at mining concentrations damage air intake and engine systems beyond OEM specifications?',
-        a: 'Silica has a Mohs hardness of 7 — harder than the aluminum alloy compressor wheels, piston ring materials, and cylinder liner surfaces it contacts inside the engine. At 2,000 mg/m³ dust concentration, a standard OEM air element reaches full contamination load within 50–80 operating hours. At 10,000 mg/m³ on active blast sites, this reduces to 15–25 hours. Silica particles bypassing or saturating the air intake system enter combustion chambers as abrasive media against piston rings and cylinder liners, causing measurable bore wear within 200–500 operating hours. Turbocharger compressor blade erosion from silica ingestion reduces boost pressure and increases exhaust temperature, triggering derating modes before visible blade damage appears. MACROCORE™ air intake protection systems provide 40–60% greater media surface area than standard OEM elements, with a progressive-density gradient architecture that captures macro-particles in outer zones while preserving inner zone efficiency — enabling service intervals of 500–750 hours even in severe dust environments.',
-      },
-      {
-        q: 'Why is hydraulic contamination control the most critical reliability factor for excavator and loader productivity in open-pit mining?',
-        a: 'Hydraulic systems are the primary production mechanism of mining excavators and loaders — every load cycle, every bucket curl, every swing rotation is a hydraulic function. Mining excavator systems operate at 250–450 bar through 400–800 load cycles per shift. At these duty rates, proportional valve spool clearances of 1–5 µm are exposed to fluid contamination during every actuator movement. ISO 4406 contamination levels above 19/17/14 increase proportional valve failure rates by a factor of three to five compared to a 16/14/11 cleanliness target. A single excavator main control valve failure generates parts costs of $8,000–35,000 and 8–24 hours of downtime — plus the truck-shovel balance impact of idling a 10–18 haul truck fleet awaiting excavator production. Main hydraulic pump replacement: $15,000–45,000 per event. NANOFORCE™ sub-micron hydraulic filtration maintains ISO 4406 targets throughout extended shift operation by capturing particles below 3 µm that pass through standard hydraulic filter media.',
-      },
-      {
-        q: 'What is the impact of fuel water contamination on diesel engines operating from remote bulk fuel storage in mining?',
-        a: 'Remote mining operations store diesel in bulk surface tanks subject to daily thermal cycling. Day-night temperature differentials of 10–25°C draw humid air into tank headspace through vent tubes, depositing condensation water at the fuel-water interface. Active sites can accumulate 0.2–0.8% water volume in storage within 30–60 days without active water removal. Modern common-rail diesel engines — Caterpillar C27/C32, Komatsu SAA6D170, Cummins QSK series — operate at injection pressures of 1,800–2,500 bar with injector needle clearances below 3 µm. Water contamination above ASTM D6304 thresholds (200 ppm free water) causes hydrogen embrittlement of injector needle components, corrosion of high-pressure pump internals, and cavitation damage within 200–500 operating hours. Injector replacement in a 12-cylinder mining engine: $800–2,500 per injector, $9,600–30,000 per engine event. HYDROCORE™ turbine-stage water separation achieves 99.8% free water removal and 95% emulsified water reduction at point of delivery, protecting injection systems from contamination accumulated across bulk storage and transfer.',
-      },
-      {
-        q: 'Why is cabin air quality protection a regulatory compliance requirement in mining environments?',
-        a: 'Respirable crystalline silica (RCS) is classified as a Group 1 human carcinogen by the International Agency for Research on Cancer and is the primary occupational health hazard in hard rock, coal, and mineral processing mining. National mine safety regulations — MSHA 30 CFR Part 57 (USA), COSHH Regulation 6 (UK), and equivalent national frameworks — impose permissible exposure limits for RCS of 0.05–0.1 mg/m³ as an 8-hour time-weighted average. Excavator, haul truck, and drill cab environments without active air filtration can reach RCS concentrations of 0.1–1.0 mg/m³ during active bench and blast operations, exceeding the TWA limit in under two hours of unprotected exposure. MICROKAPPA™ provides multi-stage cabin protection combining electrostatic HEPA-grade particle capture with activated carbon adsorption media, reducing cabin PM2.5 and RCS concentrations by up to 85% compared to standard single-layer OEM cabin filters. Operators completing 12-hour shifts accumulate exposure at 1.5 times the 8-hour TWA rate, requiring documented high-efficiency cabin protection to maintain compliance under national mine safety and operator health monitoring programs.',
-      },
-      {
-        q: 'What are the financial consequences of contamination-related equipment failure in mining production operations?',
-        a: 'Mining equipment failure carries production loss costs at a scale unique among industrial sectors. An unplanned hydraulic failure on a 200-tonne excavator generates direct downtime costs of $5,000–35,000 per hour plus knock-on idle time for the 10–18 haul trucks in the truck-shovel circuit, multiplying total production loss by two to four times. Engine rebuild following liner and ring failure from air intake bypass: $50,000–200,000 in parts and labor, plus 3–7 days downtime at $120,000–250,000 per day for a mid-sized surface mine. Hydraulic pump replacement: $15,000–45,000 plus 12–36 hours. Fuel injector event on a 12-cylinder engine: $9,600–30,000 in parts plus service. Across a 40–80 vehicle mining fleet, contamination failures preventable through systematic asset protection represent $500,000–3,000,000 per year in avoidable maintenance and production loss. Contamination control system investment for an equivalent fleet is under 2% of that exposure — making it the highest-return reliability engineering decision available to a mining operation.',
-      },
-    ],
-    schemas: [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Mining Asset Protection Systems',
-        provider: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-        description: 'Mining asset protection systems engineered for excavators, haul trucks, drill rigs, and loaders operating in extreme silica dust environments of 2,000–15,000 mg/m³, with remote bulk fuel storage contamination, high-cycle hydraulic pressures of 250–450 bar, and respirable crystalline silica operator exposure requirements.',
-        areaServed: 'Global',
-        serviceType: 'Mining Equipment Contamination Control',
-        dateModified: '2026-06-10',
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
-          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
-          { '@type': 'ListItem', position: 3, name: 'Mining Asset Protection Systems', item: 'https://elimfilters.com/industries/mining' },
-        ],
-      },
-    ],
-  },
   'Agriculture': {
     lastUpdated: 'May 2026',
     protectionLabel: 'STRATEGY',
@@ -988,207 +935,6 @@ const industryGeoData: Record<string, GeoData> = {
   },
 };
 
-type IndustryLink = { href: string; label: string };
-const industryLinksData: Record<string, {
-  contamination?: IndustryLink[];
-  systems?: IndustryLink[];
-  knowledge?: IndustryLink[];
-}> = {
-  'Agriculture': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-    ],
-  },
-  'Automotive': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Bus Coach': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
-    ],
-  },
-  'Construction': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Manufacturing': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-    ],
-  },
-  'Marine': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-    ],
-  },
-  'Mining': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/hydraulic', label: 'Hydraulic Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/hydraulic-systems', label: 'Hydraulic Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-    ],
-  },
-  'Oil Gas': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/hydraulic-system', label: 'Hydraulic Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Power Generation': {
-    contamination: [
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Railway': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/dryer', label: 'Compressed Air Dryers' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/compressed-air-systems', label: 'Compressed Air Standards' },
-    ],
-  },
-  'Trucks Fleets': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-      { href: '/knowledge-system/contamination/diesel-water', label: 'Diesel Water Contamination' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/fuel', label: 'Fuel Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/fuel-systems', label: 'Fuel System Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-    ],
-  },
-  'Waste Municipal': {
-    contamination: [
-      { href: '/knowledge-system/contamination/particle-wear', label: 'Particle Wear in Engines' },
-    ],
-    systems: [
-      { href: '/systems/airfilter', label: 'Air Filtration Systems' },
-      { href: '/systems/cabin', label: 'Cabin Air Systems' },
-      { href: '/systems/oil', label: 'Lubrication Systems' },
-    ],
-    knowledge: [
-      { href: '/knowledge-system/standards/air-intake-systems', label: 'Air Intake Standards' },
-      { href: '/knowledge-system/standards/lube-oil-systems', label: 'Lube Oil Standards' },
-      { href: '/knowledge-system/standards/cabin-safety-systems', label: 'Cabin Safety Standards' },
-    ],
-  },
-};
-
 export function generateStaticParams() {
   return catalogue.industries.map((item) => ({
     slug: getSlug(item.name),
@@ -1222,8 +968,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Railway asset protection systems for diesel-electric locomotives, DMUs, and shunting locomotives operating under continuous traction loading and track ballast dust exposure. Fuel, pneumatic, air intake, and lubrication contamination control engineered for multi-day locomotive service cycles.'
     : item.name === 'Trucks Fleets'
     ? 'Commercial fleet asset protection systems for long-haul trucks and delivery vehicles operating under HPCR diesel fuel system demands. Air intake, fuel cleanliness, lubrication, and cabin air protection engineered for extended road service schedules and high-frequency urban delivery cycles.'
-    : item.name === 'Mining'
-    ? 'Mining asset protection systems for excavators, haul trucks, drill rigs, and loaders operating in silica dust concentrations of 2,000–15,000 mg/m³. Air intake, hydraulic, fuel, lubrication, and cabin air protection engineered for extreme contamination exposure in hard rock and mineral processing operations.'
     : item.name === 'Waste Municipal'
     ? 'Municipal fleet asset protection systems for refuse collection vehicles, fire apparatus, ambulances, and public service equipment. Lubrication, air intake, fuel system, and cabin air protection engineered for 24/7 urban duty cycles, frequent stop-start loading, and emergency response readiness.'
     : item.description;
@@ -1267,7 +1011,6 @@ export default function IndustryPage({ params }: Props) {
 
   const media = industryMedia[item.name] || {};
   const geoData = industryGeoData[item.name];
-  const industryLinks = industryLinksData[item.name];
 
   return (
     <CategoryPage
@@ -1276,7 +1019,6 @@ export default function IndustryPage({ params }: Props) {
       industryImage={media.image}
       industryVideo={media.video}
       geoData={geoData}
-      industryLinks={industryLinks}
     />
   );
 }

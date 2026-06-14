@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
@@ -70,14 +71,21 @@ const faqSchema = {
 };
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+  });
+
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -94,44 +102,27 @@ export default function Contact() {
       form.append('_subject', `[elimfilters.com] New contact from ${formData.name}`);
       form.append('_captcha', 'false');
       form.append('_template', 'table');
-      const res = await fetch('https://formsubmit.co/info@elimfilters.com', { method: 'POST', body: form });
+
+      const res = await fetch('https://formsubmit.co/info@elimfilters.com', {
+        method: 'POST',
+        body: form,
+      });
       if (!res.ok) throw new Error('Server error');
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', company: '', message: '' });
-      setTimeout(() => setSubmitted(false), 7000);
+      setTimeout(() => setSubmitted(false), 6000);
     } catch {
-      setError('Error sending message. Email us directly at info@elimfilters.com');
+      setError('Error sending message. Please try again or email us directly at info@elimfilters.com');
     } finally {
       setSending(false);
     }
   };
 
-  const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.6)';
-  };
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
-  };
-
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Breadcrumb />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'ContactPage',
-          name: 'Contact ELIMFILTERS',
-          url: 'https://elimfilters.com/contact/',
-          mainEntity: {
-            '@type': 'ContactPoint',
-            contactType: 'customer support',
-            email: 'info@elimfilters.com',
-            areaServed: 'Worldwide',
-            availableLanguage: ['English', 'Spanish'],
-          },
-        }) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Link href="/"
         className="back-nav-btn" style={{
@@ -145,59 +136,85 @@ export default function Contact() {
         transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
 
-      {/* ── HERO ── */}
-      <section style={{
-        position: 'relative',
-        minHeight: '55vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        padding: '0 7% 5rem',
-        overflow: 'hidden',
-      }}>
+
+      {/* Hero Section */}
+      <section
+        style={{
+          marginTop: 0,
+          minHeight: 'clamp(480px, 70vh, 680px)',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'flex-end',
+          overflow: 'hidden',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+        }}
+      >
+        {/* Background photo */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: 'url(/images/contacto-papa.avif)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          filter: 'brightness(0.35)',
+          backgroundPosition: 'center 50%',
         }} />
+        {/* Gradient overlay — dark only at bottom for text, transparent in middle to show people */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%)',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.15) 58%, rgba(0,0,0,0.05) 100%)',
         }} />
-
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
+        {/* Content */}
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: 'clamp(1.5rem,4vw,2rem) clamp(1.25rem,5vw,2rem) clamp(2.5rem,5vw,4rem)', width: '100%' }}>
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.7)', textTransform: 'uppercase', marginBottom: '1.5rem' }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', display: 'inline-block', marginBottom: '1rem' }}
           >
-            Global headquarters · Frisco, Texas
-          </motion.p>
+            // GLOBAL OPERATIONS CENTER
+          </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 300, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', lineHeight: 1.15, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.9)', margin: '0 0 1rem' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
           >
             Engineering Consultation, Asset Protection Strategy &amp; Industrial Partnerships
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.95rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.45)', maxWidth: '560px', margin: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)', fontFamily: 'Outfit, sans-serif', maxWidth: '640px' }}
           >
             Asset protection strategy, contamination control engineering, OEM cross-reference validation, system specification, and distributor partnerships across 12 industrial industries.
           </motion.p>
         </div>
       </section>
 
-      {/* ── CONTACT GRID ── */}
-      <section style={{ padding: '6rem 7%', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '6rem', maxWidth: '1100px' }}>
+      {/* Contact Info & Form */}
+      <section style={{ padding: '5rem 2rem', background: '#000' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '3rem',
+              alignItems: 'start',
+            }}
+          >
+            {/* Left: Contact Information */}
+            <AnimateIn direction="left">
+              <div>
+                <h2
+                  style={{
+                    fontSize: '1.8rem',
+                    fontWeight: 900,
+                    fontFamily: 'Space Grotesk, sans-serif',
+                    marginBottom: '2rem',
+                    color: '#FFF12D',
+                  }}
+                >
+                  CONTACT INFORMATION
+                </h2>
 
                 <div style={{ marginBottom: '2.5rem' }}>
                   <h3
@@ -577,6 +594,10 @@ export default function Contact() {
                   <p style={{ fontSize: '0.85rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{body}</p>
                 </div>
               ))}
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* Distributor CTA */}
       <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
@@ -679,89 +700,18 @@ export default function Contact() {
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
               // COMMON QUESTIONS
             </p>
-
-            {submitted && (
-              <div style={{ padding: '1rem 1.25rem', background: 'rgba(60,200,100,0.08)', border: '1px solid rgba(60,200,100,0.25)', marginBottom: '2rem' }}>
-                <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.85rem', color: 'rgba(100,220,130,0.9)', margin: 0 }}>
-                  Message sent. We&apos;ll respond within 2 business days.
-                </p>
-              </div>
-            )}
-            {error && (
-              <div style={{ padding: '1rem 1.25rem', background: 'rgba(255,80,80,0.08)', border: '1px solid rgba(255,80,80,0.2)', marginBottom: '2rem' }}>
-                <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.85rem', color: 'rgba(255,120,120,0.9)', margin: 0 }}>{error}</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                <div>
-                  <label style={LABEL_STYLE}>Full name *</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} required style={INPUT_STYLE} placeholder="John Smith" />
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+              Frequently Asked Questions
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {faqSchema.mainEntity.map(({ name, acceptedAnswer }) => (
+                <div key={name} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#050505' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{name}</h3>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>{acceptedAnswer.text}</p>
                 </div>
-                <div>
-                  <label style={LABEL_STYLE}>Email *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} required style={INPUT_STYLE} placeholder="john@company.com" />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                <div>
-                  <label style={LABEL_STYLE}>Company</label>
-                  <input type="text" name="company" value={formData.company} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} style={INPUT_STYLE} placeholder="Optional" />
-                </div>
-                <div>
-                  <label style={LABEL_STYLE}>Phone</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} style={INPUT_STYLE} placeholder="Optional" />
-                </div>
-              </div>
-
-              <div>
-                <label style={LABEL_STYLE}>Message *</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  required
-                  rows={5}
-                  placeholder="Describe your equipment, application, and filtration needs..."
-                  style={{ ...INPUT_STYLE, resize: 'vertical', lineHeight: 1.6 }}
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                disabled={sending}
-                whileHover={{ scale: sending ? 1 : 1.02, boxShadow: sending ? 'none' : '0 0 30px rgba(255,241,45,0.35)' }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  alignSelf: 'flex-start',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  background: sending ? 'rgba(255,241,45,0.5)' : '#FFF12D',
-                  color: '#000',
-                  fontFamily: '"Space Grotesk", sans-serif',
-                  fontWeight: 600,
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.08em',
-                  padding: '0.9rem 2.25rem',
-                  border: 'none',
-                  cursor: sending ? 'not-allowed' : 'pointer',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {sending ? 'Sending...' : 'Send message'}
-                {!sending && (
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                )}
-              </motion.button>
-            </form>
-          </motion.div>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-06-14T19:31:55.035Z",
+    "generated": "2026-06-14T19:52:27.115Z",
     "entity_count": 45,
     "endpoint_base": "/api/citation",
     "query_patterns": {

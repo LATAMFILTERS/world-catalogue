@@ -1,9 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
-import { useState } from 'react';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 // Change 3 — sections reordered and relabelled to match Knowledge Foundation ontology
 const SECTIONS = [
@@ -14,8 +13,6 @@ const SECTIONS = [
     description: 'Every industry has a specific contamination profile, a defined set of assets at risk, and applicable protection standards. Mining, agriculture, marine, power generation — each sector faces distinct contamination threats that require calibrated protection strategies.',
     icon: '⬡',
     href: '/knowledge-system/standards',
-    tags: ['ISO 16889', 'ISO 4406', 'ISO 5011', 'SAE J1539'],
-    img: '/images/air-filters-lab.avif',
   },
   {
     title: 'Assets — What Is at Risk and How Industrial Assets Degrade',
@@ -32,8 +29,6 @@ const SECTIONS = [
     description: 'Particle contamination causes 70–80% of hydraulic system failures (NFPA). Root failure mechanisms: abrasive wear from hard particles, water contamination of fuel injectors, varnish formation in hydraulic oil, and silica ingestion in air intake systems.',
     icon: '⚠',
     href: '/knowledge-system/contamination',
-    tags: ['Particle wear', 'Water contamination', 'Hydraulic failure'],
-    img: '/images/oilfilter-mecan.avif',
   },
   {
     title: 'Protection Systems and Technologies — Engineering the Defence',
@@ -42,8 +37,6 @@ const SECTIONS = [
     description: 'Five protection systems address the contamination threats identified: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling. Twelve technologies implement these systems. Selection is based on contamination target and measurable ISO standard — not product brand.',
     icon: '⚖',
     href: '/knowledge-system/compare',
-    tags: ['TCO analysis', 'Beta ratio', 'Specification matching'],
-    img: '/images/dossier-filters.avif',
   },
   {
     title: 'Fleet Optimisation — Operational Continuity Through Contamination Control',
@@ -52,16 +45,30 @@ const SECTIONS = [
     description: 'Operational outcomes — reduced downtime, extended service intervals, lower total cost of ownership — result from systematic contamination control, not product substitution. Fleet optimisation begins with contamination targets, not filter selection.',
     icon: '🚛',
     href: '/knowledge-system/fleet',
-    tags: ['Downtime reduction', 'TCO', 'Extended drain intervals'],
-    img: '/images/trucks-1.avif',
   },
 ];
 
 const STATS = [
-  { val: '70–80%', label: 'of hydraulic failures caused by particle contamination', src: 'NFPA' },
-  { val: '$260K', label: 'per hour — average unplanned downtime cost in heavy industry', src: 'Siemens 2023' },
-  { val: '3–5×', label: 'bearing life extension when cleanliness targets are maintained', src: 'ISO 4406' },
-  { val: 'β ≥ 200', label: '99.5% capture at 10 µm — ISO 16889 hydraulic standard', src: 'ISO 16889' },
+  {
+    stat: '70–80%',
+    label: 'of hydraulic system failures are caused by particle contamination',
+    source: 'National Fluid Power Association (NFPA)',
+  },
+  {
+    stat: '$260K/hr',
+    label: 'average cost of unplanned downtime in heavy industry',
+    source: 'Siemens Industrial Study, 2023',
+  },
+  {
+    stat: '3–5×',
+    label: 'bearing life extension from ISO 18/16/13 → 14/12/10 cleanliness target',
+    source: 'ISO 4406 / Engineering studies',
+  },
+  {
+    stat: 'β₁₀ ≥ 200',
+    label: '99.5% capture efficiency at 10 microns — hydraulic system standard per ISO 16889',
+    source: 'ISO 16889 Multi-Pass Test',
+  },
 ];
 
 const FAQS = [
@@ -257,71 +264,40 @@ export default function KnowledgeSystemPage() {
 
           {/* Statistics */}
           <div style={{
-            position: 'absolute', inset: 0,
-            backgroundImage: `url(${section.img})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            transform: hovered ? 'scale(1.05)' : 'scale(1)',
-            transition: 'transform 0.65s cubic-bezier(0.16,1,0.3,1)',
-            filter: hovered ? 'brightness(0.5)' : 'brightness(0.35)',
-          }} />
-
-          {/* Gradient overlay */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%)',
-          }} />
-
-          {/* Yellow bottom border on hover */}
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0,
-            height: '2px', background: '#FFF12D',
-            transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
-            transformOrigin: 'left',
-            transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)',
-          }} />
-
-          {/* Content */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            padding: '1.75rem',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.25rem',
+            marginBottom: '2.5rem',
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.25)' }}>
-                {section.num}
-              </span>
-              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: hovered ? '#FFF12D' : 'rgba(255,241,45,0.5)', textTransform: 'uppercase', transition: 'color 0.3s' }}>
-                {section.subtitle}
-              </span>
-            </div>
-
-            <div>
-              <h3 style={{
-                fontFamily: '"Space Grotesk", sans-serif',
-                fontWeight: 600,
-                fontSize: 'clamp(1.15rem, 2vw, 1.4rem)',
-                lineHeight: 1.2,
-                letterSpacing: '-0.01em',
-                color: '#fff',
-                margin: '0 0 0.75rem',
+            {STATS.map((item, i) => (
+              <div key={i} style={{
+                background: 'rgba(255,241,45,0.04)',
+                border: '1px solid rgba(255,241,45,0.12)',
+                borderRadius: '6px',
+                padding: '1.25rem 1.5rem',
               }}>
-                {section.title}
-              </h3>
-
-              <div style={{
-                overflow: 'hidden',
-                maxHeight: hovered ? '100px' : '0',
-                opacity: hovered ? 1 : 0,
-                transition: 'max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease',
-                marginBottom: hovered ? '1rem' : '0',
-              }}>
-                <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: 0 }}>
-                  {section.description}
+                <div style={{
+                  fontSize: '1.5rem', fontWeight: 800,
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  color: '#FFF12D', marginBottom: '0.5rem',
+                }}>
+                  {item.stat}
+                </div>
+                <p style={{
+                  fontSize: '0.83rem', color: 'rgba(255,255,255,0.7)',
+                  fontFamily: 'Inter, sans-serif', lineHeight: 1.5, margin: '0 0 0.5rem',
+                }}>
+                  {item.label}
+                </p>
+                <p style={{
+                  fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)',
+                  fontFamily: 'JetBrains Mono, monospace', margin: '0',
+                }}>
+                  {item.source}
                 </p>
               </div>
+            ))}
+          </div>
 
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -335,45 +311,137 @@ export default function KnowledgeSystemPage() {
         </motion.div>
       </section>
 
-      {/* ── STATS ROW ── */}
-      <section style={{ padding: '3.5rem 7%', borderBottom: '1px solid rgba(255,255,255,0.05)', background: '#050505' }}>
-        <div className="stats-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          {STATS.map((s, i) => (
+      {/* Knowledge Sections */}
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+          gap: '1.75rem',
+        }}>
+          {SECTIONS.map((section, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              key={section.slug}
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontWeight: 700, fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.5rem' }}>
-                {s.val}
-              </div>
-              <p style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: '0.78rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.45)', margin: '0 0 0.4rem' }}>
-                {s.label}
-              </p>
-              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>
-                {s.src}
-              </span>
+              <Link href={section.href} style={{ textDecoration: 'none', display: 'block' }}>
+                <motion.div
+                  whileHover={{ borderColor: 'rgba(255,241,45,0.4)', y: -3 }}
+                  transition={{ duration: 0.2 }}
+                  style={{
+                    background: 'rgba(255,255,255,0.02)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    padding: '2rem',
+                    cursor: 'pointer',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.2rem',
+                  }}
+                >
+                  <div style={{
+                    width: '36px', height: '36px',
+                    border: '1px solid rgba(255,241,45,0.25)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#FFF12D', fontSize: '1rem', flexShrink: 0,
+                  }}>
+                    {section.icon}
+                  </div>
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.58rem', letterSpacing: '0.13em',
+                    color: 'rgba(255,241,45,0.45)', textTransform: 'uppercase',
+                  }}>
+                    {section.domain}
+                  </span>
+                  <h2 style={{
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '1.05rem', fontWeight: 600,
+                    color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.4,
+                    marginTop: '-0.5rem',
+                  }}>
+                    {section.title}
+                  </h2>
+                  <p style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.875rem',
+                    color: 'rgba(255,255,255,0.55)',
+                    lineHeight: 1.65, marginTop: 'auto',
+                  }}>
+                    {section.description}
+                  </p>
+                  <div style={{
+                    fontSize: '0.7rem', color: 'rgba(255,241,45,0.4)',
+                    fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.08em',
+                  }}>
+                    EXPLORE →
+                  </div>
+                </motion.div>
+              </Link>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* ── KNOWLEDGE SECTIONS GRID ── */}
-      <section style={{ padding: '0' }}>
-        <div
-          className="knowledge-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: '1px',
-            background: 'rgba(255,255,255,0.06)',
-          }}
-        >
-          {SECTIONS.map((section, i) => (
-            <SectionCard key={section.href} section={section} index={i} />
-          ))}
+      {/* FAQ Section */}
+      <section style={{ padding: '5rem 2rem', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <span style={{
+              display: 'block', fontSize: '0.7rem', fontWeight: 700,
+              letterSpacing: '0.25em', color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
+            }}>
+              // FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2 style={{
+              fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800,
+              fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem',
+            }}>
+              Industrial Filtration — Technical Questions
+            </h2>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.5)', margin: '0' }}>
+              Common questions from engineers and procurement teams working with industrial filtration systems.
+            </p>
+          </motion.div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {FAQS.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.04 }}
+                style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: '6px',
+                  padding: '1.75rem 2rem',
+                }}
+              >
+                <h3 style={{
+                  fontSize: '0.975rem', fontWeight: 700,
+                  fontFamily: 'Outfit, sans-serif', color: '#fff',
+                  margin: '0 0 0.875rem', lineHeight: 1.5,
+                }}>
+                  {faq.q}
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)',
+                  fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0',
+                }}>
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
