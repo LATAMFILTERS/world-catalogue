@@ -443,11 +443,17 @@ export default function TechnologiesPage() {
                 </p>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,241,45,0.3)', margin: '0 0 0.5rem', lineHeight: 1 }}>↓</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                  {techs.map(tech => (
-                    <p key={tech} style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: 'rgba(255,255,255,0.85)', margin: 0 }}>
-                      {tech}
-                    </p>
-                  ))}
+                  {techs.map(tech => {
+                    const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
+                    return (
+                      <Link key={tech} href={`/technologies/${slug}`} style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D')}
+                        onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.85)')}
+                      >
+                        {tech} →
+                      </Link>
+                    );
+                  })}
                 </div>
               </motion.div>
             ))}

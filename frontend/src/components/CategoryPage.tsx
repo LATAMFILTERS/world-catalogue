@@ -709,22 +709,39 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 </p>
               )}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => (
-                  <span
-                    key={tech}
-                    style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.62rem',
-                      letterSpacing: '0.05em',
-                      padding: '0.3rem 0.7rem',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      color: 'rgba(255,241,45,0.75)',
-                      background: 'rgba(255,241,45,0.04)',
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
+                  const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
+                  return (
+                    <Link
+                      key={tech}
+                      href={`/technologies/${slug}`}
+                      style={{
+                        fontFamily: 'JetBrains Mono, monospace',
+                        fontSize: '0.62rem',
+                        letterSpacing: '0.05em',
+                        padding: '0.3rem 0.7rem',
+                        border: '1px solid rgba(255,241,45,0.25)',
+                        color: 'rgba(255,241,45,0.75)',
+                        background: 'rgba(255,241,45,0.04)',
+                        textDecoration: 'none',
+                        transition: 'border-color 0.2s, background 0.2s, color 0.2s',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.6)';
+                        (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,241,45,0.1)';
+                        (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D';
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.25)';
+                        (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,241,45,0.04)';
+                        (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,241,45,0.75)';
+                      }}
+                    >
+                      {tech}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
             </AnimateIn>
