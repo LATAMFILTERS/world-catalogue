@@ -150,7 +150,7 @@ export default function TechnologiesPage() {
               display: 'block', fontSize: '0.7rem', fontWeight: 700,
               letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // TECHNOLOGIES
+              // ASSET PROTECTION TECHNOLOGY PLATFORM
             </span>
           </motion.div>
           <motion.h1
@@ -216,10 +216,69 @@ export default function TechnologiesPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            ELIMFILTERS technologies are engineered to protect industrial assets by controlling contamination at the source across air, fuel, hydraulic, lubrication, and cabin systems. Each technology is designed to solve specific contamination problems that degrade equipment performance, reduce operational reliability, and accelerate total cost of ownership. Technologies are the physical embodiment of ELIMFILTERS&apos; industrial asset protection strategy.
+          <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.15rem)', color: '#fff', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+            Technology exists to protect assets.
+          </p>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
+            Every ELIMFILTERS architecture was engineered to control a specific contamination mechanism responsible for asset degradation, downtime, and operational risk. These architectures are not filter products. They are contamination control systems — the engineering foundation upon which every ELIMFILTERS asset protection strategy is built.
+          </p>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85 }}>
+            The technologies support the protection systems. The protection systems protect the assets. The objective is not filtration alone. The objective is asset protection — measurable, documented, and sustained across every operating environment.
           </p>
         </motion.div>
+      </section>
+
+      {/* Technology Governance Principle */}
+      <section style={{
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
+        background: 'rgba(255,241,45,0.03)',
+        borderBottom: '1px solid rgba(255,241,45,0.1)',
+        borderTop: '1px solid rgba(255,255,255,0.04)',
+      }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
+              // TECHNOLOGY GOVERNANCE PRINCIPLE
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                {[
+                  'Contamination Control',
+                  'Protection Systems',
+                  'Technology Architectures',
+                  'Product Implementations',
+                  'Protected Assets',
+                  'Operational Outcomes',
+                ].map((item, i, arr) => (
+                  <div key={item}>
+                    <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: i === 0 ? '#FFF12D' : i === arr.length - 1 ? '#FFF12D' : 'rgba(255,255,255,0.85)', margin: 0 }}>
+                      {item}
+                    </p>
+                    {i < arr.length - 1 && (
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', color: 'rgba(255,241,45,0.35)', margin: '0.3rem 0', lineHeight: 1 }}>↓</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '0.25rem' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                  Products never define strategy.
+                </p>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                  Technologies support systems.
+                </p>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
+                  Systems protect assets.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Technologies Grid */}
@@ -310,6 +369,89 @@ export default function TechnologiesPage() {
               );
             })}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Why Technology Matters */}
+      <section style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1.5rem' }}>
+              // WHY TECHNOLOGY MATTERS IN ASSET PROTECTION
+            </p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
+              Technology is where reliability engineering becomes operational reality.
+            </p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
+              Failures do not occur because equipment is old. Failures occur because contamination mechanisms remain uncontrolled.
+            </p>
+            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.1rem)', color: '#fff', lineHeight: 1.6 }}>
+              Every ELIMFILTERS asset protection technology exists to control one of those mechanisms.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Asset Protection Architecture Map */}
+      <section style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '2.5rem' }}
+          >
+            <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
+              // ASSET PROTECTION ARCHITECTURE MAP
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: 0 }}>
+              Protection Domain Architecture
+            </h2>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1.25rem' }}>
+            {[
+              { domain: 'Air Intake & Airflow', techs: ['MACROCORE™', 'INTEKCORE™', 'DRYCORE™'] },
+              { domain: 'Fuel Cleanliness', techs: ['HYDROCORE™', 'HYDROCORE/SERIES™', 'SYNTEPORE™'] },
+              { domain: 'Lubrication', techs: ['SYNTRAX™'] },
+              { domain: 'Hydraulic', techs: ['NANOFORCE™'] },
+              { domain: 'Cooling System', techs: ['THERMACORE™'] },
+              { domain: 'Cabin Air Quality', techs: ['MICROKAPPA™'] },
+              { domain: 'Fleet Lifecycle', techs: ['DURATECH™'] },
+              { domain: 'Marine & Offshore', techs: ['MARINECLEAN™'] },
+            ].map(({ domain, techs }) => (
+              <motion.div
+                key={domain}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '8px',
+                  padding: '1.25rem',
+                }}
+              >
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: '#FFF12D', marginBottom: '0.6rem', textTransform: 'uppercase', lineHeight: 1.4 }}>
+                  {domain}
+                </p>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,241,45,0.3)', margin: '0 0 0.5rem', lineHeight: 1 }}>↓</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                  {techs.map(tech => (
+                    <p key={tech} style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: 'rgba(255,255,255,0.85)', margin: 0 }}>
+                      {tech}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -413,6 +555,32 @@ export default function TechnologiesPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* Closing Platform Positioning */}
+      <section style={{
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
+        background: 'rgba(255,241,45,0.03)',
+        borderTop: '1px solid rgba(255,241,45,0.15)',
+        textAlign: 'center',
+      }}>
+        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.75)', lineHeight: 2, margin: 0 }}>
+              Technologies control contamination.
+            </p>
+            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.75)', lineHeight: 2, margin: 0 }}>
+              Systems protect assets.
+            </p>
+            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: '#FFF12D', lineHeight: 2, margin: 0 }}>
+              Protected assets sustain operations.
+            </p>
+          </motion.div>
         </div>
       </section>
     </main>
