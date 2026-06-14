@@ -166,11 +166,30 @@ def process(records: list[dict]) -> list[dict]:
         # Cross-reference codes (FRAM / WIX / BOSCH equivalents) — populated in future scrape
         xref_codes = rec.get("xref_codes", "")
 
-        # Fitment: list of dicts → separate engine, year, and full fitment columns
+        # Fitment: list of dicts → engine_year "2.0/1998", full fitment string
         fitment_raw = rec.get("fitment", [])
         fitment_lines = []
-        engines = []
-        years   = []
+        engine_year_set = []
+
+        def _ccm_to_liters(ccm_val) -> str:
+            try:
+                liters = round(float(str(ccm_val).replace(",", "")) / 1000, 1)
+                return f"{liters:.1f}"
+            except Exception:
+                return ""
+
+        def _extract_year(year_val: str) -> str:
+            # "08/78 → 08/81" → 1978  |  "01/2020 → 12/2025" → 2020  |  "2025" → 2025
+            import re as _re
+            m = _re.search(r"(\d{4})", str(year_val))
+            if m:
+                return m.group(1)
+            m2 = _re.search(r"/(\d{2})", str(year_val))
+            if m2:
+                y = int(m2.group(1))
+                return str(2000 + y if y <= 30 else 1900 + y)
+            return ""
+
         for v in fitment_raw:
             make  = v.get("make", "")
             model = v.get("model_family", "") or v.get("model", "")
@@ -179,13 +198,15 @@ def process(records: list[dict]) -> list[dict]:
             kw    = v.get("kw", "")
             year  = v.get("year", "")
             fitment_lines.append(f"{make} {model} {eng} {ccm}cc {kw}kW {year}".strip())
-            if eng and eng not in engines:
-                engines.append(eng)
-            if year and year not in years:
-                years.append(year)
-        fitment    = " / ".join(fitment_lines)
-        engines_str = " | ".join(engines)
-        years_str   = " | ".join(years)
+
+            liters   = _ccm_to_liters(ccm)
+            yr       = _extract_year(year)
+            ey_token = f"{liters}/{yr}" if liters and yr else (liters or yr)
+            if ey_token and ey_token not in engine_year_set:
+                engine_year_set.append(ey_token)
+
+        fitment      = " / ".join(fitment_lines)
+        engines_str  = " | ".join(engine_year_set)   # "2.0/1978 | 2.3/1982 | 2.5/2025"
 
         out.append({
             "elim_sku":     elim_sku,
@@ -203,8 +224,7 @@ def process(records: list[dict]) -> list[dict]:
             "oem_codes":    oem_codes,
             "xref_codes":   xref_codes,
             "fitment_count": rec.get("fitment_count", 0),
-            "engines":      engines_str,
-            "years":        years_str,
+            "engine_year":  engines_str,
             "fitment":      fitment,
         })
 
@@ -301,7 +321,7 @@ def main():
         "technology", "hd_equiv",
         "gtin", "description", "dimensions", "specs",
         "oe_count", "oem_codes", "xref_codes",
-        "fitment_count", "engines", "years", "fitment",
+        "fitment_count", "engine_year", "fitment",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CSV_COLS)
