@@ -106,7 +106,7 @@ function HeroSection() {
       <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px' }}>
         <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.85)', textTransform: 'uppercase', marginBottom: '2rem', fontWeight: 700 }}>
-          {t('home.eyebrow', 'Asset Protection Technology')}
+          {t('home.eyebrow', 'Asset Protection Technology Platform')}
         </motion.p>
 
         <h1 style={{ margin: 0, padding: 0 }}>
