@@ -4516,6 +4516,57 @@ app.get('/api/oem/ld-breakdown', async (req, res) => {
   }
 });
 
+// GET /api/oem/pathway-b-debug
+// Diagnostics: prueba directa del JOIN de Pathway B
+app.get('/api/oem/pathway-b-debug', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Muestra de SKUs en mann_oem_clean
+    const mannSkus = await client.query(`
+      SELECT DISTINCT sku, segment
+      FROM mann_oem_clean
+      ORDER BY sku
+      LIMIT 20
+    `);
+
+    // Muestra de códigos en brand_crossrefs['MANN']
+    const mannRefs = await client.query(`
+      SELECT p.sku AS elim_sku, p.codigo_base,
+             mann_ref.code AS mann_code,
+             UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g')) AS mann_code_norm
+      FROM elimfilters_catalog p
+      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+      WHERE p.brand_crossrefs ? 'MANN'
+      LIMIT 20
+    `);
+
+    // Prueba directa del JOIN
+    const joinTest = await client.query(`
+      SELECT COUNT(*) AS pathway_b_count
+      FROM elimfilters_catalog p
+      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+      JOIN mann_oem_clean m
+        ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
+         = UPPER(REGEXP_REPLACE(REPLACE(REPLACE(REPLACE(mann_ref.code, '%2F', ''), '%20', ''), '%2D', ''), '[\\s\\-/\\.()]', '', 'g'))
+      WHERE p.brand_crossrefs ? 'MANN'
+        AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
+    `);
+
+    res.json({
+      success: true,
+      pathway_b_direct_count: parseInt(joinTest.rows[0].pathway_b_count),
+      muestra_mann_oem_clean_skus: mannSkus.rows,
+      muestra_brand_crossrefs_mann: mannRefs.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // GET /api/oem/brand-crossref-check
 // Diagnostics: ¿tiene el catálogo entradas brand_crossrefs['MANN']?
 app.get('/api/oem/brand-crossref-check', async (req, res) => {
