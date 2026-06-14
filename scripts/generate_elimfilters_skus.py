@@ -233,7 +233,7 @@ def process(records: list[dict], xrefs: dict | None = None) -> list[dict]:
 
             liters   = _ccm_to_liters(ccm)
             yr       = _extract_year(year)
-            ey_token = f"{liters}/{yr}" if liters and yr else (liters or yr)
+            ey_token = f"{liters}L/{yr}" if liters and yr else (f"{liters}L" if liters else yr)
             if ey_token and ey_token not in engine_year_set:
                 engine_year_set.append(ey_token)
 
