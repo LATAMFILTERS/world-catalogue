@@ -546,7 +546,7 @@ html, body {
       class="search-input"
       id="search-input"
       type="text"
-      placeholder="e.g. EL82100 · WIX 33193 · P552100 · Cummins 3937153"
+      placeholder="Ingresa el código del filtro que necesitas"
       autocomplete="off"
       autocorrect="off"
       spellcheck="false"
@@ -554,10 +554,7 @@ html, body {
     <button class="search-btn" id="search-btn" onclick="doSearch()">Search →</button>
   </div>
   <div class="search-hint" id="search-hint">
-    <span>SKU</span> EL82100 &nbsp;·&nbsp;
-    <span>OEM</span> Cummins 3937153 &nbsp;·&nbsp;
-    <span>Donaldson</span> P552100 &nbsp;·&nbsp;
-    <span>Competitor</span> WIX 33193 · Baldwin B7253
+    Coloca el <span>código exacto</span> del filtro &nbsp;·&nbsp; puede ser el SKU ELIMFILTERS, el código OEM o una referencia cruzada
   </div>
 </section>
 
@@ -655,16 +652,16 @@ const SPEC_MAP = [
 // ── Mode config ──────────────────────────────────────────────────────────────
 const MODES = {
   part: {
-    placeholder: 'e.g. EL82100 · WIX 33193 · P552100 · Cummins 3937153',
-    hint: '<span>SKU</span> EL82100 &nbsp;·&nbsp; <span>OEM</span> Cummins 3937153 &nbsp;·&nbsp; <span>Donaldson</span> P552100 &nbsp;·&nbsp; <span>Competitor</span> WIX 33193 · Baldwin B7253'
+    placeholder: 'Ingresa el código del filtro que necesitas',
+    hint: 'Coloca el <span>código exacto</span> del filtro &nbsp;·&nbsp; puede ser el SKU ELIMFILTERS, el código OEM o una referencia cruzada'
   },
   vin: {
-    placeholder: 'VIN (17 chars)  ·  e.g. 1HGBH41JXMN109186',
-    hint: 'Enter the <span>17-character VIN</span> of the vehicle &nbsp;·&nbsp; The system will decode make, model and year automatically'
+    placeholder: 'Ingresa el VIN del vehículo (17 caracteres)',
+    hint: 'El sistema decodifica automáticamente <span>marca, modelo y año</span> a partir del VIN &nbsp;·&nbsp; o escribe directamente: HONDA CIVIC 2020'
   },
   equip: {
-    placeholder: 'Make · Model · Year · Engine  ·  e.g. 2020 TOYOTA COROLLA 1.8L',
-    hint: 'Enter <span>Make</span>, <span>Model</span>, <span>Year</span> and optionally engine &nbsp;·&nbsp; e.g. CATERPILLAR 3406E · KOMATSU D65 2019 · JOHN DEERE 6135B'
+    placeholder: 'Marca · Modelo · Año · Motor  —  ej. TOYOTA COROLLA 2020 1.8L',
+    hint: 'Ingresa <span>marca</span>, <span>modelo</span> y <span>año</span> del equipo &nbsp;·&nbsp; ej. CATERPILLAR 3406E · KOMATSU D65 2019 · JOHN DEERE 6135B'
   }
 };
 
