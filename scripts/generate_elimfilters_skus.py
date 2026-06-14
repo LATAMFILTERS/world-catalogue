@@ -143,18 +143,16 @@ def process(records: list[dict]) -> list[dict]:
         # Track collisions (different MANN SKUs → same ELIMFILTERS SKU)
         collisions.setdefault(elim_sku, []).append(mann_sku)
 
-        filter_type  = rec.get("filter_type", "")
-        product_name = f"{filter_type} {mann_sku}".strip() if filter_type else mann_sku
+        product_type = rec.get("filter_type", "")
 
         out.append({
             "elim_sku":     elim_sku,
-            "product_name": product_name,
-            "mann_sku":     mann_sku,
+            "base_code":    mann_sku,
+            "product_type": product_type,
             "family":       family,
             "family_label": FAMILY_LABELS.get(family, ""),
             "technology":   TECHNOLOGY_MAP.get(family, ""),
             "hd_equiv":     HD_EQUIV_MAP.get(family, ""),
-            "filter_type":  filter_type,
             "gtin":         rec.get("gtin", ""),
             "fitment_count": rec.get("fitment_count", 0),
             "oe_count":     rec.get("oe_count", 0),
@@ -250,8 +248,8 @@ def main():
 
     # ── Save CSV ──
     CSV_COLS = [
-        "elim_sku", "product_name", "mann_sku", "family", "family_label",
-        "technology", "hd_equiv", "filter_type",
+        "elim_sku", "base_code", "product_type", "family", "family_label",
+        "technology", "hd_equiv",
         "gtin", "fitment_count", "oe_count", "description",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
