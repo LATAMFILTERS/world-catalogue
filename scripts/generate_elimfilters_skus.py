@@ -73,6 +73,14 @@ FAMILY_LABELS = {
     "EF": "Fuel",
 }
 
+# Category names matching HD system (lube / air / cabin / fuel)
+FAMILY_CATEGORY = {
+    "EL": "lube",
+    "EA": "air",
+    "EC": "cabin",
+    "EF": "fuel",
+}
+
 TECHNOLOGY_MAP = {
     "EL": "ULTRACORE™",
     "EA": "SUPRACORE™",
@@ -86,6 +94,32 @@ HD_EQUIV_MAP = {
     "EC": "EC1 MICROKAPPA™",
     "EF": "EF9 NANOFORCE™",
 }
+
+# Filter style from MANN prefix (matching HD: Spin-On / Cartridge / Panel / Element)
+FILTER_STYLE_MAP = [
+    ("CUK", "Cabin Element"),
+    ("CU",  "Cabin Element"),
+    ("CF",  "Cabin Element"),
+    ("WK",  "Fuel Filter"),
+    ("PU",  "Fuel Filter"),
+    ("KC",  "Fuel Filter"),
+    ("WP",  "Spin-On"),
+    ("WD",  "Spin-On"),
+    ("HU",  "Cartridge"),
+    ("LA",  "Pre-Filter"),
+    ("SP",  "Safety Element"),
+    ("DB",  "Breather"),
+    ("FP",  "Pre-Filter"),
+    ("W",   "Spin-On"),
+    ("C",   "Panel"),
+]
+
+def get_filter_style(mann_sku: str) -> str:
+    u = mann_sku.strip().upper()
+    for prefix, style in FILTER_STYLE_MAP:
+        if u.startswith(prefix):
+            return style
+    return ""
 
 
 def mann_to_elim_sku(mann_sku: str) -> tuple[str | None, str | None]:
@@ -175,32 +209,35 @@ def process(records: list[dict], xrefs: dict | None = None) -> list[dict]:
         # Track collisions (different MANN SKUs → same ELIMFILTERS SKU)
         collisions.setdefault(elim_sku, []).append(mann_sku)
 
-        product_type = rec.get("filter_type", "")
+        category     = FAMILY_CATEGORY.get(family, "")
+        filter_style = get_filter_style(mann_sku)
+        filter_type  = rec.get("filter_type", "")
 
-        # Flatten dimensions: {"Height": "142 mm", ...} → "Height:142mm | OD:93mm"
+        # Dimensions dict: {"Height": "142 mm", "Outer Diameter": "93 mm", ...}
         dims_raw = rec.get("dimensions", {}) or rec.get("dims_inline", {})
+        # Flat string for CSV
         dimensions = " | ".join(
             f"{k}:{v}".replace(" ", "") for k, v in dims_raw.items()
         ) if dims_raw else ""
 
-        # Flatten specs: {"Filter with by-pass valve": "No", ...} → "bypass:No | anti-drain:No"
+        # Specs dict: {"Filter with by-pass valve": "No", ...}
         specs_raw = rec.get("specs", {})
         specs = " | ".join(
             f"{k}:{v}" for k, v in specs_raw.items()
         ) if specs_raw else ""
 
-        # OEM codes: {"FIAT": ["4119015",...], "OPEL": [...]} → "FIAT:4119015,4121392 | OPEL:3448991"
-        oe_raw = rec.get("oe_numbers", {})
+        # OEM cross-references: raw dict {"FIAT": ["4119015",...], "OPEL": [...]}
+        oem_raw = rec.get("oe_numbers", {})
         oem_codes = " | ".join(
-            f"{make}:{','.join(codes)}" for make, codes in oe_raw.items()
-        ) if oe_raw else ""
+            f"{make}:{','.join(codes)}" for make, codes in oem_raw.items()
+        ) if oem_raw else ""
 
-        # Cross-reference codes from oilfilter/airfilter/fuelfilter-crossreference.com
-        xref_codes = xrefs.get(mann_sku.upper(), "") or rec.get("xref_codes", "")
+        # Competitor cross-references from crossreference sites (FRAM / WIX / BOSCH...)
+        xref_str = xrefs.get(mann_sku.upper(), "") or rec.get("xref_codes", "")
 
-        # Fitment: list of dicts → engine_year "2.0/1998", full fitment string
+        # Equipment applications — HD format: "MAKE MODEL · ENGINE ccmcc kWkW · YEAR"
         fitment_raw = rec.get("fitment", [])
-        fitment_lines = []
+        applications = []
         engine_year_set = []
 
         def _ccm_to_liters(ccm_val) -> str:
@@ -211,7 +248,6 @@ def process(records: list[dict], xrefs: dict | None = None) -> list[dict]:
                 return ""
 
         def _extract_year(year_val: str) -> str:
-            # "08/78 → 08/81" → 1978  |  "01/2020 → 12/2025" → 2020  |  "2025" → 2025
             import re as _re
             m = _re.search(r"(\d{4})", str(year_val))
             if m:
@@ -223,41 +259,52 @@ def process(records: list[dict], xrefs: dict | None = None) -> list[dict]:
             return ""
 
         for v in fitment_raw:
-            make  = v.get("make", "")
-            model = v.get("model_family", "") or v.get("model", "")
-            eng   = v.get("engine_code", "") or v.get("engine", "")
-            ccm   = v.get("ccm", "")
-            kw    = v.get("kw", "")
-            year  = v.get("year", "")
-            fitment_lines.append(f"{make} {model} {eng} {ccm}cc {kw}kW {year}".strip())
+            make   = v.get("make", "")
+            model  = v.get("model_family", "") or v.get("model", "")
+            mtype  = v.get("model_type", "")
+            eng    = v.get("engine_code", "") or v.get("engine", "")
+            ccm    = v.get("ccm", "")
+            kw     = v.get("kw", "")
+            year   = v.get("year", "")
+            liters = _ccm_to_liters(ccm)
+            # HD application format: "OPEL Ascona-B · 2.0D 20D 1998cc 43kW · 08/1978-08/1981"
+            eng_desc = f"{liters}L {eng}".strip() if liters else eng
+            app_str  = f"{make} {model} · {eng_desc} {ccm}cc {kw}kW · {year}".strip()
+            applications.append(app_str)
 
-            liters   = _ccm_to_liters(ccm)
             yr       = _extract_year(year)
             ey_token = f"{liters}L/{yr}" if liters and yr else (f"{liters}L" if liters else yr)
             if ey_token and ey_token not in engine_year_set:
                 engine_year_set.append(ey_token)
 
-        fitment      = " / ".join(fitment_lines)
-        engines_str  = " | ".join(engine_year_set)   # "2.0/1978 | 2.3/1982 | 2.5/2025"
+        fitment_str  = " / ".join(applications)
+        engine_year  = " | ".join(engine_year_set)
 
         out.append({
-            "elim_sku":     elim_sku,
-            "base_code":    mann_sku,
-            "product_type": product_type,
-            "family":       family,
-            "family_label": FAMILY_LABELS.get(family, ""),
-            "technology":   TECHNOLOGY_MAP.get(family, ""),
-            "hd_equiv":     HD_EQUIV_MAP.get(family, ""),
-            "gtin":         rec.get("gtin", ""),
-            "description":  rec.get("description", "")[:120],
-            "dimensions":   dimensions,
-            "specs":        specs,
-            "oe_count":     rec.get("oe_count", 0),
-            "oem_codes":    oem_codes,
-            "xref_codes":   xref_codes,
+            # ── Identity (matches HD structure) ──────────────────
+            "elim_sku":      elim_sku,
+            "base_code":     mann_sku,
+            "segment":       "LIGHT_DUTY",
+            "category":      category,          # lube / air / cabin / fuel
+            "filter_style":  filter_style,      # Spin-On / Cartridge / Panel / Element
+            "technology":    TECHNOLOGY_MAP.get(family, ""),
+            "hd_equiv":      HD_EQUIV_MAP.get(family, ""),
+            "family":        family,
+            # ── Product info ─────────────────────────────────────
+            "filter_type":   filter_type,
+            "gtin":          rec.get("gtin", ""),
+            "description":   rec.get("description", "")[:200],
+            # ── Technical specs ──────────────────────────────────
+            "dimensions":    dimensions,
+            "specs":         specs,
+            # ── Cross-references ─────────────────────────────────
+            "oe_count":      rec.get("oe_count", 0),
+            "oem_codes":     oem_codes,          # OEM: FIAT:4119015 | OPEL:3448991
+            "competitor_codes": xref_str,        # Competitor: FRAM:PH8A | WIX:51372
+            # ── Equipment applications ───────────────────────────
             "fitment_count": rec.get("fitment_count", 0),
-            "engine_year":  engines_str,
-            "fitment":      fitment,
+            "engine_year":   engine_year,        # 2.0L/1978 | 2.3L/1982
+            "fitment":       fitment_str,        # OPEL Ascona-B · 2.0L 20D · 08/1978
         })
 
     # Report collisions
@@ -350,10 +397,10 @@ def main():
 
     # ── Save CSV ──
     CSV_COLS = [
-        "elim_sku", "base_code", "product_type", "family", "family_label",
-        "technology", "hd_equiv",
-        "gtin", "description", "dimensions", "specs",
-        "oe_count", "oem_codes", "xref_codes",
+        "elim_sku", "base_code", "segment", "category", "filter_style",
+        "technology", "hd_equiv", "family",
+        "filter_type", "gtin", "description", "dimensions", "specs",
+        "oe_count", "oem_codes", "competitor_codes",
         "fitment_count", "engine_year", "fitment",
     ]
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
