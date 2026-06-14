@@ -4,44 +4,45 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
+// Change 3 — sections reordered and relabelled to match Knowledge Foundation ontology
 const SECTIONS = [
   {
-    title: 'What International Standards Govern Industrial Filtration?',
+    title: 'Industries — Contamination Profiles and Asset Contexts by Sector',
     slug: 'standards',
-    domain: 'Standards Domain',
-    description: 'ISO 16889 (Beta ratio filter testing), ISO 4406 (fluid cleanliness codes), SAE J1539 (air intake efficiency), and ASTM D6304 (water content in fuel) — each standard defines measurement methodology for a specific contamination threat.',
+    domain: '01 · Industries',
+    description: 'Every industry has a specific contamination profile, a defined set of assets at risk, and applicable protection standards. Mining, agriculture, marine, power generation — each sector faces distinct contamination threats that require calibrated protection strategies.',
     icon: '⬡',
     href: '/knowledge-system/standards',
   },
   {
-    title: 'What Causes Industrial Filter and System Failures?',
+    title: 'Assets — What Is at Risk and How Industrial Assets Degrade',
+    slug: 'science',
+    domain: '02 · Assets',
+    description: 'Industrial assets — engines, hydraulic systems, fuel circuits, bearings, compressors — degrade through measurable contamination mechanisms. Asset failure is not random. It follows predictable degradation pathways defined by contamination type, concentration, and exposure duration.',
+    icon: '🔬',
+    href: '/knowledge-system/science',
+  },
+  {
+    title: 'Problems — Contamination, Failure Mechanisms and Root Causes',
     slug: 'contamination',
-    domain: 'Failure Analysis',
+    domain: '03 · Problems & Failure Mechanisms',
     description: 'Particle contamination causes 70–80% of hydraulic system failures (NFPA). Root failure mechanisms: abrasive wear from hard particles, water contamination of fuel injectors, varnish formation in hydraulic oil, and silica ingestion in air intake systems.',
     icon: '⚠',
     href: '/knowledge-system/contamination',
   },
   {
-    title: 'How Do Industrial Filtration Systems Work?',
-    slug: 'science',
-    domain: 'Technical Library',
-    description: 'Filter efficiency is measured by Beta ratio (β): a β₁₀ = 200 filter captures 99.5% of particles ≥10 microns (ISO 16889). Multi-layer media, bypass valve thresholds, collapse pressure ratings, and dirt-holding capacity define system performance.',
-    icon: '🔬',
-    href: '/knowledge-system/science',
-  },
-  {
-    title: 'OEM vs Aftermarket Filters: What Is the Difference?',
+    title: 'Protection Systems and Technologies — Engineering the Defence',
     slug: 'compare',
-    domain: 'Evaluation Framework',
-    description: 'OEM filters ensure warranty compliance and specification matching. Aftermarket filters are evaluated by contamination control performance (Beta ratio, ISO cleanliness targets, bypass threshold) — not brand or price. Filter cost is typically 1–5% of total ownership cost.',
+    domain: '04 · Protection Systems & Technologies',
+    description: 'Five protection systems address the contamination threats identified: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling. Twelve technologies implement these systems. Selection is based on contamination target and measurable ISO standard — not product brand.',
     icon: '⚖',
     href: '/knowledge-system/compare',
   },
   {
-    title: 'How Do You Reduce Fleet Downtime Through Filtration?',
+    title: 'Fleet Optimisation — Operational Continuity Through Contamination Control',
     slug: 'fleet',
-    domain: 'Operational Strategy',
-    description: 'Unplanned downtime in heavy industry costs approximately $260,000 per hour (Siemens, 2023). System-level filtration — targeting contamination before failure — extends equipment service intervals 30–50% and reduces unplanned breakdowns.',
+    domain: '05 · Fleet Optimisation',
+    description: 'Operational outcomes — reduced downtime, extended service intervals, lower total cost of ownership — result from systematic contamination control, not product substitution. Fleet optimisation begins with contamination targets, not filter selection.',
     icon: '🚛',
     href: '/knowledge-system/fleet',
   },
@@ -109,8 +110,8 @@ export default function KnowledgeSystemPage() {
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Industrial Filtration Knowledge Base',
-    description: 'Comprehensive technical resources on filtration science, ISO standards, contamination control, fleet optimization, and OEM comparison — built for engineers and procurement teams.',
+    name: 'Industrial Asset Protection Knowledge System',
+    description: 'Knowledge system for industrial asset protection: industries, assets at risk, contamination problems, protection systems and technologies, fleet optimisation, and operational outcomes — structured for engineers, reliability teams, and fleet managers.',
     url: 'https://elimfilters.com/knowledge-system/',
     publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
     dateModified: '2026-06-11',
@@ -171,14 +172,27 @@ export default function KnowledgeSystemPage() {
           }}>
             // KNOWLEDGE SYSTEM
           </p>
+          {/* Change 1 */}
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em',
-            lineHeight: 1.15, marginBottom: '1.75rem',
+            lineHeight: 1.15, marginBottom: '1rem',
           }}>
-            Industrial Filtration Knowledge Base
+            Industrial Asset Protection Knowledge System
           </h1>
+          {/* Change 2 */}
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.72rem',
+            color: 'rgba(255,255,255,0.45)',
+            letterSpacing: '0.06em',
+            marginBottom: '1.75rem',
+            lineHeight: 1.8,
+          }}>
+            Industries · Assets · Problems · Systems · Technologies · Products<br />
+            <span style={{ color: 'rgba(255,241,45,0.6)' }}>One objective: protect industrial assets through contamination control.</span>
+          </p>
           {/* Direct Answer Block */}
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -191,7 +205,7 @@ export default function KnowledgeSystemPage() {
             borderLeft: '3px solid #FFF12D',
             paddingLeft: '1.25rem',
           }}>
-            Industrial filtration is the engineered control of particulate contamination in hydraulic, fuel, air, and lubrication systems. This knowledge base documents the contamination mechanisms, engineering standards (ISO 4406, ISO 16889, SAE J1227), and operational strategies that determine whether industrial equipment runs reliably or fails prematurely.
+            Industrial assets fail when contamination is not measured, monitored, and controlled. This knowledge system documents the contamination mechanisms, engineering standards (ISO 4406, ISO 16889, ASTM D6304), and operational strategies that determine whether industrial equipment runs reliably or fails prematurely.
           </p>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -217,6 +231,19 @@ export default function KnowledgeSystemPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
+          {/* Change 5 — Asset Protection Knowledge label */}
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.18em',
+            color: '#FFF12D',
+            opacity: 0.6,
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+          }}>
+            // Asset Protection Knowledge
+          </p>
+          {/* Change 4 — updated narrative with ontology hierarchy */}
           <p style={{
             fontFamily: 'Inter, sans-serif',
             fontSize: '1rem',
@@ -224,15 +251,15 @@ export default function KnowledgeSystemPage() {
             lineHeight: 1.8,
             marginBottom: '2.5rem',
           }}>
-            The ELIMFILTERS Knowledge System explains how{' '}
-            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
-              industrial filtration systems
-            </Link>{' '}
-            fail, how contamination impacts performance, and how engineering standards define system reliability. This knowledge base follows a structured hierarchy: understanding contamination mechanisms, documenting asset degradation pathways, integrating applicable standards, and applying technologies for protection. Operational strategies such as{' '}
+            The ELIMFILTERS Knowledge System is structured around the asset protection ontology: industry context defines which{' '}
+            <Link href="/knowledge-system/science" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
+              assets are at risk
+            </Link>
+            , assets define the contamination problems that threaten them, problems define the protection systems and technologies required, and technologies are deployed through products to achieve{' '}
             <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
-              reducing fleet downtime
-            </Link>{' '}
-            begin with understanding the contamination root causes that drive unplanned equipment failures.
+              operational continuity
+            </Link>
+            . Every section of this knowledge system follows that hierarchy from industry to operational outcome.
           </p>
 
           {/* Statistics */}
@@ -279,7 +306,7 @@ export default function KnowledgeSystemPage() {
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
           }}>
-            // Information Architecture: Contamination → Asset Degradation → Standards → Technologies → Products → Fleet Optimization → Sustainability
+            // Information Architecture: Industries → Assets → Problems → Protection Systems → Technologies → Products → Operational Outcomes
           </p>
         </motion.div>
       </section>
