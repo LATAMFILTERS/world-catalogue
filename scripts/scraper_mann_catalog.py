@@ -205,7 +205,15 @@ def scrape_query(page, query: str, filter_type: str, seen: set) -> list[dict]:
         log.info(f"  [{query}] Página {page_num} → {url}")
 
         try:
-            page.goto(url, timeout=25000, wait_until="domcontentloaded")
+            page.goto(url, timeout=35000, wait_until="networkidle")
+            # Extra wait for lazy-loaded product grid
+            try:
+                page.wait_for_selector(
+                    '.product-item, .products-grid, ol.products, .product-items',
+                    timeout=8000,
+                )
+            except Exception:
+                pass
             time.sleep(1.5)
 
             # Check for "no results" message
@@ -218,6 +226,19 @@ def scrape_query(page, query: str, filter_type: str, seen: set) -> list[dict]:
             if any(ph in body_text.lower() for ph in no_results_phrases):
                 log.info(f"  [{query}] Sin resultados en página {page_num}")
                 break
+
+            # Debug: log first 10 raw hrefs if 0 products (helps diagnose selector mismatch)
+            if page_num == 1:
+                raw_hrefs = page.evaluate("""() => {
+                    var all = document.querySelectorAll('a[href]');
+                    var out = [];
+                    for (var i = 0; i < all.length && out.length < 20; i++) {
+                        var h = all[i].getAttribute('href') || '';
+                        if (h && h.indexOf('#') < 0 && h.length > 5) out.push(h);
+                    }
+                    return out;
+                }""")
+                log.debug(f"  [{query}] Sample hrefs on page: {raw_hrefs[:10]}")
 
             # Extract product links
             links = page.evaluate(_SEARCH_RESULTS_JS)
@@ -307,7 +328,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--gaps",  action="store_true")
+    ap.add_argument("--debug", action="store_true", help="Log raw hrefs for diagnosis")
     args = ap.parse_args()
+
+    if args.debug:
+        logging.getLogger().setLevel(logging.DEBUG)
+        log.setLevel(logging.DEBUG)
 
     if args.stats:
         if not OUTPUT_FILE.exists():
