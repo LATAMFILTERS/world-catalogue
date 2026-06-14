@@ -202,7 +202,7 @@
       position: relative;
       opacity: 0;
       transform: translateY(16px);
-      animation: fadeUp 0.45s ease forwards;
+      /* animation handled by GSAP */
     }
     .product-card::before {
       content: '';
@@ -794,6 +794,24 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null)
     <div class="products">
       ${items.map((p, i) => renderCard(p, i)).join('')}
     </div>`;
+
+  // GSAP entrance — stagger cards, slide meta row from top
+  if (typeof gsap !== 'undefined') {
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.from('.results-meta', { y: -12, autoAlpha: 0, duration: 0.4, ease: 'power2.out' });
+      gsap.to('.product-card', {
+        opacity: 1, y: 0,
+        stagger: { each: 0.07, from: 'start' },
+        duration: 0.55,
+        ease: 'power3.out',
+        clearProps: 'transform'
+      });
+    });
+    mm.add('(prefers-reduced-motion: reduce)', () => {
+      gsap.set('.product-card', { opacity: 1, y: 0 });
+    });
+  }
 }
 
 // ─── SEARCH EXECUTION ───
@@ -883,6 +901,9 @@ async function executeSearch() {
 // ─── BOOT ───
 executeSearch();
 </script>
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 
 </body>
 </html>
