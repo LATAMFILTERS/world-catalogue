@@ -4192,62 +4192,110 @@ app.post('/api/oem/build-donaldson-matches', async (req, res) => {
     await client.query(`
       CREATE TABLE mann_donaldson_matches AS
 
-      -- Pathway A: match por código OEM compartido (MANN ↔ Donaldson fitean el mismo equipo)
-      SELECT DISTINCT
-        m.sku            AS mann_part,
-        m.segment        AS mann_segment,
-        d.don_part       AS donaldson_part,
-        d.elimfilters_sku,
-        m.oem_normalized,
-        m.oem_brand,
-        'oem_code'       AS match_method
-      FROM mann_oem_clean m
-      JOIN (
-        SELECT p.sku AS elimfilters_sku, p.codigo_base AS don_part,
-               UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
-        FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
-        WHERE p.oem_codes IS NOT NULL
-          AND jsonb_typeof(p.oem_codes) = 'array'
-          AND (elem->>'part_number') IS NOT NULL
-          AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
+      WITH raw_matches AS (
+
+        -- Pathway A: match por código OEM compartido
+        SELECT DISTINCT
+          m.sku            AS mann_part,
+          m.segment        AS mann_segment,
+          d.don_part       AS donaldson_part,
+          d.elimfilters_sku,
+          m.oem_normalized,
+          m.oem_brand,
+          'oem_code'       AS match_method
+        FROM mann_oem_clean m
+        JOIN (
+          SELECT p.sku AS elimfilters_sku, p.codigo_base AS don_part,
+                 UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g')) AS oem_normalized
+          FROM elimfilters_catalog p, jsonb_array_elements(p.oem_codes) elem
+          WHERE p.oem_codes IS NOT NULL
+            AND jsonb_typeof(p.oem_codes) = 'array'
+            AND (elem->>'part_number') IS NOT NULL
+            AND length(UPPER(REGEXP_REPLACE(COALESCE(elem->>'part_number',''), '[\\s\\-/\\.()]', '', 'g'))) >= 4
+            AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
+        ) d ON d.oem_normalized = m.oem_normalized
+        WHERE length(m.oem_normalized) >= 4
+        ${segFilter}
+
+        UNION
+
+        -- Pathway B: match directo via brand_crossrefs['MANN']
+        SELECT DISTINCT
+          m.sku            AS mann_part,
+          m.segment        AS mann_segment,
+          p.codigo_base    AS donaldson_part,
+          p.sku            AS elimfilters_sku,
+          NULL             AS oem_normalized,
+          'MANN'           AS oem_brand,
+          'brand_crossref' AS match_method
+        FROM elimfilters_catalog p
+        CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
+        JOIN mann_oem_clean m
+          ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
+           = UPPER(REGEXP_REPLACE(mann_ref.code, '[\\s\\-/\\.()]', '', 'g'))
+        WHERE p.brand_crossrefs ? 'MANN'
+          AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
           AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
-      ) d ON d.oem_normalized = m.oem_normalized
-      WHERE length(m.oem_normalized) >= 4
-      ${segFilter}
+        ${segFilter ? segFilter.replace('m.segment', 'm.segment') : ''}
+      ),
 
-      UNION
+      -- Votación por segmento: cada elimfilters_sku vota según cuántos matches tiene por segmento.
+      -- El segmento con más votos gana y determina si el producto es HD o LD.
+      -- Regla: HD > LD > MIXED en caso de empate exacto (sesgo industrial).
+      segment_votes AS (
+        SELECT
+          elimfilters_sku,
+          COUNT(*) FILTER (WHERE mann_segment = 'HD')    AS votes_hd,
+          COUNT(*) FILTER (WHERE mann_segment = 'LD')    AS votes_ld,
+          COUNT(*) FILTER (WHERE mann_segment = 'MIXED') AS votes_mixed
+        FROM raw_matches
+        GROUP BY elimfilters_sku
+      ),
+      segment_winner AS (
+        SELECT
+          elimfilters_sku,
+          votes_hd,
+          votes_ld,
+          votes_mixed,
+          CASE
+            WHEN votes_hd  >= votes_ld AND votes_hd  >= votes_mixed THEN 'HD'
+            WHEN votes_ld  >  votes_hd AND votes_ld  >= votes_mixed THEN 'LD'
+            ELSE 'MIXED'
+          END AS assigned_segment
+        FROM segment_votes
+      )
 
-      -- Pathway B: match directo via brand_crossrefs['MANN'] (referencia cruzada explícita)
-      SELECT DISTINCT
-        m.sku            AS mann_part,
-        m.segment        AS mann_segment,
-        p.codigo_base    AS donaldson_part,
-        p.sku            AS elimfilters_sku,
-        NULL             AS oem_normalized,
-        'MANN'           AS oem_brand,
-        'brand_crossref' AS match_method
-      FROM elimfilters_catalog p
-      CROSS JOIN LATERAL jsonb_array_elements_text(p.brand_crossrefs -> 'MANN') AS mann_ref(code)
-      JOIN mann_oem_clean m
-        ON UPPER(REGEXP_REPLACE(m.sku, '[\\s\\-/\\.()]', '', 'g'))
-         = UPPER(REGEXP_REPLACE(mann_ref.code, '[\\s\\-/\\.()]', '', 'g'))
-      WHERE p.brand_crossrefs ? 'MANN'
-        AND jsonb_typeof(p.brand_crossrefs -> 'MANN') = 'array'
-        AND p.codigo_base ~ '^(P|PA|BF|DT|PX|DBA|DBL|DBF|DBH|G|A|B|D|C|X|R|EB)[0-9A-Z]'
-      ${segFilter ? segFilter.replace('m.segment', 'm.segment') : ''}
+      SELECT
+        r.mann_part,
+        r.mann_segment,
+        r.donaldson_part,
+        r.elimfilters_sku,
+        r.oem_normalized,
+        r.oem_brand,
+        r.match_method,
+        sw.assigned_segment,
+        sw.votes_hd,
+        sw.votes_ld,
+        sw.votes_mixed
+      FROM raw_matches r
+      JOIN segment_winner sw ON sw.elimfilters_sku = r.elimfilters_sku
     `);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(mann_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(donaldson_part)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(elimfilters_sku)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(oem_normalized)`);
     await client.query(`CREATE INDEX ON mann_donaldson_matches(match_method)`);
+    await client.query(`CREATE INDEX ON mann_donaldson_matches(assigned_segment)`);
     const { rows } = await client.query(`
       SELECT
-        COUNT(*)                                                      AS total,
-        COUNT(DISTINCT mann_part)                                     AS mann_u,
-        COUNT(DISTINCT donaldson_part)                                AS don_u,
-        COUNT(*) FILTER (WHERE match_method = 'oem_code')            AS via_oem_code,
-        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')      AS via_brand_crossref
+        COUNT(*)                                                                  AS total,
+        COUNT(DISTINCT mann_part)                                                 AS mann_u,
+        COUNT(DISTINCT donaldson_part)                                            AS don_u,
+        COUNT(*) FILTER (WHERE match_method = 'oem_code')                        AS via_oem_code,
+        COUNT(*) FILTER (WHERE match_method = 'brand_crossref')                  AS via_brand_crossref,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'HD')   AS productos_hd,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'LD')   AS productos_ld,
+        COUNT(DISTINCT elimfilters_sku) FILTER (WHERE assigned_segment = 'MIXED') AS productos_mixed
       FROM mann_donaldson_matches
     `);
     res.json({ success: true, ...rows[0] });
