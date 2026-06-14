@@ -35,10 +35,11 @@ from urllib.parse import quote
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-INPUT_CLASSIFIED = Path(r"C:\mann\mann_classified.jsonl")
-INPUT_OEM_MASTER = Path(r"C:\mann\mann_oem_master_clean.csv")
-OUTPUT_FILE      = Path(r"C:\mann\mann_master.jsonl")
-PROGRESS_FILE    = Path(r"C:\mann\mann_master_progress.json")
+INPUT_CLASSIFIED  = Path(r"C:\mann\mann_classified.jsonl")
+INPUT_OEM_MASTER  = Path(r"C:\mann\mann_oem_master_clean.csv")
+CATALOG_GAPS_FILE = Path(r"C:\mann\mann_catalog_gaps.txt")   # output de scraper_mann_catalog.py
+OUTPUT_FILE       = Path(r"C:\mann\mann_master.jsonl")
+PROGRESS_FILE     = Path(r"C:\mann\mann_master_progress.json")
 
 PROFILE_DIR  = os.path.join(os.path.expanduser("~"), ".mann_master_profile")
 MANN_LOCALES = ["us-en", "ph-en", "de-de", "gb-en"]
@@ -372,6 +373,26 @@ def load_ld_items() -> list:
     return items
 
 
+def load_gap_items() -> list:
+    """Lee los SKUs gap de mann_catalog_gaps.txt (output de scraper_mann_catalog.py)."""
+    if not CATALOG_GAPS_FILE.exists():
+        log.error(f"No se encuentra {CATALOG_GAPS_FILE} — corre scraper_mann_catalog.py primero")
+        return []
+    seen, items = set(), []
+    with open(CATALOG_GAPS_FILE, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            sku = parts[0].strip().upper()
+            if sku and sku not in seen:
+                seen.add(sku)
+                items.append({"sku": sku, "url_key": _build_url_key("", sku)})
+    log.info(f"Gap items cargados desde catalog_gaps: {len(items)}")
+    return items
+
+
 # ── Progress ──────────────────────────────────────────────────────────────
 def load_progress() -> dict:
     if PROGRESS_FILE.exists():
@@ -510,16 +531,29 @@ def scrape_mann_master(page, sku: str, url_key: str) -> dict:
 
 
 # ── Main run ──────────────────────────────────────────────────────────────
-def run(start_from: str = None, retry_zeros: bool = False):
-    items    = load_ld_items()
-    progress = load_progress()
+def run(start_from: str = None, retry_zeros: bool = False, from_gaps: bool = False):
+    items = load_gap_items() if from_gaps else load_ld_items()
+    # Gaps use separate output/progress to keep base run intact
+    out_file  = Path(r"C:\mann\mann_master_gaps.jsonl") if from_gaps else OUTPUT_FILE
+    prog_file = Path(r"C:\mann\mann_master_gaps_progress.json") if from_gaps else PROGRESS_FILE
+    progress  = json.load(open(prog_file, encoding="utf-8")) if prog_file.exists() else {}
+
+    def _save(prog: dict):
+        tmp = str(prog_file) + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as _f:
+            json.dump(prog, _f, ensure_ascii=False, separators=(",", ":"))
+        os.replace(tmp, str(prog_file))
+
+    def _append(row: dict):
+        with open(out_file, "a", encoding="utf-8") as _f:
+            _f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     if retry_zeros:
         before = len(progress)
         progress = {k: v for k, v in progress.items()
                     if v.get("fitment_count", 0) > 0 or v.get("oe_count", 0) > 0}
         log.info(f"retry-zeros: {before - len(progress)} vacíos eliminados")
-        save_progress(progress)
+        _save(progress)
 
     # URL-key deduplication matrix
     from collections import defaultdict
@@ -570,9 +604,9 @@ def run(start_from: str = None, retry_zeros: bool = False):
                 if sku not in progress:
                     row = {"sku": sku, **result}
                     progress[sku] = result
-                    append_result(row)
+                    _append(row)
 
-            save_progress(progress)
+            _save(progress)
             time.sleep(random.uniform(*PAUSE))
 
         ctx.close()
@@ -732,6 +766,8 @@ if __name__ == "__main__":
     parser.add_argument("--start",       default=None, help="Reanudar desde este SKU")
     parser.add_argument("--retry-zeros", action="store_true", help="Re-procesar sin datos")
     parser.add_argument("--stats",       action="store_true", help="Mostrar estadísticas")
+    parser.add_argument("--from-gaps",   action="store_true",
+                        help="Procesar 6,042 gap SKUs de mann_catalog_gaps.txt (fase 2)")
     args = parser.parse_args()
 
     if args.test:
@@ -739,4 +775,4 @@ if __name__ == "__main__":
     elif args.stats:
         stats()
     else:
-        run(start_from=args.start, retry_zeros=args.retry_zeros)
+        run(start_from=args.start, retry_zeros=args.retry_zeros, from_gaps=args.from_gaps)

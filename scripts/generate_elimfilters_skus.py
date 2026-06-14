@@ -40,10 +40,11 @@ import sys
 from pathlib import Path
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-INPUT_FILE    = Path(r"C:\mann\mann_master.jsonl")
-INPUT_XREF    = Path(r"C:\mann\mann_ld_crossrefs.jsonl")   # output de scraper_mann_ld_crossref.py
-OUTPUT_JSONL  = Path(r"C:\mann\mann_ld_elimfilters.jsonl")
-OUTPUT_CSV    = Path(r"C:\mann\mann_ld_elimfilters.csv")
+INPUT_FILE      = Path(r"C:\mann\mann_master.jsonl")         # 2,056 SKUs base
+INPUT_GAPS_FILE = Path(r"C:\mann\mann_master_gaps.jsonl")    # 6,042 gap SKUs (fase 2)
+INPUT_XREF      = Path(r"C:\mann\mann_ld_crossrefs.jsonl")   # crossrefs (FRAM/WIX/BOSCH)
+OUTPUT_JSONL    = Path(r"C:\mann\mann_ld_elimfilters.jsonl")
+OUTPUT_CSV      = Path(r"C:\mann\mann_ld_elimfilters.csv")
 
 # ── Prefix → ELIMFILTERS family ──────────────────────────────────────────────
 # Longest prefix first to avoid CU matching before CUK
@@ -348,13 +349,24 @@ def main():
         sys.exit(1)
 
     records = []
-    with open(INPUT_FILE, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
+    seen_skus: set[str] = set()
+    for src in [INPUT_FILE, INPUT_GAPS_FILE]:
+        if not src.exists():
+            continue
+        n_before = len(records)
+        with open(src, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                rec = json.loads(line)
+                sku = rec.get("sku", "").strip().upper()
+                if sku and sku not in seen_skus:
+                    seen_skus.add(sku)
+                    records.append(rec)
+        print(f"  {src.name}: {len(records) - n_before} registros")
 
-    print(f"Registros MANN leídos: {len(records)}")
+    print(f"Registros MANN leídos: {len(records)} (base + gaps)")
 
     # ── Test-all ──
     if args.test_all:
