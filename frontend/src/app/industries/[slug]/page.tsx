@@ -357,6 +357,27 @@ const industryGeoData: Record<string, GeoData> = {
   },
   'Marine': {
     lastUpdated: 'May 2026',
+    protectionLabel: 'STRATEGY',
+    protectedAssets: [
+      'Commercial Vessels',
+      'Fishing Fleets',
+      'Offshore Support Vessels',
+      'Marine Diesel Engines',
+      'Deck Machinery',
+      'Hydraulic Crane Systems',
+      'Steering Systems',
+    ],
+    techFocus: 'MARINECLEAN™ — Marine-specific complementary technology for offshore and salt-air operating environments.',
+    knowledgeLinks: [
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
+      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+    ],
+    preCtaQuote: {
+      line1: 'We do not define ourselves by the products we sell.',
+      line2: 'We define ourselves by the assets we protect.',
+    },
     ctaTitle: 'Ready to Protect Your Marine Equipment?',
     ctaDescription: 'Find the right marine asset protection system for your vessel or offshore equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, and offshore support equipment operating under continuous salt-air exposure, humidity saturation, and long-duration marine duty cycles. Marine diesel engines accumulate fuel water contamination, salinity ingestion, and lubrication degradation at rates significantly higher than land-based applications. Onboard hydraulic systems require contamination control matched to vibration loading and intermittent high-pressure operation. ELIMFILTERS systems maintain fuel cleanliness to ASTM D6304 water separation standards, air intake integrity, lubrication cleanliness, and hydraulic protection throughout extended marine service intervals.',
