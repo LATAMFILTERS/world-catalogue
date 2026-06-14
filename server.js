@@ -4516,6 +4516,54 @@ app.get('/api/oem/ld-breakdown', async (req, res) => {
   }
 });
 
+// GET /api/oem/brand-crossref-check
+// Diagnostics: ¿tiene el catálogo entradas brand_crossrefs['MANN']?
+app.get('/api/oem/brand-crossref-check', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Cuántos productos tienen brand_crossrefs ? 'MANN'
+    const countMann = await client.query(`
+      SELECT COUNT(*) AS productos_con_mann
+      FROM elimfilters_catalog
+      WHERE brand_crossrefs ? 'MANN'
+    `);
+
+    // Muestra de los primeros 5 con sus brand_crossrefs
+    const sample = await client.query(`
+      SELECT sku, codigo_base, technology,
+             brand_crossrefs -> 'MANN' AS mann_refs
+      FROM elimfilters_catalog
+      WHERE brand_crossrefs ? 'MANN'
+      LIMIT 5
+    `);
+
+    // Qué claves existen en brand_crossrefs (top 20)
+    const keys = await client.query(`
+      SELECT key, COUNT(*) AS productos
+      FROM elimfilters_catalog,
+           jsonb_object_keys(COALESCE(brand_crossrefs, '{}'::jsonb)) AS key
+      WHERE brand_crossrefs IS NOT NULL
+        AND brand_crossrefs <> '{}'::jsonb
+      GROUP BY key
+      ORDER BY productos DESC
+      LIMIT 20
+    `);
+
+    res.json({
+      success: true,
+      productos_con_mann: parseInt(countMann.rows[0].productos_con_mann),
+      muestra: sample.rows,
+      claves_en_brand_crossrefs: keys.rows,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // GET /api/oem/hd-parts
 // Returns distinct Donaldson and Fleetguard part numbers from cross_reference_master
 app.get('/api/oem/hd-parts', async (req, res) => {
