@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
     "i18next": "^26.2.0",
     "i18next-browser-languagedetector": "^8.2.1",

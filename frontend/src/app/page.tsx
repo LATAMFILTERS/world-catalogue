@@ -2,9 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform, animate } from 'motion/react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import '@/i18n';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+
+gsap.registerPlugin(useGSAP);
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -78,10 +82,27 @@ function RevealLine({ children, delay = 0 }: { children: React.ReactNode; delay?
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const heroRef    = useRef<HTMLDivElement>(null);
-  const techWrapRef = useRef<HTMLDivElement>(null);
+  const heroRef        = useRef<HTMLDivElement>(null);
+  const heroContentRef = useRef<HTMLDivElement>(null);
+  const techWrapRef    = useRef<HTMLDivElement>(null);
   const [cursor, setCursor] = useState({ x: 0.5, y: 0.5 });
   const [inHero, setInHero] = useState(false);
+
+  // ── GSAP hero entrance timeline ──────────────────────────────────────────────
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.from('.hero-label',   { autoAlpha: 0, x: -20,    duration: 0.7, delay: 0.2 })
+        .from('.hero-h1',      { autoAlpha: 0, yPercent: 110, duration: 1.1, ease: [0.16, 1, 0.3, 1] as unknown as string }, '-=0.45')
+        .from('.hero-cta',     { autoAlpha: 0, y: 18,     duration: 0.6 }, '-=0.55')
+        .from('.hero-tagline', { autoAlpha: 0,             duration: 0.6 }, '-=0.4')
+        .from('.hero-scroll',  { autoAlpha: 0,             duration: 0.5 }, '-=0.2');
+    });
+    mm.add('(prefers-reduced-motion: reduce)', () => {
+      gsap.set(['.hero-label','.hero-h1','.hero-cta','.hero-tagline','.hero-scroll'], { autoAlpha: 1 });
+    });
+  }, { scope: heroRef });
 
   // Parallax on hero scroll
   const { scrollYProgress: heroP } = useScroll({
@@ -161,10 +182,9 @@ export default function Home() {
             opacity: heroOpacity,
           }}
         >
-          <motion.p
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+          {/* GSAP animates these — no Framer Motion initial/animate */}
+          <p
+            className="hero-label"
             style={{
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: '0.7rem', letterSpacing: '0.25em',
@@ -172,14 +192,12 @@ export default function Home() {
             }}
           >
             // INDUSTRIAL ASSET PROTECTION · FRISCO, TX
-          </motion.p>
+          </p>
 
           {/* Brand name — one intact word */}
           <div style={{ overflow: 'hidden' }}>
-            <motion.h1
-              initial={{ y: '108%' }}
-              animate={{ y: '0%' }}
-              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+            <h1
+              className="hero-h1"
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
@@ -191,16 +209,14 @@ export default function Home() {
               }}
             >
               ELIMFILTERS®
-            </motion.h1>
+            </h1>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
             <motion.a
+              className="hero-cta"
               href="https://part-search.elimfilters.com"
               target="_blank" rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
               whileHover={{ scale: 1.04, background: '#ffe600' }}
               style={{
                 display: 'inline-block',
@@ -213,10 +229,8 @@ export default function Home() {
             >
               FIND MY FILTER →
             </motion.a>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+            <p
+              className="hero-tagline"
               style={{
                 fontFamily: 'Outfit, sans-serif', fontSize: '0.8rem',
                 color: 'rgba(255,255,255,0.45)',
@@ -226,14 +240,13 @@ export default function Home() {
               }}
             >
               20,000+ OEM cross-references.<br />ISO 16889 · ISO 5011 · ISO 19438.
-            </motion.p>
+            </p>
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator — GSAP handles entrance */}
         <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
+          className="hero-scroll"
           style={{
             position: 'absolute', bottom: '2.5rem', right: '2.5rem', zIndex: 3,
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem',
