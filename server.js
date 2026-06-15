@@ -191,11 +191,16 @@ app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const result = await client.query(
-      `SELECT sku, oem_codes, competitor_codes FROM elimfilters_catalog WHERE sku = $1`,
-      [sku]
-    );
-    res.json(result.rows.length > 0 ? result.rows[0] : {error: 'not found'});
+    const result = await client.query(`
+      SELECT
+        column_name,
+        data_type
+      FROM information_schema.columns
+      WHERE table_name = 'product_model'
+      ORDER BY ordinal_position
+    `);
+
+    res.json(result.rows);
   } catch(e) {
     res.json({ error: e.message });
   } finally {
