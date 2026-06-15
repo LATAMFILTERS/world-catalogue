@@ -226,6 +226,38 @@ app.get('/api/debug/find-code/:code', async (req, res) => {
   }
 });
 
+app.get('/api/debug/fk', async (req, res) => {
+  const client = new Client(dbConfig);
+
+  try {
+    await client.connect();
+
+    const result = await client.query(`
+      SELECT
+        tc.table_name,
+        kcu.column_name,
+        tc.constraint_name
+      FROM information_schema.table_constraints tc
+      JOIN information_schema.key_column_usage kcu
+        ON tc.constraint_name = kcu.constraint_name
+      JOIN information_schema.constraint_column_usage ccu
+        ON ccu.constraint_name = tc.constraint_name
+      WHERE tc.constraint_type = 'FOREIGN KEY'
+        AND ccu.table_name = 'elimfilters_catalog'
+        AND ccu.column_name = 'sku'
+      ORDER BY tc.table_name
+    `);
+
+    res.json(result.rows);
+
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
   if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
