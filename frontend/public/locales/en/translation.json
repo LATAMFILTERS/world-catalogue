@@ -134,7 +134,9 @@
   },
   "home": {
     "eyebrow": "Asset Protection Technology Platform",
-    "hero1": "PROTECTING INDUSTRIAL ASSETS",
+    "hero1": "PROTECTING",
+    "heroLine1b": "INDUSTRIAL",
+    "heroLine2": "ASSETS.",
     "hero2": "Through contamination control.",
     "heroPositioning1": "ELIMFILTERS is not a filter company.",
     "heroPositioning2": "ELIMFILTERS is an Asset Protection Technology company.",

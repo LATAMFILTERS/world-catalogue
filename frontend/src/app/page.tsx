@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import TestimonialsSection from '@/components/ui/TestimonialsSection';
+import CinematicHero from '@/components/ui/CinematicHero';
 
 // ─── Static structural data ───────────────────────────────────────────────────
 
@@ -321,7 +322,7 @@ export default function Home() {
         `}</style>
 
         {/* ── HERO ── */}
-        <HeroSection />
+        <CinematicHero />
 
         {/* ── STRATEGIC MISSION ── */}
         <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
