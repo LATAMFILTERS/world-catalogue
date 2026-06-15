@@ -2371,6 +2371,7 @@ app.get('/api/search', async (req, res) => {
            OR EXISTS (
              SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
              WHERE UPPER(elem->>'code') = $1
+                OR UPPER(elem->>'part_number') = $1
            )
            ORDER BY sku
            LIMIT 20`,
@@ -4655,6 +4656,187 @@ app.get('/api/oem/hd-parts', async (req, res) => {
   } catch (err) {
     console.error('[oem/hd-parts]', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.end();
+  }
+});
+
+// ─── POST /api/catalog/merge-fg-into-don ─────────────────────────────────────
+// Merges Fleetguard duplicate records into their Donaldson base record.
+// Rule: Donaldson is always the base. A Fleetguard code is a competitor cross-
+// reference, not a base code — UNLESS it has no Donaldson equivalent.
+//
+// For each matched FG↔DON pair:
+//   1. Adds FG codigo_base as competitor_code on DON record
+//   2. Merges FG oem_codes, equipment_applications, brand_crossrefs into DON
+//   3. Deletes the FG duplicate record
+// Unmatched FG records (no DON equivalent) are kept as unique FG parts.
+//
+// Body: { key: "elim2026", dry_run?: bool (default: true for safety) }
+app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
+  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const dryRun = req.body.dry_run !== false;
+
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    // Find FG-DON pairs via two methods:
+    // A: Donaldson brand_crossrefs['FLEETGUARD'] contains FG codigo_base
+    // B: DON competitor_codes already has {brand:'FLEETGUARD', part_number:'LFxxx'} from crosslink run
+    const SQL_FIND_PAIRS = `
+      SELECT DISTINCT d.sku AS don_sku, d.codigo_base AS don_code,
+             f.sku AS fg_sku, f.codigo_base AS fg_code
+      FROM elimfilters_catalog d
+      CROSS JOIN LATERAL jsonb_array_elements_text(
+        COALESCE(d.brand_crossrefs->'FLEETGUARD', '[]'::jsonb)
+      ) AS fgref(code)
+      JOIN elimfilters_catalog f
+        ON UPPER(TRIM(f.codigo_base)) = UPPER(TRIM(fgref.code))
+      WHERE d.brand_crossrefs ? 'FLEETGUARD'
+        AND d.sku <> f.sku
+        AND f.sub_type ILIKE '%Fleetguard%'
+
+      UNION
+
+      SELECT DISTINCT d.sku AS don_sku, d.codigo_base AS don_code,
+             f.sku AS fg_sku, f.codigo_base AS fg_code
+      FROM elimfilters_catalog d
+      CROSS JOIN LATERAL jsonb_array_elements(COALESCE(d.competitor_codes,'[]'::jsonb)) AS cc(elem)
+      JOIN elimfilters_catalog f
+        ON UPPER(TRIM(f.codigo_base)) = UPPER(TRIM(COALESCE(cc.elem->>'part_number', cc.elem->>'code','')))
+      WHERE (cc.elem->>'brand' = 'FLEETGUARD' OR cc.elem->>'manufacturer' = 'FLEETGUARD')
+        AND d.sku <> f.sku
+        AND f.sub_type ILIKE '%Fleetguard%'
+    `;
+
+    const pairRows = (await client.query(SQL_FIND_PAIRS)).rows;
+
+    // One FG maps to exactly one DON (first match wins if multiple)
+    const fgToDon = {};
+    for (const r of pairRows) {
+      if (!fgToDon[r.fg_sku]) fgToDon[r.fg_sku] = r;
+    }
+    const pairList = Object.values(fgToDon);
+
+    const totalFg = parseInt((await client.query(
+      `SELECT COUNT(*) FROM elimfilters_catalog WHERE sub_type ILIKE '%Fleetguard%'`
+    )).rows[0].count);
+
+    if (dryRun) {
+      return res.json({
+        success: true, dry_run: true,
+        stats: {
+          total_fg_records: totalFg,
+          pairs_found: pairList.length,
+          will_delete: pairList.length,
+          will_keep_as_unique_fg: totalFg - pairList.length,
+        },
+        sample: pairList.slice(0, 30).map(p =>
+          `${p.fg_code} (${p.fg_sku}) → ${p.don_code} (${p.don_sku})`
+        ),
+        note: 'Pass dry_run:false to execute the merge.'
+      });
+    }
+
+    let merged = 0, deleted = 0, errors = 0;
+
+    for (const pair of pairList) {
+      try {
+        const [donRes, fgRes] = await Promise.all([
+          client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.don_sku]),
+          client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku])
+        ]);
+        if (!donRes.rows[0] || !fgRes.rows[0]) continue;
+
+        const don = donRes.rows[0];
+        const fg  = fgRes.rows[0];
+
+        // 1. Competitor codes: replace legacy {brand,part_number} FG entry with
+        //    clean {manufacturer,code} format for search Tier 3 compatibility
+        const existingComp = don.competitor_codes || [];
+        const cleanedComp = existingComp.filter(c =>
+          !((c.brand === 'FLEETGUARD' || c.manufacturer === 'FLEETGUARD') &&
+            (c.code === fg.codigo_base || c.part_number === fg.codigo_base))
+        );
+        cleanedComp.push({ manufacturer: 'FLEETGUARD', code: fg.codigo_base });
+
+        // 2. OEM codes: union by manufacturer+code
+        const donOem = don.oem_codes || [];
+        const fgOem  = fg.oem_codes  || [];
+        const oemMap = new Map();
+        for (const o of donOem) {
+          const mfr  = (o.manufacturer || o.brand || '').trim().toUpperCase();
+          const code = (o.code || o.part_number || '').trim().toUpperCase();
+          if (mfr && code) oemMap.set(`${mfr}|${code}`, { manufacturer: o.manufacturer || o.brand, code: o.code || o.part_number });
+        }
+        for (const o of fgOem) {
+          const mfr  = (o.manufacturer || o.brand || '').trim().toUpperCase();
+          const code = (o.code || o.part_number || '').trim().toUpperCase();
+          if (mfr && code && !oemMap.has(`${mfr}|${code}`))
+            oemMap.set(`${mfr}|${code}`, { manufacturer: o.manufacturer || o.brand, code: o.code || o.part_number });
+        }
+        const mergedOem = [...oemMap.values()];
+
+        // 3. Equipment: union by JSON fingerprint
+        const donEquip = don.equipment_applications || [];
+        const fgEquip  = fg.equipment_applications  || [];
+        const equipSet = new Set(donEquip.map(e => JSON.stringify(e)));
+        const mergedEquip = [...donEquip];
+        for (const e of fgEquip) {
+          const s = JSON.stringify(e);
+          if (!equipSet.has(s)) { mergedEquip.push(e); equipSet.add(s); }
+        }
+
+        // 4. brand_crossrefs: merge FG's into DON's, skip self-references
+        const donBc = don.brand_crossrefs || {};
+        const fgBc  = fg.brand_crossrefs  || {};
+        const mergedBc = { ...donBc };
+        for (const [brand, codes] of Object.entries(fgBc)) {
+          if (brand === 'FLEETGUARD' || brand === 'DONALDSON') continue;
+          if (!mergedBc[brand]) mergedBc[brand] = [];
+          const existSet = new Set(mergedBc[brand]);
+          for (const c of (codes || [])) if (!existSet.has(c)) { mergedBc[brand].push(c); existSet.add(c); }
+        }
+
+        // 5. Update the DON record with merged data
+        await client.query(`
+          UPDATE elimfilters_catalog SET
+            competitor_codes       = $1::jsonb,
+            oem_codes              = $2::jsonb,
+            equipment_applications = $3::jsonb,
+            brand_crossrefs        = $4::jsonb
+          WHERE sku = $5
+        `, [
+          JSON.stringify(cleanedComp),
+          JSON.stringify(mergedOem),
+          JSON.stringify(mergedEquip),
+          JSON.stringify(mergedBc),
+          pair.don_sku
+        ]);
+
+        // 6. Delete the Fleetguard duplicate
+        await client.query('DELETE FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku]);
+
+        merged++;
+        deleted++;
+      } catch (pairErr) {
+        console.error(`[merge-fg] ${pair.fg_sku}→${pair.don_sku}:`, pairErr.message);
+        errors++;
+      }
+    }
+
+    res.json({
+      success: true, dry_run: false,
+      stats: {
+        pairs_processed: pairList.length,
+        merged, deleted, errors,
+        kept_unique_fg: totalFg - pairList.length,
+      }
+    });
+  } catch (err) {
+    console.error('[merge-fg-into-don]', err.message);
+    res.status(500).json({ success: false, error: err.message });
   } finally {
     await client.end();
   }
