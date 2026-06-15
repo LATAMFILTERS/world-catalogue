@@ -760,7 +760,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
               style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}
             >
               {[
