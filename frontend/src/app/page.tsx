@@ -6,6 +6,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
+import TestimonialsSection from '@/components/ui/TestimonialsSection';
 
 // ─── Static structural data ───────────────────────────────────────────────────
 
@@ -737,6 +738,9 @@ export default function Home() {
           </div>
           <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
+
+        {/* ── TESTIMONIALS ── */}
+        <TestimonialsSection />
 
         {/* ── GLOBAL INDUSTRIAL DEPLOYMENT ── */}
         <section style={{ padding: '6rem 8%', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
