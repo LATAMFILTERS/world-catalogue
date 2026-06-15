@@ -86,14 +86,14 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center max-w-xl mx-auto mb-12"
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.8)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.8)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
             // FIELD RESULTS · ASSET PROTECTION IN PRACTICE
           </p>
-          <h2 style={{ fontFamily: '"Space Grotesk", Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.6rem, 3vw, 2.5rem)', color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.6rem, 3vw, 2.5rem)', color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
             What operators say<br />
             <span style={{ color: '#FFF12D' }}>after protecting their assets.</span>
           </h2>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.92rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'center' }}>
             From mining and agriculture to marine and power generation — contamination control delivers measurable results across every industry.
           </p>
         </motion.div>

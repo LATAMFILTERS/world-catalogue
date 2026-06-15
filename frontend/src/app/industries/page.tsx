@@ -4,6 +4,19 @@ import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
+import BlurFade from '@/components/ui/blur-fade';
+import { DotPattern } from '@/components/ui/dot-pattern';
+
+const INDUSTRY_IMAGE_CARDS = [
+  { slug: 'agriculture', label: 'Agriculture', img: '/images/agriculture.avif', tag: 'HIGH DUST · HIGH MOISTURE' },
+  { slug: 'mining', label: 'Mining', img: '/images/mineria.avif', tag: 'EXTREME ABRASIVE · SILICA' },
+  { slug: 'marine', label: 'Marine', img: '/images/marine.avif', tag: 'SALT CORROSION · H₂O INTRUSION' },
+  { slug: 'construction', label: 'Construction', img: '/images/construccion.avif', tag: 'DUST · HYDRAULIC STRESS' },
+  { slug: 'oil-gas', label: 'Oil & Gas', img: '/images/oil&gas.avif', tag: 'CHEMICAL · H₂S · PRESSURE' },
+  { slug: 'power-generation', label: 'Power Generation', img: '/images/power-generator.avif', tag: 'CONTINUOUS LOAD · HEAT' },
+  { slug: 'heavy-transport', label: 'Heavy Transport', img: '/images/trucks-1.avif', tag: 'ROAD DUST · FUEL WATER' },
+  { slug: 'forestry', label: 'Forestry', img: '/images/agriculture-2_converted.avif', tag: 'ORGANIC · FINE PARTICULATE' },
+];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -86,7 +99,7 @@ function IndustryCard({
           {/* Index */}
           <span
             style={{
-              fontFamily: 'JetBrains Mono, monospace',
+              fontFamily: 'var(--font-mono)',
               fontSize: '0.65rem',
               color: hovered ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.15)',
               letterSpacing: '0.1em',
@@ -103,7 +116,7 @@ function IndustryCard({
               style={{
                 fontSize: '0.65rem',
                 color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: 'var(--font-mono)',
                 fontWeight: 500,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
@@ -119,7 +132,7 @@ function IndustryCard({
             style={{
               fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
               fontWeight: 700,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               color: hovered ? '#fff' : 'rgba(255,255,255,0.85)',
               margin: '0 0 1.25rem',
               lineHeight: 1.2,
@@ -137,7 +150,7 @@ function IndustryCard({
               fontSize: '0.82rem',
               lineHeight: 1.65,
               color: 'rgba(255,255,255,0.45)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'var(--font-body)',
               margin: 0,
               flexGrow: 1,
               display: '-webkit-box',
@@ -165,7 +178,7 @@ function IndustryCard({
               style={{
                 fontSize: '0.7rem',
                 fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'var(--font-body)',
                 letterSpacing: '0.12em',
                 color: '#FFF12D',
                 textTransform: 'uppercase',
@@ -282,7 +295,7 @@ export default function IndustriesPage() {
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
         transition: 'background 0.2s, border-color 0.2s',
@@ -313,7 +326,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'JetBrains Mono, monospace',
+              fontFamily: 'var(--font-mono)',
               fontSize: '0.65rem',
               letterSpacing: '0.25em',
               color: '#FFF12D',
@@ -328,7 +341,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 900,
               fontSize: 'clamp(1.75rem, 4vw, 3rem)',
               color: 'rgba(255,255,255,0.85)',
@@ -347,7 +360,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
               color: '#fff',
@@ -368,7 +381,7 @@ export default function IndustriesPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
               fontSize: '0.95rem',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'var(--font-body)',
               marginBottom: '2rem',
               maxWidth: '820px',
             }}
@@ -390,8 +403,110 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* Visual Image Grid */}
+      <section style={{ background: '#000', padding: '3rem 0 0', position: 'relative', overflow: 'hidden' }}>
+        <DotPattern
+          className="opacity-20"
+          cx={1}
+          cy={1}
+          cr={0.8}
+          width={20}
+          height={20}
+          style={{ fill: 'rgba(255,241,45,0.25)' }}
+        />
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '0.75rem',
+          }}
+          className="industry-image-grid"
+          >
+            {INDUSTRY_IMAGE_CARDS.map((card, i) => (
+              <BlurFade key={card.slug} delay={i * 0.07} inView>
+                <Link href={`/industries/${card.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      height: i < 4 ? '200px' : '160px',
+                      overflow: 'hidden',
+                      borderRadius: '4px',
+                      border: '1px solid rgba(255,255,255,0.06)',
+                    }}
+                    className="industry-img-card"
+                  >
+                    <img
+                      src={card.img}
+                      alt={card.label}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        transition: 'transform 0.6s ease',
+                        display: 'block',
+                      }}
+                      className="industry-img-inner"
+                    />
+                    {/* Dark overlay */}
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 55%, transparent 100%)',
+                    }} />
+                    {/* Label */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      padding: '1rem',
+                    }}>
+                      <p style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.52rem',
+                        color: 'rgba(255,241,45,0.7)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.15em',
+                        margin: '0 0 0.2rem',
+                      }}>{card.tag}</p>
+                      <p style={{
+                        fontFamily: 'var(--font-display)',
+                        fontWeight: 700,
+                        fontSize: '0.9rem',
+                        color: '#fff',
+                        margin: 0,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.03em',
+                      }}>{card.label}</p>
+                    </div>
+                    {/* Hover border */}
+                    <div
+                      className="industry-img-border"
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        border: '2px solid rgba(255,241,45,0)',
+                        borderRadius: '4px',
+                        transition: 'border-color 0.3s ease',
+                        pointerEvents: 'none',
+                      }}
+                    />
+                  </div>
+                </Link>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          @media (max-width: 1024px) { .industry-image-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+          @media (max-width: 600px) { .industry-image-grid { grid-template-columns: 1fr !important; } }
+          .industry-img-card:hover .industry-img-inner { transform: scale(1.06); }
+          .industry-img-card:hover .industry-img-border { border-color: rgba(255,241,45,0.45) !important; }
+        `}</style>
+      </section>
+
       {/* Industry Cards Grid */}
-      <section style={{ background: '#000', padding: '0 0 5rem' }}>
+      <section style={{ background: '#000', padding: '3rem 0 5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <motion.div
             variants={gridVariants}
@@ -421,10 +536,10 @@ export default function IndustriesPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '-80px' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               // The cost of contamination
             </p>
-            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.25, marginBottom: '3rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.25, marginBottom: '3rem' }}>
               Asset protection is not a maintenance cost.<br />
               <span style={{ color: '#FFF12D' }}>It is operational insurance.</span>
             </h2>
@@ -453,10 +568,10 @@ export default function IndustriesPage() {
                 viewport={{ once: true, margin: '-40px' }}
                 style={{ borderLeft: '3px solid #FFF12D', paddingLeft: '1.5rem' }}
               >
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.75rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.75rem' }}>
                   {item.stat}
                 </p>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>
                   {item.desc}
                 </p>
               </motion.div>
@@ -474,7 +589,7 @@ export default function IndustriesPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: '-100px' }}
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: 'clamp(1.5rem, 3vw, 2rem)',
               color: '#fff',
@@ -533,7 +648,7 @@ export default function IndustriesPage() {
                     fontWeight: 700,
                     fontSize: '0.95rem',
                     color: '#FFF12D',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   {faq.q}
@@ -544,7 +659,7 @@ export default function IndustriesPage() {
                     fontSize: '0.9rem',
                     lineHeight: 1.7,
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   {faq.a}
