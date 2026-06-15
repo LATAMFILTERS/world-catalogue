@@ -4941,6 +4941,115 @@ app.get('/api/audit/crossref-integrity', async (req, res) => {
   }
 });
 
+// ── Auto-fix endpoint ──────────────────────────────────────────────────────
+// POST /api/audit/fix-crossref?key=elim2026&dry_run=1
+// Fixes non-canonical filter_type values and removes misplaced brand codes.
+app.post('/api/audit/fix-crossref', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const dryRun = req.query.dry_run === '1';
+  const client = new Client(dbConfig);
+  const log = [];
+  try {
+    await client.connect();
+
+    // ── Fix 1: Normalize non-canonical filter_type values ──────────────────
+    const typeMap = {
+      'lube':         'Oil Filter',
+      'Lube Filter':  'Oil Filter',
+      'Fuel Water Separator': 'Fuel/Water Separator',
+      'FuelWaterSeparator':   'Fuel/Water Separator',
+    };
+    for (const [bad, good] of Object.entries(typeMap)) {
+      const check = await client.query(
+        `SELECT COUNT(*) cnt FROM elimfilters_catalog WHERE filter_type = $1`, [bad]);
+      const cnt = parseInt(check.rows[0].cnt);
+      if (cnt > 0) {
+        log.push(`Fix1: "${bad}" → "${good}" (${cnt} records) ${dryRun ? '[DRY RUN]' : ''}`);
+        if (!dryRun) {
+          await client.query(
+            `UPDATE elimfilters_catalog SET filter_type = $1 WHERE filter_type = $2`, [good, bad]);
+        }
+      }
+    }
+
+    // ── Fix 2: Remove LF codes from non-Oil-Filter competitor_codes ─────────
+    const lfWrong = await client.query(`
+      SELECT ec.sku, ec.filter_type,
+             jsonb_agg(elem) FILTER (WHERE (elem->>'code') ~* '^LF[0-9]') AS bad_codes,
+             jsonb_agg(elem) FILTER (WHERE NOT ((elem->>'code') ~* '^LF[0-9]')) AS clean_codes
+      FROM elimfilters_catalog ec,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Oil Filter','lube','Lube Filter')
+        AND (elem->>'code') ~* '^LF[0-9]'
+      GROUP BY ec.sku, ec.filter_type`);
+
+    for (const r of lfWrong.rows) {
+      log.push(`Fix2: Remove LF codes from ${r.sku} (${r.filter_type}): ${JSON.stringify(r.bad_codes)} ${dryRun ? '[DRY RUN]' : ''}`);
+      if (!dryRun) {
+        const cleaned = r.clean_codes || [];
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(cleaned), r.sku]);
+      }
+    }
+
+    // ── Fix 3: Remove FF codes from non-Fuel-Filter competitor_codes ─────────
+    const ffWrong = await client.query(`
+      SELECT ec.sku, ec.filter_type,
+             jsonb_agg(elem) FILTER (WHERE (elem->>'code') ~* '^FF[0-9]') AS bad_codes,
+             jsonb_agg(elem) FILTER (WHERE NOT ((elem->>'code') ~* '^FF[0-9]')) AS clean_codes
+      FROM elimfilters_catalog ec,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Fuel Filter','Fuel/Water Separator','Fuel Filter - Water Separator')
+        AND (elem->>'code') ~* '^FF[0-9]'
+      GROUP BY ec.sku, ec.filter_type`);
+
+    for (const r of ffWrong.rows) {
+      log.push(`Fix3: Remove FF codes from ${r.sku} (${r.filter_type}): ${JSON.stringify(r.bad_codes)} ${dryRun ? '[DRY RUN]' : ''}`);
+      if (!dryRun) {
+        const cleaned = r.clean_codes || [];
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(cleaned), r.sku]);
+      }
+    }
+
+    // ── Fix 4: Remove HF codes from non-Hydraulic competitor_codes ──────────
+    const hfWrong = await client.query(`
+      SELECT ec.sku, ec.filter_type,
+             jsonb_agg(elem) FILTER (WHERE (elem->>'code') ~* '^HF[0-9]') AS bad_codes,
+             jsonb_agg(elem) FILTER (WHERE NOT ((elem->>'code') ~* '^HF[0-9]')) AS clean_codes
+      FROM elimfilters_catalog ec,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Hydraulic Filter')
+        AND (elem->>'code') ~* '^HF[0-9]'
+      GROUP BY ec.sku, ec.filter_type`);
+
+    for (const r of hfWrong.rows) {
+      log.push(`Fix4: Remove HF codes from ${r.sku} (${r.filter_type}): ${JSON.stringify(r.bad_codes)} ${dryRun ? '[DRY RUN]' : ''}`);
+      if (!dryRun) {
+        const cleaned = r.clean_codes || [];
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(cleaned), r.sku]);
+      }
+    }
+
+    // ── Summary ──────────────────────────────────────────────────────────────
+    const totalFixed = lfWrong.rows.length + ffWrong.rows.length + hfWrong.rows.length;
+    res.json({
+      dry_run: dryRun,
+      fixes_applied: dryRun ? 0 : totalFixed,
+      fixes_found: totalFixed,
+      log,
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message, log });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
