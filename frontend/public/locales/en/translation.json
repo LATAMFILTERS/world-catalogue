@@ -148,10 +148,10 @@
     "ctaFilter": "Protect my assets",
     "ctaKnowledge": "Knowledge system",
     "statsLabels": [
-      "Contamination Capture Efficiency",
+      "Engine Bearing Lifespan",
       "Asset Life Extension",
-      "OEM Cross References",
-      "Global Distribution Network"
+      "Failures from Contamination",
+      "Avg. Event Cost Prevented"
     ],
     "missionTag": "// WHY WE EXIST",
     "missionTitle": "Why ELIMFILTERS Exists",

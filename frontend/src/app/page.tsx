@@ -12,10 +12,10 @@ import CinematicHero from '@/components/ui/CinematicHero';
 // ─── Static structural data ───────────────────────────────────────────────────
 
 const STATS_DATA = [
-  { value: 99.9, prefix: '', suffix: '%', ring: 100 },
-  { value: 45, prefix: '+', suffix: '%', ring: 45 },
-  { value: 20, prefix: '', suffix: 'k+', ring: 80 },
-  { value: null, display: 'GLOBAL', ring: 100 },
+  { value: null, display: '15k+', ring: 75 },
+  { value: null, display: '3–5×', ring: 65 },
+  { value: 80, prefix: '', suffix: '%', ring: 80 },
+  { value: null, display: '$62K', ring: 100 },
 ];
 
 const SLIDE_DURATION = 5000;
@@ -349,97 +349,6 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── STATS ── */}
-        <section style={{ background: '#000', padding: '4rem 8%', borderBottom: '1px solid #111', position: 'relative', overflow: 'hidden' }}>
-          <FloatingParticles count={10} />
-          <div className="stats-grid" style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
-            {STATS_DATA.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}>
-                <StatRing
-                  percent={s.ring}
-                  label={Array.isArray(statsLabels) ? (statsLabels[i] ?? '') : ''}
-                  content={s.value !== null ? <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} /> : s.display}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── ECONOMIC IMPACT ── */}
-        <section style={{ padding: '6rem 8%', background: 'linear-gradient(135deg, rgba(180,0,0,0.06) 0%, rgba(0,0,0,0) 60%)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <div className="economic-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-              <motion.div initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.7 }}>
-                  {t('home.economicTag', '// THE REAL COST OF CONTAMINATION')}
-                </p>
-                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>
-                  {t('home.economicTitle', 'Downtime Costs More')}<br />
-                  <span style={{ color: '#FFF12D' }}>{t('home.economicTitleHl', 'Than Filtration')}</span>
-                </h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-                  {(Array.isArray(economicItems) ? economicItems : []).map((item, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-40px' }}
-                      style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#f87171', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>▸</span>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', borderLeft: '3px solid rgba(248,113,113,0.4)', paddingLeft: '1.25rem' }}>
-                  {t('home.economicDesc', 'ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.')}
-                </p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  {(Array.isArray(economicStats) ? economicStats : []).map((stat, i) => (
-                    <SpotlightCard key={i} style={{ background: '#050505', border: '1px solid #1a1a1a', borderRadius: '12px', padding: '2rem' }}>
-                      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.5rem' }}>{stat.value}</div>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', lineHeight: 1.5 }}>{stat.label}</div>
-                    </SpotlightCard>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── ASSET PROTECTION NARRATIVE ── */}
-        <section style={{ padding: '5rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
-            style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-              <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '1rem', textTransform: 'uppercase' }}>
-                  {t('home.assetTag', '// ASSET PROTECTION STRATEGY')}
-                </p>
-                <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>
-                  {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
-                </h2>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                  {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
-                </p>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
-                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.')}
-                </p>
-              </div>
-              <div style={{ background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '1.75rem', opacity: 0.8 }}>
-                  {t('home.archLabel', 'INFORMATION ARCHITECTURE')}
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {(Array.isArray(archItems) ? archItems : []).map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                      <div style={{ width: '8px', height: '8px', background: '#FFF12D', flexShrink: 0 }} />
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', margin: 0 }}>{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
         {/* ── CONTAMINATION / PROBLEM SECTION ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -605,6 +514,104 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── ASSET PROTECTION NARRATIVE ── */}
+        <section style={{ padding: '5rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
+            style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '1rem', textTransform: 'uppercase' }}>
+                  {t('home.assetTag', '// ASSET PROTECTION STRATEGY')}
+                </p>
+                <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>
+                  {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
+                </h2>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                  {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
+                </p>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
+                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.')}
+                </p>
+              </div>
+              <div style={{ background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '1.75rem', opacity: 0.8 }}>
+                  // PROTECTION FRAMEWORK
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    { step: '01', label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
+                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 · ISO 16889 · ISO 5011 · ISO 19438' },
+                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE · SYNTRAX · NANOFORCE · SYNTEPORE' },
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: '#FFF12D', opacity: 0.6, flexShrink: 0, paddingTop: '0.15rem' }}>{item.step}</div>
+                      <div>
+                        <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)', margin: '0 0 0.2rem' }}>{item.label}</p>
+                        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', margin: 0, letterSpacing: '0.05em' }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ── ECONOMIC IMPACT ── */}
+        <section style={{ padding: '6rem 8%', background: 'linear-gradient(135deg, rgba(180,0,0,0.06) 0%, rgba(0,0,0,0) 60%)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <div className="economic-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+              <motion.div initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.7 }}>
+                  {t('home.economicTag', '// THE REAL COST OF CONTAMINATION')}
+                </p>
+                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>
+                  {t('home.economicTitle', 'Downtime Costs More')}<br />
+                  <span style={{ color: '#FFF12D' }}>{t('home.economicTitleHl', 'Than Filtration')}</span>
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+                  {(Array.isArray(economicItems) ? economicItems : []).map((item, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-40px' }}
+                      style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                      <span style={{ color: '#f87171', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>▸</span>
+                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', borderLeft: '3px solid rgba(248,113,113,0.4)', paddingLeft: '1.25rem' }}>
+                  {t('home.economicDesc', 'ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.')}
+                </p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {(Array.isArray(economicStats) ? economicStats : []).map((stat, i) => (
+                    <SpotlightCard key={i} style={{ background: '#050505', border: '1px solid #1a1a1a', borderRadius: '12px', padding: '2rem' }}>
+                      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.5rem' }}>{stat.value}</div>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', lineHeight: 1.5 }}>{stat.label}</div>
+                    </SpotlightCard>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── STATS ── */}
+        <section style={{ background: '#000', padding: '4rem 8%', borderBottom: '1px solid #111', position: 'relative', overflow: 'hidden' }}>
+          <FloatingParticles count={10} />
+          <div className="stats-grid" style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
+            {STATS_DATA.map((s, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}>
+                <StatRing
+                  percent={s.ring}
+                  label={Array.isArray(statsLabels) ? (statsLabels[i] ?? '') : ''}
+                  content={s.value !== null ? <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} /> : s.display}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* ── SCIENTIFIC AUTHORITY ── */}
         <section style={{ padding: '6rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -692,28 +699,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── TRUST & INDUSTRY AUTHORITY ── */}
-        <section style={{ padding: '6rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
-              style={{ marginBottom: '3rem' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.7 }}>
-                {t('home.trustTag', '// GLOBAL INDUSTRIAL DEPLOYMENT')}
-              </p>
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.2 }}>
-                {t('home.trustTitle', 'Trusted Across Critical Industries')}
-              </h2>
-            </motion.div>
-            <div className="trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1rem' }}>
-              {(Array.isArray(trustIndustries) ? trustIndustries : []).map((ind, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.06 }} viewport={{ once: true, margin: '-40px' }}
-                  style={{ background: '#000', border: '1px solid rgba(255,255,255,0.06)', padding: '1.25rem 1rem', textAlign: 'center', borderRadius: '4px' }}>
-                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', margin: 0, lineHeight: 1.5 }}>{ind}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* ── CTA SLIDES ── */}
         <div style={{ position: 'relative', background: '#000', borderTop: '1px solid #111', overflow: 'hidden' }}>

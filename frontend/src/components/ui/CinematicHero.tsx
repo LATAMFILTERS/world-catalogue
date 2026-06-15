@@ -142,12 +142,9 @@ export default function CinematicHero() {
             </p>
 
             <div style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
-              <motion.a
-                href="https://part-search.elimfilters.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(255,241,45,0.4)" }}
-                whileTap={{ scale: 0.96 }}
+              {/* PRIMARY CTA — Asset Protection */}
+              <Link
+                href="/knowledge-system"
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "0.6rem",
                   background: "#FFF12D", color: "#000",
@@ -157,13 +154,19 @@ export default function CinematicHero() {
                   textDecoration: "none", textTransform: "uppercase",
                   borderRadius: "2px",
                 }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(255,241,45,0.4)"; (e.currentTarget as HTMLElement).style.transform = "scale(1.04)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
               >
-                {t("home.ctaFilter", "Find my filter")}
+                Protect My Assets
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </motion.a>
+              </Link>
 
-              <Link
-                href="/knowledge-system"
+              {/* SECONDARY CTA — Part Search */}
+              <motion.a
+                href="https://part-search.elimfilters.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ color: "#fff" }}
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "0.8rem", letterSpacing: "0.06em",
@@ -172,20 +175,18 @@ export default function CinematicHero() {
                   alignItems: "center", gap: "0.4rem",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.32)")}
               >
-                {t("home.ctaKnowledge", "Knowledge system")} →
-              </Link>
+                {t("home.ctaFilter", "Find my filter")} →
+              </motion.a>
             </div>
           </div>
 
-          {/* Right — 3 stats, raw numbers no boxes */}
+          {/* Right — 3 outcome stats, raw numbers no boxes */}
           <div style={{ display: "flex", gap: "3rem", alignItems: "flex-end" }}>
             {[
-              { value: "99.9%", label: "Filter\nEfficiency" },
-              { value: "20k+",  label: "OEM\nReferences" },
-              { value: "12",    label: "Industries\nServed" },
+              { value: "15k+",  label: "Hours\nBearing Life" },
+              { value: "3–5×",  label: "Asset Life\nExtension" },
+              { value: "80%",   label: "Failures from\nContamination" },
             ].map((s, i) => (
               <div key={i} style={{ textAlign: "right" }}>
                 <div style={{
