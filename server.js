@@ -2038,6 +2038,17 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
         ]);
 
         // 6. Delete the Fleetguard duplicate
+
+        // 5.5 Move FK references before deleting FG
+
+        try {
+          await client.query('UPDATE product_element SET sku=$1 WHERE sku=$2', [pair.don_sku, pair.fg_sku]);
+        } catch (e) {}
+
+        try {
+          await client.query('UPDATE product_model SET sku=$1 WHERE sku=$2', [pair.don_sku, pair.fg_sku]);
+        } catch (e) {}
+
         await client.query('DELETE FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku]);
 
         merged++;
