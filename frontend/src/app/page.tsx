@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, animate, useSpring } from 'motion/react';
+import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import '@/i18n';
@@ -10,13 +10,36 @@ import { useTranslation } from 'react-i18next';
 // ─── Static structural data ───────────────────────────────────────────────────
 
 const STATS_DATA = [
-  { value: 99.9, prefix: '', suffix: '%' },
-  { value: 45, prefix: '+', suffix: '%' },
-  { value: 20, prefix: '', suffix: 'k+' },
-  { value: null, display: 'GLOBAL' },
+  { value: 99.9, prefix: '', suffix: '%', ring: 100 },
+  { value: 45, prefix: '+', suffix: '%', ring: 45 },
+  { value: 20, prefix: '', suffix: 'k+', ring: 80 },
+  { value: null, display: 'GLOBAL', ring: 100 },
 ];
 
 const SLIDE_DURATION = 5000;
+
+const PARTICLE_DATA = Array.from({ length: 22 }, (_, i) => ({
+  x: ((i * 5.3 + 2.7) % 97) + 1.5,
+  size: 1 + (i % 3) * 0.7,
+  duration: 10 + (i % 7) * 1.8,
+  delay: (i * 0.9) % 7,
+  opacity: 0.1 + (i % 4) * 0.05,
+}));
+
+const INDUSTRY_COLORS: Record<string, string> = {
+  agriculture: 'rgba(139,195,74,0.12)',
+  mining: 'rgba(255,152,0,0.12)',
+  marine: 'rgba(33,150,243,0.12)',
+  construction: 'rgba(255,193,7,0.12)',
+  'oil-gas': 'rgba(200,200,200,0.1)',
+  'power-generation': 'rgba(255,87,34,0.12)',
+  'heavy-transport': 'rgba(121,85,72,0.1)',
+  forestry: 'rgba(76,175,80,0.12)',
+  military: 'rgba(96,125,139,0.1)',
+  'industrial-equipment': 'rgba(0,188,212,0.12)',
+  rail: 'rgba(63,81,181,0.12)',
+  'stationary-engines': 'rgba(233,30,99,0.12)',
+};
 
 // ─── Counter ──────────────────────────────────────────────────────────────────
 
@@ -70,6 +93,80 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
+// ─── FloatingParticles ────────────────────────────────────────────────────────
+
+function FloatingParticles({ count = 22 }: { count?: number }) {
+  return (
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }}>
+      {PARTICLE_DATA.slice(0, count).map((p, i) => (
+        <motion.div
+          key={i}
+          style={{ position: 'absolute', left: `${p.x}%`, bottom: 0, width: p.size, height: p.size * 2.5, borderRadius: '50%', background: '#FFF12D' }}
+          animate={{ y: [0, -160], opacity: [0, p.opacity, p.opacity * 0.5, 0] }}
+          transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: 'linear' }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// ─── StatRing ────────────────────────────────────────────────────────────────
+
+function StatRing({ percent, content, label }: { percent: number; content: React.ReactNode; label: string }) {
+  const r = 38;
+  const circ = 2 * Math.PI * r;
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <div style={{ position: 'relative', width: 100, height: 100, margin: '0 auto 1rem' }}>
+        <svg viewBox="0 0 100 100" width="100" height="100" style={{ transform: 'rotate(-90deg)', overflow: 'visible' }}>
+          <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(255,241,45,0.1)" strokeWidth="5" />
+          <motion.circle
+            cx="50" cy="50" r={r} fill="none" stroke="#FFF12D" strokeWidth="5" strokeLinecap="round"
+            strokeDasharray={circ}
+            initial={{ strokeDashoffset: circ }}
+            whileInView={{ strokeDashoffset: circ * (1 - percent / 100) }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          />
+        </svg>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(0.9rem, 1.8vw, 1.35rem)', color: '#FFF12D', lineHeight: 1 }}>
+          {content}
+        </div>
+      </div>
+      <p style={{ fontFamily: 'JetBrains Mono, monospace', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#666', fontSize: '0.68rem', margin: 0 }}>
+        {label}
+      </p>
+    </div>
+  );
+}
+
+// ─── IndustryCard ─────────────────────────────────────────────────────────────
+
+function IndustryCard({ id, label, href }: { id: string; label: string; href: string }) {
+  const [hovered, setHovered] = useState(false);
+  const color = INDUSTRY_COLORS[id] || 'rgba(255,241,45,0.08)';
+  return (
+    <a href={href}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '1.5rem',
+        background: hovered ? color : '#000',
+        borderLeft: `2px solid ${hovered ? color.replace(/[\d.]+\)$/, '0.7)') : 'rgba(255,255,255,0.04)'}`,
+        textDecoration: 'none', gap: '0.5rem', transition: 'all 0.25s ease',
+      }}>
+      <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: hovered ? 600 : 500, color: hovered ? '#fff' : 'rgba(255,255,255,0.65)', transition: 'all 0.25s ease' }}>
+        {label}
+      </span>
+      <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }}
+        style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>
+        →
+      </motion.span>
+    </a>
+  );
+}
+
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function HeroSection() {
@@ -78,6 +175,11 @@ function HeroSection() {
   const mouseX = useSpring(50, { stiffness: 60, damping: 20 });
   const mouseY = useSpring(50, { stiffness: 60, damping: 20 });
   const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
+
+  const { scrollY } = useScroll();
+  const videoY = useTransform(scrollY, [0, 700], [0, 140]);
+  const contentY = useTransform(scrollY, [0, 600], [0, -60]);
+  const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   useEffect(() => {
     const u1 = mouseX.on('change', x => setGlowPos(p => ({ ...p, x })));
@@ -97,13 +199,15 @@ function HeroSection() {
       onMouseLeave={() => { mouseX.set(50); mouseY.set(50); }}
       style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 7% 7vh', overflow: 'hidden', background: '#000' }}
     >
-      <video autoPlay muted loop playsInline style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.55 }}>
+      <motion.video autoPlay muted loop playsInline
+        style={{ position: 'absolute', top: '-10%', left: 0, right: 0, width: '100%', height: '120%', objectFit: 'cover', zIndex: 0, opacity: 0.55, y: videoY }}>
         <source src="/images/moleculas.mp4" type="video/mp4" />
-      </video>
+      </motion.video>
       <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%)' }} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: `radial-gradient(ellipse 55vw 45vh at ${glowPos.x}% ${glowPos.y}%, rgba(255,241,45,0.055) 0%, transparent 70%)`, transition: 'background 0.05s linear', pointerEvents: 'none' }} />
+      <FloatingParticles count={18} />
 
-      <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px' }}>
+      <motion.div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', y: contentY, opacity: contentOpacity }}>
         <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.85)', textTransform: 'uppercase', marginBottom: '2rem', fontWeight: 700 }}>
           {t('home.eyebrow', 'Asset Protection Technology Platform')}
@@ -153,7 +257,7 @@ function HeroSection() {
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </motion.a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -257,21 +361,19 @@ export default function Home() {
         </section>
 
         {/* ── STATS ── */}
-        <section style={{ background: '#000', padding: '4rem 8%', borderBottom: '1px solid #111' }}>
-          <motion.div className="stats-grid" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-            style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem' }}>
+        <section style={{ background: '#000', padding: '4rem 8%', borderBottom: '1px solid #111', position: 'relative', overflow: 'hidden' }}>
+          <FloatingParticles count={10} />
+          <div className="stats-grid" style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
             {STATS_DATA.map((s, i) => (
-              <motion.div key={i} variants={{ hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }} style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.6rem' }}>
-                  {s.value !== null ? <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} /> : s.display}
-                </div>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#666', fontSize: '0.68rem' }}>
-                  {Array.isArray(statsLabels) ? (statsLabels[i] ?? '') : ''}
-                </p>
+              <motion.div key={i} initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}>
+                <StatRing
+                  percent={s.ring}
+                  label={Array.isArray(statsLabels) ? (statsLabels[i] ?? '') : ''}
+                  content={s.value !== null ? <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} /> : s.display}
+                />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </section>
 
         {/* ── ECONOMIC IMPACT ── */}
@@ -671,7 +773,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
               style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}
             >
               {[
@@ -688,26 +790,9 @@ export default function Home() {
                 { id: 'rail', label: 'Rail', href: '/industries/rail' },
                 { id: 'stationary-engines', label: 'Stationary Engines', href: '/industries/stationary-engines' },
               ].map((ind, i) => (
-                <motion.a
-                  key={ind.id}
-                  href={ind.href}
-                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                  transition={{ duration: 0.4 }}
-                  whileHover={{ background: 'rgba(255,241,45,0.06)' }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '1.5rem',
-                    background: '#000',
-                    textDecoration: 'none',
-                    gap: '0.5rem',
-                    transition: 'background 0.2s ease',
-                  }}
-                >
-                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{ind.label}</span>
-                  <span style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: 0.6 }}>→</span>
-                </motion.a>
+                <motion.div key={ind.id} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.4 }}>
+                  <IndustryCard id={ind.id} label={ind.label} href={ind.href} />
+                </motion.div>
               ))}
             </motion.div>
           </div>
