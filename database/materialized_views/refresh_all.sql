@@ -1,0 +1,5 @@
+REFRESH MATERIALIZED VIEW mv_market_intelligence;
+REFRESH MATERIALIZED VIEW mv_oem_intelligence;
+REFRESH MATERIALIZED VIEW mv_competitor_intelligence;
+REFRESH MATERIALIZED VIEW mv_technology_intelligence;
+REFRESH MATERIALIZED VIEW mv_distributor_intelligence;
