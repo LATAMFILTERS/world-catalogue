@@ -4815,9 +4815,24 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
           ]
         );
 
-        // 6. Reassign product_element rows from FG sku → DON sku before DELETE
+        // 6. Reassign FK references in all child tables before DELETE
         await client.query(
           `UPDATE product_element SET elimfilters_sku = $1 WHERE elimfilters_sku = $2`,
+          [pair.don_sku, pair.fg_sku]
+        );
+        await client.query(
+          `UPDATE product_model SET elimfilters_sku = $1 WHERE elimfilters_sku = $2`,
+          [pair.don_sku, pair.fg_sku]
+        );
+        // kit_components PK is (kit_sku, filter_sku): delete conflicts first, then reassign
+        await client.query(
+          `DELETE FROM kit_components kc
+           WHERE kc.filter_sku = $1
+             AND EXISTS (SELECT 1 FROM kit_components WHERE kit_sku = kc.kit_sku AND filter_sku = $2)`,
+          [pair.fg_sku, pair.don_sku]
+        );
+        await client.query(
+          `UPDATE kit_components SET filter_sku = $1 WHERE filter_sku = $2`,
           [pair.don_sku, pair.fg_sku]
         );
 
