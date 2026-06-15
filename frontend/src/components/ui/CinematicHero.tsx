@@ -182,20 +182,15 @@ export default function CinematicHero() {
           ref={line1Ref}
           style={{
             fontFamily: '"Space Grotesk", sans-serif',
-            fontWeight: 900,
-            fontSize: "clamp(3rem, 7vw, 6.5rem)",
-            lineHeight: 0.95,
-            letterSpacing: "-0.04em",
-            color: "#fff",
-            textTransform: "uppercase",
+            fontWeight: 700,
+            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+            lineHeight: 1.1,
+            letterSpacing: "-0.025em",
+            color: "rgba(255,255,255,0.92)",
             opacity: 0,
           }}
         >
-          {t("home.hero1", "PROTECTING")}
-          <br />
-          <span style={{ color: "#fff" }}>
-            {t("home.heroLine1b", "INDUSTRIAL")}
-          </span>
+          {t("home.hero1", "Protecting industrial assets")}
         </div>
 
         {/* Headline Line 2 */}
@@ -203,28 +198,16 @@ export default function CinematicHero() {
           ref={line2Ref}
           style={{
             fontFamily: '"Space Grotesk", sans-serif',
-            fontWeight: 900,
-            fontSize: "clamp(3rem, 7vw, 6.5rem)",
-            lineHeight: 0.95,
-            letterSpacing: "-0.04em",
+            fontWeight: 300,
+            fontSize: "clamp(1.6rem, 3vw, 2.6rem)",
+            lineHeight: 1.2,
+            letterSpacing: "-0.015em",
             color: "#FFF12D",
-            textTransform: "uppercase",
             marginBottom: "2rem",
             opacity: 0,
           }}
         >
-          {t("home.heroLine2", "ASSETS.")}
-          <br />
-          <span
-            style={{
-              fontSize: "clamp(1.4rem, 3vw, 2.8rem)",
-              fontWeight: 300,
-              color: "rgba(255,255,255,0.55)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            {t("home.hero2", "Through contamination control.")}
-          </span>
+          {t("home.hero2", "through contamination control.")}
         </div>
 
         {/* Industrial Metrics Card */}
