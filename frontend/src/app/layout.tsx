@@ -5,6 +5,7 @@ import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
+import ChatBot from '@/components/ui/ChatBot';
 
 // Primary body font — readable at all sizes, excellent mobile rendering
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', weight: ['300', '400', '500', '600'] });
@@ -150,6 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div id="main-content">
             {children}
           </div>
+          <ChatBot />
         </ClientProviders>
         {/* ® in headings: wrap as small superscript so it doesn't look oversized */}
         <Script id="reg-in-headings" strategy="afterInteractive">{`
