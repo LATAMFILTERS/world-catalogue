@@ -4854,6 +4854,93 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
   }
 });
 
+// ─── DB INTEGRITY AUDIT ──────────────────────────────────────────────────────
+app.get('/api/audit/crossref-integrity', async (req, res) => {
+  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+
+    const canonicalTypes = ['Air Filter','Air Housing','Air Dryer','Hydraulic Filter','Oil Filter',
+      'Marine Filter','Fuel/Water Separator','Fuel Filter - Water Separator','Turbine Filter',
+      'Cabin Air Filter','Fuel Filter','Coolant Filter','Kit Filter'];
+
+    // 1. SKU prefix vs filter_type mismatches
+    const prefixQ = await client.query(`
+      SELECT sku, filter_type FROM elimfilters_catalog
+      WHERE (filter_type='Oil Filter'       AND sku NOT LIKE 'EL8%')
+         OR (filter_type='Fuel Filter'      AND sku NOT LIKE 'EF9%')
+         OR (filter_type='Hydraulic Filter' AND sku NOT LIKE 'EH6%')
+         OR (filter_type='Air Filter'       AND sku NOT LIKE 'EA1%')
+         OR (filter_type='Cabin Air Filter' AND sku NOT LIKE 'EC1%')
+         OR (filter_type='Coolant Filter'   AND sku NOT LIKE 'EW7%')
+         OR (filter_type='Air Dryer'        AND sku NOT LIKE 'ED4%')
+         OR (filter_type='Fuel/Water Separator' AND sku NOT LIKE 'ES9%')
+         OR (filter_type='Turbine Filter'   AND sku NOT LIKE 'ET9%')
+      ORDER BY filter_type, sku LIMIT 100`);
+
+    // 2. Non-canonical filter_type values
+    const typesQ = await client.query(`
+      SELECT filter_type, COUNT(*) cnt FROM elimfilters_catalog
+      WHERE filter_type IS NOT NULL GROUP BY filter_type ORDER BY filter_type`);
+    const nonCanonical = typesQ.rows.filter(r => !canonicalTypes.includes(r.filter_type));
+
+    // 3. LF codes in non-Oil Filter records (exact)
+    const lfQ = await client.query(`
+      SELECT sku, filter_type, jsonb_agg(elem->>'code') as bad_codes
+      FROM elimfilters_catalog,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Oil Filter','lube','Lube Filter')
+        AND (elem->>'code') ~* '^LF[0-9]'
+      GROUP BY sku, filter_type ORDER BY sku`);
+
+    // 4. FF codes in non-Fuel Filter records (exact)
+    const ffQ = await client.query(`
+      SELECT sku, filter_type, jsonb_agg(elem->>'code') as bad_codes
+      FROM elimfilters_catalog,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Fuel Filter','Fuel/Water Separator','Fuel Filter - Water Separator')
+        AND (elem->>'code') ~* '^FF[0-9]'
+      GROUP BY sku, filter_type ORDER BY sku LIMIT 50`);
+
+    // 5. HF codes in non-Hydraulic records (exact)
+    const hfQ = await client.query(`
+      SELECT sku, filter_type, jsonb_agg(elem->>'code') as bad_codes
+      FROM elimfilters_catalog,
+           jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS elem
+      WHERE filter_type NOT IN ('Hydraulic Filter')
+        AND (elem->>'code') ~* '^HF[0-9]'
+      GROUP BY sku, filter_type ORDER BY sku LIMIT 50`);
+
+    // 6. Technology vs filter_type contradictions
+    const techQ = await client.query(`
+      SELECT sku, filter_type, technology FROM elimfilters_catalog
+      WHERE (UPPER(technology) LIKE '%SYNTRAX%'    AND filter_type NOT IN ('Oil Filter','lube','Lube Filter'))
+         OR (UPPER(technology) LIKE '%SYNTEPORE%'  AND filter_type NOT IN ('Fuel Filter','Fuel/Water Separator'))
+         OR (UPPER(technology) LIKE '%MACROCORE%'  AND filter_type NOT IN ('Air Filter'))
+         OR (UPPER(technology) LIKE '%NANOFORCE%'  AND filter_type NOT IN ('Hydraulic Filter','Fuel Filter','Fuel/Water Separator'))
+         OR (UPPER(technology) LIKE '%MICROKAPPA%' AND filter_type NOT IN ('Cabin Air Filter'))
+         OR (UPPER(technology) LIKE '%THERMACORE%' AND filter_type NOT IN ('Coolant Filter'))
+      ORDER BY technology, sku LIMIT 50`);
+
+    const total = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+
+    res.json({
+      total_records: parseInt(total.rows[0].count),
+      prefix_mismatches: { count: prefixQ.rows.length, records: prefixQ.rows },
+      non_canonical_types: { count: nonCanonical.length, records: nonCanonical },
+      wrong_lf_codes: { count: lfQ.rows.length, records: lfQ.rows },
+      wrong_ff_codes: { count: ffQ.rows.length, records: ffQ.rows },
+      wrong_hf_codes: { count: hfQ.rows.length, records: hfQ.rows },
+      tech_contradictions: { count: techQ.rows.length, records: techQ.rows },
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally {
+    await client.end();
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
