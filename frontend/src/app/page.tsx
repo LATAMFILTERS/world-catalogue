@@ -99,8 +99,7 @@ function FloatingParticles({ count = 22 }: { count?: number }) {
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }}>
       {PARTICLE_DATA.slice(0, count).map((p, i) => (
-        <motion.div
-          key={i}
+        <motion.div key={i}
           style={{ position: 'absolute', left: `${p.x}%`, bottom: 0, width: p.size, height: p.size * 2.5, borderRadius: '50%', background: '#FFF12D' }}
           animate={{ y: [0, -160], opacity: [0, p.opacity, p.opacity * 0.5, 0] }}
           transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: 'linear' }}
@@ -120,8 +119,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
       <div style={{ position: 'relative', width: 100, height: 100, margin: '0 auto 1rem' }}>
         <svg viewBox="0 0 100 100" width="100" height="100" style={{ transform: 'rotate(-90deg)', overflow: 'visible' }}>
           <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(255,241,45,0.1)" strokeWidth="5" />
-          <motion.circle
-            cx="50" cy="50" r={r} fill="none" stroke="#FFF12D" strokeWidth="5" strokeLinecap="round"
+          <motion.circle cx="50" cy="50" r={r} fill="none" stroke="#FFF12D" strokeWidth="5" strokeLinecap="round"
             strokeDasharray={circ}
             initial={{ strokeDashoffset: circ }}
             whileInView={{ strokeDashoffset: circ * (1 - percent / 100) }}
@@ -129,7 +127,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           />
         </svg>
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(0.9rem, 1.8vw, 1.35rem)', color: '#FFF12D', lineHeight: 1 }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(0.75rem, 1.5vw, 1.1rem)', color: '#FFF12D', lineHeight: 1 }}>
           {content}
         </div>
       </div>
@@ -146,23 +144,12 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   const [hovered, setHovered] = useState(false);
   const color = INDUSTRY_COLORS[id] || 'rgba(255,241,45,0.08)';
   return (
-    <a href={href}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '1.5rem',
-        background: hovered ? color : '#000',
-        borderLeft: `2px solid ${hovered ? color.replace(/[\d.]+\)$/, '0.7)') : 'rgba(255,255,255,0.04)'}`,
-        textDecoration: 'none', gap: '0.5rem', transition: 'all 0.25s ease',
-      }}>
+    <a href={href} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem', background: hovered ? color : '#000', borderLeft: `2px solid ${hovered ? color.replace(/[\d.]+\)$/, '0.7)') : 'rgba(255,255,255,0.04)'}`, textDecoration: 'none', gap: '0.5rem', transition: 'all 0.25s ease' }}>
       <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: hovered ? 600 : 500, color: hovered ? '#fff' : 'rgba(255,255,255,0.65)', transition: 'all 0.25s ease' }}>
         {label}
       </span>
-      <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }}
-        style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>
-        →
-      </motion.span>
+      <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }} style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>→</motion.span>
     </a>
   );
 }

@@ -4740,13 +4740,12 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
     }
 
     let merged = 0, deleted = 0, errors = 0;
+    let firstError = null;
 
     for (const pair of pairList) {
       try {
-        const [donRes, fgRes] = await Promise.all([
-          client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.don_sku]),
-          client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku])
-        ]);
+        const donRes = await client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.don_sku]);
+        const fgRes  = await client.query('SELECT * FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku]);
         if (!donRes.rows[0] || !fgRes.rows[0]) continue;
 
         const don = donRes.rows[0];
@@ -4800,27 +4799,35 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
         }
 
         // 5. Update the DON record with merged data
-        await client.query(`
-          UPDATE elimfilters_catalog SET
-            competitor_codes       = $1::jsonb,
-            oem_codes              = $2::jsonb,
-            equipment_applications = $3::jsonb,
-            brand_crossrefs        = $4::jsonb
-          WHERE sku = $5
-        `, [
-          JSON.stringify(cleanedComp),
-          JSON.stringify(mergedOem),
-          JSON.stringify(mergedEquip),
-          JSON.stringify(mergedBc),
-          pair.don_sku
-        ]);
+        await client.query(
+          `UPDATE elimfilters_catalog SET
+            competitor_codes       = $1,
+            oem_codes              = $2,
+            equipment_applications = $3,
+            brand_crossrefs        = $4
+          WHERE sku = $5`,
+          [
+            JSON.stringify(cleanedComp),
+            JSON.stringify(mergedOem),
+            JSON.stringify(mergedEquip),
+            JSON.stringify(mergedBc),
+            pair.don_sku
+          ]
+        );
 
-        // 6. Delete the Fleetguard duplicate
+        // 6. Reassign product_element rows from FG sku → DON sku before DELETE
+        await client.query(
+          `UPDATE product_element SET elimfilters_sku = $1 WHERE elimfilters_sku = $2`,
+          [pair.don_sku, pair.fg_sku]
+        );
+
+        // 7. Delete the Fleetguard duplicate
         await client.query('DELETE FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku]);
 
         merged++;
         deleted++;
       } catch (pairErr) {
+        if (!firstError) firstError = `${pair.fg_sku}→${pair.don_sku}: ${pairErr.message}`;
         console.error(`[merge-fg] ${pair.fg_sku}→${pair.don_sku}:`, pairErr.message);
         errors++;
       }
@@ -4832,7 +4839,8 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
         pairs_processed: pairList.length,
         merged, deleted, errors,
         kept_unique_fg: totalFg - pairList.length,
-      }
+      },
+      first_error: firstError
     });
   } catch (err) {
     console.error('[merge-fg-into-don]', err.message);
