@@ -40,7 +40,7 @@ export const TestimonialsColumn = (props: {
                 }}
               >
                 <p style={{
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '0.88rem',
                   lineHeight: 1.65,
                   color: 'rgba(255,255,255,0.72)',
@@ -59,14 +59,14 @@ export const TestimonialsColumn = (props: {
                   />
                   <div>
                     <div style={{
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: 'var(--font-body)',
                       fontWeight: 600,
                       fontSize: '0.85rem',
                       color: '#fff',
                       lineHeight: 1.3,
                     }}>{name}</div>
                     <div style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: 'var(--font-mono)',
                       fontSize: '0.68rem',
                       color: 'rgba(255,255,255,0.45)',
                       lineHeight: 1.4,

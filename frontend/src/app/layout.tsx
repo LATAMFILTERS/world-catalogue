@@ -1,13 +1,17 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Titillium_Web, JetBrains_Mono } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 
-const titilliumWeb = Titillium_Web({ subsets: ['latin'], variable: '--font-titillium', weight: ['300', '400', '600', '700'] });
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', weight: ['400', '500'] });
+// Primary body font — readable at all sizes, excellent mobile rendering
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', weight: ['300', '400', '500', '600'] });
+// Display / headline font — geometric, authoritative, tech-professional
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', weight: ['300', '400', '500', '600', '700'] });
+// Monospace — labels, codes, tags only
+const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', weight: ['400', '500'] });
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -123,7 +127,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${titilliumWeb.variable} ${jetBrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <script

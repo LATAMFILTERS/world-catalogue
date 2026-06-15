@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design Tokens ──────────────────────────────────────────────────── */
 :root {
+  /* Colors */
   --volt: #FFF12D;
   --bg: #000000;
   --surface: #050505;
@@ -13,10 +13,31 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-2: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
-  --text-muted: #aaaaaa;
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-subtle: rgba(255, 255, 255, 0.35);
+
+  /* Typography — font stacks via CSS variables from next/font */
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Type scale — fluid, mobile-first */
+  --text-xs:   clamp(0.7rem,  1.5vw, 0.75rem);   /* labels, tags, monospace */
+  --text-sm:   clamp(0.85rem, 1.8vw, 0.9rem);    /* captions, secondary */
+  --text-base: clamp(0.95rem, 2vw,   1rem);       /* body — min 15px */
+  --text-lg:   clamp(1.05rem, 2.2vw, 1.15rem);   /* lead text */
+  --text-xl:   clamp(1.2rem,  2.5vw, 1.4rem);    /* subheadings */
+  --text-2xl:  clamp(1.4rem,  3vw,   1.9rem);    /* section headings */
+  --text-3xl:  clamp(1.7rem,  3.5vw, 2.5rem);    /* page headings */
+  --text-4xl:  clamp(2rem,    4vw,   3.2rem);    /* hero headings */
+
+  /* Spacing */
+  --section-px: clamp(1.25rem, 6vw, 6rem);
+  --section-py: clamp(3rem, 7vw, 6rem);
 }
 
-* {
+/* ── Reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,27 +46,45 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Prevent layout shift from scrollbar */
+  scrollbar-gutter: stable;
 }
 
+/* ── Base ───────────────────────────────────────────────────────────── */
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
-img, video, iframe, svg {
-  max-width: 100%;
-}
-
-/* Global paragraph style — justify all body text, no auto-hyphens */
+/* Paragraphs — left-aligned, never justified (kills mobile readability) */
 p {
-  text-align: justify;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
+  text-align: left;
+  line-height: 1.75;
+  font-size: var(--text-base);
+}
+
+/* Headings use display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  max-width: 100%;
 }
 
 /* ® in headings — reduce to superscript size so it doesn't look oversized */
@@ -60,18 +99,30 @@ h4 .reg-sup {
   letter-spacing: 0;
 }
 
-/* Typography */
-.font-heading {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
-  font-weight: 700;
+/* ── Typography utility classes ─────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
 }
 
-.font-montserrat {
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+.font-body {
+  font-family: var(--font-body);
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
+}
+
+/* Friendly readable sizes */
+.text-readable {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.text-lead {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* Volt glow effect */

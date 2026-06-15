@@ -164,7 +164,7 @@ export default function CinematicHero() {
         <p
           ref={eyebrowRef}
           style={{
-            fontFamily: "JetBrains Mono, monospace",
+            fontFamily: 'var(--font-mono)',
             fontSize: "0.75rem",
             letterSpacing: "0.22em",
             color: "rgba(255,241,45,0.85)",
@@ -181,7 +181,7 @@ export default function CinematicHero() {
         <div
           ref={line1Ref}
           style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontWeight: 700,
             fontSize: "clamp(2rem, 4vw, 3.5rem)",
             lineHeight: 1.1,
@@ -197,7 +197,7 @@ export default function CinematicHero() {
         <div
           ref={line2Ref}
           style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-display)',
             fontWeight: 300,
             fontSize: "clamp(1.6rem, 3vw, 2.6rem)",
             lineHeight: 1.2,
@@ -239,7 +239,7 @@ export default function CinematicHero() {
             <div>
               <p
                 style={{
-                  fontFamily: "JetBrains Mono, monospace",
+                  fontFamily: 'var(--font-mono)',
                   fontSize: "0.6rem",
                   letterSpacing: "0.2em",
                   color: "#FFF12D",
@@ -251,7 +251,7 @@ export default function CinematicHero() {
               </p>
               <p
                 style={{
-                  fontFamily: "Outfit, sans-serif",
+                  fontFamily: 'var(--font-body)',
                   fontSize: "0.85rem",
                   color: "rgba(255,255,255,0.6)",
                   margin: 0,
@@ -287,7 +287,7 @@ export default function CinematicHero() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   style={{
-                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontWeight: 800,
                     fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
                     color: i === 0 ? "#FFF12D" : "#fff",
@@ -299,8 +299,8 @@ export default function CinematicHero() {
                 </motion.div>
                 <div
                   style={{
-                    fontFamily: "JetBrains Mono, monospace",
-                    fontSize: "0.58rem",
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: "0.65rem",
                     color: "rgba(255,255,255,0.35)",
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
@@ -348,7 +348,7 @@ export default function CinematicHero() {
             </div>
             <span
               style={{
-                fontFamily: "JetBrains Mono, monospace",
+                fontFamily: 'var(--font-mono)',
                 fontSize: "0.6rem",
                 color: "rgba(255,241,45,0.7)",
                 letterSpacing: "0.1em",
@@ -383,7 +383,7 @@ export default function CinematicHero() {
               gap: "0.6rem",
               background: "#FFF12D",
               color: "#000",
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: "0.8rem",
               letterSpacing: "0.08em",
@@ -401,7 +401,7 @@ export default function CinematicHero() {
           <Link
             href="/knowledge-system"
             style={{
-              fontFamily: '"Space Grotesk", sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 400,
               fontSize: "0.8rem",
               letterSpacing: "0.08em",
@@ -440,7 +440,7 @@ export default function CinematicHero() {
       >
         <span
           style={{
-            fontFamily: "JetBrains Mono, monospace",
+            fontFamily: 'var(--font-mono)',
             fontSize: "0.55rem",
             letterSpacing: "0.2em",
             color: "rgba(255,255,255,0.25)",
