@@ -2043,11 +2043,11 @@ app.post('/api/catalog/merge-fg-into-don', async (req, res) => {
 
         try {
           await client.query('UPDATE product_element SET sku=$1 WHERE sku=$2', [pair.don_sku, pair.fg_sku]);
-        } catch (e) {}
+        } catch (e) { console.error('[product_element]', e.message); }
 
         try {
           await client.query('UPDATE product_model SET sku=$1 WHERE sku=$2', [pair.don_sku, pair.fg_sku]);
-        } catch (e) {}
+        } catch (e) { console.error('[product_element]', e.message); }
 
         await client.query('DELETE FROM elimfilters_catalog WHERE sku=$1', [pair.fg_sku]);
 
@@ -2083,5 +2083,6 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
   console.log(`[server] ✅ ELIMFILTERS API ready`);
 });
+
 
 
