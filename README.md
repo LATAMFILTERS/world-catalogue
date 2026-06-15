@@ -392,3 +392,4 @@ npx serve@latest -l 3001 -s out  # Use different port
 **Knowledge System**: Standards (6 domains) + Contamination (3 studies) + Fleet (3 strategies)
 **Languages**: 11 (EN, ES, FR, IT, NL, RU, ZH, JA, AR, FA, PT)
 **Framework**: Next.js 14 with React 19 + TypeScript
+Cloudflare Redeploy
