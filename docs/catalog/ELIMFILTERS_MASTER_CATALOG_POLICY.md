@@ -606,5 +606,127 @@ Any process that violates this hierarchy must be rejected.
 
 
 
+\---
+
+
+
+\# CHANGE GOVERNANCE POLICY
+
+
+
+All approved catalog decisions become official only after being documented in this repository.
+
+
+
+Approval workflow:
+
+
+
+Discussion
+
+↓
+
+Technical Validation
+
+↓
+
+Business Approval
+
+↓
+
+Update Markdown Documentation
+
+↓
+
+Git Commit
+
+↓
+
+Repository Push
+
+
+
+No catalog rule, SKU structure, taxonomy change, homologation rule, product classification rule or data governance rule shall be considered official until it has been documented in the corresponding Markdown file and committed to the repository.
+
+
+
+\---
+
+
+
+\# MANDATORY DOCUMENTATION RULE
+
+
+
+The following changes must always be documented:
+
+
+
+\- SKU generation rules
+
+\- HD taxonomy changes
+
+\- LD taxonomy changes
+
+\- Product classification rules
+
+\- Donaldson homologation rules
+
+\- Fleetguard integration rules
+
+\- MANN integration rules
+
+\- OEM governance rules
+
+\- Catalog architecture changes
+
+\- Import procedures
+
+\- Validation procedures
+
+\- Manual review procedures
+
+\- Asset Protection taxonomy changes
+
+
+
+Verbal approval inside ChatGPT conversations is not sufficient.
+
+
+
+Repository documentation is the official source of truth.
+
+
+
+\---
+
+
+
+\# SINGLE SOURCE OF TRUTH
+
+
+
+Official hierarchy:
+
+
+
+1\. Repository Markdown Documentation
+
+2\. Database Structure
+
+3\. Import Scripts
+
+4\. Operational Procedures
+
+
+
+If any script, database table or process conflicts with repository documentation, the documentation prevails and the implementation must be corrected.
+
+
+
+END OF POLICY
+
+
+
 END OF DOCUMENT
 
