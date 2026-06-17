@@ -724,7 +724,117 @@ If any script, database table or process conflicts with repository documentation
 
 
 
-END OF POLICY
+\## MANN FILTER POLICY
+
+
+
+1\. MANN LD y MANN HD se procesan por separado.
+
+
+
+2\. Está prohibido mezclar:
+
+&#x20;  - códigos LD con HD
+
+&#x20;  - homologaciones Donaldson HD dentro de LD
+
+&#x20;  - homologaciones Fleetguard HD dentro de LD
+
+
+
+3\. Los productos LD generan SKUs ELIMFILTERS propios:
+
+
+
+&#x20;  Air       -> EA3xxxxx
+
+&#x20;  Fuel      -> EF3xxxxx
+
+&#x20;  Lube      -> EL3xxxxx
+
+&#x20;  Cabin     -> EC3xxxxx
+
+
+
+4\. Los códigos LD conservan únicamente:
+
+&#x20;  - OEM
+
+&#x20;  - Fitment
+
+&#x20;  - Aplicaciones de vehículos
+
+
+
+5\. Los productos HD no generan SKU 3xxxxx.
+
+
+
+6\. Todo HD debe intentar homologarse contra Donaldson.
+
+
+
+7\. Si un HD no encuentra homologación Donaldson:
+
+&#x20;  - pasa a MANN\_HD\_REVIEW
+
+&#x20;  - revisión manual obligatoria
+
+
+
+8\. Nunca se mezclan familias LD y HD.
+
+
+
+9\. Donaldson es la autoridad maestra para HD.
+
+
+
+10\. MANN es la autoridad maestra para LD.
+
+
+
+\## MANN LD INVENTORY (2026-06)
+
+
+
+Total LD products approved: 1060
+
+
+
+EA (Air)   : 123
+
+EC (Cabin) : 436
+
+EF (Fuel)  : 267
+
+EL (Lube)  : 234
+
+
+
+Total: 1060
+
+
+
+Rules:
+
+
+
+\- LD catalog remains independent from HD catalog.
+
+\- MANN LD products become ELIMFILTERS LD products.
+
+\- Original MANN codes are preserved as competitor references.
+
+\- OEM references are mandatory.
+
+\- Vehicle fitment is mandatory.
+
+\- Donaldson codes cannot be assigned to LD products.
+
+\- Fleetguard codes cannot be assigned to LD products.
+
+\- HD homologation process is completely independent.
 
 
 
