@@ -39,6 +39,17 @@ El cuerpo numérico del SKU (los dígitos que siguen al prefijo) generalmente es
 1. **Nomenclatura Cruzada Homologada (Cross-Reference Alignment):** Para facilitar la transición desde el status quo del cliente, el número base suele hacer eco de los estándares industriales globales (Fleetguard, Donaldson, Baldwin). Ej: Si el mercado conoce la aplicación como *AF25270*, nuestro SKU es **EA-25270**.
 2. **Nomenclatura Propietaria de Precisión (Precision Engineering Code):** Para desarrollos internos de tecnologías patentadas (como elementos MACROCORE o NANOFORCE especializados), se utiliza una codificación métrica secuencial.
 
+### Clasificación de Carga Operativa: Heavy Duty (HD) vs Light Duty (LD)
+La construcción del SKU varía estructuralmente dependiendo del nivel de exigencia operativa del activo:
+
+* **Heavy Duty (HD) - Maquinaria Pesada, Minería, Transporte y Marina:**
+  * **Construcción:** Se utilizan los prefijos estándar (`EA`, `EO`, `EF`, `EH`) seguidos de la nomenclatura cruzada industrial pesada (basada en Fleetguard, Donaldson, Baldwin o números de parte de fabricantes como CAT/Cummins/John Deere).
+  * **Ejemplo HD:** `EA-25270` (donde 25270 hace eco a un filtro de aire de alta capacidad para un camión pesado o tractor).
+
+* **Light Duty (LD) - Automotriz, Flotillas Ligeras y Pickups:**
+  * **Construcción:** Se utilizan los prefijos estándar (`EA`, `EO`, `EF`, `EC`) pero la base numérica se alínea con los estándares del mercado automotriz (generalmente ecos de WIX, Fram, o los últimos dígitos del OEM de Toyota/Ford/Nissan). Para evitar colisiones numéricas con la línea HD, los códigos LD suelen tener estructuras numéricas más cortas o específicas del mercado automotriz.
+  * **Ejemplo LD:** `EO-51348` (haciendo eco a un filtro de aceite estándar de alto flujo para motores de vehículos ligeros o pickups).
+
 ### Estructura de Sufijos (Suffix Modifiers)
 Si un elemento posee características especiales o modificaciones de medio filtrante:
 * **`-S` (Synthetic):** Medio 100% sintético (Ej: NANOFORCE).
