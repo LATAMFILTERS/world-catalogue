@@ -47,10 +47,12 @@ Para soluciones de consolidación de inventario y kits completos:
 El cuerpo numérico del SKU (lo que sigue al prefijo) se construye de forma estandarizada utilizando **exclusivamente los últimos 4 dígitos** del código base del líder referencial de cada sector.
 
 ### Regla General de Construcción
-1. **Línea Heavy Duty (HD):** El prefijo HD se complementa con los últimos 4 dígitos del código de **Donaldson**. 
-   * *Ejemplo HD:* Si el código Donaldson es `P551348`, el SKU ELIMFILTERS será **`EL8-1348`**.
-2. **Línea Light Duty (LD):** El prefijo LD se complementa con los últimos 4 dígitos del código de **Mann Filters**.
-   * *Ejemplo LD:* Si el código Mann es `W 712/94` (asumiendo que los últimos dígitos clave son 1294 o similares según la estructura Mann), el SKU ELIMFILTERS se formará como **`EL3-XXXX`** usando los últimos 4 dígitos base.
+**Regla de Oro de Formato:** El SKU final se escribe de corrido, SIN guiones, SIN espacios, SIN letras y SIN símbolos al final. Únicamente el prefijo (3 caracteres) seguido inmediatamente de los 4 números base.
+
+1. **Línea Heavy Duty (HD):** El prefijo HD se complementa con los últimos 4 dígitos numéricos del código de **Donaldson**. 
+   * *Ejemplo HD:* Si el código Donaldson es `P551348`, el SKU ELIMFILTERS será **`EL81348`**.
+2. **Línea Light Duty (LD):** El prefijo LD se complementa con los últimos 4 dígitos numéricos del código de **Mann Filters**.
+   * *Ejemplo LD:* Si el código Mann es `W 712/94` (asumiendo que los últimos dígitos clave son 1294), el SKU ELIMFILTERS será **`EL31294`**.
 
 ### Excepción de Especialidad (OEM / Aftermarket Origin)
 Si ni Mann Filters ni Donaldson fabrican el componente requerido:
