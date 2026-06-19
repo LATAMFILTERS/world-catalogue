@@ -62,22 +62,18 @@
     }
     .back-btn:hover { background: rgba(255,241,45,0.1); }
 
-    /* Layout */
+    /* Layout — full width results */
     .layout {
-      display: grid;
-      grid-template-columns: 1fr 400px;
       flex: 1;
-      height: calc(100vh - 65px);
-    }
-    @media (max-width: 900px) {
-      .layout { grid-template-columns: 1fr; height: auto; display: block; }
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     /* Results Panel */
     .results-panel {
-      padding: 2rem;
-      overflow-y: auto;
-      border-right: 1px solid var(--border);
+      width: 100%;
     }
     .results-header {
       display: flex;
@@ -98,78 +94,151 @@
       padding: 3rem 0;
     }
 
-    /* AI Panel */
-    .ai-panel {
+    /* ── FLOATING AI WIDGET ── */
+    #ai-widget {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
       display: flex;
       flex-direction: column;
-      background: #050505;
-      height: 100%;
+      align-items: flex-end;
+      gap: 0.5rem;
     }
+
+    /* Toggle button */
+    #ai-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0d0d0d;
+      border: 1px solid rgba(255,241,45,0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      flex-shrink: 0;
+    }
+    #ai-toggle:hover { border-color: var(--y); box-shadow: 0 0 12px rgba(255,241,45,0.2); }
+    #ai-toggle img { width: 24px; height: 24px; object-fit: contain; }
+    #ai-toggle .pulse {
+      width: 6px; height: 6px;
+      background: var(--y);
+      border-radius: 50%;
+      position: absolute;
+      top: 6px; right: 6px;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+    /* Chat drawer */
+    #ai-drawer {
+      width: 300px;
+      max-height: 420px;
+      background: rgba(8,8,8,0.96);
+      border: 1px solid rgba(255,241,45,0.18);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      backdrop-filter: blur(20px);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      transform: scale(0.92);
+      opacity: 0;
+      pointer-events: none;
+    }
+    #ai-drawer.open {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Drawer header */
     .ai-header {
-      padding: 1rem;
-      border-bottom: 1px solid var(--border);
-      background: #0a0a0a;
-    }
-    .ai-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--y);
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      background: rgba(12,12,12,0.9);
     }
-    .ai-title::before {
-      content: ''; display: block; width: 6px; height: 6px; background: var(--y); border-radius: 50%;
+    .ai-header img.e-logo {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+    .ai-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.14em;
+      color: var(--y);
+      flex: 1;
+    }
+    .ai-dot {
+      width: 5px; height: 5px;
+      background: var(--y);
+      border-radius: 50%;
+      flex-shrink: 0;
       animation: blink 2s infinite;
     }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-    
+
+    /* Chat messages */
     .ai-chat {
       flex: 1;
-      padding: 1rem;
+      padding: 0.75rem;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.65rem;
     }
-    .msg { max-width: 85%; font-size: 0.85rem; line-height: 1.5; padding: 0.8rem 1rem; border-radius: 6px; }
-    .msg.user { background: #1a1a1a; align-self: flex-end; border: 1px solid rgba(255,255,255,0.1); }
-    .msg.ai { background: rgba(255,241,45,0.03); align-self: flex-start; border: 1px solid rgba(255,241,45,0.15); color: rgba(255,255,255,0.85); }
-    .msg.ai pre, .msg.ai code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: rgba(0,0,0,0.4); padding: 0.2rem 0.4rem; border-radius: 3px; }
-    .msg.ai .ai-signature { display: block; margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: var(--y); letter-spacing: 0.1em; opacity: 0.7; }
+    .msg {
+      max-width: 90%;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px;
+    }
+    .msg.user { background: #191919; align-self: flex-end; border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); }
+    .msg.ai { background: rgba(255,241,45,0.03); align-self: flex-start; border: 1px solid rgba(255,241,45,0.1); color: rgba(255,255,255,0.8); }
+    .msg.ai .ai-signature { display: block; margin-top: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.42rem; color: rgba(255,241,45,0.5); letter-spacing: 0.1em; }
 
+    /* Input area */
     .ai-input-area {
-      padding: 1rem;
-      border-top: 1px solid var(--border);
-      background: #0a0a0a;
+      padding: 0.6rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(10,10,10,0.9);
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
     .ai-input {
       flex: 1;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 4px;
       color: #fff;
-      padding: 0.8rem;
+      padding: 0.5rem 0.65rem;
       font-family: 'Outfit', sans-serif;
-      font-size: 0.85rem;
-      resize: none;
-      height: 45px;
+      font-size: 0.75rem;
       outline: none;
+      min-width: 0;
     }
-    .ai-input:focus { border-color: var(--y); }
+    .ai-input:focus { border-color: rgba(255,241,45,0.4); }
     .ai-btn {
       background: var(--y);
       border: none;
       color: #000;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0 1.2rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 0 0.8rem;
       border-radius: 4px;
       cursor: pointer;
+      white-space: nowrap;
     }
     .ai-btn:hover { background: #ffe800; }
     
@@ -202,22 +271,31 @@
     <main class="results-panel" id="results-container">
       <div class="status-msg" id="loading-indicator">// ANALYZING DATABASE...</div>
     </main>
-    
-    <aside class="ai-panel">
+  </div>
+
+  <!-- ── FLOATING AI WIDGET ── -->
+  <div id="ai-widget">
+    <div id="ai-drawer">
       <div class="ai-header">
-        <span class="ai-title">ASSET PROTECTION ENGINEER AI</span>
+        <img class="e-logo" src="/e.png" alt="ELIMFILTERS">
+        <span class="ai-title">ASSET PROTECTION AI</span>
+        <span class="ai-dot"></span>
       </div>
       <div class="ai-chat" id="chat-window">
         <div class="msg ai">
-          System nominal. I am the ELIMFILTERS Reliability & Asset Protection Engineer. How can I assist you with contamination control, fluid mechanics, or TCO financial analysis today?
+          Sistema activo. Soy el Ingeniero de Confiabilidad ELIMFILTERS. Consulta sobre TCO, agua en combustible, Ratio Beta o contaminación.
           <span class="ai-signature">ELIMFILTERS AI · TERMINAL V3.8</span>
         </div>
       </div>
       <div class="ai-input-area">
-        <input type="text" id="ai-input" class="ai-input" placeholder="Ask about TCO, water in fuel, or filter specs..." autocomplete="off">
-        <button id="ai-btn" class="ai-btn">SEND</button>
+        <input type="text" id="ai-input" class="ai-input" placeholder="Consulta técnica..." autocomplete="off">
+        <button id="ai-btn" class="ai-btn">↑</button>
       </div>
-    </aside>
+    </div>
+    <button id="ai-toggle" aria-label="Toggle AI">
+      <span class="pulse"></span>
+      <img src="/e.png" alt="AI">
+    </button>
   </div>
 
   <script>
@@ -339,6 +417,16 @@
 
     aiBtn.addEventListener('click', sendMessage);
     aiInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+    // Toggle AI drawer
+    const aiToggle = document.getElementById('ai-toggle');
+    const aiDrawer = document.getElementById('ai-drawer');
+    aiToggle.addEventListener('click', () => {
+      aiDrawer.classList.toggle('open');
+      if (aiDrawer.classList.contains('open')) {
+        document.getElementById('ai-input').focus();
+      }
+    });
 
     executeSearch();
   </script>
