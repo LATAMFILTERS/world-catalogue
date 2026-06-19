@@ -561,12 +561,27 @@ async function enrichAlternatives(products, client) {
   const { rows } = await client.query(
     `SELECT sku, codigo_base, oem_codes, competitor_codes, equipment_applications
      FROM elimfilters_catalog
-     WHERE UPPER(codigo_base) = ANY($1)`,
+     WHERE UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)`,
     [altCodes]
   );
 
+  // Fallback to LD catalog for unresolved alternatives
+  const { rows: ldRows } = await client.query(
+    `SELECT p.elimfilters_sku as sku, p.source_sku as codigo_base, 
+            (SELECT jsonb_agg(jsonb_build_object('manufacturer', o.oem_brand, 'code', o.oem_part_number)) FROM ld_catalog.ld_oem_cross_references o WHERE o.elimfilters_sku = p.elimfilters_sku) as oem_codes,
+            (SELECT jsonb_agg(jsonb_build_object('manufacturer', c.competitor_brand, 'code', c.competitor_part_number)) FROM ld_catalog.ld_competitor_cross_references c WHERE c.elimfilters_sku = p.elimfilters_sku) as competitor_codes,
+            (SELECT jsonb_agg(jsonb_build_object('make', a.make, 'model', a.model_family, 'year', a.year, 'engine', a.engine_code)) FROM ld_catalog.ld_vehicle_applications a WHERE a.elimfilters_sku = p.elimfilters_sku LIMIT 50) as equipment_applications
+     FROM ld_catalog.ld_product_catalog p
+     WHERE UPPER(p.source_sku) = ANY($1) OR UPPER(p.elimfilters_sku) = ANY($1)`,
+    [altCodes]
+  );
+  rows.push(...ldRows);
+
   const altMap = {};
-  rows.forEach(r => { if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; });
+  rows.forEach(r => { 
+    if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; 
+    if (r.sku) altMap[r.sku.toUpperCase()] = r;
+  });
 
   for (const p of withAlts) {
     const resolvedSkus = [];
