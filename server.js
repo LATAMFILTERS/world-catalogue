@@ -2359,7 +2359,7 @@ app.get('/api/search', async (req, res) => {
           `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
            FROM elimfilters_catalog
            WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
-           ORDER BY sku
+           ORDER BY (jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) + jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb))) DESC, sku
            LIMIT 20`,
           [q + '%']
         );
@@ -2381,7 +2381,7 @@ app.get('/api/search', async (req, res) => {
              WHERE UPPER(elem->>'code') = $1
                 OR UPPER(elem->>'part_number') = $1
            )
-           ORDER BY sku
+           ORDER BY (jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) + jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb))) DESC, sku
            LIMIT 20`,
           [q]
         );
@@ -2396,7 +2396,7 @@ app.get('/api/search', async (req, res) => {
                 jsonb_each(COALESCE(brand_crossrefs,'{}'::jsonb)) AS kv,
                 jsonb_array_elements_text(kv.value) AS code_val
            WHERE UPPER(code_val) = $1
-           ORDER BY sku
+           ORDER BY (jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) + jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb))) DESC, sku
            LIMIT 20`,
           [q]
         );
@@ -2446,7 +2446,7 @@ app.get('/api/search', async (req, res) => {
            WHERE UPPER(sku) LIKE $1
               OR UPPER(codigo_base) LIKE $1
               OR UPPER(oem_elem->>'code') LIKE $1
-           ORDER BY sku
+           ORDER BY (jsonb_array_length(COALESCE(oem_codes,'[]'::jsonb)) + jsonb_array_length(COALESCE(competitor_codes,'[]'::jsonb))) DESC, sku
            LIMIT 20`,
           ['%' + q + '%']
         );
