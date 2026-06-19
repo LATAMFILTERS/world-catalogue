@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
-import { CustomCursor } from './CustomCursor';
+
 import { ScrollProgress } from './ScrollProgress';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
@@ -20,7 +20,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <CustomCursor />
+
       <ScrollProgress />
       {children}
     </I18nextProvider>
