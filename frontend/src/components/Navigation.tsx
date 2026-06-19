@@ -90,7 +90,7 @@ export function Navigation() {
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             <img
-              src="https://elimfilters.com/images/logo-sin-fondo.avif"
+              src="/images/logo-sin-fondo.avif"
               alt="ELIMFILTERS"
               className="nav-logo"
               style={{ objectFit: 'contain', height: '68px', width: 'auto' }}
