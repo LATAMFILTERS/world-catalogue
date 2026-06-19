@@ -327,6 +327,53 @@
     }
     .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
 
+    /* ─── COMMERCIAL SYSTEMS ─── */
+    .comm-systems {
+      width: 100%; max-width: 720px;
+      margin-top: 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+    }
+    #search-panel.vis + .comm-systems { opacity: 1; transform: translateY(0); }
+    
+    .comm-card {
+      display: flex; flex-direction: column; gap: 0.3rem;
+      padding: 1.2rem;
+      background: rgba(255,255,255,0.015);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.25s, background 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .comm-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .comm-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
+    .comm-card:hover::before { opacity: 1; }
+    
+    .comm-card.marine:hover { border-color: rgba(100,200,255,0.3); }
+    .comm-card.dura:hover { border-color: rgba(255,241,45,0.3); }
+
+    .comm-badge {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .comm-card.marine .comm-badge { color: rgba(100,200,255,0.6); }
+    .comm-card.dura .comm-badge { color: rgba(255,241,45,0.6); }
+
+    .comm-title {
+      font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.9); margin-top: 0.2rem;
+    }
+    .comm-desc {
+      font-family: 'Outfit', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.4);
+      line-height: 1.4;
+    }
+
     /* ─── AUTOCOMPLETE DROPDOWN ─── */
     .ac-wrap {
       position: relative;
@@ -816,6 +863,20 @@
 
   </div><!-- /search-panel -->
 
+  <!-- ── COMMERCIAL SYSTEMS ── -->
+  <div class="comm-systems">
+    <a href="#" class="comm-card marine" aria-label="MarineClean System">
+      <span class="comm-badge" id="cb-marine">SYSTEM</span>
+      <span class="comm-title" id="ct-marine">MARINECLEAN™</span>
+      <span class="comm-desc" id="cd-marine">Total filtration consolidation for maritime environments.</span>
+    </a>
+    <a href="#" class="comm-card dura" aria-label="Duratech Kits">
+      <span class="comm-badge" id="cb-dura">FLEET KITS</span>
+      <span class="comm-title" id="ct-dura">DURATECH</span>
+      <span class="comm-desc" id="cd-dura">Complete heavy duty kits for transport and fleet overhaul.</span>
+    </a>
+  </div>
+
   <!-- ── RESULTS ── -->
   <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
 
@@ -859,6 +920,12 @@ const TRANSLATIONS = {
     optAnyType:       'Any type',
     lblEquipEngine:   'Engine (optional)',
     btnSearch:        'SEARCH →',
+    cbMarine:         'SYSTEM',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Total filtration consolidation for maritime environments.',
+    cbDura:           'FLEET KITS',
+    ctDura:           'DURATECH',
+    cdDura:           'Complete heavy duty kits for transport and fleet overhaul.'
   },
   es: {
     splashSkip:       'Clic en cualquier lugar para saltar',
@@ -879,6 +946,12 @@ const TRANSLATIONS = {
     optAnyType:       'Cualquier tipo',
     lblEquipEngine:   'Motor (opcional)',
     btnSearch:        'BUSCAR →',
+    cbMarine:         'SISTEMA',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Consolidación total de filtración para entornos marítimos.',
+    cbDura:           'KITS DE FLOTA',
+    ctDura:           'DURATECH',
+    cdDura:           'Kits completos Heavy Duty para transporte y mantenimiento de flotas.'
   },
   pt: {
     splashSkip:       'Clique em qualquer lugar para pular',
@@ -899,6 +972,12 @@ const TRANSLATIONS = {
     optAnyType:       'Qualquer tipo',
     lblEquipEngine:   'Motor (opcional)',
     btnSearch:        'BUSCAR →',
+    cbMarine:         'SISTEMA',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Consolidação total de filtração para ambientes marítimos.',
+    cbDura:           'KITS DE FROTA',
+    ctDura:           'DURATECH',
+    cdDura:           'Kits completos Heavy Duty para transporte e manutenção de frotas.'
   }
 };
 
@@ -961,16 +1040,31 @@ function applyLang(t) {
   const lblEquipEngine = document.getElementById('lbl-equip-engine');
   const inpEquipModel  = document.getElementById('inp-equip-model');
   const inpEquipEngine = document.getElementById('inp-equip-engine');
-  const optAny         = document.getElementById('opt-any');
+  const optAnyType     = document.getElementById('opt-any');
   const btnEquip       = document.getElementById('btn-search-equip');
   if (lblEquipModel)  lblEquipModel.textContent  = t.lblEquipModel;
   if (lblEquipType)   lblEquipType.textContent   = t.lblEquipType;
   if (lblEquipEngine) lblEquipEngine.textContent = t.lblEquipEngine;
   if (inpEquipModel)  inpEquipModel.placeholder  = t.phEquipModel;
   if (inpEquipEngine) inpEquipEngine.placeholder = t.phEngine;
-  if (optAny)         optAny.textContent         = t.optAnyType;
+  if (optAnyType)     optAnyType.textContent     = t.optAnyType;
   if (btnEquip)       btnEquip.textContent       = t.btnSearch;
+
+  // Commercial Systems
+  const cbMarine = document.getElementById('cb-marine');
+  const ctMarine = document.getElementById('ct-marine');
+  const cdMarine = document.getElementById('cd-marine');
+  const cbDura   = document.getElementById('cb-dura');
+  const ctDura   = document.getElementById('ct-dura');
+  const cdDura   = document.getElementById('cd-dura');
+  if (cbMarine) cbMarine.textContent = t.cbMarine;
+  if (ctMarine) ctMarine.textContent = t.ctMarine;
+  if (cdMarine) cdMarine.textContent = t.cdMarine;
+  if (cbDura)   cbDura.textContent   = t.cbDura;
+  if (ctDura)   ctDura.textContent   = t.ctDura;
+  if (cdDura)   cdDura.textContent   = t.cdDura;
 }
+
 
 // Run immediately
 detectLang().then(lang => {
