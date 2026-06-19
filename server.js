@@ -2,6 +2,7 @@ const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const axios = require('axios');
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -1249,35 +1250,72 @@ app.get('/api/filters/search/part', async (req, res) => {
 });
 
 app.get('/api/filters/search/vin', async (req, res) => {
-  const model = (req.query.model || '').trim().toUpperCase();
-  const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
-
-  if(!model) return res.json({success: false, filters: []});
+  const vin = (req.query.vin || req.query.q || '').trim().toUpperCase();
+  if(!vin || vin.length < 5) return res.json({success: false, filters: [], vehicleInfo: null});
   const lang = detectLang(req);
+
+  let vehicleInfo = null;
+  let make = '';
+  let model = '';
+
+  try {
+    const nhtsaRes = await axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`);
+    if (nhtsaRes.data && nhtsaRes.data.Results && nhtsaRes.data.Results.length > 0) {
+      const v = nhtsaRes.data.Results[0];
+      make = (v.Make || '').toUpperCase();
+      model = (v.Model || '').toUpperCase();
+      vehicleInfo = {
+        Make: v.Make,
+        Model: v.Model,
+        ModelYear: v.ModelYear,
+        EngineCylinders: v.EngineCylinders,
+        EngineHP: v.EngineHP,
+        FuelTypePrimary: v.FuelTypePrimary,
+        DisplacementL: v.DisplacementL,
+        ErrorText: v.ErrorCode !== '0' ? v.ErrorText : null
+      };
+    }
+  } catch (err) {
+    console.error("[VIN Decode Error]", err.message);
+  }
+
+  if (!make && !model) {
+     return res.json({success: true, filters: [], vehicleInfo, error: "VIN not recognized or invalid"});
+  }
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    await client.query("SET client_encoding = 'UTF8'");
 
-    let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
+    // Search HD
+    let query = `SELECT * FROM elimfilters_catalog WHERE equipment_applications IS NOT NULL`;
     const params = [];
+    if (make) { query += ` AND equipment_applications::text ILIKE $${params.length + 1}`; params.push('%' + make + '%'); }
+    if (model) { query += ` AND equipment_applications::text ILIKE $${params.length + 1}`; params.push('%' + model + '%'); }
+    query += ' LIMIT 20';
+    
+    const hdResult = await client.query(query, params);
+    let filters = hdResult.rows.map(row => buildFilterData(row, lang));
+    await enrichAlternatives(filters, client);
 
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
-
-    if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + engine + '%');
+    // Search LD
+    let ldQuery = `
+      SELECT p.elimfilters_sku as sku, p.segment, p.source_sku
+      FROM ld_catalog.ld_vehicle_applications a
+      JOIN ld_catalog.ld_product_catalog p ON a.elimfilters_sku = p.elimfilters_sku
+      WHERE 1=1
+    `;
+    const ldParams = [];
+    if (make) { ldQuery += ` AND UPPER(a.make) LIKE $${ldParams.length + 1}`; ldParams.push('%' + make + '%'); }
+    if (model) { ldQuery += ` AND UPPER(a.model_family) LIKE $${ldParams.length + 1}`; ldParams.push('%' + model + '%'); }
+    ldQuery += ' LIMIT 20';
+    
+    const ldResult = await client.query(ldQuery, ldParams);
+    for (const r of ldResult.rows) {
+      filters.push({ sku: r.sku, duty: 'LIGHT_DUTY', filter_type: r.segment, description: `ELIMFILTERS Light Duty — MANN ${r.source_sku}` });
     }
 
-    query += ' LIMIT 10';
-
-    const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row, lang));
-    await enrichAlternatives(filters, client);
-    res.status(200).json({success: true, filters});
+    res.status(200).json({success: true, filters, vehicleInfo});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
@@ -1286,40 +1324,35 @@ app.get('/api/filters/search/vin', async (req, res) => {
 });
 
 app.get('/api/filters/search/equipment', async (req, res) => {
-  const model = (req.query.model || '').trim().toUpperCase();
-  const type = req.query.type ? req.query.type.trim().toUpperCase() : null;
-  const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
-
-  if(!model) return res.json({success: false, filters: []});
+  const searchQ = (req.query.model || req.query.q || '').trim().toUpperCase();
+  if(!searchQ) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    await client.query("SET client_encoding = 'UTF8'");
 
-    let query = `SELECT * FROM elimfilters_catalog
-                 WHERE equipment_applications IS NOT NULL`;
-    const params = [];
-
-    query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
-
-    if(type) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + type + '%');
-    }
-
-    if(engine) {
-      query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + engine + '%');
-    }
-
-    query += ' LIMIT 10';
-
-    const result = await client.query(query, params);
-    const filters = result.rows.map(row => buildFilterData(row, lang));
+    // Search HD
+    let query = `SELECT * FROM elimfilters_catalog WHERE equipment_applications::text ILIKE $1 LIMIT 30`;
+    const hdResult = await client.query(query, ['%' + searchQ + '%']);
+    let filters = hdResult.rows.map(row => buildFilterData(row, lang));
     await enrichAlternatives(filters, client);
+
+    // Search LD
+    let ldQuery = `
+      SELECT p.elimfilters_sku as sku, p.segment, p.source_sku
+      FROM ld_catalog.ld_vehicle_applications a
+      JOIN ld_catalog.ld_product_catalog p ON a.elimfilters_sku = p.elimfilters_sku
+      WHERE UPPER(a.make) LIKE $1 OR UPPER(a.model_family) LIKE $1
+      LIMIT 30
+    `;
+    const ldResult = await client.query(ldQuery, ['%' + searchQ + '%']);
+    for (const r of ldResult.rows) {
+      filters.push({ sku: r.sku, duty: 'LIGHT_DUTY', filter_type: r.segment, description: `ELIMFILTERS Light Duty — MANN ${r.source_sku}` });
+    }
+
+    // Grouping logic by Equipment (to satisfy the "agrupar por equipo" requirement)
+    // For now, we return the filters directly. The UI typically handles grouping based on the response format.
     res.status(200).json({success: true, filters});
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
@@ -2287,13 +2320,14 @@ app.get('/api/autocomplete', async (req, res) => {
 // Tier 10: Partial ILIKE fallback
 app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
+  const mode = req.query.mode || ''; 
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
   const client = new Client(dbConfig);
   try {
     await client.connect();
 
-    const cls = classifyQuery(q);
+    const cls = mode === 'part' ? { type: 'sku_or_ref', value: q } : classifyQuery(q);
     let result = { rows: [] };
     let searchType = cls.type;
     let searchTier = 0;
