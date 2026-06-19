@@ -197,10 +197,7 @@ function HeroSection() {
       <FloatingParticles count={18} />
 
       <motion.div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', y: contentY, opacity: contentOpacity }}>
-        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.85)', textTransform: 'uppercase', marginBottom: '2rem', fontWeight: 700 }}>
-          {t('home.eyebrow', 'Asset Protection Technology Platform')}
-        </motion.p>
+
 
         <h1 style={{ margin: 0, padding: 0 }}>
           <motion.span initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
@@ -328,9 +325,7 @@ export default function Home() {
         <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem', opacity: 0.7 }}>
-              {t('home.missionTag', '// WHY WE EXIST')}
-            </p>
+
             <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.2, marginBottom: '2.5rem' }}>
               {t('home.missionTitle', 'Why ELIMFILTERS Exists')}
             </h2>
@@ -353,10 +348,7 @@ export default function Home() {
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
-              <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }}
-                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                {t('home.problemTag', '// OPERATIONAL RISK DIAGNOSIS')}
-              </motion.p>
+
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.75rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
                 {t('home.problemH1', "WHAT YOU CAN'T SEE")}
@@ -410,9 +402,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true, margin: '-80px' }}
             >
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                // THE REAL COST OF CONTAMINATION
-              </p>
+
               <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3rem' }}>
                 One Contamination Event.<br />
                 <span style={{ color: '#FFF12D' }}>$62,000 In Losses.</span>
@@ -491,9 +481,7 @@ export default function Home() {
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
                 <SpotlightCard style={{ background: '#050505', padding: '2.5rem', border: '1px solid #1a1a1a', borderRadius: '12px' }}>
-                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                    {t('home.whyCardTag', '// ASSET PROTECTION TECHNOLOGY')}
-                  </p>
+
                   <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
                     {t('home.whyCardTitle1', 'Your equipment is worth millions.')}<br />{t('home.whyCardTitle2', 'Protect it accordingly.')}
                   </h3>
@@ -520,9 +508,7 @@ export default function Home() {
             style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '1rem', textTransform: 'uppercase' }}>
-                  {t('home.assetTag', '// ASSET PROTECTION STRATEGY')}
-                </p>
+
                 <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>
                   {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
                 </h2>
@@ -534,9 +520,7 @@ export default function Home() {
                 </p>
               </div>
               <div style={{ background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '1.75rem', opacity: 0.8 }}>
-                  // PROTECTION FRAMEWORK
-                </div>
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
                     { step: '01', label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
@@ -562,9 +546,7 @@ export default function Home() {
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
               style={{ marginBottom: '3.5rem' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.7 }}>
-                {t('home.sciTag', '// ENGINEERING STANDARDS')}
-              </p>
+
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.2, marginBottom: '1rem', maxWidth: '700px' }}>
                 {t('home.sciTitle', 'The Science Behind Asset Protection')}
               </h2>
@@ -590,10 +572,7 @@ export default function Home() {
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
-              <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }}
-                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem' }}>
-                {t('home.techTag', '// PROVEN TECHNOLOGY')}
-              </motion.p>
+
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
                 {t('home.techTitle', 'Asset Protection')} <span style={{ color: '#FFF12D' }}>{t('home.techHighlight', 'Technology')}</span>
@@ -622,7 +601,7 @@ export default function Home() {
           {CTA_SLIDES.map((slide, i) => (
             <div key={i} style={{ position: i === activeSlide ? 'relative' : 'absolute', top: i === activeSlide ? undefined : 0, left: i === activeSlide ? undefined : 0, width: '100%', opacity: i === activeSlide ? 1 : 0, transition: 'opacity 0.8s ease', pointerEvents: i === activeSlide ? 'all' : 'none', padding: '5rem 8%' }}>
               <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.25rem' }}>{slide.tag}</p>
+
                 <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
                   {slide.title}<br /><span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
                 </h2>
@@ -654,9 +633,7 @@ export default function Home() {
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
               style={{ marginBottom: '3rem', textAlign: 'center' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '1rem', textTransform: 'uppercase' }}>
-                {t('home.faqTag', '// FREQUENTLY ASKED QUESTIONS')}
-              </p>
+
               <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff' }}>
                 {t('home.faqTitle', 'Common Questions About Industrial Asset Protection')}
               </h2>
