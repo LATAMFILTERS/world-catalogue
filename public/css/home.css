@@ -1,0 +1,323 @@
+/* 
+ * ELIMFILTERS PREMIUM UI
+ * Architecture: Industrial HUD / Asset Protection Dashboard
+ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --y: #FFF12D;
+  --y2: rgba(255, 241, 45, 0.12);
+  --y3: rgba(255, 241, 45, 0.06);
+  --bg: #000;
+  --bg-panel: rgba(10, 10, 10, 0.65);
+  --border: rgba(255, 255, 255, 0.1);
+  --muted: rgba(255, 255, 255, 0.4);
+  --text: #e0e0e0;
+}
+
+html, body {
+  width: 100%; min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ─── PARALLAX BACKGROUND ─── */
+.parallax-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop'); /* Placeholder high-res industrial bg, darkened */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.3;
+}
+
+/* ─── CANVAS (Preserved for particle depth if needed) ─── */
+#nanoflow {
+  position: fixed;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── TOP NAV / LOGO ─── */
+#logo {
+  position: fixed;
+  top: 1.5rem; left: 2rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+.logo-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+}
+
+/* ─── UI LAYER ─── */
+#ui {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem clamp(1rem, 4vw, 2rem) 6rem;
+  gap: 0;
+}
+
+/* ─── HERO TYPOGRAPHY ─── */
+.hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+.hero-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  letter-spacing: 0.2em;
+  color: var(--y);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+}
+
+/* ─── SEARCH PANEL (INDUSTRIAL HUD) ─── */
+#search-panel {
+  width: 100%;
+  max-width: 800px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--y); /* Heavy accent top border */
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+/* ─── TAB SWITCHER ─── */
+.mode-tabs {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+.mode-tab {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: -1px;
+}
+.mode-tab:hover { color: rgba(255,255,255,0.8); }
+.mode-tab.active {
+  color: var(--y);
+  border-bottom-color: var(--y);
+  text-shadow: 0 0 10px rgba(255,241,45,0.3);
+}
+
+/* ─── FORMS ─── */
+.search-form { display: none; flex-direction: column; gap: 1.2rem; }
+.search-form.active { display: flex; }
+
+.field-row { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.field-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.field-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.field-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.field-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  background: rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+.input-wrap:focus-within {
+  border-color: var(--y);
+  box-shadow: 0 0 15px rgba(255,241,45,0.15);
+  background: rgba(0,0,0,0.8);
+}
+.input-wrap.primary { border-color: rgba(255,241,45,0.4); }
+
+.input-icon {
+  padding: 0 1rem;
+  color: rgba(255,255,255,0.3);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.input-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 0.8rem 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.input-wrap input::placeholder { color: rgba(255,255,255,0.2); text-transform: none; }
+
+select {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: #fff; font-family: 'Outfit', sans-serif; font-size: 1rem;
+  padding: 0.8rem 0.5rem 0.8rem 0; cursor: pointer; appearance: none; -webkit-appearance: none;
+}
+select option { background: #111; color: #fff; }
+.select-arrow { padding: 0 1rem; color: rgba(255,255,255,0.3); font-size: 0.8rem; pointer-events: none; }
+
+/* ─── SEARCH BUTTON ─── */
+.btn-search {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #000;
+  background: var(--y);
+  border: none;
+  border-radius: 2px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.btn-search:hover { background: #fff; box-shadow: 0 0 20px rgba(255,241,45,0.4); }
+.btn-search:active { transform: translateY(2px); }
+
+/* ─── HINT PILLS ─── */
+.hint-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.hint-pill {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px; padding: 0.3rem 0.7rem; cursor: pointer; transition: all 0.2s;
+}
+.hint-pill:hover { color: var(--y); border-color: var(--y); background: rgba(255,241,45,0.05); }
+
+/* ─── COMMERCIAL ECOSYSTEM SECTION ─── */
+.ecosystem-section {
+  width: 100%; max-width: 800px; margin-top: 4rem;
+  text-align: center;
+}
+.ecosystem-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+}
+.ecosystem-label::before, .ecosystem-label::after {
+  content: ''; height: 1px; width: 40px; background: rgba(255,255,255,0.1);
+}
+
+.comm-systems {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+}
+.comm-card {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  padding: 2rem; background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+  text-decoration: none; transition: all 0.3s ease;
+  position: relative; overflow: hidden;
+}
+.comm-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.comm-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.comm-card:hover::before { opacity: 1; }
+
+.comm-card.marine:hover { border-color: rgba(100,200,255,0.5); box-shadow: 0 10px 30px rgba(100,200,255,0.1); }
+.comm-card.dura:hover { border-color: rgba(255,241,45,0.5); box-shadow: 0 10px 30px rgba(255,241,45,0.1); }
+
+.comm-badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.comm-card.marine .comm-badge { color: rgba(100,200,255,0.8); }
+.comm-card.dura .comm-badge { color: rgba(255,241,45,0.8); }
+
+.comm-title {
+  font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.05em;
+  color: #fff; margin-bottom: 0.5rem;
+}
+.comm-desc {
+  font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+
+/* ─── FOOTER ─── */
+#footer {
+  position: relative; z-index: 10; text-align: center; padding: 3rem 2rem;
+  margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.8);
+}
+.footer-line { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); }
+.footer-line a { color: var(--y); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+.footer-line a:hover { opacity: 1; }
+
+/* ─── AUTOCOMPLETE (HUD STYLE) ─── */
+.ac-wrap { position: relative; width: 100%; }
+.ac-dropdown {
+  display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,241,45,0.3); border-radius: 2px; overflow: hidden; z-index: 500;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8); max-height: 300px; overflow-y: auto;
+}
+.ac-dropdown.open { display: block; }
+.ac-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.8rem 1.2rem; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.2s;
+}
+.ac-item:hover, .ac-item.highlighted { background: rgba(255,241,45,0.1); }
+.ac-code { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.05em; color: #fff; }
+.ac-code mark { background: transparent; color: var(--y); font-weight: 700; text-shadow: 0 0 8px rgba(255,241,45,0.5); }
+.ac-type { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 0.75rem; }
+  #search-panel { padding: 1.5rem; }
+  .comm-systems { grid-template-columns: 1fr; }
+  .field-row.cols-2, .field-row.cols-3 { grid-template-columns: 1fr; }
+}

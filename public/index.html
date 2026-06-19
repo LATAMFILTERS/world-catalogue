@@ -13,703 +13,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --y: #FFF12D;
-      --y2: rgba(255,241,45,0.12);
-      --y3: rgba(255,241,45,0.06);
-      --bg: #000;
-      --border: rgba(255,255,255,0.07);
-      --muted: rgba(255,255,255,0.35);
-    }
-
-    html, body {
-      width: 100%; min-height: 100%;
-      background: var(--bg);
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ─── SPLASH SCREEN ─── */
-    #cinematic-splash {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      z-index: 9999;
-      transition: opacity 1s ease-in-out;
-    }
-    #splash-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      cursor: pointer;
-    }
-    .splash-hint {
-      position: absolute;
-      bottom: 30px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-      pointer-events: none;
-      animation: pulseHint 2s infinite;
-    }
-    @keyframes pulseHint {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.6; }
-    }
-
-    /* ─── CANVAS ─── */
-    #nanoflow {
-      position: fixed;
-      inset: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* ─── LOGO ─── */
-    #logo {
-      position: fixed;
-      top: 1.5rem; left: 2rem;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-    }
-    .logo-text {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.5);
-    }
-    .logo-text span { color: var(--y); }
-    .logo-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 2px;
-      padding: 0.15rem 0.4rem;
-    }
-
-    /* ─── SKIP ─── */
-    #skip-btn {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      z-index: 200;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.2);
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 2px;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      transition: color 0.25s, border-color 0.25s;
-    }
-    #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
-
-    /* ─── UI LAYER ─── */
-    #ui {
-      position: relative;
-      z-index: 10;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem clamp(1rem, 4vw, 2rem) 4rem;
-      gap: 0;
-    }
-
-    /* ─── INTRO LABEL ─── */
-    .intro-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(1.3rem, 5.2vw, 2.08rem);
-      letter-spacing: 0.05em;
-      color: var(--y);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 1s ease, transform 1s ease;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .intro-label.vis { opacity: 1; transform: translateY(0); }
-
-    /* ─── SEARCH PANEL ─── */
-    #search-panel {
-      width: 100%;
-      max-width: 720px;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-      pointer-events: none;
-    }
-    #search-panel.vis {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-
-    /* ─── TAB SWITCHER ─── */
-    .mode-tabs {
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 1.5rem;
-      gap: 0;
-    }
-    .mode-tab {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.94rem;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 0.65rem 1.2rem;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-      margin-bottom: -1px;
-      white-space: nowrap;
-    }
-    .mode-tab:hover { color: rgba(255,255,255,0.7); }
-    .mode-tab.active {
-      color: var(--y);
-      border-bottom-color: var(--y);
-    }
-
-    /* ─── FORMS ─── */
-    .search-form { display: none; flex-direction: column; gap: 0.85rem; }
-    .search-form.active { display: flex; }
-
-    .field-row {
-      display: grid;
-      gap: 0.65rem;
-      grid-template-columns: 1fr;
-    }
-    .field-row.cols-2 { grid-template-columns: 1fr 1fr; }
-    .field-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .field-label {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-    }
-
-    .input-wrap {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(255,241,45,0.28);
-      border-radius: 3px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(16px);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .input-wrap:focus-within {
-      border-color: var(--y);
-      box-shadow: 0 0 0 3px rgba(255,241,45,0.06);
-    }
-    .input-wrap.primary { border-color: rgba(255,241,45,0.4); }
-
-    .input-icon {
-      padding: 0 0.9rem;
-      color: rgba(255,255,255,0.25);
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .input-wrap input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      padding: 0.6rem 0;
-      letter-spacing: 0.04em;
-      min-width: 0;
-      text-transform: uppercase;
-    }
-    .input-wrap input::placeholder { color: rgba(255,255,255,0.12); text-transform: none; }
-
-    select {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
-      padding: 0.65rem 0.5rem 0.65rem 0;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    select option { 
-      background: #111; 
-      color: #fff; 
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-    }
-
-    .select-arrow {
-      padding: 0 0.9rem;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.7rem;
-      pointer-events: none;
-    }
-
-    /* ─── SEARCH BUTTON ─── */
-    .btn-search {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      letter-spacing: 0.16em;
-      color: #000;
-      background: var(--y);
-      border: none;
-      border-radius: 3px;
-      padding: 0.75rem 2rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .btn-search:hover { background: #ffe800; }
-    .btn-search:active { transform: scale(0.97); }
-
-    .form-footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.65rem;
-      margin-top: 1rem;
-    }
-
-    /* ─── HINT PILLS ─── */
-    .hint-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .hint-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 100px;
-      padding: 0.22rem 0.6rem;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
-
-    /* ─── COMMERCIAL SYSTEMS ─── */
-    .comm-systems {
-      width: 100%; max-width: 720px;
-      margin-top: 2rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-    }
-    #search-panel.vis + .comm-systems { opacity: 1; transform: translateY(0); }
-    
-    .comm-card {
-      display: flex; flex-direction: column; gap: 0.3rem;
-      padding: 1.2rem;
-      background: rgba(255,255,255,0.015);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 4px;
-      text-decoration: none;
-      transition: border-color 0.25s, background 0.25s;
-      position: relative; overflow: hidden;
-    }
-    .comm-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .comm-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
-    .comm-card:hover::before { opacity: 1; }
-    
-    .comm-card.marine:hover { border-color: rgba(100,200,255,0.3); }
-    .comm-card.dura:hover { border-color: rgba(255,241,45,0.3); }
-
-    .comm-badge {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em;
-      color: var(--muted); text-transform: uppercase;
-    }
-    .comm-card.marine .comm-badge { color: rgba(100,200,255,0.6); }
-    .comm-card.dura .comm-badge { color: rgba(255,241,45,0.6); }
-
-    .comm-title {
-      font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em;
-      color: rgba(255,255,255,0.9); margin-top: 0.2rem;
-    }
-    .comm-desc {
-      font-family: 'Outfit', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.4);
-      line-height: 1.4;
-    }
-
-    /* ─── AUTOCOMPLETE DROPDOWN ─── */
-    .ac-wrap {
-      position: relative;
-      width: 100%;
-    }
-    .ac-dropdown {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0; right: 0;
-      background: #0d0d0d;
-      border: 1px solid rgba(255,241,45,0.18);
-      border-radius: 6px;
-      overflow: hidden;
-      z-index: 500;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.7);
-      max-height: 260px;
-      overflow-y: auto;
-    }
-    .ac-dropdown.open { display: block; }
-    .ac-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.8rem;
-      padding: 0.6rem 1rem;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      transition: background 0.15s;
-    }
-    .ac-item:last-child { border-bottom: none; }
-    .ac-item:hover, .ac-item.highlighted {
-      background: rgba(255,241,45,0.07);
-    }
-    .ac-code {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      color: #fff;
-    }
-    .ac-code mark {
-      background: transparent;
-      color: var(--y);
-      font-weight: 600;
-    }
-    .ac-type {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .ac-empty {
-      padding: 0.7rem 1rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.06em;
-    }
-
-    /* ─── RESULTS ─── */
-    #results {
-      width: 100%;
-      max-width: 720px;
-      margin-top: 2.5rem;
-    }
-
-    .results-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.1rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .results-count {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-    .results-mode {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,241,45,0.5);
-      border: 1px solid rgba(255,241,45,0.15);
-      border-radius: 2px;
-      padding: 0.18rem 0.5rem;
-    }
-
-    /* ─── RESULT CARD ─── */
-    .result-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 0.7rem;
-      background: rgba(255,255,255,0.012);
-      transition: border-color 0.2s, background 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .result-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--y3) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .result-card:hover { border-color: rgba(255,241,45,0.22); }
-    .result-card:hover::before { opacity: 1; }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .card-left { display: flex; flex-direction: column; gap: 0.3rem; }
-
-    .card-sku {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--y);
-      letter-spacing: 0.07em;
-    }
-    .card-base {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      align-items: flex-start;
-    }
-    .ctag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.54rem;
-      letter-spacing: 0.1em;
-      padding: 0.18rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .ctag.tech {
-      border-color: rgba(255,241,45,0.22);
-      color: rgba(255,241,45,0.7);
-      background: rgba(255,241,45,0.04);
-    }
-    .ctag.duty {
-      border-color: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.55);
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.55;
-      margin-top: 0.6rem;
-      position: relative;
-    }
-
-    /* ─── SPECS GRID ─── */
-    .card-specs {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 0.75rem 1rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      position: relative;
-    }
-    .spec {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .spec-l {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.25);
-      text-transform: uppercase;
-    }
-    .spec-v {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.82);
-    }
-
-    /* ─── REFS ─── */
-    .card-refs {
-      margin-top: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      position: relative;
-    }
-    .ref-line {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.28);
-      line-height: 1.7;
-    }
-    .ref-brand {
-      color: rgba(255,255,255,0.5);
-      margin-right: 0.4rem;
-    }
-
-    /* ─── EQUIPMENT APPS ─── */
-    .card-equipment {
-      margin-top: 0.85rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      position: relative;
-    }
-    .equip-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.52rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.25);
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .equip-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-    }
-    .equip-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 2px;
-      padding: 0.18rem 0.5rem;
-    }
-
-    /* ─── STATUS MESSAGES ─── */
-    .status-msg {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.25);
-      text-align: center;
-      padding: 3rem 0;
-      letter-spacing: 0.08em;
-    }
-    .status-msg em {
-      display: block;
-      font-style: normal;
-      margin-top: 0.5rem;
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.15);
-    }
-
-    /* ─── LOADING DOTS ─── */
-    .loading-dots::after {
-      content: '...';
-      animation: dots 1.2s steps(3, end) infinite;
-    }
-    @keyframes dots {
-      0%   { content: '.'; }
-      33%  { content: '..'; }
-      66%  { content: '...'; }
-    }
-
-    /* ─── KLEO BADGE ─── */
-    #kleo-badge {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 3vw;
-      z-index: 200;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.25rem;
-      text-decoration: none;
-      opacity: 0.45;
-      transition: opacity 0.3s ease;
-    }
-    #kleo-badge:hover { opacity: 0.85; }
-    #kleo-badge img {
-      height: 55px;
-      width: auto;
-      object-fit: contain;
-    }
-    #kleo-badge .kleo-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.42rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-    }
-
-    /* ─── FOOTER ─── */
-    #footer {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-    .footer-line {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.15);
-    }
-    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
-    .footer-line a:hover { color: var(--y); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 640px) {
-      .field-row.cols-2,
-      .field-row.cols-3 { grid-template-columns: 1fr; }
-      .mode-tab { padding: 0.55rem 0.75rem; font-size: 0.55rem; }
-      .card-specs { grid-template-columns: repeat(2, 1fr); }
-      #logo { top: 1rem; left: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+
+<!-- ─── PARALLAX BACKGROUND ─── -->
+<div class="parallax-bg"></div>
 
 <!-- ─── CINEMATIC SPLASH ─── -->
 <div id="cinematic-splash" style="display: none;">
@@ -724,15 +33,12 @@
   <span class="logo-badge" id="logo-badge">PART SEARCH</span>
 </a>
 
-<button id="skip-btn">SKIP INTRO ›</button>
-
-<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
-  <img src="/Leo-fn.avif" alt="KLEO Technology">
-  <span class="kleo-label">Powered by KLEO</span>
-</a>
+<button id="skip-btn" style="position:fixed; bottom:2rem; right:2rem; z-index:200; font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.14em; color:rgba(255,255,255,0.2); background:transparent; border:1px solid rgba(255,255,255,0.07); border-radius:2px; padding:0.4rem 0.8rem; cursor:pointer;">SKIP INTRO ›</button>
 
 <div id="ui">
-  <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
+  <!-- ── HERO SECTION ── -->
+  <h1 class="hero-title">TOTAL ASSET PROTECTION</h1>
+  <p class="hero-subtitle" id="intro-label">// THE INTELLIGENT FILTRATION METROLOGY SYSTEM</p>
 
   <!-- ── SEARCH PANEL ── -->
   <div id="search-panel">
@@ -747,14 +53,14 @@
     <!-- ── FORM: PART NUMBER ── -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
-        <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
+        <label class="field-label" for="inp-part" id="lbl-part">Part number / Cross-Reference</label>
         <div class="input-wrap primary ac-wrap">
           <span class="input-icon" aria-hidden="true">⌕</span>
           <input
             type="search"
             id="inp-part"
             name="code"
-            placeholder="Enter part number..."
+            placeholder="Enter Elimfilters SKU, OEM, or Competitor code..."
             spellcheck="false"
             autocomplete="off"
             aria-label="Part number"
@@ -765,9 +71,7 @@
           <div id="ac-list" class="ac-dropdown" role="listbox" aria-label="Suggestions"></div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-part">INITIALIZE SEARCH →</button>
     </form>
 
     <!-- ── FORM: VIN / MODEL ── -->
@@ -781,7 +85,7 @@
               type="text"
               id="inp-vin-model"
               name="model"
-              placeholder="Enter model..."
+              placeholder="e.g. HILUX, RANGER..."
               spellcheck="false"
             />
           </div>
@@ -794,15 +98,13 @@
               type="text"
               id="inp-vin-engine"
               name="engine"
-              placeholder="Enter engine..."
+              placeholder="e.g. 1GD, 3.2L..."
               spellcheck="false"
             />
           </div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-vin">INITIALIZE SEARCH →</button>
     </form>
 
     <!-- ── FORM: EQUIPMENT ── -->
@@ -816,7 +118,7 @@
               type="text"
               id="inp-equip-model"
               name="model"
-              placeholder="Enter equipment model..."
+              placeholder="e.g. CAT 336..."
               spellcheck="false"
             />
           </div>
@@ -832,53 +134,50 @@
               <option value="LOADER">Wheel Loader</option>
               <option value="CRANE">Crane</option>
               <option value="TRUCK">Mining Truck</option>
-              <option value="DRILL">Drill Rig</option>
-              <option value="COMPRESSOR">Compressor</option>
-              <option value="GENERATOR">Generator</option>
               <option value="MARINE">Marine / Vessel</option>
-              <option value="AGRICULTURAL">Agricultural</option>
-              <option value="FORKLIFT">Forklift</option>
+              <option value="GENERATOR">Generator</option>
             </select>
             <span class="select-arrow" aria-hidden="true">▾</span>
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
+          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
               type="text"
               id="inp-equip-engine"
               name="engine"
-              placeholder="Enter engine..."
+              placeholder="Optional..."
               spellcheck="false"
             />
           </div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-equip">INITIALIZE SEARCH →</button>
     </form>
 
   </div><!-- /search-panel -->
 
-  <!-- ── COMMERCIAL SYSTEMS ── -->
-  <div class="comm-systems">
-    <a href="#" class="comm-card marine" aria-label="MarineClean System">
-      <span class="comm-badge" id="cb-marine">SYSTEM</span>
-      <span class="comm-title" id="ct-marine">MARINECLEAN™</span>
-      <span class="comm-desc" id="cd-marine">Total filtration consolidation for maritime environments.</span>
-    </a>
-    <a href="#" class="comm-card dura" aria-label="Duratech Kits">
-      <span class="comm-badge" id="cb-dura">FLEET KITS</span>
-      <span class="comm-title" id="ct-dura">DURATECH</span>
-      <span class="comm-desc" id="cd-dura">Complete heavy duty kits for transport and fleet overhaul.</span>
-    </a>
+  <!-- ── COMMERCIAL ECOSYSTEMS ── -->
+  <div class="ecosystem-section">
+    <div class="ecosystem-label">// INTEGRATED DEFENSE ECOSYSTEMS</div>
+    <div class="comm-systems">
+      <a href="#" class="comm-card marine" aria-label="MarineClean System">
+        <span class="comm-badge" id="cb-marine">SYSTEM</span>
+        <span class="comm-title" id="ct-marine">MARINECLEAN™</span>
+        <span class="comm-desc" id="cd-marine">Total filtration consolidation engineered for extreme maritime and high-salinity environments.</span>
+      </a>
+      <a href="#" class="comm-card dura" aria-label="Duratech Kits">
+        <span class="comm-badge" id="cb-dura">FLEET KITS</span>
+        <span class="comm-title" id="ct-dura">DURATECH</span>
+        <span class="comm-desc" id="cd-dura">Complete Heavy Duty protection kits designed for transport and heavy fleet overhauls.</span>
+      </a>
+    </div>
   </div>
 
   <!-- ── RESULTS ── -->
-  <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
+  <div id="results" role="region" aria-live="polite" aria-label="Search results" style="width:100%; max-width:800px; margin-top:3rem;"></div>
 
 </div><!-- /ui -->
 
@@ -889,7 +188,7 @@
     <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands.
   </p>
 </footer>
 
