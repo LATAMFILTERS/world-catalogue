@@ -1,0 +1,1658 @@
+{
+  "generated_at": "2026-06-18T23:56:47.413Z",
+  "sku_drop_analysis": {
+    "original_total_rows": 7833,
+    "final_db_count": 6306,
+    "exact_duplicates_collapsed": 1527,
+    "empty_skus": 0,
+    "invalid_skus": 0
+  },
+  "table_cardinality": {
+    "ld_product_catalog": {
+      "total_rows": 6306,
+      "distinct_skus": 6306
+    },
+    "ld_production_readiness": {
+      "total_rows": 6306,
+      "distinct_skus": 6306
+    },
+    "ld_competitor_cross_references": {
+      "total_rows": 63528,
+      "distinct_skus": 773
+    },
+    "ld_oem_cross_references": {
+      "total_rows": 5843,
+      "distinct_skus": 219
+    },
+    "ld_vehicle_applications": {
+      "total_rows": 282252,
+      "distinct_skus": 4210
+    },
+    "ld_product_specifications": {
+      "total_rows": 1124,
+      "distinct_skus": 228
+    }
+  },
+  "consistency_validation": {
+    "no_orphans": true,
+    "no_broken_refs": true,
+    "no_duplicate_pks": true
+  },
+  "top_100_skus": {
+    "competitor_refs": [
+      {
+        "sku": "EL51261",
+        "count": 925
+      },
+      {
+        "sku": "EL57181",
+        "count": 695
+      },
+      {
+        "sku": "EL54022",
+        "count": 655
+      },
+      {
+        "sku": "EL51253",
+        "count": 647
+      },
+      {
+        "sku": "EL51292",
+        "count": 647
+      },
+      {
+        "sku": "EL51214",
+        "count": 647
+      },
+      {
+        "sku": "EL51223",
+        "count": 647
+      },
+      {
+        "sku": "EL57125",
+        "count": 647
+      },
+      {
+        "sku": "EL51224",
+        "count": 647
+      },
+      {
+        "sku": "EL57123",
+        "count": 647
+      },
+      {
+        "sku": "EL52810",
+        "count": 647
+      },
+      {
+        "sku": "EL51226",
+        "count": 647
+      },
+      {
+        "sku": "EL51239",
+        "count": 647
+      },
+      {
+        "sku": "EL51294",
+        "count": 647
+      },
+      {
+        "sku": "EL54310",
+        "count": 647
+      },
+      {
+        "sku": "EL51218",
+        "count": 647
+      },
+      {
+        "sku": "EL51212",
+        "count": 647
+      },
+      {
+        "sku": "EL51234",
+        "count": 647
+      },
+      {
+        "sku": "EL51273",
+        "count": 647
+      },
+      {
+        "sku": "EL51222",
+        "count": 647
+      },
+      {
+        "sku": "EL57126",
+        "count": 647
+      },
+      {
+        "sku": "EL57122",
+        "count": 647
+      },
+      {
+        "sku": "EL51211",
+        "count": 647
+      },
+      {
+        "sku": "EL51219",
+        "count": 647
+      },
+      {
+        "sku": "EL51281",
+        "count": 647
+      },
+      {
+        "sku": "EL59210",
+        "count": 647
+      },
+      {
+        "sku": "EL51290",
+        "count": 647
+      },
+      {
+        "sku": "EL53410",
+        "count": 647
+      },
+      {
+        "sku": "EL57127",
+        "count": 647
+      },
+      {
+        "sku": "EL51237",
+        "count": 647
+      },
+      {
+        "sku": "EL51235",
+        "count": 647
+      },
+      {
+        "sku": "EL51275",
+        "count": 647
+      },
+      {
+        "sku": "EL51283",
+        "count": 647
+      },
+      {
+        "sku": "EL57121",
+        "count": 647
+      },
+      {
+        "sku": "EL51260",
+        "count": 647
+      },
+      {
+        "sku": "EC52368",
+        "count": 558
+      },
+      {
+        "sku": "EL59202",
+        "count": 556
+      },
+      {
+        "sku": "EL59627",
+        "count": 543
+      },
+      {
+        "sku": "EL56213",
+        "count": 543
+      },
+      {
+        "sku": "EL56271",
+        "count": 543
+      },
+      {
+        "sku": "EL56232",
+        "count": 543
+      },
+      {
+        "sku": "EL52610",
+        "count": 543
+      },
+      {
+        "sku": "EL54023",
+        "count": 516
+      },
+      {
+        "sku": "EL59161",
+        "count": 487
+      },
+      {
+        "sku": "EL59142",
+        "count": 486
+      },
+      {
+        "sku": "EL50914",
+        "count": 486
+      },
+      {
+        "sku": "EL56110",
+        "count": 473
+      },
+      {
+        "sku": "EL52081",
+        "count": 445
+      },
+      {
+        "sku": "EL59201",
+        "count": 445
+      },
+      {
+        "sku": "EL59203",
+        "count": 445
+      },
+      {
+        "sku": "EL59205",
+        "count": 445
+      },
+      {
+        "sku": "EL52021",
+        "count": 445
+      },
+      {
+        "sku": "EL59209",
+        "count": 445
+      },
+      {
+        "sku": "EL52036",
+        "count": 445
+      },
+      {
+        "sku": "EL52022",
+        "count": 445
+      },
+      {
+        "sku": "EL52012",
+        "count": 445
+      },
+      {
+        "sku": "EL52019",
+        "count": 445
+      },
+      {
+        "sku": "EL52015",
+        "count": 445
+      },
+      {
+        "sku": "EL52025",
+        "count": 445
+      },
+      {
+        "sku": "EL52018",
+        "count": 445
+      },
+      {
+        "sku": "EL50610",
+        "count": 445
+      },
+      {
+        "sku": "EL52013",
+        "count": 445
+      },
+      {
+        "sku": "EL59204",
+        "count": 445
+      },
+      {
+        "sku": "EL52026",
+        "count": 445
+      },
+      {
+        "sku": "EL52016",
+        "count": 445
+      },
+      {
+        "sku": "EL59302",
+        "count": 415
+      },
+      {
+        "sku": "EL59304",
+        "count": 411
+      },
+      {
+        "sku": "EL59301",
+        "count": 411
+      },
+      {
+        "sku": "EL59308",
+        "count": 411
+      },
+      {
+        "sku": "EL53014",
+        "count": 411
+      },
+      {
+        "sku": "EL53019",
+        "count": 411
+      },
+      {
+        "sku": "EL57023",
+        "count": 404
+      },
+      {
+        "sku": "EL54017",
+        "count": 390
+      },
+      {
+        "sku": "EL50510",
+        "count": 390
+      },
+      {
+        "sku": "EL54070",
+        "count": 390
+      },
+      {
+        "sku": "EL54025",
+        "count": 390
+      },
+      {
+        "sku": "EL54011",
+        "count": 390
+      },
+      {
+        "sku": "EL59409",
+        "count": 390
+      },
+      {
+        "sku": "EL52510",
+        "count": 390
+      },
+      {
+        "sku": "EL54016",
+        "count": 390
+      },
+      {
+        "sku": "EL59407",
+        "count": 390
+      },
+      {
+        "sku": "EL54048",
+        "count": 390
+      },
+      {
+        "sku": "EL54012",
+        "count": 390
+      },
+      {
+        "sku": "EL54015",
+        "count": 390
+      },
+      {
+        "sku": "EL55110",
+        "count": 390
+      },
+      {
+        "sku": "EL54032",
+        "count": 390
+      },
+      {
+        "sku": "EL52941",
+        "count": 356
+      },
+      {
+        "sku": "EL50773",
+        "count": 353
+      },
+      {
+        "sku": "EL53125",
+        "count": 347
+      },
+      {
+        "sku": "EL51262",
+        "count": 279
+      },
+      {
+        "sku": "EL51265",
+        "count": 279
+      },
+      {
+        "sku": "EA51201",
+        "count": 250
+      },
+      {
+        "sku": "EL53001",
+        "count": 230
+      },
+      {
+        "sku": "EL54510",
+        "count": 220
+      },
+      {
+        "sku": "EL51408",
+        "count": 215
+      },
+      {
+        "sku": "EA51651",
+        "count": 215
+      },
+      {
+        "sku": "EL54053",
+        "count": 215
+      },
+      {
+        "sku": "EL51456",
+        "count": 214
+      },
+      {
+        "sku": "EL56019",
+        "count": 213
+      },
+      {
+        "sku": "EL51022",
+        "count": 213
+      }
+    ],
+    "oem_refs": [
+      {
+        "sku": "EL51261",
+        "count": 127
+      },
+      {
+        "sku": "EL51235",
+        "count": 102
+      },
+      {
+        "sku": "EL52810",
+        "count": 102
+      },
+      {
+        "sku": "EL51281",
+        "count": 102
+      },
+      {
+        "sku": "EL51211",
+        "count": 102
+      },
+      {
+        "sku": "EL57123",
+        "count": 102
+      },
+      {
+        "sku": "EL51273",
+        "count": 102
+      },
+      {
+        "sku": "EL51237",
+        "count": 102
+      },
+      {
+        "sku": "EL59210",
+        "count": 102
+      },
+      {
+        "sku": "EL57125",
+        "count": 102
+      },
+      {
+        "sku": "EL51253",
+        "count": 102
+      },
+      {
+        "sku": "EL51223",
+        "count": 102
+      },
+      {
+        "sku": "EL51239",
+        "count": 102
+      },
+      {
+        "sku": "EL51226",
+        "count": 102
+      },
+      {
+        "sku": "EL51219",
+        "count": 102
+      },
+      {
+        "sku": "EL53410",
+        "count": 102
+      },
+      {
+        "sku": "EL51292",
+        "count": 102
+      },
+      {
+        "sku": "EL51234",
+        "count": 102
+      },
+      {
+        "sku": "EL51224",
+        "count": 102
+      },
+      {
+        "sku": "EL57127",
+        "count": 102
+      },
+      {
+        "sku": "EL51290",
+        "count": 102
+      },
+      {
+        "sku": "EL51283",
+        "count": 102
+      },
+      {
+        "sku": "EL54310",
+        "count": 102
+      },
+      {
+        "sku": "EL57126",
+        "count": 102
+      },
+      {
+        "sku": "EL51212",
+        "count": 102
+      },
+      {
+        "sku": "EL57121",
+        "count": 102
+      },
+      {
+        "sku": "EL51222",
+        "count": 102
+      },
+      {
+        "sku": "EL51294",
+        "count": 102
+      },
+      {
+        "sku": "EL51260",
+        "count": 102
+      },
+      {
+        "sku": "EL57122",
+        "count": 102
+      },
+      {
+        "sku": "EL51214",
+        "count": 102
+      },
+      {
+        "sku": "EL51275",
+        "count": 102
+      },
+      {
+        "sku": "EL51218",
+        "count": 102
+      },
+      {
+        "sku": "EL57023",
+        "count": 85
+      },
+      {
+        "sku": "EL57181",
+        "count": 85
+      },
+      {
+        "sku": "EC52368",
+        "count": 60
+      },
+      {
+        "sku": "EL54022",
+        "count": 55
+      },
+      {
+        "sku": "EL56019",
+        "count": 41
+      },
+      {
+        "sku": "EL54023",
+        "count": 35
+      },
+      {
+        "sku": "EL50773",
+        "count": 34
+      },
+      {
+        "sku": "EL59202",
+        "count": 32
+      },
+      {
+        "sku": "EA51201",
+        "count": 32
+      },
+      {
+        "sku": "EL52021",
+        "count": 30
+      },
+      {
+        "sku": "EL52022",
+        "count": 30
+      },
+      {
+        "sku": "EL52025",
+        "count": 30
+      },
+      {
+        "sku": "EL59205",
+        "count": 30
+      },
+      {
+        "sku": "EL52036",
+        "count": 30
+      },
+      {
+        "sku": "EL50610",
+        "count": 30
+      },
+      {
+        "sku": "EL52016",
+        "count": 30
+      },
+      {
+        "sku": "EL52026",
+        "count": 30
+      },
+      {
+        "sku": "EL52018",
+        "count": 30
+      },
+      {
+        "sku": "EL59209",
+        "count": 30
+      },
+      {
+        "sku": "EL52019",
+        "count": 30
+      },
+      {
+        "sku": "EL52012",
+        "count": 30
+      },
+      {
+        "sku": "EL59203",
+        "count": 30
+      },
+      {
+        "sku": "EL59201",
+        "count": 30
+      },
+      {
+        "sku": "EL52013",
+        "count": 30
+      },
+      {
+        "sku": "EL59204",
+        "count": 30
+      },
+      {
+        "sku": "EL52081",
+        "count": 30
+      },
+      {
+        "sku": "EL50793",
+        "count": 30
+      },
+      {
+        "sku": "EL52015",
+        "count": 30
+      },
+      {
+        "sku": "EL59304",
+        "count": 29
+      },
+      {
+        "sku": "EL53014",
+        "count": 29
+      },
+      {
+        "sku": "EL53019",
+        "count": 29
+      },
+      {
+        "sku": "EL59308",
+        "count": 29
+      },
+      {
+        "sku": "EL59302",
+        "count": 29
+      },
+      {
+        "sku": "EL59301",
+        "count": 29
+      },
+      {
+        "sku": "EL54015",
+        "count": 28
+      },
+      {
+        "sku": "EL54016",
+        "count": 28
+      },
+      {
+        "sku": "EL54011",
+        "count": 28
+      },
+      {
+        "sku": "EL54012",
+        "count": 28
+      },
+      {
+        "sku": "EL59142",
+        "count": 28
+      },
+      {
+        "sku": "EL54017",
+        "count": 28
+      },
+      {
+        "sku": "EL54070",
+        "count": 28
+      },
+      {
+        "sku": "EL50510",
+        "count": 28
+      },
+      {
+        "sku": "EL54032",
+        "count": 28
+      },
+      {
+        "sku": "EL54048",
+        "count": 28
+      },
+      {
+        "sku": "EL59161",
+        "count": 28
+      },
+      {
+        "sku": "EL54025",
+        "count": 28
+      },
+      {
+        "sku": "EL55110",
+        "count": 28
+      },
+      {
+        "sku": "EL59409",
+        "count": 28
+      },
+      {
+        "sku": "EL52510",
+        "count": 28
+      },
+      {
+        "sku": "EL59407",
+        "count": 28
+      },
+      {
+        "sku": "EL50914",
+        "count": 28
+      },
+      {
+        "sku": "EL56110",
+        "count": 28
+      },
+      {
+        "sku": "EL51265",
+        "count": 25
+      },
+      {
+        "sku": "EL51262",
+        "count": 25
+      },
+      {
+        "sku": "EL54053",
+        "count": 24
+      },
+      {
+        "sku": "EL51408",
+        "count": 24
+      },
+      {
+        "sku": "EL56213",
+        "count": 21
+      },
+      {
+        "sku": "EL56232",
+        "count": 21
+      },
+      {
+        "sku": "EL52610",
+        "count": 21
+      },
+      {
+        "sku": "EL56271",
+        "count": 21
+      },
+      {
+        "sku": "EL59627",
+        "count": 21
+      },
+      {
+        "sku": "EC52131",
+        "count": 20
+      },
+      {
+        "sku": "EL52941",
+        "count": 18
+      },
+      {
+        "sku": "EF59504",
+        "count": 17
+      },
+      {
+        "sku": "EF56031",
+        "count": 17
+      },
+      {
+        "sku": "EA51651",
+        "count": 15
+      },
+      {
+        "sku": "EA53795",
+        "count": 14
+      }
+    ],
+    "applications": [
+      {
+        "sku": "EF58222",
+        "count": 1907
+      },
+      {
+        "sku": "EF58226",
+        "count": 1877
+      },
+      {
+        "sku": "EA57040",
+        "count": 1798
+      },
+      {
+        "sku": "EF50731",
+        "count": 1551
+      },
+      {
+        "sku": "EC50013",
+        "count": 1522
+      },
+      {
+        "sku": "EL59130",
+        "count": 1359
+      },
+      {
+        "sku": "EL59125",
+        "count": 1160
+      },
+      {
+        "sku": "EC53007",
+        "count": 1134
+      },
+      {
+        "sku": "EC51005",
+        "count": 1106
+      },
+      {
+        "sku": "EA50071",
+        "count": 1078
+      },
+      {
+        "sku": "EF58221",
+        "count": 1025
+      },
+      {
+        "sku": "EF52310",
+        "count": 1018
+      },
+      {
+        "sku": "EL59401",
+        "count": 1008
+      },
+      {
+        "sku": "EL59132",
+        "count": 999
+      },
+      {
+        "sku": "EL58003",
+        "count": 988
+      },
+      {
+        "sku": "EF58041",
+        "count": 954
+      },
+      {
+        "sku": "EC51919",
+        "count": 933
+      },
+      {
+        "sku": "EL54024",
+        "count": 904
+      },
+      {
+        "sku": "EA52102",
+        "count": 894
+      },
+      {
+        "sku": "EA55001",
+        "count": 884
+      },
+      {
+        "sku": "EL51283",
+        "count": 877
+      },
+      {
+        "sku": "EA59002",
+        "count": 876
+      },
+      {
+        "sku": "EL50725",
+        "count": 846
+      },
+      {
+        "sku": "EL51180",
+        "count": 822
+      },
+      {
+        "sku": "EL59405",
+        "count": 799
+      },
+      {
+        "sku": "EA51919",
+        "count": 798
+      },
+      {
+        "sku": "EF50723",
+        "count": 795
+      },
+      {
+        "sku": "EL50250",
+        "count": 791
+      },
+      {
+        "sku": "EL51033",
+        "count": 791
+      },
+      {
+        "sku": "EA52939",
+        "count": 787
+      },
+      {
+        "sku": "EL51032",
+        "count": 783
+      },
+      {
+        "sku": "EL59019",
+        "count": 768
+      },
+      {
+        "sku": "EL51294",
+        "count": 765
+      },
+      {
+        "sku": "EC52011",
+        "count": 742
+      },
+      {
+        "sku": "EA54179",
+        "count": 732
+      },
+      {
+        "sku": "EL59005",
+        "count": 727
+      },
+      {
+        "sku": "EF58422",
+        "count": 726
+      },
+      {
+        "sku": "EL57053",
+        "count": 726
+      },
+      {
+        "sku": "EA56025",
+        "count": 724
+      },
+      {
+        "sku": "EL59808",
+        "count": 718
+      },
+      {
+        "sku": "EL59507",
+        "count": 707
+      },
+      {
+        "sku": "EF56002",
+        "count": 685
+      },
+      {
+        "sku": "EF58224",
+        "count": 669
+      },
+      {
+        "sku": "EL59501",
+        "count": 654
+      },
+      {
+        "sku": "EC51006",
+        "count": 651
+      },
+      {
+        "sku": "EF50842",
+        "count": 645
+      },
+      {
+        "sku": "EL59626",
+        "count": 641
+      },
+      {
+        "sku": "EF50051",
+        "count": 636
+      },
+      {
+        "sku": "EF50911",
+        "count": 629
+      },
+      {
+        "sku": "EL51290",
+        "count": 622
+      },
+      {
+        "sku": "EF55021",
+        "count": 618
+      },
+      {
+        "sku": "EA54401",
+        "count": 618
+      },
+      {
+        "sku": "EC51004",
+        "count": 617
+      },
+      {
+        "sku": "EL51121",
+        "count": 606
+      },
+      {
+        "sku": "EL57120",
+        "count": 604
+      },
+      {
+        "sku": "EA51005",
+        "count": 603
+      },
+      {
+        "sku": "EF56122",
+        "count": 588
+      },
+      {
+        "sku": "EF50929",
+        "count": 587
+      },
+      {
+        "sku": "EA56009",
+        "count": 585
+      },
+      {
+        "sku": "EA59009",
+        "count": 581
+      },
+      {
+        "sku": "EA51188",
+        "count": 579
+      },
+      {
+        "sku": "EL51253",
+        "count": 568
+      },
+      {
+        "sku": "EA53252",
+        "count": 563
+      },
+      {
+        "sku": "EC58001",
+        "count": 562
+      },
+      {
+        "sku": "EA52006",
+        "count": 559
+      },
+      {
+        "sku": "EL50962",
+        "count": 555
+      },
+      {
+        "sku": "EF52100",
+        "count": 543
+      },
+      {
+        "sku": "EF50050",
+        "count": 543
+      },
+      {
+        "sku": "EF59521",
+        "count": 534
+      },
+      {
+        "sku": "EF50828",
+        "count": 531
+      },
+      {
+        "sku": "EF59105",
+        "count": 528
+      },
+      {
+        "sku": "EL52003",
+        "count": 527
+      },
+      {
+        "sku": "EL51270",
+        "count": 526
+      },
+      {
+        "sku": "EL51223",
+        "count": 524
+      },
+      {
+        "sku": "EL52005",
+        "count": 523
+      },
+      {
+        "sku": "EL57075",
+        "count": 521
+      },
+      {
+        "sku": "EL59139",
+        "count": 515
+      },
+      {
+        "sku": "EA50504",
+        "count": 513
+      },
+      {
+        "sku": "EL51211",
+        "count": 512
+      },
+      {
+        "sku": "EC52006",
+        "count": 510
+      },
+      {
+        "sku": "EL50231",
+        "count": 504
+      },
+      {
+        "sku": "EF59098",
+        "count": 502
+      },
+      {
+        "sku": "EF56031",
+        "count": 500
+      },
+      {
+        "sku": "EL51603",
+        "count": 498
+      },
+      {
+        "sku": "EL51604",
+        "count": 498
+      },
+      {
+        "sku": "EC55001",
+        "count": 497
+      },
+      {
+        "sku": "EL59131",
+        "count": 495
+      },
+      {
+        "sku": "EL57195",
+        "count": 488
+      },
+      {
+        "sku": "EA55103",
+        "count": 486
+      },
+      {
+        "sku": "EC51003",
+        "count": 472
+      },
+      {
+        "sku": "EA51003",
+        "count": 470
+      },
+      {
+        "sku": "EF50807",
+        "count": 466
+      },
+      {
+        "sku": "EA50005",
+        "count": 466
+      },
+      {
+        "sku": "EF57122",
+        "count": 457
+      },
+      {
+        "sku": "EC56009",
+        "count": 456
+      },
+      {
+        "sku": "EA59391",
+        "count": 454
+      },
+      {
+        "sku": "EC59391",
+        "count": 454
+      },
+      {
+        "sku": "EF51072",
+        "count": 452
+      },
+      {
+        "sku": "EL51273",
+        "count": 446
+      },
+      {
+        "sku": "EF50806",
+        "count": 443
+      }
+    ],
+    "specifications": [
+      {
+        "sku": "EL56212",
+        "count": 6
+      },
+      {
+        "sku": "EL55042",
+        "count": 6
+      },
+      {
+        "sku": "EL54017",
+        "count": 6
+      },
+      {
+        "sku": "EL56211",
+        "count": 6
+      },
+      {
+        "sku": "EL54053",
+        "count": 6
+      },
+      {
+        "sku": "EL55040",
+        "count": 6
+      },
+      {
+        "sku": "EL52081",
+        "count": 6
+      },
+      {
+        "sku": "EL53741",
+        "count": 6
+      },
+      {
+        "sku": "EL54016",
+        "count": 6
+      },
+      {
+        "sku": "EL55110",
+        "count": 6
+      },
+      {
+        "sku": "EL54022",
+        "count": 6
+      },
+      {
+        "sku": "EL54048",
+        "count": 6
+      },
+      {
+        "sku": "EL54310",
+        "count": 6
+      },
+      {
+        "sku": "EL55015",
+        "count": 6
+      },
+      {
+        "sku": "EL52022",
+        "count": 6
+      },
+      {
+        "sku": "EL52052",
+        "count": 6
+      },
+      {
+        "sku": "EL53410",
+        "count": 6
+      },
+      {
+        "sku": "EL53280",
+        "count": 6
+      },
+      {
+        "sku": "EL53747",
+        "count": 6
+      },
+      {
+        "sku": "EL51273",
+        "count": 6
+      },
+      {
+        "sku": "EL54011",
+        "count": 6
+      },
+      {
+        "sku": "EL54015",
+        "count": 6
+      },
+      {
+        "sku": "EL51292",
+        "count": 6
+      },
+      {
+        "sku": "EL52018",
+        "count": 6
+      },
+      {
+        "sku": "EL51408",
+        "count": 6
+      },
+      {
+        "sku": "EL54032",
+        "count": 6
+      },
+      {
+        "sku": "EL52016",
+        "count": 6
+      },
+      {
+        "sku": "EL54070",
+        "count": 6
+      },
+      {
+        "sku": "EL52015",
+        "count": 6
+      },
+      {
+        "sku": "EL54510",
+        "count": 6
+      },
+      {
+        "sku": "EL51181",
+        "count": 6
+      },
+      {
+        "sku": "EL52021",
+        "count": 6
+      },
+      {
+        "sku": "EL52025",
+        "count": 6
+      },
+      {
+        "sku": "EL52036",
+        "count": 6
+      },
+      {
+        "sku": "EL52610",
+        "count": 6
+      },
+      {
+        "sku": "EL52510",
+        "count": 6
+      },
+      {
+        "sku": "EL52941",
+        "count": 6
+      },
+      {
+        "sku": "EL53019",
+        "count": 6
+      },
+      {
+        "sku": "EL51237",
+        "count": 6
+      },
+      {
+        "sku": "EL51219",
+        "count": 6
+      },
+      {
+        "sku": "EL51235",
+        "count": 6
+      },
+      {
+        "sku": "EL51234",
+        "count": 6
+      },
+      {
+        "sku": "EL51261",
+        "count": 6
+      },
+      {
+        "sku": "EL51265",
+        "count": 6
+      },
+      {
+        "sku": "EL51262",
+        "count": 6
+      },
+      {
+        "sku": "EL54012",
+        "count": 6
+      },
+      {
+        "sku": "EL51283",
+        "count": 6
+      },
+      {
+        "sku": "EL51281",
+        "count": 6
+      },
+      {
+        "sku": "EL51456",
+        "count": 6
+      },
+      {
+        "sku": "EL51290",
+        "count": 6
+      },
+      {
+        "sku": "EL51374",
+        "count": 6
+      },
+      {
+        "sku": "EL51294",
+        "count": 6
+      },
+      {
+        "sku": "EL54023",
+        "count": 6
+      },
+      {
+        "sku": "EL54025",
+        "count": 6
+      },
+      {
+        "sku": "EA53975",
+        "count": 6
+      },
+      {
+        "sku": "EL51604",
+        "count": 6
+      },
+      {
+        "sku": "EL51603",
+        "count": 6
+      },
+      {
+        "sku": "EL51580",
+        "count": 6
+      },
+      {
+        "sku": "EL51702",
+        "count": 6
+      },
+      {
+        "sku": "EL51701",
+        "count": 6
+      },
+      {
+        "sku": "EL52013",
+        "count": 6
+      },
+      {
+        "sku": "EL52012",
+        "count": 6
+      },
+      {
+        "sku": "EL50610",
+        "count": 6
+      },
+      {
+        "sku": "EL50954",
+        "count": 6
+      },
+      {
+        "sku": "EL51275",
+        "count": 6
+      },
+      {
+        "sku": "EL52019",
+        "count": 6
+      },
+      {
+        "sku": "EL50773",
+        "count": 6
+      },
+      {
+        "sku": "EL50811",
+        "count": 6
+      },
+      {
+        "sku": "EL50793",
+        "count": 6
+      },
+      {
+        "sku": "EL52026",
+        "count": 6
+      },
+      {
+        "sku": "EL51022",
+        "count": 6
+      },
+      {
+        "sku": "EL51180",
+        "count": 6
+      },
+      {
+        "sku": "EL51021",
+        "count": 6
+      },
+      {
+        "sku": "EL52181",
+        "count": 6
+      },
+      {
+        "sku": "EL51152",
+        "count": 6
+      },
+      {
+        "sku": "EL52810",
+        "count": 6
+      },
+      {
+        "sku": "EL53001",
+        "count": 6
+      },
+      {
+        "sku": "EL53014",
+        "count": 6
+      },
+      {
+        "sku": "EL51212",
+        "count": 6
+      },
+      {
+        "sku": "EL51211",
+        "count": 6
+      },
+      {
+        "sku": "EL51218",
+        "count": 6
+      },
+      {
+        "sku": "EL51214",
+        "count": 6
+      },
+      {
+        "sku": "EL51223",
+        "count": 6
+      },
+      {
+        "sku": "EL51222",
+        "count": 6
+      },
+      {
+        "sku": "EL51224",
+        "count": 6
+      },
+      {
+        "sku": "EL51226",
+        "count": 6
+      },
+      {
+        "sku": "EL51253",
+        "count": 6
+      },
+      {
+        "sku": "EL51239",
+        "count": 6
+      },
+      {
+        "sku": "EL51260",
+        "count": 6
+      },
+      {
+        "sku": "EL50111",
+        "count": 6
+      },
+      {
+        "sku": "EL50181",
+        "count": 6
+      },
+      {
+        "sku": "EL50211",
+        "count": 6
+      },
+      {
+        "sku": "EL50212",
+        "count": 6
+      },
+      {
+        "sku": "EL50214",
+        "count": 6
+      },
+      {
+        "sku": "EL50220",
+        "count": 6
+      },
+      {
+        "sku": "EL50224",
+        "count": 6
+      },
+      {
+        "sku": "EL50243",
+        "count": 6
+      },
+      {
+        "sku": "EL50248",
+        "count": 6
+      },
+      {
+        "sku": "EL50510",
+        "count": 6
+      },
+      {
+        "sku": "EL56213",
+        "count": 6
+      }
+    ]
+  },
+  "commercial_readiness_kpi": {
+    "tier_p1_fully_enriched": 773,
+    "tier_p2_oem_comp_apps": 2,
+    "tier_p3_oem_comp": 75,
+    "tier_p4_comp_only": 656,
+    "tier_p5_no_commercial_data": 4800
+  }
+}

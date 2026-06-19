@@ -10,63 +10,7 @@
       "key": "SYNTRAX",
       "type": "technology",
       "name": "SYNTRAX — Full-Flow Lube Protection",
-      "citation_record": {
-        "key": "SYNTRAX",
-        "type": "technology",
-        "name": "SYNTRAX — Full-Flow Lube Protection",
-        "slug": "syntrax",
-        "status": "active",
-        "in_unified_data": true,
-        "ud_key": "SYNTRAX",
-        "tags": [
-          "technology",
-          "active",
-          "lube-oil",
-          "full-flow",
-          "iso-4406",
-          "bearing-protection",
-          "in-ud"
-        ],
-        "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/syntrax",
-          "concept": "SYNTRAX Full-Flow Lube Protection",
-          "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:2e2b8c93e03cc3554012ca790a1c0df5a6fb3bff7399af12ebeaf3f0068939fd"
-        },
-        "canonical": {
-          "definition": "SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits by combining high-efficiency particulate capture (ISO 16889 Beta ratio rated) with soot agglomerate removal above 2% by weight concentration, preventing both abrasive particle wear and soot-induced oil degradation.",
-          "systems": "Engine lube oil circuits, hydraulic power circuits, transmission fluid systems across diesel-powered on-highway and off-highway equipment",
-          "failure_impact": "Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.",
-          "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 100 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
-          "related_technologies": "NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by",
-          "industrial_role": "SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories."
-        },
-        "relationships": {
-          "applicable_industries": [
-            "AGRICULTURE",
-            "AUTOMOTIVE",
-            "BUS_COACH",
-            "CONSTRUCTION",
-            "MARINE",
-            "MINING",
-            "POWER_GENERATION",
-            "RAILWAY",
-            "TRUCKS_FLEETS",
-            "WASTE_MUNICIPAL",
-            "OIL_GAS"
-          ],
-          "related_standards": [
-            "ISO_4406",
-            "ISO_16889",
-            "DIN_51524"
-          ],
-          "addresses_contamination": [
-            "PARTICLE_WEAR"
-          ]
-        },
-        "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
-      }
+      "citation_record": null
     }
   ],
   "terminal_product_families": [

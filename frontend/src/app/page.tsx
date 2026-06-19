@@ -8,6 +8,7 @@ import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import TestimonialsSection from '@/components/ui/TestimonialsSection';
 import CinematicHero from '@/components/ui/CinematicHero';
+import { AnimatedHero } from '@/components/ui/animated-hero';
 
 // ─── Static structural data ───────────────────────────────────────────────────
 
@@ -198,51 +199,7 @@ function HeroSection() {
 
       <motion.div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', y: contentY, opacity: contentOpacity }}>
 
-
-        <h1 style={{ margin: 0, padding: 0 }}>
-          <motion.span initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'block', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.75rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'rgba(255,255,255,0.92)' }}>
-            {t('home.hero1', 'PROTECTING INDUSTRIAL ASSETS')}
-          </motion.span>
-          <motion.span initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'block', fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1.2, letterSpacing: '-0.01em', color: '#FFF12D', marginTop: '0.5rem' }}>
-            {t('home.hero2', 'Through contamination control.')}
-          </motion.span>
-        </h1>
-
-        <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          style={{ height: '1px', width: '60px', background: 'rgba(255,241,45,0.5)', marginTop: '2rem', marginBottom: '1.5rem', transformOrigin: 'left' }} />
-
-        {/* Positioning statement */}
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          style={{ marginBottom: '1.5rem' }}>
-          <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'clamp(0.85rem, 1.2vw, 0.95rem)', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, margin: 0 }}>
-            {t('home.heroPositioning1', 'ELIMFILTERS is not a filter company.')}
-          </p>
-          <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'clamp(0.85rem, 1.2vw, 0.95rem)', color: '#FFF12D', lineHeight: 1.6, margin: 0 }}>
-            {t('home.heroPositioning2', 'ELIMFILTERS is an Asset Protection Technology company.')}
-          </p>
-        </motion.div>
-
-        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(0.85rem, 1.3vw, 1rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.45)', maxWidth: '540px', marginBottom: '3rem' }}>
-          {t('home.heroDesc', 'Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.')}
-        </motion.p>
-
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, boxShadow: '0 0 36px rgba(255,241,45,0.45)' }} whileTap={{ scale: 0.97 }}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', background: '#FFF12D', color: '#000', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.85rem 2rem', textDecoration: 'none', textTransform: 'uppercase', borderRadius: '4px' }}>
-            {t('home.ctaFilter', 'Find my filter')}
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </motion.a>
-          <motion.a href="/knowledge-system" whileHover={{ color: '#fff' }}
-            style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: '0.8rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', textTransform: 'uppercase', transition: 'color 0.25s ease', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-            {t('home.ctaKnowledge', 'Knowledge system')}
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </motion.a>
-        </motion.div>
+        <AnimatedHero />
       </motion.div>
     </section>
   );

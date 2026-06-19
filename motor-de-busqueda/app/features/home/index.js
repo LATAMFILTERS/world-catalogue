@@ -1,0 +1,1 @@
+export { getHomeModel } from "./controller/home.controller";

@@ -114,17 +114,13 @@ export default function ChatBot() {
                   style={{
                     width: 34,
                     height: 34,
-                    borderRadius: "50%",
-                    background: "#FFF12D",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" fill="#000"/>
-                  </svg>
+                  <img src="/images/e.png" alt="E" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                 </div>
                 <div>
                   <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.85rem", color: "#fff", margin: 0, lineHeight: 1.2 }}>

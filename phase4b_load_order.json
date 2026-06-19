@@ -1,0 +1,75 @@
+{
+  "phase": "4B",
+  "name": "Pre-Load Database Plan",
+  "description": "Orden de carga de archivos CSV a las tablas PostgreSQL respetando restricciones de integridad referencial.",
+  "load_sequence": [
+    {
+      "step": 1,
+      "table": "ld_product_catalog",
+      "source_csv": "phase4a_production_readiness.csv",
+      "action": "INSERT",
+      "conflict_strategy": "DO NOTHING",
+      "expected_rows": 7833,
+      "notes": "Carga inicial del maestro de SKUs para habilitar las claves foráneas en las demás tablas."
+    },
+    {
+      "step": 2,
+      "table": "ld_production_readiness",
+      "source_csv": "phase4a_production_readiness.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku) DO UPDATE SET has_oem = EXCLUDED.has_oem, has_competitor = EXCLUDED.has_competitor, has_applications = EXCLUDED.has_applications, has_specifications = EXCLUDED.has_specifications, production_tier = EXCLUDED.production_tier",
+      "expected_rows": 7833,
+      "notes": "Almacena los metadatos de auditoría y el tier comercial de cada SKU."
+    },
+    {
+      "step": 3,
+      "table": "ld_competitor_cross_references",
+      "source_csv": "competitor_cross_references_ld.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku, competitor_brand, competitor_part_number) DO NOTHING",
+      "expected_rows": 66663,
+      "notes": "Carga de referencias cruzadas puramente de competidores (Aftermarket)."
+    },
+    {
+      "step": 4,
+      "table": "ld_oem_cross_references",
+      "source_csv": "oem_cross_references_external_ld.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku, oem_brand, oem_part_number) DO NOTHING",
+      "expected_rows": 6213,
+      "notes": "Carga de referencias cruzadas puramente de fabricantes de origen (OEM)."
+    },
+    {
+      "step": 5,
+      "table": "ld_vehicle_applications",
+      "source_csv": "vehicle_applications_master.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku, make, model_family, model_type, year) DO NOTHING",
+      "expected_rows": 292221,
+      "notes": "Carga principal de aplicaciones vehiculares desde el master inicial."
+    },
+    {
+      "step": 6,
+      "table": "ld_vehicle_applications",
+      "source_csv": "external_vehicle_applications_ld.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku, make, model_family, model_type, year) DO NOTHING",
+      "expected_rows": 18898,
+      "notes": "Carga secundaria de aplicaciones recuperadas durante Fase 3B."
+    },
+    {
+      "step": 7,
+      "table": "ld_product_specifications",
+      "source_csv": "external_specs_ld.csv",
+      "action": "UPSERT",
+      "conflict_strategy": "ON CONFLICT (elimfilters_sku, spec_key) DO UPDATE SET spec_value = EXCLUDED.spec_value",
+      "expected_rows": 1179,
+      "notes": "Carga de especificaciones técnicas (ej. Thread Size, Outer Diameter)."
+    }
+  ],
+  "validation_rules": [
+    "No ejecutar comandos SQL hasta recibir confirmación del usuario.",
+    "No truncar, borrar ni alterar tablas previamente existentes fuera del esquema ld_catalog.",
+    "Asegurar que source_sku actúe solo como referencia y elimfilters_sku como clave primaria/foránea vinculante."
+  ]
+}

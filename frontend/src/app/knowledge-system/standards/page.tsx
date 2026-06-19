@@ -144,7 +144,7 @@ export default function StandardsHubPage() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
           gap: '1.75rem',
         }}>
           {FILTRATION_SYSTEMS.map((system, i) => (
@@ -172,17 +172,11 @@ export default function StandardsHubPage() {
                   {/* Icon + Code */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                     <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
+                      width: '16px',
+                      height: '16px',
+                      background: '#FFF12D',
                       flexShrink: 0,
                     }}>
-                      {system.icon}
                     </div>
                     <span style={{
                       fontFamily: 'JetBrains Mono, monospace',

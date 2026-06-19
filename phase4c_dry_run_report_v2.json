@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-06-18T15:24:50.510Z",
+  "files_status": {
+    "phase4a_production_readiness.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 7833
+    },
+    "competitor_cross_references_ld.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 66663
+    },
+    "oem_cross_references_external_ld.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 6213
+    },
+    "vehicle_applications_master.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 292221
+    },
+    "external_vehicle_applications_ld.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 18898
+    },
+    "external_specs_ld.csv": {
+      "exists": true,
+      "headers_ok": true,
+      "total_rows": 1179
+    }
+  },
+  "master_skus_count": 6306,
+  "tables_estimation": {
+    "ld_product_catalog": {
+      "expected_input_rows": 7833,
+      "exact_duplicates": 0,
+      "orphan_rows": 0,
+      "estimated_inserts": 7833,
+      "empty_nulls_sanitized": 0
+    },
+    "ld_production_readiness": {
+      "expected_input_rows": 7833,
+      "exact_duplicates": 0,
+      "orphan_rows": 0,
+      "estimated_inserts": 7833,
+      "empty_nulls_sanitized": 0
+    },
+    "ld_competitor_cross_references": {
+      "expected_input_rows": 66663,
+      "exact_duplicates": 3135,
+      "orphan_rows": 0,
+      "estimated_inserts": 63528,
+      "empty_nulls_sanitized": 0
+    },
+    "ld_oem_cross_references": {
+      "expected_input_rows": 6213,
+      "exact_duplicates": 370,
+      "orphan_rows": 0,
+      "estimated_inserts": 5843,
+      "empty_nulls_sanitized": 0
+    },
+    "ld_vehicle_applications": {
+      "expected_input_rows": 311119,
+      "exact_duplicates": 28867,
+      "orphan_rows": 0,
+      "estimated_inserts": 282252,
+      "empty_nulls_sanitized": 458036
+    },
+    "ld_product_specifications": {
+      "expected_input_rows": 1179,
+      "exact_duplicates": 55,
+      "orphan_rows": 0,
+      "estimated_inserts": 1124,
+      "empty_nulls_sanitized": 0
+    }
+  }
+}

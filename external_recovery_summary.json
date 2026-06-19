@@ -1,0 +1,11 @@
+{
+  "run_timestamp": "2026-06-18T14:44:57.194Z",
+  "tier_e_total": 2430,
+  "skus_processed": 2430,
+  "skus_found": 2211,
+  "skus_not_found": 219,
+  "total_cross_refs": 72876,
+  "total_vehicle_apps": 18898,
+  "total_specs": 1179,
+  "recovery_rate_pct": "90.99"
+}

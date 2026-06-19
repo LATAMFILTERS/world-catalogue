@@ -1,0 +1,3742 @@
+[
+  {
+    "oem_normalized": "86029587",
+    "oem_brand": "VERSATILE",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1041296",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "72516560",
+    "oem_brand": "AGCO",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AT193242",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3197344001",
+    "oem_brand": "HYUNDAI",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400E3025",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1220712",
+    "oem_brand": "ONAN",
+    "mann_part": "W940/30_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3553",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9831637",
+    "oem_brand": "LINDE",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2330387309000",
+    "oem_brand": "DAIHATSU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5003748",
+    "oem_brand": "FORD",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "13200250",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1873018",
+    "oem_brand": "SCANIA",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1K01143060",
+    "oem_brand": "KUBOTA",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "71416241",
+    "oem_brand": "FIAT GROUP (ALFA/FIAT/LANCIA)",
+    "mann_part": "HD15174X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7071F",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "30307",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "P824X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF597",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "GX0330202A",
+    "oem_brand": "CITROEN",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6421800009",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "05175571AA",
+    "oem_brand": "CHRYSLER USA",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "22474709",
+    "oem_brand": "VOLVO (TRUCKS/VCE/VME/PENTA)",
+    "mann_part": "WK11051_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5878",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "299006635",
+    "oem_brand": "KING LONG",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1335143010",
+    "oem_brand": "KUBOTA",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1013890M1",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "P917X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF543",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5021188520",
+    "oem_brand": "RENAULT TRUCKS (OKELIA)",
+    "mann_part": "HU1072X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17487",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8941673980",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6421840025",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "MD086786",
+    "oem_brand": "MITSUBISHI",
+    "mann_part": "WP10003_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3852",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6732515142",
+    "oem_brand": "KOMATSU",
+    "mann_part": "W940/34_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3915",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1041840325",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "PY02P000012",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3641800110",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3780931M1",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "WK8127_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19585",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "640210020",
+    "oem_brand": "SUBARU",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3308616",
+    "oem_brand": "CUMMINS",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "901158T1",
+    "oem_brand": "STEIGER",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "GG42031259",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "512600108",
+    "oem_brand": "LIEBHERR",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1520853J01",
+    "oem_brand": "NISSAN",
+    "mann_part": "W610/4_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3993",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6922041H00",
+    "oem_brand": "NISSAN",
+    "mann_part": "HD901_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7934",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "93156944",
+    "oem_brand": "GENERAL MOTORS (GM)",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "605412970039",
+    "oem_brand": "MWM",
+    "mann_part": "W13145/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16010",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "12990155850",
+    "oem_brand": "TAKEUCHI",
+    "mann_part": "WK940/16X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5021107448",
+    "oem_brand": "RENAULT TRUCKS (OKELIA)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "057115561K",
+    "oem_brand": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+    "mann_part": "HU831X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16434",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "0005459530",
+    "oem_brand": "CLAAS",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "145623570A",
+    "oem_brand": "MAZDA",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AM876035",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK28/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16900671034",
+    "oem_brand": "HONDA",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8943692993",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A3641800110",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "978M6714B1A",
+    "oem_brand": "FOMOCO",
+    "mann_part": "W719/27_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3409",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "F716200510020",
+    "oem_brand": "FENDT",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "605412970003",
+    "oem_brand": "MWM",
+    "mann_part": "H932/2_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "MB220900",
+    "oem_brand": "MITSUBISHI",
+    "mann_part": "WK940/16X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3889311",
+    "oem_brand": "CUMMINS",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "39123211",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "W962_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF35284",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6420906452",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WK820/21_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5870",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5570150",
+    "oem_brand": "GENERAL MOTORS (GM)",
+    "mann_part": "WD10021_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF532",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "831320",
+    "oem_brand": "TORO",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8942480702",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "11708551",
+    "oem_brand": "VOLVO (TRUCKS/VCE/VME/PENTA)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "211340",
+    "oem_brand": "DAF",
+    "mann_part": "H932/2T_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "162000080845",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WK8140_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19526",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8943692990",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "F139207310511",
+    "oem_brand": "FENDT",
+    "mann_part": "H932/2_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8766818",
+    "oem_brand": "COLES CRANES",
+    "mann_part": "H1075/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6113",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AG133017",
+    "oem_brand": "AGCO",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A730X6731H3A",
+    "oem_brand": "FOMOCO",
+    "mann_part": "H932/2T_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "M37725",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1041800709",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "12343124",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "W13145/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16010",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1492229",
+    "oem_brand": "ONAN",
+    "mann_part": "WK811/86_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42004",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400H8594",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6060008042",
+    "oem_brand": "EPIROC",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1930741",
+    "oem_brand": "FIAT-AGRI",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0014773801",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "195743",
+    "oem_brand": "WIRTGEN GROUP",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8944838500",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "32A6201020C",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "800848M91",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "44012512",
+    "oem_brand": "TEREX",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AR98330",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "47400023",
+    "oem_brand": "DOOSAN",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "70432C91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4700950159",
+    "oem_brand": "DYNAPAC",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4721842725",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "E12979905",
+    "oem_brand": "EUCLID",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "390560R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1216400561",
+    "oem_brand": "SISU DIESEL",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1220526",
+    "oem_brand": "ONAN",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A1041840325",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE11325",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "P8016X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19575",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1006374",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK8128_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3381644H1",
+    "oem_brand": "FURUKAWA",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1334350",
+    "oem_brand": "HYSTER",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6420906452",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WK820/21_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5870",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "14503824",
+    "oem_brand": "VOLVO (TRUCKS/VCE/VME/PENTA)",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8980374810",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7422636234",
+    "oem_brand": "RENAULT TRUCKS (RVI)",
+    "mann_part": "WK11051_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5878",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "28037001",
+    "oem_brand": "VERMEER",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "156707",
+    "oem_brand": "PEUGEOT",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5490862",
+    "oem_brand": "CITROEN",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A1041800109",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "642180000990",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "69042849",
+    "oem_brand": "SANDVIK",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE21748",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "V836862563",
+    "oem_brand": "AGCO",
+    "mann_part": "WK8140_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "DZ118241",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9P911099",
+    "oem_brand": "BMC (TR)",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE509032",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK8145_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19865",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "390650R91",
+    "oem_brand": "NAVISTAR (INTERNATIONAL/IC BUS)",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "84485647",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "907160601",
+    "oem_brand": "YALE",
+    "mann_part": "W10009_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7604",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5411657158",
+    "oem_brand": "SCHAEFF",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1368758",
+    "oem_brand": "HYSTER",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3707618M1",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "26560145",
+    "oem_brand": "PERKINS",
+    "mann_part": "WK8141_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "549597",
+    "oem_brand": "JACOBSEN",
+    "mann_part": "W940/38_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF761",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4700212373",
+    "oem_brand": "DYNAPAC",
+    "mann_part": "W940/30_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3553",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0011844125",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6161800009",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "PF1055/1N_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3585",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1870014",
+    "oem_brand": "ONAN",
+    "mann_part": "W950/18_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3552",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "86043674",
+    "oem_brand": "VERSATILE",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "800030295",
+    "oem_brand": "VALTRA-VALMET",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1R0726",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "H1815_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17500",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9132000930",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK28/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4000052009",
+    "oem_brand": "HAMM",
+    "mann_part": "W13145/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16010",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "803201511E",
+    "oem_brand": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+    "mann_part": "WK32(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF240",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "K05175571AA",
+    "oem_brand": "FIAT GROUP (ALFA/FIAT/LANCIA)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "303497542",
+    "oem_brand": "AGCO",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "771308M1",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1006374",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK8127_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AT60645",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "W935/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7604",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5651090",
+    "oem_brand": "GENERAL MOTORS (GM)",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1402229",
+    "oem_brand": "ONAN",
+    "mann_part": "WK811/86_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42004",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A642180000990",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2330387308000",
+    "oem_brand": "DAIHATSU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1132401630",
+    "oem_brand": "ISUZU",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9839003",
+    "oem_brand": "BAUTZ",
+    "mann_part": "H932/2_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "528507R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6002121510",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "844F6714AA",
+    "oem_brand": "FOMOCO",
+    "mann_part": "W9050_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3404",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5132400320",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7701349332",
+    "oem_brand": "RENAULT",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2525254",
+    "oem_brand": "CHRYSLER U.K.",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3303242",
+    "oem_brand": "CUMMINS",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "30301",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "H932/2T_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "26560920",
+    "oem_brand": "PERKINS",
+    "mann_part": "WK8127_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0011845425",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "87696188",
+    "oem_brand": "CASE CONSTRUCTION",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4731800809",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6861800109",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6161800510",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "PF1055/1N_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3585",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1701232C91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "WK28_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3089679",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "299670",
+    "oem_brand": "CUMMINS",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "605470",
+    "oem_brand": "TORO",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1047169",
+    "oem_brand": "FORD",
+    "mann_part": "W719/27_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3409",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8943692991",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "94248070",
+    "oem_brand": "GENERAL MOTORS (GM)",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "122077700",
+    "oem_brand": "ONAN",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A409559",
+    "oem_brand": "DAEWOO CONSTRUCTION EQUIPMENT",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "CU3304232",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16900671003",
+    "oem_brand": "HONDA",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0002773095",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WD8009_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF35296",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4721841825",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE62424",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK8115_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19577",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0001801709",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5602720",
+    "oem_brand": "LIEBHERR",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1041800109",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "20122998800",
+    "oem_brand": "RENAULT TRUCKS (RVI)",
+    "mann_part": "H932/2_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "40050400119",
+    "oem_brand": "DOOSAN",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE508633",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK8146_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19794",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "386122R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3890432",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0011844425",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "57645210",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1414143",
+    "oem_brand": "ORENSTEIN + KOPPEL (O+K)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5741618",
+    "oem_brand": "BOMAG",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A104130",
+    "oem_brand": "MANITOWOC",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "12185755710",
+    "oem_brand": "YANMAR",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "221578",
+    "oem_brand": "BELL EQUIPMENT (SA)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8980374800",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "11NA70110",
+    "oem_brand": "HYUNDAI CONSTRUCTION",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "36795045",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "56985963",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3021658",
+    "oem_brand": "CUMMINS",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "RE21058",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3I1083",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "40050400157",
+    "oem_brand": "DOOSAN",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "SC1117285",
+    "oem_brand": "J.C.BAMFORD",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "VS7035",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "PY02P000012P",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "84372057",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "861032",
+    "oem_brand": "TALBOT",
+    "mann_part": "PF915N_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF565",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7305346",
+    "oem_brand": "KOEHRING",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "02931095",
+    "oem_brand": "DEUTZ AG / DEUTZ-FAHR (KHD)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "80384385",
+    "oem_brand": "GRADALL",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8941214310",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8942387570",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6671649",
+    "oem_brand": "MELROE-BOBCAT",
+    "mann_part": "WK8141_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "YM12990155850",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK940/16X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "15504895",
+    "oem_brand": "TEREX",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "607071",
+    "oem_brand": "AG CHEM EQUIP",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1331057",
+    "oem_brand": "DAF",
+    "mann_part": "W13110_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3782",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "0009831637V",
+    "oem_brand": "LINDE",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "GX0330202A",
+    "oem_brand": "CITROEN",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2849054",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "H1815_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17500",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "883364",
+    "oem_brand": "SAAB",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "366700A1",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "KRH1254",
+    "oem_brand": "LINK-BELT",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7033616",
+    "oem_brand": "AGCO",
+    "mann_part": "W935/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7604",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "150794A1",
+    "oem_brand": "CASE CONSTRUCTION",
+    "mann_part": "W935/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF28916",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "K71775177",
+    "oem_brand": "FIAT GROUP (ALFA/FIAT/LANCIA)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4204048",
+    "oem_brand": "HITACHI",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "22213470B",
+    "oem_brand": "MAZDA",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "201805001",
+    "oem_brand": "VERMEER",
+    "mann_part": "W13012_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7606",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3I1299",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4136530",
+    "oem_brand": "MANITOWOC",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "156707",
+    "oem_brand": "PEUGEOT",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5132000661",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "94369299",
+    "oem_brand": "GENERAL MOTORS (GM)",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "746364",
+    "oem_brand": "MANITOU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4731800809",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4721842425",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "47128208",
+    "oem_brand": "CASE-INTERNATIONAL/CASE-IH",
+    "mann_part": "HD509_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7102",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "51942112",
+    "oem_brand": "JOY",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400E3001",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3968615",
+    "oem_brand": "AMERICAN MOTORS AMC",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4252248",
+    "oem_brand": "DEUTZ AG / DEUTZ-FAHR (KHD)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "MX516406",
+    "oem_brand": "DOOSAN",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "831320",
+    "oem_brand": "TORO",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4812156264",
+    "oem_brand": "DYNAPAC",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3197344100",
+    "oem_brand": "HYUNDAI",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6070901252",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WK820/21_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5870",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "45164",
+    "oem_brand": "SEARS",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "F433618",
+    "oem_brand": "TIMBERJACK",
+    "mann_part": "WK8108_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19526",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "441700A1",
+    "oem_brand": "NEW HOLLAND (CNH)",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A9061800209",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "988687",
+    "oem_brand": "DEMAG (COMPAIR)",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "71775177",
+    "oem_brand": "CHRYSLER USA",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "I8941434790",
+    "oem_brand": "TAKEUCHI",
+    "mann_part": "WK811/86_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42005",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4367100",
+    "oem_brand": "CUMMINS",
+    "mann_part": "W11022_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14001NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AG715132",
+    "oem_brand": "AGCO",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "PP2280600",
+    "oem_brand": "TEREX",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "12991755850",
+    "oem_brand": "TAKEUCHI",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1582092",
+    "oem_brand": "FOMOCO",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "0019863920",
+    "oem_brand": "CLAAS",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6001576",
+    "oem_brand": "TEREX",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400H8501",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1429059",
+    "oem_brand": "SCANIA",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2111169",
+    "oem_brand": "WIRTGEN GROUP",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8931566340",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2330387309",
+    "oem_brand": "DAIHATSU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1330033",
+    "oem_brand": "HYSTER",
+    "mann_part": "WK940/16X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "001801709",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "941071",
+    "oem_brand": "AMERICAN MOTORS AMC",
+    "mann_part": "WK613_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "T6450551",
+    "oem_brand": "TEREX",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14001NN",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "47520212",
+    "oem_brand": "TEREX",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5873109370",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3889310",
+    "oem_brand": "CUMMINS",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5490862",
+    "oem_brand": "CITROEN",
+    "mann_part": "WK31/2(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1212621H1",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "140716",
+    "oem_brand": "WEBASTO - SPHEROS",
+    "mann_part": "P66X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5047",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "883364",
+    "oem_brand": "SAAB",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A9061800009",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "441703A1",
+    "oem_brand": "NEW HOLLAND (CNH)",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6732515141",
+    "oem_brand": "KOMATSU",
+    "mann_part": "W940/34_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3915",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1651082703",
+    "oem_brand": "SUZUKI",
+    "mann_part": "W67/2_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16116",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6584061",
+    "oem_brand": "DENNIS",
+    "mann_part": "WD8009_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF35296",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6421800009",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "236481",
+    "oem_brand": "DAF",
+    "mann_part": "H932/2T_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4711800009",
+    "oem_brand": "DETROIT DIESEL",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3780299M1",
+    "oem_brand": "MASSEY-FERGUSON",
+    "mann_part": "WK8128_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A222100000614",
+    "oem_brand": "SANY GROUP",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "84477351",
+    "oem_brand": "NEW HOLLAND (CNH)",
+    "mann_part": "WK8140_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6421840025",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6003116620",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK811/86_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42004",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "22177737",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A1041800709",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU727/1X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16131",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3313283",
+    "oem_brand": "CUMMINS",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "12128936",
+    "oem_brand": "DEUTZ AG / DEUTZ-FAHR (KHD)",
+    "mann_part": "W13145/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16010",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "IR0749",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "251201511",
+    "oem_brand": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+    "mann_part": "WK32(10)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "84412210",
+    "oem_brand": "NEW HOLLAND (CNH)",
+    "mann_part": "HD509_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF7102",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "97577A",
+    "oem_brand": "WEBASTO - SPHEROS",
+    "mann_part": "P66X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5047",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A001801709",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "0007992081",
+    "oem_brand": "CLAAS",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6005021234",
+    "oem_brand": "RENAULT AGRICULTURE",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400A0600",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "Z148943692993",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "22213470B",
+    "oem_brand": "MAZDA",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "35366699",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "YUBP00302",
+    "oem_brand": "HYUNDAI CONSTRUCTION",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "76194691",
+    "oem_brand": "FIAT-HITACHI",
+    "mann_part": "WP12300_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4085913",
+    "oem_brand": "HITACHI",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1446432",
+    "oem_brand": "SCANIA",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "65055105023B",
+    "oem_brand": "DOOSAN",
+    "mann_part": "WP12300_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14002NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "YM12991755850",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9061840325",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4731800509",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "94132241",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8942480700",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2084467",
+    "oem_brand": "CHRYSLER U.K.",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "528493R2",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "VOE12978467",
+    "oem_brand": "VOLVO (TRUCKS/VCE/VME/PENTA)",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4721842525",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "528493R3",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "K46723570",
+    "oem_brand": "ASIA MOTORS",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "92048925",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5003748",
+    "oem_brand": "FORD",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4448735",
+    "oem_brand": "HITACHI",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7363465",
+    "oem_brand": "LIEBHERR",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3198615",
+    "oem_brand": "AMERICAN MOTORS AMC",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6003117410",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK815/80_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42004",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2945611060",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2931095",
+    "oem_brand": "DEUTZ AG / DEUTZ-FAHR (KHD)",
+    "mann_part": "HU945/3X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "318887C92",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "P811_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF174",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9061800209",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1491774",
+    "oem_brand": "ONAN",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "9061800009",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "80634900",
+    "oem_brand": "VALTRA-VALMET",
+    "mann_part": "W9071_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF29071",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "303497534",
+    "oem_brand": "AGCO",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7701349332",
+    "oem_brand": "RENAULT",
+    "mann_part": "WK31/2(100)_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1873014",
+    "oem_brand": "SCANIA",
+    "mann_part": "HU1072X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17487",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4P2839",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "H1815_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17500",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5000812484",
+    "oem_brand": "RENAULT TRUCKS (RVI)",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A0011845125",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU932/4X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "87801285",
+    "oem_brand": "NEW HOLLAND (CNH)",
+    "mann_part": "WK8123_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19614",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "29539579",
+    "oem_brand": "ALLISON",
+    "mann_part": "WD8009_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF35296",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7424990702",
+    "oem_brand": "RENAULT TRUCKS (OKELIA)",
+    "mann_part": "HU821X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF16231",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6003116221",
+    "oem_brand": "KOMATSU",
+    "mann_part": "WK815/80_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42004",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3L1206",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "F139207310510",
+    "oem_brand": "FENDT",
+    "mann_part": "H932/2T_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF756",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3363287",
+    "oem_brand": "FUCHS",
+    "mann_part": "WK726_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5041",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1383100",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK8128_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19530",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "329250",
+    "oem_brand": "TORO",
+    "mann_part": "WK66_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8941773270",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A9061840325",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "85114044",
+    "oem_brand": "VOLVO (TRUCKS/VCE/VME/PENTA)",
+    "mann_part": "W11022_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14001NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "35357243",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "707154A1",
+    "oem_brand": "MC CORMICK",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "35362243",
+    "oem_brand": "INGERSOLL-RAND",
+    "mann_part": "WK980/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5817",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "386120R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "5021185605",
+    "oem_brand": "RENAULT TRUCKS (OKELIA)",
+    "mann_part": "PU941X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5683",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "7N7500",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "H1815_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17500",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "3607790M1",
+    "oem_brand": "AGCO",
+    "mann_part": "W1374/9_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF35223",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1258143010",
+    "oem_brand": "KUBOTA",
+    "mann_part": "WK28/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "157835",
+    "oem_brand": "SENNEBOGEN",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "244575R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "P811_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF174",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "83120880070",
+    "oem_brand": "EVOBUS/SETRA",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A6070901252",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "WK820/21_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF5870",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "506853",
+    "oem_brand": "TAMROCK",
+    "mann_part": "WK1175X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19995",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "57124",
+    "oem_brand": "VERSATILE",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "16400E3000",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK42/12_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF238",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4721841825",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6216543120",
+    "oem_brand": "KOMATSU",
+    "mann_part": "W1294_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3363",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1513759",
+    "oem_brand": "HYSTER",
+    "mann_part": "WP12121_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF14009NN",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A4731800509",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU12021Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF17810",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "1512409",
+    "oem_brand": "CATERPILLAR",
+    "mann_part": "WK8111_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FS19612",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "382248R91",
+    "oem_brand": "NAVISTAR (INTERNATIONAL/IC BUS)",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "A9605530203",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "AU10001Z_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "WF2187",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "8980023440",
+    "oem_brand": "ISUZU",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "AM876035",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WK42/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF149",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4018390R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2722486",
+    "oem_brand": "LIEBHERR",
+    "mann_part": "HD716_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF30202",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "2330387308",
+    "oem_brand": "NISSAN",
+    "mann_part": "WK940/11X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF42131",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "6861800109",
+    "oem_brand": "MERCEDES-BENZ (DAIMLER AG)",
+    "mann_part": "HU945/2X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF3914",
+    "elimfilters_sku": null,
+    "segment": "MIXED",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "385683R91",
+    "oem_brand": "FURUKAWA",
+    "mann_part": "H13007X_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6054",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "Y03426604",
+    "oem_brand": "FODEN",
+    "mann_part": "WP11102/3_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "PMLF9000",
+    "oem_brand": "JOHN DEERE",
+    "mann_part": "WP12001_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF9000",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4175913",
+    "oem_brand": "HITACHI",
+    "mann_part": "WP1270_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF777",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "871867R91",
+    "oem_brand": "IHC / CASE IH",
+    "mann_part": "C29352/1_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "LF649",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "4371164",
+    "oem_brand": "LETOURNEAU WESTINGHOUSE",
+    "mann_part": "CF923_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "FF129",
+    "elimfilters_sku": null,
+    "segment": "HD",
+    "match_method": "oem_code"
+  },
+  {
+    "oem_normalized": "99311032700",
+    "oem_brand": "PORSCHE",
+    "mann_part": "C33106_MANN-FILTER",
+    "donaldson_part": null,
+    "fleetguard_part": "HF6353",
+    "elimfilters_sku": null,
+    "segment": "LD",
+    "match_method": "oem_code"
+  }
+]

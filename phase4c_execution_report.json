@@ -1,0 +1,28 @@
+{
+  "start_time": "2026-06-18T23:49:15.422Z",
+  "end_time": "2026-06-18T23:54:52.427Z",
+  "duration_sec": 337.005,
+  "target_schema": "ld_catalog (y public por omisión de esquema en queries)",
+  "pre_load_counts": {
+    "ld_product_catalog": 0,
+    "ld_production_readiness": 0,
+    "ld_competitor_cross_references": 0,
+    "ld_oem_cross_references": 0,
+    "ld_vehicle_applications": 0,
+    "ld_product_specifications": 0
+  },
+  "post_load_counts": {
+    "ld_product_catalog": 6306,
+    "ld_production_readiness": 6306,
+    "ld_competitor_cross_references": 63528,
+    "ld_oem_cross_references": 5843,
+    "ld_vehicle_applications": 282252,
+    "ld_product_specifications": 1124
+  },
+  "errors": [],
+  "rejected_rows": 0,
+  "notes": [
+    "La integridad referencial (FK) funcionó de acuerdo al plan ya que no hubo rechazos DB explícitos reportados.",
+    "Las restricciones UNIQUE funcionaron bloqueando duplicados silenciosamente a través de DO NOTHING."
+  ]
+}

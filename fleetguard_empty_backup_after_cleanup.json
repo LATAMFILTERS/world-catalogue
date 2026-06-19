@@ -1,0 +1,3706 @@
+[
+  {
+    "sku": "EA11608",
+    "codigo_base": "AF1608M"
+  },
+  {
+    "sku": "EA11619",
+    "codigo_base": "AF1619"
+  },
+  {
+    "sku": "EA11621",
+    "codigo_base": "AF1621"
+  },
+  {
+    "sku": "EA11626",
+    "codigo_base": "AF1626"
+  },
+  {
+    "sku": "EA11627",
+    "codigo_base": "AF1627"
+  },
+  {
+    "sku": "EA11671",
+    "codigo_base": "AF1671"
+  },
+  {
+    "sku": "EA11692",
+    "codigo_base": "AF1692"
+  },
+  {
+    "sku": "EA11705",
+    "codigo_base": "AF1705"
+  },
+  {
+    "sku": "EA11706",
+    "codigo_base": "AF1706"
+  },
+  {
+    "sku": "EA11723",
+    "codigo_base": "AF1723"
+  },
+  {
+    "sku": "EA11734",
+    "codigo_base": "AF1734"
+  },
+  {
+    "sku": "EA11763",
+    "codigo_base": "AF1763"
+  },
+  {
+    "sku": "EA11783",
+    "codigo_base": "AF1783"
+  },
+  {
+    "sku": "EA11802",
+    "codigo_base": "AF1802A"
+  },
+  {
+    "sku": "EA18021",
+    "codigo_base": "AF1802M"
+  },
+  {
+    "sku": "EA11823",
+    "codigo_base": "AF1823"
+  },
+  {
+    "sku": "EA11836",
+    "codigo_base": "AF1836"
+  },
+  {
+    "sku": "EA11872",
+    "codigo_base": "AF1872UG"
+  },
+  {
+    "sku": "EA11911",
+    "codigo_base": "AF1911"
+  },
+  {
+    "sku": "EA11912",
+    "codigo_base": "AF1912"
+  },
+  {
+    "sku": "EA11913",
+    "codigo_base": "AF1913"
+  },
+  {
+    "sku": "EA11923",
+    "codigo_base": "AF1923"
+  },
+  {
+    "sku": "EA11924",
+    "codigo_base": "AF1924"
+  },
+  {
+    "sku": "EA11933",
+    "codigo_base": "AF1933"
+  },
+  {
+    "sku": "EA11937",
+    "codigo_base": "AF1937"
+  },
+  {
+    "sku": "EA11959",
+    "codigo_base": "AF1959"
+  },
+  {
+    "sku": "EA11986",
+    "codigo_base": "AF1986"
+  },
+  {
+    "sku": "EA11987",
+    "codigo_base": "AF1987"
+  },
+  {
+    "sku": "EA11989",
+    "codigo_base": "AF1989"
+  },
+  {
+    "sku": "EA15029",
+    "codigo_base": "AF25029"
+  },
+  {
+    "sku": "EA15073",
+    "codigo_base": "AF25073"
+  },
+  {
+    "sku": "EA15183",
+    "codigo_base": "AF25183"
+  },
+  {
+    "sku": "EA15195",
+    "codigo_base": "AF25195"
+  },
+  {
+    "sku": "EA15200",
+    "codigo_base": "AF25200"
+  },
+  {
+    "sku": "EA15212",
+    "codigo_base": "AF25212"
+  },
+  {
+    "sku": "EA15233",
+    "codigo_base": "AF25233"
+  },
+  {
+    "sku": "EA15299",
+    "codigo_base": "AF25299"
+  },
+  {
+    "sku": "EA15369",
+    "codigo_base": "AF25369"
+  },
+  {
+    "sku": "EA15370",
+    "codigo_base": "AF25370"
+  },
+  {
+    "sku": "EA15403",
+    "codigo_base": "AF25403"
+  },
+  {
+    "sku": "EA15404",
+    "codigo_base": "AF25404KM"
+  },
+  {
+    "sku": "EA15431",
+    "codigo_base": "AF25431"
+  },
+  {
+    "sku": "EA15594",
+    "codigo_base": "AF25594"
+  },
+  {
+    "sku": "EA15603",
+    "codigo_base": "AF25603"
+  },
+  {
+    "sku": "EA15606",
+    "codigo_base": "AF25606"
+  },
+  {
+    "sku": "EA15647",
+    "codigo_base": "AF25647"
+  },
+  {
+    "sku": "EA15738",
+    "codigo_base": "AF25738"
+  },
+  {
+    "sku": "EA15743",
+    "codigo_base": "AF25743"
+  },
+  {
+    "sku": "EA15771",
+    "codigo_base": "AF25771"
+  },
+  {
+    "sku": "EA15777",
+    "codigo_base": "AF25777"
+  },
+  {
+    "sku": "EA15782",
+    "codigo_base": "AF25782"
+  },
+  {
+    "sku": "EA15798",
+    "codigo_base": "AF25798"
+  },
+  {
+    "sku": "EA15879",
+    "codigo_base": "AF25879"
+  },
+  {
+    "sku": "EA15880",
+    "codigo_base": "AF25880"
+  },
+  {
+    "sku": "EA15959",
+    "codigo_base": "AF25959"
+  },
+  {
+    "sku": "EA15976",
+    "codigo_base": "AF25976A"
+  },
+  {
+    "sku": "EA15988",
+    "codigo_base": "AF25988"
+  },
+  {
+    "sku": "EA15996",
+    "codigo_base": "AF25996"
+  },
+  {
+    "sku": "EA16009",
+    "codigo_base": "AF26009"
+  },
+  {
+    "sku": "EA16060",
+    "codigo_base": "AF26060"
+  },
+  {
+    "sku": "EA16063",
+    "codigo_base": "AF26063"
+  },
+  {
+    "sku": "EA16098",
+    "codigo_base": "AF26098"
+  },
+  {
+    "sku": "EA10261",
+    "codigo_base": "AF261"
+  },
+  {
+    "sku": "EA16142",
+    "codigo_base": "AF26142"
+  },
+  {
+    "sku": "EA16148",
+    "codigo_base": "AF26148M"
+  },
+  {
+    "sku": "EA16166",
+    "codigo_base": "AF26166"
+  },
+  {
+    "sku": "EA16224",
+    "codigo_base": "AF26224"
+  },
+  {
+    "sku": "EA16225",
+    "codigo_base": "AF26225"
+  },
+  {
+    "sku": "EA16300",
+    "codigo_base": "AF26300"
+  },
+  {
+    "sku": "EA16304",
+    "codigo_base": "AF26304"
+  },
+  {
+    "sku": "EA16306",
+    "codigo_base": "AF26306"
+  },
+  {
+    "sku": "EA16307",
+    "codigo_base": "AF26307"
+  },
+  {
+    "sku": "EA16309",
+    "codigo_base": "AF26309"
+  },
+  {
+    "sku": "EA16310",
+    "codigo_base": "AF26310"
+  },
+  {
+    "sku": "EA16313",
+    "codigo_base": "AF26313"
+  },
+  {
+    "sku": "EA16316",
+    "codigo_base": "AF26316"
+  },
+  {
+    "sku": "EA16320",
+    "codigo_base": "AF26320"
+  },
+  {
+    "sku": "EA16359",
+    "codigo_base": "AF26359"
+  },
+  {
+    "sku": "EA16380",
+    "codigo_base": "AF26380M"
+  },
+  {
+    "sku": "EA16385",
+    "codigo_base": "AF26385"
+  },
+  {
+    "sku": "EA16507",
+    "codigo_base": "AF26507"
+  },
+  {
+    "sku": "EA16508",
+    "codigo_base": "AF26508"
+  },
+  {
+    "sku": "EA16530",
+    "codigo_base": "AF26530"
+  },
+  {
+    "sku": "EA16532",
+    "codigo_base": "AF26532"
+  },
+  {
+    "sku": "EA16550",
+    "codigo_base": "AF26550"
+  },
+  {
+    "sku": "EA16558",
+    "codigo_base": "AF26558"
+  },
+  {
+    "sku": "EA16563",
+    "codigo_base": "AF26563"
+  },
+  {
+    "sku": "EA16564",
+    "codigo_base": "AF26564"
+  },
+  {
+    "sku": "EA16572",
+    "codigo_base": "AF26572"
+  },
+  {
+    "sku": "EA16601",
+    "codigo_base": "AF26601"
+  },
+  {
+    "sku": "EA16602",
+    "codigo_base": "AF26602"
+  },
+  {
+    "sku": "EA16607",
+    "codigo_base": "AF26607"
+  },
+  {
+    "sku": "EA16639",
+    "codigo_base": "AF26639"
+  },
+  {
+    "sku": "EA16661",
+    "codigo_base": "AF26661"
+  },
+  {
+    "sku": "EA17705",
+    "codigo_base": "AF27705"
+  },
+  {
+    "sku": "EA17719",
+    "codigo_base": "AF27719"
+  },
+  {
+    "sku": "EA17720",
+    "codigo_base": "AF27720"
+  },
+  {
+    "sku": "EA17734",
+    "codigo_base": "AF27734"
+  },
+  {
+    "sku": "EA17824",
+    "codigo_base": "AF27824"
+  },
+  {
+    "sku": "EA17993",
+    "codigo_base": "AF27993"
+  },
+  {
+    "sku": "EA17996",
+    "codigo_base": "AF27996"
+  },
+  {
+    "sku": "EA10286",
+    "codigo_base": "AF286"
+  },
+  {
+    "sku": "EA10287",
+    "codigo_base": "AF287"
+  },
+  {
+    "sku": "EA10288",
+    "codigo_base": "AF288M"
+  },
+  {
+    "sku": "EA10295",
+    "codigo_base": "AF295"
+  },
+  {
+    "sku": "EA10312",
+    "codigo_base": "AF312"
+  },
+  {
+    "sku": "EA10328",
+    "codigo_base": "AF328"
+  },
+  {
+    "sku": "EA10335",
+    "codigo_base": "AF335"
+  },
+  {
+    "sku": "EA10342",
+    "codigo_base": "AF342"
+  },
+  {
+    "sku": "EA10359",
+    "codigo_base": "AF359"
+  },
+  {
+    "sku": "EA10366",
+    "codigo_base": "AF366"
+  },
+  {
+    "sku": "EA10372",
+    "codigo_base": "AF372"
+  },
+  {
+    "sku": "EA10392",
+    "codigo_base": "AF392"
+  },
+  {
+    "sku": "EA14042",
+    "codigo_base": "AF4042"
+  },
+  {
+    "sku": "EA14043",
+    "codigo_base": "AF4043"
+  },
+  {
+    "sku": "EA14070",
+    "codigo_base": "AF407"
+  },
+  {
+    "sku": "EA14102",
+    "codigo_base": "AF4102"
+  },
+  {
+    "sku": "EA14113",
+    "codigo_base": "AF4113"
+  },
+  {
+    "sku": "EA14114",
+    "codigo_base": "AF4114"
+  },
+  {
+    "sku": "EA14115",
+    "codigo_base": "AF4115"
+  },
+  {
+    "sku": "EA14116",
+    "codigo_base": "AF4116"
+  },
+  {
+    "sku": "EA10419",
+    "codigo_base": "AF419"
+  },
+  {
+    "sku": "EA10420",
+    "codigo_base": "AF420K"
+  },
+  {
+    "sku": "EA14217",
+    "codigo_base": "AF4217"
+  },
+  {
+    "sku": "EA14218",
+    "codigo_base": "AF4218"
+  },
+  {
+    "sku": "EA14230",
+    "codigo_base": "AF423KM"
+  },
+  {
+    "sku": "EA14285",
+    "codigo_base": "AF4285"
+  },
+  {
+    "sku": "EA14289",
+    "codigo_base": "AF4289"
+  },
+  {
+    "sku": "EA10434",
+    "codigo_base": "AF434K"
+  },
+  {
+    "sku": "EA10435",
+    "codigo_base": "AF435"
+  },
+  {
+    "sku": "EA14367",
+    "codigo_base": "AF4367"
+  },
+  {
+    "sku": "EA10445",
+    "codigo_base": "AF445"
+  },
+  {
+    "sku": "EA14507",
+    "codigo_base": "AF4507M"
+  },
+  {
+    "sku": "EA14524",
+    "codigo_base": "AF4524"
+  },
+  {
+    "sku": "EA14582",
+    "codigo_base": "AF4582"
+  },
+  {
+    "sku": "EA14611",
+    "codigo_base": "AF4611K"
+  },
+  {
+    "sku": "EA14649",
+    "codigo_base": "AF4649"
+  },
+  {
+    "sku": "EA14667",
+    "codigo_base": "AF4667"
+  },
+  {
+    "sku": "EA14673",
+    "codigo_base": "AF4673"
+  },
+  {
+    "sku": "EA14697",
+    "codigo_base": "AF4697"
+  },
+  {
+    "sku": "EA14698",
+    "codigo_base": "AF4698"
+  },
+  {
+    "sku": "EA14700",
+    "codigo_base": "AF4700"
+  },
+  {
+    "sku": "EA14704",
+    "codigo_base": "AF4704K"
+  },
+  {
+    "sku": "EA14708",
+    "codigo_base": "AF4708"
+  },
+  {
+    "sku": "EA14740",
+    "codigo_base": "AF4740"
+  },
+  {
+    "sku": "EA14741",
+    "codigo_base": "AF4741"
+  },
+  {
+    "sku": "EA14752",
+    "codigo_base": "AF4752"
+  },
+  {
+    "sku": "EA14774",
+    "codigo_base": "AF4774"
+  },
+  {
+    "sku": "EA14798",
+    "codigo_base": "AF4798"
+  },
+  {
+    "sku": "EA14832",
+    "codigo_base": "AF4832"
+  },
+  {
+    "sku": "EA14923",
+    "codigo_base": "AF4923"
+  },
+  {
+    "sku": "EA14926",
+    "codigo_base": "AF4926"
+  },
+  {
+    "sku": "EA14938",
+    "codigo_base": "AF4938"
+  },
+  {
+    "sku": "EA14947",
+    "codigo_base": "AF4947"
+  },
+  {
+    "sku": "EA14969",
+    "codigo_base": "AF4969"
+  },
+  {
+    "sku": "EA15374",
+    "codigo_base": "AF55374"
+  },
+  {
+    "sku": "EA16069",
+    "codigo_base": "AF56069"
+  },
+  {
+    "sku": "EA10872",
+    "codigo_base": "AF872SD"
+  },
+  {
+    "sku": "EA21104",
+    "codigo_base": "AH1104"
+  },
+  {
+    "sku": "EA21105",
+    "codigo_base": "AH1105"
+  },
+  {
+    "sku": "EA21106",
+    "codigo_base": "AH1106"
+  },
+  {
+    "sku": "EA21108",
+    "codigo_base": "AH1108"
+  },
+  {
+    "sku": "EA21109",
+    "codigo_base": "AH1109"
+  },
+  {
+    "sku": "EA21110",
+    "codigo_base": "AH1110"
+  },
+  {
+    "sku": "EA21111",
+    "codigo_base": "AH1111"
+  },
+  {
+    "sku": "EA21112",
+    "codigo_base": "AH1112"
+  },
+  {
+    "sku": "EA21113",
+    "codigo_base": "AH1113"
+  },
+  {
+    "sku": "EA21114",
+    "codigo_base": "AH1114"
+  },
+  {
+    "sku": "EA21115",
+    "codigo_base": "AH1115"
+  },
+  {
+    "sku": "EA21116",
+    "codigo_base": "AH1116"
+  },
+  {
+    "sku": "EA21117",
+    "codigo_base": "AH1117"
+  },
+  {
+    "sku": "EA21118",
+    "codigo_base": "AH1118"
+  },
+  {
+    "sku": "EA21119",
+    "codigo_base": "AH1119"
+  },
+  {
+    "sku": "EA21120",
+    "codigo_base": "AH1120"
+  },
+  {
+    "sku": "EA21121",
+    "codigo_base": "AH1121"
+  },
+  {
+    "sku": "EA21122",
+    "codigo_base": "AH1122"
+  },
+  {
+    "sku": "EA21123",
+    "codigo_base": "AH1123"
+  },
+  {
+    "sku": "EA21124",
+    "codigo_base": "AH1124"
+  },
+  {
+    "sku": "EA21125",
+    "codigo_base": "AH1125"
+  },
+  {
+    "sku": "EA21126",
+    "codigo_base": "AH1126"
+  },
+  {
+    "sku": "EA21127",
+    "codigo_base": "AH1127"
+  },
+  {
+    "sku": "EA21128",
+    "codigo_base": "AH1128"
+  },
+  {
+    "sku": "EA21129",
+    "codigo_base": "AH1129"
+  },
+  {
+    "sku": "EA21130",
+    "codigo_base": "AH1130"
+  },
+  {
+    "sku": "EA21131",
+    "codigo_base": "AH1131"
+  },
+  {
+    "sku": "EA21132",
+    "codigo_base": "AH1132"
+  },
+  {
+    "sku": "EA21133",
+    "codigo_base": "AH1133"
+  },
+  {
+    "sku": "EA21134",
+    "codigo_base": "AH1134"
+  },
+  {
+    "sku": "EA21351",
+    "codigo_base": "AH1135"
+  },
+  {
+    "sku": "EA21135",
+    "codigo_base": "AH1135M"
+  },
+  {
+    "sku": "EA21142",
+    "codigo_base": "AH1142"
+  },
+  {
+    "sku": "EA21144",
+    "codigo_base": "AH1144"
+  },
+  {
+    "sku": "EA21145",
+    "codigo_base": "AH1145"
+  },
+  {
+    "sku": "EA21149",
+    "codigo_base": "AH1149"
+  },
+  {
+    "sku": "EA21150",
+    "codigo_base": "AH1150"
+  },
+  {
+    "sku": "EA21151",
+    "codigo_base": "AH1151"
+  },
+  {
+    "sku": "EA21152",
+    "codigo_base": "AH1152"
+  },
+  {
+    "sku": "EA21153",
+    "codigo_base": "AH1153"
+  },
+  {
+    "sku": "EA21154",
+    "codigo_base": "AH1154"
+  },
+  {
+    "sku": "EA21159",
+    "codigo_base": "AH1159"
+  },
+  {
+    "sku": "EA21161",
+    "codigo_base": "AH1161"
+  },
+  {
+    "sku": "EA21162",
+    "codigo_base": "AH1162"
+  },
+  {
+    "sku": "EA21163",
+    "codigo_base": "AH1163"
+  },
+  {
+    "sku": "EA21164",
+    "codigo_base": "AH1164"
+  },
+  {
+    "sku": "EA21165",
+    "codigo_base": "AH1165"
+  },
+  {
+    "sku": "EA21167",
+    "codigo_base": "AH1167"
+  },
+  {
+    "sku": "EA21168",
+    "codigo_base": "AH1168"
+  },
+  {
+    "sku": "EA21169",
+    "codigo_base": "AH1169"
+  },
+  {
+    "sku": "EA21171",
+    "codigo_base": "AH1171"
+  },
+  {
+    "sku": "EA21173",
+    "codigo_base": "AH1173"
+  },
+  {
+    "sku": "EA21174",
+    "codigo_base": "AH1174"
+  },
+  {
+    "sku": "EA21175",
+    "codigo_base": "AH1175"
+  },
+  {
+    "sku": "EA21176",
+    "codigo_base": "AH1176"
+  },
+  {
+    "sku": "EA21177",
+    "codigo_base": "AH1177"
+  },
+  {
+    "sku": "EA21178",
+    "codigo_base": "AH1178"
+  },
+  {
+    "sku": "EA21179",
+    "codigo_base": "AH1179"
+  },
+  {
+    "sku": "EA21181",
+    "codigo_base": "AH1181"
+  },
+  {
+    "sku": "EA29005",
+    "codigo_base": "AH19005"
+  },
+  {
+    "sku": "EA29016",
+    "codigo_base": "AH19016"
+  },
+  {
+    "sku": "EA29029",
+    "codigo_base": "AH19029"
+  },
+  {
+    "sku": "EA29030",
+    "codigo_base": "AH19030"
+  },
+  {
+    "sku": "EA29031",
+    "codigo_base": "AH19031"
+  },
+  {
+    "sku": "EA29033",
+    "codigo_base": "AH19033"
+  },
+  {
+    "sku": "EA29048",
+    "codigo_base": "AH19048"
+  },
+  {
+    "sku": "EA29049",
+    "codigo_base": "AH19049"
+  },
+  {
+    "sku": "EA29050",
+    "codigo_base": "AH19050"
+  },
+  {
+    "sku": "EA29058",
+    "codigo_base": "AH19058"
+  },
+  {
+    "sku": "EA29060",
+    "codigo_base": "AH19060"
+  },
+  {
+    "sku": "EA29061",
+    "codigo_base": "AH19061"
+  },
+  {
+    "sku": "EA29101",
+    "codigo_base": "AH19101"
+  },
+  {
+    "sku": "EA29102",
+    "codigo_base": "AH19102"
+  },
+  {
+    "sku": "EA29103",
+    "codigo_base": "AH19103"
+  },
+  {
+    "sku": "EA29104",
+    "codigo_base": "AH19104"
+  },
+  {
+    "sku": "EA29105",
+    "codigo_base": "AH19105"
+  },
+  {
+    "sku": "EA29106",
+    "codigo_base": "AH19106"
+  },
+  {
+    "sku": "EA29118",
+    "codigo_base": "AH19118"
+  },
+  {
+    "sku": "EA29120",
+    "codigo_base": "AH19120"
+  },
+  {
+    "sku": "EA29142",
+    "codigo_base": "AH19142"
+  },
+  {
+    "sku": "EA29170",
+    "codigo_base": "AH19170"
+  },
+  {
+    "sku": "EA29175",
+    "codigo_base": "AH19175"
+  },
+  {
+    "sku": "EA29178",
+    "codigo_base": "AH19178"
+  },
+  {
+    "sku": "EA29223",
+    "codigo_base": "AH19223"
+  },
+  {
+    "sku": "EA29225",
+    "codigo_base": "AH19225"
+  },
+  {
+    "sku": "EA29230",
+    "codigo_base": "AH19230"
+  },
+  {
+    "sku": "EA29241",
+    "codigo_base": "AH19241"
+  },
+  {
+    "sku": "EA29246",
+    "codigo_base": "AH19246"
+  },
+  {
+    "sku": "EA29248",
+    "codigo_base": "AH19248"
+  },
+  {
+    "sku": "EA29251",
+    "codigo_base": "AH19251"
+  },
+  {
+    "sku": "EA29258",
+    "codigo_base": "AH19258"
+  },
+  {
+    "sku": "EA29262",
+    "codigo_base": "AH19262"
+  },
+  {
+    "sku": "EA29263",
+    "codigo_base": "AH19263"
+  },
+  {
+    "sku": "EA29279",
+    "codigo_base": "AH19279"
+  },
+  {
+    "sku": "EA29280",
+    "codigo_base": "AH19280"
+  },
+  {
+    "sku": "EA29281",
+    "codigo_base": "AH19281"
+  },
+  {
+    "sku": "EA29285",
+    "codigo_base": "AH19285"
+  },
+  {
+    "sku": "EA29295",
+    "codigo_base": "AH19295"
+  },
+  {
+    "sku": "EA29297",
+    "codigo_base": "AH19297"
+  },
+  {
+    "sku": "EA29300",
+    "codigo_base": "AH19300"
+  },
+  {
+    "sku": "EA29301",
+    "codigo_base": "AH19301"
+  },
+  {
+    "sku": "EA29302",
+    "codigo_base": "AH19302"
+  },
+  {
+    "sku": "EA29303",
+    "codigo_base": "AH19303"
+  },
+  {
+    "sku": "EA29304",
+    "codigo_base": "AH19304"
+  },
+  {
+    "sku": "EA29305",
+    "codigo_base": "AH19305"
+  },
+  {
+    "sku": "EA29330",
+    "codigo_base": "AH19330"
+  },
+  {
+    "sku": "EA29331",
+    "codigo_base": "AH19331"
+  },
+  {
+    "sku": "EA29332",
+    "codigo_base": "AH19332"
+  },
+  {
+    "sku": "EA29340",
+    "codigo_base": "AH19340"
+  },
+  {
+    "sku": "EA29351",
+    "codigo_base": "AH19351"
+  },
+  {
+    "sku": "EA29352",
+    "codigo_base": "AH19352"
+  },
+  {
+    "sku": "EA29353",
+    "codigo_base": "AH19353"
+  },
+  {
+    "sku": "EA29358",
+    "codigo_base": "AH19358"
+  },
+  {
+    "sku": "EA29360",
+    "codigo_base": "AH19360"
+  },
+  {
+    "sku": "EA29362",
+    "codigo_base": "AH19362"
+  },
+  {
+    "sku": "EA29363",
+    "codigo_base": "AH19363"
+  },
+  {
+    "sku": "EA29364",
+    "codigo_base": "AH19364"
+  },
+  {
+    "sku": "EA29370",
+    "codigo_base": "AH19370"
+  },
+  {
+    "sku": "EA29386",
+    "codigo_base": "AH19386"
+  },
+  {
+    "sku": "EA29392",
+    "codigo_base": "AH19392"
+  },
+  {
+    "sku": "EA29394",
+    "codigo_base": "AH19394"
+  },
+  {
+    "sku": "EA29399",
+    "codigo_base": "AH19399"
+  },
+  {
+    "sku": "EA29426",
+    "codigo_base": "AH19426"
+  },
+  {
+    "sku": "EA29442",
+    "codigo_base": "AH19442"
+  },
+  {
+    "sku": "EA29448",
+    "codigo_base": "AH19448"
+  },
+  {
+    "sku": "EA29459",
+    "codigo_base": "AH19459"
+  },
+  {
+    "sku": "EA29464",
+    "codigo_base": "AH19464"
+  },
+  {
+    "sku": "EA29469",
+    "codigo_base": "AH19469"
+  },
+  {
+    "sku": "EA29517",
+    "codigo_base": "AH19517"
+  },
+  {
+    "sku": "EA29518",
+    "codigo_base": "AH19518"
+  },
+  {
+    "sku": "EA20208",
+    "codigo_base": "AH208"
+  },
+  {
+    "sku": "EA20222",
+    "codigo_base": "AH222"
+  },
+  {
+    "sku": "EA24115",
+    "codigo_base": "AH24115"
+  },
+  {
+    "sku": "EA24122",
+    "codigo_base": "AH24122"
+  },
+  {
+    "sku": "EA24174",
+    "codigo_base": "AH24174"
+  },
+  {
+    "sku": "EA24175",
+    "codigo_base": "AH24175"
+  },
+  {
+    "sku": "EA24177",
+    "codigo_base": "AH24177"
+  },
+  {
+    "sku": "EA24178",
+    "codigo_base": "AH24178"
+  },
+  {
+    "sku": "EA24180",
+    "codigo_base": "AH24180"
+  },
+  {
+    "sku": "EA24181",
+    "codigo_base": "AH24181"
+  },
+  {
+    "sku": "EA24182",
+    "codigo_base": "AH24182"
+  },
+  {
+    "sku": "EA24192",
+    "codigo_base": "AH24192"
+  },
+  {
+    "sku": "EA24193",
+    "codigo_base": "AH24193"
+  },
+  {
+    "sku": "EA24194",
+    "codigo_base": "AH24194"
+  },
+  {
+    "sku": "EA24195",
+    "codigo_base": "AH24195"
+  },
+  {
+    "sku": "EA24196",
+    "codigo_base": "AH24196"
+  },
+  {
+    "sku": "EA24197",
+    "codigo_base": "AH24197"
+  },
+  {
+    "sku": "EA24198",
+    "codigo_base": "AH24198"
+  },
+  {
+    "sku": "EA24199",
+    "codigo_base": "AH24199"
+  },
+  {
+    "sku": "EA24200",
+    "codigo_base": "AH24200"
+  },
+  {
+    "sku": "EA24201",
+    "codigo_base": "AH24201"
+  },
+  {
+    "sku": "EA24321",
+    "codigo_base": "AH24321"
+  },
+  {
+    "sku": "EA24335",
+    "codigo_base": "AH24335"
+  },
+  {
+    "sku": "EA24337",
+    "codigo_base": "AH24337"
+  },
+  {
+    "sku": "EA24352",
+    "codigo_base": "AH24352"
+  },
+  {
+    "sku": "EA24353",
+    "codigo_base": "AH24353"
+  },
+  {
+    "sku": "EA24368",
+    "codigo_base": "AH24368"
+  },
+  {
+    "sku": "EA24374",
+    "codigo_base": "AH24374"
+  },
+  {
+    "sku": "EA20144",
+    "codigo_base": "AH40144"
+  },
+  {
+    "sku": "EA20148",
+    "codigo_base": "AH40148"
+  },
+  {
+    "sku": "EA25544",
+    "codigo_base": "AH55544"
+  },
+  {
+    "sku": "EA25547",
+    "codigo_base": "AH55547"
+  },
+  {
+    "sku": "EA25598",
+    "codigo_base": "AH55598"
+  },
+  {
+    "sku": "EA25599",
+    "codigo_base": "AH55599"
+  },
+  {
+    "sku": "EA25605",
+    "codigo_base": "AH55605"
+  },
+  {
+    "sku": "EA25628",
+    "codigo_base": "AH55628"
+  },
+  {
+    "sku": "EA25629",
+    "codigo_base": "AH55629"
+  },
+  {
+    "sku": "EA28500",
+    "codigo_base": "AH8500"
+  },
+  {
+    "sku": "EA28741",
+    "codigo_base": "AH8741"
+  },
+  {
+    "sku": "EA28755",
+    "codigo_base": "AH8755"
+  },
+  {
+    "sku": "EA28758",
+    "codigo_base": "AH8758"
+  },
+  {
+    "sku": "EA28787",
+    "codigo_base": "AH8787"
+  },
+  {
+    "sku": "EA28794",
+    "codigo_base": "AH8794"
+  },
+  {
+    "sku": "EA28795",
+    "codigo_base": "AH8795"
+  },
+  {
+    "sku": "EA28798",
+    "codigo_base": "AH8798"
+  },
+  {
+    "sku": "EA28810",
+    "codigo_base": "AH8810"
+  },
+  {
+    "sku": "EA28818",
+    "codigo_base": "AH8818"
+  },
+  {
+    "sku": "EA28819",
+    "codigo_base": "AH8819"
+  },
+  {
+    "sku": "EA28820",
+    "codigo_base": "AH8820"
+  },
+  {
+    "sku": "EA28821",
+    "codigo_base": "AH8821"
+  },
+  {
+    "sku": "EA28822",
+    "codigo_base": "AH8822"
+  },
+  {
+    "sku": "EA28823",
+    "codigo_base": "AH8823"
+  },
+  {
+    "sku": "EA28824",
+    "codigo_base": "AH8824"
+  },
+  {
+    "sku": "EA28825",
+    "codigo_base": "AH8825"
+  },
+  {
+    "sku": "EA28826",
+    "codigo_base": "AH8826"
+  },
+  {
+    "sku": "EA28852",
+    "codigo_base": "AH8852"
+  },
+  {
+    "sku": "EA28855",
+    "codigo_base": "AH8855"
+  },
+  {
+    "sku": "EA28856",
+    "codigo_base": "AH8856"
+  },
+  {
+    "sku": "EA28862",
+    "codigo_base": "AH8862"
+  },
+  {
+    "sku": "EA28948",
+    "codigo_base": "AH8948"
+  },
+  {
+    "sku": "EA28958",
+    "codigo_base": "AH8958"
+  },
+  {
+    "sku": "EA15150",
+    "codigo_base": "DBA5150"
+  },
+  {
+    "sku": "EA15229",
+    "codigo_base": "DBA5229"
+  },
+  {
+    "sku": "EF90160",
+    "codigo_base": "FF160"
+  },
+  {
+    "sku": "EF90189",
+    "codigo_base": "FF189"
+  },
+  {
+    "sku": "EF90190",
+    "codigo_base": "FF190"
+  },
+  {
+    "sku": "EF90193",
+    "codigo_base": "FF193"
+  },
+  {
+    "sku": "EF90195",
+    "codigo_base": "FF195"
+  },
+  {
+    "sku": "EF90197",
+    "codigo_base": "FF197"
+  },
+  {
+    "sku": "EF90217",
+    "codigo_base": "FF217"
+  },
+  {
+    "sku": "EF90229",
+    "codigo_base": "FF229"
+  },
+  {
+    "sku": "EF94086",
+    "codigo_base": "FF4086"
+  },
+  {
+    "sku": "EF94092",
+    "codigo_base": "FF4092"
+  },
+  {
+    "sku": "EF94121",
+    "codigo_base": "FF4121"
+  },
+  {
+    "sku": "EF94122",
+    "codigo_base": "FF4122"
+  },
+  {
+    "sku": "EF92001",
+    "codigo_base": "FF42001"
+  },
+  {
+    "sku": "EF92111",
+    "codigo_base": "FF42111"
+  },
+  {
+    "sku": "EF92114",
+    "codigo_base": "FF42114"
+  },
+  {
+    "sku": "EF92237",
+    "codigo_base": "FF42237"
+  },
+  {
+    "sku": "EF92238",
+    "codigo_base": "FF42238"
+  },
+  {
+    "sku": "EF92239",
+    "codigo_base": "FF42239"
+  },
+  {
+    "sku": "EF95007",
+    "codigo_base": "FF5007"
+  },
+  {
+    "sku": "EF95107",
+    "codigo_base": "FF5107"
+  },
+  {
+    "sku": "EF95120",
+    "codigo_base": "FF5120"
+  },
+  {
+    "sku": "EF95124",
+    "codigo_base": "FF5124"
+  },
+  {
+    "sku": "EF95215",
+    "codigo_base": "FF5215"
+  },
+  {
+    "sku": "EF95271",
+    "codigo_base": "FF5271"
+  },
+  {
+    "sku": "EF95294",
+    "codigo_base": "FF5294"
+  },
+  {
+    "sku": "EF95361",
+    "codigo_base": "FF5361"
+  },
+  {
+    "sku": "EF95378",
+    "codigo_base": "FF5378"
+  },
+  {
+    "sku": "EF95423",
+    "codigo_base": "FF5423"
+  },
+  {
+    "sku": "EF95449",
+    "codigo_base": "FF5449"
+  },
+  {
+    "sku": "EF95452",
+    "codigo_base": "FF5452"
+  },
+  {
+    "sku": "EF95453",
+    "codigo_base": "FF5453"
+  },
+  {
+    "sku": "EF95454",
+    "codigo_base": "FF5454"
+  },
+  {
+    "sku": "EF95478",
+    "codigo_base": "FF5478"
+  },
+  {
+    "sku": "EF95508",
+    "codigo_base": "FF5508"
+  },
+  {
+    "sku": "EF95607",
+    "codigo_base": "FF5607"
+  },
+  {
+    "sku": "EF95648",
+    "codigo_base": "FF5648"
+  },
+  {
+    "sku": "EF95649",
+    "codigo_base": "FF5649"
+  },
+  {
+    "sku": "EF95650",
+    "codigo_base": "FF5650"
+  },
+  {
+    "sku": "EF95651",
+    "codigo_base": "FF5651"
+  },
+  {
+    "sku": "EF95652",
+    "codigo_base": "FF5652"
+  },
+  {
+    "sku": "EF95653",
+    "codigo_base": "FF5653"
+  },
+  {
+    "sku": "EF95658",
+    "codigo_base": "FF5658"
+  },
+  {
+    "sku": "EF95660",
+    "codigo_base": "FF5660"
+  },
+  {
+    "sku": "EF95661",
+    "codigo_base": "FF5661"
+  },
+  {
+    "sku": "EF95663",
+    "codigo_base": "FF5663"
+  },
+  {
+    "sku": "EF95667",
+    "codigo_base": "FF5667"
+  },
+  {
+    "sku": "EF95669",
+    "codigo_base": "FF5669"
+  },
+  {
+    "sku": "EF95670",
+    "codigo_base": "FF5670"
+  },
+  {
+    "sku": "EF95672",
+    "codigo_base": "FF5672"
+  },
+  {
+    "sku": "EF95673",
+    "codigo_base": "FF5673"
+  },
+  {
+    "sku": "EF95674",
+    "codigo_base": "FF5674"
+  },
+  {
+    "sku": "EF95676",
+    "codigo_base": "FF5676"
+  },
+  {
+    "sku": "EF95677",
+    "codigo_base": "FF5677"
+  },
+  {
+    "sku": "EF95679",
+    "codigo_base": "FF5679"
+  },
+  {
+    "sku": "EF95685",
+    "codigo_base": "FF5685"
+  },
+  {
+    "sku": "EF95774",
+    "codigo_base": "FF5774"
+  },
+  {
+    "sku": "EF95824",
+    "codigo_base": "FF5824"
+  },
+  {
+    "sku": "EF95859",
+    "codigo_base": "FF5859"
+  },
+  {
+    "sku": "EF95969",
+    "codigo_base": "FF5969"
+  },
+  {
+    "sku": "EF95998",
+    "codigo_base": "FF5998"
+  },
+  {
+    "sku": "EF93008",
+    "codigo_base": "FF63008"
+  },
+  {
+    "sku": "EF93028",
+    "codigo_base": "FF63028"
+  },
+  {
+    "sku": "EF93031",
+    "codigo_base": "FF63031NN"
+  },
+  {
+    "sku": "ES90101",
+    "codigo_base": "FS1010E"
+  },
+  {
+    "sku": "ES91000",
+    "codigo_base": "FS1010V"
+  },
+  {
+    "sku": "ES91031",
+    "codigo_base": "FS1031"
+  },
+  {
+    "sku": "ES91042",
+    "codigo_base": "FS1042"
+  },
+  {
+    "sku": "ES91043",
+    "codigo_base": "FS1043"
+  },
+  {
+    "sku": "ES91053",
+    "codigo_base": "FS1053A"
+  },
+  {
+    "sku": "ES91070",
+    "codigo_base": "FS1070"
+  },
+  {
+    "sku": "ES90701",
+    "codigo_base": "FS1070S"
+  },
+  {
+    "sku": "ES91072",
+    "codigo_base": "FS1072"
+  },
+  {
+    "sku": "ES91246",
+    "codigo_base": "FS1246"
+  },
+  {
+    "sku": "ES92546",
+    "codigo_base": "FS12546"
+  },
+  {
+    "sku": "ES91257",
+    "codigo_base": "FS1257"
+  },
+  {
+    "sku": "ES99270",
+    "codigo_base": "FS19270"
+  },
+  {
+    "sku": "ES99511",
+    "codigo_base": "FS19511N"
+  },
+  {
+    "sku": "ES99514",
+    "codigo_base": "FS19514"
+  },
+  {
+    "sku": "ES99515",
+    "codigo_base": "FS19515"
+  },
+  {
+    "sku": "ES99519",
+    "codigo_base": "FS19519VP"
+  },
+  {
+    "sku": "ES99523",
+    "codigo_base": "FS19523"
+  },
+  {
+    "sku": "ES99529",
+    "codigo_base": "FS19529"
+  },
+  {
+    "sku": "ES99606",
+    "codigo_base": "FS19606"
+  },
+  {
+    "sku": "ES99625",
+    "codigo_base": "FS19625"
+  },
+  {
+    "sku": "ES99629",
+    "codigo_base": "FS19629"
+  },
+  {
+    "sku": "ES98496",
+    "codigo_base": "FS19684P"
+  },
+  {
+    "sku": "ES99730",
+    "codigo_base": "FS19730G"
+  },
+  {
+    "sku": "ES99785",
+    "codigo_base": "FS19785G"
+  },
+  {
+    "sku": "ES99816",
+    "codigo_base": "FS19816B"
+  },
+  {
+    "sku": "ES99817",
+    "codigo_base": "FS19817"
+  },
+  {
+    "sku": "ES99820",
+    "codigo_base": "FS19820"
+  },
+  {
+    "sku": "ES99834",
+    "codigo_base": "FS19834"
+  },
+  {
+    "sku": "ES99843",
+    "codigo_base": "FS19843"
+  },
+  {
+    "sku": "ES99846",
+    "codigo_base": "FS19846"
+  },
+  {
+    "sku": "ES99910",
+    "codigo_base": "FS19910"
+  },
+  {
+    "sku": "ES99922",
+    "codigo_base": "FS19922"
+  },
+  {
+    "sku": "ES99997",
+    "codigo_base": "FS19997"
+  },
+  {
+    "sku": "ES90035",
+    "codigo_base": "FS20035"
+  },
+  {
+    "sku": "ES90105",
+    "codigo_base": "FS20105"
+  },
+  {
+    "sku": "ES90148",
+    "codigo_base": "FS20148"
+  },
+  {
+    "sku": "ES90149",
+    "codigo_base": "FS20149"
+  },
+  {
+    "sku": "ES90224",
+    "codigo_base": "FS20224"
+  },
+  {
+    "sku": "ES90232",
+    "codigo_base": "FS20232"
+  },
+  {
+    "sku": "ES90243",
+    "codigo_base": "FS20243"
+  },
+  {
+    "sku": "ES90245",
+    "codigo_base": "FS20245"
+  },
+  {
+    "sku": "ES90247",
+    "codigo_base": "FS20247"
+  },
+  {
+    "sku": "ES90249",
+    "codigo_base": "FS20249"
+  },
+  {
+    "sku": "ES90319",
+    "codigo_base": "FS20319"
+  },
+  {
+    "sku": "ES90329",
+    "codigo_base": "FS20329"
+  },
+  {
+    "sku": "ES90333",
+    "codigo_base": "FS20333"
+  },
+  {
+    "sku": "ES96234",
+    "codigo_base": "FS36234"
+  },
+  {
+    "sku": "ES96241",
+    "codigo_base": "FS36241"
+  },
+  {
+    "sku": "ES96272",
+    "codigo_base": "FS36272"
+  },
+  {
+    "sku": "ES92265",
+    "codigo_base": "FS42265"
+  },
+  {
+    "sku": "ES92269",
+    "codigo_base": "FS42269"
+  },
+  {
+    "sku": "ES92270",
+    "codigo_base": "FS42270"
+  },
+  {
+    "sku": "ES93001",
+    "codigo_base": "FS53001"
+  },
+  {
+    "sku": "EH68084",
+    "codigo_base": "HF28084"
+  },
+  {
+    "sku": "EH68086",
+    "codigo_base": "HF28086"
+  },
+  {
+    "sku": "EH68088",
+    "codigo_base": "HF28088"
+  },
+  {
+    "sku": "EH68201",
+    "codigo_base": "HF28201"
+  },
+  {
+    "sku": "EH68677",
+    "codigo_base": "HF28677"
+  },
+  {
+    "sku": "EH68755",
+    "codigo_base": "HF28755"
+  },
+  {
+    "sku": "EH68792",
+    "codigo_base": "HF28792"
+  },
+  {
+    "sku": "EH68883",
+    "codigo_base": "HF28883"
+  },
+  {
+    "sku": "EH68906",
+    "codigo_base": "HF28906"
+  },
+  {
+    "sku": "EH68936",
+    "codigo_base": "HF28936"
+  },
+  {
+    "sku": "EH68952",
+    "codigo_base": "HF28952"
+  },
+  {
+    "sku": "EH68974",
+    "codigo_base": "HF28974"
+  },
+  {
+    "sku": "EH68995",
+    "codigo_base": "HF28995"
+  },
+  {
+    "sku": "EH68998",
+    "codigo_base": "HF28998"
+  },
+  {
+    "sku": "EH60010",
+    "codigo_base": "HF30010"
+  },
+  {
+    "sku": "EH60017",
+    "codigo_base": "HF30017"
+  },
+  {
+    "sku": "EH60030",
+    "codigo_base": "HF30030"
+  },
+  {
+    "sku": "EH60051",
+    "codigo_base": "HF30051"
+  },
+  {
+    "sku": "EH60086",
+    "codigo_base": "HF30086"
+  },
+  {
+    "sku": "EH60100",
+    "codigo_base": "HF30100"
+  },
+  {
+    "sku": "EH60161",
+    "codigo_base": "HF30161"
+  },
+  {
+    "sku": "EH60179",
+    "codigo_base": "HF30179"
+  },
+  {
+    "sku": "EH60180",
+    "codigo_base": "HF30180"
+  },
+  {
+    "sku": "EH60183",
+    "codigo_base": "HF30183"
+  },
+  {
+    "sku": "EH60188",
+    "codigo_base": "HF30188"
+  },
+  {
+    "sku": "EH60209",
+    "codigo_base": "HF30209"
+  },
+  {
+    "sku": "EH60231",
+    "codigo_base": "HF30231"
+  },
+  {
+    "sku": "EH60238",
+    "codigo_base": "HF30238"
+  },
+  {
+    "sku": "EH60296",
+    "codigo_base": "HF30296"
+  },
+  {
+    "sku": "EH60457",
+    "codigo_base": "HF30457"
+  },
+  {
+    "sku": "EH60483",
+    "codigo_base": "HF30483"
+  },
+  {
+    "sku": "EH60499",
+    "codigo_base": "HF30499"
+  },
+  {
+    "sku": "EH60505",
+    "codigo_base": "HF30505"
+  },
+  {
+    "sku": "EH60513",
+    "codigo_base": "HF30513"
+  },
+  {
+    "sku": "EH60551",
+    "codigo_base": "HF30551"
+  },
+  {
+    "sku": "EH60560",
+    "codigo_base": "HF30560"
+  },
+  {
+    "sku": "EH60583",
+    "codigo_base": "HF30583"
+  },
+  {
+    "sku": "EH60654",
+    "codigo_base": "HF30654"
+  },
+  {
+    "sku": "EH60685",
+    "codigo_base": "HF30685"
+  },
+  {
+    "sku": "EH60750",
+    "codigo_base": "HF30750"
+  },
+  {
+    "sku": "EH60845",
+    "codigo_base": "HF30845"
+  },
+  {
+    "sku": "EH60902",
+    "codigo_base": "HF30902"
+  },
+  {
+    "sku": "EH60952",
+    "codigo_base": "HF30952"
+  },
+  {
+    "sku": "EH60957",
+    "codigo_base": "HF30957"
+  },
+  {
+    "sku": "EH65007",
+    "codigo_base": "HF35007"
+  },
+  {
+    "sku": "EH65011",
+    "codigo_base": "HF35011"
+  },
+  {
+    "sku": "EH65035",
+    "codigo_base": "HF35035"
+  },
+  {
+    "sku": "EH65184",
+    "codigo_base": "HF35184"
+  },
+  {
+    "sku": "EH65253",
+    "codigo_base": "HF35253"
+  },
+  {
+    "sku": "EH65292",
+    "codigo_base": "HF35292"
+  },
+  {
+    "sku": "EH60025",
+    "codigo_base": "HF40025"
+  },
+  {
+    "sku": "EH66027",
+    "codigo_base": "HF6027"
+  },
+  {
+    "sku": "EH66034",
+    "codigo_base": "HF6034"
+  },
+  {
+    "sku": "EH66035",
+    "codigo_base": "HF6035"
+  },
+  {
+    "sku": "EH66036",
+    "codigo_base": "HF6036"
+  },
+  {
+    "sku": "EH66038",
+    "codigo_base": "HF6038"
+  },
+  {
+    "sku": "EH66039",
+    "codigo_base": "HF6039"
+  },
+  {
+    "sku": "EH66040",
+    "codigo_base": "HF6040"
+  },
+  {
+    "sku": "EH66042",
+    "codigo_base": "HF6042"
+  },
+  {
+    "sku": "EH66043",
+    "codigo_base": "HF6043"
+  },
+  {
+    "sku": "EH66044",
+    "codigo_base": "HF6044"
+  },
+  {
+    "sku": "EH66048",
+    "codigo_base": "HF6048"
+  },
+  {
+    "sku": "EH66052",
+    "codigo_base": "HF6052"
+  },
+  {
+    "sku": "EH66062",
+    "codigo_base": "HF6062A"
+  },
+  {
+    "sku": "EH66070",
+    "codigo_base": "HF6070"
+  },
+  {
+    "sku": "EH66105",
+    "codigo_base": "HF6105"
+  },
+  {
+    "sku": "EH66106",
+    "codigo_base": "HF6106"
+  },
+  {
+    "sku": "EH66126",
+    "codigo_base": "HF6126"
+  },
+  {
+    "sku": "EH66127",
+    "codigo_base": "HF6127"
+  },
+  {
+    "sku": "EH66157",
+    "codigo_base": "HF6157"
+  },
+  {
+    "sku": "EH66169",
+    "codigo_base": "HF6169"
+  },
+  {
+    "sku": "EH66282",
+    "codigo_base": "HF6282"
+  },
+  {
+    "sku": "EH66419",
+    "codigo_base": "HF6419"
+  },
+  {
+    "sku": "EH66428",
+    "codigo_base": "HF6428"
+  },
+  {
+    "sku": "EH66449",
+    "codigo_base": "HF6449"
+  },
+  {
+    "sku": "EH66454",
+    "codigo_base": "HF6454"
+  },
+  {
+    "sku": "EH66477",
+    "codigo_base": "HF6477"
+  },
+  {
+    "sku": "EH66508",
+    "codigo_base": "HF6508"
+  },
+  {
+    "sku": "EH66526",
+    "codigo_base": "HF6526"
+  },
+  {
+    "sku": "EH66584",
+    "codigo_base": "HF6584"
+  },
+  {
+    "sku": "EH66600",
+    "codigo_base": "HF6600F"
+  },
+  {
+    "sku": "EH66605",
+    "codigo_base": "HF6605"
+  },
+  {
+    "sku": "EH66703",
+    "codigo_base": "HF6703F"
+  },
+  {
+    "sku": "EH66803",
+    "codigo_base": "HF6803"
+  },
+  {
+    "sku": "EH66804",
+    "codigo_base": "HF6804"
+  },
+  {
+    "sku": "EH66805",
+    "codigo_base": "HF6805"
+  },
+  {
+    "sku": "EH66821",
+    "codigo_base": "HF6821"
+  },
+  {
+    "sku": "EH66832",
+    "codigo_base": "HF6832"
+  },
+  {
+    "sku": "EH60047",
+    "codigo_base": "HF7004F"
+  },
+  {
+    "sku": "EH67060",
+    "codigo_base": "HF7060"
+  },
+  {
+    "sku": "EH67062",
+    "codigo_base": "HF7062"
+  },
+  {
+    "sku": "EH67068",
+    "codigo_base": "HF7068F"
+  },
+  {
+    "sku": "EH67070",
+    "codigo_base": "HF7070F"
+  },
+  {
+    "sku": "EH67077",
+    "codigo_base": "HF7077F"
+  },
+  {
+    "sku": "EH67078",
+    "codigo_base": "HF7078F"
+  },
+  {
+    "sku": "EH60887",
+    "codigo_base": "HF7088F"
+  },
+  {
+    "sku": "EH60907",
+    "codigo_base": "HF7090F"
+  },
+  {
+    "sku": "EH60917",
+    "codigo_base": "HF7091F"
+  },
+  {
+    "sku": "EH67093",
+    "codigo_base": "HF7093F"
+  },
+  {
+    "sku": "EH69570",
+    "codigo_base": "HF7095F"
+  },
+  {
+    "sku": "EH67107",
+    "codigo_base": "HF7107F"
+  },
+  {
+    "sku": "EH67112",
+    "codigo_base": "HF7112F"
+  },
+  {
+    "sku": "EH67113",
+    "codigo_base": "HF7113F"
+  },
+  {
+    "sku": "EH67114",
+    "codigo_base": "HF7114F"
+  },
+  {
+    "sku": "EH67115",
+    "codigo_base": "HF7115F"
+  },
+  {
+    "sku": "EH67116",
+    "codigo_base": "HF7116F"
+  },
+  {
+    "sku": "EH67117",
+    "codigo_base": "HF7117F"
+  },
+  {
+    "sku": "EH67118",
+    "codigo_base": "HF7118F"
+  },
+  {
+    "sku": "EH67119",
+    "codigo_base": "HF7119F"
+  },
+  {
+    "sku": "EH67120",
+    "codigo_base": "HF7120F"
+  },
+  {
+    "sku": "EH67121",
+    "codigo_base": "HF7121"
+  },
+  {
+    "sku": "EH67122",
+    "codigo_base": "HF7122"
+  },
+  {
+    "sku": "EH61227",
+    "codigo_base": "HF7122F"
+  },
+  {
+    "sku": "EH67123",
+    "codigo_base": "HF7123"
+  },
+  {
+    "sku": "EH67124",
+    "codigo_base": "HF7124"
+  },
+  {
+    "sku": "EH67125",
+    "codigo_base": "HF7125"
+  },
+  {
+    "sku": "EH61257",
+    "codigo_base": "HF7125F"
+  },
+  {
+    "sku": "EH67126",
+    "codigo_base": "HF7126"
+  },
+  {
+    "sku": "EH67127",
+    "codigo_base": "HF7127"
+  },
+  {
+    "sku": "EH61277",
+    "codigo_base": "HF7127F"
+  },
+  {
+    "sku": "EH67128",
+    "codigo_base": "HF7128F"
+  },
+  {
+    "sku": "EH67129",
+    "codigo_base": "HF7129"
+  },
+  {
+    "sku": "EH61297",
+    "codigo_base": "HF7129F"
+  },
+  {
+    "sku": "EH67132",
+    "codigo_base": "HF7132F"
+  },
+  {
+    "sku": "EH67294",
+    "codigo_base": "HF7294"
+  },
+  {
+    "sku": "EH67403",
+    "codigo_base": "HF7403"
+  },
+  {
+    "sku": "EH67408",
+    "codigo_base": "HF7408"
+  },
+  {
+    "sku": "EH67475",
+    "codigo_base": "HF7475"
+  },
+  {
+    "sku": "EH67477",
+    "codigo_base": "HF7477"
+  },
+  {
+    "sku": "EH67488",
+    "codigo_base": "HF7488"
+  },
+  {
+    "sku": "EH67489",
+    "codigo_base": "HF7489"
+  },
+  {
+    "sku": "EH67490",
+    "codigo_base": "HF7490"
+  },
+  {
+    "sku": "EH67491",
+    "codigo_base": "HF7491"
+  },
+  {
+    "sku": "EH67494",
+    "codigo_base": "HF7494"
+  },
+  {
+    "sku": "EH67503",
+    "codigo_base": "HF7503"
+  },
+  {
+    "sku": "EH67512",
+    "codigo_base": "HF7512"
+  },
+  {
+    "sku": "EH67513",
+    "codigo_base": "HF7513"
+  },
+  {
+    "sku": "EH67515",
+    "codigo_base": "HF7515"
+  },
+  {
+    "sku": "EH67517",
+    "codigo_base": "HF7517"
+  },
+  {
+    "sku": "EH67521",
+    "codigo_base": "HF7521"
+  },
+  {
+    "sku": "EH67523",
+    "codigo_base": "HF7523"
+  },
+  {
+    "sku": "EH67525",
+    "codigo_base": "HF7525"
+  },
+  {
+    "sku": "EH67526",
+    "codigo_base": "HF7526"
+  },
+  {
+    "sku": "EH67527",
+    "codigo_base": "HF7527"
+  },
+  {
+    "sku": "EH67528",
+    "codigo_base": "HF7528"
+  },
+  {
+    "sku": "EH67529",
+    "codigo_base": "HF7529"
+  },
+  {
+    "sku": "EH67531",
+    "codigo_base": "HF7531"
+  },
+  {
+    "sku": "EH67532",
+    "codigo_base": "HF7532"
+  },
+  {
+    "sku": "EH67559",
+    "codigo_base": "HF7559"
+  },
+  {
+    "sku": "EH67567",
+    "codigo_base": "HF7567"
+  },
+  {
+    "sku": "EH67656",
+    "codigo_base": "HF7656"
+  },
+  {
+    "sku": "EH67702",
+    "codigo_base": "HF7702"
+  },
+  {
+    "sku": "EH67712",
+    "codigo_base": "HF7712"
+  },
+  {
+    "sku": "EH67714",
+    "codigo_base": "HF7714"
+  },
+  {
+    "sku": "EH67747",
+    "codigo_base": "HF7747"
+  },
+  {
+    "sku": "EH67751",
+    "codigo_base": "HF7751"
+  },
+  {
+    "sku": "EH67758",
+    "codigo_base": "HF7758"
+  },
+  {
+    "sku": "EH67816",
+    "codigo_base": "HF7816"
+  },
+  {
+    "sku": "EH67817",
+    "codigo_base": "HF7817"
+  },
+  {
+    "sku": "EH67818",
+    "codigo_base": "HF7818"
+  },
+  {
+    "sku": "EH67819",
+    "codigo_base": "HF7819"
+  },
+  {
+    "sku": "EH67820",
+    "codigo_base": "HF7820"
+  },
+  {
+    "sku": "EH67823",
+    "codigo_base": "HF7823"
+  },
+  {
+    "sku": "EH67825",
+    "codigo_base": "HF7825"
+  },
+  {
+    "sku": "EH67827",
+    "codigo_base": "HF7827"
+  },
+  {
+    "sku": "EH67852",
+    "codigo_base": "HF7852"
+  },
+  {
+    "sku": "EH67863",
+    "codigo_base": "HF7863"
+  },
+  {
+    "sku": "EH67872",
+    "codigo_base": "HF7872"
+  },
+  {
+    "sku": "EH67926",
+    "codigo_base": "HF7926"
+  },
+  {
+    "sku": "EH67931",
+    "codigo_base": "HF7931"
+  },
+  {
+    "sku": "EH67933",
+    "codigo_base": "HF7933"
+  },
+  {
+    "sku": "EH67982",
+    "codigo_base": "HF7982"
+  },
+  {
+    "sku": "EH67993",
+    "codigo_base": "HF7993"
+  },
+  {
+    "sku": "EH67994",
+    "codigo_base": "HF7994"
+  },
+  {
+    "sku": "EH67995",
+    "codigo_base": "HF7995"
+  },
+  {
+    "sku": "EH68024",
+    "codigo_base": "HF8024"
+  },
+  {
+    "sku": "EH68029",
+    "codigo_base": "HF8029"
+  },
+  {
+    "sku": "EH68057",
+    "codigo_base": "HF8057"
+  },
+  {
+    "sku": "EH68068",
+    "codigo_base": "HF8068"
+  },
+  {
+    "sku": "EH68074",
+    "codigo_base": "HF8074"
+  },
+  {
+    "sku": "EH68076",
+    "codigo_base": "HF8076"
+  },
+  {
+    "sku": "EH60888",
+    "codigo_base": "HF8088"
+  },
+  {
+    "sku": "EH68089",
+    "codigo_base": "HF8089"
+  },
+  {
+    "sku": "EH68090",
+    "codigo_base": "HF8090"
+  },
+  {
+    "sku": "EH68091",
+    "codigo_base": "HF8091"
+  },
+  {
+    "sku": "EH68092",
+    "codigo_base": "HF8092"
+  },
+  {
+    "sku": "EH68094",
+    "codigo_base": "HF8094"
+  },
+  {
+    "sku": "EH68095",
+    "codigo_base": "HF8095"
+  },
+  {
+    "sku": "EH68179",
+    "codigo_base": "HF8179"
+  },
+  {
+    "sku": "EH68264",
+    "codigo_base": "HF8264"
+  },
+  {
+    "sku": "EH68265",
+    "codigo_base": "HF8265"
+  },
+  {
+    "sku": "EH68267",
+    "codigo_base": "HF8267"
+  },
+  {
+    "sku": "EH68268",
+    "codigo_base": "HF8268"
+  },
+  {
+    "sku": "EH68269",
+    "codigo_base": "HF8269"
+  },
+  {
+    "sku": "EH68270",
+    "codigo_base": "HF8270"
+  },
+  {
+    "sku": "EH68271",
+    "codigo_base": "HF8271"
+  },
+  {
+    "sku": "EH68272",
+    "codigo_base": "HF8272"
+  },
+  {
+    "sku": "EH68273",
+    "codigo_base": "HF8273"
+  },
+  {
+    "sku": "EH68274",
+    "codigo_base": "HF8274"
+  },
+  {
+    "sku": "EH68275",
+    "codigo_base": "HF8275"
+  },
+  {
+    "sku": "EH68276",
+    "codigo_base": "HF8276"
+  },
+  {
+    "sku": "EH68278",
+    "codigo_base": "HF8278"
+  },
+  {
+    "sku": "EH68279",
+    "codigo_base": "HF8279"
+  },
+  {
+    "sku": "EH68288",
+    "codigo_base": "HF8288"
+  },
+  {
+    "sku": "EH68289",
+    "codigo_base": "HF8289"
+  },
+  {
+    "sku": "EH68290",
+    "codigo_base": "HF8290"
+  },
+  {
+    "sku": "EH68291",
+    "codigo_base": "HF8291"
+  },
+  {
+    "sku": "EH68292",
+    "codigo_base": "HF8292"
+  },
+  {
+    "sku": "EH68293",
+    "codigo_base": "HF8293"
+  },
+  {
+    "sku": "EH68294",
+    "codigo_base": "HF8294"
+  },
+  {
+    "sku": "EH68295",
+    "codigo_base": "HF8295"
+  },
+  {
+    "sku": "EH68318",
+    "codigo_base": "HF8318"
+  },
+  {
+    "sku": "EH68319",
+    "codigo_base": "HF8319"
+  },
+  {
+    "sku": "EH68320",
+    "codigo_base": "HF8320"
+  },
+  {
+    "sku": "EH68357",
+    "codigo_base": "HF8357"
+  },
+  {
+    "sku": "EL84006",
+    "codigo_base": "LF14006NN"
+  },
+  {
+    "sku": "EL86003",
+    "codigo_base": "LF16003"
+  },
+  {
+    "sku": "EL86023",
+    "codigo_base": "LF16023"
+  },
+  {
+    "sku": "EL86042",
+    "codigo_base": "LF16042A"
+  },
+  {
+    "sku": "EL86164",
+    "codigo_base": "LF16164"
+  },
+  {
+    "sku": "EL86177",
+    "codigo_base": "LF16177"
+  },
+  {
+    "sku": "EL86185",
+    "codigo_base": "LF16185"
+  },
+  {
+    "sku": "EL86186",
+    "codigo_base": "LF16186"
+  },
+  {
+    "sku": "EL86187",
+    "codigo_base": "LF16187"
+  },
+  {
+    "sku": "EL86188",
+    "codigo_base": "LF16188"
+  },
+  {
+    "sku": "EL86189",
+    "codigo_base": "LF16189"
+  },
+  {
+    "sku": "EL86190",
+    "codigo_base": "LF16190"
+  },
+  {
+    "sku": "EL86191",
+    "codigo_base": "LF16191"
+  },
+  {
+    "sku": "EL86192",
+    "codigo_base": "LF16192"
+  },
+  {
+    "sku": "EL86193",
+    "codigo_base": "LF16193"
+  },
+  {
+    "sku": "EL86194",
+    "codigo_base": "LF16194"
+  },
+  {
+    "sku": "EL86195",
+    "codigo_base": "LF16195"
+  },
+  {
+    "sku": "EL86196",
+    "codigo_base": "LF16196"
+  },
+  {
+    "sku": "EL86197",
+    "codigo_base": "LF16197"
+  },
+  {
+    "sku": "EL86219",
+    "codigo_base": "LF16219"
+  },
+  {
+    "sku": "EL86221",
+    "codigo_base": "LF16221"
+  },
+  {
+    "sku": "EL86228",
+    "codigo_base": "LF16228"
+  },
+  {
+    "sku": "EL86254",
+    "codigo_base": "LF16254"
+  },
+  {
+    "sku": "EL86262",
+    "codigo_base": "LF16262"
+  },
+  {
+    "sku": "EL86269",
+    "codigo_base": "LF16269"
+  },
+  {
+    "sku": "EL86289",
+    "codigo_base": "LF16289"
+  },
+  {
+    "sku": "EL86329",
+    "codigo_base": "LF16329"
+  },
+  {
+    "sku": "EL86399",
+    "codigo_base": "LF16399"
+  },
+  {
+    "sku": "EL86406",
+    "codigo_base": "LF16406"
+  },
+  {
+    "sku": "EL86422",
+    "codigo_base": "LF16422"
+  },
+  {
+    "sku": "EL86431",
+    "codigo_base": "LF16431"
+  },
+  {
+    "sku": "EL86433",
+    "codigo_base": "LF16433"
+  },
+  {
+    "sku": "EL86479",
+    "codigo_base": "LF16479"
+  },
+  {
+    "sku": "EL87481",
+    "codigo_base": "LF17481"
+  },
+  {
+    "sku": "EL87506",
+    "codigo_base": "LF17506"
+  },
+  {
+    "sku": "EL87550",
+    "codigo_base": "LF17550"
+  },
+  {
+    "sku": "EL89816",
+    "codigo_base": "LF19816"
+  },
+  {
+    "sku": "EL83359",
+    "codigo_base": "LF3359"
+  },
+  {
+    "sku": "EL83426",
+    "codigo_base": "LF3426"
+  },
+  {
+    "sku": "EL83427",
+    "codigo_base": "LF3427"
+  },
+  {
+    "sku": "EL83429",
+    "codigo_base": "LF3429"
+  },
+  {
+    "sku": "EL83437",
+    "codigo_base": "LF3437"
+  },
+  {
+    "sku": "EL83439",
+    "codigo_base": "LF3439"
+  },
+  {
+    "sku": "EL83440",
+    "codigo_base": "LF3440"
+  },
+  {
+    "sku": "EL83465",
+    "codigo_base": "LF3465"
+  },
+  {
+    "sku": "EL83581",
+    "codigo_base": "LF3581"
+  },
+  {
+    "sku": "EL83590",
+    "codigo_base": "LF3590"
+  },
+  {
+    "sku": "EL83592",
+    "codigo_base": "LF3592"
+  },
+  {
+    "sku": "EL83595",
+    "codigo_base": "LF3595"
+  },
+  {
+    "sku": "EL83601",
+    "codigo_base": "LF3601"
+  },
+  {
+    "sku": "EL83613",
+    "codigo_base": "LF3613"
+  },
+  {
+    "sku": "EL83662",
+    "codigo_base": "LF3662"
+  },
+  {
+    "sku": "EL83731",
+    "codigo_base": "LF3731"
+  },
+  {
+    "sku": "EL83736",
+    "codigo_base": "LF3736"
+  },
+  {
+    "sku": "EL83747",
+    "codigo_base": "LF3747"
+  },
+  {
+    "sku": "EL83755",
+    "codigo_base": "LF3755"
+  },
+  {
+    "sku": "EL83777",
+    "codigo_base": "LF3777"
+  },
+  {
+    "sku": "EL83833",
+    "codigo_base": "LF3833"
+  },
+  {
+    "sku": "EL83836",
+    "codigo_base": "LF3836"
+  },
+  {
+    "sku": "EL88953",
+    "codigo_base": "LF3895A"
+  },
+  {
+    "sku": "EL83897",
+    "codigo_base": "LF3897"
+  },
+  {
+    "sku": "EL83933",
+    "codigo_base": "LF3933"
+  },
+  {
+    "sku": "EL83949",
+    "codigo_base": "LF3949"
+  },
+  {
+    "sku": "EL83954",
+    "codigo_base": "LF3954"
+  },
+  {
+    "sku": "EL83955",
+    "codigo_base": "LF3955"
+  },
+  {
+    "sku": "EL83956",
+    "codigo_base": "LF3956"
+  },
+  {
+    "sku": "EL83968",
+    "codigo_base": "LF3968"
+  },
+  {
+    "sku": "EL83985",
+    "codigo_base": "LF3985"
+  },
+  {
+    "sku": "EL83990",
+    "codigo_base": "LF3990"
+  },
+  {
+    "sku": "EL80094",
+    "codigo_base": "LF4009"
+  },
+  {
+    "sku": "EL84051",
+    "codigo_base": "LF4051"
+  },
+  {
+    "sku": "EL84087",
+    "codigo_base": "LF4087"
+  },
+  {
+    "sku": "EL84095",
+    "codigo_base": "LF4095"
+  },
+  {
+    "sku": "EL84098",
+    "codigo_base": "LF4098"
+  },
+  {
+    "sku": "EL84111",
+    "codigo_base": "LF4111"
+  },
+  {
+    "sku": "EL84117",
+    "codigo_base": "LF4117"
+  },
+  {
+    "sku": "EL84144",
+    "codigo_base": "LF4144"
+  },
+  {
+    "sku": "EL84146",
+    "codigo_base": "LF4146"
+  },
+  {
+    "sku": "EL84156",
+    "codigo_base": "LF4156"
+  },
+  {
+    "sku": "EL84161",
+    "codigo_base": "LF4161"
+  },
+  {
+    "sku": "EL84162",
+    "codigo_base": "LF4162"
+  },
+  {
+    "sku": "EL84163",
+    "codigo_base": "LF4163"
+  },
+  {
+    "sku": "EL82547",
+    "codigo_base": "LF42547"
+  },
+  {
+    "sku": "EL80501",
+    "codigo_base": "LF501"
+  },
+  {
+    "sku": "EL80514",
+    "codigo_base": "LF514"
+  },
+  {
+    "sku": "EL80515",
+    "codigo_base": "LF515"
+  },
+  {
+    "sku": "EL80578",
+    "codigo_base": "LF578"
+  },
+  {
+    "sku": "EL80588",
+    "codigo_base": "LF588"
+  },
+  {
+    "sku": "EL80604",
+    "codigo_base": "LF604"
+  },
+  {
+    "sku": "EL80608",
+    "codigo_base": "LF608"
+  },
+  {
+    "sku": "EL80626",
+    "codigo_base": "LF626"
+  },
+  {
+    "sku": "EL80627",
+    "codigo_base": "LF627"
+  },
+  {
+    "sku": "EL80664",
+    "codigo_base": "LF664"
+  },
+  {
+    "sku": "EL80668",
+    "codigo_base": "LF668"
+  },
+  {
+    "sku": "EL80676",
+    "codigo_base": "LF676"
+  },
+  {
+    "sku": "EL80706",
+    "codigo_base": "LF706"
+  },
+  {
+    "sku": "EL80709",
+    "codigo_base": "LF709"
+  },
+  {
+    "sku": "EL80717",
+    "codigo_base": "LF717"
+  },
+  {
+    "sku": "EL80722",
+    "codigo_base": "LF722"
+  },
+  {
+    "sku": "EL80730",
+    "codigo_base": "LF730"
+  },
+  {
+    "sku": "EL80731",
+    "codigo_base": "LF731"
+  },
+  {
+    "sku": "EL80736",
+    "codigo_base": "LF736"
+  },
+  {
+    "sku": "EL80738",
+    "codigo_base": "LF738"
+  },
+  {
+    "sku": "EL80741",
+    "codigo_base": "LF741"
+  },
+  {
+    "sku": "EL80743",
+    "codigo_base": "LF743"
+  },
+  {
+    "sku": "EL80745",
+    "codigo_base": "LF745"
+  },
+  {
+    "sku": "EL80755",
+    "codigo_base": "LF755"
+  },
+  {
+    "sku": "EL80757",
+    "codigo_base": "LF757"
+  },
+  {
+    "sku": "EL89033",
+    "codigo_base": "LF9033"
+  },
+  {
+    "sku": "EF91032",
+    "codigo_base": "ST1032"
+  },
+  {
+    "sku": "EF91071",
+    "codigo_base": "ST1071"
+  },
+  {
+    "sku": "EF91090",
+    "codigo_base": "ST1090"
+  },
+  {
+    "sku": "EF91093",
+    "codigo_base": "ST1093"
+  },
+  {
+    "sku": "EF91098",
+    "codigo_base": "ST1098"
+  },
+  {
+    "sku": "EF91117",
+    "codigo_base": "ST1117"
+  },
+  {
+    "sku": "EF91125",
+    "codigo_base": "ST1125"
+  },
+  {
+    "sku": "EF91126",
+    "codigo_base": "ST1126"
+  },
+  {
+    "sku": "EF91134",
+    "codigo_base": "ST1134"
+  },
+  {
+    "sku": "EF91155",
+    "codigo_base": "ST1155"
+  },
+  {
+    "sku": "EF91156",
+    "codigo_base": "ST1156"
+  },
+  {
+    "sku": "EF91157",
+    "codigo_base": "ST1157"
+  },
+  {
+    "sku": "EF91158",
+    "codigo_base": "ST1158"
+  },
+  {
+    "sku": "EF91159",
+    "codigo_base": "ST1159"
+  },
+  {
+    "sku": "EF91160",
+    "codigo_base": "ST1160"
+  },
+  {
+    "sku": "EF91161",
+    "codigo_base": "ST1161"
+  },
+  {
+    "sku": "EF91163",
+    "codigo_base": "ST1163"
+  },
+  {
+    "sku": "EF91164",
+    "codigo_base": "ST1164"
+  },
+  {
+    "sku": "EF91200",
+    "codigo_base": "ST1200"
+  },
+  {
+    "sku": "EF91201",
+    "codigo_base": "ST1201"
+  },
+  {
+    "sku": "EF91202",
+    "codigo_base": "ST1202"
+  },
+  {
+    "sku": "EF91203",
+    "codigo_base": "ST1203"
+  },
+  {
+    "sku": "EF91204",
+    "codigo_base": "ST1204"
+  },
+  {
+    "sku": "EF91205",
+    "codigo_base": "ST1205"
+  },
+  {
+    "sku": "EF91211",
+    "codigo_base": "ST1211"
+  },
+  {
+    "sku": "EF91215",
+    "codigo_base": "ST1215"
+  },
+  {
+    "sku": "EF91216",
+    "codigo_base": "ST1216"
+  },
+  {
+    "sku": "EF91217",
+    "codigo_base": "ST1217"
+  },
+  {
+    "sku": "EF91219",
+    "codigo_base": "ST1219"
+  },
+  {
+    "sku": "EF91220",
+    "codigo_base": "ST1220"
+  },
+  {
+    "sku": "EF91224",
+    "codigo_base": "ST1224"
+  },
+  {
+    "sku": "EF91226",
+    "codigo_base": "ST1226"
+  },
+  {
+    "sku": "EF91227",
+    "codigo_base": "ST1227"
+  },
+  {
+    "sku": "EF91228",
+    "codigo_base": "ST1228"
+  },
+  {
+    "sku": "EF91232",
+    "codigo_base": "ST1232"
+  },
+  {
+    "sku": "EF91233",
+    "codigo_base": "ST1233"
+  },
+  {
+    "sku": "EF91234",
+    "codigo_base": "ST1234"
+  },
+  {
+    "sku": "EF91235",
+    "codigo_base": "ST1235"
+  },
+  {
+    "sku": "EF91236",
+    "codigo_base": "ST1236"
+  },
+  {
+    "sku": "EF91239",
+    "codigo_base": "ST1239"
+  },
+  {
+    "sku": "EF91240",
+    "codigo_base": "ST1240"
+  },
+  {
+    "sku": "EF91241",
+    "codigo_base": "ST1241"
+  },
+  {
+    "sku": "EF91242",
+    "codigo_base": "ST1242"
+  },
+  {
+    "sku": "EF91244",
+    "codigo_base": "ST1244"
+  },
+  {
+    "sku": "EF91245",
+    "codigo_base": "ST1245"
+  },
+  {
+    "sku": "EF91246",
+    "codigo_base": "ST1246"
+  },
+  {
+    "sku": "EF91249",
+    "codigo_base": "ST1249"
+  },
+  {
+    "sku": "EF91250",
+    "codigo_base": "ST1250"
+  },
+  {
+    "sku": "EF91253",
+    "codigo_base": "ST1253"
+  },
+  {
+    "sku": "EF91257",
+    "codigo_base": "ST1257"
+  },
+  {
+    "sku": "EF91259",
+    "codigo_base": "ST1259"
+  },
+  {
+    "sku": "EF91261",
+    "codigo_base": "ST1261"
+  },
+  {
+    "sku": "EF91262",
+    "codigo_base": "ST1262"
+  },
+  {
+    "sku": "EF91264",
+    "codigo_base": "ST1264"
+  },
+  {
+    "sku": "EF91265",
+    "codigo_base": "ST1265"
+  },
+  {
+    "sku": "EF91267",
+    "codigo_base": "ST1267"
+  },
+  {
+    "sku": "EF91268",
+    "codigo_base": "ST1268"
+  },
+  {
+    "sku": "EF91269",
+    "codigo_base": "ST1269"
+  },
+  {
+    "sku": "EF91270",
+    "codigo_base": "ST1270"
+  },
+  {
+    "sku": "EF91272",
+    "codigo_base": "ST1272"
+  },
+  {
+    "sku": "EF91274",
+    "codigo_base": "ST1274"
+  },
+  {
+    "sku": "EF91275",
+    "codigo_base": "ST1275"
+  },
+  {
+    "sku": "EF91277",
+    "codigo_base": "ST1277"
+  },
+  {
+    "sku": "EF91279",
+    "codigo_base": "ST1279"
+  },
+  {
+    "sku": "EF91280",
+    "codigo_base": "ST1280"
+  },
+  {
+    "sku": "EF91281",
+    "codigo_base": "ST1281"
+  },
+  {
+    "sku": "EF91286",
+    "codigo_base": "ST1286"
+  },
+  {
+    "sku": "EF91287",
+    "codigo_base": "ST1287"
+  },
+  {
+    "sku": "EF91289",
+    "codigo_base": "ST1289"
+  },
+  {
+    "sku": "EF91292",
+    "codigo_base": "ST1292"
+  },
+  {
+    "sku": "EF91293",
+    "codigo_base": "ST1293"
+  },
+  {
+    "sku": "EF91296",
+    "codigo_base": "ST1296"
+  },
+  {
+    "sku": "EF91301",
+    "codigo_base": "ST1301"
+  },
+  {
+    "sku": "EF91314",
+    "codigo_base": "ST1314"
+  },
+  {
+    "sku": "EF91320",
+    "codigo_base": "ST1320"
+  },
+  {
+    "sku": "EF91325",
+    "codigo_base": "ST1325"
+  },
+  {
+    "sku": "EF91328",
+    "codigo_base": "ST1328"
+  },
+  {
+    "sku": "EF91330",
+    "codigo_base": "ST1330"
+  },
+  {
+    "sku": "EF91340",
+    "codigo_base": "ST1340"
+  },
+  {
+    "sku": "EF91344",
+    "codigo_base": "ST1344"
+  },
+  {
+    "sku": "EF91348",
+    "codigo_base": "ST1348"
+  },
+  {
+    "sku": "EF91350",
+    "codigo_base": "ST1350"
+  },
+  {
+    "sku": "EF91361",
+    "codigo_base": "ST1361"
+  },
+  {
+    "sku": "EF91362",
+    "codigo_base": "ST1362"
+  },
+  {
+    "sku": "EF91363",
+    "codigo_base": "ST1363"
+  },
+  {
+    "sku": "EF91364",
+    "codigo_base": "ST1364"
+  },
+  {
+    "sku": "EF91365",
+    "codigo_base": "ST1365"
+  },
+  {
+    "sku": "EF91366",
+    "codigo_base": "ST1366"
+  },
+  {
+    "sku": "EF91367",
+    "codigo_base": "ST1367"
+  },
+  {
+    "sku": "EF91398",
+    "codigo_base": "ST1398"
+  },
+  {
+    "sku": "EF91511",
+    "codigo_base": "ST1511"
+  },
+  {
+    "sku": "EF91762",
+    "codigo_base": "ST1762"
+  },
+  {
+    "sku": "EF91800",
+    "codigo_base": "ST1800"
+  },
+  {
+    "sku": "EF91812",
+    "codigo_base": "ST1812"
+  },
+  {
+    "sku": "EF91829",
+    "codigo_base": "ST1829"
+  },
+  {
+    "sku": "EF91831",
+    "codigo_base": "ST1831"
+  },
+  {
+    "sku": "EF91845",
+    "codigo_base": "ST1845"
+  },
+  {
+    "sku": "EF91933",
+    "codigo_base": "ST1933HH"
+  },
+  {
+    "sku": "EF92013",
+    "codigo_base": "ST2013HH"
+  },
+  {
+    "sku": "EF92015",
+    "codigo_base": "ST2015HH"
+  },
+  {
+    "sku": "EF92019",
+    "codigo_base": "ST2019HH"
+  },
+  {
+    "sku": "EF92022",
+    "codigo_base": "ST2022HH"
+  },
+  {
+    "sku": "EF92053",
+    "codigo_base": "ST2053HH"
+  },
+  {
+    "sku": "EF92055",
+    "codigo_base": "ST2055HH"
+  },
+  {
+    "sku": "EF92056",
+    "codigo_base": "ST2056HH"
+  },
+  {
+    "sku": "EF92058",
+    "codigo_base": "ST2058HH"
+  },
+  {
+    "sku": "EF92059",
+    "codigo_base": "ST2059HH"
+  },
+  {
+    "sku": "EF92061",
+    "codigo_base": "ST2061HH"
+  },
+  {
+    "sku": "EF92062",
+    "codigo_base": "ST2062HH"
+  },
+  {
+    "sku": "EF92063",
+    "codigo_base": "ST2063HH"
+  },
+  {
+    "sku": "EF92065",
+    "codigo_base": "ST2065HH"
+  },
+  {
+    "sku": "EF92066",
+    "codigo_base": "ST2066HH"
+  },
+  {
+    "sku": "EF92067",
+    "codigo_base": "ST2067HH"
+  },
+  {
+    "sku": "EF92074",
+    "codigo_base": "ST2074"
+  },
+  {
+    "sku": "EF92086",
+    "codigo_base": "ST2086"
+  },
+  {
+    "sku": "EF92096",
+    "codigo_base": "ST2096"
+  },
+  {
+    "sku": "EF92105",
+    "codigo_base": "ST2105"
+  },
+  {
+    "sku": "EF92139",
+    "codigo_base": "ST2139"
+  },
+  {
+    "sku": "EF91535",
+    "codigo_base": "ST5153"
+  },
+  {
+    "sku": "EF95521",
+    "codigo_base": "ST5521"
+  },
+  {
+    "sku": "EF97714",
+    "codigo_base": "ST7714"
+  },
+  {
+    "sku": "EF97726",
+    "codigo_base": "ST7726"
+  },
+  {
+    "sku": "EF97732",
+    "codigo_base": "ST7732"
+  },
+  {
+    "sku": "EF97756",
+    "codigo_base": "ST7756"
+  },
+  {
+    "sku": "EF97757",
+    "codigo_base": "ST7757"
+  },
+  {
+    "sku": "EF97775",
+    "codigo_base": "ST7775"
+  },
+  {
+    "sku": "EF97779",
+    "codigo_base": "ST7779"
+  },
+  {
+    "sku": "EF97788",
+    "codigo_base": "ST7788"
+  },
+  {
+    "sku": "EF97796",
+    "codigo_base": "ST7796"
+  },
+  {
+    "sku": "EW72003",
+    "codigo_base": "WF2003"
+  },
+  {
+    "sku": "EW72065",
+    "codigo_base": "WF2065"
+  },
+  {
+    "sku": "EW70712",
+    "codigo_base": "WF2071C"
+  },
+  {
+    "sku": "EW72135",
+    "codigo_base": "WF2135"
+  },
+  {
+    "sku": "EW72140",
+    "codigo_base": "WF2140"
+  }
+]

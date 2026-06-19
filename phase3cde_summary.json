@@ -1,0 +1,284 @@
+{
+  "run_timestamp": "2026-06-18T14:50:39.413Z",
+  "phase": "3CDE",
+  "total_sku_with_any_data": 775,
+  "sku_with_cross_references": 775,
+  "sku_with_applications": 127,
+  "sku_with_specs": 228,
+  "total_cross_references": 72876,
+  "total_competitor_refs": 66663,
+  "total_oem_refs": 6213,
+  "total_vehicle_applications": 18898,
+  "total_specs": 1179,
+  "unique_brands_found": 930,
+  "cross_refs_by_segment": {
+    "Air Filter": {
+      "cross_refs": 5830,
+      "unique_skus": 346
+    },
+    "Cabin Filter": {
+      "cross_refs": 2270,
+      "unique_skus": 64
+    },
+    "Oil Filter": {
+      "cross_refs": 63127,
+      "unique_skus": 277
+    },
+    "Fuel Filter": {
+      "cross_refs": 1649,
+      "unique_skus": 88
+    }
+  },
+  "top_50_brands": [
+    {
+      "brand": "MAHLE",
+      "sku_count": 473,
+      "reference_count": 749
+    },
+    {
+      "brand": "WIX",
+      "sku_count": 461,
+      "reference_count": 1073
+    },
+    {
+      "brand": "HENGST",
+      "sku_count": 410,
+      "reference_count": 623
+    },
+    {
+      "brand": "MAGNETI-MARELLI",
+      "sku_count": 395,
+      "reference_count": 917
+    },
+    {
+      "brand": "KNECHT",
+      "sku_count": 377,
+      "reference_count": 973
+    },
+    {
+      "brand": "FILTRON",
+      "sku_count": 335,
+      "reference_count": 391
+    },
+    {
+      "brand": "FRAM",
+      "sku_count": 333,
+      "reference_count": 992
+    },
+    {
+      "brand": "HIFI-FILTER",
+      "sku_count": 327,
+      "reference_count": 350
+    },
+    {
+      "brand": "UFI",
+      "sku_count": 311,
+      "reference_count": 605
+    },
+    {
+      "brand": "PURFLUX",
+      "sku_count": 310,
+      "reference_count": 594
+    },
+    {
+      "brand": "MECAFILTER",
+      "sku_count": 281,
+      "reference_count": 570
+    },
+    {
+      "brand": "ALCO",
+      "sku_count": 267,
+      "reference_count": 461
+    },
+    {
+      "brand": "BOSCH",
+      "sku_count": 261,
+      "reference_count": 1736
+    },
+    {
+      "brand": "SOFIMA",
+      "sku_count": 261,
+      "reference_count": 310
+    },
+    {
+      "brand": "TECNOCAR",
+      "sku_count": 260,
+      "reference_count": 329
+    },
+    {
+      "brand": "CLEAN",
+      "sku_count": 254,
+      "reference_count": 340
+    },
+    {
+      "brand": "WILMINK-GROUP",
+      "sku_count": 247,
+      "reference_count": 720
+    },
+    {
+      "brand": "FLEETGUARD",
+      "sku_count": 243,
+      "reference_count": 922
+    },
+    {
+      "brand": "QUINTON-HAZELL",
+      "sku_count": 242,
+      "reference_count": 315
+    },
+    {
+      "brand": "COMLINE",
+      "sku_count": 232,
+      "reference_count": 260
+    },
+    {
+      "brand": "BALDWIN",
+      "sku_count": 224,
+      "reference_count": 932
+    },
+    {
+      "brand": "VALEO",
+      "sku_count": 224,
+      "reference_count": 332
+    },
+    {
+      "brand": "DONALDSON",
+      "sku_count": 217,
+      "reference_count": 742
+    },
+    {
+      "brand": "LUBERFINER",
+      "sku_count": 208,
+      "reference_count": 949
+    },
+    {
+      "brand": "MULLER",
+      "sku_count": 198,
+      "reference_count": 225
+    },
+    {
+      "brand": "MISFAT",
+      "sku_count": 194,
+      "reference_count": 261
+    },
+    {
+      "brand": "CARQUEST",
+      "sku_count": 191,
+      "reference_count": 819
+    },
+    {
+      "brand": "KOLBENSCHMIDT",
+      "sku_count": 182,
+      "reference_count": 513
+    },
+    {
+      "brand": "M-FILTER",
+      "sku_count": 176,
+      "reference_count": 258
+    },
+    {
+      "brand": "CROSLAND",
+      "sku_count": 169,
+      "reference_count": 623
+    },
+    {
+      "brand": "KAGER",
+      "sku_count": 169,
+      "reference_count": 203
+    },
+    {
+      "brand": "PUROLATOR",
+      "sku_count": 166,
+      "reference_count": 1018
+    },
+    {
+      "brand": "HASTINGS",
+      "sku_count": 161,
+      "reference_count": 623
+    },
+    {
+      "brand": "COOPERS",
+      "sku_count": 160,
+      "reference_count": 418
+    },
+    {
+      "brand": "SCT",
+      "sku_count": 160,
+      "reference_count": 176
+    },
+    {
+      "brand": "AC-DELCO",
+      "sku_count": 158,
+      "reference_count": 1064
+    },
+    {
+      "brand": "MEAT-DORIA",
+      "sku_count": 158,
+      "reference_count": 245
+    },
+    {
+      "brand": "SAKURA",
+      "sku_count": 158,
+      "reference_count": 188
+    },
+    {
+      "brand": "HOFFER",
+      "sku_count": 156,
+      "reference_count": 328
+    },
+    {
+      "brand": "MGA",
+      "sku_count": 155,
+      "reference_count": 166
+    },
+    {
+      "brand": "DELPHI",
+      "sku_count": 154,
+      "reference_count": 236
+    },
+    {
+      "brand": "PBR",
+      "sku_count": 152,
+      "reference_count": 525
+    },
+    {
+      "brand": "OPEN-PARTS",
+      "sku_count": 152,
+      "reference_count": 172
+    },
+    {
+      "brand": "CHAMPION",
+      "sku_count": 150,
+      "reference_count": 420
+    },
+    {
+      "brand": "COOPERS-FIAAM",
+      "sku_count": 149,
+      "reference_count": 426
+    },
+    {
+      "brand": "FIL-FILTER",
+      "sku_count": 141,
+      "reference_count": 272
+    },
+    {
+      "brand": "UNICO",
+      "sku_count": 138,
+      "reference_count": 150
+    },
+    {
+      "brand": "GUD",
+      "sku_count": 135,
+      "reference_count": 399
+    },
+    {
+      "brand": "TEHO",
+      "sku_count": 133,
+      "reference_count": 275
+    },
+    {
+      "brand": "ASAS",
+      "sku_count": 128,
+      "reference_count": 145
+    }
+  ]
+}

@@ -1,0 +1,1717 @@
+{
+  "generated_at": "2026-06-18T14:50:28.218Z",
+  "total_unique_skus_recovered": 775,
+  "sku_with_competitor_crossrefs": 775,
+  "sku_with_vehicle_applications": 127,
+  "sku_with_specifications": 228,
+  "total_cross_reference_rows": 72876,
+  "total_application_rows": 18898,
+  "total_spec_rows": 1179,
+  "unique_brands_found": 930,
+  "top_100_brands_by_coverage": [
+    {
+      "brand": "MAHLE",
+      "sku_count": 473,
+      "reference_count": 749
+    },
+    {
+      "brand": "WIX",
+      "sku_count": 461,
+      "reference_count": 1073
+    },
+    {
+      "brand": "HENGST",
+      "sku_count": 410,
+      "reference_count": 623
+    },
+    {
+      "brand": "MAGNETI-MARELLI",
+      "sku_count": 395,
+      "reference_count": 917
+    },
+    {
+      "brand": "KNECHT",
+      "sku_count": 377,
+      "reference_count": 973
+    },
+    {
+      "brand": "FILTRON",
+      "sku_count": 335,
+      "reference_count": 391
+    },
+    {
+      "brand": "FRAM",
+      "sku_count": 333,
+      "reference_count": 992
+    },
+    {
+      "brand": "HIFI-FILTER",
+      "sku_count": 327,
+      "reference_count": 350
+    },
+    {
+      "brand": "UFI",
+      "sku_count": 311,
+      "reference_count": 605
+    },
+    {
+      "brand": "PURFLUX",
+      "sku_count": 310,
+      "reference_count": 594
+    },
+    {
+      "brand": "MECAFILTER",
+      "sku_count": 281,
+      "reference_count": 570
+    },
+    {
+      "brand": "ALCO",
+      "sku_count": 267,
+      "reference_count": 461
+    },
+    {
+      "brand": "BOSCH",
+      "sku_count": 261,
+      "reference_count": 1736
+    },
+    {
+      "brand": "SOFIMA",
+      "sku_count": 261,
+      "reference_count": 310
+    },
+    {
+      "brand": "TECNOCAR",
+      "sku_count": 260,
+      "reference_count": 329
+    },
+    {
+      "brand": "CLEAN",
+      "sku_count": 254,
+      "reference_count": 340
+    },
+    {
+      "brand": "WILMINK-GROUP",
+      "sku_count": 247,
+      "reference_count": 720
+    },
+    {
+      "brand": "FLEETGUARD",
+      "sku_count": 243,
+      "reference_count": 922
+    },
+    {
+      "brand": "QUINTON-HAZELL",
+      "sku_count": 242,
+      "reference_count": 315
+    },
+    {
+      "brand": "COMLINE",
+      "sku_count": 232,
+      "reference_count": 260
+    },
+    {
+      "brand": "BALDWIN",
+      "sku_count": 224,
+      "reference_count": 932
+    },
+    {
+      "brand": "VALEO",
+      "sku_count": 224,
+      "reference_count": 332
+    },
+    {
+      "brand": "DONALDSON",
+      "sku_count": 217,
+      "reference_count": 742
+    },
+    {
+      "brand": "LUBERFINER",
+      "sku_count": 208,
+      "reference_count": 949
+    },
+    {
+      "brand": "MULLER",
+      "sku_count": 198,
+      "reference_count": 225
+    },
+    {
+      "brand": "MISFAT",
+      "sku_count": 194,
+      "reference_count": 261
+    },
+    {
+      "brand": "CARQUEST",
+      "sku_count": 191,
+      "reference_count": 819
+    },
+    {
+      "brand": "KOLBENSCHMIDT",
+      "sku_count": 182,
+      "reference_count": 513
+    },
+    {
+      "brand": "M-FILTER",
+      "sku_count": 176,
+      "reference_count": 258
+    },
+    {
+      "brand": "CROSLAND",
+      "sku_count": 169,
+      "reference_count": 623
+    },
+    {
+      "brand": "KAGER",
+      "sku_count": 169,
+      "reference_count": 203
+    },
+    {
+      "brand": "PUROLATOR",
+      "sku_count": 166,
+      "reference_count": 1018
+    },
+    {
+      "brand": "HASTINGS",
+      "sku_count": 161,
+      "reference_count": 623
+    },
+    {
+      "brand": "COOPERS",
+      "sku_count": 160,
+      "reference_count": 418
+    },
+    {
+      "brand": "SCT",
+      "sku_count": 160,
+      "reference_count": 176
+    },
+    {
+      "brand": "AC-DELCO",
+      "sku_count": 158,
+      "reference_count": 1064
+    },
+    {
+      "brand": "MEAT-DORIA",
+      "sku_count": 158,
+      "reference_count": 245
+    },
+    {
+      "brand": "SAKURA",
+      "sku_count": 158,
+      "reference_count": 188
+    },
+    {
+      "brand": "HOFFER",
+      "sku_count": 156,
+      "reference_count": 328
+    },
+    {
+      "brand": "MGA",
+      "sku_count": 155,
+      "reference_count": 166
+    },
+    {
+      "brand": "DELPHI",
+      "sku_count": 154,
+      "reference_count": 236
+    },
+    {
+      "brand": "PBR",
+      "sku_count": 152,
+      "reference_count": 525
+    },
+    {
+      "brand": "OPEN-PARTS",
+      "sku_count": 152,
+      "reference_count": 172
+    },
+    {
+      "brand": "CHAMPION",
+      "sku_count": 150,
+      "reference_count": 420
+    },
+    {
+      "brand": "COOPERS-FIAAM",
+      "sku_count": 149,
+      "reference_count": 426
+    },
+    {
+      "brand": "FIL-FILTER",
+      "sku_count": 141,
+      "reference_count": 272
+    },
+    {
+      "brand": "UNICO",
+      "sku_count": 138,
+      "reference_count": 150
+    },
+    {
+      "brand": "GUD",
+      "sku_count": 135,
+      "reference_count": 399
+    },
+    {
+      "brand": "TEHO",
+      "sku_count": 133,
+      "reference_count": 275
+    },
+    {
+      "brand": "ASAS",
+      "sku_count": 128,
+      "reference_count": 145
+    },
+    {
+      "brand": "GENERAL-MOTORS",
+      "sku_count": 124,
+      "reference_count": 823
+    },
+    {
+      "brand": "FIRST-AUTOMOTIVE",
+      "sku_count": 122,
+      "reference_count": 135
+    },
+    {
+      "brand": "ARMAFILT",
+      "sku_count": 119,
+      "reference_count": 247
+    },
+    {
+      "brand": "ELOFIC",
+      "sku_count": 118,
+      "reference_count": 152
+    },
+    {
+      "brand": "MOTORCRAFT",
+      "sku_count": 115,
+      "reference_count": 576
+    },
+    {
+      "brand": "FRAD",
+      "sku_count": 114,
+      "reference_count": 244
+    },
+    {
+      "brand": "SOTRAS",
+      "sku_count": 114,
+      "reference_count": 131
+    },
+    {
+      "brand": "FORD",
+      "sku_count": 111,
+      "reference_count": 1424
+    },
+    {
+      "brand": "UNICO-FILTER",
+      "sku_count": 111,
+      "reference_count": 119
+    },
+    {
+      "brand": "LUCAS",
+      "sku_count": 108,
+      "reference_count": 231
+    },
+    {
+      "brand": "KRALINATOR",
+      "sku_count": 108,
+      "reference_count": 179
+    },
+    {
+      "brand": "SOGEFI",
+      "sku_count": 108,
+      "reference_count": 124
+    },
+    {
+      "brand": "COOPERSFIAAM",
+      "sku_count": 108,
+      "reference_count": 120
+    },
+    {
+      "brand": "BIG-A",
+      "sku_count": 107,
+      "reference_count": 391
+    },
+    {
+      "brand": "DEUTZ",
+      "sku_count": 106,
+      "reference_count": 421
+    },
+    {
+      "brand": "NAPA",
+      "sku_count": 106,
+      "reference_count": 353
+    },
+    {
+      "brand": "TJ-FILTERS",
+      "sku_count": 106,
+      "reference_count": 225
+    },
+    {
+      "brand": "PZL-SEDZISZOW",
+      "sku_count": 106,
+      "reference_count": 112
+    },
+    {
+      "brand": "UNIFLUX-FILTERS",
+      "sku_count": 102,
+      "reference_count": 111
+    },
+    {
+      "brand": "DEUTZ-FAHR",
+      "sku_count": 101,
+      "reference_count": 264
+    },
+    {
+      "brand": "DENCKERMANN",
+      "sku_count": 101,
+      "reference_count": 118
+    },
+    {
+      "brand": "FILMAR",
+      "sku_count": 101,
+      "reference_count": 113
+    },
+    {
+      "brand": "WYTWORNIA-FILTROW",
+      "sku_count": 101,
+      "reference_count": 108
+    },
+    {
+      "brand": "FLEETRITE",
+      "sku_count": 99,
+      "reference_count": 333
+    },
+    {
+      "brand": "MEYLE",
+      "sku_count": 99,
+      "reference_count": 105
+    },
+    {
+      "brand": "DIGOMA",
+      "sku_count": 98,
+      "reference_count": 144
+    },
+    {
+      "brand": "DELUXE",
+      "sku_count": 97,
+      "reference_count": 296
+    },
+    {
+      "brand": "GIF-FILTER",
+      "sku_count": 96,
+      "reference_count": 164
+    },
+    {
+      "brand": "CHAMP-LAB",
+      "sku_count": 94,
+      "reference_count": 374
+    },
+    {
+      "brand": "LAUTRETTE",
+      "sku_count": 94,
+      "reference_count": 241
+    },
+    {
+      "brand": "MASSEY-FERGUSON",
+      "sku_count": 94,
+      "reference_count": 207
+    },
+    {
+      "brand": "GOODWILL",
+      "sku_count": 94,
+      "reference_count": 194
+    },
+    {
+      "brand": "CO-OP",
+      "sku_count": 93,
+      "reference_count": 272
+    },
+    {
+      "brand": "DONIT",
+      "sku_count": 93,
+      "reference_count": 107
+    },
+    {
+      "brand": "DIGOEMA-FILTER",
+      "sku_count": 92,
+      "reference_count": 121
+    },
+    {
+      "brand": "CLAAS",
+      "sku_count": 91,
+      "reference_count": 352
+    },
+    {
+      "brand": "GONHER",
+      "sku_count": 90,
+      "reference_count": 331
+    },
+    {
+      "brand": "MOTAQUIP",
+      "sku_count": 90,
+      "reference_count": 113
+    },
+    {
+      "brand": "MOPAR",
+      "sku_count": 88,
+      "reference_count": 371
+    },
+    {
+      "brand": "BECK-ARNLEY",
+      "sku_count": 87,
+      "reference_count": 444
+    },
+    {
+      "brand": "FIAAM",
+      "sku_count": 87,
+      "reference_count": 209
+    },
+    {
+      "brand": "MIGHTY",
+      "sku_count": 87,
+      "reference_count": 166
+    },
+    {
+      "brand": "PHILLIPS-66",
+      "sku_count": 87,
+      "reference_count": 138
+    },
+    {
+      "brand": "ALLIS-CHALMERS",
+      "sku_count": 85,
+      "reference_count": 259
+    },
+    {
+      "brand": "LUCAS-GIRLING",
+      "sku_count": 84,
+      "reference_count": 682
+    },
+    {
+      "brand": "JIFFY-LUBE",
+      "sku_count": 84,
+      "reference_count": 453
+    },
+    {
+      "brand": "MANITOU",
+      "sku_count": 84,
+      "reference_count": 221
+    },
+    {
+      "brand": "DEUTSCH",
+      "sku_count": 82,
+      "reference_count": 192
+    },
+    {
+      "brand": "CENEX",
+      "sku_count": 82,
+      "reference_count": 177
+    },
+    {
+      "brand": "STEYR",
+      "sku_count": 81,
+      "reference_count": 391
+    }
+  ],
+  "top_100_skus_by_cross_refs": [
+    {
+      "elimfilters_sku": "EL57121",
+      "source_sku": "W712/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 1498
+    },
+    {
+      "elimfilters_sku": "EL57122",
+      "source_sku": "W712/2",
+      "segment": "Oil Filter",
+      "cross_reference_count": 1498
+    },
+    {
+      "elimfilters_sku": "EL57125",
+      "source_sku": "W712/5",
+      "segment": "Oil Filter",
+      "cross_reference_count": 1498
+    },
+    {
+      "elimfilters_sku": "EL51261",
+      "source_sku": "W1126/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 1053
+    },
+    {
+      "elimfilters_sku": "EL59203",
+      "source_sku": "W920/3",
+      "segment": "Oil Filter",
+      "cross_reference_count": 950
+    },
+    {
+      "elimfilters_sku": "EL59407",
+      "source_sku": "W940/7",
+      "segment": "Oil Filter",
+      "cross_reference_count": 836
+    },
+    {
+      "elimfilters_sku": "EL54022",
+      "source_sku": "W1140/22",
+      "segment": "Oil Filter",
+      "cross_reference_count": 790
+    },
+    {
+      "elimfilters_sku": "EL57181",
+      "source_sku": "W718/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 780
+    },
+    {
+      "elimfilters_sku": "EL51211",
+      "source_sku": "W712/11X",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51212",
+      "source_sku": "W712/12",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51214",
+      "source_sku": "W712/14",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51218",
+      "source_sku": "W712/18",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51219",
+      "source_sku": "W712/19",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51222",
+      "source_sku": "W712/22X",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51223",
+      "source_sku": "W712/23",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51224",
+      "source_sku": "W712/24",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51226",
+      "source_sku": "W712/26",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL57123",
+      "source_sku": "W712/3",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51234",
+      "source_sku": "W712/34",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL53410",
+      "source_sku": "W712/34(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51235",
+      "source_sku": "W712/35",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51237",
+      "source_sku": "W712/37",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51239",
+      "source_sku": "W712/39",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL54310",
+      "source_sku": "W712/43(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51253",
+      "source_sku": "W712/53",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51260",
+      "source_sku": "W712/60",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL57126",
+      "source_sku": "W712/6N",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL57127",
+      "source_sku": "W712/7",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51273",
+      "source_sku": "W712/73M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51275",
+      "source_sku": "W712/75M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL52810",
+      "source_sku": "W712/8(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51281",
+      "source_sku": "W712/81",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51283",
+      "source_sku": "W712/83M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51290",
+      "source_sku": "W712/90M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL59210",
+      "source_sku": "W712/92(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51292",
+      "source_sku": "W712/92M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EL51294",
+      "source_sku": "W712/94M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 749
+    },
+    {
+      "elimfilters_sku": "EC52368",
+      "source_sku": "CU2368",
+      "segment": "Cabin Filter",
+      "cross_reference_count": 618
+    },
+    {
+      "elimfilters_sku": "EL59202",
+      "source_sku": "W920/2",
+      "segment": "Oil Filter",
+      "cross_reference_count": 600
+    },
+    {
+      "elimfilters_sku": "EL56213",
+      "source_sku": "W962/13",
+      "segment": "Oil Filter",
+      "cross_reference_count": 564
+    },
+    {
+      "elimfilters_sku": "EL56232",
+      "source_sku": "W962/32",
+      "segment": "Oil Filter",
+      "cross_reference_count": 564
+    },
+    {
+      "elimfilters_sku": "EL52610",
+      "source_sku": "W962/6(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 564
+    },
+    {
+      "elimfilters_sku": "EL59627",
+      "source_sku": "W962/7",
+      "segment": "Oil Filter",
+      "cross_reference_count": 564
+    },
+    {
+      "elimfilters_sku": "EL56271",
+      "source_sku": "W962/71",
+      "segment": "Oil Filter",
+      "cross_reference_count": 564
+    },
+    {
+      "elimfilters_sku": "EL54023",
+      "source_sku": "W940/23",
+      "segment": "Oil Filter",
+      "cross_reference_count": 551
+    },
+    {
+      "elimfilters_sku": "EL59161",
+      "source_sku": "W916/1X",
+      "segment": "Oil Filter",
+      "cross_reference_count": 517
+    },
+    {
+      "elimfilters_sku": "EL50914",
+      "source_sku": "W914",
+      "segment": "Oil Filter",
+      "cross_reference_count": 515
+    },
+    {
+      "elimfilters_sku": "EL59142",
+      "source_sku": "W914/2N",
+      "segment": "Oil Filter",
+      "cross_reference_count": 515
+    },
+    {
+      "elimfilters_sku": "EL56110",
+      "source_sku": "W916/1(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 501
+    },
+    {
+      "elimfilters_sku": "EL57023",
+      "source_sku": "W7023M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 489
+    },
+    {
+      "elimfilters_sku": "EL59201",
+      "source_sku": "W920/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52012",
+      "source_sku": "W920/12",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52013",
+      "source_sku": "W920/13",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52015",
+      "source_sku": "W920/15",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52016",
+      "source_sku": "W920/16",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52018",
+      "source_sku": "W920/18",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52019",
+      "source_sku": "W920/19",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52021",
+      "source_sku": "W920/21X",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52022",
+      "source_sku": "W920/22",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52025",
+      "source_sku": "W920/25",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52026",
+      "source_sku": "W920/26",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52036",
+      "source_sku": "W920/36",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL59204",
+      "source_sku": "W920/4",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL59205",
+      "source_sku": "W920/5",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL50610",
+      "source_sku": "W920/6(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL52081",
+      "source_sku": "W920/81",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL59209",
+      "source_sku": "W920/9",
+      "segment": "Oil Filter",
+      "cross_reference_count": 475
+    },
+    {
+      "elimfilters_sku": "EL59302",
+      "source_sku": "W930/2",
+      "segment": "Oil Filter",
+      "cross_reference_count": 448
+    },
+    {
+      "elimfilters_sku": "EL59301",
+      "source_sku": "W930/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 440
+    },
+    {
+      "elimfilters_sku": "EL53014",
+      "source_sku": "W930/14",
+      "segment": "Oil Filter",
+      "cross_reference_count": 440
+    },
+    {
+      "elimfilters_sku": "EL53019",
+      "source_sku": "W930/19",
+      "segment": "Oil Filter",
+      "cross_reference_count": 440
+    },
+    {
+      "elimfilters_sku": "EL59304",
+      "source_sku": "W930/4",
+      "segment": "Oil Filter",
+      "cross_reference_count": 440
+    },
+    {
+      "elimfilters_sku": "EL59308",
+      "source_sku": "W930/8",
+      "segment": "Oil Filter",
+      "cross_reference_count": 440
+    },
+    {
+      "elimfilters_sku": "EL54011",
+      "source_sku": "W940/11",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54012",
+      "source_sku": "W940/12",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54015",
+      "source_sku": "W940/15",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54016",
+      "source_sku": "W940/16",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54017",
+      "source_sku": "W940/17",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL52510",
+      "source_sku": "W940/25(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54025",
+      "source_sku": "W940/25N",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54032",
+      "source_sku": "W940/32",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54048",
+      "source_sku": "W940/48",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL50510",
+      "source_sku": "W940/5(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL55110",
+      "source_sku": "W940/51(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL54070",
+      "source_sku": "W940/70",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL59409",
+      "source_sku": "W940/9",
+      "segment": "Oil Filter",
+      "cross_reference_count": 418
+    },
+    {
+      "elimfilters_sku": "EL50773",
+      "source_sku": "W77/3",
+      "segment": "Oil Filter",
+      "cross_reference_count": 387
+    },
+    {
+      "elimfilters_sku": "EL52941",
+      "source_sku": "W1294/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 374
+    },
+    {
+      "elimfilters_sku": "EL53125",
+      "source_sku": "WD13125",
+      "segment": "Oil Filter",
+      "cross_reference_count": 353
+    },
+    {
+      "elimfilters_sku": "EL51262",
+      "source_sku": "W1126/2",
+      "segment": "Oil Filter",
+      "cross_reference_count": 304
+    },
+    {
+      "elimfilters_sku": "EL51265",
+      "source_sku": "W1126/5",
+      "segment": "Oil Filter",
+      "cross_reference_count": 304
+    },
+    {
+      "elimfilters_sku": "EA51201",
+      "source_sku": "C2120/1",
+      "segment": "Air Filter",
+      "cross_reference_count": 282
+    },
+    {
+      "elimfilters_sku": "EL56019",
+      "source_sku": "W6019M",
+      "segment": "Oil Filter",
+      "cross_reference_count": 254
+    },
+    {
+      "elimfilters_sku": "EL53001",
+      "source_sku": "WP12300/1",
+      "segment": "Oil Filter",
+      "cross_reference_count": 243
+    },
+    {
+      "elimfilters_sku": "EL54053",
+      "source_sku": "W1140/5/3",
+      "segment": "Oil Filter",
+      "cross_reference_count": 239
+    },
+    {
+      "elimfilters_sku": "EL51408",
+      "source_sku": "W1140/8",
+      "segment": "Oil Filter",
+      "cross_reference_count": 239
+    },
+    {
+      "elimfilters_sku": "EA51651",
+      "source_sku": "C15165/1",
+      "segment": "Air Filter",
+      "cross_reference_count": 230
+    },
+    {
+      "elimfilters_sku": "EL54510",
+      "source_sku": "W719/45(10)",
+      "segment": "Oil Filter",
+      "cross_reference_count": 221
+    },
+    {
+      "elimfilters_sku": "EL51022",
+      "source_sku": "W11102/2",
+      "segment": "Oil Filter",
+      "cross_reference_count": 216
+    },
+    {
+      "elimfilters_sku": "EL51456",
+      "source_sku": "WD13145/6",
+      "segment": "Oil Filter",
+      "cross_reference_count": 215
+    }
+  ],
+  "top_100_skus_by_applications": [
+    {
+      "elimfilters_sku": "EL57121",
+      "source_sku": "W712/1",
+      "segment": "Oil Filter",
+      "application_count": 782
+    },
+    {
+      "elimfilters_sku": "EL57122",
+      "source_sku": "W712/2",
+      "segment": "Oil Filter",
+      "application_count": 782
+    },
+    {
+      "elimfilters_sku": "EL57125",
+      "source_sku": "W712/5",
+      "segment": "Oil Filter",
+      "application_count": 782
+    },
+    {
+      "elimfilters_sku": "EL51603",
+      "source_sku": "W1160/3",
+      "segment": "Oil Filter",
+      "application_count": 500
+    },
+    {
+      "elimfilters_sku": "EL51604",
+      "source_sku": "W1160/4",
+      "segment": "Oil Filter",
+      "application_count": 500
+    },
+    {
+      "elimfilters_sku": "EL51261",
+      "source_sku": "W1126/1",
+      "segment": "Oil Filter",
+      "application_count": 392
+    },
+    {
+      "elimfilters_sku": "EL51211",
+      "source_sku": "W712/11X",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51212",
+      "source_sku": "W712/12",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51214",
+      "source_sku": "W712/14",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51218",
+      "source_sku": "W712/18",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51219",
+      "source_sku": "W712/19",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51222",
+      "source_sku": "W712/22X",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51223",
+      "source_sku": "W712/23",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51224",
+      "source_sku": "W712/24",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51226",
+      "source_sku": "W712/26",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL57123",
+      "source_sku": "W712/3",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51234",
+      "source_sku": "W712/34",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL53410",
+      "source_sku": "W712/34(10)",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51235",
+      "source_sku": "W712/35",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51237",
+      "source_sku": "W712/37",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51239",
+      "source_sku": "W712/39",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL54310",
+      "source_sku": "W712/43(10)",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51253",
+      "source_sku": "W712/53",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51260",
+      "source_sku": "W712/60",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL57126",
+      "source_sku": "W712/6N",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL57127",
+      "source_sku": "W712/7",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51273",
+      "source_sku": "W712/73M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51275",
+      "source_sku": "W712/75M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL52810",
+      "source_sku": "W712/8(10)",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51281",
+      "source_sku": "W712/81",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51283",
+      "source_sku": "W712/83M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51290",
+      "source_sku": "W712/90M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL59210",
+      "source_sku": "W712/92(10)",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51292",
+      "source_sku": "W712/92M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL51294",
+      "source_sku": "W712/94M",
+      "segment": "Oil Filter",
+      "application_count": 391
+    },
+    {
+      "elimfilters_sku": "EL50793",
+      "source_sku": "W79/3",
+      "segment": "Oil Filter",
+      "application_count": 279
+    },
+    {
+      "elimfilters_sku": "EL56213",
+      "source_sku": "W962/13",
+      "segment": "Oil Filter",
+      "application_count": 222
+    },
+    {
+      "elimfilters_sku": "EL56232",
+      "source_sku": "W962/32",
+      "segment": "Oil Filter",
+      "application_count": 222
+    },
+    {
+      "elimfilters_sku": "EL52610",
+      "source_sku": "W962/6(10)",
+      "segment": "Oil Filter",
+      "application_count": 222
+    },
+    {
+      "elimfilters_sku": "EL59627",
+      "source_sku": "W962/7",
+      "segment": "Oil Filter",
+      "application_count": 222
+    },
+    {
+      "elimfilters_sku": "EL56271",
+      "source_sku": "W962/71",
+      "segment": "Oil Filter",
+      "application_count": 222
+    },
+    {
+      "elimfilters_sku": "EL59407",
+      "source_sku": "W940/7",
+      "segment": "Oil Filter",
+      "application_count": 130
+    },
+    {
+      "elimfilters_sku": "EL54022",
+      "source_sku": "W1140/22",
+      "segment": "Oil Filter",
+      "application_count": 125
+    },
+    {
+      "elimfilters_sku": "EA52675",
+      "source_sku": "C2675",
+      "segment": "Air Filter",
+      "application_count": 79
+    },
+    {
+      "elimfilters_sku": "EL54011",
+      "source_sku": "W940/11",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54012",
+      "source_sku": "W940/12",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54015",
+      "source_sku": "W940/15",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54016",
+      "source_sku": "W940/16",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54017",
+      "source_sku": "W940/17",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54023",
+      "source_sku": "W940/23",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL52510",
+      "source_sku": "W940/25(10)",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54025",
+      "source_sku": "W940/25N",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54032",
+      "source_sku": "W940/32",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54048",
+      "source_sku": "W940/48",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL50510",
+      "source_sku": "W940/5(10)",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL55110",
+      "source_sku": "W940/51(10)",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL54070",
+      "source_sku": "W940/70",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL59409",
+      "source_sku": "W940/9",
+      "segment": "Oil Filter",
+      "application_count": 65
+    },
+    {
+      "elimfilters_sku": "EL50773",
+      "source_sku": "W77/3",
+      "segment": "Oil Filter",
+      "application_count": 63
+    },
+    {
+      "elimfilters_sku": "EL55015",
+      "source_sku": "W950/15",
+      "segment": "Oil Filter",
+      "application_count": 61
+    },
+    {
+      "elimfilters_sku": "EL55040",
+      "source_sku": "W950/40",
+      "segment": "Oil Filter",
+      "application_count": 61
+    },
+    {
+      "elimfilters_sku": "EL55042",
+      "source_sku": "W950/42",
+      "segment": "Oil Filter",
+      "application_count": 61
+    },
+    {
+      "elimfilters_sku": "EL54053",
+      "source_sku": "W1140/5/3",
+      "segment": "Oil Filter",
+      "application_count": 60
+    },
+    {
+      "elimfilters_sku": "EL51408",
+      "source_sku": "W1140/8",
+      "segment": "Oil Filter",
+      "application_count": 60
+    },
+    {
+      "elimfilters_sku": "EL50211",
+      "source_sku": "W11102/11",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL50214",
+      "source_sku": "W11102/14",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL51022",
+      "source_sku": "W11102/2",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL50220",
+      "source_sku": "W11102/20",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL50224",
+      "source_sku": "W11102/24",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL50243",
+      "source_sku": "W11102/43",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EL50248",
+      "source_sku": "W11102/48",
+      "segment": "Oil Filter",
+      "application_count": 49
+    },
+    {
+      "elimfilters_sku": "EA52659",
+      "source_sku": "C2659",
+      "segment": "Air Filter",
+      "application_count": 26
+    },
+    {
+      "elimfilters_sku": "EL53001",
+      "source_sku": "WP12300/1",
+      "segment": "Oil Filter",
+      "application_count": 20
+    },
+    {
+      "elimfilters_sku": "EL50181",
+      "source_sku": "W6018/1",
+      "segment": "Oil Filter",
+      "application_count": 19
+    },
+    {
+      "elimfilters_sku": "EL59203",
+      "source_sku": "W920/3",
+      "segment": "Oil Filter",
+      "application_count": 16
+    },
+    {
+      "elimfilters_sku": "EC52531",
+      "source_sku": "CU2531",
+      "segment": "Cabin Filter",
+      "application_count": 15
+    },
+    {
+      "elimfilters_sku": "EL56780",
+      "source_sku": "W67/80",
+      "segment": "Oil Filter",
+      "application_count": 15
+    },
+    {
+      "elimfilters_sku": "EL56781",
+      "source_sku": "W67/81",
+      "segment": "Oil Filter",
+      "application_count": 15
+    },
+    {
+      "elimfilters_sku": "EC54260",
+      "source_sku": "CU4260",
+      "segment": "Cabin Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL59301",
+      "source_sku": "W930/1",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL53014",
+      "source_sku": "W930/14",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL53019",
+      "source_sku": "W930/19",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL59302",
+      "source_sku": "W930/2",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL59304",
+      "source_sku": "W930/4",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL59308",
+      "source_sku": "W930/8",
+      "segment": "Oil Filter",
+      "application_count": 14
+    },
+    {
+      "elimfilters_sku": "EL50111",
+      "source_sku": "W6011/1",
+      "segment": "Oil Filter",
+      "application_count": 12
+    },
+    {
+      "elimfilters_sku": "EF50521",
+      "source_sku": "WK521",
+      "segment": "Fuel Filter",
+      "application_count": 11
+    },
+    {
+      "elimfilters_sku": "EA52758",
+      "source_sku": "C2758",
+      "segment": "Air Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL59201",
+      "source_sku": "W920/1",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52012",
+      "source_sku": "W920/12",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52013",
+      "source_sku": "W920/13",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52015",
+      "source_sku": "W920/15",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52016",
+      "source_sku": "W920/16",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52018",
+      "source_sku": "W920/18",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52019",
+      "source_sku": "W920/19",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL59202",
+      "source_sku": "W920/2",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52021",
+      "source_sku": "W920/21X",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52022",
+      "source_sku": "W920/22",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52025",
+      "source_sku": "W920/25",
+      "segment": "Oil Filter",
+      "application_count": 8
+    },
+    {
+      "elimfilters_sku": "EL52026",
+      "source_sku": "W920/26",
+      "segment": "Oil Filter",
+      "application_count": 8
+    }
+  ]
+}
