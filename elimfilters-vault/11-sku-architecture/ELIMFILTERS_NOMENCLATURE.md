@@ -6,57 +6,60 @@ tags: [sku, architecture, part-numbers, catalog]
 
 # ELIMFILTERS SKU Nomenclature Architecture
 
-La arquitectura de códigos (SKU) de ELIMFILTERS no es una simple numeración secuencial; es un sistema de taxonomía técnica diseñado para identificar inmediatamente el dominio de fluido, la aplicación y la jerarquía del producto dentro del Sistema de Protección de Activos.
+La arquitectura de códigos (SKU) de ELIMFILTERS es un sistema de taxonomía técnica y de precisión diseñado para identificar de forma inmediata el dominio de fluido, la aplicación (Heavy Duty vs Light Duty) y el origen cruzado del componente dentro del Sistema de Protección de Activos.
 
-## Prefijos de Dominio (Fluid Domain Prefixes)
+## Prefijos de Dominio por Carga Operativa
 
-El sistema de códigos inicia siempre con un prefijo alfabético (generalmente 2 letras) que indica de inmediato el tipo de elemento a proteger.
+El sistema de códigos inicia siempre con un prefijo alfanumérico (3 caracteres) que indica el tipo de elemento y el nivel de exigencia (Heavy Duty o Light Duty).
 
-* **`EA` (Elimfilters Air):** Sistemas de Admisión de Aire (Primarios y Secundarios). *Defensa contra desgaste abrasivo por Sílice.*
-* **`EO` (Elimfilters Oil):** Sistemas de Lubricación (Aceite de motor, transmisión). *Control de hollín, metales de desgaste y degradación de aceite.*
-* **`EF` (Elimfilters Fuel):** Sistemas de Inyección de Combustible (Diésel, Gasolina). *Defensa HPCR contra agua emulsionada y partículas submicrónicas.*
-* **`EH` (Elimfilters Hydraulic):** Sistemas Hidráulicos y de Alta Presión. *Control de tolerancias críticas en válvulas y bombas.*
-* **`EC` (Elimfilters Cabin):** Sistemas de Aire Acondicionado / Cabina. *Protección respiratoria del operador (PM2.5).*
-* **`EW` (Elimfilters Water / Coolant):** Sistemas de Refrigeración. *Tratamiento químico anticorrosivo.*
+### HEAVY DUTY (HD) - Maquinaria Pesada, Minería, Transporte y Marina
+Para equipos que operan bajo condiciones extremas, los prefijos son:
+* **`EA1`** (Air Filter): Filtros de aire primarios y secundarios.
+* **`EL8`** (Oil/Lube Filter): Filtros de aceite/lubricante.
+* **`EF9`** (Fuel Filter): Filtros de combustible estándar.
+* **`ES9`** (Fuel Filter Separator): Filtros separadores de agua y combustible.
+* **`EH6`** (Hydraulic Filter): Filtros hidráulicos de alta presión.
+* **`EC1`** (Cabin Filter): Filtros de cabina y aire acondicionado.
+* **`EW7`** (Coolant Filter): Filtros de agua/refrigerante.
+* **`ED4`** (Air Dryer Filter): Filtros secadores de aire (sistemas neumáticos).
+* **`EA2`** (Housings): Carcasas y bases portafiltros (Tecnología INTEKCORE).
+* **`ET9`** (Turbinas): Turbinas separadoras (Serie FH/FG) y sus elementos de recambio.
 
-## Prefijos de Sistemas y Ensambles (Housing & Assembly Prefixes)
+### LIGHT DUTY (LD) - Automotriz, Flotillas Ligeras y Pickups
+Para vehículos comerciales ligeros y del sector automotriz, los prefijos son:
+* **`EA3`** (Air Filter): Filtros de aire automotrices.
+* **`EL3`** (Oil Filter): Filtros de aceite automotrices.
+* **`EF3`** (Fuel Filter): Filtros de combustible automotrices.
+* **`EC3`** (Cabin Filter): Filtros de cabina automotrices.
 
-Cuando el componente no es un repuesto consumible (elemento), sino una estructura, housing o ensamble completo:
+---
 
-* **`EAF` (Elimfilters Air Filter):** Ensambles completos de filtración de aire (carcasas).
-* **`EFH` (Elimfilters Fuel Housing):** Turbinas separadoras de agua (Serie FH/FG) y bases portafiltros.
-
-## Prefijos de Sistemas Comerciales Consolidados
+## Sistemas Comerciales Consolidados
 
 Para soluciones de consolidación de inventario y kits completos:
-
-* **`DUR` (DURATECH):** Kits completos de protección de activos (Ej: DUR-1000 que incluye EA, EO, EF, EH para un activo específico).
+* **`DUR` (DURATECH):** Kits completos de protección de activos (incluye todos los elementos necesarios para el mantenimiento de un activo específico).
 * **`MAR` (MARINECLEAN):** Sistemas o elementos específicos desarrollados exclusivamente para el ambiente marítimo de alta salinidad.
 
-## Arquitectura del Número de Base (Base Numbering)
+---
 
-El cuerpo numérico del SKU (los dígitos que siguen al prefijo) generalmente está diseñado bajo dos metodologías:
-1. **Nomenclatura Cruzada Homologada (Cross-Reference Alignment):** Para facilitar la transición desde el status quo del cliente, el número base suele hacer eco de los estándares industriales globales (Fleetguard, Donaldson, Baldwin). Ej: Si el mercado conoce la aplicación como *AF25270*, nuestro SKU es **EA-25270**.
-2. **Nomenclatura Propietaria de Precisión (Precision Engineering Code):** Para desarrollos internos de tecnologías patentadas (como elementos MACROCORE o NANOFORCE especializados), se utiliza una codificación métrica secuencial.
+## Arquitectura de Construcción del SKU (Base Numbering)
 
-### Clasificación de Carga Operativa: Heavy Duty (HD) vs Light Duty (LD)
-La construcción del SKU varía estructuralmente dependiendo del nivel de exigencia operativa del activo:
+El cuerpo numérico del SKU (lo que sigue al prefijo) se construye de forma estandarizada utilizando **exclusivamente los últimos 4 dígitos** del código base del líder referencial de cada sector.
 
-* **Heavy Duty (HD) - Maquinaria Pesada, Minería, Transporte y Marina:**
-  * **Construcción:** Se utilizan los prefijos estándar (`EA`, `EO`, `EF`, `EH`) seguidos de la nomenclatura cruzada industrial pesada (basada en Fleetguard, Donaldson, Baldwin o números de parte de fabricantes como CAT/Cummins/John Deere).
-  * **Ejemplo HD:** `EA-25270` (donde 25270 hace eco a un filtro de aire de alta capacidad para un camión pesado o tractor).
+### Regla General de Construcción
+1. **Línea Heavy Duty (HD):** El prefijo HD se complementa con los últimos 4 dígitos del código de **Donaldson**. 
+   * *Ejemplo HD:* Si el código Donaldson es `P551348`, el SKU ELIMFILTERS será **`EL8-1348`**.
+2. **Línea Light Duty (LD):** El prefijo LD se complementa con los últimos 4 dígitos del código de **Mann Filters**.
+   * *Ejemplo LD:* Si el código Mann es `W 712/94` (asumiendo que los últimos dígitos clave son 1294 o similares según la estructura Mann), el SKU ELIMFILTERS se formará como **`EL3-XXXX`** usando los últimos 4 dígitos base.
 
-* **Light Duty (LD) - Automotriz, Flotillas Ligeras y Pickups:**
-  * **Construcción:** Se utilizan los prefijos estándar (`EA`, `EO`, `EF`, `EC`) pero la base numérica se alínea con los estándares del mercado automotriz (generalmente ecos de WIX, Fram, o los últimos dígitos del OEM de Toyota/Ford/Nissan). Para evitar colisiones numéricas con la línea HD, los códigos LD suelen tener estructuras numéricas más cortas o específicas del mercado automotriz.
-  * **Ejemplo LD:** `EO-51348` (haciendo eco a un filtro de aceite estándar de alto flujo para motores de vehículos ligeros o pickups).
+### Excepción de Especialidad (OEM / Aftermarket Origin)
+Si ni Mann Filters ni Donaldson fabrican el componente requerido:
+* Se tomará el código base del **fabricante de origen**.
+* Si la pieza solo es provista por el fabricante original de la máquina (OEM), se usan los últimos 4 dígitos del **código OEM**.
+* Si la pieza proviene de un desarrollador especializado de repuestos (Aftermarket), se usarán los últimos 4 dígitos de ese código de **Aftermarket**.
 
-### Estructura de Sufijos (Suffix Modifiers)
-Si un elemento posee características especiales o modificaciones de medio filtrante:
-* **`-S` (Synthetic):** Medio 100% sintético (Ej: NANOFORCE).
-* **`-M` (Microglass):** Medio de fibra de vidrio para aplicaciones hidráulicas absolutas.
-* **`-K` (Kit):** Indica que la caja incluye empaques, orings u otros accesorios críticos para la instalación hermética.
+---
 
 ## Directiva Comercial y Técnica
-
-**Ningún técnico, ingeniero o asesor comercial de ELIMFILTERS debe hablar en códigos de la competencia.** 
-La transición cognitiva del cliente ocurre en el momento en que deja de referirse a sus repuestos con códigos de otras marcas y empieza a utilizar el sistema de taxonomía de ELIMFILTERS (`EA`, `EO`, `EF`). Al usar nuestra nomenclatura, el cliente reconoce a ELIMFILTERS como el Arquitecto de su Sistema de Protección de Activos.
+**Ningún asesor de ELIMFILTERS debe hablar en códigos completos de la competencia.** 
+El cliente debe identificar que los códigos `EA1`, `EL8`, `EA3` no son meros filtros, sino la asignación de ingeniería precisa de ELIMFILTERS para su activo específico, utilizando los últimos 4 dígitos referenciales solo como un puente cognitivo transitorio.
