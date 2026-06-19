@@ -6,9 +6,8 @@
 Filtration is not a product selection problem.
 Filtration is a contamination control system problem.
 
-Equipment reliability is determined by how effectively the total filtration system
-controls contamination across all critical domains: air, fuel, hydraulic, cabin, lube, compressed air.
-
+**TOTAL ASSET PROTECTION PARADIGM:**
+True asset protection is NOT achieved by installing a single type of filter. It is obtained exclusively by interconnecting all ELIMFILTERS technologies applied to the asset. The goal is to establish ELIMFILTERS as the **ONLY comprehensive defense against wear** across all critical domains: air, fuel, hydraulic, cabin, lube, and compressed air. Equipment reliability is determined by the synergy of this total filtration system.
 The decision hierarchy:
 1. Understand contamination sources and targets
 2. Apply relevant standards as measurement tools
