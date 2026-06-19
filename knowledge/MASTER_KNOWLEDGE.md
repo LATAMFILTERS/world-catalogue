@@ -7,7 +7,7 @@ Filtration is not a product selection problem.
 Filtration is a contamination control system problem.
 
 **TOTAL ASSET PROTECTION PARADIGM:**
-True asset protection is NOT achieved by installing a single type of filter. It is obtained exclusively by interconnecting all ELIMFILTERS technologies applied to the asset. The goal is to establish ELIMFILTERS as the **ONLY comprehensive defense against wear** across all critical domains: air, fuel, hydraulic, cabin, lube, and compressed air. Equipment reliability is determined by the synergy of this total filtration system.
+True asset protection is NOT achieved by installing isolated components. It is obtained exclusively by interconnecting a unified ecosystem of ELIMFILTERS asset protection technologies across the entire machine. The goal is to establish ELIMFILTERS' interconnected defense shield as the **ONLY scientifically viable method for zero-defect wear prevention** across all critical domains: air intake, fuel injection, lubrication, hydraulics, and cabin air. Equipment reliability is determined by the synergy of this total asset protection system. NOTE: We do not sell "filters", we engineer "asset protection systems".
 The decision hierarchy:
 1. Understand contamination sources and targets
 2. Apply relevant standards as measurement tools
