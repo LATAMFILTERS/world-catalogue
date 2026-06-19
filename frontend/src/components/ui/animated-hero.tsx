@@ -28,25 +28,30 @@ export function AnimatedHero() {
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-32 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-4xl tracking-tighter text-center font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-              <span className="text-white/90">PROTECTING INDUSTRIAL</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center text-[#FFF12D] h-[1.2em] md:pb-4 md:pt-1 mt-2">
+            <h1
+              className="max-w-4xl tracking-tight text-center font-semibold"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              <span className="text-white/85">PROTECTING INDUSTRIAL</span>
+              <span
+                className="relative flex w-full justify-center overflow-hidden text-center text-[#FFF12D]"
+                style={{ height: '1.35em', marginTop: '0.25rem' }}
+              >
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold"
-                    initial={{ opacity: 0, y: "-100" }}
-                    transition={{ type: "spring", stiffness: 50 }}
+                    className="absolute font-bold"
+                    initial={{ opacity: 0, y: 60 }}
+                    transition={{ type: 'spring', stiffness: 60, damping: 14 }}
                     animate={
                       titleNumber === index
-                        ? {
-                            y: 0,
-                            opacity: 1,
-                          }
-                        : {
-                            y: titleNumber > index ? -150 : 150,
-                            opacity: 0,
-                          }
+                        ? { y: 0, opacity: 1 }
+                        : { y: titleNumber > index ? -80 : 80, opacity: 0 }
                     }
                   >
                     {title}

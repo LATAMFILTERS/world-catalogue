@@ -142,18 +142,13 @@ const OverlayCopy = ({
     <motion.div
       style={{ y, opacity }}
       ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center gap-4"
+      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center"
     >
-      {/* Category label */}
-      <p className="text-center text-sm md:text-base uppercase tracking-[0.25em] font-mono text-[#FFF12D]">
-        {subheading}
-      </p>
-
-      {/* Brand logo image — replaces plain text heading */}
+      {/* Brand logo image — no text, just the brand mark */}
       <img
         src={logoUrl}
-        alt={logoUrl}
-        className="w-[70vw] max-w-2xl object-contain"
+        alt="technology logo"
+        className="w-[65vw] max-w-xl object-contain"
         style={{ filter: "brightness(0) invert(1)" }}
       />
     </motion.div>
