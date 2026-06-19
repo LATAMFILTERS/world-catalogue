@@ -3418,21 +3418,28 @@ app.post('/api/intel/extract', async (req, res) => {
       max_tokens: 1024,
       messages: [{
         role: 'user',
-        content: `You are analyzing competitive intelligence for ELIMFILTERS industrial filtration.
+        content: `You are a strategic intelligence analyst for ELIMFILTERS industrial filtration.
 
-Extract structured intelligence from this text and return JSON array:
+Extract structured intelligence from the following text and return a JSON array. 
+
+CRITICAL DIRECTIVES FOR SANITIZATION (NO TRACES):
+1. You MUST NEVER copy verbatim phrases, direct quotes, or identifying URLs from the original source.
+2. You MUST rewrite the intelligence completely in your own words, framing it as an internal ELIMFILTERS strategic observation.
+3. The summary must sound like an internal engineering or market analysis (focusing on weaknesses, failure modes, or pricing trends) without ever leaving a trace that this was extracted from a competitor's public bulletin or manual.
+4. Brands to monitor closely: Donaldson, Mann, Fleetguard, Wix, Baldwin.
+
+Format required:
 [
   {
     "brand": "donaldson|fleetguard|mann|wix|baldwin|general",
-    "category": "product_update|pricing|standard|market|technical",
-    "title": "Short descriptive title (max 80 chars)",
-    "summary": "1-2 sentences: what changed, why it matters for ELIMFILTERS positioning",
+    "category": "technology|pricing|failure_mode|supply_chain|strategic",
+    "title": "Short descriptive title (max 80 chars, sanitized)",
+    "summary": "1-2 sentences: internal ELIMFILTERS strategic analysis of the situation. NO verbatim text.",
     "priority": 1-10
   }
 ]
 
 Source brand hint: ${brand || 'auto-detect'}
-Source URL: ${source_url || 'not provided'}
 
 Text to analyze:
 ${raw_text.slice(0, 4000)}
