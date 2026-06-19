@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
+import { TechnologiesParallaxContent } from '@/components/ui/text-parallax-content-scroll';
 
 const GEO_DEFINITIONS: Record<string, string> = {
   'hydrocore-series': "HYDROCORE/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
@@ -121,88 +122,8 @@ export default function TechnologiesPage() {
         backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
         transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
-
       {/* Hero Section */}
-      <section style={{
-        marginTop: 0,
-        paddingTop: 'clamp(3.5rem,8vw,5rem)',
-        paddingBottom: 'clamp(3rem,7vw,5rem)',
-        backgroundImage: 'url(/images/system-hero.avif)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 40%',
-        backgroundAttachment: 'scroll',
-        position: 'relative',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-      }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(135deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.50) 100%)',
-          zIndex: 1,
-        }} />
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 2 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block', fontSize: '0.7rem', fontWeight: 700,
-              letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              // ASSET PROTECTION TECHNOLOGY PLATFORM
-            </span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1.5rem',
-              lineHeight: 1.1, color: 'rgba(255,255,255,0.9)',
-            }}
-          >
-            TWELVE TECHNOLOGIES. FIVE PROTECTION SYSTEMS.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontSize: 'clamp(1rem, 2vw, 1.1rem)', lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.75)', fontFamily: 'Outfit, sans-serif',
-              maxWidth: '700px', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem',
-              marginBottom: '2.5rem',
-            }}
-          >
-            Twelve proprietary technologies organized within five protection systems — each defined by its contamination target, failure mechanism, and measurable engineering standard.
-          </motion.p>
-
-          {/* Change 1 & 2 — metrics bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }}
-          >
-            {[
-              { value: '12', label: 'Technologies' },
-              { value: '5', label: 'Protection Systems' },
-              { value: 'ISO', label: 'Referenced' },
-            ].map(item => (
-              <div key={item.label}>
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#FFF12D', lineHeight: 1, margin: '0 0 0.25rem' }}>
-                  {item.value}
-                </p>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', margin: 0 }}>
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <TechnologiesParallaxContent />
 
       {/* Asset Protection Narrative */}
       <section style={{
