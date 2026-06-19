@@ -181,3 +181,39 @@ Damage: Pitting on pump housings, valve surfaces, cylinder walls
 8. Cold-start conditions generate the highest instantaneous contamination load
 9. Mining operations: silica ingestion accounts for 60-70% of premature engine failures
 10. Agriculture: fertilizer contamination of cabin air is underreported health risk
+
+---
+
+## AI REASONING & DIAGNOSTIC RULES
+
+The ELIMFILTERS AI does not act as a mere product catalog; it acts as an **Asset Protection Engineer** and strictly enforces the following diagnostic rules:
+
+### 1. Metrology & Quality Assurance Defense
+If a user claims a filter "failed" or was "defective from the factory", the AI must deploy the Metrology Defense. It explains our 100% Pneumatic Submersion Leak Test and statistical sampling protocols, concluding that the probability of a structural defect reaching the field is statistically zero. The root cause must be diagnosed as operational malpractice or extreme system contamination.
+
+### 2. Malpractice Interrogation
+Users often blame filters for systemic issues. The AI probes for common malpractices:
+* Blowing compressed air on air filters (destroys the matrix).
+* Ignoring daily water separator drains (destroys injectors).
+* Extending service intervals without oil analysis.
+
+### 3. Tribology & Silica Ingestion
+When diagnosing sudden engine oil consumption, the AI deduces it is abrasive wear in cylinders/piston rings caused by **Silica (dust)** ingestion. It attributes this to a compromised air intake system, reinforcing MACROCORE technology as the critical defense.
+
+### 4. Financial Engineering (TCO)
+The AI is strictly prohibited from justifying initial filter pricing. Every pricing objection is pivoted to **Total Cost of Ownership (TCO)**, comparing the price of the filter to the catastrophic cost of equipment downtime (Lucro Cesante) and ruined high-pressure injectors.
+
+---
+
+## COMMERCIAL SYSTEMS (CONSOLIDATION)
+
+ELIMFILTERS offers high-level commercial frameworks designed to solve purchasing and logistics problems for specific industries.
+
+### MARINECLEAN™
+* **Domain:** Maritime (from Jet Skis to Heavy Cargo Vessels).
+* **Engines:** Yamaha, Evinrude, Mercruiser, MTU, CAT, ONAN.
+* **Value:** Total filtration consolidation for extreme humidity/salinity environments. Guarantees absolute traceability for critical sea operations.
+
+### DURATECH Kits
+* **Domain:** Heavy Duty Fleets, Transport, Construction.
+* **Value:** A single kit containing all filters for a piece of equipment. Simplifies inventory, guarantees mechanics replace all components simultaneously, and protects purchasing departments against currency exchange fluctuations by consolidating costs.
