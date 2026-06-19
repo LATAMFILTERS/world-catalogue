@@ -525,10 +525,18 @@ function isCompetitor(manufacturer) {
 
 function parseRefs(arr){
   if(!arr) return [];
-  return arr.map(item => ({
-    manufacturer: item.manufacturer || item.brand || 'UNKNOWN',
-    code: item.code
-  }));
+  return arr
+    .filter(item => {
+      const code = item.code || item.part_number || '';
+      // Reject garbage: codes longer than 40 chars or containing descriptive words
+      if (code.length > 40) return false;
+      if (/\b(PREMIUM|ENSURES|PREVENT|COMBUSTION|AIRBORNE|CONTAMINANT|CHAMBER|PROPER SEAL)\b/i.test(code)) return false;
+      return true;
+    })
+    .map(item => ({
+      manufacturer: item.manufacturer || item.brand || 'UNKNOWN',
+      code: item.code || item.part_number || ''
+    }));
 }
 
 // ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
@@ -2446,6 +2454,58 @@ app.get('/api/search', async (req, res) => {
       }
     }
 
+    // ── Tier LD: Search LD catalog if no HD results found ──────────────────
+    if (result.rows.length === 0 && cls.type !== 'technology' && cls.type !== 'housing' && cls.type !== 'brand') {
+      // Search by elimfilters_sku in LD
+      let ldResult = await client.query(
+        `SELECT p.elimfilters_sku, p.source_sku, p.segment,
+                'ld_sku' AS match_type, 1 AS match_rank
+         FROM ld_catalog.ld_product_catalog p
+         WHERE UPPER(p.elimfilters_sku) = $1 OR UPPER(p.source_sku) = $1
+         LIMIT 5`, [q]
+      );
+      // Search by competitor cross-reference code in LD
+      if (ldResult.rows.length === 0) {
+        ldResult = await client.query(
+          `SELECT DISTINCT p.elimfilters_sku, p.source_sku, p.segment,
+                  c.competitor_brand AS match_brand, c.competitor_part_number AS match_code,
+                  'ld_competitor_ref' AS match_type, 3 AS match_rank
+           FROM ld_catalog.ld_competitor_cross_references c
+           JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku = c.elimfilters_sku
+           WHERE UPPER(c.competitor_part_number) = $1
+           LIMIT 10`, [q]
+        );
+      }
+      // Search by OEM cross-reference code in LD
+      if (ldResult.rows.length === 0) {
+        ldResult = await client.query(
+          `SELECT DISTINCT p.elimfilters_sku, p.source_sku, p.segment,
+                  o.oem_brand AS match_brand, o.oem_part_number AS match_code,
+                  'ld_oem_ref' AS match_type, 3 AS match_rank
+           FROM ld_catalog.ld_oem_cross_references o
+           JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku = o.elimfilters_sku
+           WHERE UPPER(o.oem_part_number) = $1
+           LIMIT 10`, [q]
+        );
+      }
+      // Search by source_sku partial (e.g. W 712/22, W712/22)
+      if (ldResult.rows.length === 0) {
+        const qNorm = q.replace(/\s+/g, '');
+        ldResult = await client.query(
+          `SELECT p.elimfilters_sku, p.source_sku, p.segment,
+                  'ld_source_sku' AS match_type, 2 AS match_rank
+           FROM ld_catalog.ld_product_catalog p
+           WHERE UPPER(REPLACE(p.source_sku, ' ', '')) = $1
+           LIMIT 5`, [qNorm]
+        );
+      }
+      if (ldResult.rows.length > 0) {
+        searchTier = 100; searchType = 'ld_catalog';
+        // Transform LD results into the same shape the frontend expects
+        result = { rows: ldResult.rows.map(r => ({ ...r, sku: r.elimfilters_sku, duty: 'LIGHT_DUTY', _ld: true })) };
+      }
+    }
+
     // ── Build human-readable match label ──────────────────────────────────
     function buildMatchLabel(row) {
       const mt = row.match_type;
@@ -2470,20 +2530,84 @@ app.get('/api/search', async (req, res) => {
       return null;
     }
 
-    const products = result.rows.map(row => ({
-      ...buildFilterData(row, lang),
-      sku: row.sku,
-      match_type: row.match_type || 'partial',
-      match_label: buildMatchLabel(row),
-    }));
+    let products;
+    if (searchType === 'ld_catalog') {
+      // LD results — build lightweight product objects with LD-specific data
+      const ldProducts = [];
+      for (const row of result.rows) {
+        // Fetch competitor refs for this LD SKU
+        const compRes = await client.query(
+          `SELECT competitor_brand, competitor_part_number FROM ld_catalog.ld_competitor_cross_references WHERE elimfilters_sku = $1`, [row.elimfilters_sku]
+        );
+        // Fetch OEM refs for this LD SKU
+        const oemRes = await client.query(
+          `SELECT oem_brand, oem_part_number FROM ld_catalog.ld_oem_cross_references WHERE elimfilters_sku = $1`, [row.elimfilters_sku]
+        );
+        // Fetch specs
+        const specRes = await client.query(
+          `SELECT spec_key, spec_value FROM ld_catalog.ld_product_specifications WHERE elimfilters_sku = $1`, [row.elimfilters_sku]
+        );
+        // Fetch vehicle applications (limited)
+        const appRes = await client.query(
+          `SELECT make, model_family, year, engine_code FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku = $1 LIMIT 50`, [row.elimfilters_sku]
+        );
+        // Fetch production readiness
+        const readyRes = await client.query(
+          `SELECT production_tier, has_oem, has_competitor, has_applications, has_specifications FROM ld_catalog.ld_production_readiness WHERE elimfilters_sku = $1`, [row.elimfilters_sku]
+        );
+        const ready = readyRes.rows[0] || {};
 
-    await enrichAlternatives(products, client);
+        // Build specs object
+        const specs = {};
+        specRes.rows.forEach(s => { specs[s.spec_key] = s.spec_value; });
+
+        // Build match label
+        let matchLabel = `ELIMFILTERS ${row.elimfilters_sku}`;
+        if (row.match_brand && row.match_code) {
+          matchLabel = `${row.match_brand} ${row.match_code}`;
+        } else if (row.match_type === 'ld_source_sku') {
+          matchLabel = `MANN ${row.source_sku}`;
+        }
+
+        ldProducts.push({
+          elimfilters_sku: row.elimfilters_sku,
+          sku: row.elimfilters_sku,
+          source_sku: row.source_sku,
+          duty: 'LIGHT_DUTY',
+          segment: row.segment,
+          filter_type: row.segment || null,
+          description: `ELIMFILTERS® Light Duty — MANN ${row.source_sku}`,
+          technology: null,
+          height_mm: specs['Height'] || specs['height'] || null,
+          outer_diameter_mm: specs['Outer Diameter'] || specs['outer_diameter'] || null,
+          thread_size: specs['Thread Size'] || specs['thread_size'] || null,
+          oem_codes: oemRes.rows.map(o => ({ manufacturer: o.oem_brand, code: o.oem_part_number })),
+          competitor_codes: compRes.rows.map(c => ({ manufacturer: c.competitor_brand, code: c.competitor_part_number })),
+          equipment_applications: appRes.rows.map(a => ({
+            make: a.make, model: a.model_family, year: a.year, engine: a.engine_code
+          })),
+          production_tier: ready.production_tier || 'TIER_P5',
+          match_type: row.match_type || 'ld_catalog',
+          match_label: matchLabel,
+        });
+      }
+      products = ldProducts;
+    } else {
+      products = result.rows.map(row => ({
+        ...buildFilterData(row, lang),
+        sku: row.sku,
+        match_type: row.match_type || 'partial',
+        match_label: buildMatchLabel(row),
+      }));
+      await enrichAlternatives(products, client);
+    }
 
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+    const { rows: [{ count: totalLd }] } = await client.query('SELECT COUNT(*) FROM ld_catalog.ld_product_catalog');
     res.json({
       products,
       count: products.length,
-      total_catalog: parseInt(totalCatalog, 10),
+      total_catalog: parseInt(totalCatalog, 10) + parseInt(totalLd, 10),
       search_type: searchType,
       search_tier: searchTier,
     });
