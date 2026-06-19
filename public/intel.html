@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Intelligence Command Center</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --y: #FFF12D;
+      --bg: #050505;
+      --panel: rgba(15, 15, 15, 0.9);
+      --border: rgba(255, 255, 255, 0.1);
+      --muted: rgba(255, 255, 255, 0.4);
+      --text: #e0e0e0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* ─── HEADER ─── */
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand img { height: 32px; }
+    .sys-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--y);
+      border: 1px solid rgba(255,241,45,0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      background: rgba(255,241,45,0.05);
+    }
+    .auth-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    /* ─── MAIN CONTAINER ─── */
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ─── AUTH MODAL ─── */
+    #auth-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 1000;
+    }
+    .auth-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--y);
+      padding: 2.5rem;
+      width: 100%; max-width: 400px;
+      text-align: center;
+    }
+    .auth-box h2 {
+      font-size: 1.2rem; margin-bottom: 0.5rem; letter-spacing: 0.05em;
+    }
+    .auth-box p {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 1.5rem;
+    }
+    .input-grp {
+      display: flex; flex-direction: column; gap: 0.5rem; text-align: left; margin-bottom: 1.5rem;
+    }
+    .input-grp label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    input[type="password"], input[type="text"], select, textarea {
+      width: 100%;
+      background: #000;
+      border: 1px solid var(--border);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.8rem;
+      outline: none;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--y); }
+    button.btn-primary {
+      width: 100%;
+      background: var(--y);
+      color: #000;
+      border: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.8rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      border-radius: 2px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    button.btn-primary:hover { background: #fff; }
+
+    /* ─── DASHBOARD GRID ─── */
+    #dashboard { display: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR FORMS ─── */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .panel-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--y);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    textarea { resize: vertical; min-height: 100px; }
+
+    /* ─── DATA TABLE ─── */
+    .table-container {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%; border-collapse: collapse; text-align: left;
+    }
+    th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      background: #000;
+    }
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      font-size: 0.85rem;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover { background: rgba(255,255,255,0.02); }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .tag.brand { border-color: rgba(100,200,255,0.3); color: #64c8ff; }
+    .tag.cat { border-color: rgba(255,241,45,0.3); color: var(--y); }
+
+    .btn-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-toggle.active { background: rgba(0,255,100,0.1); border-color: rgba(0,255,100,0.4); color: #00ff64; }
+    .btn-toggle.inactive { background: rgba(255,50,50,0.1); border-color: rgba(255,50,50,0.4); color: #ff3232; }
+
+    /* ─── TOAST ─── */
+    #toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--y); color: #000;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 600;
+      padding: 1rem 1.5rem; border-radius: 2px;
+      transform: translateY(100px); opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTHENTICATION -->
+  <div id="auth-overlay">
+    <div class="auth-box">
+      <h2>Restricted Access</h2>
+      <p>// INTELLIGENCE COMMAND CENTER</p>
+      <form id="auth-form">
+        <div class="input-grp">
+          <label>Admin Key</label>
+          <input type="password" id="admin-key-input" required placeholder="Enter INTEL_ADMIN_KEY">
+        </div>
+        <button type="submit" class="btn-primary">AUTHENTICATE</button>
+      </form>
+    </div>
+  </div>
+
+  <header>
+    <div class="brand">
+      <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS">
+      <span class="sys-badge">HERMES INTEL INGESTION</span>
+    </div>
+    <div class="auth-status" id="auth-status">Offline</div>
+  </header>
+
+  <main id="dashboard">
+    <div class="grid">
+      
+      <!-- LEFT COLUMN: INGESTION FORMS -->
+      <div class="sidebar">
+        
+        <!-- AI EXTRACTION PANEL -->
+        <div class="panel">
+          <div class="panel-title">AI Extraction (Groq)</div>
+          <form id="ai-form">
+            <div class="input-grp">
+              <label>Raw Text (News, Manuals, Bulletins)</label>
+              <textarea id="ai-raw" required placeholder="Paste unstructured competitive data here..."></textarea>
+            </div>
+            <div class="input-grp">
+              <label>Target Brand (Optional)</label>
+              <input type="text" id="ai-brand" placeholder="e.g. Donaldson, Mann, CAT">
+            </div>
+            <button type="submit" class="btn-primary" id="btn-extract">EXTRACT INTELLIGENCE</button>
+          </form>
+        </div>
+
+        <!-- MANUAL INGESTION PANEL -->
+        <div class="panel">
+          <div class="panel-title">Manual Ingestion</div>
+          <form id="manual-form">
+            <div class="input-grp">
+              <label>Brand</label>
+              <input type="text" id="man-brand" required placeholder="e.g. Fleetguard">
+            </div>
+            <div class="input-grp">
+              <label>Category</label>
+              <select id="man-category" required>
+                <option value="technology">Technology / R&D</option>
+                <option value="pricing">Pricing / Commercial</option>
+                <option value="failure_mode">Failure Modes / Defects</option>
+                <option value="supply_chain">Supply Chain</option>
+                <option value="strategic">Strategic Moves</option>
+              </select>
+            </div>
+            <div class="input-grp">
+              <label>Title</label>
+              <input type="text" id="man-title" required placeholder="Short descriptive title">
+            </div>
+            <div class="input-grp">
+              <label>Summary (Actionable Intel)</label>
+              <textarea id="man-summary" required placeholder="Concise summary for the AI context window..."></textarea>
+            </div>
+            <div class="input-grp">
+              <label>Priority (1-10, 1 is highest)</label>
+              <input type="number" id="man-priority" value="5" min="1" max="10" required>
+            </div>
+            <button type="submit" class="btn-primary">INJECT TO SYSTEM</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: MONITOR -->
+      <div class="main-content">
+        <div class="panel" style="padding: 0; background: transparent; border: none;">
+          <div class="panel-title" style="background: var(--panel); border: 1px solid var(--border); padding: 1.5rem; border-radius: 4px; margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">Active Intelligence Monitor</div>
+          <div class="table-container" style="border-top: none; border-top-left-radius: 0; border-top-right-radius: 0;">
+            <table id="intel-table">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Brand / Cat</th>
+                  <th>Title & Summary</th>
+                  <th>Priority</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast">Action Successful</div>
+
+  <script>
+    let adminKey = localStorage.getItem('elim_intel_key') || '';
+
+    const authOverlay = document.getElementById('auth-overlay');
+    const authForm = document.getElementById('auth-form');
+    const dashboard = document.getElementById('dashboard');
+    const authStatus = document.getElementById('auth-status');
+    const intelTable = document.querySelector('#intel-table tbody');
+    const manualForm = document.getElementById('manual-form');
+    const aiForm = document.getElementById('ai-form');
+    const btnExtract = document.getElementById('btn-extract');
+
+    // Make API calls to the same origin, but in dev it might be different port.
+    // In production (Cloudflare), it points to the worker or backend URL.
+    // Assuming backend is at current origin or an absolute URL in your architecture.
+    // We will use relative /api/ paths as defined in server.js.
+    const API_BASE = '/api/intel';
+
+    function showToast(msg, isError = false) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.style.background = isError ? '#ff3232' : 'var(--y)';
+      t.style.color = isError ? '#fff' : '#000';
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    async function apiCall(endpoint, options = {}) {
+      const headers = {
+        'Content-Type': 'application/json',
+        'x-intel-key': adminKey,
+        ...options.headers
+      };
+      const url = endpoint.startsWith('http') ? endpoint : `${API_BASE}${endpoint}`;
+      
+      const res = await fetch(url, { ...options, headers });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'API Error');
+      return data;
+    }
+
+    async function checkAuthAndLoad() {
+      if (!adminKey) return;
+      try {
+        await loadIntel();
+        authOverlay.style.display = 'none';
+        dashboard.style.display = 'block';
+        authStatus.innerHTML = '<span style="color:var(--y)">System Connected [SECURE]</span>';
+      } catch(e) {
+        if (e.message === 'forbidden') {
+          adminKey = '';
+          localStorage.removeItem('elim_intel_key');
+          showToast('Invalid Key', true);
+        } else {
+          showToast('Connection Error', true);
+        }
+      }
+    }
+
+    authForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      adminKey = document.getElementById('admin-key-input').value;
+      localStorage.setItem('elim_intel_key', adminKey);
+      await checkAuthAndLoad();
+    });
+
+    // ── LOAD INTEL TABLE ──
+    async function loadIntel() {
+      const data = await apiCall(`/list?key=${encodeURIComponent(adminKey)}`);
+      intelTable.innerHTML = '';
+      data.intel.forEach(row => {
+        const tr = document.createElement('tr');
+        
+        // Status toggle
+        const statusTd = document.createElement('td');
+        const btn = document.createElement('button');
+        btn.className = `btn-toggle ${row.active ? 'active' : 'inactive'}`;
+        btn.textContent = row.active ? 'ACTIVE' : 'MUTED';
+        btn.onclick = () => toggleStatus(row.id, btn);
+        statusTd.appendChild(btn);
+
+        // Tags
+        const tagsTd = document.createElement('td');
+        tagsTd.innerHTML = `
+          <span class="tag brand">${row.brand}</span><br>
+          <span class="tag cat" style="margin-top:0.3rem; display:inline-block">${row.category}</span>
+        `;
+
+        // Content
+        const contentTd = document.createElement('td');
+        contentTd.innerHTML = `
+          <strong style="color:var(--y); font-size:0.95rem">${row.title}</strong>
+          <p style="color:var(--muted); font-size:0.8rem; margin-top:0.3rem; line-height:1.4">${row.summary}</p>
+        `;
+
+        // Priority
+        const prioTd = document.createElement('td');
+        prioTd.innerHTML = `<span style="font-family:'JetBrains Mono'; font-size:1.2rem; font-weight:700; color:${row.priority===1?'#ff3232':'#fff'}">${row.priority}</span>`;
+
+        // Date
+        const dateTd = document.createElement('td');
+        dateTd.innerHTML = `<span style="font-family:'JetBrains Mono'; font-size:0.65rem; color:var(--muted)">${new Date(row.created_at).toLocaleDateString()}</span>`;
+
+        tr.append(statusTd, tagsTd, contentTd, prioTd, dateTd);
+        intelTable.appendChild(tr);
+      });
+    }
+
+    // ── TOGGLE STATUS ──
+    async function toggleStatus(id, btn) {
+      try {
+        const r = await apiCall(`/${id}/toggle`, { method: 'PATCH' });
+        btn.className = `btn-toggle ${r.active ? 'active' : 'inactive'}`;
+        btn.textContent = r.active ? 'ACTIVE' : 'MUTED';
+        showToast('Status Updated');
+      } catch(e) {
+        showToast(e.message, true);
+      }
+    }
+
+    // ── MANUAL INGESTION ──
+    manualForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const body = {
+          brand: document.getElementById('man-brand').value,
+          category: document.getElementById('man-category').value,
+          title: document.getElementById('man-title').value,
+          summary: document.getElementById('man-summary').value,
+          priority: parseInt(document.getElementById('man-priority').value),
+          source_type: 'manual'
+        };
+        await apiCall('/ingest', { method: 'POST', body: JSON.stringify(body) });
+        showToast('Intelligence Ingested Successfully');
+        manualForm.reset();
+        loadIntel();
+      } catch(e) {
+        showToast(e.message, true);
+      }
+    });
+
+    // ── AI EXTRACTION ──
+    aiForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btnExtract.textContent = 'ANALYZING (GROQ)...';
+      btnExtract.style.opacity = '0.5';
+      btnExtract.disabled = true;
+      try {
+        const body = {
+          raw_text: document.getElementById('ai-raw').value,
+          brand: document.getElementById('ai-brand').value
+        };
+        const data = await apiCall('/extract', { method: 'POST', body: JSON.stringify(body) });
+        
+        // Auto-fill manual form with AI results for review
+        document.getElementById('man-brand').value = data.brand || document.getElementById('ai-brand').value || 'Unknown';
+        document.getElementById('man-category').value = data.category || 'technology';
+        document.getElementById('man-title').value = data.title || '';
+        document.getElementById('man-summary').value = data.summary || '';
+        document.getElementById('man-priority').value = data.priority || 5;
+        
+        showToast('Extraction Complete. Review and Inject.');
+        aiForm.reset();
+      } catch(e) {
+        showToast(e.message, true);
+      } finally {
+        btnExtract.textContent = 'EXTRACT INTELLIGENCE';
+        btnExtract.style.opacity = '1';
+        btnExtract.disabled = false;
+      }
+    });
+
+    // Auto-init
+    if (adminKey) checkAuthAndLoad();
+
+  </script>
+</body>
+</html>

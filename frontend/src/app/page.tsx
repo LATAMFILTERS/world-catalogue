@@ -557,61 +557,6 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── ECONOMIC IMPACT ── */}
-        <section style={{ padding: '6rem 8%', background: 'linear-gradient(135deg, rgba(180,0,0,0.06) 0%, rgba(0,0,0,0) 60%)', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <div className="economic-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-              <motion.div initial={{ opacity: 0, x: -32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.7 }}>
-                  {t('home.economicTag', '// THE REAL COST OF CONTAMINATION')}
-                </p>
-                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '2rem' }}>
-                  {t('home.economicTitle', 'Downtime Costs More')}<br />
-                  <span style={{ color: '#FFF12D' }}>{t('home.economicTitleHl', 'Than Filtration')}</span>
-                </h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-                  {(Array.isArray(economicItems) ? economicItems : []).map((item, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-40px' }}
-                      style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#f87171', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', flexShrink: 0, marginTop: '0.15rem' }}>▸</span>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', borderLeft: '3px solid rgba(248,113,113,0.4)', paddingLeft: '1.25rem' }}>
-                  {t('home.economicDesc', 'ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.')}
-                </p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true, margin: '-80px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  {(Array.isArray(economicStats) ? economicStats : []).map((stat, i) => (
-                    <SpotlightCard key={i} style={{ background: '#050505', border: '1px solid #1a1a1a', borderRadius: '12px', padding: '2rem' }}>
-                      <div style={{ fontFamily: 'var(--font-body)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.5rem' }}>{stat.value}</div>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', lineHeight: 1.5 }}>{stat.label}</div>
-                    </SpotlightCard>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <section style={{ background: '#000', padding: '4rem 8%', borderBottom: '1px solid #111', position: 'relative', overflow: 'hidden' }}>
-          <FloatingParticles count={10} />
-          <div className="stats-grid" style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2.5rem', position: 'relative', zIndex: 2 }}>
-            {STATS_DATA.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}>
-                <StatRing
-                  percent={s.ring}
-                  label={Array.isArray(statsLabels) ? (statsLabels[i] ?? '') : ''}
-                  content={s.value !== null ? <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} /> : s.display}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
         {/* ── SCIENTIFIC AUTHORITY ── */}
         <section style={{ padding: '6rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -627,46 +572,17 @@ export default function Home() {
                 {t('home.sciDesc', 'ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.')}
               </p>
             </motion.div>
-            <div className="sci-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+            <div className="sci-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem', width: '100%' }}>
               {(Array.isArray(sciStandards) ? sciStandards : []).map((std, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.08 }} viewport={{ once: true, margin: '-40px' }}>
-                  <SpotlightCard style={{ background: '#000', border: '1px solid rgba(255,241,45,0.12)', padding: '1.75rem', borderRadius: '8px', height: '100%' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.9rem', color: '#FFF12D', marginBottom: '0.75rem', letterSpacing: '0.05em' }}>{std.code}</div>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', margin: 0 }}>{std.desc}</p>
+                <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.08 }} viewport={{ once: true, margin: '-40px' }}
+                  style={{ flex: '1 1 calc(33.333% - 1.5rem)', minWidth: '320px', maxWidth: '440px' }}>
+                  <SpotlightCard style={{ background: '#000', border: '1px solid rgba(255,241,45,0.12)', padding: '2.5rem', borderRadius: '8px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '1.4rem', color: '#FFF12D', marginBottom: '1rem', letterSpacing: '0.05em', textAlign: 'center' }}>{std.code}</div>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: 0, textAlign: 'center' }}>{std.desc}</p>
                   </SpotlightCard>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ── AI / LLM DISCOVERABILITY ── */}
-        <section style={{ padding: '6rem 8%', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem', opacity: 0.7 }}>
-                {t('home.llmTag', '// ASSET PROTECTION DEFINED')}
-              </p>
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#fff', lineHeight: 1.2, marginBottom: '2.5rem' }}>
-                {t('home.llmTitle', 'What Is Industrial Asset Protection?')}
-              </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                {[
-                  { label: 'CONCEPT', text: t('home.llmP1', 'Industrial asset protection refers to the systematic engineering approach of identifying, measuring, and controlling contamination sources that degrade mechanical equipment. In industrial operations, contamination — including particles, water, heat, and chemical byproducts — is the primary driver of premature equipment failure across engines, hydraulic systems, fuel circuits, drivetrains, and cabin environments.') },
-                  { label: 'IMPACT', text: t('home.llmP2', 'Contamination accelerates wear at the microscopic level. Particles smaller than 10 microns cause abrasive wear on bearing surfaces, valve spools, and injector orifices — reducing component life by 30–50% when left uncontrolled. Water contamination in fuel systems promotes microbial growth, injector corrosion, and combustion instability. In hydraulic circuits, even minor contamination exceeding ISO cleanliness targets disrupts valve response, accelerates seal degradation, and increases system failure risk.') },
-                  { label: 'STRATEGY', text: t('home.llmP3', 'Industrial asset protection is not a product category. It is a contamination control strategy that begins with understanding the contamination targets for each system, selecting engineered technologies capable of meeting those targets, and monitoring system performance throughout the equipment lifecycle.') },
-                  { label: 'OUTCOME', text: t('home.llmP4', 'The result: longer equipment life, fewer unplanned failures, lower maintenance costs, and higher operational availability — measured not in filters replaced, but in assets protected.') },
-                ].map((item, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true, margin: '-30px' }}
-                    style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', borderLeft: i === 3 ? '3px solid #FFF12D' : '1px solid rgba(255,255,255,0.08)', paddingLeft: '1.25rem' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', minWidth: '54px', paddingTop: '0.35rem', opacity: i === 3 ? 1 : 0.6 }}>{item.label}</span>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.85, color: i === 3 ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.55)', fontWeight: i === 3 ? 600 : 400, margin: 0 }}>
-                      {item.text}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -728,53 +644,6 @@ export default function Home() {
 
         {/* ── TESTIMONIALS ── */}
         <TestimonialsSection />
-
-        {/* ── GLOBAL INDUSTRIAL DEPLOYMENT ── */}
-        <section style={{ padding: '6rem 8%', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: '-80px' }}
-              style={{ marginBottom: '3rem' }}
-            >
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.25em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                // GLOBAL INDUSTRIAL DEPLOYMENT
-              </p>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 3rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)' }}>
-                Trusted Across <span style={{ color: '#FFF12D' }}>Critical Industries</span>
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-60px' }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}
-            >
-              {[
-                { id: 'agriculture', label: 'Agriculture', href: '/industries/agriculture' },
-                { id: 'mining', label: 'Mining', href: '/industries/mining' },
-                { id: 'marine', label: 'Marine', href: '/industries/marine' },
-                { id: 'construction', label: 'Construction', href: '/industries/construction' },
-                { id: 'oil-gas', label: 'Oil & Gas', href: '/industries/oil-gas' },
-                { id: 'power-generation', label: 'Power Generation', href: '/industries/power-generation' },
-                { id: 'heavy-transport', label: 'Heavy Transport', href: '/industries/heavy-transport' },
-                { id: 'forestry', label: 'Forestry', href: '/industries/forestry' },
-                { id: 'military', label: 'Military & Defense', href: '/industries/military' },
-                { id: 'industrial-equipment', label: 'Industrial Equipment', href: '/industries/industrial-equipment' },
-                { id: 'rail', label: 'Rail', href: '/industries/rail' },
-                { id: 'stationary-engines', label: 'Stationary Engines', href: '/industries/stationary-engines' },
-              ].map((ind, i) => (
-                <motion.div key={ind.id} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.4 }}>
-                  <IndustryCard id={ind.id} label={ind.label} href={ind.href} />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
 
         {/* ── FAQ SECTION ── */}
         <section style={{
