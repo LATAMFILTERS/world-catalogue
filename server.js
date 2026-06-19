@@ -1265,70 +1265,82 @@ app.get('/api/filters/search/part', async (req, res) => {
 });
 
 app.get('/api/filters/search/vin', async (req, res) => {
-  const vin = (req.query.vin || req.query.q || '').trim().toUpperCase();
-  if(!vin || vin.length < 5) return res.json({success: false, filters: [], vehicleInfo: null});
+  const vinOrModel = (req.query.vin || req.query.model || req.query.q || '').trim().toUpperCase();
+  if(!vinOrModel) return res.json({success: false, filters: [], vehicleInfo: null});
+  const engine = (req.query.engine || '').trim().toUpperCase();
   const lang = detectLang(req);
 
   let vehicleInfo = null;
   let make = '';
   let model = '';
+  
+  // Basic VIN heuristic: 17 alphanumeric chars
+  const isVin = /^[A-HJ-NPR-Z0-9]{17}$/.test(vinOrModel);
 
-  try {
-    const nhtsaRes = await axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`);
-    if (nhtsaRes.data && nhtsaRes.data.Results && nhtsaRes.data.Results.length > 0) {
-      const v = nhtsaRes.data.Results[0];
-      make = (v.Make || '').toUpperCase();
-      model = (v.Model || '').toUpperCase();
-      vehicleInfo = {
-        Make: v.Make,
-        Model: v.Model,
-        ModelYear: v.ModelYear,
-        EngineCylinders: v.EngineCylinders,
-        EngineHP: v.EngineHP,
-        FuelTypePrimary: v.FuelTypePrimary,
-        DisplacementL: v.DisplacementL,
-        ErrorText: v.ErrorCode !== '0' ? v.ErrorText : null
-      };
+  if (isVin) {
+    try {
+      const nhtsaRes = await axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vinOrModel}?format=json`);
+      if (nhtsaRes.data && nhtsaRes.data.Results && nhtsaRes.data.Results.length > 0) {
+        const v = nhtsaRes.data.Results[0];
+        if (v.ErrorCode === '0' || v.ErrorCode.includes('Successful')) {
+            make = (v.Make || '').toUpperCase();
+            model = (v.Model || '').toUpperCase();
+            vehicleInfo = {
+                Make: v.Make,
+                Model: v.Model,
+                ModelYear: v.ModelYear,
+                EngineCylinders: v.EngineCylinders,
+                EngineHP: v.EngineHP,
+                FuelTypePrimary: v.FuelTypePrimary,
+                DisplacementL: v.DisplacementL,
+                VIN: vinOrModel
+            };
+        } else {
+             vehicleInfo = { ErrorText: v.ErrorText };
+        }
+      }
+    } catch (err) {
+      console.error("[VIN Decode Error]", err.message);
     }
-  } catch (err) {
-    console.error("[VIN Decode Error]", err.message);
+  } else {
+    // Treat input as just model text
+    model = vinOrModel;
   }
 
-  if (!make && !model) {
+  if (isVin && !make && !model) {
      return res.json({success: true, filters: [], vehicleInfo, error: "VIN not recognized or invalid"});
   }
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
-
-    // Search HD
-    let query = `SELECT * FROM elimfilters_catalog WHERE equipment_applications IS NOT NULL`;
-    const params = [];
-    if (make) { query += ` AND equipment_applications::text ILIKE $${params.length + 1}`; params.push('%' + make + '%'); }
-    if (model) { query += ` AND equipment_applications::text ILIKE $${params.length + 1}`; params.push('%' + model + '%'); }
+    
+    // Multi-token search based on make/model/engine
+    const searchTerms = [make, model, engine].filter(Boolean).join(' ').split(/\s+/).filter(t => t.length > 1);
+    
+    // We search the equipment index: 
+    // Join elimfilters_catalog with kg_product_equipment, kg_equipment_models, kg_equipment_makes
+    const hdConditions = searchTerms.map((_, i) => `(mk.display_name ILIKE $${i + 1} OR m.display_name ILIKE $${i + 1})`);
+    const hdWhere = hdConditions.length > 0 ? hdConditions.join(' AND ') : '1=1';
+    const hdParams = searchTerms.map(t => '%' + t + '%');
+    
+    let query = `
+        SELECT DISTINCT p.* 
+        FROM elimfilters_catalog p
+        JOIN kg_product_equipment pe ON pe.product_sku = p.sku
+        JOIN kg_equipment_models m ON m.id = pe.model_id
+        JOIN kg_equipment_makes mk ON mk.id = m.make_id
+    `;
+    if (searchTerms.length > 0) {
+        query += ` WHERE ${hdWhere}`;
+    } else {
+        query += ` WHERE 1=0`; // Don't return all if no terms
+    }
     query += ' LIMIT 20';
     
-    const hdResult = await client.query(query, params);
+    const hdResult = await client.query(query, hdParams);
     let filters = hdResult.rows.map(row => buildFilterData(row, lang));
     await enrichAlternatives(filters, client);
-
-    // Search LD
-    let ldQuery = `
-      SELECT p.elimfilters_sku as sku, p.segment, p.source_sku
-      FROM ld_catalog.ld_vehicle_applications a
-      JOIN ld_catalog.ld_product_catalog p ON a.elimfilters_sku = p.elimfilters_sku
-      WHERE 1=1
-    `;
-    const ldParams = [];
-    if (make) { ldQuery += ` AND UPPER(a.make) LIKE $${ldParams.length + 1}`; ldParams.push('%' + make + '%'); }
-    if (model) { ldQuery += ` AND UPPER(a.model_family) LIKE $${ldParams.length + 1}`; ldParams.push('%' + model + '%'); }
-    ldQuery += ' LIMIT 20';
-    
-    const ldResult = await client.query(ldQuery, ldParams);
-    for (const r of ldResult.rows) {
-      filters.push({ sku: r.sku, duty: 'LIGHT_DUTY', filter_type: r.segment, description: `ELIMFILTERS Light Duty — MANN ${r.source_sku}` });
-    }
 
     res.status(200).json({success: true, filters, vehicleInfo});
   } catch(e) {
