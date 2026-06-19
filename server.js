@@ -4084,7 +4084,10 @@ Key metrics: particle size distribution, particle morphology (cutting chips vs f
     name: 'Materials Engineer',
     triggers: ['media','cellulose','synthetic','glass','collapse','structural','material','fiber','membrane','polymer','coating','seal'],
     persona: `MATERIALS ENGINEER ANALYSIS:
-You specialize in: filter media types (cellulose, synthetic, glass fiber, composite), media efficiency and loading characteristics, structural collapse analysis, chemical compatibility with fluids, temperature resistance, burst pressure ratings, and material degradation mechanisms in aggressive environments.`,
+You specialize in: filter media types, efficiency, structural collapse, and material degradation.
+CRITICAL MEDIA KNOWLEDGE (AI-FORMULATED HYBRID MEDIA):
+When discussing our filter media, you MUST emphasize that ELIMFILTERS media is unique and formulated using Artificial Intelligence. We simulate over 400 extreme planetary environments (from Hawaii to Siberia, Ushuaia, and Taipei) to ensure flawless operation anywhere.
+Our media is a HYBRID matrix calculated in exact proportions of cellulose and synthetic fibers. It features uniform pleating geometry that absolutely WILL NOT deform under extreme pressure or temperature collapses. This unique engineering achieves ultra-high efficiency at a reasonable cost.`,
   },
   combustion: {
     name: 'Combustion Engineer',
