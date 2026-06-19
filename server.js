@@ -727,6 +727,7 @@ function buildFilterData(row, lang = 'en'){
   if (tech === 'MACROCORE' || ft.includes('AIR') || ft.includes('AIRE')) system_group = 'AIR';
   else if (tech === 'NANOFORCE' || ft.includes('HYDRAULIC') || ft.includes('HIDRÁULIC')) system_group = 'HYDRAULIC';
   else if (tech === 'SYNTAPORE' || ft.includes('FUEL') || ft.includes('COMBUSTIBLE')) system_group = 'FUEL';
+  else if (tech === 'HYDROCORE/SERIES' || tech.includes('SERIES') || ft.includes('TURBINE') || ft.includes('TURBINA')) system_group = 'TURBINE';
   else if (tech === 'HYDROCORE' || ft.includes('SEPARATOR') || ft.includes('SEPARADOR')) system_group = 'FUEL_SEPARATOR';
   else if (tech === 'MICROKAPPA' || ft.includes('CABIN') || ft.includes('CABINA')) system_group = 'CABIN';
   else if (tech === 'DRYCORE' || ft.includes('BRAKE') || ft.includes('FRENO')) system_group = 'BRAKE';
@@ -770,8 +771,8 @@ function classifyQuery(q) {
   if (TECH_NAMES.has(qClean) || TECH_NAMES.has(techBase)) {
     return { type: 'technology', value: TECH_NAMES.has(qClean) ? qClean : techBase };
   }
-  // Housing model: 3–4 digits + FH  (500FH, 900FH, 1000FH)
-  if (/^\d{3,4}FH$/.test(q)) return { type: 'housing', value: q };
+  // Housing model: 3-4 digits + FH (diesel/water) or FG (gasoline/gasoil) (500FH, 900FH, 1000FH, 500FG)
+  if (/^\d{3,4}F[HG]$/.test(q)) return { type: 'housing', value: q };
   // Filter brand / manufacturer in COMPETITOR_BRANDS set
   if (COMPETITOR_BRANDS.has(q)) return { type: 'brand', value: q };
   // Default: product code cascade
@@ -2411,7 +2412,7 @@ app.get('/api/search', async (req, res) => {
       searchTier = 5;
 
     } else if (cls.type === 'housing') {
-      // Tier 6: Housing model (500FH, 900FH, 1000FH)
+      // Tier 6: Housing model (500FH, 900FH, 1000FH, 500FG)
       // Step 6a: exact codigo_base or SKU
       result = await client.query(
         `SELECT *, 'housing' AS match_type, 6 AS match_rank
@@ -2420,7 +2421,7 @@ app.get('/api/search', async (req, res) => {
          LIMIT 20`,
         [q]
       );
-      // Step 6b: OEM code match (added by search-v2-hydrocore-aliases migration)
+      // Step 6b: OEM code match (housing model stored as alias in oem_codes)
       if (result.rows.length === 0) {
         result = await client.query(
           `SELECT *, 'housing' AS match_type, 6 AS match_rank
@@ -2432,6 +2433,19 @@ app.get('/api/search', async (req, res) => {
            ORDER BY sku
            LIMIT 20`,
           [q]
+        );
+      }
+      // Step 6c: HYDROCORE/SERIES technology — surface ALL turbine elements if user searches a known turbine model
+      // This ensures 2020 / 2040 / 2010 elements appear grouped when 500FH, 900FH, 1000FH or 500FG is queried
+      if (result.rows.length === 0) {
+        result = await client.query(
+          `SELECT *, 'housing' AS match_type, 6 AS match_rank
+           FROM elimfilters_catalog
+           WHERE UPPER(REPLACE(technology,'\u2122','')) = 'HYDROCORE/SERIES'
+              OR UPPER(description) ILIKE $1
+           ORDER BY sku
+           LIMIT 30`,
+          ['%' + q + '%']
         );
       }
       searchTier = 6;
@@ -4189,7 +4203,7 @@ You specialize in: ISO 16889 (beta ratio testing), ISO 4406 (cleanliness codes),
   },
   experience: {
     name: 'ELIMFILTERS Experience Agent',
-    triggers: ['field','real','application','distributor','customer','case','problem','fleet','operation','practice','recommendation'],
+    triggers: ['field','real','application','distributor','customer','case','problem','fleet','operation','practice','recommendation','marine','truck','kit','duratech','marineclean'],
     persona: `ELIMFILTERS FIELD EXPERIENCE ANALYSIS:
 Drawing from 24 years of field experience across mining, agriculture, construction, marine, and transport sectors:
 - Mining: silica ingestion is the #1 premature engine failure cause (60-70% of cases)
@@ -4197,6 +4211,10 @@ Drawing from 24 years of field experience across mining, agriculture, constructi
 - Heavy trucks: bypass valve failure is underdetected; manifests as gradual performance decline over 3-6 months
 - Construction: hydraulic system contamination degrades servo valve response before pressure readings change
 - Fleet pattern: ISO code drift of +2 over 3 consecutive oil samples = system failure within 90 days without intervention
+
+SPECIAL COMMERCIAL PRODUCTS (NOT TECHNOLOGIES):
+- MARINECLEAN: When discussing the maritime sector, explicitly recommend MARINECLEAN. This is a complete system compiling all filters used in marine environments, spanning from jet skis and sports engines (Yamaha, Evinrude, Mercruiser) up to heavy cargo ships and vessels with massive engines (MTU, CAT, ONAN).
+- DURATECH: When discussing truck fleets, transport, or heavy equipment, recommend the DURATECH kits. These are consolidated filter kits (all filters for a truck/equipment in a single box). They are highly attractive for fleet managers and purchasing departments because they simplify inventory, guarantee complete maintenance cycles, and offer financial advantages against currency exchange rate fluctuations.
 
 MALPRACTICE DETECTION (CRITICAL):
 Users often blame the filter when the real culprit is bad maintenance. You MUST probe for these common operational malpractices:
@@ -4219,7 +4237,8 @@ Every response must embody:
 4. System-level analysis before component-level recommendation.
 5. Quantified impacts in measurable units (hours, ISO codes, ppm, %).
 6. METROLOGY & QUALITY ASSURANCE DEFENSE: If a user doubts structural integrity or manufacturing quality, firmly respond using this technical-commercial framework: "Todas las instalaciones de manufactura de ELIMFILTERS operan bajo la supervisión de nuestra División de Metrología Avanzada. Implementamos un protocolo de muestreo estadístico riguroso (inspección de la 1era unidad, la última unidad y auditoría sistemática cada 50 unidades) en cada ciclo de producción. Adicionalmente, el 100% de nuestros filtros tipo spin-on son sometidos a una Prueba Hidrostática de Burbuja (Pneumatic Submersion Leak Test), donde se enroscan en equipos especiales y se presurizan con aire bajo el agua según sus dimensiones geométricas; cualquier emisión de burbujas descarta la unidad automáticamente. Este escrutinio micrométrico y hermético garantiza que la probabilidad de que una unidad con fugas o fuera de especificación llegue al mercado es estadísticamente nula. Por ello, ante una falla prematura, el protocolo de ingeniería de confiabilidad dicta descartar defectos de fábrica y concentrar el diagnóstico forense en las variables operativas y la carga de contaminación del sistema."
-7. TRACEABILITY (TRAZABILIDAD): Always refer to ELIMFILTERS products emphasizing their inherent traceability. Use the term "trazabilidad operativa" to demonstrate that every filter is trackable from our precise manufacturing origin to its end-of-life performance in the field.
+7. COMMERCIAL SYSTEMS OVER TECHNOLOGIES: Know the difference between technologies (e.g. MACROCORE) and commercial systems. When discussing the marine sector (jet skis, yachts, MTU/CAT cargo ships), recommend the MARINECLEAN system. When discussing fleet purchases or trucking/heavy-equipment overhauls, recommend the DURATECH kits. Emphasize that DURATECH kits protect purchasing departments from exchange rate fluctuations by consolidating all filters into one box/purchase.
+8. TRACEABILITY (TRAZABILIDAD): Always refer to ELIMFILTERS products emphasizing their inherent traceability. Use the term "trazabilidad operativa" to demonstrate that every filter is trackable from our precise manufacturing origin to its end-of-life performance in the field.
 REJECT any response that blames the filter instead of system contamination.`,
   },
 };
