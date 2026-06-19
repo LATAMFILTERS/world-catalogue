@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Search Results & AI Consultation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --bg: #000;
+      --border: rgba(255,255,255,0.07);
+      --muted: rgba(255,255,255,0.35);
+    }
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-text img { height: 32px; }
+    .back-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--y);
+      text-decoration: none;
+      border: 1px solid rgba(255,241,45,0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(255,241,45,0.1); }
+
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      flex: 1;
+      height: calc(100vh - 65px);
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; height: auto; display: block; }
+    }
+
+    /* Results Panel */
+    .results-panel {
+      padding: 2rem;
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+    }
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .results-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .status-msg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      padding: 3rem 0;
+    }
+
+    /* AI Panel */
+    .ai-panel {
+      display: flex;
+      flex-direction: column;
+      background: #050505;
+      height: 100%;
+    }
+    .ai-header {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      background: #0a0a0a;
+    }
+    .ai-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--y);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .ai-title::before {
+      content: ''; display: block; width: 6px; height: 6px; background: var(--y); border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .ai-chat {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .msg { max-width: 85%; font-size: 0.85rem; line-height: 1.5; padding: 0.8rem 1rem; border-radius: 6px; }
+    .msg.user { background: #1a1a1a; align-self: flex-end; border: 1px solid rgba(255,255,255,0.1); }
+    .msg.ai { background: rgba(255,241,45,0.03); align-self: flex-start; border: 1px solid rgba(255,241,45,0.15); color: rgba(255,255,255,0.85); }
+    .msg.ai pre, .msg.ai code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: rgba(0,0,0,0.4); padding: 0.2rem 0.4rem; border-radius: 3px; }
+    .msg.ai .ai-signature { display: block; margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: var(--y); letter-spacing: 0.1em; opacity: 0.7; }
+
+    .ai-input-area {
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      background: #0a0a0a;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .ai-input {
+      flex: 1;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      color: #fff;
+      padding: 0.8rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      resize: none;
+      height: 45px;
+      outline: none;
+    }
+    .ai-input:focus { border-color: var(--y); }
+    .ai-btn {
+      background: var(--y);
+      border: none;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .ai-btn:hover { background: #ffe800; }
+    
+    /* Result Cards copied from index.html */
+    .result-card { border: 1px solid var(--border); border-radius: 4px; padding: 1.4rem 1.6rem; margin-bottom: 0.7rem; background: rgba(255,255,255,0.012); position: relative; }
+    .result-card:hover { border-color: rgba(255,241,45,0.22); }
+    .card-sku { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: var(--y); letter-spacing: 0.07em; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+    .ctag { font-family: 'JetBrains Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; padding: 0.18rem 0.5rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); }
+    .ctag.tech { border-color: rgba(255,241,45,0.22); color: rgba(255,241,45,0.7); background: rgba(255,241,45,0.04); }
+    .card-specs { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.75rem 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.04); }
+    .spec-l { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: rgba(255,255,255,0.25); }
+    .spec-v { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: rgba(255,255,255,0.82); }
+    .card-desc { font-size: 0.875rem; color: rgba(255,255,255,0.55); margin-top: 0.6rem; }
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/" class="logo-text">
+      <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS">
+      <span>PART SEARCH</span>
+    </a>
+    <a href="/" class="back-btn">← NEW SEARCH</a>
+  </nav>
+
+  <div class="layout">
+    <main class="results-panel" id="results-container">
+      <div class="status-msg" id="loading-indicator">// ANALYZING DATABASE...</div>
+    </main>
+    
+    <aside class="ai-panel">
+      <div class="ai-header">
+        <span class="ai-title">ASSET PROTECTION ENGINEER AI</span>
+      </div>
+      <div class="ai-chat" id="chat-window">
+        <div class="msg ai">
+          System nominal. I am the ELIMFILTERS Reliability & Asset Protection Engineer. How can I assist you with contamination control, fluid mechanics, or TCO financial analysis today?
+          <span class="ai-signature">ELIMFILTERS AI · TERMINAL V3.8</span>
+        </div>
+      </div>
+      <div class="ai-input-area">
+        <input type="text" id="ai-input" class="ai-input" placeholder="Ask about TCO, water in fuel, or filter specs..." autocomplete="off">
+        <button id="ai-btn" class="ai-btn">SEND</button>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get('mode') || 'part';
+    const q = urlParams.get('q');
+    const model = urlParams.get('model');
+    const type = urlParams.get('type');
+    const engine = urlParams.get('engine');
+
+    const resultsContainer = document.getElementById('results-container');
+    const chatWindow = document.getElementById('chat-window');
+    const aiInput = document.getElementById('ai-input');
+    const aiBtn = document.getElementById('ai-btn');
+
+    let currentContext = { searchedPart: q, model: model, equipment: type };
+
+    async function executeSearch() {
+      try {
+        let url = '';
+        if (mode === 'part' && q) {
+          url = \`/api/search?q=\${encodeURIComponent(q)}\`;
+        } else if (mode === 'vin' && model) {
+          url = \`/api/filters/search/vin?model=\${encodeURIComponent(model)}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+        } else if (mode === 'equip' && model) {
+          url = \`/api/filters/search/equipment?model=\${encodeURIComponent(model)}\${type ? '&type='+encodeURIComponent(type) : ''}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+        }
+
+        if (!url) {
+          resultsContainer.innerHTML = '<div class="status-msg">// INVALID SEARCH PARAMETERS</div>';
+          return;
+        }
+
+        const res = await fetch(url);
+        const data = await res.json();
+        
+        const items = data.products || data.filters || [];
+        renderResults(items);
+        
+        if (items.length > 0) {
+          const sku = items[0].elimfilters_sku || items[0].sku;
+          currentContext.primaryResult = sku;
+        }
+      } catch (err) {
+        resultsContainer.innerHTML = '<div class="status-msg">// ERROR FETCHING CATALOG DATA</div>';
+      }
+    }
+
+    function renderResults(items) {
+      if (!items || items.length === 0) {
+        resultsContainer.innerHTML = '<div class="status-msg">// NO ASSETS FOUND MATCHING PARAMETERS</div>';
+        return;
+      }
+      
+      let html = \`<div class="results-header"><span class="results-count">// \${items.length} MATCHES DETECTED</span></div>\`;
+      
+      html += items.map(p => {
+        const sku = p.elimfilters_sku || p.sku;
+        const specs = [
+          p.height_mm && ['HEIGHT', p.height_mm + ' mm'],
+          p.outer_diameter_mm && ['OD', p.outer_diameter_mm + ' mm'],
+          p.micron_rating && ['MICRON', p.micron_rating + ' µm'],
+          p.nominal_efficiency && ['EFFICIENCY', p.nominal_efficiency + '%']
+        ].filter(Boolean);
+
+        return \`
+          <div class="result-card">
+            <div class="card-sku">\${sku}</div>
+            <div class="card-tags">
+              \${p.filter_type ? \`<span class="ctag">\${p.filter_type}</span>\` : ''}
+              \${p.technology ? \`<span class="ctag tech">\${p.technology}</span>\` : ''}
+            </div>
+            \${p.description ? \`<div class="card-desc">\${p.description}</div>\` : ''}
+            <div class="card-specs">
+              \${specs.map(([l, v]) => \`<div><div class="spec-l">\${l}</div><div class="spec-v">\${v}</div></div>\`).join('')}
+            </div>
+          </div>
+        \`;
+      }).join('');
+      
+      resultsContainer.innerHTML = html;
+    }
+
+    async function sendMessage() {
+      const text = aiInput.value.trim();
+      if (!text) return;
+      
+      aiInput.value = '';
+      
+      chatWindow.innerHTML += \`<div class="msg user">\${text}</div>\`;
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      
+      const loadingId = 'loading-' + Date.now();
+      chatWindow.innerHTML += \`<div id="\${loadingId}" class="msg ai"><span class="loading-dots">// ENGINEERING ANALYSIS IN PROGRESS</span></div>\`;
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+
+      try {
+        const payload = {
+          messages: [{ role: 'user', content: text }],
+          context: currentContext
+        };
+
+        const res = await fetch('/api/ai/consult-v2', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        document.getElementById(loadingId).remove();
+        
+        let aiHtml = marked.parse(data.answer || '// ANALYSIS FAILED');
+        chatWindow.innerHTML += \`<div class="msg ai">\${aiHtml}<span class="ai-signature">ELIMFILTERS AI · \${data.specialist || 'SYSTEM'}</span></div>\`;
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      } catch (err) {
+        document.getElementById(loadingId).innerHTML = '// CONNECTION DROPPED';
+      }
+    }
+
+    aiBtn.addEventListener('click', sendMessage);
+    aiInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+    executeSearch();
+  </script>
+</body>
+</html>
