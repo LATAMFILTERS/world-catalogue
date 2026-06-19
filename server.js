@@ -2950,14 +2950,17 @@ const SYSTEM_CONTEXT = `You are an ELIMFILTERS Reliability Engineer and industri
 MISSION: We do not just sell filters. We sell "Asset Protection" and "Downtime Prevention".
 
 PROPRIETARY TECHNOLOGIES (STRICT ALIGNMENT - NEVER MISMATCH THESE):
-- MACROCORE: System -> Air Intake & Lube Oil. Industries -> Mining, Construction, Agriculture (severe dust).
-- NANOFORCE: System -> Hydraulic & High-Pressure Fuel. Industries -> Heavy Equipment, Power Generation (sub-micron 1µm).
-- SYNTRAX: System -> Lube Oil. Industries -> Transport, Marine (extends drain intervals via 4-layer matrix).
-- DURATECH: System -> Coolant & Specialty Chemical. Industries -> Oil & Gas, Industrial (chemical resistance).
-- MICROKAPPA: System -> Cabin Air. Protects operators (HEPA PM2.5 + carbon).
+- MACROCORE: System -> Air Intake (primary and secondary filters, radial or axial seal). Industries -> Mining, Construction, etc.
+- NANOFORCE: System -> Hydraulics EXCLUSIVELY.
+- SYNTAPORE: System -> High-Pressure Fuel (primary and secondary, elements or spin-on).
+- SYNTRAX: System -> Lube Oil (extends drain intervals via 4-layer matrix).
+- HYDROCORE: System -> Fuel Water Separators (cartridge type with bowl, and built-in drain type).
+- HYDROCORE/SERIES: System -> Turbines models 1000FH, 900FH, and 500FG with elements in 2020, 2040, and 2010 series.
+- MICROKAPPA: System -> Cabin Air (with activated carbon, etc).
+- DRYCORE: System -> Air Brake Dryers.
+- THERMACORE: System -> Coolant System.
 - INTEKCORE: System -> Air Intake Housings. Rated for extreme thermal cycling.
-- HYDROCORE: System -> Fuel Systems. Coalescing water separation (free water >99%, emulsified >95%).
-WARNING: Never recommend a technology for the wrong system (e.g., never recommend HYDROCORE for Air Intake). Mismatches create customer doubt.
+WARNING: Never recommend a technology for the wrong system. Mismatches create customer doubt.
 
 TRIBOLOGY & OIL ANALYSIS RULES:
 - High Silicon (Si > 15-20ppm) + High Iron (Fe): Indicates dust ingestion. Air filtration failure. Recommend MACROCORE/INTEKCORE to stop cylinder wear.
@@ -3430,47 +3433,52 @@ app.post('/api/ai/consult-v2', async (req, res) => {
 const TECHNOLOGY_INFO_MAP = {
   MACROCORE: {
     system: 'Air Intake Filtration',
-    description: 'Progressive density gradient media matrix. Intercepts airborne contamination before combustion chamber. 18µm absolute particle capture. Rated for extreme thermal cycling in commercial and industrial engines.',
+    description: 'Primary and secondary filters, radial seal or axial seal. Designed for Mining, Construction, etc.',
     standards: ['SAE J1539', 'ISO 5011'],
   },
   NANOFORCE: {
-    system: 'Hydraulic / Fuel Filtration',
-    description: 'Sub-micron particle removal, 1µm efficiency. Maintains ISO 4406 cleanliness codes under sustained high-pressure pulsation cycles. Protects proportional valves and actuator components.',
+    system: 'Hydraulic Filtration',
+    description: 'Sub-micron particle removal, exclusively for hydraulic systems.',
     standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14'],
   },
   SYNTRAX: {
     system: 'Lube Oil Filtration',
-    description: 'Four-layer contamination control matrix, each layer calibrated to a specific particle size class. High dirt holding capacity. Intercepts sub-micron particles across the complete service interval.',
+    description: 'Four-layer contamination control matrix. Extends drain intervals.',
     standards: ['ISO 16889', 'ISO 4406', 'SAE J1211'],
   },
-  SYNTEPORE: {
-    system: 'Fuel Filtration',
-    description: 'Synthetic pore-geometry media for fuel systems. Consistent pore distribution enables predictable Beta ratio performance. Designed for high-flow diesel and biodiesel applications.',
+  SYNTAPORE: {
+    system: 'High-Pressure Fuel Filtration',
+    description: 'Primary and secondary filters, elements or spin-on.',
     standards: ['ISO 16889', 'ASTM D6304'],
   },
   MICROKAPPA: {
     system: 'Cabin Air Filtration',
-    description: 'Three-layer capture: electrostatic attraction, HEPA-class mechanical filtration, activated carbon adsorption. Intercepts PM2.5 particles, allergens, diesel exhaust gases and odors. Meets ISO 11155.',
+    description: 'Cabin filters with activated carbon, etc.',
     standards: ['ISO 11155', 'DIN 71220'],
   },
   INTEKCORE: {
     system: 'Air Intake Housing / Pre-Cleaning',
-    description: 'High-pressure rated housing engineered for full thermal cycling range of commercial and industrial engines. Structural integrity maintained across all operating conditions. Supports MACROCORE primary elements.',
+    description: 'High-pressure rated housing engineered for full thermal cycling range.',
     standards: ['SAE J1539', 'ISO 5011'],
   },
   DRYCORE: {
-    system: 'Compressed Air Filtration',
-    description: 'Removes water vapor and oil vapor at molecular level before air tanks, valves and downstream control circuits. Desiccant and coalescing technology. Prevents corrosion and seal degradation.',
+    system: 'Air Brake Dryers',
+    description: 'Air brake drying filters. Removes water vapor and oil vapor.',
     standards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
   },
   THERMACORE: {
     system: 'Coolant Filtration',
-    description: 'Controlled SCA additive release alongside coolant filtration. Prevents liner pitting, scale formation and corrosive degradation of engine cooling circuits. Compatible with OAT and NOAT coolant formulations.',
+    description: 'Coolant system filters. Controlled SCA additive release.',
     standards: ['ASTM D6210', 'ASTM D3306'],
   },
   HYDROCORE: {
     system: 'Fuel / Water Separation',
-    description: 'Multi-stage coalescing water separation for fuel systems. Free water removal >99%, emulsified water >95%. Protects injector systems from water-induced stiction and corrosion.',
+    description: 'Fuel water separators (cartridge type for use with bowl, and built-in drain type).',
+    standards: ['ASTM D6304', 'ISO 12937'],
+  },
+  'HYDROCORE/SERIES': {
+    system: 'Turbine Fuel / Water Separation',
+    description: 'For turbine models 1000FH, 900FH and 500FG with elements in 2020, 2040 and 2010 series.',
     standards: ['ASTM D6304', 'ISO 12937'],
   },
 };
