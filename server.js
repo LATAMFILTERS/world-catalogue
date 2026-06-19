@@ -720,6 +720,19 @@ function buildFilterData(row, lang = 'en'){
   // in the correct columns regardless of what the DB stored.
   const refs = splitRefs([...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)]);
 
+  // Derive system group for UI grouping (Aire, Aceite, Hidráulico, Combustible, Cabin, Frenos, Refrigerante)
+  const ft = (extractText(row.filter_type, lang) || '').toUpperCase();
+  const tech = (row.technology || '').toUpperCase().replace('™','');
+  let system_group = 'OTHER';
+  if (tech === 'MACROCORE' || ft.includes('AIR') || ft.includes('AIRE')) system_group = 'AIR';
+  else if (tech === 'NANOFORCE' || ft.includes('HYDRAULIC') || ft.includes('HIDRÁULIC')) system_group = 'HYDRAULIC';
+  else if (tech === 'SYNTAPORE' || ft.includes('FUEL') || ft.includes('COMBUSTIBLE')) system_group = 'FUEL';
+  else if (tech === 'HYDROCORE' || ft.includes('SEPARATOR') || ft.includes('SEPARADOR')) system_group = 'FUEL_SEPARATOR';
+  else if (tech === 'MICROKAPPA' || ft.includes('CABIN') || ft.includes('CABINA')) system_group = 'CABIN';
+  else if (tech === 'DRYCORE' || ft.includes('BRAKE') || ft.includes('FRENO')) system_group = 'BRAKE';
+  else if (tech === 'THERMACORE' || ft.includes('COOLANT') || ft.includes('REFRIGER')) system_group = 'COOLANT';
+  else if (ft.includes('LUBE') || ft.includes('OIL') || ft.includes('ACEITE')) system_group = 'OIL';
+
   return {
     elimfilters_sku: row.sku,
     description: row.description || null,
@@ -739,6 +752,7 @@ function buildFilterData(row, lang = 'en'){
     burst_pressure_psi: row.burst_pressure_psi || null,
     collapse_pressure_psi: row.collapse_pressure_psi || null,
     duty: row.duty || null,
+    system_group,
     oem_codes:        refs.oem,
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
@@ -1325,41 +1339,91 @@ app.get('/api/filters/search/vin', async (req, res) => {
 
 app.get('/api/filters/search/equipment', async (req, res) => {
   const searchQ = (req.query.model || req.query.q || '').trim().toUpperCase();
-  if(!searchQ) return res.json({success: false, filters: []});
+  const equipType = (req.query.type || '').trim().toUpperCase();
+  if (!searchQ) return res.json({ success: false, filters: [] });
   const lang = detectLang(req);
 
   const client = new Client(dbConfig);
   try {
     await client.connect();
 
-    // Search HD
-    let query = `SELECT * FROM elimfilters_catalog WHERE equipment_applications::text ILIKE $1 LIMIT 30`;
-    const hdResult = await client.query(query, ['%' + searchQ + '%']);
+    // Multi-token AND search: "CAT 336" -> must contain 'CAT' AND '336'
+    const tokens = searchQ.split(/\s+/).filter(t => t.length >= 2);
+    const hdConditions = tokens.map((_, i) => `equipment_applications::text ILIKE $${i + 1}`);
+    const hdParams = tokens.map(t => '%' + t + '%');
+
+    let hdWhere = hdConditions.length > 0
+      ? hdConditions.join(' AND ')
+      : `equipment_applications::text ILIKE $1`;
+    if (hdConditions.length === 0) hdParams.push('%' + searchQ + '%');
+
+    // Append equipment type filter if provided
+    if (equipType) {
+      hdWhere += ` AND equipment_applications::text ILIKE $${hdParams.length + 1}`;
+      hdParams.push('%' + equipType + '%');
+    }
+
+    const hdResult = await client.query(
+      `SELECT * FROM elimfilters_catalog WHERE ${hdWhere} ORDER BY sku LIMIT 40`,
+      hdParams
+    );
     let filters = hdResult.rows.map(row => buildFilterData(row, lang));
     await enrichAlternatives(filters, client);
 
-    // Search LD
-    let ldQuery = `
-      SELECT p.elimfilters_sku as sku, p.segment, p.source_sku
-      FROM ld_catalog.ld_vehicle_applications a
-      JOIN ld_catalog.ld_product_catalog p ON a.elimfilters_sku = p.elimfilters_sku
-      WHERE UPPER(a.make) LIKE $1 OR UPPER(a.model_family) LIKE $1
-      LIMIT 30
-    `;
-    const ldResult = await client.query(ldQuery, ['%' + searchQ + '%']);
+    // Multi-token LD search
+    const ldTokenConditions = tokens.map((_, i) =>
+      `(UPPER(a.make) LIKE $${i + 1} OR UPPER(a.model_family) LIKE $${i + 1})`
+    );
+    const ldWhere = ldTokenConditions.length > 0
+      ? ldTokenConditions.join(' AND ')
+      : `(UPPER(a.make) LIKE $1 OR UPPER(a.model_family) LIKE $1)`;
+    const ldParams = tokens.length > 0 ? tokens.map(t => '%' + t + '%') : ['%' + searchQ + '%'];
+
+    const ldResult = await client.query(
+      `SELECT DISTINCT p.elimfilters_sku AS sku, p.segment, p.source_sku
+       FROM ld_catalog.ld_vehicle_applications a
+       JOIN ld_catalog.ld_product_catalog p ON a.elimfilters_sku = p.elimfilters_sku
+       WHERE ${ldWhere}
+       LIMIT 40`,
+      ldParams
+    );
+
+    const SEGMENT_SYSTEM = {
+      'OIL': 'OIL', 'FUEL': 'FUEL', 'AIR': 'AIR',
+      'CABIN': 'CABIN', 'HYDRAULIC': 'HYDRAULIC'
+    };
+
     for (const r of ldResult.rows) {
-      filters.push({ sku: r.sku, duty: 'LIGHT_DUTY', filter_type: r.segment, description: `ELIMFILTERS Light Duty — MANN ${r.source_sku}` });
+      const seg = (r.segment || '').toUpperCase();
+      filters.push({
+        sku: r.sku,
+        elimfilters_sku: r.sku,
+        duty: 'LIGHT_DUTY',
+        filter_type: r.segment,
+        system_group: SEGMENT_SYSTEM[seg] || 'OTHER',
+        technology: null,
+        description: `ELIMFILTERS® Light Duty — Equiv. MANN ${r.source_sku}`,
+        source_sku: r.source_sku,
+      });
     }
 
-    // Grouping logic by Equipment (to satisfy the "agrupar por equipo" requirement)
-    // For now, we return the filters directly. The UI typically handles grouping based on the response format.
-    res.status(200).json({success: true, filters});
-  } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    // Group filters by system for structured response
+    const grouped = {};
+    for (const f of filters) {
+      const grp = f.system_group || 'OTHER';
+      if (!grouped[grp]) grouped[grp] = [];
+      grouped[grp].push(f);
+    }
+
+    res.status(200).json({ success: true, filters, grouped, query: searchQ });
+  } catch (e) {
+    console.error('[equipment search]', e.message);
+    res.status(500).json({ success: false, error: e.message });
   } finally {
     await client.end();
   }
 });
+
 
 app.get('/api/filters/search/homologous', async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
