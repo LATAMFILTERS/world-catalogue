@@ -17,15 +17,32 @@
 </head>
 <body>
 
-<!-- ─── PARALLAX BACKGROUND ─── -->
-<div class="parallax-bg"></div>
-
-<!-- ─── CINEMATIC SPLASH ─── -->
-<div id="cinematic-splash" style="display: none;">
-  <canvas id="splash-canvas"></canvas>
-  <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
+<!-- ─── CINEMATIC SPLASH SCREEN ─── -->
+<div id="cinematic-splash">
+  <!-- Full-screen technology image -->
+  <div id="cinematic-bg"></div>
+  <!-- Vignette layers for cinematic depth -->
+  <div class="cinematic-vignette"></div>
+  <div class="cinematic-scanlines"></div>
+  <!-- Letterbox bars (Paramount style) -->
+  <div class="letterbox top"></div>
+  <div class="letterbox bottom"></div>
+  <!-- Brand stamp -->
+  <div class="cinema-brand">
+    <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS" id="cinema-logo">
+    <div class="cinema-tagline" id="cinema-tagline">ASSET PROTECTION ENGINEERS</div>
+  </div>
+  <!-- Technology reveal -->
+  <div class="cinema-tech" id="cinema-tech">
+    <div class="cinema-tech-label" id="cinema-tech-label">TECHNOLOGY</div>
+    <div class="cinema-tech-name" id="cinema-tech-name"></div>
+    <div class="cinema-tech-desc" id="cinema-tech-desc"></div>
+  </div>
+  <!-- Skip -->
+  <button class="cinema-skip" id="cinema-skip">SKIP INTRO ›</button>
 </div>
 
+<!-- Background ambient canvas (post-splash) -->
 <canvas id="nanoflow"></canvas>
 
 <a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
@@ -619,23 +636,167 @@ function mainLoop(now) {
   rafId = requestAnimationFrame(mainLoop);
 }
 
-// Boot
+// ─────────────────────────────────────────────────────────────────────────────
+// CINEMATIC INTRO ENGINE
+// Netflix / Paramount style full-screen technology reveal
+// ─────────────────────────────────────────────────────────────────────────────
+const TECH_CATALOG = [
+  {
+    name: 'NANOFORCE™',
+    file: '/assets/NANOFORCE.avif',
+    desc: 'Sub-micron particle capture. Nanofiber matrix engineered for extreme contamination environments.'
+  },
+  {
+    name: 'MACROCORE™',
+    file: '/assets/MACROCORE.avif',
+    desc: 'The first line of defense against silica ingestion. Structural integrity under maximum differential pressure.'
+  },
+  {
+    name: 'HYDROCORE™',
+    file: '/assets/HYDROCORE.avif',
+    desc: 'Centrifugal water separation. Protects high-pressure common rail systems from emulsified water and cavitation.'
+  },
+  {
+    name: 'INTEKCORE™',
+    file: '/assets/INTEKCORE.avif',
+    desc: 'Structural casing engineering. Precision-formed housings that maintain dimensional stability under thermal cycling.'
+  },
+  {
+    name: 'SYNTEPORE™',
+    file: '/assets/SYNTEPORE.avif',
+    desc: 'Synthetic porous media. Uniformly distributed fiber matrix delivering consistent Beta ratio performance.'
+  },
+  {
+    name: 'DRYCORE™',
+    file: '/assets/DRYCORE.avif',
+    desc: 'Air system dehydration. Removes moisture before it collapses brake valve seals and corrodes air lines.'
+  },
+  {
+    name: 'SYNTRAX™',
+    file: '/assets/SYNTRAX.avif',
+    desc: 'Multi-stage synthetic tract filtration. Engineered for high-flow applications without sacrificing capture efficiency.'
+  },
+  {
+    name: 'MICROKAPPA™',
+    file: '/assets/MICROKAPPA.avif',
+    desc: 'Ultra-high efficiency media at microscale. For hydraulic circuits demanding ISO Class 16/14/11 cleanliness.'
+  },
+  {
+    name: 'THERMACORE™',
+    file: '/assets/THERMACORE.avif',
+    desc: 'Thermal-resistant media formulation. Maintains structural integrity from -40°C to 135°C continuous operation.'
+  },
+  {
+    name: 'THERMOCORE™',
+    file: '/assets/THERMOCORE.avif',
+    desc: 'Coolant system guardian. Ion-exchange technology that neutralizes silicate depletion and prevents cavitation erosion.'
+  },
+  {
+    name: 'TURBOCORE™',
+    file: '/assets/TURBOCORE.avif',
+    desc: 'Turbine-stage filtration elements. Engineered for high-velocity, high-temperature industrial turbine circuits.'
+  }
+];
+
+function pickTech() {
+  // Pick random tech, avoid same as last visit
+  const last = sessionStorage.getItem('ef-last-tech');
+  let pick;
+  do { pick = TECH_CATALOG[Math.floor(Math.random() * TECH_CATALOG.length)]; }
+  while (TECH_CATALOG.length > 1 && pick.name === last);
+  sessionStorage.setItem('ef-last-tech', pick.name);
+  return pick;
+}
+
+function bootCinematic() {
+  const splash    = document.getElementById('cinematic-splash');
+  const bg        = document.getElementById('cinematic-bg');
+  const techName  = document.getElementById('cinema-tech-name');
+  const techLabel = document.getElementById('cinema-tech-label');
+  const techDesc  = document.getElementById('cinema-tech-desc');
+  const skipBtn   = document.getElementById('cinema-skip');
+
+  const tech = pickTech();
+
+  // Preload image before showing anything
+  const img = new Image();
+  img.onload = () => startSequence();
+  img.onerror = () => finalizeSplash(true); // fallback: skip on error
+  img.src = tech.file;
+
+  function startSequence() {
+    // Set background image and begin slow zoom
+    bg.style.backgroundImage = `url('${tech.file}')`;
+    bg.style.transform = 'scale(1)';
+    splash.style.opacity = '1';
+
+    // Animate zoom over 6 seconds
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bg.style.transition = 'transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        bg.style.transform = 'scale(1.12)';
+      });
+    });
+
+    // Phase 1 (0.6s): Brand stamp fades in
+    setTimeout(() => {
+      document.querySelector('.cinema-brand').classList.add('vis');
+    }, 600);
+
+    // Phase 2 (2.2s): Technology name dramatic reveal
+    setTimeout(() => {
+      techName.textContent = tech.name;
+      techDesc.textContent = tech.desc;
+      document.getElementById('cinema-tech').classList.add('vis');
+    }, 2200);
+
+    // Phase 3 (5.8s): Begin fade-out → reveal UI
+    setTimeout(() => finalizeSplash(false), 5800);
+  }
+
+  function finalizeSplash(immediate) {
+    if (splash._done) return;
+    splash._done = true;
+
+    const dur = immediate ? 0 : 900;
+    splash.style.transition = `opacity ${dur}ms ease`;
+    splash.style.opacity = '0';
+
+    setTimeout(() => {
+      splash.style.display = 'none';
+      // Reveal the main interface
+      document.getElementById('search-panel').classList.add('vis');
+      document.getElementById('skip-btn') && (document.getElementById('skip-btn').style.display = 'none');
+      setTimeout(() => {
+        const ip = document.getElementById('inp-part');
+        if (ip) ip.focus();
+      }, 300);
+      localStorage.setItem('ef-ps-v', '1');
+      // Start ambient particle canvas
+      init();
+      ambientLoop();
+    }, dur + 50);
+  }
+
+  // Skip button
+  skipBtn.addEventListener('click', () => finalizeSplash(false));
+  // Click anywhere on splash to skip
+  splash.addEventListener('click', (e) => {
+    if (e.target !== skipBtn) finalizeSplash(false);
+  });
+}
+
+// ─── BOOT DECISION ───────────────────────────────────────────────────────────
 if (localStorage.getItem('ef-ps-v')) {
-  document.getElementById('intro-label').classList.add('vis');
-  document.getElementById('skip-btn').style.display = 'none';
-  revealUI();
+  // Returning visitor: skip cinematic, go straight to UI
+  const splash = document.getElementById('cinematic-splash');
+  splash.style.display = 'none';
+  document.getElementById('search-panel').classList.add('vis');
+  init();
   ambientLoop();
 } else {
-  init();
-  setTimeout(() => document.getElementById('intro-label').classList.add('vis'), 500);
-  requestAnimationFrame(mainLoop);
-  document.getElementById('skip-btn').addEventListener('click', () => {
-    cancelAnimationFrame(rafId);
-    ctx.clearRect(0, 0, W, H);
-    document.getElementById('intro-label').classList.add('vis');
-    revealUI();
-    ambientLoop();
-  });
+  // First visit: run the cinematic experience
+  bootCinematic();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
