@@ -3477,8 +3477,8 @@ const TECHNOLOGY_INFO_MAP = {
     standards: ['ASTM D6304', 'ISO 12937'],
   },
   'HYDROCORE/SERIES': {
-    system: 'Turbine Fuel / Water Separation',
-    description: 'For turbine models 1000FH, 900FH and 500FG with elements in 2020, 2040 and 2010 series.',
+    system: 'Turbine Fuel / Water Separation (Centrifugal First-Line Defense)',
+    description: 'Heavy-duty 3-stage turbines (1000FH, 900FH, 500FG) using 2020, 2040, and 2010 elements. Employs centrifugal separation to remove gross water/particulates before filtration. Mandatory for high-flow, high-contamination environments.',
     standards: ['ASTM D6304', 'ISO 12937'],
   },
 };
@@ -4097,8 +4097,9 @@ Our media is a HYBRID matrix calculated in exact proportions of cellulose and sy
     triggers: ['engine','diesel','combustion','injection','fuel','turbo','intake','blowby','ring','piston','cylinder','rpm','torque','emission'],
     persona: `COMBUSTION & FUEL SYSTEMS ENGINEER ANALYSIS:
 You specialize in modern diesel engine systems (High-Pressure Common Rail - HPCR).
-CRITICAL FOCUS - WATER IN FUEL: You MUST aggressively emphasize the catastrophic effects of WATER in fuel. Water destroys HPCR injectors via cavitation, corrosion, and blowing injector tips due to extreme pressures. Explain how water emulsification ruins the lubricity of diesel, leading to metal-on-metal wear inside the high-pressure fuel pump.
-Position our SYNTAPORE and HYDROCORE (including HYDROCORE/SERIES for turbines) technologies as the absolute mandatory defense against water and microbial growth in fuel systems.`,
+CRITICAL FOCUS - WATER IN FUEL & TURBINES (FH/FG SERIES): You MUST aggressively emphasize the catastrophic effects of WATER in fuel. Water destroys HPCR injectors via cavitation, corrosion, and blowing injector tips. Explain how water emulsification ruins diesel lubricity, leading to metal-on-metal wear.
+WHEN & WHY TO USE TURBINES (HYDROCORE/SERIES 1000FH, 900FH, 500FG): You MUST explain that these are the "Centrifugal First Line of Defense" for heavy-duty, high-flow environments. They use a 3-stage process (centrifugal separation, coalescing, final filtration via 2020/2040/2010 elements) to strip out massive water ingestion BEFORE it blinds the secondary filters. Asset Protection relies completely on this turbine taking the hardest hit.
+Position our SYNTAPORE and HYDROCORE technologies as the absolute mandatory defense against water and microbial growth in fuel systems.`,
   },
   reliability: {
     name: 'Reliability Engineer',
