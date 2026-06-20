@@ -384,6 +384,13 @@ button:focus-visible,
 }
 
 /* ── Footer responsive grid ───────────────────────────────────────── */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(5, 1fr);
+  gap: 24px 32px;
+  align-items: start;
+}
+
 .footer-nav-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -398,12 +405,20 @@ button:focus-visible,
 }
 
 @media (max-width: 1280px) {
+  .footer-main-grid {
+    grid-template-columns: 1.2fr repeat(5, 1fr);
+    gap: 20px 24px;
+  }
   .footer-nav-grid {
     gap: 20px;
   }
 }
 
 @media (max-width: 1024px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2.5rem 1.5rem !important;
+  }
   .footer-nav-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem 1.5rem !important;
@@ -422,6 +437,10 @@ button:focus-visible,
 }
 
 @media (max-width: 768px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.25rem !important;
+  }
   .footer-nav-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 2rem 1.25rem !important;
@@ -429,6 +448,10 @@ button:focus-visible,
 }
 
 @media (max-width: 375px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.75rem 0.75rem !important;
+  }
   .footer-nav-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 1.75rem 0.75rem !important;
@@ -437,6 +460,10 @@ button:focus-visible,
 }
 
 @media (max-width: 320px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
   .footer-nav-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
