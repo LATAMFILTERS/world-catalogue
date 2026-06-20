@@ -231,25 +231,35 @@ export default function Home() {
 
         {/* ── STRATEGIC MISSION ── */}
         <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
-            style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
 
-            <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.2, marginBottom: '2.5rem' }}>
-              {t('home.missionTitle', 'Why ELIMFILTERS Exists')}
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '720px', margin: '0 auto' }}>
-              {[
-                t('home.missionP1', 'Industrial contamination remains one of the most underestimated threats to equipment reliability worldwide.'),
-                t('home.missionP2', 'ELIMFILTERS exists to help organizations reduce contamination-driven failures through engineered asset protection systems designed for critical industrial operations.'),
-                t('home.missionP3', 'Our mission is to improve equipment reliability, operational continuity, and asset longevity through contamination control.'),
-              ].map((p, i) => (
-                <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.12 }} viewport={{ once: true, margin: '-40px' }}
-                  style={{ fontFamily: 'var(--font-body)', fontSize: i === 2 ? '1.05rem' : '0.95rem', lineHeight: 1.8, color: i === 2 ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.55)', fontStyle: i === 2 ? 'italic' : 'normal', borderLeft: i === 2 ? '3px solid #FFF12D' : 'none', paddingLeft: i === 2 ? '1.25rem' : 0, textAlign: 'left' }}>
-                  {p}
-                </motion.p>
-              ))}
+              {/* Left: headline */}
+              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem', opacity: 0.8 }}>
+                  // Mission
+                </p>
+                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#fff', lineHeight: 1.15, margin: 0 }}>
+                  {t('home.missionTitle', 'Why ELIMFILTERS Exists')}
+                </h2>
+              </motion.div>
+
+              {/* Right: body text */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {[
+                  t('home.missionP1', 'Industrial contamination remains one of the most underestimated threats to equipment reliability worldwide.'),
+                  t('home.missionP2', 'ELIMFILTERS exists to help organizations reduce contamination-driven failures through engineered asset protection systems designed for critical industrial operations.'),
+                  t('home.missionP3', 'Our mission is to improve equipment reliability, operational continuity, and asset longevity through contamination control.'),
+                ].map((p, i) => (
+                  <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.12 }} viewport={{ once: true, margin: '-40px' }}
+                    style={{ fontFamily: 'var(--font-body)', fontSize: i === 2 ? '1.05rem' : '0.95rem', lineHeight: 1.8, color: i === 2 ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.55)', fontStyle: i === 2 ? 'italic' : 'normal', borderLeft: i === 2 ? '3px solid #FFF12D' : 'none', paddingLeft: i === 2 ? '1.25rem' : 0, margin: 0 }}>
+                    {p}
+                  </motion.p>
+                ))}
+              </div>
+
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* ── S4: INDUSTRIES WE PROTECT ── */}
@@ -259,9 +269,6 @@ export default function Home() {
             {/* Header */}
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-60px' }}
               style={{ marginBottom: '3.5rem' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.8 }}>
-                // Vertical Markets
-              </p>
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', color: '#fff', lineHeight: 1.15, margin: 0 }}>
                 Industries We Protect
               </h2>

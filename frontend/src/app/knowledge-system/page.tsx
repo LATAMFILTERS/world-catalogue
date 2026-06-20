@@ -340,14 +340,6 @@ export default function KnowledgeSystemPage() {
                     gap: '1.2rem',
                   }}
                 >
-                  <div style={{
-                    width: '36px', height: '36px',
-                    border: '1px solid rgba(255,241,45,0.25)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#FFF12D', fontSize: '1rem', flexShrink: 0,
-                  }}>
-                    {section.icon}
-                  </div>
                   <span style={{
                     fontFamily: 'JetBrains Mono, monospace',
                     fontSize: '0.58rem', letterSpacing: '0.13em',

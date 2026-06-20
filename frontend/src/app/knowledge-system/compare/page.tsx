@@ -172,19 +172,6 @@ export default function ComparisonHubPage() {
                     gap: '1.2rem',
                   }}
                 >
-                  <div style={{
-                    width: '36px',
-                    height: '36px',
-                    border: '1px solid rgba(255,241,45,0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#FFF12D',
-                    fontSize: '1rem',
-                    flexShrink: 0,
-                  }}>
-                    {section.icon}
-                  </div>
 
                   <h2 style={{
                     fontFamily: 'Titillium Web, sans-serif',

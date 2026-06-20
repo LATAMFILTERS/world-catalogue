@@ -148,21 +148,8 @@ export default function ContaminationHubPage() {
                     gap: '1.2rem',
                   }}
                 >
-                  {/* Icon + Code */}
+                  {/* Code */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                    <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
-                      flexShrink: 0,
-                    }}>
-                      {contam.icon}
-                    </div>
                     <span style={{
                       fontFamily: 'JetBrains Mono, monospace',
                       fontSize: '0.9rem',
