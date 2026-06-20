@@ -10,25 +10,233 @@
       "key": "AGRICULTURE",
       "type": "industry",
       "name": "Agriculture",
-      "citation_record": null
+      "citation_record": {
+        "key": "AGRICULTURE",
+        "type": "industry",
+        "name": "Agriculture",
+        "slug": "agriculture",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "AGRICULTURE",
+        "tags": [
+          "industry",
+          "active",
+          "high-exposure",
+          "off-highway",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/industries/agriculture",
+          "concept": "Agriculture Industry Filtration Requirements",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:5fc8f26a4b47c40efb2be4b564299e9dda6aebfdb4ba730fffa72be173a2bd78"
+        },
+        "canonical": {
+          "definition": "Agriculture is a HIGH contamination exposure industrial category for diesel-powered equipment, characterized by airborne dust concentrations above 100 mg/m³ during harvest operations, outdoor fuel storage water contamination risks, and seasonal intensive-operation periods that accumulate high contamination loads without daily maintenance oversight.",
+          "systems": "Air intake filtration, lube oil filtration, hydraulic filtration, fuel filtration across combines, tractors, and harvesters",
+          "failure_impact": "Harvest-season dust ingestion >100 mg/m³ with degraded intake filtration → silica particle entry into combustion chambers → piston ring and cylinder bore abrasive wear → compression loss 10–25%; engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours | Compounded by water-contaminated diesel fuel → injector stiction and corrosion → fuel system failure.",
+          "related_standards": "ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method",
+          "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | HYDROCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
+          "industrial_role": "Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime."
+        },
+        "relationships": {
+          "relevant_contamination": [
+            "PARTICLE_WEAR",
+            "DIESEL_WATER"
+          ],
+          "applicable_technologies": [
+            "MACROCORE",
+            "NANOFORCE",
+            "SYNTRAX",
+            "HYDROCORE",
+            "INTEKCORE"
+          ],
+          "applicable_standards": [
+            "ISO_5011",
+            "SAE_J1539",
+            "ISO_16889",
+            "ASTM_D6304"
+          ],
+          "common_problems": [
+            "DUST_INGESTION",
+            "ENGINE_OIL_CONTAMINATION",
+            "FUEL_FILTER_PLUGGING",
+            "OPERATOR_DUST_EXPOSURE"
+          ],
+          "typical_product_families": [
+            "AIRFILTER_PRIMARY",
+            "LUBE_PRIMARY",
+            "FUEL_PRIMARY",
+            "CABIN_PRIMARY"
+          ]
+        },
+        "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
+      }
     },
     {
       "key": "FUEL_FILTER_PLUGGING",
       "type": "problem",
       "name": "Fuel Filter Plugging",
-      "citation_record": null
+      "citation_record": {
+        "key": "FUEL_FILTER_PLUGGING",
+        "type": "problem",
+        "name": "Fuel Filter Plugging",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "fuel",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-medium"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+          "concept": "Fuel Filter Plugging — Fuel System Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:4e0ee8e53861cf5ea0aed1a16047e055266469a3179276714d52da5a1d74b752"
+        },
+        "canonical": {
+          "definition": "Fuel filter plugging — premature blockage of diesel fuel filters by water contamination,\nmicrobial growth, and associated debris — is the most frequent fuel system maintenance\nevent in off-highway, marine, and stationary engine applications.",
+          "systems": "Fuel; affected components: fuel filter elements, injector needles, high-pressure fuel pumps;\nprimary industries: Agriculture, Marine, Mining, Oil & Gas, Power Generation, Trucks/Fleets",
+          "failure_impact": "Water contamination in diesel → microbial growth at fuel-water interface\n→ biofilm and debris plugging fuel filter → restricted fuel flow → injection pressure drop\n→ engine power loss or shutdown; water slug in common rail injectors (1,200–2,500 bar)\n→ hydraulic hammer erosion of injector needle seats → injector failure |\nOperational Impact: fuel filter life reduction from 500 hours to 50–100 hours under\nactive microbial contamination; injector service life 15,000 hours reduced to 3,000–6,000 hours",
+          "related_standards": "ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel quality monitoring |\nISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring",
+          "related_technologies": "HYDROCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
+          "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ASTM_D6304",
+            "ISO_12937"
+          ],
+          "resolved_by_technologies": [
+            "HYDROCORE"
+          ],
+          "recommended_product_families": [
+            "FUEL_PRIMARY"
+          ],
+          "root_contamination": [
+            "DIESEL_WATER"
+          ],
+          "industry_frequency": [
+            "AGRICULTURE",
+            "MARINE",
+            "MINING",
+            "OIL_GAS",
+            "POWER_GENERATION",
+            "TRUCKS_FLEETS",
+            "AUTOMOTIVE"
+          ]
+        },
+        "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+      }
     },
     {
       "key": "DIESEL_WATER",
       "type": "contamination-mode",
       "name": "Diesel Water Contamination",
-      "citation_record": null
+      "citation_record": {
+        "key": "DIESEL_WATER",
+        "type": "contamination-mode",
+        "name": "Diesel Water Contamination",
+        "slug": "diesel-water",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "DIESEL_WATER",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "fuel",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+          "concept": "Diesel Water Contamination",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:4d19f133e8b1e464058d974a77e23a94e8e66766e0fe854c293c8bf4c4cc39aa"
+        },
+        "canonical": {
+          "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
+          "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
+          "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
+          "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
+          "related_technologies": "HYDROCORE: Primary coalescing water separation technology; separates free and emulsified water from diesel before injector delivery",
+          "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
+        },
+        "relationships": {
+          "related_standards": [
+            "ASTM_D6304",
+            "ISO_12937"
+          ],
+          "resolved_by": [
+            "HYDROCORE"
+          ]
+        },
+        "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
+      }
     },
     {
       "key": "HYDROCORE",
       "type": "technology",
       "name": "HYDROCORE™",
-      "citation_record": null
+      "citation_record": {
+        "key": "HYDROCORE",
+        "type": "technology",
+        "name": "HYDROCORE™",
+        "slug": "hydrocore",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "HYDROCORE",
+        "tags": [
+          "technology",
+          "active",
+          "fuel",
+          "in-ud",
+          "part-search-node"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+          "concept": "HYDROCORE Water-Separating Fuel Protection",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:8204a2d90ba342a7de7ac2e5670f2a951bc4bec75d3f1e1331c1de3619b6c04e"
+        },
+        "canonical": {
+          "definition": "HYDROCORE is a multi-stage coalescing fuel filtration technology that removes free water (>99% efficiency) and emulsified water (>95% efficiency) from diesel fuel using a coalescing-then-hydrophobic-barrier element architecture, preventing water-induced injector erosion and microbial fuel contamination in common-rail diesel engines operating at 1,800–2,500 bar injection pressure.",
+          "systems": "Diesel fuel systems in common-rail and unit-injector engines across agricultural, construction, marine, mining, power generation, railway, and road transport equipment; applicable to EN 590, ASTM D975, and B5–B20 biodiesel blends",
+          "failure_impact": "Water in diesel fuel above 200 mg/kg (ASTM D6304 EN 590 limit) or as free droplets at any concentration → water droplet cavitation at injector nozzle during 1,800–2,500 bar injection → nozzle tip erosion and needle seat wear → injector spray pattern degradation → fuel efficiency loss and incomplete combustion | Operational impact: injector replacement $800–$4,000 per unit; microbial growth in water-contaminated tanks causes filter-plugging biomass leading to fuel starvation events.",
+          "related_standards": "ASTM D6304: Coulometric Karl Fischer titration for water content in diesel fuel; HYDROCORE performance validated against ASTM D6304 output measurement | ISO 12937: ISO equivalent Karl Fischer method for water in petroleum products; European market compliance standard",
+          "related_technologies": "SYNTEPORE: Air-side filtration preventing moisture-laden intake air from contributing to crankcase condensation in lube circuits | SYNTRAX: Lube oil protection for engine bearings from the same high-humidity environments that drive fuel water contamination",
+          "industrial_role": "HYDROCORE water-separating fuel filtration is the primary engineering control preventing injector erosion in high-pressure common-rail diesel engines; in marine, mining, and remote power generation applications where fuel tank condensation is unavoidable, HYDROCORE coalescing separation determines whether injection systems reach design service life or fail prematurely from water-induced cavitation erosion."
+        },
+        "relationships": {
+          "applicable_industries": [
+            "AGRICULTURE",
+            "CONSTRUCTION",
+            "MARINE",
+            "MINING",
+            "OIL_GAS",
+            "POWER_GENERATION",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
+          ],
+          "related_standards": [
+            "ASTM_D6304",
+            "ISO_12937"
+          ],
+          "addresses_contamination": [
+            "DIESEL_WATER"
+          ]
+        },
+        "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
+      }
     }
   ],
   "terminal_product_families": [
