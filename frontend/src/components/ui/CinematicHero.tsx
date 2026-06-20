@@ -1,7 +1,11 @@
 "use client";
+
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import dynamic from "next/dynamic";
+
+const GlobeCanvas = dynamic(() => import("./globe-canvas"), { ssr: false });
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -21,7 +25,7 @@ export default function CinematicHero() {
         padding: "0 8% 7vh",
       }}
     >
-      {/* Full-bleed background video */}
+      {/* Layer 0 — Full-bleed background video */}
       <video
         autoPlay muted loop playsInline
         style={{
@@ -37,39 +41,41 @@ export default function CinematicHero() {
         <source src="/images/moleculas.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient — stronger at bottom where text lives */}
+      {/* Layer 1 — Wireframe globe, right-side aligned */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-10%",
+          right: "-18%",
+          width: "75vmin",
+          height: "75vmin",
+          zIndex: 1,
+          pointerEvents: "none",
+          opacity: 0.85,
+        }}
+      >
+        <GlobeCanvas />
+      </div>
+
+      {/* Layer 2 — Gradient, heavier at bottom/left to keep text readable */}
       <div style={{
         position: "absolute",
         inset: 0,
         background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.92) 100%)",
-        zIndex: 1,
+        zIndex: 2,
+      }} />
+      {/* Extra left vignette so globe doesn't bleed into headline */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)",
+        zIndex: 2,
       }} />
 
-      {/* Top-left eyebrow — anchored to corner, not a box */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        style={{
-          position: "absolute",
-          top: "8rem",
-          left: "8%",
-          zIndex: 3,
-          fontFamily: "var(--font-mono)",
-          fontSize: "0.65rem",
-          letterSpacing: "0.25em",
-          color: "rgba(255,241,45,0.7)",
-          textTransform: "uppercase",
-          margin: 0,
-        }}
-      >
-        {t("home.eyebrow", "Asset Protection Technology Platform")}
-      </motion.p>
+      {/* Layer 3 — Main content */}
+      <div style={{ position: "relative", zIndex: 3, maxWidth: "1400px", width: "100%" }}>
 
-      {/* Main content — bottom-aligned, full width */}
-      <div style={{ position: "relative", zIndex: 2, maxWidth: "1400px", width: "100%" }}>
-
-        {/* Large headline — no box, just type on space */}
+        {/* Large headline */}
         <div style={{ marginBottom: "3rem" }}>
           <motion.div
             initial={{ opacity: 0, y: 48 }}
@@ -113,7 +119,7 @@ export default function CinematicHero() {
           </motion.div>
         </div>
 
-        {/* Bottom row — description + stats + CTA, spread across full width */}
+        {/* Bottom row — description + stats + CTA */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -142,7 +148,6 @@ export default function CinematicHero() {
             </p>
 
             <div style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
-              {/* PRIMARY CTA — Asset Protection */}
               <Link
                 href="/knowledge-system"
                 style={{
@@ -153,15 +158,15 @@ export default function CinematicHero() {
                   padding: "0.9rem 2rem",
                   textDecoration: "none", textTransform: "uppercase",
                   borderRadius: "2px",
+                  transition: "box-shadow 0.2s, transform 0.2s",
                 }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(255,241,45,0.4)"; (e.currentTarget as HTMLElement).style.transform = "scale(1.04)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
               >
-                Protect My Assets
+                {t("home.ctaProtect", "Protect My Assets")}
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
 
-              {/* SECONDARY CTA — Part Search */}
               <motion.a
                 href="https://part-search.elimfilters.com"
                 target="_blank"
@@ -181,7 +186,7 @@ export default function CinematicHero() {
             </div>
           </div>
 
-          {/* Right — 3 outcome stats, raw numbers no boxes */}
+          {/* Right — stats */}
           <div style={{ display: "flex", gap: "3rem", alignItems: "flex-end" }}>
             {[
               { value: "15k+",  label: "Hours\nBearing Life" },
@@ -217,7 +222,7 @@ export default function CinematicHero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator — minimal line */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -230,7 +235,7 @@ export default function CinematicHero() {
           flexDirection: "column",
           alignItems: "center",
           gap: "0.5rem",
-          zIndex: 3,
+          zIndex: 4,
         }}
       >
         <motion.div
