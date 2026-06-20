@@ -227,50 +227,6 @@ export default function CinematicHero() {
           </motion.a>
         </motion.div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.9, ease }}
-          style={{
-            display: "flex",
-            gap: "3.5rem",
-            alignItems: "center",
-            paddingTop: "1.5rem",
-            borderTop: "1px solid rgba(255,255,255,0.07)",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          {[
-            { value: "15k+", label: "Hours Bearing Life" },
-            { value: "3–5×", label: "Asset Life Extension" },
-            { value: "80%",  label: "Failures from Contamination" },
-          ].map((s, i) => (
-            <div key={i} style={{ textAlign: "center" }}>
-              <div style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
-                fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
-                color: "#fff",
-                lineHeight: 1,
-                letterSpacing: "-0.03em",
-                marginBottom: "0.35rem",
-              }}>
-                {s.value}
-              </div>
-              <div style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.56rem",
-                color: "rgba(255,255,255,0.26)",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-              }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
