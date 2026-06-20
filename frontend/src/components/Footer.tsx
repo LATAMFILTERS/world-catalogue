@@ -196,15 +196,37 @@ export function Footer() {
           />
         </motion.div>
 
-        {/* Address + copyright */}
+        {/* Address */}
         <div style={{ textAlign: 'center', lineHeight: 1.6 }}>
           <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '12px', color: '#999', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
             {t('footer.locationText', 'Frisco, Texas')}
           </div>
-          <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '11px', color: '#777', letterSpacing: '0.5px', marginTop: '4px' }}>
-            {t('footer.kleoText', '© 2015–2026 Kleo Technologies')}
-          </div>
         </div>
+      </div>
+
+      {/* ── LEGAL BAR ── */}
+      <div
+        style={{
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          padding: '14px clamp(1.25rem, 5vw, 40px)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '4px 14px',
+        }}
+      >
+        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '11px', color: '#555', letterSpacing: '0.4px' }}>
+          © 2015–2026 Kleo Technologies LLC
+        </span>
+        <span style={{ color: '#333', fontSize: '10px', lineHeight: 1 }}>·</span>
+        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '11px', color: '#555', letterSpacing: '0.4px' }}>
+          ELIMFILTERS® is a registered trademark.
+        </span>
+        <span style={{ color: '#333', fontSize: '10px', lineHeight: 1 }}>·</span>
+        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '11px', color: '#555', letterSpacing: '0.4px' }}>
+          All rights reserved.
+        </span>
       </div>
     </footer>
   );
