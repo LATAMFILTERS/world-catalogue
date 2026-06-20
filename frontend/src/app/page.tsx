@@ -262,38 +262,101 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── PLATFORM NAVIGATION STRIP ── */}
+        {/* ── INDUSTRIES STRIP ── */}
         <section style={{ background: '#000', padding: '3.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+
             <motion.p
-              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
-              style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: '680px', margin: 0 }}
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
+              style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.68rem', letterSpacing: '0.16em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '1.25rem' }}
             >
-              ELIMFILTERS operates across 12 critical industrial sectors — including Mining, Agriculture, Marine, Oil &amp; Gas, and Power Generation — deploying five protection systems and twelve proprietary filtration technologies.
+              // 12 Industrial Sectors
             </motion.p>
+
+            {/* 2 rows × 6 pills */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}
-              style={{ display: 'flex', gap: '0.75rem', flexShrink: 0, flexWrap: 'wrap' }}
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }} viewport={{ once: true }}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '6px', marginBottom: '1.5rem' }}
             >
               {[
-                { label: 'Industries', href: '/industries' },
+                { label: 'Agriculture',      href: '/industries/agriculture' },
+                { label: 'Automotive',       href: '/industries/automotive' },
+                { label: 'Bus & Coach',      href: '/industries/bus-coach' },
+                { label: 'Construction',     href: '/industries/construction' },
+                { label: 'Manufacturing',    href: '/industries/manufacturing' },
+                { label: 'Marine',           href: '/industries/marine' },
+                { label: 'Mining',           href: '/industries/mining' },
+                { label: 'Oil & Gas',        href: '/industries/oil-gas' },
+                { label: 'Power Generation', href: '/industries/power-generation' },
+                { label: 'Railway',          href: '/industries/railway' },
+                { label: 'Trucks & Fleets',  href: '/industries/trucks-fleets' },
+                { label: 'Waste & Municipal',href: '/industries/waste-municipal' },
+              ].map((ind, i) => (
+                <motion.a
+                  key={ind.href}
+                  href={ind.href}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: i * 0.03 }}
+                  viewport={{ once: true }}
+                  style={{
+                    fontFamily: 'Barlow, sans-serif',
+                    fontSize: '0.82rem',
+                    color: 'rgba(255,255,255,0.45)',
+                    textDecoration: 'none',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    padding: '0.55rem 0.75rem',
+                    textAlign: 'center',
+                    lineHeight: 1.3,
+                    transition: 'color 0.2s, border-color 0.2s, background 0.2s',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget as HTMLAnchorElement;
+                    el.style.color = '#FFF12D';
+                    el.style.borderColor = 'rgba(255,241,45,0.3)';
+                    el.style.background = 'rgba(255,241,45,0.04)';
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget as HTMLAnchorElement;
+                    el.style.color = 'rgba(255,255,255,0.45)';
+                    el.style.borderColor = 'rgba(255,255,255,0.07)';
+                    el.style.background = 'transparent';
+                  }}
+                >
+                  {ind.label}
+                </motion.a>
+              ))}
+            </motion.div>
+
+            {/* CTA row */}
+            <motion.div
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} viewport={{ once: true }}
+              style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}
+            >
+              {[
+                { label: 'All Industries', href: '/industries' },
                 { label: 'Systems', href: '/systems' },
                 { label: 'Technologies', href: '/technologies' },
               ].map((link) => (
                 <a key={link.href} href={link.href} style={{
-                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
+                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.68rem',
                   letterSpacing: '0.12em', textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,0.5)', textDecoration: 'none',
-                  border: '1px solid rgba(255,255,255,0.1)', padding: '0.5rem 1rem',
+                  color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
+                  padding: '0.4rem 0.9rem',
+                  border: '1px solid rgba(255,255,255,0.08)',
                   transition: 'color 0.2s, border-color 0.2s',
                 }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.4)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                  onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = '#FFF12D'; el.style.borderColor = 'rgba(255,241,45,0.35)'; }}
+                  onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'rgba(255,255,255,0.35)'; el.style.borderColor = 'rgba(255,255,255,0.08)'; }}
                 >
                   {link.label} →
                 </a>
               ))}
             </motion.div>
+
           </div>
         </section>
 
