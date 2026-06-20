@@ -76,18 +76,6 @@ export default function IndustriesPage() {
           padding: '0 2rem',
         }}
       >
-        <p
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '0.7rem',
-            letterSpacing: '0.25em',
-            color: '#FFF12D',
-            textTransform: 'uppercase',
-            marginBottom: '1.25rem',
-          }}
-        >
-          ELIMFILTERS — ASSET PROTECTION TECHNOLOGY PLATFORM
-        </p>
         <h1
           style={{
             fontFamily: "'Outfit', sans-serif",
