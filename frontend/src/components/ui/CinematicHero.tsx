@@ -52,7 +52,7 @@ export default function CinematicHero() {
         transition={{ duration: 0.7, delay: 0.15 }}
         style={{
           position: "absolute",
-          top: "6rem",
+          top: "8rem",
           left: "8%",
           zIndex: 3,
           fontFamily: "var(--font-mono)",

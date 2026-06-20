@@ -48,7 +48,7 @@ export function Navigation() {
               src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS"
               className="nav-logo"
-              style={{ objectFit: 'contain', height: '40px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'brightness(0) invert(1)' }}
             />
           </Link>
         </motion.div>
