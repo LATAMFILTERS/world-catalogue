@@ -252,6 +252,163 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* ── S4: INDUSTRIES WE PROTECT ── */}
+        <section style={{ background: '#000', padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+
+            {/* Header */}
+            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-60px' }}
+              style={{ marginBottom: '3.5rem' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.8 }}>
+                // Vertical Markets
+              </p>
+              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', color: '#fff', lineHeight: 1.15, margin: 0 }}>
+                Industries We Protect
+              </h2>
+            </motion.div>
+
+            {/* 6-card grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5px', marginBottom: '2.5rem' }}>
+              {[
+                {
+                  code: 'SEC·01', slug: 'mining', label: 'Mining',
+                  desc: 'Silica dust · extreme particle load · ISO 5011',
+                  gradient: 'linear-gradient(160deg, rgba(180,90,0,0.55) 0%, rgba(80,40,0,0.8) 100%)',
+                  href: '/industries/mining',
+                },
+                {
+                  code: 'SEC·02', slug: 'construction', label: 'Construction',
+                  desc: 'Multi-source dust · hydraulic stress · ISO 16889',
+                  gradient: 'linear-gradient(160deg, rgba(160,120,0,0.55) 0%, rgba(60,45,0,0.85) 100%)',
+                  href: '/industries/construction',
+                },
+                {
+                  code: 'SEC·03', slug: 'agriculture', label: 'Agriculture',
+                  desc: 'Crop debris · seasonal peaks · SAE J1539',
+                  gradient: 'linear-gradient(160deg, rgba(80,130,0,0.55) 0%, rgba(20,50,0,0.85) 100%)',
+                  href: '/industries/agriculture',
+                },
+                {
+                  code: 'SEC·04', slug: 'oil-gas', label: 'Oil & Gas',
+                  desc: 'Water contamination · H₂S · ASTM D6304',
+                  gradient: 'linear-gradient(160deg, rgba(60,60,70,0.6) 0%, rgba(10,10,20,0.9) 100%)',
+                  href: '/industries/oil-gas',
+                },
+                {
+                  code: 'SEC·05', slug: 'power-generation', label: 'Power Generation',
+                  desc: 'Continuous load · thermal stress · ISO 4406',
+                  gradient: 'linear-gradient(160deg, rgba(200,60,0,0.5) 0%, rgba(60,10,0,0.85) 100%)',
+                  href: '/industries/power-generation',
+                },
+                {
+                  code: 'SEC·06', slug: 'marine', label: 'Marine',
+                  desc: 'Salt ingress · biofouling · MARINECLEAN™',
+                  gradient: 'linear-gradient(160deg, rgba(0,80,160,0.55) 0%, rgba(0,20,60,0.88) 100%)',
+                  href: '/industries/marine',
+                },
+              ].map((ind, i) => (
+                <motion.a
+                  key={ind.slug}
+                  href={ind.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  whileHover="hover"
+                  style={{
+                    display: 'block',
+                    position: 'relative',
+                    aspectRatio: '4/3',
+                    background: ind.gradient,
+                    overflow: 'hidden',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {/* Noise texture overlay */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.04\'/%3E%3C/svg%3E")',
+                    opacity: 0.4,
+                  }} />
+
+                  {/* Yellow border on hover */}
+                  <motion.div
+                    variants={{ hover: { opacity: 1 } }}
+                    initial={{ opacity: 0 }}
+                    style={{
+                      position: 'absolute', inset: 0,
+                      border: '2px solid #FFF12D',
+                      zIndex: 3,
+                      pointerEvents: 'none',
+                    }}
+                  />
+
+                  {/* Corner accent on hover */}
+                  <motion.div
+                    variants={{ hover: { opacity: 1, x: 0, y: 0 } }}
+                    initial={{ opacity: 0, x: 8, y: -8 }}
+                    transition={{ duration: 0.2 }}
+                    style={{
+                      position: 'absolute', top: '1rem', right: '1rem',
+                      color: '#FFF12D', fontSize: '1.1rem', fontWeight: 700,
+                      zIndex: 4, lineHeight: 1,
+                    }}
+                  >
+                    ↗
+                  </motion.div>
+
+                  {/* Content */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+                    padding: '1.5rem',
+                    background: 'linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 60%)',
+                    zIndex: 2,
+                  }}>
+                    <p style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.65rem', letterSpacing: '0.14em',
+                      color: 'rgba(255,241,45,0.7)', marginBottom: '0.4rem',
+                    }}>
+                      {ind.code}
+                    </p>
+                    <h3 style={{
+                      fontFamily: 'var(--font-body)', fontWeight: 700,
+                      fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+                      color: '#fff', margin: '0 0 0.35rem',
+                      lineHeight: 1.2,
+                    }}>
+                      {ind.label}
+                    </h3>
+                    <p style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.78rem', color: 'rgba(255,255,255,0.55)',
+                      margin: 0, lineHeight: 1.5,
+                    }}>
+                      {ind.desc}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Footer link */}
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}
+              style={{ textAlign: 'right' }}>
+              <a href="/industries" style={{
+                fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem',
+                letterSpacing: '0.1em', color: '#FFF12D', textDecoration: 'none',
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                opacity: 0.8,
+              }}>
+                View all 12 industries <span style={{ fontSize: '1rem' }}>→</span>
+              </a>
+            </motion.div>
+
+          </div>
+        </section>
+
         {/* ── CONTAMINATION / PROBLEM SECTION ── */}
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
