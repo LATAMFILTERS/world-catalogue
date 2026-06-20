@@ -65,18 +65,17 @@ export function Footer() {
       style={{
         background: '#0a0a0a',
         borderTop: '1px solid rgba(255,255,255,0.04)',
-        padding: '60px 0 50px',
+        padding: '60px 0 0',
       }}
     >
+      {/* ── TOP: Nav columns (5 cols, LEGAL is the last) ── */}
       <div
-        className="footer-outer-grid"
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
           padding: '0 clamp(1.25rem, 5vw, 40px)',
         }}
       >
-        {/* LEFT: Navigation columns */}
         <div className="footer-nav-grid">
           {NAV_COLUMNS.map((col) => (
             <div key={col.title}>
@@ -133,106 +132,77 @@ export function Footer() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* RIGHT: Social + Logo + Address */}
-        <div
-          className="footer-right-col"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
-            gap: '24px',
-            minWidth: '180px',
-          }}
-        >
-          {/* Social icons row */}
-          <div style={{ display: 'flex', gap: '10px' }}>
-            {SOCIAL.map((s) => (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={s.label}
-                whileHover={{ scale: 1.15 }}
-                transition={{ duration: 0.2 }}
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: '#888',
-                  textDecoration: 'none',
-                  fontSize: '10px',
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 700,
-                  letterSpacing: '0.5px',
-                  transition: 'all 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#FFF12D';
-                  e.currentTarget.style.color = '#FFF12D';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
-                  e.currentTarget.style.color = '#888';
-                }}
-              >
-                {s.letter}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Kleo Logo */}
-          <motion.div
-            whileHover={{ opacity: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src="/images/KLEO-TECHNOLOGY-fn.avif"
-              alt="Kleo Technologies"
+      {/* ── BOTTOM: Social + Kleo centered ── */}
+      <div
+        style={{
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          marginTop: '48px',
+          padding: '32px clamp(1.25rem, 5vw, 40px)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
+        }}
+      >
+        {/* Social icons */}
+        <div style={{ display: 'flex', gap: '10px' }}>
+          {SOCIAL.map((s) => (
+            <motion.a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={s.label}
+              whileHover={{ scale: 1.15 }}
+              transition={{ duration: 0.2 }}
               style={{
-                maxHeight: '55px',
-                maxWidth: '160px',
-                objectFit: 'contain',
-                display: 'block',
-              }}
-            />
-          </motion.div>
-
-          {/* Address */}
-          <div
-            className="footer-address"
-            style={{
-              textAlign: 'right',
-              lineHeight: '1.6',
-            }}
-          >
-            <div
-              style={{
+                width: '32px',
+                height: '32px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '50%',
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: '#888',
+                textDecoration: 'none',
+                fontSize: '10px',
                 fontFamily: "'Barlow Condensed', sans-serif",
-                fontSize: '12px',
-                color: '#999',
-                letterSpacing: '1.5px',
-                textTransform: 'uppercase',
-              }}
-            >
-              {t('footer.locationText', 'Frisco, Texas')}
-            </div>
-            <div
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontSize: '11px',
-                color: '#777',
+                fontWeight: 700,
                 letterSpacing: '0.5px',
-                marginTop: '4px',
+                transition: 'all 0.25s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#FFF12D';
+                e.currentTarget.style.color = '#FFF12D';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
+                e.currentTarget.style.color = '#888';
               }}
             >
-              {t('footer.kleoText', '© 2015–2026 Kleo Technologies')}
-            </div>
+              {s.letter}
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Kleo logo */}
+        <motion.div whileHover={{ opacity: 0.9 }} transition={{ duration: 0.3 }}>
+          <img
+            src="/images/KLEO-TECHNOLOGY-fn.avif"
+            alt="Kleo Technologies"
+            style={{ maxHeight: '44px', maxWidth: '140px', objectFit: 'contain', display: 'block' }}
+          />
+        </motion.div>
+
+        {/* Address + copyright */}
+        <div style={{ textAlign: 'center', lineHeight: 1.6 }}>
+          <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '12px', color: '#999', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+            {t('footer.locationText', 'Frisco, Texas')}
+          </div>
+          <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '11px', color: '#777', letterSpacing: '0.5px', marginTop: '4px' }}>
+            {t('footer.kleoText', '© 2015–2026 Kleo Technologies')}
           </div>
         </div>
       </div>
