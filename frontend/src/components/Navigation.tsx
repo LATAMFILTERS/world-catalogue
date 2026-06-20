@@ -45,7 +45,7 @@ export function Navigation() {
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             <img
-              src="/assets/elimfilters-logo.png"
+              src="/assets/logo-elimfilters.png"
               alt="ELIMFILTERS"
               className="nav-logo"
               style={{ objectFit: 'contain', height: '40px', width: 'auto', filter: 'brightness(0) invert(1)' }}
