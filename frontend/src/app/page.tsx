@@ -236,9 +236,6 @@ export default function Home() {
 
               {/* Left: headline */}
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem', opacity: 0.8 }}>
-                  // Mission
-                </p>
                 <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#fff', lineHeight: 1.15, margin: 0 }}>
                   {t('home.missionTitle', 'Why ELIMFILTERS Exists')}
                 </h2>
@@ -263,100 +260,49 @@ export default function Home() {
         </section>
 
         {/* ── INDUSTRIES STRIP ── */}
-        <section style={{ background: '#000', padding: '3.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+        <section style={{ background: '#000', padding: '3rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
-              style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.68rem', letterSpacing: '0.16em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '1.25rem' }}
-            >
-              // 12 Industrial Sectors
-            </motion.p>
-
-            {/* 2 rows × 6 pills */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }} viewport={{ once: true }}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '6px', marginBottom: '1.5rem' }}
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '4px' }}
             >
               {[
-                { label: 'Agriculture',      href: '/industries/agriculture' },
-                { label: 'Automotive',       href: '/industries/automotive' },
-                { label: 'Bus & Coach',      href: '/industries/bus-coach' },
-                { label: 'Construction',     href: '/industries/construction' },
-                { label: 'Manufacturing',    href: '/industries/manufacturing' },
-                { label: 'Marine',           href: '/industries/marine' },
-                { label: 'Mining',           href: '/industries/mining' },
-                { label: 'Oil & Gas',        href: '/industries/oil-gas' },
-                { label: 'Power Generation', href: '/industries/power-generation' },
-                { label: 'Railway',          href: '/industries/railway' },
-                { label: 'Trucks & Fleets',  href: '/industries/trucks-fleets' },
-                { label: 'Waste & Municipal',href: '/industries/waste-municipal' },
+                { label: 'Agriculture',       href: '/industries/agriculture' },
+                { label: 'Automotive',        href: '/industries/automotive' },
+                { label: 'Bus & Coach',       href: '/industries/bus-coach' },
+                { label: 'Construction',      href: '/industries/construction' },
+                { label: 'Manufacturing',     href: '/industries/manufacturing' },
+                { label: 'Marine',            href: '/industries/marine' },
+                { label: 'Mining',            href: '/industries/mining' },
+                { label: 'Oil & Gas',         href: '/industries/oil-gas' },
+                { label: 'Power Generation',  href: '/industries/power-generation' },
+                { label: 'Railway',           href: '/industries/railway' },
+                { label: 'Trucks & Fleets',   href: '/industries/trucks-fleets' },
+                { label: 'Waste & Municipal', href: '/industries/waste-municipal' },
               ].map((ind, i) => (
-                <motion.a
+                <a
                   key={ind.href}
                   href={ind.href}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.03 }}
-                  viewport={{ once: true }}
                   style={{
-                    fontFamily: 'Barlow, sans-serif',
-                    fontSize: '0.82rem',
-                    color: 'rgba(255,255,255,0.45)',
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 600,
+                    fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
+                    letterSpacing: '0.02em',
+                    color: i % 2 === 0 ? '#fff' : '#FFF12D',
                     textDecoration: 'none',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    padding: '0.55rem 0.75rem',
+                    padding: '0.7rem 0.6rem',
                     textAlign: 'center',
-                    lineHeight: 1.3,
-                    transition: 'color 0.2s, border-color 0.2s, background 0.2s',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
+                    lineHeight: 1.25,
+                    transition: 'opacity 0.2s',
+                    display: 'block',
                   }}
-                  onMouseEnter={e => {
-                    const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.color = '#FFF12D';
-                    el.style.borderColor = 'rgba(255,241,45,0.3)';
-                    el.style.background = 'rgba(255,241,45,0.04)';
-                  }}
-                  onMouseLeave={e => {
-                    const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.color = 'rgba(255,255,255,0.45)';
-                    el.style.borderColor = 'rgba(255,255,255,0.07)';
-                    el.style.background = 'transparent';
-                  }}
+                  onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = '0.6'}
+                  onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = '1'}
                 >
                   {ind.label}
-                </motion.a>
-              ))}
-            </motion.div>
-
-            {/* CTA row */}
-            <motion.div
-              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} viewport={{ once: true }}
-              style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}
-            >
-              {[
-                { label: 'All Industries', href: '/industries' },
-                { label: 'Systems', href: '/systems' },
-                { label: 'Technologies', href: '/technologies' },
-              ].map((link) => (
-                <a key={link.href} href={link.href} style={{
-                  fontFamily: 'JetBrains Mono, monospace', fontSize: '0.68rem',
-                  letterSpacing: '0.12em', textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
-                  padding: '0.4rem 0.9rem',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  transition: 'color 0.2s, border-color 0.2s',
-                }}
-                  onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = '#FFF12D'; el.style.borderColor = 'rgba(255,241,45,0.35)'; }}
-                  onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.color = 'rgba(255,255,255,0.35)'; el.style.borderColor = 'rgba(255,255,255,0.08)'; }}
-                >
-                  {link.label} →
                 </a>
               ))}
             </motion.div>
-
           </div>
         </section>
 

@@ -64,14 +64,7 @@ export default function CinematicHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1, ease }}
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "0.6rem",
-              letterSpacing: "0.28em",
-              color: "rgba(255,241,45,0.6)",
-              textTransform: "uppercase",
-              marginBottom: "1.5rem",
-            }}
+            style={{ display: 'none' }}
           >
             {t("home.overline", "Industrial Asset Protection")}
           </motion.p>
