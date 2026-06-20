@@ -3,9 +3,6 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import dynamic from "next/dynamic";
-
-const GlobeCanvas = dynamic(() => import("./globe-canvas"), { ssr: false });
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -21,11 +18,12 @@ export default function CinematicHero() {
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
-        padding: "0 8% 7vh",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "0 8%",
       }}
     >
-      {/* Layer 0 — Full-bleed background video */}
+      {/* Background video */}
       <video
         autoPlay muted loop playsInline
         style={{
@@ -34,60 +32,87 @@ export default function CinematicHero() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.42,
+          opacity: 0.35,
           zIndex: 0,
         }}
       >
         <source src="/images/moleculas.mp4" type="video/mp4" />
       </video>
 
-      {/* Layer 1 — Wireframe globe, right-side aligned */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-10%",
-          right: "-18%",
-          width: "75vmin",
-          height: "75vmin",
-          zIndex: 1,
-          pointerEvents: "none",
-          opacity: 0.85,
-        }}
-      >
-        <GlobeCanvas />
-      </div>
-
-      {/* Layer 2 — Gradient, heavier at bottom/left to keep text readable */}
+      {/* Bottom fade */}
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.92) 100%)",
-        zIndex: 2,
+        background: "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.95) 100%)",
+        zIndex: 1,
       }} />
-      {/* Extra left vignette so globe doesn't bleed into headline */}
+
+      {/* Content */}
       <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)",
+        position: "relative",
         zIndex: 2,
-      }} />
+        maxWidth: "900px",
+        width: "100%",
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "2.5rem",
+      }}>
 
-      {/* Layer 3 — Main content */}
-      <div style={{ position: "relative", zIndex: 3, maxWidth: "1400px", width: "100%" }}>
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            padding: "0.5rem 1.25rem",
+            border: "1px solid rgba(255,241,45,0.3)",
+            background: "rgba(255,241,45,0.06)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <span style={{
+            width: "6px", height: "6px",
+            borderRadius: "50%",
+            background: "#FFF12D",
+            display: "inline-block",
+            boxShadow: "0 0 8px rgba(255,241,45,0.8)",
+          }} />
+          <span style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.62rem",
+            letterSpacing: "0.22em",
+            color: "rgba(255,241,45,0.85)",
+            textTransform: "uppercase",
+          }}>
+            {t("home.badge", "Asset Protection · Industrial Filtration")}
+          </span>
+          <span style={{
+            width: "6px", height: "6px",
+            borderRadius: "50%",
+            background: "#FFF12D",
+            display: "inline-block",
+            boxShadow: "0 0 8px rgba(255,241,45,0.8)",
+          }} />
+        </motion.div>
 
-        {/* Large headline */}
-        <div style={{ marginBottom: "3rem" }}>
+        {/* Headline */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.1em" }}>
           <motion.div
-            initial={{ opacity: 0, y: 48 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.2, ease }}
+            transition={{ duration: 0.9, delay: 0.25, ease }}
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: "clamp(3rem, 7.5vw, 7rem)",
+              fontWeight: 300,
+              fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
-              color: "#fff",
+              color: "rgba(255,255,255,0.65)",
               textTransform: "uppercase",
             }}
           >
@@ -95,20 +120,21 @@ export default function CinematicHero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 48 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.32, ease }}
+            transition={{ duration: 0.9, delay: 0.38, ease }}
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: "clamp(3rem, 7.5vw, 7rem)",
+              fontWeight: 800,
+              fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
               color: "#fff",
               textTransform: "uppercase",
               display: "flex",
               alignItems: "baseline",
-              gap: "0.35em",
+              justifyContent: "center",
+              gap: "0.3em",
               flexWrap: "wrap",
             }}
           >
@@ -119,106 +145,131 @@ export default function CinematicHero() {
           </motion.div>
         </div>
 
-        {/* Bottom row — description + stats + CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.52, ease }}
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.55, ease }}
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto",
-            gap: "4rem",
-            alignItems: "end",
-            paddingTop: "2rem",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)",
+            lineHeight: 1.75,
+            color: "rgba(255,255,255,0.42)",
+            maxWidth: "580px",
+            margin: "0 auto",
           }}
-          className="hero-bottom-row"
         >
-          {/* Left — tagline + CTA */}
-          <div>
-            <p style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)",
-              lineHeight: 1.7,
-              color: "rgba(255,255,255,0.48)",
-              maxWidth: "480px",
-              marginBottom: "2rem",
-            }}>
-              {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend the operational life of critical industrial equipment.")}
-            </p>
+          {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend the operational life of critical industrial equipment.")}
+        </motion.p>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
-              <Link
-                href="/knowledge-system"
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: "0.6rem",
-                  background: "#FFF12D", color: "#000",
-                  fontFamily: "var(--font-display)", fontWeight: 700,
-                  fontSize: "0.8rem", letterSpacing: "0.07em",
-                  padding: "0.9rem 2rem",
-                  textDecoration: "none", textTransform: "uppercase",
-                  borderRadius: "2px",
-                  transition: "box-shadow 0.2s, transform 0.2s",
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(255,241,45,0.4)"; (e.currentTarget as HTMLElement).style.transform = "scale(1.04)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
-              >
-                {t("home.ctaProtect", "Protect My Assets")}
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7, ease }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "1.25rem",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <Link
+            href="/knowledge-system"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "0.6rem",
+              background: "#FFF12D", color: "#000",
+              fontFamily: "var(--font-display)", fontWeight: 700,
+              fontSize: "0.8rem", letterSpacing: "0.08em",
+              padding: "0.95rem 2.2rem",
+              textDecoration: "none", textTransform: "uppercase",
+              transition: "box-shadow 0.25s, transform 0.25s",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.boxShadow = "0 0 45px rgba(255,241,45,0.45)";
+              el.style.transform = "translateY(-2px) scale(1.03)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.boxShadow = "none";
+              el.style.transform = "none";
+            }}
+          >
+            {t("home.ctaProtect", "Protect My Assets")}
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </Link>
 
-              <motion.a
-                href="https://part-search.elimfilters.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ color: "#fff" }}
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.8rem", letterSpacing: "0.06em",
-                  color: "rgba(255,255,255,0.32)", textDecoration: "none",
-                  textTransform: "uppercase", display: "inline-flex",
-                  alignItems: "center", gap: "0.4rem",
-                  transition: "color 0.2s",
-                }}
-              >
-                {t("home.ctaFilter", "Find my filter")} →
-              </motion.a>
-            </div>
-          </div>
+          <motion.a
+            href="https://part-search.elimfilters.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "0.6rem",
+              border: "1px solid rgba(255,255,255,0.18)",
+              background: "rgba(255,255,255,0.04)",
+              color: "rgba(255,255,255,0.6)",
+              fontFamily: "var(--font-display)", fontWeight: 600,
+              fontSize: "0.8rem", letterSpacing: "0.08em",
+              padding: "0.95rem 2.2rem",
+              textDecoration: "none", textTransform: "uppercase",
+              backdropFilter: "blur(8px)",
+              transition: "border-color 0.25s, color 0.25s, transform 0.25s",
+            }}
+            whileHover={{ borderColor: "rgba(255,241,45,0.45)", color: "#fff", y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.2 }}
+          >
+            {t("home.ctaFilter", "Find my filter")} →
+          </motion.a>
+        </motion.div>
 
-          {/* Right — stats */}
-          <div style={{ display: "flex", gap: "3rem", alignItems: "flex-end" }}>
-            {[
-              { value: "15k+",  label: "Hours\nBearing Life" },
-              { value: "3–5×",  label: "Asset Life\nExtension" },
-              { value: "80%",   label: "Failures from\nContamination" },
-            ].map((s, i) => (
-              <div key={i} style={{ textAlign: "right" }}>
-                <div style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.6rem, 2.5vw, 2.4rem)",
-                  color: "#fff",
-                  lineHeight: 1,
-                  letterSpacing: "-0.03em",
-                  marginBottom: "0.4rem",
-                }}>
-                  {s.value}
-                </div>
-                <div style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.58rem",
-                  color: "rgba(255,255,255,0.28)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.12em",
-                  lineHeight: 1.5,
-                  whiteSpace: "pre-line",
-                }}>
-                  {s.label}
-                </div>
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9, ease }}
+          style={{
+            display: "flex",
+            gap: "3.5rem",
+            alignItems: "center",
+            paddingTop: "1.5rem",
+            borderTop: "1px solid rgba(255,255,255,0.07)",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {[
+            { value: "15k+", label: "Hours Bearing Life" },
+            { value: "3–5×", label: "Asset Life Extension" },
+            { value: "80%",  label: "Failures from Contamination" },
+          ].map((s, i) => (
+            <div key={i} style={{ textAlign: "center" }}>
+              <div style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
+                color: "#fff",
+                lineHeight: 1,
+                letterSpacing: "-0.03em",
+                marginBottom: "0.35rem",
+              }}>
+                {s.value}
               </div>
-            ))}
-          </div>
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.56rem",
+                color: "rgba(255,255,255,0.26)",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+              }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
 
@@ -226,49 +277,33 @@ export default function CinematicHero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
+        transition={{ delay: 1.3, duration: 0.8 }}
         style={{
           position: "absolute",
-          right: "8%",
-          bottom: "7vh",
+          bottom: "5vh",
+          left: "50%",
+          transform: "translateX(-50%)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "0.5rem",
-          zIndex: 4,
+          gap: "0.4rem",
+          zIndex: 3,
         }}
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           style={{
             width: "1px",
-            height: "40px",
-            background: "linear-gradient(to bottom, transparent, rgba(255,241,45,0.5))",
+            height: "36px",
+            background: "linear-gradient(to bottom, transparent, rgba(255,241,45,0.45))",
           }}
         />
-        <span style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: "0.5rem",
-          letterSpacing: "0.2em",
-          color: "rgba(255,255,255,0.18)",
-          textTransform: "uppercase",
-          writingMode: "vertical-rl",
-        }}>
-          scroll
-        </span>
       </motion.div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .hero-bottom-row {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-          }
-          .hero-bottom-row > div:last-child {
-            justify-content: flex-start !important;
-            gap: 2rem !important;
-          }
+        @media (max-width: 640px) {
+          .hero-cta-row { flex-direction: column !important; }
         }
       `}</style>
     </section>
