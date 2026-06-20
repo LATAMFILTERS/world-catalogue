@@ -1,5 +1,7 @@
 'use client';
 
+import '@/i18n';
+
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
@@ -145,10 +147,9 @@ export default function PrivacyPolicyPage() {
           {SECTIONS.map((s, i) => (
             <motion.section
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: i * 0.04 }}
-              viewport={{ once: true, margin: '-40px' }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.04 }}
               style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem', lineHeight: 1.3 }}>

@@ -55,11 +55,11 @@ export function Navigation() {
 
         {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
-          <NavLink href="/industries">{t('nav.industries')}</NavLink>
-          <NavLink href="/systems">{t('nav.systems')}</NavLink>
-          <NavLink href="/technologies">{t('nav.technologies')}</NavLink>
-          <NavLink href="/knowledge-system">{t('nav.knowledge')}</NavLink>
-          <NavLink href="/contact">{t('nav.contact')}</NavLink>
+          <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
+          <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
+          <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
+          <NavLink href="/knowledge-system">{t('nav.knowledge', 'Knowledge')}</NavLink>
+          <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a
             href="https://part-search.elimfilters.com"
@@ -80,7 +80,7 @@ export function Navigation() {
               display: 'inline-block',
             }}
           >
-            {t('nav.findMyFilter')}
+            {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
         </div>
 
@@ -129,11 +129,11 @@ export function Navigation() {
               style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
             >
               {[
-                { href: '/industries', label: t('nav.industries') },
-                { href: '/systems', label: t('nav.systems') },
-                { href: '/technologies', label: t('nav.technologies') },
-                { href: '/knowledge-system', label: t('nav.knowledge') },
-                { href: '/contact', label: t('nav.contact') },
+                { href: '/industries', label: t('nav.industries', 'Industries') },
+                { href: '/systems', label: t('nav.systems', 'Systems') },
+                { href: '/technologies', label: t('nav.technologies', 'Technologies') },
+                { href: '/knowledge-system', label: t('nav.knowledge', 'Knowledge') },
+                { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div
                   key={item.href}
@@ -156,7 +156,7 @@ export function Navigation() {
                   rel="noopener noreferrer"
                   style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
                 >
-                  {t('nav.findMyFilter')} →
+                  {t('nav.findMyFilter', 'FIND MY FILTER')} →
                 </a>
               </motion.div>
             </motion.div>

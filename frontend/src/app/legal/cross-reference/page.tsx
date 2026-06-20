@@ -1,5 +1,7 @@
 'use client';
 
+import '@/i18n';
+
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
@@ -173,10 +175,9 @@ export default function CrossReferencePolicyPage() {
           {SECTIONS.slice(0, 2).map((s, i) => (
             <motion.section
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: i * 0.04 }}
-              viewport={{ once: true, margin: '-40px' }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.04 }}
               style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem' }}>
@@ -192,10 +193,9 @@ export default function CrossReferencePolicyPage() {
 
           {/* Relationship type cards */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: '-40px' }}
             style={{ marginBottom: '2.5rem' }}
           >
             <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '1.5rem' }}>
@@ -205,10 +205,9 @@ export default function CrossReferencePolicyPage() {
               {RELATIONSHIP_TYPES.map((rt, i) => (
                 <motion.div
                   key={rt.code}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  viewport={{ once: true, margin: '-20px' }}
                   style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '6px', padding: '1.25rem 1.5rem' }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
@@ -233,10 +232,9 @@ export default function CrossReferencePolicyPage() {
           {SECTIONS.slice(2).map((s, i) => (
             <motion.section
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: i * 0.04 }}
-              viewport={{ once: true, margin: '-40px' }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.04 }}
               style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem' }}>
