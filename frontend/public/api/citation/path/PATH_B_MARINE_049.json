@@ -10,25 +10,235 @@
       "key": "MARINE",
       "type": "industry",
       "name": "Marine",
-      "citation_record": null
+      "citation_record": {
+        "key": "MARINE",
+        "type": "industry",
+        "name": "Marine",
+        "slug": "marine",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "MARINE",
+        "tags": [
+          "industry",
+          "active",
+          "marine",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/industries/marine",
+          "concept": "Marine Industry Filtration Requirements",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:0d4160bcf04fe44a74a4a2675edd8bc05500734dffba288781ff3abe0ad17a57"
+        },
+        "canonical": {
+          "definition": "Marine is a HIGH contamination exposure industrial category for diesel-powered vessels and offshore equipment, characterised by near-100% ambient relative humidity accelerating fuel tank condensation and lube oil emulsification, salt-air intake environments degrading conventional filter media, and the operational consequence that engine failure at sea is catastrophic — no recovery option and IMO/classification society regulatory compliance requirements for fuel and hydraulic filtration.",
+          "systems": "Marine diesel engine air intake, fuel systems, lube oil circuits, hydraulic deck and steering systems across fishing vessels, cargo ships, offshore platforms, and work boats",
+          "failure_impact": "Marine humidity → fuel tank water accumulation above 500 ppm → microbial growth (Hormoconis resinae) → filter-plugging biomass formation → fuel starvation → propulsion loss at sea | Salt-air intake without synthetic media → cellulose media moisture absorption → structural collapse → engine bypass → abrasive wear | Operational impact: injector replacement $800–$4,000/unit; 30–40% of marine fuel filter failures from microbial contamination.",
+          "related_standards": "ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks",
+          "related_technologies": "SYNTEPORE: Salt-air resistant synthetic media for marine diesel engine intake filtration | HYDROCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments",
+          "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and HYDROCORE coalescing filtration the primary engineering controls for fleet reliability."
+        },
+        "relationships": {
+          "relevant_contamination": [
+            "PARTICLE_WEAR",
+            "DIESEL_WATER",
+            "HYDRAULIC_CONTAMINATION"
+          ],
+          "applicable_technologies": [
+            "SYNTEPORE",
+            "NANOFORCE",
+            "SYNTRAX",
+            "HYDROCORE"
+          ],
+          "applicable_standards": [
+            "ISO_5011",
+            "SAE_J1539",
+            "ISO_16889",
+            "ASTM_D6304"
+          ],
+          "common_problems": [
+            "ENGINE_OIL_CONTAMINATION",
+            "FUEL_FILTER_PLUGGING",
+            "HYDRAULIC_VALVE_FAILURE"
+          ],
+          "typical_product_families": [
+            "LUBE_PRIMARY",
+            "FUEL_PRIMARY",
+            "HYDRAULIC_PRIMARY"
+          ]
+        },
+        "vault_path": "elimfilters-vault/02-industries/MARINE.md"
+      }
     },
     {
       "key": "HYDRAULIC_VALVE_FAILURE",
       "type": "problem",
       "name": "Hydraulic Valve Failure",
-      "citation_record": null
+      "citation_record": {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "type": "problem",
+        "name": "Hydraulic Valve Failure",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "hydraulic",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-high"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+        },
+        "canonical": {
+          "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
+          "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
+          "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
+          "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
+          "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
+          "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ISO_16889",
+            "ISO_4406",
+            "NFPA_T214"
+          ],
+          "resolved_by_technologies": [
+            "NANOFORCE",
+            "SYNTRAX"
+          ],
+          "recommended_product_families": [
+            "HYDRAULIC_PRIMARY"
+          ],
+          "root_contamination": [
+            "HYDRAULIC_CONTAMINATION"
+          ],
+          "industry_frequency": [
+            "CONSTRUCTION",
+            "MINING",
+            "AGRICULTURE",
+            "MARINE",
+            "OIL_GAS",
+            "POWER_GENERATION"
+          ]
+        },
+        "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+      }
     },
     {
       "key": "HYDRAULIC_CONTAMINATION",
       "type": "contamination-mode",
       "name": "Hydraulic System Contamination",
-      "citation_record": null
+      "citation_record": {
+        "key": "HYDRAULIC_CONTAMINATION",
+        "type": "contamination-mode",
+        "name": "Hydraulic System Contamination",
+        "slug": "hydraulic-contamination",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "HYDRAULIC_CONTAMINATION",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "hydraulic",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "concept": "Hydraulic System Contamination",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:13a03cb41b7aa90756be4178b97fa2e8da544eb392b65ffb1f2ff9dca148d10a"
+        },
+        "canonical": {
+          "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
+          "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
+          "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
+          "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
+          "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | HYDROCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
+          "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_16889",
+            "ISO_4406",
+            "NFPA_T214"
+          ],
+          "resolved_by": [
+            "NANOFORCE",
+            "HYDROCORE",
+            "SYNTRAX",
+            "MICROKAPPA"
+          ]
+        },
+        "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
+      }
     },
     {
       "key": "HYDROCORE",
       "type": "technology",
       "name": "HYDROCORE™",
-      "citation_record": null
+      "citation_record": {
+        "key": "HYDROCORE",
+        "type": "technology",
+        "name": "HYDROCORE™",
+        "slug": "hydrocore",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "HYDROCORE",
+        "tags": [
+          "technology",
+          "active",
+          "fuel",
+          "in-ud",
+          "part-search-node"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+          "concept": "HYDROCORE Water-Separating Fuel Protection",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:8204a2d90ba342a7de7ac2e5670f2a951bc4bec75d3f1e1331c1de3619b6c04e"
+        },
+        "canonical": {
+          "definition": "HYDROCORE is a multi-stage coalescing fuel filtration technology that removes free water (>99% efficiency) and emulsified water (>95% efficiency) from diesel fuel using a coalescing-then-hydrophobic-barrier element architecture, preventing water-induced injector erosion and microbial fuel contamination in common-rail diesel engines operating at 1,800–2,500 bar injection pressure.",
+          "systems": "Diesel fuel systems in common-rail and unit-injector engines across agricultural, construction, marine, mining, power generation, railway, and road transport equipment; applicable to EN 590, ASTM D975, and B5–B20 biodiesel blends",
+          "failure_impact": "Water in diesel fuel above 200 mg/kg (ASTM D6304 EN 590 limit) or as free droplets at any concentration → water droplet cavitation at injector nozzle during 1,800–2,500 bar injection → nozzle tip erosion and needle seat wear → injector spray pattern degradation → fuel efficiency loss and incomplete combustion | Operational impact: injector replacement $800–$4,000 per unit; microbial growth in water-contaminated tanks causes filter-plugging biomass leading to fuel starvation events.",
+          "related_standards": "ASTM D6304: Coulometric Karl Fischer titration for water content in diesel fuel; HYDROCORE performance validated against ASTM D6304 output measurement | ISO 12937: ISO equivalent Karl Fischer method for water in petroleum products; European market compliance standard",
+          "related_technologies": "SYNTEPORE: Air-side filtration preventing moisture-laden intake air from contributing to crankcase condensation in lube circuits | SYNTRAX: Lube oil protection for engine bearings from the same high-humidity environments that drive fuel water contamination",
+          "industrial_role": "HYDROCORE water-separating fuel filtration is the primary engineering control preventing injector erosion in high-pressure common-rail diesel engines; in marine, mining, and remote power generation applications where fuel tank condensation is unavoidable, HYDROCORE coalescing separation determines whether injection systems reach design service life or fail prematurely from water-induced cavitation erosion."
+        },
+        "relationships": {
+          "applicable_industries": [
+            "AGRICULTURE",
+            "CONSTRUCTION",
+            "MARINE",
+            "MINING",
+            "OIL_GAS",
+            "POWER_GENERATION",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
+          ],
+          "related_standards": [
+            "ASTM_D6304",
+            "ISO_12937"
+          ],
+          "addresses_contamination": [
+            "DIESEL_WATER"
+          ]
+        },
+        "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
+      }
     }
   ],
   "terminal_product_families": [
