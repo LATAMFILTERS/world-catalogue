@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "21st-magic": {
+      "type": "http",
+      "url": "https://mcp.21st.dev/api/mcp?apiKey=a810ca9493c2d356a5dcda020f0f05edd04dc91b7f82043567915bf61a3f74c4"
+    },
     "nano-banana": {
       "command": "npx",
       "args": ["nano-banana-mcp"],
