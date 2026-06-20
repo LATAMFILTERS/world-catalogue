@@ -17,10 +17,8 @@ export default function CinematicHero() {
         background: "#000",
         overflow: "hidden",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "90px 6% 0",
+        padding: "90px 7% 0",
       }}
     >
       {/* Background video */}
@@ -32,215 +30,192 @@ export default function CinematicHero() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.35,
+          opacity: 0.32,
           zIndex: 0,
         }}
       >
         <source src="/images/moleculas.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient overlay */}
+      {/* Gradient */}
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.65) 100%)",
+        background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)",
         zIndex: 1,
       }} />
 
-      {/* Content — centered */}
+      {/* Horizontal two-column layout */}
       <div style={{
         position: "relative",
         zIndex: 2,
-        textAlign: "center",
-        maxWidth: "860px",
         width: "100%",
-      }}>
-
-        {/* Overline tag */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "0.62rem",
-            letterSpacing: "0.28em",
-            color: "rgba(255,241,45,0.65)",
-            textTransform: "uppercase",
-            marginBottom: "2rem",
-          }}
-        >
-          {t("home.overline", "Industrial Asset Protection")}
-        </motion.p>
-
-        {/* Headline */}
-        <div style={{ marginBottom: "2rem" }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease }}
+        maxWidth: "1400px",
+        display: "grid",
+        gridTemplateColumns: "1fr 420px",
+        gap: "4rem",
+        alignItems: "center",
+      }}
+        className="hero-grid"
+      >
+        {/* LEFT — headline */}
+        <div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
             style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.6rem",
+              letterSpacing: "0.28em",
+              color: "rgba(255,241,45,0.6)",
+              textTransform: "uppercase",
+              marginBottom: "1.5rem",
+            }}
+          >
+            {t("home.overline", "Industrial Asset Protection")}
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.2, ease }}
+            style={{ margin: 0 }}
+          >
+            <span style={{
+              display: "block",
               fontFamily: "var(--font-inter)",
               fontWeight: 300,
-              fontSize: "clamp(1.6rem, 4vw, 3.8rem)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-              color: "rgba(255,255,255,0.75)",
+              fontSize: "clamp(1.8rem, 4.2vw, 4rem)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.025em",
+              color: "rgba(255,255,255,0.7)",
               textTransform: "uppercase",
-              marginBottom: "0.15em",
-            }}
-          >
-            {t("home.heroLine_protecting", "Protecting")}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease }}
-            style={{
+            }}>
+              {t("home.heroLine_protecting", "Protecting")}
+            </span>
+            <span style={{
+              display: "block",
               fontFamily: "var(--font-inter)",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 5.5vw, 5rem)",
+              fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
               lineHeight: 1,
-              letterSpacing: "-0.03em",
+              letterSpacing: "-0.035em",
               color: "#fff",
               textTransform: "uppercase",
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "center",
-              gap: "0.3em",
-              flexWrap: "wrap",
-            }}
-          >
-            {t("home.heroLine_industrial", "Industrial")}
-            <span style={{ color: "#FFF12D" }}>
+            }}>
+              {t("home.heroLine_industrial", "Industrial")}
+            </span>
+            <span style={{
+              display: "block",
+              fontFamily: "var(--font-inter)",
+              fontWeight: 800,
+              fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
+              lineHeight: 1,
+              letterSpacing: "-0.035em",
+              color: "#FFF12D",
+              textTransform: "uppercase",
+            }}>
               {t("home.heroLine_assets", "Assets.")}
             </span>
-          </motion.div>
+          </motion.h1>
         </div>
 
-        {/* Accent line — like reference */}
+        {/* RIGHT — divider + description + CTAs */}
         <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "60px" }}
-          transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-          style={{
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.75, delay: 0.45, ease }}
+          style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}
+        >
+          {/* Top accent line */}
+          <div style={{
+            width: "40px",
             height: "2px",
-            background: "rgba(255,241,45,0.5)",
-            margin: "0 auto 2rem",
-          }}
-        />
+            background: "rgba(255,241,45,0.45)",
+          }} />
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55, ease }}
-          style={{
+          <p style={{
             fontFamily: "var(--font-inter)",
             fontWeight: 400,
-            fontSize: "clamp(0.85rem, 1.2vw, 1rem)",
-            lineHeight: 1.75,
-            color: "rgba(255,255,255,0.45)",
-            maxWidth: "540px",
-            margin: "0 auto 2.5rem",
-          }}
-        >
-          {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend the operational life of critical industrial equipment.")}
-        </motion.p>
+            fontSize: "clamp(0.82rem, 1.1vw, 0.95rem)",
+            lineHeight: 1.8,
+            color: "rgba(255,255,255,0.42)",
+            margin: 0,
+          }}>
+            {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend the operational life of critical industrial equipment.")}
+          </p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7, ease }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1.25rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link
-            href="/knowledge-system"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.55rem",
-              background: "#FFF12D",
-              color: "#000",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 700,
-              fontSize: "0.75rem",
-              letterSpacing: "0.1em",
-              padding: "0.8rem 1.8rem",
-              textDecoration: "none",
-              textTransform: "uppercase",
-              transition: "box-shadow 0.2s, transform 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 32px rgba(255,241,45,0.4)";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "none";
-              (e.currentTarget as HTMLElement).style.transform = "none";
-            }}
-          >
-            {t("home.ctaProtect", "Protect My Assets")}
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </Link>
+          {/* CTAs */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <Link
+              href="/knowledge-system"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.55rem",
+                background: "#FFF12D",
+                color: "#000",
+                fontFamily: "var(--font-inter)",
+                fontWeight: 700,
+                fontSize: "0.72rem",
+                letterSpacing: "0.1em",
+                padding: "0.85rem 1.6rem",
+                textDecoration: "none",
+                textTransform: "uppercase",
+                width: "fit-content",
+                transition: "box-shadow 0.2s, transform 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 28px rgba(255,241,45,0.4)";
+                (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLElement).style.transform = "none";
+              }}
+            >
+              {t("home.ctaProtect", "Protect My Assets")}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </Link>
 
-          <a
-            href="https://part-search.elimfilters.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              border: "1px solid rgba(255,255,255,0.18)",
-              color: "rgba(255,255,255,0.65)",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 500,
-              fontSize: "0.75rem",
-              letterSpacing: "0.08em",
-              padding: "0.8rem 1.8rem",
-              textDecoration: "none",
-              textTransform: "uppercase",
-              transition: "border-color 0.2s, color 0.2s, transform 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,241,45,0.4)";
-              (e.currentTarget as HTMLElement).style.color = "#fff";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.18)";
-              (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)";
-              (e.currentTarget as HTMLElement).style.transform = "none";
-            }}
-          >
-            {t("home.ctaFilter", "Find My Filter")} →
-          </a>
+            <a
+              href="https://part-search.elimfilters.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                color: "rgba(255,255,255,0.4)",
+                fontFamily: "var(--font-inter)",
+                fontWeight: 500,
+                fontSize: "0.72rem",
+                letterSpacing: "0.08em",
+                textDecoration: "none",
+                textTransform: "uppercase",
+                transition: "color 0.2s",
+                width: "fit-content",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFF12D"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}
+            >
+              {t("home.ctaFilter", "Find My Filter")} →
+            </a>
+          </div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — bottom center */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.8 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
         style={{
           position: "absolute",
           bottom: "2.5rem",
           left: "50%",
           transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0.5rem",
           zIndex: 3,
         }}
       >
@@ -250,10 +225,20 @@ export default function CinematicHero() {
           style={{
             width: "1px",
             height: "36px",
-            background: "linear-gradient(to bottom, transparent, rgba(255,241,45,0.45))",
+            background: "linear-gradient(to bottom, transparent, rgba(255,241,45,0.4))",
+            margin: "0 auto",
           }}
         />
       </motion.div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
