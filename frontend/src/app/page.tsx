@@ -8,7 +8,6 @@ import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import TestimonialsSection from '@/components/ui/TestimonialsSection';
 import CinematicHero from '@/components/ui/CinematicHero';
-import { AnimatedHero } from '@/components/ui/animated-hero';
 
 // ─── Static structural data ───────────────────────────────────────────────────
 
@@ -154,54 +153,6 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
       </span>
       <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }} style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>→</motion.span>
     </a>
-  );
-}
-
-// ─── Hero ─────────────────────────────────────────────────────────────────────
-
-function HeroSection() {
-  const { t } = useTranslation();
-  const sectionRef = useRef<HTMLElement>(null);
-  const mouseX = useSpring(50, { stiffness: 60, damping: 20 });
-  const mouseY = useSpring(50, { stiffness: 60, damping: 20 });
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
-
-  const { scrollY } = useScroll();
-  const videoY = useTransform(scrollY, [0, 700], [0, 140]);
-  const contentY = useTransform(scrollY, [0, 600], [0, -60]);
-  const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-
-  useEffect(() => {
-    const u1 = mouseX.on('change', x => setGlowPos(p => ({ ...p, x })));
-    const u2 = mouseY.on('change', y => setGlowPos(p => ({ ...p, y })));
-    return () => { u1(); u2(); };
-  }, [mouseX, mouseY]);
-
-  return (
-    <section
-      ref={sectionRef}
-      onMouseMove={(e) => {
-        if (!sectionRef.current) return;
-        const r = sectionRef.current.getBoundingClientRect();
-        mouseX.set(((e.clientX - r.left) / r.width) * 100);
-        mouseY.set(((e.clientY - r.top) / r.height) * 100);
-      }}
-      onMouseLeave={() => { mouseX.set(50); mouseY.set(50); }}
-      style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 7% 7vh', overflow: 'hidden', background: '#000' }}
-    >
-      <motion.video autoPlay muted loop playsInline
-        style={{ position: 'absolute', top: '-10%', left: 0, right: 0, width: '100%', height: '120%', objectFit: 'cover', zIndex: 0, opacity: 0.55, y: videoY }}>
-        <source src="/images/moleculas.mp4" type="video/mp4" />
-      </motion.video>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%)' }} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: `radial-gradient(ellipse 55vw 45vh at ${glowPos.x}% ${glowPos.y}%, rgba(255,241,45,0.055) 0%, transparent 70%)`, transition: 'background 0.05s linear', pointerEvents: 'none' }} />
-      <FloatingParticles count={18} />
-
-      <motion.div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', y: contentY, opacity: contentOpacity }}>
-
-        <AnimatedHero />
-      </motion.div>
-    </section>
   );
 }
 
