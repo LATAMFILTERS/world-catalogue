@@ -20,7 +20,7 @@ export default function CinematicHero() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 6%",
+        padding: "90px 6% 0",
       }}
     >
       {/* Background video */}
