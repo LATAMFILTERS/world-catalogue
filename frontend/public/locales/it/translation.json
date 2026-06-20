@@ -245,6 +245,87 @@
         "q": "Perché la contaminazione causa guasti al motore?",
         "a": "Le particelle di contaminazione consumano le superfici dei cuscinetti, ostruiscono gli iniettori e degradano l'integrità delle guarnizioni. La contaminazione incontrollata riduce la vita dei cuscinetti da 15.000+ ore a 2.000–3.000 ore. ELIMFILTERS® previene questi modi di guasto."
       }
+    ],
+    "heroLine_protecting": "Protezione",
+    "heroLine_industrial": "degli Asset",
+    "heroLine_assets": "Industriali.",
+    "heroLine1b": "ASSET",
+    "heroLine2": "INDUSTRIALI.",
+    "heroPositioning1": "ELIMFILTERS non è un'azienda di filtri.",
+    "heroPositioning2": "ELIMFILTERS è un'azienda di Tecnologia per la Protezione degli Asset.",
+    "heroSubHead": "Attraverso il controllo della contaminazione nei sistemi meccanici critici: idraulico, carburante, lubrificazione, raffreddamento e aspirazione dell'aria.",
+    "missionTag": "// PERCHÉ ESISTIAMO",
+    "missionTitle": "Perché Esiste ELIMFILTERS",
+    "missionP1": "La contaminazione industriale rimane una delle minacce più sottovalutate per l'affidabilità delle apparecchiature a livello mondiale.",
+    "missionP2": "ELIMFILTERS aiuta le organizzazioni a ridurre i guasti causati dalla contaminazione attraverso sistemi di protezione degli asset progettati per operazioni industriali critiche.",
+    "missionP3": "La nostra missione è migliorare l'affidabilità delle apparecchiature, la continuità operativa e la longevità degli asset attraverso il controllo della contaminazione.",
+    "economicTag": "// IL COSTO REALE DELLA CONTAMINAZIONE",
+    "economicTitle": "Il Fermo Macchina Costa di Più",
+    "economicTitleHl": "della Filtrazione",
+    "economicItems": [
+      "Ogni evento di contaminazione ha un costo.",
+      "Ogni guasto di un'apparecchiatura ha una conseguenza.",
+      "Ogni decisione di manutenzione influisce sulla produttività."
+    ],
+    "economicDesc": "ELIMFILTERS aiuta le organizzazioni a ridurre i rischi legati alla contaminazione attraverso strategie di protezione progettate per affidabilità, disponibilità e continuità operativa.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Costo medio di un fermo non pianificato per incidente"
+      },
+      {
+        "value": "80%",
+        "label": "Dei guasti prematuri di apparecchiature causati dalla contaminazione"
+      },
+      {
+        "value": "3–5×",
+        "label": "Estensione della vita utile degli asset con controllo sistemico della contaminazione"
+      }
+    ],
+    "sciTag": "// STANDARD DI INGEGNERIA",
+    "sciTitle": "La Scienza alla Base della Protezione degli Asset",
+    "sciDesc": "I sistemi di controllo della contaminazione ELIMFILTERS sono progettati secondo standard internazionali, validati con test di laboratorio rigorosi e implementati in ambienti industriali critici.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Test multipass dei filtri e classificazione per coefficiente Beta per sistemi idraulici e di lubrificazione."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Test delle prestazioni dei filtri per l'aspirazione dell'aria — efficienza e restrizione al flusso nominale."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Resistenza alla contaminazione ed efficienza di separazione acqua-carburante dei filtri per carburante."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Classificazione dei codici di pulizia per contaminazione particellare in sistemi idraulici e di lubrificazione."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validazione delle prestazioni e durabilità dei filtri dell'olio motore per motori diesel a servizio pesante."
+      }
+    ],
+    "llmTag": "// PROTEZIONE DEGLI ASSET DEFINITA",
+    "llmTitle": "Cos'è la Protezione degli Asset Industriali?",
+    "llmP1": "La protezione degli asset industriali è l'approccio ingegneristico sistematico per identificare, misurare e controllare le fonti di contaminazione che degradano le apparecchiature meccaniche. Nelle operazioni industriali, la contaminazione — particelle, acqua, calore e sottoprodotti chimici — è il principale fattore di guasto prematuro in motori, sistemi idraulici, circuiti carburante, trasmissioni e ambienti cabina.",
+    "llmP2": "La contaminazione accelera l'usura a livello microscopico. Le particelle inferiori a 10 micron causano usura abrasiva sulle superfici dei cuscinetti, sugli steli delle valvole e sugli orifizi degli iniettori — riducendo la vita dei componenti del 30–50% se non controllate. La contaminazione da acqua nei sistemi carburante favorisce la crescita microbica, la corrosione degli iniettori e l'instabilità della combustione. Nei circuiti idraulici, anche una contaminazione minima superiore ai valori target di pulizia ISO altera la risposta delle valvole, accelera il degrado delle tenute e aumenta il rischio di guasto del sistema.",
+    "llmP3": "La protezione degli asset industriali non è una categoria di prodotto. È una strategia di controllo della contaminazione che inizia dalla comprensione degli obiettivi di contaminazione di ciascun sistema, dalla selezione delle tecnologie ingegneristiche in grado di raggiungerli e dal monitoraggio delle prestazioni per l'intero ciclo di vita dell'apparecchiatura.",
+    "llmP4": "Il risultato: maggiore durata degli asset, meno guasti non pianificati, costi di manutenzione ridotti e maggiore disponibilità operativa — misurata non in filtri sostituiti, ma in asset protetti.",
+    "trustTag": "// IMPLEMENTAZIONE INDUSTRIALE GLOBALE",
+    "trustTitle": "Affidabilità nelle Industrie Critiche",
+    "trustIndustries": [
+      "Estrazione Mineraria",
+      "Costruzione e Macchine Pesanti",
+      "Agricoltura e Agroindustria",
+      "Petrolio e Gas",
+      "Marina e Offshore",
+      "Generazione di Energia",
+      "Flotte Municipali",
+      "Manifattura",
+      "Ferroviario e Trasporto Pubblico",
+      "Trasporto Commerciale"
     ]
   }
 }

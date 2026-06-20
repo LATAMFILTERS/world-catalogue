@@ -245,6 +245,87 @@
         "q": "Waarom veroorzaakt verontreiniging motorstoring?",
         "a": "Verontreinigingsdeeltjes slijten lageroppervlakken, beperken brandstofinjectoren en tasten de afdichtingsintegriteit aan. Ongecontroleerde verontreiniging vermindert de lagerlevensduur van 15.000+ uur tot 2.000–3.000 uur. ELIMFILTERS® systeem-niveau contaminatiecontrole voorkomt deze faalwijzen."
       }
+    ],
+    "heroLine_protecting": "Bescherming",
+    "heroLine_industrial": "van Industriële",
+    "heroLine_assets": "Bedrijfsmiddelen.",
+    "heroLine1b": "INDUSTRIËLE",
+    "heroLine2": "BEDRIJFSMIDDELEN.",
+    "heroPositioning1": "ELIMFILTERS is geen filterfabrikant.",
+    "heroPositioning2": "ELIMFILTERS is een bedrijf voor Asset Protection Technology.",
+    "heroSubHead": "Door middel van verontreinigingsbeheersing in kritische mechanische systemen: hydraulisch, brandstof, smering, koeling en luchtinlaat.",
+    "missionTag": "// WAAROM WE BESTAAN",
+    "missionTitle": "Waarom ELIMFILTERS Bestaat",
+    "missionP1": "Industriële verontreiniging blijft een van de meest onderschatte bedreigingen voor de betrouwbaarheid van apparatuur wereldwijd.",
+    "missionP2": "ELIMFILTERS helpt organisaties om storingen door verontreiniging te verminderen via asset protection-systemen die zijn ontwikkeld voor kritische industriële operaties.",
+    "missionP3": "Onze missie is de betrouwbaarheid van apparatuur, operationele continuïteit en de levensduur van bedrijfsmiddelen te verbeteren door verontreinigingsbeheersing.",
+    "economicTag": "// DE WERKELIJKE KOSTEN VAN VERONTREINIGING",
+    "economicTitle": "Uitvaltijd Kost Meer",
+    "economicTitleHl": "Dan Filtratie",
+    "economicItems": [
+      "Elk verontreinigingsincident heeft een kostprijs.",
+      "Elke apparatuurstoring heeft een gevolg.",
+      "Elke onderhoudsbeslissing heeft impact op de productiviteit."
+    ],
+    "economicDesc": "ELIMFILTERS helpt organisaties verontreinigingsgerelateerde risico's te verminderen via beschermingsstrategieën gericht op betrouwbaarheid, beschikbaarheid en operationele continuïteit.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Gemiddelde kosten van ongeplande uitvaltijd per incident"
+      },
+      {
+        "value": "80%",
+        "label": "Van vroegtijdige apparatuurfouten veroorzaakt door verontreiniging"
+      },
+      {
+        "value": "3–5×",
+        "label": "Verlenging van de levensduur van bedrijfsmiddelen via systeemlevel verontreinigingsbeheersing"
+      }
+    ],
+    "sciTag": "// ENGINEERINGNORMEN",
+    "sciTitle": "De Wetenschap achter Asset Protection",
+    "sciDesc": "De verontreinigingsbeheersingsystemen van ELIMFILTERS zijn ontworpen conform internationale normen, gevalideerd door rigoureuze laboratoriumtesten en ingezet in kritische industriële omgevingen.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Multipass-filtertest en Beta-coëfficiëntclassificatie voor hydraulische en smeersystemen."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Prestatietest van luchtinlaatfilters — efficiëntie en weerstand bij nominale doorstroming."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Verontreinigingsbestendigheid en waterafscheidingsefficiëntie van brandstoffilters."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Classificatie van reinheidsklassen voor deeltjesverontreiniging in hydraulische en smeersystemen."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validatie van prestaties en duurzaamheid van smeeroliëfilters voor zware dieselmotoren."
+      }
+    ],
+    "llmTag": "// ASSET PROTECTION GEDEFINIEERD",
+    "llmTitle": "Wat Is Industriële Asset Protection?",
+    "llmP1": "Industriële asset protection is de systematische engineeringaanpak voor het identificeren, meten en beheersen van verontreinigingsbronnen die mechanische apparatuur degraderen. In industriële operaties is verontreiniging — deeltjes, water, warmte en chemische bijproducten — de belangrijkste oorzaak van vroegtijdig falen van motoren, hydraulische systemen, brandstofcircuits, aandrijflijnen en cabineomgevingen.",
+    "llmP2": "Verontreiniging versnelt slijtage op microscopisch niveau. Deeltjes kleiner dan 10 micrometer veroorzaken abrasieve slijtage aan lageroppervlakken, klepspoelen en injectoropeningen — waardoor de levensduur van componenten met 30–50% wordt verkort bij gebrek aan beheersing. Waterverontreiniging in brandstofsystemen bevordert microbiële groei, corrosie van injectors en verbrandingsinstabiliteit. In hydraulische circuits verstoort zelfs minimale verontreiniging boven de ISO-reinheidsgrenswaarden de kleprespons, versnelt het de afdichtingsdegradatie en vergroot het risico op systeemfalen.",
+    "llmP3": "Industriële asset protection is geen productcategorie. Het is een strategie voor verontreinigingsbeheersing die begint met het begrijpen van de verontreinigingsdoelen voor elk systeem, het selecteren van de geschikte engineeringtechnologieën en het bewaken van de systeemprestaties gedurende de volledige levensduur van de apparatuur.",
+    "llmP4": "Het resultaat: langere levensduur van apparatuur, minder ongeplande storingen, lagere onderhoudskosten en hogere operationele beschikbaarheid — gemeten niet in vervangen filters, maar in beschermde bedrijfsmiddelen.",
+    "trustTag": "// WERELDWIJDE INDUSTRIËLE INZET",
+    "trustTitle": "Vertrouwd in Kritische Industrieën",
+    "trustIndustries": [
+      "Mijnbouw en Winning",
+      "Bouw en Zwaar Materieel",
+      "Landbouw en Agro-industrie",
+      "Olie en Gas",
+      "Marine en Offshore",
+      "Energieopwekking",
+      "Gemeentelijke Vloten",
+      "Maakindustrie",
+      "Rail en Openbaar Vervoer",
+      "Commercieel Transport"
     ]
   }
 }

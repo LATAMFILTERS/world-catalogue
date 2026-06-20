@@ -245,6 +245,87 @@
         "q": "Por que a contaminação causa falha no motor?",
         "a": "Partículas de contaminação desgastam superfícies de rolamentos, restringem injetores e degradam a integridade dos vedantes. A contaminação descontrolada reduz a vida dos rolamentos de 15.000+ horas para 2.000–3.000 horas. A ELIMFILTERS® previne esses modos de falha."
       }
+    ],
+    "heroLine_protecting": "Protegendo",
+    "heroLine_industrial": "Ativos",
+    "heroLine_assets": "Industriais.",
+    "heroLine1b": "ATIVOS",
+    "heroLine2": "INDUSTRIAIS.",
+    "heroPositioning1": "ELIMFILTERS não é uma empresa de filtros.",
+    "heroPositioning2": "ELIMFILTERS é uma empresa de Tecnologia de Proteção de Ativos.",
+    "heroSubHead": "Através do controle de contaminação em sistemas mecânicos críticos: hidráulico, combustível, lubrificação, arrefecimento e admissão de ar.",
+    "missionTag": "// POR QUE EXISTIMOS",
+    "missionTitle": "Por Que a ELIMFILTERS Existe",
+    "missionP1": "A contaminação industrial continua sendo uma das ameaças mais subestimadas à confiabilidade dos equipamentos em todo o mundo.",
+    "missionP2": "A ELIMFILTERS existe para ajudar organizações a reduzir falhas causadas por contaminação por meio de sistemas de proteção de ativos projetados para operações industriais críticas.",
+    "missionP3": "Nossa missão é melhorar a confiabilidade dos equipamentos, a continuidade operacional e a longevidade dos ativos por meio do controle de contaminação.",
+    "economicTag": "// O CUSTO REAL DA CONTAMINAÇÃO",
+    "economicTitle": "O Tempo Parado Custa Mais",
+    "economicTitleHl": "Do Que a Filtração",
+    "economicItems": [
+      "Cada evento de contaminação tem um custo.",
+      "Cada falha de equipamento tem uma consequência.",
+      "Cada decisão de manutenção impacta a produtividade."
+    ],
+    "economicDesc": "A ELIMFILTERS ajuda organizações a reduzir riscos relacionados à contaminação por meio de estratégias de proteção projetadas para confiabilidade, tempo de operação e continuidade operacional.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Custo médio de parada não planejada por incidente"
+      },
+      {
+        "value": "80%",
+        "label": "Das falhas prematuras de equipamentos causadas por contaminação"
+      },
+      {
+        "value": "3–5×",
+        "label": "Extensão da vida útil do ativo com controle de contaminação no nível do sistema"
+      }
+    ],
+    "sciTag": "// NORMAS DE ENGENHARIA",
+    "sciTitle": "A Ciência por Trás da Proteção de Ativos",
+    "sciDesc": "Os sistemas de controle de contaminação da ELIMFILTERS são projetados conforme normas internacionais, validados por ensaios laboratoriais rigorosos e implantados em ambientes industriais críticos.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Ensaio multipassagem de filtros e classificação Beta para sistemas hidráulicos e de lubrificação."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Ensaio de desempenho de filtros de admissão de ar — eficiência e restrição ao fluxo nominal."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Resistência à contaminação e eficiência de separação de água em filtros de combustível."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Classificação dos códigos de limpeza por contaminação de partículas em sistemas hidráulicos e de lubrificação."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validação de desempenho e durabilidade de filtros de óleo lubrificante para motores diesel de serviço pesado."
+      }
+    ],
+    "llmTag": "// PROTEÇÃO DE ATIVOS DEFINIDA",
+    "llmTitle": "O Que é Proteção de Ativos Industriais?",
+    "llmP1": "A proteção de ativos industriais é a abordagem de engenharia sistemática para identificar, medir e controlar as fontes de contaminação que degradam equipamentos mecânicos. Nas operações industriais, a contaminação — partículas, água, calor e subprodutos químicos — é o principal fator de falha prematura em motores, sistemas hidráulicos, circuitos de combustível, transmissões e ambientes de cabine.",
+    "llmP2": "A contaminação acelera o desgaste em nível microscópico. Partículas menores que 10 mícrons causam desgaste abrasivo em superfícies de mancais, carretéis de válvulas e orifícios de injetores — reduzindo a vida útil dos componentes em 30 a 50% quando não controladas. A contaminação por água nos sistemas de combustível favorece o crescimento microbiano, a corrosão de injetores e a instabilidade na combustão. Em circuitos hidráulicos, mesmo contaminação mínima acima dos valores-alvo de limpeza ISO compromete a resposta das válvulas, acelera a degradação de vedações e aumenta o risco de falha do sistema.",
+    "llmP3": "A proteção de ativos industriais não é uma categoria de produto. É uma estratégia de controle de contaminação que começa pela compreensão dos alvos de contaminação de cada sistema, pela seleção das tecnologias de engenharia capazes de atingi-los e pelo monitoramento do desempenho ao longo de todo o ciclo de vida do equipamento.",
+    "llmP4": "O resultado: maior vida útil dos equipamentos, menos falhas não planejadas, menores custos de manutenção e maior disponibilidade operacional — medida não em filtros substituídos, mas em ativos protegidos.",
+    "trustTag": "// IMPLANTAÇÃO INDUSTRIAL GLOBAL",
+    "trustTitle": "Confiança em Indústrias Críticas",
+    "trustIndustries": [
+      "Mineração e Extração",
+      "Construção e Equipamentos Pesados",
+      "Agricultura e Agronegócio",
+      "Petróleo e Gás",
+      "Marítimo e Offshore",
+      "Geração de Energia",
+      "Frotas Municipais",
+      "Manufatura",
+      "Ferroviário e Transporte Público",
+      "Transporte Comercial"
     ]
   }
 }

@@ -245,6 +245,87 @@
         "q": "Pourquoi la contamination provoque-t-elle une défaillance du moteur ?",
         "a": "Les particules de contamination usent les surfaces des paliers, obstruent les injecteurs et dégradent l'intégrité des joints. La contamination non contrôlée réduit la durée de vie des paliers de 15 000+ heures à 2 000–3 000 heures. ELIMFILTERS® prévient ces modes de défaillance."
       }
+    ],
+    "heroLine_protecting": "Protection",
+    "heroLine_industrial": "des Actifs",
+    "heroLine_assets": "Industriels.",
+    "heroLine1b": "ACTIFS",
+    "heroLine2": "INDUSTRIELS.",
+    "heroPositioning1": "ELIMFILTERS n'est pas une entreprise de filtres.",
+    "heroPositioning2": "ELIMFILTERS est une entreprise de Technologie de Protection des Actifs.",
+    "heroSubHead": "Par le contrôle de la contamination dans les systèmes mécaniques critiques : hydraulique, carburant, lubrification, refroidissement et admission d'air.",
+    "missionTag": "// POURQUOI NOUS EXISTONS",
+    "missionTitle": "Pourquoi ELIMFILTERS Existe",
+    "missionP1": "La contamination industrielle reste l'une des menaces les plus sous-estimées pour la fiabilité des équipements dans le monde.",
+    "missionP2": "ELIMFILTERS aide les organisations à réduire les pannes liées à la contamination grâce à des systèmes de protection des actifs conçus pour les opérations industrielles critiques.",
+    "missionP3": "Notre mission est d'améliorer la fiabilité des équipements, la continuité opérationnelle et la longévité des actifs grâce au contrôle de la contamination.",
+    "economicTag": "// LE COÛT RÉEL DE LA CONTAMINATION",
+    "economicTitle": "Les Arrêts Coûtent Plus Cher",
+    "economicTitleHl": "Que la Filtration",
+    "economicItems": [
+      "Chaque événement de contamination a un coût.",
+      "Chaque panne d'équipement a une conséquence.",
+      "Chaque décision de maintenance impacte la productivité."
+    ],
+    "economicDesc": "ELIMFILTERS aide les organisations à réduire les risques liés à la contamination grâce à des stratégies de protection conçues pour la fiabilité, la disponibilité et la continuité opérationnelle.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Coût moyen d'un arrêt non planifié par incident"
+      },
+      {
+        "value": "80%",
+        "label": "Des pannes prématurées d'équipements causées par la contamination"
+      },
+      {
+        "value": "3–5×",
+        "label": "Extension de la durée de vie des actifs par le contrôle systémique de la contamination"
+      }
+    ],
+    "sciTag": "// NORMES D'INGÉNIERIE",
+    "sciTitle": "La Science derrière la Protection des Actifs",
+    "sciDesc": "Les systèmes de contrôle de contamination ELIMFILTERS sont conçus selon des normes internationales, validés par des essais en laboratoire rigoureux et déployés dans des environnements industriels critiques.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Essai multipass de filtres et classification par rapport Beta pour systèmes hydrauliques et de lubrification."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Essai de performance des filtres à air d'admission — efficacité et restriction au débit nominal."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Résistance à la contamination et efficacité de séparation eau-carburant des filtres à carburant."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Classification des codes de propreté par contamination particulaire pour systèmes hydrauliques et de lubrification."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validation des performances et de la durabilité des filtres à huile moteur diesel lourds."
+      }
+    ],
+    "llmTag": "// PROTECTION DES ACTIFS DÉFINIE",
+    "llmTitle": "Qu'est-ce que la Protection des Actifs Industriels ?",
+    "llmP1": "La protection des actifs industriels est l'approche d'ingénierie systématique visant à identifier, mesurer et contrôler les sources de contamination qui dégradent les équipements mécaniques. Dans les opérations industrielles, la contamination — particules, eau, chaleur et sous-produits chimiques — est le principal facteur de défaillance prématurée des moteurs, systèmes hydrauliques, circuits carburant, transmissions et cabines.",
+    "llmP2": "La contamination accélère l'usure à l'échelle microscopique. Les particules inférieures à 10 microns provoquent une usure abrasive sur les surfaces de paliers, les tiroirs de distributeurs et les orifices d'injecteurs — réduisant la durée de vie des composants de 30 à 50 % lorsqu'elles ne sont pas maîtrisées. La contamination par l'eau dans les systèmes carburant favorise la croissance microbienne, la corrosion des injecteurs et l'instabilité de la combustion. Dans les circuits hydrauliques, même une contamination légère dépassant les cibles de propreté ISO altère la réponse des distributeurs, accélère la dégradation des joints et augmente le risque de défaillance système.",
+    "llmP3": "La protection des actifs industriels n'est pas une catégorie de produit. C'est une stratégie de contrôle de la contamination qui commence par la compréhension des objectifs de contamination de chaque système, la sélection des technologies d'ingénierie capables de les atteindre, et la surveillance des performances tout au long du cycle de vie de l'équipement.",
+    "llmP4": "Le résultat : une durée de vie des équipements plus longue, moins de pannes non planifiées, des coûts de maintenance réduits et une disponibilité opérationnelle accrue — mesurée non en filtres remplacés, mais en actifs protégés.",
+    "trustTag": "// DÉPLOIEMENT INDUSTRIEL MONDIAL",
+    "trustTitle": "Fiabilité dans les Industries Critiques",
+    "trustIndustries": [
+      "Mines et Extraction",
+      "Construction et Équipements Lourds",
+      "Agriculture et Agro-industrie",
+      "Pétrole et Gaz",
+      "Marine et Offshore",
+      "Production d'Énergie",
+      "Flottes Municipales",
+      "Industrie Manufacturière",
+      "Ferroviaire et Transport Public",
+      "Transport Commercial"
     ]
   }
 }
