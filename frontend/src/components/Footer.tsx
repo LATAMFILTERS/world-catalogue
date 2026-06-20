@@ -47,6 +47,17 @@ export function Footer() {
         { label: t('footer.fleetOpt', 'Fleet Optimization'), href: '/knowledge-system/fleet', external: false },
       ],
     },
+    {
+      title: 'LEGAL',
+      links: [
+        { label: 'Terms of Service', href: '/legal/terms', external: false },
+        { label: 'Privacy Policy', href: '/legal/privacy', external: false },
+        { label: 'AI Use Policy', href: '/legal/ai-policy', external: false },
+        { label: 'Copyright & DMCA Policy', href: '/legal/copyright', external: false },
+        { label: 'Cross Reference Policy', href: '/legal/cross-reference', external: false },
+        { label: 'Legal Disclaimer', href: '/legal/disclaimer', external: false },
+      ],
+    },
   ];
 
   return (
