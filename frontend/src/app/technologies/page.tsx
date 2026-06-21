@@ -34,6 +34,21 @@ const TECH_COMPARISON = [
   { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cross-System', func: 'PM2.5 capture + activated carbon cabin protection', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
+const TECH_CARDS = [
+  { slug: 'macrocore',      logo: '/images/macrocore(fn).avif',   bg: '/images/air-filter1.avif',        system: 'Air Intake' },
+  { slug: 'syntepore',      logo: null,                            bg: '/images/syntrapore-hero.avif',    system: 'Air Intake · Marine' },
+  { slug: 'intekcore',      logo: '/images/intekcore(fn).avif',   bg: '/images/trenes.avif',             system: 'Air Intake · Railway' },
+  { slug: 'drycore',        logo: '/images/drycore(fn).avif',     bg: '/images/airdryer-hero.avif',      system: 'Compressed Air' },
+  { slug: 'hydrocore',      logo: '/images/HYDROCORE.avif',       bg: '/images/fuelseparator.avif',      system: 'Fuel Cleanliness' },
+  { slug: 'hydrocore-series', logo: null,                          bg: '/images/turbinas-hero.avif',      system: 'Fuel · Power Gen' },
+  { slug: 'syntrax',        logo: '/images/syntrax.avif',         bg: '/images/oil-hero.avif',           system: 'Lubrication' },
+  { slug: 'nanoforce',      logo: '/images/nanoforce(fn).avif',   bg: '/images/hidraulic.avif',          system: 'Hydraulic' },
+  { slug: 'cooltech',       logo: null,                            bg: '/images/coolant-hero.avif',       system: 'Cooling System' },
+  { slug: 'marineclean',    logo: '/images/marineclean(fn).avif', bg: '/images/ingmarine.avif',          system: 'Marine · Cross-System' },
+  { slug: 'duratech',       logo: '/images/duratech(fn).avif',    bg: '/images/trucks-1.avif',           system: 'Fleet · Cross-System' },
+  { slug: 'microkappa',     logo: '/images/microkappa(fn).avif',  bg: '/images/cabin-hero.avif',         system: 'Cabin Air Quality' },
+];
+
 const FAQS = [
   {
     q: 'What is the difference between MACROCORE™ and SYNTEPORE™ air intake protection?',
@@ -205,91 +220,165 @@ export default function TechnologiesPage() {
       {/* Technologies Grid */}
       <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <StaggerContainer style={{
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.8rem,3vw,2.5rem)', color: '#fff', margin: '0 0 0.75rem' }}>
+              12 Protection Technologies
+            </h2>
+            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
+              Each technology engineered to control a specific contamination mechanism.
+            </p>
+          </motion.div>
+          <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1.5px',
           }}>
-            {catalogue.technologies.map((tech) => {
-              const slug = getSlug(tech.name);
-              const geoDef = GEO_DEFINITIONS[slug];
+            {TECH_CARDS.map((card, i) => {
+              const techData = TECH_COMPARISON.find(t => t.slug === card.slug);
+              if (!techData) return null;
               return (
-                <motion.div key={tech.name} variants={itemVariants}>
-                  <Link href={`/technologies/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <motion.div
-                      whileHover={{ y: -5, boxShadow: '0 16px 48px rgba(255,241,45,0.14)' }}
-                      transition={{ duration: 0.25, ease: 'easeOut' }}
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.3) 100%)',
-                        border: '1px solid rgba(255,241,45,0.2)',
-                        borderRadius: '12px',
-                        padding: 'clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem)',
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1rem',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      <div style={{ paddingBottom: '1rem', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
-                        <h3 style={{
-                          fontSize: '1.4rem', fontWeight: 700,
-                          fontFamily: 'Space Grotesk, sans-serif',
-                          color: 'rgba(255,255,255,0.9)', margin: '0 0 0.5rem',
+                <motion.div
+                  key={card.slug}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.04 }}
+                >
+                  <Link
+                    href={`/technologies/${card.slug}`}
+                    style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', aspectRatio: '4/3' }}
+                    onMouseEnter={e => {
+                      const img = e.currentTarget.querySelector('.tech-bg') as HTMLImageElement;
+                      const overlay = e.currentTarget.querySelector('.tech-hover') as HTMLElement;
+                      if (img) img.style.transform = 'scale(1.06)';
+                      if (overlay) overlay.style.transform = 'translateY(0)';
+                    }}
+                    onMouseLeave={e => {
+                      const img = e.currentTarget.querySelector('.tech-bg') as HTMLImageElement;
+                      const overlay = e.currentTarget.querySelector('.tech-hover') as HTMLElement;
+                      if (img) img.style.transform = 'scale(1)';
+                      if (overlay) overlay.style.transform = 'translateY(100%)';
+                    }}
+                  >
+                    {/* Background image */}
+                    <img
+                      className="tech-bg"
+                      src={card.bg}
+                      alt={techData.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
+                    />
+
+                    {/* Base gradient overlay */}
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%)',
+                    }} />
+
+                    {/* Logo centered with mix-blend-mode: screen */}
+                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {card.logo ? (
+                        <img
+                          src={card.logo}
+                          alt={techData.name}
+                          style={{
+                            maxWidth: '55%', maxHeight: '35%',
+                            objectFit: 'contain',
+                            mixBlendMode: 'screen',
+                            opacity: 0.95,
+                          }}
+                        />
+                      ) : (
+                        <span style={{
+                          fontFamily: 'var(--font-display)', fontWeight: 800,
+                          fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)',
+                          color: '#fff', textAlign: 'center', padding: '0 1rem',
+                          letterSpacing: '0.04em',
                         }}>
-                          {tech.title}
-                        </h3>
-                        {tech.subtitle && (
-                          <p style={{ fontSize: '0.9rem', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', fontWeight: 600, margin: '0' }}>
-                            {tech.subtitle}
-                          </p>
-                        )}
-                      </div>
+                          {techData.name}
+                        </span>
+                      )}
+                    </div>
 
-                      {/* GEO Definition — full prose for AI engine extraction */}
-                      <p style={{
-                        fontSize: '0.875rem',
-                        color: 'rgba(255,255,255,0.7)',
-                        fontFamily: 'Inter, sans-serif',
-                        lineHeight: 1.75,
-                        margin: '0',
-                        flexGrow: 1,
-                      }}>
-                        {geoDef || tech.description}
-                      </p>
-
-                      <div style={{ marginTop: 'auto' }}>
-                        {tech.features.length > 0 && (
-                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
-                            {tech.features.slice(0, 3).map((feature, idx) => (
-                              <span key={idx} style={{
-                                fontSize: '0.75rem',
-                                background: 'rgba(255,241,45,0.1)',
-                                color: '#FFF12D',
-                                padding: '0.4rem 0.8rem',
-                                borderRadius: '4px',
-                                fontFamily: 'Outfit, sans-serif',
-                                fontWeight: 600,
-                              }}>
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
+                    {/* Bottom label */}
+                    <div style={{
+                      position: 'absolute', bottom: '1.2rem', left: '1.2rem', right: '1.2rem',
+                      display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+                    }}>
+                      <div>
+                        {card.logo && (
+                          <span style={{
+                            display: 'block',
+                            fontFamily: 'var(--font-display)', fontWeight: 800,
+                            fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
+                            letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff',
+                          }}>
+                            {techData.name}
+                          </span>
                         )}
                         <span style={{
-                          display: 'inline-block', color: '#FFF12D',
-                          fontSize: '0.85rem', fontWeight: 600,
-                          fontFamily: 'Outfit, sans-serif', letterSpacing: '0.05em',
+                          fontFamily: 'var(--font-mono)', fontSize: '0.6rem',
+                          letterSpacing: '0.12em', color: 'rgba(255,241,45,0.7)',
+                          textTransform: 'uppercase',
                         }}>
-                          DISCOVER →
+                          {card.system}
                         </span>
                       </div>
-                    </motion.div>
+                      <span style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 600,
+                        fontSize: '0.65rem', letterSpacing: '0.15em',
+                        color: '#FFF12D', textTransform: 'uppercase',
+                      }}>
+                        EXPLORE →
+                      </span>
+                    </div>
+
+                    {/* Hover overlay — slides up */}
+                    <div
+                      className="tech-hover"
+                      style={{
+                        position: 'absolute', inset: 0,
+                        background: 'rgba(0,0,0,0.88)',
+                        transform: 'translateY(100%)',
+                        transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)',
+                        display: 'flex', flexDirection: 'column',
+                        justifyContent: 'flex-end', padding: '1.5rem',
+                        backdropFilter: 'blur(4px)',
+                      }}
+                    >
+                      <span style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 800,
+                        fontSize: '1rem', color: '#FFF12D',
+                        letterSpacing: '0.05em', marginBottom: '0.6rem',
+                        display: 'block',
+                      }}>
+                        {techData.name}
+                      </span>
+                      <p style={{
+                        fontFamily: 'var(--font-inter)', fontSize: '0.78rem',
+                        color: 'rgba(255,255,255,0.75)', lineHeight: 1.65,
+                        margin: '0 0 1rem',
+                      }}>
+                        {techData.func} — {techData.metric}
+                      </p>
+                      <span style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 700,
+                        fontSize: '0.7rem', letterSpacing: '0.12em',
+                        color: '#FFF12D', textTransform: 'uppercase',
+                      }}>
+                        EXPLORE →
+                      </span>
+                    </div>
                   </Link>
                 </motion.div>
               );
             })}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
