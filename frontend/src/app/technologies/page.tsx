@@ -40,12 +40,12 @@ const TECH_CARDS = [
   { slug: 'intekcore',        img: '/assets/INTEKCORE.avif',   system: 'Air Intake · Railway' },
   { slug: 'drycore',          img: '/assets/DRYCORE.avif',     system: 'Compressed Air' },
   { slug: 'hydrocore',        img: '/assets/HYDROCORE.avif',   system: 'Fuel Cleanliness' },
-  { slug: 'hydrocore-series', img: '/assets/HYDROCORE.avif',   system: 'Fuel · Power Gen' },
+  { slug: 'hydrocore-series', img: '/assets/THERMOCORE.avif',  system: 'Fuel · Power Gen' },
   { slug: 'syntrax',          img: '/assets/SYNTRAX.avif',     system: 'Lubrication' },
   { slug: 'nanoforce',        img: '/assets/NANOFORCE.avif',   system: 'Hydraulic' },
   { slug: 'cooltech',         img: '/assets/THERMACORE.avif',  system: 'Cooling System' },
-  { slug: 'marineclean',      img: '/images/ingmarine.avif',   system: 'Marine · Cross-System' },
-  { slug: 'duratech',         img: '/images/trucks-1.avif',    system: 'Fleet · Cross-System' },
+  { slug: 'marineclean',      img: '/assets/TURBOCORE.avif',   system: 'Marine · Cross-System' },
+  { slug: 'duratech',         img: '/assets/SYNTRAX.avif',     system: 'Fleet · Cross-System' },
   { slug: 'microkappa',       img: '/assets/MICROKAPPA.avif',  system: 'Cabin Air Quality' },
 ];
 
