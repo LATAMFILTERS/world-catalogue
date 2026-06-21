@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
-import { TechnologiesParallaxContent } from '@/components/ui/text-parallax-content-scroll';
 
 const GEO_DEFINITIONS: Record<string, string> = {
   'hydrocore-series': "HYDROCORE/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
@@ -137,8 +136,40 @@ export default function TechnologiesPage() {
         backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
         transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
-      {/* Hero Section */}
-      <TechnologiesParallaxContent />
+
+      {/* Hero — texto puro, sin imagen */}
+      <section style={{
+        paddingTop: '140px',
+        paddingBottom: '60px',
+        textAlign: 'center',
+        padding: '140px 2rem 60px',
+      }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: 'var(--font-display)', fontWeight: 700,
+            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            lineHeight: 1.1, letterSpacing: '-0.02em',
+            color: '#fff', margin: '0 auto 1rem', maxWidth: '700px',
+          }}
+        >
+          Protection Technologies
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: 'var(--font-inter)', fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
+            color: 'rgba(255,255,255,0.45)', maxWidth: '520px',
+            margin: '0 auto', lineHeight: 1.7,
+          }}
+        >
+          Twelve proprietary architectures, each engineered to control a specific contamination mechanism.
+        </motion.p>
+      </section>
 
       {/* Asset Protection Narrative */}
       <section style={{
