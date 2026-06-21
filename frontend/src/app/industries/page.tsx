@@ -17,7 +17,7 @@ const INDUSTRIES = [
   { slug: 'bus-coach',        label: 'Bus & Coach',       src: '/images/bus-hero.avif' },
   { slug: 'manufacturing',    label: 'Manufacturing',     src: '/images/manufactura.avif' },
   { slug: 'railway',          label: 'Railway',           src: '/images/ing-railway.avif' },
-  { slug: 'waste-municipal',  label: 'Waste & Municipal', src: '/images/wasted.avif' },
+  { slug: 'waste-municipal',  label: 'Waste & Municipal', src: '/images/wasted-municipal.avif' },
 ];
 
 export default function IndustriesPage() {
