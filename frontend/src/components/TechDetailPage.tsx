@@ -111,16 +111,20 @@ export function TechDetailPage({ data }: Props) {
           position: 'relative',
           overflow: 'hidden',
         }}>
-          {/* Subtle dot matrix background */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 0,
-            backgroundImage: 'radial-gradient(rgba(255,241,45,0.07) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
-          }} />
-          {/* Radial fade so content stays readable */}
+          {/* Hero image background */}
+          {data.heroImage && (
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 0,
+              backgroundImage: `url(${data.heroImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.18,
+            }} />
+          )}
+          {/* Dark overlay to keep content readable */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
-            background: 'radial-gradient(ellipse 80% 70% at 50% 40%, transparent 30%, #000 100%)',
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%)',
           }} />
 
           <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
