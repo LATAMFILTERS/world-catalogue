@@ -25,6 +25,6 @@ graphify-out/
 elimfilters-vault/.obsidian/
 
 # Next.js build output — generated, never commit
-frontend/out/
+# frontend/out/ is tracked intentionally for Windows local serving
 frontend/.next/
 .next/
