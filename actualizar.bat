@@ -14,9 +14,10 @@ git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/images/ingmarin
 git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/images/generatorsupervisor.avif
 git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/images/transport.avif
 git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/industries/index.html
+git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/technologies/index.html
 
 echo Iniciando servidor...
 start cmd /k "npx serve@latest -l 3000 \"C:\Users\VICTOR ABREU\Documents\world-catalogue\frontend\out\""
 
-echo Listo. Abre http://localhost:3000/industries/ en modo incognito
+echo Listo. Abre http://localhost:3000/technologies/ en modo incognito
 pause
