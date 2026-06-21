@@ -136,7 +136,7 @@ export default function CinematicHero() {
             color: "rgba(255,255,255,0.42)",
             margin: 0,
           }}>
-            {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend the operational life of critical industrial equipment.")}
+            {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.")}
           </p>
 
           {/* CTAs */}
