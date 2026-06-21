@@ -144,19 +144,19 @@ export default function IndustriesPage() {
                   justifyContent: 'space-between',
                 }}>
                   <span style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
-                    fontWeight: 700,
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 800,
                     fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
-                    letterSpacing: '0.08em',
+                    letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     color: '#fff',
                   }}>
                     {industry.label}
                   </span>
                   <span style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontFamily: 'var(--font-display)',
                     fontWeight: 600,
-                    fontSize: '0.7rem',
+                    fontSize: '0.65rem',
                     letterSpacing: '0.15em',
                     color: '#FFF12D',
                     textTransform: 'uppercase',
