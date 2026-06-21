@@ -120,7 +120,7 @@ export default function IndustriesPage() {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                     display: 'block',
                     transition: 'transform 0.5s ease',
                   }}
