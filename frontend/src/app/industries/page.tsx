@@ -6,14 +6,14 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 const INDUSTRIES = [
-  { slug: 'mining',           label: 'Mining',            src: '/images/mineria.avif' },
-  { slug: 'agriculture',      label: 'Agriculture',       src: '/images/agriculture.avif' },
+  { slug: 'mining',           label: 'Mining',            src: '/images/construccion.avif' },
+  { slug: 'agriculture',      label: 'Agriculture',       src: '/images/agriculture-2_converted.avif' },
   { slug: 'oil-gas',          label: 'Oil & Gas',         src: '/images/oil&gas.avif' },
   { slug: 'marine',           label: 'Marine',            src: '/images/marine-hero.avif' },
   { slug: 'power-generation', label: 'Power Generation',  src: '/images/turbinas-hero.avif' },
   { slug: 'heavy-transport',  label: 'Heavy Transport',   src: '/images/trucks-1.avif' },
   { slug: 'construction',     label: 'Construction',      src: '/images/chino-construction.avif' },
-  { slug: 'automotive',       label: 'Automotive',        src: '/images/autos-02.avif' },
+  { slug: 'automotive',       label: 'Automotive',        src: '/images/camionroto.avif' },
   { slug: 'bus-coach',        label: 'Bus & Coach',       src: '/images/bus-hero.avif' },
   { slug: 'manufacturing',    label: 'Manufacturing',     src: '/images/manufacture.avif' },
   { slug: 'railway',          label: 'Railway',           src: '/images/turbina-instalada.avif' },
