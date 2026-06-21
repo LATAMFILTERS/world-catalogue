@@ -237,7 +237,7 @@ export default function TechnologiesPage() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '1.5px',
+            gap: '1px',
           }}>
             {TECH_CARDS.map((card, i) => {
               const techData = TECH_COMPARISON.find(t => t.slug === card.slug);
@@ -252,58 +252,80 @@ export default function TechnologiesPage() {
                 >
                   <Link
                     href={`/technologies/${card.slug}`}
-                    style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', aspectRatio: '4/3' }}
+                    style={{
+                      display: 'flex', flexDirection: 'column',
+                      textDecoration: 'none', position: 'relative',
+                      overflow: 'hidden', aspectRatio: '4/3',
+                      background: '#0a0a0a',
+                      border: '1px solid rgba(255,255,255,0.06)',
+                    }}
                     onMouseEnter={e => {
-                      const img = e.currentTarget.querySelector('.tech-bg') as HTMLImageElement;
-                      const overlay = e.currentTarget.querySelector('.tech-hover') as HTMLElement;
-                      if (img) img.style.transform = 'scale(1.06)';
-                      if (overlay) overlay.style.transform = 'translateY(0)';
+                      const el = e.currentTarget as HTMLElement;
+                      const img = el.querySelector('.tech-logo') as HTMLImageElement;
+                      const info = el.querySelector('.tech-info') as HTMLElement;
+                      el.style.borderColor = 'rgba(255,241,45,0.3)';
+                      el.style.background = '#111';
+                      if (img) img.style.transform = 'scale(1.05)';
+                      if (info) info.style.opacity = '1';
                     }}
                     onMouseLeave={e => {
-                      const img = e.currentTarget.querySelector('.tech-bg') as HTMLImageElement;
-                      const overlay = e.currentTarget.querySelector('.tech-hover') as HTMLElement;
+                      const el = e.currentTarget as HTMLElement;
+                      const img = el.querySelector('.tech-logo') as HTMLImageElement;
+                      const info = el.querySelector('.tech-info') as HTMLElement;
+                      el.style.borderColor = 'rgba(255,255,255,0.06)';
+                      el.style.background = '#0a0a0a';
                       if (img) img.style.transform = 'scale(1)';
-                      if (overlay) overlay.style.transform = 'translateY(100%)';
+                      if (info) info.style.opacity = '0';
                     }}
                   >
-                    {/* Technology product image */}
-                    <img
-                      className="tech-bg"
-                      src={card.img}
-                      alt={techData.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                    />
-
-                    {/* Base gradient overlay */}
+                    {/* Logo centrado */}
                     <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
-                    }} />
-
-                    {/* Bottom label */}
-                    <div style={{
-                      position: 'absolute', bottom: '1.2rem', left: '1.2rem', right: '1.2rem',
-                      display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+                      flex: 1, display: 'flex',
+                      alignItems: 'center', justifyContent: 'center',
+                      padding: '2rem',
                     }}>
-                      <div>
-                        <span style={{
-                          display: 'block',
-                          fontFamily: 'var(--font-display)', fontWeight: 800,
-                          fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
-                          letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff',
-                        }}>
-                          {techData.name}
-                        </span>
-                        <span style={{
-                          fontFamily: 'var(--font-mono)', fontSize: '0.6rem',
-                          letterSpacing: '0.12em', color: 'rgba(255,241,45,0.7)',
-                          textTransform: 'uppercase',
-                        }}>
-                          {card.system}
-                        </span>
-                      </div>
+                      <img
+                        className="tech-logo"
+                        src={card.img}
+                        alt={techData.name}
+                        style={{
+                          maxWidth: '80%', maxHeight: '140px',
+                          objectFit: 'contain',
+                          transition: 'transform 0.4s ease',
+                        }}
+                      />
+                    </div>
+
+                    {/* Info hover — fade in */}
+                    <div
+                      className="tech-info"
+                      style={{
+                        position: 'absolute', inset: 0,
+                        background: 'rgba(0,0,0,0.92)',
+                        display: 'flex', flexDirection: 'column',
+                        justifyContent: 'center', alignItems: 'center',
+                        padding: '1.5rem', textAlign: 'center',
+                        opacity: 0,
+                        transition: 'opacity 0.3s ease',
+                      }}
+                    >
                       <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 600,
+                        fontFamily: 'var(--font-display)', fontWeight: 800,
+                        fontSize: '1rem', color: '#FFF12D',
+                        letterSpacing: '0.05em', marginBottom: '0.75rem',
+                        display: 'block',
+                      }}>
+                        {techData.name}
+                      </span>
+                      <p style={{
+                        fontFamily: 'var(--font-inter)', fontSize: '0.78rem',
+                        color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,
+                        margin: '0 0 1.25rem',
+                      }}>
+                        {techData.func}
+                      </p>
+                      <span style={{
+                        fontFamily: 'var(--font-display)', fontWeight: 700,
                         fontSize: '0.65rem', letterSpacing: '0.15em',
                         color: '#FFF12D', textTransform: 'uppercase',
                       }}>
@@ -311,40 +333,35 @@ export default function TechnologiesPage() {
                       </span>
                     </div>
 
-                    {/* Hover overlay — slides up */}
-                    <div
-                      className="tech-hover"
-                      style={{
-                        position: 'absolute', inset: 0,
-                        background: 'rgba(0,0,0,0.88)',
-                        transform: 'translateY(100%)',
-                        transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1)',
-                        display: 'flex', flexDirection: 'column',
-                        justifyContent: 'flex-end', padding: '1.5rem',
-                        backdropFilter: 'blur(4px)',
-                      }}
-                    >
+                    {/* Bottom label (siempre visible) */}
+                    <div style={{
+                      padding: '0.9rem 1.2rem',
+                      borderTop: '1px solid rgba(255,255,255,0.06)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    }}>
+                      <div>
+                        <span style={{
+                          display: 'block',
+                          fontFamily: 'var(--font-display)', fontWeight: 800,
+                          fontSize: '0.8rem', letterSpacing: '0.06em',
+                          textTransform: 'uppercase', color: '#fff',
+                        }}>
+                          {techData.name}
+                        </span>
+                        <span style={{
+                          fontFamily: 'var(--font-mono)', fontSize: '0.58rem',
+                          letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)',
+                          textTransform: 'uppercase',
+                        }}>
+                          {card.system}
+                        </span>
+                      </div>
                       <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 800,
-                        fontSize: '1rem', color: '#FFF12D',
-                        letterSpacing: '0.05em', marginBottom: '0.6rem',
-                        display: 'block',
-                      }}>
-                        {techData.name}
-                      </span>
-                      <p style={{
-                        fontFamily: 'var(--font-inter)', fontSize: '0.78rem',
-                        color: 'rgba(255,255,255,0.75)', lineHeight: 1.65,
-                        margin: '0 0 1rem',
-                      }}>
-                        {techData.func} — {techData.metric}
-                      </p>
-                      <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 700,
-                        fontSize: '0.7rem', letterSpacing: '0.12em',
+                        fontFamily: 'var(--font-display)', fontWeight: 600,
+                        fontSize: '0.6rem', letterSpacing: '0.15em',
                         color: '#FFF12D', textTransform: 'uppercase',
                       }}>
-                        EXPLORE →
+                        →
                       </span>
                     </div>
                   </Link>

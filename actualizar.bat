@@ -29,7 +29,7 @@ git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/assets/MICROKAP
 
 git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/industries/index.html
 git checkout origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out/technologies/index.html
-git checkout origin/claude/ecstatic-fermi-rqhwq2 -- "frontend/out/_next/static/chunks/app/technologies/page-5bd95a7837c58403.js"
+git checkout origin/claude/ecstatic-fermi-rqhwq2 -- "frontend/out/_next/static/chunks/app/technologies/page-129736499c8438e0.js"
 
 echo Iniciando servidor...
 start cmd /k "npx serve@latest -l 3000 \"C:\Users\VICTOR ABREU\Documents\world-catalogue\frontend\out\""
