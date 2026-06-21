@@ -101,66 +101,74 @@ export function TechDetailPage({ data }: Props) {
       <main style={{ background: '#000', color: '#fff' }}>
 
         {/* ══════════════════════════════════════════════
-            SECTION 1 — LOGO IDENTITY BLOCK
-            Centered, full-width, logo as primary element
+            SECTION 1 — HERO: full-bleed image + logo
         ══════════════════════════════════════════════ */}
         <section style={{
+          position: 'relative',
+          width: '100%',
+          minHeight: data.heroImage ? '92vh' : 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          overflow: 'hidden',
           background: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
-          padding: '1.5rem 2rem 0',
-          position: 'relative',
-          overflow: 'hidden',
         }}>
-          {/* Hero image background */}
+          {/* Full-bleed hero image */}
           {data.heroImage && (
-            <div style={{
-              position: 'absolute', inset: 0, zIndex: 0,
-              backgroundImage: `url(${data.heroImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.18,
-            }} />
+            <img
+              src={data.heroImage}
+              alt={data.heroTitle}
+              style={{
+                position: 'absolute', inset: 0,
+                width: '100%', height: '100%',
+                objectFit: 'cover', objectPosition: 'center',
+                zIndex: 0,
+              }}
+            />
           )}
-          {/* Dark overlay to keep content readable */}
+
+          {/* Gradient overlay — dark at bottom for text legibility */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%)',
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.92) 100%)',
           }} />
 
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+          {/* Content over image */}
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem' }}>
 
             {/* Category tag */}
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <span className="category-tag" style={{
+              <span style={{
                 display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
                 letterSpacing: '0.28em', color: '#FFF12D',
                 fontFamily: 'JetBrains Mono, monospace',
-                marginBottom: '0.75rem',
+                marginBottom: '1.5rem',
                 padding: '0.35rem 0.85rem',
-                border: '1px solid rgba(255,241,45,0.25)',
+                border: '1px solid rgba(255,241,45,0.35)',
                 borderRadius: '2px',
+                background: 'rgba(0,0,0,0.5)',
               }}>
                 {data.categoryTag}
               </span>
             </motion.div>
 
-            {/* Logo — the protagonist */}
+            {/* Logo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '0.5rem' }}
+              style={{ marginBottom: '1.5rem' }}
             >
               <img
                 src={data.logoSrc}
                 alt={data.heroTitle}
                 style={{
                   display: 'block',
-                  margin: '0 auto',
-                  width: 'clamp(300px, 38vw, 560px)',
+                  width: 'clamp(260px, 32vw, 480px)',
                   height: 'auto',
                   mixBlendMode: 'screen',
-                  filter: 'brightness(1.15) contrast(1.1)',
+                  filter: 'brightness(1.2) contrast(1.1)',
                 }}
               />
             </motion.div>
@@ -169,47 +177,41 @@ export function TechDetailPage({ data }: Props) {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.55, delay: 0.38 }}
+              transition={{ duration: 0.55, delay: 0.35 }}
               style={{
-                fontSize: 'clamp(0.85rem, 1.4vw, 1rem)',
-                maxWidth: '640px',
-                margin: '0 auto',
-                lineHeight: 1.85,
-                color: 'rgba(255,255,255,0.5)',
-                fontFamily: 'Titillium Web, sans-serif',
-                fontStyle: 'italic',
+                fontSize: 'clamp(0.85rem, 1.3vw, 1rem)',
+                maxWidth: '560px',
+                lineHeight: 1.8,
+                color: 'rgba(255,255,255,0.65)',
+                fontFamily: 'Outfit, sans-serif',
+                margin: '0 0 0',
               }}
             >
               {data.heroTagline}
             </motion.p>
 
-            {/* Stats strip — horizontal, full width, below tagline */}
+            {/* Stats strip */}
             {data.heroStats && data.heroStats.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="hero-stats-strip"
                 style={{
                   display: 'flex',
-                  justifyContent: 'center',
                   flexWrap: 'wrap',
                   gap: '0',
-                  marginTop: '4rem',
-                  borderTop: '1px solid rgba(255,255,255,0.06)',
+                  marginTop: '3rem',
+                  borderTop: '1px solid rgba(255,255,255,0.12)',
                 }}
               >
                 {data.heroStats.map(({ key, value }, i) => (
-                  <div key={key} className="hero-stat-item" style={{
-                    flex: '1',
-                    minWidth: '120px',
-                    maxWidth: '220px',
-                    padding: '1.75rem 1.5rem',
-                    borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-                    textAlign: 'center',
+                  <div key={key} style={{
+                    flex: '1', minWidth: '120px', maxWidth: '220px',
+                    padding: '1.5rem 1.5rem',
+                    borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   }}>
-                    <div style={{ fontSize: '0.52rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.3)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{key}</div>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{value}</div>
+                    <div style={{ fontSize: '0.52rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{key}</div>
+                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Outfit, sans-serif', lineHeight: 1 }}>{value}</div>
                   </div>
                 ))}
               </motion.div>
