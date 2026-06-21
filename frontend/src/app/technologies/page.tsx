@@ -35,18 +35,18 @@ const TECH_COMPARISON = [
 ];
 
 const TECH_CARDS = [
-  { slug: 'macrocore',      logo: '/images/macrocore(fn).avif',   bg: '/images/air-filter1.avif',        system: 'Air Intake' },
-  { slug: 'syntepore',      logo: null,                            bg: '/images/syntrapore-hero.avif',    system: 'Air Intake · Marine' },
-  { slug: 'intekcore',      logo: '/images/intekcore(fn).avif',   bg: '/images/trenes.avif',             system: 'Air Intake · Railway' },
-  { slug: 'drycore',        logo: '/images/drycore(fn).avif',     bg: '/images/airdryer-hero.avif',      system: 'Compressed Air' },
-  { slug: 'hydrocore',      logo: '/images/HYDROCORE.avif',       bg: '/images/fuelseparator.avif',      system: 'Fuel Cleanliness' },
-  { slug: 'hydrocore-series', logo: null,                          bg: '/images/turbinas-hero.avif',      system: 'Fuel · Power Gen' },
-  { slug: 'syntrax',        logo: '/images/syntrax.avif',         bg: '/images/oil-hero.avif',           system: 'Lubrication' },
-  { slug: 'nanoforce',      logo: '/images/nanoforce(fn).avif',   bg: '/images/hidraulic.avif',          system: 'Hydraulic' },
-  { slug: 'cooltech',       logo: null,                            bg: '/images/coolant-hero.avif',       system: 'Cooling System' },
-  { slug: 'marineclean',    logo: '/images/marineclean(fn).avif', bg: '/images/ingmarine.avif',          system: 'Marine · Cross-System' },
-  { slug: 'duratech',       logo: '/images/duratech(fn).avif',    bg: '/images/trucks-1.avif',           system: 'Fleet · Cross-System' },
-  { slug: 'microkappa',     logo: '/images/microkappa(fn).avif',  bg: '/images/cabin-hero.avif',         system: 'Cabin Air Quality' },
+  { slug: 'macrocore',        img: '/assets/MACROCORE.avif',   system: 'Air Intake' },
+  { slug: 'syntepore',        img: '/assets/SYNTEPORE.avif',   system: 'Air Intake · Marine' },
+  { slug: 'intekcore',        img: '/assets/INTEKCORE.avif',   system: 'Air Intake · Railway' },
+  { slug: 'drycore',          img: '/assets/DRYCORE.avif',     system: 'Compressed Air' },
+  { slug: 'hydrocore',        img: '/assets/HYDROCORE.avif',   system: 'Fuel Cleanliness' },
+  { slug: 'hydrocore-series', img: '/assets/HYDROCORE.avif',   system: 'Fuel · Power Gen' },
+  { slug: 'syntrax',          img: '/assets/SYNTRAX.avif',     system: 'Lubrication' },
+  { slug: 'nanoforce',        img: '/assets/NANOFORCE.avif',   system: 'Hydraulic' },
+  { slug: 'cooltech',         img: '/assets/THERMACORE.avif',  system: 'Cooling System' },
+  { slug: 'marineclean',      img: '/images/ingmarine.avif',   system: 'Marine · Cross-System' },
+  { slug: 'duratech',         img: '/images/trucks-1.avif',    system: 'Fleet · Cross-System' },
+  { slug: 'microkappa',       img: '/assets/MICROKAPPA.avif',  system: 'Cabin Air Quality' },
 ];
 
 const FAQS = [
@@ -266,10 +266,10 @@ export default function TechnologiesPage() {
                       if (overlay) overlay.style.transform = 'translateY(100%)';
                     }}
                   >
-                    {/* Background image */}
+                    {/* Technology product image */}
                     <img
                       className="tech-bg"
-                      src={card.bg}
+                      src={card.img}
                       alt={techData.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
                     />
@@ -277,33 +277,8 @@ export default function TechnologiesPage() {
                     {/* Base gradient overlay */}
                     <div style={{
                       position: 'absolute', inset: 0,
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%)',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
                     }} />
-
-                    {/* Logo centered with mix-blend-mode: screen */}
-                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {card.logo ? (
-                        <img
-                          src={card.logo}
-                          alt={techData.name}
-                          style={{
-                            maxWidth: '55%', maxHeight: '35%',
-                            objectFit: 'contain',
-                            mixBlendMode: 'screen',
-                            opacity: 0.95,
-                          }}
-                        />
-                      ) : (
-                        <span style={{
-                          fontFamily: 'var(--font-display)', fontWeight: 800,
-                          fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)',
-                          color: '#fff', textAlign: 'center', padding: '0 1rem',
-                          letterSpacing: '0.04em',
-                        }}>
-                          {techData.name}
-                        </span>
-                      )}
-                    </div>
 
                     {/* Bottom label */}
                     <div style={{
@@ -311,16 +286,14 @@ export default function TechnologiesPage() {
                       display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
                     }}>
                       <div>
-                        {card.logo && (
-                          <span style={{
-                            display: 'block',
-                            fontFamily: 'var(--font-display)', fontWeight: 800,
-                            fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
-                            letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff',
-                          }}>
-                            {techData.name}
-                          </span>
-                        )}
+                        <span style={{
+                          display: 'block',
+                          fontFamily: 'var(--font-display)', fontWeight: 800,
+                          fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
+                          letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff',
+                        }}>
+                          {techData.name}
+                        </span>
                         <span style={{
                           fontFamily: 'var(--font-mono)', fontSize: '0.6rem',
                           letterSpacing: '0.12em', color: 'rgba(255,241,45,0.7)',
