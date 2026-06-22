@@ -46,15 +46,27 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)';
           }}
         >
-          {/* Left: image */}
-          <div style={{ position: 'relative', backgroundColor: '#080808', overflow: 'hidden' }}>
-            <div style={{
-              position: 'absolute', inset: 0,
-              backgroundImage: `url(${src})`,
-              backgroundSize: 'auto 150%',
-              backgroundPosition: 'center top',
-              backgroundRepeat: 'no-repeat',
-            }} />
+          {/* Left: title text only */}
+          <div style={{
+            backgroundColor: '#080808',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            borderRight: '1px solid rgba(255,255,255,0.04)',
+          }}>
+            <span style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 900,
+              fontSize: 'clamp(1.6rem, 3.5vw, 3rem)',
+              letterSpacing: '-0.03em',
+              color: '#fff',
+              textAlign: 'center',
+              lineHeight: 1.1,
+              wordBreak: 'break-word',
+            }}>
+              {title}
+            </span>
           </div>
 
           {/* Right: info */}
