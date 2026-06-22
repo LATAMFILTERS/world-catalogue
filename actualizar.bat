@@ -6,6 +6,7 @@ timeout /t 2 /nobreak >nul
 echo Actualizando repositorio...
 cd /d "C:\Users\VICTOR ABREU\Documents\world-catalogue"
 git fetch origin claude/ecstatic-fermi-rqhwq2
+rmdir /s /q frontend\out
 git checkout -f origin/claude/ecstatic-fermi-rqhwq2 -- frontend/out
 
 echo Iniciando servidor...
