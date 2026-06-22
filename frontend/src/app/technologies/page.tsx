@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
+import { ScrollCards, type iCardItem } from '@/components/ui/scroll-cards';
 
 const GEO_DEFINITIONS: Record<string, string> = {
   'hydrocore-series': "HYDROCORE/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
@@ -33,19 +34,103 @@ const TECH_COMPARISON = [
   { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cross-System', func: 'PM2.5 capture + activated carbon cabin protection', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
-const TECH_CARDS = [
-  { slug: 'macrocore',        img: '/assets/MACROCORE.avif',   system: 'Air Intake' },
-  { slug: 'syntepore',        img: '/assets/SYNTEPORE.avif',   system: 'Air Intake · Marine' },
-  { slug: 'intekcore',        img: '/assets/INTEKCORE.avif',   system: 'Air Intake · Railway' },
-  { slug: 'drycore',          img: '/assets/DRYCORE.avif',     system: 'Compressed Air' },
-  { slug: 'hydrocore',        img: '/assets/HYDROCORE.avif',   system: 'Fuel Cleanliness' },
-  { slug: 'hydrocore-series', img: '/assets/THERMOCORE.avif',  system: 'Fuel · Power Gen' },
-  { slug: 'syntrax',          img: '/assets/SYNTRAX.avif',     system: 'Lubrication' },
-  { slug: 'nanoforce',        img: '/assets/NANOFORCE.avif',   system: 'Hydraulic' },
-  { slug: 'cooltech',         img: '/assets/THERMACORE.avif',  system: 'Cooling System' },
-  { slug: 'marineclean',      img: '/assets/TURBOCORE.avif',   system: 'Marine · Cross-System' },
-  { slug: 'duratech',         img: '/assets/SYNTRAX.avif',     system: 'Fleet · Cross-System' },
-  { slug: 'microkappa',       img: '/assets/MICROKAPPA.avif',  system: 'Cabin Air Quality' },
+const SCROLL_ITEMS: iCardItem[] = [
+  {
+    title: 'MACROCORE™',
+    subtitle: 'Progressive Density Engineering',
+    description: 'Multi-layer air filtration achieving 99.9%–99.98% interception efficiency. ISO 5011 certified. 62 PSI anti-collapse rated for heavy-duty combustion engines.',
+    system: 'Air Intake',
+    src: '/assets/MACROCORE.avif',
+    href: '/technologies/macrocore',
+  },
+  {
+    title: 'SYNTEPORE™',
+    subtitle: 'All-Synthetic Intake Architecture',
+    description: 'All-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure degrades cellulose media.',
+    system: 'Air Intake · Marine',
+    src: '/assets/SYNTEPORE.avif',
+    href: '/technologies/syntepore',
+  },
+  {
+    title: 'INTEKCORE™',
+    subtitle: 'High-Pressure Housing Architecture',
+    description: 'Precision-formed sealing surfaces and corrosion-resistant materials for zero-bypass performance in high-vibration railway and industrial environments.',
+    system: 'Air Intake · Railway',
+    src: '/assets/INTEKCORE.avif',
+    href: '/technologies/intekcore',
+  },
+  {
+    title: 'DRYCORE™',
+    subtitle: 'Molecular Sieve Desiccant',
+    description: 'Removes moisture from compressed air and pneumatic systems. Achieves ISO 8573-1 Class 1–2 dew point targets preventing corrosion and freeze events.',
+    system: 'Compressed Air',
+    src: '/assets/DRYCORE.avif',
+    href: '/technologies/drycore',
+  },
+  {
+    title: 'HYDROCORE™',
+    subtitle: 'Turbine-Stage Water Separation',
+    description: 'Removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Protects HPCR injectors operating at 1,800–2,500 bar.',
+    system: 'Fuel Cleanliness',
+    src: '/assets/HYDROCORE.avif',
+    href: '/technologies/hydrocore',
+  },
+  {
+    title: 'HYDROCORE/SERIES™',
+    subtitle: 'High-Flow Power Systems',
+    description: 'Three-stage asset protection for turbine fuel systems. FH 900FH and 1000FH models for large-scale power generation and mining operations.',
+    system: 'Fuel · Power Gen',
+    src: '/assets/THERMOCORE.avif',
+    href: '/technologies/hydrocore-series',
+  },
+  {
+    title: 'SYNTRAX™',
+    subtitle: 'Extended Drain Interval Protection',
+    description: 'Maintains ISO 4406 cleanliness codes (16/14/11) throughout 60,000–100,000 km drain intervals. Captures combustion soot above 2% by weight.',
+    system: 'Lubrication',
+    src: '/assets/SYNTRAX.avif',
+    href: '/technologies/syntrax',
+  },
+  {
+    title: 'NANOFORCE™',
+    subtitle: 'Sub-Micron Beta-Rated Control',
+    description: 'Hydraulic contamination control for 200–450 bar circuits. Maintains ISO 4406 16/14/11 protecting proportional valve spool clearances of 5–25 µm.',
+    system: 'Hydraulic',
+    src: '/assets/NANOFORCE.avif',
+    href: '/technologies/nanoforce',
+  },
+  {
+    title: 'COOLTECH™',
+    subtitle: 'DCA-Replenishing Coolant Protection',
+    description: 'SCA release technology preventing liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits.',
+    system: 'Cooling System',
+    src: '/assets/THERMACORE.avif',
+    href: '/technologies/cooltech',
+  },
+  {
+    title: 'MARINECLEAN™',
+    subtitle: 'Corrosion-Resistant Marine Protection',
+    description: 'IMO certified fuel and lube protection for marine environments. ASTM B117 salt-spray resistant for offshore platforms and commercial vessels.',
+    system: 'Marine · Cross-System',
+    src: '/assets/TURBOCORE.avif',
+    href: '/technologies/marineclean',
+  },
+  {
+    title: 'DURATECH™',
+    subtitle: 'Fleet Standardisation Architecture',
+    description: 'Multi-domain fleet standardisation with OEM-interchangeable service kits across mixed-fleet operations in mining, construction, and agriculture.',
+    system: 'Fleet · Cross-System',
+    src: '/assets/SYNTRAX.avif',
+    href: '/technologies/duratech',
+  },
+  {
+    title: 'MICROKAPPA™',
+    subtitle: 'Electrostatic Cabin Protection',
+    description: 'PM2.5 capture combined with activated carbon. Reduces cabin PM2.5 concentration by up to 85%. EU Directive 2019/130 compliance for commercial operators.',
+    system: 'Cabin Air Quality',
+    src: '/assets/MICROKAPPA.avif',
+    href: '/technologies/microkappa',
+  },
 ];
 
 const FAQS = [
@@ -137,39 +222,85 @@ export default function TechnologiesPage() {
         transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
 
-      {/* Hero — texto puro, sin imagen */}
+      {/* Hero */}
       <section style={{
-        paddingTop: '140px',
-        paddingBottom: '60px',
-        textAlign: 'center',
-        padding: '140px 2rem 60px',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        position: 'relative',
       }}>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span style={{
+            display: 'block',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.28em',
+            color: '#FFF12D',
+            marginBottom: '1.5rem',
+          }}>
+            // ELIMFILTERS · ASSET PROTECTION TECHNOLOGIES
+          </span>
+          <h1 style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 900,
+            fontSize: 'clamp(3rem, 8vw, 7rem)',
+            lineHeight: 0.92,
+            letterSpacing: '-0.03em',
+            color: '#fff',
+            margin: '0 0 2rem',
+            maxWidth: '900px',
+          }}>
+            Protection<br />Technologies
+          </h1>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
+            color: 'rgba(255,255,255,0.45)',
+            maxWidth: '480px',
+            lineHeight: 1.75,
+            margin: 0,
+          }}>
+            Twelve proprietary architectures. Each engineered to control a specific contamination mechanism that causes equipment failure.
+          </p>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
           style={{
-            fontFamily: 'var(--font-display)', fontWeight: 700,
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-            lineHeight: 1.1, letterSpacing: '-0.02em',
-            color: '#fff', margin: '0 auto 1rem', maxWidth: '700px',
+            position: 'absolute',
+            bottom: '2.5rem',
+            right: 'clamp(1.5rem,5vw,3rem)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.6rem',
+            letterSpacing: '0.2em',
+            color: 'rgba(255,255,255,0.25)',
           }}
         >
-          Protection Technologies
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: 'var(--font-inter)', fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
-            color: 'rgba(255,255,255,0.45)', maxWidth: '520px',
-            margin: '0 auto', lineHeight: 1.7,
-          }}
-        >
-          Twelve proprietary architectures, each engineered to control a specific contamination mechanism.
-        </motion.p>
+          SCROLL
+          <div style={{
+            width: '1px',
+            height: '48px',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.25), transparent)',
+          }} />
+        </motion.div>
       </section>
+
+      {/* Scroll Cards — 12 Technologies */}
+      <ScrollCards items={SCROLL_ITEMS} />
 
       {/* Asset Protection Narrative */}
       <section style={{
@@ -248,160 +379,7 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Technologies Grid */}
-      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '3rem' }}
-          >
-            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.8rem,3vw,2.5rem)', color: '#fff', margin: '0 0 0.75rem' }}>
-              12 Protection Technologies
-            </h2>
-            <p style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-              Each technology engineered to control a specific contamination mechanism.
-            </p>
-          </motion.div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '1px',
-          }}>
-            {TECH_CARDS.map((card, i) => {
-              const techData = TECH_COMPARISON.find(t => t.slug === card.slug);
-              if (!techData) return null;
-              return (
-                <motion.div
-                  key={card.slug}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.04 }}
-                >
-                  <Link
-                    href={`/technologies/${card.slug}`}
-                    style={{
-                      display: 'flex', flexDirection: 'column',
-                      textDecoration: 'none', position: 'relative',
-                      overflow: 'hidden', aspectRatio: '4/3',
-                      background: '#0a0a0a',
-                      border: '1px solid rgba(255,255,255,0.06)',
-                    }}
-                    onMouseEnter={e => {
-                      const el = e.currentTarget as HTMLElement;
-                      const img = el.querySelector('.tech-logo') as HTMLImageElement;
-                      const info = el.querySelector('.tech-info') as HTMLElement;
-                      el.style.borderColor = 'rgba(255,241,45,0.3)';
-                      el.style.background = '#111';
-                      if (img) img.style.transform = 'scale(1.05)';
-                      if (info) info.style.opacity = '1';
-                    }}
-                    onMouseLeave={e => {
-                      const el = e.currentTarget as HTMLElement;
-                      const img = el.querySelector('.tech-logo') as HTMLImageElement;
-                      const info = el.querySelector('.tech-info') as HTMLElement;
-                      el.style.borderColor = 'rgba(255,255,255,0.06)';
-                      el.style.background = '#0a0a0a';
-                      if (img) img.style.transform = 'scale(1)';
-                      if (info) info.style.opacity = '0';
-                    }}
-                  >
-                    {/* Logo centrado */}
-                    <div style={{
-                      flex: 1, display: 'flex',
-                      alignItems: 'center', justifyContent: 'center',
-                      padding: '2rem',
-                    }}>
-                      <img
-                        className="tech-logo"
-                        src={card.img}
-                        alt={techData.name}
-                        style={{
-                          maxWidth: '80%', maxHeight: '140px',
-                          objectFit: 'contain',
-                          transition: 'transform 0.4s ease',
-                        }}
-                      />
-                    </div>
-
-                    {/* Info hover — fade in */}
-                    <div
-                      className="tech-info"
-                      style={{
-                        position: 'absolute', inset: 0,
-                        background: 'rgba(0,0,0,0.92)',
-                        display: 'flex', flexDirection: 'column',
-                        justifyContent: 'center', alignItems: 'center',
-                        padding: '1.5rem', textAlign: 'center',
-                        opacity: 0,
-                        transition: 'opacity 0.3s ease',
-                      }}
-                    >
-                      <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 800,
-                        fontSize: '1rem', color: '#FFF12D',
-                        letterSpacing: '0.05em', marginBottom: '0.75rem',
-                        display: 'block',
-                      }}>
-                        {techData.name}
-                      </span>
-                      <p style={{
-                        fontFamily: 'var(--font-inter)', fontSize: '0.78rem',
-                        color: 'rgba(255,255,255,0.7)', lineHeight: 1.6,
-                        margin: '0 0 1.25rem',
-                      }}>
-                        {techData.func}
-                      </p>
-                      <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 700,
-                        fontSize: '0.65rem', letterSpacing: '0.15em',
-                        color: '#FFF12D', textTransform: 'uppercase',
-                      }}>
-                        EXPLORE →
-                      </span>
-                    </div>
-
-                    {/* Bottom label (siempre visible) */}
-                    <div style={{
-                      padding: '0.9rem 1.2rem',
-                      borderTop: '1px solid rgba(255,255,255,0.06)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    }}>
-                      <div>
-                        <span style={{
-                          display: 'block',
-                          fontFamily: 'var(--font-display)', fontWeight: 800,
-                          fontSize: '0.8rem', letterSpacing: '0.06em',
-                          textTransform: 'uppercase', color: '#fff',
-                        }}>
-                          {techData.name}
-                        </span>
-                        <span style={{
-                          fontFamily: 'var(--font-mono)', fontSize: '0.58rem',
-                          letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)',
-                          textTransform: 'uppercase',
-                        }}>
-                          {card.system}
-                        </span>
-                      </div>
-                      <span style={{
-                        fontFamily: 'var(--font-display)', fontWeight: 600,
-                        fontSize: '0.6rem', letterSpacing: '0.15em',
-                        color: '#FFF12D', textTransform: 'uppercase',
-                      }}>
-                        →
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Technologies Grid — removed, replaced by ScrollCards above */}
 
       {/* Why Technology Matters */}
       <section style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
