@@ -296,16 +296,16 @@ export function TechDetailPage({ data }: Props) {
         {data.specs.length > 0 && (
           <section style={{ padding: '5rem 2rem', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
+              <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
                 {data.specs.map((spec, idx) => (
                   <motion.div key={idx} variants={itemVariants} style={{
                     background: '#050505',
-                    padding: '2rem 1.75rem',
+                    padding: '2.25rem 2rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '0.65rem',
+                    gap: '0.75rem',
                   }}>
-                    {/* Large value — the hero of each card */}
+                    {/* Large value */}
                     <div style={{
                       fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
                       fontWeight: 900,
@@ -316,26 +316,25 @@ export function TechDetailPage({ data }: Props) {
                     }}>
                       {spec.value}
                     </div>
-                    {/* Label — clear, readable */}
+                    {/* Label */}
                     <div style={{
-                      fontSize: '0.7rem',
+                      fontSize: '0.85rem',
                       fontWeight: 700,
-                      letterSpacing: '0.14em',
-                      color: 'rgba(255,255,255,0.55)',
-                      fontFamily: 'JetBrains Mono, monospace',
+                      letterSpacing: '0.1em',
+                      color: 'rgba(255,255,255,0.75)',
+                      fontFamily: 'Inter, sans-serif',
                       textTransform: 'uppercase',
                     }}>
                       {spec.label}
                     </div>
                     {/* Description */}
                     <div style={{
-                      fontSize: '0.8rem',
-                      color: 'rgba(255,255,255,0.3)',
+                      fontSize: '0.85rem',
+                      color: 'rgba(255,255,255,0.45)',
                       fontFamily: 'Inter, sans-serif',
-                      lineHeight: 1.6,
-                      borderTop: '1px solid rgba(255,255,255,0.06)',
-                      paddingTop: '0.65rem',
-                      marginTop: '0.15rem',
+                      lineHeight: 1.65,
+                      borderTop: '1px solid rgba(255,255,255,0.07)',
+                      paddingTop: '0.75rem',
                     }}>
                       {spec.sub}
                     </div>
