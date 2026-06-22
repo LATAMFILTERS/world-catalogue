@@ -17,38 +17,37 @@ interface iCardProps extends iCardItem {
 }
 
 const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href, i, total }) => {
-  const scale = 1 - (total - 1 - i) * 0.03;
+  const top = 80 + i * 12;
 
   return (
     <div style={{
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
       position: 'sticky',
-      top: 0,
+      top: `${top}px`,
+      zIndex: i + 1,
+      padding: '0 2rem',
+      paddingBottom: '1rem',
     }}>
-      <Link href={href} style={{ textDecoration: 'none', width: '100%', maxWidth: '1100px', padding: '0 2rem' }}>
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          height: 'clamp(420px, 65vh, 580px)',
-          overflow: 'hidden',
-          transform: `scale(${scale})`,
-          transformOrigin: 'top center',
-          transition: 'transform 0.1s linear',
-          cursor: 'pointer',
-        }}
+      <Link href={href} style={{ textDecoration: 'none', display: 'block', maxWidth: '1100px', margin: '0 auto' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            height: 'clamp(280px, 38vh, 360px)',
+            background: '#0c0c0c',
+            border: '1px solid rgba(255,255,255,0.07)',
+            overflow: 'hidden',
+            cursor: 'pointer',
+            transition: 'border-color 0.2s',
+          }}
           onMouseEnter={e => {
-            (e.currentTarget as HTMLDivElement).style.outline = '1px solid rgba(255,241,45,0.4)';
+            (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,241,45,0.35)';
           }}
           onMouseLeave={e => {
-            (e.currentTarget as HTMLDivElement).style.outline = 'none';
+            (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)';
           }}
         >
-          {/* Background image */}
+          {/* Left: image */}
           <div style={{
-            position: 'absolute', inset: 0,
             backgroundImage: `url(${src})`,
             backgroundSize: 'contain',
             backgroundPosition: 'center',
@@ -56,46 +55,51 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             backgroundColor: '#080808',
           }} />
 
-          {/* Gradient overlay */}
+          {/* Right: info */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(120deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.3) 100%)',
-          }} />
-
-          {/* Content */}
-          <div style={{
-            position: 'relative', zIndex: 2,
-            height: '100%',
+            padding: 'clamp(1.5rem, 3vw, 2.5rem)',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-end',
-            padding: 'clamp(2rem, 4vw, 3.5rem)',
+            justifyContent: 'center',
+            borderLeft: '1px solid rgba(255,255,255,0.06)',
           }}>
-            {/* System tag */}
-            <span style={{
-              display: 'inline-block',
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.6rem',
-              fontWeight: 700,
-              letterSpacing: '0.28em',
-              color: '#FFF12D',
-              marginBottom: '1rem',
-              padding: '0.3rem 0.75rem',
-              border: '1px solid rgba(255,241,45,0.35)',
-              width: 'fit-content',
+            {/* Counter + system */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              marginBottom: '1.25rem',
             }}>
-              {system.toUpperCase()}
-            </span>
+              <span style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.6rem',
+                color: 'rgba(255,255,255,0.2)',
+                letterSpacing: '0.15em',
+              }}>
+                {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+              </span>
+              <span style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.6rem',
+                fontWeight: 700,
+                letterSpacing: '0.25em',
+                color: '#FFF12D',
+                padding: '0.25rem 0.6rem',
+                border: '1px solid rgba(255,241,45,0.3)',
+              }}>
+                {system.toUpperCase()}
+              </span>
+            </div>
 
             {/* Title */}
             <h2 style={{
               fontFamily: 'var(--font-display)',
-              fontWeight: 900,
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontWeight: 800,
+              fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)',
               letterSpacing: '-0.02em',
               color: '#fff',
-              lineHeight: 1,
-              marginBottom: '0.5rem',
+              lineHeight: 1.05,
+              marginBottom: '0.4rem',
             }}>
               {title}
             </h2>
@@ -103,11 +107,11 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             {/* Subtitle */}
             <p style={{
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.75rem',
-              color: 'rgba(255,255,255,0.5)',
+              fontSize: '0.65rem',
+              color: 'rgba(255,255,255,0.4)',
               letterSpacing: '0.15em',
-              marginBottom: '1.25rem',
               textTransform: 'uppercase',
+              marginBottom: '1rem',
             }}>
               {subtitle}
             </p>
@@ -115,41 +119,25 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             {/* Description */}
             <p style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(0.85rem, 1.2vw, 0.95rem)',
-              color: 'rgba(255,255,255,0.65)',
-              lineHeight: 1.7,
-              maxWidth: '520px',
+              fontSize: 'clamp(0.8rem, 1.1vw, 0.88rem)',
+              color: 'rgba(255,255,255,0.55)',
+              lineHeight: 1.65,
+              maxWidth: '400px',
             }}>
               {description}
             </p>
 
             {/* Arrow */}
             <div style={{
-              marginTop: '2rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
+              marginTop: '1.5rem',
               fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.7rem',
+              fontSize: '0.65rem',
               letterSpacing: '0.2em',
               color: '#FFF12D',
               fontWeight: 700,
             }}>
-              EXPLORE TECHNOLOGY →
+              EXPLORE →
             </div>
-          </div>
-
-          {/* Card number */}
-          <div style={{
-            position: 'absolute',
-            top: 'clamp(1.5rem, 3vw, 2.5rem)',
-            right: 'clamp(1.5rem, 3vw, 2.5rem)',
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: 'rgba(255,255,255,0.25)',
-            letterSpacing: '0.15em',
-          }}>
-            {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
           </div>
         </div>
       </Link>
@@ -163,7 +151,7 @@ interface iScrollCardsProps {
 
 const ScrollCards: FC<iScrollCardsProps> = ({ items }) => {
   return (
-    <div>
+    <div style={{ paddingBottom: '4rem' }}>
       {items.map((item, i) => (
         <Card key={item.title} {...item} i={i} total={items.length} />
       ))}
