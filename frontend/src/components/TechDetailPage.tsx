@@ -217,9 +217,6 @@ export function TechDetailPage({ data }: Props) {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
               <AnimateIn direction="left">
-                <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
-                  // TECHNICAL OVERVIEW
-                </span>
                 <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, marginBottom: '2rem', whiteSpace: 'pre-line' }}>
                   {data.systemHeadline}
                 </h2>
@@ -281,9 +278,6 @@ export function TechDetailPage({ data }: Props) {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '4rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
-                  // PROTECTION ARCHITECTURE
-                </span>
                 <h2 style={{ fontSize: 'clamp(1.3rem, 2.4vw, 1.9rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, margin: 0 }}>
                   {data.stagesHeading || 'EACH LAYER STOPS WHAT THE PREVIOUS CANNOT.'}
                 </h2>
@@ -335,9 +329,6 @@ export function TechDetailPage({ data }: Props) {
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
               <AnimateIn direction="up">
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
-                    // PROTECTION PARAMETERS
-                  </span>
                   <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                     {data.specsHeading || 'FIELD SPECIFICATIONS'}
                   </h2>
@@ -363,9 +354,6 @@ export function TechDetailPage({ data }: Props) {
           <section style={{ padding: '5rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <AnimateIn direction="up">
-                <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '2.5rem' }}>
-                  // FIELD REPORT
-                </span>
                 <blockquote style={{ margin: 0, padding: '2.5rem', background: '#050505', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '3px solid #FFF12D' }}>
                   <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.7)', fontFamily: 'Titillium Web, sans-serif', fontStyle: 'italic', margin: '0 0 1.5rem' }}>
                     &ldquo;{data.testimonial.quote}&rdquo;
@@ -389,9 +377,6 @@ export function TechDetailPage({ data }: Props) {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', flexWrap: 'wrap', marginBottom: data.applicationsSubtext ? '1rem' : '3rem' }}>
-                <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', flexShrink: 0 }}>
-                  // ASSET APPLICATIONS
-                </span>
                 <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
                   {data.applicationsHeading}
                 </h2>
