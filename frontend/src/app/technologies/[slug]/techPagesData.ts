@@ -171,7 +171,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'VAPOR CONTROL', value: 'ACTIVE' },
       { key: 'STRUCTURAL', value: 'HIGH-PRESSURE' },
     ],
-    logoSrc: '/images/nanoforce(fn).avif',
+    logoSrc: '/assets/NANOFORCE.avif',
     systemHeadline: 'HIGH-PRESSURE HYDRAULIC\nCIRCUIT PROTECTION.',
     systemParagraphs: [
       'Hydraulic systems are the most contamination-sensitive circuits in any mobile or stationary machine. Hydraulic control valves, pumps and actuators operate on tolerances measured in single-digit microns — any contamination that bypasses filtration accelerates wear exponentially, not linearly.',
