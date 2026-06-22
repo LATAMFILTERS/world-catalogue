@@ -7,7 +7,7 @@ import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 import { ScrollCards, type iCardItem } from '@/components/ui/scroll-cards';
 
 const GEO_DEFINITIONS: Record<string, string> = {
-  'hydrocore-series': "HYDROCORE/SERIES™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+  'turbocore-series': "TURBOCORE™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   'hydrocore': 'HYDROCORE™ is a hydrophobic water-separation asset protection technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
   'cooltech': 'COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
   'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
@@ -25,7 +25,7 @@ const TECH_COMPARISON = [
   { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake & Airflow Protection', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
   { name: 'DRYCORE™', slug: 'drycore', system: 'Air Intake & Airflow Protection', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
   { name: 'HYDROCORE™', slug: 'hydrocore', system: 'Fuel Cleanliness Protection', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
-  { name: 'HYDROCORE/SERIES™', slug: 'hydrocore-series', system: 'Fuel Cleanliness Protection', func: 'High-flow fuel protection for stationary power systems', metric: '99.8% free water removal · High-flow power systems', industries: 'Power Generation, Mining, Stationary industrial' },
+  { name: 'TURBOCORE™', slug: 'turbocore-series', system: 'Fuel Cleanliness Protection', func: 'High-flow fuel protection for stationary power systems', metric: '99.8% free water removal · High-flow power systems', industries: 'Power Generation, Mining, Stationary industrial' },
   { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication Protection', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
   { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic Protection', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
   { name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System Protection', func: 'DCA-replenishing coolant protection', metric: 'SCA restoration · liner cavitation prevention', industries: 'Trucks & Fleets, Bus & Coach, Power Gen' },
@@ -76,12 +76,12 @@ const SCROLL_ITEMS: iCardItem[] = [
     href: '/technologies/hydrocore',
   },
   {
-    title: 'HYDROCORE/SERIES™',
+    title: 'TURBOCORE™',
     subtitle: 'High-Flow Power Systems',
     description: 'Three-stage asset protection for turbine fuel systems. FH 900FH and 1000FH models for large-scale power generation and mining operations.',
     system: 'Fuel · Power Gen',
     src: '/assets/TURBOCORE.avif',
-    href: '/technologies/hydrocore-series',
+    href: '/technologies/turbocore-series',
   },
   {
     title: 'SYNTRAX™',

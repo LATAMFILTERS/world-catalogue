@@ -2,10 +2,10 @@ import { TechDetailData } from '@/components/TechDetailPage';
 
 export const TECH_PAGES: Record<string, TechDetailData> = {
 
-  'hydrocore-series': {
-    categoryTag: '// FUEL ASSET PROTECTION · SERIES FH',
-    heroTitle: 'HYDROCORE',
-    heroSubtitle: '/SERIES™',
+  'turbocore-series': {
+    categoryTag: '// FUEL ASSET PROTECTION · TURBOCORE™',
+    heroTitle: 'TURBOCORE™',
+    heroSubtitle: 'SERIES FH',
     heroTagline: 'Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.',
     heroImage: '/images/turbine-plant.avif',
     heroStats: [
@@ -13,15 +13,15 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: '1000FH', value: '180 GPH' },
       { key: 'ISO 16332', value: 'CERTIFIED' },
     ],
-    logoSrc: '/images/hydrocore-series(fn).avif',
+    logoSrc: '/images/turbocore-series(fn).avif',
     systemHeadline: 'THREE-STAGE DEFENSE.\nFULL CONTAMINATION SPECTRUM.',
     systemParagraphs: [
-      'Conventional fuel filters intercept particles. HYDROCORE/SERIES™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
+      'Conventional fuel filters intercept particles. TURBOCORE™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
       'The 900FH and 1000FH models deploy HYDROCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.',
       'The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.',
     ],
     productImageSrc: '/images/turbine-plant.avif',
-    productImageCaption: 'HYDROCORE/SERIES™ · 900FH / 1000FH',
+    productImageCaption: 'TURBOCORE™ · 900FH / 1000FH',
     stagesHeading: 'EACH STAGE ELIMINATES WHAT THE PREVIOUS ONE CANNOT.',
     stages: [
       {
@@ -57,7 +57,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { label: 'CERTIFICATION', value: 'ISO', sub: '16332 — Fuel/water separation standard' },
       { label: 'DRAIN SYSTEM', value: 'AUTO', sub: 'Integrated visual monitoring port' },
     ],
-    applicationsHeading: 'WHERE HYDROCORE/SERIES™ PROTECTS',
+    applicationsHeading: 'WHERE TURBOCORE™ PROTECTS',
     applicationsSubtext: 'FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.',
     applications: [
       { sector: 'HEAVY TRANSPORT', detail: 'Long-haul diesel drawn from shared depot storage tanks accumulates water contamination from condensation cycles in the supply chain. At 1,800+ bar injection pressure, a free-water event in the HPCR rail can hydraulically fracture an injector — an event that takes the vehicle out of service for days, not hours. Water content in depot-sourced diesel is rarely tested before delivery.' },
@@ -72,7 +72,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       role: 'Refinery Equipment Manager',
       sector: 'Port Operations — 85 units',
     },
-    ctaTag: '// IDENTIFY YOUR HYDROCORE/SERIES™ SKU',
+    ctaTag: '// IDENTIFY YOUR TURBOCORE™ SKU',
     ctaHeading: 'FIND YOUR PROTECTION SYSTEM',
     ctaBody: 'Cross-reference 500,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.',
   },

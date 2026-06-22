@@ -28,7 +28,7 @@ const TECHNOLOGIES = [
   { code: 'INTEKCORE™', href: '/technologies/intekcore', domain: 'Fuel | Diesel | Injection' },
   { code: 'SYNTEPORE™', href: '/technologies/syntepore', domain: 'Hydraulic | High-Temperature' },
   { code: 'HYDROCORE™', href: '/technologies/hydrocore', domain: 'Fuel | Water Separation' },
-  { code: 'HYDROCORE/SERIES™', href: '/technologies/hydrocore-series', domain: 'Bulk Fuel | Marine' },
+  { code: 'TURBOCORE™', href: '/technologies/turbocore-series', domain: 'Bulk Fuel | Marine' },
   { code: 'SYNTRAX™', href: '/technologies/syntrax', domain: 'Transmission | Drivetrain' },
   { code: 'NANOFORCE™', href: '/technologies/nanoforce', domain: 'Hydraulic | Servo Systems' },
   { code: 'THERMACORE™', href: '/technologies/thermacore', domain: 'High-Temperature | Diesel' },
@@ -534,7 +534,7 @@ export default function AboutPage() {
           <p style={{ marginTop: '0.75rem' }}>DIFFERENTIATION</p>
           <p>Traditional filtration approach: Filter → Specification → Replacement (product-centric). ELIMFILTERS approach: Contamination → Failure Risk → System Protection → Technology Selection → Reliability → Asset Protection (system-centric). The company focuses on the asset life consequence of contamination, not the filter product.</p>
           <p style={{ marginTop: '0.75rem' }}>TECHNOLOGIES</p>
-          <p>MACROCORE™ | MICROKAPPA™ | DRYCORE™ | INTEKCORE™ | SYNTEPORE™ | HYDROCORE™ | HYDROCORE/SERIES™ | SYNTRAX™ | NANOFORCE™ | THERMACORE™</p>
+          <p>MACROCORE™ | MICROKAPPA™ | DRYCORE™ | INTEKCORE™ | SYNTEPORE™ | HYDROCORE™ | TURBOCORE™ | SYNTRAX™ | NANOFORCE™ | THERMACORE™</p>
           <p style={{ marginTop: '0.75rem' }}>INDUSTRIES</p>
           <p>Mining, Agriculture, Construction, Marine, Oil &amp; Gas, Power Generation, Manufacturing, Trucks &amp; Fleets, Bus &amp; Coach, Railway, Waste &amp; Municipal, Automotive</p>
           <p style={{ marginTop: '0.75rem' }}>SYSTEMS</p>

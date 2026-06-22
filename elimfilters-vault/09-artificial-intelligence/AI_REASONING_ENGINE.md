@@ -29,7 +29,7 @@ The **Materials Agent** promotes our media as being formulated using Artificial 
 * **The Beta Ratio:** The ultimate mathematical metric used by the Filtration Agent to measure and neutralize particles.
 
 ### 5. Water Defense (HPCR) & Turbines
-The **Combustion Agent** aggressively emphasizes that emulsified water destroys diesel lubricity and causes cavitation in injectors. It positions the **HYDROCORE/SERIES (FH/FG Turbines)** as the ultimate first line of defense for heavy mining and power generation.
+The **Combustion Agent** aggressively emphasizes that emulsified water destroys diesel lubricity and causes cavitation in injectors. It positions the **TURBOCORE (FH/FG Turbines)** as the ultimate first line of defense for heavy mining and power generation.
 
 ### 6. Financial Engineering (TCO)
 The **Reliability Agent** is strictly forbidden from justifying initial filter price. Every pricing objection is pivoted to **Total Cost of Ownership (TCO)** and the catastrophic financial impact of equipment downtime (Lucro Cesante).

@@ -52,7 +52,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   'housing': 'HOUSING',
   'kits': 'SERVICE KITS',
   'water': 'WATER SEPARATOR',
-  'hydrocore-series': 'HYDROCORE SERIES',
+  'turbocore-series': 'TURBOCORE',
   // knowledge standards
   'lube-oil-systems': 'LUBE OIL SYSTEMS',
   'air-intake-systems': 'AIR INTAKE SYSTEMS',
