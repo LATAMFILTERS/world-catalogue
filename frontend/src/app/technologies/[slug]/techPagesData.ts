@@ -403,7 +403,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'PROTECTION', value: 'ZERO MIGRATION' },
       { key: 'TARGET', value: 'INJECTOR DEFENSE' },
     ],
-    logoSrc: '/images/syntapore(fn).avif',
+    logoSrc: '/assets/SYNTEPORE.avif',
     systemHeadline: 'THE INJECTOR\'S\nFINAL GUARDIAN.',
     systemParagraphs: [
       'Common Rail injection systems operate at pressures exceeding 2,000 bar. At this pressure, a contamination particle as small as 4 microns can score injector needle seats and destroy the precision tolerances that control injection timing and fuel atomization quality.',
