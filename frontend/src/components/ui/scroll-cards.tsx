@@ -107,18 +107,6 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
               {title}
             </h2>
 
-            {/* Subtitle */}
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              color: 'rgba(255,255,255,0.4)',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              marginBottom: '1rem',
-            }}>
-              {subtitle}
-            </p>
-
             {/* Description */}
             <p style={{
               fontFamily: 'Inter, sans-serif',
