@@ -117,9 +117,9 @@ export function TechDetailPage({ data }: Props) {
           /* Logo is layer 0 (screen blend), gradient is layer 1, photo is layer 2.
              All rendered together — no flash from separate img element. */
           backgroundImage: data.heroImage && data.logoSrc
-            ? `url(${data.logoSrc}), linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
+            ? `url('${data.logoSrc}'), linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url('${data.heroImage}')`
             : data.heroImage
-              ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
+              ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url('${data.heroImage}')`
               : undefined,
           backgroundBlendMode: data.logoSrc ? 'screen, normal, normal' : undefined,
           backgroundSize: data.logoSrc
