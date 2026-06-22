@@ -113,28 +113,14 @@ export function TechDetailPage({ data }: Props) {
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          background: '#000',
+          backgroundImage: data.heroImage
+            ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
+            : undefined,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}>
-          {/* Full-bleed hero image */}
-          {data.heroImage && (
-            <img
-              src={data.heroImage}
-              alt={data.heroTitle}
-              style={{
-                position: 'absolute', inset: 0,
-                width: '100%', height: '100%',
-                objectFit: 'cover', objectPosition: 'center',
-                zIndex: 0,
-              }}
-            />
-          )}
-
-          {/* Gradient overlay — dark at bottom for text legibility */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.92) 100%)',
-          }} />
 
           {/* Content over image */}
           <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
