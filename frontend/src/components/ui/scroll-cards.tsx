@@ -46,15 +46,23 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)';
           }}
         >
-          {/* Left: image — clip bottom 38% to hide subtitle text baked into avif */}
+          {/* Left: image */}
           <div style={{ position: 'relative', backgroundColor: '#080808', overflow: 'hidden' }}>
+            {/* image positioned toward top so subtitle falls below mask */}
             <div style={{
               position: 'absolute', inset: 0,
               backgroundImage: `url(${src})`,
-              backgroundSize: '80%',
-              backgroundPosition: 'center center',
+              backgroundSize: '75%',
+              backgroundPosition: 'center 30%',
               backgroundRepeat: 'no-repeat',
-              clipPath: 'inset(0 0 45% 0)',
+            }} />
+            {/* solid mask covers bottom 30% — hides subtitle text in image */}
+            <div style={{
+              position: 'absolute',
+              left: 0, right: 0, bottom: 0,
+              height: '30%',
+              backgroundColor: '#080808',
+              zIndex: 2,
             }} />
           </div>
 
