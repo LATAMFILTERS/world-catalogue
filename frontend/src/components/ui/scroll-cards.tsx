@@ -65,47 +65,6 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             justifyContent: 'center',
             borderLeft: '1px solid rgba(255,255,255,0.06)',
           }}>
-            {/* Counter + system */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
-              marginBottom: '1.25rem',
-            }}>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.6rem',
-                color: 'rgba(255,255,255,0.2)',
-                letterSpacing: '0.15em',
-              }}>
-                {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-              </span>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.6rem',
-                fontWeight: 700,
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                padding: '0.25rem 0.6rem',
-                border: '1px solid rgba(255,241,45,0.3)',
-              }}>
-                {system.toUpperCase()}
-              </span>
-            </div>
-
-            {/* Title */}
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 800,
-              fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)',
-              letterSpacing: '-0.02em',
-              color: '#fff',
-              lineHeight: 1.05,
-              marginBottom: '0.4rem',
-            }}>
-              {title}
-            </h2>
-
             {/* Description */}
             <p style={{
               fontFamily: 'Inter, sans-serif',
