@@ -397,7 +397,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'SYNTEPORE™',
     heroSubtitle: 'PRECISION INJECTOR GUARD',
     heroTagline: 'Progressive multi-layer protection architecture intercepting sub-micron contamination before it reaches Common Rail injectors. The last line of defense for high-pressure fuel injection systems operating above 2,000 bar.',
-    heroImage: '/images/hero-syntapore.avif',
+    heroImage: '/images/nanoforce.avif',
     heroStats: [
       { key: 'BARRIER RATING', value: '4 MICRON' },
       { key: 'PROTECTION', value: 'ZERO MIGRATION' },
