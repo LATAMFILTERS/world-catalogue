@@ -106,10 +106,12 @@ export function TechDetailPage({ data }: Props) {
         <section style={{
           position: 'relative',
           width: '100%',
-          minHeight: data.heroImage ? '92vh' : 'auto',
+          height: data.heroImage ? '100vh' : 'auto',
+          minHeight: data.heroImage ? '100vh' : 'auto',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
+          alignItems: 'center',
           overflow: 'hidden',
           background: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -135,7 +137,7 @@ export function TechDetailPage({ data }: Props) {
           }} />
 
           {/* Content over image */}
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem' }}>
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
             {/* Category tag */}
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
@@ -167,8 +169,7 @@ export function TechDetailPage({ data }: Props) {
                   display: 'block',
                   width: 'clamp(260px, 32vw, 480px)',
                   height: 'auto',
-                  mixBlendMode: 'screen',
-                  filter: 'brightness(1.2) contrast(1.1)',
+                  filter: 'brightness(1.1) drop-shadow(0 2px 24px rgba(0,0,0,0.6))',
                 }}
               />
             </motion.div>
