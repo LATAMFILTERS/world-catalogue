@@ -390,69 +390,6 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* Asset Protection Architecture Map */}
-      <section style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: '2.5rem' }}
-          >
-            <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-              // ASSET PROTECTION ARCHITECTURE MAP
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: 0 }}>
-              Protection Domain Architecture
-            </h2>
-          </motion.div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1.25rem' }}>
-            {[
-              { domain: 'Air Intake & Airflow', techs: ['MACROCORE™', 'INTEKCORE™', 'DRYCORE™'] },
-              { domain: 'Fuel Cleanliness', techs: ['HYDROCORE™', 'HYDROCORE/SERIES™', 'SYNTEPORE™'] },
-              { domain: 'Lubrication', techs: ['SYNTRAX™'] },
-              { domain: 'Hydraulic', techs: ['NANOFORCE™'] },
-              { domain: 'Cooling System', techs: ['THERMACORE™'] },
-              { domain: 'Cabin Air Quality', techs: ['MICROKAPPA™'] },
-              { domain: 'Fleet Lifecycle', techs: ['DURATECH™'] },
-              { domain: 'Marine & Offshore', techs: ['MARINECLEAN™'] },
-            ].map(({ domain, techs }) => (
-              <motion.div
-                key={domain}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '8px',
-                  padding: '1.25rem',
-                }}
-              >
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: '#FFF12D', marginBottom: '0.6rem', textTransform: 'uppercase', lineHeight: 1.4 }}>
-                  {domain}
-                </p>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'rgba(255,241,45,0.3)', margin: '0 0 0.5rem', lineHeight: 1 }}>↓</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                  {techs.map(tech => {
-                    const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
-                    return (
-                      <Link key={tech} href={`/technologies/${slug}`} style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', transition: 'color 0.2s' }}
-                        onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D')}
-                        onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.85)')}
-                      >
-                        {tech} →
-                      </Link>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Technology Comparison Table */}
       <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: 'rgba(255,241,45,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
