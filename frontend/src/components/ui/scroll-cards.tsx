@@ -47,13 +47,21 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
           }}
         >
           {/* Left: image */}
-          <div style={{
-            backgroundImage: `url(${src})`,
-            backgroundSize: '90%',
-            backgroundPosition: 'center 5%',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#080808',
-          }} />
+          <div style={{ position: 'relative', backgroundColor: '#080808', overflow: 'hidden' }}>
+            <div style={{
+              position: 'absolute', inset: 0,
+              backgroundImage: `url(${src})`,
+              backgroundSize: '80%',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat',
+            }} />
+            {/* fade bottom to hide subtitle text baked into image */}
+            <div style={{
+              position: 'absolute', left: 0, right: 0, bottom: 0,
+              height: '35%',
+              background: 'linear-gradient(to top, #0c0c0c 40%, transparent 100%)',
+            }} />
+          </div>
 
           {/* Right: info */}
           <div style={{
