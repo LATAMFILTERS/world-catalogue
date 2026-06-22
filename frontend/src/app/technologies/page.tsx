@@ -300,76 +300,77 @@ export default function TechnologiesPage() {
         </motion.div>
       </section>
 
-      {/* Technology Governance Principle */}
+      {/* Engineering Principle */}
       <section style={{
-        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
-        background: 'rgba(255,241,45,0.03)',
-        borderBottom: '1px solid rgba(255,241,45,0.1)',
-        borderTop: '1px solid rgba(255,255,255,0.04)',
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
+        background: '#000',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
       }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-                {[
-                  'Contamination Control',
-                  'Protection Systems',
-                  'Technology Architectures',
-                  'Product Implementations',
-                  'Protected Assets',
-                  'Operational Outcomes',
-                ].map((item, i, arr) => (
-                  <div key={item}>
-                    <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: i === 0 ? '#FFF12D' : i === arr.length - 1 ? '#FFF12D' : 'rgba(255,255,255,0.85)', margin: 0 }}>
-                      {item}
-                    </p>
-                    {i < arr.length - 1 && (
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', color: 'rgba(255,241,45,0.35)', margin: '0.3rem 0', lineHeight: 1 }}>↓</p>
-                    )}
-                  </div>
-                ))}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1px 1fr',
+              gap: '0',
+              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'rgba(255,255,255,0.02)',
+            }}>
+              {/* Left: hierarchy chain */}
+              <div style={{ padding: 'clamp(2rem,4vw,3rem)' }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
+                  Engineering Hierarchy
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                  {[
+                    { label: 'Contamination Control', accent: true },
+                    { label: 'Protection Systems', accent: false },
+                    { label: 'Technology Architectures', accent: false },
+                    { label: 'Product Implementations', accent: false },
+                    { label: 'Protected Assets', accent: false },
+                    { label: 'Operational Outcomes', accent: true },
+                  ].map(({ label, accent }, i, arr) => (
+                    <div key={label}>
+                      <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: '0.95rem', color: accent ? '#FFF12D' : 'rgba(255,255,255,0.8)', margin: 0 }}>
+                        {label}
+                      </p>
+                      {i < arr.length - 1 && (
+                        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', color: 'rgba(255,241,45,0.25)', margin: '0.35rem 0', lineHeight: 1 }}>↓</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '0.25rem' }}>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
-                  Products never define strategy.
-                </p>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
-                  Technologies support systems.
-                </p>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', margin: 0 }}>
-                  Systems protect assets.
-                </p>
+
+              {/* Divider */}
+              <div style={{ background: 'rgba(255,255,255,0.07)' }} />
+
+              {/* Right: principle statements */}
+              <div style={{ padding: 'clamp(2rem,4vw,3rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
+                    Design Principle
+                  </p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.85, marginBottom: '0.85rem' }}>
+                    Technology is where reliability engineering becomes operational reality.
+                  </p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.85, marginBottom: '1.75rem' }}>
+                    Failures do not occur because equipment is old. Failures occur because contamination mechanisms remain uncontrolled.
+                  </p>
+                </div>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {['Products never define strategy.', 'Technologies support systems.', 'Systems protect assets.'].map(s => (
+                    <p key={s} style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.9rem', color: '#fff', margin: 0, lineHeight: 1.5 }}>
+                      {s}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Technologies Grid — removed, replaced by ScrollCards above */}
-
-      {/* Why Technology Matters */}
-      <section style={{ padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
-              Technology is where reliability engineering becomes operational reality.
-            </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
-              Failures do not occur because equipment is old. Failures occur because contamination mechanisms remain uncontrolled.
-            </p>
-            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.1rem)', color: '#fff', lineHeight: 1.6 }}>
-              Every ELIMFILTERS asset protection technology exists to control one of those mechanisms.
-            </p>
           </motion.div>
         </div>
       </section>
