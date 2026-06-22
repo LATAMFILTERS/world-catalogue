@@ -49,8 +49,8 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
           {/* Left: image */}
           <div style={{
             backgroundImage: `url(${src})`,
-            backgroundSize: '75%',
-            backgroundPosition: 'center 35%',
+            backgroundSize: '90%',
+            backgroundPosition: 'center 5%',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#080808',
           }} />
