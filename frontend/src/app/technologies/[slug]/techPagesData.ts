@@ -328,7 +328,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'COMPATIBILITY', value: 'OEM-FIT' },
       { key: 'ENVIRONMENT', value: 'HEAVY-DUTY' },
     ],
-    logoSrc: '/images/intekcore(fn).avif',
+    logoSrc: '/assets/INTEKCORE.avif',
     systemHeadline: 'THE HOUSING IS NOT\nA PASSIVE COMPONENT.',
     systemParagraphs: [
       'In heavy-duty truck and machinery applications, the filter housing defines the reliability boundary of the entire filtration system. A compromised housing — through corrosion, thread wear, bypass valve failure or seal degradation — neutralizes the protection value of the filter element it contains. INTEKCORE™ housing systems are engineered so the housing never becomes the failure point.',
