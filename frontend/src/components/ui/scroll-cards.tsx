@@ -54,7 +54,7 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
               backgroundSize: '80%',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat',
-              clipPath: 'inset(0 0 38% 0)',
+              clipPath: 'inset(0 0 45% 0)',
             }} />
           </div>
 
