@@ -296,19 +296,49 @@ export function TechDetailPage({ data }: Props) {
         {data.specs.length > 0 && (
           <section style={{ padding: '5rem 2rem', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <AnimateIn direction="up">
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-                  <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.55rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
-                    {data.specsHeading || 'FIELD SPECIFICATIONS'}
-                  </h2>
-                </div>
-              </AnimateIn>
-              <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
+              <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
                 {data.specs.map((spec, idx) => (
-                  <motion.div key={idx} variants={itemVariants} style={{ background: '#050505', padding: '1.65rem 1.4rem' }}>
-                    <div style={{ fontSize: '0.52rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.28)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.6rem' }}>{spec.label}</div>
-                    <div style={{ fontSize: '1.7rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1, marginBottom: '0.4rem' }}>{spec.value}</div>
-                    <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.38)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.5 }}>{spec.sub}</div>
+                  <motion.div key={idx} variants={itemVariants} style={{
+                    background: '#050505',
+                    padding: '2rem 1.75rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.65rem',
+                  }}>
+                    {/* Large value — the hero of each card */}
+                    <div style={{
+                      fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+                      fontWeight: 900,
+                      color: '#FFF12D',
+                      fontFamily: 'Titillium Web, sans-serif',
+                      lineHeight: 1,
+                      letterSpacing: '-0.01em',
+                    }}>
+                      {spec.value}
+                    </div>
+                    {/* Label — clear, readable */}
+                    <div style={{
+                      fontSize: '0.7rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                      color: 'rgba(255,255,255,0.55)',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      textTransform: 'uppercase',
+                    }}>
+                      {spec.label}
+                    </div>
+                    {/* Description */}
+                    <div style={{
+                      fontSize: '0.8rem',
+                      color: 'rgba(255,255,255,0.3)',
+                      fontFamily: 'Inter, sans-serif',
+                      lineHeight: 1.6,
+                      borderTop: '1px solid rgba(255,255,255,0.06)',
+                      paddingTop: '0.65rem',
+                      marginTop: '0.15rem',
+                    }}>
+                      {spec.sub}
+                    </div>
                   </motion.div>
                 ))}
               </StaggerContainer>
