@@ -113,17 +113,25 @@ export function TechDetailPage({ data }: Props) {
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          backgroundImage: data.heroImage
-            ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
-            : undefined,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          /* Logo is layer 0 (screen blend), gradient is layer 1, photo is layer 2.
+             All rendered together — no flash from separate img element. */
+          backgroundImage: data.heroImage && data.logoSrc
+            ? `url(${data.logoSrc}), linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
+            : data.heroImage
+              ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url(${data.heroImage})`
+              : undefined,
+          backgroundBlendMode: data.logoSrc ? 'screen, normal, normal' : undefined,
+          backgroundSize: data.logoSrc
+            ? 'clamp(260px, 32vw, 480px) auto, cover, cover'
+            : 'cover',
+          backgroundPosition: data.logoSrc ? 'center 38%, center, center' : 'center',
+          backgroundRepeat: data.logoSrc ? 'no-repeat, no-repeat, no-repeat' : 'no-repeat',
           backgroundColor: '#000',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}>
 
-          {/* Content over image — no zIndex so mix-blend-mode works against hero bg */}
-          <div style={{ position: 'relative', maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {/* Content over image */}
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
             {/* Category tag — only when non-empty */}
             {data.categoryTag ? (
@@ -143,25 +151,16 @@ export function TechDetailPage({ data }: Props) {
               </motion.div>
             ) : null}
 
-            {/* Logo — mix-blend-mode: screen removes black background */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '2rem' }}
-            >
-              <img
-                src={data.logoSrc}
-                alt={data.heroTitle}
-                style={{
-                  display: 'block',
-                  width: 'clamp(260px, 32vw, 480px)',
-                  height: 'auto',
-                  mixBlendMode: 'screen',
-                  filter: 'brightness(1.15)',
-                }}
-              />
-            </motion.div>
+            {/* Spacer matching logo height so text content sits below logo in background */}
+            {data.logoSrc && (
+              <div style={{
+                width: 'clamp(260px, 32vw, 480px)',
+                /* height = width / 1.5 (logo images are 1536×1024, 3:2 ratio) */
+                height: 'clamp(173px, 21.3vw, 320px)',
+                marginBottom: '2rem',
+                flexShrink: 0,
+              }} />
+            )}
 
             {/* Tagline + Stats together as unified subtitle block */}
             <motion.div
