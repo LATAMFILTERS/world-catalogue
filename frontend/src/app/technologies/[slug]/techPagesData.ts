@@ -7,7 +7,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'TURBOCORE™',
     heroSubtitle: 'SERIES FH',
     heroTagline: 'Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.',
-    heroImage: '/images/turbine-plant.avif',
+    heroImage: '/images/turbinas-hero.avif',
     heroStats: [
       { key: '900FH', value: '90 GPH' },
       { key: '1000FH', value: '180 GPH' },
