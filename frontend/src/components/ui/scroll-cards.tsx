@@ -46,7 +46,7 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)';
           }}
         >
-          {/* Left: image */}
+          {/* Left: image — clip bottom 38% to hide subtitle text baked into avif */}
           <div style={{ position: 'relative', backgroundColor: '#080808', overflow: 'hidden' }}>
             <div style={{
               position: 'absolute', inset: 0,
@@ -54,12 +54,7 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
               backgroundSize: '80%',
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat',
-            }} />
-            {/* fade bottom to hide subtitle text baked into image */}
-            <div style={{
-              position: 'absolute', left: 0, right: 0, bottom: 0,
-              height: '55%',
-              background: 'linear-gradient(to top, #0c0c0c 60%, transparent 100%)',
+              clipPath: 'inset(0 0 38% 0)',
             }} />
           </div>
 
