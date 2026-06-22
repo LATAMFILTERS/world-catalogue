@@ -95,7 +95,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'The AI-engineered gradient was developed by analyzing contamination profiles across 48 engine types under heavy-duty field conditions. The result is a protection matrix that matches real-world contamination distribution, not laboratory averages.',
       'Turbocharger bearing failure is not a low-probability event — it is the predictable outcome of sustained oil contamination above the bearing film tolerance threshold. At operating speed, turbo shaft bearings run on oil films measured in 2–4 microns. Any abrasive particle above that threshold transiting the bearing circuit removes material on contact. The damage is irreversible and cumulative.',
     ],
-    productImageSrc: '/images/syntrax.avif',
+    productImageSrc: '/images/oil-girl.avif',
     productImageCaption: 'SYNTRAX™ · AI-ENGINEERED LUBRICATION PROTECTION',
     stagesHeading: 'FOUR LAYERS. ZERO BYPASS.',
     stages: [
