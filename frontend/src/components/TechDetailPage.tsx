@@ -404,7 +404,7 @@ export function TechDetailPage({ data }: Props) {
                 <motion.div key={idx} variants={itemVariants} style={{ background: '#050505', padding: '2rem 1.75rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
                     <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#FFF12D', flexShrink: 0 }} />
-                    <div style={{ fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.18em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.12em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace' }}>
                       {app.sector}
                     </div>
                   </div>
