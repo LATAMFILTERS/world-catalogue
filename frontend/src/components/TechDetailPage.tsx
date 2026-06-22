@@ -118,7 +118,7 @@ export function TechDetailPage({ data }: Props) {
             : undefined,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundColor: '#000',
+          backgroundColor: '#00001a',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}>
 
