@@ -34,4 +34,4 @@ Generated from:
 - `elimfilters-vault/00-meta/PART_SEARCH_MAP.json`
 
 Generator: `scripts/generate-citation-api.js`
-Last generated: 2026-06-22T21:11:59.265Z
+Last generated: 2026-06-22T21:17:53.935Z
