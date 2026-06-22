@@ -243,7 +243,7 @@ export function TechDetailPage({ data }: Props) {
                 ) : (
                   <div style={{ position: 'sticky', top: '5rem' }}>
                     <img src={data.productImageSrc} alt={data.heroTitle}
-                      style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.12)', display: 'block' }} />
+                      style={{ width: '100%', maxHeight: '480px', objectFit: 'cover', objectPosition: 'center', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.12)', display: 'block' }} />
                     <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.15em', marginTop: '0.75rem', textAlign: 'center' }}>
                       {data.productImageCaption}
                     </p>
