@@ -414,7 +414,41 @@ export default function TechnologiesPage() {
             ))}
           </div>
       </section>
-      {/* Closing Platform Positioning */}
+
+      {/* CTA — Part Search */}
+      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.07)', textAlign: 'center' }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.6)', marginBottom: '1.25rem', textTransform: 'uppercase' }}>
+            Find Your Filter
+          </p>
+          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)', fontWeight: 700, color: '#fff', margin: '0 0 1rem', lineHeight: 1.25 }}>
+            Search by Part Number or OEM Code
+          </h2>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(0.9rem, 1.4vw, 1rem)', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto 2.5rem' }}>
+            Cross-reference OEM specifications, part numbers, and application data across the full ELIMFILTERS product range.
+          </p>
+          <a
+            href="https://part-search.elimfilters.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              background: '#FFF12D',
+              color: '#000',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: 700,
+              fontSize: '0.8rem',
+              letterSpacing: '0.15em',
+              padding: '1rem 2.5rem',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              transition: 'background 0.2s',
+            }}
+          >
+            Open Part Search →
+          </a>
+        </motion.div>
+      </section>
     </main>
   );
 }
