@@ -482,9 +482,9 @@
       "cta": "EXPLORE MACROCORE"
     },
     {
-      "name": "Hydrocore Series",
-      "file": "hydrocore-series.html",
-      "title": "HYDROCORE",
+      "name": "Turbocore Series",
+      "file": "turbocore-series.html",
+      "title": "TURBOCORE™",
       "subtitle": "SERIES FH",
       "description": "The HYDROCORE\u2122 Turbine Fuel Separator Series (900FH and 1000FH) combines 3-stage filtration: particle interception, water coalescing, and precision defense. The system achieves 99.8% water removal and is rated ISO 16332 with 30-micron absolute filtration for high-pressure common rail (HPCR) injection systems. HYDROCORE\u2122 is designed for contaminated fuel environments in oil & gas, marine, and power generation applications where water ingress from fuel degradation or brine exposure is inevitable.",
       "features": [
@@ -795,9 +795,9 @@
   ],
   "technologies": [
     {
-      "name": "Hydrocore Series",
-      "file": "hydrocore-series.html",
-      "title": "HYDROCORE/SERIES\u2122",
+      "name": "Turbocore Series",
+      "file": "turbocore-series.html",
+      "title": "TURBOCORE\u2122",
       "subtitle": "SERIES FH",
       "description": "900FH and 1000FH Turbine Fuel Filter/Water Separators Professional-Grade Fuel Filtration & Water Removal",
       "features": [
