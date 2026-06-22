@@ -67,7 +67,6 @@ export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
     'Hydrocore Series': 'logo-hydrocore.png',
     Hydrocore: 'logo-hydrocore.png',
-    Cooltech: 'logo-cooltech.png',
     Drycore: 'logo-drycore.png',
     Duratech: 'logo-duratech.png',
     Intekcore: 'logo-intekcore.png',
