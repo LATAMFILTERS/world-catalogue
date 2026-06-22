@@ -415,31 +415,6 @@ export default function TechnologiesPage() {
           </div>
       </section>
       {/* Closing Platform Positioning */}
-      <section style={{
-        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)',
-        background: 'rgba(255,241,45,0.03)',
-        borderTop: '1px solid rgba(255,241,45,0.15)',
-        textAlign: 'center',
-      }}>
-        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.75)', lineHeight: 2, margin: 0 }}>
-              Technologies control contamination.
-            </p>
-            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.75)', lineHeight: 2, margin: 0 }}>
-              Systems protect assets.
-            </p>
-            <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: '#FFF12D', lineHeight: 2, margin: 0 }}>
-              Protected assets sustain operations.
-            </p>
-          </motion.div>
-        </div>
-      </section>
     </main>
   );
 }
