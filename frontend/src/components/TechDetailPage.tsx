@@ -408,7 +408,7 @@ export function TechDetailPage({ data }: Props) {
                       {app.sector}
                     </div>
                   </div>
-                  <p style={{ fontSize: '0.84rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>
+                  <p style={{ fontSize: '0.97rem', lineHeight: 1.85, color: 'rgba(255,255,255,0.55)', fontFamily: 'Titillium Web, sans-serif', margin: 0, textAlign: 'justify' }}>
                     {app.detail}
                   </p>
                 </motion.div>
