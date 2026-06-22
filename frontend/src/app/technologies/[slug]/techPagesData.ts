@@ -82,13 +82,13 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'SYNTRAX™',
     heroSubtitle: 'AI-ENGINEERED PROTECTION',
     heroTagline: 'Multi-layer lubrication protection system calibrated by AI algorithms to intercept sub-micron contamination before it reaches turbocharger bearings, crankshaft journals and precision valve train components.',
-    heroImage: '/images/oil-hero.avif',
+    heroImage: '/images/oil-instalado.avif',
     heroStats: [
       { key: 'PROTECTION LAYERS', value: '4 ACTIVE' },
       { key: 'TECHNOLOGY', value: 'AI-CALIBRATED' },
       { key: 'TARGET', value: 'TURBO CUSTODY' },
     ],
-    logoSrc: '/images/sintrax(fn).avif',
+    logoSrc: '/assets/SYNTRAX.avif',
     systemHeadline: 'NOT JUST A FILTER.\nAN OIL CIRCUIT GUARDIAN.',
     systemParagraphs: [
       'Conventional oil filters rely on a single-density barrier to intercept contaminants. SYNTRAX™ deploys a four-layer protection matrix where each layer is calibrated to a specific contamination size class — from coarse metallic debris at the outer zone to sub-micron carbonaceous particles at the core barrier.',
