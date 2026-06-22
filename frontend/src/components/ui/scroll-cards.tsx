@@ -56,11 +56,11 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
               backgroundPosition: 'center 30%',
               backgroundRepeat: 'no-repeat',
             }} />
-            {/* solid mask covers bottom 30% — hides subtitle text in image */}
+            {/* solid mask covers bottom 55% — hides subtitle text in image */}
             <div style={{
               position: 'absolute',
               left: 0, right: 0, bottom: 0,
-              height: '30%',
+              height: '55%',
               backgroundColor: '#080808',
               zIndex: 2,
             }} />
