@@ -10,7 +10,7 @@ git checkout -B claude/ecstatic-fermi-rqhwq2 origin/claude/ecstatic-fermi-rqhwq2
 git clean -fd frontend/out/
 
 echo Iniciando servidor...
-start cmd /k "npx serve@latest -l 3000 \"C:\Users\VICTOR ABREU\Documents\world-catalogue\frontend\out\""
+start cmd /k "cd /d "C:\Users\VICTOR ABREU\Documents\world-catalogue\frontend\out" && npx serve@latest -l 3000 ."
 
 echo Listo. Abre http://localhost:3000/technologies/ en modo incognito
 pause
