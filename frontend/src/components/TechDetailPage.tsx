@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
+import { StagesAccordion } from './ui/stages-accordion';
 
 export interface TechStage {
   number: string;
@@ -284,39 +285,7 @@ export function TechDetailPage({ data }: Props) {
               </div>
             </AnimateIn>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-              {data.stages.map((stage, idx) => (
-                <AnimateIn key={idx} direction="up">
-                  <div className="stage-row" style={{
-                    display: 'grid',
-                    gridTemplateColumns: '56px 1fr auto',
-                    gap: '2rem',
-                    alignItems: 'start',
-                    padding: '2.25rem 2rem',
-                    background: `rgba(255,255,255,${0.018 - idx * 0.002})`,
-                    border: '1px solid rgba(255,255,255,0.04)',
-                    borderLeft: `3px solid rgba(255,241,45,${1 - idx * 0.22})`,
-                  }}>
-                    <div style={{ paddingTop: '0.15rem' }}>
-                      <div style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: `rgba(255,241,45,${1 - idx * 0.22})`, fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{stage.tag}</div>
-                      <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'rgba(255,255,255,0.05)', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.number}</div>
-                    </div>
-                    <div>
-                      <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '0.75rem', letterSpacing: '0.02em' }}>
-                        {stage.title}
-                      </h3>
-                      <p style={{ fontSize: '0.86rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', margin: 0, maxWidth: '600px' }}>
-                        {stage.body}
-                      </p>
-                    </div>
-                    <div className="stage-stat" style={{ textAlign: 'right', minWidth: '80px', paddingTop: '0.15rem' }}>
-                      <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', lineHeight: 1 }}>{stage.stat}</div>
-                      <div style={{ fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'Titillium Web, sans-serif', marginTop: '0.3rem', maxWidth: '90px', textAlign: 'right', lineHeight: 1.4 }}>{stage.statLabel}</div>
-                    </div>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
+            <StagesAccordion stages={data.stages} />
           </div>
         </section>
 
