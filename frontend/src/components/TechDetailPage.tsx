@@ -125,21 +125,23 @@ export function TechDetailPage({ data }: Props) {
           {/* Content over image */}
           <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-            {/* Category tag */}
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <span style={{
-                display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
-                letterSpacing: '0.28em', color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
-                marginBottom: '1.5rem',
-                padding: '0.35rem 0.85rem',
-                border: '1px solid rgba(255,241,45,0.35)',
-                borderRadius: '2px',
-                background: 'rgba(0,0,0,0.5)',
-              }}>
-                {data.categoryTag}
-              </span>
-            </motion.div>
+            {/* Category tag — only when non-empty */}
+            {data.categoryTag ? (
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+                <span style={{
+                  display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
+                  letterSpacing: '0.28em', color: '#FFF12D',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  marginBottom: '1.5rem',
+                  padding: '0.35rem 0.85rem',
+                  border: '1px solid rgba(255,241,45,0.35)',
+                  borderRadius: '2px',
+                  background: 'rgba(0,0,0,0.5)',
+                }}>
+                  {data.categoryTag}
+                </span>
+              </motion.div>
+            ) : null}
 
             {/* Logo */}
             <motion.div
@@ -155,7 +157,8 @@ export function TechDetailPage({ data }: Props) {
                   display: 'block',
                   width: 'clamp(260px, 32vw, 480px)',
                   height: 'auto',
-                  filter: 'brightness(1.1) drop-shadow(0 2px 24px rgba(0,0,0,0.6))',
+                  mixBlendMode: 'screen',
+                  filter: 'brightness(1.1)',
                 }}
               />
             </motion.div>
@@ -177,28 +180,32 @@ export function TechDetailPage({ data }: Props) {
               {data.heroTagline}
             </motion.p>
 
-            {/* Stats strip */}
+            {/* Stats — full-width subtitle bar */}
             {data.heroStats && data.heroStats.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '0',
+                  width: '100%',
                   marginTop: '3rem',
                   borderTop: '1px solid rgba(255,255,255,0.12)',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  gap: '0',
                 }}
               >
                 {data.heroStats.map(({ key, value }, i) => (
                   <div key={key} style={{
-                    flex: '1', minWidth: '120px', maxWidth: '220px',
-                    padding: '1.5rem 1.5rem',
+                    flex: '1',
+                    minWidth: '100px',
+                    padding: '1.25rem 2rem',
                     borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                    textAlign: 'center',
                   }}>
-                    <div style={{ fontSize: '0.52rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.5rem' }}>{key}</div>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFF12D', fontFamily: 'Outfit, sans-serif', lineHeight: 1 }}>{value}</div>
+                    <div style={{ fontSize: '0.5rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.4rem', textTransform: 'uppercase' }}>{key}</div>
+                    <div style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontWeight: 900, color: '#FFF12D', fontFamily: 'Outfit, sans-serif', lineHeight: 1 }}>{value}</div>
                   </div>
                 ))}
               </motion.div>
