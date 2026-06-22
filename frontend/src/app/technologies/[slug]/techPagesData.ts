@@ -13,7 +13,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: '1000FH', value: '180 GPH' },
       { key: 'ISO 16332', value: 'CERTIFIED' },
     ],
-    logoSrc: '/images/turbocore-series(fn).avif',
+    logoSrc: '/assets/TURBOCORE.avif',
     systemHeadline: 'THREE-STAGE DEFENSE.\nFULL CONTAMINATION SPECTRUM.',
     systemParagraphs: [
       'Conventional fuel filters intercept particles. TURBOCORE™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.',
