@@ -322,7 +322,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'INTEKCORE™',
     heroSubtitle: 'FILTER HOUSING SYSTEMS',
     heroTagline: 'Engineered filter housing systems for heavy-duty trucks and industrial machinery. High-pressure rated, OEM-compatible housings that protect critical engine circuits across the most demanding operational environments.',
-    heroImage: '/images/mecanica-air.avif',
+    heroImage: '/images/intekcor-hero.avif',
     heroStats: [
       { key: 'RATED PRESSURE', value: 'HIGH-PSI' },
       { key: 'COMPATIBILITY', value: 'OEM-FIT' },
@@ -335,7 +335,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'Constructed from high-grade materials rated for continuous high-pressure operation, INTEKCORE™ housings maintain structural integrity across the full thermal cycling range of heavy commercial and industrial engines — from cold starts in extreme climates to sustained high-load thermal conditions in mining and construction operations.',
       'Universal mounting geometry and OEM-compatible thread standards make INTEKCORE™ housings direct-fit replacements across major truck and machinery platforms. No fabrication. No adapter plates. No serviceability compromise.',
     ],
-    productImageSrc: '/images/mecanica-air.avif',
+    productImageSrc: '/images/pelon-air_converted.avif',
     productImageCaption: 'INTEKCORE™ · HEAVY-DUTY FILTER HOUSING SYSTEMS',
     stagesHeading: 'THREE ENGINEERING PRINCIPLES FOR HOUSING RELIABILITY.',
     stages: [
