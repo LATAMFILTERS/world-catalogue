@@ -67,44 +67,6 @@ const Card: FC<iCardProps> = ({ title, description, system, src, href, i, total 
             justifyContent: 'space-between',
             gap: '0.75rem',
           }}>
-            {/* Top: system tag + counter */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 'clamp(0.55rem, 1vw, 0.65rem)',
-                fontWeight: 700,
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                padding: '0.2rem 0.55rem',
-                border: '1px solid rgba(255,241,45,0.25)',
-                whiteSpace: 'nowrap',
-              }}>
-                {system.toUpperCase()}
-              </span>
-              <span style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 'clamp(0.5rem, 0.9vw, 0.58rem)',
-                color: 'rgba(255,255,255,0.18)',
-                letterSpacing: '0.12em',
-                whiteSpace: 'nowrap',
-              }}>
-                {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-              </span>
-            </div>
-
-            {/* Title */}
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 800,
-              fontSize: 'clamp(1.1rem, 2.8vw, 2rem)',
-              letterSpacing: '-0.02em',
-              color: '#fff',
-              lineHeight: 1.05,
-              margin: 0,
-            }}>
-              {title}
-            </h2>
-
             {/* Description */}
             <p style={{
               fontFamily: 'Inter, sans-serif',
