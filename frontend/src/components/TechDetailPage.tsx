@@ -350,15 +350,29 @@ export function TechDetailPage({ data }: Props) {
         ══════════════════════════════════════════════ */}
         {data.testimonial && (
           <section style={{ padding: '5rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
               <AnimateIn direction="up">
-                <blockquote style={{ margin: 0, padding: '2.5rem', background: '#050505', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '3px solid #FFF12D' }}>
-                  <p style={{ fontSize: '1.05rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.7)', fontFamily: 'Titillium Web, sans-serif', fontStyle: 'italic', margin: '0 0 1.5rem' }}>
+                <blockquote style={{
+                  margin: 0,
+                  padding: 'clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem)',
+                  background: '#080808',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderLeft: '4px solid #FFF12D',
+                }}>
+                  <p style={{
+                    fontSize: 'clamp(1.2rem, 2.2vw, 1.65rem)',
+                    lineHeight: 1.75,
+                    color: 'rgba(255,255,255,0.88)',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                    margin: '0 0 2.5rem',
+                  }}>
                     &ldquo;{data.testimonial.quote}&rdquo;
                   </p>
-                  <footer style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '28px', height: '1px', background: '#FFF12D', flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.62rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.12em' }}>
+                  <footer style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                    <div style={{ width: '36px', height: '2px', background: '#FFF12D', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.85rem', fontFamily: 'Inter, sans-serif', fontWeight: 600, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em' }}>
                       {data.testimonial.role} · {data.testimonial.sector}
                     </span>
                   </footer>
