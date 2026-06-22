@@ -134,23 +134,6 @@ export function TechDetailPage({ data }: Props) {
           {/* Content over image */}
           <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-            {/* Category tag — only when non-empty */}
-            {data.categoryTag ? (
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-                <span style={{
-                  display: 'inline-block', fontSize: '0.6rem', fontWeight: 700,
-                  letterSpacing: '0.28em', color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  marginBottom: '1.5rem',
-                  padding: '0.35rem 0.85rem',
-                  border: '1px solid rgba(255,241,45,0.35)',
-                  borderRadius: '2px',
-                  background: 'rgba(0,0,0,0.5)',
-                }}>
-                  {data.categoryTag}
-                </span>
-              </motion.div>
-            ) : null}
 
             {/* Spacer matching logo height so text content sits below logo in background */}
             {data.logoSrc && (
