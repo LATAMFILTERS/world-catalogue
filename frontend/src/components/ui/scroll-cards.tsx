@@ -48,12 +48,11 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
         >
           {/* Left: image */}
           <div style={{ position: 'relative', backgroundColor: '#080808', overflow: 'hidden' }}>
-            {/* image positioned toward top so subtitle falls below mask */}
             <div style={{
               position: 'absolute', inset: 0,
               backgroundImage: `url(${src})`,
-              backgroundSize: '75%',
-              backgroundPosition: 'center 30%',
+              backgroundSize: '120%',
+              backgroundPosition: 'center top',
               backgroundRepeat: 'no-repeat',
             }} />
           </div>
@@ -93,20 +92,6 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
                 {system.toUpperCase()}
               </span>
             </div>
-
-            {/* Subtitle */}
-            {subtitle && (
-              <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.72rem',
-                letterSpacing: '0.08em',
-                color: 'rgba(255,255,255,0.4)',
-                marginBottom: '0.5rem',
-                textTransform: 'uppercase',
-              }}>
-                {subtitle}
-              </p>
-            )}
 
             {/* Title */}
             <h2 style={{
