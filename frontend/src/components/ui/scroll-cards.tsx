@@ -58,8 +58,8 @@ const Card: FC<iCardProps> = ({ title, subtitle, description, system, src, href,
             {/* fade bottom to hide subtitle text baked into image */}
             <div style={{
               position: 'absolute', left: 0, right: 0, bottom: 0,
-              height: '35%',
-              background: 'linear-gradient(to top, #0c0c0c 40%, transparent 100%)',
+              height: '55%',
+              background: 'linear-gradient(to top, #0c0c0c 60%, transparent 100%)',
             }} />
           </div>
 
