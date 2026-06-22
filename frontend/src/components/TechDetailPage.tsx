@@ -122,8 +122,8 @@ export function TechDetailPage({ data }: Props) {
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}>
 
-          {/* Content over image */}
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {/* Content over image — no zIndex so mix-blend-mode works against hero bg */}
+          <div style={{ position: 'relative', maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
             {/* Category tag — only when non-empty */}
             {data.categoryTag ? (
@@ -143,12 +143,12 @@ export function TechDetailPage({ data }: Props) {
               </motion.div>
             ) : null}
 
-            {/* Logo */}
+            {/* Logo — mix-blend-mode: screen removes black background */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              style={{ marginBottom: '1.5rem' }}
+              style={{ marginBottom: '2rem' }}
             >
               <img
                 src={data.logoSrc}
@@ -158,58 +158,55 @@ export function TechDetailPage({ data }: Props) {
                   width: 'clamp(260px, 32vw, 480px)',
                   height: 'auto',
                   mixBlendMode: 'screen',
-                  filter: 'brightness(1.1)',
+                  filter: 'brightness(1.15)',
                 }}
               />
             </motion.div>
 
-            {/* Tagline */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.55, delay: 0.35 }}
-              style={{
+            {/* Tagline + Stats together as unified subtitle block */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3 }}
+              style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}
+            >
+              <p style={{
                 fontSize: 'clamp(0.85rem, 1.3vw, 1rem)',
-                maxWidth: '560px',
+                maxWidth: '600px',
                 lineHeight: 1.8,
                 color: 'rgba(255,255,255,0.65)',
                 fontFamily: 'Outfit, sans-serif',
-                margin: '0 0 0',
-              }}
-            >
-              {data.heroTagline}
-            </motion.p>
+                margin: '0 0 2rem',
+              }}>
+                {data.heroTagline}
+              </p>
 
-            {/* Stats — full-width subtitle bar */}
-            {data.heroStats && data.heroStats.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                style={{
-                  width: '100%',
-                  marginTop: '3rem',
-                  borderTop: '1px solid rgba(255,255,255,0.12)',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
-                  gap: '0',
-                }}
-              >
-                {data.heroStats.map(({ key, value }, i) => (
-                  <div key={key} style={{
-                    flex: '1',
-                    minWidth: '100px',
-                    padding: '1.25rem 2rem',
-                    borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                    textAlign: 'center',
-                  }}>
-                    <div style={{ fontSize: '0.5rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.4rem', textTransform: 'uppercase' }}>{key}</div>
-                    <div style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontWeight: 900, color: '#FFF12D', fontFamily: 'Outfit, sans-serif', lineHeight: 1 }}>{value}</div>
-                  </div>
-                ))}
-              </motion.div>
-            )}
+              {data.heroStats && data.heroStats.length > 0 && (
+                <div
+                  style={{
+                    width: '100%',
+                    borderTop: '1px solid rgba(255,255,255,0.12)',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '0',
+                  }}
+                >
+                  {data.heroStats.map(({ key, value }, i) => (
+                    <div key={key} style={{
+                      flex: '1',
+                      minWidth: '100px',
+                      padding: '1.25rem 2rem',
+                      borderRight: i < data.heroStats!.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                      textAlign: 'center',
+                    }}>
+                      <div style={{ fontSize: '0.5rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.4rem', textTransform: 'uppercase' }}>{key}</div>
+                      <div style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', fontWeight: 900, color: '#FFF12D', fontFamily: 'Outfit, sans-serif', lineHeight: 1 }}>{value}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
           </div>
         </section>
 
