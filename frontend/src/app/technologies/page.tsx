@@ -221,16 +221,6 @@ export default function TechnologiesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span style={{
-            display: 'block',
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.28em',
-            color: '#FFF12D',
-            marginBottom: '1.5rem',
-          }}>
-            // ELIMFILTERS · ASSET PROTECTION TECHNOLOGIES
-          </span>
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 900,
@@ -324,9 +314,6 @@ export default function TechnologiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
-              // TECHNOLOGY GOVERNANCE PRINCIPLE
-            </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                 {[
@@ -374,9 +361,6 @@ export default function TechnologiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1.5rem' }}>
-              // WHY TECHNOLOGY MATTERS IN ASSET PROTECTION
-            </p>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
               Technology is where reliability engineering becomes operational reality.
             </p>
@@ -401,9 +385,6 @@ export default function TechnologiesPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
-            <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-              // TECHNOLOGY COMPARISON
-            </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 1rem' }}>
               Twelve Technologies — Quick Reference
             </h2>
@@ -460,9 +441,6 @@ export default function TechnologiesPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
-            <span style={{ display: 'block', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-              // FREQUENTLY ASKED QUESTIONS
-            </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0' }}>
               Technical Questions
             </h2>
