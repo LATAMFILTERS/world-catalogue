@@ -278,7 +278,7 @@ export default function TechnologiesPage() {
 
       {/* Asset Protection Narrative */}
       <section style={{
-        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem)',
+        padding: 'clamp(2.5rem,5vw,4rem) clamp(1.25rem,5vw,3rem)',
         background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
@@ -286,15 +286,14 @@ export default function TechnologiesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ maxWidth: '900px', margin: '0 auto' }}
         >
-          <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.15rem)', color: '#fff', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1rem, 2vw, 1.15rem)', color: '#fff', lineHeight: 1.6, marginBottom: '1.25rem', textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
             Technology exists to protect assets.
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem' }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(0.9rem, 1.5vw, 1rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, marginBottom: '1rem', textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
             Every ELIMFILTERS architecture was engineered to control a specific contamination mechanism responsible for asset degradation, downtime, and operational risk. These architectures are not filter products. They are contamination control systems — the engineering foundation upon which every ELIMFILTERS asset protection strategy is built.
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(0.9rem, 1.5vw, 1rem)', color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
             The technologies support the protection systems. The protection systems protect the assets. The objective is not filtration alone. The objective is asset protection — measurable, documented, and sustained across every operating environment.
           </p>
         </motion.div>
@@ -378,8 +377,7 @@ export default function TechnologiesPage() {
 
 
       {/* FAQ Section */}
-      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,2rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <section style={{ padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,3rem)', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -403,19 +401,18 @@ export default function TechnologiesPage() {
                   background: 'rgba(255,255,255,0.03)',
                   border: '1px solid rgba(255,255,255,0.08)',
                   borderRadius: '8px',
-                  padding: '2rem',
+                  padding: 'clamp(1.25rem,3vw,2rem)',
                 }}
               >
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 1rem', lineHeight: 1.5 }}>
+                <h3 style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1rem)', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 1rem', lineHeight: 1.5, textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
                   {faq.q}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0' }}>
+                <p style={{ fontSize: 'clamp(0.85rem, 1.3vw, 0.9rem)', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0', textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
                   {faq.a}
                 </p>
               </motion.div>
             ))}
           </div>
-        </div>
       </section>
       {/* Closing Platform Positioning */}
       <section style={{
