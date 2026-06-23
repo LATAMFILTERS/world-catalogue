@@ -137,7 +137,7 @@
     "hero1": "Protegiendo activos industriales",
     "hero2": "a través del control de contaminación.",
     "heroDesc": "Sistemas avanzados de control de contaminación diseñados para reducir el desgaste, minimizar el tiempo de inactividad, mejorar la confiabilidad y extender la vida operativa de los equipos industriales críticos.",
-    "ctaFilter": "Buscar mi filtro",
+    "ctaFilter": "Encontrar mi pieza",
     "ctaKnowledge": "Sistema de conocimiento",
     "statsLabels": [
       "Vida útil de cojinetes de motor",
@@ -326,6 +326,7 @@
       "Manufactura",
       "Ferroviario y Transporte Público",
       "Transporte Comercial"
-    ]
+    ],
+    "ctaProtect": "Proteger mis activos"
   }
 }

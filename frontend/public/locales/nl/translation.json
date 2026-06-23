@@ -137,7 +137,7 @@
     "hero1": "Industriële activa beschermen",
     "hero2": "via contaminatiebeheersing.",
     "heroDesc": "Geavanceerde verontreinigingscontrolesystemen ontworpen om slijtage te verminderen, stilstand te minimaliseren, betrouwbaarheid te verbeteren en de operationele levensduur van kritische industriële apparatuur te verlengen.",
-    "ctaFilter": "Vind mijn filter",
+    "ctaFilter": "Zoek mijn onderdeel",
     "ctaKnowledge": "Kennissysteem",
     "statsLabels": [
       "Levensduur motorlagers",
@@ -326,6 +326,7 @@
       "Maakindustrie",
       "Rail en Openbaar Vervoer",
       "Commercieel Transport"
-    ]
+    ],
+    "ctaProtect": "Bescherm mijn assets"
   }
 }

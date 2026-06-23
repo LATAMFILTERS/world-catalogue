@@ -137,7 +137,7 @@
     "hero1": "Protegendo ativos industriais",
     "hero2": "através do controle de contaminação.",
     "heroDesc": "Sistemas avançados de controlo de contaminação concebidos para reduzir o desgaste, minimizar o tempo de inatividade, melhorar a fiabilidade e prolongar a vida operacional dos equipamentos industriais críticos.",
-    "ctaFilter": "Encontrar meu filtro",
+    "ctaFilter": "Encontrar a minha peça",
     "ctaKnowledge": "Sistema de conhecimento",
     "statsLabels": [
       "Vida útil dos rolamentos do motor",
@@ -326,6 +326,7 @@
       "Manufatura",
       "Ferroviário e Transporte Público",
       "Transporte Comercial"
-    ]
+    ],
+    "ctaProtect": "Proteger os meus ativos"
   }
 }

@@ -137,7 +137,7 @@
     "hero1": "Proteggere gli asset industriali",
     "hero2": "attraverso il controllo della contaminazione.",
     "heroDesc": "Sistemi avanzati di controllo della contaminazione progettati per ridurre l'usura, minimizzare i fermi macchina, migliorare l'affidabilità e prolungare la vita operativa delle apparecchiature industriali critiche.",
-    "ctaFilter": "Trova il mio filtro",
+    "ctaFilter": "Trova il mio pezzo",
     "ctaKnowledge": "Sistema di conoscenza",
     "statsLabels": [
       "Durata cuscinetti motore",
@@ -326,6 +326,7 @@
       "Manifattura",
       "Ferroviario e Trasporto Pubblico",
       "Trasporto Commerciale"
-    ]
+    ],
+    "ctaProtect": "Proteggi i miei asset"
   }
 }

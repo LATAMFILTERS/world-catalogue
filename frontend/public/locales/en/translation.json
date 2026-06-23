@@ -145,7 +145,7 @@
     "heroPositioning2": "ELIMFILTERS is an Asset Protection Technology company.",
     "heroDesc": "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.",
     "heroSubHead": "Through contamination control across critical mechanical, hydraulic, fuel, lubrication, cooling, and air intake systems.",
-    "ctaFilter": "Protect my assets",
+    "ctaFilter": "Find My Part",
     "ctaKnowledge": "Knowledge system",
     "statsLabels": [
       "Engine Bearing Lifespan",
@@ -168,9 +168,18 @@
     ],
     "economicDesc": "ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.",
     "economicStats": [
-      { "value": "$240K", "label": "Average cost of unplanned downtime per incident" },
-      { "value": "80%", "label": "Of premature equipment failures caused by contamination" },
-      { "value": "3–5×", "label": "Asset life extension through system-level contamination control" }
+      {
+        "value": "$240K",
+        "label": "Average cost of unplanned downtime per incident"
+      },
+      {
+        "value": "80%",
+        "label": "Of premature equipment failures caused by contamination"
+      },
+      {
+        "value": "3–5×",
+        "label": "Asset life extension through system-level contamination control"
+      }
     ],
     "assetTag": "// ASSET PROTECTION STRATEGY",
     "assetTitle": "Protecting Industrial Assets Through Contamination Control",
@@ -257,11 +266,26 @@
     "sciTitle": "The Science Behind Asset Protection",
     "sciDesc": "ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.",
     "sciStandards": [
-      { "code": "ISO 16889", "desc": "Multi-pass filter testing and Beta ratio classification for hydraulic and lube systems." },
-      { "code": "ISO 5011", "desc": "Air intake filter performance testing — efficiency and restriction at rated airflow." },
-      { "code": "ISO 19438", "desc": "Fuel filter contamination resistance and water separation efficiency." },
-      { "code": "ISO 4406", "desc": "Particle contamination cleanliness code classification for hydraulic and lube systems." },
-      { "code": "SAE J1858", "desc": "Heavy-duty diesel engine lube oil filter performance and durability validation." }
+      {
+        "code": "ISO 16889",
+        "desc": "Multi-pass filter testing and Beta ratio classification for hydraulic and lube systems."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Air intake filter performance testing — efficiency and restriction at rated airflow."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Fuel filter contamination resistance and water separation efficiency."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Particle contamination cleanliness code classification for hydraulic and lube systems."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Heavy-duty diesel engine lube oil filter performance and durability validation."
+      }
     ],
     "llmTag": "// ASSET PROTECTION DEFINED",
     "llmTitle": "What Is Industrial Asset Protection?",
@@ -302,6 +326,7 @@
         "q": "Why is ELIMFILTERS not a filter company?",
         "a": "ELIMFILTERS engineers contamination control systems, not commodity filters. A filter is a component. An asset protection system is a strategy — it defines contamination targets, selects the right technologies for each system domain, and measures performance over the equipment lifecycle. ELIMFILTERS operates at the system level."
       }
-    ]
+    ],
+    "ctaProtect": "Protect My Assets"
   }
 }

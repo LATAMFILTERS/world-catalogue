@@ -137,7 +137,7 @@
     "hero1": "Protection des actifs industriels",
     "hero2": "grâce au contrôle de la contamination.",
     "heroDesc": "Systèmes avancés de contrôle de la contamination conçus pour réduire l'usure, minimiser les temps d'arrêt, améliorer la fiabilité et prolonger la durée de vie opérationnelle des équipements industriels critiques.",
-    "ctaFilter": "Trouver mon filtre",
+    "ctaFilter": "Trouver ma pièce",
     "ctaKnowledge": "Système de connaissances",
     "statsLabels": [
       "Durée de vie des paliers moteur",
@@ -326,6 +326,7 @@
       "Industrie Manufacturière",
       "Ferroviaire et Transport Public",
       "Transport Commercial"
-    ]
+    ],
+    "ctaProtect": "Protéger mes actifs"
   }
 }

@@ -136,14 +136,14 @@
     "eyebrow": "Asset Protection Technology Platform",
     "hero1": "Protegiendo activos industriales",
     "hero2": "a través del control de contaminación.",
-    "heroDesc": "Sistemas de filtración de aire, combustible, hidráulico, lubricante y cabina diseñados para 12 sectores industriales. ISO 5011 · ISO 16889 · ISO 19438.",
-    "ctaFilter": "Buscar mi filtro",
+    "heroDesc": "Sistemas avanzados de control de contaminación diseñados para reducir el desgaste, minimizar el tiempo de inactividad, mejorar la confiabilidad y extender la vida operativa de los equipos industriales críticos.",
+    "ctaFilter": "Encontrar mi pieza",
     "ctaKnowledge": "Sistema de conocimiento",
     "statsLabels": [
-      "Eficiencia de Filtración",
-      "Extensión de Vida Útil",
-      "Referencias OEM",
-      "Red de Distribución"
+      "Vida útil de cojinetes de motor",
+      "Extensión de vida de activos",
+      "Fallas por contaminación",
+      "Costo promedio de evento prevenido"
     ],
     "assetTag": "// ESTRATEGIA DE PROTECCIÓN DE ACTIVOS",
     "assetTitle": "Protegiendo Activos Industriales a través del Control de Contaminación",
@@ -326,6 +326,7 @@
       "Manufactura",
       "Ferroviario y Transporte Público",
       "Transporte Comercial"
-    ]
+    ],
+    "ctaProtect": "Proteger mis activos"
   }
 }
