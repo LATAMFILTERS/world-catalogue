@@ -67,9 +67,9 @@ export default function SystemPageClient({ product, displayName, industries, slu
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '800px',
-            }}>
-              {product.description}
-            </p>
+            }}
+              dangerouslySetInnerHTML={{ __html: product.description.replace(/®/g, '<sup style="font-size:0.55em;vertical-align:super;line-height:0">®</sup>') }}
+            />
           </motion.div>
         </div>
       </section>

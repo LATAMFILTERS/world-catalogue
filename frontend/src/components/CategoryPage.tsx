@@ -430,9 +430,8 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   lineHeight: 1.7,
                   maxWidth: '420px',
                 }}
-              >
-                {item.description}
-              </p>
+                dangerouslySetInnerHTML={{ __html: item.description.replace(/®/g, '<sup style="font-size:0.55em;vertical-align:super;line-height:0">®</sup>') }}
+              />
             </AnimateIn>
 
             <AnimateIn direction="up" delay={0.15}>
