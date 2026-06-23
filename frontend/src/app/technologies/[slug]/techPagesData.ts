@@ -236,7 +236,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
   },
 
   macrocore: {
-    categoryTag: '',
+    categoryTag: '// AIR INTAKE ASSET PROTECTION · MACROCORE™',
     heroTitle: 'MACROCORE™',
     heroSubtitle: '',
     heroTagline: 'Progressive Density Gradient multi-layer defense system achieving 99.9%–99.98% interception efficiency for industrial air intake asset protection.',
