@@ -459,7 +459,7 @@ export default function FuelEfficiencyPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: SYNTEPORE, HYDROCORE, MACROCORE, SYNTRAX</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/fuel-efficiency</p>

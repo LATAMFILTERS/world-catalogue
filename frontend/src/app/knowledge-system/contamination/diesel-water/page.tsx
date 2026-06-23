@@ -372,7 +372,7 @@ export default function DieselWaterContaminationPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, SYNTEPORE, TURBOCORE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/diesel-water</p>
