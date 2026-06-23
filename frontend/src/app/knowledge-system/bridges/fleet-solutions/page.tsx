@@ -27,23 +27,6 @@ export default function FleetSolutionsPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              FILTRATION DECISION BRIDGE
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,6 +98,7 @@ export default function FleetSolutionsPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Fleet operations manage dozens or hundreds of diverse equipment types operating across varied environments. Individual filter selection decisions compound into massive operational and cost impacts across the fleet.
           </p>
@@ -122,6 +106,7 @@ export default function FleetSolutionsPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             This page guides fleet-level filtration strategy—standardizing contamination control across diverse equipment types while optimizing supply chain, maintenance coordination, and total cost of ownership.
           </p>
@@ -162,6 +147,7 @@ export default function FleetSolutionsPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Fleet operations face unique challenges:
           </p>
@@ -221,6 +207,7 @@ export default function FleetSolutionsPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Fleet-level strategy standardizes contamination control across diverse equipment by applying universal contamination targets and measurable filtration frameworks:
           </p>
@@ -285,6 +272,7 @@ export default function FleetSolutionsPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Implementation across fleet equipment:
           </p>
@@ -295,16 +283,16 @@ export default function FleetSolutionsPage() {
             padding: '2rem',
             marginBottom: '1.5rem',
           }}>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0', textAlign: 'justify' }}>
               <strong style={{ color: '#FFF12D' }}>Phase 1 – Assessment:</strong> Baseline contamination condition across fleet. Particle count each equipment type in each environment. Document existing filter brands, intervals, costs.
             </p>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0', textAlign: 'justify' }}>
               <strong style={{ color: '#FFF12D' }}>Phase 2 – Standardization:</strong> <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Qualify 2-3 aftermarket suppliers based on contamination control metrics</Link>. Standardize on 1-2 filter options per fluid domain. Reduce SKU count by 40-60%.
             </p>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', margin: '0 0 1rem 0', textAlign: 'justify' }}>
               <strong style={{ color: '#FFF12D' }}>Phase 3 – Deployment:</strong> Roll out condition-based replacement protocols. Train technicians on particle counting. Integrate replacement scheduling into maintenance management system.
             </p>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0', textAlign: 'justify' }}>
               <strong style={{ color: '#FFF12D' }}>Phase 4 – Optimization:</strong> Monitor contamination trends. Adjust supplier selection based on field performance. Extend replacement intervals based on actual condition data. Continuous cost reduction.
             </p>
           </div>
@@ -517,8 +505,8 @@ export default function FleetSolutionsPage() {
         '@type': 'TechArticle',
         headline: 'Fleet Filtration Solutions Framework',
         description: 'Operational framework for designing standardized contamination control strategies across multi-equipment fleet operations, covering unified cleanliness targets, supplier qualification, and condition-based maintenance intervals.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['fleet filtration strategy', 'fleet contamination control', 'ISO 4406', 'ISO 16889', 'fleet standardization', 'condition-based maintenance', 'asset protection', 'industrial fleet'],
         about: { '@type': 'Thing', name: 'Fleet Filtration Solutions Framework', description: 'Standardized contamination control strategy for multi-equipment fleet operations reducing downtime through unified cleanliness targets and simplified maintenance logistics.' },

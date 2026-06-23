@@ -28,23 +28,6 @@ export default function OEMComparisonPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              MARKET POSITIONING
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,6 +97,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Original Equipment Manufacturers (Caterpillar, Cummins, Detroit Diesel, Volvo, Komatsu, etc.) specify filter brands and types based on:
           </p>
@@ -134,6 +118,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             OEM specifications (Donaldson, Fleetguard, Mann, Wix, Baldwin, etc.) represent a <strong>minimum compliance floor, not a performance target</strong>. The OEM is optimizing for cost and warranty liability risk, not for your equipment's operational lifespan.
           </p>
@@ -141,6 +126,7 @@ export default function OEMComparisonPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             Many OEM-specified filters are high-quality products. But specification compliance and product quality are separate dimensions. A high-quality Donaldson filter installed with commodity maintenance practices will fail to maintain contamination control. Understanding the <Link href="/knowledge-system/bridges/oem-replacement" style={{ color: '#FFF12D', textDecoration: 'underline' }}>OEM replacement context</Link> clarifies when brand choice is a compliance issue versus when system design is the controlling variable. An equivalent quality aftermarket filter installed as part of a system-level contamination control strategy will outperform commodity practice.
           </p>
@@ -288,6 +274,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             OEM filter brand choice is relevant when:
           </p>
@@ -344,6 +331,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
+            textAlign: 'justify',
           }}>
             Outside these specific constraints, OEM brand choice has minimal impact on actual equipment performance. The operational consequences of this distinction are quantified in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, which shows how system design — not brand selection — drives availability outcomes. Performance is governed by:
           </p>
@@ -429,6 +417,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
+            textAlign: 'justify',
           }}>
             <strong style={{ color: '#FFF12D' }}>Result:</strong> Equipment reliability improves not because of which filter brand is installed, but because contamination is controlled. The filter brand becomes an implementation detail, selected based on cost efficiency and specification match, not brand positioning or price competition.
           </p>
@@ -459,8 +448,8 @@ export default function OEMComparisonPage() {
         '@type': 'TechArticle',
         headline: 'OEM vs Aftermarket Analysis',
         description: 'When brand choice matters, and when system design is what actually determines equipment reliability. Factual analysis of OEM filter requirements versus aftermarket alternatives in industrial filtration.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'OEM filters', 'aftermarket filters', 'Donaldson', 'Fleetguard', 'filter brand comparison', 'contamination control', 'ISO 16889'],
         about: { '@type': 'Thing', name: 'OEM vs Aftermarket Filtration Analysis', description: 'Analysis of when OEM filter brand choice is a compliance requirement versus when system-level contamination control design determines equipment reliability.' },

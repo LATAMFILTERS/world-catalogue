@@ -27,23 +27,6 @@ export default function AftermarketSelectionPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              FILTRATION DECISION BRIDGE
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,6 +98,7 @@ export default function AftermarketSelectionPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Once equipment warranty expires, filtration decisions shift from OEM compliance to asset protection optimization. This creates both risk and opportunity: choosing poorly compromises equipment reliability and TCO, but selecting strategically can extend equipment life 30-50% while reducing costs.
           </p>
@@ -162,6 +146,7 @@ export default function AftermarketSelectionPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Once warranty expires, aftermarket filters offer significant opportunity:
           </p>
@@ -252,6 +237,7 @@ export default function AftermarketSelectionPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Evaluate aftermarket filters using these criteria:
           </p>
@@ -268,6 +254,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. ISO 16889 Certification</strong><br/>
               Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β₁₀≥75 means 75% of 10µm particles are captured.
@@ -278,6 +265,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>2. Specification Matching</strong><br/>
               Confirm physical dimensions (bowl thread, element length, diameter), flow capacity, pressure drop, and bypass setting match or exceed OEM requirements.
@@ -288,6 +276,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>3. Material Quality</strong><br/>
               <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Synthetic media lasts longer in extreme temperatures</Link>. Verify media type and construction quality. Low-cost filters use cheap fiberglass media with short lifespan.
@@ -297,6 +286,7 @@ export default function AftermarketSelectionPage() {
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>4. Supplier Reputation</strong><br/>
               Research manufacturer: how long in business, certification (ISO, SAE, ASTM), customer reviews, warranty policy. Established aftermarket suppliers have performance history and accountability.
@@ -336,6 +326,7 @@ export default function AftermarketSelectionPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             When selecting aftermarket filters, optimize for total cost of ownership:
           </p>
@@ -352,6 +343,7 @@ export default function AftermarketSelectionPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Cheap Filters ($10-15 per unit)</strong><br/>
               Lower initial cost, but short service life, high pressure drop, low dirt capacity. Require frequent replacement. Total 10-year cost: high due to labor and downtime frequency.
@@ -361,6 +353,7 @@ export default function AftermarketSelectionPage() {
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Quality Aftermarket ($20-35 per unit)</strong><br/>
               Moderate cost, good service life, low pressure drop, high dirt capacity. Extended replacement intervals, reduced downtime frequency. Total 10-year cost: lower due to fewer replacements and less downtime.
@@ -512,7 +505,7 @@ export default function AftermarketSelectionPage() {
             </div>
 
             <div>
-              <p style={{ fontWeight: 707, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_STANDARDS</p>
+              <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_STANDARDS</p>
               <p style={{ margin: '0' }}>ISO 16889 (Beta ratio test certification), ISO 4406 (Contamination target codes), Supplier certifications (ISO 9001, SAE J2030)</p>
             </div>
 
@@ -546,8 +539,8 @@ export default function AftermarketSelectionPage() {
         '@type': 'TechArticle',
         headline: 'Aftermarket Filter Selection Strategy',
         description: 'Technical framework for evaluating aftermarket filtration options using system-level contamination control criteria—ISO 16889 Beta ratios, dirt capacity, and bypass thresholds—when warranty has expired or OEM is optional.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['aftermarket filter selection', 'ISO 16889', 'Beta ratio', 'filter evaluation', 'contamination control', 'OEM alternative', 'asset protection', 'industrial filtration'],
         about: { '@type': 'Thing', name: 'Aftermarket Filter Selection Strategy', description: 'Methodology for selecting aftermarket industrial filters based on verified ISO 16889 performance and contamination control metrics.' },

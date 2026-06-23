@@ -497,7 +497,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   lineHeight: 1.8,
                 }}
               >
-                {item.engineeringBody ?? 'ELIMFILTERS engineering applies German-grade quality standards to every system component. Our asset protection systems are designed to exceed OEM performance expectations and support reliable operation across demanding industrial duty cycles.'}
+                {item.engineeringBody ?? 'ELIMFILTERS engineering is built around Total Asset Protection — controlling contamination at the source to prevent degradation, extend equipment lifespan and reduce the total cost of ownership across all critical industrial systems.'}
               </p>
             </AnimateIn>
 
@@ -630,7 +630,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 {(item.benefits || [
                   'Extended service intervals reduce downtime',
                   'Superior contamination retention extends asset life',
-                  'German engineering precision and reliability',
+                  'Total Asset Protection across all critical systems',
                   'Cost-effective protection across all duty cycles',
                   'Proven performance in extreme environments',
                   'Industry-leading filtration efficiency',

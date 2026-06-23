@@ -28,23 +28,6 @@ export default function EvaluationFrameworkPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              FILTER EVALUATION
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,6 +97,7 @@ export default function EvaluationFrameworkPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Traditional filter evaluation focuses on:
           </p>
@@ -134,6 +118,7 @@ export default function EvaluationFrameworkPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             All OEM-compliant filters meet these specifications. Yet equipment failure rates vary dramatically. Why? Because specifications define minimum requirements, not system-level performance. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design framework</Link> provides the foundation for understanding what measurable contamination control actually requires.
           </p>
@@ -171,6 +156,7 @@ export default function EvaluationFrameworkPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             System-level filter evaluation focuses on measurable contamination control. The <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 particle cleanliness code</Link> is the primary classification tool that quantifies whether a filter system is actually achieving its target in operating equipment:
           </p>
@@ -541,8 +527,8 @@ export default function EvaluationFrameworkPage() {
         '@type': 'TechArticle',
         headline: 'Filter Evaluation Framework',
         description: 'Technical framework for evaluating industrial filters using contamination control metrics—ISO 16889 Beta ratios, ISO 4406 cleanliness codes, and bypass thresholds—rather than product specifications alone.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['filter evaluation framework', 'ISO 16889', 'Beta ratio', 'ISO 4406', 'contamination control', 'filter selection', 'industrial filtration', 'asset protection'],
         about: { '@type': 'Thing', name: 'Filter Evaluation Framework', description: 'Methodology for selecting industrial filters based on measured contamination control performance rather than product brand or OEM specification compliance.' },

@@ -28,23 +28,6 @@ export default function SystemVsCommodityPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              CATEGORY REFRAMING
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,6 +97,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             For decades, industrial filtration has been treated as a commodity product. Purchase decisions center on:
           </p>
@@ -133,6 +117,7 @@ export default function SystemVsCommodityPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             In this model, filter performance is binary: it either meets OEM specifications or it doesn't. All compliant filters are treated as functionally equivalent. Equipment reliability is assumed to flow automatically from OEM specification compliance.
           </p>
@@ -170,6 +155,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             OEM specification compliance is a minimum floor, not a performance ceiling. Two vehicles, two hydraulic systems, or two compressed air networks can both use OEM-compliant filters while experiencing dramatically different equipment reliability based on how well contamination is actually controlled.
           </p>
@@ -178,6 +164,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Real-world equipment failure is not caused by filter brand choice. It is caused by contamination entering the system because:
           </p>
@@ -198,6 +185,7 @@ export default function SystemVsCommodityPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             Equipment reliability is determined by the effectiveness of the total contamination control system, not by which branded filter element is installed. Understanding <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration as an integrated system</Link> is the prerequisite for moving beyond commodity thinking.
           </p>
@@ -235,6 +223,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             System-level filtration design addresses all contamination pathways:
           </p>
@@ -268,6 +257,7 @@ export default function SystemVsCommodityPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             Each system is designed around specific contamination challenges and measurement standards, with <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889 Beta Ratio testing</Link> providing the core measurement basis for evaluating how well any filter actually controls contamination. The filter product is an implementation detail, not the strategy.
           </p>
@@ -429,6 +419,7 @@ export default function SystemVsCommodityPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
+            textAlign: 'justify',
           }}>
             System-level filtration design eliminates these preventable failures by treating contamination control as a measurable engineering problem, not a commodity purchase decision.
           </p>
@@ -459,8 +450,8 @@ export default function SystemVsCommodityPage() {
         '@type': 'TechArticle',
         headline: 'System vs Commodity Filtration',
         description: 'Why filtration performance is a system design problem, not a product commodity selection problem. Equipment reliability is determined by contamination control effectiveness, not filter brand choice.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'system filtration', 'commodity filtration', 'ISO 16889', 'OEM specification', 'equipment reliability'],
         about: { '@type': 'Thing', name: 'System vs Commodity Filtration', description: 'Framework distinguishing system-level contamination control from commodity filter product selection, showing why OEM specification compliance does not equal equipment reliability.' },

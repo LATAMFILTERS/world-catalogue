@@ -28,23 +28,6 @@ export default function TCOPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              SYSTEM ECONOMICS
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,6 +97,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Commodity filtration purchasing focuses on per-unit filter cost. A Donaldson, Fleetguard, or Mann filter might cost $35-$75 depending on type. Aftermarket alternatives cost $15-$35. Price competition drives purchasing decisions.
           </p>
@@ -122,6 +106,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             But total cost of ownership includes hidden costs that commodity pricing completely ignores. The foundations of a sound TCO model are explained through the lens of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link>, where contamination control is treated as an engineering measurable rather than a procurement variable:
           </p>
@@ -207,6 +192,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Total cost of ownership includes all costs associated with equipment operation over its useful life:
           </p>
@@ -598,8 +584,8 @@ export default function TCOPage() {
         '@type': 'TechArticle',
         headline: 'Total Cost of Ownership',
         description: 'Total cost of ownership analysis showing how system-level filtration reduces equipment lifecycle costs through contamination control, extended component life, and reduced unplanned downtime.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['total cost of ownership', 'filtration TCO', 'contamination control', 'fleet economics', 'ISO 16889', 'ISO 4406', 'asset protection', 'equipment lifecycle cost'],
         about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Economic framework for evaluating filtration decisions based on equipment lifecycle cost rather than filter purchase price.' },
