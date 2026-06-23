@@ -41,7 +41,7 @@ export default function AftermarketSelectionPage() {
               color: '#FFF12D',
               fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // FILTRATION DECISION BRIDGE
+              FILTRATION DECISION BRIDGE
             </span>
           </motion.div>
           <motion.h1

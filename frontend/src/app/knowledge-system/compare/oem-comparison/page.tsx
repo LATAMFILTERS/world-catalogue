@@ -42,7 +42,7 @@ export default function OEMComparisonPage() {
               color: '#FFF12D',
               fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // MARKET POSITIONING
+              MARKET POSITIONING
             </span>
           </motion.div>
           <motion.h1

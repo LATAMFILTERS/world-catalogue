@@ -42,7 +42,7 @@ export default function TCOPage() {
               color: '#FFF12D',
               fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // SYSTEM ECONOMICS
+              SYSTEM ECONOMICS
             </span>
           </motion.div>
           <motion.h1

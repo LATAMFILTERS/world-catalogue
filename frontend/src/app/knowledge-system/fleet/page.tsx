@@ -59,16 +59,6 @@ export default function FleetHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -109,6 +99,7 @@ export default function FleetHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Fleet reliability is a direct function of contamination control across all critical systems. Strategies for <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>reducing fleet downtime</Link> begin with understanding failure mechanisms documented in the <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration selection</Link> framework—where equipment protection requirements are defined before product decisions are made.
           </p>
@@ -220,8 +211,8 @@ export default function FleetHubPage() {
         '@type': 'TechArticle',
         headline: 'Fleet Optimization',
         description: 'Operational strategies for reducing unplanned fleet downtime, optimizing fuel consumption, and modeling filtration investment against total lifecycle cost through system-level contamination control.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['fleet optimization', 'fleet downtime reduction', 'fuel efficiency', 'total cost of ownership', 'filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
         about: { '@type': 'Thing', name: 'Fleet Optimization', description: 'Operational strategies for industrial fleet management using system-level filtration to reduce downtime, improve fuel efficiency, and optimize total cost of ownership.' },

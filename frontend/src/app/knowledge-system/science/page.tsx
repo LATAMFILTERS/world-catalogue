@@ -112,86 +112,72 @@ const TECHNOLOGIES = [
   {
     code: 'MACROCORE™',
     href: '/technologies/macrocore',
-    failureMechanism: 'Airborne dust and silica ingestion exceeding engine air intake threshold causing abrasive cylinder, ring, and valve wear',
-    protection: 'Progressive Density Gradient (PDG) 3-zone air intake filtration. 99.98% efficiency at target particle sizes, ISO 5011 certified, 62 PSI anti-collapse rated. Controls contamination at the air intake entry point before engine ingestion.',
-    system: 'Air Intake | Engine Protection',
-  },
-  {
-    code: 'SYNTRAX™',
-    href: '/technologies/syntrax',
-    failureMechanism: 'Engine oil contamination with wear particles causing turbocharger bearing failure and lube circuit degradation',
-    protection: '4-layer AI-calibrated density gradient matrix for engine lube oil. Thermal bonding layer lock prevents media migration. 3µm turbo custody barrier provides dedicated turbocharger bearing protection.',
-    system: 'Engine Lube | Turbocharger | Oil Circuit',
-  },
-  {
-    code: 'NANOFORCE™',
-    href: '/technologies/nanoforce',
-    failureMechanism: 'Sub-micron particles (0.5–3µm) in hydraulic systems causing varnish formation, proportional valve stiction, and servo erosion',
-    protection: '3-layer hydraulic filtration (guard + vapor control + structural core). Sub-3µm precision barrier with dissolved water phase-transition capture. High-pressure pulsation rated for industrial hydraulic circuits.',
-    system: 'Hydraulic | High-Precision | Servo Systems',
-  },
-  {
-    code: 'SYNTEPORE™',
-    href: '/technologies/syntepore',
-    failureMechanism: 'Particle contamination in Common Rail HPCR injectors (2,000+ bar) causing erosion of injector nozzle geometry at sub-4µm clearances',
-    protection: '3-layer progressive fuel capture with 4µm zero-migration terminal barrier. Engineered for HPCR injector protection under ultra-high rail pressures. Prevents particle-driven injector geometry loss.',
-    system: 'Fuel | HPCR Injectors | Common Rail',
-  },
-  {
-    code: 'HYDROCORE™',
-    href: '/technologies/hydrocore',
-    failureMechanism: 'Free, emulsified, and dissolved water in diesel fuel above 500 ppm activating corrosive injector wear and microbial growth',
-    protection: '3-phase interception fuel water separator: free water + emulsified water + dissolved water capture. 99.8% separation efficiency with hydrophobic barrier minimum 2µm. Reduces water content below corrosion activation threshold.',
-    system: 'Fuel | Water Separation | Diesel Systems',
-  },
-  {
-    code: 'TURBOCORE™',
-    href: '/technologies/turbocore',
-    failureMechanism: 'High-volume water contamination in large-displacement fuel systems exceeding single-stage coalescer capacity',
-    protection: '3-stage fuel protection: HYDROCORE turbine rotation inertia separation (stage 1) + coalescence (stage 2) + hydrophobic barrier (stage 3). ISO 16332 certified for high-flow fuel systems.',
-    system: 'Bulk Fuel | Large Equipment | Marine',
-  },
-  {
-    code: 'THERMACORE™',
-    href: '/technologies/thermacore',
-    failureMechanism: 'Coolant system additive depletion causing cylinder liner cavitation erosion and corrosion across mixed-metal cooling circuits',
-    protection: 'SCA (Supplemental Coolant Additive) gradual release technology for cooling system protection. Prevents cylinder liner cavitation and protects 5 metal types (Al, Cu, Fe, steel, brass) against electrochemical corrosion.',
-    system: 'Cooling System | Cylinder Liner | Coolant Circuit',
-  },
-  {
-    code: 'DRYCORE™',
-    href: '/technologies/drycore',
-    failureMechanism: 'Moisture accumulation in compressed air and pneumatic systems causing corrosion of air brake components and control valves',
-    protection: 'Desiccant molecular sieve technology for compressed air and pneumatic systems. −40°C dew point rated. Prevents moisture-driven corrosion in air brake, suspension, and pneumatic control circuits.',
-    system: 'Compressed Air | Pneumatic | Air Brake Systems',
-  },
-  {
-    code: 'INTEKCORE™',
-    href: '/technologies/intekcore',
-    failureMechanism: 'Inadequate or incorrectly specified filter housing causing bypass, collapse, or media failure under high-flow industrial conditions',
-    protection: 'Heavy-duty filter housing systems engineered for trucks and industrial machinery. Structural housing integrity under high-flow, high-pressure conditions. Correct housing selection prevents bypass events from housing failure.',
-    system: 'Filter Housing | Industrial Machinery | Trucks',
-  },
-  {
-    code: 'DURATECH™',
-    href: '/technologies/duratech',
-    failureMechanism: 'Fragmented fleet maintenance causing inconsistent filter replacement intervals and missed cross-system contamination events',
-    protection: 'Fleet maintenance master kit system consolidating oil + fuel + air + cabin filter replacement in a single scheduled intervention. Eliminates maintenance gaps across all critical filtration domains simultaneously.',
-    system: 'Fleet Maintenance | Multi-System | Consolidated Service',
-  },
-  {
-    code: 'MARINECLEAN™',
-    href: '/technologies/marineclean',
-    failureMechanism: 'Salt water and brine ingestion in marine diesel and hydraulic systems causing corrosion and accelerated component wear',
-    protection: 'Marine-grade filtration with salt-resistant epoxy coating and brine rejection barrier. IMO certified. Engineered for marine diesel and hydraulic systems operating in saltwater environments.',
-    system: 'Marine Diesel | Marine Hydraulic | Offshore',
+    failureMechanism: 'High particle population (ISO 4406 ≥18/16/13) causing bearing abrasion',
+    protection: 'Primary particulate capture at 18µm absolute in engine lube and hydraulic systems. Reduces cleanliness code by 2–4 ISO steps, extending L10 bearing life 2–5×.',
+    system: 'Engine | Hydraulic | Lube',
   },
   {
     code: 'MICROKAPPA™',
     href: '/technologies/microkappa',
-    failureMechanism: 'PM2.5 particles, VOCs, NOx gases, and biological contaminants in cabin air causing operator respiratory exposure and health impairment',
-    protection: 'Multi-stage cabin air protection: electrostatic layer (PM2.5 99%) + activated carbon (VOC/NOx 95%) + HEPA class (99.97% at 0.3µm). Protects operator health in heavy-duty equipment and industrial vehicle cabins.',
-    system: 'Cabin Air | Operator Health | Vehicle Cab',
+    failureMechanism: 'Fine particle wear at 4–10µm causing servo valve spool erosion and stiction',
+    protection: 'Sub-10µm particle capture for precision hydraulic and fuel injection systems. Addresses the critical particle population driving proportional valve failure at 1–3µm clearance.',
+    system: 'Hydraulic | Fuel | Precision Systems',
+  },
+  {
+    code: 'DRYCORE™',
+    href: '/technologies/drycore',
+    failureMechanism: 'Airborne silica and mineral dust ingestion causing abrasive cylinder and ring wear',
+    protection: 'Dry element air filtration for extreme dust environments (2,000–15,000 mg/m³ silica). Captures 99.9%+ of particles above the critical ingestion threshold without oil carryover risk.',
+    system: 'Air Intake | Engine Protection',
+  },
+  {
+    code: 'INTEKCORE™',
+    href: '/technologies/intekcore',
+    failureMechanism: 'Combined particle and water contamination in fuel causing injector erosion and corrosion',
+    protection: 'Integrated fuel filtration addressing dual contamination mode: particulate capture + water separation in single assembly. Prevents both particle erosion and water-corrosion failure pathways.',
+    system: 'Fuel | Diesel | Injection Systems',
+  },
+  {
+    code: 'SYNTEPORE™',
+    href: '/technologies/syntepore',
+    failureMechanism: 'Cellulose media degradation in water-contaminated or high-temperature fluids causing Beta ratio collapse',
+    protection: 'Synthetic pore-structure media with dimensional stability from −40°C to +150°C. Maintains rated Beta ratio when cellulose media fails under thermal or water exposure.',
+    system: 'Hydraulic | Lube | High-Temperature',
+  },
+  {
+    code: 'HYDROCORE™',
+    href: '/technologies/hydrocore',
+    failureMechanism: 'Free and emulsified water above 500 ppm activating corrosive wear and injector failure',
+    protection: 'Hydrophilic coalescing media grows water droplets to gravity-separation threshold. Reduces water content to <100 ppm — below the corrosion activation threshold for ferrous components.',
+    system: 'Fuel | Hydraulic | Water Separation',
+  },
+  {
+    code: 'HYDROCORE™/SERIES',
+    href: '/technologies/hydrocore-series',
+    failureMechanism: 'High-volume water contamination in large-displacement fuel systems exceeding single-stage coalescer capacity',
+    protection: 'Extended-capacity HYDROCORE configuration for bulk fuel and marine applications. Multi-stage coalescing for high-flow systems with continuous water ingress from storage or transfer.',
+    system: 'Bulk Fuel | Large Equipment | Marine',
+  },
+  {
+    code: 'SYNTRAX™',
+    href: '/technologies/syntrax',
+    failureMechanism: 'Transmission fluid metallic wear debris causing gear-to-gear contact propagation and additive depletion',
+    protection: 'Synthetic transmission filtration with high dirt-holding capacity. Removes metallic wear debris before the self-reinforcing wear cascade propagates through the drivetrain.',
+    system: 'Transmission | Drivetrain | Gearbox',
+  },
+  {
+    code: 'NANOFORCE™',
+    href: '/technologies/nanoforce',
+    failureMechanism: 'Sub-micron particles (0.5–3µm) causing varnish formation and additive depletion in modern hydraulic oils',
+    protection: 'Sub-micron capture to 1µm efficiency. Addresses the particle population below standard ISO 4406 measurement resolution but responsible for modern hydraulic fluid accelerated degradation.',
+    system: 'Hydraulic | High-Precision | Servo Systems',
+  },
+  {
+    code: 'THERMACORE™',
+    href: '/technologies/thermacore',
+    failureMechanism: 'Thermal cycling causing media structural failure and contamination bypass at peak operating temperatures',
+    protection: 'Thermal-resistant media structure maintains Beta ratio integrity at high operating temperatures. Prevents contamination bypass events during hot-cycle operation that defeat primary protection.',
+    system: 'High-Temperature | Diesel | Industrial',
   },
 ];
 
@@ -251,8 +237,8 @@ export default function SciencePage() {
     headline: 'The Physics of Industrial Failure',
     description:
       'Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control science that prevents it.',
-    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
     dateModified: '2026-06-11',
     keywords: [
       'industrial filtration', 'contamination control', 'ISO 4406', 'ISO 16889',
@@ -316,16 +302,6 @@ export default function SciencePage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '780px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // THE SCIENCE OF ASSET PROTECTION™
-          </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.4rem)',
@@ -343,6 +319,7 @@ export default function SciencePage() {
             maxWidth: '580px',
             margin: '0 auto',
             lineHeight: 1.7,
+            textAlign: 'justify',
           }}>
             Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control framework that prevents it.
           </p>
@@ -431,13 +408,13 @@ export default function SciencePage() {
             Industrial Equipment Does Not Fail Randomly
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
               Contamination is the root cause of 70–80% of hydraulic and lubrication system failures in heavy equipment. Not age. Not hours. Not mechanical chance. Particle contamination accumulating beyond the ISO 4406 cleanliness target of the protected component initiates a measurable, predictable wear cascade — abrasion, fatigue, adhesion, and corrosion — that progresses at a rate directly proportional to contamination level.
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
               The contamination-failure relationship is quantified. ISO 281:2007 and the SKF General Catalogue define L10 bearing life multipliers at each ISO 4406 cleanliness code. The data shows a 20× difference in bearing lifespan between optimal cleanliness (14/12/09) and field-typical contaminated conditions (≥22). This is not a marketing claim — it is a physical relationship measured under controlled test conditions with defined statistical confidence.
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
               The operational implication is direct: contamination control is not a maintenance practice. It is an engineering decision that determines equipment lifespan at the system design level. Asset owners who treat filtration as a commodity purchasing decision are making an engineering decision by default — and the consequence is equipment that fails 3–7× faster than its design life.
             </p>
           </div>
@@ -534,7 +511,7 @@ export default function SciencePage() {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1rem' }}>
               Cleanliness Code vs. L10 Bearing Life Multiplier
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>
               Source: ISO 281:2007, SKF General Catalogue 6000 EN. L10 bearing life is the operating hours at which 10% of a bearing population is expected to have failed. The multiplier expresses life relative to optimal cleanliness (14/12/09 = 1.0×).
             </p>
           </motion.div>
@@ -560,7 +537,7 @@ export default function SciencePage() {
           </div>
           <div style={{ background: 'rgba(255,241,45,0.06)', border: '1px solid rgba(255,241,45,0.2)', padding: '1.5rem' }}>
             <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem' }}>Operational Translation</p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, textAlign: 'justify' }}>
               A haul truck bearing designed for 20,000 operating hours at ISO 4406 14/12/09 will deliver approximately 3,000 hours at 20/18/15 — the cleanliness level typical of equipment without active contamination control. That is a 6.7× reduction in service life, representing $25,000–$80,000 per bearing assembly in replacement and downtime costs per event, recurring every 9 months instead of every 5 years.
             </p>
           </div>
@@ -579,13 +556,13 @@ export default function SciencePage() {
             </h2>
           </motion.div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify' }}>
               Three physical mechanisms arrest particles in filter media: <strong style={{ color: '#fff' }}>inertial impaction</strong> (particles with sufficient mass deviate from fluid streamlines and contact fibers, dominant above 10µm), <strong style={{ color: '#fff' }}>interception</strong> (particles following streamlines contact fibers due to their size, dominant 1–10µm), and <strong style={{ color: '#fff' }}>diffusion</strong> (sub-micron particles undergo Brownian motion increasing fiber contact probability, dominant below 0.3µm). The particle size range 0.3–1.0µm falls in the transition zone between all three mechanisms — this is the most penetrating particle size for fibrous filter media.
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify' }}>
               Beta ratio (βx) quantifies media efficiency: it is the ratio of upstream to downstream particle count at particle size x under ISO 16889 multi-pass test conditions. β10(c) = 200 means 200 upstream particles for every 1 downstream particle at 10µm — 99.5% capture efficiency. Beta ratio must be stated at the relevant particle size for the protected component. A hydraulic proportional valve with 2µm spool clearance requires β3 ≥200, not β10. Specifying at the wrong particle size produces unmeasurable protection.
             </p>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify' }}>
               Filter element service life is governed by <strong style={{ color: '#fff' }}>dirt holding capacity</strong> — the total mass of contaminant the element can retain before reaching terminal differential pressure and the bypass valve opens. ISO 16889 quantifies this via gravimetric analysis. High dirt capacity delays bypass valve activation at the exact moments of highest contamination ingestion, when the protection floor matters most.
             </p>
           </div>
@@ -679,7 +656,7 @@ export default function SciencePage() {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               ELIMFILTERS Technologies: Why Each Exists
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '680px' }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '680px', textAlign: 'justify' }}>
               Every ELIMFILTERS technology was engineered to address a specific, identified failure mechanism. The failure mechanism determines the technology requirement. The technology maps to a contamination control target. The contamination target is defined by the cleanliness sensitivity of the protected component.
             </p>
           </motion.div>
@@ -805,7 +782,7 @@ export default function SciencePage() {
                 style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', padding: '1.75rem' }}
               >
                 <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.5 }}>{faq.q}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.52)', lineHeight: 1.8 }}>{faq.a}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.52)', lineHeight: 1.8, textAlign: 'justify' }}>{faq.a}</p>
               </motion.div>
             ))}
           </div>
@@ -861,22 +838,9 @@ export default function SciencePage() {
           <p style={{ marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
           <p>ISO 4406: Particle cleanliness code classification (≥4µm, ≥6µm, ≥14µm thresholds) | ISO 16889: Beta ratio filter efficiency testing (multi-pass methodology) | ISO 281:2007: Bearing life calculation including contamination factor | ISO 5011: Air filter efficiency and flow resistance | ISO 12937: Water content in petroleum products (Karl Fischer) | SAE J1539: Air induction system performance</p>
           <p style={{ marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-          <p>MACROCORE™: PDG 3-zone air intake filtration 99.98% ISO 5011 — addresses airborne dust/silica engine ingestion | SYNTRAX™: 4-layer AI matrix engine lube oil 3µm turbo barrier — addresses turbocharger bearing lube circuit contamination | NANOFORCE™: 3-layer sub-3µm hydraulic barrier dissolved water capture — addresses hydraulic system varnish formation and servo erosion | SYNTEPORE™: 4µm zero-migration terminal barrier HPCR injectors — addresses Common Rail injector nozzle erosion at 2,000+ bar | HYDROCORE™: 3-phase fuel water separator 99.8% efficiency hydrophobic 2µm — addresses free/emulsified/dissolved water diesel fuel | TURBOCORE™: 3-stage fuel protection ISO 16332 — addresses high-volume fuel water contamination large equipment | THERMACORE™: SCA gradual release cooling additive — addresses cylinder liner cavitation and 5-metal coolant corrosion | DRYCORE™: Molecular sieve desiccant −40°C compressed air — addresses moisture corrosion air brake and pneumatic systems | INTEKCORE™: Heavy-duty filter housing systems — addresses bypass/collapse risk from housing failure under industrial conditions | DURATECH™: Fleet maintenance master kit oil+fuel+air+cabin — addresses fragmented multi-system maintenance gaps | MARINECLEAN™: Salt-resistant marine filtration IMO certified — addresses brine ingestion marine diesel and hydraulic systems | MICROKAPPA™: Electrostatic+carbon+HEPA cabin air 99.97% — addresses operator PM2.5/VOC/NOx respiratory exposure</p>
+          <p>MACROCORE™: Primary particulate capture 18µm absolute — addresses high particle population (ISO 4406 ≥18) bearing abrasion | MICROKAPPA™: Sub-10µm capture — addresses servo valve spool wear at 4–10µm | DRYCORE™: Dry element air filtration — addresses silica dust ingestion cylinder wear | INTEKCORE™: Integrated fuel filtration — addresses combined particle + water injector failure | SYNTEPORE™: Synthetic pore media — addresses cellulose media failure in water/high-temperature environments | HYDROCORE™: Water coalescing — addresses water corrosion activation (&gt;500 ppm) | HYDROCORE™/SERIES: Extended water separation — bulk fuel high-volume applications | SYNTRAX™: Synthetic transmission filtration — addresses metallic wear debris drivetrain cascade | NANOFORCE™: Sub-micron 1µm capture — addresses varnish formation and additive depletion | THERMACORE™: Thermal-resistant media — addresses Beta ratio collapse at peak operating temperatures</p>
           <p style={{ marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
           <p>Contamination control is the primary engineering lever for industrial equipment lifespan. The difference between ISO 4406 14/12/09 and 20/18/15 cleanliness — achievable through system-level filtration design — represents a 6–7× difference in bearing service life and determines whether equipment operates 5+ years between major overhauls or requires intervention every 9 months.</p>
-          <p style={{ marginTop: '0.75rem' }}>SEMANTIC_DOMAINS</p>
-          <p>Contamination Control Systems [PRIMARY] | Industrial Filtration Science [SECONDARY]</p>
-          <p style={{ marginTop: '0.75rem' }}>SYSTEMS_AFFECTED</p>
-          <p>engine, hydraulic, fuel, lube_oil, air_intake, cabin, compressed_air</p>
-          <p style={{ marginTop: '0.75rem' }}>CONCEPT_TAXONOMY</p>
-          <p>type=reference | domain=filtration-science | scope=all-systems</p>
-          <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES</p>
-          <p>Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ASTM D6304, ISO 11155</p>
-          <p>Related_Technologies: MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, DRYCORE, MICROKAPPA</p>
-          <p>Related_Contamination: /knowledge-system/contamination/particle-wear | /knowledge-system/contamination/diesel-water | /knowledge-system/contamination/hydraulic-system</p>
-          <p>Related_Fleet: /knowledge-system/fleet/reducing-downtime | /knowledge-system/fleet/total-cost-ownership</p>
-          <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA</p>
-          <p>source_uri: elimfilters.com/knowledge-system/science | concept_id: filtration-science-principles | version: 1.0 | last_updated: 2026-06-23</p>
           <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
           <p>source: elimfilters.com/knowledge-system/science</p>
           <p>concept: The Physics of Industrial Failure — Asset Protection Science</p>

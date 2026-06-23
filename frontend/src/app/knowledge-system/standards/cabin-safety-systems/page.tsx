@@ -73,17 +73,13 @@ export default function CabinSafetySystemsPage() {
       }}>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>// INDUSTRIAL STANDARDS · CABIN SAFETY</p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>Cabin / Human Safety Filtration Systems</h1>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
-            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', textAlign: 'justify', lineHeight: 1.7,
           }}>
             Operator cabin air filtration protecting breathing air quality against PM10 dust, agricultural allergens, and chemical vapors that cause respiratory stress and cognitive degradation during extended equipment operation in contaminated industrial environments.
           </p>
@@ -95,10 +91,10 @@ export default function CabinSafetySystemsPage() {
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>01 / SYSTEM OVERVIEW</p>
           <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Cabin Air Filtration Domain</h2>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem' }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8, marginBottom: '1rem' }}>
             Mobile equipment operator cabins in agricultural and construction applications represent a distinct filtration domain where the protected medium is human breathing air rather than a mechanical fluid. Agricultural combine harvesters, tractors, excavators, and mining haul trucks expose operators to external dust concentrations of 100-1500 mg/m3 during operation - concentrations that can cause acute respiratory stress and long-term occupational lung disease without adequate cabin filtration. Cabin safety filtration sits alongside engine air, fuel, hydraulic, and lube systems as one of the six domains covered by the <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems framework</Link>.
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8 }}>
             Modern cabs maintain positive internal pressurization (5-10 Pa above exterior) to prevent unfiltered dust infiltration through door seals and gaps. The cabin air filter is the primary barrier preventing external contamination from reaching operator breathing space. Unlike engine air intake filters that protect mechanical components with defined particle tolerance limits, cabin filters must protect biological tissue with no safe exposure threshold for contaminants such as crystalline silica and sensitizing crop allergens.
           </p>
         </motion.section>
@@ -133,7 +129,7 @@ export default function CabinSafetySystemsPage() {
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
                 <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{item.desc}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -168,7 +164,7 @@ export default function CabinSafetySystemsPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8 }}>
             Cabin filter failure has both immediate and long-term health consequences. Acute exposure at 500+ mg/m3 without filtration causes measurable pulmonary function reduction within a single work shift. Cumulative lifetime exposure beyond regulatory limits results in occupational lung disease qualifying as permanent disability. From a fleet operations perspective, cabin filter maintenance is the lowest-cost intervention with the highest operator health protection return on investment. Proactive cabin filter management is one component of broader <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction strategies</Link> that integrate condition-based maintenance across all filtration domains.
           </p>
         </motion.section>
@@ -181,7 +177,7 @@ export default function CabinSafetySystemsPage() {
           <Link href="/knowledge-system/contamination/particle-wear" style={{ textDecoration: 'none' }}>
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', margin: 0 }}>Particle Wear in Engines</p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>The same atmospheric particles that enter engine air intakes also contaminate cabin air. Understanding particle size distribution, concentration mechanisms, and the three-body abrasion model provides context for cabin contamination severity in high-dust industrial environments.</p>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6, margin: 0 }}>The same atmospheric particles that enter engine air intakes also contaminate cabin air. Understanding particle size distribution, concentration mechanisms, and the three-body abrasion model provides context for cabin contamination severity in high-dust industrial environments.</p>
               <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,241,45,0.4)', marginTop: '0.25rem' }}>VIEW ANALYSIS →</span>
             </motion.div>
           </Link>
@@ -197,7 +193,7 @@ export default function CabinSafetySystemsPage() {
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', height: '100%' }}>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.6rem' }}>{tech.name}</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{tech.role}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6 }}>{tech.role}</p>
                 </motion.div>
               </Link>
             ))}
@@ -230,7 +226,7 @@ export default function CabinSafetySystemsPage() {
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
                 <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{item.body}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -245,14 +241,13 @@ export default function CabinSafetySystemsPage() {
             {FAQS.map((faq, i) => (
               <div key={i} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem' }}>
                 <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5 }}>{faq.q}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75 }}>{faq.a}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.75 }}>{faq.a}</p>
               </div>
             ))}
           </div>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>// EXPLORE OTHER FILTRATION SYSTEMS</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>

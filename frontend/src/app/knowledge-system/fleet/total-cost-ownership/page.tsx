@@ -12,11 +12,11 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Long-service-life air elements with capacity designed for full service intervals reduce element replacement frequency and labor costs in high-dust environments.' },
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Extended-interval synthetic fuel and hydraulic media reduces filter replacement frequency while maintaining target cleanliness codes across longer operating periods.' },
+  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Sub-3µm hydraulic precision filtration extends hydraulic pump and valve service life by maintaining ISO 16889 16/14/11 cleanliness, deferring proportional valve replacement events that represent major maintenance cost items.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration reduces engine reconditioning frequency, extending the interval between major overhauls that represent the largest single maintenance cost events.' },
-  { name: 'SYNTRAX', slug: 'syntrax', role: 'Synthetic fluid formulations with 4,000+ hour service life reduce fluid replacement cost and disposal frequency in hydraulic and transmission systems.' },
+  { name: 'SYNTRAX', slug: 'syntrax', role: '4-layer AI-calibrated engine lube oil filtration extends drain intervals by maintaining ISO 4406 cleanliness in engine circuits, reducing fluid replacement frequency and associated labor costs.' },
   { name: 'HYDROCORE', slug: 'hydrocore', role: 'Preventing injector damage from water contamination defers injector replacement events that typically cost 800 to 2,500 USD per set for heavy diesel applications.' },
-  { name: 'MICROKAPPA', slug: 'microkappa', role: 'Cabin air occupant health protection (PM2.5 99%, VOC/NOx 95%, HEPA 99.97% at 0.3µm) reduces operator health incidents and associated fleet productivity losses.' },
+  { name: 'MICROKAPPA', slug: 'microkappa', role: 'Coolant system contamination control extends coolant service life and prevents thermal system degradation that leads to costly head gasket and heat exchanger failures.' },
 ];
 
 const STANDARDS = [
@@ -98,12 +98,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · TCO
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -114,6 +108,7 @@ export default function TotalCostOwnershipPage() {
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
             color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7,
+            textAlign: 'justify',
           }}>
             Filter element unit cost represents a fraction of the economic decision. The complete TCO model accounts for service labor, component longevity, fluid waste, downtime exposure, and the quantifiable value of failures that did not occur.
           </p>
@@ -139,13 +134,13 @@ export default function TotalCostOwnershipPage() {
           }}>Total Cost of Ownership in Filtration Systems</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem', textAlign: 'justify',
           }}>
             Total Cost of Ownership (TCO) in filtration is the complete economic accounting of a filtration program across its full lifecycle - from filter element procurement through fluid disposal, including all associated labor, the downstream effects on component longevity, and the economic value of avoided failures. Establishing cleanliness targets through <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link> is the foundation of any defensible TCO model.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             Purchase price is the most visible filtration cost but rarely the most significant one. In most industrial applications, the ratio of filter element cost to total filtration program cost is between 1:4 and 1:8. Labor for service events, oil analysis programs, fluid costs, and avoided component replacement represent the dominant cost categories that TCO modeling must capture to support sound procurement decisions. The financial case is developed further in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, where unplanned failure costs are quantified.
           </p>
@@ -169,19 +164,19 @@ export default function TotalCostOwnershipPage() {
           }}>The Unit Price Procurement Trap</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             Filtration procurement decisions based on element unit price alone systematically underestimate program costs and overestimate savings from cheaper alternatives. This occurs because filter elements are purchased in one budget cycle but their consequences - component wear rates, service interval frequency, failure events - manifest in separate accounting periods and cost centers.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             A filter element specification change that reduces unit cost by 25% but decreases service interval from 500 hours to 350 hours increases annual element consumption by 43% - erasing the unit price saving before accounting for additional service labor. If the lower-efficiency element also allows <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO cleanliness levels</Link> to rise by one code, the resulting 2x increase in particle concentration accelerates bearing wear rates and potentially reduces component service life, shifting major overhaul costs forward by months or years.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             The organizational challenge is that procurement cost savings appear immediately in purchasing reports while the downstream costs of accelerated wear appear later in maintenance budgets managed by different teams under different performance metrics. TCO analysis bridges this organizational gap by expressing all costs in a common multi-year framework.
           </p>
@@ -303,7 +298,7 @@ export default function TotalCostOwnershipPage() {
               }}>{item.title}</p>
               <p style={{
                 fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, textAlign: 'justify',
               }}>{item.body}</p>
             </div>
           ))}
@@ -460,7 +455,7 @@ export default function TotalCostOwnershipPage() {
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, textAlign: 'justify',
                 }}>{faq.a}</p>
               </div>
             ))}
@@ -472,7 +467,7 @@ export default function TotalCostOwnershipPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
-          }}>// CONTINUE IN FLEET OPTIMIZATION</p>
+          }}>CONTINUE IN FLEET OPTIMIZATION</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_PAGES.map((page) => (
               <Link key={page.code} href={page.href} style={{ textDecoration: 'none' }}>
@@ -527,8 +522,8 @@ export default function TotalCostOwnershipPage() {
         '@type': 'TechArticle',
         headline: 'Total Cost of Ownership in Filtration',
         description: 'Filter element unit cost represents a fraction of the economic decision. The complete TCO model accounts for service labor, component longevity, fluid waste, downtime exposure, and the quantifiable value of failures that did not occur.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'total cost of ownership', 'filtration TCO', 'ISO 16889', 'maintenance economics', 'equipment lifecycle cost'],
         about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Lifecycle economic model for industrial filtration programs encompassing filter procurement, service labor, component longevity, and avoided failure costs.' },

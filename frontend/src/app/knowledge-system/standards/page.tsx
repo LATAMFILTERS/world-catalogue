@@ -80,16 +80,6 @@ export default function StandardsHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · INDUSTRIAL STANDARDS
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -106,7 +96,7 @@ export default function StandardsHubPage() {
             color: 'rgba(255,255,255,0.5)',
             maxWidth: '540px',
             margin: '0 auto',
-            lineHeight: 1.65,
+            textAlign: 'justify', lineHeight: 1.65,
           }}>
             Standards organized by industrial filtration system domain. Each domain integrates applicable ISO, ASTM, SAE, and DIN specifications with their contamination challenges, operational impact, and engineering solutions.
           </p>
@@ -129,7 +119,7 @@ export default function StandardsHubPage() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
+            textAlign: 'justify', lineHeight: 1.8,
           }}>
             Each domain integrates applicable measurement standards as tools for assessing contamination, not as isolated specifications. <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Oil cleanliness standards</Link> such as <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link> define the particle cleanliness codes that determine whether engine oil is within safe operating limits—and what filtration action is required when it is not.
           </p>
@@ -206,7 +196,7 @@ export default function StandardsHubPage() {
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
-                    lineHeight: 1.6,
+                    textAlign: 'justify', lineHeight: 1.6,
                     marginTop: 'auto',
                   }}>
                     {system.description}

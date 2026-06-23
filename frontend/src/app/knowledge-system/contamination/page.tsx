@@ -59,16 +59,6 @@ export default function ContaminationHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · CONTAMINATION & FAILURE MODES
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -109,6 +99,7 @@ export default function ContaminationHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Contamination is the primary driver of industrial equipment failure. Understanding how specific contaminants enter systems and degrade components is the foundation of effective asset protection. Case studies such as <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>particle wear in engines</Link> document the abrasive wear progression that reduces bearing life from 15,000+ hours to under 3,000 hours when contamination control fails. These failure mechanisms are governed by measurement standards outlined in the <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>lube oil filtration systems</Link> domain.
           </p>
@@ -224,8 +215,8 @@ export default function ContaminationHubPage() {
         '@type': 'TechArticle',
         headline: 'Contamination & Failure Modes',
         description: 'Root cause analysis of contamination-induced failures in industrial filtration systems, covering particle wear in engines, diesel water contamination, and hydraulic system contamination.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['contamination failure modes', 'particle wear', 'diesel water contamination', 'hydraulic contamination', 'ISO 16889', 'ISO 4406', 'industrial filtration', 'asset protection'],
         about: { '@type': 'Thing', name: 'Industrial Contamination & Failure Modes', description: 'Technical case studies of contamination-induced equipment failures in industrial filtration systems.' },

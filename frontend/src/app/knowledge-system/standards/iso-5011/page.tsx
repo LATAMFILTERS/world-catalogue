@@ -65,16 +65,6 @@ export default function ISO5011Page() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // INTERNATIONAL FILTRATION STANDARD
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -91,7 +81,7 @@ export default function ISO5011Page() {
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '500px',
             margin: '0 auto',
-            lineHeight: 1.65,
+            textAlign: 'justify', lineHeight: 1.65,
           }}>
             Hydraulic Fluid Power — Filters — Test Procedure for Verification of Collapse/Integrity
           </p>
@@ -129,7 +119,7 @@ export default function ISO5011Page() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
+            textAlign: 'justify', lineHeight: 1.8,
           }}>
             ISO 5011 es el estándar internacional que define el procedimiento de prueba para la verificación de la integridad y el colapso del medio filtrante en filtros de aire industriales, complementando los requisitos del dominio de{' '}
             <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de admisión de aire</Link>.{' '}
@@ -166,7 +156,7 @@ export default function ISO5011Page() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
+              textAlign: 'justify', lineHeight: 1.8,
             }}>
               {section.content}
             </p>
@@ -223,7 +213,7 @@ export default function ISO5011Page() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
-                  lineHeight: 1.7,
+                  textAlign: 'justify', lineHeight: 1.7,
                 }}>
                   {faq.answer}
                 </p>
@@ -242,7 +232,7 @@ export default function ISO5011Page() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 5011, SAE J726, SAE J1539</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-5011</p>

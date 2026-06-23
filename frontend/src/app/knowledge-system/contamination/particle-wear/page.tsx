@@ -29,14 +29,14 @@ export default function ParticleWearPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS filtration technologies reduce particle contamination through: MACROCORE™ Progressive Density Gradient (PDG) 3-zone air intake filters capture 99.98% of airborne particles at rated efficiency, ISO 5011 certified, preventing silica and mineral dust ingestion before engine entry; SYNTRAX™ 4-layer AI-calibrated engine lube oil filtration with 3µm turbo custody barrier captures wear particles in lube circuits before recirculation through bearing surfaces; NANOFORCE™ 3-layer hydraulic system filtration achieves sub-3µm precision barrier controlling particle contamination in hydraulic proportional valve and servo circuits. When integrated across all system entry points, these technologies reduce total particulate ingestion and recirculation by 95-98%, extending engine and hydraulic system overhaul intervals from 5,000 hours (contaminated baseline) to 10,000-12,000 hours (filtered baseline).'
+      content: 'ELIMFILTERS air and fuel filtration technologies reduce particle ingestion through: MACROCORE™ progressive density gradient air filters capture 99.98% of particles at 2-10 microns, with outer zone designed for high-volume dust loading (10-50 microns) and core barrier optimized for fine particle penetration barriers; equivalent to ISO 4406 14/12/9 cleanliness in intake air; NANOFORCE™ fuel filtration media achieves 99.9% capture of 3-5 micron particles through electrostatic attraction mechanisms; flow-optimized construction maintains fuel delivery while reducing fuel-borne contamination from 50-100 particles/mL to <5 particles/mL; DURATECH™ spin-on engine oil filters integrate dual-stage architecture (coarse outer stage for rapid large-particle capture, precision inner stage for fine particle removal) achieving ISO 4406 equivalent cleanliness of 16/14/11 in circulating oil. When integrated as primary-secondary systems, these technologies reduce total particulate ingestion by 95-98%, extending engine overhaul intervals from 5,000 hours (contaminated baseline) to 10,000-12,000 hours (filtered baseline).'
     }
   ];
 
   const faqs = [
     {
       question: 'What particle size causes the most engine damage?',
-      answer: 'Particles in the 10-50 micron range cause the highest damage rate: particles <5 microns pass through bearing clearances without causing contact with surfaces; particles >50 microns are typically captured by filters or settle rapidly in oil. The 10-50 micron window represents the "critical damage zone" where particles are small enough to circulate freely in bearing clearances (typically 20-60 microns), yet large enough to support high contact pressures when embedded in surfaces. Within this range, 15-25 micron particles cause maximum damage rate because they create multiple contact points in bearing raceways while maintaining enough size to sustain high local stress concentrations. Equipment operating in environments with 30-50% of contamination in the 15-25 micron range experiences 5-8× faster bearing wear compared to clean baseline. Modern air filtration (MACROCORE, NANOFORCE) targets the 5-25 micron range as priority, accepting some loss of very coarse particles (>50 microns) to maintain air flow and concentrate removal effort on the critical damage zone.'
+      answer: 'Particles in the 10-50 micron range cause the highest damage rate: particles <5 microns pass through bearing clearances without causing contact with surfaces; particles >50 microns are typically captured by filters or settle rapidly in oil. The 10-50 micron window represents the "critical damage zone" where particles are small enough to circulate freely in bearing clearances (typically 20-60 microns), yet large enough to support high contact pressures when embedded in surfaces. Within this range, 15-25 micron particles cause maximum damage rate because they create multiple contact points in bearing raceways while maintaining enough size to sustain high local stress concentrations. Equipment operating in environments with 30-50% of contamination in the 15-25 micron range experiences 5-8× faster bearing wear compared to clean baseline. Modern air filtration (MACROCORE™, NANOFORCE™) targets the 5-25 micron range as priority, accepting some loss of very coarse particles (>50 microns) to maintain air flow and concentrate removal effort on the critical damage zone.'
     },
     {
       question: 'How do I interpret wear debris analysis results?',
@@ -85,16 +85,6 @@ export default function ParticleWearPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // CONTAMINATION & FAILURE MODES
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -112,6 +102,7 @@ export default function ParticleWearPage() {
             maxWidth: '500px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Abrasive contamination mechanisms and three-body wear progression analysis.
           </p>
@@ -150,6 +141,7 @@ export default function ParticleWearPage() {
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Particle wear in engines is the accelerated material removal from bearing surfaces, piston rings, cylinder walls, and fuel injector components caused by the presence of hard abrasive particles in combustion byproducts, fuel, and engine oil. This failure mode is directly connected to contamination management practices documented in the{' '}
             <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>lube oil filtration systems</Link>{' '}
@@ -180,12 +172,12 @@ export default function ParticleWearPage() {
               {section.title}
             </h2>
             {section.content === '__LINKED_OPERATIONAL_IMPACT__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Particle-induced wear produces measurable operational degradation: Oil consumption increases 15-40% as wear widens ring clearances and increases blow-by; Engine blow-by increases from &lt;1% to 5-10% of intake air volume, reducing combustion efficiency and elevating crankcase pressure; Fuel economy deteriorates 5-12% as increased friction losses and combustion inefficiency require higher fuel rates; Compression pressure drops 10-25%, reducing cold-start capability and full-load power output; Oil viscosity increases faster than normal (1.5-2× standard oxidation rate) due to contamination-induced viscosity shear; Wear debris concentration in oil reaches 100-500 mg/L within 250-500 hours (normal limit: 20-50 mg/L), triggering unplanned oil changes; Filter bypass events occur when particulate loading exceeds filter capacity within 50-75% of normal service interval; Engine noise increases 3-6 dB as bearing clearances widen and piston slap develops; Unplanned maintenance requirement rises to one event per 500-750 operating hours in contaminated environments. Equipment availability drops 15-25% in agricultural and construction applications operating in high-dust zones. For fleet-level strategies to reduce this downtime,{' '}
                 <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the fleet downtime reduction guide</Link>.
               </p>
             ) : section.content === '__LINKED_RELATED_STANDARDS__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Particle contamination thresholds and detection methods are defined by:{' '}
                 <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
                 and{' '}
@@ -198,6 +190,7 @@ export default function ParticleWearPage() {
                 fontSize: '0.95rem',
                 color: 'rgba(255,255,255,0.7)',
                 lineHeight: 1.8,
+                textAlign: 'justify',
               }}>
                 {section.content}
               </p>
@@ -256,6 +249,7 @@ export default function ParticleWearPage() {
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
                   lineHeight: 1.7,
+                  textAlign: 'justify',
                 }}>
                   {faq.answer}
                 </p>
@@ -340,8 +334,8 @@ export default function ParticleWearPage() {
         '@type': 'TechArticle',
         headline: 'Particle Wear in Engines',
         description: 'Particle contamination in engine oil and air intake systems causes three-body abrasive wear that reduces bearing life from 15,000+ hours to 2,000-3,000 hours. Particles in the 10-50 micron range represent the critical damage zone for bearing surfaces and piston rings.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['particle wear', 'engine contamination', 'abrasive wear', 'ISO 4406', 'wear debris analysis', 'MACROCORE', 'NANOFORCE', 'DURATECH', 'bearing wear', 'engine filtration'],
         about: { '@type': 'Thing', name: 'Particle Wear in Engines', description: 'Abrasive wear mechanism in engines caused by particle contamination in lube oil and combustion air, resulting in bearing surface damage and accelerated component failure.' },
@@ -374,7 +368,7 @@ export default function ParticleWearPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, SYNTRAX, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/particle-wear</p>

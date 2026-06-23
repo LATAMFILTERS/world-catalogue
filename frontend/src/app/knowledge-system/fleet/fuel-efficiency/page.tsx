@@ -12,13 +12,13 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'SYNTEPORE', slug: 'syntepore', role: '3-layer progressive capture with 4µm zero-migration terminal barrier protects HPCR Common Rail injectors (2,000+ bar), preserving spray pattern geometry and injection timing accuracy critical for combustion efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: '3-phase fuel water separator (99.8% efficiency) extracts free, emulsified, and dissolved water from diesel fuel before it reaches injection circuits, preventing combustion irregularities from water-induced pressure events.' },
-  { name: 'MACROCORE', slug: 'macrocore', role: 'PDG 3-zone air intake filtration (99.98% ISO 5011) ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life without restriction.' },
-  { name: 'SYNTRAX', slug: 'syntrax', role: '4-layer AI-calibrated engine lube oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at bearing surfaces and turbocharger circuits.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
+  { name: 'MACROCORE', slug: 'macrocore', role: 'Progressive density gradient air filtration ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life.' },
+  { name: 'DURATECH', slug: 'duratech', role: 'Engine oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
 ];
 
 const STANDARDS = [
-  { code: 'ISO 16889', desc: 'Multi-pass filter test method and beta ratio classification for filtration efficiency evaluation across all fluid systems including fuel, lube oil, and hydraulic circuits.' },
+  { code: 'ISO 16889', desc: 'Hydraulic fluid cleanliness classification applied to fuel system analysis, providing quantitative threshold for filtration performance evaluation.' },
   { code: 'ASTM D975', desc: 'Standard specification for diesel fuel defining water and sediment limits that directly correlate to injector performance maintenance requirements.' },
   { code: 'SAE J1539', desc: 'Air induction system contamination standard governing intake cleanliness levels that affect volumetric efficiency and air-fuel ratio accuracy.' },
   { code: 'ISO 4406', desc: 'Particle count classification method applicable to fuel system contamination audits and filtration performance verification.' },
@@ -73,12 +73,6 @@ export default function FuelEfficiencyPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · FUEL
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -89,6 +83,7 @@ export default function FuelEfficiencyPage() {
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
             color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7,
+            textAlign: 'justify',
           }}>
             Fuel consumption in industrial equipment is not a fixed parameter. Contamination of fuel, air, and lubrication systems creates measurable degradation in thermodynamic efficiency that compounds across fleet operating hours.
           </p>
@@ -114,13 +109,13 @@ export default function FuelEfficiencyPage() {
           }}>Filtration as an Efficiency Variable</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem', textAlign: 'justify',
           }}>
             Fuel efficiency in industrial diesel equipment is the ratio of useful mechanical work output to fuel energy input. This ratio - expressed as specific fuel consumption (SFC) in grams per kilowatt-hour - degrades as mechanical systems move away from their design operating conditions.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             Contamination in fuel, air intake, and engine oil systems is a direct and quantifiable driver of SFC increase. Each system contributes independently: fuel contamination degrades injection precision, restricted air intake reduces volumetric efficiency, contaminated oil increases internal friction losses. Proper management of <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel filtration systems</Link> is the primary lever for preserving injection efficiency. A fleet operating all three systems with degraded filtration compounds these losses, producing total fuel consumption increases of 8 to 18% relative to clean-system baselines.
           </p>
@@ -144,19 +139,19 @@ export default function FuelEfficiencyPage() {
           }}>Gradual Efficiency Loss Across Systems</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             The operational challenge with contamination-driven fuel efficiency loss is its gradual onset. No single event triggers a measurable consumption increase that operators notice in day-to-day operations. Instead, efficiency erodes incrementally over hundreds of hours: injectors slowly drift from calibrated spray geometry as orifice wear accumulates; air filter elements progressively restrict airflow as loading increases toward element capacity; engine oil viscosity climbs as oxidation products accumulate.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             Individual operators rarely observe this trend because it occurs below the threshold of perceptual detection. A 1% weekly consumption increase produces a 5% increase over a month - significant at fleet scale but invisible to an operator managing daily production targets. <Link href="/knowledge-system/contamination/diesel-water" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Diesel water contamination</Link> accelerates this efficiency loss by degrading injector spray geometry and triggering microbial growth that blocks fuel system passages. Only systematic fuel consumption tracking at the individual equipment level against historical baselines makes this degradation visible before it becomes severe.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             Fleet managers face the additional challenge that equipment operating in different duty cycles and ambient conditions will show different consumption profiles, making normalized comparison between units difficult without telemetry systems that track load factor and ambient temperature alongside fuel quantity. Particle cleanliness verification using <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 classification codes</Link> provides the objective baseline data required for meaningful fleet-level comparisons.
           </p>
@@ -203,7 +198,7 @@ export default function FuelEfficiencyPage() {
           </div>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             For a fleet of 20 heavy trucks consuming 150 liters per shift, a 10% average overconsumption represents 300 liters of additional fuel daily. Annualized over 300 operating days, this amounts to 90,000 liters of unnecessary fuel expenditure per fleet - a cost that filtration program investment typically recovers within one to two operating seasons.
           </p>
@@ -250,7 +245,7 @@ export default function FuelEfficiencyPage() {
               }}>{item.title}</p>
               <p style={{
                 fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, textAlign: 'justify',
               }}>{item.body}</p>
             </div>
           ))}
@@ -407,7 +402,7 @@ export default function FuelEfficiencyPage() {
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, textAlign: 'justify',
                 }}>{faq.a}</p>
               </div>
             ))}
@@ -419,7 +414,7 @@ export default function FuelEfficiencyPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
-          }}>// CONTINUE IN FLEET OPTIMIZATION</p>
+          }}>CONTINUE IN FLEET OPTIMIZATION</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_PAGES.map((page) => (
               <Link key={page.code} href={page.href} style={{ textDecoration: 'none' }}>
@@ -474,8 +469,8 @@ export default function FuelEfficiencyPage() {
         '@type': 'TechArticle',
         headline: 'Filtration and Fuel Efficiency',
         description: 'Fuel consumption in industrial equipment is not a fixed parameter. Contamination of fuel, air, and lubrication systems creates measurable degradation in thermodynamic efficiency that compounds across fleet operating hours.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'fuel efficiency', 'diesel fuel filtration', 'injector wear', 'specific fuel consumption', 'ASTM D975'],
         about: { '@type': 'Thing', name: 'Filtration and Fuel Efficiency', description: 'Contamination in fuel, air intake, and engine oil systems drives measurable specific fuel consumption increases that compound across industrial fleet operating hours.' },

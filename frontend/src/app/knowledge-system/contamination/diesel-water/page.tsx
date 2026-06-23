@@ -29,7 +29,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS fuel filtration technologies address diesel water contamination through complementary mechanisms: HYDROCORE™ 3-phase fuel water separator achieves 99.8% separation efficiency capturing free water, emulsified water, and dissolved water via hydrophobic barrier minimum 2µm — reduces water content below 500 ppm corrosion activation threshold; SYNTEPORE™ 3-layer progressive capture with 4µm zero-migration terminal barrier protects HPCR Common Rail injectors (2,000+ bar) from particle contamination accelerated by water-induced media degradation; TURBOCORE™ 3-stage ISO 16332 certified system provides HYDROCORE turbine inertia separation + coalescence + hydrophobic barrier for high-volume diesel applications in large equipment. When specified as primary-secondary filter assemblies, these technologies reduce water content from raw fuel (500-2,000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
+      content: 'ELIMFILTERS fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
     }
   ];
 
@@ -85,16 +85,6 @@ export default function DieselWaterContaminationPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // CONTAMINATION & FAILURE MODES
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -112,6 +102,7 @@ export default function DieselWaterContaminationPage() {
             maxWidth: '500px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Root cause analysis of water ingress mechanisms and failure progression in diesel fuel systems.
           </p>
@@ -150,6 +141,7 @@ export default function DieselWaterContaminationPage() {
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Water contamination in diesel fuel systems exists in three physical states: free water (gravitational separation), emulsified water (suspended in fuel), and sedimentary water (integrated into fuel matrix via hygroscopic additives). This contamination mode falls under the broader framework defined in the{' '}
             <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel filtration systems</Link>{' '}
@@ -180,12 +172,12 @@ export default function DieselWaterContaminationPage() {
               {section.title}
             </h2>
             {section.content === '__LINKED_DIESEL_IMPACT__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Water-contaminated diesel causes immediate and measurable operational degradation: Hard starting increases by 5-15 seconds during cold ambient operation; Fuel consumption increases 3-8% as water-induced combustion inefficiency requires longer burn times; Injector cleaning intervals compress from 8,000 hours to 2,000-3,000 hours of operation, with each cleaning event adding 4-8 hours of downtime; Particulate emissions increase 40-60% as incomplete combustion produces excessive soot; Unplanned maintenance events average one per 500-1000 operating hours when water content exceeds 500 ppm; Equipment availability drops 12-18% due to intermittent fuel system faults; Fuel tank replacement becomes necessary after 18-24 months of chronic water exposure, representing 15-25% of annual fuel management budget in marine and outdoor equipment fleets. For fleet-level analysis of how water contamination affects fuel economy,{' '}
                 <Link href="/knowledge-system/fleet/fuel-efficiency" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the filtration and fuel efficiency guide</Link>.
               </p>
             ) : section.content === '__LINKED_DIESEL_STANDARDS__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Water contamination thresholds and testing methods are defined by: ASTM D6304 (Karl Fischer titration - quantifies free and total water in distillate fuels, maximum 200 ppm for on-road diesel, 500 ppm for marine applications); ISO 12937 (determination of water in crude oils by Karl Fischer titration);{' '}
                 <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
                 and ISO 16889 (particle and water contamination classification in hydraulic fluids, applicable to fuel systems with hydraulic components); ASTM D975 (diesel fuel specification, includes water limits for different service categories); ISO 14540 (marine fuel water content classification); SAE J1488 (automotive fuel system corrosion testing procedures that verify compatibility with water-contaminated fuel); IMO 2020 regulations (marine fuel sulfur and contaminant limits affecting water solubility).
@@ -196,6 +188,7 @@ export default function DieselWaterContaminationPage() {
                 fontSize: '0.95rem',
                 color: 'rgba(255,255,255,0.7)',
                 lineHeight: 1.8,
+                textAlign: 'justify',
               }}>
                 {section.content}
               </p>
@@ -254,6 +247,7 @@ export default function DieselWaterContaminationPage() {
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
                   lineHeight: 1.7,
+                  textAlign: 'justify',
                 }}>
                   {faq.answer}
                 </p>
@@ -338,8 +332,8 @@ export default function DieselWaterContaminationPage() {
         '@type': 'TechArticle',
         headline: 'Diesel Water Contamination',
         description: 'Water contamination in diesel fuel causes injector stiction, microbial growth, and fuel system corrosion. Above 500 ppm water concentration, microbial colonies establish at the fuel-water interface, and above 1,000 ppm visible biomass accumulation occurs within days.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'MACROCORE', 'NANOFORCE'],
         about: { '@type': 'Thing', name: 'Diesel Water Contamination', description: 'Water ingress failure mechanism in diesel fuel systems causing injector precision degradation, corrosion, and microbial colonization through atmospheric moisture, condensation, and handling.' },

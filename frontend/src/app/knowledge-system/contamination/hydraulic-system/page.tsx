@@ -29,7 +29,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ 3-layer hydraulic protection (guard + vapor control + structural core) achieves sub-3µm precision barrier with dissolved water phase-transition capture; high-pressure pulsation rated structure prevents element collapse under cold-start viscosity surges; vapor control layer captures dissolved water that transitions to free-phase micro-droplets under temperature cycling, preventing proportional valve stiction and pump cavitation that conventional hydraulic filters miss. Three-stage filtration strategy (main circuit NANOFORCE precision barrier, return line gross contamination capture, kidney-loop offline polishing) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours and achieves sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life — reducing valve spool scoring, pump wear and actuator stiction events.'
+      content: 'ELIMFILTERS hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; HYDROCORE™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
     }
   ];
 
@@ -85,16 +85,6 @@ export default function HydraulicSystemContaminationPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // CONTAMINATION & FAILURE MODES
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -112,6 +102,7 @@ export default function HydraulicSystemContaminationPage() {
             maxWidth: '500px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Precision contamination control requirements in pressurized fluid systems.
           </p>
@@ -150,6 +141,7 @@ export default function HydraulicSystemContaminationPage() {
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Hydraulic system contamination refers to the presence of unwanted particles, water, air, and degradation products in pressurized hydraulic fluid. The engineering principles governing this domain are defined in the{' '}
             <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic systems standards</Link>{' '}
@@ -180,12 +172,12 @@ export default function HydraulicSystemContaminationPage() {
               {section.title}
             </h2>
             {section.content === '__LINKED_HYDRAULIC_IMPACT__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Contamination-induced failures in hydraulic systems produce immediate operational impact: Equipment control becomes erratic — actuators move slowly or incompletely; proportional valves (used in load-sensing systems) develop hunting behavior (oscillation ±10-30% of commanded position) as servo valve response time increases; Material handling equipment loses smooth motion control, increasing cycle time 20-40% and safety risk. System pressure increases 10-30% as contaminated components create resistance, elevating pump load and fuel consumption 15-25%; Heat generation increases from baseline 5-10 kW to 15-25 kW in a 50 kW hydraulic system, overwhelming cooler capacity; Fluid temperature runaway occurs within 100-200 operating hours, triggering automatic shutdown or fluid vaporization in high-pressure actuators. Unplanned maintenance escalates to 1-2 events per 500 operating hours; average diagnostic and repair time is 6-12 hours due to difficulty identifying contamination as root cause (technicians often replace components without addressing contamination source). Equipment availability drops 15-30% in mobile equipment (excavators, loaders) and manufacturing machinery (presses, injection molding) that depend on hydraulic proportional control. Cost impact includes: fluid replacement (every 500-1000 hours instead of 2000-4000 hours), component replacement, extended downtime, and potential production losses ($1000-5000 per hour in manufacturing applications). For a full analysis of ownership costs,{' '}
                 <Link href="/knowledge-system/fleet/total-cost-ownership" style={{ color: '#FFF12D', textDecoration: 'underline' }}>see the total cost of ownership guide</Link>.
               </p>
             ) : section.content === '__LINKED_HYDRAULIC_STANDARDS__' ? (
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Hydraulic fluid cleanliness and contamination thresholds are defined by:{' '}
                 <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
                 (Hydraulic fluid power systems — Fluids — Method for coding the degree of contamination by solid particles, maximum ISO 16/14/11 for most systems, 15/13/10 for proportional control); ISO 4406 (legacy cleanliness code, equivalent ISO 16889 16/14/11 ≈ ISO 4406 18/16); ASTM D7368 (methods for testing hydraulic fluid for particulate contaminants); ISO 4572 (hydraulic fluids — ISO classification by viscosity); SAE J1487 (hydraulic fluid recommended practice for color and appearance, cleanliness); ISO 11158 (industrial hydraulic oils, specifies ISO 4406 cleanliness requirements); DIN 51524 (German standard for hydraulic fluids, specifies ISO 4406 cleanliness levels); NFPA (National Fluid Power Association) T2.14 (machine tool hydraulic fluid minimum cleanliness ISO 16889 18/16/13 for standard systems, 17/15/12 for proportional control); ISO 11171 (calibration of automatic particle counters used to verify system cleanliness).
@@ -196,6 +188,7 @@ export default function HydraulicSystemContaminationPage() {
                 fontSize: '0.95rem',
                 color: 'rgba(255,255,255,0.7)',
                 lineHeight: 1.8,
+                textAlign: 'justify',
               }}>
                 {section.content}
               </p>
@@ -254,6 +247,7 @@ export default function HydraulicSystemContaminationPage() {
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
                   lineHeight: 1.7,
+                  textAlign: 'justify',
                 }}>
                   {faq.answer}
                 </p>
@@ -338,8 +332,8 @@ export default function HydraulicSystemContaminationPage() {
         '@type': 'TechArticle',
         headline: 'Hydraulic System Contamination',
         description: 'Particle and water contamination in hydraulic systems causes proportional valve stiction, pump swashplate failure, and fluid varnish formation. Complete system failure occurs within 200-500 operating hours in severely contaminated baseline conditions above ISO 16889 22/20/18.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'kidney loop filtration'],
         about: { '@type': 'Thing', name: 'Hydraulic System Contamination', description: 'Particle contamination failure mechanism in hydraulic systems causing valve spool stiction, orifice blockage, and fluid varnish that degrades system response and availability.' },

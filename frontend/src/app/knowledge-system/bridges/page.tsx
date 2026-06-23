@@ -65,16 +65,6 @@ export default function BridgesHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // FILTRATION DECISION BRIDGE
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -116,6 +106,7 @@ export default function BridgesHubPage() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Industrial filter selection typically begins with a product-focused question: "Which filter brand should we use?" or "What's the OEM requirement?" or "What aftermarket filters are available?"
           </p>
@@ -125,6 +116,7 @@ export default function BridgesHubPage() {
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             These pages bridge that product-selection thinking into system-level design. They reframe the filtration decision from "which filter product" into "how do we achieve contamination control and equipment asset protection?" The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Industrial Filtration Selection</Link> framework provides the foundational model for evaluating filtration across all application domains.
           </p>
@@ -133,6 +125,7 @@ export default function BridgesHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Each page follows the same decision model: understand the traditional approach, identify its limitations, introduce system-level thinking, map technologies to application domains, and integrate relevant standards. The result is a framework for filtration decision-making that optimizes for equipment reliability and lifecycle cost, not product commodity selection. Fleet operations applying this approach can achieve measurable reductions in unplanned stoppages—see <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Reducing Fleet Downtime</Link> for operational impact analysis.
           </p>
@@ -233,8 +226,8 @@ export default function BridgesHubPage() {
         '@type': 'TechArticle',
         headline: 'From Product Selection to System Design',
         description: 'Decision bridge hub connecting product-based filtration selection to system-level contamination control design—covering OEM requirements, aftermarket selection, and fleet standardization strategies.',
-        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['filtration decision bridge', 'OEM filter requirements', 'aftermarket filter selection', 'fleet filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
         about: { '@type': 'Thing', name: 'Filtration Decision Bridges', description: 'Bridge framework connecting product-based filtration decisions to system-level contamination control across OEM, aftermarket, and fleet operation contexts.' },

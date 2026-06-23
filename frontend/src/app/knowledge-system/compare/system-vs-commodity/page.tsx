@@ -42,7 +42,7 @@ export default function SystemVsCommodityPage() {
               color: '#FFF12D',
               fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // CATEGORY REFRAMING
+              CATEGORY REFRAMING
             </span>
           </motion.div>
           <motion.h1

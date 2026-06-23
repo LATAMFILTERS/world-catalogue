@@ -42,7 +42,7 @@ export default function EvaluationFrameworkPage() {
               color: '#FFF12D',
               fontFamily: 'JetBrains Mono, monospace',
             }}>
-              // FILTER EVALUATION
+              FILTER EVALUATION
             </span>
           </motion.div>
           <motion.h1

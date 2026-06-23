@@ -79,12 +79,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // INDUSTRIAL STANDARDS · LUBE OIL SYSTEMS
-          </p>
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
@@ -94,7 +88,7 @@ export default function LubeOilSystemsPage() {
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
-            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', textAlign: 'justify', lineHeight: 1.7,
           }}>
             Engine oil and crankcase filtration protecting combustion engines from wear particle accumulation, addressing the most damaging contamination vector in mobile and stationary industrial equipment.
           </p>
@@ -121,13 +115,13 @@ export default function LubeOilSystemsPage() {
           }}>Engine Oil Filtration Domain</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
+            color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8, marginBottom: '1rem',
           }}>
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Engine oil filtration systems protect internal combustion engines from wear particle accumulation</Link> by controlling contamination within measurable ISO cleanliness targets. During combustion, abrasive particles from air intake, fuel injection, and internal wear processes enter the crankcase and circulate through engine oil. Bearing surfaces operating at pressures of 40 to 100 bar with clearances of 25 to 75 microns cannot tolerate particle contamination above critical thresholds without accelerated wear.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8,
           }}>
             A typical engine oil filter operates under 3 to 5 bar differential pressure, processing 40 to 100 liters per minute depending on engine displacement and speed. Over a 500-hour service interval, the filter element accumulates kilograms of contaminant mass while maintaining target ISO cleanliness codes that directly determine bearing life and oil oxidation rate.
           </p>
@@ -178,7 +172,7 @@ export default function LubeOilSystemsPage() {
                 }}>{item.title}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.7,
+                  color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7,
                 }}>{item.desc}</p>
               </div>
             ))}
@@ -268,7 +262,7 @@ export default function LubeOilSystemsPage() {
           </div>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8,
           }}>
             Operating above ISO 18/16/13 oil cleanliness threshold for extended periods accelerates these degradation modes. An engine operating at ISO 19/17/14 (one code step higher) experiences roughly 2x the particle concentration at each size class, driving wear rates forward by 3 to 5 years in service life compression. These cumulative effects directly drive unplanned downtime — see <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction strategies</Link> for operational response frameworks.
           </p>
@@ -313,7 +307,7 @@ export default function LubeOilSystemsPage() {
                   }}>{item.mode}</p>
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0,
+                    color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6, margin: 0,
                   }}>{item.desc}</p>
                   <span style={{
                     fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
@@ -359,7 +353,7 @@ export default function LubeOilSystemsPage() {
                   }}>{tech.name}</p>
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
-                    color: 'rgba(255,255,255,0.5)', lineHeight: 1.6,
+                    color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6,
                   }}>{tech.role}</p>
                 </motion.div>
               </Link>
@@ -400,7 +394,7 @@ export default function LubeOilSystemsPage() {
                 }}>{item.title}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.7,
+                  color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7,
                 }}>{item.body}</p>
               </div>
             ))}
@@ -435,7 +429,7 @@ export default function LubeOilSystemsPage() {
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.75,
                 }}>{faq.a}</p>
               </div>
             ))}
@@ -444,10 +438,6 @@ export default function LubeOilSystemsPage() {
 
         {/* Related Systems */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
-          }}>// EXPLORE OTHER FILTRATION SYSTEMS</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>
