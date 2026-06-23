@@ -1276,4 +1276,82 @@ npx serve@latest -l 3001 -s out
 
 ---
 
+## CORE-EEAT GEO Audit Results (2026-06-23)
+
+### Audit Methodology
+Performed a CORE-EEAT (Contextual Clarity, Organization, Referenceability, Exclusivity, Experience, Expertise, Authority, Trust) audit on all knowledge-system pages to optimize for Generative Engine Optimization (GEO) — making content citable by AI systems (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews).
+
+### Scores (Before Fixes)
+- **Total**: 52/100
+- C (Contextual Clarity): 60/100
+- O (Organization): 65/100
+- R (Referenceability): 55/100 — RetrievalBlocks had incorrect technology references
+- E (Exclusivity): 45/100 — Missing canonical `@id` for ELIMFILTERS as citable entity
+- Exp (Experience): 50/100
+- Ept (Expertise): 60/100
+- A (Authority): 40/100 — No Organization schema with `sameAs`
+- T (Trust): 50/100
+
+### Fixes Implemented
+
+#### Fix 1: RetrievalBlock Technology Audit (All Pages)
+All RetrievalBlocks audited against `techPagesData.ts` as authoritative source.
+
+**Correct technology → system mappings (authoritative):**
+| Technology | Primary System | Domain |
+|---|---|---|
+| MACROCORE | Air intake | ISO 5011, SAE J726, ASTM D202 |
+| SYNTRAX | Engine lube oil | ISO 16889, ISO 4406 |
+| NANOFORCE | Hydraulic | ISO 16889, NFPA T2.14 |
+| SYNTEPORE | Fuel / HPCR injectors | ASTM D6304, ISO 12937 |
+| HYDROCORE | Fuel water separator | ASTM D6304 |
+| TURBOCORE | Fuel 3-stage | ISO 16332 |
+| THERMACORE | Cooling SCA additive | — |
+| DRYCORE | Compressed air/pneumatic | ISO 8573-1/2/3 |
+| INTEKCORE | Filter housing systems | — |
+| DURATECH | Fleet maintenance master kit | — |
+| MARINECLEAN | Marine diesel + hydraulic | IMO certified |
+| MICROKAPPA | Cabin air occupant health | ISO 11155, DIN 71220 |
+
+**Pages corrected:**
+- `standards/lube-oil-systems`: DURATECH, NANOFORCE, MACROCORE → SYNTRAX
+- `standards/fuel-systems`: HYDROCORE, MACROCORE, NANOFORCE → SYNTEPORE, HYDROCORE, TURBOCORE
+- `standards/hydraulic-systems`: NANOFORCE, SYNTRAX, MACROCORE → NANOFORCE
+- `standards/compressed-air-systems`: DRYCORE, THERMACORE, MACROCORE → DRYCORE
+- `standards/cabin-safety-systems`: SYNTRAX, DURATECH → MICROKAPPA
+- `standards/iso-16889`: removed MACROCORE (air intake, not fluid cleanliness)
+- `standards/iso-4406`: MACROCORE, NANOFORCE → NANOFORCE, SYNTRAX
+- `contamination/hydraulic-system`: NANOFORCE, SYNTRAX, MACROCORE → NANOFORCE
+- `contamination/particle-wear`: MACROCORE, NANOFORCE, DURATECH → MACROCORE, SYNTRAX, NANOFORCE
+- `contamination/diesel-water`: HYDROCORE, MACROCORE, NANOFORCE → HYDROCORE, SYNTEPORE, TURBOCORE
+- `fleet/fuel-efficiency`: HYDROCORE, MACROCORE, NANOFORCE → SYNTEPORE, HYDROCORE, MACROCORE, SYNTRAX
+- `fleet/reducing-downtime`: fixed NANOFORCE role (hydraulic, not fuel)
+- `fleet/total-cost-ownership`: fixed MICROKAPPA role (cabin air, not coolant)
+
+#### Fix 2: Organization Schema with @id (knowledge-system/layout.tsx)
+Added canonical Organization schema injected once for all knowledge-system child pages via `layout.tsx`.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://elimfilters.com/#organization",
+  "name": "ELIMFILTERS",
+  "url": "https://elimfilters.com",
+  "sameAs": ["https://elimfilters.com"],
+  "knowsAbout": ["Industrial filtration systems", "ISO 16889 beta ratio", ...]
+}
+```
+
+This enables AI systems to identify ELIMFILTERS as a citable entity with a stable canonical identifier.
+
+### Rules Going Forward
+- **Never use MACROCORE** in RetrievalBlocks for non-air-intake pages
+- **Never use NANOFORCE** for fuel or lube systems (hydraulic only)
+- **Never use SYNTRAX** for hydraulic or fuel systems (lube oil only)
+- **Never use SYNTEPORE** for air or hydraulic systems (fuel HPCR only)
+- All technology references must match `techPagesData.ts` before committing
+
+---
+
 **Questions?** Check the specific section in CLAUDE.md or review the Git commit history for implementation examples.
