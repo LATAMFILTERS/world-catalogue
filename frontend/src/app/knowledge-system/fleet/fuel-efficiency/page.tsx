@@ -11,14 +11,14 @@ const RELATED_PAGES = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removes sub-10 micron contaminants from fuel before injection, preserving spray pattern geometry critical for combustion efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
-  { name: 'MACROCORE', slug: 'macrocore', role: 'Progressive density gradient air filtration ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life.' },
-  { name: 'DURATECH', slug: 'duratech', role: 'Engine oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
+  { name: 'SYNTEPORE', slug: 'syntepore', role: '3-layer progressive capture with 4µm zero-migration terminal barrier protects HPCR Common Rail injectors (2,000+ bar), preserving spray pattern geometry and injection timing accuracy critical for combustion efficiency.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: '3-phase fuel water separator (99.8% efficiency) extracts free, emulsified, and dissolved water from diesel fuel before it reaches injection circuits, preventing combustion irregularities from water-induced pressure events.' },
+  { name: 'MACROCORE', slug: 'macrocore', role: 'PDG 3-zone air intake filtration (99.98% ISO 5011) ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life without restriction.' },
+  { name: 'SYNTRAX', slug: 'syntrax', role: '4-layer AI-calibrated engine lube oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at bearing surfaces and turbocharger circuits.' },
 ];
 
 const STANDARDS = [
-  { code: 'ISO 16889', desc: 'Hydraulic fluid cleanliness classification applied to fuel system analysis, providing quantitative threshold for filtration performance evaluation.' },
+  { code: 'ISO 16889', desc: 'Multi-pass filter test method and beta ratio classification for filtration efficiency evaluation across all fluid systems including fuel, lube oil, and hydraulic circuits.' },
   { code: 'ASTM D975', desc: 'Standard specification for diesel fuel defining water and sediment limits that directly correlate to injector performance maintenance requirements.' },
   { code: 'SAE J1539', desc: 'Air induction system contamination standard governing intake cleanliness levels that affect volumetric efficiency and air-fuel ratio accuracy.' },
   { code: 'ISO 4406', desc: 'Particle count classification method applicable to fuel system contamination audits and filtration performance verification.' },

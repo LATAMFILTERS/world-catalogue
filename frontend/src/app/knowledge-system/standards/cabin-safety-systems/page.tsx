@@ -14,14 +14,9 @@ const STANDARDS = [
 
 const TECHNOLOGIES = [
   {
-    name: 'SYNTRAX',
-    slug: 'syntrax',
-    role: 'Electrostatically-enhanced synthetic fiber media providing 92-97% efficiency at PM10 particle class with stable efficiency through the full service interval under positive cabin pressure.',
-  },
-  {
-    name: 'DURATECH',
-    slug: 'duratech',
-    role: 'Reinforced pleated construction maintaining structural integrity through temperature cycling and positive cabin pressure differentials across extended 500-1000 hour service intervals.',
+    name: 'MICROKAPPA',
+    slug: 'microkappa',
+    role: 'Multi-mechanism cabin air protection: electrostatic layer (PM2.5 99%) + activated carbon (VOC/NOx 95%) + HEPA class precision barrier (99.97% at 0.3µm). Engineered for operator health protection in heavy-duty equipment and industrial vehicle cabins.',
   },
 ];
 
