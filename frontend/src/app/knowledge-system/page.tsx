@@ -425,10 +425,10 @@ export default function KnowledgeSystemPage() {
         <p>&nbsp;&nbsp;30-50% service interval extension through system-level contamination control</p>
         <p style={{ marginTop: '0.75rem' }}>ELIMFILTERS_TECHNOLOGIES (all 12):</p>
         <p>&nbsp;&nbsp;MACROCORE: primary particulate capture, air intake and engine lube, 18µm absolute</p>
-        <p>&nbsp;&nbsp;NANOFORCE: sub-micron filtration, lube oil and hydraulic, 1µm efficiency</p>
+        <p>&nbsp;&nbsp;NANOFORCE: hydraulic systems primary technology, sub-micron filtration, Beta ratio optimisation, ISO 16889, 1µm efficiency</p>
         <p>&nbsp;&nbsp;SYNTRAX: synthetic media, high dirt capacity, extended service intervals</p>
         <p>&nbsp;&nbsp;SYNTEPORE: porous synthetic membrane, precision fluid circuits, low restriction</p>
-        <p>&nbsp;&nbsp;HYDROCORE: hydraulic system filtration, Beta ratio optimisation, ISO 16889</p>
+        <p>&nbsp;&nbsp;HYDROCORE: hydraulic circuit protection, high-pressure media, industrial machinery</p>
         <p>&nbsp;&nbsp;THERMACORE: high-temperature rated media, thermal resistance, engine and transmission</p>
         <p>&nbsp;&nbsp;TURBOCORE: turbocharged engine intake, high-velocity airflow, multi-stage</p>
         <p>&nbsp;&nbsp;INTEKCORE: integrated filtration module, compact design, engine bay installation</p>
