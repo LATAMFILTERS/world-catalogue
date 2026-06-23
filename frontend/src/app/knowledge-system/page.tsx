@@ -165,13 +165,6 @@ export default function KnowledgeSystemPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '760px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem', letterSpacing: '0.18em',
-            color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM
-          </p>
           {/* Change 1 */}
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -232,17 +225,6 @@ export default function KnowledgeSystemPage() {
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
           {/* Change 5 — Asset Protection Knowledge label */}
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            opacity: 0.6,
-            textTransform: 'uppercase',
-            marginBottom: '1rem',
-          }}>
-            // Asset Protection Knowledge
-          </p>
           {/* Change 4 — updated narrative with ontology hierarchy */}
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -299,15 +281,6 @@ export default function KnowledgeSystemPage() {
             ))}
           </div>
 
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.75rem',
-            color: 'rgba(255,241,45,0.5)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}>
-            // Information Architecture: Industries → Assets → Problems → Protection Systems → Technologies → Products → Operational Outcomes
-          </p>
         </motion.div>
       </section>
 
@@ -386,13 +359,6 @@ export default function KnowledgeSystemPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
-            <span style={{
-              display: 'block', fontSize: '0.7rem', fontWeight: 700,
-              letterSpacing: '0.25em', color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
-            }}>
-              // FREQUENTLY ASKED QUESTIONS
-            </span>
             <h2 style={{
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800,
               fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem',
