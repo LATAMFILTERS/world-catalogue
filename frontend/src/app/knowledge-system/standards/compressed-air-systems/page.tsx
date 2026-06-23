@@ -273,7 +273,7 @@ export default function CompressedAirSystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 8573-1, ISO 8573-2, ISO 8573-3</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, THERMACORE, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/compressed-air-systems</p>

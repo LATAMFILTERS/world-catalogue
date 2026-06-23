@@ -488,7 +488,7 @@ export default function LubeOilSystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, SAE J1211, ASTM D7085</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DURATECH, NANOFORCE, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: SYNTRAX</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/lube-oil-systems</p>

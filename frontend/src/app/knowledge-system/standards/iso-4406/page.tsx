@@ -242,7 +242,7 @@ export default function ISO4406Page() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-4406</p>

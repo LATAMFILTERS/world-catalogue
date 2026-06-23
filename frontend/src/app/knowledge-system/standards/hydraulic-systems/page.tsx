@@ -236,7 +236,7 @@ export default function HydraulicSystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, DIN 51524, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX, MACROCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/hydraulic-systems</p>
