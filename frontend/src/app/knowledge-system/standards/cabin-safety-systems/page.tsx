@@ -282,7 +282,7 @@ export default function CabinSafetySystemsPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 11155, DIN 71220, ISO 5011</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MICROKAPPA, SYNTEPORE, INTEKCORE</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MICROKAPPA, INTEKCORE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/cabin-safety-systems</p>

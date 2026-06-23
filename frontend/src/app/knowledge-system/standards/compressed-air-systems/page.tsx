@@ -14,9 +14,9 @@ const STANDARDS = [
 
 const TECHNOLOGIES = [
   {
-    name: 'NANOFORCE',
-    slug: 'nanoforce',
-    role: 'Nano-fiber coalescent media achieving ISO 8573-1 Class 1-2 particle removal at rated flow conditions, capturing sub-micron aerosols and oil mist before downstream instrumentation.',
+    name: 'DRYCORE',
+    slug: 'drycore',
+    role: 'Molecular sieve desiccant technology achieving −40°C dew point for compressed air and pneumatic systems. Prevents moisture-driven corrosion in air brake, suspension, and pneumatic control circuits.',
   },
 ];
 

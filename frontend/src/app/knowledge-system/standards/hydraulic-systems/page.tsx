@@ -13,9 +13,7 @@ const STANDARDS = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media achieving 99.9% efficiency for proportional valve protection, maintaining ISO 16/14/11 cleanliness under high-flow conditions.' },
-  { name: 'SYNTRAX', slug: 'syntrax', role: 'Advanced synthetic fluids with +40% oxidation resistance, providing 4,000+ hour service life while maintaining contamination resistance.' },
-  { name: 'MICROKAPPA', slug: 'microkappa', role: 'Precision micro-filtration for coolant and specialty fluid systems addressing proportional control contamination in machine tools.' },
+  { name: 'NANOFORCE', slug: 'nanoforce', role: '3-layer hydraulic filtration (guard + vapor control + structural core). Sub-3µm precision barrier with dissolved water phase-transition capture. High-pressure pulsation rated for proportional valve and servo system protection.' },
 ];
 
 const IMPACTS = [

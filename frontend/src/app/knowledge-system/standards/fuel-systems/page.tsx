@@ -13,8 +13,9 @@ const STANDARDS = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removing sub-10 micron water droplets and particles from fuel before injection, achieving 99.9% efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Hydrophobic water-separation technology extracting 99.8% of free and emulsified water from fuel, preventing injector corrosion, cavitation, and microbial growth.' },
+  { name: 'SYNTEPORE', slug: 'syntepore', role: '3-layer progressive capture with 4µm zero-migration terminal barrier for HPCR injector protection at 2,000+ bar Common Rail pressure. Prevents injector nozzle erosion from particle contamination.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: '3-phase fuel water separator with 99.8% separation efficiency. Captures free, emulsified, and dissolved water via hydrophobic barrier minimum 2µm. Prevents corrosive injector failure above 500 ppm water threshold.' },
+  { name: 'TURBOCORE', slug: 'turbocore', role: '3-stage fuel protection system ISO 16332 certified for high-volume diesel applications: turbine inertia separation (stage 1) + coalescence (stage 2) + hydrophobic barrier (stage 3).' },
 ];
 
 const IMPACTS = [

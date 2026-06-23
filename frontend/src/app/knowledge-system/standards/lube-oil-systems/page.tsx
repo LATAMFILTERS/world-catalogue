@@ -14,8 +14,7 @@ const STANDARDS = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration maintaining ISO 16/14/11 target cleanliness through extended 500-hour service intervals.' },
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Synthetic media achieving 99.9% efficiency at 3-5 microns for oil systems requiring extended intervals and superior wear particle capture.' },
+  { name: 'SYNTRAX', slug: 'syntrax', role: '4-layer AI-calibrated density gradient matrix for engine lube oil. Thermal bonding layer lock prevents media migration. 3µm turbo custody barrier provides dedicated turbocharger bearing protection in engine lube circuits.' },
 ];
 
 const CONTAMINATION_IMPACTS = [
