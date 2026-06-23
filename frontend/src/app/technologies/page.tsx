@@ -213,6 +213,9 @@ export default function TechnologiesPage() {
         padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.9) 100%), url('/images/operator-technology.avif')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
