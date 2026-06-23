@@ -68,6 +68,30 @@ const SYSTEMS = [
     color: 'rgba(167,139,250,0.06)',
     accent: '#a78bfa',
   },
+  {
+    number: '06',
+    name: 'Cabin Air Protection',
+    mission: 'Operator health & occupational exposure compliance.',
+    threat: 'PM2.5 · PM10 · Crystalline silica · Chemical vapors',
+    metric: '>95% PM10 · >85% PM2.5 · ISO 11155 / DIN 71220',
+    technologies: ['MICROKAPPA™'],
+    industries: ['Mining', 'Agriculture', 'Construction', 'Bus & Coach', 'Rail'],
+    href: '/systems/cabin',
+    color: 'rgba(251,113,133,0.06)',
+    accent: '#fb7185',
+  },
+  {
+    number: '07',
+    name: 'Compressed Air Protection',
+    mission: 'Pneumatic circuit & air brake system integrity.',
+    threat: 'Moisture · Oil carryover · Particulate contamination',
+    metric: 'ISO 8573-1 Class 2 · Dew point below −20°C',
+    technologies: ['DRYCORE™'],
+    industries: ['Rail', 'Manufacturing', 'Power Gen', 'Bus & Coach', 'Mining'],
+    href: '/systems/dryer',
+    color: 'rgba(34,211,238,0.06)',
+    accent: '#22d3ee',
+  },
 ];
 
 export default function SystemsHub() {
@@ -78,15 +102,6 @@ export default function SystemsHub() {
 
         {/* ── HERO ── */}
         <section style={{ padding: '8rem 8% 5rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'rgba(255,241,45,0.7)', textTransform: 'uppercase', marginBottom: '2rem' }}
-          >
-            INDUSTRIAL PROTECTION SYSTEMS
-          </motion.p>
-
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end', maxWidth: '1200px' }}>
             <div>
               <motion.h1
@@ -95,7 +110,7 @@ export default function SystemsHub() {
                 transition={{ duration: 0.8, delay: 0.1, ease }}
                 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 0.95, letterSpacing: '-0.03em', textTransform: 'uppercase', color: '#fff', margin: 0 }}
               >
-                Five Systems.<br />
+                Seven Systems.<br />
                 <span style={{ color: '#FFF12D' }}>One Objective.</span>
               </motion.h1>
             </div>
@@ -196,9 +211,6 @@ export default function SystemsHub() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, ease }}
             >
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'rgba(255,241,45,0.6)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-                ASSET PROTECTION DOCTRINE
-              </p>
               <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>
                 Protection is not<br />a product.<br />
                 <span style={{ color: '#FFF12D' }}>It is a system.</span>
