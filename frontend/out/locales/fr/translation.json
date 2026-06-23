@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// RÉSEAU DE REVENDEURS",
       "title": "SEULEMENT LE MEILLEUR",
-      "highlight": "VENDRE DES ELIMFILTRES.",
+      "highlight": "VEND DES ELIMFILTERS®.",
       "button": "DEVENEZ REVENDEUR"
     },
     "search": {
@@ -121,7 +121,7 @@
     "systemSpecs": "SPÉCIFICATIONS DU SYSTÈME",
     "active": "✓ ACTIF",
     "operationalAdvantages": "AVANTAGES OPÉRATIONNELS",
-    "whyElimfilters": "POURQUOI DES ÉLIMFILTRES",
+    "whyElimfilters": "POURQUOI ELIMFILTERS®",
     "technologiesIncluded": "Technologies incluses",
     "performanceMetrics": "MESURES DE PERFORMANCE",
     "readyToUpgrade": "Prêt à mettre à niveau ?",
@@ -230,20 +230,20 @@
     "faqTitle": "Questions Courantes sur la Filtration Industrielle",
     "faqItems": [
       {
-        "q": "Quel est le meilleur filtre à air pour les équipements miniers ?",
-        "a": "Les technologies ELIMFILTERS® MACROCORE™ et NANOFORCE™ atteignent 99,9% d'efficacité de capture de particules pour les systèmes d'admission d'air miniers, conformes SAE J1539 et ISO 5011. La sélection dépend de la cylindrée et de l'environnement opérationnel."
+        "q": "Que signifie la protection des actifs industriels ?",
+        "a": "La protection des actifs industriels est le contrôle systématique de la contamination dans tous les systèmes mécaniques critiques — admission d'air, carburant, hydraulique, lubrification et refroidissement — pour prévenir la défaillance prématurée des équipements. ELIMFILTERS® conçoit des systèmes de contrôle de contamination qui prolongent la durée de vie des actifs, réduisent les temps d'arrêt non planifiés et diminuent le coût total de possession."
       },
       {
-        "q": "À quelle fréquence les filtres à carburant industriels doivent-ils être changés ?",
-        "a": "ELIMFILTERS® recommande des intervalles de 500 à 1 000 heures pour les moteurs diesel lourds, ou 250 à 500 heures en environnements très contaminés. Les filtres HYDROCORE™ prolongent les intervalles grâce à une séparation d'eau de 99,8%."
+        "q": "Comment la contamination provoque-t-elle la défaillance des équipements ?",
+        "a": "Les particules de contamination usent les surfaces des paliers, obstruent les injecteurs de carburant et dégradent l'intégrité des joints. Les particules inférieures à 10 microns provoquent une usure abrasive invisible à l'œil nu. La contamination non contrôlée réduit la durée de vie des paliers moteur de 15 000+ heures à 2 000–3 000 heures. L'eau dans le carburant favorise la croissance microbienne et la corrosion des injecteurs."
       },
       {
         "q": "Quel code de propreté ISO un système hydraulique doit-il cibler ?",
-        "a": "La plupart des systèmes hydrauliques industriels nécessitent le code ISO 17/15/12 pour protéger les tiroirs de vannes proportionnelles. Les systèmes critiques peuvent spécifier ISO 15/13/10. Les stratégies ELIMFILTERS® ciblent des codes mesurés, pas des marques."
+        "a": "La plupart des systèmes hydrauliques industriels nécessitent le code ISO 17/15/12 pour protéger les tiroirs de vannes proportionnelles. Les systèmes critiques peuvent spécifier ISO 15/13/10. Les stratégies de contrôle de contamination d'ELIMFILTERS® ciblent des codes de propreté mesurés — la norme ISO 4406 — et non des marques de produits."
       },
       {
-        "q": "Pourquoi la contamination provoque-t-elle une défaillance du moteur ?",
-        "a": "Les particules de contamination usent les surfaces des paliers, obstruent les injecteurs et dégradent l'intégrité des joints. La contamination non contrôlée réduit la durée de vie des paliers de 15 000+ heures à 2 000–3 000 heures. ELIMFILTERS® prévient ces modes de défaillance."
+        "q": "Pourquoi ELIMFILTERS n'est-il pas une entreprise de filtres ?",
+        "a": "ELIMFILTERS conçoit des systèmes de contrôle de la contamination, non des filtres génériques. Un filtre est un composant. Un système de protection des actifs est une stratégie : il définit les objectifs de contamination, sélectionne les technologies adaptées à chaque domaine du système et mesure les performances tout au long du cycle de vie de l'équipement. ELIMFILTERS opère au niveau du système."
       }
     ],
     "heroLine_protecting": "Protection",

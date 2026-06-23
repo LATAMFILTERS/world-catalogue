@@ -251,8 +251,8 @@ export default function SciencePage() {
     headline: 'The Physics of Industrial Failure',
     description:
       'Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control science that prevents it.',
-    author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-    publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     dateModified: '2026-06-11',
     keywords: [
       'industrial filtration', 'contamination control', 'ISO 4406', 'ISO 16889',
