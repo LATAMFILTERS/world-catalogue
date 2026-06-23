@@ -622,7 +622,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FUNCTION', value: 'WATER ABSORPTION' },
       { key: 'PROTECTION', value: 'CORROSION PREVENTION' },
     ],
-    logoSrc: '/images/drycore(fn).avif',
+    logoSrc: '/assets/DRYCORE.avif',
     systemHeadline: 'MOLECULAR-LEVEL\nMOISTURE CUSTODY.',
     systemParagraphs: [
       'Compressed air systems for braking, suspension and pneumatic control contain moisture drawn in during compression from ambient air. At system operating temperature, this moisture remains vapor-phase. When air cools in downstream circuits, valves and actuators, vapor transitions to liquid — causing valve corrosion, seal swelling and control system failures.',
@@ -697,7 +697,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FITMENT', value: 'OEM INTERCHANGE' },
       { key: 'COVERAGE', value: 'MULTI-SYSTEM' },
     ],
-    logoSrc: '/images/duratech(fn).avif',
+    logoSrc: '/assets/Duratech.avif',
     systemHeadline: 'ONE SOURCE.\nEVERY SYSTEM. EVERY VEHICLE.',
     systemParagraphs: [
       'Fleet maintenance operations managing mixed-model vehicle populations face a consistent challenge: sourcing compatible filter elements from multiple suppliers for each vehicle variant, managing separate inventory lines, and coordinating service timing across different replacement intervals.',
@@ -772,7 +772,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'PROTECTION', value: 'SALT-RESISTANT' },
       { key: 'SYSTEM', value: 'CORROSION SHIELD' },
     ],
-    logoSrc: '/images/marineclean(fn).avif',
+    logoSrc: '/assets/MARINECLEAN.avif',
     systemHeadline: 'MARINE-GRADE DEFENSE\nAGAINST SALT CORROSION.',
     systemParagraphs: [
       'Marine diesel systems operate in the most corrosive environment accessible to filtration technology. Salt spray, salt aerosol and seawater ingress attack filter housings, sealing interfaces and bypass valve components continuously — not just in rough conditions, but as a constant ambient environment.',
