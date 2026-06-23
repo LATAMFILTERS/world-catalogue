@@ -40,7 +40,7 @@
     }
   },
   "why": {
-    "title": "POR QUE ESCOLHER ELIMFILTROS",
+    "title": "POR QUE ESCOLHER ELIMFILTERS®",
     "p1": "A ELIMFILTERS® é mais do que um fabricante de filtros. Somos uma empresa especializada em",
     "p1highlight": "Tecnologia de proteção de ativos",
     "p1after": ", projetando soluções que preservam o valor e a operabilidade do seu equipamento nos ambientes mais exigentes.",
@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// REDE DE REVENDEDORES",
       "title": "SÓ O MELHOR",
-      "highlight": "VENDO ELIMFILTROS.",
+      "highlight": "VENDO ELIMFILTERS®.",
       "button": "TORNE-SE UM REVENDEDOR"
     },
     "search": {
@@ -121,7 +121,7 @@
     "systemSpecs": "ESPECIFICAÇÕES DO SISTEMA",
     "active": "✓ ATIVO",
     "operationalAdvantages": "VANTAGENS OPERACIONAIS",
-    "whyElimfilters": "POR QUE ELIMFILTROS",
+    "whyElimfilters": "POR QUE ELIMFILTERS®",
     "technologiesIncluded": "Tecnologias incluídas",
     "performanceMetrics": "MÉTRICAS DE DESEMPENHO",
     "readyToUpgrade": "Pronto para atualizar?",
@@ -230,20 +230,20 @@
     "faqTitle": "Perguntas Comuns Sobre Filtração Industrial",
     "faqItems": [
       {
-        "q": "Qual é o melhor filtro de ar para equipamentos de mineração?",
-        "a": "As tecnologias ELIMFILTERS® MACROCORE™ e NANOFORCE™ atingem 99,9% de eficiência de captura de partículas para sistemas de admissão de ar em mineração, atendendo SAE J1539 e ISO 5011. A seleção depende da cilindrada e do ambiente operacional."
+        "q": "O que significa proteção de ativos industriais?",
+        "a": "Proteção de ativos industriais é o controle sistemático da contaminação em todos os sistemas mecânicos críticos — admissão de ar, combustível, hidráulico, lubrificação e arrefecimento — para prevenir falhas prematuras de equipamentos. A ELIMFILTERS® projeta sistemas de controle de contaminação que estendem a vida dos ativos, reduzem paradas não planejadas e diminuem o custo total de propriedade."
       },
       {
-        "q": "Com que frequência os filtros de combustível industrial devem ser trocados?",
-        "a": "ELIMFILTERS® recomenda intervalos de 500–1.000 horas para motores diesel pesados, ou 250–500 horas em ambientes de alta contaminação. Os filtros HYDROCORE™ ampliam os intervalos com separação de água de 99,8%."
+        "q": "Como a contaminação causa falhas em equipamentos?",
+        "a": "Partículas de contaminação desgastam superfícies de rolamentos, obstruem injetores de combustível e degradam a integridade dos vedantes. Partículas menores que 10 mícrons causam desgaste abrasivo invisível a olho nu. A contaminação descontrolada reduz a vida dos rolamentos do motor de 15.000+ horas para 2.000–3.000 horas. A água no combustível promove crescimento microbiano e corrosão dos injetores."
       },
       {
         "q": "Qual código de limpeza ISO um sistema hidráulico deve ter como alvo?",
-        "a": "A maioria dos sistemas hidráulicos industriais requer o código ISO 17/15/12 para proteger os carretéis das válvulas proporcionais. Sistemas críticos podem especificar ISO 15/13/10. As estratégias da ELIMFILTERS® visam códigos de limpeza medidos, não marcas."
+        "a": "A maioria dos sistemas hidráulicos industriais requer o código ISO 17/15/12 para proteger os carretéis das válvulas proporcionais. Sistemas críticos podem especificar ISO 15/13/10. As estratégias de controle de contaminação da ELIMFILTERS® visam códigos de limpeza medidos — a norma ISO 4406 — e não marcas de produtos."
       },
       {
-        "q": "Por que a contaminação causa falha no motor?",
-        "a": "Partículas de contaminação desgastam superfícies de rolamentos, restringem injetores e degradam a integridade dos vedantes. A contaminação descontrolada reduz a vida dos rolamentos de 15.000+ horas para 2.000–3.000 horas. A ELIMFILTERS® previne esses modos de falha."
+        "q": "Por que a ELIMFILTERS não é uma empresa de filtros?",
+        "a": "A ELIMFILTERS projeta sistemas de controle de contaminação, não filtros genéricos. Um filtro é um componente. Um sistema de proteção de ativos é uma estratégia: define metas de contaminação, seleciona as tecnologias certas para cada domínio do sistema e mede o desempenho ao longo do ciclo de vida do equipamento. A ELIMFILTERS opera no nível do sistema."
       }
     ],
     "heroLine_protecting": "Protegendo",

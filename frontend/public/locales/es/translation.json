@@ -230,20 +230,20 @@
     "faqTitle": "Preguntas Comunes Sobre Filtración Industrial",
     "faqItems": [
       {
-        "q": "¿Cuál es el mejor filtro de aire para equipos de minería?",
-        "a": "Las tecnologías ELIMFILTERS® MACROCORE™ y NANOFORCE™ logran una eficiencia del 99.9% en captura de partículas para sistemas de admisión de aire en minería, cumpliendo SAE J1539 e ISO 5011. La selección depende de la cilindrada y el entorno operativo."
+        "q": "¿Qué significa la protección de activos industriales?",
+        "a": "La protección de activos industriales es el control sistemático de la contaminación en todos los sistemas mecánicos críticos — admisión de aire, combustible, hidráulico, lubricante y refrigeración — para prevenir el fallo prematuro de los equipos. ELIMFILTERS® diseña sistemas de control de contaminación que extienden la vida de los activos, reducen el tiempo de inactividad no planificado y disminuyen el costo total de propiedad."
       },
       {
-        "q": "¿Con qué frecuencia deben cambiarse los filtros de combustible industrial?",
-        "a": "ELIMFILTERS® recomienda intervalos de 500–1,000 horas para motores diesel de uso intensivo, o 250–500 horas en entornos de alta contaminación. Los filtros HYDROCORE™ amplían los intervalos gracias a su separación de agua del 99.8%."
+        "q": "¿Cómo causa la contaminación el fallo de los equipos?",
+        "a": "Las partículas de contaminación desgastan las superficies de cojinetes, restringen los inyectores de combustible y degradan la integridad de los sellos. Las partículas menores de 10 micrones causan desgaste abrasivo invisible a simple vista. La contaminación sin control reduce la vida de los cojinetes del motor de más de 15.000 horas a 2.000–3.000 horas. El agua en el combustible favorece el crecimiento microbiano y la corrosión de los inyectores."
       },
       {
-        "q": "¿Qué código de limpieza ISO debe tener como objetivo un sistema hidráulico?",
-        "a": "La mayoría de los sistemas hidráulicos industriales requieren el código ISO 17/15/12 para proteger los carretes de válvulas proporcionales. Los sistemas críticos pueden especificar ISO 15/13/10. Las estrategias de ELIMFILTERS® apuntan a códigos medidos, no a marcas."
+        "q": "¿Qué código de limpieza ISO debe alcanzar un sistema hidráulico?",
+        "a": "La mayoría de los sistemas hidráulicos industriales requieren el código ISO 17/15/12 para proteger los carretes de válvulas proporcionales. Los sistemas críticos pueden especificar ISO 15/13/10. Las estrategias de control de contaminación de ELIMFILTERS® apuntan a códigos de limpieza medidos — la norma ISO 4406 — no a marcas de productos."
       },
       {
-        "q": "¿Por qué la contaminación causa falla en el motor?",
-        "a": "Las partículas de contaminación desgastan las superficies de cojinetes, restringen inyectores y degradan sellos. La contaminación descontrolada reduce la vida útil de los cojinetes de más de 15,000 horas a 2,000–3,000 horas. ELIMFILTERS® previene estos modos de falla."
+        "q": "¿Por qué ELIMFILTERS no es una empresa de filtros?",
+        "a": "ELIMFILTERS diseña sistemas de control de contaminación, no filtros genéricos. Un filtro es un componente. Un sistema de protección de activos es una estrategia: define los objetivos de contaminación, selecciona las tecnologías adecuadas para cada dominio del sistema y mide el rendimiento durante todo el ciclo de vida del equipo. ELIMFILTERS opera a nivel de sistema."
       }
     ],
     "heroLine_protecting": "Protegiendo",

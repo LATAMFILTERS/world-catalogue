@@ -40,7 +40,7 @@
     }
   },
   "why": {
-    "title": "PERCHÉ SCEGLIERE GLI ELIMFILTRI",
+    "title": "PERCHÉ SCEGLIERE ELIMFILTERS®",
     "p1": "ELIMFILTERS® è più di un produttore di filtri. Siamo un'azienda specializzata in",
     "p1highlight": "Tecnologia di protezione patrimoniale",
     "p1after": ", progettando soluzioni che preservano il valore e l'operatività delle vostre apparecchiature negli ambienti più esigenti.",
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// TECNOLOGIA PROPRIETARIA ELIMFILTER",
+    "tag": "// TECNOLOGIA PROPRIETARIA ELIMFILTERS®",
     "title": "INGEGNERIA",
     "titleHighlight": "OLTRE LO STANDARD",
     "items": {
@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// RETE RIVENDITORI",
       "title": "SOLO IL MEGLIO",
-      "highlight": "VENDI ELIMFILTRI.",
+      "highlight": "VENDI ELIMFILTERS®.",
       "button": "DIVENTA RIVENDITORE"
     },
     "search": {
@@ -121,7 +121,7 @@
     "systemSpecs": "SPECIFICHE DEL SISTEMA",
     "active": "✓ ATTIVO",
     "operationalAdvantages": "VANTAGGI OPERATIVI",
-    "whyElimfilters": "PERCHÉ ELIMFILTER",
+    "whyElimfilters": "PERCHÉ ELIMFILTERS®",
     "technologiesIncluded": "Tecnologie incluse",
     "performanceMetrics": "METRICHE DELLE PRESTAZIONI",
     "readyToUpgrade": "Pronto per l'aggiornamento?",
@@ -230,20 +230,20 @@
     "faqTitle": "Domande Comuni sulla Filtrazione Industriale",
     "faqItems": [
       {
-        "q": "Qual è il miglior filtro dell'aria per le attrezzature minerarie?",
-        "a": "Le tecnologie ELIMFILTERS® MACROCORE™ e NANOFORCE™ raggiungono il 99,9% di efficienza di cattura delle particelle per i sistemi di aspirazione dell'aria in miniera, conformi SAE J1539 e ISO 5011. La selezione dipende dalla cilindrata e dall'ambiente operativo."
+        "q": "Cosa significa protezione degli asset industriali?",
+        "a": "La protezione degli asset industriali è il controllo sistematico della contaminazione in tutti i sistemi meccanici critici — aspirazione aria, carburante, idraulico, lubrificazione e raffreddamento — per prevenire il guasto prematuro delle apparecchiature. ELIMFILTERS® progetta sistemi di controllo della contaminazione che estendono la vita degli asset, riducono i fermi non pianificati e abbassano il costo totale di proprietà."
       },
       {
-        "q": "Con quale frequenza devono essere sostituiti i filtri carburante industriali?",
-        "a": "ELIMFILTERS® raccomanda intervalli di 500–1.000 ore per i motori diesel pesanti, o 250–500 ore in ambienti ad alta contaminazione. I filtri HYDROCORE™ estendono gli intervalli grazie a una separazione dell'acqua del 99,8%."
+        "q": "Come causa la contaminazione il guasto delle apparecchiature?",
+        "a": "Le particelle di contaminazione consumano le superfici dei cuscinetti, ostruiscono gli iniettori di carburante e degradano l'integrità delle tenute. Le particelle inferiori a 10 micron causano usura abrasiva invisibile a occhio nudo. La contaminazione incontrollata riduce la vita dei cuscinetti del motore da 15.000+ ore a 2.000–3.000 ore. L'acqua nel carburante favorisce la crescita microbica e la corrosione degli iniettori."
       },
       {
-        "q": "Quale codice di pulizia ISO dovrebbe mirare un sistema idraulico?",
-        "a": "La maggior parte dei sistemi idraulici industriali richiede il codice ISO 17/15/12 per proteggere i tiranti delle valvole proporzionali. I sistemi critici possono specificare ISO 15/13/10. Le strategie ELIMFILTERS® puntano a codici misurati, non a marchi."
+        "q": "Quale codice di pulizia ISO dovrebbe raggiungere un sistema idraulico?",
+        "a": "La maggior parte dei sistemi idraulici industriali richiede il codice ISO 17/15/12 per proteggere i tiranti delle valvole proporzionali. I sistemi critici possono specificare ISO 15/13/10. Le strategie di controllo della contaminazione di ELIMFILTERS® puntano a codici di pulizia misurati — la norma ISO 4406 — non a marchi di prodotti."
       },
       {
-        "q": "Perché la contaminazione causa guasti al motore?",
-        "a": "Le particelle di contaminazione consumano le superfici dei cuscinetti, ostruiscono gli iniettori e degradano l'integrità delle guarnizioni. La contaminazione incontrollata riduce la vita dei cuscinetti da 15.000+ ore a 2.000–3.000 ore. ELIMFILTERS® previene questi modi di guasto."
+        "q": "Perché ELIMFILTERS non è un'azienda di filtri?",
+        "a": "ELIMFILTERS progetta sistemi di controllo della contaminazione, non filtri generici. Un filtro è un componente. Un sistema di protezione degli asset è una strategia: definisce gli obiettivi di contaminazione, seleziona le tecnologie adatte a ciascun dominio del sistema e misura le prestazioni per tutto il ciclo di vita dell'apparecchiatura. ELIMFILTERS opera a livello di sistema."
       }
     ],
     "heroLine_protecting": "Protezione",
