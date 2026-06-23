@@ -236,7 +236,7 @@ export default function Contact() {
                       lineHeight: 1.6,
                     }}
                   >
-                    ELIMFILTERS LLC
+                    KLEO TECHNOLOGIES
                     <br />
                     Frisco, Texas 75034
                     <br />
@@ -266,7 +266,7 @@ export default function Contact() {
                   >
                     LATAM Operations Center
                     <br />
-                    Barquisimeto, Lara
+                    Caracas, Distrito Capital
                     <br />
                     Venezuela
                   </p>

@@ -465,7 +465,7 @@ export default function AboutPage() {
                 },
                 {
                   label: 'LATAM OPERATIONS',
-                  value: 'Barquisimeto, Lara',
+                  value: 'Caracas, Distrito Capital',
                   note: 'Venezuela — Latin American operations center serving industrial sectors across LATAM.',
                 },
                 {
@@ -540,7 +540,7 @@ export default function AboutPage() {
           <p style={{ marginTop: '0.75rem' }}>SYSTEMS</p>
           <p>Engine lube circuits, hydraulic systems, fuel injection systems, air intake systems, cabin air systems, compressed air systems, transmission and drivetrain systems</p>
           <p style={{ marginTop: '0.75rem' }}>PARENT_COMPANY</p>
-          <p>Kleo Technologies LLC — Frisco, Texas 75034, United States. LATAM Operations: Barquisimeto, Lara, Venezuela. Contact: info@elimfilters.com</p>
+          <p>Kleo Technologies LLC — Frisco, Texas 75034, United States. LATAM Operations: Caracas, Distrito Capital, Venezuela. Contact: info@elimfilters.com</p>
           <p style={{ marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
           <p>ELIMFILTERS provides industrial asset protection through contamination control system design, ISO 4406 cleanliness target specification, proprietary filtration technology selection mapped to specific failure mechanisms, a 30+ page Knowledge System, and AI-readable industrial intelligence — positioned as an asset protection platform, not a filter product catalog.</p>
           <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
