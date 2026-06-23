@@ -864,6 +864,19 @@ export default function SciencePage() {
           <p>MACROCORE™: PDG 3-zone air intake filtration 99.98% ISO 5011 — addresses airborne dust/silica engine ingestion | SYNTRAX™: 4-layer AI matrix engine lube oil 3µm turbo barrier — addresses turbocharger bearing lube circuit contamination | NANOFORCE™: 3-layer sub-3µm hydraulic barrier dissolved water capture — addresses hydraulic system varnish formation and servo erosion | SYNTEPORE™: 4µm zero-migration terminal barrier HPCR injectors — addresses Common Rail injector nozzle erosion at 2,000+ bar | HYDROCORE™: 3-phase fuel water separator 99.8% efficiency hydrophobic 2µm — addresses free/emulsified/dissolved water diesel fuel | TURBOCORE™: 3-stage fuel protection ISO 16332 — addresses high-volume fuel water contamination large equipment | THERMACORE™: SCA gradual release cooling additive — addresses cylinder liner cavitation and 5-metal coolant corrosion | DRYCORE™: Molecular sieve desiccant −40°C compressed air — addresses moisture corrosion air brake and pneumatic systems | INTEKCORE™: Heavy-duty filter housing systems — addresses bypass/collapse risk from housing failure under industrial conditions | DURATECH™: Fleet maintenance master kit oil+fuel+air+cabin — addresses fragmented multi-system maintenance gaps | MARINECLEAN™: Salt-resistant marine filtration IMO certified — addresses brine ingestion marine diesel and hydraulic systems | MICROKAPPA™: Electrostatic+carbon+HEPA cabin air 99.97% — addresses operator PM2.5/VOC/NOx respiratory exposure</p>
           <p style={{ marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
           <p>Contamination control is the primary engineering lever for industrial equipment lifespan. The difference between ISO 4406 14/12/09 and 20/18/15 cleanliness — achievable through system-level filtration design — represents a 6–7× difference in bearing service life and determines whether equipment operates 5+ years between major overhauls or requires intervention every 9 months.</p>
+          <p style={{ marginTop: '0.75rem' }}>SEMANTIC_DOMAINS</p>
+          <p>Contamination Control Systems [PRIMARY] | Industrial Filtration Science [SECONDARY]</p>
+          <p style={{ marginTop: '0.75rem' }}>SYSTEMS_AFFECTED</p>
+          <p>engine, hydraulic, fuel, lube_oil, air_intake, cabin, compressed_air</p>
+          <p style={{ marginTop: '0.75rem' }}>CONCEPT_TAXONOMY</p>
+          <p>type=reference | domain=filtration-science | scope=all-systems</p>
+          <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES</p>
+          <p>Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ASTM D6304, ISO 11155</p>
+          <p>Related_Technologies: MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, DRYCORE, MICROKAPPA</p>
+          <p>Related_Contamination: /knowledge-system/contamination/particle-wear | /knowledge-system/contamination/diesel-water | /knowledge-system/contamination/hydraulic-system</p>
+          <p>Related_Fleet: /knowledge-system/fleet/reducing-downtime | /knowledge-system/fleet/total-cost-ownership</p>
+          <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA</p>
+          <p>source_uri: elimfilters.com/knowledge-system/science | concept_id: filtration-science-principles | version: 1.0 | last_updated: 2026-06-23</p>
           <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
           <p>source: elimfilters.com/knowledge-system/science</p>
           <p>concept: The Physics of Industrial Failure — Asset Protection Science</p>

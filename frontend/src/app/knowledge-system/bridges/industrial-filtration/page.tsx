@@ -1280,6 +1280,16 @@ export default function IndustrialFiltrationPage() {
           })}
         </script>
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+            { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+            { '@type': 'ListItem', position: 3, name: 'Industrial Filtration', item: 'https://elimfilters.com/knowledge-system/bridges/industrial-filtration' },
+          ],
+        }) }} />
+
       </div>
     </main>
   );
