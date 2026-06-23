@@ -7,29 +7,33 @@ import { StaggerContainer, itemVariants } from '@/components/AnimateIn';
 import { ScrollCards, type iCardItem } from '@/components/ui/scroll-cards';
 
 const GEO_DEFINITIONS: Record<string, string> = {
-  'turbocore-series': "TURBOCORE™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
-  'hydrocore': 'HYDROCORE™ is a hydrophobic water-separation asset protection technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
-  'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
-  'intekcore': 'INTEKCORE™ is a high-pressure filter housing architecture rated for heavy-duty trucks and industrial machinery. Precision-formed sealing surfaces and corrosion-resistant materials deliver zero-bypass performance under peak system pressure, ensuring no unfiltered fluid bypasses the element during cold starts, load spikes, or element change events.',
-  'macrocore': 'MACROCORE™ is a Progressive Density Gradient (PDG) multi-layer air filtration system rated to ISO 5011 standards. Outer protection layers capture macro-contaminants while progressively denser inner zones neutralise sub-micron threats, achieving 99.9%–99.98% interception efficiency with a 62 PSI anti-collapse rating. Engineered for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, stationary power generation, and industrial compressors.',
-  'microkappa': 'MICROKAPPA™ is an electrostatic cabin air filtration system combining activated carbon and HEPA-grade particle capture. The electrostatic charge attracts sub-micron particles, allergens, and diesel particulate matter, while the activated carbon layer controls odours from fuel vapours and exhaust intrusion. Designed for mining cabs, agricultural machinery, and heavy-duty trucks operating in high-dust environments.',
-  'nanoforce': 'NANOFORCE™ is a multi-layer hydraulic contamination control architecture engineered for high-pressure hydraulic circuits in heavy industrial machinery. It combines structural integrity reinforcement with vapour control mechanisms to maintain filter element form under system pressure spikes, delivering consistent sub-micron contamination interception across variable duty cycles.',
-  'syntepore': 'SYNTEPORE™ is an all-synthetic air intake protection architecture for high-humidity, coastal, and marine intake environments. Structural integrity is maintained under moisture exposure conditions that degrade cellulose-based constructions, delivering consistent ISO 5011-compliant airflow restriction across variable humidity operating environments aboard offshore platforms, marine vessels, and humid tropical agricultural operations.',
-  'syntrax': 'SYNTRAX™ is a synthetic lubrication protection architecture maintaining ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals for diesel, gas, and dual-fuel engines. It captures combustion soot above 2% by weight, metal wear particles, and fuel dilution byproducts — the primary degradation mechanisms that reduce oil film strength, accelerate bearing wear, and reduce engine service life in mobile and stationary applications.',
+  'turbocore-series': "TURBOCORE™ is ELIMFILTERS' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles via HYDROCORE™ inertial rotation, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final hydrophobic barrier. The FH 900FH and 1000FH models are designed for high-flow diesel fuel systems in power generation, mining, agriculture, and heavy transport.",
+  'hydrocore': 'HYDROCORE™ is a hydrophobic water-separation technology that removes free, emulsified, and dissolved water from diesel fuel systems at 99.8% efficiency. The three-phase interception architecture uses a sealed collection chamber, coalescence geometry, and a 2µm hydrophobic terminal barrier — protecting HPCR injectors operating at 1,800–2,500 bar from water-induced corrosion, cavitation, and microbial contamination.',
+  'drycore': 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before phase transition occurs, DRYCORE™ prevents corrosion, freeze events, and seal degradation in air brake, suspension, and pneumatic control circuits on trucks, buses, and industrial equipment operating in high-humidity environments.',
+  'intekcore': 'INTEKCORE™ is a high-pressure filter housing architecture rated for heavy-duty trucks and industrial machinery. Precision-formed sealing surfaces, corrosion-resistant construction, and OEM-compatible thread standards deliver zero-bypass performance under peak system pressure — ensuring no unfiltered fluid bypasses the element during cold starts, load spikes, or element change events.',
+  'macrocore': 'MACROCORE™ is a Progressive Density Gradient (PDG) multi-layer air intake filtration system rated to ISO 5011 standards. Three density zones — macro-particle outer capture, gradient mid-zone, and sub-micron core barrier — achieve 99.9%–99.98% interception efficiency with a 62 PSI anti-collapse rating. Engineered for heavy-duty combustion engines in mining, agriculture, construction, power generation, and industrial compressors.',
+  'microkappa': 'MICROKAPPA™ is a three-mechanism cabin air protection system combining electrostatic particle attraction, activated carbon adsorption, and HEPA-class mechanical filtration. It captures PM2.5 at 99% efficiency, removes VOCs and diesel exhaust gases at 95%, and achieves 99.97% efficiency at 0.3µm. Designed for operator health protection in trucks, buses, mining cabs, and agricultural machinery cabins.',
+  'nanoforce': 'NANOFORCE™ is a multi-layer hydraulic contamination control architecture engineered for high-pressure hydraulic circuits. Three protection layers — macro guard, vapor control (dissolved water capture), and structural integrity core (3µm barrier) — maintain contamination control under continuous pressure pulsation. Vapor control addresses dissolved water phase-transition — the invisible hydraulic contamination source conventional filters ignore.',
+  'syntepore': 'SYNTEPORE™ is a precision fuel injection protection technology engineered as the terminal barrier for Common Rail HPCR diesel systems operating above 2,000 bar. Three progressive layers — capture zone (40µm), intermediate band (10–4µm), and zero-migration barrier (4µm absolute) — prevent sub-micron particle contamination from reaching injector needle seats with clearances below 1 micron. Validated for Euro IV–VI injection systems.',
+  'syntrax': 'SYNTRAX™ is a four-layer AI-calibrated lubrication protection architecture for engine oil circuits. The density gradient matrix targets contamination from 40µm (outer macro zone) down to 3µm (turbo custody barrier), with thermal bonding that locks layer position across the full service interval. Designed specifically to protect turbocharger shaft bearings operating on oil films of 2–4 microns.',
+  'thermacore': 'THERMACORE™ is an SCA (Supplemental Coolant Additive) gradual-release technology for diesel engine cooling systems. Controlled passive dosing maintains SCA concentration within the protection corridor across the full service interval — preventing cylinder liner cavitation erosion and electrochemical corrosion on aluminum, copper, iron, steel, and brass cooling circuit components without operator intervention.',
+  'marineclean': 'MARINECLEAN™ is a salt-resistant marine filtration architecture combining epoxy barrier coating, brine rejection geometry, and corrosion-shield internal components. IMO certified for commercial marine use, it protects diesel fuel and hydraulic systems against continuous saltwater aerosol exposure, seawater ingress, and the accelerated corrosion of wet-dry cycling in harbor, offshore, and deep-sea operating environments.',
+  'duratech': 'DURATECH™ is a fleet maintenance master kit system that consolidates all filtration elements required for a complete vehicle service event — oil, fuel, air, and cabin — into a single OEM-interchangeable package. Platform-specific kits eliminate wrong-element installations in mixed-model fleets, convert filter inventory to a predictable kit-based structure, and standardize sourcing to a single order per service cycle.',
 };
 
 const TECH_COMPARISON = [
-  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake & Airflow Protection', func: 'Progressive density gradient intake protection', metric: '99.9%–99.98% efficiency · ISO 5011', industries: 'Mining, Agriculture, Construction, Power Gen' },
-  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Air Intake & Airflow Protection', func: 'All-synthetic intake for humid/marine environments', metric: 'ISO 5011 · moisture-resistant construction', industries: 'Marine, Offshore, Coastal, Agriculture' },
-  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Air Intake & Airflow Protection', func: 'Pre-cleaner housing for high-vibration environments', metric: 'Radial seal zero-bypass · railway traction', industries: 'Railway, Stationary industrial, Heavy trucks' },
-  { name: 'DRYCORE™', slug: 'drycore', system: 'Air Intake & Airflow Protection', func: 'Molecular sieve desiccant dryer', metric: 'ISO 8573-1 Class 1–2 dew point', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
-  { name: 'HYDROCORE™', slug: 'hydrocore', system: 'Fuel Cleanliness Protection', func: 'Turbine-stage water separation', metric: '99.8% free water · 95% emulsified removal', industries: 'Marine, Oil & Gas, Power Gen, Agriculture' },
-  { name: 'TURBOCORE™', slug: 'turbocore-series', system: 'Fuel Cleanliness Protection', func: 'High-flow fuel protection for stationary power systems', metric: '99.8% free water removal · High-flow power systems', industries: 'Power Generation, Mining, Stationary industrial' },
-  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication Protection', func: 'Full-flow lube protection at ISO 4406 16/14/11', metric: 'Extended drain interval · soot capture above 2%', industries: 'Trucks & Fleets, Bus & Coach, Railway' },
-  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic Protection', func: 'Sub-micron Beta-rated contamination control', metric: 'ISO 4406 16/14/11 · 200–450 bar', industries: 'Construction, Mining, Manufacturing, Marine' },
-  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Cross-System', func: 'Corrosion-resistant fuel and lube protection for marine environments', metric: 'IMO certified · ASTM B117 · Salt-resistant', industries: 'Marine, Offshore, Commercial vessels' },
-  { name: 'DURATECH™', slug: 'duratech', system: 'Cross-System', func: 'Multi-domain fleet standardisation and consolidated service kits', metric: 'OEM-interchangeable · Mixed-fleet', industries: 'Trucks & Fleets, Mining, Construction, Agriculture' },
-  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cross-System', func: 'PM2.5 capture + activated carbon cabin protection', metric: 'Up to 85% PM2.5 reduction · EU Dir. 2019/130', industries: 'Trucks, Bus & Coach, Construction, Mining' },
+  { name: 'MACROCORE™', slug: 'macrocore', system: 'Air Intake Protection', func: 'Progressive Density Gradient air intake filtration', metric: '99.9%–99.98% efficiency · ISO 5011 · 62 PSI', industries: 'Mining, Agriculture, Construction, Power Gen' },
+  { name: 'SYNTEPORE™', slug: 'syntepore', system: 'Fuel Cleanliness Protection', func: 'Terminal HPCR injector barrier (zero-migration 4µm)', metric: '4µm absolute · 2,000+ bar · Euro IV–VI', industries: 'Heavy Transport, Power Gen, Agriculture, Mining' },
+  { name: 'HYDROCORE™', slug: 'hydrocore', system: 'Fuel Cleanliness Protection', func: 'Three-phase water separation from diesel fuel', metric: '99.8% separation efficiency · 2µm hydrophobic barrier', industries: 'Marine, Power Gen, Agriculture, Mining, Transport' },
+  { name: 'TURBOCORE™', slug: 'turbocore-series', system: 'Fuel Cleanliness Protection', func: 'Three-stage fuel protection (inertia + coalescence + barrier)', metric: '99% water separation · ISO 16332 · 90–180 GPH', industries: 'Power Generation, Mining, Agriculture, Transport' },
+  { name: 'SYNTRAX™', slug: 'syntrax', system: 'Lubrication Protection', func: '4-layer AI-calibrated lube oil protection', metric: '3µm turbo custody barrier · thermal bonding', industries: 'Trucks & Fleets, Bus & Coach, Mining, Construction' },
+  { name: 'NANOFORCE™', slug: 'nanoforce', system: 'Hydraulic Protection', func: 'Multi-layer hydraulic with vapor control', metric: '3µm structural core · dissolved water capture', industries: 'Construction, Mining, Manufacturing, Marine' },
+  { name: 'THERMACORE™', slug: 'thermacore', system: 'Cooling System Protection', func: 'SCA gradual-release for cylinder liner cavitation prevention', metric: 'Passive dosing · 5 metals · full service interval', industries: 'Heavy Transport, Power Gen, Agriculture, Mining' },
+  { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air Protection', func: 'Molecular sieve desiccant for pneumatic systems', metric: 'Zero moisture breakthrough · −40°C rated', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
+  { name: 'INTEKCORE™', slug: 'intekcore', system: 'Housing Systems', func: 'High-pressure filter housings for trucks & machinery', metric: 'Zero-bypass seal · OEM-compatible threads', industries: 'Heavy Trucks, Mining, Construction, Agriculture' },
+  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Marine Protection', func: 'Salt-resistant fuel and hydraulic filtration', metric: 'IMO certified · epoxy coating · brine rejection', industries: 'Marine, Offshore, Coastal infrastructure' },
+  { name: 'DURATECH™', slug: 'duratech', system: 'Fleet Maintenance Systems', func: 'Master kit consolidation for mixed-model fleets', metric: 'OEM-interchangeable · single-source per service', industries: 'Trucks & Fleets, Mining, Construction, Agriculture' },
+  { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Air Protection', func: 'Electrostatic + carbon + HEPA cabin occupant protection', metric: 'PM2.5 99% · VOC 95% · HEPA 99.97% at 0.3µm', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
 const SCROLL_ITEMS: iCardItem[] = [
@@ -43,9 +47,9 @@ const SCROLL_ITEMS: iCardItem[] = [
   },
   {
     title: 'SYNTEPORE™',
-    subtitle: 'All-Synthetic Intake Architecture',
-    description: 'All-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure degrades cellulose media.',
-    system: 'Air Intake · Marine',
+    subtitle: 'Precision Injector Guard',
+    description: 'Terminal barrier for Common Rail HPCR systems operating above 2,000 bar. Three progressive layers with 4µm zero-migration barrier protecting injector needle seats.',
+    system: 'Fuel · HPCR Injectors',
     src: '/assets/SYNTEPORE.avif',
     href: '/technologies/syntepore',
   },
@@ -113,12 +117,28 @@ const SCROLL_ITEMS: iCardItem[] = [
     src: '/assets/MICROKAPPA.avif',
     href: '/technologies/microkappa',
   },
+  {
+    title: 'MARINECLEAN™',
+    subtitle: 'Salt-Resistant Marine Filtration',
+    description: 'Epoxy coating, brine rejection geometry, and corrosion-shield internals. IMO certified for continuous saltwater aerosol exposure in fuel and hydraulic systems.',
+    system: 'Marine · Offshore',
+    src: '/assets/MARINECLEAN.avif',
+    href: '/technologies/marineclean',
+  },
+  {
+    title: 'DURATECH™',
+    subtitle: 'Fleet Master Kit System',
+    description: 'Consolidated service kits with oil, fuel, air, and cabin elements per vehicle platform. OEM-interchangeable, single-source per service cycle for mixed-model fleets.',
+    system: 'Fleet Maintenance',
+    src: '/assets/Duratech.avif',
+    href: '/technologies/duratech',
+  },
 ];
 
 const FAQS = [
   {
-    q: 'What is the difference between MACROCORE™ and SYNTEPORE™ air intake protection?',
-    a: 'Both are Air Intake & Airflow Protection technologies but target different operating environments. MACROCORE™ uses Progressive Density Gradient (PDG) media — a multi-layer cellulose-synthetic composite achieving 99.9%–99.98% efficiency (ISO 5011) at dust concentrations up to 10,000 mg/m³ in mining, agriculture, and construction. SYNTEPORE™ is all-synthetic construction for high-humidity, coastal, and marine intake environments where moisture exposure would degrade cellulose media — maintaining ISO 5011-compliant airflow restriction regardless of humidity conditions.',
+    q: 'What is the difference between MACROCORE™ and SYNTEPORE™?',
+    a: 'MACROCORE™ and SYNTEPORE™ protect different systems entirely. MACROCORE™ is an air intake filtration system — Progressive Density Gradient (PDG) architecture achieving 99.9%–99.98% efficiency (ISO 5011) for combustion engine air circuits in mining, agriculture, and construction. SYNTEPORE™ is a fuel system technology — the terminal protection barrier for Common Rail HPCR diesel injection systems operating above 2,000 bar. Its three-layer progressive architecture delivers a 4µm zero-migration barrier protecting injector needle seats with clearances below 1 micron from sub-micron particle contamination.',
   },
   {
     q: 'Which ELIMFILTERS architecture protects HPCR diesel injection systems?',
@@ -130,7 +150,7 @@ const FAQS = [
   },
   {
     q: 'What ISO standards govern ELIMFILTERS protection architectures?',
-    a: 'MACROCORE™ and SYNTEPORE™ are validated against ISO 5011 (air filter performance for internal combustion engines). HYDROCORE™ water separation is verified against ASTM D6304 free water thresholds and SAE J1488 coalescer protocols. SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes — the international standard for particle contamination counting in oil systems. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing and targets ISO 4406 16/14/11 for proportional valve protection. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems.',
+    a: 'MACROCORE™ is validated against ISO 5011 (air filter performance for combustion engines). SYNTEPORE™ and HYDROCORE™ fuel protection technologies are verified against ASTM D6304 (water content) and SAE J1488 (water separation efficiency). TURBOCORE™ is certified to ISO 16332 (fuel/water separation). SYNTRAX™ lubrication protection targets ISO 4406 cleanliness codes. NANOFORCE™ hydraulic architecture is validated against ISO 16889 Beta ratio testing. DRYCORE™ achieves ISO 8573-1 Class 1–2 dew point targets for compressed air systems. MICROKAPPA™ cabin protection is rated against ISO 11155 (vehicle cabin air filtration) and EU Directive 2019/130.',
   },
   {
     q: 'How does NANOFORCE™ prevent hydraulic proportional valve failure?',
