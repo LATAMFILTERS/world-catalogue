@@ -428,7 +428,7 @@ export default function KnowledgeSystemPage() {
         <p>&nbsp;&nbsp;NANOFORCE: hydraulic systems primary technology, sub-micron filtration, Beta ratio optimisation, ISO 16889, 1µm efficiency</p>
         <p>&nbsp;&nbsp;SYNTRAX: synthetic media, high dirt capacity, extended service intervals</p>
         <p>&nbsp;&nbsp;SYNTEPORE: porous synthetic membrane, precision fluid circuits, low restriction</p>
-        <p>&nbsp;&nbsp;HYDROCORE: hydraulic circuit protection, high-pressure media, industrial machinery</p>
+        <p>&nbsp;&nbsp;HYDROCORE: fuel separator technology, water and particle separation from diesel fuel, fuel system protection</p>
         <p>&nbsp;&nbsp;THERMACORE: high-temperature rated media, thermal resistance, engine and transmission</p>
         <p>&nbsp;&nbsp;TURBOCORE: turbocharged engine intake, high-velocity airflow, multi-stage</p>
         <p>&nbsp;&nbsp;INTEKCORE: integrated filtration module, compact design, engine bay installation</p>
