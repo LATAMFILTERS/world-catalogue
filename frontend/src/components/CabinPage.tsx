@@ -73,7 +73,7 @@ export function CabinPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // CABIN AIR FILTRATION
+                CABIN AIR FILTRATION
               </span>
             </motion.div>
             <motion.h1

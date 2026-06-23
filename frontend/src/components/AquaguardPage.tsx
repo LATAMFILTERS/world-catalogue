@@ -81,7 +81,7 @@ export function HydrocorePage() {
           <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', padding: '5rem 2rem 4rem' }}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
               <span style={{ display: 'block', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.28em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
-                // FUEL ASSET PROTECTION · SERIES FH
+                FUEL ASSET PROTECTION · SERIES FH
               </span>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
@@ -114,7 +114,7 @@ export function HydrocorePage() {
             <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
               <AnimateIn direction="left">
                 <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1.5rem' }}>
-                  // SYSTEM OVERVIEW
+                  SYSTEM OVERVIEW
                 </span>
                 <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.15, marginBottom: '1.5rem' }}>
                   NOT A FILTER.<br />AN ASSET PROTECTION SYSTEM.
@@ -151,7 +151,7 @@ export function HydrocorePage() {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
-                // THREE-STAGE PROTECTION ARCHITECTURE
+                THREE-STAGE PROTECTION ARCHITECTURE
               </span>
               <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '4rem', lineHeight: 1.15 }}>
                 EACH STAGE ELIMINATES<br />WHAT THE PREVIOUS ONE CANNOT.
@@ -199,7 +199,7 @@ export function HydrocorePage() {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
-                // PROTECTION PARAMETERS
+                PROTECTION PARAMETERS
               </span>
               <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '3rem' }}>
                 FIELD SPECIFICATIONS
@@ -222,7 +222,7 @@ export function HydrocorePage() {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AnimateIn direction="up">
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.75rem' }}>
-                // ASSET APPLICATIONS
+                ASSET APPLICATIONS
               </span>
               <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '0.75rem' }}>
                 WHERE TURBOCORE™ PROTECTS
@@ -252,7 +252,7 @@ export function HydrocorePage() {
           <AnimateIn direction="up">
             <div style={{ maxWidth: '700px', margin: '0 auto' }}>
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.5)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-                // IDENTIFY YOUR TURBOCORE™ SKU
+                IDENTIFY YOUR TURBOCORE™ SKU
               </span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
                 FIND YOUR PROTECTION SYSTEM

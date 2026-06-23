@@ -73,7 +73,7 @@ export function OilPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // ENGINE OIL FILTRATION SYSTEMS
+                ENGINE OIL FILTRATION SYSTEMS
               </span>
             </motion.div>
             <motion.h1

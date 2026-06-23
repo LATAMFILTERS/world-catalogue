@@ -73,7 +73,7 @@ export function KitsPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // MAINTENANCE BUNDLES
+                MAINTENANCE BUNDLES
               </span>
             </motion.div>
             <motion.h1

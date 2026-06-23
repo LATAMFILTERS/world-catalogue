@@ -73,7 +73,7 @@ export function MarinePage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // OFFSHORE · COMMERCIAL · NAVAL
+                OFFSHORE · COMMERCIAL · NAVAL
               </span>
             </motion.div>
             <motion.h1

@@ -84,7 +84,7 @@ export default function SystemsHub() {
             transition={{ duration: 0.6, ease }}
             style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'rgba(255,241,45,0.7)', textTransform: 'uppercase', marginBottom: '2rem' }}
           >
-            // INDUSTRIAL PROTECTION SYSTEMS
+            INDUSTRIAL PROTECTION SYSTEMS
           </motion.p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end', maxWidth: '1200px' }}>
@@ -197,7 +197,7 @@ export default function SystemsHub() {
               transition={{ duration: 0.6, ease }}
             >
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'rgba(255,241,45,0.6)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
-                // ASSET PROTECTION DOCTRINE
+                ASSET PROTECTION DOCTRINE
               </p>
               <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>
                 Protection is not<br />a product.<br />

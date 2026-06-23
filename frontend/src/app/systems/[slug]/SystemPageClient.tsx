@@ -59,7 +59,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
               fontFamily: 'JetBrains Mono, monospace',
               marginBottom: '1.5rem',
             }}>
-              // FILTRATION SYSTEM
+              FILTRATION SYSTEM
             </span>
 
             <h1 style={{

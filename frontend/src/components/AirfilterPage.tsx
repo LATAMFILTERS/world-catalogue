@@ -73,7 +73,7 @@ export function AirfilterPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // AIR INTAKE FILTRATION
+                AIR INTAKE FILTRATION
               </span>
             </motion.div>
             <motion.h1

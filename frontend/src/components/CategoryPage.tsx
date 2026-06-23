@@ -206,7 +206,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           <section style={{ padding: '3rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
-                // INDUSTRIAL CONTEXT
+                INDUSTRIAL CONTEXT
               </p>
               <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'Titillium Web, sans-serif', width: '100%' }}>
                 {geoData.directAnswer.split('®').map((part, i, arr) =>
@@ -230,7 +230,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <AnimateIn>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '0.75rem' }}>
-                  // OPERATIONAL OBJECTIVE
+                  OPERATIONAL OBJECTIVE
                 </p>
                 <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.15rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
                   {geoData.operationalObjective.headline}
@@ -766,7 +766,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
               <AnimateIn>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
-                  // KNOWLEDGE NETWORK
+                  KNOWLEDGE NETWORK
                 </p>
                 <h2 style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2rem' }}>
                   Protection Systems Applied
@@ -824,7 +824,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
-                // KNOWLEDGE NETWORK
+                KNOWLEDGE NETWORK
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem' }}>
                 {industryLinks.contamination && industryLinks.contamination.length > 0 && (
@@ -909,7 +909,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             />
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
-                // COMMON QUESTIONS
+                COMMON QUESTIONS
               </p>
               <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '3rem' }}>
                 Frequently Asked Questions

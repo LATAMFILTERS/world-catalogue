@@ -73,7 +73,7 @@ export function HydraulicPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // HYDRAULIC FILTRATION SYSTEMS
+                HYDRAULIC FILTRATION SYSTEMS
               </span>
             </motion.div>
             <motion.h1

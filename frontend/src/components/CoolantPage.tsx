@@ -73,7 +73,7 @@ export function CoolantPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // COOLANT FILTRATION & THERMAL PROTECTION
+                COOLANT FILTRATION & THERMAL PROTECTION
               </span>
             </motion.div>
             <motion.h1

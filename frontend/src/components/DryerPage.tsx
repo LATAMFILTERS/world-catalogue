@@ -73,7 +73,7 @@ export function DryerPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // AIR DRYING SYSTEMS
+                AIR DRYING SYSTEMS
               </span>
             </motion.div>
             <motion.h1

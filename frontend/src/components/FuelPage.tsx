@@ -73,7 +73,7 @@ export function FuelPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // FUEL FILTRATION SYSTEMS
+                FUEL FILTRATION SYSTEMS
               </span>
             </motion.div>
             <motion.h1

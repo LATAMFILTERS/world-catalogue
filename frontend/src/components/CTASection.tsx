@@ -60,7 +60,7 @@ export function CTASection({
             marginBottom: '1.25rem',
           }}
         >
-          // ASSET PROTECTION
+          ASSET PROTECTION
         </p>
         <h2
           style={{

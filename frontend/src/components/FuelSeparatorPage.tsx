@@ -73,7 +73,7 @@ export function FuelSeparatorPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // FUEL WATER SEPARATION SYSTEMS
+                FUEL WATER SEPARATION SYSTEMS
               </span>
             </motion.div>
             <motion.h1

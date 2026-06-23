@@ -73,7 +73,7 @@ export function HousingPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // FILTER HOUSING SYSTEMS
+                FILTER HOUSING SYSTEMS
               </span>
             </motion.div>
             <motion.h1

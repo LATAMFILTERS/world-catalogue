@@ -53,7 +53,7 @@ export default function RetrievalBlock({ children }: RetrievalBlockProps) {
             color: 'rgba(255,241,45,0.6)',
           }}
         >
-          // RETRIEVAL SUMMARY BLOCK
+          RETRIEVAL SUMMARY BLOCK
         </span>
         <span
           style={{
