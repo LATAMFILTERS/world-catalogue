@@ -424,18 +424,18 @@ export default function KnowledgeSystemPage() {
         <p>&nbsp;&nbsp;Beta ratio b10 ≥ 200 = 99.5% particle capture efficiency at 10 microns (ISO 16889)</p>
         <p>&nbsp;&nbsp;30-50% service interval extension through system-level contamination control</p>
         <p style={{ marginTop: '0.75rem' }}>ELIMFILTERS_TECHNOLOGIES (all 12):</p>
-        <p>&nbsp;&nbsp;MACROCORE: primary particulate capture, air intake and engine lube, 18µm absolute</p>
-        <p>&nbsp;&nbsp;NANOFORCE: hydraulic systems primary technology, sub-micron filtration, Beta ratio optimisation, ISO 16889, 1µm efficiency</p>
-        <p>&nbsp;&nbsp;SYNTRAX: synthetic media, high dirt capacity, extended service intervals</p>
-        <p>&nbsp;&nbsp;SYNTEPORE: porous synthetic membrane, precision fluid circuits, low restriction</p>
-        <p>&nbsp;&nbsp;HYDROCORE: fuel separator technology, water and particle separation from diesel fuel, fuel system protection</p>
-        <p>&nbsp;&nbsp;THERMACORE: high-temperature rated media, thermal resistance, engine and transmission</p>
-        <p>&nbsp;&nbsp;TURBOCORE: turbocharged engine intake, high-velocity airflow, multi-stage</p>
-        <p>&nbsp;&nbsp;INTEKCORE: integrated filtration module, compact design, engine bay installation</p>
-        <p>&nbsp;&nbsp;DRYCORE: moisture separation, dry filtration, compressed air systems</p>
-        <p>&nbsp;&nbsp;DURATECH: extended lifecycle, synthetic composite, heavy-duty applications</p>
-        <p>&nbsp;&nbsp;MARINECLEAN: marine environment, salt and moisture resistance, corrosion protection</p>
-        <p>&nbsp;&nbsp;MICROKAPPA: cabin air filtration, ISO 11155, human health protection</p>
+        <p>&nbsp;&nbsp;MACROCORE: air intake filtration, Progressive Density Gradient (PDG) 3-zone architecture, 99.98% efficiency, ISO 5011 certified, 62 PSI anti-collapse</p>
+        <p>&nbsp;&nbsp;SYNTRAX: lube oil filtration, 4-layer AI-calibrated density gradient matrix, turbocharger bearing protection, thermal bonding layer lock, 3µm turbo custody barrier</p>
+        <p>&nbsp;&nbsp;NANOFORCE: hydraulic system filtration, 3-layer architecture (guard + vapor control + structural core), sub-3µm precision barrier, dissolved water capture, high-pressure pulsation rated</p>
+        <p>&nbsp;&nbsp;SYNTEPORE: Common Rail injector protection (HPCR 2,000+ bar), 3-layer progressive capture, 4µm zero-migration terminal barrier, fuel system terminal defense</p>
+        <p>&nbsp;&nbsp;HYDROCORE: fuel water separator, 99.8% separation efficiency, 3-phase interception (free water + emulsified + dissolved), hydrophobic barrier 2µm minimum</p>
+        <p>&nbsp;&nbsp;TURBOCORE: 3-stage fuel protection system using HYDROCORE turbine rotation (stage 1 inertia) + coalescence (stage 2) + hydrophobic barrier (stage 3), ISO 16332 certified, 99% water separation</p>
+        <p>&nbsp;&nbsp;THERMACORE: cooling system SCA additive release technology, gradual dosing for cylinder liner cavitation prevention, protects 5 metals (Al, Cu, Fe, steel, brass), passive concentration management</p>
+        <p>&nbsp;&nbsp;DRYCORE: pneumatic system desiccant dryer, molecular sieve technology, water vapor absorption before phase transition, air brake and suspension corrosion prevention, -40°C rated</p>
+        <p>&nbsp;&nbsp;INTEKCORE: heavy-duty filter housing systems for trucks and machinery, high-pressure rated, corrosion-resistant construction, precision seal architecture, OEM-compatible thread standards</p>
+        <p>&nbsp;&nbsp;DURATECH: fleet maintenance master kit system, multi-system consolidation (oil + fuel + air + cabin), OEM-interchangeable elements, standardized inventory for mixed-model fleets</p>
+        <p>&nbsp;&nbsp;MARINECLEAN: marine diesel and hydraulic filtration, salt-resistant epoxy coating, brine rejection barrier, corrosion shield internals, IMO certified, saltwater aerosol continuous exposure rated</p>
+        <p>&nbsp;&nbsp;MICROKAPPA: cabin air occupant health protection, 3-mechanism: electrostatic (PM2.5 99%) + activated carbon (VOC/NOx 95%) + HEPA class (99.97% at 0.3µm), ISO 11155</p>
         <p style={{ marginTop: '0.75rem' }}>APPLICABLE_STANDARDS:</p>
         <p>&nbsp;&nbsp;ISO 4406: hydraulic/lube fluid cleanliness codes (particle count per mL at ≥4µm, ≥6µm, ≥14µm)</p>
         <p>&nbsp;&nbsp;ISO 16889: multi-pass filter performance test, Beta ratio classification</p>
