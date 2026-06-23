@@ -554,7 +554,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'THERMACORE™ deploys a controlled gradual release mechanism that replenishes SCA chemistry as it is consumed through the service interval — maintaining protection concentration without peaks or valleys that conventional coolant change schedules cannot guarantee.',
       'The gradual dosing system prevents the inhibitor concentration spikes that occur when SCA is added as a single dose at service — high initial concentration that drops progressively to sub-protection levels before the next service interval, leaving the cooling circuit unprotected for a portion of every service cycle.',
     ],
-    productImageSrc: '/images/coolant-mesa.avif',
+    productImageSrc: '/images/THERMACORE-CAMION.avif',
     productImageCaption: 'THERMACORE™ · SCA ADDITIVE RELEASE PROTECTION ELEMENT',
     stagesHeading: 'THREE PROTECTION MECHANISMS FOR COOLING CIRCUIT INTEGRITY.',
     stages: [
