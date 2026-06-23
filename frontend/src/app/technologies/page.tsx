@@ -103,7 +103,7 @@ const SCROLL_ITEMS: iCardItem[] = [
     description: 'Thermal-bonded synthetic media for extreme temperature lube and cooling applications. Maintains ISO 4406 filtration integrity from −40°C to +150°C operating range.',
     system: 'Cooling System',
     src: '/assets/THERMACORE.avif',
-    href: '/technologies/thermocore',
+    href: '/technologies/thermacore',
   },
   {
     title: 'MICROKAPPA™',
