@@ -847,7 +847,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'ODOR CONTROL', value: 'ACTIVATED CARBON' },
       { key: 'STANDARD', value: 'HEPA CLASS' },
     ],
-    logoSrc: '/images/microkappa(fn).avif',
+    logoSrc: '/assets/MICROKAPPA.avif',
     systemHeadline: 'THREE MECHANISMS.\nZERO CONTAMINATION REACHES THE OCCUPANT.',
     systemParagraphs: [
       'Vehicle cabin air filtration is not an engine protection system — it is an occupant health protection system. The contamination targets are different: PM2.5 and PM10 particles, pollen, bacteria, diesel exhaust gases, NOx compounds, and volatile organic compounds from road and industrial sources.',
