@@ -178,7 +178,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       'NANOFORCE™ multi-layer protection architecture is engineered specifically for the hydraulic circuit operating environment: high and variable pressure, temperature cycling from ambient to 85°C operating, and continuous flow pulsation from pump cycles that mechanically stress filter elements in ways that static test conditions do not capture.',
       'Vapor control technology embedded in the NANOFORCE™ protection matrix addresses the hydraulic contamination source that conventional filters ignore — the vapor phase water and dissolved gas that forms free-phase contamination when hydraulic fluid temperature changes under load.',
     ],
-    productImageSrc: '/images/hidraulic.avif',
+    productImageSrc: '/images/nanoforce-mecanico.avif',
     productImageCaption: 'NANOFORCE™ · HYDRAULIC PRECISION GUARD ELEMENT',
     stagesHeading: 'THREE LAYERS FOR HIGH-PRESSURE HYDRAULIC INTEGRITY.',
     stages: [
