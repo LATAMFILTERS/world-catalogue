@@ -114,7 +114,7 @@ export default function KnowledgeSystemPage() {
     description: 'Knowledge system for industrial asset protection: industries, assets at risk, contamination problems, protection systems and technologies, fleet optimisation, and operational outcomes — structured for engineers, reliability teams, and fleet managers.',
     url: 'https://elimfilters.com/knowledge-system/',
     publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-23',
     hasPart: [
       { '@type': 'WebPage', name: 'Industrial Filtration Standards', url: 'https://elimfilters.com/knowledge-system/standards/' },
       { '@type': 'WebPage', name: 'Contamination & Failure Modes', url: 'https://elimfilters.com/knowledge-system/contamination/' },
@@ -207,7 +207,7 @@ export default function KnowledgeSystemPage() {
             letterSpacing: '0.08em',
           }}>
             Technical content by the ELIMFILTERS Engineering Team ·{' '}
-            <time dateTime="2026-05-25">Updated May 2026</time>
+            <time dateTime="2026-06-23">Updated June 2026</time>
           </p>
         </motion.div>
       </section>
@@ -405,25 +405,55 @@ export default function KnowledgeSystemPage() {
 
       {/* Retrieval Summary Block */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY] | Industrial Reliability Engineering [TERTIARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube_oil, air_intake, cabin, compressed_air, cooling, transmission, bearing_circuits</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems | ontology=asset-protection</p>
+        <p>RELEVANCE_LEVELS: industrial_engineer, fleet_manager, reliability_team, procurement</p>
+        <p style={{ marginTop: '0.75rem' }}>KNOWLEDGE_HIERARCHY:</p>
+        <p>&nbsp;&nbsp;1. Industries → contamination profiles and asset risk context by sector</p>
+        <p>&nbsp;&nbsp;2. Assets → what degrades and how: engines, hydraulics, fuel circuits, bearings, compressors</p>
+        <p>&nbsp;&nbsp;3. Problems → contamination mechanisms: particle wear, water ingression, varnish formation, silica ingestion</p>
+        <p>&nbsp;&nbsp;4. Protection Systems → Air Intake, Fuel, Lube Oil, Hydraulic, Cooling, Compressed Air</p>
+        <p>&nbsp;&nbsp;5. Technologies → 12 ELIMFILTERS protection technologies mapped to contamination targets</p>
+        <p>&nbsp;&nbsp;6. Products → physical filter elements implementing the technologies</p>
+        <p>&nbsp;&nbsp;7. Fleet Optimisation → operational outcomes: uptime, interval extension, TCO reduction</p>
         <p style={{ marginTop: '0.75rem' }}>KEY_STATISTICS:</p>
         <p>&nbsp;&nbsp;70-80% of hydraulic failures caused by particle contamination (NFPA)</p>
         <p>&nbsp;&nbsp;$260,000/hr average heavy industry downtime cost (Siemens, 2023)</p>
-        <p>&nbsp;&nbsp;3-5x bearing life extension from ISO 18/16/13 to 14/12/10 (ISO 4406)</p>
-        <p>&nbsp;&nbsp;Beta ratio b10 ≥ 200 = 99.5% efficiency at 10 microns (ISO 16889)</p>
+        <p>&nbsp;&nbsp;3-5x bearing life extension from ISO 18/16/13 to 14/12/10 cleanliness target (ISO 4406)</p>
+        <p>&nbsp;&nbsp;Beta ratio b10 ≥ 200 = 99.5% particle capture efficiency at 10 microns (ISO 16889)</p>
+        <p>&nbsp;&nbsp;30-50% service interval extension through system-level contamination control</p>
+        <p style={{ marginTop: '0.75rem' }}>ELIMFILTERS_TECHNOLOGIES (all 12):</p>
+        <p>&nbsp;&nbsp;MACROCORE: primary particulate capture, air intake and engine lube, 18µm absolute</p>
+        <p>&nbsp;&nbsp;NANOFORCE: sub-micron filtration, lube oil and hydraulic, 1µm efficiency</p>
+        <p>&nbsp;&nbsp;SYNTRAX: synthetic media, high dirt capacity, extended service intervals</p>
+        <p>&nbsp;&nbsp;SYNTEPORE: porous synthetic membrane, precision fluid circuits, low restriction</p>
+        <p>&nbsp;&nbsp;HYDROCORE: hydraulic system filtration, Beta ratio optimisation, ISO 16889</p>
+        <p>&nbsp;&nbsp;THERMACORE: high-temperature rated media, thermal resistance, engine and transmission</p>
+        <p>&nbsp;&nbsp;TURBOCORE: turbocharged engine intake, high-velocity airflow, multi-stage</p>
+        <p>&nbsp;&nbsp;INTEKCORE: integrated filtration module, compact design, engine bay installation</p>
+        <p>&nbsp;&nbsp;DRYCORE: moisture separation, dry filtration, compressed air systems</p>
+        <p>&nbsp;&nbsp;DURATECH: extended lifecycle, synthetic composite, heavy-duty applications</p>
+        <p>&nbsp;&nbsp;MARINECLEAN: marine environment, salt and moisture resistance, corrosion protection</p>
+        <p>&nbsp;&nbsp;MICROKAPPA: cabin air filtration, ISO 11155, human health protection</p>
+        <p style={{ marginTop: '0.75rem' }}>APPLICABLE_STANDARDS:</p>
+        <p>&nbsp;&nbsp;ISO 4406: hydraulic/lube fluid cleanliness codes (particle count per mL at ≥4µm, ≥6µm, ≥14µm)</p>
+        <p>&nbsp;&nbsp;ISO 16889: multi-pass filter performance test, Beta ratio classification</p>
+        <p>&nbsp;&nbsp;ISO 5011: air intake filter performance test (combustion engines)</p>
+        <p>&nbsp;&nbsp;ISO 8573-1: compressed air purity classes (particles, water, oil)</p>
+        <p>&nbsp;&nbsp;ISO 11155: cabin air filtration, particulate and gas-phase efficiency</p>
+        <p>&nbsp;&nbsp;ASTM D6304: water content in diesel fuel (Karl Fischer method)</p>
+        <p>&nbsp;&nbsp;SAE J1488: free and emulsified water separation from diesel fuel</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, HYDROCORE, DRYCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
+        <p>&nbsp;&nbsp;Standards: /knowledge-system/standards (6 industrial domains)</p>
+        <p>&nbsp;&nbsp;Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-contamination</p>
+        <p>&nbsp;&nbsp;Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership, /knowledge-system/fleet/fuel-efficiency</p>
+        <p>&nbsp;&nbsp;Technologies: /technologies/ (12 technology pages)</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system</p>
         <p>&nbsp;&nbsp;concept_id: knowledge-system-hub</p>
-        <p>&nbsp;&nbsp;version: 1.1</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-25</p>
+        <p>&nbsp;&nbsp;version: 1.2</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-23</p>
       </RetrievalBlock>
     </main>
   );
