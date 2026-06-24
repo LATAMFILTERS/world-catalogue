@@ -20,6 +20,7 @@ const NAV_COLUMNS = [
       { label: 'About Us', href: '/about', external: false },
       { label: 'Industries', href: '/industries', external: false },
       { label: 'Systems', href: '/systems', external: false },
+      { label: 'Distributors', href: '/distributors', external: false },
       { label: 'Contact', href: '/contact', external: false },
     ],
   },
