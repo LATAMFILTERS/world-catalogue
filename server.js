@@ -3,6 +3,30 @@ const express = require('express');
 const {Client} = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const rateLimit = require('express-rate-limit');
+
+// ─── Rate Limiters ────────────────────────────────────────────────────────────
+const searchLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again in a minute.' },
+});
+const adminLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many admin requests.' },
+});
+// ─── Admin key middleware ─────────────────────────────────────────────────────
+const ADMIN_KEY = process.env.ADMIN_KEY || 'elim2026';
+const requireAdmin = (req, res, next) => {
+  const key = req.query.key || req.body?.key;
+  if (key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  next();
+};
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -15,8 +39,8 @@ app.set('trust proxy', 1);
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
 // TEMP: check filter_type values for zero-result categories — DELETE AFTER USE
-app.get('/api/admin/filter-type-check', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+app.get('/api/admin/filter-type-check', adminLimiter, requireAdmin, async (req, res) => {
+  void 0; // key check handled by requireAdmin
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -33,8 +57,8 @@ app.get('/api/admin/filter-type-check', async (req, res) => {
 });
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
-app.get('/api/admin/update-lube-descriptions', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+app.get('/api/admin/update-lube-descriptions', adminLimiter, requireAdmin, async (req, res) => {
+  void 0; // key check handled by requireAdmin
   const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
@@ -405,9 +429,18 @@ app.get('/api/admin/update-lube-descriptions', async (req, res) => {
   } finally { await client.end(); }
 });
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://elimfilters.com',
+    'https://www.elimfilters.com',
+    'https://part-search.elimfilters.com',
+    /\.elimfilters\.com$/,
+  ],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.set('trust proxy', 1);
-app.use(express.json({ charset: 'utf-8', limit: '10mb' }));
+app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false }));
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
@@ -699,7 +732,7 @@ function buildFilterData(row, lang = 'en'){
 
 // Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
 
-app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
+app.get('/api/debug/inspect-codes/:sku', requireAdmin, async (req, res) => {
   const sku = req.params.sku.toUpperCase();
   const client = new Client(dbConfig);
   try {
@@ -716,7 +749,7 @@ app.get('/api/debug/inspect-codes/:sku', async (req, res) => {
   }
 });
 
-app.get('/api/debug/find-code/:code', async (req, res) => {
+app.get('/api/debug/find-code/:code', requireAdmin, async (req, res) => {
   const code = req.params.code.toUpperCase();
   const client = new Client(dbConfig);
   try {
@@ -1122,7 +1155,7 @@ app.get('/api/filters/alternatives', async (req, res) => {
   }
 });
 
-app.get('/api/filters/search/part', async (req, res) => {
+app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if(!code) return res.json({success: false, filters: []});
   const lang = detectLang(req);
@@ -1182,7 +1215,7 @@ app.get('/api/filters/search/part', async (req, res) => {
   }
 });
 
-app.get('/api/filters/search/vin', async (req, res) => {
+app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
   const model = (req.query.model || '').trim().toUpperCase();
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
@@ -1219,7 +1252,7 @@ app.get('/api/filters/search/vin', async (req, res) => {
   }
 });
 
-app.get('/api/filters/search/equipment', async (req, res) => {
+app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
   const model = (req.query.model || '').trim().toUpperCase();
   const type = req.query.type ? req.query.type.trim().toUpperCase() : null;
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
@@ -1262,7 +1295,7 @@ app.get('/api/filters/search/equipment', async (req, res) => {
   }
 });
 
-app.get('/api/filters/search/homologous', async (req, res) => {
+app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if(!code) return res.json({success: false, filters: []});
   const lang = detectLang(req);
@@ -2006,7 +2039,7 @@ app.get('/api/catalog/export', async (req, res) => {
   }
 });
 
-app.get('/api/autocomplete', async (req, res) => {
+app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 3) return res.json([]);
   
@@ -2070,7 +2103,7 @@ app.get('/api/autocomplete', async (req, res) => {
   }
 });
 
-app.get('/api/search', async (req, res) => {
+app.get('/api/search', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
