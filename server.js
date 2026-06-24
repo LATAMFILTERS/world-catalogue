@@ -108,6 +108,9 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
       (phone && phone.length > 30) || (company && company.length > 200)) {
     return res.status(400).json({ error: 'Input exceeds maximum length' });
   }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' });
+  }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
   const safePhone   = _escHtml(phone || '—');
@@ -162,6 +165,9 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   if (email.length > 254 || companyName.length > 200 || contactName.length > 200 ||
       (phone && phone.length > 30) || (message && message.length > 5000)) {
     return res.status(400).json({ error: 'Input exceeds maximum length' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' });
   }
 
   const esc = _escHtml;
