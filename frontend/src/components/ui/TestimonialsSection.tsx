@@ -86,6 +86,9 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center max-w-xl mx-auto mb-12"
         >
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.22em', color: 'rgba(255,241,45,0.8)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            // FIELD RESULTS · ASSET PROTECTION IN PRACTICE
+          </p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.6rem, 3vw, 2.5rem)', color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
             What operators say<br />
             <span style={{ color: '#FFF12D' }}>after protecting their assets.</span>
