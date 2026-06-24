@@ -254,7 +254,7 @@ export default function CinematicHero() {
         </span>
       </motion.div>
 
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 768px) {
           .hero-bottom-row {
             grid-template-columns: 1fr !important;
