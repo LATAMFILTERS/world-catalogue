@@ -1426,7 +1426,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
     });
     await transporter.sendMail({
       from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
-      to: 'info@elimfilters.com',
+      to: 'support@elimfilters.com',
       subject: `[Chat] Consulta técnica — sesión ${safeSession} (${safeLang})`,
       html: `<h2>Chat escalation</h2>
              <p><b>Session:</b> ${safeSession} &nbsp;|&nbsp; <b>Lang:</b> ${safeLang}</p>
