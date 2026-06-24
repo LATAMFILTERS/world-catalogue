@@ -13,7 +13,7 @@ interface SystemPageClientProps {
 
 const systemCategories: Record<string, string[]> = {
   'Airfilter': ['Mining', 'Agriculture', 'Construction', 'Oil Gas'],
-  'Aquaguard Series': ['Oil Gas', 'Marine', 'Power Generation'],
+  'Hydrocore Series': ['Oil Gas', 'Marine', 'Power Generation'],
   'Cabin': ['Automotive', 'Bus Coach', 'Trucks Fleets'],
   'Coolant': ['Automotive', 'Manufacturing', 'Power Generation'],
   'Dryer': ['Manufacturing', 'Power Generation', 'Railway'],
@@ -29,12 +29,13 @@ const systemCategories: Record<string, string[]> = {
 export default function SystemPageClient({ product, displayName, industries, slug }: SystemPageClientProps) {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/systems" style={{
+      <Link href="/systems"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
         transition: 'background 0.2s, border-color 0.2s',
@@ -64,7 +65,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
             <h1 style={{
               fontSize: 'clamp(2rem, 4vw, 3.5rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.95)',
@@ -76,7 +77,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
               fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '800px',
             }}>
               {product.description}
@@ -96,7 +97,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                 fontWeight: 700,
                 color: '#FFF12D',
                 marginBottom: '1.5rem',
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
               }}>
                 Key Features
               </h2>
@@ -112,7 +113,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                   <li key={i} style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     paddingLeft: '1.5rem',
                     position: 'relative',
                   }}>
@@ -136,7 +137,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                 fontWeight: 700,
                 color: '#FFF12D',
                 marginBottom: '1.5rem',
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
               }}>
                 Operational Benefits
               </h2>
@@ -152,7 +153,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                   <li key={i} style={{
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     paddingLeft: '1.5rem',
                     position: 'relative',
                   }}>
@@ -178,7 +179,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                 fontWeight: 700,
                 color: '#FFF12D',
                 marginBottom: '1.5rem',
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
               }}>
                 Core Technologies
               </h2>
@@ -200,7 +201,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                       fontSize: '0.95rem',
                       fontWeight: 600,
                       color: '#FFF12D',
-                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontFamily: 'Titillium Web, sans-serif',
                     }}>
                       {tech}
                     </p>
@@ -218,7 +219,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                 fontWeight: 700,
                 color: '#FFF12D',
                 marginBottom: '1.5rem',
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
               }}>
                 Industries Served
               </h2>
@@ -257,7 +258,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                         fontSize: '0.95rem',
                         fontWeight: 600,
                         color: '#fff',
-                        fontFamily: 'Space Grotesk, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                         marginBottom: '0.5rem',
                       }}>
                         {industryObj?.title || industry}
@@ -266,7 +267,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
                         margin: 0,
                         fontSize: '0.8rem',
                         color: 'rgba(255,255,255,0.55)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Titillium Web, sans-serif',
                       }}>
                         Explore industry ▸
                       </p>
@@ -291,7 +292,7 @@ export default function SystemPageClient({ product, displayName, industries, slu
             borderRadius: '4px',
             color: '#FFF12D',
             textDecoration: 'none',
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '0.85rem',
             fontWeight: 600,
             transition: 'all 0.3s ease',

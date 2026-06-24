@@ -154,7 +154,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { test: 'Multi-Pass Filtration Efficiency', standard: 'ISO 4548-12', result: '99.7', unit: '%' },
       { test: 'Dirt Holding Capacity', standard: 'ISO 4548-12', result: '42.8', unit: 'g' },
       { test: 'Collapse Pressure Rating', standard: 'ISO 4548-7', result: '≥ 20', unit: 'bar' },
-      { test: 'Layer Migration Resistance', standard: 'ELIMFILTERS®-LT-01', result: '0', unit: 'events / 500h' },
+      { test: 'Layer Migration Resistance', standard: 'ELIMFILTERS-LT-01', result: '0', unit: 'events / 500h' },
       { test: 'Turbo Bearing Contamination', standard: 'SAE J1858', result: '< 3', unit: 'µm pass-through' },
     ],
     testimonial: {
@@ -554,7 +554,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'FUNCTION', value: 'VAPOR PREVENTION' },
       { key: 'DOSING', value: 'GRADUAL' },
     ],
-    logoSrc: '/images/thermacore(fn).avif',
+    logoSrc: '/assets/THERMACORE.avif',
     systemHeadline: 'CHEMICAL ASSET PROTECTION\nFOR THE COOLING CIRCUIT.',
     systemParagraphs: [
       'Diesel engine cooling systems face two simultaneous corrosion threats: electrochemical attack on aluminum, copper and steel surfaces, and cavitation erosion on cylinder liner external surfaces driven by pressure waves from piston firing events. Both failure modes are prevented by maintaining SCA (Supplemental Coolant Additive) chemistry within a tight concentration corridor.',
