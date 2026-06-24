@@ -91,7 +91,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jetBrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <script
@@ -103,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <Analytics />
         <ClientProviders>{children}</ClientProviders>
         <Script
