@@ -174,7 +174,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
     });
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
-      to: 'info@elimfilters.com',
+      to: 'distribution_network@elimfilters.com',
       replyTo: esc(email),
       subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
       html: `
