@@ -17,6 +17,7 @@ const NAV_COLUMNS = [
     links: [
       { label: 'About Us', href: '/about', external: false },
       { label: 'Industries', href: '/industries', external: false },
+      { label: 'Systems', href: '/systems', external: false },
       { label: 'Contact', href: '/contact', external: false },
     ],
   },
@@ -25,23 +26,26 @@ const NAV_COLUMNS = [
     links: [
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },
-      { label: 'Systems', href: '/systems', external: false },
+      { label: 'Become a Dealer', href: '/distributor-application', external: false },
+      { label: 'Warranty', href: '/warranty', external: false },
     ],
   },
   {
     title: 'SUPPORT',
     links: [
       { label: 'Technical Support', href: '/contact', external: false },
-      { label: 'Become a Dealer', href: '/distributor-application', external: false },
-      { label: 'Warranty', href: '/warranty', external: false },
+      { label: 'Knowledge System', href: '/knowledge-system', external: false },
+      { label: 'Standards Library', href: '/knowledge-system/standards', external: false },
+      { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
     ],
   },
   {
     title: 'KNOWLEDGE',
     links: [
-      { label: 'Knowledge System', href: '/knowledge-system', external: false },
-      { label: 'Standards', href: '/knowledge-system/standards', external: false },
-      { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
+      { label: 'Contamination', href: '/knowledge-system/contamination', external: false },
+      { label: 'Compare & Select', href: '/knowledge-system/compare', external: false },
+      { label: 'Filtration Science', href: '/knowledge-system/science', external: false },
+      { label: 'Industrial Bridges', href: '/knowledge-system/bridges', external: false },
     ],
   },
   {
@@ -94,7 +98,8 @@ export function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
                 { icon: '✉', text: 'info@elimfilters.com', href: 'mailto:info@elimfilters.com' },
-                { icon: '◎', text: 'Frisco, Texas', href: null },
+                { icon: '◎', text: 'Frisco, Texas — United States', href: null },
+                { icon: '◎', text: 'Caracas, Distrito Capital — Venezuela', href: null },
               ].map((item) => (
                 <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '11px', color: 'rgba(255,241,45,0.4)', flexShrink: 0 }}>{item.icon}</span>
@@ -214,7 +219,7 @@ export function Footer() {
           © 2015–2026 Kleo Technologies LLC · ELIMFILTERS® is a registered trademark. All rights reserved.
         </span>
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '10px', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.1em' }}>
-          Frisco, Texas · info@elimfilters.com
+          Kleo Technologies LLC · Frisco, Texas · Caracas, Venezuela · info@elimfilters.com
         </span>
       </div>
 
