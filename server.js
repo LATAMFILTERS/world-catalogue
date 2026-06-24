@@ -1354,6 +1354,37 @@ app.get('/api/audit/report', adminLimiter, requireAdmin, async (req, res) => {
 });
 
 
+// ─── POST /api/ai/escalate ───────────────────────────────────────────────────
+app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
+  const { session_id, lang, transcript } = req.body || {};
+  if (!transcript || typeof transcript !== 'string') {
+    return res.status(400).json({ error: 'transcript required' });
+  }
+  const safeTranscript = _escHtml(transcript.slice(0, 8000)).replace(/\n/g, '<br>');
+  const safeLang = _escHtml(String(lang || 'en').slice(0, 8));
+  const safeSession = _escHtml(String(session_id || '—').slice(0, 64));
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
+      to: 'info@elimfilters.com',
+      subject: `[Chat] Consulta técnica — sesión ${safeSession} (${safeLang})`,
+      html: `<h2>Chat escalation</h2>
+             <p><b>Session:</b> ${safeSession} &nbsp;|&nbsp; <b>Lang:</b> ${safeLang}</p>
+             <hr><pre style="background:#f5f5f5;padding:1rem;white-space:pre-wrap">${safeTranscript}</pre>`,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[escalate]', err.code || 'SMTP error');
+    res.status(500).json({ error: 'mail error' });
+  }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;

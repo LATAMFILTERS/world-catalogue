@@ -33,7 +33,7 @@ from pathlib import Path
 import requests
 
 HERMES_API = os.environ.get("HERMES_API", "http://localhost:8080")
-INTEL_ADMIN_KEY = os.environ.get("INTEL_ADMIN_KEY", "elim2026intel")
+INTEL_ADMIN_KEY = os.environ.get("INTEL_ADMIN_KEY")
 HEADERS = {"x-intel-key": INTEL_ADMIN_KEY, "Content-Type": "application/json"}
 
 

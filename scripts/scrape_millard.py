@@ -49,7 +49,7 @@ from pathlib import Path
 # ─── Config ──────────────────────────────────────────────────────────────────
 
 API_BASE   = "https://part-search.elimfilters.com"
-ADMIN_KEY  = os.environ.get("ADMIN_KEY", "elim2026admin")
+ADMIN_KEY  = os.environ.get("ADMIN_KEY")
 DELAY_SEC  = 2.0
 
 MILLARD_BASE    = "https://www.millardcatalog.com"
