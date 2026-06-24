@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const {Client} = require('pg');
+const { Client, Pool } = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
@@ -27,6 +27,11 @@ const requireAdmin = (req, res, next) => {
   if (key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
   next();
 };
+const checkAdmin = (req, res) => {
+  const key = req.query.key || req.body?.key;
+  if (key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
+  return true;
+};
 
 // Prevent unhandled errors from crashing the process
 process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
@@ -40,10 +45,8 @@ app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }
 
 // TEMP: check filter_type values for zero-result categories — DELETE AFTER USE
 app.get('/api/admin/filter-type-check', adminLimiter, requireAdmin, async (req, res) => {
-  void 0; // key check handled by requireAdmin
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  const client = await pool.connect();
   try {
-    await client.connect();
     const r = await client.query(
       `SELECT filter_type, sub_type, installation_type, COUNT(*) as total
        FROM elimfilters_catalog
@@ -53,15 +56,13 @@ app.get('/api/admin/filter-type-check', adminLimiter, requireAdmin, async (req, 
     );
     res.json({ rows: r.rows });
   } catch (e) { res.status(500).json({ error: e.message }); }
-  finally { await client.end(); }
+  finally { client.release(); }
 });
 
 // TEMP: batch-update lube filter descriptions — DELETE AFTER USE
 app.get('/api/admin/update-lube-descriptions', adminLimiter, requireAdmin, async (req, res) => {
-  void 0; // key check handled by requireAdmin
-  const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+  const client = await pool.connect();
   try {
-    await client.connect();
 
     const DESC = {
       spinon: {
@@ -426,7 +427,7 @@ app.get('/api/admin/update-lube-descriptions', adminLimiter, requireAdmin, async
     });
   } catch (e) {
     res.status(500).json({ error: e.message });
-  } finally { await client.end(); }
+  } finally { client.release(); }
 });
 
 app.use(cors({
@@ -521,6 +522,7 @@ const dbConfig = {
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 };
+const pool = new Pool(dbConfig);
 
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
@@ -734,9 +736,8 @@ function buildFilterData(row, lang = 'en'){
 
 app.get('/api/debug/inspect-codes/:sku', requireAdmin, async (req, res) => {
   const sku = req.params.sku.toUpperCase();
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(
       `SELECT sku, oem_codes, competitor_codes FROM elimfilters_catalog WHERE sku = $1`,
       [sku]
@@ -745,15 +746,14 @@ app.get('/api/debug/inspect-codes/:sku', requireAdmin, async (req, res) => {
   } catch(e) {
     res.json({ error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 app.get('/api/debug/find-code/:code', requireAdmin, async (req, res) => {
   const code = req.params.code.toUpperCase();
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(
       `SELECT sku,
         oem_codes,
@@ -768,16 +768,15 @@ app.get('/api/debug/find-code/:code', requireAdmin, async (req, res) => {
   } catch(e) {
     res.json({ error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: analyze SKU correctness (calculate expected SKU from codigo_base + filter_type)
 app.get('/api/analyze/sku-correctness', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT
         id, sku, filter_type, codigo_base, duty,
@@ -833,16 +832,15 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: analyze duplicate SKUs + calculate correct SKU for each codigo_base
 app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const dupes = await client.query(`
       SELECT
         c.sku,
@@ -895,16 +893,15 @@ app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: find duplicate SKUs
 app.get('/api/analyze/duplicate-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const dupes = await client.query(`
       SELECT sku, COUNT(*) as count, ARRAY_AGG(codigo_base) as codigo_bases
       FROM elimfilters_catalog
@@ -916,16 +913,15 @@ app.get('/api/analyze/duplicate-skus', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: add UNIQUE constraint to sku column (after deduplicating)
 app.get('/api/migrate/fix-sku-unique', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
 
     // First, delete duplicate rows (keep only the first occurrence of each SKU)
     await client.query(`
@@ -947,16 +943,15 @@ app.get('/api/migrate/fix-sku-unique', async (req, res) => {
     }
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: create maintenance_kits and kit_components tables
 app.get('/api/migrate/create-kit-tables', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query(`
       CREATE TABLE IF NOT EXISTS maintenance_kits (
         kit_sku    VARCHAR(7) PRIMARY KEY,
@@ -981,7 +976,7 @@ app.get('/api/migrate/create-kit-tables', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -991,9 +986,8 @@ app.post('/api/kits', async (req, res) => {
   if (!name || !Array.isArray(filter_skus) || filter_skus.length === 0)
     return res.status(400).json({ success: false, error: 'name and filter_skus[] required' });
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
 
     // Determine duty from the first filter found
     const sample = await client.query(
@@ -1031,7 +1025,7 @@ app.post('/api/kits', async (req, res) => {
     await client.query('ROLLBACK').catch(()=>{});
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1039,9 +1033,8 @@ app.post('/api/kits', async (req, res) => {
 app.get('/api/kits/:kit_sku', async (req, res) => {
   const kit_sku = req.params.kit_sku.trim().toUpperCase();
   const lang = detectLang(req);
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
     const kit = await client.query(
@@ -1071,7 +1064,7 @@ app.get('/api/kits/:kit_sku', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1079,9 +1072,8 @@ app.get('/api/kits/:kit_sku', async (req, res) => {
 app.get('/api/filters/kits', async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({ success: false, kits: [] });
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(
       `SELECT mk.kit_sku, mk.name, mk.equipment_ref, mk.duty
        FROM maintenance_kits mk
@@ -1093,15 +1085,14 @@ app.get('/api/filters/kits', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: find SKUs for RAV4 2022 kit components with duty
 app.get('/api/search/rav4-kit-skus', async (req, res) => {
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT sku, name, filter_type, sub_type, duty, codigo_base, thread_size
       FROM elimfilters_catalog
@@ -1112,7 +1103,7 @@ app.get('/api/search/rav4-kit-skus', async (req, res) => {
   } catch(e) {
     res.status(500).json({ error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1120,9 +1111,8 @@ app.get('/api/filters/alternatives', async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({success: false, alternatives: []});
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
     const src = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1', [sku]);
@@ -1151,7 +1141,7 @@ app.get('/api/filters/alternatives', async (req, res) => {
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1160,9 +1150,8 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
   if(!code) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
     let result = await client.query(
@@ -1211,7 +1200,7 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1222,9 +1211,8 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
   if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
     let query = `SELECT * FROM elimfilters_catalog
@@ -1248,7 +1236,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1260,9 +1248,8 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
   if(!model) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
 
     let query = `SELECT * FROM elimfilters_catalog
@@ -1291,7 +1278,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1300,9 +1287,8 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
   if(!code) return res.json({success: false, filters: []});
   const lang = detectLang(req);
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query("SET client_encoding = 'UTF8'");
     const result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
@@ -1313,17 +1299,16 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
   } catch(e) {
     res.status(500).json({success: false, error: e.message});
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 
 // Temp: consolidate duplicate SKUs (preview consolidation plan)
 app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const dupes = await client.query(`
       SELECT sku, ARRAY_AGG(id ORDER BY id) as ids, ARRAY_AGG(codigo_base ORDER BY codigo_base) as codigos,
              ARRAY_AGG(duty ORDER BY duty) as duties
@@ -1354,16 +1339,15 @@ app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: apply consolidation (delete duplicates, merge competitor_codes)
 app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query('BEGIN');
 
     // Get all groups of duplicates
@@ -1411,16 +1395,15 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
     await client.query('ROLLBACK').catch(()=>{});
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: analyze codigo_base prefixes (Donaldson identification)
 app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT
         SUBSTRING(codigo_base, 1, 3) as prefix,
@@ -1437,16 +1420,15 @@ app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: add alternative_codes column
 app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query(`
       ALTER TABLE elimfilters_catalog
       ADD COLUMN IF NOT EXISTS alternative_codes JSONB[] DEFAULT '{}'::jsonb[]
@@ -1458,16 +1440,15 @@ app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
     }
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Temp: debug EL82100 vs EL81016 comparison
 app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT id, sku, codigo_base, filter_type, sub_type, duty, technology,
              thread_size, outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
@@ -1488,17 +1469,16 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Copia campos faltantes de EL81016 a EL82100 y registra alternativas
 app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!checkAdmin(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query(`
       UPDATE elimfilters_catalog SET
         iso_test_method = COALESCE(iso_test_method, (SELECT iso_test_method FROM elimfilters_catalog WHERE sku='EL81016')),
@@ -1521,15 +1501,14 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 app.get('/api/catalog/stats', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const [total, byType, completeness, recent] = await Promise.all([
       client.query(`SELECT COUNT(*) as total FROM elimfilters_catalog`),
       client.query(`
@@ -1567,17 +1546,16 @@ app.get('/api/catalog/stats', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Merge OEM codes from EL81016 into EL82100
 app.get('/api/migrate/merge-oem-codes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!checkAdmin(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes' });
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query(`
       UPDATE elimfilters_catalog SET
         oem_codes = oem_codes || (SELECT oem_codes FROM elimfilters_catalog WHERE sku='EL81016')
@@ -1587,7 +1565,7 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1597,11 +1575,10 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
 // After running this, competitor_codes will be empty for all products —
 // then run the recovery script to repopulate from oilfilter-crossreference.com.
 app.get('/api/migrate/consolidate-oem-codes', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   if (req.query.confirm !== 'yes') return res.json({ error: 'Add ?confirm=yes to proceed' });
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     // Count affected products first
     const { rows: [{ affected }] } = await client.query(`
       SELECT COUNT(*) AS affected
@@ -1626,16 +1603,15 @@ app.get('/api/migrate/consolidate-oem-codes', async (req, res) => {
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // Audit: Find incomplete products
 app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT
         sku, codigo_base,
@@ -1657,7 +1633,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1665,13 +1641,12 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 // Returns products with ≤N equipment entries — feed to scrape_equipment.py batch mode.
 // Query params: key (required), max_entries (default 5), filter_type (optional), limit (default 2000)
 app.get('/api/admin/suspects-equipment', async (req, res) => {
-  if (req.query.key !== 'elim2026admin') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   const maxEntries = parseInt(req.query.max_entries) || 5;
   const limitRows  = parseInt(req.query.limit) || 2000;
   const filterType = req.query.filter_type || null;
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const params = [maxEntries, limitRows];
     let typeFilter = '';
     if (filterType) { params.push(filterType); typeFilter = `AND filter_type ILIKE $${params.length}`; }
@@ -1689,12 +1664,12 @@ app.get('/api/admin/suspects-equipment', async (req, res) => {
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({error: 'forbidden'});
+  if (!checkAdmin(req, res)) return;
 
   res.json({ message: 'Scraper started. Run: npm install puppeteer-extra puppeteer-extra-plugin-stealth && node scrape-crossreferences.js' });
 });
@@ -1702,11 +1677,10 @@ app.get('/api/migrate/scrape-crossreferences', async (req, res) => {
 // ─── GET /api/pending-donaldson ──────────────────────────────────────────────
 // Returns pending Donaldson products that need metadata enrichment.
 app.get('/api/pending-donaldson', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   const limit = parseInt(req.query.limit) || 100;
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT sku, codigo_base, description, filter_type, sub_type, technology,
              installation_type, thread_size,
@@ -1731,7 +1705,7 @@ app.get('/api/pending-donaldson', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1739,14 +1713,13 @@ app.get('/api/pending-donaldson', async (req, res) => {
 // Accepts batch of pre-processed rows and upserts into elimfilters_catalog.
 // Body: { key: "elim2026", rows: [ { sku, codigo_base, filter_type, ... } ] }
 app.post('/api/import/donaldson', async (req, res) => {
-  if (req.body.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
 
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     let inserted = 0, updated = 0, errors = 0;
 
     for (const row of rows) {
@@ -1827,7 +1800,7 @@ app.post('/api/import/donaldson', async (req, res) => {
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1835,11 +1808,10 @@ app.post('/api/import/donaldson', async (req, res) => {
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
 app.get('/api/recheck-donaldson', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   const limit = parseInt(req.query.limit) || 200;
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT sku, codigo_base, description, filter_type, sub_type, technology,
              installation_type, thread_size,
@@ -1864,23 +1836,22 @@ app.get('/api/recheck-donaldson', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // ─── GET /api/import/existing-skus ───────────────────────────────────────────
 // Returns all existing SKUs so the client can avoid collisions.
 app.get('/api/import/existing-skus', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
     res.json({ success: true, skus: result.rows.map(r => r.sku) });
   } catch (e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -1896,10 +1867,9 @@ try {
 // ─── GET /api/migrate/init-db ────────────────────────────────────────────────
 // Initializes database schema (tables, views, constraints)
 app.get('/api/migrate/init-db', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     
     // 1. Table schema
     await client.query(`
@@ -1954,34 +1924,32 @@ app.get('/api/migrate/init-db', async (req, res) => {
     console.error('[migrations] DB INIT ERROR:', err.message);
     return res.status(500).json({ success: false, error: err.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // ─── GET /api/migrate/fix-sku-constraint ─────────────────────────────────────
 app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query('ALTER TABLE elimfilters_catalog DROP CONSTRAINT IF EXISTS sku_strict_format;');
     await client.query("ALTER TABLE elimfilters_catalog ADD CONSTRAINT sku_strict_format CHECK (sku ~ '^[A-Z]{2}[0-9]{4,7}[A-Z]?$');");
     return res.json({ success: true, message: 'Constraint updated: accepts 4-7 digit SKU suffixes' });
   } catch (err) {
     return res.status(500).json({ success: false, error: err.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 // ─── GET /api/migrate/reset-catalog ──────────────────────────────────────────
 // Truncates catalog and ensures new columns exist. Confirms with ?confirm=yes
 app.get('/api/migrate/reset-catalog', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
+  if (!checkAdmin(req, res)) return;
   if (req.query.confirm !== 'yes') return res.status(400).json({ error: 'Add ?confirm=yes to proceed' });
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     await client.query('TRUNCATE TABLE elimfilters_catalog RESTART IDENTITY;');
     // Add new columns if they don't exist yet (idempotent)
     await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description TEXT;`);
@@ -1993,7 +1961,7 @@ app.get('/api/migrate/reset-catalog', async (req, res) => {
     console.error('[migrations] RESET ERROR:', err.message);
     return res.status(500).json({ success: false, error: err.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -2011,10 +1979,9 @@ app.get('/api/status', (req, res) => {
 
 // ─── GET /api/catalog/export ──────────────────────────────────────────────────
 app.get('/api/catalog/export', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT sku, codigo_base, description, filter_type, sub_type, technology,
              installation_type, thread_size,
@@ -2035,7 +2002,7 @@ app.get('/api/catalog/export', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -2043,9 +2010,8 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 3) return res.json([]);
   
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const result = await client.query(`
       SELECT sku, codigo_base, oem_codes, competitor_codes
       FROM elimfilters_catalog
@@ -2099,7 +2065,7 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   } catch(e) {
     res.status(500).json([]);
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
@@ -2107,9 +2073,8 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
 
     // ── Tiered search with match_type labels ──────────────────────────────
     // Tier 1: Exact SKU or Donaldson base code match
@@ -2233,14 +2198,13 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: e.message, products: [] });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
 app.get('/api/stats', async (req, res) => {
-  const client = new Client(dbConfig);
+  const client = await pool.connect();
   try {
-    await client.connect();
     const r = await client.query(
       `SELECT COUNT(*) AS total, COUNT(DISTINCT technology) AS technologies
        FROM elimfilters_catalog`
@@ -2254,16 +2218,15 @@ app.get('/api/stats', async (req, res) => {
     console.error('[api/stats]', e.message);
     res.status(500).json({ error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 // ─── GET /api/audit/report ───────────────────────────────────────────────────
 // Full catalog data quality audit. Returns stats on completeness.
 app.get('/api/audit/report', async (req, res) => {
-  if (req.query.key !== 'elim2026') return res.status(403).json({ error: 'forbidden' });
-  const client = new Client(dbConfig);
+  if (!checkAdmin(req, res)) return;
+  const client = await pool.connect();
   try {
-    await client.connect();
 
     const [total, donaldson, missingOem, missingEquip, missingBoth,
            scrapedMissingOem, scrapedMissingEquip, scrapedMissingBoth,
@@ -2353,7 +2316,7 @@ app.get('/api/audit/report', async (req, res) => {
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
-    await client.end();
+    client.release();
   }
 });
 
