@@ -26,10 +26,10 @@ const FAILURE_MODES = [
 ];
 
 const STATS = [
-  { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency' },
-  { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span' },
-  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs' },
-  { value: null, display: 'GLOBAL', label: 'Distribution' },
+  { value: 99.9, prefix: '', suffix: '%', label: 'Media Efficiency', context: 'β₁₀(c) ≥ 200 at 10µm — ISO 16889' },
+  { value: 45, prefix: '+', suffix: '%', label: 'Engine Life Span', context: '8,000 → 11,600+ hours per overhaul' },
+  { value: 20, prefix: '', suffix: 'k+', label: 'OEM Cross-Refs', context: 'Verified against OEM specs, all systems' },
+  { value: null, display: 'GLOBAL', label: 'Distribution', context: 'Latin America · North America · Europe' },
 ];
 
 const CTA_SLIDES = [
@@ -227,6 +227,23 @@ export default function Home() {
             .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
             .spotlight-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
           }
+          @keyframes drift {
+            0% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: var(--op); }
+            90% { opacity: var(--op); }
+            100% { transform: translateX(120px) translateY(-40px); opacity: 0; }
+          }
+          .hero-particle {
+            position: absolute;
+            width: var(--sz);
+            height: var(--sz);
+            background: rgba(255,230,180,0.6);
+            border-radius: 50%;
+            animation: drift var(--dur) ease-in-out infinite;
+            animation-delay: var(--delay);
+            pointer-events: none;
+            zIndex: 1;
+          }
         `}</style>
 
         {/* ── HERO ── */}
@@ -256,6 +273,38 @@ export default function Home() {
             }}
           />
 
+          {/* Ambient dust particles */}
+          {[
+            { top: '15%', left: '8%',  sz: '3px', dur: '7s',  delay: '0s',   op: '0.4' },
+            { top: '28%', left: '18%', sz: '2px', dur: '9s',  delay: '1.2s', op: '0.3' },
+            { top: '42%', left: '5%',  sz: '4px', dur: '11s', delay: '2.4s', op: '0.5' },
+            { top: '60%', left: '22%', sz: '2px', dur: '8s',  delay: '0.8s', op: '0.35' },
+            { top: '72%', left: '12%', sz: '3px', dur: '13s', delay: '3.1s', op: '0.4' },
+            { top: '20%', left: '35%', sz: '2px', dur: '10s', delay: '1.7s', op: '0.25' },
+            { top: '50%', left: '40%', sz: '3px', dur: '8s',  delay: '4.2s', op: '0.3' },
+            { top: '80%', left: '30%', sz: '2px', dur: '12s', delay: '2s',   op: '0.4' },
+            { top: '10%', left: '55%', sz: '3px', dur: '9s',  delay: '0.5s', op: '0.3' },
+            { top: '35%', left: '65%', sz: '2px', dur: '11s', delay: '3.8s', op: '0.25' },
+            { top: '65%', left: '58%', sz: '4px', dur: '7s',  delay: '1.5s', op: '0.35' },
+            { top: '25%', left: '78%', sz: '2px', dur: '14s', delay: '5s',   op: '0.3' },
+            { top: '55%', left: '82%', sz: '3px', dur: '10s', delay: '2.7s', op: '0.4' },
+            { top: '78%', left: '72%', sz: '2px', dur: '8s',  delay: '0.3s', op: '0.25' },
+            { top: '90%', left: '88%', sz: '3px', dur: '13s', delay: '6s',   op: '0.3' },
+          ].map((p, i) => (
+            <div
+              key={i}
+              className="hero-particle"
+              style={{
+                top: p.top,
+                left: p.left,
+                '--sz': p.sz,
+                '--dur': p.dur,
+                '--delay': p.delay,
+                '--op': p.op,
+              } as React.CSSProperties}
+            />
+          ))}
+
           <div
             style={{
               maxWidth: '1400px',
@@ -278,7 +327,7 @@ export default function Home() {
                 marginBottom: '1.25rem',
               }}
             >
-              ELIMFILTERS® | TOTAL PROTECTION SYSTEMS
+              // INDUSTRIAL FILTRATION SYSTEMS · ASSET PROTECTION
             </motion.p>
 
             {/* Split text H1 */}
@@ -286,7 +335,7 @@ export default function Home() {
               style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 900,
-                fontSize: 'clamp(2.5rem, 9vw, 7rem)',
+                fontSize: 'clamp(2rem, 5.5vw, 4.5rem)',
                 lineHeight: 1.05,
                 letterSpacing: '0.01em',
                 color: '#FFF12D',
@@ -295,16 +344,16 @@ export default function Home() {
                 perspective: '600px',
               }}
             >
-              <SplitText text="ENGINE FILTRATION" startDelay={0.35} />
+              <SplitText text="PROTECTING INDUSTRIAL ASSETS" startDelay={0.35} />
             </h1>
 
             <h2
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 400,
-                fontSize: 'clamp(1.1rem, 4vw, 3.5rem)',
+                fontSize: 'clamp(1rem, 2.8vw, 2.4rem)',
                 lineHeight: 1.1,
-                color: 'rgba(255,255,255,0.75)',
+                color: 'rgba(255,241,45,0.85)',
                 textTransform: 'uppercase',
                 marginBottom: '2.5rem',
                 overflow: 'hidden',
@@ -316,7 +365,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
                 style={{ display: 'block' }}
               >
-                HEAVY-DUTY AND LIGHT-DUTY
+                THROUGH CONTAMINATION CONTROL
               </motion.span>
             </h2>
 
@@ -345,8 +394,7 @@ export default function Home() {
                   fontFamily: 'Outfit, sans-serif',
                 }}
               >
-                Engineering filtration designed for those who cannot afford a stalled engine or a
-                fleet out of action.
+                Protecting industrial assets through contamination control across 12 industries. When equipment fails, operations stop.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"
@@ -424,6 +472,20 @@ export default function Home() {
                 >
                   {s.label}
                 </p>
+                {'context' in s && s.context && (
+                  <p
+                    style={{
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.62rem',
+                      color: 'rgba(255,255,255,0.35)',
+                      letterSpacing: '0.05em',
+                      marginTop: '0.4rem',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {s.context}
+                  </p>
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -956,7 +1018,7 @@ export default function Home() {
                 },
                 {
                   q: 'How often should industrial fuel filters be changed?',
-                  a: 'ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. AQUAGUARD™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
+                  a: 'ELIMFILTERS® recommends fuel filter replacement intervals of 500–1,000 operating hours for heavy-duty diesel engines, or 250–500 hours in high-contamination environments. HYDROCORE™ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
                 },
                 {
                   q: 'What ISO cleanliness code should a hydraulic system target?',
