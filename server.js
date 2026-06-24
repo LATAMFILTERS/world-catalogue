@@ -47,12 +47,16 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 const app = express();
 app.set('trust proxy', 1);
 
-// ─── HTTPS enforcement (production only) ─────────────────────────────────────
+// ─── HTTPS enforcement + security headers (production only) ──────────────────
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
     return res.redirect(301, 'https://' + req.get('host') + req.originalUrl);
   }
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
   next();
 });
 
@@ -206,7 +210,7 @@ app.get('/api/admin/filter-type-check', adminLimiter, requireAdmin, async (req, 
        LIMIT 200`
     );
     res.json({ rows: r.rows });
-  } catch (e) { res.status(500).json({ error: e.message }); }
+  } catch (e) { res.status(500).json({ error: 'Internal server error' }); }
   finally { client.release(); }
 });
 
@@ -577,7 +581,7 @@ app.get('/api/admin/update-lube-descriptions', adminLimiter, requireAdmin, async
       crankcase_updated: crankcaseRes.rowCount,
     });
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally { client.release(); }
 });
 
@@ -622,10 +626,14 @@ const _escHtml = (str) => String(str ?? '')
   .replace(/'/g, '&#x27;');
 
 // Contact form endpoint
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', searchLimiter, async (req, res) => {
   const { name, email, phone, company, message } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
+  }
+  if (name.length > 200 || email.length > 254 || message.length > 5000 ||
+      (phone && phone.length > 30) || (company && company.length > 200)) {
+    return res.status(400).json({ error: 'Input exceeds maximum length' });
   }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
@@ -918,7 +926,7 @@ app.get('/api/debug/inspect-codes/:sku', requireAdmin, async (req, res) => {
     );
     res.json(result.rows.length > 0 ? result.rows[0] : {error: 'not found'});
   } catch(e) {
-    res.json({ error: e.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -940,7 +948,7 @@ app.get('/api/debug/find-code/:code', requireAdmin, async (req, res) => {
     );
     res.json({ code, found: result.rows.length, results: result.rows });
   } catch(e) {
-    res.json({ error: e.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1004,7 +1012,7 @@ app.get('/api/analyze/sku-correctness', async (req, res) => {
       sample_mismatches: mismatches.slice(0, 15)
     });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1065,7 +1073,7 @@ app.get('/api/analyze/duplicate-skus-with-fix', async (req, res) => {
     `);
     res.json({ success: true, total: dupes.rows.length, records: dupes.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1085,7 +1093,7 @@ app.get('/api/analyze/duplicate-skus', async (req, res) => {
     `);
     res.json({ success: true, duplicate_count: dupes.rows.length, duplicates: dupes.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1115,7 +1123,7 @@ app.get('/api/migrate/fix-sku-unique', async (req, res) => {
     if (e.message.includes('already exists')) {
       return res.json({ success: true, message: 'Constraint already exists' });
     }
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1148,17 +1156,19 @@ app.get('/api/migrate/create-kit-tables', async (req, res) => {
     `);
     res.json({ success: true, message: 'Tables maintenance_kits and kit_components created' });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
 });
 
 // POST /api/kits — create a kit from filter SKUs + equipment name
-app.post('/api/kits', async (req, res) => {
+app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
   const { name, equipment_ref, filter_skus } = req.body;
   if (!name || !Array.isArray(filter_skus) || filter_skus.length === 0)
     return res.status(400).json({ success: false, error: 'name and filter_skus[] required' });
+  if (name.length > 200 || (equipment_ref && equipment_ref.length > 500) || filter_skus.length > 100)
+    return res.status(400).json({ success: false, error: 'Input exceeds maximum length' });
 
   const client = await pool.connect();
   try {
@@ -1187,6 +1197,7 @@ app.post('/api/kits', async (req, res) => {
       [kit_sku, name, equipment_ref || null, duty]
     );
     for (const fsku of filter_skus) {
+      if (!/^[A-Z]{2,3}[0-9]{4,7}[A-Z0-9]?$/.test(String(fsku).trim().toUpperCase())) continue;
       await client.query(
         'INSERT INTO kit_components (kit_sku, filter_sku) VALUES ($1,$2) ON CONFLICT DO NOTHING',
         [kit_sku, fsku.toUpperCase()]
@@ -1197,14 +1208,15 @@ app.post('/api/kits', async (req, res) => {
     res.status(201).json({ success: true, kit_sku, duty, name, equipment_ref, filter_skus });
   } catch(e) {
     await client.query('ROLLBACK').catch(()=>{});
-    res.status(500).json({ success: false, error: e.message });
+    console.error('[kits POST]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
 });
 
 // GET /api/kits/:kit_sku — full kit details with all component filters
-app.get('/api/kits/:kit_sku', async (req, res) => {
+app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   const kit_sku = req.params.kit_sku.trim().toUpperCase();
   const lang = detectLang(req);
   const client = await pool.connect();
@@ -1236,14 +1248,15 @@ app.get('/api/kits/:kit_sku', async (req, res) => {
       }
     });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    console.error('[kits GET]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
 });
 
 // GET /api/filters/kits?sku=XXX — which kits contain this filter
-app.get('/api/filters/kits', async (req, res) => {
+app.get('/api/filters/kits', searchLimiter, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({ success: false, kits: [] });
   const client = await pool.connect();
@@ -1257,7 +1270,8 @@ app.get('/api/filters/kits', async (req, res) => {
     );
     res.json({ success: true, kits: result.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    console.error('[filters/kits]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1275,13 +1289,13 @@ app.get('/api/search/rav4-kit-skus', async (req, res) => {
     `);
     res.json({ found: result.rows, found_count: result.rows.length });
   } catch(e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
 });
 
-app.get('/api/filters/alternatives', async (req, res) => {
+app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({success: false, alternatives: []});
 
@@ -1313,7 +1327,7 @@ app.get('/api/filters/alternatives', async (req, res) => {
     );
     res.json({success: true, alternatives: result.rows});
   } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    res.status(500).json({success: false, error: 'Internal server error'});
   } finally {
     client.release();
   }
@@ -1372,7 +1386,7 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
     const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    res.status(500).json({success: false, error: 'Internal server error'});
   } finally {
     client.release();
   }
@@ -1408,7 +1422,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
     await enrichAlternatives(filters, client);
     res.status(200).json({success: true, filters});
   } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    res.status(500).json({success: false, error: 'Internal server error'});
   } finally {
     client.release();
   }
@@ -1450,7 +1464,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
     await enrichAlternatives(filters, client);
     res.status(200).json({success: true, filters});
   } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    res.status(500).json({success: false, error: 'Internal server error'});
   } finally {
     client.release();
   }
@@ -1471,7 +1485,7 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
     const filters = result.rows.map(row => buildFilterData(row, lang));
     res.status(200).json({success: true, filters});
   } catch(e) {
-    res.status(500).json({success: false, error: e.message});
+    res.status(500).json({success: false, error: 'Internal server error'});
   } finally {
     client.release();
   }
@@ -1511,7 +1525,7 @@ app.get('/api/migrate/consolidate-skus-preview', async (req, res) => {
 
     res.json({ success: true, consolidations_count: plan.length, preview: plan });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1567,7 +1581,7 @@ app.get('/api/migrate/consolidate-skus-apply', async (req, res) => {
     res.json({ success: true, consolidated_count: consolidated });
   } catch(e) {
     await client.query('ROLLBACK').catch(()=>{});
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1592,7 +1606,7 @@ app.get('/api/analyze/codigo-base-prefixes', async (req, res) => {
     `);
     res.json({ success: true, prefixes: result.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1612,7 +1626,7 @@ app.get('/api/migrate/add-alternative-codes-column', async (req, res) => {
     if (e.message.includes('already exists')) {
       return res.json({ success: true, message: 'Column already exists' });
     }
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1641,7 +1655,7 @@ app.get('/api/debug/el82100-vs-el81016', async (req, res) => {
       .map(([k]) => k) : [];
     res.json({ success: true, records: rows, fields_missing_in_EL82100: nullInMain });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1673,7 +1687,7 @@ app.get('/api/migrate/merge-el82100-sql', async (req, res) => {
     `);
     res.json({ success: true, message: 'EL82100 merged successfully' });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1718,7 +1732,7 @@ app.get('/api/catalog/stats', async (req, res) => {
       last_10_inserted: recent.rows
     });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1737,7 +1751,7 @@ app.get('/api/migrate/merge-oem-codes', async (req, res) => {
     `);
     res.json({ success: true, message: 'OEM codes merged successfully' });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1775,7 +1789,7 @@ app.get('/api/migrate/consolidate-oem-codes', async (req, res) => {
       next_step: 'Run node scripts/recover-competitor-codes.js to repopulate competitor_codes from oilfilter-crossreference.com'
     });
   } catch (e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1805,7 +1819,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
     `);
     res.json({ success: true, incomplete_count: result.rows.length, products: result.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1836,7 +1850,7 @@ app.get('/api/admin/suspects-equipment', async (req, res) => {
     `, params);
     res.json({ success: true, total: result.rows.length, suspects: result.rows });
   } catch (e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1877,7 +1891,7 @@ app.get('/api/pending-donaldson', async (req, res) => {
     `, [limit]);
     res.json({ success: true, count: result.rows.length, products: result.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1989,7 +2003,7 @@ app.post('/api/import/donaldson', async (req, res) => {
 
     res.json({ success: true, total: rows.length, inserted, updated, errors });
   } catch (e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -2025,7 +2039,7 @@ app.get('/api/recheck-donaldson', async (req, res) => {
     `, [limit]);
     res.json({ success: true, count: result.rows.length, products: result.rows });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -2040,7 +2054,7 @@ app.get('/api/import/existing-skus', async (req, res) => {
     const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
     res.json({ success: true, skus: result.rows.map(r => r.sku) });
   } catch (e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -2366,7 +2380,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
   } catch (e) {
     console.error('[api/search]', e.message);
-    res.status(500).json({ error: e.message, products: [] });
+    res.status(500).json({ error: 'Search unavailable', products: [] });
   } finally {
     client.release();
   }
@@ -2386,7 +2400,7 @@ app.get('/api/stats', async (req, res) => {
     });
   } catch (e) {
     console.error('[api/stats]', e.message);
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -2484,7 +2498,7 @@ app.get('/api/audit/report', async (req, res) => {
       top_competitor_brands:   topComp.rows,
     });
   } catch(e) {
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
