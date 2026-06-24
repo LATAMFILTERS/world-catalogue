@@ -189,7 +189,7 @@ export default function IndustriesPage() {
     itemListElement: catalogue.industries.map((industry, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: `${industry.name} Filtration Systems`,
+      name: industry.title,
       url: `https://elimfilters.com/industries/${getSlug(industry.name)}`,
       description: industry.description,
     })),
@@ -356,7 +356,7 @@ export default function IndustriesPage() {
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
+              <strong>ELIMFILTERS® serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS® systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
             </p>
             <p style={{ margin: '0.75rem 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)' }}>
               Industries served include agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, trucks & fleets, and municipal waste management — across operations in over 50 countries.
