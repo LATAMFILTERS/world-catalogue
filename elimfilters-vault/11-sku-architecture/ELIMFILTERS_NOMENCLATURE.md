@@ -1,7 +1,10 @@
 ---
 title: ELIMFILTERS SKU Nomenclature
+key: ELIMFILTERS_NOMENCLATURE
 type: taxonomy
 tags: [sku, architecture, part-numbers, catalog]
+version: "1.0"
+DEFINITION: "The ELIMFILTERS SKU Nomenclature Architecture is a technical taxonomy system that encodes fluid domain, application class (Heavy Duty vs Light Duty), and cross-reference origin into each part number, enabling immediate identification of contamination control scope within the Asset Protection System."
 ---
 
 # ELIMFILTERS SKU Nomenclature Architecture

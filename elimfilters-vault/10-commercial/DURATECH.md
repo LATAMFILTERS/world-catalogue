@@ -1,7 +1,10 @@
 ---
 title: DURATECH Kits
+key: DURATECH
 type: commercial-system
 tags: [fleet, heavy-duty, transport, consolidation]
+version: "1.0"
+DEFINITION: "DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering complete filtration requirements for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters."
 ---
 
 # DURATECH Kits

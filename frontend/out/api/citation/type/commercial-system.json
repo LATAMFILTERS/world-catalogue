@@ -1,0 +1,69 @@
+{
+  "type": "commercial-system",
+  "count": 2,
+  "entities": [
+    {
+      "key": "DURATECH",
+      "type": "commercial-system",
+      "name": "DURATECH",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "fleet",
+        "heavy-duty",
+        "transport",
+        "consolidation"
+      ],
+      "citation": {
+        "source_url": null,
+        "concept": null,
+        "version": null,
+        "last_updated": null,
+        "content_hash": null
+      },
+      "canonical": {
+        "definition": null,
+        "systems": null,
+        "failure_impact": null,
+        "related_standards": null,
+        "related_technologies": null,
+        "industrial_role": null
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault/10-commercial/DURATECH.md"
+    },
+    {
+      "key": "MARINECLEAN",
+      "type": "commercial-system",
+      "name": "MARINECLEAN",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "marine",
+        "consolidation",
+        "fleet"
+      ],
+      "citation": {
+        "source_url": null,
+        "concept": null,
+        "version": null,
+        "last_updated": null,
+        "content_hash": null
+      },
+      "canonical": {
+        "definition": null,
+        "systems": null,
+        "failure_impact": null,
+        "related_standards": null,
+        "related_technologies": null,
+        "industrial_role": null
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md"
+    }
+  ]
+}

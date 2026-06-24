@@ -1,7 +1,10 @@
 ---
 title: AI Reasoning Engine
+key: AI_REASONING_ENGINE
 type: architecture
 tags: [ai, personas, diagnostics, metrology]
+version: "1.0"
+DEFINITION: "The ELIMFILTERS AI Reasoning Engine is the cognitive layer of the ELIMFILTERS platform that transforms standard parts search queries into consultative Asset Protection Engineering interactions through structured contamination-to-solution reasoning chains."
 ---
 
 # AI Reasoning Engine

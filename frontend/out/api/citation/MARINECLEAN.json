@@ -1,0 +1,36 @@
+{
+  "key": "MARINECLEAN",
+  "type": "commercial-system",
+  "name": "MARINECLEAN",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "marine",
+    "consolidation",
+    "fleet"
+  ],
+  "citation": {
+    "source_url": null,
+    "concept": null,
+    "version": null,
+    "last_updated": null,
+    "content_hash": null
+  },
+  "canonical": {
+    "definition": null,
+    "systems": null,
+    "failure_impact": null,
+    "related_standards": null,
+    "related_technologies": null,
+    "industrial_role": null
+  },
+  "relationships": {},
+  "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md",
+  "_links": {
+    "self": "/api/citation/MARINECLEAN.json",
+    "type_index": "/api/citation/type/commercial-system.json",
+    "related": []
+  }
+}

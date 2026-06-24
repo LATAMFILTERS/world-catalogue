@@ -1,7 +1,10 @@
 ---
 title: MARINECLEAN™
+key: MARINECLEAN
 type: commercial-system
 tags: [marine, consolidation, fleet]
+version: "1.0"
+DEFINITION: "MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments."
 ---
 
 # MARINECLEAN™

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { catalogue, getSlug } from '@/lib/catalogue';
 import SystemPageClient from './SystemPageClient';
@@ -19,6 +20,25 @@ const displayNames: Record<string, string> = {
 
 interface PageProps {
   params: { slug: string };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const product = catalogue.products.find(p => getSlug(p.name) === params.slug);
+  if (!product) return {};
+  const displayName = displayNames[product.name] || product.name;
+  const desc = product.description.replace(/®|™/g, '').replace(/\s+/g, ' ').trim().slice(0, 155);
+  return {
+    title: `${displayName} Filtration System | ELIMFILTERS`,
+    description: desc,
+    alternates: { canonical: `https://elimfilters.com/systems/${params.slug}` },
+    openGraph: {
+      title: `${displayName} Filtration System | ELIMFILTERS`,
+      description: desc,
+      url: `https://elimfilters.com/systems/${params.slug}`,
+      siteName: 'ELIMFILTERS',
+      type: 'website',
+    },
+  };
 }
 
 export function generateStaticParams() {
