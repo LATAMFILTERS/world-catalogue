@@ -21,15 +21,22 @@ const adminLimiter = rateLimit({
   message: { error: 'Too many admin requests.' },
 });
 // ─── Admin key middleware ─────────────────────────────────────────────────────
-const ADMIN_KEY = process.env.ADMIN_KEY || 'elim2026';
+const ADMIN_KEY = process.env.ADMIN_KEY;
+if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
+
+const _extractAdminKey = (req) => {
+  const authHeader = req.get('authorization') || '';
+  if (authHeader.startsWith('Bearer ')) return authHeader.slice(7).trim();
+  return req.body?.key || '';
+};
 const requireAdmin = (req, res, next) => {
-  const key = req.query.key || req.body?.key;
-  if (key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  const key = _extractAdminKey(req);
+  if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
   next();
 };
 const checkAdmin = (req, res) => {
-  const key = req.query.key || req.body?.key;
-  if (key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
+  const key = _extractAdminKey(req);
+  if (!key || key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
   return true;
 };
 
@@ -39,6 +46,15 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 
 const app = express();
 app.set('trust proxy', 1);
+
+// ─── HTTPS enforcement (production only) ─────────────────────────────────────
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
+    return res.redirect(301, 'https://' + req.get('host') + req.originalUrl);
+  }
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  next();
+});
 
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
@@ -435,7 +451,6 @@ app.use(cors({
     'https://elimfilters.com',
     'https://www.elimfilters.com',
     'https://part-search.elimfilters.com',
-    /\.elimfilters\.com$/,
   ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -457,12 +472,24 @@ app.use((req, res, next) => {
 app.use(express.static('public'));
 app.use(express.static('www'));
 
+const _escHtml = (str) => String(str ?? '')
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#x27;');
+
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, company, message } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
+  const safeName    = _escHtml(name);
+  const safeEmail   = _escHtml(email);
+  const safePhone   = _escHtml(phone || '—');
+  const safeCompany = _escHtml(company || '—');
+  const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
   try {
     const transporter = nodemailer.createTransport({
       host: 'smtpout.secureserver.net',
@@ -476,18 +503,18 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'info@elimfilters.com',
-      replyTo: email,
-      subject: `[Web Contact] ${name} — ${company || 'No company'}`,
+      replyTo: safeEmail,
+      subject: `[Web Contact] ${safeName} — ${safeCompany}`,
       html: `
         <h2 style="color:#000">New contact from elimfilters.com</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%">
-          <tr><td><b>Name</b></td><td>${name}</td></tr>
-          <tr><td><b>Email</b></td><td>${email}</td></tr>
-          <tr><td><b>Phone</b></td><td>${phone || '—'}</td></tr>
-          <tr><td><b>Company</b></td><td>${company || '—'}</td></tr>
+          <tr><td><b>Name</b></td><td>${safeName}</td></tr>
+          <tr><td><b>Email</b></td><td>${safeEmail}</td></tr>
+          <tr><td><b>Phone</b></td><td>${safePhone}</td></tr>
+          <tr><td><b>Company</b></td><td>${safeCompany}</td></tr>
         </table>
         <h3>Message</h3>
-        <p style="background:#f5f5f5;padding:1rem">${message.replace(/\n/g, '<br>')}</p>
+        <p style="background:#f5f5f5;padding:1rem">${safeMessage}</p>
       `,
     });
     res.json({ ok: true });
@@ -520,7 +547,9 @@ app.use((req, res, next) => {
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
+  ssl: process.env.NODE_ENV === 'production'
+    ? { rejectUnauthorized: true }
+    : { rejectUnauthorized: false },
 };
 const pool = new Pool(dbConfig);
 
@@ -1711,19 +1740,36 @@ app.get('/api/pending-donaldson', async (req, res) => {
 
 // ─── POST /api/import/donaldson ──────────────────────────────────────────────
 // Accepts batch of pre-processed rows and upserts into elimfilters_catalog.
-// Body: { key: "elim2026", rows: [ { sku, codigo_base, filter_type, ... } ] }
+// Requires Authorization: Bearer <ADMIN_KEY>
+const VALID_FILTER_TYPES = new Set(['oil','fuel','air','cabin','hydraulic','compressed-air','water','other']);
+const VALID_DUTIES = new Set(['light','standard','heavy','extreme',null,undefined,'']);
+const _validateImportRow = (row) => {
+  if (!row || typeof row !== 'object') return 'row must be an object';
+  if (!row.sku || typeof row.sku !== 'string' || !/^[A-Z0-9\-]{2,40}$/.test(row.sku)) return `invalid sku: ${row.sku}`;
+  if (!row.codigo_base || typeof row.codigo_base !== 'string' || row.codigo_base.length > 100) return `invalid codigo_base: ${row.codigo_base}`;
+  if (row.filter_type && !VALID_FILTER_TYPES.has(row.filter_type)) return `invalid filter_type: ${row.filter_type}`;
+  if (row.duty !== undefined && !VALID_DUTIES.has(row.duty)) return `invalid duty: ${row.duty}`;
+  if (row.oem_codes !== undefined && !Array.isArray(row.oem_codes)) return 'oem_codes must be array';
+  if (row.equipment_applications !== undefined && !Array.isArray(row.equipment_applications)) return 'equipment_applications must be array';
+  if (row.micron_rating !== undefined && row.micron_rating !== null && typeof row.micron_rating !== 'number') return 'micron_rating must be number';
+  return null;
+};
+
 app.post('/api/import/donaldson', async (req, res) => {
   if (!checkAdmin(req, res)) return;
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds limit of 500 rows' });
 
   const client = await pool.connect();
   try {
     let inserted = 0, updated = 0, errors = 0;
 
     for (const row of rows) {
-      if (!row.sku || !row.codigo_base) { errors++; continue; }
+      const validationError = _validateImportRow(row);
+      if (validationError) { errors++; continue; }
 
       // ALL codes from Donaldson's website are OEM codes regardless of brand name.
       // If the scraper sends any codes in competitor_codes, merge them into oem_codes.
@@ -1943,27 +1989,6 @@ app.get('/api/migrate/fix-sku-constraint', async (req, res) => {
   }
 });
 
-// ─── GET /api/migrate/reset-catalog ──────────────────────────────────────────
-// Truncates catalog and ensures new columns exist. Confirms with ?confirm=yes
-app.get('/api/migrate/reset-catalog', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
-  if (req.query.confirm !== 'yes') return res.status(400).json({ error: 'Add ?confirm=yes to proceed' });
-  const client = await pool.connect();
-  try {
-    await client.query('TRUNCATE TABLE elimfilters_catalog RESTART IDENTITY;');
-    // Add new columns if they don't exist yet (idempotent)
-    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS description TEXT;`);
-    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS brand_crossrefs JSONB;`);
-    await client.query(`ALTER TABLE elimfilters_catalog ADD COLUMN IF NOT EXISTS alternatives JSONB;`);
-    console.log('[migrations] Catalog reset: truncated + columns ensured');
-    return res.json({ success: true, message: 'Catalog truncated and schema updated' });
-  } catch (err) {
-    console.error('[migrations] RESET ERROR:', err.message);
-    return res.status(500).json({ success: false, error: err.message });
-  } finally {
-    client.release();
-  }
-});
 
 // ─── GET /api/status ─────────────────────────────────────────────────────────
 // Health and version status for deployment verification
